@@ -324,13 +324,13 @@ function CryptResultBody(props) {
 function CryptDeckHeader(props) {
   return (
     <thead>
-      <tr className='result-header'>
-        <th>Q</th>
-        <th>C</th>
-        <th>D</th>
-        <th>N</th>
-        <th>C</th>
-        <th>G</th>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
   );
@@ -381,6 +381,7 @@ function CryptDeckBody(props) {
 export function CryptDeckResults(props) {
   return (
     <div>
+      Crypt [{props.total}]
       <table width="100%" className="result-table">
         <CryptDeckHeader />
         <CryptDeckBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />

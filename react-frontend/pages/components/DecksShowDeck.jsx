@@ -51,23 +51,81 @@ function DecksShowDeck(props) {
   if (props.deck) {
     const deck = props.deck;
     const crypt = [];
-    const library = [];
+    // const library = [];
+    const library = {
+      'Action Modifier': [],
+      'Ally': [],
+      'Combat': [],
+      'Conviction': [],
+      'Equipment': [],
+      'Event': [],
+      'Master': [],
+      'Political Action': [],
+      'Power': [],
+      'Reaction': [],
+      'Retainer': [],
+      'Other': [],
+    }
 
     for (const card in deck.crypt) {
       crypt.push([deck.crypt[card].c, deck.crypt[card].q]);
     }
 
-    for (const card in deck.library) {
-      library.push([deck.library[card].c, deck.library[card].q]);
+    let crypt_total = 0;
+    for (const card of crypt) {
+      crypt_total += card[1];
     }
+
+    for (const card in deck.library) {
+      if (deck.library[card].c['Type'] == 'Action') {
+        library['Action'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Action Modifier') {
+        library['Action Modifier'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Ally') {
+        library['Ally'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Combat') {
+        library['Combat'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Conviction') {
+        library['Conviction'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Equipment') {
+        library['Equipment'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Event') {
+        library['Event'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Master') {
+        library['Master'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Political Action') {
+        library['Political Action'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Power') {
+        library['Power'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Reaction') {
+        library['Reaction'].push([deck.library[card].c, deck.library[card].q]);
+      } else if (deck.library[card].c['Type'] == 'Retainer') {
+        library['Retainer'].push([deck.library[card].c, deck.library[card].q]);
+      } else {
+        library['Other'].push([deck.library[card].c, deck.library[card].q]);
+      }
+    }
+
+    const LibraryDeck = Object.keys(library).map((cardtype, index) => {
+      if (library[cardtype].length > 0) {
+        let total = 0;
+        for (const card of library[cardtype]) {
+          total += card[1];
+        }
+
+        return (
+          <LibraryDeckResults key={index} deckCardChange={props.deckCardChange} deckid={deck.deckid} cards={library[cardtype]} cardtype={cardtype} total={total} />
+        );
+      }
+    });
 
     return (
       <div>
-        DECK NAME: {deck.name}
+        Deck Name: {deck.name}
         <DecksNewCard deckCardAdd={props.deckCardAdd} deckid={deck.deckid} />
-        <CryptDeckResults deckCardChange={props.deckCardChange} deckid={deck.deckid} cards={crypt} />
+        <CryptDeckResults total={crypt_total} deckCardChange={props.deckCardChange} deckid={deck.deckid} cards={crypt} />
         <br />
-        <LibraryDeckResults deckCardChange={props.deckCardChange} deckid={deck.deckid} cards={library} />
+        {LibraryDeck}
       </div>
     );
   } else {

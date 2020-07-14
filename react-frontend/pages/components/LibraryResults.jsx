@@ -358,14 +358,13 @@ function LibraryResultBody(props) {
 function LibraryDeckHeader(props) {
   return (
     <thead>
-      <tr className='result-header'>
-        <th>Q</th>
-        <th>C</th>
-        <th>T</th>
-        <th>D</th>
-        <th>N</th>
-        <th>B</th>
-        <th>C</th>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
   );
@@ -402,7 +401,6 @@ function LibraryDeckBody(props) {
       <tr className={resultTrClass} key={index}>
         <LibraryDeckQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
         <LibraryResultCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
-        <LibraryResultType value={card[0]['Type']} />
         <LibraryResultDiscipline value={card[0]['Discipline']} />
         <LibraryResultName value={card[0]['Name']} />
         <LibraryResultBurn value={card[0]['Burn Option']} />
@@ -417,8 +415,9 @@ function LibraryDeckBody(props) {
 export function LibraryDeckResults(props) {
   return (
     <div>
+      {props.cardtype} [{props.total}]
       <table width="100%" className="result-table">
-        <LibraryDeckHeader />
+        <LibraryDeckHeader total={props.total} cardtype={props.cardtype}/>
         <LibraryDeckBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
     </div>
