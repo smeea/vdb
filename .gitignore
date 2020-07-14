@@ -1,0 +1,9 @@
+flask-backend/__pycache__/
+flask-backend/migrations/
+flask-backend/venv/
+flask-backend/app.db
+flask-backend/.flaskenv
+react-frontend/node_modules/
+react-frontend/dist/
+react-frontend/.cache/
+
