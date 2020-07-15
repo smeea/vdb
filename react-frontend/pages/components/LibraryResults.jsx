@@ -376,7 +376,7 @@ function LibraryDeckQuantity(props) {
   const cardid = props.cardid;
   const q = props.q;
   return (
-    <td width='20%'>
+    <td width='18%'>
       <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q + 1)}>
         +
       </button>

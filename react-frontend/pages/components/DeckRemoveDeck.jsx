@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function DecksRemoveDeck(props) {
+function DeckRemoveDeck(props) {
   const deck = props.activeDeck;
   const removeDeck = event => {
 
@@ -35,4 +35,4 @@ function DecksRemoveDeck(props) {
   );
 }
 
-export default DecksRemoveDeck;
+export default DeckRemoveDeck;

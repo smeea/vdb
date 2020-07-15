@@ -1,10 +1,10 @@
 import React from "react";
-import DecksSelectDeck from './components/DecksSelectDeck.jsx';
-import DecksShowDeck from './components/DecksShowDeck.jsx';
-import DecksNewDeck from './components/DecksNewDeck.jsx';
-import DecksRemoveDeck from './components/DecksRemoveDeck.jsx';
+import DeckSelectDeck from './components/DeckSelectDeck.jsx';
+import DeckShowDeck from './components/DeckShowDeck.jsx';
+import DeckNewDeck from './components/DeckNewDeck.jsx';
+import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 
-class Decks extends React.Component {
+class Deck extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,10 +85,10 @@ class Decks extends React.Component {
           <div className="col-xs-12 col-xl-1 left-col px-0 px-xl-2">
           </div>
           <div className="col-xs-12 col-xl-7 center-col px-0 px-xl-2">
-            <DecksNewDeck />
-            <DecksSelectDeck handleActiveDeckSelect={this.handleActiveDeckSelect} decks={this.state.decks} value={this.state.activedeck} />
-            <DecksRemoveDeck activeDeck={this.state.activedeck} />
-            <DecksShowDeck deckCardAdd={this.deckCardAdd} deckCardChange={this.deckCardChange} deck={this.state.decks[this.state.activedeck]} />
+            <DeckNewDeck />
+            <DeckSelectDeck handleActiveDeckSelect={this.handleActiveDeckSelect} decks={this.state.decks} value={this.state.activedeck} />
+            <DeckRemoveDeck activeDeck={this.state.activedeck} />
+            <DeckShowDeck deckCardAdd={this.deckCardAdd} deckCardChange={this.deckCardChange} deck={this.state.decks[this.state.activedeck]} />
           </div>
           <div className="col-xs-12 col-xl-4 right-col px-0 px-xl-2">
           </div>
@@ -98,4 +98,4 @@ class Decks extends React.Component {
   }
 }
 
-export default Decks;
+export default Deck;

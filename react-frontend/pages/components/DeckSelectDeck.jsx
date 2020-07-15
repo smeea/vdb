@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function DecksSelectDeck(props) {
+function DeckSelectDeck(props) {
   const handleActiveDeckSelect = props.handleActiveDeckSelect;
   const decks = props.decks;
   const activedeck = props.value;
@@ -20,4 +20,4 @@ function DecksSelectDeck(props) {
   );
 };
 
-export default DecksSelectDeck;
+export default DeckSelectDeck;

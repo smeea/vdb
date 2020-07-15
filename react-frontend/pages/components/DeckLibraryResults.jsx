@@ -110,126 +110,163 @@ import judge from './../../assets/images/clans/judge.gif';
 import martyr from './../../assets/images/clans/martyr.gif';
 import redeemer from './../../assets/images/clans/redeemer.gif';
 import visionary from './../../assets/images/clans/visionary.gif';
-;
-import cap1 from './../../assets/images/misc/cap1.png';
-import cap2 from './../../assets/images/misc/cap2.png';
-import cap3 from './../../assets/images/misc/cap3.png';
-import cap4 from './../../assets/images/misc/cap4.png';
-import cap5 from './../../assets/images/misc/cap5.png';
-import cap6 from './../../assets/images/misc/cap6.png';
-import cap7 from './../../assets/images/misc/cap7.png';
-import cap8 from './../../assets/images/misc/cap8.png';
-import cap9 from './../../assets/images/misc/cap9.png';
-import cap10 from './../../assets/images/misc/cap10.png';
-import cap11 from './../../assets/images/misc/cap11.png';
 
-function CryptResultHeader(props) {
+import action from './../../assets/images/types/action.gif';
+import actionmodifier from './../../assets/images/types/actionmodifier.gif';
+import ally from './../../assets/images/types/ally.gif';
+import combat from './../../assets/images/types/combat.gif';
+import conviction from './../../assets/images/types/conviction.gif';
+import equipment from './../../assets/images/types/equipment.gif';
+import event from './../../assets/images/types/event.gif';
+import master from './../../assets/images/types/master.gif';
+import politicalaction from './../../assets/images/types/politicalaction.gif';
+import power from './../../assets/images/types/power.gif';
+import reaction from './../../assets/images/types/reaction.gif';
+import reflex from './../../assets/images/types/reflex.gif';
+import retainer from './../../assets/images/types/retainer.gif';
+
+import blood1 from './../../assets/images/misc/blood1.png';
+import blood2 from './../../assets/images/misc/blood2.png';
+import blood3 from './../../assets/images/misc/blood3.png';
+import blood4 from './../../assets/images/misc/blood4.png';
+import blood5 from './../../assets/images/misc/blood5.png';
+import blood6 from './../../assets/images/misc/blood6.png';
+import bloodx from './../../assets/images/misc/bloodx.png';
+
+import pool1 from './../../assets/images/misc/pool1.png';
+import pool2 from './../../assets/images/misc/pool2.png';
+import pool3 from './../../assets/images/misc/pool3.png';
+import pool4 from './../../assets/images/misc/pool4.png';
+import pool5 from './../../assets/images/misc/pool5.png';
+import pool6 from './../../assets/images/misc/pool6.png';
+import poolx from './../../assets/images/misc/poolx.png';
+
+import burn from './../../assets/images/misc/burn.gif';
+
+
+function DeckLibraryHeader(props) {
   return (
     <thead>
-      <tr className='result-header'>
-        <th>C</th>
-        <th>D</th>
-        <th>N</th>
-        <th>C</th>
-        <th>G</th>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
   );
 }
 
-function CryptResultCapacity(props) {
-  const capicons = {
-    1: cap1,
-    2: cap2,
-    3: cap3,
-    4: cap4,
-    5: cap5,
-    6: cap6,
-    7: cap7,
-    8: cap8,
-    9: cap9,
-    10: cap10,
-    11: cap11,
+function DeckLibraryQuantity(props) {
+  const deckCardChange = props.deckCardChange;
+  const deckid = props.deckid;
+  const cardid = props.cardid;
+  const q = props.q;
+  return (
+    <td width='18%'>
+      <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q + 1)}>
+        +
+      </button>
+      {' '}{q}{' '}
+      <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q - 1)}>
+        -
+      </button>
+    </td>
+  )
+}
+
+function DeckLibraryCost(props) {
+  const costicons = {
+    1: [blood1, pool1],
+    2: [blood2, pool2],
+    3: [blood3, pool3],
+    4: [blood4, pool4],
+    5: [blood5, pool5],
+    6: [blood6, pool6],
+    X: [bloodx, poolx],
   };
-  const imgClass='capacity-image-results';
-  const imgSrc=capicons[props.value];
+  const imgClass='cost-image-results';
+  let imgSrc='';
+  if (props.valueBlood) {
+    imgSrc=costicons[props.valueBlood][0];
+  } else if (props.valuePool){
+    imgSrc=costicons[props.valuePool][1];
+  }
 
   return (
-    <td width='6%'>
+    <td width='5%'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
 }
 
-function CryptResultDisciplines(props) {
-  const disciplinesicons = {
-    Abombwe: [abombwe, abombwesup],
-    Animalism: [animalism, animalismsup],
-    Auspex: [auspex, auspexsup],
-    Celerity: [celerity, celeritysup],
-    Chimerstry: [chimerstry, chimerstrysup],
-    Daimoinon: [daimoinon, daimoinonsup],
-    Dementation: [dementation, dementationsup],
-    Dominate: [dominate, dominatesup],
-    Fortitude: [fortitude, fortitudesup],
-    Melpominee: [melpominee, melpomineesup],
-    Mytherceria: [mytherceria, mytherceriasup],
-    Necromancy: [necromancy, necromancysup],
-    Obeah: [obeah, obeahsup],
-    Obfuscate: [obfuscate, obfuscatesup],
-    Obtenebration: [obtenebration, obtenebrationsup],
-    Potence: [potence, potencesup],
-    Presence: [presence, presencesup],
-    Protean: [protean, proteansup],
-    Quietus: [quietus, quietussup],
-    Sanguinus: [sanguinus, sanguinussup],
-    Serpentis: [serpentis, serpentissup],
-    Spiritus: [spiritus, spiritussup],
-    Temporis: [temporis, temporissup],
-    Thanatosis: [thanatosis, thanatosissup],
-    Thaumaturgy: [thaumaturgy, thaumaturgysup],
-    Valeren: [valeren, valerensup],
-    Vicissitude: [vicissitude, vicissitudesup],
-    Visceratika: [visceratika, visceratikasup],
+function DeckLibraryDiscipline(props) {
+  const disciplineicons = {
+    Abombwe: abombwe,
+    Animalism: animalism,
+    Auspex: auspex,
+    Celerity: celerity,
+    Chimerstry: chimerstry,
+    Daimoinon: daimoinon,
+    Dementation: dementation,
+    Dominate: dominate,
+    Fortitude: fortitude,
+    Melpominee: melpominee,
+    Mytherceria: mytherceria,
+    Necromancy: necromancy,
+    Obeah: obeah,
+    Obfuscate: obfuscate,
+    Obtenebration: obtenebration,
+    Potence: potence,
+    Presence: presence,
+    Protean: protean,
+    Quietus: quietus,
+    Sanguinus: sanguinus,
+    Serpentis: serpentis,
+    Spiritus: spiritus,
+    Temporis: temporis,
+    Thanatosis: thanatosis,
+    Thaumaturgy: thaumaturgy,
+    Valeren: valeren,
+    Vicissitude: vicissitude,
+    Visceratika: visceratika,
   };
-
-
-  const icons = Object.keys(props.value).map((d, index) => {
-    let imgSrc = '';
-    let imgClass = '';
-    if (props.value[d] == 1) {
-      imgSrc = disciplinesicons[d][0];
-      imgClass = 'discipline-base-image-results';
-    } else if (props.value[d] == 2) {
-      imgSrc = disciplinesicons[d][1];
-      imgClass = 'discipline-superior-image-results';
-    };
-
-    return (
-      <div key={index}>
-        <img className={imgClass} src={imgSrc} />
-      </div>
-    );
-  });
-
+  const imgClass='discipline-image-results';
+  const imgSrc=disciplineicons[props.value];
   return (
-    <td width='37%'>
-      <div className='crypt-result-disciplines d-flex'>
-        {icons}
-      </div>
+    <td width='21%'>
+      <img className={imgClass} src={imgSrc} />
     </td>
   );
 }
 
-function CryptResultName(props) {
+function DeckLibraryName(props) {
   return (
-    <td width='41%'>
+    <td width='44%'>
       {props.value}
     </td>
   );
 }
 
-function CryptResultClan(props) {
+
+function DeckLibraryBurn(props) {
+  const imgClass='burn-image-results';
+  const imgSrc=burn;
+  if (props.value) {
+    return (
+      <td width='5%'>
+        <img className={imgClass} src={imgSrc} />
+      </td>
+    );
+  } else {
+    return <td width='10%'></td>;
+  }
+}
+
+
+function DeckLibraryClan(props) {
   const clanicons = {
     Abomination: abomination,
     Ahrimane: ahrimane,
@@ -282,94 +319,28 @@ function CryptResultClan(props) {
   const imgSrc=clanicons[props.value];
 
   return (
-    <td width='10%'>
+    <td width='5%'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
 }
 
-function CryptResultGroup(props) {
-  return (
-    <td width='6%'>
-      <b>
-        <font color='a0a0a0'>G</font>
-        {props.value}
-      </b>
-    </td>
-  );
-}
-
-function CryptResultBody(props) {
-  let resultTrClass='crypt-result-even';
-  const cards = props.resultCards.map((card, index) => {
-    if (resultTrClass == 'crypt-result-even') {
-      resultTrClass = 'crypt-result-odd';
-    } else {
-      resultTrClass = 'crypt-result-even';
-    }
-    return (
-      <tr className={resultTrClass} key={index}>
-        <CryptResultCapacity value={card['Capacity']} />
-        <CryptResultDisciplines value={card['Disciplines']} />
-        <CryptResultName value={card['Name']} />
-        <CryptResultClan value={card['Clan']} />
-        <CryptResultGroup value={card['Group']} />
-      </tr>
-    );
-  });
-
-  return <tbody>{cards}</tbody>;
-}
-
-function CryptDeckHeader(props) {
-  return (
-    <thead>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-  );
-}
-
-function CryptDeckQuantity(props) {
-  const deckCardChange = props.deckCardChange;
-  const deckid = props.deckid;
-  const cardid = props.cardid;
-  const q = props.q;
-  return (
-    <td width='18%'>
-      <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q + 1)}>
-        +
-      </button>
-      {' '}{q}{' '}
-      <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q - 1)}>
-        -
-      </button>
-    </td>
-  )
-}
-
-function CryptDeckBody(props) {
-  let resultTrClass='crypt-result-even';
+function DeckLibraryBody(props) {
+  let resultTrClass='library-result-even';
   const cards = props.cards.map((card, index) => {
-    if (resultTrClass == 'crypt-result-even') {
-      resultTrClass = 'crypt-result-odd';
+    if (resultTrClass == 'library-result-even') {
+      resultTrClass = 'library-result-odd';
     } else {
-      resultTrClass = 'crypt-result-even';
+      resultTrClass = 'library-result-even';
     }
     return (
       <tr className={resultTrClass} key={index}>
-        <CryptDeckQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-        <CryptResultCapacity value={card[0]['Capacity']} />
-        <CryptResultDisciplines value={card[0]['Disciplines']} />
-        <CryptResultName value={card[0]['Name']} />
-        <CryptResultClan value={card[0]['Clan']} />
-        <CryptResultGroup value={card[0]['Group']} />
+        <DeckLibraryQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+        <DeckLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
+        <DeckLibraryDiscipline value={card[0]['Discipline']} />
+        <DeckLibraryName value={card[0]['Name']} />
+        <DeckLibraryBurn value={card[0]['Burn Option']} />
+        <DeckLibraryClan value={card[0]['Clan']} />
       </tr>
     );
   });
@@ -377,28 +348,48 @@ function CryptDeckBody(props) {
   return <tbody>{cards}</tbody>;
 }
 
+function DeckLibraryTypeHeader(props) {
+  const typeicons = {
+    Action: action,
+    'Action Modifier': actionmodifier,
+    Ally: ally,
+    Combat: combat,
+    Conviction: conviction,
+    Equipment: equipment,
+    Event: event,
+    Master: master,
+    'Political Action': politicalaction,
+    Power: power,
+    Reaction: reaction,
+    Reflex: reflex,
+    Retainer: retainer,
+  };
+  const imgClass='type-image-results';
+  const cardtypes = props.cardtype.split('/');
+  const cardtype_images = cardtypes.map((cardtype, index) => {
+    const imgSrc=typeicons[cardtype];
+    return (
+      <img key={index} className={imgClass} src={imgSrc} />
+    )
+  });
 
-export function CryptDeckResults(props) {
+  return(
+    <div>
+      {cardtype_images} {' '} {props.cardtype} [{props.total}]
+    </div>
+  );
+}
+
+function DeckLibraryResults(props) {
   return (
     <div>
-      Crypt [{props.total}]
+      <DeckLibraryTypeHeader cardtype={props.cardtype} total={props.total}/>
       <table width="100%" className="result-table">
-        <CryptDeckHeader />
-        <CryptDeckBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
+        <DeckLibraryHeader total={props.total} cardtype={props.cardtype}/>
+        <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
     </div>
   );
 }
 
-function CryptResults(props) {
-  return (
-    <div>
-      <table width="100%" className="result-table">
-        <CryptResultHeader />
-        <CryptResultBody resultCards={props.cards} />
-      </table>
-    </div>
-  );
-}
-
-export default CryptResults;
+export default DeckLibraryResults;

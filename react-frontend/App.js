@@ -6,7 +6,7 @@ import './assets/css/style.css';
 import Navigation from './pages/Navigation.jsx';
 import Account from './pages/Account.jsx';
 import About from './pages/About.jsx';
-import Decks from './pages/Decks.jsx';
+import Deck from './pages/Deck.jsx';
 import Crypt from './pages/Crypt.jsx';
 import Library from './pages/Library.jsx';
 
@@ -51,7 +51,7 @@ class App extends React.Component {
             <Route path="/" exact component={() => <About />} />
             <Route path="/account" exact component={() => <Account username={this.state.username} updateUsername={updateUsername} whoAmI={whoAmI} />} />
             <Route path="/about" exact component={() => <About />} />
-            <Route path="/decks" exact component={() => <Decks />} />
+            <Route path="/deck" exact component={() => <Deck />} />
             <Route path="/crypt" exact component={() => <Crypt />} />
             <Route path="/library" exact component={() => <Library />} />
           </Switch>

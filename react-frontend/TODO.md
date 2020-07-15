@@ -3,7 +3,7 @@
 * Add sort options for results
 * Card preview
 ## MINOR FEATURE
-* Icon for Clear Results button
+* Update button icons
 ## MAJOR FIX
 * Virtues search
 ## MINOR FIX
@@ -11,7 +11,10 @@
 
 # LIBRARY
 ## MAJOR FEATURE
+* Add sort options for results
+* Card preview
 ## MINOR FEATURE
+* Update button icons
 ## MAJOR FIX
 ## MINOR FIX
 
@@ -30,6 +33,6 @@
 
 # GENERAL
 * EPIC NAME!!1
-* Add redis cache?
 * Add robots.txt
+* Add redis cache?
 * Add logo
