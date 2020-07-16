@@ -69,6 +69,6 @@ with open("vtescrypt.csv", "r",
 
         cards.append(card)
 
-    json.dump(cards, f_json, separators=(',', ':'))
+    # json.dump(cards, f_json, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
-    # json.dump(cards, f_json, indent=4, separators=(',', ':'))
+    json.dump(cards, f_json, indent=4, separators=(',', ':'))

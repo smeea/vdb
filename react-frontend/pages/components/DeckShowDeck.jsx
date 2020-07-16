@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CryptDeckResults } from './CryptResults.jsx';
+import DeckCryptResults from './DeckCryptResults.jsx';
 import DeckLibraryResults from './DeckLibraryResults.jsx';
 
 function DeckNewCard(props) {
@@ -84,7 +84,7 @@ function DeckShowDeck(props) {
       <div>
         Deck Name: {deck.name}
         <DeckNewCard deckCardAdd={props.deckCardAdd} deckid={deck.deckid} />
-        <CryptDeckResults total={crypt_total} deckCardChange={props.deckCardChange} deckid={deck.deckid} cards={crypt} />
+        <DeckCryptResults total={crypt_total} deckCardChange={props.deckCardChange} deckid={deck.deckid} cards={crypt} />
         <br />
         {LibraryDeck}
       </div>
