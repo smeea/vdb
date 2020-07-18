@@ -8,7 +8,6 @@ class Crypt extends React.Component {
     this.state = {
       cards: [],
     };
-
   }
 
   render() {
@@ -26,7 +25,7 @@ class Crypt extends React.Component {
             <CryptResults cards={this.state.cards}/>
           </div>
 
-          <div className="col-xs-12 col-lg-3 col-xl-3 right-col px-1 px-xl-2">
+          <div className="col-md-12 col-lg-3 col-xl-3 right-col px-1 px-xl-2">
             <CryptForm setResults={setResults} />
           </div>
         </div>

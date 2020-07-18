@@ -1,8 +1,8 @@
 import React from "react";
-import DeckSelectDeck from './components/DeckSelectDeck.jsx';
-import DeckShowDeck from './components/DeckShowDeck.jsx';
 import DeckNewDeck from './components/DeckNewDeck.jsx';
+import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
+import DeckShowDeck from './components/DeckShowDeck.jsx';
 
 class Deck extends React.Component {
   constructor(props) {
