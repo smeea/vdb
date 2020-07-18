@@ -428,7 +428,7 @@ function DeckLibraryByTypeTable(props) {
   return (
     <div>
       <DeckLibraryTypeHeader cardtype={props.cardtype} total={props.total}/>
-      <table className='library-result-table' border='1' width='100%'>
+      <table className='library-result-table' width='100%'>
         <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
     </div>

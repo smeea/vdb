@@ -239,7 +239,7 @@ function DeckCryptDisciplines(props) {
 
   return (
     <td width='37%'>
-      <table width='100%' border='1'>
+      <table width='100%'>
         <tbody>
           <tr>
             {discipline_rows}
@@ -253,7 +253,7 @@ function DeckCryptDisciplines(props) {
 
 function DeckCryptName(props) {
   return (
-    <td className='name' width='31%'>
+    <td className='name' width='28%'>
       <a href='#'> {props.value} </a>
     </td>
   );
@@ -312,7 +312,7 @@ function DeckCryptClan(props) {
   const imgSrc=clanicons[props.value];
 
   return (
-    <td width='12%'>
+    <td width='8%'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
@@ -399,7 +399,7 @@ function DeckCryptResults(props) {
   return (
     <div>
       <b>Crypt [{crypt_total}]:</b>
-      <table border='1' width="100%" className="crypt-result-table">
+      <table width="100%" className="crypt-result-table">
         <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
     </div>
