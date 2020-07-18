@@ -143,22 +143,6 @@ import poolx from './../../assets/images/misc/poolx.png';
 
 import burn from './../../assets/images/misc/burn.gif';
 
-
-function DeckLibraryHeader(props) {
-  return (
-    <thead>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-  );
-}
-
 function DeckLibraryQuantity(props) {
   const deckCardChange = props.deckCardChange;
   const deckid = props.deckid;
@@ -293,7 +277,7 @@ function DeckLibraryDiscipline(props) {
   }
 
   return (
-    <td width='19%'>
+    <td className='disciplines' width='19%'>
       {disciplines_images}
     </td>
   );
@@ -301,7 +285,7 @@ function DeckLibraryDiscipline(props) {
 
 function DeckLibraryName(props) {
   return (
-    <td width='25%'>
+    <td className='name' width='25%'>
       {props.value}
     </td>
   );
@@ -440,14 +424,45 @@ function DeckLibraryBody(props) {
   return <tbody>{cards}</tbody>;
 }
 
-function DeckLibraryResults(props) {
+function DeckLibraryByTypeTable(props) {
   return (
     <div>
       <DeckLibraryTypeHeader cardtype={props.cardtype} total={props.total}/>
-      <table width="100%" className="result-table">
-        <DeckLibraryHeader total={props.total} cardtype={props.cardtype}/>
+      <table className='library-result-table' border='1' width='100%'>
         <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
+    </div>
+  );
+}
+
+function DeckLibraryResults(props) {
+
+  const library = {};
+  let library_total = 0;
+  for (const card in props.cards) {
+    library_total += props.cards[card].q;
+    const cardtype = props.cards[card].c['Type'];
+    library[cardtype] = [];
+    library[cardtype].push([props.cards[card].c, props.cards[card].q]);
+  }
+
+  const LibraryDeck = Object.keys(library).map((cardtype, index) => {
+    if (library[cardtype].length > 0) {
+      let total = 0;
+      for (const card of library[cardtype]) {
+        total += card[1];
+      }
+
+      return (
+        <DeckLibraryByTypeTable key={index} deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library[cardtype]} cardtype={cardtype} total={total} />
+      );
+    }
+  });
+
+  return (
+    <div>
+      <b>Library [{library_total}]:</b>
+      {LibraryDeck}
     </div>
   );
 }

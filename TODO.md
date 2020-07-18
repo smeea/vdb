@@ -18,7 +18,6 @@
 ## MAJOR FIX
 ## MINOR FIX
 
-
 # DECK
 ## MAJOR FEATURE
 ## MINOR FEATURE
@@ -32,7 +31,7 @@
 ## MINOR FIX
 
 # GENERAL
-* EPIC NAME!!1
+* New name
+* New logo
 * Add robots.txt
 * Add redis cache?
-* Add logo

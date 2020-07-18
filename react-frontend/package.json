@@ -24,7 +24,8 @@
     "pages": "0.0.16",
     "react-bootstrap": "^1.0.1",
     "react-router-dom": "^5.2.0",
-    "static": "^2.0.0"
+    "static": "^2.0.0",
+    "stylus": "^0.54.8"
   },
   "keywords": [],
   "description": ""

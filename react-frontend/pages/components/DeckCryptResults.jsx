@@ -141,7 +141,7 @@ function DeckCryptCapacity(props) {
   const imgSrc=capicons[props.value];
 
   return (
-    <td width='6%'>
+    <td width='5%'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
@@ -179,38 +179,82 @@ function DeckCryptDisciplines(props) {
     Visceratika: [visceratika, visceratikasup],
   };
 
+  let discipline_rows;
+  let empty_rows = [];
+  const max_rows = 8;
+  let counter = 0;
+  const width = 100 / max_rows + '%';
 
-  const icons = Object.keys(props.value).map((d, index) => {
-    let imgSrc = '';
-    let imgClass = '';
-    if (props.value[d] == 1) {
-      imgSrc = disciplinesicons[d][0];
-      imgClass = 'discipline-base-image-results';
-    } else if (props.value[d] == 2) {
-      imgSrc = disciplinesicons[d][1];
-      imgClass = 'discipline-superior-image-results';
-    };
+  if (props.disciplines_set.length <= max_rows) {
+    discipline_rows = props.disciplines_set.map((d, index) => {
+      counter += 1;
+      let imgSrc;
+      let imgClass;
+      if (props.value[d] === undefined) {
+        return (
+          <td width={width} key={index}>
+          </td>
+        );
+      } else {
+        if (props.value[d] == 1) {
+          imgSrc = disciplinesicons[d][0];
+          imgClass = 'discipline-base-image-results';
+        } else if (props.value[d] == 2) {
+          imgSrc = disciplinesicons[d][1];
+          imgClass = 'discipline-superior-image-results';
+        }
+        return (
+          <td width={width} key={index}>
+            <img className={imgClass} src={imgSrc} />
+          </td>
+        );
+      }
+    });
 
-    return (
-      <div key={index}>
-        <img className={imgClass} src={imgSrc} />
-      </div>
+  } else {
+    discipline_rows = Object.keys(props.value).map((d, index) => {
+      counter += 1;
+      let imgSrc;
+      let imgClass;
+      if (props.value[d] == 1) {
+        imgSrc = disciplinesicons[d][0];
+        imgClass = 'discipline-base-image-results';
+      } else if (props.value[d] == 2) {
+        imgSrc = disciplinesicons[d][1];
+        imgClass = 'discipline-superior-image-results';
+      }
+      return (
+        <td width={width} key={index}>
+          <img className={imgClass} src={imgSrc} />
+        </td>
+      );
+    });
+  }
+  while (counter < max_rows) {
+    counter += 1;
+    empty_rows.push(
+      <td width={width} key={counter}></td>
     );
-  });
+  }
 
   return (
     <td width='37%'>
-      <div className='crypt-result-disciplines d-flex'>
-        {icons}
-      </div>
+      <table width='100%' border='1'>
+        <tbody>
+          <tr>
+            {discipline_rows}
+            {empty_rows}
+          </tr>
+        </tbody>
+      </table>
     </td>
   );
 }
 
 function DeckCryptName(props) {
   return (
-    <td width='41%'>
-      {props.value}
+    <td className='name' width='31%'>
+      <a href='#'> {props.value} </a>
     </td>
   );
 }
@@ -268,7 +312,7 @@ function DeckCryptClan(props) {
   const imgSrc=clanicons[props.value];
 
   return (
-    <td width='10%'>
+    <td width='12%'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
@@ -285,28 +329,14 @@ function DeckCryptGroup(props) {
   );
 }
 
-function DeckCryptHeader(props) {
-  return (
-    <thead>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-  );
-}
-
 function DeckCryptQuantity(props) {
   const deckCardChange = props.deckCardChange;
   const deckid = props.deckid;
   const cardid = props.cardid;
   const q = props.q;
   return (
-    <td width='18%'>
+    <td className='quantity' width='16%'>
+      <div>
       <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q + 1)}>
         +
       </button>
@@ -314,13 +344,32 @@ function DeckCryptQuantity(props) {
       <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q - 1)}>
         -
       </button>
+    </div>
     </td>
   )
 }
 
 function DeckCryptBody(props) {
   let resultTrClass='crypt-result-even';
-  const cards = props.cards.map((card, index) => {
+  let d_set = new Set();
+  for (const card of Object.keys(props.cards)) {
+    for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
+      d_set.add(d);
+    };
+  };
+  const disciplines_set = [...d_set].sort();
+
+  const SortByQuantity = (a, b) => {
+    if (a.q > b.q) {
+      return -1;
+    } else {
+      return 1;
+    }
+  };
+
+  const sorted_cards = Object.values(props.cards).sort(SortByQuantity);
+
+  const cards = sorted_cards.map((card, index) => {
     if (resultTrClass == 'crypt-result-even') {
       resultTrClass = 'crypt-result-odd';
     } else {
@@ -328,12 +377,12 @@ function DeckCryptBody(props) {
     }
     return (
       <tr className={resultTrClass} key={index}>
-        <DeckCryptQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-        <DeckCryptCapacity value={card[0]['Capacity']} />
-        <DeckCryptDisciplines value={card[0]['Disciplines']} />
-        <DeckCryptName value={card[0]['Name']} />
-        <DeckCryptClan value={card[0]['Clan']} />
-        <DeckCryptGroup value={card[0]['Group']} />
+        <DeckCryptQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+        <DeckCryptCapacity value={card.c['Capacity']} />
+        <DeckCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
+        <DeckCryptName value={card.c['Name']} />
+        <DeckCryptClan value={card.c['Clan']} />
+        <DeckCryptGroup value={card.c['Group']} />
       </tr>
     );
   });
@@ -341,11 +390,16 @@ function DeckCryptBody(props) {
 }
 
 function DeckCryptResults(props) {
+
+  let crypt_total = 0;
+  for (const card in props.cards) {
+    crypt_total += props.cards[card].q;
+  }
+
   return (
     <div>
-      Crypt [{props.total}]
-      <table width="100%" className="result-table">
-        <DeckCryptHeader />
+      <b>Crypt [{crypt_total}]:</b>
+      <table border='1' width="100%" className="crypt-result-table">
         <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
     </div>

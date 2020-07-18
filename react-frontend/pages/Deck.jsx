@@ -82,15 +82,16 @@ class Deck extends React.Component {
     return (
       <div className="container main-container py-xl-3 px-0 px-xl-2">
         <div className="row mx-0">
-          <div className="col-xs-12 col-xl-1 left-col px-0 px-xl-2">
+          <div className="col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2">
           </div>
-          <div className="col-xs-12 col-xl-7 center-col px-0 px-xl-2">
+          <div className="col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2">
             <DeckNewDeck />
             <DeckSelectDeck handleActiveDeckSelect={this.handleActiveDeckSelect} decks={this.state.decks} value={this.state.activedeck} />
             <DeckRemoveDeck activeDeck={this.state.activedeck} />
+            <br />
             <DeckShowDeck deckCardAdd={this.deckCardAdd} deckCardChange={this.deckCardChange} deck={this.state.decks[this.state.activedeck]} />
           </div>
-          <div className="col-xs-12 col-xl-4 right-col px-0 px-xl-2">
+          <div className="col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2">
           </div>
         </div>
       </div>
