@@ -231,8 +231,8 @@ function DeckLibraryDiscipline(props) {
   const imgClass='discipline-image-results';
   let disciplines_images;
 
-  if (props.disciplines.indexOf('&') != -1) {
-    const disciplines = props.disciplines.split(' & ');
+  if (props.value.indexOf('&') != -1) {
+    const disciplines = props.value.split(' & ');
     let items = disciplines.length;
     disciplines_images = disciplines.map((discipline, index) => {
       const imgSrc = disciplineicons[discipline];
@@ -251,8 +251,8 @@ function DeckLibraryDiscipline(props) {
         );
       }
     });
-  } else if (props.disciplines.indexOf('/') != -1) {
-    const disciplines = props.disciplines.split('/');
+  } else if (props.value.indexOf('/') != -1) {
+    const disciplines = props.value.split('/');
     let items = disciplines.length;
     disciplines_images = disciplines.map((discipline, index) => {
       const imgSrc = disciplineicons[discipline];
@@ -272,7 +272,7 @@ function DeckLibraryDiscipline(props) {
       }
     });
   } else {
-    const disciplines = props.disciplines;
+    const disciplines = props.value;
     const imgSrc = disciplineicons[disciplines];
     disciplines_images =
       <img className={imgClass} src={imgSrc} />;
@@ -358,12 +358,39 @@ function DeckLibraryClan(props) {
     Redeemer: redeemer,
     Visionary: visionary,
   };
+
   const imgClass='clan-image-results';
-  const imgSrc=clanicons[props.value];
+  let clan_images;
+
+  if (props.value.indexOf('/') != -1) {
+    const clans = props.value.split('/');
+    let items = clans.length;
+    clan_images = clans.map((clan, index) => {
+      const imgSrc = clanicons[clan];
+      if (items > 1) {
+        items -= 1;
+        return (
+          <span key={index}>
+            <img className={imgClass} src={imgSrc} />{' / '}
+          </span>
+        );
+      } else {
+        return (
+          <span key={index}>
+            <img className={imgClass} src={imgSrc} />
+          </span>
+        );
+      }
+    });
+  } else {
+    const imgSrc = clanicons[props.value];
+    clan_images =
+      <img className={imgClass} src={imgSrc} />;
+  }
 
   return (
     <td className='clan'>
-      <img className={imgClass} src={imgSrc} />
+      {clan_images}
     </td>
   );
 }
@@ -425,7 +452,7 @@ function DeckLibraryBody(props) {
           <DeckLibraryQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
           <DeckLibraryName value={card[0]['Name']} />
           <DeckLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
-          <DeckLibraryDiscipline disciplines={card[0]['Discipline']} />
+          <DeckLibraryDiscipline value={card[0]['Discipline']} />
           <DeckLibraryBurn value={card[0]['Burn Option']} />
         </tr>
       )

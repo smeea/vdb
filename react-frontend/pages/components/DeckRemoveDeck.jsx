@@ -15,14 +15,12 @@ function DeckRemoveDeck(props) {
         },
         body: JSON.stringify({deckid: deck}),
       };
-
       fetch(url, options);
       console.log('Remove deck: ', deck);
 
     } else {
       console.log('Error: no deck selected');
     };
-
   };
 
   return (
