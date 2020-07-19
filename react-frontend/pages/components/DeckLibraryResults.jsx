@@ -439,6 +439,30 @@ function DeckLibraryResults(props) {
 
   const library = {};
   let library_total = 0;
+  const LibraryDeck = [];
+  const cardtype_sorted = [
+    'Master',
+    'Conviction',
+    'Power',
+    'Action',
+    'Action/Reaction',
+    'Action/Combat',
+    'Political Action',
+    'Ally',
+    'Equipment',
+    'Retainer',
+    'Action Modifier',
+    'Action Modifier/Combat',
+    'Action Modifier/Reaction',
+    'Reaction',
+    'Reaction/Action Modifier',
+    'Reaction/Combat',
+    'Combat',
+    'Combat/Action Modifier',
+    'Combat/Reaction',
+    'Event',
+  ];
+
   for (const card in props.cards) {
     library_total += props.cards[card].q;
     const cardtype = props.cards[card].c['Type'];
@@ -446,18 +470,20 @@ function DeckLibraryResults(props) {
     library[cardtype].push([props.cards[card].c, props.cards[card].q]);
   }
 
-  const LibraryDeck = Object.keys(library).map((cardtype, index) => {
-    if (library[cardtype].length > 0) {
+  for (const cardtype of cardtype_sorted) {
+    if (library[cardtype] !== undefined) {
       let total = 0;
       for (const card of library[cardtype]) {
         total += card[1];
       }
-
-      return (
-        <DeckLibraryByTypeTable key={index} deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library[cardtype]} cardtype={cardtype} total={total} />
+      LibraryDeck.push(
+        <div key={cardtype}>
+          <DeckLibraryByTypeTable deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library[cardtype]} cardtype={cardtype} total={total} />
+          <br />
+        </div>
       );
     }
-  });
+  }
 
   return (
     <div>
