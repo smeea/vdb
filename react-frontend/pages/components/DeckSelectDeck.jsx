@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import DeckRemoveDeck from './DeckRemoveDeck.jsx';
 
 function DeckSelectDeck(props) {
   const handleActiveDeckSelect = props.handleActiveDeckSelect;
@@ -11,11 +12,12 @@ function DeckSelectDeck(props) {
   });
 
   return (
-    <div>
+    <div className='input-group'>
       <select defaultValue="" className="custom-select" value={activedeck} onChange={handleActiveDeckSelect} >
         <option value="" disabled hidden>Select deck</option>
         {decksform}
       </select>
+      <DeckRemoveDeck activedeck={props.activedeck} />
     </div>
   );
 };

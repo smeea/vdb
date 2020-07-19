@@ -1,7 +1,6 @@
 import React from "react";
 import DeckNewDeck from './components/DeckNewDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
-import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
 
 class Deck extends React.Component {
@@ -87,7 +86,6 @@ class Deck extends React.Component {
           <div className="col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2">
             <DeckNewDeck />
             <DeckSelectDeck handleActiveDeckSelect={this.handleActiveDeckSelect} decks={this.state.decks} value={this.state.activedeck} />
-            <DeckRemoveDeck activeDeck={this.state.activedeck} />
             <br />
             <DeckShowDeck deckCardAdd={this.deckCardAdd} deckCardChange={this.deckCardChange} deck={this.state.decks[this.state.activedeck]} />
           </div>

@@ -231,7 +231,6 @@ function LibraryFormBloodCost(props) {
       </div>
       <div className="form-group col-9">
         <div className="input-group">
-
           <select className="custom-select" value={props.moreless} onChange={props.onMorelessChange}>
             {bloodmorelessforms}
           </select>
@@ -659,8 +658,6 @@ class LibraryForm extends React.Component {
       const url = 'http://127.0.0.1:5001/api/search/library';
 
 
-      // input is request to REST API
-      // remove all false / zero / 'ANY' form entries from request
       let input = JSON.parse(JSON.stringify(this.state));
       Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
       Object.keys(input).forEach(k => (input[k] == 'ANY' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
