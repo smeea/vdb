@@ -1,46 +1,78 @@
-table, th, td
-  border: 1px solid black
+table, td.quantity, td.capacity, td.name, td.clan, td.group, td.disciplines, td.cost, td.burn
+  border: 1px solid lightgray
+
+table, th.disciplines
+  border: none
 
 .result-header
   background: #d0d0ea
 
-.crypt-result-text,
-.library-result-text
-  font-size: small
+// .crypt-result-text,
+// .library-result-text
+//   font-size: small
+
+.crypt-result-table
+  width: 100%
+.crypt-result-table .quantity
+  width: 14%
+.crypt-result-table .capacity
+  width: 5%
+.crypt-result-table .disciplines
+  width: 37%
+.crypt-result-table .name
+  width: 32%
+.crypt-result-table .clan
+  width: 8%
+.crypt-result-table .group
+  width: 4%
 
 .crypt-result-table td
   text-align: center
 .crypt-result-table td.name
   text-align: left
  
+.library-result-table
+  width: 70%
+.library-result-table .quantity
+  width: 20%
+.library-result-table .name
+  width: 45%
+.library-result-table .cost
+  width: 5%
+.library-result-table .clan,
+.library-result-table .disciplines
+  width: 23%
+.library-result-table .burn
+  width: 7%
+
 .library-result-table td
   text-align: center
-.library-result-table td.name, td.disciplines
+.library-result-table td.name
   text-align: left
 
+.crypt-result-table .quantity div
+  align: justify
+
+.clan-image-results
+  height: 27px
 .discipline-image-results,
 .discipline-base-image-results,
-.burn-image-results,
-.clan-image-results,
+.burn-image-results
+  height: 25px
 .type-image-results
-  height: 28px
+  height: 27px
 .discipline-superior-image-results
-  height: 32px
-
+  height: 30px
 .cost-image-results
   height: 36px
-
 .capacity-image-results
-  height: 28px
-
+  height: 26px
 .discipline-base-image-forms
   width: 34px
   height: 34px
-
 .discipline-superior-image-forms
   width: 40px
   height: 40px
-
 .virtue-image
   margin-left: 4px
   margin-right: 5px
@@ -50,27 +82,22 @@ table, th, td
 .virtue-container
   width: 42px
   height: 42px
-
 .discipline-container:hover,
 .virtue-container:hover
   cursor: pointer
-
 .discipline-container.state0 .discipline-base-image-forms
   display: flex
   opacity: 0.35
 .discipline-container.state0 .discipline-superior-image-forms
   display: none
-
 .discipline-container.state1 .discipline-base-image-forms
   display: flex
 .discipline-container.state1 .discipline-superior-image-forms
   display: none
-
 .discipline-container.state2 .discipline-base-image-forms
   display: none
 .discipline-container.state2 .discipline-superior-image-forms
   display: flex
-
 .virtue-container.state0 .virtue-image
   display: flex
   opacity: 0.35

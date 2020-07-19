@@ -141,7 +141,7 @@ function DeckCryptCapacity(props) {
   const imgSrc=capicons[props.value];
 
   return (
-    <td width='5%'>
+    <td className='capacity'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
@@ -238,7 +238,7 @@ function DeckCryptDisciplines(props) {
   }
 
   return (
-    <td width='40%'>
+    <td className='disciplines'>
       <table width='100%'>
         <tbody>
           <tr>
@@ -253,8 +253,8 @@ function DeckCryptDisciplines(props) {
 
 function DeckCryptName(props) {
   return (
-    <td className='name' width='29%'>
-      <a href='#'> {props.value} </a>
+    <td className='name'>
+      {props.value}
     </td>
   );
 }
@@ -312,7 +312,7 @@ function DeckCryptClan(props) {
   const imgSrc=clanicons[props.value];
 
   return (
-    <td width='8%'>
+    <td className='clan'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
@@ -320,7 +320,7 @@ function DeckCryptClan(props) {
 
 function DeckCryptGroup(props) {
   return (
-    <td width='4%'>
+    <td className='group'>
       <b>
         <font color='a0a0a0'>G</font>
         {props.value}
@@ -335,8 +335,8 @@ function DeckCryptQuantity(props) {
   const cardid = props.cardid;
   const q = props.q;
   return (
-    <td className='quantity' width='14%'>
-      <div>
+    <td className='quantity'>
+      <div className='d-flex align-items-center justify-content-between'>
       <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q + 1)}>
         +
       </button>
@@ -399,7 +399,7 @@ function DeckCryptResults(props) {
   return (
     <div>
       <b>Crypt [{crypt_total}]:</b>
-      <table width="100%" className="crypt-result-table">
+      <table className="crypt-result-table">
         <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
     </div>

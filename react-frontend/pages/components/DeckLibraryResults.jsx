@@ -149,14 +149,16 @@ function DeckLibraryQuantity(props) {
   const cardid = props.cardid;
   const q = props.q;
   return (
-    <td width='16%'>
-      <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q + 1)}>
-        +
-      </button>
-      {' '}{q}{' '}
-      <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q - 1)}>
-        -
-      </button>
+    <td className='quantity'>
+      <div className='d-flex align-items-center justify-content-between'>
+        <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q + 1)}>
+          +
+        </button>
+        {' '}{q}{' '}
+        <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q - 1)}>
+          -
+        </button>
+      </div>
     </td>
   )
 }
@@ -180,7 +182,7 @@ function DeckLibraryCost(props) {
   }
 
   return (
-    <td width='5%'>
+    <td className='cost'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
@@ -277,7 +279,7 @@ function DeckLibraryDiscipline(props) {
   }
 
   return (
-    <td className='disciplines' width='19%'>
+    <td className='disciplines'>
       {disciplines_images}
     </td>
   );
@@ -285,7 +287,7 @@ function DeckLibraryDiscipline(props) {
 
 function DeckLibraryName(props) {
   return (
-    <td className='name' width='25%'>
+    <td className='name'>
       {props.value}
     </td>
   );
@@ -297,12 +299,12 @@ function DeckLibraryBurn(props) {
   const imgSrc=burn;
   if (props.value) {
     return (
-      <td width='5%'>
+      <td className='burn'>
         <img className={imgClass} src={imgSrc} />
       </td>
     );
   } else {
-    return <td width='5%'></td>;
+    return <td className='burn'></td>;
   }
 }
 
@@ -360,29 +362,27 @@ function DeckLibraryClan(props) {
   const imgSrc=clanicons[props.value];
 
   return (
-    <td width='10%'>
-      <div align="center">
+    <td className='clan'>
       <img className={imgClass} src={imgSrc} />
-    </div>
     </td>
   );
 }
 
 function DeckLibraryTypeHeader(props) {
   const typeicons = {
-    Action: action,
+    'Action': action,
     'Action Modifier': actionmodifier,
-    Ally: ally,
-    Combat: combat,
-    Conviction: conviction,
-    Equipment: equipment,
-    Event: event,
-    Master: master,
+    'Ally': ally,
+    'Combat': combat,
+    'Conviction': conviction,
+    'Equipment': equipment,
+    'Event': event,
+    'Master': master,
     'Political Action': politicalaction,
-    Power: power,
-    Reaction: reaction,
-    Reflex: reflex,
-    Retainer: retainer,
+    'Power': power,
+    'Reaction': reaction,
+    'Reflex': reflex,
+    'Retainer': retainer,
   };
   const imgClass='type-image-results';
   const cardtypes = props.cardtype.split('/');
@@ -409,16 +409,27 @@ function DeckLibraryBody(props) {
     } else {
       resultTrClass = 'library-result-even';
     }
-    return (
-      <tr className={resultTrClass} key={index}>
-        <DeckLibraryQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-        <DeckLibraryName value={card[0]['Name']} />
-        <DeckLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
-        <DeckLibraryDiscipline disciplines={card[0]['Discipline']} />
-        <DeckLibraryBurn value={card[0]['Burn Option']} />
-        <DeckLibraryClan value={card[0]['Clan']} />
-      </tr>
-    );
+    if (card[0]['Clan']) {
+      return (
+        <tr className={resultTrClass} key={index}>
+          <DeckLibraryQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+          <DeckLibraryName value={card[0]['Name']} />
+          <DeckLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
+          <DeckLibraryClan value={card[0]['Clan']} />
+          <DeckLibraryBurn value={card[0]['Burn Option']} />
+        </tr>
+      );
+    } else {
+      return (
+        <tr className={resultTrClass} key={index}>
+          <DeckLibraryQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+          <DeckLibraryName value={card[0]['Name']} />
+          <DeckLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
+          <DeckLibraryDiscipline disciplines={card[0]['Discipline']} />
+          <DeckLibraryBurn value={card[0]['Burn Option']} />
+        </tr>
+      )
+    }
   });
 
   return <tbody>{cards}</tbody>;
@@ -428,7 +439,7 @@ function DeckLibraryByTypeTable(props) {
   return (
     <div>
       <DeckLibraryTypeHeader cardtype={props.cardtype} total={props.total}/>
-      <table className='library-result-table' width='100%'>
+      <table className='library-result-table'>
         <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
     </div>

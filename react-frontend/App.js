@@ -38,7 +38,6 @@ class App extends React.Component {
       fetchPromise
         .then(result => result.json())
         .then(username => {
-          console.log('logged as: ', username.username);
           updateUsername(username.username);
         });
 

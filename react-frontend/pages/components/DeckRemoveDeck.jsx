@@ -17,7 +17,6 @@ function DeckRemoveDeck(props) {
       };
 
       fetch(url, options);
-      console.log(options.body);
       console.log('Remove deck: ', deck);
 
     } else {
