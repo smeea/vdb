@@ -50,7 +50,6 @@ function DeckNewCard(props) {
 function DeckShowDeck(props) {
 
   if (props.deck) {
-    // TODO this code to Deck*Results
     const deck = props.deck;
     const crypt = props.deck.crypt;
     const library = props.deck.library;

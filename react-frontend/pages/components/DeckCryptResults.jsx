@@ -238,7 +238,7 @@ function DeckCryptDisciplines(props) {
   }
 
   return (
-    <td width='37%'>
+    <td width='40%'>
       <table width='100%'>
         <tbody>
           <tr>
@@ -253,7 +253,7 @@ function DeckCryptDisciplines(props) {
 
 function DeckCryptName(props) {
   return (
-    <td className='name' width='28%'>
+    <td className='name' width='29%'>
       <a href='#'> {props.value} </a>
     </td>
   );
@@ -320,7 +320,7 @@ function DeckCryptClan(props) {
 
 function DeckCryptGroup(props) {
   return (
-    <td width='6%'>
+    <td width='4%'>
       <b>
         <font color='a0a0a0'>G</font>
         {props.value}
@@ -335,7 +335,7 @@ function DeckCryptQuantity(props) {
   const cardid = props.cardid;
   const q = props.q;
   return (
-    <td className='quantity' width='16%'>
+    <td className='quantity' width='14%'>
       <div>
       <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q + 1)}>
         +
