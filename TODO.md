@@ -8,6 +8,7 @@
 * Virtues search
 ## MINOR FIX
 * Unify handleChanges as in AccountLogin
+* Move td width to css
 
 # LIBRARY
 ## MAJOR FEATURE
@@ -18,6 +19,7 @@
 ## MAJOR FIX
 ## MINOR FIX
 * Unify handleChanges as in AccountLogin
+* Move td width to css
 
 # DECK
 ## MAJOR FEATURE

@@ -504,7 +504,9 @@ function DeckLibraryResults(props) {
   for (const card in props.cards) {
     library_total += props.cards[card].q;
     const cardtype = props.cards[card].c['Type'];
-    library[cardtype] = [];
+    if (library[cardtype] === undefined) {
+      library[cardtype] = [];
+    }
     library[cardtype].push([props.cards[card].c, props.cards[card].q]);
   }
 
