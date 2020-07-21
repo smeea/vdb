@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function DeckRemoveDeck(props) {
-  const deck = props.activeDeck;
+  const deck = props.activedeck;
   const removeDeck = event => {
 
     if (deck) {
