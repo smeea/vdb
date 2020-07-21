@@ -147,7 +147,13 @@ function DeckLibraryQuantity(props) {
   const deckCardChange = props.deckCardChange;
   const deckid = props.deckid;
   const cardid = props.cardid;
-  const q = props.q;
+  let q = 0;
+  if (props.q == 0) {
+    q = null;
+  } else {
+    q = props.q;
+  }
+
   return (
     <td className='quantity'>
       <div className='d-flex align-items-center justify-content-between'>
@@ -476,8 +482,16 @@ function DeckLibraryByTypeTable(props) {
 function DeckLibraryResults(props) {
 
   const library = {};
-  let library_total = 0;
-  const LibraryDeck = [];
+  const library_side = {};
+
+  Object.keys(props.cards).map((card, index) => {
+    if (props.cards[card].q > 0) {
+      library[card] = props.cards[card];
+    } else {
+      library_side[card] = props.cards[card];
+    }
+  });
+
   const cardtype_sorted = [
     'Master',
     'Conviction',
@@ -501,13 +515,25 @@ function DeckLibraryResults(props) {
     'Event',
   ];
 
-  for (const card in props.cards) {
-    library_total += props.cards[card].q;
-    const cardtype = props.cards[card].c['Type'];
+  const LibraryDeck = [];
+  const LibrarySideDeck = [];
+  let library_total = 0;
+
+  for (const card in library) {
+    library_total += library[card].q;
+    const cardtype = library[card].c['Type'];
     if (library[cardtype] === undefined) {
       library[cardtype] = [];
     }
-    library[cardtype].push([props.cards[card].c, props.cards[card].q]);
+    library[cardtype].push([library[card].c, library[card].q]);
+  }
+
+  for (const card in library_side) {
+    const cardtype = library_side[card].c['Type'];
+    if (library_side[cardtype] === undefined) {
+      library_side[cardtype] = [];
+    }
+    library_side[cardtype].push([library_side[card].c, library_side[card].q]);
   }
 
   for (const cardtype of cardtype_sorted) {
@@ -523,12 +549,31 @@ function DeckLibraryResults(props) {
         </div>
       );
     }
+
+    if (library_side[cardtype] !== undefined) {
+      let total = 0;
+      for (const card of library_side[cardtype]) {
+        total += card[1];
+      }
+      LibrarySideDeck.push(
+        <div key={cardtype}>
+          <DeckLibraryByTypeTable deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library_side[cardtype]} cardtype={cardtype} total={total} />
+          <br />
+        </div>
+      );
+    }
   }
 
   return (
     <div>
-      <b>Library [{library_total}]:</b>
-      {LibraryDeck}
+      <div className='deck-library'>
+        <b>Library [{library_total}]:</b>
+        {LibraryDeck}
+      </div>
+      <div className='deck-sidelibrary'>
+        <b>Side Library:</b>
+        {LibrarySideDeck}
+      </div>
     </div>
   );
 }

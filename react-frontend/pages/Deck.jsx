@@ -27,8 +27,13 @@ class Deck extends React.Component {
       fetch(url, options)
         .then(response => response.json())
         .then(data => {
-          this.setState({decks: data});
+          if (data.error === undefined) {
+            this.setState({decks: data});
+          } else {
+            console.log('error: ', data.error)
+          }
         });
+
     };
 
     this.deckCardChange = (deckid, cardid, count) => {

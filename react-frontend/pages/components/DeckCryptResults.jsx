@@ -254,7 +254,9 @@ function DeckCryptDisciplines(props) {
 function DeckCryptName(props) {
   return (
     <td className='name'>
-      {props.value}
+      <p>
+        {props.value}
+      </p>
     </td>
   );
 }
@@ -333,7 +335,12 @@ function DeckCryptQuantity(props) {
   const deckCardChange = props.deckCardChange;
   const deckid = props.deckid;
   const cardid = props.cardid;
-  const q = props.q;
+  let q = 0;
+  if (props.q == 0) {
+    q = null;
+  } else {
+    q = props.q;
+  }
   return (
     <td className='quantity'>
       <div className='d-flex align-items-center justify-content-between'>
@@ -349,15 +356,44 @@ function DeckCryptQuantity(props) {
   )
 }
 
-function DeckCryptBody(props) {
-  let resultTrClass='crypt-result-even';
-  let d_set = new Set();
-  for (const card of Object.keys(props.cards)) {
-    for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
-      d_set.add(d);
-    };
+function DeckCryptSideBody(props) {
+  const disciplines_set = props.disciplines_set;
+
+  const SortByCapacity = (a, b) => {
+    if (a.c['Capacity'] > b.c['Capacity']) {
+      return -1;
+    } else {
+      return 1;
+    }
   };
-  const disciplines_set = [...d_set].sort();
+
+  const sorted_cards = Object.values(props.cards).sort(SortByCapacity);
+
+  let resultTrClass;
+  const cards = sorted_cards.map((card, index) => {
+
+    if (resultTrClass == 'crypt-result-odd') {
+      resultTrClass = 'crypt-result-even';
+    } else {
+      resultTrClass = 'crypt-result-odd';
+    }
+
+    return (
+      <tr className={resultTrClass} key={index}>
+        <DeckCryptQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+        <DeckCryptCapacity value={card.c['Capacity']} />
+        <DeckCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
+        <DeckCryptName value={card.c['Name']} />
+        <DeckCryptClan value={card.c['Clan']} />
+        <DeckCryptGroup value={card.c['Group']} />
+      </tr>
+    );
+  });
+  return <tbody>{cards}</tbody>;
+}
+
+function DeckCryptBody(props) {
+  const disciplines_set = props.disciplines_set;
 
   const SortByQuantity = (a, b) => {
     if (a.q > b.q) {
@@ -369,12 +405,15 @@ function DeckCryptBody(props) {
 
   const sorted_cards = Object.values(props.cards).sort(SortByQuantity);
 
+  let resultTrClass;
   const cards = sorted_cards.map((card, index) => {
-    if (resultTrClass == 'crypt-result-even') {
-      resultTrClass = 'crypt-result-odd';
-    } else {
+
+    if (resultTrClass == 'crypt-result-odd') {
       resultTrClass = 'crypt-result-even';
+    } else {
+      resultTrClass = 'crypt-result-odd';
     }
+
     return (
       <tr className={resultTrClass} key={index}>
         <DeckCryptQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
@@ -391,17 +430,44 @@ function DeckCryptBody(props) {
 
 function DeckCryptResults(props) {
 
+  let d_set = new Set();
+  for (const card of Object.keys(props.cards)) {
+    for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
+      d_set.add(d);
+    };
+  };
+  const disciplines_set = [...d_set].sort();
+
+  const crypt = {};
+  const crypt_side = {};
+  Object.keys(props.cards).map((card, index) => {
+    if (props.cards[card].q > 0) {
+      crypt[card] = props.cards[card];
+    } else {
+      crypt_side[card] = props.cards[card];
+    }
+  });
+
   let crypt_total = 0;
-  for (const card in props.cards) {
-    crypt_total += props.cards[card].q;
+  for (const card in crypt) {
+    crypt_total += crypt[card].q;
   }
 
   return (
     <div>
-      <b>Crypt [{crypt_total}]:</b>
-      <table className="crypt-result-table">
-        <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
-      </table>
+      <div className='deck-crypt'>
+        <b>Crypt [{crypt_total}]:</b>
+        <table className="crypt-result-table">
+          <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt} disciplines_set={disciplines_set} />
+        </table>
+      </div>
+      <br />
+      <div className='deck-sidecrypt'>
+        <b>Side Crypt</b>
+        <table className="crypt-result-table">
+          <DeckCryptSideBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt_side} disciplines_set={disciplines_set}/>
+        </table>
+      </div>
     </div>
   );
 }

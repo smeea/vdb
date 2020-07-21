@@ -48,8 +48,7 @@ function DeckNewCard(props) {
 
 
 function DeckShowDeck(props) {
-
-  if (props.deck) {
+  if (props.deck !== undefined) {
     const deck = props.deck;
     const crypt = props.deck.crypt;
     const library = props.deck.library;

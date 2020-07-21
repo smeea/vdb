@@ -5,6 +5,20 @@ function DeckSelectDeck(props) {
   const handleActiveDeckSelect = props.handleActiveDeckSelect;
   const decks = props.decks;
   const activedeck = props.value;
+
+  let option_default;
+  if (Object.keys(decks).length > 0) {
+    option_default =
+      <option value="" disabled hidden>
+        Select deck
+      </option>;
+  } else {
+    option_default =
+      <option value="" disabled hidden>
+        No decks available
+      </option>;
+  }
+
   const decksform = Object.keys(decks).map((i, index) => {
     return (
       <option key={index} value={i}>
@@ -16,9 +30,7 @@ function DeckSelectDeck(props) {
   return (
     <div>
       <select defaultValue="" className="custom-select" value={activedeck} onChange={handleActiveDeckSelect}>
-        <option value="" disabled hidden>
-          Select deck
-        </option>
+        {option_default}
         {decksform}
       </select>
       <DeckRemoveDeck activedeck={props.activedeck} />
