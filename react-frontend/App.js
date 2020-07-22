@@ -43,6 +43,10 @@ class App extends React.Component {
 
     };
 
+    // const MyDeck = ({match:{params:{id}}}) => (
+    //   <Deck id={id}/>
+    // );
+
     return (
       <div className="App">
         <Router>
@@ -52,6 +56,7 @@ class App extends React.Component {
             <Route path="/account" exact component={() => <Account username={this.state.username} updateUsername={updateUsername} whoAmI={whoAmI} />} />
             <Route path="/about" exact component={() => <About />} />
             <Route path="/deck" exact component={() => <Deck />} />
+            {/* <Route path="/deck/:id" exact component={MyDeck} /> */}
             <Route path="/crypt" exact component={() => <Crypt />} />
             <Route path="/library" exact component={() => <Library />} />
           </Switch>

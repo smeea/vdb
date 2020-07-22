@@ -11,9 +11,13 @@ function DeckNewCard(props) {
   });
 
   const handleChange = event => {
-    const { cardid, value } = event.target;
-    setState({cardid: value});
+    const {id, value} = event.target;
+    setState(prevState => ({
+      ...prevState,
+      [id]: value
+    }));
   };
+
 
   const clearFormButton = event => {
     setState({cardid: ''});

@@ -7,8 +7,11 @@ function DecksNewDeck(props) {
   });
 
   const handleChange = event => {
-    const { deckname, value } = event.target;
-    setState({deckname: value});
+    const {id, value} = event.target;
+    setState(prevState => ({
+      ...prevState,
+      [id]: value
+    }));
   };
 
   const clearFormButton = event => {
