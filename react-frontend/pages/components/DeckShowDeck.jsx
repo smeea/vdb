@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import DeckCryptResults from './DeckCryptResults.jsx';
 import DeckLibraryResults from './DeckLibraryResults.jsx';
+import DeckDraw from './DeckDraw.jsx';
 
 function DeckNewCard(props) {
-  const deckid = props.deckid;
-  const deckCardAdd=props.deckCardAdd;
-
   const [state, setState] = useState({
     cardid: '',
   });
@@ -25,7 +23,7 @@ function DeckNewCard(props) {
 
   const createNewCard = event => {
     if (state.cardid) {
-      deckCardAdd(deckid, state.cardid);
+      props.deckCardAdd(props.deckid, state.cardid);
 
     } else {
       console.log('Error: submit with empty forms');
@@ -53,16 +51,15 @@ function DeckNewCard(props) {
 
 function DeckShowDeck(props) {
   if (props.deck !== undefined) {
-    const deck = props.deck;
-    const crypt = props.deck.crypt;
-    const library = props.deck.library;
     return (
       <div>
-        <b>Deck Name: {deck.name}</b>
-        <DeckNewCard deckCardAdd={props.deckCardAdd} deckid={deck.deckid} />
-        <DeckCryptResults deckCardChange={props.deckCardChange} deckid={deck.deckid} cards={crypt} />
+        <b>Deck Name: {props.deck.name}</b>
+        <DeckNewCard deckCardAdd={props.deckCardAdd} deckid={props.deck.deckid} />
         <br />
-        <DeckLibraryResults deckCardChange={props.deckCardChange} deckid={deck.deckid} cards={library} />
+        <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />
+        <DeckCryptResults deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.crypt} />
+        <br />
+        <DeckLibraryResults deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.library} />
         <br />
       </div>
     );

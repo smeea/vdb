@@ -27,12 +27,13 @@
 * Card preview
 * Delete card on -1 counter
 * Sidedeck
-* Copy deck
+* Copy ('fork') deck
 * Custom text
 * Immediate effect of add card / new deck / delete 
 ## MINOR FEATURE
 * Trifle icon
 * Import all TWD decks
+* Draw simulator
 ## MAJOR FIX
 ## MINOR FIX
 

@@ -570,10 +570,12 @@ function DeckLibraryResults(props) {
         <b>Library [{library_total}]:</b>
         {LibraryDeck}
       </div>
+      { Object.keys(library_side).length > 0 &&
       <div className='deck-sidelibrary'>
         <b>Side Library:</b>
         {LibrarySideDeck}
       </div>
+    }
     </div>
   );
 }

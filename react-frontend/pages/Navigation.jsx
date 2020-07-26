@@ -41,15 +41,14 @@ function Navigation(props) {
           </Button>
         </Nav>
       </Navbar>
-    )
-  }
+    );
+  };
 
   const toggleSearchButton = () => {
     console.log('toggle search button');
-  }
+  };
 
   return (
-
     <div>
       <NavBar />
     </div>

@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
 function DecksNewDeck(props) {
-  const handleNewDeckButton = props.handleNewDeckButton;
-  const [state, setState] = useState({
-    deckname: '',
-  });
+  const [deckname, setDeckName] = useState('');
 
   const handleChange = event => {
-    const {id, value} = event.target;
-    setState(prevState => ({
-      ...prevState,
-      [id]: value
-    }));
+    const { value } = event.target;
+    setDeckName(value);
   };
 
   const clearFormButton = event => {
-    setState({deckname: ''});
+    setDeckName('');
   };
 
   const createNewDeck = event => {
-
-    if (state.deckname) {
+    if (deckname) {
       const url = 'http://127.0.0.1:5001/api/decks/create';
       const options = {
         method: 'POST',
@@ -29,7 +22,7 @@ function DecksNewDeck(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(state),
+        body: JSON.stringify({deckname: deckname}),
       };
 
       fetch(url, options);
@@ -37,7 +30,6 @@ function DecksNewDeck(props) {
     } else {
       console.log('Error: submit with empty forms');
     };
-
   };
 
   return (
@@ -46,7 +38,7 @@ function DecksNewDeck(props) {
         placeholder="New Deck Name"
         type="text"
         id="deckname"
-        value={state.deckname}
+        value={deckname}
         onChange={handleChange}/>
       <button className="btn btn-outline-secondary" type="button" onClick={createNewDeck}>
         CREATE

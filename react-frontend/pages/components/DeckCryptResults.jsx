@@ -461,13 +461,15 @@ function DeckCryptResults(props) {
           <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt} disciplines_set={disciplines_set} />
         </table>
       </div>
-      <br />
-      <div className='deck-sidecrypt'>
-        <b>Side Crypt</b>
-        <table className="crypt-result-table">
-          <DeckCryptSideBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt_side} disciplines_set={disciplines_set}/>
-        </table>
-      </div>
+      { Object.keys(crypt_side).length > 0 &&
+        <div className='deck-sidecrypt'>
+          <br />
+          <b>Side Crypt</b>
+          <table className="crypt-result-table">
+            <DeckCryptSideBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt_side} disciplines_set={disciplines_set}/>
+          </table>
+        </div>
+      }
     </div>
   );
 }

@@ -357,8 +357,8 @@ function LibraryResultBody(props) {
 function LibraryResults(props) {
   return (
     <div>
-      <table width="100%" className="result-table">
-        <LibraryResultHeader />
+      <table width="100%" className="library-result-table">
+        {/* <LibraryResultHeader /> */}
         <LibraryResultBody resultCards={props.cards} />
       </table>
     </div>

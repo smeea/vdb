@@ -155,7 +155,7 @@ function CryptResultCapacity(props) {
   const imgSrc=capicons[props.value];
 
   return (
-    <td width='6%'>
+    <td className='capacity' width='6%'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
@@ -205,25 +205,32 @@ function CryptResultDisciplines(props) {
       imgClass = 'discipline-superior-image-results';
     };
 
+    const max_rows = 8;
+    const width = 100 / max_rows + '%';
+
     return (
-      <div key={index}>
+      <td width={width} key={index}>
         <img className={imgClass} src={imgSrc} />
-      </div>
+      </td>
     );
   });
 
   return (
-    <td width='37%'>
-      <div className='crypt-result-disciplines d-flex'>
-        {icons}
-      </div>
+    <td className='disciplines' width='37%'>
+      <table width='100%'>
+        <tbody>
+          <tr>
+            {icons}
+          </tr>
+        </tbody>
+      </table>
     </td>
   );
 }
 
 function CryptResultName(props) {
   return (
-    <td width='41%'>
+    <td className='name' width='41%'>
       {props.value}
     </td>
   );
@@ -282,7 +289,7 @@ function CryptResultClan(props) {
   const imgSrc=clanicons[props.value];
 
   return (
-    <td width='10%'>
+    <td className='clan' width='10%'>
       <img className={imgClass} src={imgSrc} />
     </td>
   );
@@ -290,7 +297,7 @@ function CryptResultClan(props) {
 
 function CryptResultGroup(props) {
   return (
-    <td width='6%'>
+    <td className='group' width='6%'>
       <b>
         <font color='a0a0a0'>G</font>
         {props.value}
@@ -324,8 +331,8 @@ function CryptResultBody(props) {
 function CryptResults(props) {
   return (
     <div>
-      <table width="100%" className="result-table">
-        <CryptResultHeader />
+      <table width="100%" className='crypt-result-table'>
+        {/* <CryptResultHeader /> */}
         <CryptResultBody resultCards={props.cards} />
       </table>
     </div>
