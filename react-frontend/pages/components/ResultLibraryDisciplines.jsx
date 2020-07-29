@@ -64,7 +64,7 @@ import redemption from './../../assets/images/disciplines/redemption.gif';
 import vengeance from './../../assets/images/disciplines/vengeance.gif';
 import vision from './../../assets/images/disciplines/vision.gif';
 
-function DeckLibraryDiscipline(props) {
+function ResultLibraryDisciplines(props) {
   const disciplineicons = {
     Abombwe: abombwe,
     Animalism: animalism,
@@ -102,7 +102,6 @@ function DeckLibraryDiscipline(props) {
     Vengeance: vengeance,
     Vision: vision,
   };
-
 
   const imgClass='discipline-image-results';
   let disciplines_images;
@@ -161,4 +160,4 @@ function DeckLibraryDiscipline(props) {
   );
 }
 
-export default DeckLibraryDiscipline;
+export default ResultLibraryDisciplines;

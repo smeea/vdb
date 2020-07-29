@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './assets/css/bootstrap.min.css';
 import './assets/css/bootstrap-select.min.css';
 import './assets/css/style.styl';

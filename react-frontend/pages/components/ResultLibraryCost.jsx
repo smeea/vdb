@@ -16,7 +16,7 @@ import pool5 from './../../assets/images/misc/pool5.png';
 import pool6 from './../../assets/images/misc/pool6.png';
 import poolx from './../../assets/images/misc/poolx.png';
 
-function DeckLibraryCost(props) {
+function ResultLibraryCost(props) {
   const costicons = {
     1: [blood1, pool1],
     2: [blood2, pool2],
@@ -41,4 +41,4 @@ function DeckLibraryCost(props) {
   );
 }
 
-export default DeckLibraryCost;
+export default ResultLibraryCost;

@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import DeckLibraryBurn from './DeckLibraryBurn.jsx';
-import DeckLibraryClan from './DeckLibraryClan.jsx';
-import DeckLibraryCost from './DeckLibraryCost.jsx';
-import DeckLibraryDiscipline from './DeckLibraryDiscipline.jsx';
-import DeckLibraryName from './DeckLibraryName.jsx';
+import ResultLibraryBurn from './ResultLibraryBurn.jsx';
+import ResultLibraryClan from './ResultLibraryClan.jsx';
+import ResultLibraryCost from './ResultLibraryCost.jsx';
+import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
+import ResultLibraryName from './ResultLibraryName.jsx';
 import DeckLibraryQuantity from './DeckLibraryQuantity.jsx';
-import DeckLibraryType from './DeckLibraryType.jsx';
+import ResultLibraryType from './ResultLibraryType.jsx';
 
 function DeckLibraryBody(props) {
   let resultTrClass='library-result-even';
@@ -20,20 +20,20 @@ function DeckLibraryBody(props) {
       return (
         <tr className={resultTrClass} key={index}>
           <DeckLibraryQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <DeckLibraryName value={card[0]['Name']} />
-          <DeckLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
-          <DeckLibraryClan value={card[0]['Clan']} />
-          <DeckLibraryBurn value={card[0]['Burn Option']} />
+          <ResultLibraryName value={card[0]['Name']} />
+          <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
+          <ResultLibraryClan value={card[0]['Clan']} />
+          <ResultLibraryBurn value={card[0]['Burn Option']} />
         </tr>
       );
     } else {
       return (
         <tr className={resultTrClass} key={index}>
           <DeckLibraryQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <DeckLibraryName value={card[0]['Name']} />
-          <DeckLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
-          <DeckLibraryDiscipline value={card[0]['Discipline']} />
-          <DeckLibraryBurn value={card[0]['Burn Option']} />
+          <ResultLibraryName value={card[0]['Name']} />
+          <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
+          <ResultLibraryDisciplines value={card[0]['Discipline']} />
+          <ResultLibraryBurn value={card[0]['Burn Option']} />
         </tr>
       );
     }
@@ -45,7 +45,7 @@ function DeckLibraryBody(props) {
 function DeckLibraryByTypeTable(props) {
   return (
     <div>
-      <DeckLibraryType cardtype={props.cardtype} total={props.total}/>
+      <ResultLibraryType cardtype={props.cardtype} total={props.total}/>
       <table className='library-result-table'>
         <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
@@ -53,8 +53,7 @@ function DeckLibraryByTypeTable(props) {
   );
 }
 
-function DeckLibraryResults(props) {
-
+function DeckLibrary(props) {
   const library = {};
   const library_side = {};
 
@@ -154,4 +153,4 @@ function DeckLibraryResults(props) {
   );
 }
 
-export default DeckLibraryResults;
+export default DeckLibrary;

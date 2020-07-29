@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import CryptResults from "./CryptResults.jsx";
-import LibraryResults from "./LibraryResults.jsx";
+import React, { useState } from 'react';
+import SearchCrypt from './SearchCrypt.jsx';
+import SearchLibrary from './SearchLibrary.jsx';
 
 function DeckDraw(props) {
-
   const drawCards = (cards, quantity) => {
     function getRandomInt(max) {
       return Math.floor(Math.random() * Math.floor(max));
@@ -65,14 +64,14 @@ function DeckDraw(props) {
         {drawedCrypt != null &&
          <div>
            <b>Crypt Draw:</b>
-           <CryptResults cards={drawedCrypt} />
+           <SearchCrypt cards={drawedCrypt} />
            <br />
          </div >
         }
         {drawedLibrary != null &&
          <div>
            <b>Library Draw:</b>
-           <LibraryResults cards={drawedLibrary} />
+           <SearchLibrary cards={drawedLibrary} />
            <br />
          </div>
         }

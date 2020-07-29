@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import DeckCryptResults from './DeckCryptResults.jsx';
-import DeckLibraryResults from './DeckLibraryResults.jsx';
+import DeckCrypt from './DeckCrypt.jsx';
+import DeckLibrary from './DeckLibrary.jsx';
 import DeckDraw from './DeckDraw.jsx';
 
 function DeckNewCard(props) {
@@ -57,9 +57,9 @@ function DeckShowDeck(props) {
         <DeckNewCard deckCardAdd={props.deckCardAdd} deckid={props.deck.deckid} />
         <br />
         <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />
-        <DeckCryptResults deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.crypt} />
+        <DeckCrypt deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.crypt} />
         <br />
-        <DeckLibraryResults deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.library} />
+        <DeckLibrary deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.library} />
         <br />
       </div>
     );

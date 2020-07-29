@@ -47,7 +47,7 @@ import martyr from './../../assets/images/clans/martyr.gif';
 import redeemer from './../../assets/images/clans/redeemer.gif';
 import visionary from './../../assets/images/clans/visionary.gif';
 
-function DeckCryptClan(props) {
+function ResultLibraryClan(props) {
   const clanicons = {
     Abomination: abomination,
     Ahrimane: ahrimane,
@@ -96,14 +96,41 @@ function DeckCryptClan(props) {
     Redeemer: redeemer,
     Visionary: visionary,
   };
+
   const imgClass='clan-image-results';
-  const imgSrc=clanicons[props.value];
+  let clan_images;
+
+  if (props.value.indexOf('/') != -1) {
+    const clans = props.value.split('/');
+    let items = clans.length;
+    clan_images = clans.map((clan, index) => {
+      const imgSrc = clanicons[clan];
+      if (items > 1) {
+        items -= 1;
+        return (
+          <span key={index}>
+            <img className={imgClass} src={imgSrc} />{' / '}
+          </span>
+        );
+      } else {
+        return (
+          <span key={index}>
+            <img className={imgClass} src={imgSrc} />
+          </span>
+        );
+      }
+    });
+  } else {
+    const imgSrc = clanicons[props.value];
+    clan_images =
+      <img className={imgClass} src={imgSrc} />;
+  }
 
   return (
     <td className='clan'>
-      <img className={imgClass} src={imgSrc} />
+      {clan_images}
     </td>
   );
 }
 
-export default DeckCryptClan;
+export default ResultLibraryClan;

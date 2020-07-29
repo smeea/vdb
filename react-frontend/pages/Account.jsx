@@ -1,6 +1,6 @@
-import React from "react";
-import AccountLogin from "./components/AccountLogin.jsx";
-import AccountRegister from "./components/AccountRegister.jsx";
+import React from 'react';
+import AccountLogin from './components/AccountLogin.jsx';
+import AccountRegister from './components/AccountRegister.jsx';
 
 function Greetings(props) {
   return (

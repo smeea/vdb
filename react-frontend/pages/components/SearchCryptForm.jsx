@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 import abombwe from './../../assets/images/disciplines/abombwe.gif';
 import animalism from './../../assets/images/disciplines/animalism.gif';
@@ -64,8 +64,7 @@ import redemption from './../../assets/images/disciplines/redemption.gif';
 import vengeance from './../../assets/images/disciplines/vengeance.gif';
 import vision from './../../assets/images/disciplines/vision.gif';
 
-function LibraryFormText(props) {
-
+function SearchCryptFormText(props) {
   return (
     <div className="col-8">
       <input
@@ -77,7 +76,8 @@ function LibraryFormText(props) {
   );
 }
 
-function LibraryFormButtons(props) {
+
+function SearchCryptFormButtons(props) {
   return (
     <div className="pr-1">
       <button className="btn btn-outline-primary" type="submit">
@@ -102,121 +102,111 @@ function LibraryFormButtons(props) {
 }
 
 
-function LibraryFormDiscipline(props) {
+function SearchCryptFormDisciplines(props) {
   const disciplines = [
-    'ANY',
-    'Abombwe',
-    'Animalism',
-    'Auspex',
-    'Celerity',
-    'Chimerstry',
-    'Daimoinon',
-    'Dominate',
-    'Dementation',
-    'Fortitude',
-    'Melpominee',
-    'Mytherceria',
-    'Necromancy',
-    'Obeah',
-    'Obfuscate',
-    'Obtenebration',
-    'Potence',
-    'Presence',
-    'Protean',
-    'Quietus',
-    'Sanguinus',
-    'Serpentis',
-    'Spiritus',
-    'Temporis',
-    'Thanatosis',
-    'Thaumaturgy',
-    'Valeren',
-    'Vicissitude',
-    'Visceratika',
-    'Innocence',
-    'Judgement',
-    'Martyrdom',
-    'Redemption',
-    'Vengeance',
-    'Vision',
+    ['Abombwe', abombwe, abombwesup],
+    ['Animalism', animalism, animalismsup],
+    ['Auspex', auspex, auspexsup],
+    ['Celerity', celerity, celeritysup],
+    ['Chimerstry', chimerstry, chimerstrysup],
+    ['Daimoinon', daimoinon, daimoinonsup],
+    ['Dominate', dominate, dominatesup],
+    ['Dementation', dementation, dementationsup],
+    ['Fortitude', fortitude, fortitudesup],
+    ['Melpominee', melpominee, melpomineesup],
+    ['Mytherceria', mytherceria, mytherceriasup],
+    ['Necromancy', necromancy, necromancysup],
+    ['Obeah', obeah, obeahsup],
+    ['Obfuscate', obfuscate, obfuscatesup],
+    ['Obtenebration', obtenebration, obtenebrationsup],
+    ['Potence', potence, potencesup],
+    ['Presence', presence, presencesup],
+    ['Protean', protean, proteansup],
+    ['Quietus', quietus, quietussup],
+    ['Sanguinus', sanguinus, sanguinussup],
+    ['Serpentis', serpentis, serpentissup],
+    ['Spiritus', spiritus, spiritussup],
+    ['Temporis', temporis, temporissup],
+    ['Thanatosis', thanatosis, thanatosissup],
+    ['Thaumaturgy', thaumaturgy, thaumaturgysup],
+    ['Valeren', valeren, valerensup],
+    ['Vicissitude', vicissitude, vicissitudesup],
+    ['Visceratika', visceratika, visceratikasup],
   ];
 
-  const disciplineforms = disciplines.map((i, index) => {
-    return(
-      <option key={index} value={i}>{i}</option>
+  const disciplinesforms = disciplines.map( (i, index) => {
+    let disciplineState = 'discipline-container state' + props.value[i[0]];
+    return (
+      <div key={index} className={disciplineState}>
+        <label className='discipline-container d-flex justify-content-center align-items-center' htmlFor={i}>
+          <input className="d-none" type="button" id={i} value={i[0]} onClick={(e) => props.onChange(i[0], e)} />
+          <img className="discipline-base-image-forms" src={i[1]} />
+          <img className="discipline-superior-image-forms" src={i[2]} />
+        </label>
+      </div>
     );
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
-          Discipline:
-        </label>
-      </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name="discipline" value={props.value} onChange={props.onChange}>
-          {disciplineforms}
-        </select>
+    <div>
+      <div className="form-row pt-2">
+        <div className="input-group justify-content-start">
+          {disciplinesforms}
+        </div>
       </div>
     </div>
   );
 }
 
-function LibraryFormType(props) {
-  const types = [
-    'ANY',
-    'Action',
-    'Action Modifier',
-    'Ally',
-    'Combat',
-    'Conviction',
-    'Equipment',
-    'Event',
-    'Master',
-    'Political Action',
-    'Power',
-    'Reaction',
-    'Reflex',
-    'Retainer',
+
+function SearchCryptFormVirtues(props) {
+  const virtues = [
+    ['def', defense],
+    ['inn', innocence],
+    ['jud', justice],
+    ['mar', martyrdom],
+    ['red', redemption],
+    ['ven', vengeance],
+    ['vis', vision],
   ];
 
-  const typeforms = types.map((i, index) => {
-    return(
-      <option key={index} value={i}>{i}</option>
+  const virtuesforms = virtues.map( (i, index) => {
+    let virtueState = 'virtue-container mb-2 state' + props.value[i[0]];
+    return (
+      <div key={index} className={virtueState}>
+        <label className="virtue-container d-flex justify-content-center align-items-center" htmlFor={i}>
+          <input className="d-none" type="button" id={i} value={i[0]} onClick={(e) => props.onChange(i[0], e)} />
+          <img className="virtue-image" src={i[1]} />
+        </label>
+      </div>
     );
   });
 
   return (
     <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
-          Type:
-        </label>
-      </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name="type" value={props.value} onChange={props.onChange}>
-          {typeforms}
-        </select>
+      <div className="input-group">
+        {virtuesforms}
       </div>
     </div>
   );
 }
 
-function LibraryFormBloodCost(props) {
-  const blood = ['ANY', 1, 2, 3, 4, 5, 6];
-  const bloodforms = blood.map( (i, index) => {
+
+function SearchCryptFormCapacity(props) {
+  const capacity = ['ANY', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  const capacityforms = capacity.map( (i, index) => {
     return (
       <option key={index} value={i}>{i}</option>
     );
   });
 
-  const bloodmoreless = [
+  const capacitymoreless = [
     ['le', '<=',],
     ['eq', '==',],
     ['ge', '>=',],
   ];
-  const bloodmorelessforms = bloodmoreless.map( (i, index) => {
+
+  const capacitymorelessforms = capacitymoreless.map( (i, index) => {
     return (
       <option key={index} value={i[0]}>{i[1]}</option>
     );
@@ -226,16 +216,17 @@ function LibraryFormBloodCost(props) {
     <div className="form-row">
       <div className="form-group col-3 d-flex align-items-center">
         <label className="h6 mb-0">
-          Blood Cost:
+          Capacity:
         </label>
       </div>
       <div className="form-group col-9">
         <div className="input-group">
+
           <select className="custom-select" value={props.moreless} onChange={props.onMorelessChange}>
-            {bloodmorelessforms}
+            {capacitymorelessforms}
           </select>
           <select className="custom-select" value={props.value} onChange={props.onValueChange} >
-            {bloodforms}
+            {capacityforms}
           </select>
         </div>
       </div>
@@ -243,48 +234,8 @@ function LibraryFormBloodCost(props) {
   );
 }
 
-function LibraryFormPoolCost(props) {
-  const pool = ['ANY', 1, 2, 3, 4, 5, 6];
-  const poolforms = pool.map( (i, index) => {
-    return (
-      <option key={index} value={i}>{i}</option>
-    );
-  });
 
-  const poolmoreless = [
-    ['le', '<=',],
-    ['eq', '==',],
-    ['ge', '>=',],
-  ];
-  const poolmorelessforms = poolmoreless.map( (i, index) => {
-    return (
-      <option key={index} value={i[0]}>{i[1]}</option>
-    );
-  });
-
-  return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
-          Pool Cost:
-        </label>
-      </div>
-      <div className="form-group col-9">
-        <div className="input-group">
-
-          <select className="custom-select" value={props.moreless} onChange={props.onMorelessChange}>
-            {poolmorelessforms}
-          </select>
-          <select className="custom-select" value={props.value} onChange={props.onValueChange} >
-            {poolforms}
-          </select>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function LibraryFormClan(props) {
+function SearchCryptFormClan(props) {
   const clans = [
     "ANY",
     "Abomination",
@@ -358,20 +309,20 @@ function LibraryFormClan(props) {
 }
 
 
-function LibraryFormSect(props) {
+function SearchCryptFormSect(props) {
   const sects = [
-    ['ANY', 'ANY'],
-    ['Camarilla', 'camarilla'],
-    ['Sabbat', 'sabbat'],
-    ['Laibon', 'laibon'],
-    ['Independent', 'independent'],
-    ['Anarch', 'anarch'],
-    ['Imbued', 'imbued'],
+    "ANY",
+    "Camarilla",
+    "Sabbat",
+    "Laibon",
+    "Independent",
+    "Anarch",
+    "Imbued",
   ];
 
   const sectforms = sects.map((i, index) => {
     return(
-      <option key={index} value={i[1]}>{i[0]}</option>
+      <option key={index} value={i}>{i}</option>
     );
   });
 
@@ -392,7 +343,7 @@ function LibraryFormSect(props) {
 }
 
 
-function LibraryFormVotes(props) {
+function SearchCryptFormVotes(props) {
   const votes = [
     ["ANY", "ANY"],
     [1, "1+"],
@@ -423,68 +374,111 @@ function LibraryFormVotes(props) {
 }
 
 
-function LibraryFormTitle(props) {
-  const title = [
-    ['ANY', 'ANY'],
-    ['Primogen', 'primogen'],
-    ['Prince', 'prince'],
-    ['Justicar', 'justicar'],
-    ['Inner Circle', 'inner circle'],
-    ['Baron', 'baron'],
-    ['1 vote', '1 vote'],
-    ['2 votes', '2 votes'],
-    ['Bishop', 'bishop'],
-    ['Archbishop', 'archbishop'],
-    ['Priscus', 'priscus'],
-    ['Cardinal', 'cardinal'],
-    ['Regent', 'regent'],
-    ['Magaji', 'magaji'],
+function SearchCryptFormTitles(props) {
+  const titlesLeft = [
+    ['primogen', 'Primogen'],
+    ['prince', 'Prince'],
+    ['justicar', 'Justicar'],
+    ['inner circle', 'Inner Circle'],
+    ['baron', 'Baron'],
+    ['1 vote', '1 vote (Independent)'],
+    ['2 votes', '2 votes (Independent)'],
   ];
 
-  const titleforms = title.map((i, index) => {
-    return(
-      <option key={index} value={i[1]}>{i[0]}</option>
+  const titlesRight = [
+    ['bishop', 'Bishop'],
+    ['archbishop', 'Archbishop'],
+    ['priscus', 'Priscus'],
+    ['cardinal', 'Cardinal'],
+    ['regent', 'Regent'],
+    ['magaji', 'Magaji'],
+  ];
+
+  const titlesLeftforms = titlesLeft.map( (i, index) => {
+    return (
+      <div key={index} className="mr-2 custom-control custom-checkbox">
+        <input id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(i[0], e)} />
+        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+          {i[1]}
+        </label>
+      </div>
+    );
+  });
+
+  const titlesRightforms = titlesRight.map( (i, index) => {
+    return (
+      <div key={index} className="mr-2 custom-control custom-checkbox">
+        <input id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(i[0], e)} />
+        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+          {i[1]}
+        </label>
+      </div>
     );
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
-          Title:
-        </label>
-      </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name="title" value={props.value} onChange={props.onChange}>
-          {titleforms}
-        </select>
+    <div>
+      <h6>Title:</h6>
+      <div className="form-row">
+        <div className="form-group col-7">
+          {titlesLeftforms}
+        </div>
+        <div className="form-group col-5">
+          {titlesRightforms}
+        </div>
       </div>
     </div>
   );
 }
 
-function LibraryFormTraits(props) {
+
+function SearchCryptFormGroup(props) {
+  const groups = [1, 2, 3, 4, 5, 6];
+
+  const groupforms = groups.map( (i, index) => {
+    return (
+      <div key={index} className="ml-2 custom-control custom-checkbox">
+        <input id={i} className="mr-1 custom-control-input" type="checkbox" checked={props.value[i]} onChange={(e) => props.onChange(i, e)} />
+        <label htmlFor={i} className="mr-0 custom-control-label">
+          {i}
+        </label>
+      </div>
+    );
+  });
+
+  return (
+    <div className="form-row justify-content-between">
+      <div className="col-2">
+        <h6>Group:</h6>
+      </div>
+      {groupforms}
+    </div>
+  );
+}
+
+
+function SearchCryptFormTraits(props) {
   const traitsLeft = [
-    ['intercept', '+Intercept / -Stealth'],
-    ['stealth', '+Stealth / -Intercept'],
-    ['bleed', '+Bleed'],
-    ['strength', '+Strength'],
-    ['dodge', 'Dodge'],
-    ['optional maneuver', 'Maneuver'],
+    ['1 intercept', '+1 intercept'],
+    ['1 stealth', '+1 stealth'],
+    ['1 bleed', '+1 bleed'],
+    ['2 bleed', '+2 bleed'],
+    ['1 strength', '+1 strength'],
+    ['2 strength', '+2 strength'],
     ['additional strike', 'Additional Strike'],
-    ['aggravated', 'Aggravated'],
-    ['prevent', 'Prevent'],
+    ['optional maneuver', 'Maneuver'],
+    ['optional press', 'Press'],
   ];
 
   const traitsRight = [
-    ['optional press', 'Press'],
-    ['combat ends', 'Combat Ends'],
+    ['prevent', 'Prevent'],
+    ['aggravated', 'Aggravated'],
     ['enter combat', 'Enter combat'],
-    ['bounce bleed', 'Bounce Bleed'],
     ['black hand', 'Black Hand'],
     ['seraph', 'Seraph'],
-    ['anarch', 'Anarch'],
     ['infernal', 'Infernal'],
+    ['red list', 'Red List'],
+    ['flight', 'Flight'],
   ];
 
   const traitsLeftforms = traitsLeft.map( (i, index) => {
@@ -525,37 +519,97 @@ function LibraryFormTraits(props) {
 }
 
 
-class LibraryForm extends React.Component {
+class SearchCryptForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       text: '',
-      discipline: 'ANY',
-      blood: 'ANY',
-      bloodmoreless: 'le',
-      pool: 'ANY',
-      poolmoreless: 'le',
+      disciplines: {
+        Abombwe: 0,
+        Animalism: 0,
+        Auspex: 0,
+        Celerity: 0,
+        Chimerstry: 0,
+        Daimoinon: 0,
+        Dementation: 0,
+        Dominate: 0,
+        Fortitude: 0,
+        Melpominee: 0,
+        Mytherceria: 0,
+        Necromancy: 0,
+        Obeah: 0,
+        Obfuscate: 0,
+        Obtenebration: 0,
+        Potence: 0,
+        Presence: 0,
+        Protean: 0,
+        Quietus: 0,
+        Sanguinus: 0,
+        Serpentis: 0,
+        Spiritus: 0,
+        Temporis: 0,
+        Thanatosis: 0,
+        Thaumaturgy: 0,
+        Valeren: 0,
+        Vicissitude: 0,
+        Visceratika: 0,
+      },
+      virtues: {
+        def: 0,
+        inn: 0,
+        jud: 0,
+        mar: 0,
+        red: 0,
+        ven: 0,
+        vis: 0,
+      },
+      capacity: 'ANY',
+      capacitymoreless: 'le',
       clan: 'ANY',
       sect: 'ANY',
-      title: 'ANY',
+      votes: 'ANY',
+      titles: {
+        primogen: false,
+        prince: false,
+        justicar: false,
+        innercircle: false,
+        baron: false,
+        '1 votes': false,
+        '2 votes': false,
+        bishop: false,
+        archbishop: false,
+        priscus: false,
+        cardinal: false,
+        regent: false,
+        magaji: false,
+      },
+      group: {
+        1: false,
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false,
+      },
       traits: {
-        'intercept': false,
-        'stealth': false,
-        'bleed': false,
-        'strength': false,
-        'dodge': false,
-        'optional maneuver': false,
+        '1 intercept': false,
+        '1 stealth': false,
+        '1 bleed': false,
+        '2 bleed': false,
+        '1 strength': false,
+        '1 strength': false,
         'additional strike': false,
-        aggravated: false,
-        prevent: false,
+        'optional maneuver': false,
         'optional press': false,
-        'combat ends': false,
-        'bounce bleed': false,
+        prevent: false,
+        aggravated: false,
+        'enter combat': false,
         'black hand': false,
         seraph: false,
-        anarch: false,
         infernal: false,
-      }
+        'red list': false,
+        flight: false,
+      },
     };
 
     this.handleTextChange = event => {
@@ -563,34 +617,37 @@ class LibraryForm extends React.Component {
       this.setState({text: value});
     };
 
-    this.handleTypeChange = event => {
-      const { type, value } = event.target;
-      this.setState({type: value});
+
+    this.handleDisciplinesChange = (i, event) => {
+      const { disciplines, value } = event.target;
+      let newState = this.state.disciplines;
+      if (newState[i] < 2) {
+        newState[i] += 1;
+      } else {
+        newState[i] = 0;
+      }
+      this.setState({disciplines: newState});
     };
 
-    this.handleDisciplineChange = event => {
-      const { discipline, value } = event.target;
-      this.setState({discipline: value});
+    this.handleVirtuesChange = (i, event) => {
+      const { virtues, value } = event.target;
+      let newState = this.state.virtues;
+      if (newState[i] == 0) {
+        newState[i] = 1;
+      } else {
+        newState[i] = 0;
+      }
+      this.setState({virtues: newState});
     };
 
-    this.handleBloodChange = event => {
-      const { blood, value } = event.target;
-      this.setState({blood: value});
+    this.handleCapacityChange = event => {
+      const { capacity, value } = event.target;
+      this.setState({capacity: value});
     };
 
-    this.handleBloodMorelessChange = event => {
-      const { bloodmoreless, value } = event.target;
-      this.setState({bloodmoreless: value});
-    };
-
-    this.handlePoolChange = event => {
-      const { pool, value } = event.target;
-      this.setState({pool: value});
-    };
-
-    this.handlePoolMorelessChange = event => {
-      const { poolmoreless, value } = event.target;
-      this.setState({poolmoreless: value});
+    this.handleCapacityMorelessChange = event => {
+      const { capacitymoreless, value } = event.target;
+      this.setState({capacitymoreless: value});
     };
 
     this.handleClanChange = event => {
@@ -603,9 +660,23 @@ class LibraryForm extends React.Component {
       this.setState({sect: value});
     };
 
-    this.handleTitleChange = event => {
-      const { title, value } = event.target;
-      this.setState({title: value});
+    this.handleVotesChange = event => {
+      const { votes, value } = event.target;
+      this.setState({votes: value});
+    };
+
+    this.handleTitlesChange = (i, event) => {
+      const { titles, value } = event.target;
+      let newState = this.state.titles;
+      newState[i] = !newState[i];
+      this.setState({titles: newState});
+    };
+
+    this.handleGroupChange = (i, event) => {
+      const { group, value } = event.target;
+      let newState = this.state.group;
+      newState[i] = !newState[i];
+      this.setState({group: newState});
     };
 
     this.handleTraitsChange = (i, event) => {
@@ -618,32 +689,91 @@ class LibraryForm extends React.Component {
     this.handleClearFormButton = () => {
       this.setState({
         text: '',
-        type: 'ANY',
-        discipline: 'ANY',
+        disciplines: {
+          Abombwe: 0,
+          Animalism: 0,
+          Auspex: 0,
+          Celerity: 0,
+          Chimerstry: 0,
+          Daimoinon: 0,
+          Dementation: 0,
+          Dominate: 0,
+          Fortitude: 0,
+          Melpominee: 0,
+          Mytherceria: 0,
+          Necromancy: 0,
+          Obeah: 0,
+          Obfuscate: 0,
+          Obtenebration: 0,
+          Potence: 0,
+          Presence: 0,
+          Protean: 0,
+          Quietus: 0,
+          Sanguinus: 0,
+          Serpentis: 0,
+          Spiritus: 0,
+          Temporis: 0,
+          Thanatosis: 0,
+          Thaumaturgy: 0,
+          Valeren: 0,
+          Vicissitude: 0,
+          Visceratika: 0,
+        },
+        virtues: {
+          def: 0,
+          inn: 0,
+          jud: 0,
+          mar: 0,
+          red: 0,
+          ven: 0,
+          vis: 0,
+        },
+        capacity: 'ANY',
+        capacitymoreless: 'le',
         clan: 'ANY',
         sect: 'ANY',
-        title: 'ANY',
-        blood: 'ANY',
-        bloodmoreless: 'le',
-        pool: 'ANY',
-        poolmoreless: 'le',
+        votes: 'ANY',
+        titles: {
+          primogen: false,
+          prince: false,
+          justicar: false,
+          innercircle: false,
+          baron: false,
+          '1 vote': false,
+          '2 votes': false,
+          bishop: false,
+          archbishop: false,
+          priscus: false,
+          cardinal: false,
+          regent: false,
+          magaji: false,
+        },
+        group: {
+          1: false,
+          2: false,
+          3: false,
+          4: false,
+          5: false,
+          6: false,
+        },
         traits: {
-          'intercept': false,
-          'stealth': false,
-          'bleed': false,
-          'strength': false,
-          'dodge': false,
-          'optional maneuver': false,
+          '1 intercept': false,
+          '1 stealth': false,
+          '1 bleed': false,
+          '2 bleed': false,
+          '1 strength': false,
+          '1 strength': false,
           'additional strike': false,
-          aggravated: false,
-          prevent: false,
+          'optional maneuver': false,
           'optional press': false,
-          'combat ends': false,
-          'bounce bleed': false,
+          prevent: false,
+          aggravated: false,
+          'enter combat': false,
           'black hand': false,
           seraph: false,
-          anarch: false,
           infernal: false,
+          'red list': false,
+          flight: false,
         },
       });
     };
@@ -655,18 +785,17 @@ class LibraryForm extends React.Component {
     this.handleSubmitButton = event => {
       event.preventDefault();
 
-      const url = 'http://127.0.0.1:5001/api/search/library';
-
+      const url = 'http://127.0.0.1:5001/api/search/crypt';
 
       let input = JSON.parse(JSON.stringify(this.state));
+      Object.keys(input.disciplines).forEach(k => (input.disciplines[k] == 0) && delete input.disciplines[k]);
+      Object.keys(input.virtues).forEach(k => (input.virtues[k] == 0) && delete input.virtues[k]);
+      Object.keys(input.titles).forEach(k => (input.titles[k] == false) && delete input.titles[k]);
+      Object.keys(input.group).forEach(k => (input.group[k] == false) && delete input.group[k]);
       Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
       Object.keys(input).forEach(k => (input[k] == 'ANY' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
-      if (input['blood'] == null) {
-        delete input['bloodmoreless'];
-      };
-
-      if (input['pool'] == null) {
-        delete input['poolmoreless'];
+      if (input['capacity'] == null) {
+        delete input['capacitymoreless'];
       };
 
       if (Object.keys(input).length === 0) {
@@ -693,24 +822,24 @@ class LibraryForm extends React.Component {
   }
 
   render() {
-
     return (
       <form onSubmit={this.handleSubmitButton}>
         <div className="form-row justify-content-between">
-          <LibraryFormText value={this.state.text} onChange={this.handleTextChange} />
-          <LibraryFormButtons handleClearFormButton={this.handleClearFormButton} handleClearResultButton={this.handleClearResultButton} />
+          <SearchCryptFormText value={this.state.text} onChange={this.handleTextChange} />
+          <SearchCryptFormButtons handleClearFormButton={this.handleClearFormButton} handleClearResultButton={this.handleClearResultButton} />
         </div>
-        <LibraryFormType value={this.state.type} onChange={this.handleTypeChange} />
-        <LibraryFormDiscipline value={this.state.discipline} onChange={this.handleDisciplineChange}/>
-        <LibraryFormClan value={this.state.clan} onChange={this.handleClanChange} />
-        <LibraryFormSect value={this.state.sect} onChange={this.handleSectChange} />
-        <LibraryFormTitle value={this.state.titles} onChange={this.handleTitleChange} />
-        <LibraryFormBloodCost value={this.state.blood} moreless={this.state.bloodmoreless} onValueChange={this.handleBloodChange} onMorelessChange={this.handleBloodMorelessChange} />
-        <LibraryFormPoolCost value={this.state.pool} moreless={this.state.poolmoreless} onValueChange={this.handlePoolChange} onMorelessChange={this.handlePoolMorelessChange} />
-        <LibraryFormTraits value={this.state.traits} onChange={this.handleTraitsChange} />
+        <SearchCryptFormDisciplines value={this.state.disciplines} onChange={this.handleDisciplinesChange}/>
+        <SearchCryptFormVirtues value={this.state.virtues} onChange={this.handleVirtuesChange}/>
+        <SearchCryptFormCapacity value={this.state.capacity} moreless={this.state.capacitymoreless} onValueChange={this.handleCapacityChange} onMorelessChange={this.handleCapacityMorelessChange} />
+        <SearchCryptFormClan value={this.state.clan} onChange={this.handleClanChange} />
+        <SearchCryptFormSect value={this.state.sect} onChange={this.handleSectChange} />
+        <SearchCryptFormVotes value={this.state.votes} onChange={this.handleVotesChange} />
+        <SearchCryptFormTitles value={this.state.titles} onChange={this.handleTitlesChange} />
+        <SearchCryptFormGroup value={this.state.group} onChange={this.handleGroupChange} />
+        <SearchCryptFormTraits value={this.state.traits} onChange={this.handleTraitsChange} />
       </form>
     );
   }
 }
 
-export default LibraryForm;
+export default SearchCryptForm;

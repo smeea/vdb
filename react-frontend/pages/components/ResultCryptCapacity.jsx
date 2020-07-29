@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import cap1 from './../../assets/images/misc/cap1.png';
 import cap2 from './../../assets/images/misc/cap2.png';
@@ -12,7 +12,7 @@ import cap9 from './../../assets/images/misc/cap9.png';
 import cap10 from './../../assets/images/misc/cap10.png';
 import cap11 from './../../assets/images/misc/cap11.png';
 
-function DeckCryptCapacity(props) {
+function ResultCryptCapacity(props) {
   const capicons = {
     1: cap1,
     2: cap2,
@@ -36,4 +36,4 @@ function DeckCryptCapacity(props) {
   );
 }
 
-export default DeckCryptCapacity;
+export default ResultCryptCapacity;

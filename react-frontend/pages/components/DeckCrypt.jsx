@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import DeckCryptCapacity from './DeckCryptCapacity.jsx';
+import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import DeckCryptDisciplines from './DeckCryptDisciplines.jsx';
-import DeckCryptName from './DeckCryptName.jsx';
-import DeckCryptClan from './DeckCryptClan.jsx';
-import DeckCryptGroup from './DeckCryptGroup.jsx';
+import ResultCryptName from './ResultCryptName.jsx';
+import ResultCryptClan from './ResultCryptClan.jsx';
+import ResultCryptGroup from './ResultCryptGroup.jsx';
 import DeckCryptQuantity from './DeckCryptQuantity.jsx';
 
 function DeckCryptSideBody(props) {
@@ -32,11 +32,11 @@ function DeckCryptSideBody(props) {
     return (
       <tr className={resultTrClass} key={index}>
         <DeckCryptQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-        <DeckCryptCapacity value={card.c['Capacity']} />
+        <ResultCryptCapacity value={card.c['Capacity']} />
         <DeckCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
-        <DeckCryptName value={card.c['Name']} />
-        <DeckCryptClan value={card.c['Clan']} />
-        <DeckCryptGroup value={card.c['Group']} />
+        <ResultCryptName value={card.c['Name']} />
+        <ResultCryptClan value={card.c['Clan']} />
+        <ResultCryptGroup value={card.c['Group']} />
       </tr>
     );
   });
@@ -68,19 +68,18 @@ function DeckCryptBody(props) {
     return (
       <tr className={resultTrClass} key={index}>
         <DeckCryptQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-        <DeckCryptCapacity value={card.c['Capacity']} />
+        <ResultCryptCapacity value={card.c['Capacity']} />
         <DeckCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
-        <DeckCryptName value={card.c['Name']} />
-        <DeckCryptClan value={card.c['Clan']} />
-        <DeckCryptGroup value={card.c['Group']} />
+        <ResultCryptName value={card.c['Name']} />
+        <ResultCryptClan value={card.c['Clan']} />
+        <ResultCryptGroup value={card.c['Group']} />
       </tr>
     );
   });
   return <tbody>{cards}</tbody>;
 }
 
-function DeckCryptResults(props) {
-
+function DeckCrypt(props) {
   let d_set = new Set();
   for (const card of Object.keys(props.cards)) {
     for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
@@ -125,4 +124,4 @@ function DeckCryptResults(props) {
   );
 }
 
-export default DeckCryptResults;
+export default DeckCrypt;

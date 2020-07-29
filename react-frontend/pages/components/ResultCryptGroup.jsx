@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DeckCryptGroup(props) {
+function ResultCryptGroup(props) {
   return (
     <td className='group'>
       <b>
@@ -11,4 +11,4 @@ function DeckCryptGroup(props) {
   );
 }
 
-export default DeckCryptGroup;
+export default ResultCryptGroup;

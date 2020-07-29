@@ -2,7 +2,7 @@ import React from 'react';
 
 import burn from './../../assets/images/misc/burn.gif';
 
-function DeckLibraryBurn(props) {
+function ResultLibraryBurn(props) {
   const imgClass='burn-image-results';
   const imgSrc=burn;
   if (props.value) {
@@ -16,4 +16,4 @@ function DeckLibraryBurn(props) {
   }
 }
 
-export default DeckLibraryBurn;
+export default ResultLibraryBurn;

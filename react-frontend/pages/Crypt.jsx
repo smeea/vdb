@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import CryptForm from "./components/CryptForm.jsx";
-import CryptResults from "./components/CryptResults.jsx";
+import React, { useState } from 'react';
+import SearchCrypt from './components/SearchCrypt.jsx';
+import SearchCryptForm from './components/SearchCryptForm.jsx';
 
 function Crypt(props) {
   const [cards, setCards] = useState([]);
@@ -16,11 +16,11 @@ function Crypt(props) {
           CARD PREVIEW ON HOVER
         </div>
         <div className="col-md-12 col-lg-7 col-xl-7 center-col px-1 px-xl-2">
-          <CryptResults cards={cards}/>
+          <SearchCrypt cards={cards}/>
         </div>
 
         <div className="col-md-12 col-lg-3 col-xl-3 right-col px-1 px-xl-2">
-          <CryptForm setResults={setResults} />
+          <SearchCryptForm setResults={setResults} />
         </div>
       </div>
     </div>

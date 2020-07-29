@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LibraryForm from './components/LibraryForms.jsx';
-import LibraryResults from './components/LibraryResults.jsx';
+import SearchLibrary from './components/SearchLibrary.jsx';
+import SearchLibraryForm from './components/SearchLibraryForms.jsx';
 
 function Library(props) {
   const [cards, setCards] = useState([]);
@@ -16,11 +16,11 @@ function Library(props) {
           CARD PREVIEW ON HOVER
         </div>
         <div className="col-md-12 col-lg-7 col-xl-7 center-col px-1 px-xl-2">
-          <LibraryResults cards={cards}/>
+          <SearchLibrary cards={cards}/>
         </div>
 
         <div className="col-md-12 col-lg-3 col-xl-3 right-col px-1 px-xl-2">
-          <LibraryForm setResults={setResults} />
+          <SearchLibraryForm setResults={setResults} />
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ import reaction from './../../assets/images/types/reaction.gif';
 import reflex from './../../assets/images/types/reflex.gif';
 import retainer from './../../assets/images/types/retainer.gif';
 
-function DeckLibraryType(props) {
+function ResultLibraryType(props) {
   const typeicons = {
     'Action': action,
     'Action Modifier': actionmodifier,
@@ -41,10 +41,10 @@ function DeckLibraryType(props) {
   });
 
   return(
-    <div>
-      {cardtype_images} {' '} {props.cardtype} [{props.total}]
-    </div>
+    <td className='type'>
+      {cardtype_images}
+    </td>
   );
 }
 
-export default DeckLibraryType;
+export default ResultLibraryType;

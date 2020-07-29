@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DeckCryptName(props) {
+function ResultCryptName(props) {
   return (
     <td className='name'>
       <p>
@@ -10,4 +10,4 @@ function DeckCryptName(props) {
   );
 }
 
-export default DeckCryptName;
+export default ResultCryptName;
