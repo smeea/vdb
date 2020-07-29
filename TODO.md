@@ -23,17 +23,15 @@
 
 # DECK
 ## MAJOR FEATURE
-* Export/Import
+* Export/Import (TWD, Amaranth, Lakey, etc?)
 * Card preview
 * Delete card on -1 counter
-* Sidedeck
 * Copy ('fork') deck
 * Custom text
 * Immediate effect of add card / new deck / delete 
 ## MINOR FEATURE
 * Trifle icon
 * Import all TWD decks
-* Draw simulator
 ## MAJOR FIX
 ## MINOR FIX
 
