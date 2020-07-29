@@ -331,7 +331,7 @@ function CryptResultBody(props) {
 function CryptResults(props) {
   return (
     <div>
-      <table width="100%" className='crypt-result-table'>
+      <table className='crypt-result-table'>
         {/* <CryptResultHeader /> */}
         <CryptResultBody resultCards={props.cards} />
       </table>
