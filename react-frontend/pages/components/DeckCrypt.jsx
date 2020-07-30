@@ -107,7 +107,7 @@ function DeckCrypt(props) {
     <div>
       <div className='deck-crypt'>
         <b>Crypt [{crypt_total}]:</b>
-        <table className="crypt-result-table">
+        <table className="deck-crypt-table">
           <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt} disciplines_set={disciplines_set} />
         </table>
       </div>
@@ -115,7 +115,7 @@ function DeckCrypt(props) {
         <div className='deck-sidecrypt'>
           <br />
           <b>Side Crypt</b>
-          <table className="crypt-result-table">
+          <table className="deck-crypt-table">
             <DeckCryptSideBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt_side} disciplines_set={disciplines_set}/>
           </table>
         </div>

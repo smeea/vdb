@@ -48,7 +48,7 @@ function SearchLibraryBody(props) {
 function SearchLibrary(props) {
   return (
     <div>
-      <table width="100%" className="library-result-table">
+      <table width="100%" className="search-library-table">
         {/* <SearchLibraryHeader /> */}
         <SearchLibraryBody resultCards={props.cards} />
       </table>

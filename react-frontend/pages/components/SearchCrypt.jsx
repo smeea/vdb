@@ -45,7 +45,7 @@ function SearchCryptBody(props) {
 function SearchCrypt(props) {
   return (
     <div>
-      <table className='crypt-result-table'>
+      <table className='search-crypt-table'>
         {/* <SearchCryptHeader /> */}
         <SearchCryptBody resultCards={props.cards} />
       </table>

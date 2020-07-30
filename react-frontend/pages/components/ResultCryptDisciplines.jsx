@@ -98,9 +98,9 @@ function ResultCryptDisciplines(props) {
 
   let discipline_rows;
   let empty_rows = [];
-  const max_rows = 8;
   let counter = 0;
-  const width = 100 / max_rows + '%';
+  let max_rows = 8;
+  let width = 100 / max_rows + '%';
 
   if (props.disciplines_set !== undefined && props.disciplines_set.length <= max_rows) {
     discipline_rows = props.disciplines_set.map((d, index) => {
@@ -129,6 +129,10 @@ function ResultCryptDisciplines(props) {
     });
 
   } else {
+    if (props.disciplines_set === undefined) {
+      max_rows = 7;
+      width = 100 / max_rows + '%';
+    }
     discipline_rows = Object.keys(props.value).map((d, index) => {
       counter += 1;
       let imgSrc;

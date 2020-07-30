@@ -46,7 +46,7 @@ function DeckLibraryByTypeTable(props) {
   return (
     <div>
       <ResultLibraryType cardtype={props.cardtype} total={props.total}/>
-      <table className='library-result-table'>
+      <table className='deck-library-table'>
         <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
     </div>
