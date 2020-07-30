@@ -42,35 +42,17 @@ def get_crypt_by_cardtext(cardtext):
     return match_cards
 
 
-def get_crypt_by_discipline(disciplines):
+def get_crypt_by_disciplines(disciplines):
     discipline_counter = len(disciplines)
     match_cards = []
     for card in crypt:
         counter = 0
         for k, v in disciplines.items():
-            if k in card['Disciplines']:
-                if card['Disciplines'][k] >= v:
-                    counter += 1
+            if k in card['Disciplines'] and card['Disciplines'][k] >= v:
+                counter += 1
 
         if discipline_counter == counter:
             match_cards.append(card)
-
-    return match_cards
-
-
-def get_crypt_by_virtues(virtues):
-    virtue_counter = len(virtues)
-    match_cards = []
-    for card in crypt:
-        if card['Type'] == 'Imbued':
-            counter = 0
-            disciplines = card['Disciplines'].split()
-            for i in virtues.keys():
-                if i in disciplines:
-                    counter += 1
-
-            if virtue_counter == counter:
-                match_cards.append(card)
 
     return match_cards
 

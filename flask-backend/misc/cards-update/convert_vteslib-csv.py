@@ -2,7 +2,7 @@ import csv
 import json
 
 integer_fields = ['Id']
-useless_fields = ['Aka', 'Set', 'Flavor Text', 'Artist', 'Draft', 'Capacity']
+useless_fields = ['Aka', 'Set', 'Flavor Text', 'Artist', 'Draft']
 
 with open("vteslib.csv",
           "r", encoding='utf8') as f_csv, open("vteslib.json",

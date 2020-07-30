@@ -5,10 +5,8 @@
 ## MINOR FEATURE
 * Update button icons
 ## MAJOR FIX
-* Virtues search
 ## MINOR FIX
 * Unify handleChanges as in AccountLogin
-* Move td width to css
 
 # LIBRARY
 ## MAJOR FEATURE
@@ -19,7 +17,6 @@
 ## MAJOR FIX
 ## MINOR FIX
 * Unify handleChanges as in AccountLogin
-* Move td width to css
 
 # DECK
 ## MAJOR FEATURE
@@ -27,16 +24,13 @@
 * Card preview
 * Delete card on -1 counter
 * Copy ('fork') deck
-* Custom text
+* Custom description
 * Immediate effect of add card / new deck / delete 
 ## MINOR FEATURE
 * Trifle icon
 * Import all TWD decks
 ## MAJOR FIX
 ## MINOR FIX
-
-# INVENTORY
-* Design & implement
 
 # GENERAL
 * New name

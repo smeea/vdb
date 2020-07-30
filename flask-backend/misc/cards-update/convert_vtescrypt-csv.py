@@ -32,7 +32,17 @@ disciplines = [
     'Visceratika',
 ]
 
-# Groups are not integers because of ANY-group vampires (i.e. Anarch Convert)
+virtues = {
+    'def': 'Defense',
+    'inn': 'Innocence',
+    'jud': 'Justice',
+    'mar': 'Martyrdom',
+    'red': 'Redemption',
+    'ven': 'Vengeance',
+    'vis': 'Vision',
+}
+
+# Groups are not integers because of ANY-group vampires (e.g. Anarch Convert)
 integer_fields = ['Id', 'Capacity'] + disciplines
 useless_fields = ['Aka', 'Set', 'Artist']
 
@@ -58,14 +68,27 @@ with open("vtescrypt.csv", "r",
         for k in useless_fields:
             del card[k]
 
-        # Remove empty disciplines
-        del card['Disciplines']
-        card['Disciplines'] = {}
-        for k, v in card.items():
-            if k in disciplines and v > 0:
-                card['Disciplines'][k] = v
-        for d in disciplines:
-            del card[d]
+        # Remove empty disciplines/virtues
+        if card['Type'] == 'Imbued':
+            card['Virtues'] = {}
+            for virtue in virtues:
+                if virtue in card['Disciplines']:
+                    card['Virtues'][virtues[virtue]] = 1
+
+            del card['Disciplines']
+            card['Disciplines'] = card['Virtues']
+            del card['Virtues']
+            for d in disciplines:
+                del card[d]
+        elif card['Type'] == 'Vampire':
+            del card['Disciplines']
+            card['Disciplines'] = {}
+            for k, v in card.items():
+                if k in disciplines and v > 0:
+                    card['Disciplines'][k] = v
+
+            for d in disciplines:
+                del card[d]
 
         cards.append(card)
 

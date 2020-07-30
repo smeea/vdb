@@ -1800,7 +1800,11 @@
         "Card Text":"Anna may move 2 blood from the blood bank to any vampire as a +1 stealth action. During your unlock phase, you may look at the top three cards of your library.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Martyrdom":1,
+            "Redemption":1,
+            "Vision":1
+        }
     },
     {
         "Id":200103,
@@ -3224,7 +3228,10 @@
         "Card Text":"During your unlock phase, another ready imbued you control takes 1 unpreventable damage. +1 bleed.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Innocence":1,
+            "Vengeance":1
+        }
     },
     {
         "Id":200182,
@@ -7090,7 +7097,11 @@
         "Card Text":"Earl gets +1 stealth on actions other than actions to enter combat. During your unlock phase, if you control more than two ready imbued, Earl burns 1 conviction [1 CONVICTION].",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Justice":1,
+            "Martyrdom":1,
+            "Vision":1
+        }
     },
     {
         "Id":200398,
@@ -7706,7 +7717,10 @@
         "Card Text":"If Erick successfully enters combat with a monster as an action, he may gain a conviction [1 CONVICTION] from your hand or ash heap (before combat begins).",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Innocence":1,
+            "Justice":1
+        }
     },
     {
         "Id":200433,
@@ -8533,7 +8547,10 @@
         "Card Text":"Other Methuselahs' actions that target Fran\u00e7ois cost an additional blood or life.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Defense":1,
+            "Justice":1
+        }
     },
     {
         "Id":200480,
@@ -11269,7 +11286,9 @@
         "Card Text":"When Inez enters play, you may search your library (shuffle afterward) or hand for a power that requires innocence and put it on her.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Innocence":1
+        }
     },
     {
         "Id":200633,
@@ -11695,7 +11714,10 @@
         "Card Text":"Jack gets an optional maneuver on the first round of combat.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Defense":1,
+            "Justice":1
+        }
     },
     {
         "Id":200657,
@@ -12280,7 +12302,11 @@
         "Card Text":"Any incapacitated imbued may move to the ready region and gain a life (not to exceed his or her starting amount) by burning 2 conviction [2 CONVICTION] during any Methuselah's unlock phase.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Innocence":1,
+            "Justice":1,
+            "Vision":1
+        }
     },
     {
         "Id":200690,
@@ -12293,7 +12319,10 @@
         "Card Text":"Weapons cost Jennifer 1 less pool or blood. +1 bleed. -1 stealth.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Vengeance":1,
+            "Vision":1
+        }
     },
     {
         "Id":200691,
@@ -12725,7 +12754,10 @@
         "Card Text":"John may enter combat with a monster as a (D) action that costs 1 conviction [1 CONVICTION].",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Justice":1,
+            "Vengeance":1
+        }
     },
     {
         "Id":200716,
@@ -14685,7 +14717,11 @@
         "Card Text":"During your discard phase, Leaf may lock to gain a conviction [1 CONVICTION] from your library (shuffle afterward), hand or ash heap.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Innocence":1,
+            "Redemption":1,
+            "Vision":1
+        }
     },
     {
         "Id":200826,
@@ -15063,7 +15099,10 @@
         "Card Text":"Liz doesn't gain a conviction [1 CONVICTION] as normal when entering play.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Innocence":1,
+            "Redemption":1
+        }
     },
     {
         "Id":200847,
@@ -15804,7 +15843,10 @@
         "Card Text":"If Lupe has a vehicle, once each action she may burn a conviction [1 CONVICTION] to get +1 stealth or +1 intercept.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Defense":1,
+            "Vengeance":1
+        }
     },
     {
         "Id":200887,
@@ -16174,7 +16216,10 @@
         "Card Text":"During a referendum, Maman may burn a conviction [1 CONVICTION] to get 3 votes against the referendum. You may lock Maman before range is determined in a combat between two monsters to end that combat.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Innocence":1,
+            "Martyrdom":1
+        }
     },
     {
         "Id":200908,
@@ -16648,7 +16693,10 @@
         "Card Text":"Marion gets an optional press each combat.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Justice":1,
+            "Redemption":1
+        }
     },
     {
         "Id":200935,
@@ -19660,7 +19708,10 @@
         "Card Text":"During your influence phase, you may move a counter from your pool to an imbued in your uncontrolled region.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Defense":1,
+            "Vision":1
+        }
     },
     {
         "Id":201104,
@@ -19741,7 +19792,10 @@
         "Card Text":"+1 strength. Pedro cannot maneuver to long range, press to end combat, or end combat as a strike.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Martyrdom":1,
+            "Vengeance":1
+        }
     },
     {
         "Id":201109,
@@ -19886,7 +19940,10 @@
         "Card Text":"While Peter is in combat with a monster, he may burn a conviction [1 CONVICTION] to get a maneuver.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Redemption":1,
+            "Vengeance":1
+        }
     },
     {
         "Id":201116,
@@ -24686,7 +24743,10 @@
         "Card Text":"Travis may move 2 blood from the blood bank to an imbued in your uncontrolled region as a +1 stealth action that costs 1 conviction [1 CONVICTION].",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Defense":1,
+            "Martyrdom":1
+        }
     },
     {
         "Id":201387,
@@ -26390,7 +26450,10 @@
         "Card Text":"If Xian successfully blocks a monster and is still ready at the end of the action, he may gain a conviction [1 CONVICTION] from your hand or ash heap.",
         "Title":"",
         "Banned":"",
-        "Disciplines":{}
+        "Disciplines":{
+            "Defense":1,
+            "Innocence":1
+        }
     },
     {
         "Id":201482,

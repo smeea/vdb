@@ -94,6 +94,13 @@ function ResultCryptDisciplines(props) {
     Valeren: [valeren, valerensup],
     Vicissitude: [vicissitude, vicissitudesup],
     Visceratika: [visceratika, visceratikasup],
+    Defense: [defense],
+    Innocence: [innocence],
+    Justice: [justice],
+    Martyrdom: [martyrdom],
+    Redemption: [redemption],
+    Vengeance: [vengeance],
+    Vision: [vision],
   };
 
   let discipline_rows;

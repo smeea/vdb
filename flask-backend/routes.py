@@ -2,8 +2,7 @@ from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user
 from search_crypt import get_crypt_by_cardtext
 from search_crypt import get_crypt_by_trait
-from search_crypt import get_crypt_by_discipline
-from search_crypt import get_crypt_by_virtues
+from search_crypt import get_crypt_by_disciplines
 from search_crypt import get_crypt_by_title
 from search_crypt import get_crypt_by_votes
 from search_crypt import get_crypt_by_capacity
@@ -14,7 +13,7 @@ from search_crypt import get_crypt_by_id
 from search_crypt import get_overall_crypt
 from search_library import get_library_by_cardtext
 from search_library import get_library_by_trait
-from search_library import get_library_by_discipline
+from search_library import get_library_by_disciplines
 from search_library import get_library_by_title
 from search_library import get_library_by_sect
 from search_library import get_library_by_clan
@@ -49,6 +48,7 @@ def updateDeck(deckid):
         merged_cards = d.cards.copy()
         for k, v in new_cards.items():
             merged_cards[k] = v
+
         d.cards = merged_cards.copy()
         db.session.commit()
         return jsonify({'updated deck': d.deckid, 'cards': d.cards})
@@ -212,9 +212,9 @@ def searchCryptCards():
         pass
 
     try:
-        if request.json['disciplines']:
+        if request.json['disciplines'] or request.json['virtues']:
             parameters += 1
-            cards_by_disciplines = get_crypt_by_discipline(
+            cards_by_disciplines = get_crypt_by_disciplines(
                 request.json['disciplines'])
             match_by_category.append(cards_by_disciplines)
     except KeyError:
@@ -223,7 +223,8 @@ def searchCryptCards():
     try:
         if request.json['virtues']:
             parameters += 1
-            cards_by_virtues = get_crypt_by_virtues(request.json['virtues'])
+            cards_by_virtues = get_crypt_by_disciplines(
+                request.json['virtues'])
             match_by_category.append(cards_by_virtues)
     except KeyError:
         pass
