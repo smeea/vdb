@@ -40,11 +40,19 @@ function ResultLibraryType(props) {
     );
   });
 
-  return(
-    <td className='type'>
-      {cardtype_images}
-    </td>
-  );
+  if (props.total !== undefined) {
+    return(
+      <div>
+        {cardtype_images} {' '} {props.cardtype} [{props.total}]
+      </div>
+    );
+  } else {
+    return(
+      <td className='type'>
+        {cardtype_images}
+      </td>
+    );
+  }
 }
 
 export default ResultLibraryType;

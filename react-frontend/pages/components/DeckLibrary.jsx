@@ -6,7 +6,7 @@ import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
-import DeckLibraryType from './DeckLibraryType.jsx';
+import ResultLibraryType from './ResultLibraryType.jsx';
 
 function DeckLibraryBody(props) {
   let resultTrClass='library-result-even';
@@ -45,7 +45,7 @@ function DeckLibraryBody(props) {
 function DeckLibraryByTypeTable(props) {
   return (
     <div>
-      <DeckLibraryType cardtype={props.cardtype} total={props.total}/>
+      <ResultLibraryType cardtype={props.cardtype} total={props.total}/>
       <table className='library-result-table'>
         <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
