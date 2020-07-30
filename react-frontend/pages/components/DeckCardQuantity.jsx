@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DeckCryptQuantity(props) {
+function DeckCardQuantity(props) {
   const deckCardChange = props.deckCardChange;
   const deckid = props.deckid;
   const cardid = props.cardid;
@@ -10,6 +10,7 @@ function DeckCryptQuantity(props) {
   } else {
     q = props.q;
   }
+
   return (
     <td className='quantity'>
       <div className='d-flex align-items-center justify-content-between'>
@@ -25,4 +26,4 @@ function DeckCryptQuantity(props) {
   );
 }
 
-export default DeckCryptQuantity;
+export default DeckCardQuantity;

@@ -78,18 +78,19 @@ function Deck(props) {
   }, []);
 
 
-
   return (
     <div className="container main-container py-xl-3 px-0 px-xl-2">
       <div className="row mx-0">
         <div className="col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2">
         </div>
+
         <div className="col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2">
           <DeckNewDeck />
           <DeckSelectDeck handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activedeck={activedeck} />
           <br />
           <DeckShowDeck deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={decks[activedeck]} />
         </div>
+
         <div className="col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2">
         </div>
       </div>

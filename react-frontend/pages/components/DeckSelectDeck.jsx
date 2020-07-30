@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import DeckRemoveDeck from './DeckRemoveDeck.jsx';
 
 function DeckSelectDeck(props) {
-
   let option_default;
   if (Object.keys(props.decks).length > 0) {
     option_default =

@@ -1,11 +1,11 @@
 import React from 'react';
 
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
-import DeckCryptDisciplines from './DeckCryptDisciplines.jsx';
+import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
-import DeckCryptQuantity from './DeckCryptQuantity.jsx';
+import DeckCardQuantity from './DeckCardQuantity.jsx';
 
 function DeckCryptSideBody(props) {
   const disciplines_set = props.disciplines_set;
@@ -31,10 +31,10 @@ function DeckCryptSideBody(props) {
 
     return (
       <tr className={resultTrClass} key={index}>
-        <DeckCryptQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+        <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
         <ResultCryptCapacity value={card.c['Capacity']} />
-        <DeckCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
-        <ResultCryptName value={card.c['Name']} />
+        <ResultCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
+        <ResultCryptName value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']}/>
         <ResultCryptClan value={card.c['Clan']} />
         <ResultCryptGroup value={card.c['Group']} />
       </tr>
@@ -67,9 +67,9 @@ function DeckCryptBody(props) {
 
     return (
       <tr className={resultTrClass} key={index}>
-        <DeckCryptQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+        <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
         <ResultCryptCapacity value={card.c['Capacity']} />
-        <DeckCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
+        <ResultCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
         <ResultCryptName value={card.c['Name']} />
         <ResultCryptClan value={card.c['Clan']} />
         <ResultCryptGroup value={card.c['Group']} />

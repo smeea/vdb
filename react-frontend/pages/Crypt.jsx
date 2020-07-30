@@ -24,7 +24,7 @@ function Crypt(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Crypt;

@@ -35,7 +35,7 @@ function SearchLibraryBody(props) {
         <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
         <ResultLibraryType cardtype={card['Type']} />
         <ResultLibraryDisciplines value={card['Discipline']} />
-        <ResultLibraryName value={card['Name']} />
+        <ResultLibraryName value={card['Name']} ban={card['Banned']} />
         <ResultLibraryClan value={card['Clan']} />
         <ResultLibraryBurn value={card['Burn Option']} />
       </tr>

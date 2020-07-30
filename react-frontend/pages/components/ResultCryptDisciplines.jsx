@@ -64,7 +64,7 @@ import redemption from './../../assets/images/disciplines/redemption.gif';
 import vengeance from './../../assets/images/disciplines/vengeance.gif';
 import vision from './../../assets/images/disciplines/vision.gif';
 
-function SearchCryptDisciplines(props) {
+function ResultCryptDisciplines(props) {
   const disciplinesicons = {
     Abombwe: [abombwe, abombwesup],
     Animalism: [animalism, animalismsup],
@@ -102,24 +102,51 @@ function SearchCryptDisciplines(props) {
   let counter = 0;
   const width = 100 / max_rows + '%';
 
-  discipline_rows = Object.keys(props.value).map((d, index) => {
-    counter += 1;
-    let imgSrc;
-    let imgClass;
-    if (props.value[d] == 1) {
-      imgSrc = disciplinesicons[d][0];
-      imgClass = 'discipline-base-image-results';
-    } else if (props.value[d] == 2) {
-      imgSrc = disciplinesicons[d][1];
-      imgClass = 'discipline-superior-image-results';
-    }
-    return (
-      <td width={width} key={index}>
-        <img className={imgClass} src={imgSrc} />
-      </td>
-    );
-  });
+  if (props.disciplines_set !== undefined && props.disciplines_set.length <= max_rows) {
+    discipline_rows = props.disciplines_set.map((d, index) => {
+      counter += 1;
+      let imgSrc;
+      let imgClass;
+      if (props.value[d] === undefined) {
+        return (
+          <td width={width} key={index}>
+          </td>
+        );
+      } else {
+        if (props.value[d] == 1) {
+          imgSrc = disciplinesicons[d][0];
+          imgClass = 'discipline-base-image-results';
+        } else if (props.value[d] == 2) {
+          imgSrc = disciplinesicons[d][1];
+          imgClass = 'discipline-superior-image-results';
+        }
+        return (
+          <td width={width} key={index}>
+            <img className={imgClass} src={imgSrc} />
+          </td>
+        );
+      }
+    });
 
+  } else {
+    discipline_rows = Object.keys(props.value).map((d, index) => {
+      counter += 1;
+      let imgSrc;
+      let imgClass;
+      if (props.value[d] == 1) {
+        imgSrc = disciplinesicons[d][0];
+        imgClass = 'discipline-base-image-results';
+      } else if (props.value[d] == 2) {
+        imgSrc = disciplinesicons[d][1];
+        imgClass = 'discipline-superior-image-results';
+      }
+      return (
+        <td width={width} key={index}>
+          <img className={imgClass} src={imgSrc} />
+        </td>
+      );
+    });
+  }
   while (counter < max_rows) {
     counter += 1;
     empty_rows.push(
@@ -141,4 +168,4 @@ function SearchCryptDisciplines(props) {
   );
 }
 
-export default SearchCryptDisciplines;
+export default ResultCryptDisciplines;

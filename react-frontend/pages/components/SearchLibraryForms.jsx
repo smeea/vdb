@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import abombwe from './../../assets/images/disciplines/abombwe.gif';
 import animalism from './../../assets/images/disciplines/animalism.gif';

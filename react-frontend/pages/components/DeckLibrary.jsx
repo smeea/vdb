@@ -5,8 +5,8 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
-import DeckLibraryQuantity from './DeckLibraryQuantity.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import DeckCardQuantity from './DeckCardQuantity.jsx';
+import DeckLibraryType from './DeckLibraryType.jsx';
 
 function DeckLibraryBody(props) {
   let resultTrClass='library-result-even';
@@ -19,8 +19,8 @@ function DeckLibraryBody(props) {
     if (card[0]['Clan']) {
       return (
         <tr className={resultTrClass} key={index}>
-          <DeckLibraryQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultLibraryName value={card[0]['Name']} />
+          <DeckCardQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+          <ResultLibraryName value={card[0]['Name']} ban={card[0]['Banned']} />
           <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
           <ResultLibraryClan value={card[0]['Clan']} />
           <ResultLibraryBurn value={card[0]['Burn Option']} />
@@ -29,8 +29,8 @@ function DeckLibraryBody(props) {
     } else {
       return (
         <tr className={resultTrClass} key={index}>
-          <DeckLibraryQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultLibraryName value={card[0]['Name']} />
+          <DeckCardQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+          <ResultLibraryName value={card[0]['Name']} ban={card[0]['Banned']} />
           <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
           <ResultLibraryDisciplines value={card[0]['Discipline']} />
           <ResultLibraryBurn value={card[0]['Burn Option']} />
@@ -45,7 +45,7 @@ function DeckLibraryBody(props) {
 function DeckLibraryByTypeTable(props) {
   return (
     <div>
-      <ResultLibraryType cardtype={props.cardtype} total={props.total}/>
+      <DeckLibraryType cardtype={props.cardtype} total={props.total}/>
       <table className='library-result-table'>
         <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>

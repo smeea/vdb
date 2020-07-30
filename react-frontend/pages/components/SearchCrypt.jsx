@@ -1,11 +1,10 @@
 import React from 'react';
 
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
-import SearchCryptDisciplines from './SearchCryptDisciplines.jsx';
+import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
-
 
 function SearchCryptHeader(props) {
   return (
@@ -32,8 +31,8 @@ function SearchCryptBody(props) {
     return (
       <tr className={resultTrClass} key={index}>
         <ResultCryptCapacity value={card['Capacity']} />
-        <SearchCryptDisciplines value={card['Disciplines']} />
-        <ResultCryptName value={card['Name']} />
+        <ResultCryptDisciplines value={card['Disciplines']} />
+        <ResultCryptName value={card['Name']} adv={card['Adv']} ban={card['Banned']} />
         <ResultCryptClan value={card['Clan']} />
         <ResultCryptGroup value={card['Group']} />
       </tr>
