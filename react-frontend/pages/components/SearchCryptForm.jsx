@@ -64,20 +64,6 @@ import redemption from './../../assets/images/disciplines/redemption.gif';
 import vengeance from './../../assets/images/disciplines/vengeance.gif';
 import vision from './../../assets/images/disciplines/vision.gif';
 
-function SearchCryptFormText(props) {
-  return (
-    <div className="col-8">
-      <input
-        placeholder="Card Name / Text"
-        type="text"
-        name="text"
-        value={props.value}
-        onChange={props.onChange}/>
-    </div>
-  );
-}
-
-
 function SearchCryptFormButtons(props) {
   return (
     <div className="pr-1">
@@ -102,6 +88,18 @@ function SearchCryptFormButtons(props) {
   );
 }
 
+function SearchCryptFormText(props) {
+  return (
+    <div className="col-8">
+      <input
+        placeholder="Card Name / Text"
+        type="text"
+        name="text"
+        value={props.value}
+        onChange={props.onChange}/>
+    </div>
+  );
+}
 
 function SearchCryptFormDisciplines(props) {
   const disciplines = [
@@ -626,7 +624,6 @@ function SearchCryptForm(props) {
       [name]: newState
     }));
   };
-
 
   const handleDisciplinesChange = event => {
     const { id, name } = event.target;

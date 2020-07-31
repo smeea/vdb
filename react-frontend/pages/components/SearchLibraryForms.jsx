@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import abombwe from './../../assets/images/disciplines/abombwe.gif';
 import animalism from './../../assets/images/disciplines/animalism.gif';
@@ -64,19 +64,6 @@ import redemption from './../../assets/images/disciplines/redemption.gif';
 import vengeance from './../../assets/images/disciplines/vengeance.gif';
 import vision from './../../assets/images/disciplines/vision.gif';
 
-function SearchLibraryFormText(props) {
-
-  return (
-    <div className="col-8">
-      <input
-        placeholder="Card Name / Text"
-        type="text"
-        value={props.value}
-        onChange={props.onChange}/>
-    </div>
-  );
-}
-
 function SearchLibraryFormButtons(props) {
   return (
     <div className="pr-1">
@@ -101,6 +88,58 @@ function SearchLibraryFormButtons(props) {
   );
 }
 
+function SearchLibraryFormText(props) {
+  return (
+    <div className="col-8">
+      <input
+        placeholder="Card Name / Text"
+        type="text"
+        name='text'
+        value={props.value}
+        onChange={props.onChange}/>
+    </div>
+  );
+}
+
+function SearchLibraryFormType(props) {
+  const types = [
+    'ANY',
+    'Action',
+    'Action Modifier',
+    'Ally',
+    'Combat',
+    'Conviction',
+    'Equipment',
+    'Event',
+    'Master',
+    'Political Action',
+    'Power',
+    'Reaction',
+    'Reflex',
+    'Retainer',
+  ];
+
+  const typeforms = types.map((i, index) => {
+    return(
+      <option key={index} value={i}>{i}</option>
+    );
+  });
+
+  return (
+    <div className="form-row">
+      <div className="form-group col-3 d-flex align-items-center">
+        <label className="h6 mb-0">
+          Type:
+        </label>
+      </div>
+      <div className="form-group col-9">
+        <select className="custom-select" name="type" value={props.value} onChange={props.onChange}>
+          {typeforms}
+        </select>
+      </div>
+    </div>
+  );
+}
 
 function SearchLibraryFormDiscipline(props) {
   const disciplines = [
@@ -163,48 +202,8 @@ function SearchLibraryFormDiscipline(props) {
   );
 }
 
-function SearchLibraryFormType(props) {
-  const types = [
-    'ANY',
-    'Action',
-    'Action Modifier',
-    'Ally',
-    'Combat',
-    'Conviction',
-    'Equipment',
-    'Event',
-    'Master',
-    'Political Action',
-    'Power',
-    'Reaction',
-    'Reflex',
-    'Retainer',
-  ];
-
-  const typeforms = types.map((i, index) => {
-    return(
-      <option key={index} value={i}>{i}</option>
-    );
-  });
-
-  return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
-          Type:
-        </label>
-      </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name="type" value={props.value} onChange={props.onChange}>
-          {typeforms}
-        </select>
-      </div>
-    </div>
-  );
-}
-
 function SearchLibraryFormBloodCost(props) {
-  const blood = ['ANY', 1, 2, 3, 4, 5, 6];
+  const blood = ['ANY', 1, 2, 3, 4];
   const bloodforms = blood.map( (i, index) => {
     return (
       <option key={index} value={i}>{i}</option>
@@ -231,10 +230,10 @@ function SearchLibraryFormBloodCost(props) {
       </div>
       <div className="form-group col-9">
         <div className="input-group">
-          <select className="custom-select" value={props.moreless} onChange={props.onMorelessChange}>
+          <select className="custom-select" name='bloodmoreless' value={props.moreless} onChange={props.onMorelessChange}>
             {bloodmorelessforms}
           </select>
-          <select className="custom-select" value={props.value} onChange={props.onValueChange} >
+          <select className="custom-select" name='blood' value={props.value} onChange={props.onValueChange} >
             {bloodforms}
           </select>
         </div>
@@ -272,10 +271,10 @@ function SearchLibraryFormPoolCost(props) {
       <div className="form-group col-9">
         <div className="input-group">
 
-          <select className="custom-select" value={props.moreless} onChange={props.onMorelessChange}>
+          <select className="custom-select" name='poolmoreless' value={props.moreless} onChange={props.onMorelessChange}>
             {poolmorelessforms}
           </select>
-          <select className="custom-select" value={props.value} onChange={props.onValueChange} >
+          <select className="custom-select" name='pool' value={props.value} onChange={props.onValueChange} >
             {poolforms}
           </select>
         </div>
@@ -349,7 +348,7 @@ function SearchLibraryFormClan(props) {
         </label>
       </div>
       <div className="form-group col-9">
-        <select className="custom-select" name="clan" value={props.value} onChange={props.onChange}>
+        <select className="custom-select" name='clan' value={props.value} onChange={props.onChange}>
           {clanforms}
         </select>
       </div>
@@ -383,7 +382,7 @@ function SearchLibraryFormSect(props) {
         </label>
       </div>
       <div className="form-group col-9">
-        <select className="custom-select" name="sect" value={props.value} onChange={props.onChange}>
+        <select className="custom-select" name='sect' value={props.value} onChange={props.onChange}>
           {sectforms}
         </select>
       </div>
@@ -414,7 +413,7 @@ function SearchLibraryFormVotes(props) {
         </label>
       </div>
       <div className="form-group col-9">
-        <select className="custom-select" name="votes" value={props.value} onChange={props.onChange}>
+        <select className="custom-select" name='votes' value={props.value} onChange={props.onChange}>
           {votesforms}
         </select>
       </div>
@@ -490,7 +489,7 @@ function SearchLibraryFormTraits(props) {
   const traitsLeftforms = traitsLeft.map( (i, index) => {
     return (
       <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(i[0], e)} />
+        <input id={i[0]} name='traits' className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(e)} />
         <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
@@ -501,7 +500,7 @@ function SearchLibraryFormTraits(props) {
   const traitsRightforms = traitsRight.map( (i, index) => {
     return (
       <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(i[0], e)} />
+        <input id={i[0]} name='traits' className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(e)} />
         <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
@@ -525,19 +524,67 @@ function SearchLibraryFormTraits(props) {
 }
 
 
-class SearchLibraryForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+function SearchLibraryForm(props) {
+  const [state, setState] = useState({
+    text: '',
+    discipline: 'ANY',
+    blood: 'ANY',
+    bloodmoreless: 'le',
+    pool: 'ANY',
+    poolmoreless: 'le',
+    clan: 'ANY',
+    sect: 'ANY',
+    title: 'ANY',
+    traits: {
+      'intercept': false,
+      'stealth': false,
+      'bleed': false,
+      'strength': false,
+      'dodge': false,
+      'optional maneuver': false,
+      'additional strike': false,
+      aggravated: false,
+      prevent: false,
+      'optional press': false,
+      'combat ends': false,
+      'bounce bleed': false,
+      'black hand': false,
+      seraph: false,
+      anarch: false,
+      infernal: false,
+    }
+  });
+
+  const handleChange = event => {
+    const {name, value} = event.target;
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleMultiChange = event => {
+    const { id, name } = event.target;
+    let newState = state[name];
+    newState[id] = !newState[id];
+    setState(prevState => ({
+      ...prevState,
+      [name]: newState
+    }));
+  };
+
+  const handleClearFormButton = () => {
+    setState({
       text: '',
+      type: 'ANY',
       discipline: 'ANY',
+      clan: 'ANY',
+      sect: 'ANY',
+      title: 'ANY',
       blood: 'ANY',
       bloodmoreless: 'le',
       pool: 'ANY',
       poolmoreless: 'le',
-      clan: 'ANY',
-      sect: 'ANY',
-      title: 'ANY',
       traits: {
         'intercept': false,
         'stealth': false,
@@ -555,161 +602,67 @@ class SearchLibraryForm extends React.Component {
         seraph: false,
         anarch: false,
         infernal: false,
-      }
+      },
+    });
+  };
+
+  const handleClearResultButton = () => {
+    props.setResults([]);
+  };
+
+  const handleSubmitButton = event => {
+    event.preventDefault();
+
+    const url = 'http://127.0.0.1:5001/api/search/library';
+
+    let input = JSON.parse(JSON.stringify(state));
+    Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
+    Object.keys(input).forEach(k => (input[k] == 'ANY' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
+    if (input['blood'] == null) {
+      delete input['bloodmoreless'];
     };
 
-    this.handleTextChange = event => {
-      const { text, value } = event.target;
-      this.setState({text: value});
+    if (input['pool'] == null) {
+      delete input['poolmoreless'];
     };
 
-    this.handleTypeChange = event => {
-      const { type, value } = event.target;
-      this.setState({type: value});
-    };
-
-    this.handleDisciplineChange = event => {
-      const { discipline, value } = event.target;
-      this.setState({discipline: value});
-    };
-
-    this.handleBloodChange = event => {
-      const { blood, value } = event.target;
-      this.setState({blood: value});
-    };
-
-    this.handleBloodMorelessChange = event => {
-      const { bloodmoreless, value } = event.target;
-      this.setState({bloodmoreless: value});
-    };
-
-    this.handlePoolChange = event => {
-      const { pool, value } = event.target;
-      this.setState({pool: value});
-    };
-
-    this.handlePoolMorelessChange = event => {
-      const { poolmoreless, value } = event.target;
-      this.setState({poolmoreless: value});
-    };
-
-    this.handleClanChange = event => {
-      const { clan, value } = event.target;
-      this.setState({clan: value});
-    };
-
-    this.handleSectChange = event => {
-      const { sect, value } = event.target;
-      this.setState({sect: value});
-    };
-
-    this.handleTitleChange = event => {
-      const { title, value } = event.target;
-      this.setState({title: value});
-    };
-
-    this.handleTraitsChange = (i, event) => {
-      const { traits, value } = event.target;
-      let newState = this.state.traits;
-      newState[i] = !newState[i];
-      this.setState({traits: newState});
-    };
-
-    this.handleClearFormButton = () => {
-      this.setState({
-        text: '',
-        type: 'ANY',
-        discipline: 'ANY',
-        clan: 'ANY',
-        sect: 'ANY',
-        title: 'ANY',
-        blood: 'ANY',
-        bloodmoreless: 'le',
-        pool: 'ANY',
-        poolmoreless: 'le',
-        traits: {
-          'intercept': false,
-          'stealth': false,
-          'bleed': false,
-          'strength': false,
-          'dodge': false,
-          'optional maneuver': false,
-          'additional strike': false,
-          aggravated: false,
-          prevent: false,
-          'optional press': false,
-          'combat ends': false,
-          'bounce bleed': false,
-          'black hand': false,
-          seraph: false,
-          anarch: false,
-          infernal: false,
+    if (Object.keys(input).length === 0) {
+      console.log('submit with empty forms');
+    } else {
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
         },
-      });
-    };
-
-    this.handleClearResultButton = () => {
-      props.setResults([]);
-    };
-
-    this.handleSubmitButton = event => {
-      event.preventDefault();
-
-      const url = 'http://127.0.0.1:5001/api/search/library';
-
-
-      let input = JSON.parse(JSON.stringify(this.state));
-      Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
-      Object.keys(input).forEach(k => (input[k] == 'ANY' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
-      if (input['blood'] == null) {
-        delete input['bloodmoreless'];
+        body: JSON.stringify(input),
       };
 
-      if (input['pool'] == null) {
-        delete input['poolmoreless'];
-      };
-
-      if (Object.keys(input).length === 0) {
-        console.log('submit with empty forms');
-      } else {
-
-        const options = {
-          method: 'POST',
-          mode: 'cors',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(input),
-        };
-
-        fetch(url, options)
-          .then(result => result.json())
-          .then(result => {
-            props.setResults(result);
-          });
-      };
+      fetch(url, options)
+        .then(result => result.json())
+        .then(result => {
+          props.setResults(result);
+        });
     };
-  }
+  };
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmitButton}>
-        <div className="form-row justify-content-between">
-          <SearchLibraryFormText value={this.state.text} onChange={this.handleTextChange} />
-          <SearchLibraryFormButtons handleClearFormButton={this.handleClearFormButton} handleClearResultButton={this.handleClearResultButton} />
-        </div>
-        <SearchLibraryFormType value={this.state.type} onChange={this.handleTypeChange} />
-        <SearchLibraryFormDiscipline value={this.state.discipline} onChange={this.handleDisciplineChange}/>
-        <SearchLibraryFormClan value={this.state.clan} onChange={this.handleClanChange} />
-        <SearchLibraryFormSect value={this.state.sect} onChange={this.handleSectChange} />
-        <SearchLibraryFormTitle value={this.state.titles} onChange={this.handleTitleChange} />
-        <SearchLibraryFormBloodCost value={this.state.blood} moreless={this.state.bloodmoreless} onValueChange={this.handleBloodChange} onMorelessChange={this.handleBloodMorelessChange} />
-        <SearchLibraryFormPoolCost value={this.state.pool} moreless={this.state.poolmoreless} onValueChange={this.handlePoolChange} onMorelessChange={this.handlePoolMorelessChange} />
-        <SearchLibraryFormTraits value={this.state.traits} onChange={this.handleTraitsChange} />
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={handleSubmitButton}>
+      <div className="form-row justify-content-between">
+        <SearchLibraryFormText value={state.text} onChange={handleChange} />
+        <SearchLibraryFormButtons handleClearFormButton={handleClearFormButton} handleClearResultButton={handleClearResultButton} />
+      </div>
+      <SearchLibraryFormType value={state.type} onChange={handleChange} />
+      <SearchLibraryFormDiscipline value={state.discipline} onChange={handleChange}/>
+      <SearchLibraryFormClan value={state.clan} onChange={handleChange} />
+      <SearchLibraryFormSect value={state.sect} onChange={handleChange} />
+      <SearchLibraryFormTitle value={state.titles} onChange={handleChange} />
+      <SearchLibraryFormBloodCost value={state.blood} moreless={state.bloodmoreless} onValueChange={handleChange} onMorelessChange={handleChange} />
+      <SearchLibraryFormPoolCost value={state.pool} moreless={state.poolmoreless} onValueChange={handleChange} onMorelessChange={handleChange} />
+      <SearchLibraryFormTraits value={state.traits} onChange={handleMultiChange} />
+    </form>
+  );
 }
 
 export default SearchLibraryForm;
