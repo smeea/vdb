@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import abombwe from './../../assets/images/disciplines/abombwe.gif';
 import animalism from './../../assets/images/disciplines/animalism.gif';
@@ -70,6 +70,7 @@ function SearchCryptFormText(props) {
       <input
         placeholder="Card Name / Text"
         type="text"
+        name="text"
         value={props.value}
         onChange={props.onChange}/>
     </div>
@@ -134,12 +135,12 @@ function SearchCryptFormDisciplines(props) {
     ['Visceratika', visceratika, visceratikasup],
   ];
 
-  const disciplinesforms = disciplines.map( (i, index) => {
+  const disciplinesforms = disciplines.map((i, index) => {
     let disciplineState = 'discipline-container state' + props.value[i[0]];
     return (
       <div key={index} className={disciplineState}>
-        <label className='discipline-container d-flex justify-content-center align-items-center' htmlFor={i}>
-          <input className="d-none" type="button" id={i} value={i[0]} onClick={(e) => props.onChange(i[0], e)} />
+        <label className='discipline-container d-flex justify-content-center align-items-center' htmlFor={i[0]}>
+          <input className="d-none" type="button" name='disciplines' id={i[0]} onClick={e => props.onChange(e)} />
           <img className="discipline-base-image-forms" src={i[1]} />
           <img className="discipline-superior-image-forms" src={i[2]} />
         </label>
@@ -170,12 +171,12 @@ function SearchCryptFormVirtues(props) {
     ['Vision', vision],
   ];
 
-  const virtuesforms = virtues.map( (i, index) => {
+  const virtuesforms = virtues.map((i, index) => {
     let virtueState = 'virtue-container mb-2 state' + props.value[i[0]];
     return (
       <div key={index} className={virtueState}>
-        <label className="virtue-container d-flex justify-content-center align-items-center" htmlFor={i}>
-          <input className="d-none" type="button" id={i} value={i[0]} onClick={(e) => props.onChange(i[0], e)} />
+        <label className="virtue-container d-flex justify-content-center align-items-center" htmlFor={i[0]}>
+          <input className="d-none" type="button" name='virtues' id={i[0]} onClick={e => props.onChange(e)} />
           <img className="virtue-image" src={i[1]} />
         </label>
       </div>
@@ -221,11 +222,10 @@ function SearchCryptFormCapacity(props) {
       </div>
       <div className="form-group col-9">
         <div className="input-group">
-
-          <select className="custom-select" value={props.moreless} onChange={props.onMorelessChange}>
+          <select className="custom-select" name='capacitymoreless' value={props.moreless} onChange={props.onMorelessChange}>
             {capacitymorelessforms}
           </select>
-          <select className="custom-select" value={props.value} onChange={props.onValueChange} >
+          <select className="custom-select" name='capacity' value={props.value} onChange={props.onValueChange} >
             {capacityforms}
           </select>
         </div>
@@ -300,7 +300,7 @@ function SearchCryptFormClan(props) {
         </label>
       </div>
       <div className="form-group col-9">
-        <select className="custom-select" name="clan" value={props.value} onChange={props.onChange}>
+        <select className="custom-select" name='clan' value={props.value} onChange={props.onChange}>
           {clanforms}
         </select>
       </div>
@@ -334,7 +334,7 @@ function SearchCryptFormSect(props) {
         </label>
       </div>
       <div className="form-group col-9">
-        <select className="custom-select" name="sect" value={props.value} onChange={props.onChange}>
+        <select className="custom-select" name='sect' value={props.value} onChange={props.onChange}>
           {sectforms}
         </select>
       </div>
@@ -365,7 +365,7 @@ function SearchCryptFormVotes(props) {
         </label>
       </div>
       <div className="form-group col-9">
-        <select className="custom-select" name="votes" value={props.value} onChange={props.onChange}>
+        <select className="custom-select" name='votes' value={props.value} onChange={props.onChange}>
           {votesforms}
         </select>
       </div>
@@ -394,10 +394,10 @@ function SearchCryptFormTitles(props) {
     ['magaji', 'Magaji'],
   ];
 
-  const titlesLeftforms = titlesLeft.map( (i, index) => {
+  const titlesLeftforms = titlesLeft.map((i, index) => {
     return (
       <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(i[0], e)} />
+        <input name='titles' id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
         <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
@@ -405,10 +405,10 @@ function SearchCryptFormTitles(props) {
     );
   });
 
-  const titlesRightforms = titlesRight.map( (i, index) => {
+  const titlesRightforms = titlesRight.map((i, index) => {
     return (
       <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(i[0], e)} />
+        <input name='titles' id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
         <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
@@ -438,7 +438,7 @@ function SearchCryptFormGroup(props) {
   const groupforms = groups.map( (i, index) => {
     return (
       <div key={index} className="ml-2 custom-control custom-checkbox">
-        <input id={i} className="mr-1 custom-control-input" type="checkbox" checked={props.value[i]} onChange={(e) => props.onChange(i, e)} />
+        <input id={i} name='group' className="mr-1 custom-control-input" type="checkbox" checked={props.value[i]} onChange={e => props.onChange(e)} />
         <label htmlFor={i} className="mr-0 custom-control-label">
           {i}
         </label>
@@ -484,7 +484,7 @@ function SearchCryptFormTraits(props) {
   const traitsLeftforms = traitsLeft.map( (i, index) => {
     return (
       <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(i[0], e)} />
+        <input id={i[0]} name='traits' className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
         <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
@@ -495,7 +495,7 @@ function SearchCryptFormTraits(props) {
   const traitsRightforms = traitsRight.map( (i, index) => {
     return (
       <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(i[0], e)} />
+        <input id={i[0]} name='traits' className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
         <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
@@ -518,11 +518,146 @@ function SearchCryptFormTraits(props) {
   );
 }
 
+function SearchCryptForm(props) {
+  const [state, setState] = useState({
+    text: '',
+    disciplines: {
+      Abombwe: 0,
+      Animalism: 0,
+      Auspex: 0,
+      Celerity: 0,
+      Chimerstry: 0,
+      Daimoinon: 0,
+      Dementation: 0,
+      Dominate: 0,
+      Fortitude: 0,
+      Melpominee: 0,
+      Mytherceria: 0,
+      Necromancy: 0,
+      Obeah: 0,
+      Obfuscate: 0,
+      Obtenebration: 0,
+      Potence: 0,
+      Presence: 0,
+      Protean: 0,
+      Quietus: 0,
+      Sanguinus: 0,
+      Serpentis: 0,
+      Spiritus: 0,
+      Temporis: 0,
+      Thanatosis: 0,
+      Thaumaturgy: 0,
+      Valeren: 0,
+      Vicissitude: 0,
+      Visceratika: 0,
+    },
+    virtues: {
+      Defense: 0,
+      Innocence: 0,
+      Justice: 0,
+      Martyrdom: 0,
+      Redemption: 0,
+      Vengeance: 0,
+      Vision: 0,
+    },
+    capacity: 'ANY',
+    capacitymoreless: 'le',
+    clan: 'ANY',
+    sect: 'ANY',
+    votes: 'ANY',
+    titles: {
+      primogen: false,
+      prince: false,
+      justicar: false,
+      innercircle: false,
+      baron: false,
+      '1 votes': false,
+      '2 votes': false,
+      bishop: false,
+      archbishop: false,
+      priscus: false,
+      cardinal: false,
+      regent: false,
+      magaji: false,
+    },
+    group: {
+      1: false,
+      2: false,
+      3: false,
+      4: false,
+      5: false,
+      6: false,
+    },
+    traits: {
+      '1 intercept': false,
+      '1 stealth': false,
+      '1 bleed': false,
+      '2 bleed': false,
+      '1 strength': false,
+      '1 strength': false,
+      'additional strike': false,
+      'optional maneuver': false,
+      'optional press': false,
+      prevent: false,
+      aggravated: false,
+      'enter combat': false,
+      'black hand': false,
+      seraph: false,
+      infernal: false,
+      'red list': false,
+      flight: false,
+    },
+  });
 
-class SearchCryptForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  const handleChange = event => {
+    const {name, value} = event.target;
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleMultiChange = event => {
+    const { id, name } = event.target;
+    let newState = state[name];
+    newState[id] = !newState[id];
+    setState(prevState => ({
+      ...prevState,
+      [name]: newState
+    }));
+  };
+
+
+  const handleDisciplinesChange = event => {
+    const { id, name } = event.target;
+    let newState = state[name];
+    if (newState[id] < 2) {
+      newState[id] += 1;
+    } else {
+      newState[id] = 0;
+    }
+    setState(prevState => ({
+      ...prevState,
+      [name]: newState
+    }));
+  };
+
+  const handleVirtuesChange = event => {
+    const { id, name } = event.target;
+    let newState = state[name];
+    if (newState[id] == 0) {
+      newState[id] = 1;
+    } else {
+      newState[id] = 0;
+    }
+    setState(prevState => ({
+      ...prevState,
+      [name]: newState
+    }));
+  };
+
+  const handleClearFormButton = () => {
+    setState({
       text: '',
       disciplines: {
         Abombwe: 0,
@@ -574,7 +709,7 @@ class SearchCryptForm extends React.Component {
         justicar: false,
         innercircle: false,
         baron: false,
-        '1 votes': false,
+        '1 vote': false,
         '2 votes': false,
         bishop: false,
         archbishop: false,
@@ -610,236 +745,67 @@ class SearchCryptForm extends React.Component {
         'red list': false,
         flight: false,
       },
+    });
+  };
+
+  const handleClearResultButton = () => {
+    props.setResults([]);
+  };
+
+  const handleSubmitButton = event => {
+    event.preventDefault();
+
+    const url = 'http://127.0.0.1:5001/api/search/crypt';
+
+    let input = JSON.parse(JSON.stringify(state));
+    Object.keys(input.disciplines).forEach(k => (input.disciplines[k] == 0) && delete input.disciplines[k]);
+    Object.keys(input.virtues).forEach(k => (input.virtues[k] == 0) && delete input.virtues[k]);
+    Object.keys(input.titles).forEach(k => (input.titles[k] == false) && delete input.titles[k]);
+    Object.keys(input.group).forEach(k => (input.group[k] == false) && delete input.group[k]);
+    Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
+    Object.keys(input).forEach(k => (input[k] == 'ANY' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
+    if (input['capacity'] == null) {
+      delete input['capacitymoreless'];
     };
 
-    this.handleTextChange = event => {
-      const { text, value } = event.target;
-      this.setState({text: value});
-    };
-
-
-    this.handleDisciplinesChange = (i, event) => {
-      const { disciplines, value } = event.target;
-      let newState = this.state.disciplines;
-      if (newState[i] < 2) {
-        newState[i] += 1;
-      } else {
-        newState[i] = 0;
-      }
-      this.setState({disciplines: newState});
-    };
-
-    this.handleVirtuesChange = (i, event) => {
-      const { virtues, value } = event.target;
-      let newState = this.state.virtues;
-      if (newState[i] == 0) {
-        newState[i] = 1;
-      } else {
-        newState[i] = 0;
-      }
-      this.setState({virtues: newState});
-    };
-
-    this.handleCapacityChange = event => {
-      const { capacity, value } = event.target;
-      this.setState({capacity: value});
-    };
-
-    this.handleCapacityMorelessChange = event => {
-      const { capacitymoreless, value } = event.target;
-      this.setState({capacitymoreless: value});
-    };
-
-    this.handleClanChange = event => {
-      const { clan, value } = event.target;
-      this.setState({clan: value});
-    };
-
-    this.handleSectChange = event => {
-      const { sect, value } = event.target;
-      this.setState({sect: value});
-    };
-
-    this.handleVotesChange = event => {
-      const { votes, value } = event.target;
-      this.setState({votes: value});
-    };
-
-    this.handleTitlesChange = (i, event) => {
-      const { titles, value } = event.target;
-      let newState = this.state.titles;
-      newState[i] = !newState[i];
-      this.setState({titles: newState});
-    };
-
-    this.handleGroupChange = (i, event) => {
-      const { group, value } = event.target;
-      let newState = this.state.group;
-      newState[i] = !newState[i];
-      this.setState({group: newState});
-    };
-
-    this.handleTraitsChange = (i, event) => {
-      const { traits, value } = event.target;
-      let newState = this.state.traits;
-      newState[i] = !newState[i];
-      this.setState({traits: newState});
-    };
-
-    this.handleClearFormButton = () => {
-      this.setState({
-        text: '',
-        disciplines: {
-          Abombwe: 0,
-          Animalism: 0,
-          Auspex: 0,
-          Celerity: 0,
-          Chimerstry: 0,
-          Daimoinon: 0,
-          Dementation: 0,
-          Dominate: 0,
-          Fortitude: 0,
-          Melpominee: 0,
-          Mytherceria: 0,
-          Necromancy: 0,
-          Obeah: 0,
-          Obfuscate: 0,
-          Obtenebration: 0,
-          Potence: 0,
-          Presence: 0,
-          Protean: 0,
-          Quietus: 0,
-          Sanguinus: 0,
-          Serpentis: 0,
-          Spiritus: 0,
-          Temporis: 0,
-          Thanatosis: 0,
-          Thaumaturgy: 0,
-          Valeren: 0,
-          Vicissitude: 0,
-          Visceratika: 0,
+    if (Object.keys(input).length === 0) {
+      console.log('submit with empty forms');
+    } else {
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        virtues: {
-          Defense: 0,
-          Innocence: 0,
-          Justice: 0,
-          Martyrdom: 0,
-          Redemption: 0,
-          Vengeance: 0,
-          Vision: 0,
-        },
-        capacity: 'ANY',
-        capacitymoreless: 'le',
-        clan: 'ANY',
-        sect: 'ANY',
-        votes: 'ANY',
-        titles: {
-          primogen: false,
-          prince: false,
-          justicar: false,
-          innercircle: false,
-          baron: false,
-          '1 vote': false,
-          '2 votes': false,
-          bishop: false,
-          archbishop: false,
-          priscus: false,
-          cardinal: false,
-          regent: false,
-          magaji: false,
-        },
-        group: {
-          1: false,
-          2: false,
-          3: false,
-          4: false,
-          5: false,
-          6: false,
-        },
-        traits: {
-          '1 intercept': false,
-          '1 stealth': false,
-          '1 bleed': false,
-          '2 bleed': false,
-          '1 strength': false,
-          '1 strength': false,
-          'additional strike': false,
-          'optional maneuver': false,
-          'optional press': false,
-          prevent: false,
-          aggravated: false,
-          'enter combat': false,
-          'black hand': false,
-          seraph: false,
-          infernal: false,
-          'red list': false,
-          flight: false,
-        },
-      });
-    };
-
-    this.handleClearResultButton = () => {
-      props.setResults([]);
-    };
-
-    this.handleSubmitButton = event => {
-      event.preventDefault();
-
-      const url = 'http://127.0.0.1:5001/api/search/crypt';
-
-      let input = JSON.parse(JSON.stringify(this.state));
-      Object.keys(input.disciplines).forEach(k => (input.disciplines[k] == 0) && delete input.disciplines[k]);
-      Object.keys(input.virtues).forEach(k => (input.virtues[k] == 0) && delete input.virtues[k]);
-      Object.keys(input.titles).forEach(k => (input.titles[k] == false) && delete input.titles[k]);
-      Object.keys(input.group).forEach(k => (input.group[k] == false) && delete input.group[k]);
-      Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
-      Object.keys(input).forEach(k => (input[k] == 'ANY' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
-      if (input['capacity'] == null) {
-        delete input['capacitymoreless'];
+        body: JSON.stringify(input),
       };
 
-      if (Object.keys(input).length === 0) {
-        console.log('submit with empty forms');
-      } else {
-
-        const options = {
-          method: 'POST',
-          mode: 'cors',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(input),
-        };
-
-        fetch(url, options)
-          .then(result => result.json())
-          .then(result => {
-            props.setResults(result);
-          });
-      };
+      fetch(url, options)
+        .then(result => result.json())
+        .then(result => {
+          props.setResults(result);
+        });
     };
-  }
+  };
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmitButton}>
-        <div className="form-row justify-content-between">
-          <SearchCryptFormText value={this.state.text} onChange={this.handleTextChange} />
-          <SearchCryptFormButtons handleClearFormButton={this.handleClearFormButton} handleClearResultButton={this.handleClearResultButton} />
-        </div>
-        <SearchCryptFormDisciplines value={this.state.disciplines} onChange={this.handleDisciplinesChange}/>
-        <SearchCryptFormVirtues value={this.state.virtues} onChange={this.handleVirtuesChange}/>
-        <SearchCryptFormCapacity value={this.state.capacity} moreless={this.state.capacitymoreless} onValueChange={this.handleCapacityChange} onMorelessChange={this.handleCapacityMorelessChange} />
-        <SearchCryptFormClan value={this.state.clan} onChange={this.handleClanChange} />
-        <SearchCryptFormSect value={this.state.sect} onChange={this.handleSectChange} />
-        <SearchCryptFormVotes value={this.state.votes} onChange={this.handleVotesChange} />
-        <SearchCryptFormTitles value={this.state.titles} onChange={this.handleTitlesChange} />
-        <SearchCryptFormGroup value={this.state.group} onChange={this.handleGroupChange} />
-        <SearchCryptFormTraits value={this.state.traits} onChange={this.handleTraitsChange} />
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={handleSubmitButton}>
+      <div className="form-row justify-content-between">
+        <SearchCryptFormText value={state.text} onChange={handleChange} />
+        <SearchCryptFormButtons handleClearFormButton={handleClearFormButton} handleClearResultButton={handleClearResultButton} />
+      </div>
+      <SearchCryptFormDisciplines value={state.disciplines} onChange={handleDisciplinesChange}/>
+      <SearchCryptFormVirtues value={state.virtues} onChange={handleVirtuesChange}/>
+      <SearchCryptFormCapacity value={state.capacity} moreless={state.capacitymoreless} onValueChange={handleChange} onMorelessChange={handleChange} />
+      <SearchCryptFormClan value={state.clan} onChange={handleChange} />
+      <SearchCryptFormSect value={state.sect} onChange={handleChange} />
+      <SearchCryptFormVotes value={state.votes} onChange={handleChange} />
+      <SearchCryptFormTitles value={state.titles} onChange={handleMultiChange} />
+      <SearchCryptFormGroup value={state.group} onChange={handleMultiChange} />
+      <SearchCryptFormTraits value={state.traits} onChange={handleMultiChange} />
+    </form>
+  );
 }
 
 export default SearchCryptForm;

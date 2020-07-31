@@ -20,10 +20,10 @@ function AccountLogin(props) {
   };
 
   const handleChange = event => {
-    const {id, value} = event.target;
+    const {name, value} = event.target;
     setState(prevState => ({
       ...prevState,
-      [id]: value
+      [name]: value
     }));
   };
 
@@ -61,7 +61,6 @@ function AccountLogin(props) {
           placeholder="Username"
           type="text"
           name="username"
-          id="username"
           value={state.username}
           onChange={handleChange}
         />
@@ -69,7 +68,6 @@ function AccountLogin(props) {
           placeholder="Password"
           type="text"
           name="password"
-          id="password"
           value={state.password}
           onChange={handleChange}
         />
