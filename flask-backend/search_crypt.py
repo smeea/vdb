@@ -263,12 +263,3 @@ def get_crypt_by_id(id):
     for card in crypt:
         if card['Id'] == int(id):
             return card
-
-
-def sort_crypt_cards(cards):
-    sorted_cards = (sorted(sorted(sorted(sorted(cards,
-                                                key=lambda x: x['Name']),
-                                         key=lambda x: x['Clan']),
-                                  key=lambda x: x['Group']),
-                           key=lambda x: x['Capacity']))
-    return sorted_cards

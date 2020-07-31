@@ -90,11 +90,22 @@ function DeckCrypt(props) {
 
   const crypt = {};
   const crypt_side = {};
+
+  let crypt_group_min;
+  let crypt_group_max;
+
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
       crypt[card] = props.cards[card];
     } else {
       crypt_side[card] = props.cards[card];
+    }
+
+    if (props.cards[card].c['Group'] < crypt_group_min || crypt_group_min == undefined) {
+      crypt_group_min = props.cards[card].c['Group'];
+    }
+    if (props.cards[card].c['Group'] > crypt_group_max || crypt_group_max == undefined) {
+      crypt_group_max = props.cards[card].c['Group'];
     }
   });
 
@@ -103,10 +114,19 @@ function DeckCrypt(props) {
     crypt_total += crypt[card].q;
   }
 
+  let crypt_groups;
+  if (crypt_group_max - crypt_group_min == 1) {
+    crypt_groups = 'G' + crypt_group_min + '-' + crypt_group_max;
+  } else if (crypt_group_max - crypt_group_min == 0) {
+    crypt_groups = 'G' + crypt_group_max;
+  } else {
+    crypt_groups = 'ERROR IN GROUPS';
+  }
+
   return (
     <div>
       <div className='deck-crypt'>
-        <b>Crypt [{crypt_total}]:</b>
+        <b>Crypt [{crypt_total}] - {crypt_groups}:</b>
         <table className="deck-crypt-table">
           <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt} disciplines_set={disciplines_set} />
         </table>
