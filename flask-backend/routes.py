@@ -43,7 +43,7 @@ def showDeck(deckid):
 @app.route('/api/decks/<string:deckid>', methods=['PUT'])
 def updateDeck(deckid):
     try:
-        d = Deck.query.filter_by(deckid=deckid).first()
+        d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
         new_cards = request.json['update']
         merged_cards = d.cards.copy()
         for k, v in new_cards.items():
