@@ -45,7 +45,7 @@ function SearchLibraryBody(props) {
   return <tbody>{cards}</tbody>;
 }
 
-function SearchLibrary(props) {
+function ResultLibrary(props) {
   return (
     <div>
       <table width="100%" className="search-library-table">
@@ -56,4 +56,4 @@ function SearchLibrary(props) {
   );
 }
 
-export default SearchLibrary;
+export default ResultLibrary;

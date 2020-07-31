@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SearchLibrary from './components/SearchLibrary.jsx';
+import ResultLibrary from './components/ResultLibrary.jsx';
 import SearchLibraryForm from './components/SearchLibraryForms.jsx';
 
 function Library(props) {
@@ -17,7 +17,7 @@ function Library(props) {
         </div>
 
         <div className="col-md-12 col-lg-7 col-xl-7 center-col px-1 px-xl-2">
-          <SearchLibrary cards={cards}/>
+          <ResultLibrary cards={cards}/>
         </div>
 
         <div className="col-md-12 col-lg-3 col-xl-3 right-col px-1 px-xl-2">

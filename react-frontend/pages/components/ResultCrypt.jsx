@@ -42,7 +42,7 @@ function SearchCryptBody(props) {
   return <tbody>{cards}</tbody>;
 }
 
-function SearchCrypt(props) {
+function ResultCrypt(props) {
   return (
     <div>
       <table className='search-crypt-table'>
@@ -53,4 +53,4 @@ function SearchCrypt(props) {
   );
 }
 
-export default SearchCrypt;
+export default ResultCrypt;

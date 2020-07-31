@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SearchCrypt from './SearchCrypt.jsx';
-import SearchLibrary from './SearchLibrary.jsx';
+import ResultCrypt from './ResultCrypt.jsx';
+import ResultLibrary from './ResultLibrary.jsx';
 
 function DeckDraw(props) {
   const drawCards = (cards, quantity) => {
@@ -64,14 +64,14 @@ function DeckDraw(props) {
         {drawedCrypt != null &&
          <div>
            <b>Crypt Draw:</b>
-           <SearchCrypt cards={drawedCrypt} />
+           <ResultCrypt cards={drawedCrypt} />
            <br />
          </div >
         }
         {drawedLibrary != null &&
          <div>
            <b>Library Draw:</b>
-           <SearchLibrary cards={drawedLibrary} />
+           <ResultLibrary cards={drawedLibrary} />
            <br />
          </div>
         }

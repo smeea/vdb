@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SearchCrypt from './components/SearchCrypt.jsx';
+import ResultCrypt from './components/ResultCrypt.jsx';
 import SearchCryptForm from './components/SearchCryptForm.jsx';
 
 function Crypt(props) {
@@ -16,7 +16,7 @@ function Crypt(props) {
           CARD PREVIEW ON HOVER
         </div>
         <div className="col-md-12 col-lg-7 col-xl-7 center-col px-1 px-xl-2">
-          <SearchCrypt cards={cards}/>
+          <ResultCrypt cards={cards}/>
         </div>
 
         <div className="col-md-12 col-lg-3 col-xl-3 right-col px-1 px-xl-2">
