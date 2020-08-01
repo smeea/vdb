@@ -42,18 +42,22 @@ def showDeck(deckid):
 
 @app.route('/api/decks/<string:deckid>', methods=['PUT'])
 def updateDeck(deckid):
-    try:
-        d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
-        new_cards = request.json['update']
-        merged_cards = d.cards.copy()
-        for k, v in new_cards.items():
-            merged_cards[k] = v
+    if current_user.is_authenticated:
+        try:
+            d = Deck.query.filter_by(author=current_user,
+                                     deckid=deckid).first()
+            new_cards = request.json['update']
+            merged_cards = d.cards.copy()
+            for k, v in new_cards.items():
+                merged_cards[k] = v
 
-        d.cards = merged_cards.copy()
-        db.session.commit()
-        return jsonify({'updated deck': d.deckid, 'cards': d.cards})
-    except:
-        return jsonify({'error': 'idk'})
+            d.cards = merged_cards.copy()
+            db.session.commit()
+            return jsonify({'updated deck': d.deckid, 'cards': d.cards})
+        except:
+            return jsonify({'error': 'idk'})
+    else:
+        return jsonify({'Not logged in.'})
 
 
 @app.route('/api/decks', methods=['GET'])
@@ -112,7 +116,7 @@ def removeDeck():
             db.session.commit()
             return jsonify({'FLASK deck removed': request.json['deckid']})
         except:
-            pass
+            return jsonify({'error': 'idk'})
     else:
         return jsonify({'Not logged in.'})
 
