@@ -44,7 +44,7 @@ virtues = {
 
 # Groups are not integers because of ANY-group vampires (e.g. Anarch Convert)
 integer_fields = ['Id', 'Capacity'] + disciplines
-useless_fields = ['Aka', 'Set', 'Artist']
+useless_fields = ['Aka', 'Artist']
 
 with open("vtescrypt.csv", "r",
           encoding='utf8') as f_csv, open("vtescrypt.json",
@@ -63,6 +63,18 @@ with open("vtescrypt.csv", "r",
                 card[k] = int(card[k])
             except (ValueError):
                 pass
+
+        # Convert sets to dict
+        sets = card['Set'].split(', ')
+        card['Set'] = {}
+        for set in sets:
+            # print(set.split(':'))
+            if ':' in set:
+                set = set.split(':')
+                # print(set[0], set[1])
+            elif '-' in set:
+                set = set.split('-')
+            card['Set'][set[0]] = set[1]
 
         # Remove useless fields
         for k in useless_fields:

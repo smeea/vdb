@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -23,19 +23,45 @@ function SearchCryptHeader(props) {
 function SearchCryptBody(props) {
   let resultTrClass='crypt-result-even';
   const cards = props.resultCards.map((card, index) => {
+    const [hidden, setHidden] = useState(true);
+
+    const toggleHidden = () => {
+      if (hidden) {
+        setHidden(false);
+      } else {
+        setHidden(true);
+      }
+    };
+
     if (resultTrClass == 'crypt-result-even') {
       resultTrClass = 'crypt-result-odd';
     } else {
       resultTrClass = 'crypt-result-even';
     }
+
     return (
-      <tr className={resultTrClass} key={index}>
-        <ResultCryptCapacity value={card['Capacity']} />
-        <ResultCryptDisciplines value={card['Disciplines']} />
-        <ResultCryptName value={card['Name']} adv={card['Adv']} ban={card['Banned']} />
-        <ResultCryptClan value={card['Clan']} />
-        <ResultCryptGroup value={card['Group']} />
-      </tr>
+      <React.Fragment key={index}>
+        <tr className={resultTrClass}>
+          <ResultCryptCapacity value={card['Capacity']} />
+          <ResultCryptDisciplines value={card['Disciplines']} />
+          <ResultCryptName toggleHidden={toggleHidden} value={card['Name']} adv={card['Adv']} ban={card['Banned']} />
+          <ResultCryptClan value={card['Clan']} />
+          <ResultCryptGroup value={card['Group']} />
+        </tr>
+        { hidden ? (
+          null
+        ) : (
+          <tr className={resultTrClass}>
+            <td colSpan={2}>
+            </td>
+            <td colSpan={3} className='text'>
+              <div onClick={() => toggleHidden()}className='text'>
+                {card['Card Text']}
+              </div>
+            </td>
+          </tr>
+        )}
+      </React.Fragment>
     );
   });
 

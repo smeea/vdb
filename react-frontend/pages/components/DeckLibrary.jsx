@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -11,32 +11,53 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 function DeckLibraryBody(props) {
   let resultTrClass='library-result-even';
   const cards = props.cards.map((card, index) => {
+    const [hidden, setHidden] = useState(true);
+
+    const toggleHidden = () => {
+      if (hidden) {
+        setHidden(false);
+      } else {
+        setHidden(true);
+      }
+    };
+
     if (resultTrClass == 'library-result-even') {
       resultTrClass = 'library-result-odd';
     } else {
       resultTrClass = 'library-result-even';
     }
+
+    let ResultLibraryDisciplineOrClan;
     if (card[0]['Clan']) {
-      return (
-        <tr className={resultTrClass} key={index}>
-          <DeckCardQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultLibraryName value={card[0]['Name']} ban={card[0]['Banned']} />
-          <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
-          <ResultLibraryClan value={card[0]['Clan']} />
-          <ResultLibraryBurn value={card[0]['Burn Option']} />
-        </tr>
-      );
+      ResultLibraryDisciplineOrClan = <ResultLibraryClan value={card[0]['Clan']} />;
     } else {
-      return (
-        <tr className={resultTrClass} key={index}>
+      ResultLibraryDisciplineOrClan = <ResultLibraryDisciplines value={card[0]['Discipline']} />;
+    }
+
+    return (
+      <React.Fragment key={index}>
+        <tr className={resultTrClass}>
           <DeckCardQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultLibraryName value={card[0]['Name']} ban={card[0]['Banned']} />
+          <ResultLibraryName toggleHidden={toggleHidden} value={card[0]['Name']} ban={card[0]['Banned']} />
           <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
-          <ResultLibraryDisciplines value={card[0]['Discipline']} />
+          {ResultLibraryDisciplineOrClan}
           <ResultLibraryBurn value={card[0]['Burn Option']} />
         </tr>
-      );
-    }
+        { hidden ? (
+          null
+        ) : (
+          <tr className={resultTrClass}>
+            <td colSpan={1}>
+            </td>
+            <td colSpan={4} className='text'>
+              <div onClick={() => toggleHidden()}className='text'>
+                {card[0]['Card Text']}
+              </div>
+            </td>
+          </tr>
+        )}
+      </React.Fragment>
+    );
   });
 
   return <tbody>{cards}</tbody>;
@@ -144,11 +165,11 @@ function DeckLibrary(props) {
         {LibraryDeck}
       </div>
       { Object.keys(library_side).length > 0 &&
-      <div className='deck-sidelibrary'>
-        <b>Side Library:</b>
-        {LibrarySideDeck}
-      </div>
-    }
+        <div className='deck-sidelibrary'>
+          <b>Side Library:</b>
+          {LibrarySideDeck}
+        </div>
+      }
     </div>
   );
 }

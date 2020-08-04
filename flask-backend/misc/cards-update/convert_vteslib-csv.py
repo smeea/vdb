@@ -2,7 +2,7 @@ import csv
 import json
 
 integer_fields = ['Id']
-useless_fields = ['Aka', 'Set', 'Flavor Text', 'Artist', 'Draft']
+useless_fields = ['Aka', 'Flavor Text', 'Artist', 'Draft']
 
 with open("vteslib.csv",
           "r", encoding='utf8') as f_csv, open("vteslib.json",
@@ -21,6 +21,18 @@ with open("vteslib.csv",
                 card[k] = int(card[k])
             except (ValueError):
                 pass
+
+        # Convert sets to dict
+        sets = card['Set'].split(', ')
+        card['Set'] = {}
+        for set in sets:
+            # print(set.split(':'))
+            if ':' in set:
+                set = set.split(':')
+                # print(set[0], set[1])
+            elif '-' in set:
+                set = set.split('-')
+            card['Set'][set[0]] = set[1]
 
         # Remove useless fields
         for k in useless_fields:

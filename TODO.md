@@ -3,7 +3,9 @@
 * Add sort options for results
 * Card preview
 ## MINOR FEATURE
+* Show card set
 ## MAJOR FIX
+* Move states for card text to top level
 ## MINOR FIX
 
 # LIBRARY
@@ -11,7 +13,9 @@
 * Add sort options for results
 * Card preview
 ## MINOR FEATURE
+* Show card set
 ## MAJOR FIX
+* Move states for card text to top level
 ## MINOR FIX
 
 # DECK

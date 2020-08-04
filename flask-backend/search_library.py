@@ -140,7 +140,7 @@ def get_library_by_trait(traits):
             if trait == 'intercept':
                 if re.search(
                         r'{}'.format(
-                            '\-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept'
+                            '\-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0'
                         ), card['Card Text'].lower()):
                     counter += 1
 
