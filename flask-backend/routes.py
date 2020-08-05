@@ -13,7 +13,7 @@ from search_crypt import get_crypt_by_id
 from search_crypt import get_overall_crypt
 from search_library import get_library_by_cardtext
 from search_library import get_library_by_trait
-from search_library import get_library_by_disciplines
+from search_library import get_library_by_discipline
 from search_library import get_library_by_title
 from search_library import get_library_by_sect
 from search_library import get_library_by_clan
@@ -49,7 +49,10 @@ def updateDeck(deckid):
             new_cards = request.json['update']
             merged_cards = d.cards.copy()
             for k, v in new_cards.items():
-                merged_cards[k] = v
+                if v < 0:
+                    del merged_cards[k]
+                else:
+                    merged_cards[k] = v
 
             d.cards = merged_cards.copy()
             db.session.commit()

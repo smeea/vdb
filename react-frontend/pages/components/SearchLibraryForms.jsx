@@ -66,22 +66,22 @@ import vision from './../../assets/images/disciplines/vision.gif';
 
 function SearchLibraryFormButtons(props) {
   return (
-    <div className="pr-1">
-      <button className="btn btn-outline-primary" type="submit">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" />
+    <div className='pr-1'>
+      <button className='btn btn-outline-primary' type='submit'>
+        <svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor'>
+          <path d='M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z' />
         </svg>
       </button>
-      <button className="btn btn-outline-secondary" type="button" onClick={props.handleClearFormButton}>
-        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" />
-          <path d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" />
+      <button className='btn btn-outline-secondary' type='button' onClick={props.handleClearFormButton}>
+        <svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor'>
+          <path d='M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z' />
+          <path d='M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z' />
         </svg>
       </button>
-      <button className="btn btn-outline-secondary" type="button" onClick={props.handleClearResultButton}>
-        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" />
-          <path d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" />
+      <button className='btn btn-outline-secondary' type='button' onClick={props.handleClearResultButton}>
+        <svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor'>
+          <path d='M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z' />
+          <path d='M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z' />
         </svg>
       </button>
     </div>
@@ -90,10 +90,10 @@ function SearchLibraryFormButtons(props) {
 
 function SearchLibraryFormText(props) {
   return (
-    <div className="col-8">
+    <div className='col-8'>
       <input
-        placeholder="Card Name / Text"
-        type="text"
+        placeholder='Card Name / Text'
+        type='text'
         name='text'
         value={props.value}
         onChange={props.onChange}/>
@@ -126,14 +126,14 @@ function SearchLibraryFormType(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Type:
         </label>
       </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name="type" value={props.value} onChange={props.onChange}>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='type' value={props.value} onChange={props.onChange}>
           {typeforms}
         </select>
       </div>
@@ -187,14 +187,14 @@ function SearchLibraryFormDiscipline(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Discipline:
         </label>
       </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name="discipline" value={props.value} onChange={props.onChange}>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='discipline' value={props.value} onChange={props.onChange}>
           {disciplineforms}
         </select>
       </div>
@@ -222,18 +222,18 @@ function SearchLibraryFormBloodCost(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Blood Cost:
         </label>
       </div>
-      <div className="form-group col-9">
-        <div className="input-group">
-          <select className="custom-select" name='bloodmoreless' value={props.moreless} onChange={props.onMorelessChange}>
+      <div className='form-group col-9'>
+        <div className='input-group'>
+          <select className='custom-select' name='bloodmoreless' value={props.moreless} onChange={props.onMorelessChange}>
             {bloodmorelessforms}
           </select>
-          <select className="custom-select" name='blood' value={props.value} onChange={props.onValueChange} >
+          <select className='custom-select' name='blood' value={props.value} onChange={props.onValueChange} >
             {bloodforms}
           </select>
         </div>
@@ -262,19 +262,19 @@ function SearchLibraryFormPoolCost(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Pool Cost:
         </label>
       </div>
-      <div className="form-group col-9">
-        <div className="input-group">
+      <div className='form-group col-9'>
+        <div className='input-group'>
 
-          <select className="custom-select" name='poolmoreless' value={props.moreless} onChange={props.onMorelessChange}>
+          <select className='custom-select' name='poolmoreless' value={props.moreless} onChange={props.onMorelessChange}>
             {poolmorelessforms}
           </select>
-          <select className="custom-select" name='pool' value={props.value} onChange={props.onValueChange} >
+          <select className='custom-select' name='pool' value={props.value} onChange={props.onValueChange} >
             {poolforms}
           </select>
         </div>
@@ -285,53 +285,53 @@ function SearchLibraryFormPoolCost(props) {
 
 function SearchLibraryFormClan(props) {
   const clans = [
-    "ANY",
-    "Abomination",
-    "Ahrimane",
-    "Akunanse",
-    "Assamite",
-    "Baali",
-    "Blood Brother",
-    "Brujah",
-    "Brujah antitribu",
-    "Caitiff",
-    "Daughter of Cacophony",
-    "Follower of Set",
-    "Gangrel",
-    "Gangrel antitribu",
-    "Gargoyle",
-    "Giovanni",
-    "Guruhi",
-    "Harbinger of Skulls",
-    "Ishtarri",
-    "Kiasyd",
-    "Lasombra",
-    "Malkavian",
-    "Malkavian antitribu",
-    "Nagaraja",
-    "Nosferatu",
-    "Nosferatu antitribu",
-    "Osebo",
-    "Pander",
-    "Ravnos",
-    "Salubri",
-    "Salubri antitribu",
-    "Samedi",
-    "Toreador",
-    "Toreador antitribu",
-    "Tremere",
-    "Tremere antitribu",
-    "True Brujah",
-    "Tzimisce",
-    "Ventrue",
-    "Ventrue antitribu",
-    "Avenger",
-    "Defender",
-    "Innocent",
-    "Judge",
-    "Martyr",
-    "Redeemer",
-    "Visionary",
+    'ANY',
+    'Abomination',
+    'Ahrimane',
+    'Akunanse',
+    'Assamite',
+    'Baali',
+    'Blood Brother',
+    'Brujah',
+    'Brujah antitribu',
+    'Caitiff',
+    'Daughter of Cacophony',
+    'Follower of Set',
+    'Gangrel',
+    'Gangrel antitribu',
+    'Gargoyle',
+    'Giovanni',
+    'Guruhi',
+    'Harbinger of Skulls',
+    'Ishtarri',
+    'Kiasyd',
+    'Lasombra',
+    'Malkavian',
+    'Malkavian antitribu',
+    'Nagaraja',
+    'Nosferatu',
+    'Nosferatu antitribu',
+    'Osebo',
+    'Pander',
+    'Ravnos',
+    'Salubri',
+    'Salubri antitribu',
+    'Samedi',
+    'Toreador',
+    'Toreador antitribu',
+    'Tremere',
+    'Tremere antitribu',
+    'True Brujah',
+    'Tzimisce',
+    'Ventrue',
+    'Ventrue antitribu',
+    'Avenger',
+    'Defender',
+    'Innocent',
+    'Judge',
+    'Martyr',
+    'Redeemer',
+    'Visionary',
   ];
 
   const clanforms = clans.map((i, index) => {
@@ -341,14 +341,14 @@ function SearchLibraryFormClan(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Clan:
         </label>
       </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name='clan' value={props.value} onChange={props.onChange}>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='clan' value={props.value} onChange={props.onChange}>
           {clanforms}
         </select>
       </div>
@@ -375,14 +375,14 @@ function SearchLibraryFormSect(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Sect:
         </label>
       </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name='sect' value={props.value} onChange={props.onChange}>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='sect' value={props.value} onChange={props.onChange}>
           {sectforms}
         </select>
       </div>
@@ -393,11 +393,11 @@ function SearchLibraryFormSect(props) {
 
 function SearchLibraryFormVotes(props) {
   const votes = [
-    ["ANY", "ANY"],
-    [1, "1+"],
-    [2, "2+"],
-    [3, "3+"],
-    [4, "4+"],
+    ['ANY', 'ANY'],
+    [1, '1+'],
+    [2, '2+'],
+    [3, '3+'],
+    [4, '4+'],
   ];
 
   const votesforms = votes.map((i, index) => {
@@ -406,14 +406,14 @@ function SearchLibraryFormVotes(props) {
     );
   });
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Votes:
         </label>
       </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name='votes' value={props.value} onChange={props.onChange}>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='votes' value={props.value} onChange={props.onChange}>
           {votesforms}
         </select>
       </div>
@@ -447,14 +447,14 @@ function SearchLibraryFormTitle(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Title:
         </label>
       </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name="title" value={props.value} onChange={props.onChange}>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='title' value={props.value} onChange={props.onChange}>
           {titleforms}
         </select>
       </div>
@@ -488,9 +488,9 @@ function SearchLibraryFormTraits(props) {
 
   const traitsLeftforms = traitsLeft.map( (i, index) => {
     return (
-      <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} name='traits' className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(e)} />
-        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+      <div key={index} className='mr-2 custom-control custom-checkbox'>
+        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={(e) => props.onChange(e)} />
+        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
           {i[1]}
         </label>
       </div>
@@ -499,9 +499,9 @@ function SearchLibraryFormTraits(props) {
 
   const traitsRightforms = traitsRight.map( (i, index) => {
     return (
-      <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} name='traits' className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={(e) => props.onChange(e)} />
-        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+      <div key={index} className='mr-2 custom-control custom-checkbox'>
+        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={(e) => props.onChange(e)} />
+        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
           {i[1]}
         </label>
       </div>
@@ -509,13 +509,13 @@ function SearchLibraryFormTraits(props) {
   });
 
   return (
-    <div className="pt-2">
+    <div className='pt-2'>
       <h6>Traits:</h6>
-      <div className="form-row">
-        <div className="form-group col-7">
+      <div className='form-row'>
+        <div className='form-group col-7'>
           {traitsLeftforms}
         </div>
-        <div className="form-group col-5">
+        <div className='form-group col-5'>
           {traitsRightforms}
         </div>
       </div>
@@ -649,7 +649,7 @@ function SearchLibraryForm(props) {
 
   return (
     <form onSubmit={handleSubmitButton}>
-      <div className="form-row justify-content-between">
+      <div className='form-row justify-content-between'>
         <SearchLibraryFormText value={state.text} onChange={handleChange} />
         <SearchLibraryFormButtons handleClearFormButton={handleClearFormButton} handleClearResultButton={handleClearResultButton} />
       </div>

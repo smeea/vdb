@@ -35,17 +35,17 @@ function App(props) {
   };
 
   return (
-    <div className="App">
+    <div className='App'>
       <Router>
         <Navigation username={username} />
         <Switch>
-          <Route path="/" exact component={() => <About />} />
-          <Route path="/account" exact component={() => <Account username={username} updateUsername={updateUsername} whoAmI={whoAmI} />} />
-          <Route path="/about" exact component={() => <About />} />
-          <Route path="/deck" exact component={() => <Deck />} />
-          <Route path="/deck/:id" component={(props) => <Deck id={props.match.params.id} />} />
-          <Route path="/crypt" exact component={() => <Crypt />} />
-          <Route path="/library" exact component={() => <Library />} />
+          <Route path='/' exact component={() => <About />} />
+          <Route path='/account' exact component={() => <Account username={username} updateUsername={updateUsername} whoAmI={whoAmI} />} />
+          <Route path='/about' exact component={() => <About />} />
+          <Route path='/deck' exact component={() => <Deck />} />
+          <Route path='/deck/:id' component={(props) => <Deck id={props.match.params.id} />} />
+          <Route path='/crypt' exact component={() => <Crypt />} />
+          <Route path='/library' exact component={() => <Library />} />
         </Switch>
       </Router>
     </div>

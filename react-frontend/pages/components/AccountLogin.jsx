@@ -58,21 +58,21 @@ function AccountLogin(props) {
       <h6>Login</h6>
       <form>
         <input
-          placeholder="Username"
-          type="text"
-          name="username"
+          placeholder='Username'
+          type='text'
+          name='username'
           value={state.username}
           onChange={handleChange}
         />
         <input
-          placeholder="Password"
-          type="text"
-          name="password"
+          placeholder='Password'
+          type='text'
+          name='password'
           value={state.password}
           onChange={handleChange}
         />
-        <input type="button" label="Login" value="Login" onClick={loginUser} />
-        <input type="button" label="Logout" value="Logout" onClick={logoutUser} />
+        <input type='button' label='Login' value='Login' onClick={loginUser} />
+        <input type='button' label='Logout' value='Logout' onClick={logoutUser} />
       </form>
     </div>
   );

@@ -35,15 +35,15 @@ function DecksNewDeck(props) {
   return (
     <div>
       <input
-        placeholder="New Deck Name"
-        type="text"
-        id="deckname"
+        placeholder='New Deck Name'
+        type='text'
+        id='deckname'
         value={deckname}
         onChange={handleChange}/>
-      <button className="btn btn-outline-secondary" type="button" onClick={createNewDeck}>
+      <button className='btn btn-outline-secondary' type='button' onClick={createNewDeck}>
         CREATE
       </button>
-      <button className="btn btn-outline-secondary" type="button" onClick={clearFormButton}>
+      <button className='btn btn-outline-secondary' type='button' onClick={clearFormButton}>
         CLEAR
       </button>
     </div>

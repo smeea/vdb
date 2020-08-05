@@ -46,30 +46,30 @@ function AccountRegister(props){
       <h6>Register</h6>
       <form>
         <input
-          placeholder="Username"
-          type="text"
-          name="username"
-          id="username"
+          placeholder='Username'
+          type='text'
+          name='username'
+          id='username'
           value={state.username}
           onChange={handleChange}
         />
         <input
-          placeholder="Email"
-          type="text"
-          name="email"
-          id="email"
+          placeholder='Email'
+          type='text'
+          name='email'
+          id='email'
           value={state.email}
           onChange={handleChange}
         />
         <input
-          placeholder="Password"
-          type="text"
-          name="password"
-          id="password"
+          placeholder='Password'
+          type='text'
+          name='password'
+          id='password'
           value={state.password}
           onChange={handleChange}
         />
-        <input type="button" label="Register" value="Register" onClick={registerUser} />
+        <input type='button' label='Register' value='Register' onClick={registerUser} />
       </form>
     </div>
   );

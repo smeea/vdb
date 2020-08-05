@@ -29,15 +29,15 @@ function DeckNewCard(props) {
   return (
     <div>
       <input
-        placeholder="New Card Id"
-        type="text"
-        id="cardid"
+        placeholder='New Card Id'
+        type='text'
+        id='cardid'
         value={state.cardid}
         onChange={handleChange}/>
-      <button className="btn btn-outline-secondary" type="button" onClick={createNewCard}>
+      <button className='btn btn-outline-secondary' type='button' onClick={createNewCard}>
         ADD
       </button>
-      <button className="btn btn-outline-secondary" type="button" onClick={clearFormButton}>
+      <button className='btn btn-outline-secondary' type='button' onClick={clearFormButton}>
         CLEAR
       </button>
     </div>

@@ -1,10 +1,7 @@
 import React from 'react';
 
 function DeckCardQuantity(props) {
-  const deckCardChange = props.deckCardChange;
-  const deckid = props.deckid;
-  const cardid = props.cardid;
-  let q = 0;
+  let q;
   if (props.q == 0) {
     q = null;
   } else {
@@ -14,11 +11,11 @@ function DeckCardQuantity(props) {
   return (
     <td className='quantity'>
       <div className='d-flex align-items-center justify-content-between'>
-        <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q + 1)}>
+        <button className='btn btn-outline-secondary' type='button' onClick={(e) => props.deckCardChange(props.deckid, props.cardid, q + 1)}>
           +
         </button>
         {' '}{q}{' '}
-        <button className="btn btn-outline-secondary" type="button" onClick={(e) => deckCardChange(deckid, cardid, q - 1)}>
+        <button className='btn btn-outline-secondary' type='button' onClick={(e) => props.deckCardChange(props.deckid, props.cardid, q - 1)}>
           -
         </button>
       </div>

@@ -17,26 +17,40 @@ function DeckCryptSideBody(props) {
       return 1;
     }
   };
-
   const sorted_cards = Object.values(props.cards).sort(SortByCapacity);
 
+
+  const [hiddenState, setHiddenState] = useState({});
+  const toggleHidden = id => {
+    if (hiddenState[id] == undefined || hiddenState[id] == true) {
+      setHiddenState(prevState => ({
+        ...prevState,
+        [id]: false
+      }));
+    } else {
+      setHiddenState(prevState => ({
+        ...prevState,
+        [id]: true
+      }));
+    }
+  };
+
   let resultTrClass;
+
   const cards = sorted_cards.map((card, index) => {
-    const [hidden, setHidden] = useState(true);
-
-    const toggleHidden = () => {
-      if (hidden) {
-        setHidden(false);
-      } else {
-        setHidden(true);
-      }
-    };
-
     if (resultTrClass == 'crypt-result-odd') {
       resultTrClass = 'crypt-result-even';
     } else {
       resultTrClass = 'crypt-result-odd';
     }
+
+    const sets = Object.keys(card.c['Set']).map((k, index) => {
+      return(
+        <div className='sets' key={index}>
+          {k}: {card.c['Set'][k]}
+        </div>
+      );
+    });
 
     return (
       <React.Fragment key={index}>
@@ -44,19 +58,24 @@ function DeckCryptSideBody(props) {
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
           <ResultCryptCapacity value={card.c['Capacity']} />
           <ResultCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
-          <ResultCryptName toggleHidden={toggleHidden} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']}/>
+          <ResultCryptName id={card.c['Id']} toggleHidden={toggleHidden} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']}/>
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
         </tr>
-        { hidden ? (
+        { hiddenState[card.c['Id']] == undefined || hiddenState[card.c['Id']] == true ? (
           null
         ) : (
           <tr className={resultTrClass}>
             <td colSpan={3}>
             </td>
-            <td colSpan={3} className='text'>
+            <td colSpan={2} className='text'>
               <div onClick={() => toggleHidden()}className='text'>
                 {card.c['Card Text']}
+              </div>
+            </td>
+            <td colSpan={1} className='set'>
+              <div>
+                {sets}
               </div>
             </td>
           </tr>
@@ -68,16 +87,6 @@ function DeckCryptSideBody(props) {
 }
 
 function DeckCryptBody(props) {
-  const [hidden, setHidden] = useState(true);
-
-  const toggleHidden = () => {
-    if (hidden) {
-      setHidden(false);
-    } else {
-      setHidden(true);
-    }
-  };
-
   const disciplines_set = props.disciplines_set;
 
   const SortByQuantity = (a, b) => {
@@ -89,24 +98,38 @@ function DeckCryptBody(props) {
   };
 
   const sorted_cards = Object.values(props.cards).sort(SortByQuantity);
-
   let resultTrClass;
+
+  const [hiddenState, setHiddenState] = useState({});
+
+  const toggleHidden = id => {
+    if (hiddenState[id] == undefined || hiddenState[id] == true) {
+      setHiddenState(prevState => ({
+        ...prevState,
+        [id]: false
+      }));
+    } else {
+      setHiddenState(prevState => ({
+        ...prevState,
+        [id]: true
+      }));
+    }
+  };
+
   const cards = sorted_cards.map((card, index) => {
-    const [hidden, setHidden] = useState(true);
-
-    const toggleHidden = () => {
-      if (hidden) {
-        setHidden(false);
-      } else {
-        setHidden(true);
-      }
-    };
-
     if (resultTrClass == 'crypt-result-odd') {
       resultTrClass = 'crypt-result-even';
     } else {
       resultTrClass = 'crypt-result-odd';
     }
+
+    const sets = Object.keys(card.c['Set']).map((k, index) => {
+      return(
+        <div className='sets' key={index}>
+          {k}: {card.c['Set'][k]}
+        </div>
+      );
+    });
 
     return (
       <React.Fragment key={index}>
@@ -114,19 +137,24 @@ function DeckCryptBody(props) {
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
           <ResultCryptCapacity value={card.c['Capacity']} />
           <ResultCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
-          <ResultCryptName toggleHidden={toggleHidden} value={card.c['Name']} />
+          <ResultCryptName id={card.c['Id']} toggleHidden={toggleHidden} value={card.c['Name']} />
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
         </tr>
-        { hidden ? (
+        { hiddenState[card.c['Id']] == undefined || hiddenState[card.c['Id']] == true ? (
           null
         ) : (
           <tr className={resultTrClass}>
             <td colSpan={3}>
             </td>
-            <td colSpan={3} className='text'>
-              <div onClick={() => toggleHidden()}className='text'>
+            <td colSpan={2} className='text'>
+              <div onClick={() => toggleHidden()} className='text'>
                 {card.c['Card Text']}
+              </div>
+            </td>
+            <td colSpan={1} className='set'>
+              <div>
+                {sets}
               </div>
             </td>
           </tr>
@@ -185,7 +213,7 @@ function DeckCrypt(props) {
     <div>
       <div className='deck-crypt'>
         <b>Crypt [{crypt_total}] - {crypt_groups}:</b>
-        <table className="deck-crypt-table">
+        <table className='deck-crypt-table'>
           <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt} disciplines_set={disciplines_set} />
         </table>
       </div>
@@ -193,7 +221,7 @@ function DeckCrypt(props) {
         <div className='deck-sidecrypt'>
           <br />
           <b>Side Crypt</b>
-          <table className="deck-crypt-table">
+          <table className='deck-crypt-table'>
             <DeckCryptSideBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt_side} disciplines_set={disciplines_set}/>
           </table>
         </div>

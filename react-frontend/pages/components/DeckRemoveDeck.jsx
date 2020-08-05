@@ -24,7 +24,7 @@ function DeckRemoveDeck(props) {
 
   return (
     <div>
-      <button className="btn btn-outline-secondary" type="button" onClick={removeDeck}>
+      <button className='btn btn-outline-secondary' type='button' onClick={removeDeck}>
         REMOVE
       </button>
     </div>

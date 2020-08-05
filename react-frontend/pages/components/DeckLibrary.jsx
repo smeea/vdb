@@ -9,23 +9,37 @@ import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
 function DeckLibraryBody(props) {
+  const [hiddenState, setHiddenState] = useState({});
+
+  const toggleHidden = id => {
+    if (hiddenState[id] == undefined || hiddenState[id] == true) {
+      setHiddenState(prevState => ({
+        ...prevState,
+        [id]: false
+      }));
+    } else {
+      setHiddenState(prevState => ({
+        ...prevState,
+        [id]: true
+      }));
+    }
+  };
   let resultTrClass='library-result-even';
+
   const cards = props.cards.map((card, index) => {
-    const [hidden, setHidden] = useState(true);
-
-    const toggleHidden = () => {
-      if (hidden) {
-        setHidden(false);
-      } else {
-        setHidden(true);
-      }
-    };
-
     if (resultTrClass == 'library-result-even') {
       resultTrClass = 'library-result-odd';
     } else {
       resultTrClass = 'library-result-even';
     }
+
+    const sets = Object.keys(card[0]['Set']).map((k, index) => {
+      return(
+        <div className='sets' key={index}>
+          {k}: {card[0]['Set'][k]}
+        </div>
+      );
+    });
 
     let ResultLibraryDisciplineOrClan;
     if (card[0]['Clan']) {
@@ -38,20 +52,25 @@ function DeckLibraryBody(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           <DeckCardQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultLibraryName toggleHidden={toggleHidden} value={card[0]['Name']} ban={card[0]['Banned']} />
+          <ResultLibraryName id={card[0]['Id']} toggleHidden={toggleHidden} value={card[0]['Name']} ban={card[0]['Banned']} />
           <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
           {ResultLibraryDisciplineOrClan}
           <ResultLibraryBurn value={card[0]['Burn Option']} />
         </tr>
-        { hidden ? (
+        { hiddenState[card[0]['Id']] == undefined || hiddenState[card[0]['Id']] == true ? (
           null
         ) : (
           <tr className={resultTrClass}>
             <td colSpan={1}>
             </td>
-            <td colSpan={4} className='text'>
-              <div onClick={() => toggleHidden()}className='text'>
+            <td colSpan={3} className='text'>
+              <div onClick={() => toggleHidden()} className='text'>
                 {card[0]['Card Text']}
+              </div>
+            </td>
+            <td colSpan={1} className='set'>
+              <div>
+                {sets}
               </div>
             </td>
           </tr>

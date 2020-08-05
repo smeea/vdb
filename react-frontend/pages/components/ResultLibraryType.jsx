@@ -40,10 +40,16 @@ function ResultLibraryType(props) {
     );
   });
 
-  if (props.total !== undefined) {
+  if (props.total > 0) {
     return(
       <div>
         {cardtype_images} {' '} {props.cardtype} [{props.total}]
+      </div>
+    );
+  } else if (props.total == 0) {
+    return(
+      <div>
+        {cardtype_images} {' '} {props.cardtype}
       </div>
     );
   } else {

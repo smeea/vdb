@@ -1,42 +1,45 @@
 # CRYPT
 ## MAJOR FEATURE
-* Add sort options for results
-* Card preview
 ## MINOR FEATURE
-* Show card set
 ## MAJOR FIX
-* Move states for card text to top level
 ## MINOR FIX
 
 # LIBRARY
 ## MAJOR FEATURE
-* Add sort options for results
-* Card preview
 ## MINOR FEATURE
-* Show card set
 ## MAJOR FIX
-* Move states for card text to top level
 ## MINOR FIX
 
 # DECK
 ## MAJOR FEATURE
-* Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?)
-* Card preview
-* Delete card on -1 counter
 * Immediate effect of add card / new deck / delete 
+* Add card from search
+* Add card from deck
 ## MINOR FEATURE
-* Custom description
+* Rename deck
+* Custom description field
 * Copy ('fork') deck
-* Trifle icon
+* Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?)
 ## MAJOR FIX
 ## MINOR FIX
 
-# GENERAL
-* Change " to '
+# ALL
+## MAJOR FEATURE
+* Add sort options for results
+* Card image side view
+* Card image modal view
+## MINOR FEATURE
+* Show card set icon
+* Beautify card text toggle
+* Card rulings
+* Trifle icon
+## MAJOR FIX
+## MINOR FIX
+## OTHER
 * New name
-* New logo
-* Button Icons
-* Update README
+* Favicon
+* Button icons - clear, remove, draw
+* Update README.md
 * Update /About
 * Add robots.txt
-* Add redis cache?
+* Add redis cache

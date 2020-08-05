@@ -66,22 +66,22 @@ import vision from './../../assets/images/disciplines/vision.gif';
 
 function SearchCryptFormButtons(props) {
   return (
-    <div className="pr-1">
-      <button className="btn btn-outline-primary" type="submit">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" />
+    <div className='pr-1'>
+      <button className='btn btn-outline-primary' type='submit'>
+        <svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor'>
+          <path d='M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z' />
         </svg>
       </button>
-      <button className="btn btn-outline-secondary" type="button" onClick={props.handleClearFormButton}>
-        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" />
-          <path d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" />
+      <button className='btn btn-outline-secondary' type='button' onClick={props.handleClearFormButton}>
+        <svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor'>
+          <path d='M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z' />
+          <path d='M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z' />
         </svg>
       </button>
-      <button className="btn btn-outline-secondary" type="button" onClick={props.handleClearResultButton}>
-        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" />
-          <path d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" />
+      <button className='btn btn-outline-secondary' type='button' onClick={props.handleClearResultButton}>
+        <svg width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor'>
+          <path d='M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z' />
+          <path d='M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z' />
         </svg>
       </button>
     </div>
@@ -90,11 +90,11 @@ function SearchCryptFormButtons(props) {
 
 function SearchCryptFormText(props) {
   return (
-    <div className="col-8">
+    <div className='col-8'>
       <input
-        placeholder="Card Name / Text"
-        type="text"
-        name="text"
+        placeholder='Card Name / Text'
+        type='text'
+        name='text'
         value={props.value}
         onChange={props.onChange}/>
     </div>
@@ -138,9 +138,9 @@ function SearchCryptFormDisciplines(props) {
     return (
       <div key={index} className={disciplineState}>
         <label className='discipline-container d-flex justify-content-center align-items-center' htmlFor={i[0]}>
-          <input className="d-none" type="button" name='disciplines' id={i[0]} onClick={e => props.onChange(e)} />
-          <img className="discipline-base-image-forms" src={i[1]} />
-          <img className="discipline-superior-image-forms" src={i[2]} />
+          <input className='d-none' type='button' name='disciplines' id={i[0]} onClick={e => props.onChange(e)} />
+          <img className='discipline-base-image-forms' src={i[1]} />
+          <img className='discipline-superior-image-forms' src={i[2]} />
         </label>
       </div>
     );
@@ -148,8 +148,8 @@ function SearchCryptFormDisciplines(props) {
 
   return (
     <div>
-      <div className="form-row pt-2">
-        <div className="input-group justify-content-start">
+      <div className='form-row pt-2'>
+        <div className='input-group justify-content-start'>
           {disciplinesforms}
         </div>
       </div>
@@ -173,17 +173,17 @@ function SearchCryptFormVirtues(props) {
     let virtueState = 'virtue-container mb-2 state' + props.value[i[0]];
     return (
       <div key={index} className={virtueState}>
-        <label className="virtue-container d-flex justify-content-center align-items-center" htmlFor={i[0]}>
-          <input className="d-none" type="button" name='virtues' id={i[0]} onClick={e => props.onChange(e)} />
-          <img className="virtue-image" src={i[1]} />
+        <label className='virtue-container d-flex justify-content-center align-items-center' htmlFor={i[0]}>
+          <input className='d-none' type='button' name='virtues' id={i[0]} onClick={e => props.onChange(e)} />
+          <img className='virtue-image' src={i[1]} />
         </label>
       </div>
     );
   });
 
   return (
-    <div className="form-row">
-      <div className="input-group">
+    <div className='form-row'>
+      <div className='input-group'>
         {virtuesforms}
       </div>
     </div>
@@ -212,18 +212,18 @@ function SearchCryptFormCapacity(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Capacity:
         </label>
       </div>
-      <div className="form-group col-9">
-        <div className="input-group">
-          <select className="custom-select" name='capacitymoreless' value={props.moreless} onChange={props.onMorelessChange}>
+      <div className='form-group col-9'>
+        <div className='input-group'>
+          <select className='custom-select' name='capacitymoreless' value={props.moreless} onChange={props.onMorelessChange}>
             {capacitymorelessforms}
           </select>
-          <select className="custom-select" name='capacity' value={props.value} onChange={props.onValueChange} >
+          <select className='custom-select' name='capacity' value={props.value} onChange={props.onValueChange} >
             {capacityforms}
           </select>
         </div>
@@ -235,53 +235,53 @@ function SearchCryptFormCapacity(props) {
 
 function SearchCryptFormClan(props) {
   const clans = [
-    "ANY",
-    "Abomination",
-    "Ahrimane",
-    "Akunanse",
-    "Assamite",
-    "Baali",
-    "Blood Brother",
-    "Brujah",
-    "Brujah antitribu",
-    "Caitiff",
-    "Daughter of Cacophony",
-    "Follower of Set",
-    "Gangrel",
-    "Gangrel antitribu",
-    "Gargoyle",
-    "Giovanni",
-    "Guruhi",
-    "Harbinger of Skulls",
-    "Ishtarri",
-    "Kiasyd",
-    "Lasombra",
-    "Malkavian",
-    "Malkavian antitribu",
-    "Nagaraja",
-    "Nosferatu",
-    "Nosferatu antitribu",
-    "Osebo",
-    "Pander",
-    "Ravnos",
-    "Salubri",
-    "Salubri antitribu",
-    "Samedi",
-    "Toreador",
-    "Toreador antitribu",
-    "Tremere",
-    "Tremere antitribu",
-    "True Brujah",
-    "Tzimisce",
-    "Ventrue",
-    "Ventrue antitribu",
-    "Avenger",
-    "Defender",
-    "Innocent",
-    "Judge",
-    "Martyr",
-    "Redeemer",
-    "Visionary",
+    'ANY',
+    'Abomination',
+    'Ahrimane',
+    'Akunanse',
+    'Assamite',
+    'Baali',
+    'Blood Brother',
+    'Brujah',
+    'Brujah antitribu',
+    'Caitiff',
+    'Daughter of Cacophony',
+    'Follower of Set',
+    'Gangrel',
+    'Gangrel antitribu',
+    'Gargoyle',
+    'Giovanni',
+    'Guruhi',
+    'Harbinger of Skulls',
+    'Ishtarri',
+    'Kiasyd',
+    'Lasombra',
+    'Malkavian',
+    'Malkavian antitribu',
+    'Nagaraja',
+    'Nosferatu',
+    'Nosferatu antitribu',
+    'Osebo',
+    'Pander',
+    'Ravnos',
+    'Salubri',
+    'Salubri antitribu',
+    'Samedi',
+    'Toreador',
+    'Toreador antitribu',
+    'Tremere',
+    'Tremere antitribu',
+    'True Brujah',
+    'Tzimisce',
+    'Ventrue',
+    'Ventrue antitribu',
+    'Avenger',
+    'Defender',
+    'Innocent',
+    'Judge',
+    'Martyr',
+    'Redeemer',
+    'Visionary',
   ];
 
   const clanforms = clans.map((i, index) => {
@@ -291,14 +291,14 @@ function SearchCryptFormClan(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Clan:
         </label>
       </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name='clan' value={props.value} onChange={props.onChange}>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='clan' value={props.value} onChange={props.onChange}>
           {clanforms}
         </select>
       </div>
@@ -309,13 +309,13 @@ function SearchCryptFormClan(props) {
 
 function SearchCryptFormSect(props) {
   const sects = [
-    "ANY",
-    "Camarilla",
-    "Sabbat",
-    "Laibon",
-    "Independent",
-    "Anarch",
-    "Imbued",
+    'ANY',
+    'Camarilla',
+    'Sabbat',
+    'Laibon',
+    'Independent',
+    'Anarch',
+    'Imbued',
   ];
 
   const sectforms = sects.map((i, index) => {
@@ -325,14 +325,14 @@ function SearchCryptFormSect(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Sect:
         </label>
       </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name='sect' value={props.value} onChange={props.onChange}>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='sect' value={props.value} onChange={props.onChange}>
           {sectforms}
         </select>
       </div>
@@ -343,11 +343,11 @@ function SearchCryptFormSect(props) {
 
 function SearchCryptFormVotes(props) {
   const votes = [
-    ["ANY", "ANY"],
-    [1, "1+"],
-    [2, "2+"],
-    [3, "3+"],
-    [4, "4+"],
+    ['ANY', 'ANY'],
+    [1, '1+'],
+    [2, '2+'],
+    [3, '3+'],
+    [4, '4+'],
   ];
 
   const votesforms = votes.map((i, index) => {
@@ -356,14 +356,14 @@ function SearchCryptFormVotes(props) {
     );
   });
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
           Votes:
         </label>
       </div>
-      <div className="form-group col-9">
-        <select className="custom-select" name='votes' value={props.value} onChange={props.onChange}>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='votes' value={props.value} onChange={props.onChange}>
           {votesforms}
         </select>
       </div>
@@ -394,9 +394,9 @@ function SearchCryptFormTitles(props) {
 
   const titlesLeftforms = titlesLeft.map((i, index) => {
     return (
-      <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input name='titles' id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
-        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+      <div key={index} className='mr-2 custom-control custom-checkbox'>
+        <input name='titles' id={i[0]} className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
+        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
           {i[1]}
         </label>
       </div>
@@ -405,9 +405,9 @@ function SearchCryptFormTitles(props) {
 
   const titlesRightforms = titlesRight.map((i, index) => {
     return (
-      <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input name='titles' id={i[0]} className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
-        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+      <div key={index} className='mr-2 custom-control custom-checkbox'>
+        <input name='titles' id={i[0]} className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
+        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
           {i[1]}
         </label>
       </div>
@@ -417,11 +417,11 @@ function SearchCryptFormTitles(props) {
   return (
     <div>
       <h6>Title:</h6>
-      <div className="form-row">
-        <div className="form-group col-7">
+      <div className='form-row'>
+        <div className='form-group col-7'>
           {titlesLeftforms}
         </div>
-        <div className="form-group col-5">
+        <div className='form-group col-5'>
           {titlesRightforms}
         </div>
       </div>
@@ -435,9 +435,9 @@ function SearchCryptFormGroup(props) {
 
   const groupforms = groups.map( (i, index) => {
     return (
-      <div key={index} className="ml-2 custom-control custom-checkbox">
-        <input id={i} name='group' className="mr-1 custom-control-input" type="checkbox" checked={props.value[i]} onChange={e => props.onChange(e)} />
-        <label htmlFor={i} className="mr-0 custom-control-label">
+      <div key={index} className='ml-2 custom-control custom-checkbox'>
+        <input id={i} name='group' className='mr-1 custom-control-input' type='checkbox' checked={props.value[i]} onChange={e => props.onChange(e)} />
+        <label htmlFor={i} className='mr-0 custom-control-label'>
           {i}
         </label>
       </div>
@@ -445,8 +445,8 @@ function SearchCryptFormGroup(props) {
   });
 
   return (
-    <div className="form-row justify-content-between">
-      <div className="col-2">
+    <div className='form-row justify-content-between'>
+      <div className='col-2'>
         <h6>Group:</h6>
       </div>
       {groupforms}
@@ -481,9 +481,9 @@ function SearchCryptFormTraits(props) {
 
   const traitsLeftforms = traitsLeft.map( (i, index) => {
     return (
-      <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} name='traits' className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
-        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+      <div key={index} className='mr-2 custom-control custom-checkbox'>
+        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
+        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
           {i[1]}
         </label>
       </div>
@@ -492,9 +492,9 @@ function SearchCryptFormTraits(props) {
 
   const traitsRightforms = traitsRight.map( (i, index) => {
     return (
-      <div key={index} className="mr-2 custom-control custom-checkbox">
-        <input id={i[0]} name='traits' className="mr-2 custom-control-input" type="checkbox" checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
-        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+      <div key={index} className='mr-2 custom-control custom-checkbox'>
+        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
+        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
           {i[1]}
         </label>
       </div>
@@ -502,13 +502,13 @@ function SearchCryptFormTraits(props) {
   });
 
   return (
-    <div className="pt-2">
+    <div className='pt-2'>
       <h6>Traits:</h6>
-      <div className="form-row">
-        <div className="form-group col-7">
+      <div className='form-row'>
+        <div className='form-group col-7'>
           {traitsLeftforms}
         </div>
-        <div className="form-group col-5">
+        <div className='form-group col-5'>
           {traitsRightforms}
         </div>
       </div>
@@ -788,7 +788,7 @@ function SearchCryptForm(props) {
 
   return (
     <form onSubmit={handleSubmitButton}>
-      <div className="form-row justify-content-between">
+      <div className='form-row justify-content-between'>
         <SearchCryptFormText value={state.text} onChange={handleChange} />
         <SearchCryptFormButtons handleClearFormButton={handleClearFormButton} handleClearResultButton={handleClearResultButton} />
       </div>

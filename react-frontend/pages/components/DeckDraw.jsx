@@ -47,13 +47,13 @@ function DeckDraw(props) {
   return(
     <div>
       <div>
-        <button className="btn btn-outline-secondary" type="button" onClick={() => setDrawCrypt(drawCards(props.crypt, 4))}>
+        <button className='btn btn-outline-secondary' type='button' onClick={() => setDrawCrypt(drawCards(props.crypt, 4))}>
           DRAW CRYPT
         </button>
-        <button className="btn btn-outline-secondary" type="button" onClick={() => setDrawLibrary(drawCards(props.library, 7))}>
+        <button className='btn btn-outline-secondary' type='button' onClick={() => setDrawLibrary(drawCards(props.library, 7))}>
           DRAW LIBRARY
         </button>
-        <button className="btn btn-outline-secondary" type="button" onClick={() => {
+        <button className='btn btn-outline-secondary' type='button' onClick={() => {
           setDrawCrypt(null);
           setDrawLibrary(null);
         }}>

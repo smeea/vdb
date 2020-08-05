@@ -5,12 +5,12 @@ function DeckSelectDeck(props) {
   let option_default;
   if (Object.keys(props.decks).length > 0) {
     option_default =
-      <option value="" disabled hidden>
+      <option value='' disabled hidden>
         Select deck
       </option>;
   } else {
     option_default =
-      <option value="" disabled hidden>
+      <option value='' disabled hidden>
         No decks available
       </option>;
   }
@@ -25,7 +25,7 @@ function DeckSelectDeck(props) {
 
   return (
     <div>
-      <select defaultValue="" className="custom-select" value={props.activedeck} onChange={props.handleActiveDeckSelect}>
+      <select defaultValue='' className='custom-select' value={props.activedeck} onChange={props.handleActiveDeckSelect}>
         {option_default}
         {decksform}
       </select>

@@ -37,9 +37,17 @@ function Deck(props) {
   const deckCardChange = (deckid, cardid, count) => {
     const d = { ...decks };
     if (cardid > 200000) {
-      d[deckid].crypt[cardid].q = count;
+      if (count >= 0) {
+        d[deckid].crypt[cardid].q = count;
+      } else {
+        delete d[deckid].crypt[cardid];
+      }
     } else {
-      d[deckid].library[cardid].q = count;
+      if (count >= 0) {
+        d[deckid].library[cardid].q = count;
+      } else {
+        delete d[deckid].library[cardid];
+      }
     }
     setDecks(d);
 
@@ -79,19 +87,19 @@ function Deck(props) {
 
 
   return (
-    <div className="container main-container py-xl-3 px-0 px-xl-2">
-      <div className="row mx-0">
-        <div className="col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2">
+    <div className='container main-container py-xl-3 px-0 px-xl-2'>
+      <div className='row mx-0'>
+        <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>
         </div>
 
-        <div className="col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2">
+        <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
           <DeckNewDeck />
           <DeckSelectDeck handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activedeck={activedeck} />
           <br />
           <DeckShowDeck deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={decks[activedeck]} />
         </div>
 
-        <div className="col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2">
+        <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>
         </div>
       </div>
     </div>

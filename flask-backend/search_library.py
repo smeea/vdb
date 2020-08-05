@@ -51,7 +51,7 @@ def get_library_by_cardtype(cardtype):
     return match_cards
 
 
-def get_library_by_disciplines(discipline):
+def get_library_by_discipline(discipline):
     match_cards = []
     for card in library:
         if discipline in card['Discipline']:
