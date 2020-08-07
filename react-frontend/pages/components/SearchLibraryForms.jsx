@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Select from 'react-select';
 
 import abombwe from './../../assets/images/disciplines/abombwe.gif';
 import animalism from './../../assets/images/disciplines/animalism.gif';
@@ -28,34 +29,6 @@ import thaumaturgy from './../../assets/images/disciplines/thaumaturgy.gif';
 import valeren from './../../assets/images/disciplines/valeren.gif';
 import vicissitude from './../../assets/images/disciplines/vicissitude.gif';
 import visceratika from './../../assets/images/disciplines/visceratika.gif';
-import abombwesup from './../../assets/images/disciplines/abombwesup.gif';
-import animalismsup from './../../assets/images/disciplines/animalismsup.gif';
-import auspexsup from './../../assets/images/disciplines/auspexsup.gif';
-import celeritysup from './../../assets/images/disciplines/celeritysup.gif';
-import chimerstrysup from './../../assets/images/disciplines/chimerstrysup.gif';
-import daimoinonsup from './../../assets/images/disciplines/daimoinonsup.gif';
-import dominatesup from './../../assets/images/disciplines/dominatesup.gif';
-import dementationsup from './../../assets/images/disciplines/dementationsup.gif';
-import fortitudesup from './../../assets/images/disciplines/fortitudesup.gif';
-import melpomineesup from './../../assets/images/disciplines/melpomineesup.gif';
-import mytherceriasup from './../../assets/images/disciplines/mytherceriasup.gif';
-import necromancysup from './../../assets/images/disciplines/necromancysup.gif';
-import obeahsup from './../../assets/images/disciplines/obeahsup.gif';
-import obfuscatesup from './../../assets/images/disciplines/obfuscatesup.gif';
-import obtenebrationsup from './../../assets/images/disciplines/obtenebrationsup.gif';
-import potencesup from './../../assets/images/disciplines/potencesup.gif';
-import presencesup from './../../assets/images/disciplines/presencesup.gif';
-import proteansup from './../../assets/images/disciplines/proteansup.gif';
-import quietussup from './../../assets/images/disciplines/quietussup.gif';
-import sanguinussup from './../../assets/images/disciplines/sanguinussup.gif';
-import serpentissup from './../../assets/images/disciplines/serpentissup.gif';
-import spiritussup from './../../assets/images/disciplines/spiritussup.gif';
-import temporissup from './../../assets/images/disciplines/temporissup.gif';
-import thanatosissup from './../../assets/images/disciplines/thanatosissup.gif';
-import thaumaturgysup from './../../assets/images/disciplines/thaumaturgysup.gif';
-import valerensup from './../../assets/images/disciplines/valerensup.gif';
-import vicissitudesup from './../../assets/images/disciplines/vicissitudesup.gif';
-import visceratikasup from './../../assets/images/disciplines/visceratikasup.gif';
 import defense from '././../../assets/images/disciplines/defense.gif';
 import innocence from './../../assets/images/disciplines/innocence.gif';
 import justice from './../../assets/images/disciplines/justice.gif';
@@ -63,6 +36,68 @@ import martyrdom from './../../assets/images/disciplines/martyrdom.gif';
 import redemption from './../../assets/images/disciplines/redemption.gif';
 import vengeance from './../../assets/images/disciplines/vengeance.gif';
 import vision from './../../assets/images/disciplines/vision.gif';
+
+import abomination from './../../assets/images/clans/abomination.gif';
+import ahrimane from './../../assets/images/clans/ahrimane.gif';
+import akunanse from './../../assets/images/clans/akunanse.gif';
+import assamite from './../../assets/images/clans/assamite.gif';
+import baali from './../../assets/images/clans/baali.gif';
+import bloodbrother from './../../assets/images/clans/bloodbrother.gif';
+import brujah from './../../assets/images/clans/brujah.gif';
+import brujahantitribu from './../../assets/images/clans/brujahantitribu.gif';
+import caitiff from './../../assets/images/clans/caitiff.gif';
+import daughterofcacophony from './../../assets/images/clans/daughterofcacophony.gif';
+import followerofset from './../../assets/images/clans/followerofset.gif';
+import gangrel from './../../assets/images/clans/gangrel.gif';
+import gangrelantitribu from './../../assets/images/clans/gangrelantitribu.gif';
+import gargoyle from './../../assets/images/clans/gargoyle.gif';
+import giovanni from './../../assets/images/clans/giovanni.gif';
+import guruhi from './../../assets/images/clans/guruhi.gif';
+import harbingerofskulls from './../../assets/images/clans/harbingerofskulls.gif';
+import ishtarri from './../../assets/images/clans/ishtarri.gif';
+import kiasyd from './../../assets/images/clans/kiasyd.gif';
+import lasombra from './../../assets/images/clans/lasombra.gif';
+import malkavian from './../../assets/images/clans/malkavian.gif';
+import malkavianantitribu from './../../assets/images/clans/malkavianantitribu.gif';
+import nagaraja from './../../assets/images/clans/nagaraja.gif';
+import nosferatu from './../../assets/images/clans/nosferatu.gif';
+import nosferatuantitribu from './../../assets/images/clans/nosferatuantitribu.gif';
+import osebo from './../../assets/images/clans/osebo.gif';
+import pander from './../../assets/images/clans/pander.gif';
+import ravnos from './../../assets/images/clans/ravnos.gif';
+import salubri from './../../assets/images/clans/salubri.gif';
+import salubriantitribu from './../../assets/images/clans/salubriantitribu.gif';
+import samedi from './../../assets/images/clans/samedi.gif';
+import toreador from './../../assets/images/clans/toreador.gif';
+import toreadorantitribu from './../../assets/images/clans/toreadorantitribu.gif';
+import tremere from './../../assets/images/clans/tremere.gif';
+import tremereantitribu from './../../assets/images/clans/tremereantitribu.gif';
+import truebrujah from './../../assets/images/clans/truebrujah.gif';
+import tzimisce from './../../assets/images/clans/tzimisce.gif';
+import ventrue from './../../assets/images/clans/ventrue.gif';
+import ventrueantitribu from './../../assets/images/clans/ventrueantitribu.gif';
+import avenger from './../../assets/images/clans/avenger.gif';
+import defender from './../../assets/images/clans/defender.gif';
+import innocent from './../../assets/images/clans/innocent.gif';
+import judge from './../../assets/images/clans/judge.gif';
+import martyr from './../../assets/images/clans/martyr.gif';
+import redeemer from './../../assets/images/clans/redeemer.gif';
+import visionary from './../../assets/images/clans/visionary.gif';
+
+import action from './../../assets/images/types/action.gif';
+import actionmodifier from './../../assets/images/types/actionmodifier.gif';
+import ally from './../../assets/images/types/ally.gif';
+import combat from './../../assets/images/types/combat.gif';
+import conviction from './../../assets/images/types/conviction.gif';
+import equipment from './../../assets/images/types/equipment.gif';
+import event from './../../assets/images/types/event.gif';
+import master from './../../assets/images/types/master.gif';
+import politicalaction from './../../assets/images/types/politicalaction.gif';
+import power from './../../assets/images/types/power.gif';
+import reaction from './../../assets/images/types/reaction.gif';
+import reflex from './../../assets/images/types/reflex.gif';
+import retainer from './../../assets/images/types/retainer.gif';
+
 
 function SearchLibraryFormButtons(props) {
   return (
@@ -102,27 +137,36 @@ function SearchLibraryFormText(props) {
 }
 
 function SearchLibraryFormType(props) {
-  const types = [
-    'ANY',
-    'Action',
-    'Action Modifier',
-    'Ally',
-    'Combat',
-    'Conviction',
-    'Equipment',
-    'Event',
-    'Master',
-    'Political Action',
-    'Power',
-    'Reaction',
-    'Reflex',
-    'Retainer',
-  ];
+  const typeicons = {
+    'ANY': null,
+    'Action': action,
+    'Action Modifier': actionmodifier,
+    'Ally': ally,
+    'Combat': combat,
+    'Conviction': conviction,
+    'Equipment': equipment,
+    'Event': event,
+    'Master': master,
+    'Political Action': politicalaction,
+    'Power': power,
+    'Reaction': reaction,
+    'Reflex': reflex,
+    'Retainer': retainer,
+  };
 
-  const typeforms = types.map((i, index) => {
-    return(
-      <option key={index} value={i}>{i}</option>
-    );
+  const typeoptions = [];
+  Object.keys(typeicons).map((key, index) => {
+    typeoptions.push({
+      value: key,
+      name: 'type',
+      label:
+      <div>
+        <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          <img src={typeicons[key]} className='discipline-base-image-results' />
+        </span>
+        {key}
+      </div>
+    });
   });
 
   return (
@@ -133,57 +177,65 @@ function SearchLibraryFormType(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <select className='custom-select' name='type' value={props.value} onChange={props.onChange}>
-          {typeforms}
-        </select>
+        <Select options={typeoptions} name='clan' onChange={props.onChange} />
       </div>
     </div>
   );
 }
 
-function SearchLibraryFormDiscipline(props) {
-  const disciplines = [
-    'ANY',
-    'Abombwe',
-    'Animalism',
-    'Auspex',
-    'Celerity',
-    'Chimerstry',
-    'Daimoinon',
-    'Dominate',
-    'Dementation',
-    'Fortitude',
-    'Melpominee',
-    'Mytherceria',
-    'Necromancy',
-    'Obeah',
-    'Obfuscate',
-    'Obtenebration',
-    'Potence',
-    'Presence',
-    'Protean',
-    'Quietus',
-    'Sanguinus',
-    'Serpentis',
-    'Spiritus',
-    'Temporis',
-    'Thanatosis',
-    'Thaumaturgy',
-    'Valeren',
-    'Vicissitude',
-    'Visceratika',
-    'Innocence',
-    'Judgement',
-    'Martyrdom',
-    'Redemption',
-    'Vengeance',
-    'Vision',
-  ];
 
-  const disciplineforms = disciplines.map((i, index) => {
-    return(
-      <option key={index} value={i}>{i}</option>
-    );
+function SearchLibraryFormDiscipline(props) {
+  const disciplineicons = {
+    'ANY': null,
+    'Abombwe': abombwe,
+    'Animalism': animalism,
+    'Auspex': auspex,
+    'Celerity': celerity,
+    'Chimerstry': chimerstry,
+    'Daimoinon': daimoinon,
+    'Dominate': dominate,
+    'Dementation': dementation,
+    'Fortitude': fortitude,
+    'Melpominee': melpominee,
+    'Mytherceria': mytherceria,
+    'Necromancy': necromancy,
+    'Obeah': obeah,
+    'Obfuscate': obfuscate,
+    'Obtenebration': obtenebration,
+    'Potence': potence,
+    'Presence': presence,
+    'Protean': protean,
+    'Quietus': quietus,
+    'Sanguinus': sanguinus,
+    'Serpentis': serpentis,
+    'Spiritus': spiritus,
+    'Temporis': temporis,
+    'Thanatosis': thanatosis,
+    'Thaumaturgy': thaumaturgy,
+    'Valeren': valeren,
+    'Vicissitude': vicissitude,
+    'Visceratika': visceratika,
+    'Innocence': innocence,
+    'Judgment': justice,
+    'Martyrdom': martyrdom,
+    'Redemption': redemption,
+    'Vengeance': vengeance,
+    'Vision': vision,
+  };
+
+  const disciplineoptions = [];
+  Object.keys(disciplineicons).map((key, index) => {
+    disciplineoptions.push({
+      value: key,
+      name: 'discipline',
+      label:
+      <div>
+        <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          <img src={disciplineicons[key]} className='discipline-base-image-results' />
+        </span>
+        {key}
+      </div>
+    });
   });
 
   return (
@@ -194,9 +246,7 @@ function SearchLibraryFormDiscipline(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <select className='custom-select' name='discipline' value={props.value} onChange={props.onChange}>
-          {disciplineforms}
-        </select>
+        <Select options={disciplineoptions} name='clan' onChange={props.onChange} />
       </div>
     </div>
   );
@@ -284,60 +334,69 @@ function SearchLibraryFormPoolCost(props) {
 }
 
 function SearchLibraryFormClan(props) {
-  const clans = [
-    'ANY',
-    'Abomination',
-    'Ahrimane',
-    'Akunanse',
-    'Assamite',
-    'Baali',
-    'Blood Brother',
-    'Brujah',
-    'Brujah antitribu',
-    'Caitiff',
-    'Daughter of Cacophony',
-    'Follower of Set',
-    'Gangrel',
-    'Gangrel antitribu',
-    'Gargoyle',
-    'Giovanni',
-    'Guruhi',
-    'Harbinger of Skulls',
-    'Ishtarri',
-    'Kiasyd',
-    'Lasombra',
-    'Malkavian',
-    'Malkavian antitribu',
-    'Nagaraja',
-    'Nosferatu',
-    'Nosferatu antitribu',
-    'Osebo',
-    'Pander',
-    'Ravnos',
-    'Salubri',
-    'Salubri antitribu',
-    'Samedi',
-    'Toreador',
-    'Toreador antitribu',
-    'Tremere',
-    'Tremere antitribu',
-    'True Brujah',
-    'Tzimisce',
-    'Ventrue',
-    'Ventrue antitribu',
-    'Avenger',
-    'Defender',
-    'Innocent',
-    'Judge',
-    'Martyr',
-    'Redeemer',
-    'Visionary',
-  ];
+  const clanicons = {
+    'ANY': null,
+    'Abomination': abomination,
+    'Ahrimane': ahrimane,
+    'Akunanse': akunanse,
+    'Assamite': assamite,
+    'Baali': baali,
+    'Blood Brother': bloodbrother,
+    'Brujah': brujah,
+    'Brujah antitribu': brujahantitribu,
+    'Caitiff': caitiff,
+    'Daughter of Cacophony': daughterofcacophony,
+    'Follower of Set': followerofset,
+    'Gangrel': gangrel,
+    'Gangrel antitribu': gangrelantitribu,
+    'Gargoyle': gargoyle,
+    'Giovanni': giovanni,
+    'Guruhi': guruhi,
+    'Harbinger of Skulls': harbingerofskulls,
+    'Ishtarri': ishtarri,
+    'Kiasyd': kiasyd,
+    'Lasombra': lasombra,
+    'Malkavian': malkavian,
+    'Malkavian antitribu': malkavianantitribu,
+    'Nagaraja': nagaraja,
+    'Nosferatu': nosferatu,
+    'Nosferatu antitribu': nosferatuantitribu,
+    'Osebo': osebo,
+    'Pander': pander,
+    'Ravnos': ravnos,
+    'Salubri': salubri,
+    'Salubri antitribu': salubriantitribu,
+    'Samedi': samedi,
+    'Toreador': toreador,
+    'Toreador antitribu': toreadorantitribu,
+    'Tremere': tremere,
+    'Tremere antitribu': tremereantitribu,
+    'True Brujah': truebrujah,
+    'Tzimisce': tzimisce,
+    'Ventrue': ventrue,
+    'Ventrue antitribu': ventrueantitribu,
+    'Avenger': avenger,
+    'Defender': defender,
+    'Innocent': innocent,
+    'Judge': judge,
+    'Martyr': martyr,
+    'Redeemer': redeemer,
+    'Visionary': visionary,
+  };
 
-  const clanforms = clans.map((i, index) => {
-    return(
-      <option key={index} value={i}>{i}</option>
-    );
+  const clanoptions = [];
+  Object.keys(clanicons).map((key, index) => {
+    clanoptions.push({
+      value: key,
+      name: 'clan',
+      label:
+      <div>
+        <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          <img src={clanicons[key]} className='discipline-base-image-results' />
+        </span>
+        {key}
+      </div>
+    });
   });
 
   return (
@@ -348,9 +407,7 @@ function SearchLibraryFormClan(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <select className='custom-select' name='clan' value={props.value} onChange={props.onChange}>
-          {clanforms}
-        </select>
+        <Select options={clanoptions} name='clan' onChange={props.onChange} />
       </div>
     </div>
   );
@@ -563,6 +620,14 @@ function SearchLibraryForm(props) {
     }));
   };
 
+  const handleSelectChange = event => {
+    const {name, value} = event;
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
   const handleMultiChange = event => {
     const { id, name } = event.target;
     let newState = state[name];
@@ -653,9 +718,9 @@ function SearchLibraryForm(props) {
         <SearchLibraryFormText value={state.text} onChange={handleChange} />
         <SearchLibraryFormButtons handleClearFormButton={handleClearFormButton} handleClearResultButton={handleClearResultButton} />
       </div>
-      <SearchLibraryFormType value={state.type} onChange={handleChange} />
-      <SearchLibraryFormDiscipline value={state.discipline} onChange={handleChange}/>
-      <SearchLibraryFormClan value={state.clan} onChange={handleChange} />
+      <SearchLibraryFormType value={state.type} onChange={handleSelectChange} />
+      <SearchLibraryFormDiscipline value={state.discipline} onChange={handleSelectChange}/>
+      <SearchLibraryFormClan value={state.clan} onChange={handleSelectChange} />
       <SearchLibraryFormSect value={state.sect} onChange={handleChange} />
       <SearchLibraryFormTitle value={state.titles} onChange={handleChange} />
       <SearchLibraryFormBloodCost value={state.blood} moreless={state.bloodmoreless} onValueChange={handleChange} onMorelessChange={handleChange} />

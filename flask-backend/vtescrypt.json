@@ -8534,7 +8534,7 @@
         "Title":"",
         "Banned":"",
         "Disciplines":{
-            "Justice":1,
+            "Judgment":1,
             "Martyrdom":1,
             "Vision":1
         }
@@ -9282,7 +9282,7 @@
         "Banned":"",
         "Disciplines":{
             "Innocence":1,
-            "Justice":1
+            "Judgment":1
         }
     },
     {
@@ -10273,7 +10273,7 @@
         "Banned":"",
         "Disciplines":{
             "Defense":1,
-            "Justice":1
+            "Judgment":1
         }
     },
     {
@@ -14071,7 +14071,7 @@
         "Banned":"",
         "Disciplines":{
             "Defense":1,
-            "Justice":1
+            "Judgment":1
         }
     },
     {
@@ -14777,7 +14777,7 @@
         "Banned":"",
         "Disciplines":{
             "Innocence":1,
-            "Justice":1,
+            "Judgment":1,
             "Vision":1
         }
     },
@@ -15320,7 +15320,7 @@
         "Title":"",
         "Banned":"",
         "Disciplines":{
-            "Justice":1,
+            "Judgment":1,
             "Vengeance":1
         }
     },
@@ -20038,7 +20038,7 @@
         "Title":"",
         "Banned":"",
         "Disciplines":{
-            "Justice":1,
+            "Judgment":1,
             "Redemption":1
         }
     },

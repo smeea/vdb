@@ -96,7 +96,7 @@ function ResultCryptDisciplines(props) {
     Visceratika: [visceratika, visceratikasup],
     Defense: [defense],
     Innocence: [innocence],
-    Justice: [justice],
+    Judgment: [justice],
     Martyrdom: [martyrdom],
     Redemption: [redemption],
     Vengeance: [vengeance],
@@ -134,7 +134,6 @@ function ResultCryptDisciplines(props) {
         );
       }
     });
-
   } else {
     if (props.disciplines_set === undefined) {
       max_rows = 7;
@@ -158,6 +157,7 @@ function ResultCryptDisciplines(props) {
       );
     });
   }
+
   while (counter < max_rows) {
     counter += 1;
     empty_rows.push(

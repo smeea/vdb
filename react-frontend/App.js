@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './assets/css/bootstrap.min.css';
-import './assets/css/bootstrap-select.min.css';
 import './assets/css/style.styl';
 import Navigation from './pages/Navigation.jsx';
 import Account from './pages/Account.jsx';

@@ -35,7 +35,7 @@ disciplines = [
 virtues = {
     'def': 'Defense',
     'inn': 'Innocence',
-    'jud': 'Justice',
+    'jud': 'Judgment',
     'mar': 'Martyrdom',
     'red': 'Redemption',
     'ven': 'Vengeance',

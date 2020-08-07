@@ -1,15 +1,3 @@
-# CRYPT
-## MAJOR FEATURE
-## MINOR FEATURE
-## MAJOR FIX
-## MINOR FIX
-
-# LIBRARY
-## MAJOR FEATURE
-## MINOR FEATURE
-## MAJOR FIX
-## MINOR FIX
-
 # DECK
 ## MAJOR FEATURE
 * Immediate effect of add card / new deck / delete 
@@ -21,6 +9,14 @@
 * Copy ('fork') deck
 * Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?)
 ## MAJOR FIX
+## MINOR FIX
+
+# SEARCH
+## MAJOR FEATURE
+## MINOR FEATURE
+* Search by set
+## MAJOR FIX
+* Clear iconified forms
 ## MINOR FIX
 
 # ALL

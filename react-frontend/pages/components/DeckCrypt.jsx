@@ -8,8 +8,6 @@ import ResultCryptGroup from './ResultCryptGroup.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 
 function DeckCryptSideBody(props) {
-  const disciplines_set = props.disciplines_set;
-
   const SortByCapacity = (a, b) => {
     if (a.c['Capacity'] > b.c['Capacity']) {
       return -1;
@@ -57,7 +55,7 @@ function DeckCryptSideBody(props) {
         <tr className={resultTrClass}>
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
           <ResultCryptCapacity value={card.c['Capacity']} />
-          <ResultCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
+          <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
           <ResultCryptName id={card.c['Id']} toggleHidden={toggleHidden} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']}/>
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
@@ -87,8 +85,6 @@ function DeckCryptSideBody(props) {
 }
 
 function DeckCryptBody(props) {
-  const disciplines_set = props.disciplines_set;
-
   const SortByQuantity = (a, b) => {
     if (a.q > b.q) {
       return -1;
@@ -136,7 +132,7 @@ function DeckCryptBody(props) {
         <tr className={resultTrClass}>
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
           <ResultCryptCapacity value={card.c['Capacity']} />
-          <ResultCryptDisciplines disciplines_set={disciplines_set} value={card.c['Disciplines']} />
+          <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
           <ResultCryptName id={card.c['Id']} toggleHidden={toggleHidden} value={card.c['Name']} />
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />

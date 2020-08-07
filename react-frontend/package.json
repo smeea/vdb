@@ -17,7 +17,8 @@
     "parcel": "^1.12.4",
     "parcel-bundler": "^1.12.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-select": "^3.1.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",

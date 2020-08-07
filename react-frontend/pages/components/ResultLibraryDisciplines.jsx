@@ -96,7 +96,7 @@ function ResultLibraryDisciplines(props) {
     Visceratika: visceratika,
     Defense: defense,
     Innocence: innocence,
-    Justice: justice,
+    Judgment: justice,
     Martyrdom: martyrdom,
     Redemption: redemption,
     Vengeance: vengeance,
