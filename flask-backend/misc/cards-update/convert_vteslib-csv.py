@@ -26,10 +26,8 @@ with open("vteslib.csv",
         sets = card['Set'].split(', ')
         card['Set'] = {}
         for set in sets:
-            # print(set.split(':'))
             if ':' in set:
                 set = set.split(':')
-                # print(set[0], set[1])
             elif '-' in set:
                 set = set.split('-')
             card['Set'][set[0]] = set[1]

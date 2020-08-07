@@ -259,6 +259,15 @@ def get_crypt_by_group(group_list):
     return match_cards
 
 
+def get_crypt_by_set(set):
+    match_cards = []
+    for card in crypt:
+        if set in card['Set']:
+            match_cards.append(card)
+
+    return match_cards
+
+
 def get_crypt_by_id(id):
     for card in crypt:
         if card['Id'] == int(id):

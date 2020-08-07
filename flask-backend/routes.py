@@ -9,6 +9,7 @@ from search_crypt import get_crypt_by_capacity
 from search_crypt import get_crypt_by_group
 from search_crypt import get_crypt_by_sect
 from search_crypt import get_crypt_by_clan
+from search_crypt import get_crypt_by_set
 from search_crypt import get_crypt_by_id
 from search_crypt import get_overall_crypt
 from search_library import get_library_by_cardtext
@@ -268,6 +269,14 @@ def searchCryptCards():
             parameters += 1
             cards_by_group = get_crypt_by_group(request.json['group'])
             match_by_category.append(cards_by_group)
+    except KeyError:
+        pass
+
+    try:
+        if request.json['set']:
+            parameters += 1
+            cards_by_set = get_crypt_by_set(request.json['set'])
+            match_by_category.append(cards_by_set)
     except KeyError:
         pass
 

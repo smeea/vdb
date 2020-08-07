@@ -14,10 +14,10 @@
 # SEARCH
 ## MAJOR FEATURE
 ## MINOR FEATURE
-* Search by set
 ## MAJOR FIX
 * Clear iconified forms
 ## MINOR FIX
+* Sort set form by date
 
 # ALL
 ## MAJOR FEATURE
@@ -30,6 +30,7 @@
 * Card rulings
 * Trifle icon
 ## MAJOR FIX
+* Fix uncontrolled input bug in clear button
 ## MINOR FIX
 ## OTHER
 * New name

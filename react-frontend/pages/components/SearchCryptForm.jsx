@@ -574,6 +574,66 @@ function SearchCryptFormTraits(props) {
   );
 }
 
+function SearchCryptFormSet(props) {
+  const sets = [
+    ['ANY', 'ANY'],
+    ['25th', '25th Anniversary'],
+    ['AH', 'Ancient Hearts'],
+    ['AU', 'Anarchs Unbound'],
+    ['Anarchs', 'Anarchs'],
+    ['Anthology', 'Anthology'],
+    ['BH', 'Black Hand'],
+    ['BL', 'Bloodlines'],
+    ['BSC', 'Blood Shadowed Court'],
+    ['CE', 'Camarilla Edition'],
+    ['DM', 'Danse Macabre'],
+    ['DS', 'Dark Sovereigns'],
+    ['EK', 'Ebony Kingdom'],
+    ['FN', 'Final Nights'],
+    ['Gehenna', 'Gehenna'],
+    ['HttB', 'Heirs to the Blood'],
+    ['Jyhad', 'Jyhad'],
+    ['KMW', 'Kindred Most Wanted'],
+    ['KoT', 'Keepers of Tradition'],
+    ['LK', 'Lost Kindred'],
+    ['LoB', 'Legacies of Blood'],
+    ['LotN', 'Lords of the Night'],
+    ['NoR', 'Nights of Reckoning'],
+    ['SW', 'Sabbat War'],
+    ['Sabbat', 'Sabbat'],
+    ['Sabbat', 'Sabbat'],
+    ['SoC', 'Sword of Caine'],
+    ['TR', 'Twilight Rebellion'],
+    ['TU', 'The Unaligned'],
+    ['Third', 'Third Edition'],
+    ['Tenth', '10th Anniversary'],
+    ['VTES', 'V:TES'],
+    ['FB', 'First Blood'],
+    ['SP', 'Sabbat Preconstructed'],
+    ['Promo', 'Promo'],
+  ];
+
+  const setforms = sets.map((i, index) => {
+    return(
+      <option key={index} value={i[0]}>{i[1]}</option>
+    );
+  });
+  return (
+    <div className='form-row'>
+      <div className='form-group col-3 d-flex align-items-center'>
+        <label className='h6 mb-0'>
+          Set:
+        </label>
+      </div>
+      <div className='form-group col-9'>
+        <select className='custom-select' name='set' value={props.value} onChange={props.onChange}>
+          {setforms}
+        </select>
+      </div>
+    </div>
+  );
+}
+
 function SearchCryptForm(props) {
   const [state, setState] = useState({
     text: '',
@@ -663,6 +723,7 @@ function SearchCryptForm(props) {
       'red list': false,
       flight: false,
     },
+    set: 'ANY',
   });
 
   const handleChange = event => {
@@ -808,6 +869,7 @@ function SearchCryptForm(props) {
         'red list': false,
         flight: false,
       },
+      set: 'ANY',
     });
   };
 
@@ -867,6 +929,7 @@ function SearchCryptForm(props) {
       <SearchCryptFormTitles value={state.titles} onChange={handleMultiChange} />
       <SearchCryptFormGroup value={state.group} onChange={handleMultiChange} />
       <SearchCryptFormTraits value={state.traits} onChange={handleMultiChange} />
+      <SearchCryptFormSet value={state.set} onChange={handleChange} />
     </form>
   );
 }
