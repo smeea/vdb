@@ -236,6 +236,15 @@ def get_library_by_trait(traits):
     return match_cards
 
 
+def get_library_by_set(set):
+    match_cards = []
+    for card in library:
+        if set in card['Set']:
+            match_cards.append(card)
+
+    return match_cards
+
+
 def get_library_by_id(id):
     for card in library:
         if card['Id'] == int(id):

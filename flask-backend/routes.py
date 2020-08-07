@@ -22,6 +22,7 @@ from search_library import get_library_by_cardtype
 from search_library import get_library_by_blood
 from search_library import get_library_by_pool
 from search_library import get_library_by_id
+from search_library import get_library_by_set
 from search_library import get_overall_library
 from api import app
 from api import db
@@ -370,6 +371,14 @@ def searchLibraryCards():
             poolmoreless = request.json['poolmoreless']
             cards_by_pool = get_library_by_pool(pool, poolmoreless)
             match_by_category.append(cards_by_pool)
+    except KeyError:
+        pass
+
+    try:
+        if request.json['set']:
+            parameters += 1
+            cards_by_set = get_library_by_set(request.json['set'])
+            match_by_category.append(cards_by_set)
     except KeyError:
         pass
 

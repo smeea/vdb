@@ -17,7 +17,6 @@
 ## MAJOR FIX
 * Clear iconified forms
 ## MINOR FIX
-* Sort set form by date
 
 # ALL
 ## MAJOR FEATURE
