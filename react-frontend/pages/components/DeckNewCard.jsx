@@ -28,7 +28,7 @@ function DeckNewCard(props) {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <input
         placeholder='New Card Id'
         type='text'
@@ -41,7 +41,7 @@ function DeckNewCard(props) {
       <button className='btn btn-outline-secondary' type='button' onClick={clearFormButton}>
         CLEAR
       </button>
-    </div>
+    </React.Fragment>
   );
 }
 

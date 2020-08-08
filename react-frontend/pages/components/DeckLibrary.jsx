@@ -69,9 +69,9 @@ function DeckLibraryBody(props) {
               </div>
             </td>
             <td colSpan={1} className='set'>
-              <div>
+              <React.Fragment>
                 {sets}
-              </div>
+              </React.Fragment>
             </td>
           </tr>
         )}
@@ -84,12 +84,12 @@ function DeckLibraryBody(props) {
 
 function DeckLibraryByTypeTable(props) {
   return (
-    <div>
+    <React.Fragment>
       <ResultLibraryType cardtype={props.cardtype} total={props.total}/>
       <table className='deck-library-table'>
         <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
-    </div>
+    </React.Fragment>
   );
 }
 
@@ -178,7 +178,7 @@ function DeckLibrary(props) {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <div className='deck-library'>
         <b>Library [{library_total}]:</b>
         {LibraryDeck}
@@ -189,7 +189,7 @@ function DeckLibrary(props) {
           {LibrarySideDeck}
         </div>
       }
-    </div>
+    </React.Fragment>
   );
 }
 

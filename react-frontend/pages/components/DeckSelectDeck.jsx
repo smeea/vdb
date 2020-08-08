@@ -1,5 +1,4 @@
 import React from 'react';
-import DeckRemoveDeck from './DeckRemoveDeck.jsx';
 
 function DeckSelectDeck(props) {
   let option_default;
@@ -24,13 +23,12 @@ function DeckSelectDeck(props) {
   });
 
   return (
-    <div>
+    <React.Fragment>
       <select defaultValue='' className='custom-select' value={props.activedeck} onChange={props.handleActiveDeckSelect}>
         {option_default}
         {decksform}
       </select>
-      <DeckRemoveDeck activedeck={props.activedeck} />
-    </div>
+    </React.Fragment>
   );
 };
 

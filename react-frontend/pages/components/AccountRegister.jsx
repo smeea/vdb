@@ -42,7 +42,7 @@ function AccountRegister(props){
   };
 
   return (
-    <div>
+    <React.Fragment>
       <h6>Register</h6>
       <form>
         <input
@@ -71,7 +71,7 @@ function AccountRegister(props){
         />
         <input type='button' label='Register' value='Register' onClick={registerUser} />
       </form>
-    </div>
+    </React.Fragment>
   );
 }
 

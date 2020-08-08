@@ -45,8 +45,7 @@ function DeckDraw(props) {
   const [drawedLibrary, setDrawLibrary] = useState(undefined);
 
   return(
-    <div>
-      <div>
+    <React.Fragment>
         <button className='btn btn-outline-secondary' type='button' onClick={() => setDrawCrypt(drawCards(props.crypt, 4))}>
           DRAW CRYPT
         </button>
@@ -59,24 +58,22 @@ function DeckDraw(props) {
         }}>
           DRAW CLEAR
         </button>
-      </div>
-      <div>
+        <br />
         {drawedCrypt != null &&
-         <div>
+         <React.Fragment>
            <b>Crypt Draw:</b>
            <ResultCrypt cards={drawedCrypt} />
            <br />
-         </div >
+         </React.Fragment >
         }
         {drawedLibrary != null &&
-         <div>
+         <React.Fragment>
            <b>Library Draw:</b>
            <ResultLibrary cards={drawedLibrary} />
            <br />
-         </div>
+         </React.Fragment>
         }
-      </div>
-    </div>
+    </React.Fragment>
   );
 }
 

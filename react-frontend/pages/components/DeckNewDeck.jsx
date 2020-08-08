@@ -33,7 +33,7 @@ function DecksNewDeck(props) {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <input
         placeholder='New Deck Name'
         type='text'
@@ -46,7 +46,7 @@ function DecksNewDeck(props) {
       <button className='btn btn-outline-secondary' type='button' onClick={clearFormButton}>
         CLEAR
       </button>
-    </div>
+    </React.Fragment>
   );
 }
 

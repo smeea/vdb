@@ -8,6 +8,7 @@
 * Copy ('fork') deck
 * Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?)
 ## MAJOR FIX
+* Name and description update on deck select
 ## MINOR FIX
 
 # SEARCH

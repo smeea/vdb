@@ -49,9 +49,9 @@ function Navigation(props) {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <NavBar />
-    </div>
+    </React.Fragment>
   );
 }
 

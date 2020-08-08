@@ -9,7 +9,7 @@ import DeckDescriptionDeck from './DeckDescriptionDeck.jsx';
 function DeckShowDeck(props) {
   if (props.deck !== undefined) {
     return (
-      <div>
+      <React.Fragment>
         <b>Deck Name:</b>
         <DeckRenameDeck name={props.deck.name} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} />
         <br />
@@ -22,11 +22,11 @@ function DeckShowDeck(props) {
         <br />
         <DeckLibrary deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.library} />
         <br />
-      </div>
+      </React.Fragment>
     );
   } else {
     return (
-      <div></div>
+      <React.Fragment></React.Fragment>
     );
   };
 }

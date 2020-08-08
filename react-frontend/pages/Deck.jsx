@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import DeckNewDeck from './components/DeckNewDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
+import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 
 function Deck(props) {
   const [decks, setDecks] = useState({});
@@ -110,6 +111,7 @@ function Deck(props) {
         <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
           <DeckNewDeck />
           <DeckSelectDeck handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activedeck={activedeck} />
+          <DeckRemoveDeck activedeck={activedeck} />
           <br />
           <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={decks[activedeck]} />
         </div>

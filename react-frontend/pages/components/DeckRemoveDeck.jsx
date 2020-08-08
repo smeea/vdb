@@ -23,11 +23,11 @@ function DeckRemoveDeck(props) {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <button className='btn btn-outline-secondary' type='button' onClick={removeDeck}>
         REMOVE
       </button>
-    </div>
+    </React.Fragment>
   );
 }
 

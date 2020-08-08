@@ -6,20 +6,6 @@ import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 
-function SearchCryptHeader(props) {
-  return (
-    <thead>
-      <tr className='result-header'>
-        <th>C</th>
-        <th>D</th>
-        <th>N</th>
-        <th>C</th>
-        <th>G</th>
-      </tr>
-    </thead>
-  );
-}
-
 function SearchCryptBody(props) {
   let resultTrClass='crypt-result-even';
 
@@ -75,9 +61,9 @@ function SearchCryptBody(props) {
               </div>
             </td>
             <td colSpan={1} className='set'>
-              <div>
+              <React.Fragment>
                 {sets}
-              </div>
+              </React.Fragment>
             </td>
           </tr>
         )}
@@ -90,12 +76,11 @@ function SearchCryptBody(props) {
 
 function ResultCrypt(props) {
   return (
-    <div>
+    <React.Fragment>
       <table className='search-crypt-table'>
-        {/* <SearchCryptHeader /> */}
         <SearchCryptBody resultCards={props.cards} />
       </table>
-    </div>
+    </React.Fragment>
   );
 }
 

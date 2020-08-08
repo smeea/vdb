@@ -7,21 +7,6 @@ import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 
-function SearchLibraryHeader(props) {
-  return (
-    <thead>
-      <tr className='result-header'>
-        <th>C</th>
-        <th>T</th>
-        <th>D</th>
-        <th>N</th>
-        <th>C</th>
-        <th>B</th>
-      </tr>
-    </thead>
-  );
-}
-
 function SearchLibraryBody(props) {
   let resultTrClass='library-result-even';
 
@@ -79,9 +64,9 @@ function SearchLibraryBody(props) {
               </div>
             </td>
             <td colSpan={1} className='set'>
-              <div>
+              <React.Fragment>
                 {sets}
-              </div>
+              </React.Fragment>
             </td>
           </tr>
         )}
@@ -94,12 +79,11 @@ function SearchLibraryBody(props) {
 
 function ResultLibrary(props) {
   return (
-    <div>
+    <React.Fragment>
       <table width='100%' className='search-library-table'>
-        {/* <SearchLibraryHeader /> */}
         <SearchLibraryBody resultCards={props.cards} />
       </table>
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -160,12 +160,12 @@ function SearchLibraryFormType(props) {
       value: key,
       name: 'type',
       label:
-      <div>
+      <React.Fragment>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
           <img src={typeicons[key]} className='discipline-base-image-results' />
         </span>
         {key}
-      </div>
+      </React.Fragment>
     });
   });
 
@@ -229,12 +229,12 @@ function SearchLibraryFormDiscipline(props) {
       value: key,
       name: 'discipline',
       label:
-      <div>
+      <React.Fragment>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
           <img src={disciplineicons[key]} className='discipline-base-image-results' />
         </span>
         {key}
-      </div>
+      </React.Fragment>
     });
   });
 
@@ -390,12 +390,12 @@ function SearchLibraryFormClan(props) {
       value: key,
       name: 'clan',
       label:
-      <div>
+      <React.Fragment>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
           <img src={clanicons[key]} className='discipline-base-image-results' />
         </span>
         {key}
-      </div>
+      </React.Fragment>
     });
   });
 

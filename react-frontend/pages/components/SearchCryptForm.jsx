@@ -195,11 +195,9 @@ function SearchCryptFormDisciplines(props) {
   });
 
   return (
-    <div>
-      <div className='form-row pt-2'>
-        <div className='input-group justify-content-start'>
-          {disciplinesforms}
-        </div>
+    <div className='form-row pt-2'>
+      <div className='input-group justify-content-start'>
+        {disciplinesforms}
       </div>
     </div>
   );
@@ -337,12 +335,12 @@ function SearchCryptFormClan(props) {
       value: key,
       name: 'clan',
       label:
-      <div>
+      <React.Fragment>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
           <img src={clanicons[key]} className='discipline-base-image-results' />
         </span>
         {key}
-      </div>
+      </React.Fragment>
     });
   });
 
@@ -473,7 +471,7 @@ function SearchCryptFormTitles(props) {
   });
 
   return (
-    <div>
+    <React.Fragment>
       <h6>Title:</h6>
       <div className='form-row'>
         <div className='form-group col-7'>
@@ -483,7 +481,7 @@ function SearchCryptFormTitles(props) {
           {titlesRightforms}
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
