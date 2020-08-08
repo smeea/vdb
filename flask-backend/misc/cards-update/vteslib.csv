@@ -2000,7 +2000,7 @@ Francis Thompson, ""The Hound of Heaven""","Sabbat:U, SW:U, FN:PA, CE:PN, BH:PM2
 [SER] As above, and your prey burns 1 pool after you burn this card.","","AH:R2, FN:PS, KMW:PB, LotN:PS, 25th:1","","","Richard Thomas","",""
 "100771","Form of Mist","","Combat","","Protean","","","","","[pro] Strike: dodge.
 [PRO] Strike: combat ends. If this vampire is acting and the action was blocked, they can burn 1 blood after combat ends to continue the action at +1 stealth as if unblocked, even if stealth is not yet needed. A vampire can play only one Form of Mist at superior each action.","...and yet I am, and live, like vapours tossed.
-John Claire, ""I Am""","Jyhad:U2, VTES:U, Anarchs:C/PG3, KMW:PG2, Third:C, KoT:C, 25th:6","","","Rob Alexander; Chet Masters; Mike Chaney; Ginés Quiñonero","",""
+John Clare, ""I Am""","Jyhad:U2, VTES:U, Anarchs:C/PG3, KMW:PG2, Third:C, KoT:C, 25th:6","","","Rob Alexander; Chet Masters; Mike Chaney; Ginés Quiñonero","",""
 "100772","Form of the Ghost","","Combat","","Protean","","","","","[pro] Maneuver.
 [PRO] Press.","Nobody knows where I was,
 and now I am no longer there.
@@ -2100,7 +2100,7 @@ Gargoyle Slave cannot use ranged weapons. Gargoyle may prevent one damage each c
 "100809","Garibaldi-Meucci Museum","","Master","","","","","","","Master: unique location.
 Lock and burn 1 pool during your unlock phase to exchange a card in your ash heap that requires an anarch for a card from your hand. Lock before range is determined to end combat between an anarch you control and another anarch.","","TR:R","","","Brian LeBlanc","",""
 "100810","Garrote","","Equipment","","","1","","","","Melee weapon.
-Strike: strength damage, only usable at close range. If the opposing vampire goes into torpor during the strike resolution step of this strike and the bearer remains ready, the bearer may burn this card to burn the opposing vampire. This is not considered diablerie.","","FN:C/PA, Third:C, LotN:PA2","","","William O'Connor","",""
+Strike: strength damage, only usable at close range. If the opposing vampire {would go to torpor} during the strike resolution step of this strike and the bearer remains ready, the bearer may burn this card to burn the opposing vampire {instead}. This is not considered diablerie.","","FN:C/PA, Third:C, LotN:PA2","","","William O'Connor","",""
 "100811","Gas-Powered Chainsaw","","Equipment","","","1","","","","Melee weapon.
 3 damage each strike. This weapon is only usable once each combat.","","Sabbat:C, SW:C/PB, CE:C","","","Randy Gallegos","",""
 "100812","Gather","","Action","Gangrel","","1","","","","+1 stealth action. Unique.
@@ -5219,7 +5219,7 @@ I never stopped to think what life was all about,
 And every conversation I can now recall,
 Concerned itself with me, and nothing else at all
 Charles Aznavour, ""Yesterday, When I Was Young"" (translated by Herbert Kretzmer)","LoB:C/PI5","","","Greg Boychuk","",""
-"102060","Undead Persistence","","Combat","","Fortitude","","","","","[for] Only usable when this vampire should go into torpor. This vampire gets an optional press and will not go to torpor until combat ends (although he or she is still considered wounded and can be burned as normal). If three rounds of combat pass with no cards played, combat ends. This vampire is sent into torpor after combat.
+"102060","Undead Persistence","","Combat","","Fortitude","","","","","[for] Only usable when this vampire should go into torpor. {Instead,} this vampire gets an optional press{, } will not go to torpor until combat ends {but} is still considered wounded and can be burned as normal{}. If three rounds of combat pass with no cards played, combat ends. This vampire is sent into torpor after combat.
 [FOR] Prevent 2 damage.","The cry is still, ""They come!""
 William Shakespeare, ""Macbeth"", act V, scene 5","Jyhad:U2, VTES:U, Sabbat:U, SW:PV, Anarchs:PAG","","","Clint Langley; Scott Kirschner","",""
 "102061","Undead Strength","","Combat","","Potence","","","","","[pot] Strike: hand strike or use a melee weapon strike. This strike is at +1 damage.

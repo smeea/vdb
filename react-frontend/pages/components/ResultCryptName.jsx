@@ -4,7 +4,9 @@ function ResultCryptName(props) {
   return (
     <td className='name'>
       <div onClick={() => props.toggleHidden(props.id)}>
-        {props.value} {props.adv && ' [ADV]'} {props.ban && ' [BANNED]'}
+        <a href='#'>
+          {props.value} {props.adv && ' [ADV]'} {props.ban && ' [BANNED]'}
+        </a>
       </div>
     </td>
   );

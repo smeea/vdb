@@ -3,9 +3,8 @@
 * Immediate effect of add card / new deck / delete 
 * Add card from search
 * Add card from deck
+* Direct link to deck
 ## MINOR FEATURE
-* Rename deck
-* Custom description field
 * Copy ('fork') deck
 * Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?)
 ## MAJOR FIX
@@ -29,8 +28,8 @@
 * Card rulings
 * Trifle icon
 ## MAJOR FIX
-* Fix uncontrolled input bug in clear button
 ## MINOR FIX
+* Fix uncontrolled input bug in clear button
 ## OTHER
 * New name
 * Favicon
@@ -38,4 +37,3 @@
 * Update README.md
 * Update /About
 * Add robots.txt
-* Add redis cache

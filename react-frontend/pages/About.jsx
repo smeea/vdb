@@ -10,7 +10,7 @@ function About() {
       <div className='col-md-12 col-lg-8 col-xl-8 center-col px-0 px-xl-2'>
         <div className='about-version'>
           <h5>VERSION</h5>
-          <p>Card text based on <a href='http://www.vekn.net/card-lists'>vekn.net official list</a>: 2020-04-14.<br />
+          <p>Card text based on <a href='http://www.vekn.net/card-lists'>vekn.net official list</a>: 2020-06-23.<br />
             Card images by Syndelson <a href='http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood'>FELD images</a>: 2019-11-11 v2.72</p>
         </div>
 

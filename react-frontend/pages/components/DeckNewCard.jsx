@@ -18,9 +18,10 @@ function DeckNewCard(props) {
   };
 
   const createNewCard = event => {
-    if (state.cardid) {
+    if (state.cardid > 100000 && state.cardid < 202000) {
       props.deckCardAdd(props.deckid, state.cardid);
-
+    } else if (state.cardid) {
+      console.log('Error: wrong card id');
     } else {
       console.log('Error: submit with empty forms');
     };

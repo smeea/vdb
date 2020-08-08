@@ -15777,7 +15777,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Melee weapon.\nStrike: strength damage, only usable at close range. If the opposing vampire goes into torpor during the strike resolution step of this strike and the bearer remains ready, the bearer may burn this card to burn the opposing vampire. This is not considered diablerie.",
+        "Card Text":"Melee weapon.\nStrike: strength damage, only usable at close range. If the opposing vampire {would go to torpor} during the strike resolution step of this strike and the bearer remains ready, the bearer may burn this card to burn the opposing vampire {instead}. This is not considered diablerie.",
         "Set":{
             "FN":"C/PA",
             "Third":"C",
@@ -39896,7 +39896,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] Only usable when this vampire should go into torpor. This vampire gets an optional press and will not go to torpor until combat ends (although he or she is still considered wounded and can be burned as normal). If three rounds of combat pass with no cards played, combat ends. This vampire is sent into torpor after combat.\n[FOR] Prevent 2 damage.",
+        "Card Text":"[for] Only usable when this vampire should go into torpor. {Instead,} this vampire gets an optional press{, } will not go to torpor until combat ends {but} is still considered wounded and can be burned as normal{}. If three rounds of combat pass with no cards played, combat ends. This vampire is sent into torpor after combat.\n[FOR] Prevent 2 damage.",
         "Set":{
             "Jyhad":"U2",
             "VTES":"U",

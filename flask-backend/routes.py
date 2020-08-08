@@ -46,21 +46,43 @@ def showDeck(deckid):
 def updateDeck(deckid):
     if current_user.is_authenticated:
         try:
-            d = Deck.query.filter_by(author=current_user,
-                                     deckid=deckid).first()
-            new_cards = request.json['update']
-            merged_cards = d.cards.copy()
-            for k, v in new_cards.items():
-                if v < 0:
-                    del merged_cards[k]
-                else:
-                    merged_cards[k] = v
-
-            d.cards = merged_cards.copy()
-            db.session.commit()
-            return jsonify({'updated deck': d.deckid, 'cards': d.cards})
+            if request.json['update']:
+                print('update')
+                d = Deck.query.filter_by(author=current_user,
+                                         deckid=deckid).first()
+                new_cards = request.json['update']
+                merged_cards = d.cards.copy()
+                for k, v in new_cards.items():
+                    if v < 0:
+                        del merged_cards[k]
+                    else:
+                        merged_cards[k] = v
+                d.cards = merged_cards.copy()
+                db.session.commit()
+                return jsonify({'updated deck': d.deckid, 'cards': d.cards})
         except:
-            return jsonify({'error': 'idk'})
+            pass
+        try:
+            if request.json['name']:
+                d = Deck.query.filter_by(author=current_user,
+                                         deckid=deckid).first()
+                d.name = request.json['name']
+                db.session.commit()
+                return jsonify({'updated deck': d.deckid, 'name': d.name})
+        except:
+            pass
+        try:
+            if request.json['description']:
+                d = Deck.query.filter_by(author=current_user,
+                                         deckid=deckid).first()
+                d.description = request.json['description']
+                db.session.commit()
+                return jsonify({
+                    'updated deck': d.deckid,
+                    'description': d.description
+                })
+        except:
+            pass
     else:
         return jsonify({'Not logged in.'})
 
@@ -74,12 +96,14 @@ def listDecks():
             library = {}
             for k, v in deck.cards.items():
                 k = int(k)
-                if k >= 200000:
+                if k > 200000:
                     crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
                 elif k < 200000:
                     library[k] = {'c': get_library_by_id(k), 'q': v}
             decks[deck.deckid] = {
                 'name': deck.name,
+                'author': deck.author_public_name,
+                'description': deck.description,
                 'crypt': crypt,
                 'library': library,
                 'deckid': deck.deckid,
@@ -97,6 +121,8 @@ def newDeck():
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
                      name=request.json['deckname'],
+                     author_public_name=current_user.username,
+                     description='default description',
                      author=current_user,
                      cards={})
             db.session.add(d)

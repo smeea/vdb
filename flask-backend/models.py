@@ -31,6 +31,8 @@ class User(UserMixin, db.Model):
 class Deck(db.Model):
     deckid = db.Column(db.String(32), primary_key=True)
     name = db.Column(db.String(64), index=True)
+    author_public_name = db.Column(db.String(64))
+    description = db.Column(db.String(8192))
     cards = db.Column(db.PickleType)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
