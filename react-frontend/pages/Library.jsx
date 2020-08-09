@@ -12,11 +12,11 @@ function Library(props) {
   return (
     <div className='container main-container py-xl-3 px-0 px-xl-2'>
       <div className='row mx-0'>
-        <div className='col-md-12 col-lg-2 col-xl-2 left-col px-1 px-xl-2'>
+        <div className='col-md-12 col-lg-1 col-xl-1 left-col px-1 px-xl-2'>
           CARD PREVIEW ON HOVER
         </div>
 
-        <div className='col-md-12 col-lg-7 col-xl-7 center-col px-1 px-xl-2'>
+        <div className='col-md-12 col-lg-8 col-xl-8 center-col px-1 px-xl-2'>
           <ResultLibrary cards={cards}/>
         </div>
 

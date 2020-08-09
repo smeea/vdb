@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { Button, Navbar, Nav } from 'react-bootstrap';
 
-
 function Navigation(props) {
   const NavBar = ({location}) => {
 
@@ -49,9 +48,7 @@ function Navigation(props) {
   };
 
   return (
-    <React.Fragment>
       <NavBar />
-    </React.Fragment>
   );
 }
 

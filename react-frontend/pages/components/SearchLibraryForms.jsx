@@ -138,7 +138,6 @@ function SearchLibraryFormText(props) {
 
 function SearchLibraryFormType(props) {
   const typeicons = {
-    'ANY': null,
     'Action': action,
     'Action Modifier': actionmodifier,
     'Ally': ally,
@@ -154,9 +153,18 @@ function SearchLibraryFormType(props) {
     'Retainer': retainer,
   };
 
-  const typeoptions = [];
+  const typeOptions = [{
+    value: 'ANY',
+    label:
+    <React.Fragment>
+      <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+      </span>
+      ANY
+    </React.Fragment>
+  }];
+
   Object.keys(typeicons).map((key, index) => {
-    typeoptions.push({
+    typeOptions.push({
       value: key,
       name: 'type',
       label:
@@ -177,7 +185,12 @@ function SearchLibraryFormType(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <Select options={typeoptions} name='clan' onChange={props.onChange} />
+        <Select
+          options={typeOptions}
+          name='type'
+          value={typeOptions.find(obj => obj.value === props.value)}
+          onChange={props.onChange}
+        />
       </div>
     </div>
   );
@@ -186,7 +199,6 @@ function SearchLibraryFormType(props) {
 
 function SearchLibraryFormDiscipline(props) {
   const disciplineicons = {
-    'ANY': null,
     'Abombwe': abombwe,
     'Animalism': animalism,
     'Auspex': auspex,
@@ -223,9 +235,18 @@ function SearchLibraryFormDiscipline(props) {
     'Vision': vision,
   };
 
-  const disciplineoptions = [];
+  const disciplineOptions = [{
+    value: 'ANY',
+    label:
+    <React.Fragment>
+      <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+      </span>
+      ANY
+    </React.Fragment>
+  }];
+
   Object.keys(disciplineicons).map((key, index) => {
-    disciplineoptions.push({
+    disciplineOptions.push({
       value: key,
       name: 'discipline',
       label:
@@ -246,7 +267,12 @@ function SearchLibraryFormDiscipline(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <Select options={disciplineoptions} name='clan' onChange={props.onChange} />
+        <Select
+          options={disciplineOptions}
+          name='discipline'
+          value={disciplineOptions.find(obj => obj.value === props.value)}
+          onChange={props.onChange}
+        />
       </div>
     </div>
   );
@@ -335,7 +361,6 @@ function SearchLibraryFormPoolCost(props) {
 
 function SearchLibraryFormClan(props) {
   const clanicons = {
-    'ANY': null,
     'Abomination': abomination,
     'Ahrimane': ahrimane,
     'Akunanse': akunanse,
@@ -384,9 +409,18 @@ function SearchLibraryFormClan(props) {
     'Visionary': visionary,
   };
 
-  const clanoptions = [];
+  const clanOptions = [{
+    value: 'ANY',
+    label:
+    <React.Fragment>
+      <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+      </span>
+      ANY
+    </React.Fragment>
+  }];
+
   Object.keys(clanicons).map((key, index) => {
-    clanoptions.push({
+    clanOptions.push({
       value: key,
       name: 'clan',
       label:
@@ -407,7 +441,12 @@ function SearchLibraryFormClan(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <Select options={clanoptions} name='clan' onChange={props.onChange} />
+        <Select
+          options={clanOptions}
+          name='clan'
+          value={clanOptions.find(obj => obj.value === props.value)}
+          onChange={props.onChange}
+        />
       </div>
     </div>
   );
@@ -642,6 +681,7 @@ function SearchLibraryFormSet(props) {
 function SearchLibraryForm(props) {
   const [state, setState] = useState({
     text: '',
+    type: 'ANY',
     discipline: 'ANY',
     blood: 'ANY',
     bloodmoreless: 'le',

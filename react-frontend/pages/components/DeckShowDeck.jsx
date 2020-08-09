@@ -10,11 +10,12 @@ function DeckShowDeck(props) {
   if (props.deck !== undefined) {
     return (
       <React.Fragment>
-        <b>Deck Name:</b>
+        <b>Deck Name: {props.deck.name}</b>
         <DeckRenameDeck name={props.deck.name} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} />
         <br />
         <b>Description: </b>
         <DeckDescriptionDeck description={props.deck.description} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} />
+        <br />
         <DeckNewCard deckCardAdd={props.deckCardAdd} deckid={props.deck.deckid} />
         <br />
         <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />

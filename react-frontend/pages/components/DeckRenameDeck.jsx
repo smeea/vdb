@@ -1,25 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function DeckRenameDeck(props) {
-  const [state, setState] = useState({
-    name: props.name,
-  });
+  const [state, setState] = useState(props.name);
 
   const handleChange = event => {
-    const {id, value} = event.target;
-    setState(prevState => ({
-      ...prevState,
-      [id]: value
-    }));
+    setState(event.target.value);
   };
 
   const clearFormButton = event => {
-    setState({name: ''});
+    setState(null);
   };
 
   const deckRenameButton = event => {
-    if (state.name) {
-      props.deckUpdate(props.deckid, 'name', state.name);
+    if (state) {
+      props.deckUpdate(props.deckid, 'name', state);
     } else {
       console.log('Error: submit with empty form');
     };
@@ -31,7 +25,7 @@ function DeckRenameDeck(props) {
         placeholder='New Deck Name'
         type='text'
         id='name'
-        value={state.name}
+        value={state}
         onChange={handleChange}/>
       <button className='btn btn-outline-secondary' type='button' onClick={deckRenameButton}>
         UPDATE

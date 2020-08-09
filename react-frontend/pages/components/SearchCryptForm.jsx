@@ -280,7 +280,6 @@ function SearchCryptFormCapacity(props) {
 
 function SearchCryptFormClan(props) {
   const clanicons = {
-    'ANY': null,
     'Abomination': abomination,
     'Ahrimane': ahrimane,
     'Akunanse': akunanse,
@@ -329,9 +328,18 @@ function SearchCryptFormClan(props) {
     'Visionary': visionary,
   };
 
-  const clanoptions = [];
+  const clanOptions = [{
+    value: 'ANY',
+    label:
+    <React.Fragment>
+      <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+      </span>
+      ANY
+    </React.Fragment>
+  }];
+
   Object.keys(clanicons).map((key, index) => {
-    clanoptions.push({
+    clanOptions.push({
       value: key,
       name: 'clan',
       label:
@@ -353,8 +361,9 @@ function SearchCryptFormClan(props) {
       </div>
       <div className='form-group col-9'>
         <Select
-          options={clanoptions}
+          options={clanOptions}
           name='clan'
+          value={clanOptions.find(obj => obj.value === props.value)}
           onChange={props.onChange}
         />
       </div>

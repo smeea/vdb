@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
 
 function DeckDescriptionDeck(props) {
-  const [state, setState] = useState({
-    description: props.description,
-  });
+  const [state, setState] = useState(props.description);
 
   const handleChange = event => {
-    const {id, value} = event.target;
-    setState(prevState => ({
-      ...prevState,
-      [id]: value
-    }));
+    setState(event.target.value);
   };
 
   const clearFormButton = event => {
-    setState({description: ''});
+    setState(null);
   };
 
   const deckRenameButton = event => {
-    if (state.description) {
-      props.deckUpdate(props.deckid, 'description', state.description);
+    if (state) {
+      props.deckUpdate(props.deckid, 'description', state);
     } else {
       console.log('Error: submit with empty form');
     };
@@ -31,7 +25,7 @@ function DeckDescriptionDeck(props) {
         placeholder='New Description'
         type='text'
         id='description'
-        value={state.description}
+        value={state}
         onChange={handleChange}/>
       <button className='btn btn-outline-secondary' type='button' onClick={deckRenameButton}>
         UPDATE

@@ -15,7 +15,6 @@
 ## MAJOR FEATURE
 ## MINOR FEATURE
 ## MAJOR FIX
-* Clear iconified forms
 ## MINOR FIX
 
 # ALL
