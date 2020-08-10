@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
+import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
-import DeckCardQuantity from './DeckCardQuantity.jsx';
+import ResultCryptText from './ResultCryptText.jsx';
 
 function DeckCryptSideBody(props) {
   const SortByCapacity = (a, b) => {
@@ -60,24 +61,7 @@ function DeckCryptSideBody(props) {
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
         </tr>
-        { hiddenState[card.c['Id']] == undefined || hiddenState[card.c['Id']] == true ? (
-          null
-        ) : (
-          <tr className={resultTrClass}>
-            <td colSpan={3}>
-            </td>
-            <td colSpan={2} className='text'>
-              <div onClick={() => toggleHidden()}className='text'>
-                {card.c['Card Text']}
-              </div>
-            </td>
-            <td colSpan={1} className='set'>
-              <React.Fragment>
-                {sets}
-              </React.Fragment>
-            </td>
-          </tr>
-        )}
+        <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card.c} />
       </React.Fragment>
     );
   });
@@ -119,14 +103,6 @@ function DeckCryptBody(props) {
       resultTrClass = 'crypt-result-odd';
     }
 
-    const sets = Object.keys(card.c['Set']).map((k, index) => {
-      return(
-        <div className='sets' key={index}>
-          {k}: {card.c['Set'][k]}
-        </div>
-      );
-    });
-
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
@@ -137,24 +113,7 @@ function DeckCryptBody(props) {
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
         </tr>
-        { hiddenState[card.c['Id']] == undefined || hiddenState[card.c['Id']] == true ? (
-          null
-        ) : (
-          <tr className={resultTrClass}>
-            <td colSpan={3}>
-            </td>
-            <td colSpan={2} className='text'>
-              <div onClick={() => toggleHidden()} className='text'>
-                {card.c['Card Text']}
-              </div>
-            </td>
-            <td colSpan={1} className='set'>
-              <React.Fragment>
-                {sets}
-              </React.Fragment>
-            </td>
-          </tr>
-        )}
+        <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card.c} />
       </React.Fragment>
     );
   });

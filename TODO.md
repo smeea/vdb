@@ -23,7 +23,6 @@
 * Card image side view
 * Card image modal view
 ## MINOR FEATURE
-* Show card set icon
 * Beautify card text toggle
 * Card rulings
 * Trifle icon

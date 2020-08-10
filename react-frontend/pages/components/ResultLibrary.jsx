@@ -6,6 +6,7 @@ import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
+import ResultLibraryText from './ResultLibraryText.jsx';
 
 function SearchLibraryBody(props) {
   let resultTrClass='library-result-even';
@@ -33,14 +34,6 @@ function SearchLibraryBody(props) {
       resultTrClass = 'library-result-even';
     }
 
-    const sets = Object.keys(card['Set']).map((key, index) => {
-      return(
-        <div className='sets' key={index}>
-          {key}: {card['Set'][key]}
-        </div>
-      );
-    });
-
     return (
       <React.Fragment key={index}>
       <tr className={resultTrClass}>
@@ -51,25 +44,7 @@ function SearchLibraryBody(props) {
         <ResultLibraryClan value={card['Clan']} />
         <ResultLibraryBurn value={card['Burn Option']} />
       </tr>
-
-        { hiddenState[card['Id']] == undefined || hiddenState[card['Id']] == true ? (
-          null
-        ) : (
-          <tr className={resultTrClass}>
-            <td colSpan={3}>
-            </td>
-            <td colSpan={2} className='text'>
-              <div onClick={() => toggleHidden()}className='text'>
-                {card['Card Text']}
-              </div>
-            </td>
-            <td colSpan={1} className='set'>
-              <React.Fragment>
-                {sets}
-              </React.Fragment>
-            </td>
-          </tr>
-        )}
+        <ResultLibraryText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card} />
       </React.Fragment>
     );
   });

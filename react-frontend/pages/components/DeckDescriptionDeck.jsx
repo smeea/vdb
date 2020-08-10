@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 function DeckDescriptionDeck(props) {
   const [state, setState] = useState(props.description);
 
+  if (state == undefined) {
+    setState('');
+  }
+
   const handleChange = event => {
     setState(event.target.value);
   };

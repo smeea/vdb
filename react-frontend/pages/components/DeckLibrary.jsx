@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
+import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
-import DeckCardQuantity from './DeckCardQuantity.jsx';
+import ResultLibraryText from './ResultLibraryText.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
 function DeckLibraryBody(props) {
   const [hiddenState, setHiddenState] = useState({});
-
   const toggleHidden = id => {
     if (hiddenState[id] == undefined || hiddenState[id] == true) {
       setHiddenState(prevState => ({
@@ -57,24 +57,7 @@ function DeckLibraryBody(props) {
           {ResultLibraryDisciplineOrClan}
           <ResultLibraryBurn value={card[0]['Burn Option']} />
         </tr>
-        { hiddenState[card[0]['Id']] == undefined || hiddenState[card[0]['Id']] == true ? (
-          null
-        ) : (
-          <tr className={resultTrClass}>
-            <td colSpan={1}>
-            </td>
-            <td colSpan={3} className='text'>
-              <div onClick={() => toggleHidden()} className='text'>
-                {card[0]['Card Text']}
-              </div>
-            </td>
-            <td colSpan={1} className='set'>
-              <React.Fragment>
-                {sets}
-              </React.Fragment>
-            </td>
-          </tr>
-        )}
+        <ResultLibraryText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card[0]} />
       </React.Fragment>
     );
   });
