@@ -19,7 +19,6 @@
 
 # ALL
 ## MAJOR FEATURE
-* Add sort options for results
 * Card image side view
 * Card image modal view
 ## MINOR FEATURE

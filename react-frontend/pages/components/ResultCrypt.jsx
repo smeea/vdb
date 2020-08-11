@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -6,6 +6,8 @@ import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptText from './ResultCryptText.jsx';
+import ResultCryptFormSort from './ResultCryptFormSort.jsx';
+import resultCryptSort from './resultCryptSort.js';
 
 function SearchCryptBody(props) {
   let resultTrClass='crypt-result-even';
@@ -51,10 +53,20 @@ function SearchCryptBody(props) {
 }
 
 function ResultCrypt(props) {
+  const [sortedCards, setSortedCards] = useState([]);
+  const [sortMethod, setSortMethod] = useState('Default');
+
+  const handleChange = event => {
+    const v = event.target.value;
+    setSortMethod(v);
+    setSortedCards(() => resultCryptSort(props.cards, v));
+  };
+
   return (
     <React.Fragment>
+      <ResultCryptFormSort value={sortMethod} onChange={handleChange} />
       <table className='search-crypt-table'>
-        <SearchCryptBody resultCards={props.cards} />
+        <SearchCryptBody resultCards={sortedCards} />
       </table>
     </React.Fragment>
   );

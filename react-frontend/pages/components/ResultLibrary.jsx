@@ -7,6 +7,8 @@ import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryText from './ResultLibraryText.jsx';
+import ResultLibraryFormSort from './ResultLibraryFormSort.jsx';
+import resultLibrarySort from './resultLibrarySort.js';
 
 function SearchLibraryBody(props) {
   let resultTrClass='library-result-even';
@@ -53,10 +55,20 @@ function SearchLibraryBody(props) {
 }
 
 function ResultLibrary(props) {
+  const [sortedCards, setSortedCards] = useState([]);
+  const [sortMethod, setSortMethod] = useState('Default');
+
+  const handleChange = event => {
+    const v = event.target.value;
+    setSortMethod(v);
+    setSortedCards(() => resultLibrarySort(props.cards, v));
+  };
+
   return (
     <React.Fragment>
+      <ResultLibraryFormSort value={sortMethod} onChange={handleChange} />
       <table width='100%' className='search-library-table'>
-        <SearchLibraryBody resultCards={props.cards} />
+        <SearchLibraryBody resultCards={sortedCards} />
       </table>
     </React.Fragment>
   );
