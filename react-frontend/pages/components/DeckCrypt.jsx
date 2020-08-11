@@ -61,7 +61,7 @@ function DeckCryptSideBody(props) {
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
         </tr>
-        <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card.c} />
+        <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card.c} deck={true} />
       </React.Fragment>
     );
   });
@@ -113,7 +113,7 @@ function DeckCryptBody(props) {
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
         </tr>
-        <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card.c} />
+        <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card.c} deck={true} />
       </React.Fragment>
     );
   });

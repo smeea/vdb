@@ -22,11 +22,18 @@ function ResultCryptText(props) {
   if (props.hiddenState[props.card['Id']] == undefined || props.hiddenState[props.card['Id']] == true) {
     return(null);
   } else {
+    let colSpanBefore = 2;
+    let colSpanText = 3;
+    let colSpanAfter = 0;
+    if (props.deck) {
+      colSpanBefore = 3;
+      colSpanText = 3;
+      colSpanAfter = 0;
+    }
     return(
       <tr className={props.resultTrClass}>
-        <td colSpan={2}>
-        </td>
-        <td colSpan={3} className='text'>
+        <td colSpan={colSpanBefore}></td>
+        <td colSpan={colSpanText} className='text'>
           <div onClick={() => props.toggleHidden()} className='text'>
             {props.card['Card Text']}
             <div className='sets'>
@@ -34,6 +41,8 @@ function ResultCryptText(props) {
             </div>
           </div>
         </td>
+        { colSpanAfter > 0 &&
+          <td colSpan={colSpanAfter}></td> }
       </tr>
     );
   }
