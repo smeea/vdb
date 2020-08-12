@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function DeckRenameDeck(props) {
+function DeckNameDeck(props) {
   const [state, setState] = useState(props.name);
 
   const handleChange = event => {
@@ -8,10 +8,10 @@ function DeckRenameDeck(props) {
   };
 
   const clearFormButton = event => {
-    setState(null);
+    setState('');
   };
 
-  const deckRenameButton = event => {
+  const deckNameButton = event => {
     if (state) {
       props.deckUpdate(props.deckid, 'name', state);
     } else {
@@ -19,15 +19,14 @@ function DeckRenameDeck(props) {
     };
   };
 
+  useEffect(() => {
+    setState(props.name);
+  });
+
   return (
     <React.Fragment>
-      <input
-        placeholder='New Deck Name'
-        type='text'
-        id='name'
-        value={state}
-        onChange={handleChange}/>
-      <button className='btn btn-outline-secondary' type='button' onClick={deckRenameButton}>
+      <textarea value={state} onChange={handleChange} />
+      <button className='btn btn-outline-secondary' type='button' onClick={deckNameButton}>
         UPDATE
       </button>
       <button className='btn btn-outline-secondary' type='button' onClick={clearFormButton}>
@@ -37,4 +36,4 @@ function DeckRenameDeck(props) {
   );
 }
 
-export default DeckRenameDeck;
+export default DeckNameDeck;

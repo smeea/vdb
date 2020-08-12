@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function DeckDescriptionDeck(props) {
   const [state, setState] = useState(props.description);
-
-  if (state == undefined) {
-    setState('');
-  }
 
   const handleChange = event => {
     setState(event.target.value);
   };
 
   const clearFormButton = event => {
-    setState(null);
+    setState('');
   };
 
   const deckRenameButton = event => {
@@ -23,14 +19,13 @@ function DeckDescriptionDeck(props) {
     };
   };
 
+  useEffect(() => {
+    setState(props.description);
+  });
+
   return (
     <React.Fragment>
-      <textarea
-        placeholder='New Description'
-        type='text'
-        id='description'
-        value={state}
-        onChange={handleChange}/>
+      <textarea value={state} onChange={handleChange} />
       <button className='btn btn-outline-secondary' type='button' onClick={deckRenameButton}>
         UPDATE
       </button>

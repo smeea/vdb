@@ -14,6 +14,7 @@ function DecksNewDeck(props) {
 
   const createNewDeck = event => {
     if (deckname) {
+      let newdeckid;
       const url = 'http://127.0.0.1:5001/api/decks/create';
       const options = {
         method: 'POST',
@@ -25,7 +26,18 @@ function DecksNewDeck(props) {
         body: JSON.stringify({deckname: deckname}),
       };
 
-      fetch(url, options);
+      fetch(url, options)
+        .then(response => response.json())
+        .then(data => {
+          if (data.error === undefined) {
+            newdeckid = data.deckid;
+            console.log('new deck id:', newdeckid);
+          } else {
+            console.log('error: ', data.error);
+          };
+        })
+        .then(() => props.getDecks())
+        .then(() => props.setActiveDeck(newdeckid));
 
     } else {
       console.log('Error: submit with empty forms');

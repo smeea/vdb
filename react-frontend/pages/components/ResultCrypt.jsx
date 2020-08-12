@@ -57,10 +57,14 @@ function ResultCrypt(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   const handleChange = event => {
-    const v = event.target.value;
-    setSortMethod(v);
-    setSortedCards(() => resultCryptSort(props.cards, v));
+    const method = event.target.value;
+    setSortMethod(method);
+    setSortedCards(() => resultCryptSort(props.cards, method));
   };
+
+  useEffect(() => {
+    setSortedCards(() => resultCryptSort(props.cards, sortMethod));
+  });
 
   return (
     <React.Fragment>

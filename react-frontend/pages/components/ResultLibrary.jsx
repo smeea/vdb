@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
@@ -59,10 +59,14 @@ function ResultLibrary(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   const handleChange = event => {
-    const v = event.target.value;
-    setSortMethod(v);
-    setSortedCards(() => resultLibrarySort(props.cards, v));
+    const method = event.target.value;
+    setSortMethod(method);
+    setSortedCards(() => resultLibrarySort(props.cards, method));
   };
+
+  useEffect(() => {
+    setSortedCards(() => resultLibrarySort(props.cards, sortMethod));
+  });
 
   return (
     <React.Fragment>

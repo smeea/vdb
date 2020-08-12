@@ -13,7 +13,7 @@ function Deck(props) {
     setActiveDeck(value);
   };
 
-  const updateDecks = () => {
+  const getDecks = () => {
     const url = 'http://127.0.0.1:5001/api/decks';
     const options = {
       method: 'GET',
@@ -79,7 +79,7 @@ function Deck(props) {
     };
 
     fetch(url, options)
-      .then(updateDecks());
+      .then(getDecks());
   };
 
   const deckUpdate = (deckid, field, value) => {
@@ -95,11 +95,11 @@ function Deck(props) {
     };
 
     fetch(url, options)
-      .then(updateDecks());
+      .then(getDecks());
   };
 
   useEffect(() => {
-    updateDecks();
+    getDecks();
   }, []);
 
   return (
@@ -109,7 +109,7 @@ function Deck(props) {
         </div>
 
         <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
-          <DeckNewDeck />
+          <DeckNewDeck setActiveDeck={setActiveDeck} getDecks={getDecks} />
           <DeckSelectDeck handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activedeck={activedeck} />
           <DeckRemoveDeck activedeck={activedeck} />
           <br />

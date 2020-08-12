@@ -1,6 +1,6 @@
 # DECK
 ## MAJOR FEATURE
-* Immediate effect of add card / new deck / delete 
+* Immediate effect of add new card
 * Add card from search
 * Add card from deck
 * Direct link to deck
@@ -8,7 +8,6 @@
 * Copy ('fork') deck
 * Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?)
 ## MAJOR FIX
-* Name and description update on deck select
 ## MINOR FIX
 
 # SEARCH
@@ -26,6 +25,7 @@
 * Card rulings
 * Trifle icon
 ## MAJOR FIX
+* Instant search result display (prior search)
 ## MINOR FIX
 * Fix uncontrolled input bug in clear button
 ## OTHER
