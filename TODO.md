@@ -25,7 +25,6 @@
 * Card rulings
 * Trifle icon
 ## MAJOR FIX
-* Instant search result display (prior search)
 ## MINOR FIX
 * Fix uncontrolled input bug in clear button
 ## OTHER

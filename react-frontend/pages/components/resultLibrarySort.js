@@ -1,5 +1,5 @@
 function resultLibrarySort(cards, sortMethod) {
-  const sortByName = (a, b) => {
+  const byName = (a, b) => {
     if (a['Name'] > b['Name']){
       return 1;
     } else {
@@ -7,7 +7,7 @@ function resultLibrarySort(cards, sortMethod) {
     }
   };
 
-  const sortByType = (a, b) => {
+  const byType = (a, b) => {
     if (a['Type'] > b['Type']){
       return 1;
     } else {
@@ -15,7 +15,7 @@ function resultLibrarySort(cards, sortMethod) {
     }
   };
 
-  const sortByClan = (a, b) => {
+  const byClan = (a, b) => {
     if (a['Clan'] > b['Clan']){
       return 1;
     } else {
@@ -23,7 +23,7 @@ function resultLibrarySort(cards, sortMethod) {
     }
   };
 
-  const sortByDiscipline = (a, b) => {
+  const byDiscipline = (a, b) => {
     if (a['Discipline'] > b['Discipline']){
       return 1;
     } else {
@@ -33,15 +33,15 @@ function resultLibrarySort(cards, sortMethod) {
 
 
   if (sortMethod == 'Discipline') {
-    return cards.sort(sortByDiscipline);
+    return cards.sort(byName).sort(byDiscipline);
   } else if (sortMethod == 'Clan') {
-    return cards.sort(sortByClan);
+    return cards.sort(byName).sort(byClan);
   } else if (sortMethod == 'Type') {
-    return cards.sort(sortByType);
+    return cards.sort(byName).sort(byType);
   } else if (sortMethod == 'Name') {
-    return cards.sort(sortByName);
+    return cards.sort(byName);
   } else if (sortMethod == 'Default') {
-    return cards.sort(sortByName).sort(sortByClan).sort(sortByDiscipline).sort(sortByType);
+    return cards.sort(byName).sort(byClan).sort(byDiscipline).sort(byType);
   } else {
     return cards;
   }

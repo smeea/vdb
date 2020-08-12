@@ -1,5 +1,5 @@
 function resultCryptSort(cards, sortMethod) {
-  const sortByName = (a, b) => {
+  const byName = (a, b) => {
     if (a['Name'] > b['Name']){
       return 1;
     } else {
@@ -7,7 +7,7 @@ function resultCryptSort(cards, sortMethod) {
     }
   };
 
-  const sortByCapacity = (a, b) => {
+  const byCapacity = (a, b) => {
     if (a['Capacity'] > b['Capacity']){
       return 1;
     } else {
@@ -15,7 +15,7 @@ function resultCryptSort(cards, sortMethod) {
     }
   };
 
-  const sortByClan = (a, b) => {
+  const byClan = (a, b) => {
     if (a['Clan'] > b['Clan']){
       return 1;
     } else {
@@ -23,7 +23,7 @@ function resultCryptSort(cards, sortMethod) {
     }
   };
 
-  const sortByGroup = (a, b) => {
+  const byGroup = (a, b) => {
     if (a['Group'] > b['Group']){
       return 1;
     } else {
@@ -33,15 +33,15 @@ function resultCryptSort(cards, sortMethod) {
 
 
   if (sortMethod == 'Capacity') {
-    return cards.sort(sortByCapacity);
+    return cards.sort(byName).sort(byCapacity);
   } else if (sortMethod == 'Clan') {
-    return cards.sort(sortByClan);
+    return cards.sort(byName).sort(byClan);
   } else if (sortMethod == 'Group') {
-    return cards.sort(sortByGroup);
+    return cards.sort(byName).sort(byGroup);
   } else if (sortMethod == 'Name') {
-    return cards.sort(sortByName);
+    return cards.sort(byName);
   } else if (sortMethod == 'Default') {
-    return cards.sort(sortByName).sort(sortByClan).sort(sortByGroup).sort(sortByCapacity);
+    return cards.sort(byName).sort(byClan).sort(byGroup).sort(byCapacity);
   } else {
     return cards;
   }
