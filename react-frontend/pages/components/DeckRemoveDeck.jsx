@@ -3,7 +3,7 @@ import React from 'react';
 function DeckRemoveDeck(props) {
   const removeDeck = event => {
 
-    if (props.activedeck) {
+    if (props.activeDeck) {
       const url = 'http://127.0.0.1:5001/api/decks/remove';
       const options = {
         method: 'POST',
@@ -12,10 +12,10 @@ function DeckRemoveDeck(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({deckid: props.activedeck}),
+        body: JSON.stringify({deckid: props.activeDeck}),
       };
       fetch(url, options);
-      console.log('Remove deck: ', props.activedeck);
+      console.log('Remove deck: ', props.activeDeck);
 
     } else {
       console.log('Error: no deck selected');

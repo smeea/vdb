@@ -6,11 +6,32 @@ import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 
 function Deck(props) {
   const [decks, setDecks] = useState({});
-  const [activedeck, setActiveDeck] = useState(undefined);
+  const [activeDeck, setActiveDeck] = useState(undefined);
+  const [sharedDecks, setSharedDecks] = useState(undefined);
 
   const handleActiveDeckSelect = event => {
     const { value } = event.target;
     setActiveDeck(value);
+  };
+
+  const getDeck = () => {
+    const url = 'http://127.0.0.1:5001/api/deck/' + props.id;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then(response => response.json())
+      .then(data => {
+        if (data.error === undefined) {
+          setSharedDecks(data);
+        } else {
+          console.log('error: ', data.error);
+        }
+      })
+      .then(() => setActiveDeck(props.id));
   };
 
   const getDecks = () => {
@@ -26,9 +47,6 @@ function Deck(props) {
       .then(data => {
         if (data.error === undefined) {
           setDecks(data);
-          if (props.id) {
-            setActiveDeck(props.id);
-          }
         } else {
           console.log('error: ', data.error);
         }
@@ -36,7 +54,7 @@ function Deck(props) {
   };
 
   const deckCardChange = (deckid, cardid, count) => {
-    const url = 'http://127.0.0.1:5001/api/decks/' + deckid;
+    const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -52,7 +70,7 @@ function Deck(props) {
   };
 
   const deckCardAdd = (deckid, cardid) => {
-    const url = 'http://127.0.0.1:5001/api/decks/' + deckid;
+    const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -68,7 +86,7 @@ function Deck(props) {
   };
 
   const deckUpdate = (deckid, field, value) => {
-    const url = 'http://127.0.0.1:5001/api/decks/' + deckid;
+    const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -87,6 +105,12 @@ function Deck(props) {
     getDecks();
   }, []);
 
+  useEffect(() => {
+    if (props.id) {
+      getDeck();
+    }
+  }, [props.id]);
+
   return (
     <div className='container main-container py-xl-3 px-0 px-xl-2'>
       <div className='row mx-0'>
@@ -95,10 +119,14 @@ function Deck(props) {
 
         <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
           <DeckNewDeck setActiveDeck={setActiveDeck} getDecks={getDecks} />
-          <DeckSelectDeck handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activedeck={activedeck} />
-          <DeckRemoveDeck activedeck={activedeck} />
+          <DeckSelectDeck handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activeDeck={activeDeck} />
+          <DeckRemoveDeck activeDeck={activeDeck} />
           <br />
-          <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={decks[activedeck]} />
+          { sharedDecks ?
+            <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[activeDeck]} />
+            :
+            <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={decks[activeDeck]} />
+          }
         </div>
 
         <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>

@@ -31,18 +31,31 @@ from models import Deck
 import uuid
 
 
-@app.route('/api/decks/<string:deckid>', methods=['GET'])
+@app.route('/api/deck/<string:deckid>', methods=['GET'])
 def showDeck(deckid):
-    d = Deck.query.filter_by(deckid=deckid).first()
-    deck = {
-        'deckid': d.deckid,
-        'name': d.name,
-        'cards': d.cards,
+    decks = {}
+    deck = Deck.query.filter_by(deckid=deckid).first()
+    crypt = {}
+    library = {}
+    for k, v in deck.cards.items():
+        k = int(k)
+        if k > 200000:
+            crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
+        elif k < 200000:
+            library[k] = {'c': get_library_by_id(k), 'q': v}
+    decks[deckid] = {
+        'name': deck.name,
+        'author': deck.author_public_name,
+        'description': deck.description,
+        'crypt': crypt,
+        'library': library,
+        'deckid': deck.deckid,
+        'timestamp': deck.timestamp,
     }
-    return jsonify(deck)
+    return jsonify(decks)
 
 
-@app.route('/api/decks/<string:deckid>', methods=['PUT'])
+@app.route('/api/deck/<string:deckid>', methods=['PUT'])
 def updateDeck(deckid):
     if current_user.is_authenticated:
         try:
