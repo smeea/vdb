@@ -38,14 +38,14 @@ function SearchLibraryBody(props) {
 
     return (
       <React.Fragment key={index}>
-      <tr className={resultTrClass}>
-        <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
-        <ResultLibraryType cardtype={card['Type']} />
-        <ResultLibraryDisciplines value={card['Discipline']} />
-        <ResultLibraryName id={card['Id']} toggleHidden={toggleHidden} value={card['Name']} ban={card['Banned']} />
-        <ResultLibraryClan value={card['Clan']} />
-        <ResultLibraryBurn value={card['Burn Option']} />
-      </tr>
+        <tr className={resultTrClass}>
+          <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
+          <ResultLibraryType cardtype={card['Type']} />
+          <ResultLibraryDisciplines value={card['Discipline']} />
+          <ResultLibraryName id={card['Id']} toggleHidden={toggleHidden} value={card['Name']} ban={card['Banned']} />
+          <ResultLibraryClan value={card['Clan']} />
+          <ResultLibraryBurn value={card['Burn Option']} />
+        </tr>
         <ResultLibraryText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card} />
       </React.Fragment>
     );
@@ -70,7 +70,8 @@ function ResultLibrary(props) {
 
   return (
     <React.Fragment>
-      <ResultLibraryFormSort value={sortMethod} onChange={handleChange} />
+      { props.deck == undefined &&
+        <ResultLibraryFormSort value={sortMethod} onChange={handleChange} /> }
       <table width='100%' className='search-library-table'>
         <SearchLibraryBody resultCards={sortedCards} />
       </table>

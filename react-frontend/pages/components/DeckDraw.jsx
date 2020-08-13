@@ -62,14 +62,14 @@ function DeckDraw(props) {
         {drawedCrypt != null &&
          <React.Fragment>
            <b>Crypt Draw:</b>
-           <ResultCrypt cards={drawedCrypt} />
+           <ResultCrypt cards={drawedCrypt} deck={true} />
            <br />
          </React.Fragment >
         }
         {drawedLibrary != null &&
          <React.Fragment>
            <b>Library Draw:</b>
-           <ResultLibrary cards={drawedLibrary} />
+           <ResultLibrary cards={drawedLibrary} deck={true} />
            <br />
          </React.Fragment>
         }

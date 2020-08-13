@@ -36,22 +36,6 @@ function Deck(props) {
   };
 
   const deckCardChange = (deckid, cardid, count) => {
-    const d = { ...decks };
-    if (cardid > 200000) {
-      if (count >= 0) {
-        d[deckid].crypt[cardid].q = count;
-      } else {
-        delete d[deckid].crypt[cardid];
-      }
-    } else {
-      if (count >= 0) {
-        d[deckid].library[cardid].q = count;
-      } else {
-        delete d[deckid].library[cardid];
-      }
-    }
-    setDecks(d);
-
     const url = 'http://127.0.0.1:5001/api/decks/' + deckid;
     const options = {
       method: 'PUT',
@@ -63,7 +47,8 @@ function Deck(props) {
       body: JSON.stringify({update: {[cardid]: count}})
     };
 
-    fetch(url, options);
+    fetch(url, options)
+      .then(() => getDecks());
   };
 
   const deckCardAdd = (deckid, cardid) => {
@@ -79,7 +64,7 @@ function Deck(props) {
     };
 
     fetch(url, options)
-      .then(getDecks());
+      .then(() => getDecks());
   };
 
   const deckUpdate = (deckid, field, value) => {
@@ -95,7 +80,7 @@ function Deck(props) {
     };
 
     fetch(url, options)
-      .then(getDecks());
+      .then(() => getDecks());
   };
 
   useEffect(() => {

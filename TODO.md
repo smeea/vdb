@@ -1,6 +1,5 @@
 # DECK
 ## MAJOR FEATURE
-* Immediate effect of add new card
 * Add card from search
 * Add card from deck
 * Direct link to deck
@@ -24,13 +23,13 @@
 * Beautify card text toggle
 * Card rulings
 * Trifle icon
+* Button icons - clear, remove, draw
 ## MAJOR FIX
 ## MINOR FIX
 * Fix uncontrolled input bug in clear button
 ## OTHER
 * New name
 * Favicon
-* Button icons - clear, remove, draw
 * Update README.md
 * Update /About
 * Add robots.txt

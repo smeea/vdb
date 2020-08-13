@@ -21,7 +21,7 @@ function DeckDescriptionDeck(props) {
 
   useEffect(() => {
     setState(props.description);
-  });
+  }, [props.description]);
 
   return (
     <React.Fragment>

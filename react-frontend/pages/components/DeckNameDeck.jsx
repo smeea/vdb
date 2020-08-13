@@ -21,7 +21,7 @@ function DeckNameDeck(props) {
 
   useEffect(() => {
     setState(props.name);
-  });
+  }, [props.name]);
 
   return (
     <React.Fragment>

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function DeckSelectDeck(props) {
+  const [state, setState] = useState(props.decks);
+
   let option_default;
-  if (Object.keys(props.decks).length > 0) {
+  if (Object.keys(state).length > 0) {
     option_default =
       <option value='' disabled hidden>
         Select deck
@@ -14,13 +16,17 @@ function DeckSelectDeck(props) {
       </option>;
   }
 
-  const decksform = Object.keys(props.decks).map((i, index) => {
+  const decksform = Object.keys(state).map((i, index) => {
     return (
       <option key={index} value={i}>
-        {props.decks[i]['name']}
+        {state[i]['name']}
       </option>
     );
   });
+
+  useEffect(() => {
+    setState(props.decks);
+  }, [props.decks]);
 
   return (
     <React.Fragment>
