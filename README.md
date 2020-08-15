@@ -4,7 +4,7 @@ VTES-Decks is card search, deck building and inventory manager for Vampire the E
 
 ## Development stack
 
-VTES-Decks consist of two components communicating via API.
+VTES-Decks consist of two components communicating with API.
 Frontent (javascript) render everything for the browser use the following stack:
 
    ReactJS

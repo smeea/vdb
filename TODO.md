@@ -2,7 +2,6 @@
 ## MAJOR FEATURE
 * Add card from search
 * Add card from deck
-* Direct link to deck
 ## MINOR FEATURE
 * Copy ('fork') deck
 * Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?)

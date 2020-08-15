@@ -135,7 +135,7 @@ def newDeck():
             d = Deck(deckid=deckid,
                      name=request.json['deckname'],
                      author_public_name=current_user.username,
-                     description='default description',
+                     description='',
                      author=current_user,
                      cards={})
             db.session.add(d)

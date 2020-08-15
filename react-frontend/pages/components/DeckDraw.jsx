@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import ResultCrypt from './ResultCrypt.jsx';
+import { Modal, Button } from 'react-bootstrap';
 import ResultLibrary from './ResultLibrary.jsx';
+import DeckDrawCryptModal from './DeckDrawCryptModal.jsx';
+import DeckDrawLibraryModal from './DeckDrawLibraryModal.jsx';
 
 function DeckDraw(props) {
   const drawCards = (cards, quantity) => {
@@ -44,35 +46,43 @@ function DeckDraw(props) {
   const [drawedCrypt, setDrawCrypt] = useState(undefined);
   const [drawedLibrary, setDrawLibrary] = useState(undefined);
 
+  const handleDrawCryptButton = () => {
+    setDrawCrypt(drawCards(props.crypt, 4));
+    setShowDrawCrypt(true);
+  };
+
+  const handleDrawLibraryButton = () => {
+    setDrawLibrary(drawCards(props.library, 7));
+    setShowDrawLibrary(true);
+  };
+
+  const [showDrawLibrary, setShowDrawLibrary] = useState(false);
+  const [showDrawCrypt, setShowDrawCrypt] = useState(false);
+
+  const handleCloseDrawCrypt = () => setShowDrawCrypt(false);
+  const handleCloseDrawLibrary = () => setShowDrawLibrary(false);
+
   return(
     <React.Fragment>
-        <button className='btn btn-outline-secondary' type='button' onClick={() => setDrawCrypt(drawCards(props.crypt, 4))}>
-          DRAW CRYPT
-        </button>
-        <button className='btn btn-outline-secondary' type='button' onClick={() => setDrawLibrary(drawCards(props.library, 7))}>
-          DRAW LIBRARY
-        </button>
-        <button className='btn btn-outline-secondary' type='button' onClick={() => {
-          setDrawCrypt(null);
-          setDrawLibrary(null);
-        }}>
-          DRAW CLEAR
-        </button>
-        <br />
-        {drawedCrypt != null &&
-         <React.Fragment>
-           <b>Crypt Draw:</b>
-           <ResultCrypt cards={drawedCrypt} deck={true} />
-           <br />
-         </React.Fragment >
-        }
-        {drawedLibrary != null &&
-         <React.Fragment>
-           <b>Library Draw:</b>
-           <ResultLibrary cards={drawedLibrary} deck={true} />
-           <br />
-         </React.Fragment>
-        }
+      <button className='btn btn-outline-secondary' type='button' onClick={() => handleDrawCryptButton()}>
+        DRAW CRYPT
+      </button>
+      <button className='btn btn-outline-secondary' type='button' onClick={() => handleDrawLibraryButton()}>
+        DRAW LIBRARY
+      </button>
+      <button className='btn btn-outline-secondary' type='button' onClick={() => {
+        setDrawCrypt(null);
+        setDrawLibrary(null);
+      }}>
+        DRAW CLEAR
+      </button>
+      <br />
+      {drawedCrypt != null &&
+       <DeckDrawCryptModal handleDraw={handleDrawCryptButton} handleClose={handleCloseDrawCrypt} show={showDrawCrypt} cards={drawedCrypt} />
+      }
+      {drawedLibrary != null &&
+       <DeckDrawLibraryModal handleDraw={handleDrawLibraryButton} handleClose={handleCloseDrawLibrary} show={showDrawLibrary} cards={drawedLibrary} />
+      }
     </React.Fragment>
   );
 }
