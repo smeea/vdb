@@ -587,7 +587,7 @@ function SearchLibraryFormTraits(props) {
   const traitsLeftforms = traitsLeft.map( (i, index) => {
     return (
       <div key={index} className='mr-2 custom-control custom-checkbox'>
-        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={(e) => props.onChange(e)} />
+        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
         <label htmlFor={i[0]} className='mr-2 custom-control-label'>
           {i[1]}
         </label>
@@ -598,7 +598,7 @@ function SearchLibraryFormTraits(props) {
   const traitsRightforms = traitsRight.map( (i, index) => {
     return (
       <div key={index} className='mr-2 custom-control custom-checkbox'>
-        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={(e) => props.onChange(e)} />
+        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
         <label htmlFor={i[0]} className='mr-2 custom-control-label'>
           {i[1]}
         </label>

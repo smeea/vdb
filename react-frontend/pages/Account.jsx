@@ -32,7 +32,7 @@ function Account(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Account;

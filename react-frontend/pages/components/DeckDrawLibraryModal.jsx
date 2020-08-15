@@ -9,7 +9,7 @@ function DeckDrawLibraryModal(props) {
         <Modal.Header closeButton>
           <Modal.Title>
             Library Draw
-            <Button variant="secondary" onClick={props.handleDraw}>
+            <Button variant='primary' onClick={props.handleDraw}>
               REDRAW
             </Button>
           </Modal.Title>

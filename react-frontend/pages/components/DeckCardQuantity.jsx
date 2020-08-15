@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 function DeckCardQuantity(props) {
   let q;
@@ -11,13 +12,14 @@ function DeckCardQuantity(props) {
   return (
     <td className='quantity'>
       <div className='d-flex align-items-center justify-content-between'>
-        <button className='btn btn-outline-secondary' type='button' onClick={(e) => props.deckCardChange(props.deckid, props.cardid, q + 1)}>
+
+        <Button variant='outline-primary' onClick={e => props.deckCardChange(props.deckid, props.cardid, q + 1)}>
           +
-        </button>
-        {' '}{q}{' '}
-        <button className='btn btn-outline-secondary' type='button' onClick={(e) => props.deckCardChange(props.deckid, props.cardid, q - 1)}>
+        </Button>
+        {q}
+        <Button variant='outline-primary' onClick={e => props.deckCardChange(props.deckid, props.cardid, q - 1)}>
           -
-        </button>
+        </Button>
       </div>
     </td>
   );
