@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import AccountLogin from './components/AccountLogin.jsx';
 import AccountRegister from './components/AccountRegister.jsx';
 
@@ -9,7 +10,9 @@ function Greetings(props) {
         Account:
       </h6>
       <b>Logged as:</b> {props.username}
-      <input type='button' label='WhoAmI' value='WhoAmI' onClick={props.whoAmI} />
+      <Button variant='outline-primary' onClick={props.whoAmI}>
+        WhoAmI
+      </Button>
     </div>
   );
 }

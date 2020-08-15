@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 
 function DeckDescriptionDeck(props) {
   const [state, setState] = useState(props.description);
@@ -11,7 +12,7 @@ function DeckDescriptionDeck(props) {
     setState('');
   };
 
-  const deckRenameButton = event => {
+  const deckDescriptionButton = event => {
     if (state) {
       props.deckUpdate(props.deckid, 'description', state);
     } else {
@@ -26,12 +27,12 @@ function DeckDescriptionDeck(props) {
   return (
     <React.Fragment>
       <textarea value={state} onChange={handleChange} />
-      <button className='btn btn-outline-secondary' type='button' onClick={deckRenameButton}>
-        UPDATE
-      </button>
-      <button className='btn btn-outline-secondary' type='button' onClick={clearFormButton}>
-        CLEAR
-      </button>
+      <Button variant='outline-primary' onClick={deckDescriptionButton}>
+        Update
+      </Button>
+      <Button variant='outline-primary' onClick={clearFormButton}>
+        Clear
+      </Button>
     </React.Fragment>
   );
 }

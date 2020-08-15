@@ -64,18 +64,13 @@ function DeckDraw(props) {
 
   return(
     <React.Fragment>
-      <button className='btn btn-outline-secondary' type='button' onClick={() => handleDrawCryptButton()}>
-        DRAW CRYPT
-      </button>
-      <button className='btn btn-outline-secondary' type='button' onClick={() => handleDrawLibraryButton()}>
-        DRAW LIBRARY
-      </button>
-      <button className='btn btn-outline-secondary' type='button' onClick={() => {
-        setDrawCrypt(null);
-        setDrawLibrary(null);
-      }}>
-        DRAW CLEAR
-      </button>
+      <Button variant='outline-primary' onClick={handleDrawCryptButton}>
+        Draw Crypt
+      </Button>
+
+      <Button variant='outline-primary' onClick={handleDrawLibraryButton}>
+        Draw Library
+      </Button>
       <br />
       {drawedCrypt != null &&
        <DeckDrawCryptModal handleDraw={handleDrawCryptButton} handleClose={handleCloseDrawCrypt} show={showDrawCrypt} cards={drawedCrypt} />

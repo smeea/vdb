@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 
 function AccountRegister(props){
   const [state, setState] = useState({
@@ -69,7 +70,9 @@ function AccountRegister(props){
           value={state.password}
           onChange={handleChange}
         />
-        <input type='button' label='Register' value='Register' onClick={registerUser} />
+        <Button variant='outline-primary' onClick={registerUser}>
+          Register
+        </Button>
       </form>
     </React.Fragment>
   );

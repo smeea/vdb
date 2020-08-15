@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 
 function DeckNewCard(props) {
   const [state, setState] = useState({
@@ -35,12 +36,12 @@ function DeckNewCard(props) {
         id='cardid'
         value={state.cardid}
         onChange={handleChange}/>
-      <button className='btn btn-outline-secondary' type='button' onClick={createNewCard}>
-        ADD
-      </button>
-      <button className='btn btn-outline-secondary' type='button' onClick={clearFormButton}>
-        CLEAR
-      </button>
+      <Button variant='outline-primary' onClick={createNewCard}>
+        Add
+      </Button>
+      <Button variant='outline-primary' onClick={clearFormButton}>
+        Clear
+      </Button>
     </React.Fragment>
   );
 }

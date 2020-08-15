@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 
 function AccountLogin(props) {
   const [state, setState] = useState({
@@ -71,8 +72,12 @@ function AccountLogin(props) {
           value={state.password}
           onChange={handleChange}
         />
-        <input type='button' label='Login' value='Login' onClick={loginUser} />
-        <input type='button' label='Logout' value='Logout' onClick={logoutUser} />
+        <Button variant='outline-primary' onClick={loginUser}>
+          Login
+        </Button>
+        <Button variant='outline-primary' onClick={logoutUser}>
+          Logout
+        </Button>
       </form>
     </React.Fragment>
   );

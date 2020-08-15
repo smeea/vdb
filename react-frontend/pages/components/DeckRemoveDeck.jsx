@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 function DeckRemoveDeck(props) {
   const removeDeck = event => {
@@ -24,9 +25,9 @@ function DeckRemoveDeck(props) {
 
   return (
     <React.Fragment>
-      <button className='btn btn-outline-secondary' type='button' onClick={removeDeck}>
-        REMOVE
-      </button>
+      <Button variant='outline-primary' onClick={removeDeck}>
+        Remove
+      </Button>
     </React.Fragment>
   );
 }

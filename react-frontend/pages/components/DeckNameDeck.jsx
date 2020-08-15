@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 
 function DeckNameDeck(props) {
   const [state, setState] = useState(props.name);
@@ -26,12 +27,12 @@ function DeckNameDeck(props) {
   return (
     <React.Fragment>
       <textarea value={state} onChange={handleChange} />
-      <button className='btn btn-outline-secondary' type='button' onClick={deckNameButton}>
-        UPDATE
-      </button>
-      <button className='btn btn-outline-secondary' type='button' onClick={clearFormButton}>
-        CLEAR
-      </button>
+      <Button variant='outline-primary' onClick={deckNameButton}>
+        Update
+      </Button>
+      <Button variant='outline-primary' onClick={clearFormButton}>
+        Clear
+      </Button>
     </React.Fragment>
   );
 }
