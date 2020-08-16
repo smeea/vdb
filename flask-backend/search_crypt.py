@@ -42,6 +42,17 @@ def get_crypt_by_cardtext(cardtext):
     return match_cards
 
 
+def get_crypt_by_cardname(cardname):
+    match_cards = []
+    cardname = cardname.lower()
+    for card in crypt:
+        if cardname in card['Name'].lower() or cardname in letters_to_ascii(
+                card['Name'].lower()):
+            match_cards.append(card)
+
+    return match_cards
+
+
 def get_crypt_by_disciplines(disciplines):
     discipline_counter = len(disciplines)
     match_cards = []

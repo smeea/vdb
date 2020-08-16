@@ -10,8 +10,8 @@ function DeckDrawCryptModal(props) {
         <Modal.Header closeButton>
           <Modal.Title>
             Crypt Draw
-            <Button variant="secondary" onClick={props.handleDraw}>
-              REDRAW
+            <Button variant="outline-primary" onClick={props.handleDraw}>
+              Draw
             </Button>
           </Modal.Title>
         </Modal.Header>

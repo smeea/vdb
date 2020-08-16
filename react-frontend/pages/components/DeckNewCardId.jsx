@@ -1,27 +1,22 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 
-function DeckNewCard(props) {
-  const [state, setState] = useState({
-    cardid: '',
-  });
+function DeckNewCardId(props) {
+  const [state, setState] = useState('');
 
   const handleChange = event => {
-    const {id, value} = event.target;
-    setState(prevState => ({
-      ...prevState,
-      [id]: value
-    }));
+    const { value } = event.target;
+    setState(value);
   };
 
   const clearFormButton = event => {
-    setState({cardid: ''});
+    setState('');
   };
 
   const createNewCard = event => {
-    if (state.cardid > 100000 && state.cardid < 202000) {
-      props.deckCardAdd(props.deckid, state.cardid);
-    } else if (state.cardid) {
+    if (state > 100000 && state < 202000) {
+      props.deckCardAdd(props.deckid, state);
+    } else if (state) {
       console.log('Error: wrong card id');
     } else {
       console.log('Error: submit with empty forms');
@@ -33,9 +28,8 @@ function DeckNewCard(props) {
       <input
         placeholder='New Card Id'
         type='text'
-        id='cardid'
-        value={state.cardid}
-        onChange={handleChange}/>
+        value={state}
+        onChange={handleChange} />
       <Button variant='outline-primary' onClick={createNewCard}>
         Add
       </Button>
@@ -46,4 +40,4 @@ function DeckNewCard(props) {
   );
 }
 
-export default DeckNewCard;
+export default DeckNewCardId;

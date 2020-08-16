@@ -42,6 +42,17 @@ def get_library_by_cardtext(cardtext):
     return match_cards
 
 
+def get_library_by_cardname(cardname):
+    match_cards = []
+    cardname = cardname.lower()
+    for card in library:
+        if cardname in card['Name'].lower() or cardname in letters_to_ascii(
+                card['Name'].lower()):
+            match_cards.append(card)
+
+    return match_cards
+
+
 def get_library_by_cardtype(cardtype):
     match_cards = []
     for card in library:

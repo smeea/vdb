@@ -167,7 +167,7 @@ function DeckCrypt(props) {
   return (
     <React.Fragment>
       <div className='deck-crypt'>
-        <b>Crypt [{crypt_total}] - {crypt_groups}:</b>
+        <b>Crypt [{crypt_total}] - {crypt_groups}</b>
         <table className='deck-crypt-table'>
           <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt} disciplines_set={disciplines_set} />
         </table>

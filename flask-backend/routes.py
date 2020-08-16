@@ -1,6 +1,7 @@
 from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user
 from search_crypt import get_crypt_by_cardtext
+from search_crypt import get_crypt_by_cardname
 from search_crypt import get_crypt_by_trait
 from search_crypt import get_crypt_by_disciplines
 from search_crypt import get_crypt_by_title
@@ -13,6 +14,7 @@ from search_crypt import get_crypt_by_set
 from search_crypt import get_crypt_by_id
 from search_crypt import get_overall_crypt
 from search_library import get_library_by_cardtext
+from search_library import get_library_by_cardname
 from search_library import get_library_by_trait
 from search_library import get_library_by_discipline
 from search_library import get_library_by_title
@@ -228,6 +230,14 @@ def searchCryptCards():
     parameters = 0
 
     try:
+        if request.json['name']:
+            parameters += 1
+            cards_by_cardname = get_crypt_by_cardname(request.json['name'])
+            match_by_category.append(cards_by_cardname)
+    except KeyError:
+        pass
+
+    try:
         if request.json['text']:
             parameters += 1
             cards_by_cardtext = get_crypt_by_cardtext(request.json['text'])
@@ -335,6 +345,14 @@ def searchLibraryCards():
     match_by_category = []
     good_library_cards = []
     parameters = 0
+
+    try:
+        if request.json['name']:
+            parameters += 1
+            cards_by_cardname = get_library_by_cardname(request.json['name'])
+            match_by_category.append(cards_by_cardname)
+    except KeyError:
+        pass
 
     try:
         if request.json['text']:

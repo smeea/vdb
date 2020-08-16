@@ -163,7 +163,7 @@ function DeckLibrary(props) {
   return (
     <React.Fragment>
       <div className='deck-library'>
-        <b>Library [{library_total}]:</b>
+        <b>Library [{library_total}]</b>
         {LibraryDeck}
       </div>
       { Object.keys(library_side).length > 0 &&

@@ -17,7 +17,6 @@
 # ALL
 ## MAJOR FEATURE
 * Card image side view
-* Card image modal view
 ## MINOR FEATURE
 * Beautify card text toggle
 * Card rulings
@@ -26,9 +25,5 @@
 ## MAJOR FIX
 ## MINOR FIX
 * Fix uncontrolled input bug in clear button
-## OTHER
-* New name
 * Favicon
-* Update README.md
-* Update /About
-* Add robots.txt
+## OTHER

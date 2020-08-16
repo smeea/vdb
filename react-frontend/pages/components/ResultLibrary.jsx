@@ -70,8 +70,10 @@ function ResultLibrary(props) {
 
   return (
     <React.Fragment>
-      { props.deck == undefined &&
-        <ResultLibraryFormSort value={sortMethod} onChange={handleChange} /> }
+      {
+        props.deck == undefined && sortedCards.length > 0 &&
+          <ResultLibraryFormSort value={sortMethod} onChange={handleChange} />
+      }
       <table width='100%' className='search-library-table'>
         <SearchLibraryBody resultCards={sortedCards} />
       </table>
