@@ -12,6 +12,9 @@ function DeckDrawLibraryModal(props) {
             <Button variant='outline-primary' onClick={props.handleDraw}>
               Draw
             </Button>
+            <Button variant="outline-primary" onClick={props.handleDrawOne}>
+              +1
+            </Button>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

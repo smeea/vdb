@@ -106,7 +106,7 @@ function ResultCryptDisciplines(props) {
   let discipline_rows;
   let empty_rows = [];
   let counter = 0;
-  let max_rows = 8;
+  let max_rows = 10;
   let width = 100 / max_rows + '%';
 
   if (props.disciplines_set !== undefined && props.disciplines_set.length <= max_rows) {

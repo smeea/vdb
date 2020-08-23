@@ -9,10 +9,10 @@ function AccountRegister(props){
   });
 
   const handleChange = event => {
-    const {id, value} = event.target;
+    const {name, value} = event.target;
     setState(prevState => ({
       ...prevState,
-      [id]: value
+      [name]: value
     }));
   };
 
@@ -50,7 +50,6 @@ function AccountRegister(props){
           placeholder='Username'
           type='text'
           name='username'
-          id='username'
           value={state.username}
           onChange={handleChange}
         />
@@ -58,15 +57,13 @@ function AccountRegister(props){
           placeholder='Email'
           type='text'
           name='email'
-          id='email'
           value={state.email}
           onChange={handleChange}
         />
         <input
           placeholder='Password'
-          type='text'
+          type='password'
           name='password'
-          id='password'
           value={state.password}
           onChange={handleChange}
         />

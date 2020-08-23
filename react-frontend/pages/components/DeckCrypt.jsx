@@ -109,7 +109,7 @@ function DeckCryptBody(props) {
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
           <ResultCryptCapacity value={card.c['Capacity']} />
           <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
-          <ResultCryptName id={card.c['Id']} toggleHidden={toggleHidden} value={card.c['Name']} />
+          <ResultCryptName id={card.c['Id']} toggleHidden={toggleHidden} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']}/>
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
         </tr>

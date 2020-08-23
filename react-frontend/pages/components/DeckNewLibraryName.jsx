@@ -54,7 +54,7 @@ function DeckNewLibraryName(props) {
         cacheOptions
         defaultOptions
         value={selectedValue}
-        getOptionLabel={e => e.Name}
+        getOptionLabel={e => e.Name + (e.Adv ? ' [ADV]' : '') + (e.Banned ? ' [BANNED]' : '')}
         loadOptions={loadOptions}
         onInputChange={handleInputChange}
         onChange={handleChange}

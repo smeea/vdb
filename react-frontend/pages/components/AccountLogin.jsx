@@ -7,6 +7,15 @@ function AccountLogin(props) {
     password: '',
   });
 
+  const handleChange = event => {
+    const {name, value} = event.target;
+    setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+
   const logoutUser = () => {
     console.log('submit logout button');
 
@@ -18,14 +27,6 @@ function AccountLogin(props) {
     };
     fetch(url, options);
     props.updateUsername(undefined);
-  };
-
-  const handleChange = event => {
-    const {name, value} = event.target;
-    setState(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
   };
 
   const loginUser = () => {
@@ -67,7 +68,7 @@ function AccountLogin(props) {
         />
         <input
           placeholder='Password'
-          type='text'
+          type='password'
           name='password'
           value={state.password}
           onChange={handleChange}

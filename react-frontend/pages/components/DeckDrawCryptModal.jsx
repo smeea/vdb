@@ -3,7 +3,6 @@ import { Modal, Button } from 'react-bootstrap';
 import ResultCrypt from './ResultCrypt.jsx';
 
 function DeckDrawCryptModal(props) {
-
   return (
     <React.Fragment>
       <Modal show={props.show} onHide={props.handleClose} animation={false}>
@@ -12,6 +11,9 @@ function DeckDrawCryptModal(props) {
             Crypt Draw
             <Button variant="outline-primary" onClick={props.handleDraw}>
               Draw
+            </Button>
+            <Button variant="outline-primary" onClick={props.handleDrawOne}>
+              +1
             </Button>
           </Modal.Title>
         </Modal.Header>

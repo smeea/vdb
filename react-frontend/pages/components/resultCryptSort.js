@@ -32,19 +32,23 @@ function resultCryptSort(cards, sortMethod) {
   };
 
 
-  if (sortMethod == 'Capacity') {
-    return cards.sort(byName).sort(byCapacity);
-  } else if (sortMethod == 'Clan') {
-    return cards.sort(byName).sort(byClan);
-  } else if (sortMethod == 'Group') {
-    return cards.sort(byName).sort(byGroup);
-  } else if (sortMethod == 'Name') {
-    return cards.sort(byName);
-  } else if (sortMethod == 'Default') {
-    return cards.sort(byName).sort(byClan).sort(byGroup).sort(byCapacity);
+  if (cards) {
+    if (sortMethod == 'Capacity') {
+      return cards.sort(byName).sort(byCapacity);
+    } else if (sortMethod == 'Clan') {
+      return cards.sort(byName).sort(byClan);
+    } else if (sortMethod == 'Group') {
+      return cards.sort(byName).sort(byGroup);
+    } else if (sortMethod == 'Name') {
+      return cards.sort(byName);
+    } else if (sortMethod == 'Default') {
+      return cards.sort(byName).sort(byClan).sort(byGroup).sort(byCapacity);
+    } else {
+      return cards;
+    }
   } else {
-    return cards;
+    return null;
   }
-}
+};
 
 export default resultCryptSort;

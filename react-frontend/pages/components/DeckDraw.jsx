@@ -28,12 +28,12 @@ function DeckDraw(props) {
       });
 
       while (quantity > 0) {
-        let random_num = getRandomInt(cards_array.length);
-        while (cards_array[random_num] === undefined ) {
-          random_num = getRandomInt(cards_array.length);
+        let random_card = getRandomInt(cards_array.length);
+        while (cards_array[random_card] === undefined ) {
+          random_card = getRandomInt(cards_array.length);
         }
-        draw_array.push(cards_array[random_num]);
-        delete cards_array[random_num];
+        draw_array.push(cards_array[random_card]);
+        delete cards_array[random_card];
         quantity -= 1;
       }
 
@@ -43,40 +43,63 @@ function DeckDraw(props) {
     }
   };
 
-  const [drawedCrypt, setDrawCrypt] = useState(undefined);
-  const [drawedLibrary, setDrawLibrary] = useState(undefined);
+  const [drawedCrypt, setDrawedCrypt] = useState(undefined);
+  const [drawedLibrary, setDrawedLibrary] = useState(undefined);
 
-  const handleDrawCryptButton = () => {
-    setDrawCrypt(drawCards(props.crypt, 4));
-    setShowDrawCrypt(true);
+  const handleDrawCrypt = () => {
+    const cards = drawCards(props.crypt, 4);
+    setDrawedCrypt(cards);
   };
 
-  const handleDrawLibraryButton = () => {
-    setDrawLibrary(drawCards(props.library, 7));
-    setShowDrawLibrary(true);
+  const handleDrawLibrary = () => {
+    const cards = drawCards(props.library, 7);
+    setDrawedLibrary(cards);
   };
 
-  const [showDrawLibrary, setShowDrawLibrary] = useState(false);
-  const [showDrawCrypt, setShowDrawCrypt] = useState(false);
+  const handleDrawCryptOne = () => {
+    const cards = [... drawedCrypt];
+    cards.push(... drawCards(props.crypt, 1));
+    setDrawedCrypt(cards);
+  };
 
-  const handleCloseDrawCrypt = () => setShowDrawCrypt(false);
-  const handleCloseDrawLibrary = () => setShowDrawLibrary(false);
+  const handleDrawLibraryOne = () => {
+    const cards = [... drawedLibrary];
+    cards.push(... drawCards(props.library, 1));
+    setDrawedLibrary(cards);
+  };
+
+  const handleOpenDrawCrypt = () => {
+    const cards = drawCards(props.crypt, 4);
+    setDrawedCrypt(cards);
+    setShowDrawCryptModal(true);
+  };
+
+  const handleOpenDrawLibrary = () => {
+    const cards = drawCards(props.library, 7);
+    setDrawedLibrary(cards);
+    setShowDrawLibraryModal(true);
+  };
+
+  const [showDrawCryptModal, setShowDrawCryptModal] = useState(false);
+  const [showDrawLibraryModal, setShowDrawLibraryModal] = useState(false);
+
+  const handleCloseDrawCryptModal = () => setShowDrawCryptModal(false);
+  const handleCloseDrawLibraryModal = () => setShowDrawLibraryModal(false);
 
   return(
     <React.Fragment>
-      <Button variant='outline-primary' onClick={handleDrawCryptButton}>
+      <Button variant='outline-primary' onClick={handleOpenDrawCrypt}>
         Draw Crypt
       </Button>
-
-      <Button variant='outline-primary' onClick={handleDrawLibraryButton}>
+      <Button variant='outline-primary' onClick={handleOpenDrawLibrary}>
         Draw Library
       </Button>
       <br />
-      {drawedCrypt != null &&
-       <DeckDrawCryptModal handleDraw={handleDrawCryptButton} handleClose={handleCloseDrawCrypt} show={showDrawCrypt} cards={drawedCrypt} />
+      {showDrawCryptModal != null &&
+       <DeckDrawCryptModal handleDraw={handleDrawCrypt} handleDrawOne={handleDrawCryptOne} handleClose={handleCloseDrawCryptModal} cards={drawedCrypt} show={showDrawCryptModal} />
       }
       {drawedLibrary != null &&
-       <DeckDrawLibraryModal handleDraw={handleDrawLibraryButton} handleClose={handleCloseDrawLibrary} show={showDrawLibrary} cards={drawedLibrary} />
+       <DeckDrawLibraryModal handleDraw={handleDrawLibrary} handleDrawOne={handleDrawLibraryOne} handleClose={handleCloseDrawLibraryModal} cards={drawedLibrary} show={showDrawLibraryModal} />
       }
     </React.Fragment>
   );
