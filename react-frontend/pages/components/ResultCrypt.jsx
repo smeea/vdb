@@ -6,7 +6,7 @@ import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptText from './ResultCryptText.jsx';
-import ResultCryptFormSort from './ResultCryptFormSort.jsx';
+import ResultCryptSortForm from './ResultCryptSortForm.jsx';
 import resultCryptSort from './resultCryptSort.js';
 
 function SearchCryptBody(props) {
@@ -74,7 +74,7 @@ function ResultCrypt(props) {
     <React.Fragment>
       {
         props.deck == undefined && sortedCards.length > 0 &&
-          <ResultCryptFormSort value={sortMethod} onChange={handleChange} />
+          <ResultCryptSortForm value={sortMethod} onChange={handleChange} />
       }
       <table className='search-crypt-table'>
         <SearchCryptBody resultCards={sortedCards} />

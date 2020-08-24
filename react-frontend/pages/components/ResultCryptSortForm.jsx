@@ -1,12 +1,12 @@
 import React from 'react';
 
-function ResultLibraryFormSort(props) {
+function ResultCryptSortForm(props) {
   const sortMethods = [
     'Default',
+    'Capacity',
     'Clan',
-    'Discipline',
+    'Group',
     'Name',
-    'Type',
   ];
 
   const sortFormOptions = sortMethods.map((i, index) => {
@@ -24,4 +24,4 @@ function ResultLibraryFormSort(props) {
   );
 }
 
-export default ResultLibraryFormSort;
+export default ResultCryptSortForm;

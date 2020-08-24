@@ -7,7 +7,7 @@ import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryText from './ResultLibraryText.jsx';
-import ResultLibraryFormSort from './ResultLibraryFormSort.jsx';
+import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
 
 function SearchLibraryBody(props) {
@@ -72,7 +72,7 @@ function ResultLibrary(props) {
     <React.Fragment>
       {
         props.deck == undefined && sortedCards.length > 0 &&
-          <ResultLibraryFormSort value={sortMethod} onChange={handleChange} />
+          <ResultLibrarySortForm value={sortMethod} onChange={handleChange} />
       }
       <table className='search-library-table'>
         <SearchLibraryBody resultCards={sortedCards} />
