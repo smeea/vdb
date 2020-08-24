@@ -26,7 +26,7 @@ function Account(props) {
         <div className='col-xs-12 col-xl-7 center-col px-0 px-xl-2'>
           <Greetings whoAmI={props.whoAmI} username={props.username} />
           <AccountLogin updateUsername={props.updateUsername} />
-          <AccountRegister />
+          <AccountRegister updateUsername={props.updateUsername} />
         </div>
         <div className='col-xs-12 col-xl-4 right-col px-0 px-xl-2'>
         </div>

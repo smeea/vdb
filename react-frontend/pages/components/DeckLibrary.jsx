@@ -57,7 +57,7 @@ function DeckLibraryBody(props) {
           {ResultLibraryDisciplineOrClan}
           <ResultLibraryBurn value={card[0]['Burn Option']} />
         </tr>
-        <ResultLibraryText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card[0]} deck={true} />
+        <ResultLibraryText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card[0]} mode='deckbuild' />
       </React.Fragment>
     );
   });

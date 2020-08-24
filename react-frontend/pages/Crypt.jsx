@@ -16,7 +16,7 @@ function Crypt(props) {
           PREVIEW
         </div>
         <div className='col-md-12 col-lg-8 col-xl-8 center-col px-1 px-xl-2'>
-          <ResultCrypt cards={cards}/>
+          <ResultCrypt addMode={props.addMode} cardAdd={props.cardAdd} cards={cards}/>
         </div>
 
         <div className='col-md-12 col-lg-3 col-xl-3 right-col px-1 px-xl-2'>

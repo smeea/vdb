@@ -25,7 +25,7 @@ function ResultLibraryText(props) {
     let colSpanBefore = 3;
     let colSpanText = 3;
     let colSpanAfter = 0;
-    if (props.deck) {
+    if (props.mode == 'deckbuild') {
       colSpanBefore = 1;
       colSpanText = 2;
       colSpanAfter = 2;

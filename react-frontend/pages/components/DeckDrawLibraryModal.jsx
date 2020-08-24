@@ -18,7 +18,7 @@ function DeckDrawLibraryModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ResultLibrary cards={props.cards} deck={true} />
+          <ResultLibrary cards={props.cards} deckmode={true} />
           <br />
         </Modal.Body>
       </Modal>

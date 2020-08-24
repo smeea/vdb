@@ -50,7 +50,7 @@ function AccountLogin(props) {
     const fetchPromise = fetch(url, options);
 
     fetchPromise
-      .then(result => result.json());
+      .then(response => response.json());
 
     props.updateUsername(state.username);
   };

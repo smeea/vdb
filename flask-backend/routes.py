@@ -45,6 +45,7 @@ def showDeck(deckid):
             crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
         elif k < 200000:
             library[k] = {'c': get_library_by_id(k), 'q': v}
+
     decks[deckid] = {
         'name': deck.name,
         'author': deck.author_public_name,
@@ -62,7 +63,6 @@ def updateDeck(deckid):
     if current_user.is_authenticated:
         try:
             if request.json['update']:
-                print('update')
                 d = Deck.query.filter_by(author=current_user,
                                          deckid=deckid).first()
                 new_cards = request.json['update']
@@ -72,6 +72,7 @@ def updateDeck(deckid):
                         del merged_cards[k]
                     else:
                         merged_cards[k] = v
+
                 d.cards = merged_cards.copy()
                 db.session.commit()
                 return jsonify({'updated deck': d.deckid, 'cards': d.cards})
@@ -84,6 +85,21 @@ def updateDeck(deckid):
                 d.name = request.json['name']
                 db.session.commit()
                 return jsonify({'updated deck': d.deckid, 'name': d.name})
+        except:
+            pass
+        try:
+            if request.json['add']:
+                d = Deck.query.filter_by(author=current_user,
+                                         deckid=deckid).first()
+                new_cards = request.json['add']
+                merged_cards = d.cards.copy()
+                for k, v in new_cards.items():
+                    if not k in merged_cards:
+                        merged_cards[k] = v
+
+                d.cards = merged_cards.copy()
+                db.session.commit()
+                return jsonify({'updated deck': d.deckid, 'cards': d.cards})
         except:
             pass
         try:
@@ -115,6 +131,7 @@ def listDecks():
                     crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
                 elif k < 200000:
                     library[k] = {'c': get_library_by_id(k), 'q': v}
+
             decks[deck.deckid] = {
                 'name': deck.name,
                 'author': deck.author_public_name,

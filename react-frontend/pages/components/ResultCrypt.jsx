@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -8,6 +9,15 @@ import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptText from './ResultCryptText.jsx';
 import ResultCryptSortForm from './ResultCryptSortForm.jsx';
 import resultCryptSort from './resultCryptSort.js';
+
+function ResultAddCard(props) {
+  const handleButton = () => props.cardAdd(props.cardid);
+  return(
+    <Button variant='outline-primary' onClick={handleButton}>
+      +
+    </Button>
+  );
+}
 
 function SearchCryptBody(props) {
   let resultTrClass='crypt-result-even';
@@ -36,6 +46,7 @@ function SearchCryptBody(props) {
         resultTrClass = 'crypt-result-even';
       }
 
+      console.log('props.mode', props.mode);
       return (
         <React.Fragment key={index}>
           <tr className={resultTrClass}>
@@ -44,6 +55,9 @@ function SearchCryptBody(props) {
             <ResultCryptName id={card['Id']} toggleHidden={toggleHidden} value={card['Name']} adv={card['Adv']} ban={card['Banned']} />
             <ResultCryptClan value={card['Clan']} />
             <ResultCryptGroup value={card['Group']} />
+            { props.addMode &&
+              <ResultAddCard cardAdd={props.cardAdd} cardid={card['Id']}/>
+            }
           </tr>
           <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card} />
         </React.Fragment>
@@ -73,11 +87,11 @@ function ResultCrypt(props) {
   return (
     <React.Fragment>
       {
-        props.deck == undefined && sortedCards.length > 0 &&
+        props.mode == undefined && sortedCards.length > 0 &&
           <ResultCryptSortForm value={sortMethod} onChange={handleChange} />
       }
       <table className='search-crypt-table'>
-        <SearchCryptBody resultCards={sortedCards} />
+        <SearchCryptBody addMode={props.addMode} cardAdd={props.cardAdd} resultCards={sortedCards} />
       </table>
     </React.Fragment>
   );

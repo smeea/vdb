@@ -5,17 +5,10 @@ import DeckShowDeck from './components/DeckShowDeck.jsx';
 import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 
 function Deck(props) {
-  const [decks, setDecks] = useState({});
-  const [activeDeck, setActiveDeck] = useState(undefined);
   const [sharedDecks, setSharedDecks] = useState(undefined);
 
-  const handleActiveDeckSelect = event => {
-    const { value } = event.target;
-    setActiveDeck(value);
-  };
-
   const getDeck = () => {
-    const url = 'http://127.0.0.1:5001/api/deck/' + props.id;
+    const url = 'http:127.0.0.1:5001/api/deck/' + props.id;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -31,26 +24,7 @@ function Deck(props) {
           console.log('error: ', data.error);
         }
       })
-      .then(() => setActiveDeck(props.id));
-  };
-
-  const getDecks = () => {
-    const url = 'http://127.0.0.1:5001/api/decks';
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then(response => response.json())
-      .then(data => {
-        if (data.error === undefined) {
-          setDecks(data);
-        } else {
-          console.log('error: ', data.error);
-        }
-      });
+      .then(() => props.setActiveDeck(props.id));
   };
 
   const deckCardChange = (deckid, cardid, count) => {
@@ -66,7 +40,7 @@ function Deck(props) {
     };
 
     fetch(url, options)
-      .then(() => getDecks());
+      .then(() => props.getDecks());
   };
 
   const deckCardAdd = (deckid, cardid) => {
@@ -82,7 +56,7 @@ function Deck(props) {
     };
 
     fetch(url, options)
-      .then(() => getDecks());
+      .then(() => props.getDecks());
   };
 
   const deckUpdate = (deckid, field, value) => {
@@ -98,11 +72,11 @@ function Deck(props) {
     };
 
     fetch(url, options)
-      .then(() => getDecks());
+      .then(() => props.getDecks());
   };
 
   useEffect(() => {
-    getDecks();
+    props.getDecks();
   }, []);
 
   useEffect(() => {
@@ -111,6 +85,7 @@ function Deck(props) {
     }
   }, [props.id]);
 
+
   return (
     <div className='container main-container py-xl-3 px-0 px-xl-2'>
       <div className='row mx-0'>
@@ -118,14 +93,13 @@ function Deck(props) {
         </div>
 
         <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
-          <DeckNewDeck setActiveDeck={setActiveDeck} getDecks={getDecks} />
-          <DeckSelectDeck handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activeDeck={activeDeck} />
-          <DeckRemoveDeck activeDeck={activeDeck} />
+          <DeckNewDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
+          <DeckRemoveDeck activeDeck={props.activeDeck} />
           <br />
           { sharedDecks ?
-            <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[activeDeck]} />
+            <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[props.activeDeck]} />
             :
-            <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={decks[activeDeck]} />
+            <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} />
           }
         </div>
 

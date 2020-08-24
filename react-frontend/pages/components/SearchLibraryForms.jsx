@@ -807,9 +807,9 @@ function SearchLibraryForm(props) {
       };
 
       fetch(url, options)
-        .then(result => result.json())
-        .then(result => {
-          props.setResults(result);
+        .then(response => response.json())
+        .then(data => {
+          props.setResults(data);
         });
     };
   };

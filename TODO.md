@@ -1,8 +1,8 @@
 # DECK
 ## MAJOR FEATURE
-* Add card from search
-* Add card from deck
+* Add card from search - library
 ## MINOR FEATURE
+* Card add indicator to search 
 * Copy ('fork') deck
 * Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?)
 ## MAJOR FIX
@@ -23,7 +23,8 @@
 * Trifle icon
 * Button icons - clear, remove, draw
 ## MAJOR FIX
+* Fix redraw on activeDeck / addMode change
 ## MINOR FIX
 * Fix uncontrolled input bug in clear button
-* Favicon
 ## OTHER
+* Favicon

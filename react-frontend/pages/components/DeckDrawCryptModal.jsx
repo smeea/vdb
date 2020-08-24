@@ -18,7 +18,7 @@ function DeckDrawCryptModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ResultCrypt cards={props.cards} deck={true} />
+          <ResultCrypt cards={props.cards} mode='draw' />
           <br />
         </Modal.Body>
       </Modal>

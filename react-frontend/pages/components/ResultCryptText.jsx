@@ -25,7 +25,7 @@ function ResultCryptText(props) {
     let colSpanBefore = 2;
     let colSpanText = 3;
     let colSpanAfter = 0;
-    if (props.deck) {
+    if (props.mode == 'deckbuild') {
       colSpanBefore = 3;
       colSpanText = 3;
       colSpanAfter = 0;

@@ -42,7 +42,7 @@ function DeckNewCryptName(props) {
 
     if (inputValue.length > 2) {
       return fetch(url, options)
-        .then(result => result.json());
+        .then(response => response.json());
     } else {
       return null;
     }
