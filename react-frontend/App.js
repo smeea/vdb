@@ -62,7 +62,8 @@ function App(props) {
       body: JSON.stringify({add: {[cardid]: 1}})
     };
 
-    fetch(url, options);
+    fetch(url, options)
+      .then(() => getDecks());
   };
 
   const [username, setUsername] = useState(undefined);
@@ -98,8 +99,8 @@ function App(props) {
           <Route path='/about' exact component={() => <About />} />
           <Route path='/deck' exact component={() => <Deck handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activeDeck={activeDeck} setActiveDeck={setActiveDeck} getDecks={getDecks}/>} />
           <Route path='/deck/:id' component={(props) => <Deck id={props.match.params.id} />} />
-          <Route path='/crypt' exact component={() => <Crypt addMode={addMode} cardAdd={cardAdd} />} />
-          <Route path='/library' exact component={() => <Library />} />
+          <Route path='/crypt' exact component={() => <Crypt addMode={addMode} cardAdd={cardAdd} getDecks={getDecks} deck={decks[activeDeck]} />} />
+          <Route path='/library' exact component={() => <Library addMode={addMode} cardAdd={cardAdd} getDecks={getDecks} deck={decks[activeDeck]} />} />
         </Switch>
       </Router>
     </div>

@@ -96,11 +96,12 @@ function Deck(props) {
           <DeckNewDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
           <DeckRemoveDeck activeDeck={props.activeDeck} />
           <br />
-          { sharedDecks ?
-            <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[props.activeDeck]} />
-            :
-            <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} />
-          }
+          {/* { sharedDecks ? */}
+          {/*   <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[props.activeDeck]} /> */}
+          {/*   : */}
+          {/*   <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} /> */}
+          {/* } */}
+          <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} />
         </div>
 
         <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>

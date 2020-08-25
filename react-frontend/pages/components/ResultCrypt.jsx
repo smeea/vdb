@@ -9,15 +9,7 @@ import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptText from './ResultCryptText.jsx';
 import ResultCryptSortForm from './ResultCryptSortForm.jsx';
 import resultCryptSort from './resultCryptSort.js';
-
-function ResultAddCard(props) {
-  const handleButton = () => props.cardAdd(props.cardid);
-  return(
-    <Button variant='outline-primary' onClick={handleButton}>
-      +
-    </Button>
-  );
-}
+import ResultAddCard from './ResultAddCard.jsx';
 
 function SearchCryptBody(props) {
   let resultTrClass='crypt-result-even';
@@ -46,7 +38,6 @@ function SearchCryptBody(props) {
         resultTrClass = 'crypt-result-even';
       }
 
-      console.log('props.mode', props.mode);
       return (
         <React.Fragment key={index}>
           <tr className={resultTrClass}>

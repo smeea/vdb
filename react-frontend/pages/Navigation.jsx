@@ -11,13 +11,12 @@ function AddModeSwitch(props) {
       checked={props.addMode}
       type="switch"
       id="addmode-switch"
-      label="Add Mode"
+      label="Deck Mode"
     />
   )
 };
 
 function Navigation(props) {
-  console.log('addMode: ', props.addMode);
   const NavBar = ({location}) => {
     function AccountEntry(props) {
       if (props.username) {

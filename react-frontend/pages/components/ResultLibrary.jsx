@@ -9,6 +9,7 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryText from './ResultLibraryText.jsx';
 import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
+import ResultAddCard from './ResultAddCard.jsx';
 
 function SearchLibraryBody(props) {
   let resultTrClass='library-result-even';
@@ -45,6 +46,9 @@ function SearchLibraryBody(props) {
           <ResultLibraryName id={card['Id']} toggleHidden={toggleHidden} value={card['Name']} ban={card['Banned']} />
           <ResultLibraryClan value={card['Clan']} />
           <ResultLibraryBurn value={card['Burn Option']} />
+          { props.addMode &&
+            <ResultAddCard cardAdd={props.cardAdd} cardid={card['Id']}/>
+          }
         </tr>
         <ResultLibraryText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card} />
       </React.Fragment>
@@ -75,7 +79,7 @@ function ResultLibrary(props) {
           <ResultLibrarySortForm value={sortMethod} onChange={handleChange} />
       }
       <table className='search-library-table'>
-        <SearchLibraryBody resultCards={sortedCards} />
+        <SearchLibraryBody cardAdd={props.cardAdd} addMode={props.addMode} resultCards={sortedCards} />
       </table>
     </React.Fragment>
   );
