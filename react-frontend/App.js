@@ -81,18 +81,10 @@ function App(props) {
       .then(data => setUsername(data.username));
   };
 
-  useEffect(() => {
-    whoAmI();
-  }, []);
-
-  useEffect(() => {
-    getDecks();
-  }, [username]);
-
   return (
     <div className='App'>
       <Router>
-        <Navigation username={username} addMode={addMode} handleAddModeSwitch={handleAddModeSwitch} handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activeDeck={activeDeck} />
+        <Navigation username={username} whoAmI={whoAmI} getDecks={getDecks} addMode={addMode} handleAddModeSwitch={handleAddModeSwitch} handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activeDeck={activeDeck} />
         <Switch>
           <Route path='/' exact component={() => <About />} />
           <Route path='/account' exact component={() => <Account username={username} updateUsername={setUsername} whoAmI={whoAmI} />} />

@@ -76,10 +76,6 @@ function Deck(props) {
   };
 
   useEffect(() => {
-    props.getDecks();
-  }, []);
-
-  useEffect(() => {
     if (props.id) {
       getDeck();
     }

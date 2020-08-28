@@ -30,7 +30,9 @@ function About() {
         <h5>
           WHAT IS IT
         </h5>
-        <p>Card search and deck building utility for Vampire the Eternal Struggle (VTES).<br />
+        <p>
+          Card search and deck building utility for Vampire the Eternal Struggle (VTES).
+          <br />
 
         </p>
 
