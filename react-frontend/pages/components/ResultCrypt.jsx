@@ -6,29 +6,12 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
-import ResultCryptText from './ResultCryptText.jsx';
 import ResultCryptSortForm from './ResultCryptSortForm.jsx';
 import resultCryptSort from './resultCryptSort.js';
 import ResultAddCard from './ResultAddCard.jsx';
 
 function SearchCryptBody(props) {
   let resultTrClass='crypt-result-even';
-
-  const [hiddenState, setHiddenState] = useState({});
-
-  const toggleHidden = id => {
-    if (hiddenState[id] == undefined || hiddenState[id] == true) {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: false
-      }));
-    } else {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: true
-      }));
-    }
-  };
 
   if (props.resultCards) {
     const cards = props.resultCards.map((card, index) => {
@@ -41,16 +24,15 @@ function SearchCryptBody(props) {
       return (
         <React.Fragment key={index}>
           <tr className={resultTrClass}>
-            <ResultCryptCapacity value={card['Capacity']} />
-            <ResultCryptDisciplines value={card['Disciplines']} />
-            <ResultCryptName id={card['Id']} toggleHidden={toggleHidden} value={card['Name']} adv={card['Adv']} ban={card['Banned']} />
-            <ResultCryptClan value={card['Clan']} />
-            <ResultCryptGroup value={card['Group']} />
             { props.addMode &&
               <ResultAddCard cardAdd={props.cardAdd} cardid={card['Id']}/>
             }
+            <ResultCryptCapacity value={card['Capacity']} />
+            <ResultCryptDisciplines value={card['Disciplines']} />
+            <ResultCryptName id={card['Id']} value={card['Name']} adv={card['Adv']} ban={card['Banned']} addMode={props.addMode} card={card} />
+            <ResultCryptClan value={card['Clan']} />
+            <ResultCryptGroup value={card['Group']} />
           </tr>
-          <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card} />
         </React.Fragment>
       );
     });

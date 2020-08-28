@@ -25,7 +25,7 @@ function DeckCryptSideBody(props) {
     return (
       <tr key={index} className={resultTrClass}>
         <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-        <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']}/>
+        <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c} />
       </tr>
     );
   });
@@ -55,7 +55,7 @@ function DeckCryptBody(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']}/>
+          <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c} />
         </tr>
       </React.Fragment>
     );

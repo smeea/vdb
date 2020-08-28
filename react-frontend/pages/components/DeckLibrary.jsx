@@ -6,24 +6,9 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
-import ResultLibraryText from './ResultLibraryText.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
 function DeckLibraryBody(props) {
-  const [hiddenState, setHiddenState] = useState({});
-  const toggleHidden = id => {
-    if (hiddenState[id] == undefined || hiddenState[id] == true) {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: false
-      }));
-    } else {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: true
-      }));
-    }
-  };
   let resultTrClass='library-result-even';
 
   const cards = props.cards.map((card, index) => {
@@ -52,12 +37,11 @@ function DeckLibraryBody(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           <DeckCardQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultLibraryName id={card[0]['Id']} toggleHidden={toggleHidden} value={card[0]['Name']} ban={card[0]['Banned']} />
+          <ResultLibraryName id={card[0]['Id']} value={card[0]['Name']} ban={card[0]['Banned']} card={card[0]}/>
           <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
           {ResultLibraryDisciplineOrClan}
           <ResultLibraryBurn value={card[0]['Burn Option']} />
         </tr>
-        <ResultLibraryText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card[0]} mode='deckbuild' />
       </React.Fragment>
     );
   });

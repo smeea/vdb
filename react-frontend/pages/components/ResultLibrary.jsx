@@ -6,7 +6,6 @@ import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
-import ResultLibraryText from './ResultLibraryText.jsx';
 import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
 import ResultAddCard from './ResultAddCard.jsx';
@@ -14,21 +13,6 @@ import ResultAddCard from './ResultAddCard.jsx';
 function SearchLibraryBody(props) {
   let resultTrClass='library-result-even';
 
-  const [hiddenState, setHiddenState] = useState({});
-
-  const toggleHidden = id => {
-    if (hiddenState[id] == undefined || hiddenState[id] == true) {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: false
-      }));
-    } else {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: true
-      }));
-    }
-  };
 
   const cards = props.resultCards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {
@@ -40,17 +24,16 @@ function SearchLibraryBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
-          <ResultLibraryType cardtype={card['Type']} />
-          <ResultLibraryDisciplines value={card['Discipline']} />
-          <ResultLibraryName id={card['Id']} toggleHidden={toggleHidden} value={card['Name']} ban={card['Banned']} />
-          <ResultLibraryClan value={card['Clan']} />
-          <ResultLibraryBurn value={card['Burn Option']} />
           { props.addMode &&
             <ResultAddCard cardAdd={props.cardAdd} cardid={card['Id']}/>
           }
+          <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
+          <ResultLibraryType cardtype={card['Type']} />
+          <ResultLibraryDisciplines value={card['Discipline']} />
+          <ResultLibraryName id={card['Id']} value={card['Name']} ban={card['Banned']} cardAdd={props.cardAdd} card={card} />
+          <ResultLibraryClan value={card['Clan']} />
+          <ResultLibraryBurn value={card['Burn Option']} />
         </tr>
-        <ResultLibraryText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card} />
       </React.Fragment>
     );
   });

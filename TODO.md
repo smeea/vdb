@@ -5,6 +5,7 @@
 * Copy ('fork') deck
 * Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?)
 ## MAJOR FIX
+* Draw +1 random
 ## MINOR FIX
 
 # SEARCH

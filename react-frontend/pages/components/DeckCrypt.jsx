@@ -6,7 +6,6 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
-import ResultCryptText from './ResultCryptText.jsx';
 
 function DeckCryptSideBody(props) {
   const SortByCapacity = (a, b) => {
@@ -18,21 +17,6 @@ function DeckCryptSideBody(props) {
   };
   const sorted_cards = Object.values(props.cards).sort(SortByCapacity);
 
-
-  const [hiddenState, setHiddenState] = useState({});
-  const toggleHidden = id => {
-    if (hiddenState[id] == undefined || hiddenState[id] == true) {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: false
-      }));
-    } else {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: true
-      }));
-    }
-  };
 
   let resultTrClass;
 
@@ -57,11 +41,10 @@ function DeckCryptSideBody(props) {
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
           <ResultCryptCapacity value={card.c['Capacity']} />
           <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
-          <ResultCryptName id={card.c['Id']} toggleHidden={toggleHidden} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']}/>
+          <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c} />
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
         </tr>
-        <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card.c} mode='deckbuild' />
       </React.Fragment>
     );
   });
@@ -80,22 +63,6 @@ function DeckCryptBody(props) {
   const sorted_cards = Object.values(props.cards).sort(SortByQuantity);
   let resultTrClass;
 
-  const [hiddenState, setHiddenState] = useState({});
-
-  const toggleHidden = id => {
-    if (hiddenState[id] == undefined || hiddenState[id] == true) {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: false
-      }));
-    } else {
-      setHiddenState(prevState => ({
-        ...prevState,
-        [id]: true
-      }));
-    }
-  };
-
   const cards = sorted_cards.map((card, index) => {
     if (resultTrClass == 'crypt-result-odd') {
       resultTrClass = 'crypt-result-even';
@@ -109,11 +76,10 @@ function DeckCryptBody(props) {
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
           <ResultCryptCapacity value={card.c['Capacity']} />
           <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
-          <ResultCryptName id={card.c['Id']} toggleHidden={toggleHidden} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']}/>
+          <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c}/>
           <ResultCryptClan value={card.c['Clan']} />
           <ResultCryptGroup value={card.c['Group']} />
         </tr>
-        <ResultCryptText resultTrClass={resultTrClass} toggleHidden={toggleHidden} hiddenState={hiddenState} card={card.c} mode='deckbuild' />
       </React.Fragment>
     );
   });

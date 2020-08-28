@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
 
 function ResultCryptName(props) {
-  // const [isShown, setIsShown] = useState(false);
+  const cardPopover = (
+    <Popover>
+      <Popover.Content>
+        {props.card['Card Text']}
+      </Popover.Content>
+    </Popover>
+  );
 
   return (
     <td className='name'>
-      <div onClick={() => props.toggleHidden(props.id)}>
-        <a
-          /* onMouseEnter={() => setIsShown(true)} */
-          /* onMouseLeave={() => setIsShown(false)} */
-          href='#'>
+      <OverlayTrigger
+        placement="right"
+        overlay={cardPopover}
+      >
+        <a href='#'>
           {props.value} {props.adv && ' [ADV]'} {props.ban && ' [BANNED]'}
         </a>
-        {/* {isShown && ( */}
-        {/*   <span className='hover-crypt-img'> */}
-        {/*     {props.value} */}
-        {/*   </span> */}
-        {/* )} */}
-      </div>
+      </OverlayTrigger>
     </td>
   );
 }

@@ -5,7 +5,7 @@ function ResultAddCard(props) {
   const handleButton = () => props.cardAdd(props.cardid);
   return(
     <Button variant='outline-primary' onClick={handleButton}>
-      +
+      {'<'}
     </Button>
   );
 }
