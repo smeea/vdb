@@ -60,7 +60,7 @@ function ResultCrypt(props) {
   return (
     <React.Fragment>
       {
-        props.mode == undefined && sortedCards.length > 0 &&
+        props.sortMode == true && sortedCards.length > 0 &&
           <ResultCryptSortForm value={sortMethod} onChange={handleChange} />
       }
       <table className='search-crypt-table'>

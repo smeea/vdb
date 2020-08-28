@@ -4,87 +4,122 @@ import ResultLibrary from './ResultLibrary.jsx';
 import DeckDrawCryptModal from './DeckDrawCryptModal.jsx';
 import DeckDrawLibraryModal from './DeckDrawLibraryModal.jsx';
 
-function DeckDraw(props) {
-  const drawCards = (cards, quantity) => {
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * Math.floor(max));
-    }
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
+function DeckDraw(props) {
+  const initialDrawCards = (cards, quantity) => {
     let cards_total = 0;
     for (const i of Object.keys(cards)) {
       cards_total += cards[i].q;
     }
 
     if (quantity <= cards_total) {
-      const cards_array = [];
+      const rest_array = [];
       const draw_array = [];
 
       Object.keys(cards).map((card) => {
         let q = cards[card].q;
         while (q > 0) {
           q -= 1;
-          cards_array.push(cards[card].c);
+          rest_array.push(cards[card].c);
         }
       });
 
       while (quantity > 0) {
-        let random_card = getRandomInt(cards_array.length);
-        while (cards_array[random_card] === undefined ) {
-          random_card = getRandomInt(cards_array.length);
-        }
-        draw_array.push(cards_array[random_card]);
-        delete cards_array[random_card];
+        let random_id = getRandomInt(rest_array.length);
+        draw_array.push(rest_array[random_id]);
+        rest_array.splice(random_id, 1);
         quantity -= 1;
       }
 
-      return(draw_array);
+      return [draw_array, rest_array];
     } else {
-      return(null);
+      return null;
     }
   };
 
+  const drawCards = (cards, quantity) => {
+    const rest_array = cards;
+    const draw_array = [];
+
+    if (quantity <= rest_array.length) {
+      while (quantity > 0) {
+        let random_id = getRandomInt(rest_array.length);
+        draw_array.push(rest_array[random_id]);
+        rest_array.splice(random_id, 1);
+        quantity -= 1;
+      }
+      return [draw_array, rest_array];
+    } else {
+      return null;
+    }
+  };
+
+  const [restCrypt, setRestCrypt] = useState(undefined);
+  const [restLibrary, setRestLibrary] = useState(undefined);
   const [drawedCrypt, setDrawedCrypt] = useState(undefined);
   const [drawedLibrary, setDrawedLibrary] = useState(undefined);
-
-  const handleDrawCrypt = () => {
-    const cards = drawCards(props.crypt, 4);
-    setDrawedCrypt(cards);
-  };
-
-  const handleDrawLibrary = () => {
-    const cards = drawCards(props.library, 7);
-    setDrawedLibrary(cards);
-  };
-
-  const handleDrawCryptOne = () => {
-    const cards = [... drawedCrypt];
-    cards.push(... drawCards(props.crypt, 1));
-    setDrawedCrypt(cards);
-  };
-
-  const handleDrawLibraryOne = () => {
-    const cards = [... drawedLibrary];
-    cards.push(... drawCards(props.library, 1));
-    setDrawedLibrary(cards);
-  };
-
-  const handleOpenDrawCrypt = () => {
-    const cards = drawCards(props.crypt, 4);
-    setDrawedCrypt(cards);
-    setShowDrawCryptModal(true);
-  };
-
-  const handleOpenDrawLibrary = () => {
-    const cards = drawCards(props.library, 7);
-    setDrawedLibrary(cards);
-    setShowDrawLibraryModal(true);
-  };
-
   const [showDrawCryptModal, setShowDrawCryptModal] = useState(false);
   const [showDrawLibraryModal, setShowDrawLibraryModal] = useState(false);
 
   const handleCloseDrawCryptModal = () => setShowDrawCryptModal(false);
   const handleCloseDrawLibraryModal = () => setShowDrawLibraryModal(false);
+
+  const handleOpenDrawCrypt = () => {
+    const [drawedCards, restCards] = initialDrawCards(props.crypt, 4);
+    setDrawedCrypt(drawedCards);
+    setRestCrypt(restCards);
+    setShowDrawCryptModal(true);
+  };
+
+  const handleOpenDrawLibrary = () => {
+    const [drawedCards, restCards] = initialDrawCards(props.library, 7);
+    setDrawedLibrary(drawedCards);
+    setRestLibrary(restCards);
+    setShowDrawLibraryModal(true);
+  };
+
+  const handleReDrawCrypt = () => {
+    const allCards = [... drawedCrypt, ... restCrypt];
+    const [drawedCards, restCards] = drawCards(allCards, 4);
+    setDrawedCrypt(drawedCards);
+    setRestCrypt(restCards);
+  };
+
+  const handleReDrawLibrary = () => {
+    const allCards = [... drawedLibrary, ... restLibrary];
+    const [drawedCards, restCards] = drawCards(allCards, 7);
+    setDrawedLibrary(drawedCards);
+    setRestLibrary(restCards);
+  };
+
+  const handleDrawCryptOne = () => {
+    let newDrawedCards = [];
+    let newRestCards = [];
+    if (restCrypt.length > 0) {
+      [newDrawedCards, newRestCards] = drawCards(restCrypt, 1);
+    } else {
+      console.log('no more cards to draw');
+    }
+    const allDrawedCards = [... drawedCrypt, ... newDrawedCards];
+    setDrawedCrypt(allDrawedCards);
+    setRestCrypt(newRestCards);
+  };
+
+  const handleDrawLibraryOne = () => {
+    let newDrawedCards = [];
+    let newRestCards = [];
+    if (restLibrary.length > 0) {
+      [newDrawedCards, newRestCards] = drawCards(restLibrary, 1);
+    } else {
+      console.log('no more cards to draw');
+    }
+    const allDrawedCards = [... drawedLibrary, ... newDrawedCards];
+    setDrawedLibrary(allDrawedCards);
+    setRestLibrary(newRestCards);
+  };
 
   return(
     <React.Fragment>
@@ -96,10 +131,24 @@ function DeckDraw(props) {
       </Button>
       <br />
       {showDrawCryptModal != null &&
-       <DeckDrawCryptModal handleDraw={handleDrawCrypt} handleDrawOne={handleDrawCryptOne} handleClose={handleCloseDrawCryptModal} cards={drawedCrypt} show={showDrawCryptModal} />
+       <DeckDrawCryptModal
+         handleReDraw={handleReDrawCrypt}
+         handleDrawOne={handleDrawCryptOne}
+         handleClose={handleCloseDrawCryptModal}
+         drawedCards={drawedCrypt}
+         restCards={restCrypt}
+         show={showDrawCryptModal}
+       />
       }
       {drawedLibrary != null &&
-       <DeckDrawLibraryModal handleDraw={handleDrawLibrary} handleDrawOne={handleDrawLibraryOne} handleClose={handleCloseDrawLibraryModal} cards={drawedLibrary} show={showDrawLibraryModal} />
+       <DeckDrawLibraryModal
+         handleReDraw={handleReDrawLibrary}
+         handleDrawOne={handleDrawLibraryOne}
+         handleClose={handleCloseDrawLibraryModal}
+         drawedCards={drawedLibrary}
+         restCards={restLibrary}
+         show={showDrawLibraryModal}
+       />
       }
     </React.Fragment>
   );

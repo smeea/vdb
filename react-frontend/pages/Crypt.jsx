@@ -19,7 +19,7 @@ function Crypt(props) {
           }
         </div>
         <div className='col-md-12 col-lg-6 col-xl-6 center-col px-1 px-xl-2'>
-          <ResultCrypt addMode={props.addMode} cardAdd={props.cardAdd} cards={cards}/>
+          <ResultCrypt sortMode={true} addMode={props.addMode} cardAdd={props.cardAdd} cards={cards}/>
         </div>
         <div className='col-md-12 col-lg-3 col-xl-3 right-col px-1 px-xl-2'>
           <SearchCryptForm setResults={setResults} />

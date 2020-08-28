@@ -117,7 +117,6 @@ function DeckPreviewCrypt(props) {
       </div>
       { Object.keys(crypt_side).length > 0 &&
         <div className='deck-sidecrypt'>
-          <br />
           <b>Side Crypt</b>
           <table className='deck-crypt-table'>
             <DeckCryptSideBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt_side} disciplines_set={disciplines_set}/>

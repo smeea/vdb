@@ -24,7 +24,6 @@ function DeckShowDeck(props) {
         <DeckCrypt deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.crypt} />
         <br />
         <DeckLibrary deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.library} />
-        <br />
       </React.Fragment>
     );
   } else {

@@ -15,8 +15,8 @@ function DeckCryptSideBody(props) {
       return 1;
     }
   };
-  const sorted_cards = Object.values(props.cards).sort(SortByCapacity);
 
+  const sorted_cards = Object.values(props.cards).sort(SortByCapacity);
 
   let resultTrClass;
 
@@ -140,7 +140,6 @@ function DeckCrypt(props) {
       </div>
       { Object.keys(crypt_side).length > 0 &&
         <div className='deck-sidecrypt'>
-          <br />
           <b>Side Crypt</b>
           <table className='deck-crypt-table'>
             <DeckCryptSideBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt_side} disciplines_set={disciplines_set}/>

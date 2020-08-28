@@ -101,7 +101,6 @@ function DeckPreviewLibrary(props) {
       LibraryDeck.push(
         <div key={cardtype}>
           <DeckLibraryByTypeTable deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library[cardtype]} cardtype={cardtype} total={total} />
-          <br />
         </div>
       );
     }
@@ -114,7 +113,6 @@ function DeckPreviewLibrary(props) {
       LibrarySideDeck.push(
         <div key={cardtype}>
           <DeckLibraryByTypeTable deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library_side[cardtype]} cardtype={cardtype} total={total} />
-          <br />
         </div>
       );
     }

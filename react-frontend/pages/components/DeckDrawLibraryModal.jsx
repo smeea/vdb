@@ -9,7 +9,7 @@ function DeckDrawLibraryModal(props) {
         <Modal.Header closeButton>
           <Modal.Title>
             Library Draw
-            <Button variant='outline-primary' onClick={props.handleDraw}>
+            <Button variant='outline-primary' onClick={props.handleReDraw}>
               Draw
             </Button>
             <Button variant="outline-primary" onClick={props.handleDrawOne}>
@@ -18,8 +18,7 @@ function DeckDrawLibraryModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ResultLibrary cards={props.cards} deckmode={true} />
-          <br />
+          <ResultLibrary cards={props.drawedCards} sortMode={false} />
         </Modal.Body>
       </Modal>
     </React.Fragment>
