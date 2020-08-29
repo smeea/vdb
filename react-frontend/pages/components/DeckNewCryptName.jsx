@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
+import ishtarri from './../../assets/images/clans/ishtarri.gif';
 
 function DeckNewCryptName(props) {
   const [inputValue, setValue] = useState('');
@@ -54,7 +55,12 @@ function DeckNewCryptName(props) {
         cacheOptions
         defaultOptions
         value={selectedValue}
-        getOptionLabel={e => e.Name + (e.Adv ? ' [ADV]' : '') + (e.Banned ? ' [BANNED]' : '')}
+        getOptionLabel={e =>
+                        <div>
+                          <img className='clan-image-results' src={ishtarri} />
+                          {e.Name + (e.Adv ? ' [ADV]' : '') + (e.Banned ? ' [BANNED]' : '')}
+                        </div>
+                       }
         loadOptions={loadOptions}
         onInputChange={handleInputChange}
         onChange={handleChange}

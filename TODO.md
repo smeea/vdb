@@ -2,6 +2,7 @@
 * Beautify card text popover
 * Deck share link
 # MINOR FEATURE
+* Deck card add auto-complete icons/properties
 * Card popover mode toggle on click
 * Beautify popover
 * Copy ('fork') deck
@@ -9,6 +10,7 @@
 * Card rulings
 * Trifle icon
 * Good button icons
+* Total output for search
 # MAJOR FIX
 * Normalize card names for image url
 * Fix redraw on activeDeck / addMode change
