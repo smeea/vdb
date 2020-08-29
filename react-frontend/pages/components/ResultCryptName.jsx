@@ -2,7 +2,17 @@ import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 
 function ResultCryptName(props) {
-  const cardPopover = (
+  const [showImage, setShowImage] = useState(false);
+
+  const toggleImage = () => {
+    if (showImage) {
+      setShowImage(false);
+    } else {
+      setShowImage(true);
+    }
+  };
+
+  const cardTextPopover = (
     <Popover>
       <Popover.Content>
         {props.card['Card Text']}
@@ -10,13 +20,21 @@ function ResultCryptName(props) {
     </Popover>
   );
 
+  const cardImagePopover = (
+    <Popover>
+      <Popover.Content>
+        <img src={props.card['Name'].toLowerCase().replace(/\s/g, '')} alt={props.card['Name']} />
+      </Popover.Content>
+    </Popover>
+  );
+
   return (
     <td className='name'>
       <OverlayTrigger
-        placement="right"
-        overlay={cardPopover}
+        placement='right'
+        overlay={showImage ? cardImagePopover : cardTextPopover}
       >
-        <a href='#'>
+        <a href='#' onClick={toggleImage}>
           {props.value} {props.adv && ' [ADV]'} {props.ban && ' [BANNED]'}
         </a>
       </OverlayTrigger>

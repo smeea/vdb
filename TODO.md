@@ -1,7 +1,7 @@
 # MAJOR FEATURE
-* Deck share link
-* Card image modal
+* Popover card image
 * Beautify card text popover
+* Deck share link
 # MINOR FEATURE
 * Copy ('fork') deck
 * Export/Import (formats: TWD, Amaranth, LakeyCCG, AnarchDB etc?) deck
@@ -11,6 +11,7 @@
 # MAJOR FIX
 * Fix redraw on activeDeck / addMode change
 # MINOR FIX
+* Fix popover image position
 * Fix uncontrolled input bug in clear button
 # OTHER
 * Favicon
