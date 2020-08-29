@@ -23,7 +23,7 @@ function ResultCryptName(props) {
   const cardImagePopover = (
     <Popover>
       <Popover.Content>
-        <img src={'/cards/' + props.card['Name'].toLowerCase().replace(/[\s,:!?]/g, '') + (props.card['Adv'] && 'adv') + '.jpg'} alt={props.card['Name']} />
+        <img className='card-popover' src={'/cards/' + props.card['Name'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + (props.card['Adv'] && 'adv') + '.jpg'} alt={props.card['Name']} />
       </Popover.Content>
     </Popover>
   );
@@ -34,9 +34,9 @@ function ResultCryptName(props) {
         placement='right'
         overlay={showImage ? cardImagePopover : cardTextPopover}
       >
-        <a href='#' onClick={toggleImage}>
+        <span className='card-name' onClick={toggleImage}>
           {props.value} {props.adv && ' [ADV]'} {props.ban && ' [BANNED]'}
-        </a>
+        </span>
       </OverlayTrigger>
     </td>
   );
