@@ -23,7 +23,7 @@ function ResultCryptName(props) {
   const cardImagePopover = (
     <Popover>
       <Popover.Content>
-        <img src={props.card['Name'].toLowerCase().replace(/\s/g, '')} alt={props.card['Name']} />
+        <img src={props.card['Name'].toLowerCase().replace(/[\s,:!?]/g, '') + (props.card['Adv'] && 'adv') + '.jpg'} alt={props.card['Name']} />
       </Popover.Content>
     </Popover>
   );

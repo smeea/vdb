@@ -23,7 +23,7 @@ function ResultLibraryName(props) {
   const cardImagePopover = (
     <Popover>
       <Popover.Content>
-        IMAGE
+        <img src={props.card['Name'].toLowerCase().replace(/[\s,:!?]/g, '') + '.jpg'} alt={props.card['Name']} />
       </Popover.Content>
     </Popover>
   );
