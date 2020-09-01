@@ -19,7 +19,7 @@ function Greetings(props) {
 
 function Account(props) {
   return (
-    <div className='container main-container py-xl-3 px-0 px-xl-2'>
+    <div className='container px-0 py-xl-3 px-xl-2'>
       <div className='row mx-0'>
         <div className='col-xs-12 col-xl-1 left-col px-0 px-xl-2'>
         </div>

@@ -65,7 +65,8 @@ def get_library_by_cardtype(cardtype):
 def get_library_by_discipline(discipline):
     match_cards = []
     for card in library:
-        if discipline in card['Discipline']:
+        if (discipline in card['Discipline']) or (discipline == 'NONE'
+                                                  and not card['Discipline']):
             match_cards.append(card)
 
     return match_cards
@@ -74,7 +75,7 @@ def get_library_by_discipline(discipline):
 def get_library_by_clan(clan):
     match_cards = []
     for card in library:
-        if clan == card['Clan']:
+        if (clan in card['Clan']) or (clan == 'NONE' and not card['Clan']):
             match_cards.append(card)
 
     return match_cards

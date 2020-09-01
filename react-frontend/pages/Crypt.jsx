@@ -11,7 +11,7 @@ function Crypt(props) {
   };
 
   return (
-    <div className='container main-container px-0 py-xl-2 px-xl-2'>
+    <div className='container px-0 py-xl-2 px-xl-2'>
       <div className='row mx-0'>
         <div className='col-md-12 col-lg-3 col-xl-3 left-col px-1 px-xl-2'>
           {props.addMode == true &&

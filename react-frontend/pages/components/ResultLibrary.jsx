@@ -13,6 +13,8 @@ import ResultAddCard from './ResultAddCard.jsx';
 function SearchLibraryBody(props) {
   let resultTrClass='library-result-even';
 
+  const [showImage, setShowImage] = useState(false);
+  const toggleImage = () => setShowImage(!showImage);
 
   const cards = props.resultCards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {
@@ -30,7 +32,7 @@ function SearchLibraryBody(props) {
           <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
           <ResultLibraryType cardtype={card['Type']} />
           <ResultLibraryDisciplines value={card['Discipline']} />
-          <ResultLibraryName id={card['Id']} value={card['Name']} ban={card['Banned']} cardAdd={props.cardAdd} card={card} />
+          <ResultLibraryName showImage={showImage} toggleImage={toggleImage} id={card['Id']} value={card['Name']} ban={card['Banned']} cardAdd={props.cardAdd} card={card} />
           <ResultLibraryClan value={card['Clan']} />
           <ResultLibraryBurn value={card['Burn Option']} />
         </tr>

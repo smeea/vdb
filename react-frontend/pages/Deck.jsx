@@ -82,7 +82,7 @@ function Deck(props) {
   }, [props.id]);
 
   return (
-    <div className='container main-container py-xl-3 px-0 px-xl-2'>
+    <div className='container px-0 py-xl-3 px-xl-2'>
       <div className='row mx-0'>
         <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>
         </div>

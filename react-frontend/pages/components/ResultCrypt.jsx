@@ -13,6 +13,9 @@ import ResultAddCard from './ResultAddCard.jsx';
 function SearchCryptBody(props) {
   let resultTrClass='crypt-result-even';
 
+  const [showImage, setShowImage] = useState(false);
+  const toggleImage = () => setShowImage(!showImage);
+
   if (props.resultCards) {
     const cards = props.resultCards.map((card, index) => {
       if (resultTrClass == 'crypt-result-even') {
@@ -29,7 +32,7 @@ function SearchCryptBody(props) {
             }
             <ResultCryptCapacity value={card['Capacity']} />
             <ResultCryptDisciplines value={card['Disciplines']} />
-            <ResultCryptName id={card['Id']} value={card['Name']} adv={card['Adv']} ban={card['Banned']} addMode={props.addMode} card={card} />
+            <ResultCryptName showImage={showImage} toggleImage={toggleImage} id={card['Id']} value={card['Name']} adv={card['Adv']} ban={card['Banned']} addMode={props.addMode} card={card} />
             <ResultCryptClan value={card['Clan']} />
             <ResultCryptGroup value={card['Group']} />
           </tr>
