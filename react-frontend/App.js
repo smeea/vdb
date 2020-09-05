@@ -50,7 +50,7 @@ function App(props) {
   };
 
   const cardAdd = (cardid) => {
-    const url = process.env. API_URL + 'deck' + activeDeck;
+    const url = process.env. API_URL + 'deck/' + activeDeck;
     const options = {
       method: 'PUT',
       mode: 'cors',

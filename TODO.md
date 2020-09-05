@@ -2,12 +2,12 @@
 * Beautify card text popover
 * Deck share link
 # MAJOR FEATURE
-# MINOR FEATURE
-* Beautify popover text
-* Copy ('fork') deck
 * Temporary 'add to compare' button
 * Export/Import (formats: TWD, LackeyCCG** deck
 * Card rulings
+# MINOR FEATURE
+* Beautify popover text
+* Copy ('fork') deck
 * Trifle icon
 * Good button icons - https://primer.style/octicons/
 * Total output for search

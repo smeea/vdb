@@ -50,41 +50,43 @@ function DeckNewCryptName(props) {
   };
 
   return (
-    <>
-      <AsyncSelect
-        cacheOptions
-        defaultOptions
-        value={selectedValue}
-        getOptionLabel={ card =>
-          <>
-            <div className='d-flex justify-content-between'>
-              <div>
-                <img className='capacity-image-results'
-                     src={'/images/misc/cap' + card['Capacity'] + '.png'}
-                />
-                <span className='pl-1'>
-                  { card['Name'] + (card['Adv'] ? ' [ADV]' : '') + (card['Banned'] ? ' [BANNED]' : '') }
-                </span>
+    <div className='d-flex'>
+      <div className='flex-grow-1'>
+        <AsyncSelect
+          cacheOptions
+          defaultOptions
+          value={selectedValue}
+          getOptionLabel={ card =>
+            <>
+              <div className='d-flex justify-content-between'>
+                <div>
+                  <img className='capacity-image-results'
+                       src={'/images/misc/cap' + card['Capacity'] + '.png'}
+                  />
+                  <span className='pl-1'>
+                    { card['Name'] + (card['Adv'] ? ' [ADV]' : '') + (card['Banned'] ? ' [BANNED]' : '') }
+                  </span>
+                </div>
+                <div>
+                  <img className='clan-image-results'
+                       src={'/images/clans/' + card['Clan'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
+                  />
+                </div>
               </div>
-              <div>
-                <img className='clan-image-results'
-                     src={'/images/clans/' + card['Clan'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
-                />
-              </div>
-            </div>
-          </>
-        }
-        loadOptions={loadOptions}
-        onInputChange={handleInputChange}
-        onChange={handleChange}
-      />
+            </>
+          }
+          loadOptions={loadOptions}
+          onInputChange={handleInputChange}
+          onChange={handleChange}
+        />
+      </div>
       <Button variant='outline-primary' onClick={addNewCard}>
         Add
       </Button>
       <Button variant='outline-primary' onClick={clearFormButton}>
         Clear
       </Button>
-    </>
+    </div>
   );
 }
 
