@@ -17,7 +17,7 @@ function DeckImportDeck(props) {
     if (deckText) {
       console.log(deckText);
       // let newdeckid;
-      // const url = 'http://127.0.0.1:5001/api/decks/create';
+      // const url = process.env. API_URL + 'decks/create';
       // const options = {
       //   method: 'POST',
       //   mode: 'cors',

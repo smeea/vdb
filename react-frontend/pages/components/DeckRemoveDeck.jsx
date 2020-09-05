@@ -5,7 +5,6 @@ function DeckRemoveDeck(props) {
   const removeDeck = event => {
 
     if (props.activeDeck) {
-      // const url = 'http://127.0.0.1:5001/api/decks/remove';
       const url = process.env. API_URL + 'decks/remove';
       const options = {
         method: 'POST',

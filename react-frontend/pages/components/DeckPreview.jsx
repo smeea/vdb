@@ -4,7 +4,6 @@ import DeckPreviewLibrary from './DeckPreviewLibrary.jsx';
 
 function DeckPreview(props) {
   const deckCardChange = (deckid, cardid, count) => {
-    // const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
     const url = process.env. API_URL + 'deck/' + deckid;
     const options = {
       method: 'PUT',

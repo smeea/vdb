@@ -29,7 +29,6 @@ function DeckNewCryptName(props) {
   };
 
   const loadOptions = (inputValue) => {
-    // const url = 'http://127.0.0.1:5001/api/search/crypt';
     const url = process.env. API_URL + 'search/crypt';
     const input = {name: inputValue};
     const options = {
