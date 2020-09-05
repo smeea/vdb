@@ -9,7 +9,9 @@ function Deck(props) {
   const [sharedDecks, setSharedDecks] = useState(undefined);
 
   const getDeck = () => {
-    const url = 'http://127.0.0.1:5001/api/deck/' + props.id;
+    // const url = 'http://127.0.0.1:5001/api/deck/' + props.id;
+    const url = process.env. API_URL + 'deck/' + props.id;
+
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -29,7 +31,8 @@ function Deck(props) {
   };
 
   const deckCardChange = (deckid, cardid, count) => {
-    const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
+    // const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
+    const url = process.env. API_URL + 'deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -45,7 +48,8 @@ function Deck(props) {
   };
 
   const deckCardAdd = (deckid, cardid) => {
-    const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
+    // const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
+    const url = process.env. API_URL + 'deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -61,7 +65,8 @@ function Deck(props) {
   };
 
   const deckUpdate = (deckid, field, value) => {
-    const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
+    // const url = 'http://127.0.0.1:5001/api/deck/' + deckid;
+    const url = process.env. API_URL + 'deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',

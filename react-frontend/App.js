@@ -29,7 +29,8 @@ function App(props) {
   };
 
   const getDecks = () => {
-    const url = 'http://127.0.0.1:5001/api/decks';
+    // const url = 'http://127.0.0.1:5001/api/decks'
+    const url = process.env. API_URL + 'decks';
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -50,7 +51,8 @@ function App(props) {
   };
 
   const cardAdd = (cardid) => {
-    const url = 'http://127.0.0.1:5001/api/deck/' + activeDeck;
+    // const url = 'http://127.0.0.1:5001/api/deck/' + activeDeck;
+    const url = process.env. API_URL + 'deck' + activeDeck;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -68,7 +70,8 @@ function App(props) {
   const [username, setUsername] = useState(undefined);
 
   const whoAmI= () => {
-    const url = 'http://127.0.0.1:5001/api/login';
+    // const url = 'http://127.0.0.1:5001/api/login';
+    const url = process.env. API_URL + 'login';
     const options = {
       method: 'GET',
       mode: 'cors',

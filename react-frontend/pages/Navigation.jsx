@@ -38,19 +38,19 @@ function Navigation(props) {
     return(
       <Navbar bg='dark' variant='dark'>
         <Nav className='container justify-content-between'>
-          {
-            props.username &&
-              <div className='d-flex'>
+          <div className='d-flex'>
+            {
+              props.username &&
                 <span className='nav-link px-2'>
                   <AddModeSwitch addMode={props.addMode} handleAddModeSwitch={props.handleAddModeSwitch} />
                 </span>
-                { props.addMode &&
-                  <span className='nav-link px-2'>
-                    <DeckSelectDeck handleActiveDeckSelect={props.handleActiveDeckSelect} decks={props.decks} activeDeck={props.activeDeck} />
-                  </span>
-                }
-              </div>
-          }
+            }
+            { props.addMode &&
+              <span className='nav-link px-2'>
+                <DeckSelectDeck handleActiveDeckSelect={props.handleActiveDeckSelect} decks={props.decks} activeDeck={props.activeDeck} />
+              </span>
+            }
+          </div>
           <div className='d-flex'>
             <NavLink to='/account' className='nav-link px-2'>
               <AccountEntry username={props.username} />
@@ -71,10 +71,6 @@ function Navigation(props) {
         </Nav>
       </Navbar>
     );
-  };
-
-  const toggleSearchButton = () => {
-    console.log('toggle search button');
   };
 
   return (

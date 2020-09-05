@@ -17,7 +17,8 @@ function AccountRegister(props){
   };
 
   const registerUser = () => {
-    const url = 'http://127.0.0.1:5001/api/register';
+    // const url = 'http://127.0.0.1:5001/api/register';
+    const url = process.env. API_URL + 'register';
     let input = {
       username: state.username,
       email: state.email,

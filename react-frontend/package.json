@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "pbuild": "parcel build index.html",
+    "start": "parcel serve index.html",
+    "publish": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,6 +15,7 @@
     "@babel/preset-react": "^7.9.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "dotenv": "^8.2.0",
     "parcel": "^1.12.4",
     "parcel-bundler": "^1.12.4",
     "react": "^16.13.1",

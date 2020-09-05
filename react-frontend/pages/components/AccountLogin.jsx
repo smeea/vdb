@@ -19,7 +19,8 @@ function AccountLogin(props) {
   const logoutUser = () => {
     console.log('submit logout button');
 
-    const url = 'http://127.0.0.1:5001/api/logout';
+    // const url = 'http://127.0.0.1:5001/api/logout';
+    const url = process.env. API_URL + 'logout';
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -30,7 +31,8 @@ function AccountLogin(props) {
   };
 
   const loginUser = () => {
-    const url = 'http://127.0.0.1:5001/api/login';
+    // const url = 'http://127.0.0.1:5001/api/login';
+    const url = process.env. API_URL + 'login';
     let input = {
       username: state.username,
       password: state.password,
