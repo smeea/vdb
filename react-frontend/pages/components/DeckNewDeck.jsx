@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 
-function DecksNewDeck(props) {
-  const [deckname, setDeckName] = useState('');
+function DeckNewDeck(props) {
+  const [deckName, setDeckName] = useState('');
 
   const handleChange = event => {
-    const { value } = event.target;
-    setDeckName(value);
+    setDeckName(event.target.value);
   };
 
-  const clearFormButton = event => {
+  const clearFormButton = () => {
     setDeckName('');
   };
 
-  const createNewDeck = event => {
-    if (deckname) {
+  const createNewDeck = () => {
+    if (deckName) {
       let newdeckid;
       const url = 'http://127.0.0.1:5001/api/decks/create';
       const options = {
@@ -24,7 +23,7 @@ function DecksNewDeck(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({deckname: deckname}),
+        body: JSON.stringify({deckname: deckName}),
       };
 
       fetch(url, options)
@@ -46,12 +45,12 @@ function DecksNewDeck(props) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <input
         placeholder='New Deck Name'
         type='text'
-        id='deckname'
-        value={deckname}
+        id='deckName'
+        value={deckName}
         onChange={handleChange}/>
 
       <Button variant='outline-primary' onClick={createNewDeck}>
@@ -60,8 +59,8 @@ function DecksNewDeck(props) {
       <Button variant='outline-primary' onClick={clearFormButton}>
         Clear
       </Button>
-    </React.Fragment>
+    </>
   );
 }
 
-export default DecksNewDeck;
+export default DeckNewDeck;

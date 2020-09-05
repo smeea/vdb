@@ -108,7 +108,7 @@ function DeckPreviewCrypt(props) {
   }
 
   return (
-    <React.Fragment>
+    <>
       <div className='deck-crypt'>
         <b>Crypt [{crypt_total}] - {crypt_groups}</b>
         <table className='deck-crypt-table'>
@@ -123,7 +123,7 @@ function DeckPreviewCrypt(props) {
           </table>
         </div>
       }
-    </React.Fragment>
+    </>
   );
 }
 

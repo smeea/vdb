@@ -122,7 +122,7 @@ function DeckDraw(props) {
   };
 
   return(
-    <React.Fragment>
+    <>
       <Button variant='outline-primary' onClick={handleOpenDrawCrypt}>
         Draw Crypt
       </Button>
@@ -150,7 +150,7 @@ function DeckDraw(props) {
          show={showDrawLibraryModal}
        />
       }
-    </React.Fragment>
+    </>
   );
 }
 

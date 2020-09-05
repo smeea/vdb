@@ -14,11 +14,11 @@ function DeckNewLibraryName(props) {
     setSelectedValue(value);
   };
 
-  const clearFormButton = event => {
+  const clearFormButton = () => {
     setSelectedValue('');
   };
 
-  const createNewCard = event => {
+  const addNewCard = () => {
     if (selectedValue.Id) {
       props.deckCardAdd(props.deckid, selectedValue.Id);
       setSelectedValue('');
@@ -49,23 +49,66 @@ function DeckNewLibraryName(props) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <AsyncSelect
         cacheOptions
         defaultOptions
         value={selectedValue}
-        getOptionLabel={e => e.Name + (e.Adv ? ' [ADV]' : '') + (e.Banned ? ' [BANNED]' : '')}
+        getOptionLabel={ card =>
+          <>
+            <div className='d-flex justify-content-between'>
+              <div>
+                <img className='type-image-results'
+                     src={'/images/types/' + card['Type'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
+                />
+                <span className='pl-1'>
+                  { card['Name'] + (card['Banned'] ? ' [BANNED]' : '') }
+                </span>
+              </div>
+              <div>
+                { card['Discipline'] &&
+                  <span className='pl-2'>
+                    <img className='discipline-image-results'
+                         src={'/images/disciplines/' + card['Discipline'].toLowerCase() + '.gif'}
+                    />
+                  </span>
+                }
+                { card['Blood Cost'] &&
+                  <span className='pl-2'>
+                    <img className='cost-image-results'
+                         src={'/images/misc/blood' + card['Blood Cost'].toLowerCase() + '.png'}
+                    />
+                  </span>
+                }
+                { card['Pool Cost'] &&
+                  <span className='pl-2'>
+                    <img className='cost-image-results'
+                         src={'/images/misc/pool' + card['Pool Cost'].toLowerCase() + '.png'}
+                    />
+                  </span>
+                }
+                { card['Clan'] &&
+                  <span className='pl-2'>
+                    <img className='clan-image-results'
+                         src={'/images/clans/' + card['Clan'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
+                    />
+                  </span>
+                }
+              </div>
+            </div>
+          </>
+        }
         loadOptions={loadOptions}
         onInputChange={handleInputChange}
         onChange={handleChange}
       />
-      <Button variant='outline-primary' onClick={createNewCard}>
+      <Button variant='outline-primary' onClick={addNewCard}>
         Add
       </Button>
       <Button variant='outline-primary' onClick={clearFormButton}>
         Clear
       </Button>
-    </React.Fragment>
+    </>
   );
 }
 

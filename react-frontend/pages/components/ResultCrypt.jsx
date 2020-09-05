@@ -61,7 +61,7 @@ function ResultCrypt(props) {
   });
 
   return (
-    <React.Fragment>
+    <>
       {
         props.sortMode == true && sortedCards.length > 0 &&
           <ResultCryptSortForm value={sortMethod} onChange={handleChange} />
@@ -69,7 +69,7 @@ function ResultCrypt(props) {
       <table className='search-crypt-table'>
         <SearchCryptBody addMode={props.addMode} cardAdd={props.cardAdd} resultCards={sortedCards} />
       </table>
-    </React.Fragment>
+    </>
   );
 }
 

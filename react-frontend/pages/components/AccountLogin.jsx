@@ -56,7 +56,7 @@ function AccountLogin(props) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <h6>Login</h6>
       <form>
         <input
@@ -80,7 +80,7 @@ function AccountLogin(props) {
           Logout
         </Button>
       </form>
-    </React.Fragment>
+    </>
   );
 }
 

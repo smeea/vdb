@@ -4,7 +4,7 @@ import { Popover } from 'react-bootstrap';
 function ResultLibraryPopover(props) {
   const cardImage = (
     <img className='card-popover'
-         src={'/cards/' + props.card['Name'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.jpg'}
+         src={'/images/cards/' + props.card['Name'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.jpg'}
          alt={props.card['Name']} />
   );
 

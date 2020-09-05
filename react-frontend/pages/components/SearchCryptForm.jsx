@@ -332,11 +332,11 @@ function SearchCryptFormClan(props) {
   const clanOptions = [{
     value: 'ANY',
     label:
-    <React.Fragment>
+    <>
       <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
       </span>
       ANY
-    </React.Fragment>
+    </>
   }];
 
   Object.keys(clanicons).map((key, index) => {
@@ -344,12 +344,12 @@ function SearchCryptFormClan(props) {
       value: key,
       name: 'clan',
       label:
-      <React.Fragment>
+      <>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
           <img src={clanicons[key]} className='discipline-base-image-results' />
         </span>
         {key}
-      </React.Fragment>
+      </>
     });
   });
 
@@ -481,7 +481,7 @@ function SearchCryptFormTitles(props) {
   });
 
   return (
-    <React.Fragment>
+    <>
       <h6>Title:</h6>
       <div className='form-row'>
         <div className='form-group col-7'>
@@ -491,7 +491,7 @@ function SearchCryptFormTitles(props) {
           {titlesRightforms}
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 }
 

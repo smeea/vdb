@@ -15,11 +15,11 @@ function DeckNewCryptName(props) {
     setSelectedValue(value);
   };
 
-  const clearFormButton = event => {
+  const clearFormButton = () => {
     setSelectedValue('');
   };
 
-  const createNewCard = event => {
+  const addNewCard = () => {
     if (selectedValue.Id) {
       props.deckCardAdd(props.deckid, selectedValue.Id);
       setSelectedValue('');
@@ -50,28 +50,41 @@ function DeckNewCryptName(props) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <AsyncSelect
         cacheOptions
         defaultOptions
         value={selectedValue}
-        getOptionLabel={e =>
-                        <div>
-                          <img className='clan-image-results' src={ishtarri} />
-                          {e.Name + (e.Adv ? ' [ADV]' : '') + (e.Banned ? ' [BANNED]' : '')}
-                        </div>
-                       }
+        getOptionLabel={ card =>
+          <>
+            <div className='d-flex justify-content-between'>
+              <div>
+                <img className='capacity-image-results'
+                     src={'/images/misc/cap' + card['Capacity'] + '.png'}
+                />
+                <span className='pl-1'>
+                  { card['Name'] + (card['Adv'] ? ' [ADV]' : '') + (card['Banned'] ? ' [BANNED]' : '') }
+                </span>
+              </div>
+              <div>
+                <img className='clan-image-results'
+                     src={'/images/clans/' + card['Clan'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
+                />
+              </div>
+            </div>
+          </>
+        }
         loadOptions={loadOptions}
         onInputChange={handleInputChange}
         onChange={handleChange}
       />
-      <Button variant='outline-primary' onClick={createNewCard}>
+      <Button variant='outline-primary' onClick={addNewCard}>
         Add
       </Button>
       <Button variant='outline-primary' onClick={clearFormButton}>
         Clear
       </Button>
-    </React.Fragment>
+    </>
   );
 }
 

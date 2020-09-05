@@ -8,11 +8,11 @@ function DeckNameDeck(props) {
     setState(event.target.value);
   };
 
-  const clearFormButton = event => {
+  const clearFormButton = () => {
     setState('');
   };
 
-  const deckNameButton = event => {
+  const deckNameButton = () => {
     if (state) {
       props.deckUpdate(props.deckid, 'name', state);
     } else {
@@ -25,7 +25,7 @@ function DeckNameDeck(props) {
   }, [props.name]);
 
   return (
-    <React.Fragment>
+    <>
       <textarea value={state} onChange={handleChange} />
       <Button variant='outline-primary' onClick={deckNameButton}>
         Update
@@ -33,7 +33,7 @@ function DeckNameDeck(props) {
       <Button variant='outline-primary' onClick={clearFormButton}>
         Clear
       </Button>
-    </React.Fragment>
+    </>
   );
 }
 

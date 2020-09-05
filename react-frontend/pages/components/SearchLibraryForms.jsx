@@ -158,11 +158,11 @@ function SearchLibraryFormType(props) {
     value: 'ANY',
     name: 'type',
     label:
-    <React.Fragment>
+    <>
       <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
       </span>
       ANY
-    </React.Fragment>
+    </>
   }];
 
   Object.keys(typeicons).map((key, index) => {
@@ -170,12 +170,12 @@ function SearchLibraryFormType(props) {
       value: key,
       name: 'type',
       label:
-      <React.Fragment>
+      <>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
           <img src={typeicons[key]} className='discipline-base-image-results' />
         </span>
         {key}
-      </React.Fragment>
+      </>
     });
   });
 
@@ -242,21 +242,21 @@ function SearchLibraryFormDiscipline(props) {
       value: 'ANY',
       name: 'discipline',
       label:
-      <React.Fragment>
+      <>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
         </span>
         ANY
-      </React.Fragment>
+      </>
     },
     {
       value: 'NONE',
       name: 'discipline',
       label:
-      <React.Fragment>
+      <>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
         </span>
         NONE
-      </React.Fragment>
+      </>
     },
   ];
 
@@ -265,12 +265,12 @@ function SearchLibraryFormDiscipline(props) {
       value: key,
       name: 'discipline',
       label:
-      <React.Fragment>
+      <>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
           <img src={disciplineicons[key]} className='discipline-base-image-results' />
         </span>
         {key}
-      </React.Fragment>
+      </>
     });
   });
 
@@ -429,21 +429,21 @@ function SearchLibraryFormClan(props) {
       value: 'ANY',
       name: 'clan',
       label:
-      <React.Fragment>
+      <>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
         </span>
         ANY
-      </React.Fragment>
+      </>
     },
     {
       value: 'NONE',
       name: 'clan',
       label:
-      <React.Fragment>
+      <>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
         </span>
         NONE
-      </React.Fragment>
+      </>
     },
   ];
 
@@ -452,12 +452,12 @@ function SearchLibraryFormClan(props) {
       value: key,
       name: 'clan',
       label:
-      <React.Fragment>
+      <>
         <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
           <img src={clanicons[key]} className='discipline-base-image-results' />
         </span>
         {key}
-      </React.Fragment>
+      </>
     });
   });
 

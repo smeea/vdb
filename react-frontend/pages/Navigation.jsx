@@ -37,32 +37,37 @@ function Navigation(props) {
 
     return(
       <Navbar bg='dark' variant='dark'>
-        <Nav className='container justify-content-end'>
-          { props.username &&
-            <>
-              <span className='nav-link px-2'>
-                <AddModeSwitch addMode={props.addMode} handleAddModeSwitch={props.handleAddModeSwitch} />
-              </span>
-              <span className='nav-link px-2'>
-                <DeckSelectDeck handleActiveDeckSelect={props.handleActiveDeckSelect} decks={props.decks} activeDeck={props.activeDeck} />
-              </span>
-            </>
+        <Nav className='container justify-content-between'>
+          {
+            props.username &&
+              <div className='d-flex'>
+                <span className='nav-link px-2'>
+                  <AddModeSwitch addMode={props.addMode} handleAddModeSwitch={props.handleAddModeSwitch} />
+                </span>
+                { props.addMode &&
+                  <span className='nav-link px-2'>
+                    <DeckSelectDeck handleActiveDeckSelect={props.handleActiveDeckSelect} decks={props.decks} activeDeck={props.activeDeck} />
+                  </span>
+                }
+              </div>
           }
-          <NavLink to='/account' className='nav-link px-2'>
-            <AccountEntry username={props.username} />
-          </NavLink>
-          <NavLink to='/about' className='nav-link px-2'>
-            About
-          </NavLink>
-          <NavLink to='/deck' className='nav-link px-2'>
-            Deck
-          </NavLink>
-          <NavLink to='/crypt' className='nav-link px-2'>
-            Crypt
-          </NavLink>
-          <NavLink to='/library' className='nav-link px-2'>
-            Library
-          </NavLink>
+          <div className='d-flex'>
+            <NavLink to='/account' className='nav-link px-2'>
+              <AccountEntry username={props.username} />
+            </NavLink>
+            <NavLink to='/about' className='nav-link px-2'>
+              About
+            </NavLink>
+            <NavLink to='/deck' className='nav-link px-2'>
+              Deck
+            </NavLink>
+            <NavLink to='/crypt' className='nav-link px-2'>
+              Crypt
+            </NavLink>
+            <NavLink to='/library' className='nav-link px-2'>
+              Library
+            </NavLink>
+          </div>
         </Nav>
       </Navbar>
     );

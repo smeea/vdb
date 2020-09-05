@@ -42,15 +42,15 @@ function ResultLibraryType(props) {
 
   if (props.total > 0) {
     return(
-      <React.Fragment>
+      <>
         {cardtype_images} {' '} {props.cardtype} [{props.total}]
-      </React.Fragment>
+      </>
     );
   } else if (props.total == 0) {
     return(
-      <React.Fragment>
+      <>
         {cardtype_images} {' '} {props.cardtype}
-      </React.Fragment>
+      </>
     );
   } else {
     return(

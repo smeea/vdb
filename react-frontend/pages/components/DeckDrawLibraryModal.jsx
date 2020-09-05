@@ -4,7 +4,7 @@ import ResultLibrary from './ResultLibrary.jsx';
 
 function DeckDrawLibraryModal(props) {
   return (
-    <React.Fragment>
+    <>
       <Modal show={props.show} onHide={props.handleClose} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>
@@ -21,7 +21,7 @@ function DeckDrawLibraryModal(props) {
           <ResultLibrary cards={props.drawedCards} sortMode={false} />
         </Modal.Body>
       </Modal>
-    </React.Fragment>
+    </>
   );
 }
 

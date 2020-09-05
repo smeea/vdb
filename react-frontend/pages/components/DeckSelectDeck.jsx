@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Form } from 'react-bootstrap';
 
 function DeckSelectDeck(props) {
   const [state, setState] = useState(props.decks);
@@ -29,12 +30,12 @@ function DeckSelectDeck(props) {
   }, [props.decks]);
 
   return (
-    <React.Fragment>
+    <>
       <select defaultValue='' className='custom-select' value={props.activeDeck} onChange={props.handleActiveDeckSelect}>
         {defaultOption}
         {decksOptions}
       </select>
-    </React.Fragment>
+    </>
   );
 };
 

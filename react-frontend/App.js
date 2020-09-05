@@ -25,8 +25,7 @@ function App(props) {
   const [activeDeck, setActiveDeck] = useState(undefined);
 
   const handleActiveDeckSelect = event => {
-    const { value } = event.target;
-    setActiveDeck(value);
+    setActiveDeck(event.target.value);
   };
 
   const getDecks = () => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DeckNewDeck from './components/DeckNewDeck.jsx';
+import DeckImportDeck from './components/DeckImportDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
 import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
@@ -8,7 +9,7 @@ function Deck(props) {
   const [sharedDecks, setSharedDecks] = useState(undefined);
 
   const getDeck = () => {
-    const url = 'http:127.0.0.1:5001/api/deck/' + props.id;
+    const url = 'http://127.0.0.1:5001/api/deck/' + props.id;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -90,6 +91,8 @@ function Deck(props) {
         <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
           <DeckNewDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
           <DeckRemoveDeck activeDeck={props.activeDeck} />
+          <br />
+          <DeckImportDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
           <br />
           {/* { sharedDecks ? */}
           {/*   <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[props.activeDeck]} /> */}

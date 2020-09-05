@@ -58,7 +58,7 @@ function ResultLibrary(props) {
   });
 
   return (
-    <React.Fragment>
+    <>
       {
         props.sortMode == true && sortedCards.length > 0 &&
           <ResultLibrarySortForm value={sortMethod} onChange={handleChange} />
@@ -66,7 +66,7 @@ function ResultLibrary(props) {
       <table className='search-library-table'>
         <SearchLibraryBody addMode={props.addMode} cardAdd={props.cardAdd} resultCards={sortedCards} />
       </table>
-    </React.Fragment>
+    </>
   );
 }
 

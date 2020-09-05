@@ -24,11 +24,11 @@ function DeckRemoveDeck(props) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <Button variant='outline-primary' onClick={removeDeck}>
         Remove
       </Button>
-    </React.Fragment>
+    </>
   );
 }
 
