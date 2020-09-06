@@ -1,5 +1,12 @@
 import csv
 import json
+import unicodedata
+
+
+def letters_to_ascii(text):
+    return ''.join(c for c in unicodedata.normalize('NFD', text)
+                   if unicodedata.category(c) != 'Mn')
+
 
 integer_fields = ['Id']
 useless_fields = ['Aka', 'Flavor Text', 'Artist', 'Draft']
@@ -21,6 +28,9 @@ with open("vteslib.csv",
                 card[k] = int(card[k])
             except (ValueError):
                 pass
+
+        # ASCII-fication of name
+        card['ASCII Name'] = letters_to_ascii(card['Name'])
 
         # Convert sets to dict
         sets = card['Set'].split(', ')

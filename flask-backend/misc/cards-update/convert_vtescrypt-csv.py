@@ -1,5 +1,12 @@
 import csv
 import json
+import unicodedata
+
+
+def letters_to_ascii(text):
+    return ''.join(c for c in unicodedata.normalize('NFD', text)
+                   if unicodedata.category(c) != 'Mn')
+
 
 disciplines = [
     'Auspex',
@@ -73,6 +80,10 @@ with open("vtescrypt.csv", "r",
             elif '-' in set:
                 set = set.split('-')
             card['Set'][set[0]] = set[1]
+
+        # ASCII-fication of name
+        card['ASCII Name'] = letters_to_ascii(card['Name'])
+        card['ASCII Text'] = letters_to_ascii(card['Card Text'])
 
         # Remove useless fields
         for k in useless_fields:

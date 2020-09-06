@@ -111,7 +111,16 @@ function App(props) {
               getDecks={getDecks}
               setAddMode={setAddMode}
             /> } />
-          {/* <Route path='/deck/:id' component={(props) => <Deck id={props.match.params.id} handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activeDeck={activeDeck} setActiveDeck={setActiveDeck} getDecks={getDecks} setAddMode={setAddMode} />} /> */}
+          <Route path='/deck/:id' component={(props) =>
+            <Deck
+              handleActiveDeckSelect={handleActiveDeckSelect}
+              decks={decks}
+              activeDeck={activeDeck}
+              setActiveDeck={setActiveDeck}
+              getDecks={getDecks}
+              setAddMode={setAddMode}
+              id={props.match.params.id}
+            /> } />
           <Route path='/crypt' exact component={() =>
             <Crypt
               addMode={addMode}
