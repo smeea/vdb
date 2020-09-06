@@ -8,7 +8,6 @@ function ResultCryptPopover(props) {
          alt={props.card['Name']} />
   );
 
-
   return (
     <>
       <Popover.Content>

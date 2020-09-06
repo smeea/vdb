@@ -4,13 +4,17 @@ import DeckImportDeck from './components/DeckImportDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
 import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
+import { useParams } from 'react-router';
 
 function Deck(props) {
+  // FIX SHARED LINK
+  const { id } = useParams();
+  console.log('id is: ', id);
+
   const [sharedDecks, setSharedDecks] = useState(undefined);
 
   const getDeck = () => {
-    const url = process.env. API_URL + 'deck/' + props.id;
-
+    const url = process.env.API_URL + 'deck/' + props.id;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -30,7 +34,7 @@ function Deck(props) {
   };
 
   const deckCardChange = (deckid, cardid, count) => {
-    const url = process.env. API_URL + 'deck/' + deckid;
+    const url = process.env.API_URL + 'deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -46,7 +50,7 @@ function Deck(props) {
   };
 
   const deckCardAdd = (deckid, cardid) => {
-    const url = process.env. API_URL + 'deck/' + deckid;
+    const url = process.env.API_URL + 'deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -62,7 +66,7 @@ function Deck(props) {
   };
 
   const deckUpdate = (deckid, field, value) => {
-    const url = process.env. API_URL + 'deck/' + deckid;
+    const url = process.env.API_URL + 'deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -83,6 +87,10 @@ function Deck(props) {
     }
   }, [props.id]);
 
+  useEffect(() => {
+    props.setAddMode(true);
+  }, []);
+
   return (
     <div className='container px-0 py-xl-3 px-xl-2'>
       <div className='row mx-0'>
@@ -96,7 +104,7 @@ function Deck(props) {
           <DeckImportDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
           <br />
           {/* { sharedDecks ? */}
-          {/*   <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[props.activeDeck]} /> */}
+            {/* <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[props.activeDeck]} /> */}
           {/*   : */}
           {/*   <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} /> */}
           {/* } */}

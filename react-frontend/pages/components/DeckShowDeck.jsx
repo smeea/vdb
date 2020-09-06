@@ -1,4 +1,5 @@
 import React from 'react';
+
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import DeckDraw from './DeckDraw.jsx';
@@ -15,6 +16,10 @@ function DeckShowDeck(props) {
         <DeckNameDeck name={props.deck.name} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} />
         <br />
         <b>Description: </b>
+        <br />
+        <b>URL: </b>
+        <a href={ process.env.ROOT_URL + 'deck/'+ props.deck.deckid }>LINK</a>
+        <br />
         <DeckDescriptionDeck description={props.deck.description} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} />
         <br />
         <DeckNewCryptName deckCardAdd={props.deckCardAdd} deckid={props.deck.deckid} />

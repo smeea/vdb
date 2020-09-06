@@ -15,7 +15,6 @@
 * Normalize card names for image url
 * Fix redraw on activeDeck / addMode change
 * DeckNewLibraryName fix multi-disciplines
-* Deployment
 # MAJOR FIX
 # MINOR FIX
 * Fix uncontrolled input bug in clear button

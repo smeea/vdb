@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ResultLibrary from './components/ResultLibrary.jsx';
-import SearchLibraryForm from './components/SearchLibraryForms.jsx';
+import SearchLibraryForm from './components/SearchLibraryForm.jsx';
 import DeckPreview from './components/DeckPreview.jsx';
 
 function Library(props) {

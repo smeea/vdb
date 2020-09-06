@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
+
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 
 function ResultLibraryName(props) {
-
   const CardPopover = React.forwardRef(
     ({ children, ...props }, ref) => {
       return (

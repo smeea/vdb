@@ -1,5 +1,6 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
+
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 
 function ResultCryptName(props) {

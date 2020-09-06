@@ -1,10 +1,9 @@
 import React from 'react';
 
-import burn from './../../assets/images/misc/burn.gif';
-
 function ResultLibraryBurn(props) {
   const imgClass='burn-image-results';
-  const imgSrc=burn;
+  const imgSrc=process.env.ROOT_URL + 'images/misc/burn.gif';
+
   if (props.value) {
     return (
       <td className='burn'>

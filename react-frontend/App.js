@@ -29,7 +29,7 @@ function App(props) {
   };
 
   const getDecks = () => {
-    const url = process.env. API_URL + 'decks';
+    const url = process.env.API_URL + 'decks';
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -50,7 +50,7 @@ function App(props) {
   };
 
   const cardAdd = (cardid) => {
-    const url = process.env. API_URL + 'deck/' + activeDeck;
+    const url = process.env.API_URL + 'deck/' + activeDeck;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -68,7 +68,7 @@ function App(props) {
   const [username, setUsername] = useState(undefined);
 
   const whoAmI= () => {
-    const url = process.env. API_URL + 'login';
+    const url = process.env.API_URL + 'login';
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -83,15 +83,49 @@ function App(props) {
   return (
     <div className='App'>
       <Router>
-        <Navigation username={username} whoAmI={whoAmI} getDecks={getDecks} addMode={addMode} handleAddModeSwitch={handleAddModeSwitch} handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activeDeck={activeDeck} />
+        <Navigation
+          username={username}
+          whoAmI={whoAmI}
+          getDecks={getDecks}
+          addMode={addMode}
+          handleAddModeSwitch={handleAddModeSwitch}
+          handleActiveDeckSelect={handleActiveDeckSelect}
+          decks={decks}
+          activeDeck={activeDeck}
+        />
         <Switch>
           <Route path='/' exact component={() => <About />} />
-          <Route path='/account' exact component={() => <Account username={username} updateUsername={setUsername} whoAmI={whoAmI} />} />
           <Route path='/about' exact component={() => <About />} />
-          <Route path='/deck' exact component={() => <Deck handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activeDeck={activeDeck} setActiveDeck={setActiveDeck} getDecks={getDecks}/>} />
-          <Route path='/deck/:id' component={(props) => <Deck id={props.match.params.id} />} />
-          <Route path='/crypt' exact component={() => <Crypt addMode={addMode} cardAdd={cardAdd} getDecks={getDecks} deck={decks[activeDeck]} />} />
-          <Route path='/library' exact component={() => <Library addMode={addMode} cardAdd={cardAdd} getDecks={getDecks} deck={decks[activeDeck]} />} />
+          <Route path='/account' exact component={() =>
+            <Account
+              username={username}
+              updateUsername={setUsername}
+              whoAmI={whoAmI}
+            /> } />
+          <Route path='/deck' exact component={() =>
+            <Deck
+              handleActiveDeckSelect={handleActiveDeckSelect}
+              decks={decks}
+              activeDeck={activeDeck}
+              setActiveDeck={setActiveDeck}
+              getDecks={getDecks}
+              setAddMode={setAddMode}
+            /> } />
+          {/* <Route path='/deck/:id' component={(props) => <Deck id={props.match.params.id} handleActiveDeckSelect={handleActiveDeckSelect} decks={decks} activeDeck={activeDeck} setActiveDeck={setActiveDeck} getDecks={getDecks} setAddMode={setAddMode} />} /> */}
+          <Route path='/crypt' exact component={() =>
+            <Crypt
+              addMode={addMode}
+              cardAdd={cardAdd}
+              getDecks={getDecks}
+              deck={decks[activeDeck]}
+            /> } />
+          <Route path='/library' exact component={() =>
+            <Library
+              addMode={addMode}
+              cardAdd={cardAdd}
+              getDecks={getDecks}
+              deck={decks[activeDeck]}
+            /> } />
         </Switch>
       </Router>
     </div>

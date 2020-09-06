@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+
 import DeckPreviewCrypt from './DeckPreviewCrypt.jsx';
 import DeckPreviewLibrary from './DeckPreviewLibrary.jsx';
 
 function DeckPreview(props) {
   const deckCardChange = (deckid, cardid, count) => {
-    const url = process.env. API_URL + 'deck/' + deckid;
+    const url = process.env.API_URL + 'deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',

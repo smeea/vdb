@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+
 import ResultCrypt from './ResultCrypt.jsx';
 
 function DeckDrawCryptModal(props) {

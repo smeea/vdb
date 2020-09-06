@@ -19,7 +19,7 @@ function AccountLogin(props) {
   const logoutUser = () => {
     console.log('submit logout button');
 
-    const url = process.env. API_URL + 'logout';
+    const url = process.env.API_URL + 'logout';
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -30,7 +30,7 @@ function AccountLogin(props) {
   };
 
   const loginUser = () => {
-    const url = process.env. API_URL + 'login';
+    const url = process.env.API_URL + 'login';
     let input = {
       username: state.username,
       password: state.password,

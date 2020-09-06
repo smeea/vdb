@@ -17,7 +17,7 @@ function AccountRegister(props){
   };
 
   const registerUser = () => {
-    const url = process.env. API_URL + 'register';
+    const url = process.env.API_URL + 'register';
     let input = {
       username: state.username,
       email: state.email,

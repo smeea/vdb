@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
-import ishtarri from './../../assets/images/clans/ishtarri.gif';
 
 function DeckNewCryptName(props) {
   const [inputValue, setValue] = useState('');
@@ -29,7 +28,7 @@ function DeckNewCryptName(props) {
   };
 
   const loadOptions = (inputValue) => {
-    const url = process.env. API_URL + 'search/crypt';
+    const url = process.env.API_URL + 'search/crypt';
     const input = {name: inputValue};
     const options = {
       method: 'POST',
