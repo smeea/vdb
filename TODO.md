@@ -2,6 +2,7 @@
 * Beautify card text popover
 * Deck link in url-bar
 # MINOR FEATURE
+* Sets to popover
 * Copy ('fork') deck
 * Trifle icon
 * Good button icons - https://primer.style/octicons/
