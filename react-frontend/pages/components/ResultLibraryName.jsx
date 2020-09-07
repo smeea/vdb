@@ -15,7 +15,7 @@ function ResultLibraryName(props) {
   );
 
   return (
-    <td className='name'>
+    <span className='name'>
       <OverlayTrigger
         placement='right'
         overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
@@ -24,7 +24,7 @@ function ResultLibraryName(props) {
           {props.value} {props.ban && ' [BANNED]'}
         </span>
       </OverlayTrigger>
-    </td>
+    </span>
   );
 }
 

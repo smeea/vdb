@@ -64,7 +64,7 @@ function ResultCryptDisciplines(props) {
   }
 
   return (
-    <td className='disciplines'>
+    <span className='disciplines'>
       <table width='100%'>
         <tbody>
           <tr>
@@ -73,7 +73,7 @@ function ResultCryptDisciplines(props) {
           </tr>
         </tbody>
       </table>
-    </td>
+    </span>
   );
 }
 

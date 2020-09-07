@@ -7,6 +7,7 @@ import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
+import ResultLibraryTotal from './ResultLibraryTotal.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
 import ResultAddCard from './ResultAddCard.jsx';
 
@@ -29,12 +30,24 @@ function SearchLibraryBody(props) {
           { props.addMode &&
             <ResultAddCard cardAdd={props.cardAdd} cardid={card['Id']}/>
           }
-          <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
-          <ResultLibraryType cardtype={card['Type']} />
-          <ResultLibraryDisciplines value={card['Discipline']} />
-          <ResultLibraryName showImage={showImage} toggleImage={toggleImage} id={card['Id']} value={card['Name']} ban={card['Banned']} cardAdd={props.cardAdd} card={card} />
-          <ResultLibraryClan value={card['Clan']} />
-          <ResultLibraryBurn value={card['Burn Option']} />
+          <td className='cost'>
+            <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
+          </td>
+          <td className='type'>
+            <ResultLibraryType cardtype={card['Type']} />
+          </td>
+          <td className='disciplines'>
+            <ResultLibraryDisciplines value={card['Discipline']} />
+          </td>
+          <td className='name'>
+            <ResultLibraryName showImage={showImage} toggleImage={toggleImage} id={card['Id']} value={card['Name']} ban={card['Banned']} cardAdd={props.cardAdd} card={card} />
+          </td>
+          <td className='clan'>
+            <ResultLibraryClan value={card['Clan']} />
+          </td>
+          <td className='burn'>
+            <ResultLibraryBurn value={card['Burn Option']} />
+          </td>
         </tr>
       </React.Fragment>
     );
@@ -59,9 +72,11 @@ function ResultLibrary(props) {
 
   return (
     <>
-      {
-        props.sortMode == true && sortedCards.length > 0 &&
-          <ResultLibrarySortForm value={sortMethod} onChange={handleChange} />
+      { props.cards.length > 0 &&
+        <ResultLibraryTotal cards={props.cards} />
+      }
+      { props.sortMode == true && sortedCards.length > 0 &&
+        <ResultLibrarySortForm value={sortMethod} onChange={handleChange} />
       }
       <table className='search-library-table'>
         <SearchLibraryBody addMode={props.addMode} cardAdd={props.cardAdd} resultCards={sortedCards} />

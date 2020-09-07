@@ -24,9 +24,9 @@ function ResultLibraryType(props) {
     );
   } else {
     return(
-      <td className='type'>
+      <span className='type'>
         {cardtype_images}
-      </td>
+      </span>
     );
   }
 }

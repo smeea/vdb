@@ -9,15 +9,13 @@ function ResultLibraryPopover(props) {
   );
 
   return (
-    <>
-      <Popover.Content>
-        { props.showImage ?
-          props.card['Card Text']
-          :
-          cardImage
-        }
-      </Popover.Content>
-    </>
+    <Popover.Content>
+      { props.showImage ?
+        props.card['Card Text']
+        :
+        cardImage
+      }
+    </Popover.Content>
   );
 }
 

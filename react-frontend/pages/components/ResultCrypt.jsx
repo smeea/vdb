@@ -7,6 +7,7 @@ import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptSortForm from './ResultCryptSortForm.jsx';
+import ResultCryptTotal from './ResultCryptTotal.jsx';
 import resultCryptSort from './resultCryptSort.js';
 import ResultAddCard from './ResultAddCard.jsx';
 
@@ -30,11 +31,21 @@ function SearchCryptBody(props) {
             { props.addMode &&
               <ResultAddCard cardAdd={props.cardAdd} cardid={card['Id']}/>
             }
-            <ResultCryptCapacity value={card['Capacity']} />
-            <ResultCryptDisciplines value={card['Disciplines']} />
-            <ResultCryptName showImage={showImage} toggleImage={toggleImage} id={card['Id']} value={card['Name']} adv={card['Adv']} ban={card['Banned']} addMode={props.addMode} card={card} />
-            <ResultCryptClan value={card['Clan']} />
-            <ResultCryptGroup value={card['Group']} />
+            <td className='capacity'>
+              <ResultCryptCapacity value={card['Capacity']} />
+            </td>
+            <td className='disciplines'>
+              <ResultCryptDisciplines value={card['Disciplines']} />
+            </td>
+            <td className='name'>
+              <ResultCryptName showImage={showImage} toggleImage={toggleImage} id={card['Id']} value={card['Name']} adv={card['Adv']} ban={card['Banned']} addMode={props.addMode} card={card} />
+            </td>
+            <td className='clan'>
+              <ResultCryptClan value={card['Clan']} />
+            </td>
+            <td className='group'>
+              <ResultCryptGroup value={card['Group']} />
+            </td>
           </tr>
         </React.Fragment>
       );
@@ -62,9 +73,11 @@ function ResultCrypt(props) {
 
   return (
     <>
-      {
-        props.sortMode == true && sortedCards.length > 0 &&
-          <ResultCryptSortForm value={sortMethod} onChange={handleChange} />
+      { props.cards.length > 0 &&
+        <ResultCryptTotal cards={props.cards} />
+      }
+      { props.sortMode == true && sortedCards.length > 0 &&
+        <ResultCryptSortForm value={sortMethod} onChange={handleChange} />
       }
       <table className='search-crypt-table'>
         <SearchCryptBody addMode={props.addMode} cardAdd={props.cardAdd} resultCards={sortedCards} />

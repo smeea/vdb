@@ -34,9 +34,9 @@ function ResultLibraryClan(props) {
   }
 
   return (
-    <td className='clan'>
+    <span className='clan'>
       {clan_images}
-    </td>
+    </span>
   );
 }
 

@@ -5,9 +5,9 @@ function ResultCryptClan(props) {
   const imgSrc=process.env.ROOT_URL + 'images/clans/' + props.value.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
 
   return (
-    <td className='clan'>
+    <span className='clan'>
       <img className={imgClass} src={imgSrc} />
-    </td>
+    </span>
   );
 }
 

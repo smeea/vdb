@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
 
+import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
+import ResultLibraryType from './ResultLibraryType.jsx';
+
 function DeckNewLibraryName(props) {
   const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
@@ -59,20 +62,14 @@ function DeckNewLibraryName(props) {
             <>
               <div className='d-flex justify-content-between'>
                 <div>
-                  <img className='type-image-results'
-                       src={'/images/types/' + card['Type'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
-                  />
+                  <ResultLibraryType cardtype={card['Type']}/>
                   <span className='pl-1'>
                     { card['Name'] + (card['Banned'] ? ' [BANNED]' : '') }
                   </span>
                 </div>
                 <div>
                   { card['Discipline'] &&
-                    <span className='pl-2'>
-                      <img className='discipline-image-results'
-                           src={'/images/disciplines/' + card['Discipline'].toLowerCase() + '.gif'}
-                      />
-                    </span>
+                    <ResultLibraryDisciplines value={card['Discipline']}/>
                   }
                   { card['Blood Cost'] &&
                     <span className='pl-2'>

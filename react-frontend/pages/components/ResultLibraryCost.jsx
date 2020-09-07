@@ -10,9 +10,9 @@ function ResultLibraryCost(props) {
   }
 
   return (
-    <td className='cost'>
+    <span className='cost'>
       <img className={imgClass} src={imgSrc} />
-    </td>
+    </span>
   );
 }
 

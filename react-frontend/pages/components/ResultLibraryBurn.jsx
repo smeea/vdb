@@ -6,12 +6,12 @@ function ResultLibraryBurn(props) {
 
   if (props.value) {
     return (
-      <td className='burn'>
+      <span className='burn'>
         <img className={imgClass} src={imgSrc} />
-      </td>
+      </span>
     );
   } else {
-    return <td className='burn'></td>;
+    return <span className='burn'></span>;
   }
 }
 

@@ -2,12 +2,12 @@ import React from 'react';
 
 function ResultCryptGroup(props) {
   return (
-    <td className='group'>
+    <span className='group'>
       <b>
         <font color='a0a0a0'>G</font>
         {props.value}
       </b>
-    </td>
+    </span>
   );
 }
 

@@ -51,9 +51,9 @@ function ResultLibraryDisciplines(props) {
   }
 
   return (
-    <td className='disciplines'>
+    <span className='disciplines'>
       {disciplines_images}
-    </td>
+    </span>
   );
 }
 

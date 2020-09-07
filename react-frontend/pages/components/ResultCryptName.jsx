@@ -16,7 +16,7 @@ function ResultCryptName(props) {
   );
 
   return (
-    <td className='name'>
+    <span className='name'>
       <OverlayTrigger
         placement='right'
         overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
@@ -25,7 +25,7 @@ function ResultCryptName(props) {
           {props.value} {props.adv && ' [ADV]'} {props.ban && ' [BANNED]'}
         </span>
       </OverlayTrigger>
-    </td>
+    </span>
   );
 }
 
