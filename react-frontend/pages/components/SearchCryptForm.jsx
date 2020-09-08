@@ -295,7 +295,7 @@ function SearchCryptForm(props) {
 
   return (
     <form onSubmit={handleSubmitButton}>
-      <div className='form-row justify-content-between'>
+      <div className="input-group">
         <SearchCryptFormText value={state.text} onChange={handleChange} />
         <SearchCryptFormButtons handleClearFormButton={handleClearFormButton} handleClearResultButton={handleClearResultButton} />
       </div>

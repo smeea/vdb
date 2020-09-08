@@ -45,21 +45,25 @@ function DeckNewDeck(props) {
   };
 
   return (
-    <>
-      <input
-        placeholder='New Deck Name'
-        type='text'
-        id='deckName'
-        value={deckName}
-        onChange={handleChange}/>
-
-      <Button variant='outline-primary' onClick={createNewDeck}>
+    <div className="input-group mb-3">
+      <div className="input-group-prepend">
+        <span className="input-group-text">New Deck Name</span>
+      </div>
+      <input type="text"
+             className="form-control"
+             placeholder='Deck Name'
+             type='text'
+             id='deckName'
+             value={deckName}
+             onChange={handleChange}
+      />
+      <Button variant='outline-secondary' onClick={createNewDeck}>
         Create
       </Button>
-      <Button variant='outline-primary' onClick={clearFormButton}>
+      <Button variant='outline-secondary' onClick={clearFormButton}>
         Clear
       </Button>
-    </>
+    </div>
   );
 }
 

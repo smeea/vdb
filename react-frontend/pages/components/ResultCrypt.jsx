@@ -14,9 +14,6 @@ import ResultAddCard from './ResultAddCard.jsx';
 function SearchCryptBody(props) {
   let resultTrClass='crypt-result-even';
 
-  const [showImage, setShowImage] = useState(false);
-  const toggleImage = () => setShowImage(!showImage);
-
   if (props.resultCards) {
     const cards = props.resultCards.map((card, index) => {
       if (resultTrClass == 'crypt-result-even') {
@@ -38,7 +35,7 @@ function SearchCryptBody(props) {
               <ResultCryptDisciplines value={card['Disciplines']} />
             </td>
             <td className='name'>
-              <ResultCryptName showImage={showImage} toggleImage={toggleImage} id={card['Id']} value={card['Name']} adv={card['Adv']} ban={card['Banned']} addMode={props.addMode} card={card} />
+              <ResultCryptName showImage={props.showImage} toggleImage={props.toggleImage} id={card['Id']} value={card['Name']} adv={card['Adv']} ban={card['Banned']} addMode={props.addMode} card={card} />
             </td>
             <td className='clan'>
               <ResultCryptClan value={card['Clan']} />
@@ -80,7 +77,7 @@ function ResultCrypt(props) {
         <ResultCryptSortForm value={sortMethod} onChange={handleChange} />
       }
       <table className='search-crypt-table'>
-        <SearchCryptBody addMode={props.addMode} cardAdd={props.cardAdd} resultCards={sortedCards} />
+        <SearchCryptBody showImage={props.showImage} toggleImage={props.toggleImage} addMode={props.addMode} cardAdd={props.cardAdd} resultCards={sortedCards} />
       </table>
     </>
   );

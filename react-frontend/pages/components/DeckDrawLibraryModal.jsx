@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { ArrowClockwise, Plus } from 'react-bootstrap-icons';
 
 import ResultLibrary from './ResultLibrary.jsx';
 
@@ -11,10 +12,10 @@ function DeckDrawLibraryModal(props) {
           <Modal.Title>
             Library Draw
             <Button variant='outline-primary' onClick={props.handleReDraw}>
-              Draw
+              <ArrowClockwise size={20} />
             </Button>
             <Button variant="outline-primary" onClick={props.handleDrawOne}>
-              +1
+              <Plus size={20} />
             </Button>
           </Modal.Title>
         </Modal.Header>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
@@ -27,23 +27,25 @@ function DeckCryptSideBody(props) {
       resultTrClass = 'crypt-result-odd';
     }
 
-    const sets = Object.keys(card.c['Set']).map((k, index) => {
-      return(
-        <div className='sets' key={index}>
-          {k}: {card.c['Set'][k]}
-        </div>
-      );
-    });
-
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultCryptCapacity value={card.c['Capacity']} />
-          <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
-          <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c} />
-          <ResultCryptClan value={card.c['Clan']} />
-          <ResultCryptGroup value={card.c['Group']} />
+          <td className='capacity'>
+            <ResultCryptCapacity value={card.c['Capacity']} />
+          </td>
+          <td className='disciplines'>
+            <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
+          </td>
+          <td className='name'>
+            <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c} />
+          </td>
+          <td className='clan'>
+            <ResultCryptClan value={card.c['Clan']} />
+          </td>
+          <td className='group'>
+            <ResultCryptGroup value={card.c['Group']} />
+          </td>
         </tr>
       </React.Fragment>
     );
@@ -74,11 +76,21 @@ function DeckCryptBody(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultCryptCapacity value={card.c['Capacity']} />
-          <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
-          <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c}/>
-          <ResultCryptClan value={card.c['Clan']} />
-          <ResultCryptGroup value={card.c['Group']} />
+          <td className='capacity'>
+            <ResultCryptCapacity value={card.c['Capacity']} />
+          </td>
+          <td className='disciplines'>
+            <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
+          </td>
+          <td className='name'>
+            <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c}/>
+          </td>
+          <td className='clan'>
+            <ResultCryptClan value={card.c['Clan']} />
+          </td>
+          <td className='group'>
+            <ResultCryptGroup value={card.c['Group']} />
+          </td>
         </tr>
       </React.Fragment>
     );

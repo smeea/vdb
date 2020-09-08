@@ -11,17 +11,17 @@ function Library(props) {
   };
 
   return (
-    <div className='container main-container py-xl-3 px-0 px-xl-2'>
+    <div className='container py-xl-3 px-0 px-xl-2'>
       <div className='row mx-0'>
-        <div className='col-md-12 col-lg-3 col-xl-3 left-col px-1 px-xl-2'>
-          {props.addMode == true &&
-           <DeckPreview addMode={props.addMode} deckid={props.deckid} deck={props.deck} getDecks={props.getDecks} />
+        <div className='col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2'>
+          { props.addMode == true &&
+            <DeckPreview addMode={props.addMode} deckid={props.deckid} deck={props.deck} getDecks={props.getDecks} />
           }
         </div>
-        <div className='col-md-12 col-lg-6 col-xl-6 center-col px-1 px-xl-2'>
+        <div className='col-md-12 col-lg-6 col-xl-6 px-1 px-xl-2'>
           <ResultLibrary sortMode={true} addMode={props.addMode} cardAdd={props.cardAdd} cards={cards}/>
         </div>
-        <div className='col-md-12 col-lg-3 col-xl-3 right-col px-1 px-xl-2'>
+        <div className='col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2'>
           <SearchLibraryForm setResults={setResults} />
         </div>
       </div>

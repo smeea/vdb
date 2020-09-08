@@ -52,7 +52,10 @@ function DeckNewLibraryName(props) {
   };
 
   return (
-    <div className='d-flex'>
+    <div className="input-group mb-3">
+      <div className="input-group-prepend">
+        <span className="input-group-text" id="basic-addon1">Add Library</span>
+      </div>
       <div className='flex-grow-1'>
         <AsyncSelect
           cacheOptions
@@ -101,10 +104,10 @@ function DeckNewLibraryName(props) {
           onChange={handleChange}
         />
       </div>
-      <Button variant='outline-primary' onClick={addNewCard}>
+      <Button variant='outline-secondary' onClick={addNewCard}>
         Add
       </Button>
-      <Button variant='outline-primary' onClick={clearFormButton}>
+      <Button variant='outline-secondary' onClick={clearFormButton}>
         Clear
       </Button>
     </div>

@@ -25,7 +25,7 @@ function DeckRemoveDeck(props) {
 
   return (
     <>
-      <Button variant='outline-primary' onClick={removeDeck}>
+      <Button variant='outline-secondary' onClick={removeDeck}>
         Remove
       </Button>
     </>

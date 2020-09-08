@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
+import DeckRemoveDeck from './DeckRemoveDeck.jsx';
+
 function DeckNameDeck(props) {
   const [state, setState] = useState(props.name);
 
   const handleChange = event => {
     setState(event.target.value);
-  };
-
-  const clearFormButton = () => {
-    setState('');
   };
 
   const deckNameButton = () => {
@@ -25,15 +23,23 @@ function DeckNameDeck(props) {
   }, [props.name]);
 
   return (
-    <>
-      <textarea value={state} onChange={handleChange} />
-      <Button variant='outline-primary' onClick={deckNameButton}>
-        Update
+    <div className="input-group mb-3">
+      <div className="input-group-prepend">
+        <span className="input-group-text">
+          Deck Name
+        </span>
+      </div>
+      <input type="text"
+             className="form-control"
+             placeholder="Deck Name"
+             value={state}
+             onChange={handleChange}
+      />
+      <Button variant='outline-secondary' onClick={deckNameButton}>
+        Rename
       </Button>
-      <Button variant='outline-primary' onClick={clearFormButton}>
-        Clear
-      </Button>
-    </>
+      <DeckRemoveDeck activeDeck={props.activeDeck} />
+    </div>
   );
 }
 

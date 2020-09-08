@@ -149,7 +149,7 @@ function SearchLibraryForm(props) {
 
   return (
     <form onSubmit={handleSubmitButton}>
-      <div className='form-row justify-content-between'>
+      <div className="input-group mb-3">
         <SearchLibraryFormText value={state.text} onChange={handleChange} />
         <SearchLibraryFormButtons handleClearFormButton={handleClearFormButton} handleClearResultButton={handleClearResultButton} />
       </div>

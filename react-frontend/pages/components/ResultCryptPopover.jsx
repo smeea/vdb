@@ -8,10 +8,23 @@ function ResultCryptPopover(props) {
          alt={props.card['Name']} />
   );
 
+  const sets = Object.keys(props.card['Set']).map((k, index) => {
+    return(
+      <span className='ml-1' key={index}>
+        {k}
+      </span>
+    );
+  });
+
   return (
     <Popover.Content>
       { props.showImage ?
-        props.card['Card Text']
+        <>
+          {props.card['Card Text']}
+        <div className='popover-sets'>
+          {sets}
+        </div>
+        </>
         :
         cardImage
       }

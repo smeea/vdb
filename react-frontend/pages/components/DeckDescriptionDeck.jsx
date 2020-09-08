@@ -25,15 +25,23 @@ function DeckDescriptionDeck(props) {
   }, [props.description]);
 
   return (
-    <>
-      <textarea value={state} onChange={handleChange} />
-      <Button variant='outline-primary' onClick={deckDescriptionButton}>
+    <div className="input-group">
+      <div className="input-group-prepend">
+        <span className="input-group-text">
+          Description
+        </span>
+      </div>
+      <textarea className="form-control"
+                value={state}
+                onChange={handleChange}
+      />
+      <Button variant='outline-secondary' onClick={deckDescriptionButton}>
         Update
       </Button>
-      <Button variant='outline-primary' onClick={clearFormButton}>
+      <Button variant='outline-secondary' onClick={clearFormButton}>
         Clear
       </Button>
-    </>
+    </div>
   );
 }
 

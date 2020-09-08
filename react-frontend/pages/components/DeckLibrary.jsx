@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
@@ -37,10 +37,18 @@ function DeckLibraryBody(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           <DeckCardQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultLibraryName id={card[0]['Id']} value={card[0]['Name']} ban={card[0]['Banned']} card={card[0]}/>
-          <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
-          {ResultLibraryDisciplineOrClan}
-          <ResultLibraryBurn value={card[0]['Burn Option']} />
+          <td className='name'>
+            <ResultLibraryName id={card[0]['Id']} value={card[0]['Name']} ban={card[0]['Banned']} card={card[0]}/>
+          </td>
+          <td className='cost'>
+            <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
+          </td>
+          <td className='discipline'>
+            {ResultLibraryDisciplineOrClan}
+          </td>
+          <td className='burn'>
+            <ResultLibraryBurn value={card[0]['Burn Option']} />
+          </td>
         </tr>
       </React.Fragment>
     );

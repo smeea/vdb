@@ -124,10 +124,10 @@ function DeckDraw(props) {
 
   return(
     <>
-      <Button variant='outline-primary' onClick={handleOpenDrawCrypt}>
+      <Button variant='outline-secondary' onClick={handleOpenDrawCrypt}>
         Draw Crypt
       </Button>
-      <Button variant='outline-primary' onClick={handleOpenDrawLibrary}>
+      <Button variant='outline-secondary' onClick={handleOpenDrawLibrary}>
         Draw Library
       </Button>
       <br />

@@ -12,19 +12,14 @@ function DeckShowDeck(props) {
   if (props.deck !== undefined) {
     return (
       <>
-        <b>Deck Name:</b>
-        <DeckNameDeck name={props.deck.name} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} />
-        <br />
-        <b>Description: </b>
-        <br />
         <b>URL: </b>
         <a href={ process.env.ROOT_URL + 'deck/'+ props.deck.deckid }>LINK</a>
         <br />
+        <DeckNameDeck name={props.deck.name} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} activeDeck={props.activeDeck} />
         <DeckDescriptionDeck description={props.deck.description} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} />
         <br />
         <DeckNewCryptName deckCardAdd={props.deckCardAdd} deckid={props.deck.deckid} />
         <DeckNewLibraryName deckCardAdd={props.deckCardAdd} deckid={props.deck.deckid} />
-        <br />
         <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />
         <DeckCrypt deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.crypt} />
         <br />

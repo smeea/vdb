@@ -73,10 +73,10 @@ function AccountLogin(props) {
           value={state.password}
           onChange={handleChange}
         />
-        <Button variant='outline-primary' onClick={loginUser}>
+        <Button variant='outline-secondary' onClick={loginUser}>
           Login
         </Button>
-        <Button variant='outline-primary' onClick={logoutUser}>
+        <Button variant='outline-secondary' onClick={logoutUser}>
           Logout
         </Button>
       </form>

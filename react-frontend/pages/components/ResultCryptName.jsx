@@ -4,7 +4,6 @@ import { OverlayTrigger, Popover } from 'react-bootstrap';
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 
 function ResultCryptName(props) {
-
   const CardPopover = React.forwardRef(
     ({ children, ...props }, ref) => {
       return (

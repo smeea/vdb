@@ -50,16 +50,25 @@ function DeckImportDeck(props) {
   };
 
   return (
-    <>
-      <textarea value={deckText} onChange={handleChange} />
-
-      <Button variant='outline-primary' onClick={createImportDeck}>
+    <div className="input-group">
+      <div className="input-group-prepend">
+        <span className="input-group-text">
+          Import Deck
+          <br />
+          TWD / LackeyCCG
+        </span>
+      </div>
+      <textarea className="form-control"
+                value={deckText}
+                onChange={handleChange}
+      />
+      <Button variant='outline-secondary' onClick={createImportDeck}>
         Import
       </Button>
-      <Button variant='outline-primary' onClick={clearFormButton}>
+      <Button variant='outline-secondary' onClick={clearFormButton}>
         Clear
       </Button>
-    </>
+    </div>
   );
 }
 

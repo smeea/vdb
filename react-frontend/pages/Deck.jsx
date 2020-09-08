@@ -3,7 +3,6 @@ import DeckNewDeck from './components/DeckNewDeck.jsx';
 import DeckImportDeck from './components/DeckImportDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
-import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 import { useParams } from 'react-router';
 
 function Deck(props) {
@@ -96,19 +95,15 @@ function Deck(props) {
       <div className='row mx-0'>
         <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>
         </div>
-
         <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
           <DeckNewDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
-          <DeckRemoveDeck activeDeck={props.activeDeck} />
-          <br />
           <DeckImportDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
-          <br />
           {/* { sharedDecks ? */}
             {/* <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[props.activeDeck]} /> */}
           {/*   : */}
           {/*   <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} /> */}
           {/* } */}
-          <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} />
+          <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} activeDeck={props.activeDeck} />
         </div>
 
         <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>

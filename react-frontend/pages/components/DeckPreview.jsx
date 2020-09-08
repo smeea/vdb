@@ -23,8 +23,8 @@ function DeckPreview(props) {
   if (props.deck !== undefined) {
     return (
       <>
-        <DeckPreviewCrypt deckCardChange={deckCardChange} deckid={props.deck.deckid} cards={props.deck.crypt} />
-        <DeckPreviewLibrary deckCardChange={deckCardChange} deckid={props.deck.deckid} cards={props.deck.library} />
+        <DeckPreviewCrypt showImage={props.showImage} toggleImage={props.toggleImage} deckCardChange={deckCardChange} deckid={props.deck.deckid} cards={props.deck.crypt} />
+        <DeckPreviewLibrary showImage={props.showImage} toggleImage={props.toggleImage} deckCardChange={deckCardChange} deckid={props.deck.deckid} cards={props.deck.library} />
       </>
     );
   } else {
