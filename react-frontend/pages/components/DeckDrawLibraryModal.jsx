@@ -11,10 +11,10 @@ function DeckDrawLibraryModal(props) {
         <Modal.Header closeButton>
           <Modal.Title>
             Library Draw
-            <Button variant='outline-primary' onClick={props.handleReDraw}>
+            <Button variant='outline-secondary' onClick={props.handleReDraw}>
               <ArrowClockwise size={20} />
             </Button>
-            <Button variant="outline-primary" onClick={props.handleDrawOne}>
+            <Button variant="outline-secondary" onClick={props.handleDrawOne}>
               <Plus size={20} />
             </Button>
           </Modal.Title>

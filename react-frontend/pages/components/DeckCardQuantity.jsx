@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Plus, Dash } from 'react-bootstrap-icons';
 
 function DeckCardQuantity(props) {
   let q;
@@ -13,12 +14,12 @@ function DeckCardQuantity(props) {
     <td className='quantity'>
       <div className='d-flex align-items-center justify-content-between'>
 
-        <Button variant='outline-primary' onClick={e => props.deckCardChange(props.deckid, props.cardid, q + 1)}>
-          +
+        <Button variant='outline-secondary' onClick={e => props.deckCardChange(props.deckid, props.cardid, q + 1)}>
+          <Plus size={16} />
         </Button>
         {q}
-        <Button variant='outline-primary' onClick={e => props.deckCardChange(props.deckid, props.cardid, q - 1)}>
-          -
+        <Button variant='outline-secondary' onClick={e => props.deckCardChange(props.deckid, props.cardid, q - 1)}>
+          <Dash size={16} />
         </Button>
       </div>
     </td>

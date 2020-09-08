@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Button, Accordion, Card } from 'react-bootstrap';
+import { useParams } from 'react-router';
+
 import DeckNewDeck from './components/DeckNewDeck.jsx';
 import DeckImportDeck from './components/DeckImportDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
-import { useParams } from 'react-router';
 
 function Deck(props) {
   // FIX SHARED LINK
@@ -96,8 +98,19 @@ function Deck(props) {
         <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>
         </div>
         <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
-          <DeckNewDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
-          <DeckImportDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
+          <Accordion>
+            <Card>
+              <Accordion.Toggle as={Card.Header} eventKey="0">
+                Create New Deck
+              </Accordion.Toggle>
+              <Accordion.Collapse eventKey="0">
+                <Card.Body>
+                  <DeckNewDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
+                  <DeckImportDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
+                </Card.Body>
+              </Accordion.Collapse>
+            </Card>
+          </Accordion>
           {/* { sharedDecks ? */}
             {/* <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[props.activeDeck]} /> */}
           {/*   : */}
