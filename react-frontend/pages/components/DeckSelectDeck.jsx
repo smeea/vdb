@@ -30,7 +30,11 @@ function DeckSelectDeck(props) {
 
   return (
     <>
-      <select defaultValue='' className='custom-select' value={props.activeDeck} onChange={props.handleActiveDeckSelect}>
+      <select defaultValue=''
+              className='custom-select'
+              value={props.activeDeck}
+              onChange={(e) => props.setActiveDeck(e.target.value)}
+      >
         {defaultOption}
         {decksOptions}
       </select>

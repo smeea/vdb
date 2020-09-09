@@ -13,9 +13,9 @@ function Library(props) {
 
           { Object.keys(props.decks).length > 0 &&
             <DeckSelectDeck
-              handleActiveDeckSelect={props.handleActiveDeckSelect}
               decks={props.decks}
               activeDeck={props.activeDeck}
+              setActiveDeck={props.setActiveDeck}
             />
           }
 

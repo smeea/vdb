@@ -13,14 +13,6 @@ function Navigation(props) {
       }
     };
 
-    useEffect(() => {
-      props.whoAmI();
-    }, []);
-
-    useEffect(() => {
-      props.getDecks();
-    }, [props.username]);
-
     return(
       <Navbar bg='dark' variant='dark'>
         <Nav className='container justify-content-end'>

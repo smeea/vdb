@@ -10,8 +10,8 @@ function Account(props) {
         <div className='col-xs-12 col-xl-1 left-col px-0 px-xl-2'>
         </div>
         <div className='col-xs-12 col-xl-7 center-col px-0 px-xl-2'>
-          <AccountLogin updateUsername={props.updateUsername} />
-          <AccountRegister updateUsername={props.updateUsername} />
+          <AccountLogin setUsername={props.setUsername} />
+          <AccountRegister setUsername={props.setUsername} />
         </div>
         <div className='col-xs-12 col-xl-4 right-col px-0 px-xl-2'>
         </div>

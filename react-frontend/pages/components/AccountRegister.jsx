@@ -39,7 +39,7 @@ function AccountRegister(props){
     fetchPromise
       .then(response => response.json());
 
-    props.updateUsername(state.username);
+    props.setUsername(state.username);
   };
 
   return (

@@ -135,25 +135,25 @@ function DeckDraw(props) {
         Draw Library
       </Button>
       <br />
-      {showDrawCryptModal != null &&
-       <DeckDrawCryptModal
-         handleReDraw={handleReDrawCrypt}
-         handleDrawOne={handleDrawCryptOne}
-         handleClose={handleCloseDrawCryptModal}
-         drawedCards={drawedCrypt}
-         restCards={restCrypt}
-         show={showDrawCryptModal}
-       />
+      { showDrawCryptModal != null &&
+        <DeckDrawCryptModal
+          handleReDraw={handleReDrawCrypt}
+          handleDrawOne={handleDrawCryptOne}
+          handleClose={handleCloseDrawCryptModal}
+          drawedCards={drawedCrypt}
+          restCards={restCrypt}
+          show={showDrawCryptModal}
+        />
       }
-      {drawedLibrary != null &&
-       <DeckDrawLibraryModal
-         handleReDraw={handleReDrawLibrary}
-         handleDrawOne={handleDrawLibraryOne}
-         handleClose={handleCloseDrawLibraryModal}
-         drawedCards={drawedLibrary}
-         restCards={restLibrary}
-         show={showDrawLibraryModal}
-       />
+      { drawedLibrary != null &&
+        <DeckDrawLibraryModal
+          handleReDraw={handleReDrawLibrary}
+          handleDrawOne={handleDrawLibraryOne}
+          handleClose={handleCloseDrawLibraryModal}
+          drawedCards={drawedLibrary}
+          restCards={restLibrary}
+          show={showDrawLibraryModal}
+        />
       }
     </>
   );

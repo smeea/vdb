@@ -26,7 +26,8 @@ function AccountLogin(props) {
       credentials: 'include',
     };
     fetch(url, options);
-    props.updateUsername(undefined);
+
+    props.setUsername(undefined);
   };
 
   const loginUser = () => {
@@ -52,7 +53,7 @@ function AccountLogin(props) {
     fetchPromise
       .then(response => response.json());
 
-    props.updateUsername(state.username);
+    props.setUsername(state.username);
   };
 
   return (

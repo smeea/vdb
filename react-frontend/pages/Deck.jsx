@@ -82,9 +82,9 @@ function Deck(props) {
               </span>
             </div>
             <DeckSelectDeck
-              handleActiveDeckSelect={props.handleActiveDeckSelect}
               decks={props.decks}
               activeDeck={props.activeDeck}
+              setActiveDeck={props.setActiveDeck}
             />
           </div>
           <DeckShowDeck

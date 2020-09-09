@@ -146,10 +146,6 @@ function App(props) {
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
 
-  const handleActiveDeckSelect = event => {
-    setActiveDeck(event.target.value);
-  };
-
   const getDecks = () => {
     const url = process.env.API_URL + 'decks';
     const options = {
@@ -206,15 +202,6 @@ function App(props) {
 
   const [username, setUsername] = useState(undefined);
 
-  const updateUsername = (name) => {
-    setUsername(name);
-    if (name) {
-      getDecks();
-    } else {
-      setDecks({});
-    }
-  }
-
   const whoAmI= () => {
     const url = process.env.API_URL + 'login';
     const options = {
@@ -228,13 +215,25 @@ function App(props) {
       .then(data => setUsername(data.username))
   };
 
+
+  useEffect(() => {
+    if (username) {
+      getDecks();
+    } else {
+      setDecks({});
+    }
+  }, [username]);
+
+  useEffect(() => {
+      whoAmI();
+  }, []);
+
+
   return (
     <div className='App'>
       <Router>
         <Navigation
           username={username}
-          whoAmI={whoAmI}
-          getDecks={getDecks}
         />
         <Switch>
           <Route path='/' exact component={() => <About />} />
@@ -242,12 +241,10 @@ function App(props) {
           <Route path='/account' exact component={() =>
             <Account
               username={username}
-              updateUsername={updateUsername}
-              whoAmI={whoAmI}
+              setUsername={setUsername}
             /> } />
           <Route path='/deck' exact component={() =>
             <Deck
-              handleActiveDeckSelect={handleActiveDeckSelect}
               decks={decks}
               activeDeck={activeDeck}
               setActiveDeck={setActiveDeck}
@@ -260,7 +257,6 @@ function App(props) {
             /> } />
           <Route path='/deck/:id' component={(props) =>
             <Deck
-              handleActiveDeckSelect={handleActiveDeckSelect}
               decks={decks}
               activeDeck={activeDeck}
               setActiveDeck={setActiveDeck}
@@ -281,7 +277,7 @@ function App(props) {
               decks={decks}
               getDecks={getDecks}
               activeDeck={activeDeck}
-              handleActiveDeckSelect={handleActiveDeckSelect}
+              setActiveDeck={setActiveDeck}
               sortMethod={cryptSortMethod}
               setSortMethod={setCryptSortMethod}
               showImage={showImage}
@@ -298,7 +294,7 @@ function App(props) {
               decks={decks}
               getDecks={getDecks}
               activeDeck={activeDeck}
-              handleActiveDeckSelect={handleActiveDeckSelect}
+              setActiveDeck={setActiveDeck}
               sortMethod={librarySortMethod}
               setSortMethod={setLibrarySortMethod}
               showImage={showImage}
