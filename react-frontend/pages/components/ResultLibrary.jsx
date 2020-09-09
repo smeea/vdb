@@ -14,9 +14,6 @@ import ResultAddCard from './ResultAddCard.jsx';
 function SearchLibraryBody(props) {
   let resultTrClass='library-result-even';
 
-  const [showImage, setShowImage] = useState(false);
-  const toggleImage = () => setShowImage(!showImage);
-
   const cards = props.resultCards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {
       resultTrClass = 'library-result-odd';
@@ -40,7 +37,15 @@ function SearchLibraryBody(props) {
             <ResultLibraryDisciplines value={card['Discipline']} />
           </td>
           <td className='name'>
-            <ResultLibraryName showImage={showImage} toggleImage={toggleImage} id={card['Id']} value={card['Name']} ban={card['Banned']} cardAdd={props.cardAdd} card={card} />
+            <ResultLibraryName
+              showImage={props.showImage}
+              toggleImage={props.toggleImage}
+              id={card['Id']}
+              value={card['Name']}
+              ban={card['Banned']}
+              cardAdd={props.cardAdd}
+              card={card}
+            />
           </td>
           <td className='clan'>
             <ResultLibraryClan value={card['Clan']} />
@@ -58,17 +63,16 @@ function SearchLibraryBody(props) {
 
 function ResultLibrary(props) {
   const [sortedCards, setSortedCards] = useState([]);
-  const [sortMethod, setSortMethod] = useState('Default');
 
   const handleChange = event => {
     const method = event.target.value;
-    setSortMethod(method);
+    props.setSortMethod(method);
     setSortedCards(() => resultLibrarySort(props.cards, method));
   };
 
   useEffect(() => {
-    setSortedCards(() => resultLibrarySort(props.cards, sortMethod));
-  });
+    setSortedCards(() => resultLibrarySort(props.cards, props.sortMethod));
+  }, [props.cards, props.sortMethod]);
 
   return (
     <>
@@ -76,10 +80,16 @@ function ResultLibrary(props) {
         <ResultLibraryTotal cards={props.cards} />
       }
       { props.sortMode == true && sortedCards.length > 0 &&
-        <ResultLibrarySortForm value={sortMethod} onChange={handleChange} />
+        <ResultLibrarySortForm value={props.sortMethod} onChange={handleChange} />
       }
       <table className='search-library-table'>
-        <SearchLibraryBody addMode={props.addMode} cardAdd={props.cardAdd} resultCards={sortedCards} />
+        <SearchLibraryBody
+          showImage={props.showImage}
+          toggleImage={props.toggleImage}
+          addMode={props.addMode}
+          cardAdd={props.cardAdd}
+          resultCards={sortedCards}
+        />
       </table>
     </>
   );

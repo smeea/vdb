@@ -11,6 +11,14 @@ import Crypt from './pages/Crypt.jsx';
 import Library from './pages/Library.jsx';
 
 function App(props) {
+  const [libraryResults, setLibraryResults] = useState([]);
+  const [librarySortMethod, setLibrarySortMethod] = useState('Default');
+  const [cryptResults, setCryptResults] = useState([]);
+  const [cryptSortMethod, setCryptSortMethod] = useState('Default');
+
+  const [showImage, setShowImage] = useState(false);
+  const toggleImage = () => setShowImage(!showImage);
+
   const [addMode, setAddMode] = useState(false);
 
   const handleAddModeSwitch = () => {
@@ -110,7 +118,8 @@ function App(props) {
               activeDeck={activeDeck}
               setActiveDeck={setActiveDeck}
               getDecks={getDecks}
-
+              showImage={showImage}
+              toggleImage={toggleImage}
               username={username}
             /> } />
           <Route path='/deck/:id' component={(props) =>
@@ -122,18 +131,24 @@ function App(props) {
               getDecks={getDecks}
               setAddMode={setAddMode}
               id={props.match.params.id}
-
+              showImage={showImage}
+              toggleImage={toggleImage}
               username={username}
               addMode={addMode}
               handleAddModeSwitch={handleAddModeSwitch}
             /> } />
           <Route path='/crypt' exact component={() =>
             <Crypt
+              cards={cryptResults}
+              setResults={setCryptResults}
               addMode={addMode}
               cardAdd={cardAdd}
               getDecks={getDecks}
               deck={decks[activeDeck]}
-
+              sortMethod={cryptSortMethod}
+              setSortMethod={setCryptSortMethod}
+              showImage={showImage}
+              toggleImage={toggleImage}
               username={username}
               handleAddModeSwitch={handleAddModeSwitch}
               handleActiveDeckSelect={handleActiveDeckSelect}
@@ -142,11 +157,16 @@ function App(props) {
             /> } />
           <Route path='/library' exact component={() =>
             <Library
+              cards={libraryResults}
+              setResults={setLibraryResults}
               addMode={addMode}
               cardAdd={cardAdd}
               getDecks={getDecks}
               deck={decks[activeDeck]}
-
+              sortMethod={librarySortMethod}
+              setSortMethod={setLibrarySortMethod}
+              showImage={showImage}
+              toggleImage={toggleImage}
               username={username}
               handleAddModeSwitch={handleAddModeSwitch}
               handleActiveDeckSelect={handleActiveDeckSelect}

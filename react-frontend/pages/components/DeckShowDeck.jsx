@@ -10,10 +10,11 @@ import DeckDescriptionDeck from './DeckDescriptionDeck.jsx';
 
 function DeckShowDeck(props) {
   if (props.deck !== undefined) {
+    const DECK_URL = process.env.ROOT_URL + 'deck/'+ props.deck.deckid;
     return (
       <>
         <b>URL: </b>
-        <a href={ process.env.ROOT_URL + 'deck/'+ props.deck.deckid }>LINK</a>
+        <a href={DECK_URL}>{DECK_URL}</a>
         <br />
         <DeckNameDeck name={props.deck.name} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} activeDeck={props.activeDeck} />
         <DeckDescriptionDeck description={props.deck.description} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} />

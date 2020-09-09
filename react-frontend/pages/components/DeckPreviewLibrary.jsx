@@ -17,7 +17,7 @@ function DeckLibraryBody(props) {
     return (
       <tr key={index} className={resultTrClass}>
           <DeckCardQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-        <ResultLibraryName id={card[0]['Id']} value={card[0]['Name']} ban={card[0]['Banned']} card={card[0]}/>
+        <ResultLibraryName showImage={props.showImage} toggleImage={props.toggleImage} id={card[0]['Id']} value={card[0]['Name']} ban={card[0]['Banned']} card={card[0]}/>
         </tr>
     );
   });
@@ -30,7 +30,7 @@ function DeckLibraryByTypeTable(props) {
     <>
       <ResultLibraryType cardtype={props.cardtype} total={props.total}/>
       <table className='deck-library-table'>
-        <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
+        <DeckLibraryBody showImage={props.showImage} toggleImage={props.toggleImage} deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
       </table>
     </>
   );
@@ -100,7 +100,7 @@ function DeckPreviewLibrary(props) {
       }
       LibraryDeck.push(
         <div key={cardtype}>
-          <DeckLibraryByTypeTable deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library[cardtype]} cardtype={cardtype} total={total} />
+          <DeckLibraryByTypeTable showImage={props.showImage} toggleImage={props.toggleImage} deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library[cardtype]} cardtype={cardtype} total={total} />
         </div>
       );
     }
@@ -112,7 +112,7 @@ function DeckPreviewLibrary(props) {
       }
       LibrarySideDeck.push(
         <div key={cardtype}>
-          <DeckLibraryByTypeTable deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library_side[cardtype]} cardtype={cardtype} total={total} />
+          <DeckLibraryByTypeTable showImage={props.showImage} toggleImage={props.toggleImage} deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library_side[cardtype]} cardtype={cardtype} total={total} />
         </div>
       );
     }

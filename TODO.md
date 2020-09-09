@@ -10,9 +10,10 @@
 * Card rulings
 # MAJOR FIX
 * Share deck for non-logged users
-* Fix redraw on activeDeck / addMode change
+* Lift search forms state to App
 * Lift Deck preview components up
 # MINOR FIX
 * DeckPreview to use Result components
 * Fix uncontrolled input bug in clear button
+* Change Forms to React-Bootstrap forms
 * Remove unused imports

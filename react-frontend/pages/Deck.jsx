@@ -97,7 +97,7 @@ function Deck(props) {
           <Accordion>
             <Card>
               <Accordion.Toggle as={Card.Header} eventKey="0">
-                Create New Deck
+                New Deck
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body>
@@ -119,9 +119,21 @@ function Deck(props) {
                 Select Deck
               </span>
             </div>
-            <DeckSelectDeck handleActiveDeckSelect={props.handleActiveDeckSelect} decks={props.decks} activeDeck={props.activeDeck} />
+            <DeckSelectDeck
+              handleActiveDeckSelect={props.handleActiveDeckSelect}
+              decks={props.decks}
+              activeDeck={props.activeDeck}
+            />
           </div>
-          <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} activeDeck={props.activeDeck} />
+          <DeckShowDeck
+            showImage={props.showImage}
+            toggleImage={props.toggleImage}
+            deckUpdate={deckUpdate}
+            deckCardAdd={deckCardAdd}
+            deckCardChange={deckCardChange}
+            deck={props.decks[props.activeDeck]}
+            activeDeck={props.activeDeck}
+          />
         </div>
 
         <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>

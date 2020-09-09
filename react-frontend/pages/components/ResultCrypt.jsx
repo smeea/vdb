@@ -35,7 +35,16 @@ function SearchCryptBody(props) {
               <ResultCryptDisciplines value={card['Disciplines']} />
             </td>
             <td className='name'>
-              <ResultCryptName showImage={props.showImage} toggleImage={props.toggleImage} id={card['Id']} value={card['Name']} adv={card['Adv']} ban={card['Banned']} addMode={props.addMode} card={card} />
+              <ResultCryptName
+                showImage={props.showImage}
+                toggleImage={props.toggleImage}
+                id={card['Id']}
+                value={card['Name']}
+                adv={card['Adv']}
+                ban={card['Banned']}
+                addMode={props.addMode}
+                card={card}
+              />
             </td>
             <td className='clan'>
               <ResultCryptClan value={card['Clan']} />
@@ -56,17 +65,16 @@ function SearchCryptBody(props) {
 
 function ResultCrypt(props) {
   const [sortedCards, setSortedCards] = useState([]);
-  const [sortMethod, setSortMethod] = useState('Default');
 
   const handleChange = event => {
     const method = event.target.value;
-    setSortMethod(method);
+    props.setSortMethod(method);
     setSortedCards(() => resultCryptSort(props.cards, method));
   };
 
   useEffect(() => {
-    setSortedCards(() => resultCryptSort(props.cards, sortMethod));
-  });
+    setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
+  }, [props.cards, props.sortMethod]);
 
   return (
     <>
@@ -74,10 +82,16 @@ function ResultCrypt(props) {
         <ResultCryptTotal cards={props.cards} />
       }
       { props.sortMode == true && sortedCards.length > 0 &&
-        <ResultCryptSortForm value={sortMethod} onChange={handleChange} />
+        <ResultCryptSortForm value={props.sortMethod} onChange={handleChange} />
       }
       <table className='search-crypt-table'>
-        <SearchCryptBody showImage={props.showImage} toggleImage={props.toggleImage} addMode={props.addMode} cardAdd={props.cardAdd} resultCards={sortedCards} />
+        <SearchCryptBody
+          showImage={props.showImage}
+          toggleImage={props.toggleImage}
+          addMode={props.addMode}
+          cardAdd={props.cardAdd}
+          resultCards={sortedCards}
+        />
       </table>
     </>
   );
