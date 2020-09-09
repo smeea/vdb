@@ -1,11 +1,12 @@
 import React from 'react';
+import { SortDown } from 'react-bootstrap-icons';
 
 function ResultLibrarySortForm(props) {
   const sortMethods = [
     'Default',
+    'Name',
     'Clan',
     'Discipline',
-    'Name',
     'Type',
   ];
 
@@ -16,7 +17,12 @@ function ResultLibrarySortForm(props) {
   });
 
   return (
-    <div className='form-group'>
+    <div className="input-group mb-3">
+      <div className="input-group-prepend">
+        <span className="input-group-text">
+          <SortDown size={24} />
+        </span>
+      </div>
       <select className='custom-select' name='sort' value={props.value} onChange={props.onChange}>
         {sortFormOptions}
       </select>

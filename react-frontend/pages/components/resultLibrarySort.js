@@ -1,6 +1,6 @@
 function resultLibrarySort(cards, sortMethod) {
   const byName = (a, b) => {
-    if (a['Name'] > b['Name']){
+    if (a['Name'] > b['Name']) {
       return 1;
     } else {
       return -1;
@@ -8,7 +8,7 @@ function resultLibrarySort(cards, sortMethod) {
   };
 
   const byType = (a, b) => {
-    if (a['Type'] > b['Type']){
+    if (a['Type'] > b['Type']) {
       return 1;
     } else {
       return -1;
@@ -16,7 +16,11 @@ function resultLibrarySort(cards, sortMethod) {
   };
 
   const byClan = (a, b) => {
-    if (a['Clan'] > b['Clan']){
+    if (a['Clan'] && !b['Clan']) {
+      return -1;
+    } else if (!a['Clan'] && b['Clan']) {
+      return 1;
+    } else if (a['Clan'] > b['Clan']) {
       return 1;
     } else {
       return -1;
@@ -24,7 +28,11 @@ function resultLibrarySort(cards, sortMethod) {
   };
 
   const byDiscipline = (a, b) => {
-    if (a['Discipline'] > b['Discipline']){
+    if (a['Discipline'] && !b['Discipline']) {
+      return -1;
+    } else if (!a['Discipline'] && b['Discipline']) {
+      return 1;
+    } else if (a['Discipline'] > b['Discipline']) {
       return 1;
     } else {
       return -1;

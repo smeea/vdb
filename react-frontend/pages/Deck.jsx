@@ -6,11 +6,11 @@ import DeckNewDeck from './components/DeckNewDeck.jsx';
 import DeckImportDeck from './components/DeckImportDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
+import AddModeSwitch from './components/AddModeSwitch.jsx';
 
 function Deck(props) {
   // FIX SHARED LINK
   const { id } = useParams();
-  console.log('id is: ', id);
 
   const [sharedDecks, setSharedDecks] = useState(undefined);
 
@@ -88,10 +88,6 @@ function Deck(props) {
     }
   }, [props.id]);
 
-  useEffect(() => {
-    props.setAddMode(true);
-  }, []);
-
   return (
     <div className='container px-0 py-xl-3 px-xl-2'>
       <div className='row mx-0'>
@@ -116,6 +112,15 @@ function Deck(props) {
           {/*   : */}
           {/*   <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} /> */}
           {/* } */}
+
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <span className="input-group-text">
+                Select Deck
+              </span>
+            </div>
+            <DeckSelectDeck handleActiveDeckSelect={props.handleActiveDeckSelect} decks={props.decks} activeDeck={props.activeDeck} />
+          </div>
           <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} activeDeck={props.activeDeck} />
         </div>
 

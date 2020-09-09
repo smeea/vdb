@@ -3,19 +3,9 @@ import { useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import { NavLink, withRouter } from 'react-router-dom';
 import { Button, Navbar, Nav } from 'react-bootstrap';
-import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 
-function AddModeSwitch(props) {
-  return(
-    <Form.Check
-      onChange={props.handleAddModeSwitch}
-      checked={props.addMode}
-      type="switch"
-      id="addmode-switch"
-      label="Deck Mode"
-    />
-  );
-};
+// import DeckSelectDeck from './components/DeckSelectDeck.jsx';
+// import AddModeSwitch from './components/AddModeSwitch.jsx';
 
 function Navigation(props) {
   const NavBar = ({location}) => {
@@ -39,17 +29,17 @@ function Navigation(props) {
       <Navbar bg='dark' variant='dark'>
         <Nav className='container justify-content-between'>
           <div className='d-flex'>
-            {
-              props.username &&
-                <span className='nav-link px-2'>
-                  <AddModeSwitch addMode={props.addMode} handleAddModeSwitch={props.handleAddModeSwitch} />
-                </span>
-            }
-            { props.addMode &&
-              <span className='nav-link px-2'>
-                <DeckSelectDeck handleActiveDeckSelect={props.handleActiveDeckSelect} decks={props.decks} activeDeck={props.activeDeck} />
-              </span>
-            }
+            {/* { */}
+            {/*   props.username && */}
+            {/*     <span className='nav-link px-2'> */}
+            {/*       <AddModeSwitch addMode={props.addMode} handleAddModeSwitch={props.handleAddModeSwitch} /> */}
+            {/*     </span> */}
+            {/* } */}
+            {/* { props.addMode && */}
+            {/*   <span className='nav-link px-2'> */}
+            {/*     <DeckSelectDeck handleActiveDeckSelect={props.handleActiveDeckSelect} decks={props.decks} activeDeck={props.activeDeck} /> */}
+            {/*   </span> */}
+            {/* } */}
           </div>
           <div className='d-flex'>
             <NavLink to='/account' className='nav-link px-2'>

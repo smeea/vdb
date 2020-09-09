@@ -1,6 +1,6 @@
 function resultCryptSort(cards, sortMethod) {
   const byName = (a, b) => {
-    if (a['Name'] > b['Name']){
+    if (a['Name'] > b['Name']) {
       return 1;
     } else {
       return -1;
@@ -8,7 +8,7 @@ function resultCryptSort(cards, sortMethod) {
   };
 
   const byCapacity = (a, b) => {
-    if (a['Capacity'] > b['Capacity']){
+    if (a['Capacity'] > b['Capacity']) {
       return 1;
     } else {
       return -1;
@@ -16,7 +16,7 @@ function resultCryptSort(cards, sortMethod) {
   };
 
   const byClan = (a, b) => {
-    if (a['Clan'] > b['Clan']){
+    if (a['Clan'] > b['Clan']) {
       return 1;
     } else {
       return -1;
@@ -24,7 +24,7 @@ function resultCryptSort(cards, sortMethod) {
   };
 
   const byGroup = (a, b) => {
-    if (a['Group'] > b['Group']){
+    if (a['Group'] > b['Group']) {
       return 1;
     } else {
       return -1;

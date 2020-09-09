@@ -4,10 +4,10 @@ import { SortDown } from 'react-bootstrap-icons';
 function ResultCryptSortForm(props) {
   const sortMethods = [
     'Default',
+    'Name',
     'Capacity',
     'Clan',
     'Group',
-    'Name',
   ];
 
   const sortFormOptions = sortMethods.map((i, index) => {

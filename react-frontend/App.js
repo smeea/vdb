@@ -92,6 +92,7 @@ function App(props) {
           handleActiveDeckSelect={handleActiveDeckSelect}
           decks={decks}
           activeDeck={activeDeck}
+
         />
         <Switch>
           <Route path='/' exact component={() => <About />} />
@@ -109,7 +110,8 @@ function App(props) {
               activeDeck={activeDeck}
               setActiveDeck={setActiveDeck}
               getDecks={getDecks}
-              setAddMode={setAddMode}
+
+              username={username}
             /> } />
           <Route path='/deck/:id' component={(props) =>
             <Deck
@@ -120,6 +122,10 @@ function App(props) {
               getDecks={getDecks}
               setAddMode={setAddMode}
               id={props.match.params.id}
+
+              username={username}
+              addMode={addMode}
+              handleAddModeSwitch={handleAddModeSwitch}
             /> } />
           <Route path='/crypt' exact component={() =>
             <Crypt
@@ -127,6 +133,12 @@ function App(props) {
               cardAdd={cardAdd}
               getDecks={getDecks}
               deck={decks[activeDeck]}
+
+              username={username}
+              handleAddModeSwitch={handleAddModeSwitch}
+              handleActiveDeckSelect={handleActiveDeckSelect}
+              decks={decks}
+              activeDeck={activeDeck}
             /> } />
           <Route path='/library' exact component={() =>
             <Library
@@ -134,6 +146,12 @@ function App(props) {
               cardAdd={cardAdd}
               getDecks={getDecks}
               deck={decks[activeDeck]}
+
+              username={username}
+              handleAddModeSwitch={handleAddModeSwitch}
+              handleActiveDeckSelect={handleActiveDeckSelect}
+              decks={decks}
+              activeDeck={activeDeck}
             /> } />
         </Switch>
       </Router>

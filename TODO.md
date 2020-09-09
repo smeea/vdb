@@ -13,7 +13,6 @@
 * Fix redraw on activeDeck / addMode change
 * Lift Deck preview components up
 # MINOR FIX
-* Sort to first show items with sorted attribute
 * DeckPreview to use Result components
 * Fix uncontrolled input bug in clear button
 * Remove unused imports
