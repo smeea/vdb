@@ -37,7 +37,7 @@ function DeckDraw(props) {
 
       return [draw_array, rest_array];
     } else {
-      return null;
+      return [null, null];
     }
   };
 
@@ -45,17 +45,13 @@ function DeckDraw(props) {
     const rest_array = cards;
     const draw_array = [];
 
-    if (quantity <= rest_array.length) {
-      while (quantity > 0) {
-        let random_id = getRandomInt(rest_array.length);
-        draw_array.push(rest_array[random_id]);
-        rest_array.splice(random_id, 1);
-        quantity -= 1;
-      }
-      return [draw_array, rest_array];
-    } else {
-      return null;
+    while (quantity > 0) {
+      let random_id = getRandomInt(rest_array.length);
+      draw_array.push(rest_array[random_id]);
+      rest_array.splice(random_id, 1);
+      quantity -= 1;
     }
+    return [draw_array, rest_array];
   };
 
   const [restCrypt, setRestCrypt] = useState(undefined);
@@ -70,16 +66,24 @@ function DeckDraw(props) {
 
   const handleOpenDrawCrypt = () => {
     const [drawedCards, restCards] = initialDrawCards(props.crypt, 4);
-    setDrawedCrypt(drawedCards);
-    setRestCrypt(restCards);
-    setShowDrawCryptModal(true);
+    if (drawedCards) {
+      setDrawedCrypt(drawedCards); 
+      setRestCrypt(restCards);
+      setShowDrawCryptModal(true);
+    } else {
+      console.log('crypt < 4 cards')
+    }
   };
 
   const handleOpenDrawLibrary = () => {
     const [drawedCards, restCards] = initialDrawCards(props.library, 7);
-    setDrawedLibrary(drawedCards);
-    setRestLibrary(restCards);
-    setShowDrawLibraryModal(true);
+    if (drawedCards) {
+      setDrawedLibrary(drawedCards);
+      setRestLibrary(restCards);
+      setShowDrawLibraryModal(true);
+    } else {
+      console.log('library < 7 cards')
+    }
   };
 
   const handleReDrawCrypt = () => {

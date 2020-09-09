@@ -20,7 +20,7 @@ function DeckNewCryptName(props) {
 
   const addNewCard = () => {
     if (selectedValue.Id) {
-      props.deckCardAdd(props.deckid, selectedValue.Id);
+      props.deckCardAdd(selectedValue.Id);
       setSelectedValue('');
     } else {
       console.log('Error: submit with empty forms');

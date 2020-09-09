@@ -30,7 +30,12 @@ function DeckCryptSideBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+          <DeckCardQuantity
+            cardid={card.c['Id']}
+            q={card.q}
+            deckid={props.deckid}
+            deckCardChange={props.deckCardChange}
+          />
           <td className='capacity'>
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
@@ -75,7 +80,12 @@ function DeckCryptBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+          <DeckCardQuantity
+            cardid={card.c['Id']}
+            q={card.q}
+            deckid={props.deckid}
+            deckCardChange={props.deckCardChange}
+          />
           <td className='capacity'>
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
@@ -147,14 +157,24 @@ function DeckCrypt(props) {
       <div className='deck-crypt'>
         <b>Crypt [{crypt_total}] - {crypt_groups}</b>
         <table className='deck-crypt-table'>
-          <DeckCryptBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt} disciplines_set={disciplines_set} />
+          <DeckCryptBody
+            deckid={props.deckid}
+            deckCardChange={props.deckCardChange}
+            cards={crypt}
+            disciplines_set={disciplines_set}
+          />
         </table>
       </div>
       { Object.keys(crypt_side).length > 0 &&
         <div className='deck-sidecrypt'>
           <b>Side Crypt</b>
           <table className='deck-crypt-table'>
-            <DeckCryptSideBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt_side} disciplines_set={disciplines_set}/>
+            <DeckCryptSideBody
+              deckid={props.deckid}
+              deckCardChange={props.deckCardChange}
+              cards={crypt_side}
+              disciplines_set={disciplines_set}
+            />
           </table>
         </div>
       }

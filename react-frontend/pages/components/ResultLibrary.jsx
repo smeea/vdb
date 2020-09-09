@@ -24,8 +24,8 @@ function SearchLibraryBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          { props.addMode &&
-            <ResultAddCard cardAdd={props.cardAdd} cardid={card['Id']}/>
+          { props.activeDeck &&
+            <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
           }
           <td className='cost'>
             <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
@@ -43,7 +43,6 @@ function SearchLibraryBody(props) {
               id={card['Id']}
               value={card['Name']}
               ban={card['Banned']}
-              cardAdd={props.cardAdd}
               card={card}
             />
           </td>
@@ -87,7 +86,8 @@ function ResultLibrary(props) {
           showImage={props.showImage}
           toggleImage={props.toggleImage}
           addMode={props.addMode}
-          cardAdd={props.cardAdd}
+          activeDeck={props.activeDeck}
+          deckCardAdd={props.deckCardAdd}
           resultCards={sortedCards}
         />
       </table>

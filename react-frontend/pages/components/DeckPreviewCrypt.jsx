@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
@@ -24,8 +24,21 @@ function DeckCryptSideBody(props) {
 
     return (
       <tr key={index} className={resultTrClass}>
-        <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-        <ResultCryptName showImage={props.showImage} toggleImage={props.toggleImage} id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c} />
+        <DeckCardQuantity
+          cardid={card.c['Id']}
+          q={card.q}
+          deckid={props.deckid}
+          deckCardChange={props.deckCardChange}
+        />
+        <ResultCryptName
+          showImage={props.showImage}
+          toggleImage={props.toggleImage}
+          id={card.c['Id']}
+          value={card.c['Name']}
+          adv={card.c['Adv']}
+          ban={card.c['Banned']}
+          card={card.c}
+        />
       </tr>
     );
   });
@@ -54,8 +67,21 @@ function DeckCryptBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <DeckCardQuantity cardid={card.c['Id']} q={card.q} deckid={props.deckid} deckCardChange={props.deckCardChange} />
-          <ResultCryptName showImage={props.showImage} toggleImage={props.toggleImage} id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c} />
+          <DeckCardQuantity
+            cardid={card.c['Id']}
+            q={card.q}
+            deckid={props.deckid}
+            deckCardChange={props.deckCardChange}
+          />
+          <ResultCryptName
+            showImage={props.showImage}
+            toggleImage={props.toggleImage}
+            id={card.c['Id']}
+            value={card.c['Name']}
+            adv={card.c['Adv']}
+            ban={card.c['Banned']}
+            card={card.c}
+          />
         </tr>
       </React.Fragment>
     );
@@ -112,14 +138,28 @@ function DeckPreviewCrypt(props) {
       <div className='deck-crypt'>
         <b>Crypt [{crypt_total}] - {crypt_groups}</b>
         <table className='deck-crypt-table'>
-          <DeckCryptBody showImage={props.showImage} toggleImage={props.toggleImage} deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt} disciplines_set={disciplines_set} />
+          <DeckCryptBody
+            showImage={props.showImage}
+            toggleImage={props.toggleImage}
+            deckid={props.deckid}
+            deckCardChange={props.deckCardChange}
+            cards={crypt}
+            disciplines_set={disciplines_set}
+          />
         </table>
       </div>
       { Object.keys(crypt_side).length > 0 &&
         <div className='deck-sidecrypt'>
           <b>Side Crypt</b>
           <table className='deck-crypt-table'>
-            <DeckCryptSideBody showImage={props.showImage} toggleImage={props.toggleImage} deckid={props.deckid} deckCardChange={props.deckCardChange} cards={crypt_side} disciplines_set={disciplines_set}/>
+            <DeckCryptSideBody
+              showImage={props.showImage}
+              toggleImage={props.toggleImage}
+              deckid={props.deckid}
+              deckCardChange={props.deckCardChange}
+              cards={crypt_side}
+              disciplines_set={disciplines_set}
+            />
           </table>
         </div>
       }

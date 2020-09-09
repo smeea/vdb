@@ -10,10 +10,9 @@
 * Card rulings
 # MAJOR FIX
 * Share deck for non-logged users
-* Lift search forms state to App
-* Lift Deck preview components up
+* Draw to show number of cards left
 # MINOR FIX
-* DeckPreview to use Result components
+* DeckPreviewCrypt/Library to use Result components
 * Fix uncontrolled input bug in clear button
 * Change Forms to React-Bootstrap forms
 * Remove unused imports

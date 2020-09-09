@@ -6,13 +6,12 @@ import DeckNewDeck from './components/DeckNewDeck.jsx';
 import DeckImportDeck from './components/DeckImportDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
-import AddModeSwitch from './components/AddModeSwitch.jsx';
 
 function Deck(props) {
   // FIX SHARED LINK
   const { id } = useParams();
 
-  const [sharedDecks, setSharedDecks] = useState(undefined);
+  const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const getDeck = () => {
     const url = process.env.API_URL + 'deck/' + props.id;
@@ -26,44 +25,12 @@ function Deck(props) {
       .then(response => response.json())
       .then(data => {
         if (data.error === undefined) {
-          setSharedDecks(data);
+          setSharedDeck(data);
         } else {
           console.log('error: ', data.error);
         }
       })
       .then(() => props.setActiveDeck(props.id));
-  };
-
-  const deckCardChange = (deckid, cardid, count) => {
-    const url = process.env.API_URL + 'deck/' + deckid;
-    const options = {
-      method: 'PUT',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({update: {[cardid]: count}})
-    };
-
-    fetch(url, options)
-      .then(() => props.getDecks());
-  };
-
-  const deckCardAdd = (deckid, cardid) => {
-    const url = process.env.API_URL + 'deck/' + deckid;
-    const options = {
-      method: 'PUT',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({update: {[cardid]: 1}})
-    };
-
-    fetch(url, options)
-      .then(() => props.getDecks());
   };
 
   const deckUpdate = (deckid, field, value) => {
@@ -107,11 +74,6 @@ function Deck(props) {
               </Accordion.Collapse>
             </Card>
           </Accordion>
-          {/* { sharedDecks ? */}
-            {/* <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={sharedDecks[props.activeDeck]} /> */}
-          {/*   : */}
-          {/*   <DeckShowDeck deckUpdate={deckUpdate} deckCardAdd={deckCardAdd} deckCardChange={deckCardChange} deck={props.decks[props.activeDeck]} /> */}
-          {/* } */}
 
           <div className="input-group mb-3">
             <div className="input-group-prepend">
@@ -129,10 +91,10 @@ function Deck(props) {
             showImage={props.showImage}
             toggleImage={props.toggleImage}
             deckUpdate={deckUpdate}
-            deckCardAdd={deckCardAdd}
-            deckCardChange={deckCardChange}
             deck={props.decks[props.activeDeck]}
             activeDeck={props.activeDeck}
+            deckCardAdd={props.deckCardAdd}
+            deckCardChange={props.deckCardChange}
           />
         </div>
 

@@ -19,8 +19,8 @@ function DeckShowDeck(props) {
         <DeckNameDeck name={props.deck.name} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} activeDeck={props.activeDeck} />
         <DeckDescriptionDeck description={props.deck.description} deckUpdate={props.deckUpdate} deckid={props.deck.deckid} />
         <br />
-        <DeckNewCryptName deckCardAdd={props.deckCardAdd} deckid={props.deck.deckid} />
-        <DeckNewLibraryName deckCardAdd={props.deckCardAdd} deckid={props.deck.deckid} />
+        <DeckNewCryptName deckCardAdd={props.deckCardAdd} />
+        <DeckNewLibraryName deckCardAdd={props.deckCardAdd} />
         <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />
         <DeckCrypt deckCardChange={props.deckCardChange} deckid={props.deck.deckid} cards={props.deck.crypt} />
         <br />

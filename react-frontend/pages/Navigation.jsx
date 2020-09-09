@@ -1,11 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { Form } from 'react-bootstrap';
 import { NavLink, withRouter } from 'react-router-dom';
-import { Button, Navbar, Nav } from 'react-bootstrap';
-
-// import DeckSelectDeck from './components/DeckSelectDeck.jsx';
-// import AddModeSwitch from './components/AddModeSwitch.jsx';
+import { Navbar, Nav } from 'react-bootstrap';
 
 function Navigation(props) {
   const NavBar = ({location}) => {
@@ -27,21 +23,7 @@ function Navigation(props) {
 
     return(
       <Navbar bg='dark' variant='dark'>
-        <Nav className='container justify-content-between'>
-          <div className='d-flex'>
-            {/* { */}
-            {/*   props.username && */}
-            {/*     <span className='nav-link px-2'> */}
-            {/*       <AddModeSwitch addMode={props.addMode} handleAddModeSwitch={props.handleAddModeSwitch} /> */}
-            {/*     </span> */}
-            {/* } */}
-            {/* { props.addMode && */}
-            {/*   <span className='nav-link px-2'> */}
-            {/*     <DeckSelectDeck handleActiveDeckSelect={props.handleActiveDeckSelect} decks={props.decks} activeDeck={props.activeDeck} /> */}
-            {/*   </span> */}
-            {/* } */}
-          </div>
-          <div className='d-flex'>
+        <Nav className='container justify-content-end'>
             <NavLink to='/account' className='nav-link px-2'>
               <AccountEntry username={props.username} />
             </NavLink>
@@ -57,7 +39,6 @@ function Navigation(props) {
             <NavLink to='/library' className='nav-link px-2'>
               Library
             </NavLink>
-          </div>
         </Nav>
       </Navbar>
     );

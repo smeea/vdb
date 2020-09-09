@@ -25,8 +25,8 @@ function SearchCryptBody(props) {
       return (
         <React.Fragment key={index}>
           <tr className={resultTrClass}>
-            { props.addMode &&
-              <ResultAddCard cardAdd={props.cardAdd} cardid={card['Id']}/>
+            { props.activeDeck &&
+              <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
             }
             <td className='capacity'>
               <ResultCryptCapacity value={card['Capacity']} />
@@ -42,7 +42,6 @@ function SearchCryptBody(props) {
                 value={card['Name']}
                 adv={card['Adv']}
                 ban={card['Banned']}
-                addMode={props.addMode}
                 card={card}
               />
             </td>
@@ -89,7 +88,8 @@ function ResultCrypt(props) {
           showImage={props.showImage}
           toggleImage={props.toggleImage}
           addMode={props.addMode}
-          cardAdd={props.cardAdd}
+          activeDeck={props.activeDeck}
+          deckCardAdd={props.deckCardAdd}
           resultCards={sortedCards}
         />
       </table>
