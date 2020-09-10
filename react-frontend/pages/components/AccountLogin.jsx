@@ -51,9 +51,14 @@ function AccountLogin(props) {
     const fetchPromise = fetch(url, options);
 
     fetchPromise
-      .then(response => response.json());
-
-    props.setUsername(state.username);
+      .then(response => response.json())
+      .then(data => {
+        if (data.error === undefined) {
+          props.setUsername(state.username);
+        } else {
+          console.log('error: ', data.error);
+        }
+      });
   };
 
   return (

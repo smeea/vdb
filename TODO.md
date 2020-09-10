@@ -7,7 +7,6 @@
 
 # MAJOR FIX
 * Share deck for non-logged users
-* Check login success
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
 * Change Forms to React-Bootstrap forms
