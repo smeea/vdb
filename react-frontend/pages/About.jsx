@@ -1,6 +1,6 @@
 import React from 'react';
 
-function About() {
+function About(props) {
   return (
     <div className='container px-0 py-xl-3 px-xl-2'>
       <div className='row mx-0'>

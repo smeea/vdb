@@ -66,7 +66,12 @@ function DeckNewCryptName(props) {
                        src={'/images/misc/cap' + card['Capacity'] + '.png'}
                   />
                   <span className='pl-1'>
-                    { card['Name'] + (card['Adv'] ? ' [ADV]' : '') + (card['Banned'] ? ' [BANNED]' : '') }
+                    { card['Name']
+                      + (card['Adv']
+                         ? ' [ADV]'
+                         : '')
+                      + (card['Banned'] ? ' [BANNED]' : '')
+                    }
                   </span>
                 </div>
                 <div>

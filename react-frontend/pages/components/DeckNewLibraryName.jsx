@@ -67,7 +67,9 @@ function DeckNewLibraryName(props) {
                 <div>
                   <ResultLibraryType cardtype={card['Type']}/>
                   <span className='pl-1'>
-                    { card['Name'] + (card['Banned'] ? ' [BANNED]' : '') }
+                    { card['Name'] + (card['Banned']
+                                      ? ' [BANNED]'
+                                      : '') }
                   </span>
                 </div>
                 <div>

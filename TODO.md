@@ -7,11 +7,10 @@
 
 # MAJOR FIX
 * Share deck for non-logged users
+* Check login success
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
-* Fix uncontrolled input bug in clear button
 * Change Forms to React-Bootstrap forms
-* Remove unused imports
 
 # ADDITIONAL FEATURE
 * Export/Import (formats: TWD, LackeyCCG) deck

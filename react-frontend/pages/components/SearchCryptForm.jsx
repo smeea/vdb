@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useFocus } from 'react';
 
 import SearchCryptFormButtons from './SearchCryptFormButtons.jsx';
 import SearchCryptFormText from './SearchCryptFormText.jsx';
@@ -14,6 +14,7 @@ import SearchCryptFormTraits from './SearchCryptFormTraits.jsx';
 import SearchCryptFormSet from './SearchCryptFormSet.jsx';
 
 function SearchCryptForm(props) {
+
   const handleChange = event => {
     const {name, value} = event.target;
     props.setFormState(prevState => ({

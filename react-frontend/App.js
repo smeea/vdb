@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
-import { Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
+
 import Navigation from './pages/Navigation.jsx';
 import Account from './pages/Account.jsx';
 import About from './pages/About.jsx';
@@ -19,38 +20,6 @@ function App(props) {
 
   const [showImage, setShowImage] = useState(false);
   const toggleImage = () => setShowImage(!showImage);
-
-  const [libraryFormState, setLibraryFormState] = useState({
-    text: '',
-    type: 'ANY',
-    discipline: 'ANY',
-    blood: 'ANY',
-    bloodmoreless: 'le',
-    pool: 'ANY',
-    poolmoreless: 'le',
-    clan: 'ANY',
-    sect: 'ANY',
-    title: 'ANY',
-    traits: {
-      'intercept': false,
-      'stealth': false,
-      'bleed': false,
-      'strength': false,
-      'dodge': false,
-      'optional maneuver': false,
-      'additional strike': false,
-      aggravated: false,
-      prevent: false,
-      'optional press': false,
-      'combat ends': false,
-      'bounce bleed': false,
-      'black hand': false,
-      seraph: false,
-      anarch: false,
-      infernal: false,
-    },
-    set: 'ANY',
-  });
 
   const [cryptFormState, setCryptFormState] = useState({
     text: '',
@@ -143,6 +112,38 @@ function App(props) {
     set: 'ANY',
   });
 
+  const [libraryFormState, setLibraryFormState] = useState({
+    text: '',
+    type: 'ANY',
+    discipline: 'ANY',
+    blood: 'ANY',
+    bloodmoreless: 'le',
+    pool: 'ANY',
+    poolmoreless: 'le',
+    clan: 'ANY',
+    sect: 'ANY',
+    title: 'ANY',
+    traits: {
+      'intercept': false,
+      'stealth': false,
+      'bleed': false,
+      'strength': false,
+      'dodge': false,
+      'optional maneuver': false,
+      'additional strike': false,
+      aggravated: false,
+      prevent: false,
+      'optional press': false,
+      'combat ends': false,
+      'bounce bleed': false,
+      'black hand': false,
+      seraph: false,
+      anarch: false,
+      infernal: false,
+    },
+    set: 'ANY',
+  });
+
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
 
@@ -202,6 +203,14 @@ function App(props) {
 
   const [username, setUsername] = useState(undefined);
 
+  useEffect(() => {
+    if (username) {
+      getDecks();
+    } else {
+      setDecks({});
+    }
+  }, [username]);
+
   const whoAmI= () => {
     const url = process.env.API_URL + 'login';
     const options = {
@@ -215,19 +224,9 @@ function App(props) {
       .then(data => setUsername(data.username))
   };
 
-
-  useEffect(() => {
-    if (username) {
-      getDecks();
-    } else {
-      setDecks({});
-    }
-  }, [username]);
-
   useEffect(() => {
       whoAmI();
   }, []);
-
 
   return (
     <div className='App'>
@@ -268,7 +267,7 @@ function App(props) {
               username={username}
               id={props.match.params.id}
             /> } />
-          <Route path='/crypt' exact component={() =>
+          <Route path='/crypt'>
             <Crypt
               cards={cryptResults}
               setResults={setCryptResults}
@@ -284,8 +283,9 @@ function App(props) {
               toggleImage={toggleImage}
               formState={cryptFormState}
               setFormState={setCryptFormState}
-            /> } />
-          <Route path='/library' exact component={() =>
+            />
+          </Route>
+          <Route path='/library'>
             <Library
               cards={libraryResults}
               setResults={setLibraryResults}
@@ -301,7 +301,8 @@ function App(props) {
               toggleImage={toggleImage}
               formState={libraryFormState}
               setFormState={setLibraryFormState}
-            /> } />
+            />
+          </Route>
         </Switch>
       </Router>
     </div>
