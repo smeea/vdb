@@ -95,6 +95,8 @@ function Deck(props) {
             activeDeck={props.activeDeck}
             deckCardAdd={props.deckCardAdd}
             deckCardChange={props.deckCardChange}
+            getDecks={props.getDecks}
+            setActiveDeck={props.setActiveDeck}
           />
         </div>
 

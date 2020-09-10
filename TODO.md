@@ -1,8 +1,8 @@
 # MAJOR FEATURE
 * Beautify card text popover
 * Deck link in url-bar
+* Remove deck confirmation
 # MINOR FEATURE
-* Copy ('fork') deck
 * Trifle icon
 
 # MAJOR FIX

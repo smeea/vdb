@@ -77,7 +77,7 @@ def updateDeck(deckid):
                 d.cards = merged_cards.copy()
                 db.session.commit()
                 return jsonify({'updated deck': d.deckid, 'cards': d.cards})
-        except:
+        except Exception:
             pass
         try:
             if request.json['name']:
@@ -86,7 +86,7 @@ def updateDeck(deckid):
                 d.name = request.json['name']
                 db.session.commit()
                 return jsonify({'updated deck': d.deckid, 'name': d.name})
-        except:
+        except Exception:
             pass
         try:
             if request.json['add']:
@@ -101,7 +101,7 @@ def updateDeck(deckid):
                 d.cards = merged_cards.copy()
                 db.session.commit()
                 return jsonify({'updated deck': d.deckid, 'cards': d.cards})
-        except:
+        except Exception:
             pass
         try:
             if request.json['description']:
@@ -113,7 +113,7 @@ def updateDeck(deckid):
                     'updated deck': d.deckid,
                     'description': d.description
                 })
-        except:
+        except Exception:
             pass
     else:
         return jsonify({'Not logged in.'})
@@ -164,7 +164,32 @@ def newDeck():
                 'FLASK new deck created': request.json['deckname'],
                 'deckid': deckid,
             })
-        except:
+        except Exception:
+            pass
+    else:
+        return jsonify({'Not logged in.'})
+
+
+@app.route('/api/decks/clone', methods=['POST'])
+def cloneDeck():
+    if current_user.is_authenticated:
+        try:
+            targetDeck = Deck.query.filter_by(
+                deckid=request.json['target']).first()
+            deckid = uuid.uuid4().hex
+            d = Deck(deckid=deckid,
+                     name=request.json['deckname'],
+                     author_public_name=current_user.username,
+                     description='',
+                     author=current_user,
+                     cards=targetDeck.cards)
+            db.session.add(d)
+            db.session.commit()
+            return jsonify({
+                'FLASK deck cloned': request.json['deckname'],
+                'deckid': deckid,
+            })
+        except Exception:
             pass
     else:
         return jsonify({'Not logged in.'})
@@ -179,7 +204,7 @@ def removeDeck():
             db.session.delete(d)
             db.session.commit()
             return jsonify({'FLASK deck removed': request.json['deckid']})
-        except:
+        except Exception:
             return jsonify({'error': 'idk'})
     else:
         return jsonify({'Not logged in.'})
