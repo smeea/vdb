@@ -31,7 +31,7 @@ function About(props) {
             WHAT IS IT
           </h5>
           <p>
-            Card search and deck building utility for Vampire the Eternal Struggle (VTES).
+            Card search and deck building tool for Vampire the Eternal Struggle (VTES).
             <br />
 
           </p>
@@ -44,7 +44,7 @@ function About(props) {
               </b>
             </a>
             <br />
-            Great deck-building tool with modern design and features. You should definitely try it!
+            Online card search and deck-building tool. You should definitely try it!
             <br />
             This project use many ideas from Amaranth.
           </p>
@@ -56,7 +56,7 @@ function About(props) {
               </b>
             </a>
             <br />
-            One of the best deck-building application for Windows.
+            Deck-building application for Windows.
             <br />
             This project use card images from FELD.
           </p>
@@ -68,7 +68,7 @@ function About(props) {
               </b>
             </a>
             <br />
-            Android client. Fast and clean, though limited in features. Useful when you play in the basement with no internet connection and want to just fast check a card on-the-fly.
+            Android card search application.
             <br />
           </p>
 
@@ -79,7 +79,7 @@ function About(props) {
               </b>
             </a>
             <br />
-            Best strategy portal.
+            Strategy portal.
           </p>
 
           <p>
@@ -99,23 +99,12 @@ function About(props) {
               </b>
             </a>
             <br />
-            From time to time check{' '}
+            Check{' '}
             <a href='http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs'>
-              vekn forum</a>
-            {' '}to find what suit you best.
-            <br />
-          </p>
-
-          <h5>
-            LICENSE
-          </h5>
-          <p>
-            Source code of the site is available under{' '}
-            <a href='https://en.wikipedia.org/wiki/MIT_License'>
-              MIT license.
+              vekn forum
             </a>
+            {' '}for more tools!
             <br />
-            Card images & icons are not free and copyrighted by Authors / Publishers.
           </p>
 
           <h5>
@@ -127,6 +116,12 @@ function About(props) {
               this Github repository.
             </a>
             <br />
+            Source code of the site is available under{' '}
+            <a href='https://en.wikipedia.org/wiki/MIT_License'>
+              MIT license.
+            </a>
+            <br />
+            Card images & icons are copyrighted by Authors / Publishers.
           </p>
 
           <h5>
