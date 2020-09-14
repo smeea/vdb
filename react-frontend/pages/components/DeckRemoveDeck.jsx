@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 
+import DeckRemoveDeckConfirmation from './DeckRemoveDeckConfirmation.jsx';
+
 function DeckRemoveDeck(props) {
-  const removeDeck = event => {
-    if (props.activeDeck) {
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const handleCancel = () => setShowConfirmation(false);
+  const handleConfirm = () => {
+    removeDeck();
+    setShowConfirmation(false); 
+    props.setActiveDeck(undefined)
+  }
+
+  const removeDeck = () => {
+    if (props.deck) {
       const url = process.env.API_URL + 'decks/remove';
       const options = {
         method: 'POST',
@@ -12,10 +22,10 @@ function DeckRemoveDeck(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({deckid: props.activeDeck}),
+        body: JSON.stringify({deckid: props.deck.deckid}),
       };
       fetch(url, options);
-      console.log('Remove deck: ', props.activeDeck);
+      console.log('Remove deck: ', props.deck.deckid);
 
     } else {
       console.log('Error: no deck selected');
@@ -24,9 +34,15 @@ function DeckRemoveDeck(props) {
 
   return (
     <>
-      <Button variant='outline-secondary' onClick={removeDeck}>
+      <Button variant='outline-secondary' onClick={() => setShowConfirmation(true)}>
         Remove
       </Button>
+      <DeckRemoveDeckConfirmation
+        show={showConfirmation}
+        handleConfirm={handleConfirm}
+        handleCancel={handleCancel}
+        deckname={props.deck.name}
+      />
     </>
   );
 }

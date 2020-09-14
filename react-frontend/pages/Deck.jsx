@@ -5,6 +5,7 @@ import { useParams } from 'react-router';
 import DeckNewDeck from './components/DeckNewDeck.jsx';
 import DeckImportDeck from './components/DeckImportDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
+import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
 
 function Deck(props) {
@@ -55,6 +56,10 @@ function Deck(props) {
     }
   }, [props.id]);
 
+  useEffect(() => {
+    props.getDecks();
+  }, [props.activeDeck]);
+
   return (
     <div className='container px-0 py-xl-3 px-xl-2'>
       <div className='row mx-0'>
@@ -86,18 +91,26 @@ function Deck(props) {
               activeDeck={props.activeDeck}
               setActiveDeck={props.setActiveDeck}
             />
+            { props.decks[props.activeDeck] &&
+              <DeckRemoveDeck
+                deck={props.decks[props.activeDeck]}
+                setActiveDeck={props.setActiveDeck}
+              />
+            }
           </div>
-          <DeckShowDeck
-            showImage={props.showImage}
-            toggleImage={props.toggleImage}
-            deckUpdate={deckUpdate}
-            deck={props.decks[props.activeDeck]}
-            activeDeck={props.activeDeck}
-            deckCardAdd={props.deckCardAdd}
-            deckCardChange={props.deckCardChange}
-            getDecks={props.getDecks}
-            setActiveDeck={props.setActiveDeck}
-          />
+          { props.decks[props.activeDeck] &&
+            <DeckShowDeck
+              showImage={props.showImage}
+              toggleImage={props.toggleImage}
+              deckUpdate={deckUpdate}
+              deck={props.decks[props.activeDeck]}
+              activeDeck={props.activeDeck}
+              deckCardAdd={props.deckCardAdd}
+              deckCardChange={props.deckCardChange}
+              getDecks={props.getDecks}
+              setActiveDeck={props.setActiveDeck}
+            />
+          }
         </div>
 
         <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>

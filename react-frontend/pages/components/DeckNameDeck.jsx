@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
-import DeckRemoveDeck from './DeckRemoveDeck.jsx';
-
 function DeckNameDeck(props) {
   const [state, setState] = useState(props.name);
 
@@ -38,7 +36,6 @@ function DeckNameDeck(props) {
       <Button variant='outline-secondary' onClick={deckNameButton}>
         Rename
       </Button>
-      <DeckRemoveDeck activeDeck={props.activeDeck} />
     </div>
   );
 }

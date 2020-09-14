@@ -43,7 +43,15 @@ function DeckCryptSideBody(props) {
             <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
           </td>
           <td className='name'>
-            <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c} />
+            <ResultCryptName
+              id={card.c['Id']}
+              value={card.c['Name']}
+              adv={card.c['Adv']}
+              ban={card.c['Banned']}
+              card={card.c}
+              showImage={props.showImage}
+              toggleImage={props.toggleImage}
+            />
           </td>
           <td className='clan'>
             <ResultCryptClan value={card.c['Clan']} />
@@ -93,7 +101,15 @@ function DeckCryptBody(props) {
             <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
           </td>
           <td className='name'>
-            <ResultCryptName id={card.c['Id']} value={card.c['Name']} adv={card.c['Adv']} ban={card.c['Banned']} card={card.c}/>
+            <ResultCryptName
+              id={card.c['Id']}
+              value={card.c['Name']}
+              adv={card.c['Adv']}
+              ban={card.c['Banned']}
+              card={card.c}
+              showImage={props.showImage}
+              toggleImage={props.toggleImage}
+            />
           </td>
           <td className='clan'>
             <ResultCryptClan value={card.c['Clan']} />
@@ -162,6 +178,8 @@ function DeckCrypt(props) {
             deckCardChange={props.deckCardChange}
             cards={crypt}
             disciplines_set={disciplines_set}
+            showImage={props.showImage}
+            toggleImage={props.toggleImage}
           />
         </table>
       </div>
@@ -174,6 +192,8 @@ function DeckCrypt(props) {
               deckCardChange={props.deckCardChange}
               cards={crypt_side}
               disciplines_set={disciplines_set}
+              showImage={props.showImage}
+              toggleImage={props.toggleImage}
             />
           </table>
         </div>

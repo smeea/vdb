@@ -6,7 +6,7 @@ function ResultCryptClan(props) {
 
   return (
     <span className='clan'>
-      <img className={imgClass} src={imgSrc} />
+      <img className={imgClass} src={imgSrc} title={props.value} />
     </span>
   );
 }

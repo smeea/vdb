@@ -17,10 +17,6 @@ function DeckNewLibraryName(props) {
     setSelectedValue(value);
   };
 
-  const clearFormButton = () => {
-    setSelectedValue('');
-  };
-
   const addNewCard = () => {
     if (selectedValue.Id) {
       props.deckCardAdd(selectedValue.Id);
@@ -108,9 +104,6 @@ function DeckNewLibraryName(props) {
       </div>
       <Button variant='outline-secondary' onClick={addNewCard}>
         Add
-      </Button>
-      <Button variant='outline-secondary' onClick={clearFormButton}>
-        Clear
       </Button>
     </div>
   );

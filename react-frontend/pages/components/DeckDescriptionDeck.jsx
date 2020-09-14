@@ -8,10 +8,6 @@ function DeckDescriptionDeck(props) {
     setState(event.target.value);
   };
 
-  const clearFormButton = () => {
-    setState('');
-  };
-
   const deckDescriptionButton = () => {
     if (state) {
       props.deckUpdate(props.deckid, 'description', state);
@@ -37,9 +33,6 @@ function DeckDescriptionDeck(props) {
       />
       <Button variant='outline-secondary' onClick={deckDescriptionButton}>
         Update
-      </Button>
-      <Button variant='outline-secondary' onClick={clearFormButton}>
-        Clear
       </Button>
     </div>
   );

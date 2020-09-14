@@ -27,7 +27,7 @@ function ResultCryptDisciplines(props) {
         }
         return (
           <td width={width} key={index}>
-            <img className={imgClass} src={imgSrc} />
+            <img className={imgClass} src={imgSrc} title={d} />
           </td>
         );
       }
@@ -50,7 +50,7 @@ function ResultCryptDisciplines(props) {
       }
       return (
         <td width={width} key={index}>
-          <img className={imgClass} src={imgSrc} />
+          <img className={imgClass} src={imgSrc} title={d} />
         </td>
       );
     });

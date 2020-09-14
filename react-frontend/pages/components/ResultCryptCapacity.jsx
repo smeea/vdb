@@ -6,7 +6,7 @@ function ResultCryptCapacity(props) {
 
   return (
     <span className='capacity'>
-      <img className={imgClass} src={imgSrc} />
+      <img className={imgClass} src={imgSrc} title='Capacity' />
     </span>
   );
 }

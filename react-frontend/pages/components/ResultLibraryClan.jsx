@@ -22,7 +22,7 @@ function ResultLibraryClan(props) {
       } else {
         return (
           <span key={index}>
-            <img className={imgClass} src={imgSrc} />
+            <img className={imgClass} src={imgSrc} title={props.value} />
           </span>
         );
       }
@@ -30,7 +30,7 @@ function ResultLibraryClan(props) {
   } else if (props.value) {
     const imgSrc=process.env.ROOT_URL + 'images/clans/' + props.value.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
     clan_images =
-      <img className={imgClass} src={imgSrc} />;
+      <img className={imgClass} src={imgSrc} title={props.value} />;
   }
 
   return (

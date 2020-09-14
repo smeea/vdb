@@ -22,12 +22,14 @@ function DeckSelectDeck(props) {
   }, [props.decks]);
 
   return (
-    <select className='custom-select'
-            value={props.activeDeck}
-            onChange={(e) => props.setActiveDeck(e.target.value)}
-    >
-      {decksOptions}
-    </select>
+    <>
+      <select className='custom-select'
+              value={props.activeDeck}
+              onChange={(e) => props.setActiveDeck(e.target.value)}
+      >
+        {decksOptions}
+      </select>
+    </>
   );
 };
 
