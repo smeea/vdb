@@ -75,8 +75,6 @@ function SearchLibraryFormDiscipline(props) {
     }
   });
 
-  console.log('dis: ', options)
-
   return (
     <div className='form-row'>
       <div className='form-group col-3 d-flex align-items-center'>

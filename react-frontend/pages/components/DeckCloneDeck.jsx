@@ -19,8 +19,6 @@ function DeckCloneDeck(props) {
       }),
     };
 
-    console.log(options.body)
-
     fetch(url, options)
       .then(response => response.json())
       .then(data => {
