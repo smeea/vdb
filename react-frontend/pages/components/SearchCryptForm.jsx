@@ -206,19 +206,57 @@ function SearchCryptForm(props) {
   return (
     <form onSubmit={handleSubmitButton}>
       <div className="input-group">
-        <SearchCryptFormText value={props.formState.text} onChange={handleChange} />
-        <SearchCryptFormButtons handleClearFormButton={handleClearFormButton} handleClearResultButton={handleClearResultButton} />
+        <SearchCryptFormText
+          value={props.formState.text}
+          onChange={handleChange}
+        />
+        <SearchCryptFormButtons
+          handleClearFormButton={handleClearFormButton}
+          handleClearResultButton={handleClearResultButton}
+        />
       </div>
-      <SearchCryptFormDisciplines value={props.formState.disciplines} onChange={handleDisciplinesChange}/>
-      <SearchCryptFormVirtues value={props.formState.virtues} onChange={handleVirtuesChange}/>
-      <SearchCryptFormCapacity value={props.formState.capacity} moreless={props.formState.capacitymoreless} onValueChange={handleChange} onMorelessChange={handleChange} />
-      <SearchCryptFormClan value={props.formState.clan} onChange={handleSelectChange} />
-      <SearchCryptFormSect value={props.formState.sect} onChange={handleChange} />
-      <SearchCryptFormVotes value={props.formState.votes} onChange={handleChange} />
-      <SearchCryptFormTitles value={props.formState.titles} onChange={handleMultiChange} />
-      <SearchCryptFormGroup value={props.formState.group} onChange={handleMultiChange} />
-      <SearchCryptFormTraits value={props.formState.traits} onChange={handleMultiChange} />
-      <SearchCryptFormSet value={props.formState.set} onChange={handleChange} />
+      <SearchCryptFormDisciplines
+        value={props.formState.disciplines}
+        onChange={handleDisciplinesChange}
+      />
+      <SearchCryptFormVirtues
+        value={props.formState.virtues}
+        onChange={handleVirtuesChange}
+      />
+      <SearchCryptFormCapacity
+        value={props.formState.capacity}
+        moreless={props.formState.capacitymoreless}
+        onValueChange={handleChange}
+        onMorelessChange={handleChange}
+      />
+      <SearchCryptFormClan
+        value={props.formState.clan}
+        onChange={handleSelectChange}
+      />
+      <SearchCryptFormSect
+        value={props.formState.sect}
+        onChange={handleChange}
+      />
+      <SearchCryptFormVotes
+        value={props.formState.votes}
+        onChange={handleChange}
+      />
+      <SearchCryptFormTitles
+        value={props.formState.titles}
+        onChange={handleMultiChange}
+      />
+      <SearchCryptFormGroup
+        value={props.formState.group}
+        onChange={handleMultiChange}
+      />
+      <SearchCryptFormTraits
+        value={props.formState.traits}
+        onChange={handleMultiChange}
+      />
+      <SearchCryptFormSet
+        value={props.formState.set}
+        onChange={handleChange}
+      />
     </form>
   );
 }

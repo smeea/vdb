@@ -118,18 +118,55 @@ function SearchLibraryForm(props) {
   return (
     <form onSubmit={handleSubmitButton}>
       <div className="input-group mb-3">
-        <SearchLibraryFormText value={props.formState.text} onChange={handleChange} />
-        <SearchLibraryFormButtons handleClearFormButton={handleClearFormButton} handleClearResultButton={handleClearResultButton} />
+        <SearchLibraryFormText
+          value={props.formState.text}
+          onChange={handleChange}
+        />
+        <SearchLibraryFormButtons
+          handleClearFormButton={handleClearFormButton}
+          handleClearResultButton={handleClearResultButton}
+        />
       </div>
-      <SearchLibraryFormType value={props.formState.type} onChange={handleSelectChange} />
-      <SearchLibraryFormDiscipline value={props.formState.discipline} onChange={handleSelectChange}/>
-      <SearchLibraryFormClan value={props.formState.clan} onChange={handleSelectChange} />
-      <SearchLibraryFormSect value={props.formState.sect} onChange={handleChange} />
-      <SearchLibraryFormTitle value={props.formState.titles} onChange={handleChange} />
-      <SearchLibraryFormBloodCost value={props.formState.blood} moreless={props.formState.bloodmoreless} onValueChange={handleChange} onMorelessChange={handleChange} />
-      <SearchLibraryFormPoolCost value={props.formState.pool} moreless={props.formState.poolmoreless} onValueChange={handleChange} onMorelessChange={handleChange} />
-      <SearchLibraryFormTraits value={props.formState.traits} onChange={handleMultiChange} />
-      <SearchLibraryFormSet value={props.formState.set} onChange={handleChange} />
+      <SearchLibraryFormType
+        value={props.formState.type}
+        onChange={handleSelectChange}
+      />
+      <SearchLibraryFormDiscipline
+        value={props.formState.discipline}
+        onChange={handleSelectChange}
+      />
+      <SearchLibraryFormClan
+        value={props.formState.clan}
+        onChange={handleSelectChange}
+      />
+      <SearchLibraryFormSect
+        value={props.formState.sect}
+        onChange={handleSelectChange}
+      />
+      <SearchLibraryFormTitle
+        value={props.formState.titles}
+        onChange={handleChange}
+      />
+      <SearchLibraryFormBloodCost
+        value={props.formState.blood}
+        moreless={props.formState.bloodmoreless}
+        onValueChange={handleChange}
+        onMorelessChange={handleChange}
+      />
+      <SearchLibraryFormPoolCost
+        value={props.formState.pool}
+        moreless={props.formState.poolmoreless}
+        onValueChange={handleChange}
+        onMorelessChange={handleChange}
+      />
+      <SearchLibraryFormTraits
+        value={props.formState.traits}
+        onChange={handleMultiChange}
+      />
+      <SearchLibraryFormSet
+        value={props.formState.set}
+        onChange={handleChange}
+      />
     </form>
   );
 }

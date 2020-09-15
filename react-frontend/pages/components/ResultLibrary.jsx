@@ -5,6 +5,7 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
+import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
 import ResultLibraryTotal from './ResultLibraryTotal.jsx';
@@ -24,9 +25,11 @@ function SearchLibraryBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          { props.activeDeck &&
-            <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
-          }
+          <td>
+            { props.activeDeck &&
+              <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
+            }
+          </td>
           <td className='cost'>
             <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
           </td>
@@ -51,6 +54,7 @@ function SearchLibraryBody(props) {
           </td>
           <td className='burn'>
             <ResultLibraryBurn value={card['Burn Option']} />
+            <ResultLibraryTrifle value={card['Card Text']} />
           </td>
         </tr>
       </React.Fragment>

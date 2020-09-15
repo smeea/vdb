@@ -9,6 +9,7 @@
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
 * Change Forms to React-Bootstrap forms
+* Search options case to lower
 
 # ADDITIONAL FEATURE
 * Export/Import (formats: TWD, LackeyCCG) deck

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ResultLibrary from './components/ResultLibrary.jsx';
 import SearchLibraryForm from './components/SearchLibraryForm.jsx';
@@ -6,6 +6,41 @@ import DeckPreview from './components/DeckPreview.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 
 function Library(props) {
+  const [results, setResults] = useState([]);
+  const [sortMethod, setSortMethod] = useState('Default');
+
+  const [formState, setFormState] = useState({
+    text: '',
+    type: 'ANY',
+    discipline: 'ANY',
+    blood: 'ANY',
+    bloodmoreless: 'le',
+    pool: 'ANY',
+    poolmoreless: 'le',
+    clan: 'ANY',
+    sect: 'ANY',
+    title: 'ANY',
+    traits: {
+      'intercept': false,
+      'stealth': false,
+      'bleed': false,
+      'strength': false,
+      'dodge': false,
+      'optional maneuver': false,
+      'additional strike': false,
+      aggravated: false,
+      prevent: false,
+      'optional press': false,
+      'combat ends': false,
+      'bounce bleed': false,
+      'black hand': false,
+      seraph: false,
+      anarch: false,
+      infernal: false,
+    },
+    set: 'ANY',
+  });
+
   return (
     <div className='container px-0 py-xl-2 px-xl-2'>
       <div className='row mx-0'>
@@ -36,17 +71,17 @@ function Library(props) {
             toggleImage={props.toggleImage}
             sortMode={true}
             deckCardAdd={props.deckCardAdd}
-            cards={props.cards}
+            cards={results}
             activeDeck={props.activeDeck}
-            sortMethod={props.sortMethod}
-            setSortMethod={props.setSortMethod}
+            sortMethod={sortMethod}
+            setSortMethod={setSortMethod}
           />
         </div>
         <div className='col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2'>
           <SearchLibraryForm
-            setResults={props.setResults}
-            formState={props.formState}
-            setFormState={props.setFormState}
+            setResults={setResults}
+            formState={formState}
+            setFormState={setFormState}
           />
         </div>
       </div>

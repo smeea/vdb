@@ -20,10 +20,13 @@ function ResultCryptPopover(props) {
     <Popover.Content>
       { props.showImage ?
         <>
+          {props.card['Name']}
+          <hr />
           {props.card['Card Text']}
-        <div className='popover-sets'>
-          {sets}
-        </div>
+          <hr />
+          <div className='popover-sets'>
+            {sets}
+          </div>
         </>
         :
         cardImage

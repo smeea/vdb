@@ -20,7 +20,10 @@ function ResultLibraryPopover(props) {
     <Popover.Content>
       { props.showImage ?
         <>
+          {props.card['Name']}
+          <hr />
           {props.card['Card Text']}
+          <hr />
           <div className='popover-sets'>
             {sets}
           </div>

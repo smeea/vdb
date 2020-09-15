@@ -1,21 +1,36 @@
 import React from 'react';
+import Select from 'react-select';
 
 function SearchLibraryFormSect(props) {
   const sects = [
-    ['ANY', 'ANY'],
-    ['Camarilla', 'camarilla'],
-    ['Sabbat', 'sabbat'],
-    ['Laibon', 'laibon'],
-    ['Independent', 'independent'],
-    ['Anarch', 'anarch'],
-    ['Imbued', 'imbued'],
+    'ANY',
+    'NONE',
+    'Camarilla',
+    'Sabbat',
+    'Laibon',
+    'Independent',
+    'Anarch',
+    'Imbued',
   ];
 
-  const sectforms = sects.map((i, index) => {
-    return(
-      <option key={index} value={i[1]}>{i[0]}</option>
+  const options = []
+
+  sects.map((i, index) => {
+    options.push(
+      {
+        value: i.toLowerCase(),
+        name: 'sect',
+        label:
+        <>
+          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          </span>
+          {i}
+        </>
+      }
     );
   });
+
+  console.log('sect: ', options)
 
   return (
     <div className='form-row'>
@@ -25,9 +40,12 @@ function SearchLibraryFormSect(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <select className='custom-select' name='sect' value={props.value} onChange={props.onChange}>
-          {sectforms}
-        </select>
+        <Select
+          options={options}
+          name='sect'
+          value={options.find(obj => obj.value === props.value)}
+          onChange={props.onChange}
+        />
       </div>
     </div>
   );

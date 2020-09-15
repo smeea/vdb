@@ -25,9 +25,11 @@ function SearchCryptBody(props) {
       return (
         <React.Fragment key={index}>
           <tr className={resultTrClass}>
-            { props.activeDeck &&
-              <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
-            }
+            <td>
+              { props.activeDeck &&
+                <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
+              }
+            </td>
             <td className='capacity'>
               <ResultCryptCapacity value={card['Capacity']} />
             </td>

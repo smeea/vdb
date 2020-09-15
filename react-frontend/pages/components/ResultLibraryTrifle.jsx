@@ -1,13 +1,13 @@
 import React from 'react';
 
-function ResultLibraryBurn(props) {
-  const imgClass = 'burn-image-results';
+function ResultLibraryTrifle(props) {
+  const imgClass = 'trifle-image-results';
   const imgSrc = process.env.ROOT_URL + 'images/misc/burn.gif';
-  const imgTitle = 'Burn Option';
+  const imgTitle = 'Trifle';
 
-  if (props.value) {
+  if (props.value.includes('Trifle.')) {
     return (
-      <span className='burn'>
+      <span className='trifle'>
         <img className={imgClass} src={imgSrc} title={imgTitle} />
       </span>
     );
@@ -16,4 +16,4 @@ function ResultLibraryBurn(props) {
   }
 }
 
-export default ResultLibraryBurn;
+export default ResultLibraryTrifle;

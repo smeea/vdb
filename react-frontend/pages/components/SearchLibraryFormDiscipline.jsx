@@ -3,6 +3,8 @@ import Select from 'react-select';
 
 function SearchLibraryFormDiscipline(props) {
   const disciplines = [
+    'ANY',
+    'NONE',
     'Abombwe',
     'Animalism',
     'Auspex',
@@ -39,43 +41,41 @@ function SearchLibraryFormDiscipline(props) {
     'Vision',
   ];
 
-  const disciplineOptions = [
-    {
-      value: 'ANY',
-      name: 'discipline',
-      label:
-      <>
-        <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-        </span>
-        ANY
-      </>
-    },
-    {
-      value: 'NONE',
-      name: 'discipline',
-      label:
-      <>
-        <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-        </span>
-        NONE
-      </>
-    },
-  ];
+  const options = []
 
-  disciplines.map((discipline, index) => {
-    const imgSrc=process.env.ROOT_URL + 'images/disciplines/' + discipline.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
-    disciplineOptions.push({
-      value: discipline,
-      name: 'discipline',
-      label:
-      <>
-        <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-          <img src={imgSrc} className='discipline-base-image-results' />
-        </span>
-        {discipline}
-      </>
-    });
+  disciplines.map((i, index) => {
+    if (i == 'ANY' || i == 'NONE') {
+      options.push(
+        {
+          value: i,
+          name: 'discipline',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+            </span>
+            {i}
+          </>
+        }
+      );
+    } else {
+      const imgSrc=process.env.ROOT_URL + 'images/disciplines/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+      options.push(
+        {
+          value: i,
+          name: 'discipline',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+              <img src={imgSrc} className='discipline-base-image-results' />
+            </span>
+            {i}
+          </>
+        }
+      );
+    }
   });
+
+  console.log('dis: ', options)
 
   return (
     <div className='form-row'>
@@ -86,9 +86,9 @@ function SearchLibraryFormDiscipline(props) {
       </div>
       <div className='form-group col-9'>
         <Select
-          options={disciplineOptions}
+          options={options}
           name='discipline'
-          value={disciplineOptions.find(obj => obj.value === props.value)}
+          value={options.find(obj => obj.value === props.value)}
           onChange={props.onChange}
         />
       </div>

@@ -16,21 +16,25 @@ function DeckLibraryBody(props) {
 
     return (
       <tr key={index} className={resultTrClass}>
+        <td className='quantity'>
           <DeckCardQuantity
             cardid={card[0].Id}
             q={card[1]}
             deckid={props.deckid}
             deckCardChange={props.deckCardChange}
           />
-        <ResultLibraryName
-          showImage={props.showImage}
-          toggleImage={props.toggleImage}
-          id={card[0]['Id']}
-          value={card[0]['Name']}
-          ban={card[0]['Banned']}
-          card={card[0]}
-        />
-        </tr>
+        </td>
+        <td className='name'>
+          <ResultLibraryName
+            showImage={props.showImage}
+            toggleImage={props.toggleImage}
+            id={card[0]['Id']}
+            value={card[0]['Name']}
+            ban={card[0]['Banned']}
+            card={card[0]}
+          />
+        </td>
+      </tr>
     );
   });
 
