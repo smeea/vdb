@@ -40,6 +40,7 @@ function SearchLibraryFormSect(props) {
       <div className='form-group col-9'>
         <Select
           options={options}
+          isSearchable={false}
           name='sect'
           value={options.find(obj => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}

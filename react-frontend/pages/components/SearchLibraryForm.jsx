@@ -9,7 +9,6 @@ import SearchLibraryFormSect from './SearchLibraryFormSect.jsx';
 import SearchLibraryFormDiscipline from './SearchLibraryFormDiscipline.jsx';
 import SearchLibraryFormSet from './SearchLibraryFormSet.jsx';
 import SearchLibraryFormTraits from './SearchLibraryFormTraits.jsx';
-import SearchLibraryFormVotes from './SearchLibraryFormVotes.jsx';
 import SearchLibraryFormBloodCost from './SearchLibraryFormBloodCost.jsx';
 import SearchLibraryFormPoolCost from './SearchLibraryFormPoolCost.jsx';
 
@@ -62,8 +61,6 @@ function SearchLibraryForm(props) {
       ...prevState,
       [name]: value
     }));
-    console.log(name, value);
-    console.log(formState)
   };
 
   const handleMultiChange = event => {

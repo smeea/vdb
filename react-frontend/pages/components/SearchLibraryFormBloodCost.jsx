@@ -69,12 +69,14 @@ function SearchLibraryFormBloodCost(props) {
       <div className='form-group col-9'>
         <Select
           options={morelessOptions}
+          isSearchable={false}
           name='bloodmoreless'
           value={morelessOptions.find(obj => obj.value === props.moreless)}
           onChange={props.onChange}
         />
         <Select
           options={options}
+          isSearchable={false}
           name='blood'
           value={options.find(obj => obj.value === props.value)}
           onChange={props.onChange}

@@ -8,6 +8,7 @@
 # MAJOR FIX
 * Share deck for non-logged users
 * Resize icons
+* React-Select dont open input
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
 * Change Forms to React-Bootstrap forms & handleSelectChange -> handleChange

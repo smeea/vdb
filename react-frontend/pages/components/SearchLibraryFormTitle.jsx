@@ -47,6 +47,7 @@ function SearchLibraryFormTitle(props) {
       <div className='form-group col-9'>
         <Select
           options={options}
+          isSearchable={false}
           name='title'
           value={options.find(obj => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}
