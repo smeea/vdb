@@ -20,7 +20,7 @@ function ResultCryptPopover(props) {
     <Popover.Content>
       { props.showImage ?
         <>
-          {props.card['Name']}
+          <b>{props.card['Name']}</b>
           <hr />
           {props.card['Card Text']}
           <hr />

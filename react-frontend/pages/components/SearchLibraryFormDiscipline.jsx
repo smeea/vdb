@@ -47,7 +47,7 @@ function SearchLibraryFormDiscipline(props) {
     if (i == 'ANY' || i == 'NONE') {
       options.push(
         {
-          value: i,
+          value: i.toLowerCase(),
           name: 'discipline',
           label:
           <>
@@ -61,7 +61,7 @@ function SearchLibraryFormDiscipline(props) {
       const imgSrc=process.env.ROOT_URL + 'images/disciplines/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
       options.push(
         {
-          value: i,
+          value: i.toLowerCase(),
           name: 'discipline',
           label:
           <>
@@ -86,7 +86,7 @@ function SearchLibraryFormDiscipline(props) {
         <Select
           options={options}
           name='discipline'
-          value={options.find(obj => obj.value === props.value)}
+          value={options.find(obj => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}
         />
       </div>

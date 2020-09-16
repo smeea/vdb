@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 
 function SearchLibraryFormSet(props) {
   const sets = [
@@ -37,11 +38,23 @@ function SearchLibraryFormSet(props) {
     ['Promo', 'Promo'],
   ];
 
-  const setforms = sets.map((i, index) => {
-    return(
-      <option key={index} value={i[0]}>{i[1]}</option>
+  const options = []
+
+  sets.map((i, index) => {
+    options.push(
+      {
+        value: i[0],
+        name: 'set',
+        label:
+        <>
+          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          </span>
+          {i[1]}
+        </>
+      }
     );
   });
+
   return (
     <div className='form-row'>
       <div className='form-group col-3 d-flex align-items-center'>
@@ -50,9 +63,12 @@ function SearchLibraryFormSet(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <select className='custom-select' name='set' value={props.value} onChange={props.onChange}>
-          {setforms}
-        </select>
+        <Select
+          options={options}
+          name='set'
+          value={options.find(obj => obj.value === props.value)}
+          onChange={props.onChange}
+        />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import SearchLibraryFormButtons from './SearchLibraryFormButtons.jsx';
 import SearchLibraryFormText from './SearchLibraryFormText.jsx';
@@ -14,9 +14,43 @@ import SearchLibraryFormBloodCost from './SearchLibraryFormBloodCost.jsx';
 import SearchLibraryFormPoolCost from './SearchLibraryFormPoolCost.jsx';
 
 function SearchLibraryForm(props) {
+  const defaults = {
+    text: '',
+    type: 'any',
+    discipline: 'any',
+    blood: 'any',
+    bloodmoreless: 'le',
+    pool: 'any',
+    poolmoreless: 'le',
+    clan: 'any',
+    sect: 'any',
+    title: 'any',
+    traits: {
+      'intercept': false,
+      'stealth': false,
+      'bleed': false,
+      'strength': false,
+      'dodge': false,
+      'optional maneuver': false,
+      'additional strike': false,
+      aggravated: false,
+      prevent: false,
+      'optional press': false,
+      'combat ends': false,
+      'bounce bleed': false,
+      'black hand': false,
+      seraph: false,
+      anarch: false,
+      infernal: false,
+    },
+    set: 'any',
+  }
+
+  const [formState, setFormState] = useState(defaults);
+
   const handleChange = event => {
     const {name, value} = event.target;
-    props.setFormState(prevState => ({
+    setFormState(prevState => ({
       ...prevState,
       [name]: value
     }));
@@ -24,68 +58,37 @@ function SearchLibraryForm(props) {
 
   const handleSelectChange = event => {
     const {name, value} = event;
-    props.setFormState(prevState => ({
+    setFormState(prevState => ({
       ...prevState,
       [name]: value
     }));
+    console.log(name, value);
+    console.log(formState)
   };
 
   const handleMultiChange = event => {
     const { id, name } = event.target;
-    let newState = props.formState[name];
+    let newState = formState[name];
     newState[id] = !newState[id];
-    props.setFormState(prevState => ({
+    setFormState(prevState => ({
       ...prevState,
       [name]: newState
     }));
   };
 
-  const handleClearFormButton = () => {
-    props.setFormState({
-      text: '',
-      type: 'ANY',
-      discipline: 'ANY',
-      clan: 'ANY',
-      sect: 'ANY',
-      title: 'ANY',
-      blood: 'ANY',
-      bloodmoreless: 'le',
-      pool: 'ANY',
-      poolmoreless: 'le',
-      traits: {
-        'intercept': false,
-        'stealth': false,
-        'bleed': false,
-        'strength': false,
-        'dodge': false,
-        'optional maneuver': false,
-        'additional strike': false,
-        aggravated: false,
-        prevent: false,
-        'optional press': false,
-        'combat ends': false,
-        'bounce bleed': false,
-        'black hand': false,
-        seraph: false,
-        anarch: false,
-        infernal: false,
-      },
-      set: 'ANY',
-    });
-  };
+  const handleClearFormButton = () => setFormState(defaults);
 
-  const handleClearResultButton = () => {
-    props.setResults([]);
-  };
+  const handleClearResultButton = () => props.setResults([]);
 
   const handleSubmitButton = event => {
+    console.log(formState);
     event.preventDefault();
 
     const url = process.env.API_URL + 'search/library';
 
-    let input = JSON.parse(JSON.stringify(props.formState));
+    let input = JSON.parse(JSON.stringify(formState));
     Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
-    Object.keys(input).forEach(k => (input[k] == 'ANY' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
+    Object.keys(input).forEach(k => (input[k] == 'any' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
     if (input['blood'] == null) {
       delete input['bloodmoreless'];
     };
@@ -119,7 +122,7 @@ function SearchLibraryForm(props) {
     <form onSubmit={handleSubmitButton}>
       <div className="input-group mb-3">
         <SearchLibraryFormText
-          value={props.formState.text}
+          value={formState.text}
           onChange={handleChange}
         />
         <SearchLibraryFormButtons
@@ -128,44 +131,42 @@ function SearchLibraryForm(props) {
         />
       </div>
       <SearchLibraryFormType
-        value={props.formState.type}
+        value={formState.type}
         onChange={handleSelectChange}
       />
       <SearchLibraryFormDiscipline
-        value={props.formState.discipline}
+        value={formState.discipline}
         onChange={handleSelectChange}
       />
       <SearchLibraryFormClan
-        value={props.formState.clan}
+        value={formState.clan}
         onChange={handleSelectChange}
       />
       <SearchLibraryFormSect
-        value={props.formState.sect}
+        value={formState.sect}
         onChange={handleSelectChange}
       />
       <SearchLibraryFormTitle
-        value={props.formState.titles}
-        onChange={handleChange}
+        value={formState.title}
+        onChange={handleSelectChange}
       />
       <SearchLibraryFormBloodCost
-        value={props.formState.blood}
-        moreless={props.formState.bloodmoreless}
-        onValueChange={handleChange}
-        onMorelessChange={handleChange}
+        value={formState.blood}
+        moreless={formState.bloodmoreless}
+        onChange={handleSelectChange}
       />
       <SearchLibraryFormPoolCost
-        value={props.formState.pool}
-        moreless={props.formState.poolmoreless}
-        onValueChange={handleChange}
-        onMorelessChange={handleChange}
+        value={formState.pool}
+        moreless={formState.poolmoreless}
+        onChange={handleSelectChange}
       />
       <SearchLibraryFormTraits
-        value={props.formState.traits}
+        value={formState.traits}
         onChange={handleMultiChange}
       />
       <SearchLibraryFormSet
-        value={props.formState.set}
-        onChange={handleChange}
+        value={formState.set}
+        onChange={handleSelectChange}
       />
     </form>
   );

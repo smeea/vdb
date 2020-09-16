@@ -3,6 +3,7 @@ import Select from 'react-select';
 
 function SearchLibraryFormType(props) {
   const types = [
+    'ANY',
     'Action',
     'Action Modifier',
     'Ally',
@@ -18,30 +19,60 @@ function SearchLibraryFormType(props) {
     'Retainer',
   ];
 
-  const typeOptions = [{
-    value: 'ANY',
-    name: 'type',
-    label:
-    <>
-      <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-      </span>
-      ANY
-    </>
-  }];
 
-  types.map((cardtype, index) => {
-    const imgSrc=process.env.ROOT_URL + 'images/types/' + cardtype.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
-    typeOptions.push({
-      value: cardtype,
-      name: 'type',
-      label:
-      <>
-        <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-          <img src={imgSrc} className='discipline-base-image-results' />
-        </span>
-        {cardtype}
-      </>
-    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const options = []
+
+  types.map((i, index) => {
+    if (i == 'ANY') {
+      options.push(
+        {
+          value: i.toLowerCase(),
+          name: 'type',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+            </span>
+            {i}
+          </>
+        }
+      );
+    } else {
+      const imgSrc=process.env.ROOT_URL + 'images/types/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+      options.push(
+        {
+          value: i.toLowerCase(),
+          name: 'type',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+              <img src={imgSrc} className='discipline-base-image-results' />
+            </span>
+            {i}
+          </>
+        }
+      );
+    }
   });
 
   return (
@@ -53,9 +84,9 @@ function SearchLibraryFormType(props) {
       </div>
       <div className='form-group col-9'>
         <Select
-          options={typeOptions}
+          options={options}
           name='type'
-          value={typeOptions.find(obj => obj.value === props.value)}
+          value={options.find(obj => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}
         />
       </div>

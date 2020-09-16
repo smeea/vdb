@@ -41,7 +41,7 @@ function SearchLibraryFormSect(props) {
         <Select
           options={options}
           name='sect'
-          value={options.find(obj => obj.value === props.value)}
+          value={options.find(obj => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}
         />
       </div>

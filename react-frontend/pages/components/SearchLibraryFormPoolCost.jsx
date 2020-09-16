@@ -1,22 +1,62 @@
 import React from 'react';
+import Select from 'react-select';
 
 function SearchLibraryFormPoolCost(props) {
-  const pool = ['ANY', 1, 2, 3, 4, 5, 6];
-  const poolforms = pool.map( (i, index) => {
-    return (
-      <option key={index} value={i}>{i}</option>
-    );
+  const pool = ['ANY', '0', '1', '2', '3', '4', '5', '6'];
+
+  const options = [];
+
+  pool.map( (i, index) => {
+    if (i == 'ANY') {
+      options.push(
+        {
+          value: i.toLowerCase(),
+          name: 'blood',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+            </span>
+            {i}
+          </>
+        }
+      );
+    } else {
+      options.push(
+        {
+          value: i,
+          name: 'pool',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+            </span>
+            {i}
+          </>
+        }
+      );
+    }
   });
 
-  const poolmoreless = [
+  const moreless = [
     ['le', '<=',],
     ['eq', '==',],
     ['ge', '>=',],
   ];
-  const poolmorelessforms = poolmoreless.map( (i, index) => {
-    return (
-      <option key={index} value={i[0]}>{i[1]}</option>
-    );
+
+  const morelessOptions = [];
+
+  moreless.map( (i, index) => {
+    morelessOptions.push(
+      {
+        value: i[0],
+        name: 'poolmoreless',
+        label:
+        <>
+          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          </span>
+          {i[1]}
+        </>
+      }
+    )
   });
 
   return (
@@ -27,15 +67,18 @@ function SearchLibraryFormPoolCost(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <div className='input-group'>
-
-          <select className='custom-select' name='poolmoreless' value={props.moreless} onChange={props.onMorelessChange}>
-            {poolmorelessforms}
-          </select>
-          <select className='custom-select' name='pool' value={props.value} onChange={props.onValueChange} >
-            {poolforms}
-          </select>
-        </div>
+        <Select
+          options={morelessOptions}
+          name='poolmoreless'
+          value={morelessOptions.find(obj => obj.value === props.moreless)}
+          onChange={props.onChange}
+        />
+        <Select
+          options={options}
+          name='pool'
+          value={options.find(obj => obj.value === props.value)}
+          onChange={props.onChange}
+        />
       </div>
     </div>
   );

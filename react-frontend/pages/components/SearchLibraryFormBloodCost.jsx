@@ -1,22 +1,62 @@
 import React from 'react';
+import Select from 'react-select';
 
 function SearchLibraryFormBloodCost(props) {
-  const blood = ['ANY', 1, 2, 3, 4];
-  const bloodforms = blood.map( (i, index) => {
-    return (
-      <option key={index} value={i}>{i}</option>
-    );
+  const blood = ['ANY', '0', '1', '2', '3', '4'];
+
+  const options = [];
+
+  blood.map( (i, index) => {
+    if (i == 'ANY') {
+      options.push(
+        {
+          value: i.toLowerCase(),
+          name: 'blood',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+            </span>
+            {i}
+          </>
+        }
+      );
+    } else {
+      options.push(
+        {
+          value: i,
+          name: 'blood',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+            </span>
+            {i}
+          </>
+        }
+      );
+    }
   });
 
-  const bloodmoreless = [
-    ['le', '<=',],
-    ['eq', '==',],
-    ['ge', '>=',],
+  const moreless = [
+    ['le', '<='],
+    ['eq', '=='],
+    ['ge', '>='],
   ];
-  const bloodmorelessforms = bloodmoreless.map( (i, index) => {
-    return (
-      <option key={index} value={i[0]}>{i[1]}</option>
-    );
+
+  const morelessOptions = [];
+
+  moreless.map( (i, index) => {
+    morelessOptions.push(
+      {
+        value: i[0],
+        name: 'bloodmoreless',
+        label:
+        <>
+          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          </span>
+          {i[1]}
+        </>
+      }
+    )
   });
 
   return (
@@ -27,14 +67,18 @@ function SearchLibraryFormBloodCost(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <div className='input-group'>
-          <select className='custom-select' name='bloodmoreless' value={props.moreless} onChange={props.onMorelessChange}>
-            {bloodmorelessforms}
-          </select>
-          <select className='custom-select' name='blood' value={props.value} onChange={props.onValueChange} >
-            {bloodforms}
-          </select>
-        </div>
+        <Select
+          options={morelessOptions}
+          name='bloodmoreless'
+          value={morelessOptions.find(obj => obj.value === props.moreless)}
+          onChange={props.onChange}
+        />
+        <Select
+          options={options}
+          name='blood'
+          value={options.find(obj => obj.value === props.value)}
+          onChange={props.onChange}
+        />
       </div>
     </div>
   );

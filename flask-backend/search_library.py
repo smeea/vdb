@@ -56,7 +56,7 @@ def get_library_by_cardname(cardname):
 def get_library_by_cardtype(cardtype):
     match_cards = []
     for card in library:
-        if cardtype in card['Type'].split('/'):
+        if cardtype in card['Type'].lower().split('/'):
             match_cards.append(card)
 
     return match_cards
@@ -65,8 +65,8 @@ def get_library_by_cardtype(cardtype):
 def get_library_by_discipline(discipline):
     match_cards = []
     for card in library:
-        if (discipline in card['Discipline']) or (discipline == 'NONE'
-                                                  and not card['Discipline']):
+        if (discipline in card['Discipline'].lower()) or (
+                discipline == 'NONE' and not card['Discipline'].lower()):
             match_cards.append(card)
 
     return match_cards
@@ -75,7 +75,8 @@ def get_library_by_discipline(discipline):
 def get_library_by_clan(clan):
     match_cards = []
     for card in library:
-        if (card['Clan'] == clan) or (clan == 'NONE' and not card['Clan']):
+        if (card['Clan'].lower() == clan) or (clan == 'NONE'
+                                              and not card['Clan'].lower()):
             match_cards.append(card)
 
     return match_cards
@@ -83,8 +84,20 @@ def get_library_by_clan(clan):
 
 def get_library_by_title(title):
     match_cards = []
+    titles = [
+        'primogen', 'prince', 'justicar', 'inner circle', 'baron', 'bishop',
+        'archbishop', 'priscus', 'cardinal', 'regent', 'magaji'
+    ]
     for card in library:
-        if title in card['Requirement'].lower():
+        if title == 'NONE':
+            counter = len(titles)
+            for i in titles:
+                if i not in card['Requirement'].lower():
+                    counter -= 1
+            if counter == 0:
+                match_cards.append(card)
+
+        elif title.lower() in card['Requirement'].lower():
             match_cards.append(card)
 
     return match_cards
@@ -92,8 +105,20 @@ def get_library_by_title(title):
 
 def get_library_by_sect(sect):
     match_cards = []
+    sects = [
+        'camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'
+    ]
     for card in library:
-        if sect in card['Requirement'].lower():
+        if sect == 'NONE':
+            counter = len(sects)
+            for i in sects:
+                if i not in card['Requirement']:
+                    counter -= 1
+            if counter == 0:
+                match_cards.append(card)
+
+        elif sect in card['Requirement'].lower(
+        ) and not 'non-' + sect in card['Requirement'].lower():
             match_cards.append(card)
 
     return match_cards
@@ -250,6 +275,7 @@ def get_library_by_trait(traits):
 
 def get_library_by_set(set):
     match_cards = []
+    print(set)
     for card in library:
         if set in card['Set']:
             match_cards.append(card)
