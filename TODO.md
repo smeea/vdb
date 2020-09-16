@@ -1,21 +1,23 @@
 # MAJOR FEATURE
 * Beautify card text popover
 * Deck link in url-bar
+* Account creation errors
 # MINOR FEATURE
 * Trifle icon
-* Set icons to popover and search
+* Set card icons to popover and search
 
 # MAJOR FIX
 * Share deck for non-logged users
-* Resize icons
-* React-Select dont open input
+* Change props.username for props.isAuthor test for shared decks
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
-* Change Forms to React-Bootstrap forms & handleSelectChange -> handleChange
-* Flask -> values from card to lower in Crypt
-* React -> form request to lower in Crypt
 
 # ADDITIONAL FEATURE
 * Export/Import (formats: TWD, LackeyCCG) deck
 * Temporary 'add to compare' button
 * Card rulings
+* Sort decks by date (day.js)
+
+# DEPLOYMENT
+* Resize icons
+* Privacy disclaimers

@@ -3,6 +3,7 @@ import Select from 'react-select';
 
 function SearchCryptFormClan(props) {
   const clans = [
+    'ANY',
     'Abomination',
     'Ahrimane',
     'Akunanse',
@@ -51,29 +52,34 @@ function SearchCryptFormClan(props) {
     'Visionary',
   ];
 
-  const clanOptions = [{
-    value: 'ANY',
-    label:
-    <>
-      <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-      </span>
-      ANY
-    </>
-  }];
+  const options = []
 
-  clans.map((clan, index) => {
-    const imgSrc=process.env.ROOT_URL + 'images/clans/' + clan.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
-    clanOptions.push({
-      value: clan,
-      name: 'clan',
-      label:
-      <>
-        <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-          <img src={imgSrc} className='discipline-base-image-results' />
-        </span>
-        {clan}
-      </>
-    });
+  clans.map((i, index) => {
+    if (i == 'ANY') {
+      options.push({
+        value: i.toLowerCase(),
+        name: 'clan',
+        label:
+        <>
+          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          </span>
+          {i}
+        </>
+      });
+    } else {
+      const imgSrc=process.env.ROOT_URL + 'images/clans/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+      options.push({
+        value: i.toLowerCase(),
+        name: 'clan',
+        label:
+        <>
+          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+            <img src={imgSrc} className='discipline-base-image-results' />
+          </span>
+          {i}
+        </>
+      });
+    }
   });
 
   return (
@@ -85,9 +91,9 @@ function SearchCryptFormClan(props) {
       </div>
       <div className='form-group col-9'>
         <Select
-          options={clanOptions}
+          options={options}
           name='clan'
-          value={clanOptions.find(obj => obj.value === props.value)}
+          value={options.find(obj => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}
         />
       </div>

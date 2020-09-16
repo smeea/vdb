@@ -3,7 +3,7 @@ import Select from 'react-select';
 
 function SearchLibraryFormSet(props) {
   const sets = [
-    ['ANY', 'ANY'],
+    ['any', 'ANY'],
     ['25th', '25th Anniversary - 2019'],
     ['FB', 'First Blood - 2019'],
     ['SP', 'Sabbat Preconstructed - 2019'],

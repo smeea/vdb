@@ -55,11 +55,11 @@ function SearchCryptForm(props) {
       Vengeance: 0,
       Vision: 0,
     },
-    capacity: 'ANY',
+    capacity: 'any',
     capacitymoreless: 'le',
-    clan: 'ANY',
-    sect: 'ANY',
-    votes: 'ANY',
+    clan: 'any',
+    sect: 'any',
+    votes: 'any',
     titles: {
       primogen: false,
       prince: false,
@@ -102,7 +102,7 @@ function SearchCryptForm(props) {
       'red list': false,
       flight: false,
     },
-    set: 'ANY',
+    set: 'any',
   }
 
   const [formState, setFormState] = useState(defaults);
@@ -162,10 +162,7 @@ function SearchCryptForm(props) {
   };
 
   const handleClearFormButton = () => setFormState(defaults)
-
-  const handleClearResultButton = () => {
-    props.setResults([]);
-  };
+  const handleClearResultButton = () => props.setResults([]);
 
   const handleSubmitButton = event => {
     event.preventDefault();
@@ -178,7 +175,7 @@ function SearchCryptForm(props) {
     Object.keys(input.titles).forEach(k => (input.titles[k] == false) && delete input.titles[k]);
     Object.keys(input.group).forEach(k => (input.group[k] == false) && delete input.group[k]);
     Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
-    Object.keys(input).forEach(k => (input[k] == 'ANY' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
+    Object.keys(input).forEach(k => (input[k] == 'any' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
     if (input['capacity'] == null) {
       delete input['capacitymoreless'];
     };
@@ -227,8 +224,7 @@ function SearchCryptForm(props) {
       <SearchCryptFormCapacity
         value={formState.capacity}
         moreless={formState.capacitymoreless}
-        onValueChange={handleChange}
-        onMorelessChange={handleChange}
+        onChange={handleSelectChange}
       />
       <SearchCryptFormClan
         value={formState.clan}
@@ -236,11 +232,11 @@ function SearchCryptForm(props) {
       />
       <SearchCryptFormSect
         value={formState.sect}
-        onChange={handleChange}
+        onChange={handleSelectChange}
       />
       <SearchCryptFormVotes
         value={formState.votes}
-        onChange={handleChange}
+        onChange={handleSelectChange}
       />
       <SearchCryptFormTitles
         value={formState.titles}
@@ -256,7 +252,7 @@ function SearchCryptForm(props) {
       />
       <SearchCryptFormSet
         value={formState.set}
-        onChange={handleChange}
+        onChange={handleSelectChange}
       />
     </form>
   );

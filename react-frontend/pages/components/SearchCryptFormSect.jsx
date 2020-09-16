@@ -1,4 +1,5 @@
 import React from 'react';
+import Select from 'react-select';
 
 function SearchCryptFormSect(props) {
   const sects = [
@@ -11,9 +12,20 @@ function SearchCryptFormSect(props) {
     'Imbued',
   ];
 
-  const sectforms = sects.map((i, index) => {
-    return(
-      <option key={index} value={i}>{i}</option>
+  const options = [];
+
+  sects.map((i, index) => {
+    options.push(
+      {
+        value: i.toLowerCase(),
+        name: 'sect',
+        label:
+        <>
+          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          </span>
+          {i}
+        </>
+      }
     );
   });
 
@@ -25,9 +37,13 @@ function SearchCryptFormSect(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <select className='custom-select' name='sect' value={props.value} onChange={props.onChange}>
-          {sectforms}
-        </select>
+        <Select
+          options={options}
+          isSearchable={false}
+          name='sect'
+          value={options.find(obj => obj.value === props.value.toLowerCase())}
+          onChange={props.onChange}
+        />
       </div>
     </div>
   );

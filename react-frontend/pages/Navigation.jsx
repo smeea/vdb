@@ -22,7 +22,7 @@ function Navigation(props) {
             About
           </NavLink>
           <NavLink to='/deck' className='nav-link px-2'>
-            Deck
+            Decks
           </NavLink>
           <NavLink to='/crypt' className='nav-link px-2'>
             Crypt

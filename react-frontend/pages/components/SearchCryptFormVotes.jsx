@@ -1,19 +1,32 @@
 import React from 'react';
+import Select from 'react-select';
 
 function SearchCryptFormVotes(props) {
   const votes = [
-    ['ANY', 'ANY'],
-    [1, '1+'],
-    [2, '2+'],
-    [3, '3+'],
-    [4, '4+'],
+    ['any', 'ANY'],
+    ['1', '1+'],
+    ['2', '2+'],
+    ['3', '3+'],
+    ['4', '4+'],
   ];
 
-  const votesforms = votes.map((i, index) => {
-    return(
-      <option key={index} value={i[0]}>{i[1]}</option>
+  const options = []
+
+  votes.map((i, index) => {
+    options.push(
+      {
+        value: i[0],
+        name: 'votes',
+        label:
+        <>
+          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
+          </span>
+          {i[1]}
+        </>
+      }
     );
   });
+
   return (
     <div className='form-row'>
       <div className='form-group col-3 d-flex align-items-center'>
@@ -22,9 +35,13 @@ function SearchCryptFormVotes(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <select className='custom-select' name='votes' value={props.value} onChange={props.onChange}>
-          {votesforms}
-        </select>
+        <Select
+          options={options}
+          isSearchable={false}
+          name='votes'
+          value={options.find(obj => obj.value === props.value.toLowerCase())}
+          onChange={props.onChange}
+        />
       </div>
     </div>
   );

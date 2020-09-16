@@ -1,23 +1,55 @@
 import React from 'react';
+import Select from 'react-select';
 
 function SearchCryptFormCapacity(props) {
-  const capacity = ['ANY', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-  const capacityforms = capacity.map( (i, index) => {
-    return (
-      <option key={index} value={i}>{i}</option>
-    );
+  const capacity = ['ANY', '1', '2', '3', '4', '5',
+                    '6', '7', '8', '9', '10', '11']
+  const options = []
+  capacity.map( (i, index) => {
+    if (i == 'ANY') {
+      options.push(
+        {
+          value: i.toLowerCase(),
+          name: 'capacity',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}></span>{i}
+          </>
+        }
+      );
+    } else {
+      options.push(
+        {
+          value: i,
+          name: 'capacity',
+          label:
+          <>
+            <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}></span>{i}
+          </>
+        }
+      );
+    }
   });
 
-  const capacitymoreless = [
+
+  const moreless = [
     ['le', '<=',],
     ['eq', '==',],
     ['ge', '>=',],
   ];
+  const morelessOptions = [];
 
-  const capacitymorelessforms = capacitymoreless.map( (i, index) => {
-    return (
-      <option key={index} value={i[0]}>{i[1]}</option>
-    );
+  moreless.map( (i, index) => {
+    morelessOptions.push(
+      {
+        value: i[0],
+        name: 'capacitymoreless',
+        label:
+        <>
+          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}></span>{i[1]}
+        </>
+      }
+    )
   });
 
   return (
@@ -28,14 +60,20 @@ function SearchCryptFormCapacity(props) {
         </label>
       </div>
       <div className='form-group col-9'>
-        <div className='input-group'>
-          <select className='custom-select' name='capacitymoreless' value={props.moreless} onChange={props.onMorelessChange}>
-            {capacitymorelessforms}
-          </select>
-          <select className='custom-select' name='capacity' value={props.value} onChange={props.onValueChange} >
-            {capacityforms}
-          </select>
-        </div>
+          <Select
+            options={morelessOptions}
+            isSearchable={false}
+            name='capacitymoreless'
+            value={morelessOptions.find(obj => obj.value === props.moreless)}
+            onChange={props.onChange}
+          />
+          <Select
+            options={options}
+            isSearchable={false}
+            name='capacity'
+            value={options.find(obj => obj.value === props.value)}
+            onChange={props.onChange}
+          />
       </div>
     </div>
   );

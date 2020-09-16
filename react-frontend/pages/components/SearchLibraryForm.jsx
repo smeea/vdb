@@ -74,11 +74,9 @@ function SearchLibraryForm(props) {
   };
 
   const handleClearFormButton = () => setFormState(defaults);
-
   const handleClearResultButton = () => props.setResults([]);
 
   const handleSubmitButton = event => {
-    console.log(formState);
     event.preventDefault();
 
     const url = process.env.API_URL + 'search/library';

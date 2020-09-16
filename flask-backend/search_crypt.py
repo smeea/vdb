@@ -180,7 +180,7 @@ def get_crypt_by_title(titles):
     # chosen title
     match_cards = []
     for card in crypt:
-        if card['Title'] in titles.keys():
+        if card['Title'].lower() in titles.keys():
             match_cards.append(card)
 
     return match_cards
@@ -237,7 +237,7 @@ def get_crypt_by_capacity(capacity, moreless):
 def get_crypt_by_clan(clan):
     match_cards = []
     for card in crypt:
-        if card['Clan'] == clan:
+        if card['Clan'].lower() == clan:
             match_cards.append(card)
 
     return match_cards
@@ -247,13 +247,13 @@ def get_crypt_by_sect(sect):
     match_cards = []
     for card in crypt:
         # Imbue 'sect' is defined by card['Type'], others are just 'vampire'
-        if sect == 'Imbued' and card['Type'] == sect:
+        if sect == 'imbued' and card['Type'].lower() == sect:
             match_cards.append(card)
             continue
 
         # For vampires sect is determined only by card['Text']
         # It is another dirty hack (see trait above), but...
-        if re.search(r'^{}[:. $]'.format(sect), card['Card Text']):
+        if re.search(r'^{}[:. $]'.format(sect), card['Card Text'].lower()):
             match_cards.append(card)
 
     return match_cards

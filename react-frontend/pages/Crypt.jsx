@@ -36,10 +36,10 @@ function Crypt(props) {
           <ResultCrypt
             showImage={props.showImage}
             toggleImage={props.toggleImage}
-            sortMode={true}
             deckCardAdd={props.deckCardAdd}
             cards={results}
             activeDeck={props.activeDeck}
+            sortMode={true}
             sortMethod={sortMethod}
             setSortMethod={setSortMethod}
           />

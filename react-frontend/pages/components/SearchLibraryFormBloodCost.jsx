@@ -3,9 +3,7 @@ import Select from 'react-select';
 
 function SearchLibraryFormBloodCost(props) {
   const blood = ['ANY', '0', '1', '2', '3', '4'];
-
   const options = [];
-
   blood.map( (i, index) => {
     if (i == 'ANY') {
       options.push(
@@ -41,7 +39,6 @@ function SearchLibraryFormBloodCost(props) {
     ['eq', '=='],
     ['ge', '>='],
   ];
-
   const morelessOptions = [];
 
   moreless.map( (i, index) => {

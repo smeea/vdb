@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Accordion, Card } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import { Redirect } from 'react-router-dom';
+
 
 import DeckNewDeck from './components/DeckNewDeck.jsx';
 import DeckImportDeck from './components/DeckImportDeck.jsx';
@@ -9,7 +11,6 @@ import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
 
 function Deck(props) {
-  // FIX SHARED LINK
   const { id } = useParams();
 
   const [sharedDeck, setSharedDeck] = useState(undefined);
@@ -57,8 +58,16 @@ function Deck(props) {
   }, [props.id]);
 
   useEffect(() => {
+    console.log(sharedDeck)
+  }, [sharedDeck]);
+
+  useEffect(() => {
     props.getDecks();
   }, [props.activeDeck]);
+
+  if (!props.username) {
+    return <Redirect to='/account' />
+  }
 
   return (
     <div className='container px-0 py-xl-3 px-xl-2'>
@@ -66,44 +75,67 @@ function Deck(props) {
         <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>
         </div>
         <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
-          <Accordion>
-            <Card>
-              <Accordion.Toggle as={Card.Header} eventKey="0">
-                New Deck
-              </Accordion.Toggle>
-              <Accordion.Collapse eventKey="0">
-                <Card.Body>
-                  <DeckNewDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
-                  <DeckImportDeck setActiveDeck={props.setActiveDeck} getDecks={props.getDecks} />
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
-          </Accordion>
-
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <span className="input-group-text">
-                Select Deck
-              </span>
-            </div>
-            <DeckSelectDeck
-              decks={props.decks}
-              activeDeck={props.activeDeck}
-              setActiveDeck={props.setActiveDeck}
-            />
-            { props.decks[props.activeDeck] &&
-              <DeckRemoveDeck
-                deck={props.decks[props.activeDeck]}
-                setActiveDeck={props.setActiveDeck}
-              />
-            }
-          </div>
+          { props.username &&
+            <>
+              <Accordion>
+                <Card>
+                  <Accordion.Toggle as={Card.Header} eventKey="0">
+                    Create New Deck
+                  </Accordion.Toggle>
+                  <Accordion.Collapse eventKey="0">
+                    <Card.Body>
+                      <DeckNewDeck
+                        setActiveDeck={props.setActiveDeck}
+                        getDecks={props.getDecks}
+                      />
+                      <DeckImportDeck
+                        setActiveDeck={props.setActiveDeck}
+                        getDecks={props.getDecks}
+                      />
+                    </Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              </Accordion>
+              <br />
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">
+                    Select Deck
+                  </span>
+                </div>
+                <DeckSelectDeck
+                  decks={props.decks}
+                  activeDeck={props.activeDeck}
+                  setActiveDeck={props.setActiveDeck}
+                />
+                { props.decks[props.activeDeck] &&
+                  <DeckRemoveDeck
+                    deck={props.decks[props.activeDeck]}
+                    setActiveDeck={props.setActiveDeck}
+                  />
+                }
+              </div>
+            </>
+          }
           { props.decks[props.activeDeck] &&
             <DeckShowDeck
               showImage={props.showImage}
               toggleImage={props.toggleImage}
               deckUpdate={deckUpdate}
               deck={props.decks[props.activeDeck]}
+              activeDeck={props.activeDeck}
+              deckCardAdd={props.deckCardAdd}
+              deckCardChange={props.deckCardChange}
+              getDecks={props.getDecks}
+              setActiveDeck={props.setActiveDeck}
+            />
+          }
+          { sharedDeck && sharedDeck[props.activeDeck] &&
+            <DeckShowDeck
+              showImage={props.showImage}
+              toggleImage={props.toggleImage}
+              deckUpdate={deckUpdate}
+              deck={sharedDeck[props.activeDeck]}
               activeDeck={props.activeDeck}
               deckCardAdd={props.deckCardAdd}
               deckCardChange={props.deckCardChange}
