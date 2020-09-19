@@ -30,17 +30,25 @@ function DeckCryptSideBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <DeckCardQuantity
-            cardid={card.c['Id']}
-            q={card.q}
-            deckid={props.deckid}
-            deckCardChange={props.deckCardChange}
-          />
+            <td className='quantity'>
+              { props.isAuthor
+                ? <DeckCardQuantity
+                  cardid={card.c['Id']}
+                  q={card.q}
+                  deckid={props.deckid}
+                  deckCardChange={props.deckCardChange}
+                />
+                : card.q ? card.q : null
+              }
+            </td>
           <td className='capacity'>
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
           <td className='disciplines'>
-            <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
+            <ResultCryptDisciplines
+              disciplines_set={props.disciplines_set}
+              value={card.c['Disciplines']}
+            />
           </td>
           <td className='name'>
             <ResultCryptName
@@ -88,17 +96,25 @@ function DeckCryptBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <DeckCardQuantity
-            cardid={card.c['Id']}
-            q={card.q}
-            deckid={props.deckid}
-            deckCardChange={props.deckCardChange}
-          />
+            <td className='quantity'>
+              { props.isAuthor
+                ? <DeckCardQuantity
+                    cardid={card.c['Id']}
+                    q={card.q}
+                    deckid={props.deckid}
+                    deckCardChange={props.deckCardChange}
+                  />
+                : card.q ? card.q : null
+              }
+            </td>
           <td className='capacity'>
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
           <td className='disciplines'>
-            <ResultCryptDisciplines disciplines_set={props.disciplines_set} value={card.c['Disciplines']} />
+            <ResultCryptDisciplines
+              disciplines_set={props.disciplines_set}
+              value={card.c['Disciplines']}
+            />
           </td>
           <td className='name'>
             <ResultCryptName
@@ -180,6 +196,7 @@ function DeckCrypt(props) {
             disciplines_set={disciplines_set}
             showImage={props.showImage}
             toggleImage={props.toggleImage}
+            isAuthor={props.isAuthor}
           />
         </table>
       </div>
@@ -194,6 +211,7 @@ function DeckCrypt(props) {
               disciplines_set={disciplines_set}
               showImage={props.showImage}
               toggleImage={props.toggleImage}
+              isAuthor={props.isAuthor}
             />
           </table>
         </div>

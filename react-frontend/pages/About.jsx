@@ -6,7 +6,6 @@ function About(props) {
       <div className='row mx-0'>
         <div className='col-md-12 col-lg-2 col-xl-2 left-col px-0 px-xl-2'>
         </div>
-
         <div className='col-md-12 col-lg-8 col-xl-8 center-col px-0 px-xl-2'>
           <div className='about-version'>
             <h5>
@@ -125,6 +124,21 @@ function About(props) {
           </p>
 
           <h5>
+            PRIVACY
+          </h5>
+          <p>
+            I respect privacy. I promise not to track your activity and not to give access to your data (email, decks, etc) to anybody. Email is optional and only used for password restoration.
+          </p>
+
+
+          <h5>
+            DONATIONS
+          </h5>
+          <p>
+            Bitcoin (BTC): 3ALLfiv3AWcm7WzgWm9gHmLAAUMRcegBtP
+          </p>
+
+          <h5>
             CONTACTS
           </h5>
           <p>
@@ -143,14 +157,7 @@ function About(props) {
             <br />
           </p>
 
-          <h5>
-            DONATIONS
-          </h5>
-          <p>
-            Bitcoin (BTC): 3ALLfiv3AWcm7WzgWm9gHmLAAUMRcegBtP
-          </p>
         </div>
-
         <div className='col-md-12 col-lg-2 col-xl-2 right-col px-0 px-xl-2'>
         </div>
       </div>

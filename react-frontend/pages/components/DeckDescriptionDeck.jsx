@@ -27,13 +27,20 @@ function DeckDescriptionDeck(props) {
           Description
         </span>
       </div>
-      <textarea className="form-control"
-                value={state}
-                onChange={handleChange}
-      />
-      <Button variant='outline-secondary' onClick={deckDescriptionButton}>
-        Update
-      </Button>
+      { props.isAuthor
+        ? <textarea className="form-control"
+                    value={state}
+                    onChange={handleChange}
+          />
+        : <div className='form-control'>
+            {state}
+          </div>
+      }
+      { props.isAuthor &&
+        <Button variant='outline-secondary' onClick={deckDescriptionButton}>
+          Update
+        </Button>
+      }
     </div>
   );
 }

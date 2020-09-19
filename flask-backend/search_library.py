@@ -66,7 +66,7 @@ def get_library_by_discipline(discipline):
     match_cards = []
     for card in library:
         if (discipline in card['Discipline'].lower()) or (
-                discipline == 'NONE' and not card['Discipline'].lower()):
+                discipline == 'none' and not card['Discipline'].lower()):
             match_cards.append(card)
 
     return match_cards
@@ -75,7 +75,7 @@ def get_library_by_discipline(discipline):
 def get_library_by_clan(clan):
     match_cards = []
     for card in library:
-        if (card['Clan'].lower() == clan) or (clan == 'NONE'
+        if (card['Clan'].lower() == clan) or (clan == 'none'
                                               and not card['Clan'].lower()):
             match_cards.append(card)
 
@@ -89,7 +89,7 @@ def get_library_by_title(title):
         'archbishop', 'priscus', 'cardinal', 'regent', 'magaji'
     ]
     for card in library:
-        if title == 'NONE':
+        if title == 'none':
             counter = len(titles)
             for i in titles:
                 if i not in card['Requirement'].lower():
@@ -109,7 +109,7 @@ def get_library_by_sect(sect):
         'camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'
     ]
     for card in library:
-        if sect == 'NONE':
+        if sect == 'none':
             counter = len(sects)
             for i in sects:
                 if i not in card['Requirement']:

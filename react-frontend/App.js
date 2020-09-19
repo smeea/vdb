@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useLocation, Redirect } from 'react-router-dom';
 
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
@@ -20,7 +21,6 @@ function App(props) {
 
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
-
 
   const getDecks = () => {
     const url = process.env.API_URL + 'decks';
@@ -126,6 +126,7 @@ function App(props) {
               showImage={showImage}
               toggleImage={toggleImage}
               username={username}
+              whoAmI={whoAmI}
             /> } />
           <Route path='/deck/:id' component={(props) =>
             <Deck
@@ -138,6 +139,7 @@ function App(props) {
               showImage={showImage}
               toggleImage={toggleImage}
               username={username}
+              whoAmI={whoAmI}
               id={props.match.params.id}
             /> } />
           <Route path='/crypt'>

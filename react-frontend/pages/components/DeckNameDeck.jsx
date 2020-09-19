@@ -27,15 +27,22 @@ function DeckNameDeck(props) {
           Deck Name
         </span>
       </div>
-      <input type="text"
-             className="form-control"
-             placeholder="Deck Name"
-             value={state}
-             onChange={handleChange}
-      />
-      <Button variant='outline-secondary' onClick={deckNameButton}>
-        Rename
-      </Button>
+      { props.isAuthor
+        ? <input type="text"
+                 className="form-control"
+                 placeholder="Deck Name"
+                 value={state}
+                 onChange={handleChange}
+          />
+        : <div className='form-control'>
+            {state}
+          </div>
+      }
+      { props.isAuthor &&
+        <Button variant='outline-secondary' onClick={deckNameButton}>
+          Rename
+        </Button>
+      }
     </div>
   );
 }

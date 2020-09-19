@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Accordion, Card } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
 
 
 import DeckNewDeck from './components/DeckNewDeck.jsx';
@@ -11,12 +12,12 @@ import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
 
 function Deck(props) {
-  const { id } = useParams();
-
+  const query = new URLSearchParams(useLocation().search);
   const [sharedDeck, setSharedDeck] = useState(undefined);
+  const [sharedDeckId, setSharedDeckId] = useState(query.get("id"));
 
-  const getDeck = () => {
-    const url = process.env.API_URL + 'deck/' + props.id;
+  const getDeck = (deckid) => {
+    const url = process.env.API_URL + 'deck/' + deckid;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -31,8 +32,7 @@ function Deck(props) {
         } else {
           console.log('error: ', data.error);
         }
-      })
-      .then(() => props.setActiveDeck(props.id));
+      });
   };
 
   const deckUpdate = (deckid, field, value) => {
@@ -52,20 +52,16 @@ function Deck(props) {
   };
 
   useEffect(() => {
-    if (props.id) {
-      getDeck();
-    }
-  }, [props.id]);
-
-  useEffect(() => {
-    console.log(sharedDeck)
-  }, [sharedDeck]);
-
-  useEffect(() => {
     props.getDecks();
   }, [props.activeDeck]);
 
-  if (!props.username) {
+  useEffect(() => {
+    if (sharedDeckId) {
+      getDeck(sharedDeckId)
+    }
+  }, [sharedDeckId]);
+
+  if (!props.username && !sharedDeckId) {
     return <Redirect to='/account' />
   }
 
@@ -128,19 +124,21 @@ function Deck(props) {
               deckCardChange={props.deckCardChange}
               getDecks={props.getDecks}
               setActiveDeck={props.setActiveDeck}
+              username={props.username}
             />
           }
-          { sharedDeck && sharedDeck[props.activeDeck] &&
+          { sharedDeck && sharedDeckId &&
             <DeckShowDeck
               showImage={props.showImage}
               toggleImage={props.toggleImage}
               deckUpdate={deckUpdate}
-              deck={sharedDeck[props.activeDeck]}
+              deck={sharedDeck[sharedDeckId]}
               activeDeck={props.activeDeck}
               deckCardAdd={props.deckCardAdd}
               deckCardChange={props.deckCardChange}
               getDecks={props.getDecks}
               setActiveDeck={props.setActiveDeck}
+              username={props.username}
             />
           }
         </div>

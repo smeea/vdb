@@ -26,25 +26,43 @@ function DeckLibraryBody(props) {
       );
     });
 
-    let ResultLibraryDisciplineOrClan;
+    let DisciplineOrClan;
     if (card[0]['Clan']) {
-      ResultLibraryDisciplineOrClan = <ResultLibraryClan value={card[0]['Clan']} />;
+      DisciplineOrClan = <ResultLibraryClan value={card[0]['Clan']} />;
     } else {
-      ResultLibraryDisciplineOrClan = <ResultLibraryDisciplines value={card[0]['Discipline']} />;
+      DisciplineOrClan = <ResultLibraryDisciplines value={card[0]['Discipline']} />;
     }
 
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <DeckCardQuantity cardid={card[0].Id} q={card[1]} deckid={props.deckid} deckCardChange={props.deckCardChange} />
+            <td className='quantity'>
+              { props.isAuthor
+                ? <DeckCardQuantity
+                                 cardid={card[0].Id}
+                                 q={card[1]}
+                                 deckid={props.deckid}
+                                 deckCardChange={props.deckCardChange}
+                />
+                : card[1] ? card[1] : null
+              }
+            </td>
           <td className='name'>
-            <ResultLibraryName id={card[0]['Id']} value={card[0]['Name']} ban={card[0]['Banned']} card={card[0]}/>
+            <ResultLibraryName
+              id={card[0]['Id']}
+              value={card[0]['Name']}
+              ban={card[0]['Banned']}
+              card={card[0]}
+            />
           </td>
           <td className='cost'>
-            <ResultLibraryCost valueBlood={card[0]['Blood Cost']} valuePool={card[0]['Pool Cost']} />
+            <ResultLibraryCost
+              valueBlood={card[0]['Blood Cost']}
+              valuePool={card[0]['Pool Cost']}
+            />
           </td>
           <td className='discipline'>
-            {ResultLibraryDisciplineOrClan}
+            {DisciplineOrClan}
           </td>
           <td className='burn'>
             <ResultLibraryBurn value={card[0]['Burn Option']} />
@@ -60,9 +78,16 @@ function DeckLibraryBody(props) {
 function DeckLibraryByTypeTable(props) {
   return (
     <>
-      <ResultLibraryType cardtype={props.cardtype} total={props.total}/>
+      <ResultLibraryType
+        cardtype={props.cardtype}
+        total={props.total}
+      />
       <table className='deck-library-table'>
-        <DeckLibraryBody deckid={props.deckid} deckCardChange={props.deckCardChange} cards={props.cards} />
+        <DeckLibraryBody deckid={props.deckid}
+                         deckCardChange={props.deckCardChange}
+                         cards={props.cards}
+                         isAuthor={props.isAuthor}
+        />
       </table>
     </>
   );
@@ -132,7 +157,14 @@ function DeckLibrary(props) {
       }
       LibraryDeck.push(
         <div key={cardtype}>
-          <DeckLibraryByTypeTable deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library[cardtype]} cardtype={cardtype} total={total} />
+          <DeckLibraryByTypeTable
+            deckCardChange={props.deckCardChange}
+            deckid={props.deckid}
+            cards={library[cardtype]}
+            cardtype={cardtype}
+            total={total}
+            isAuthor={props.isAuthor}
+          />
         </div>
       );
     }
@@ -144,7 +176,14 @@ function DeckLibrary(props) {
       }
       LibrarySideDeck.push(
         <div key={cardtype}>
-          <DeckLibraryByTypeTable deckCardChange={props.deckCardChange} deckid={props.deckid} cards={library_side[cardtype]} cardtype={cardtype} total={total} />
+          <DeckLibraryByTypeTable
+            deckCardChange={props.deckCardChange}
+            deckid={props.deckid}
+            cards={library_side[cardtype]}
+            cardtype={cardtype}
+            total={total}
+            isAuthor={props.isAuthor}
+          />
         </div>
       );
     }
