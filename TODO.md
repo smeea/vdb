@@ -12,9 +12,10 @@
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
 * Remove total from draw
-* Popover align group
 * Popover crypt disciplines
-* Popover library images
+* Popover library disciplies
+* Popover library cost
+* Popover library burn/trifle
 
 # ADDITIONAL FEATURE
 * Export/Import (formats: TWD, LackeyCCG) deck
