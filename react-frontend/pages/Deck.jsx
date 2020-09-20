@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Accordion, Card } from 'react-bootstrap';
-import { useParams } from 'react-router';
-import { Redirect } from 'react-router-dom';
-import { BrowserRouter as Router, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, useLocation, useParams, Redirect } from "react-router-dom";
 
 
 import DeckNewDeck from './components/DeckNewDeck.jsx';

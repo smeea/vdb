@@ -1,12 +1,9 @@
 # MAJOR FEATURE
 * Beautify card text popover
-* Deck link in url-bar
+* Deck share link
 * Account creation errors
-* Password change
-* Password restoration
 
 # MINOR FEATURE
-* Trifle icon
 * Set card icons to popover and search
 * Different Login-Author name
 * Author name change
@@ -15,12 +12,16 @@
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
 * Remove total from draw
+* Popover align group
+* Popover crypt disciplines
+* Popover library images
 
 # ADDITIONAL FEATURE
 * Export/Import (formats: TWD, LackeyCCG) deck
 * Temporary 'add to compare' button
 * Card rulings
 * Sort decks by date
+* Password restoration
 
 # DEPLOYMENT
 * Resize icons

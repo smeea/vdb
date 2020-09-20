@@ -16,20 +16,37 @@ function ResultLibraryPopover(props) {
     );
   });
 
+  const Type = (
+    <img className='type-image-results'
+         src={process.env.ROOT_URL + 'images/types/' + props.card['Type'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
+         alt={props.card['Type']}
+    />
+  );
+
+  const Disciplines = (
+    'TODO'
+  );
+
   return (
     <Popover.Content>
-      { props.showImage ?
-        <>
-          <b>{props.card['Name']}</b>
-          <hr />
-          {props.card['Card Text']}
-          <hr />
-          <div className='popover-sets'>
-            {sets}
-          </div>
+      { props.showImage
+        ? <>
+            <div className='d-flex justify-content-between'>
+              <b>{props.card['Name']}</b>
+              {Type}
+            </div>
+            <hr />
+            {props.card['Card Text']}
+            <hr />
+            <div className='d-flex justify-content-between popover-sets'>
+              <div className='popover-sets'>
+                {sets}
+              </div>
+              <div>
+              </div>
+            </div>
         </>
-        :
-        cardImage
+        : cardImage
       }
     </Popover.Content>
   );

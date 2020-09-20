@@ -95,7 +95,7 @@ def updateDeck(deckid):
                 new_cards = request.json['add']
                 merged_cards = d.cards.copy()
                 for k, v in new_cards.items():
-                    if not k in merged_cards:
+                    if k not in merged_cards:
                         merged_cards[k] = v
 
                 d.cards = merged_cards.copy()
@@ -254,6 +254,28 @@ def login():
             return jsonify({'logged in as': current_user.username})
         except KeyError:
             pass
+
+
+@app.route('/api/account', methods=['POST'])
+def account():
+    if current_user.is_authenticated and current_user.check_password(
+            request.json['password']):
+        try:
+            if (request.json['newEmail']):
+                current_user.email = request.json['newEmail']
+                db.session.commit()
+                return jsonify('email changed')
+        except Exception:
+            pass
+        try:
+            if (request.json['newPassword']):
+                current_user.set_password(request.json['newPassword'])
+                db.session.commit()
+                return jsonify('password changed')
+        except Exception:
+            pass
+    else:
+        return jsonify({'error': 'invalid password'})
 
 
 @app.route('/api/logout')

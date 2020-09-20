@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 
-import AccountRestorePassword from './AccountRestorePassword.jsx';
-
-function AccountLogin(props) {
+function AccountChangeEmail(props) {
   const [state, setState] = useState({
-    username: '',
     password: '',
+    newEmail: '',
+    confirmEmail: '',
   });
-
-  const [showRestore, setShowRestore] = useState(false);
 
   const handleChange = event => {
     const {name, value} = event.target;
@@ -19,12 +16,15 @@ function AccountLogin(props) {
     }));
   };
 
-  const loginUser = () => {
-    const url = process.env.API_URL + 'login';
+  const changeEmail = () => {
+    if (state.confirmEmail != state.newEmail) {
+      return console.log('email do not match');
+    }
+
+    const url = process.env.API_URL + 'account';
     let input = {
-      username: state.username,
       password: state.password,
-      remember: 'True',
+      newEmail: state.newEmail,
     };
 
     const options = {
@@ -43,7 +43,7 @@ function AccountLogin(props) {
       .then(response => response.json())
       .then(data => {
         if (data.error === undefined) {
-          props.setUsername(state.username);
+          console.log('email password');
         } else {
           console.log('error: ', data.error);
         }
@@ -52,15 +52,8 @@ function AccountLogin(props) {
 
   return (
     <>
-      <h6>Login</h6>
+      <h6>Change email</h6>
       <form>
-        <input
-          placeholder='Username'
-          type='text'
-          name='username'
-          value={state.username}
-          onChange={handleChange}
-        />
         <input
           placeholder='Password'
           type='password'
@@ -68,22 +61,26 @@ function AccountLogin(props) {
           value={state.password}
           onChange={handleChange}
         />
-        <Button variant='outline-secondary' onClick={loginUser}>
-          Login
+        <input
+          placeholder='New email'
+          type='text'
+          name='newEmail'
+          value={state.newEmail}
+          onChange={handleChange}
+        />
+        <input
+          placeholder='Confirm email'
+          type='text'
+          name='confirmEmail'
+          value={state.confirmEmail}
+          onChange={handleChange}
+        />
+        <Button variant='outline-secondary' onClick={changeEmail}>
+          Change
         </Button>
-        <Button variant='outline-secondary' onClick={() => setShowRestore(true)}>
-          Restore
-        </Button>
-        { showRestore && state.username &&
-          <AccountRestorePassword
-            username={state.username}
-            show={showRestore}
-            setShow={setShowRestore}
-          />
-        }
       </form>
     </>
   );
 }
 
-export default AccountLogin;
+export default AccountChangeEmail;

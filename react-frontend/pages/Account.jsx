@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AccountLogin from './components/AccountLogin.jsx';
+import AccountLogout from './components/AccountLogout.jsx';
 import AccountRegister from './components/AccountRegister.jsx';
+import AccountChangePassword from './components/AccountChangePassword.jsx';
+import AccountChangeEmail from './components/AccountChangeEmail.jsx';
 
 function Account(props) {
   return (
@@ -10,8 +13,18 @@ function Account(props) {
         <div className='col-xs-12 col-xl-1 left-col px-0 px-xl-2'>
         </div>
         <div className='col-xs-12 col-xl-7 center-col px-0 px-xl-2'>
-          <AccountLogin setUsername={props.setUsername} />
-          <AccountRegister setUsername={props.setUsername} />
+          { props.username
+            ? <>
+                Logged as: <b>{props.username}{' '}</b>
+                <AccountLogout setUsername={props.setUsername} />
+                <AccountChangePassword />
+                <AccountChangeEmail />
+              </>
+            : <>
+                <AccountLogin setUsername={props.setUsername} />
+                <AccountRegister setUsername={props.setUsername} />
+              </>
+          }
         </div>
         <div className='col-xs-12 col-xl-4 right-col px-0 px-xl-2'>
         </div>

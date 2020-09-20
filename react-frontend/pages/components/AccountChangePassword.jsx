@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 
-import AccountRestorePassword from './AccountRestorePassword.jsx';
-
-function AccountLogin(props) {
+function AccountChangePassword(props) {
   const [state, setState] = useState({
-    username: '',
     password: '',
+    newPassword: '',
+    confirmPassword: '',
   });
-
-  const [showRestore, setShowRestore] = useState(false);
 
   const handleChange = event => {
     const {name, value} = event.target;
@@ -19,12 +16,15 @@ function AccountLogin(props) {
     }));
   };
 
-  const loginUser = () => {
-    const url = process.env.API_URL + 'login';
+  const changePassword = () => {
+    if (state.confirmPassword != state.newPassword) {
+      return console.log('password do not match');
+    }
+
+    const url = process.env.API_URL + 'account';
     let input = {
-      username: state.username,
       password: state.password,
-      remember: 'True',
+      newPassword: state.newPassword,
     };
 
     const options = {
@@ -43,7 +43,7 @@ function AccountLogin(props) {
       .then(response => response.json())
       .then(data => {
         if (data.error === undefined) {
-          props.setUsername(state.username);
+          console.log('changed password');
         } else {
           console.log('error: ', data.error);
         }
@@ -52,38 +52,35 @@ function AccountLogin(props) {
 
   return (
     <>
-      <h6>Login</h6>
+      <h6>Change password</h6>
       <form>
         <input
-          placeholder='Username'
-          type='text'
-          name='username'
-          value={state.username}
-          onChange={handleChange}
-        />
-        <input
-          placeholder='Password'
+          placeholder='Old password'
           type='password'
           name='password'
           value={state.password}
           onChange={handleChange}
         />
-        <Button variant='outline-secondary' onClick={loginUser}>
-          Login
+        <input
+          placeholder='New password'
+          type='password'
+          name='newPassword'
+          value={state.newPassword}
+          onChange={handleChange}
+        />
+        <input
+          placeholder='Confirm password'
+          type='password'
+          name='confirmPassword'
+          value={state.confirmPassword}
+          onChange={handleChange}
+        />
+        <Button variant='outline-secondary' onClick={changePassword}>
+          Change
         </Button>
-        <Button variant='outline-secondary' onClick={() => setShowRestore(true)}>
-          Restore
-        </Button>
-        { showRestore && state.username &&
-          <AccountRestorePassword
-            username={state.username}
-            show={showRestore}
-            setShow={setShowRestore}
-          />
-        }
       </form>
     </>
   );
 }
 
-export default AccountLogin;
+export default AccountChangePassword;

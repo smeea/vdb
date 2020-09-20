@@ -16,20 +16,54 @@ function ResultCryptPopover(props) {
     );
   });
 
+  const Clan = (
+    <img className='clan-image-results'
+         src={process.env.ROOT_URL + 'images/clans/' + props.card['Clan'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
+         alt={props.card['Clan']}
+    />
+  );
+
+  const Capacity = (
+    <img className='capacity-image-results'
+         src={process.env.ROOT_URL + 'images/misc/cap' + props.card['Capacity'] + '.png'}
+         alt={props.card['Capacity']}
+    />
+  );
+
+  const Disciplines = (
+    'TODO'
+  );
+
   return (
     <Popover.Content>
-      { props.showImage ?
-        <>
-          <b>{props.card['Name']}</b>
-          <hr />
-          {props.card['Card Text']}
-          <hr />
-          <div className='popover-sets'>
-            {sets}
-          </div>
-        </>
-        :
-        cardImage
+      { props.showImage
+        ? <>
+            <div className='d-flex justify-content-between amiddle'>
+              <div>
+                {Clan}
+                {' '}
+                <b>
+                  {props.card['Name']}
+                </b>
+              </div>
+              <div>
+                <b>
+                  <font color='a0a0a0'>G</font>
+                  {props.card['Group']}
+                </b>
+              </div>
+            </div>
+            <hr />
+            {props.card['Card Text']}
+            <hr />
+            <div className='d-flex justify-content-between popover-sets'>
+              <div>
+                {sets}
+              </div>
+              {Capacity}
+            </div>
+          </>
+        : cardImage
       }
     </Popover.Content>
   );
