@@ -79,10 +79,10 @@ function ResultCrypt(props) {
 
   return (
     <>
-      { props.cards.length > 0 &&
+      { props.showTotal == true && props.cards.length > 0 &&
         <ResultCryptTotal cards={props.cards} />
       }
-      { props.sortMode == true && sortedCards.length > 0 &&
+      { props.showSort == true && sortedCards.length > 0 &&
         <ResultCryptSortForm value={props.sortMethod} onChange={handleChange} />
       }
       <table className='search-crypt-table'>

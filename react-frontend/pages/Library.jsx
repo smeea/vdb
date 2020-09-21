@@ -40,7 +40,8 @@ function Library(props) {
             deckCardAdd={props.deckCardAdd}
             cards={results}
             activeDeck={props.activeDeck}
-            sortMode={true}
+            showSort={true}
+            showTotal={true}
             sortMethod={sortMethod}
             setSortMethod={setSortMethod}
           />

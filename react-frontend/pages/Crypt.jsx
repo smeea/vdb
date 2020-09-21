@@ -39,8 +39,9 @@ function Crypt(props) {
             deckCardAdd={props.deckCardAdd}
             cards={results}
             activeDeck={props.activeDeck}
-            sortMode={true}
-            sortMethod={sortMethod}
+            showSort={true}
+            showTotal={true}
+            sortMethpd={sortMethod}
             setSortMethod={setSortMethod}
           />
         </div>

@@ -6,14 +6,13 @@ import DeckDraw from './DeckDraw.jsx';
 import DeckNewCryptName from './DeckNewCryptName.jsx';
 import DeckNewLibraryName from './DeckNewLibraryName.jsx';
 import DeckNameDeck from './DeckNameDeck.jsx';
+import DeckAuthorDeck from './DeckAuthorDeck.jsx';
 import DeckDescriptionDeck from './DeckDescriptionDeck.jsx';
 import DeckCloneDeck from './DeckCloneDeck.jsx';
 
 function DeckShowDeck(props) {
   const DECK_URL = process.env.ROOT_URL + 'deck?id='+ props.deck.deckid;
-  const isAuthor = props.username == props.deck.author;
-
-  console.log('isAuthor is:', isAuthor);
+  const isAuthor = props.username == props.deck.owner;
 
   return (
     <>
@@ -33,11 +32,16 @@ function DeckShowDeck(props) {
         name={props.deck.name}
         deckUpdate={props.deckUpdate}
         deckid={props.deck.deckid}
-        activeDeck={props.activeDeck}
         isAuthor={isAuthor}
       />
       <DeckDescriptionDeck
         description={props.deck.description}
+        deckUpdate={props.deckUpdate}
+        deckid={props.deck.deckid}
+        isAuthor={isAuthor}
+      />
+      <DeckAuthorDeck
+        author={props.deck.author}
         deckUpdate={props.deckUpdate}
         deckid={props.deck.deckid}
         isAuthor={isAuthor}

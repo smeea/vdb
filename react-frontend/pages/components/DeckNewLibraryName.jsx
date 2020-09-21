@@ -4,6 +4,8 @@ import AsyncSelect from 'react-select/async';
 
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryCost from './ResultLibraryCost.jsx';
+import ResultLibraryClan from './ResultLibraryClan.jsx';
 
 function DeckNewLibraryName(props) {
   const [inputValue, setValue] = useState('');
@@ -59,7 +61,7 @@ function DeckNewLibraryName(props) {
           value={selectedValue}
           getOptionLabel={ card =>
             <>
-              <div className='d-flex justify-content-between'>
+              <div className='d-flex align-items-center justify-content-between'>
                 <div>
                   <ResultLibraryType cardtype={card['Type']}/>
                   <span className='pl-1'>
@@ -70,26 +72,20 @@ function DeckNewLibraryName(props) {
                 </div>
                 <div>
                   { card['Discipline'] &&
-                    <ResultLibraryDisciplines value={card['Discipline']}/>
-                  }
-                  { card['Blood Cost'] &&
                     <span className='pl-2'>
-                      <img className='cost-image-results'
-                           src={'/images/misc/blood' + card['Blood Cost'].toLowerCase() + '.png'}
-                      />
-                    </span>
-                  }
-                  { card['Pool Cost'] &&
-                    <span className='pl-2'>
-                      <img className='cost-image-results'
-                           src={'/images/misc/pool' + card['Pool Cost'].toLowerCase() + '.png'}
-                      />
+                      <ResultLibraryDisciplines value={card['Discipline']}/>
                     </span>
                   }
                   { card['Clan'] &&
                     <span className='pl-2'>
-                      <img className='clan-image-results'
-                           src={'/images/clans/' + card['Clan'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
+                      <ResultLibraryClan value={card['Clan']} />
+                    </span>
+                  }
+                  { (card['Blood Cost'] || card['Pool Cost']) &&
+                    <span className='pl-2'>
+                      <ResultLibraryCost
+                        valuePool={card['Pool Cost']}
+                        valueBlood={card['Blood Cost']}
                       />
                     </span>
                   }

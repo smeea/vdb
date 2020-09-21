@@ -34,7 +34,8 @@ function DeckDrawCryptModal(props) {
       <Modal.Body>
         <ResultCrypt
           cards={props.drawedCards}
-          sortMode={false}
+          showSort={false}
+          showTotal={false}
         />
       </Modal.Body>
     </Modal>

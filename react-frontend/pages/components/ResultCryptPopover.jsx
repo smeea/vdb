@@ -1,6 +1,11 @@
 import React from 'react';
 import { Popover } from 'react-bootstrap';
 
+import ResultCryptClan from './ResultCryptClan.jsx';
+import ResultCryptCapacity from './ResultCryptCapacity.jsx';
+import ResultCryptGroup from './ResultCryptGroup.jsx';
+import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
+
 function ResultCryptPopover(props) {
   const cardImage = (
     <img className='card-popover'
@@ -16,24 +21,6 @@ function ResultCryptPopover(props) {
     );
   });
 
-  const Clan = (
-    <img className='clan-image-results'
-         src={process.env.ROOT_URL + 'images/clans/' + props.card['Clan'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
-         alt={props.card['Clan']}
-    />
-  );
-
-  const Capacity = (
-    <img className='capacity-image-results'
-         src={process.env.ROOT_URL + 'images/misc/cap' + props.card['Capacity'] + '.png'}
-         alt={props.card['Capacity']}
-    />
-  );
-
-  const Disciplines = (
-    'TODO'
-  );
-
   return (
     <Popover.Content>
       { props.showImage
@@ -41,29 +28,27 @@ function ResultCryptPopover(props) {
             <div className='d-flex flex-nowrap justify-content-between align-items-center'>
               <div className='d-flex flex-nowrap align-items-center'>
                 <div>
-                  {Clan}
+                  <ResultCryptClan value={props.card['Clan']} />
                 </div>
-                <div className='pl-1'>
+                <div className='pl-2'>
                   <b>
                     {props.card['Name']}
                   </b>
                 </div>
               </div>
-              <div className='pl-1'>
-                <b>
-                  <font color='a0a0a0'>G</font>
-                  {props.card['Group']}
-                </b>
+              <div className='pl-2'>
+                <ResultCryptGroup value={props.card['Group']} />
               </div>
             </div>
             <hr />
             {props.card['Card Text']}
             <hr />
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex align-items-center justify-content-between'>
+              <ResultCryptDisciplines value={props.card['Disciplines']} />
               <div className='popover-sets'>
                 {Sets}
               </div>
-              {Capacity}
+              <ResultCryptCapacity value={props.card['Capacity']} />
             </div>
           </>
         : cardImage

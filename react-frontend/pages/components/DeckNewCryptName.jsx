@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
 
+import ResultCryptClan from './ResultCryptClan.jsx';
+import ResultCryptCapacity from './ResultCryptCapacity.jsx';
+import ResultCryptGroup from './ResultCryptGroup.jsx';
+import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
+
 function DeckNewCryptName(props) {
   const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
@@ -56,12 +61,10 @@ function DeckNewCryptName(props) {
           value={selectedValue}
           getOptionLabel={ card =>
             <>
-              <div className='d-flex justify-content-between'>
+              <div className='d-flex align-items-center justify-content-between'>
                 <div>
-                  <img className='capacity-image-results'
-                       src={'/images/misc/cap' + card['Capacity'] + '.png'}
-                  />
-                  <span className='pl-1'>
+                  <ResultCryptCapacity value={card['Capacity']} />
+                  <span className='px-2'>
                     { card['Name']
                       + (card['Adv']
                          ? ' [ADV]'
@@ -69,11 +72,10 @@ function DeckNewCryptName(props) {
                       + (card['Banned'] ? ' [BANNED]' : '')
                     }
                   </span>
+                  <ResultCryptClan value={card['Clan']} />
                 </div>
-                <div>
-                  <img className='clan-image-results'
-                       src={'/images/clans/' + card['Clan'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
-                  />
+                <div className='d-flex flex-nowrap'>
+                  <ResultCryptDisciplines value={card['Disciplines']} />
                 </div>
               </div>
             </>

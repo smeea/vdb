@@ -1,6 +1,13 @@
 import React from 'react';
 import { Popover } from 'react-bootstrap';
 
+import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryCost from './ResultLibraryCost.jsx';
+import ResultLibraryBurn from './ResultLibraryBurn.jsx';
+import ResultLibraryClan from './ResultLibraryClan.jsx';
+import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
+import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
+
 function ResultLibraryPopover(props) {
   const cardImage = (
     <img className='card-popover'
@@ -16,21 +23,6 @@ function ResultLibraryPopover(props) {
     );
   });
 
-  const Type = (
-    <img className='type-image-results'
-         src={process.env.ROOT_URL + 'images/types/' + props.card['Type'].toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif'}
-         alt={props.card['Type']}
-    />
-  );
-
-  const Disciplines = (
-    'DISCIPLIES TODO'
-  );
-
-  const Cost = (
-    'COST TODO'
-  );
-
   return (
     <Popover.Content>
       { props.showImage
@@ -38,22 +30,36 @@ function ResultLibraryPopover(props) {
             <div className='d-flex flex-nowrap justify-content-between align-items-center'>
               <div className='d-flex flex-nowrap align-items-center'>
                 <div>
-                  {Type}
+                  <ResultLibraryType cardtype={props.card['Type']} />
                 </div>
-                <div className='pl-1'>
+                <div className='pl-2'>
                   <b>{props.card['Name']}</b>
                 </div>
               </div>
               <div className='pl-1'>
-                {Disciplines}
+                <ResultLibraryDisciplines value={props.card['Discipline']} />
+                <ResultLibraryClan value={props.card['Clan']} />
               </div>
+              { props.card['Burn Option'] &&
+                <div className='pl-1'>
+                  <ResultLibraryBurn value={props.card['Burn Option']} />
+                </div>
+              }
+              { props.card['Card Text'].includes('Trifle.') &&
+                <div className='pl-1'>
+                  <ResultLibraryTrifle value={props.card['Card Text']} />
+                </div>
+              }
             </div>
             <hr />
             {props.card['Card Text']}
             <hr />
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex align-items-center justify-content-between'>
               <div>
-                {Cost}
+                <ResultLibraryCost
+                  valuePool={props.card['Pool Cost']}
+                  valueBlood={props.card['Blood Cost']}
+                />
               </div>
               <div className='popover-sets'>
                 {Sets}

@@ -34,7 +34,8 @@ function DeckDrawLibraryModal(props) {
       <Modal.Body>
         <ResultLibrary
           cards={props.drawedCards}
-          sortMode={false}
+          showSort={false}
+          showTotal={false}
         />
       </Modal.Body>
     </Modal>

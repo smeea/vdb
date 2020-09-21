@@ -21,16 +21,16 @@ function DeckNameDeck(props) {
   }, [props.name]);
 
   return (
-    <div className="input-group mb-3">
+    <div className="input-group mb-2">
       <div className="input-group-prepend">
         <span className="input-group-text">
-          Deck Name
+          Name
         </span>
       </div>
       { props.isAuthor
         ? <input type="text"
                  className="form-control"
-                 placeholder="Deck Name"
+                 placeholder="Name"
                  value={state}
                  onChange={handleChange}
           />

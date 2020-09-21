@@ -13,7 +13,7 @@ def load_user(id):
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
-    email = db.Column(db.String(64), index=True, unique=True)
+    email = db.Column(db.String(64))
     password_hash = db.Column(db.String(128))
     decks = db.relationship('Deck', backref='author', lazy='dynamic')
 
@@ -29,7 +29,7 @@ class User(UserMixin, db.Model):
 
 class Deck(db.Model):
     deckid = db.Column(db.String(32), primary_key=True)
-    name = db.Column(db.String(64), index=True)
+    name = db.Column(db.String(64))
     author_public_name = db.Column(db.String(64))
     description = db.Column(db.String(8192))
     cards = db.Column(db.PickleType)

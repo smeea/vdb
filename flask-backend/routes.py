@@ -49,6 +49,7 @@ def showDeck(deckid):
 
     decks[deckid] = {
         'name': deck.name,
+        'owner': deck.author.username,
         'author': deck.author_public_name,
         'description': deck.description,
         'crypt': crypt,
@@ -115,6 +116,18 @@ def updateDeck(deckid):
                 })
         except Exception:
             pass
+        try:
+            if request.json['author']:
+                d = Deck.query.filter_by(author=current_user,
+                                         deckid=deckid).first()
+                d.author_public_name = request.json['author']
+                db.session.commit()
+                return jsonify({
+                    'updated deck': d.deckid,
+                    'author': d.author_public_name
+                })
+        except Exception:
+            pass
     else:
         return jsonify({'Not logged in.'})
 
@@ -135,6 +148,7 @@ def listDecks():
 
             decks[deck.deckid] = {
                 'name': deck.name,
+                'owner': deck.author.username,
                 'author': deck.author_public_name,
                 'description': deck.description,
                 'crypt': crypt,

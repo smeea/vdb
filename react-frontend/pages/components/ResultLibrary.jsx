@@ -79,10 +79,10 @@ function ResultLibrary(props) {
 
   return (
     <>
-      { props.cards.length > 0 &&
+      { props.showTotal == true && props.cards.length > 0 &&
         <ResultLibraryTotal cards={props.cards} />
       }
-      { props.sortMode == true && sortedCards.length > 0 &&
+      { props.showSort == true && sortedCards.length > 0 &&
         <ResultLibrarySortForm value={props.sortMethod} onChange={handleChange} />
       }
       <table className='search-library-table'>
