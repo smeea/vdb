@@ -1,6 +1,5 @@
 # MAJOR FEATURE
 * Beautify card text popover
-* Deck share link
 * Account creation errors
 
 # MINOR FEATURE

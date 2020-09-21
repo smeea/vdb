@@ -9,15 +9,15 @@ import DeckNameDeck from './DeckNameDeck.jsx';
 import DeckAuthorDeck from './DeckAuthorDeck.jsx';
 import DeckDescriptionDeck from './DeckDescriptionDeck.jsx';
 import DeckCloneDeck from './DeckCloneDeck.jsx';
+import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
 
 function DeckShowDeck(props) {
-  const DECK_URL = process.env.ROOT_URL + 'deck?id='+ props.deck.deckid;
+  const deckUrl= process.env.ROOT_URL + 'deck?id='+ props.deck.deckid;
   const isAuthor = props.username == props.deck.owner;
 
   return (
     <>
-      <b>URL: </b>
-      <a href={DECK_URL}>{DECK_URL}</a>
+      <DeckCopyUrlButton value={props.deck.deckid} />
       { props.username &&
         <DeckCloneDeck
           author={props.deck.author}
