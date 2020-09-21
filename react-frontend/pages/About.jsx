@@ -30,10 +30,9 @@ function About(props) {
             WHAT IS IT
           </h5>
           <p>
-            Card search and deck building tool for Vampire the Eternal Struggle (VTES).
-            <br />
-
+            VDB is card search and deck building tool for Vampire the Eternal Struggle (VTES).
           </p>
+          <br />
 
           <h5>RELATED PROJECTS</h5>
           <p>
@@ -43,9 +42,7 @@ function About(props) {
               </b>
             </a>
             <br />
-            Online card search and deck-building tool. You should definitely try it!
-            <br />
-            This project use many ideas from Amaranth.
+            Online card search and deck-building tool. We use many ideas from Amaranth.
           </p>
 
           <p>
@@ -57,7 +54,6 @@ function About(props) {
             <br />
             Deck-building application for Windows.
             <br />
-            This project use card images from FELD.
           </p>
 
           <p>
@@ -127,9 +123,8 @@ function About(props) {
             PRIVACY
           </h5>
           <p>
-            I respect privacy. I promise not to track your activity and not to give access to your data (email, decks, etc) to anybody. Email is optional and only used for password restoration.
+            We respect privacy and promise to not give access to your data (email, decks, etc) to anybody.
           </p>
-
 
           <h5>
             DONATIONS

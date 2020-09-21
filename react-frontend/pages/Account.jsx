@@ -10,13 +10,19 @@ function Account(props) {
   return (
     <div className='container px-0 py-xl-3 px-xl-2'>
       <div className='row mx-0'>
-        <div className='col-xs-12 col-xl-1 left-col px-0 px-xl-2'>
+        <div className='col-md-12 col-lg-2 col-xl-2 left-col px-0 px-xl-2'>
         </div>
-        <div className='col-xs-12 col-xl-7 center-col px-0 px-xl-2'>
+        <div className='col-md-12 col-lg-8 col-xl-8 center-col px-0 px-xl-2'>
           { props.username
             ? <>
-                Logged as: <b>{props.username}{' '}</b>
-                <AccountLogout setUsername={props.setUsername} />
+                <div className='d-flex justify-content-between'>
+                  <div>
+                    Logged as: <b>{props.username}{' '}</b>
+                  </div>
+                  <div>
+                    <AccountLogout setUsername={props.setUsername} />
+                  </div>
+                </div>
                 <AccountChangePassword />
                 <AccountChangeEmail />
               </>
