@@ -72,11 +72,10 @@ function AccountLogin(props) {
           Login
         </Button>
         <Button variant='outline-secondary' onClick={() => setShowRestore(true)}>
-          Restore
+          Forgot password?
         </Button>
-        { showRestore && state.username &&
+        { showRestore &&
           <AccountRestorePassword
-            username={state.username}
             show={showRestore}
             setShow={setShowRestore}
           />

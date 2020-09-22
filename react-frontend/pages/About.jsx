@@ -6,7 +6,7 @@ function About(props) {
       <div className='row mx-0'>
         <div className='col-md-12 col-lg-2 col-xl-2 left-col px-0 px-xl-2'>
         </div>
-        <div className='col-md-12 col-lg-8 col-xl-8 center-col px-0 px-xl-2'>
+        <div className='col-md-12 col-lg-8 col-xl-8 center-col px-1 px-xl-2'>
           <div className='about-version'>
             <h5>
               VERSION
@@ -44,7 +44,6 @@ function About(props) {
             <br />
             Online card search and deck-building tool. We use many ideas from Amaranth.
           </p>
-
           <p>
             <a href='http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood'>
               <b>

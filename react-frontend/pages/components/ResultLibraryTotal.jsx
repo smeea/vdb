@@ -19,14 +19,16 @@ function ResultLibraryTotal(props) {
     return (
       <React.Fragment key={index}>
         <ResultLibraryType cardtype={key}/>
-        {byTypes[key]}{' '}
+        <span className='pl-1 pr-3 library-total'>
+          {byTypes[key]}
+        </span>
       </React.Fragment>
     );
   });
 
   return (
     <div className='d-flex justify-content-between total'>
-      <span>
+      <span className='px-2'>
         TOTAL: {total}
       </span>
       <span>

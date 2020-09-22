@@ -3,22 +3,20 @@ import { Modal, Button } from 'react-bootstrap';
 
 function AccountRestorePassword(props) {
   const handleClose = () => props.setShow(false);
-  const handleConfirm = () => {
-    console.log('restore password button');
-  }
 
   return (
     <>
       <Modal show={props.show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          Restore password for <span className='pl-1'><b><i>{props.username}</i></b></span>?
+          <div>
+            We do not have automatic password restoration yet, please
+            {' '}<a href='mailto:smeea@riseup.net'>send me an email</a>{' '}
+            with your account username I will generate new password for you.
+          </div>
         </Modal.Header>
         <Modal.Body>
-          <Button variant="outline-secondary" onClick={handleConfirm}>
-            Restore
-          </Button>
           <Button variant="outline-secondary" onClick={handleClose}>
-            Cancel
+            Close
           </Button>
         </Modal.Body>
       </Modal>

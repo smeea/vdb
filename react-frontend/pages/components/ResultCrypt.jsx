@@ -75,6 +75,7 @@ function ResultCrypt(props) {
 
   useEffect(() => {
     setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
+    console.log('sortMethod: ', props.sortMethod)
   }, [props.cards, props.sortMethod]);
 
   return (
