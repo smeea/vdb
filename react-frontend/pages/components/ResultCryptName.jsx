@@ -14,14 +14,28 @@ function ResultCryptName(props) {
     },
   );
 
+  const imgClass='advanced-image-results';
+  let imgSrc='';
+  let imgTitle='';
+  if (props.adv) {
+    imgSrc=process.env.ROOT_URL + 'images/misc/advanced.gif';
+    imgTitle='Advanced'
+  }
+
   return (
     <span className='name'>
       <OverlayTrigger
         placement='right'
         overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
       >
-        <span className='card-name' onClick={props.toggleImage}>
-          {props.value} {props.adv && ' [ADV]'} {props.ban && ' [BANNED]'}
+        <span className='d-flex flex-unwrap align-items-center card-name' onClick={props.toggleImage}>
+          {props.value}
+          { props.adv &&
+            <span className='pl-1'>
+              <img className={imgClass} src={imgSrc} title={imgTitle} />
+            </span>
+          }
+          { props.ban && ' [BANNED]' }
         </span>
       </OverlayTrigger>
     </span>

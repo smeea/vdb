@@ -5,6 +5,7 @@
 # MINOR FEATURE
 
 # MAJOR FIX
+* Shared deck redraw on imageshow
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
 * SortForm to Bootstrap Dropdown

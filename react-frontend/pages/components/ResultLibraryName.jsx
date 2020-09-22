@@ -20,7 +20,7 @@ function ResultLibraryName(props) {
         placement='right'
         overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
       >
-        <span className='card-name' onClick={props.toggleImage}>
+        <span className='d-flex flex-unwrap align-items-center card-name' onClick={props.toggleImage}>
           {props.value} {props.ban && ' [BANNED]'}
         </span>
       </OverlayTrigger>

@@ -14,7 +14,9 @@ function ResultLibraryCost(props) {
 
   return (
     <span className='cost'>
-      <img className={imgClass} src={imgSrc} title={imgTitle} />
+      { (props.valueBlood || props.valuePool) &&
+        <img className={imgClass} src={imgSrc} title={imgTitle} />
+      }
     </span>
   );
 }

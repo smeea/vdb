@@ -246,8 +246,7 @@ def register():
         return jsonify({'already logged as:': current_user.username})
 
     try:
-        user = User(username=request.json['username'],
-                    email=request.json['email'])
+        user = User(username=request.json['username'])
         user.set_password(request.json['password'])
         db.session.add(user)
         db.session.commit()

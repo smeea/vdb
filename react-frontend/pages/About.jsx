@@ -32,8 +32,6 @@ function About(props) {
           <p>
             VDB is card search and deck building tool for Vampire the Eternal Struggle (VTES).
           </p>
-          <br />
-
           <h5>RELATED PROJECTS</h5>
           <p>
             <a href='https://amaranth.vtes.co.nz/'>

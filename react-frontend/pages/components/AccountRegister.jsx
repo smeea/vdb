@@ -4,7 +4,6 @@ import { Button } from 'react-bootstrap';
 function AccountRegister(props){
   const [state, setState] = useState({
     username: '',
-    email: '',
     password: '',
   });
 
@@ -20,7 +19,6 @@ function AccountRegister(props){
     const url = process.env.API_URL + 'register';
     let input = {
       username: state.username,
-      email: state.email,
       password: state.password,
     };
 
@@ -51,13 +49,6 @@ function AccountRegister(props){
           type='text'
           name='username'
           value={state.username}
-          onChange={handleChange}
-        />
-        <input
-          placeholder='Email'
-          type='text'
-          name='email'
-          value={state.email}
           onChange={handleChange}
         />
         <input
