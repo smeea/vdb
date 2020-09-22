@@ -5,6 +5,7 @@
 # MINOR FEATURE
 
 # MAJOR FIX
+* Side Deck opacity
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
 * SortForm to Bootstrap Dropdown
