@@ -3,19 +3,28 @@ import React, { useState, useEffect } from 'react';
 function DeckSelectDeck(props) {
   const [state, setState] = useState(props.decks);
 
-  const decksOptions = [
+  const deckDefaultOption = [
     <option key='-1'>
       Select Deck
     </option>
   ]
 
-  Object.keys(state).map((i, index) => {
-    decksOptions.push(
-      <option key={index} value={i}>
-        {state[i]['name']}
-      </option>
+  const decksPreOptions = Object.keys(state).map((i, index) => {
+    return(
+      [
+        <option key={index} value={i}>
+          {state[i]['name']} rev. {new Date(state[i]['timestamp']).toISOString().slice(0, 10)}
+        </option>
+        , state[i]['timestamp']
+      ]
     );
   });
+
+  const byTimestamp = (a, b) => {
+    return new Date(b[1]) - new Date(a[1])
+  };
+
+  const decksOptions = deckDefaultOption.concat(decksPreOptions.sort(byTimestamp));
 
   useEffect(() => {
     setState(props.decks);

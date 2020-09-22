@@ -14,7 +14,7 @@ function DeckCloneDeck(props) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        deckname: props.name + ' by ' + props.author + ' [' + date + ']',
+        deckname: props.name + ' by ' + props.author + ' rev. ' + date,
         target: props.deckid,
       }),
     };

@@ -29,11 +29,11 @@ img.card-popover
 
 .deck-sidecrypt,
 .deck-sidelibrary
-  opacity: 50%
+  opacity: 0.55
 
-.deck-sidecrypt .disciplines img,
-.deck-sidelibrary .disciplines img
-  opacity: 60%
+.deck-sidecrypt img,
+.deck-sidelibrary img
+  opacity: 0.6
 
 .deck-crypt-table
   width: 100%
@@ -49,8 +49,14 @@ img.card-popover
   width: 8%
 .deck-crypt-table td.group
   width: 4%
-.deck-crypt-table, td.quantity, td.capacity, td.disciplines, td.name, td.clan, td.group
-  border: 1px solid lightgray
+.deck-crypt-table td
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  // border-right: 1px solid lightgray
+  // border-left: 1px solid lightgray
+  border-collapse: collapse
+.deck-crypt-table .discipline td
+  border: none
 .deck-crypt-table td
   text-align: center
 .deck-crypt-table td.name
@@ -72,8 +78,12 @@ img.card-popover
   width: 23%
 .deck-library-table td.burn
   width: 7%
-.deck-library-table, td.quantity, td.name, td.cost, td.clan, td.disciplines, td.burn
-  border: 1px solid lightgray
+.deck-library-table td
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  // border-right: 1px solid lightgray
+  // border-left: 1px solid lightgray
+  border-collapse: collapse
 .deck-library-table td
   text-align: center
 .deck-library-table td.name
@@ -94,8 +104,14 @@ img.card-popover
   width: 11%
 .search-crypt-table td.group
   width: 6%
-.search-crypt-table, td.quantity, td.capacity, td.disciplines, td.name, td.clan, td.group
-  border: 1px solid lightgray
+.search-crypt-table td
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  // border-right: 1px solid lightgray
+  // border-left: 1px solid lightgray
+  border-collapse: collapse
+.search-crypt-table .discipline td
+  border: none
 .search-crypt-table td
   text-align: center
 .search-crypt-table td.text
@@ -117,8 +133,12 @@ img.card-popover
   width: 12%
 .search-library-table td.burn
   width: 8%
-.search-library-table, td.cost, td.type, td.disciplines, td.name,  td.clan, td.burn
-  border: 1px solid lightgray
+.search-library-table td
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  // border-right: 1px solid lightgray
+  // border-left: 1px solid lightgray
+  border-collapse: collapse
 .search-library-table td
   text-align: center
 .search-library-table td.text

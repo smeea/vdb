@@ -5,7 +5,6 @@
 # MINOR FEATURE
 
 # MAJOR FIX
-* Side Deck opacity
 # MINOR FIX
 * DeckPreviewCrypt/Library to use Result components
 * SortForm to Bootstrap Dropdown
@@ -17,7 +16,6 @@
 * Export/Import (formats: TWD, LackeyCCG) deck
 * Temporary 'add to compare' button
 * Card rulings
-* Sort decks by date
 
 # DEPLOYMENT
 * Resize icons

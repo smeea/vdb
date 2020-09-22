@@ -1,5 +1,8 @@
 from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user
+from datetime import datetime
+import uuid
+
 from search_crypt import get_crypt_by_cardtext
 from search_crypt import get_crypt_by_cardname
 from search_crypt import get_crypt_by_trait
@@ -30,8 +33,6 @@ from api import app
 from api import db
 from models import User
 from models import Deck
-
-import uuid
 
 
 @app.route('/api/deck/<string:deckid>', methods=['GET'])
@@ -76,6 +77,7 @@ def updateDeck(deckid):
                         merged_cards[k] = v
 
                 d.cards = merged_cards.copy()
+                d.timestamp = datetime.utcnow()
                 db.session.commit()
                 return jsonify({'updated deck': d.deckid, 'cards': d.cards})
         except Exception:
@@ -85,6 +87,7 @@ def updateDeck(deckid):
                 d = Deck.query.filter_by(author=current_user,
                                          deckid=deckid).first()
                 d.name = request.json['name']
+                d.timestamp = datetime.utcnow()
                 db.session.commit()
                 return jsonify({'updated deck': d.deckid, 'name': d.name})
         except Exception:
@@ -100,6 +103,7 @@ def updateDeck(deckid):
                         merged_cards[k] = v
 
                 d.cards = merged_cards.copy()
+                d.timestamp = datetime.utcnow()
                 db.session.commit()
                 return jsonify({'updated deck': d.deckid, 'cards': d.cards})
         except Exception:
@@ -109,6 +113,7 @@ def updateDeck(deckid):
                 d = Deck.query.filter_by(author=current_user,
                                          deckid=deckid).first()
                 d.description = request.json['description']
+                d.timestamp = datetime.utcnow()
                 db.session.commit()
                 return jsonify({
                     'updated deck': d.deckid,
@@ -121,6 +126,7 @@ def updateDeck(deckid):
                 d = Deck.query.filter_by(author=current_user,
                                          deckid=deckid).first()
                 d.author_public_name = request.json['author']
+                d.timestamp = datetime.utcnow()
                 db.session.commit()
                 return jsonify({
                     'updated deck': d.deckid,

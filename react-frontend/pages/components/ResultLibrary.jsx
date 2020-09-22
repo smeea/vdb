@@ -12,7 +12,7 @@ import ResultLibraryTotal from './ResultLibraryTotal.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
 import ResultAddCard from './ResultAddCard.jsx';
 
-function SearchLibraryBody(props) {
+function ResultLibraryBody(props) {
   let resultTrClass='library-result-even';
 
   const cards = props.resultCards.map((card, index) => {
@@ -26,7 +26,7 @@ function SearchLibraryBody(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           { props.activeDeck && props.activeDeck != 'Select Deck' &&
-            <td>
+            <td className='quantity'>
               <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
             </td>
           }
@@ -86,7 +86,7 @@ function ResultLibrary(props) {
         <ResultLibrarySortForm value={props.sortMethod} onChange={handleChange} />
       }
       <table className='search-library-table'>
-        <SearchLibraryBody
+        <ResultLibraryBody
           showImage={props.showImage}
           toggleImage={props.toggleImage}
           activeDeck={props.activeDeck}

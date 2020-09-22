@@ -11,7 +11,7 @@ import ResultCryptTotal from './ResultCryptTotal.jsx';
 import resultCryptSort from './resultCryptSort.js';
 import ResultAddCard from './ResultAddCard.jsx';
 
-function SearchCryptBody(props) {
+function ResultCryptBody(props) {
   let resultTrClass='crypt-result-even';
 
   if (props.resultCards) {
@@ -26,7 +26,7 @@ function SearchCryptBody(props) {
         <React.Fragment key={index}>
           <tr className={resultTrClass}>
             { props.activeDeck && props.activeDeck != 'Select Deck' &&
-              <td>
+              <td className='quantity'>
                 <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
               </td>
             }
@@ -75,7 +75,6 @@ function ResultCrypt(props) {
 
   useEffect(() => {
     setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
-    console.log('sortMethod: ', props.sortMethod)
   }, [props.cards, props.sortMethod]);
 
   return (
@@ -87,7 +86,7 @@ function ResultCrypt(props) {
         <ResultCryptSortForm value={props.sortMethod} onChange={handleChange} />
       }
       <table className='search-crypt-table'>
-        <SearchCryptBody
+        <ResultCryptBody
           showImage={props.showImage}
           toggleImage={props.toggleImage}
           activeDeck={props.activeDeck}
