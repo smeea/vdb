@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
-
-import AccountRestorePassword from './AccountRestorePassword.jsx';
+import React, { useRef, useState } from 'react';
+import { Tooltip, Overlay, Button } from 'react-bootstrap';
 
 function AccountLogin(props) {
   const [state, setState] = useState({
@@ -9,7 +7,8 @@ function AccountLogin(props) {
     password: '',
   });
 
-  const [showRestore, setShowRestore] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const targetForgotPassword = useRef(null);
 
   const handleChange = event => {
     const {name, value} = event.target;
@@ -71,15 +70,29 @@ function AccountLogin(props) {
         <Button variant='outline-secondary' onClick={loginUser}>
           Login
         </Button>
-        <Button variant='outline-secondary' onClick={() => setShowRestore(true)}>
-          Forgot password?
-        </Button>
-        { showRestore &&
-          <AccountRestorePassword
-            show={showRestore}
-            setShow={setShowRestore}
-          />
-        }
+
+        <br />
+
+        <span
+          className='forgot-password'
+          ref={targetForgotPassword}
+          onClick={() => setShowForgotPassword(!showForgotPassword)}
+        >
+          <a href='#'><i>Forgot password?</i></a>
+        </span>
+        <Overlay
+          target={targetForgotPassword.current}
+          placement='right'
+          show={showForgotPassword}
+        >
+          {(props) => (
+            <Tooltip id='tooltip-forgot' {...props}>
+              We do not have automatic password restoration yet, please
+              {' '}<a href='mailto:smeea@riseup.net'>send me an email</a>{' '}
+              with your account username I will generate new password for you.
+            </Tooltip>
+          )}
+        </Overlay>
       </form>
     </>
   );

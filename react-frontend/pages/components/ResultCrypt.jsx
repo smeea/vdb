@@ -67,8 +67,7 @@ function ResultCryptBody(props) {
 function ResultCrypt(props) {
   const [sortedCards, setSortedCards] = useState([]);
 
-  const handleChange = event => {
-    const method = event.target.value;
+  const handleChange = method => {
     props.setSortMethod(method);
     setSortedCards(() => resultCryptSort(props.cards, method));
   };

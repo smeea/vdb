@@ -67,8 +67,7 @@ function ResultLibraryBody(props) {
 function ResultLibrary(props) {
   const [sortedCards, setSortedCards] = useState([]);
 
-  const handleChange = event => {
-    const method = event.target.value;
+  const handleChange = method => {
     props.setSortMethod(method);
     setSortedCards(() => resultLibrarySort(props.cards, method));
   };

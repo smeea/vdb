@@ -15,27 +15,25 @@ function ResultCryptTotal(props) {
 
   const totalOutput = Object.keys(byGroups).map((key, index) => {
     return (
-      <React.Fragment key={index}>
-        <span className='px-2'>
-          <span className='crypt-total'>
-            <b>G{key}:</b>
-          </span>
-          {byGroups[key]}
+      <span key={index} className='pr-3'>
+        <span className='crypt-total'>
+          <b>G{key}:</b>
         </span>
-      </React.Fragment>
+        {byGroups[key]}
+      </span>
     );
   });
 
   return (
-    <div className='d-flex justify-content-between total'>
-      <span className='px-2'>
+    <div className='d-flex align-items-center justify-content-between total'>
+      <div className='px-2 nobr'>
         TOTAL: {total}
-      </span>
-      <span>
+      </div>
+      <div>
         {totalOutput}
-      </span>
-      <span>
-      </span>
+      </div>
+      <div>
+      </div>
     </div>
   );
 }

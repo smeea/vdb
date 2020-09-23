@@ -17,25 +17,23 @@ function ResultLibraryTotal(props) {
 
   const totalOutput = Object.keys(byTypes).map((key, index) => {
     return (
-      <React.Fragment key={index}>
+      <span key={index} className='pr-3'>
         <ResultLibraryType cardtype={key}/>
-        <span className='pl-1 pr-3 library-total'>
-          {byTypes[key]}
-        </span>
-      </React.Fragment>
+        {byTypes[key]}
+      </span>
     );
   });
 
   return (
-    <div className='d-flex justify-content-between total'>
-      <span className='px-2'>
+    <div className='d-flex align-items-center justify-content-between total'>
+      <div className='px-2 nobr'>
         TOTAL: {total}
-      </span>
-      <span>
+      </div>
+      <div>
         {totalOutput}
-      </span>
-      <span>
-      </span>
+      </div>
+      <div>
+      </div>
     </div>
   );
 }

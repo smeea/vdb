@@ -9,6 +9,7 @@ import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
 
+
 function Deck(props) {
   const query = new URLSearchParams(useLocation().search);
   const [sharedDeck, setSharedDeck] = useState(undefined);
@@ -71,44 +72,25 @@ function Deck(props) {
         <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
           { props.username &&
             <>
-              <Accordion>
-                <Card>
-                  <Accordion.Toggle as={Card.Header} eventKey="0">
-                    Create New Deck
-                  </Accordion.Toggle>
-                  <Accordion.Collapse eventKey="0">
-                    <Card.Body>
-                      <DeckNewDeck
-                        setActiveDeck={props.setActiveDeck}
-                        getDecks={props.getDecks}
-                      />
-                      <DeckImportDeck
-                        setActiveDeck={props.setActiveDeck}
-                        getDecks={props.getDecks}
-                      />
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </Accordion>
-              <br />
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text">
-                    Select Deck
-                  </span>
-                </div>
-                <DeckSelectDeck
-                  decks={props.decks}
-                  activeDeck={props.activeDeck}
+              <DeckNewDeck
+                setActiveDeck={props.setActiveDeck}
+                getDecks={props.getDecks}
+              />
+              <DeckImportDeck
+                setActiveDeck={props.setActiveDeck}
+                getDecks={props.getDecks}
+              />
+              <DeckSelectDeck
+                decks={props.decks}
+                activeDeck={props.activeDeck}
+                setActiveDeck={props.setActiveDeck}
+              />
+              { props.decks[props.activeDeck] &&
+                <DeckRemoveDeck
+                  deck={props.decks[props.activeDeck]}
                   setActiveDeck={props.setActiveDeck}
                 />
-                { props.decks[props.activeDeck] &&
-                  <DeckRemoveDeck
-                    deck={props.decks[props.activeDeck]}
-                    setActiveDeck={props.setActiveDeck}
-                  />
-                }
-              </div>
+              }
             </>
           }
           { props.decks[props.activeDeck] &&

@@ -15,16 +15,14 @@ function ResultLibraryName(props) {
   );
 
   return (
-    <span className='name'>
-      <OverlayTrigger
-        placement='right'
-        overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
-      >
-        <span className='d-flex flex-unwrap align-items-center card-name' onClick={props.toggleImage}>
-          {props.value} {props.ban && ' [BANNED]'}
-        </span>
-      </OverlayTrigger>
-    </span>
+    <OverlayTrigger
+      placement='right'
+      overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
+    >
+      <span className='name' onClick={props.toggleImage}>
+        {props.value} {props.ban && ' [BANNED]'}
+      </span>
+    </OverlayTrigger>
   );
 }
 

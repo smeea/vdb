@@ -1,4 +1,5 @@
 import React from 'react';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { SortDown } from 'react-bootstrap-icons';
 
 function ResultLibrarySortForm(props) {
@@ -10,23 +11,22 @@ function ResultLibrarySortForm(props) {
     'Type',
   ];
 
-  const sortFormOptions = sortMethods.map((i, index) => {
+  const SortButtonOptions = sortMethods.map((i, index) => {
     return(
-      <option key={index} value={i}>{i}</option>
+      <Dropdown.Item key={index} href="" onClick={() => props.onChange(i)}>
+        Sort by {i}
+      </Dropdown.Item>
     );
   });
 
   return (
-    <div className="input-group mb-3">
-      <div className="input-group-prepend">
-        <span className="input-group-text">
-          <SortDown size={24} />
-        </span>
-      </div>
-      <select className='custom-select' name='sort' value={props.value} onChange={props.onChange}>
-        {sortFormOptions}
-      </select>
-    </div>
+    <DropdownButton
+      variant='outline-secondary'
+      id="sort-button"
+      title={<SortDown size={24} />}
+    >
+      {SortButtonOptions}
+    </DropdownButton>
   );
 }
 

@@ -47,6 +47,8 @@ function SearchLibraryForm(props) {
 
   const [formState, setFormState] = useState(defaults);
 
+  const [spinnerState, setSpinnerState] = useState(false);
+
   const handleChange = event => {
     const {name, value} = event.target;
     setFormState(prevState => ({
@@ -105,10 +107,17 @@ function SearchLibraryForm(props) {
         body: JSON.stringify(input),
       };
 
+      setSpinnerState(true);
+
       fetch(url, options)
         .then(response => response.json())
         .then(data => {
-          props.setResults(data);
+          if (data.error === undefined) {
+            props.setResults(data);
+            setSpinnerState(false);
+          } else {
+            console.log('error: ', data.error);
+          }
         });
     };
   };
@@ -123,6 +132,7 @@ function SearchLibraryForm(props) {
         <SearchLibraryFormButtons
           handleClearFormButton={handleClearFormButton}
           handleClearResultButton={handleClearResultButton}
+          spinner={spinnerState}
         />
       </div>
       <SearchLibraryFormType

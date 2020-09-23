@@ -107,6 +107,8 @@ function SearchCryptForm(props) {
 
   const [formState, setFormState] = useState(defaults);
 
+  const [spinnerState, setSpinnerState] = useState(false);
+
   const handleChange = event => {
     const {name, value} = event.target;
     setFormState(prevState => ({
@@ -193,10 +195,17 @@ function SearchCryptForm(props) {
         body: JSON.stringify(input),
       };
 
+      setSpinnerState(true);
+
       fetch(url, options)
         .then(response => response.json())
         .then(data => {
-          props.setResults(data);
+          if (data.error === undefined) {
+            props.setResults(data);
+            setSpinnerState(false);
+          } else {
+            console.log('error: ', data.error);
+          }
         });
     };
   };
@@ -211,6 +220,7 @@ function SearchCryptForm(props) {
         <SearchCryptFormButtons
           handleClearFormButton={handleClearFormButton}
           handleClearResultButton={handleClearResultButton}
+          spinner={spinnerState}
         />
       </div>
       <SearchCryptFormDisciplines

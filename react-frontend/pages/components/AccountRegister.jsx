@@ -42,7 +42,7 @@ function AccountRegister(props){
 
   return (
     <>
-      <h6>Register</h6>
+      <h6>Create Account</h6>
       <form>
         <input
           placeholder='New Username'
@@ -59,7 +59,7 @@ function AccountRegister(props){
           onChange={handleChange}
         />
         <Button variant='outline-secondary' onClick={registerUser}>
-          Register
+          Create
         </Button>
       </form>
     </>
