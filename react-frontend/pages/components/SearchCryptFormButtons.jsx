@@ -1,6 +1,6 @@
 import React from 'react';
 import { Spinner, Button } from 'react-bootstrap';
-import { Check2, Backspace, Trash } from 'react-bootstrap-icons';
+import { X, Check2 } from 'react-bootstrap-icons';
 
 function SearchCryptFormButtons(props) {
   return (
@@ -17,15 +17,12 @@ function SearchCryptFormButtons(props) {
             <span className="sr-only">Loading...</span>
           </Button>
         : <Button variant='outline-secondary' type='submit'>
-          <Spinner />
-          <Check2 size={20} />
-        </Button>
+            <Spinner />
+            <Check2 size={20} />
+          </Button>
       }
-      <Button variant='outline-secondary' onClick={props.handleClearFormButton}>
-        <Backspace size={20} />
-      </Button>
-      <Button variant='outline-secondary' onClick={props.handleClearResultButton}>
-        <Trash size={20} />
+      <Button variant='outline-secondary' onClick={props.handleClearButton}>
+        <X size={20} />
       </Button>
     </>
   );

@@ -75,8 +75,10 @@ function SearchLibraryForm(props) {
     }));
   };
 
-  const handleClearFormButton = () => setFormState(defaults);
-  const handleClearResultButton = () => props.setResults([]);
+  const handleClearButton = () => {
+    setFormState(defaults);
+    props.setResults([]);
+  }
 
   const handleSubmitButton = event => {
     event.preventDefault();
@@ -131,8 +133,7 @@ function SearchLibraryForm(props) {
           onChange={handleChange}
         />
         <SearchLibraryFormButtons
-          handleClearFormButton={handleClearFormButton}
-          handleClearResultButton={handleClearResultButton}
+          handleClearButton={handleClearButton}
           spinner={spinnerState}
         />
       </div>

@@ -163,8 +163,10 @@ function SearchCryptForm(props) {
     }));
   };
 
-  const handleClearFormButton = () => setFormState(defaults)
-  const handleClearResultButton = () => props.setResults([]);
+  const handleClearButton = () => {
+    setFormState(defaults);
+    props.setResults([]);
+  }
 
   const handleSubmitButton = event => {
     event.preventDefault();
@@ -219,8 +221,7 @@ function SearchCryptForm(props) {
           onChange={handleChange}
         />
         <SearchCryptFormButtons
-          handleClearFormButton={handleClearFormButton}
-          handleClearResultButton={handleClearResultButton}
+          handleClearButton={handleClearButton}
           spinner={spinnerState}
         />
       </div>
