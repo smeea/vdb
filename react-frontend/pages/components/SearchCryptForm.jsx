@@ -200,12 +200,13 @@ function SearchCryptForm(props) {
       fetch(url, options)
         .then(response => response.json())
         .then(data => {
-          if (data.error === undefined) {
             props.setResults(data);
             setSpinnerState(false);
-          } else {
-            console.log('error: ', data.error);
-          }
+        })
+        .catch((error) => {
+          props.setResults(null);
+          setSpinnerState(false);
+          console.log(error);
         });
     };
   };

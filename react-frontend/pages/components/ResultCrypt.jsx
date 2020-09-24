@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
 
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -82,7 +81,10 @@ function ResultCrypt(props) {
         <ResultCryptTotal cards={props.cards} />
       }
       { props.showSort == true && sortedCards.length > 0 &&
-        <ResultCryptSortForm value={props.sortMethod} onChange={handleChange} />
+        <ResultCryptSortForm
+          value={props.sortMethod}
+          onChange={handleChange}
+        />
       }
       <table className='search-crypt-table'>
         <ResultCryptBody

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
+import AlertMessage from './components/AlertMessage.jsx';
 import ResultCrypt from './components/ResultCrypt.jsx';
 import SearchCryptForm from './components/SearchCryptForm.jsx';
 import DeckPreview from './components/DeckPreview.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 
 function Crypt(props) {
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(undefined);
   const [sortMethod, setSortMethod] = useState('Default');
   return (
     <div className='container px-0 py-xl-2 px-xl-2'>
@@ -15,6 +16,7 @@ function Crypt(props) {
 
           { Object.keys(props.decks).length > 0 &&
             <DeckSelectDeck
+              preview={true}
               decks={props.decks}
               activeDeck={props.activeDeck}
               setActiveDeck={props.setActiveDeck}
@@ -33,20 +35,33 @@ function Crypt(props) {
         </div>
 
         <div className='col-md-12 col-lg-6 col-xl-6 px-1 px-xl-2'>
-          <ResultCrypt
-            showImage={props.showImage}
-            toggleImage={props.toggleImage}
-            deckCardAdd={props.deckCardAdd}
-            cards={results}
-            activeDeck={props.activeDeck}
-            showSort={true}
-            showTotal={true}
-            sortMethod={sortMethod}
-            setSortMethod={setSortMethod}
-          />
+          { (results != undefined && results != null ) &&
+            <ResultCrypt
+              showImage={props.showImage}
+              toggleImage={props.toggleImage}
+              deckCardAdd={props.deckCardAdd}
+              cards={results}
+              activeDeck={props.activeDeck}
+              showSort={true}
+              showTotal={true}
+              sortMethod={sortMethod}
+              setSortMethod={setSortMethod}
+            />
+          }
+          { results === null &&
+            <AlertMessage
+              className='error-message'
+              value={<>
+                       <div />
+                       No results
+                       <div />
+                     </>}
+            />
+          }
         </div>
+
         <div className='col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2'>
-          <SearchCryptForm setResults={setResults} />
+          <SearchCryptForm setResults={setResults}/>
         </div>
       </div>
     </div>

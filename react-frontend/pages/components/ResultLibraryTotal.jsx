@@ -1,5 +1,6 @@
 import React from 'react';
 
+import AlertMessage from './AlertMessage.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
 function ResultLibraryTotal(props) {
@@ -17,24 +18,31 @@ function ResultLibraryTotal(props) {
 
   const totalOutput = Object.keys(byTypes).map((key, index) => {
     return (
-      <span key={index} className='pr-3'>
+      <span key={index} className='d-inline-block nobr pr-3'>
         <ResultLibraryType cardtype={key}/>
         {byTypes[key]}
       </span>
     );
   });
 
+  const value =
+        <>
+          <div className='px-2 nobr'>
+            <b>
+              TOTAL: {total}
+            </b>
+          </div>
+          <div>
+            {totalOutput}
+          </div>
+          <div />
+        </>;
+
   return (
-    <div className='d-flex align-items-center justify-content-between total'>
-      <div className='px-2 nobr'>
-        TOTAL: {total}
-      </div>
-      <div>
-        {totalOutput}
-      </div>
-      <div>
-      </div>
-    </div>
+    <AlertMessage
+      className='info-message'
+      value={value}
+    />
   );
 }
 

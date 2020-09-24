@@ -1,5 +1,7 @@
 import React from 'react';
 
+import AlertMessage from './AlertMessage.jsx';
+
 function ResultCryptTotal(props) {
   const byGroups = {};
   let total = 0;
@@ -16,7 +18,7 @@ function ResultCryptTotal(props) {
   const totalOutput = Object.keys(byGroups).map((key, index) => {
     return (
       <span key={index} className='pr-3'>
-        <span className='crypt-total'>
+        <span className='d-inline-block crypt-total'>
           <b>G{key}:</b>
         </span>
         {byGroups[key]}
@@ -24,17 +26,24 @@ function ResultCryptTotal(props) {
     );
   });
 
+  const value =
+        <>
+          <div className='px-2 nobr'>
+            <b>
+              TOTAL: {total}
+            </b>
+          </div>
+          <div>
+            {totalOutput}
+          </div>
+          <div />
+        </>;
+
   return (
-    <div className='d-flex align-items-center justify-content-between total'>
-      <div className='px-2 nobr'>
-        TOTAL: {total}
-      </div>
-      <div>
-        {totalOutput}
-      </div>
-      <div>
-      </div>
-    </div>
+    <AlertMessage
+      className='info-message'
+      value={value}
+    />
   );
 }
 

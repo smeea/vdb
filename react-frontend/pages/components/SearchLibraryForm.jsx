@@ -112,12 +112,13 @@ function SearchLibraryForm(props) {
       fetch(url, options)
         .then(response => response.json())
         .then(data => {
-          if (data.error === undefined) {
-            props.setResults(data);
-            setSpinnerState(false);
-          } else {
-            console.log('error: ', data.error);
-          }
+          props.setResults(data);
+          setSpinnerState(false);
+        })
+        .catch((error) => {
+          props.setResults(null);
+          setSpinnerState(false);
+          console.log(error);
         });
     };
   };

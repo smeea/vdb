@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Accordion, Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { BrowserRouter as Router, useLocation, useParams, Redirect } from "react-router-dom";
 
 
@@ -8,7 +8,6 @@ import DeckImportDeck from './components/DeckImportDeck.jsx';
 import DeckSelectDeck from './components/DeckSelectDeck.jsx';
 import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
 import DeckShowDeck from './components/DeckShowDeck.jsx';
-
 
 function Deck(props) {
   const query = new URLSearchParams(useLocation().search);

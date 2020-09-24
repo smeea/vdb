@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Tooltip, Overlay, Button } from 'react-bootstrap';
+import { BrowserRouter as Router, useLocation, useParams, Redirect } from "react-router-dom";
 
 function AccountLogin(props) {
   const [state, setState] = useState({
@@ -41,11 +42,10 @@ function AccountLogin(props) {
     fetchPromise
       .then(response => response.json())
       .then(data => {
-        if (data.error === undefined) {
-          props.setUsername(state.username);
-        } else {
-          console.log('error: ', data.error);
-        }
+        props.setUsername(state.username);
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
