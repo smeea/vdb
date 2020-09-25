@@ -12,7 +12,7 @@ import DeckShowDeck from './components/DeckShowDeck.jsx';
 function Deck(props) {
   const query = new URLSearchParams(useLocation().search);
   const [sharedDeck, setSharedDeck] = useState(undefined);
-  const [sharedDeckId, setSharedDeckId] = useState(query.get("id"));
+  const [sharedDeckId, setSharedDeckId] = useState(query.get('id'));
 
   const getDeck = (deckid) => {
     const url = process.env.API_URL + 'deck/' + deckid;

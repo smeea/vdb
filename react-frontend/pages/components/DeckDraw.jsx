@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { ArrowClockwise } from 'react-bootstrap-icons';
 
 import ResultLibrary from './ResultLibrary.jsx';
 import DeckDrawCryptModal from './DeckDrawCryptModal.jsx';
@@ -129,10 +130,10 @@ function DeckDraw(props) {
   return(
     <>
       <Button variant='outline-secondary' onClick={handleOpenDrawCrypt}>
-        Draw Crypt
+        <ArrowClockwise />{' '}Draw Crypt
       </Button>
       <Button variant='outline-secondary' onClick={handleOpenDrawLibrary}>
-        Draw Library
+        <ArrowClockwise />{' '}Draw Library
       </Button>
       <br />
       { showDrawCryptModal != null &&

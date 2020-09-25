@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Files } from 'react-bootstrap-icons';
 
 function DeckCloneDeck(props) {
   const cloneDeck = () => {
@@ -37,7 +38,7 @@ function DeckCloneDeck(props) {
   return (
     <>
       <Button variant='outline-secondary' onClick={cloneDeck}>
-        Clone Deck
+        <Files />{' '}Clone Deck
       </Button>
     </>
   );

@@ -1,12 +1,17 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
+import { PersonFill } from 'react-bootstrap-icons';
 
 function Navigation(props) {
   const NavBar = ({location}) => {
     function AccountEntry(props) {
       if (props.username) {
-        return props.username;
+        return (
+          <div className='d-flex align-items-center'>
+            <PersonFill />{props.username}
+          </div>
+        )
       } else {
         return 'Login';
       }

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { TrashFill } from 'react-bootstrap-icons';
 
 import DeckRemoveDeckConfirmation from './DeckRemoveDeckConfirmation.jsx';
 
@@ -35,7 +36,7 @@ function DeckRemoveDeck(props) {
   return (
     <>
       <Button variant='outline-secondary' onClick={() => setShowConfirmation(true)}>
-        Remove
+        <TrashFill/>{' '}Remove
       </Button>
       <DeckRemoveDeckConfirmation
         show={showConfirmation}

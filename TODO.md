@@ -1,17 +1,18 @@
 # MAJOR FEATURE
 * Beautify card text popover
 * Export/Import (formats: TWD, LackeyCCG) deck
-* Account creation/login errors
 
 # MINOR FEATURE
 
 # MAJOR FIX
 * Create new accordion
-* Shared deck redraw on imageshow
 
 # MINOR FIX
 * Copy link button to have message
 * Trifle icon antialiasing
+* Shared deck redraw on imageshow
+* Add icons to buttons
+* Account edition errors
 
 # MOBILE
 * Navbar always on top for mobile
@@ -29,6 +30,7 @@
 * DeckPreviewCrypt/Library to use Result components
 * Redirect from login to decks
 * Redirect to about from / page
+* Show-hide password buttons
 
 # DEPLOYMENT
 * Resize icons
