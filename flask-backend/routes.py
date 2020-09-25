@@ -174,7 +174,7 @@ def newDeck():
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
                      name=request.json['deckname'],
-                     author_public_name=current_user.username,
+                     author_public_name=current_user.public_name,
                      description='',
                      author=current_user,
                      cards={})
@@ -199,7 +199,7 @@ def cloneDeck():
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
                      name=request.json['deckname'],
-                     author_public_name=current_user.username,
+                     author_public_name=request.json['author'],
                      description='',
                      author=current_user,
                      cards=targetDeck.cards)
@@ -246,7 +246,8 @@ def register():
         return jsonify({'already logged as:': current_user.username})
 
     try:
-        user = User(username=request.json['username'])
+        user = User(username=request.json['username'],
+                    public_name=request.json['username'])
         user.set_password(request.json['password'])
         db.session.add(user)
         db.session.commit()
@@ -259,7 +260,10 @@ def register():
 def login():
     if request.method == 'GET':
         if current_user.is_authenticated:
-            return jsonify({'username': current_user.username})
+            return jsonify({
+                'username': current_user.username,
+                'public_name': current_user.public_name,
+            })
         else:
             return jsonify({'username': ''})
     elif request.method == 'POST':
@@ -268,7 +272,7 @@ def login():
                 username=request.json['username']).first()
             if user is None or not user.check_password(
                     request.json['password']):
-                return jsonify({'error': 'invalid username or password'})
+                return jsonify({'error': 'invalid username or password'}), 401
             login_user(user, remember=request.json['remember'])
             return jsonify({'logged in as': current_user.username})
         except KeyError:
@@ -279,6 +283,13 @@ def login():
 def account():
     if current_user.is_authenticated and current_user.check_password(
             request.json['password']):
+        try:
+            if (request.json['publicName']):
+                current_user.public_name = request.json['publicName']
+                db.session.commit()
+                return jsonify('public name changed')
+        except Exception:
+            pass
         try:
             if (request.json['newEmail']):
                 current_user.email = request.json['newEmail']
@@ -295,6 +306,20 @@ def account():
             pass
     else:
         return jsonify({'error': 'invalid password'})
+
+
+@app.route('/api/account/remove', methods=['POST'])
+def removeAccount():
+    if current_user.is_authenticated and current_user.check_password(
+            request.json['password']):
+        try:
+            db.session.delete(current_user)
+            db.session.commit()
+            return jsonify({'FLASK account removed': current_user.username})
+        except Exception:
+            return jsonify({'error': 'idk'})
+    else:
+        return jsonify({'Not logged in.'})
 
 
 @app.route('/api/logout')

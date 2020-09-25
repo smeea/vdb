@@ -5,8 +5,11 @@ import AccountLogout from './components/AccountLogout.jsx';
 import AccountRegister from './components/AccountRegister.jsx';
 import AccountChangePassword from './components/AccountChangePassword.jsx';
 import AccountChangeEmail from './components/AccountChangeEmail.jsx';
+import AccountChangeName from './components/AccountChangeName.jsx';
+import AccountRemoveAccount from './components/AccountRemoveAccount.jsx';
 
 function Account(props) {
+
   return (
     <div className='container px-0 py-xl-3 px-xl-2'>
       <div className='row mx-0'>
@@ -17,14 +20,22 @@ function Account(props) {
             ? <>
                 <div className='d-flex justify-content-between'>
                   <div>
-                    Logged as: <b>{props.username}{' '}</b>
+                    Account: <b>{props.username}{' '}</b>
+                    <br />
+                    Public Name: <b>{props.publicName}{' '}</b>
                   </div>
                   <div>
                     <AccountLogout setUsername={props.setUsername} />
                   </div>
                 </div>
+                <br />
+                <AccountChangeName />
                 <AccountChangePassword />
                 <AccountChangeEmail />
+                <AccountRemoveAccount
+                  username={props.username}
+                  setUsername={props.setUsername}
+                />
               </>
             : <>
                 <AccountLogin setUsername={props.setUsername} />

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 
-function AccountChangeEmail(props) {
+function AccountChangeName(props) {
   const [state, setState] = useState({
     password: '',
-    newEmail: '',
-    confirmEmail: '',
+    publicName: props.publicName,
   });
+
 
   const handleChange = event => {
     const {name, value} = event.target;
@@ -16,15 +16,11 @@ function AccountChangeEmail(props) {
     }));
   };
 
-  const changeEmail = () => {
-    if (state.confirmEmail != state.newEmail) {
-      return console.log('email do not match');
-    }
-
+  const changeName = () => {
     const url = process.env.API_URL + 'account';
     let input = {
       password: state.password,
-      newEmail: state.newEmail,
+      publicName: state.publicName,
     };
 
     const options = {
@@ -43,7 +39,7 @@ function AccountChangeEmail(props) {
       .then(response => response.json())
       .then(data => {
         if (data.error === undefined) {
-          console.log('email password');
+          console.log('public name changed');
         } else {
           console.log('error: ', data.error);
         }
@@ -52,21 +48,13 @@ function AccountChangeEmail(props) {
 
   return (
     <>
-      <h6>Change email</h6>
+      <h6>Change name</h6>
       <form>
         <input
-          placeholder='New email'
+          placeholder='Public name'
           type='text'
-          name='newEmail'
-          value={state.newEmail}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          placeholder='Confirm email'
-          type='text'
-          name='confirmEmail'
-          value={state.confirmEmail}
+          name='publicName'
+          value={state.publicName}
           onChange={handleChange}
         />
         <br />
@@ -77,7 +65,8 @@ function AccountChangeEmail(props) {
           value={state.password}
           onChange={handleChange}
         />
-        <Button variant='outline-secondary' onClick={changeEmail}>
+
+        <Button variant='outline-secondary' onClick={changeName}>
           Change
         </Button>
       </form>
@@ -85,4 +74,4 @@ function AccountChangeEmail(props) {
   );
 }
 
-export default AccountChangeEmail;
+export default AccountChangeName;

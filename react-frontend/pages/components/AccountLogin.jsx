@@ -40,7 +40,13 @@ function AccountLogin(props) {
     const fetchPromise = fetch(url, options);
 
     fetchPromise
-      .then(response => response.json())
+      .then(response => {
+        if(response.ok) {
+          response.json()
+        } else {
+          throw Error(`Error: ${response.status}`)
+        }
+      })
       .then(data => {
         props.setUsername(state.username);
       })

@@ -61,6 +61,7 @@ function AccountChangePassword(props) {
           value={state.password}
           onChange={handleChange}
         />
+        <br />
         <input
           placeholder='New password'
           type='password'
@@ -68,6 +69,7 @@ function AccountChangePassword(props) {
           value={state.newPassword}
           onChange={handleChange}
         />
+        <br />
         <input
           placeholder='Confirm password'
           type='password'

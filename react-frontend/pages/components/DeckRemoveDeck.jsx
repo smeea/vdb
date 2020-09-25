@@ -8,8 +8,8 @@ function DeckRemoveDeck(props) {
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     removeDeck();
-    setShowConfirmation(false); 
-    props.setActiveDeck(undefined)
+    setShowConfirmation(false);
+    props.setActiveDeck(undefined);
   }
 
   const removeDeck = () => {

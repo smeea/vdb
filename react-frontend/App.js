@@ -15,6 +15,7 @@ import Library from './pages/Library.jsx';
 
 function App(props) {
   const [username, setUsername] = useState(undefined);
+  const [publicName, setPublicName] = useState(undefined);
 
   const [showImage, setShowImage] = useState(false);
   const toggleImage = () => setShowImage(!showImage);
@@ -86,7 +87,10 @@ function App(props) {
 
     fetch(url, options)
       .then(response => response.json())
-      .then(data => setUsername(data.username))
+      .then(data => {
+        setUsername(data.username);
+        setPublicName(data.public_name);
+      })
   };
 
   useEffect(() => {
@@ -113,7 +117,9 @@ function App(props) {
           <Route path='/account' exact component={() =>
             <Account
               username={username}
+              publicName={publicName}
               setUsername={setUsername}
+              setPublicName={setPublicName}
             /> } />
           <Route path='/deck' exact component={() =>
             <Deck

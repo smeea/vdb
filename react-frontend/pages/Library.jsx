@@ -54,7 +54,7 @@ function Library(props) {
               className='error-message'
               value={<>
                        <div />
-                       No results
+                       <b>NO CARDS FOUND</b>
                        <div />
                      </>}
             />
