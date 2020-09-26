@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { PersonPlusFill } from 'react-bootstrap-icons';
 
 function AccountRegister(props){
   const [state, setState] = useState({
@@ -61,7 +62,7 @@ function AccountRegister(props){
 
   return (
     <>
-      <h6>Create Account</h6>
+      <h6><PersonPlusFill />{' '}Create Account</h6>
       <div className='d-flex'>
         <div>
           <input

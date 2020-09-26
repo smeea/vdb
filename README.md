@@ -47,6 +47,7 @@ Start backend:
 Start frontend:
 ```
     cd react-backend
+    npm install
     parcel serve index.html
 ```
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { EnvelopeFill } from 'react-bootstrap-icons';
 
 function AccountChangeEmail(props) {
   const [state, setState] = useState({
@@ -52,7 +53,9 @@ function AccountChangeEmail(props) {
 
   return (
     <>
-      <h6>Change email</h6>
+      <h6>
+        <EnvelopeFill />Change email
+      </h6>
       <form>
         <input
           placeholder='New email'

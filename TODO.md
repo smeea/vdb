@@ -31,6 +31,3 @@
 * Redirect from login to decks
 * Redirect to about from / page
 * Show-hide password buttons
-
-# DEPLOYMENT
-* Resize icons

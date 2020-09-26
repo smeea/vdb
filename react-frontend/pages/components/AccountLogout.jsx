@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { DoorClosedFill } from 'react-bootstrap-icons';
 
 function AccountLogout(props) {
   const logoutUser = () => {
@@ -18,7 +19,7 @@ function AccountLogout(props) {
 
   return (
     <Button variant='outline-secondary' onClick={logoutUser}>
-      Logout
+      <DoorClosedFill />{' '}Logout
     </Button>
   )
 }

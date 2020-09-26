@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { LockFill } from 'react-bootstrap-icons';
 
 function AccountChangePassword(props) {
   const [state, setState] = useState({
@@ -52,7 +53,9 @@ function AccountChangePassword(props) {
 
   return (
     <>
-      <h6>Change password</h6>
+      <h6>
+        <LockFill />Change password
+      </h6>
       <form>
         <input
           placeholder='Old password'

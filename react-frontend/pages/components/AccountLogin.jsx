@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Alert, Tooltip, Overlay, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, useLocation, useParams, Redirect } from "react-router-dom";
+import { DoorOpenFill } from 'react-bootstrap-icons';
 
 function AccountLogin(props) {
   const [state, setState] = useState({
@@ -72,7 +73,7 @@ function AccountLogin(props) {
 
   return (
     <>
-      <h6>Login</h6>
+      <h6><DoorOpenFill />{' '}Login</h6>
       <div className='d-flex'>
         <div>
           <input

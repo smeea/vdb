@@ -60,9 +60,6 @@ function DeckNewDeck(props) {
       <Button variant='outline-secondary' onClick={createNewDeck}>
         Create
       </Button>
-      <Button variant='outline-secondary' onClick={clearFormButton}>
-        Clear
-      </Button>
     </div>
   );
 }

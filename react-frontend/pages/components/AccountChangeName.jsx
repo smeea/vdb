@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { PenFill } from 'react-bootstrap-icons';
 
 function AccountChangeName(props) {
   const [state, setState] = useState({
@@ -48,7 +49,9 @@ function AccountChangeName(props) {
 
   return (
     <>
-      <h6>Change name</h6>
+      <h6>
+        <PenFill />Change name
+      </h6>
       <form>
         <input
           placeholder='Public name'

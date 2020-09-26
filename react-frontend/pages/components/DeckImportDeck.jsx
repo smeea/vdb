@@ -65,9 +65,6 @@ function DeckImportDeck(props) {
       <Button variant='outline-secondary' onClick={createImportDeck}>
         Import
       </Button>
-      <Button variant='outline-secondary' onClick={clearFormButton}>
-        Clear
-      </Button>
     </div>
   );
 }
