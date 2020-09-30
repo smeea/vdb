@@ -6,6 +6,7 @@
 
 # MAJOR FIX
 * Create new accordion
+* Image lazy load
 
 # MINOR FIX
 * Copy link button to have message
@@ -23,6 +24,9 @@
 * Temporary 'add to compare' button
 * Clear cross into input fields
 * Card rulings
+* Keys to use nanoid
+* Remove lodash dependency
+* Use day.js for dates
 
 # ADDITIONAL FIX
 * Unify error handling
