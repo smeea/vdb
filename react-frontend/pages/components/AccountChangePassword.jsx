@@ -22,7 +22,7 @@ function AccountChangePassword(props) {
       return console.log('password do not match');
     }
 
-    const url = process.env.API_URL + 'account';
+    const url = '/account';
     let input = {
       password: state.password,
       newPassword: state.newPassword,

@@ -24,7 +24,7 @@ function App(props) {
   const [activeDeck, setActiveDeck] = useState(undefined);
 
   const getDecks = () => {
-    const url = process.env.API_URL + 'decks';
+    const url = '/decks';
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -45,7 +45,7 @@ function App(props) {
   };
 
   const deckCardAdd = (cardid) => {
-    const url = process.env.API_URL + 'deck/' + activeDeck;
+    const url = '/deck/' + activeDeck;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -61,7 +61,7 @@ function App(props) {
   };
 
   const deckCardChange = (deckid, cardid, count) => {
-    const url = process.env.API_URL + 'deck/' + deckid;
+    const url = '/deck/' + deckid;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -78,7 +78,7 @@ function App(props) {
 
 
   const whoAmI= () => {
-    const url = process.env.API_URL + 'login';
+    const url = 'login';
     const options = {
       method: 'GET',
       mode: 'cors',

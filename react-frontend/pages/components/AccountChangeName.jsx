@@ -18,7 +18,7 @@ function AccountChangeName(props) {
   };
 
   const changeName = () => {
-    const url = process.env.API_URL + 'account';
+    const url = '/account';
     let input = {
       password: state.password,
       publicName: state.publicName,

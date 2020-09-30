@@ -29,7 +29,7 @@ function DeckNewCryptName(props) {
   };
 
   const loadOptions = (inputValue) => {
-    const url = process.env.API_URL + 'search/crypt';
+    const url = '/search/crypt';
     const input = {name: inputValue};
     const options = {
       method: 'POST',

@@ -68,7 +68,7 @@ function SearchLibraryFormClan(props) {
         </>
       });
     } else {
-      const imgSrc=process.env.ROOT_URL + 'images/clans/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+      const imgSrc = '/images/clans/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
       options.push({
         value: i.toLowerCase(),
         name: 'clan',

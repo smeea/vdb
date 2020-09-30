@@ -5,8 +5,8 @@ import { Files } from 'react-bootstrap-icons';
 function DeckCloneDeck(props) {
   const cloneDeck = () => {
     let newdeckid;
-    const url = process.env.API_URL + 'decks/clone';
-    const date = new Date().toISOString().slice(0, 10)
+    const url = '/decks/clone';
+    const date = new Date().toISOString().slice(0, 10);
     const options = {
       method: 'POST',
       mode: 'cors',

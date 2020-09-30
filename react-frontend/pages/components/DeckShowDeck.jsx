@@ -12,7 +12,7 @@ import DeckCloneDeck from './DeckCloneDeck.jsx';
 import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
 
 function DeckShowDeck(props) {
-  const deckUrl= process.env.ROOT_URL + 'deck?id='+ props.deck.deckid;
+  const deckUrl = 'deck?id='+ props.deck.deckid;
   const isAuthor = props.username == props.deck.owner;
 
   return (

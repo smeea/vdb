@@ -2,7 +2,7 @@ import React from 'react';
 
 function ResultLibraryBurn(props) {
   const imgClass = 'burn-image-results';
-  const imgSrc = process.env.ROOT_URL + 'images/misc/burn.gif';
+  const imgSrc = '/images/misc/burn.gif';
   const imgTitle = 'Burn Option';
 
   if (props.value) {

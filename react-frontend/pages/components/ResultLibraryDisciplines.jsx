@@ -8,7 +8,7 @@ function ResultLibraryDisciplines(props) {
     const disciplines = props.value.split(' & ');
     let items = disciplines.length;
     disciplines_images = disciplines.map((d, index) => {
-      const imgSrc = process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase() + '.gif';
+      const imgSrc = '/images/disciplines/' + d.toLowerCase() + '.gif';
       const imgTitle = d;
       if (items > 1) {
         items -= 1;
@@ -29,7 +29,7 @@ function ResultLibraryDisciplines(props) {
     const disciplines = props.value.split('/');
     let items = disciplines.length;
     disciplines_images = disciplines.map((d, index) => {
-      const imgSrc=process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase() + '.gif';
+      const imgSrc = '/images/disciplines/' + d.toLowerCase() + '.gif';
       const imgTitle = d;
       if (items > 1) {
         items -= 1;
@@ -47,7 +47,7 @@ function ResultLibraryDisciplines(props) {
       }
     });
   } else if (props.value) {
-    const imgSrc=process.env.ROOT_URL + 'images/disciplines/' + props.value.toLowerCase() + '.gif';
+    const imgSrc = '/images/disciplines/' + props.value.toLowerCase() + '.gif';
     const imgTitle = props.value;
     disciplines_images =
       <img className={imgClass} src={imgSrc} title={imgTitle} />;

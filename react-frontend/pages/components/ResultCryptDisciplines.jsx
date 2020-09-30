@@ -19,10 +19,10 @@ function ResultCryptDisciplines(props) {
         );
       } else {
         if (props.value[d] == 1) {
-          imgSrc=process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+          imgSrc = '/images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
           imgClass = 'discipline-base-image-results';
         } else if (props.value[d] == 2) {
-          imgSrc=process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + 'sup.gif';
+          imgSrc = '/images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + 'sup.gif';
           imgClass = 'discipline-superior-image-results';
         }
         return (
@@ -42,10 +42,10 @@ function ResultCryptDisciplines(props) {
       let imgSrc;
       let imgClass;
       if (props.value[d] == 1) {
-        imgSrc=process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+        imgSrc = '/images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
         imgClass = 'discipline-base-image-results';
       } else if (props.value[d] == 2) {
-        imgSrc=process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + 'sup.gif';
+        imgSrc = '/images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + 'sup.gif';
         imgClass = 'discipline-superior-image-results';
       }
       return (

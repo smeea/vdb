@@ -34,8 +34,8 @@ function SearchCryptFormDisciplines(props) {
 
   const disciplinesforms = disciplines.map((i, index) => {
     let disciplineState = 'discipline-container state' + props.value[i];
-    const imgSrcBase=process.env.ROOT_URL + 'images/disciplines/' + i.toLowerCase() + '.gif';
-    const imgSrcSup=process.env.ROOT_URL + 'images/disciplines/' + i.toLowerCase() + 'sup.gif';
+    const imgSrcBase='/images/disciplines/' + i.toLowerCase() + '.gif';
+    const imgSrcSup='/images/disciplines/' + i.toLowerCase() + 'sup.gif';
     return (
       <div key={index} className={disciplineState}>
         <label className='discipline-container d-flex justify-content-center align-items-center' htmlFor={i}>

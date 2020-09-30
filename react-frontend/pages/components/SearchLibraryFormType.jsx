@@ -19,29 +19,7 @@ function SearchLibraryFormType(props) {
     'Retainer',
   ];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  const options = []
+  const options = [];
 
   types.map((i, index) => {
     if (i == 'ANY') {
@@ -58,7 +36,7 @@ function SearchLibraryFormType(props) {
         }
       );
     } else {
-      const imgSrc=process.env.ROOT_URL + 'images/types/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+      const imgSrc = '/images/types/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
       options.push(
         {
           value: i.toLowerCase(),
