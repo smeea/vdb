@@ -4,8 +4,8 @@ import { Plus } from 'react-bootstrap-icons';
 
 function ResultAddCard(props) {
   const handleButton = () => props.deckCardAdd(props.cardid);
-  return(
-    <Button variant='outline-secondary' onClick={handleButton}>
+  return (
+    <Button variant="outline-secondary" onClick={handleButton}>
       <Plus size={16} />
     </Button>
   );

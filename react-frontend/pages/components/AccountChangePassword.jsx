@@ -9,11 +9,11 @@ function AccountChangePassword(props) {
     confirmPassword: '',
   });
 
-  const handleChange = event => {
-    const {name, value} = event.target;
-    setState(prevState => ({
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setState((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -23,7 +23,7 @@ function AccountChangePassword(props) {
     }
 
     const url = process.env.API_URL + 'account';
-    let input = {
+    const input = {
       password: state.password,
       newPassword: state.newPassword,
     };
@@ -41,8 +41,8 @@ function AccountChangePassword(props) {
     const fetchPromise = fetch(url, options);
 
     fetchPromise
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.error === undefined) {
           console.log('changed password');
         } else {
@@ -54,33 +54,34 @@ function AccountChangePassword(props) {
   return (
     <>
       <h6>
-        <LockFill />Change password
+        <LockFill />
+        Change password
       </h6>
       <form>
         <input
-          placeholder='Old password'
-          type='password'
-          name='password'
+          placeholder="Old password"
+          type="password"
+          name="password"
           value={state.password}
           onChange={handleChange}
         />
         <br />
         <input
-          placeholder='New password'
-          type='password'
-          name='newPassword'
+          placeholder="New password"
+          type="password"
+          name="newPassword"
           value={state.newPassword}
           onChange={handleChange}
         />
         <br />
         <input
-          placeholder='Confirm password'
-          type='password'
-          name='confirmPassword'
+          placeholder="Confirm password"
+          type="password"
+          name="confirmPassword"
           value={state.confirmPassword}
           onChange={handleChange}
         />
-        <Button variant='outline-secondary' onClick={changePassword}>
+        <Button variant="outline-secondary" onClick={changePassword}>
           Change
         </Button>
       </form>

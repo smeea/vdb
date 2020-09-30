@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import _ from 'lodash';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useLocation, Redirect } from 'react-router-dom';
 
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
@@ -32,8 +31,8 @@ function App(props) {
     };
 
     fetch(url, options)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.error === undefined) {
           if (!_.isEqual(data, decks)) {
             setDecks(data);
@@ -53,11 +52,10 @@ function App(props) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({add: {[cardid]: 1}})
+      body: JSON.stringify({ add: { [cardid]: 1 } }),
     };
 
-    fetch(url, options)
-      .then(() => getDecks());
+    fetch(url, options).then(() => getDecks());
   };
 
   const deckCardChange = (deckid, cardid, count) => {
@@ -69,15 +67,13 @@ function App(props) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({update: {[cardid]: count}})
+      body: JSON.stringify({ update: { [cardid]: count } }),
     };
 
-    fetch(url, options)
-      .then(() => getDecks());
+    fetch(url, options).then(() => getDecks());
   };
 
-
-  const whoAmI= () => {
+  const whoAmI = () => {
     const url = process.env.API_URL + 'login';
     const options = {
       method: 'GET',
@@ -86,15 +82,15 @@ function App(props) {
     };
 
     fetch(url, options)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         setUsername(data.username);
         setPublicName(data.public_name);
-      })
+      });
   };
 
   useEffect(() => {
-      whoAmI();
+    whoAmI();
   }, []);
 
   useEffect(() => {
@@ -106,49 +102,61 @@ function App(props) {
   }, [username]);
 
   return (
-    <div className='App'>
+    <div className="App">
       <Router>
-        <Navigation
-          username={username}
-        />
+        <Navigation username={username} />
         <Switch>
-          <Route path='/' exact component={() => <About />} />
-          <Route path='/about' exact component={() => <About />} />
-          <Route path='/account' exact component={() =>
-            <Account
-              username={username}
-              publicName={publicName}
-              setUsername={setUsername}
-              setPublicName={setPublicName}
-            /> } />
-          <Route path='/deck' exact component={() =>
-            <Deck
-              decks={decks}
-              activeDeck={activeDeck}
-              setActiveDeck={setActiveDeck}
-              deckCardAdd={deckCardAdd}
-              deckCardChange={deckCardChange}
-              getDecks={getDecks}
-              showImage={showImage}
-              toggleImage={toggleImage}
-              username={username}
-              whoAmI={whoAmI}
-            /> } />
-          <Route path='/deck/:id' component={(props) =>
-            <Deck
-              decks={decks}
-              activeDeck={activeDeck}
-              setActiveDeck={setActiveDeck}
-              deckCardAdd={deckCardAdd}
-              deckCardChange={deckCardChange}
-              getDecks={getDecks}
-              showImage={showImage}
-              toggleImage={toggleImage}
-              username={username}
-              whoAmI={whoAmI}
-              id={props.match.params.id}
-            /> } />
-          <Route path='/crypt'>
+          <Route path="/" exact component={() => <About />} />
+          <Route path="/about" exact component={() => <About />} />
+          <Route
+            path="/account"
+            exact
+            component={() => (
+              <Account
+                username={username}
+                publicName={publicName}
+                setUsername={setUsername}
+                setPublicName={setPublicName}
+              />
+            )}
+          />
+          <Route
+            path="/deck"
+            exact
+            component={() => (
+              <Deck
+                decks={decks}
+                activeDeck={activeDeck}
+                setActiveDeck={setActiveDeck}
+                deckCardAdd={deckCardAdd}
+                deckCardChange={deckCardChange}
+                getDecks={getDecks}
+                showImage={showImage}
+                toggleImage={toggleImage}
+                username={username}
+                whoAmI={whoAmI}
+              />
+            )}
+          />
+          <Route
+            path="/deck/:id"
+            component={(props) => (
+              <Deck
+                decks={decks}
+                activeDeck={activeDeck}
+                setActiveDeck={setActiveDeck}
+                deckCardAdd={deckCardAdd}
+                deckCardChange={deckCardChange}
+                getDecks={getDecks}
+                showImage={showImage}
+                toggleImage={toggleImage}
+                username={username}
+                whoAmI={whoAmI}
+                id={props.match.params.id}
+              />
+            )}
+          />
+          <Route path="/crypt">
             <Crypt
               deckCardAdd={deckCardAdd}
               deckCardChange={deckCardChange}
@@ -160,7 +168,7 @@ function App(props) {
               toggleImage={toggleImage}
             />
           </Route>
-          <Route path='/library'>
+          <Route path="/library">
             <Library
               deckCardAdd={deckCardAdd}
               deckCardChange={deckCardChange}

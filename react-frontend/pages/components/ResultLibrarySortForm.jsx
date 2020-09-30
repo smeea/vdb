@@ -3,16 +3,10 @@ import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { SortDown } from 'react-bootstrap-icons';
 
 function ResultLibrarySortForm(props) {
-  const sortMethods = [
-    'Default',
-    'Name',
-    'Clan',
-    'Discipline',
-    'Type',
-  ];
+  const sortMethods = ['Default', 'Name', 'Clan', 'Discipline', 'Type'];
 
   const SortButtonOptions = sortMethods.map((i, index) => {
-    return(
+    return (
       <Dropdown.Item key={index} href="" onClick={() => props.onChange(i)}>
         Sort by {i}
       </Dropdown.Item>
@@ -21,7 +15,7 @@ function ResultLibrarySortForm(props) {
 
   return (
     <DropdownButton
-      variant='outline-secondary'
+      variant="outline-secondary"
       id="sort-button"
       title={<SortDown size={24} />}
     >

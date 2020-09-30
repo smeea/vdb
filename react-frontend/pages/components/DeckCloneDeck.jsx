@@ -6,7 +6,6 @@ function DeckCloneDeck(props) {
   const cloneDeck = () => {
     let newdeckid;
     const url = process.env.API_URL + 'decks/clone';
-    const date = new Date().toISOString().slice(0, 10)
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -22,14 +21,14 @@ function DeckCloneDeck(props) {
     };
 
     fetch(url, options)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.error === undefined) {
           newdeckid = data.deckid;
           console.log('new deck id:', newdeckid);
         } else {
           console.log('error: ', data.error);
-        };
+        }
       })
       .then(() => props.getDecks())
       .then(() => props.setActiveDeck(newdeckid));
@@ -37,8 +36,8 @@ function DeckCloneDeck(props) {
 
   return (
     <>
-      <Button variant='outline-secondary' onClick={cloneDeck}>
-        <Files />{' '}Clone Deck
+      <Button variant="outline-secondary" onClick={cloneDeck}>
+        <Files /> Clone Deck
       </Button>
     </>
   );

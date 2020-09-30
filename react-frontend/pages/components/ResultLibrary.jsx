@@ -13,7 +13,7 @@ import resultLibrarySort from './resultLibrarySort.js';
 import ResultAddCard from './ResultAddCard.jsx';
 
 function ResultLibraryBody(props) {
-  let resultTrClass='library-result-even';
+  let resultTrClass = 'library-result-even';
 
   const cards = props.resultCards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {
@@ -25,21 +25,27 @@ function ResultLibraryBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          { props.activeDeck && props.activeDeck != 'Select Deck' &&
-            <td className='quantity'>
-              <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
+          {props.activeDeck && props.activeDeck != 'Select Deck' && (
+            <td className="quantity">
+              <ResultAddCard
+                deckCardAdd={props.deckCardAdd}
+                cardid={card['Id']}
+              />
             </td>
-          }
-          <td className='cost'>
-            <ResultLibraryCost valueBlood={card['Blood Cost']} valuePool={card['Pool Cost']} />
+          )}
+          <td className="cost">
+            <ResultLibraryCost
+              valueBlood={card['Blood Cost']}
+              valuePool={card['Pool Cost']}
+            />
           </td>
-          <td className='type'>
+          <td className="type">
             <ResultLibraryType cardtype={card['Type']} />
           </td>
-          <td className='disciplines'>
+          <td className="disciplines">
             <ResultLibraryDisciplines value={card['Discipline']} />
           </td>
-          <td className='name'>
+          <td className="name">
             <ResultLibraryName
               showImage={props.showImage}
               toggleImage={props.toggleImage}
@@ -49,10 +55,10 @@ function ResultLibraryBody(props) {
               card={card}
             />
           </td>
-          <td className='clan'>
+          <td className="clan">
             <ResultLibraryClan value={card['Clan']} />
           </td>
-          <td className='burn'>
+          <td className="burn">
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={card['Card Text']} />
           </td>
@@ -67,7 +73,7 @@ function ResultLibraryBody(props) {
 function ResultLibrary(props) {
   const [sortedCards, setSortedCards] = useState([]);
 
-  const handleChange = method => {
+  const handleChange = (method) => {
     props.setSortMethod(method);
     setSortedCards(() => resultLibrarySort(props.cards, method));
   };
@@ -78,13 +84,16 @@ function ResultLibrary(props) {
 
   return (
     <>
-      { props.showTotal == true && props.cards.length > 0 &&
+      {props.showTotal == true && props.cards.length > 0 && (
         <ResultLibraryTotal cards={props.cards} />
-      }
-      { props.showSort == true && sortedCards.length > 0 &&
-        <ResultLibrarySortForm value={props.sortMethod} onChange={handleChange} />
-      }
-      <table className='search-library-table'>
+      )}
+      {props.showSort == true && sortedCards.length > 0 && (
+        <ResultLibrarySortForm
+          value={props.sortMethod}
+          onChange={handleChange}
+        />
+      )}
+      <table className="search-library-table">
         <ResultLibraryBody
           showImage={props.showImage}
           toggleImage={props.toggleImage}

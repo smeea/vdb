@@ -4,12 +4,8 @@ import { Button } from 'react-bootstrap';
 function DeckNewDeck(props) {
   const [deckName, setDeckName] = useState('');
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setDeckName(event.target.value);
-  };
-
-  const clearFormButton = () => {
-    setDeckName('');
   };
 
   const createNewDeck = () => {
@@ -23,25 +19,24 @@ function DeckNewDeck(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({deckname: deckName}),
+        body: JSON.stringify({ deckname: deckName }),
       };
 
       fetch(url, options)
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           if (data.error === undefined) {
             newdeckid = data.deckid;
             console.log('new deck id:', newdeckid);
           } else {
             console.log('error: ', data.error);
-          };
+          }
         })
         .then(() => props.getDecks())
         .then(() => props.setActiveDeck(newdeckid));
-
     } else {
       console.log('Error: submit with empty forms');
-    };
+    }
   };
 
   return (
@@ -49,15 +44,15 @@ function DeckNewDeck(props) {
       <div className="input-group-prepend">
         <span className="input-group-text">New Deck Name</span>
       </div>
-      <input type="text"
-             className="form-control"
-             placeholder='Deck Name'
-             type='text'
-             id='deckName'
-             value={deckName}
-             onChange={handleChange}
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Deck Name"
+        id="deckName"
+        value={deckName}
+        onChange={handleChange}
       />
-      <Button variant='outline-secondary' onClick={createNewDeck}>
+      <Button variant="outline-secondary" onClick={createNewDeck}>
         Create
       </Button>
     </div>

@@ -3,38 +3,39 @@
 * Export/Import (formats: TWD, LackeyCCG) deck
 
 # MINOR FEATURE
+* Show-hide password buttons
+* Account edition errors
+* Copy link button to have message
+
+# ADDITIONAL FEATURE
+* Temporary 'add to compare' button
+* Clear cross into input fields
+* Card rulings
 
 # MAJOR FIX
 * Create new accordion
 * Image lazy load
 
 # MINOR FIX
-* Copy link button to have message
 * Trifle icon antialiasing
 * Shared deck redraw on imageshow
 * Add icons to buttons
-* Account edition errors
+* Redirect from login to decks
+* Redirect to about from / page
 
-# MOBILE
+# MOBILE FIX
 * Navbar always on top for mobile
 * Toggle search button
 * Toggle deck button
 
-# ADDITIONAL FEATURE
-* Temporary 'add to compare' button
-* Clear cross into input fields
-* Card rulings
+# IMPROVE TECHNOLOGY
+* Forms to Boostrap FormControl
 * Keys to use nanoid
 * Remove lodash dependency
 * Use day.js for dates
+* Add props validation
 
-# ADDITIONAL FIX
-* Unify error handling
-* Forms to Boostrap FormControl
+# FIX TECHNOLOGY
 * DeckPreviewCrypt/Library to use Result components
-* Redirect from login to decks
-* Redirect to about from / page
-* Show-hide password buttons
+* Unify error handling
 * Use template strings in code
-* Prettier all code
-* Eslint all code

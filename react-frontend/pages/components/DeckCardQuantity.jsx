@@ -4,12 +4,22 @@ import { Plus, Dash } from 'react-bootstrap-icons';
 
 function DeckCardQuantity(props) {
   return (
-    <div className='d-flex align-items-center justify-content-between'>
-      <Button variant='outline-secondary' onClick={e => props.deckCardChange(props.deckid, props.cardid, props.q + 1)}>
+    <div className="d-flex align-items-center justify-content-between">
+      <Button
+        variant="outline-secondary"
+        onClick={(e) =>
+          props.deckCardChange(props.deckid, props.cardid, props.q + 1)
+        }
+      >
         <Plus size={16} />
       </Button>
-      { props.q == 0 ? null : props.q }
-      <Button variant='outline-secondary' onClick={e => props.deckCardChange(props.deckid, props.cardid, props.q - 1)}>
+      {props.q == 0 ? null : props.q}
+      <Button
+        variant="outline-secondary"
+        onClick={(e) =>
+          props.deckCardChange(props.deckid, props.cardid, props.q - 1)
+        }
+      >
         <Dash size={16} />
       </Button>
     </div>

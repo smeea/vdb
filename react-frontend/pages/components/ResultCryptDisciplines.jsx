@@ -1,28 +1,36 @@
 import React from 'react';
 
 function ResultCryptDisciplines(props) {
-  let discipline_rows;
-  let empty_rows = [];
+  let disciplineRows;
+  const emptyRows = [];
   let counter = 0;
-  let max_rows = 10;
-  let width = 100 / max_rows + '%';
+  let maxRows = 10;
+  let width = 100 / maxRows + '%';
 
-  if (props.disciplines_set !== undefined && props.disciplines_set.length <= max_rows) {
-    discipline_rows = props.disciplines_set.map((d, index) => {
+  if (
+    props.disciplines_set !== undefined &&
+    props.disciplines_set.length <= maxRows
+  ) {
+    disciplineRows = props.disciplines_set.map((d, index) => {
       counter += 1;
       let imgSrc;
       let imgClass;
       if (props.value[d] === undefined) {
-        return (
-          <td width={width} key={index}>
-          </td>
-        );
+        return <td width={width} key={index}></td>;
       } else {
         if (props.value[d] == 1) {
-          imgSrc=process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+          imgSrc =
+            process.env.ROOT_URL +
+            'images/disciplines/' +
+            d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
+            '.gif';
           imgClass = 'discipline-base-image-results';
         } else if (props.value[d] == 2) {
-          imgSrc=process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + 'sup.gif';
+          imgSrc =
+            process.env.ROOT_URL +
+            'images/disciplines/' +
+            d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
+            'sup.gif';
           imgClass = 'discipline-superior-image-results';
         }
         return (
@@ -34,18 +42,26 @@ function ResultCryptDisciplines(props) {
     });
   } else {
     if (props.disciplines_set === undefined) {
-      max_rows = 7;
-      width = 100 / max_rows + '%';
+      maxRows = 7;
+      width = 100 / maxRows + '%';
     }
-    discipline_rows = Object.keys(props.value).map((d, index) => {
+    disciplineRows = Object.keys(props.value).map((d, index) => {
       counter += 1;
       let imgSrc;
       let imgClass;
       if (props.value[d] == 1) {
-        imgSrc=process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+        imgSrc =
+          process.env.ROOT_URL +
+          'images/disciplines/' +
+          d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
+          '.gif';
         imgClass = 'discipline-base-image-results';
       } else if (props.value[d] == 2) {
-        imgSrc=process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + 'sup.gif';
+        imgSrc =
+          process.env.ROOT_URL +
+          'images/disciplines/' +
+          d.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
+          'sup.gif';
         imgClass = 'discipline-superior-image-results';
       }
       return (
@@ -56,20 +72,18 @@ function ResultCryptDisciplines(props) {
     });
   }
 
-  while (counter < max_rows) {
+  while (counter < maxRows) {
     counter += 1;
-    empty_rows.push(
-      <td width={width} key={counter}></td>
-    );
+    emptyRows.push(<td width={width} key={counter}></td>);
   }
 
   return (
-    <span className='discipline'>
-      <table width='100%'>
+    <span className="discipline">
+      <table width="100%">
         <tbody>
           <tr>
-            {discipline_rows}
-            {empty_rows}
+            {disciplineRows}
+            {emptyRows}
           </tr>
         </tbody>
       </table>

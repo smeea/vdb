@@ -20,36 +20,38 @@ function SearchLibraryFormTitle(props) {
     'Magaji',
   ];
 
-  const options = []
+  const options = [];
 
   titles.map((i, index) => {
-    options.push(
-      {
-        value: i.toLowerCase(),
-        name: 'title',
-        label:
+    options.push({
+      value: i.toLowerCase(),
+      name: 'title',
+      label: (
         <>
-          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-          </span>
+          <span
+            style={{
+              display: 'inline-block',
+              width: '40px',
+              textAlign: 'center',
+            }}
+          ></span>
           {i}
         </>
-      }
-    );
+      ),
+    });
   });
 
   return (
-    <div className='form-row'>
-      <div className='form-group col-3 d-flex align-items-center'>
-        <label className='h6 mb-0'>
-          Title:
-        </label>
+    <div className="form-row">
+      <div className="form-group col-3 d-flex align-items-center">
+        <label className="h6 mb-0">Title:</label>
       </div>
-      <div className='form-group col-9'>
+      <div className="form-group col-9">
         <Select
           options={options}
           isSearchable={false}
-          name='title'
-          value={options.find(obj => obj.value === props.value.toLowerCase())}
+          name="title"
+          value={options.find((obj) => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}
         />
       </div>

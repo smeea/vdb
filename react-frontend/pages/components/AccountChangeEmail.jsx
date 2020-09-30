@@ -9,11 +9,11 @@ function AccountChangeEmail(props) {
     confirmEmail: '',
   });
 
-  const handleChange = event => {
-    const {name, value} = event.target;
-    setState(prevState => ({
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setState((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -23,7 +23,7 @@ function AccountChangeEmail(props) {
     }
 
     const url = process.env.API_URL + 'account';
-    let input = {
+    const input = {
       password: state.password,
       newEmail: state.newEmail,
     };
@@ -41,8 +41,8 @@ function AccountChangeEmail(props) {
     const fetchPromise = fetch(url, options);
 
     fetchPromise
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.error === undefined) {
           console.log('email password');
         } else {
@@ -54,33 +54,34 @@ function AccountChangeEmail(props) {
   return (
     <>
       <h6>
-        <EnvelopeFill />Change email
+        <EnvelopeFill />
+        Change email
       </h6>
       <form>
         <input
-          placeholder='New email'
-          type='text'
-          name='newEmail'
+          placeholder="New email"
+          type="text"
+          name="newEmail"
           value={state.newEmail}
           onChange={handleChange}
         />
         <br />
         <input
-          placeholder='Confirm email'
-          type='text'
-          name='confirmEmail'
+          placeholder="Confirm email"
+          type="text"
+          name="confirmEmail"
           value={state.confirmEmail}
           onChange={handleChange}
         />
         <br />
         <input
-          placeholder='Password'
-          type='password'
-          name='password'
+          placeholder="Password"
+          type="password"
+          name="password"
           value={state.password}
           onChange={handleChange}
         />
-        <Button variant='outline-secondary' onClick={changeEmail}>
+        <Button variant="outline-secondary" onClick={changeEmail}>
           Change
         </Button>
       </form>

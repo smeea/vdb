@@ -53,49 +53,64 @@ function SearchLibraryFormClan(props) {
     'Visionary',
   ];
 
-  const options = []
+  const options = [];
 
   clans.map((i, index) => {
     if (i == 'ANY' || i == 'NONE') {
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
-        label:
-        <>
-          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-          </span>
-          {i}
-        </>
+        label: (
+          <>
+            <span
+              style={{
+                display: 'inline-block',
+                width: '40px',
+                textAlign: 'center',
+              }}
+            ></span>
+            {i}
+          </>
+        ),
       });
     } else {
-      const imgSrc=process.env.ROOT_URL + 'images/clans/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+      const imgSrc =
+        process.env.ROOT_URL +
+        'images/clans/' +
+        i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
+        '.gif';
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
-        label:
-        <>
-          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-            <img src={imgSrc} className='discipline-base-image-results' />
-          </span>
-          {i}
-        </>
+        label: (
+          <>
+            <span
+              style={{
+                display: 'inline-block',
+                width: '40px',
+                textAlign: 'center',
+              }}
+            >
+              <img src={imgSrc} className="discipline-base-image-results" />
+            </span>
+            {i}
+          </>
+        ),
       });
     }
   });
 
   return (
-    <div className='form-row'>
-      <div className='form-group col-3 d-flex align-items-center'>
-        <label className='h6 mb-0'>
-          Clan:
-        </label>
+    <div className="form-row">
+      <div className="form-group col-3 d-flex align-items-center">
+        <label className="h6 mb-0">Clan:</label>
       </div>
-      <div className='form-group col-9'>
+      <div className="form-group col-9">
         <Select
           options={options}
           isSearchable={false}
-          name='clan'
-          value={options.find(obj => obj.value === props.value.toLowerCase())}
+          name="clan"
+          value={options.find((obj) => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}
         />
       </div>

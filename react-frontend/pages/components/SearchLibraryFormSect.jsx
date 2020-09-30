@@ -13,36 +13,38 @@ function SearchLibraryFormSect(props) {
     'Imbued',
   ];
 
-  const options = []
+  const options = [];
 
   sects.map((i, index) => {
-    options.push(
-      {
-        value: i.toLowerCase(),
-        name: 'sect',
-        label:
+    options.push({
+      value: i.toLowerCase(),
+      name: 'sect',
+      label: (
         <>
-          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-          </span>
+          <span
+            style={{
+              display: 'inline-block',
+              width: '40px',
+              textAlign: 'center',
+            }}
+          ></span>
           {i}
         </>
-      }
-    );
+      ),
+    });
   });
 
   return (
-    <div className='form-row'>
-      <div className='form-group col-3 d-flex align-items-center'>
-        <label className='h6 mb-0'>
-          Sect:
-        </label>
+    <div className="form-row">
+      <div className="form-group col-3 d-flex align-items-center">
+        <label className="h6 mb-0">Sect:</label>
       </div>
-      <div className='form-group col-9'>
+      <div className="form-group col-9">
         <Select
           options={options}
           isSearchable={false}
-          name='sect'
-          value={options.find(obj => obj.value === props.value.toLowerCase())}
+          name="sect"
+          value={options.find((obj) => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}
         />
       </div>

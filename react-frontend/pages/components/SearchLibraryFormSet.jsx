@@ -38,36 +38,38 @@ function SearchLibraryFormSet(props) {
     ['Promo', 'Promo'],
   ];
 
-  const options = []
+  const options = [];
 
   sets.map((i, index) => {
-    options.push(
-      {
-        value: i[0],
-        name: 'set',
-        label:
+    options.push({
+      value: i[0],
+      name: 'set',
+      label: (
         <>
-          <span style={{display: 'inline-block', width: '40px', textAlign: 'center'}}>
-          </span>
+          <span
+            style={{
+              display: 'inline-block',
+              width: '40px',
+              textAlign: 'center',
+            }}
+          ></span>
           {i[1]}
         </>
-      }
-    );
+      ),
+    });
   });
 
   return (
-    <div className='form-row'>
-      <div className='form-group col-3 d-flex align-items-center'>
-        <label className='h6 mb-0'>
-          Set:
-        </label>
+    <div className="form-row">
+      <div className="form-group col-3 d-flex align-items-center">
+        <label className="h6 mb-0">Set:</label>
       </div>
-      <div className='form-group col-9'>
+      <div className="form-group col-9">
         <Select
           options={options}
           isSearchable={false}
-          name='set'
-          value={options.find(obj => obj.value === props.value)}
+          name="set"
+          value={options.find((obj) => obj.value === props.value)}
           onChange={props.onChange}
         />
       </div>

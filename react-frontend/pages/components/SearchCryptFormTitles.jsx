@@ -22,9 +22,16 @@ function SearchCryptFormTitles(props) {
 
   const titlesLeftforms = titlesLeft.map((i, index) => {
     return (
-      <div key={index} className='mr-2 custom-control custom-checkbox'>
-        <input name='titles' id={i[0]} className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
-        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
+      <div key={index} className="mr-2 custom-control custom-checkbox">
+        <input
+          name="titles"
+          id={i[0]}
+          className="mr-2 custom-control-input"
+          type="checkbox"
+          checked={props.value[i[0]]}
+          onChange={(e) => props.onChange(e)}
+        />
+        <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -33,9 +40,16 @@ function SearchCryptFormTitles(props) {
 
   const titlesRightforms = titlesRight.map((i, index) => {
     return (
-      <div key={index} className='mr-2 custom-control custom-checkbox'>
-        <input name='titles' id={i[0]} className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
-        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
+      <div key={index} className="mr-2 custom-control custom-checkbox">
+        <input
+          name="titles"
+          id={i[0]}
+          className="mr-2 custom-control-input"
+          type="checkbox"
+          checked={props.value[i[0]]}
+          onChange={(e) => props.onChange(e)}
+        />
+        <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -45,13 +59,9 @@ function SearchCryptFormTitles(props) {
   return (
     <>
       <h6>Title:</h6>
-      <div className='form-row'>
-        <div className='form-group col-7'>
-          {titlesLeftforms}
-        </div>
-        <div className='form-group col-5'>
-          {titlesRightforms}
-        </div>
+      <div className="form-row">
+        <div className="form-group col-7">{titlesLeftforms}</div>
+        <div className="form-group col-5">{titlesRightforms}</div>
       </div>
     </>
   );

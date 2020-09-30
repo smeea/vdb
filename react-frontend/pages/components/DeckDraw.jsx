@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { ArrowClockwise } from 'react-bootstrap-icons';
 
-import ResultLibrary from './ResultLibrary.jsx';
 import DeckDrawCryptModal from './DeckDrawCryptModal.jsx';
 import DeckDrawLibraryModal from './DeckDrawLibraryModal.jsx';
 
@@ -12,47 +11,47 @@ function getRandomInt(max) {
 
 function DeckDraw(props) {
   const initialDrawCards = (cards, quantity) => {
-    let cards_total = 0;
+    let cardsTotal = 0;
     for (const i of Object.keys(cards)) {
-      cards_total += cards[i].q;
+      cardsTotal += cards[i].q;
     }
 
-    if (quantity <= cards_total) {
-      const rest_array = [];
-      const draw_array = [];
+    if (quantity <= cardsTotal) {
+      const restArray = [];
+      const drawArray = [];
 
       Object.keys(cards).map((card) => {
         let q = cards[card].q;
         while (q > 0) {
           q -= 1;
-          rest_array.push(cards[card].c);
+          restArray.push(cards[card].c);
         }
       });
 
       while (quantity > 0) {
-        let random_id = getRandomInt(rest_array.length);
-        draw_array.push(rest_array[random_id]);
-        rest_array.splice(random_id, 1);
+        const randomId = getRandomInt(restArray.length);
+        drawArray.push(restArray[randomId]);
+        restArray.splice(randomId, 1);
         quantity -= 1;
       }
 
-      return [draw_array, rest_array];
+      return [drawArray, restArray];
     } else {
       return [null, null];
     }
   };
 
   const drawCards = (cards, quantity) => {
-    const rest_array = cards;
-    const draw_array = [];
+    const restArray = cards;
+    const drawArray = [];
 
     while (quantity > 0) {
-      let random_id = getRandomInt(rest_array.length);
-      draw_array.push(rest_array[random_id]);
-      rest_array.splice(random_id, 1);
+      const randomId = getRandomInt(restArray.length);
+      drawArray.push(restArray[randomId]);
+      restArray.splice(randomId, 1);
       quantity -= 1;
     }
-    return [draw_array, rest_array];
+    return [drawArray, restArray];
   };
 
   const [restCrypt, setRestCrypt] = useState(undefined);
@@ -68,11 +67,11 @@ function DeckDraw(props) {
   const handleOpenDrawCrypt = () => {
     const [drawedCards, restCards] = initialDrawCards(props.crypt, 4);
     if (drawedCards) {
-      setDrawedCrypt(drawedCards); 
+      setDrawedCrypt(drawedCards);
       setRestCrypt(restCards);
       setShowDrawCryptModal(true);
     } else {
-      console.log('crypt < 4 cards')
+      console.log('crypt < 4 cards');
     }
   };
 
@@ -83,19 +82,19 @@ function DeckDraw(props) {
       setRestLibrary(restCards);
       setShowDrawLibraryModal(true);
     } else {
-      console.log('library < 7 cards')
+      console.log('library < 7 cards');
     }
   };
 
   const handleReDrawCrypt = () => {
-    const allCards = [... drawedCrypt, ... restCrypt];
+    const allCards = [...drawedCrypt, ...restCrypt];
     const [drawedCards, restCards] = drawCards(allCards, 4);
     setDrawedCrypt(drawedCards);
     setRestCrypt(restCards);
   };
 
   const handleReDrawLibrary = () => {
-    const allCards = [... drawedLibrary, ... restLibrary];
+    const allCards = [...drawedLibrary, ...restLibrary];
     const [drawedCards, restCards] = drawCards(allCards, 7);
     setDrawedLibrary(drawedCards);
     setRestLibrary(restCards);
@@ -109,7 +108,7 @@ function DeckDraw(props) {
     } else {
       console.log('no more cards to draw');
     }
-    const allDrawedCards = [... drawedCrypt, ... newDrawedCards];
+    const allDrawedCards = [...drawedCrypt, ...newDrawedCards];
     setDrawedCrypt(allDrawedCards);
     setRestCrypt(newRestCards);
   };
@@ -122,21 +121,21 @@ function DeckDraw(props) {
     } else {
       console.log('no more cards to draw');
     }
-    const allDrawedCards = [... drawedLibrary, ... newDrawedCards];
+    const allDrawedCards = [...drawedLibrary, ...newDrawedCards];
     setDrawedLibrary(allDrawedCards);
     setRestLibrary(newRestCards);
   };
 
-  return(
+  return (
     <>
-      <Button variant='outline-secondary' onClick={handleOpenDrawCrypt}>
-        <ArrowClockwise />{' '}Draw Crypt
+      <Button variant="outline-secondary" onClick={handleOpenDrawCrypt}>
+        <ArrowClockwise /> Draw Crypt
       </Button>
-      <Button variant='outline-secondary' onClick={handleOpenDrawLibrary}>
-        <ArrowClockwise />{' '}Draw Library
+      <Button variant="outline-secondary" onClick={handleOpenDrawLibrary}>
+        <ArrowClockwise /> Draw Library
       </Button>
       <br />
-      { showDrawCryptModal != null &&
+      {showDrawCryptModal != null && (
         <DeckDrawCryptModal
           handleReDraw={handleReDrawCrypt}
           handleDrawOne={handleDrawCryptOne}
@@ -145,8 +144,8 @@ function DeckDraw(props) {
           restCards={restCrypt}
           show={showDrawCryptModal}
         />
-      }
-      { drawedLibrary != null &&
+      )}
+      {drawedLibrary != null && (
         <DeckDrawLibraryModal
           handleReDraw={handleReDrawLibrary}
           handleDrawOne={handleDrawLibraryOne}
@@ -155,7 +154,7 @@ function DeckDraw(props) {
           restCards={restLibrary}
           show={showDrawLibraryModal}
         />
-      }
+      )}
     </>
   );
 }

@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 function DeckNameDeck(props) {
   const [state, setState] = useState(props.name);
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setState(event.target.value);
   };
 
@@ -13,7 +13,7 @@ function DeckNameDeck(props) {
       props.deckUpdate(props.deckid, 'name', state);
     } else {
       console.log('Error: submit with empty form');
-    };
+    }
   };
 
   useEffect(() => {
@@ -23,26 +23,24 @@ function DeckNameDeck(props) {
   return (
     <div className="input-group mb-2">
       <div className="input-group-prepend">
-        <span className="input-group-text">
-          Name
-        </span>
+        <span className="input-group-text">Name</span>
       </div>
-      { props.isAuthor
-        ? <input type="text"
-                 className="form-control"
-                 placeholder="Name"
-                 value={state}
-                 onChange={handleChange}
-          />
-        : <div className='form-control'>
-            {state}
-          </div>
-      }
-      { props.isAuthor &&
-        <Button variant='outline-secondary' onClick={deckNameButton}>
+      {props.isAuthor ? (
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Name"
+          value={state}
+          onChange={handleChange}
+        />
+      ) : (
+        <div className="form-control">{state}</div>
+      )}
+      {props.isAuthor && (
+        <Button variant="outline-secondary" onClick={deckNameButton}>
           Rename
         </Button>
-      }
+      )}
     </div>
   );
 }

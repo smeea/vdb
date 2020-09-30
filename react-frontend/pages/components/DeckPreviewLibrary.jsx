@@ -5,7 +5,7 @@ import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
 function DeckLibraryBody(props) {
-  let resultTrClass='library-result-even';
+  let resultTrClass = 'library-result-even';
 
   const cards = props.cards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {
@@ -16,7 +16,7 @@ function DeckLibraryBody(props) {
 
     return (
       <tr key={index} className={resultTrClass}>
-        <td className='quantity'>
+        <td className="quantity">
           <DeckCardQuantity
             cardid={card[0].Id}
             q={card[1]}
@@ -24,7 +24,7 @@ function DeckLibraryBody(props) {
             deckCardChange={props.deckCardChange}
           />
         </td>
-        <td className='name'>
+        <td className="name">
           <ResultLibraryName
             showImage={props.showImage}
             toggleImage={props.toggleImage}
@@ -44,8 +44,8 @@ function DeckLibraryBody(props) {
 function DeckLibraryByTypeTable(props) {
   return (
     <>
-      <ResultLibraryType cardtype={props.cardtype} total={props.total}/>
-      <table className='deck-library-table'>
+      <ResultLibraryType cardtype={props.cardtype} total={props.total} />
+      <table className="deck-library-table">
         <DeckLibraryBody
           showImage={props.showImage}
           toggleImage={props.toggleImage}
@@ -60,17 +60,17 @@ function DeckLibraryByTypeTable(props) {
 
 function DeckPreviewLibrary(props) {
   const library = {};
-  const library_side = {};
+  const librarySide = {};
 
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
       library[card] = props.cards[card];
     } else {
-      library_side[card] = props.cards[card];
+      librarySide[card] = props.cards[card];
     }
   });
 
-  const cardtype_sorted = [
+  const cardtypeSorted = [
     'Master',
     'Conviction',
     'Power',
@@ -95,26 +95,30 @@ function DeckPreviewLibrary(props) {
 
   const LibraryDeck = [];
   const LibrarySideDeck = [];
-  let library_total = 0;
+  let libraryTotal = 0;
 
   for (const card in library) {
-    library_total += library[card].q;
-    const cardtype = library[card].c['Type'];
-    if (library[cardtype] === undefined) {
-      library[cardtype] = [];
+    if (card) {
+      libraryTotal += library[card].q;
+      const cardtype = library[card].c['Type'];
+      if (library[cardtype] === undefined) {
+        library[cardtype] = [];
+      }
+      library[cardtype].push([library[card].c, library[card].q]);
     }
-    library[cardtype].push([library[card].c, library[card].q]);
   }
 
-  for (const card in library_side) {
-    const cardtype = library_side[card].c['Type'];
-    if (library_side[cardtype] === undefined) {
-      library_side[cardtype] = [];
+  for (const card in librarySide) {
+    if (card) {
+      const cardtype = librarySide[card].c['Type'];
+      if (librarySide[cardtype] === undefined) {
+        librarySide[cardtype] = [];
+      }
+      librarySide[cardtype].push([librarySide[card].c, librarySide[card].q]);
     }
-    library_side[cardtype].push([library_side[card].c, library_side[card].q]);
   }
 
-  for (const cardtype of cardtype_sorted) {
+  for (const cardtype of cardtypeSorted) {
     if (library[cardtype] !== undefined) {
       let total = 0;
       for (const card of library[cardtype]) {
@@ -135,9 +139,9 @@ function DeckPreviewLibrary(props) {
       );
     }
 
-    if (library_side[cardtype] !== undefined) {
+    if (librarySide[cardtype] !== undefined) {
       let total = 0;
-      for (const card of library_side[cardtype]) {
+      for (const card of librarySide[cardtype]) {
         total += card[1];
       }
       LibrarySideDeck.push(
@@ -147,7 +151,7 @@ function DeckPreviewLibrary(props) {
             toggleImage={props.toggleImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
-            cards={library_side[cardtype]}
+            cards={librarySide[cardtype]}
             cardtype={cardtype}
             total={total}
           />
@@ -158,16 +162,16 @@ function DeckPreviewLibrary(props) {
 
   return (
     <>
-      <div className='deck-library'>
-        <b>Library [{library_total}]</b>
+      <div className="deck-library">
+        <b>Library [{libraryTotal}]</b>
         {LibraryDeck}
       </div>
-      { Object.keys(library_side).length > 0 &&
-        <div className='deck-sidelibrary'>
+      {Object.keys(librarySide).length > 0 && (
+        <div className="deck-sidelibrary">
           <b>Side Library:</b>
           {LibrarySideDeck}
         </div>
-      }
+      )}
     </>
   );
 }

@@ -12,13 +12,12 @@ import DeckCloneDeck from './DeckCloneDeck.jsx';
 import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
 
 function DeckShowDeck(props) {
-  const deckUrl= process.env.ROOT_URL + 'deck?id='+ props.deck.deckid;
   const isAuthor = props.username == props.deck.owner;
 
   return (
     <>
       <DeckCopyUrlButton value={props.deck.deckid} />
-      { props.username &&
+      {props.username && (
         <DeckCloneDeck
           author={props.deck.author}
           name={props.deck.name}
@@ -26,7 +25,7 @@ function DeckShowDeck(props) {
           getDecks={props.getDecks}
           setActiveDeck={props.setActiveDeck}
         />
-      }
+      )}
       <br />
       <DeckNameDeck
         name={props.deck.name}
@@ -47,12 +46,8 @@ function DeckShowDeck(props) {
         isAuthor={isAuthor}
       />
       <br />
-      { isAuthor &&
-        <DeckNewCryptName deckCardAdd={props.deckCardAdd} />
-      }
-      { isAuthor &&
-        <DeckNewLibraryName deckCardAdd={props.deckCardAdd} />
-      }
+      {isAuthor && <DeckNewCryptName deckCardAdd={props.deckCardAdd} />}
+      {isAuthor && <DeckNewLibraryName deckCardAdd={props.deckCardAdd} />}
       <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />
       <DeckCrypt
         deckCardChange={props.deckCardChange}
@@ -72,7 +67,7 @@ function DeckShowDeck(props) {
         isAuthor={isAuthor}
       />
     </>
-  )
+  );
 }
 
 export default DeckShowDeck;

@@ -25,11 +25,11 @@ function SearchLibraryForm(props) {
     sect: 'any',
     title: 'any',
     traits: {
-      'intercept': false,
-      'stealth': false,
-      'bleed': false,
-      'strength': false,
-      'dodge': false,
+      intercept: false,
+      stealth: false,
+      bleed: false,
+      strength: false,
+      dodge: false,
       'optional maneuver': false,
       'additional strike': false,
       aggravated: false,
@@ -43,58 +43,66 @@ function SearchLibraryForm(props) {
       infernal: false,
     },
     set: 'any',
-  }
+  };
 
   const [formState, setFormState] = useState(defaults);
 
   const [spinnerState, setSpinnerState] = useState(false);
 
-  const handleChange = event => {
-    const {name, value} = event.target;
-    setFormState(prevState => ({
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSelectChange = event => {
-    const {name, value} = event;
-    setFormState(prevState => ({
+  const handleSelectChange = (event) => {
+    const { name, value } = event;
+    setFormState((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleMultiChange = event => {
+  const handleMultiChange = (event) => {
     const { id, name } = event.target;
-    let newState = formState[name];
+    const newState = formState[name];
     newState[id] = !newState[id];
-    setFormState(prevState => ({
+    setFormState((prevState) => ({
       ...prevState,
-      [name]: newState
+      [name]: newState,
     }));
   };
 
   const handleClearButton = () => {
     setFormState(defaults);
     props.setResults([]);
-  }
+  };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
 
     const url = process.env.API_URL + 'search/library';
 
-    let input = JSON.parse(JSON.stringify(formState));
-    Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
-    Object.keys(input).forEach(k => (input[k] == 'any' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
+    const input = JSON.parse(JSON.stringify(formState));
+    Object.keys(input.traits).forEach(
+      (k) => input.traits[k] == false && delete input.traits[k]
+    );
+    Object.keys(input).forEach(
+      (k) =>
+        (input[k] == 'any' ||
+          !input[k] ||
+          Object.keys(input[k]).length === 0) &&
+        delete input[k]
+    );
     if (input['blood'] == null) {
       delete input['bloodmoreless'];
-    };
+    }
 
     if (input['pool'] == null) {
       delete input['poolmoreless'];
-    };
+    }
 
     if (Object.keys(input).length === 0) {
       console.log('submit with empty forms');
@@ -112,8 +120,8 @@ function SearchLibraryForm(props) {
       setSpinnerState(true);
 
       fetch(url, options)
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           props.setResults(data);
           setSpinnerState(false);
         })
@@ -122,16 +130,13 @@ function SearchLibraryForm(props) {
           setSpinnerState(false);
           console.log(error);
         });
-    };
+    }
   };
 
   return (
     <form onSubmit={handleSubmitButton}>
       <div className="input-group mb-3">
-        <SearchLibraryFormText
-          value={formState.text}
-          onChange={handleChange}
-        />
+        <SearchLibraryFormText value={formState.text} onChange={handleChange} />
         <SearchLibraryFormButtons
           handleClearButton={handleClearButton}
           spinner={spinnerState}

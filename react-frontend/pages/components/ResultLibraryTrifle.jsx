@@ -7,7 +7,7 @@ function ResultLibraryTrifle(props) {
 
   if (props.value.includes('Trifle.')) {
     return (
-      <span className='trifle'>
+      <span className="trifle">
         <img className={imgClass} src={imgSrc} title={imgTitle} />
       </span>
     );

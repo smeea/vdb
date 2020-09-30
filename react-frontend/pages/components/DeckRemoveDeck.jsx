@@ -11,7 +11,7 @@ function DeckRemoveDeck(props) {
     removeDeck();
     setShowConfirmation(false);
     props.setActiveDeck(undefined);
-  }
+  };
 
   const removeDeck = () => {
     if (props.deck) {
@@ -23,20 +23,22 @@ function DeckRemoveDeck(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({deckid: props.deck.deckid}),
+        body: JSON.stringify({ deckid: props.deck.deckid }),
       };
       fetch(url, options);
       console.log('Remove deck: ', props.deck.deckid);
-
     } else {
       console.log('Error: no deck selected');
-    };
+    }
   };
 
   return (
     <>
-      <Button variant='outline-secondary' onClick={() => setShowConfirmation(true)}>
-        <TrashFill/>{' '}Remove
+      <Button
+        variant="outline-secondary"
+        onClick={() => setShowConfirmation(true)}
+      >
+        <TrashFill /> Remove
       </Button>
       <DeckRemoveDeckConfirmation
         show={showConfirmation}

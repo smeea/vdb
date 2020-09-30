@@ -12,23 +12,34 @@ function SearchCryptFormVirtues(props) {
   ];
 
   const virtuesforms = virtues.map((i, index) => {
-    const imgSrc=process.env.ROOT_URL + 'images/disciplines/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
-    let virtueState = 'virtue-container mb-2 state' + props.value[i];
+    const imgSrc =
+      process.env.ROOT_URL +
+      'images/disciplines/' +
+      i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
+      '.gif';
+    const virtueState = 'virtue-container mb-2 state' + props.value[i];
     return (
       <div key={index} className={virtueState}>
-        <label className='virtue-container d-flex justify-content-center align-items-center' htmlFor={i}>
-          <input className='d-none' type='button' name='virtues' id={i} onClick={e => props.onChange(e)} />
-          <img className='virtue-image' src={imgSrc} />
+        <label
+          className="virtue-container d-flex justify-content-center align-items-center"
+          htmlFor={i}
+        >
+          <input
+            className="d-none"
+            type="button"
+            name="virtues"
+            id={i}
+            onClick={(e) => props.onChange(e)}
+          />
+          <img className="virtue-image" src={imgSrc} />
         </label>
       </div>
     );
   });
 
   return (
-    <div className='form-row'>
-      <div className='input-group'>
-        {virtuesforms}
-      </div>
+    <div className="form-row">
+      <div className="input-group">{virtuesforms}</div>
     </div>
   );
 }

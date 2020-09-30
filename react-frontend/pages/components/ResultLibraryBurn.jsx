@@ -7,7 +7,7 @@ function ResultLibraryBurn(props) {
 
   if (props.value) {
     return (
-      <span className='burn'>
+      <span className="burn">
         <img className={imgClass} src={imgSrc} title={imgTitle} />
       </span>
     );

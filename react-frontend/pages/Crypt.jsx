@@ -10,20 +10,19 @@ function Crypt(props) {
   const [results, setResults] = useState(undefined);
   const [sortMethod, setSortMethod] = useState('Default');
   return (
-    <div className='container px-0 py-xl-2 px-xl-2'>
-      <div className='row mx-0'>
-        <div className='col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2'>
-
-          { Object.keys(props.decks).length > 0 &&
+    <div className="container px-0 py-xl-2 px-xl-2">
+      <div className="row mx-0">
+        <div className="col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2">
+          {Object.keys(props.decks).length > 0 && (
             <DeckSelectDeck
               preview={true}
               decks={props.decks}
               activeDeck={props.activeDeck}
               setActiveDeck={props.setActiveDeck}
             />
-          }
+          )}
 
-          { props.activeDeck &&
+          {props.activeDeck && (
             <DeckPreview
               showImage={props.showImage}
               toggleImage={props.toggleImage}
@@ -31,11 +30,11 @@ function Crypt(props) {
               getDecks={props.getDecks}
               deckCardChange={props.deckCardChange}
             />
-          }
+          )}
         </div>
 
-        <div className='col-md-12 col-lg-6 col-xl-6 px-1 px-xl-2'>
-          { (results != undefined && results != null ) &&
+        <div className="col-md-12 col-lg-6 col-xl-6 px-1 px-xl-2">
+          {results != undefined && results != null && (
             <ResultCrypt
               showImage={props.showImage}
               toggleImage={props.toggleImage}
@@ -47,21 +46,23 @@ function Crypt(props) {
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
             />
-          }
-          { results === null &&
+          )}
+          {results === null && (
             <AlertMessage
-              className='error-message'
-              value={<>
-                       <div />
-                       <b>NO CARDS FOUND</b>
-                       <div />
-                     </>}
+              className="error-message"
+              value={
+                <>
+                  <div />
+                  <b>NO CARDS FOUND</b>
+                  <div />
+                </>
+              }
             />
-          }
+          )}
         </div>
 
-        <div className='col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2'>
-          <SearchCryptForm setResults={setResults}/>
+        <div className="col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2">
+          <SearchCryptForm setResults={setResults} />
         </div>
       </div>
     </div>

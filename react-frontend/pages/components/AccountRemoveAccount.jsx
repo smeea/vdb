@@ -10,9 +10,13 @@ function AccountRemoveAccount(props) {
   return (
     <>
       <h6>
-        <TrashFill />Remove account
+        <TrashFill />
+        Remove account
       </h6>
-      <Button variant='outline-secondary' onClick={() => setShowConfirmation(true)}>
+      <Button
+        variant="outline-secondary"
+        onClick={() => setShowConfirmation(true)}
+      >
         Remove Account
       </Button>
       <AccountRemoveConfirmation

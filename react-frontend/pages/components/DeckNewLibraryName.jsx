@@ -11,11 +11,11 @@ function DeckNewLibraryName(props) {
   const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
 
-  const handleInputChange = value => {
+  const handleInputChange = (value) => {
     setValue(value);
   };
 
-  const handleChange = value => {
+  const handleChange = (value) => {
     setSelectedValue(value);
   };
 
@@ -25,12 +25,12 @@ function DeckNewLibraryName(props) {
       setSelectedValue('');
     } else {
       console.log('Error: submit with empty forms');
-    };
+    }
   };
 
   const loadOptions = (inputValue) => {
     const url = process.env.API_URL + 'search/library';
-    const input = {name: inputValue};
+    const input = { name: inputValue };
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -42,8 +42,7 @@ function DeckNewLibraryName(props) {
     };
 
     if (inputValue.length > 2) {
-      return fetch(url, options)
-        .then(response => response.json());
+      return fetch(url, options).then((response) => response.json());
     } else {
       return null;
     }
@@ -52,53 +51,53 @@ function DeckNewLibraryName(props) {
   return (
     <div className="input-group mb-3">
       <div className="input-group-prepend">
-        <span className="input-group-text" id="basic-addon1">Add Library</span>
+        <span className="input-group-text" id="basic-addon1">
+          Add Library
+        </span>
       </div>
-      <div className='flex-grow-1'>
+      <div className="flex-grow-1">
         <AsyncSelect
           cacheOptions
           defaultOptions
           value={selectedValue}
-          getOptionLabel={ card =>
+          getOptionLabel={(card) => (
             <>
-              <div className='d-flex align-items-center justify-content-between'>
+              <div className="d-flex align-items-center justify-content-between">
                 <div>
-                  <ResultLibraryType cardtype={card['Type']}/>
-                  <span className='pl-1'>
-                    { card['Name'] + (card['Banned']
-                                      ? ' [BANNED]'
-                                      : '') }
+                  <ResultLibraryType cardtype={card['Type']} />
+                  <span className="pl-1">
+                    {card['Name'] + (card['Banned'] ? ' [BANNED]' : '')}
                   </span>
                 </div>
                 <div>
-                  { card['Discipline'] &&
-                    <span className='pl-2'>
-                      <ResultLibraryDisciplines value={card['Discipline']}/>
+                  {card['Discipline'] && (
+                    <span className="pl-2">
+                      <ResultLibraryDisciplines value={card['Discipline']} />
                     </span>
-                  }
-                  { card['Clan'] &&
-                    <span className='pl-2'>
+                  )}
+                  {card['Clan'] && (
+                    <span className="pl-2">
                       <ResultLibraryClan value={card['Clan']} />
                     </span>
-                  }
-                  { (card['Blood Cost'] || card['Pool Cost']) &&
-                    <span className='pl-2'>
+                  )}
+                  {(card['Blood Cost'] || card['Pool Cost']) && (
+                    <span className="pl-2">
                       <ResultLibraryCost
                         valuePool={card['Pool Cost']}
                         valueBlood={card['Blood Cost']}
                       />
                     </span>
-                  }
+                  )}
                 </div>
               </div>
             </>
-          }
+          )}
           loadOptions={loadOptions}
           onInputChange={handleInputChange}
           onChange={handleChange}
         />
       </div>
-      <Button variant='outline-secondary' onClick={addNewCard}>
+      <Button variant="outline-secondary" onClick={addNewCard}>
         Add
       </Button>
     </div>

@@ -19,6 +19,8 @@
 		"react"
 	],
 	"rules": {
+		"require-jsdoc": "off",
+		"react/prop-types": "off"
 	},
 	"settings": {
 		"react": {

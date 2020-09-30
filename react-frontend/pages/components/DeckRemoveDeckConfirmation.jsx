@@ -6,7 +6,13 @@ function DeckRemoveDeckConfirmation(props) {
     <>
       <Modal show={props.show} onHide={props.handleCancel} animation={false}>
         <Modal.Header closeButton>
-            Delete deck <span className='pl-1'><b><i>{props.deckname}</i></b></span>?
+          Delete deck{' '}
+          <span className="pl-1">
+            <b>
+              <i>{props.deckname}</i>
+            </b>
+          </span>
+          ?
         </Modal.Header>
         <Modal.Body>
           <Button variant="outline-secondary" onClick={props.handleConfirm}>

@@ -11,7 +11,7 @@ import resultCryptSort from './resultCryptSort.js';
 import ResultAddCard from './ResultAddCard.jsx';
 
 function ResultCryptBody(props) {
-  let resultTrClass='crypt-result-even';
+  let resultTrClass = 'crypt-result-even';
 
   if (props.resultCards) {
     const cards = props.resultCards.map((card, index) => {
@@ -24,18 +24,21 @@ function ResultCryptBody(props) {
       return (
         <React.Fragment key={index}>
           <tr className={resultTrClass}>
-            { props.activeDeck && props.activeDeck != 'Select Deck' &&
-              <td className='quantity'>
-                <ResultAddCard deckCardAdd={props.deckCardAdd} cardid={card['Id']} />
+            {props.activeDeck && props.activeDeck != 'Select Deck' && (
+              <td className="quantity">
+                <ResultAddCard
+                  deckCardAdd={props.deckCardAdd}
+                  cardid={card['Id']}
+                />
               </td>
-            }
-            <td className='capacity'>
+            )}
+            <td className="capacity">
               <ResultCryptCapacity value={card['Capacity']} />
             </td>
-            <td className='disciplines'>
+            <td className="disciplines">
               <ResultCryptDisciplines value={card['Disciplines']} />
             </td>
-            <td className='name'>
+            <td className="name">
               <ResultCryptName
                 showImage={props.showImage}
                 toggleImage={props.toggleImage}
@@ -46,10 +49,10 @@ function ResultCryptBody(props) {
                 card={card}
               />
             </td>
-            <td className='clan'>
+            <td className="clan">
               <ResultCryptClan value={card['Clan']} />
             </td>
-            <td className='group'>
+            <td className="group">
               <ResultCryptGroup value={card['Group']} />
             </td>
           </tr>
@@ -66,7 +69,7 @@ function ResultCryptBody(props) {
 function ResultCrypt(props) {
   const [sortedCards, setSortedCards] = useState([]);
 
-  const handleChange = method => {
+  const handleChange = (method) => {
     props.setSortMethod(method);
     setSortedCards(() => resultCryptSort(props.cards, method));
   };
@@ -77,16 +80,13 @@ function ResultCrypt(props) {
 
   return (
     <>
-      { props.showTotal == true && props.cards.length > 0 &&
+      {props.showTotal == true && props.cards.length > 0 && (
         <ResultCryptTotal cards={props.cards} />
-      }
-      { props.showSort == true && sortedCards.length > 0 &&
-        <ResultCryptSortForm
-          value={props.sortMethod}
-          onChange={handleChange}
-        />
-      }
-      <table className='search-crypt-table'>
+      )}
+      {props.showSort == true && sortedCards.length > 0 && (
+        <ResultCryptSortForm value={props.sortMethod} onChange={handleChange} />
+      )}
+      <table className="search-crypt-table">
         <ResultCryptBody
           showImage={props.showImage}
           toggleImage={props.toggleImage}

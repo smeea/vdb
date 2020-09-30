@@ -8,18 +8,17 @@ function AccountChangeName(props) {
     publicName: props.publicName,
   });
 
-
-  const handleChange = event => {
-    const {name, value} = event.target;
-    setState(prevState => ({
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setState((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const changeName = () => {
     const url = process.env.API_URL + 'account';
-    let input = {
+    const input = {
       password: state.password,
       publicName: state.publicName,
     };
@@ -37,8 +36,8 @@ function AccountChangeName(props) {
     const fetchPromise = fetch(url, options);
 
     fetchPromise
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.error === undefined) {
           console.log('public name changed');
         } else {
@@ -50,26 +49,27 @@ function AccountChangeName(props) {
   return (
     <>
       <h6>
-        <PenFill />Change name
+        <PenFill />
+        Change name
       </h6>
       <form>
         <input
-          placeholder='Public name'
-          type='text'
-          name='publicName'
+          placeholder="Public name"
+          type="text"
+          name="publicName"
           value={state.publicName}
           onChange={handleChange}
         />
         <br />
         <input
-          placeholder='Password'
-          type='password'
-          name='password'
+          placeholder="Password"
+          type="password"
+          name="password"
           value={state.password}
           onChange={handleChange}
         />
 
-        <Button variant='outline-secondary' onClick={changeName}>
+        <Button variant="outline-secondary" onClick={changeName}>
           Change
         </Button>
       </form>

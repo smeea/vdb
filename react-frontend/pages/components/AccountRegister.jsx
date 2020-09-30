@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { PersonPlusFill } from 'react-bootstrap-icons';
 
-function AccountRegister(props){
+function AccountRegister(props) {
   const [state, setState] = useState({
     username: '',
     password: '',
@@ -12,11 +12,11 @@ function AccountRegister(props){
   const [emptyUsername, setEmptyUsername] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
 
-  const handleChange = event => {
-    const {name, value} = event.target;
-    setState(prevState => ({
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setState((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -25,7 +25,7 @@ function AccountRegister(props){
 
     if (state.username && state.password) {
       const url = process.env.API_URL + 'register';
-      let input = {
+      const input = {
         username: state.username,
         password: state.password,
       };
@@ -43,13 +43,13 @@ function AccountRegister(props){
       const fetchPromise = fetch(url, options);
 
       fetchPromise
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           props.setUsername(state.username);
         })
         .catch((error) => {
           setUsernameError(true);
-          setState(prevState => ({
+          setState((prevState) => ({
             ...prevState,
             username: '',
           }));
@@ -62,51 +62,47 @@ function AccountRegister(props){
 
   return (
     <>
-      <h6><PersonPlusFill />{' '}Create Account</h6>
-      <div className='d-flex'>
+      <h6>
+        <PersonPlusFill /> Create Account
+      </h6>
+      <div className="d-flex">
         <div>
           <input
-            placeholder='New Username'
-            type='text'
-            name='username'
+            placeholder="New Username"
+            type="text"
+            name="username"
             value={state.username}
             onChange={handleChange}
           />
-          { emptyUsername &&
+          {emptyUsername && (
             <>
               <br />
-              <span className='login-error'>
-                Enter username
-              </span>
+              <span className="login-error">Enter username</span>
             </>
-          }
-          { usernameError &&
+          )}
+          {usernameError && (
             <>
               <br />
-              <span className='login-error'>
-                This username is taken
-              </span>
+              <span className="login-error">This username is taken</span>
             </>
-          }
+          )}
         </div>
         <div>
           <input
-            placeholder='Password'
-            type='password'
-            name='password'
+            placeholder="Password"
+            type="password"
+            name="password"
             value={state.password}
             onChange={handleChange}
           />
-          { emptyPassword &&
+          {emptyPassword && (
             <>
               <br />
-              <span className='login-error'>
-                Enter password
-              </span>
+              <span className="login-error">Enter password</span>
             </>
-          }
+          )}
         </div>
-        <Button variant='outline-secondary' onClick={registerUser}>
+        <Button variant="outline-secondary" onClick={registerUser}>
           Create
         </Button>
       </div>

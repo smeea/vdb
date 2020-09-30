@@ -24,22 +24,36 @@ function SearchLibraryFormTraits(props) {
     ['infernal', 'Infernal'],
   ];
 
-  const traitsLeftforms = traitsLeft.map( (i, index) => {
+  const traitsLeftforms = traitsLeft.map((i, index) => {
     return (
-      <div key={index} className='mr-2 custom-control custom-checkbox'>
-        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
-        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
+      <div key={index} className="mr-2 custom-control custom-checkbox">
+        <input
+          id={i[0]}
+          name="traits"
+          className="mr-2 custom-control-input"
+          type="checkbox"
+          checked={props.value[i[0]]}
+          onChange={(e) => props.onChange(e)}
+        />
+        <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
       </div>
     );
   });
 
-  const traitsRightforms = traitsRight.map( (i, index) => {
+  const traitsRightforms = traitsRight.map((i, index) => {
     return (
-      <div key={index} className='mr-2 custom-control custom-checkbox'>
-        <input id={i[0]} name='traits' className='mr-2 custom-control-input' type='checkbox' checked={props.value[i[0]]} onChange={e => props.onChange(e)} />
-        <label htmlFor={i[0]} className='mr-2 custom-control-label'>
+      <div key={index} className="mr-2 custom-control custom-checkbox">
+        <input
+          id={i[0]}
+          name="traits"
+          className="mr-2 custom-control-input"
+          type="checkbox"
+          checked={props.value[i[0]]}
+          onChange={(e) => props.onChange(e)}
+        />
+        <label htmlFor={i[0]} className="mr-2 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -47,15 +61,11 @@ function SearchLibraryFormTraits(props) {
   });
 
   return (
-    <div className='pt-2'>
+    <div className="pt-2">
       <h6>Traits:</h6>
-      <div className='form-row'>
-        <div className='form-group col-7'>
-          {traitsLeftforms}
-        </div>
-        <div className='form-group col-5'>
-          {traitsRightforms}
-        </div>
+      <div className="form-row">
+        <div className="form-group col-7">{traitsLeftforms}</div>
+        <div className="form-group col-5">{traitsRightforms}</div>
       </div>
     </div>
   );

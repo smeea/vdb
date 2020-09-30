@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { BrowserRouter as Router, useLocation, useParams, Redirect } from "react-router-dom";
-
+import { useLocation, Redirect } from 'react-router-dom';
 
 import DeckNewDeck from './components/DeckNewDeck.jsx';
 import DeckImportDeck from './components/DeckImportDeck.jsx';
@@ -12,7 +10,7 @@ import DeckShowDeck from './components/DeckShowDeck.jsx';
 function Deck(props) {
   const query = new URLSearchParams(useLocation().search);
   const [sharedDeck, setSharedDeck] = useState(undefined);
-  const [sharedDeckId, setSharedDeckId] = useState(query.get('id'));
+  const sharedDeckId = query.get('id');
 
   const getDeck = (deckid) => {
     const url = process.env.API_URL + 'deck/' + deckid;
@@ -23,8 +21,8 @@ function Deck(props) {
     };
 
     fetch(url, options)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         if (data.error === undefined) {
           setSharedDeck(data);
         } else {
@@ -42,11 +40,10 @@ function Deck(props) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({[field]: value})
+      body: JSON.stringify({ [field]: value }),
     };
 
-    fetch(url, options)
-      .then(() => props.getDecks());
+    fetch(url, options).then(() => props.getDecks());
   };
 
   useEffect(() => {
@@ -55,21 +52,20 @@ function Deck(props) {
 
   useEffect(() => {
     if (sharedDeckId) {
-      getDeck(sharedDeckId)
+      getDeck(sharedDeckId);
     }
   }, [sharedDeckId]);
 
   if (!props.username && !sharedDeckId) {
-    return <Redirect to='/account' />
+    return <Redirect to="/account" />;
   }
 
   return (
-    <div className='container px-0 py-xl-3 px-xl-2'>
-      <div className='row mx-0'>
-        <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>
-        </div>
-        <div className='col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2'>
-          { props.username &&
+    <div className="container px-0 py-xl-3 px-xl-2">
+      <div className="row mx-0">
+        <div className="col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2"></div>
+        <div className="col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2">
+          {props.username && (
             <>
               <DeckNewDeck
                 setActiveDeck={props.setActiveDeck}
@@ -84,15 +80,15 @@ function Deck(props) {
                 activeDeck={props.activeDeck}
                 setActiveDeck={props.setActiveDeck}
               />
-              { props.decks[props.activeDeck] &&
+              {props.decks[props.activeDeck] && (
                 <DeckRemoveDeck
                   deck={props.decks[props.activeDeck]}
                   setActiveDeck={props.setActiveDeck}
                 />
-              }
+              )}
             </>
-          }
-          { props.decks[props.activeDeck] &&
+          )}
+          {props.decks[props.activeDeck] && (
             <DeckShowDeck
               showImage={props.showImage}
               toggleImage={props.toggleImage}
@@ -105,8 +101,8 @@ function Deck(props) {
               setActiveDeck={props.setActiveDeck}
               username={props.username}
             />
-          }
-          { sharedDeck && sharedDeckId &&
+          )}
+          {sharedDeck && sharedDeckId && (
             <DeckShowDeck
               showImage={props.showImage}
               toggleImage={props.toggleImage}
@@ -119,11 +115,10 @@ function Deck(props) {
               setActiveDeck={props.setActiveDeck}
               username={props.username}
             />
-          }
+          )}
         </div>
 
-        <div className='col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2'>
-        </div>
+        <div className="col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2"></div>
       </div>
     </div>
   );

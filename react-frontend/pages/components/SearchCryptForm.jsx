@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useFocus } from 'react';
+import React, { useState } from 'react';
 
 import SearchCryptFormButtons from './SearchCryptFormButtons.jsx';
 import SearchCryptFormText from './SearchCryptFormText.jsx';
@@ -103,86 +103,102 @@ function SearchCryptForm(props) {
       flight: false,
     },
     set: 'any',
-  }
+  };
 
   const [formState, setFormState] = useState(defaults);
 
   const [spinnerState, setSpinnerState] = useState(false);
 
-  const handleChange = event => {
-    const {name, value} = event.target;
-    setFormState(prevState => ({
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSelectChange = event => {
-    const {name, value} = event;
-    setFormState(prevState => ({
+  const handleSelectChange = (event) => {
+    const { name, value } = event;
+    setFormState((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleMultiChange = event => {
+  const handleMultiChange = (event) => {
     const { id, name } = event.target;
-    let newState = formState[name];
+    const newState = formState[name];
     newState[id] = !newState[id];
-    setFormState(prevState => ({
+    setFormState((prevState) => ({
       ...prevState,
-      [name]: newState
+      [name]: newState,
     }));
   };
 
-  const handleDisciplinesChange = event => {
+  const handleDisciplinesChange = (event) => {
     const { id, name } = event.target;
-    let newState = formState[name];
+    const newState = formState[name];
     if (newState[id] < 2) {
       newState[id] += 1;
     } else {
       newState[id] = 0;
     }
-    setFormState(prevState => ({
+    setFormState((prevState) => ({
       ...prevState,
-      [name]: newState
+      [name]: newState,
     }));
   };
 
-  const handleVirtuesChange = event => {
+  const handleVirtuesChange = (event) => {
     const { id, name } = event.target;
-    let newState = formState[name];
+    const newState = formState[name];
     if (newState[id] == 0) {
       newState[id] = 1;
     } else {
       newState[id] = 0;
     }
-    setFormState(prevState => ({
+    setFormState((prevState) => ({
       ...prevState,
-      [name]: newState
+      [name]: newState,
     }));
   };
 
   const handleClearButton = () => {
     setFormState(defaults);
     props.setResults([]);
-  }
+  };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
 
     const url = process.env.API_URL + 'search/crypt';
 
-    let input = JSON.parse(JSON.stringify(formState));
-    Object.keys(input.disciplines).forEach(k => (input.disciplines[k] == 0) && delete input.disciplines[k]);
-    Object.keys(input.virtues).forEach(k => (input.virtues[k] == 0) && delete input.virtues[k]);
-    Object.keys(input.titles).forEach(k => (input.titles[k] == false) && delete input.titles[k]);
-    Object.keys(input.group).forEach(k => (input.group[k] == false) && delete input.group[k]);
-    Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);
-    Object.keys(input).forEach(k => (input[k] == 'any' || !input[k] || Object.keys(input[k]).length === 0) && delete input[k]);
+    const input = JSON.parse(JSON.stringify(formState));
+    Object.keys(input.disciplines).forEach(
+      (k) => input.disciplines[k] == 0 && delete input.disciplines[k]
+    );
+    Object.keys(input.virtues).forEach(
+      (k) => input.virtues[k] == 0 && delete input.virtues[k]
+    );
+    Object.keys(input.titles).forEach(
+      (k) => input.titles[k] == false && delete input.titles[k]
+    );
+    Object.keys(input.group).forEach(
+      (k) => input.group[k] == false && delete input.group[k]
+    );
+    Object.keys(input.traits).forEach(
+      (k) => input.traits[k] == false && delete input.traits[k]
+    );
+    Object.keys(input).forEach(
+      (k) =>
+        (input[k] == 'any' ||
+          !input[k] ||
+          Object.keys(input[k]).length === 0) &&
+        delete input[k]
+    );
     if (input['capacity'] == null) {
       delete input['capacitymoreless'];
-    };
+    }
 
     if (Object.keys(input).length === 0) {
       console.log('submit with empty forms');
@@ -200,26 +216,23 @@ function SearchCryptForm(props) {
       setSpinnerState(true);
 
       fetch(url, options)
-        .then(response => response.json())
-        .then(data => {
-            props.setResults(data);
-            setSpinnerState(false);
+        .then((response) => response.json())
+        .then((data) => {
+          props.setResults(data);
+          setSpinnerState(false);
         })
         .catch((error) => {
           props.setResults(null);
           setSpinnerState(false);
           console.log(error);
         });
-    };
+    }
   };
 
   return (
     <form onSubmit={handleSubmitButton}>
       <div className="input-group">
-        <SearchCryptFormText
-          value={formState.text}
-          onChange={handleChange}
-        />
+        <SearchCryptFormText value={formState.text} onChange={handleChange} />
         <SearchCryptFormButtons
           handleClearButton={handleClearButton}
           spinner={spinnerState}
@@ -262,10 +275,7 @@ function SearchCryptForm(props) {
         value={formState.traits}
         onChange={handleMultiChange}
       />
-      <SearchCryptFormSet
-        value={formState.set}
-        onChange={handleSelectChange}
-      />
+      <SearchCryptFormSet value={formState.set} onChange={handleSelectChange} />
     </form>
   );
 }

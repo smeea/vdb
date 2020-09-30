@@ -33,23 +33,37 @@ function SearchCryptFormDisciplines(props) {
   ];
 
   const disciplinesforms = disciplines.map((i, index) => {
-    let disciplineState = 'discipline-container state' + props.value[i];
-    const imgSrcBase=process.env.ROOT_URL + 'images/disciplines/' + i.toLowerCase() + '.gif';
-    const imgSrcSup=process.env.ROOT_URL + 'images/disciplines/' + i.toLowerCase() + 'sup.gif';
+    const disciplineState = 'discipline-container state' + props.value[i];
+    const imgSrcBase =
+      process.env.ROOT_URL + 'images/disciplines/' + i.toLowerCase() + '.gif';
+    const imgSrcSup =
+      process.env.ROOT_URL +
+      'images/disciplines/' +
+      i.toLowerCase() +
+      'sup.gif';
     return (
       <div key={index} className={disciplineState}>
-        <label className='discipline-container d-flex justify-content-center align-items-center' htmlFor={i}>
-          <input className='d-none' type='button' name='disciplines' id={i} onClick={e => props.onChange(e)} />
-          <img className='discipline-base-image-forms' src={imgSrcBase} />
-          <img className='discipline-superior-image-forms' src={imgSrcSup} />
+        <label
+          className="discipline-container d-flex justify-content-center align-items-center"
+          htmlFor={i}
+        >
+          <input
+            className="d-none"
+            type="button"
+            name="disciplines"
+            id={i}
+            onClick={(e) => props.onChange(e)}
+          />
+          <img className="discipline-base-image-forms" src={imgSrcBase} />
+          <img className="discipline-superior-image-forms" src={imgSrcSup} />
         </label>
       </div>
     );
   });
 
   return (
-    <div className='form-row pt-2'>
-      <div className='input-group justify-content-start'>
+    <div className="form-row pt-2">
+      <div className="input-group justify-content-start">
         {disciplinesforms}
       </div>
     </div>

@@ -39,7 +39,6 @@ function resultLibrarySort(cards, sortMethod) {
     }
   };
 
-
   if (cards) {
     if (sortMethod == 'Discipline') {
       return cards.sort(byName).sort(byDiscipline);

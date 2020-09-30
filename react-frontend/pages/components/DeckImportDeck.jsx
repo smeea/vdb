@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 
 function DeckImportDeck(props) {
-  const [deckName, setDeckName] = useState('');
+  // const [deckName, setDeckName] = useState('');
   const [deckText, setDeckText] = useState('');
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setDeckText(event.target.value);
-  };
-
-  const clearFormButton = () => {
-    setDeckText('');
   };
 
   const createImportDeck = () => {
@@ -43,10 +39,9 @@ function DeckImportDeck(props) {
       //   })
       //   .then(() => props.getDecks())
       //   .then(() => props.setActiveDeck(newdeckid));
-
     } else {
       console.log('Error: submit with empty forms');
-    };
+    }
   };
 
   return (
@@ -58,11 +53,12 @@ function DeckImportDeck(props) {
           TWD / LackeyCCG
         </span>
       </div>
-      <textarea className="form-control"
-                value={deckText}
-                onChange={handleChange}
+      <textarea
+        className="form-control"
+        value={deckText}
+        onChange={handleChange}
       />
-      <Button variant='outline-secondary' onClick={createImportDeck}>
+      <Button variant="outline-secondary" onClick={createImportDeck}>
         Import
       </Button>
     </div>

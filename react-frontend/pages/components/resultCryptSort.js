@@ -31,7 +31,6 @@ function resultCryptSort(cards, sortMethod) {
     }
   };
 
-
   if (cards) {
     if (sortMethod == 'Capacity') {
       return cards.sort(byName).sort(byCapacity);
@@ -49,6 +48,6 @@ function resultCryptSort(cards, sortMethod) {
   } else {
     return null;
   }
-};
+}
 
 export default resultCryptSort;

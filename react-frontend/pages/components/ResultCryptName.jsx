@@ -4,37 +4,35 @@ import { OverlayTrigger, Popover } from 'react-bootstrap';
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 
 function ResultCryptName(props) {
-  const CardPopover = React.forwardRef(
-    ({ children, ...props }, ref) => {
-      return (
-        <Popover ref={ref} {...props}>
-          <ResultCryptPopover card={props.card} showImage={children}/>
-        </Popover>
-      );
-    },
-  );
+  const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
+    return (
+      <Popover ref={ref} {...props}>
+        <ResultCryptPopover card={props.card} showImage={children} />
+      </Popover>
+    );
+  });
 
-  const imgClass='advanced-image-results';
-  let imgSrc='';
-  let imgTitle='';
+  const imgClass = 'advanced-image-results';
+  let imgSrc = '';
+  let imgTitle = '';
   if (props.adv) {
-    imgSrc=process.env.ROOT_URL + 'images/misc/advanced.gif';
-    imgTitle='Advanced'
+    imgSrc = process.env.ROOT_URL + 'images/misc/advanced.gif';
+    imgTitle = 'Advanced';
   }
 
   return (
     <OverlayTrigger
-      placement='right'
+      placement="right"
       overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
     >
-      <span className='name' onClick={props.toggleImage}>
+      <span className="name" onClick={props.toggleImage}>
         {props.value}
-        { props.adv &&
-          <span className='pl-1'>
+        {props.adv && (
+          <span className="pl-1">
             <img className={imgClass} src={imgSrc} title={imgTitle} />
           </span>
-        }
-        { props.ban && ' [BANNED]' }
+        )}
+        {props.ban && ' [BANNED]'}
       </span>
     </OverlayTrigger>
   );

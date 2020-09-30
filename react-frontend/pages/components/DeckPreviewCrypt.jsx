@@ -11,11 +11,11 @@ function DeckCryptSideBody(props) {
       return 1;
     }
   };
-  const sorted_cards = Object.values(props.cards).sort(SortByCapacity);
+  const sortedCards = Object.values(props.cards).sort(SortByCapacity);
 
   let resultTrClass;
 
-  const cards = sorted_cards.map((card, index) => {
+  const cards = sortedCards.map((card, index) => {
     if (resultTrClass == 'crypt-result-odd') {
       resultTrClass = 'crypt-result-even';
     } else {
@@ -24,7 +24,7 @@ function DeckCryptSideBody(props) {
 
     return (
       <tr key={index} className={resultTrClass}>
-        <td className='quantity'>
+        <td className="quantity">
           <DeckCardQuantity
             cardid={card.c['Id']}
             q={card.q}
@@ -32,7 +32,7 @@ function DeckCryptSideBody(props) {
             deckCardChange={props.deckCardChange}
           />
         </td>
-        <td className='name'>
+        <td className="name">
           <ResultCryptName
             showImage={props.showImage}
             toggleImage={props.toggleImage}
@@ -58,10 +58,10 @@ function DeckCryptBody(props) {
     }
   };
 
-  const sorted_cards = Object.values(props.cards).sort(SortByQuantity);
+  const sortedCards = Object.values(props.cards).sort(SortByQuantity);
   let resultTrClass;
 
-  const cards = sorted_cards.map((card, index) => {
+  const cards = sortedCards.map((card, index) => {
     if (resultTrClass == 'crypt-result-odd') {
       resultTrClass = 'crypt-result-even';
     } else {
@@ -71,7 +71,7 @@ function DeckCryptBody(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <td className='quantity'>
+          <td className="quantity">
             <DeckCardQuantity
               cardid={card.c['Id']}
               q={card.q}
@@ -79,7 +79,7 @@ function DeckCryptBody(props) {
               deckCardChange={props.deckCardChange}
             />
           </td>
-          <td className='name'>
+          <td className="name">
             <ResultCryptName
               showImage={props.showImage}
               toggleImage={props.toggleImage}
@@ -98,79 +98,89 @@ function DeckCryptBody(props) {
 }
 
 function DeckPreviewCrypt(props) {
-  let d_set = new Set();
+  const dSet = new Set();
   for (const card of Object.keys(props.cards)) {
     for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
-      d_set.add(d);
-    };
-  };
-  const disciplines_set = [...d_set].sort();
+      dSet.add(d);
+    }
+  }
+  const disciplinesSet = [...dSet].sort();
 
   const crypt = {};
-  const crypt_side = {};
+  const cryptSide = {};
 
-  let crypt_group_min;
-  let crypt_group_max;
+  let cryptGroupMin;
+  let cryptGroupMax;
 
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
       crypt[card] = props.cards[card];
     } else {
-      crypt_side[card] = props.cards[card];
+      cryptSide[card] = props.cards[card];
     }
 
-    if (props.cards[card].c['Group'] < crypt_group_min || crypt_group_min == undefined) {
-      crypt_group_min = props.cards[card].c['Group'];
+    if (
+      props.cards[card].c['Group'] < cryptGroupMin ||
+      cryptGroupMin == undefined
+    ) {
+      cryptGroupMin = props.cards[card].c['Group'];
     }
-    if (props.cards[card].c['Group'] > crypt_group_max || crypt_group_max == undefined) {
-      crypt_group_max = props.cards[card].c['Group'];
+    if (
+      props.cards[card].c['Group'] > cryptGroupMax ||
+      cryptGroupMax == undefined
+    ) {
+      cryptGroupMax = props.cards[card].c['Group'];
     }
   });
 
-  let crypt_total = 0;
+  let cryptTotal = 0;
   for (const card in crypt) {
-    crypt_total += crypt[card].q;
+    if (card) {
+      cryptTotal += crypt[card].q;
+    }
   }
 
-  let crypt_groups;
-  if (crypt_group_max - crypt_group_min == 1) {
-    crypt_groups = 'G' + crypt_group_min + '-' + crypt_group_max;
-  } else if (crypt_group_max - crypt_group_min == 0) {
-    crypt_groups = 'G' + crypt_group_max;
+  let cryptGroups;
+  if (cryptGroupMax - cryptGroupMin == 1) {
+    cryptGroups = 'G' + cryptGroupMin + '-' + cryptGroupMax;
+  } else if (cryptGroupMax - cryptGroupMin == 0) {
+    cryptGroups = 'G' + cryptGroupMax;
   } else {
-    crypt_groups = 'ERROR IN GROUPS';
+    cryptGroups = 'ERROR IN GROUPS';
   }
 
   return (
     <>
-      <div className='deck-crypt'>
-        <b>Crypt [{crypt_total}] - {crypt_groups}</b>
-        <table className='deck-crypt-table'>
+      <div className="deck-crypt">
+        <b>
+          Crypt [{cryptTotal}] - {cryptGroups}
+        </b>
+        <table className="deck-crypt-table">
           <DeckCryptBody
             showImage={props.showImage}
             toggleImage={props.toggleImage}
             deckid={props.deckid}
             deckCardChange={props.deckCardChange}
             cards={crypt}
-            disciplines_set={disciplines_set}
+            disciplinesSet={disciplinesSet}
           />
         </table>
       </div>
-      { Object.keys(crypt_side).length > 0 &&
-        <div className='deck-sidecrypt'>
+      {Object.keys(cryptSide).length > 0 && (
+        <div className="deck-sidecrypt">
           <b>Side Crypt</b>
-          <table className='deck-crypt-table'>
+          <table className="deck-crypt-table">
             <DeckCryptSideBody
               showImage={props.showImage}
               toggleImage={props.toggleImage}
               deckid={props.deckid}
               deckCardChange={props.deckCardChange}
-              cards={crypt_side}
-              disciplines_set={disciplines_set}
+              cards={cryptSide}
+              disciplinesSet={disciplinesSet}
             />
           </table>
         </div>
-      }
+      )}
     </>
   );
 }
