@@ -41,7 +41,7 @@ function SearchLibraryFormDiscipline(props) {
     'Vision',
   ];
 
-  const options = [];
+  const options = []
 
   disciplines.map((i, index) => {
     if (i == 'ANY' || i == 'NONE') {
@@ -58,7 +58,7 @@ function SearchLibraryFormDiscipline(props) {
         }
       );
     } else {
-      const imgSrc = '/images/disciplines/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
+      const imgSrc=process.env.ROOT_URL + 'images/disciplines/' + i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') + '.gif';
       options.push(
         {
           value: i.toLowerCase(),

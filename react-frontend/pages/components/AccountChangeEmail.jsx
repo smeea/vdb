@@ -22,7 +22,7 @@ function AccountChangeEmail(props) {
       return console.log('email do not match');
     }
 
-    const url = '/account';
+    const url = process.env.API_URL + 'account';
     let input = {
       password: state.password,
       newEmail: state.newEmail,

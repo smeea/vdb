@@ -15,7 +15,7 @@ function DeckRemoveDeck(props) {
 
   const removeDeck = () => {
     if (props.deck) {
-      const url = '/decks/remove';
+      const url = process.env.API_URL + 'decks/remove';
       const options = {
         method: 'POST',
         mode: 'cors',

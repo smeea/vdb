@@ -29,7 +29,7 @@ function DeckNewLibraryName(props) {
   };
 
   const loadOptions = (inputValue) => {
-    const url = '/search/library';
+    const url = process.env.API_URL + 'search/library';
     const input = {name: inputValue};
     const options = {
       method: 'POST',

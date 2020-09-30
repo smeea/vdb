@@ -34,6 +34,3 @@
 * Use template strings in code
 * Prettier all code
 * Eslint all code
-* Keys to use nanoid
-* Remove lodash dependency
-* Use day.js for dates

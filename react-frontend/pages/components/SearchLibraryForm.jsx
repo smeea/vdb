@@ -83,7 +83,7 @@ function SearchLibraryForm(props) {
   const handleSubmitButton = event => {
     event.preventDefault();
 
-    const url = '/search/library';
+    const url = process.env.API_URL + 'search/library';
 
     let input = JSON.parse(JSON.stringify(formState));
     Object.keys(input.traits).forEach(k => (input.traits[k] == false) && delete input.traits[k]);

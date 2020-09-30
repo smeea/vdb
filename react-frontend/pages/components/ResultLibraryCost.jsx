@@ -5,11 +5,11 @@ function ResultLibraryCost(props) {
   let imgSrc='';
   let imgTitle='';
   if (props.valueBlood) {
-    imgSrc = '/images/misc/blood' + props.valueBlood + '.png';
-    imgTitle = 'Blood Cost';
+    imgSrc=process.env.ROOT_URL + 'images/misc/blood' + props.valueBlood + '.png';
+    imgTitle='Blood Cost'
   } else if (props.valuePool){
-    imgSrc = '/images/misc/pool' + props.valuePool + '.png';
-    imgTitle = 'Pool Cost';
+    imgSrc=process.env.ROOT_URL + 'images/misc/pool' + props.valuePool + '.png';
+    imgTitle='Pool Cost'
   }
 
   return (

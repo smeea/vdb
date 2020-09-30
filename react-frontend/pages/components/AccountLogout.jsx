@@ -6,7 +6,7 @@ function AccountLogout(props) {
   const logoutUser = () => {
     console.log('submit logout button');
 
-    const url = '/logout';
+    const url = process.env.API_URL + 'logout';
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -21,7 +21,7 @@ function AccountLogout(props) {
     <Button variant='outline-secondary' onClick={logoutUser}>
       <DoorClosedFill />{' '}Logout
     </Button>
-  );
+  )
 }
 
 export default AccountLogout;

@@ -11,7 +11,7 @@ function AccountRemoveConfirmation(props) {
   const removeAccount = () => {
     setPasswordError(false);
     if (password) {
-      const url = '/account/remove';
+      const url = process.env.API_URL + 'account/remove';
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -26,9 +26,9 @@ function AccountRemoveConfirmation(props) {
       fetch(url, options)
         .then(response => {
           if(response.ok) {
-            response.json();
+            response.json()
           } else {
-            throw Error(`Error: ${response.status}`);
+            throw Error(`Error: ${response.status}`)
           }
         })
         .then(data => {

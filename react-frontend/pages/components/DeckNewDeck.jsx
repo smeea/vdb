@@ -15,7 +15,7 @@ function DeckNewDeck(props) {
   const createNewDeck = () => {
     if (deckName) {
       let newdeckid;
-      const url = '/decks/create';
+      const url = process.env.API_URL + 'decks/create';
       const options = {
         method: 'POST',
         mode: 'cors',
