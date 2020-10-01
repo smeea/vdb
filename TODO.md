@@ -1,10 +1,11 @@
 # MAJOR FEATURE
 * Beautify card text popover
-* Export/Import (formats: TWD, LackeyCCG) deck
+* Export (formats: TWD, LackeyCCG) deck
 
 # MINOR FEATURE
 * Show-hide password buttons
 * Account edition errors
+* Deck import errors
 * Copy link button to have message
 
 # ADDITIONAL FEATURE

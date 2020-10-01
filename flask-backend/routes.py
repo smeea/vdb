@@ -29,6 +29,7 @@ from search_library import get_library_by_pool
 from search_library import get_library_by_id
 from search_library import get_library_by_set
 from search_library import get_overall_library
+from deck_parse_import import deck_parse_import
 from api import app
 from api import db
 from models import User
@@ -214,6 +215,32 @@ def cloneDeck():
     else:
         return jsonify({'Not logged in.'})
 
+@app.route('/api/decks/import', methods=['POST'])
+def importDeck():
+    if current_user.is_authenticated:
+        try:
+            cards = deck_parse_import(request.json['deckText'])
+            if len(cards) > 0:
+                deckid = uuid.uuid4().hex
+                deckname = 'New imported deck'
+                d = Deck(deckid=deckid,
+                         name=deckname,
+                         author_public_name=current_user.public_name,
+                         description='',
+                         author=current_user,
+                         cards=cards)
+                db.session.add(d)
+                db.session.commit()
+                return jsonify({
+                    'deckid': deckid,
+                })
+            else:
+                return jsonify({'Cannot import this deck.'})
+
+        except Exception:
+            pass
+    else:
+        return jsonify({'Not logged in.'})
 
 @app.route('/api/decks/remove', methods=['POST'])
 def removeDeck():

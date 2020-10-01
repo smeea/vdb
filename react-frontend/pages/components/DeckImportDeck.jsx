@@ -11,34 +11,32 @@ function DeckImportDeck(props) {
 
   const createImportDeck = () => {
     if (deckText) {
-      console.log(deckText);
-      // let newdeckid;
-      // const url = process.env.API_URL + 'decks/create';
-      // const options = {
-      //   method: 'POST',
-      //   mode: 'cors',
-      //   credentials: 'include',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     deckname: deckName,
-      //     decktext: deckText,
-      //   }),
-      // };
+      let newDeckId;
+      const url = process.env.API_URL + 'decks/import';
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          deckText: deckText,
+        }),
+      };
 
-      // fetch(url, options)
-      //   .then(response => response.json())
-      //   .then(data => {
-      //     if (data.error === undefined) {
-      //       newdeckid = data.deckid;
-      //       console.log('new deck id:', newdeckid);
-      //     } else {
-      //       console.log('error: ', data.error);
-      //     };
-      //   })
-      //   .then(() => props.getDecks())
-      //   .then(() => props.setActiveDeck(newdeckid));
+      fetch(url, options)
+        .then(response => response.json())
+        .then(data => {
+          if (data.error === undefined) {
+            newDeckId = data.deckid;
+            console.log('new deck id:', newDeckId);
+          } else {
+            console.log('error: ', data.error);
+          };
+        })
+        .then(() => props.getDecks())
+        .then(() => props.setActiveDeck(newDeckId));
     } else {
       console.log('Error: submit with empty forms');
     }
