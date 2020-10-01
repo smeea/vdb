@@ -27,6 +27,9 @@ function AccountLogin(props) {
     setPasswordError(false);
 
     if (state.username && state.password) {
+      setEmptyUsername(false);
+      setEmptyPassword(false);
+
       const url = process.env.API_URL + 'login';
       const input = {
         username: state.username,

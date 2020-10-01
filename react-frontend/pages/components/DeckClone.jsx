@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { Files } from 'react-bootstrap-icons';
 
-function DeckCloneDeck(props) {
+function DeckClone(props) {
   const cloneDeck = () => {
     let newdeckid;
     const url = process.env.API_URL + 'decks/clone';
@@ -43,4 +43,4 @@ function DeckCloneDeck(props) {
   );
 }
 
-export default DeckCloneDeck;
+export default DeckClone;

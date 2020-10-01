@@ -5,9 +5,12 @@ import { EnvelopeFill } from 'react-bootstrap-icons';
 function AccountChangeEmail(props) {
   const [state, setState] = useState({
     password: '',
-    newEmail: '',
-    confirmEmail: '',
+    email: '',
   });
+
+  const [emptyEmail, setEmptyEmail] = useState(false);
+  const [emptyPassword, setEmptyPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -18,73 +21,101 @@ function AccountChangeEmail(props) {
   };
 
   const changeEmail = () => {
-    if (state.confirmEmail != state.newEmail) {
-      return console.log('email do not match');
+    setPasswordError(false);
+
+    if (state.email && state.password) {
+      setEmptyEmail(false);
+      setEmptyPassword(false);
+
+      const url = process.env.API_URL + 'account';
+      const input = {
+        password: state.password,
+        email: state.email,
+      };
+
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(input),
+      };
+
+      const fetchPromise = fetch(url, options);
+
+      fetchPromise
+        .then((response) => {
+          if (response.ok) {
+            response.json();
+          } else {
+            throw Error(`Error: ${response.status}`);
+          }
+        })
+        .then((data) => {
+          props.setEmail(state.email);
+        })
+        .catch((error) => {
+          setPasswordError(true);
+          setState((prevState) => ({
+            ...prevState,
+            password: '',
+          }));
+          console.log(error);
+        });
     }
 
-    const url = process.env.API_URL + 'account';
-    const input = {
-      password: state.password,
-      newEmail: state.newEmail,
-    };
-
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(input),
-    };
-
-    const fetchPromise = fetch(url, options);
-
-    fetchPromise
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          console.log('email password');
-        } else {
-          console.log('error: ', data.error);
-        }
-      });
+    !state.email ? setEmptyEmail(true) : setEmptyEmail(false);
+    !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
   return (
     <>
       <h6>
-        <EnvelopeFill />
-        Change email
+        <EnvelopeFill /> Change email
       </h6>
-      <form>
-        <input
-          placeholder="New email"
-          type="text"
-          name="newEmail"
-          value={state.newEmail}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          placeholder="Confirm email"
-          type="text"
-          name="confirmEmail"
-          value={state.confirmEmail}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          placeholder="Password"
-          type="password"
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-        />
+      <div className="d-flex">
+        <div>
+          <input
+            placeholder="New email"
+            type="text"
+            name="email"
+            value={state.email}
+            onChange={handleChange}
+          />
+          {emptyEmail && (
+            <>
+              <br />
+              <span className="login-error">Enter email</span>
+            </>
+          )}
+        </div>
+        <div>
+          <input
+            placeholder="Password"
+            type="password"
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+          />
+          {emptyPassword && (
+            <>
+              <br />
+              <span className="login-error">Enter password</span>
+            </>
+          )}
+          {passwordError && (
+            <>
+              <br />
+              <span className="login-error">Wrong password</span>
+            </>
+          )}
+        </div>
         <Button variant="outline-secondary" onClick={changeEmail}>
           Change
         </Button>
-      </form>
+      </div>
     </>
   );
 }

@@ -4,9 +4,10 @@ import { PenFill } from 'react-bootstrap-icons';
 
 function AccountChangeName(props) {
   const [state, setState] = useState({
-    password: '',
     publicName: props.publicName,
   });
+
+  const [emptyPublicName, setEmptyPublicName] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -17,62 +18,69 @@ function AccountChangeName(props) {
   };
 
   const changeName = () => {
-    const url = process.env.API_URL + 'account';
-    const input = {
-      password: state.password,
-      publicName: state.publicName,
+    if (state.publicName) {
+      setEmptyPublicName(false);
+
+      const url = process.env.API_URL + 'account';
+      const input = {
+        publicName: state.publicName,
+      };
+
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(input),
+      };
+
+      const fetchPromise = fetch(url, options);
+
+      fetchPromise
+        .then((response) => {
+          if (response.ok) {
+            response.json();
+          } else {
+            throw Error(`Error: ${response.status}`);
+          }
+        })
+        .then(() => props.setPublicName(state.publicName))
+        .catch((error) => {
+          console.log(error);
+        });
     };
 
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(input),
-    };
-
-    const fetchPromise = fetch(url, options);
-
-    fetchPromise
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          console.log('public name changed');
-        } else {
-          console.log('error: ', data.error);
-        }
-      });
+    !state.publicName ? setEmptyPublicName(true) : setEmptyPublicName(false);
   };
 
   return (
     <>
       <h6>
         <PenFill />
-        Change name
+        Change public name
       </h6>
-      <form>
-        <input
-          placeholder="Public name"
-          type="text"
-          name="publicName"
-          value={state.publicName}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          placeholder="Password"
-          type="password"
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-        />
-
+      <div className="d-flex">
+        <div>
+          <input
+            placeholder="Public name"
+            type="text"
+            name="publicName"
+            value={state.publicName}
+            onChange={handleChange}
+          />
+          {emptyPublicName && (
+            <>
+              <br />
+              <span className="login-error">Enter name</span>
+            </>
+          )}
+        </div>
         <Button variant="outline-secondary" onClick={changeName}>
           Change
         </Button>
-      </form>
+      </div>
     </>
   );
 }

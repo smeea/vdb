@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
-function DeckNameDeck(props) {
+function DeckChangeName(props) {
   const [state, setState] = useState(props.name);
 
   const handleChange = (event) => {
@@ -45,4 +45,4 @@ function DeckNameDeck(props) {
   );
 }
 
-export default DeckNameDeck;
+export default DeckChangeName;

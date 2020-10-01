@@ -84,7 +84,7 @@ function DeckLibraryByTypeTable(props) {
   );
 }
 
-function DeckLibrary(props) {
+function DeckShowLibrary(props) {
   const library = {};
   const librarySide = {};
 
@@ -200,4 +200,4 @@ function DeckLibrary(props) {
   );
 }
 
-export default DeckLibrary;
+export default DeckShowLibrary;

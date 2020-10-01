@@ -10,7 +10,10 @@ function AccountRemoveConfirmation(props) {
 
   const removeAccount = () => {
     setPasswordError(false);
+
     if (password) {
+      setEmptyPassword(false);
+
       const url = process.env.API_URL + 'account/remove';
       const options = {
         method: 'POST',
@@ -23,6 +26,7 @@ function AccountRemoveConfirmation(props) {
           password: password,
         }),
       };
+
       fetch(url, options)
         .then((response) => {
           if (response.ok) {
@@ -32,7 +36,7 @@ function AccountRemoveConfirmation(props) {
           }
         })
         .then((data) => {
-          setShowConfirmation(false);
+          props.setShow(false);
           props.setUsername(undefined);
           console.log('Remove account: ', props.username);
         })
@@ -42,6 +46,7 @@ function AccountRemoveConfirmation(props) {
           console.log(error);
         });
     }
+
     !password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
@@ -66,9 +71,9 @@ function AccountRemoveConfirmation(props) {
           <br />
           <input
             placeholder="Password"
-            type="text"
+            type="password"
             name="password"
-            value={props.password}
+            value={password}
             onChange={handleChange}
           />
           <Button variant="outline-secondary" onClick={removeAccount}>

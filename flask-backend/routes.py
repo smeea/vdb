@@ -182,7 +182,7 @@ def newDeck():
             db.session.add(d)
             db.session.commit()
             return jsonify({
-                'FLASK new deck created': request.json['deckname'],
+                'new deck created': request.json['deckname'],
                 'deckid': deckid,
             })
         except Exception:
@@ -207,7 +207,7 @@ def cloneDeck():
             db.session.add(d)
             db.session.commit()
             return jsonify({
-                'FLASK deck cloned': request.json['deckname'],
+                'deck cloned': request.json['deckname'],
                 'deckid': deckid,
             })
         except Exception:
@@ -231,9 +231,7 @@ def importDeck():
                          cards=cards)
                 db.session.add(d)
                 db.session.commit()
-                return jsonify({
-                    'deckid': deckid,
-                })
+                return jsonify({'deckid': deckid})
             else:
                 return jsonify({'Cannot import this deck.'})
 
@@ -250,7 +248,7 @@ def removeDeck():
                                      deckid=request.json['deckid']).first()
             db.session.delete(d)
             db.session.commit()
-            return jsonify({'FLASK deck removed': request.json['deckid']})
+            return jsonify({'deck removed': request.json['deckid']})
         except Exception:
             return jsonify({'error': 'idk'})
     else:
@@ -289,6 +287,7 @@ def login():
         if current_user.is_authenticated:
             return jsonify({
                 'username': current_user.username,
+                'email': current_user.email,
                 'public_name': current_user.public_name,
             })
         else:
@@ -308,8 +307,7 @@ def login():
 
 @app.route('/api/account', methods=['POST'])
 def account():
-    if current_user.is_authenticated and current_user.check_password(
-            request.json['password']):
+    if current_user.is_authenticated:
         try:
             if (request.json['publicName']):
                 current_user.public_name = request.json['publicName']
@@ -318,21 +316,22 @@ def account():
         except Exception:
             pass
         try:
-            if (request.json['newEmail']):
-                current_user.email = request.json['newEmail']
+
+            if (request.json['email']) and current_user.check_password(request.json['password']):
+                current_user.email = request.json['email']
                 db.session.commit()
                 return jsonify('email changed')
         except Exception:
             pass
         try:
-            if (request.json['newPassword']):
+            if (request.json['newPassword']) and current_user.check_password(request.json['password']):
                 current_user.set_password(request.json['newPassword'])
                 db.session.commit()
                 return jsonify('password changed')
         except Exception:
             pass
     else:
-        return jsonify({'error': 'invalid password'})
+        return jsonify({'error': 'Not logged in'})
 
 
 @app.route('/api/account/remove', methods=['POST'])
@@ -342,11 +341,11 @@ def removeAccount():
         try:
             db.session.delete(current_user)
             db.session.commit()
-            return jsonify({'FLASK account removed': current_user.username})
+            return jsonify({'account removed': current_user.username})
         except Exception:
-            return jsonify({'error': 'idk'})
+            pass
     else:
-        return jsonify({'Not logged in.'})
+        return jsonify({'Not logged in or wrong password.'})
 
 
 @app.route('/api/logout')

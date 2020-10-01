@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Redirect } from 'react-router-dom';
 
-import DeckNewDeck from './components/DeckNewDeck.jsx';
-import DeckImportDeck from './components/DeckImportDeck.jsx';
-import DeckSelectDeck from './components/DeckSelectDeck.jsx';
-import DeckRemoveDeck from './components/DeckRemoveDeck.jsx';
-import DeckShowDeck from './components/DeckShowDeck.jsx';
+import DeckNew from './components/DeckNew.jsx';
+import DeckImport from './components/DeckImport.jsx';
+import DeckSelect from './components/DeckSelect.jsx';
+import DeckShow from './components/DeckShow.jsx';
 
 function Deck(props) {
   const query = new URLSearchParams(useLocation().search);
@@ -67,52 +66,46 @@ function Deck(props) {
         <div className="col-md-12 col-lg-10 col-xl-8 px-0 px-xl-2">
           {props.username && (
             <>
-              <DeckNewDeck
+              <DeckNew
                 setActiveDeck={props.setActiveDeck}
                 getDecks={props.getDecks}
               />
-              <DeckImportDeck
+              <DeckImport
                 setActiveDeck={props.setActiveDeck}
                 getDecks={props.getDecks}
               />
-              <DeckSelectDeck
+              <DeckSelect
                 decks={props.decks}
                 activeDeck={props.activeDeck}
                 setActiveDeck={props.setActiveDeck}
               />
-              {props.decks[props.activeDeck] && (
-                <DeckRemoveDeck
-                  deck={props.decks[props.activeDeck]}
-                  setActiveDeck={props.setActiveDeck}
-                />
-              )}
             </>
           )}
           {props.decks[props.activeDeck] && (
-            <DeckShowDeck
+            <DeckShow
               showImage={props.showImage}
               toggleImage={props.toggleImage}
-              deckUpdate={deckUpdate}
               deck={props.decks[props.activeDeck]}
-              activeDeck={props.activeDeck}
+              deckUpdate={deckUpdate}
+              setActiveDeck={props.setActiveDeck}
+              decks={props.decks}
+              getDecks={props.getDecks}
               deckCardAdd={props.deckCardAdd}
               deckCardChange={props.deckCardChange}
-              getDecks={props.getDecks}
-              setActiveDeck={props.setActiveDeck}
               username={props.username}
             />
           )}
           {sharedDeck && sharedDeckId && (
-            <DeckShowDeck
+            <DeckShow
               showImage={props.showImage}
               toggleImage={props.toggleImage}
-              deckUpdate={deckUpdate}
               deck={sharedDeck[sharedDeckId]}
-              activeDeck={props.activeDeck}
+              deckUpdate={deckUpdate}
+              setActiveDeck={props.setActiveDeck}
+              decks={props.decks}
+              getDecks={props.getDecks}
               deckCardAdd={props.deckCardAdd}
               deckCardChange={props.deckCardChange}
-              getDecks={props.getDecks}
-              setActiveDeck={props.setActiveDeck}
               username={props.username}
             />
           )}

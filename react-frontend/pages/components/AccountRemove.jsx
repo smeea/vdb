@@ -4,7 +4,7 @@ import { TrashFill } from 'react-bootstrap-icons';
 
 import AccountRemoveConfirmation from './AccountRemoveConfirmation.jsx';
 
-function AccountRemoveAccount(props) {
+function AccountRemove(props) {
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   return (
@@ -23,9 +23,10 @@ function AccountRemoveAccount(props) {
         show={showConfirmation}
         setShow={setShowConfirmation}
         username={props.username}
+        setUsername={props.setUsername}
       />
     </>
   );
 }
 
-export default AccountRemoveAccount;
+export default AccountRemove;

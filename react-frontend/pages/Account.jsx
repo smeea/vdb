@@ -5,7 +5,7 @@ import AccountRegister from './components/AccountRegister.jsx';
 import AccountChangePassword from './components/AccountChangePassword.jsx';
 import AccountChangeEmail from './components/AccountChangeEmail.jsx';
 import AccountChangeName from './components/AccountChangeName.jsx';
-import AccountRemoveAccount from './components/AccountRemoveAccount.jsx';
+import AccountRemove from './components/AccountRemove.jsx';
 
 function Account(props) {
   return (
@@ -17,19 +17,21 @@ function Account(props) {
             <>
               <div className="d-flex justify-content-between">
                 <div>
-                  Account: <b>{props.username} </b>
+                  Login: <b>{props.username}</b>
                   <br />
-                  Public Name: <b>{props.publicName} </b>
+                  Public Name: <b>{props.publicName}</b>
+                  <br />
+                  Email: <b>{props.email}</b>
                 </div>
                 <div>
                   <AccountLogout setUsername={props.setUsername} />
                 </div>
               </div>
               <br />
-              <AccountChangeName />
+              <AccountChangeName setPublicName={props.setPublicName} />
               <AccountChangePassword />
-              <AccountChangeEmail />
-              <AccountRemoveAccount
+              <AccountChangeEmail setEmail={props.setEmail} />
+              <AccountRemove
                 username={props.username}
                 setUsername={props.setUsername}
               />

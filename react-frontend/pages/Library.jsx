@@ -4,7 +4,7 @@ import AlertMessage from './components/AlertMessage.jsx';
 import ResultLibrary from './components/ResultLibrary.jsx';
 import SearchLibraryForm from './components/SearchLibraryForm.jsx';
 import DeckPreview from './components/DeckPreview.jsx';
-import DeckSelectDeck from './components/DeckSelectDeck.jsx';
+import DeckSelect from './components/DeckSelect.jsx';
 
 function Library(props) {
   const [results, setResults] = useState(undefined);
@@ -15,7 +15,7 @@ function Library(props) {
       <div className="row mx-0">
         <div className="col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2">
           {Object.keys(props.decks).length > 0 && (
-            <DeckSelectDeck
+            <DeckSelect
               preview={true}
               decks={props.decks}
               activeDeck={props.activeDeck}

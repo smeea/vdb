@@ -15,6 +15,7 @@ import Library from './pages/Library.jsx';
 function App(props) {
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
+  const [email, setEmail] = useState(undefined);
 
   const [showImage, setShowImage] = useState(false);
   const toggleImage = () => setShowImage(!showImage);
@@ -86,6 +87,7 @@ function App(props) {
       .then((data) => {
         setUsername(data.username);
         setPublicName(data.public_name);
+        setEmail(data.email);
       });
   };
 
@@ -96,6 +98,7 @@ function App(props) {
   useEffect(() => {
     if (username) {
       getDecks();
+      whoAmI();
     } else {
       setDecks({});
     }
@@ -115,8 +118,10 @@ function App(props) {
               <Account
                 username={username}
                 publicName={publicName}
+                email={email}
                 setUsername={setUsername}
                 setPublicName={setPublicName}
+                setEmail={setEmail}
               />
             )}
           />
@@ -126,11 +131,11 @@ function App(props) {
             component={() => (
               <Deck
                 decks={decks}
+                getDecks={getDecks}
                 activeDeck={activeDeck}
                 setActiveDeck={setActiveDeck}
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
-                getDecks={getDecks}
                 showImage={showImage}
                 toggleImage={toggleImage}
                 username={username}
@@ -143,11 +148,11 @@ function App(props) {
             component={(props) => (
               <Deck
                 decks={decks}
+                getDecks={getDecks}
                 activeDeck={activeDeck}
                 setActiveDeck={setActiveDeck}
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
-                getDecks={getDecks}
                 showImage={showImage}
                 toggleImage={toggleImage}
                 username={username}

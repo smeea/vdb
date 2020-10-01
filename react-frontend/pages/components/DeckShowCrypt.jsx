@@ -142,7 +142,7 @@ function DeckCryptBody(props) {
   return <tbody>{cards}</tbody>;
 }
 
-function DeckCrypt(props) {
+function DeckShowCrypt(props) {
   const dSet = new Set();
   for (const card of Object.keys(props.cards)) {
     for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
@@ -232,4 +232,4 @@ function DeckCrypt(props) {
   );
 }
 
-export default DeckCrypt;
+export default DeckShowCrypt;

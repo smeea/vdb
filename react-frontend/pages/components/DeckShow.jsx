@@ -1,24 +1,32 @@
 import React from 'react';
 
-import DeckCrypt from './DeckCrypt.jsx';
-import DeckLibrary from './DeckLibrary.jsx';
+import DeckShowCrypt from './DeckShowCrypt.jsx';
+import DeckShowLibrary from './DeckShowLibrary.jsx';
 import DeckDraw from './DeckDraw.jsx';
-import DeckNewCryptName from './DeckNewCryptName.jsx';
-import DeckNewLibraryName from './DeckNewLibraryName.jsx';
-import DeckNameDeck from './DeckNameDeck.jsx';
-import DeckAuthorDeck from './DeckAuthorDeck.jsx';
-import DeckDescriptionDeck from './DeckDescriptionDeck.jsx';
-import DeckCloneDeck from './DeckCloneDeck.jsx';
+import DeckNewCryptCard from './DeckNewCryptCard.jsx';
+import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
+import DeckChangeName from './DeckChangeName.jsx';
+import DeckChangeAuthor from './DeckChangeAuthor.jsx';
+import DeckChangeDescription from './DeckChangeDescription.jsx';
+import DeckClone from './DeckClone.jsx';
+import DeckRemove from './DeckRemove.jsx';
 import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
 
-function DeckShowDeck(props) {
+function DeckShow(props) {
   const isAuthor = props.username == props.deck.owner;
+  console.log(props.deck);
 
   return (
     <>
+      {(isAuthor && props.deck) && (
+        <DeckRemove
+          deck={props.deck}
+          setActiveDeck={props.setActiveDeck}
+        />
+      )}
       <DeckCopyUrlButton value={props.deck.deckid} />
       {props.username && (
-        <DeckCloneDeck
+        <DeckClone
           author={props.deck.author}
           name={props.deck.name}
           deckid={props.deck.deckid}
@@ -27,29 +35,29 @@ function DeckShowDeck(props) {
         />
       )}
       <br />
-      <DeckNameDeck
+      <DeckChangeName
         name={props.deck.name}
         deckUpdate={props.deckUpdate}
         deckid={props.deck.deckid}
         isAuthor={isAuthor}
       />
-      <DeckDescriptionDeck
+      <DeckChangeDescription
         description={props.deck.description}
         deckUpdate={props.deckUpdate}
         deckid={props.deck.deckid}
         isAuthor={isAuthor}
       />
-      <DeckAuthorDeck
+      <DeckChangeAuthor
         author={props.deck.author}
         deckUpdate={props.deckUpdate}
         deckid={props.deck.deckid}
         isAuthor={isAuthor}
       />
       <br />
-      {isAuthor && <DeckNewCryptName deckCardAdd={props.deckCardAdd} />}
-      {isAuthor && <DeckNewLibraryName deckCardAdd={props.deckCardAdd} />}
+      {isAuthor && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
+      {isAuthor && <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />}
       <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />
-      <DeckCrypt
+      <DeckShowCrypt
         deckCardChange={props.deckCardChange}
         deckid={props.deck.deckid}
         cards={props.deck.crypt}
@@ -58,7 +66,7 @@ function DeckShowDeck(props) {
         isAuthor={isAuthor}
       />
       <br />
-      <DeckLibrary
+      <DeckShowLibrary
         deckCardChange={props.deckCardChange}
         deckid={props.deck.deckid}
         cards={props.deck.library}
@@ -70,4 +78,4 @@ function DeckShowDeck(props) {
   );
 }
 
-export default DeckShowDeck;
+export default DeckShow;

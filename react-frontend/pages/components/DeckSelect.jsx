@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 
-function DeckSelectDeck(props) {
+function DeckSelect(props) {
   const [state, setState] = useState(props.decks);
 
   const byTimestamp = (a, b) => {
@@ -59,4 +59,4 @@ function DeckSelectDeck(props) {
   );
 }
 
-export default DeckSelectDeck;
+export default DeckSelect;

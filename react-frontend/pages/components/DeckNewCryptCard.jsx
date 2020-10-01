@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
 
-import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
-import ResultLibraryCost from './ResultLibraryCost.jsx';
-import ResultLibraryClan from './ResultLibraryClan.jsx';
+import ResultCryptClan from './ResultCryptClan.jsx';
+import ResultCryptCapacity from './ResultCryptCapacity.jsx';
+import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 
-function DeckNewLibraryName(props) {
+function DeckNewCryptCard(props) {
   const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
 
@@ -29,7 +28,7 @@ function DeckNewLibraryName(props) {
   };
 
   const loadOptions = (inputValue) => {
-    const url = process.env.API_URL + 'search/library';
+    const url = process.env.API_URL + 'search/crypt';
     const input = { name: inputValue };
     const options = {
       method: 'POST',
@@ -52,7 +51,7 @@ function DeckNewLibraryName(props) {
     <div className="input-group mb-3">
       <div className="input-group-prepend">
         <span className="input-group-text" id="basic-addon1">
-          Add Library
+          Add Crypt
         </span>
       </div>
       <div className="flex-grow-1">
@@ -64,30 +63,16 @@ function DeckNewLibraryName(props) {
             <>
               <div className="d-flex align-items-center justify-content-between">
                 <div>
-                  <ResultLibraryType cardtype={card['Type']} />
-                  <span className="pl-1">
-                    {card['Name'] + (card['Banned'] ? ' [BANNED]' : '')}
+                  <ResultCryptCapacity value={card['Capacity']} />
+                  <span className="px-2">
+                    {card['Name'] +
+                      (card['Adv'] ? ' [ADV]' : '') +
+                      (card['Banned'] ? ' [BANNED]' : '')}
                   </span>
+                  <ResultCryptClan value={card['Clan']} />
                 </div>
-                <div>
-                  {card['Discipline'] && (
-                    <span className="pl-2">
-                      <ResultLibraryDisciplines value={card['Discipline']} />
-                    </span>
-                  )}
-                  {card['Clan'] && (
-                    <span className="pl-2">
-                      <ResultLibraryClan value={card['Clan']} />
-                    </span>
-                  )}
-                  {(card['Blood Cost'] || card['Pool Cost']) && (
-                    <span className="pl-2">
-                      <ResultLibraryCost
-                        valuePool={card['Pool Cost']}
-                        valueBlood={card['Blood Cost']}
-                      />
-                    </span>
-                  )}
+                <div className="d-flex flex-nowrap">
+                  <ResultCryptDisciplines value={card['Disciplines']} />
                 </div>
               </div>
             </>
@@ -104,4 +89,4 @@ function DeckNewLibraryName(props) {
   );
 }
 
-export default DeckNewLibraryName;
+export default DeckNewCryptCard;

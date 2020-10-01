@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { TrashFill } from 'react-bootstrap-icons';
 
-import DeckRemoveDeckConfirmation from './DeckRemoveDeckConfirmation.jsx';
+import DeckRemoveConfirmation from './DeckRemoveConfirmation.jsx';
 
-function DeckRemoveDeck(props) {
+function DeckRemove(props) {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
@@ -38,9 +38,9 @@ function DeckRemoveDeck(props) {
         variant="outline-secondary"
         onClick={() => setShowConfirmation(true)}
       >
-        <TrashFill /> Remove
+        <TrashFill /> Remove Deck
       </Button>
-      <DeckRemoveDeckConfirmation
+      <DeckRemoveConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
@@ -50,4 +50,4 @@ function DeckRemoveDeck(props) {
   );
 }
 
-export default DeckRemoveDeck;
+export default DeckRemove;
