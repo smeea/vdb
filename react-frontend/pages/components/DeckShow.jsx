@@ -14,7 +14,6 @@ import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
 
 function DeckShow(props) {
   const isAuthor = props.username == props.deck.owner;
-  console.log(props.deck);
 
   return (
     <>

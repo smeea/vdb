@@ -5,7 +5,11 @@ import { X, Check2 } from 'react-bootstrap-icons';
 function SearchLibraryFormButtons(props) {
   return (
     <>
-      {props.spinner ? (
+      {!props.spinner ? (
+        <Button variant="outline-secondary" type="submit">
+          <Check2 size={20} />
+        </Button>
+      ) : (
         <Button variant="outline-secondary">
           <Spinner
             as="span"
@@ -15,11 +19,7 @@ function SearchLibraryFormButtons(props) {
             aria-hidden="true"
           />
           <span className="sr-only">Loading...</span>
-        </Button>
-      ) : (
-        <Button variant="outline-secondary" type="submit">
           <Spinner />
-          <Check2 size={20} />
         </Button>
       )}
       <Button variant="outline-secondary" onClick={props.handleClearButton}>

@@ -5,7 +5,6 @@
 # MINOR FEATURE
 * Show-hide password buttons
 * Copy link button to have message
-* Button spinners - import deck, create deck?
 
 # ADDITIONAL FEATURE
 * Temporary 'add to compare' button

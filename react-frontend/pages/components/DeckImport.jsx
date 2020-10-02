@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Spinner, Button } from 'react-bootstrap';
 
 function DeckImport(props) {
   const [deckText, setDeckText] = useState('');
   const [emptyDeckText, setEmptyDeckText] = useState(false);
   const [importError, setImportError] = useState(false);
+
+  const [spinnerState, setSpinnerState] = useState(false);
 
   const handleChange = (event) => {
     setDeckText(event.target.value);
@@ -15,6 +17,7 @@ function DeckImport(props) {
 
     if (deckText) {
       setEmptyDeckText(false);
+      setSpinnerState(true);
 
       let newDeckId;
       const url = process.env.API_URL + 'decks/import';
@@ -39,9 +42,12 @@ function DeckImport(props) {
           console.log('new deck id:', newDeckId);
         })
         .then(() => props.getDecks())
-        .then(() => props.setActiveDeck(newDeckId))
+        .then(() => {
+          props.setActiveDeck(newDeckId);
+        })
         .catch((error) => {
           setImportError(true);
+          setSpinnerState(false);
           console.log(error);
         });
     };
@@ -64,9 +70,24 @@ function DeckImport(props) {
           value={deckText}
           onChange={handleChange}
         />
-        <Button variant="outline-secondary" onClick={createImportDeck}>
-          Import
-        </Button>
+        {spinnerState ? (
+          <Button variant="outline-secondary" onClick={createImportDeck}>
+            <Spinner
+              as="span"
+              animation="border"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+            <span className="sr-only">Loading...</span>
+            <Spinner />
+            Import
+          </Button>
+        ) : (
+          <Button variant="outline-secondary" onClick={createImportDeck}>
+            Import
+          </Button>
+        )}
       </div>
       {emptyDeckText && (
         <div className="d-flex justify-content-end">
