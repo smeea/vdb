@@ -27,13 +27,16 @@
 * Toggle search button
 * Toggle deck button
 
-# IMPROVE TECHNOLOGY
-* Forms to Boostrap FormControl
+# IMPROVE TECHNOLOGY - FRONTEND
+* Forms to React-Hook-Forms / Formik
 * Keys to use nanoid
-* Remove lodash dependency
 * Use day.js for dates
 * Add props validation
-* Image lazy load
+* Use Next.js
+
+# IMPROVE TECHNOLOGY - BACKEND
+* Use Celery
+* Use Redis
 
 # FIX TECHNOLOGY
 * DeckPreviewCrypt/Library to use Result components

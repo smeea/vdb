@@ -1,6 +1,7 @@
 # VDB
 
-VDB is card search & deck building tool for Vampire the Eternal Struggle (VTES) collectible card game. It is a successor of vtes-db - https://github.com/smeea/vtes-db.
+VDB is card search & deck building tool for Vampire the Eternal Struggle (VTES) collectible card game.
+It is a successor of vtes-db - https://github.com/smeea/vtes-db.
 
 ## Components
 

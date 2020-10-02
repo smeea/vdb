@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import _ from 'lodash';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './assets/css/bootstrap.min.css';
@@ -35,7 +34,7 @@ function App(props) {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          if (!_.isEqual(data, decks)) {
+          if (JSON.stringify(data) != JSON.stringify(decks)) {
             setDecks(data);
           }
         } else {
