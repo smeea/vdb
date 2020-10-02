@@ -64,9 +64,9 @@ function About(props) {
           </p>
 
           <p>
-            <a href="#">
+            <span className="link-like">
               <b>Secret Library</b>
-            </a>
+            </span>
             <br />
             Now resting in peace, but probably inspired most of existing
             projects including this one.
@@ -98,8 +98,8 @@ function About(props) {
 
           <h5>PRIVACY</h5>
           <p>
-            We respect privacy and promise to not give access to your data
-            (email, decks, etc) to anybody.
+            We respect privacy and promise to not give your data (email, decks,
+            etc) to anybody.
           </p>
 
           <h5>DONATIONS</h5>

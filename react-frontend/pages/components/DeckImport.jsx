@@ -36,8 +36,8 @@ function DeckImport(props) {
       const fetchPromise = fetch(url, options);
 
       fetchPromise
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           newDeckId = data.deckid;
           console.log('new deck id:', newDeckId);
         })
@@ -50,7 +50,7 @@ function DeckImport(props) {
           setSpinnerState(false);
           console.log(error);
         });
-    };
+    }
 
     !deckText ? setEmptyDeckText(true) : setEmptyDeckText(false);
   };

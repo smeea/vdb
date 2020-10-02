@@ -17,11 +17,8 @@ function DeckShow(props) {
 
   return (
     <>
-      {(isAuthor && props.deck) && (
-        <DeckRemove
-          deck={props.deck}
-          setActiveDeck={props.setActiveDeck}
-        />
+      {isAuthor && props.deck && (
+        <DeckRemove deck={props.deck} setActiveDeck={props.setActiveDeck} />
       )}
       <DeckCopyUrlButton value={props.deck.deckid} />
       {props.username && (

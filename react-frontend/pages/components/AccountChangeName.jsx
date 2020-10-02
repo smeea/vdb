@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { PenFill } from 'react-bootstrap-icons';
 
+import OverlayTooltip from './OverlayTooltip.jsx';
+
 function AccountChangeName(props) {
   const [state, setState] = useState({
     publicName: props.publicName,
@@ -50,16 +52,19 @@ function AccountChangeName(props) {
         .catch((error) => {
           console.log(error);
         });
-    };
+    }
 
     !state.publicName ? setEmptyPublicName(true) : setEmptyPublicName(false);
   };
 
   return (
     <>
-      <h6>
+      <h6 className="d-flex align-items-center">
         <PenFill />
-        Change public name
+        <span className="ml-1">Change public name</span>
+        <OverlayTooltip text="Used as default author name for new decks. Author name is per-deck and can be changed anytime for each deck.">
+          <span className="question-tooltip ml-1">[?]</span>
+        </OverlayTooltip>
       </h6>
       <div className="d-flex">
         <div>

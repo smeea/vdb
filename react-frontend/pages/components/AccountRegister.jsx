@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { PersonPlusFill } from 'react-bootstrap-icons';
+import { PersonPlusFill, EyeFill, EyeSlashFill } from 'react-bootstrap-icons';
 
 function AccountRegister(props) {
   const [state, setState] = useState({
@@ -11,6 +11,7 @@ function AccountRegister(props) {
   const [usernameError, setUsernameError] = useState(false);
   const [emptyUsername, setEmptyUsername] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
+  const [hidePassword, setHidePassword] = useState(true);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -65,8 +66,9 @@ function AccountRegister(props) {
 
   return (
     <>
-      <h6>
-        <PersonPlusFill /> Create Account
+      <h6 className="d-flex align-items-center">
+        <PersonPlusFill />
+        <span className="ml-1">Create account</span>
       </h6>
       <div className="d-flex">
         <div>
@@ -91,19 +93,32 @@ function AccountRegister(props) {
           )}
         </div>
         <div>
-          <input
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={state.password}
-            onChange={handleChange}
-          />
-          {emptyPassword && (
-            <>
-              <br />
-              <span className="login-error">Enter password</span>
-            </>
-          )}
+          <div className="d-flex align-items-center">
+            {hidePassword ? (
+              <input
+                placeholder="Password"
+                type="password"
+                name="password"
+                value={state.password}
+                onChange={handleChange}
+              />
+            ) : (
+              <input
+                placeholder="Password"
+                type="text"
+                name="password"
+                value={state.password}
+                onChange={handleChange}
+              />
+            )}
+            <span
+              className="password-hide-show"
+              onClick={() => setHidePassword(!hidePassword)}
+            >
+              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+            </span>
+          </div>
+          {emptyPassword && <span className="login-error">Enter password</span>}
         </div>
         <Button variant="outline-secondary" onClick={registerUser}>
           Create

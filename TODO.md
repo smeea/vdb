@@ -3,16 +3,14 @@
 * Export (formats: TWD, LackeyCCG) deck
 
 # MINOR FEATURE
-* Show-hide password buttons
-* Copy link button to have message
 
 # ADDITIONAL FEATURE
 * Temporary 'add to compare' button
-* Clear cross into input fields
 * Card rulings
 
 # MAJOR FIX
 * Create new accordion
+* Null deck by url error
 
 # MINOR FIX
 * Trifle icon antialiasing
@@ -36,6 +34,7 @@
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery
 * Use Redis
+* Flask-Restful
 
 # FIX TECHNOLOGY
 * DeckPreviewCrypt/Library to use Result components

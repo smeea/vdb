@@ -22,8 +22,7 @@ function DeckCopyUrlButton(props) {
         <Button variant="outline-success" onClick={handleButton}>
           <ShareFill /> Copied
         </Button>
-      )
-      }
+      )}
     </>
   );
 }

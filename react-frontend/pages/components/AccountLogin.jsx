@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Tooltip, Overlay, Button } from 'react-bootstrap';
-import { DoorOpenFill } from 'react-bootstrap-icons';
+import { DoorOpenFill, EyeFill, EyeSlashFill } from 'react-bootstrap-icons';
 
 function AccountLogin(props) {
   const [state, setState] = useState({
@@ -14,6 +14,7 @@ function AccountLogin(props) {
   const [passwordError, setPasswordError] = useState(false);
   const [emptyUsername, setEmptyUsername] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
+  const [hidePassword, setHidePassword] = useState(true);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -95,27 +96,34 @@ function AccountLogin(props) {
           )}
         </div>
         <div>
-          <input
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={state.password}
-            onChange={handleChange}
-          />
-          {passwordError && (
-            <>
-              <br />
-              <span className="login-error">Wrong password</span>
-            </>
-          )}
-          {emptyPassword && (
-            <>
-              <br />
-              <span className="login-error">Enter password</span>
-            </>
-          )}
-          <br />
-          <span
+          <div className="d-flex align-items-center">
+            {hidePassword ? (
+              <input
+                placeholder="Password"
+                type="password"
+                name="password"
+                value={state.password}
+                onChange={handleChange}
+              />
+            ) : (
+              <input
+                placeholder="Password"
+                type="text"
+                name="password"
+                value={state.password}
+                onChange={handleChange}
+              />
+            )}
+            <span
+              className="password-hide-show"
+              onClick={() => setHidePassword(!hidePassword)}
+            >
+              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+            </span>
+          </div>
+          {passwordError && <span className="login-error">Wrong password</span>}
+          {emptyPassword && <span className="login-error">Enter password</span>}
+          <div
             className="forgot-password"
             ref={targetForgotPassword}
             onClick={() => setShowForgotPassword(!showForgotPassword)}
@@ -123,10 +131,10 @@ function AccountLogin(props) {
             <a href="#">
               <i>Forgot password?</i>
             </a>
-          </span>
+          </div>
           <Overlay
             target={targetForgotPassword.current}
-            placement="right"
+            placement="bottom"
             show={showForgotPassword}
           >
             {(props) => (

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { EnvelopeFill } from 'react-bootstrap-icons';
 
+import OverlayTooltip from './OverlayTooltip.jsx';
+
 function AccountChangeEmail(props) {
   const [state, setState] = useState({
     password: '',
@@ -72,8 +74,12 @@ function AccountChangeEmail(props) {
 
   return (
     <>
-      <h6>
-        <EnvelopeFill /> Change email
+      <h6 className="d-flex align-items-center">
+        <EnvelopeFill />
+        <span className="ml-1">Change email</span>
+        <OverlayTooltip text="For password recovery only. We will not share it with anyone and will not send you marketing materials.">
+          <span className="question-tooltip ml-1">[?]</span>
+        </OverlayTooltip>
       </h6>
       <div className="d-flex">
         <div>

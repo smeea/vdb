@@ -31,7 +31,7 @@ function DeckNew(props) {
       const fetchPromise = fetch(url, options);
 
       fetchPromise
-        .then(response => response.json())
+        .then((response) => response.json())
         .then((data) => {
           newdeckid = data.deckid;
           console.log('new deck id:', newdeckid);
@@ -42,7 +42,7 @@ function DeckNew(props) {
           setCreateError(true);
           console.log(error);
         });
-    };
+    }
 
     !deckName ? setEmptyDeckName(true) : setEmptyDeckName(false);
   };
@@ -77,7 +77,6 @@ function DeckNew(props) {
           <span className="login-error">Unknown error</span>
         </div>
       )}
-
     </div>
   );
 }
