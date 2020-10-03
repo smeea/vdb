@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Redirect } from 'react-router-dom';
 
+import AlertMessage from './components/AlertMessage.jsx';
 import DeckNew from './components/DeckNew.jsx';
 import DeckImport from './components/DeckImport.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
@@ -95,20 +96,29 @@ function Deck(props) {
               username={props.username}
             />
           )}
-          {sharedDeck && sharedDeckId && (
-            <DeckShow
-              showImage={props.showImage}
-              toggleImage={props.toggleImage}
-              deck={sharedDeck[sharedDeckId]}
-              deckUpdate={deckUpdate}
-              setActiveDeck={props.setActiveDeck}
-              decks={props.decks}
-              getDecks={props.getDecks}
-              deckCardAdd={props.deckCardAdd}
-              deckCardChange={props.deckCardChange}
-              username={props.username}
-            />
-          )}
+          {sharedDeckId ? (
+            sharedDeck && sharedDeck[sharedDeckId] ? (
+              <DeckShow
+                showImage={props.showImage}
+                toggleImage={props.toggleImage}
+                deck={sharedDeck[sharedDeckId]}
+                deckUpdate={deckUpdate}
+                setActiveDeck={props.setActiveDeck}
+                decks={props.decks}
+                getDecks={props.getDecks}
+                deckCardAdd={props.deckCardAdd}
+                deckCardChange={props.deckCardChange}
+                username={props.username}
+              />
+            ) : (
+              <AlertMessage
+                className="error-message"
+                value={
+                  <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>
+                }
+              />
+            )
+          ) : null}
         </div>
 
         <div className="col-md-12 col-lg-1 col-xl-2 px-0 px-xl-2"></div>

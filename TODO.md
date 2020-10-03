@@ -1,6 +1,7 @@
 # MAJOR FEATURE
 * Beautify card text popover
 * Export (formats: TWD, LackeyCCG) deck
+* Import deck from file
 
 # MINOR FEATURE
 
@@ -10,12 +11,11 @@
 
 # MAJOR FIX
 * Create new accordion
-* Null deck by url error
+* Increase width of main column
 
 # MINOR FIX
 * Trifle icon antialiasing
 * Shared deck redraw on imageshow
-* Add icons to buttons
 * Redirect from login to decks
 * Redirect to about from / page
 

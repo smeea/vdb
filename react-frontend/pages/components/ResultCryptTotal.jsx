@@ -36,7 +36,7 @@ function ResultCryptTotal(props) {
     </>
   );
 
-  return <AlertMessage className="info-message" value={value} />;
+  return <AlertMessage className="info-message">{value}</AlertMessage>;
 }
 
 export default ResultCryptTotal;

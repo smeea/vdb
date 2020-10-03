@@ -66,8 +66,14 @@ function DeckImport(props) {
           </span>
         </div>
         <textarea
-          className="form-control"
+          className="form-control deck-import"
+          rows={
+            deckText.split(/\r\n|\r|\n/).length < 30
+              ? deckText.split(/\r\n|\r|\n/).length
+              : 30
+          }
           value={deckText}
+          placeholder="Paste deck here"
           onChange={handleChange}
         />
         {spinnerState ? (
@@ -92,7 +98,7 @@ function DeckImport(props) {
       {emptyDeckText && (
         <div className="d-flex justify-content-end">
           <br />
-          <span className="login-error">Paste deck to import</span>
+          <span className="login-error">Paste deck</span>
         </div>
       )}
       {importError && (
