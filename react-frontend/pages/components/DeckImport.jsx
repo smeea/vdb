@@ -8,12 +8,15 @@ function DeckImport(props) {
 
   const [spinnerState, setSpinnerState] = useState(false);
 
+  const fileInput = React.createRef();
+
   const handleChange = (event) => {
     setDeckText(event.target.value);
   };
 
-  const createImportDeck = () => {
+  const importDeck = () => {
     setImportError(false);
+    setEmptyDeckText(false);
 
     if (deckText) {
       setEmptyDeckText(false);
@@ -50,9 +53,50 @@ function DeckImport(props) {
           setSpinnerState(false);
           console.log(error);
         });
-    }
+    } else if (fileInput.current.files.length) {
 
-    !deckText ? setEmptyDeckText(true) : setEmptyDeckText(false);
+      let newDeckId;
+      const reader = new FileReader();
+      reader.readAsText(fileInput.current.files[0]);
+      reader.onload = () => {
+        console.log(reader.result)
+
+        const url = process.env.API_URL + 'decks/import';
+        const options = {
+          method: 'POST',
+          mode: 'cors',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            deckText: reader.result,
+          }),
+        };
+
+        const fetchPromise = fetch(url, options);
+
+        fetchPromise
+          .then((response) => response.json())
+          .then((data) => {
+            newDeckId = data.deckid;
+            console.log('new deck id:', newDeckId);
+          })
+          .then(() => props.getDecks())
+          .then(() => {
+            props.setActiveDeck(newDeckId);
+          })
+          .catch((error) => {
+            setImportError(true);
+            setSpinnerState(false);
+            console.log(error);
+          });
+      };
+      setEmptyDeckText(false);
+      setSpinnerState(true);
+    } else {
+      setEmptyDeckText(true);
+    }
   };
 
   return (
@@ -76,8 +120,12 @@ function DeckImport(props) {
           placeholder="Paste deck here"
           onChange={handleChange}
         />
-        {spinnerState ? (
-          <Button variant="outline-secondary" onClick={createImportDeck}>
+        {!spinnerState ? (
+          <Button variant="outline-secondary" onClick={importDeck}>
+            Import
+          </Button>
+        ) : (
+          <Button variant="outline-secondary" onClick={importDeck}>
             <Spinner
               as="span"
               animation="border"
@@ -85,12 +133,7 @@ function DeckImport(props) {
               role="status"
               aria-hidden="true"
             />
-            <span className="sr-only">Loading...</span>
             <Spinner />
-            Import
-          </Button>
-        ) : (
-          <Button variant="outline-secondary" onClick={createImportDeck}>
             Import
           </Button>
         )}
@@ -107,6 +150,13 @@ function DeckImport(props) {
           <span className="login-error">Cannot import this deck</span>
         </div>
       )}
+      <div>
+        <input
+          ref={fileInput}
+          accept="text/*"
+          type="file"
+        />
+      </div>
     </div>
   );
 }

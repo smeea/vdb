@@ -80,7 +80,7 @@ def updateDeck(deckid):
                 d.cards = merged_cards.copy()
                 d.timestamp = datetime.utcnow()
                 db.session.commit()
-                return jsonify({'updated deck': d.deckid, 'cards': d.cards})
+                return jsonify({'updated deck': d.deckid, 'name': d.name})
         except Exception:
             pass
         try:
@@ -215,6 +215,7 @@ def cloneDeck():
     else:
         return jsonify({'Not logged in.'})
 
+
 @app.route('/api/decks/import', methods=['POST'])
 def importDeck():
     if current_user.is_authenticated:
@@ -232,13 +233,94 @@ def importDeck():
                 db.session.add(d)
                 db.session.commit()
                 return jsonify({'deckid': deckid})
-            else:
-                return jsonify({'Cannot import this deck.'})
+            return jsonify({'Cannot import this deck.'})
 
         except Exception:
             pass
     else:
         return jsonify({'Not logged in.'})
+
+
+@app.route('/api/decks/export', methods=['POST'])
+def exportDeck():
+    try:
+        d = Deck.query.filter_by(deckid=request.json['deckid']).first()
+        crypt = {}
+        library = {}
+        for k, v in d.cards.items():
+            k = int(k)
+            if k > 200000:
+                crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
+            elif k < 200000:
+                library[k] = {'c': get_library_by_id(k), 'q': v}
+
+        deck = ''
+
+        if request.json['format'] == 'lackey':
+            for k, v in library.items():
+                deck += str(v['q'])
+                if v['q'] < 10:
+                    deck += '       '
+                else:
+                    deck += '      '
+                deck += v['c']['Name'] + '\n'
+
+            deck += 'Crypt:\n'
+
+            for k, v in crypt.items():
+                deck += str(v['q'])
+                if v['q'] < 10:
+                    deck += '       '
+                else:
+                    deck += '      '
+                deck += v['c']['Name'] + '\n'
+
+        elif request.json['format'] == 'text':
+            byType = {}
+            for k, v in library.items():
+                cardType = v['c']['Type']
+                cardName = v['c']['Name']
+                if cardType not in byType:
+                    byType[cardType] = {}
+                    byType[cardType][cardName] = v['q']
+                else:
+                    byType[cardType][cardName] = v['q']
+
+            # byTypeOrder = [
+            #     'Master', 'Action', 'Action Modifier', 'Combat', 'Equipment',
+            #     'Political Action', 'Ally', 'Retainer', 'Reaction', 'Event'
+            # ]
+
+            deck += 'Deck Name: ' + d.name + '\n'
+            deck += 'Author: ' + d.author.public_name + '\n'
+            deck += 'Description: ' + d.description + '\n'
+            deck += '\n'
+            deck += 'Crypt (X cards)' + '\n'
+            deck += '==================\n'
+            for k, v in crypt.items():
+                deck += str(v['q']) + 'x '
+                deck += v['c']['Name'] + '\n'
+
+            deck += '\n'
+            deck += 'Library: XX cards' + '\n'
+            deck += '\n'
+
+            for k, v in byType.items():
+                deck += k + ' (X CARDS)' '\n'
+                deck += '==================\n'
+                for i, j in v.items():
+                    deck += str(j) + 'x ' + i + '\n'
+                deck += '\n'
+
+        return jsonify({
+            'name': d.name,
+            'format': request.json['format'],
+            'deck': deck
+        })
+
+    except Exception:
+        pass
+
 
 @app.route('/api/decks/remove', methods=['POST'])
 def removeDeck():
@@ -317,14 +399,16 @@ def account():
             pass
         try:
 
-            if (request.json['email']) and current_user.check_password(request.json['password']):
+            if (request.json['email']) and current_user.check_password(
+                    request.json['password']):
                 current_user.email = request.json['email']
                 db.session.commit()
                 return jsonify('email changed')
         except Exception:
             pass
         try:
-            if (request.json['newPassword']) and current_user.check_password(request.json['password']):
+            if (request.json['newPassword']) and current_user.check_password(
+                    request.json['password']):
                 current_user.set_password(request.json['newPassword'])
                 db.session.commit()
                 return jsonify('password changed')

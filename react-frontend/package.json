@@ -29,6 +29,7 @@
     "react-select": "^3.1.0"
   },
   "dependencies": {
+    "file-saver": "^2.0.2",
     "lodash": "^4.17.20",
     "react-bootstrap": "^1.0.1",
     "react-bootstrap-icons": "^1.0.0",

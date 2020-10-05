@@ -1,7 +1,5 @@
 # MAJOR FEATURE
 * Beautify card text popover
-* Export (formats: TWD, LackeyCCG) deck
-* Import deck from file
 
 # MINOR FEATURE
 
@@ -12,6 +10,7 @@
 # MAJOR FIX
 * Create new accordion
 * Increase width of main column
+* Export card quantity
 
 # MINOR FIX
 * Trifle icon antialiasing
@@ -32,8 +31,7 @@
 * Use Next.js
 
 # IMPROVE TECHNOLOGY - BACKEND
-* Use Celery
-* Use Redis
+* Use Celery + Redis / RabbitMQ
 * Flask-Restful
 
 # FIX TECHNOLOGY

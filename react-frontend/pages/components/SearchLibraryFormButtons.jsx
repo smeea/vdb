@@ -18,7 +18,6 @@ function SearchLibraryFormButtons(props) {
             role="status"
             aria-hidden="true"
           />
-          <span className="sr-only">Loading...</span>
           <Spinner />
         </Button>
       )}

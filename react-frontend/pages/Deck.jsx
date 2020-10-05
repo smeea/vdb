@@ -4,6 +4,7 @@ import { useLocation, Redirect } from 'react-router-dom';
 import AlertMessage from './components/AlertMessage.jsx';
 import DeckNew from './components/DeckNew.jsx';
 import DeckImport from './components/DeckImport.jsx';
+import DeckExport from './components/DeckExport.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
 import DeckShow from './components/DeckShow.jsx';
 
@@ -74,6 +75,9 @@ function Deck(props) {
               <DeckImport
                 setActiveDeck={props.setActiveDeck}
                 getDecks={props.getDecks}
+              />
+              <DeckExport
+                activeDeck={props.activeDeck}
               />
               <DeckSelect
                 decks={props.decks}
