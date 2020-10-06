@@ -249,9 +249,9 @@ def exportDeck():
         library = {}
         for k, v in d.cards.items():
             k = int(k)
-            if k > 200000:
+            if k > 200000 and v > 0:
                 crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
-            elif k < 200000:
+            elif k < 200000 and v > 0:
                 library[k] = {'c': get_library_by_id(k), 'q': v}
 
         deck = ''
@@ -276,37 +276,63 @@ def exportDeck():
                 deck += v['c']['Name'] + '\n'
 
         elif request.json['format'] == 'text':
-            byType = {}
-            for k, v in library.items():
-                cardType = v['c']['Type']
-                cardName = v['c']['Name']
-                if cardType not in byType:
-                    byType[cardType] = {}
-                    byType[cardType][cardName] = v['q']
-                else:
-                    byType[cardType][cardName] = v['q']
-
             # byTypeOrder = [
             #     'Master', 'Action', 'Action Modifier', 'Combat', 'Equipment',
             #     'Political Action', 'Ally', 'Retainer', 'Reaction', 'Event'
             # ]
 
+            byType = {}
+            byTypeTotal = {}
+
+            libraryTotal = 0
+
+            for k, v in library.items():
+                libraryTotal += v['q']
+                cardType = v['c']['Type']
+                cardName = v['c']['Name']
+                if cardType not in byType:
+                    byType[cardType] = {}
+                    byType[cardType][cardName] = v['q']
+                    byTypeTotal[cardType] = v['q']
+                else:
+                    byType[cardType][cardName] = v['q']
+                    byTypeTotal[cardType] += v['q']
+
+            cryptMin = 11
+            cryptMax = 1
+            cryptTotal = 0
+            cryptAvg = 0
+            cryptTotalCap = 0
+
+            for k, v in crypt.items():
+                cryptTotal += v['q']
+                if cryptMin > v['c']['Capacity']:
+                    cryptMin = v['c']['Capacity']
+                if cryptMax < v['c']['Capacity']:
+                    cryptMax = v['c']['Capacity']
+                cryptTotalCap += v['c']['Capacity'] * v['q']
+
+            cryptAvg = cryptTotalCap / cryptTotal
+
             deck += 'Deck Name: ' + d.name + '\n'
             deck += 'Author: ' + d.author.public_name + '\n'
             deck += 'Description: ' + d.description + '\n'
             deck += '\n'
-            deck += 'Crypt (X cards)' + '\n'
+            deck += 'Crypt (' + str(
+                cryptTotal) + ' cards; Capacity min=' + str(
+                    cryptMin) + ' max=' + str(cryptMax) + ' avg=' + str(
+                        round(cryptAvg, 2)) + ')\n'
             deck += '==================\n'
             for k, v in crypt.items():
                 deck += str(v['q']) + 'x '
                 deck += v['c']['Name'] + '\n'
 
             deck += '\n'
-            deck += 'Library: XX cards' + '\n'
+            deck += 'Library: ' + str(libraryTotal) + ' cards\n'
             deck += '\n'
 
             for k, v in byType.items():
-                deck += k + ' (X CARDS)' '\n'
+                deck += k + ' (' + str(byTypeTotal[k]) + ' cards)\n'
                 deck += '==================\n'
                 for i, j in v.items():
                     deck += str(j) + 'x ' + i + '\n'

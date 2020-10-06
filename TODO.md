@@ -6,11 +6,14 @@
 # ADDITIONAL FEATURE
 * Temporary 'add to compare' button
 * Card rulings
+* Export copy to clipboard
 
 # MAJOR FIX
 * Create new accordion
 * Increase width of main column
-* Export card quantity
+* Export deck in text - sort library by types
+* Export deck in text - capacity / disciplines / clans
+* Export deck in twd
 
 # MINOR FIX
 * Trifle icon antialiasing
@@ -28,7 +31,6 @@
 * Keys to use nanoid
 * Use day.js for dates
 * Add props validation
-* Use Next.js
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
@@ -38,3 +40,5 @@
 * DeckPreviewCrypt/Library to use Result components
 * Unify error handling
 * Use template strings in code
+* Split backend routes
+* Split search forms
