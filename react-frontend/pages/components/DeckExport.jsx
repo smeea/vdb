@@ -3,14 +3,16 @@ import FileSaver from 'file-saver';
 import { Spinner, Button } from 'react-bootstrap';
 
 function DeckExport(props) {
-  const [spinnerState, setSpinnerState] = useState({lackey: false, text: false});
+  const [spinnerState, setSpinnerState] = useState({
+    lackey: false,
+    text: false,
+  });
   const [deckError, setDeckError] = useState(false);
 
   const exportDeck = (format) => {
     setDeckError(false);
     if (props.activeDeck) {
-
-      setSpinnerState({[format]: true});
+      setSpinnerState({ [format]: true });
 
       const url = process.env.API_URL + 'decks/export';
       const options = {
@@ -31,14 +33,18 @@ function DeckExport(props) {
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          const file = new File([data.deck], data.name + '_' + data.format + '.txt', {type: "text/plain;charset=utf-8"});
+          const file = new File(
+            [data.deck],
+            data.name + '_' + data.format + '.txt',
+            { type: 'text/plain;charset=utf-8' }
+          );
           FileSaver.saveAs(file);
           console.log(data.deck);
-          setSpinnerState({[format]: false});
+          setSpinnerState({ [format]: false });
         })
         .catch((error) => {
           console.log(error);
-          setSpinnerState({[format]: false});
+          setSpinnerState({ [format]: false });
         });
     } else {
       setDeckError(true);
@@ -48,11 +54,17 @@ function DeckExport(props) {
   return (
     <div className="mb-3">
       {!spinnerState['lackey'] ? (
-        <Button variant="outline-secondary" onClick={() => exportDeck('lackey')}>
+        <Button
+          variant="outline-secondary"
+          onClick={() => exportDeck('lackey')}
+        >
           Export to Lackey
         </Button>
       ) : (
-        <Button variant="outline-secondary" onClick={() => exportDeck('lackey')}>
+        <Button
+          variant="outline-secondary"
+          onClick={() => exportDeck('lackey')}
+        >
           <Spinner
             as="span"
             animation="border"

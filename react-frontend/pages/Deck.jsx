@@ -76,9 +76,7 @@ function Deck(props) {
                 setActiveDeck={props.setActiveDeck}
                 getDecks={props.getDecks}
               />
-              <DeckExport
-                activeDeck={props.activeDeck}
-              />
+              <DeckExport activeDeck={props.activeDeck} />
               <DeckSelect
                 decks={props.decks}
                 activeDeck={props.activeDeck}

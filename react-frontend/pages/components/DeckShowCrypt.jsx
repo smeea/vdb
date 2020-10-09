@@ -92,7 +92,9 @@ function DeckCryptBody(props) {
     }
   };
 
-  const sortedCards = Object.values(props.cards).sort(SortByCapacity).sort(SortByQuantity);
+  const sortedCards = Object.values(props.cards)
+    .sort(SortByCapacity)
+    .sort(SortByQuantity);
 
   let resultTrClass;
 

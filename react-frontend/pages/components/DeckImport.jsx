@@ -54,12 +54,11 @@ function DeckImport(props) {
           console.log(error);
         });
     } else if (fileInput.current.files.length) {
-
       let newDeckId;
       const reader = new FileReader();
       reader.readAsText(fileInput.current.files[0]);
       reader.onload = () => {
-        console.log(reader.result)
+        console.log(reader.result);
 
         const url = process.env.API_URL + 'decks/import';
         const options = {
@@ -151,11 +150,7 @@ function DeckImport(props) {
         </div>
       )}
       <div>
-        <input
-          ref={fileInput}
-          accept="text/*"
-          type="file"
-        />
+        <input ref={fileInput} accept="text/*" type="file" />
       </div>
     </div>
   );
