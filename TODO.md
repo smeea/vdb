@@ -11,12 +11,11 @@
 # MAJOR FIX
 * Create new accordion
 * Increase width of main column
-* Export deck in text - sort library by types
-* Export deck in text - capacity / disciplines / clans
-* Export deck in twd
+* Export deck min/max capacity
+* Import Fame
+* Import with ' and : in name
 
 # MINOR FIX
-* Trifle icon antialiasing
 * Shared deck redraw on imageshow
 * Redirect from login to decks
 * Redirect to about from / page
@@ -40,5 +39,5 @@
 * DeckPreviewCrypt/Library to use Result components
 * Unify error handling
 * Use template strings in code
-* Split backend routes
-* Split search forms
+* Split backend routes file
+* Split search forms file

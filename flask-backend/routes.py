@@ -2,6 +2,7 @@ from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user
 from datetime import datetime
 import uuid
+import re
 
 from search_crypt import get_crypt_by_cardtext
 from search_crypt import get_crypt_by_cardname
@@ -263,6 +264,7 @@ def exportDeck():
                     deck += '       '
                 else:
                     deck += '      '
+
                 deck += v['c']['Name'] + '\n'
 
             deck += 'Crypt:\n'
@@ -273,13 +275,50 @@ def exportDeck():
                     deck += '       '
                 else:
                     deck += '      '
+
                 deck += v['c']['Name'] + '\n'
 
-        elif request.json['format'] == 'text':
-            # byTypeOrder = [
-            #     'Master', 'Action', 'Action Modifier', 'Combat', 'Equipment',
-            #     'Political Action', 'Ally', 'Retainer', 'Reaction', 'Event'
-            # ]
+        elif request.json['format'] == 'text' or request.json[
+                'format'] == 'twd':
+            format = request.json['format']
+
+            disciplinesList = {
+                'Auspex': 'aus',
+                'Abombwe': 'abo',
+                'Animalism': 'ani',
+                'Celerity': 'cel',
+                'Chimerstry': 'chi',
+                'Daimoinon': 'dai',
+                'Dementation': 'dem',
+                'Dominate': 'dom',
+                'Fortitude': 'for',
+                'Melpominee': 'mel',
+                'Mytherceria': 'myt',
+                'Necromancy': 'nec',
+                'Obeah': 'obe',
+                'Obfuscate': 'obf',
+                'Obtenebration': 'obt',
+                'Potence': 'pot',
+                'Presence': 'pre',
+                'Protean': 'pro',
+                'Serpentis': 'ser',
+                'Sanguinus': 'san',
+                'Spiritus': 'spi',
+                'Temporis': 'tem',
+                'Thanatosis': 'thn',
+                'Thaumaturgy': 'tha',
+                'Quietus': 'qui',
+                'Valeren': 'val',
+                'Vicissitude': 'vic',
+                'Visceratika': 'vis',
+                'Defense': 'def',
+                'Innocence': 'inn',
+                'Judgment': 'jud',
+                'Martyrdom': 'mar',
+                'Redemption': 'red',
+                'Vengeance': 'ven',
+                'Vision': 'vis',
+            }
 
             byType = {}
             byTypeTotal = {}
@@ -310,7 +349,7 @@ def exportDeck():
                     cryptMin = v['c']['Capacity']
                 if cryptMax < v['c']['Capacity']:
                     cryptMax = v['c']['Capacity']
-                cryptTotalCap += v['c']['Capacity'] * v['q']
+                    cryptTotalCap += v['c']['Capacity'] * v['q']
 
             cryptAvg = cryptTotalCap / cryptTotal
 
@@ -318,25 +357,117 @@ def exportDeck():
             deck += 'Author: ' + d.author.public_name + '\n'
             deck += 'Description: ' + d.description + '\n'
             deck += '\n'
-            deck += 'Crypt (' + str(
-                cryptTotal) + ' cards; Capacity min=' + str(
-                    cryptMin) + ' max=' + str(cryptMax) + ' avg=' + str(
-                        round(cryptAvg, 2)) + ')\n'
-            deck += '==================\n'
+
+            cryptTitle = 'Crypt (' + str(cryptTotal) + ' cards, min=' + str(
+                cryptMin) + ' max=' + str(cryptMax) + ' avg=' + str(
+                    round(cryptAvg, 2)) + ')\n'
+
+            if format == 'twd':
+                cryptSub = re.sub('.', '-', cryptTitle)
+            elif format == 'text':
+                cryptSub = re.sub('.', '=', cryptTitle)
+
+            deck += cryptTitle
+            deck += cryptSub
+
+            cryptExport = {}
+            longestQuantity = 0
+            longestName = 0
+            longestTitle = 0
+            longestCapacity = 0
+            longestDisciplines = 0
+
             for k, v in crypt.items():
-                deck += str(v['q']) + 'x '
-                deck += v['c']['Name'] + '\n'
+                baseDisciplines = []
+                supDisciplines = []
+                for i, j in v['c']['Disciplines'].items():
+                    if j == 1:
+                        baseDisciplines.append(disciplinesList[i].lower())
+                    elif j == 2:
+                        supDisciplines.append(disciplinesList[i].upper())
+
+                disciplines = ' '.join(baseDisciplines + supDisciplines)
+
+                cryptExport[v['c']['Name']] = {
+                    'Quantity': v['q'],
+                    'Disciplines': disciplines,
+                    'Title': v['c']['Title'],
+                    'Clan': v['c']['Clan'],
+                    'Capacity': v['c']['Capacity'],
+                    'Group': v['c']['Group']
+                }
+
+                if len(str(v['q'])) > longestQuantity:
+                    longestQuantity = len(str(v['q']))
+                if len(v['c']['Name']) > longestName:
+                    longestName = len(v['c']['Name'])
+                if len(v['c']['Title']) > longestTitle:
+                    longestTitle = len(v['c']['Title'])
+                if len(str(v['c']['Capacity'])) > longestCapacity:
+                    longestCapacity = len(str(v['c']['Capacity']))
+                if len(disciplines) > longestDisciplines:
+                    longestDisciplines = len(disciplines)
+
+            for k, v in cryptExport.items():
+                quantitySpaces = longestQuantity - len(str(v['Quantity']))
+
+                nameSpaces = longestName - len(k) + 2
+                disSpaces = longestDisciplines - len(v['Disciplines']) + 2
+
+                capacitySpaces = longestCapacity - len(str(v['Capacity']))
+                titleSpaces = longestTitle - len(v['Title']) + 2
+
+                deck += ' ' * quantitySpaces + str(v['Quantity']) + 'x '
+                deck += k + ' ' * nameSpaces
+                deck += ' ' * capacitySpaces + str(v['Capacity']) + '  '
+                deck += v['Disciplines'] + ' ' * disSpaces
+                deck += v['Title'] + ' ' * titleSpaces
+                deck += v['Clan'] + ':' + v['Group'] + '\n'
 
             deck += '\n'
-            deck += 'Library: ' + str(libraryTotal) + ' cards\n'
-            deck += '\n'
 
-            for k, v in byType.items():
-                deck += k + ' (' + str(byTypeTotal[k]) + ' cards)\n'
-                deck += '==================\n'
-                for i, j in v.items():
-                    deck += str(j) + 'x ' + i + '\n'
-                deck += '\n'
+            byTypeOrder = [
+                'Master',
+                'Conviction',
+                'Action',
+                'Action/Reaction',
+                'Action/Combat',
+                'Ally',
+                'Equipment',
+                'Political Action',
+                'Retainer',
+                'Power',
+                'Action Modifier',
+                'Action Modifier/Combat',
+                'Action Modifier/Reaction',
+                'Reaction',
+                'Reaction/Action Modifier',
+                'Reaction/Combat',
+                'Combat',
+                'Combat/Action Modifier',
+                'Combat/Reaction',
+                'Event',
+            ]
+
+            libraryTitle = 'Library (' + str(libraryTotal) + ' cards)\n'
+            deck += libraryTitle
+
+            if format == 'text':
+                librarySub = re.sub('.', '=', libraryTitle)
+                deck += librarySub
+
+            for i in byTypeOrder:
+                if i in byType:
+                    typeTitle = i + ' (' + str(byTypeTotal[i]) + ')\n'
+                    deck += typeTitle
+                    if format == 'text':
+                        typeSub = re.sub('.', '-', typeTitle)
+                        deck += typeSub
+
+                    for k, v in byType[i].items():
+                        deck += str(v) + 'x ' + k + '\n'
+
+                    deck += '\n'
 
         return jsonify({
             'name': d.name,

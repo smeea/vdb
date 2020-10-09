@@ -64,6 +64,23 @@ function DeckExport(props) {
           Export to Lackey
         </Button>
       )}
+      {!spinnerState['twd'] ? (
+        <Button variant="outline-secondary" onClick={() => exportDeck('twd')}>
+          Export to TWD Text
+        </Button>
+      ) : (
+        <Button variant="outline-secondary" onClick={() => exportDeck('twd')}>
+          <Spinner
+            as="span"
+            animation="border"
+            size="sm"
+            role="status"
+            aria-hidden="true"
+          />
+          <Spinner />
+          Export to TWD
+        </Button>
+      )}
       {!spinnerState['text'] ? (
         <Button variant="outline-secondary" onClick={() => exportDeck('text')}>
           Export to Text

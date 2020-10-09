@@ -84,7 +84,16 @@ function DeckCryptBody(props) {
     }
   };
 
-  const sortedCards = Object.values(props.cards).sort(SortByQuantity);
+  const SortByCapacity = (a, b) => {
+    if (a.c['Capacity'] > b.c['Capacity']) {
+      return 1;
+    } else {
+      return -1;
+    }
+  };
+
+  const sortedCards = Object.values(props.cards).sort(SortByCapacity).sort(SortByQuantity);
+
   let resultTrClass;
 
   const cards = sortedCards.map((card, index) => {

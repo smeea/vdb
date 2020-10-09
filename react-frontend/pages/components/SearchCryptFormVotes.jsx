@@ -4,6 +4,7 @@ import Select from 'react-select';
 function SearchCryptFormVotes(props) {
   const votes = [
     ['any', 'ANY'],
+    ['0', '0'],
     ['1', '1+'],
     ['2', '2+'],
     ['3', '3+'],
