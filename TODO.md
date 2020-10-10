@@ -6,12 +6,9 @@
 # ADDITIONAL FEATURE
 * Temporary 'add to compare' button
 * Card rulings
-* Export copy to clipboard
 
 # MAJOR FIX
-* Create new accordion
 * Increase width of main column
-* Import menu
 * Choose 'ANY' in forms
 * Import ADV vampires
 

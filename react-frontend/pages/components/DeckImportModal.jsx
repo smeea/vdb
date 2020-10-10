@@ -65,7 +65,7 @@ function DeckImportModal(props) {
           className="form-control deck-import"
           rows={
             deckText.split(/\r\n|\r|\n/).length < 30
-              ? deckText.split(/\r\n|\r|\n/).length
+              ? deckText.split(/\r\n|\r|\n/).length > 5 ? deckText.split(/\r\n|\r|\n/).length : 5
               : 30
           }
           value={deckText}

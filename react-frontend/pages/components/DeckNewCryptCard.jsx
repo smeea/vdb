@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
 import AsyncSelect from 'react-select/async';
 
 import ResultCryptClan from './ResultCryptClan.jsx';
@@ -10,13 +9,8 @@ function DeckNewCryptCard(props) {
   const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
 
-  const handleInputChange = (value) => {
-    setValue(value);
-  };
-
-  const handleChange = (value) => {
-    setSelectedValue(value);
-  };
+  const handleInputChange = value => setValue(value);
+  const handleChange = value => setSelectedValue(value);
 
   const addNewCard = () => {
     if (selectedValue.Id) {
@@ -46,6 +40,10 @@ function DeckNewCryptCard(props) {
       return null;
     }
   };
+
+  useEffect(() => {
+    if (selectedValue) addNewCard()
+  }, [selectedValue])
 
   return (
     <div className="input-group mb-3">
@@ -82,9 +80,6 @@ function DeckNewCryptCard(props) {
           onChange={handleChange}
         />
       </div>
-      <Button variant="outline-secondary" onClick={addNewCard}>
-        Add
-      </Button>
     </div>
   );
 }

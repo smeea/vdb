@@ -23,7 +23,7 @@ function DeckImport(props) {
             Import from File
           </Dropdown.Item>
           <Dropdown.Item href="" onClick={handleOpenImportModal}>
-            Import from Text
+            Paste text
           </Dropdown.Item>
         </>
 

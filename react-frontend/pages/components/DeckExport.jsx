@@ -7,17 +7,75 @@ function DeckExport(props) {
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
 
-  const exportFormats = ['Text', 'TWD', 'Lackey'];
+  const saveFormats = [
+    'Text',
+    'TWD',
+    'Lackey'
+  ];
 
-  const ExportButtonOptions = exportFormats.map((i, index) => {
-    return (
-      <Dropdown.Item key={index} href="" onClick={() => exportDeck(i.toLowerCase())}>
-        Export to {i}
+  const copyFormats = [
+    'Text',
+    'TWD',
+    'Lackey'
+  ];
+
+  const ExportButtonOptions = []
+
+  saveFormats.map((i, index) => {
+    ExportButtonOptions.push(
+      <Dropdown.Item key={index + 's'} href="" onClick={() => saveDeck(i.toLowerCase())}>
+        Save as file - {i}
       </Dropdown.Item>
     );
   });
 
-  const exportDeck = (format) => {
+  copyFormats.map((i, index) => {
+    ExportButtonOptions.push(
+      <Dropdown.Item key={index + 'c'} href="" onClick={() => copyDeck(i.toLowerCase())}>
+        Copy to clipboard - {i}
+      </Dropdown.Item>
+    );
+  });
+
+  const copyDeck = (format) => {
+    setDeckError(false);
+    if (props.activeDeck) {
+      setSpinnerState(true);
+
+      const url = process.env.API_URL + 'decks/export';
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          deckid: props.activeDeck,
+          format: format,
+        }),
+      };
+
+      const fetchPromise = fetch(url, options);
+
+      fetchPromise
+        .then((response) => response.json())
+        .then((data) => {
+          navigator.clipboard.writeText(data.deck);
+          setSpinnerState(false);
+          // setState(true);
+          // setTimeout(() => setState(false), 500);
+        })
+        .catch((error) => {
+          console.log(error);
+          setSpinnerState(false);
+        });
+    } else {
+      setDeckError(true);
+    }
+  };
+
+  const saveDeck = (format) => {
     setDeckError(false);
     if (props.activeDeck) {
       setSpinnerState(true);
@@ -47,7 +105,6 @@ function DeckExport(props) {
             { type: 'text/plain;charset=utf-8' }
           );
           FileSaver.saveAs(file);
-          console.log(data.deck);
           setSpinnerState(false);
         })
         .catch((error) => {
@@ -83,7 +140,6 @@ function DeckExport(props) {
             aria-hidden="true"
           />
           <Spinner />
-          <Download /> Export to Lackey
           {ExportButtonOptions}
         </DropdownButton>
       )}
