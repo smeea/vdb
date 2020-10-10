@@ -11,9 +11,9 @@ function Library(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   return (
-    <div className="container px-0 py-xl-2 px-xl-2">
-      <div className="row mx-0">
-        <div className="col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 col-lg-3">
           {Object.keys(props.decks).length > 0 && (
             <DeckSelect
               preview={true}
@@ -34,7 +34,7 @@ function Library(props) {
           )}
         </div>
 
-        <div className="col-md-12 col-lg-6 col-xl-6 px-1 px-xl-2">
+        <div className="col-md-12 col-lg-6">
           {results != undefined && results != null && (
             <ResultLibrary
               showImage={props.showImage}
@@ -59,7 +59,7 @@ function Library(props) {
           )}
         </div>
 
-        <div className="col-md-12 col-lg-3 col-xl-3 px-1 px-xl-2">
+        <div className="col-md-12 col-lg-3">
           <SearchLibraryForm setResults={setResults} />
         </div>
       </div>

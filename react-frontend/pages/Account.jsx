@@ -9,10 +9,10 @@ import AccountRemove from './components/AccountRemove.jsx';
 
 function Account(props) {
   return (
-    <div className="container px-0 py-xl-3 px-xl-2">
-      <div className="row mx-0">
-        <div className="col-md-12 col-lg-2 col-xl-2 left-col px-0 px-xl-2"></div>
-        <div className="col-md-12 col-lg-8 col-xl-8 center-col px-1 px-xl-2">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 col-lg-2"></div>
+        <div className="col-md-12 col-lg-8">
           {props.username ? (
             <>
               <div className="d-flex justify-content-between">
@@ -43,7 +43,7 @@ function Account(props) {
             </>
           )}
         </div>
-        <div className="col-xs-12 col-xl-4 right-col px-0 px-xl-2"></div>
+        <div className="col-md-12 col-lg-2"></div>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import { Spinner, DropdownButton, Dropdown } from 'react-bootstrap';
+import { Modal, Button, Spinner } from 'react-bootstrap';
 
 function DeckImportModal(props) {
   const [deckText, setDeckText] = useState('');
@@ -56,16 +55,16 @@ function DeckImportModal(props) {
   return (
     <Modal show={props.show} onHide={props.handleClose} animation={false}>
       <Modal.Header closeButton>
-        <Modal.Title>
-          Import deck
-        </Modal.Title>
+        <Modal.Title>Import deck</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <textarea
           className="form-control deck-import"
           rows={
             deckText.split(/\r\n|\r|\n/).length < 30
-              ? deckText.split(/\r\n|\r|\n/).length > 5 ? deckText.split(/\r\n|\r|\n/).length : 5
+              ? deckText.split(/\r\n|\r|\n/).length > 5
+                ? deckText.split(/\r\n|\r|\n/).length
+                : 5
               : 30
           }
           value={deckText}

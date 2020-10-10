@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { FileEarmarkPlus } from 'react-bootstrap-icons';
 
@@ -17,15 +16,16 @@ function DeckImport(props) {
   const handleCloseImportModal = () => setShowImportModal(false);
   const handleOpenImportModal = () => setShowImportModal(true);
 
-  const ImportButtonOptions =
-        <>
-          <Dropdown.Item href="" onClick={handleFileInputClick}>
-            Import from File
-          </Dropdown.Item>
-          <Dropdown.Item href="" onClick={handleOpenImportModal}>
-            Paste text
-          </Dropdown.Item>
-        </>
+  const ImportButtonOptions = (
+    <>
+      <Dropdown.Item href="" onClick={handleFileInputClick}>
+        Import from File
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={handleOpenImportModal}>
+        Paste text
+      </Dropdown.Item>
+    </>
+  );
 
   const importDeck = () => {
     setImportError(false);
@@ -75,12 +75,17 @@ function DeckImport(props) {
         accept="text/*"
         type="file"
         onChange={handleFileChange}
-        style={{display: 'none'}}
+        style={{ display: 'none' }}
       />
       <DropdownButton
         variant="outline-secondary"
         id="import-button"
-        title={<><FileEarmarkPlus size={20} />Import</>}
+        title={
+          <>
+            <FileEarmarkPlus size={20} />
+            Import
+          </>
+        }
       >
         {ImportButtonOptions}
       </DropdownButton>

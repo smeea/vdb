@@ -9,8 +9,8 @@ function DeckNewCryptCard(props) {
   const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
 
-  const handleInputChange = value => setValue(value);
-  const handleChange = value => setSelectedValue(value);
+  const handleInputChange = (value) => setValue(value);
+  const handleChange = (value) => setSelectedValue(value);
 
   const addNewCard = () => {
     if (selectedValue.Id) {
@@ -42,8 +42,8 @@ function DeckNewCryptCard(props) {
   };
 
   useEffect(() => {
-    if (selectedValue) addNewCard()
-  }, [selectedValue])
+    if (selectedValue) addNewCard();
+  }, [selectedValue]);
 
   return (
     <div className="input-group mb-3">

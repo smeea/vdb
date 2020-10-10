@@ -7,23 +7,19 @@ function DeckExport(props) {
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
 
-  const saveFormats = [
-    'Text',
-    'TWD',
-    'Lackey'
-  ];
+  const saveFormats = ['Text', 'TWD', 'Lackey'];
 
-  const copyFormats = [
-    'Text',
-    'TWD',
-    'Lackey'
-  ];
+  const copyFormats = ['Text', 'TWD', 'Lackey'];
 
-  const ExportButtonOptions = []
+  const ExportButtonOptions = [];
 
   saveFormats.map((i, index) => {
     ExportButtonOptions.push(
-      <Dropdown.Item key={index + 's'} href="" onClick={() => saveDeck(i.toLowerCase())}>
+      <Dropdown.Item
+        key={index + 's'}
+        href=""
+        onClick={() => saveDeck(i.toLowerCase())}
+      >
         Save as file - {i}
       </Dropdown.Item>
     );
@@ -31,7 +27,11 @@ function DeckExport(props) {
 
   copyFormats.map((i, index) => {
     ExportButtonOptions.push(
-      <Dropdown.Item key={index + 'c'} href="" onClick={() => copyDeck(i.toLowerCase())}>
+      <Dropdown.Item
+        key={index + 'c'}
+        href=""
+        onClick={() => copyDeck(i.toLowerCase())}
+      >
         Copy to clipboard - {i}
       </Dropdown.Item>
     );
@@ -122,7 +122,11 @@ function DeckExport(props) {
         <DropdownButton
           variant="outline-secondary"
           id="export-button"
-          title={<><Download size={20} /> Export</>}
+          title={
+            <>
+              <Download size={20} /> Export
+            </>
+          }
         >
           {ExportButtonOptions}
         </DropdownButton>
@@ -130,7 +134,11 @@ function DeckExport(props) {
         <DropdownButton
           variant="outline-secondary"
           id="export-button"
-          title={<><Download size={20} /> Export</>}
+          title={
+            <>
+              <Download size={20} /> Export
+            </>
+          }
         >
           <Spinner
             as="span"

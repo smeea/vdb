@@ -2,10 +2,10 @@ import React from 'react';
 
 function About(props) {
   return (
-    <div className="container px-0 py-xl-3 px-xl-2">
-      <div className="row mx-0">
-        <div className="col-md-12 col-lg-2 col-xl-2 left-col px-0 px-xl-2"></div>
-        <div className="col-md-12 col-lg-8 col-xl-8 center-col px-1 px-xl-2">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 col-lg-2"></div>
+        <div className="col-md-12 col-lg-8">
           <div className="about-version">
             <h5>VERSION</h5>
             <p>
@@ -117,7 +117,7 @@ function About(props) {
             <br />
           </p>
         </div>
-        <div className="col-md-12 col-lg-2 col-xl-2 right-col px-0 px-xl-2"></div>
+        <div className="col-md-12 col-lg-2"></div>
       </div>
     </div>
   );
