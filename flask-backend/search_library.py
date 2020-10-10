@@ -277,7 +277,6 @@ def get_library_by_trait(traits):
 
 def get_library_by_set(set):
     match_cards = []
-    print(set)
     for card in library:
         if set in card['Set']:
             match_cards.append(card)

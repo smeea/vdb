@@ -9,8 +9,6 @@
 
 # MAJOR FIX
 * Increase width of main column
-* Choose 'ANY' in forms
-* Import ADV vampires
 
 # MINOR FIX
 * Shared deck redraw on imageshow

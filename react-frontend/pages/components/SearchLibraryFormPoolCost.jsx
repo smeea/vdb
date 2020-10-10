@@ -3,14 +3,12 @@ import Select from 'react-select';
 
 function SearchLibraryFormPoolCost(props) {
   const pool = ['ANY', '0', '1', '2', '3', '4', '5', '6'];
-
   const options = [];
-
   pool.map((i, index) => {
     if (i == 'ANY') {
       options.push({
         value: i.toLowerCase(),
-        name: 'blood',
+        name: 'pool',
         label: (
           <>
             <span
@@ -49,7 +47,6 @@ function SearchLibraryFormPoolCost(props) {
     ['eq', '=='],
     ['ge', '>='],
   ];
-
   const morelessOptions = [];
 
   moreless.map((i, index) => {
