@@ -11,14 +11,16 @@
 # MAJOR FIX
 * Create new accordion
 * Increase width of main column
-* Export deck min/max capacity
-* Import Fame
-* Import with ' and : in name
+* Import menu
+* Choose 'ANY' in forms
+* Import ADV vampires
 
 # MINOR FIX
 * Shared deck redraw on imageshow
 * Redirect from login to decks
 * Redirect to about from / page
+* Export deck min/max capacity
+* Plus-Minus from PlusCircleFill / PlusCircle / PlusSquareFill / PlusSquare
 
 # MOBILE FIX
 * Navbar always on top for mobile
@@ -30,6 +32,7 @@
 * Keys to use nanoid
 * Use day.js for dates
 * Add props validation
+* Night Theme
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ

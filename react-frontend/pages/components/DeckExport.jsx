@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import FileSaver from 'file-saver';
-import { Spinner, Button } from 'react-bootstrap';
+import { Spinner, DropdownButton, Dropdown } from 'react-bootstrap';
+import { Download } from 'react-bootstrap-icons';
 
 function DeckExport(props) {
-  const [spinnerState, setSpinnerState] = useState({
-    lackey: false,
-    text: false,
-  });
+  const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
+
+  const exportFormats = ['Text', 'TWD', 'Lackey'];
+
+  const ExportButtonOptions = exportFormats.map((i, index) => {
+    return (
+      <Dropdown.Item key={index} href="" onClick={() => exportDeck(i.toLowerCase())}>
+        Export to {i}
+      </Dropdown.Item>
+    );
+  });
 
   const exportDeck = (format) => {
     setDeckError(false);
     if (props.activeDeck) {
-      setSpinnerState({ [format]: true });
+      setSpinnerState(true);
 
       const url = process.env.API_URL + 'decks/export';
       const options = {
@@ -40,11 +48,11 @@ function DeckExport(props) {
           );
           FileSaver.saveAs(file);
           console.log(data.deck);
-          setSpinnerState({ [format]: false });
+          setSpinnerState(false);
         })
         .catch((error) => {
           console.log(error);
-          setSpinnerState({ [format]: false });
+          setSpinnerState(false);
         });
     } else {
       setDeckError(true);
@@ -53,17 +61,19 @@ function DeckExport(props) {
 
   return (
     <div className="mb-3">
-      {!spinnerState['lackey'] ? (
-        <Button
+      {!spinnerState ? (
+        <DropdownButton
           variant="outline-secondary"
-          onClick={() => exportDeck('lackey')}
+          id="export-button"
+          title={<><Download size={20} /> Export</>}
         >
-          Export to Lackey
-        </Button>
+          {ExportButtonOptions}
+        </DropdownButton>
       ) : (
-        <Button
+        <DropdownButton
           variant="outline-secondary"
-          onClick={() => exportDeck('lackey')}
+          id="export-button"
+          title={<><Download size={20} /> Export</>}
         >
           <Spinner
             as="span"
@@ -73,42 +83,9 @@ function DeckExport(props) {
             aria-hidden="true"
           />
           <Spinner />
-          Export to Lackey
-        </Button>
-      )}
-      {!spinnerState['twd'] ? (
-        <Button variant="outline-secondary" onClick={() => exportDeck('twd')}>
-          Export to TWD Text
-        </Button>
-      ) : (
-        <Button variant="outline-secondary" onClick={() => exportDeck('twd')}>
-          <Spinner
-            as="span"
-            animation="border"
-            size="sm"
-            role="status"
-            aria-hidden="true"
-          />
-          <Spinner />
-          Export to TWD
-        </Button>
-      )}
-      {!spinnerState['text'] ? (
-        <Button variant="outline-secondary" onClick={() => exportDeck('text')}>
-          Export to Text
-        </Button>
-      ) : (
-        <Button variant="outline-secondary" onClick={() => exportDeck('text')}>
-          <Spinner
-            as="span"
-            animation="border"
-            size="sm"
-            role="status"
-            aria-hidden="true"
-          />
-          <Spinner />
-          Export to Text
-        </Button>
+          <Download /> Export to Lackey
+          {ExportButtonOptions}
+        </DropdownButton>
       )}
       {deckError && (
         <div className="d-flex justify-content-start">

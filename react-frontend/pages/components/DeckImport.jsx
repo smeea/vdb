@@ -1,28 +1,41 @@
 import React, { useState } from 'react';
-import { Spinner, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import { DropdownButton, Dropdown } from 'react-bootstrap';
+import { FileEarmarkPlus } from 'react-bootstrap-icons';
+
+import DeckImportModal from './DeckImportModal.jsx';
 
 function DeckImport(props) {
-  const [deckText, setDeckText] = useState('');
-  const [emptyDeckText, setEmptyDeckText] = useState(false);
   const [importError, setImportError] = useState(false);
-
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [showImportModal, setShowImportModal] = useState(false);
 
   const fileInput = React.createRef();
 
-  const handleChange = (event) => {
-    setDeckText(event.target.value);
-  };
+  const handleFileChange = () => importDeck();
+  const handleFileInputClick = () => fileInput.current.click();
+
+  const handleCloseImportModal = () => setShowImportModal(false);
+  const handleOpenImportModal = () => setShowImportModal(true);
+
+  const ImportButtonOptions =
+        <>
+          <Dropdown.Item href="" onClick={handleFileInputClick}>
+            Import from File
+          </Dropdown.Item>
+          <Dropdown.Item href="" onClick={handleOpenImportModal}>
+            Import from Text
+          </Dropdown.Item>
+        </>
 
   const importDeck = () => {
     setImportError(false);
-    setEmptyDeckText(false);
 
-    if (deckText) {
-      setEmptyDeckText(false);
-      setSpinnerState(true);
+    let newDeckId;
+    const reader = new FileReader();
+    reader.readAsText(fileInput.current.files[0]);
+    reader.onload = () => {
+      console.log(reader.result);
 
-      let newDeckId;
       const url = process.env.API_URL + 'decks/import';
       const options = {
         method: 'POST',
@@ -32,7 +45,7 @@ function DeckImport(props) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          deckText: deckText,
+          deckText: reader.result,
         }),
       };
 
@@ -50,109 +63,40 @@ function DeckImport(props) {
         })
         .catch((error) => {
           setImportError(true);
-          setSpinnerState(false);
           console.log(error);
         });
-    } else if (fileInput.current.files.length) {
-      let newDeckId;
-      const reader = new FileReader();
-      reader.readAsText(fileInput.current.files[0]);
-      reader.onload = () => {
-        console.log(reader.result);
-
-        const url = process.env.API_URL + 'decks/import';
-        const options = {
-          method: 'POST',
-          mode: 'cors',
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            deckText: reader.result,
-          }),
-        };
-
-        const fetchPromise = fetch(url, options);
-
-        fetchPromise
-          .then((response) => response.json())
-          .then((data) => {
-            newDeckId = data.deckid;
-            console.log('new deck id:', newDeckId);
-          })
-          .then(() => props.getDecks())
-          .then(() => {
-            props.setActiveDeck(newDeckId);
-          })
-          .catch((error) => {
-            setImportError(true);
-            setSpinnerState(false);
-            console.log(error);
-          });
-      };
-      setEmptyDeckText(false);
-      setSpinnerState(true);
-    } else {
-      setEmptyDeckText(true);
-    }
+    };
   };
 
   return (
-    <div className="mb-3">
-      <div className="input-group">
-        <div className="input-group-prepend">
-          <span className="input-group-text">
-            Import Deck
-            <br />
-            TWD / LackeyCCG
-          </span>
-        </div>
-        <textarea
-          className="form-control deck-import"
-          rows={
-            deckText.split(/\r\n|\r|\n/).length < 30
-              ? deckText.split(/\r\n|\r|\n/).length
-              : 30
-          }
-          value={deckText}
-          placeholder="Paste deck here"
-          onChange={handleChange}
-        />
-        {!spinnerState ? (
-          <Button variant="outline-secondary" onClick={importDeck}>
-            Import
-          </Button>
-        ) : (
-          <Button variant="outline-secondary" onClick={importDeck}>
-            <Spinner
-              as="span"
-              animation="border"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            />
-            <Spinner />
-            Import
-          </Button>
-        )}
-      </div>
-      {emptyDeckText && (
-        <div className="d-flex justify-content-end">
-          <br />
-          <span className="login-error">Paste deck</span>
-        </div>
-      )}
+    <>
+      <input
+        ref={fileInput}
+        accept="text/*"
+        type="file"
+        onChange={handleFileChange}
+        style={{display: 'none'}}
+      />
+      <DropdownButton
+        variant="outline-secondary"
+        id="import-button"
+        title={<><FileEarmarkPlus size={20} />Import</>}
+      >
+        {ImportButtonOptions}
+      </DropdownButton>
       {importError && (
         <div className="d-flex justify-content-end">
           <br />
           <span className="login-error">Cannot import this deck</span>
         </div>
       )}
-      <div>
-        <input ref={fileInput} accept="text/*" type="file" />
-      </div>
-    </div>
+      <DeckImportModal
+        handleClose={handleCloseImportModal}
+        getDecks={props.getDecks}
+        setActiveDeck={props.setActiveDeck}
+        show={showImportModal}
+      />
+    </>
   );
 }
 
