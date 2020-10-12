@@ -4,7 +4,6 @@ import { Navbar, Nav } from 'react-bootstrap';
 import PersonFill from '../assets/images/icons/person-fill.svg';
 
 function Navigation(props) {
-  console.log(PersonFill)
   const NavBar = ({ location }) => {
     function AccountEntry(props) {
       if (props.username) {

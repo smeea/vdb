@@ -6,10 +6,7 @@ import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 
 function DeckNewCryptCard(props) {
-  const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
-
-  const handleInputChange = (value) => setValue(value);
   const handleChange = (value) => setSelectedValue(value);
 
   const addNewCard = () => {
@@ -76,7 +73,6 @@ function DeckNewCryptCard(props) {
             </>
           )}
           loadOptions={loadOptions}
-          onInputChange={handleInputChange}
           onChange={handleChange}
         />
       </div>

@@ -11,6 +11,7 @@ function ResultLibraryName(props) {
       </Popover>
     );
   });
+  CardPopover.displayName = 'CardPopover';
 
   return (
     <OverlayTrigger

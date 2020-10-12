@@ -39,8 +39,7 @@
 * Unify error handling
 * Use template strings in code
 * Split backend routes file
-* Split search forms file
 
 # FOR DEPLOY
-* Change react-bootstrap-icons to svg
-* Configure Cache-Control
+* Set Cache-Control
+* Minify crypt/lib json

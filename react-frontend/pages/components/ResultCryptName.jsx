@@ -11,6 +11,7 @@ function ResultCryptName(props) {
       </Popover>
     );
   });
+  CardPopover.displayName = 'CardPopover';
 
   const imgClass = 'advanced-image-results';
   let imgSrc = '';

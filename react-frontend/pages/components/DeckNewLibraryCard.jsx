@@ -7,10 +7,7 @@ import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 
 function DeckNewLibraryCard(props) {
-  const [inputValue, setValue] = useState('');
   const [selectedValue, setSelectedValue] = useState(null);
-
-  const handleInputChange = (value) => setValue(value);
   const handleChange = (value) => setSelectedValue(value);
 
   const addNewCard = () => {
@@ -91,7 +88,6 @@ function DeckNewLibraryCard(props) {
             </>
           )}
           loadOptions={loadOptions}
-          onInputChange={handleInputChange}
           onChange={handleChange}
         />
       </div>

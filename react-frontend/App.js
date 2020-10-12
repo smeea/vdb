@@ -1,17 +1,16 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import Navigation from './pages/Navigation.jsx';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 
-import Navigation from './pages/Navigation.jsx';
-// import Account from './pages/Account.jsx';
-// import About from './pages/About.jsx';
-// import Deck from './pages/Deck.jsx';
-// import Crypt from './pages/Crypt.jsx';
-// import Library from './pages/Library.jsx';
-
 function App(props) {
+  const Crypt = lazy(() => import('./pages/Crypt.jsx'));
+  const Library = lazy(() => import('./pages/Library.jsx'));
+  const About = lazy(() => import('./pages/About.jsx'));
+  const Deck = lazy(() => import('./pages/Deck.jsx'));
+  const Account = lazy(() => import('./pages/Account.jsx'));
+
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
@@ -103,25 +102,19 @@ function App(props) {
     }
   }, [username]);
 
-  const LazyCrypt = lazy(() => import('./pages/Crypt.jsx'));
-  const LazyLibrary = lazy(() => import('./pages/Library.jsx'));
-  const LazyAbout = lazy(() => import('./pages/About.jsx'));
-  const LazyDeck = lazy(() => import('./pages/Deck.jsx'));
-  const LazyAccount = lazy(() => import('./pages/Account.jsx'));
-
   return (
     <div className="App">
       <Router>
         <Navigation username={username} />
         <Suspense fallback={<div></div>}>
           <Switch>
-            <Route path="/" exact component={() => <LazyAbout />} />
-            <Route path="/about" exact component={() => <LazyAbout />} />
+            <Route path="/" exact component={() => <About />} />
+            <Route path="/about" exact component={() => <About />} />
             <Route
               path="/account"
               exact
               component={() => (
-                <LazyAccount
+                <Account
                   username={username}
                   publicName={publicName}
                   email={email}
@@ -135,7 +128,7 @@ function App(props) {
               path="/deck"
               exact
               component={() => (
-                <LazyDeck
+                <Deck
                   decks={decks}
                   getDecks={getDecks}
                   activeDeck={activeDeck}
@@ -152,7 +145,7 @@ function App(props) {
             <Route
               path="/deck/:id"
               component={(props) => (
-                <LazyDeck
+                <Deck
                   decks={decks}
                   getDecks={getDecks}
                   activeDeck={activeDeck}
@@ -167,32 +160,36 @@ function App(props) {
                 />
               )}
             />
-            <Route path="/crypt"
-                   component={(props) =>
-                     <LazyCrypt
-                       deckCardAdd={deckCardAdd}
-                       deckCardChange={deckCardChange}
-                       decks={decks}
-                       getDecks={getDecks}
-                       activeDeck={activeDeck}
-                       setActiveDeck={setActiveDeck}
-                       showImage={showImage}
-                       toggleImage={toggleImage}
-                     />}
+            <Route
+              path="/crypt"
+              component={(props) => (
+                <Crypt
+                  deckCardAdd={deckCardAdd}
+                  deckCardChange={deckCardChange}
+                  decks={decks}
+                  getDecks={getDecks}
+                  activeDeck={activeDeck}
+                  setActiveDeck={setActiveDeck}
+                  showImage={showImage}
+                  toggleImage={toggleImage}
+                />
+              )}
             />
-            <Route path="/library"
-                   component={(props) =>
-                     <LazyLibrary
-                       deckCardAdd={deckCardAdd}
-                       deckCardChange={deckCardChange}
-                       decks={decks}
-                       getDecks={getDecks}
-                       activeDeck={activeDeck}
-                       setActiveDeck={setActiveDeck}
-                       showImage={showImage}
-                       toggleImage={toggleImage}
-                     />
-                   } />
+            <Route
+              path="/library"
+              component={(props) => (
+                <Library
+                  deckCardAdd={deckCardAdd}
+                  deckCardChange={deckCardChange}
+                  decks={decks}
+                  getDecks={getDecks}
+                  activeDeck={activeDeck}
+                  setActiveDeck={setActiveDeck}
+                  showImage={showImage}
+                  toggleImage={toggleImage}
+                />
+              )}
+            />
           </Switch>
         </Suspense>
       </Router>
