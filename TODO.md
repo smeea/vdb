@@ -12,13 +12,10 @@
 * Increase width of main column
 
 # MINOR FIX
-* Shared deck redraw on imageshow
 * Redirect from login to decks
 * Redirect to about from / page
-* Export deck min/max capacity
 
 # MOBILE FIX
-* Navbar always on top for mobile
 * Toggle search button
 * Toggle deck button
 * Popover

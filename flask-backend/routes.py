@@ -66,11 +66,11 @@ def showDeck(deckid):
 @app.route('/api/deck/<string:deckid>', methods=['PUT'])
 def updateDeck(deckid):
     if current_user.is_authenticated:
+        d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
+        d.timestamp = datetime.utcnow()
         try:
-            if request.json['update']:
-                d = Deck.query.filter_by(author=current_user,
-                                         deckid=deckid).first()
-                new_cards = request.json['update']
+            if request.json['cardChange']:
+                new_cards = request.json['cardChange']
                 merged_cards = d.cards.copy()
                 for k, v in new_cards.items():
                     if v < 0:
@@ -79,25 +79,15 @@ def updateDeck(deckid):
                         merged_cards[k] = v
 
                 d.cards = merged_cards.copy()
-                d.timestamp = datetime.utcnow()
-                db.session.commit()
-                return jsonify({'updated deck': d.deckid, 'name': d.name})
         except Exception:
             pass
         try:
             if request.json['name']:
-                d = Deck.query.filter_by(author=current_user,
-                                         deckid=deckid).first()
                 d.name = request.json['name']
-                d.timestamp = datetime.utcnow()
-                db.session.commit()
-                return jsonify({'updated deck': d.deckid, 'name': d.name})
         except Exception:
             pass
         try:
-            if request.json['add']:
-                d = Deck.query.filter_by(author=current_user,
-                                         deckid=deckid).first()
+            if request.json['cardAdd']:
                 new_cards = request.json['add']
                 merged_cards = d.cards.copy()
                 for k, v in new_cards.items():
@@ -105,37 +95,21 @@ def updateDeck(deckid):
                         merged_cards[k] = v
 
                 d.cards = merged_cards.copy()
-                d.timestamp = datetime.utcnow()
-                db.session.commit()
-                return jsonify({'updated deck': d.deckid, 'cards': d.cards})
         except Exception:
             pass
         try:
             if request.json['description']:
-                d = Deck.query.filter_by(author=current_user,
-                                         deckid=deckid).first()
                 d.description = request.json['description']
-                d.timestamp = datetime.utcnow()
-                db.session.commit()
-                return jsonify({
-                    'updated deck': d.deckid,
-                    'description': d.description
-                })
         except Exception:
             pass
         try:
             if request.json['author']:
-                d = Deck.query.filter_by(author=current_user,
-                                         deckid=deckid).first()
                 d.author_public_name = request.json['author']
-                d.timestamp = datetime.utcnow()
-                db.session.commit()
-                return jsonify({
-                    'updated deck': d.deckid,
-                    'author': d.author_public_name
-                })
         except Exception:
             pass
+
+        db.session.commit()
+        return jsonify({'updated deck': d.deckid})
     else:
         return jsonify({'Not logged in.'})
 
@@ -337,30 +311,33 @@ def exportDeck():
                     byType[cardType][cardName] = v['q']
                     byTypeTotal[cardType] += v['q']
 
-            cryptMin = 11
-            cryptMax = 1
-            cryptTotal = 0
-            cryptAvg = 0
             cryptTotalCap = 0
+            capacityList = []
 
             for k, v in crypt.items():
-                cryptTotal += v['q']
-                if cryptMin > v['c']['Capacity']:
-                    cryptMin = v['c']['Capacity']
-                if cryptMax < v['c']['Capacity']:
-                    cryptMax = v['c']['Capacity']
-                    cryptTotalCap += v['c']['Capacity'] * v['q']
+                cryptTotalCap += v['c']['Capacity'] * v['q']
+                for x in range(v['q']):
+                    capacityList.append(v['c']['Capacity'])
 
-            cryptAvg = cryptTotalCap / cryptTotal
+            cryptTotalCards = len(capacityList)
+            cryptAvg = cryptTotalCap / cryptTotalCards
+
+            cryptMin = 0
+            cryptMax = 0
+            capacityList.sort()
+            for i in range(4):
+                cryptMin += capacityList[i]
+                cryptMax += capacityList[-i - 1]
 
             deck += 'Deck Name: ' + d.name + '\n'
             deck += 'Author: ' + d.author.public_name + '\n'
             deck += 'Description: ' + d.description + '\n'
             deck += '\n'
 
-            cryptTitle = 'Crypt (' + str(cryptTotal) + ' cards, min=' + str(
-                cryptMin) + ' max=' + str(cryptMax) + ' avg=' + str(
-                    round(cryptAvg, 2)) + ')\n'
+            cryptTitle = 'Crypt (' + str(
+                cryptTotalCards) + ' cards, min=' + str(
+                    cryptMin) + ' max=' + str(cryptMax) + ' avg=' + str(
+                        round(cryptAvg, 2)) + ')\n'
 
             if format == 'twd':
                 cryptSub = re.sub('.', '-', cryptTitle)
