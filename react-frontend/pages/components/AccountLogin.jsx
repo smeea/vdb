@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Tooltip, Overlay, Button } from 'react-bootstrap';
-import { DoorOpenFill, EyeFill, EyeSlashFill } from 'react-bootstrap-icons';
+import DoorOpenFill from '../../assets/images/icons/door-open-fill.svg';
+import EyeFill from '../../assets/images/icons/eye-fill.svg';
+import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 
 function AccountLogin(props) {
   const [state, setState] = useState({

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FileSaver from 'file-saver';
 import { Spinner, DropdownButton, Dropdown } from 'react-bootstrap';
-import { Download } from 'react-bootstrap-icons';
+import Download from '../../assets/images/icons/download.svg';
 
 function DeckExport(props) {
   const [spinnerState, setSpinnerState] = useState(false);

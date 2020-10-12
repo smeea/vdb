@@ -1,6 +1,6 @@
 import React from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
-import { SortDown } from 'react-bootstrap-icons';
+import SortDown from '../../assets/images/icons/sort-down.svg';
 
 function ResultCryptSortForm(props) {
   const sortMethods = ['Default', 'Name', 'Capacity', 'Clan', 'Group'];

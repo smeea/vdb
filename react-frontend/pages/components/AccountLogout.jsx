@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { DoorClosedFill } from 'react-bootstrap-icons';
+import DoorClosedFill from '../../assets/images/icons/door-closed-fill.svg';
 
 function AccountLogout(props) {
   const logoutUser = () => {

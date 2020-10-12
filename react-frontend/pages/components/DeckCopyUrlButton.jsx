@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { ShareFill } from 'react-bootstrap-icons';
+import ShareFill from '../../assets/images/icons/share-fill.svg';
 
 function DeckCopyUrlButton(props) {
   const deckUrl = process.env.ROOT_URL + 'deck?id=' + props.value;

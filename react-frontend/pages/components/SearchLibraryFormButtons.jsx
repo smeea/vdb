@@ -1,6 +1,7 @@
 import React from 'react';
 import { Spinner, Button } from 'react-bootstrap';
-import { X, Check2 } from 'react-bootstrap-icons';
+import X from '../../assets/images/icons/x.svg';
+import Check2 from '../../assets/images/icons/check2.svg';
 
 function SearchLibraryFormButtons(props) {
   return (

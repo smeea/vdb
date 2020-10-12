@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { PersonPlusFill, EyeFill, EyeSlashFill } from 'react-bootstrap-icons';
+import PersonPlusFill from '../../assets/images/icons/person-plus-fill.svg';
+import EyeFill from '../../assets/images/icons/eye-fill.svg';
+import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 
 function AccountRegister(props) {
   const [state, setState] = useState({

@@ -40,7 +40,7 @@
 * Use template strings in code
 * Split backend routes file
 * Split search forms file
-* Split js with React.lazy()
 
 # FOR DEPLOY
-* Cache TTL
+* Change react-bootstrap-icons to svg
+* Configure Cache-Control

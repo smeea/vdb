@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Files } from 'react-bootstrap-icons';
+import Files from '../../assets/images/icons/files.svg';
 
 function DeckClone(props) {
   const cloneDeck = () => {

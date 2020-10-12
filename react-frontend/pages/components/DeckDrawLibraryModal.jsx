@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { ArrowClockwise, Plus } from 'react-bootstrap-icons';
+import ArrowClockwise from '../../assets/images/icons/arrow-clockwise.svg';
+import Plus from '../../assets/images/icons/plus.svg';
 
 import ResultLibrary from './ResultLibrary.jsx';
 

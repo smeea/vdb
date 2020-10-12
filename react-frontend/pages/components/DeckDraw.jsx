@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { ArrowClockwise } from 'react-bootstrap-icons';
+import ArrowClockwise from '../../assets/images/icons/arrow-clockwise.svg';
 
 import DeckDrawCryptModal from './DeckDrawCryptModal.jsx';
 import DeckDrawLibraryModal from './DeckDrawLibraryModal.jsx';

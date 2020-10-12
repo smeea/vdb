@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Plus, Dash } from 'react-bootstrap-icons';
+import Plus from '../../assets/images/icons/plus.svg';
+import Dash from '../../assets/images/icons/dash.svg';
 
 function DeckCardQuantity(props) {
   return (

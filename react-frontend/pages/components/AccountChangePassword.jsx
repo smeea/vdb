@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { LockFill } from 'react-bootstrap-icons';
+import LockFill from '../../assets/images/icons/lock-fill.svg';
 
 function AccountChangePassword(props) {
   const [state, setState] = useState({

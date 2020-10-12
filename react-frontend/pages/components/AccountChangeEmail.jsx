@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { EnvelopeFill } from 'react-bootstrap-icons';
+import EnvelopeFill from '../../assets/images/icons/envelope-fill.svg';
 
 import OverlayTooltip from './OverlayTooltip.jsx';
 

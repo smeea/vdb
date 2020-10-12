@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { TrashFill } from 'react-bootstrap-icons';
+import TrashFill from '../../assets/images/icons/trash-fill.svg';
 
 import AccountRemoveConfirmation from './AccountRemoveConfirmation.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';

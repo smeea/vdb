@@ -5,6 +5,11 @@ import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 
 import Navigation from './pages/Navigation.jsx';
+// import Account from './pages/Account.jsx';
+// import About from './pages/About.jsx';
+// import Deck from './pages/Deck.jsx';
+// import Crypt from './pages/Crypt.jsx';
+// import Library from './pages/Library.jsx';
 
 function App(props) {
   const [username, setUsername] = useState(undefined);

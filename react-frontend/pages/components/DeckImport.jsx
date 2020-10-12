@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
-import { FileEarmarkPlus } from 'react-bootstrap-icons';
+import FileEarmarkPlus from '../../assets/images/icons/file-earmark-plus.svg';
 
 import DeckImportModal from './DeckImportModal.jsx';
 

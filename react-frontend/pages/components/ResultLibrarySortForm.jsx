@@ -1,6 +1,6 @@
 import React from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
-import { SortDown } from 'react-bootstrap-icons';
+import SortDown from '../../assets/images/icons/sort-down.svg';
 
 function ResultLibrarySortForm(props) {
   const sortMethods = ['Default', 'Name', 'Clan', 'Discipline', 'Type'];

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { PenFill } from 'react-bootstrap-icons';
+import PenFill from '../../assets/images/icons/pen-fill.svg';
 
 import OverlayTooltip from './OverlayTooltip.jsx';
 
