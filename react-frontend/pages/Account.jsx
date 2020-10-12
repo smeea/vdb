@@ -1,4 +1,6 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+
 import AccountLogin from './components/AccountLogin.jsx';
 import AccountLogout from './components/AccountLogout.jsx';
 import AccountRegister from './components/AccountRegister.jsx';
@@ -9,10 +11,9 @@ import AccountRemove from './components/AccountRemove.jsx';
 
 function Account(props) {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12 col-lg-2"></div>
-        <div className="col-md-12 col-lg-8">
+    <Container>
+      <Row className="justify-content-center">
+        <Col lg={8}>
           {props.username ? (
             <>
               <div className="d-flex justify-content-between">
@@ -42,10 +43,9 @@ function Account(props) {
               <AccountRegister setUsername={props.setUsername} />
             </>
           )}
-        </div>
-        <div className="col-md-12 col-lg-2"></div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

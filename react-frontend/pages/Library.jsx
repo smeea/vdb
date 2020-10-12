@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import AlertMessage from './components/AlertMessage.jsx';
 import ResultLibrary from './components/ResultLibrary.jsx';
@@ -11,9 +12,9 @@ function Library(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12 col-lg-3">
+    <Container>
+      <Row>
+        <Col md={12} lg={3}>
           {Object.keys(props.decks).length > 0 && (
             <DeckSelect
               preview={true}
@@ -32,9 +33,8 @@ function Library(props) {
               deckCardChange={props.deckCardChange}
             />
           )}
-        </div>
-
-        <div className="col-md-12 col-lg-6">
+        </Col>
+        <Col md={12} lg={6}>
           {results != undefined && results != null && (
             <ResultLibrary
               showImage={props.showImage}
@@ -57,13 +57,12 @@ function Library(props) {
               </>
             </AlertMessage>
           )}
-        </div>
-
-        <div className="col-md-12 col-lg-3">
+        </Col>
+        <Col md={12} lg={3}>
           <SearchLibraryForm setResults={setResults} />
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

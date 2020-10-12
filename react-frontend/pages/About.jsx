@@ -1,11 +1,11 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function About(props) {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12 col-lg-2"></div>
-        <div className="col-md-12 col-lg-8">
+    <Container>
+      <Row className="justify-content-center">
+        <Col lg={8}>
           <div className="about-version">
             <h5>VERSION</h5>
             <p>
@@ -116,10 +116,9 @@ function About(props) {
             <a href="mailto:smeea@riseup.net">email.</a>
             <br />
           </p>
-        </div>
-        <div className="col-md-12 col-lg-2"></div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

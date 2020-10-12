@@ -19,7 +19,7 @@ function Navigation(props) {
     }
 
     return (
-      <Navbar bg="dark" variant="dark">
+      <Navbar sticky="top" bg="dark" variant="dark">
         <Nav className="container justify-content-end">
           <NavLink to="/account" className="nav-link px-2">
             <AccountEntry username={props.username} />

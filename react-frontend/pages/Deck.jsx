@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Redirect } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import AlertMessage from './components/AlertMessage.jsx';
 import DeckNew from './components/DeckNew.jsx';
@@ -62,10 +63,10 @@ function Deck(props) {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12 col-lg-1"></div>
-        <div className="col-md-12 col-lg-10">
+    <Container>
+      <Row>
+        <Col md={12} lg={1}></Col>
+        <Col md={12} lg={10}>
           {props.username && (
             <>
               <DeckNew
@@ -121,10 +122,10 @@ function Deck(props) {
               />
             )
           ) : null}
-        </div>
-        <div className="col-md-12 col-lg-1"></div>
-      </div>
-    </div>
+        </Col>
+        <Col md={12} lg={1}></Col>
+      </Row>
+    </Container>
   );
 }
 

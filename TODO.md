@@ -6,6 +6,7 @@
 # ADDITIONAL FEATURE
 * Temporary 'add to compare' button
 * Card rulings
+* Add demo account
 
 # MAJOR FIX
 * Increase width of main column
@@ -15,12 +16,12 @@
 * Redirect from login to decks
 * Redirect to about from / page
 * Export deck min/max capacity
-* Plus-Minus from PlusCircleFill / PlusCircle / PlusSquareFill / PlusSquare
 
 # MOBILE FIX
 * Navbar always on top for mobile
 * Toggle search button
 * Toggle deck button
+* Popover
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Forms to React-Hook-Forms / Formik
