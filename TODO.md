@@ -40,3 +40,7 @@
 * Use template strings in code
 * Split backend routes file
 * Split search forms file
+* Split js with React.lazy()
+
+# FOR DEPLOY
+* Cache TTL

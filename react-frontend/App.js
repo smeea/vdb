@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 
 import Navigation from './pages/Navigation.jsx';
-import Account from './pages/Account.jsx';
-import About from './pages/About.jsx';
-import Deck from './pages/Deck.jsx';
-import Crypt from './pages/Crypt.jsx';
-import Library from './pages/Library.jsx';
 
 function App(props) {
   const [username, setUsername] = useState(undefined);
@@ -103,88 +98,98 @@ function App(props) {
     }
   }, [username]);
 
+  const LazyCrypt = lazy(() => import('./pages/Crypt.jsx'));
+  const LazyLibrary = lazy(() => import('./pages/Library.jsx'));
+  const LazyAbout = lazy(() => import('./pages/About.jsx'));
+  const LazyDeck = lazy(() => import('./pages/Deck.jsx'));
+  const LazyAccount = lazy(() => import('./pages/Account.jsx'));
+
   return (
     <div className="App">
       <Router>
         <Navigation username={username} />
-        <Switch>
-          <Route path="/" exact component={() => <About />} />
-          <Route path="/about" exact component={() => <About />} />
-          <Route
-            path="/account"
-            exact
-            component={() => (
-              <Account
-                username={username}
-                publicName={publicName}
-                email={email}
-                setUsername={setUsername}
-                setPublicName={setPublicName}
-                setEmail={setEmail}
-              />
-            )}
-          />
-          <Route
-            path="/deck"
-            exact
-            component={() => (
-              <Deck
-                decks={decks}
-                getDecks={getDecks}
-                activeDeck={activeDeck}
-                setActiveDeck={setActiveDeck}
-                deckCardAdd={deckCardAdd}
-                deckCardChange={deckCardChange}
-                showImage={showImage}
-                toggleImage={toggleImage}
-                username={username}
-                whoAmI={whoAmI}
-              />
-            )}
-          />
-          <Route
-            path="/deck/:id"
-            component={(props) => (
-              <Deck
-                decks={decks}
-                getDecks={getDecks}
-                activeDeck={activeDeck}
-                setActiveDeck={setActiveDeck}
-                deckCardAdd={deckCardAdd}
-                deckCardChange={deckCardChange}
-                showImage={showImage}
-                toggleImage={toggleImage}
-                username={username}
-                whoAmI={whoAmI}
-                id={props.match.params.id}
-              />
-            )}
-          />
-          <Route path="/crypt">
-            <Crypt
-              deckCardAdd={deckCardAdd}
-              deckCardChange={deckCardChange}
-              decks={decks}
-              getDecks={getDecks}
-              activeDeck={activeDeck}
-              setActiveDeck={setActiveDeck}
-              showImage={showImage}
-              toggleImage={toggleImage}
+        <Suspense fallback={<div></div>}>
+          <Switch>
+            <Route path="/" exact component={() => <LazyAbout />} />
+            <Route path="/about" exact component={() => <LazyAbout />} />
+            <Route
+              path="/account"
+              exact
+              component={() => (
+                <LazyAccount
+                  username={username}
+                  publicName={publicName}
+                  email={email}
+                  setUsername={setUsername}
+                  setPublicName={setPublicName}
+                  setEmail={setEmail}
+                />
+              )}
             />
-          </Route>
-          <Route path="/library">
-            <Library
-              deckCardAdd={deckCardAdd}
-              deckCardChange={deckCardChange}
-              decks={decks}
-              getDecks={getDecks}
-              activeDeck={activeDeck}
-              setActiveDeck={setActiveDeck}
-              showImage={showImage}
-              toggleImage={toggleImage}
+            <Route
+              path="/deck"
+              exact
+              component={() => (
+                <LazyDeck
+                  decks={decks}
+                  getDecks={getDecks}
+                  activeDeck={activeDeck}
+                  setActiveDeck={setActiveDeck}
+                  deckCardAdd={deckCardAdd}
+                  deckCardChange={deckCardChange}
+                  showImage={showImage}
+                  toggleImage={toggleImage}
+                  username={username}
+                  whoAmI={whoAmI}
+                />
+              )}
             />
-          </Route>
-        </Switch>
+            <Route
+              path="/deck/:id"
+              component={(props) => (
+                <LazyDeck
+                  decks={decks}
+                  getDecks={getDecks}
+                  activeDeck={activeDeck}
+                  setActiveDeck={setActiveDeck}
+                  deckCardAdd={deckCardAdd}
+                  deckCardChange={deckCardChange}
+                  showImage={showImage}
+                  toggleImage={toggleImage}
+                  username={username}
+                  whoAmI={whoAmI}
+                  id={props.match.params.id}
+                />
+              )}
+            />
+            <Route path="/crypt"
+                   component={(props) =>
+                     <LazyCrypt
+                       deckCardAdd={deckCardAdd}
+                       deckCardChange={deckCardChange}
+                       decks={decks}
+                       getDecks={getDecks}
+                       activeDeck={activeDeck}
+                       setActiveDeck={setActiveDeck}
+                       showImage={showImage}
+                       toggleImage={toggleImage}
+                     />}
+            />
+            <Route path="/library"
+                   component={(props) =>
+                     <LazyLibrary
+                       deckCardAdd={deckCardAdd}
+                       deckCardChange={deckCardChange}
+                       decks={decks}
+                       getDecks={getDecks}
+                       activeDeck={activeDeck}
+                       setActiveDeck={setActiveDeck}
+                       showImage={showImage}
+                       toggleImage={toggleImage}
+                     />
+                   } />
+          </Switch>
+        </Suspense>
       </Router>
     </div>
   );
