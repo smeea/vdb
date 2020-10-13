@@ -63,7 +63,7 @@ function Deck(props) {
   }
 
   return (
-    <Container>
+    <Container className="main-container">
       <Row>
         <Col md={12} lg={1}></Col>
         <Col md={12} lg={10}>

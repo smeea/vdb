@@ -12,7 +12,7 @@ function Library(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   return (
-    <Container>
+    <Container className="main-container">
       <Row>
         <Col md={12} lg={3}>
           {Object.keys(props.decks).length > 0 && (

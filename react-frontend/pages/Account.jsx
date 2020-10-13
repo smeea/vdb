@@ -11,7 +11,7 @@ import AccountRemove from './components/AccountRemove.jsx';
 
 function Account(props) {
   return (
-    <Container>
+    <Container className="main-container">
       <Row className="justify-content-center">
         <Col lg={8}>
           {props.username ? (

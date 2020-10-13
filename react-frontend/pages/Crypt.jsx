@@ -12,9 +12,9 @@ function Crypt(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   return (
-    <Container>
+    <Container className="main-container">
       <Row>
-        <Col md={12} lg={3}>
+        <Col md={12} lg={3} className="left-col">
           {Object.keys(props.decks).length > 0 && (
             <DeckSelect
               preview={true}
@@ -33,7 +33,7 @@ function Crypt(props) {
             />
           )}
         </Col>
-        <Col md={12} lg={6}>
+        <Col md={12} lg={6} className="middle-col">
           {results != undefined && results != null && (
             <ResultCrypt
               showImage={props.showImage}
@@ -57,7 +57,7 @@ function Crypt(props) {
             </AlertMessage>
           )}
         </Col>
-        <Col md={12} lg={3}>
+        <Col md={12} lg={3} className="right-col">
           <SearchCryptForm setResults={setResults} />
         </Col>
       </Row>

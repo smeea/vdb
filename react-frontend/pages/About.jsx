@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function About(props) {
   return (
-    <Container>
+    <Container className="main-container">
       <Row className="justify-content-center">
         <Col lg={8}>
           <div className="about-version">
