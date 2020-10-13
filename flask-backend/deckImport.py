@@ -15,7 +15,7 @@ with open("vteslib.json", "r") as library_file:
     library = json.load(library_file)
 
 
-def deck_parse_import(deckText):
+def deckImport(deckText):
     linesArray = deckText.splitlines()
     deck = {}
     for i in linesArray:
