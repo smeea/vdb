@@ -15,12 +15,10 @@ function DeckImportModal(props) {
   const importDeck = () => {
     setImportError(false);
     setEmptyDeckText(false);
-
-    setEmptyDeckText(false);
     setSpinnerState(true);
 
     let newDeckId;
-    const url = process.env.API_URL + 'decks/import';
+    const url = `${process.env.API_URL}decks/import`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -44,6 +42,7 @@ function DeckImportModal(props) {
       .then(() => props.getDecks())
       .then(() => {
         props.setActiveDeck(newDeckId);
+        props.handleClose();
       })
       .catch((error) => {
         setImportError(true);

@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import ShareFill from '../../assets/images/icons/share-fill.svg';
 
 function DeckCopyUrlButton(props) {
-  const deckUrl = process.env.ROOT_URL + 'deck?id=' + props.value;
+  const deckUrl = `${process.env.ROOT_URL}deck?id=${props.value}`;
   const handleButton = () => {
     navigator.clipboard.writeText(deckUrl);
     setState(true);

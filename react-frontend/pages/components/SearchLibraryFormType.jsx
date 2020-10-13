@@ -40,11 +40,9 @@ function SearchLibraryFormType(props) {
         ),
       });
     } else {
-      const imgSrc =
-        process.env.ROOT_URL +
-        'images/types/' +
-        i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
-        '.gif';
+      const imgSrc = `${
+        process.env.ROOT_URL
+      }images/types/${i.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.gif`;
       options.push({
         value: i.toLowerCase(),
         name: 'type',

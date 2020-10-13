@@ -9,18 +9,11 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 
 function ResultLibraryPopover(props) {
+  const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
+    .toLowerCase()
+    .replace(/[\s,:!?'".\-\(\)]/g, '')}.jpg`;
   const cardImage = (
-    <img
-      className="card-popover"
-      src={
-        '/images/cards/' +
-        props.card['ASCII Name']
-          .toLowerCase()
-          .replace(/[\s,:!?'".\-\(\)]/g, '') +
-        '.jpg'
-      }
-      alt={props.card['Name']}
-    />
+    <img className="card-popover" src={imgSrc} alt={props.card['Name']} />
   );
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {

@@ -42,7 +42,7 @@ function DeckExport(props) {
     if (props.activeDeck) {
       setSpinnerState(true);
 
-      const url = process.env.API_URL + 'decks/export';
+      const url = `${process.env.API_URL}decks/export`;
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -80,7 +80,7 @@ function DeckExport(props) {
     if (props.activeDeck) {
       setSpinnerState(true);
 
-      const url = process.env.API_URL + 'decks/export';
+      const url = `${process.env.API_URL}decks/export`;
       const options = {
         method: 'POST',
         mode: 'cors',

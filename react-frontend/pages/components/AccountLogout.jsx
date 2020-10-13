@@ -4,9 +4,7 @@ import DoorClosedFill from '../../assets/images/icons/door-closed-fill.svg';
 
 function AccountLogout(props) {
   const logoutUser = () => {
-    console.log('submit logout button');
-
-    const url = process.env.API_URL + 'logout';
+    const url = `${process.env.API_URL}logout`;
     const options = {
       method: 'GET',
       mode: 'cors',

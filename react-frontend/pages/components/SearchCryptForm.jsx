@@ -171,7 +171,7 @@ function SearchCryptForm(props) {
   const handleSubmitButton = (event) => {
     event.preventDefault();
 
-    const url = process.env.API_URL + 'search/crypt';
+    const url = `${process.env.API_URL}search/crypt`;
 
     const input = JSON.parse(JSON.stringify(formState));
     Object.keys(input.disciplines).forEach(

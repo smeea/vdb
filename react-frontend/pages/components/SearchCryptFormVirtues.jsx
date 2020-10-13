@@ -12,11 +12,9 @@ function SearchCryptFormVirtues(props) {
   ];
 
   const virtuesforms = virtues.map((i, index) => {
-    const imgSrc =
-      process.env.ROOT_URL +
-      'images/disciplines/' +
-      i.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
-      '.gif';
+    const imgSrc = `${
+      process.env.ROOT_URL
+    }images/disciplines/${i.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.gif`;
     const virtueState = 'virtue-container mb-2 state' + props.value[i];
     return (
       <div key={index} className={virtueState}>

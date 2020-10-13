@@ -30,7 +30,7 @@ function AccountRegister(props) {
       setEmptyUsername(false);
       setEmptyPassword(false);
 
-      const url = process.env.API_URL + 'register';
+      const url = `${process.env.API_URL}register`;
       const input = {
         username: state.username,
         password: state.password,

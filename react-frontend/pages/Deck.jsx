@@ -15,7 +15,7 @@ function Deck(props) {
   const sharedDeckId = query.get('id');
 
   const getDeck = (deckid) => {
-    const url = process.env.API_URL + 'deck/' + deckid;
+    const url = `${process.env.API_URL}deck/${deckid}`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -34,7 +34,7 @@ function Deck(props) {
   };
 
   const deckUpdate = (deckid, field, value) => {
-    const url = process.env.API_URL + 'deck/' + deckid;
+    const url = `${process.env.API_URL}deck/${deckid}`;
     const options = {
       method: 'PUT',
       mode: 'cors',

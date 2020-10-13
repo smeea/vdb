@@ -4,11 +4,11 @@ import Navigation from './pages/Navigation.jsx';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 
-const Crypt = React.lazy(() => import('./pages/Crypt.jsx'));
-const Library = React.lazy(() => import('./pages/Library.jsx'));
-const About = React.lazy(() => import('./pages/About.jsx'));
-const Deck = React.lazy(() => import('./pages/Deck.jsx'));
-const Account = React.lazy(() => import('./pages/Account.jsx'));
+const Crypt = lazy(() => import('./pages/Crypt.jsx'));
+const Library = lazy(() => import('./pages/Library.jsx'));
+const About = lazy(() => import('./pages/About.jsx'));
+const Deck = lazy(() => import('./pages/Deck.jsx'));
+const Account = lazy(() => import('./pages/Account.jsx'));
 
 function App(props) {
   const [username, setUsername] = useState(undefined);
@@ -22,7 +22,7 @@ function App(props) {
   const [activeDeck, setActiveDeck] = useState(undefined);
 
   const getDecks = () => {
-    const url = process.env.API_URL + 'decks';
+    const url = `${process.env.API_URL}decks`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -43,7 +43,7 @@ function App(props) {
   };
 
   const deckCardAdd = (cardid) => {
-    const url = process.env.API_URL + 'deck/' + activeDeck;
+    const url = `${process.env.API_URL}deck/${activeDeck}`;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -58,7 +58,7 @@ function App(props) {
   };
 
   const deckCardChange = (deckid, cardid, count) => {
-    const url = process.env.API_URL + 'deck/' + deckid;
+    const url = `${process.env.API_URL}deck/${deckid}`;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -73,7 +73,7 @@ function App(props) {
   };
 
   const whoAmI = () => {
-    const url = process.env.API_URL + 'login';
+    const url = `${process.env.API_URL}login`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -108,7 +108,9 @@ function App(props) {
         <Navigation username={username} />
         <Switch>
           <Suspense fallback={<></>}>
-            <Route path="/" exact><About /></Route>
+            <Route path="/" exact>
+              <About />
+            </Route>
             <Route path="/about" exact component={() => <About />} />
             <Route path="/account">
               <Account

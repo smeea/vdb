@@ -7,6 +7,7 @@
 * Temporary 'add to compare' button
 * Card rulings
 * Add demo account
+* Night Theme
 
 # MAJOR FIX
 * Increase width of main column
@@ -25,7 +26,6 @@
 * Keys to use nanoid
 * Use day.js for dates
 * Add props validation
-* Night Theme
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
@@ -34,8 +34,6 @@
 # FIX TECHNOLOGY
 * DeckPreviewCrypt/Library to use Result components
 * Unify error handling
-* Use template strings in code
-* Split backend routes file
 
 # FOR DEPLOY
 * Set Cache-Control

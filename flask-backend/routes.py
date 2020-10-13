@@ -5,8 +5,8 @@ import uuid
 
 from searchCrypt import searchCrypt
 from searchLibrary import searchLibrary
-from search_crypt import get_crypt_by_id
-from search_library import get_library_by_id
+from searchCryptComponents import get_crypt_by_id
+from searchLibraryComponents import get_library_by_id
 from deckExport import deckExport
 from deckImport import deckImport
 from api import app
@@ -66,7 +66,7 @@ def updateDeck(deckid):
             pass
         try:
             if request.json['cardAdd']:
-                new_cards = request.json['add']
+                new_cards = request.json['cardAdd']
                 merged_cards = d.cards.copy()
                 for k, v in new_cards.items():
                     if k not in merged_cards:

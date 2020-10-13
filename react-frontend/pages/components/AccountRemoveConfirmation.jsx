@@ -14,7 +14,7 @@ function AccountRemoveConfirmation(props) {
     if (password) {
       setEmptyPassword(false);
 
-      const url = process.env.API_URL + 'account/remove';
+      const url = `${process.env.API_URL}account/remove`;
       const options = {
         method: 'POST',
         mode: 'cors',

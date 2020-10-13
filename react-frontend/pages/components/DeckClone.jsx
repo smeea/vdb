@@ -5,7 +5,7 @@ import Files from '../../assets/images/icons/files.svg';
 function DeckClone(props) {
   const cloneDeck = () => {
     let newdeckid;
-    const url = process.env.API_URL + 'decks/clone';
+    const url = `${process.env.API_URL}decks/clone`;
     const options = {
       method: 'POST',
       mode: 'cors',

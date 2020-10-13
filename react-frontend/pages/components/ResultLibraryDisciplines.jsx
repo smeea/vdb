@@ -8,8 +8,9 @@ function ResultLibraryDisciplines(props) {
     const disciplines = props.value.split(' & ');
     let items = disciplines.length;
     disciplinesImages = disciplines.map((d, index) => {
-      const imgSrc =
-        process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase() + '.gif';
+      const imgSrc = `${
+        process.env.ROOT_URL
+      }images/disciplines/${d.toLowerCase()}.gif`;
       const imgTitle = d;
       if (items > 1) {
         items -= 1;
@@ -31,8 +32,9 @@ function ResultLibraryDisciplines(props) {
     const disciplines = props.value.split('/');
     let items = disciplines.length;
     disciplinesImages = disciplines.map((d, index) => {
-      const imgSrc =
-        process.env.ROOT_URL + 'images/disciplines/' + d.toLowerCase() + '.gif';
+      const imgSrc = `${
+        process.env.ROOT_URL
+      }images/disciplines/${d.toLowerCase()}.gif`;
       const imgTitle = d;
       if (items > 1) {
         items -= 1;
@@ -51,11 +53,9 @@ function ResultLibraryDisciplines(props) {
       }
     });
   } else if (props.value) {
-    const imgSrc =
-      process.env.ROOT_URL +
-      'images/disciplines/' +
-      props.value.toLowerCase() +
-      '.gif';
+    const imgSrc = `${
+      process.env.ROOT_URL
+    }images/disciplines/${props.value.toLowerCase()}.gif`;
     const imgTitle = props.value;
     disciplinesImages = (
       <img className={imgClass} src={imgSrc} title={imgTitle} />

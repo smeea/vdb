@@ -23,7 +23,7 @@ function AccountChangeName(props) {
     if (state.publicName) {
       setEmptyPublicName(false);
 
-      const url = process.env.API_URL + 'account';
+      const url = `${process.env.API_URL}account`;
       const input = {
         publicName: state.publicName,
       };

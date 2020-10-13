@@ -7,19 +7,11 @@ import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 
 function ResultCryptPopover(props) {
+  const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
+    .toLowerCase()
+    .replace(/[\s,:!?'".\-\(\)]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
   const cardImage = (
-    <img
-      className="card-popover"
-      src={
-        '/images/cards/' +
-        props.card['ASCII Name']
-          .toLowerCase()
-          .replace(/[\s,:!?'".\-\(\)]/g, '') +
-        (props.card['Adv'] && 'adv') +
-        '.jpg'
-      }
-      alt={props.card['Name']}
-    />
+    <img className="card-popover" src={imgSrc} alt={props.card['Name']} />
   );
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {

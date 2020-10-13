@@ -1,5 +1,5 @@
-from search_crypt import get_crypt_by_id
-from search_library import get_library_by_id
+from searchCryptComponents import get_crypt_by_id
+from searchLibraryComponents import get_library_by_id
 import re
 
 

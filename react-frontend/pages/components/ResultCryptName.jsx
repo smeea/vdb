@@ -17,7 +17,7 @@ function ResultCryptName(props) {
   let imgSrc = '';
   let imgTitle = '';
   if (props.adv) {
-    imgSrc = process.env.ROOT_URL + 'images/misc/advanced.gif';
+    imgSrc = `${process.env.ROOT_URL}images/misc/advanced.gif`;
     imgTitle = 'Advanced';
   }
 

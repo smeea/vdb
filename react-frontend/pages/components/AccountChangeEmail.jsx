@@ -29,7 +29,7 @@ function AccountChangeEmail(props) {
       setEmptyEmail(false);
       setEmptyPassword(false);
 
-      const url = process.env.API_URL + 'account';
+      const url = `${process.env.API_URL}account`;
       const input = {
         password: state.password,
         email: state.email,

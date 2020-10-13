@@ -36,7 +36,7 @@ function DeckImport(props) {
     reader.onload = () => {
       console.log(reader.result);
 
-      const url = process.env.API_URL + 'decks/import';
+      const url = `${process.env.API_URL}decks/import`;
       const options = {
         method: 'POST',
         mode: 'cors',

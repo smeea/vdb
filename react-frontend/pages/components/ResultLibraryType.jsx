@@ -4,11 +4,9 @@ function ResultLibraryType(props) {
   const imgClass = 'type-image-results';
   const cardtypes = props.cardtype.split('/');
   const cardtypeImages = cardtypes.map((cardtype, index) => {
-    const imgSrc =
-      process.env.ROOT_URL +
-      'images/types/' +
-      cardtype.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
-      '.gif';
+    const imgSrc = `${
+      process.env.ROOT_URL
+    }images/types/${cardtype.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.gif`;
     const imgTitle = cardtype;
     return (
       <img key={index} className={imgClass} src={imgSrc} title={imgTitle} />

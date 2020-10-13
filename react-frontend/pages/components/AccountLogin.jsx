@@ -33,7 +33,7 @@ function AccountLogin(props) {
       setEmptyUsername(false);
       setEmptyPassword(false);
 
-      const url = process.env.API_URL + 'login';
+      const url = `${process.env.API_URL}login`;
       const input = {
         username: state.username,
         password: state.password,

@@ -8,11 +8,9 @@ function ResultLibraryClan(props) {
     const clans = props.value.split('/');
     let items = clans.length;
     clanImages = clans.map((clan, index) => {
-      const imgSrc =
-        process.env.ROOT_URL +
-        'images/clans/' +
-        clan.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
-        '.gif';
+      const imgSrc = `${
+        process.env.ROOT_URL
+      }images/clans/${clan.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.gif`;
 
       if (items > 1) {
         items -= 1;
@@ -31,11 +29,11 @@ function ResultLibraryClan(props) {
       }
     });
   } else if (props.value) {
-    const imgSrc =
-      process.env.ROOT_URL +
-      'images/clans/' +
-      props.value.toLowerCase().replace(/[\s,:!?'.\-]/g, '') +
-      '.gif';
+    const imgSrc = `${
+      process.env.ROOT_URL
+    }images/clans/${props.value
+      .toLowerCase()
+      .replace(/[\s,:!?'.\-]/g, '')}.gif`;
     clanImages = <img className={imgClass} src={imgSrc} title={props.value} />;
   }
 

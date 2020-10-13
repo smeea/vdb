@@ -31,7 +31,7 @@ function AccountChangePassword(props) {
       setEmptyPassword(false);
       setPasswordConfirmError(false);
 
-      const url = process.env.API_URL + 'account';
+      const url = `${process.env.API_URL}account`;
       const input = {
         password: state.password,
         newPassword: state.newPassword,
