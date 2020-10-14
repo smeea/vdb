@@ -76,10 +76,9 @@ function AccountChangeName(props) {
             onChange={handleChange}
           />
           {emptyPublicName && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Enter name</span>
-            </>
+            </div>
           )}
         </div>
         <Button variant="outline-secondary" onClick={changeName}>

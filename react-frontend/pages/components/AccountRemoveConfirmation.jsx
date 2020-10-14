@@ -67,8 +67,9 @@ function AccountRemoveConfirmation(props) {
           </span>
         </Modal.Header>
         <Modal.Body>
-          THIS CANNOT BE UNDONE!
-          <br />
+          <div>
+            THIS CANNOT BE UNDONE!
+          </div>
           <input
             placeholder="Password"
             type="password"
@@ -86,16 +87,14 @@ function AccountRemoveConfirmation(props) {
             Cancel
           </Button>
           {passwordError && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Wrong password</span>
-            </>
+            </div>
           )}
           {emptyPassword && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Enter password</span>
-            </>
+            </div>
           )}
         </Modal.Body>
       </Modal>

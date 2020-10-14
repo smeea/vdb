@@ -3,7 +3,6 @@ import { useLocation, Redirect } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import AlertMessage from './components/AlertMessage.jsx';
-import DeckNew from './components/DeckNew.jsx';
 import DeckImport from './components/DeckImport.jsx';
 import DeckExport from './components/DeckExport.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
@@ -64,27 +63,26 @@ function Deck(props) {
 
   return (
     <Container className="main-container">
+      {props.username && (
+        <Row>
+          <Col md={12} lg={9}>
+            <DeckSelect
+              decks={props.decks}
+              activeDeck={props.activeDeck}
+              setActiveDeck={props.setActiveDeck}
+            />
+          </Col>
+          <Col md={12} lg={3}>
+            <DeckImport
+              setActiveDeck={props.setActiveDeck}
+              getDecks={props.getDecks}
+            />
+            <DeckExport activeDeck={props.activeDeck} />
+          </Col>
+        </Row>
+      )}
       <Row>
-        <Col md={12} lg={1}></Col>
-        <Col md={12} lg={10}>
-          {props.username && (
-            <>
-              <DeckNew
-                setActiveDeck={props.setActiveDeck}
-                getDecks={props.getDecks}
-              />
-              <DeckImport
-                setActiveDeck={props.setActiveDeck}
-                getDecks={props.getDecks}
-              />
-              <DeckExport activeDeck={props.activeDeck} />
-              <DeckSelect
-                decks={props.decks}
-                activeDeck={props.activeDeck}
-                setActiveDeck={props.setActiveDeck}
-              />
-            </>
-          )}
+        <Col>
           {props.decks[props.activeDeck] && (
             <DeckShow
               showImage={props.showImage}
@@ -123,7 +121,6 @@ function Deck(props) {
             )
           ) : null}
         </Col>
-        <Col md={12} lg={1}></Col>
       </Row>
     </Container>
   );

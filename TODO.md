@@ -10,7 +10,6 @@
 * Night Theme
 
 # MAJOR FIX
-* Increase width of main column
 
 # MINOR FIX
 * Redirect from login to decks
@@ -22,6 +21,7 @@
 * Popover
 
 # IMPROVE TECHNOLOGY - FRONTEND
+* Add access_token to cookies or localStorage
 * Forms to React-Hook-Forms / Formik
 * Keys to use nanoid
 * Use day.js for dates

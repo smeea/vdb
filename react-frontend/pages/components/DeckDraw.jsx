@@ -134,7 +134,6 @@ function DeckDraw(props) {
       <Button variant="outline-secondary" onClick={handleOpenDrawLibrary}>
         <ArrowClockwise /> Draw Library
       </Button>
-      <br />
       {showDrawCryptModal != null && (
         <DeckDrawCryptModal
           handleReDraw={handleReDrawCrypt}

@@ -44,54 +44,45 @@ function DeckNewLibraryCard(props) {
   }, [selectedValue]);
 
   return (
-    <div className="input-group mb-3">
-      <div className="input-group-prepend">
-        <span className="input-group-text" id="basic-addon1">
-          Add Library
-        </span>
-      </div>
-      <div className="flex-grow-1">
-        <AsyncSelect
-          cacheOptions
-          defaultOptions
-          value={selectedValue}
-          getOptionLabel={(card) => (
-            <>
-              <div className="d-flex align-items-center justify-content-between">
-                <div>
-                  <ResultLibraryType cardtype={card['Type']} />
-                  <span className="pl-1">
-                    {card['Name'] + (card['Banned'] ? ' [BANNED]' : '')}
-                  </span>
-                </div>
-                <div>
-                  {card['Discipline'] && (
-                    <span className="pl-2">
-                      <ResultLibraryDisciplines value={card['Discipline']} />
-                    </span>
-                  )}
-                  {card['Clan'] && (
-                    <span className="pl-2">
-                      <ResultLibraryClan value={card['Clan']} />
-                    </span>
-                  )}
-                  {(card['Blood Cost'] || card['Pool Cost']) && (
-                    <span className="pl-2">
-                      <ResultLibraryCost
-                        valuePool={card['Pool Cost']}
-                        valueBlood={card['Blood Cost']}
-                      />
-                    </span>
-                  )}
-                </div>
-              </div>
-            </>
-          )}
-          loadOptions={loadOptions}
-          onChange={handleChange}
-        />
-      </div>
-    </div>
+    <AsyncSelect
+      cacheOptions
+      defaultOptions
+      value={selectedValue}
+      getOptionLabel={(card) => (
+        <>
+          <div className="d-flex align-items-center justify-content-between">
+            <div>
+              <ResultLibraryType cardtype={card['Type']} />
+              <span className="pl-1">
+                {card['Name'] + (card['Banned'] ? ' [BANNED]' : '')}
+              </span>
+            </div>
+            <div>
+              {card['Discipline'] && (
+                <span className="pl-2">
+                  <ResultLibraryDisciplines value={card['Discipline']} />
+                </span>
+              )}
+              {card['Clan'] && (
+                <span className="pl-2">
+                  <ResultLibraryClan value={card['Clan']} />
+                </span>
+              )}
+              {(card['Blood Cost'] || card['Pool Cost']) && (
+                <span className="pl-2">
+                  <ResultLibraryCost
+                    valuePool={card['Pool Cost']}
+                    valueBlood={card['Blood Cost']}
+                  />
+                </span>
+              )}
+            </div>
+          </div>
+        </>
+      )}
+      loadOptions={loadOptions}
+      onChange={handleChange}
+    />
   );
 }
 

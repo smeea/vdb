@@ -91,10 +91,9 @@ function AccountLogin(props) {
             onChange={handleChange}
           />
           {emptyUsername && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Enter username</span>
-            </>
+            </div>
           )}
         </div>
         <div>

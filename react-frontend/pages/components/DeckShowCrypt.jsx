@@ -1,5 +1,6 @@
 import React from 'react';
 
+import DeckNewCryptCard from './DeckNewCryptCard.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -93,8 +94,8 @@ function DeckCryptBody(props) {
   };
 
   const sortedCards = Object.values(props.cards)
-    .sort(SortByCapacity)
-    .sort(SortByQuantity);
+        .sort(SortByCapacity)
+        .sort(SortByQuantity);
 
   let resultTrClass;
 
@@ -177,13 +178,13 @@ function DeckShowCrypt(props) {
 
     if (
       props.cards[card].c['Group'] < cryptGroupMin ||
-      cryptGroupMin == undefined
+        cryptGroupMin == undefined
     ) {
       cryptGroupMin = props.cards[card].c['Group'];
     }
     if (
       props.cards[card].c['Group'] > cryptGroupMax ||
-      cryptGroupMax == undefined
+        cryptGroupMax == undefined
     ) {
       cryptGroupMax = props.cards[card].c['Group'];
     }
@@ -208,9 +209,8 @@ function DeckShowCrypt(props) {
   return (
     <>
       <div className="deck-crypt">
-        <b>
-          Crypt [{cryptTotal}] - {cryptGroups}
-        </b>
+        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
+        {props.isAuthor && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
         <table className="deck-crypt-table">
           <DeckCryptBody
             deckid={props.deckid}

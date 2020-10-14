@@ -67,13 +67,11 @@ function DeckNew(props) {
       </div>
       {emptyDeckName && (
         <div className="d-flex justify-content-end">
-          <br />
           <span className="login-error">Enter deck name</span>
         </div>
       )}
       {createError && (
         <div className="d-flex justify-content-end">
-          <br />
           <span className="login-error">Unknown error</span>
         </div>
       )}

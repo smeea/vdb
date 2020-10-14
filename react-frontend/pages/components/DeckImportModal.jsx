@@ -89,13 +89,11 @@ function DeckImportModal(props) {
         )}
         {emptyDeckText && (
           <div className="d-flex justify-content-end">
-            <br />
             <span className="login-error">Paste deck</span>
           </div>
         )}
         {importError && (
           <div className="d-flex justify-content-end">
-            <br />
             <span className="login-error">Cannot import this deck</span>
           </div>
         )}

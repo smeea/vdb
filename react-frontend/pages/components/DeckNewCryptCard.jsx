@@ -43,40 +43,31 @@ function DeckNewCryptCard(props) {
   }, [selectedValue]);
 
   return (
-    <div className="input-group mb-3">
-      <div className="input-group-prepend">
-        <span className="input-group-text" id="basic-addon1">
-          Add Crypt
-        </span>
-      </div>
-      <div className="flex-grow-1">
-        <AsyncSelect
-          cacheOptions
-          defaultOptions
-          value={selectedValue}
-          getOptionLabel={(card) => (
-            <>
-              <div className="d-flex align-items-center justify-content-between">
-                <div>
-                  <ResultCryptCapacity value={card['Capacity']} />
-                  <span className="px-2">
-                    {card['Name'] +
-                      (card['Adv'] ? ' [ADV]' : '') +
-                      (card['Banned'] ? ' [BANNED]' : '')}
-                  </span>
-                  <ResultCryptClan value={card['Clan']} />
-                </div>
-                <div className="d-flex flex-nowrap">
-                  <ResultCryptDisciplines value={card['Disciplines']} />
-                </div>
-              </div>
-            </>
-          )}
-          loadOptions={loadOptions}
-          onChange={handleChange}
-        />
-      </div>
-    </div>
+    <AsyncSelect
+      cacheOptions
+      defaultOptions
+      value={selectedValue}
+      getOptionLabel={(card) => (
+        <>
+          <div className="d-flex align-items-center justify-content-between">
+            <div>
+              <ResultCryptCapacity value={card['Capacity']} />
+              <span className="px-2">
+                {card['Name'] +
+                 (card['Adv'] ? ' [ADV]' : '') +
+                 (card['Banned'] ? ' [BANNED]' : '')}
+              </span>
+              <ResultCryptClan value={card['Clan']} />
+            </div>
+            <div className="d-flex flex-nowrap">
+              <ResultCryptDisciplines value={card['Disciplines']} />
+            </div>
+          </div>
+        </>
+      )}
+      loadOptions={loadOptions}
+      onChange={handleChange}
+    />
   );
 }
 

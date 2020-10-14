@@ -7,6 +7,7 @@ import DeckImportModal from './DeckImportModal.jsx';
 function DeckImport(props) {
   const [importError, setImportError] = useState(false);
   const [showImportModal, setShowImportModal] = useState(false);
+  const [createError, setCreateError] = useState('');
 
   const fileInput = React.createRef();
 
@@ -16,16 +17,36 @@ function DeckImport(props) {
   const handleCloseImportModal = () => setShowImportModal(false);
   const handleOpenImportModal = () => setShowImportModal(true);
 
-  const ImportButtonOptions = (
-    <>
-      <Dropdown.Item href="" onClick={handleFileInputClick}>
-        Import from File
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={handleOpenImportModal}>
-        Paste text
-      </Dropdown.Item>
-    </>
-  );
+  const createNewDeck = () => {
+    setCreateError(false);
+
+    let newdeckid;
+    const url = `${process.env.API_URL}decks/create`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ deckname: 'New deck' }),
+    };
+
+    const fetchPromise = fetch(url, options);
+
+    fetchPromise
+      .then((response) => response.json())
+      .then((data) => {
+        newdeckid = data.deckid;
+        console.log('new deck id:', newdeckid);
+      })
+      .then(() => props.getDecks())
+      .then(() => props.setActiveDeck(newdeckid))
+      .catch((error) => {
+        setCreateError(true);
+        console.log(error);
+      });
+  };
 
   const importDeck = () => {
     setImportError(false);
@@ -68,6 +89,20 @@ function DeckImport(props) {
     };
   };
 
+  const ImportButtonOptions = (
+    <>
+      <Dropdown.Item href="" onClick={() => createNewDeck()}>
+        Create New
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={handleFileInputClick}>
+        Import from File
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={handleOpenImportModal}>
+        Import from Text
+      </Dropdown.Item>
+    </>
+  );
+
   return (
     <>
       <input
@@ -83,7 +118,7 @@ function DeckImport(props) {
         title={
           <>
             <FileEarmarkPlus size={20} />
-            Import
+            New / Import
           </>
         }
       >
@@ -91,7 +126,6 @@ function DeckImport(props) {
       </DropdownButton>
       {importError && (
         <div className="d-flex justify-content-end">
-          <br />
           <span className="login-error">Cannot import this deck</span>
         </div>
       )}

@@ -82,16 +82,14 @@ function AccountRegister(props) {
             onChange={handleChange}
           />
           {emptyUsername && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Enter username</span>
-            </>
+            </div>
           )}
           {usernameError && (
-            <>
-              <br />
+            <div>
               <span className="login-error">This username is taken</span>
-            </>
+            </div>
           )}
         </div>
         <div>

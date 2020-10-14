@@ -20,7 +20,7 @@ function DeckExport(props) {
         href=""
         onClick={() => saveDeck(i.toLowerCase())}
       >
-        Save as file - {i}
+        Save as File - {i}
       </Dropdown.Item>
     );
   });
@@ -32,7 +32,7 @@ function DeckExport(props) {
         href=""
         onClick={() => copyDeck(i.toLowerCase())}
       >
-        Copy to clipboard - {i}
+        Copy to Clipboard - {i}
       </Dropdown.Item>
     );
   });
@@ -117,7 +117,7 @@ function DeckExport(props) {
   };
 
   return (
-    <div className="mb-3">
+    <>
       {!spinnerState ? (
         <DropdownButton
           variant="outline-secondary"
@@ -153,11 +153,10 @@ function DeckExport(props) {
       )}
       {deckError && (
         <div className="d-flex justify-content-start">
-          <br />
           <span className="login-error">Select deck to export</span>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

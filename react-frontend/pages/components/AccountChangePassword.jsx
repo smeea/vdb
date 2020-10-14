@@ -90,16 +90,14 @@ function AccountChangePassword(props) {
             onChange={handleChange}
           />
           {emptyPassword && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Enter old password</span>
-            </>
+            </div>
           )}
           {passwordError && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Wrong password</span>
-            </>
+            </div>
           )}
         </div>
         <div>
@@ -111,10 +109,9 @@ function AccountChangePassword(props) {
             onChange={handleChange}
           />
           {emptyNewPassword && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Enter new password</span>
-            </>
+            </div>
           )}
         </div>
         <div>
@@ -126,10 +123,9 @@ function AccountChangePassword(props) {
             onChange={handleChange}
           />
           {passwordConfirmError && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Confirm new password</span>
-            </>
+            </div>
           )}
         </div>
         <Button variant="outline-secondary" onClick={changePassword}>

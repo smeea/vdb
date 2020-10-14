@@ -18,17 +18,20 @@ function Account(props) {
             <>
               <div className="d-flex justify-content-between">
                 <div>
-                  Login: <b>{props.username}</b>
-                  <br />
-                  Public Name: <b>{props.publicName}</b>
-                  <br />
-                  Email: <b>{props.email}</b>
+                  <div>
+                    Login: <b>{props.username}</b>
+                  </div>
+                  <div>
+                    Public Name: <b>{props.publicName}</b>
+                  </div>
+                  <div>
+                    Email: <b>{props.email}</b>
+                  </div>
                 </div>
                 <div>
                   <AccountLogout setUsername={props.setUsername} />
                 </div>
               </div>
-              <br />
               <AccountChangeName setPublicName={props.setPublicName} />
               <AccountChangePassword />
               <AccountChangeEmail setEmail={props.setEmail} />

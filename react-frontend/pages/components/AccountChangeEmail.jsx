@@ -91,10 +91,9 @@ function AccountChangeEmail(props) {
             onChange={handleChange}
           />
           {emptyEmail && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Enter email</span>
-            </>
+            </div>
           )}
         </div>
         <div>
@@ -106,16 +105,14 @@ function AccountChangeEmail(props) {
             onChange={handleChange}
           />
           {emptyPassword && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Enter password</span>
-            </>
+            </div>
           )}
           {passwordError && (
-            <>
-              <br />
+            <div>
               <span className="login-error">Wrong password</span>
-            </>
+            </div>
           )}
         </div>
         <Button variant="outline-secondary" onClick={changeEmail}>

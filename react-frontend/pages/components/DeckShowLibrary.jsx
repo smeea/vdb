@@ -1,5 +1,6 @@
 import React from 'react';
 
+import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -188,6 +189,7 @@ function DeckShowLibrary(props) {
     <>
       <div className="deck-library">
         <b>Library [{libraryTotal}]</b>
+        {props.isAuthor && <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />}
         {LibraryDeck}
       </div>
       {Object.keys(librarySide).length > 0 && (

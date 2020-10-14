@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import Check2 from '../../assets/images/icons/check2.svg';
 
 function DeckChangeAuthor(props) {
   const [state, setState] = useState(props.author);
@@ -38,7 +39,7 @@ function DeckChangeAuthor(props) {
       )}
       {props.isAuthor && (
         <Button variant="outline-secondary" onClick={handleButton}>
-          Change
+          <Check2 size={20} />
         </Button>
       )}
     </div>
