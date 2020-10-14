@@ -62,32 +62,48 @@ function Deck(props) {
   }
 
   return (
-    <Container className="main-container">
+    <>
       {props.username && (
-        <Row>
-          <Col md={12} lg={9}>
-            <DeckSelect
-              decks={props.decks}
-              activeDeck={props.activeDeck}
-              setActiveDeck={props.setActiveDeck}
-            />
-          </Col>
-          <Col md={12} lg={3}>
-            <DeckImport
-              setActiveDeck={props.setActiveDeck}
-              getDecks={props.getDecks}
-            />
-            <DeckExport activeDeck={props.activeDeck} />
-          </Col>
-        </Row>
+        <Container className="main-container">
+          <Row>
+            <Col md={12} lg={9}>
+              <DeckSelect
+                decks={props.decks}
+                activeDeck={props.activeDeck}
+                setActiveDeck={props.setActiveDeck}
+              />
+            </Col>
+            <Col md={12} lg={3}>
+              <DeckImport
+                setActiveDeck={props.setActiveDeck}
+                getDecks={props.getDecks}
+              />
+              <DeckExport activeDeck={props.activeDeck} />
+            </Col>
+          </Row>
+        </Container>
       )}
-      <Row>
-        <Col>
-          {props.decks[props.activeDeck] && (
+      <Container className="main-container">
+        {props.decks[props.activeDeck] && (
+          <DeckShow
+            showImage={props.showImage}
+            toggleImage={props.toggleImage}
+            deck={props.decks[props.activeDeck]}
+            deckUpdate={deckUpdate}
+            setActiveDeck={props.setActiveDeck}
+            decks={props.decks}
+            getDecks={props.getDecks}
+            deckCardAdd={props.deckCardAdd}
+            deckCardChange={props.deckCardChange}
+            username={props.username}
+          />
+        )}
+        {sharedDeckId ? (
+          sharedDeck && sharedDeck[sharedDeckId] ? (
             <DeckShow
               showImage={props.showImage}
               toggleImage={props.toggleImage}
-              deck={props.decks[props.activeDeck]}
+              deck={sharedDeck[sharedDeckId]}
               deckUpdate={deckUpdate}
               setActiveDeck={props.setActiveDeck}
               decks={props.decks}
@@ -96,33 +112,17 @@ function Deck(props) {
               deckCardChange={props.deckCardChange}
               username={props.username}
             />
-          )}
-          {sharedDeckId ? (
-            sharedDeck && sharedDeck[sharedDeckId] ? (
-              <DeckShow
-                showImage={props.showImage}
-                toggleImage={props.toggleImage}
-                deck={sharedDeck[sharedDeckId]}
-                deckUpdate={deckUpdate}
-                setActiveDeck={props.setActiveDeck}
-                decks={props.decks}
-                getDecks={props.getDecks}
-                deckCardAdd={props.deckCardAdd}
-                deckCardChange={props.deckCardChange}
-                username={props.username}
-              />
-            ) : (
-              <AlertMessage
-                className="error-message"
-                value={
-                  <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>
-                }
-              />
-            )
-          ) : null}
-        </Col>
-      </Row>
-    </Container>
+          ) : (
+            <AlertMessage
+              className="error-message"
+              value={
+                <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>
+              }
+            />
+          )
+        ) : null}
+      </Container>
+    </>
   );
 }
 

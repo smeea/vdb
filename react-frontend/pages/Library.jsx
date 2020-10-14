@@ -51,9 +51,7 @@ function Library(props) {
           {results === null && (
             <AlertMessage className="error-message">
               <>
-                <div />
                 <b>NO CARDS FOUND</b>
-                <div />
               </>
             </AlertMessage>
           )}

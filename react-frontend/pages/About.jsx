@@ -4,8 +4,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 function About(props) {
   return (
     <Container className="main-container">
-      <Row className="justify-content-center">
-        <Col lg={8}>
+      <Row>
+        <Col>
           <div className="about-version">
             <h5>VERSION</h5>
             <p>
