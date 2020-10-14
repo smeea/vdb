@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import ArrowClockwise from '../../assets/images/icons/arrow-clockwise.svg';
 
-import DeckDrawCryptModal from './DeckDrawCryptModal.jsx';
-import DeckDrawLibraryModal from './DeckDrawLibraryModal.jsx';
+import DeckDrawModal from './DeckDrawModal.jsx';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -54,35 +53,26 @@ function DeckDraw(props) {
     return [drawArray, restArray];
   };
 
+  const [showDrawModal, setShowDrawModal] = useState(undefined);
   const [restCrypt, setRestCrypt] = useState(undefined);
   const [restLibrary, setRestLibrary] = useState(undefined);
   const [drawedCrypt, setDrawedCrypt] = useState(undefined);
   const [drawedLibrary, setDrawedLibrary] = useState(undefined);
-  const [showDrawCryptModal, setShowDrawCryptModal] = useState(false);
-  const [showDrawLibraryModal, setShowDrawLibraryModal] = useState(false);
 
-  const handleCloseDrawCryptModal = () => setShowDrawCryptModal(false);
-  const handleCloseDrawLibraryModal = () => setShowDrawLibraryModal(false);
+  const handleCloseDrawModal = () => setShowDrawModal(false);
 
-  const handleOpenDrawCrypt = () => {
-    const [drawedCards, restCards] = initialDrawCards(props.crypt, 4);
-    if (drawedCards) {
-      setDrawedCrypt(drawedCards);
-      setRestCrypt(restCards);
-      setShowDrawCryptModal(true);
+  const handleOpenDraw = () => {
+    const [drawedCrypt, restCrypt] = initialDrawCards(props.crypt, 4);
+    const [drawedLibrary, restLibrary] = initialDrawCards(props.library, 7);
+    if (drawedCrypt || drawedLibrary) {
+      console.log('ok')
+      setDrawedCrypt(drawedCrypt);
+      setDrawedLibrary(drawedLibrary);
+      setRestCrypt(restCrypt);
+      setRestLibrary(restLibrary);
+      setShowDrawModal(true);
     } else {
-      console.log('crypt < 4 cards');
-    }
-  };
-
-  const handleOpenDrawLibrary = () => {
-    const [drawedCards, restCards] = initialDrawCards(props.library, 7);
-    if (drawedCards) {
-      setDrawedLibrary(drawedCards);
-      setRestLibrary(restCards);
-      setShowDrawLibraryModal(true);
-    } else {
-      console.log('library < 7 cards');
+      console.log('not enough cards for draw');
     }
   };
 
@@ -128,30 +118,21 @@ function DeckDraw(props) {
 
   return (
     <>
-      <Button variant="outline-secondary" onClick={handleOpenDrawCrypt}>
-        <ArrowClockwise /> Draw Crypt
+      <Button variant="outline-secondary" onClick={handleOpenDraw}>
+        <ArrowClockwise /> Draw
       </Button>
-      <Button variant="outline-secondary" onClick={handleOpenDrawLibrary}>
-        <ArrowClockwise /> Draw Library
-      </Button>
-      {showDrawCryptModal != null && (
-        <DeckDrawCryptModal
-          handleReDraw={handleReDrawCrypt}
-          handleDrawOne={handleDrawCryptOne}
-          handleClose={handleCloseDrawCryptModal}
-          drawedCards={drawedCrypt}
-          restCards={restCrypt}
-          show={showDrawCryptModal}
-        />
-      )}
-      {drawedLibrary != null && (
-        <DeckDrawLibraryModal
-          handleReDraw={handleReDrawLibrary}
-          handleDrawOne={handleDrawLibraryOne}
-          handleClose={handleCloseDrawLibraryModal}
-          drawedCards={drawedLibrary}
-          restCards={restLibrary}
-          show={showDrawLibraryModal}
+      {showDrawModal != null && (
+        <DeckDrawModal
+          drawedCrypt={drawedCrypt}
+          drawedLibrary={drawedLibrary}
+          handleReDrawCrypt={handleReDrawCrypt}
+          handleReDrawLibrary={handleReDrawLibrary}
+          handleDrawOneCrypt={handleDrawCryptOne}
+          handleDrawOneLibrary={handleDrawLibraryOne}
+          restCrypt={restCrypt}
+          restLibrary={restLibrary}
+          show={showDrawModal}
+          handleClose={handleCloseDrawModal}
         />
       )}
     </>
