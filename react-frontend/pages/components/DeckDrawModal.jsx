@@ -17,40 +17,46 @@ function DeckDrawModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Button variant="outline-secondary" onClick={props.handleReDrawCrypt}>
-          <ArrowClockwise size={20} />
-        </Button>
-        {props.drawedCrypt && (
-          <span className="mx-2">
-            {props.drawedCrypt.length} /{' '}
-            {props.drawedCrypt.length + props.restCrypt.length}
-          </span>
-        )}
-        <Button variant="outline-secondary" onClick={props.handleDrawOneCrypt}>
-          <Plus size={20} />
-        </Button>
-        <ResultCrypt
-          cards={props.drawedCrypt}
-          showSort={false}
-          showTotal={false}
-        />
-        <Button variant="outline-secondary" onClick={props.handleReDrawLibrary}>
-          <ArrowClockwise size={20} />
-        </Button>
-        {props.drawedLibrary && (
-          <span className="mx-2">
-            {props.drawedLibrary.length} /{' '}
-            {props.drawedLibrary.length + props.restLibrary.length}
-          </span>
-        )}
-        <Button variant="outline-secondary" onClick={props.handleDrawOneLibrary}>
-          <Plus size={20} />
-        </Button>
-        <ResultLibrary
-          cards={props.drawedLibrary}
-          showSort={false}
-          showTotal={false}
-        />
+        <>
+          {props.drawedCrypt && (
+            <>
+              <Button variant="outline-secondary" onClick={props.handleReDrawCrypt}>
+                <ArrowClockwise size={20} />
+              </Button>
+              <span className="mx-2">
+                {props.drawedCrypt.length} /{' '}
+                {props.drawedCrypt.length + props.restCrypt.length}
+              </span>
+              <Button variant="outline-secondary" onClick={props.handleDrawOneCrypt}>
+                <Plus size={20} />
+              </Button>
+              <ResultCrypt
+                cards={props.drawedCrypt}
+                showSort={false}
+                showTotal={false}
+              />
+            </>
+          )}
+          {props.drawedLibrary && (
+            <>
+              <Button variant="outline-secondary" onClick={props.handleReDrawLibrary}>
+                <ArrowClockwise size={20} />
+              </Button>
+              <span className="mx-2">
+                {props.drawedLibrary.length} /{' '}
+                {props.drawedLibrary.length + props.restLibrary.length}
+              </span>
+              <Button variant="outline-secondary" onClick={props.handleDrawOneLibrary}>
+                <Plus size={20} />
+              </Button>
+              <ResultLibrary
+                cards={props.drawedLibrary}
+                showSort={false}
+                showTotal={false}
+              />
+            </>
+          )}
+        </>
       </Modal.Body>
     </Modal>
   );
