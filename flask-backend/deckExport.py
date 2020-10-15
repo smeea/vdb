@@ -35,7 +35,10 @@ def deckExport(d, request):
                 else:
                     deck += '      '
 
-                deck += v['c']['Name'] + '\n'
+                if v['c']['Adv']:
+                    deck += v['c']['Name'] + ' (ADV)\n'
+                else:
+                    deck += v['c']['Name'] + '\n'
 
         elif request.json['format'] == 'text' or request.json[
                 'format'] == 'twd':
@@ -150,7 +153,14 @@ def deckExport(d, request):
 
                 disciplines = ' '.join(baseDisciplines + supDisciplines)
 
-                cryptExport[v['c']['Name']] = {
+                name = ''
+
+                if v['c']['Adv']:
+                    name = v['c']['Name'] + ' (ADV)'
+                else:
+                    name = v['c']['Name']
+
+                cryptExport[name] = {
                     'Quantity': v['q'],
                     'Disciplines': disciplines,
                     'Title': v['c']['Title'],

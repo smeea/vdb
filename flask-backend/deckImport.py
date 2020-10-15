@@ -48,18 +48,18 @@ def deckImport(deckText):
                 if (cardname == card['Name'].lower()
                         or cardname == letters_to_ascii(
                             card['Name'].lower())) and not card['Adv']:
-                    deck[card['Id']] = quantity
+                    deck[str(card['Id'])] = quantity
 
             for card in library:
                 if cardname == card['Name'].lower(
                 ) or cardname == letters_to_ascii(card['Name'].lower()):
-                    deck[card['Id']] = quantity
+                    deck[str(card['Id'])] = quantity
 
         else:
             for card in crypt:
                 if (cardname == card['Name'].lower()
                         or cardname == letters_to_ascii(
                             card['Name'].lower())) and card['Adv']:
-                    deck[card['Id']] = quantity
+                    deck[str(card['Id'])] = quantity
 
     return (deck)

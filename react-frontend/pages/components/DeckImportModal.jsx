@@ -42,13 +42,14 @@ function DeckImportModal(props) {
       .then(() => props.getDecks())
       .then(() => {
         props.setActiveDeck(newDeckId);
+        setDeckText('')
         props.handleClose();
       })
       .catch((error) => {
         setImportError(true);
-        setSpinnerState(false);
         console.log(error);
       });
+    setSpinnerState(false);
   };
 
   return (
