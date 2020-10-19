@@ -20,40 +20,52 @@ function DeckDrawModal(props) {
         <>
           {props.drawedCrypt && (
             <>
-              <Button variant="outline-secondary" onClick={props.handleReDrawCrypt}>
-                <ArrowClockwise size={20} />
-              </Button>
-              <span className="mx-2">
-                {props.drawedCrypt.length} /{' '}
-                {props.drawedCrypt.length + props.restCrypt.length}
-              </span>
-              <Button variant="outline-secondary" onClick={props.handleDrawOneCrypt}>
-                <Plus size={20} />
-              </Button>
-              <ResultCrypt
-                cards={props.drawedCrypt}
-                showSort={false}
-                showTotal={false}
-              />
+              <div className="d-flex justify-content-between">
+                <span className="mx-2">
+                  {props.drawedCrypt.length} /{' '}
+                  {props.drawedCrypt.length + props.restCrypt.length}
+                </span>
+                <div>
+                  <Button variant="outline-secondary" onClick={props.handleReDrawCrypt}>
+                    <ArrowClockwise size={20} />
+                  </Button>
+                  <Button variant="outline-secondary" onClick={props.handleDrawOneCrypt}>
+                    <Plus size={20} />
+                  </Button>
+                </div>
+              </div>
+              <div>
+                <ResultCrypt
+                  cards={props.drawedCrypt}
+                  showSort={false}
+                  showTotal={false}
+                />
+              </div>
             </>
           )}
           {props.drawedLibrary && (
             <>
-              <Button variant="outline-secondary" onClick={props.handleReDrawLibrary}>
-                <ArrowClockwise size={20} />
-              </Button>
-              <span className="mx-2">
-                {props.drawedLibrary.length} /{' '}
-                {props.drawedLibrary.length + props.restLibrary.length}
-              </span>
-              <Button variant="outline-secondary" onClick={props.handleDrawOneLibrary}>
-                <Plus size={20} />
-              </Button>
-              <ResultLibrary
-                cards={props.drawedLibrary}
-                showSort={false}
-                showTotal={false}
-              />
+              <div className="d-flex justify-content-between">
+                <span className="mx-2">
+                  {props.drawedLibrary.length} /{' '}
+                  {props.drawedLibrary.length + props.restLibrary.length}
+                </span>
+                <div>
+                  <Button variant="outline-secondary" onClick={props.handleReDrawLibrary}>
+                    <ArrowClockwise size={20} />
+                  </Button>
+                  <Button variant="outline-secondary" onClick={props.handleDrawOneLibrary}>
+                    <Plus size={20} />
+                  </Button>
+                </div>
+              </div>
+              <div>
+                <ResultLibrary
+                  cards={props.drawedLibrary}
+                  showSort={false}
+                  showTotal={false}
+                />
+              </div>
             </>
           )}
         </>

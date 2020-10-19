@@ -12,6 +12,7 @@
 # MAJOR FIX
 * Export sort crypt by quantity
 * Show sort library by twd order
+* Add new card in deck on same line
 
 # MINOR FIX
 * Redirect from login to decks

@@ -209,20 +209,26 @@ function DeckShowCrypt(props) {
   return (
     <>
       <div className="deck-crypt">
-        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
-        {props.isAuthor && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
-        <table className="deck-crypt-table">
-          <DeckCryptBody
-            deckid={props.deckid}
-            deckCardChange={props.deckCardChange}
-            cards={crypt}
-            disciplinesSet={disciplinesSet}
-            showImage={props.showImage}
-            toggleImage={props.toggleImage}
-            isAuthor={props.isAuthor}
-          />
-        </table>
+        <div className="d-flex align-items-center">
+          <div>
+            <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
+          </div>
+          <div className="pl-2">
+            {props.isAuthor && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
+          </div>
+        </div>
       </div>
+      <table className="deck-crypt-table">
+        <DeckCryptBody
+          deckid={props.deckid}
+          deckCardChange={props.deckCardChange}
+          cards={crypt}
+          disciplinesSet={disciplinesSet}
+          showImage={props.showImage}
+          toggleImage={props.toggleImage}
+          isAuthor={props.isAuthor}
+        />
+      </table>
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt">
           <b>Side Crypt</b>

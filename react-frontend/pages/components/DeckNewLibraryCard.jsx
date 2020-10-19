@@ -48,6 +48,7 @@ function DeckNewLibraryCard(props) {
       cacheOptions
       defaultOptions
       value={selectedValue}
+      placeholder="Add Card"
       getOptionLabel={(card) => (
         <>
           <div className="d-flex align-items-center justify-content-between">
