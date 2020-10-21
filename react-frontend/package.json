@@ -13,6 +13,7 @@
     "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-react": "^7.9.4",
+    "@svgr/parcel-plugin-svgr": "^5.4.0",
     "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -29,7 +30,6 @@
     "react-select": "^3.1.0"
   },
   "dependencies": {
-    "@svgr/parcel-plugin-svgr": "^5.4.0",
     "file-saver": "^2.0.2",
     "react-bootstrap": "^1.0.1",
     "react-router-dom": "^5.2.0",
