@@ -5,13 +5,10 @@
 
 # ADDITIONAL FEATURE
 * Temporary 'add to compare' button
-* Card rulings
 * Add demo account
 * Night Theme
 
 # MAJOR FIX
-* Export sort crypt by quantity
-* Show sort library by twd order
 * Add new card in deck on same line
 
 # MINOR FIX
@@ -21,7 +18,7 @@
 # MOBILE FIX
 * Toggle search button
 * Toggle deck button
-* Popover
+* Card popover to modal
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage

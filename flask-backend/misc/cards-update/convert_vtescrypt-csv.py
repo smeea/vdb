@@ -56,7 +56,10 @@ useless_fields = ['Aka', 'Artist']
 with open("vtescrypt.csv", "r",
           encoding='utf8') as f_csv, open("vtescrypt.json",
                                           "w",
-                                          encoding='utf8') as f_json:
+                                          encoding='utf8') as f_json, open("rulings.json", "r", encoding='utf8') as f_rulings:
+
+
+    rulings = json.load(f_rulings)
     reader = csv.reader(f_csv)
     fieldnames = next(reader)
     csv_cards = csv.DictReader(f_csv, fieldnames)
@@ -110,6 +113,13 @@ with open("vtescrypt.csv", "r",
 
             for d in disciplines:
                 del card[d]
+
+        # Add rules to card
+
+        card['Rulings'] = []
+        for rule in rulings:
+            if rule == card['Name']:
+                card['Rulings'] = rulings[rule]
 
         cards.append(card)
 

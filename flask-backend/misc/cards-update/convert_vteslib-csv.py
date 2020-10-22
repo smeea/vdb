@@ -14,7 +14,9 @@ useless_fields = ['Aka', 'Flavor Text', 'Artist', 'Draft']
 with open("vteslib.csv",
           "r", encoding='utf8') as f_csv, open("vteslib.json",
                                                "w",
-                                               encoding='utf8') as f_json:
+                                               encoding='utf8') as f_json, open("rulings.json", "r", encoding='utf8') as f_rulings:
+
+    rulings = json.load(f_rulings)
     reader = csv.reader(f_csv)
     fieldnames = next(reader)
     csv_cards = csv.DictReader(f_csv, fieldnames)
@@ -45,6 +47,12 @@ with open("vteslib.csv",
         # Remove useless fields
         for k in useless_fields:
             del card[k]
+
+        # Add rules to card
+        card['Rulings'] = []
+        for rule in rulings:
+            if rule == card['Name']:
+                card['Rulings'] = rulings[rule]
 
         cards.append(card)
 

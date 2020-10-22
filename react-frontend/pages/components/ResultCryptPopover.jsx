@@ -1,5 +1,5 @@
 import React from 'react';
-import { Popover } from 'react-bootstrap';
+import { Popover, ListGroup } from 'react-bootstrap';
 
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
@@ -16,9 +16,17 @@ function ResultCryptPopover(props) {
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
     return (
-      <span className="ml-1" key={index}>
-        {k}
+      <span className="ml-2" key={index}>
+        {k}:{props.card['Set'][k]}
       </span>
+    );
+  });
+
+  const Rulings = Object(props.card['Rulings']).map((k, index) => {
+    return (
+      <ListGroup.Item key={index}>
+        {k}
+      </ListGroup.Item>
     );
   });
 
@@ -47,6 +55,14 @@ function ResultCryptPopover(props) {
             <div className="popover-sets">{Sets}</div>
             <ResultCryptCapacity value={props.card['Capacity']} />
           </div>
+          { Rulings.length > 0 &&
+            <div className="popover-rulings">
+              <b>Rulings:</b>
+              <ListGroup>
+                {Rulings}
+              </ListGroup>
+            </div>
+          }
         </>
       ) : (
         cardImage
