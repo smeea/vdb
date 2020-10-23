@@ -57,7 +57,6 @@ function ResultCryptPopover(props) {
           </div>
           { Rulings.length > 0 &&
             <div className="popover-rulings">
-              <b>Rulings:</b>
               <ListGroup>
                 {Rulings}
               </ListGroup>

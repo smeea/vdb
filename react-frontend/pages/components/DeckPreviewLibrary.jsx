@@ -1,59 +1,22 @@
 import React from 'react';
-
-import DeckCardQuantity from './DeckCardQuantity.jsx';
-import ResultLibraryName from './ResultLibraryName.jsx';
+import DeckPreviewLibraryTable from './DeckPreviewLibraryTable.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
-
-function DeckLibraryBody(props) {
-  let resultTrClass = 'library-result-even';
-
-  const cards = props.cards.map((card, index) => {
-    if (resultTrClass == 'library-result-even') {
-      resultTrClass = 'library-result-odd';
-    } else {
-      resultTrClass = 'library-result-even';
-    }
-
-    return (
-      <tr key={index} className={resultTrClass}>
-        <td className="quantity">
-          <DeckCardQuantity
-            cardid={card[0].Id}
-            q={card[1]}
-            deckid={props.deckid}
-            deckCardChange={props.deckCardChange}
-          />
-        </td>
-        <td className="name">
-          <ResultLibraryName
-            showImage={props.showImage}
-            toggleImage={props.toggleImage}
-            id={card[0]['Id']}
-            value={card[0]['Name']}
-            ban={card[0]['Banned']}
-            card={card[0]}
-          />
-        </td>
-      </tr>
-    );
-  });
-
-  return <tbody>{cards}</tbody>;
-}
 
 function DeckLibraryByTypeTable(props) {
   return (
     <>
-      <ResultLibraryType cardtype={props.cardtype} total={props.total} />
-      <table className="deck-library-table">
-        <DeckLibraryBody
-          showImage={props.showImage}
-          toggleImage={props.toggleImage}
-          deckid={props.deckid}
-          deckCardChange={props.deckCardChange}
-          cards={props.cards}
-        />
-      </table>
+      <ResultLibraryType
+        cardtype={props.cardtype}
+        total={props.total}
+      />
+      <DeckPreviewLibraryTable
+        showImage={props.showImage}
+        toggleImage={props.toggleImage}
+        deckid={props.deckid}
+        deckCardChange={props.deckCardChange}
+        cards={props.cards}
+        isAuthor={props.isAuthor}
+      />
     </>
   );
 }
@@ -134,6 +97,7 @@ function DeckPreviewLibrary(props) {
             cards={library[cardtype]}
             cardtype={cardtype}
             total={total}
+            isAuthor={props.isAuthor}
           />
         </div>
       );
@@ -154,6 +118,7 @@ function DeckPreviewLibrary(props) {
             cards={librarySide[cardtype]}
             cardtype={cardtype}
             total={total}
+            isAuthor={props.isAuthor}
           />
         </div>
       );

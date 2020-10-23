@@ -8,18 +8,18 @@ function DeckPreview(props) {
     return (
       <>
         <DeckPreviewCrypt
-          showImage={props.showImage}
-          toggleImage={props.toggleImage}
           deckCardChange={props.deckCardChange}
           deckid={props.deck.deckid}
           cards={props.deck.crypt}
-        />
-        <DeckPreviewLibrary
           showImage={props.showImage}
           toggleImage={props.toggleImage}
+        />
+        <DeckPreviewLibrary
           deckCardChange={props.deckCardChange}
           deckid={props.deck.deckid}
           cards={props.deck.library}
+          showImage={props.showImage}
+          toggleImage={props.toggleImage}
         />
       </>
     );

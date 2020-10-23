@@ -1,158 +1,7 @@
 import React from 'react';
-
+import DeckShowCryptTable from './DeckShowCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
-import DeckCardQuantity from './DeckCardQuantity.jsx';
-import ResultCryptCapacity from './ResultCryptCapacity.jsx';
-import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
-import ResultCryptName from './ResultCryptName.jsx';
-import ResultCryptClan from './ResultCryptClan.jsx';
-import ResultCryptGroup from './ResultCryptGroup.jsx';
 
-function DeckCryptSideBody(props) {
-  const SortByCapacity = (a, b) => {
-    if (a.c['Capacity'] > b.c['Capacity']) {
-      return -1;
-    } else {
-      return 1;
-    }
-  };
-
-  const sortedCards = Object.values(props.cards).sort(SortByCapacity);
-
-  let resultTrClass;
-
-  const cards = sortedCards.map((card, index) => {
-    if (resultTrClass == 'crypt-result-odd') {
-      resultTrClass = 'crypt-result-even';
-    } else {
-      resultTrClass = 'crypt-result-odd';
-    }
-
-    return (
-      <React.Fragment key={index}>
-        <tr className={resultTrClass}>
-          <td className="quantity">
-            {props.isAuthor ? (
-              <DeckCardQuantity
-                cardid={card.c['Id']}
-                q={card.q}
-                deckid={props.deckid}
-                deckCardChange={props.deckCardChange}
-              />
-            ) : card.q ? (
-              card.q
-            ) : null}
-          </td>
-          <td className="capacity">
-            <ResultCryptCapacity value={card.c['Capacity']} />
-          </td>
-          <td className="disciplines">
-            <ResultCryptDisciplines
-              disciplinesSet={props.disciplinesSet}
-              value={card.c['Disciplines']}
-            />
-          </td>
-          <td className="name">
-            <ResultCryptName
-              id={card.c['Id']}
-              value={card.c['Name']}
-              adv={card.c['Adv']}
-              ban={card.c['Banned']}
-              card={card.c}
-              showImage={props.showImage}
-              toggleImage={props.toggleImage}
-            />
-          </td>
-          <td className="clan">
-            <ResultCryptClan value={card.c['Clan']} />
-          </td>
-          <td className="group">
-            <ResultCryptGroup value={card.c['Group']} />
-          </td>
-        </tr>
-      </React.Fragment>
-    );
-  });
-  return <tbody>{cards}</tbody>;
-}
-
-function DeckCryptBody(props) {
-  const SortByQuantity = (a, b) => {
-    if (a.q > b.q) {
-      return -1;
-    } else {
-      return 1;
-    }
-  };
-
-  const SortByCapacity = (a, b) => {
-    if (a.c['Capacity'] > b.c['Capacity']) {
-      return 1;
-    } else {
-      return -1;
-    }
-  };
-
-  const sortedCards = Object.values(props.cards)
-        .sort(SortByCapacity)
-        .sort(SortByQuantity);
-
-  let resultTrClass;
-
-  const cards = sortedCards.map((card, index) => {
-    if (resultTrClass == 'crypt-result-odd') {
-      resultTrClass = 'crypt-result-even';
-    } else {
-      resultTrClass = 'crypt-result-odd';
-    }
-
-    return (
-      <React.Fragment key={index}>
-        <tr className={resultTrClass}>
-          <td className="quantity">
-            {props.isAuthor ? (
-              <DeckCardQuantity
-                cardid={card.c['Id']}
-                q={card.q}
-                deckid={props.deckid}
-                deckCardChange={props.deckCardChange}
-              />
-            ) : card.q ? (
-              card.q
-            ) : null}
-          </td>
-          <td className="capacity">
-            <ResultCryptCapacity value={card.c['Capacity']} />
-          </td>
-          <td className="disciplines">
-            <ResultCryptDisciplines
-              disciplinesSet={props.disciplinesSet}
-              value={card.c['Disciplines']}
-            />
-          </td>
-          <td className="name">
-            <ResultCryptName
-              id={card.c['Id']}
-              value={card.c['Name']}
-              adv={card.c['Adv']}
-              ban={card.c['Banned']}
-              card={card.c}
-              showImage={props.showImage}
-              toggleImage={props.toggleImage}
-            />
-          </td>
-          <td className="clan">
-            <ResultCryptClan value={card.c['Clan']} />
-          </td>
-          <td className="group">
-            <ResultCryptGroup value={card.c['Group']} />
-          </td>
-        </tr>
-      </React.Fragment>
-    );
-  });
-  return <tbody>{cards}</tbody>;
-}
 
 function DeckShowCrypt(props) {
   const dSet = new Set();
@@ -172,21 +21,20 @@ function DeckShowCrypt(props) {
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
       crypt[card] = props.cards[card];
+      if (
+        props.cards[card].c['Group'] < cryptGroupMin ||
+          cryptGroupMin == undefined
+      ) {
+        cryptGroupMin = props.cards[card].c['Group'];
+      }
+      if (
+        props.cards[card].c['Group'] > cryptGroupMax ||
+          cryptGroupMax == undefined
+      ) {
+        cryptGroupMax = props.cards[card].c['Group'];
+      }
     } else {
       cryptSide[card] = props.cards[card];
-    }
-
-    if (
-      props.cards[card].c['Group'] < cryptGroupMin ||
-        cryptGroupMin == undefined
-    ) {
-      cryptGroupMin = props.cards[card].c['Group'];
-    }
-    if (
-      props.cards[card].c['Group'] > cryptGroupMax ||
-        cryptGroupMax == undefined
-    ) {
-      cryptGroupMax = props.cards[card].c['Group'];
     }
   });
 
@@ -206,6 +54,21 @@ function DeckShowCrypt(props) {
     cryptGroups = 'ERROR IN GROUPS';
   }
 
+  const SortByQuantity = (a, b) => { if (a.q > b.q) return -1;
+                                     else return 1;
+                                   };
+
+  const SortByCapacity = (a, b) => { if (a.c['Capacity'] > b.c['Capacity']) return 1;
+                                     else return -1;
+                                   };
+
+  const sortedCards = Object.values(crypt)
+        .sort(SortByCapacity)
+        .sort(SortByQuantity);
+
+
+  const sortedCardsSide = Object.values(cryptSide).sort(SortByCapacity).reverse();
+
   return (
     <>
       <div className="deck-crypt">
@@ -218,31 +81,27 @@ function DeckShowCrypt(props) {
           </div>
         </div>
       </div>
-      <table className="deck-crypt-table">
-        <DeckCryptBody
-          deckid={props.deckid}
-          deckCardChange={props.deckCardChange}
-          cards={crypt}
-          disciplinesSet={disciplinesSet}
-          showImage={props.showImage}
-          toggleImage={props.toggleImage}
-          isAuthor={props.isAuthor}
-        />
-      </table>
+      <DeckShowCryptTable
+        deckid={props.deckid}
+        deckCardChange={props.deckCardChange}
+        cards={sortedCards}
+        disciplinesSet={disciplinesSet}
+        showImage={props.showImage}
+        toggleImage={props.toggleImage}
+        isAuthor={props.isAuthor}
+      />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt">
           <b>Side Crypt</b>
-          <table className="deck-crypt-table">
-            <DeckCryptSideBody
-              deckid={props.deckid}
-              deckCardChange={props.deckCardChange}
-              cards={cryptSide}
-              disciplinesSet={disciplinesSet}
-              showImage={props.showImage}
-              toggleImage={props.toggleImage}
-              isAuthor={props.isAuthor}
-            />
-          </table>
+          <DeckShowCryptTable
+            deckid={props.deckid}
+            deckCardChange={props.deckCardChange}
+            cards={sortedCardsSide}
+            disciplinesSet={disciplinesSet}
+            showImage={props.showImage}
+            toggleImage={props.toggleImage}
+            isAuthor={props.isAuthor}
+          />
         </div>
       )}
     </>

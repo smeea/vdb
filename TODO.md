@@ -32,7 +32,6 @@
 * Flask-Restful
 
 # FIX TECHNOLOGY
-* DeckPreviewCrypt/Library to use Result components
 * Unify error handling
 
 # FOR DEPLOY
