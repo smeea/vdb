@@ -37,6 +37,7 @@ function DeckDelete(props) {
       <Button
         variant="outline-secondary"
         onClick={() => setShowConfirmation(true)}
+        block
       >
         <TrashFill /> Delete Deck
       </Button>

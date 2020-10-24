@@ -112,21 +112,26 @@ function DeckImport(props) {
         onChange={handleFileChange}
         style={{ display: 'none' }}
       />
-      <DropdownButton
-        variant="outline-secondary"
-        id="import-button"
-        title={
-          <>
-            <FileEarmarkPlus size={20} />
-            New / Import
-          </>
-        }
-      >
-        {ImportButtonOptions}
-      </DropdownButton>
+      <Dropdown>
+        <Dropdown.Toggle
+          className="btn-block"
+          variant="outline-secondary"
+        >
+          <FileEarmarkPlus size={20} />
+          New / Import
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          {ImportButtonOptions}
+        </Dropdown.Menu>
+      </Dropdown>
       {importError && (
         <div className="d-flex justify-content-end">
           <span className="login-error">Cannot import this deck</span>
+        </div>
+      )}
+      {createError && (
+        <div className="d-flex justify-content-start">
+          <span className="login-error">Cannot create deck</span>
         </div>
       )}
       <DeckImportModal

@@ -118,7 +118,11 @@ function DeckDraw(props) {
 
   return (
     <>
-      <Button variant="outline-secondary" onClick={handleOpenDraw}>
+      <Button
+        variant="outline-secondary"
+        onClick={handleOpenDraw}
+        block
+      >
         <ArrowClockwise /> Draw
       </Button>
       {showDrawModal != null && (

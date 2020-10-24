@@ -36,7 +36,11 @@ function DeckClone(props) {
 
   return (
     <>
-      <Button variant="outline-secondary" onClick={cloneDeck}>
+      <Button
+        variant="outline-secondary"
+        onClick={cloneDeck}
+        block
+      >
         <Files /> Clone Deck
       </Button>
     </>

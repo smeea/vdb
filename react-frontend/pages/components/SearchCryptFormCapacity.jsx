@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+import { ButtonGroup } from 'react-bootstrap';
 
 function SearchCryptFormCapacity(props) {
   const capacity = [

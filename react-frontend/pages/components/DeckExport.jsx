@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FileSaver from 'file-saver';
-import { Spinner, DropdownButton, Dropdown } from 'react-bootstrap';
+import { ButtonGroup, Spinner, DropdownButton, Dropdown } from 'react-bootstrap';
 import Download from '../../assets/images/icons/download.svg';
 
 function DeckExport(props) {
@@ -118,39 +118,26 @@ function DeckExport(props) {
 
   return (
     <>
-      {!spinnerState ? (
-        <DropdownButton
+      <Dropdown>
+        <Dropdown.Toggle
+          className="btn-block"
           variant="outline-secondary"
-          id="export-button"
-          title={
-            <>
-              <Download size={20} /> Export
-            </>
-          }
         >
-          {ExportButtonOptions}
-        </DropdownButton>
-      ) : (
-        <DropdownButton
-          variant="outline-secondary"
-          id="export-button"
-          title={
-            <>
-              <Download size={20} /> Export
-            </>
+          <Download size={20} /> Export
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          {spinnerState &&
+           <Spinner
+             as="span"
+             animation="border"
+             size="sm"
+             role="status"
+             aria-hidden="true"
+           />
           }
-        >
-          <Spinner
-            as="span"
-            animation="border"
-            size="sm"
-            role="status"
-            aria-hidden="true"
-          />
-          <Spinner />
           {ExportButtonOptions}
-        </DropdownButton>
-      )}
+        </Dropdown.Menu>
+      </Dropdown>
       {deckError && (
         <div className="d-flex justify-content-start">
           <span className="login-error">Select deck to export</span>
