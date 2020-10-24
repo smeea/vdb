@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import { InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 
 function DeckChangeAuthor(props) {
-  const [state, setState] = useState(props.author);
+  const [state, setState] = useState(undefined);
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -22,10 +22,12 @@ function DeckChangeAuthor(props) {
   }, [props.author]);
 
   return (
-    <div className="input-group mb-2">
-      <div className="input-group-prepend">
-        <span className="input-group-text">Author</span>
-      </div>
+    <InputGroup className="mb-2">
+      <InputGroup.Prepend>
+        <InputGroup.Text>
+          Author
+        </InputGroup.Text>
+      </InputGroup.Prepend>
       {props.isAuthor ? (
         <input
           type="text"
@@ -38,11 +40,13 @@ function DeckChangeAuthor(props) {
         <div className="form-control">{state}</div>
       )}
       {props.isAuthor && (
-        <Button variant="outline-secondary" onClick={handleButton}>
-          <Check2 size={20} />
-        </Button>
+        <InputGroup.Append>
+          <Button variant="outline-secondary" onClick={handleButton}>
+            <Check2 size={20} />
+          </Button>
+        </InputGroup.Append>
       )}
-    </div>
+    </InputGroup>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import PersonPlusFill from '../../assets/images/icons/person-plus-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
@@ -70,60 +70,57 @@ function AccountRegister(props) {
     <>
       <h6 className="d-flex align-items-center">
         <PersonPlusFill />
-        <span className="ml-1">Create account</span>
+        <span className="ml-1">
+          Create account
+        </span>
       </h6>
-      <div className="d-flex">
-        <div>
-          <input
-            placeholder="New Username"
-            type="text"
-            name="username"
-            value={state.username}
+      <InputGroup className="mb-2">
+        <FormControl
+          placeholder="New Username"
+          type="text"
+          name="username"
+          value={state.username}
+          onChange={handleChange}
+        />
+        {hidePassword ? (
+          <FormControl
+            placeholder="Password"
+            type="password"
+            name="password"
+            value={state.password}
             onChange={handleChange}
           />
-          {emptyUsername && (
-            <div>
-              <span className="login-error">Enter username</span>
-            </div>
-          )}
-          {usernameError && (
-            <div>
-              <span className="login-error">This username is taken</span>
-            </div>
-          )}
-        </div>
+        ) : (
+          <FormControl
+            placeholder="Password"
+            type="text"
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+          />
+        )}
+        <InputGroup.Append>
+          <Button variant="outline-secondary"
+                  onClick={() => setHidePassword(!hidePassword)}
+          >
+            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+          </Button>
+          <Button variant="outline-secondary" onClick={registerUser}>
+            Create
+          </Button>
+        </InputGroup.Append>
+      </InputGroup>
+      {emptyUsername && (
         <div>
-          <div className="d-flex align-items-center">
-            {hidePassword ? (
-              <input
-                placeholder="Password"
-                type="password"
-                name="password"
-                value={state.password}
-                onChange={handleChange}
-              />
-            ) : (
-              <input
-                placeholder="Password"
-                type="text"
-                name="password"
-                value={state.password}
-                onChange={handleChange}
-              />
-            )}
-            <span
-              className="password-hide-show"
-              onClick={() => setHidePassword(!hidePassword)}
-            >
-              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-            </span>
-          </div>
-          {emptyPassword && <span className="login-error">Enter password</span>}
+          <span className="login-error">Enter username</span>
         </div>
-        <Button variant="outline-secondary" onClick={registerUser}>
-          Create
-        </Button>
-      </div>
+      )}
+      {usernameError && (
+        <div>
+          <span className="login-error">This username is taken</span>
+        </div>
+      )}
+      {emptyPassword && <span className="login-error">Enter password</span>}
     </>
   );
 }

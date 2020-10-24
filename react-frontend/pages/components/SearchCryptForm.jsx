@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import SearchCryptFormButtons from './SearchCryptFormButtons.jsx';
-import SearchCryptFormText from './SearchCryptFormText.jsx';
+import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchCryptFormDisciplines from './SearchCryptFormDisciplines.jsx';
 import SearchCryptFormVirtues from './SearchCryptFormVirtues.jsx';
 import SearchCryptFormCapacity from './SearchCryptFormCapacity.jsx';
@@ -231,13 +230,12 @@ function SearchCryptForm(props) {
 
   return (
     <form onSubmit={handleSubmitButton}>
-      <div className="input-group">
-        <SearchCryptFormText value={formState.text} onChange={handleChange} />
-        <SearchCryptFormButtons
-          handleClearButton={handleClearButton}
-          spinner={spinnerState}
-        />
-      </div>
+      <SearchFormTextAndButtons
+        value={formState.text}
+        onChange={handleChange}
+        handleClearButton={handleClearButton}
+        spinner={spinnerState}
+      />
       <SearchCryptFormDisciplines
         value={formState.disciplines}
         onChange={handleDisciplinesChange}

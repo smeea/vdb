@@ -3,7 +3,7 @@ import { InputGroup, Spinner, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import Check2 from '../../assets/images/icons/check2.svg';
 
-function SearchCryptFormText(props) {
+function SearchFormTextAndButtons(props) {
   return (
     <InputGroup className="mb-2">
       <input
@@ -38,4 +38,4 @@ function SearchCryptFormText(props) {
   );
 }
 
-export default SearchCryptFormText;
+export default SearchFormTextAndButtons;

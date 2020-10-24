@@ -47,7 +47,7 @@ function DeckNewCryptCard(props) {
       cacheOptions
       defaultOptions
       value={selectedValue}
-      placeholder="Add Card"
+      placeholder="Add Crypt Card"
       getOptionLabel={(card) => (
         <>
           <div className="d-flex align-items-center justify-content-between">

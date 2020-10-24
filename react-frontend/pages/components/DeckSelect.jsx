@@ -47,6 +47,7 @@ function DeckSelect(props) {
       options={decksOptions}
       isSearchable={false}
       name="decks"
+      placeholder="Select Deck"
       value={decksOptions.find((obj) => obj.value === props.activeDeck)}
       onChange={(e) => {
         if (e.value) {

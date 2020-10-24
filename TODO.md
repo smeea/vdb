@@ -9,11 +9,14 @@
 * Night Theme
 
 # MAJOR FIX
-* Add new card in deck on same line
+* Scrollable frame for deck (also test for search forms) 
+* FormControl errors in Account and Deck
 
 # MINOR FIX
 * Redirect from login to decks
 * Redirect to about from / page
+* Change tooltips style
+* Button on-success effect
 
 # MOBILE FIX
 * Toggle search button

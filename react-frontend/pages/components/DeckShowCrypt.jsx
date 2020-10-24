@@ -71,14 +71,12 @@ function DeckShowCrypt(props) {
 
   return (
     <>
-      <div className="deck-crypt">
-        <div className="d-flex align-items-center">
-          <div>
-            <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
-          </div>
-          <div className="pl-2">
-            {props.isAuthor && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
-          </div>
+      <div className="d-flex align-items-center">
+        <div>
+          <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
+        </div>
+        <div className="flex-grow-1 pl-3">
+          {props.isAuthor && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
         </div>
       </div>
       <DeckShowCryptTable

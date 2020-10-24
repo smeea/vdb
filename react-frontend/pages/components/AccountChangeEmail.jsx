@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { FormControl, InputGroup, Button } from 'react-bootstrap';
+import Check2 from '../../assets/images/icons/check2.svg';
 import EnvelopeFill from '../../assets/images/icons/envelope-fill.svg';
-
 import OverlayTooltip from './OverlayTooltip.jsx';
 
 function AccountChangeEmail(props) {
@@ -72,53 +72,61 @@ function AccountChangeEmail(props) {
     !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
+
+  useEffect(() => {
+    setState((prevState) => ({
+      ...prevState,
+      email: props.email,
+    }));
+  }, [props.email]);
+
   return (
     <>
       <h6 className="d-flex align-items-center">
         <EnvelopeFill />
-        <span className="ml-1">Change email</span>
-        <OverlayTooltip text="For password recovery only. We will not share it with anyone and will not send you marketing materials.">
+        <span className="ml-2">
+          Change email
+        </span>
+        <OverlayTooltip text="Email is for password recovery only. We will not share it with anyone and will not send you anything except reset password.">
           <span className="question-tooltip ml-1">[?]</span>
         </OverlayTooltip>
       </h6>
-      <div className="d-flex">
+      <InputGroup className="mb-2">
+        <FormControl
+          placeholder="New email"
+          type="text"
+          name="email"
+          value={state.email}
+          onChange={handleChange}
+        />
+        <FormControl
+          placeholder="Password"
+          type="password"
+          name="password"
+          value={state.password}
+          onChange={handleChange}
+        />
+        <InputGroup.Append>
+          <Button variant="outline-secondary" onClick={changeEmail}>
+            <Check2 size={20} />
+          </Button>
+        </InputGroup.Append>
+      </InputGroup>
+      {emptyEmail && (
         <div>
-          <input
-            placeholder="New email"
-            type="text"
-            name="email"
-            value={state.email}
-            onChange={handleChange}
-          />
-          {emptyEmail && (
-            <div>
-              <span className="login-error">Enter email</span>
-            </div>
-          )}
+          <span className="login-error">Enter email</span>
         </div>
+      )}
+      {emptyPassword && (
         <div>
-          <input
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={state.password}
-            onChange={handleChange}
-          />
-          {emptyPassword && (
-            <div>
-              <span className="login-error">Enter password</span>
-            </div>
-          )}
-          {passwordError && (
-            <div>
-              <span className="login-error">Wrong password</span>
-            </div>
-          )}
+          <span className="login-error">Enter password</span>
         </div>
-        <Button variant="outline-secondary" onClick={changeEmail}>
-          Change
-        </Button>
-      </div>
+      )}
+      {passwordError && (
+        <div>
+          <span className="login-error">Wrong password</span>
+        </div>
+      )}
     </>
   );
 }

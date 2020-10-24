@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
-import SearchLibraryFormButtons from './SearchLibraryFormButtons.jsx';
-import SearchLibraryFormText from './SearchLibraryFormText.jsx';
+import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchLibraryFormType from './SearchLibraryFormType.jsx';
 import SearchLibraryFormClan from './SearchLibraryFormClan.jsx';
 import SearchLibraryFormTitle from './SearchLibraryFormTitle.jsx';
@@ -135,13 +134,12 @@ function SearchLibraryForm(props) {
 
   return (
     <form onSubmit={handleSubmitButton}>
-      <div className="input-group mb-3">
-        <SearchLibraryFormText value={formState.text} onChange={handleChange} />
-        <SearchLibraryFormButtons
-          handleClearButton={handleClearButton}
-          spinner={spinnerState}
-        />
-      </div>
+      <SearchFormTextAndButtons
+        value={formState.text}
+        onChange={handleChange}
+        handleClearButton={handleClearButton}
+        spinner={spinnerState}
+      />
       <SearchLibraryFormType
         value={formState.type}
         onChange={handleSelectChange}

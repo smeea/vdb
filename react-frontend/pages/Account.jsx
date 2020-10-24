@@ -7,7 +7,8 @@ import AccountRegister from './components/AccountRegister.jsx';
 import AccountChangePassword from './components/AccountChangePassword.jsx';
 import AccountChangeEmail from './components/AccountChangeEmail.jsx';
 import AccountChangeName from './components/AccountChangeName.jsx';
-import AccountRemove from './components/AccountRemove.jsx';
+import AccountDelete from './components/AccountDelete.jsx';
+import PersonFill from '../assets/images/icons/person-fill.svg';
 
 function Account(props) {
   return (
@@ -16,26 +17,27 @@ function Account(props) {
         <Col>
           {props.username ? (
             <>
-              <div className="d-flex justify-content-between">
-                <div>
-                  <div>
-                    Login: <b>{props.username}</b>
-                  </div>
-                  <div>
-                    Public Name: <b>{props.publicName}</b>
-                  </div>
-                  <div>
-                    Email: <b>{props.email}</b>
-                  </div>
-                </div>
+              <div className="d-flex align-items-center justify-content-between">
+                <h6 className="d-flex align-items-center">
+                  <PersonFill />
+                  <span className="ml-2">
+                    Logged as: {props.username}
+                  </span>
+                </h6>
                 <div>
                   <AccountLogout setUsername={props.setUsername} />
                 </div>
               </div>
-              <AccountChangeName setPublicName={props.setPublicName} />
+              <AccountChangeName
+                setPublicName={props.setPublicName}
+                publicName={props.publicName}
+              />
               <AccountChangePassword />
-              <AccountChangeEmail setEmail={props.setEmail} />
-              <AccountRemove
+              <AccountChangeEmail
+                setEmail={props.setEmail}
+                email={props.email}
+              />
+              <AccountDelete
                 username={props.username}
                 setUsername={props.setUsername}
               />

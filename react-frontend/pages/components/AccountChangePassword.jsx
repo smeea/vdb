@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { FormControl, InputGroup, Button } from 'react-bootstrap';
+import Check2 from '../../assets/images/icons/check2.svg';
 import LockFill from '../../assets/images/icons/lock-fill.svg';
+import EyeFill from '../../assets/images/icons/eye-fill.svg';
+import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 
 function AccountChangePassword(props) {
   const [state, setState] = useState({
@@ -13,6 +16,7 @@ function AccountChangePassword(props) {
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [passwordConfirmError, setPasswordConfirmError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [hidePassword, setHidePassword] = useState(true);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -76,62 +80,93 @@ function AccountChangePassword(props) {
 
   return (
     <>
-      <h6>
+      <h6 className="d-flex align-items-center">
         <LockFill />
-        Change password
+        <span className="ml-2">
+          Change password
+        </span>
       </h6>
-      <div className="d-flex">
+      <InputGroup className="mb-2">
+        {hidePassword ? (
+          <>
+            <FormControl
+              placeholder="Old password"
+              type="password"
+              name="password"
+              value={state.password}
+              onChange={handleChange}
+            />
+            <FormControl
+              placeholder="New password"
+              type="password"
+              name="newPassword"
+              value={state.newPassword}
+              onChange={handleChange}
+            />
+            <FormControl
+              placeholder="Confirm password"
+              type="password"
+              name="confirmPassword"
+              value={state.confirmPassword}
+              onChange={handleChange}
+            />
+          </>
+        ) : (
+          <>
+            <FormControl
+              placeholder="Old password"
+              type="text"
+              name="password"
+              value={state.password}
+              onChange={handleChange}
+            />
+            <FormControl
+              placeholder="New password"
+              type="text"
+              name="newPassword"
+              value={state.newPassword}
+              onChange={handleChange}
+            />
+            <FormControl
+              placeholder="Confirm password"
+              type="text"
+              name="confirmPassword"
+              value={state.confirmPassword}
+              onChange={handleChange}
+            />
+          </>
+        )}
+        <InputGroup.Append>
+          <Button variant="outline-secondary"
+                  onClick={() => setHidePassword(!hidePassword)}
+          >
+            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+          </Button>
+          <Button variant="outline-secondary" onClick={changePassword}>
+            <Check2 size={20} />
+          </Button>
+        </InputGroup.Append>
+      </InputGroup>
+      {passwordConfirmError && (
         <div>
-          <input
-            placeholder="Old password"
-            type="password"
-            name="password"
-            value={state.password}
-            onChange={handleChange}
-          />
-          {emptyPassword && (
-            <div>
-              <span className="login-error">Enter old password</span>
-            </div>
-          )}
-          {passwordError && (
-            <div>
-              <span className="login-error">Wrong password</span>
-            </div>
-          )}
+          <span className="login-error">Confirm new password</span>
         </div>
+      )}
+      {emptyPassword && (
         <div>
-          <input
-            placeholder="New password"
-            type="password"
-            name="newPassword"
-            value={state.newPassword}
-            onChange={handleChange}
-          />
-          {emptyNewPassword && (
-            <div>
-              <span className="login-error">Enter new password</span>
-            </div>
-          )}
+          <span className="login-error">Enter old password</span>
         </div>
+      )}
+      {emptyNewPassword && (
         <div>
-          <input
-            placeholder="Confirm password"
-            type="password"
-            name="confirmPassword"
-            value={state.confirmPassword}
-            onChange={handleChange}
-          />
-          {passwordConfirmError && (
-            <div>
-              <span className="login-error">Confirm new password</span>
-            </div>
-          )}
+          <span className="login-error">Enter new password</span>
         </div>
-        <Button variant="outline-secondary" onClick={changePassword}>
-          Change
-        </Button>
-      </div>
+      )}
+      {passwordError && (
+        <div>
+          <span className="login-error">Wrong password</span>
+        </div>
+      )}
     </>
   );
 }

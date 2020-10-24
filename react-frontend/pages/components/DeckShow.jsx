@@ -10,7 +10,7 @@ import DeckChangeName from './DeckChangeName.jsx';
 import DeckChangeAuthor from './DeckChangeAuthor.jsx';
 import DeckChangeDescription from './DeckChangeDescription.jsx';
 import DeckClone from './DeckClone.jsx';
-import DeckRemove from './DeckRemove.jsx';
+import DeckDelete from './DeckDelete.jsx';
 import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
 
 function DeckShow(props) {
@@ -41,7 +41,7 @@ function DeckShow(props) {
       <Col md={12} lg={3}>
         <div>
           {isAuthor && props.deck && (
-            <DeckRemove deck={props.deck} setActiveDeck={props.setActiveDeck} />
+            <DeckDelete deck={props.deck} setActiveDeck={props.setActiveDeck} />
           )}
         </div>
         <div>

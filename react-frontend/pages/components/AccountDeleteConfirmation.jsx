@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { FormControl, InputGroup, Modal, Button } from 'react-bootstrap';
 
-function AccountRemoveConfirmation(props) {
+function AccountDeleteConfirmation(props) {
   const [password, setPassword] = useState(undefined);
   const [passwordError, setPasswordError] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
 
   const handleChange = (event) => setPassword(event.target.value);
 
-  const removeAccount = () => {
+  const deleteAccount = () => {
     setPasswordError(false);
 
     if (password) {
@@ -38,7 +38,6 @@ function AccountRemoveConfirmation(props) {
         .then((data) => {
           props.setShow(false);
           props.setUsername(undefined);
-          console.log('Remove account: ', props.username);
         })
         .catch((error) => {
           setPasswordError(true);
@@ -58,34 +57,40 @@ function AccountRemoveConfirmation(props) {
         animation={false}
       >
         <Modal.Header closeButton>
-          Delete account{' '}
-          <span className="px-1">
-            <b>
-              <i>{props.username}</i>
-            </b>
-            ?
-          </span>
+          <h5>
+            DELETE ACCOUNT
+            <span className="px-1 pl-1">
+              <b>{props.username}</b>
+            </span>
+          </h5>
         </Modal.Header>
         <Modal.Body>
-          <div>
+          <h6>
             THIS CANNOT BE UNDONE!
-          </div>
-          <input
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-          <Button variant="outline-secondary" onClick={removeAccount}>
-            Delete
-          </Button>
-          <Button
-            variant="outline-secondary"
-            onClick={() => props.setShow(false)}
-          >
-            Cancel
-          </Button>
+          </h6>
+          This will also delete all your decks and they will not be available via URL anymore.
+        </Modal.Body>
+        <Modal.Footer>
+          <InputGroup className="mb-2">
+            <FormControl
+              placeholder="Enter password"
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+            />
+            <InputGroup.Append>
+              <Button variant="outline-secondary" onClick={deleteAccount}>
+                Delete
+              </Button>
+              <Button
+                variant="outline-secondary"
+                onClick={() => props.setShow(false)}
+              >
+                Cancel
+              </Button>
+            </InputGroup.Append>
+          </InputGroup>
           {passwordError && (
             <div>
               <span className="login-error">Wrong password</span>
@@ -96,10 +101,10 @@ function AccountRemoveConfirmation(props) {
               <span className="login-error">Enter password</span>
             </div>
           )}
-        </Modal.Body>
+        </Modal.Footer>
       </Modal>
     </>
   );
 }
 
-export default AccountRemoveConfirmation;
+export default AccountDeleteConfirmation;

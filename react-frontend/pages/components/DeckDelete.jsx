@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from '../../assets/images/icons/trash-fill.svg';
 
-import DeckRemoveConfirmation from './DeckRemoveConfirmation.jsx';
+import DeckDeleteConfirmation from './DeckDeleteConfirmation.jsx';
 
-function DeckRemove(props) {
+function DeckDelete(props) {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
-    removeDeck();
+    deleteDeck();
     setShowConfirmation(false);
     props.setActiveDeck(undefined);
   };
 
-  const removeDeck = () => {
+  const deleteDeck = () => {
     if (props.deck) {
       const url = `${process.env.API_URL}decks/remove`;
       const options = {
@@ -26,7 +26,7 @@ function DeckRemove(props) {
         body: JSON.stringify({ deckid: props.deck.deckid }),
       };
       fetch(url, options);
-      console.log('Remove deck: ', props.deck.deckid);
+      console.log('Delete deck: ', props.deck.deckid);
     } else {
       console.log('Error: no deck selected');
     }
@@ -38,9 +38,9 @@ function DeckRemove(props) {
         variant="outline-secondary"
         onClick={() => setShowConfirmation(true)}
       >
-        <TrashFill /> Remove Deck
+        <TrashFill /> Delete Deck
       </Button>
-      <DeckRemoveConfirmation
+      <DeckDeleteConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
@@ -50,4 +50,4 @@ function DeckRemove(props) {
   );
 }
 
-export default DeckRemove;
+export default DeckDelete;

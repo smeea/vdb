@@ -1,30 +1,34 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-function DeckRemoveDeckConfirmation(props) {
+function DeckDeleteDeckConfirmation(props) {
   return (
     <>
       <Modal show={props.show} onHide={props.handleCancel} animation={false}>
         <Modal.Header closeButton>
-          Delete deck{' '}
-          <span className="pl-1">
-            <b>
-              <i>{props.deckname}</i>
-            </b>
-          </span>
-          ?
+          <h5>
+            DELETE DECK
+            <span className="px-1 pl-1">
+              <b>{props.deckname}</b>
+            </span>
+          </h5>
         </Modal.Header>
         <Modal.Body>
+          <h6>
+            THIS CANNOT BE UNDONE!
+          </h6>
+        </Modal.Body>
+        <Modal.Footer>
           <Button variant="outline-secondary" onClick={props.handleConfirm}>
             Delete
           </Button>
           <Button variant="outline-secondary" onClick={props.handleCancel}>
             Cancel
           </Button>
-        </Modal.Body>
+        </Modal.Footer>
       </Modal>
     </>
   );
 }
 
-export default DeckRemoveDeckConfirmation;
+export default DeckDeleteDeckConfirmation;

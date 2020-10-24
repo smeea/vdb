@@ -66,7 +66,7 @@ function ResultLibraryTable(props) {
 
   return (
     <table className="search-library-table">
-      <tbody>{cards}</tbody>;
+      <tbody>{cards}</tbody>
     </table>
   );
 }
