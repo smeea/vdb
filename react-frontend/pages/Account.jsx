@@ -14,7 +14,7 @@ function Account(props) {
   return (
     <Container className="main-container px-0">
       <Row className="justify-content-center">
-        <Col md={12} lg={5}>
+        <Col md={12} lg={5} className="mx-0">
           {props.username ? (
             <>
               <div className="d-flex align-items-center justify-content-between">

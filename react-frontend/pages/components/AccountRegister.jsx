@@ -3,6 +3,7 @@ import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import PersonPlusFill from '../../assets/images/icons/person-plus-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
+import Check2 from '../../assets/images/icons/check2.svg';
 
 function AccountRegister(props) {
   const [state, setState] = useState({
@@ -70,7 +71,9 @@ function AccountRegister(props) {
     <>
       <h6 className="d-flex align-items-center">
         <PersonPlusFill />
-        <span className="ml-1">Create account</span>
+        <span className="ml-1">
+          Create account
+        </span>
       </h6>
       <InputGroup className="mb-2">
         <FormControl
@@ -105,7 +108,7 @@ function AccountRegister(props) {
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>
           <Button variant="outline-secondary" onClick={registerUser}>
-            Create
+            <Check2 />
           </Button>
         </InputGroup.Append>
       </InputGroup>

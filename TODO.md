@@ -7,16 +7,15 @@
 * Temporary 'add to compare' button
 * Add demo account
 * Night Theme
+* Scrollable frame for deck (also test for search forms) 
 
 # MAJOR FIX
-* Scrollable frame for deck (also test for search forms) 
-* FormControl errors in Account and Deck
 
 # MINOR FIX
 * Redirect from login to decks
 * Redirect to about from / page
 * Change tooltips style
-* Button on-success effect
+* Button on-success effect - outline-success?
 
 # MOBILE FIX
 * Toggle search button

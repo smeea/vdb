@@ -102,7 +102,7 @@ function AccountChangePassword(props) {
               onChange={handleChange}
             />
             <FormControl
-              placeholder="Confirm password"
+              placeholder="Repeat password"
               type="password"
               name="confirmPassword"
               value={state.confirmPassword}

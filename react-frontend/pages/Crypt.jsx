@@ -14,7 +14,7 @@ function Crypt(props) {
   return (
     <Container className="main-container px-0">
       <Row>
-        <Col md={12} lg={3}>
+        <Col md={12} lg={3} className="mx-0">
           {Object.keys(props.decks).length > 0 && (
             <DeckSelect
               preview={true}
@@ -33,7 +33,7 @@ function Crypt(props) {
             />
           )}
         </Col>
-        <Col md={12} lg={6}>
+        <Col md={12} lg={6} className="mx-0">
           {results != undefined && results != null && (
             <ResultCrypt
               showImage={props.showImage}
@@ -57,7 +57,7 @@ function Crypt(props) {
             </AlertMessage>
           )}
         </Col>
-        <Col md={12} lg={3} className="px-1">
+        <Col md={12} lg={3} className="mx-1">
           <SearchCryptForm setResults={setResults} />
         </Col>
       </Row>

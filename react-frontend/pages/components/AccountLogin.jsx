@@ -9,6 +9,7 @@ import {
 import DoorOpenFill from '../../assets/images/icons/door-open-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
+import Check2 from '../../assets/images/icons/check2.svg';
 
 function AccountLogin(props) {
   const [state, setState] = useState({
@@ -86,7 +87,9 @@ function AccountLogin(props) {
     <>
       <h6 className="d-flex align-items-center">
         <DoorOpenFill />
-        <span className="ml-2">Login</span>
+        <span className="ml-2">
+          Login
+        </span>
       </h6>
       <InputGroup className="mb-2">
         <FormControl
@@ -121,7 +124,7 @@ function AccountLogin(props) {
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>
           <Button variant="outline-secondary" onClick={loginUser}>
-            Login
+            <Check2 />
           </Button>
         </InputGroup.Append>
       </InputGroup>

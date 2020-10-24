@@ -11,7 +11,7 @@ function AccountDelete(props) {
   return (
     <>
       <Button
-        variant="outline-secondary"
+        variant="outline-danger"
         onClick={() => setShowConfirmation(true)}
       >
         <TrashFill />

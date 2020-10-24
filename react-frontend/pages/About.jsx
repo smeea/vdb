@@ -5,7 +5,7 @@ function About(props) {
   return (
     <Container className="main-container px-0">
       <Row className="justify-content-center">
-        <Col md={12} lg={6}>
+        <Col md={12} lg={6} className="mx-0">
           <div className="px-1 about-version">
             <h5>VERSION</h5>
             <p>

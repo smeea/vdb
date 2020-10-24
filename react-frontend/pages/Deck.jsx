@@ -66,14 +66,14 @@ function Deck(props) {
       {props.username && (
         <Container className="main-container px-0">
           <Row>
-            <Col md={12} lg={9}>
+            <Col md={12} lg={9} className="mx-0">
               <DeckSelect
                 decks={props.decks}
                 activeDeck={props.activeDeck}
                 setActiveDeck={props.setActiveDeck}
               />
             </Col>
-            <Col md={12} lg={3}>
+            <Col md={12} lg={3} className="mx-0">
               <DeckImport
                 setActiveDeck={props.setActiveDeck}
                 getDecks={props.getDecks}
@@ -84,6 +84,8 @@ function Deck(props) {
         </Container>
       )}
       <Container className="main-container px-0">
+        <Row>
+          <Col className="mx-0">
         {props.decks[props.activeDeck] && (
           <DeckShow
             showImage={props.showImage}
@@ -121,6 +123,8 @@ function Deck(props) {
             />
           )
         ) : null}
+          </Col>
+    </Row>
       </Container>
     </>
   );

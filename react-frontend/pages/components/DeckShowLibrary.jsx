@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import DeckShowLibraryTable from './DeckShowLibraryTable.jsx';
 import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
@@ -20,6 +21,8 @@ function DeckLibraryByTypeTable(props) {
 }
 
 function DeckShowLibrary(props) {
+  const [showAdd, setShowAdd] = useState(false);
+  
   const library = {};
   const librarySide = {};
 
@@ -125,16 +128,20 @@ function DeckShowLibrary(props) {
 
   return (
     <>
-      <div className="d-flex align-items-center">
-        <div>
-          <b>Library [{libraryTotal}]</b>
-        </div>
-        <div className="flex-grow-1 pl-3">
-          {props.isAuthor && (
-            <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />
-          )}
-        </div>
+      <div className="d-flex align-items-center justify-content-between">
+        <b>
+          Library [{libraryTotal}]
+        </b>
+        {props.isAuthor && (
+          <Button
+            variant="outline-secondary"
+            onClick={() => setShowAdd(!showAdd)}
+          >
+            +
+          </Button>
+        )}
       </div>
+      {showAdd && <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />}
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
         <div className="deck-sidelibrary">

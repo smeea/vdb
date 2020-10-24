@@ -79,7 +79,10 @@ function AccountDeleteConfirmation(props) {
               onChange={handleChange}
             />
             <InputGroup.Append>
-              <Button variant="outline-secondary" onClick={deleteAccount}>
+              <Button
+                variant="outline-danger"
+                onClick={deleteAccount}
+              >
                 Delete
               </Button>
               <Button
