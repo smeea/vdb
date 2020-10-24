@@ -21,6 +21,14 @@ function App(props) {
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
 
+  const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 540px)').matches);
+
+  const [showCols, setShowCols] = useState({
+    left: true,
+    middle: true,
+    right: true,
+  });
+
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
     const options = {
@@ -102,10 +110,34 @@ function App(props) {
     }
   }, [username]);
 
+  useEffect(() => {
+    isMobile && setShowCols({
+      right: true,
+    });
+  }, [isMobile]);
+
+  useEffect(() => {
+    activeDeck && isMobile && setShowCols({
+      left: true,
+    });
+    !activeDeck && isMobile && setShowCols({
+      right: true,
+    });
+  }, [activeDeck]);
+
   return (
     <div className="App">
       <Router>
-        <Navigation username={username} />
+        <Navigation
+          isMobile={isMobile}
+          showCols={showCols}
+          setShowCols={setShowCols}
+          username={username}
+          decks={decks}
+          activeDeck={activeDeck}
+          setActiveDeck={setActiveDeck}
+        />
+
         <Switch>
           <Suspense fallback={<></>}>
             <Route path="/" exact>
@@ -156,6 +188,9 @@ function App(props) {
             />
             <Route path="/crypt">
               <Crypt
+                isMobile={isMobile}
+                showCols={showCols}
+                setShowCols={setShowCols}
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
                 decks={decks}

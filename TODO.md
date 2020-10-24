@@ -28,6 +28,7 @@
 * Keys to use nanoid
 * Use day.js for dates
 * Add props validation
+* Dynamic media query with react-responsive
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ

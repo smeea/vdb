@@ -5,7 +5,6 @@ import AlertMessage from './components/AlertMessage.jsx';
 import ResultLibrary from './components/ResultLibrary.jsx';
 import SearchLibraryForm from './components/SearchLibraryForm.jsx';
 import DeckPreview from './components/DeckPreview.jsx';
-import DeckSelect from './components/DeckSelect.jsx';
 
 function Library(props) {
   const [results, setResults] = useState(undefined);
@@ -14,16 +13,7 @@ function Library(props) {
   return (
     <Container className="main-container px-0">
       <Row>
-        <Col md={12} lg={3} className="mx-0">
-          {Object.keys(props.decks).length > 0 && (
-            <DeckSelect
-              preview={true}
-              decks={props.decks}
-              activeDeck={props.activeDeck}
-              setActiveDeck={props.setActiveDeck}
-            />
-          )}
-
+        <Col md={12} lg={3}>
           {props.activeDeck && (
             <DeckPreview
               showImage={props.showImage}
@@ -34,7 +24,7 @@ function Library(props) {
             />
           )}
         </Col>
-        <Col md={12} lg={6} className="mx-0">
+        <Col md={12} lg={6}>
           {results != undefined && results != null && (
             <ResultLibrary
               showImage={props.showImage}
@@ -56,7 +46,7 @@ function Library(props) {
             </AlertMessage>
           )}
         </Col>
-        <Col md={12} lg={3} className="mx-1">
+        <Col md={12} lg={3}>
           <SearchLibraryForm setResults={setResults} />
         </Col>
       </Row>
