@@ -24,9 +24,7 @@ function DeckDescription(props) {
   return (
     <InputGroup className="mb-2">
       <InputGroup.Prepend>
-        <InputGroup.Text>
-          Description
-        </InputGroup.Text>
+        <InputGroup.Text>Description</InputGroup.Text>
       </InputGroup.Prepend>
       {props.isAuthor ? (
         <FormControl

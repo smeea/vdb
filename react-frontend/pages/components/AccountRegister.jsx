@@ -70,9 +70,7 @@ function AccountRegister(props) {
     <>
       <h6 className="d-flex align-items-center">
         <PersonPlusFill />
-        <span className="ml-1">
-          Create account
-        </span>
+        <span className="ml-1">Create account</span>
       </h6>
       <InputGroup className="mb-2">
         <FormControl
@@ -100,8 +98,9 @@ function AccountRegister(props) {
           />
         )}
         <InputGroup.Append>
-          <Button variant="outline-secondary"
-                  onClick={() => setHidePassword(!hidePassword)}
+          <Button
+            variant="outline-secondary"
+            onClick={() => setHidePassword(!hidePassword)}
           >
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>

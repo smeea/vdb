@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-
+import React from 'react';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';

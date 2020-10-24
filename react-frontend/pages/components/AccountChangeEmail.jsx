@@ -72,7 +72,6 @@ function AccountChangeEmail(props) {
     !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
-
   useEffect(() => {
     setState((prevState) => ({
       ...prevState,
@@ -84,9 +83,7 @@ function AccountChangeEmail(props) {
     <>
       <h6 className="d-flex align-items-center">
         <EnvelopeFill />
-        <span className="ml-2">
-          Change email
-        </span>
+        <span className="ml-2">Change email</span>
         <OverlayTooltip text="Email is for password recovery only. We will not share it with anyone and will not send you anything except reset password.">
           <span className="question-tooltip ml-1">[?]</span>
         </OverlayTooltip>

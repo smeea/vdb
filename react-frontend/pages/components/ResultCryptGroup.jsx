@@ -5,8 +5,7 @@ function ResultCryptGroup(props) {
     <span className="group">
       <b>
         <font color="a0a0a0">G</font>
-        {props.value == 'ANY' ? 'X' : props.value
-        }
+        {props.value == 'ANY' ? 'X' : props.value}
       </b>
     </span>
   );

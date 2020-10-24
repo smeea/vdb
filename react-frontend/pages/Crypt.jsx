@@ -57,7 +57,7 @@ function Crypt(props) {
             </AlertMessage>
           )}
         </Col>
-        <Col md={12} lg={3}>
+        <Col md={12} lg={3} className="px-1">
           <SearchCryptForm setResults={setResults} />
         </Col>
       </Row>

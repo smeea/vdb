@@ -65,10 +65,9 @@ function AccountDeleteConfirmation(props) {
           </h5>
         </Modal.Header>
         <Modal.Body>
-          <h6>
-            THIS CANNOT BE UNDONE!
-          </h6>
-          This will also delete all your decks and they will not be available via URL anymore.
+          <h6>THIS CANNOT BE UNDONE!</h6>
+          This will also delete all your decks and they will not be available
+          via URL anymore.
         </Modal.Body>
         <Modal.Footer>
           <InputGroup className="mb-2">

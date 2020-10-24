@@ -5,10 +5,7 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 function DeckLibraryByTypeTable(props) {
   return (
     <>
-      <ResultLibraryType
-        cardtype={props.cardtype}
-        total={props.total}
-      />
+      <ResultLibraryType cardtype={props.cardtype} total={props.total} />
       <DeckPreviewLibraryTable
         showImage={props.showImage}
         toggleImage={props.toggleImage}

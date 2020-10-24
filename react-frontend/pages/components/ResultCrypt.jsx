@@ -23,10 +23,7 @@ function ResultCrypt(props) {
         <ResultCryptTotal cards={props.cards} />
       )}
       {props.showSort == true && sortedCards.length > 0 && (
-        <ResultCryptSortForm
-          value={props.sortMethod}
-          onChange={handleChange}
-        />
+        <ResultCryptSortForm value={props.sortMethod} onChange={handleChange} />
       )}
       <ResultCryptTable
         showImage={props.showImage}

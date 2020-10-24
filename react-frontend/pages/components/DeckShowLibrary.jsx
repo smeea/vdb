@@ -6,10 +6,7 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 function DeckLibraryByTypeTable(props) {
   return (
     <>
-      <ResultLibraryType
-        cardtype={props.cardtype}
-        total={props.total}
-      />
+      <ResultLibraryType cardtype={props.cardtype} total={props.total} />
       <DeckShowLibraryTable
         showImage={props.showImage}
         toggleImage={props.toggleImage}
@@ -133,9 +130,9 @@ function DeckShowLibrary(props) {
           <b>Library [{libraryTotal}]</b>
         </div>
         <div className="flex-grow-1 pl-3">
-          {props.isAuthor &&
-           <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />
-          }
+          {props.isAuthor && (
+            <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />
+          )}
         </div>
       </div>
       {LibraryDeck}

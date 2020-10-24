@@ -20,7 +20,7 @@ function SearchCryptFormCapacity(props) {
 
   capacity.map((i, index) => {
     let v;
-    i == 'ANY' ? v = i.toLowerCase() : v = i;
+    i == 'ANY' ? (v = i.toLowerCase()) : (v = i);
 
     options.push({
       value: v,
@@ -78,7 +78,9 @@ function SearchCryptFormCapacity(props) {
               options={morelessOptions}
               isSearchable={false}
               name="capacitymoreless"
-              value={morelessOptions.find((obj) => obj.value === props.moreless)}
+              value={morelessOptions.find(
+                (obj) => obj.value === props.moreless
+              )}
               onChange={props.onChange}
             />
           </div>

@@ -25,11 +25,7 @@ function ResultLibraryPopover(props) {
   });
 
   const Rulings = Object(props.card['Rulings']).map((k, index) => {
-    return (
-      <ListGroup.Item key={index}>
-        {k}
-      </ListGroup.Item>
-    );
+    return <ListGroup.Item key={index}>{k}</ListGroup.Item>;
   });
 
   return (
@@ -72,13 +68,11 @@ function ResultLibraryPopover(props) {
             </div>
             <div className="popover-sets">{Sets}</div>
           </div>
-          { Rulings.length > 0 &&
+          {Rulings.length > 0 && (
             <div className="popover-rulings">
-              <ListGroup>
-                {Rulings}
-              </ListGroup>
+              <ListGroup>{Rulings}</ListGroup>
             </div>
-          }
+          )}
         </>
       ) : (
         cardImage

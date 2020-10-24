@@ -24,9 +24,7 @@ function DeckChangeName(props) {
   return (
     <InputGroup className="mb-2">
       <InputGroup.Prepend>
-        <InputGroup.Text>
-          Name
-        </InputGroup.Text>
+        <InputGroup.Text>Name</InputGroup.Text>
       </InputGroup.Prepend>
       {props.isAuthor ? (
         <FormControl

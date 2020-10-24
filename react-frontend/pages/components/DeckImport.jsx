@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DropdownButton, Dropdown } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import FileEarmarkPlus from '../../assets/images/icons/file-earmark-plus.svg';
 
 import DeckImportModal from './DeckImportModal.jsx';
@@ -113,16 +113,11 @@ function DeckImport(props) {
         style={{ display: 'none' }}
       />
       <Dropdown>
-        <Dropdown.Toggle
-          className="btn-block"
-          variant="outline-secondary"
-        >
+        <Dropdown.Toggle className="btn-block" variant="outline-secondary">
           <FileEarmarkPlus size={20} />
           New / Import
         </Dropdown.Toggle>
-        <Dropdown.Menu>
-          {ImportButtonOptions}
-        </Dropdown.Menu>
+        <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
       </Dropdown>
       {importError && (
         <div className="d-flex justify-content-end">

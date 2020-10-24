@@ -55,8 +55,8 @@ function DeckNewCryptCard(props) {
               <ResultCryptCapacity value={card['Capacity']} />
               <span className="px-2">
                 {card['Name'] +
-                 (card['Adv'] ? ' [ADV]' : '') +
-                 (card['Banned'] ? ' [BANNED]' : '')}
+                  (card['Adv'] ? ' [ADV]' : '') +
+                  (card['Banned'] ? ' [BANNED]' : '')}
               </span>
               <ResultCryptClan value={card['Clan']} />
             </div>

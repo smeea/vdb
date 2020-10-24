@@ -24,12 +24,10 @@ function DeckChangeAuthor(props) {
   return (
     <InputGroup className="mb-2">
       <InputGroup.Prepend>
-        <InputGroup.Text>
-          Author
-        </InputGroup.Text>
+        <InputGroup.Text>Author</InputGroup.Text>
       </InputGroup.Prepend>
       {props.isAuthor ? (
-        <input
+        <FormControl
           type="text"
           className="form-control"
           placeholder="Author"

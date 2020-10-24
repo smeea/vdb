@@ -65,7 +65,7 @@ function DeckDraw(props) {
     const [drawedCrypt, restCrypt] = initialDrawCards(props.crypt, 4);
     const [drawedLibrary, restLibrary] = initialDrawCards(props.library, 7);
     if (drawedCrypt || drawedLibrary) {
-      console.log('ok')
+      console.log('ok');
       setDrawedCrypt(drawedCrypt);
       setDrawedLibrary(drawedLibrary);
       setRestCrypt(restCrypt);
@@ -118,11 +118,7 @@ function DeckDraw(props) {
 
   return (
     <>
-      <Button
-        variant="outline-secondary"
-        onClick={handleOpenDraw}
-        block
-      >
+      <Button variant="outline-secondary" onClick={handleOpenDraw} block>
         <ArrowClockwise /> Draw
       </Button>
       {showDrawModal != null && (

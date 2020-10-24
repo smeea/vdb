@@ -4,8 +4,6 @@ import { Row, Col } from 'react-bootstrap';
 import DeckShowCrypt from './DeckShowCrypt.jsx';
 import DeckShowLibrary from './DeckShowLibrary.jsx';
 import DeckDraw from './DeckDraw.jsx';
-import DeckNewCryptCard from './DeckNewCryptCard.jsx';
-import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import DeckChangeName from './DeckChangeName.jsx';
 import DeckChangeAuthor from './DeckChangeAuthor.jsx';
 import DeckChangeDescription from './DeckChangeDescription.jsx';

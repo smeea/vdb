@@ -15,19 +15,11 @@ function DeckCopyUrlButton(props) {
   return (
     <>
       {!state ? (
-        <Button
-          variant="outline-secondary"
-          onClick={handleButton}
-          block
-        >
+        <Button variant="outline-secondary" onClick={handleButton} block>
           <ShareFill /> Copy URL
         </Button>
       ) : (
-        <Button
-          variant="outline-success"
-          onClick={handleButton}
-          block
-        >
+        <Button variant="outline-success" onClick={handleButton} block>
           <ShareFill /> Copied
         </Button>
       )}

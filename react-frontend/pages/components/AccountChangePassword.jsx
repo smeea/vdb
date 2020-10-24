@@ -82,9 +82,7 @@ function AccountChangePassword(props) {
     <>
       <h6 className="d-flex align-items-center">
         <LockFill />
-        <span className="ml-2">
-          Change password
-        </span>
+        <span className="ml-2">Change password</span>
       </h6>
       <InputGroup className="mb-2">
         {hidePassword ? (
@@ -137,8 +135,9 @@ function AccountChangePassword(props) {
           </>
         )}
         <InputGroup.Append>
-          <Button variant="outline-secondary"
-                  onClick={() => setHidePassword(!hidePassword)}
+          <Button
+            variant="outline-secondary"
+            onClick={() => setHidePassword(!hidePassword)}
           >
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>

@@ -58,9 +58,7 @@ function AccountChangeName(props) {
     <>
       <h6 className="d-flex align-items-center">
         <PenFill />
-        <span className="ml-2">
-          Change public name
-        </span>
+        <span className="ml-2">Change public name</span>
         <OverlayTooltip text="Public name is default author name for new decks. Author name is per-deck and can be changed anytime for each deck. Changing public name will not change author name of your existing decks. Public name is *not* your account username which cannot be changed.">
           <span className="question-tooltip ml-1">[?]</span>
         </OverlayTooltip>

@@ -16,8 +16,7 @@ function DeckDrawModal(props) {
       <Modal.Header closeButton>
         <Modal.Title>
           <span className="mx-2">Deck Draw</span>
-          <span className="mx-2">
-          </span>
+          <span className="mx-2"></span>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -29,14 +28,20 @@ function DeckDrawModal(props) {
                   <div className="d-flex justify-content-between align-items-center">
                     <b>Crypt</b>
                     <span className="mx-2">
-                       {props.drawedCrypt.length} /{' '}
+                      {props.drawedCrypt.length} /{' '}
                       {props.drawedCrypt.length + props.restCrypt.length}
                     </span>
                     <div>
-                      <Button variant="outline-secondary" onClick={props.handleReDrawCrypt}>
+                      <Button
+                        variant="outline-secondary"
+                        onClick={props.handleReDrawCrypt}
+                      >
                         <ArrowClockwise size={20} />
                       </Button>
-                      <Button variant="outline-secondary" onClick={props.handleDrawOneCrypt}>
+                      <Button
+                        variant="outline-secondary"
+                        onClick={props.handleDrawOneCrypt}
+                      >
                         +
                       </Button>
                     </div>
@@ -59,10 +64,16 @@ function DeckDrawModal(props) {
                       {props.drawedLibrary.length + props.restLibrary.length}
                     </span>
                     <div>
-                      <Button variant="outline-secondary" onClick={props.handleReDrawLibrary}>
+                      <Button
+                        variant="outline-secondary"
+                        onClick={props.handleReDrawLibrary}
+                      >
                         <ArrowClockwise size={20} />
                       </Button>
-                      <Button variant="outline-secondary" onClick={props.handleDrawOneLibrary}>
+                      <Button
+                        variant="outline-secondary"
+                        onClick={props.handleDrawOneLibrary}
+                      >
                         +
                       </Button>
                     </div>

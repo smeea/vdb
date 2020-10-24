@@ -174,10 +174,7 @@ function SearchLibraryForm(props) {
         value={formState.traits}
         onChange={handleMultiChange}
       />
-      <SearchFormSet
-        value={formState.set}
-        onChange={handleSelectChange}
-      />
+      <SearchFormSet value={formState.set} onChange={handleSelectChange} />
     </form>
   );
 }

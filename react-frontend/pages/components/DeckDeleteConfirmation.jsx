@@ -14,9 +14,7 @@ function DeckDeleteDeckConfirmation(props) {
           </h5>
         </Modal.Header>
         <Modal.Body>
-          <h6>
-            THIS CANNOT BE UNDONE!
-          </h6>
+          <h6>THIS CANNOT BE UNDONE!</h6>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="outline-secondary" onClick={props.handleConfirm}>

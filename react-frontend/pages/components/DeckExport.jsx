@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FileSaver from 'file-saver';
-import { ButtonGroup, Spinner, DropdownButton, Dropdown } from 'react-bootstrap';
+import { Spinner, Dropdown } from 'react-bootstrap';
 import Download from '../../assets/images/icons/download.svg';
 
 function DeckExport(props) {
@@ -119,22 +119,19 @@ function DeckExport(props) {
   return (
     <>
       <Dropdown>
-        <Dropdown.Toggle
-          className="btn-block"
-          variant="outline-secondary"
-        >
+        <Dropdown.Toggle className="btn-block" variant="outline-secondary">
           <Download size={20} /> Export
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          {spinnerState &&
-           <Spinner
-             as="span"
-             animation="border"
-             size="sm"
-             role="status"
-             aria-hidden="true"
-           />
-          }
+          {spinnerState && (
+            <Spinner
+              as="span"
+              animation="border"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+          )}
           {ExportButtonOptions}
         </Dropdown.Menu>
       </Dropdown>

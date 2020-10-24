@@ -1,5 +1,11 @@
 import React, { useRef, useState } from 'react';
-import { FormControl, InputGroup, Tooltip, Overlay, Button } from 'react-bootstrap';
+import {
+  FormControl,
+  InputGroup,
+  Tooltip,
+  Overlay,
+  Button,
+} from 'react-bootstrap';
 import DoorOpenFill from '../../assets/images/icons/door-open-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
@@ -80,9 +86,7 @@ function AccountLogin(props) {
     <>
       <h6 className="d-flex align-items-center">
         <DoorOpenFill />
-        <span className="ml-2">
-          Login
-        </span>
+        <span className="ml-2">Login</span>
       </h6>
       <InputGroup className="mb-2">
         <FormControl
@@ -92,26 +96,27 @@ function AccountLogin(props) {
           value={state.username}
           onChange={handleChange}
         />
-          {hidePassword ? (
-            <FormControl
-              placeholder="Password"
-              type="password"
-              name="password"
-              value={state.password}
-              onChange={handleChange}
-            />
-          ) : (
-            <FormControl
-              placeholder="Password"
-              type="text"
-              name="password"
-              value={state.password}
-              onChange={handleChange}
-            />
-          )}
+        {hidePassword ? (
+          <FormControl
+            placeholder="Password"
+            type="password"
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+          />
+        ) : (
+          <FormControl
+            placeholder="Password"
+            type="text"
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+          />
+        )}
         <InputGroup.Append>
-          <Button variant="outline-secondary"
-                  onClick={() => setHidePassword(!hidePassword)}
+          <Button
+            variant="outline-secondary"
+            onClick={() => setHidePassword(!hidePassword)}
           >
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>

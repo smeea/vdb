@@ -13,34 +13,40 @@ import PersonFill from '../assets/images/icons/person-fill.svg';
 function Account(props) {
   return (
     <Container className="main-container px-0">
-      <Row>
-        <Col>
+      <Row className="justify-content-center">
+        <Col md={12} lg={5}>
           {props.username ? (
             <>
               <div className="d-flex align-items-center justify-content-between">
                 <h6 className="d-flex align-items-center">
                   <PersonFill />
-                  <span className="ml-2">
-                    Logged as: {props.username}
-                  </span>
+                  <span className="ml-2">Logged as: {props.username}</span>
                 </h6>
                 <div>
                   <AccountLogout setUsername={props.setUsername} />
                 </div>
               </div>
-              <AccountChangeName
-                setPublicName={props.setPublicName}
-                publicName={props.publicName}
-              />
-              <AccountChangePassword />
-              <AccountChangeEmail
-                setEmail={props.setEmail}
-                email={props.email}
-              />
-              <AccountDelete
-                username={props.username}
-                setUsername={props.setUsername}
-              />
+              <div className="pb-2 pt-2">
+                <AccountChangeName
+                  setPublicName={props.setPublicName}
+                  publicName={props.publicName}
+                />
+              </div>
+              <div className="pb-2 pt-2">
+                <AccountChangePassword />
+              </div>
+              <div className="pb-2 pt-2">
+                <AccountChangeEmail
+                  setEmail={props.setEmail}
+                  email={props.email}
+                />
+              </div>
+              <div className="pb-2 pt-2">
+                <AccountDelete
+                  username={props.username}
+                  setUsername={props.setUsername}
+                />
+              </div>
             </>
           ) : (
             <>

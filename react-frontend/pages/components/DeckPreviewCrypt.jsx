@@ -21,13 +21,13 @@ function DeckPreviewCrypt(props) {
       crypt[card] = props.cards[card];
       if (
         props.cards[card].c['Group'] < cryptGroupMin ||
-          cryptGroupMin == undefined
+        cryptGroupMin == undefined
       ) {
         cryptGroupMin = props.cards[card].c['Group'];
       }
       if (
         props.cards[card].c['Group'] > cryptGroupMax ||
-          cryptGroupMax == undefined
+        cryptGroupMax == undefined
       ) {
         cryptGroupMax = props.cards[card].c['Group'];
       }
@@ -52,19 +52,23 @@ function DeckPreviewCrypt(props) {
     cryptGroups = 'ERROR IN GROUPS';
   }
 
-  const SortByQuantity = (a, b) => { if (a.q > b.q) return -1;
-                                     else return 1;
-                                   };
+  const SortByQuantity = (a, b) => {
+    if (a.q > b.q) return -1;
+    else return 1;
+  };
 
-  const SortByCapacity = (a, b) => { if (a.c['Capacity'] > b.c['Capacity']) return 1;
-                                     else return -1;
-                                   };
+  const SortByCapacity = (a, b) => {
+    if (a.c['Capacity'] > b.c['Capacity']) return 1;
+    else return -1;
+  };
 
   const sortedCards = Object.values(crypt)
-        .sort(SortByCapacity)
-        .sort(SortByQuantity);
+    .sort(SortByCapacity)
+    .sort(SortByQuantity);
 
-  const sortedCardsSide = Object.values(cryptSide).sort(SortByCapacity).reverse();
+  const sortedCardsSide = Object.values(cryptSide)
+    .sort(SortByCapacity)
+    .reverse();
 
   return (
     <>

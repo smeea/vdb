@@ -7,7 +7,7 @@ function SearchLibraryFormPoolCost(props) {
 
   pool.map((i, index) => {
     let v;
-    i == 'ANY' ? v = i.toLowerCase() : v = i;
+    i == 'ANY' ? (v = i.toLowerCase()) : (v = i);
 
     options.push({
       value: v,
@@ -65,7 +65,9 @@ function SearchLibraryFormPoolCost(props) {
               options={morelessOptions}
               isSearchable={false}
               name="poolmoreless"
-              value={morelessOptions.find((obj) => obj.value === props.moreless)}
+              value={morelessOptions.find(
+                (obj) => obj.value === props.moreless
+              )}
               onChange={props.onChange}
             />
           </div>

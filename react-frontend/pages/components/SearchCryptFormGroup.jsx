@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ButtonGroup, ToggleButton } from 'react-bootstrap';
 
 function SearchCryptFormGroup(props) {
@@ -20,16 +20,13 @@ function SearchCryptFormGroup(props) {
     );
   });
 
-
   return (
     <div className="form-row">
       <div className="form-group col-3 d-flex align-items-center">
         <label className="h6 mb-0">Group:</label>
       </div>
       <div className="form-group col-9">
-        <ButtonGroup toggle>
-          {GroupButtons}
-        </ButtonGroup>
+        <ButtonGroup toggle>{GroupButtons}</ButtonGroup>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';

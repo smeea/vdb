@@ -1,12 +1,12 @@
 import React from 'react';
-import { InputGroup, Spinner, Button } from 'react-bootstrap';
+import { FormControl, InputGroup, Spinner, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import Check2 from '../../assets/images/icons/check2.svg';
 
 function SearchFormTextAndButtons(props) {
   return (
     <InputGroup className="mb-2">
-      <input
+      <FormControl
         placeholder="Card Name / Text"
         type="text"
         name="text"
