@@ -12,7 +12,7 @@ function Crypt(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   return (
-    <Container className="main-container">
+    <Container className="main-container px-0">
       <Row>
         <Col md={12} lg={3}>
           {Object.keys(props.decks).length > 0 && (

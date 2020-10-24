@@ -12,7 +12,7 @@ import PersonFill from '../assets/images/icons/person-fill.svg';
 
 function Account(props) {
   return (
-    <Container className="main-container">
+    <Container className="main-container px-0">
       <Row>
         <Col>
           {props.username ? (

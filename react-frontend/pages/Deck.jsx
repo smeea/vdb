@@ -64,7 +64,7 @@ function Deck(props) {
   return (
     <>
       {props.username && (
-        <Container className="main-container">
+        <Container className="main-container px-0">
           <Row>
             <Col md={12} lg={9}>
               <DeckSelect
@@ -83,7 +83,7 @@ function Deck(props) {
           </Row>
         </Container>
       )}
-      <Container className="main-container">
+      <Container className="main-container px-0">
         {props.decks[props.activeDeck] && (
           <DeckShow
             showImage={props.showImage}
