@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import DeckShowCryptTable from './DeckShowCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
+import Plus from '../../assets/images/icons/plus.svg';
 
 
 function DeckShowCrypt(props) {
+  const [showAdd, setShowAdd] = useState(false);
+
   const dSet = new Set();
   for (const card of Object.keys(props.cards)) {
     for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
@@ -71,14 +75,20 @@ function DeckShowCrypt(props) {
 
   return (
     <>
-      <div className="d-flex align-items-center">
-        <div>
-          <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
-        </div>
-        <div className="flex-grow-1 pl-3">
-          {props.isAuthor && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
-        </div>
+      <div className="d-flex align-items-center justify-content-between">
+        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
+        {props.isAuthor &&
+         <Button
+           variant="outline-secondary"
+           onClick={() => setShowAdd(!showAdd)}
+         >
+           +
+         </Button>
+        }
       </div>
+        {showAdd &&
+           <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />
+        }
       <DeckShowCryptTable
         deckid={props.deckid}
         deckCardChange={props.deckCardChange}

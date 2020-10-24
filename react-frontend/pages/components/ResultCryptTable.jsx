@@ -59,7 +59,7 @@ function ResultCryptTable(props) {
 
     return (
       <table className="search-crypt-table">
-        <tbody>{cards}</tbody>;
+        <tbody>{cards}</tbody>
       </table>
     );
   } else {
