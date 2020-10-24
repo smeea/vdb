@@ -6,10 +6,10 @@ import SearchLibraryFormClan from './SearchLibraryFormClan.jsx';
 import SearchLibraryFormTitle from './SearchLibraryFormTitle.jsx';
 import SearchLibraryFormSect from './SearchLibraryFormSect.jsx';
 import SearchLibraryFormDiscipline from './SearchLibraryFormDiscipline.jsx';
-import SearchLibraryFormSet from './SearchLibraryFormSet.jsx';
 import SearchLibraryFormTraits from './SearchLibraryFormTraits.jsx';
 import SearchLibraryFormBloodCost from './SearchLibraryFormBloodCost.jsx';
 import SearchLibraryFormPoolCost from './SearchLibraryFormPoolCost.jsx';
+import SearchFormSet from './SearchFormSet.jsx';
 
 function SearchLibraryForm(props) {
   const defaults = {
@@ -174,7 +174,7 @@ function SearchLibraryForm(props) {
         value={formState.traits}
         onChange={handleMultiChange}
       />
-      <SearchLibraryFormSet
+      <SearchFormSet
         value={formState.set}
         onChange={handleSelectChange}
       />

@@ -4,42 +4,27 @@ import Select from 'react-select';
 function SearchLibraryFormBloodCost(props) {
   const blood = ['ANY', '0', '1', '2', '3', '4'];
   const options = [];
+
   blood.map((i, index) => {
-    if (i == 'ANY') {
-      options.push({
-        value: i.toLowerCase(),
-        name: 'blood',
-        label: (
-          <>
-            <span
-              style={{
-                display: 'inline-block',
-                width: '40px',
-                textAlign: 'center',
-              }}
-            ></span>
-            {i}
-          </>
-        ),
-      });
-    } else {
-      options.push({
-        value: i,
-        name: 'blood',
-        label: (
-          <>
-            <span
-              style={{
-                display: 'inline-block',
-                width: '40px',
-                textAlign: 'center',
-              }}
-            ></span>
-            {i}
-          </>
-        ),
-      });
-    }
+    let v;
+    i == 'ANY' ? v = i.toLowerCase() : v = i;
+
+    options.push({
+      value: v,
+      name: 'blood',
+      label: (
+        <>
+          <span
+            style={{
+              display: 'inline-block',
+              width: '20px',
+              textAlign: 'center',
+            }}
+          ></span>
+          {i}
+        </>
+      ),
+    });
   });
 
   const moreless = [
@@ -58,7 +43,7 @@ function SearchLibraryFormBloodCost(props) {
           <span
             style={{
               display: 'inline-block',
-              width: '40px',
+              width: '20px',
               textAlign: 'center',
             }}
           ></span>
@@ -74,20 +59,26 @@ function SearchLibraryFormBloodCost(props) {
         <label className="h6 mb-0">Blood Cost:</label>
       </div>
       <div className="form-group col-9">
-        <Select
-          options={morelessOptions}
-          isSearchable={false}
-          name="bloodmoreless"
-          value={morelessOptions.find((obj) => obj.value === props.moreless)}
-          onChange={props.onChange}
-        />
-        <Select
-          options={options}
-          isSearchable={false}
-          name="blood"
-          value={options.find((obj) => obj.value === props.value)}
-          onChange={props.onChange}
-        />
+        <div className="row">
+          <div className="col-6 pr-0">
+            <Select
+              options={morelessOptions}
+              isSearchable={false}
+              name="bloodmoreless"
+              value={morelessOptions.find((obj) => obj.value === props.moreless)}
+              onChange={props.onChange}
+            />
+          </div>
+          <div className="col-6 pl-0">
+            <Select
+              options={options}
+              isSearchable={false}
+              name="blood"
+              value={options.find((obj) => obj.value === props.value)}
+              onChange={props.onChange}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

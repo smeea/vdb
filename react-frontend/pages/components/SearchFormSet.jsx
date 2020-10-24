@@ -1,9 +1,10 @@
 import React from 'react';
 import Select from 'react-select';
 
-function SearchCryptFormSet(props) {
+function SearchFormSet(props) {
   const sets = [
     ['any', 'ANY'],
+    ['Promo', 'Promo'],
     ['25th', '25th Anniversary - 2019'],
     ['FB', 'First Blood - 2019'],
     ['SP', 'Sabbat Preconstructed - 2019'],
@@ -35,28 +36,35 @@ function SearchCryptFormSet(props) {
     ['DS', 'Dark Sovereigns - 1995'],
     ['VTES', 'V:TES - 1995'],
     ['Jyhad', 'Jyhad - 1994'],
-    ['Promo', 'Promo'],
   ];
 
   const options = [];
 
   sets.map((i, index) => {
-    options.push({
-      value: i[0],
-      name: 'set',
-      label: (
-        <>
-          <span
-            style={{
-              display: 'inline-block',
-              width: '40px',
-              textAlign: 'center',
-            }}
-          ></span>
-          {i[1]}
-        </>
-      ),
-    });
+    if (i[0] == 'any') {
+      options.push({
+        value: i[0],
+        name: 'set',
+        label: (
+          <>
+            <span
+              style={{
+                display: 'inline-block',
+                width: '40px',
+                textAlign: 'center',
+              }}
+            ></span>
+            {i[1]}
+          </>
+        ),
+      });
+    } else {
+      options.push({
+        value: i[0],
+        name: 'set',
+        label: i[1],
+      });
+    }
   });
 
   return (
@@ -77,4 +85,4 @@ function SearchCryptFormSet(props) {
   );
 }
 
-export default SearchCryptFormSet;
+export default SearchFormSet;

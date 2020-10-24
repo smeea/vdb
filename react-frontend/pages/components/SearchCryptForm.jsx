@@ -10,7 +10,7 @@ import SearchCryptFormVotes from './SearchCryptFormVotes.jsx';
 import SearchCryptFormTitles from './SearchCryptFormTitles.jsx';
 import SearchCryptFormGroup from './SearchCryptFormGroup.jsx';
 import SearchCryptFormTraits from './SearchCryptFormTraits.jsx';
-import SearchCryptFormSet from './SearchCryptFormSet.jsx';
+import SearchFormSet from './SearchFormSet.jsx';
 
 function SearchCryptForm(props) {
   const defaults = {
@@ -125,9 +125,10 @@ function SearchCryptForm(props) {
   };
 
   const handleMultiChange = (event) => {
-    const { id, name } = event.target;
+    const { id, name, value } = event.target;
+    const i = id || value;
     const newState = formState[name];
-    newState[id] = !newState[id];
+    newState[i] = !newState[i];
     setFormState((prevState) => ({
       ...prevState,
       [name]: newState,
@@ -273,7 +274,7 @@ function SearchCryptForm(props) {
         value={formState.traits}
         onChange={handleMultiChange}
       />
-      <SearchCryptFormSet value={formState.set} onChange={handleSelectChange} />
+      <SearchFormSet value={formState.set} onChange={handleSelectChange} />
     </form>
   );
 }

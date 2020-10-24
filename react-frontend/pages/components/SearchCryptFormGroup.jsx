@@ -1,32 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ButtonGroup, ToggleButton } from 'react-bootstrap';
 
 function SearchCryptFormGroup(props) {
   const groups = [1, 2, 3, 4, 5, 6];
 
-  const groupforms = groups.map((i, index) => {
+  const GroupButtons = groups.map((i, index) => {
     return (
-      <div key={index} className="ml-2 custom-control custom-checkbox">
-        <input
-          id={i}
-          name="group"
-          className="mr-1 custom-control-input"
-          type="checkbox"
-          checked={props.value[i]}
-          onChange={(e) => props.onChange(e)}
-        />
-        <label htmlFor={i} className="mr-0 custom-control-label">
-          {i}
-        </label>
-      </div>
+      <ToggleButton
+        key={index}
+        value={i}
+        name="group"
+        variant="outline-secondary"
+        type="checkbox"
+        checked={props.value[i]}
+        onChange={(e) => props.onChange(e)}
+      >
+        {i}
+      </ToggleButton>
     );
   });
 
+
   return (
-    <div className="form-row justify-content-between">
-      <div className="col-2">
-        <h6>Group:</h6>
+    <div className="form-row">
+      <div className="form-group col-3 d-flex align-items-center">
+        <label className="h6 mb-0">Group:</label>
       </div>
-      {groupforms}
+      <div className="form-group col-9">
+        <ButtonGroup toggle>
+          {GroupButtons}
+        </ButtonGroup>
+      </div>
     </div>
   );
 }
