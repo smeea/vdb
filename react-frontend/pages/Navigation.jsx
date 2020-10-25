@@ -1,94 +1,60 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { Button, Navbar, Nav } from 'react-bootstrap';
-import DeckSelect from './components/DeckSelect.jsx';
 import PersonFill from '../assets/images/icons/person-fill.svg';
+import Search from '../assets/images/icons/search.svg';
+import FolderFill from '../assets/images/icons/folder-fill.svg';
 
 function Navigation(props) {
 
-  const ToggleLeft = (props) => {
-    const toggle = () => {
-      props.setShowCols((prevState) => ({
-        ...prevState,
-        left: !props.showCols.left,
-      }));
-    };
-
+  const ToggleSearch = (props) => {
     return (
-      <>
-        {props.showCols.left ?
-         <Button variant="secondary" onClick={() => toggle(props)}>L</Button>
-         :
-         <Button variant="outline-secondary" onClick={() => toggle(props)}>L</Button>
-         }
-      </>
+      <Button
+        onClick={() => props.setShowCols({
+          search: !props.showCols.search,
+          result: props.showCols.search,
+        })}
+        variant={props.showCols.search ? 'secondary' : 'outline-secondary'}
+      ><Search /></Button>
+    );
+  };
+
+  const ToggleDeck = (props) => {
+    return (
+      <Button
+        onClick={() => props.setShowCols({
+          deck: !props.showCols.deck,
+          result: props.showCols.deck,
+        })}
+        variant={props.showCols.deck ? 'secondary' : 'outline-secondary'}
+      ><FolderFill /></Button>
     );
   };
 
   const NavBar = ({ location }) => {
-    function AccountEntry(props) {
-      if (props.isMobile) {
-        return <PersonFill />;
-      } else if (props.username) {
-        return (
-          <div className="d-flex align-items-center">
-            <PersonFill />
-            {props.username}
-          </div>
-        );
-      } else {
-        return 'Login';
-      }
-    }
-
     return (
       <Navbar sticky="top" bg="dark" variant="dark">
         <Nav className="container justify-content-between">
-          {props.isMobile &&
-           <>
-             {props.showCols.left ?
-              <Button variant="secondary" onClick={() => props.setShowCols({left: !props.showCols.left})}>{'>'}</Button>
-              :
-              <Button variant="outline-secondary" onClick={() => props.setShowCols({left: !props.showCols.left})}>{'>'}</Button>
-             }
-           </>
-          }
-          <div className="w-25">
-            {Object.keys(props.decks).length > 0 && (
-              <DeckSelect
-                preview={true}
-                decks={props.decks}
-                activeDeck={props.activeDeck}
-                setActiveDeck={props.setActiveDeck}
-              />
-            )}
-          </div>
+          {props.isMobile && <ToggleDeck showCols={props.showCols} setShowCols={props.setShowCols} />}
+          <div />
           <div className="d-flex align-items-center">
             <NavLink to="/account" className="nav-link px-2">
-              <AccountEntry isMobile={props.isMobile} username={props.username} />
+              { props.username ? <PersonFill /> : 'Login' }
             </NavLink>
             <NavLink to="/about" className="nav-link px-2">
-              {props.isMobile ? 'A' : 'About'}
+              About
             </NavLink>
             <NavLink to="/deck" className="nav-link px-2">
-              {props.isMobile ? 'D' : 'Decks'}
+              Decks
             </NavLink>
             <NavLink to="/crypt" className="nav-link px-2">
-              {props.isMobile ? 'C' : 'Crypt'}
+              Crypt
             </NavLink>
             <NavLink to="/library" className="nav-link px-2">
-              {props.isMobile ? 'L' : 'Library'}
+              Library
             </NavLink>
-            {props.isMobile &&
-             <>
-               {props.showCols.right ?
-                <Button variant="secondary" onClick={() => props.setShowCols({right: !props.showCols.right})}>{'<'}</Button>
-                :
-                <Button variant="outline-secondary" onClick={() => props.setShowCols({right: !props.showCols.right})}>{'<'}</Button>
-               }
-             </>
-            }
           </div>
+          {props.isMobile && <ToggleSearch showCols={props.showCols} setShowCols={props.setShowCols} />}
         </Nav>
       </Navbar>
     );

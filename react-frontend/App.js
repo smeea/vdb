@@ -24,9 +24,9 @@ function App(props) {
   const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 540px)').matches);
 
   const [showCols, setShowCols] = useState({
-    left: true,
-    middle: true,
-    right: true,
+    deck: true,
+    result: true,
+    search: true,
   });
 
   const getDecks = () => {
@@ -112,18 +112,9 @@ function App(props) {
 
   useEffect(() => {
     isMobile && setShowCols({
-      right: true,
+      search: true,
     });
   }, [isMobile]);
-
-  useEffect(() => {
-    activeDeck && isMobile && setShowCols({
-      left: true,
-    });
-    !activeDeck && isMobile && setShowCols({
-      right: true,
-    });
-  }, [activeDeck]);
 
   return (
     <div className="App">
@@ -203,6 +194,9 @@ function App(props) {
             </Route>
             <Route path="/library">
               <Library
+                isMobile={isMobile}
+                showCols={showCols}
+                setShowCols={setShowCols}
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
                 decks={decks}

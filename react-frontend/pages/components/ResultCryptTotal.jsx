@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AlertMessage from './AlertMessage.jsx';
+import ResultCryptSortForm from './ResultCryptSortForm.jsx';
 
 function ResultCryptTotal(props) {
   const byGroups = {};
@@ -17,8 +18,8 @@ function ResultCryptTotal(props) {
 
   const totalOutput = Object.keys(byGroups).map((key, index) => {
     return (
-      <span key={index} className="pr-3">
-        <span className="d-inline-block crypt-total">
+      <span key={index} className="d-inline-block nobr pr-3">
+        <span className="crypt-total">
           <b>G{key}:</b>
         </span>
         {byGroups[key]}
@@ -32,7 +33,12 @@ function ResultCryptTotal(props) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <div />
+      {props.showSort == true && props.sortedCards.length > 0 && (
+        <ResultCryptSortForm
+          value={props.sortMethod}
+          onChange={props.handleChange}
+        />
+      )}
     </>
   );
 

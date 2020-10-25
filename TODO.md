@@ -8,8 +8,11 @@
 * Add demo account
 * Night Theme
 * Scrollable frame for deck (also test for search forms) 
+* Highlight in results cards in deck
+* Update About with features: speed, UI, mobile
 
 # MAJOR FIX
+* Reset search results on hide
 
 # MINOR FIX
 * Redirect from login to decks
@@ -29,6 +32,7 @@
 * Use day.js for dates
 * Add props validation
 * Dynamic media query with react-responsive
+* Swipe search and deck on mobile - react-swipeable-views?
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
