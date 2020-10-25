@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Spinner } from 'react-bootstrap';
+import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
 
 function DeckImportModal(props) {
   const [deckText, setDeckText] = useState('');
@@ -58,7 +58,8 @@ function DeckImportModal(props) {
         <Modal.Title>Import deck</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <textarea
+        <FormControl
+          as="textarea"
           className="form-control deck-import"
           rows={
             deckText.split(/\r\n|\r|\n/).length < 30

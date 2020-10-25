@@ -85,57 +85,30 @@ function AccountChangePassword(props) {
         <span className="ml-2">Change password</span>
       </h6>
       <InputGroup className="mb-2">
-        {hidePassword ? (
-          <>
-            <FormControl
-              placeholder="Old password"
-              type="password"
-              name="password"
-              value={state.password}
-              onChange={handleChange}
-            />
-            <FormControl
-              placeholder="New password"
-              type="password"
-              name="newPassword"
-              value={state.newPassword}
-              onChange={handleChange}
-            />
-            <FormControl
-              placeholder="Repeat password"
-              type="password"
-              name="confirmPassword"
-              value={state.confirmPassword}
-              onChange={handleChange}
-            />
-          </>
-        ) : (
-          <>
-            <FormControl
-              placeholder="Old password"
-              type="text"
-              name="password"
-              value={state.password}
-              onChange={handleChange}
-            />
-            <FormControl
-              placeholder="New password"
-              type="text"
-              name="newPassword"
-              value={state.newPassword}
-              onChange={handleChange}
-            />
-            <FormControl
-              placeholder="Confirm password"
-              type="text"
-              name="confirmPassword"
-              value={state.confirmPassword}
-              onChange={handleChange}
-            />
-          </>
-        )}
+        <FormControl
+          placeholder="Old password"
+          type={hidePassword ? 'password' : 'text'}
+          name="password"
+          value={state.password}
+          onChange={handleChange}
+        />
+        <FormControl
+          placeholder="New password"
+          type={hidePassword ? 'password' : 'text'}
+          name="newPassword"
+          value={state.newPassword}
+          onChange={handleChange}
+        />
+        <FormControl
+          placeholder="Confirm password"
+          type={hidePassword ? 'password' : 'text'}
+          name="confirmPassword"
+          value={state.confirmPassword}
+          onChange={handleChange}
+        />
         <InputGroup.Append>
           <Button
+            tabIndex="-1"
             variant="outline-secondary"
             onClick={() => setHidePassword(!hidePassword)}
           >

@@ -13,6 +13,14 @@ function ResultCrypt(props) {
     setSortedCards(() => resultCryptSort(props.cards, method));
   };
 
+  // let d_set = new Set();
+  // for (const card of Object.keys(props.cards)) {
+  //   for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
+  //     d_set.add(d);
+  //   };
+  // };
+  // const disciplines_set = [...d_set].sort();
+
   useEffect(() => {
     setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
   }, [props.cards, props.sortMethod]);
@@ -28,12 +36,6 @@ function ResultCrypt(props) {
           showSort={props.showSort}
         />
       )}
-      {/* {props.showSort == true && sortedCards.length > 0 && ( */}
-      {/*   <ResultCryptSortForm */}
-      {/*     value={props.sortMethod} */}
-      {/*     onChange={handleChange} */}
-      {/*   /> */}
-      {/* )} */}
       <ResultCryptTable
         showImage={props.showImage}
         toggleImage={props.toggleImage}

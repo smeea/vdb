@@ -14,15 +14,12 @@ function DeckDrawModal(props) {
       size="xl"
     >
       <Modal.Header closeButton>
-        <Modal.Title>
-          <span className="mx-2">Deck Draw</span>
-          <span className="mx-2"></span>
-        </Modal.Title>
+        <h5>DECK DRAW</h5>
       </Modal.Header>
       <Modal.Body>
-        <Container fluid>
-          <Row>
-            <Col md={12} lg={7}>
+        <Container className="px-0" fluid>
+          <Row className="px-0">
+            <Col md={12} lg={7} className="px-1">
               {props.drawedCrypt && (
                 <>
                   <div className="d-flex justify-content-between align-items-center">
@@ -54,7 +51,7 @@ function DeckDrawModal(props) {
                 </>
               )}
             </Col>
-            <Col md={12} lg={5}>
+            <Col md={12} lg={5} className="px-1">
               {props.drawedLibrary && (
                 <>
                   <div className="d-flex justify-content-between align-items-center">

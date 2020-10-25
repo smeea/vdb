@@ -8,10 +8,10 @@ function ResultCryptDisciplines(props) {
   let width = 100 / maxRows + '%';
 
   if (
-    props.disciplines_set !== undefined &&
-    props.disciplines_set.length <= maxRows
+    props.disciplinesSet !== undefined &&
+    props.disciplinesSet.length <= maxRows
   ) {
-    disciplineRows = props.disciplines_set.map((d, index) => {
+    disciplineRows = props.disciplinesSet.map((d, index) => {
       counter += 1;
       let imgSrc;
       let imgClass;
@@ -41,7 +41,7 @@ function ResultCryptDisciplines(props) {
       }
     });
   } else {
-    if (props.disciplines_set === undefined) {
+    if (props.disciplinesSet === undefined) {
       maxRows = 7;
       width = 100 / maxRows + '%';
     }

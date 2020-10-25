@@ -22,7 +22,7 @@ function DeckDescription(props) {
   }, [props.description]);
 
   return (
-    <InputGroup className="mb-2">
+    <InputGroup>
       <InputGroup.Prepend>
         <InputGroup.Text>Description</InputGroup.Text>
       </InputGroup.Prepend>

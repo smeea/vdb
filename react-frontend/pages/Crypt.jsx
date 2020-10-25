@@ -11,68 +11,68 @@ function Crypt(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   useEffect(() => {
-    props.isMobile && results && (
-      results.length > 0 && props.setShowCols({
+    props.isMobile &&
+      results &&
+      results.length > 0 &&
+      props.setShowCols({
         result: true,
-      })
-    );
+      });
   }, [results]);
 
   return (
     <Container className="main-container px-0">
       <Row>
-        {props.showCols.deck &&
-         <Col md={12} lg={3}>
-           {Object.keys(props.decks).length > 0 && (
-             <DeckSelect
-               preview={true}
-               decks={props.decks}
-               activeDeck={props.activeDeck}
-               setActiveDeck={props.setActiveDeck}
-             />
-           )}
-           {props.activeDeck && (
-             <DeckPreview
-               showImage={props.showImage}
-               toggleImage={props.toggleImage}
-               deck={props.decks[props.activeDeck]}
-               getDecks={props.getDecks}
-               deckCardChange={props.deckCardChange}
-             />
-           )}
-         </Col>
-        }
-        {props.showCols.result &&
-         <Col md={12} lg={6}>
-           {results != undefined && results != null && (
-             <ResultCrypt
-               showImage={props.showImage}
-               toggleImage={props.toggleImage}
-               deckCardAdd={props.deckCardAdd}
-               cards={results}
-               activeDeck={props.activeDeck}
-               showSort={true}
-               showTotal={true}
-               sortMethod={sortMethod}
-               setSortMethod={setSortMethod}
-             />
-           )}
-           {results === null && (
-             <AlertMessage className="error-message">
-               <>
-                 <div />
-                 <b>NO CARDS FOUND</b>
-                 <div />
-               </>
-             </AlertMessage>
-           )}
-         </Col>
-        }
-        {props.showCols.search &&
-         <Col md={12} lg={3}>
-           <SearchCryptForm setResults={setResults} />
-         </Col>
-        }
+        {props.showCols.deck && (
+          <Col md={12} lg={3}>
+            {Object.keys(props.decks).length > 0 && (
+              <DeckSelect
+                decks={props.decks}
+                activeDeck={props.activeDeck}
+                setActiveDeck={props.setActiveDeck}
+              />
+            )}
+            {props.activeDeck && (
+              <DeckPreview
+                showImage={props.showImage}
+                toggleImage={props.toggleImage}
+                deck={props.decks[props.activeDeck]}
+                getDecks={props.getDecks}
+                deckCardChange={props.deckCardChange}
+              />
+            )}
+          </Col>
+        )}
+        {props.showCols.result && (
+          <Col md={12} lg={6}>
+            {results != undefined && results != null && (
+              <ResultCrypt
+                showImage={props.showImage}
+                toggleImage={props.toggleImage}
+                deckCardAdd={props.deckCardAdd}
+                cards={results}
+                activeDeck={props.activeDeck}
+                showSort={true}
+                showTotal={true}
+                sortMethod={sortMethod}
+                setSortMethod={setSortMethod}
+              />
+            )}
+            {results === null && (
+              <AlertMessage className="error-message">
+                <>
+                  <div />
+                  <b>NO CARDS FOUND</b>
+                  <div />
+                </>
+              </AlertMessage>
+            )}
+          </Col>
+        )}
+        {props.showCols.search && (
+          <Col md={12} lg={3}>
+            <SearchCryptForm setResults={setResults} />
+          </Col>
+        )}
       </Row>
     </Container>
   );

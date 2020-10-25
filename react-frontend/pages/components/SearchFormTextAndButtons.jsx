@@ -12,6 +12,7 @@ function SearchFormTextAndButtons(props) {
         name="text"
         value={props.value}
         onChange={props.onChange}
+        autoFocus={true}
       />
       <InputGroup.Append>
         {!props.spinner ? (

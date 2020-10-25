@@ -47,8 +47,11 @@ function DeckNewLibraryCard(props) {
     <AsyncSelect
       cacheOptions
       defaultOptions
+      autoFocus={true}
       value={selectedValue}
       placeholder="Add Library Card"
+      loadOptions={loadOptions}
+      onChange={handleChange}
       getOptionLabel={(card) => (
         <>
           <div className="d-flex align-items-center justify-content-between">
@@ -81,8 +84,6 @@ function DeckNewLibraryCard(props) {
           </div>
         </>
       )}
-      loadOptions={loadOptions}
-      onChange={handleChange}
     />
   );
 }

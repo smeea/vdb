@@ -22,7 +22,7 @@ function DeckLibraryByTypeTable(props) {
 
 function DeckShowLibrary(props) {
   const [showAdd, setShowAdd] = useState(false);
-  
+
   const library = {};
   const librarySide = {};
 
@@ -129,9 +129,7 @@ function DeckShowLibrary(props) {
   return (
     <>
       <div className="d-flex align-items-center justify-content-between">
-        <b>
-          Library [{libraryTotal}]
-        </b>
+        <b>Library [{libraryTotal}]</b>
         {props.isAuthor && (
           <Button
             variant="outline-secondary"

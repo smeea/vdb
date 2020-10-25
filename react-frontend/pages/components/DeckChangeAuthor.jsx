@@ -22,7 +22,7 @@ function DeckChangeAuthor(props) {
   }, [props.author]);
 
   return (
-    <InputGroup className="mb-2">
+    <InputGroup>
       <InputGroup.Prepend>
         <InputGroup.Text>Author</InputGroup.Text>
       </InputGroup.Prepend>

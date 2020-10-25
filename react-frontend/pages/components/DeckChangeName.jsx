@@ -22,7 +22,7 @@ function DeckChangeName(props) {
   }, [props.name]);
 
   return (
-    <InputGroup className="mb-2">
+    <InputGroup>
       <InputGroup.Prepend>
         <InputGroup.Text>Name</InputGroup.Text>
       </InputGroup.Prepend>

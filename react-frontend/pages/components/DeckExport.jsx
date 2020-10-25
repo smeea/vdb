@@ -120,7 +120,8 @@ function DeckExport(props) {
     <>
       <Dropdown>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
-          <Download size={20} /> Export
+          <Download size={20} />
+          <span className="pl-1">Save / Export</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {spinnerState && (

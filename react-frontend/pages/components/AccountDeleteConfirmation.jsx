@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { FormControl, InputGroup, Modal, Button } from 'react-bootstrap';
+import EyeFill from '../../assets/images/icons/eye-fill.svg';
+import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 
 function AccountDeleteConfirmation(props) {
   const [password, setPassword] = useState(undefined);
   const [passwordError, setPasswordError] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
+  const [hidePassword, setHidePassword] = useState(true);
 
   const handleChange = (event) => setPassword(event.target.value);
 
@@ -59,9 +62,7 @@ function AccountDeleteConfirmation(props) {
         <Modal.Header closeButton>
           <h5>
             DELETE ACCOUNT
-            <span className="px-1 pl-1">
-              <b>{props.username}</b>
-            </span>
+            <span className="px-1 pl-2">`{props.username}`?</span>
           </h5>
         </Modal.Header>
         <Modal.Body>
@@ -73,16 +74,20 @@ function AccountDeleteConfirmation(props) {
           <InputGroup className="mb-2">
             <FormControl
               placeholder="Enter password"
-              type="password"
+              type={hidePassword ? 'password' : 'text'}
               name="password"
               value={password}
               onChange={handleChange}
             />
             <InputGroup.Append>
               <Button
-                variant="outline-danger"
-                onClick={deleteAccount}
+                tabIndex="-1"
+                variant="outline-secondary"
+                onClick={() => setHidePassword(!hidePassword)}
               >
+                {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+              </Button>
+              <Button variant="outline-danger" onClick={deleteAccount}>
                 Delete
               </Button>
               <Button

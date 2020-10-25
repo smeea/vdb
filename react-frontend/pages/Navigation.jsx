@@ -6,28 +6,37 @@ import Search from '../assets/images/icons/search.svg';
 import FolderFill from '../assets/images/icons/folder-fill.svg';
 
 function Navigation(props) {
-
   const ToggleSearch = (props) => {
     return (
       <Button
-        onClick={() => props.setShowCols({
-          search: !props.showCols.search,
-          result: props.showCols.search,
-        })}
-        variant={props.showCols.search ? 'secondary' : 'outline-secondary'}
-      ><Search /></Button>
+        onClick={() =>
+          props.setShowCols({
+            search: !props.showCols.search,
+            result: props.showCols.search,
+          })
+        }
+        variant="secondary"
+        active={!props.showCols.search}
+      >
+        <Search />
+      </Button>
     );
   };
 
   const ToggleDeck = (props) => {
     return (
       <Button
-        onClick={() => props.setShowCols({
-          deck: !props.showCols.deck,
-          result: props.showCols.deck,
-        })}
-        variant={props.showCols.deck ? 'secondary' : 'outline-secondary'}
-      ><FolderFill /></Button>
+        onClick={() =>
+          props.setShowCols({
+            deck: !props.showCols.deck,
+            result: props.showCols.deck,
+          })
+        }
+        variant="secondary"
+        active={!props.showCols.deck}
+      >
+        <FolderFill />
+      </Button>
     );
   };
 
@@ -35,11 +44,16 @@ function Navigation(props) {
     return (
       <Navbar sticky="top" bg="dark" variant="dark">
         <Nav className="container justify-content-between">
-          {props.isMobile && <ToggleDeck showCols={props.showCols} setShowCols={props.setShowCols} />}
+          {props.isMobile && (
+            <ToggleDeck
+              showCols={props.showCols}
+              setShowCols={props.setShowCols}
+            />
+          )}
           <div />
           <div className="d-flex align-items-center">
             <NavLink to="/account" className="nav-link px-2">
-              { props.username ? <PersonFill /> : 'Login' }
+              {props.username ? <PersonFill /> : 'Login'}
             </NavLink>
             <NavLink to="/about" className="nav-link px-2">
               About
@@ -54,7 +68,12 @@ function Navigation(props) {
               Library
             </NavLink>
           </div>
-          {props.isMobile && <ToggleSearch showCols={props.showCols} setShowCols={props.setShowCols} />}
+          {props.isMobile && (
+            <ToggleSearch
+              showCols={props.showCols}
+              setShowCols={props.setShowCols}
+            />
+          )}
         </Nav>
       </Navbar>
     );

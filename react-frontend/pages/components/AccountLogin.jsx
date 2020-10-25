@@ -87,9 +87,7 @@ function AccountLogin(props) {
     <>
       <h6 className="d-flex align-items-center">
         <DoorOpenFill />
-        <span className="ml-2">
-          Login
-        </span>
+        <span className="ml-2">Login</span>
       </h6>
       <InputGroup className="mb-2">
         <FormControl
@@ -98,26 +96,18 @@ function AccountLogin(props) {
           name="username"
           value={state.username}
           onChange={handleChange}
+          autoFocus={true}
         />
-        {hidePassword ? (
-          <FormControl
-            placeholder="Password"
-            type="password"
-            name="password"
-            value={state.password}
-            onChange={handleChange}
-          />
-        ) : (
-          <FormControl
-            placeholder="Password"
-            type="text"
-            name="password"
-            value={state.password}
-            onChange={handleChange}
-          />
-        )}
+        <FormControl
+          placeholder="Password"
+          type={hidePassword ? 'password' : 'text'}
+          name="password"
+          value={state.password}
+          onChange={handleChange}
+        />
         <InputGroup.Append>
           <Button
+            tabIndex="-1"
             variant="outline-secondary"
             onClick={() => setHidePassword(!hidePassword)}
           >

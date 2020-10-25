@@ -46,8 +46,11 @@ function DeckNewCryptCard(props) {
     <AsyncSelect
       cacheOptions
       defaultOptions
+      autoFocus={true}
       value={selectedValue}
       placeholder="Add Crypt Card"
+      loadOptions={loadOptions}
+      onChange={handleChange}
       getOptionLabel={(card) => (
         <>
           <div className="d-flex align-items-center justify-content-between">
@@ -66,8 +69,6 @@ function DeckNewCryptCard(props) {
           </div>
         </>
       )}
-      loadOptions={loadOptions}
-      onChange={handleChange}
     />
   );
 }

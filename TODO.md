@@ -9,20 +9,20 @@
 * Night Theme
 * Scrollable frame for deck (also test for search forms) 
 * Highlight in results cards in deck
-* Update About with features: speed, UI, mobile
+* Update About with features: import/export, free, speed, UI you may like, mobile-friendly
 
 # MAJOR FIX
 * Reset search results on hide
+* Import deck bug
 
 # MINOR FIX
 * Redirect from login to decks
 * Redirect to about from / page
 * Change tooltips style
 * Button on-success effect - outline-success?
+* Set min height of table row for shared deck (button size?)
 
 # MOBILE FIX
-* Toggle search button
-* Toggle deck button
 * Card popover to modal
 
 # IMPROVE TECHNOLOGY - FRONTEND
