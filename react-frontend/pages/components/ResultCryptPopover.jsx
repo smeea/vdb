@@ -16,7 +16,7 @@ function ResultCryptPopover(props) {
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
     return (
-      <span className="ml-2" key={index}>
+      <span key={index} className="d-inline-block nobr ml-2">
         {k}:{props.card['Set'][k]}
       </span>
     );

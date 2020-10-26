@@ -21,6 +21,7 @@
 * Change tooltips style
 * Button on-success effect - outline-success?
 * Set min height of table row for shared deck (button size?)
+* Remove togglesearch/deck buttons except from crypt/library
 
 # MOBILE FIX
 * Card popover to modal

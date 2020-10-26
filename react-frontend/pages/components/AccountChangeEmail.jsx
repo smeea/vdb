@@ -73,10 +73,12 @@ function AccountChangeEmail(props) {
   };
 
   useEffect(() => {
-    setState((prevState) => ({
-      ...prevState,
-      email: props.email,
-    }));
+    if (props.email) {
+      setState((prevState) => ({
+        ...prevState,
+        email: props.email,
+      }));
+    }
   }, [props.email]);
 
   return (

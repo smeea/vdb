@@ -4,7 +4,7 @@ import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 
 function AccountDeleteConfirmation(props) {
-  const [password, setPassword] = useState(undefined);
+  const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);

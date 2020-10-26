@@ -65,7 +65,6 @@ function DeckDraw(props) {
     const [drawedCrypt, restCrypt] = initialDrawCards(props.crypt, 4);
     const [drawedLibrary, restLibrary] = initialDrawCards(props.library, 7);
     if (drawedCrypt || drawedLibrary) {
-      console.log('ok');
       setDrawedCrypt(drawedCrypt);
       setDrawedLibrary(drawedLibrary);
       setRestCrypt(restCrypt);

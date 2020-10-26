@@ -147,6 +147,7 @@ function App(props) {
             </Route>
             <Route path="/deck">
               <Deck
+                isMobile={isMobile}
                 decks={decks}
                 getDecks={getDecks}
                 activeDeck={activeDeck}
@@ -163,6 +164,7 @@ function App(props) {
               path="/deck/:id"
               component={(props) => (
                 <Deck
+                  isMobile={isMobile}
                   decks={decks}
                   getDecks={getDecks}
                   activeDeck={activeDeck}

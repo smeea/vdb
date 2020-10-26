@@ -115,7 +115,7 @@ function DeckImport(props) {
       <Dropdown>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
           <FileEarmarkPlus size={20} />
-          <span className="pl-1">Create / Import</span>
+          {!props.isMobile && <span className="pl-1">Create / Import</span>}
         </Dropdown.Toggle>
         <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
       </Dropdown>

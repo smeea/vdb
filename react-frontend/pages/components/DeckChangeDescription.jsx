@@ -3,7 +3,7 @@ import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 
 function DeckDescription(props) {
-  const [state, setState] = useState(undefined);
+  const [state, setState] = useState('');
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -18,7 +18,7 @@ function DeckDescription(props) {
   };
 
   useEffect(() => {
-    setState(props.description);
+    props.description && setState(props.description);
   }, [props.description]);
 
   return (

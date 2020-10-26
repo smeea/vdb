@@ -3,7 +3,7 @@ import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 
 function DeckChangeName(props) {
-  const [state, setState] = useState(props.description);
+  const [state, setState] = useState('');
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -18,7 +18,7 @@ function DeckChangeName(props) {
   };
 
   useEffect(() => {
-    setState(props.name);
+    props.name && setState(props.name);
   }, [props.name]);
 
   return (

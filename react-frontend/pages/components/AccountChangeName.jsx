@@ -51,7 +51,9 @@ function AccountChangeName(props) {
   };
 
   useEffect(() => {
-    setState(props.publicName);
+    if (props.publicName) {
+      setState(props.publicName);
+    }
   }, [props.publicName]);
 
   return (
