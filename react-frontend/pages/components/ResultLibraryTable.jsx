@@ -9,6 +9,7 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
 
 function ResultLibraryTable(props) {
+
   let resultTrClass = 'library-result-even';
 
   const cards = props.resultCards.map((card, index) => {
@@ -16,6 +17,12 @@ function ResultLibraryTable(props) {
       resultTrClass = 'library-result-odd';
     } else {
       resultTrClass = 'library-result-even';
+    }
+    let inDeck;
+    if (props.library) {
+      Object.keys(props.library).map((i, index) => {
+        if (i == card.Id) { inDeck = props.library[i].q; }
+      });
     }
 
     return (
@@ -26,6 +33,7 @@ function ResultLibraryTable(props) {
               <ResultAddCard
                 deckCardAdd={props.deckCardAdd}
                 cardid={card['Id']}
+                inDeck={inDeck}
               />
             </td>
           )}

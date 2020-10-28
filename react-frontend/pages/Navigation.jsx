@@ -3,7 +3,6 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { Button, Navbar, Nav } from 'react-bootstrap';
 import PersonFill from '../assets/images/icons/person-fill.svg';
 import Search from '../assets/images/icons/search.svg';
-import FolderFill from '../assets/images/icons/folder-fill.svg';
 
 function Navigation(props) {
   const ToggleSearch = (props) => {
@@ -23,34 +22,10 @@ function Navigation(props) {
     );
   };
 
-  const ToggleDeck = (props) => {
-    return (
-      <Button
-        onClick={() =>
-          props.setShowCols({
-            deck: !props.showCols.deck,
-            result: props.showCols.deck,
-          })
-        }
-        variant="secondary"
-        active={!props.showCols.deck}
-      >
-        <FolderFill />
-      </Button>
-    );
-  };
-
   const NavBar = ({ location }) => {
     return (
       <Navbar sticky="top" bg="dark" variant="dark">
-        <Nav className="container justify-content-between">
-          {props.isMobile && (
-            <ToggleDeck
-              showCols={props.showCols}
-              setShowCols={props.setShowCols}
-            />
-          )}
-          <div />
+        <Nav className="container justify-content-end">
           <div className="d-flex align-items-center">
             <NavLink to="/account" className="nav-link px-2">
               {props.username ? <PersonFill /> : 'Login'}

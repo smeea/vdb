@@ -11,12 +11,16 @@ function Library(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   useEffect(() => {
-    props.isMobile &&
-      results &&
-      results.length > 0 &&
+    if (props.isMobile && results && results.length > 0) {
       props.setShowCols({
         result: true,
       });
+    }
+    if (props.isMobile && !results) {
+      props.setShowCols({
+        search: true,
+      });
+    }
   }, [results]);
 
   return (
@@ -50,6 +54,7 @@ function Library(props) {
                 toggleImage={props.toggleImage}
                 deckCardAdd={props.deckCardAdd}
                 cards={results}
+                library={(props.decks && props.decks[props.activeDeck]) && props.decks[props.activeDeck].library}
                 activeDeck={props.activeDeck}
                 showSort={true}
                 showTotal={true}

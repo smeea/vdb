@@ -17,7 +17,7 @@ function ResultLibrarySortForm(props) {
     <DropdownButton
       variant="outline-secondary"
       id="sort-button"
-      title={<SortDown size={24} />}
+      title={<SortDown />}
     >
       {SortButtonOptions}
     </DropdownButton>

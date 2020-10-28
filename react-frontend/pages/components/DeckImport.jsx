@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
-import FileEarmarkPlus from '../../assets/images/icons/file-earmark-plus.svg';
+import ClipboardPlus from '../../assets/images/icons/clipboard-plus.svg';
 
 import DeckImportModal from './DeckImportModal.jsx';
 
@@ -114,7 +114,7 @@ function DeckImport(props) {
       />
       <Dropdown>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
-          <FileEarmarkPlus size={20} />
+          <ClipboardPlus size={24} />
           {!props.isMobile && <span className="pl-1">Create / Import</span>}
         </Dropdown.Toggle>
         <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>

@@ -22,6 +22,7 @@ function App(props) {
   const [activeDeck, setActiveDeck] = useState(undefined);
 
   const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 540px)').matches);
+  const [isWide, setIsWide] = useState(window.matchMedia('(max-width: 1920px)').matches);
 
   const [showCols, setShowCols] = useState({
     deck: true,
@@ -181,6 +182,7 @@ function App(props) {
             />
             <Route path="/crypt">
               <Crypt
+                isWide={isWide}
                 isMobile={isMobile}
                 showCols={showCols}
                 setShowCols={setShowCols}
@@ -196,6 +198,7 @@ function App(props) {
             </Route>
             <Route path="/library">
               <Library
+                isWide={isWide}
                 isMobile={isMobile}
                 showCols={showCols}
                 setShowCols={setShowCols}

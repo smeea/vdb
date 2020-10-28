@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import ResultLibraryTable from './ResultLibraryTable.jsx';
-import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
 import ResultLibraryTotal from './ResultLibraryTotal.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
 
@@ -20,17 +19,18 @@ function ResultLibrary(props) {
   return (
     <>
       {props.showTotal == true && props.cards.length > 0 && (
-        <ResultLibraryTotal cards={props.cards} />
-      )}
-      {props.showSort == true && sortedCards.length > 0 && (
-        <ResultLibrarySortForm
+        <ResultLibraryTotal
+          cards={props.cards}
+          sortedCards={sortedCards}
           value={props.sortMethod}
-          onChange={handleChange}
+          handleChange={handleChange}
+          showSort={props.showSort}
         />
       )}
       <ResultLibraryTable
         showImage={props.showImage}
         toggleImage={props.toggleImage}
+        library={props.library}
         activeDeck={props.activeDeck}
         deckCardAdd={props.deckCardAdd}
         resultCards={sortedCards}

@@ -4,11 +4,21 @@ import DeckDraw from './DeckDraw.jsx';
 import DeckClone from './DeckClone.jsx';
 import DeckDelete from './DeckDelete.jsx';
 import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
+import DeckImport from './DeckImport.jsx';
 import DeckExport from './DeckExport.jsx';
 
 function DeckShowButtons(props) {
   return (
     <>
+    <div>
+      {props.username && (
+        <DeckImport
+          setActiveDeck={props.setActiveDeck}
+          getDecks={props.getDecks}
+          isMobile={props.isMobile}
+        />
+      )}
+    </div>
     <div>
       <DeckExport activeDeck={props.activeDeck} />
     </div>

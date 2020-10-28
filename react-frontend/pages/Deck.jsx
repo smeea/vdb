@@ -3,10 +3,10 @@ import { useLocation, Redirect } from 'react-router-dom';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 
 import AlertMessage from './components/AlertMessage.jsx';
-import DeckImport from './components/DeckImport.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
 import DeckShowInfo from './components/DeckShowInfo.jsx';
 import DeckShowButtons from './components/DeckShowButtons.jsx';
+import DeckShowMenu from './components/DeckShowMenu.jsx';
 import DeckShowCrypt from './components/DeckShowCrypt.jsx';
 import DeckShowLibrary from './components/DeckShowLibrary.jsx';
 import ChevronExpand from '../assets/images/icons/chevron-expand.svg';
@@ -82,23 +82,17 @@ function Deck(props) {
                 />
               )}
             </Col>
-            <Col>
-              {(props.decks[props.activeDeck] || sharedDeck) && props.isMobile &&
+            {(props.decks[props.activeDeck] || sharedDeck) && props.isMobile &&
+             <Col>
                <Button
                  variant="outline-secondary"
                  onClick={() => setShowInfo(!showInfo)}
                >
                  <ChevronExpand />
                </Button>
-              }
-              {props.username && (
-                <DeckImport
-                  setActiveDeck={props.setActiveDeck}
-                  getDecks={props.getDecks}
-                  isMobile={props.isMobile}
-                />
-              )}
-            </Col>
+               <DeckShowMenu />
+             </Col>
+            }
           </Row>
         </Col>
         <Col lg={8}>
@@ -122,6 +116,8 @@ function Deck(props) {
         <Col lg={2}>
           {(props.decks[props.activeDeck] || sharedDeck) && !props.isMobile &&
            <DeckShowButtons
+             isActive={props.decks[props.activeDeck] || sharedDeck}
+             isMobile={props.isMobile}
              isAuthor={isAuthor}
              username={props.username}
              deck={

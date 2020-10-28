@@ -2,6 +2,7 @@ import React from 'react';
 
 import AlertMessage from './AlertMessage.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
 
 function ResultLibraryTotal(props) {
   const byTypes = {};
@@ -31,7 +32,12 @@ function ResultLibraryTotal(props) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <div />
+      {props.showSort == true && props.sortedCards.length > 0 && (
+        <ResultLibrarySortForm
+          value={props.sortMethod}
+          onChange={props.handleChange}
+        />
+      )}
     </>
   );
 
