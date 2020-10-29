@@ -16,6 +16,7 @@ function Navigation(props) {
         }
         variant="secondary"
         active={!props.showCols.search}
+        disabled={!props.isResults}
       >
         <Search />
       </Button>
@@ -47,6 +48,7 @@ function Navigation(props) {
             <ToggleSearch
               showCols={props.showCols}
               setShowCols={props.setShowCols}
+              isResults={props.isResults}
             />
           )}
         </Nav>

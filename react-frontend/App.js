@@ -20,9 +20,13 @@ function App(props) {
 
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
+  const [lastDeck, setLastDeck] = useState({});
+
+  const [cryptResults, setCryptResults] = useState(undefined);
+  const [libraryResults, setLibraryResults] = useState(undefined);
 
   const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 540px)').matches);
-  const [isWide, setIsWide] = useState(window.matchMedia('(max-width: 1920px)').matches);
+  const [isWide, setIsWide] = useState(window.matchMedia('(min-width: 1400px)').matches);
 
   const [showCols, setShowCols] = useState({
     deck: true,
@@ -99,6 +103,23 @@ function App(props) {
   };
 
   useEffect(() => {
+    const byTimestamp = (a, b) => {
+      return new Date(b[1]) - new Date(a[1]);
+    };
+
+    const decksForSort = [];
+
+    Object.keys(decks).map((key) => {
+      decksForSort.push([decks[key], decks[key].timestamp]);
+    });
+
+    const lastDeckArray = decksForSort.sort(byTimestamp)[0];
+    if (lastDeckArray) {
+      setLastDeck(lastDeckArray[0]);
+    }
+  }, [decks]);
+
+  useEffect(() => {
     whoAmI();
   }, []);
 
@@ -112,10 +133,17 @@ function App(props) {
   }, [username]);
 
   useEffect(() => {
+    if (lastDeck) {
+      setActiveDeck(lastDeck.deckid);
+    }
+  }, [lastDeck]);
+
+  useEffect(() => {
     isMobile && setShowCols({
       search: true,
     });
   }, [isMobile]);
+
 
   return (
     <div className="App">
@@ -128,6 +156,7 @@ function App(props) {
           decks={decks}
           activeDeck={activeDeck}
           setActiveDeck={setActiveDeck}
+    isResults={(libraryResults || cryptResults) ? true : false}
         />
 
         <Switch>
@@ -194,6 +223,8 @@ function App(props) {
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
                 toggleImage={toggleImage}
+                results={cryptResults}
+                setResults={setCryptResults}
               />
             </Route>
             <Route path="/library">
@@ -210,6 +241,8 @@ function App(props) {
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
                 toggleImage={toggleImage}
+                results={libraryResults}
+                setResults={setLibraryResults}
               />
             </Route>
           </Suspense>

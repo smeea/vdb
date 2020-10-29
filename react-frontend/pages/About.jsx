@@ -3,9 +3,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function About(props) {
   return (
-    <Container className="main-container px-0">
+    <Container className="main-container">
       <Row className="justify-content-center">
-        <Col md={12} lg={6}>
+        <Col md={12} lg={6} className="px-0">
           <div className="px-1 about-version">
             <h5>VERSION</h5>
             <p>

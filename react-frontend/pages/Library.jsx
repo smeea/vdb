@@ -5,29 +5,30 @@ import ResultLibrary from './components/ResultLibrary.jsx';
 import SearchLibraryForm from './components/SearchLibraryForm.jsx';
 import DeckPreview from './components/DeckPreview.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
+import DeckShowCrypt from './components/DeckShowCrypt.jsx';
+import DeckShowLibrary from './components/DeckShowLibrary.jsx';
 
 function Library(props) {
-  const [results, setResults] = useState(undefined);
   const [sortMethod, setSortMethod] = useState('Default');
 
   useEffect(() => {
-    if (props.isMobile && results && results.length > 0) {
+    if (props.isMobile && props.results && props.results.length > 0) {
       props.setShowCols({
         result: true,
       });
     }
-    if (props.isMobile && !results) {
+    if (props.isMobile && !props.results) {
       props.setShowCols({
         search: true,
       });
     }
-  }, [results]);
+  }, [props.results]);
 
   return (
     <Container className="main-container px-0">
       <Row>
         {props.showCols.deck && (
-          <Col md={12} lg={3}>
+          <Col md={12} xl={4}>
             {Object.keys(props.decks).length > 0 && (
               <DeckSelect
                 decks={props.decks}
@@ -36,24 +37,45 @@ function Library(props) {
               />
             )}
             {props.activeDeck && (
-              <DeckPreview
-                showImage={props.showImage}
-                toggleImage={props.toggleImage}
-                deck={props.decks[props.activeDeck]}
-                getDecks={props.getDecks}
-                deckCardChange={props.deckCardChange}
-              />
+              props.isWide
+                ? <>
+                    <DeckShowCrypt
+                      deckCardAdd={props.deckCardAdd}
+                      deckCardChange={props.deckCardChange}
+                      deckid={props.activeDeck}
+                      cards={props.decks[props.activeDeck].crypt}
+                      showImage={props.showImage}
+                      toggleImage={props.toggleImage}
+                      isAuthor={true}
+                    />
+                    <DeckShowLibrary
+                      deckCardAdd={props.deckCardAdd}
+                      deckCardChange={props.deckCardChange}
+                      deckid={props.activeDeck}
+                      cards={props.decks[props.activeDeck].library}
+                      showImage={props.showImage}
+                      toggleImage={props.toggleImage}
+                      isAuthor={true}
+                    />
+                  </>
+              : <DeckPreview
+                  showImage={props.showImage}
+                  toggleImage={props.toggleImage}
+                  deck={props.decks[props.activeDeck]}
+                  getDecks={props.getDecks}
+                  deckCardChange={props.deckCardChange}
+/>
             )}
           </Col>
         )}
         {props.showCols.result && (
-          <Col md={12} lg={6}>
-            {results != undefined && results != null && (
+          <Col md={12} xl={5}>
+            {props.results != undefined && props.results != null && (
               <ResultLibrary
                 showImage={props.showImage}
                 toggleImage={props.toggleImage}
                 deckCardAdd={props.deckCardAdd}
-                cards={results}
+                cards={props.results}
                 library={(props.decks && props.decks[props.activeDeck]) && props.decks[props.activeDeck].library}
                 activeDeck={props.activeDeck}
                 showSort={true}
@@ -62,7 +84,7 @@ function Library(props) {
                 setSortMethod={setSortMethod}
               />
             )}
-            {results === null && (
+            {props.results === null && (
               <AlertMessage className="error-message">
                 <>
                   <b>NO CARDS FOUND</b>
@@ -72,9 +94,11 @@ function Library(props) {
           </Col>
         )}
         {props.showCols.search && (
-          <Col md={12} lg={3}>
-            <SearchLibraryForm setResults={setResults} />
-          </Col>
+          <>
+            <Col md={12} xl={3}>
+              <SearchLibraryForm setResults={props.setResults} />
+            </Col>
+          </>
         )}
       </Row>
     </Container>

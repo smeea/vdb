@@ -9,27 +9,26 @@ import DeckShowCrypt from './components/DeckShowCrypt.jsx';
 import DeckShowLibrary from './components/DeckShowLibrary.jsx';
 
 function Crypt(props) {
-  const [results, setResults] = useState(undefined);
   const [sortMethod, setSortMethod] = useState('Default');
 
   useEffect(() => {
-   if (props.isMobile && results && results.length > 0) {
+   if (props.isMobile && props.results && props.results.length > 0) {
       props.setShowCols({
         result: true,
       });
     }
-    if (props.isMobile && !results) {
+    if (props.isMobile && !props.results) {
       props.setShowCols({
         search: true,
       });
     }
-  }, [results]);
+  }, [props.results]);
 
   return (
-    <Container className="main-container px-0">
+    <Container className="main-container">
       <Row>
         {props.showCols.deck && (
-          <Col md={12} lg={3} xl={4}>
+          <Col md={12} xl={4} className="px-0">
             {Object.keys(props.decks).length > 0 && (
               <DeckSelect
                 decks={props.decks}
@@ -70,13 +69,13 @@ function Crypt(props) {
           </Col>
         )}
         {props.showCols.result && (
-          <Col md={12} lg={6} xl={4}>
-            {results != undefined && results != null && (
+          <Col md={12} xl={5} className="px-0">
+            {props.results != undefined && props.results != null && (
               <ResultCrypt
                 showImage={props.showImage}
                 toggleImage={props.toggleImage}
                 deckCardAdd={props.deckCardAdd}
-                cards={results}
+                cards={props.results}
                 crypt={(props.decks && props.decks[props.activeDeck]) && props.decks[props.activeDeck].crypt}
                 activeDeck={props.activeDeck}
                 showSort={true}
@@ -85,7 +84,7 @@ function Crypt(props) {
                 setSortMethod={setSortMethod}
               />
             )}
-            {results === null && (
+            {props.results === null && (
               <AlertMessage className="error-message">
                 <>
                   <div />
@@ -98,10 +97,8 @@ function Crypt(props) {
         )}
         {props.showCols.search && (
           <>
-            <Col md={12} lg={3} xl={3}>
-              <SearchCryptForm setResults={setResults} />
-            </Col>
-            <Col md={0} lg={0 }xl={1}>
+            <Col md={12} xl={3} className="px-0">
+              <SearchCryptForm setResults={props.setResults}/>
             </Col>
           </>
         )}
