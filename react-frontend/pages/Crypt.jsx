@@ -69,7 +69,7 @@ function Crypt(props) {
           </Col>
         )}
         {props.showCols.result && (
-          <Col md={12} xl={5} className="px-0">
+          <Col md={12} xl={5} className="px-0 px-lg-4">
             {props.results != undefined && props.results != null && (
               <ResultCrypt
                 showImage={props.showImage}

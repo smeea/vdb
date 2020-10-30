@@ -95,7 +95,7 @@ function Deck(props) {
             }
           </Row>
         </Col>
-        <Col lg={8} className="px-0">
+        <Col lg={8} className="px-0 px-lg-4">
           { (showInfo || !props.isMobile) &&
             <>
               {(props.decks[props.activeDeck] || sharedDeck) &&
@@ -138,7 +138,7 @@ function Deck(props) {
       </Row>
       {(props.decks[props.activeDeck] || sharedDeck) && (
         <Row>
-          <Col lg={7} className="px-0">
+          <Col lg={7} className="px-0 px-lg-3">
             <DeckShowCrypt
               deckCardAdd={props.deckCardAdd}
               deckCardChange={props.deckCardChange}
@@ -153,7 +153,7 @@ function Deck(props) {
               isAuthor={isAuthor}
             />
           </Col>
-          <Col lg={5} className="px-0">
+          <Col lg={5} className="px-0 px-lg-2">
             <DeckShowLibrary
               deckCardAdd={props.deckCardAdd}
               deckCardChange={props.deckCardChange}
