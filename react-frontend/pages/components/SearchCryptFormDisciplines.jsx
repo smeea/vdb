@@ -33,7 +33,7 @@ function SearchCryptFormDisciplines(props) {
   ];
 
   const disciplinesforms = disciplines.map((i, index) => {
-    const disciplineState = 'discipline-container state' + props.value[i];
+    const disciplineState = `discipline-container state${props.value[i]}`;
     const imgSrcBase = `${
       process.env.ROOT_URL
     }images/disciplines/${i.toLowerCase()}.gif`;
@@ -61,11 +61,9 @@ function SearchCryptFormDisciplines(props) {
   });
 
   return (
-    <div className="form-row pt-2">
-      <div className="input-group justify-content-start">
+      <div className="input-group justify-content-start py-1">
         {disciplinesforms}
       </div>
-    </div>
   );
 }
 

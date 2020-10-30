@@ -37,7 +37,7 @@ function ResultLibraryTable(props) {
               />
             </td>
           )}
-          <td className="cost">
+          <td className="cost py-0">
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}

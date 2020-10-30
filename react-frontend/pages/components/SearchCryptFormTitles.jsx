@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 function SearchCryptFormTitles(props) {
   const titlesLeft = [
@@ -58,11 +59,21 @@ function SearchCryptFormTitles(props) {
 
   return (
     <>
-      <h6>Title:</h6>
-      <div className="form-row">
-        <div className="form-group col-7">{titlesLeftforms}</div>
-        <div className="form-group col-5">{titlesRightforms}</div>
-      </div>
+      <Row className="mx-0 py-1">
+        <Col className="d-flex px-0">
+          <label className="h6 mb-0">
+            Title:
+          </label>
+        </Col>
+      </Row>
+      <Row className="mx-0">
+        <Col className="d-inline">
+          {titlesLeftforms}
+        </Col>
+        <Col className="d-inline">
+          {titlesRightforms}
+        </Col>
+      </Row>
     </>
   );
 }

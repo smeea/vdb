@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 function SearchLibraryFormTraits(props) {
   const traitsLeft = [
@@ -61,13 +62,23 @@ function SearchLibraryFormTraits(props) {
   });
 
   return (
-    <div className="pt-2">
-      <h6>Traits:</h6>
-      <div className="form-row">
-        <div className="form-group col-7">{traitsLeftforms}</div>
-        <div className="form-group col-5">{traitsRightforms}</div>
-      </div>
-    </div>
+    <>
+      <Row className="mx-0 py-1">
+        <Col className="d-flex px-0">
+          <label className="h6 mb-0">
+            Traits:
+          </label>
+        </Col>
+      </Row>
+      <Row className="mx-0">
+        <Col xs={6} className="d-inline">
+          {traitsLeftforms}
+        </Col>
+        <Col xs={6} className="d-inline">
+          {traitsRightforms}
+        </Col>
+      </Row>
+    </>
   );
 }
 

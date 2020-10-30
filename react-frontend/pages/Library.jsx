@@ -25,10 +25,10 @@ function Library(props) {
   }, [props.results]);
 
   return (
-    <Container className="main-container px-0">
+    <Container className="main-container">
       <Row>
         {props.showCols.deck && (
-          <Col md={12} xl={4}>
+          <Col md={12} xl={4} className="px-0">
             {Object.keys(props.decks).length > 0 && (
               <DeckSelect
                 decks={props.decks}
@@ -69,7 +69,7 @@ function Library(props) {
           </Col>
         )}
         {props.showCols.result && (
-          <Col md={12} xl={5}>
+          <Col md={12} xl={5} className="px-0">
             {props.results != undefined && props.results != null && (
               <ResultLibrary
                 showImage={props.showImage}
@@ -95,7 +95,7 @@ function Library(props) {
         )}
         {props.showCols.search && (
           <>
-            <Col md={12} xl={3}>
+            <Col md={12} xl={3} className="px-0">
               <SearchLibraryForm setResults={props.setResults} />
             </Col>
           </>

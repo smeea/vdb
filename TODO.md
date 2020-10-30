@@ -1,10 +1,9 @@
-# MAJOR FEATURE
+ MAJOR FEATURE
 * Beautify card text popover
 
 # MINOR FEATURE
 
 # ADDITIONAL FEATURE
-* Temporary 'add to compare' button
 * Add demo account
 * Night Theme
 * Scrollable frame for deck (also test for search forms) 
@@ -12,12 +11,10 @@
 
 # MAJOR FIX
 * Hide columns via CSS
-* Import deck bug
 * Align buttons in Deck
 * Add actions to menu in Deck
 * Remove togglesearch/deck buttons except from crypt/library
-* Add add-mode toggler or on-click action
-* Fix margin/padding for mobile (Decks/Crypt/Library)
+* Hide deck + disable addMode button in Crypt/Library on desktop
 
 # MINOR FIX
 * Redirect from login to decks
@@ -25,7 +22,6 @@
 * Change tooltips style
 * Change cardAdd style in matching deck/search result
 * Button on-success effect - outline-success?
-* Set min height of table row for shared deck (button size?)
 
 # MOBILE FIX
 * Card popover to modal

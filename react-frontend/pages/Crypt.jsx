@@ -96,11 +96,9 @@ function Crypt(props) {
           </Col>
         )}
         {props.showCols.search && (
-          <>
-            <Col md={12} xl={3} className="px-0">
-              <SearchCryptForm setResults={props.setResults}/>
-            </Col>
-          </>
+          <Col md={12} xl={3} className="px-0">
+            <SearchCryptForm setResults={props.setResults}/>
+          </Col>
         )}
       </Row>
     </Container>

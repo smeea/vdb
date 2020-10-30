@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 
 function SearchFormSet(props) {
@@ -68,11 +69,13 @@ function SearchFormSet(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">Set:</label>
-      </div>
-      <div className="form-group col-9">
+    <Row className="py-1 mx-0 align-items-center">
+      <Col xs={3} className="d-flex px-0">
+        <label className="h6 mb-0">
+          Set:
+        </label>
+      </Col>
+      <Col xs={9} className="d-inline px-0">
         <Select
           options={options}
           isSearchable={false}
@@ -80,8 +83,8 @@ function SearchFormSet(props) {
           value={options.find((obj) => obj.value === props.value)}
           onChange={props.onChange}
         />
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 
 function SearchCryptFormCapacity(props) {
@@ -67,35 +68,33 @@ function SearchCryptFormCapacity(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">Capacity:</label>
-      </div>
-      <div className="form-group col-9">
-        <div className="row">
-          <div className="col-6 pr-0">
-            <Select
-              options={morelessOptions}
-              isSearchable={false}
-              name="capacitymoreless"
-              value={morelessOptions.find(
-                (obj) => obj.value === props.moreless
-              )}
-              onChange={props.onChange}
-            />
-          </div>
-          <div className="col-6 pl-0">
-            <Select
-              options={options}
-              isSearchable={false}
-              name="capacity"
-              value={options.find((obj) => obj.value === props.value)}
-              onChange={props.onChange}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <Row className="py-1 mx-0 align-items-center">
+      <Col xs={3} className="d-flex px-0">
+        <label className="h6 mb-0">
+          Capacity:
+        </label>
+      </Col>
+      <Col xs={4} className="d-inline px-0">
+        <Select
+          options={morelessOptions}
+          isSearchable={false}
+          name="capacitymoreless"
+          value={morelessOptions.find(
+            (obj) => obj.value === props.moreless
+          )}
+          onChange={props.onChange}
+        />
+      </Col>
+      <Col xs={5} className="d-inline px-0">
+        <Select
+          options={options}
+          isSearchable={false}
+          name="capacity"
+          value={options.find((obj) => obj.value === props.value)}
+          onChange={props.onChange}
+        />
+      </Col>
+    </Row>
   );
 }
 

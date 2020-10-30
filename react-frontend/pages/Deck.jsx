@@ -72,8 +72,8 @@ function Deck(props) {
     <Container className="main-container">
       <Row>
         <Col lg={2} className="px-0">
-          <Row>
-            <Col>
+          <Row className="mx-0">
+            <Col className="px-0">
               {Object.keys(props.decks).length > 0 && (
                 <DeckSelect
                   decks={props.decks}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonGroup, ToggleButton } from 'react-bootstrap';
+import { Row, Col, ButtonGroup, ToggleButton } from 'react-bootstrap';
 
 function SearchCryptFormGroup(props) {
   const groups = [1, 2, 3, 4, 5, 6];
@@ -7,6 +7,7 @@ function SearchCryptFormGroup(props) {
   const GroupButtons = groups.map((i, index) => {
     return (
       <ToggleButton
+        className="px-3"
         key={index}
         value={i}
         name="group"
@@ -21,14 +22,16 @@ function SearchCryptFormGroup(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="form-group col-3 d-flex align-items-center">
-        <label className="h6 mb-0">Group:</label>
-      </div>
-      <div className="form-group col-9">
+    <Row className="pt-2 mx-0 align-items-center">
+      <Col xs={3} className="d-flex px-0">
+        <label className="h6 mb-0">
+          Group:
+        </label>
+      </Col>
+      <Col xs={9} className="d-flex justify-content-end">
         <ButtonGroup toggle>{GroupButtons}</ButtonGroup>
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 }
 

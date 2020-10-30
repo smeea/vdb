@@ -36,8 +36,8 @@ function SearchCryptFormVirtues(props) {
   });
 
   return (
-    <div className="form-row">
-      <div className="input-group">{virtuesforms}</div>
+    <div className="input-group">
+      {virtuesforms}
     </div>
   );
 }

@@ -5,6 +5,7 @@ function DeckCardQuantity(props) {
   return (
     <div className="d-flex align-items-center justify-content-between">
       <Button
+        className="quantity"
         variant="outline-secondary"
         onClick={(e) =>
           props.deckCardChange(props.deckid, props.cardid, props.q + 1)
@@ -14,6 +15,7 @@ function DeckCardQuantity(props) {
       </Button>
       {props.q == 0 ? null : props.q}
       <Button
+        className="quantity"
         variant="outline-secondary"
         onClick={(e) =>
           props.deckCardChange(props.deckid, props.cardid, props.q - 1)
