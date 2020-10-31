@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
-import ArrowClockwise from '../../assets/images/icons/arrow-clockwise.svg';
+import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import ResultCrypt from './ResultCrypt.jsx';
 import ResultLibrary from './ResultLibrary.jsx';
 
@@ -33,13 +33,13 @@ function DeckDrawModal(props) {
                         variant="outline-secondary"
                         onClick={props.handleReDrawCrypt}
                       >
-                        <ArrowClockwise size={20} />
+                        <ArrowRepeat />
                       </Button>
                       <Button
                         variant="outline-secondary"
                         onClick={props.handleDrawOneCrypt}
                       >
-                        +
+                        +1
                       </Button>
                     </div>
                   </div>
@@ -65,13 +65,13 @@ function DeckDrawModal(props) {
                         variant="outline-secondary"
                         onClick={props.handleReDrawLibrary}
                       >
-                        <ArrowClockwise size={20} />
+                        <ArrowRepeat />
                       </Button>
                       <Button
                         variant="outline-secondary"
                         onClick={props.handleDrawOneLibrary}
                       >
-                        +
+                        +1
                       </Button>
                     </div>
                   </div>

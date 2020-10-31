@@ -7,7 +7,7 @@ function SearchCryptFormGroup(props) {
   const GroupButtons = groups.map((i, index) => {
     return (
       <ToggleButton
-        className="px-3"
+        className="group-form px-3"
         key={index}
         value={i}
         name="group"

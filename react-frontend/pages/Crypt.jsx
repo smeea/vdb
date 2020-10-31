@@ -12,7 +12,7 @@ function Crypt(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
   useEffect(() => {
-   if (props.isMobile && props.results && props.results.length > 0) {
+    if (props.isMobile && props.results && props.results.length > 0) {
       props.setShowCols({
         result: true,
       });
@@ -39,32 +39,35 @@ function Crypt(props) {
             {props.activeDeck && (
               props.isWide
                 ? <>
-                    <DeckShowCrypt
-                      deckCardAdd={props.deckCardAdd}
-                      deckCardChange={props.deckCardChange}
-                      deckid={props.activeDeck}
-                      cards={props.decks[props.activeDeck].crypt}
-                      showImage={props.showImage}
-                      toggleImage={props.toggleImage}
-                      isAuthor={true}
-                    />
-                    <DeckShowLibrary
-                      deckCardAdd={props.deckCardAdd}
-                      deckCardChange={props.deckCardChange}
-                      deckid={props.activeDeck}
-                      cards={props.decks[props.activeDeck].library}
-                      showImage={props.showImage}
-                      toggleImage={props.toggleImage}
-                      isAuthor={true}
-                    />
-                  </>
+                   <DeckShowCrypt
+                     deckCardAdd={props.deckCardAdd}
+                     deckCardChange={props.deckCardChange}
+                     deckid={props.activeDeck}
+                     cards={props.decks[props.activeDeck].crypt}
+                     showImage={props.showImage}
+                     toggleImage={props.toggleImage}
+                     isAuthor={true}
+                     isMobile={props.isMobile}
+                   />
+                   <DeckShowLibrary
+                     deckCardAdd={props.deckCardAdd}
+                     deckCardChange={props.deckCardChange}
+                     deckid={props.activeDeck}
+                     cards={props.decks[props.activeDeck].library}
+                     showImage={props.showImage}
+                     toggleImage={props.toggleImage}
+                     isAuthor={true}
+                     isMobile={props.isMobile}
+                   />
+                 </>
               : <DeckPreview
-                  showImage={props.showImage}
-                  toggleImage={props.toggleImage}
-                  deck={props.decks[props.activeDeck]}
-                  getDecks={props.getDecks}
-                  deckCardChange={props.deckCardChange}
-/>
+                   showImage={props.showImage}
+                   toggleImage={props.toggleImage}
+                   deck={props.decks[props.activeDeck]}
+                   getDecks={props.getDecks}
+                   deckCardChange={props.deckCardChange}
+                   isMobile={props.isMobile}
+       />
             )}
           </Col>
         )}
@@ -82,6 +85,7 @@ function Crypt(props) {
                 showTotal={true}
                 sortMethod={sortMethod}
                 setSortMethod={setSortMethod}
+                isMobile={props.isMobile}
               />
             )}
             {props.results === null && (

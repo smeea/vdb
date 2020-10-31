@@ -50,6 +50,7 @@ function ResultCryptTable(props) {
               adv={card['Adv']}
               ban={card['Banned']}
               card={card}
+              isMobile={props.isMobile}
             />
           </td>
           <td className="clan">

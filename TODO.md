@@ -1,4 +1,4 @@
- MAJOR FEATURE
+# MAJOR FEATURE
 * Beautify card text popover
 
 # MINOR FEATURE
@@ -14,17 +14,16 @@
 * Align buttons in Deck
 * Add actions to menu in Deck
 * Remove togglesearch/deck buttons except from crypt/library
-* Hide deck + disable addMode button in Crypt/Library on desktop
+* Hide deck + disable addMode
 
 # MINOR FIX
 * Redirect from login to decks
 * Redirect to about from / page
 * Change tooltips style
-* Change cardAdd style in matching deck/search result
 * Button on-success effect - outline-success?
+* Remove Modal headers (close button from ResultCryptModal)
 
 # MOBILE FIX
-* Card popover to modal
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage

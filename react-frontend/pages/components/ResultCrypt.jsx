@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import ResultCryptTable from './ResultCryptTable.jsx';
 import ResultCryptTotal from './ResultCryptTotal.jsx';
 import resultCryptSort from './resultCryptSort.js';
@@ -34,6 +33,7 @@ function ResultCrypt(props) {
         activeDeck={props.activeDeck}
         deckCardAdd={props.deckCardAdd}
         resultCards={sortedCards}
+        isMobile={props.isMobile}
       />
     </>
   );

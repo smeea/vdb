@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ResultLibraryDisciplines(props) {
-  const imgClass = 'discipline-image-results';
+  const imgClass = 'discipline-base-image-results';
   let disciplinesImages;
 
   if (props.value.indexOf('&') != -1) {

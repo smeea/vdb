@@ -5,8 +5,8 @@ function ResultAddCard(props) {
   const handleButton = () => props.deckCardAdd(props.cardid);
   return (
     <Button
-      className="quantity"
-      variant={props.inDeck ? "success" : "outline-secondary"}
+      className={props.inDeck ? "quantity in-deck" : "quantity"}
+      variant="outline-secondary"
       onClick={handleButton}
     >
       {props.inDeck ? props.inDeck : "+"}

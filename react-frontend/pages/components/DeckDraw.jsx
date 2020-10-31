@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import ArrowClockwise from '../../assets/images/icons/arrow-clockwise.svg';
+import Dice3 from '../../assets/images/icons/dice-3-fill.svg';
 
 import DeckDrawModal from './DeckDrawModal.jsx';
 
@@ -118,9 +118,9 @@ function DeckDraw(props) {
   return (
     <>
       <Button variant="outline-secondary" onClick={handleOpenDraw} block>
-        <ArrowClockwise /> Draw Cards
+        <Dice3 /> Draw Cards
       </Button>
-      {showDrawModal != null && (
+      {showDrawModal &&
         <DeckDrawModal
           drawedCrypt={drawedCrypt}
           drawedLibrary={drawedLibrary}
@@ -133,7 +133,7 @@ function DeckDraw(props) {
           show={showDrawModal}
           handleClose={handleCloseDrawModal}
         />
-      )}
+      }
     </>
   );
 }

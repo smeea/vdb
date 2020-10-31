@@ -51,11 +51,11 @@ img.card-popover
 .deck-crypt-table td.capacity
   width: 5%
 .deck-crypt-table td.disciplines
-  width: 45%
+  width: 46%
 .deck-crypt-table td.name
   width: 24%
 .deck-crypt-table td.clan
-  width: 8%
+  width: 7%
 .deck-crypt-table td.group
   width: 4%
 .deck-crypt-table td
@@ -180,17 +180,17 @@ span.select-deck-date
   color: gray
 
 .clan-image-results
-  height: 27px
-.discipline-image-results,
+  height: 25px
 .discipline-base-image-results,
 .burn-image-results,
-.trifle-image-results,
+.trifle-image-results
+  height: 24px
 .advanced-image-results
-  height: 25px
+  height: 20px
 .type-image-results
   height: 27px
 .discipline-superior-image-results
-  height: 30px
+  height: 28px
 .cost-image-results
   height: 36px
 .capacity-image-results
@@ -236,11 +236,14 @@ span.select-deck-date
 .crypt-result-odd
   background-color: #eaeaea
 
-button.quantity { 
-    width: 25px; 
-    height: 25px; 
-    padding: 0px 0px; 
-} 
+button.quantity
+  width: 26px
+  height: 26px
+  padding: 0px 0px
+
+button.in-deck
+  background-color: gray
+  color: white
 
 .navbar
   padding: 0rem
@@ -279,3 +282,10 @@ textarea.deck-import:focus
 
 .dropdown-toggle::after
   content: none
+
+label.group-form:hover
+  background-color: darkgray
+
+img.full-width
+  width: 100%
+  height: auto

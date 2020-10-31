@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { Button, Navbar, Nav } from 'react-bootstrap';
 import PersonFill from '../assets/images/icons/person-fill.svg';
+import InfoCircleFill from '../assets/images/icons/info-circle-fill.svg';
 import Search from '../assets/images/icons/search.svg';
 
 function Navigation(props) {
@@ -32,10 +33,10 @@ function Navigation(props) {
               {props.username ? <PersonFill /> : 'Login'}
             </NavLink>
             <NavLink to="/about" className="nav-link px-2">
-              About
+              {props.isMobile? <InfoCircleFill /> : 'About'}
             </NavLink>
             <NavLink to="/deck" className="nav-link px-2">
-              Decks
+              Deck
             </NavLink>
             <NavLink to="/crypt" className="nav-link px-2">
               Crypt
