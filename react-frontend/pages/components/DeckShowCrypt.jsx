@@ -98,6 +98,7 @@ function DeckShowCrypt(props) {
         showImage={props.showImage}
         toggleImage={props.toggleImage}
         isAuthor={props.isAuthor}
+        isMobile={props.isMobile}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt">
@@ -110,6 +111,7 @@ function DeckShowCrypt(props) {
             showImage={props.showImage}
             toggleImage={props.toggleImage}
             isAuthor={props.isAuthor}
+            isMobile={props.isMobile}
           />
         </div>
       )}

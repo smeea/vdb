@@ -49,6 +49,7 @@ function DeckShowCryptTable(props) {
               card={card.c}
               showImage={props.showImage}
               toggleImage={props.toggleImage}
+              isMobile={props.isMobile}
             />
           </td>
           <td className="clan">

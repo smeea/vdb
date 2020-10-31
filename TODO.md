@@ -24,6 +24,7 @@
 * Remove Modal headers (close button from ResultCryptModal)
 
 # MOBILE FIX
+* Card modals for library
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage

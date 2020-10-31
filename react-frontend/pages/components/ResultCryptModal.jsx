@@ -30,6 +30,7 @@ function ResultCryptModal(props) {
               card={props.card}
               showImage={false}
               fullWidth={true}
+              handleClose={props.handleClose}
             />
           </Tab>
           <Tab eventKey="text" title="Description">

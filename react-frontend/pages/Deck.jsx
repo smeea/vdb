@@ -151,6 +151,7 @@ function Deck(props) {
               showImage={props.showImage}
               toggleImage={props.toggleImage}
               isAuthor={isAuthor}
+              isMobile={props.isMobile}
             />
           </Col>
           <Col lg={5} className="px-0 px-lg-2">

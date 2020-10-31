@@ -11,7 +11,11 @@ function ResultCryptPopover(props) {
     .toLowerCase()
     .replace(/[\s,:!?'".\-\(\)]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
   const cardImage = (
-    <img className={props.fullWidth ? "card-popover full-width" : "card-popover"} src={imgSrc} alt={props.card['Name']} />
+    <img
+      className={props.fullWidth ? "card-popover full-width" : "card-popover"}
+      src={imgSrc} alt={props.card['Name']}
+      onClick={props.handleClose}
+    />
   );
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
