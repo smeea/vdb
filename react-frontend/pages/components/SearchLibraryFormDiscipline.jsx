@@ -90,9 +90,7 @@ function SearchLibraryFormDiscipline(props) {
   return (
     <Row className="py-1 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
-        <label className="h6 mb-0">
-          Discipline:
-        </label>
+        <label className="h6 mb-0">Discipline:</label>
       </Col>
       <Col xs={9} className="d-inline px-0">
         <Select

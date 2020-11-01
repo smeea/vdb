@@ -77,7 +77,9 @@ function DeckShowCrypt(props) {
   return (
     <div className="pt-4">
       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
+        <b>
+          Crypt [{cryptTotal}] - {cryptGroups}
+        </b>
         {props.isAuthor && (
           <Button
             variant="outline-secondary"

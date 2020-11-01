@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import AsyncSelect from 'react-select/async';
-
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';

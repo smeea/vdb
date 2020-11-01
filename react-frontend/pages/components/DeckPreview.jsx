@@ -1,5 +1,4 @@
 import React from 'react';
-
 import DeckPreviewCrypt from './DeckPreviewCrypt.jsx';
 import DeckPreviewLibrary from './DeckPreviewLibrary.jsx';
 

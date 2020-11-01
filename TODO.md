@@ -17,6 +17,7 @@
 * Change tooltips style
 * Button on-success effect - outline-success?
 * addMode button style + text
+* addMode hide in mobile in search (show in results)
 
 # MOBILE FIX
 

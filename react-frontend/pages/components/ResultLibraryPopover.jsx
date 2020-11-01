@@ -13,7 +13,7 @@ function ResultLibraryPopover(props) {
     .replace(/[\s,:!?'".\-\(\)]/g, '')}.jpg`;
   const cardImage = (
     <img
-      className={props.fullWidth ? "card-popover full-width" : "card-popover"}
+      className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
       src={imgSrc}
       alt={props.card['Name']}
       onClick={props.handleClose}

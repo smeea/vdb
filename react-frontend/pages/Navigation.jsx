@@ -28,22 +28,20 @@ function Navigation(props) {
 
   const NavBar = ({ location }) => {
     return (
-      <Navbar
-        sticky="top"
-        bg="dark"
-        variant="dark"
-      >
+      <Navbar sticky="top" bg="dark" variant="dark">
         <Nav className="container justify-content-between">
           <div className="d-flex align-items-center px-1">
-            {props.username && props.isActiveDeck &&
-             (props.location.pathname == "/crypt" || props.location.pathname == "/library") &&
-             <Button
-               onClick={() => props.setAddMode(!props.addMode)}
-               variant="secondary"
-             >
-               {props.addMode ? <ToggleOn /> : <ToggleOff />}
-             </Button>
-            }
+            {props.username &&
+              props.isActiveDeck &&
+              (props.location.pathname == '/crypt' ||
+                props.location.pathname == '/library') && (
+                <Button
+                  onClick={() => props.setAddMode(!props.addMode)}
+                  variant="secondary"
+                >
+                  {props.addMode ? <ToggleOn /> : <ToggleOff />}
+                </Button>
+              )}
           </div>
 
           <div className="d-flex align-items-center">
@@ -51,7 +49,7 @@ function Navigation(props) {
               {props.username ? <PersonFill /> : 'Login'}
             </NavLink>
             <NavLink to="/about" className="nav-link px-2">
-              {props.isMobile? <InfoCircleFill /> : 'About'}
+              {props.isMobile ? <InfoCircleFill /> : 'About'}
             </NavLink>
             <NavLink to="/deck" className="nav-link px-2">
               Deck
@@ -65,20 +63,20 @@ function Navigation(props) {
             {props.isMobile && (
               <>
                 <div className="toggle-search">
-                  {(props.location.pathname == "/crypt") &&
-                   <ToggleSearch
-                     showCols={props.showCols}
-                     setShowCols={props.setShowCols}
-                     isResults={props.isCryptResults}
-                   />
-                  }
-                  {(props.location.pathname == "/library") &&
-                   <ToggleSearch
-                     showCols={props.showCols}
-                     setShowCols={props.setShowCols}
-                     isResults={props.isLibraryResults}
-                   />
-                  }
+                  {props.location.pathname == '/crypt' && (
+                    <ToggleSearch
+                      showCols={props.showCols}
+                      setShowCols={props.setShowCols}
+                      isResults={props.isCryptResults}
+                    />
+                  )}
+                  {props.location.pathname == '/library' && (
+                    <ToggleSearch
+                      showCols={props.showCols}
+                      setShowCols={props.setShowCols}
+                      isResults={props.isLibraryResults}
+                    />
+                  )}
                 </div>
               </>
             )}

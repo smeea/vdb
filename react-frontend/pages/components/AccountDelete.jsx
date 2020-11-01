@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from '../../assets/images/icons/trash-fill.svg';
-
 import AccountDeleteConfirmation from './AccountDeleteConfirmation.jsx';
-import OverlayTooltip from './OverlayTooltip.jsx';
 
 function AccountDelete(props) {
   const [showConfirmation, setShowConfirmation] = useState(false);

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Popover, ListGroup } from 'react-bootstrap';
-
+import { ListGroup } from 'react-bootstrap';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
@@ -12,7 +11,7 @@ function ResultCryptPopover(props) {
     .replace(/[\s,:!?'".\-\(\)]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
   const cardImage = (
     <img
-      className={props.fullWidth ? "card-popover full-width" : "card-popover"}
+      className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
       src={imgSrc}
       alt={props.card['Name']}
       onClick={props.handleClose}

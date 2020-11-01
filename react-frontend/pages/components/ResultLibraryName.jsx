@@ -19,29 +19,32 @@ function ResultLibraryName(props) {
 
   return (
     <>
-      {!props.isMobile
-       ? <OverlayTrigger
-           placement="right"
-           overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
-         >
-           <span className="name" onClick={props.toggleImage}>
-             {props.value} {props.ban && ' [BANNED]'}
-           </span>
-         </OverlayTrigger>
-       : <>
-           <span className="name" onClick={() => setShowModal(true)}>
-             {props.value} {props.ban && ' [BANNED]'}
-           </span>
-           {showModal &&
+      {!props.isMobile ? (
+        <OverlayTrigger
+          placement="right"
+          overlay={
+            <CardPopover card={props.card}>{props.showImage}</CardPopover>
+          }
+        >
+          <span className="name" onClick={props.toggleImage}>
+            {props.value} {props.ban && ' [BANNED]'}
+          </span>
+        </OverlayTrigger>
+      ) : (
+        <>
+          <span className="name" onClick={() => setShowModal(true)}>
+            {props.value} {props.ban && ' [BANNED]'}
+          </span>
+          {showModal && (
             <ResultLibraryModal
               show={showModal}
               card={props.card}
               showImage={props.showImage}
               handleClose={() => setShowModal(false)}
             />
-           }
-         </>
-      }
+          )}
+        </>
+      )}
     </>
   );
 }

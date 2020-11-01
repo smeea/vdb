@@ -35,11 +35,7 @@ function SearchCryptFormVirtues(props) {
     );
   });
 
-  return (
-    <div className="input-group">
-      {virtuesforms}
-    </div>
-  );
+  return <div className="input-group">{virtuesforms}</div>;
 }
 
 export default SearchCryptFormVirtues;

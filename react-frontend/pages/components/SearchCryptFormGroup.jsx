@@ -24,9 +24,7 @@ function SearchCryptFormGroup(props) {
   return (
     <Row className="pt-2 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
-        <label className="h6 mb-0">
-          Group:
-        </label>
+        <label className="h6 mb-0">Group:</label>
       </Col>
       <Col xs={9} className="d-flex justify-content-end">
         <ButtonGroup toggle>{GroupButtons}</ButtonGroup>

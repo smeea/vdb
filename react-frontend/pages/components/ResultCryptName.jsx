@@ -27,41 +27,44 @@ function ResultCryptName(props) {
 
   return (
     <>
-      {!props.isMobile
-       ? <OverlayTrigger
-           placement="right"
-           overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
-         >
-           <span className="name" onClick={props.toggleImage}>
-             {props.value}
-             {props.adv && (
-               <span className="pl-1">
-                 <img className={imgClass} src={imgSrc} title={imgTitle} />
-               </span>
-             )}
-             {props.ban && ' [BANNED]'}
-           </span>
-         </OverlayTrigger>
-       : <>
-           <span className="name" onClick={() => setShowModal(true)}>
-             {props.value}
-             {props.adv && (
-               <span className="pl-1">
-                 <img className={imgClass} src={imgSrc} title={imgTitle} />
-               </span>
-             )}
-             {props.ban && ' [BANNED]'}
-           </span>
-           {showModal &&
+      {!props.isMobile ? (
+        <OverlayTrigger
+          placement="right"
+          overlay={
+            <CardPopover card={props.card}>{props.showImage}</CardPopover>
+          }
+        >
+          <span className="name" onClick={props.toggleImage}>
+            {props.value}
+            {props.adv && (
+              <span className="pl-1">
+                <img className={imgClass} src={imgSrc} title={imgTitle} />
+              </span>
+            )}
+            {props.ban && ' [BANNED]'}
+          </span>
+        </OverlayTrigger>
+      ) : (
+        <>
+          <span className="name" onClick={() => setShowModal(true)}>
+            {props.value}
+            {props.adv && (
+              <span className="pl-1">
+                <img className={imgClass} src={imgSrc} title={imgTitle} />
+              </span>
+            )}
+            {props.ban && ' [BANNED]'}
+          </span>
+          {showModal && (
             <ResultCryptModal
               show={showModal}
               card={props.card}
               showImage={props.showImage}
               handleClose={() => setShowModal(false)}
             />
-           }
-         </>
-      }
+          )}
+        </>
+      )}
     </>
   );
 }

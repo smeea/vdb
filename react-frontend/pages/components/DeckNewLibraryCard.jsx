@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import AsyncSelect from 'react-select/async';
-
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';

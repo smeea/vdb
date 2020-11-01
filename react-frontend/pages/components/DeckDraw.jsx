@@ -120,7 +120,7 @@ function DeckDraw(props) {
       <Button variant="outline-secondary" onClick={handleOpenDraw} block>
         <Dice3 /> Draw Cards
       </Button>
-      {showDrawModal &&
+      {showDrawModal && (
         <DeckDrawModal
           drawedCrypt={drawedCrypt}
           drawedLibrary={drawedLibrary}
@@ -133,7 +133,7 @@ function DeckDraw(props) {
           show={showDrawModal}
           handleClose={handleCloseDrawModal}
         />
-      }
+      )}
     </>
   );
 }

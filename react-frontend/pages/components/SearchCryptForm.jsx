@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchCryptFormDisciplines from './SearchCryptFormDisciplines.jsx';
 import SearchCryptFormVirtues from './SearchCryptFormVirtues.jsx';

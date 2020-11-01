@@ -1,5 +1,4 @@
 import React from 'react';
-
 import DeckDraw from './DeckDraw.jsx';
 import DeckClone from './DeckClone.jsx';
 import DeckDelete from './DeckDelete.jsx';
@@ -10,22 +9,20 @@ import DeckExport from './DeckExport.jsx';
 function DeckShowButtons(props) {
   return (
     <>
-    <div>
-      {props.username && (
-        <DeckImport
-          setActiveDeck={props.setActiveDeck}
-          getDecks={props.getDecks}
-        />
-      )}
-    </div>
-    <div>
-      <DeckExport activeDeck={props.activeDeck} />
-    </div>
+      <div>
+        {props.username && (
+          <DeckImport
+            setActiveDeck={props.setActiveDeck}
+            getDecks={props.getDecks}
+          />
+        )}
+      </div>
+      <div>
+        <DeckExport activeDeck={props.activeDeck} />
+      </div>
       {props.isAuthor && props.deck && (
         <div>
-          <DeckDelete
-            deck={props.deck}
-            setActiveDeck={props.setActiveDeck} />
+          <DeckDelete deck={props.deck} setActiveDeck={props.setActiveDeck} />
         </div>
       )}
       {props.username && (

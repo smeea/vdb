@@ -13,9 +13,7 @@ function DeckCardQuantity(props) {
       >
         +
       </Button>
-      <div className="px-1">
-        {props.q == 0 ? '' : props.q}
-      </div>
+      <div className="px-1">{props.q == 0 ? '' : props.q}</div>
       <Button
         className="quantity"
         variant="outline-secondary"

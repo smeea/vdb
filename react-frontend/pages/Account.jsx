@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-
 import AccountLogin from './components/AccountLogin.jsx';
 import AccountLogout from './components/AccountLogout.jsx';
 import AccountRegister from './components/AccountRegister.jsx';

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import AlertMessage from './AlertMessage.jsx';
 import ResultCryptSortForm from './ResultCryptSortForm.jsx';
 

@@ -19,7 +19,9 @@ function ResultCryptTable(props) {
     let inDeck;
     if (props.crypt) {
       Object.keys(props.crypt).map((i, index) => {
-        if (i == card.Id) { inDeck = props.crypt[i].q; }
+        if (i == card.Id) {
+          inDeck = props.crypt[i].q;
+        }
       });
     }
 

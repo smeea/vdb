@@ -60,17 +60,17 @@ function AccountDeleteConfirmation(props) {
         animation={false}
       >
         <Modal.Body>
-          <button
-            type="button"
-            className="close"
-            onClick={props.handleClose}
-          >
+          <button type="button" className="close" onClick={props.handleClose}>
             <span aria-hidden="true">×</span>
             <span className="sr-only">Close</span>
           </button>
           <h5>
             DELETE ACCOUNT
-            <span className="px-1 pl-2">{'"'}{props.username}{'"'}?</span>
+            <span className="px-1 pl-2">
+              {'"'}
+              {props.username}
+              {'"'}?
+            </span>
           </h5>
           <div className="pt-2">
             <h6>THIS CANNOT BE UNDONE!</h6>

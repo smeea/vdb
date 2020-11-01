@@ -9,7 +9,6 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
 
 function ResultLibraryTable(props) {
-
   let resultTrClass = 'library-result-even';
 
   const cards = props.resultCards.map((card, index) => {
@@ -21,7 +20,9 @@ function ResultLibraryTable(props) {
     let inDeck;
     if (props.library) {
       Object.keys(props.library).map((i, index) => {
-        if (i == card.Id) { inDeck = props.library[i].q; }
+        if (i == card.Id) {
+          inDeck = props.library[i].q;
+        }
       });
     }
 

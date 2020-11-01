@@ -8,8 +8,8 @@ function SearchCryptFormDisciplines(props) {
     'Celerity',
     'Chimerstry',
     'Daimoinon',
-    'Dominate',
     'Dementation',
+    'Dominate',
     'Fortitude',
     'Melpominee',
     'Mytherceria',
@@ -61,9 +61,9 @@ function SearchCryptFormDisciplines(props) {
   });
 
   return (
-      <div className="input-group justify-content-start py-1">
-        {disciplinesforms}
-      </div>
+    <div className="input-group justify-content-start py-1">
+      {disciplinesforms}
+    </div>
   );
 }
 

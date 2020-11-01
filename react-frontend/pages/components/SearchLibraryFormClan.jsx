@@ -102,9 +102,7 @@ function SearchLibraryFormClan(props) {
   return (
     <Row className="py-1 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
-        <label className="h6 mb-0">
-          Clan:
-        </label>
+        <label className="h6 mb-0">Clan:</label>
       </Col>
       <Col xs={9} className="d-inline px-0">
         <Select

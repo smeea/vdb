@@ -32,13 +32,13 @@ function Library(props) {
           <Col md={12} xl={4} className="px-0">
             {Object.keys(props.decks).length > 0 && (
               <Row>
-              <Col className="pr-0">
-              <DeckSelect
-                decks={props.decks}
-                activeDeck={props.activeDeck}
-                setActiveDeck={props.setActiveDeck}
-              />
-              </Col>
+                <Col className="pr-0">
+                  <DeckSelect
+                    decks={props.decks}
+                    activeDeck={props.activeDeck}
+                    setActiveDeck={props.setActiveDeck}
+                  />
+                </Col>
                 <Col xs="auto" className="d-flex pl-0">
                   <Button
                     className="full-height"
@@ -50,39 +50,40 @@ function Library(props) {
                 </Col>
               </Row>
             )}
-            {props.activeDeck && (
-              props.isWide
-                ? <>
-                    <DeckShowCrypt
-                      deckCardAdd={props.deckCardAdd}
-                      deckCardChange={props.deckCardChange}
-                      deckid={props.activeDeck}
-                      cards={props.decks[props.activeDeck].crypt}
-                      showImage={props.showImage}
-                      toggleImage={props.toggleImage}
-                      isAuthor={true}
-                      isMobile={props.isMobile}
-                    />
-                    <DeckShowLibrary
-                      deckCardAdd={props.deckCardAdd}
-                      deckCardChange={props.deckCardChange}
-                      deckid={props.activeDeck}
-                      cards={props.decks[props.activeDeck].library}
-                      showImage={props.showImage}
-                      toggleImage={props.toggleImage}
-                      isAuthor={true}
-                      isMobile={props.isMobile}
-                    />
-                  </>
-              : <DeckPreview
+            {props.activeDeck &&
+              (props.isWide ? (
+                <>
+                  <DeckShowCrypt
+                    deckCardAdd={props.deckCardAdd}
+                    deckCardChange={props.deckCardChange}
+                    deckid={props.activeDeck}
+                    cards={props.decks[props.activeDeck].crypt}
+                    showImage={props.showImage}
+                    toggleImage={props.toggleImage}
+                    isAuthor={true}
+                    isMobile={props.isMobile}
+                  />
+                  <DeckShowLibrary
+                    deckCardAdd={props.deckCardAdd}
+                    deckCardChange={props.deckCardChange}
+                    deckid={props.activeDeck}
+                    cards={props.decks[props.activeDeck].library}
+                    showImage={props.showImage}
+                    toggleImage={props.toggleImage}
+                    isAuthor={true}
+                    isMobile={props.isMobile}
+                  />
+                </>
+              ) : (
+                <DeckPreview
                   showImage={props.showImage}
                   toggleImage={props.toggleImage}
                   deck={props.decks[props.activeDeck]}
                   getDecks={props.getDecks}
                   deckCardChange={props.deckCardChange}
                   isMobile={props.isMobile}
-/>
-            )}
+                />
+              ))}
           </Col>
         )}
         {props.showCols.result && (
@@ -93,7 +94,11 @@ function Library(props) {
                 toggleImage={props.toggleImage}
                 deckCardAdd={props.deckCardAdd}
                 cards={props.results}
-                library={(props.decks && props.decks[props.activeDeck]) && props.decks[props.activeDeck].library}
+                library={
+                  props.decks &&
+                  props.decks[props.activeDeck] &&
+                  props.decks[props.activeDeck].library
+                }
                 activeDeck={props.activeDeck}
                 showSort={true}
                 showTotal={true}
