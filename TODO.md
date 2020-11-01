@@ -7,12 +7,11 @@
 * Add demo account
 * Night Theme
 * Scrollable frame for deck (also test for search forms) 
+* Precons decks
 * Update About with features: import/export, free, speed, UI you may like, mobile-friendly
 
 # MAJOR FIX
 * Hide columns via CSS
-* Align buttons in Deck
-* Add actions to menu in Deck
 * Remove togglesearch/deck buttons except from crypt/library
 * Hide deck + disable addMode
 
@@ -21,10 +20,8 @@
 * Redirect to about from / page
 * Change tooltips style
 * Button on-success effect - outline-success?
-* Remove Modal headers (close button from ResultCryptModal)
 
 # MOBILE FIX
-* Card modals for library
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage
@@ -34,6 +31,7 @@
 * Add props validation
 * Dynamic media query with react-responsive
 * Swipe search and deck on mobile - react-swipeable-views?
+* Swipe in card modal image-description
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ

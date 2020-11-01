@@ -7,35 +7,29 @@ function DeckExport(props) {
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
 
-  const saveFormats = ['Text', 'TWD', 'Lackey'];
-
-  const copyFormats = ['Text', 'TWD', 'Lackey'];
-
-  const ExportButtonOptions = [];
-
-  saveFormats.map((i, index) => {
-    ExportButtonOptions.push(
-      <Dropdown.Item
-        key={index + 's'}
-        href=""
-        onClick={() => saveDeck(i.toLowerCase())}
-      >
-        Save as File - {i}
+  const ExportButtonOptions = (
+    <>
+      <Dropdown.Item href="" onClick={() => saveDeck('text')}>
+        Save as file - Text
       </Dropdown.Item>
-    );
-  });
-
-  copyFormats.map((i, index) => {
-    ExportButtonOptions.push(
-      <Dropdown.Item
-        key={index + 'c'}
-        href=""
-        onClick={() => copyDeck(i.toLowerCase())}
-      >
-        Copy to Clipboard - {i}
+      <Dropdown.Item href="" onClick={() => saveDeck('twd')}>
+        Save as file - TWD
       </Dropdown.Item>
-    );
-  });
+      <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
+        Save as file - Lackey
+      </Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item href="" onClick={() => copyDeck('text')}>
+        Copy to Clipboard - Text
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => copyDeck('twd')}>
+        Copy to Clipboard - TWD
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
+        Copy to Clipboard - Lackey
+      </Dropdown.Item>
+    </>
+  );
 
   const copyDeck = (format) => {
     setDeckError(false);

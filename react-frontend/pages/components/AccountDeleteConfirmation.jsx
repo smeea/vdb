@@ -59,14 +59,22 @@ function AccountDeleteConfirmation(props) {
         onHide={() => props.setShow(false)}
         animation={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Body>
+          <button
+            type="button"
+            className="close"
+            onClick={props.handleClose}
+          >
+            <span aria-hidden="true">×</span>
+            <span className="sr-only">Close</span>
+          </button>
           <h5>
             DELETE ACCOUNT
-            <span className="px-1 pl-2">`{props.username}`?</span>
+            <span className="px-1 pl-2">{'"'}{props.username}{'"'}?</span>
           </h5>
-        </Modal.Header>
-        <Modal.Body>
-          <h6>THIS CANNOT BE UNDONE!</h6>
+          <div className="pt-2">
+            <h6>THIS CANNOT BE UNDONE!</h6>
+          </div>
           This will also delete all your decks and they will not be available
           via URL anymore.
         </Modal.Body>

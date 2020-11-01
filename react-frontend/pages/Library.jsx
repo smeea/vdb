@@ -47,6 +47,7 @@ function Library(props) {
                       showImage={props.showImage}
                       toggleImage={props.toggleImage}
                       isAuthor={true}
+                      isMobile={props.isMobile}
                     />
                     <DeckShowLibrary
                       deckCardAdd={props.deckCardAdd}
@@ -56,6 +57,7 @@ function Library(props) {
                       showImage={props.showImage}
                       toggleImage={props.toggleImage}
                       isAuthor={true}
+                      isMobile={props.isMobile}
                     />
                   </>
               : <DeckPreview
@@ -64,6 +66,7 @@ function Library(props) {
                   deck={props.decks[props.activeDeck]}
                   getDecks={props.getDecks}
                   deckCardChange={props.deckCardChange}
+                  isMobile={props.isMobile}
 />
             )}
           </Col>
@@ -82,6 +85,7 @@ function Library(props) {
                 showTotal={true}
                 sortMethod={sortMethod}
                 setSortMethod={setSortMethod}
+                isMobile={props.isMobile}
               />
             )}
             {props.results === null && (

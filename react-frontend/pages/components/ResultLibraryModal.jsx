@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Modal, Tabs, Tab } from 'react-bootstrap';
-import ResultCryptPopover from './ResultCryptPopover.jsx';
+import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 
-function ResultCryptModal(props) {
+function ResultLibraryModal(props) {
   const [key, setKey] = useState('image');
 
   return (
@@ -26,7 +26,7 @@ function ResultCryptModal(props) {
           onSelect={(k) => setKey(k)}
         >
           <Tab eventKey="image" title="Image">
-            <ResultCryptPopover
+            <ResultLibraryPopover
               card={props.card}
               showImage={false}
               fullWidth={true}
@@ -35,7 +35,7 @@ function ResultCryptModal(props) {
           </Tab>
           <Tab eventKey="text" title="Description">
             <div className="pt-2">
-              <ResultCryptPopover
+              <ResultLibraryPopover
                 card={props.card}
                 showImage={true}
               />
@@ -47,4 +47,4 @@ function ResultCryptModal(props) {
   );
 }
 
-export default ResultCryptModal;
+export default ResultLibraryModal;

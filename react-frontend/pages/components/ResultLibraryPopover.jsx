@@ -1,6 +1,5 @@
 import React from 'react';
-import { Popover, ListGroup } from 'react-bootstrap';
-
+import { ListGroup } from 'react-bootstrap';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
@@ -13,7 +12,12 @@ function ResultLibraryPopover(props) {
     .toLowerCase()
     .replace(/[\s,:!?'".\-\(\)]/g, '')}.jpg`;
   const cardImage = (
-    <img className="card-popover" src={imgSrc} alt={props.card['Name']} />
+    <img
+      className={props.fullWidth ? "card-popover full-width" : "card-popover"}
+      src={imgSrc}
+      alt={props.card['Name']}
+      onClick={props.handleClose}
+    />
   );
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
@@ -29,7 +33,7 @@ function ResultLibraryPopover(props) {
   });
 
   return (
-    <Popover.Content>
+    <>
       {props.showImage ? (
         <>
           <div className="d-flex flex-nowrap justify-content-between align-items-center">
@@ -60,13 +64,11 @@ function ResultLibraryPopover(props) {
           {props.card['Card Text']}
           <hr />
           <div className="d-flex align-items-center justify-content-between">
-            <div>
-              <ResultLibraryCost
-                valuePool={props.card['Pool Cost']}
-                valueBlood={props.card['Blood Cost']}
-              />
-            </div>
-            <div className="popover-sets">{Sets}</div>
+            <ResultLibraryCost
+              valuePool={props.card['Pool Cost']}
+              valueBlood={props.card['Blood Cost']}
+            />
+            <div className="popover-sets px-1">{Sets}</div>
           </div>
           {Rulings.length > 0 && (
             <div className="popover-rulings pt-2">
@@ -77,7 +79,7 @@ function ResultLibraryPopover(props) {
       ) : (
         cardImage
       )}
-    </Popover.Content>
+    </>
   );
 }
 

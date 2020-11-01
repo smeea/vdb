@@ -127,8 +127,8 @@ function DeckShowLibrary(props) {
   }
 
   return (
-    <>
-      <div className="d-flex align-items-center justify-content-between">
+    <div className="pt-4">
+      <div className="d-flex align-items-center justify-content-between pl-2 info-message">
         <b>Library [{libraryTotal}]</b>
         {props.isAuthor && (
           <Button
@@ -142,12 +142,12 @@ function DeckShowLibrary(props) {
       {showAdd && <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />}
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
-        <div className="deck-sidelibrary">
-          <b>Side Library:</b>
+        <div className="deck-sidelibrary pt-1">
+          <b>Side Library</b>
           {LibrarySideDeck}
         </div>
       )}
-    </>
+    </div>
   );
 }
 

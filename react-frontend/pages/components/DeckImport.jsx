@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import ClipboardPlus from '../../assets/images/icons/clipboard-plus.svg';
-
 import DeckImportModal from './DeckImportModal.jsx';
 
 function DeckImport(props) {
@@ -94,6 +93,7 @@ function DeckImport(props) {
       <Dropdown.Item href="" onClick={() => createNewDeck()}>
         Create New
       </Dropdown.Item>
+      <Dropdown.Divider />
       <Dropdown.Item href="" onClick={handleFileInputClick}>
         Import from File
       </Dropdown.Item>
@@ -115,7 +115,7 @@ function DeckImport(props) {
       <Dropdown>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
           <ClipboardPlus size={24} />
-          {!props.isMobile && <span className="pl-1">Create / Import</span>}
+          <span className="pl-1">Create / Import Deck</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
       </Dropdown>

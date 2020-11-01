@@ -75,11 +75,9 @@ function DeckShowCrypt(props) {
     .reverse();
 
   return (
-    <>
-      <div className="d-flex align-items-center justify-content-between">
-        <b>
-          Crypt [{cryptTotal}] - {cryptGroups}
-        </b>
+    <div className="pt-4">
+      <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
         {props.isAuthor && (
           <Button
             variant="outline-secondary"
@@ -101,8 +99,10 @@ function DeckShowCrypt(props) {
         isMobile={props.isMobile}
       />
       {Object.keys(cryptSide).length > 0 && (
-        <div className="deck-sidecrypt">
-          <b>Side Crypt</b>
+        <div className="deck-sidecrypt pt-1">
+          <div className="d-flex align-items-center justify-content-between pl-2">
+            <b>Side Crypt</b>
+          </div>
           <DeckShowCryptTable
             deckid={props.deckid}
             deckCardChange={props.deckCardChange}
@@ -115,7 +115,7 @@ function DeckShowCrypt(props) {
           />
         </div>
       )}
-    </>
+    </div>
   );
 }
 

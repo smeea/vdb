@@ -26,7 +26,11 @@ function Navigation(props) {
 
   const NavBar = ({ location }) => {
     return (
-      <Navbar sticky="top" bg="dark" variant="dark">
+      <Navbar
+        sticky="top"
+        bg="dark"
+        variant="dark"
+      >
         <Nav className="container justify-content-end">
           <div className="d-flex align-items-center">
             <NavLink to="/account" className="nav-link px-2">

@@ -13,29 +13,47 @@ function DeckDrawModal(props) {
       animation={false}
       size="xl"
     >
-      <Modal.Header closeButton>
-        <h5>DECK DRAW</h5>
-      </Modal.Header>
       <Modal.Body>
         <Container className="px-0" fluid>
           <Row className="px-0">
-            <Col md={12} lg={7} className="px-1">
+            <Col>
+              <button
+                type="button"
+                className="close"
+                onClick={props.handleClose}
+              >
+                <span aria-hidden="true">×</span>
+                <span className="sr-only">Close</span>
+              </button>
+              <div className="d-flex justify-content-center">
+                <h5>DECK DRAW</h5>
+              </div>
+            </Col>
+          </Row>
+          <Row className="px-0">
+            <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
               {props.drawedCrypt && (
                 <>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <b>Crypt</b>
-                    <span className="mx-2">
+                  <div className="d-flex justify-content-between">
+                    <div className="d-flex align-items-center px-2">
+                      <b>Crypt</b>
+                    </div>
+                    <div className="d-flex align-items-center">
                       {props.drawedCrypt.length} /{' '}
                       {props.drawedCrypt.length + props.restCrypt.length}
-                    </span>
+                    </div>
                     <div>
                       <Button
+                        className="full-height"
                         variant="outline-secondary"
                         onClick={props.handleReDrawCrypt}
                       >
-                        <ArrowRepeat />
+                        <span className="align-items-center">
+                          <ArrowRepeat />
+                        </span>
                       </Button>
                       <Button
+                        className="full-height"
                         variant="outline-secondary"
                         onClick={props.handleDrawOneCrypt}
                       >
@@ -50,24 +68,29 @@ function DeckDrawModal(props) {
                   />
                 </>
               )}
+              <br />
             </Col>
-            <Col md={12} lg={5} className="px-1">
+            <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
               {props.drawedLibrary && (
                 <>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <b>Library</b>
-                    <span className="mx-2">
+                  <div className="d-flex justify-content-between">
+                    <div className="d-flex align-items-center px-2">
+                      <b>Library</b>
+                    </div>
+                    <div className="d-flex align-items-center">
                       {props.drawedLibrary.length} /{' '}
                       {props.drawedLibrary.length + props.restLibrary.length}
-                    </span>
+                    </div>
                     <div>
                       <Button
+                        className="full-height"
                         variant="outline-secondary"
                         onClick={props.handleReDrawLibrary}
                       >
                         <ArrowRepeat />
                       </Button>
                       <Button
+                        className="full-height"
                         variant="outline-secondary"
                         onClick={props.handleDrawOneLibrary}
                       >
@@ -82,6 +105,7 @@ function DeckDrawModal(props) {
                   />
                 </>
               )}
+              <br />
             </Col>
           </Row>
         </Container>

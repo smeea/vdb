@@ -15,7 +15,6 @@ function DeckShowButtons(props) {
         <DeckImport
           setActiveDeck={props.setActiveDeck}
           getDecks={props.getDecks}
-          isMobile={props.isMobile}
         />
       )}
     </div>

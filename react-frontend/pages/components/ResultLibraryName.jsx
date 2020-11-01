@@ -1,27 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-
+import ResultLibraryModal from './ResultLibraryModal.jsx';
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 
 function ResultLibraryName(props) {
+  const [showModal, setShowModal] = useState(undefined);
+
   const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
     return (
       <Popover ref={ref} {...props}>
-        <ResultLibraryPopover card={props.card} showImage={children} />
+        <Popover.Content>
+          <ResultLibraryPopover card={props.card} showImage={children} />
+        </Popover.Content>
       </Popover>
     );
   });
   CardPopover.displayName = 'CardPopover';
 
   return (
-    <OverlayTrigger
-      placement="right"
-      overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
-    >
-      <span className="name" onClick={props.toggleImage}>
-        {props.value} {props.ban && ' [BANNED]'}
-      </span>
-    </OverlayTrigger>
+    <>
+      {!props.isMobile
+       ? <OverlayTrigger
+           placement="right"
+           overlay={<CardPopover card={props.card}>{props.showImage}</CardPopover>}
+         >
+           <span className="name" onClick={props.toggleImage}>
+             {props.value} {props.ban && ' [BANNED]'}
+           </span>
+         </OverlayTrigger>
+       : <>
+           <span className="name" onClick={() => setShowModal(true)}>
+             {props.value} {props.ban && ' [BANNED]'}
+           </span>
+           {showModal &&
+            <ResultLibraryModal
+              show={showModal}
+              card={props.card}
+              showImage={props.showImage}
+              handleClose={() => setShowModal(false)}
+            />
+           }
+         </>
+      }
+    </>
   );
 }
 

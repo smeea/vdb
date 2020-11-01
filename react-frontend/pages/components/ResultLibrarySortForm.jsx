@@ -1,6 +1,6 @@
 import React from 'react';
 import { DropdownButton, Dropdown } from 'react-bootstrap';
-import SortDown from '../../assets/images/icons/sort-down.svg';
+import FilterLeft from '../../assets/images/icons/filter-left.svg';
 
 function ResultLibrarySortForm(props) {
   const sortMethods = ['Default', 'Name', 'Clan', 'Discipline', 'Type'];
@@ -17,7 +17,7 @@ function ResultLibrarySortForm(props) {
     <DropdownButton
       variant="outline-secondary"
       id="sort-button"
-      title={<SortDown />}
+      title={<FilterLeft />}
     >
       {SortButtonOptions}
     </DropdownButton>

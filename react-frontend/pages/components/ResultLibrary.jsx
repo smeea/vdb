@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import ResultLibraryTable from './ResultLibraryTable.jsx';
 import ResultLibraryTotal from './ResultLibraryTotal.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
@@ -34,6 +33,7 @@ function ResultLibrary(props) {
         activeDeck={props.activeDeck}
         deckCardAdd={props.deckCardAdd}
         resultCards={sortedCards}
+        isMobile={props.isMobile}
       />
     </>
   );

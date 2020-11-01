@@ -13,7 +13,8 @@ function ResultCryptPopover(props) {
   const cardImage = (
     <img
       className={props.fullWidth ? "card-popover full-width" : "card-popover"}
-      src={imgSrc} alt={props.card['Name']}
+      src={imgSrc}
+      alt={props.card['Name']}
       onClick={props.handleClose}
     />
   );
@@ -52,7 +53,7 @@ function ResultCryptPopover(props) {
           <hr />
           <div className="d-flex align-items-center justify-content-between">
             <ResultCryptDisciplines value={props.card['Disciplines']} />
-            <div className="popover-sets">{Sets}</div>
+            <div className="popover-sets px-1">{Sets}</div>
             <ResultCryptCapacity value={props.card['Capacity']} />
           </div>
           {Rulings.length > 0 && (
