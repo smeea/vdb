@@ -26,7 +26,7 @@ function SearchCryptFormVotes(props) {
               width: '40px',
               textAlign: 'center',
             }}
-          ></span>
+          />
           {i[1]}
         </>
       ),

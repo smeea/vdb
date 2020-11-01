@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
+import X from '../assets/images/icons/x.svg';
 import AlertMessage from './components/AlertMessage.jsx';
 import ResultCrypt from './components/ResultCrypt.jsx';
 import SearchCryptForm from './components/SearchCryptForm.jsx';
@@ -30,44 +31,57 @@ function Crypt(props) {
         {props.showCols.deck && (
           <Col md={12} xl={4} className="px-0">
             {Object.keys(props.decks).length > 0 && (
-              <DeckSelect
-                decks={props.decks}
-                activeDeck={props.activeDeck}
-                setActiveDeck={props.setActiveDeck}
-              />
+              <Row>
+                <Col className="pr-0">
+                  <DeckSelect
+                    decks={props.decks}
+                    activeDeck={props.activeDeck}
+                    setActiveDeck={props.setActiveDeck}
+                  />
+                </Col>
+                <Col xs="auto" className="d-flex pl-0">
+                  <Button
+                    className="full-height"
+                    variant="outline-secondary"
+                    onClick={() => props.setActiveDeck('')}
+                  >
+                    <X />
+                  </Button>
+                </Col>
+              </Row>
             )}
             {props.activeDeck && (
               props.isWide
                 ? <>
-                   <DeckShowCrypt
-                     deckCardAdd={props.deckCardAdd}
-                     deckCardChange={props.deckCardChange}
-                     deckid={props.activeDeck}
-                     cards={props.decks[props.activeDeck].crypt}
-                     showImage={props.showImage}
-                     toggleImage={props.toggleImage}
-                     isAuthor={true}
-                     isMobile={props.isMobile}
-                   />
-                   <DeckShowLibrary
-                     deckCardAdd={props.deckCardAdd}
-                     deckCardChange={props.deckCardChange}
-                     deckid={props.activeDeck}
-                     cards={props.decks[props.activeDeck].library}
-                     showImage={props.showImage}
-                     toggleImage={props.toggleImage}
-                     isAuthor={true}
-                     isMobile={props.isMobile}
-                   />
-                 </>
+                    <DeckShowCrypt
+                      deckCardAdd={props.deckCardAdd}
+                      deckCardChange={props.deckCardChange}
+                      deckid={props.activeDeck}
+                      cards={props.decks[props.activeDeck].crypt}
+                      showImage={props.showImage}
+                      toggleImage={props.toggleImage}
+                      isAuthor={true}
+                      isMobile={props.isMobile}
+                    />
+                    <DeckShowLibrary
+                      deckCardAdd={props.deckCardAdd}
+                      deckCardChange={props.deckCardChange}
+                      deckid={props.activeDeck}
+                      cards={props.decks[props.activeDeck].library}
+                      showImage={props.showImage}
+                      toggleImage={props.toggleImage}
+                      isAuthor={true}
+                      isMobile={props.isMobile}
+                    />
+                  </>
               : <DeckPreview
-                   showImage={props.showImage}
-                   toggleImage={props.toggleImage}
-                   deck={props.decks[props.activeDeck]}
-                   getDecks={props.getDecks}
-                   deckCardChange={props.deckCardChange}
-                   isMobile={props.isMobile}
-       />
+              showImage={props.showImage}
+              toggleImage={props.toggleImage}
+              deck={props.decks[props.activeDeck]}
+              getDecks={props.getDecks}
+              deckCardChange={props.deckCardChange}
+              isMobile={props.isMobile}
+                 />
             )}
           </Col>
         )}
@@ -86,6 +100,7 @@ function Crypt(props) {
                 sortMethod={sortMethod}
                 setSortMethod={setSortMethod}
                 isMobile={props.isMobile}
+                addMode={props.addMode}
               />
             )}
             {props.results === null && (

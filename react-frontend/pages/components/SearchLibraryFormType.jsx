@@ -35,7 +35,7 @@ function SearchLibraryFormType(props) {
                 width: '40px',
                 textAlign: 'center',
               }}
-            ></span>
+            />
             {i}
           </>
         ),

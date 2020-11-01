@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
+import X from '../assets/images/icons/x.svg';
 import AlertMessage from './components/AlertMessage.jsx';
 import ResultLibrary from './components/ResultLibrary.jsx';
 import SearchLibraryForm from './components/SearchLibraryForm.jsx';
@@ -30,11 +31,24 @@ function Library(props) {
         {props.showCols.deck && (
           <Col md={12} xl={4} className="px-0">
             {Object.keys(props.decks).length > 0 && (
+              <Row>
+              <Col className="pr-0">
               <DeckSelect
                 decks={props.decks}
                 activeDeck={props.activeDeck}
                 setActiveDeck={props.setActiveDeck}
               />
+              </Col>
+                <Col xs="auto" className="d-flex pl-0">
+                  <Button
+                    className="full-height"
+                    variant="outline-secondary"
+                    onClick={() => props.setActiveDeck('')}
+                  >
+                    <X />
+                  </Button>
+                </Col>
+              </Row>
             )}
             {props.activeDeck && (
               props.isWide
@@ -86,6 +100,7 @@ function Library(props) {
                 sortMethod={sortMethod}
                 setSortMethod={setSortMethod}
                 isMobile={props.isMobile}
+                addMode={props.addMode}
               />
             )}
             {props.results === null && (

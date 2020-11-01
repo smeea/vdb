@@ -27,7 +27,7 @@ function SearchCryptFormSect(props) {
               width: '40px',
               textAlign: 'center',
             }}
-          ></span>
+          />
           {i}
         </>
       ),

@@ -12,14 +12,11 @@
 
 # MAJOR FIX
 * Hide columns via CSS
-* Remove togglesearch/deck buttons except from crypt/library
-* Hide deck + disable addMode
 
 # MINOR FIX
-* Redirect from login to decks
-* Redirect to about from / page
 * Change tooltips style
 * Button on-success effect - outline-success?
+* addMode button style + text
 
 # MOBILE FIX
 

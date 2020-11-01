@@ -4,6 +4,8 @@ import { Button, Navbar, Nav } from 'react-bootstrap';
 import PersonFill from '../assets/images/icons/person-fill.svg';
 import InfoCircleFill from '../assets/images/icons/info-circle-fill.svg';
 import Search from '../assets/images/icons/search.svg';
+import ToggleOn from '../assets/images/icons/toggle-on.svg';
+import ToggleOff from '../assets/images/icons/toggle-off.svg';
 
 function Navigation(props) {
   const ToggleSearch = (props) => {
@@ -31,7 +33,19 @@ function Navigation(props) {
         bg="dark"
         variant="dark"
       >
-        <Nav className="container justify-content-end">
+        <Nav className="container justify-content-between">
+          <div className="d-flex align-items-center px-1">
+            {props.username && props.isActiveDeck &&
+             (props.location.pathname == "/crypt" || props.location.pathname == "/library") &&
+             <Button
+               onClick={() => props.setAddMode(!props.addMode)}
+               variant="secondary"
+             >
+               {props.addMode ? <ToggleOn /> : <ToggleOff />}
+             </Button>
+            }
+          </div>
+
           <div className="d-flex align-items-center">
             <NavLink to="/account" className="nav-link px-2">
               {props.username ? <PersonFill /> : 'Login'}
@@ -48,14 +62,27 @@ function Navigation(props) {
             <NavLink to="/library" className="nav-link px-2">
               Library
             </NavLink>
+            {props.isMobile && (
+              <>
+                <div className="toggle-search">
+                  {(props.location.pathname == "/crypt") &&
+                   <ToggleSearch
+                     showCols={props.showCols}
+                     setShowCols={props.setShowCols}
+                     isResults={props.isCryptResults}
+                   />
+                  }
+                  {(props.location.pathname == "/library") &&
+                   <ToggleSearch
+                     showCols={props.showCols}
+                     setShowCols={props.setShowCols}
+                     isResults={props.isLibraryResults}
+                   />
+                  }
+                </div>
+              </>
+            )}
           </div>
-          {props.isMobile && (
-            <ToggleSearch
-              showCols={props.showCols}
-              setShowCols={props.setShowCols}
-              isResults={props.isResults}
-            />
-          )}
         </Nav>
       </Navbar>
     );

@@ -21,7 +21,7 @@ function SearchLibraryFormBloodCost(props) {
               width: '20px',
               textAlign: 'center',
             }}
-          ></span>
+          />
           {i}
         </>
       ),
@@ -47,7 +47,7 @@ function SearchLibraryFormBloodCost(props) {
               width: '20px',
               textAlign: 'center',
             }}
-          ></span>
+          />
           {i[1]}
         </>
       ),

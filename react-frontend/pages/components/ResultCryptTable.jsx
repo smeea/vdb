@@ -26,7 +26,7 @@ function ResultCryptTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          {props.activeDeck && props.activeDeck != 'Select Deck' && (
+          {props.addMode && (
             <td className="quantity">
               <ResultAddCard
                 deckCardAdd={props.deckCardAdd}

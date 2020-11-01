@@ -34,7 +34,7 @@ function SearchCryptFormCapacity(props) {
               width: '20px',
               textAlign: 'center',
             }}
-          ></span>
+          />
           {i}
         </>
       ),
@@ -60,7 +60,7 @@ function SearchCryptFormCapacity(props) {
               width: '20px',
               textAlign: 'center',
             }}
-          ></span>
+          />
           {i[1]}
         </>
       ),

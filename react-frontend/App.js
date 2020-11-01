@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Navigation from './pages/Navigation.jsx';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
@@ -17,6 +17,8 @@ function App(props) {
 
   const [showImage, setShowImage] = useState(false);
   const toggleImage = () => setShowImage(!showImage);
+
+  const [addMode, setAddMode] = useState(false);
 
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
@@ -156,14 +158,16 @@ function App(props) {
           decks={decks}
           activeDeck={activeDeck}
           setActiveDeck={setActiveDeck}
-    isResults={(libraryResults || cryptResults) ? true : false}
+          isCryptResults={cryptResults && true}
+          isLibraryResults={libraryResults && true}
+          addMode={addMode}
+          setAddMode={setAddMode}
+          isActiveDeck={activeDeck ? true : false}
         />
 
         <Switch>
           <Suspense fallback={<></>}>
-            <Route path="/" exact>
-              <About />
-            </Route>
+            <Route path="/" exact component={() => <Redirect to="/about"/>} />
             <Route path="/about" exact component={() => <About />} />
             <Route path="/account">
               <Account
@@ -225,6 +229,7 @@ function App(props) {
                 toggleImage={toggleImage}
                 results={cryptResults}
                 setResults={setCryptResults}
+                addMode={addMode}
               />
             </Route>
             <Route path="/library">
@@ -243,6 +248,7 @@ function App(props) {
                 toggleImage={toggleImage}
                 results={libraryResults}
                 setResults={setLibraryResults}
+                addMode={addMode}
               />
             </Route>
           </Suspense>
