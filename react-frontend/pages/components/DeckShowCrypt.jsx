@@ -23,6 +23,7 @@ function DeckShowCrypt(props) {
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
       crypt[card] = props.cards[card];
+      if (props.cards[card].c['Group'] == 'ANY') { return; }
       if (
         props.cards[card].c['Group'] < cryptGroupMin ||
         cryptGroupMin == undefined
@@ -96,6 +97,7 @@ function DeckShowCrypt(props) {
         cards={sortedCards}
         disciplinesSet={disciplinesSet}
         showImage={props.showImage}
+        setShowImage={props.setShowImage}
         toggleImage={props.toggleImage}
         isAuthor={props.isAuthor}
         isMobile={props.isMobile}
@@ -111,6 +113,7 @@ function DeckShowCrypt(props) {
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             showImage={props.showImage}
+            setShowImage={props.setShowImage}
             toggleImage={props.toggleImage}
             isAuthor={props.isAuthor}
             isMobile={props.isMobile}

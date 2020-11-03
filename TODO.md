@@ -9,6 +9,7 @@
 * Scrollable frame for deck (also test for search forms) 
 * Precons decks
 * Update About with features: import/export, free, speed, UI you may like, mobile-friendly
+* Sort deck discipline columns by popularity
 
 # MAJOR FIX
 * Hide columns via CSS
@@ -16,8 +17,8 @@
 # MINOR FIX
 * Change tooltips style
 * Button on-success effect - outline-success?
-* addMode button style + text
 * addMode hide in mobile in search (show in results)
+* Remember search col
 
 # MOBILE FIX
 
@@ -30,6 +31,7 @@
 * Dynamic media query with react-responsive
 * Swipe search and deck on mobile - react-swipeable-views?
 * Swipe in card modal image-description
+* Droid CI/CD
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ

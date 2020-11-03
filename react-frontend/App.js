@@ -189,6 +189,7 @@ function App(props) {
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
                 showImage={showImage}
+                setShowImage={setShowImage}
                 toggleImage={toggleImage}
                 username={username}
                 whoAmI={whoAmI}
@@ -226,6 +227,7 @@ function App(props) {
                 activeDeck={activeDeck}
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
+                setShowImage={setShowImage}
                 toggleImage={toggleImage}
                 results={cryptResults}
                 setResults={setCryptResults}
@@ -245,6 +247,7 @@ function App(props) {
                 activeDeck={activeDeck}
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
+                setShowImage={setShowImage}
                 toggleImage={toggleImage}
                 results={libraryResults}
                 setResults={setLibraryResults}

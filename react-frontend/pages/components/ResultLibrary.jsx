@@ -28,6 +28,7 @@ function ResultLibrary(props) {
       )}
       <ResultLibraryTable
         showImage={props.showImage}
+        setShowImage={props.setShowImage}
         toggleImage={props.toggleImage}
         library={props.library}
         activeDeck={props.activeDeck}

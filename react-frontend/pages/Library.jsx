@@ -59,6 +59,7 @@ function Library(props) {
                     deckid={props.activeDeck}
                     cards={props.decks[props.activeDeck].crypt}
                     showImage={props.showImage}
+                    setShowImage={props.setShowImage}
                     toggleImage={props.toggleImage}
                     isAuthor={true}
                     isMobile={props.isMobile}
@@ -69,6 +70,7 @@ function Library(props) {
                     deckid={props.activeDeck}
                     cards={props.decks[props.activeDeck].library}
                     showImage={props.showImage}
+                    setShowImage={props.setShowImage}
                     toggleImage={props.toggleImage}
                     isAuthor={true}
                     isMobile={props.isMobile}
@@ -77,6 +79,7 @@ function Library(props) {
               ) : (
                 <DeckPreview
                   showImage={props.showImage}
+                  setShowImage={props.setShowImage}
                   toggleImage={props.toggleImage}
                   deck={props.decks[props.activeDeck]}
                   getDecks={props.getDecks}
@@ -91,6 +94,7 @@ function Library(props) {
             {props.results != undefined && props.results != null && (
               <ResultLibrary
                 showImage={props.showImage}
+                setShowImage={props.setShowImage}
                 toggleImage={props.toggleImage}
                 deckCardAdd={props.deckCardAdd}
                 cards={props.results}

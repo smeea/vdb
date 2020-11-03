@@ -155,6 +155,7 @@ function Deck(props) {
                   : sharedDeck[sharedDeckId].crypt
               }
               showImage={props.showImage}
+              setShowImage={props.setShowImage}
               toggleImage={props.toggleImage}
               isAuthor={isAuthor}
               isMobile={props.isMobile}
@@ -171,8 +172,10 @@ function Deck(props) {
                   : sharedDeck[sharedDeckId].library
               }
               showImage={props.showImage}
+              setShowImage={props.setShowImage}
               toggleImage={props.toggleImage}
               isAuthor={isAuthor}
+              isMobile={props.isMobile}
             />
           </Col>
         </Row>

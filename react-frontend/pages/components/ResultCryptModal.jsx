@@ -3,8 +3,6 @@ import { Modal, Tabs, Tab } from 'react-bootstrap';
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 
 function ResultCryptModal(props) {
-  const [key, setKey] = useState('image');
-
   return (
     <Modal show={props.show} onHide={props.handleClose} animation={false}>
       <Modal.Body>
@@ -12,7 +10,12 @@ function ResultCryptModal(props) {
           <span aria-hidden="true">×</span>
           <span className="sr-only">Close</span>
         </button>
-        <Tabs transition={false} activeKey={key} onSelect={(k) => setKey(k)}>
+        <Tabs
+          transition={false}
+          activeKey={props.showImage ? 'image' : 'text'}
+          defaultActiveKey={props.showImage ? 'image' : 'text'}
+          onSelect={(k) => props.setShowImage(k == 'image' ? true : false)}
+        >
           <Tab eventKey="image" title="Image">
             <ResultCryptPopover
               card={props.card}

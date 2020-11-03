@@ -60,6 +60,7 @@ function ResultCryptName(props) {
               show={showModal}
               card={props.card}
               showImage={props.showImage}
+              setShowImage={props.setShowImage}
               handleClose={() => setShowModal(false)}
             />
           )}

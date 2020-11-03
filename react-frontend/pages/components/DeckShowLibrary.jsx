@@ -7,14 +7,19 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 function DeckLibraryByTypeTable(props) {
   return (
     <>
-      <ResultLibraryType cardtype={props.cardtype} total={props.total} />
+      <ResultLibraryType
+        cardtype={props.cardtype}
+        total={props.total}
+      />
       <DeckShowLibraryTable
         showImage={props.showImage}
+        setShowImage={props.setShowImage}
         toggleImage={props.toggleImage}
         deckid={props.deckid}
         deckCardChange={props.deckCardChange}
         cards={props.cards}
         isAuthor={props.isAuthor}
+        isMobile={props.isMobile}
       />
     </>
   );
@@ -92,6 +97,7 @@ function DeckShowLibrary(props) {
         <div key={cardtype}>
           <DeckLibraryByTypeTable
             showImage={props.showImage}
+            setShowImage={props.setShowImage}
             toggleImage={props.toggleImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
@@ -99,6 +105,7 @@ function DeckShowLibrary(props) {
             cardtype={cardtype}
             total={total}
             isAuthor={props.isAuthor}
+            isMobile={props.isMobile}
           />
         </div>
       );
@@ -113,6 +120,7 @@ function DeckShowLibrary(props) {
         <div key={cardtype}>
           <DeckLibraryByTypeTable
             showImage={props.showImage}
+            setShowImage={props.setShowImage}
             toggleImage={props.toggleImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
@@ -120,6 +128,7 @@ function DeckShowLibrary(props) {
             cardtype={cardtype}
             total={total}
             isAuthor={props.isAuthor}
+            isMobile={props.isMobile}
           />
         </div>
       );

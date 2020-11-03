@@ -28,6 +28,7 @@ function ResultCrypt(props) {
       )}
       <ResultCryptTable
         showImage={props.showImage}
+        setShowImage={props.setShowImage}
         toggleImage={props.toggleImage}
         crypt={props.crypt}
         activeDeck={props.activeDeck}

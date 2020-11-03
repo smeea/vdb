@@ -46,6 +46,7 @@ function ResultCryptTable(props) {
           <td className="name">
             <ResultCryptName
               showImage={props.showImage}
+              setShowImage={props.setShowImage}
               toggleImage={props.toggleImage}
               id={card['Id']}
               value={card['Name']}

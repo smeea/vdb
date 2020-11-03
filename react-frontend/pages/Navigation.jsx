@@ -34,14 +34,26 @@ function Navigation(props) {
             {props.username &&
               props.isActiveDeck &&
               (props.location.pathname == '/crypt' ||
-                props.location.pathname == '/library') && (
-                <Button
-                  onClick={() => props.setAddMode(!props.addMode)}
-                  variant="secondary"
-                >
-                  {props.addMode ? <ToggleOn /> : <ToggleOff />}
-                </Button>
-              )}
+               props.location.pathname == '/library') && (
+                 <div className="d-flex align-items-center pl-1"
+                   onClick={() => props.setAddMode(!props.addMode)}
+                 >
+                   {props.addMode
+                    ? <>
+                        <div className="white-font-toggle">
+                          <ToggleOn />
+                        </div>
+                        {!props.isMobile && <div className="d-inline pl-1 white-font">Add to Deck Mode</div>}
+                     </>
+                    : <>
+                        <div className="gray-font-toggle">
+                          <ToggleOff />
+                        </div>
+                        {!props.isMobile && <div className="d-inline pl-1 gray-font">Add to Deck Mode</div>}
+                    </>
+                   }
+                 </div>
+               )}
           </div>
 
           <div className="d-flex align-items-center">

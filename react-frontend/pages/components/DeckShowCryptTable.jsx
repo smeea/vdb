@@ -48,6 +48,7 @@ function DeckShowCryptTable(props) {
               ban={card.c['Banned']}
               card={card.c}
               showImage={props.showImage}
+              setShowImage={props.setShowImage}
               toggleImage={props.toggleImage}
               isMobile={props.isMobile}
             />
