@@ -12,7 +12,6 @@
 * Sort deck discipline columns by popularity
 
 # MAJOR FIX
-* Hide columns via CSS
 
 # MINOR FIX
 * Button on-success effect - outline-success?

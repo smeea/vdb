@@ -73,50 +73,58 @@ function Library(props) {
               ))}
           </Col>
         )}
-        {!(props.isMobile && props.showSearch) && (
-          <Col md={12} xl={5} className="px-0 px-lg-4">
-            {props.results != undefined && props.results != null && (
-              <ResultLibrary
-                showImage={props.showImage}
-                setShowImage={props.setShowImage}
-                deckCardAdd={props.deckCardAdd}
-                cards={props.results}
-                library={
-                  props.decks &&
+        <Col md={12} xl={5}
+             className={
+               !(props.isMobile && props.showSearch)
+                 ? "px-0 px-lg-4"
+                 : "col-hide px-0 lx-lg-4"
+             }
+        >
+          {props.results != undefined && props.results != null && (
+            <ResultLibrary
+              showImage={props.showImage}
+              setShowImage={props.setShowImage}
+              deckCardAdd={props.deckCardAdd}
+              cards={props.results}
+              library={
+                props.decks &&
                   props.decks[props.activeDeck] &&
                   props.decks[props.activeDeck].library
-                }
-                activeDeck={props.activeDeck}
-                showSort={true}
-                showTotal={true}
-                sortMethod={sortMethod}
-                setSortMethod={setSortMethod}
-                isMobile={props.isMobile}
-                addMode={props.addMode}
-              />
-            )}
-            {props.results === null && (
-              <AlertMessage className="error-message">
-                  <b>NO CARDS FOUND</b>
-              </AlertMessage>
-            )}
-          </Col>
-        )}
-        {(!props.isMobile || (props.isMobile && props.showSearch)) &&
-         <Col md={12} xl={3} className="px-0">
-           {props.isMobile && props.results === null && (
-             <AlertMessage className="error-message">
-               <b>NO CARDS FOUND</b>
-             </AlertMessage>
-           )}
-           <SearchLibraryForm
-             setResults={props.setResults}
-             setShowSearch={props.setShowSearch}
-             formState={props.formState}
-             setFormState={props.setFormState}
-           />
-         </Col>
-        }
+              }
+              activeDeck={props.activeDeck}
+              showSort={true}
+              showTotal={true}
+              sortMethod={sortMethod}
+              setSortMethod={setSortMethod}
+              isMobile={props.isMobile}
+              addMode={props.addMode}
+            />
+          )}
+          {props.results === null && (
+            <AlertMessage className="error-message">
+              <b>NO CARDS FOUND</b>
+            </AlertMessage>
+          )}
+        </Col>
+        <Col md={12} xl={3}
+             className={
+               (!props.isMobile || (props.isMobile && props.showSearch))
+                 ? "px-0"
+                 : "col-hide px-0"
+             }
+        >
+          {props.isMobile && props.results === null && (
+            <AlertMessage className="error-message">
+              <b>NO CARDS FOUND</b>
+            </AlertMessage>
+          )}
+          <SearchLibraryForm
+            setResults={props.setResults}
+            setShowSearch={props.setShowSearch}
+            formState={props.formState}
+            setFormState={props.setFormState}
+          />
+        </Col>
       </Row>
     </Container>
   );
