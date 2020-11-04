@@ -9,23 +9,25 @@ import DeckExport from './DeckExport.jsx';
 function DeckShowButtons(props) {
   return (
     <>
-      <div>
-        {props.username && (
+      {props.username && (
+        <div>
           <DeckImport
             setActiveDeck={props.setActiveDeck}
             getDecks={props.getDecks}
           />
-        )}
-      </div>
-      <div>
-        <DeckExport activeDeck={props.activeDeck} />
-      </div>
+        </div>
+      )}
+      {props.activeDeck &&
+       <div>
+         <DeckExport activeDeck={props.activeDeck} />
+       </div>
+      }
       {props.isAuthor && props.deck && (
         <div>
           <DeckDelete deck={props.deck} setActiveDeck={props.setActiveDeck} />
         </div>
       )}
-      {props.username && (
+      {props.username && props.deck && (
         <div>
           <DeckClone
             author={props.deck.author}
@@ -36,12 +38,16 @@ function DeckShowButtons(props) {
           />
         </div>
       )}
-      <div>
-        <DeckCopyUrlButton value={props.deck.deckid} />
-      </div>
-      <div>
-        <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />
-      </div>
+      {props.deck &&
+       <div>
+         <DeckCopyUrlButton value={props.deck.deckid} />
+       </div>
+      }
+      {props.deck &&
+       <div>
+         <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />
+       </div>
+      }
     </>
   );
 }

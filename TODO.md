@@ -12,7 +12,6 @@
 * Sort deck discipline columns by popularity
 
 # MAJOR FIX
-* Convert icons to svg
 
 # MINOR FIX
 * Button on-success effect - outline-success?

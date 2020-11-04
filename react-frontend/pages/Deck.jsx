@@ -113,7 +113,7 @@ function Deck(props) {
                   deck={
                     props.activeDeck
                       ? props.decks[props.activeDeck]
-                      : sharedDeck[sharedDeckId]
+                      : sharedDeck ? sharedDeck[sharedDeckId] : null
                   }
                   deckUpdate={deckUpdate}
                   username={props.username}
@@ -133,7 +133,7 @@ function Deck(props) {
               deck={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                  : sharedDeck[sharedDeckId]
+                  : sharedDeck ? sharedDeck[sharedDeckId] : null
               }
               getDecks={props.getDecks}
               activeDeck={props.activeDeck ? props.activeDeck : sharedDeckId}
@@ -152,7 +152,7 @@ function Deck(props) {
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck].crypt
-                  : sharedDeck[sharedDeckId].crypt
+                  : sharedDeck ? sharedDeck[sharedDeckId].crypt : null
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -168,7 +168,7 @@ function Deck(props) {
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck].library
-                  : sharedDeck[sharedDeckId].library
+                  : sharedDeck ? sharedDeck[sharedDeckId].library : null
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
