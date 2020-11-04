@@ -12,23 +12,16 @@ import DeckShowLibrary from './components/DeckShowLibrary.jsx';
 function Crypt(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
-  useEffect(() => {
-    if (props.isMobile && props.results && props.results.length > 0) {
-      props.setShowCols({
-        result: true,
-      });
-    }
-    if (props.isMobile && !props.results) {
-      props.setShowCols({
-        search: true,
-      });
-    }
-  }, [props.results]);
+  // useEffect(() => {
+  //   if (props.isMobile && props.results && props.results.length > 0) {
+  //     props.setShowSearch(false);
+  //   }
+  // }, [props.results]);
 
   return (
     <Container className="main-container">
       <Row>
-        {props.showCols.deck && (
+        {!props.isMobile && (
           <Col md={12} xl={4} className="px-0">
             {Object.keys(props.decks).length > 0 && (
               <Row>
@@ -60,7 +53,6 @@ function Crypt(props) {
                     cards={props.decks[props.activeDeck].crypt}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}
-                    toggleImage={props.toggleImage}
                     isAuthor={true}
                     isMobile={props.isMobile}
                   />
@@ -71,7 +63,6 @@ function Crypt(props) {
                     cards={props.decks[props.activeDeck].library}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}
-                    toggleImage={props.toggleImage}
                     isAuthor={true}
                     isMobile={props.isMobile}
                   />
@@ -80,7 +71,6 @@ function Crypt(props) {
                 <DeckPreview
                   showImage={props.showImage}
                   setShowImage={props.setShowImage}
-                  toggleImage={props.toggleImage}
                   deck={props.decks[props.activeDeck]}
                   getDecks={props.getDecks}
                   deckCardChange={props.deckCardChange}
@@ -89,13 +79,12 @@ function Crypt(props) {
               ))}
           </Col>
         )}
-        {props.showCols.result && (
+        {!(props.isMobile && props.showSearch) && (
           <Col md={12} xl={5} className="px-0 px-lg-4">
             {props.results != undefined && props.results != null && (
               <ResultCrypt
                 showImage={props.showImage}
                 setShowImage={props.setShowImage}
-                toggleImage={props.toggleImage}
                 deckCardAdd={props.deckCardAdd}
                 cards={props.results}
                 crypt={
@@ -114,20 +103,24 @@ function Crypt(props) {
             )}
             {props.results === null && (
               <AlertMessage className="error-message">
-                <>
-                  <div />
-                  <b>NO CARDS FOUND</b>
-                  <div />
-                </>
+                <b>NO CARDS FOUND</b>
               </AlertMessage>
             )}
           </Col>
         )}
-        {props.showCols.search && (
-          <Col md={12} xl={3} className="px-0">
-            <SearchCryptForm setResults={props.setResults} />
-          </Col>
-        )}
+        {(!props.isMobile || (props.isMobile && props.showSearch)) &&
+         <Col md={12} xl={3} className="px-0">
+           {props.isMobile && props.results === null && (
+             <AlertMessage className="error-message">
+               <b>NO CARDS FOUND</b>
+             </AlertMessage>
+           )}
+           <SearchCryptForm
+             setResults={props.setResults}
+             setShowSearch={props.setShowSearch}
+           />
+         </Col>
+        }
       </Row>
     </Container>
   );

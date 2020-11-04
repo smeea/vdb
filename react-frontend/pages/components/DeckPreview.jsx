@@ -11,14 +11,14 @@ function DeckPreview(props) {
           deckid={props.deck.deckid}
           cards={props.deck.crypt}
           showImage={props.showImage}
-          toggleImage={props.toggleImage}
+          setShowImage={props.setShowImage}
         />
         <DeckPreviewLibrary
           deckCardChange={props.deckCardChange}
           deckid={props.deck.deckid}
           cards={props.deck.library}
           showImage={props.showImage}
-          toggleImage={props.toggleImage}
+          setShowImage={props.setShowImage}
         />
       </>
     );

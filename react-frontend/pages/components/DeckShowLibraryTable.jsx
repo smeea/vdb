@@ -44,7 +44,6 @@ function DeckShowLibraryTable(props) {
             <ResultLibraryName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
-              toggleImage={props.toggleImage}
               id={card[0]['Id']}
               value={card[0]['Name']}
               ban={card[0]['Banned']}

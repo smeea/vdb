@@ -26,7 +26,7 @@ function DeckPreviewCryptTable(props) {
           <td className="name">
             <ResultCryptName
               showImage={props.showImage}
-              toggleImage={props.toggleImage}
+              setShowImage={props.setShowImage}
               id={card.c['Id']}
               value={card.c['Name']}
               adv={card.c['Adv']}

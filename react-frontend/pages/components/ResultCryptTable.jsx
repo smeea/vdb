@@ -47,7 +47,6 @@ function ResultCryptTable(props) {
             <ResultCryptName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
-              toggleImage={props.toggleImage}
               id={card['Id']}
               value={card['Name']}
               adv={card['Adv']}

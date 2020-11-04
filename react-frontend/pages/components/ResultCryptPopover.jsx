@@ -32,38 +32,37 @@ function ResultCryptPopover(props) {
 
   return (
     <>
-      {props.showImage ? (
-        <>
-          <div className="d-flex flex-nowrap justify-content-between align-items-center">
-            <div className="d-flex flex-nowrap align-items-center">
-              <div>
-                <ResultCryptClan value={props.card['Clan']} />
-              </div>
-              <div className="pl-2">
-                <b>{props.card['Name']}</b>
-              </div>
-            </div>
-            <div className="pl-2">
-              <ResultCryptGroup value={props.card['Group']} />
-            </div>
-          </div>
-          <hr />
-          {props.card['Card Text']}
-          <hr />
-          <div className="d-flex align-items-center justify-content-between">
-            <ResultCryptDisciplines value={props.card['Disciplines']} />
-            <div className="popover-sets px-1">{Sets}</div>
-            <ResultCryptCapacity value={props.card['Capacity']} />
-          </div>
-          {Rulings.length > 0 && (
-            <div className="popover-rulings pt-2">
-              <ListGroup>{Rulings}</ListGroup>
-            </div>
-          )}
-        </>
-      ) : (
-        cardImage
-      )}
+      {!props.showImage
+       ? <>
+           <div className="d-flex flex-nowrap justify-content-between align-items-center">
+             <div className="d-flex flex-nowrap align-items-center">
+               <div>
+                 <ResultCryptClan value={props.card['Clan']} />
+               </div>
+               <div className="pl-2">
+                 <b>{props.card['Name']}</b>
+               </div>
+             </div>
+             <div className="pl-2">
+               <ResultCryptGroup value={props.card['Group']} />
+             </div>
+           </div>
+           <hr />
+           {props.card['Card Text']}
+           <hr />
+           <div className="d-flex align-items-center justify-content-between">
+             <ResultCryptDisciplines value={props.card['Disciplines']} />
+             <div className="popover-sets px-1">{Sets}</div>
+             <ResultCryptCapacity value={props.card['Capacity']} />
+           </div>
+           {Rulings.length > 0 && (
+             <div className="popover-rulings pt-2">
+               <ListGroup>{Rulings}</ListGroup>
+             </div>
+           )}
+         </>
+       : cardImage
+      }
     </>
   );
 }

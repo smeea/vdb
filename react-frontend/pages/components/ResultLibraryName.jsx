@@ -26,7 +26,7 @@ function ResultLibraryName(props) {
             <CardPopover card={props.card}>{props.showImage}</CardPopover>
           }
         >
-          <span className="name" onClick={props.toggleImage}>
+          <span className="name" onClick={() => props.setShowImage(!props.showImage)}>
             {props.value} {props.ban && ' [BANNED]'}
           </span>
         </OverlayTrigger>

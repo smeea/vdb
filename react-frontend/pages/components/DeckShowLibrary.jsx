@@ -14,7 +14,6 @@ function DeckLibraryByTypeTable(props) {
       <DeckShowLibraryTable
         showImage={props.showImage}
         setShowImage={props.setShowImage}
-        toggleImage={props.toggleImage}
         deckid={props.deckid}
         deckCardChange={props.deckCardChange}
         cards={props.cards}
@@ -98,7 +97,6 @@ function DeckShowLibrary(props) {
           <DeckLibraryByTypeTable
             showImage={props.showImage}
             setShowImage={props.setShowImage}
-            toggleImage={props.toggleImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
             cards={library[cardtype]}
@@ -121,7 +119,6 @@ function DeckShowLibrary(props) {
           <DeckLibraryByTypeTable
             showImage={props.showImage}
             setShowImage={props.setShowImage}
-            toggleImage={props.toggleImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
             cards={librarySide[cardtype]}

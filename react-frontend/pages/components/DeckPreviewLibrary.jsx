@@ -8,7 +8,7 @@ function DeckLibraryByTypeTable(props) {
       <ResultLibraryType cardtype={props.cardtype} total={props.total} />
       <DeckPreviewLibraryTable
         showImage={props.showImage}
-        toggleImage={props.toggleImage}
+        setShowImage={props.setShowImage}
         deckid={props.deckid}
         deckCardChange={props.deckCardChange}
         cards={props.cards}
@@ -88,7 +88,7 @@ function DeckPreviewLibrary(props) {
         <div key={cardtype}>
           <DeckLibraryByTypeTable
             showImage={props.showImage}
-            toggleImage={props.toggleImage}
+            setShowImage={props.setShowImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
             cards={library[cardtype]}
@@ -109,7 +109,7 @@ function DeckPreviewLibrary(props) {
         <div key={cardtype}>
           <DeckLibraryByTypeTable
             showImage={props.showImage}
-            toggleImage={props.toggleImage}
+            setShowImage={props.setShowImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
             cards={librarySide[cardtype]}

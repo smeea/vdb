@@ -78,7 +78,7 @@ function DeckPreviewCrypt(props) {
         </b>
         <DeckPreviewCryptTable
           showImage={props.showImage}
-          toggleImage={props.toggleImage}
+          setShowImage={props.setShowImage}
           deckid={props.deckid}
           deckCardChange={props.deckCardChange}
           cards={sortedCards}
@@ -90,7 +90,7 @@ function DeckPreviewCrypt(props) {
           <b>Side Crypt</b>
           <DeckPreviewCryptTable
             showImage={props.showImage}
-            toggleImage={props.toggleImage}
+            setShowImage={props.setShowImage}
             deckid={props.deckid}
             deckCardChange={props.deckCardChange}
             cards={sortedCardsSide}

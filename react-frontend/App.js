@@ -15,8 +15,7 @@ function App(props) {
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
 
-  const [showImage, setShowImage] = useState(false);
-  const toggleImage = () => setShowImage(!showImage);
+  const [showImage, setShowImage] = useState(true);
 
   const [addMode, setAddMode] = useState(false);
 
@@ -30,11 +29,8 @@ function App(props) {
   const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 540px)').matches);
   const [isWide, setIsWide] = useState(window.matchMedia('(min-width: 1400px)').matches);
 
-  const [showCols, setShowCols] = useState({
-    deck: true,
-    result: true,
-    search: true,
-  });
+  const [showCryptSearch, setShowCryptSearch] = useState(true);
+  const [showLibrarySearch, setShowLibrarySearch] = useState(true);
 
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
@@ -140,20 +136,15 @@ function App(props) {
     }
   }, [lastDeck]);
 
-  useEffect(() => {
-    isMobile && setShowCols({
-      search: true,
-    });
-  }, [isMobile]);
-
-
   return (
     <div className="App">
       <Router>
         <Navigation
           isMobile={isMobile}
-          showCols={showCols}
-          setShowCols={setShowCols}
+          showCryptSearch={showCryptSearch}
+          setShowCryptSearch={setShowCryptSearch}
+          showLibrarySearch={showLibrarySearch}
+          setShowLibrarySearch={setShowLibrarySearch}
           username={username}
           decks={decks}
           activeDeck={activeDeck}
@@ -190,7 +181,6 @@ function App(props) {
                 deckCardChange={deckCardChange}
                 showImage={showImage}
                 setShowImage={setShowImage}
-                toggleImage={toggleImage}
                 username={username}
                 whoAmI={whoAmI}
               />
@@ -207,7 +197,6 @@ function App(props) {
                   deckCardAdd={deckCardAdd}
                   deckCardChange={deckCardChange}
                   showImage={showImage}
-                  toggleImage={toggleImage}
                   username={username}
                   whoAmI={whoAmI}
                   id={props.match.params.id}
@@ -218,8 +207,8 @@ function App(props) {
               <Crypt
                 isWide={isWide}
                 isMobile={isMobile}
-                showCols={showCols}
-                setShowCols={setShowCols}
+                showSearch={showCryptSearch}
+                setShowSearch={setShowCryptSearch}
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
                 decks={decks}
@@ -228,7 +217,6 @@ function App(props) {
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
                 setShowImage={setShowImage}
-                toggleImage={toggleImage}
                 results={cryptResults}
                 setResults={setCryptResults}
                 addMode={addMode}
@@ -238,8 +226,8 @@ function App(props) {
               <Library
                 isWide={isWide}
                 isMobile={isMobile}
-                showCols={showCols}
-                setShowCols={setShowCols}
+                showSearch={showLibrarySearch}
+                setShowSearch={setShowLibrarySearch}
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
                 decks={decks}
@@ -248,7 +236,6 @@ function App(props) {
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
                 setShowImage={setShowImage}
-                toggleImage={toggleImage}
                 results={libraryResults}
                 setResults={setLibraryResults}
                 addMode={addMode}

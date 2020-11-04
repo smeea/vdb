@@ -98,7 +98,6 @@ function DeckShowCrypt(props) {
         disciplinesSet={disciplinesSet}
         showImage={props.showImage}
         setShowImage={props.setShowImage}
-        toggleImage={props.toggleImage}
         isAuthor={props.isAuthor}
         isMobile={props.isMobile}
       />
@@ -114,7 +113,6 @@ function DeckShowCrypt(props) {
             disciplinesSet={disciplinesSet}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
-            toggleImage={props.toggleImage}
             isAuthor={props.isAuthor}
             isMobile={props.isMobile}
           />

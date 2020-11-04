@@ -156,7 +156,6 @@ function Deck(props) {
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
-              toggleImage={props.toggleImage}
               isAuthor={isAuthor}
               isMobile={props.isMobile}
             />
@@ -173,7 +172,6 @@ function Deck(props) {
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
-              toggleImage={props.toggleImage}
               isAuthor={isAuthor}
               isMobile={props.isMobile}
             />

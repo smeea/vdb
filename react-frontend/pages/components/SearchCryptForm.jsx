@@ -217,6 +217,7 @@ function SearchCryptForm(props) {
       fetch(url, options)
         .then((response) => response.json())
         .then((data) => {
+          props.setShowSearch(false);
           props.setResults(data);
           setSpinnerState(false);
         })

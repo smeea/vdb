@@ -19,14 +19,17 @@ function ResultLibraryModal(props) {
           <Tab eventKey="image" title="Image">
             <ResultLibraryPopover
               card={props.card}
-              showImage={false}
+              showImage={true}
               fullWidth={true}
               handleClose={props.handleClose}
             />
           </Tab>
           <Tab eventKey="text" title="Description">
             <div className="pt-2">
-              <ResultLibraryPopover card={props.card} showImage={true} />
+              <ResultLibraryPopover
+                card={props.card}
+                showImage={false}
+              />
             </div>
           </Tab>
         </Tabs>

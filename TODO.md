@@ -17,8 +17,6 @@
 # MINOR FIX
 * Change tooltips style
 * Button on-success effect - outline-success?
-* addMode hide in mobile in search (show in results)
-* Remember search col
 
 # MOBILE FIX
 

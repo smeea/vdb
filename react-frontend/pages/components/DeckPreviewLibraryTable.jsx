@@ -26,7 +26,7 @@ function DeckPreviewLibraryTable(props) {
           <td className="name">
             <ResultLibraryName
               showImage={props.showImage}
-              toggleImage={props.toggleImage}
+              setShowImage={props.setShowImage}
               id={card[0]['Id']}
               value={card[0]['Name']}
               ban={card[0]['Banned']}
