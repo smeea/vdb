@@ -4,7 +4,7 @@ function ResultCryptClan(props) {
   const imgClass = 'clan-image-results';
   const imgSrc = `${
     process.env.ROOT_URL
-  }images/clans/${props.value.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.gif`;
+  }images/clans/${props.value.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
 
   return (
     <span className="clan">

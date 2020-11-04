@@ -23,14 +23,14 @@ function ResultCryptDisciplines(props) {
             process.env.ROOT_URL
           }images/disciplines/${d
             .toLowerCase()
-            .replace(/[\s,:!?'.\-]/g, '')}.gif`;
+            .replace(/[\s,:!?'.\-]/g, '')}.svg`;
           imgClass = 'discipline-base-image-results';
         } else if (props.value[d] == 2) {
           imgSrc = `${
             process.env.ROOT_URL
           }images/disciplines/${d
             .toLowerCase()
-            .replace(/[\s,:!?'.\-]/g, '')}sup.gif`;
+            .replace(/[\s,:!?'.\-]/g, '')}sup.svg`;
           imgClass = 'discipline-superior-image-results';
         }
         return (
@@ -54,14 +54,14 @@ function ResultCryptDisciplines(props) {
           process.env.ROOT_URL
         }images/disciplines/${d
           .toLowerCase()
-          .replace(/[\s,:!?'.\-]/g, '')}.gif`;
+          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
         imgClass = 'discipline-base-image-results';
       } else if (props.value[d] == 2) {
         imgSrc = `${
           process.env.ROOT_URL
         }images/disciplines/${d
           .toLowerCase()
-          .replace(/[\s,:!?'.\-]/g, '')}sup.gif`;
+          .replace(/[\s,:!?'.\-]/g, '')}sup.svg`;
         imgClass = 'discipline-superior-image-results';
       }
       return (

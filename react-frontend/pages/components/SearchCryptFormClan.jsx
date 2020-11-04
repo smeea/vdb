@@ -76,7 +76,7 @@ function SearchCryptFormClan(props) {
     } else {
       const imgSrc = `${
         process.env.ROOT_URL
-      }images/clans/${i.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.gif`;
+      }images/clans/${i.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
       options.push({
         value: i.toLowerCase(),
         name: 'clan',

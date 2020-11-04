@@ -65,7 +65,7 @@ function SearchLibraryFormDiscipline(props) {
     } else {
       const imgSrc = `${
         process.env.ROOT_URL
-      }images/disciplines/${i.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.gif`;
+      }images/disciplines/${i.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
       options.push({
         value: i.toLowerCase(),
         name: 'discipline',

@@ -1,6 +1,7 @@
 import React from 'react';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
+import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
@@ -60,6 +61,7 @@ function DeckShowLibraryTable(props) {
           <td className="discipline">{DisciplineOrClan}</td>
           <td className="burn">
             <ResultLibraryBurn value={card[0]['Burn Option']} />
+            <ResultLibraryTrifle value={card[0]['Card Text']} />
           </td>
         </tr>
       </React.Fragment>

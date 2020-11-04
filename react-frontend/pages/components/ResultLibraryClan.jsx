@@ -10,7 +10,7 @@ function ResultLibraryClan(props) {
     clanImages = clans.map((clan, index) => {
       const imgSrc = `${
         process.env.ROOT_URL
-      }images/clans/${clan.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.gif`;
+      }images/clans/${clan.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
 
       if (items > 1) {
         items -= 1;
@@ -33,7 +33,7 @@ function ResultLibraryClan(props) {
       process.env.ROOT_URL
     }images/clans/${props.value
       .toLowerCase()
-      .replace(/[\s,:!?'.\-]/g, '')}.gif`;
+      .replace(/[\s,:!?'.\-]/g, '')}.svg`;
     clanImages = <img className={imgClass} src={imgSrc} title={props.value} />;
   }
 

@@ -36,10 +36,10 @@ function SearchCryptFormDisciplines(props) {
     const disciplineState = `discipline-container state${props.value[i]}`;
     const imgSrcBase = `${
       process.env.ROOT_URL
-    }images/disciplines/${i.toLowerCase()}.gif`;
+    }images/disciplines/${i.toLowerCase()}.svg`;
     const imgSrcSup = `${
       process.env.ROOT_URL
-    }images/disciplines/${i.toLowerCase()}sup.gif`;
+    }images/disciplines/${i.toLowerCase()}sup.svg`;
     return (
       <div key={index} className={disciplineState}>
         <label
