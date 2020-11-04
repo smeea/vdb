@@ -1,5 +1,5 @@
 import React from 'react';
-import { OverlayTrigger, Tooltip, Popover } from 'react-bootstrap';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
 
 function OverlayTooltip(props) {
   return (

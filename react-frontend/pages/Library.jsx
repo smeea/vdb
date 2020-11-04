@@ -38,8 +38,8 @@ function Library(props) {
               </Row>
             )}
             {props.activeDeck &&
-              (props.isWide ? (
-                <>
+             (props.isWide
+              ? <>
                   <DeckShowCrypt
                     deckCardAdd={props.deckCardAdd}
                     deckCardChange={props.deckCardChange}
@@ -61,8 +61,7 @@ function Library(props) {
                     isMobile={props.isMobile}
                   />
                 </>
-              ) : (
-                <DeckPreview
+              : <DeckPreview
                   showImage={props.showImage}
                   setShowImage={props.setShowImage}
                   deck={props.decks[props.activeDeck]}
@@ -70,7 +69,8 @@ function Library(props) {
                   deckCardChange={props.deckCardChange}
                   isMobile={props.isMobile}
                 />
-              ))}
+             )
+            }
           </Col>
         )}
         <Col md={12} xl={5}

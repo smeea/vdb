@@ -12,12 +12,6 @@ import DeckShowLibrary from './components/DeckShowLibrary.jsx';
 function Crypt(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
-  // useEffect(() => {
-  //   if (props.isMobile && props.results && props.results.length > 0) {
-  //     props.setShowSearch(false);
-  //   }
-  // }, [props.results]);
-
   return (
     <Container className="main-container">
       <Row>
@@ -44,39 +38,39 @@ function Crypt(props) {
               </Row>
             )}
             {props.activeDeck &&
-             (props.isWide ? (
-               <>
-                 <DeckShowCrypt
-                   deckCardAdd={props.deckCardAdd}
-                   deckCardChange={props.deckCardChange}
-                   deckid={props.activeDeck}
-                   cards={props.decks[props.activeDeck].crypt}
-                   showImage={props.showImage}
-                   setShowImage={props.setShowImage}
-                   isAuthor={true}
-                   isMobile={props.isMobile}
-                 />
-                 <DeckShowLibrary
-                   deckCardAdd={props.deckCardAdd}
-                   deckCardChange={props.deckCardChange}
-                   deckid={props.activeDeck}
-                   cards={props.decks[props.activeDeck].library}
-                   showImage={props.showImage}
-                   setShowImage={props.setShowImage}
-                   isAuthor={true}
-                   isMobile={props.isMobile}
-                 />
-               </>
-             ) : (
-               <DeckPreview
-                 showImage={props.showImage}
-                 setShowImage={props.setShowImage}
-                 deck={props.decks[props.activeDeck]}
-                 getDecks={props.getDecks}
-                 deckCardChange={props.deckCardChange}
-                 isMobile={props.isMobile}
-               />
-             ))}
+             (props.isWide
+              ? <>
+                  <DeckShowCrypt
+                    deckCardAdd={props.deckCardAdd}
+                    deckCardChange={props.deckCardChange}
+                    deckid={props.activeDeck}
+                    cards={props.decks[props.activeDeck].crypt}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                    isAuthor={true}
+                    isMobile={props.isMobile}
+                  />
+                  <DeckShowLibrary
+                    deckCardAdd={props.deckCardAdd}
+                    deckCardChange={props.deckCardChange}
+                    deckid={props.activeDeck}
+                    cards={props.decks[props.activeDeck].library}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                    isAuthor={true}
+                    isMobile={props.isMobile}
+                  />
+                </>
+              : <DeckPreview
+                  showImage={props.showImage}
+                  setShowImage={props.setShowImage}
+                  deck={props.decks[props.activeDeck]}
+                  getDecks={props.getDecks}
+                  deckCardChange={props.deckCardChange}
+                  isMobile={props.isMobile}
+                />
+             )
+            }
           </Col>
         )}
         <Col md={12} xl={5}

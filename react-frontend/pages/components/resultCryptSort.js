@@ -23,25 +23,15 @@ function resultCryptSort(cards, sortMethod) {
     }
   };
 
-  const byGroup = (a, b) => {
-    if (a['Group'] > b['Group']) {
-      return 1;
-    } else {
-      return -1;
-    }
-  };
-
   if (cards) {
     if (sortMethod == 'Capacity') {
       return cards.sort(byName).sort(byCapacity);
     } else if (sortMethod == 'Clan') {
       return cards.sort(byName).sort(byClan);
-    } else if (sortMethod == 'Group') {
-      return cards.sort(byName).sort(byGroup);
     } else if (sortMethod == 'Name') {
       return cards.sort(byName);
     } else if (sortMethod == 'Default') {
-      return cards.sort(byName).sort(byClan).sort(byGroup).sort(byCapacity);
+      return cards.sort(byName).sort(byClan).sort(byCapacity);
     } else {
       return cards;
     }

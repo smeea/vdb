@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal, Tabs, Tab } from 'react-bootstrap';
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 
