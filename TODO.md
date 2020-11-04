@@ -15,7 +15,6 @@
 * Hide columns via CSS
 
 # MINOR FIX
-* Change tooltips style
 * Button on-success effect - outline-success?
 
 # MOBILE FIX

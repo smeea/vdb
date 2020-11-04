@@ -12,104 +12,11 @@ import SearchCryptFormTraits from './SearchCryptFormTraits.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
 
 function SearchCryptForm(props) {
-  const defaults = {
-    text: '',
-    disciplines: {
-      Abombwe: 0,
-      Animalism: 0,
-      Auspex: 0,
-      Celerity: 0,
-      Chimerstry: 0,
-      Daimoinon: 0,
-      Dementation: 0,
-      Dominate: 0,
-      Fortitude: 0,
-      Melpominee: 0,
-      Mytherceria: 0,
-      Necromancy: 0,
-      Obeah: 0,
-      Obfuscate: 0,
-      Obtenebration: 0,
-      Potence: 0,
-      Presence: 0,
-      Protean: 0,
-      Quietus: 0,
-      Sanguinus: 0,
-      Serpentis: 0,
-      Spiritus: 0,
-      Temporis: 0,
-      Thanatosis: 0,
-      Thaumaturgy: 0,
-      Valeren: 0,
-      Vicissitude: 0,
-      Visceratika: 0,
-    },
-    virtues: {
-      Defense: 0,
-      Innocence: 0,
-      Judgment: 0,
-      Martyrdom: 0,
-      Redemption: 0,
-      Vengeance: 0,
-      Vision: 0,
-    },
-    capacity: 'any',
-    capacitymoreless: 'le',
-    clan: 'any',
-    sect: 'any',
-    votes: 'any',
-    titles: {
-      primogen: false,
-      prince: false,
-      justicar: false,
-      innercircle: false,
-      baron: false,
-      '1 votes': false,
-      '2 votes': false,
-      bishop: false,
-      archbishop: false,
-      priscus: false,
-      cardinal: false,
-      regent: false,
-      magaji: false,
-    },
-    group: {
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-      5: false,
-      6: false,
-    },
-    traits: {
-      '1 intercept': false,
-      '1 stealth': false,
-      '1 bleed': false,
-      '2 bleed': false,
-      '1 strength': false,
-      '1 strength': false,
-      'additional strike': false,
-      'optional maneuver': false,
-      'optional press': false,
-      prevent: false,
-      aggravated: false,
-      'enter combat': false,
-      'black hand': false,
-      seraph: false,
-      infernal: false,
-      'red list': false,
-      flight: false,
-    },
-    set: 'any',
-  };
-
-  const [formState, setFormState] = useState(defaults);
-
   const [spinnerState, setSpinnerState] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormState((prevState) => ({
+    props.setFormState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -117,7 +24,7 @@ function SearchCryptForm(props) {
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
-    setFormState((prevState) => ({
+    props.setFormState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -126,9 +33,9 @@ function SearchCryptForm(props) {
   const handleMultiChange = (event) => {
     const { id, name, value } = event.target;
     const i = id || value;
-    const newState = formState[name];
+    const newState = props.formState[name];
     newState[i] = !newState[i];
-    setFormState((prevState) => ({
+    props.setFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
@@ -136,13 +43,13 @@ function SearchCryptForm(props) {
 
   const handleDisciplinesChange = (event) => {
     const { id, name } = event.target;
-    const newState = formState[name];
+    const newState = props.formState[name];
     if (newState[id] < 2) {
       newState[id] += 1;
     } else {
       newState[id] = 0;
     }
-    setFormState((prevState) => ({
+    props.setFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
@@ -150,20 +57,20 @@ function SearchCryptForm(props) {
 
   const handleVirtuesChange = (event) => {
     const { id, name } = event.target;
-    const newState = formState[name];
+    const newState = props.formState[name];
     if (newState[id] == 0) {
       newState[id] = 1;
     } else {
       newState[id] = 0;
     }
-    setFormState((prevState) => ({
+    props.setFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
   };
 
   const handleClearButton = () => {
-    setFormState(defaults);
+    props.setFormState(props.defaults);
     props.setResults([]);
   };
 
@@ -172,7 +79,7 @@ function SearchCryptForm(props) {
 
     const url = `${process.env.API_URL}search/crypt`;
 
-    const input = JSON.parse(JSON.stringify(formState));
+    const input = JSON.parse(JSON.stringify(props.formState));
     Object.keys(input.disciplines).forEach(
       (k) => input.disciplines[k] == 0 && delete input.disciplines[k]
     );
@@ -232,49 +139,49 @@ function SearchCryptForm(props) {
   return (
     <form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
-        value={formState.text}
+        value={props.formState.text}
         onChange={handleChange}
         handleClearButton={handleClearButton}
         spinner={spinnerState}
       />
       <SearchCryptFormDisciplines
-        value={formState.disciplines}
+        value={props.formState.disciplines}
         onChange={handleDisciplinesChange}
       />
       <SearchCryptFormVirtues
-        value={formState.virtues}
+        value={props.formState.virtues}
         onChange={handleVirtuesChange}
       />
       <SearchCryptFormCapacity
-        value={formState.capacity}
-        moreless={formState.capacitymoreless}
+        value={props.formState.capacity}
+        moreless={props.formState.capacitymoreless}
         onChange={handleSelectChange}
       />
       <SearchCryptFormClan
-        value={formState.clan}
+        value={props.formState.clan}
         onChange={handleSelectChange}
       />
       <SearchCryptFormSect
-        value={formState.sect}
+        value={props.formState.sect}
         onChange={handleSelectChange}
       />
       <SearchCryptFormVotes
-        value={formState.votes}
+        value={props.formState.votes}
         onChange={handleSelectChange}
       />
       <SearchCryptFormTitles
-        value={formState.titles}
+        value={props.formState.titles}
         onChange={handleMultiChange}
       />
       <SearchCryptFormGroup
-        value={formState.group}
+        value={props.formState.group}
         onChange={handleMultiChange}
       />
       <SearchCryptFormTraits
-        value={formState.traits}
+        value={props.formState.traits}
         onChange={handleMultiChange}
       />
-      <SearchFormSet value={formState.set} onChange={handleSelectChange} />
+      <SearchFormSet value={props.formState.set} onChange={handleSelectChange} />
     </form>
   );
 }

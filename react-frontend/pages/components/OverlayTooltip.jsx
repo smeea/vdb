@@ -1,12 +1,12 @@
 import React from 'react';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip, Popover } from 'react-bootstrap';
 
 function OverlayTooltip(props) {
   return (
     <OverlayTrigger
       placement="right"
       delay={{ show: 150, hide: 300 }}
-      overlay={<Tooltip id="name-tooltip">{props.text}</Tooltip>}
+      overlay={<Popover content>{props.text}</Popover>}
     >
       {props.children}
     </OverlayTrigger>

@@ -118,6 +118,9 @@ function Crypt(props) {
            <SearchCryptForm
              setResults={props.setResults}
              setShowSearch={props.setShowSearch}
+             formState={props.formState}
+             setFormState={props.setFormState}
+             defaults={props.defaults}
            />
          </Col>
         }

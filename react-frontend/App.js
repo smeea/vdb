@@ -1,6 +1,8 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Navigation from './pages/Navigation.jsx';
+import cryptDefaults from './pages/components/cryptDefaults.js';
+import libraryDefaults from './pages/components/libraryDefaults.js';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 
@@ -11,6 +13,9 @@ const Deck = lazy(() => import('./pages/Deck.jsx'));
 const Account = lazy(() => import('./pages/Account.jsx'));
 
 function App(props) {
+  const [cryptFormState, setCryptFormState] = useState(cryptDefaults);
+  const [libraryFormState, setLibraryFormState] = useState(libraryDefaults);
+
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
@@ -26,8 +31,8 @@ function App(props) {
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
 
-  const [isMobile, setIsMobile] = useState(window.matchMedia('(max-width: 540px)').matches);
-  const [isWide, setIsWide] = useState(window.matchMedia('(min-width: 1400px)').matches);
+  const isMobile = window.matchMedia('(max-width: 540px)').matches;
+  const isWide = window.matchMedia('(min-width: 1400px)').matches;
 
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
@@ -220,6 +225,9 @@ function App(props) {
                 results={cryptResults}
                 setResults={setCryptResults}
                 addMode={addMode}
+                formState={cryptFormState}
+                setFormState={setCryptFormState}
+                defaults={cryptDefaults}
               />
             </Route>
             <Route path="/library">
@@ -239,6 +247,9 @@ function App(props) {
                 results={libraryResults}
                 setResults={setLibraryResults}
                 addMode={addMode}
+                formState={libraryFormState}
+                setFormState={setLibraryFormState}
+                defaults={libraryDefaults}
               />
             </Route>
           </Suspense>

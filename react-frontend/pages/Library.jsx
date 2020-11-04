@@ -12,12 +12,6 @@ import DeckShowLibrary from './components/DeckShowLibrary.jsx';
 function Library(props) {
   const [sortMethod, setSortMethod] = useState('Default');
 
-  // useEffect(() => {
-  //   if (props.isMobile && props.results && props.results.length > 0) {
-  //     props.setShowSearch(false);
-  //   }
-  // }, [props.results]);
-
   return (
     <Container className="main-container">
       <Row>
@@ -118,6 +112,9 @@ function Library(props) {
            <SearchLibraryForm
              setResults={props.setResults}
              setShowSearch={props.setShowSearch}
+             formState={props.formState}
+             setFormState={props.setFormState}
+             defaults={props.defaults}
            />
          </Col>
         }
