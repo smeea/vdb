@@ -80,7 +80,7 @@ function Crypt(props) {
           </Col>
         )}
         {!(props.isMobile && props.showSearch) && (
-          <Col md={12} xl={5} className="px-0 px-lg-4">
+          <Col md={12} xl={5} className="results-col px-0 px-lg-4">
             {props.results != undefined && props.results != null && (
               <ResultCrypt
                 showImage={props.showImage}
@@ -109,7 +109,7 @@ function Crypt(props) {
           </Col>
         )}
         {(!props.isMobile || (props.isMobile && props.showSearch)) &&
-         <Col md={12} xl={3} className="px-0">
+         <Col md={12} xl={3} className="search-col px-0">
            {props.isMobile && props.results === null && (
              <AlertMessage className="error-message">
                <b>NO CARDS FOUND</b>
@@ -120,7 +120,6 @@ function Crypt(props) {
              setShowSearch={props.setShowSearch}
              formState={props.formState}
              setFormState={props.setFormState}
-             defaults={props.defaults}
            />
          </Col>
         }

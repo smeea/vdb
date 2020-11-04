@@ -114,7 +114,6 @@ function Library(props) {
              setShowSearch={props.setShowSearch}
              formState={props.formState}
              setFormState={props.setFormState}
-             defaults={props.defaults}
            />
          </Col>
         }

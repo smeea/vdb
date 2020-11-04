@@ -227,7 +227,6 @@ function App(props) {
                 addMode={addMode}
                 formState={cryptFormState}
                 setFormState={setCryptFormState}
-                defaults={cryptDefaults}
               />
             </Route>
             <Route path="/library">
@@ -249,7 +248,6 @@ function App(props) {
                 addMode={addMode}
                 formState={libraryFormState}
                 setFormState={setLibraryFormState}
-                defaults={libraryDefaults}
               />
             </Route>
           </Suspense>

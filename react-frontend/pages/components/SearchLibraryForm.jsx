@@ -11,6 +11,38 @@ import SearchLibraryFormPoolCost from './SearchLibraryFormPoolCost.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
 
 function SearchLibraryForm(props) {
+  const defaults = {
+    text: '',
+    type: 'any',
+    discipline: 'any',
+    blood: 'any',
+    bloodmoreless: 'le',
+    pool: 'any',
+    poolmoreless: 'le',
+    clan: 'any',
+    sect: 'any',
+    title: 'any',
+    traits: {
+      intercept: false,
+      stealth: false,
+      bleed: false,
+      strength: false,
+      dodge: false,
+      'optional maneuver': false,
+      'additional strike': false,
+      aggravated: false,
+      prevent: false,
+      'optional press': false,
+      'combat ends': false,
+      'bounce bleed': false,
+      'black hand': false,
+      seraph: false,
+      anarch: false,
+      infernal: false,
+    },
+    set: 'any',
+  };
+
   const [spinnerState, setSpinnerState] = useState(false);
 
   const handleChange = (event) => {
@@ -40,7 +72,7 @@ function SearchLibraryForm(props) {
   };
 
   const handleClearButton = () => {
-    props.setFormState(props.defaults);
+    props.setFormState(defaults);
     props.setResults([]);
   };
 
