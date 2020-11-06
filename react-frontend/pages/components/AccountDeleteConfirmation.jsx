@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, InputGroup, Modal, Button } from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Modal, Button } from 'react-bootstrap';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 
@@ -52,6 +52,11 @@ function AccountDeleteConfirmation(props) {
     !password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
+  const handleSubmitButton = event => {
+    event.preventDefault();
+    deleteAccount();
+  };
+
   return (
     <>
       <Modal
@@ -79,6 +84,7 @@ function AccountDeleteConfirmation(props) {
           via URL anymore.
         </Modal.Body>
         <Modal.Footer>
+    <Form className="my-0" onSubmit={handleSubmitButton}>
           <InputGroup className="mb-2">
             <FormControl
               placeholder="Enter password"
@@ -86,6 +92,7 @@ function AccountDeleteConfirmation(props) {
               name="password"
               value={password}
               onChange={handleChange}
+              autoFocus={true}
             />
             <InputGroup.Append>
               <Button
@@ -95,7 +102,10 @@ function AccountDeleteConfirmation(props) {
               >
                 {hidePassword ? <EyeFill /> : <EyeSlashFill />}
               </Button>
-              <Button variant="outline-danger" onClick={deleteAccount}>
+              <Button
+                variant="outline-danger"
+                type="submit"
+              >
                 Delete
               </Button>
               <Button
@@ -106,6 +116,7 @@ function AccountDeleteConfirmation(props) {
               </Button>
             </InputGroup.Append>
           </InputGroup>
+    </Form>
           {passwordError && (
             <div>
               <span className="login-error">Wrong password</span>

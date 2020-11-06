@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, InputGroup, Button } from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import PersonPlusFill from '../../assets/images/icons/person-plus-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
@@ -67,12 +67,18 @@ function AccountRegister(props) {
     !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
+  const handleSubmitButton = event => {
+    event.preventDefault();
+    registerUser();
+  };
+
   return (
     <>
       <h6 className="d-flex align-items-center">
         <PersonPlusFill />
         <span className="ml-2">Create account</span>
       </h6>
+    <Form onSubmit={handleSubmitButton}>
       <InputGroup className="mb-2">
         <FormControl
           placeholder="New Username"
@@ -96,11 +102,15 @@ function AccountRegister(props) {
           >
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>
-          <Button variant="outline-secondary" onClick={registerUser}>
+          <Button
+            variant="outline-secondary"
+            type="submit"
+          >
             <Check2 />
           </Button>
         </InputGroup.Append>
       </InputGroup>
+    </Form>
       {emptyUsername && (
         <div>
           <span className="login-error">Enter username</span>

@@ -45,7 +45,13 @@ function DeckShowButtons(props) {
       }
       {props.deck &&
        <div>
-         <DeckDraw crypt={props.deck.crypt} library={props.deck.library} />
+         <DeckDraw
+           crypt={props.deck.crypt}
+           library={props.deck.library}
+           isMobile={props.isMobile}
+           showImage={props.showImage}
+           setShowImage={props.setShowImage}
+         />
        </div>
       }
     </>

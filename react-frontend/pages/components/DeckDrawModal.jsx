@@ -65,6 +65,9 @@ function DeckDrawModal(props) {
                     cards={props.drawedCrypt}
                     showSort={false}
                     showTotal={false}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                    isMobile={props.isMobile}
                   />
                 </>
               )}
@@ -102,6 +105,9 @@ function DeckDrawModal(props) {
                     cards={props.drawedLibrary}
                     showSort={false}
                     showTotal={false}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                    isMobile={props.isMobile}
                   />
                 </>
               )}

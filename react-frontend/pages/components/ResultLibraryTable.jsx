@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
@@ -7,6 +7,7 @@ import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
+import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function ResultLibraryTable(props) {
   let resultTrClass = 'library-result-even';
@@ -26,9 +27,14 @@ function ResultLibraryTable(props) {
       });
     }
 
+    const [showModal, setShowModal] = useState(undefined);
+
     return (
       <React.Fragment key={index}>
-        <tr className={resultTrClass}>
+        <tr
+          className={resultTrClass}
+          onClick={() => setShowModal(true)}
+        >
           {props.addMode && (
             <td className="quantity">
               <ResultAddCard
@@ -69,6 +75,15 @@ function ResultLibraryTable(props) {
             <ResultLibraryTrifle value={card['Card Text']} />
           </td>
         </tr>
+        {props.isMobile && showModal &&
+         <ResultLibraryModal
+           show={showModal}
+           card={card}
+           showImage={props.showImage}
+           setShowImage={props.setShowImage}
+           handleClose={() => setShowModal(false)}
+         />
+        }
       </React.Fragment>
     );
   });

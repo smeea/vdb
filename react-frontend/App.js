@@ -167,6 +167,7 @@ function App(props) {
             <Route path="/about" exact component={() => <About />} />
             <Route path="/account">
               <Account
+                isMobile={isMobile}
                 username={username}
                 publicName={publicName}
                 email={email}

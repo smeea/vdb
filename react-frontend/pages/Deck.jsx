@@ -138,6 +138,8 @@ function Deck(props) {
               getDecks={props.getDecks}
               activeDeck={props.activeDeck ? props.activeDeck : sharedDeckId}
               setActiveDeck={props.setActiveDeck}
+              showImage={props.showImage}
+              setShowImage={props.setShowImage}
             />
           )}
         </Col>

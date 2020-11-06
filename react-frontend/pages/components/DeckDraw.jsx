@@ -120,20 +120,23 @@ function DeckDraw(props) {
       <Button variant="outline-secondary" onClick={handleOpenDraw} block>
         <Dice3 /> Draw Cards
       </Button>
-      {showDrawModal && (
-        <DeckDrawModal
-          drawedCrypt={drawedCrypt}
-          drawedLibrary={drawedLibrary}
-          handleReDrawCrypt={handleReDrawCrypt}
-          handleReDrawLibrary={handleReDrawLibrary}
-          handleDrawOneCrypt={handleDrawCryptOne}
-          handleDrawOneLibrary={handleDrawLibraryOne}
-          restCrypt={restCrypt}
-          restLibrary={restLibrary}
-          show={showDrawModal}
-          handleClose={handleCloseDrawModal}
-        />
-      )}
+      {showDrawModal &&
+       <DeckDrawModal
+         drawedCrypt={drawedCrypt}
+         drawedLibrary={drawedLibrary}
+         handleReDrawCrypt={handleReDrawCrypt}
+         handleReDrawLibrary={handleReDrawLibrary}
+         handleDrawOneCrypt={handleDrawCryptOne}
+         handleDrawOneLibrary={handleDrawLibraryOne}
+         restCrypt={restCrypt}
+         restLibrary={restLibrary}
+         show={showDrawModal}
+         handleClose={handleCloseDrawModal}
+         showImage={props.showImage}
+         setShowImage={props.setShowImage}
+         isMobile={props.isMobile}
+       />
+      }
     </>
   );
 }

@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-import ResultCryptModal from './ResultCryptModal.jsx';
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 
 function ResultCryptName(props) {
-  const [showModal, setShowModal] = useState(undefined);
-
   const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
     return (
       <Popover ref={ref} {...props}>
@@ -46,7 +43,7 @@ function ResultCryptName(props) {
         </OverlayTrigger>
       ) : (
         <>
-          <span className="name" onClick={() => setShowModal(true)}>
+          <span className="name">
             {props.value}
             {props.adv && (
               <span className="pl-1">
@@ -55,15 +52,6 @@ function ResultCryptName(props) {
             )}
             {props.ban && ' [BANNED]'}
           </span>
-          {showModal && (
-            <ResultCryptModal
-              show={showModal}
-              card={props.card}
-              showImage={props.showImage}
-              setShowImage={props.setShowImage}
-              handleClose={() => setShowModal(false)}
-            />
-          )}
         </>
       )}
     </>

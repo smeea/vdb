@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
+import ResultCryptModal from './ResultCryptModal.jsx';
 
 function ResultCryptTable(props) {
   let resultTrClass = 'crypt-result-even';
@@ -25,9 +26,14 @@ function ResultCryptTable(props) {
       });
     }
 
+    const [showModal, setShowModal] = useState(undefined);
+
     return (
       <React.Fragment key={index}>
-        <tr className={resultTrClass}>
+        <tr
+          className={resultTrClass}
+          onClick={() => setShowModal(true)}
+        >
           {props.addMode && (
             <td className="quantity">
               <ResultAddCard
@@ -62,6 +68,15 @@ function ResultCryptTable(props) {
             <ResultCryptGroup value={card['Group']} />
           </td>
         </tr>
+        {props.isMobile && showModal &&
+         <ResultCryptModal
+           show={showModal}
+           card={card}
+           showImage={props.showImage}
+           setShowImage={props.setShowImage}
+           handleClose={() => setShowModal(false)}
+         />
+        }
       </React.Fragment>
     );
   });

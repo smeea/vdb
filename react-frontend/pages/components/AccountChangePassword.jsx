@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormControl, InputGroup, Button } from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import LockFill from '../../assets/images/icons/lock-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
@@ -78,47 +78,57 @@ function AccountChangePassword(props) {
     !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
+  const handleSubmitButton = event => {
+    event.preventDefault();
+    changePassword();
+  };
+
   return (
     <>
       <h6 className="d-flex align-items-center">
         <LockFill />
         <span className="ml-2">Change password</span>
       </h6>
-      <InputGroup className="mb-2">
-        <FormControl
-          placeholder="Old password"
-          type={hidePassword ? 'password' : 'text'}
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-        />
-        <FormControl
-          placeholder="New password"
-          type={hidePassword ? 'password' : 'text'}
-          name="newPassword"
-          value={state.newPassword}
-          onChange={handleChange}
-        />
-        <FormControl
-          placeholder="Confirm password"
-          type={hidePassword ? 'password' : 'text'}
-          name="confirmPassword"
-          value={state.confirmPassword}
-          onChange={handleChange}
-        />
-        <InputGroup.Append>
-          <Button
-            tabIndex="-1"
-            variant="outline-secondary"
-            onClick={() => setHidePassword(!hidePassword)}
-          >
-            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-          </Button>
-          <Button variant="outline-secondary" onClick={changePassword}>
-            <Check2 size={20} />
-          </Button>
-        </InputGroup.Append>
-      </InputGroup>
+      <Form className="my-0" onSubmit={handleSubmitButton}>
+        <InputGroup className="mb-2">
+          <FormControl
+            placeholder="Old password"
+            type={hidePassword ? 'password' : 'text'}
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+          />
+          <FormControl
+            placeholder="New password"
+            type={hidePassword ? 'password' : 'text'}
+            name="newPassword"
+            value={state.newPassword}
+            onChange={handleChange}
+          />
+          <FormControl
+            placeholder="Confirm password"
+            type={hidePassword ? 'password' : 'text'}
+            name="confirmPassword"
+            value={state.confirmPassword}
+            onChange={handleChange}
+          />
+          <InputGroup.Append>
+            <Button
+              tabIndex="-1"
+              variant="outline-secondary"
+              onClick={() => setHidePassword(!hidePassword)}
+            >
+              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+            </Button>
+            <Button
+              variant="outline-secondary"
+              type="submit"
+            >
+              <Check2 size={20} />
+            </Button>
+          </InputGroup.Append>
+        </InputGroup>
+      </Form>
       {passwordConfirmError && (
         <div>
           <span className="login-error">Confirm new password</span>

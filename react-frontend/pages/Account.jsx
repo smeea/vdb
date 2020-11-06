@@ -29,6 +29,7 @@ function Account(props) {
                 <AccountChangeName
                   setPublicName={props.setPublicName}
                   publicName={props.publicName}
+                  isMobile={props.isMobile}
                 />
               </div>
               <div className="pb-2 pt-2">
@@ -38,6 +39,7 @@ function Account(props) {
                 <AccountChangeEmail
                   setEmail={props.setEmail}
                   email={props.email}
+                  isMobile={props.isMobile}
                 />
               </div>
               <div className="pb-2 pt-2">

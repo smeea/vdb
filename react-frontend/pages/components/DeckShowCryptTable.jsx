@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
+import ResultCryptModal from './ResultCryptModal.jsx';
 
 function DeckShowCryptTable(props) {
   let resultTrClass;
@@ -16,9 +17,14 @@ function DeckShowCryptTable(props) {
       resultTrClass = 'crypt-result-odd';
     }
 
+    const [showModal, setShowModal] = useState(undefined);
+
     return (
       <React.Fragment key={index}>
-        <tr className={resultTrClass}>
+        <tr
+          className={resultTrClass}
+          onClick={() => setShowModal(true)}
+        >
           <td className="quantity">
             {props.isAuthor ? (
               <DeckCardQuantity
@@ -59,6 +65,15 @@ function DeckShowCryptTable(props) {
             <ResultCryptGroup value={card.c['Group']} />
           </td>
         </tr>
+        {props.isMobile && showModal &&
+         <ResultCryptModal
+           show={showModal}
+           card={card.c}
+           showImage={props.showImage}
+           setShowImage={props.setShowImage}
+           handleClose={() => setShowModal(false)}
+         />
+        }
       </React.Fragment>
     );
   });

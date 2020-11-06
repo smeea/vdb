@@ -272,7 +272,10 @@ function SearchCryptForm(props) {
         value={props.formState.traits}
         onChange={handleMultiChange}
       />
-      <SearchFormSet value={props.formState.set} onChange={handleSelectChange} />
+      <SearchFormSet
+        value={props.formState.set}
+        onChange={handleSelectChange}
+      />
     </form>
   );
 }

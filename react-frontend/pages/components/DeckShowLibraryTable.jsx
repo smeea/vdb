@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
@@ -6,6 +6,7 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
+import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function DeckShowLibraryTable(props) {
   let resultTrClass = 'library-result-even';
@@ -26,9 +27,14 @@ function DeckShowLibraryTable(props) {
       );
     }
 
+    const [showModal, setShowModal] = useState(undefined);
+
     return (
       <React.Fragment key={index}>
-        <tr className={resultTrClass}>
+        <tr
+          className={resultTrClass}
+          onClick={() => setShowModal(true)}
+        >
           <td className="quantity">
             {props.isAuthor ? (
               <DeckCardQuantity
@@ -64,6 +70,15 @@ function DeckShowLibraryTable(props) {
             <ResultLibraryTrifle value={card[0]['Card Text']} />
           </td>
         </tr>
+        {props.isMobile && showModal &&
+         <ResultLibraryModal
+           show={showModal}
+           card={card[0]}
+           showImage={props.showImage}
+           setShowImage={props.setShowImage}
+           handleClose={() => setShowModal(false)}
+         />
+        }
       </React.Fragment>
     );
   });

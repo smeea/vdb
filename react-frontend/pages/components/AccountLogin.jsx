@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import {
+  Form,
   FormControl,
   InputGroup,
   Tooltip,
@@ -83,41 +84,53 @@ function AccountLogin(props) {
     !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
+  const handleSubmitButton = event => {
+    event.preventDefault();
+    loginUser();
+  };
+
   return (
     <>
       <h6 className="d-flex align-items-center">
         <DoorOpenFill />
         <span className="ml-2">Login</span>
       </h6>
-      <InputGroup className="mb-2">
-        <FormControl
-          placeholder="Username"
-          type="text"
-          name="username"
-          value={state.username}
-          onChange={handleChange}
-          autoFocus={true}
-        />
-        <FormControl
-          placeholder="Password"
-          type={hidePassword ? 'password' : 'text'}
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-        />
-        <InputGroup.Append>
-          <Button
-            tabIndex="-1"
-            variant="outline-secondary"
-            onClick={() => setHidePassword(!hidePassword)}
-          >
-            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-          </Button>
-          <Button variant="outline-secondary" onClick={loginUser}>
-            <Check2 />
-          </Button>
-        </InputGroup.Append>
-      </InputGroup>
+      <Form onSubmit={handleSubmitButton}>
+        <InputGroup
+          className="mb-2"
+        >
+          <FormControl
+            placeholder="Username"
+            type="text"
+            name="username"
+            value={state.username}
+            onChange={handleChange}
+            autoFocus={true}
+          />
+          <FormControl
+            placeholder="Password"
+            type={hidePassword ? 'password' : 'text'}
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+          />
+          <InputGroup.Append>
+            <Button
+              tabIndex="-1"
+              variant="outline-secondary"
+              onClick={() => setHidePassword(!hidePassword)}
+            >
+              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+            </Button>
+            <Button
+              variant="outline-secondary"
+              type="submit"
+            >
+              <Check2 />
+            </Button>
+          </InputGroup.Append>
+        </InputGroup>
+      </Form>
       {emptyUsername && <span className="login-error">Enter username</span>}
       {passwordError && <span className="login-error">Wrong password</span>}
       {emptyPassword && <span className="login-error">Enter password</span>}
