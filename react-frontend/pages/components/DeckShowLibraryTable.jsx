@@ -11,6 +11,8 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 function DeckShowLibraryTable(props) {
   let resultTrClass = 'library-result-even';
 
+  const [showModal, setShowModal] = useState(undefined);
+
   const cardLines = props.cards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {
       resultTrClass = 'library-result-odd';
@@ -27,14 +29,9 @@ function DeckShowLibraryTable(props) {
       );
     }
 
-    const [showModal, setShowModal] = useState(undefined);
-
     return (
       <React.Fragment key={index}>
-        <tr
-          className={resultTrClass}
-          onClick={() => setShowModal(true)}
-        >
+        <tr className={resultTrClass}>
           <td className="quantity">
             {props.isAuthor ? (
               <DeckCardQuantity
@@ -47,7 +44,9 @@ function DeckShowLibraryTable(props) {
               card[1]
             ) : null}
           </td>
-          <td className="name">
+          <td className="name"
+              onClick={() => setShowModal(card[0])}
+          >
             <ResultLibraryName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -58,35 +57,45 @@ function DeckShowLibraryTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="cost">
+          <td className="cost"
+              onClick={() => setShowModal(card[0])}
+          >
             <ResultLibraryCost
               valueBlood={card[0]['Blood Cost']}
               valuePool={card[0]['Pool Cost']}
             />
           </td>
-          <td className="discipline">{DisciplineOrClan}</td>
-          <td className="burn">
+          <td className="discipline"
+              onClick={() => setShowModal(card[0])}
+          >
+            {DisciplineOrClan}
+          </td>
+          <td className="burn"
+              onClick={() => setShowModal(card[0])}
+          >
             <ResultLibraryBurn value={card[0]['Burn Option']} />
             <ResultLibraryTrifle value={card[0]['Card Text']} />
           </td>
         </tr>
-        {props.isMobile && showModal &&
-         <ResultLibraryModal
-           show={showModal}
-           card={card[0]}
-           showImage={props.showImage}
-           setShowImage={props.setShowImage}
-           handleClose={() => setShowModal(false)}
-         />
-        }
       </React.Fragment>
     );
   });
 
   return (
-    <table className="deck-library-table">
-      <tbody>{cardLines}</tbody>
-    </table>
+    <>
+      <table className="deck-library-table">
+        <tbody>{cardLines}</tbody>
+      </table>
+      {props.isMobile && showModal &&
+       <ResultLibraryModal
+         show={showModal? true : false}
+         card={showModal}
+         showImage={props.showImage}
+         setShowImage={props.setShowImage}
+         handleClose={() => setShowModal(false)}
+       />
+      }
+    </>
   );
 }
 

@@ -29,7 +29,7 @@ function ResultLibraryName(props) {
         </OverlayTrigger>
       ) : (
         <>
-          <span className="name" onClick={() => setShowModal(true)}>
+          <span className="name">
             {props.value} {props.ban && ' [BANNED]'}
           </span>
         </>

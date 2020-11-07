@@ -8,13 +8,15 @@
 * Card num style
 * Error messages
 * On new deck open info on mobile and hide buttons
+* Merge ResultCryptTable and DeckShowCryptTable (same for Library)
+* Mobile modals DeckPreviewCryptTable (same for Library)
 
-# FEATURE
+# FEATURES
 * Beautify card text popover
 * Summary in account
 * Export all decks in account
 
-# MAYBE LATER FEATURE
+# MAYBE LATER FEATURES
 * Add demo account
 * Night Theme
 * Scrollable frame for deck (also test for search forms) 
