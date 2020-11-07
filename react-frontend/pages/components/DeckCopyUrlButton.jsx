@@ -7,7 +7,10 @@ function DeckCopyUrlButton(props) {
   const handleButton = () => {
     navigator.clipboard.writeText(deckUrl);
     setState(true);
-    setTimeout(() => setState(false), 500);
+    setTimeout(() => {
+      setState(false)
+      props.setShowButtons(false);
+    }, 500);
   };
 
   const [state, setState] = useState(false);

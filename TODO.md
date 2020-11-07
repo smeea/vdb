@@ -1,13 +1,11 @@
 # FIX
 * No sort by disciplines if no space
 * Toggle button in mobile chrome (test desktop)
-* Search and result scroll independent on mobile
 * Button on-success effect - outline-success?
 * Update clans icons in svg (white background)
 * React-select height
 * Card num style
 * Error messages
-* On new deck open info on mobile and hide buttons
 * Merge ResultCryptTable and DeckShowCryptTable (same for Library)
 * Mobile modals DeckPreviewCryptTable (same for Library)
 

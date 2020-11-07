@@ -11,7 +11,10 @@ function Navigation(props) {
   const ToggleSearch = (props) => {
     return (
       <Button
-        onClick={() => props.setShowSearch(!props.showSearch)}
+        onClick={() => {
+          props.setShowSearch(!props.showSearch)
+          window.scrollTo(0,0)
+        }}
         variant="secondary"
         active={!props.showSearch}
         disabled={!props.isResults}

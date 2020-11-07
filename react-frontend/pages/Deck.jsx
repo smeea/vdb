@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Redirect } from 'react-router-dom';
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import ChevronExpand from '../assets/images/icons/chevron-expand.svg';
 import List from '../assets/images/icons/list.svg';
 import AlertMessage from './components/AlertMessage.jsx';
@@ -124,7 +124,7 @@ function Deck(props) {
           )}
         </Col>
         <Col lg={2} className="px-0 px-lg-3">
-          {(showButtons || !props.isMobile) && (
+          { !props.isMobile &&
             <DeckShowButtons
               isActive={props.decks[props.activeDeck] || sharedDeck}
               isMobile={props.isMobile}
@@ -140,8 +140,38 @@ function Deck(props) {
               setActiveDeck={props.setActiveDeck}
               showImage={props.showImage}
               setShowImage={props.setShowImage}
+              setShowInfo={setShowInfo}
+              setShowButtons={setShowButtons}
             />
-          )}
+          }
+          {showButtons &&
+           <Modal show={showButtons} onHide={() => setShowButtons(false)} animation={false}>
+             <Modal.Body>
+               <button type="button" className="close" onClick={() => setShowButtons(false)}>
+                 <span aria-hidden="true">×x</span>
+                 <span className="sr-only">Close</span>
+               </button>
+               <DeckShowButtons
+                 isActive={props.decks[props.activeDeck] || sharedDeck}
+                 isMobile={props.isMobile}
+                 isAuthor={isAuthor}
+                 username={props.username}
+                 deck={
+                   props.activeDeck
+                     ? props.decks[props.activeDeck]
+                     : sharedDeck ? sharedDeck[sharedDeckId] : null
+                 }
+                 getDecks={props.getDecks}
+                 activeDeck={props.activeDeck ? props.activeDeck : sharedDeckId}
+                 setActiveDeck={props.setActiveDeck}
+                 showImage={props.showImage}
+                 setShowImage={props.setShowImage}
+                 setShowInfo={setShowInfo}
+                 setShowButtons={setShowButtons}
+               />
+             </Modal.Body>
+           </Modal>
+          }
         </Col>
       </Row>
       {(props.decks[props.activeDeck] || sharedDeck) && (

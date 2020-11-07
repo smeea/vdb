@@ -14,6 +14,8 @@ function DeckShowButtons(props) {
           <DeckImport
             setActiveDeck={props.setActiveDeck}
             getDecks={props.getDecks}
+            setShowInfo={props.setShowInfo}
+            setShowButtons={props.setShowButtons}
           />
         </div>
       )}
@@ -24,7 +26,11 @@ function DeckShowButtons(props) {
       }
       {props.isAuthor && props.deck && (
         <div>
-          <DeckDelete deck={props.deck} setActiveDeck={props.setActiveDeck} />
+          <DeckDelete
+            deck={props.deck}
+            setActiveDeck={props.setActiveDeck}
+            setShowButtons={props.setShowButtons}
+          />
         </div>
       )}
       {props.username && props.deck && (
@@ -35,12 +41,16 @@ function DeckShowButtons(props) {
             deckid={props.deck.deckid}
             getDecks={props.getDecks}
             setActiveDeck={props.setActiveDeck}
+            setShowButtons={props.setShowButtons}
           />
         </div>
       )}
       {props.deck &&
        <div>
-         <DeckCopyUrlButton value={props.deck.deckid} />
+         <DeckCopyUrlButton
+           value={props.deck.deckid}
+           setShowButtons={props.setShowButtons}
+         />
        </div>
       }
       {props.deck &&
@@ -51,6 +61,7 @@ function DeckShowButtons(props) {
            isMobile={props.isMobile}
            showImage={props.showImage}
            setShowImage={props.setShowImage}
+           setShowButtons={props.setShowButtons}
          />
        </div>
       }

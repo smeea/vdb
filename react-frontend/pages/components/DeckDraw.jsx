@@ -59,7 +59,10 @@ function DeckDraw(props) {
   const [drawedCrypt, setDrawedCrypt] = useState(undefined);
   const [drawedLibrary, setDrawedLibrary] = useState(undefined);
 
-  const handleCloseDrawModal = () => setShowDrawModal(false);
+  const handleCloseDrawModal = () => {
+    setShowDrawModal(false);
+    props.setShowButtons(false);
+  }
 
   const handleOpenDraw = () => {
     const [drawedCrypt, restCrypt] = initialDrawCards(props.crypt, 4);
@@ -135,6 +138,7 @@ function DeckDraw(props) {
          showImage={props.showImage}
          setShowImage={props.setShowImage}
          isMobile={props.isMobile}
+         setShowButtons={props.setShowButtons}
        />
       }
     </>

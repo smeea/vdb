@@ -11,6 +11,7 @@ function DeckDelete(props) {
     deleteDeck();
     setShowConfirmation(false);
     props.setActiveDeck(undefined);
+    props.setShowButtons(false)
   };
 
   const deleteDeck = () => {

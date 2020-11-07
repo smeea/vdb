@@ -88,9 +88,15 @@ function DeckImport(props) {
     };
   };
 
+  const handleCreateButton = () => {
+    createNewDeck();
+    props.setShowInfo(true);
+    props.setShowButtons(false);
+  }
+
   const ImportButtonOptions = (
     <>
-      <Dropdown.Item href="" onClick={() => createNewDeck()}>
+      <Dropdown.Item href="" onClick={handleCreateButton}>
         Create New
       </Dropdown.Item>
       <Dropdown.Divider />

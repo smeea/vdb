@@ -31,7 +31,8 @@ function DeckClone(props) {
         }
       })
       .then(() => props.getDecks())
-      .then(() => props.setActiveDeck(newdeckid));
+      .then(() => props.setActiveDeck(newdeckid))
+      .then(() => props.setShowButtons(false));
   };
 
   return (
