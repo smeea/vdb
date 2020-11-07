@@ -10,6 +10,8 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 function ResultCryptTable(props) {
   let resultTrClass = 'crypt-result-even';
 
+  const [showModal, setShowModal] = useState(undefined);
+
   const cards = props.resultCards.map((card, index) => {
     if (resultTrClass == 'crypt-result-even') {
       resultTrClass = 'crypt-result-odd';
@@ -26,16 +28,13 @@ function ResultCryptTable(props) {
       });
     }
 
-    const [showModal, setShowModal] = useState(undefined);
-
     return (
       <React.Fragment key={index}>
-        <tr
-          className={resultTrClass}
-          onClick={() => setShowModal(true)}
-        >
+        <tr className={resultTrClass}>
           {props.addMode && (
-            <td className="quantity">
+            <td
+              className="quantity"
+            >
               <ResultAddCard
                 deckCardAdd={props.deckCardAdd}
                 cardid={card['Id']}
@@ -43,13 +42,19 @@ function ResultCryptTable(props) {
               />
             </td>
           )}
-          <td className="capacity">
+          <td className="capacity"
+              onClick={() => setShowModal(card)}
+          >
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
-          <td className="disciplines">
+          <td className="disciplines"
+              onClick={() => setShowModal(card)}
+          >
             <ResultCryptDisciplines value={card['Disciplines']} />
           </td>
-          <td className="name">
+          <td className="name"
+              onClick={() => setShowModal(card)}
+          >
             <ResultCryptName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -61,30 +66,36 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="clan">
+          <td className="clan"
+              onClick={() => setShowModal(card)}
+          >
             <ResultCryptClan value={card['Clan']} />
           </td>
-          <td className="group">
+          <td className="group"
+              onClick={() => setShowModal(card)}
+          >
             <ResultCryptGroup value={card['Group']} />
           </td>
         </tr>
-        {props.isMobile && showModal &&
-         <ResultCryptModal
-           show={showModal}
-           card={card}
-           showImage={props.showImage}
-           setShowImage={props.setShowImage}
-           handleClose={() => setShowModal(false)}
-         />
-        }
       </React.Fragment>
     );
   });
 
   return (
-    <table className="search-crypt-table">
-      <tbody>{cards}</tbody>
-    </table>
+    <>
+      <table className="search-crypt-table">
+        <tbody>{cards}</tbody>
+      </table>
+      {props.isMobile && showModal &&
+       <ResultCryptModal
+         show={showModal? true : false}
+         card={showModal}
+         showImage={props.showImage}
+         setShowImage={props.setShowImage}
+         handleClose={() => setShowModal(false)}
+       />
+      }
+    </>
   );
 }
 

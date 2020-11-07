@@ -12,6 +12,8 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 function ResultLibraryTable(props) {
   let resultTrClass = 'library-result-even';
 
+  const [showModal, setShowModal] = useState(undefined);
+
   const cards = props.resultCards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {
       resultTrClass = 'library-result-odd';
@@ -27,14 +29,9 @@ function ResultLibraryTable(props) {
       });
     }
 
-    const [showModal, setShowModal] = useState(undefined);
-
     return (
       <React.Fragment key={index}>
-        <tr
-          className={resultTrClass}
-          onClick={() => setShowModal(true)}
-        >
+        <tr className={resultTrClass}>
           {props.addMode && (
             <td className="quantity">
               <ResultAddCard
@@ -44,19 +41,27 @@ function ResultLibraryTable(props) {
               />
             </td>
           )}
-          <td className="cost py-0">
+          <td className="cost py-0"
+              onClick={() => setShowModal(true)}
+          >
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}
             />
           </td>
-          <td className="type">
+          <td className="type"
+              onClick={() => setShowModal(true)}
+          >
             <ResultLibraryType cardtype={card['Type']} />
           </td>
-          <td className="disciplines">
+          <td className="disciplines"
+              onClick={() => setShowModal(true)}
+          >
             <ResultLibraryDisciplines value={card['Discipline']} />
           </td>
-          <td className="name">
+          <td className="name"
+              onClick={() => setShowModal(true)}
+          >
             <ResultLibraryName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -67,31 +72,37 @@ function ResultLibraryTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="clan">
+          <td className="clan"
+              onClick={() => setShowModal(true)}
+          >
             <ResultLibraryClan value={card['Clan']} />
           </td>
-          <td className="burn">
+          <td className="burn"
+              onClick={() => setShowModal(true)}
+          >
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={card['Card Text']} />
           </td>
         </tr>
-        {props.isMobile && showModal &&
-         <ResultLibraryModal
-           show={showModal}
-           card={card}
-           showImage={props.showImage}
-           setShowImage={props.setShowImage}
-           handleClose={() => setShowModal(false)}
-         />
-        }
       </React.Fragment>
     );
   });
 
   return (
-    <table className="search-library-table">
-      <tbody>{cards}</tbody>
-    </table>
+    <>
+      <table className="search-library-table">
+        <tbody>{cards}</tbody>
+      </table>
+      {props.isMobile && showModal &&
+       <ResultLibraryModal
+         show={showModal? true : false}
+         card={showModal}
+         showImage={props.showImage}
+         setShowImage={props.setShowImage}
+         handleClose={() => setShowModal(false)}
+       />
+      }
+    </>
   );
 }
 

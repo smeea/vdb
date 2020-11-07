@@ -7,6 +7,7 @@
 * React-select height
 * Card num style
 * Error messages
+* On new deck open info on mobile and hide buttons
 
 # FEATURE
 * Beautify card text popover
