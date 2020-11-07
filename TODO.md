@@ -3,7 +3,7 @@
 * Toggle button in mobile chrome (test desktop)
 * Search and result scroll independent on mobile
 * Button on-success effect - outline-success?
-* Update disciplines icons
+* Update clans icons in svg (white background)
 * React-select height
 * Card num style
 * Error messages
