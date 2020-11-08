@@ -24,13 +24,13 @@ function ResultLibraryName(props) {
           }
         >
           <span className="name" onClick={() => props.setShowImage(!props.showImage)}>
-            {props.value} {props.ban && ' [BANNED]'}
+            {props.card['Name']} {props.card['Banned'] && ' [BANNED]'}
           </span>
         </OverlayTrigger>
       ) : (
         <>
           <span className="name">
-            {props.value} {props.ban && ' [BANNED]'}
+            {props.card['Name']} {props.card['Banned'] && ' [BANNED]'}
           </span>
         </>
       )}

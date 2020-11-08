@@ -12,7 +12,7 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 function ResultLibraryTable(props) {
   let resultTrClass;
 
-  const [showModal, setShowModal] = useState(undefined);
+  const [modalCard, setModalCard] = useState(undefined);
 
   const cardRows = props.resultCards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {
@@ -43,7 +43,7 @@ function ResultLibraryTable(props) {
             </td>
           )}
           <td className="cost py-0"
-              onClick={() => setShowModal(true)}
+              onClick={() => setModalCard(card)}
           >
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
@@ -51,35 +51,32 @@ function ResultLibraryTable(props) {
             />
           </td>
           <td className="type"
-              onClick={() => setShowModal(true)}
+              onClick={() => setModalCard(card)}
           >
             <ResultLibraryType cardtype={card['Type']} />
           </td>
           <td className="disciplines"
-              onClick={() => setShowModal(true)}
+              onClick={() => setModalCard(card)}
           >
             <ResultLibraryDisciplines value={card['Discipline']} />
           </td>
           <td className="name"
-              onClick={() => setShowModal(true)}
+              onClick={() => setModalCard(card)}
           >
             <ResultLibraryName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
-              id={card['Id']}
-              value={card['Name']}
-              ban={card['Banned']}
               card={card}
               isMobile={props.isMobile}
             />
           </td>
           <td className="clan"
-              onClick={() => setShowModal(true)}
+              onClick={() => setModalCard(card)}
           >
             <ResultLibraryClan value={card['Clan']} />
           </td>
           <td className="burn"
-              onClick={() => setShowModal(true)}
+              onClick={() => setModalCard(card)}
           >
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={card['Card Text']} />
@@ -94,13 +91,13 @@ function ResultLibraryTable(props) {
       <table className="search-library-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {props.isMobile && showModal &&
+      {props.isMobile && modalCard &&
        <ResultLibraryModal
-         show={showModal? true : false}
-         card={showModal}
+         show={modalCard? true : false}
+         card={modalCard}
          showImage={props.showImage}
          setShowImage={props.setShowImage}
-         handleClose={() => setShowModal(false)}
+         handleClose={() => setModalCard(false)}
        />
       }
     </>

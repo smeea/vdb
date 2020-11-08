@@ -165,7 +165,7 @@ function DeckShowLibrary(props) {
         </div>
       </div>
       {showTotal &&
-       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+       <div className="info-message pl-2">
          <DeckShowLibraryTotalByTypes
            byTypes={libraryByTypeTotal}
          />

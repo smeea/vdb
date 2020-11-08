@@ -11,7 +11,7 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 function ResultCryptTable(props) {
   let resultTrClass;
 
-  const [showModal, setShowModal] = useState(undefined);
+  const [modalCard, setmodalCard] = useState(undefined);
 
   const cardRows = props.resultCards.map((card, index) => {
     let q;
@@ -71,12 +71,12 @@ function ResultCryptTable(props) {
              </>
           }
           <td className="capacity"
-              onClick={() => setShowModal(card)}
+              onClick={() => setmodalCard(card)}
           >
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td className="disciplines"
-              onClick={() => setShowModal(card)}
+              onClick={() => setmodalCard(card)}
           >
             <ResultCryptDisciplines
               value={card['Disciplines']}
@@ -84,7 +84,7 @@ function ResultCryptTable(props) {
             />
           </td>
           <td className="name"
-              onClick={() => setShowModal(card)}
+              onClick={() => setmodalCard(card)}
           >
             <ResultCryptName
               showImage={props.showImage}
@@ -98,12 +98,12 @@ function ResultCryptTable(props) {
             />
           </td>
           <td className="clan"
-              onClick={() => setShowModal(card)}
+              onClick={() => setmodalCard(card)}
           >
             <ResultCryptClan value={card['Clan']} />
           </td>
           <td className="group"
-              onClick={() => setShowModal(card)}
+              onClick={() => setmodalCard(card)}
           >
             <ResultCryptGroup value={card['Group']} />
           </td>
@@ -117,13 +117,13 @@ function ResultCryptTable(props) {
       <table className={props.className}>
         <tbody>{cardRows}</tbody>
       </table>
-      {props.isMobile && showModal &&
+      {props.isMobile && modalCard &&
        <ResultCryptModal
-         show={showModal? true : false}
-         card={showModal}
+         show={modalCard? true : false}
+         card={modalCard}
          showImage={props.showImage}
          setShowImage={props.setShowImage}
-         handleClose={() => setShowModal(false)}
+         handleClose={() => setmodalCard(false)}
        />
       }
     </>
