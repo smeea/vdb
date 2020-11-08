@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import ChevronExpand from '../../assets/images/icons/chevron-expand.svg';
 import DeckShowLibraryTable from './DeckShowLibraryTable.jsx';
+import DeckShowLibraryTotalByTypes from './DeckShowLibraryTotalByTypes.jsx';
 import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
@@ -26,6 +28,7 @@ function DeckLibraryByTypeTable(props) {
 
 function DeckShowLibrary(props) {
   const [showAdd, setShowAdd] = useState(false);
+  const [showTotal, setShowTotal] = useState(false);
 
   const library = {};
   const librarySide = {};
@@ -65,32 +68,40 @@ function DeckShowLibrary(props) {
   const LibrarySideDeck = [];
   let libraryTotal = 0;
 
+  const libraryByType = {};
+
   for (const card in library) {
     if (card) {
       libraryTotal += library[card].q;
       const cardtype = library[card].c['Type'];
-      if (library[cardtype] === undefined) {
-        library[cardtype] = [];
+      if (libraryByType[cardtype] === undefined) {
+        libraryByType[cardtype] = [];
       }
-      library[cardtype].push([library[card].c, library[card].q]);
+      libraryByType[cardtype].push([library[card].c, library[card].q]);
     }
   }
+
+  const librarySideByType = {};
 
   for (const card in librarySide) {
     if (card) {
       const cardtype = librarySide[card].c['Type'];
-      if (librarySide[cardtype] === undefined) {
-        librarySide[cardtype] = [];
+      if (librarySideByType[cardtype] === undefined) {
+        librarySideByType[cardtype] = [];
       }
-      librarySide[cardtype].push([librarySide[card].c, librarySide[card].q]);
+      librarySideByType[cardtype].push([librarySide[card].c, librarySide[card].q]);
     }
   }
 
+  const libraryByTypeTotal = {}
+
   for (const cardtype of cardtypeSorted) {
-    if (library[cardtype] !== undefined) {
+    if (libraryByType[cardtype] !== undefined) {
+      libraryByTypeTotal[cardtype] = 0;
       let total = 0;
-      for (const card of library[cardtype]) {
+      for (const card of libraryByType[cardtype]) {
         total += card[1];
+        libraryByTypeTotal[cardtype] += card[1];
       }
       LibraryDeck.push(
         <div key={cardtype} className="pt-2">
@@ -99,7 +110,7 @@ function DeckShowLibrary(props) {
             setShowImage={props.setShowImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
-            cards={library[cardtype]}
+            cards={libraryByType[cardtype]}
             cardtype={cardtype}
             total={total}
             isAuthor={props.isAuthor}
@@ -109,9 +120,9 @@ function DeckShowLibrary(props) {
       );
     }
 
-    if (librarySide[cardtype] !== undefined) {
+    if (librarySideByType[cardtype] !== undefined) {
       let total = 0;
-      for (const card of librarySide[cardtype]) {
+      for (const card of librarySideByType[cardtype]) {
         total += card[1];
       }
       LibrarySideDeck.push(
@@ -121,7 +132,7 @@ function DeckShowLibrary(props) {
             setShowImage={props.setShowImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
-            cards={librarySide[cardtype]}
+            cards={librarySideByType[cardtype]}
             cardtype={cardtype}
             total={total}
             isAuthor={props.isAuthor}
@@ -136,15 +147,30 @@ function DeckShowLibrary(props) {
     <div className="pt-4">
       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
         <b>Library [{libraryTotal}]</b>
-        {props.isAuthor && (
+        <div>
           <Button
             variant="outline-secondary"
-            onClick={() => setShowAdd(!showAdd)}
+            onClick={() => setShowTotal(!showTotal)}
           >
-            +
+            <ChevronExpand />
           </Button>
-        )}
+          {props.isAuthor && (
+            <Button
+              variant="outline-secondary"
+              onClick={() => setShowAdd(!showAdd)}
+            >
+              +
+            </Button>
+          )}
+        </div>
       </div>
+      {showTotal &&
+       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+         <DeckShowLibraryTotalByTypes
+           byTypes={libraryByTypeTotal}
+         />
+       </div>
+      }
       {showAdd && <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />}
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (

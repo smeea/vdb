@@ -4,12 +4,10 @@
 * Button on-success effect - outline-success?
 * Update clans icons in svg (white background)
 * React-select height
-* Card num style
 * Error messages
 
 # FEATURES
 * Beautify card text popover
-* Library total
 
 # MAYBE LATER FEATURES
 * Add demo account
