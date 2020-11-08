@@ -11,8 +11,6 @@
 
 # FEATURES
 * Beautify card text popover
-* Summary in account
-* Export all decks in account
 
 # MAYBE LATER FEATURES
 * Add demo account
@@ -21,6 +19,7 @@
 * Precons decks
 * Update About with features: import/export, free, speed, UI you may like, mobile-friendly
 * Sort deck discipline columns by popularity
+* Export all decks in account
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage

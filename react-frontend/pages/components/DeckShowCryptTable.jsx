@@ -12,11 +12,11 @@ function DeckShowCryptTable(props) {
 
   const [showModal, setShowModal] = useState(undefined);
 
-  const cardLines = props.cards.map((card, index) => {
-    if (resultTrClass == 'crypt-result-odd') {
-      resultTrClass = 'crypt-result-even';
-    } else {
+  const cardRows = props.cards.map((card, index) => {
+    if (resultTrClass == 'crypt-result-even') {
       resultTrClass = 'crypt-result-odd';
+    } else {
+      resultTrClass = 'crypt-result-even';
     }
 
     return (
@@ -78,7 +78,7 @@ function DeckShowCryptTable(props) {
   return (
     <>
       <table className="deck-crypt-table">
-        <tbody>{cardLines}</tbody>
+        <tbody>{cardRows}</tbody>
       </table>
       {props.isMobile && showModal &&
        <ResultCryptModal

@@ -8,11 +8,11 @@ import ResultAddCard from './ResultAddCard.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 
 function ResultCryptTable(props) {
-  let resultTrClass = 'crypt-result-even';
+  let resultTrClass;
 
   const [showModal, setShowModal] = useState(undefined);
 
-  const cards = props.resultCards.map((card, index) => {
+  const cardRows = props.resultCards.map((card, index) => {
     if (resultTrClass == 'crypt-result-even') {
       resultTrClass = 'crypt-result-odd';
     } else {
@@ -32,9 +32,7 @@ function ResultCryptTable(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           {props.addMode && (
-            <td
-              className="quantity"
-            >
+            <td className="quantity" >
               <ResultAddCard
                 deckCardAdd={props.deckCardAdd}
                 cardid={card['Id']}
@@ -42,6 +40,7 @@ function ResultCryptTable(props) {
               />
             </td>
           )}
+
           <td className="capacity"
               onClick={() => setShowModal(card)}
           >
@@ -84,7 +83,7 @@ function ResultCryptTable(props) {
   return (
     <>
       <table className="search-crypt-table">
-        <tbody>{cards}</tbody>
+        <tbody>{cardRows}</tbody>
       </table>
       {props.isMobile && showModal &&
        <ResultCryptModal
