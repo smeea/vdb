@@ -4,9 +4,15 @@ import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 
 function ResultLibraryModal(props) {
   return (
-    <Modal show={props.show} onHide={props.handleClose} animation={false}>
-      <Modal.Body>
-        <button type="button" className="close" onClick={props.handleClose}>
+    <Modal
+      show={props.show}
+      onHide={props.handleClose}
+      animation={false}
+    >
+      <Modal.Body
+        className="p-0"
+      >
+        <button type="button" className="close mx-3 my-2" onClick={props.handleClose}>
           <span aria-hidden="true">×</span>
           <span className="sr-only">Close</span>
         </button>
@@ -25,7 +31,7 @@ function ResultLibraryModal(props) {
             />
           </Tab>
           <Tab eventKey="text" title="Description">
-            <div className="pt-2">
+            <div className="p-3">
               <ResultLibraryPopover card={props.card} showImage={false} />
             </div>
           </Tab>

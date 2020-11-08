@@ -13,8 +13,8 @@ function DeckDrawModal(props) {
       animation={false}
       size="xl"
     >
-      <Modal.Body>
-        <Container className="px-0" fluid>
+      <Modal.Body className="px-0">
+        <Container fluid>
           <Row className="px-0">
             <Col>
               <button
@@ -34,7 +34,7 @@ function DeckDrawModal(props) {
             <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
               {props.drawedCrypt && (
                 <>
-                  <div className="d-flex justify-content-between">
+                  <div className="d-flex justify-content-between info-message">
                     <div className="d-flex align-items-center px-2">
                       <b>Crypt</b>
                     </div>
@@ -71,12 +71,11 @@ function DeckDrawModal(props) {
                   />
                 </>
               )}
-              <br />
             </Col>
             <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
               {props.drawedLibrary && (
                 <>
-                  <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between info-message">
                     <div className="d-flex align-items-center px-2">
                       <b>Library</b>
                     </div>
@@ -111,7 +110,6 @@ function DeckDrawModal(props) {
                   />
                 </>
               )}
-              <br />
             </Col>
           </Row>
         </Container>

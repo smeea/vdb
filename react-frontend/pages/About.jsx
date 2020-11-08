@@ -13,11 +13,11 @@ function About(props) {
               <a href="http://www.vekn.net/card-lists">
                 vekn.net official list
               </a>
-              : 2020-06-23.
+              : 2020-06-23
               <br />
-              Card images by Syndelson{' '}
+              Card images by Syndelson's{' '}
               <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
-                FELD images
+                FELD
               </a>
               : 2019-11-11 v2.72
             </p>
@@ -28,7 +28,20 @@ function About(props) {
             <p>
               VDB is online card search and deck building tool for Vampire the
               Eternal Struggle (VTES).
+              <br />
+              It's a successor of{' '}<a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
             </p>
+            <h5>FEATURES</h5>
+            <ul>
+              <li>Combined deck building & search interface</li>
+              <li>Clean, but informative look</li>
+              <li>Mobile-friendly</li>
+              <li>Import/export to popular formats to easy migration and backup</li>
+              <li>Once familiar with, you will love it!</li>
+              <li>Open source</li>
+              <li>Ad-free</li>
+            </ul>
+            <h5>SCREENSHOTS</h5>
             <h5>RELATED PROJECTS</h5>
             <p>
               <a href="https://amaranth.vtes.co.nz/">
@@ -82,7 +95,7 @@ function About(props) {
               Development happens in{' '}
               <a href="https://github.com/smeea/vdb">this Github repository.</a>
               <br />
-              Source code of the site is available under{' '}
+              Source code of the site is available under free{' '}
               <a href="https://en.wikipedia.org/wiki/MIT_License">
                 MIT license.
               </a>
@@ -92,8 +105,10 @@ function About(props) {
 
             <h5>PRIVACY</h5>
             <p>
-              I respect privacy and promise not to share your data (email,
-              decks, etc) with anybody. This service is ad-free and there are no
+              We respect privacy and promise not to use/share your data (email,
+              decks, etc).
+              <br />
+              This service is ad-free and there are no
               trackers of your activity.
             </p>
 

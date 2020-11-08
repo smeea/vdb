@@ -4,6 +4,7 @@
 * Update clans icons in svg (white background)
 * Error messages
 * Buttons in mobile deck for unlogged user
+* React-select height - test
 * Deck by id (shared)
 
 # FEATURES
