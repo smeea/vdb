@@ -9,7 +9,8 @@ function ResultCryptDisciplines(props) {
 
   if (
     props.disciplinesSet !== undefined &&
-    props.disciplinesSet.length <= maxRows
+      props.disciplinesSet.length <= maxRows &&
+      !props.isMobile
   ) {
     disciplineRows = props.disciplinesSet.map((d, index) => {
       counter += 1;

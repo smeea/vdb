@@ -1,10 +1,11 @@
 # FIX
+* Sort deck discipline columns by popularity
 * No sort by disciplines if no space
-* Toggle button in mobile chrome (test desktop)
+* Toggle button in mobile chrome
 * Update clans icons in svg (white background)
 * Error messages
 * Buttons in mobile deck for unlogged user
-* React-select height - test
+* React-select height - test on mobile
 * Deck by id (shared)
 
 # FEATURES
@@ -16,7 +17,6 @@
 * Scrollable frame for deck (also test for search forms) 
 * Precons decks
 * Update About with features: import/export, free, speed, UI you may like, mobile-friendly
-* Sort deck discipline columns by popularity
 * Export all decks in account
 
 # IMPROVE TECHNOLOGY - FRONTEND

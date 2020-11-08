@@ -77,6 +77,7 @@ function ResultCryptTable(props) {
             <ResultCryptDisciplines
               value={card['Disciplines']}
               disciplinesSet={props.disciplinesSet}
+              isMobile={props.isMobile}
             />
           </td>
           <td className="name" onClick={() => setmodalCard(card)}>
@@ -91,12 +92,22 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="clan" onClick={() => setmodalCard(card)}>
-            <ResultCryptClan value={card['Clan']} />
-          </td>
-          <td className="group" onClick={() => setmodalCard(card)}>
-            <ResultCryptGroup value={card['Group']} />
-          </td>
+          {!props.isMobile
+           ? <>
+               <td className="clan" onClick={() => setmodalCard(card)}>
+                 <ResultCryptClan value={card['Clan']} />
+               </td>
+               <td className="group" onClick={() => setmodalCard(card)}>
+                 <ResultCryptGroup value={card['Group']} />
+               </td>
+             </>
+           : <td className="clan-group" onClick={() => setmodalCard(card)}>
+               <div>
+                 <ResultCryptClan value={card['Clan']} />
+                 <ResultCryptGroup value={card['Group']} />
+               </div>
+             </td>
+          }
         </tr>
       </React.Fragment>
     );
