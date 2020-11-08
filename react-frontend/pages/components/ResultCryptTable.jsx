@@ -50,9 +50,9 @@ function ResultCryptTable(props) {
                   />
                 </td>
               ) : q ? (
-                <td className="quantity-no-buttons px-3">{q}</td>
+                <td className="quantity-no-buttons px-2">{q}</td>
               ) : (
-                <td className="quantity-no-buttons px-3">
+                <td className="quantity-no-buttons px-2">
                   <div className="transparent">0</div>
                 </td>
               )}

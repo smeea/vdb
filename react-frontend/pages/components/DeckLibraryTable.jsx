@@ -42,9 +42,11 @@ function DeckLibraryTable(props) {
               />
             </td>
           ) : card.q ? (
-            <td className="quantity-no-buttons px-3">{card.q}</td>
+            <td className="quantity-no-buttons px-2">{card.q}</td>
           ) : (
-            <td className="quantity-no-buttons" />
+            <td className="quantity-no-buttons px-2">
+              <div className="transparent">0</div>
+            </td>
           )}
           <td className="name" onClick={() => setShowModal(card.c)}>
             <div className="px-2">
