@@ -93,7 +93,7 @@ function DeckShowLibrary(props) {
         total += card[1];
       }
       LibraryDeck.push(
-        <div key={cardtype}>
+        <div key={cardtype} className="pt-2">
           <DeckLibraryByTypeTable
             showImage={props.showImage}
             setShowImage={props.setShowImage}
@@ -148,7 +148,7 @@ function DeckShowLibrary(props) {
       {showAdd && <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />}
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
-        <div className="deck-sidelibrary pt-1">
+        <div className="deck-sidelibrary pt-2">
           <b>Side Library</b>
           {LibrarySideDeck}
         </div>

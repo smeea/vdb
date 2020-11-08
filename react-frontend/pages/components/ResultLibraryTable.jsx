@@ -10,16 +10,17 @@ import ResultAddCard from './ResultAddCard.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function ResultLibraryTable(props) {
-  let resultTrClass = 'library-result-even';
+  let resultTrClass;
 
   const [showModal, setShowModal] = useState(undefined);
 
-  const cards = props.resultCards.map((card, index) => {
+  const cardRows = props.resultCards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {
       resultTrClass = 'library-result-odd';
     } else {
       resultTrClass = 'library-result-even';
     }
+
     let inDeck;
     if (props.library) {
       Object.keys(props.library).map((i, index) => {
@@ -91,7 +92,7 @@ function ResultLibraryTable(props) {
   return (
     <>
       <table className="search-library-table">
-        <tbody>{cards}</tbody>
+        <tbody>{cardRows}</tbody>
       </table>
       {props.isMobile && showModal &&
        <ResultLibraryModal

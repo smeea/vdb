@@ -6,11 +6,10 @@
 * React-select height
 * Card num style
 * Error messages
-* Merge ResultCryptTable and DeckShowCryptTable (same for Library)
-* Mobile modals DeckPreviewCryptTable (same for Library)
 
 # FEATURES
 * Beautify card text popover
+* Library total
 
 # MAYBE LATER FEATURES
 * Add demo account

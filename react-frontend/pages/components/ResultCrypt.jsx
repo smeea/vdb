@@ -6,6 +6,8 @@ import resultCryptSort from './resultCryptSort.js';
 function ResultCrypt(props) {
   const [sortedCards, setSortedCards] = useState([]);
 
+  const className = "search-crypt-table"
+
   const handleChange = (method) => {
     props.setSortMethod(method);
     setSortedCards(() => resultCryptSort(props.cards, method));
@@ -27,6 +29,7 @@ function ResultCrypt(props) {
         />
       )}
       <ResultCryptTable
+        className={className}
         showImage={props.showImage}
         setShowImage={props.setShowImage}
         crypt={props.crypt}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
@@ -13,6 +14,12 @@ function ResultCryptTable(props) {
   const [showModal, setShowModal] = useState(undefined);
 
   const cardRows = props.resultCards.map((card, index) => {
+    let q;
+    if (props.className == "deck-crypt-table") {
+      q = card.q
+      card = card.c
+    }
+
     if (resultTrClass == 'crypt-result-even') {
       resultTrClass = 'crypt-result-odd';
     } else {
@@ -31,16 +38,38 @@ function ResultCryptTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          {props.addMode && (
-            <td className="quantity" >
-              <ResultAddCard
-                deckCardAdd={props.deckCardAdd}
-                cardid={card['Id']}
-                inDeck={inDeck}
-              />
-            </td>
-          )}
-
+          {props.className == "deck-crypt-table"
+           ? <>
+               {props.isAuthor
+                ? <td className="quantity">
+                    <DeckCardQuantity
+                      cardid={card['Id']}
+                      q={q}
+                      deckid={props.deckid}
+                      deckCardChange={props.deckCardChange}
+                    />
+                  </td>
+                : q
+                ? <td className="quantity-no-buttons px-3">
+                    {q}
+                  </td>
+                : <td className="quantity-no-buttons px-3">
+                    <div className="transparent">0</div>
+                  </td>
+               }
+             </>
+           : <>
+               {props.addMode && (
+                 <td className="quantity" >
+                   <ResultAddCard
+                     deckCardAdd={props.deckCardAdd}
+                     cardid={card['Id']}
+                     inDeck={inDeck}
+                   />
+                 </td>
+               )}
+             </>
+          }
           <td className="capacity"
               onClick={() => setShowModal(card)}
           >
@@ -49,7 +78,10 @@ function ResultCryptTable(props) {
           <td className="disciplines"
               onClick={() => setShowModal(card)}
           >
-            <ResultCryptDisciplines value={card['Disciplines']} />
+            <ResultCryptDisciplines
+              value={card['Disciplines']}
+              disciplinesSet={props.disciplinesSet}
+            />
           </td>
           <td className="name"
               onClick={() => setShowModal(card)}
@@ -82,7 +114,7 @@ function ResultCryptTable(props) {
 
   return (
     <>
-      <table className="search-crypt-table">
+      <table className={props.className}>
         <tbody>{cardRows}</tbody>
       </table>
       {props.isMobile && showModal &&

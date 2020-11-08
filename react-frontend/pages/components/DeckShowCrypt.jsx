@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import DeckShowCryptTable from './DeckShowCryptTable.jsx';
+import ResultCryptTable from './ResultCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
 
 function DeckShowCrypt(props) {
   const [showAdd, setShowAdd] = useState(false);
+
+  const className = "deck-crypt-table"
 
   const dSet = new Set();
   for (const card of Object.keys(props.cards)) {
@@ -91,10 +93,11 @@ function DeckShowCrypt(props) {
         )}
       </div>
       {showAdd && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
-      <DeckShowCryptTable
+      <ResultCryptTable
+        className={className}
         deckid={props.deckid}
         deckCardChange={props.deckCardChange}
-        cards={sortedCards}
+        resultCards={sortedCards}
         disciplinesSet={disciplinesSet}
         showImage={props.showImage}
         setShowImage={props.setShowImage}
@@ -102,14 +105,15 @@ function DeckShowCrypt(props) {
         isMobile={props.isMobile}
       />
       {Object.keys(cryptSide).length > 0 && (
-        <div className="deck-sidecrypt pt-1">
+        <div className="deck-sidecrypt pt-2">
           <div className="d-flex align-items-center justify-content-between pl-2">
             <b>Side Crypt</b>
           </div>
-          <DeckShowCryptTable
+          <ResultCryptTable
+            className={className}
             deckid={props.deckid}
             deckCardChange={props.deckCardChange}
-            cards={sortedCardsSide}
+            resultCards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             showImage={props.showImage}
             setShowImage={props.setShowImage}

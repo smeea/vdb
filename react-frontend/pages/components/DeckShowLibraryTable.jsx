@@ -32,30 +32,35 @@ function DeckShowLibraryTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <td className="quantity">
-            {props.isAuthor ? (
-              <DeckCardQuantity
-                cardid={card[0].Id}
-                q={card[1]}
-                deckid={props.deckid}
-                deckCardChange={props.deckCardChange}
-              />
-            ) : card[1] ? (
-              card[1]
-            ) : null}
-          </td>
+          {props.isAuthor
+           ? <td className="quantity">
+               <DeckCardQuantity
+                 cardid={card[0].Id}
+                 q={card[1]}
+                 deckid={props.deckid}
+                 deckCardChange={props.deckCardChange}
+               />
+             </td>
+           : card[1]
+           ? <td className="quantity-no-buttons px-3">
+               {card[1]}
+             </td>
+           : <td className="quantity-no-buttons" />
+          }
           <td className="name"
               onClick={() => setShowModal(card[0])}
           >
-            <ResultLibraryName
-              showImage={props.showImage}
-              setShowImage={props.setShowImage}
-              id={card[0]['Id']}
-              value={card[0]['Name']}
-              ban={card[0]['Banned']}
-              card={card[0]}
-              isMobile={props.isMobile}
-            />
+            <div className="px-2">
+              <ResultLibraryName
+                showImage={props.showImage}
+                setShowImage={props.setShowImage}
+                id={card[0]['Id']}
+                value={card[0]['Name']}
+                ban={card[0]['Banned']}
+                card={card[0]}
+                isMobile={props.isMobile}
+              />
+            </div>
           </td>
           <td className="cost"
               onClick={() => setShowModal(card[0])}
