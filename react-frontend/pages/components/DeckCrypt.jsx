@@ -9,13 +9,26 @@ function DeckCrypt(props) {
 
   const className = 'deck-crypt-table';
 
-  const dSet = new Set();
+  const disciplinesDict = {};
   for (const card of Object.keys(props.cards)) {
     for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
-      dSet.add(d);
+      if (disciplinesDict[d] === undefined) {
+        disciplinesDict[d] = 0;
+        disciplinesDict[d] += props.cards[card].q;
+      } else {
+        disciplinesDict[d] += props.cards[card].q;
+      }
     }
   }
-  const disciplinesSet = [...dSet].sort();
+
+  const disciplinesForSort = [];
+  Object.keys(disciplinesDict).map((key => {
+    disciplinesForSort.push([key, disciplinesDict[key]]);
+  }))
+
+  const disciplinesSet = disciplinesForSort.sort((a, b) => b[1] - a[1]).map((i) => {
+    return(i[0]);
+  })
 
   const crypt = {};
   const cryptSide = {};

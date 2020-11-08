@@ -39,7 +39,7 @@ function About(props) {
               <li>Import/export to popular formats to easy migration and backup</li>
               <li>Once familiar with, you will love it!</li>
               <li>Open source</li>
-              <li>Ad-free</li>
+              <li>Ad-free & non-commercial</li>
             </ul>
             <h5>SCREENSHOTS</h5>
             <h5>RELATED PROJECTS</h5>

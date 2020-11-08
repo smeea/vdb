@@ -97,7 +97,7 @@ function DeckImport(props) {
   const ImportButtonOptions = (
     <>
       <Dropdown.Item href="" onClick={handleCreateButton}>
-        Create New
+        Create New Deck
       </Dropdown.Item>
       <Dropdown.Divider />
       <Dropdown.Item href="" onClick={handleFileInputClick}>
@@ -121,7 +121,7 @@ function DeckImport(props) {
       <Dropdown>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
           <ClipboardPlus size={24} />
-          <span className="pl-1">Create / Import Deck</span>
+          <span className="pl-1">Create / Import</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
       </Dropdown>

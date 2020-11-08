@@ -69,7 +69,7 @@ function Deck(props) {
   }
 
   return (
-    <Container className="main-container">
+    <Container className="deck-container">
       <Row>
         <Col lg={3} className="px-0">
           <Row className="justify-content-end mx-0">

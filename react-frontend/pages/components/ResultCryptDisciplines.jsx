@@ -4,48 +4,36 @@ function ResultCryptDisciplines(props) {
   let disciplineRows;
   const emptyRows = [];
   let counter = 0;
-  let maxRows = 10;
-  let width = 100 / maxRows + '%';
+  const maxRows = 7;
+  const width = 100 / maxRows + '%';
 
-  if (
-    props.disciplinesSet !== undefined &&
-      props.disciplinesSet.length <= maxRows &&
-      !props.isMobile
-  ) {
+  if (props.disciplinesSet) {
     disciplineRows = props.disciplinesSet.map((d, index) => {
       counter += 1;
       let imgSrc;
       let imgClass;
-      if (props.value[d] === undefined) {
-        return <td width={width} key={index}></td>;
-      } else {
-        if (props.value[d] == 1) {
-          imgSrc = `${
+      if (props.value[d] == 1) {
+        imgSrc = `${
             process.env.ROOT_URL
           }images/disciplines/${d
             .toLowerCase()
             .replace(/[\s,:!?'.\-]/g, '')}.svg`;
-          imgClass = 'discipline-base-image-results';
-        } else if (props.value[d] == 2) {
-          imgSrc = `${
+        imgClass = 'discipline-base-image-results';
+      } else if (props.value[d] == 2) {
+        imgSrc = `${
             process.env.ROOT_URL
           }images/disciplines/${d
             .toLowerCase()
             .replace(/[\s,:!?'.\-]/g, '')}sup.svg`;
-          imgClass = 'discipline-superior-image-results';
-        }
-        return (
-          <td width={width} key={index}>
-            <img className={imgClass} src={imgSrc} title={d} />
-          </td>
-        );
+        imgClass = 'discipline-superior-image-results';
       }
+      return (
+        <td width={width} key={index}>
+          <img className={imgClass} src={imgSrc} title={d} />
+        </td>
+      );
     });
   } else {
-    if (props.disciplinesSet === undefined) {
-      maxRows = 7;
-      width = 100 / maxRows + '%';
-    }
     disciplineRows = Object.keys(props.value).map((d, index) => {
       counter += 1;
       let imgSrc;
