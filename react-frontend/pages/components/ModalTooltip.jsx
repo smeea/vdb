@@ -3,7 +3,11 @@ import { Modal, Container, Row, Col } from 'react-bootstrap';
 
 function ModalTooltip(props) {
   return (
-    <Modal show={props.show} onHide={() => props.setShow(false)} animation={false}>
+    <Modal
+      show={props.show}
+      onHide={() => props.setShow(false)}
+      animation={false}
+    >
       <Modal.Body>
         <Container className="px-0" fluid>
           <Row className="px-0">

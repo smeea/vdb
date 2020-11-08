@@ -70,11 +70,11 @@ function SearchFormSet(props) {
         value: i[0],
         name: 'set',
         label: (
-          <div className='d-flex justify-content-between'>
-            <div className='pr-2'>{i[1]}</div>
-            <div className='pl-2'>{i[2]}</div>
+          <div className="d-flex justify-content-between">
+            <div className="pr-2">{i[1]}</div>
+            <div className="pl-2">{i[2]}</div>
           </div>
-        )
+        ),
       });
     }
   });

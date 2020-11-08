@@ -84,7 +84,7 @@ function AccountLogin(props) {
     !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
     loginUser();
   };
@@ -96,9 +96,7 @@ function AccountLogin(props) {
         <span className="ml-2">Login</span>
       </h6>
       <Form onSubmit={handleSubmitButton}>
-        <InputGroup
-          className="mb-2"
-        >
+        <InputGroup className="mb-2">
           <FormControl
             placeholder="Username"
             type="text"
@@ -122,10 +120,7 @@ function AccountLogin(props) {
             >
               {hidePassword ? <EyeFill /> : <EyeSlashFill />}
             </Button>
-            <Button
-              variant="outline-secondary"
-              type="submit"
-            >
+            <Button variant="outline-secondary" type="submit">
               <Check2 />
             </Button>
           </InputGroup.Append>

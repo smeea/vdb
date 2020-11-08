@@ -8,7 +8,7 @@ function DeckCopyUrlButton(props) {
     navigator.clipboard.writeText(deckUrl);
     setState(true);
     setTimeout(() => {
-      setState(false)
+      setState(false);
       props.setShowButtons(false);
     }, 500);
   };

@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import X from '../assets/images/icons/x.svg';
 import AlertMessage from './components/AlertMessage.jsx';
 import ResultCrypt from './components/ResultCrypt.jsx';
 import SearchCryptForm from './components/SearchCryptForm.jsx';
-import DeckPreview from './components/DeckPreview.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
-import DeckShowCrypt from './components/DeckShowCrypt.jsx';
-import DeckShowLibrary from './components/DeckShowLibrary.jsx';
+import DeckCrypt from './components/DeckCrypt.jsx';
+import DeckLibrary from './components/DeckLibrary.jsx';
 
 function Crypt(props) {
   const [sortMethod, setSortMethod] = useState('Default');
@@ -37,50 +36,43 @@ function Crypt(props) {
                 </Col>
               </Row>
             )}
-            {props.activeDeck &&
-             (props.isWide
-              ? <>
-                  <DeckShowCrypt
-                    deckCardAdd={props.deckCardAdd}
-                    deckCardChange={props.deckCardChange}
-                    deckid={props.activeDeck}
-                    cards={props.decks[props.activeDeck].crypt}
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
-                    isAuthor={true}
-                    isMobile={props.isMobile}
-                  />
-                  <DeckShowLibrary
-                    deckCardAdd={props.deckCardAdd}
-                    deckCardChange={props.deckCardChange}
-                    deckid={props.activeDeck}
-                    cards={props.decks[props.activeDeck].library}
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
-                    isAuthor={true}
-                    isMobile={props.isMobile}
-                  />
-                </>
-              : <DeckPreview
+            {props.activeDeck && (
+              <>
+                <DeckCrypt
+                  deckCardAdd={props.deckCardAdd}
+                  deckCardChange={props.deckCardChange}
+                  deckid={props.activeDeck}
+                  cards={props.decks[props.activeDeck].crypt}
                   showImage={props.showImage}
                   setShowImage={props.setShowImage}
-                  deck={props.decks[props.activeDeck]}
-                  getDecks={props.getDecks}
+                  isAuthor={true}
+                  isMobile={props.isMobile}
+                  isWide={props.isWide}
+                />
+                <DeckLibrary
+                  deckCardAdd={props.deckCardAdd}
                   deckCardChange={props.deckCardChange}
+                  deckid={props.activeDeck}
+                  cards={props.decks[props.activeDeck].library}
+                  showImage={props.showImage}
+                  setShowImage={props.setShowImage}
+                  isAuthor={true}
                   isMobile={props.isMobile}
                 />
-             )
-            }
+              </>
+            )}
           </Col>
         )}
-        <Col md={12} xl={5}
-             className={
-               !(props.isMobile && props.showSearch)
-                 ? "px-0 px-lg-4"
-                 : "col-hide px-0 lx-lg-4"
-             }
+        <Col
+          md={12}
+          xl={5}
+          className={
+            !(props.isMobile && props.showSearch)
+              ? 'px-0 px-lg-4'
+              : 'col-hide px-0 lx-lg-4'
+          }
         >
-          {props.results != undefined && props.results != null &&
+          {props.results != undefined && props.results != null && (
             <ResultCrypt
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -88,8 +80,8 @@ function Crypt(props) {
               cards={props.results}
               crypt={
                 props.decks &&
-                  props.decks[props.activeDeck] &&
-                  props.decks[props.activeDeck].crypt
+                props.decks[props.activeDeck] &&
+                props.decks[props.activeDeck].crypt
               }
               activeDeck={props.activeDeck}
               showSort={true}
@@ -99,19 +91,21 @@ function Crypt(props) {
               isMobile={props.isMobile}
               addMode={props.addMode}
             />
-          }
+          )}
           {props.results === null && (
             <AlertMessage className="error-message">
               <b>NO CARDS FOUND</b>
             </AlertMessage>
           )}
         </Col>
-        <Col md={12} xl={3}
-             className={
-               (!props.isMobile || (props.isMobile && props.showSearch))
-                 ? "px-0"
-                 : "col-hide px-0"
-             }
+        <Col
+          md={12}
+          xl={3}
+          className={
+            !props.isMobile || (props.isMobile && props.showSearch)
+              ? 'px-0'
+              : 'col-hide px-0'
+          }
         >
           {props.isMobile && props.results === null && (
             <AlertMessage className="error-message">
@@ -127,7 +121,7 @@ function Crypt(props) {
         </Col>
       </Row>
     </Container>
-);
+  );
 }
 
 export default Crypt;

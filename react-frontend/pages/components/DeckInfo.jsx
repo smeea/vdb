@@ -3,7 +3,7 @@ import DeckChangeName from './DeckChangeName.jsx';
 import DeckChangeAuthor from './DeckChangeAuthor.jsx';
 import DeckChangeDescription from './DeckChangeDescription.jsx';
 
-function DeckShowInfo(props) {
+function DeckInfo(props) {
   return (
     <>
       <DeckChangeName
@@ -28,4 +28,4 @@ function DeckShowInfo(props) {
   );
 }
 
-export default DeckShowInfo;
+export default DeckInfo;

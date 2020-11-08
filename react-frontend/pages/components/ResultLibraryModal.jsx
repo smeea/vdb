@@ -26,10 +26,7 @@ function ResultLibraryModal(props) {
           </Tab>
           <Tab eventKey="text" title="Description">
             <div className="pt-2">
-              <ResultLibraryPopover
-                card={props.card}
-                showImage={false}
-              />
+              <ResultLibraryPopover card={props.card} showImage={false} />
             </div>
           </Tab>
         </Tabs>

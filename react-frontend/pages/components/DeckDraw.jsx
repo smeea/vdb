@@ -62,7 +62,7 @@ function DeckDraw(props) {
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
     props.setShowButtons(false);
-  }
+  };
 
   const handleOpenDraw = () => {
     const [drawedCrypt, restCrypt] = initialDrawCards(props.crypt, 4);
@@ -123,24 +123,24 @@ function DeckDraw(props) {
       <Button variant="outline-secondary" onClick={handleOpenDraw} block>
         <Dice3 /> Draw Cards
       </Button>
-      {showDrawModal &&
-       <DeckDrawModal
-         drawedCrypt={drawedCrypt}
-         drawedLibrary={drawedLibrary}
-         handleReDrawCrypt={handleReDrawCrypt}
-         handleReDrawLibrary={handleReDrawLibrary}
-         handleDrawOneCrypt={handleDrawCryptOne}
-         handleDrawOneLibrary={handleDrawLibraryOne}
-         restCrypt={restCrypt}
-         restLibrary={restLibrary}
-         show={showDrawModal}
-         handleClose={handleCloseDrawModal}
-         showImage={props.showImage}
-         setShowImage={props.setShowImage}
-         isMobile={props.isMobile}
-         setShowButtons={props.setShowButtons}
-       />
-      }
+      {showDrawModal && (
+        <DeckDrawModal
+          drawedCrypt={drawedCrypt}
+          drawedLibrary={drawedLibrary}
+          handleReDrawCrypt={handleReDrawCrypt}
+          handleReDrawLibrary={handleReDrawLibrary}
+          handleDrawOneCrypt={handleDrawCryptOne}
+          handleDrawOneLibrary={handleDrawLibraryOne}
+          restCrypt={restCrypt}
+          restLibrary={restLibrary}
+          show={showDrawModal}
+          handleClose={handleCloseDrawModal}
+          showImage={props.showImage}
+          setShowImage={props.setShowImage}
+          isMobile={props.isMobile}
+          setShowButtons={props.setShowButtons}
+        />
+      )}
     </>
   );
 }

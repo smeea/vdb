@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import ResultLibraryCost from './ResultLibraryCost.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
-import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
-import ResultLibraryName from './ResultLibraryName.jsx';
-import ResultLibraryBurn from './ResultLibraryBurn.jsx';
-import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
-import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
+import ResultLibraryBurn from './ResultLibraryBurn.jsx';
+import ResultLibraryClan from './ResultLibraryClan.jsx';
+import ResultLibraryCost from './ResultLibraryCost.jsx';
+import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
+import ResultLibraryName from './ResultLibraryName.jsx';
+import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
+import ResultLibraryType from './ResultLibraryType.jsx';
 
 function ResultLibraryTable(props) {
   let resultTrClass;
@@ -42,27 +42,19 @@ function ResultLibraryTable(props) {
               />
             </td>
           )}
-          <td className="cost py-0"
-              onClick={() => setModalCard(card)}
-          >
+          <td className="cost py-0" onClick={() => setModalCard(card)}>
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}
             />
           </td>
-          <td className="type"
-              onClick={() => setModalCard(card)}
-          >
+          <td className="type" onClick={() => setModalCard(card)}>
             <ResultLibraryType cardtype={card['Type']} />
           </td>
-          <td className="disciplines"
-              onClick={() => setModalCard(card)}
-          >
+          <td className="disciplines" onClick={() => setModalCard(card)}>
             <ResultLibraryDisciplines value={card['Discipline']} />
           </td>
-          <td className="name"
-              onClick={() => setModalCard(card)}
-          >
+          <td className="name" onClick={() => setModalCard(card)}>
             <ResultLibraryName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -70,14 +62,10 @@ function ResultLibraryTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="clan"
-              onClick={() => setModalCard(card)}
-          >
+          <td className="clan" onClick={() => setModalCard(card)}>
             <ResultLibraryClan value={card['Clan']} />
           </td>
-          <td className="burn"
-              onClick={() => setModalCard(card)}
-          >
+          <td className="burn" onClick={() => setModalCard(card)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={card['Card Text']} />
           </td>
@@ -91,15 +79,15 @@ function ResultLibraryTable(props) {
       <table className="search-library-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {props.isMobile && modalCard &&
-       <ResultLibraryModal
-         show={modalCard? true : false}
-         card={modalCard}
-         showImage={props.showImage}
-         setShowImage={props.setShowImage}
-         handleClose={() => setModalCard(false)}
-       />
-      }
+      {props.isMobile && modalCard && (
+        <ResultLibraryModal
+          show={modalCard ? true : false}
+          card={modalCard}
+          showImage={props.showImage}
+          setShowImage={props.setShowImage}
+          handleClose={() => setModalCard(false)}
+        />
+      )}
     </>
   );
 }

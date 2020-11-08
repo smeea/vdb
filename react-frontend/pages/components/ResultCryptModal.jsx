@@ -26,10 +26,7 @@ function ResultCryptModal(props) {
           </Tab>
           <Tab eventKey="text" title="Description">
             <div className="pt-2">
-              <ResultCryptPopover
-                card={props.card}
-                showImage={false}
-              />
+              <ResultCryptPopover card={props.card} showImage={false} />
             </div>
           </Tab>
         </Tabs>

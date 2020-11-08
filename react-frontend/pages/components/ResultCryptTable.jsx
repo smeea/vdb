@@ -15,9 +15,9 @@ function ResultCryptTable(props) {
 
   const cardRows = props.resultCards.map((card, index) => {
     let q;
-    if (props.className == "deck-crypt-table") {
-      q = card.q
-      card = card.c
+    if (props.className == 'deck-crypt-table') {
+      q = card.q;
+      card = card.c;
     }
 
     if (resultTrClass == 'crypt-result-even') {
@@ -38,54 +38,48 @@ function ResultCryptTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          {props.className == "deck-crypt-table"
-           ? <>
-               {props.isAuthor
-                ? <td className="quantity">
-                    <DeckCardQuantity
-                      cardid={card['Id']}
-                      q={q}
-                      deckid={props.deckid}
-                      deckCardChange={props.deckCardChange}
-                    />
-                  </td>
-                : q
-                ? <td className="quantity-no-buttons px-3">
-                    {q}
-                  </td>
-                : <td className="quantity-no-buttons px-3">
-                    <div className="transparent">0</div>
-                  </td>
-               }
-             </>
-           : <>
-               {props.addMode && (
-                 <td className="quantity" >
-                   <ResultAddCard
-                     deckCardAdd={props.deckCardAdd}
-                     cardid={card['Id']}
-                     inDeck={inDeck}
-                   />
-                 </td>
-               )}
-             </>
-          }
-          <td className="capacity"
-              onClick={() => setmodalCard(card)}
-          >
+          {props.className == 'deck-crypt-table' ? (
+            <>
+              {props.isAuthor ? (
+                <td className="quantity">
+                  <DeckCardQuantity
+                    cardid={card['Id']}
+                    q={q}
+                    deckid={props.deckid}
+                    deckCardChange={props.deckCardChange}
+                  />
+                </td>
+              ) : q ? (
+                <td className="quantity-no-buttons px-3">{q}</td>
+              ) : (
+                <td className="quantity-no-buttons px-3">
+                  <div className="transparent">0</div>
+                </td>
+              )}
+            </>
+          ) : (
+            <>
+              {props.addMode && (
+                <td className="quantity">
+                  <ResultAddCard
+                    deckCardAdd={props.deckCardAdd}
+                    cardid={card['Id']}
+                    inDeck={inDeck}
+                  />
+                </td>
+              )}
+            </>
+          )}
+          <td className="capacity" onClick={() => setmodalCard(card)}>
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
-          <td className="disciplines"
-              onClick={() => setmodalCard(card)}
-          >
+          <td className="disciplines" onClick={() => setmodalCard(card)}>
             <ResultCryptDisciplines
               value={card['Disciplines']}
               disciplinesSet={props.disciplinesSet}
             />
           </td>
-          <td className="name"
-              onClick={() => setmodalCard(card)}
-          >
+          <td className="name" onClick={() => setmodalCard(card)}>
             <ResultCryptName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -97,14 +91,10 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="clan"
-              onClick={() => setmodalCard(card)}
-          >
+          <td className="clan" onClick={() => setmodalCard(card)}>
             <ResultCryptClan value={card['Clan']} />
           </td>
-          <td className="group"
-              onClick={() => setmodalCard(card)}
-          >
+          <td className="group" onClick={() => setmodalCard(card)}>
             <ResultCryptGroup value={card['Group']} />
           </td>
         </tr>
@@ -117,15 +107,15 @@ function ResultCryptTable(props) {
       <table className={props.className}>
         <tbody>{cardRows}</tbody>
       </table>
-      {props.isMobile && modalCard &&
-       <ResultCryptModal
-         show={modalCard? true : false}
-         card={modalCard}
-         showImage={props.showImage}
-         setShowImage={props.setShowImage}
-         handleClose={() => setmodalCard(false)}
-       />
-      }
+      {props.isMobile && modalCard && (
+        <ResultCryptModal
+          show={modalCard ? true : false}
+          card={modalCard}
+          showImage={props.showImage}
+          setShowImage={props.setShowImage}
+          handleClose={() => setmodalCard(false)}
+        />
+      )}
     </>
   );
 }

@@ -75,7 +75,7 @@ function AccountChangeEmail(props) {
     !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
     changeEmail();
   };
@@ -89,24 +89,26 @@ function AccountChangeEmail(props) {
     }
   }, [props.email]);
 
-  const tooltipText = "Email is for password recovery only. We will not share it with anyone and will not send you anything except reset password.";
+  const tooltipText =
+    'Email is for password recovery only. We will not share it with anyone and will not send you anything except reset password.';
 
   return (
     <>
       <h6 className="d-flex align-items-center">
         <EnvelopeFill />
         <span className="ml-2">Change email</span>
-        {!props.isMobile
-         ? <OverlayTooltip text={tooltipText}>
-             <span className="question-tooltip ml-1">[?]</span>
-           </OverlayTooltip>
-         : <span
-             onClick={() => setShowModal(true)}
-             className="question-tooltip ml-1"
-           >
-             [?]
-           </span>
-        }
+        {!props.isMobile ? (
+          <OverlayTooltip text={tooltipText}>
+            <span className="question-tooltip ml-1">[?]</span>
+          </OverlayTooltip>
+        ) : (
+          <span
+            onClick={() => setShowModal(true)}
+            className="question-tooltip ml-1"
+          >
+            [?]
+          </span>
+        )}
       </h6>
       <Form className="my-0" onSubmit={handleSubmitButton}>
         <InputGroup className="mb-2">
@@ -125,10 +127,7 @@ function AccountChangeEmail(props) {
             onChange={handleChange}
           />
           <InputGroup.Append>
-            <Button
-              variant="outline-secondary"
-              type="submit"
-            >
+            <Button variant="outline-secondary" type="submit">
               <Check2 size={20} />
             </Button>
           </InputGroup.Append>
@@ -149,14 +148,14 @@ function AccountChangeEmail(props) {
           <span className="login-error">Wrong password</span>
         </div>
       )}
-      {showModal &&
-       <ModalTooltip
-         text={tooltipText}
-         title="Email"
-         show={showModal}
-         setShow={setShowModal}
-       />
-      }
+      {showModal && (
+        <ModalTooltip
+          text={tooltipText}
+          title="Email"
+          show={showModal}
+          setShow={setShowModal}
+        />
+      )}
     </>
   );
 }

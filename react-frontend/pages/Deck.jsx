@@ -5,10 +5,10 @@ import ChevronExpand from '../assets/images/icons/chevron-expand.svg';
 import List from '../assets/images/icons/list.svg';
 import AlertMessage from './components/AlertMessage.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
-import DeckShowInfo from './components/DeckShowInfo.jsx';
-import DeckShowButtons from './components/DeckShowButtons.jsx';
-import DeckShowCrypt from './components/DeckShowCrypt.jsx';
-import DeckShowLibrary from './components/DeckShowLibrary.jsx';
+import DeckInfo from './components/DeckInfo.jsx';
+import DeckButtons from './components/DeckButtons.jsx';
+import DeckCrypt from './components/DeckCrypt.jsx';
+import DeckLibrary from './components/DeckLibrary.jsx';
 
 function Deck(props) {
   const query = new URLSearchParams(useLocation().search);
@@ -109,11 +109,13 @@ function Deck(props) {
           {(showInfo || !props.isMobile) && (
             <>
               {(props.decks[props.activeDeck] || sharedDeck) && (
-                <DeckShowInfo
+                <DeckInfo
                   deck={
                     props.activeDeck
                       ? props.decks[props.activeDeck]
-                      : sharedDeck ? sharedDeck[sharedDeckId] : null
+                      : sharedDeck
+                      ? sharedDeck[sharedDeckId]
+                      : null
                   }
                   deckUpdate={deckUpdate}
                   username={props.username}
@@ -124,8 +126,8 @@ function Deck(props) {
           )}
         </Col>
         <Col lg={2} className="px-0 px-lg-3">
-          { !props.isMobile &&
-            <DeckShowButtons
+          {!props.isMobile && (
+            <DeckButtons
               isActive={props.decks[props.activeDeck] || sharedDeck}
               isMobile={props.isMobile}
               isAuthor={isAuthor}
@@ -133,7 +135,9 @@ function Deck(props) {
               deck={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                  : sharedDeck ? sharedDeck[sharedDeckId] : null
+                  : sharedDeck
+                  ? sharedDeck[sharedDeckId]
+                  : null
               }
               getDecks={props.getDecks}
               activeDeck={props.activeDeck ? props.activeDeck : sharedDeckId}
@@ -143,78 +147,87 @@ function Deck(props) {
               setShowInfo={setShowInfo}
               setShowButtons={setShowButtons}
             />
-          }
-          {showButtons &&
-           <Modal
-             show={showButtons}
-             onHide={() => setShowButtons(false)}
-             animation={false}
-           >
-             <Modal.Body>
-               <Container className="px-0" fluid>
-                 <Row className="px-0 pb-2">
-                   <Col>
-                     <button
-                       type="button"
-                       className="close"
-                       onClick={() => setShowButtons(false)}
-                     >
-                       <span aria-hidden="true">×</span>
-                       <span className="sr-only">Close</span>
-                     </button>
-                   </Col>
-                 </Row>
-                 <DeckShowButtons
-                   isActive={props.decks[props.activeDeck] || sharedDeck}
-                   isMobile={props.isMobile}
-                   isAuthor={isAuthor}
-                   username={props.username}
-                   deck={
-                     props.activeDeck
-                       ? props.decks[props.activeDeck]
-                       : sharedDeck ? sharedDeck[sharedDeckId] : null
-                   }
-                   getDecks={props.getDecks}
-                   activeDeck={props.activeDeck ? props.activeDeck : sharedDeckId}
-                   setActiveDeck={props.setActiveDeck}
-                   showImage={props.showImage}
-                   setShowImage={props.setShowImage}
-                   setShowInfo={setShowInfo}
-                   setShowButtons={setShowButtons}
-                 />
-               </Container>
-             </Modal.Body>
-           </Modal>
-          }
+          )}
+          {showButtons && (
+            <Modal
+              show={showButtons}
+              onHide={() => setShowButtons(false)}
+              animation={false}
+            >
+              <Modal.Body>
+                <Container className="px-0" fluid>
+                  <Row className="px-0 pb-2">
+                    <Col>
+                      <button
+                        type="button"
+                        className="close"
+                        onClick={() => setShowButtons(false)}
+                      >
+                        <span aria-hidden="true">×</span>
+                        <span className="sr-only">Close</span>
+                      </button>
+                    </Col>
+                  </Row>
+                  <DeckButtons
+                    isActive={props.decks[props.activeDeck] || sharedDeck}
+                    isMobile={props.isMobile}
+                    isAuthor={isAuthor}
+                    username={props.username}
+                    deck={
+                      props.activeDeck
+                        ? props.decks[props.activeDeck]
+                        : sharedDeck
+                        ? sharedDeck[sharedDeckId]
+                        : null
+                    }
+                    getDecks={props.getDecks}
+                    activeDeck={
+                      props.activeDeck ? props.activeDeck : sharedDeckId
+                    }
+                    setActiveDeck={props.setActiveDeck}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                    setShowInfo={setShowInfo}
+                    setShowButtons={setShowButtons}
+                  />
+                </Container>
+              </Modal.Body>
+            </Modal>
+          )}
         </Col>
       </Row>
       {(props.decks[props.activeDeck] || sharedDeck) && (
         <Row>
           <Col lg={7} className="px-0 px-lg-3">
-            <DeckShowCrypt
+            <DeckCrypt
               deckCardAdd={props.deckCardAdd}
               deckCardChange={props.deckCardChange}
               deckid={props.activeDeck ? props.activeDeck : sharedDeckId}
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck].crypt
-                  : sharedDeck ? sharedDeck[sharedDeckId].crypt : null
+                  : sharedDeck
+                  ? sharedDeck[sharedDeckId].crypt
+                  : null
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
               isAuthor={isAuthor}
               isMobile={props.isMobile}
+              isWide={true}
             />
           </Col>
           <Col lg={5} className="px-0 px-lg-3">
-            <DeckShowLibrary
+            <DeckLibrary
               deckCardAdd={props.deckCardAdd}
               deckCardChange={props.deckCardChange}
               deckid={props.activeDeck ? props.activeDeck : sharedDeckId}
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck].library
-                  : sharedDeck ? sharedDeck[sharedDeckId].library : null
+                  : sharedDeck
+                  ? sharedDeck[sharedDeckId].library
+                  : null
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}

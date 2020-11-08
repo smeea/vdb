@@ -17,7 +17,7 @@ function DeckDescription(props) {
     }
   };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
     deckChangeDescription();
   };
@@ -44,10 +44,7 @@ function DeckDescription(props) {
         )}
         {props.isAuthor && (
           <InputGroup.Append>
-            <Button
-              variant="outline-secondary"
-              type="submit"
-            >
+            <Button variant="outline-secondary" type="submit">
               <Check2 size={20} />
             </Button>
           </InputGroup.Append>

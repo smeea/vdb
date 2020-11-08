@@ -12,8 +12,8 @@ function Navigation(props) {
     return (
       <Button
         onClick={() => {
-          props.setShowSearch(!props.showSearch)
-          window.scrollTo(0,0)
+          props.setShowSearch(!props.showSearch);
+          window.scrollTo(0, 0);
         }}
         variant="secondary"
         active={!props.showSearch}
@@ -30,32 +30,42 @@ function Navigation(props) {
         <Nav className="container justify-content-between">
           <div className="d-flex align-items-center px-1">
             {props.username &&
-             props.isActiveDeck &&
-             ((props.location.pathname == '/crypt' && !props.showCryptSearch) ||
-              (props.location.pathname == '/library' && !props.showLibrarySearch)) && (
-                <div className="d-flex align-items-center pl-1"
-                     onClick={() => props.setAddMode(!props.addMode)}
+              props.isActiveDeck &&
+              ((props.location.pathname == '/crypt' &&
+                !props.showCryptSearch) ||
+                (props.location.pathname == '/library' &&
+                  !props.showLibrarySearch)) && (
+                <div
+                  className="d-flex align-items-center pl-1"
+                  onClick={() => props.setAddMode(!props.addMode)}
                 >
-                  {props.addMode
-                   ? <>
-                       <div className="white-font-toggle">
-                         <ToggleOn />
-                       </div>
-                       {!props.isMobile
-                        ? <div className="d-inline pl-1 white-font">Add to Deck Mode</div>
-                        : <div className="d-inline pl-1 white-font">Add</div>
-                       }
-                     </>
-                   : <>
-                       <div className="gray-font-toggle">
-                         <ToggleOff />
-                       </div>
-                       {!props.isMobile
-                        ? <div className="d-inline pl-1 gray-font">Add to Deck Mode</div>
-                        : <div className="d-inline pl-1 gray-font">Add</div>
-                       }
-                     </>
-                  }
+                  {props.addMode ? (
+                    <>
+                      <div className="white-font-toggle">
+                        <ToggleOn />
+                      </div>
+                      {!props.isMobile ? (
+                        <div className="d-inline pl-1 white-font">
+                          Add to Deck Mode
+                        </div>
+                      ) : (
+                        <div className="d-inline pl-1 white-font">Add</div>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <div className="gray-font-toggle">
+                        <ToggleOff />
+                      </div>
+                      {!props.isMobile ? (
+                        <div className="d-inline pl-1 gray-font">
+                          Add to Deck Mode
+                        </div>
+                      ) : (
+                        <div className="d-inline pl-1 gray-font">Add</div>
+                      )}
+                    </>
+                  )}
                 </div>
               )}
           </div>

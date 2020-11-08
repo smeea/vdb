@@ -17,7 +17,7 @@ function DeckChangeAuthor(props) {
     }
   };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
     deckChangeAuthor();
   };
@@ -45,10 +45,7 @@ function DeckChangeAuthor(props) {
         )}
         {props.isAuthor && (
           <InputGroup.Append>
-            <Button
-              variant="outline-secondary"
-              type="submit"
-            >
+            <Button variant="outline-secondary" type="submit">
               <Check2 size={20} />
             </Button>
           </InputGroup.Append>

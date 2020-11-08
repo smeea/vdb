@@ -6,7 +6,7 @@ import resultCryptSort from './resultCryptSort.js';
 function ResultCrypt(props) {
   const [sortedCards, setSortedCards] = useState([]);
 
-  const className = "search-crypt-table"
+  const className = 'search-crypt-table';
 
   const handleChange = (method) => {
     props.setSortMethod(method);

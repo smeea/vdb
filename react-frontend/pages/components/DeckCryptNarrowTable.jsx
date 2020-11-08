@@ -1,11 +1,13 @@
 import React from 'react';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
+import ResultCryptClan from './ResultCryptClan.jsx';
+import ResultCryptGroup from './ResultCryptGroup.jsx';
 
-function DeckPreviewCryptTable(props) {
+function DeckCryptNarrowTable(props) {
   let resultTrClass;
 
-  const cardLines = props.cards.map((card, index) => {
+  const cardRows = props.resultCards.map((card, index) => {
     if (resultTrClass == 'crypt-result-odd') {
       resultTrClass = 'crypt-result-even';
     } else {
@@ -27,21 +29,23 @@ function DeckPreviewCryptTable(props) {
             <ResultCryptName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
-              id={card.c['Id']}
-              value={card.c['Name']}
-              adv={card.c['Adv']}
-              ban={card.c['Banned']}
               card={card.c}
             />
+          </td>
+          <td className="clan" onClick={() => setmodalCard(card)}>
+            <ResultCryptClan value={card.c['Clan']} />
+          </td>
+          <td className="group" onClick={() => setmodalCard(card)}>
+            <ResultCryptGroup value={card.c['Group']} />
           </td>
         </tr>
       </React.Fragment>
     );
   });
   return (
-    <table className="deck-crypt-table">
-      <tbody>{cardLines}</tbody>
+    <table className={props.className}>
+      <tbody>{cardRows}</tbody>
     </table>
   );
 }
-export default DeckPreviewCryptTable;
+export default DeckCryptNarrowTable;

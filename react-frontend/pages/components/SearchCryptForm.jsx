@@ -188,9 +188,9 @@ function SearchCryptForm(props) {
     );
     Object.keys(input).forEach(
       (k) =>
-      (input[k] == 'any' ||
-       !input[k] ||
-       Object.keys(input[k]).length === 0) &&
+        (input[k] == 'any' ||
+          !input[k] ||
+          Object.keys(input[k]).length === 0) &&
         delete input[k]
     );
     if (input['capacity'] == null) {

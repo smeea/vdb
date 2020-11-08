@@ -31,9 +31,12 @@ function ResultCryptName(props) {
             <CardPopover card={props.card}>{props.showImage}</CardPopover>
           }
         >
-          <span className="name" onClick={() => props.setShowImage(!props.showImage)}>
-            {props.value}
-            {props.adv && (
+          <span
+            className="name"
+            onClick={() => props.setShowImage(!props.showImage)}
+          >
+            {props.card['Name']}
+            {props.card['Adv'] && (
               <span className="pl-1">
                 <img className={imgClass} src={imgSrc} title={imgTitle} />
               </span>
@@ -44,8 +47,8 @@ function ResultCryptName(props) {
       ) : (
         <>
           <span className="name">
-            {props.value}
-            {props.adv && (
+            {props.card['Name']}
+            {props.card['Adv'] && (
               <span className="pl-1">
                 <img className={imgClass} src={imgSrc} title={imgTitle} />
               </span>

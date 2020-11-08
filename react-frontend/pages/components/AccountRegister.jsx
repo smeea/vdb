@@ -67,7 +67,7 @@ function AccountRegister(props) {
     !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
     registerUser();
   };
@@ -78,39 +78,36 @@ function AccountRegister(props) {
         <PersonPlusFill />
         <span className="ml-2">Create account</span>
       </h6>
-    <Form onSubmit={handleSubmitButton}>
-      <InputGroup className="mb-2">
-        <FormControl
-          placeholder="New Username"
-          type="text"
-          name="username"
-          value={state.username}
-          onChange={handleChange}
-        />
-        <FormControl
-          placeholder="Password"
-          type={hidePassword ? 'password' : 'text'}
-          name="password"
-          value={state.password}
-          onChange={handleChange}
-        />
-        <InputGroup.Append>
-          <Button
-            tabIndex="-1"
-            variant="outline-secondary"
-            onClick={() => setHidePassword(!hidePassword)}
-          >
-            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-          </Button>
-          <Button
-            variant="outline-secondary"
-            type="submit"
-          >
-            <Check2 />
-          </Button>
-        </InputGroup.Append>
-      </InputGroup>
-    </Form>
+      <Form onSubmit={handleSubmitButton}>
+        <InputGroup className="mb-2">
+          <FormControl
+            placeholder="New Username"
+            type="text"
+            name="username"
+            value={state.username}
+            onChange={handleChange}
+          />
+          <FormControl
+            placeholder="Password"
+            type={hidePassword ? 'password' : 'text'}
+            name="password"
+            value={state.password}
+            onChange={handleChange}
+          />
+          <InputGroup.Append>
+            <Button
+              tabIndex="-1"
+              variant="outline-secondary"
+              onClick={() => setHidePassword(!hidePassword)}
+            >
+              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+            </Button>
+            <Button variant="outline-secondary" type="submit">
+              <Check2 />
+            </Button>
+          </InputGroup.Append>
+        </InputGroup>
+      </Form>
       {emptyUsername && (
         <div>
           <span className="login-error">Enter username</span>

@@ -52,7 +52,7 @@ function AccountDeleteConfirmation(props) {
     !password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
     deleteAccount();
   };
@@ -84,39 +84,36 @@ function AccountDeleteConfirmation(props) {
           via URL anymore.
         </Modal.Body>
         <Modal.Footer>
-    <Form className="my-0" onSubmit={handleSubmitButton}>
-          <InputGroup className="mb-2">
-            <FormControl
-              placeholder="Enter password"
-              type={hidePassword ? 'password' : 'text'}
-              name="password"
-              value={password}
-              onChange={handleChange}
-              autoFocus={true}
-            />
-            <InputGroup.Append>
-              <Button
-                tabIndex="-1"
-                variant="outline-secondary"
-                onClick={() => setHidePassword(!hidePassword)}
-              >
-                {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-              </Button>
-              <Button
-                variant="outline-danger"
-                type="submit"
-              >
-                Delete
-              </Button>
-              <Button
-                variant="outline-secondary"
-                onClick={() => props.setShow(false)}
-              >
-                Cancel
-              </Button>
-            </InputGroup.Append>
-          </InputGroup>
-    </Form>
+          <Form className="my-0" onSubmit={handleSubmitButton}>
+            <InputGroup className="mb-2">
+              <FormControl
+                placeholder="Enter password"
+                type={hidePassword ? 'password' : 'text'}
+                name="password"
+                value={password}
+                onChange={handleChange}
+                autoFocus={true}
+              />
+              <InputGroup.Append>
+                <Button
+                  tabIndex="-1"
+                  variant="outline-secondary"
+                  onClick={() => setHidePassword(!hidePassword)}
+                >
+                  {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+                </Button>
+                <Button variant="outline-danger" type="submit">
+                  Delete
+                </Button>
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => props.setShow(false)}
+                >
+                  Cancel
+                </Button>
+              </InputGroup.Append>
+            </InputGroup>
+          </Form>
           {passwordError && (
             <div>
               <span className="login-error">Wrong password</span>

@@ -92,7 +92,7 @@ function DeckImport(props) {
     createNewDeck();
     props.setShowInfo(true);
     props.setShowButtons(false);
-  }
+  };
 
   const ImportButtonOptions = (
     <>

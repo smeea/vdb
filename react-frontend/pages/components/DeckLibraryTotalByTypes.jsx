@@ -1,7 +1,7 @@
 import React from 'react';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
-function DeckShowLibraryTotalByTypes(props) {
+function DeckLibraryTotalByTypes(props) {
   const totalOutput = Object.keys(props.byTypes).map((key, index) => {
     return (
       <span key={index} className="d-inline-block px-0 nobr pr-3">
@@ -11,11 +11,7 @@ function DeckShowLibraryTotalByTypes(props) {
     );
   });
 
-  return (
-    <>
-      {totalOutput}
-    </>
-  );
+  return <>{totalOutput}</>;
 }
 
-export default DeckShowLibraryTotalByTypes;
+export default DeckLibraryTotalByTypes;

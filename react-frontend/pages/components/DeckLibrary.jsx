@@ -1,24 +1,32 @@
-import React from 'react';
-import DeckPreviewLibraryTable from './DeckPreviewLibraryTable.jsx';
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import ChevronExpand from '../../assets/images/icons/chevron-expand.svg';
+import DeckLibraryTable from './DeckLibraryTable.jsx';
+import DeckLibraryTotalByTypes from './DeckLibraryTotalByTypes.jsx';
+import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
 function DeckLibraryByTypeTable(props) {
   return (
     <>
       <ResultLibraryType cardtype={props.cardtype} total={props.total} />
-      <DeckPreviewLibraryTable
+      <DeckLibraryTable
         showImage={props.showImage}
         setShowImage={props.setShowImage}
         deckid={props.deckid}
         deckCardChange={props.deckCardChange}
         cards={props.cards}
         isAuthor={props.isAuthor}
+        isMobile={props.isMobile}
       />
     </>
   );
 }
 
-function DeckPreviewLibrary(props) {
+function DeckLibrary(props) {
+  const [showAdd, setShowAdd] = useState(false);
+  const [showTotal, setShowTotal] = useState(false);
+
   const library = {};
   const librarySide = {};
 
@@ -53,57 +61,64 @@ function DeckPreviewLibrary(props) {
     'Event',
   ];
 
-  const LibraryDeck = [];
-  const LibrarySideDeck = [];
   let libraryTotal = 0;
+  const libraryByType = {};
+  const librarySideByType = {};
 
   for (const card in library) {
     if (card) {
       libraryTotal += library[card].q;
       const cardtype = library[card].c['Type'];
-      if (library[cardtype] === undefined) {
-        library[cardtype] = [];
+      if (libraryByType[cardtype] === undefined) {
+        libraryByType[cardtype] = [];
       }
-      library[cardtype].push([library[card].c, library[card].q]);
+      libraryByType[cardtype].push(library[card]);
     }
   }
 
   for (const card in librarySide) {
     if (card) {
       const cardtype = librarySide[card].c['Type'];
-      if (librarySide[cardtype] === undefined) {
-        librarySide[cardtype] = [];
+      if (librarySideByType[cardtype] === undefined) {
+        librarySideByType[cardtype] = [];
       }
-      librarySide[cardtype].push([librarySide[card].c, librarySide[card].q]);
+      librarySideByType[cardtype].push(librarySide[card]);
     }
   }
 
+  const libraryByTypeTotal = {};
+  const LibraryDeck = [];
+  const LibrarySideDeck = [];
+
   for (const cardtype of cardtypeSorted) {
-    if (library[cardtype] !== undefined) {
+    if (libraryByType[cardtype] !== undefined) {
+      libraryByTypeTotal[cardtype] = 0;
       let total = 0;
-      for (const card of library[cardtype]) {
-        total += card[1];
+      for (const card of libraryByType[cardtype]) {
+        total += card.q;
+        libraryByTypeTotal[cardtype] += card.q;
       }
       LibraryDeck.push(
-        <div key={cardtype}>
+        <div key={cardtype} className="pt-2">
           <DeckLibraryByTypeTable
             showImage={props.showImage}
             setShowImage={props.setShowImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
-            cards={library[cardtype]}
+            cards={libraryByType[cardtype]}
             cardtype={cardtype}
             total={total}
             isAuthor={props.isAuthor}
+            isMobile={props.isMobile}
           />
         </div>
       );
     }
 
-    if (librarySide[cardtype] !== undefined) {
+    if (librarySideByType[cardtype] !== undefined) {
       let total = 0;
-      for (const card of librarySide[cardtype]) {
-        total += card[1];
+      for (const card of librarySideByType[cardtype]) {
+        total += card.q;
       }
       LibrarySideDeck.push(
         <div key={cardtype}>
@@ -112,10 +127,11 @@ function DeckPreviewLibrary(props) {
             setShowImage={props.setShowImage}
             deckCardChange={props.deckCardChange}
             deckid={props.deckid}
-            cards={librarySide[cardtype]}
+            cards={librarySideByType[cardtype]}
             cardtype={cardtype}
             total={total}
             isAuthor={props.isAuthor}
+            isMobile={props.isMobile}
           />
         </div>
       );
@@ -123,19 +139,41 @@ function DeckPreviewLibrary(props) {
   }
 
   return (
-    <>
-      <div className="deck-library">
+    <div className="pt-4">
+      <div className="d-flex align-items-center justify-content-between pl-2 info-message">
         <b>Library [{libraryTotal}]</b>
-        {LibraryDeck}
+        <div>
+          <Button
+            variant="outline-secondary"
+            onClick={() => setShowTotal(!showTotal)}
+          >
+            <ChevronExpand />
+          </Button>
+          {props.isAuthor && (
+            <Button
+              variant="outline-secondary"
+              onClick={() => setShowAdd(!showAdd)}
+            >
+              +
+            </Button>
+          )}
+        </div>
       </div>
+      {showTotal && (
+        <div className="info-message pl-2">
+          <DeckLibraryTotalByTypes byTypes={libraryByTypeTotal} />
+        </div>
+      )}
+      {showAdd && <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />}
+      {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
-        <div className="deck-sidelibrary">
-          <b>Side Library:</b>
+        <div className="deck-sidelibrary pt-2">
+          <b>Side Library</b>
           {LibrarySideDeck}
         </div>
       )}
-    </>
+    </div>
   );
 }
 
-export default DeckPreviewLibrary;
+export default DeckLibrary;

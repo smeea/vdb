@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import ResultCryptTable from './ResultCryptTable.jsx';
+import DeckCryptNarrowTable from './DeckCryptNarrowTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
 
-function DeckShowCrypt(props) {
+function DeckCrypt(props) {
   const [showAdd, setShowAdd] = useState(false);
 
-  const className = "deck-crypt-table"
+  const className = 'deck-crypt-table';
 
   const dSet = new Set();
   for (const card of Object.keys(props.cards)) {
@@ -18,14 +19,15 @@ function DeckShowCrypt(props) {
 
   const crypt = {};
   const cryptSide = {};
-
   let cryptGroupMin;
   let cryptGroupMax;
 
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
       crypt[card] = props.cards[card];
-      if (props.cards[card].c['Group'] == 'ANY') { return; }
+      if (props.cards[card].c['Group'] == 'ANY') {
+        return;
+      }
       if (
         props.cards[card].c['Group'] < cryptGroupMin ||
         cryptGroupMin == undefined
@@ -93,37 +95,73 @@ function DeckShowCrypt(props) {
         )}
       </div>
       {showAdd && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
-      <ResultCryptTable
-        className={className}
-        deckid={props.deckid}
-        deckCardChange={props.deckCardChange}
-        resultCards={sortedCards}
-        disciplinesSet={disciplinesSet}
-        showImage={props.showImage}
-        setShowImage={props.setShowImage}
-        isAuthor={props.isAuthor}
-        isMobile={props.isMobile}
-      />
-      {Object.keys(cryptSide).length > 0 && (
-        <div className="deck-sidecrypt pt-2">
-          <div className="d-flex align-items-center justify-content-between pl-2">
-            <b>Side Crypt</b>
-          </div>
+      {props.isWide ? (
+        <>
           <ResultCryptTable
             className={className}
             deckid={props.deckid}
             deckCardChange={props.deckCardChange}
-            resultCards={sortedCardsSide}
+            resultCards={sortedCards}
             disciplinesSet={disciplinesSet}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
             isAuthor={props.isAuthor}
             isMobile={props.isMobile}
           />
-        </div>
+          {Object.keys(cryptSide).length > 0 && (
+            <div className="deck-sidecrypt pt-2">
+              <div className="d-flex align-items-center justify-content-between pl-2">
+                <b>Side Crypt</b>
+              </div>
+              <ResultCryptTable
+                className={className}
+                deckid={props.deckid}
+                deckCardChange={props.deckCardChange}
+                resultCards={sortedCardsSide}
+                disciplinesSet={disciplinesSet}
+                showImage={props.showImage}
+                setShowImage={props.setShowImage}
+                isAuthor={props.isAuthor}
+                isMobile={props.isMobile}
+              />
+            </div>
+          )}
+        </>
+      ) : (
+        <>
+          <DeckCryptNarrowTable
+            className={className}
+            deckid={props.deckid}
+            deckCardChange={props.deckCardChange}
+            resultCards={sortedCards}
+            disciplinesSet={disciplinesSet}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+            isAuthor={props.isAuthor}
+            isMobile={props.isMobile}
+          />
+          {Object.keys(cryptSide).length > 0 && (
+            <div className="deck-sidecrypt pt-2">
+              <div className="d-flex align-items-center justify-content-between pl-2">
+                <b>Side Crypt</b>
+              </div>
+              <DeckCryptNarrowTable
+                className={className}
+                deckid={props.deckid}
+                deckCardChange={props.deckCardChange}
+                resultCards={sortedCardsSide}
+                disciplinesSet={disciplinesSet}
+                showImage={props.showImage}
+                setShowImage={props.setShowImage}
+                isAuthor={props.isAuthor}
+                isMobile={props.isMobile}
+              />
+            </div>
+          )}
+        </>
       )}
     </div>
   );
 }
 
-export default DeckShowCrypt;
+export default DeckCrypt;

@@ -78,7 +78,7 @@ function AccountChangePassword(props) {
     !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
     changePassword();
   };
@@ -120,10 +120,7 @@ function AccountChangePassword(props) {
             >
               {hidePassword ? <EyeFill /> : <EyeSlashFill />}
             </Button>
-            <Button
-              variant="outline-secondary"
-              type="submit"
-            >
+            <Button variant="outline-secondary" type="submit">
               <Check2 size={20} />
             </Button>
           </InputGroup.Append>

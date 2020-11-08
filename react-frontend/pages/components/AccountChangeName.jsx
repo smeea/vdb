@@ -53,11 +53,10 @@ function AccountChangeName(props) {
     !state ? setEmptyPublicName(true) : setEmptyPublicName(false);
   };
 
-  const handleSubmitButton = event => {
+  const handleSubmitButton = (event) => {
     event.preventDefault();
     changeName();
   };
-
 
   useEffect(() => {
     if (props.publicName) {
@@ -65,24 +64,26 @@ function AccountChangeName(props) {
     }
   }, [props.publicName]);
 
-  const tooltipText = "Public name is default author name for new decks. Author name is per-deck and can be changed anytime for each deck. Public names are not unique. Changing public name will not change author name of your existing decks. Public name is *not* your account username which cannot be changed.";
+  const tooltipText =
+    'Public name is default author name for new decks. Author name is per-deck and can be changed anytime for each deck. Public names are not unique. Changing public name will not change author name of your existing decks. Public name is *not* your account username which cannot be changed.';
 
   return (
     <>
       <h6 className="d-flex align-items-center">
         <PenFill />
         <span className="ml-2">Change public name</span>
-        {!props.isMobile
-         ? <OverlayTooltip text={tooltipText}>
-             <span className="question-tooltip ml-1">[?]</span>
-           </OverlayTooltip>
-         : <span
-             onClick={() => setShowModal(true)}
-             className="question-tooltip ml-1"
-           >
-             [?]
-           </span>
-        }
+        {!props.isMobile ? (
+          <OverlayTooltip text={tooltipText}>
+            <span className="question-tooltip ml-1">[?]</span>
+          </OverlayTooltip>
+        ) : (
+          <span
+            onClick={() => setShowModal(true)}
+            className="question-tooltip ml-1"
+          >
+            [?]
+          </span>
+        )}
       </h6>
       <Form className="my-0" onSubmit={handleSubmitButton}>
         <InputGroup className="mb-2">
@@ -94,10 +95,7 @@ function AccountChangeName(props) {
             onChange={handleChange}
           />
           <InputGroup.Append>
-            <Button
-              variant="outline-secondary"
-              type="submit"
-            >
+            <Button variant="outline-secondary" type="submit">
               <Check2 size={20} />
             </Button>
           </InputGroup.Append>
@@ -108,14 +106,14 @@ function AccountChangeName(props) {
           <span className="login-error">Enter name</span>
         </div>
       )}
-      {showModal &&
-       <ModalTooltip
-         text={tooltipText}
-         title="Public name"
-         show={showModal}
-         setShow={setShowModal}
-       />
-      }
+      {showModal && (
+        <ModalTooltip
+          text={tooltipText}
+          title="Public name"
+          show={showModal}
+          setShow={setShowModal}
+        />
+      )}
     </>
   );
 }

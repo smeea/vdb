@@ -6,7 +6,7 @@ import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
 import DeckImport from './DeckImport.jsx';
 import DeckExport from './DeckExport.jsx';
 
-function DeckShowButtons(props) {
+function DeckButtons(props) {
   return (
     <>
       {props.username && (
@@ -19,11 +19,11 @@ function DeckShowButtons(props) {
           />
         </div>
       )}
-      {props.activeDeck &&
-       <div>
-         <DeckExport activeDeck={props.activeDeck} />
-       </div>
-      }
+      {props.activeDeck && (
+        <div>
+          <DeckExport activeDeck={props.activeDeck} />
+        </div>
+      )}
       {props.isAuthor && props.deck && (
         <div>
           <DeckDelete
@@ -45,28 +45,28 @@ function DeckShowButtons(props) {
           />
         </div>
       )}
-      {props.deck &&
-       <div>
-         <DeckCopyUrlButton
-           value={props.deck.deckid}
-           setShowButtons={props.setShowButtons}
-         />
-       </div>
-      }
-      {props.deck &&
-       <div>
-         <DeckDraw
-           crypt={props.deck.crypt}
-           library={props.deck.library}
-           isMobile={props.isMobile}
-           showImage={props.showImage}
-           setShowImage={props.setShowImage}
-           setShowButtons={props.setShowButtons}
-         />
-       </div>
-      }
+      {props.deck && (
+        <div>
+          <DeckCopyUrlButton
+            value={props.deck.deckid}
+            setShowButtons={props.setShowButtons}
+          />
+        </div>
+      )}
+      {props.deck && (
+        <div>
+          <DeckDraw
+            crypt={props.deck.crypt}
+            library={props.deck.library}
+            isMobile={props.isMobile}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+            setShowButtons={props.setShowButtons}
+          />
+        </div>
+      )}
     </>
   );
 }
 
-export default DeckShowButtons;
+export default DeckButtons;
