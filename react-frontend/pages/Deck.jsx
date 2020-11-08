@@ -72,7 +72,7 @@ function Deck(props) {
     <Container className="main-container">
       <Row>
         <Col lg={3} className="px-0">
-          <Row className="mx-0">
+          <Row className="justify-content-end mx-0">
             {Object.keys(props.decks).length > 0 && (
               <Col className="px-0 px-lg-3">
                 <DeckSelect

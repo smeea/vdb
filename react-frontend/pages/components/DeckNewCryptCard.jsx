@@ -43,6 +43,7 @@ function DeckNewCryptCard(props) {
 
   return (
     <AsyncSelect
+      menuPlacement="auto"
       cacheOptions
       defaultOptions
       autoFocus={true}

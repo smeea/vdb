@@ -1,10 +1,10 @@
 # FIX
 * No sort by disciplines if no space
 * Toggle button in mobile chrome (test desktop)
-* Button on-success effect - outline-success?
 * Update clans icons in svg (white background)
-* React-select height
 * Error messages
+* Buttons in mobile deck for unlogged user
+* Deck by id (shared)
 
 # FEATURES
 * Beautify card text popover

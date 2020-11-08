@@ -44,6 +44,7 @@ function DeckNewLibraryCard(props) {
 
   return (
     <AsyncSelect
+      menuPlacement="auto"
       cacheOptions
       defaultOptions
       autoFocus={true}
@@ -62,17 +63,17 @@ function DeckNewLibraryCard(props) {
             </div>
             <div>
               {card['Discipline'] && (
-                <span className="pl-2">
+                <span className="px-1">
                   <ResultLibraryDisciplines value={card['Discipline']} />
                 </span>
               )}
               {card['Clan'] && (
-                <span className="pl-2">
+                <span className="px-1">
                   <ResultLibraryClan value={card['Clan']} />
                 </span>
               )}
               {(card['Blood Cost'] || card['Pool Cost']) && (
-                <span className="pl-2">
+                <span className="px-1">
                   <ResultLibraryCost
                     valuePool={card['Pool Cost']}
                     valueBlood={card['Blood Cost']}

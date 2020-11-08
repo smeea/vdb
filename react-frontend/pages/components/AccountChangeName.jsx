@@ -10,6 +10,7 @@ function AccountChangeName(props) {
   const [state, setState] = useState('');
 
   const [showModal, setShowModal] = useState(false);
+  const [buttonState, setButtonState] = useState(false);
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -44,7 +45,13 @@ function AccountChangeName(props) {
             throw Error(`Error: ${response.status}`);
           }
         })
-        .then(() => props.setPublicName(state))
+        .then(() => {
+          props.setPublicName(state);
+          setButtonState(true);
+          setTimeout(() => {
+            setButtonState(false);
+          }, 500);
+        })
         .catch((error) => {
           console.log(error);
         });
@@ -95,9 +102,15 @@ function AccountChangeName(props) {
             onChange={handleChange}
           />
           <InputGroup.Append>
-            <Button variant="outline-secondary" type="submit">
-              <Check2 size={20} />
-            </Button>
+            {!buttonState ? (
+              <Button variant="outline-secondary" type="submit">
+                <Check2 size={20} />
+              </Button>
+            ) : (
+              <Button variant="success" type="submit">
+                <Check2 size={20} />
+              </Button>
+            )}
           </InputGroup.Append>
         </InputGroup>
       </Form>

@@ -18,6 +18,8 @@ function AccountChangePassword(props) {
   const [passwordError, setPasswordError] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
 
+  const [buttonState, setButtonState] = useState(false);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setState((prevState) => ({
@@ -62,6 +64,10 @@ function AccountChangePassword(props) {
           }
         })
         .then((data) => {
+          setButtonState(true);
+          setTimeout(() => {
+            setButtonState(false);
+          }, 500);
           console.log('changed password');
         })
         .catch((error) => {
@@ -120,9 +126,15 @@ function AccountChangePassword(props) {
             >
               {hidePassword ? <EyeFill /> : <EyeSlashFill />}
             </Button>
-            <Button variant="outline-secondary" type="submit">
-              <Check2 size={20} />
-            </Button>
+            {!buttonState ? (
+              <Button variant="outline-secondary" type="submit">
+                <Check2 size={20} />
+              </Button>
+            ) : (
+              <Button variant="success" type="submit">
+                <Check2 size={20} />
+              </Button>
+            )}
           </InputGroup.Append>
         </InputGroup>
       </Form>

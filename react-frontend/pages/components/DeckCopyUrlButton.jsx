@@ -4,6 +4,7 @@ import ShareFill from '../../assets/images/icons/share-fill.svg';
 
 function DeckCopyUrlButton(props) {
   const deckUrl = `${process.env.ROOT_URL}deck?id=${props.value}`;
+
   const handleButton = () => {
     navigator.clipboard.writeText(deckUrl);
     setState(true);
@@ -22,7 +23,7 @@ function DeckCopyUrlButton(props) {
           <ShareFill /> Copy URL
         </Button>
       ) : (
-        <Button variant="outline-success" onClick={handleButton} block>
+        <Button variant="success" onClick={handleButton} block>
           <ShareFill /> Copied
         </Button>
       )}

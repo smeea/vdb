@@ -12,6 +12,7 @@ function AccountChangeEmail(props) {
   });
 
   const [showModal, setShowModal] = useState(false);
+  const [buttonState, setButtonState] = useState(false);
 
   const [emptyEmail, setEmptyEmail] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
@@ -60,6 +61,10 @@ function AccountChangeEmail(props) {
         })
         .then((data) => {
           props.setEmail(state.email);
+          setButtonState(true);
+          setTimeout(() => {
+            setButtonState(false);
+          }, 500);
         })
         .catch((error) => {
           setPasswordError(true);
@@ -127,9 +132,15 @@ function AccountChangeEmail(props) {
             onChange={handleChange}
           />
           <InputGroup.Append>
-            <Button variant="outline-secondary" type="submit">
-              <Check2 size={20} />
-            </Button>
+            {!buttonState ? (
+              <Button variant="outline-secondary" type="submit">
+                <Check2 size={20} />
+              </Button>
+            ) : (
+              <Button variant="success" type="submit">
+                <Check2 size={20} />
+              </Button>
+            )}
           </InputGroup.Append>
         </InputGroup>
       </Form>
