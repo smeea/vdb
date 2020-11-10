@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import ResultCryptTable from './ResultCryptTable.jsx';
-import DeckCryptNarrowTable from './DeckCryptNarrowTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
 
 function DeckCrypt(props) {
@@ -149,13 +148,28 @@ function DeckCrypt(props) {
               </Modal.Body>
             </Modal>
       )}
-      {props.isWide ? (
-        <>
+      <ResultCryptTable
+        className={className}
+        deckid={props.deckid}
+        deckCardChange={props.deckCardChange}
+        resultCards={sortedCards}
+        disciplinesSet={disciplinesSet}
+        showImage={props.showImage}
+        setShowImage={props.setShowImage}
+        isAuthor={props.isAuthor}
+        isMobile={props.isMobile}
+        keyDisciplines={keyDisciplines}
+      />
+      {Object.keys(cryptSide).length > 0 && (
+        <div className="deck-sidecrypt pt-2">
+          <div className="d-flex align-items-center justify-content-between pl-2">
+            <b>Side Crypt</b>
+          </div>
           <ResultCryptTable
             className={className}
             deckid={props.deckid}
             deckCardChange={props.deckCardChange}
-            resultCards={sortedCards}
+            resultCards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
@@ -163,58 +177,7 @@ function DeckCrypt(props) {
             isMobile={props.isMobile}
             keyDisciplines={keyDisciplines}
           />
-          {Object.keys(cryptSide).length > 0 && (
-            <div className="deck-sidecrypt pt-2">
-              <div className="d-flex align-items-center justify-content-between pl-2">
-                <b>Side Crypt</b>
-              </div>
-              <ResultCryptTable
-                className={className}
-                deckid={props.deckid}
-                deckCardChange={props.deckCardChange}
-                resultCards={sortedCardsSide}
-                disciplinesSet={disciplinesSet}
-                showImage={props.showImage}
-                setShowImage={props.setShowImage}
-                isAuthor={props.isAuthor}
-                isMobile={props.isMobile}
-                keyDisciplines={keyDisciplines}
-              />
-            </div>
-          )}
-        </>
-      ) : (
-        <>
-          <DeckCryptNarrowTable
-            className={className}
-            deckid={props.deckid}
-            deckCardChange={props.deckCardChange}
-            resultCards={sortedCards}
-            disciplinesSet={disciplinesSet}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
-            isAuthor={props.isAuthor}
-            isMobile={props.isMobile}
-          />
-          {Object.keys(cryptSide).length > 0 && (
-            <div className="deck-sidecrypt pt-2">
-              <div className="d-flex align-items-center justify-content-between pl-2">
-                <b>Side Crypt</b>
-              </div>
-              <DeckCryptNarrowTable
-                className={className}
-                deckid={props.deckid}
-                deckCardChange={props.deckCardChange}
-                resultCards={sortedCardsSide}
-                disciplinesSet={disciplinesSet}
-                showImage={props.showImage}
-                setShowImage={props.setShowImage}
-                isAuthor={props.isAuthor}
-                isMobile={props.isMobile}
-              />
-            </div>
-          )}
-        </>
+        </div>
       )}
     </div>
   );

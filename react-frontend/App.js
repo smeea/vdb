@@ -32,7 +32,7 @@ function App(props) {
   const [libraryResults, setLibraryResults] = useState(undefined);
 
   const isMobile = window.matchMedia('(max-width: 540px)').matches;
-  const isWide = window.matchMedia('(min-width: 1400px)').matches;
+  const isWide = window.matchMedia('(min-width: 1600px)').matches;
 
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
