@@ -4,7 +4,12 @@ function ResultCryptDisciplines(props) {
   let disciplineRows;
   const emptyRows = [];
   let counter = 0;
-  const maxRows = 7;
+  let maxRows;
+  if (props.disciplinesSet) {
+    maxRows = 8;
+  } else {
+    maxRows = 7;
+  }
   const width = 100 / maxRows + '%';
 
   if (props.disciplinesSet) {
