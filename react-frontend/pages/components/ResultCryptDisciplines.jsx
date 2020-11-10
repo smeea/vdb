@@ -5,7 +5,9 @@ function ResultCryptDisciplines(props) {
   const emptyRows = [];
   let counter = 0;
   let maxRows;
-  if (props.disciplinesSet) {
+  if (props.isMobile) {
+    maxRows = 6;
+  } else if (props.disciplinesSet) {
     maxRows = 8;
   } else {
     maxRows = 7;
@@ -50,7 +52,6 @@ function ResultCryptDisciplines(props) {
         return null;
       }
     });
-    console.log('---');
   } else {
     disciplineRows = Object.keys(props.value).map((d, index) => {
       counter += 1;
