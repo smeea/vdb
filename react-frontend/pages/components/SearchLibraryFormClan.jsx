@@ -61,18 +61,7 @@ function SearchLibraryFormClan(props) {
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
-        label: (
-          <>
-            <span
-              style={{
-                display: 'inline-block',
-                width: '40px',
-                textAlign: 'center',
-              }}
-            />
-            {i}
-          </>
-        ),
+        label: (<> <span className="margin-full" /> {i} </>),
       });
     } else {
       const imgSrc = `${
@@ -81,20 +70,11 @@ function SearchLibraryFormClan(props) {
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
-        label: (
-          <>
-            <span
-              style={{
-                display: 'inline-block',
-                width: '40px',
-                textAlign: 'center',
-              }}
-            >
-              <img src={imgSrc} className="discipline-base-image-results" />
-            </span>
-            {i}
-          </>
-        ),
+        label: (<> <span className="margin-full">
+                     <img src={imgSrc} className="discipline-base-image-results" />
+                   </span>
+                  {i}
+                </>),
       });
     }
   });

@@ -20,18 +20,7 @@ function SearchLibraryFormSect(props) {
     options.push({
       value: i.toLowerCase(),
       name: 'sect',
-      label: (
-        <>
-          <span
-            style={{
-              display: 'inline-block',
-              width: '40px',
-              textAlign: 'center',
-            }}
-          />
-          {i}
-        </>
-      ),
+      label: (<> <span className="margin-full" /> {i} </>),
     });
   });
 

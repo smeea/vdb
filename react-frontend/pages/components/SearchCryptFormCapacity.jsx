@@ -26,18 +26,7 @@ function SearchCryptFormCapacity(props) {
     options.push({
       value: v,
       name: 'capacity',
-      label: (
-        <>
-          <span
-            style={{
-              display: 'inline-block',
-              width: '20px',
-              textAlign: 'center',
-            }}
-          />
-          {i}
-        </>
-      ),
+      label: (<> <span className="margin-half" /> {i} </>),
     });
   });
 
@@ -52,18 +41,7 @@ function SearchCryptFormCapacity(props) {
     morelessOptions.push({
       value: i[0],
       name: 'capacitymoreless',
-      label: (
-        <>
-          <span
-            style={{
-              display: 'inline-block',
-              width: '20px',
-              textAlign: 'center',
-            }}
-          />
-          {i[1]}
-        </>
-      ),
+      label: (<> <span className="margin-half" /> {i[1]} </>),
     });
   });
 

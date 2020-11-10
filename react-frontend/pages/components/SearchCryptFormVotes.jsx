@@ -18,18 +18,7 @@ function SearchCryptFormVotes(props) {
     options.push({
       value: i[0],
       name: 'votes',
-      label: (
-        <>
-          <span
-            style={{
-              display: 'inline-block',
-              width: '40px',
-              textAlign: 'center',
-            }}
-          />
-          {i[1]}
-        </>
-      ),
+      label: (<> <span className="margin-full" /> {i[1]} </>),
     });
   });
 

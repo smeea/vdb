@@ -46,18 +46,7 @@ function SearchFormSet(props) {
       options.push({
         value: i[0],
         name: 'set',
-        label: (
-          <>
-            <span
-              style={{
-                display: 'inline-block',
-                width: '40px',
-                textAlign: 'center',
-              }}
-            ></span>
-            {i[1]}
-          </>
-        ),
+        label: (<> <span className="margin-full" /> {i[1]} </>),
       });
     } else if (!i[2]) {
       options.push({

@@ -3,7 +3,6 @@
 * Buttons in mobile deck for unlogged user
 * Deck by id (shared)
 * Error messages
-* Form span styles to CSS
 
 # FEATURES
 * Beautify card text popover

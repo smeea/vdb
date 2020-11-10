@@ -27,18 +27,7 @@ function SearchLibraryFormTitle(props) {
     options.push({
       value: i.toLowerCase(),
       name: 'title',
-      label: (
-        <>
-          <span
-            style={{
-              display: 'inline-block',
-              width: '40px',
-              textAlign: 'center',
-            }}
-          />
-          {i}
-        </>
-      ),
+      label: (<> <span className="margin-full" /> {i} </>),
     });
   });
 
