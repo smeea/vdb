@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import ResultCryptTable from './ResultCryptTable.jsx';
 import DeckCryptNarrowTable from './DeckCryptNarrowTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
@@ -114,7 +114,41 @@ function DeckCrypt(props) {
           </Button>
         )}
       </div>
-      {showAdd && <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />}
+      {showAdd && (
+        !props.isMobile
+          ? <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />
+          : <Modal
+              show={showAdd}
+              onHide={() => setShowAdd(false)}
+              animation={false}
+            >
+              <Modal.Body className="p-0">
+                <Container className="p-0" fluid>
+                  <Row className="p-0 m-0">
+                    <Col className="p-0">
+                      <div className="m-2">
+                        <button
+                          type="button"
+                          className="close"
+                          onClick={() => setShowAdd(false)}
+                        >
+                          <span aria-hidden="true">×</span>
+                          <span className="sr-only">Close</span>
+                        </button>
+                      </div>
+                      <div className="d-flex justify-content-center">
+                        <h5>Add Crypt Card</h5>
+                      </div>
+                    </Col>
+                  </Row>
+                  <DeckNewCryptCard
+                    deckCardAdd={props.deckCardAdd}
+                    setShowAdd={setShowAdd}
+                  />
+                </Container>
+              </Modal.Body>
+            </Modal>
+      )}
       {props.isWide ? (
         <>
           <ResultCryptTable

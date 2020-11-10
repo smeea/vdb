@@ -26,7 +26,7 @@ function DeckDrawModal(props) {
                 <span className="sr-only">Close</span>
               </button>
               <div className="d-flex justify-content-center">
-                <h5>DECK DRAW</h5>
+                <h5>Deck Draw</h5>
               </div>
             </Col>
           </Row>

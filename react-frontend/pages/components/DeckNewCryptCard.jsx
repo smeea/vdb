@@ -12,6 +12,7 @@ function DeckNewCryptCard(props) {
     if (selectedValue.Id) {
       props.deckCardAdd(selectedValue.Id);
       setSelectedValue('');
+      props.setShowAdd(false);
     } else {
       console.log('Error: submit with empty forms');
     }
@@ -43,7 +44,6 @@ function DeckNewCryptCard(props) {
 
   return (
     <AsyncSelect
-      menuPlacement="auto"
       cacheOptions
       defaultOptions
       autoFocus={true}

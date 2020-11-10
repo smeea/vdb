@@ -41,7 +41,7 @@ function Navigation(props) {
                 >
                   {props.addMode ? (
                     <>
-                      <div className="white-font-toggle">
+                      <div className="d-flex white-font-toggle">
                         <ToggleOn />
                       </div>
                       {!props.isMobile ? (
@@ -54,7 +54,7 @@ function Navigation(props) {
                     </>
                   ) : (
                     <>
-                      <div className="gray-font-toggle">
+                      <div className="d-flex gray-font-toggle">
                         <ToggleOff />
                       </div>
                       {!props.isMobile ? (

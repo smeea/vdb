@@ -13,6 +13,7 @@ function DeckNewLibraryCard(props) {
     if (selectedValue.Id) {
       props.deckCardAdd(selectedValue.Id);
       setSelectedValue('');
+      props.setShowAdd(false);
     } else {
       console.log('Error: submit with empty forms');
     }
@@ -44,7 +45,6 @@ function DeckNewLibraryCard(props) {
 
   return (
     <AsyncSelect
-      menuPlacement="auto"
       cacheOptions
       defaultOptions
       autoFocus={true}

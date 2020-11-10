@@ -1,10 +1,8 @@
 # FIX
-* Toggle button in mobile chrome
 * Update clans icons in svg (white background)
-* Error messages
 * Buttons in mobile deck for unlogged user
-* React-select height - test on mobile
 * Deck by id (shared)
+* Error messages
 
 # FEATURES
 * Beautify card text popover
