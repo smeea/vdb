@@ -50,6 +50,7 @@ function ResultCryptDisciplines(props) {
         return null;
       }
     });
+    console.log('---');
   } else {
     disciplineRows = Object.keys(props.value).map((d, index) => {
       counter += 1;

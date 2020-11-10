@@ -32,7 +32,7 @@ function DeckCrypt(props) {
 
   let keyDisciplines = 0;
   disciplinesForSort.sort((a, b) => b[1] - a[1]).map((i) => {
-    if (i[1] >= 6) {
+    if (i[1] >= 5) {
       keyDisciplines += 1;
     }
   })
