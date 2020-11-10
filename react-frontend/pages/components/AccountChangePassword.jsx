@@ -17,7 +17,6 @@ function AccountChangePassword(props) {
   const [passwordConfirmError, setPasswordConfirmError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
-
   const [buttonState, setButtonState] = useState(false);
 
   const handleChange = (event) => {

@@ -30,6 +30,13 @@ function DeckCrypt(props) {
     return(i[0]);
   })
 
+  let keyDisciplines = 0;
+  disciplinesForSort.sort((a, b) => b[1] - a[1]).map((i) => {
+    if (i[1] >= 6) {
+      keyDisciplines += 1;
+    }
+  })
+
   const crypt = {};
   const cryptSide = {};
   let cryptGroupMin;
@@ -120,6 +127,7 @@ function DeckCrypt(props) {
             setShowImage={props.setShowImage}
             isAuthor={props.isAuthor}
             isMobile={props.isMobile}
+            keyDisciplines={keyDisciplines}
           />
           {Object.keys(cryptSide).length > 0 && (
             <div className="deck-sidecrypt pt-2">
@@ -136,6 +144,7 @@ function DeckCrypt(props) {
                 setShowImage={props.setShowImage}
                 isAuthor={props.isAuthor}
                 isMobile={props.isMobile}
+                keyDisciplines={keyDisciplines}
               />
             </div>
           )}

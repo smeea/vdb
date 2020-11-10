@@ -4,6 +4,7 @@ import Check2 from '../../assets/images/icons/check2.svg';
 
 function DeckDescription(props) {
   const [state, setState] = useState('');
+  const [buttonState, setButtonState] = useState(false);
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -12,6 +13,10 @@ function DeckDescription(props) {
   const deckChangeDescription = () => {
     if (state) {
       props.deckUpdate(props.deckid, 'description', state);
+      setButtonState(true);
+      setTimeout(() => {
+        setButtonState(false);
+      }, 500);
     } else {
       console.log('Error: submit with empty form');
     }
@@ -44,9 +49,15 @@ function DeckDescription(props) {
         )}
         {props.isAuthor && (
           <InputGroup.Append>
-            <Button variant="outline-secondary" type="submit">
-              <Check2 size={20} />
-            </Button>
+            {!buttonState ? (
+              <Button variant="outline-secondary" type="submit">
+                <Check2 size={20} />
+              </Button>
+            ) : (
+              <Button variant="success" type="submit">
+                <Check2 size={20} />
+              </Button>
+            )}
           </InputGroup.Append>
         )}
       </InputGroup>

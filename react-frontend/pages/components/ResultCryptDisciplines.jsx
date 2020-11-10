@@ -9,7 +9,6 @@ function ResultCryptDisciplines(props) {
 
   if (props.disciplinesSet) {
     disciplineRows = props.disciplinesSet.map((d, index) => {
-      counter += 1;
       let imgSrc;
       let imgClass;
       if (props.value[d] == 1) {
@@ -27,11 +26,24 @@ function ResultCryptDisciplines(props) {
             .replace(/[\s,:!?'.\-]/g, '')}sup.svg`;
         imgClass = 'discipline-superior-image-results';
       }
-      return (
-        <td width={width} key={index}>
-          {props.value[d] && <img className={imgClass} src={imgSrc} title={d} />}
-        </td>
-      );
+      if (counter < props.keyDisciplines) {
+        counter += 1;
+        return (
+          <td width={width} key={index}>
+            {props.value[d] && <img className={imgClass} src={imgSrc} title={d} />}
+          </td>
+        );
+      } else if (props.value[d]) {
+        counter += 1;
+        return (
+          <td width={width} key={index}>
+            {props.value[d] && <img className={imgClass} src={imgSrc} title={d} />}
+          </td>
+
+        )
+      } else {
+        return null;
+      }
     });
   } else {
     disciplineRows = Object.keys(props.value).map((d, index) => {

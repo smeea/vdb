@@ -77,6 +77,7 @@ function ResultCryptTable(props) {
             <ResultCryptDisciplines
               value={card['Disciplines']}
               disciplinesSet={props.disciplinesSet}
+              keyDisciplines={props.keyDisciplines}
               isMobile={props.isMobile}
             />
           </td>
