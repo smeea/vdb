@@ -1,6 +1,4 @@
 # FIX
-* Sort deck discipline columns by popularity
-* No sort by disciplines if no space
 * Toggle button in mobile chrome
 * Update clans icons in svg (white background)
 * Error messages
