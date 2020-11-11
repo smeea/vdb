@@ -20,34 +20,37 @@ function ResultCryptDisciplines(props) {
       let imgClass;
       if (props.value[d] == 1) {
         imgSrc = `${
-            process.env.ROOT_URL
-          }images/disciplines/${d
-            .toLowerCase()
-            .replace(/[\s,:!?'.\-]/g, '')}.svg`;
+          process.env.ROOT_URL
+        }images/disciplines/${d
+          .toLowerCase()
+          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
         imgClass = 'discipline-base-image-results';
       } else if (props.value[d] == 2) {
         imgSrc = `${
-            process.env.ROOT_URL
-          }images/disciplines/${d
-            .toLowerCase()
-            .replace(/[\s,:!?'.\-]/g, '')}sup.svg`;
+          process.env.ROOT_URL
+        }images/disciplines/${d
+          .toLowerCase()
+          .replace(/[\s,:!?'.\-]/g, '')}sup.svg`;
         imgClass = 'discipline-superior-image-results';
       }
       if (counter < props.keyDisciplines) {
         counter += 1;
         return (
           <td width={width} key={index}>
-            {props.value[d] && <img className={imgClass} src={imgSrc} title={d} />}
+            {props.value[d] && (
+              <img className={imgClass} src={imgSrc} title={d} />
+            )}
           </td>
         );
       } else if (props.value[d]) {
         counter += 1;
         return (
           <td width={width} key={index}>
-            {props.value[d] && <img className={imgClass} src={imgSrc} title={d} />}
+            {props.value[d] && (
+              <img className={imgClass} src={imgSrc} title={d} />
+            )}
           </td>
-
-        )
+        );
       } else {
         return null;
       }
@@ -74,7 +77,9 @@ function ResultCryptDisciplines(props) {
       }
       return (
         <td width={width} key={index}>
-          {props.value[d] && <img className={imgClass} src={imgSrc} title={d} />}
+          {props.value[d] && (
+            <img className={imgClass} src={imgSrc} title={d} />
+          )}
         </td>
       );
     });

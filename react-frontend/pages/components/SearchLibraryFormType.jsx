@@ -27,7 +27,12 @@ function SearchLibraryFormType(props) {
       options.push({
         value: i.toLowerCase(),
         name: 'type',
-        label: (<> <span className="margin-full" /> {i} </>),
+        label: (
+          <>
+            {' '}
+            <span className="margin-full" /> {i}{' '}
+          </>
+        ),
       });
     } else {
       const imgSrc = `${
@@ -36,11 +41,15 @@ function SearchLibraryFormType(props) {
       options.push({
         value: i.toLowerCase(),
         name: 'type',
-        label: (<> <span className="margin-full">
-                     <img src={imgSrc} className="type-image-results" />
-                   </span>
-                  {i}
-                </>),
+        label: (
+          <>
+            {' '}
+            <span className="margin-full">
+              <img src={imgSrc} className="type-image-results" />
+            </span>
+            {i}
+          </>
+        ),
       });
     }
   });

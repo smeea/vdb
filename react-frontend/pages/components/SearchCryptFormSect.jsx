@@ -19,7 +19,12 @@ function SearchCryptFormSect(props) {
     options.push({
       value: i.toLowerCase(),
       name: 'sect',
-      label: (<> <span className="margin-full" /> {i} </>),
+      label: (
+        <>
+          {' '}
+          <span className="margin-full" /> {i}{' '}
+        </>
+      ),
     });
   });
 

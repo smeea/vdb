@@ -13,7 +13,12 @@ function SearchLibraryFormPoolCost(props) {
     options.push({
       value: v,
       name: 'pool',
-      label: (<> <span className="margin-half" /> {i} </>),
+      label: (
+        <>
+          {' '}
+          <span className="margin-half" /> {i}{' '}
+        </>
+      ),
     });
   });
 
@@ -28,7 +33,12 @@ function SearchLibraryFormPoolCost(props) {
     morelessOptions.push({
       value: i[0],
       name: 'poolmoreless',
-      label: (<> <span className="margin-half" /> {i[1]} </>),
+      label: (
+        <>
+          {' '}
+          <span className="margin-half" /> {i[1]}{' '}
+        </>
+      ),
     });
   });
 

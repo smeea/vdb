@@ -93,22 +93,23 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          {(props.isMobile || !props.isWide)
-           ? <td className="clan-group" onClick={() => setmodalCard(card)}>
-               <div>
-                 <ResultCryptClan value={card['Clan']} />
-                 <ResultCryptGroup value={card['Group']} />
-               </div>
-             </td>
-           : <>
-               <td className="clan" onClick={() => setmodalCard(card)}>
-                 <ResultCryptClan value={card['Clan']} />
-               </td>
-               <td className="group" onClick={() => setmodalCard(card)}>
-                 <ResultCryptGroup value={card['Group']} />
-               </td>
-             </>
-          }
+          {props.isMobile || !props.isWide ? (
+            <td className="clan-group" onClick={() => setmodalCard(card)}>
+              <div>
+                <ResultCryptClan value={card['Clan']} />
+                <ResultCryptGroup value={card['Group']} />
+              </div>
+            </td>
+          ) : (
+            <>
+              <td className="clan" onClick={() => setmodalCard(card)}>
+                <ResultCryptClan value={card['Clan']} />
+              </td>
+              <td className="group" onClick={() => setmodalCard(card)}>
+                <ResultCryptGroup value={card['Group']} />
+              </td>
+            </>
+          )}
         </tr>
       </React.Fragment>
     );

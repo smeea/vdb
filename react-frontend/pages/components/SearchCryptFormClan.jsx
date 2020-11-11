@@ -60,9 +60,13 @@ function SearchCryptFormClan(props) {
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
-        label: (<> <span className="margin-full" />
-                  {i}
-                </>),
+        label: (
+          <>
+            {' '}
+            <span className="margin-full" />
+            {i}
+          </>
+        ),
       });
     } else {
       const imgSrc = `${
@@ -71,11 +75,15 @@ function SearchCryptFormClan(props) {
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
-        label: (<> <span className="margin-full">
-                     <img src={imgSrc} className="discipline-base-image-results" />
-                   </span>
-                  {i}
-                </>),
+        label: (
+          <>
+            {' '}
+            <span className="margin-full">
+              <img src={imgSrc} className="discipline-base-image-results" />
+            </span>
+            {i}
+          </>
+        ),
       });
     }
   });

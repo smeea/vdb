@@ -49,7 +49,12 @@ function SearchLibraryFormDiscipline(props) {
       options.push({
         value: i.toLowerCase(),
         name: 'discipline',
-        label: (<> <span className="margin-full" /> {i} </>),
+        label: (
+          <>
+            {' '}
+            <span className="margin-full" /> {i}{' '}
+          </>
+        ),
       });
     } else {
       const imgSrc = `${
@@ -58,12 +63,14 @@ function SearchLibraryFormDiscipline(props) {
       options.push({
         value: i.toLowerCase(),
         name: 'discipline',
-        label: (<>
-                  <span className="margin-full">
-                    <img src={imgSrc} className="discipline-base-image-results" />
-                  </span>
-                  {i}
-                </>),
+        label: (
+          <>
+            <span className="margin-full">
+              <img src={imgSrc} className="discipline-base-image-results" />
+            </span>
+            {i}
+          </>
+        ),
       });
     }
   });

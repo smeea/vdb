@@ -164,41 +164,45 @@ function DeckLibrary(props) {
           <DeckLibraryTotalByTypes byTypes={libraryByTypeTotal} />
         </div>
       )}
-      {showAdd && (
-        !props.isMobile
-          ? <DeckNewLibraryCard deckCardAdd={props.deckCardAdd} />
-          : <Modal
-              show={showAdd}
-              onHide={() => setShowAdd(false)}
-              animation={false}
-            >
-              <Modal.Body className="p-0">
-                <Container className="p-0" fluid>
-                  <Row className="p-0 m-0">
-                    <Col className="p-0">
-                      <div className="m-2">
-                        <button
-                          type="button"
-                          className="close"
-                          onClick={() => setShowAdd(false)}
-                        >
-                          <span aria-hidden="true">×</span>
-                          <span className="sr-only">Close</span>
-                        </button>
-                      </div>
-                      <div className="d-flex justify-content-center">
-                        <h5>Add Library Card</h5>
-                      </div>
-                    </Col>
-                  </Row>
-                  <DeckNewLibraryCard
-                    deckCardAdd={props.deckCardAdd}
-                    setShowAdd={setShowAdd}
-                  />
-                </Container>
-              </Modal.Body>
-            </Modal>
-      )}
+      {showAdd &&
+        (!props.isMobile ? (
+          <DeckNewLibraryCard
+            deckCardAdd={props.deckCardAdd}
+            setShowAdd={setShowAdd}
+          />
+        ) : (
+          <Modal
+            show={showAdd}
+            onHide={() => setShowAdd(false)}
+            animation={false}
+          >
+            <Modal.Body className="p-0">
+              <Container className="p-0" fluid>
+                <Row className="p-0 m-0">
+                  <Col className="p-0">
+                    <div className="m-2">
+                      <button
+                        type="button"
+                        className="close"
+                        onClick={() => setShowAdd(false)}
+                      >
+                        <span aria-hidden="true">×</span>
+                        <span className="sr-only">Close</span>
+                      </button>
+                    </div>
+                    <div className="d-flex justify-content-center">
+                      <h5>Add Library Card</h5>
+                    </div>
+                  </Col>
+                </Row>
+                <DeckNewLibraryCard
+                  deckCardAdd={props.deckCardAdd}
+                  setShowAdd={setShowAdd}
+                />
+              </Container>
+            </Modal.Body>
+          </Modal>
+        ))}
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && (
         <div className="deck-sidelibrary pt-2">

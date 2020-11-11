@@ -29,14 +29,17 @@ function About(props) {
               VDB is online card search and deck building tool for Vampire the
               Eternal Struggle (VTES).
               <br />
-              It's a successor of{' '}<a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
+              It's a successor of{' '}
+              <a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
             </p>
             <h5>FEATURES</h5>
             <ul>
               <li>Combined deck building & search interface</li>
               <li>Clean, but informative look</li>
               <li>Mobile-friendly</li>
-              <li>Import/export to popular formats to easy migration and backup</li>
+              <li>
+                Import/export to popular formats to easy migration and backup
+              </li>
               <li>Once familiar with, you will love it!</li>
               <li>Open source</li>
               <li>Ad-free & non-commercial</li>
@@ -108,8 +111,8 @@ function About(props) {
               We respect privacy and promise not to use/share your data (email,
               decks, etc).
               <br />
-              This service is ad-free and there are no
-              trackers of your activity.
+              This service is ad-free and there are no trackers of your
+              activity.
             </p>
 
             <h5>DONATIONS</h5>

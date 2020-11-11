@@ -13,7 +13,12 @@ function SearchLibraryFormBloodCost(props) {
     options.push({
       value: v,
       name: 'blood',
-      label: (<> <span className="margin-half" /> {i} </>),
+      label: (
+        <>
+          {' '}
+          <span className="margin-half" /> {i}{' '}
+        </>
+      ),
     });
   });
 
@@ -28,7 +33,12 @@ function SearchLibraryFormBloodCost(props) {
     morelessOptions.push({
       value: i[0],
       name: 'bloodmoreless',
-      label: (<> <span className="margin-half" /> {i[1]} </>),
+      label: (
+        <>
+          {' '}
+          <span className="margin-half" /> {i[1]}{' '}
+        </>
+      ),
     });
   });
 

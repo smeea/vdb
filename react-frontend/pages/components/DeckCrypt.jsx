@@ -21,20 +21,24 @@ function DeckCrypt(props) {
   }
 
   const disciplinesForSort = [];
-  Object.keys(disciplinesDict).map((key => {
+  Object.keys(disciplinesDict).map((key) => {
     disciplinesForSort.push([key, disciplinesDict[key]]);
-  }))
+  });
 
-  const disciplinesSet = disciplinesForSort.sort((a, b) => b[1] - a[1]).map((i) => {
-    return(i[0]);
-  })
+  const disciplinesSet = disciplinesForSort
+    .sort((a, b) => b[1] - a[1])
+    .map((i) => {
+      return i[0];
+    });
 
   let keyDisciplines = 0;
-  disciplinesForSort.sort((a, b) => b[1] - a[1]).map((i) => {
-    if (i[1] >= 5) {
-      keyDisciplines += 1;
-    }
-  })
+  disciplinesForSort
+    .sort((a, b) => b[1] - a[1])
+    .map((i) => {
+      if (i[1] >= 5) {
+        keyDisciplines += 1;
+      }
+    });
 
   const crypt = {};
   const cryptSide = {};
@@ -113,41 +117,45 @@ function DeckCrypt(props) {
           </Button>
         )}
       </div>
-      {showAdd && (
-        !props.isMobile
-          ? <DeckNewCryptCard deckCardAdd={props.deckCardAdd} />
-          : <Modal
-              show={showAdd}
-              onHide={() => setShowAdd(false)}
-              animation={false}
-            >
-              <Modal.Body className="p-0">
-                <Container className="p-0" fluid>
-                  <Row className="p-0 m-0">
-                    <Col className="p-0">
-                      <div className="m-2">
-                        <button
-                          type="button"
-                          className="close"
-                          onClick={() => setShowAdd(false)}
-                        >
-                          <span aria-hidden="true">×</span>
-                          <span className="sr-only">Close</span>
-                        </button>
-                      </div>
-                      <div className="d-flex justify-content-center">
-                        <h5>Add Crypt Card</h5>
-                      </div>
-                    </Col>
-                  </Row>
-                  <DeckNewCryptCard
-                    deckCardAdd={props.deckCardAdd}
-                    setShowAdd={setShowAdd}
-                  />
-                </Container>
-              </Modal.Body>
-            </Modal>
-      )}
+      {showAdd &&
+        (!props.isMobile ? (
+          <DeckNewCryptCard
+            deckCardAdd={props.deckCardAdd}
+            setShowAdd={setShowAdd}
+          />
+        ) : (
+          <Modal
+            show={showAdd}
+            onHide={() => setShowAdd(false)}
+            animation={false}
+          >
+            <Modal.Body className="p-0">
+              <Container className="p-0" fluid>
+                <Row className="p-0 m-0">
+                  <Col className="p-0">
+                    <div className="m-2">
+                      <button
+                        type="button"
+                        className="close"
+                        onClick={() => setShowAdd(false)}
+                      >
+                        <span aria-hidden="true">×</span>
+                        <span className="sr-only">Close</span>
+                      </button>
+                    </div>
+                    <div className="d-flex justify-content-center">
+                      <h5>Add Crypt Card</h5>
+                    </div>
+                  </Col>
+                </Row>
+                <DeckNewCryptCard
+                  deckCardAdd={props.deckCardAdd}
+                  setShowAdd={setShowAdd}
+                />
+              </Container>
+            </Modal.Body>
+          </Modal>
+        ))}
       <ResultCryptTable
         className={className}
         deckid={props.deckid}

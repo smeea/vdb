@@ -75,7 +75,7 @@ function DeckDrawModal(props) {
             <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
               {props.drawedLibrary && (
                 <>
-                <div className="d-flex justify-content-between info-message">
+                  <div className="d-flex justify-content-between info-message">
                     <div className="d-flex align-items-center px-2">
                       <b>Library</b>
                     </div>
