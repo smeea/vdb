@@ -162,7 +162,7 @@ function SearchCryptForm(props) {
 
   const handleClearButton = () => {
     props.setFormState(defaults);
-    props.setResults([]);
+    props.setResults(undefined);
   };
 
   const handleSubmitButton = (event) => {

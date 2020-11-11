@@ -29,8 +29,8 @@ function SearchLibraryFormTitle(props) {
       name: 'title',
       label: (
         <>
-          {' '}
-          <span className="margin-full" /> {i}{' '}
+          <span className="margin-full" />
+          {i}
         </>
       ),
     });

@@ -48,8 +48,8 @@ function SearchFormSet(props) {
         name: 'set',
         label: (
           <>
-            {' '}
-            <span className="margin-full" /> {i[1]}{' '}
+            <span className="margin-full" />
+            {i[1]}
           </>
         ),
       });

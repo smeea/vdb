@@ -1,8 +1,8 @@
 # FIX
 * Update clans icons in svg (white background)
-* Buttons in mobile deck for unlogged user
 * Deck by id (shared)
 * Error messages
+* Reduce traffic exchange
 
 # FEATURES
 * Beautify card text popover

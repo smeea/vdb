@@ -29,8 +29,8 @@ function SearchLibraryFormType(props) {
         name: 'type',
         label: (
           <>
-            {' '}
-            <span className="margin-full" /> {i}{' '}
+            <span className="margin-full" />
+            {i}
           </>
         ),
       });
@@ -43,8 +43,7 @@ function SearchLibraryFormType(props) {
         name: 'type',
         label: (
           <>
-            {' '}
-            <span className="margin-full">
+            <span className="margin-full justify-content-center">
               <img src={imgSrc} className="type-image-results" />
             </span>
             {i}

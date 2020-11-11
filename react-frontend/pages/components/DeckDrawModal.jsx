@@ -13,9 +13,9 @@ function DeckDrawModal(props) {
       animation={false}
       size="xl"
     >
-      <Modal.Body className="px-0">
+      <Modal.Body className="p-0">
         <Container fluid>
-          <Row className="px-0">
+          <Row className="px-0 pt-2">
             <Col>
               <button
                 type="button"

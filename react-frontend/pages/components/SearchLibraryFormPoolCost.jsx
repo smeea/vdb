@@ -35,8 +35,8 @@ function SearchLibraryFormPoolCost(props) {
       name: 'poolmoreless',
       label: (
         <>
-          {' '}
-          <span className="margin-half" /> {i[1]}{' '}
+          <span className="margin-half" />
+          {i[1]}
         </>
       ),
     });

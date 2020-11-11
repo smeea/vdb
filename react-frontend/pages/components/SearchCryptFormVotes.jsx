@@ -20,8 +20,8 @@ function SearchCryptFormVotes(props) {
       name: 'votes',
       label: (
         <>
-          {' '}
-          <span className="margin-full" /> {i[1]}{' '}
+          <span className="margin-full" />
+          {i[1]}
         </>
       ),
     });

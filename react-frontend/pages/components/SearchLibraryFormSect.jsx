@@ -22,8 +22,8 @@ function SearchLibraryFormSect(props) {
       name: 'sect',
       label: (
         <>
-          {' '}
-          <span className="margin-full" /> {i}{' '}
+          <span className="margin-full" />
+          {i}
         </>
       ),
     });

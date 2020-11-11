@@ -15,8 +15,8 @@ function SearchLibraryFormBloodCost(props) {
       name: 'blood',
       label: (
         <>
-          {' '}
-          <span className="margin-half" /> {i}{' '}
+          <span className="margin-half" />
+          {i}
         </>
       ),
     });
@@ -35,8 +35,8 @@ function SearchLibraryFormBloodCost(props) {
       name: 'bloodmoreless',
       label: (
         <>
-          {' '}
-          <span className="margin-half" /> {i[1]}{' '}
+          <span className="margin-half" />
+          {i[1]}
         </>
       ),
     });

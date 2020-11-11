@@ -51,8 +51,8 @@ function SearchLibraryFormDiscipline(props) {
         name: 'discipline',
         label: (
           <>
-            {' '}
-            <span className="margin-full" /> {i}{' '}
+            <span className="margin-full" />
+            {i}
           </>
         ),
       });
