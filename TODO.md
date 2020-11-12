@@ -2,7 +2,7 @@
 * Update clans icons in svg (white background)
 * Deck by id (shared)
 * Error messages
-* Reduce traffic exchange
+* Stop getting decks on deck select
 
 # FEATURES
 * Beautify card text popover
