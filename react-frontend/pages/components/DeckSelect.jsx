@@ -30,12 +30,6 @@ function DeckSelect(props) {
     return i[0];
   });
 
-  decksOptions.unshift({
-    value: '',
-    name: 'deck',
-    label: <div>None</div>,
-  });
-
   useEffect(() => {
     setState(props.decks);
   }, [props.decks]);

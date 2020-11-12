@@ -71,8 +71,19 @@ function AccountChangeName(props) {
     }
   }, [props.publicName]);
 
-  const tooltipText =
-    'Public name is default author name for new decks. Author name is per-deck and can be changed anytime for each deck. Public names are not unique. Changing public name will not change author name of your existing decks. Public name is *not* your account username which cannot be changed.';
+  const tooltipText = (
+    <>
+      Public name is default author name for new decks.
+      <br />
+      Author name is per-deck and can be changed anytime for each deck.
+      <br />
+      Public names are not unique.
+      <br />
+      Changing public name will not change author name of your existing decks.
+      <br />
+      Public name is *not* your account username which cannot be changed.
+    </>
+  );
 
   return (
     <>

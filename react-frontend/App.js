@@ -21,8 +21,8 @@ function App(props) {
   const [email, setEmail] = useState(undefined);
 
   const [showImage, setShowImage] = useState(true);
-
   const [addMode, setAddMode] = useState(false);
+  const [showDeck, setShowDeck] = useState(true);
 
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
@@ -229,6 +229,8 @@ function App(props) {
                 isMobile={isMobile}
                 showSearch={showCryptSearch}
                 setShowSearch={setShowCryptSearch}
+                showDeck={showDeck}
+                setShowDeck={setShowDeck}
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
                 decks={decks}
@@ -250,6 +252,8 @@ function App(props) {
                 isMobile={isMobile}
                 showSearch={showLibrarySearch}
                 setShowSearch={setShowLibrarySearch}
+                showDeck={showDeck}
+                setShowDeck={setShowDeck}
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
                 decks={decks}

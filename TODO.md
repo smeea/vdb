@@ -2,7 +2,7 @@
 * Update clans icons in svg (white background)
 * Deck by id (shared)
 * Error messages
-* Stop getting decks on deck select
+* Login on create account
 
 # FEATURES
 * Beautify card text popover
@@ -10,10 +10,8 @@
 
 # MAYBE LATER FEATURES
 * Add demo account
-* Night Theme
-* Scrollable frame for deck (also test for search forms) 
-* Precons decks
-* Update About with features: import/export, free, speed, UI you may like, mobile-friendly
+* Night theme
+* Browse precon decks
 * Export all decks in account
 
 # IMPROVE TECHNOLOGY - FRONTEND

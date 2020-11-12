@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
-import X from '../assets/images/icons/x.svg';
+import EyeFill from '../assets/images/icons/eye-fill.svg';
+import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
 import AlertMessage from './components/AlertMessage.jsx';
 import ResultLibrary from './components/ResultLibrary.jsx';
 import SearchLibraryForm from './components/SearchLibraryForm.jsx';
@@ -29,14 +30,14 @@ function Library(props) {
                   <Button
                     className="full-height"
                     variant="outline-secondary"
-                    onClick={() => props.setActiveDeck('')}
+                    onClick={() => props.setShowDeck(!props.showDeck)}
                   >
-                    <X />
+                    {props.showDeck ? <EyeSlashFill /> : <EyeFill />}
                   </Button>
                 </Col>
               </Row>
             )}
-            {props.activeDeck && (
+            {props.activeDeck && props.showDeck && (
               <>
                 <DeckCrypt
                   deckCardAdd={props.deckCardAdd}

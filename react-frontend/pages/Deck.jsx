@@ -52,10 +52,6 @@ function Deck(props) {
   };
 
   useEffect(() => {
-    props.getDecks();
-  }, [props.activeDeck]);
-
-  useEffect(() => {
     sharedDeckId && getDeck(sharedDeckId);
   }, [sharedDeckId]);
 

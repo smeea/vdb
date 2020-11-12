@@ -11,7 +11,7 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 function ResultCryptTable(props) {
   let resultTrClass;
 
-  const [modalCard, setmodalCard] = useState(undefined);
+  const [modalCard, setModalCard] = useState(undefined);
 
   const cardRows = props.resultCards.map((card, index) => {
     let q;
@@ -70,10 +70,10 @@ function ResultCryptTable(props) {
               )}
             </>
           )}
-          <td className="capacity" onClick={() => setmodalCard(card)}>
+          <td className="capacity" onClick={() => setModalCard(card)}>
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
-          <td className="disciplines" onClick={() => setmodalCard(card)}>
+          <td className="disciplines" onClick={() => setModalCard(card)}>
             <ResultCryptDisciplines
               value={card['Disciplines']}
               disciplinesSet={props.disciplinesSet}
@@ -81,7 +81,7 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="name" onClick={() => setmodalCard(card)}>
+          <td className="name" onClick={() => setModalCard(card)}>
             <ResultCryptName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -94,7 +94,7 @@ function ResultCryptTable(props) {
             />
           </td>
           {props.isMobile || !props.isWide ? (
-            <td className="clan-group" onClick={() => setmodalCard(card)}>
+            <td className="clan-group" onClick={() => setModalCard(card)}>
               <div>
                 <ResultCryptClan value={card['Clan']} />
                 <ResultCryptGroup value={card['Group']} />
@@ -102,10 +102,10 @@ function ResultCryptTable(props) {
             </td>
           ) : (
             <>
-              <td className="clan" onClick={() => setmodalCard(card)}>
+              <td className="clan" onClick={() => setModalCard(card)}>
                 <ResultCryptClan value={card['Clan']} />
               </td>
-              <td className="group" onClick={() => setmodalCard(card)}>
+              <td className="group" onClick={() => setModalCard(card)}>
                 <ResultCryptGroup value={card['Group']} />
               </td>
             </>
@@ -126,7 +126,7 @@ function ResultCryptTable(props) {
           card={modalCard}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
-          handleClose={() => setmodalCard(false)}
+          handleClose={() => setModalCard(false)}
         />
       )}
     </>
