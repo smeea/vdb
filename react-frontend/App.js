@@ -87,19 +87,27 @@ function App(props) {
 
     fetch(url, options);
     const part = cardid > 200000 ? 'crypt' : 'library';
-    setDecks((prevState) => ({
-      ...prevState,
-      [deckid]: {
-        ...prevState[deckid],
-        [part]: {
-          ...prevState[deckid][part],
-          [cardid]: {
-            ...prevState[deckid][part][cardid],
-            q: count
+    if (count >= 0 ) {
+      setDecks((prevState) => ({
+        ...prevState,
+        [deckid]: {
+          ...prevState[deckid],
+          [part]: {
+            ...prevState[deckid][part],
+            [cardid]: {
+              ...prevState[deckid][part][cardid],
+              q: count
+            }
           }
         }
-      }
-    }));
+      }));
+    } else {
+      setDecks((prevState) => {
+        const oldState = { ...prevState };
+        delete oldState[deckid][part][cardid]
+        return oldState;
+      });
+    }
   };
 
   const whoAmI = () => {
