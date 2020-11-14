@@ -3,10 +3,10 @@ import {
   Form,
   FormControl,
   InputGroup,
-  Tooltip,
-  Overlay,
   Button,
 } from 'react-bootstrap';
+import OverlayTooltip from './OverlayTooltip.jsx';
+import ModalTooltip from './ModalTooltip.jsx';
 import DoorOpenFill from '../../assets/images/icons/door-open-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
@@ -18,8 +18,7 @@ function AccountLogin(props) {
     password: '',
   });
 
-  const [showForgotPassword, setShowForgotPassword] = useState(false);
-  const targetForgotPassword = useRef(null);
+  const [showModal, setShowModal] = useState(false);
 
   const [passwordError, setPasswordError] = useState(false);
   const [emptyUsername, setEmptyUsername] = useState(false);
@@ -89,14 +88,22 @@ function AccountLogin(props) {
     loginUser();
   };
 
+  const tooltipText = (
+    <>
+      We do not have automatic password restoration yet.
+      <br />
+      Please <a href="mailto:smeea@riseup.net">send me an email</a> with your account username and I will generate temporary password for you.
+    </>
+  );
+
   return (
     <>
       <h6 className="d-flex align-items-center">
         <DoorOpenFill />
         <span className="ml-2">Login</span>
       </h6>
-      <Form onSubmit={handleSubmitButton}>
-        <InputGroup className="mb-2">
+      <Form className="mb-2" onSubmit={handleSubmitButton}>
+        <InputGroup>
           <FormControl
             placeholder="Username"
             type="text"
@@ -125,32 +132,32 @@ function AccountLogin(props) {
             </Button>
           </InputGroup.Append>
         </InputGroup>
+        {emptyUsername && <span className="login-error">Enter username</span>}
+        {passwordError && <span className="login-error">Wrong password</span>}
+        {emptyPassword && <span className="login-error">Enter password</span>}
       </Form>
-      {emptyUsername && <span className="login-error">Enter username</span>}
-      {passwordError && <span className="login-error">Wrong password</span>}
-      {emptyPassword && <span className="login-error">Enter password</span>}
-      <div
-        className="d-inline forgot-password"
-        ref={targetForgotPassword}
-        onClick={() => setShowForgotPassword(!showForgotPassword)}
-      >
-        <a href="#">
-          <i>Forgot password?</i>
-        </a>
-        <Overlay
-          target={targetForgotPassword.current}
-          placement="bottom"
-          show={showForgotPassword}
+      {!props.isMobile ? (
+        <OverlayTooltip text={tooltipText}>
+          <span className="small">
+            <a href="#"><i>Forgot password?</i></a>
+          </span>
+        </OverlayTooltip>
+      ) : (
+        <span
+          onClick={() => setShowModal(true)}
+          className="small"
         >
-          {(props) => (
-            <Tooltip id="tooltip-forgot" {...props}>
-              We do not have automatic password restoration yet, please{' '}
-              <a href="mailto:smeea@riseup.net">send me an email</a> with your
-              account username and I will generate temporary password for you.
-            </Tooltip>
-          )}
-        </Overlay>
-      </div>
+          <a href="#"><i>Forgot password?</i></a>
+        </span>
+      )}
+      {showModal && (
+        <ModalTooltip
+          text={tooltipText}
+          title="Forgot password"
+          show={showModal}
+          setShow={setShowModal}
+        />
+      )}
     </>
   );
 }

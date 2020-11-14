@@ -51,8 +51,14 @@ function Account(props) {
             </>
           ) : (
             <>
-              <AccountLogin setUsername={props.setUsername} />
-              <AccountRegister setUsername={props.setUsername} />
+              <AccountLogin
+                setUsername={props.setUsername}
+                isMobile={props.isMobile}
+              />
+              <AccountRegister
+                setUsername={props.setUsername}
+                whoAmI={props.whoAmI}
+              />
             </>
           )}
         </Col>

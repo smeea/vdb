@@ -2,7 +2,8 @@
 * Update clans icons in svg (white background)
 * Deck by id (shared)
 * Error messages
-* Login on create account
+* Reply from backend on card change/add
+* Delete account delete its decks
 
 # FEATURES
 * Beautify card text popover
@@ -25,6 +26,7 @@
 * Swipe in card modal image-description
 * Droid CI/CD
 * Unify error handling
+* Store cards on frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ

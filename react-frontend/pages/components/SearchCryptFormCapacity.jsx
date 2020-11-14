@@ -28,8 +28,8 @@ function SearchCryptFormCapacity(props) {
       name: 'capacity',
       label: (
         <>
-          {' '}
-          <span className="margin-half" /> {i}{' '}
+          <span className="margin-half" />
+          {i}
         </>
       ),
     });

@@ -11,7 +11,19 @@ function DeckNewLibraryCard(props) {
 
   const addNewCard = () => {
     if (selectedValue.Id) {
-      props.deckCardAdd(selectedValue.Id);
+      let inDeck;
+      if (props.cards) {
+        Object.keys(props.cards).map((i, index) => {
+          if (i == selectedValue.Id) {
+            inDeck = props.cards[i].q;
+          }
+        });
+      }
+      if (!inDeck) {
+        props.deckCardAdd(selectedValue, inDeck);
+      } else {
+        console.log('already in deck')
+      }
       setSelectedValue('');
       props.setShowAdd(false);
     } else {

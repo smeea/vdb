@@ -39,8 +39,7 @@ function DeckDrawModal(props) {
                       <b>Crypt</b>
                     </div>
                     <div className="d-flex align-items-center">
-                      {props.drawedCrypt.length} /{' '}
-                      {props.drawedCrypt.length + props.restCrypt.length}
+                      {props.drawedCrypt.length} / {props.drawedCrypt.length + props.restCrypt.length}
                     </div>
                     <div>
                       <Button
@@ -69,6 +68,7 @@ function DeckDrawModal(props) {
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}
                   />
+                  {!props.isMobile && <br />}
                 </>
               )}
             </Col>
@@ -80,8 +80,7 @@ function DeckDrawModal(props) {
                       <b>Library</b>
                     </div>
                     <div className="d-flex align-items-center">
-                      {props.drawedLibrary.length} /{' '}
-                      {props.drawedLibrary.length + props.restLibrary.length}
+                      {props.drawedLibrary.length} / {props.drawedLibrary.length + props.restLibrary.length}
                     </div>
                     <div>
                       <Button
@@ -108,6 +107,7 @@ function DeckDrawModal(props) {
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}
                   />
+                  {!props.isMobile && <br />}
                 </>
               )}
             </Col>

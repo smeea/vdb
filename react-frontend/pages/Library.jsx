@@ -90,6 +90,7 @@ function Library(props) {
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
               isMobile={props.isMobile}
+              isWide={props.isWide}
               addMode={props.addMode}
             />
           )}

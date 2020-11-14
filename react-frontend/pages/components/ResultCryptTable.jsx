@@ -64,6 +64,7 @@ function ResultCryptTable(props) {
                   <ResultAddCard
                     deckCardAdd={props.deckCardAdd}
                     cardid={card['Id']}
+                    card={card}
                     inDeck={inDeck}
                   />
                 </td>
@@ -97,6 +98,8 @@ function ResultCryptTable(props) {
             <td className="clan-group" onClick={() => setModalCard(card)}>
               <div>
                 <ResultCryptClan value={card['Clan']} />
+              </div>
+              <div className="d-flex small justify-content-end">
                 <ResultCryptGroup value={card['Group']} />
               </div>
             </td>

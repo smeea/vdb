@@ -122,6 +122,7 @@ function DeckCrypt(props) {
           <DeckNewCryptCard
             deckCardAdd={props.deckCardAdd}
             setShowAdd={setShowAdd}
+            cards={props.cards}
           />
         ) : (
           <Modal
@@ -166,6 +167,7 @@ function DeckCrypt(props) {
         setShowImage={props.setShowImage}
         isAuthor={props.isAuthor}
         isMobile={props.isMobile}
+        isWide={props.isWide}
         keyDisciplines={keyDisciplines}
       />
       {Object.keys(cryptSide).length > 0 && (
@@ -183,6 +185,7 @@ function DeckCrypt(props) {
             setShowImage={props.setShowImage}
             isAuthor={props.isAuthor}
             isMobile={props.isMobile}
+            isWide={props.isWide}
             keyDisciplines={keyDisciplines}
           />
         </div>

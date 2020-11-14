@@ -52,7 +52,7 @@ function AccountRegister(props) {
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          props.setUsername(state.username);
+          props.whoAmI();
         })
         .catch((error) => {
           setUsernameError(true);
@@ -78,8 +78,8 @@ function AccountRegister(props) {
         <PersonPlusFill />
         <span className="ml-2">Create account</span>
       </h6>
-      <Form onSubmit={handleSubmitButton}>
-        <InputGroup className="mb-2">
+      <Form className="mb-2" onSubmit={handleSubmitButton}>
+        <InputGroup>
           <FormControl
             placeholder="New Username"
             type="text"
@@ -107,18 +107,10 @@ function AccountRegister(props) {
             </Button>
           </InputGroup.Append>
         </InputGroup>
+        {emptyUsername && <span className="login-error">Enter username</span>}
+        {usernameError && <span className="login-error">This username is taken</span>}
+        {emptyPassword && <span className="login-error">Enter password</span>}
       </Form>
-      {emptyUsername && (
-        <div>
-          <span className="login-error">Enter username</span>
-        </div>
-      )}
-      {usernameError && (
-        <div>
-          <span className="login-error">This username is taken</span>
-        </div>
-      )}
-      {emptyPassword && <span className="login-error">Enter password</span>}
     </>
   );
 }

@@ -39,6 +39,7 @@ function ResultLibraryTable(props) {
                 deckCardAdd={props.deckCardAdd}
                 cardid={card['Id']}
                 inDeck={inDeck}
+                card={card}
               />
             </td>
           )}

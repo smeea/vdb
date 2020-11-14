@@ -58,19 +58,38 @@ function App(props) {
       });
   };
 
-  const deckCardAdd = (cardid) => {
-    const url = `${process.env.API_URL}deck/${activeDeck}`;
-    const options = {
-      method: 'PUT',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ cardAdd: { [cardid]: 1 } }),
-    };
+  const deckCardAdd = (card, inDeck) => {
+    if (!inDeck) {
+      const url = `${process.env.API_URL}deck/${activeDeck}`;
+      const options = {
+        method: 'PUT',
+        mode: 'cors',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ cardAdd: { [card['Id']]: 1 } }),
+      };
 
-    fetch(url, options).then(() => getDecks());
+      fetch(url, options);
+
+      const part = card['Id'] > 200000 ? 'crypt' : 'library';
+      setDecks((prevState) => ({
+        ...prevState,
+        [activeDeck]: {
+          ...prevState[activeDeck],
+          [part]: {
+            ...prevState[activeDeck][part],
+            [card['Id']]: {
+              c: card,
+              q: 1
+            }
+          }
+        }
+      }));
+    } else {
+      console.log('already in deck')
+    }
   };
 
   const deckCardChange = (deckid, cardid, count) => {
@@ -150,8 +169,8 @@ function App(props) {
 
   useEffect(() => {
     if (username) {
-      getDecks();
       whoAmI();
+      getDecks();
     } else {
       setDecks({});
     }
@@ -196,11 +215,13 @@ function App(props) {
                 setUsername={setUsername}
                 setPublicName={setPublicName}
                 setEmail={setEmail}
+                whoAmI={whoAmI}
               />
             </Route>
             <Route path="/deck">
               <Deck
                 isMobile={isMobile}
+                isWide={isWide}
                 decks={decks}
                 getDecks={getDecks}
                 activeDeck={activeDeck}
@@ -218,6 +239,7 @@ function App(props) {
               component={(props) => (
                 <Deck
                   isMobile={isMobile}
+                  isWide={isWide}
                   decks={decks}
                   getDecks={getDecks}
                   activeDeck={activeDeck}

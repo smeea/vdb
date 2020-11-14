@@ -37,6 +37,7 @@ function ResultCrypt(props) {
         deckCardAdd={props.deckCardAdd}
         resultCards={sortedCards}
         isMobile={props.isMobile}
+        isWide={true}
         addMode={props.addMode}
       />
     </>

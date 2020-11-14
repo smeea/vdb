@@ -94,8 +94,8 @@ function AccountChangePassword(props) {
         <LockFill />
         <span className="ml-2">Change password</span>
       </h6>
-      <Form className="my-0" onSubmit={handleSubmitButton}>
-        <InputGroup className="mb-2">
+      <Form className="my-1" onSubmit={handleSubmitButton}>
+        <InputGroup>
           <FormControl
             placeholder="Old password"
             type={hidePassword ? 'password' : 'text'}
@@ -136,27 +136,11 @@ function AccountChangePassword(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
+        {passwordConfirmError && <span className="login-error">Confirm new password</span>}
+        {emptyPassword && <span className="login-error">Enter old password</span>}
+        {emptyNewPassword && <span className="login-error">Enter new password</span>}
+        {passwordError && <span className="login-error">Wrong password</span>}
       </Form>
-      {passwordConfirmError && (
-        <div>
-          <span className="login-error">Confirm new password</span>
-        </div>
-      )}
-      {emptyPassword && (
-        <div>
-          <span className="login-error">Enter old password</span>
-        </div>
-      )}
-      {emptyNewPassword && (
-        <div>
-          <span className="login-error">Enter new password</span>
-        </div>
-      )}
-      {passwordError && (
-        <div>
-          <span className="login-error">Wrong password</span>
-        </div>
-      )}
     </>
   );
 }

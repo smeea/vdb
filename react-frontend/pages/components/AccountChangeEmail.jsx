@@ -121,8 +121,8 @@ function AccountChangeEmail(props) {
           </span>
         )}
       </h6>
-      <Form className="my-0" onSubmit={handleSubmitButton}>
-        <InputGroup className="mb-2">
+      <Form className="my-1" onSubmit={handleSubmitButton}>
+        <InputGroup>
           <FormControl
             placeholder="New email"
             type="text"
@@ -149,22 +149,10 @@ function AccountChangeEmail(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
+        {emptyEmail && <span className="login-error">Enter email</span>}
+        {emptyPassword && <span className="login-error">Enter password</span>}
+        {passwordError && <span className="login-error">Wrong password</span>}
       </Form>
-      {emptyEmail && (
-        <div>
-          <span className="login-error">Enter email</span>
-        </div>
-      )}
-      {emptyPassword && (
-        <div>
-          <span className="login-error">Enter password</span>
-        </div>
-      )}
-      {passwordError && (
-        <div>
-          <span className="login-error">Wrong password</span>
-        </div>
-      )}
       {showModal && (
         <ModalTooltip
           text={tooltipText}

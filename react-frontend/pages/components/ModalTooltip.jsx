@@ -7,7 +7,6 @@ function ModalTooltip(props) {
       show={props.show}
       onHide={() => props.setShow(false)}
       animation={false}
-      centered
     >
       <Modal.Body>
         <Container className="px-0" fluid>

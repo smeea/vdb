@@ -9,14 +9,12 @@ function About(props) {
           <div className="px-1 about-version">
             <h5>VERSION</h5>
             <p>
-              Card text based on{' '}
-              <a href="http://www.vekn.net/card-lists">
+              Card text based on <a href="http://www.vekn.net/card-lists">
                 vekn.net official list
               </a>
               : 2020-06-23
               <br />
-              Card images by Syndelson's{' '}
-              <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
+              Card images by Syndelson's <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
                 FELD
               </a>
               : 2019-11-11 v2.72
@@ -29,8 +27,7 @@ function About(props) {
               VDB is online card search and deck building tool for Vampire the
               Eternal Struggle (VTES).
               <br />
-              It's a successor of{' '}
-              <a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
+              It's a successor of <a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
             </p>
             <h5>FEATURES</h5>
             <ul>
@@ -84,23 +81,17 @@ function About(props) {
                 <b>There are more!</b>
               </a>
               <br />
-              Check{' '}
-              <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
+              Check <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
                 vekn forum
-              </a>{' '}
-              for more tools!
+              </a> for more tools!
               <br />
             </p>
 
             <h5>FOR DEVELOPERS</h5>
             <p>
-              Development happens in{' '}
-              <a href="https://github.com/smeea/vdb">this Github repository.</a>
+              Development happens in <a href="https://github.com/smeea/vdb">this Github repository.</a>
               <br />
-              Source code of the site is available under free{' '}
-              <a href="https://en.wikipedia.org/wiki/MIT_License">
-                MIT license.
-              </a>
+              Source code of the site is available under free <a href="https://en.wikipedia.org/wiki/MIT_License">MIT license.</a>
               <br />
               Card images & icons are copyrighted by Authors / Publishers.
             </p>
@@ -123,9 +114,7 @@ function About(props) {
                 Discussion thread on vekn.net forum.
               </a>
               <br />
-              Please send proposals, bug reports and other feedback via{' '}
-              <a href="https://github.com/smeea/vdb">Github</a> or{' '}
-              <a href="mailto:smeea@riseup.net">email.</a>
+              Please send proposals, bug reports and other feedback via <a href="https://github.com/smeea/vdb">Github</a> or <a href="mailto:smeea@riseup.net">email.</a>
               <br />
             </p>
           </div>

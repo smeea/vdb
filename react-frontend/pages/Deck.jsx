@@ -210,6 +210,7 @@ function Deck(props) {
               setShowImage={props.setShowImage}
               isAuthor={isAuthor}
               isMobile={props.isMobile}
+              isWide={props.isWide}
             />
           </Col>
           <Col lg={5} className="px-0 px-lg-3">
@@ -228,6 +229,7 @@ function Deck(props) {
               setShowImage={props.setShowImage}
               isAuthor={isAuthor}
               isMobile={props.isMobile}
+              isWide={props.isWide}
             />
           </Col>
         </Row>

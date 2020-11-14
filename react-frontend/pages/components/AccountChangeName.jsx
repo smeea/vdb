@@ -103,8 +103,8 @@ function AccountChangeName(props) {
           </span>
         )}
       </h6>
-      <Form className="my-0" onSubmit={handleSubmitButton}>
-        <InputGroup className="mb-2">
+      <Form className="my-1" onSubmit={handleSubmitButton}>
+        <InputGroup>
           <FormControl
             placeholder="Public name"
             type="text"
@@ -124,12 +124,8 @@ function AccountChangeName(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
+        {emptyPublicName && <span className="login-error">Enter name</span>}
       </Form>
-      {emptyPublicName && (
-        <div>
-          <span className="login-error">Enter name</span>
-        </div>
-      )}
       {showModal && (
         <ModalTooltip
           text={tooltipText}
