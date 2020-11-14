@@ -7,7 +7,6 @@
 * Test login/register
 
 # FEATURES
-* Beautify card text popover
 * Crypt total info
 
 # MAYBE LATER FEATURES

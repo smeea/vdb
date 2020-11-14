@@ -1,4 +1,5 @@
 import csv
+import re
 import json
 import unicodedata
 
@@ -56,8 +57,10 @@ useless_fields = ['Aka', 'Artist']
 with open("vtescrypt.csv", "r",
           encoding='utf8') as f_csv, open("vtescrypt.json",
                                           "w",
-                                          encoding='utf8') as f_json, open("rulings.json", "r", encoding='utf8') as f_rulings:
-
+                                          encoding='utf8') as f_json, open(
+                                              "rulings.json",
+                                              "r",
+                                              encoding='utf8') as f_rulings:
 
     rulings = json.load(f_rulings)
     reader = csv.reader(f_csv)
@@ -86,7 +89,6 @@ with open("vtescrypt.csv", "r",
 
         # ASCII-fication of name
         card['ASCII Name'] = letters_to_ascii(card['Name'])
-        card['ASCII Text'] = letters_to_ascii(card['Card Text'])
 
         # Remove useless fields
         for k in useless_fields:
@@ -114,8 +116,12 @@ with open("vtescrypt.csv", "r",
             for d in disciplines:
                 del card[d]
 
-        # Add rules to card
+        # Remove {} and spaces in []
+        card['Card Text'] = re.sub('[{}]', '', card['Card Text'])
+        card['Card Text'] = re.sub(r'\[(\w+)\s*(\w*)\]', r'[\1\2]',
+                                   card['Card Text'])
 
+        # Add rules to card
         card['Rulings'] = []
         for rule in rulings:
             if rule == card['Name']:

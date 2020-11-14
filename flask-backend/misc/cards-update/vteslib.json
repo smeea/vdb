@@ -55,7 +55,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique{}.\n{The bearer gets +1 hunt.}",
+        "Card Text":"Unique.\nThe bearer gets +1 hunt.",
         "Set":{
             "Jyhad":"R",
             "VTES":"R",
@@ -78,7 +78,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth{} action.\n{Hunt at +4 hunt}. After successful resolution, a referendum is called to call a blood hunt on this vampire (independent of the action, just as if {they} had committed diablerie).",
+        "Card Text":"+1 stealth action.\nHunt at +4 hunt. After successful resolution, a referendum is called to call a blood hunt on this vampire (independent of the action, just as if they had committed diablerie).",
         "Set":{
             "Promo":"20090401"
         },
@@ -98,7 +98,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable by a vampire being burned. Usable by a vampire in torpor.\n[dem] Remove this vampire from the game instead (diablerie, if any, is still successful), and put this card into play. You may not play this card if you already have an Abandoning the Flesh in play. {Lock during a bleed action to give an acting vampire with Dementation [dem] +1 bleed.}",
+        "Card Text":"Only usable by a vampire being burned. Usable by a vampire in torpor.\n[dem] Remove this vampire from the game instead (diablerie, if any, is still successful), and put this card into play. You may not play this card if you already have an Abandoning the Flesh in play. Lock during a bleed action to give an acting vampire with Dementation [dem] +1 bleed.",
         "Set":{
             "CE":"R",
             "Third":"R"
@@ -140,7 +140,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[COMBAT] Lock this imbued before range is determined to end a combat between a monster and a mortal. If the mortal is a minion other than this imbued, you may move a conviction [1 CONVICTION] to this imbued from your hand or ash heap.",
+        "Card Text":"[COMBAT] Lock this imbued before range is determined to end a combat between a monster and a mortal. If the mortal is a minion other than this imbued, you may move a conviction [1CONVICTION] to this imbued from your hand or ash heap.",
         "Set":{
             "NoR":"R"
         },
@@ -204,7 +204,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a ready non-sterile vampire.\nBurn a ready unlocked werewolf ally you control to put this card in play. It becomes a unique Independent Abomination with 4 capacity, superior Protean [PRO] and +1 strength. Move up to 4 blood from the acting vampire to this vampire. This vampire gets an additional strike {(limited)} each round and an optional maneuver each combat. He may enter combat with a ready minion as a (D) action.",
+        "Card Text":"+1 stealth action. Requires a ready non-sterile vampire.\nBurn a ready unlocked werewolf ally you control to put this card in play. It becomes a unique Independent Abomination with 4 capacity, superior Protean [PRO] and +1 strength. Move up to 4 blood from the acting vampire to this vampire. This vampire gets an additional strike (limited) each round and an optional maneuver each combat. He may enter combat with a ready minion as a (D) action.",
         "Set":{
             "FN":"R",
             "KoT":"R"
@@ -421,7 +421,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Additional strike {(limited)}.\n[CEL] Strike: dodge, with an additional strike {(limited)}.",
+        "Card Text":"[cel] Additional strike (limited).\n[CEL] Strike: dodge, with an additional strike (limited).",
         "Set":{
             "Jyhad":"C",
             "VTES":"C",
@@ -447,7 +447,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pro] {This vampire treats all aggravated damage from the opposing minion's strike as normal damage.}\n[PRO] Prevent all aggravated damage from the opposing minion's strike.",
+        "Card Text":"[pro] This vampire treats all aggravated damage from the opposing minion's strike as normal damage.\n[PRO] Prevent all aggravated damage from the opposing minion's strike.",
         "Set":{
             "Sabbat":"R",
             "SW":"R"
@@ -684,7 +684,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Weapon. Gun.\n2R damage each strike, with an optional maneuver each combat. When bearer strikes with this gun, he or she gets an optional additional strike {(limited)} this round, only usable to strike with this gun.",
+        "Card Text":"Weapon. Gun.\n2R damage each strike, with an optional maneuver each combat. When bearer strikes with this gun, he or she gets an optional additional strike (limited) this round, only usable to strike with this gun.",
         "Set":{
             "LotN":"R"
         },
@@ -706,7 +706,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 3 life. 3 strength, 1 bleed.\nAkhenaten {can} play cards requiring basic Necromancy [nec] as a vampire with{} capacity{} 3{}. {}{Damage he inflicts is aggravated} in combat with a Follower of Set{}. Akhenaten can burn himself {and} a Follower of Set controlled by your prey as a (D) action. {If he is burned, shuffle him in {his owner's} library.}",
+        "Card Text":"Unique mummy with 3 life. 3 strength, 1 bleed.\nAkhenaten can play cards requiring basic Necromancy [nec] as a vampire with capacity 3. Damage he inflicts is aggravated in combat with a Follower of Set. Akhenaten can burn himself and a Follower of Set controlled by your prey as a (D) action. If he is burned, shuffle him in his owner's library.",
         "Set":{
             "AH":"R2",
             "FN":"PG"
@@ -901,7 +901,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 3 life. {2 strength, }0 bleed{}.\nAmam {can} enter combat with any{} minion{} as a (D) action. Amam {can} burn a vampire in torpor to gain 1 life as a (D) action{}. If a minion opposing Amam in combat is burned, Amam gains 1 life. If Amam is burned, shuffle him in his owner's library.",
+        "Card Text":"Unique mummy with 3 life. 2 strength, 0 bleed.\nAmam can enter combat with any minion as a (D) action. Amam can burn a vampire in torpor to gain 1 life as a (D) action. If a minion opposing Amam in combat is burned, Amam gains 1 life. If Amam is burned, shuffle him in his owner's library.",
         "Set":{
             "FN":"R2"
         },
@@ -949,7 +949,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique wraith with 2 life. 1 strength, 0 bleed.\n{}{Ambrosius} can move a retainer from your ash heap to a ready vampire you control {(ignore requirements)}{, and put 3 {p}athos counters on that retainer} as an action. {During your unlock phase, burn} a {p}athos counter from that retainer{}. {Remove the retainer from the game if it has no pathos counters.} {Ambrosius is immune to {non-aggravated damage}.}",
+        "Card Text":"Unique wraith with 2 life. 1 strength, 0 bleed.\nAmbrosius can move a retainer from your ash heap to a ready vampire you control (ignore requirements), and put 3 pathos counters on that retainer as an action. During your unlock phase, burn a pathos counter from that retainer. Remove the retainer from the game if it has no pathos counters. Ambrosius is immune to non-aggravated damage.",
         "Set":{
             "AH":"R2",
             "FN":"PG"
@@ -1140,7 +1140,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Equipment.\nThe anarch with this equipment gets +1 stealth on actions that require an anarch. Titled non-{A}narch vampires get +1 strength in combat with this minion. A minion may have only one Anarch Manifesto.",
+        "Card Text":"Equipment.\nThe anarch with this equipment gets +1 stealth on actions that require an anarch. Titled non-Anarch vampires get +1 strength in combat with this minion. A minion may have only one Anarch Manifesto.",
         "Set":{
             "TR":"C"
         },
@@ -1225,7 +1225,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a ready, non-anarch, titled vampire.\n{}This vampire becomes {Anarch}. If he or she had a city title, put this card on him or her as a title card to represent the title of baron of the same city. Minions without titles cannot block this action.{}",
+        "Card Text":"+1 stealth action. Requires a ready, non-anarch, titled vampire.\nThis vampire becomes Anarch. If he or she had a city title, put this card on him or her as a title card to represent the title of baron of the same city. Minions without titles cannot block this action.",
         "Set":{
             "KMW":"R"
         },
@@ -1339,7 +1339,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready Laibon.\n[aus] [REACTION] Reduce a bleed against you by 1.\n[AUS] [ACTION MODIFIER] {Only usable during a bleed action. +1 bleed (limited).}",
+        "Card Text":"Requires a ready Laibon.\n[aus] [REACTION] Reduce a bleed against you by 1.\n[AUS] [ACTIONMODIFIER] Only usable during a bleed action. +1 bleed (limited).",
         "Set":{
             "LoB":"C/PO4"
         },
@@ -1742,7 +1742,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique ghoul with 1 life. 0 strength, 1 bleed.\nArcane Appraiser can move an equipment from a vampire in torpor to a ready minion you control as a +1 stealth (D) action. If a second copy of a unique equipment you control would enter play, {instead it is burned}.",
+        "Card Text":"Unique ghoul with 1 life. 0 strength, 1 bleed.\nArcane Appraiser can move an equipment from a vampire in torpor to a ready minion you control as a +1 stealth (D) action. If a second copy of a unique equipment you control would enter play, instead it is burned.",
         "Set":{
             "KoT":"R/B1"
         },
@@ -1985,7 +1985,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obt] Strike: dodge.\n[OBT] Strike: dodge, with an additional strike {(limited)}.",
+        "Card Text":"[obt] Strike: dodge.\n[OBT] Strike: dodge, with an additional strike (limited).",
         "Set":{
             "Sabbat":"C",
             "SW":"C/PL3"
@@ -2428,7 +2428,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] [REACTION] This vampire burns 1 blood to get +1 intercept.\n[myt] [REACTION] +1 intercept.\n[MYT] [ACTION MODIFIER] +1 stealth.",
+        "Card Text":"[aus] [REACTION] This vampire burns 1 blood to get +1 intercept.\n[myt] [REACTION] +1 intercept.\n[MYT] [ACTIONMODIFIER] +1 stealth.",
         "Set":{
             "BL":"C2",
             "LoB":"C",
@@ -2719,7 +2719,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable by a blocking vampire. Only usable on the first round of combat.\n[cel] This vampire gets first strike on his or her initial strike this round.\n[CEL] As above, with an additional strike {(limited)}.",
+        "Card Text":"Only usable by a blocking vampire. Only usable on the first round of combat.\n[cel] This vampire gets first strike on his or her initial strike this round.\n[CEL] As above, with an additional strike (limited).",
         "Set":{
             "AH":"U5",
             "FN":"PA",
@@ -2850,7 +2850,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Melee weapon.\nStrike: strength{}+2 damage.",
+        "Card Text":"Melee weapon.\nStrike: strength+2 damage.",
         "Set":{
             "AH":"C2",
             "FN":"PR",
@@ -2907,7 +2907,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a{n}{} Independent {or Anarch} vampire. Only usable {if} a Camarilla or Sabbat vampire is bleeding you.\nReduce the bleed {amount} by 1.",
+        "Card Text":"Requires an Independent or Anarch vampire. Only usable if a Camarilla or Sabbat vampire is bleeding you.\nReduce the bleed amount by 1.",
         "Set":{
             "FN":"C2"
         },
@@ -2927,7 +2927,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique melee weapon.{}\nStrength+2 damage each strike. {Damage inflicted on a Kiasyd by this weapon is aggravated.} Bearer gets -1 stealth on each action. If bearer blocks an action, the acting minion burns 1 blood or life (before combat begins, if any).",
+        "Card Text":"Unique melee weapon.\nStrength+2 damage each strike. Damage inflicted on a Kiasyd by this weapon is aggravated. Bearer gets -1 stealth on each action. If bearer blocks an action, the acting minion burns 1 blood or life (before combat begins, if any).",
         "Set":{
             "Anarchs":"R",
             "Third":"R"
@@ -3099,7 +3099,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: out-of-turn. Frenzy.\nChoose an Osebo in combat. That Osebo gets an additional strike each round this combat {that does not count against the limit}. During the press step each round this combat, that Osebo burns 1 blood.",
+        "Card Text":"Master: out-of-turn. Frenzy.\nChoose an Osebo in combat. That Osebo gets an additional strike each round this combat that does not count against the limit. During the press step each round this combat, that Osebo burns 1 blood.",
         "Set":{
             "LoB":"C"
         },
@@ -3161,7 +3161,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch. Only usable when an older non-{A}narch vampire successfully blocks.\nCompare the costs of the top cards in your crypt and the blocker's crypt and shuffle both. If yours is younger, this anarch takes 1 unpreventable damage (and combat occurs as normal). Otherwise, cancel the combat and place this card on the acting anarch. This anarch gets +2 bleed when bleeding the blocking vampire's controller.",
+        "Card Text":"Requires a ready anarch. Only usable when an older non-Anarch vampire successfully blocks.\nCompare the costs of the top cards in your crypt and the blocker's crypt and shuffle both. If yours is younger, this anarch takes 1 unpreventable damage (and combat occurs as normal). Otherwise, cancel the combat and place this card on the acting anarch. This anarch gets +2 bleed when bleeding the blocking vampire's controller.",
         "Set":{
             "Anarchs":"R"
         },
@@ -3716,7 +3716,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Werewolf with 3 life. 1 strength, 0 bleed.\nDamage from Black Spiral Buddy's hand strikes is aggravated. Once each combat, Black Spiral Buddy gets an additional strike {(limited)}. If Black Spiral Buddy has fewer than 3 life during your unlock phase, he gains 1 life.",
+        "Card Text":"Werewolf with 3 life. 1 strength, 0 bleed.\nDamage from Black Spiral Buddy's hand strikes is aggravated. Once each combat, Black Spiral Buddy gets an additional strike (limited). If Black Spiral Buddy has fewer than 3 life during your unlock phase, he gains 1 life.",
         "Set":{
             "Sabbat":"U",
             "KMW":"PG",
@@ -4008,7 +4008,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Put this card on an Ahrimane you control with any cards requiring Spiritus [spi] from your hand (before replacing), face down {and out of play} (you can look at the cards at any time). This Ahrimane can play these cards as if from your hand. Burn this card if it has no cards on it. A vampire can have only one Blessing of the Beast.",
+        "Card Text":"Put this card on an Ahrimane you control with any cards requiring Spiritus [spi] from your hand (before replacing), face down and out of play (you can look at the cards at any time). This Ahrimane can play these cards as if from your hand. Burn this card if it has no cards on it. A vampire can have only one Blessing of the Beast.",
         "Set":{
             "HttB":"R2/B1"
         },
@@ -4195,7 +4195,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[qui] [REACTION] +1 intercept.\n[QUI] [ACTION MODIFIER] Only usable if a younger vampire attempts to block this vampire. That attempt fails and the blocking vampire cannot attempt to block this action again.",
+        "Card Text":"[qui] [REACTION] +1 intercept.\n[QUI] [ACTIONMODIFIER] Only usable if a younger vampire attempts to block this vampire. That attempt fails and the blocking vampire cannot attempt to block this action again.",
         "Set":{
             "LotN":"C/PA3",
             "POD":"DTC"
@@ -4931,7 +4931,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Additional strike {(limited)}.\n[CEL] Two additional strikes {(limited)}.",
+        "Card Text":"[cel] Additional strike (limited).\n[CEL] Two additional strikes (limited).",
         "Set":{
             "Jyhad":"C",
             "VTES":"C",
@@ -5533,7 +5533,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique wraith with 3 life. {1 strength,} 2 bleed{}.\nLock Brigitte {as} a bleed action is announced to give {an acting} minion you control +1 bleed. If the action is blocked and combat occurs, Brigitte loses 1 life.",
+        "Card Text":"Unique wraith with 3 life. 1 strength, 2 bleed.\nLock Brigitte as a bleed action is announced to give an acting minion you control +1 bleed. If the action is blocked and combat occurs, Brigitte loses 1 life.",
         "Set":{
             "FN":"R2"
         },
@@ -5876,7 +5876,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[tha] [COMBAT] Strike: 1 damage. This damage cannot be prevented by cards that require Fortitude [for].\n[val] [ACTION MODIFIER] If this action is blocked, the blocking minion burns one blood or life before combat begins. Any minion currently attempting to block may now choose not to block.\n[VAL] [ACTION MODIFIER] {Only usable during a bleed action. +1 bleed (limited).}",
+        "Card Text":"[tha] [COMBAT] Strike: 1 damage. This damage cannot be prevented by cards that require Fortitude [for].\n[val] [ACTIONMODIFIER] If this action is blocked, the blocking minion burns one blood or life before combat begins. Any minion currently attempting to block may now choose not to block.\n[VAL] [ACTIONMODIFIER] Only usable during a bleed action. +1 bleed (limited).",
         "Set":{
             "BL":"C2",
             "LoB":"C"
@@ -6225,7 +6225,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Retainer with 1 life.\n{This vampire} gets +1 capacity. During their master phase, they can choose a basic level Discipline they possess and get the chosen Discipline at the superior level until their next master phase.",
+        "Card Text":"Retainer with 1 life.\nThis vampire gets +1 capacity. During their master phase, they can choose a basic level Discipline they possess and get the chosen Discipline at the superior level until their next master phase.",
         "Set":{
             "Sabbat":"R",
             "25th":"1"
@@ -6622,7 +6622,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Ammo.\nOnly usable before resolution of a gun's strike. For the remainder of combat, once each round when the bearer strikes with this gun, the bearer gets an optional additional strike {(limited)}, only usable to strike with this gun. No more than one ammo card can be used on a gun each combat.",
+        "Card Text":"Ammo.\nOnly usable before resolution of a gun's strike. For the remainder of combat, once each round when the bearer strikes with this gun, the bearer gets an optional additional strike (limited), only usable to strike with this gun. No more than one ammo card can be used on a gun each combat.",
         "Set":{
             "Gehenna":"C",
             "KoT":"U"
@@ -6982,7 +6982,7 @@
         "Blood Cost":"X",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a baron.\n(D) Take control of a younger vampire with capacity of X who entered play since your last minion phase. That vampire becomes {Anarch}.",
+        "Card Text":"+1 stealth action. Requires a baron.\n(D) Take control of a younger vampire with capacity of X who entered play since your last minion phase. That vampire becomes Anarch.",
         "Set":{
             "TR":"R"
         },
@@ -7023,7 +7023,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[REACTION] [2 CONVICTION] Only usable when a monster controlled by another Methuselah is taking a (D) action against you or against an imbued controlled by any player. The action fails and the acting monster enters combat with this imbued instead.",
+        "Card Text":"[REACTION] [2CONVICTION] Only usable when a monster controlled by another Methuselah is taking a (D) action against you or against an imbued controlled by any player. The action fails and the acting monster enters combat with this imbued instead.",
         "Set":{
             "NoR":"R"
         },
@@ -7803,7 +7803,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose a melee weapon this imbued has or spend 1 conviction [1 CONVICTION] to put this card on this imbued to represent a melee weapon that does strength damage each strike. This melee weapon inflicts +1 additional damage this action. If the opposing minion is (or becomes) immune to non-aggravated damage, he or she loses that immunity for handling damage from this weapon. Burn the melee weapon at the end of the action.",
+        "Card Text":"Choose a melee weapon this imbued has or spend 1 conviction [1CONVICTION] to put this card on this imbued to represent a melee weapon that does strength damage each strike. This melee weapon inflicts +1 additional damage this action. If the opposing minion is (or becomes) immune to non-aggravated damage, he or she loses that immunity for handling damage from this weapon. Burn the melee weapon at the end of the action.",
         "Set":{
             "NoR":"C"
         },
@@ -7984,7 +7984,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nWhen any {A}narch vampire declares a bleed action, he or she can burn 1 blood to get +1 bleed on that action (only usable once each action).",
+        "Card Text":"Master: unique location.\nWhen any Anarch vampire declares a bleed action, he or she can burn 1 blood to get +1 bleed on that action (only usable once each action).",
         "Set":{
             "TR":"R"
         },
@@ -8047,7 +8047,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose X other ready Blood Brothers you control who belong to the same circle as this acting vampire.\n[san] (D) Enter combat with a ready minion controlled by another Methuselah. This acting vampire has +X strength and +X capacity {during this action (if this action if successful)}. Before the combat begins, each chosen vampire must move 1 blood to the acting vampire or this action is canceled.\n[SAN] As [san] above, and this vampire may prevent up to X damage {during that} combat.",
+        "Card Text":"Choose X other ready Blood Brothers you control who belong to the same circle as this acting vampire.\n[san] (D) Enter combat with a ready minion controlled by another Methuselah. This acting vampire has +X strength and +X capacity during this action (if this action if successful). Before the combat begins, each chosen vampire must move 1 blood to the acting vampire or this action is canceled.\n[SAN] As [san] above, and this vampire may prevent up to X damage during that combat.",
         "Set":{
             "BL":"R1",
             "LoB":"R"
@@ -8299,7 +8299,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"{Only usable during a bleed action.}\n[dom] +1 bleed {(limited)}.\n[DOM] +1 bleed that does not count against the limit.",
+        "Card Text":"Only usable during a bleed action.\n[dom] +1 bleed (limited).\n[DOM] +1 bleed that does not count against the limit.",
         "Set":{
             "Sabbat":"U",
             "SW":"U",
@@ -8426,7 +8426,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an {I}ndependent {or Anarch} vampire.\n(D) Burn a vampire who has diablerized a vampire of the same clan as this acting vampire since your last turn.",
+        "Card Text":"+1 stealth action. Requires an Independent or Anarch vampire.\n(D) Burn a vampire who has diablerized a vampire of the same clan as this acting vampire since your last turn.",
         "Set":{
             "LotN":"R"
         },
@@ -10522,7 +10522,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Archetype. Trifle.\nPut this card on a vampire you control. Once each turn, this vampire can gain 1 blood or burn 1 blood to unlock {after an action (successful or not) is performed during which they used 3 or more Disciplines to play cards}. A vampire can have only one archetype.",
+        "Card Text":"Archetype. Trifle.\nPut this card on a vampire you control. Once each turn, this vampire can gain 1 blood or burn 1 blood to unlock after an action (successful or not) is performed during which they used 3 or more Disciplines to play cards. A vampire can have only one archetype.",
         "Set":{
             "HttB":"R/B1"
         },
@@ -10834,7 +10834,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Changeling with 4 life. 3 strength, 0 bleed.\nDauntain Black Magician can {move} a master{} discipline card from a{ny} vampire {to} a vampire you control as a (D) action. The Black Magician {can} burn {himself and} a Tremere antitribu controlled by your predator as a (D) action{}.",
+        "Card Text":"Changeling with 4 life. 3 strength, 0 bleed.\nDauntain Black Magician can move a master discipline card from any vampire to a vampire you control as a (D) action. The Black Magician can burn himself and a Tremere antitribu controlled by your predator as a (D) action.",
         "Set":{
             "Sabbat":"R",
             "Third":"R"
@@ -11161,7 +11161,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[ani] (D) Bleed with +1 bleed.\n[ANI] Frenzy. (D) Enter combat with and lock a vampire. That {target} vampire is considered the acting minion in that combat.",
+        "Card Text":"[ani] (D) Bleed with +1 bleed.\n[ANI] Frenzy. (D) Enter combat with and lock a vampire. That target vampire is considered the acting minion in that combat.",
         "Set":{
             "KoT":"C/A2",
             "HttB":"PSam2",
@@ -11380,7 +11380,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[dem] [COMBAT] Press.\n[DEM] [ACTION MODIFIER] +1 stealth.",
+        "Card Text":"[dem] [COMBAT] Press.\n[DEM] [ACTIONMODIFIER] +1 stealth.",
         "Set":{
             "FN":"R2",
             "BH":"PM",
@@ -11662,7 +11662,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Frenzy. This vampire burns 1 blood to get an additional strike {(limited)} this round, only usable to make a hand strike.\n[ABO] Frenzy. This vampire gets an additional strike {(limited)} this round, only usable to make a hand strike.",
+        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Frenzy. This vampire burns 1 blood to get an additional strike (limited) this round, only usable to make a hand strike.\n[ABO] Frenzy. This vampire gets an additional strike (limited) this round, only usable to make a hand strike.",
         "Set":{
             "LoB":"C"
         },
@@ -11803,7 +11803,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable on an undirected action as the action is announced.\nEquipment and conviction [1 CONVICTION] cards cannot grant intercept this action (any intercept they grant is lost). Reaction cards (and powers) that grant intercept for this action cost an additional blood or life.",
+        "Card Text":"Only usable on an undirected action as the action is announced.\nEquipment and conviction [1CONVICTION] cards cannot grant intercept this action (any intercept they grant is lost). Reaction cards (and powers) that grant intercept for this action cost an additional blood or life.",
         "Set":{
             "HttB":"C"
         },
@@ -12229,7 +12229,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch.\n[cel] Gain one additional strike {(limited)}.\n[for] Prevent up to 2 damage.\n[tha] Strike: ranged. Steal 1 blood with an optional maneuver.",
+        "Card Text":"Requires a ready anarch.\n[cel] Gain one additional strike (limited).\n[for] Prevent up to 2 damage.\n[tha] Strike: ranged. Steal 1 blood with an optional maneuver.",
         "Set":{
             "Anarchs":"C2/PAG4"
         },
@@ -12273,7 +12273,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable as the action is announced.\n[ser] {}{T}his action, this vampire {gets} {-1 stealth}, +1 strength and can prevent 1 damage each combat.{}\n[SER] As above, with +1 bleed {that does not count against the limit}{, only usable during a bleed action}.",
+        "Card Text":"Only usable as the action is announced.\n[ser] This action, this vampire gets -1 stealth, +1 strength and can prevent 1 damage each combat.\n[SER] As above, with +1 bleed that does not count against the limit, only usable during a bleed action.",
         "Set":{
             "LotN":"U"
         },
@@ -12504,7 +12504,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[ACTION MODIFIER] [1 CONVICTION] {Only usable during a bleed action} by a ready imbued other than the acting mortal. Burn this card to give the acting mortal you control +1 bleed ({limited}).\n[REACTION] [1 CONVICTION] Burn this card to give another mortal you control +1 intercept.\n[COMBAT] [1 CONVICTION] Only usable by a ready imbued other than a mortal combatant you control. Burn this card to give that combatant +1 strength for the remainder of the action.",
+        "Card Text":"[ACTIONMODIFIER] [1CONVICTION] Only usable during a bleed action by a ready imbued other than the acting mortal. Burn this card to give the acting mortal you control +1 bleed (limited).\n[REACTION] [1CONVICTION] Burn this card to give another mortal you control +1 intercept.\n[COMBAT] [1CONVICTION] Only usable by a ready imbued other than a mortal combatant you control. Burn this card to give that combatant +1 strength for the remainder of the action.",
         "Set":{
             "NoR":"C"
         },
@@ -12885,7 +12885,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[pro] Unlock this vampire. During this minion phase, you may unlock this vampire again.\n[PRO] This acting vampire's capacity is reduced by 1 {until the end of the game}. Put this card in play, locked. It becomes a non-unique vampire with the same clan, capacity and Disciplines as the acting vampire. You may move up to 2 blood from the acting vampire to this vampire. If either minion leaves the ready region, the other is burned.",
+        "Card Text":"+1 stealth action.\n[pro] Unlock this vampire. During this minion phase, you may unlock this vampire again.\n[PRO] This acting vampire's capacity is reduced by 1 until the end of the game. Put this card in play, locked. It becomes a non-unique vampire with the same clan, capacity and Disciplines as the acting vampire. You may move up to 2 blood from the acting vampire to this vampire. If either minion leaves the ready region, the other is burned.",
         "Set":{
             "KMW":"R"
         },
@@ -13323,7 +13323,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna.\nRequires at least one other Gehenna card in play. Each imbued can have (and use) one power card for which he or she doesn't meet the requirements. An imbued who performs a successful action may gain 1 conviction [1 CONVICTION] from his or her ash heap. An imbued can only gain 1 conviction [1 CONVICTION] this way each turn.",
+        "Card Text":"Gehenna.\nRequires at least one other Gehenna card in play. Each imbued can have (and use) one power card for which he or she doesn't meet the requirements. An imbued who performs a successful action may gain 1 conviction [1CONVICTION] from his or her ash heap. An imbued can only gain 1 conviction [1CONVICTION] this way each turn.",
         "Set":{
             "NoR":"R"
         },
@@ -13551,7 +13551,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a referendum.\n[ACTION MODIFIER] Each ready Laibon Ravnos gets 2 additional votes.\n[REACTION] Each ready Ravnos gets 1 additional vote.",
+        "Card Text":"Only usable during a referendum.\n[ACTIONMODIFIER] Each ready Laibon Ravnos gets 2 additional votes.\n[REACTION] Each ready Ravnos gets 1 additional vote.",
         "Set":{
             "LoB":"R"
         },
@@ -13909,7 +13909,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"{Only usable during a bleed action by a ready unlocked vampire other than the acting minion.}\n[dom] The acting minion gets +1 bleed {(limited)}.\n[DOM] As above, but usable by a ready locked vampire.",
+        "Card Text":"Only usable during a bleed action by a ready unlocked vampire other than the acting minion.\n[dom] The acting minion gets +1 bleed (limited).\n[DOM] As above, but usable by a ready locked vampire.",
         "Set":{
             "SoC":"C",
             "KoT":"C"
@@ -14138,7 +14138,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"{Only usable during a bleed action.}\n+X bleed {(limited)}, where X is the number of ready unlocked Daughters of Cacophony you control. Lock all ready Daughters of Cacophony you control.",
+        "Card Text":"Only usable during a bleed action.\n+X bleed (limited), where X is the number of ready unlocked Daughters of Cacophony you control. Lock all ready Daughters of Cacophony you control.",
         "Set":{
             "Promo":"20061026"
         },
@@ -14589,7 +14589,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a {}Laibon with no blood. Only usable {when this vampire is about to hunt successfully}.\nThis Laibon {gets +2 hunt}.",
+        "Card Text":"Requires a Laibon with no blood. Only usable when this vampire is about to hunt successfully.\nThis Laibon gets +2 hunt.",
         "Set":{
             "LoB":"R"
         },
@@ -14609,7 +14609,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Successful referendum means each Methuselah gains 1 pool for each ready {I}ndependent {or Anarch} vampire he or she controls.",
+        "Card Text":"Successful referendum means each Methuselah gains 1 pool for each ready Independent or Anarch vampire he or she controls.",
         "Set":{
             "TR":"C"
         },
@@ -14671,7 +14671,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an imbued with 5 conviction [5 CONVICTION]. Only usable before range is determined on the first round.\nIf two consecutive rounds of combat occur at close range and this imbued remains ready, this imbued burns 5 conviction [5 CONVICTION] during the press step of that second round to burn himself or herself and the opposing monster. Otherwise, this imbued burns 1 conviction [1 CONVICTION] when combat ends.",
+        "Card Text":"Requires an imbued with 5 conviction [5CONVICTION]. Only usable before range is determined on the first round.\nIf two consecutive rounds of combat occur at close range and this imbued remains ready, this imbued burns 5 conviction [5CONVICTION] during the press step of that second round to burn himself or herself and the opposing monster. Otherwise, this imbued burns 1 conviction [1CONVICTION] when combat ends.",
         "Set":{
             "NoR":"R"
         },
@@ -14990,7 +14990,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[myt] [REFLEX] Cancel a grapple card played on this vampire as it is played (no cost is paid).\n[obt] [COMBAT] Maneuver.\n[myt] [COMBAT] Maneuver.\n[MYT] [ACTION MODIFIER] +1 stealth.",
+        "Card Text":"[myt] [REFLEX] Cancel a grapple card played on this vampire as it is played (no cost is paid).\n[obt] [COMBAT] Maneuver.\n[myt] [COMBAT] Maneuver.\n[MYT] [ACTIONMODIFIER] +1 stealth.",
         "Set":{
             "LoB":"C",
             "HttB":"PKia3"
@@ -15011,7 +15011,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable if an ally or younger vampire is taking a (D) action against you {(or a card you control)}.\n[aus] +2 intercept.\n[myt] The action fails. Lock this reacting vampire.\n[MYT] As [myt] above, and the acting minion does not unlock as normal during their next unlock phase.",
+        "Card Text":"Only usable if an ally or younger vampire is taking a (D) action against you (or a card you control).\n[aus] +2 intercept.\n[myt] The action fails. Lock this reacting vampire.\n[MYT] As [myt] above, and the acting minion does not unlock as normal during their next unlock phase.",
         "Set":{
             "HttB":"C/B2"
         },
@@ -15234,7 +15234,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[mel] Choose up to five older vampires. Successful referendum means each chosen vampire gains 1 blood.\n[MEL] As above, and successful referendum means this card is put in{} play. Unique. You can burn this card before range is determined to end any combat.",
+        "Card Text":"[mel] Choose up to five older vampires. Successful referendum means each chosen vampire gains 1 blood.\n[MEL] As above, and successful referendum means this card is put in play. Unique. You can burn this card before range is determined to end any combat.",
         "Set":{
             "HttB":"R2/B1"
         },
@@ -15393,7 +15393,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] +1 stealth.\n[CHI] {Only usable during a bleed action. +1 bleed (limited), or +1 stealth and +1 bleed (limited).}",
+        "Card Text":"[chi] +1 stealth.\n[CHI] Only usable during a bleed action. +1 bleed (limited), or +1 stealth and +1 bleed (limited).",
         "Set":{
             "DS":"C2",
             "FN":"PR4",
@@ -16401,7 +16401,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Weapon: gun.\nStrike: 1R damage, with 1 optional maneuver each combat. This maneuver cannot be used during the first round. Once each round, if the bearer strikes with this gun, they get 1 optional additional strike {(limited)} this round, only usable to strike with this gun.",
+        "Card Text":"Weapon: gun.\nStrike: 1R damage, with 1 optional maneuver each combat. This maneuver cannot be used during the first round. Once each round, if the bearer strikes with this gun, they get 1 optional additional strike (limited) this round, only usable to strike with this gun.",
         "Set":{
             "HttB":"C/A2"
         },
@@ -16485,7 +16485,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pre] [COMBAT] Strike: combat ends.\n[PRE] [ACTION MODIFIER] Only usable as the action is announced. Vampires must burn 1 blood to attempt to block this action. Non-zombie allies cannot block this action.",
+        "Card Text":"[pre] [COMBAT] Strike: combat ends.\n[PRE] [ACTIONMODIFIER] Only usable as the action is announced. Vampires must burn 1 blood to attempt to block this action. Non-zombie allies cannot block this action.",
         "Set":{
             "KoT":"C/B2"
         },
@@ -16626,7 +16626,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[COMBAT] [1 CONVICTION] Only usable before range is determined on the first round of combat resulting from a block. Look at the opposing minion's controller's hand. You may then choose to cancel combat. If you do, and this imbued was blocking, the action continues as if unblocked.",
+        "Card Text":"[COMBAT] [1CONVICTION] Only usable before range is determined on the first round of combat resulting from a block. Look at the opposing minion's controller's hand. You may then choose to cancel combat. If you do, and this imbued was blocking, the action continues as if unblocked.",
         "Set":{
             "NoR":"R"
         },
@@ -17015,7 +17015,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Event.\nRequires at least two Gehenna cards in play. When this card is played, burn all Gehenna cards and conviction [1 CONVICTION] cards, then send all vampires with capacity 3 or less to torpor. No Gehenna cards may be played while this card remains in play.",
+        "Card Text":"Event.\nRequires at least two Gehenna cards in play. When this card is played, burn all Gehenna cards and conviction [1CONVICTION] cards, then send all vampires with capacity 3 or less to torpor. No Gehenna cards may be played while this card remains in play.",
         "Set":{
             "Promo":"20090401"
         },
@@ -17058,7 +17058,7 @@
         "Blood Cost":"X",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] X is 0. Strike: dodge.\n[str] This vampire gets X additional strikes {(limited)} each round. Those additional strikes can only be hand strikes. [str] is not a Discipline.\n[STR] As [str] above, and this vampire gets +1 strength for the remainder of this combat.",
+        "Card Text":"[cel] X is 0. Strike: dodge.\n[str] This vampire gets X additional strikes (limited) each round. Those additional strikes can only be hand strikes. [str] is not a Discipline.\n[STR] As [str] above, and this vampire gets +1 strength for the remainder of this combat.",
         "Set":{
             "HttB":"R"
         },
@@ -17219,7 +17219,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an Independent {or Anarch} vampire.\nAllocate X points among one or more ready vampires, where X is half the capacity of the acting vampire (rounded up). No more than 3 points points can be allocated to each vampire. Successful referendum means each vampire burns 1 blood for each point {allocated}. In this referendum, {non-priscus titles are worth 1 less vote each, priscus title is worth 1 less ballot}, and burning the Edge is worth {1} additional vote.",
+        "Card Text":"Requires an Independent or Anarch vampire.\nAllocate X points among one or more ready vampires, where X is half the capacity of the acting vampire (rounded up). No more than 3 points points can be allocated to each vampire. Successful referendum means each vampire burns 1 blood for each point allocated. In this referendum, non-priscus titles are worth 1 less vote each, priscus title is worth 1 less ballot, and burning the Edge is worth 1 additional vote.",
         "Set":{
             "FN":"C2",
             "Anarchs":"PAB2",
@@ -17394,7 +17394,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master. Trifle.\nPut this card on a ready non-titled, non-{A}narch vampire you control. The vampire with this card is considered {Anarch}. If this vampire changes sects, burn this card.",
+        "Card Text":"Master. Trifle.\nPut this card on a ready non-titled, non-Anarch vampire you control. The vampire with this card is considered Anarch. If this vampire changes sects, burn this card.",
         "Set":{
             "Anarchs":"C/PAG4"
         },
@@ -17655,7 +17655,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Melee weapon.\nStrike: strength damage, only usable at close range. If the opposing vampire {would go to torpor} during the strike resolution step of this strike and the bearer remains ready, the bearer may burn this card to burn the opposing vampire {instead}. This is not considered diablerie.",
+        "Card Text":"Melee weapon.\nStrike: strength damage, only usable at close range. If the opposing vampire would go to torpor during the strike resolution step of this strike and the bearer remains ready, the bearer may burn this card to burn the opposing vampire instead. This is not considered diablerie.",
         "Set":{
             "FN":"C/PA",
             "Third":"C",
@@ -18043,7 +18043,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf] [ACTION MODIFIER] +1 stealth.\n[obe] [ACTION MODIFIER][REACTION] Only usable {if} this vampire is about to enter combat with an ally. Lock that ally and end the action. (Do not lock this vampire if they are blocking.)\n[OBE] [ACTION MODIFIER] +1 stealth.",
+        "Card Text":"[obf] [ACTIONMODIFIER] +1 stealth.\n[obe] [ACTIONMODIFIER][REACTION] Only usable if this vampire is about to enter combat with an ally. Lock that ally and end the action. (Do not lock this vampire if they are blocking.)\n[OBE] [ACTIONMODIFIER] +1 stealth.",
         "Set":{
             "HttB":"C/B2"
         },
@@ -18296,7 +18296,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a ready non-titled, non-{A}narch vampire.\nPut this card on the acting vampire and unlock this vampire. This vampire is considered {Anarch}. If this vampire changes sects, burn this card.",
+        "Card Text":"+1 stealth action. Requires a ready non-titled, non-Anarch vampire.\nPut this card on the acting vampire and unlock this vampire. This vampire is considered Anarch. If this vampire changes sects, burn this card.",
         "Set":{
             "Anarchs":"C2/PAB4"
         },
@@ -18694,7 +18694,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique ghoul with 2 life. 1 strength, 1 bleed. Requires an anarch.\nGrey may play cards that require Celerity [cel] or Potence [pot] as an {A}narch vampire. During your unlock phase, if Grey has only 1 life, any ready anarch may burn a blood to add 1 life to him.",
+        "Card Text":"Unique ghoul with 2 life. 1 strength, 1 bleed. Requires an anarch.\nGrey may play cards that require Celerity [cel] or Potence [pot] as an Anarch vampire. During your unlock phase, if Grey has only 1 life, any ready anarch may burn a blood to add 1 life to him.",
         "Set":{
             "TR":"R"
         },
@@ -19012,7 +19012,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a bleed, hunt, or equip action.\nIf this is a bleed action, this Guruhi gets +1 bleed {(limited)}. If this is a hunt action, this Guruhi gains an additional blood if successful. If this is an equip action, this Guruhi unlocks if the action is successful.",
+        "Card Text":"Only usable during a bleed, hunt, or equip action.\nIf this is a bleed action, this Guruhi gets +1 bleed (limited). If this is a hunt action, this Guruhi gains an additional blood if successful. If this is an equip action, this Guruhi unlocks if the action is successful.",
         "Set":{
             "LoB":"C/PG4"
         },
@@ -19115,7 +19115,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a referendum.\n[dom] [ACTION MODIFIER] Requires a vampire with capacity above 4. This vampire gains 2 votes.\n[tem] [ACTION MODIFIER][REACTION] Cancel a reaction card as it is played by a younger vampire who does not have Temporis [tem] (no cost is paid).\n[TEM] [ACTION MODIFIER][REACTION] Multiplier. Only usable by a ready unlocked vampire other than the acting vampire. The acting vampire's votes are doubled when the votes are tallied. Only one multiplier can be played on a vampire each action.",
+        "Card Text":"Only usable during a referendum.\n[dom] [ACTIONMODIFIER] Requires a vampire with capacity above 4. This vampire gains 2 votes.\n[tem] [ACTIONMODIFIER][REACTION] Cancel a reaction card as it is played by a younger vampire who does not have Temporis [tem] (no cost is paid).\n[TEM] [ACTIONMODIFIER][REACTION] Multiplier. Only usable by a ready unlocked vampire other than the acting vampire. The acting vampire's votes are doubled when the votes are tallied. Only one multiplier can be played on a vampire each action.",
         "Set":{
             "LoB":"R"
         },
@@ -19348,7 +19348,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a Sabbat vampire.\nPut this card on this{} vampire. {The attached vampire gets +1 hunt.} A vampire can have only one Harvest Rites.",
+        "Card Text":"+1 stealth action. Requires a Sabbat vampire.\nPut this card on this vampire. The attached vampire gets +1 hunt. A vampire can have only one Harvest Rites.",
         "Set":{
             "Third":"U"
         },
@@ -19689,7 +19689,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"{Only usable during a bleed action.}\n[aus][chi] +1 bleed {(limited)}. You cannot play another action modifier to increase this bleed. If an ally or younger vampire is currently attempting to block this action, that block fails and that minion cannot block this action.\n[AUS][CHI] As above, but with +2 bleed {(limited)}.",
+        "Card Text":"Only usable during a bleed action.\n[aus][chi] +1 bleed (limited). You cannot play another action modifier to increase this bleed. If an ally or younger vampire is currently attempting to block this action, that block fails and that minion cannot block this action.\n[AUS][CHI] As above, but with +2 bleed (limited).",
         "Set":{
             "LotN":"C/PR"
         },
@@ -19731,7 +19731,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable by a{n} unlocked vampire not involved in {the current} combat.\n[nec] Prevent 1 damage to an ally in combat.\n[obe] Only usable when an ally {would be} burned in combat. {That ally and any cards and counters on them are put out of play instead (breaking any temporary control effects). Move that ally to the ready region with the cards and counters on them during the next discard phase, with 1 life if they have no life.}\n[OBE] As [obe] above, {but with 2 life if they have no life,} not to exceed their starting {life}.",
+        "Card Text":"Only usable by an unlocked vampire not involved in the current combat.\n[nec] Prevent 1 damage to an ally in combat.\n[obe] Only usable when an ally would be burned in combat. That ally and any cards and counters on them are put out of play instead (breaking any temporary control effects). Move that ally to the ready region with the cards and counters on them during the next discard phase, with 1 life if they have no life.\n[OBE] As [obe] above, but with 2 life if they have no life, not to exceed their starting life.",
         "Set":{
             "LoB":"C"
         },
@@ -19799,7 +19799,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. Only one Hell-for-Leather may be played at a given Discipline each combat.\n[ani] Strike: dodge, with an additional strike {(limited)}.\n[cel] Additional strike {}that doesn't count against the limit{}.\n[obt] Play if this anarch is ready and the opposing minion is not. The opposing minion's controller burns 2 pool.",
+        "Card Text":"Requires an anarch. Only one Hell-for-Leather may be played at a given Discipline each combat.\n[ani] Strike: dodge, with an additional strike (limited).\n[cel] Additional strike that doesn't count against the limit.\n[obt] Play if this anarch is ready and the opposing minion is not. The opposing minion's controller burns 2 pool.",
         "Set":{
             "TR":"C"
         },
@@ -19993,7 +19993,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Not usable by an imbued with Illuminate.\n[ACTION MODIFIER] [1 CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1 CONVICTION] Only usable during a monster's (D) action targeting this imbued. The action fails.",
+        "Card Text":"Not usable by an imbued with Illuminate.\n[ACTIONMODIFIER] [1CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1CONVICTION] Only usable during a monster's (D) action targeting this imbued. The action fails.",
         "Set":{
             "NoR":"R"
         },
@@ -20033,7 +20033,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf] [COMBAT] Cancel a combat card that requires Auspex [aus] as it is played. No cost is paid.\n[OBF] [ACTION MODIFIER] Cancel a reaction card that requires Auspex as it is played. No cost is paid.",
+        "Card Text":"[obf] [COMBAT] Cancel a combat card that requires Auspex [aus] as it is played. No cost is paid.\n[OBF] [ACTIONMODIFIER] Cancel a reaction card that requires Auspex as it is played. No cost is paid.",
         "Set":{
             "LotN":"R"
         },
@@ -20200,7 +20200,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique werewolf with 3 life. 1 strength, 0 bleed.\nHigh Top gets +1 intercept. High Top may enter combat with any minion controlled by another Methuselah as a (D) action. High Top gets an additional strike {(limited)} each round and an optional maneuver once each combat. He may play cards requiring basic Celerity [cel] as a vampire with a capacity of 4. If High Top has less than 3 life during your unlock phase, he gains 1 life.",
+        "Card Text":"Unique werewolf with 3 life. 1 strength, 0 bleed.\nHigh Top gets +1 intercept. High Top may enter combat with any minion controlled by another Methuselah as a (D) action. High Top gets an additional strike (limited) each round and an optional maneuver once each combat. He may play cards requiring basic Celerity [cel] as a vampire with a capacity of 4. If High Top has less than 3 life during your unlock phase, he gains 1 life.",
         "Set":{
             "BL":"R1",
             "LoB":"R"
@@ -20910,7 +20910,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Only usable before range is chosen. This vampire gets +1 strength for the remainder of combat. When combat ends, if the opposing minion is ready, the opposing minion gains an amount of blood (or life) equal to the amount he or she lost due to damage this combat. A vampire can play only one Imposing Phantasm each combat.\n[CHI] As above, and this vampire gets an additional strike {(limited)} this round.",
+        "Card Text":"[chi] Only usable before range is chosen. This vampire gets +1 strength for the remainder of combat. When combat ends, if the opposing minion is ready, the opposing minion gains an amount of blood (or life) equal to the amount he or she lost due to damage this combat. A vampire can play only one Imposing Phantasm each combat.\n[CHI] As above, and this vampire gets an additional strike (limited) this round.",
         "Set":{
             "FN":"R2"
         },
@@ -21192,7 +21192,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card on a Red List {A}narch vampire. This vampire is infernal, Bahari, and gets 2 additional votes. During this vampire's minion phase, his or her controller may unlock a ready anarch he or she controls.",
+        "Card Text":"Unique master.\nPut this card on a Red List Anarch vampire. This vampire is infernal, Bahari, and gets 2 additional votes. During this vampire's minion phase, his or her controller may unlock a ready anarch he or she controls.",
         "Set":{
             "Promo":"20100510"
         },
@@ -21536,7 +21536,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[ACTION] [1 CONVICTION] +1 stealth action.\nAdd a counter to an imbued in your uncontrolled region or move the conviction [1 CONVICTION] you paid for this action from your ash heap to any imbued in play.",
+        "Card Text":"[ACTION] [1CONVICTION] +1 stealth action.\nAdd a counter to an imbued in your uncontrolled region or move the conviction [1CONVICTION] you paid for this action from your ash heap to any imbued in play.",
         "Set":{
             "NoR":"R"
         },
@@ -21903,7 +21903,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pot][pre] Only usable during a referendum. This vampire gains 2 votes.\n[POT][PRE] {Only usable during a bleed action. +2 bleed (limited).}",
+        "Card Text":"[pot][pre] Only usable during a referendum. This vampire gains 2 votes.\n[POT][PRE] Only usable during a bleed action. +2 bleed (limited).",
         "Set":{
             "BH":"C",
             "KMW":"PAn",
@@ -22732,7 +22732,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 3 life. 3 strength, 2 bleed.\nKherebutu {can} play cards requiring basic Necromancy [nec] as a vampire with{} capacity{} 3.{}{} {}Kherebutu {can burn himself and} a Tremere with{} capacity {4 or less} controlled by your prey {as a (D) action}. {If he is burned, shuffle him in {his owner's} library.}",
+        "Card Text":"Unique mummy with 3 life. 3 strength, 2 bleed.\nKherebutu can play cards requiring basic Necromancy [nec] as a vampire with capacity 3. Kherebutu can burn himself and a Tremere with capacity 4 or less controlled by your prey as a (D) action. If he is burned, shuffle him in his owner's library.",
         "Set":{
             "AH":"R2"
         },
@@ -23140,7 +23140,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Weapon. Gun.\n1R damage each strike, with an optional maneuver each combat. When bearer strikes with this gun, he or she gets an optional additional strike {(limited)} this round, only usable to strike with this gun.",
+        "Card Text":"Weapon. Gun.\n1R damage each strike, with an optional maneuver each combat. When bearer strikes with this gun, he or she gets an optional additional strike (limited) this round, only usable to strike with this gun.",
         "Set":{
             "LotN":"U"
         },
@@ -23533,7 +23533,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready mortal, ghoul, or mage.\n(D) Steal a blood (it becomes a life) from a vampire controlled by another Methuselah and unlock this ally. Burn any conviction [1 CONVICTION] cards on this ally. This ally may play cards requiring Potence [pot] as a vampire until his or her next unlock phase.",
+        "Card Text":"Requires a ready mortal, ghoul, or mage.\n(D) Steal a blood (it becomes a life) from a vampire controlled by another Methuselah and unlock this ally. Burn any conviction [1CONVICTION] cards on this ally. This ally may play cards requiring Potence [pot] as a vampire until his or her next unlock phase.",
         "Set":{
             "KoT":"U"
         },
@@ -23859,7 +23859,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a bleed action.\nBurn the Edge to get +1 bleed {that does not count against the limit}. You cannot gain the Edge this action. If you would get the Edge, it is burned instead.",
+        "Card Text":"Only usable during a bleed action.\nBurn the Edge to get +1 bleed that does not count against the limit. You cannot gain the Edge this action. If you would get the Edge, it is burned instead.",
         "Set":{
             "LotN":"C/PR2",
             "KoT":"C"
@@ -23922,7 +23922,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready titled non-{A}narch vampire. +1 stealth action.\nChoose up to two {A}narch vampires with capacities of 5 or less. Each chosen vampire is locked and does not unlock as normal on his or her next unlock phase.",
+        "Card Text":"Requires a ready titled non-Anarch vampire. +1 stealth action.\nChoose up to two Anarch vampires with capacities of 5 or less. Each chosen vampire is locked and does not unlock as normal on his or her next unlock phase.",
         "Set":{
             "Anarchs":"R",
             "KoT":"R"
@@ -24033,7 +24033,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Electronic.\nThe bearer gets 1 optional maneuver during the first round of combat. You can move any aim card the bearer uses to this card{, face up and out of play} (even if it is canceled). The bearer can play an aim card on this equipment as if from your hand; it is then removed from the game.",
+        "Card Text":"Electronic.\nThe bearer gets 1 optional maneuver during the first round of combat. You can move any aim card the bearer uses to this card, face up and out of play (even if it is canceled). The bearer can play an aim card on this equipment as if from your hand; it is then removed from the game.",
         "Set":{
             "KoT":"U/B2"
         },
@@ -24053,7 +24053,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Additional strike {(limited)}.\n[CEL] This vampire may burn X blood to gain X additional strikes {(limited)}.",
+        "Card Text":"[cel] Additional strike (limited).\n[CEL] This vampire may burn X blood to gain X additional strikes (limited).",
         "Set":{
             "Sabbat":"R",
             "SW":"R/PB",
@@ -24199,7 +24199,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"{While in play,} this equipment card represents a location and does not count as equipment{}.\nThis vampire gets +1 bleed. They can burn this card before range is determined to end combat. A vampire can have only one Living Manse.",
+        "Card Text":"While in play, this equipment card represents a location and does not count as equipment.\nThis vampire gets +1 bleed. They can burn this card before range is determined to end combat. A vampire can have only one Living Manse.",
         "Set":{
             "Sabbat":"R",
             "SW":"R",
@@ -24784,7 +24784,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a referendum before votes and ballots are cast.\n[pre] [REACTION] Only usable by a reacting vampire. Gain 2 votes.\n[mel] [ACTION MODIFIER][REACTION] Gain 2 votes.\n[MEL] [ACTION MODIFIER][REACTION] As [mel] above, and any vampire casting votes or ballots in agreement with this vampire gains 1 blood from the blood bank. Any vampire casting votes or ballots in opposition to this vampire burns 1 blood. Blood is gained or lost when the results are tallied.",
+        "Card Text":"Only usable during a referendum before votes and ballots are cast.\n[pre] [REACTION] Only usable by a reacting vampire. Gain 2 votes.\n[mel] [ACTIONMODIFIER][REACTION] Gain 2 votes.\n[MEL] [ACTIONMODIFIER][REACTION] As [mel] above, and any vampire casting votes or ballots in agreement with this vampire gains 1 blood from the blood bank. Any vampire casting votes or ballots in opposition to this vampire burns 1 blood. Blood is gained or lost when the results are tallied.",
         "Set":{
             "BL":"C2",
             "LoB":"C"
@@ -24882,7 +24882,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: out-of-turn. Boon. {Only usable if another Methuselah is being bled by a minion you do not control and the bleed amount is 1 or more, after blocks are declined.}\nPut this card in play{}. You burn pool for {this} bleed instead of the target Methuselah {(and the bleed is still successful), or this card if you don't burn at least 1 pool.}. {If you are about to} be successfully bled, you {can} burn this card to have that Methuselah burn pool instead of you {(and the bleed is still successful)}.",
+        "Card Text":"Master: out-of-turn. Boon. Only usable if another Methuselah is being bled by a minion you do not control and the bleed amount is 1 or more, after blocks are declined.\nPut this card in play. You burn pool for this bleed instead of the target Methuselah (and the bleed is still successful), or this card if you don't burn at least 1 pool.. If you are about to be successfully bled, you can burn this card to have that Methuselah burn pool instead of you (and the bleed is still successful).",
         "Set":{
             "Jyhad":"U",
             "VTES":"U",
@@ -25571,7 +25571,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf] +1 stealth.\n[str] This acting vampire gets an optional additional strike {(limited)} each round of combat until the end of this action. [str] is not a Discipline.\n[STR] As [str] above, but with +2 stealth.",
+        "Card Text":"[obf] +1 stealth.\n[str] This acting vampire gets an optional additional strike (limited) each round of combat until the end of this action. [str] is not a Discipline.\n[STR] As [str] above, but with +2 stealth.",
         "Set":{
             "HttB":"C"
         },
@@ -25943,7 +25943,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mage with 2 life. 0 strength, 0 bleed.\nMehemet {can} strike{:} 2R damage. {}Mehemet {can} burn {1} blood and a {m}aster {d}iscipline card on a vampire controlled by your prey {as a (D) action}.",
+        "Card Text":"Unique mage with 2 life. 0 strength, 0 bleed.\nMehemet can strike: 2R damage. Mehemet can burn 1 blood and a master discipline card on a vampire controlled by your prey as a (D) action.",
         "Set":{
             "AH":"R2"
         },
@@ -26551,7 +26551,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] [ACTION MODIFIER] +1 stealth.\n[CHI] [COMBAT] Strike: combat ends. If this vampire was blocked while performing an action other than bleeding, the action continues as if unblocked.",
+        "Card Text":"[chi] [ACTIONMODIFIER] +1 stealth.\n[CHI] [COMBAT] Strike: combat ends. If this vampire was blocked while performing an action other than bleeding, the action continues as if unblocked.",
         "Set":{
             "FN":"C2/PR",
             "LotN":"PR2"
@@ -26853,7 +26853,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a vampire with capacity 7 or more. Only usable after resolution of an action blocked by an ally or a vampire with capacity 5 or less. Not usable if, during this action, more than 1 round of combat has occurred or{} this vampire has lost 3 or more blood or ended combat before the press step.\nThe action continues as if unblocked.",
+        "Card Text":"Requires a vampire with capacity 7 or more. Only usable after resolution of an action blocked by an ally or a vampire with capacity 5 or less. Not usable if, during this action, more than 1 round of combat has occurred or this vampire has lost 3 or more blood or ended combat before the press step.\nThe action continues as if unblocked.",
         "Set":{
             "HttB":"C/A2"
         },
@@ -26917,7 +26917,7 @@
         "Blood Cost":"X",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. {Only usable during a bleed action}\n+X bleed {(limited)}. X must be 1, 2 or 3.{}",
+        "Card Text":"Requires an anarch. Only usable during a bleed action\n+X bleed (limited). X must be 1, 2 or 3.",
         "Set":{
             "TR":"C"
         },
@@ -27282,7 +27282,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[dom] [ACTION MODIFIER] Only usable during a bleed action. +1 bleed (limited).\n[DOM] [REACTION] Only usable if a younger vampire is bleeding you, after blocks are declined. {Lock this reacting vampire.} Change the target of the bleed to another Methuselah other than the acting vampire's controller (that Methuselah can attempt to block).",
+        "Card Text":"[dom] [ACTIONMODIFIER] Only usable during a bleed action. +1 bleed (limited).\n[DOM] [REACTION] Only usable if a younger vampire is bleeding you, after blocks are declined. Lock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting vampire's controller (that Methuselah can attempt to block).",
         "Set":{
             "LotN":"C/PG4",
             "KoT":"C/PV5",
@@ -27577,7 +27577,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Mortal with 1 life. 1 strength, 0 bleed.\nLock {after resolution} of {an unsuccessful action} to inflict 1 damage on the acting vampire. Only one Neighborhood Watch Commander {can} lock to inflict damage each action.",
+        "Card Text":"Mortal with 1 life. 1 strength, 0 bleed.\nLock after resolution of an unsuccessful action to inflict 1 damage on the acting vampire. Only one Neighborhood Watch Commander can lock to inflict damage each action.",
         "Set":{
             "Gehenna":"C",
             "Third":"PTz"
@@ -27954,7 +27954,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Press.\n[CEL] Additional strike {(limited)}.",
+        "Card Text":"[cel] Press.\n[CEL] Additional strike (limited).",
         "Set":{
             "Jyhad":"C",
             "VTES":"C",
@@ -27999,7 +27999,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Play after resolving a successful action that requires an anarch.\nPut this card on a titled non-{A}narch vampire controlled by the target of the action (or by your predator or prey if the action is undirected). A vampire with two No Confidence cards loses the benefit of his or her title. Burn this card if this acting vampire leaves the ready region.",
+        "Card Text":"Play after resolving a successful action that requires an anarch.\nPut this card on a titled non-Anarch vampire controlled by the target of the action (or by your predator or prey if the action is undirected). A vampire with two No Confidence cards loses the benefit of his or her title. Burn this card if this acting vampire leaves the ready region.",
         "Set":{
             "TR":"C"
         },
@@ -28060,7 +28060,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Demon with 1 life. 1 strength, 1 bleed.\n[obt] {Nocturn can act the turn it is recruited.}. If this is this vampire's first successful recruit action this turn, {unlock him or her}. Nocturn can play non-ally cards {requiring} basic Obtenebration [obt] as a vampire. Burn Nocturn during your unlock phase.\n[OBT] As above, and this vampire {can} perform this action again this turn, with the cost increased by 1 blood.",
+        "Card Text":"Demon with 1 life. 1 strength, 1 bleed.\n[obt] Nocturn can act the turn it is recruited.. If this is this vampire's first successful recruit action this turn, unlock him or her. Nocturn can play non-ally cards requiring basic Obtenebration [obt] as a vampire. Burn Nocturn during your unlock phase.\n[OBT] As above, and this vampire can perform this action again this turn, with the cost increased by 1 blood.",
         "Set":{
             "SoC":"C",
             "HttB":"PKia2"
@@ -28393,7 +28393,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable {if} this vampire is about to enter combat with an acting younger vampire.\n[dom] Unlock the acting vampire and end the action. (Do not lock this vampire if they are blocking.) The acting vampire cannot take the same action this turn.\n[DOM] As above, but do not unlock the acting vampire.",
+        "Card Text":"Only usable if this vampire is about to enter combat with an acting younger vampire.\n[dom] Unlock the acting vampire and end the action. (Do not lock this vampire if they are blocking.) The acting vampire cannot take the same action this turn.\n[DOM] As above, but do not unlock the acting vampire.",
         "Set":{
             "Jyhad":"U",
             "VTES":"U",
@@ -28494,7 +28494,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] [COMBAT] Strike: dodge.\n[CHI] [ACTION MODIFIER] +1 stealth.",
+        "Card Text":"[chi] [COMBAT] Strike: dodge.\n[CHI] [ACTIONMODIFIER] +1 stealth.",
         "Set":{
             "Gehenna":"C",
             "LotN":"PR4"
@@ -28515,7 +28515,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready Blood Brother of the same circle as another one in combat. Usable by a vampire not involved in the combat.\n[san] Only usable before range is chosen. The other Blood Brother gets an additional strike {(limited)} each round{}.\n[SAN] As [san] above, but with two additional strikes {(limited)} each round.",
+        "Card Text":"Requires a ready Blood Brother of the same circle as another one in combat. Usable by a vampire not involved in the combat.\n[san] Only usable before range is chosen. The other Blood Brother gets an additional strike (limited) each round.\n[SAN] As [san] above, but with two additional strikes (limited) each round.",
         "Set":{
             "BL":"C2",
             "LoB":"C"
@@ -29849,7 +29849,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a baron. Only usable if you control the Edge.\nChoose a titled non-{A}narch vampire. Successful referendum means that you burn the edge to remove that vampire's title and burn 2 pool from his or her controller.",
+        "Card Text":"Requires a baron. Only usable if you control the Edge.\nChoose a titled non-Anarch vampire. Successful referendum means that you burn the edge to remove that vampire's title and burn 2 pool from his or her controller.",
         "Set":{
             "TR":"R"
         },
@@ -29961,7 +29961,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and Flash Grenades have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTION MODIFIER] Only usable as the action is announced. Choose any vampire. The chosen vampire cannot block this action.",
+        "Card Text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and Flash Grenades have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTIONMODIFIER] Only usable as the action is announced. Choose any vampire. The chosen vampire cannot block this action.",
         "Set":{
             "HttB":"C/B2"
         },
@@ -30028,7 +30028,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"{}{U}nique location.\n{When this card is played, y}ou {can} move a vampire from your ash heap to this card, face down. You {can} use a master phase action to {add} 1 blood{} to this vampire. If the blood on the vampire equals the vampire's capacity, {put} the vampire in the ready region at the end of the master phase and burn this card. Any minion can burn this card {and move the vampire on it to the ash heap} as a (D) action{}.",
+        "Card Text":"Unique location.\nWhen this card is played, you can move a vampire from your ash heap to this card, face down. You can use a master phase action to add 1 blood to this vampire. If the blood on the vampire equals the vampire's capacity, put the vampire in the ready region at the end of the master phase and burn this card. Any minion can burn this card and move the vampire on it to the ash heap as a (D) action.",
         "Set":{
             "DS":"U2"
         },
@@ -30381,7 +30381,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[vic] [ACTION MODIFIER] +1 stealth.\n[VIC] [COMBAT] Strike: dodge.",
+        "Card Text":"[vic] [ACTIONMODIFIER] +1 stealth.\n[VIC] [COMBAT] Strike: dodge.",
         "Set":{
             "Sabbat":"C",
             "SW":"PT2",
@@ -30505,7 +30505,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Melee weapon.{}\nStrength+1 damage each strike. {Damage inflicted on a Kiasyd by this weapon is aggravated.} If all of the damage done by this strike is prevented by a card or cards that require Fortitude [for], burn this weapon after strike resolution.",
+        "Card Text":"Melee weapon.\nStrength+1 damage each strike. Damage inflicted on a Kiasyd by this weapon is aggravated. If all of the damage done by this strike is prevented by a card or cards that require Fortitude [for], burn this weapon after strike resolution.",
         "Set":{
             "BL":"U2",
             "BH":"PTo2",
@@ -30970,7 +30970,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\n[obt] Only usable when {this anarch} is blocked{, before combat (if any).} The blocking minion burns 2 blood or life.\n[pot] {Only usable during a bleed action.} +1 bleed {that does not count against the limit}.\n[pre] {Only usable during a bleed action.} +1 bleed, or +1 bleed and +1 stealth {(limited)}.",
+        "Card Text":"Requires an anarch.\n[obt] Only usable when this anarch is blocked, before combat (if any). The blocking minion burns 2 blood or life.\n[pot] Only usable during a bleed action. +1 bleed that does not count against the limit.\n[pre] Only usable during a bleed action. +1 bleed, or +1 bleed and +1 stealth (limited).",
         "Set":{
             "TR":"C"
         },
@@ -32014,7 +32014,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] {Only usable during a bleed action. +1 bleed (limited).}\n[ABO] As [abo] above, and non-mortal allies and vampires with capacity less than 5 cannot block this action.",
+        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Only usable during a bleed action. +1 bleed (limited).\n[ABO] As [abo] above, and non-mortal allies and vampires with capacity less than 5 cannot block this action.",
         "Set":{
             "LoB":"C/PA4"
         },
@@ -32034,7 +32034,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] [ACTION MODIFIER] Only usable as the action is announced. +1 stealth, even if stealth is not yet needed.\n[ABO] [ACTION MODIFIER][COMBAT] Only usable when this vampire burns a minion controlled by your prey, either in combat or as a (D) action. Your prey burns two pool. A vampire may play only one Predator's Transformation at superior each action.",
+        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] [ACTIONMODIFIER] Only usable as the action is announced. +1 stealth, even if stealth is not yet needed.\n[ABO] [ACTIONMODIFIER][COMBAT] Only usable when this vampire burns a minion controlled by your prey, either in combat or as a (D) action. Your prey burns two pool. A vampire may play only one Predator's Transformation at superior each action.",
         "Set":{
             "LoB":"C"
         },
@@ -32305,7 +32305,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[ACTION MODIFIER] [1 CONVICTION] Only usable as the action is announced.\nVampires with capacity less than 7 and monster allies who cost less than 4 pool cannot block this action.",
+        "Card Text":"[ACTIONMODIFIER] [1CONVICTION] Only usable as the action is announced.\nVampires with capacity less than 7 and monster allies who cost less than 4 pool cannot block this action.",
         "Set":{
             "NoR":"R"
         },
@@ -32325,7 +32325,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Strike: 1R damage or use a ranged weapon strike. This strike cannot be dodged.\n[CEL] As above, with an additional strike {(limited)}.",
+        "Card Text":"[cel] Strike: 1R damage or use a ranged weapon strike. This strike cannot be dodged.\n[CEL] As above, with an additional strike (limited).",
         "Set":{
             "KMW":"C",
             "LoB":"PO3"
@@ -32593,7 +32593,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pre] {Only usable during a bleed action. Burn 1 pool to get +1 bleed (limited).}\n[mal] Choose a minion. The chosen minion cannot play reaction cards (including [REACTION] abilities of power cards) this action. [mal] is not a Discipline.\n[MAL] As [mal] above, and the chosen minion cannot block this action.",
+        "Card Text":"[pre] Only usable during a bleed action. Burn 1 pool to get +1 bleed (limited).\n[mal] Choose a minion. The chosen minion cannot play reaction cards (including [REACTION] abilities of power cards) this action. [mal] is not a Discipline.\n[MAL] As [mal] above, and the chosen minion cannot block this action.",
         "Set":{
             "HttB":"C"
         },
@@ -32755,7 +32755,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a non-Red List, non-{A}narch vampire.\n(D) Choose a non-titled, non-Red List minion who either has successfully bled for 3 or more pool since your last turn or is infernal or anarch. The chosen minion becomes Red List.",
+        "Card Text":"+1 stealth action. Requires a non-Red List, non-Anarch vampire.\n(D) Choose a non-titled, non-Red List minion who either has successfully bled for 3 or more pool since your last turn or is infernal or anarch. The chosen minion becomes Red List.",
         "Set":{
             "Promo":"20080810"
         },
@@ -32910,7 +32910,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Wraith with 1 life. 1 strength, 0 bleed.\n[nec] The {P}uppeteer can give you control of an ally or a vampire with capacity{} {4 or less} {until the end} of your turn as a (D) action.\n[NEC] As above, with 2 life.",
+        "Card Text":"Wraith with 1 life. 1 strength, 0 bleed.\n[nec] The Puppeteer can give you control of an ally or a vampire with capacity 4 or less until the end of your turn as a (D) action.\n[NEC] As above, with 2 life.",
         "Set":{
             "FN":"R2"
         },
@@ -32994,7 +32994,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Maneuver.\n[CEL] Additional strike {(limited)}.",
+        "Card Text":"[cel] Maneuver.\n[CEL] Additional strike (limited).",
         "Set":{
             "Sabbat":"C",
             "SW":"C/PB2",
@@ -33091,7 +33091,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 3 life. {1 strength,} 2 bleed{}.\n{Qetu gets 1 optional press each combat, only usable to end combat.} If Qetu is burned, shuffle her in her owner's library.",
+        "Card Text":"Unique mummy with 3 life. 1 strength, 2 bleed.\nQetu gets 1 optional press each combat, only usable to end combat. If Qetu is burned, shuffle her in her owner's library.",
         "Set":{
             "FN":"R2"
         },
@@ -33197,7 +33197,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Additional strike {(limited)}.\n[CEL] {Additional strike that does not count against the limit.} A vampire may only play one Quickness each round.",
+        "Card Text":"[cel] Additional strike (limited).\n[CEL] Additional strike that does not count against the limit. A vampire may only play one Quickness each round.",
         "Set":{
             "Sabbat":"R",
             "SW":"R",
@@ -33220,7 +33220,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] [REACTION] +1 intercept.\n[tem] [REACTION] Reduce a bleed against you by 2.\n[aus][tem] [ACTION MODIFIER][REACTION] Only usable during a referendum. Force a younger vampire to abstain {(t}his can cancel that vampire's votes and ballots{)}.\n[AUS][TEM] [ACTION MODIFIER] {Only usable during a bleed action.} +2 bleed {that does not count against the limit}.",
+        "Card Text":"[aus] [REACTION] +1 intercept.\n[tem] [REACTION] Reduce a bleed against you by 2.\n[aus][tem] [ACTIONMODIFIER][REACTION] Only usable during a referendum. Force a younger vampire to abstain (this can cancel that vampire's votes and ballots).\n[AUS][TEM] [ACTIONMODIFIER] Only usable during a bleed action. +2 bleed that does not count against the limit.",
         "Set":{
             "LoB":"C"
         },
@@ -33416,7 +33416,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pro] [ACTION MODIFIER] +1 stealth.\n[PRO] [COMBAT] Strike: combat ends.",
+        "Card Text":"[pro] [ACTIONMODIFIER] +1 stealth.\n[PRO] [COMBAT] Strike: combat ends.",
         "Set":{
             "Sabbat":"C",
             "SW":"C",
@@ -33697,7 +33697,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a slave.\n(D) Put this card in play and move a vampire in torpor to this card, {face up and} out of play. A vampire you control to whom this Gargoyle is enslaved can remove that vampire from the game as a +1 stealth action to turn this card into a Gargoyle with the same capacity, Fortitude [for], Potence [pot], Visceratika [vis] and flight [FLIGHT], enslaved to the acting vampire's clan.",
+        "Card Text":"+1 stealth action. Requires a slave.\n(D) Put this card in play and move a vampire in torpor to this card, face up and out of play. A vampire you control to whom this Gargoyle is enslaved can remove that vampire from the game as a +1 stealth action to turn this card into a Gargoyle with the same capacity, Fortitude [for], Potence [pot], Visceratika [vis] and flight [FLIGHT], enslaved to the acting vampire's clan.",
         "Set":{
             "HttB":"R/A2"
         },
@@ -33971,7 +33971,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an {I}ndependent {or Anarch} vampire with capacity {5 or more}.\nAllocate 6 points among two or more other Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point {allocated}.",
+        "Card Text":"Requires an Independent or Anarch vampire with capacity 5 or more.\nAllocate 6 points among two or more other Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.",
         "Set":{
             "LotN":"C/PG3"
         },
@@ -34501,7 +34501,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"During your unlock phase, if this imbued has fewer life than his or her starting amount, he or she gains 1 life.\n[ACTION] [1 CONVICTION] +1 stealth action. Add 1 blood to a vampire or 1 life to any other ally, not to exceed starting life.",
+        "Card Text":"During your unlock phase, if this imbued has fewer life than his or her starting amount, he or she gains 1 life.\n[ACTION] [1CONVICTION] +1 stealth action. Add 1 blood to a vampire or 1 life to any other ally, not to exceed starting life.",
         "Set":{
             "NoR":"C"
         },
@@ -34622,7 +34622,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose an Assamite in your ash heap or burn 1 pool to choose an Assamite in your uncontrolled region. Remove the chosen Assamite from the game or burn this {equipment}. Once each turn, except during combat, if the Assamite bearer is ready, they can burn 1 blood to give you +2 hand size until the end of the turn.",
+        "Card Text":"Choose an Assamite in your ash heap or burn 1 pool to choose an Assamite in your uncontrolled region. Remove the chosen Assamite from the game or burn this equipment. Once each turn, except during combat, if the Assamite bearer is ready, they can burn 1 blood to give you +2 hand size until the end of the turn.",
         "Set":{
             "Promo":"20080203",
             "POD":"DTC"
@@ -34703,7 +34703,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Werewolf with 3 life. 2 strength, 0 bleed.\nRenegade Garou gets an additional strike {(limited)} each round and an optional maneuver each combat. He may enter combat with a minion controlled by another Methuselah as a +1 stealth (D) action. If Renegade Garou has 2 or fewer life during your unlock phase, he gains 1 life from the blood bank.",
+        "Card Text":"Werewolf with 3 life. 2 strength, 0 bleed.\nRenegade Garou gets an additional strike (limited) each round and an optional maneuver each combat. He may enter combat with a minion controlled by another Methuselah as a +1 stealth (D) action. If Renegade Garou has 2 or fewer life during your unlock phase, he gains 1 life from the blood bank.",
         "Set":{
             "Jyhad":"R2",
             "VTES":"R",
@@ -34876,7 +34876,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] [COMBAT] Press, or maneuver with 1 optional press.\n[CEL] [ACTION MODIFIER] +1 stealth.",
+        "Card Text":"[cel] [COMBAT] Press, or maneuver with 1 optional press.\n[CEL] [ACTIONMODIFIER] +1 stealth.",
         "Set":{
             "LotN":"C/PA2",
             "KoT":"C/PB5",
@@ -34898,7 +34898,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[ACTION] (D) Inflict 1 damage on a vampire with capacity less than 6. If this action is successful, you may move 1 conviction [1 CONVICTION] from your hand or ash heap to this imbued.\n[ACTION] [1 CONVICTION] +1 stealth action. Add 1 blood to a vampire or 1 life to any other ally, not to exceed starting life.",
+        "Card Text":"[ACTION] (D) Inflict 1 damage on a vampire with capacity less than 6. If this action is successful, you may move 1 conviction [1CONVICTION] from your hand or ash heap to this imbued.\n[ACTION] [1CONVICTION] +1 stealth action. Add 1 blood to a vampire or 1 life to any other ally, not to exceed starting life.",
         "Set":{
             "NoR":"C"
         },
@@ -35134,7 +35134,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"{Only usable during a bleed action.}\n[ser] +1 bleed {(limited)}.\n[SER] Burn one of your corruption counters from a minion controlled by the target Methuselah to get +3 bleed against that Methuselah {(limited)}.",
+        "Card Text":"Only usable during a bleed action.\n[ser] +1 bleed (limited).\n[SER] Burn one of your corruption counters from a minion controlled by the target Methuselah to get +3 bleed against that Methuselah (limited).",
         "Set":{
             "Gehenna":"C",
             "LotN":"PS3"
@@ -35522,7 +35522,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Requires at least 2 other Gehenna events in play. Do not replace until your prey is ousted.\nA Methuselah cannot gain pool during their own turn unless they have the Edge or at least 1 victory point ({instead,} any pool they would gain goes to the blood bank{}).",
+        "Card Text":"Gehenna. Requires at least 2 other Gehenna events in play. Do not replace until your prey is ousted.\nA Methuselah cannot gain pool during their own turn unless they have the Edge or at least 1 victory point (instead, any pool they would gain goes to the blood bank).",
         "Set":{
             "HttB":"R/A1"
         },
@@ -35800,7 +35800,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nLock this location and burn a conviction [1 CONVICTION] from a ready imbued you control to reduce a bleed against you by one or to gain two votes in a referendum.",
+        "Card Text":"Master: unique location.\nLock this location and burn a conviction [1CONVICTION] from a ready imbued you control to reduce a bleed against you by one or to gain two votes in a referendum.",
         "Set":{
             "NoR":"R"
         },
@@ -36179,7 +36179,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"This equipment card represents a location and does not count as equipment while in play. Unique.\nAllies cannot block th{is} vampire{}.",
+        "Card Text":"This equipment card represents a location and does not count as equipment while in play. Unique.\nAllies cannot block this vampire.",
         "Set":{
             "DS":"C2"
         },
@@ -36519,7 +36519,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during the polling step of a political action.\n[cel][pre] Choose a vampire who has cast votes {or ballots} in this referendum. The chosen vampire is locked and abstains (this cancels the chosen vampire's votes and ballots).\n[CEL][PRE] As above, and the chosen vampire burns 1 blood.",
+        "Card Text":"Only usable during the polling step of a political action.\n[cel][pre] Choose a vampire who has cast votes or ballots in this referendum. The chosen vampire is locked and abstains (this cancels the chosen vampire's votes and ballots).\n[CEL][PRE] As above, and the chosen vampire burns 1 blood.",
         "Set":{
             "KMW":"C",
             "LoB":"PI3",
@@ -36908,7 +36908,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. {Lock during your master phase to make a ready non-titled, non-Anarch vampire you control Anarch.}",
+        "Card Text":"Unique master.\nPut this card in play. Lock during your master phase to make a ready non-titled, non-Anarch vampire you control Anarch.",
         "Set":{
             "Anarchs":"R2"
         },
@@ -37234,7 +37234,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] Only usable when a younger vampire is acting. +1 intercept.\n[dai] +1 intercept. +2 intercept if the acting minion has a corruption counter.\n[DAI] {Only usable during a bleed action. +2 bleed (limited).} Minions with corruption counters get -1 intercept when attempting to block this action.",
+        "Card Text":"[aus] Only usable when a younger vampire is acting. +1 intercept.\n[dai] +1 intercept. +2 intercept if the acting minion has a corruption counter.\n[DAI] Only usable during a bleed action. +2 bleed (limited). Minions with corruption counters get -1 intercept when attempting to block this action.",
         "Set":{
             "BL":"C2",
             "KMW":"PB3"
@@ -37610,7 +37610,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf][pot] [COMBAT] Maneuver, only usable to get to close range, or press, only usable to continue combat.\n[OBF][POT] [ACTION MODIFIER] Only usable after a combat resulting from a block. Not usable if the blocking minion is ready. This vampire burns 1 blood to continue the action as if unblocked.",
+        "Card Text":"[obf][pot] [COMBAT] Maneuver, only usable to get to close range, or press, only usable to continue combat.\n[OBF][POT] [ACTIONMODIFIER] Only usable after a combat resulting from a block. Not usable if the blocking minion is ready. This vampire burns 1 blood to continue the action as if unblocked.",
         "Set":{
             "DM":"C"
         },
@@ -37630,7 +37630,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Changeling with 3 life. 1 strength, 1 bleed.\nWhen the Satyr enters play, you {can} put a combat card from your hand on him. Once each combat, the Satyr {can} use the ability of that card as if played from your hand. If the card requires a vampire (e.g., costs blood or requires a Discipline), he {can} use it as a vampire with the basic level of {1 of} the Discipline{(s)} (if any).",
+        "Card Text":"Changeling with 3 life. 1 strength, 1 bleed.\nWhen the Satyr enters play, you can put a combat card from your hand on him. Once each combat, the Satyr can use the ability of that card as if played from your hand. If the card requires a vampire (e.g., costs blood or requires a Discipline), he can use it as a vampire with the basic level of 1 of the Discipline(s) (if any).",
         "Set":{
             "Sabbat":"R",
             "SW":"R",
@@ -37723,7 +37723,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is chosen.\n[pro] This vampire gets an additional strike {(limited)} with +1 strength during this round of combat.\n[PRO] As above, with an optional press.",
+        "Card Text":"Only usable before range is chosen.\n[pro] This vampire gets an additional strike (limited) with +1 strength during this round of combat.\n[PRO] As above, with an optional press.",
         "Set":{
             "AH":"C2"
         },
@@ -37854,7 +37854,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[aus][obt] (D) Put this card on an ally or younger vampire. This minion gets -2 intercept and cannot take (D) actions or use ranged strikes. Any minion may burn this card as a +1 stealth action.\n[AUS][OBT] As above, and the action to burn this card costs an additional blood or conviction [1 CONVICTION].",
+        "Card Text":"+1 stealth action.\n[aus][obt] (D) Put this card on an ally or younger vampire. This minion gets -2 intercept and cannot take (D) actions or use ranged strikes. Any minion may burn this card as a +1 stealth action.\n[AUS][OBT] As above, and the action to burn this card costs an additional blood or conviction [1CONVICTION].",
         "Set":{
             "HttB":"R"
         },
@@ -37958,7 +37958,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[COMBAT] [2 CONVICTION] Only usable before strikes are chosen.\nBurn this card. The opposing monster takes an amount of damage equal to his or her strength, then combat ends. Not usable on an infernal minion, a vampire with capacity above 7, nor a vampire who has Memories of Mortality or Humanitas.",
+        "Card Text":"[COMBAT] [2CONVICTION] Only usable before strikes are chosen.\nBurn this card. The opposing monster takes an amount of damage equal to his or her strength, then combat ends. Not usable on an infernal minion, a vampire with capacity above 7, nor a vampire who has Memories of Mortality or Humanitas.",
         "Set":{
             "NoR":"C"
         },
@@ -38414,7 +38414,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[dom][obt] +1 stealth.\n[DOM][OBT] As above, and this vampire can strike: combat ends during the first round of the resulting combat {if} this action is blocked.",
+        "Card Text":"[dom][obt] +1 stealth.\n[DOM][OBT] As above, and this vampire can strike: combat ends during the first round of the resulting combat if this action is blocked.",
         "Set":{
             "BL":"R1",
             "HttB":"PKia",
@@ -38501,7 +38501,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Strike: dodge.\n[CEL] Additional strike {(limited)}.",
+        "Card Text":"[cel] Strike: dodge.\n[CEL] Additional strike (limited).",
         "Set":{
             "Sabbat":"C",
             "SW":"C",
@@ -38930,7 +38930,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable after this Blood Brother gains blood.\n[san] [COMBAT] Choose another ready Blood Brother of the same circle. The chosen Blood Brother gains the same amount of blood.\n[SAN] [ACTION MODIFIER] As above, but usable as an action modifier.",
+        "Card Text":"Only usable after this Blood Brother gains blood.\n[san] [COMBAT] Choose another ready Blood Brother of the same circle. The chosen Blood Brother gains the same amount of blood.\n[SAN] [ACTIONMODIFIER] As above, but usable as an action modifier.",
         "Set":{
             "HttB":"C/A2"
         },
@@ -39675,7 +39675,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth{} action.\n[nec] {Hunt}, or{} burn a wraith to {hunt} {at +3 hunt}{}{} (this is a (D) action if you do not control the wraith).\n[NEC] As above, {with +1 hunt}.",
+        "Card Text":"+1 stealth action.\n[nec] Hunt, or burn a wraith to hunt at +3 hunt (this is a (D) action if you do not control the wraith).\n[NEC] As above, with +1 hunt.",
         "Set":{
             "LotN":"R"
         },
@@ -39765,7 +39765,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[aus] Search your crypt for a younger vampire without Obfuscate [obf]{, reveal them}, and move them to your uncontrolled region (shuffle afterward).\n[AUS] As above, but you can search for a younger vampire with up to one level of Obfuscate.",
+        "Card Text":"+1 stealth action.\n[aus] Search your crypt for a younger vampire without Obfuscate [obf], reveal them, and move them to your uncontrolled region (shuffle afterward).\n[AUS] As above, but you can search for a younger vampire with up to one level of Obfuscate.",
         "Set":{
             "KoT":"R/B2"
         },
@@ -39785,7 +39785,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable when a vampire you control burns a vampire controlled by your prey.\n[nec] [ACTION MODIFIER] This vampire gains an amount of blood equal to half of the burned vampire's capacity (round down). Ignore excess blood.\n[NEC] [COMBAT] As above, but usable in combat.",
+        "Card Text":"Only usable when a vampire you control burns a vampire controlled by your prey.\n[nec] [ACTIONMODIFIER] This vampire gains an amount of blood equal to half of the burned vampire's capacity (round down). Ignore excess blood.\n[NEC] [COMBAT] As above, but usable in combat.",
         "Set":{
             "DS":"C2",
             "FN":"PG"
@@ -39935,7 +39935,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[nec] [ACTION MODIFIER] +1 stealth.\n[NEC] [REACTION] +1 intercept.",
+        "Card Text":"[nec] [ACTIONMODIFIER] +1 stealth.\n[NEC] [REACTION] +1 intercept.",
         "Set":{
             "DS":"C2",
             "FN":"PG3",
@@ -40117,7 +40117,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"A vampire can play only one Spiritual Guidance each combat.\nPlay a combat card from your ash heap as if from your hand. When that card would be burned,{ instead} remove it from the game{}.",
+        "Card Text":"A vampire can play only one Spiritual Guidance each combat.\nPlay a combat card from your ash heap as if from your hand. When that card would be burned, instead remove it from the game.",
         "Set":{
             "TU":"C",
             "Anthology":"4"
@@ -40894,7 +40894,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"Y",
-        "Card Text":"[str] +1 intercept, even if intercept is not yet needed. If this vampire successfully blocks this action, he or she unlocks at the end of the action. [str] is not a Discipline.\n[STR] Only usable when a bleed against you {is about to} be successful. The bleed burns no pool {(but is still successful),} this vampire {is locked} and enters combat with the acting minion.",
+        "Card Text":"[str] +1 intercept, even if intercept is not yet needed. If this vampire successfully blocks this action, he or she unlocks at the end of the action. [str] is not a Discipline.\n[STR] Only usable when a bleed against you is about to be successful. The bleed burns no pool (but is still successful), this vampire is locked and enters combat with the acting minion.",
         "Set":{
             "HttB":"R"
         },
@@ -41364,7 +41364,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[COMBAT][REACTION] [1 CONVICTION] Put three surge counters on this imbued. This imbued may burn any number of surge counters to prevent that amount of non-aggravated damage. Burn all surge counters on this imbued at the end of the action.",
+        "Card Text":"[COMBAT][REACTION] [1CONVICTION] Put three surge counters on this imbued. This imbued may burn any number of surge counters to prevent that amount of non-aggravated damage. Burn all surge counters on this imbued at the end of the action.",
         "Set":{
             "NoR":"R"
         },
@@ -41471,7 +41471,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf] [ACTION MODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
+        "Card Text":"[obf] [ACTIONMODIFIER] +1 stealth.\n[OBF] [COMBAT] Maneuver.",
         "Set":{
             "Sabbat":"C",
             "SW":"C",
@@ -41518,7 +41518,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a baron.\nChoose a ready {A}narch vampire. If this referendum is successful, put this card on the chosen anarch. During your unlock phase, if the anarch with this card is ready, you may look at the top card of each Methuselah's library (including your own).",
+        "Card Text":"Requires a baron.\nChoose a ready Anarch vampire. If this referendum is successful, put this card on the chosen anarch. During your unlock phase, if the anarch with this card is ready, you may look at the top card of each Methuselah's library (including your own).",
         "Set":{
             "Anarchs":"R"
         },
@@ -41538,7 +41538,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] [COMBAT] Press.\n[spi] [COMBAT] Maneuver or press.\n[SPI] [ACTION MODIFIER] +1 stealth.",
+        "Card Text":"[cel] [COMBAT] Press.\n[spi] [COMBAT] Maneuver or press.\n[SPI] [ACTIONMODIFIER] +1 stealth.",
         "Set":{
             "BL":"C2",
             "LoB":"C"
@@ -41600,7 +41600,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique melee weapon.\nStrength+1 damage each strike, with an optional additional strike {(limited)} each round. Only usable by Brujah antitribu.",
+        "Card Text":"Unique melee weapon.\nStrength+1 damage each strike, with an optional additional strike (limited) each round. Only usable by Brujah antitribu.",
         "Set":{
             "Sabbat":"R",
             "SW":"R/PB",
@@ -41986,7 +41986,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mage with 2 life. 0 strength, 0 bleed.\nTara {can} strike{:} 1R damage. Tara {can} burn an equipment{} on a Ravnos as a (D) action{; that} Ravnos gains blood equal to the cost of the equipment{}{, 1 blood instead i}f the equipment{} has no cost{}.",
+        "Card Text":"Unique mage with 2 life. 0 strength, 0 bleed.\nTara can strike: 1R damage. Tara can burn an equipment on a Ravnos as a (D) action; that Ravnos gains blood equal to the cost of the equipment, 1 blood instead if the equipment has no cost.",
         "Set":{
             "DS":"U"
         },
@@ -42066,7 +42066,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Aim. Only usable as this minion chooses a strike. A minion can play only one aim each strike.\nYou can target a retainer on the opposing minion with this strike (instead of the opposing minion). Or you can target the opposing minion directly as usual, but if any damage from this strike is successfully inflicted, this strike inflicts +1 damage. The opposing minion can discard two combat cards{} to cancel this card as it is played.",
+        "Card Text":"Aim. Only usable as this minion chooses a strike. A minion can play only one aim each strike.\nYou can target a retainer on the opposing minion with this strike (instead of the opposing minion). Or you can target the opposing minion directly as usual, but if any damage from this strike is successfully inflicted, this strike inflicts +1 damage. The opposing minion can discard two combat cards to cancel this card as it is played.",
         "Set":{
             "KoT":"R/B1"
         },
@@ -42286,7 +42286,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] Press, only usable to continue combat. If another round of combat occurs, this vampire gets 1 optional maneuver that round.\n[AUS] Only usable {if} both combatants are still ready and combat would end. {Instead,} start a new round{}.",
+        "Card Text":"[aus] Press, only usable to continue combat. If another round of combat occurs, this vampire gets 1 optional maneuver that round.\n[AUS] Only usable if both combatants are still ready and combat would end. Instead, start a new round.",
         "Set":{
             "SW":"U",
             "LoB":"PO2",
@@ -42431,7 +42431,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose a ready unlocked infernal Baali you control. Add 3 {blood} to a younger infernal vampire in your uncontrolled region.",
+        "Card Text":"Choose a ready unlocked infernal Baali you control. Add 3 blood to a younger infernal vampire in your uncontrolled region.",
         "Set":{
             "HttB":"C/A2"
         },
@@ -42909,7 +42909,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"{Only usable during a bleed action.}\n[dom] +1 bleed {(limited)}.\n[DOM] +2 bleed {(limited)}.",
+        "Card Text":"Only usable during a bleed action.\n[dom] +1 bleed (limited).\n[DOM] +2 bleed (limited).",
         "Set":{
             "Jyhad":"C",
             "VTES":"C",
@@ -43297,7 +43297,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Additional strike {(limited)}.\n[CEL] Strike: combat ends. If this vampire was blocked while performing an action, the action continues as if unblocked.",
+        "Card Text":"[cel] Additional strike (limited).\n[CEL] Strike: combat ends. If this vampire was blocked while performing an action, the action continues as if unblocked.",
         "Set":{
             "KoT":"C/B2"
         },
@@ -43956,7 +43956,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"{Only usable during a bleed action.}\n[nec] Remove 13 cards in the target Methuselah's ash heap from the game to get +1 bleed {(limited)}.\n[aus][nec] As [nec] above, but remove only 7 cards.\n[AUS][NEC] As [aus][nec] above, but for +2 bleed {(limited)}.",
+        "Card Text":"Only usable during a bleed action.\n[nec] Remove 13 cards in the target Methuselah's ash heap from the game to get +1 bleed (limited).\n[aus][nec] As [nec] above, but remove only 7 cards.\n[AUS][NEC] As [aus][nec] above, but for +2 bleed (limited).",
         "Set":{
             "LotN":"C"
         },
@@ -44262,7 +44262,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf][pre] {Only usable during a bleed action. +1 bleed (limited).}\n[OBF][PRE] Only usable when a minion attempts to block. That block fails (do not lock that minion). That minion cannot attempt to block this action again. That minion's controller may burn a pool to cancel this card as it is played.",
+        "Card Text":"[obf][pre] Only usable during a bleed action. +1 bleed (limited).\n[OBF][PRE] Only usable when a minion attempts to block. That block fails (do not lock that minion). That minion cannot attempt to block this action again. That minion's controller may burn a pool to cancel this card as it is played.",
         "Set":{
             "KMW":"C",
             "LotN":"PS4"
@@ -44323,7 +44323,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[ser] {Only usable during a bleed action. +2 bleed (limited).}\n[SER] Only usable at the end of a successful action (after resolving the action). This vampire unlocks.",
+        "Card Text":"[ser] Only usable during a bleed action. +2 bleed (limited).\n[SER] Only usable at the end of a successful action (after resolving the action). This vampire unlocks.",
         "Set":{
             "KMW":"C",
             "LotN":"PS2"
@@ -44406,7 +44406,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 3 life. 2 strength, 1 bleed.\n{Once each combat, Tutu {can} {strike:} dodge{}.} {D}uring {}your minion phase{}, Tutu can unlock. {}Tutu can steal an equipment{} from a vampire in torpor as a (D) action. If Tutu is burned, shuffle him in his owner's library.",
+        "Card Text":"Unique mummy with 3 life. 2 strength, 1 bleed.\nOnce each combat, Tutu can strike: dodge. During your minion phase, Tutu can unlock. Tutu can steal an equipment from a vampire in torpor as a (D) action. If Tutu is burned, shuffle him in his owner's library.",
         "Set":{
             "FN":"R2",
             "LotN":"PS"
@@ -44427,7 +44427,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play with 4 counters. When you put a non-titled, non-{A}narch vampire in play from your uncontrolled region, you may burn a counter from this card to make that vampire {Anarch}. You may burn a counter from this card to add a blood to an anarch as a master phase action. Burn this card when it has no counters.",
+        "Card Text":"Master.\nPut this card in play with 4 counters. When you put a non-titled, non-Anarch vampire in play from your uncontrolled region, you may burn a counter from this card to make that vampire Anarch. You may burn a counter from this card to add a blood to an anarch as a master phase action. Burn this card when it has no counters.",
         "Set":{
             "TR":"R"
         },
@@ -44655,7 +44655,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] Only usable when this vampire should go into torpor. {Instead,} this vampire gets an optional press{, } will not go to torpor until combat ends {but} is still considered wounded and can be burned as normal{}. If three rounds of combat pass with no cards played, combat ends. This vampire is sent into torpor after combat.\n[FOR] Prevent 2 damage.",
+        "Card Text":"[for] Only usable when this vampire should go into torpor. Instead, this vampire gets an optional press,  will not go to torpor until combat ends but is still considered wounded and can be burned as normal. If three rounds of combat pass with no cards played, combat ends. This vampire is sent into torpor after combat.\n[FOR] Prevent 2 damage.",
         "Set":{
             "Jyhad":"U2",
             "VTES":"U",
@@ -45006,7 +45006,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"Y",
-        "Card Text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card in play. This card can attempt to block a (D) action against you {(or a card you control)} and is considered a 9-capacity infernal vampire with +2 intercept during that attempt; if successful, the acting minion takes 1 unpreventable {environmental} aggravated damage{} and this card is burned.\n[DAI] As above, and unlock this vampire.",
+        "Card Text":"+1 stealth action. Requires an infernal vampire. Unique.\n[dai] Put this card in play. This card can attempt to block a (D) action against you (or a card you control) and is considered a 9-capacity infernal vampire with +2 intercept during that attempt; if successful, the acting minion takes 1 unpreventable environmental aggravated damage and this card is burned.\n[DAI] As above, and unlock this vampire.",
         "Set":{
             "HttB":"R",
             "Anthology":"1"
@@ -45601,7 +45601,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique mage with 2 life. 1 strength, 2 bleed. Requires an infernal vampire.\nVeneficti has +1 stealth. He can steal a demon ally or burn a demon retainer as a (D) action. He cannot be the target of a (D) action by {an ally or a vampire with capacity 6 or less}.",
+        "Card Text":"Unique mage with 2 life. 1 strength, 2 bleed. Requires an infernal vampire.\nVeneficti has +1 stealth. He can steal a demon ally or burn a demon retainer as a (D) action. He cannot be the target of a (D) action by an ally or a vampire with capacity 6 or less.",
         "Set":{
             "HttB":"R/A1"
         },
@@ -45858,7 +45858,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Equipment.\nThe vampire with this Vial may burn it before range is chosen in a round of combat to get +1 strength and an additional strike {(limited)} each round for the remainder of combat. If he or she does so, he or she cannot use other equipment cards for the remainder of combat.",
+        "Card Text":"Equipment.\nThe vampire with this Vial may burn it before range is chosen in a round of combat to get +1 strength and an additional strike (limited) each round for the remainder of combat. If he or she does so, he or she cannot use other equipment cards for the remainder of combat.",
         "Set":{
             "DS":"C2",
             "FN":"PG",
@@ -45964,7 +45964,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[ACTION MODIFIER] Only usable at the end of a successful action (after resolving the action). Unlock this imbued.\n[REACTION] [1 CONVICTION] Only usable by a locked imbued. Unlock this imbued.",
+        "Card Text":"[ACTIONMODIFIER] Only usable at the end of a successful action (after resolving the action). Unlock this imbued.\n[REACTION] [1CONVICTION] Only usable by a locked imbued. Unlock this imbued.",
         "Set":{
             "NoR":"C"
         },
@@ -46050,7 +46050,7 @@
         "Blood Cost":"3",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pre] +1 stealth.\n[mel] Only usable during a bleed action. +1 stealth and +2 bleed {(limited)}, or +2 bleed {(limited)}.\n[MEL] Only usable as the action is announced. This action is unblockable.",
+        "Card Text":"[pre] +1 stealth.\n[mel] Only usable during a bleed action. +1 stealth and +2 bleed (limited), or +2 bleed (limited).\n[MEL] Only usable as the action is announced. This action is unblockable.",
         "Set":{
             "HttB":"C/B2"
         },
@@ -46294,7 +46294,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth{} action. If this hunt is successful, {unlock this} vampire{}.\n[obf] Remove a minion or retainer in any Methuselah's ash heap from the game to {hunt}.\n[spi] As [obf] above, but {at +1 hunt}.\n[SPI] As [spi] above, and you gain 1 pool.",
+        "Card Text":"+1 stealth action. If this hunt is successful, unlock this vampire.\n[obf] Remove a minion or retainer in any Methuselah's ash heap from the game to hunt.\n[spi] As [obf] above, but at +1 hunt.\n[SPI] As [spi] above, and you gain 1 pool.",
         "Set":{
             "LoB":"R"
         },
@@ -46314,7 +46314,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Transient.\nPut this card in play with 10 counters. Whenever a non-{A}narch vampire takes an action, burn a counter from this card. Burn this card when it has no counters. During your unlock phase, each anarch burns 1 blood or becomes Camarilla, and each ally burns 1 life.",
+        "Card Text":"Transient.\nPut this card in play with 10 counters. Whenever a non-Anarch vampire takes an action, burn a counter from this card. Burn this card when it has no counters. During your unlock phase, each anarch burns 1 blood or becomes Camarilla, and each ally burns 1 life.",
         "Set":{
             "KoT":"R"
         },
@@ -46366,7 +46366,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose X ready Blood Brothers you control who belong to the same circle as this acting vampire (including this acting vampire). Each chosen vampire must burn a blood, or this card has no effect.\n[san] {Only usable as a bleed action is announced. Choose X ready Blood Brothers you control of the same circle as this Blood Brother, including this Blood Brother. Each chosen Blood Brother burns 1 blood to give this Blood Brother +X bleed (limited).}\n[SAN] As [san] above, but usable any time before the action is resolved.",
+        "Card Text":"Choose X ready Blood Brothers you control who belong to the same circle as this acting vampire (including this acting vampire). Each chosen vampire must burn a blood, or this card has no effect.\n[san] Only usable as a bleed action is announced. Choose X ready Blood Brothers you control of the same circle as this Blood Brother, including this Blood Brother. Each chosen Blood Brother burns 1 blood to give this Blood Brother +X bleed (limited).\n[SAN] As [san] above, but usable any time before the action is resolved.",
         "Set":{
             "BL":"C1",
             "LoB":"C"
@@ -46475,7 +46475,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[ACTION MODIFIER][REACTION] Only usable during a referendum. Usable by a locked vampire. This Akunanse gets an additional vote in this referendum.\n[ACTION MODIFIER] Only usable when this Akunanse successfully hunts. He or she gains 1 additional blood.",
+        "Card Text":"[ACTIONMODIFIER][REACTION] Only usable during a referendum. Usable by a locked vampire. This Akunanse gets an additional vote in this referendum.\n[ACTIONMODIFIER] Only usable when this Akunanse successfully hunts. He or she gains 1 additional blood.",
         "Set":{
             "LoB":"C"
         },
@@ -47012,7 +47012,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus][ser] {Only usable during a bleed action. +1 bleed limited).}\n[AUS][SER] Only usable as a (D) action is announced. If this action is successful, put a corruption counter on a minion controlled by the target Methuselah (after resolving the action).",
+        "Card Text":"[aus][ser] Only usable during a bleed action. +1 bleed limited).\n[AUS][SER] Only usable as a (D) action is announced. If this action is successful, put a corruption counter on a minion controlled by the target Methuselah (after resolving the action).",
         "Set":{
             "KMW":"C"
         },
@@ -47032,7 +47032,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined during the first round of combat.\nPut this card with 5 counters on it on this minion; it becomes a melee weapon {equipment} that can strike: strength+1 damage. For each damage inflicted by this strike (even if prevented), burn 1 counter from this card. Burn this card if it has no counters. A minion can have only one Weighted Walking Stick.",
+        "Card Text":"Only usable before range is determined during the first round of combat.\nPut this card with 5 counters on it on this minion; it becomes a melee weapon equipment that can strike: strength+1 damage. For each damage inflicted by this strike (even if prevented), burn 1 counter from this card. Burn this card if it has no counters. A minion can have only one Weighted Walking Stick.",
         "Set":{
             "CE":"U",
             "Third":"U",
@@ -47117,7 +47117,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mortal with 3 life. 0 strength, 0 bleed.\nWendell {can} strike{:} 2R damage. {He inflicts +2 damage with melee weapons.} He gets {1} optional maneuver each combat{}. He {can} enter combat with {any} minion{} as a (D) action. {If Wendell has 2 or {less} life} {d}uring your unlock phase,{} {he gains} 1 life. During your unlock phase, {Wendell inflicts 2 unpreventable damage on} a ready vampire you control{}.",
+        "Card Text":"Unique mortal with 3 life. 0 strength, 0 bleed.\nWendell can strike: 2R damage. He inflicts +2 damage with melee weapons. He gets 1 optional maneuver each combat. He can enter combat with any minion as a (D) action. If Wendell has 2 or less life during your unlock phase, he gains 1 life. During your unlock phase, Wendell inflicts 2 unpreventable damage on a ready vampire you control.",
         "Set":{
             "FN":"R2",
             "KoT":"R"
@@ -47549,7 +47549,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\n[dom] (D) Burn half the blood counters on an uncontrolled minion in your prey's uncontrolled region (round down).\n[obf] +1 stealth action. (D) Burn a location.\n[vic] (D) Burn 4 blood from a ready, titled, non-{A}narch vampire.",
+        "Card Text":"Requires an anarch.\n[dom] (D) Burn half the blood counters on an uncontrolled minion in your prey's uncontrolled region (round down).\n[obf] +1 stealth action. (D) Burn a location.\n[vic] (D) Burn 4 blood from a ready, titled, non-Anarch vampire.",
         "Set":{
             "TR":"R"
         },

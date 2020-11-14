@@ -1,4 +1,5 @@
 import csv
+import re
 import json
 import unicodedata
 
@@ -11,10 +12,11 @@ def letters_to_ascii(text):
 integer_fields = ['Id']
 useless_fields = ['Aka', 'Flavor Text', 'Artist', 'Draft']
 
-with open("vteslib.csv",
-          "r", encoding='utf8') as f_csv, open("vteslib.json",
-                                               "w",
-                                               encoding='utf8') as f_json, open("rulings.json", "r", encoding='utf8') as f_rulings:
+with open("vteslib.csv", "r", encoding='utf8') as f_csv, open(
+        "vteslib.json",
+        "w", encoding='utf8') as f_json, open("rulings.json",
+                                              "r",
+                                              encoding='utf8') as f_rulings:
 
     rulings = json.load(f_rulings)
     reader = csv.reader(f_csv)
@@ -47,6 +49,11 @@ with open("vteslib.csv",
         # Remove useless fields
         for k in useless_fields:
             del card[k]
+
+        # Remove {} and spaces in []
+        card['Card Text'] = re.sub('[{}]', '', card['Card Text'])
+        card['Card Text'] = re.sub(r'\[(\w+)\s*(\w*)\]', r'[\1\2]',
+                                   card['Card Text'])
 
         # Add rules to card
         card['Rulings'] = []

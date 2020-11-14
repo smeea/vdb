@@ -88,8 +88,8 @@ function ResultCryptPopover(props) {
     VAL: 'valerensup',
     VIC: 'vicissitudesup',
     VIS: 'visceratikasup',
-    '1 CONVICTION': 'con1',
-    '2 CONVICTION': 'con2',
+    '1CONVICTION': 'con1',
+    '2CONVICTION': 'con2',
     FLIGHT: 'flight',
     MERGED: 'merged',
   }
