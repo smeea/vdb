@@ -1,5 +1,6 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
+import reactStringReplace from 'react-string-replace';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
@@ -32,6 +33,91 @@ function ResultLibraryPopover(props) {
     return <ListGroup.Item key={index}>{k}</ListGroup.Item>;
   });
 
+  const icons = {
+    aus: 'auspex',
+    abo: 'abombwe',
+    ani: 'animalism',
+    cel: 'celerity',
+    chi: 'chimerstry',
+    dai: 'daimoinon',
+    dem: 'dementation',
+    dom: 'dominate',
+    for: 'fortitude',
+    mel: 'melpominee',
+    myt: 'mytherceria',
+    nec: 'necromancy',
+    obe: 'obeah',
+    obf: 'obfuscate',
+    obt: 'obtenebration',
+    pot: 'potence',
+    pre: 'presence',
+    pro: 'protean',
+    ser: 'serpentis',
+    san: 'sanguinus',
+    spi: 'spiritus',
+    tem: 'temporis',
+    thn: 'thanatosis',
+    tha: 'thaumaturgy',
+    qui: 'quietus',
+    val: 'valeren',
+    vic: 'vicissitude',
+    vis: 'visceratika',
+    AUS: 'auspexsup',
+    ABO: 'abombwesup',
+    ANI: 'animalismsup',
+    CEL: 'celeritysup',
+    CHI: 'chimerstrysup',
+    DAI: 'daimoinonsup',
+    DEM: 'dementationsup',
+    DOM: 'dominatesup',
+    FOR: 'fortitudesup',
+    MEL: 'melpomineesup',
+    MYT: 'mytherceriasup',
+    NEC: 'necromancysup',
+    OBE: 'obeahsup',
+    OBF: 'obfuscatesup',
+    OBT: 'obtenebrationsup',
+    POT: 'potencesup',
+    PRE: 'presencesup',
+    PRO: 'proteansup',
+    SER: 'serpentissup',
+    SAN: 'sanguinussup',
+    SPI: 'spiritussup',
+    TEM: 'temporissup',
+    THN: 'thanatosissup',
+    THA: 'thaumaturgysup',
+    QUI: 'quietussup',
+    VAL: 'valerensup',
+    VIC: 'vicissitudesup',
+    VIS: 'visceratikasup',
+    'ACTION MODIFIER': 'actionmodifier',
+    'POLITICAL ACTION': 'politicalaction',
+    ACTION: 'action',
+    ALLY: 'ally',
+    COMBAT: 'combat',
+    CONVICTION: 'conviction',
+    EQUIPMENT: 'equipment',
+    EVENT: 'event',
+    MASTER: 'master',
+    POWER: 'power',
+    REACTION: 'reaction',
+    RETAINER: 'retainer',
+    '1 CONVICTION': 'con1',
+    '2 CONVICTION': 'con2',
+    FLIGHT: 'flight',
+    MERGED: 'merged',
+  }
+
+  const text = props.card['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n')
+  const newText = [];
+  text.map((i, index) => {
+    newText.push(
+      reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
+        <img className="discipline-base-image-results" src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`} title={match} />
+      ))
+    )
+  })
+
   return (
     <>
       {!props.showImage ? (
@@ -61,7 +147,14 @@ function ResultLibraryPopover(props) {
             )}
           </div>
           <hr />
-          {props.card['Card Text']}
+          {newText.map((i, index) => {
+            return <React.Fragment key={index}>
+                     {i.map((y, index) => {
+                       return <React.Fragment key={index}>{y}</React.Fragment>;
+                     })}
+                     <br />
+                   </React.Fragment>
+          })}
           <hr />
           <div className="d-flex align-items-center justify-content-between">
             <ResultLibraryCost

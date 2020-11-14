@@ -4,6 +4,7 @@
 * Error messages
 * Reply from backend on card change/add
 * Delete account delete its decks
+* Test login/register
 
 # FEATURES
 * Beautify card text popover
