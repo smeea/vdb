@@ -108,7 +108,9 @@ function AccountRegister(props) {
           </InputGroup.Append>
         </InputGroup>
         {emptyUsername && <span className="login-error">Enter username</span>}
-        {usernameError && <span className="login-error">This username is taken</span>}
+        {usernameError && (
+          <span className="login-error">This username is taken</span>
+        )}
         {emptyPassword && <span className="login-error">Enter password</span>}
       </Form>
     </>

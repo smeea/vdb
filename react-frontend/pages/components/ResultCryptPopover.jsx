@@ -92,18 +92,21 @@ function ResultCryptPopover(props) {
     '2CONVICTION': 'con2',
     FLIGHT: 'flight',
     MERGED: 'merged',
-  }
+  };
 
-  const text = props.card['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n')
+  const text = props.card['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
   const newText = [];
   text.map((i, index) => {
     newText.push(
       reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
-        <img className="discipline-base-image-results" src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`} title={match} />
+        <img
+          className="discipline-base-image-results"
+          src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
+          title={match}
+        />
       ))
-    )
-  })
-
+    );
+  });
 
   return (
     <>
@@ -124,12 +127,14 @@ function ResultCryptPopover(props) {
           </div>
           <hr />
           {newText.map((i, index) => {
-            return <React.Fragment key={index}>
-                     {i.map((y, index) => {
-                       return <React.Fragment key={index}>{y}</React.Fragment>;
-                     })}
-                     <br />
-                   </React.Fragment>
+            return (
+              <React.Fragment key={index}>
+                {i.map((y, index) => {
+                  return <React.Fragment key={index}>{y}</React.Fragment>;
+                })}
+                <br />
+              </React.Fragment>
+            );
           })}
           <hr />
           <div className="d-flex align-items-center justify-content-between">

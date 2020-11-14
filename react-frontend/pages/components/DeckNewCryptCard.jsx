@@ -21,7 +21,7 @@ function DeckNewCryptCard(props) {
       if (!inDeck) {
         props.deckCardAdd(selectedValue, inDeck);
       } else {
-        console.log('already in deck')
+        console.log('already in deck');
       }
       setSelectedValue('');
       props.setShowAdd(false);

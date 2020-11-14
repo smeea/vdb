@@ -1,10 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-} from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ModalTooltip from './ModalTooltip.jsx';
 import DoorOpenFill from '../../assets/images/icons/door-open-fill.svg';
@@ -92,7 +87,8 @@ function AccountLogin(props) {
     <>
       We do not have automatic password restoration yet.
       <br />
-      Please <a href="mailto:smeea@riseup.net">send me an email</a> with your account username and I will generate temporary password for you.
+      Please <a href="mailto:smeea@riseup.net">send me an email</a> with your
+      account username and I will generate temporary password for you.
     </>
   );
 
@@ -139,15 +135,16 @@ function AccountLogin(props) {
       {!props.isMobile ? (
         <OverlayTooltip text={tooltipText}>
           <span className="small">
-            <a href="#"><i>Forgot password?</i></a>
+            <a href="#">
+              <i>Forgot password?</i>
+            </a>
           </span>
         </OverlayTooltip>
       ) : (
-        <span
-          onClick={() => setShowModal(true)}
-          className="small"
-        >
-          <a href="#"><i>Forgot password?</i></a>
+        <span onClick={() => setShowModal(true)} className="small">
+          <a href="#">
+            <i>Forgot password?</i>
+          </a>
         </span>
       )}
       {showModal && (

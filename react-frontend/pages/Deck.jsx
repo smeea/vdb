@@ -9,6 +9,7 @@ import DeckInfo from './components/DeckInfo.jsx';
 import DeckButtons from './components/DeckButtons.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
 import DeckLibrary from './components/DeckLibrary.jsx';
+import DeckImport from './components/DeckImport.jsx';
 
 function Deck(props) {
   const query = new URLSearchParams(useLocation().search);
@@ -78,27 +79,37 @@ function Deck(props) {
                 />
               </Col>
             )}
-            {(props.decks[props.activeDeck] || sharedDeck) && props.isMobile && (
-              <Col
-                xs="auto"
-                className="d-flex justify-content-between align-items-center px-0 px-lg-3"
-              >
-                <Button
-                  className="full-height"
-                  variant="outline-secondary"
-                  onClick={() => setShowInfo(!showInfo)}
+            {props.isMobile &&
+              (props.activeDeck || sharedDeck ? (
+                <Col
+                  xs="auto"
+                  className="d-flex justify-content-between align-items-center px-0 px-lg-3"
                 >
-                  <ChevronExpand />
-                </Button>
-                <Button
-                  className="full-height"
-                  variant="outline-secondary"
-                  onClick={() => setShowButtons(!showButtons)}
-                >
-                  <List />
-                </Button>
-              </Col>
-            )}
+                  <Button
+                    className="full-height"
+                    variant="outline-secondary"
+                    onClick={() => setShowInfo(!showInfo)}
+                  >
+                    <ChevronExpand />
+                  </Button>
+                  <Button
+                    className="full-height"
+                    variant="outline-secondary"
+                    onClick={() => setShowButtons(!showButtons)}
+                  >
+                    <List />
+                  </Button>
+                </Col>
+              ) : (
+                <Col className="px-0 px-lg-3">
+                  <DeckImport
+                    setActiveDeck={props.setActiveDeck}
+                    getDecks={props.getDecks}
+                    setShowInfo={props.setShowInfo}
+                    setShowButtons={props.setShowButtons}
+                  />
+                </Col>
+              ))}
           </Row>
         </Col>
         <Col lg={7} className="px-0 px-lg-3">

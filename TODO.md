@@ -3,8 +3,6 @@
 * Deck by id (shared)
 * Error messages
 * Reply from backend on card change/add
-* Delete account delete its decks
-* Test login/register
 
 # FEATURES
 * Crypt total info
