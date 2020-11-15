@@ -107,11 +107,11 @@ function AccountRegister(props) {
             </Button>
           </InputGroup.Append>
         </InputGroup>
-        {emptyUsername && <span className="login-error">Enter username</span>}
+        {emptyUsername && <span className="form-error">Enter username</span>}
         {usernameError && (
-          <span className="login-error">This username is taken</span>
+          <span className="form-error">This username is taken</span>
         )}
-        {emptyPassword && <span className="login-error">Enter password</span>}
+        {emptyPassword && <span className="form-error">Enter password</span>}
       </Form>
     </>
   );

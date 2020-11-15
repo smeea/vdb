@@ -128,9 +128,9 @@ function AccountLogin(props) {
             </Button>
           </InputGroup.Append>
         </InputGroup>
-        {emptyUsername && <span className="login-error">Enter username</span>}
-        {passwordError && <span className="login-error">Wrong password</span>}
-        {emptyPassword && <span className="login-error">Enter password</span>}
+        {emptyUsername && <span className="form-error">Enter username</span>}
+        {passwordError && <span className="form-error">Wrong password</span>}
+        {emptyPassword && <span className="form-error">Enter password</span>}
       </Form>
       {!props.isMobile ? (
         <OverlayTooltip text={tooltipText}>
