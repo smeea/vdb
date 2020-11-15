@@ -3,7 +3,7 @@ import { DropdownButton, Dropdown } from 'react-bootstrap';
 import FilterLeft from '../../assets/images/icons/filter-left.svg';
 
 function ResultCryptSortForm(props) {
-  const sortMethods = ['Default', 'Name', 'Capacity', 'Clan', 'Group'];
+  const sortMethods = ['Name', 'Capacity', 'Clan', 'Group'];
 
   const SortButtonOptions = sortMethods.map((i, index) => {
     return (

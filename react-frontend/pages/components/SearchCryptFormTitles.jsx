@@ -59,7 +59,7 @@ function SearchCryptFormTitles(props) {
 
   return (
     <>
-      <Row className="mx-0 py-1">
+      <Row className="mx-0 py-1 pl-1">
         <Col className="d-flex px-0">
           <label className="h6 mb-0">Title:</label>
         </Col>

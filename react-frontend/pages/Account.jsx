@@ -17,7 +17,7 @@ function Account(props) {
           {props.username ? (
             <>
               <div className="d-flex align-items-center justify-content-between">
-                <h6 className="d-flex align-items-center">
+                <h6 className="d-flex align-items-center px-1">
                   <PersonFill />
                   <span className="ml-2">Logged as: {props.username}</span>
                 </h6>
@@ -25,24 +25,24 @@ function Account(props) {
                   <AccountLogout setUsername={props.setUsername} />
                 </div>
               </div>
-              <div className="pb-2 pt-2">
+              <div className="py-2">
                 <AccountChangeName
                   setPublicName={props.setPublicName}
                   publicName={props.publicName}
                   isMobile={props.isMobile}
                 />
               </div>
-              <div className="pb-2 pt-2">
+              <div className="py-2">
                 <AccountChangePassword />
               </div>
-              <div className="pb-2 pt-2">
+              <div className="py-2">
                 <AccountChangeEmail
                   setEmail={props.setEmail}
                   email={props.email}
                   isMobile={props.isMobile}
                 />
               </div>
-              <div className="pb-2 pt-2">
+              <div className="py-2">
                 <AccountDelete
                   username={props.username}
                   setUsername={props.setUsername}

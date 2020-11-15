@@ -22,7 +22,7 @@ function SearchCryptFormGroup(props) {
   });
 
   return (
-    <Row className="pt-2 mx-0 align-items-center">
+    <Row className="pt-2 pl-1 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
         <label className="h6 mb-0">Group:</label>
       </Col>

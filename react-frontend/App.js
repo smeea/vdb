@@ -1,5 +1,10 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 import Navigation from './pages/Navigation.jsx';
 import cryptDefaults from './pages/components/cryptDefaults.js';
 import libraryDefaults from './pages/components/libraryDefaults.js';
@@ -82,13 +87,13 @@ function App(props) {
             ...prevState[activeDeck][part],
             [card['Id']]: {
               c: card,
-              q: 1
-            }
-          }
-        }
+              q: 1,
+            },
+          },
+        },
       }));
     } else {
-      console.log('already in deck')
+      console.log('already in deck');
     }
   };
 
@@ -106,7 +111,7 @@ function App(props) {
 
     fetch(url, options);
     const part = cardid > 200000 ? 'crypt' : 'library';
-    if (count >= 0 ) {
+    if (count >= 0) {
       setDecks((prevState) => ({
         ...prevState,
         [deckid]: {
@@ -115,15 +120,15 @@ function App(props) {
             ...prevState[deckid][part],
             [cardid]: {
               ...prevState[deckid][part][cardid],
-              q: count
-            }
-          }
-        }
+              q: count,
+            },
+          },
+        },
       }));
     } else {
       setDecks((prevState) => {
         const oldState = { ...prevState };
-        delete oldState[deckid][part][cardid]
+        delete oldState[deckid][part][cardid];
         return oldState;
       });
     }
@@ -204,7 +209,7 @@ function App(props) {
 
         <Switch>
           <Suspense fallback={<></>}>
-            <Route path="/" exact component={() => <Redirect to="/about"/>} />
+            <Route path="/" exact component={() => <Redirect to="/about" />} />
             <Route path="/about" exact component={() => <About />} />
             <Route path="/account">
               <Account

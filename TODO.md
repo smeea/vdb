@@ -2,13 +2,13 @@
 * Update clans icons in svg (white background)
 * Deck by id (shared)
 * Error messages
+* Deck delete to update deck list
 * Reply from backend on card change/add
 
 # FEATURES
-* Crypt total info
 
 # MAYBE LATER FEATURES
-* Add demo account
+* Add demo account with V5 precons
 * Night theme
 * Browse precon decks
 * Export all decks in account

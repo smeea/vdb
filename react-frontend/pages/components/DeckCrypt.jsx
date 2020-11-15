@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
+import ChevronExpand from '../../assets/images/icons/chevron-expand.svg';
+import DeckCryptTotalByCapacity from './DeckCryptTotalByCapacity.jsx';
 import ResultCryptTable from './ResultCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
 
 function DeckCrypt(props) {
   const [showAdd, setShowAdd] = useState(false);
+  const [showTotal, setShowTotal] = useState(false);
 
   const className = 'deck-crypt-table';
 
@@ -108,15 +111,28 @@ function DeckCrypt(props) {
         <b>
           Crypt [{cryptTotal}] - {cryptGroups}
         </b>
-        {props.isAuthor && (
+        <div>
           <Button
             variant="outline-secondary"
-            onClick={() => setShowAdd(!showAdd)}
+            onClick={() => setShowTotal(!showTotal)}
           >
-            +
+            <ChevronExpand />
           </Button>
-        )}
+          {props.isAuthor && (
+            <Button
+              variant="outline-secondary"
+              onClick={() => setShowAdd(!showAdd)}
+            >
+              +
+            </Button>
+          )}
+        </div>
       </div>
+      {showTotal && (
+        <div className="info-message pl-2">
+          <DeckCryptTotalByCapacity cards={props.cards} />
+        </div>
+      )}
       {showAdd &&
         (!props.isMobile ? (
           <DeckNewCryptCard

@@ -87,7 +87,7 @@ function AccountChangeName(props) {
 
   return (
     <>
-      <h6 className="d-flex align-items-center">
+      <h6 className="d-flex align-items-center px-1">
         <PenFill />
         <span className="ml-2">Change public name</span>
         {!props.isMobile ? (

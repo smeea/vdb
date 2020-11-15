@@ -90,7 +90,7 @@ function AccountChangePassword(props) {
 
   return (
     <>
-      <h6 className="d-flex align-items-center">
+      <h6 className="d-flex align-items-center px-1">
         <LockFill />
         <span className="ml-2">Change password</span>
       </h6>

@@ -105,7 +105,7 @@ function Deck(props) {
                   <DeckImport
                     setActiveDeck={props.setActiveDeck}
                     getDecks={props.getDecks}
-                    setShowInfo={props.setShowInfo}
+                    setShowInfo={setShowInfo}
                     setShowButtons={props.setShowButtons}
                   />
                 </Col>

@@ -15,7 +15,7 @@ function About(props) {
               </a>
               : 2020-06-23
               <br />
-              Card images by Syndelson's{' '}
+              Card images by Syndelson{' '}
               <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
                 FELD
               </a>
@@ -29,7 +29,7 @@ function About(props) {
               VDB is online card search and deck building tool for Vampire the
               Eternal Struggle (VTES).
               <br />
-              It's a successor of{' '}
+              It is a successor of{' '}
               <a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
             </p>
             <h5>FEATURES</h5>

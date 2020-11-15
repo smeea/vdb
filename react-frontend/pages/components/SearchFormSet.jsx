@@ -74,7 +74,7 @@ function SearchFormSet(props) {
   });
 
   return (
-    <Row className="py-1 mx-0 align-items-center">
+    <Row className="py-1 pl-1 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
         <label className="h6 mb-0">Set:</label>
       </Col>

@@ -183,11 +183,11 @@ def deckExport(d, request):
             for k, v in cryptExport.items():
                 quantitySpaces = longestQuantity - len(str(v['Quantity']))
 
-                nameSpaces = longestName - len(k) + 2
-                disSpaces = longestDisciplines - len(v['Disciplines']) + 2
+                nameSpaces = longestName - len(k) + 3
+                disSpaces = longestDisciplines - len(v['Disciplines']) + 3
 
                 capacitySpaces = longestCapacity - len(str(v['Capacity']))
-                titleSpaces = longestTitle - len(v['Title']) + 2
+                titleSpaces = longestTitle - len(v['Title']) + 3
 
                 deck += ' ' * quantitySpaces + str(v['Quantity']) + 'x '
                 deck += k + ' ' * nameSpaces

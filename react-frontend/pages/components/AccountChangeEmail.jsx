@@ -105,7 +105,7 @@ function AccountChangeEmail(props) {
 
   return (
     <>
-      <h6 className="d-flex align-items-center">
+      <h6 className="d-flex align-items-center px-1">
         <EnvelopeFill />
         <span className="ml-2">Change email</span>
         {!props.isMobile ? (
