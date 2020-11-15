@@ -124,7 +124,7 @@ function AccountChangeName(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        {emptyPublicName && <span className="login-error">Enter name</span>}
+        {emptyPublicName && <span className="form-error px-2">Enter name</span>}
       </Form>
       {showModal && (
         <ModalTooltip

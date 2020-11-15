@@ -1,9 +1,5 @@
 # FIX
-* Update clans icons in svg (white background)
-* Deck by id (shared)
-* Error messages
-* Deck delete to update deck list
-* Reply from backend on card change/add
+* Error messages output
 
 # FEATURES
 

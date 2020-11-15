@@ -149,9 +149,9 @@ function AccountChangeEmail(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        {emptyEmail && <span className="login-error">Enter email</span>}
-        {emptyPassword && <span className="login-error">Enter password</span>}
-        {passwordError && <span className="login-error">Wrong password</span>}
+        {emptyEmail && <span className="form-error px-2">Enter email</span>}
+        {emptyPassword && <span className="form-error px-2">Enter password</span>}
+        {passwordError && <span className="form-error px-2">Wrong password</span>}
       </Form>
       {showModal && (
         <ModalTooltip

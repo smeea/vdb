@@ -114,22 +114,18 @@ function Deck(props) {
         </Col>
         <Col lg={7} className="px-0 px-lg-3">
           {(showInfo || !props.isMobile) && (
-            <>
-              {(props.decks[props.activeDeck] || sharedDeck) && (
-                <DeckInfo
-                  deck={
-                    props.activeDeck
-                      ? props.decks[props.activeDeck]
-                      : sharedDeck
-                      ? sharedDeck[sharedDeckId]
-                      : null
-                  }
-                  deckUpdate={deckUpdate}
-                  username={props.username}
-                  isAuthor={isAuthor}
-                />
-              )}
-            </>
+            <DeckInfo
+              deck={
+                props.activeDeck
+                  ? props.decks[props.activeDeck]
+                  : sharedDeck
+                  ? sharedDeck[sharedDeckId]
+                  : null
+              }
+              deckUpdate={deckUpdate}
+              username={props.username}
+              isAuthor={isAuthor}
+            />
           )}
         </Col>
         <Col lg={2} className="px-0 px-lg-3">
@@ -212,10 +208,14 @@ function Deck(props) {
               deckid={props.activeDeck ? props.activeDeck : sharedDeckId}
               cards={
                 props.activeDeck
-                  ? props.decks[props.activeDeck].crypt
+                  ? props.decks[props.activeDeck]
+                    ? props.decks[props.activeDeck].crypt
+                    : {}
                   : sharedDeck
-                  ? sharedDeck[sharedDeckId].crypt
-                  : null
+                  ? sharedDeck[sharedDeckId]
+                    ? sharedDeck[sharedDeckId].crypt
+                    : {}
+                  : {}
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -231,10 +231,14 @@ function Deck(props) {
               deckid={props.activeDeck ? props.activeDeck : sharedDeckId}
               cards={
                 props.activeDeck
-                  ? props.decks[props.activeDeck].library
+                  ? props.decks[props.activeDeck]
+                    ? props.decks[props.activeDeck].library
+                    : {}
                   : sharedDeck
-                  ? sharedDeck[sharedDeckId].library
-                  : null
+                  ? sharedDeck[sharedDeckId]
+                    ? sharedDeck[sharedDeckId].library
+                    : {}
+                  : {}
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}

@@ -28,6 +28,7 @@ function DeckButtons(props) {
         <div>
           <DeckDelete
             deck={props.deck}
+            getDecks={props.getDecks}
             setActiveDeck={props.setActiveDeck}
             setShowButtons={props.setShowButtons}
           />

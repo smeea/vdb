@@ -7,21 +7,21 @@ function DeckInfo(props) {
   return (
     <>
       <DeckChangeName
-        name={props.deck.name}
+        name={props.deck && props.deck.name}
         deckUpdate={props.deckUpdate}
-        deckid={props.deck.deckid}
+        deckid={props.deck && props.deck.deckid}
         isAuthor={props.isAuthor}
       />
       <DeckChangeDescription
-        description={props.deck.description}
+        description={props.deck && props.deck.description}
         deckUpdate={props.deckUpdate}
-        deckid={props.deck.deckid}
+        deckid={props.deck && props.deck.deckid}
         isAuthor={props.isAuthor}
       />
       <DeckChangeAuthor
-        author={props.deck.author}
+        author={props.deck && props.deck.author}
         deckUpdate={props.deckUpdate}
-        deckid={props.deck.deckid}
+        deckid={props.deck && props.deck.deckid}
         isAuthor={props.isAuthor}
       />
     </>

@@ -137,15 +137,17 @@ function AccountChangePassword(props) {
           </InputGroup.Append>
         </InputGroup>
         {passwordConfirmError && (
-          <span className="login-error">Confirm new password</span>
+          <span className="form-error px-2">Confirm new password</span>
         )}
         {emptyPassword && (
-          <span className="login-error">Enter old password</span>
+          <span className="form-error px-2">Enter old password</span>
         )}
         {emptyNewPassword && (
-          <span className="login-error">Enter new password</span>
+          <span className="form-error px-2">Enter new password</span>
         )}
-        {passwordError && <span className="login-error">Wrong password</span>}
+        {passwordError && (
+          <span className="form-error px-2">Wrong password</span>
+        )}
       </Form>
     </>
   );

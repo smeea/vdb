@@ -76,7 +76,11 @@ function App(props) {
         body: JSON.stringify({ cardAdd: { [card['Id']]: 1 } }),
       };
 
-      fetch(url, options);
+      const oldState = decks;
+
+      fetch(url, options).catch((error) => {
+        setDecks(oldState);
+      });
 
       const part = card['Id'] > 200000 ? 'crypt' : 'library';
       setDecks((prevState) => ({
@@ -109,7 +113,12 @@ function App(props) {
       body: JSON.stringify({ cardChange: { [cardid]: count } }),
     };
 
-    fetch(url, options);
+    const oldState = decks;
+
+    fetch(url, options).catch((error) => {
+      setDecks(oldState);
+    });
+
     const part = cardid > 200000 ? 'crypt' : 'library';
     if (count >= 0) {
       setDecks((prevState) => ({

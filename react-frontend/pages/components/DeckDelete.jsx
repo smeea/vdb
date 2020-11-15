@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from '../../assets/images/icons/trash-fill.svg';
-
 import DeckDeleteConfirmation from './DeckDeleteConfirmation.jsx';
 
 function DeckDelete(props) {
@@ -26,7 +25,7 @@ function DeckDelete(props) {
         },
         body: JSON.stringify({ deckid: props.deck.deckid }),
       };
-      fetch(url, options);
+      fetch(url, options).then(() => props.getDecks());
       console.log('Delete deck: ', props.deck.deckid);
     } else {
       console.log('Error: no deck selected');
