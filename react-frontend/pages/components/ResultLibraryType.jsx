@@ -15,15 +15,17 @@ function ResultLibraryType(props) {
 
   if (props.total > 0) {
     return (
-      <>
-        {cardtypeImages} {props.cardtype} [{props.total}]
-      </>
+      <div className="d-flex align-items-center">
+        {cardtypeImages}
+        <div className="px-1">{props.cardtype} [{props.total}]</div>
+      </div>
     );
   } else if (props.total == 0) {
     return (
-      <>
-        {cardtypeImages} {props.cardtype}
-      </>
+      <div className="d-flex align-items-center">
+        {cardtypeImages}
+        <div className="px-1">{props.cardtype}</div>
+      </div>
     );
   } else {
     return <>{cardtypeImages}</>;
