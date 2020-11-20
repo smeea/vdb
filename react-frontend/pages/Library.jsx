@@ -28,7 +28,6 @@ function Library(props) {
                 </Col>
                 <Col xs="auto" className="d-flex pl-0">
                   <Button
-                    className="full-height"
                     variant="outline-secondary"
                     onClick={() => props.setShowDeck(!props.showDeck)}
                   >

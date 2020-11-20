@@ -1,7 +1,10 @@
 # FIX
 * Error messages output
+* Add delay for add crypt card
+* Fix sort results by group
 
 # FEATURES
+* Search by precons - all / bcp / particular
 
 # MAYBE LATER FEATURES
 * Add demo account with V5 precons
@@ -21,6 +24,7 @@
 * Droid CI/CD
 * Unify error handling
 * Store cards on frontend
+* Show immediate search results on desktop
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
