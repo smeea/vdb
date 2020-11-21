@@ -10,6 +10,7 @@ import SearchCryptFormTitles from './SearchCryptFormTitles.jsx';
 import SearchCryptFormGroup from './SearchCryptFormGroup.jsx';
 import SearchCryptFormTraits from './SearchCryptFormTraits.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
+import SearchFormArtist from './SearchFormArtist.jsx';
 
 function SearchCryptForm(props) {
   const defaults = {
@@ -101,6 +102,7 @@ function SearchCryptForm(props) {
       flight: false,
     },
     set: 'any',
+    artist: '',
   };
 
   const [spinnerState, setSpinnerState] = useState(false);
@@ -274,6 +276,10 @@ function SearchCryptForm(props) {
       />
       <SearchFormSet
         value={props.formState.set}
+        onChange={handleSelectChange}
+      />
+      <SearchFormArtist
+        value={props.formState.artist}
         onChange={handleSelectChange}
       />
     </form>

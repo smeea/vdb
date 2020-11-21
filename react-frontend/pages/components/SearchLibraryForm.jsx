@@ -9,6 +9,7 @@ import SearchLibraryFormTraits from './SearchLibraryFormTraits.jsx';
 import SearchLibraryFormBloodCost from './SearchLibraryFormBloodCost.jsx';
 import SearchLibraryFormPoolCost from './SearchLibraryFormPoolCost.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
+import SearchFormArtist from './SearchFormArtist.jsx';
 
 function SearchLibraryForm(props) {
   const defaults = {
@@ -41,6 +42,7 @@ function SearchLibraryForm(props) {
       infernal: false,
     },
     set: 'any',
+    artist: '',
   };
 
   const [spinnerState, setSpinnerState] = useState(false);
@@ -174,6 +176,10 @@ function SearchLibraryForm(props) {
       />
       <SearchFormSet
         value={props.formState.set}
+        onChange={handleSelectChange}
+      />
+      <SearchFormArtist
+        value={props.formState.artist}
         onChange={handleSelectChange}
       />
     </form>

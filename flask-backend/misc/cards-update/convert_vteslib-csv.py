@@ -10,7 +10,7 @@ def letters_to_ascii(text):
 
 
 integer_fields = ['Id']
-useless_fields = ['Aka', 'Flavor Text', 'Artist', 'Draft']
+useless_fields = ['Aka', 'Flavor Text', 'Draft']
 
 with open("vteslib.csv", "r", encoding='utf8') as f_csv, open(
         "vteslib.json",

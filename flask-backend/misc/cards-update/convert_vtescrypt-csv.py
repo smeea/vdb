@@ -52,7 +52,7 @@ virtues = {
 
 # Groups are not integers because of ANY-group vampires (e.g. Anarch Convert)
 integer_fields = ['Id', 'Capacity'] + disciplines
-useless_fields = ['Aka', 'Artist']
+useless_fields = ['Aka']
 
 with open("vtescrypt.csv", "r",
           encoding='utf8') as f_csv, open("vtescrypt.json",

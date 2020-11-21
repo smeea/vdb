@@ -87,6 +87,7 @@ const cryptDefaults = {
     flight: false,
   },
   set: 'any',
+  artist: '',
 };
 
 export default cryptDefaults;

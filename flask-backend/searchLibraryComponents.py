@@ -283,6 +283,16 @@ def get_library_by_set(set):
     return match_cards
 
 
+def get_library_by_artist(artist):
+    match_cards = []
+    artist = artist.lower()
+    for card in library:
+        if artist in card['Artist'].lower():
+            match_cards.append(card)
+
+    return match_cards
+
+
 def get_library_by_id(id):
     for card in library:
         if card['Id'] == int(id):
