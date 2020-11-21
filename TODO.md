@@ -4,7 +4,8 @@
 * Remember/clear artist form
 
 # FEATURES
-* Search by precons - bcp only
+* Search by precons - bcp only filter
+* Search by precons - LK, KoT1, KoT2, HttB1, HttB2, A1
 
 # MAYBE LATER FEATURES
 * Add demo account with V5 precons
