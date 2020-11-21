@@ -9,6 +9,7 @@ import SearchLibraryFormTraits from './SearchLibraryFormTraits.jsx';
 import SearchLibraryFormBloodCost from './SearchLibraryFormBloodCost.jsx';
 import SearchLibraryFormPoolCost from './SearchLibraryFormPoolCost.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
+import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
 
 function SearchLibraryForm(props) {
@@ -42,6 +43,7 @@ function SearchLibraryForm(props) {
       infernal: false,
     },
     set: 'any',
+    precon: 'any',
     artist: '',
   };
 
@@ -176,6 +178,10 @@ function SearchLibraryForm(props) {
       />
       <SearchFormSet
         value={props.formState.set}
+        onChange={handleSelectChange}
+      />
+      <SearchFormPrecon
+        value={props.formState.precon}
         onChange={handleSelectChange}
       />
       <SearchFormArtist

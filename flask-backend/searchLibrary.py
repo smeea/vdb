@@ -9,6 +9,7 @@ from searchLibraryComponents import get_library_by_cardtype
 from searchLibraryComponents import get_library_by_blood
 from searchLibraryComponents import get_library_by_pool
 from searchLibraryComponents import get_library_by_set
+from searchLibraryComponents import get_library_by_precon
 from searchLibraryComponents import get_library_by_artist
 from searchLibraryComponents import get_overall_library
 
@@ -108,6 +109,14 @@ def searchLibrary(request):
             parameters += 1
             cards_by_set = get_library_by_set(request.json['set'])
             match_by_category.append(cards_by_set)
+    except KeyError:
+        pass
+
+    try:
+        if request.json['precon']:
+            parameters += 1
+            cards_by_precon = get_library_by_precon(request.json['precon'])
+            match_by_category.append(cards_by_precon)
     except KeyError:
         pass
 

@@ -9,6 +9,7 @@ from searchCryptComponents import get_crypt_by_group
 from searchCryptComponents import get_crypt_by_sect
 from searchCryptComponents import get_crypt_by_clan
 from searchCryptComponents import get_crypt_by_set
+from searchCryptComponents import get_crypt_by_precon
 from searchCryptComponents import get_crypt_by_artist
 from searchCryptComponents import get_overall_crypt
 
@@ -124,6 +125,14 @@ def searchCrypt(request):
             parameters += 1
             cards_by_artist = get_crypt_by_artist(request.json['artist'])
             match_by_category.append(cards_by_artist)
+    except KeyError:
+        pass
+
+    try:
+        if request.json['precon']:
+            parameters += 1
+            cards_by_precon = get_crypt_by_precon(request.json['precon'])
+            match_by_category.append(cards_by_precon)
     except KeyError:
         pass
 

@@ -1,10 +1,10 @@
 # FIX
 * Error messages output
 * Add delay for add crypt card
-* Fix sort results by group
+* Remember/clear artist form
 
 # FEATURES
-* Search by precons - all / bcp / particular
+* Search by precons - bcp only
 
 # MAYBE LATER FEATURES
 * Add demo account with V5 precons

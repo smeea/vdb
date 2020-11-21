@@ -278,6 +278,17 @@ def get_crypt_by_set(set):
     return match_cards
 
 
+def get_crypt_by_precon(input):
+    match_cards = []
+    precon = input.split(':')
+    print(precon)
+    for card in crypt:
+        if precon[0] in card['Set'] and precon[1] in card['Set'][precon[0]]:
+            match_cards.append(card)
+
+    return match_cards
+
+
 def get_crypt_by_artist(artist):
     match_cards = []
     artist = artist.lower()

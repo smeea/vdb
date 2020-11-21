@@ -28,6 +28,7 @@ const libraryDefaults = {
     infernal: false,
   },
   set: 'any',
+  precon: 'any',
   artist: '',
 };
 

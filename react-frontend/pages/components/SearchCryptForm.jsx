@@ -10,6 +10,7 @@ import SearchCryptFormTitles from './SearchCryptFormTitles.jsx';
 import SearchCryptFormGroup from './SearchCryptFormGroup.jsx';
 import SearchCryptFormTraits from './SearchCryptFormTraits.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
+import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
 
 function SearchCryptForm(props) {
@@ -102,6 +103,7 @@ function SearchCryptForm(props) {
       flight: false,
     },
     set: 'any',
+    precon: 'any',
     artist: '',
   };
 
@@ -276,6 +278,10 @@ function SearchCryptForm(props) {
       />
       <SearchFormSet
         value={props.formState.set}
+        onChange={handleSelectChange}
+      />
+      <SearchFormPrecon
+        value={props.formState.precon}
         onChange={handleSelectChange}
       />
       <SearchFormArtist

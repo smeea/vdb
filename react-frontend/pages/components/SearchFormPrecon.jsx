@@ -1,16 +1,16 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import sets from './sets.js';
+import precons from './precons.js';
 
-function SearchFormSet(props) {
+function SearchFormPrecon(props) {
   const options = [];
 
-  sets.map((i, index) => {
-    if (i[0] == 'any') {
+  precons.map((i, index) => {
+    if (i[0] == 'any' || i[0] == 'bcp') {
       options.push({
         value: i[0],
-        name: 'set',
+        name: 'precon',
         label: (
           <>
             <span className="margin-full" />
@@ -18,20 +18,14 @@ function SearchFormSet(props) {
           </>
         ),
       });
-    } else if (!i[2]) {
-      options.push({
-        value: i[0],
-        name: 'set',
-        label: i[1],
-      });
     } else {
       options.push({
-        value: i[0],
-        name: 'set',
+        value: i[1] + ':' + i[2],
+        name: 'precon',
         label: (
           <div className="d-flex justify-content-between">
-            <div className="pr-2">{i[1]}</div>
-            <div className="pl-2">{i[2]}</div>
+            <div className="pr-2">{i[3]}</div>
+            <div className="pl-2 gray-small">{`${i[1]} '${i[0]}`}</div>
           </div>
         ),
       });
@@ -41,13 +35,13 @@ function SearchFormSet(props) {
   return (
     <Row className="py-1 pl-1 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
-        <label className="h6 mb-0">Set:</label>
+        <label className="h6 mb-0">Precon:</label>
       </Col>
       <Col xs={9} className="d-inline px-0">
         <Select
           options={options}
           isSearchable={false}
-          name="set"
+          name="precon"
           value={options.find((obj) => obj.value === props.value)}
           onChange={props.onChange}
         />
@@ -56,4 +50,4 @@ function SearchFormSet(props) {
   );
 }
 
-export default SearchFormSet;
+export default SearchFormPrecon;

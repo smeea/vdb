@@ -16,9 +16,9 @@ function DeckSelect(props) {
         label: (
           <div className="d-flex justify-content-between">
             {state[i]['name']}
-            <span className="pl-2 select-deck-date">
+            <div className="pl-2 gray-small">
               {new Date(state[i]['timestamp']).toISOString().slice(0, 10)}
-            </span>
+            </div>
           </div>
         ),
       },
