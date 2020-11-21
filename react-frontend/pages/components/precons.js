@@ -16,6 +16,8 @@ const precons = [
   ['18', 'FB', 'PTo', 'Toreador'],
   ['18', 'FB', 'PTr', 'Tremere'],
   ['18', 'FB', 'PV', 'Ventrue'],
+  ['18', 'Anthology', '', 'Anthology'],
+  ['18', 'LK', '', 'Lost Kindred'],
   ['09', 'HttB', 'PKia', 'Lasombra / Kiasyd'],
   ['09', 'HttB', 'PSam', 'Nosferatu / Samedi'],
   ['09', 'HttB', 'PSal', 'Ventrue / Salubri antitribu'],
@@ -40,10 +42,11 @@ const precons = [
   ['05', 'KMW', 'PAn', 'Anathema'],
   ['05', 'KMW', 'PB', 'Baali'],
   ['05', 'KMW', 'PG', 'Gangrel antitribu'],
-  ['04', 'BH', 'PM', 'Malkavian antitribu'],
-  ['04', 'BH', 'PN', 'Nosferatu antitribu'],
-  ['04', 'BH', 'PTo', 'Toreador antitribu'],
-  ['04', 'BH', 'PTr', 'Tremere antitribu'],
+  ['04', 'Tenth', '', '10th Anniversary'],
+  ['03', 'BH', 'PM', 'Malkavian antitribu'],
+  ['03', 'BH', 'PN', 'Nosferatu antitribu'],
+  ['03', 'BH', 'PTo', 'Toreador antitribu'],
+  ['03', 'BH', 'PTr', 'Tremere antitribu'],
   ['03', 'Anarchs', 'PAB', 'Barons'],
   ['03', 'Anarchs', 'PAG', 'Gangs'],
   ['03', 'Anarchs', 'PG', 'Gangrel'],
@@ -64,4 +67,3 @@ const precons = [
 ]
 
 export default precons;
-
