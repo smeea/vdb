@@ -43,19 +43,20 @@ function ResultLibraryTable(props) {
               />
             </td>
           )}
-          <td className="cost py-0" onClick={() => setModalCard(card)}>
+          <td className="cost py-0 px-1" onClick={() => setModalCard(card)}>
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}
             />
           </td>
-          <td className="type" onClick={() => setModalCard(card)}>
+          <td className="type px-1" onClick={() => setModalCard(card)}>
             <ResultLibraryType cardtype={card['Type']} />
           </td>
-          <td className="disciplines" onClick={() => setModalCard(card)}>
+          <td className="disciplines px-1" onClick={() => setModalCard(card)}>
             <ResultLibraryDisciplines value={card['Discipline']} />
+            <ResultLibraryClan value={card['Clan']} />
           </td>
-          <td className="name" onClick={() => setModalCard(card)}>
+          <td className="name px-1" onClick={() => setModalCard(card)}>
             <ResultLibraryName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -63,10 +64,7 @@ function ResultLibraryTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="clan" onClick={() => setModalCard(card)}>
-            <ResultLibraryClan value={card['Clan']} />
-          </td>
-          <td className="burn" onClick={() => setModalCard(card)}>
+          <td className="burn px-1" onClick={() => setModalCard(card)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={card['Card Text']} />
           </td>

@@ -88,7 +88,7 @@ const cryptDefaults = {
   },
   set: 'any',
   precon: 'any',
-  artist: '',
+  artist: 'any',
 };
 
 export default cryptDefaults;

@@ -14,6 +14,18 @@ function SearchFormArtist(props) {
     )
   })
 
+  options.unshift(
+    {
+      name: "artist",
+      value: "any",
+      label: (
+        <>
+          <span className="margin-full" />
+          ANY
+        </>
+      )
+    }
+  );
 
   return (
     <Row className="py-1 pl-1 mx-0 align-items-center">
@@ -22,9 +34,12 @@ function SearchFormArtist(props) {
       </Col>
       <Col xs={9} className="d-inline px-0">
         <Select
+          options={options}
           onChange={props.onChange}
+          name="artist"
           placeholder="Artist"
-          options={options}/>
+          value={options.find((obj) => obj.value === props.value)}
+        />
       </Col>
     </Row>
   );

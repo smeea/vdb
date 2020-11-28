@@ -29,7 +29,7 @@ const libraryDefaults = {
   },
   set: 'any',
   precon: 'any',
-  artist: '',
+  artist: 'any',
 };
 
 export default libraryDefaults;

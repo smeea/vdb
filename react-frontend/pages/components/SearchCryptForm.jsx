@@ -104,7 +104,7 @@ function SearchCryptForm(props) {
     },
     set: 'any',
     precon: 'any',
-    artist: '',
+    artist: 'any',
   };
 
   const [spinnerState, setSpinnerState] = useState(false);

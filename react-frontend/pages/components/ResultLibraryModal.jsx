@@ -28,7 +28,7 @@ function ResultLibraryModal(props) {
               handleClose={props.handleClose}
             />
           </Tab>
-          <Tab eventKey="text" title="Description">
+          <Tab eventKey="text" title="Text">
             <div className="p-3">
               <ResultLibraryPopover card={props.card} showImage={false} />
             </div>

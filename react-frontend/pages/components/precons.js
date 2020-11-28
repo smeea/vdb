@@ -1,6 +1,6 @@
 const precons = [
   ['any', 'ANY'],
-  // ['bcp', 'ANY of BCP'],
+  ['bcp', 'ANY BCP'],
   // ['20', 'V5', 'PM', 'Malkavian'],
   // ['20', 'V5', 'PN', 'Nosferatu'],
   // ['20', 'V5', 'PTo', 'Toreador'],

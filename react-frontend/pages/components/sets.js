@@ -1,6 +1,8 @@
   const sets = [
     ['any', 'ANY'],
+    ['bcp', 'ANY BCP'],
     ['Promo', 'Promo'],
+    // ['V5', 'Fifth Edition', '2020'],
     ['25th', '25th Anniversary', '2019'],
     ['FB', 'First Blood', '2019'],
     ['SP', 'Sabbat Preconstructed', '2019'],

@@ -7,7 +7,7 @@ function SearchFormSet(props) {
   const options = [];
 
   sets.map((i, index) => {
-    if (i[0] == 'any') {
+    if (i[0] == 'any' || i[0] == 'bcp') {
       options.push({
         value: i[0],
         name: 'set',

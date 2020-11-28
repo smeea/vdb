@@ -33,7 +33,7 @@ function DeckLibraryTable(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           {props.isAuthor ? (
-            <td className="quantity">
+            <td className="quantity pr-1">
               <DeckCardQuantity
                 cardid={card.c['Id']}
                 q={card.q}
@@ -49,7 +49,7 @@ function DeckLibraryTable(props) {
             </td>
           )}
           <td className="name" onClick={() => setShowModal(card.c)}>
-            <div className="px-2">
+            <div className="px-1">
               <ResultLibraryName
                 showImage={props.showImage}
                 setShowImage={props.setShowImage}
@@ -61,16 +61,16 @@ function DeckLibraryTable(props) {
               />
             </div>
           </td>
-          <td className="cost" onClick={() => setShowModal(card.c)}>
+          <td className="cost px-1" onClick={() => setShowModal(card.c)}>
             <ResultLibraryCost
               valueBlood={card.c['Blood Cost']}
               valuePool={card.c['Pool Cost']}
             />
           </td>
-          <td className="discipline" onClick={() => setShowModal(card.c)}>
+          <td className="discipline px-1" onClick={() => setShowModal(card.c)}>
             {DisciplineOrClan}
           </td>
-          <td className="burn" onClick={() => setShowModal(card.c)}>
+          <td className="burn px-1" onClick={() => setShowModal(card.c)}>
             <ResultLibraryBurn value={card.c['Burn Option']} />
             <ResultLibraryTrifle value={card.c['Card Text']} />
           </td>
