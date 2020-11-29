@@ -39,6 +39,7 @@ function Crypt(props) {
             {props.activeDeck && props.showDeck && (
               <>
                 <DeckCrypt
+                  changeTimer={props.changeTimer}
                   deckCardAdd={props.deckCardAdd}
                   deckCardChange={props.deckCardChange}
                   deckid={props.activeDeck}

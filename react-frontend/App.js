@@ -99,6 +99,8 @@ function App(props) {
           },
         },
       }));
+
+      setChangeTimer(!changeTimer);
     } else {
       console.log('already in deck');
     }
@@ -278,6 +280,7 @@ function App(props) {
               path="/deck/:id"
               component={(props) => (
                 <Deck
+                  changeTimer={changeTimer}
                   isMobile={isMobile}
                   isWide={isWide}
                   decks={decks}
@@ -295,6 +298,7 @@ function App(props) {
             />
             <Route path="/crypt">
               <Crypt
+                changeTimer={changeTimer}
                 isWide={isWide}
                 isMobile={isMobile}
                 showSearch={showCryptSearch}
@@ -318,6 +322,7 @@ function App(props) {
             </Route>
             <Route path="/library">
               <Library
+                changeTimer={changeTimer}
                 isWide={isWide}
                 isMobile={isMobile}
                 showSearch={showLibrarySearch}
