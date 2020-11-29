@@ -7,7 +7,7 @@ function DeckCardQuantity(props) {
       <Button
         className="quantity"
         variant="outline-secondary"
-        onClick={(e) =>
+        onClick={() =>
           props.deckCardChange(props.deckid, props.cardid, props.q - 1)
         }
       >
@@ -17,7 +17,7 @@ function DeckCardQuantity(props) {
       <Button
         className="quantity"
         variant="outline-secondary"
-        onClick={(e) =>
+        onClick={() =>
           props.deckCardChange(props.deckid, props.cardid, props.q + 1)
         }
       >

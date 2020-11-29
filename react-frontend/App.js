@@ -42,6 +42,9 @@ function App(props) {
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
 
+  const [changeTimer, setChangeTimer] = useState(false);
+  const [timers, setTimers] = useState([]);
+
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
     const options = {
@@ -120,6 +123,7 @@ function App(props) {
     });
 
     const part = cardid > 200000 ? 'crypt' : 'library';
+
     if (count >= 0) {
       setDecks((prevState) => ({
         ...prevState,
@@ -141,6 +145,27 @@ function App(props) {
         return oldState;
       });
     }
+
+    const startTimer = () => {
+      let counter = 1;
+      timers.map((timerId) => {
+        clearInterval(timerId);
+      });
+      setTimers([]);
+
+      const timerId = setInterval(() => {
+        if (counter > 0) {
+          counter = counter - 1;
+        } else {
+          clearInterval(timerId);
+          setChangeTimer(!changeTimer);
+        }
+      }, 500);
+
+      setTimers([...timers, timerId]);
+    };
+
+    startTimer();
   };
 
   const whoAmI = () => {
@@ -234,6 +259,7 @@ function App(props) {
             </Route>
             <Route path="/deck">
               <Deck
+                changeTimer={changeTimer}
                 isMobile={isMobile}
                 isWide={isWide}
                 decks={decks}

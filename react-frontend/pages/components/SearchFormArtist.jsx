@@ -5,27 +5,23 @@ import artists from './artists.js';
 
 function SearchFormArtist(props) {
   const options = artists.map((artist, index) => {
-    return (
-      {
-        name: "artist",
-        value: artist,
-        label: artist,
-      }
-    )
-  })
+    return {
+      name: 'artist',
+      value: artist,
+      label: artist,
+    };
+  });
 
-  options.unshift(
-    {
-      name: "artist",
-      value: "any",
-      label: (
-        <>
-          <span className="margin-full" />
-          ANY
-        </>
-      )
-    }
-  );
+  options.unshift({
+    name: 'artist',
+    value: 'any',
+    label: (
+      <>
+        <span className="margin-full" />
+        ANY
+      </>
+    ),
+  });
 
   return (
     <Row className="py-1 pl-1 mx-0 align-items-center">

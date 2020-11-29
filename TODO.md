@@ -1,6 +1,5 @@
 # FIX
 * Error messages output
-* Add delay for add crypt card
 
 # FEATURES
 * Search by precons - bcp

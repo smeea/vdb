@@ -203,6 +203,7 @@ function Deck(props) {
         <Row>
           <Col lg={7} className="px-0 px-lg-3">
             <DeckCrypt
+              changeTimer={props.changeTimer}
               deckCardAdd={props.deckCardAdd}
               deckCardChange={props.deckCardChange}
               deckid={props.activeDeck ? props.activeDeck : sharedDeckId}

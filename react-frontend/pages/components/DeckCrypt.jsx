@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import ChevronExpand from '../../assets/images/icons/chevron-expand.svg';
 import DeckCryptTotalByCapacity from './DeckCryptTotalByCapacity.jsx';
@@ -97,9 +97,24 @@ function DeckCrypt(props) {
     else return -1;
   };
 
-  const sortedCards = Object.values(crypt)
-    .sort(SortByCapacity)
-    .sort(SortByQuantity);
+  const [sortedState, setSortedState] = useState([]);
+
+  useEffect(() => {
+    setSortedState(
+      Object.values(crypt)
+        .sort(SortByCapacity)
+        .sort(SortByQuantity)
+        .map((i) => {
+          return i['c']['Id'];
+        })
+    );
+  }, [props.changeTimer]);
+
+  const sortedCards = sortedState
+    .filter((card) => crypt[card])
+    .map((card) => {
+      return crypt[card];
+    });
 
   const sortedCardsSide = Object.values(cryptSide)
     .sort(SortByCapacity)

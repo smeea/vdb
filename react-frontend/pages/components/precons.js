@@ -64,6 +64,6 @@ const precons = [
   ['00', 'SW', 'PL', 'Lasombra'],
   ['00', 'SW', 'PT', 'Tzimisce'],
   ['00', 'SW', 'PV', 'Ventrue antitribu'],
-]
+];
 
 export default precons;

@@ -17,7 +17,9 @@ function ResultLibraryType(props) {
     return (
       <div className="d-flex align-items-center">
         {cardtypeImages}
-        <div className="px-1">{props.cardtype} [{props.total}]</div>
+        <div className="px-1">
+          {props.cardtype} [{props.total}]
+        </div>
       </div>
     );
   } else if (props.total == 0) {
