@@ -108,7 +108,7 @@ function DeckCrypt(props) {
           return i['c']['Id'];
         })
     );
-  }, [props.changeTimer]);
+  }, [props.changeTimer, props.deckid]);
 
   const sortedCards = sortedState
     .filter((card) => crypt[card])
