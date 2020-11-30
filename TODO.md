@@ -2,8 +2,6 @@
 * Error messages output
 
 # FEATURES
-* Search by precons - bcp
-* Search by sets - bcp
 
 # MAYBE LATER FEATURES
 * Add demo account with V5 precons

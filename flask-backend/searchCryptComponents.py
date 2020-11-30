@@ -270,21 +270,59 @@ def get_crypt_by_group(group_list):
 
 
 def get_crypt_by_set(set):
+    bcp_sets = [
+        '25th',
+        'FB',
+        'SP',
+        'Anthology',
+        'LK',
+    ]
+
     match_cards = []
-    for card in crypt:
-        if set in card['Set']:
-            match_cards.append(card)
+
+    if set == 'bcp':
+        for card in crypt:
+            for bcp_set in bcp_sets:
+                if bcp_set in card['Set']:
+                    match_cards.append(card)
+
+    else:
+        for card in crypt:
+            if set in card['Set']:
+                match_cards.append(card)
 
     return match_cards
 
 
 def get_crypt_by_precon(input):
+    bcp_precons = [
+        ['SP', 'LB'],
+        ['SP', 'PwN'],
+        ['SP', 'DoF'],
+        ['SP', 'PoS'],
+        ['25th', ''],
+        ['FB', 'PM'],
+        ['FB', 'PN'],
+        ['FB', 'PTo'],
+        ['FB', 'PTr'],
+        ['FB', 'PV'],
+        ['Anthology', ''],
+        ['LK', ''],
+    ]
+
     match_cards = []
-    precon = input.split(':')
-    print(precon)
-    for card in crypt:
-        if precon[0] in card['Set'] and precon[1] in card['Set'][precon[0]]:
-            match_cards.append(card)
+
+    if input == 'bcp':
+        for card in crypt:
+            for bcp_precon in bcp_precons:
+                if bcp_precon[0] in card['Set'] and bcp_precon[1] in card['Set'][bcp_precon[0]]:
+                    match_cards.append(card)
+
+    else:
+        precon = input.split(':')
+        for card in crypt:
+            if precon[0] in card['Set'] and precon[1] in card['Set'][precon[0]]:
+                match_cards.append(card)
 
     return match_cards
 
