@@ -1158,6 +1158,54 @@
         "Rulings":[]
     },
     {
+        "Id":201529,
+        "Name":"Alexa Draper",
+        "Type":"Vampire",
+        "Clan":"Ventrue",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":8,
+        "Card Text":"Camarilla Prince of Melbourne: During the polling step of any referendum, Alexa can discard 1 card requiring Dominate [dom] to get +1 vote.",
+        "Set":{
+            "V5":"PV1"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Mart\u00edn de Diego S\u00e1bada",
+        "ASCII Name":"Alexa Draper",
+        "Disciplines":{
+            "Dominate":2,
+            "Fortitude":1,
+            "Potence":1,
+            "Presence":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201530,
+        "Name":"Alexander Silverson",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":8,
+        "Card Text":"Camarilla Prince of Birmingham: Vampires must burn 1 blood to cast votes and ballots against referendums called by Alexander.",
+        "Set":{
+            "V5":"PM2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Ken Meyer, Jr.",
+        "ASCII Name":"Alexander Silverson",
+        "Disciplines":{
+            "Auspex":2,
+            "Dominate":2,
+            "Obfuscate":2,
+            "Presence":1
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200049,
         "Name":"Alexandra",
         "Type":"Vampire",
@@ -1280,6 +1328,30 @@
         "Disciplines":{
             "Obfuscate":1,
             "Quietus":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201531,
+        "Name":"Alice Chen",
+        "Type":"Vampire",
+        "Clan":"Ventrue",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Camarilla Prince of Nairobi.",
+        "Set":{
+            "V5":"PV2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Amy Wilkins",
+        "ASCII Name":"Alice Chen",
+        "Disciplines":{
+            "Dominate":1,
+            "Fortitude":2,
+            "Presence":2,
+            "Protean":1
         },
         "Rulings":[]
     },
@@ -1935,6 +2007,30 @@
             "Dominate":1,
             "Fortitude":1,
             "Obfuscate":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201532,
+        "Name":"Andi Liu",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla Prince of Taipei.",
+        "Set":{
+            "V5":"PM2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Amy Wilkins",
+        "ASCII Name":"Andi Liu",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
         },
         "Rulings":[]
     },
@@ -3575,6 +3671,28 @@
         "Rulings":[]
     },
     {
+        "Id":201533,
+        "Name":"Ashley",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PM1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Mark Kelly",
+        "ASCII Name":"Ashley",
+        "Disciplines":{
+            "Dominate":1,
+            "Obfuscate":1
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200147,
         "Name":"Assad Salhoum",
         "Type":"Vampire",
@@ -3655,6 +3773,30 @@
         "Rulings":[]
     },
     {
+        "Id":201534,
+        "Name":"Aunt Linda",
+        "Type":"Vampire",
+        "Clan":"Nosferatu",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PN1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Riccardo Fabiani",
+        "ASCII Name":"Aunt Linda",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200150,
         "Name":"Aurora Van Brande, Paladin",
         "Type":"Vampire",
@@ -3725,6 +3867,29 @@
             "Dominate":2,
             "Obtenebration":2,
             "Presence":1,
+            "Thaumaturgy":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201535,
+        "Name":"Ayelech",
+        "Type":"Vampire",
+        "Clan":"Tremere",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Camarilla Prince of Addis Ababa.",
+        "Set":{
+            "V5":"PTr2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Samuel Araya",
+        "ASCII Name":"Ayelech",
+        "Disciplines":{
+            "Auspex":2,
+            "Dominate":2,
             "Thaumaturgy":2
         },
         "Rulings":[]
@@ -3951,6 +4116,28 @@
             "Dominate":1,
             "Obfuscate":2,
             "Quietus":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201536,
+        "Name":"Baixinho",
+        "Type":"Vampire",
+        "Clan":"Nosferatu",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PN1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Heather V. Kreiter",
+        "ASCII Name":"Baixinho",
+        "Disciplines":{
+            "Animalism":1,
+            "Obfuscate":1
         },
         "Rulings":[]
     },
@@ -4591,6 +4778,30 @@
         "Rulings":[]
     },
     {
+        "Id":201537,
+        "Name":"Belinde",
+        "Type":"Vampire",
+        "Clan":"Nosferatu",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla Prince of Copenhagen.",
+        "Set":{
+            "V5":"PN2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Mart\u00edn de Diego S\u00e1bada",
+        "ASCII Name":"Belinde",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200188,
         "Name":"Belle Equitone",
         "Type":"Vampire",
@@ -4646,7 +4857,7 @@
         "Capacity":6,
         "Card Text":"Anarch Baron of Fortaleza.",
         "Set":{
-            "Promo":"20190601"
+            "Promo":"20200511"
         },
         "Title":"baron",
         "Banned":"",
@@ -4906,7 +5117,7 @@
         "Capacity":6,
         "Card Text":"Anarch Baron of Manila.",
         "Set":{
-            "Promo":"20191027"
+            "Promo":"20200511"
         },
         "Title":"baron",
         "Banned":"",
@@ -5205,6 +5416,32 @@
         "Rulings":[]
     },
     {
+        "Id":201528,
+        "Name":"Boles\u0142aw Gutowski",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Anarch: During an action he performs, Boles\u0142aw can burn 1 blood to reveal the top card of your crypt and then shuffle your crypt. If the revealed card is a copy of Boles\u0142aw, Boles\u0142aw gets +1 stealth for this action; otherwise, he gets +1 strength for this action.",
+        "Set":{
+            "Promo":"20201030"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Heather V. Kreiter",
+        "ASCII Name":"Boles\u0142aw Gutowski",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Celerity":1,
+            "Dominate":1,
+            "Obfuscate":1,
+            "Presence":1
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200212,
         "Name":"Boss Callihan",
         "Type":"Vampire",
@@ -5346,6 +5583,28 @@
         "Rulings":[]
     },
     {
+        "Id":201538,
+        "Name":"Bret Stryker",
+        "Type":"Vampire",
+        "Clan":"Toreador",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla: Bret gets -1 intercept against titled vampires.",
+        "Set":{
+            "V5":"PTo1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Amy Wilkins",
+        "ASCII Name":"Bret Stryker",
+        "Disciplines":{
+            "Celerity":2,
+            "Presence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200218,
         "Name":"Brian Thompson",
         "Type":"Vampire",
@@ -5389,6 +5648,30 @@
             "Necromancy":2,
             "Obfuscate":1,
             "Thanatosis":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201539,
+        "Name":"Brock Sterling",
+        "Type":"Vampire",
+        "Clan":"Ventrue",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PV1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Atilio Gambedotti",
+        "ASCII Name":"Brock Sterling",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
         },
         "Rulings":[]
     },
@@ -5936,9 +6219,9 @@
         "Adv":"",
         "Group":"5",
         "Capacity":11,
-        "Card Text":"Independent: If The Capuchin is burned, move him to your uncontrolled region and you get +3 transfers at the start of your next influence phase. +1 bleed. +2 hand size. +1 intercept.",
+        "Card Text":"Independent: If The Capuchin is burned, move him to his owner's uncontrolled region and you get +3 transfers at the start of your next influence phase. +1 bleed. +2 hand size. +1 intercept.",
         "Set":{
-            "Promo":"20190804",
+            "Promo":"20190408",
             "Promo-20181004":"HB2"
         },
         "Title":"",
@@ -6186,7 +6469,7 @@
         "Capacity":6,
         "Card Text":"Anarch Baron of Columbus.",
         "Set":{
-            "Promo":"20190615"
+            "Promo":"20200511"
         },
         "Title":"baron",
         "Banned":"",
@@ -6294,6 +6577,30 @@
             "Auspex":2,
             "Fortitude":1,
             "Valeren":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201540,
+        "Name":"Catalina Vega",
+        "Type":"Vampire",
+        "Clan":"Toreador",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":8,
+        "Card Text":"Camarilla Prince of Buenos Aires: +1 bleed.",
+        "Set":{
+            "V5":"PTo2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Mitch Mueller",
+        "ASCII Name":"Catalina Vega",
+        "Disciplines":{
+            "Auspex":2,
+            "Celerity":2,
+            "Fortitude":1,
+            "Presence":2
         },
         "Rulings":[]
     },
@@ -6676,6 +6983,30 @@
         "Rulings":[]
     },
     {
+        "Id":201541,
+        "Name":"Chelsea Blake",
+        "Type":"Vampire",
+        "Clan":"Ventrue",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PV1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Gin\u00e9s Qui\u00f1onero",
+        "ASCII Name":"Chelsea Blake",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200271,
         "Name":"Chester DuBois",
         "Type":"Vampire",
@@ -6771,6 +7102,29 @@
             "Potence":1,
             "Presence":2,
             "Protean":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201542,
+        "Name":"Chrysanthemum",
+        "Type":"Vampire",
+        "Clan":"Tremere",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla primogen.",
+        "Set":{
+            "V5":"PTr1"
+        },
+        "Title":"primogen",
+        "Banned":"",
+        "Artist":"Ken Meyer, Jr.",
+        "ASCII Name":"Chrysanthemum",
+        "Disciplines":{
+            "Auspex":2,
+            "Dominate":1,
+            "Thaumaturgy":2
         },
         "Rulings":[]
     },
@@ -7034,6 +7388,29 @@
             "Dominate":1,
             "Presence":1,
             "Thaumaturgy":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201543,
+        "Name":"Colette",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PM1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Gin\u00e9s Qui\u00f1onero",
+        "ASCII Name":"Colette",
+        "Disciplines":{
+            "Auspex":2,
+            "Dominate":1,
+            "Obfuscate":2
         },
         "Rulings":[]
     },
@@ -7537,7 +7914,7 @@
         },
         "Title":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "ASCII Name":"Cybele",
         "Disciplines":{
             "Animalism":2,
@@ -7637,7 +8014,7 @@
         },
         "Title":"",
         "Banned":"",
-        "Artist":"Ken Meyer, Jr.; Mark Tedin",
+        "Artist":"Mark Tedin; Ken Meyer, Jr.",
         "ASCII Name":"Daliyah",
         "Disciplines":{
             "Obfuscate":1,
@@ -9059,6 +9436,30 @@
         "Rulings":[]
     },
     {
+        "Id":201544,
+        "Name":"Donny Kowalczyk",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla Prince of Pittsburgh.",
+        "Set":{
+            "V5":"PM2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Mark Kelly",
+        "ASCII Name":"Donny Kowalczyk",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200368,
         "Name":"Dorian Strack",
         "Type":"Vampire",
@@ -9147,6 +9548,30 @@
             "Fortitude":1,
             "Presence":2,
             "Spiritus":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201545,
+        "Name":"Dowager, The",
+        "Type":"Vampire",
+        "Clan":"Nosferatu",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla primogen: The Dowager gets +1 intercept during directed actions.",
+        "Set":{
+            "V5":"PN1"
+        },
+        "Title":"primogen",
+        "Banned":"",
+        "Artist":"Mark Kelly",
+        "ASCII Name":"Dowager, The",
+        "Disciplines":{
+            "Animalism":2,
+            "Auspex":1,
+            "Obfuscate":2,
+            "Potence":1
         },
         "Rulings":[]
     },
@@ -9443,6 +9868,28 @@
         "Rulings":[]
     },
     {
+        "Id":201546,
+        "Name":"Dr. Stephen Norton",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PM1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Gin\u00e9s Qui\u00f1onero",
+        "ASCII Name":"Dr. Stephen Norton",
+        "Disciplines":{
+            "Auspex":1,
+            "Obfuscate":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200384,
         "Name":"Dr. Sutton Gassaway",
         "Type":"Vampire",
@@ -9476,7 +9923,7 @@
         "Capacity":11,
         "Card Text":"Independent: Cards requiring Vicissitude [vic] cost The Dracon 1 fewer blood. He inflicts +1 damage or steals 1 additional blood or life with ranged strikes (even at close range). Flight [FLIGHT]. +1 bleed. +2 strength.",
         "Set":{
-            "Promo":"20190804",
+            "Promo":"20190408",
             "Promo-20181004":"HB2"
         },
         "Title":"",
@@ -11543,6 +11990,30 @@
         "Rulings":[]
     },
     {
+        "Id":201547,
+        "Name":"Fl\u00e1vio Gon\u00e7alves",
+        "Type":"Vampire",
+        "Clan":"Toreador",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Camarilla Prince of S\u00e3o Paulo: Once each combat, Fl\u00e1vio can strike: dodge.",
+        "Set":{
+            "V5":"PTo2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Mitch Mueller",
+        "ASCII Name":"Flavio Goncalves",
+        "Disciplines":{
+            "Auspex":1,
+            "Celerity":2,
+            "Fortitude":1,
+            "Presence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200470,
         "Name":"Fleurdumal",
         "Type":"Vampire",
@@ -12204,6 +12675,30 @@
             "Potence":1,
             "Protean":1,
             "Sanguinus":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201548,
+        "Name":"Gelasia Fotiou",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PM1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Samuel Araya",
+        "ASCII Name":"Gelasia Fotiou",
+        "Disciplines":{
+            "Auspex":2,
+            "Dominate":1,
+            "Obfuscate":1,
+            "Presence":1
         },
         "Rulings":[]
     },
@@ -13294,7 +13789,7 @@
         "Adv":"",
         "Group":"6",
         "Capacity":3,
-        "Card Text":"Camarilla: As this Grotesque enters play, choose a location you control not chosen for a Grotesque. Remove this Grotesque from the game if you no longer control the location. Flight [FLIGHT]. Tremere slave. Non-unique.",
+        "Card Text":"Camarilla: As this Grotesque enters play, choose a location you control not chosen for another Grotesque. Remove this Grotesque from the game if you no longer control the location. Flight [FLIGHT]. Tremere slave. Non-unique.",
         "Set":{
             "HttB":"U2/A2"
         },
@@ -14444,7 +14939,7 @@
         "Capacity":10,
         "Card Text":"Independent: Helena pays no blood costs for reaction cards requiring Auspex [aus] or Dominate [dom]. Infernal.\n[MERGED] Helena is immune to damage from demons and gets +1 level of Daimoinon [dai] and Obtenebration [obt].",
         "Set":{
-            "Promo":"20190804"
+            "Promo":"20190408"
         },
         "Title":"",
         "Banned":"",
@@ -14814,6 +15309,30 @@
         "Rulings":[]
     },
     {
+        "Id":201549,
+        "Name":"Horace Radcliffe",
+        "Type":"Vampire",
+        "Clan":"Nosferatu",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PN1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Samuel Araya",
+        "ASCII Name":"Horace Radcliffe",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200603,
         "Name":"Horatio",
         "Type":"Vampire",
@@ -14905,6 +15424,30 @@
             "Animalism":2,
             "Protean":2,
             "Vicissitude":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201550,
+        "Name":"Horst von Br\u00fchl",
+        "Type":"Vampire",
+        "Clan":"Ventrue",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla Prince of Mannheim.",
+        "Set":{
+            "V5":"PV2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Gin\u00e9s Qui\u00f1onero",
+        "ASCII Name":"Horst von Bruhl",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
         },
         "Rulings":[]
     },
@@ -15527,6 +16070,30 @@
             "Imogen's ability cannot be used to move a burned vampire (crypt card) to the target's hand. Only library cards can be exchanged by Imogen's ability. [LSJ 19990525]",
             "Imogen is a 9 capacity vampire (errata to the Black Hand printing). [LSJ 20031116]"
         ]
+    },
+    {
+        "Id":201551,
+        "Name":"In\u00eas Trist\u00e3o",
+        "Type":"Vampire",
+        "Clan":"Tremere",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla Prince of Rio de Janeiro.",
+        "Set":{
+            "V5":"PTr2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Carmen Cornet",
+        "ASCII Name":"Ines Tristao",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
     },
     {
         "Id":200632,
@@ -16322,7 +16889,7 @@
         "Capacity":6,
         "Card Text":"Anarch Baron of Versailles.",
         "Set":{
-            "Promo":"20190818"
+            "Promo":"20200511"
         },
         "Title":"baron",
         "Banned":"",
@@ -18232,7 +18799,7 @@
         },
         "Title":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "ASCII Name":"Kai Simmons",
         "Disciplines":{
             "Celerity":1
@@ -18590,7 +19157,7 @@
         "Capacity":10,
         "Card Text":"Camarilla: Karsh can play cards named /Blood Hunt/ from your hand or ash heap as a prince. He gets +3 votes in blood hunt referendums. He cannot block infernal vampires.\n[MERGED] Imperator (3 votes): +1 intercept.",
         "Set":{
-            "Promo":"20190804"
+            "Promo":"20190408"
         },
         "Title":"",
         "Banned":"",
@@ -18748,6 +19315,30 @@
         "Disciplines":{
             "Dominate":1,
             "Fortitude":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201552,
+        "Name":"Kathy Glens",
+        "Type":"Vampire",
+        "Clan":"Toreador",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTo1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Amy Wilkins",
+        "ASCII Name":"Kathy Glens",
+        "Disciplines":{
+            "Auspex":1,
+            "Celerity":1,
+            "Presence":2,
+            "Thaumaturgy":1
         },
         "Rulings":[]
     },
@@ -19978,6 +20569,29 @@
         "Rulings":[]
     },
     {
+        "Id":201553,
+        "Name":"Larissa Moreira",
+        "Type":"Vampire",
+        "Clan":"Nosferatu",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla primogen: During a bleed action, Larissa can discard a card requiring Animalism [ani] to get +1 bleed.",
+        "Set":{
+            "V5":"PN2"
+        },
+        "Title":"primogen",
+        "Banned":"",
+        "Artist":"Samuel Araya",
+        "ASCII Name":"Larissa Moreira",
+        "Disciplines":{
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":1
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200814,
         "Name":"Larry",
         "Type":"Vampire",
@@ -20046,6 +20660,29 @@
         "Disciplines":{
             "Celerity":1,
             "Presence":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201554,
+        "Name":"Lauren",
+        "Type":"Vampire",
+        "Clan":"Tremere",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTr1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Ken Meyer, Jr.",
+        "ASCII Name":"Lauren",
+        "Disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Thaumaturgy":1
         },
         "Rulings":[]
     },
@@ -20392,6 +21029,30 @@
         "Rulings":[]
     },
     {
+        "Id":201555,
+        "Name":"Lenny Burkhead",
+        "Type":"Vampire",
+        "Clan":"Nosferatu",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla primogen: +1 bleed.",
+        "Set":{
+            "V5":"PN2"
+        },
+        "Title":"primogen",
+        "Banned":"",
+        "Artist":"Mitch Mueller",
+        "ASCII Name":"Lenny Burkhead",
+        "Disciplines":{
+            "Animalism":2,
+            "Obfuscate":1,
+            "Potence":2,
+            "Presence":1
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200831,
         "Name":"Leo Washington",
         "Type":"Vampire",
@@ -20472,7 +21133,7 @@
         "Capacity":6,
         "Card Text":"Anarch Baron of Canberra.",
         "Set":{
-            "Promo":"20191005"
+            "Promo":"20200511"
         },
         "Title":"baron",
         "Banned":"",
@@ -20817,6 +21478,30 @@
         "Rulings":[]
     },
     {
+        "Id":201556,
+        "Name":"Lloyd Brooks",
+        "Type":"Vampire",
+        "Clan":"Tremere",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla primogen.",
+        "Set":{
+            "V5":"PTr1"
+        },
+        "Title":"primogen",
+        "Banned":"",
+        "Artist":"Gin\u00e9s Qui\u00f1onero",
+        "ASCII Name":"Lloyd Brooks",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200848,
         "Name":"Lodin (Olaf Holte)",
         "Type":"Vampire",
@@ -21044,7 +21729,7 @@
         "Capacity":11,
         "Card Text":"Camarilla: Cards requiring Thaumaturgy [tha] cost Lord Tremere 1 fewer blood. During your minion phase, you can lock or unlock another ready Tremere or Tremere antitribu. +2 bleed. +1 intercept.",
         "Set":{
-            "Promo":"20190804",
+            "Promo":"20190408",
             "Promo-20181004":"HB2"
         },
         "Title":"",
@@ -21611,7 +22296,7 @@
         },
         "Title":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "ASCII Name":"Lucy Markowitz",
         "Disciplines":{
             "Dominate":1,
@@ -22079,6 +22764,29 @@
             "Necromancy":2,
             "Potence":2,
             "Protean":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201557,
+        "Name":"Madison",
+        "Type":"Vampire",
+        "Clan":"Ventrue",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PV1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Ken Meyer, Jr.",
+        "ASCII Name":"Madison",
+        "Disciplines":{
+            "Dominate":2,
+            "Fortitude":2,
+            "Presence":2
         },
         "Rulings":[]
     },
@@ -23464,6 +24172,30 @@
         "Rulings":[]
     },
     {
+        "Id":201558,
+        "Name":"Massimo Falconi",
+        "Type":"Vampire",
+        "Clan":"Toreador",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTo1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Riccardo Fabiani",
+        "ASCII Name":"Massimo Falconi",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200955,
         "Name":"Mata Hari",
         "Type":"Vampire",
@@ -23782,6 +24514,30 @@
         "Rulings":[]
     },
     {
+        "Id":201559,
+        "Name":"Meaghan",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PM1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Samuel Araya",
+        "ASCII Name":"Meaghan",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200968,
         "Name":"Medic, The",
         "Type":"Vampire",
@@ -23997,7 +24753,7 @@
         "Capacity":10,
         "Card Text":"Independent: While /Helena/ is ready, minion cards cost Menele 1 fewer blood.\n[MERGED] Menele can strike: steal 2 blood or life (becoming blood).",
         "Set":{
-            "Promo":"20190804"
+            "Promo":"20190408"
         },
         "Title":"",
         "Banned":"",
@@ -24376,6 +25132,30 @@
         "Rulings":[]
     },
     {
+        "Id":201560,
+        "Name":"Min-seo",
+        "Type":"Vampire",
+        "Clan":"Toreador",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTo1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Alejandro F. Giraldo",
+        "ASCII Name":"Min-seo",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":200992,
         "Name":"Mina Grotius",
         "Type":"Vampire",
@@ -24600,7 +25380,7 @@
         "Capacity":11,
         "Card Text":"Camarilla: Mithras gets +2 votes. Once each action he performs, he can burn 2 blood to cancel a reaction card as it is played by a younger vampire, and its cost is not paid. +2 bleed. +1 strength.",
         "Set":{
-            "Promo":"20190804",
+            "Promo":"20190408",
             "Promo-20181004":"HB2"
         },
         "Title":"",
@@ -24638,6 +25418,30 @@
             "Fortitude":1,
             "Obfuscate":2,
             "Protean":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201561,
+        "Name":"Mkhokheli",
+        "Type":"Vampire",
+        "Clan":"Toreador",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla Prince of Cape Town.",
+        "Set":{
+            "V5":"PTo2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Samuel Araya",
+        "ASCII Name":"Mkhokheli",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
         },
         "Rulings":[]
     },
@@ -24722,7 +25526,7 @@
         "Capacity":11,
         "Card Text":"Independent. 2 votes (titled): Cards requiring Obtenebration [obt] cost Montano 1 fewer blood. Once each action, he can burn 1 blood to give an acting minion you control +1 stealth. +1 bleed.",
         "Set":{
-            "Promo":"20190804",
+            "Promo":"20190408",
             "Promo-20181004":"HB2"
         },
         "Title":"2 votes",
@@ -25468,6 +26272,53 @@
         "Rulings":[]
     },
     {
+        "Id":201562,
+        "Name":"Naomi Stewart",
+        "Type":"Vampire",
+        "Clan":"Ventrue",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PV1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Amy Wilkins",
+        "ASCII Name":"Naomi Stewart",
+        "Disciplines":{
+            "Dominate":1,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201563,
+        "Name":"Nassir",
+        "Type":"Vampire",
+        "Clan":"Tremere",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTr1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Mart\u00edn de Diego S\u00e1bada",
+        "ASCII Name":"Nassir",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":201037,
         "Name":"Natalia",
         "Type":"Vampire",
@@ -25652,7 +26503,7 @@
         },
         "Title":"2 votes",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "ASCII Name":"Neferu",
         "Disciplines":{
             "Dominate":1,
@@ -25773,7 +26624,7 @@
         "Capacity":10,
         "Card Text":"Independent: Once each turn, Nergal can reduce the cost of a card he plays by 1 blood. Infernal. +2 bleed.",
         "Set":{
-            "Promo":"20190804"
+            "Promo":"20190408"
         },
         "Title":"",
         "Banned":"",
@@ -25799,7 +26650,7 @@
         "Capacity":10,
         "Card Text":"Independent: While Nergal is acting, reaction cards cost 1 additional blood. Once each action, he can burn 1 blood to get +1 stealth. Infernal.",
         "Set":{
-            "Promo":"20190804"
+            "Promo":"20190408"
         },
         "Title":"",
         "Banned":"",
@@ -26046,6 +26897,28 @@
         "ASCII Name":"Nik",
         "Disciplines":{
             "Celerity":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201564,
+        "Name":"Nik Sikko",
+        "Type":"Vampire",
+        "Clan":"Toreador",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTo1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Carmen Cornet",
+        "ASCII Name":"Nik Sikko",
+        "Disciplines":{
+            "Celerity":1,
+            "Presence":1
         },
         "Rulings":[]
     },
@@ -26653,6 +27526,29 @@
         "Rulings":[]
     },
     {
+        "Id":201565,
+        "Name":"Oshri Dahan",
+        "Type":"Vampire",
+        "Clan":"Ventrue",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PV1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Mark Kelly",
+        "ASCII Name":"Oshri Dahan",
+        "Disciplines":{
+            "Dominate":1,
+            "Fortitude":1,
+            "Presence":1
+        },
+        "Rulings":[]
+    },
+    {
         "Id":201085,
         "Name":"Osric Vladislav",
         "Type":"Vampire",
@@ -26962,6 +27858,30 @@
         "Disciplines":{
             "Potence":2,
             "Presence":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201566,
+        "Name":"Patrik S\u00f6derberg",
+        "Type":"Vampire",
+        "Clan":"Tremere",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTr1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Gin\u00e9s Qui\u00f1onero",
+        "ASCII Name":"Patrik Soderberg",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
         },
         "Rulings":[]
     },
@@ -29574,6 +30494,27 @@
         "Rulings":[]
     },
     {
+        "Id":201567,
+        "Name":"Rosalina Cortez",
+        "Type":"Vampire",
+        "Clan":"Tremere",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTr1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Ken Meyer, Jr.",
+        "ASCII Name":"Rosalina Cortez",
+        "Disciplines":{
+            "Thaumaturgy":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":201205,
         "Name":"Rose, The",
         "Type":"Vampire",
@@ -29830,6 +30771,29 @@
             "Animalism":1,
             "Auspex":1,
             "Obfuscate":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201568,
+        "Name":"Ryan",
+        "Type":"Vampire",
+        "Clan":"Nosferatu",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PN1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Gin\u00e9s Qui\u00f1onero",
+        "ASCII Name":"Ryan",
+        "Disciplines":{
+            "Animalism":1,
+            "Obfuscate":1,
+            "Potence":1
         },
         "Rulings":[]
     },
@@ -32466,6 +33430,30 @@
         "Rulings":[]
     },
     {
+        "Id":201569,
+        "Name":"Sully",
+        "Type":"Vampire",
+        "Clan":"Malkavian",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PM1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Mark Kelly",
+        "ASCII Name":"Sully",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":201324,
         "Name":"Sundervere, The Devil Brahmin",
         "Type":"Vampire",
@@ -32588,6 +33576,30 @@
             "Dominate":1,
             "Obfuscate":1,
             "Presence":2
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201570,
+        "Name":"Sybren van Oosten",
+        "Type":"Vampire",
+        "Clan":"Ventrue",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Camarilla Prince of Rotterdam: You can unlock Sybren after a referendum called by him passes.",
+        "Set":{
+            "V5":"PV2"
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":"Heather V. Kreiter",
+        "ASCII Name":"Sybren van Oosten",
+        "Disciplines":{
+            "Dominate":1,
+            "Fortitude":2,
+            "Presence":2,
+            "Protean":2
         },
         "Rulings":[]
     },
@@ -32835,6 +33847,29 @@
             "Obfuscate":2,
             "Potence":2,
             "Thaumaturgy":1
+        },
+        "Rulings":[]
+    },
+    {
+        "Id":201571,
+        "Name":"Tamoszius",
+        "Type":"Vampire",
+        "Clan":"Toreador",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTo1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Amy Wilkins",
+        "ASCII Name":"Tamoszius",
+        "Disciplines":{
+            "Auspex":1,
+            "Celerity":2,
+            "Presence":2
         },
         "Rulings":[]
     },
@@ -34024,6 +35059,29 @@
         "Rulings":[]
     },
     {
+        "Id":201572,
+        "Name":"Trevon Parker",
+        "Type":"Vampire",
+        "Clan":"Tremere",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PTr2"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Clint Langley",
+        "ASCII Name":"Trevon Parker",
+        "Disciplines":{
+            "Auspex":2,
+            "Dominate":2,
+            "Thaumaturgy":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":201387,
         "Name":"Troglodytia",
         "Type":"Vampire",
@@ -34525,7 +35583,8 @@
         "Card Text":"Sabbat Archbishop of Dublin: Combat cards requiring Fortitude [for] cost Una 1 fewer blood.",
         "Set":{
             "Gehenna":"U",
-            "25th":"1"
+            "25th":"1",
+            "Promo":"20200511"
         },
         "Title":"archbishop",
         "Banned":"",
@@ -35938,6 +36997,30 @@
         "Rulings":[]
     },
     {
+        "Id":201573,
+        "Name":"Wauneka",
+        "Type":"Vampire",
+        "Clan":"Nosferatu",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5":"PN1"
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":"Mirko Falloni",
+        "ASCII Name":"Wauneka",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Potence":2
+        },
+        "Rulings":[]
+    },
+    {
         "Id":201465,
         "Name":"Weirich Waldburg",
         "Type":"Vampire",
@@ -36467,7 +37550,7 @@
         "Capacity":8,
         "Card Text":"Sabbat: Yazid gets +1 stealth on (D) actions. Black Hand.\n[MERGED] Anarch.",
         "Set":{
-            "Promo":"20190804",
+            "Promo":"20190408",
             "POD":"DTC"
         },
         "Title":"",
@@ -36913,7 +37996,7 @@
         "Adv":"",
         "Group":"5",
         "Capacity":8,
-        "Card Text":"Camarilla primogen: If Zelios is ready, he can lock to pay the pool cost of a location with his blood instead. +1 strength.",
+        "Card Text":"Camarilla primogen: If Zelios is ready, you can lock him to pay the pool cost of a location with his blood instead. +1 strength.",
         "Set":{
             "KoT":"V/A1"
         },

@@ -17,7 +17,8 @@
             "SW":"PB",
             "CE":"PTo3",
             "LoB":"PO3",
-            "FB":"PTr2"
+            "FB":"PTr2",
+            "V5":"PTr1"
         },
         "Requirement":"",
         "Banned":"",
@@ -330,7 +331,8 @@
             "VTES":"U",
             "CE":"U/PTr",
             "KoT":"U",
-            "FB":"PTr1"
+            "FB":"PTr1",
+            "V5":"PTr1"
         },
         "Requirement":"",
         "Banned":"",
@@ -696,7 +698,8 @@
             "CE":"C/PTo3",
             "Anarchs":"PAB",
             "KMW":"PAn2",
-            "FB":"PTo4"
+            "FB":"PTo4",
+            "V5":"PTo2"
         },
         "Requirement":"",
         "Banned":"",
@@ -1302,17 +1305,18 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. During your unlock phase, you may lock up to 2 vampires controlled by your prey or burn an equipment on one of your prey's minions. If you do so, your prey takes control of the Anarch Troublemaker.",
+        "Card Text":"Unique.\nPut this card in play. During your unlock phase, you can give control of the Anarch Troublemaker to your prey and either lock up to two vampires they control or burn an equipment on one of their minions.",
         "Set":{
             "Jyhad":"R",
             "VTES":"R",
             "CE":"R",
             "Anarchs":"PAB",
-            "KoT":"R"
+            "KoT":"R",
+            "V5":"PV1"
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Peter Bergting; Bryon Wackwitz",
+        "Artist":"Bryon Wackwitz; Peter Bergting",
         "Capacity":"",
         "ASCII Name":"Anarch Troublemaker",
         "Rulings":[]
@@ -1478,7 +1482,8 @@
             "CE":"C/PTo2",
             "LoB":"PG2",
             "25th":"1",
-            "FB":"PV1"
+            "FB":"PV1",
+            "V5":"PV1"
         },
         "Requirement":"",
         "Banned":"",
@@ -1621,7 +1626,8 @@
             "AH":"U5",
             "CE":"U",
             "KoT":"U",
-            "25th":"1"
+            "25th":"1",
+            "Promo":"20200511"
         },
         "Requirement":"",
         "Banned":"",
@@ -1756,7 +1762,8 @@
             "BH":"PTr4",
             "KMW":"PB",
             "Third":"C/PTr5",
-            "FB":"PTr4"
+            "FB":"PTr4",
+            "V5":"PTr4"
         },
         "Requirement":"",
         "Banned":"",
@@ -1848,7 +1855,8 @@
             "VTES":"R",
             "CE":"R",
             "KoT":"R",
-            "FB":"PTr1"
+            "FB":"PTr1",
+            "V5":"PTr1"
         },
         "Requirement":"",
         "Banned":"",
@@ -2178,7 +2186,8 @@
             "VTES":"R",
             "CE":"R",
             "KoT":"R",
-            "FB":"PTo1"
+            "FB":"PTo1",
+            "V5":"PTo1"
         },
         "Requirement":"",
         "Banned":"",
@@ -2476,7 +2485,8 @@
             "VTES":"U",
             "CE":"U/PM",
             "KoT":"U",
-            "FB":"PM1"
+            "FB":"PM1",
+            "V5":"PM1"
         },
         "Requirement":"",
         "Banned":"",
@@ -2827,7 +2837,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Backflip",
         "Rulings":[]
@@ -3111,7 +3121,8 @@
             "CE":"PV",
             "LoB":"PA/PI",
             "HttB":"PGar",
-            "FB":"PM1"
+            "FB":"PM1",
+            "V5":"PM1"
         },
         "Requirement":"",
         "Banned":"",
@@ -3609,7 +3620,8 @@
             "BH":"PTo3",
             "LoB":"PG4",
             "Third":"PB5",
-            "FB":"PTo2"
+            "FB":"PTo2",
+            "V5":"PTo4/PV4"
         },
         "Requirement":"",
         "Banned":"",
@@ -3866,7 +3878,8 @@
         "Set":{
             "SW":"R",
             "Third":"R",
-            "25th":"1"
+            "25th":"1",
+            "Promo":"20200511"
         },
         "Requirement":"",
         "Banned":"",
@@ -3908,7 +3921,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable by a locked vampire.\n[qui] Only usable during a (D) action against you (or a card you control). This vampire unlocks and attempts to block.\n[QUI] As above, but usable during any action.",
+        "Card Text":"Only usable by a locked vampire.\n[qui] Only usable during a (D) action against you (or a card you control). This vampire unlocks and attempts to block.\n[QUI] This vampire unlocks and attempts to block.",
         "Set":{
             "KMW":"C",
             "LotN":"PA3",
@@ -4533,7 +4546,8 @@
             "KMW":"PB3/PG3/PAn2",
             "LoB":"PA3/PI2/PO2",
             "Third":"PB2/PM2/PTr2/PTz2",
-            "FB":"PM3/PN3/PTo3/PTr2/PV3"
+            "FB":"PM3/PN3/PTo3/PTr2/PV3",
+            "V5":"PM4/PV3"
         },
         "Requirement":"",
         "Banned":"",
@@ -5374,7 +5388,8 @@
             "BH":"PTr4",
             "Third":"PTr4",
             "HttB":"PKia6",
-            "FB":"PTr4/PV4"
+            "FB":"PTr4/PV4",
+            "V5":"PM4/PTr6"
         },
         "Requirement":"",
         "Banned":"",
@@ -5527,11 +5542,12 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nThe bearer with Auspex [aus] gets +1 intercept. The bearer with superior Auspex [AUS] can burn 1 blood during an action to get an additional +1 intercept .",
+        "Card Text":"Unique.\nThe bearer with Auspex [aus] gets +1 intercept. The bearer with superior Auspex [AUS] can burn 1 blood during an action to get an additional +1 intercept.",
         "Set":{
             "Tenth":"A/B",
             "KoT":"R/PT",
-            "SP":"DoF1"
+            "SP":"DoF1",
+            "V5":"PTr1"
         },
         "Requirement":"",
         "Banned":"",
@@ -6861,7 +6877,8 @@
             "LotN":"PR3",
             "KoT":"C",
             "SP":"DoF5",
-            "FB":"PN5"
+            "FB":"PN5",
+            "V5":"PN2"
         },
         "Requirement":"",
         "Banned":"",
@@ -7035,7 +7052,8 @@
             "Anarchs":"PG3",
             "BH":"PN3",
             "LoB":"PG3",
-            "FB":"PN3"
+            "FB":"PN3",
+            "V5":"PN4"
         },
         "Requirement":"",
         "Banned":"",
@@ -7365,7 +7383,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable if this minion is blocked, before block resolution.\nUnlock this acting minion, and the action ends (unsuccessfully). This minion cannot perform the same action again this turn.",
+        "Card Text":"Only usable if this minion is blocked, before block resolution.\nUnlock this minion, and the action ends (unsuccessfully). This minion cannot perform the same action again this turn.",
         "Set":{
             "Jyhad":"U",
             "VTES":"U",
@@ -7374,7 +7392,8 @@
             "LoB":"PG2/PI2",
             "KoT":"U/PM3",
             "SP":"LB4",
-            "FB":"PTo4"
+            "FB":"PTo4",
+            "V5":"PTo2"
         },
         "Requirement":"",
         "Banned":"",
@@ -7516,7 +7535,8 @@
             "VTES":"U",
             "CE":"U",
             "HttB":"PGar",
-            "FB":"PTr1"
+            "FB":"PTr1",
+            "V5":"PTr1"
         },
         "Requirement":"",
         "Banned":"",
@@ -8262,7 +8282,8 @@
             "LotN":"PS2",
             "KoT":"C",
             "HttB":"PSam4",
-            "FB":"PM3/PN3"
+            "FB":"PM3/PN3",
+            "V5":"PM4"
         },
         "Requirement":"",
         "Banned":"",
@@ -9141,7 +9162,8 @@
             "KoT":"C/PV5",
             "HttB":"PGar4",
             "SP":"PoS4/PwN3",
-            "FB":"PV2"
+            "FB":"PV2",
+            "V5":"PM4/PV4"
         },
         "Requirement":"",
         "Banned":"",
@@ -9346,7 +9368,8 @@
             "LoB":"PG2",
             "Third":"C/PB",
             "SP":"LB7",
-            "FB":"PTo2"
+            "FB":"PTo2",
+            "V5":"PTo4"
         },
         "Requirement":"",
         "Banned":"",
@@ -10094,6 +10117,27 @@
         "Rulings":[]
     },
     {
+        "Id":102213,
+        "Name":"Creeping Sabotage",
+        "Type":"Action",
+        "Clan":"Nosferatu",
+        "Discipline":"",
+        "Pool Cost":"",
+        "Blood Cost":"X",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"+1 stealth action.\nX is the number of Creeping Sabotages you control. Put this card in play. During your unlock phase, your prey burns 1 pool. Any minion can burn this card as a (D) action.",
+        "Set":{
+            "V5":"PN4"
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":"Javier Santos",
+        "Capacity":"",
+        "ASCII Name":"Creeping Sabotage",
+        "Rulings":[]
+    },
+    {
         "Id":100444,
         "Name":"Creepshow Casino",
         "Type":"Master",
@@ -10107,7 +10151,8 @@
         "Set":{
             "FN":"R2",
             "Third":"PB",
-            "SP":"LB1"
+            "SP":"LB1",
+            "V5":"PTo1"
         },
         "Requirement":"",
         "Banned":"",
@@ -11163,7 +11208,8 @@
             "FN":"PR",
             "LoB":"PI",
             "Third":"R",
-            "FB":"PV1"
+            "FB":"PV1",
+            "V5":"PV1"
         },
         "Requirement":"",
         "Banned":"",
@@ -11675,12 +11721,13 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[ani] (D) Bleed with +1 bleed.\n[ANI] Frenzy. (D) Enter combat with and lock a vampire. That target vampire is considered the acting minion in that combat.",
+        "Card Text":"[ani] (D) Bleed with +1 bleed.\n[ANI] Frenzy. (D) Enter combat with and lock a vampire. The target vampire is considered the acting minion during that combat.",
         "Set":{
             "KoT":"C/A2",
             "HttB":"PSam2",
             "Anthology":"4",
-            "SP":"DoF4"
+            "SP":"DoF4",
+            "V5":"PN6"
         },
         "Requirement":"",
         "Banned":"",
@@ -11757,7 +11804,8 @@
             "HttB":"PGar4",
             "SP":"PoS4/PwN3",
             "25th":"6",
-            "FB":"PV4"
+            "FB":"PV4",
+            "V5":"PM5/PTr4/PV6"
         },
         "Requirement":"",
         "Banned":"",
@@ -12843,7 +12891,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Divine Image",
         "Rulings":[]
@@ -13366,7 +13414,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Dream World",
         "Rulings":[]
@@ -13381,7 +13429,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Add 1 counter on this card each time you lock it. Lock to get +2 hand size until the end of this turn. Lock during your unlock phase to gain 1 pool if you have the Edge. Lock to add 1 blood to a vampire in your uncontrolled region. Burn this card if it has 3 counters.",
+        "Card Text":"Unique.\nPut this card in play. Add 1 counter to this card each time you lock it. Lock to get +2 hand size until the end of the turn. Lock during your unlock phase to gain 1 pool if you have the Edge. Lock to add 1 blood to a vampire in your uncontrolled region. Burn this card if it has 3 counters.",
         "Set":{
             "AH":"R2",
             "FN":"PG",
@@ -13389,7 +13437,8 @@
             "Third":"R2",
             "HttB":"PSam",
             "SP":"PwN1",
-            "25th":"1"
+            "25th":"1",
+            "V5":"PM1"
         },
         "Requirement":"",
         "Banned":"",
@@ -14125,14 +14174,15 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\n+1 hand size.",
+        "Card Text":"Unique location.\n+1 hand size.",
         "Set":{
             "Jyhad":"C",
             "VTES":"C",
             "SW":"PT",
             "FN":"PG",
             "CE":"U",
-            "LoB":"PG"
+            "LoB":"PG",
+            "V5":"PM1"
         },
         "Requirement":"",
         "Banned":"",
@@ -14392,11 +14442,12 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nDuring the referendum of a political action, you may lock this card to give 1 additional vote to each ready titled Camarilla vampire you control.",
+        "Card Text":"Unique location.\nLock during the polling step of a political action to give each ready titled Camarilla vampire you control +1 vote.",
         "Set":{
             "DS":"U2",
             "CE":"PTo",
-            "KoT":"U"
+            "KoT":"U",
+            "V5":"PTo1"
         },
         "Requirement":"",
         "Banned":"",
@@ -14581,7 +14632,8 @@
             "LoB":"PI5",
             "Third":"C",
             "SP":"LB6",
-            "FB":"PTo6"
+            "FB":"PTo6",
+            "V5":"PTo6/PV8"
         },
         "Requirement":"",
         "Banned":"",
@@ -15152,7 +15204,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Eternal Mask, The",
         "Rulings":[
@@ -15474,12 +15526,13 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[aus] Only usable during a (D) action against you (or a card you control). +2 intercept.\n[AUS] Only usable by a locked vampire. This vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",
+        "Card Text":"[aus] Only usable during an action directed at you (or a card you control). +2 intercept.\n[AUS] Only usable by a locked vampire. This vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",
         "Set":{
             "KoT":"C/B2",
             "HttB":"PSal3",
             "Anthology":"4",
-            "SP":"DoF4/PwN2"
+            "SP":"DoF4/PwN2",
+            "V5":"PM5/PTr6"
         },
         "Requirement":"",
         "Banned":"",
@@ -15631,18 +15684,19 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf] +1 stealth.\n[OBF] +1 stealth, and any minion who attempts to block this action and fails becomes locked when the action is resolved (before resolving the action).",
+        "Card Text":"[obf] +1 stealth.\n[OBF] As above, and any minion who attempts to block this action and fails becomes locked before action resolution.",
         "Set":{
             "Jyhad":"C",
             "VTES":"C",
             "CE":"C/PM4",
             "BH":"PM4/PN4",
             "KMW":"PB3",
-            "Third":"C"
+            "Third":"C",
+            "V5":"PM4"
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Harold Arthur McNeill",
+        "Artist":"Harold Arthur McNeill; Samuel Araya",
         "Capacity":"",
         "ASCII Name":"Faceless Night",
         "Rulings":[]
@@ -15893,7 +15947,8 @@
             "KoT":"U/PT2",
             "HttB":"PGar/PSal",
             "SP":"DoF1/PwN1",
-            "FB":"PN1"
+            "FB":"PN1",
+            "V5":"PN1"
         },
         "Requirement":"",
         "Banned":"",
@@ -16150,7 +16205,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"FBI Special Affairs Division",
         "Rulings":[]
@@ -17415,7 +17470,8 @@
             "AH":"C2",
             "FN":"PG3",
             "Third":"C",
-            "25th":"1"
+            "25th":"1",
+            "V5":"PM2"
         },
         "Requirement":"",
         "Banned":"",
@@ -17964,7 +18020,8 @@
             "LotN":"PR",
             "KoT":"PV3",
             "HttB":"PSam2",
-            "25th":"3"
+            "25th":"3",
+            "V5":"PV6"
         },
         "Requirement":"",
         "Banned":"",
@@ -19263,11 +19320,12 @@
             "HttB":"PKia6/PSal4",
             "SP":"PoS6",
             "25th":"7",
-            "FB":"PTr6/PV6"
+            "FB":"PTr6/PV6",
+            "V5":"PM12/PTr12"
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Mark Poole; Oliver Meinerding",
+        "Artist":"Mark Poole; Oliver Meinerding; Carmen Cornet",
         "Capacity":"",
         "ASCII Name":"Govern the Unaligned",
         "Rulings":[]
@@ -19671,7 +19729,8 @@
             "Anarchs":"PG3",
             "BH":"PN5",
             "Third":"C/PTz3",
-            "FB":"PN3"
+            "FB":"PN3",
+            "V5":"PN4"
         },
         "Requirement":"",
         "Banned":"",
@@ -19732,13 +19791,14 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a ready vampire you control. This vampire gets +1 intercept when you are being bled. This vampire may prevent 1 damage each combat. Burn this card if this vampire goes to torpor.",
+        "Card Text":"Put this card on a ready vampire you control. This vampire gets +1 intercept during bleed actions against you. This vampire can prevent 1 damage each combat. Burn this card if this vampire is in torpor.",
         "Set":{
             "AH":"C2",
             "FN":"PR",
             "LoB":"PO2",
             "Third":"C",
-            "HttB":"PGar"
+            "HttB":"PGar",
+            "V5":"PN1"
         },
         "Requirement":"",
         "Banned":"",
@@ -20409,7 +20469,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a ready vampire. Any minion not controlled by that vampire's controller may enter combat with that vampire as a +1 stealth (D) action. That vampire can burn this card as a +1 stealth (D) action.",
+        "Card Text":"Put this card on a ready vampire. Any minion can enter combat with this vampire as a +1 stealth (D) action. This vampire can burn this card as a +1 stealth (D) action.",
         "Set":{
             "Jyhad":"C",
             "VTES":"C",
@@ -20417,7 +20477,8 @@
             "FN":"PG2",
             "CE":"C/PB2",
             "Anarchs":"PAG/PG",
-            "KMW":"PAn3"
+            "KMW":"PAn3",
+            "V5":"PN1"
         },
         "Requirement":"",
         "Banned":"",
@@ -20886,11 +20947,12 @@
         "Blood Cost":"X",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] Prevent X+1 damage.\n[FOR] As above, with an optional press.",
+        "Card Text":"[for] Prevent X+1 damage.\n[FOR] As above, with 1 optional press.",
         "Set":{
             "AH":"C2",
             "CE":"C",
-            "LoB":"PI4"
+            "LoB":"PI4",
+            "V5":"PV4"
         },
         "Requirement":"",
         "Banned":"",
@@ -21583,7 +21645,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Ignore the Searing Flames",
         "Rulings":[]
@@ -21797,7 +21859,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable at close range before strikes are chosen. Grapple.\n[pot] Strikes that are not hand strikes may not be used this round (by either combatant). A vampire may play only one Immortal Grapple each round.\n[POT] As above, with an optional press. If another round of combat occurs, that round is at close range; skip the determine range step for that round.",
+        "Card Text":"Grapple. Only usable at close range before strikes are chosen. A vampire can play only one Immortal Grapple each round.\n[pot] Strikes that are not hand strikes cannot be used this round (by either combatant).\n[POT] As above, with 1 optional press. If another round of combat occurs, that round is at close range (skip the determine range step for that round).",
         "Set":{
             "Jyhad":"R2",
             "VTES":"R",
@@ -21808,11 +21870,12 @@
             "Third":"U",
             "LotN":"PG2",
             "KoT":"U/PB3",
-            "HttB":"PGar3"
+            "HttB":"PGar3",
+            "V5":"PN4"
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Clint Langley; L. A. Williams; Avery Butterworth",
+        "Artist":"L. A. Williams; Clint Langley; Avery Butterworth",
         "Capacity":"",
         "ASCII Name":"Immortal Grapple",
         "Rulings":[
@@ -22376,7 +22439,8 @@
             "Third":"U",
             "HttB":"PSal",
             "SP":"PoS1",
-            "25th":"1"
+            "25th":"1",
+            "V5":"PV1"
         },
         "Requirement":"",
         "Banned":"",
@@ -22621,7 +22685,8 @@
             "Third":"C",
             "LotN":"PR3",
             "KoT":"C",
-            "FB":"PN2"
+            "FB":"PN2",
+            "V5":"PN4"
         },
         "Requirement":"",
         "Banned":"",
@@ -22714,7 +22779,8 @@
             "Sabbat":"R",
             "SW":"R",
             "CE":"PV",
-            "Third":"R"
+            "Third":"R",
+            "V5":"PV4"
         },
         "Requirement":"",
         "Banned":"",
@@ -23625,7 +23691,8 @@
         "Burn Option":"",
         "Card Text":"Once each combat, the bearer can prevent 2 damage from gun strikes or 1 damage from any other source. A minion can have only one Kevlar Vest.",
         "Set":{
-            "KoT":"U/B2"
+            "KoT":"U/B2",
+            "V5":"PTr1"
         },
         "Requirement":"",
         "Banned":"",
@@ -24009,7 +24076,8 @@
             "KoT":"C/PT4/PV6",
             "SP":"LB6/PoS8",
             "25th":"4",
-            "FB":"PTo4/PV5"
+            "FB":"PTo4/PV5",
+            "V5":"PTo8/PV7"
         },
         "Requirement":"",
         "Banned":"",
@@ -24324,7 +24392,8 @@
             "VTES":"U",
             "CE":"U",
             "KoT":"U",
-            "FB":"PN1"
+            "FB":"PN1",
+            "V5":"PN1"
         },
         "Requirement":"",
         "Banned":"",
@@ -24963,7 +25032,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Leverage",
         "Rulings":[]
@@ -25093,12 +25162,13 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: trifle.\nMove 1 blood from the blood bank to a ready vampire.",
+        "Card Text":"Trifle.\nAdd 1 blood to a ready vampire.",
         "Set":{
             "Anarchs":"C2",
             "KMW":"PAn",
             "LoB":"PA2/PI2",
-            "KoT":"C/PM4"
+            "KoT":"C/PM4",
+            "V5":"PM2"
         },
         "Requirement":"",
         "Banned":"",
@@ -25553,7 +25623,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf] +1 stealth. /Into Thin Air/ and Lost in Crowds cannot both be played on the same action.\n[OBF] As above, but for +2 stealth.",
+        "Card Text":"[obf] +1 stealth. Lost in Crowds and cards named /Into Thin Air/ cannot both be played on the same action.\n[OBF] As above, but for +2 stealth.",
         "Set":{
             "Jyhad":"C",
             "VTES":"C",
@@ -25564,7 +25634,8 @@
             "KMW":"PG2",
             "Third":"C/PM4",
             "HttB":"PSam4",
-            "FB":"PM3/PN3"
+            "FB":"PM3/PN3",
+            "V5":"PM4/PN4"
         },
         "Requirement":"",
         "Banned":"",
@@ -25970,17 +26041,18 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[tha] Search your library for an equipment card and equip this acting vampire with it (requirements and cost apply as normal). Shuffle afterward.\n[THA] As above, but this is a +3 stealth action.",
+        "Card Text":"+1 stealth action.\n[tha] Search your library for an equipment card and equip this vampire with it (requirements and cost apply as normal; shuffle afterward).\n[THA] As above, but this is a +3 stealth action.",
         "Set":{
             "Jyhad":"R",
             "VTES":"R",
             "CE":"PTr",
             "Third":"R",
-            "KoT":"R"
+            "KoT":"R",
+            "V5":"PTr2"
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Andrew Trabbold; Jeff Menges",
+        "Artist":"Jeff Menges; Andrew Trabbold",
         "Capacity":"",
         "ASCII Name":"Magic of the Smith",
         "Rulings":[
@@ -26007,7 +26079,8 @@
             "LotN":"PS4",
             "KoT":"C/PV4",
             "SP":"LB4",
-            "FB":"PTo4"
+            "FB":"PTo4",
+            "V5":"PTo6/PV6"
         },
         "Requirement":"",
         "Banned":"",
@@ -27794,11 +27867,12 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Do not replace until your discard phase.\n[tha] +1 stealth.\n[THA] As [tha] above, and if this action is blocked, lock the blocking minion and end the action before block resolution.",
+        "Card Text":"Do not replace until your discard phase.\n[tha] +1 stealth.\n[THA] As above, and if this action is blocked, lock the blocking minion and end the action before block resolution.",
         "Set":{
             "Third":"C",
             "KoT":"C",
-            "SP":"PwN6"
+            "SP":"PwN6",
+            "V5":"PTr6"
         },
         "Requirement":"",
         "Banned":"",
@@ -27823,7 +27897,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Mirror's Visage",
         "Rulings":[]
@@ -27846,7 +27920,8 @@
             "FN":"PS",
             "CE":"PM2/PV",
             "LoB":"PI",
-            "FB":"PV2"
+            "FB":"PV2",
+            "V5":"PTr1/PV1"
         },
         "Requirement":"",
         "Banned":"",
@@ -28489,11 +28564,12 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Animal with 1 life.\n[ani] Murder of Crows inflicts 1R damage each round of combat during normal strike resolution.\n[ANI] As above, but Murder of Crows has 2 life.",
+        "Card Text":"Animal with 1 life.\n[ani] Murder of Crows inflicts 1R damage on the opposing minion each round of combat during normal strike resolution.\n[ANI] As above, but Murder of Crows has 2 life.",
         "Set":{
             "Jyhad":"R2",
             "VTES":"R",
-            "CE":"R"
+            "CE":"R",
+            "V5":"PN2"
         },
         "Requirement":"",
         "Banned":"",
@@ -28542,7 +28618,8 @@
             "LotN":"C/PG4",
             "KoT":"C/PV5",
             "HttB":"PKia4",
-            "25th":"2"
+            "25th":"2",
+            "Promo":"20200511"
         },
         "Requirement":"",
         "Banned":"",
@@ -29895,7 +29972,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique werewolf with 3 life. 3 strength, 0 bleed.\nWhen a minion you control is about to enter combat with an acting minion, you may lock Ohoyo to cancel that combat; Ohoyo enters combat with the acting minion instead. She gets an optional maneuver each combat. If she has less than 3 life during your unlock phase, she gains 1 life from the blood bank.",
+        "Card Text":"Unique werewolf with 3 life. 3 strength, 0 bleed.\nWhen a minion you control would enter combat with an acting minion, you may lock Ohoyo to cancel that combat and have Ohoyo enter combat with the acting minion instead. She gets an optional maneuver each combat. If she has less than 3 life during your unlock phase, she gains 1 life from the blood bank.",
         "Set":{
             "LoB":"R"
         },
@@ -29987,7 +30064,8 @@
             "HttB":"PKia3/PSam4",
             "SP":"DoF4/LB4/PoS2/PwN6",
             "25th":"3",
-            "FB":"PM5/PN2/PTo5/PTr3/PV3"
+            "FB":"PM5/PN2/PTo5/PTr3/PV3",
+            "V5":"PM5/PN5/PTr4"
         },
         "Requirement":"",
         "Banned":"",
@@ -30700,7 +30778,9 @@
             "Jyhad":"V",
             "VTES":"V",
             "CE":"U",
-            "25th":"5"
+            "25th":"5",
+            "Promo":"20200511",
+            "V5":"PTo4/PV5"
         },
         "Requirement":"prince,justicar",
         "Banned":"",
@@ -31393,7 +31473,9 @@
             "DS":"U3",
             "FN":"PS",
             "Third":"U",
-            "25th":"1"
+            "25th":"1",
+            "Promo":"20200511",
+            "V5":"PTr1"
         },
         "Requirement":"",
         "Banned":"",
@@ -31458,7 +31540,8 @@
         "Card Text":"[pre] Only usable during the polling step of a political action. This vampire gets +3 votes.\n[PRE] Allies and younger vampires get -1 intercept.",
         "Set":{
             "KoT":"U/B2",
-            "SP":"LB3"
+            "SP":"LB3",
+            "V5":"PTo4"
         },
         "Requirement":"",
         "Banned":"",
@@ -33427,7 +33510,8 @@
             "Third":"C/PM3",
             "HttB":"PSal3",
             "SP":"DoF4",
-            "FB":"PTr2"
+            "FB":"PTr2",
+            "V5":"PTr2"
         },
         "Requirement":"",
         "Banned":"",
@@ -33604,9 +33688,10 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+2 stealth action.\n[pot] Put this card on this vampire. This vampire gets +1 strength. He or she cannot play Torn Signpost. A vampire can have only one Preternatural Strength.\n[POT] As above, but this vampire gets +2 strength.",
+        "Card Text":"+2 stealth action.\n[pot] Put this card on this vampire. This vampire gets +1 strength. They cannot play cards named /Torn Signpost/. A vampire can have only one Preternatural Strength.\n[POT] As above, but this vampire gets +2 strength.",
         "Set":{
-            "LotN":"R"
+            "LotN":"R",
+            "V5":"PN2"
         },
         "Requirement":"",
         "Banned":"",
@@ -33966,6 +34051,27 @@
         "Artist":"Phillip Tan",
         "Capacity":"",
         "ASCII Name":"Protect Thine Own",
+        "Rulings":[]
+    },
+    {
+        "Id":102214,
+        "Name":"Protected District",
+        "Type":"Reaction",
+        "Clan":"",
+        "Discipline":"",
+        "Pool Cost":"",
+        "Blood Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires a primogen. Only usable during a bleed action against you or during the polling step of a political action.\nReduce the bleed amount by 3 or this vampire gains +3 votes against the referendum.",
+        "Set":{
+            "V5":"PN4"
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":"Felipe Gaona",
+        "Capacity":"",
+        "ASCII Name":"Protected District",
         "Rulings":[]
     },
     {
@@ -35160,7 +35266,8 @@
             "LotN":"PR3",
             "KoT":"U",
             "SP":"DoF2",
-            "FB":"PN2"
+            "FB":"PN2",
+            "V5":"PN2"
         },
         "Requirement":"",
         "Banned":"",
@@ -35474,9 +35581,10 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: archetype. Trifle.\nPut this card on a vampire you control. Once per turn, when this vampire successfully blocks a titled vampire or a political action, he or she gains 1 blood from the blood bank (before the resulting combat, if any). A vampire can have only one archetype.",
+        "Card Text":"Archetype. Trifle.\nPut this card on a vampire you control. Once each turn, if they block a titled vampire or a political action, this vampire gains 1 blood before block resolution. A vampire can have only one archetype.",
         "Set":{
-            "Gehenna":"C"
+            "Gehenna":"C",
+            "V5":"PN1"
         },
         "Requirement":"",
         "Banned":"",
@@ -36489,7 +36597,8 @@
         "Set":{
             "LotN":"C/PA2",
             "KoT":"C/PB5",
-            "SP":"LB3"
+            "SP":"LB3",
+            "V5":"PTo8"
         },
         "Requirement":"",
         "Banned":"",
@@ -36805,7 +36914,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Revelation of Ecstasy",
         "Rulings":[]
@@ -36866,13 +36975,14 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[aus] (D) Look at your prey's hand. He or she discards a card of your choice.\n[AUS] Put this card in play. Your prey plays with an open hand. Any minion may burn this card as a (D) action.",
+        "Card Text":"+1 stealth action.\n[aus] (D) Look at your prey's hand and discard one card of your choice from it.\n[AUS] Put this card in play. Your prey plays with an open hand. Any minion can burn this card as a (D) action.",
         "Set":{
             "Sabbat":"U",
             "SW":"U/PT",
             "CE":"PTr",
             "BH":"PTo2",
-            "Third":"U"
+            "Third":"U",
+            "V5":"PM4"
         },
         "Requirement":"",
         "Banned":"",
@@ -37488,6 +37598,27 @@
         "Artist":"Mike Danza",
         "Capacity":"",
         "ASCII Name":"Rotschreck",
+        "Rulings":[]
+    },
+    {
+        "Id":102215,
+        "Name":"Roundhouse",
+        "Type":"Combat",
+        "Clan":"",
+        "Discipline":"Potence",
+        "Pool Cost":"",
+        "Blood Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"[pot] Strike: hand strike at +2 damage.\n[POT] Strike: hand strike at +3 damage.",
+        "Set":{
+            "V5":"PN8"
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":"Carmen Cornet",
+        "Capacity":"",
+        "ASCII Name":"Roundhouse",
         "Rulings":[]
     },
     {
@@ -38209,7 +38340,8 @@
             "KMW":"C",
             "LoB":"PI3",
             "Third":"PB2",
-            "SP":"LB2"
+            "SP":"LB2",
+            "V5":"PTo4"
         },
         "Requirement":"",
         "Banned":"",
@@ -38663,7 +38795,8 @@
             "KMW":"PAl3",
             "KoT":"U/PV3",
             "25th":"3",
-            "FB":"PV2"
+            "FB":"PV2",
+            "V5":"PTo4/PV4"
         },
         "Requirement":"prince,justicar",
         "Banned":"",
@@ -39243,7 +39376,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Set's Curse",
         "Rulings":[]
@@ -40980,7 +41113,8 @@
             "CE":"U/PN",
             "KMW":"PAn",
             "KoT":"U",
-            "FB":"PN1"
+            "FB":"PN1",
+            "V5":"PN1"
         },
         "Requirement":"",
         "Banned":"",
@@ -41048,7 +41182,8 @@
             "CE":"R",
             "Third":"PTz",
             "KoT":"R",
-            "SP":"DoF1"
+            "SP":"DoF1",
+            "V5":"PN1"
         },
         "Requirement":"",
         "Banned":"",
@@ -41276,7 +41411,8 @@
             "Jyhad":"U",
             "VTES":"U",
             "CE":"U/PTo",
-            "FB":"PTo1"
+            "FB":"PTo1",
+            "V5":"PTo1"
         },
         "Requirement":"",
         "Banned":"",
@@ -41948,7 +42084,8 @@
             "Third":"PTr5/PTz2",
             "KoT":"C/PM3",
             "SP":"DoF4",
-            "FB":"PTr2"
+            "FB":"PTr2",
+            "V5":"PTr2"
         },
         "Requirement":"",
         "Banned":"",
@@ -42088,7 +42225,8 @@
             "CE":"PB/PN/PTr",
             "Third":"U",
             "HttB":"PSam3",
-            "FB":"PTr1"
+            "FB":"PTr1",
+            "V5":"PTr1"
         },
         "Requirement":"",
         "Banned":"",
@@ -42107,7 +42245,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf] +1 stealth.\n[OBF] Only usable when a bleed would be successful. The bleed burns no pool; it is unsuccessful. Instead, put this card on the acting vampire. The next time this vampire would successfully bleed the same Methuselah, burn this card for +2 bleed.",
+        "Card Text":"[obf] +1 stealth.\n[OBF] Only usable if a bleed would be successful. Instead, the bleed burns no pool, is unsuccessful, and this card is put on this vampire. The next time this vampire is about to successfully bleed the same Methuselah, burn this card and this vampire gets +2 bleed.",
         "Set":{
             "Jyhad":"U",
             "VTES":"U",
@@ -42115,11 +42253,12 @@
             "KMW":"PB2",
             "Third":"U",
             "LotN":"PS2",
-            "KoT":"U/PM4"
+            "KoT":"U/PM4",
+            "V5":"PM4"
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Julie Collins; Jeff Menges",
+        "Artist":"Jeff Menges; Julie Collins",
         "Capacity":"",
         "ASCII Name":"Spying Mission",
         "Rulings":[
@@ -42612,7 +42751,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Stuart Beel",
+        "Artist":"Lee Fields",
         "Capacity":"",
         "ASCII Name":"Strained Vitae Supply",
         "Rulings":[]
@@ -43392,7 +43531,8 @@
             "BH":"PN4",
             "KMW":"PAn3",
             "Third":"C/PM4",
-            "LotN":"PA3"
+            "LotN":"PA3",
+            "V5":"PM4"
         },
         "Requirement":"",
         "Banned":"",
@@ -44099,7 +44239,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable at the end of a round of combat. Not usable by a vampire being burned or going to torpor.\nThis vampire gains an amount of blood equal to the amount lost by the opposing vampire to damage during this round. A vampire may play only one Taste of Vitae each round.",
+        "Card Text":"Only usable at the end of a round of combat. Not usable by a vampire being burned or going to torpor. A vampire can play only one Taste of Vitae each round.\nThis vampire gains blood equal to the amount of blood lost by the opposing vampire to damage this round.",
         "Set":{
             "Jyhad":"U",
             "VTES":"U",
@@ -44110,7 +44250,8 @@
             "LoB":"PO2",
             "Third":"PB2",
             "LotN":"PG2",
-            "KoT":"U/PB3/PT3"
+            "KoT":"U/PB3/PT3",
+            "V5":"PN4"
         },
         "Requirement":"",
         "Banned":"",
@@ -44216,7 +44357,8 @@
             "Third":"C/PM2",
             "KoT":"C/PT4",
             "SP":"DoF2/LB4",
-            "FB":"PM4/PTo4/PTr4"
+            "FB":"PM4/PTo4/PTr4",
+            "V5":"PM5/PTr4"
         },
         "Requirement":"",
         "Banned":"",
@@ -44628,7 +44770,8 @@
             "Third":"C/PTr6",
             "KoT":"C",
             "SP":"PwN3",
-            "FB":"PTr6"
+            "FB":"PTr6",
+            "V5":"PTr10"
         },
         "Requirement":"",
         "Banned":"",
@@ -45145,15 +45288,16 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play. Choose 2 ready Toreador you control. The first Toreador's non-bleed actions cannot be blocked. The second Toreador does not unlock as normal during the unlock phase; lock the second Toreador. Any minion may burn this card as a (D) action; Nosferatu get -1 stealth when attempting that action.",
+        "Card Text":"Choose two ready Toreador you control, put this card in play, and lock one of the two. The locked Toreador does not unlock as normal. The other Toreador's non-bleed actions cannot be blocked. Any minion can burn this card as a (D) action; Nosferatu get -1 stealth during that action.",
         "Set":{
             "DS":"U",
             "CE":"U",
-            "KoT":"U"
+            "KoT":"U",
+            "V5":"PTo4"
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Richard Kane Ferguson; Jim DiBartolo",
+        "Artist":"Richard Kane Ferguson; Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Toreador Grand Ball",
         "Rulings":[
@@ -45171,16 +45315,17 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Title.\nChoose a ready Toreador. If this referendum is successful, put this card on the chosen Toreador to represent the unique Camarilla title of Toreador Justicar. In this referendum, each Toreador gets 1 extra vote.",
+        "Card Text":"Title.\nChoose a ready Toreador. Successful referendum means this card is put on the chosen Toreador to represent the unique Camarilla title of Toreador Justicar. In this referendum, each ready Toreador gets +1 vote.",
         "Set":{
             "Jyhad":"R",
             "VTES":"R",
             "CE":"R",
-            "KoT":"R"
+            "KoT":"R",
+            "V5":"PTo1"
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"William O'Connor; Heather Hudson",
+        "Artist":"Heather Hudson; William O'Connor",
         "Capacity":"",
         "ASCII Name":"Toreador Justicar",
         "Rulings":[]
@@ -46835,10 +46980,11 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Animal with 1 life. 0 strength, 0 bleed.\n[ani] The Stray may burn 1 life to give a minion you control a press. During a (D) action directed at you, you may burn the Stray to unlock a ready minion you control (not usable if the Stray is blocking).\n[ANI] As above, but the Stray has 2 life and 1 strength.",
+        "Card Text":"Animal with 1 life. 0 strength, 0 bleed.\n[ani] This ally can burn 1 life to give a minion you control 1 press. During an action directed at you (or a card you control), you can burn this ally if it is not blocking to unlock a ready minion you control.\n[ANI] As above, but this ally has 2 life and 1 strength.",
         "Set":{
             "LotN":"U",
-            "HttB":"PSam"
+            "HttB":"PSam",
+            "V5":"PN2"
         },
         "Requirement":"",
         "Banned":"",
@@ -47000,7 +47146,7 @@
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Jim DiBartolo",
+        "Artist":"Jim Di Bartolo",
         "Capacity":"",
         "ASCII Name":"Unholy Penance",
         "Rulings":[]
@@ -47269,7 +47415,8 @@
             "VTES":"U",
             "CE":"U/PV",
             "KoT":"U",
-            "FB":"PV1"
+            "FB":"PV1",
+            "V5":"PV1"
         },
         "Requirement":"",
         "Banned":"",
@@ -47839,7 +47986,8 @@
             "CE":"U",
             "Anarchs":"PAB",
             "KoT":"U",
-            "FB":"PV1"
+            "FB":"PV1",
+            "V5":"PV1"
         },
         "Requirement":"",
         "Banned":"",
@@ -47926,12 +48074,13 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Trifle.\nPut this card on any vampire, and you can burn a Blood Doll (if any). During their unlock phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
+        "Card Text":"Trifle.\nPut this card on any vampire, and you can burn a card named /Blood Doll/ (if any). During their unlock phase, this vampire's controller can move 1 blood from this vampire to their pool or from their pool to this vampire.",
         "Set":{
             "LotN":"PA2/PG2/PR2/PS2",
             "KoT":"PB2/PM2/PT2/PV2",
             "HttB":"PKia/PSal2/PSam2",
-            "SP":"DoF2/LB4/PwN3"
+            "SP":"DoF2/LB4/PwN3",
+            "V5":"PN4/PTr4"
         },
         "Requirement":"",
         "Banned":"",
@@ -48106,12 +48255,13 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Minion Tap costs you 1 additional pool. Villein costs 1 additional pool to play on this vampire.",
+        "Card Text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ costs you 1 additional pool to play. Villein costs 1 additional pool to play on this vampire.",
         "Set":{
             "KoT":"U/A2/B2",
             "HttB":"PGar2/PKia2/PSal2/PSam2",
             "SP":"DoF3/PoS4",
-            "25th":"5"
+            "25th":"5",
+            "V5":"PTo6"
         },
         "Requirement":"",
         "Banned":"",
@@ -48215,10 +48365,11 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card into play with 4 counters on it. You get +X hand size, where X is the number of counters on this card. Each time you would draw to replace a card (not counting the card to replace the Visit), burn a counter from this card instead. Burn this card if it has no counters.",
+        "Card Text":"Unique.\nPut this card in play with 4 counters. You get +1 hand size for each counter on this card. Each time you would replace a card other than this card, instead burn 1 counter from this card. Burn this card if it has no counters.",
         "Set":{
             "FN":"R2",
-            "Third":"R"
+            "Third":"R",
+            "V5":"PV1"
         },
         "Requirement":"",
         "Banned":"",
@@ -48325,7 +48476,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable after resolving a successful referendum called by this acting vampire.\n[pre] The acting vampire gains X blood from the blood bank, where X is the number of votes by which the referendum passed.\n[PRE] As above, but move up to 2 of those blood counters to your pool instead of this vampire.",
+        "Card Text":"Only usable after resolution of a political action whose referendum passed.\n[pre] This vampire gains 1 blood for each vote by which the referendum passed.\n[PRE] As above, but move up to 2 of those blood to your pool instead of this vampire.",
         "Set":{
             "Jyhad":"U2",
             "VTES":"U",
@@ -48334,11 +48485,12 @@
             "Anarchs":"PAB3",
             "KMW":"PAn3",
             "LoB":"PG3",
-            "Third":"U/PB2"
+            "Third":"U/PB2",
+            "V5":"PTo6/PV2"
         },
         "Requirement":"",
         "Banned":"",
-        "Artist":"Tom Gianni; Stuart Beel",
+        "Artist":"Stuart Beel; Tom Gianni",
         "Capacity":"",
         "ASCII Name":"Voter Captivation",
         "Rulings":[
@@ -48482,7 +48634,8 @@
             "KMW":"PAn3/PB5/PG2",
             "LoB":"PG2/PI3",
             "HttB":"PGar6/PSal5",
-            "SP":"PoS2"
+            "SP":"PoS2",
+            "V5":"PV4"
         },
         "Requirement":"",
         "Banned":"",
@@ -48741,6 +48894,27 @@
         "Rulings":[]
     },
     {
+        "Id":102216,
+        "Name":"Warrens, The",
+        "Type":"Reaction",
+        "Clan":"Nosferatu",
+        "Discipline":"",
+        "Pool Cost":"",
+        "Blood Cost":"1",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable during an action directed at you (or a card you control).\n+2 intercept, with an additional +1 intercept if this Nosferatu is titled.",
+        "Set":{
+            "V5":"PN4"
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":"Felipe Gaona",
+        "Capacity":"",
+        "ASCII Name":"Warrens, The",
+        "Rulings":[]
+    },
+    {
         "Id":102149,
         "Name":"Warsaw Station",
         "Type":"Master",
@@ -48750,10 +48924,11 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nYou can lock this card as a Nosferatu announces an undirected action; if that action is successful, unlock the acting Nosferatu. You can burn this card (even if it is locked) to move a Nosferatu in torpor to the ready region.",
+        "Card Text":"Unique location.\nYou can lock this card as a Nosferatu announces an undirected action; after action resolution, if that action was successful, unlock the acting Nosferatu. You can burn this card (even if it is locked) to move a Nosferatu in torpor to the ready region.",
         "Set":{
             "KoT":"R/A1",
-            "HttB":"PSam"
+            "HttB":"PSam",
+            "V5":"PN1"
         },
         "Requirement":"",
         "Banned":"",
@@ -48823,11 +48998,12 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nDuring your master phase, a Tremere you control may move 1 blood to this card. During your influence phase, you may lock this card to move all counters on this card to a Tremere in your uncontrolled region. This card may be burned by any minion as a (D) action; Malkavians get +1 stealth when attempting that action.",
+        "Card Text":"Unique location.\nDuring your master phase, a Tremere you control can move 1 blood from themselves to this card. Lock during your influence phase to move all counters on this card to a Tremere in your uncontrolled region. Any minion can burn this card as a (D) action; Malkavians get +1 stealth during that action.",
         "Set":{
             "DS":"U",
             "CE":"PTr",
-            "HttB":"PGar"
+            "HttB":"PGar",
+            "V5":"PTr1"
         },
         "Requirement":"",
         "Banned":"",
@@ -49445,7 +49621,8 @@
         "Card Text":"Trifle.\nPut this card in play. You can use 1 transfer to draw 1 card from your crypt and then remove a crypt card in your uncontrolled region from the game. You can use 4 transfers to burn this card and gain 2 pool.",
         "Set":{
             "HttB":"C/A2/PKia2",
-            "SP":"PwN2"
+            "SP":"PwN2",
+            "V5":"PM1/PTr1/PV2"
         },
         "Requirement":"",
         "Banned":"",
