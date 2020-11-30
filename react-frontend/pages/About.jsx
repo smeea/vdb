@@ -13,7 +13,7 @@ function About(props) {
               <a href="http://www.vekn.net/card-lists">
                 vekn.net official list
               </a>
-              : 2020-06-23
+              : 2020-11-30
               <br />
               Card images by Syndelson{' '}
               <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
