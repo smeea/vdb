@@ -268,7 +268,8 @@ def get_crypt_by_group(group_list):
 
     return match_cards
 
-def get_crypt_by_set(set, options=None):
+
+def get_crypt_by_set(set, options=[]):
     bcp_sets = [
         'V5',
         '25th',
@@ -308,50 +309,55 @@ def get_crypt_by_set(set, options=None):
         'BL',
         'FN',
         'SW',
+        'Sabbat',
         'AH',
         'DS',
         'VTES',
         'Jyhad',
+        'POD',
     ];
 
     match_cards = []
 
     if set == 'bcp':
         for card in crypt:
-            for bcp_set in bcp_sets:
-                if bcp_set in card['Set']:
-                    if options and options['only in']:
+            for k in card['Set'].keys():
+                if k in bcp_sets:
+                    if 'only in' in options:
                         counter = 0
                         for k in card['Set'].keys():
                             if k in bcp_sets:
                                 counter += 1
 
-                        if len(card['Set']) == counter:
+                        if len(card['Set'].keys()) == counter:
                             match_cards.append(card)
-                    elif options and options['first print']:
+                            break
+                    elif 'first print' in options:
                         oldestSetIndex = 0
                         for k in card['Set'].keys():
                             if sets.index(k) > oldestSetIndex:
                                 oldestSetIndex = sets.index(k)
 
-                        if oldestSetIndex == len(bcp_sets):
+                        if oldestSetIndex <= len(bcp_sets):
                             match_cards.append(card)
+                            break
                     else:
                         match_cards.append(card)
+                        break
 
     else:
         for card in crypt:
             if set in card['Set']:
-                if options and options['only in']:
-                    if len(card['Set']) == 1:
+                if 'only in' in options:
+                    if len(card['Set'].keys()) == 1:
                         match_cards.append(card)
-                elif options and options['first print']:
+                elif 'first print' in options:
                     oldestSetIndex = 0
                     for k in card['Set'].keys():
                         if sets.index(k) > oldestSetIndex:
                             oldestSetIndex = sets.index(k)
 
-                    if oldestSetIndex == len(bcp_sets):
+                    if oldestSetIndex == sets.index(set):
                         match_cards.append(card)
                 else:
                     match_cards.append(card)

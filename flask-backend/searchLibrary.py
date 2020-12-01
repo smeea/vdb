@@ -117,7 +117,6 @@ def searchLibrary(request):
     except KeyError:
         pass
 
-
     try:
         if request.json['precon']:
             parameters += 1

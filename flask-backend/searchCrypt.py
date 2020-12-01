@@ -126,18 +126,18 @@ def searchCrypt(request):
         pass
 
     try:
-        if request.json['artist']:
-            parameters += 1
-            cards_by_artist = get_crypt_by_artist(request.json['artist'])
-            match_by_category.append(cards_by_artist)
-    except KeyError:
-        pass
-
-    try:
         if request.json['precon']:
             parameters += 1
             cards_by_precon = get_crypt_by_precon(request.json['precon'])
             match_by_category.append(cards_by_precon)
+    except KeyError:
+        pass
+
+    try:
+        if request.json['artist']:
+            parameters += 1
+            cards_by_artist = get_crypt_by_artist(request.json['artist'])
+            match_by_category.append(cards_by_artist)
     except KeyError:
         pass
 

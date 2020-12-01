@@ -30,6 +30,7 @@ const sets = [
   ['BL', 'Bloodlines', '2001'],
   ['FN', 'Final Nights', '2001'],
   ['SW', 'Sabbat War', '2000'],
+  ['Sabbat', 'Sabbat', '1996'],
   ['AH', 'Ancient Hearts', '1996'],
   ['DS', 'Dark Sovereigns', '1995'],
   ['VTES', 'V:TES', '1995'],
