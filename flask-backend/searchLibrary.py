@@ -107,10 +107,16 @@ def searchLibrary(request):
     try:
         if request.json['set']:
             parameters += 1
-            cards_by_set = get_library_by_set(request.json['set'])
-            match_by_category.append(cards_by_set)
+            try:
+                if request.json['setOptions']:
+                    cards_by_set = get_library_by_set(request.json['set'], request.json['setOptions'])
+                    match_by_category.append(cards_by_set)
+            except KeyError:
+                cards_by_set = get_library_by_set(request.json['set'])
+                match_by_category.append(cards_by_set)
     except KeyError:
         pass
+
 
     try:
         if request.json['precon']:

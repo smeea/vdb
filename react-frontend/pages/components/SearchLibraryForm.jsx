@@ -43,6 +43,10 @@ function SearchLibraryForm(props) {
       infernal: false,
     },
     set: 'any',
+    setOptions: {
+      'only in': false,
+      'first print': false,
+    },
     precon: 'any',
     artist: 'any',
   };
@@ -86,9 +90,18 @@ function SearchLibraryForm(props) {
     const url = `${process.env.API_URL}search/library`;
 
     const input = JSON.parse(JSON.stringify(props.formState));
-    Object.keys(input.traits).forEach(
-      (k) => input.traits[k] == false && delete input.traits[k]
-    );
+
+    const multiSelectForms = [
+      'traits',
+      'setOptions',
+    ]
+
+    multiSelectForms.map((i) => {
+      Object.keys(input[i]).forEach(
+        (k) => input[i][k] == 0 && delete input[i][k]
+      );
+    });
+
     Object.keys(input).forEach(
       (k) =>
         (input[k] == 'any' ||
@@ -179,6 +192,8 @@ function SearchLibraryForm(props) {
       <SearchFormSet
         value={props.formState.set}
         onChange={handleSelectChange}
+        options={props.formState.setOptions}
+        onChangeOptions={handleMultiChange}
       />
       <SearchFormPrecon
         value={props.formState.precon}

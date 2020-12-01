@@ -274,11 +274,93 @@ def get_library_by_trait(traits):
     return match_cards
 
 
-def get_library_by_set(set):
+def get_library_by_set(set, options=None):
+    bcp_sets = [
+        'V5',
+        '25th',
+        'FB',
+        'SP',
+        'Anthology',
+        'LK',
+    ]
+
+    sets = [
+        'Promo',
+        'V5',
+        '25th',
+        'FB',
+        'SP',
+        'Anthology',
+        'LK',
+        'AU',
+        'TU',
+        'DM',
+        'HttB',
+        'EK',
+        'BSC',
+        'KoT',
+        'TR',
+        'SoC',
+        'LotN',
+        'NoR',
+        'Third',
+        'KMW',
+        'LoB',
+        'Gehenna',
+        'Tenth',
+        'Anarchs',
+        'BH',
+        'CE',
+        'BL',
+        'FN',
+        'SW',
+        'AH',
+        'DS',
+        'VTES',
+        'Jyhad',
+    ];
+
     match_cards = []
-    for card in library:
-        if set in card['Set']:
-            match_cards.append(card)
+
+    if set == 'bcp':
+        for card in library:
+            for bcp_set in bcp_sets:
+                if bcp_set in card['Set']:
+                    if options and options['only in']:
+                        counter = 0
+                        for k in card['Set'].keys():
+                            if k in bcp_sets:
+                                counter += 1
+
+                        if len(card['Set']) == counter:
+                            match_cards.append(card)
+                    elif options and options['first print']:
+                        oldestSetIndex = 0
+                        for k in card['Set'].keys():
+                            if sets.index(k) > oldestSetIndex:
+                                oldestSetIndex = sets.index(k)
+
+                        if oldestSetIndex == len(bcp_sets):
+                            match_cards.append(card)
+                    else:
+                        match_cards.append(card)
+
+    else:
+        for card in library:
+            if set in card['Set']:
+                if options and options['only in']:
+                    if len(card['Set']) == 1:
+                        match_cards.append(card)
+                elif options and options['first print']:
+                    oldestSetIndex = 0
+                    for k in card['Set'].keys():
+                        if sets.index(k) > oldestSetIndex:
+                            oldestSetIndex = sets.index(k)
+
+                    if oldestSetIndex == len(bcp_sets):
+                        match_cards.append(card)
+                else:
+                    match_cards.append(card)
 
     return match_cards
 

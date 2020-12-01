@@ -104,6 +104,10 @@ function SearchCryptForm(props) {
     },
     set: 'any',
     precon: 'any',
+    setOptions: {
+      'only in': false,
+      'first print': false,
+    },
     artist: 'any',
   };
 
@@ -175,21 +179,22 @@ function SearchCryptForm(props) {
     const url = `${process.env.API_URL}search/crypt`;
 
     const input = JSON.parse(JSON.stringify(props.formState));
-    Object.keys(input.disciplines).forEach(
-      (k) => input.disciplines[k] == 0 && delete input.disciplines[k]
-    );
-    Object.keys(input.virtues).forEach(
-      (k) => input.virtues[k] == 0 && delete input.virtues[k]
-    );
-    Object.keys(input.titles).forEach(
-      (k) => input.titles[k] == false && delete input.titles[k]
-    );
-    Object.keys(input.group).forEach(
-      (k) => input.group[k] == false && delete input.group[k]
-    );
-    Object.keys(input.traits).forEach(
-      (k) => input.traits[k] == false && delete input.traits[k]
-    );
+
+    const multiSelectForms = [
+      'disciplines',
+      'virtues',
+      'titles',
+      'group',
+      'traits',
+      'setOptions',
+    ]
+
+    multiSelectForms.map((i) => {
+      Object.keys(input[i]).forEach(
+        (k) => input[i][k] == 0 && delete input[i][k]
+      );
+    });
+
     Object.keys(input).forEach(
       (k) =>
         (input[k] == 'any' ||
@@ -279,6 +284,8 @@ function SearchCryptForm(props) {
       <SearchFormSet
         value={props.formState.set}
         onChange={handleSelectChange}
+        options={props.formState.setOptions}
+        onChangeOptions={handleMultiChange}
       />
       <SearchFormPrecon
         value={props.formState.precon}

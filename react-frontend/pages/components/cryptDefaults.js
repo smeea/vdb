@@ -87,6 +87,10 @@ const cryptDefaults = {
     flight: false,
   },
   set: 'any',
+  setOptions: {
+    'only in': false,
+    'first print': false,
+  },
   precon: 'any',
   artist: 'any',
 };

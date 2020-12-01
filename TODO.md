@@ -2,6 +2,7 @@
 * Error messages output
 
 # FEATURES
+* Set-search filters: first print & only-in for precons
 
 # MAYBE LATER FEATURES
 * Add demo account with V5 precons

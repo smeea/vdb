@@ -28,6 +28,10 @@ const libraryDefaults = {
     infernal: false,
   },
   set: 'any',
+  setOptions: {
+    'only in': false,
+    'first print': false,
+  },
   precon: 'any',
   artist: 'any',
 };

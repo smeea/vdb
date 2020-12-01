@@ -38,21 +38,54 @@ function SearchFormSet(props) {
     }
   });
 
-  return (
-    <Row className="py-1 pl-1 mx-0 align-items-center">
-      <Col xs={3} className="d-flex px-0">
-        <label className="h6 mb-0">Set:</label>
-      </Col>
-      <Col xs={9} className="d-inline px-0">
-        <Select
-          options={options}
-          isSearchable={false}
-          name="set"
-          value={options.find((obj) => obj.value === props.value)}
-          onChange={props.onChange}
+  const setOptions = [
+    ['only in', 'Only In'],
+    ['first print', 'First Printed In'],
+  ];
+
+  const setOptionsForm = setOptions.map((i, index) => {
+    return (
+      <div key={index} className="mr-3 custom-control custom-checkbox">
+        <input
+          id={i[0]}
+          name="setOptions"
+          className="mr-2 custom-control-input"
+          type="checkbox"
+          checked={props.options[i[0]]}
+          onChange={(e) => props.onChangeOptions(e)}
         />
-      </Col>
-    </Row>
+        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+          {i[1]}
+        </label>
+      </div>
+    );
+  });
+
+  return (
+    <>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Set:</label>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <Select
+            options={options}
+            isSearchable={false}
+            name="set"
+            value={options.find((obj) => obj.value === props.value)}
+            onChange={props.onChange}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Set Options:</label>
+        </Col>
+        <Col xs={9} className="d-flex justify-content-end">
+          {setOptionsForm}
+        </Col>
+      </Row>
+    </>
   );
 }
 
