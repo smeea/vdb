@@ -187,7 +187,7 @@ function SearchCryptForm(props) {
       'group',
       'traits',
       'setOptions',
-    ]
+    ];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(

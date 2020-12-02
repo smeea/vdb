@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
-import ChevronExpand from '../../assets/images/icons/chevron-expand.svg';
+import InfoCircle from '../../assets/images/icons/info-circle.svg';
 import DeckCryptTotalByCapacity from './DeckCryptTotalByCapacity.jsx';
 import ResultCryptTable from './ResultCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
@@ -131,7 +131,7 @@ function DeckCrypt(props) {
             variant="outline-secondary"
             onClick={() => setShowTotal(!showTotal)}
           >
-            <ChevronExpand />
+            <InfoCircle />
           </Button>
           {props.isAuthor && (
             <Button

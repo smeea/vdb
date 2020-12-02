@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
-import ChevronExpand from '../../assets/images/icons/chevron-expand.svg';
+import InfoCircle from '../../assets/images/icons/info-circle.svg';
 import DeckLibraryTable from './DeckLibraryTable.jsx';
 import DeckLibraryTotalByTypes from './DeckLibraryTotalByTypes.jsx';
 import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
@@ -147,7 +147,7 @@ function DeckLibrary(props) {
             variant="outline-secondary"
             onClick={() => setShowTotal(!showTotal)}
           >
-            <ChevronExpand />
+            <InfoCircle />
           </Button>
           {props.isAuthor && (
             <Button

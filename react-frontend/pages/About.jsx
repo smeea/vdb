@@ -1,7 +1,42 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Figure, Container, Row, Col } from 'react-bootstrap';
 
 function About(props) {
+  const desktopScreenshots = {
+    desktop1: 'Search Crypt - With Deck Editor',
+    desktop2: 'Search Library - Plain',
+    desktop3: 'Deck Viewer',
+  };
+
+  const mobileScreenshots = {
+    mobile1: 'Library Search - Form',
+    mobile2: 'Library Search - Results',
+    mobile3: 'Deck Viewer',
+    mobile4: 'Card Preview - Text',
+    mobile5: 'Card Preview - Image',
+  };
+
+  const Screenshots = ({ value, width }) => {
+    const figures = Object.keys(value).map((key) => {
+      return (
+        <a
+          key={key}
+          href={`${process.env.ROOT_URL}images/screenshots/${key}.png`}
+        >
+          <Figure>
+            <Figure.Image
+              width={width}
+              alt={value[key]}
+              src={`${process.env.ROOT_URL}images/screenshots/${key}.png`}
+            />
+            <Figure.Caption>{value[key]}</Figure.Caption>
+          </Figure>
+        </a>
+      );
+    });
+    return figures;
+  };
+
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
@@ -34,16 +69,33 @@ function About(props) {
             </p>
             <h5>FEATURES</h5>
             <ul>
-              <li>Combined deck building & search interface</li>
+              <li>
+                Combined deck building & search interface - browse cards and add
+                them to your decks on-the-fly
+              </li>
+              <li>
+                Wide search options - many filters (tell me if you need
+                additional!)
+              </li>
               <li>Clean, but informative look</li>
               <li>Mobile-friendly</li>
               <li>
-                Import/export to popular formats to easy migration and backup
+                Import/export to/from popular formats to easy migration and
+                backup - e.g. you can paste text from TWDA or import from
+                Amaranth/Lackey
               </li>
               <li>Open source, ad-free & privacy-respecting</li>
               <li>Once familiar with, you will love it!</li>
             </ul>
             <h5>SCREENSHOTS</h5>
+            <h6>DESKTOP</h6>
+            <div className="d-flex justify-content-between">
+              <Screenshots width={230} value={desktopScreenshots} />
+            </div>
+            <h6>MOBILE</h6>
+            <div className="d-flex justify-content-between">
+              <Screenshots width={125} value={mobileScreenshots} />
+            </div>
             <h5>RELATED PROJECTS</h5>
             <p>
               <a href="https://amaranth.vtes.co.nz/">
@@ -92,6 +144,15 @@ function About(props) {
               <br />
             </p>
 
+            <h5>PRIVACY</h5>
+            <p>
+              We respect privacy and promise not to use/share your data (email,
+              decks, etc).
+              <br />
+              This service is ad-free and there are no trackers of your
+              activity.
+            </p>
+
             <h5>FOR DEVELOPERS</h5>
             <p>
               Development happens in{' '}
@@ -103,15 +164,6 @@ function About(props) {
               </a>
               <br />
               Card images & icons are copyrighted by Authors / Publishers.
-            </p>
-
-            <h5>PRIVACY</h5>
-            <p>
-              We respect privacy and promise not to use/share your data (email,
-              decks, etc).
-              <br />
-              This service is ad-free and there are no trackers of your
-              activity.
             </p>
 
             <h5>DONATIONS</h5>
