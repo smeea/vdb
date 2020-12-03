@@ -2,7 +2,6 @@ import React from 'react';
 import { Figure, Container, Row, Col } from 'react-bootstrap';
 
 function About(props) {
-
   const desktopScreenshots = {
     desktop1: 'Search Crypt - With Deck Editor',
     desktop2: 'Search Library - Plain',
@@ -17,25 +16,26 @@ function About(props) {
     mobile5: 'Card Preview - Image',
   };
 
-  const Screenshots = ({value, width}) => {
+  const Screenshots = ({ value, width }) => {
     const figures = Object.keys(value).map((key) => {
       return (
-        <a key={key} href={`${process.env.ROOT_URL}images/screenshots/${key}.png`}>
+        <a
+          key={key}
+          href={`${process.env.ROOT_URL}images/screenshots/${key}.png`}
+        >
           <Figure>
             <Figure.Image
               width={width}
               alt={value[key]}
               src={`${process.env.ROOT_URL}images/screenshots/${key}.png`}
             />
-            <Figure.Caption>
-              {value[key]}
-            </Figure.Caption>
+            <Figure.Caption>{value[key]}</Figure.Caption>
           </Figure>
         </a>
-      )
+      );
     });
     return figures;
-  }
+  };
 
   return (
     <Container className="main-container">
@@ -69,12 +69,20 @@ function About(props) {
             </p>
             <h5>FEATURES</h5>
             <ul>
-              <li>Combined deck building & search interface - browse & add cards to your decks on-the-fly</li>
-              <li>Wide search options - many filters (tell me if you need additional!)</li>
+              <li>
+                Combined deck building & search interface - browse & add cards
+                to your decks on-the-fly
+              </li>
+              <li>
+                Wide search options - many filters (tell me if you need
+                additional!)
+              </li>
               <li>Clean, but informative look</li>
               <li>Mobile-friendly</li>
               <li>
-                Import/export to/from popular formats to easy migration and backup - you can paste text from TWDA or import from Amaranth/Lackey to quickly start
+                Import/export to/from popular formats to easy migration and
+                backup - you can paste text from TWDA or import from
+                Amaranth/Lackey to quickly start
               </li>
               <li>Open source, ad-free & privacy-respecting</li>
               <li>Once familiar with, you will love it!</li>
@@ -82,17 +90,11 @@ function About(props) {
             <h5>SCREENSHOTS</h5>
             <h6>DESKTOP</h6>
             <div className="d-flex justify-content-between">
-              <Screenshots
-                width={230}
-                value={desktopScreenshots}
-              />
+              <Screenshots width={230} value={desktopScreenshots} />
             </div>
             <h6>MOBILE</h6>
             <div className="d-flex justify-content-between">
-              <Screenshots
-                width={125}
-                value={mobileScreenshots}
-              />
+              <Screenshots width={125} value={mobileScreenshots} />
             </div>
             <h5>RELATED PROJECTS</h5>
             <p>
@@ -169,7 +171,7 @@ function About(props) {
 
             <h5>CONTACTS</h5>
             <p>
-              <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78553-vtes-db-announcement">
+              <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
                 Discussion thread on vekn.net forum.
               </a>
               <br />

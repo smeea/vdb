@@ -51,8 +51,7 @@ function Account(props) {
             </>
           ) : (
             <>
-              <div>
-              </div>
+              <div></div>
               <AccountLogin
                 setUsername={props.setUsername}
                 isMobile={props.isMobile}

@@ -112,7 +112,8 @@ function Deck(props) {
           </Row>
         </Col>
         <Col lg={7} className="px-0 px-lg-3">
-          {(showInfo || (!props.isMobile && (props.activeDeck || props.sharedDeck))) && (
+          {(showInfo ||
+            (!props.isMobile && (props.activeDeck || props.sharedDeck))) && (
             <DeckInfo
               deck={
                 props.activeDeck

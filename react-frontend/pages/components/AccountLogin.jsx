@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { Form, FormControl, InputGroup, Button, Spinner } from 'react-bootstrap';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Button,
+  Spinner,
+} from 'react-bootstrap';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ModalTooltip from './ModalTooltip.jsx';
 import DoorOpenFill from '../../assets/images/icons/door-open-fill.svg';
