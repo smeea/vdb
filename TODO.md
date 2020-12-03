@@ -3,7 +3,6 @@
 
 # FEATURES
 * Set-search filters: first print & only-in for precons
-* Update About with features + screenshots (deep filters, look, integrated search)
 
 # MAYBE LATER FEATURES
 * Add demo account with V5 precons

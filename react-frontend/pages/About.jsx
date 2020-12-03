@@ -69,12 +69,12 @@ function About(props) {
             </p>
             <h5>FEATURES</h5>
             <ul>
-              <li>Combined deck building & search interface - browse cards and add them to your decks on-the-fly</li>
+              <li>Combined deck building & search interface - browse & add cards to your decks on-the-fly</li>
               <li>Wide search options - many filters (tell me if you need additional!)</li>
               <li>Clean, but informative look</li>
               <li>Mobile-friendly</li>
               <li>
-                Import/export to/from popular formats to easy migration and backup - e.g. you can paste text from TWDA or import from Amaranth/Lackey
+                Import/export to/from popular formats to easy migration and backup - you can paste text from TWDA or import from Amaranth/Lackey to quickly start
               </li>
               <li>Open source, ad-free & privacy-respecting</li>
               <li>Once familiar with, you will love it!</li>

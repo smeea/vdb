@@ -32,6 +32,7 @@ function App(props) {
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
   const [lastDeck, setLastDeck] = useState({});
+  const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
@@ -218,10 +219,14 @@ function App(props) {
   }, [username]);
 
   useEffect(() => {
-    if (lastDeck) {
+    if (lastDeck && !sharedDeck) {
       setActiveDeck(lastDeck.deckid);
     }
   }, [lastDeck]);
+
+  useEffect(() => {
+    setChangeTimer(!changeTimer);
+  }, [decks[activeDeck]]);
 
   return (
     <div className="App">
@@ -268,6 +273,8 @@ function App(props) {
                 getDecks={getDecks}
                 activeDeck={activeDeck}
                 setActiveDeck={setActiveDeck}
+                sharedDeck={sharedDeck}
+                setSharedDeck={setSharedDeck}
                 deckCardAdd={deckCardAdd}
                 deckCardChange={deckCardChange}
                 showImage={showImage}
@@ -287,6 +294,8 @@ function App(props) {
                   getDecks={getDecks}
                   activeDeck={activeDeck}
                   setActiveDeck={setActiveDeck}
+                  sharedDeck={sharedDeck}
+                  setSharedDeck={setSharedDeck}
                   deckCardAdd={deckCardAdd}
                   deckCardChange={deckCardChange}
                   showImage={showImage}

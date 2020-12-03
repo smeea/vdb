@@ -17,6 +17,7 @@ def deckExport(d, request):
         deck = ''
 
         if request.json['format'] == 'lackey':
+            print('lackey')
             for k, v in library.items():
                 deck += str(v['q'])
                 if v['q'] < 10:
@@ -108,14 +109,17 @@ def deckExport(d, request):
                     capacityList.append(v['c']['Capacity'])
 
             cryptTotalCards = len(capacityList)
-            cryptAvg = cryptTotalCap / cryptTotalCards
+            cryptAvg = cryptTotalCap / cryptTotalCards if cryptTotalCards else 0
 
             cryptMin = 0
             cryptMax = 0
             capacityList.sort()
-            for i in range(4):
+
+            counter = 4 if len(capacityList) >= 4 else len(capacityList)
+            for i in range(counter):
                 cryptMin += capacityList[i]
                 cryptMax += capacityList[-i - 1]
+
 
             deck += 'Deck Name: ' + d.name + '\n'
             deck += 'Author: ' + d.author.public_name + '\n'

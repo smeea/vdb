@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button, Spinner } from 'react-bootstrap';
 import PersonPlusFill from '../../assets/images/icons/person-plus-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
@@ -10,6 +10,8 @@ function AccountRegister(props) {
     username: '',
     password: '',
   });
+
+  const [spinnerState, setSpinnerState] = useState(false);
 
   const [usernameError, setUsernameError] = useState(false);
   const [emptyUsername, setEmptyUsername] = useState(false);
@@ -47,12 +49,15 @@ function AccountRegister(props) {
         body: JSON.stringify(input),
       };
 
+      setSpinnerState(true);
+
       const fetchPromise = fetch(url, options);
 
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
           props.whoAmI();
+          setSpinnerState(false);
         })
         .catch((error) => {
           setUsernameError(true);
@@ -60,6 +65,7 @@ function AccountRegister(props) {
             ...prevState,
             username: '',
           }));
+          setSpinnerState(false);
           console.log(error);
         });
     }
@@ -102,9 +108,22 @@ function AccountRegister(props) {
             >
               {hidePassword ? <EyeFill /> : <EyeSlashFill />}
             </Button>
-            <Button variant="outline-secondary" type="submit">
-              <Check2 />
-            </Button>
+            {!spinnerState ? (
+              <Button variant="outline-secondary" type="submit">
+                <Check2 />
+              </Button>
+            ) : (
+              <Button variant="outline-secondary">
+                <Spinner
+                  as="span"
+                  animation="border"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                <Spinner />
+              </Button>
+            )}
           </InputGroup.Append>
         </InputGroup>
         {emptyUsername && <span className="form-error">Enter username</span>}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button, Spinner } from 'react-bootstrap';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ModalTooltip from './ModalTooltip.jsx';
 import DoorOpenFill from '../../assets/images/icons/door-open-fill.svg';
@@ -13,6 +13,7 @@ function AccountLogin(props) {
     password: '',
   });
 
+  const [spinnerState, setSpinnerState] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const [passwordError, setPasswordError] = useState(false);
@@ -52,6 +53,8 @@ function AccountLogin(props) {
         body: JSON.stringify(input),
       };
 
+      setSpinnerState(true);
+
       const fetchPromise = fetch(url, options);
 
       fetchPromise
@@ -64,6 +67,7 @@ function AccountLogin(props) {
         })
         .then((data) => {
           props.setUsername(state.username);
+          setSpinnerState(false);
         })
         .catch((error) => {
           setPasswordError(true);
@@ -71,6 +75,7 @@ function AccountLogin(props) {
             ...prevState,
             password: '',
           }));
+          setSpinnerState(false);
           console.log(error);
         });
     }
@@ -83,7 +88,7 @@ function AccountLogin(props) {
     loginUser();
   };
 
-  const tooltipText = (
+  const passwordTooltipText = (
     <>
       We do not have automatic password restoration yet.
       <br />
@@ -92,11 +97,31 @@ function AccountLogin(props) {
     </>
   );
 
+  const loginTooltipText = (
+    <>
+      Login is required for Deck Building.
+      <br />
+      Decks are stored on the server and you can access them from any device.
+    </>
+  );
+
   return (
     <>
       <h6 className="d-flex align-items-center">
         <DoorOpenFill />
         <span className="ml-2">Login</span>
+        {!props.isMobile ? (
+          <OverlayTooltip text={loginTooltipText}>
+            <span className="question-tooltip ml-1">[?]</span>
+          </OverlayTooltip>
+        ) : (
+          <span
+            onClick={() => setShowModal(true)}
+            className="question-tooltip ml-1"
+          >
+            [?]
+          </span>
+        )}
       </h6>
       <Form className="mb-2" onSubmit={handleSubmitButton}>
         <InputGroup>
@@ -123,9 +148,22 @@ function AccountLogin(props) {
             >
               {hidePassword ? <EyeFill /> : <EyeSlashFill />}
             </Button>
-            <Button variant="outline-secondary" type="submit">
-              <Check2 />
-            </Button>
+            {!spinnerState ? (
+              <Button variant="outline-secondary" type="submit">
+                <Check2 />
+              </Button>
+            ) : (
+              <Button variant="outline-secondary">
+                <Spinner
+                  as="span"
+                  animation="border"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                <Spinner />
+              </Button>
+            )}
           </InputGroup.Append>
         </InputGroup>
         {emptyUsername && <span className="form-error">Enter username</span>}
@@ -133,7 +171,7 @@ function AccountLogin(props) {
         {emptyPassword && <span className="form-error">Enter password</span>}
       </Form>
       {!props.isMobile ? (
-        <OverlayTooltip text={tooltipText}>
+        <OverlayTooltip text={passwordTooltipText}>
           <span className="small">
             <a href="#">
               <i>Forgot password?</i>

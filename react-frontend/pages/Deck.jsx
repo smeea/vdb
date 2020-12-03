@@ -13,7 +13,6 @@ import DeckImport from './components/DeckImport.jsx';
 
 function Deck(props) {
   const query = new URLSearchParams(useLocation().search);
-  const [sharedDeck, setSharedDeck] = useState(undefined);
   const sharedDeckId = query.get('id');
   const [showInfo, setShowInfo] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
@@ -30,7 +29,7 @@ function Deck(props) {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          setSharedDeck(data);
+          props.setSharedDeck(data);
         } else {
           console.log('error: ', data.error);
         }
@@ -80,7 +79,7 @@ function Deck(props) {
               </Col>
             )}
             {props.isMobile &&
-              (props.activeDeck || sharedDeck ? (
+              (props.activeDeck || props.sharedDeck ? (
                 <Col
                   xs="auto"
                   className="d-flex justify-content-between align-items-center px-0 px-lg-3"
@@ -113,13 +112,13 @@ function Deck(props) {
           </Row>
         </Col>
         <Col lg={7} className="px-0 px-lg-3">
-          {(showInfo || !props.isMobile) && (
+          {(showInfo || (!props.isMobile && (props.activeDeck || props.sharedDeck))) && (
             <DeckInfo
               deck={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                  : sharedDeck
-                  ? sharedDeck[sharedDeckId]
+                  : props.sharedDeck
+                  ? props.sharedDeck[sharedDeckId]
                   : null
               }
               deckUpdate={deckUpdate}
@@ -131,15 +130,15 @@ function Deck(props) {
         <Col lg={2} className="px-0 px-lg-3">
           {!props.isMobile && (
             <DeckButtons
-              isActive={props.decks[props.activeDeck] || sharedDeck}
+              isActive={props.decks[props.activeDeck] || props.sharedDeck}
               isMobile={props.isMobile}
               isAuthor={isAuthor}
               username={props.username}
               deck={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                  : sharedDeck
-                  ? sharedDeck[sharedDeckId]
+                  : props.sharedDeck
+                  ? props.sharedDeck[sharedDeckId]
                   : null
               }
               getDecks={props.getDecks}
@@ -172,15 +171,15 @@ function Deck(props) {
                     </Col>
                   </Row>
                   <DeckButtons
-                    isActive={props.decks[props.activeDeck] || sharedDeck}
+                    isActive={props.decks[props.activeDeck] || props.sharedDeck}
                     isMobile={props.isMobile}
                     isAuthor={isAuthor}
                     username={props.username}
                     deck={
                       props.activeDeck
                         ? props.decks[props.activeDeck]
-                        : sharedDeck
-                        ? sharedDeck[sharedDeckId]
+                        : props.sharedDeck
+                        ? props.sharedDeck[sharedDeckId]
                         : null
                     }
                     getDecks={props.getDecks}
@@ -199,7 +198,7 @@ function Deck(props) {
           )}
         </Col>
       </Row>
-      {(props.decks[props.activeDeck] || sharedDeck) && (
+      {(props.decks[props.activeDeck] || props.sharedDeck) && (
         <Row>
           <Col lg={7} className="px-0 px-lg-3">
             <DeckCrypt
@@ -212,9 +211,9 @@ function Deck(props) {
                   ? props.decks[props.activeDeck]
                     ? props.decks[props.activeDeck].crypt
                     : {}
-                  : sharedDeck
-                  ? sharedDeck[sharedDeckId]
-                    ? sharedDeck[sharedDeckId].crypt
+                  : props.sharedDeck
+                  ? props.sharedDeck[sharedDeckId]
+                    ? props.sharedDeck[sharedDeckId].crypt
                     : {}
                   : {}
               }
@@ -235,9 +234,9 @@ function Deck(props) {
                   ? props.decks[props.activeDeck]
                     ? props.decks[props.activeDeck].library
                     : {}
-                  : sharedDeck
-                  ? sharedDeck[sharedDeckId]
-                    ? sharedDeck[sharedDeckId].library
+                  : props.sharedDeck
+                  ? props.sharedDeck[sharedDeckId]
+                    ? props.sharedDeck[sharedDeckId].library
                     : {}
                   : {}
               }
@@ -250,7 +249,7 @@ function Deck(props) {
           </Col>
         </Row>
       )}
-      {sharedDeck ? (
+      {props.sharedDeck ? (
         <AlertMessage
           className="error-message"
           value={<b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>}
