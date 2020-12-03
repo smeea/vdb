@@ -114,7 +114,7 @@ function DeckExport(props) {
     <>
       <Dropdown>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
-          <Download size={20} />
+          <Download />
           <span className="pl-1">Save Deck</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>

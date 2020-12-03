@@ -40,6 +40,7 @@ function DeckDescription(props) {
         {props.isAuthor ? (
           <FormControl
             as="textarea"
+            rows={5}
             className="form-control"
             value={state}
             onChange={handleChange}
@@ -51,11 +52,11 @@ function DeckDescription(props) {
           <InputGroup.Append>
             {!buttonState ? (
               <Button variant="outline-secondary" type="submit">
-                <Check2 size={20} />
+                <Check2 />
               </Button>
             ) : (
               <Button variant="success" type="submit">
-                <Check2 size={20} />
+                <Check2 />
               </Button>
             )}
           </InputGroup.Append>

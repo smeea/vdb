@@ -127,11 +127,11 @@ function AccountChangePassword(props) {
             </Button>
             {!buttonState ? (
               <Button variant="outline-secondary" type="submit">
-                <Check2 size={20} />
+                <Check2 />
               </Button>
             ) : (
               <Button variant="success" type="submit">
-                <Check2 size={20} />
+                <Check2 />
               </Button>
             )}
           </InputGroup.Append>

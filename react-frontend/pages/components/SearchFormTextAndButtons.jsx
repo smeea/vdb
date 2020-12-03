@@ -16,7 +16,7 @@ function SearchFormTextAndButtons(props) {
       <InputGroup.Append>
         {!props.spinner ? (
           <Button variant="outline-secondary" type="submit">
-            <Check2 size={20} />
+            <Check2 />
           </Button>
         ) : (
           <Button variant="outline-secondary">
@@ -31,7 +31,7 @@ function SearchFormTextAndButtons(props) {
           </Button>
         )}
         <Button variant="outline-secondary" onClick={props.handleClearButton}>
-          <X size={20} />
+          <X />
         </Button>
       </InputGroup.Append>
     </InputGroup>
