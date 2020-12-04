@@ -2027,10 +2027,10 @@
         "Artist":"Amy Wilkins",
         "ASCII Name":"Andi Liu",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
+            "Dominate":2,
             "Obfuscate":1,
-            "Potence":2
+            "Presense":1
         },
         "Rulings":[]
     },
@@ -3789,8 +3789,6 @@
         "Artist":"Riccardo Fabiani",
         "ASCII Name":"Aunt Linda",
         "Disciplines":{
-            "Animalism":1,
-            "Auspex":1,
             "Obfuscate":1,
             "Potence":2
         },
@@ -4796,8 +4794,8 @@
         "Disciplines":{
             "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Obfuscate":2,
+            "Potence":1
         },
         "Rulings":[]
     },
@@ -5668,10 +5666,7 @@
         "Artist":"Atilio Gambedotti",
         "ASCII Name":"Brock Sterling",
         "Disciplines":{
-            "Animalism":1,
-            "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Fortitude":2
         },
         "Rulings":[]
     },
@@ -6999,10 +6994,10 @@
         "Artist":"Gin\u00e9s Qui\u00f1onero",
         "ASCII Name":"Chelsea Blake",
         "Disciplines":{
-            "Animalism":1,
-            "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Celerity":1,
+            "Dominate":2,
+            "Fortitude":1,
+            "Presense":1
         },
         "Rulings":[]
     },
@@ -9452,10 +9447,10 @@
         "Artist":"Mark Kelly",
         "ASCII Name":"Donny Kowalczyk",
         "Disciplines":{
-            "Animalism":1,
-            "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Auspex":2,
+            "Celerity":1,
+            "Dominate":1,
+            "Obfuscate":1
         },
         "Rulings":[]
     },
@@ -15325,8 +15320,7 @@
         "Artist":"Samuel Araya",
         "ASCII Name":"Horace Radcliffe",
         "Disciplines":{
-            "Animalism":1,
-            "Auspex":1,
+            "Animalism":2,
             "Obfuscate":1,
             "Potence":2
         },
@@ -15444,10 +15438,10 @@
         "Artist":"Gin\u00e9s Qui\u00f1onero",
         "ASCII Name":"Horst von Bruhl",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Dominate":1,
+            "Presense":1,
+            "Fortitude":2
         },
         "Rulings":[]
     },
@@ -16088,10 +16082,10 @@
         "Artist":"Carmen Cornet",
         "ASCII Name":"Ines Tristao",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Dominate":1,
+            "Presense":1,
+            "Thaumaturgy":2
         },
         "Rulings":[]
     },
@@ -21494,10 +21488,10 @@
         "Artist":"Gin\u00e9s Qui\u00f1onero",
         "ASCII Name":"Lloyd Brooks",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Potence":1,
+            "Dominate":2,
+            "Thaumaturgy":2
         },
         "Rulings":[]
     },
@@ -24188,10 +24182,9 @@
         "Artist":"Riccardo Fabiani",
         "ASCII Name":"Massimo Falconi",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Celerity":1,
+            "Presense":1
         },
         "Rulings":[]
     },
@@ -24530,10 +24523,8 @@
         "Artist":"Samuel Araya",
         "ASCII Name":"Meaghan",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Obfuscate":1
         },
         "Rulings":[]
     },
@@ -25148,10 +25139,8 @@
         "Artist":"Alejandro F. Giraldo",
         "ASCII Name":"Min-seo",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Celerity":1
         },
         "Rulings":[]
     },
@@ -25438,10 +25427,10 @@
         "Artist":"Samuel Araya",
         "ASCII Name":"Mkhokheli",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Celerity":1,
+            "Fortitude":1,
+            "Presense":2
         },
         "Rulings":[]
     },
@@ -26311,10 +26300,8 @@
         "Artist":"Mart\u00edn de Diego S\u00e1bada",
         "ASCII Name":"Nassir",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Thaumaturgy":2
         },
         "Rulings":[]
     },
@@ -27878,10 +27865,10 @@
         "Artist":"Gin\u00e9s Qui\u00f1onero",
         "ASCII Name":"Patrik Soderberg",
         "Disciplines":{
-            "Animalism":1,
-            "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Auspex":2,
+            "Dominate":1,
+            "Fortitude":1,
+            "Thaumaturgy":1
         },
         "Rulings":[]
     },
@@ -33446,10 +33433,9 @@
         "Artist":"Mark Kelly",
         "ASCII Name":"Sully",
         "Disciplines":{
-            "Animalism":1,
             "Auspex":1,
-            "Obfuscate":1,
-            "Potence":2
+            "Dominate":1,
+            "Obfuscate":1
         },
         "Rulings":[]
     },

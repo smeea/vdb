@@ -28,7 +28,7 @@ function DeckDescription(props) {
   };
 
   useEffect(() => {
-    props.description && setState(props.description);
+    setState(props.description);
   }, [props.description]);
 
   return (
@@ -41,6 +41,7 @@ function DeckDescription(props) {
           <FormControl
             as="textarea"
             rows={5}
+            type="text"
             className="form-control"
             value={state}
             onChange={handleChange}

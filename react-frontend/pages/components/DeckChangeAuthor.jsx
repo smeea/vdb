@@ -41,7 +41,6 @@ function DeckChangeAuthor(props) {
           <FormControl
             type="text"
             className="form-control"
-            placeholder="Author"
             value={state}
             onChange={handleChange}
           />

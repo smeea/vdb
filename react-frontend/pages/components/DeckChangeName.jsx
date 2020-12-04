@@ -41,7 +41,6 @@ function DeckChangeName(props) {
           <FormControl
             type="text"
             className="form-control"
-            placeholder="Name"
             value={state}
             onChange={handleChange}
           />
