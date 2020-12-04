@@ -2030,7 +2030,7 @@
             "Auspex":1,
             "Dominate":2,
             "Obfuscate":1,
-            "Presense":1
+            "Presence":1
         },
         "Rulings":[]
     },
@@ -6997,7 +6997,7 @@
             "Celerity":1,
             "Dominate":2,
             "Fortitude":1,
-            "Presense":1
+            "Presence":1
         },
         "Rulings":[]
     },
@@ -15440,7 +15440,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Presense":1,
+            "Presence":1,
             "Fortitude":2
         },
         "Rulings":[]
@@ -16084,7 +16084,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Presense":1,
+            "Presence":1,
             "Thaumaturgy":2
         },
         "Rulings":[]
@@ -24184,7 +24184,7 @@
         "Disciplines":{
             "Auspex":1,
             "Celerity":1,
-            "Presense":1
+            "Presence":1
         },
         "Rulings":[]
     },
@@ -25430,7 +25430,7 @@
             "Auspex":1,
             "Celerity":1,
             "Fortitude":1,
-            "Presense":2
+            "Presence":2
         },
         "Rulings":[]
     },
