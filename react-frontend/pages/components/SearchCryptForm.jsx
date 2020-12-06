@@ -260,6 +260,7 @@ function SearchCryptForm(props) {
       <SearchCryptFormClan
         value={props.formState.clan}
         onChange={handleSelectChange}
+        isMobile={props.isMobile}
       />
       <SearchCryptFormSect
         value={props.formState.sect}

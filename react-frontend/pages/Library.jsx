@@ -119,6 +119,7 @@ function Library(props) {
             setShowSearch={props.setShowSearch}
             formState={props.formState}
             setFormState={props.setFormState}
+            isMobile={props.isMobile}
           />
         </Col>
       </Row>

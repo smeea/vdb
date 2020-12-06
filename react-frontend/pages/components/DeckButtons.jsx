@@ -5,6 +5,7 @@ import DeckDelete from './DeckDelete.jsx';
 import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
 import DeckImport from './DeckImport.jsx';
 import DeckExport from './DeckExport.jsx';
+import DeckProxy from './DeckProxy.jsx';
 
 function DeckButtons(props) {
   return (
@@ -21,7 +22,10 @@ function DeckButtons(props) {
       )}
       {props.activeDeck && (
         <div>
-          <DeckExport activeDeck={props.activeDeck} />
+          <DeckExport
+            activeDeck={props.activeDeck}
+            setShowButtons={props.setShowButtons}
+          />
         </div>
       )}
       {props.isAuthor && props.deck && (
@@ -50,6 +54,18 @@ function DeckButtons(props) {
         <div>
           <DeckCopyUrlButton
             value={props.deck.deckid}
+            setShowButtons={props.setShowButtons}
+          />
+        </div>
+      )}
+      {props.activeDeck && (
+        <div>
+          <DeckProxy
+            deck={props.deck}
+            isMobile={props.isMobile}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+            setShowInfo={props.setShowInfo}
             setShowButtons={props.setShowButtons}
           />
         </div>

@@ -57,8 +57,7 @@ function DeckExport(props) {
         .then((data) => {
           navigator.clipboard.writeText(data.deck);
           setSpinnerState(false);
-          // setState(true);
-          // setTimeout(() => setState(false), 500);
+          props.setShowButtons(false);
         })
         .catch((error) => {
           console.log(error);
@@ -100,6 +99,7 @@ function DeckExport(props) {
           );
           FileSaver.saveAs(file);
           setSpinnerState(false);
+          props.setShowButtons(false);
         })
         .catch((error) => {
           console.log(error);

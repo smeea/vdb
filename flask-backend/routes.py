@@ -9,6 +9,7 @@ from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
 from deckExport import deckExport
 from deckImport import deckImport
+from deckProxy import deckProxy
 from api import app
 from api import db
 from models import User
@@ -200,6 +201,14 @@ def deckExportRoute():
         d = Deck.query.filter_by(deckid=request.json['deckid']).first()
         result = deckExport(d, request)
         return jsonify(result)
+
+    except Exception:
+        pass
+
+@app.route('/api/decks/proxy', methods=['POST'])
+def deckProxyRoute():
+    try:
+        return deckProxy(request.json['cards'])
 
     except Exception:
         pass

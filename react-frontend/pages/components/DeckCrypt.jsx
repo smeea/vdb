@@ -200,6 +200,9 @@ function DeckCrypt(props) {
         isMobile={props.isMobile}
         isWide={props.isWide}
         keyDisciplines={keyDisciplines}
+        proxySelector={props.proxySelector}
+        proxyCounter={props.proxyCounter}
+        proxySelected={props.proxySelected}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">

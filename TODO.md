@@ -1,5 +1,6 @@
 # FIX
 * Error messages output
+* Update card images to new FELD images
 
 # FEATURES
 * Set-search filters: first print & only-in for precons
