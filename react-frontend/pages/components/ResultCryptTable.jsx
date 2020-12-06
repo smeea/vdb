@@ -35,7 +35,6 @@ function ResultCryptTable(props) {
       });
     }
 
-    console.log(props.proxySelected)
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>

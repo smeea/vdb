@@ -138,6 +138,9 @@ function DeckLibrary(props) {
             total={total}
             isAuthor={props.isAuthor}
             isMobile={props.isMobile}
+            proxySelector={props.proxySelector}
+            proxyCounter={props.proxyCounter}
+            proxySelected={props.proxySelected}
           />
         </div>
       );

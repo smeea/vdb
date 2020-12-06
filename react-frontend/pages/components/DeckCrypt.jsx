@@ -221,6 +221,9 @@ function DeckCrypt(props) {
             isMobile={props.isMobile}
             isWide={props.isWide}
             keyDisciplines={keyDisciplines}
+            proxySelector={props.proxySelector}
+            proxyCounter={props.proxyCounter}
+            proxySelected={props.proxySelected}
           />
         </div>
       )}
