@@ -226,7 +226,7 @@ function App(props) {
 
   useEffect(() => {
     setChangeTimer(!changeTimer);
-  }, [decks[activeDeck]]);
+  }, [decks[activeDeck] && decks[activeDeck]['Name']]);
 
   return (
     <div className="App">

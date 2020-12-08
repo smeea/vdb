@@ -1350,8 +1350,8 @@
         "Disciplines":{
             "Dominate":1,
             "Fortitude":2,
-            "Presence":2,
-            "Protean":1
+            "Obfuscate":1,
+            "Presence":2
         },
         "Rulings":[]
     },
@@ -33585,7 +33585,7 @@
             "Dominate":1,
             "Fortitude":2,
             "Presence":2,
-            "Protean":2
+            "Thaumaturgy":1
         },
         "Rulings":[]
     },

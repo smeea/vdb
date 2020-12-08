@@ -27,7 +27,7 @@ function About(props) {
             <Figure.Image
               width={width}
               alt={value[key]}
-              src={`${process.env.ROOT_URL}images/screenshots/${key}.png`}
+              src={`${process.env.ROOT_URL}images/screenshots/${key}min.jpg`}
             />
             <Figure.Caption>{value[key]}</Figure.Caption>
           </Figure>
