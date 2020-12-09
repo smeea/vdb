@@ -1,6 +1,5 @@
 # FIX
 * Error messages output
-* Update card images to new FELD images
 
 # FEATURES
 * Set-search filters: first print & only-in for precons
@@ -29,7 +28,3 @@
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
 * Flask-Restful
-
-# FOR DEPLOY
-* Set Cache-Control
-* Minify crypt/lib json
