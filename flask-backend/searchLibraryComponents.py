@@ -370,13 +370,119 @@ def get_library_by_set(set, options=[]):
     return match_cards
 
 
-def get_library_by_precon(input):
+def get_library_by_precon(precon, options=[]):
+    bcp_precons = [
+        ['V5', 'PM',],
+        ['V5', 'PN',],
+        ['V5', 'PTo'],
+        ['V5', 'PTr'],
+        ['V5', 'PV'],
+        ['SP', 'LB'],
+        ['SP', 'PwN'],
+        ['SP', 'DoF'],
+        ['SP', 'PoS'],
+        ['25th', ''],
+        ['FB', 'PM'],
+        ['FB', 'PN'],
+        ['FB', 'PTo'],
+        ['FB', 'PTr'],
+        ['FB', 'PV'],
+        ['Anthology', ''],
+        ['LK', ''],
+    ]
+
+    bcp_sets = [
+        'V5',
+        '25th',
+        'FB',
+        'SP',
+        'Anthology',
+        'LK',
+    ]
+
+    sets = [
+        'Promo',
+        'V5',
+        '25th',
+        'FB',
+        'SP',
+        'Anthology',
+        'LK',
+        'AU',
+        'TU',
+        'DM',
+        'HttB',
+        'EK',
+        'BSC',
+        'KoT',
+        'TR',
+        'SoC',
+        'LotN',
+        'NoR',
+        'Third',
+        'KMW',
+        'LoB',
+        'Gehenna',
+        'Tenth',
+        'Anarchs',
+        'BH',
+        'CE',
+        'BL',
+        'FN',
+        'SW',
+        'Sabbat',
+        'AH',
+        'DS',
+        'VTES',
+        'Jyhad',
+        'POD',
+    ];
+
     match_cards = []
-    precon = input.split(':')
-    print(precon)
-    for card in library:
-        if precon[0] in card['Set'] and precon[1] in card['Set'][precon[0]]:
-            match_cards.append(card)
+
+    if precon == 'bcp':
+        for card in library:
+            for bcp_precon in bcp_precons:
+                if bcp_precon[0] in card['Set'] and bcp_precon[1] in card['Set'][bcp_precon[0]]:
+                    if 'only in' in options:
+                        counter = 0
+                        for k in card['Set'].keys():
+                            if k in bcp_precons[0]:
+                                counter += 1
+
+                        if len(card['Set'].keys()) == counter:
+                            match_cards.append(card)
+                            break
+                    elif 'first print' in options:
+                        oldestSetIndex = 0
+                        for k in card['Set'].keys():
+                            if sets.index(k) > oldestSetIndex:
+                                oldestSetIndex = sets.index(k)
+
+                        if oldestSetIndex <= len(bcp_precons):
+                            match_cards.append(card)
+                            break
+                    else:
+                        match_cards.append(card)
+                        break
+
+    else:
+        precon = precon.split(':')
+        for card in library:
+            if precon[0] in card['Set'] and precon[1] in card['Set'][precon[0]]:
+                if 'only in' in options:
+                    if len(card['Set'].keys()) == 1:
+                        match_cards.append(card)
+                elif 'first print' in options:
+                    oldestSetIndex = 0
+                    for k in card['Set'].keys():
+                        if sets.index(k) > oldestSetIndex:
+                            oldestSetIndex = sets.index(k)
+
+                    if oldestSetIndex == sets.index(precon[0]):
+                        match_cards.append(card)
+                else:
+                    match_cards.append(card)
 
     return match_cards
 

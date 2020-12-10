@@ -103,8 +103,12 @@ function SearchCryptForm(props) {
       flight: false,
     },
     set: 'any',
-    precon: 'any',
     setOptions: {
+      'only in': false,
+      'first print': false,
+    },
+    precon: 'any',
+    preconOptions: {
       'only in': false,
       'first print': false,
     },
@@ -130,10 +134,9 @@ function SearchCryptForm(props) {
   };
 
   const handleMultiChange = (event) => {
-    const { id, name, value } = event.target;
-    const i = id || value;
+    const { name, value } = event.target;
     const newState = props.formState[name];
-    newState[i] = !newState[i];
+    newState[value] = !newState[value];
     props.setFormState((prevState) => ({
       ...prevState,
       [name]: newState,
@@ -187,6 +190,7 @@ function SearchCryptForm(props) {
       'group',
       'traits',
       'setOptions',
+      'preconOptions',
     ];
 
     multiSelectForms.map((i) => {
@@ -291,6 +295,8 @@ function SearchCryptForm(props) {
       <SearchFormPrecon
         value={props.formState.precon}
         onChange={handleSelectChange}
+        options={props.formState.preconOptions}
+        onChangeOptions={handleMultiChange}
       />
       <SearchFormArtist
         value={props.formState.artist}

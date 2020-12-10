@@ -48,6 +48,10 @@ function SearchLibraryForm(props) {
       'first print': false,
     },
     precon: 'any',
+    preconOptions: {
+      'only in': false,
+      'first print': false,
+    },
     artist: 'any',
   };
 
@@ -70,9 +74,9 @@ function SearchLibraryForm(props) {
   };
 
   const handleMultiChange = (event) => {
-    const { id, name } = event.target;
+    const { name, value } = event.target;
     const newState = props.formState[name];
-    newState[id] = !newState[id];
+    newState[value] = !newState[value];
     props.setFormState((prevState) => ({
       ...prevState,
       [name]: newState,
@@ -91,7 +95,7 @@ function SearchLibraryForm(props) {
 
     const input = JSON.parse(JSON.stringify(props.formState));
 
-    const multiSelectForms = ['traits', 'setOptions'];
+    const multiSelectForms = ['traits', 'setOptions', 'preconOptions'];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(
@@ -196,6 +200,8 @@ function SearchLibraryForm(props) {
       <SearchFormPrecon
         value={props.formState.precon}
         onChange={handleSelectChange}
+        options={props.formState.preconOptions}
+        onChangeOptions={handleMultiChange}
       />
       <SearchFormArtist
         value={props.formState.artist}

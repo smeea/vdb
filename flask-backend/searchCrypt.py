@@ -128,8 +128,13 @@ def searchCrypt(request):
     try:
         if request.json['precon']:
             parameters += 1
-            cards_by_precon = get_crypt_by_precon(request.json['precon'])
-            match_by_category.append(cards_by_precon)
+            try:
+                if request.json['preconOptions']:
+                    cards_by_precon = get_crypt_by_precon(request.json['precon'], request.json['preconOptions'])
+                    match_by_category.append(cards_by_precon)
+            except KeyError:
+                cards_by_precon = get_crypt_by_precon(request.json['precon'])
+                match_by_category.append(cards_by_precon)
     except KeyError:
         pass
 

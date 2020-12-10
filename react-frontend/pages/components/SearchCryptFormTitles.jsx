@@ -26,13 +26,14 @@ function SearchCryptFormTitles(props) {
       <div key={index} className="mr-2 custom-control custom-checkbox">
         <input
           name="titles"
-          id={i[0]}
+          id={`title-${i[0]}`}
+          value={i[0]}
           className="mr-2 custom-control-input"
           type="checkbox"
           checked={props.value[i[0]]}
           onChange={(e) => props.onChange(e)}
         />
-        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+        <label htmlFor={`title-${i[0]}`} className="mr-2 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -44,13 +45,14 @@ function SearchCryptFormTitles(props) {
       <div key={index} className="mr-2 custom-control custom-checkbox">
         <input
           name="titles"
-          id={i[0]}
+          id={`title-${i[0]}`}
+          value={i[0]}
           className="mr-2 custom-control-input"
           type="checkbox"
           checked={props.value[i[0]]}
           onChange={(e) => props.onChange(e)}
         />
-        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+        <label htmlFor={`title-${i[0]}`} className="mr-2 custom-control-label">
           {i[1]}
         </label>
       </div>

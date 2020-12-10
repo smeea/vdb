@@ -32,21 +32,53 @@ function SearchFormPrecon(props) {
     }
   });
 
-  return (
-    <Row className="py-1 pl-1 mx-0 align-items-center">
-      <Col xs={3} className="d-flex px-0">
-        <label className="h6 mb-0">Precon:</label>
-      </Col>
-      <Col xs={9} className="d-inline px-0">
-        <Select
-          options={options}
-          isSearchable={false}
-          name="precon"
-          value={options.find((obj) => obj.value === props.value)}
-          onChange={props.onChange}
+  const preconOptions = [
+    ['only in', 'Only In'],
+    ['first print', 'First Printed In'],
+  ];
+
+  const preconOptionsForm = preconOptions.map((i, index) => {
+    return (
+      <div key={index} className="mr-3 custom-control custom-checkbox">
+        <input
+          id={`precon-${i[0]}`}
+          value={i[0]}
+          name="preconOptions"
+          className="mr-2 custom-control-input"
+          type="checkbox"
+          checked={props.options[i[0]]}
+          onChange={(e) => props.onChangeOptions(e)}
         />
-      </Col>
-    </Row>
+        <label htmlFor={`precon-${i[0]}`} className="mr-2 custom-control-label">
+          {i[1]}
+        </label>
+      </div>
+    );
+  });
+
+  return (
+    <>
+      <Row className="pt-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Precon:</label>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <Select
+            options={options}
+            isSearchable={false}
+            name="precon"
+            value={options.find((obj) => obj.value === props.value)}
+            onChange={props.onChange}
+          />
+        </Col>
+      </Row>
+      <Row className="pb-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} />
+        <Col xs={9} className="d-flex justify-content-end">
+          {preconOptionsForm}
+        </Col>
+      </Row>
+    </>
   );
 }
 

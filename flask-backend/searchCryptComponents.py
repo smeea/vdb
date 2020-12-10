@@ -365,7 +365,7 @@ def get_crypt_by_set(set, options=[]):
     return match_cards
 
 
-def get_crypt_by_precon(input):
+def get_crypt_by_precon(precon, options=[]):
     bcp_precons = [
         ['V5', 'PM',],
         ['V5', 'PN',],
@@ -386,19 +386,90 @@ def get_crypt_by_precon(input):
         ['LK', ''],
     ]
 
+    sets = [
+        'Promo',
+        'V5',
+        '25th',
+        'FB',
+        'SP',
+        'Anthology',
+        'LK',
+        'AU',
+        'TU',
+        'DM',
+        'HttB',
+        'EK',
+        'BSC',
+        'KoT',
+        'TR',
+        'SoC',
+        'LotN',
+        'NoR',
+        'Third',
+        'KMW',
+        'LoB',
+        'Gehenna',
+        'Tenth',
+        'Anarchs',
+        'BH',
+        'CE',
+        'BL',
+        'FN',
+        'SW',
+        'Sabbat',
+        'AH',
+        'DS',
+        'VTES',
+        'Jyhad',
+        'POD',
+    ];
+
     match_cards = []
 
-    if input == 'bcp':
+    if precon == 'bcp':
         for card in crypt:
             for bcp_precon in bcp_precons:
                 if bcp_precon[0] in card['Set'] and bcp_precon[1] in card['Set'][bcp_precon[0]]:
-                    match_cards.append(card)
+                    if 'only in' in options:
+                        counter = 0
+                        for k in card['Set'].keys():
+                            if k in bcp_precons[0]:
+                                counter += 1
+
+                        if len(card['Set'].keys()) == counter:
+                            match_cards.append(card)
+                            break
+                    elif 'first print' in options:
+                        oldestSetIndex = 0
+                        for k in card['Set'].keys():
+                            if sets.index(k) > oldestSetIndex:
+                                oldestSetIndex = sets.index(k)
+
+                        if oldestSetIndex <= len(bcp_sets):
+                            match_cards.append(card)
+                            break
+                    else:
+                        match_cards.append(card)
+                        break
 
     else:
-        precon = input.split(':')
+        precon = precon.split(':')
         for card in crypt:
             if precon[0] in card['Set'] and precon[1] in card['Set'][precon[0]]:
-                match_cards.append(card)
+                if 'only in' in options:
+                    if len(card['Set'].keys()) == 1:
+                        match_cards.append(card)
+
+                elif 'first print' in options:
+                    oldestSetIndex = 0
+                    for k in card['Set'].keys():
+                        if sets.index(k) > oldestSetIndex:
+                            oldestSetIndex = sets.index(k)
+
+                    if oldestSetIndex == sets.index(precon[0]):
+                        match_cards.append(card)
+                else:
+                    match_cards.append(card)
 
     return match_cards
 

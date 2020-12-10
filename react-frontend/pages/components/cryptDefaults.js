@@ -92,6 +92,10 @@ const cryptDefaults = {
     'first print': false,
   },
   precon: 'any',
+  preconOptions: {
+    'only in': false,
+    'first print': false,
+  },
   artist: 'any',
 };
 

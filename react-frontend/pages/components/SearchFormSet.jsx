@@ -47,14 +47,15 @@ function SearchFormSet(props) {
     return (
       <div key={index} className="mr-3 custom-control custom-checkbox">
         <input
-          id={i[0]}
+          id={`set-${i[0]}`}
+          value={i[0]}
           name="setOptions"
           className="mr-2 custom-control-input"
           type="checkbox"
           checked={props.options[i[0]]}
           onChange={(e) => props.onChangeOptions(e)}
         />
-        <label htmlFor={i[0]} className="mr-2 custom-control-label">
+        <label htmlFor={`set-${i[0]}`} className="mr-2 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -63,7 +64,7 @@ function SearchFormSet(props) {
 
   return (
     <>
-      <Row className="py-1 pl-1 mx-0 align-items-center">
+      <Row className="pt-1 pl-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
           <label className="h6 mb-0">Set:</label>
         </Col>
@@ -77,10 +78,8 @@ function SearchFormSet(props) {
           />
         </Col>
       </Row>
-      <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Set Options:</label>
-        </Col>
+      <Row className="pb-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} />
         <Col xs={9} className="d-flex justify-content-end">
           {setOptionsForm}
         </Col>
