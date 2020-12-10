@@ -386,6 +386,15 @@ def get_crypt_by_precon(precon, options=[]):
         ['LK', ''],
     ]
 
+    bcp_sets = [
+        'V5',
+        '25th',
+        'FB',
+        'SP',
+        'Anthology',
+        'LK',
+    ]
+
     sets = [
         'Promo',
         'V5',
