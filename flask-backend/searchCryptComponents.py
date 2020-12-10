@@ -433,7 +433,7 @@ def get_crypt_by_precon(precon, options=[]):
                     if 'only in' in options:
                         counter = 0
                         for k in card['Set'].keys():
-                            if k in bcp_precons[0]:
+                            if k in bcp_precon[0]:
                                 counter += 1
 
                         if len(card['Set'].keys()) == counter:
