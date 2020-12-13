@@ -6,7 +6,7 @@
 # MAYBE LATER FEATURES
 * Add demo account with V5 precons
 * Night theme
-* Browse precon decks
+* Browse precon/twd decks
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage

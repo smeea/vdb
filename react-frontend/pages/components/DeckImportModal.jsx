@@ -51,9 +51,33 @@ function DeckImportModal(props) {
       });
     setSpinnerState(false);
   };
+  const placeholder = `\
+Paste deck here (text from TWD, Amaranth, Lackey).
+
+It accepts (but work without also) headers like:
+Deck Name: xxxx
+Author: xxxx
+Description: xxxx
+
+It accept crypt like (even lowercase):
+5x Cybele	   10  ANI DAI OBF PRE SER THA	Baali:4
+5x Cybele
+5 Cybele
+
+It accept library like (even lowercase):
+12x Ashur Tablets
+12 Ashur Tablets
+
+It will skip other (useless) lines, you don't have to remove it yourself.
+`;
 
   return (
-    <Modal show={props.show} onHide={props.handleClose} animation={false}>
+    <Modal
+      show={props.show}
+      onHide={props.handleClose}
+      animation={false}
+      size="lg"
+    >
       <Modal.Header closeButton>
         <Modal.Title>Import deck</Modal.Title>
       </Modal.Header>
@@ -61,15 +85,9 @@ function DeckImportModal(props) {
         <FormControl
           as="textarea"
           className="form-control deck-import"
-          rows={
-            deckText.split(/\r\n|\r|\n/).length < 30
-              ? deckText.split(/\r\n|\r|\n/).length > 5
-                ? deckText.split(/\r\n|\r|\n/).length
-                : 5
-              : 30
-          }
+          rows="28"
           value={deckText}
-          placeholder="Paste deck here"
+          placeholder={placeholder}
           onChange={handleChange}
         />
         {!spinnerState ? (

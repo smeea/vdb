@@ -175,14 +175,13 @@ def cloneDeck():
 def importDeck():
     if current_user.is_authenticated:
         try:
-            cards = deckImport(request.json['deckText'])
+            [name, author, description, cards] = deckImport(request.json['deckText'])
             if len(cards) > 0:
                 deckid = uuid.uuid4().hex
-                deckname = 'New imported deck'
                 d = Deck(deckid=deckid,
-                         name=deckname,
-                         author_public_name=current_user.public_name,
-                         description='',
+                         name=name,
+                         author_public_name=author,
+                         description=description,
                          author=current_user,
                          cards=cards)
                 db.session.add(d)

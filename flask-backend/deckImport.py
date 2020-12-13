@@ -17,11 +17,23 @@ with open("vteslib.json", "r") as library_file:
 
 def deckImport(deckText):
     linesArray = deckText.splitlines()
-    deck = {}
+    deck = {
+        'name': 'New Imported Deck',
+        'author': '',
+        'description': '',
+        'cards': {}
+    }
     for i in linesArray:
         cardname = ''
         quantity = 0
         adv = False
+
+        if nameMatch := re.match(r'^Deck Name: (.+)', i):
+            deck['name'] = nameMatch.group(1)
+        if nameMatch := re.match(r'^Author: (.+)', i):
+            deck['author'] = nameMatch.group(1)
+        if nameMatch := re.match(r'^Description: (.+)', i):
+            deck['description'] = nameMatch.group(1)
 
         if '(ADV)' in i:
             if cardMatch := re.match(
@@ -48,18 +60,18 @@ def deckImport(deckText):
                 if (cardname == card['Name'].lower()
                         or cardname == letters_to_ascii(
                             card['Name'].lower())) and not card['Adv']:
-                    deck[str(card['Id'])] = quantity
+                    deck['cards'][str(card['Id'])] = quantity
 
             for card in library:
                 if cardname == card['Name'].lower(
                 ) or cardname == letters_to_ascii(card['Name'].lower()):
-                    deck[str(card['Id'])] = quantity
+                    deck['cards'][str(card['Id'])] = quantity
 
         else:
             for card in crypt:
                 if (cardname == card['Name'].lower()
                         or cardname == letters_to_ascii(
                             card['Name'].lower())) and card['Adv']:
-                    deck[str(card['Id'])] = quantity
+                    deck['cards'][str(card['Id'])] = quantity
 
-    return (deck)
+    return (deck['name'], deck['author'], deck['description'], deck['cards'])
