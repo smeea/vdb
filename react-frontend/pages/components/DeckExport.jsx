@@ -28,6 +28,16 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
         Copy to Clipboard - Lackey
       </Dropdown.Item>
+      <Dropdown.Divider />
+      <Dropdown.Item href="" onClick={() => exportAll('text')}>
+        Save all decks - Text
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => exportAll('twd')}>
+        Save all decks - TWD
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => exportAll('lackey')}>
+        Save all decks - Lackey
+      </Dropdown.Item>
     </>
   );
 
@@ -108,6 +118,48 @@ function DeckExport(props) {
     } else {
       setDeckError(true);
     }
+  };
+
+  const exportAll = (format) => {
+    console.log(format)
+    setDeckError(false);
+
+    setSpinnerState(true);
+
+    const url = `${process.env.API_URL}decks/export`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        deckid: 'all',
+        format: format,
+      }),
+    };
+
+    const fetchPromise = fetch(url, options);
+
+    fetchPromise
+      .then((response) => response.json())
+      .then((data) => {
+        data.map((d) => {
+          const file = new File(
+            [d.deck],
+            d.name + '_' + d.format + '.txt',
+            { type: 'text/plain;charset=utf-8' }
+          );
+          FileSaver.saveAs(file);
+        })
+        setSpinnerState(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setDeckError(true);
+        setSpinnerState(false);
+      });
   };
 
   return (

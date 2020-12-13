@@ -7,8 +7,6 @@
 * Add demo account with V5 precons
 * Night theme
 * Browse precon decks
-* Export all decks in account
-* Scans from http://monocleofclarity.com/vtespl/
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage

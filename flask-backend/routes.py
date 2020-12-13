@@ -8,6 +8,7 @@ from searchLibrary import searchLibrary
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
 from deckExport import deckExport
+from deckExportAll import deckExportAll
 from deckImport import deckImport
 from deckProxy import deckProxy
 from api import app
@@ -198,9 +199,14 @@ def importDeck():
 @app.route('/api/decks/export', methods=['POST'])
 def deckExportRoute():
     try:
-        d = Deck.query.filter_by(deckid=request.json['deckid']).first()
-        result = deckExport(d, request)
-        return jsonify(result)
+        if request.json['deckid'] == 'all' and current_user.is_authenticated:
+            decks = Deck.query.filter_by(author=current_user).all()
+            result = deckExportAll(decks, request.json['format'])
+            return jsonify(result)
+        else:
+            deck = Deck.query.filter_by(deckid=request.json['deckid']).first()
+            result = deckExport(deck, request.json['format'])
+            return jsonify(result)
 
     except Exception:
         pass

@@ -3,7 +3,7 @@ from searchLibraryComponents import get_library_by_id
 import re
 
 
-def deckExport(d, request):
+def deckExport(d, format):
     try:
         crypt = {}
         library = {}
@@ -16,8 +16,7 @@ def deckExport(d, request):
 
         deck = ''
 
-        if request.json['format'] == 'lackey':
-            print('lackey')
+        if format == 'lackey':
             for k, v in library.items():
                 deck += str(v['q'])
                 if v['q'] < 10:
@@ -41,9 +40,7 @@ def deckExport(d, request):
                 else:
                     deck += v['c']['Name'] + '\n'
 
-        elif request.json['format'] == 'text' or request.json[
-                'format'] == 'twd':
-            format = request.json['format']
+        elif format == 'text' or format == 'twd':
 
             disciplinesList = {
                 'Auspex': 'aus',
@@ -245,7 +242,7 @@ def deckExport(d, request):
 
                     deck += '\n'
 
-        return {'name': d.name, 'format': request.json['format'], 'deck': deck}
+        return {'name': d.name, 'format': format, 'deck': deck}
 
     except Exception:
         pass

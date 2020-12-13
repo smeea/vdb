@@ -23,12 +23,12 @@ function ResultLibraryName(props) {
             <CardPopover card={props.card}>{props.showImage}</CardPopover>
           }
         >
-          <span
+          <div
             className="name"
             onClick={() => props.setShowImage(!props.showImage)}
           >
             {props.card['Name']} {props.card['Banned'] && ' [BANNED]'}
-          </span>
+          </div>
         </OverlayTrigger>
       ) : (
         <>

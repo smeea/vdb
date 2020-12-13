@@ -31,8 +31,8 @@ function ResultCryptName(props) {
             <CardPopover card={props.card}>{props.showImage}</CardPopover>
           }
         >
-          <span
-            className="name"
+          <div
+            className="namee"
             onClick={() => props.setShowImage(!props.showImage)}
           >
             {props.card['Name']}
@@ -42,7 +42,7 @@ function ResultCryptName(props) {
               </span>
             )}
             {props.ban && ' [BANNED]'}
-          </span>
+          </div>
         </OverlayTrigger>
       ) : (
         <>
