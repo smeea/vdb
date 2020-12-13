@@ -10,10 +10,13 @@ function DeckImport(props) {
 
   const fileInput = React.createRef();
 
-  const handleFileChange = () => importDeck();
+  const handleFileChange = () => importDeckFromFile();
   const handleFileInputClick = () => fileInput.current.click();
 
-  const handleCloseImportModal = () => setShowImportModal(false);
+  const handleCloseImportModal = () => {
+    setShowImportModal(false); 
+    props.setShowButtons(false);
+  }
   const handleOpenImportModal = () => setShowImportModal(true);
 
   const createNewDeck = () => {
@@ -47,7 +50,7 @@ function DeckImport(props) {
       });
   };
 
-  const importDeck = () => {
+  const importDeckFromFile = () => {
     setImportError(false);
 
     let newDeckId;
@@ -140,6 +143,7 @@ function DeckImport(props) {
         getDecks={props.getDecks}
         setActiveDeck={props.setActiveDeck}
         show={showImportModal}
+        setShowInfo={props.setShowInfo}
       />
     </>
   );

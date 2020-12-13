@@ -12,7 +12,7 @@ function DeckImportModal(props) {
     setDeckText(event.target.value);
   };
 
-  const importDeck = () => {
+  const importDeckFromText = () => {
     setImportError(false);
     setEmptyDeckText(false);
     setSpinnerState(true);
@@ -42,6 +42,7 @@ function DeckImportModal(props) {
       .then(() => props.getDecks())
       .then(() => {
         props.setActiveDeck(newDeckId);
+        props.setShowInfo(true);
         setDeckText('');
         props.handleClose();
       })
@@ -85,17 +86,17 @@ It will skip other (useless) lines, you don't have to remove it yourself.
         <FormControl
           as="textarea"
           className="form-control deck-import"
-          rows="28"
+          rows="25"
           value={deckText}
           placeholder={placeholder}
           onChange={handleChange}
         />
         {!spinnerState ? (
-          <Button variant="outline-secondary" onClick={importDeck}>
+          <Button variant="outline-secondary" onClick={importDeckFromText}>
             Import
           </Button>
         ) : (
-          <Button variant="outline-secondary" onClick={importDeck}>
+          <Button variant="outline-secondary" onClick={importDeckFromText}>
             <Spinner
               as="span"
               animation="border"
