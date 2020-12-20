@@ -77,8 +77,11 @@ function Navigation(props) {
             <NavLink to="/about" className="nav-link px-2">
               {props.isMobile ? <InfoCircleFill /> : 'About'}
             </NavLink>
-            <NavLink to="/deck" className="nav-link px-2">
-              Deck
+            <NavLink to="/twd" className="nav-link px-2">
+              TWD
+            </NavLink>
+            <NavLink to="/decks" className="nav-link px-2">
+              Decks
             </NavLink>
             <NavLink to="/crypt" className="nav-link px-2">
               Crypt

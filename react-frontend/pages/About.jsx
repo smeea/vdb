@@ -84,6 +84,7 @@ function About(props) {
                 backup - you can paste text from TWDA or import from
                 Amaranth/Lackey to quickly start
               </li>
+              <li>Browse Tournament-Winning Decks (TWD) and copy them to your deck archive to edit</li>
               <li>Create PDF with proxies of your decks</li>
               <li>Open source, ad-free & privacy-respecting</li>
               <li>Once familiar with, you will love it!</li>

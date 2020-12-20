@@ -1,12 +1,20 @@
 # FIX
 * Error messages output
+* Deck draw crypt discipline alignment
+* ADV img to card add in deck
 
 # FEATURES
+* Banned filter to search
+* TWD search forms - date
+* TWD search forms - cards quantity
+* Trifles to Library total
 
 # MAYBE LATER FEATURES
-* Add demo account with V5 precons
+* Precon decks
+* Script to generate json from cvs from text disciplines
 * Night theme
-* Browse precon/twd decks
+* Browse precon decks
+* Open any deck by url
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage
@@ -21,6 +29,8 @@
 * Unify error handling
 * Store cards on frontend
 * Show immediate search results on desktop
+* Tables to Bootstrap/Table
+* Screenshots to Bootstrap/Carousel
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ

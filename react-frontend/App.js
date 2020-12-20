@@ -6,20 +6,23 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Navigation from './pages/Navigation.jsx';
-import cryptDefaults from './pages/components/cryptDefaults.js';
-import libraryDefaults from './pages/components/libraryDefaults.js';
+import defaultsTwdForm from './pages/components/defaultsTwdForm.js';
+import defaultsCryptForm from './pages/components/defaultsCryptForm.js';
+import defaultsLibraryForm from './pages/components/defaultsLibraryForm.js';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 
 const Crypt = lazy(() => import('./pages/Crypt.jsx'));
 const Library = lazy(() => import('./pages/Library.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
-const Deck = lazy(() => import('./pages/Deck.jsx'));
+const Twd = lazy(() => import('./pages/Twd.jsx'));
+const Decks = lazy(() => import('./pages/Decks.jsx'));
 const Account = lazy(() => import('./pages/Account.jsx'));
 
 function App(props) {
-  const [cryptFormState, setCryptFormState] = useState(cryptDefaults);
-  const [libraryFormState, setLibraryFormState] = useState(libraryDefaults);
+  const [twdFormState, setTwdFormState] = useState(defaultsTwdForm);
+  const [cryptFormState, setCryptFormState] = useState(defaultsCryptForm);
+  const [libraryFormState, setLibraryFormState] = useState(defaultsLibraryForm);
 
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
@@ -31,15 +34,18 @@ function App(props) {
 
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
+  const [twdDecks, setTwdDecks] = useState({});
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
+  const [twdResults, setTwdResults] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
 
   const isMobile = window.matchMedia('(max-width: 540px)').matches;
   const isWide = window.matchMedia('(min-width: 1600px)').matches;
 
+  const [showTwdSearch, setShowTwdSearch] = useState(true);
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
 
@@ -66,6 +72,28 @@ function App(props) {
         }
       });
   };
+
+  const getTwdDecks = () => {
+    const url = `${process.env.API_URL}decks/twd`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          if (JSON.stringify(data) != JSON.stringify(twdDecks)) {
+            setTwdDecks(data);
+          }
+        } else {
+          console.log('Error: ', data.error);
+        }
+      });
+  };
+
 
   const deckCardAdd = (card, inDeck) => {
     if (!inDeck) {
@@ -207,6 +235,7 @@ function App(props) {
 
   useEffect(() => {
     whoAmI();
+    // getTwdDecks();
   }, []);
 
   useEffect(() => {
@@ -226,13 +255,15 @@ function App(props) {
 
   useEffect(() => {
     setChangeTimer(!changeTimer);
-  }, [decks[activeDeck] && decks[activeDeck]['Name']]);
+  }, [sharedDeck, decks[activeDeck]]);
 
   return (
     <div className="App">
       <Router>
         <Navigation
           isMobile={isMobile}
+          showTwdSearch={showTwdSearch}
+          setShowTwdSearch={setShowTwdSearch}
           showCryptSearch={showCryptSearch}
           setShowCryptSearch={setShowCryptSearch}
           showLibrarySearch={showLibrarySearch}
@@ -241,6 +272,7 @@ function App(props) {
           decks={decks}
           activeDeck={activeDeck}
           setActiveDeck={setActiveDeck}
+          isTwdResults={twdResults && true}
           isCryptResults={cryptResults && true}
           isLibraryResults={libraryResults && true}
           addMode={addMode}
@@ -264,8 +296,28 @@ function App(props) {
                 whoAmI={whoAmI}
               />
             </Route>
-            <Route path="/deck">
-              <Deck
+            <Route path="/twd">
+              <Twd
+                /* changeTimer={changeTimer} */
+                isWide={isWide}
+                isMobile={isMobile}
+                showSearch={showTwdSearch}
+                setShowSearch={setShowTwdSearch}
+                /* decks={decks} */
+                /* getDecks={getDecks} */
+                /* activeDeck={activeDeck} */
+                /* setActiveDeck={setActiveDeck} */
+                showImage={showImage}
+                setShowImage={setShowImage}
+                results={twdResults}
+                setResults={setTwdResults}
+                addMode={addMode}
+                formState={twdFormState}
+                setFormState={setTwdFormState}
+              />
+            </Route>
+            <Route path="/decks">
+              <Decks
                 changeTimer={changeTimer}
                 isMobile={isMobile}
                 isWide={isWide}
@@ -284,9 +336,9 @@ function App(props) {
               />
             </Route>
             <Route
-              path="/deck/:id"
+              path="/decks/:id"
               component={(props) => (
-                <Deck
+                <Decks
                   changeTimer={changeTimer}
                   isMobile={isMobile}
                   isWide={isWide}

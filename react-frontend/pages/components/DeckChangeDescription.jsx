@@ -47,7 +47,16 @@ function DeckDescription(props) {
             onChange={handleChange}
           />
         ) : (
-          <div className="form-control">{state}</div>
+          <FormControl
+            as="textarea"
+            rows={5}
+            type="text"
+            className="form-control"
+            value={state}
+            onChange={handleChange}
+            readOnly
+            style={{ background: 'white' }}
+          />
         )}
         {props.isAuthor && (
           <InputGroup.Append>

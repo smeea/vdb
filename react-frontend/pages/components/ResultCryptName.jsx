@@ -7,7 +7,10 @@ function ResultCryptName(props) {
     return (
       <Popover ref={ref} {...props}>
         <Popover.Content>
-          <ResultCryptPopover card={props.card} showImage={children} />
+          <ResultCryptPopover
+            card={props.card}
+            showImage={children}
+          />
         </Popover.Content>
       </Popover>
     );
@@ -28,11 +31,13 @@ function ResultCryptName(props) {
         <OverlayTrigger
           placement="right"
           overlay={
-            <CardPopover card={props.card}>{props.showImage}</CardPopover>
+            <CardPopover card={props.card}>
+              {props.showImage}
+            </CardPopover>
           }
         >
           <div
-            className="namee"
+            className="name"
             onClick={() => props.setShowImage(!props.showImage)}
           >
             {props.card['Name']}
@@ -46,7 +51,7 @@ function ResultCryptName(props) {
         </OverlayTrigger>
       ) : (
         <>
-          <span className="name">
+          <div className="name">
             {props.card['Name']}
             {props.card['Adv'] && (
               <span className="pl-1">
@@ -54,7 +59,7 @@ function ResultCryptName(props) {
               </span>
             )}
             {props.ban && ' [BANNED]'}
-          </span>
+          </div>
         </>
       )}
     </>

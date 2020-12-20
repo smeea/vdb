@@ -2,9 +2,12 @@ from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user
 from datetime import datetime
 import uuid
+import json
 
+from searchTwd import searchTwd
 from searchCrypt import searchCrypt
 from searchLibrary import searchLibrary
+# from searchTwdComponents import get_twd_by_id
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
 from deckExport import deckExport
@@ -19,29 +22,41 @@ from models import Deck
 
 @app.route('/api/deck/<string:deckid>', methods=['GET'])
 def showDeck(deckid):
-    decks = {}
-    deck = Deck.query.filter_by(deckid=deckid).first()
-    crypt = {}
-    library = {}
-    for k, v in deck.cards.items():
-        k = int(k)
-        if k > 200000:
-            crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
-        elif k < 200000:
-            library[k] = {'c': get_library_by_id(k), 'q': v}
+    if len(deckid) == 32:
+        decks = {}
+        deck = Deck.query.filter_by(deckid=deckid).first()
+        crypt = {}
+        library = {}
+        for k, v in deck.cards.items():
+            k = int(k)
+            if k > 200000:
+                crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
+            elif k < 200000:
+                library[k] = {'c': get_library_by_id(k), 'q': v}
 
-    decks[deckid] = {
-        'name': deck.name,
-        'owner': deck.author.username,
-        'author': deck.author_public_name,
-        'description': deck.description,
-        'crypt': crypt,
-        'library': library,
-        'deckid': deck.deckid,
-        'timestamp': deck.timestamp,
-    }
-    return jsonify(decks)
+        decks[deckid] = {
+            'name': deck.name,
+            'owner': deck.author.username,
+            'author': deck.author_public_name,
+            'description': deck.description,
+            'crypt': crypt,
+            'library': library,
+            'deckid': deck.deckid,
+            'timestamp': deck.timestamp,
+        }
+        return jsonify(decks)
+    else:
+        with open("twdDecks.json", "r") as twdDecks_file:
+            twdDecks = json.load(twdDecks_file)
 
+            deck = twdDecks[deckid]
+            for i in deck['crypt']:
+                deck['crypt'][i]['c'] = get_crypt_by_id(i)
+            for i in deck['library']:
+                deck['library'][i]['c'] = get_library_by_id(i)
+
+            decks = { deckid: deck }
+            return jsonify(decks)
 
 @app.route('/api/deck/<string:deckid>', methods=['PUT'])
 def updateDeck(deckid):
@@ -122,7 +137,6 @@ def listDecks():
     except AttributeError:
         return jsonify({'error': 'not logged'})
 
-
 @app.route('/api/decks/create', methods=['POST'])
 def newDeck():
     if current_user.is_authenticated:
@@ -148,7 +162,31 @@ def newDeck():
 
 @app.route('/api/decks/clone', methods=['POST'])
 def cloneDeck():
-    if current_user.is_authenticated:
+    if len(request.json['target']) != 32:
+        with open("twdDecks.json", "r") as twdDecks_file:
+            twdDecks = json.load(twdDecks_file)
+
+            deck = twdDecks[request.json['target']]
+            cards = {}
+            for i in deck['crypt']:
+                cards[i] = deck['crypt'][i]['q']
+            for i in deck['library']:
+                cards[i] = deck['library'][i]['q']
+
+            deckid = uuid.uuid4().hex
+            d = Deck(deckid=deckid,
+                     name=f"{deck['name']} [by {deck['author']}]",
+                     author_public_name=deck['author'],
+                     description=deck['description'],
+                     author=current_user,
+                     cards=cards)
+            db.session.add(d)
+            db.session.commit()
+            return jsonify({
+                'deck cloned': request.json['deckname'],
+                'deckid': deckid
+            })
+    elif current_user.is_authenticated:
         try:
             targetDeck = Deck.query.filter_by(
                 deckid=request.json['target']).first()
@@ -338,6 +376,31 @@ def logout():
     except AttributeError:
         return jsonify({'error': 'not logged'})
 
+
+# @app.route('/api/decks/twd', methods=['GET'])
+# def listTwdDecks():
+#     with open("twdIndex.json", "r") as twdIndex_file:
+#         return jsonify(json.load(twdIndex_file))
+
+
+@app.route('/api/twd/locations', methods=['GET'])
+def getLocations():
+    with open("twdLocations.json", "r") as twdLocations_file:
+        return jsonify(json.load(twdLocations_file))
+
+
+@app.route('/api/twd/players', methods=['GET'])
+def getPlayers():
+    with open("twdPlayers.json", "r") as twdPlayers_file:
+        return jsonify(json.load(twdPlayers_file))
+
+@app.route('/api/search/twd', methods=['POST'])
+def searchTwdRoute():
+    result = searchTwd(request)
+    if result != 400:
+        return jsonify(result)
+    else:
+        abort(400)
 
 @app.route('/api/search/crypt', methods=['POST'])
 def searchCryptRoute():
