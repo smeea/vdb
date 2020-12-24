@@ -155,6 +155,64 @@ function TwdSearchForm(props) {
         </Col>
       </Row>
       <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={4} className="d-flex px-0">
+          <label className="h6 mb-0">Crypt Cards:</label>
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={12} className="d-inline px-0">
+          <TwdSearchFormCrypt
+            value={props.formState.crypt}
+            setValue={props.setFormState}
+            spinner={spinnerState}
+            isMobile={props.isMobile}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={4} className="d-flex px-0">
+          <label className="h6 mb-0">Library Cards:</label>
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={12} className="d-inline px-0">
+          <TwdSearchFormLibrary
+            value={props.formState.library}
+            setValue={props.setFormState}
+            spinner={spinnerState}
+            isMobile={props.isMobile}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Clan:</label>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <TwdSearchFormClan
+            value={props.formState.clan}
+            onChange={handleChange}
+          />
+        </Col>
+      </Row>
+      <TwdSearchFormDisciplines
+        disciplines={props.formState.disciplines}
+        onChange={handleMultiChange}
+      />
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Traits:</label>
+        </Col>
+      </Row>
+      <TwdSearchFormTraits
+        value={props.formState.traits}
+        onChange={handleMultiChange}
+      />
+      <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
           <label className="h6 mb-0">Winner:</label>
         </Col>
@@ -176,53 +234,6 @@ function TwdSearchForm(props) {
           />
         </Col>
       </Row>
-      <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={4} className="d-flex px-0">
-          <label className="h6 mb-0">Crypt Cards:</label>
-        </Col>
-      </Row>
-      <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={12} className="d-inline px-0">
-          <TwdSearchFormCrypt
-            value={props.formState.crypt}
-            setValue={props.setFormState}
-            spinner={spinnerState}
-          />
-        </Col>
-      </Row>
-      <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={4} className="d-flex px-0">
-          <label className="h6 mb-0">Library Cards:</label>
-        </Col>
-      </Row>
-      <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={12} className="d-inline px-0">
-          <TwdSearchFormLibrary
-            value={props.formState.library}
-            setValue={props.setFormState}
-            spinner={spinnerState}
-          />
-        </Col>
-      </Row>
-      <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Clan:</label>
-        </Col>
-        <Col xs={9} className="d-inline px-0">
-          <TwdSearchFormClan
-            value={props.formState.clan}
-            onChange={handleChange}
-          />
-        </Col>
-      </Row>
-      <TwdSearchFormDisciplines
-        disciplines={props.formState.disciplines}
-        onChange={handleMultiChange}
-      />
-      <TwdSearchFormTraits
-        value={props.formState.traits}
-        onChange={handleMultiChange}
-      />
     </form>
   );
 }

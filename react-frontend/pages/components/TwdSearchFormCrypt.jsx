@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
+import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 
-function TwdSearchFormCrypt({ value, setValue}) {
+function TwdSearchFormCrypt({ value, setValue, isMobile, showImage, setShowImage}) {
   const [selectedValue, setSelectedValue] = useState(null);
   const [cryptCards, setCryptCards] = useState([])
 
@@ -24,13 +25,10 @@ function TwdSearchFormCrypt({ value, setValue}) {
     return(
       <div key={index} className="d-flex align-items-center">
         <ResultCryptName
-      /* showImage={props.showImage} */
-      /* setShowImage={props.setShowImage} */
-      /* isMobile={props.isMobile} */
-          id={card['Id']}
-          value={card['Name']}
-          adv={card['Adv']}
-          ban={card['Banned']}
+          isMobile={isMobile}
+          showImage={showImage}
+          setShowImage={setShowImage}
+          placement="left"
           card={card}
         />
         <div className="px-1">
@@ -92,9 +90,13 @@ function TwdSearchFormCrypt({ value, setValue}) {
               <div>
                 <ResultCryptCapacity value={card['Capacity']} />
                 <span className="px-2">
-                  {card['Name'] +
-                   (card['Adv'] ? ' [ADV]' : '') +
-                   (card['Banned'] ? ' [BANNED]' : '')}
+                  {card['Name']}
+                  {card['Banned'] && <Hammer />}
+                  {card['Adv'] && (
+                    <span className="pl-1">
+                      <img className='advanced-image-results' src={`${process.env.ROOT_URL}images/misc/advanced.svg`} title='Advanced' />
+                    </span>
+                  )}
                 </span>
                 <ResultCryptClan value={card['Clan']} />
               </div>

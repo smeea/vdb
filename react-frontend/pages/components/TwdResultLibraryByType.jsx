@@ -53,7 +53,6 @@ function TwdResultLibraryByType({ library, isMobile, showImage, setShowImage}) {
             <Popover.Content>
                 <DeckLibraryTable
                   cards={props.cards}
-                  className={'name'}
                 />
             </Popover.Content>
           </Popover>
@@ -72,9 +71,7 @@ function TwdResultLibraryByType({ library, isMobile, showImage, setShowImage}) {
           <td className="type">
             <OverlayTrigger
               placement="right"
-              overlay={
-                <TypePopover cards={libraryByType[cardtype]} />
-              }
+              overlay={<TypePopover cards={libraryByType[cardtype]} />}
             >
               <div className="name">
                 <ResultLibraryType

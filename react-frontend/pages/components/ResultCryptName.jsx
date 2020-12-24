@@ -1,5 +1,6 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
+import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 
 function ResultCryptName(props) {
@@ -20,7 +21,7 @@ function ResultCryptName(props) {
   const imgClass = 'advanced-image-results';
   let imgSrc = '';
   let imgTitle = '';
-  if (props.adv) {
+  if (props.card['Adv']) {
     imgSrc = `${process.env.ROOT_URL}images/misc/advanced.svg`;
     imgTitle = 'Advanced';
   }
@@ -29,7 +30,7 @@ function ResultCryptName(props) {
     <>
       {!props.isMobile ? (
         <OverlayTrigger
-          placement="right"
+          placement={props.placement ? props.placement : "right"}
           overlay={
             <CardPopover card={props.card}>
               {props.showImage}
@@ -46,7 +47,7 @@ function ResultCryptName(props) {
                 <img className={imgClass} src={imgSrc} title={imgTitle} />
               </span>
             )}
-            {props.ban && ' [BANNED]'}
+            {props.card['Banned'] && <Hammer />}
           </div>
         </OverlayTrigger>
       ) : (
@@ -58,7 +59,7 @@ function ResultCryptName(props) {
                 <img className={imgClass} src={imgSrc} title={imgTitle} />
               </span>
             )}
-            {props.ban && ' [BANNED]'}
+            {props.card['Banned'] && <Hammer />}
           </div>
         </>
       )}

@@ -114,10 +114,6 @@ function ResultCryptTable(props) {
             <ResultCryptName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
-              id={card['Id']}
-              value={card['Name']}
-              adv={card['Adv']}
-              ban={card['Banned']}
               card={card}
               isMobile={props.isMobile}
             />

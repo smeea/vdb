@@ -1,6 +1,7 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import reactStringReplace from 'react-string-replace';
+import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
@@ -133,6 +134,11 @@ function ResultLibraryPopover(props) {
               </div>
               <div className="pl-2">
                 <b>{props.card['Name']}</b>
+                {props.card['Banned'] && (
+                  <span className="pl-1">
+                    <Hammer />
+                  </span>
+                )}
               </div>
             </div>
             <div className="pl-1">

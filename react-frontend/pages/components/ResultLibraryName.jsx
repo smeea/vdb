@@ -1,5 +1,6 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
+import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 
 function ResultLibraryName(props) {
@@ -21,7 +22,7 @@ function ResultLibraryName(props) {
     <>
       {!props.isMobile ? (
         <OverlayTrigger
-          placement="right"
+          placement={props.placement ? props.placement : "right"}
           overlay={
             <CardPopover card={props.card}>
               {props.showImage}
@@ -32,13 +33,13 @@ function ResultLibraryName(props) {
             className="name"
             onClick={() => props.setShowImage(!props.showImage)}
           >
-            {props.card['Name']} {props.card['Banned'] && ' [BANNED]'}
+            {props.card['Name']} {props.card['Banned'] && <Hammer />}
           </div>
         </OverlayTrigger>
       ) : (
         <>
           <div className="name">
-            {props.card['Name']} {props.card['Banned'] && ' [BANNED]'}
+            {props.card['Name']} {props.card['Banned'] && <Hammer />}
           </div>
         </>
       )}

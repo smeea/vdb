@@ -304,7 +304,7 @@ function App(props) {
                 showSearch={showTwdSearch}
                 setShowSearch={setShowTwdSearch}
                 /* decks={decks} */
-                /* getDecks={getDecks} */
+                getDecks={getDecks}
                 /* activeDeck={activeDeck} */
                 /* setActiveDeck={setActiveDeck} */
                 showImage={showImage}

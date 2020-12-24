@@ -11,7 +11,10 @@ function TwdResult(props) {
       <React.Fragment key={index}>
         <Row className="pt-3">
           <Col md={12} xl={3}>
-            <TwdResultDescription deck={deck} />
+            <TwdResultDescription
+              deck={deck}
+              getDecks={props.getDecks}
+            />
           </Col>
           <Col md={12} xl={3}>
             <TwdResultCrypt

@@ -7,7 +7,7 @@ function TwdSearchFormTraits(props) {
   ];
 
   const traitsRight = [
-    ['prevent', 'Prevent'],
+    ['monoclan', 'Mono Clan'],
   ];
 
   const traitsLeftforms = traitsLeft.map((i, index) => {
@@ -50,11 +50,6 @@ function TwdSearchFormTraits(props) {
 
   return (
     <>
-      <Row className="mx-0 py-1 pl-1">
-        <Col className="d-flex px-0">
-          <label className="h6 mb-0">Traits:</label>
-        </Col>
-      </Row>
       <Row className="mx-0">
         <Col xs={6} className="d-inline">
           {traitsLeftforms}

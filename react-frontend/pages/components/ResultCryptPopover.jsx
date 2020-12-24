@@ -1,6 +1,7 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import reactStringReplace from 'react-string-replace';
+import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
@@ -119,6 +120,16 @@ function ResultCryptPopover(props) {
               </div>
               <div className="pl-2">
                 <b>{props.card['Name']}</b>
+                {props.card['Banned'] && (
+                  <span className="pl-1">
+                    <Hammer />
+                  </span>
+                )}
+                {props.card['Adv'] && (
+                  <span className="pl-1">
+                    <img className='advanced-image-results' src={`${process.env.ROOT_URL}images/misc/advanced.svg`} title='Advanced' />
+                  </span>
+                )}
               </div>
             </div>
             <div className="pl-2">

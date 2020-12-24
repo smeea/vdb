@@ -71,10 +71,6 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage}) {
         >
           <div className="px-1">
             <ResultCryptName
-              id={card.c['Id']}
-              value={card.c['Name']}
-              ban={card.c['Banned']}
-              adv={card.c['Adv']}
               card={card.c}
               showImage={showImage}
               setShowImage={setShowImage}

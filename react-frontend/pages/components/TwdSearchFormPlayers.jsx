@@ -21,7 +21,7 @@ function TwdSearchFormPlayers(props) {
       name: 'playersFrom',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="margin-third" />
           {i}
         </>
       ),
@@ -32,7 +32,7 @@ function TwdSearchFormPlayers(props) {
       name: 'playersTo',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="margin-third" />
           {i}
         </>
       ),

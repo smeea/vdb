@@ -118,7 +118,7 @@ def get_twd_by_clan(clan):
                 if get_crypt_by_id(id)['Clan'].lower() == clan:
                     clan_in_deck += q
 
-        if (clan_in_deck / crypt_cards) >= 0.4:
+        if (clan_in_deck / crypt_cards) >= 0.65:
             match_decks.append(twda[deck])
 
     return match_decks

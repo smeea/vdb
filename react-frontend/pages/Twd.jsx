@@ -47,6 +47,7 @@ function Twd(props) {
               showImage={props.showImage}
               setShowImage={props.setShowImage}
               decks={props.results}
+              getDecks={props.getDecks}
               /* showSort={true} */
               /* showTotal={true} */
               /* sortMethod={sortMethod} */
@@ -82,6 +83,8 @@ function Twd(props) {
             formState={props.formState}
             setFormState={props.setFormState}
             isMobile={props.isMobile}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
           />
         </Col>
       </Row>

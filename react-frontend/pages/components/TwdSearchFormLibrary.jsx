@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
+import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 
-function TwdSearchFormLibrary({ value, setValue}) {
+function TwdSearchFormLibrary({ value, setValue, isMobile, showImage, setShowImage }) {
   const [selectedValue, setSelectedValue] = useState(null);
   const [libraryCards, setLibraryCards] = useState([])
 
@@ -25,13 +26,10 @@ function TwdSearchFormLibrary({ value, setValue}) {
     return(
       <div key={index} className="d-flex align-items-center">
         <ResultLibraryName
-          /* showImage={props.showImage} */
-          /* setShowImage={props.setShowImage} */
-          /* isMobile={props.isMobile} */
-          id={card['Id']}
-          value={card['Name']}
-          adv={card['Adv']}
-          ban={card['Banned']}
+          showImage={showImage}
+          setShowImage={setShowImage}
+          isMobile={isMobile}
+          placement="left"
           card={card}
         />
         <div className="px-1">
@@ -93,7 +91,7 @@ function TwdSearchFormLibrary({ value, setValue}) {
               <div>
                 <ResultLibraryType cardtype={card['Type']} />
                 <span className="pl-1">
-                  {card['Name'] + (card['Banned'] ? ' [BANNED]' : '')}
+                  {card['Name']} {card['Banned'] && <Hammer />}
                 </span>
               </div>
               <div>

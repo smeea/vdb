@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AsyncSelect from 'react-select/async';
+import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
@@ -70,7 +71,7 @@ function DeckNewLibraryCard(props) {
             <div>
               <ResultLibraryType cardtype={card['Type']} />
               <span className="pl-1">
-                {card['Name'] + (card['Banned'] ? ' [BANNED]' : '')}
+                {card['Name']} {card['Banned'] && <Hammer />}
               </span>
             </div>
             <div>

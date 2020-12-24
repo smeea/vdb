@@ -40,7 +40,7 @@ function TwdSearchFormDate(props) {
       name: 'dateFrom',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="margin-third" />
           {i}
         </>
       ),
@@ -51,7 +51,7 @@ function TwdSearchFormDate(props) {
       name: 'dateTo',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="margin-third" />
           {i}
         </>
       ),

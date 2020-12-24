@@ -66,9 +66,6 @@ function TwdResultLibraryKeyCards({ library, isMobile, showImage, setShowImage }
               >
                 <div className="px-1">
                   <ResultLibraryName
-                    id={card.c['Id']}
-                    value={card.c['Name']}
-                    ban={card.c['Banned']}
                     card={card.c}
                     showImage={showImage}
                     setShowImage={setShowImage}

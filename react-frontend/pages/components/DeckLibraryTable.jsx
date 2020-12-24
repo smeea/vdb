@@ -82,9 +82,6 @@ function DeckLibraryTable(props) {
               <ResultLibraryName
                 showImage={props.showImage}
                 setShowImage={props.setShowImage}
-                id={card.c['Id']}
-                value={card.c['Name']}
-                ban={card.c['Banned']}
                 card={card.c}
                 isMobile={props.isMobile}
               />

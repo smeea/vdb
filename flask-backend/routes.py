@@ -55,6 +55,15 @@ def showDeck(deckid):
             for i in deck['library']:
                 deck['library'][i]['c'] = get_library_by_id(i)
 
+            comments = deck['description']
+            deck['description'] = 'Date: ' + deck['date'] + '\n'
+            deck['description'] += 'Players: ' + str(deck['players']) + '\n'
+            deck['description'] += 'Event: ' + deck['event'] + '\n'
+            deck['description'] += 'Location: ' + deck['location'] + '\n'
+            if comments:
+                deck['description'] += '\n' + comments
+            deck['author'] = deck['player']
+
             decks = { deckid: deck }
             return jsonify(decks)
 
@@ -175,8 +184,8 @@ def cloneDeck():
 
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
-                     name=f"{deck['name']} [by {deck['author']}]",
-                     author_public_name=deck['author'],
+                     name=f"{deck['name']} [by {deck['player']}]",
+                     author_public_name=deck['player'],
                      description=deck['description'],
                      author=current_user,
                      cards=cards)

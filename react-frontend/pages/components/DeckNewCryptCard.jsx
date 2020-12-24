@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AsyncSelect from 'react-select/async';
+import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -69,9 +70,13 @@ function DeckNewCryptCard(props) {
             <div>
               <ResultCryptCapacity value={card['Capacity']} />
               <span className="px-2">
-                {card['Name'] +
-                  (card['Adv'] ? ' [ADV]' : '') +
-                  (card['Banned'] ? ' [BANNED]' : '')}
+                {card['Name']}
+                {card['Banned'] && <Hammer />}
+                {card['Adv'] && (
+                <span className="pl-1">
+                  <img className='advanced-image-results' src={`${process.env.ROOT_URL}images/misc/advanced.svg`} title='Advanced' />
+                </span>
+                )}
               </span>
               <ResultCryptClan value={card['Clan']} />
             </div>
