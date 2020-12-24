@@ -88,10 +88,10 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage}) {
 
   return (
     <>
-      <b>
-        Crypt [{cryptTotal}] - {cryptGroups}
-      </b>
-      <table>
+      <div>
+        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
+      </div>
+      <table width="100%">
         <tbody>
           {cardLines}
         </tbody>

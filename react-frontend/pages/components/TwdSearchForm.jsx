@@ -1,14 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import TwdSearchFormTextAndButtons from './TwdSearchFormTextAndButtons.jsx';
+import React, { useEffect, useState } from 'react';
+import { Row, Col } from 'react-bootstrap';
+import TwdSearchFormEventAndButtons from './TwdSearchFormEventAndButtons.jsx';
 import TwdSearchFormPlayer from './TwdSearchFormPlayer.jsx';
+import TwdSearchFormPlayers from './TwdSearchFormPlayers.jsx';
 import TwdSearchFormLocation from './TwdSearchFormLocation.jsx';
+import TwdSearchFormDate from './TwdSearchFormDate.jsx';
+import TwdSearchFormClan from './TwdSearchFormClan.jsx';
+import TwdSearchFormTraits from './TwdSearchFormTraits.jsx';
+import TwdSearchFormDisciplines from './TwdSearchFormDisciplines.jsx';
 import TwdSearchFormCrypt from './TwdSearchFormCrypt.jsx';
 import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
 
 function TwdSearchForm(props) {
   const defaults = {
+    event: '',
     player: '',
     location: '',
+    clan: 'any',
+    playersFrom: 'any',
+    playersTo: 'any',
+    dateFrom: 'any',
+    dateTo: 'any',
+    disciplines: {},
+    traits: {},
     crypt: {},
     library: {},
   };
@@ -16,10 +30,20 @@ function TwdSearchForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target ? event.target : event;
     props.setFormState((prevState) => ({
       ...prevState,
       [name]: value,
+    }));
+  };
+
+  const handleMultiChange = (event) => {
+    const { id, name, value} = event.target;
+    const newState = props.formState[name];
+    newState[value ? value : id] = !newState[id];
+    props.setFormState((prevState) => ({
+      ...prevState,
+      [name]: newState,
     }));
   };
 
@@ -38,6 +62,7 @@ function TwdSearchForm(props) {
     const multiSelectForms = [
       'crypt',
       'library',
+      'disciplines',
     ];
 
     multiSelectForms.map((i) => {
@@ -48,9 +73,9 @@ function TwdSearchForm(props) {
 
     Object.keys(input).forEach(
       (k) =>
-        (input[k] == 'any' ||
-          !input[k] ||
-          Object.keys(input[k]).length === 0) &&
+      (input[k] == 'any' ||
+       !input[k] ||
+       Object.keys(input[k]).length === 0) &&
         delete input[k]
     );
     // if (input['capacity'] == null) {
@@ -93,37 +118,110 @@ function TwdSearchForm(props) {
 
   return (
     <form onSubmit={handleSubmitButton}>
-      <TwdSearchFormTextAndButtons
-        value={props.formState.text}
+      <TwdSearchFormEventAndButtons
+        value={props.formState.event}
         onChange={handleChange}
         handleClearButton={handleClearButton}
         spinner={spinnerState}
       />
-      <TwdSearchFormPlayer
-        value={props.formState.player}
-        setFormState={props.setFormState}
-        onChange={handleChange}
-        handleClearButton={handleClearButton}
-        spinner={spinnerState}
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={2} className="d-flex px-0">
+          <label className="h6 mb-0">Year:</label>
+        </Col>
+        <Col xs={2} className="d-flex px-1 justify-content-end">
+          <label className="h6 mb-0">from</label>
+        </Col>
+        <Col xs={8} className="d-inline px-0">
+          <TwdSearchFormDate
+            dateFrom={props.formState.dateFrom}
+            dateTo={props.formState.dateTo}
+            onChange={handleChange}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={2} className="d-flex px-0">
+          <label className="h6 mb-0">Players:</label>
+        </Col>
+        <Col xs={2} className="d-flex px-1 justify-content-end">
+          <label className="h6 mb-0">min</label>
+        </Col>
+        <Col xs={8} className="d-inline px-0">
+          <TwdSearchFormPlayers
+            playersFrom={props.formState.playersFrom}
+            playersTo={props.formState.playersTo}
+            onChange={handleChange}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Winner:</label>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <TwdSearchFormPlayer
+            value={props.formState.player}
+            setValue={props.setFormState}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Location:</label>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <TwdSearchFormLocation
+            value={props.formState.location}
+            setValue={props.setFormState}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={4} className="d-flex px-0">
+          <label className="h6 mb-0">Crypt Cards:</label>
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={12} className="d-inline px-0">
+          <TwdSearchFormCrypt
+            value={props.formState.crypt}
+            setValue={props.setFormState}
+            spinner={spinnerState}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={4} className="d-flex px-0">
+          <label className="h6 mb-0">Library Cards:</label>
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={12} className="d-inline px-0">
+          <TwdSearchFormLibrary
+            value={props.formState.library}
+            setValue={props.setFormState}
+            spinner={spinnerState}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Clan:</label>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <TwdSearchFormClan
+            value={props.formState.clan}
+            onChange={handleChange}
+          />
+        </Col>
+      </Row>
+      <TwdSearchFormDisciplines
+        disciplines={props.formState.disciplines}
+        onChange={handleMultiChange}
       />
-      <TwdSearchFormLocation
-        value={props.formState.location}
-        setFormState={props.setFormState}
-        onChange={handleChange}
-        handleClearButton={handleClearButton}
-        spinner={spinnerState}
-      />
-      <TwdSearchFormCrypt
-        state={props.formState.crypt}
-        setFormState={props.setFormState}
-        handleClearButton={handleClearButton}
-        spinner={spinnerState}
-      />
-      <TwdSearchFormLibrary
-        state={props.formState.library}
-        setFormState={props.setFormState}
-        handleClearButton={handleClearButton}
-        spinner={spinnerState}
+      <TwdSearchFormTraits
+        value={props.formState.traits}
+        onChange={handleMultiChange}
       />
     </form>
   );

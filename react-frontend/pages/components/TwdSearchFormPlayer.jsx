@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AsyncSelect from 'react-select/async';
-import { FormControl, InputGroup, Spinner, Button } from 'react-bootstrap';
-import X from '../../assets/images/icons/x.svg';
-import Check2 from '../../assets/images/icons/check2.svg';
 
-function TwdSearchFormPlayer({ value, setFormState }) {
+function TwdSearchFormPlayer({ value, setValue }) {
   const handleChange = (value) => {
-    setFormState((prevState) => ({
+    setValue((prevState) => ({
       ...prevState,
       player: value,
     }));

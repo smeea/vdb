@@ -1,58 +1,108 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import ResultLibraryType from './ResultLibraryType.jsx';
-import ResultLibraryName from './ResultLibraryName.jsx';
+import DeckLibraryTable from './DeckLibraryTable.jsx';
 
-function TwdResultLibraryByType({ cards, cardtype, isMobile, showImage, setShowImage }) {
-  let resultTrClass = 'library-result-even';
-  let total = 0;
+function TwdResultLibraryByType({ library, isMobile, showImage, setShowImage}) {
+  const cardtypeSorted = [
+    'Master',
+    'Conviction',
+    'Power',
+    'Action',
+    'Action/Reaction',
+    'Action/Combat',
+    'Political Action',
+    'Ally',
+    'Equipment',
+    'Retainer',
+    'Action Modifier',
+    'Action Modifier/Combat',
+    'Action Modifier/Reaction',
+    'Reaction',
+    'Reaction/Action Modifier',
+    'Reaction/Combat',
+    'Combat',
+    'Combat/Action Modifier',
+    'Combat/Reaction',
+    'Event',
+  ];
 
-  cards.map(card => {
-    total += card.q;
+  let libraryTotal = 0;
+  const libraryByType = {};
+  const libraryByTypeTotal = {};
+
+  Object.keys(library).map(card => {
+    libraryTotal += library[card].q;
+    const cardtype = library[card].c['Type'];
+    if (libraryByType[cardtype] === undefined) {
+      libraryByType[cardtype] = [];
+      libraryByTypeTotal[cardtype] = 0;
+    }
+    libraryByType[cardtype].push(library[card]);
+    libraryByTypeTotal[cardtype] += library[card].q;
   })
 
-  const cardLines = cards
-        .filter(card => {return card.q >= 4})
-        .map((card, index) => {
+  const LibraryTypes = []
+  let resultTrClass = 'library-result-even';
 
-          if (resultTrClass == 'library-result-even') {
-            resultTrClass = 'library-result-odd';
-          } else {
-            resultTrClass = 'library-result-even';
-          }
+  for (const cardtype of cardtypeSorted) {
+    if (libraryByType[cardtype] !== undefined) {
+      const TypePopover = React.forwardRef(({ children, ...props }, ref) => {
+        return (
+          <Popover ref={ref} {...props}>
+            <Popover.Content>
+                <DeckLibraryTable
+                  cards={props.cards}
+                  className={'name'}
+                />
+            </Popover.Content>
+          </Popover>
+        );
+      });
+      TypePopover.displayName = 'TypePopover';
 
-          return (
-            <tr key={index} className={resultTrClass}>
-              <td className="quantity-no-buttons px-2">{card.q}</td>
-              <td className="name"
-            /* onClick={() => setShowModal(card.c)} */
-              >
-                <div className="px-1">
-                  <ResultLibraryName
-                    id={card.c['Id']}
-                    value={card.c['Name']}
-                    ban={card.c['Banned']}
-                    card={card.c}
-                    showImage={showImage}
-                    setShowImage={setShowImage}
-                    isMobile={isMobile}
-                  />
-                </div>
-              </td>
-            </tr>
-          );
-        });
+      if (resultTrClass == 'library-result-even') {
+        resultTrClass = 'library-result-odd';
+      } else {
+        resultTrClass = 'library-result-even';
+      }
+
+      LibraryTypes.push(
+        <tr key={cardtype} className={resultTrClass}>
+          <td className="type">
+            <OverlayTrigger
+              placement="right"
+              overlay={
+                <TypePopover cards={libraryByType[cardtype]} />
+              }
+            >
+              <div className="name">
+                <ResultLibraryType
+                  cardtype={cardtype}
+                  total={libraryByTypeTotal[cardtype]}
+                  showImage={showImage}
+                  setShowImage={setShowImage}
+                  isMobile={isMobile}
+                  isAuthor={false}
+                />
+              </div>
+            </OverlayTrigger>
+          </td>
+        </tr>
+      );
+    }
+  }
 
   return (
     <>
-      <div className="library">
-        <ResultLibraryType cardtype={cardtype} total={total} />
-        {/* <table> */}
-        {/*   <tbody> */}
-        {/*     {cardLines} */}
-        {/*   </tbody> */}
-        {/* </table> */}
+      <div>
+        <b>Library [{libraryTotal}]:</b>
       </div>
+      <table width="100%">
+        <tbody>
+          {LibraryTypes}
+        </tbody>
+      </table>
     </>
   );
 }

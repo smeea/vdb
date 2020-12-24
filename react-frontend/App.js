@@ -73,26 +73,26 @@ function App(props) {
       });
   };
 
-  const getTwdDecks = () => {
-    const url = `${process.env.API_URL}decks/twd`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
+  // const getTwdDecks = () => {
+  //   const url = `${process.env.API_URL}decks/twd`;
+  //   const options = {
+  //     method: 'GET',
+  //     mode: 'cors',
+  //     credentials: 'include',
+  //   };
 
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          if (JSON.stringify(data) != JSON.stringify(twdDecks)) {
-            setTwdDecks(data);
-          }
-        } else {
-          console.log('Error: ', data.error);
-        }
-      });
-  };
+  //   fetch(url, options)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (data.error === undefined) {
+  //         if (JSON.stringify(data) != JSON.stringify(twdDecks)) {
+  //           setTwdDecks(data);
+  //         }
+  //       } else {
+  //         console.log('Error: ', data.error);
+  //       }
+  //     });
+  // };
 
 
   const deckCardAdd = (card, inDeck) => {

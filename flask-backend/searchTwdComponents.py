@@ -10,8 +10,6 @@ def letters_to_ascii(text):
                    if unicodedata.category(c) != 'Mn')
 
 
-# Card base file. It is JSON (human-readable format) converted from official
-# CVS card base available at vekn.com.
 with open("twdDecks.json", "r") as twd_file:
     twda = json.load(twd_file)
 
@@ -81,42 +79,85 @@ def get_twd_by_location(location):
 
     return match_decks
 
-# def get_twd_by_date(date, moreless):
-#     match_decks = []
-#     for deck in twda:
-#         if moreless == 'le':
-#             if card['Date'] <= date:
-#                 match_decks.append(deck)
+def get_twd_by_event(event):
+    match_decks = []
+    for deck in twda:
+        if event.lower() in twda[deck]['event'].lower():
+            match_decks.append(twda[deck])
 
-#         elif moreless == 'ge':
-#             if card['Date'] >= date:
-#                 match_decks.append(deck)
+    return match_decks
 
-#     return match_decks
+def get_twd_by_date(date_from, date_to):
+    match_decks = []
+    for deck in twda:
+        date = int(twda[deck]['date'][0:4])
+        if date >= date_from and date <= date_to:
+            match_decks.append(twda[deck])
+
+    return match_decks
+
+def get_twd_by_players(players_from, players_to):
+    match_decks = []
+    for deck in twda:
+        if twda[deck]['players'] != 'Unknown' and twda[deck]['players'] >= players_from and twda[deck]['players'] <= players_to:
+                match_decks.append(twda[deck])
+
+    return match_decks
+
+def get_twd_by_clan(clan):
+    match_decks = []
+    for deck in twda:
+        clan_in_deck = 0
+        crypt_cards = 0
+        for id in twda[deck]['crypt']:
+            # Skip Anarch Convert
+            if id != '200076':
+                q = twda[deck]['crypt'][id]['q']
+                crypt_cards += q
+
+                if get_crypt_by_id(id)['Clan'].lower() == clan:
+                    clan_in_deck += q
+
+        if (clan_in_deck / crypt_cards) >= 0.4:
+            match_decks.append(twda[deck])
+
+    return match_decks
+
+def get_twd_by_disciplines(disciplines):
+    disciplines_counter = len(disciplines)
+    match_decks = []
+
+    for deck in twda:
+        counter = 0
+        for discipline in disciplines.keys():
+            if discipline in twda[deck]['disciplines']:
+                counter += 1
+
+        if disciplines_counter == counter:
+            match_decks.append(twda[deck])
+
+    return match_decks
+
+def get_twd_by_traits(traits):
+    trait_counter = len(traits)
+    match_decks = []
+    for deck in twda:
+        counter = 0
+        for trait in traits.keys():
+            if trait == 'star':
+                for q in crypt.values():
+                    if q >= 5:
+                        counter += 1
+                        break
+
+        if trait_counter == counter:
+            match_decks.append(twda[deck])
+
+    return match_decks
 
 
 
-# def get_twd_by_disciplines(disciplines):
-#     disciplines_counter = len(disciplines)
-#     match_cards = []
-#     for deck in twda:
-#         counter = 0
-#         for discipline in disciplines:
-#             if discipline in deck['disciplines']:
-#                 counter += 1
-#         if counter == disciplines_count:
-#             match_decks.append(deck)
-
-#     return match_decks
-
-# def get_twd_by_clans(clans):
-#     match_cards = []
-#     clans_counter = len(clans)
-#     for deck in twda:
-#         for clan in clans:
-#             if clan in deck['clans']:
-#                 counter += 1
-#             if counter == clans_counter:
-#                 match_decks.append(deck)
-
-#     return match_decks
+# Traits:
+# - Star
+# - Anarch
+# - Black Hand

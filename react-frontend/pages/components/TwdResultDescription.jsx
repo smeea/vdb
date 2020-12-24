@@ -2,10 +2,10 @@ import React from 'react';
 
 function TwdResultDescription({ deck }) {
   return (
-    <table className='d-inline'>
+    <table className='d-inline foo'>
       <tbody>
         <tr>
-          <td>
+          <td className="d-inline">
             <b>Date:</b>
           </td>
           <td className='pl-2'>
@@ -13,7 +13,7 @@ function TwdResultDescription({ deck }) {
           </td>
         </tr>
         <tr>
-          <td>
+          <td className="d-inline">
             <b>Players</b>:
           </td>
           <td className='pl-2'>
@@ -21,7 +21,7 @@ function TwdResultDescription({ deck }) {
           </td>
         </tr>
         <tr>
-          <td>
+          <td className="d-inline">
             <b>Event</b>:
           </td>
           <td className='pl-2'>
@@ -29,7 +29,7 @@ function TwdResultDescription({ deck }) {
           </td>
         </tr>
         <tr>
-          <td>
+          <td className="d-inline">
             <b>Location</b>:
           </td>
           <td className='pl-2'>
@@ -37,7 +37,7 @@ function TwdResultDescription({ deck }) {
           </td>
         </tr>
         <tr>
-          <td>
+          <td className="d-inline">
             <b>Player</b>:
           </td>
           <td className='pl-2'>
@@ -45,7 +45,7 @@ function TwdResultDescription({ deck }) {
           </td>
         </tr>
         <tr>
-          <td>
+          <td className="d-inline">
             <b>Deck</b>:
           </td>
           <td className='pl-2'>

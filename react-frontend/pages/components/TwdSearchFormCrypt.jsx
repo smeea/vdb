@@ -6,15 +6,15 @@ import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 
-function TwdSearchFormCrypt({ state, setFormState}) {
+function TwdSearchFormCrypt({ value, setValue}) {
   const [selectedValue, setSelectedValue] = useState(null);
   const [cryptCards, setCryptCards] = useState([])
 
-  const handleChange = (value) => {
-    if (cryptCards.indexOf(value) < 0) {
+  const handleChange = (val) => {
+    if (cryptCards.indexOf(val) < 0) {
       setCryptCards((prevState, index) => ([
         ...prevState,
-        value
+        val
       ]));
       setSelectedValue('')
     }
@@ -23,16 +23,15 @@ function TwdSearchFormCrypt({ state, setFormState}) {
   const cryptCardsList = cryptCards.map((card, index) => {
     return(
       <div key={index} className="d-flex align-items-center">
-        {/* {card['Name']} */}
         <ResultCryptName
-          /* showImage={props.showImage} */
-          /* setShowImage={props.setShowImage} */
+      /* showImage={props.showImage} */
+      /* setShowImage={props.setShowImage} */
+      /* isMobile={props.isMobile} */
           id={card['Id']}
           value={card['Name']}
           adv={card['Adv']}
           ban={card['Banned']}
           card={card}
-          /* isMobile={props.isMobile} */
         />
         <div className="px-1">
           <Button
@@ -71,7 +70,7 @@ function TwdSearchFormCrypt({ state, setFormState}) {
     cryptCards.map((i, index) => {
       newState[i.Id] = true;
     })
-    setFormState((prevState) => ({
+    setValue((prevState) => ({
       ...prevState,
       crypt: newState,
     }));
@@ -84,7 +83,7 @@ function TwdSearchFormCrypt({ state, setFormState}) {
         defaultOptions
         autoFocus={false}
         value={selectedValue}
-        placeholder="Crypt Card"
+        placeholder="Add Crypt Card"
         loadOptions={loadOptions}
         onChange={handleChange}
         getOptionLabel={(card) => {

@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AsyncSelect from 'react-select/async';
-import { FormControl, InputGroup, Spinner, Button } from 'react-bootstrap';
-import X from '../../assets/images/icons/x.svg';
-import Check2 from '../../assets/images/icons/check2.svg';
 
-function TwdSearchFormLocation({ value, setFormState }) {
-  const handleChange = (value) => {
-    setFormState((prevState) => ({
+function TwdSearchFormLocation({ value, setValue }) {
+  const handleChange = (val) => {
+    setValue((prevState) => ({
       ...prevState,
-      location: value,
+      location: val,
     }));
   }
 
@@ -33,14 +30,14 @@ function TwdSearchFormLocation({ value, setFormState }) {
 
   return (
     <AsyncSelect
-      /* cacheOptions */
-      /* defaultOptions */
-      /* autoFocus={false} */
-      /* value={value} */
+      cacheOptions
+      defaultOptions
+      autoFocus={false}
+      value={value}
       placeholder="Location"
       loadOptions={loadOptions}
       onChange={handleChange}
-      getOptionLabel={location => {return(location)}}
+      getOptionLabel={location => {return(<div>{location}</div>)}}
     />
   );
 }

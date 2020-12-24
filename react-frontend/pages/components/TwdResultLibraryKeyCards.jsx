@@ -1,14 +1,57 @@
 import React from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
-import ResultLibraryType from './ResultLibraryType.jsx';
+// import { OverlayTrigger, Popover } from 'react-bootstrap';
 import ResultLibraryName from './ResultLibraryName.jsx';
 
-function TwdResultLibraryKeyCards({ cards, isMobile, showImage, setShowImage }) {
+function TwdResultLibraryKeyCards({ library, isMobile, showImage, setShowImage }) {
+  const cardtypeSorted = [
+    'Master',
+    'Conviction',
+    'Power',
+    'Action',
+    'Action/Reaction',
+    'Action/Combat',
+    'Political Action',
+    'Ally',
+    'Equipment',
+    'Retainer',
+    'Action Modifier',
+    'Action Modifier/Combat',
+    'Action Modifier/Reaction',
+    'Reaction',
+    'Reaction/Action Modifier',
+    'Reaction/Combat',
+    'Combat',
+    'Combat/Action Modifier',
+    'Combat/Reaction',
+    'Event',
+  ];
+
+  const libraryByType = {};
+
+  Object.keys(library).map(card => {
+    const cardtype = library[card].c['Type'];
+    if (libraryByType[cardtype] === undefined) {
+      libraryByType[cardtype] = [];
+    }
+
+    libraryByType[cardtype].push(library[card]);
+  })
+
+  const keyCards = []
+
+  for (const cardtype of cardtypeSorted) {
+    if (libraryByType[cardtype] !== undefined) {
+      libraryByType[cardtype]
+        .filter(card => {return card.q >= 4})
+        .map(card => {
+          keyCards.push(card)
+        })
+    }
+  }
+
   let resultTrClass = 'library-result-even';
 
-  const cardLines = cards
-        .map((card, index) => {
-
+  const cardLines = keyCards.map((card, index) => {
           if (resultTrClass == 'library-result-even') {
             resultTrClass = 'library-result-odd';
           } else {
@@ -39,8 +82,11 @@ function TwdResultLibraryKeyCards({ cards, isMobile, showImage, setShowImage }) 
 
   return (
     <>
+      <div>
+        <b>Key Cards (4+ pcs):</b>
+      </div>
       <div className="library">
-        <table>
+        <table width="100%">
           <tbody>
             {cardLines}
           </tbody>

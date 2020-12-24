@@ -49,12 +49,6 @@ function About(props) {
                 vekn.net official list
               </a>
               : 2020-11-30
-              <br />
-              Card images by Syndelson{' '}
-              <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
-                FELD
-              </a>
-              : 2019-11-11 v2.72
             </p>
           </div>
 
@@ -84,7 +78,7 @@ function About(props) {
                 backup - you can paste text from TWDA or import from
                 Amaranth/Lackey to quickly start
               </li>
-              <li>Browse Tournament-Winning Decks (TWD) and copy them to your deck archive to edit</li>
+              <li>Search Tournament-Winning Decks (TWD) and copy them to your deck archive to edit</li>
               <li>Create PDF with proxies of your decks</li>
               <li>Open source, ad-free & privacy-respecting</li>
               <li>Once familiar with, you will love it!</li>
@@ -167,6 +161,22 @@ function About(props) {
               <br />
               Card images & icons are copyrighted by Authors / Publishers.
             </p>
+
+            <h5>ACKNOWLEDGMENTS</h5>
+            <ul>
+              <li>
+                Card images by Fernando "Syndelson" Cesar from{' '}
+                <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
+                  FELD
+                </a>
+              </li>
+              <li>
+                TWD by Lionel "Phoenix" Panhaleux from{' '}
+                <a href="https://static.krcg.org/">
+                  KRCG
+                </a>
+              </li>
+            </ul>
 
             <h5>DONATIONS</h5>
             <p>Bitcoin (BTC): 3ALLfiv3AWcm7WzgWm9gHmLAAUMRcegBtP</p>
