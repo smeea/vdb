@@ -2,7 +2,12 @@ import React from 'react';
 // import { OverlayTrigger, Popover } from 'react-bootstrap';
 import ResultLibraryName from './ResultLibraryName.jsx';
 
-function TwdResultLibraryKeyCards({ library, isMobile, showImage, setShowImage }) {
+function TwdResultLibraryKeyCards({
+  library,
+  isMobile,
+  showImage,
+  setShowImage,
+}) {
   const cardtypeSorted = [
     'Master',
     'Conviction',
@@ -28,54 +33,57 @@ function TwdResultLibraryKeyCards({ library, isMobile, showImage, setShowImage }
 
   const libraryByType = {};
 
-  Object.keys(library).map(card => {
+  Object.keys(library).map((card) => {
     const cardtype = library[card].c['Type'];
     if (libraryByType[cardtype] === undefined) {
       libraryByType[cardtype] = [];
     }
 
     libraryByType[cardtype].push(library[card]);
-  })
+  });
 
-  const keyCards = []
+  const keyCards = [];
 
   for (const cardtype of cardtypeSorted) {
     if (libraryByType[cardtype] !== undefined) {
       libraryByType[cardtype]
-        .filter(card => {return card.q >= 4})
-        .map(card => {
-          keyCards.push(card)
+        .filter((card) => {
+          return card.q >= 4;
         })
+        .map((card) => {
+          keyCards.push(card);
+        });
     }
   }
 
   let resultTrClass = 'library-result-even';
 
   const cardLines = keyCards.map((card, index) => {
-          if (resultTrClass == 'library-result-even') {
-            resultTrClass = 'library-result-odd';
-          } else {
-            resultTrClass = 'library-result-even';
-          }
+    if (resultTrClass == 'library-result-even') {
+      resultTrClass = 'library-result-odd';
+    } else {
+      resultTrClass = 'library-result-even';
+    }
 
-          return (
-            <tr key={index} className={resultTrClass}>
-              <td className="quantity-no-buttons px-2">{card.q}</td>
-              <td className="name"
-            /* onClick={() => setShowModal(card.c)} */
-              >
-                <div className="px-1">
-                  <ResultLibraryName
-                    card={card.c}
-                    showImage={showImage}
-                    setShowImage={setShowImage}
-                    isMobile={isMobile}
-                  />
-                </div>
-              </td>
-            </tr>
-          );
-        });
+    return (
+      <tr key={index} className={resultTrClass}>
+        <td className="quantity-no-buttons px-2">{card.q}</td>
+        <td
+          className="name"
+          /* onClick={() => setShowModal(card.c)} */
+        >
+          <div className="px-1">
+            <ResultLibraryName
+              card={card.c}
+              showImage={showImage}
+              setShowImage={setShowImage}
+              isMobile={isMobile}
+            />
+          </div>
+        </td>
+      </tr>
+    );
+  });
 
   return (
     <>
@@ -84,9 +92,7 @@ function TwdResultLibraryKeyCards({ library, isMobile, showImage, setShowImage }
       </div>
       <div className="library">
         <table width="100%">
-          <tbody>
-            {cardLines}
-          </tbody>
+          <tbody>{cardLines}</tbody>
         </table>
       </div>
     </>

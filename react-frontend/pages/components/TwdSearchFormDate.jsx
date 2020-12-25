@@ -29,7 +29,7 @@ function TwdSearchFormDate(props) {
     '1999',
     '1998',
     '1997',
-  ]
+  ];
 
   const dateFromOptions = [];
   const dateToOptions = [];

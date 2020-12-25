@@ -3,14 +3,7 @@ import Select from 'react-select';
 import { Row, Col } from 'react-bootstrap';
 
 function TwdSearchFormPlayers(props) {
-  const players = [
-    'ANY',
-    '100',
-    '50',
-    '30',
-    '20',
-    '10',
-  ]
+  const players = ['ANY', '100', '50', '30', '20', '10'];
 
   const playersFromOptions = [];
   const playersToOptions = [];
@@ -47,7 +40,9 @@ function TwdSearchFormPlayers(props) {
             options={playersFromOptions}
             isSearchable={false}
             name="playersFrom"
-            value={playersFromOptions.find((obj) => obj.value === props.playersFrom)}
+            value={playersFromOptions.find(
+              (obj) => obj.value === props.playersFrom
+            )}
             onChange={props.onChange}
           />
         </Col>
@@ -59,7 +54,9 @@ function TwdSearchFormPlayers(props) {
             options={playersToOptions}
             isSearchable={false}
             name="playersTo"
-            value={playersToOptions.find((obj) => obj.value === props.playersTo)}
+            value={playersToOptions.find(
+              (obj) => obj.value === props.playersTo
+            )}
             onChange={props.onChange}
           />
         </Col>

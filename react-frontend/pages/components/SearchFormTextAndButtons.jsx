@@ -27,7 +27,6 @@ function SearchFormTextAndButtons(props) {
               role="status"
               aria-hidden="true"
             />
-            <Spinner />
           </Button>
         )}
         <Button variant="outline-secondary" onClick={props.handleClearButton}>

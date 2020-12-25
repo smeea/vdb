@@ -13,7 +13,7 @@ import DeckImport from './components/DeckImport.jsx';
 
 function Decks(props) {
   const query = new URLSearchParams(useLocation().search);
-  const [sharedDeckId, setSharedDeckId] = useState(query.get('id'))
+  const [sharedDeckId, setSharedDeckId] = useState(query.get('id'));
   const [showInfo, setShowInfo] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
 
@@ -70,13 +70,13 @@ function Decks(props) {
       <Row>
         <Col lg={4} className="px-0">
           <Row className="justify-content-end mx-0">
-              <Col className="px-0 px-lg-3">
-                <DeckSelect
-                  decks={props.decks}
-                  activeDeck={props.activeDeck}
-                  setActiveDeck={props.setActiveDeck}
-                />
-              </Col>
+            <Col className="px-0 px-lg-3">
+              <DeckSelect
+                decks={props.decks}
+                activeDeck={props.activeDeck}
+                setActiveDeck={props.setActiveDeck}
+              />
+            </Col>
             {props.isMobile &&
               (props.activeDeck || props.sharedDeck ? (
                 <Col

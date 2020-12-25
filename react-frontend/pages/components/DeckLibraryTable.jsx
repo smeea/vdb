@@ -32,24 +32,28 @@ function DeckLibraryTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          {props.proxySelected &&
-           <td className="proxy-selector">
-             <div className="custom-control custom-checkbox">
-               <input
-                 id={card.c['Id']}
-                 name="print"
-                 className="custom-control-input"
-                 type="checkbox"
-                 checked={props.proxySelected[card.c['Id']] ? props.proxySelected[card.c['Id']].print : false}
-                 onChange={e => props.proxySelector(e)}
-               />
-               <label
-                 htmlFor={card.c['Id']}
-                 className="custom-control-label"
-               />
-             </div>
-           </td>
-          }
+          {props.proxySelected && (
+            <td className="proxy-selector">
+              <div className="custom-control custom-checkbox">
+                <input
+                  id={card.c['Id']}
+                  name="print"
+                  className="custom-control-input"
+                  type="checkbox"
+                  checked={
+                    props.proxySelected[card.c['Id']]
+                      ? props.proxySelected[card.c['Id']].print
+                      : false
+                  }
+                  onChange={(e) => props.proxySelector(e)}
+                />
+                <label
+                  htmlFor={card.c['Id']}
+                  className="custom-control-label"
+                />
+              </div>
+            </td>
+          )}
           {props.isAuthor ? (
             <td className="quantity pr-1">
               <DeckCardQuantity
@@ -59,24 +63,26 @@ function DeckLibraryTable(props) {
                 deckCardChange={props.deckCardChange}
               />
             </td>
-          ) : props.proxySelected
-           ?
-           <td className="quantity pr-1">
-             <DeckCardQuantity
-               cardid={card.c['Id']}
-               deckid={null}
-               q={props.proxySelected[card.c['Id']] ? props.proxySelected[card.c['Id']].q : 0}
-               deckCardChange={props.proxyCounter}
-             />
-           </td>
-           : (card.q ? (
-             <td className="quantity-no-buttons px-2">{card.q}</td>
-           ) : (
-             <td className="quantity-no-buttons px-2">
-               <div className="transparent">0</div>
-             </td>
-           ))
-          }
+          ) : props.proxySelected ? (
+            <td className="quantity pr-1">
+              <DeckCardQuantity
+                cardid={card.c['Id']}
+                deckid={null}
+                q={
+                  props.proxySelected[card.c['Id']]
+                    ? props.proxySelected[card.c['Id']].q
+                    : 0
+                }
+                deckCardChange={props.proxyCounter}
+              />
+            </td>
+          ) : card.q ? (
+            <td className="quantity-no-buttons px-2">{card.q}</td>
+          ) : (
+            <td className="quantity-no-buttons px-2">
+              <div className="transparent">0</div>
+            </td>
+          )}
           <td className="name" onClick={() => setShowModal(card.c)}>
             <div className="px-1">
               <ResultLibraryName

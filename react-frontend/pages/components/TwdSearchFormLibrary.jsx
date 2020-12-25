@@ -1,48 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import React, { useState } from 'react';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
+import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 
-function TwdSearchFormLibrary({ value, setValue, isMobile, showImage, setShowImage }) {
-  const [selectedValue, setSelectedValue] = useState(null);
-  const [libraryCards, setLibraryCards] = useState([])
+function TwdSearchFormLibrary({
+  state,
+  setState,
+  isMobile,
+  showImage,
+  setShowImage,
+}) {
+  const [libraryCards, setLibraryCards] = useState({});
 
-  const handleChange = (val) => {
-    if (libraryCards.indexOf(val) < 0) {
-      setLibraryCards((prevState, index) => ([
-        ...prevState,
-        val
-      ]));
-      setSelectedValue('')
-    }
-  }
+  const handleAdd = (event) => {
+    setLibraryCards((prevState) => ({
+      ...prevState,
+      [event['Id']]: event,
+    }));
 
-  const libraryCardsList = libraryCards.map((card, index) => {
-    return(
-      <div key={index} className="d-flex align-items-center">
-        <ResultLibraryName
-          showImage={showImage}
-          setShowImage={setShowImage}
-          isMobile={isMobile}
-          placement="left"
-          card={card}
-        />
-        <div className="px-1">
-          <Button
-            variant="outline-secondary"
-            onClick={() => setLibraryCards(libraryCards.filter(value => value != card))}
-          >
-            X
-          </Button>
+    const newState = state;
+    newState[event['Id']] = 1;
+    setState((prevState) => ({
+      ...prevState,
+      library: newState,
+    }));
+  };
+
+  const libraryCardsList = Object.keys(state)
+    .filter((id) => state[id] > 0)
+    .map((id, index) => {
+      const card = libraryCards[id];
+      return (
+        <div key={index} className="d-flex align-items-center">
+          <TwdSearchFormQuantityButtons
+            state={state}
+            setState={setState}
+            id={id}
+            q={state[id]}
+            target="library"
+          />
+          <ResultLibraryName
+            isMobile={isMobile}
+            showImage={showImage}
+            setShowImage={setShowImage}
+            placement="left"
+            card={card}
+          />
         </div>
-      </div>
-    )
-  })
+      );
+    });
 
   const loadOptions = (inputValue) => {
     const url = `${process.env.API_URL}search/library`;
@@ -64,27 +75,16 @@ function TwdSearchFormLibrary({ value, setValue, isMobile, showImage, setShowIma
     }
   };
 
-  useEffect(() => {
-    const newState = {};
-    libraryCards.map((i, index) => {
-      newState[i.Id] = true;
-    })
-    setValue((prevState) => ({
-      ...prevState,
-      library: newState,
-    }));
-  }, [libraryCards]);
-
   return (
     <>
       <AsyncSelect
         cacheOptions
         defaultOptions
         autoFocus={false}
-        value={selectedValue}
+        value={null}
         placeholder="Add Library Card"
         loadOptions={loadOptions}
-        onChange={handleChange}
+        onChange={handleAdd}
         getOptionLabel={(card) => (
           <>
             <div className="d-flex align-items-center justify-content-between">

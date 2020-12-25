@@ -121,7 +121,6 @@ function DeckExport(props) {
   };
 
   const exportAll = (format) => {
-    console.log(format)
     setDeckError(false);
 
     setSpinnerState(true);
@@ -146,13 +145,11 @@ function DeckExport(props) {
       .then((response) => response.json())
       .then((data) => {
         data.map((d) => {
-          const file = new File(
-            [d.deck],
-            d.name + '_' + d.format + '.txt',
-            { type: 'text/plain;charset=utf-8' }
-          );
+          const file = new File([d.deck], d.name + '_' + d.format + '.txt', {
+            type: 'text/plain;charset=utf-8',
+          });
           FileSaver.saveAs(file);
-        })
+        });
         setSpinnerState(false);
       })
       .catch((error) => {

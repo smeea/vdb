@@ -46,7 +46,9 @@ function TwdSearchFormDisciplines(props) {
     const imgSrc = `${
       process.env.ROOT_URL
     }images/disciplines/${i.toLowerCase()}.svg`;
-    const disciplineState = `discipline-container mb-2 state${props.disciplines[i] ? 1 : 0}`;
+    const disciplineState = `discipline-container mb-2 state${
+      props.disciplines[i] ? 1 : 0
+    }`;
     return (
       <div key={index} className={disciplineState}>
         <label
@@ -70,7 +72,9 @@ function TwdSearchFormDisciplines(props) {
     const imgSrc = `${
       process.env.ROOT_URL
     }images/disciplines/${i.toLowerCase()}.svg`;
-    const virtueState = `virtue-container mb-2 state${props.disciplines[i] ? 1 : 0}`;
+    const virtueState = `virtue-container mb-2 state${
+      props.disciplines[i] ? 1 : 0
+    }`;
     return (
       <div key={index} className={virtueState}>
         <label
@@ -95,12 +99,9 @@ function TwdSearchFormDisciplines(props) {
       <div className="input-group justify-content-start py-1">
         {disciplinesForm}
       </div>
-      <div className="input-group">
-        {virtuesForm}
-      </div>
+      <div className="input-group">{virtuesForm}</div>
     </>
   );
-
 }
 
 export default TwdSearchFormDisciplines;

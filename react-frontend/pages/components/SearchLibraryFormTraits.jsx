@@ -37,7 +37,7 @@ function SearchLibraryFormTraits(props) {
           checked={props.value[i[0]]}
           onChange={(e) => props.onChange(e)}
         />
-      <label htmlFor={`traits-${i[0]}`} className="mr-2 custom-control-label">
+        <label htmlFor={`traits-${i[0]}`} className="mr-2 custom-control-label">
           {i[1]}
         </label>
       </div>

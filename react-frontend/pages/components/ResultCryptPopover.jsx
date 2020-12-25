@@ -127,7 +127,11 @@ function ResultCryptPopover(props) {
                 )}
                 {props.card['Adv'] && (
                   <span className="pl-1">
-                    <img className='advanced-image-results' src={`${process.env.ROOT_URL}images/misc/advanced.svg`} title='Advanced' />
+                    <img
+                      className="advanced-image-results"
+                      src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                      title="Advanced"
+                    />
                   </span>
                 )}
               </div>

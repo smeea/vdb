@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import AsyncSelect from 'react-select/async';
 
 function TwdSearchFormLocation({ value, setValue }) {
-  const handleChange = (val) => {
+  const handleChange = (v) => {
     setValue((prevState) => ({
       ...prevState,
-      location: val,
+      location: v.value,
     }));
-  }
+  };
 
   const loadOptions = (inputValue) => {
     const url = `${process.env.API_URL}twd/locations`;
@@ -20,9 +20,11 @@ function TwdSearchFormLocation({ value, setValue }) {
     if (inputValue.length >= 2) {
       return fetch(url, options)
         .then((response) => response.json())
-        .then(data => {
-          return data.filter(value => value.toLowerCase().includes(inputValue.toLowerCase()) || !inputValue.length)
-        });
+        .then((data) =>
+          data.filter((value) =>
+            value.label.toLowerCase().includes(inputValue.toLowerCase())
+          )
+        );
     } else {
       return null;
     }
@@ -31,13 +33,10 @@ function TwdSearchFormLocation({ value, setValue }) {
   return (
     <AsyncSelect
       cacheOptions
-      defaultOptions
       autoFocus={false}
-      value={value}
       placeholder="Location"
       loadOptions={loadOptions}
       onChange={handleChange}
-      getOptionLabel={location => {return(<div>{location}</div>)}}
     />
   );
 }

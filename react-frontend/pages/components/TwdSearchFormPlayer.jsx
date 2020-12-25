@@ -2,12 +2,12 @@ import React from 'react';
 import AsyncSelect from 'react-select/async';
 
 function TwdSearchFormPlayer({ value, setValue }) {
-  const handleChange = (value) => {
+  const handleChange = (v) => {
     setValue((prevState) => ({
       ...prevState,
-      player: value,
+      player: v.value,
     }));
-  }
+  };
 
   const loadOptions = (inputValue) => {
     const url = `${process.env.API_URL}twd/players`;
@@ -20,9 +20,11 @@ function TwdSearchFormPlayer({ value, setValue }) {
     if (inputValue.length >= 2) {
       return fetch(url, options)
         .then((response) => response.json())
-        .then(data => {
-          return data.filter(value => value.toLowerCase().includes(inputValue.toLowerCase()) || !inputValue.length)
-        });
+        .then((data) =>
+          data.filter((value) =>
+            value.label.toLowerCase().includes(inputValue.toLowerCase())
+          )
+        );
     } else {
       return null;
     }
@@ -30,14 +32,11 @@ function TwdSearchFormPlayer({ value, setValue }) {
 
   return (
     <AsyncSelect
-      /* cacheOptions */
-      /* defaultOptions */
-      /* autoFocus={false} */
-      /* value={value} */
+      cacheOptions
+      autoFocus={false}
       placeholder="Player"
       loadOptions={loadOptions}
       onChange={handleChange}
-      getOptionLabel={player => {return(player)}}
     />
   );
 }

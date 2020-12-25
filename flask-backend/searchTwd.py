@@ -107,8 +107,8 @@ def searchTwd(request):
     if parameters == 0:
         return 400
     else:
-        good_twd = get_overall_twd(match_by_category)
+        [good_twd, cards] = get_overall_twd(match_by_category)
         if good_twd:
-            return good_twd
+            return [good_twd, cards]
         else:
             return 400

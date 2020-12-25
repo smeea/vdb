@@ -2,13 +2,9 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
 function TwdSearchFormTraits(props) {
-  const traitsLeft = [
-    ['star', 'Star'],
-  ];
+  const traitsLeft = [['star', 'Star']];
 
-  const traitsRight = [
-    ['monoclan', 'Mono Clan'],
-  ];
+  const traitsRight = [['monoclan', 'Mono Clan']];
 
   const traitsLeftforms = traitsLeft.map((i, index) => {
     return (

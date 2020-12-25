@@ -1,12 +1,15 @@
 # FIX
 * Error messages output
 * Deck draw crypt discipline alignment
-* Reflex + Conviction image on popover
+* Reflex + Conviction + Merged image on popover
+* Speed-up text forms
 
 # FEATURES
 * Banned filter to search
-* TWD search forms - cards quantity
 * Trifles to Library total
+* TWD show total
+* TWD mobile features
+* TWD traits: star / anything else?
 
 # MAYBE LATER FEATURES
 * Precon decks

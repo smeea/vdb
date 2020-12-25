@@ -16,6 +16,7 @@ with open("twdDecks.json", "r") as twd_file:
 
 def get_overall_twd(twd_lists):
     match_list = twd_lists.pop()
+    cards = {}
     while twd_lists:
         pre_match_list = []
         for i in twd_lists.pop():
@@ -26,20 +27,34 @@ def get_overall_twd(twd_lists):
 
     for deck in match_list:
         for id in deck['crypt']:
-            deck['crypt'][id]['c'] = get_crypt_by_id(id)
+            cards[id] = get_crypt_by_id(id)
         for id in deck['library']:
-            deck['library'][id]['c'] = get_library_by_id(id)
+            cards[id] = get_library_by_id(id)
 
-    return match_list
+    return [match_list, cards]
 
+def get_new_twd(quantity):
+    with open("twdNewDecks.json", "r") as twd_file:
+        twda = json.load(twd_file)
+        decks = []
+        cards = {}
+        for i in range(quantity):
+            deck = twda[i]
+            for id in deck['crypt']:
+                cards[id] = get_crypt_by_id(id)
+            for id in deck['library']:
+                cards[id] = get_library_by_id(id)
+            decks.append(twda[i])
+
+        return [decks, cards]
 
 def get_twd_by_crypt(crypt):
     cards_counter = len(crypt)
     match_decks = []
     for deck in twda:
         counter = 0
-        for card in crypt.keys():
-            if card in twda[deck]['crypt'].keys():
+        for card, q in crypt.items():
+            if card in twda[deck]['crypt'].keys() and twda[deck]['crypt'][card]['q'] >= q:
                 counter += 1
 
         if counter == cards_counter:
@@ -53,8 +68,8 @@ def get_twd_by_library(library):
     match_decks = []
     for deck in twda:
         counter = 0
-        for card in library.keys():
-            if card in twda[deck]['library'].keys():
+        for card, q in library.items():
+            if card in twda[deck]['library'].keys() and twda[deck]['library'][card]['q'] >= q:
                 counter += 1
 
         if counter == cards_counter:

@@ -127,7 +127,6 @@ function AccountRegister(props) {
                   role="status"
                   aria-hidden="true"
                 />
-                <Spinner />
               </Button>
             )}
           </InputGroup.Append>

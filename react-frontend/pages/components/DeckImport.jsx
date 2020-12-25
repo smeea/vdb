@@ -14,9 +14,9 @@ function DeckImport(props) {
   const handleFileInputClick = () => fileInput.current.click();
 
   const handleCloseImportModal = () => {
-    setShowImportModal(false); 
+    setShowImportModal(false);
     props.setShowButtons(false);
-  }
+  };
   const handleOpenImportModal = () => setShowImportModal(true);
 
   const createNewDeck = () => {

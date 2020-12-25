@@ -9,35 +9,39 @@ function DeckDrawModal(props) {
   const [toggleState, setToggleState] = useState(false);
 
   useEffect(() => {
-    const cards = {}
-    Object.keys(props.deck.crypt).map(key => {
+    const cards = {};
+    Object.keys(props.deck.crypt).map((key) => {
       cards[key] = {
         print: false,
         q: props.deck.crypt[key].q,
       };
-    })
-    Object.keys(props.deck.library).map(key => {
+    });
+    Object.keys(props.deck.library).map((key) => {
       cards[key] = {
         print: false,
         q: props.deck.library[key].q,
       };
-    })
+    });
 
-    setSelectedCards(cards)
+    setSelectedCards(cards);
   }, [props.deck]);
 
   const handleToggleSelectButton = () => {
     const newState = selectedCards;
     if (toggleState) {
-      Object.keys(newState).map(key => { newState[key].print = false })
+      Object.keys(newState).map((key) => {
+        newState[key].print = false;
+      });
     } else {
-      Object.keys(newState).map(key => { newState[key].print = true })
+      Object.keys(newState).map((key) => {
+        newState[key].print = true;
+      });
     }
     setSelectedCards(newState);
     setToggleState(!toggleState);
-  }
+  };
 
-  const proxySelector = e => {
+  const proxySelector = (e) => {
     const { id, name } = e.target;
     const newState = selectedCards;
     newState[id][name] = !newState[id][name];
@@ -57,16 +61,18 @@ function DeckDrawModal(props) {
   };
 
   const handleGenerateButton = () => {
-    const cards = {}
+    const cards = {};
     Object.keys(selectedCards)
-      .filter(key => { return selectedCards[key].print })
-      .map(key => {
-        cards[key] = selectedCards[key].q;
+      .filter((key) => {
+        return selectedCards[key].print;
       })
-    props.proxyCards(cards)
+      .map((key) => {
+        cards[key] = selectedCards[key].q;
+      });
+    props.proxyCards(cards);
     props.setShow(false);
     props.setShowButtons(false);
-  }
+  };
 
   return (
     <Modal
@@ -133,10 +139,7 @@ function DeckDrawModal(props) {
         </Container>
       </Modal.Body>
       <Modal.Footer>
-        <Button
-          variant="outline-secondary"
-          onClick={handleGenerateButton}
-        >
+        <Button variant="outline-secondary" onClick={handleGenerateButton}>
           Generate
         </Button>
         <Button

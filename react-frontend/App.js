@@ -34,7 +34,6 @@ function App(props) {
 
   const [decks, setDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
-  const [twdDecks, setTwdDecks] = useState({});
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
@@ -72,28 +71,6 @@ function App(props) {
         }
       });
   };
-
-  // const getTwdDecks = () => {
-  //   const url = `${process.env.API_URL}decks/twd`;
-  //   const options = {
-  //     method: 'GET',
-  //     mode: 'cors',
-  //     credentials: 'include',
-  //   };
-
-  //   fetch(url, options)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.error === undefined) {
-  //         if (JSON.stringify(data) != JSON.stringify(twdDecks)) {
-  //           setTwdDecks(data);
-  //         }
-  //       } else {
-  //         console.log('Error: ', data.error);
-  //       }
-  //     });
-  // };
-
 
   const deckCardAdd = (card, inDeck) => {
     if (!inDeck) {
@@ -235,7 +212,6 @@ function App(props) {
 
   useEffect(() => {
     whoAmI();
-    // getTwdDecks();
   }, []);
 
   useEffect(() => {
@@ -298,15 +274,11 @@ function App(props) {
             </Route>
             <Route path="/twd">
               <Twd
-                /* changeTimer={changeTimer} */
                 isWide={isWide}
                 isMobile={isMobile}
                 showSearch={showTwdSearch}
                 setShowSearch={setShowTwdSearch}
-                /* decks={decks} */
                 getDecks={getDecks}
-                /* activeDeck={activeDeck} */
-                /* setActiveDeck={setActiveDeck} */
                 showImage={showImage}
                 setShowImage={setShowImage}
                 results={twdResults}

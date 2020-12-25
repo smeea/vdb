@@ -10,6 +10,7 @@ from searchLibrary import searchLibrary
 # from searchTwdComponents import get_twd_by_id
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
+from searchTwdComponents import get_new_twd
 from deckExport import deckExport
 from deckExportAll import deckExportAll
 from deckImport import deckImport
@@ -386,10 +387,14 @@ def logout():
         return jsonify({'error': 'not logged'})
 
 
-# @app.route('/api/decks/twd', methods=['GET'])
-# def listTwdDecks():
-#     with open("twdIndex.json", "r") as twdIndex_file:
-#         return jsonify(json.load(twdIndex_file))
+@app.route('/api/twd/<int:quantity>', methods=['GET'])
+def getNewTwd(quantity):
+    result = get_new_twd(quantity)
+
+    if result != 400:
+        return jsonify(result)
+    else:
+        abort(400)
 
 
 @app.route('/api/twd/locations', methods=['GET'])

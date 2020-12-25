@@ -104,7 +104,6 @@ It will skip other (useless) lines, you don't have to remove it yourself.
               role="status"
               aria-hidden="true"
             />
-            <Spinner />
             Import
           </Button>
         )}

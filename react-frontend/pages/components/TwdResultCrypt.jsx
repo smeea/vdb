@@ -1,7 +1,7 @@
 import React from 'react';
 import ResultCryptName from './ResultCryptName.jsx';
 
-function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage}) {
+function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
   let resultTrClass = 'library-result-even';
 
   let cryptGroupMin;
@@ -11,19 +11,13 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage}) {
     if (crypt[card].c['Group'] == 'ANY') {
       return;
     }
-    if (
-      crypt[card].c['Group'] < cryptGroupMin ||
-        cryptGroupMin == undefined
-    ) {
+    if (crypt[card].c['Group'] < cryptGroupMin || cryptGroupMin == undefined) {
       cryptGroupMin = crypt[card].c['Group'];
     }
-    if (
-      cryptGroupMax == undefined
-    ) {
+    if (cryptGroupMax == undefined) {
       cryptGroupMax = crypt[card].c['Group'];
     }
   });
-
 
   let cryptTotal = 0;
   for (const card in crypt) {
@@ -52,11 +46,10 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage}) {
   };
 
   const sortedCards = Object.values(crypt)
-        .sort(SortByCapacity)
-        .sort(SortByQuantity)
+    .sort(SortByCapacity)
+    .sort(SortByQuantity);
 
   const cardLines = sortedCards.map((card, index) => {
-
     if (resultTrClass == 'library-result-even') {
       resultTrClass = 'library-result-odd';
     } else {
@@ -66,8 +59,9 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage}) {
     return (
       <tr key={index} className={resultTrClass}>
         <td className="quantity-no-buttons px-2">{card.q}</td>
-        <td className="name"
-            /* onClick={() => setShowModal(card.c)} */
+        <td
+          className="name"
+          /* onClick={() => setShowModal(card.c)} */
         >
           <div className="px-1">
             <ResultCryptName
@@ -76,21 +70,21 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage}) {
               setShowImage={setShowImage}
               isMobile={isMobile}
             />
-      </div>
+          </div>
         </td>
       </tr>
-    )
-  })
+    );
+  });
 
   return (
     <>
       <div>
-        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
+        <b>
+          Crypt [{cryptTotal}] - {cryptGroups}
+        </b>
       </div>
       <table width="100%">
-        <tbody>
-          {cardLines}
-        </tbody>
+        <tbody>{cardLines}</tbody>
       </table>
     </>
   );

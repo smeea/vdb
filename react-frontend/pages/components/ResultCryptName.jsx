@@ -8,10 +8,7 @@ function ResultCryptName(props) {
     return (
       <Popover ref={ref} {...props}>
         <Popover.Content>
-          <ResultCryptPopover
-            card={props.card}
-            showImage={children}
-          />
+          <ResultCryptPopover card={props.card} showImage={children} />
         </Popover.Content>
       </Popover>
     );
@@ -30,11 +27,9 @@ function ResultCryptName(props) {
     <>
       {!props.isMobile ? (
         <OverlayTrigger
-          placement={props.placement ? props.placement : "right"}
+          placement={props.placement ? props.placement : 'right'}
           overlay={
-            <CardPopover card={props.card}>
-              {props.showImage}
-            </CardPopover>
+            <CardPopover card={props.card}>{props.showImage}</CardPopover>
           }
         >
           <div

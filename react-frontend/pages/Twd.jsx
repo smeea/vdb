@@ -1,34 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AlertMessage from './components/AlertMessage.jsx';
 import TwdResult from './components/TwdResult.jsx';
 import TwdSearchForm from './components/TwdSearchForm.jsx';
-// import EyeFill from '../assets/images/icons/eye-fill.svg';
-// import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
 
 function Twd(props) {
-  // const query = new URLSearchParams(useLocation().search);
-  // const [sharedDeckId, setSharedDeckId] = useState(query.get('id'))
-
-  // const getDeck = (deckid) => {
-  //   const url = `${process.env.API_URL}deck/${deckid}`;
-  //   const options = {
-  //     method: 'GET',
-  //     mode: 'cors',
-  //     credentials: 'include',
-  //   };
-
-  //   fetch(url, options)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.error === undefined) {
-  //         props.setSharedDeck(data);
-  //       } else {
-  //         console.log('error: ', data.error);
-  //       }
-  //     });
-  // };
+  const [cardBase, setCardBase] = useState({});
 
   return (
     <Container className="main-container">
@@ -44,17 +21,15 @@ function Twd(props) {
         >
           {props.results != undefined && props.results != null && (
             <TwdResult
-              showImage={props.showImage}
-              setShowImage={props.setShowImage}
+              cardBase={cardBase}
               decks={props.results}
               getDecks={props.getDecks}
-              /* showSort={true} */
               /* showTotal={true} */
               /* sortMethod={sortMethod} */
               /* setSortMethod={setSortMethod} */
               isMobile={props.isMobile}
-              isWide={props.isWide}
-              /* addMode={props.addMode} */
+              showImage={props.showImage}
+              setShowImage={props.setShowImage}
             />
           )}
           {props.results === null && (
@@ -78,8 +53,9 @@ function Twd(props) {
             </AlertMessage>
           )}
           <TwdSearchForm
-            setResults={props.setResults}
             setShowSearch={props.setShowSearch}
+            setResults={props.setResults}
+            setCardBase={setCardBase}
             formState={props.formState}
             setFormState={props.setFormState}
             isMobile={props.isMobile}

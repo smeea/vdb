@@ -3,7 +3,7 @@ import { OverlayTrigger, Popover } from 'react-bootstrap';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import DeckLibraryTable from './DeckLibraryTable.jsx';
 
-function TwdResultLibraryByType({ library, isMobile, showImage, setShowImage}) {
+function TwdResultLibraryByType({ library, isMobile }) {
   const cardtypeSorted = [
     'Master',
     'Conviction',
@@ -31,7 +31,7 @@ function TwdResultLibraryByType({ library, isMobile, showImage, setShowImage}) {
   const libraryByType = {};
   const libraryByTypeTotal = {};
 
-  Object.keys(library).map(card => {
+  Object.keys(library).map((card) => {
     libraryTotal += library[card].q;
     const cardtype = library[card].c['Type'];
     if (libraryByType[cardtype] === undefined) {
@@ -40,9 +40,9 @@ function TwdResultLibraryByType({ library, isMobile, showImage, setShowImage}) {
     }
     libraryByType[cardtype].push(library[card]);
     libraryByTypeTotal[cardtype] += library[card].q;
-  })
+  });
 
-  const LibraryTypes = []
+  const LibraryTypes = [];
   let resultTrClass = 'library-result-even';
 
   for (const cardtype of cardtypeSorted) {
@@ -51,9 +51,7 @@ function TwdResultLibraryByType({ library, isMobile, showImage, setShowImage}) {
         return (
           <Popover ref={ref} {...props}>
             <Popover.Content>
-                <DeckLibraryTable
-                  cards={props.cards}
-                />
+              <DeckLibraryTable cards={props.cards} />
             </Popover.Content>
           </Popover>
         );
@@ -77,8 +75,6 @@ function TwdResultLibraryByType({ library, isMobile, showImage, setShowImage}) {
                 <ResultLibraryType
                   cardtype={cardtype}
                   total={libraryByTypeTotal[cardtype]}
-                  showImage={showImage}
-                  setShowImage={setShowImage}
                   isMobile={isMobile}
                   isAuthor={false}
                 />
@@ -96,9 +92,7 @@ function TwdResultLibraryByType({ library, isMobile, showImage, setShowImage}) {
         <b>Library [{libraryTotal}]:</b>
       </div>
       <table width="100%">
-        <tbody>
-          {LibraryTypes}
-        </tbody>
+        <tbody>{LibraryTypes}</tbody>
       </table>
     </>
   );
