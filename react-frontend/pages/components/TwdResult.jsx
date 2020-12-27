@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
+import TwdResultTotal from './TwdResultTotal.jsx';
 import TwdResultDescription from './TwdResultDescription.jsx';
 import TwdResultCrypt from './TwdResultCrypt.jsx';
 import TwdResultLibraryByType from './TwdResultLibraryByType.jsx';
@@ -76,6 +77,9 @@ function TwdResult(props) {
 
   return (
     <>
+      <TwdResultTotal
+        decks={props.decks}
+      />
       {twdRows}
       {deckCounter > showCounter && (
         <div className="d-flex justify-content-center pb-4 pt-2">

@@ -32,7 +32,7 @@ function ResultCryptTotal(props) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      {props.showSort == true && props.sortedCards.length > 0 && (
+      {props.showSort == true && props.cards.length > 0 && (
         <ResultCryptSortForm
           value={props.sortMethod}
           onChange={props.handleChange}

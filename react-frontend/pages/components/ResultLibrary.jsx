@@ -20,7 +20,6 @@ function ResultLibrary(props) {
       {props.showTotal == true && props.cards.length > 0 && (
         <ResultLibraryTotal
           cards={props.cards}
-          sortedCards={sortedCards}
           value={props.sortMethod}
           handleChange={handleChange}
           showSort={props.showSort}

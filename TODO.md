@@ -4,7 +4,6 @@
 
 # FEATURES
 * Add card from TWD to Deck
-* TWD show total
 * TWD mobile features
 * TWD traits: star-vampire / card-types / mono-clan / weenie / high-cap
 * Description to TWD forms
