@@ -14,8 +14,9 @@ import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
 
 function SearchCryptForm(props) {
+  const [spinnerState, setSpinnerState] = useState(false);
+
   const defaults = {
-    text: '',
     disciplines: {
       Abombwe: 0,
       Animalism: 0,
@@ -115,15 +116,8 @@ function SearchCryptForm(props) {
     artist: 'any',
   };
 
-  const [spinnerState, setSpinnerState] = useState(false);
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    props.setFormState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const [text, setText] = useState('')
+  const handleTextChange = (event) => setText(event.target.value)
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
@@ -172,6 +166,7 @@ function SearchCryptForm(props) {
   };
 
   const handleClearButton = () => {
+    setText('');
     props.setFormState(defaults);
     props.setResults(undefined);
   };
@@ -181,7 +176,10 @@ function SearchCryptForm(props) {
 
     const url = `${process.env.API_URL}search/crypt`;
 
-    const input = JSON.parse(JSON.stringify(props.formState));
+    const state = props.formState;
+    state['text'] = text;
+
+    const input = JSON.parse(JSON.stringify(state));
 
     const multiSelectForms = [
       'disciplines',
@@ -243,8 +241,8 @@ function SearchCryptForm(props) {
   return (
     <form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
-        value={props.formState.text}
-        onChange={handleChange}
+        value={text}
+        onChange={handleTextChange}
         handleClearButton={handleClearButton}
         spinner={spinnerState}
       />

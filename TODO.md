@@ -2,7 +2,6 @@
 * Nice error messages output
 * Deck draw crypt discipline alignment
 * Reflex + Conviction + Merged image on popover
-* Slow text forms
 * Fix bug on change to TWD
 
 # FEATURES

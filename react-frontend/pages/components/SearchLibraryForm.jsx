@@ -13,8 +13,9 @@ import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
 
 function SearchLibraryForm(props) {
+  const [spinnerState, setSpinnerState] = useState(false);
+
   const defaults = {
-    text: '',
     type: 'any',
     discipline: 'any',
     blood: 'any',
@@ -55,15 +56,8 @@ function SearchLibraryForm(props) {
     artist: 'any',
   };
 
-  const [spinnerState, setSpinnerState] = useState(false);
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    props.setFormState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  const [text, setText] = useState('')
+  const handleTextChange = (event) => setText(event.target.value)
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
@@ -84,6 +78,7 @@ function SearchLibraryForm(props) {
   };
 
   const handleClearButton = () => {
+    setText('');
     props.setFormState(defaults);
     props.setResults(undefined);
   };
@@ -92,6 +87,9 @@ function SearchLibraryForm(props) {
     event.preventDefault();
 
     const url = `${process.env.API_URL}search/library`;
+
+    const state = props.formState;
+    state['text'] = text;
 
     const input = JSON.parse(JSON.stringify(props.formState));
 
@@ -151,8 +149,8 @@ function SearchLibraryForm(props) {
   return (
     <form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
-        value={props.formState.text}
-        onChange={handleChange}
+        value={text}
+        onChange={handleTextChange}
         handleClearButton={handleClearButton}
         spinner={spinnerState}
       />

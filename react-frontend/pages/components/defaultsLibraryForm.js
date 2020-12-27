@@ -1,5 +1,4 @@
 const defaultsLibraryForm = {
-  text: '',
   type: 'any',
   discipline: 'any',
   blood: 'any',

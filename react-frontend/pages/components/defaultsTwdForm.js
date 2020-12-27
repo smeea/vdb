@@ -1,5 +1,4 @@
 const defaultsTwdForm = {
-  event: '',
   player: '',
   location: '',
   clan: 'any',

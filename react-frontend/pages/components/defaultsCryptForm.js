@@ -1,5 +1,4 @@
 const defaultsCryptForm = {
-  text: '',
   disciplines: {
     Abombwe: 0,
     Animalism: 0,

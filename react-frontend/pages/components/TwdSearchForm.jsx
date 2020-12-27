@@ -13,8 +13,9 @@ import TwdSearchFormCrypt from './TwdSearchFormCrypt.jsx';
 import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
 
 function TwdSearchForm(props) {
+  const [spinnerState, setSpinnerState] = useState(false);
+
   const defaults = {
-    event: '',
     player: '',
     location: '',
     clan: 'any',
@@ -28,10 +29,11 @@ function TwdSearchForm(props) {
     library: {},
   };
 
-  const [spinnerState, setSpinnerState] = useState(false);
+  const [eventText, setEventText] = useState('')
+  const handleEventTextChange = (event) => setEventText(event.target.value)
 
-  const handleChange = (event) => {
-    const { name, value } = event.target ? event.target : event;
+  const handleSelectChange = (event) => {
+    const { name, value } = event;
     props.setFormState((prevState) => ({
       ...prevState,
       [name]: value,
@@ -49,6 +51,7 @@ function TwdSearchForm(props) {
   };
 
   const handleClearButton = () => {
+    setEventText('');
     props.setFormState(defaults);
     props.setResults(undefined);
   };
@@ -57,6 +60,9 @@ function TwdSearchForm(props) {
     event.preventDefault();
 
     const url = `${process.env.API_URL}search/twd`;
+
+    const state = props.formState;
+    state['event'] = eventText;
 
     const input = JSON.parse(JSON.stringify(props.formState));
 
@@ -158,7 +164,7 @@ function TwdSearchForm(props) {
           <TwdSearchFormDate
             dateFrom={props.formState.dateFrom}
             dateTo={props.formState.dateTo}
-            onChange={handleChange}
+            onChange={handleSelectChange}
           />
         </Col>
       </Row>
@@ -173,7 +179,7 @@ function TwdSearchForm(props) {
           <TwdSearchFormPlayers
             playersFrom={props.formState.playersFrom}
             playersTo={props.formState.playersTo}
-            onChange={handleChange}
+            onChange={handleSelectChange}
           />
         </Col>
       </Row>
@@ -218,7 +224,7 @@ function TwdSearchForm(props) {
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormClan
             value={props.formState.clan}
-            onChange={handleChange}
+            onChange={handleSelectChange}
           />
         </Col>
       </Row>
@@ -241,8 +247,8 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormEvent
-            value={props.formState.event}
-            onChange={handleChange}
+            value={eventText}
+            onChange={handleEventTextChange}
           />
         </Col>
       </Row>
