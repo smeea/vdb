@@ -42,7 +42,7 @@ function Navigation(props) {
                   {props.addMode ? (
                     <>
                       <div className="d-flex white-font-toggle">
-                        <ToggleOn />
+                        <ToggleOn viewBox="0 0 16 16"/>
                       </div>
                       {!props.isMobile ? (
                         <div className="d-inline pl-1 white-font">
@@ -55,7 +55,7 @@ function Navigation(props) {
                   ) : (
                     <>
                       <div className="d-flex gray-font-toggle">
-                        <ToggleOff />
+                        <ToggleOff viewBox="0 0 16 16"/>
                       </div>
                       {!props.isMobile ? (
                         <div className="d-inline pl-1 gray-font">
