@@ -9,7 +9,11 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 function DeckLibraryByTypeTable(props) {
   return (
     <>
-      <ResultLibraryType cardtype={props.cardtype} total={props.total} />
+      <ResultLibraryType
+        cardtype={props.cardtype}
+        total={props.total}
+        trifleTotal={props.trifleTotal}
+      />
       <DeckLibraryTable
         showImage={props.showImage}
         setShowImage={props.setShowImage}
@@ -90,16 +94,18 @@ function DeckLibrary(props) {
   }
 
   const libraryByTypeTotal = {};
+  let trifleTotal = 0;
   const LibraryDeck = [];
   const LibrarySideDeck = [];
 
   for (const cardtype of cardtypeSorted) {
     if (libraryByType[cardtype] !== undefined) {
       libraryByTypeTotal[cardtype] = 0;
-      let total = 0;
       for (const card of libraryByType[cardtype]) {
-        total += card.q;
         libraryByTypeTotal[cardtype] += card.q;
+        if (cardtype == 'Master' && card.c['Card Text'].toLowerCase().includes('trifle')) {
+          trifleTotal += card.q;
+        }
       }
       LibraryDeck.push(
         <div key={cardtype} className="pt-2">
@@ -110,7 +116,8 @@ function DeckLibrary(props) {
             deckid={props.deckid}
             cards={libraryByType[cardtype]}
             cardtype={cardtype}
-            total={total}
+            total={libraryByTypeTotal[cardtype]}
+            trifleTotal={cardtype == 'Master' && trifleTotal}
             isAuthor={props.isAuthor}
             isMobile={props.isMobile}
             proxySelector={props.proxySelector}

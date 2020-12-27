@@ -5,7 +5,7 @@ function ResultLibraryTrifle(props) {
   const imgSrc = `${process.env.ROOT_URL}images/misc/trifle.svg`;
   const imgTitle = 'Trifle';
 
-  if (props.value.includes('Trifle.')) {
+  if (props.value.toLowerCase().includes('trifle')) {
     return (
       <span className="trifle">
         <img className={imgClass} src={imgSrc} title={imgTitle} />

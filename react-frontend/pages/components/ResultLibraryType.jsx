@@ -1,4 +1,5 @@
 import React from 'react';
+import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 
 function ResultLibraryType(props) {
   const imgClass = 'type-image-results';
@@ -18,7 +19,7 @@ function ResultLibraryType(props) {
       <div className="d-flex align-items-center">
         {cardtypeImages}
         <div className="px-1">
-          {props.cardtype} [{props.total}]
+          {props.cardtype} [{props.total}]{props.trifleTotal && <> - {props.trifleTotal} trifle</>}
         </div>
       </div>
     );

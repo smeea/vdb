@@ -62,7 +62,7 @@ function Navigation(props) {
                           Add to Deck Mode
                         </div>
                       ) : (
-                        <div className="d-inline pl-1 pb-1 gray-font">[+]</div>
+                        <div className="d-inline pl-1 gray-font">[+]</div>
                       )}
                     </>
                   )}

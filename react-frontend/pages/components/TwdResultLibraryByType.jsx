@@ -28,6 +28,7 @@ function TwdResultLibraryByType({ library, isMobile }) {
   ];
 
   let libraryTotal = 0;
+  let trifleTotal = 0;
   const libraryByType = {};
   const libraryByTypeTotal = {};
 
@@ -40,6 +41,9 @@ function TwdResultLibraryByType({ library, isMobile }) {
     }
     libraryByType[cardtype].push(library[card]);
     libraryByTypeTotal[cardtype] += library[card].q;
+    if (cardtype == 'Master' && library[card].c['Card Text'].toLowerCase().includes('trifle')) {
+      trifleTotal += library[card].q;
+    }
   });
 
   const LibraryTypes = [];
@@ -75,6 +79,7 @@ function TwdResultLibraryByType({ library, isMobile }) {
                 <ResultLibraryType
                   cardtype={cardtype}
                   total={libraryByTypeTotal[cardtype]}
+                  trifleTotal={cardtype == 'Master' && trifleTotal}
                   isMobile={isMobile}
                   isAuthor={false}
                 />
