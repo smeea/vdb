@@ -165,6 +165,10 @@ def get_crypt_by_trait(traits):
                              card['Card Text'].lower()):
                     counter += 1
 
+            elif trait == 'banned':
+                if card['Banned']:
+                    counter += 1
+
             elif re.search(r'{}'.format(trait), card['Card Text'].lower()):
                 counter += 1
 

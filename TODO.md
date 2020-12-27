@@ -1,12 +1,9 @@
 # FIX
 * Nice error messages output
-* Deck draw crypt discipline alignment
-* Reflex + Conviction + Merged image on popover
 * Fix bug on change to TWD
 
 # FEATURES
 * Add card from TWD to Deck
-* Banned filter to search
 * Trifles to Library total
 * TWD show total
 * TWD mobile features

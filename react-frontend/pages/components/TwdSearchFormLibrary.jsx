@@ -91,7 +91,17 @@ function TwdSearchFormLibrary({
               <div>
                 <ResultLibraryType cardtype={card['Type']} />
                 <span className="pl-1">
-                  {card['Name']} {card['Banned'] && <Hammer />}
+                  {card['Banned']
+                   ? <>
+                   <strike>
+                     {card['Name']}
+                   </strike>
+                   <span className="pl-1">
+                     <Hammer />
+                   </span>
+                 </>
+                   : <>{card['Name']}</>
+                  }
                 </span>
               </div>
               <div>

@@ -31,28 +31,28 @@ function TwdSearchFormCrypt({
   };
 
   const cryptCardsList = Object.keys(state)
-    .filter((id) => state[id] > 0)
-    .map((id, index) => {
-      const card = cryptCards[id];
-      return (
-        <div key={index} className="d-flex align-items-center">
-          <TwdSearchFormQuantityButtons
-            state={state}
-            setState={setState}
-            id={id}
-            q={state[id]}
-            target="crypt"
-          />
-          <ResultCryptName
-            isMobile={isMobile}
-            showImage={showImage}
-            setShowImage={setShowImage}
-            placement="left"
-            card={card}
-          />
-        </div>
-      );
-    });
+        .filter((id) => state[id] > 0)
+        .map((id, index) => {
+          const card = cryptCards[id];
+          return (
+            <div key={index} className="d-flex align-items-center">
+              <TwdSearchFormQuantityButtons
+                state={state}
+                setState={setState}
+                id={id}
+                q={state[id]}
+                target="crypt"
+              />
+              <ResultCryptName
+                isMobile={isMobile}
+                showImage={showImage}
+                setShowImage={setShowImage}
+                placement="left"
+                card={card}
+              />
+            </div>
+          );
+        });
 
   const loadOptions = (inputValue) => {
     const url = `${process.env.API_URL}search/crypt`;
@@ -90,17 +90,37 @@ function TwdSearchFormCrypt({
               <div>
                 <ResultCryptCapacity value={card['Capacity']} />
                 <span className="px-2">
-                  {card['Name']}
-                  {card['Banned'] && <Hammer />}
-                  {card['Adv'] && (
-                    <span className="pl-1">
-                      <img
-                        className="advanced-image-results"
-                        src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                        title="Advanced"
-                      />
-                    </span>
-                  )}
+                  {card['Banned']
+                   ? <>
+                       <strike>
+                         {card['Name']}
+                       </strike>
+                       {card['Adv'] && (
+                         <span className="pl-1">
+                           <img
+                             className="advanced-image-results"
+                             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                             title="Advanced"
+                           />
+                         </span>
+                       )}
+                       <span className="pl-1">
+                         <Hammer />
+                       </span>
+                     </>
+                   : <>
+                       {card['Name']}
+                       {card['Adv'] && (
+                         <span className="pl-1">
+                           <img
+                             className="advanced-image-results"
+                             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                             title="Advanced"
+                           />
+                         </span>
+                       )}
+                     </>
+                  }
                 </span>
                 <ResultCryptClan value={card['Clan']} />
               </div>

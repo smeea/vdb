@@ -23,6 +23,7 @@ function SearchCryptFormTraits(props) {
     ['infernal', 'Infernal'],
     ['red list', 'Red List'],
     ['flight', 'Flight'],
+    ['banned', 'Banned'],
   ];
 
   const traitsLeftforms = traitsLeft.map((i, index) => {
