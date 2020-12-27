@@ -64,13 +64,29 @@ function ResultCryptName(props) {
       ) : (
         <>
           <div className="name">
-            {props.card['Name']}
-            {props.card['Adv'] && (
-              <span className="pl-1">
-                <img className={imgClass} src={imgSrc} title={imgTitle} />
-              </span>
-            )}
-            {props.card['Banned'] && <Hammer />}
+            {props.card['Banned']
+             ? <>
+                 <strike>
+                   {props.card['Name']}
+                 </strike>
+                 {props.card['Adv'] && (
+                   <span className="pl-1">
+                     <img className={imgClass} src={imgSrc} title={imgTitle} />
+                   </span>
+                 )}
+                 <span className="pl-1">
+                   <Hammer />
+                 </span>
+               </>
+             : <>
+                 {props.card['Name']}
+                 {props.card['Adv'] && (
+                   <span className="pl-1">
+                     <img className={imgClass} src={imgSrc} title={imgTitle} />
+                   </span>
+                 )}
+               </>
+            }
           </div>
         </>
       )}

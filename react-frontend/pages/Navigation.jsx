@@ -11,6 +11,7 @@ function Navigation(props) {
   const ToggleSearch = (props) => {
     return (
       <Button
+        className="px-2"
         onClick={() => {
           props.setShowSearch(!props.showSearch);
           window.scrollTo(0, 0);
@@ -28,7 +29,7 @@ function Navigation(props) {
     return (
       <Navbar sticky="top" bg="dark" variant="dark">
         <Nav className="container justify-content-between">
-          <div className="d-flex align-items-center px-1">
+          <div className="d-flex align-items-center pr-1">
             {props.username &&
               props.isActiveDeck &&
               ((props.location.pathname == '/crypt' &&
@@ -49,7 +50,7 @@ function Navigation(props) {
                           Add to Deck Mode
                         </div>
                       ) : (
-                        <div className="d-inline pl-1 white-font">Add</div>
+                        <div className="d-inline pl-1 pb-1 white-font">[+]</div>
                       )}
                     </>
                   ) : (
@@ -62,7 +63,7 @@ function Navigation(props) {
                           Add to Deck Mode
                         </div>
                       ) : (
-                        <div className="d-inline pl-1 gray-font">Add</div>
+                        <div className="d-inline pl-1 pb-1 gray-font">[+]</div>
                       )}
                     </>
                   )}
@@ -71,22 +72,22 @@ function Navigation(props) {
           </div>
 
           <div className="d-flex align-items-center">
-            <NavLink to="/account" className="nav-link px-2">
+            <NavLink to="/account" className="nav-link pr-2 pl-1">
               {props.username ? <PersonFill /> : 'Login'}
             </NavLink>
-            <NavLink to="/about" className="nav-link px-2">
+            <NavLink to="/about" className="nav-link pr-2 pl-1">
               {props.isMobile ? <InfoCircleFill /> : 'About'}
             </NavLink>
-            <NavLink to="/twd" className="nav-link px-2">
+            <NavLink to="/twd" className="nav-link pr-2 pl-1">
               TWD
             </NavLink>
-            <NavLink to="/decks" className="nav-link px-2">
+            <NavLink to="/decks" className="nav-link pr-2 pl-1">
               Decks
             </NavLink>
-            <NavLink to="/crypt" className="nav-link px-2">
+            <NavLink to="/crypt" className="nav-link pr-2 pl-1">
               Crypt
             </NavLink>
-            <NavLink to="/library" className="nav-link px-2">
+            <NavLink to="/library" className="nav-link pr-2 pl-1">
               Library
             </NavLink>
             {props.isMobile && (
@@ -104,6 +105,13 @@ function Navigation(props) {
                       showSearch={props.showLibrarySearch}
                       setShowSearch={props.setShowLibrarySearch}
                       isResults={props.isLibraryResults}
+                    />
+                  )}
+                  {props.location.pathname == '/twd' && (
+                    <ToggleSearch
+                      showSearch={props.showTwdSearch}
+                      setShowSearch={props.setShowTwdSearch}
+                      isResults={props.isTwdResults}
                     />
                   )}
                 </div>
