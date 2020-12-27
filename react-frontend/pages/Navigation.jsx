@@ -11,7 +11,6 @@ function Navigation(props) {
   const ToggleSearch = (props) => {
     return (
       <Button
-        className="px-2"
         onClick={() => {
           props.setShowSearch(!props.showSearch);
           window.scrollTo(0, 0);
@@ -50,7 +49,7 @@ function Navigation(props) {
                           Add to Deck Mode
                         </div>
                       ) : (
-                        <div className="d-inline pl-1 pb-1 white-font">[+]</div>
+                        <div className="d-inline pl-1 white-font">[+]</div>
                       )}
                     </>
                   ) : (
