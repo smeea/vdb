@@ -5,8 +5,6 @@ import TwdResult from './components/TwdResult.jsx';
 import TwdSearchForm from './components/TwdSearchForm.jsx';
 
 function Twd(props) {
-  const [cardBase, setCardBase] = useState({});
-
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
@@ -21,7 +19,7 @@ function Twd(props) {
         >
           {props.results != undefined && props.results != null && (
             <TwdResult
-              cardBase={cardBase}
+              cardBase={props.cardBase}
               decks={props.results}
               getDecks={props.getDecks}
               /* showTotal={true} */
@@ -55,7 +53,7 @@ function Twd(props) {
           <TwdSearchForm
             setShowSearch={props.setShowSearch}
             setResults={props.setResults}
-            setCardBase={setCardBase}
+            setCardBase={props.setCardBase}
             formState={props.formState}
             setFormState={props.setFormState}
             isMobile={props.isMobile}

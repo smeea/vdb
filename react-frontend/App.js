@@ -38,6 +38,7 @@ function App(props) {
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const [twdResults, setTwdResults] = useState(undefined);
+  const [twdCardBase, setTwdCardBase] = useState({});
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
 
@@ -283,6 +284,8 @@ function App(props) {
                 setShowImage={setShowImage}
                 results={twdResults}
                 setResults={setTwdResults}
+                cardBase={twdCardBase}
+                setCardBase={setTwdCardBase}
                 addMode={addMode}
                 formState={twdFormState}
                 setFormState={setTwdFormState}
