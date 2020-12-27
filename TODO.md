@@ -1,15 +1,21 @@
 # FIX
-* Error messages output
+* Nice error messages output
 * Deck draw crypt discipline alignment
 * Reflex + Conviction + Merged image on popover
-* Speed-up text forms
+* Slow text forms
+* Instant quantity change in Decks
+* Toggle add button
+* Save TWD results on tab change
+* Fix bug on change to TWD
 
 # FEATURES
+* Add card from TWD to Deck
 * Banned filter to search
 * Trifles to Library total
 * TWD show total
 * TWD mobile features
-* TWD traits: star / anything else?
+* TWD traits: star-vampire / card-types / mono-clan / weenie / high-cap
+* Description to TWD forms
 
 # MAYBE LATER FEATURES
 * Precon decks

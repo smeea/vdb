@@ -34,7 +34,10 @@ with open("vteslib.csv", "r", encoding='utf8') as f_csv, open(
                 pass
 
         # ASCII-fication of name
-        card['ASCII Name'] = letters_to_ascii(card['Name'])
+        if card ['Id'] == 101670:
+            card['ASCII Name'] = "Sacre-Coeur Cathedral, France"
+        else:
+            card['ASCII Name'] = letters_to_ascii(card['Name'])
 
         # Convert sets to dict
         sets = card['Set'].split(', ')

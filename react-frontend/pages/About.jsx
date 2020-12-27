@@ -79,8 +79,8 @@ function About(props) {
                 Amaranth/Lackey to quickly start
               </li>
               <li>
-                Search Tournament-Winning Decks (TWD) and copy them to your deck
-                archive to edit
+                Search Tournament-Winning Decks (TWD), copy them to your
+                personal deck storage and edit
               </li>
               <li>Create PDF with proxies of your decks</li>
               <li>Open source, ad-free & privacy-respecting</li>

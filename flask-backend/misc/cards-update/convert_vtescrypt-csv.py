@@ -88,7 +88,11 @@ with open("vtescrypt.csv", "r",
             card['Set'][set[0]] = set[1]
 
         # ASCII-fication of name
-        card['ASCII Name'] = letters_to_ascii(card['Name'])
+
+        if card['Id'] == 201528:
+            card['ASCII Name'] = "Boleslaw Gutowski"
+        else:
+            card['ASCII Name'] = letters_to_ascii(card['Name'])
 
         # Remove useless fields
         for k in useless_fields:
