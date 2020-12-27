@@ -231,7 +231,7 @@ function App(props) {
 
   useEffect(() => {
     setChangeTimer(!changeTimer);
-  }, [sharedDeck, decks[activeDeck]]);
+  }, [decks[activeDeck] && decks[activeDeck]['Name'], sharedDeck]);
 
   return (
     <div className="App">

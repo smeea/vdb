@@ -3,7 +3,6 @@
 * Deck draw crypt discipline alignment
 * Reflex + Conviction + Merged image on popover
 * Slow text forms
-* Instant quantity change in Decks
 * Save TWD results on tab change
 * Fix bug on change to TWD
 
