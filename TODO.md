@@ -1,6 +1,7 @@
 # FIX
 * Nice error messages output
 * Fix bug on change to TWD
+* Clone deck-from-url
 
 # FEATURES
 * Add card from TWD to Deck
@@ -12,7 +13,6 @@
 * Precon decks
 * Script to generate json from cvs from text disciplines
 * Night theme
-* Open any deck by url
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage
