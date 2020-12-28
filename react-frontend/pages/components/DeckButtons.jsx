@@ -43,6 +43,7 @@ function DeckButtons(props) {
           <DeckClone
             author={props.deck.author}
             name={props.deck.name}
+            deck={props.deck}
             deckid={props.deck.deckid}
             getDecks={props.getDecks}
             setActiveDeck={props.setActiveDeck}

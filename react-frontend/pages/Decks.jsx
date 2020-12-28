@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import ChevronExpand from '../assets/images/icons/chevron-expand.svg';
 import List from '../assets/images/icons/list.svg';
@@ -19,9 +19,9 @@ function Decks(props) {
   const { hash } = useLocation();
 
   const getDeckFromText = (input) => {
-    const name = query.get('name')
-    const author = query.get('author')
-    const description = query.get('description')
+    const name = query.get('name') ? query.get('name') : undefined
+    const author = query.get('author') ? query.get('author') : undefined
+    const description = query.get('description') ? query.get('description') : undefined
     const url = `${process.env.API_URL}deck/parse`;
     const options = {
       method: 'POST',
@@ -109,8 +109,10 @@ function Decks(props) {
   }, [sharedDeckId]);
 
   useEffect(() => {
-    props.activeDeck && setSharedDeckId(undefined);
+    if (props.activeDeck) { history.push('/decks') };
   }, [props.activeDeck]);
+
+  const history = useHistory();
 
   return (
     <Container className="deck-container">

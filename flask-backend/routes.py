@@ -137,7 +137,7 @@ def parseDeck():
             'owner': '',
             'author': '',
             'description': '',
-            'deckid': 'foo',
+            'deckid': '',
             'crypt': crypt,
             'library': library,
             'timestamp': datetime.utcnow()
@@ -207,7 +207,30 @@ def newDeck():
 
 @app.route('/api/decks/clone', methods=['POST'])
 def cloneDeck():
-    if len(request.json['target']) != 32:
+    if 'deck' in request.json:
+        deck = request.json['deck']
+        cards = {}
+
+        for i in deck['crypt']:
+            cards[i] = deck['crypt'][i]['q']
+        for i in deck['library']:
+            cards[i] = deck['library'][i]['q']
+
+        deckid = uuid.uuid4().hex
+        d = Deck(deckid=deckid,
+                    name=f"{deck['name']} [by {deck['author']}]",
+                    author_public_name=deck['author'],
+                    description=deck['description'],
+                    author=current_user,
+                    cards=cards)
+        db.session.add(d)
+        db.session.commit()
+        return jsonify({
+            'deck cloned': request.json['deckname'],
+            'deckid': deckid
+        })
+
+    elif len(request.json['target']) != 32:
         with open("twdDecks.json", "r") as twdDecks_file:
             twdDecks = json.load(twdDecks_file)
 

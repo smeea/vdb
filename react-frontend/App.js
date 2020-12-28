@@ -230,9 +230,13 @@ function App(props) {
     }
   }, [lastDeck]);
 
-  useEffect(() => {
-    setChangeTimer(!changeTimer);
-  }, [decks[activeDeck] && decks[activeDeck]['Name'], sharedDeck]);
+  // useEffect(() => {
+  //   setChangeTimer(!changeTimer);
+  // }, [decks[activeDeck] && decks[activeDeck]['Name']]);
+
+  // useEffect(() => {
+  //   setChangeTimer(!changeTimer);
+  // }, [sharedDeck]);
 
   return (
     <div className="App">

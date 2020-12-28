@@ -17,6 +17,7 @@ function DeckClone(props) {
         deckname: props.name + ' [by ' + props.author + ']',
         author: props.author,
         target: props.deckid,
+        deck: props.deck,
       }),
     };
 
@@ -32,6 +33,7 @@ function DeckClone(props) {
       })
       .then(() => props.getDecks())
       .then(() => props.setActiveDeck(newdeckid))
+      .then(() => props.setCh(newdeckid))
       .then(() => props.setShowButtons(false));
   };
 

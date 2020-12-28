@@ -77,7 +77,11 @@ function DeckNewCryptCard(props) {
                      </strike>
                      {card['Adv'] && (
                        <span className="pl-1">
-                         <img className={imgClass} src={imgSrc} title={imgTitle} />
+                         <img
+                           className="advanced-image-results"
+                           src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                           title="Advanced"
+                         />
                        </span>
                      )}
                      <span className="pl-1">
@@ -88,7 +92,11 @@ function DeckNewCryptCard(props) {
                      {card['Name']}
                      {card['Adv'] && (
                        <span className="pl-1">
-                         <img className={imgClass} src={imgSrc} title={imgTitle} />
+                         <img
+                           className="advanced-image-results"
+                           src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                           title="Advanced"
+                         />
                        </span>
                      )}
                    </>

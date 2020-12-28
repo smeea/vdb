@@ -1,10 +1,8 @@
 # FIX
 * Nice error messages output
-* Fix bug on change to TWD
-* Clone deck-from-url
+* Crypt redraw on sharedDeck clone
 
 # FEATURES
-* Add card from TWD to Deck
 * TWD mobile features
 * TWD traits: star-vampire / card-types / mono-clan / weenie / high-cap
 * Description to TWD forms
