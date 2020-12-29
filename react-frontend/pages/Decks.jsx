@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import ChevronExpand from '../assets/images/icons/chevron-expand.svg';
 import List from '../assets/images/icons/list.svg';
@@ -10,6 +10,8 @@ import DeckButtons from './components/DeckButtons.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
 import DeckLibrary from './components/DeckLibrary.jsx';
 import DeckImport from './components/DeckImport.jsx';
+import AccountLogin from './components/AccountLogin.jsx';
+import AccountRegister from './components/AccountRegister.jsx';
 
 function Decks(props) {
   const query = new URLSearchParams(useLocation().search);
@@ -119,44 +121,57 @@ function Decks(props) {
       <Row>
         <Col lg={4} className="px-0">
           <Row className="justify-content-end mx-0">
-            <Col className="px-0 px-lg-3">
-              <DeckSelect
-                decks={props.decks}
-                activeDeck={props.activeDeck}
-                setActiveDeck={props.setActiveDeck}
-              />
-            </Col>
-            {props.isMobile &&
-             (props.activeDeck || props.sharedDeck ? (
-               <Col
-                 xs="auto"
-                 className="d-flex justify-content-between align-items-center px-0 px-lg-3"
-               >
-                 <Button
-                   className="full-height"
-                   variant="outline-secondary"
-                   onClick={() => setShowInfo(!showInfo)}
-                 >
-                   <ChevronExpand />
-                 </Button>
-                 <Button
-                   className="full-height"
-                   variant="outline-secondary"
-                   onClick={() => setShowButtons(!showButtons)}
-                 >
-                   <List />
-                 </Button>
-               </Col>
-             ) : (
+            {props.username &&
+             <>
                <Col className="px-0 px-lg-3">
-                 <DeckImport
+                 <DeckSelect
+                   decks={props.decks}
+                   activeDeck={props.activeDeck}
                    setActiveDeck={props.setActiveDeck}
-                   getDecks={props.getDecks}
-                   setShowInfo={setShowInfo}
-                   setShowButtons={props.setShowButtons}
                  />
                </Col>
-             ))}
+               {(props.activeDeck || props.sharedDeck)
+                ?
+                <>
+                  {props.isMobile &&
+                   (
+                     <Col
+                       xs="auto"
+                       className="d-flex justify-content-between align-items-center px-0 px-lg-3"
+                     >
+                       <Button
+                         className="full-height"
+                         variant="outline-secondary"
+                         onClick={() => setShowInfo(!showInfo)}
+                       >
+                         <ChevronExpand />
+                       </Button>
+                       <Button
+                         className="full-height"
+                         variant="outline-secondary"
+                         onClick={() => setShowButtons(!showButtons)}
+                       >
+                         <List />
+                       </Button>
+                     </Col>
+                   )
+                  }
+                </>
+                : <>
+                    {props.isMobile &&
+                     <Col className="px-0 px-lg-3">
+                       <DeckImport
+                         setActiveDeck={props.setActiveDeck}
+                         getDecks={props.getDecks}
+                         setShowInfo={setShowInfo}
+                         setShowButtons={props.setShowButtons}
+                       />
+                     </Col>
+                    }
+                  </>
+               }
+             </>
+            }
           </Row>
         </Col>
         <Col lg={6} className="px-0 px-lg-3">
@@ -298,12 +313,31 @@ function Decks(props) {
           </Col>
         </Row>
       )}
-      {props.sharedDeck ? (
-        <AlertMessage
-          className="error-message"
-          value={<b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>}
-        />
-      ) : null}
+      {props.sharedDeck &&
+       <AlertMessage
+         className="error-message"
+         value={<b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>}
+       />
+      }
+      {!(props.username || sharedDeckId) &&
+       <Row className="h-75 align-items-center justify-content-center">
+         <Col md={12} lg={5} className="px-0">
+           <div className="d-flex justify-content-center pb-3">
+             <h6>
+               Login required to create decks
+             </h6>
+           </div>
+           <AccountLogin
+             setUsername={props.setUsername}
+             isMobile={props.isMobile}
+           />
+           <AccountRegister
+             setUsername={props.setUsername}
+             whoAmI={props.whoAmI}
+           />
+         </Col>
+       </Row>
+      }
     </Container>
   );
 }

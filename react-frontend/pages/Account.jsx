@@ -11,7 +11,7 @@ import PersonFill from '../assets/images/icons/person-fill.svg';
 
 function Account(props) {
   return (
-    <Container className="main-container h-100">
+    <Container className="main-container">
       <Row className="h-75 align-items-center justify-content-center">
         <Col md={12} lg={5} className="px-0">
           {props.username ? (

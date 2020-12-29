@@ -312,6 +312,7 @@ function App(props) {
                 setShowImage={setShowImage}
                 username={username}
                 whoAmI={whoAmI}
+                setUsername={setUsername}
               />
             </Route>
             <Route
@@ -332,6 +333,7 @@ function App(props) {
                   showImage={showImage}
                   username={username}
                   whoAmI={whoAmI}
+                  setUsername={setUsername}
                   id={props.match.params.id}
                 />
               )}

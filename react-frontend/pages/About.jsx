@@ -1,5 +1,6 @@
 import React from 'react';
 import { Figure, Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function About(props) {
   const desktopScreenshots = {
@@ -61,6 +62,29 @@ function About(props) {
               It is a successor of{' '}
               <a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
             </p>
+            <h5>QUICKSTART</h5>
+            <ul>
+              <li>
+                <Link to="/crypt">
+                  Search crypt cards
+                </Link>
+              </li>
+              <li>
+                <Link to="/library">
+                  Search library cards
+                </Link>
+              </li>
+              <li>
+                <Link to="/twd">
+                  Search tournament-winning decks
+                </Link>
+              </li>
+              <li>
+                <Link to="/decks">
+                  Create your decks
+                </Link>
+              </li>
+            </ul>
             <h5>FEATURES</h5>
             <ul>
               <li>
