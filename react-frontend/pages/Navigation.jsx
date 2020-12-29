@@ -30,44 +30,44 @@ function Navigation(props) {
         <Nav className="container justify-content-between">
           <div className="d-flex align-items-center pr-1">
             {props.username &&
-              props.isActiveDeck &&
-              ((props.location.pathname == '/crypt' &&
-                !props.showCryptSearch) ||
-                (props.location.pathname == '/library' &&
-                  !props.showLibrarySearch)) && (
-                <div
-                  className="d-flex align-items-center pl-1"
-                  onClick={() => props.setAddMode(!props.addMode)}
-                >
-                  {props.addMode ? (
-                    <>
-                      <div className="d-flex white-font-toggle">
-                        <ToggleOn viewBox="0 0 16 16"/>
-                      </div>
-                      {!props.isMobile ? (
-                        <div className="d-inline pl-1 white-font">
-                          Add to Deck Mode
-                        </div>
-                      ) : (
-                        <div className="d-inline pl-1 white-font">[+]</div>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <div className="d-flex gray-font-toggle">
-                        <ToggleOff viewBox="0 0 16 16"/>
-                      </div>
-                      {!props.isMobile ? (
-                        <div className="d-inline pl-1 gray-font">
-                          Add to Deck Mode
-                        </div>
-                      ) : (
-                        <div className="d-inline pl-1 gray-font">[+]</div>
-                      )}
-                    </>
-                  )}
-                </div>
-              )}
+             props.isActiveDeck &&
+             ((props.location.pathname == '/crypt' &&
+               !props.showCryptSearch) ||
+              (props.location.pathname == '/library' &&
+               !props.showLibrarySearch)) && (
+                 <div
+                   className="d-flex align-items-center pl-1"
+                   onClick={() => props.setAddMode(!props.addMode)}
+                 >
+                   {props.addMode ? (
+                     <>
+                       <div className="d-flex white-font-toggle">
+                         <ToggleOn viewBox="0 0 16 16"/>
+                       </div>
+                       {!props.isMobile ? (
+                         <div className="d-inline pl-1 white-font">
+                           Add to Deck Mode
+                         </div>
+                       ) : (
+                         <div className="d-inline pl-1 white-font">[+]</div>
+                       )}
+                     </>
+                   ) : (
+                     <>
+                       <div className="d-flex gray-font-toggle">
+                         <ToggleOff viewBox="0 0 16 16"/>
+                       </div>
+                       {!props.isMobile ? (
+                         <div className="d-inline pl-1 gray-font">
+                           Add to Deck Mode
+                         </div>
+                       ) : (
+                         <div className="d-inline pl-1 gray-font">[+]</div>
+                       )}
+                     </>
+                   )}
+                 </div>
+               )}
           </div>
 
           <div className="d-flex align-items-center">

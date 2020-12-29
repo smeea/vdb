@@ -158,7 +158,7 @@ function DeckLibrary(props) {
     <div className="pt-4">
       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
         <b>Library [{libraryTotal}]</b>
-        <div>
+        <div className="d-flex">
           <Button
             variant="outline-secondary"
             onClick={() => setShowTotal(!showTotal)}

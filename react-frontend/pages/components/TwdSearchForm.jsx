@@ -225,6 +225,7 @@ function TwdSearchForm(props) {
           <TwdSearchFormClan
             value={props.formState.clan}
             onChange={handleSelectChange}
+            isMobile={props.isMobile}
           />
         </Col>
       </Row>

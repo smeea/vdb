@@ -19,7 +19,7 @@ function ResultLibraryType(props) {
       <div className="d-flex align-items-center">
         {cardtypeImages}
         <div className="px-1">
-          {props.cardtype} [{props.total}]{props.trifleTotal && <> - {props.trifleTotal} trifle</>}
+      {props.cardtype} [{props.total}]{props.trifleTotal ? <> - {props.trifleTotal} trifle</> : null}
         </div>
       </div>
     );

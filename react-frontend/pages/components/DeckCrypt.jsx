@@ -126,7 +126,7 @@ function DeckCrypt(props) {
         <b>
           Crypt [{cryptTotal}] - {cryptGroups}
         </b>
-        <div>
+        <div className="d-flex">
           <Button
             variant="outline-secondary"
             onClick={() => setShowTotal(!showTotal)}
