@@ -1,6 +1,9 @@
 # FIX
 * Nice error messages output
 * Crypt redraw on sharedDeck clone
+* Switch from deck to twd with cards on mobile
+* Draw to close buttons on mobile
+* Bigger mobile add button area
 
 # FEATURES
 * TWD mobile features

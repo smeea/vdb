@@ -49,7 +49,7 @@ function About(props) {
               <a href="http://www.vekn.net/card-lists">
                 vekn.net official list
               </a>
-              : 2020-11-30
+              : 2020-12-31
             </p>
           </div>
 
