@@ -59,6 +59,10 @@ function Twd(props) {
             isMobile={props.isMobile}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
+            cryptCards={props.cryptCards}
+            setCryptCards={props.setCryptCards}
+            libraryCards={props.libraryCards}
+            setLibraryCards={props.setLibraryCards}
           />
         </Col>
       </Row>

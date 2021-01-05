@@ -74,9 +74,10 @@ function AccountRegister(props) {
           setSpinnerState(false);
           console.log(error);
         });
+    } else {
+      !state.username ? setEmptyUsername(true) : setEmptyUsername(false);
+      !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
     }
-    !state.username ? setEmptyUsername(true) : setEmptyUsername(false);
-    !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
   const handleSubmitButton = (event) => {

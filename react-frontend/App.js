@@ -38,6 +38,8 @@ function App(props) {
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const [twdResults, setTwdResults] = useState(undefined);
+  const [twdCryptCards, setTwdCryptCards] = useState({});
+  const [twdLibraryCards, setTwdLibraryCards] = useState({});
   const [twdCardBase, setTwdCardBase] = useState({});
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
@@ -293,6 +295,10 @@ function App(props) {
                 addMode={addMode}
                 formState={twdFormState}
                 setFormState={setTwdFormState}
+                cryptCards={twdCryptCards}
+                setCryptCards={setTwdCryptCards}
+                libraryCards={twdLibraryCards}
+                setLibraryCards={setTwdLibraryCards}
               />
             </Route>
             <Route path="/decks">

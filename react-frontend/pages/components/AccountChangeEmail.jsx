@@ -74,10 +74,10 @@ function AccountChangeEmail(props) {
           }));
           console.log(error);
         });
+    } else {
+      !state.email ? setEmptyEmail(true) : setEmptyEmail(false);
+      !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
     }
-
-    !state.email ? setEmptyEmail(true) : setEmptyEmail(false);
-    !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
   const handleSubmitButton = (event) => {

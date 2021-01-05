@@ -13,8 +13,10 @@ function TwdSearchFormCrypt({
   isMobile,
   showImage,
   setShowImage,
+  cryptCards,
+  setCryptCards,
 }) {
-  const [cryptCards, setCryptCards] = useState({});
+  // const [cryptCards, setCryptCards] = useState({});
 
   const handleAdd = (event) => {
     setCryptCards((prevState) => ({

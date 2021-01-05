@@ -47,6 +47,7 @@ function AccountChangeName(props) {
         })
         .then(() => {
           props.setPublicName(state);
+          setEmptyPublicName(false);
           setButtonState(true);
           setTimeout(() => {
             setButtonState(false);
@@ -55,9 +56,9 @@ function AccountChangeName(props) {
         .catch((error) => {
           console.log(error);
         });
+    } else {
+      setEmptyPublicName(true);
     }
-
-    !state ? setEmptyPublicName(true) : setEmptyPublicName(false);
   };
 
   const handleSubmitButton = (event) => {

@@ -1,7 +1,6 @@
 # FIX
 * Nice error messages output
 * Crypt redraw on sharedDeck clone
-* Switch from deck to twd with cards on mobile
 * Draw to close buttons on mobile
 * Bigger mobile add button area
 
@@ -14,6 +13,7 @@
 * Precon decks
 * Script to generate json from cvs from text disciplines
 * Night theme
+* Simulate deck play in draw
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage

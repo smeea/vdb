@@ -197,6 +197,8 @@ function TwdSearchForm(props) {
             isMobile={props.isMobile}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
+            cryptCards={props.cryptCards}
+            setCryptCards={props.setCryptCards}
           />
         </Col>
       </Row>
@@ -214,6 +216,8 @@ function TwdSearchForm(props) {
             isMobile={props.isMobile}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
+            libraryCards={props.libraryCards}
+            setLibraryCards={props.setLibraryCards}
           />
         </Col>
       </Row>

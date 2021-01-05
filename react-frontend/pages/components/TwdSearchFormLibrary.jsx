@@ -14,8 +14,10 @@ function TwdSearchFormLibrary({
   isMobile,
   showImage,
   setShowImage,
+  libraryCards,
+  setLibraryCards,
 }) {
-  const [libraryCards, setLibraryCards] = useState({});
+  // const [libraryCards, setLibraryCards] = useState({});
 
   const handleAdd = (event) => {
     setLibraryCards((prevState) => ({

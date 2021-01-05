@@ -73,7 +73,7 @@ function AccountLogin(props) {
         })
         .then((data) => {
           props.setUsername(state.username);
-          setSpinnerState(false);
+          // setSpinnerState(false);
         })
         .catch((error) => {
           setPasswordError(true);
@@ -84,9 +84,10 @@ function AccountLogin(props) {
           setSpinnerState(false);
           console.log(error);
         });
+    } else {
+      !state.username ? setEmptyUsername(true) : setEmptyUsername(false);
+      !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
     }
-    !state.username ? setEmptyUsername(true) : setEmptyUsername(false);
-    !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
   const handleSubmitButton = (event) => {

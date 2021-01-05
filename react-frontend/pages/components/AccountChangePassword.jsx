@@ -77,10 +77,10 @@ function AccountChangePassword(props) {
           }));
           console.log(error);
         });
+    } else {
+      !state.newPassword ? setEmptyNewPassword(true) : setEmptyNewPassword(false);
+      !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
     }
-
-    !state.newPassword ? setEmptyNewPassword(true) : setEmptyNewPassword(false);
-    !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
   const handleSubmitButton = (event) => {
