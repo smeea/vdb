@@ -120,6 +120,8 @@ with open("vtescrypt.csv", "r",
             for d in disciplines:
                 del card[d]
 
+        card['Artist'] = re.split('; | & ', card['Artist'])
+
         # Remove {} and spaces in []
         card['Card Text'] = re.sub('[{}]', '', card['Card Text'])
         card['Card Text'] = re.sub(r'\[(\w+)\s*(\w*)\]', r'[\1\2]',

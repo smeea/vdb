@@ -178,7 +178,9 @@ def listDecks():
                 'deckid': deck.deckid,
                 'timestamp': deck.timestamp,
             }
+
         return jsonify(decks)
+
     except AttributeError:
         return jsonify({'error': 'not logged'})
 

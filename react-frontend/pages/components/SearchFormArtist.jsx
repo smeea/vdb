@@ -1,9 +1,13 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import artists from './artists.js';
+import cryptArtists from './artistsCrypt.json';
+import libraryArtists from './artistsLib.json';
 
 function SearchFormArtist(props) {
+  let artists;
+  props.target == 'crypt' ? artists = cryptArtists : artists = libraryArtists;
+
   const options = artists.map((artist, index) => {
     return {
       name: 'artist',

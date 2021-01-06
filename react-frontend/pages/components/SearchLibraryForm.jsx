@@ -204,6 +204,7 @@ function SearchLibraryForm(props) {
       <SearchFormArtist
         value={props.formState.artist}
         onChange={handleSelectChange}
+        target="library"
       />
     </form>
   );

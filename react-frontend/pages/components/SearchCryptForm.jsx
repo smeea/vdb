@@ -299,6 +299,7 @@ function SearchCryptForm(props) {
       <SearchFormArtist
         value={props.formState.artist}
         onChange={handleSelectChange}
+        target="crypt"
       />
     </form>
   );

@@ -53,6 +53,8 @@ with open("vteslib.csv", "r", encoding='utf8') as f_csv, open(
         for k in useless_fields:
             del card[k]
 
+        card['Artist'] = re.split('; | & ', card['Artist'])
+
         # Remove {} and spaces in []
         card['Card Text'] = re.sub('[{}]', '', card['Card Text'])
         card['Card Text'] = re.sub(r'\[(\w+)\s*(\w*)\]', r'[\1\2]',

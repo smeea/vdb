@@ -2,7 +2,8 @@
 * Nice error messages output
 * Crypt redraw on sharedDeck clone
 * Draw to close buttons on mobile
-* Bigger mobile add button area
+* Typos in twd location generation scripts
+* Move resources for pages components into subfolder 
 
 # FEATURES
 * TWD mobile features
@@ -14,6 +15,8 @@
 * Script to generate json from cvs from text disciplines
 * Night theme
 * Simulate deck play in draw
+* Documentation on updates
+* Makefile for updates
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage
