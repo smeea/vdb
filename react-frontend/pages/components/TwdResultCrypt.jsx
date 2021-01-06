@@ -35,19 +35,19 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
     cryptGroups = 'ERROR IN GROUPS';
   }
 
-  const SortByQuantity = (a, b) => {
-    if (a.q > b.q) return -1;
-    else return 1;
-  };
-
-  const SortByCapacity = (a, b) => {
-    if (a.c['Capacity'] > b.c['Capacity']) return 1;
-    else return -1;
+  const SortByQuantityCapacity = (a, b) => {
+    if (a.q > b.q) {
+      return -1;
+    } else if (a.q == b.q) {
+      if (a.c['Capacity'] > b.c['Capacity']) return -1;
+      else return 1;
+    } else {
+      return 1;
+    }
   };
 
   const sortedCards = Object.values(crypt)
-    .sort(SortByCapacity)
-    .sort(SortByQuantity);
+    .sort(SortByQuantityCapacity);
 
   const cardLines = sortedCards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {

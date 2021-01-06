@@ -10,7 +10,7 @@ import DeckCrypt from './components/DeckCrypt.jsx';
 import DeckLibrary from './components/DeckLibrary.jsx';
 
 function Library(props) {
-  const [sortMethod, setSortMethod] = useState('Default');
+  const [sortMethod, setSortMethod] = useState('Type');
 
   return (
     <Container className="main-container">

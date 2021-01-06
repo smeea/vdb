@@ -88,13 +88,11 @@ function DeckCrypt(props) {
   }
 
   const SortByQuantity = (a, b) => {
-    if (a.q > b.q) return -1;
-    else return 1;
+    return b.q - a.q;
   };
 
   const SortByCapacity = (a, b) => {
-    if (a.c['Capacity'] > b.c['Capacity']) return 1;
-    else return -1;
+    return b.c['Capacity'] - a.c['Capacity'];
   };
 
   const [sortedState, setSortedState] = useState([]);
@@ -118,7 +116,6 @@ function DeckCrypt(props) {
 
   const sortedCardsSide = Object.values(cryptSide)
     .sort(SortByCapacity)
-    .reverse();
 
   return (
     <div className="pt-4">
