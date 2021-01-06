@@ -63,6 +63,7 @@ function AccountDeleteConfirmation(props) {
         show={props.show}
         onHide={() => props.setShow(false)}
         animation={false}
+        centered
       >
         <Modal.Body>
           <button type="button" className="close" onClick={props.handleClose}>

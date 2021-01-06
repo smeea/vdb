@@ -193,7 +193,7 @@ function AccountLogin(props) {
       )}
       {showModal && (
         <ModalTooltip
-          text={tooltipText}
+          text={passwordTooltipText}
           title="Forgot password"
           show={showModal}
           setShow={setShowModal}

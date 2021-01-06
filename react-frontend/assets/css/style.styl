@@ -50,10 +50,11 @@ img.card-popover
   width: 1%
   border-left: 1px solid lightgray
 .deck-crypt-table td.quantity
-  width: 14%
+  width: 17%
   font-size: 1.1em
   border-left: 1px solid lightgray
 .deck-crypt-table td.quantity-no-buttons
+  width: 10%
   font-size: 1.1em
   background: rgba(0, 0, 170, 0.07);
 .deck-crypt-table td.disciplines
@@ -84,11 +85,11 @@ img.card-popover
   width: 1%
   border-left: 1px solid lightgray
 .deck-library-table td.quantity
-  width: 14%
+  width: 17%
   font-size: 1.1em
   border-left: 1px solid lightgray
 .deck-library-table td.quantity-no-buttons
-  width: 5%
+  width: 10%
   font-size: 1.1em
   background: rgba(0, 0, 170, 0.07);
 .deck-library-table td.name
@@ -247,9 +248,20 @@ div.gray-small
 .crypt-result-odd
   background-color: #eaeaea
 
+a.quantity
+  position:relative
+a.quantity:before
+    position: absolute
+    content: ''
+    top: -7px
+    bottom: -7px
+    left: -8px
+    right: -8px
+
 button.quantity
+  display: block
   width: 18px
-  height: 26px
+  height: 27px
   padding: 0px
   background: rgba(255, 255, 255, 0.75)
 

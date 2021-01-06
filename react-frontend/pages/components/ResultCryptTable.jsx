@@ -66,6 +66,7 @@ function ResultCryptTable(props) {
                     q={q}
                     deckid={props.deckid}
                     deckCardChange={props.deckCardChange}
+                    isMobile={props.isMobile}
                   />
                 </td>
               ) : props.proxySelected ? (
@@ -79,6 +80,7 @@ function ResultCryptTable(props) {
                         : 0
                     }
                     deckCardChange={props.proxyCounter}
+                    isMobile={props.isMobile}
                   />
                 </td>
               ) : q ? (
@@ -114,7 +116,7 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="name px-1" onClick={() => setModalCard(card)}>
+          <td className="name" onClick={() => setModalCard(card)}>
             <ResultCryptName
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -133,10 +135,10 @@ function ResultCryptTable(props) {
             </td>
           ) : (
             <>
-              <td className="clan px-1" onClick={() => setModalCard(card)}>
+              <td className="clan" onClick={() => setModalCard(card)}>
                 <ResultCryptClan value={card['Clan']} />
               </td>
-              <td className="group px-1" onClick={() => setModalCard(card)}>
+              <td className="group" onClick={() => setModalCard(card)}>
                 <ResultCryptGroup value={card['Group']} />
               </td>
             </>

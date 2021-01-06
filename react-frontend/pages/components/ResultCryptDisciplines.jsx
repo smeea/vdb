@@ -6,11 +6,17 @@ function ResultCryptDisciplines(props) {
   let counter = 0;
   let maxRows;
   if (props.isMobile) {
-    maxRows = 6;
-  } else if (props.disciplinesSet) {
-    maxRows = 8;
+    if (props.keyDisciplines >= 5) {
+      maxRows = 7;
+    } else {
+      maxRows = 6;
+    }
   } else {
-    maxRows = 7;
+    if (props.disciplinesSet) {
+      maxRows = 8;
+    } else {
+      maxRows = 7;
+    }
   }
   const width = 100 / maxRows + '%';
 

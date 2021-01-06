@@ -88,7 +88,7 @@ function DeckDrawModal(props) {
               <button
                 type="button"
                 className="close"
-                onClick={props.handleClose}
+                onClick={() => props.setShow(false)}
               >
                 <span aria-hidden="true">×</span>
                 <span className="sr-only">Close</span>

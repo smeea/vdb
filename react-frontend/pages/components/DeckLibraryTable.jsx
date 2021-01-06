@@ -61,6 +61,7 @@ function DeckLibraryTable(props) {
                 q={card.q}
                 deckid={props.deckid}
                 deckCardChange={props.deckCardChange}
+                isMobile={props.isMobile}
               />
             </td>
           ) : props.proxySelected ? (
@@ -74,6 +75,7 @@ function DeckLibraryTable(props) {
                     : 0
                 }
                 deckCardChange={props.proxyCounter}
+                isMobile={props.isMobile}
               />
             </td>
           ) : card.q ? (
