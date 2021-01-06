@@ -6,7 +6,9 @@ import libraryArtists from './artistsLib.json';
 
 function SearchFormArtist(props) {
   let artists;
-  props.target == 'crypt' ? artists = cryptArtists : artists = libraryArtists;
+  props.target == 'crypt'
+    ? (artists = cryptArtists)
+    : (artists = libraryArtists);
 
   const options = artists.map((artist, index) => {
     return {

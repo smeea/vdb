@@ -114,8 +114,7 @@ function DeckCrypt(props) {
       return crypt[card];
     });
 
-  const sortedCardsSide = Object.values(cryptSide)
-    .sort(SortByCapacity)
+  const sortedCardsSide = Object.values(cryptSide).sort(SortByCapacity);
 
   return (
     <div className="pt-4">

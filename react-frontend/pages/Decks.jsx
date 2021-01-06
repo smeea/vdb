@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import ChevronExpand from '../assets/images/icons/chevron-expand.svg';
 import List from '../assets/images/icons/list.svg';
@@ -21,9 +21,11 @@ function Decks(props) {
   const { hash } = useLocation();
 
   const getDeckFromText = (input) => {
-    const name = query.get('name') ? query.get('name') : undefined
-    const author = query.get('author') ? query.get('author') : undefined
-    const description = query.get('description') ? query.get('description') : undefined
+    const name = query.get('name') ? query.get('name') : undefined;
+    const author = query.get('author') ? query.get('author') : undefined;
+    const description = query.get('description')
+      ? query.get('description')
+      : undefined;
     const url = `${process.env.API_URL}deck/parse`;
     const options = {
       method: 'POST',
@@ -49,8 +51,8 @@ function Decks(props) {
         } else {
           console.log('error: ', data.error);
         }
-      })
-  }
+      });
+  };
 
   const getDeck = (deckid) => {
     const url = `${process.env.API_URL}deck/${deckid}`;
@@ -94,14 +96,17 @@ function Decks(props) {
   useEffect(() => {
     if (hash) {
       const cards = {};
-      hash.slice(1).split(';').map((i, index) => {
-        const j = i.split('=');
-        cards[j[0]] = parseInt(j[1]);
-      })
+      hash
+        .slice(1)
+        .split(';')
+        .map((i, index) => {
+          const j = i.split('=');
+          cards[j[0]] = parseInt(j[1]);
+        });
       getDeckFromText(cards);
       setSharedDeckId('deckInUrl');
     }
-  }, [hash])
+  }, [hash]);
 
   useEffect(() => {
     if (sharedDeckId != 'deckInUrl') {
@@ -111,7 +116,9 @@ function Decks(props) {
   }, [sharedDeckId]);
 
   useEffect(() => {
-    if (props.activeDeck) { history.push('/decks') };
+    if (props.activeDeck) {
+      history.push('/decks');
+    }
   }, [props.activeDeck]);
 
   const history = useHistory();
@@ -121,75 +128,73 @@ function Decks(props) {
       <Row>
         <Col lg={4} className="px-0">
           <Row className="justify-content-end mx-0">
-            {props.username &&
-             <>
-               <Col className="px-0 px-lg-3">
-                 <DeckSelect
-                   decks={props.decks}
-                   activeDeck={props.activeDeck}
-                   setActiveDeck={props.setActiveDeck}
-                 />
-               </Col>
-               {(props.activeDeck || props.sharedDeck)
-                ?
-                <>
-                  {props.isMobile &&
-                   (
-                     <Col
-                       xs="auto"
-                       className="d-flex justify-content-between align-items-center px-0 px-lg-3"
-                     >
-                       <Button
-                         className="full-height"
-                         variant="outline-secondary"
-                         onClick={() => setShowInfo(!showInfo)}
-                       >
-                         <ChevronExpand />
-                       </Button>
-                       <Button
-                         className="full-height"
-                         variant="outline-secondary"
-                         onClick={() => setShowButtons(!showButtons)}
-                       >
-                         <List />
-                       </Button>
-                     </Col>
-                   )
-                  }
-                </>
-                : <>
-                    {props.isMobile &&
-                     <Col className="px-0 px-lg-3">
-                       <DeckImport
-                         setActiveDeck={props.setActiveDeck}
-                         getDecks={props.getDecks}
-                         setShowInfo={setShowInfo}
-                         setShowButtons={props.setShowButtons}
-                       />
-                     </Col>
-                    }
+            {props.username && (
+              <>
+                <Col className="px-0 px-lg-3">
+                  <DeckSelect
+                    decks={props.decks}
+                    activeDeck={props.activeDeck}
+                    setActiveDeck={props.setActiveDeck}
+                  />
+                </Col>
+                {props.activeDeck || props.sharedDeck ? (
+                  <>
+                    {props.isMobile && (
+                      <Col
+                        xs="auto"
+                        className="d-flex justify-content-between align-items-center px-0 px-lg-3"
+                      >
+                        <Button
+                          className="full-height"
+                          variant="outline-secondary"
+                          onClick={() => setShowInfo(!showInfo)}
+                        >
+                          <ChevronExpand />
+                        </Button>
+                        <Button
+                          className="full-height"
+                          variant="outline-secondary"
+                          onClick={() => setShowButtons(!showButtons)}
+                        >
+                          <List />
+                        </Button>
+                      </Col>
+                    )}
                   </>
-               }
-             </>
-            }
+                ) : (
+                  <>
+                    {props.isMobile && (
+                      <Col className="px-0 px-lg-3">
+                        <DeckImport
+                          setActiveDeck={props.setActiveDeck}
+                          getDecks={props.getDecks}
+                          setShowInfo={setShowInfo}
+                          setShowButtons={props.setShowButtons}
+                        />
+                      </Col>
+                    )}
+                  </>
+                )}
+              </>
+            )}
           </Row>
         </Col>
         <Col lg={6} className="px-0 px-lg-3">
           {(showInfo ||
             (!props.isMobile && (props.activeDeck || props.sharedDeck))) && (
-              <DeckInfo
-                deck={
-                  props.activeDeck
-                    ? props.decks[props.activeDeck]
-                    : props.sharedDeck
-                    ? props.sharedDeck[sharedDeckId]
-                    : null
-                }
-                deckUpdate={deckUpdate}
-                username={props.username}
-                isAuthor={isAuthor}
-              />
-            )}
+            <DeckInfo
+              deck={
+                props.activeDeck
+                  ? props.decks[props.activeDeck]
+                  : props.sharedDeck
+                  ? props.sharedDeck[sharedDeckId]
+                  : null
+              }
+              deckUpdate={deckUpdate}
+              username={props.username}
+              isAuthor={isAuthor}
+            />
+          )}
         </Col>
         <Col lg={2} className="px-0 px-lg-3">
           {!props.isMobile && (
@@ -273,13 +278,13 @@ function Decks(props) {
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                  ? props.decks[props.activeDeck].crypt
-                  : {}
-                : props.sharedDeck
+                    ? props.decks[props.activeDeck].crypt
+                    : {}
+                  : props.sharedDeck
                   ? props.sharedDeck[sharedDeckId]
-                  ? props.sharedDeck[sharedDeckId].crypt
+                    ? props.sharedDeck[sharedDeckId].crypt
+                    : {}
                   : {}
-                : {}
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -296,13 +301,13 @@ function Decks(props) {
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                  ? props.decks[props.activeDeck].library
-                  : {}
-                : props.sharedDeck
+                    ? props.decks[props.activeDeck].library
+                    : {}
+                  : props.sharedDeck
                   ? props.sharedDeck[sharedDeckId]
-                  ? props.sharedDeck[sharedDeckId].library
+                    ? props.sharedDeck[sharedDeckId].library
+                    : {}
                   : {}
-                : {}
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -313,31 +318,29 @@ function Decks(props) {
           </Col>
         </Row>
       )}
-      {props.sharedDeck &&
-       <AlertMessage
-         className="error-message"
-         value={<b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>}
-       />
-      }
-      {!(props.username || sharedDeckId) &&
-       <Row className="h-75 align-items-center justify-content-center">
-         <Col md={12} lg={5} className="px-0">
-           <div className="d-flex justify-content-center pb-3">
-             <h6>
-               Login required to create decks
-             </h6>
-           </div>
-           <AccountLogin
-             setUsername={props.setUsername}
-             isMobile={props.isMobile}
-           />
-           <AccountRegister
-             setUsername={props.setUsername}
-             whoAmI={props.whoAmI}
-           />
-         </Col>
-       </Row>
-      }
+      {props.sharedDeck && (
+        <AlertMessage
+          className="error-message"
+          value={<b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>}
+        />
+      )}
+      {!(props.username || sharedDeckId) && (
+        <Row className="h-75 align-items-center justify-content-center">
+          <Col md={12} lg={5} className="px-0">
+            <div className="d-flex justify-content-center pb-3">
+              <h6>Login required to create decks</h6>
+            </div>
+            <AccountLogin
+              setUsername={props.setUsername}
+              isMobile={props.isMobile}
+            />
+            <AccountRegister
+              setUsername={props.setUsername}
+              whoAmI={props.whoAmI}
+            />
+          </Col>
+        </Row>
+      )}
     </Container>
   );
 }

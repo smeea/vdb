@@ -28,33 +28,31 @@ function ResultLibraryName(props) {
             className="name"
             onClick={() => props.setShowImage(!props.showImage)}
           >
-            {props.card['Banned']
-             ? <>
-                 <strike>
-                   {props.card['Name']}
-                 </strike>
-                 <span className="pl-1">
-                   <Hammer />
-                 </span>
-               </>
-             : <>{props.card['Name']}</>
-            }
+            {props.card['Banned'] ? (
+              <>
+                <strike>{props.card['Name']}</strike>
+                <span className="pl-1">
+                  <Hammer />
+                </span>
+              </>
+            ) : (
+              <>{props.card['Name']}</>
+            )}
           </div>
         </OverlayTrigger>
       ) : (
         <>
           <div className="name">
-            {props.card['Banned']
-             ? <>
-                 <strike>
-                   {props.card['Name']}
-                 </strike>
-                 <span className="pl-1">
-                   <Hammer />
-                 </span>
-               </>
-             : <>{props.card['Name']}</>
-            }
+            {props.card['Banned'] ? (
+              <>
+                <strike>{props.card['Name']}</strike>
+                <span className="pl-1">
+                  <Hammer />
+                </span>
+              </>
+            ) : (
+              <>{props.card['Name']}</>
+            )}
           </div>
         </>
       )}

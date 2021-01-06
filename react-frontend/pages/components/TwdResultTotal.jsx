@@ -6,7 +6,7 @@ function TwdResultTotal(props) {
   let total = 0;
 
   props.decks.map((deck, index) => {
-    const year = `'${deck['date'].slice(2,4)}`;
+    const year = `'${deck['date'].slice(2, 4)}`;
     if (byYear[year]) {
       byYear[year] += 1;
     } else {

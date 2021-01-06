@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons.jsx';
@@ -17,7 +17,6 @@ function TwdSearchFormLibrary({
   libraryCards,
   setLibraryCards,
 }) {
-  // const [libraryCards, setLibraryCards] = useState({});
 
   const handleAdd = (event) => {
     setLibraryCards((prevState) => ({
@@ -93,17 +92,16 @@ function TwdSearchFormLibrary({
               <div>
                 <ResultLibraryType cardtype={card['Type']} />
                 <span className="pl-1">
-                  {card['Banned']
-                   ? <>
-                   <strike>
-                     {card['Name']}
-                   </strike>
-                   <span className="pl-1">
-                     <Hammer />
-                   </span>
-                 </>
-                   : <>{card['Name']}</>
-                  }
+                  {card['Banned'] ? (
+                    <>
+                      <strike>{card['Name']}</strike>
+                      <span className="pl-1">
+                        <Hammer />
+                      </span>
+                    </>
+                  ) : (
+                    <>{card['Name']}</>
+                  )}
                 </span>
               </div>
               <div>

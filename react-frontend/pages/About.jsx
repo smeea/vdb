@@ -65,24 +65,16 @@ function About(props) {
             <h5>QUICKSTART</h5>
             <ul>
               <li>
-                <Link to="/crypt">
-                  Search crypt cards
-                </Link>
+                <Link to="/crypt">Search crypt cards</Link>
               </li>
               <li>
-                <Link to="/library">
-                  Search library cards
-                </Link>
+                <Link to="/library">Search library cards</Link>
               </li>
               <li>
-                <Link to="/twd">
-                  Search tournament-winning decks
-                </Link>
+                <Link to="/twd">Search tournament-winning decks</Link>
               </li>
               <li>
-                <Link to="/decks">
-                  Create your decks
-                </Link>
+                <Link to="/decks">Create your decks</Link>
               </li>
             </ul>
             <h5>FEATURES</h5>

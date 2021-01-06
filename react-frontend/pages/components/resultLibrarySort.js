@@ -18,16 +18,16 @@ function resultLibrarySort(cards, sortMethod) {
   };
 
   const byBloodCost = (a, b) => {
-    if (!isNaN(a['Blood Cost']) && isNaN(b['Blood Cost'])) return -1
-    if (isNaN(a['Blood Cost']) && !isNaN(b['Blood Cost'])) return 1
-    if (isNaN(a['Blood Cost']) && isNaN(b['Blood Cost'])) return 0
+    if (!isNaN(a['Blood Cost']) && isNaN(b['Blood Cost'])) return -1;
+    if (isNaN(a['Blood Cost']) && !isNaN(b['Blood Cost'])) return 1;
+    if (isNaN(a['Blood Cost']) && isNaN(b['Blood Cost'])) return 0;
     return b['Blood Cost'] - a['Blood Cost'];
   };
 
   const byPoolCost = (a, b) => {
-    if (!isNaN(a['Pool Cost']) && isNaN(b['Pool Cost'])) return -1
-    if (isNaN(a['Pool Cost']) && !isNaN(b['Pool Cost'])) return 1
-    if (isNaN(a['Pool Cost']) && isNaN(b['Pool Cost'])) return 0
+    if (!isNaN(a['Pool Cost']) && isNaN(b['Pool Cost'])) return -1;
+    if (isNaN(a['Pool Cost']) && !isNaN(b['Pool Cost'])) return 1;
+    if (isNaN(a['Pool Cost']) && isNaN(b['Pool Cost'])) return 0;
     return b['Pool Cost'] - a['Pool Cost'];
   };
 
@@ -60,17 +60,23 @@ function resultLibrarySort(cards, sortMethod) {
   };
 
   if (cards) {
-    switch(sortMethod) {
-    case 'Name':
-      return cards.sort(byName);
-    case 'Clan/Discipline':
-      return cards.sort(byName).sort(byType).sort(byDiscipline).sort(byClan);
-    case 'Type':
-      return cards.sort(byName).sort(byDiscipline).sort(byClan).sort(byType);
-    case 'Cost':
-      return cards.sort(byName).sort(byDiscipline).sort(byClan).sort(byType).sort(byPoolCost).sort(byBloodCost);
-    default:
-      return cards;
+    switch (sortMethod) {
+      case 'Name':
+        return cards.sort(byName);
+      case 'Clan/Discipline':
+        return cards.sort(byName).sort(byType).sort(byDiscipline).sort(byClan);
+      case 'Type':
+        return cards.sort(byName).sort(byDiscipline).sort(byClan).sort(byType);
+      case 'Cost':
+        return cards
+          .sort(byName)
+          .sort(byDiscipline)
+          .sort(byClan)
+          .sort(byType)
+          .sort(byPoolCost)
+          .sort(byBloodCost);
+      default:
+        return cards;
     }
   } else {
     return null;

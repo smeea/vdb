@@ -493,9 +493,8 @@ def get_library_by_precon(precon, options=[]):
 
 def get_library_by_artist(artist):
     match_cards = []
-    artist = artist.lower()
     for card in library:
-        if artist in card['Artist'].lower():
+        if artist in card['Artist']:
             match_cards.append(card)
 
     return match_cards

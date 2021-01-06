@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AlertMessage from './components/AlertMessage.jsx';
 import TwdResult from './components/TwdResult.jsx';
@@ -22,9 +22,6 @@ function Twd(props) {
               cardBase={props.cardBase}
               decks={props.results}
               getDecks={props.getDecks}
-              /* showTotal={true} */
-              /* sortMethod={sortMethod} */
-              /* setSortMethod={setSortMethod} */
               isMobile={props.isMobile}
               showImage={props.showImage}
               setShowImage={props.setShowImage}

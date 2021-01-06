@@ -489,9 +489,8 @@ def get_crypt_by_precon(precon, options=[]):
 
 def get_crypt_by_artist(artist):
     match_cards = []
-    artist = artist.lower()
     for card in crypt:
-        if artist in card['Artist'].lower():
+        if artist in card['Artist']:
             match_cards.append(card)
 
     return match_cards

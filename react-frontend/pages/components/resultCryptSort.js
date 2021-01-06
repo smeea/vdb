@@ -13,7 +13,7 @@ function resultCryptSort(cards, sortMethod) {
     } else if (a['Clan'] == b['Clan']) {
       return 0;
     } else {
-      return 1
+      return 1;
     }
   };
 
@@ -21,23 +21,22 @@ function resultCryptSort(cards, sortMethod) {
     return a['Capacity'] - b['Capacity'];
   };
 
-
   const byGroup = (a, b) => {
     return a['Group'] - b['Group'];
   };
 
   if (cards) {
-    switch(sortMethod) {
-    case 'Name':
-      return cards.sort(byName);
-    case 'Capacity':
-      return cards.sort(byName).sort(byCapacity);
-    case 'Clan':
-      return cards.sort(byName).sort(byCapacity).sort(byClan);
-    case 'Group':
-      return cards.sort(byName).sort(byCapacity).sort(byGroup);
-    default:
-      return cards;
+    switch (sortMethod) {
+      case 'Name':
+        return cards.sort(byName);
+      case 'Capacity':
+        return cards.sort(byName).sort(byCapacity);
+      case 'Clan':
+        return cards.sort(byName).sort(byCapacity).sort(byClan);
+      case 'Group':
+        return cards.sort(byName).sort(byCapacity).sort(byGroup);
+      default:
+        return cards;
     }
   } else {
     return null;

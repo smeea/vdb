@@ -116,8 +116,8 @@ function SearchCryptForm(props) {
     artist: 'any',
   };
 
-  const [text, setText] = useState('')
-  const handleTextChange = (event) => setText(event.target.value)
+  const [text, setText] = useState('');
+  const handleTextChange = (event) => setText(event.target.value);
 
   const handleSelectChange = (event) => {
     const { name, value } = event;

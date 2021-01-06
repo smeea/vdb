@@ -70,37 +70,36 @@ function DeckNewCryptCard(props) {
             <div>
               <ResultCryptCapacity value={card['Capacity']} />
               <span className="px-2">
-                {card['Banned']
-                 ? <>
-                     <strike>
-                       {card['Name']}
-                     </strike>
-                     {card['Adv'] && (
-                       <span className="pl-1">
-                         <img
-                           className="advanced-image-results"
-                           src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                           title="Advanced"
-                         />
-                       </span>
-                     )}
-                     <span className="pl-1">
-                       <Hammer />
-                     </span>
-                   </>
-                 : <>
-                     {card['Name']}
-                     {card['Adv'] && (
-                       <span className="pl-1">
-                         <img
-                           className="advanced-image-results"
-                           src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                           title="Advanced"
-                         />
-                       </span>
-                     )}
-                   </>
-                }
+                {card['Banned'] ? (
+                  <>
+                    <strike>{card['Name']}</strike>
+                    {card['Adv'] && (
+                      <span className="pl-1">
+                        <img
+                          className="advanced-image-results"
+                          src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                          title="Advanced"
+                        />
+                      </span>
+                    )}
+                    <span className="pl-1">
+                      <Hammer />
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    {card['Name']}
+                    {card['Adv'] && (
+                      <span className="pl-1">
+                        <img
+                          className="advanced-image-results"
+                          src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                          title="Advanced"
+                        />
+                      </span>
+                    )}
+                  </>
+                )}
               </span>
               <ResultCryptClan value={card['Clan']} />
             </div>

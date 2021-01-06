@@ -41,7 +41,10 @@ function TwdResultLibraryByType({ library, isMobile }) {
     }
     libraryByType[cardtype].push(library[card]);
     libraryByTypeTotal[cardtype] += library[card].q;
-    if (cardtype == 'Master' && library[card].c['Card Text'].toLowerCase().includes('trifle')) {
+    if (
+      cardtype == 'Master' &&
+      library[card].c['Card Text'].toLowerCase().includes('trifle')
+    ) {
       trifleTotal += library[card].q;
     }
   });

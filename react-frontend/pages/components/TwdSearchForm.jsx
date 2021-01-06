@@ -29,8 +29,8 @@ function TwdSearchForm(props) {
     library: {},
   };
 
-  const [eventText, setEventText] = useState('')
-  const handleEventTextChange = (event) => setEventText(event.target.value)
+  const [eventText, setEventText] = useState('');
+  const handleEventTextChange = (event) => setEventText(event.target.value);
 
   const handleSelectChange = (event) => {
     const { name, value } = event;

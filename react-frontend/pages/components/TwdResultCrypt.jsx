@@ -46,8 +46,7 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
     }
   };
 
-  const sortedCards = Object.values(crypt)
-    .sort(SortByQuantityCapacity);
+  const sortedCards = Object.values(crypt).sort(SortByQuantityCapacity);
 
   const cardLines = sortedCards.map((card, index) => {
     if (resultTrClass == 'library-result-even') {

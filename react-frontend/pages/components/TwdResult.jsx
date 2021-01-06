@@ -77,9 +77,7 @@ function TwdResult(props) {
 
   return (
     <>
-      <TwdResultTotal
-        decks={props.decks}
-      />
+      <TwdResultTotal decks={props.decks} />
       {twdRows}
       {deckCounter > showCounter && (
         <div className="d-flex justify-content-center pb-4 pt-2">

@@ -103,7 +103,10 @@ function DeckLibrary(props) {
       libraryByTypeTotal[cardtype] = 0;
       for (const card of libraryByType[cardtype]) {
         libraryByTypeTotal[cardtype] += card.q;
-        if (cardtype == 'Master' && card.c['Card Text'].toLowerCase().includes('trifle')) {
+        if (
+          cardtype == 'Master' &&
+          card.c['Card Text'].toLowerCase().includes('trifle')
+        ) {
           trifleTotal += card.q;
         }
       }
