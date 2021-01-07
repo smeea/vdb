@@ -153,10 +153,16 @@ def get_twd_by_disciplines(disciplines):
 
     return match_decks
 
-def get_twd_by_cardtypes(cardtypes):
-    cardtypes_counter = len(cardtypes)
+def get_twd_by_cardtypes(cardtype_input):
+    cardtypes_counter = len(cardtype_input)
+    cardtypes = {}
+
+    for k, v in cardtype_input.items():
+        [min, max] = v.split(',')
+        [min, max] = [float(min)/100, float(max)/100]
+        cardtypes[k] = {'min': min, 'max': max}
+
     match_decks = []
-    foo = 0
 
     for deck in twda:
         counter = 0
@@ -174,8 +180,10 @@ def get_twd_by_cardtypes(cardtypes):
                 types[t] += q
 
         for type, v in cardtypes.items():
-            if type in types and (types[type] / total) > (v / 100):
-                counter += 1
+            if type in types:
+                ratio = types[type] / total
+                if ratio > v['min'] and ratio < v['max']:
+                    counter += 1
 
         if cardtypes_counter == counter:
             match_decks.append(twda[deck])

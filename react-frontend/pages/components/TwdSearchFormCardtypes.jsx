@@ -5,45 +5,45 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 
 function TwdSearchFormCardtypes(props) {
   const types = [
-    ['Master', [[10, 'Small <10%'],
-                [20, 'Medium 20..30%'],
-                [30, 'Heavy >30%']]
+    ['Master', [['1,20', 'Light <20%'],
+                ['20,30', 'Medium 20..30%'],
+                ['30,100', 'Heavy >30%']]
     ],
-    ['Action', [[10, 'Small <10%'],
-                [20, 'Medium 20..30%'],
-                [30, 'Heavy >30%']]
+    ['Action', [['1,10', 'Light <10%'],
+                ['10,20', 'Medium 10..20%'],
+                ['20,100', 'Heavy >20%']]
     ],
-    ['Political Action', [[10, 'Small <10%'],
-                   [20, 'Medium 20..30%'],
-                   [30, 'Heavy >30%']]
+    ['Political Action', [['1,10', 'Light <10%'],
+                          ['10,20', 'Medium 10..20%'],
+                          ['20,100', 'Heavy >20%']]
     ],
-    ['Ally', [[10, 'Small <10%'],
-              [20, 'Medium 20..30%'],
-              [30, 'Heavy >30%']]
+    ['Ally', [['1,5', 'Light <5%'],
+              ['5,15', 'Medium 5..15%'],
+              ['15,100', 'Heavy >15%']]
     ],
-    ['Equipment', [[10, 'Small <10%'],
-                   [20, 'Medium 20..30%'],
-                   [30, 'Heavy >30%']]
+    ['Equipment', [['1,5', 'Light <5%'],
+                   ['5,15', 'Medium 5..15%'],
+                   ['15,100', 'Heavy >15%']]
     ],
-    ['Retainer', [[10, 'Small <10%'],
-                  [20, 'Medium 20..30%'],
-                  [30, 'Heavy >30%']]
+    ['Retainer', [['1,5', 'Light <5%'],
+                  ['5,15', 'Medium 5..15%'],
+                  ['15,100', 'Heavy >15%']]
     ],
-    ['Action Modifier', [[10, 'Small <10%'],
-                  [20, 'Medium 20..30%'],
-                  [30, 'Heavy >30%']]
+    ['Action Modifier', [['1,10', 'Light <10%'],
+                         ['10,20', 'Medium 10..20%'],
+                         ['20,100', 'Heavy >20%']]
     ],
-    ['Reaction', [[10, 'Small <10%'],
-                  [20, 'Medium 20..30%'],
-                  [30, 'Heavy >30%']]
+    ['Reaction', [['1,10', 'Light <10%'],
+                  ['10,25', 'Medium 10..25%'],
+                  ['25,100', 'Heavy >25%']]
     ],
-    ['Combat', [[10, 'Small <10%'],
-                [20, 'Medium 20..30%'],
-                [30, 'Heavy >30%']]
+    ['Combat', [['1,15', 'Light <15%'],
+                ['15,30', 'Medium 15..30%'],
+                ['30,100', 'Heavy >30%']]
     ],
-    ['Event', [[10, 'Small <10%'],
-               [20, 'Medium 20..30%'],
-               [30, 'Heavy >30%']]
+    ['Event', [['1,5', 'Light <5%'],
+               ['5,10', 'Medium 5..10%'],
+               ['10,100', 'Heavy >10%']]
     ],
   ];
 
