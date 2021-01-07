@@ -2,8 +2,6 @@
 * Nice error messages output
 * Crypt redraw on sharedDeck clone
 * Draw to close buttons on mobile
-* Typos in twd location generation scripts
-* Move resources for pages components into subfolder 
 
 # FEATURES
 * TWD mobile features

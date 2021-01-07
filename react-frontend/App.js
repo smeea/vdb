@@ -6,9 +6,9 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Navigation from './pages/Navigation.jsx';
-import defaultsTwdForm from './pages/components/defaultsTwdForm.js';
-import defaultsCryptForm from './pages/components/defaultsCryptForm.js';
-import defaultsLibraryForm from './pages/components/defaultsLibraryForm.js';
+import defaultsTwdForm from './pages/components/forms_data/defaultsTwdForm.json';
+import defaultsCryptForm from './pages/components/forms_data/defaultsCryptForm.json';
+import defaultsLibraryForm from './pages/components/forms_data/defaultsLibraryForm.json';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 

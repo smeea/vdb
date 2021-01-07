@@ -140,22 +140,10 @@ function SearchCryptForm(props) {
   const handleDisciplinesChange = (event) => {
     const { id, name } = event.target;
     const newState = props.formState[name];
-    if (newState[id] < 2) {
-      newState[id] += 1;
-    } else {
-      newState[id] = 0;
-    }
-    props.setFormState((prevState) => ({
-      ...prevState,
-      [name]: newState,
-    }));
-  };
+    const max = (name == 'disciplines') ? 2 : 1;
 
-  const handleVirtuesChange = (event) => {
-    const { id, name } = event.target;
-    const newState = props.formState[name];
-    if (newState[id] == 0) {
-      newState[id] = 1;
+    if (newState[id] < max) {
+      newState[id] += 1;
     } else {
       newState[id] = 0;
     }
@@ -252,7 +240,7 @@ function SearchCryptForm(props) {
       />
       <SearchCryptFormVirtues
         value={props.formState.virtues}
-        onChange={handleVirtuesChange}
+        onChange={handleDisciplinesChange}
       />
       <SearchCryptFormCapacity
         value={props.formState.capacity}

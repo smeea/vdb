@@ -1,8 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import cryptArtists from './artistsCrypt.json';
-import libraryArtists from './artistsLib.json';
+import cryptArtists from './forms_data/artistsCrypt.json';
+import libraryArtists from './forms_data/artistsLib.json';
 
 function SearchFormArtist(props) {
   let artists;

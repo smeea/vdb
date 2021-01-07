@@ -83,44 +83,23 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
 with open("twda.json", "r") as twda_input, open("twdLocations.json", "w") as twdaLocations_file, open("twdPlayers.json", "w") as twdaPlayers_file:
 
     twda = json.load(twda_input)
-    locations = []
-    players = []
-    decks = []
+    locations = set(())
+    players = set(())
 
     for i in twda:
-        if i['place'] not in locations:
-            place = i['place'].split(', ')
-            # p = place.pop()
-            # locations.append({'label': p, 'value': p})
-            # locations.append({'label': i['place'], 'value': i['place']})
-            locations.append(place.pop())
-            locations.append(i['place'])
+        place = i['place'].split(', ')
+        locations.add(place.pop())
+        locations.add(i['place'])
+
+        players.add(i['player'])
 
 
-        if i['player'] not in players:
-            players.append(i['player'])
-
-        deck = {
-            'id': i['id'],
-            'event': i['event'],
-            'location': i['place'],
-            'date': i['date'],
-            'player': i['player'],
-        }
-
-        if 'players_count' in i:
-            deck['players'] = i['players_count']
-        else:
-            deck['players'] = 0
-
-        decks.append(deck)
-
-    locations.sort()
+    locations = sorted(locations)
     locationsOptions = []
     for i in locations:
         locationsOptions.append({'label': i, 'value': i})
 
-    players.sort()
+    players = sorted(players)
     playersOptions = []
     for i in players:
         playersOptions.append({'label': i, 'value': i})

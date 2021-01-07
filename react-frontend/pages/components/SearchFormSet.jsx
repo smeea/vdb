@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import sets from './sets.js';
+import sets from './forms_data/sets.json';
 
 function SearchFormSet(props) {
   const options = [];
