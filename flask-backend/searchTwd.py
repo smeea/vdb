@@ -4,6 +4,8 @@ from searchTwdComponents import get_twd_by_players
 from searchTwdComponents import get_twd_by_crypt
 from searchTwdComponents import get_twd_by_library
 from searchTwdComponents import get_twd_by_date
+from searchTwdComponents import get_twd_by_capacity
+from searchTwdComponents import get_twd_by_cardtypes
 from searchTwdComponents import get_twd_by_traits
 from searchTwdComponents import get_twd_by_event
 from searchTwdComponents import get_twd_by_clan
@@ -94,6 +96,20 @@ def searchTwd(request):
         if request.json['event']:
             parameters += 1
             match_by_category.append(get_twd_by_event(request.json['event']))
+    except KeyError:
+        pass
+
+    try:
+        if request.json['cardtypes']:
+            parameters += 1
+            match_by_category.append(get_twd_by_cardtypes(request.json['cardtypes']))
+    except KeyError:
+        pass
+
+    try:
+        if request.json['capacity']:
+            parameters += 1
+            match_by_category.append(get_twd_by_capacity(request.json['capacity']))
     except KeyError:
         pass
 

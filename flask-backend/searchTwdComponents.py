@@ -153,26 +153,102 @@ def get_twd_by_disciplines(disciplines):
 
     return match_decks
 
+def get_twd_by_cardtypes(cardtypes):
+    cardtypes_counter = len(cardtypes)
+    match_decks = []
+    foo = 0
+
+    for deck in twda:
+        counter = 0
+        total = 0
+        types = {}
+
+        for k, v in twda[deck]['library'].items():
+            t = get_library_by_id(k)['Type'].lower()
+            q = v['q']
+            total += q
+
+            if t not in types:
+                types[t] = q
+            else:
+                types[t] += q
+
+        for type, v in cardtypes.items():
+            if type in types and (types[type] / total) > (v / 100):
+                counter += 1
+
+        if cardtypes_counter == counter:
+            match_decks.append(twda[deck])
+
+    return match_decks
+
+
+def get_twd_by_capacity(capacity):
+    [min, max] = capacity.split(',')
+    [min, max] = [float(min), float(max)]
+
+    match_decks = []
+
+    for deck in twda:
+        cryptTotalCap = 0
+        cryptCards = 0
+        capacityList = []
+
+        for k, v in twda[deck]['crypt'].items():
+            if k != '200076':
+                c = get_crypt_by_id(k)['Capacity']
+                q = v['q']
+                cryptTotalCap += c * q
+                cryptCards += q
+                for x in range(q):
+                    capacityList.append(c)
+
+        cryptAvg = cryptTotalCap / cryptCards
+
+        cryptMax = 0
+        capacityList.sort()
+
+        for i in range(4):
+            cryptMax += capacityList[-i - 1]
+
+        if cryptAvg >= min and cryptAvg <= max and cryptMax <= max * 4 + 6:
+            match_decks.append(twda[deck])
+
+    return match_decks
+
+
 def get_twd_by_traits(traits):
     trait_counter = len(traits)
     match_decks = []
     for deck in twda:
         counter = 0
         for trait in traits.keys():
+
             if trait == 'star':
-                for q in crypt.values():
-                    if q >= 5:
-                        counter += 1
-                        break
+                min = 5
+                if '200076' in twda[deck]['crypt']:
+                    min = 4
+
+                for k, v in twda[deck]['crypt'].items():
+                    # Skip Anarch Convert
+                    if k != '200076':
+                        if v['q'] >= min:
+                            counter += 1
+                            break
+
+            if trait == 'monoclan':
+                clans = []
+
+                for k, v in twda[deck]['crypt'].items():
+                    clan = get_crypt_by_id(k)['Clan']
+                    if k != '200076' and clan not in clans:
+                        clans.append(get_crypt_by_id(k)['Clan'])
+
+                if len(clans) <= 1:
+                    counter += 1
+                    break
 
         if trait_counter == counter:
             match_decks.append(twda[deck])
 
     return match_decks
-
-
-
-# Traits:
-# - Star
-# - Anarch
-# - Black Hand

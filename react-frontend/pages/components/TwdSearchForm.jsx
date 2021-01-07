@@ -7,7 +7,10 @@ import TwdSearchFormLocation from './TwdSearchFormLocation.jsx';
 import TwdSearchFormEvent from './TwdSearchFormEvent.jsx';
 import TwdSearchFormDate from './TwdSearchFormDate.jsx';
 import TwdSearchFormClan from './TwdSearchFormClan.jsx';
-// import TwdSearchFormTraits from './TwdSearchFormTraits.jsx';
+import TwdSearchFormCardtypes from './TwdSearchFormCardtypes.jsx';
+import TwdSearchFormCapacity from './TwdSearchFormCapacity.jsx';
+import TwdSearchFormTraitStar from './TwdSearchFormTraitStar.jsx';
+import TwdSearchFormTraitMonoclan from './TwdSearchFormTraitMonoclan.jsx';
 import TwdSearchFormDisciplines from './TwdSearchFormDisciplines.jsx';
 import TwdSearchFormCrypt from './TwdSearchFormCrypt.jsx';
 import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
@@ -18,13 +21,29 @@ function TwdSearchForm(props) {
   const defaults = {
     player: '',
     location: '',
-    clan: 'any',
     playersFrom: 'any',
     playersTo: 'any',
     dateFrom: 'any',
     dateTo: 'any',
     disciplines: {},
-    traits: {},
+    clan: 'any',
+    capacity: 'any',
+    cardtypes: {
+      master: 'any',
+      action: 'any',
+      'political action': 'any',
+      ally: 'any',
+      equipment: 'any',
+      retainer: 'any',
+      'action modifier': 'any',
+      reaction: 'any',
+      combat: 'any',
+      event: 'any',
+    },
+    traits: {
+      star: false,
+      monoclan: false,
+    },
     crypt: {},
     library: {},
   };
@@ -40,10 +59,21 @@ function TwdSearchForm(props) {
     }));
   };
 
+  const handleCardtypeChange = (event) => {
+    const { name, value } = event;
+    const newState = props.formState.cardtypes;
+    newState[name] = value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      cardtypes: newState,
+    }));
+  };
+
   const handleMultiChange = (event) => {
-    const { id, name, value } = event.target;
+    const { name, id, value } = event.target;
     const newState = props.formState[name];
-    newState[value ? value : id] = !newState[id];
+    const i = value ? value : id
+    newState[i] = !newState[i];
     props.setFormState((prevState) => ({
       ...prevState,
       [name]: newState,
@@ -66,11 +96,11 @@ function TwdSearchForm(props) {
 
     const input = JSON.parse(JSON.stringify(props.formState));
 
-    const multiSelectForms = ['crypt', 'library', 'disciplines'];
+    const multiSelectForms = ['crypt', 'library', 'disciplines', 'traits', 'cardtypes'];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(
-        (k) => input[i][k] == 0 && delete input[i][k]
+        (k) => (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k]
       );
     });
 
@@ -233,19 +263,47 @@ function TwdSearchForm(props) {
           />
         </Col>
       </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
+          <TwdSearchFormTraitMonoclan
+            value={props.formState.traits}
+            onChange={handleMultiChange}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Capacity:</label>
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <TwdSearchFormCapacity
+            value={props.formState.capacity}
+            onChange={handleSelectChange}
+            isMobile={props.isMobile}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
+          <TwdSearchFormTraitStar
+            value={props.formState.traits}
+            onChange={handleMultiChange}
+          />
+        </Col>
+      </Row>
       <TwdSearchFormDisciplines
         disciplines={props.formState.disciplines}
         onChange={handleMultiChange}
       />
-      {/* <Row className="py-1 pl-1 mx-0 align-items-center"> */}
-      {/*   <Col xs={3} className="d-flex px-0"> */}
-      {/*     <label className="h6 mb-0">Traits:</label> */}
-      {/*   </Col> */}
-      {/* </Row> */}
-      {/* <TwdSearchFormTraits */}
-      {/*   value={props.formState.traits} */}
-      {/*   onChange={handleMultiChange} */}
-      {/* /> */}
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={12} className="d-inline pr-0 pl-1">
+          <TwdSearchFormCardtypes
+            value={props.formState.cardtypes}
+            onChange={handleCardtypeChange}
+            isMobile={props.isMobile}
+          />
+        </Col>
+      </Row>
       <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
           <label className="h6 mb-0">Event:</label>

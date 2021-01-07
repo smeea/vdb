@@ -5,8 +5,6 @@
 
 # FEATURES
 * TWD mobile features
-* TWD traits: star-vampire / card-types / mono-clan / weenie / high-cap
-* Description to TWD forms
 
 # MAYBE LATER FEATURES
 * Precon decks
