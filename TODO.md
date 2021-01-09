@@ -5,6 +5,7 @@
 
 # FEATURES
 * TWD mobile features
+* Copy image link to card results
 
 # MAYBE LATER FEATURES
 * Precon decks
@@ -26,10 +27,11 @@
 * Droid CI/CD
 * Unify error handling
 * Store cards on frontend
-* Show immediate search results on desktop
+* Search on frontend and show immediate search results on desktop
 * Tables to Bootstrap/Table
 * Screenshots to Bootstrap/Carousel
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
 * Flask-Restful
+* Optimize search to exclude options each filter

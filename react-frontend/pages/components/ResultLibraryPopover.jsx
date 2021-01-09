@@ -12,7 +12,7 @@ import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 function ResultLibraryPopover(props) {
   const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
     .toLowerCase()
-    .replace(/[\s,:!?'".\-\(\)]/g, '')}.jpg`;
+    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
   const cardImage = (
     <img
       className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
