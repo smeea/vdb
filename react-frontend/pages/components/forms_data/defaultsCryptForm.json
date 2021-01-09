@@ -28,8 +28,6 @@
     "Valeren": 0,
     "Vicissitude": 0,
     "Visceratika": 0,
-  },
-  "virtues": {
     "Defense": 0,
     "Innocence": 0,
     "Judgment": 0,
@@ -38,8 +36,10 @@
     "Vengeance": 0,
     "Vision": 0,
   },
-  "capacity": "any",
-  "capacitymoreless": "le",
+  "capacity": {
+    "capacity": "any",
+    "moreless": "le",
+  },
   "clan": "any",
   "sect": "any",
   "votes": "any",
@@ -85,13 +85,13 @@
     "red list": false,
     "flight": false,
   },
-  "set": "any",
-  "setOptions": {
+  "set": {
+    "set": "any",
     "only in": false,
     "first print": false,
   },
-  "precon": "any",
-  "preconOptions": {
+  "precon": {
+    "precon": "any",
     "only in": false,
     "first print": false,
   },

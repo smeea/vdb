@@ -18,10 +18,14 @@ function SearchLibraryForm(props) {
   const defaults = {
     type: 'any',
     discipline: 'any',
-    blood: 'any',
-    bloodmoreless: 'le',
-    pool: 'any',
-    poolmoreless: 'le',
+    blood: {
+      blood: 'any',
+      moreless: 'le',
+    },
+    pool: {
+      pool: 'any',
+      moreless: 'le',
+    },
     clan: 'any',
     sect: 'any',
     title: 'any',
@@ -43,13 +47,13 @@ function SearchLibraryForm(props) {
       anarch: false,
       infernal: false,
     },
-    set: 'any',
-    setOptions: {
+    set: {
+      set: 'any',
       'only in': false,
       'first print': false,
     },
-    precon: 'any',
-    preconOptions: {
+    precon: {
+      precon: 'any',
       'only in': false,
       'first print': false,
     },
@@ -77,6 +81,26 @@ function SearchLibraryForm(props) {
     }));
   };
 
+  const handleNestedChange = (event) => {
+    const { name, value } = event;
+    const newState = props.formState[name];
+    newState[name] = value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      [name]: newState,
+    }));
+  };
+
+  const handleMorelessChange = (event) => {
+    const { name, value } = event;
+    const newState = props.formState[name];
+    newState['moreless'] = value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      [name]: newState,
+    }));
+  };
+
   const handleClearButton = () => {
     setText('');
     props.setFormState(defaults);
@@ -93,7 +117,7 @@ function SearchLibraryForm(props) {
 
     const input = JSON.parse(JSON.stringify(props.formState));
 
-    const multiSelectForms = ['traits', 'setOptions', 'preconOptions'];
+    const multiSelectForms = ['traits'];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(
@@ -108,13 +132,20 @@ function SearchLibraryForm(props) {
           Object.keys(input[k]).length === 0) &&
         delete input[k]
     );
-    if (input['blood'] == null) {
-      delete input['bloodmoreless'];
-    }
 
-    if (input['pool'] == null) {
-      delete input['poolmoreless'];
-    }
+    const multiSelectFormsWithMain = [
+      'set',
+      'precon',
+      'blood',
+      'pool',
+    ];
+
+    multiSelectFormsWithMain.map((i) => {
+      if (input[i][i] == 'any') {
+        delete input[i]
+      }
+    });
+
 
     if (Object.keys(input).length === 0) {
       console.log('submit with empty forms');
@@ -177,13 +208,13 @@ function SearchLibraryForm(props) {
       />
       <SearchLibraryFormBloodCost
         value={props.formState.blood}
-        moreless={props.formState.bloodmoreless}
-        onChange={handleSelectChange}
+        onChange={handleNestedChange}
+        onMorelessChange={handleMorelessChange}
       />
       <SearchLibraryFormPoolCost
         value={props.formState.pool}
-        moreless={props.formState.poolmoreless}
-        onChange={handleSelectChange}
+        onChange={handleNestedChange}
+        onMorelessChange={handleMorelessChange}
       />
       <SearchLibraryFormTraits
         value={props.formState.traits}
@@ -191,14 +222,12 @@ function SearchLibraryForm(props) {
       />
       <SearchFormSet
         value={props.formState.set}
-        onChange={handleSelectChange}
-        options={props.formState.setOptions}
+        onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
       />
       <SearchFormPrecon
         value={props.formState.precon}
-        onChange={handleSelectChange}
-        options={props.formState.preconOptions}
+        onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
       />
       <SearchFormArtist

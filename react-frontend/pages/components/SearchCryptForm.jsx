@@ -46,8 +46,6 @@ function SearchCryptForm(props) {
       Valeren: 0,
       Vicissitude: 0,
       Visceratika: 0,
-    },
-    virtues: {
       Defense: 0,
       Innocence: 0,
       Judgment: 0,
@@ -56,8 +54,10 @@ function SearchCryptForm(props) {
       Vengeance: 0,
       Vision: 0,
     },
-    capacity: 'any',
-    capacitymoreless: 'le',
+    capacity: {
+      capacity: 'any',
+      moreless: 'le',
+    },
     clan: 'any',
     sect: 'any',
     votes: 'any',
@@ -103,13 +103,13 @@ function SearchCryptForm(props) {
       'red list': false,
       flight: false,
     },
-    set: 'any',
-    setOptions: {
+    set: {
+      set: 'any',
       'only in': false,
       'first print': false,
     },
-    precon: 'any',
-    preconOptions: {
+    precon: {
+      precon: 'any',
       'only in': false,
       'first print': false,
     },
@@ -137,9 +137,29 @@ function SearchCryptForm(props) {
     }));
   };
 
+  const handleNestedChange = (event) => {
+    const { name, value } = event;
+    const newState = props.formState[name];
+    newState[name] = value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      [name]: newState,
+    }));
+  };
+
+  const handleMorelessChange = (event) => {
+    const { name, value } = event;
+    const newState = props.formState[name];
+    newState['moreless'] = value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      [name]: newState,
+    }));
+  };
+
   const handleDisciplinesChange = (event) => {
     const { id, name } = event.target;
-    const newState = props.formState[name];
+    const newState = props.formState.disciplines;
     const max = (name == 'disciplines') ? 2 : 1;
 
     if (newState[id] < max) {
@@ -149,7 +169,7 @@ function SearchCryptForm(props) {
     }
     props.setFormState((prevState) => ({
       ...prevState,
-      [name]: newState,
+      disciplines: newState,
     }));
   };
 
@@ -171,18 +191,27 @@ function SearchCryptForm(props) {
 
     const multiSelectForms = [
       'disciplines',
-      'virtues',
       'titles',
       'group',
       'traits',
-      'setOptions',
-      'preconOptions',
     ];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(
         (k) => input[i][k] == 0 && delete input[i][k]
       );
+    });
+
+    const multiSelectFormsWithMain = [
+      'set',
+      'precon',
+      'capacity',
+    ];
+
+    multiSelectFormsWithMain.map((i) => {
+      if (input[i][i] == 'any') {
+        delete input[i]
+      }
     });
 
     Object.keys(input).forEach(
@@ -239,13 +268,13 @@ function SearchCryptForm(props) {
         onChange={handleDisciplinesChange}
       />
       <SearchCryptFormVirtues
-        value={props.formState.virtues}
+        value={props.formState.disciplines}
         onChange={handleDisciplinesChange}
       />
       <SearchCryptFormCapacity
         value={props.formState.capacity}
-        moreless={props.formState.capacitymoreless}
-        onChange={handleSelectChange}
+        onChange={handleNestedChange}
+        onMorelessChange={handleMorelessChange}
       />
       <SearchCryptFormClan
         value={props.formState.clan}
@@ -274,14 +303,12 @@ function SearchCryptForm(props) {
       />
       <SearchFormSet
         value={props.formState.set}
-        onChange={handleSelectChange}
-        options={props.formState.setOptions}
+        onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
       />
       <SearchFormPrecon
         value={props.formState.precon}
-        onChange={handleSelectChange}
-        options={props.formState.preconOptions}
+        onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
       />
       <SearchFormArtist

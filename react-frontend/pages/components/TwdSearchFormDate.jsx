@@ -37,7 +37,7 @@ function TwdSearchFormDate(props) {
   years.map((i, index) => {
     dateFromOptions.push({
       value: i.toLowerCase(),
-      name: 'dateFrom',
+      name: 'from',
       label: (
         <>
           <span className="margin-third" />
@@ -48,7 +48,7 @@ function TwdSearchFormDate(props) {
 
     dateToOptions.push({
       value: i.toLowerCase(),
-      name: 'dateTo',
+      name: 'to',
       label: (
         <>
           <span className="margin-third" />
@@ -65,8 +65,8 @@ function TwdSearchFormDate(props) {
           <Select
             options={dateFromOptions}
             isSearchable={false}
-            name="dateFrom"
-            value={dateFromOptions.find((obj) => obj.value === props.dateFrom)}
+            name="date-from"
+            value={dateFromOptions.find((obj) => obj.value === props.date.from)}
             onChange={props.onChange}
           />
         </Col>
@@ -77,8 +77,8 @@ function TwdSearchFormDate(props) {
           <Select
             options={dateToOptions}
             isSearchable={false}
-            name="dateTo"
-            value={dateToOptions.find((obj) => obj.value === props.dateTo)}
+            name="date-to"
+            value={dateToOptions.find((obj) => obj.value === props.date.to)}
             onChange={props.onChange}
           />
         </Col>

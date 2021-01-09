@@ -49,10 +49,10 @@ function SearchFormSet(props) {
         <input
           id={`set-${i[0]}`}
           value={i[0]}
-          name="setOptions"
+          name="set"
           className="mr-2 custom-control-input"
           type="checkbox"
-          checked={props.options[i[0]]}
+          checked={props.value[i[0]]}
           onChange={(e) => props.onChangeOptions(e)}
         />
         <label htmlFor={`set-${i[0]}`} className="mr-2 custom-control-label">
@@ -73,7 +73,7 @@ function SearchFormSet(props) {
             options={options}
             isSearchable={false}
             name="set"
-            value={options.find((obj) => obj.value === props.value)}
+            value={options.find((obj) => obj.value === props.value.set)}
             onChange={props.onChange}
           />
         </Col>

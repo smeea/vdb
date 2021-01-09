@@ -45,7 +45,7 @@ function SearchCryptFormCapacity(props) {
   moreless.map((i, index) => {
     morelessOptions.push({
       value: i[0],
-      name: 'capacitymoreless',
+      name: 'capacity',
       label: (
         <>
           <span className="margin-half" />
@@ -64,9 +64,9 @@ function SearchCryptFormCapacity(props) {
         <Select
           options={morelessOptions}
           isSearchable={false}
-          name="capacitymoreless"
-          value={morelessOptions.find((obj) => obj.value === props.moreless)}
-          onChange={props.onChange}
+          name="capacity-moreless"
+          value={morelessOptions.find((obj) => obj.value === props.value.moreless)}
+          onChange={props.onMorelessChange}
         />
       </Col>
       <Col xs={5} className="d-inline px-0">
@@ -74,7 +74,7 @@ function SearchCryptFormCapacity(props) {
           options={options}
           isSearchable={false}
           name="capacity"
-          value={options.find((obj) => obj.value === props.value)}
+          value={options.find((obj) => obj.value === props.value.capacity)}
           onChange={props.onChange}
         />
       </Col>

@@ -14,45 +14,18 @@ with open("vtescrypt.json", "r") as crypt_file:
     crypt = json.load(crypt_file)
 
 
-def get_overall_crypt(card_lists):
-    # 'card-lists' are nested list with all cards matching each of the filters
-    # Below we step-by-step compare if next filter cards are in previous
-    # list of matching cards (with all previous filters applied), so in the end
-    # only cards matching ALL filters are left
-    match_list = card_lists.pop()
-    while card_lists:
-        pre_match_list = []
-        for i in card_lists.pop():
-            if i in match_list:
-                pre_match_list.append(i)
-
-        match_list = pre_match_list
-
-    return match_list
-
-
-def get_crypt_by_cardtext(cardtext):
+def get_crypt_by_text(text, crypt=crypt):
     match_cards = []
-    cardtext = cardtext.lower()
+    text = text.lower()
     for card in crypt:
-        if cardtext in card['Card Text'].lower(
-        ) or cardtext in card['ASCII Name'].lower():
+        if text in card['Card Text'].lower(
+        ) or text in card['ASCII Name'].lower():
             match_cards.append(card)
 
     return match_cards
 
 
-def get_crypt_by_cardname(cardname):
-    match_cards = []
-    cardname = cardname.lower()
-    for card in crypt:
-        if cardname in card['ASCII Name'].lower():
-            match_cards.append(card)
-
-    return match_cards
-
-
-def get_crypt_by_disciplines(disciplines):
+def get_crypt_by_disciplines(disciplines, crypt=crypt):
     discipline_counter = len(disciplines)
     match_cards = []
     for card in crypt:
@@ -67,7 +40,7 @@ def get_crypt_by_disciplines(disciplines):
     return match_cards
 
 
-def get_crypt_by_trait(traits):
+def get_crypt_by_traits(traits, crypt=crypt):
     match_cards = []
     trait_counter = len(traits)
     for card in crypt:
@@ -178,7 +151,7 @@ def get_crypt_by_trait(traits):
     return match_cards
 
 
-def get_crypt_by_title(titles):
+def get_crypt_by_titles(titles, crypt=crypt):
     # Title filter is cummulative i.e. it matches cards matching any
     # chosen title
     match_cards = []
@@ -189,7 +162,7 @@ def get_crypt_by_title(titles):
     return match_cards
 
 
-def get_crypt_by_votes(votes):
+def get_crypt_by_votes(votes, crypt=crypt):
     title_worth = {
         "primogen": 1,
         "prince": 2,
@@ -210,7 +183,7 @@ def get_crypt_by_votes(votes):
     match_cards = []
     for card in crypt:
         if card['Title'] and votes != 0:
-            if title_worth[card['Title']] >= votes:
+            if title_worth[card['Title']] >= int(votes):
                 match_cards.append(card)
 
         elif card['Title'] == '' and votes == 0:
@@ -219,8 +192,11 @@ def get_crypt_by_votes(votes):
     return match_cards
 
 
-def get_crypt_by_capacity(capacity, moreless):
+def get_crypt_by_capacity(request, crypt=crypt):
+    capacity = int(request['capacity'])
+    moreless = request['moreless']
     match_cards = []
+
     for card in crypt:
         if moreless == 'le':
             if card['Capacity'] <= capacity:
@@ -237,7 +213,7 @@ def get_crypt_by_capacity(capacity, moreless):
     return match_cards
 
 
-def get_crypt_by_clan(clan):
+def get_crypt_by_clan(clan, crypt=crypt):
     match_cards = []
     for card in crypt:
         if card['Clan'].lower() == clan:
@@ -246,7 +222,7 @@ def get_crypt_by_clan(clan):
     return match_cards
 
 
-def get_crypt_by_sect(sect):
+def get_crypt_by_sect(sect, crypt=crypt):
     match_cards = []
     for card in crypt:
         # Imbue 'sect' is defined by card['Type'], others are just 'vampire'
@@ -262,7 +238,7 @@ def get_crypt_by_sect(sect):
     return match_cards
 
 
-def get_crypt_by_group(group_list):
+def get_crypt_by_group(group_list, crypt=crypt):
     # Group filter is cummulative i.e. it matches cards matching any
     # chosen groups form field
     match_cards = []
@@ -273,7 +249,7 @@ def get_crypt_by_group(group_list):
     return match_cards
 
 
-def get_crypt_by_set(set, options=[]):
+def get_crypt_by_set(request, crypt=crypt):
     bcp_sets = [
         'V5',
         '25th',
@@ -322,12 +298,13 @@ def get_crypt_by_set(set, options=[]):
     ];
 
     match_cards = []
+    set = request['set']
 
     if set == 'bcp':
         for card in crypt:
             for k in card['Set'].keys():
                 if k in bcp_sets:
-                    if 'only in' in options:
+                    if request['only in']:
                         counter = 0
                         for k in card['Set'].keys():
                             if k in bcp_sets:
@@ -336,7 +313,7 @@ def get_crypt_by_set(set, options=[]):
                         if len(card['Set'].keys()) == counter:
                             match_cards.append(card)
                             break
-                    elif 'first print' in options:
+                    elif request['first print']:
                         oldestSetIndex = 0
                         for k in card['Set'].keys():
                             if sets.index(k) > oldestSetIndex:
@@ -352,10 +329,11 @@ def get_crypt_by_set(set, options=[]):
     else:
         for card in crypt:
             if set in card['Set']:
-                if 'only in' in options:
+                if request['only in']:
                     if len(card['Set'].keys()) == 1:
                         match_cards.append(card)
-                elif 'first print' in options:
+
+                elif request['first print']:
                     oldestSetIndex = 0
                     for k in card['Set'].keys():
                         if sets.index(k) > oldestSetIndex:
@@ -369,7 +347,7 @@ def get_crypt_by_set(set, options=[]):
     return match_cards
 
 
-def get_crypt_by_precon(precon, options=[]):
+def get_crypt_by_precon(request, crypt=crypt):
     bcp_precons = [
         ['V5', 'PM',],
         ['V5', 'PN',],
@@ -438,12 +416,13 @@ def get_crypt_by_precon(precon, options=[]):
     ];
 
     match_cards = []
+    precon = request['precon']
 
     if precon == 'bcp':
         for card in crypt:
             for bcp_precon in bcp_precons:
                 if bcp_precon[0] in card['Set'] and bcp_precon[1] in card['Set'][bcp_precon[0]]:
-                    if 'only in' in options:
+                    if request['only in']:
                         counter = 0
                         for k in card['Set'].keys():
                             if k in bcp_precon[0]:
@@ -452,7 +431,8 @@ def get_crypt_by_precon(precon, options=[]):
                         if len(card['Set'].keys()) == counter:
                             match_cards.append(card)
                             break
-                    elif 'first print' in options:
+
+                    elif request['first print']:
                         oldestSetIndex = 0
                         for k in card['Set'].keys():
                             if sets.index(k) > oldestSetIndex:
@@ -469,11 +449,11 @@ def get_crypt_by_precon(precon, options=[]):
         precon = precon.split(':')
         for card in crypt:
             if precon[0] in card['Set'] and precon[1] in card['Set'][precon[0]]:
-                if 'only in' in options:
+                if request['only in']:
                     if len(card['Set'].keys()) == 1:
                         match_cards.append(card)
 
-                elif 'first print' in options:
+                elif request['first print']:
                     oldestSetIndex = 0
                     for k in card['Set'].keys():
                         if sets.index(k) > oldestSetIndex:
@@ -487,7 +467,7 @@ def get_crypt_by_precon(precon, options=[]):
     return match_cards
 
 
-def get_crypt_by_artist(artist):
+def get_crypt_by_artist(artist, crypt=crypt):
     match_cards = []
     for card in crypt:
         if artist in card['Artist']:
@@ -500,3 +480,12 @@ def get_crypt_by_id(id):
     for card in crypt:
         if card['Id'] == int(id):
             return card
+
+
+def get_crypt_by_name(name):
+    match_cards = []
+    for card in crypt:
+        if name.lower() in card['ASCII Name'].lower():
+            match_cards.append(card)
+
+    return match_cards

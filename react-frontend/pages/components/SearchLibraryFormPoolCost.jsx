@@ -32,7 +32,7 @@ function SearchLibraryFormPoolCost(props) {
   moreless.map((i, index) => {
     morelessOptions.push({
       value: i[0],
-      name: 'poolmoreless',
+      name: 'pool',
       label: (
         <>
           <span className="margin-half" />
@@ -52,9 +52,9 @@ function SearchLibraryFormPoolCost(props) {
           <Select
             options={morelessOptions}
             isSearchable={false}
-            name="poolmoreless"
-            value={morelessOptions.find((obj) => obj.value === props.moreless)}
-            onChange={props.onChange}
+            name="pool-moreless"
+            value={morelessOptions.find((obj) => obj.value === props.value.moreless)}
+            onChange={props.onMorelessChange}
           />
         </Col>
         <Col xs={5} className="d-inline px-0">
@@ -62,7 +62,7 @@ function SearchLibraryFormPoolCost(props) {
             options={options}
             isSearchable={false}
             name="pool"
-            value={options.find((obj) => obj.value === props.value)}
+            value={options.find((obj) => obj.value === props.value.pool)}
             onChange={props.onChange}
           />
         </Col>

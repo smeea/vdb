@@ -2,6 +2,7 @@
 * Nice error messages output
 * Crypt redraw on sharedDeck clone
 * Draw to close buttons on mobile
+* TWD location/winner form reset
 
 # FEATURES
 * TWD mobile features
@@ -27,11 +28,10 @@
 * Droid CI/CD
 * Unify error handling
 * Store cards on frontend
-* Search on frontend and show immediate search results on desktop
-* Tables to Bootstrap/Table
+* Search on frontend
+* Show immediate search results on desktop
 * Screenshots to Bootstrap/Carousel
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
 * Flask-Restful
-* Optimize search to exclude options each filter

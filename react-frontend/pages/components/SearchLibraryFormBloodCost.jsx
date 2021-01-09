@@ -32,7 +32,7 @@ function SearchLibraryFormBloodCost(props) {
   moreless.map((i, index) => {
     morelessOptions.push({
       value: i[0],
-      name: 'bloodmoreless',
+      name: 'blood',
       label: (
         <>
           <span className="margin-half" />
@@ -52,9 +52,9 @@ function SearchLibraryFormBloodCost(props) {
           <Select
             options={morelessOptions}
             isSearchable={false}
-            name="bloodmoreless"
-            value={morelessOptions.find((obj) => obj.value === props.moreless)}
-            onChange={props.onChange}
+            name="blood-moreless"
+            value={morelessOptions.find((obj) => obj.value === props.value.moreless)}
+            onChange={props.onMorelessChange}
           />
         </Col>
         <Col xs={5} className="d-inline px-0">
@@ -62,7 +62,7 @@ function SearchLibraryFormBloodCost(props) {
             options={options}
             isSearchable={false}
             name="blood"
-            value={options.find((obj) => obj.value === props.value)}
+            value={options.find((obj) => obj.value === props.value.blood)}
             onChange={props.onChange}
           />
         </Col>

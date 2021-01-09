@@ -21,10 +21,14 @@ function TwdSearchForm(props) {
   const defaults = {
     player: '',
     location: '',
-    playersFrom: 'any',
-    playersTo: 'any',
-    dateFrom: 'any',
-    dateTo: 'any',
+    players: {
+      to: 'any',
+      from: 'any',
+    },
+    date: {
+      to: 'any',
+      from: 'any',
+    },
     disciplines: {},
     clan: 'any',
     capacity: 'any',
@@ -69,6 +73,26 @@ function TwdSearchForm(props) {
     }));
   };
 
+  const handleDateChange = (event) => {
+    const { name, value } = event;
+    const newState = props.formState.date;
+    newState[name] = value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      date: newState,
+    }));
+  };
+
+  const handlePlayersChange = (event) => {
+    const { name, value } = event;
+    const newState = props.formState.players;
+    newState[name] = value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      players: newState,
+    }));
+  };
+
   const handleMultiChange = (event) => {
     const { name, id, value } = event.target;
     const newState = props.formState[name];
@@ -96,7 +120,7 @@ function TwdSearchForm(props) {
 
     const input = JSON.parse(JSON.stringify(props.formState));
 
-    const multiSelectForms = ['crypt', 'library', 'disciplines', 'traits', 'cardtypes'];
+    const multiSelectForms = ['crypt', 'library', 'disciplines', 'traits', 'cardtypes', 'date', 'players'];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(
@@ -192,9 +216,8 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={8} className="d-inline px-0">
           <TwdSearchFormDate
-            dateFrom={props.formState.dateFrom}
-            dateTo={props.formState.dateTo}
-            onChange={handleSelectChange}
+            date={props.formState.date}
+            onChange={handleDateChange}
           />
         </Col>
       </Row>
@@ -207,9 +230,8 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={8} className="d-inline px-0">
           <TwdSearchFormPlayers
-            playersFrom={props.formState.playersFrom}
-            playersTo={props.formState.playersTo}
-            onChange={handleSelectChange}
+            players={props.formState.players}
+            onChange={handlePlayersChange}
           />
         </Col>
       </Row>

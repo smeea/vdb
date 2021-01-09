@@ -3,10 +3,10 @@ from searchLibraryComponents import get_library_by_id
 
 with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDecks_file:
     twda = json.load(twda_input)
-    decks = {}
+    decks = []
 
     for i in twda:
-        decks[i['id']] = {
+        deck = {
             'deckid': i['id'],
             'event': i['event'],
             'date': i['date'],
@@ -18,43 +18,43 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
         }
 
         if 'players_count' in i:
-            decks[i['id']]['players'] = i['players_count']
+            deck['players'] = i['players_count']
         else:
-            decks[i['id']]['players'] = 'Unknown'
+            deck['players'] = 'Unknown'
         if 'tournament_format' in i:
-            decks[i['id']]['format'] = i['tournament_format']
+            deck['format'] = i['tournament_format']
         else:
-            decks[i['id']]['format'] = 'Unknown'
+            deck['format'] = 'Unknown'
         if 'comments' in i:
-            decks[i['id']]['description'] = i['comments']
+            deck['description'] = i['comments']
         else:
-            decks[i['id']]['description'] = ''
+            deck['description'] = ''
         if 'score' in i:
-            decks[i['id']]['score'] = i['score']
+            deck['score'] = i['score']
         else:
-            decks[i['id']]['score'] = 'Unknown'
+            deck['score'] = 'Unknown'
         if 'event_link' in i:
-            decks[i['id']]['link'] = i['event_link']
+            deck['link'] = i['event_link']
         else:
-            decks[i['id']]['link'] = ''
+            deck['link'] = ''
         if 'name' in i:
-            decks[i['id']]['name'] = i['name']
+            deck['name'] = i['name']
         else:
-            decks[i['id']]['name'] = 'Unknown'
+            deck['name'] = 'Unknown'
         if 'player' in i:
-            decks[i['id']]['player'] = i['player']
+            deck['player'] = i['player']
         else:
-            decks[i['id']]['player'] = 'Unknown'
+            deck['player'] = 'Unknown'
 
         for card in i['crypt']['cards']:
-            decks[i['id']]['crypt'][card['id']] = {
+            deck['crypt'][card['id']] = {
                 'q': card['count']
             }
 
         disciplines = []
         for types in i['library']['cards']:
             for card in types['cards']:
-                decks[i['id']]['library'][card['id']] = {
+                deck['library'][card['id']] = {
                     'q': card['count']
                 }
 
@@ -73,7 +73,9 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
                     disciplines.append(card_discipline_entry)
 
 
-        decks[i['id']]['disciplines'] = disciplines
+        deck['disciplines'] = disciplines
+
+        decks.append(deck)
 
     # json.dump(decks, twdaDecks_file, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)

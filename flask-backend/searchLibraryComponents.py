@@ -14,54 +14,27 @@ with open("vteslib.json", "r") as library_file:
     library = json.load(library_file)
 
 
-def get_overall_library(card_lists):
-    # 'card-lists' are nested list with all cards matching each of the filters
-    # Below we step-by-step compare if next filter cards are in previous
-    # list of matching cards (with all previous filters applied), so in the end
-    # only cards matching ALL filters are left
-    match_list = card_lists.pop()
-    while card_lists:
-        pre_match_list = []
-        for i in card_lists.pop():
-            if i in match_list:
-                pre_match_list.append(i)
-
-        match_list = pre_match_list
-
-    return match_list
-
-
-def get_library_by_cardtext(cardtext):
+def get_library_by_text(text, library=library):
     match_cards = []
-    cardtext = cardtext.lower()
+    text = text.lower()
     for card in library:
-        if cardtext in card['Card Text'].lower(
-        ) or cardtext in card['ASCII Name'].lower():
+        if text in card['Card Text'].lower(
+        ) or text in card['ASCII Name'].lower():
             match_cards.append(card)
 
     return match_cards
 
 
-def get_library_by_cardname(cardname):
+def get_library_by_type(type, library=library):
     match_cards = []
-    cardname = cardname.lower()
     for card in library:
-        if cardname in card['ASCII Name'].lower():
+        if type in card['Type'].lower().split('/'):
             match_cards.append(card)
 
     return match_cards
 
 
-def get_library_by_cardtype(cardtype):
-    match_cards = []
-    for card in library:
-        if cardtype in card['Type'].lower().split('/'):
-            match_cards.append(card)
-
-    return match_cards
-
-
-def get_library_by_discipline(discipline):
+def get_library_by_discipline(discipline, library=library):
     match_cards = []
     for card in library:
         if (discipline in card['Discipline'].lower()) or (
@@ -71,7 +44,7 @@ def get_library_by_discipline(discipline):
     return match_cards
 
 
-def get_library_by_clan(clan):
+def get_library_by_clan(clan, library=library):
     match_cards = []
     for card in library:
         if (card['Clan'].lower() == clan) or (clan == 'none'
@@ -81,7 +54,7 @@ def get_library_by_clan(clan):
     return match_cards
 
 
-def get_library_by_title(title):
+def get_library_by_title(title, library=library):
     match_cards = []
     titles = [
         'primogen', 'prince', 'justicar', 'inner circle', 'baron', 'bishop',
@@ -102,7 +75,7 @@ def get_library_by_title(title):
     return match_cards
 
 
-def get_library_by_sect(sect):
+def get_library_by_sect(sect, library=library):
     match_cards = []
     sects = [
         'camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'
@@ -123,7 +96,9 @@ def get_library_by_sect(sect):
     return match_cards
 
 
-def get_library_by_blood(cost, moreless):
+def get_library_by_blood(request, library=library):
+    cost = request['blood']
+    moreless = request['moreless']
     match_cards = []
     for card in library:
         if moreless == 'le':
@@ -143,7 +118,9 @@ def get_library_by_blood(cost, moreless):
     return match_cards
 
 
-def get_library_by_pool(cost, moreless):
+def get_library_by_pool(request, library=library):
+    cost = request['pool']
+    moreless = request['moreless']
     match_cards = []
     for card in library:
         if moreless == 'le':
@@ -163,7 +140,7 @@ def get_library_by_pool(cost, moreless):
     return match_cards
 
 
-def get_library_by_trait(traits):
+def get_library_by_traits(traits, library=library):
     match_cards = []
     trait_counter = len(traits)
     for card in library:
@@ -278,7 +255,7 @@ def get_library_by_trait(traits):
     return match_cards
 
 
-def get_library_by_set(set, options=[]):
+def get_library_by_set(request, library=library):
     bcp_sets = [
         'V5',
         '25th',
@@ -327,12 +304,13 @@ def get_library_by_set(set, options=[]):
     ];
 
     match_cards = []
+    set = request['set']
 
     if set == 'bcp':
         for card in library:
             for k in card['Set'].keys():
                 if k in bcp_sets:
-                    if 'only in' in options:
+                    if request['only in']:
                         counter = 0
                         for k in card['Set'].keys():
                             if k in bcp_sets:
@@ -341,7 +319,7 @@ def get_library_by_set(set, options=[]):
                         if len(card['Set'].keys()) == counter:
                             match_cards.append(card)
                             break
-                    elif 'first print' in options:
+                    elif request['first print']:
                         oldestSetIndex = 0
                         for k in card['Set'].keys():
                             if sets.index(k) > oldestSetIndex:
@@ -357,10 +335,11 @@ def get_library_by_set(set, options=[]):
     else:
         for card in library:
             if set in card['Set']:
-                if 'only in' in options:
+                if request['only in']:
                     if len(card['Set'].keys()) == 1:
                         match_cards.append(card)
-                elif 'first print' in options:
+
+                elif request['first print']:
                     oldestSetIndex = 0
                     for k in card['Set'].keys():
                         if sets.index(k) > oldestSetIndex:
@@ -374,7 +353,7 @@ def get_library_by_set(set, options=[]):
     return match_cards
 
 
-def get_library_by_precon(precon, options=[]):
+def get_library_by_precon(request, library=library):
     bcp_precons = [
         ['V5', 'PM',],
         ['V5', 'PN',],
@@ -443,12 +422,13 @@ def get_library_by_precon(precon, options=[]):
     ];
 
     match_cards = []
+    precon = request['precon']
 
     if precon == 'bcp':
         for card in library:
             for bcp_precon in bcp_precons:
                 if bcp_precon[0] in card['Set'] and bcp_precon[1] in card['Set'][bcp_precon[0]]:
-                    if 'only in' in options:
+                    if request['only in']:
                         counter = 0
                         for k in card['Set'].keys():
                             if k in bcp_precon[0]:
@@ -457,7 +437,8 @@ def get_library_by_precon(precon, options=[]):
                         if len(card['Set'].keys()) == counter:
                             match_cards.append(card)
                             break
-                    elif 'first print' in options:
+
+                    elif request['first print']:
                         oldestSetIndex = 0
                         for k in card['Set'].keys():
                             if sets.index(k) > oldestSetIndex:
@@ -474,10 +455,11 @@ def get_library_by_precon(precon, options=[]):
         precon = precon.split(':')
         for card in library:
             if precon[0] in card['Set'] and precon[1] in card['Set'][precon[0]]:
-                if 'only in' in options:
+                if request['only in']:
                     if len(card['Set'].keys()) == 1:
                         match_cards.append(card)
-                elif 'first print' in options:
+
+                elif request['first print']:
                     oldestSetIndex = 0
                     for k in card['Set'].keys():
                         if sets.index(k) > oldestSetIndex:
@@ -491,7 +473,7 @@ def get_library_by_precon(precon, options=[]):
     return match_cards
 
 
-def get_library_by_artist(artist):
+def get_library_by_artist(artist, library=library):
     match_cards = []
     for card in library:
         if artist in card['Artist']:
@@ -504,3 +486,11 @@ def get_library_by_id(id):
     for card in library:
         if card['Id'] == int(id):
             return card
+
+def get_library_by_name(name):
+    match_cards = []
+    for card in library:
+        if name.lower() in card['ASCII Name'].lower():
+            match_cards.append(card)
+
+    return match_cards

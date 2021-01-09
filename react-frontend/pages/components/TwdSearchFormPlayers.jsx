@@ -11,7 +11,7 @@ function TwdSearchFormPlayers(props) {
   players.map((i, index) => {
     playersFromOptions.push({
       value: i.toLowerCase(),
-      name: 'playersFrom',
+      name: 'from',
       label: (
         <>
           <span className="margin-third" />
@@ -22,7 +22,7 @@ function TwdSearchFormPlayers(props) {
 
     playersToOptions.push({
       value: i.toLowerCase(),
-      name: 'playersTo',
+      name: 'to',
       label: (
         <>
           <span className="margin-third" />
@@ -39,9 +39,9 @@ function TwdSearchFormPlayers(props) {
           <Select
             options={playersFromOptions}
             isSearchable={false}
-            name="playersFrom"
+            name="players-from"
             value={playersFromOptions.find(
-              (obj) => obj.value === props.playersFrom
+              (obj) => obj.value === props.players.from
             )}
             onChange={props.onChange}
           />
@@ -53,9 +53,9 @@ function TwdSearchFormPlayers(props) {
           <Select
             options={playersToOptions}
             isSearchable={false}
-            name="playersTo"
+            name="players-to"
             value={playersToOptions.find(
-              (obj) => obj.value === props.playersTo
+              (obj) => obj.value === props.players.to
             )}
             onChange={props.onChange}
           />

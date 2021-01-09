@@ -43,10 +43,10 @@ function SearchFormPrecon(props) {
         <input
           id={`precon-${i[0]}`}
           value={i[0]}
-          name="preconOptions"
+          name="precon"
           className="mr-2 custom-control-input"
           type="checkbox"
-          checked={props.options[i[0]]}
+          checked={props.value[i[0]]}
           onChange={(e) => props.onChangeOptions(e)}
         />
         <label htmlFor={`precon-${i[0]}`} className="mr-2 custom-control-label">
@@ -67,7 +67,7 @@ function SearchFormPrecon(props) {
             options={options}
             isSearchable={false}
             name="precon"
-            value={options.find((obj) => obj.value === props.value)}
+            value={options.find((obj) => obj.value === props.value.precon)}
             onChange={props.onChange}
           />
         </Col>
