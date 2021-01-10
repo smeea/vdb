@@ -71,7 +71,7 @@ function TwdResult(props) {
         }
       })
     );
-  }, [props.showImage, showCounter]);
+  }, [props.decks, showCounter, props.showImage]);
 
   return (
     <>

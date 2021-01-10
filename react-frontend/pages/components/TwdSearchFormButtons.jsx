@@ -30,11 +30,11 @@ function TwdSearchFormButtons({ handleClearButton, spinner, getNewTwd }) {
         </Button>
       </div>
       <div>
-        <Button variant="outline-secondary" onClick={() => getNewTwd(10)}>
-          <LightningFill /> 10 New
-        </Button>
         <Button variant="outline-secondary" onClick={() => getNewTwd(25)}>
           <LightningFill /> 25 New
+        </Button>
+        <Button variant="outline-secondary" onClick={() => getNewTwd(100)}>
+          <LightningFill /> 100 New
         </Button>
       </div>
     </div>

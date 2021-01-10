@@ -3,9 +3,6 @@
 * Crypt redraw on sharedDeck clone
 * Draw to close buttons on mobile
 * TWD location/winner form reset
-* TWD last X decks buttons
-* TWD open deck by id
-* TWD open deck by url (parse)
 
 # FEATURES
 * TWD mobile features
@@ -30,9 +27,7 @@
 * Swipe in card modal image-description
 * Droid CI/CD
 * Unify error handling
-* Store cards on frontend
 * Search on frontend
-* Show immediate search results on desktop
 * Screenshots to Bootstrap/Carousel
 
 # IMPROVE TECHNOLOGY - BACKEND

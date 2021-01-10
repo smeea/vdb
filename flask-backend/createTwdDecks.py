@@ -116,7 +116,7 @@ with open("twda.json", "r") as twda_input, open("twdNewDecks.json", "w") as twda
     twda = json.load(twda_input)
     decks = []
 
-    for i in range(25):
+    for i in range(100):
         deck = {
             'deckid': twda[i]['id'],
             'event': twda[i]['event'],
@@ -188,6 +188,6 @@ with open("twda.json", "r") as twda_input, open("twdNewDecks.json", "w") as twda
 
         decks.append(deck)
 
-    # json.dump(decks, twda_output, separators=(',', ':'))
+    # json.dump(decks, twdaNewDecks_file, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
     json.dump(decks, twdaNewDecks_file, indent=4, separators=(',', ':'))

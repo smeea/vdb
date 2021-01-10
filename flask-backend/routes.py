@@ -7,10 +7,8 @@ import json
 from searchTwd import searchTwd
 from searchCrypt import searchCrypt
 from searchLibrary import searchLibrary
-# from searchTwdComponents import get_twd_by_id
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
-from searchTwdComponents import get_new_twd
 from deckExport import deckExport
 from deckExportAll import deckExportAll
 from deckImport import deckImport
@@ -31,9 +29,9 @@ def showDeck(deckid):
         for k, v in deck.cards.items():
             k = int(k)
             if k > 200000:
-                crypt[k] = {'q': v}
+                crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
             elif k < 200000:
-                library[k] = {'q': v}
+                library[k] = {'c': get_library_by_id(k), 'q': v}
 
         decks[deckid] = {
             'name': deck.name,
@@ -448,10 +446,9 @@ def logout():
         return jsonify({'error': 'not logged'})
 
 
-@app.route('/api/twd/<int:quantity>', methods=['GET'])
-def getNewTwd(quantity):
-    result = get_new_twd(quantity)
-
+@app.route('/api/search/twd', methods=['POST'])
+def searchTwdRoute():
+    result = searchTwd(request)
     if result != 400:
         return jsonify(result)
     else:
@@ -469,13 +466,17 @@ def getPlayers():
     with open("twdPlayers.json", "r") as twdPlayers_file:
         return jsonify(json.load(twdPlayers_file))
 
-@app.route('/api/search/twd', methods=['POST'])
-def searchTwdRoute():
-    result = searchTwd(request)
-    if result != 400:
-        return jsonify(result)
-    else:
-        abort(400)
+
+@app.route('/api/twd/<int:quantity>', methods=['GET'])
+def getNewTwd(quantity):
+    with open("twdNewDecks.json", "r") as twd_file:
+        twda = json.load(twd_file)
+        decks = []
+        for i in range(quantity):
+            decks.append(twda[i])
+
+        return jsonify(decks)
+
 
 @app.route('/api/search/crypt', methods=['POST'])
 def searchCryptRoute():
@@ -485,6 +486,7 @@ def searchCryptRoute():
     else:
         abort(400)
 
+
 @app.route('/api/search/library', methods=['POST'])
 def searchLibraryRoute():
     result = searchLibrary(request)
@@ -493,9 +495,11 @@ def searchLibraryRoute():
     else:
         abort(400)
 
+
 @app.route('/api/cardbase', methods=['GET'])
-def getLibraryCardBase():
-    with open("cardbase_library.json", "r") as library_file, open("cardbase_crypt.json", "r") as crypt_file:
+def getCardBase():
+    with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_library.json", "r") as library_file:
         crypt = json.load(crypt_file)
         library = json.load(library_file)
+
         return jsonify({'crypt': crypt, 'library': library})

@@ -232,18 +232,3 @@ def get_twd_by_traits(traits, twda=twda):
             match_decks.append(deck)
 
     return match_decks
-
-def get_new_twd(quantity):
-    with open("twdNewDecks.json", "r") as twd_file:
-        twda = json.load(twd_file)
-        decks = []
-        cards = {}
-        for i in range(quantity):
-            deck = twda[i]
-            for id in deck['crypt']:
-                cards[id] = get_crypt_by_id(id)
-            for id in deck['library']:
-                cards[id] = get_library_by_id(id)
-            decks.append(twda[i])
-
-        return [decks, cards]
