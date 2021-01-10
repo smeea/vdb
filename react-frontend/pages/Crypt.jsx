@@ -115,6 +115,7 @@ function Crypt(props) {
             </AlertMessage>
           )}
           <SearchCryptForm
+            results={props.results}
             setResults={props.setResults}
             setShowSearch={props.setShowSearch}
             formState={props.formState}

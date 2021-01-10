@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchCryptFormDisciplines from './SearchCryptFormDisciplines.jsx';
 import SearchCryptFormVirtues from './SearchCryptFormVirtues.jsx';
@@ -181,10 +181,13 @@ function SearchCryptForm(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
+    launchRequest();
+  };
 
+  const launchRequest = () => {
     const url = `${process.env.API_URL}search/crypt`;
 
-    const state = props.formState;
+    const state = { ...props.formState};
     state['text'] = text;
 
     const input = JSON.parse(JSON.stringify(state));
@@ -257,6 +260,15 @@ function SearchCryptForm(props) {
         });
     }
   };
+
+
+  useEffect(() => {
+    if (JSON.stringify(props.formState) == JSON.stringify(defaults) && (props.results)) {
+      props.setResults(undefined);
+    } else {
+      launchRequest();
+    }
+  }, [props.formState])
 
   return (
     <form onSubmit={handleSubmitButton}>

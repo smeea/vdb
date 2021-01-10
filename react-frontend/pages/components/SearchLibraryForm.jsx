@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchLibraryFormType from './SearchLibraryFormType.jsx';
 import SearchLibraryFormClan from './SearchLibraryFormClan.jsx';
@@ -109,13 +109,16 @@ function SearchLibraryForm(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
+    launchRequest();
+  };
 
+  const launchRequest = () => {
     const url = `${process.env.API_URL}search/library`;
 
-    const state = props.formState;
+    const state = { ...props.formState};
     state['text'] = text;
 
-    const input = JSON.parse(JSON.stringify(props.formState));
+    const input = JSON.parse(JSON.stringify(state));
 
     const multiSelectForms = ['traits'];
 
@@ -179,6 +182,14 @@ function SearchLibraryForm(props) {
         });
     }
   };
+
+  useEffect(() => {
+    if (JSON.stringify(props.formState) == JSON.stringify(defaults) && (props.results)) {
+      props.setResults(undefined);
+    } else {
+      launchRequest();
+    }
+  }, [props.formState])
 
   return (
     <form onSubmit={handleSubmitButton}>
