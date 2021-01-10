@@ -19,61 +19,59 @@ function TwdResult(props) {
   }, props.decks);
 
   useEffect(() => {
-    if (Object.keys(props.cardBase).length) {
-      let newCounter = showCounter;
-      setTwdRows(
-        props.decks.map((deck) => {
-          while (newCounter > 0) {
-            newCounter -= 1;
-            Object.keys(deck['crypt']).map((i) => {
-              deck['crypt'][i].c = props.cardBase[i];
-            });
-            Object.keys(deck['library']).map((i) => {
-              deck['library'][i].c = props.cardBase[i];
-            });
-            return (
-              <React.Fragment key={deck['deckid']}>
-                <Row className="pt-3">
-                  <Col md={12} xl={3}>
-                    <TwdResultDescription
-                      deck={deck}
-                      getDecks={props.getDecks}
-                    />
-                  </Col>
-                  <Col md={12} xl={3}>
-                    <TwdResultCrypt
-                      crypt={deck['crypt']}
-                      isMobile={props.isMobile}
-                      showImage={props.showImage}
-                      setShowImage={props.setShowImage}
-                    />
-                  </Col>
-                  <Col md={12} xl={3}>
-                    <TwdResultLibraryByType
-                      library={deck['library']}
-                      isMobile={props.isMobile}
-                      showImage={props.showImage}
-                      setShowImage={props.setShowImage}
-                    />
-                  </Col>
-                  <Col md={12} xl={3}>
-                    <TwdResultLibraryKeyCards
-                      library={deck['library']}
-                      isMobile={props.isMobile}
-                      showImage={props.showImage}
-                      setShowImage={props.setShowImage}
-                    />
-                  </Col>
-                  <hr />
-                </Row>
-                <hr className="mx-0 thick" />
-              </React.Fragment>
-            );
-          }
-        })
-      );
-    }
-  }, [props.cardBase, props.showImage, showCounter]);
+    let newCounter = showCounter;
+    setTwdRows(
+      props.decks.map((deck) => {
+        while (newCounter > 0) {
+          newCounter -= 1;
+          Object.keys(deck['crypt']).map((i) => {
+            deck['crypt'][i].c = props.cryptCardBase[i];
+          });
+          Object.keys(deck['library']).map((i) => {
+            deck['library'][i].c = props.libraryCardBase[i];
+          });
+          return (
+            <React.Fragment key={deck['deckid']}>
+              <Row className="pt-3">
+                <Col md={12} xl={3}>
+                  <TwdResultDescription
+                    deck={deck}
+                    getDecks={props.getDecks}
+                  />
+                </Col>
+                <Col md={12} xl={3}>
+                  <TwdResultCrypt
+                    crypt={deck['crypt']}
+                    isMobile={props.isMobile}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                  />
+                </Col>
+                <Col md={12} xl={3}>
+                  <TwdResultLibraryByType
+                    library={deck['library']}
+                    isMobile={props.isMobile}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                  />
+                </Col>
+                <Col md={12} xl={3}>
+                  <TwdResultLibraryKeyCards
+                    library={deck['library']}
+                    isMobile={props.isMobile}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                  />
+                </Col>
+                <hr />
+              </Row>
+              <hr className="mx-0 thick" />
+            </React.Fragment>
+          );
+        }
+      })
+    );
+  }, [props.showImage, showCounter]);
 
   return (
     <>

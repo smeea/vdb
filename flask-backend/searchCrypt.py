@@ -16,6 +16,7 @@ def searchCrypt(request):
             break
 
     if matches:
-        return matches
+        results = [i['Id'] for i in matches]
+        return results
     else:
         return 400

@@ -31,9 +31,9 @@ def showDeck(deckid):
         for k, v in deck.cards.items():
             k = int(k)
             if k > 200000:
-                crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
+                crypt[k] = {'q': v}
             elif k < 200000:
-                library[k] = {'c': get_library_by_id(k), 'q': v}
+                library[k] = {'q': v}
 
         decks[deckid] = {
             'name': deck.name,
@@ -164,9 +164,9 @@ def listDecks():
             for k, v in deck.cards.items():
                 k = int(k)
                 if k > 200000:
-                    crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
+                    crypt[k] = {'q': v}
                 elif k < 200000:
-                    library[k] = {'c': get_library_by_id(k), 'q': v}
+                    library[k] = {'q': v}
 
             decks[deck.deckid] = {
                 'name': deck.name,
@@ -485,7 +485,6 @@ def searchCryptRoute():
     else:
         abort(400)
 
-
 @app.route('/api/search/library', methods=['POST'])
 def searchLibraryRoute():
     result = searchLibrary(request)
@@ -493,3 +492,10 @@ def searchLibraryRoute():
         return jsonify(result)
     else:
         abort(400)
+
+@app.route('/api/cardbase', methods=['GET'])
+def getLibraryCardBase():
+    with open("cardbase_library.json", "r") as library_file, open("cardbase_crypt.json", "r") as crypt_file:
+        crypt = json.load(crypt_file)
+        library = json.load(library_file)
+        return jsonify({'crypt': crypt, 'library': library})

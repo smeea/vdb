@@ -30,8 +30,7 @@ def searchTwd(request):
             if not matches:
                 break
 
-    [decks, cards] = searchTwdComponents.prepare_results(matches)
-    if decks:
-        return [decks, cards]
+    if matches:
+        return matches
     else:
         return 400

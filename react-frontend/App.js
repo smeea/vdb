@@ -38,9 +38,10 @@ function App(props) {
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const [twdResults, setTwdResults] = useState(undefined);
-  const [twdCryptCards, setTwdCryptCards] = useState({});
-  const [twdLibraryCards, setTwdLibraryCards] = useState({});
-  const [twdCardBase, setTwdCardBase] = useState({});
+  const [twdCryptCards, setTwdCryptCards] = useState(undefined);
+  const [twdLibraryCards, setTwdLibraryCards] = useState(undefined);
+  const [cryptCardBase, setCryptCardBase] = useState(undefined);
+  const [libraryCardBase, setLibraryCardBase] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
 
@@ -67,8 +68,36 @@ function App(props) {
       .then((data) => {
         if (data.error === undefined) {
           if (JSON.stringify(data) != JSON.stringify(decks)) {
+            Object.keys(data).map(i => {
+              Object.keys(data[i].crypt).map(j => {
+                data[i].crypt[j].c = cryptCardBase[j]
+              })
+              Object.keys(data[i].library).map(j => {
+                data[i].library[j].c = libraryCardBase[j]
+              })
+            })
             setDecks(data);
           }
+        } else {
+          console.log('Error: ', data.error);
+        }
+      });
+  };
+
+  const getCardBase = () => {
+    const url = `${process.env.API_URL}cardbase`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          setCryptCardBase(data.crypt);
+          setLibraryCardBase(data.library);
         } else {
           console.log('Error: ', data.error);
         }
@@ -215,16 +244,17 @@ function App(props) {
 
   useEffect(() => {
     whoAmI();
+    (!cryptCardBase || !libraryCardBase) && getCardBase()
   }, []);
 
   useEffect(() => {
     if (username) {
       whoAmI();
-      getDecks();
+      (cryptCardBase && libraryCardBase) && getDecks();
     } else {
       setDecks({});
     }
-  }, [username]);
+  }, [username, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (lastDeck && !sharedDeck) {
@@ -290,15 +320,11 @@ function App(props) {
                 setShowImage={setShowImage}
                 results={twdResults}
                 setResults={setTwdResults}
-                cardBase={twdCardBase}
-                setCardBase={setTwdCardBase}
+                cryptCardBase={cryptCardBase}
+                libraryCardBase={libraryCardBase}
                 addMode={addMode}
                 formState={twdFormState}
                 setFormState={setTwdFormState}
-                cryptCards={twdCryptCards}
-                setCryptCards={setTwdCryptCards}
-                libraryCards={twdLibraryCards}
-                setLibraryCards={setTwdLibraryCards}
               />
             </Route>
             <Route path="/decks">
@@ -366,6 +392,7 @@ function App(props) {
                 addMode={addMode}
                 formState={cryptFormState}
                 setFormState={setCryptFormState}
+                cardBase={cryptCardBase}
               />
             </Route>
             <Route path="/library">
@@ -390,6 +417,7 @@ function App(props) {
                 addMode={addMode}
                 formState={libraryFormState}
                 setFormState={setLibraryFormState}
+                cardBase={libraryCardBase}
               />
             </Route>
           </Suspense>

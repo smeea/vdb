@@ -3,6 +3,9 @@
 * Crypt redraw on sharedDeck clone
 * Draw to close buttons on mobile
 * TWD location/winner form reset
+* TWD last X decks buttons
+* TWD open deck by id
+* TWD open deck by url (parse)
 
 # FEATURES
 * TWD mobile features

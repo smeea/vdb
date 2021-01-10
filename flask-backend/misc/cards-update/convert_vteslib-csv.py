@@ -12,17 +12,22 @@ def letters_to_ascii(text):
 integer_fields = ['Id']
 useless_fields = ['Aka', 'Flavor Text', 'Draft']
 
-with open("vteslib.csv", "r", encoding='utf8') as f_csv, open(
-        "vteslib.json",
-        "w", encoding='utf8') as f_json, open("rulings.json",
-                                              "r",
-                                              encoding='utf8') as f_rulings:
+with open("vteslib.csv", "r",
+          encoding='utf8') as f_csv, open(
+              "vteslib.json",
+              "w", encoding='utf8') as f_json, open(
+                  "cardbase_library.json",
+                  "w", encoding='utf8') as cardbase_file, open(
+                      "rulings.json",
+                      "r",
+                      encoding='utf8') as f_rulings:
 
     rulings = json.load(f_rulings)
     reader = csv.reader(f_csv)
     fieldnames = next(reader)
     csv_cards = csv.DictReader(f_csv, fieldnames)
     cards = []
+    card_base = {}
 
     for card in csv_cards:
 
@@ -67,7 +72,9 @@ with open("vteslib.csv", "r", encoding='utf8') as f_csv, open(
                 card['Rulings'] = rulings[rule]
 
         cards.append(card)
+        card_base[card['Id']] = card
 
     # json.dump(cards, f_json, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
     json.dump(cards, f_json, indent=4, separators=(',', ':'))
+    json.dump(card_base, cardbase_file, indent=4, separators=(',', ':'))

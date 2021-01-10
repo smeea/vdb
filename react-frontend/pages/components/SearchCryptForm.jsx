@@ -244,7 +244,10 @@ function SearchCryptForm(props) {
         .then((response) => response.json())
         .then((data) => {
           props.setShowSearch(false);
-          props.setResults(data);
+          const results = data.map((i) => {
+            return(props.cardBase[i])
+          })
+          props.setResults(results);
           setSpinnerState(false);
         })
         .catch((error) => {

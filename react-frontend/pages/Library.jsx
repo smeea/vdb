@@ -120,6 +120,7 @@ function Library(props) {
             formState={props.formState}
             setFormState={props.setFormState}
             isMobile={props.isMobile}
+            cardBase={props.cardBase}
           />
         </Col>
       </Row>

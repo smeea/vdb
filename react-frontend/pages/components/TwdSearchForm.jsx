@@ -154,13 +154,8 @@ function TwdSearchForm(props) {
       fetch(url, options)
         .then((response) => response.json())
         .then((data) => {
-          props.setCardBase({});
-          return data;
-        })
-        .then((data) => {
           props.setShowSearch(false);
-          props.setResults(data[0]);
-          props.setCardBase(data[1]);
+          props.setResults(data);
           setSpinnerState(false);
         })
         .catch((error) => {
@@ -184,13 +179,8 @@ function TwdSearchForm(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        props.setCardBase({});
-        return data;
-      })
-      .then((data) => {
         props.setShowSearch(false);
-        props.setResults(data[0]);
-        props.setCardBase(data[1]);
+        props.setResults(data);
         setSpinnerState(false);
       })
       .catch((error) => {

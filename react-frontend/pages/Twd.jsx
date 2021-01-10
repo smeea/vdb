@@ -19,7 +19,8 @@ function Twd(props) {
         >
           {props.results != undefined && props.results != null && (
             <TwdResult
-              cardBase={props.cardBase}
+              cryptCardBase={props.cryptCardBase}
+              libraryCardBase={props.libraryCardBase}
               decks={props.results}
               getDecks={props.getDecks}
               isMobile={props.isMobile}
