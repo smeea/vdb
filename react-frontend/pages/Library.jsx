@@ -115,6 +115,7 @@ function Library(props) {
             </AlertMessage>
           )}
           <SearchLibraryForm
+            results={props.results}
             setResults={props.setResults}
             setShowSearch={props.setShowSearch}
             formState={props.formState}
