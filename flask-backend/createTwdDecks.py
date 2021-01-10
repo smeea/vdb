@@ -1,9 +1,10 @@
 import json
 from searchLibraryComponents import get_library_by_id
 
-with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDecks_file:
+with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDecks_file, open("twdDecksById.json", "w") as twdaDecksById_file:
     twda = json.load(twda_input)
     decks = []
+    decks_by_id = {}
 
     for i in twda:
         deck = {
@@ -76,10 +77,12 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
         deck['disciplines'] = disciplines
 
         decks.append(deck)
+        decks_by_id[i['id']] = deck
 
     # json.dump(decks, twdaDecks_file, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
     json.dump(decks, twdaDecks_file, indent=4, separators=(',', ':'))
+    json.dump(decks_by_id, twdaDecksById_file, indent=4, separators=(',', ':'))
 
 
 with open("twda.json", "r") as twda_input, open("twdLocations.json", "w") as twdaLocations_file, open("twdPlayers.json", "w") as twdaPlayers_file:

@@ -44,8 +44,9 @@ def showDeck(deckid):
             'timestamp': deck.timestamp,
         }
         return jsonify(decks)
+
     else:
-        with open("twdDecks.json", "r") as twdDecks_file:
+        with open("twdDecksById.json", "r") as twdDecks_file:
             twdDecks = json.load(twdDecks_file)
 
             deck = twdDecks[deckid]

@@ -38,8 +38,6 @@ function App(props) {
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const [twdResults, setTwdResults] = useState(undefined);
-  const [twdCryptCards, setTwdCryptCards] = useState(undefined);
-  const [twdLibraryCards, setTwdLibraryCards] = useState(undefined);
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
