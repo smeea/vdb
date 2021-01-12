@@ -103,44 +103,56 @@ function App(props) {
       });
   };
 
-  const deckCardAdd = (card, inDeck) => {
-    if (!inDeck) {
-      const url = `${process.env.API_URL}deck/${activeDeck}`;
-      const options = {
-        method: 'PUT',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ cardAdd: { [card['Id']]: 1 } }),
-      };
+  const deckCardAdd = (cardid) => {
+    const url = `${process.env.API_URL}deck/${activeDeck}`;
+    const options = {
+      method: 'PUT',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ cardAdd: { [cardid]: 1 } }),
+    };
 
-      const oldState = decks;
+    const oldState = decks;
 
-      fetch(url, options).catch((error) => {
-        setDecks(oldState);
-      });
+    fetch(url, options).catch((error) => {
+      setDecks(oldState);
+    });
 
-      const part = card['Id'] > 200000 ? 'crypt' : 'library';
+    const part = cardid > 200000 ? 'crypt' : 'library';
+    if (cardid > 200000) {
       setDecks((prevState) => ({
         ...prevState,
         [activeDeck]: {
           ...prevState[activeDeck],
-          [part]: {
-            ...prevState[activeDeck][part],
-            [card['Id']]: {
-              c: card,
+          crypt: {
+            ...prevState[activeDeck].crypt,
+            [cardid]: {
+              c: cryptCardBase[cardid],
               q: 1,
             },
           },
         },
       }));
-
-      setChangeTimer(!changeTimer);
     } else {
-      console.log('already in deck');
+      setDecks((prevState) => ({
+        ...prevState,
+        [activeDeck]: {
+          ...prevState[activeDeck],
+          library: {
+            ...prevState[activeDeck].library,
+            [cardid]: {
+              c: libraryCardBase[cardid],
+              q: 1,
+            },
+          },
+        },
+      }));
     }
+
+    setChangeTimer(!changeTimer);
   };
 
   const deckCardChange = (deckid, cardid, count) => {

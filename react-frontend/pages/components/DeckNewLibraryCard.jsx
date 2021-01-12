@@ -11,25 +11,13 @@ function DeckNewLibraryCard(props) {
   const handleChange = (value) => setSelectedValue(value);
 
   const addNewCard = () => {
-    if (selectedValue.Id) {
-      let inDeck;
-      if (props.cards) {
-        Object.keys(props.cards).map((i, index) => {
-          if (i == selectedValue.Id) {
-            inDeck = props.cards[i].q;
-          }
-        });
-      }
-      if (!inDeck) {
-        props.deckCardAdd(selectedValue, inDeck);
-      } else {
-        console.log('already in deck');
-      }
-      setSelectedValue('');
-      props.setShowAdd(false);
+    if (!props.cards[selectedValue]) {
+      props.deckCardAdd(selectedValue);
     } else {
-      console.log('Error: submit with empty forms');
+      console.log('already in deck');
     }
+    setSelectedValue('');
+    props.setShowAdd(false);
   };
 
   const loadOptions = (inputValue) => {

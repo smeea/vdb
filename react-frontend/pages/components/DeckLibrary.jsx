@@ -219,6 +219,8 @@ function DeckLibrary(props) {
                 <DeckNewLibraryCard
                   deckCardAdd={props.deckCardAdd}
                   setShowAdd={setShowAdd}
+                  cards={props.cards}
+                  cardBase={props.cardBase}
                 />
               </Container>
             </Modal.Body>

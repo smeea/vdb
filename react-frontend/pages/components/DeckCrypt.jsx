@@ -180,6 +180,8 @@ function DeckCrypt(props) {
                 <DeckNewCryptCard
                   deckCardAdd={props.deckCardAdd}
                   setShowAdd={setShowAdd}
+                  cards={props.cards}
+                  cardBase={props.cardBase}
                 />
               </Container>
             </Modal.Body>

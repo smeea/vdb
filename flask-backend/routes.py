@@ -232,7 +232,7 @@ def cloneDeck():
         })
 
     elif len(request.json['target']) != 32:
-        with open("twdDecks.json", "r") as twdDecks_file:
+        with open("twdDecksById.json", "r") as twdDecks_file:
             twdDecks = json.load(twdDecks_file)
 
             deck = twdDecks[request.json['target']]

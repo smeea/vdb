@@ -33,7 +33,6 @@ function DeckClone(props) {
       })
       .then(() => props.getDecks())
       .then(() => props.setActiveDeck(newdeckid))
-      .then(() => props.setCh(newdeckid))
       .then(() => props.setShowButtons(false));
   };
 
