@@ -8,49 +8,34 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 
-function TwdSearchFormLibrary({
-  state,
-  setState,
-  isMobile,
-  showImage,
-  setShowImage,
-  libraryCards,
-  setLibraryCards,
-}) {
-
+function TwdSearchFormLibrary(props) {
   const handleAdd = (event) => {
-    setLibraryCards((prevState) => ({
-      ...prevState,
-      [event['Id']]: event,
-    }));
-
-    const newState = state;
-    newState[event['Id']] = 1;
-    setState((prevState) => ({
+    const newState = props.state;
+    newState[event] = 1;
+    props.setState((prevState) => ({
       ...prevState,
       library: newState,
     }));
   };
 
-  const libraryCardsList = Object.keys(state)
-    .filter((id) => state[id] > 0)
+  const libraryCardsList = Object.keys(props.state)
+    .filter((id) => props.state[id] > 0)
     .map((id, index) => {
-      const card = libraryCards[id];
       return (
         <div key={index} className="d-flex align-items-center">
           <TwdSearchFormQuantityButtons
-            state={state}
-            setState={setState}
+            state={props.state}
+            setState={props.setState}
             id={id}
-            q={state[id]}
+            q={props.state[id]}
             target="library"
           />
           <ResultLibraryName
-            isMobile={isMobile}
-            showImage={showImage}
-            setShowImage={setShowImage}
+            isMobile={props.isMobile}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
             placement="left"
-            card={card}
+            card={props.cardBase[id]}
           />
         </div>
       );
@@ -90,36 +75,36 @@ function TwdSearchFormLibrary({
           <>
             <div className="d-flex align-items-center justify-content-between">
               <div>
-                <ResultLibraryType cardtype={card['Type']} />
+                <ResultLibraryType cardtype={props.cardBase[card]['Type']} />
                 <span className="pl-1">
-                  {card['Banned'] ? (
+                  {props.cardBase[card]['Banned'] ? (
                     <>
-                      <strike>{card['Name']}</strike>
+                      <strike>{props.cardBase[card]['Name']}</strike>
                       <span className="pl-1">
                         <Hammer />
                       </span>
                     </>
                   ) : (
-                    <>{card['Name']}</>
+                    <>{props.cardBase[card]['Name']}</>
                   )}
                 </span>
               </div>
               <div>
-                {card['Discipline'] && (
+                {props.cardBase[card]['Discipline'] && (
                   <span className="px-1">
-                    <ResultLibraryDisciplines value={card['Discipline']} />
+                    <ResultLibraryDisciplines value={props.cardBase[card]['Discipline']} />
                   </span>
                 )}
-                {card['Clan'] && (
+                {props.cardBase[card]['Clan'] && (
                   <span className="px-1">
-                    <ResultLibraryClan value={card['Clan']} />
+                    <ResultLibraryClan value={props.cardBase[card]['Clan']} />
                   </span>
                 )}
-                {(card['Blood Cost'] || card['Pool Cost']) && (
+                {(props.cardBase[card]['Blood Cost'] || props.cardBase[card]['Pool Cost']) && (
                   <span className="px-1">
                     <ResultLibraryCost
-                      valuePool={card['Pool Cost']}
-                      valueBlood={card['Blood Cost']}
+                      valuePool={props.cardBase[card]['Pool Cost']}
+                      valueBlood={props.cardBase[card]['Blood Cost']}
                     />
                   </span>
                 )}

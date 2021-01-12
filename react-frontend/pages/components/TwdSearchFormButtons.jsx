@@ -4,15 +4,19 @@ import LightningFill from '../../assets/images/icons/lightning-fill.svg';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
 
-function TwdSearchFormButtons({ handleClearButton, spinner, getNewTwd }) {
+function TwdSearchFormButtons(props) {
   return (
     <div className="d-flex pb-2 justify-content-between">
       <div className="d-flex">
-        {!spinner ? (
-          <Button variant="outline-secondary" type="submit">
-            <Check2 />
-            <div className="d-inline pl-2 pr-2">Search</div>
-          </Button>
+        {!props.spinner ? (
+          <>
+            {props.isMobile &&
+             <Button variant="outline-secondary" type="submit">
+               <Check2 />
+               <div className="d-inline pl-2 pr-2">Search</div>
+             </Button>
+            }
+          </>
         ) : (
           <Button variant="outline-secondary">
             <Spinner
@@ -25,15 +29,12 @@ function TwdSearchFormButtons({ handleClearButton, spinner, getNewTwd }) {
             <div className="d-inline pl-2 pr-1">Loading</div>
           </Button>
         )}
-        <Button variant="outline-secondary" onClick={handleClearButton}>
-          <X />
+        <Button variant="outline-secondary" onClick={props.handleClearButton}>
+          <X /> Clear
         </Button>
       </div>
       <div>
-        <Button variant="outline-secondary" onClick={() => getNewTwd(25)}>
-          <LightningFill /> 25 New
-        </Button>
-        <Button variant="outline-secondary" onClick={() => getNewTwd(100)}>
+        <Button variant="outline-secondary" onClick={() => props.getNewTwd(100)}>
           <LightningFill /> 100 New
         </Button>
       </div>

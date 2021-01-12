@@ -52,15 +52,13 @@ function Twd(props) {
             setShowSearch={props.setShowSearch}
             setResults={props.setResults}
             setCardBase={props.setCardBase}
+            cryptCardBase={props.cryptCardBase}
+            libraryCardBase={props.libraryCardBase}
             formState={props.formState}
             setFormState={props.setFormState}
             isMobile={props.isMobile}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
-            cryptCards={props.cryptCards}
-            setCryptCards={props.setCryptCards}
-            libraryCards={props.libraryCards}
-            setLibraryCards={props.setLibraryCards}
           />
         </Col>
       </Row>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import TwdSearchFormButtons from './TwdSearchFormButtons.jsx';
 import TwdSearchFormPlayer from './TwdSearchFormPlayer.jsx';
@@ -17,6 +17,8 @@ import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
 
 function TwdSearchForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
+  const [preresults, setPreresults] = useState({});
+  const showLimit = 25;
 
   const defaults = {
     player: '',
@@ -112,13 +114,16 @@ function TwdSearchForm(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
+    launchRequest();
+  }
 
+  const launchRequest = () => {
     const url = `${process.env.API_URL}search/twd`;
 
-    const state = props.formState;
+    const state = { ...props.formState};
     state['event'] = eventText;
 
-    const input = JSON.parse(JSON.stringify(props.formState));
+    const input = JSON.parse(JSON.stringify(state));
 
     const multiSelectForms = ['crypt', 'library', 'disciplines', 'traits', 'cardtypes', 'date', 'players'];
 
@@ -190,10 +195,31 @@ function TwdSearchForm(props) {
       });
   };
 
+  useEffect(() => {
+    if (!props.isMobile) {
+      if (JSON.stringify(props.formState) == JSON.stringify(defaults) && (props.results)) {
+        props.setResults(undefined);
+      } else {
+        launchRequest();
+      }
+    }
+  }, [props.formState])
+
+  useEffect(() => {
+    if (!props.isMobile) {
+      if (eventText.length > 1) {
+        launchRequest();
+      }
+    }
+  }, [eventText])
+
   return (
     <form onSubmit={handleSubmitButton}>
       <TwdSearchFormButtons
         handleClearButton={handleClearButton}
+        isMobile={props.isMobile}
+        preresults={preresults.length}
+        showLimit={showLimit}
         spinner={spinnerState}
         getNewTwd={getNewTwd}
       />
@@ -239,8 +265,7 @@ function TwdSearchForm(props) {
             isMobile={props.isMobile}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
-            cryptCards={props.cryptCards}
-            setCryptCards={props.setCryptCards}
+            cardBase={props.cryptCardBase}
           />
         </Col>
       </Row>
@@ -258,8 +283,7 @@ function TwdSearchForm(props) {
             isMobile={props.isMobile}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
-            libraryCards={props.libraryCards}
-            setLibraryCards={props.setLibraryCards}
+            cardBase={props.libraryCardBase}
           />
         </Col>
       </Row>

@@ -27,7 +27,6 @@
 * Swipe in card modal image-description
 * Droid CI/CD
 * Unify error handling
-* Search on frontend
 * Screenshots to Bootstrap/Carousel
 
 # IMPROVE TECHNOLOGY - BACKEND

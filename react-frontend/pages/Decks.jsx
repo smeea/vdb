@@ -291,6 +291,7 @@ function Decks(props) {
               isAuthor={isAuthor}
               isMobile={props.isMobile}
               isWide={props.isWide}
+              cardBase={props.cryptCardBase}
             />
           </Col>
           <Col lg={5} className="px-0 px-lg-3">
@@ -314,6 +315,7 @@ function Decks(props) {
               isAuthor={isAuthor}
               isMobile={props.isMobile}
               isWide={props.isWide}
+              cardBase={props.libraryCardBase}
             />
           </Col>
         </Row>

@@ -7,49 +7,34 @@ import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 
-function TwdSearchFormCrypt({
-  state,
-  setState,
-  isMobile,
-  showImage,
-  setShowImage,
-  cryptCards,
-  setCryptCards,
-}) {
-
+function TwdSearchFormCrypt(props) {
   const handleAdd = (event) => {
-    setCryptCards((prevState) => ({
-      ...prevState,
-      [event['Id']]: event,
-    }));
-
-    const newState = state;
-    newState[event['Id']] = 1;
-    setState((prevState) => ({
+    const newState = props.state;
+    newState[event] = 1;
+    props.setState((prevState) => ({
       ...prevState,
       crypt: newState,
     }));
   };
 
-  const cryptCardsList = Object.keys(state)
-    .filter((id) => state[id] > 0)
+  const cryptCardsList = Object.keys(props.state)
+    .filter((id) => props.state[id] > 0)
     .map((id, index) => {
-      const card = cryptCards[id];
       return (
         <div key={index} className="d-flex align-items-center">
           <TwdSearchFormQuantityButtons
-            state={state}
-            setState={setState}
+            state={props.state}
+            setState={props.setState}
             id={id}
-            q={state[id]}
+            q={props.state[id]}
             target="crypt"
           />
           <ResultCryptName
-            isMobile={isMobile}
-            showImage={showImage}
-            setShowImage={setShowImage}
+            isMobile={props.isMobile}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
             placement="left"
-            card={card}
+            card={props.cardBase[id]}
           />
         </div>
       );
@@ -89,12 +74,12 @@ function TwdSearchFormCrypt({
           return (
             <div className="d-flex align-items-center justify-content-between">
               <div>
-                <ResultCryptCapacity value={card['Capacity']} />
+                <ResultCryptCapacity value={props.cardBase[card]['Capacity']} />
                 <span className="px-2">
-                  {card['Banned'] ? (
+                  {props.cardBase[card]['Banned'] ? (
                     <>
-                      <strike>{card['Name']}</strike>
-                      {card['Adv'] && (
+                      <strike>{props.cardBase[card]['Name']}</strike>
+                      {props.cardBase[card]['Adv'] && (
                         <span className="pl-1">
                           <img
                             className="advanced-image-results"
@@ -109,8 +94,8 @@ function TwdSearchFormCrypt({
                     </>
                   ) : (
                     <>
-                      {card['Name']}
-                      {card['Adv'] && (
+                      {props.cardBase[card]['Name']}
+                      {props.cardBase[card]['Adv'] && (
                         <span className="pl-1">
                           <img
                             className="advanced-image-results"
@@ -122,10 +107,10 @@ function TwdSearchFormCrypt({
                     </>
                   )}
                 </span>
-                <ResultCryptClan value={card['Clan']} />
+                <ResultCryptClan value={props.cardBase[card]['Clan']} />
               </div>
               <div className="d-flex flex-nowrap">
-                <ResultCryptDisciplines value={card['Disciplines']} />
+                <ResultCryptDisciplines value={props.cardBase[card]['Disciplines']} />
               </div>
             </div>
           );

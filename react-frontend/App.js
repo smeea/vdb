@@ -37,9 +37,10 @@ function App(props) {
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
-  const [twdResults, setTwdResults] = useState(undefined);
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
+
+  const [twdResults, setTwdResults] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
 
@@ -343,6 +344,8 @@ function App(props) {
                 username={username}
                 whoAmI={whoAmI}
                 setUsername={setUsername}
+                cryptCardBase={cryptCardBase}
+                libraryCardBase={libraryCardBase}
               />
             </Route>
             <Route
@@ -365,6 +368,8 @@ function App(props) {
                   whoAmI={whoAmI}
                   setUsername={setUsername}
                   id={props.match.params.id}
+                  cryptCardBase={cryptCardBase}
+                  libraryCardBase={libraryCardBase}
                 />
               )}
             />
@@ -390,7 +395,8 @@ function App(props) {
                 addMode={addMode}
                 formState={cryptFormState}
                 setFormState={setCryptFormState}
-                cardBase={cryptCardBase}
+                cryptCardBase={cryptCardBase}
+                libraryCardBase={libraryCardBase}
               />
             </Route>
             <Route path="/library">
@@ -415,7 +421,8 @@ function App(props) {
                 addMode={addMode}
                 formState={libraryFormState}
                 setFormState={setLibraryFormState}
-                cardBase={libraryCardBase}
+                cryptCardBase={cryptCardBase}
+                libraryCardBase={libraryCardBase}
               />
             </Route>
           </Suspense>

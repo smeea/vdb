@@ -69,9 +69,9 @@ function DeckNewLibraryCard(props) {
         <>
           <div className="d-flex align-items-center justify-content-between">
             <div>
-              <ResultLibraryType cardtype={card['Type']} />
+              <ResultLibraryType cardtype={props.cardBase[card]['Type']} />
               <span className="pl-1">
-                {card['Banned'] ? (
+                {props.cardBase[card]['Banned'] ? (
                   <>
                     <strike>{card['Name']}</strike>
                     <span className="pl-1">
@@ -79,26 +79,26 @@ function DeckNewLibraryCard(props) {
                     </span>
                   </>
                 ) : (
-                  <>{card['Name']}</>
+                  <>{props.cardBase[card]['Name']}</>
                 )}
               </span>
             </div>
             <div>
-              {card['Discipline'] && (
+              {props.cardBase[card]['Discipline'] && (
                 <span className="px-1">
-                  <ResultLibraryDisciplines value={card['Discipline']} />
+                  <ResultLibraryDisciplines value={props.cardBase[card]['Discipline']} />
                 </span>
               )}
-              {card['Clan'] && (
+              {props.cardBase[card]['Clan'] && (
                 <span className="px-1">
-                  <ResultLibraryClan value={card['Clan']} />
+                  <ResultLibraryClan value={props.cardBase[card]['Clan']} />
                 </span>
               )}
-              {(card['Blood Cost'] || card['Pool Cost']) && (
+              {(props.cardBase[card]['Blood Cost'] || props.cardBase[card]['Pool Cost']) && (
                 <span className="px-1">
                   <ResultLibraryCost
-                    valuePool={card['Pool Cost']}
-                    valueBlood={card['Blood Cost']}
+                    valuePool={props.cardBase[card]['Pool Cost']}
+                    valueBlood={props.cardBase[card]['Blood Cost']}
                   />
                 </span>
               )}

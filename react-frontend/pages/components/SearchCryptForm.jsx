@@ -15,6 +15,8 @@ import SearchFormArtist from './SearchFormArtist.jsx';
 
 function SearchCryptForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
+  const [preresults, setPreresults] = useState({});
+  const showLimit = 200;
 
   const defaults = {
     disciplines: {
@@ -177,12 +179,17 @@ function SearchCryptForm(props) {
     setText('');
     props.setFormState(defaults);
     props.setResults(undefined);
+    setPreresults({});
   };
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
     launchRequest();
   };
+
+  const handleShowResults = () => {
+    props.setResults(preresults);
+  }
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/crypt`;
@@ -247,10 +254,9 @@ function SearchCryptForm(props) {
         .then((response) => response.json())
         .then((data) => {
           props.setShowSearch(false);
-          const results = data.map((i) => {
+          setPreresults(data.map((i) => {
             return(props.cardBase[i])
-          })
-          props.setResults(results);
+          }))
           setSpinnerState(false);
         })
         .catch((error) => {
@@ -261,21 +267,42 @@ function SearchCryptForm(props) {
     }
   };
 
-
   useEffect(() => {
-    if (JSON.stringify(props.formState) == JSON.stringify(defaults) && (props.results)) {
-      props.setResults(undefined);
-    } else {
-      launchRequest();
+    if (!props.isMobile) {
+      if (JSON.stringify(props.formState) == JSON.stringify(defaults) && (props.results)) {
+        props.setResults(undefined);
+      } else {
+        launchRequest();
+      }
     }
   }, [props.formState])
+
+  useEffect(() => {
+    if (!props.isMobile) {
+      if (text.length > 1) {
+        launchRequest();
+      }
+    }
+  }, [text])
+
+  useEffect(() => {
+    if (preresults.length < showLimit) {
+      props.setResults(preresults)
+    } else {
+      props.setResults(undefined)
+    }
+  }, [preresults])
 
   return (
     <form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
         value={text}
         onChange={handleTextChange}
+        handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
+        isMobile={props.isMobile}
+        preresults={preresults.length}
+        showLimit={showLimit}
         spinner={spinnerState}
       />
       <SearchCryptFormDisciplines

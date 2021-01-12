@@ -68,12 +68,12 @@ function DeckNewCryptCard(props) {
         <>
           <div className="d-flex align-items-center justify-content-between">
             <div>
-              <ResultCryptCapacity value={card['Capacity']} />
+              <ResultCryptCapacity value={props.cardBase[card]['Capacity']} />
               <span className="px-2">
-                {card['Banned'] ? (
+                {props.cardBase[card]['Banned'] ? (
                   <>
-                    <strike>{card['Name']}</strike>
-                    {card['Adv'] && (
+                    <strike>{props.cardBase[card]['Name']}</strike>
+                    {props.cardBase[card]['Adv'] && (
                       <span className="pl-1">
                         <img
                           className="advanced-image-results"
@@ -88,8 +88,8 @@ function DeckNewCryptCard(props) {
                   </>
                 ) : (
                   <>
-                    {card['Name']}
-                    {card['Adv'] && (
+                    {props.cardBase[card]['Name']}
+                    {props.cardBase[card]['Adv'] && (
                       <span className="pl-1">
                         <img
                           className="advanced-image-results"
@@ -101,10 +101,10 @@ function DeckNewCryptCard(props) {
                   </>
                 )}
               </span>
-              <ResultCryptClan value={card['Clan']} />
+              <ResultCryptClan value={props.cardBase[card]['Clan']} />
             </div>
             <div className="d-flex flex-nowrap">
-              <ResultCryptDisciplines value={card['Disciplines']} />
+              <ResultCryptDisciplines value={props.cardBase[card]['Disciplines']} />
             </div>
           </div>
         </>

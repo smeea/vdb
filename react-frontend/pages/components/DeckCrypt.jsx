@@ -150,6 +150,7 @@ function DeckCrypt(props) {
             deckCardAdd={props.deckCardAdd}
             setShowAdd={setShowAdd}
             cards={props.cards}
+            cardBase={props.cardBase}
           />
         ) : (
           <Modal

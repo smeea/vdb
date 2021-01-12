@@ -49,6 +49,7 @@ function Library(props) {
                   isAuthor={true}
                   isMobile={props.isMobile}
                   isWide={props.isWide}
+                  cardBase={props.cryptCardBase}
                 />
                 <DeckLibrary
                   deckCardAdd={props.deckCardAdd}
@@ -59,6 +60,7 @@ function Library(props) {
                   setShowImage={props.setShowImage}
                   isAuthor={true}
                   isMobile={props.isMobile}
+                  cardBase={props.libraryCardBase}
                 />
               </>
             )}
@@ -121,7 +123,7 @@ function Library(props) {
             formState={props.formState}
             setFormState={props.setFormState}
             isMobile={props.isMobile}
-            cardBase={props.cardBase}
+            cardBase={props.libraryCardBase}
           />
         </Col>
       </Row>
