@@ -367,19 +367,16 @@ function SearchCryptForm(props) {
       />
       {props.isMobile &&
        <a onClick={handleSubmitButton} className="float">
-
-         {!spinnerState ? (
-           <div className="pt-2 justify-content-between">
+         <div className="pt-2 justify-content-between">
+           {!spinnerState ? (
              <Check2 viewBox="0 0 16 16"/>
-           </div>
-         ) : (
-           <div className="pt-3">
+           ) : (
              <Spinner
                animation="border"
-               size="xl"
+               variant="light"
              />
-           </div>
-         )}
+           )}
+         </div>
        </a>
       }
     </form>
