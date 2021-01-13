@@ -10,7 +10,7 @@ import DeckCrypt from './components/DeckCrypt.jsx';
 import DeckLibrary from './components/DeckLibrary.jsx';
 
 function Crypt(props) {
-  const [sortMethod, setSortMethod] = useState('Capacity');
+  const [sortMethod, setSortMethod] = useState('Capacity - Min to Max');
 
   return (
     <Container className="main-container">

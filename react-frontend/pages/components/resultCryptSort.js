@@ -29,8 +29,10 @@ function resultCryptSort(cards, sortMethod) {
     switch (sortMethod) {
       case 'Name':
         return cards.sort(byName);
-      case 'Capacity':
+      case 'Capacity - Min to Max':
         return cards.sort(byName).sort(byCapacity);
+      case 'Capacity - Max to Min':
+        return cards.sort(byName).reverse().sort(byCapacity).reverse();
       case 'Clan':
         return cards.sort(byName).sort(byCapacity).sort(byClan);
       case 'Group':

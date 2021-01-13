@@ -19,7 +19,7 @@ function resultLibrarySort(cards, sortMethod) {
 
   const byBloodCost = (a, b) => {
     if (!isNaN(a['Blood Cost']) && isNaN(b['Blood Cost'])) return -1;
-    if (isNaN(a['Blood Cost']) && !isNaN(b['Blood Cost'])) return 1;
+    if (!isNaN(b['Blood Cost']) && isNaN(a['Blood Cost'])) return 1;
     if (isNaN(a['Blood Cost']) && isNaN(b['Blood Cost'])) return 0;
     return b['Blood Cost'] - a['Blood Cost'];
   };
@@ -67,7 +67,17 @@ function resultLibrarySort(cards, sortMethod) {
         return cards.sort(byName).sort(byType).sort(byDiscipline).sort(byClan);
       case 'Type':
         return cards.sort(byName).sort(byDiscipline).sort(byClan).sort(byType);
-      case 'Cost':
+      case 'Cost - Min to Max':
+        return cards
+          .sort(byName)
+          .reverse()
+          .sort(byDiscipline)
+          .sort(byClan)
+          .sort(byType)
+          .sort(byPoolCost)
+          .sort(byBloodCost)
+          .reverse();
+      case 'Cost - Max to Min':
         return cards
           .sort(byName)
           .sort(byDiscipline)

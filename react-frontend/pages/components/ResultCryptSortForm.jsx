@@ -3,7 +3,13 @@ import { DropdownButton, Dropdown } from 'react-bootstrap';
 import SortDown from '../../assets/images/icons/sort-down.svg';
 
 function ResultCryptSortForm(props) {
-  const sortMethods = ['Name', 'Capacity', 'Clan', 'Group'];
+  const sortMethods = [
+    'Name',
+    'Clan',
+    'Group',
+    'Capacity - Min to Max',
+    'Capacity - Max to Min',
+  ];
 
   const SortButtonOptions = sortMethods.map((i, index) => {
     return (
