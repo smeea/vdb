@@ -14,31 +14,10 @@ function SearchFormTextAndButtons(props) {
         onChange={props.onChange}
       />
       <InputGroup.Append>
-        {props.isMobile ?
-         <>
-           {!props.spinner ? (
-             <Button variant="outline-secondary" type="submit">
-               <Check2 />
-             </Button>
-           ) : (
-             <Button variant="outline-secondary">
-               <Spinner
-                 as="span"
-                 animation="border"
-                 size="sm"
-                 role="status"
-                 aria-hidden="true"
-               />
-             </Button>
-           )}
-         </>
-         : <>
-             {props.preresults > props.showLimit &&
-              <Button variant="outline-secondary" onClick={props.handleShowResults}>
-                <Check2 /> FOUND {props.preresults}
-              </Button>
-             }
-           </>
+        {!props.isMobile && props.preresults > props.showLimit &&
+         <Button variant="outline-secondary" onClick={props.handleShowResults}>
+           <Check2 /> FOUND {props.preresults}
+         </Button>
         }
         <Button variant="outline-secondary" onClick={props.handleClearButton}>
           <X />

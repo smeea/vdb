@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Spinner } from 'react-bootstrap';
+import Check2 from '../../assets/images/icons/check2.svg';
 import TwdSearchFormButtons from './TwdSearchFormButtons.jsx';
 import TwdSearchFormPlayer from './TwdSearchFormPlayer.jsx';
 import TwdSearchFormPlayers from './TwdSearchFormPlayers.jsx';
@@ -17,7 +18,6 @@ import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
 
 function TwdSearchForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
-  const [preresults, setPreresults] = useState({});
   const showLimit = 25;
 
   const defaults = {
@@ -174,7 +174,31 @@ function TwdSearchForm(props) {
   const getNewTwd = (q) => {
     setSpinnerState(true);
 
-    const url = `${process.env.API_URL}twd/${q}`;
+    const url = `${process.env.API_URL}twd/new/${q}`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        props.setShowSearch(false);
+        props.setResults(data);
+        setSpinnerState(false);
+      })
+      .catch((error) => {
+        props.setResults(null);
+        setSpinnerState(false);
+        console.log(error);
+      });
+  };
+
+  const getRandomTwd = (q) => {
+    setSpinnerState(true);
+
+    const url = `${process.env.API_URL}twd/random/${q}`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -218,10 +242,10 @@ function TwdSearchForm(props) {
       <TwdSearchFormButtons
         handleClearButton={handleClearButton}
         isMobile={props.isMobile}
-        preresults={preresults.length}
         showLimit={showLimit}
         spinner={spinnerState}
         getNewTwd={getNewTwd}
+        getRandomTwd={getRandomTwd}
       />
       <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={2} className="d-flex px-0">
@@ -373,6 +397,23 @@ function TwdSearchForm(props) {
           />
         </Col>
       </Row>
+      {props.isMobile &&
+       <a onClick={handleSubmitButton} className="float">
+
+         {!spinnerState ? (
+           <div className="pt-2 justify-content-between">
+             <Check2 viewBox="0 0 16 16"/>
+           </div>
+         ) : (
+           <div className="pt-3">
+             <Spinner
+               animation="border"
+               size="xl"
+             />
+           </div>
+         )}
+       </a>
+      }
     </form>
   );
 }

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Spinner } from 'react-bootstrap';
+import Check2 from '../../assets/images/icons/check2.svg';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchLibraryFormType from './SearchLibraryFormType.jsx';
 import SearchLibraryFormClan from './SearchLibraryFormClan.jsx';
@@ -176,9 +178,14 @@ function SearchLibraryForm(props) {
         .then((response) => response.json())
         .then((data) => {
           props.setShowSearch(false);
-          setPreresults(data.map((i) => {
+          const res = data.map((i) => {
             return(props.cardBase[i])
-          }))
+          })
+          if (!props.isMobile) {
+            setPreresults(res);
+          } else {
+            props.setResults(res);
+          }
           setSpinnerState(false);
         })
         .catch((error) => {
@@ -277,6 +284,23 @@ function SearchLibraryForm(props) {
         onChange={handleSelectChange}
         target="library"
       />
+      {props.isMobile &&
+       <a onClick={handleSubmitButton} className="float">
+
+         {!spinnerState ? (
+           <div className="pt-2 justify-content-between">
+             <Check2 viewBox="0 0 16 16"/>
+           </div>
+         ) : (
+           <div className="pt-3">
+             <Spinner
+               animation="border"
+               size="xl"
+             />
+           </div>
+         )}
+       </a>
+      }
     </form>
   );
 }

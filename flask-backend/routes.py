@@ -3,6 +3,7 @@ from flask_login import current_user, login_user, logout_user
 from datetime import datetime
 import uuid
 import json
+from random import random
 
 from searchTwd import searchTwd
 from searchCrypt import searchCrypt
@@ -468,13 +469,26 @@ def getPlayers():
         return jsonify(json.load(twdPlayers_file))
 
 
-@app.route('/api/twd/<int:quantity>', methods=['GET'])
+@app.route('/api/twd/new/<int:quantity>', methods=['GET'])
 def getNewTwd(quantity):
     with open("twdNewDecks.json", "r") as twd_file:
         twda = json.load(twd_file)
         decks = []
         for i in range(quantity):
             decks.append(twda[i])
+
+        return jsonify(decks)
+
+@app.route('/api/twd/random/<int:quantity>', methods=['GET'])
+def getRandomTwd(quantity):
+    with open("twdDecks.json", "r") as twd_file:
+        twda = json.load(twd_file)
+        decks = []
+        length = len(twda)
+        counter = quantity
+        while counter > 0:
+            counter -= 1
+            decks.append(twda[round(random()*length)])
 
         return jsonify(decks)
 
