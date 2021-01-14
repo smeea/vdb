@@ -94,6 +94,9 @@ function Library(props) {
               isMobile={props.isMobile}
               isWide={props.isWide}
               addMode={props.addMode}
+              showSearch={props.showSearch}
+              setShowSearch={props.setShowSearch}
+              setResults={props.setResults}
             />
           )}
           {props.results === null && (
@@ -119,6 +122,7 @@ function Library(props) {
           <SearchLibraryForm
             results={props.results}
             setResults={props.setResults}
+            showSearch={props.showSearch}
             setShowSearch={props.setShowSearch}
             formState={props.formState}
             setFormState={props.setFormState}

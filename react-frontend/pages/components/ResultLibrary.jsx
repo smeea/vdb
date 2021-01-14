@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import X from '../../assets/images/icons/x.svg';
 import ResultLibraryTable from './ResultLibraryTable.jsx';
 import ResultLibraryTotal from './ResultLibraryTotal.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
@@ -9,6 +10,11 @@ function ResultLibrary(props) {
   const handleChange = (method) => {
     props.setSortMethod(method);
     setSortedCards(() => resultLibrarySort(props.cards, method));
+  };
+
+  const handleClear = () => {
+    props.setResults(undefined);
+    props.setShowSearch(!props.showSearch);
   };
 
   useEffect(() => {
@@ -36,6 +42,13 @@ function ResultLibrary(props) {
         isWide={true}
         addMode={props.addMode}
       />
+      {props.isMobile &&
+       <a onClick={handleClear} className="float-1 clear">
+         <div className="pt-1 float-clear">
+           <X viewBox="0 0 16 16"/>
+         </div>
+       </a>
+      }
     </>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
+import X from '../../assets/images/icons/x.svg';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchLibraryFormType from './SearchLibraryFormType.jsx';
 import SearchLibraryFormClan from './SearchLibraryFormClan.jsx';
@@ -215,10 +216,12 @@ function SearchLibraryForm(props) {
   }, [text])
 
   useEffect(() => {
-    if (preresults.length < showLimit) {
-      props.setResults(preresults)
-    } else {
-      props.setResults(undefined)
+    if (!props.isMobile) {
+      if (preresults.length < showLimit) {
+        props.setResults(preresults)
+      } else {
+        props.setResults(undefined)
+      }
     }
   }, [preresults])
 
@@ -285,18 +288,25 @@ function SearchLibraryForm(props) {
         target="library"
       />
       {props.isMobile &&
-       <a onClick={handleSubmitButton} className="float">
-         <div className="pt-2 justify-content-between">
-           {!spinnerState ? (
-             <Check2 viewBox="0 0 16 16"/>
-           ) : (
-             <Spinner
-               animation="border"
-               variant="light"
-             />
-           )}
-         </div>
-       </a>
+       <>
+         <a onClick={handleClearButton} className="float-2 clear">
+           <div className="pt-1 float-clear">
+             <X viewBox="0 0 16 16"/>
+           </div>
+         </a>
+         <a onClick={handleSubmitButton} className="float-1 search">
+           <div className="pt-2 float-search">
+             {!spinnerState ? (
+               <Check2 viewBox="0 0 16 16"/>
+             ) : (
+               <Spinner
+                 animation="border"
+                 variant="light"
+               />
+             )}
+           </div>
+         </a>
+       </>
       }
     </form>
   );

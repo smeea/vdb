@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Spinner } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
+import X from '../../assets/images/icons/x.svg';
 import TwdSearchFormButtons from './TwdSearchFormButtons.jsx';
 import TwdSearchFormPlayer from './TwdSearchFormPlayer.jsx';
 import TwdSearchFormPlayers from './TwdSearchFormPlayers.jsx';
@@ -243,7 +244,6 @@ function TwdSearchForm(props) {
         handleClearButton={handleClearButton}
         isMobile={props.isMobile}
         showLimit={showLimit}
-        spinner={spinnerState}
         getNewTwd={getNewTwd}
         getRandomTwd={getRandomTwd}
       />
@@ -398,18 +398,25 @@ function TwdSearchForm(props) {
         </Col>
       </Row>
       {props.isMobile &&
-       <a onClick={handleSubmitButton} className="float">
-         <div className="pt-2 justify-content-between">
-           {!spinnerState ? (
-             <Check2 viewBox="0 0 16 16"/>
-           ) : (
-             <Spinner
-               animation="border"
-               variant="light"
-             />
-           )}
-         </div>
-       </a>
+       <>
+         <a onClick={handleClearButton} className="float-2 clear">
+           <div className="pt-1 float-clear">
+             <X viewBox="0 0 16 16"/>
+           </div>
+         </a>
+         <a onClick={handleSubmitButton} className="float-1 search">
+           <div className="pt-2 float-search">
+             {!spinnerState ? (
+               <Check2 viewBox="0 0 16 16"/>
+             ) : (
+               <Spinner
+                 animation="border"
+                 variant="light"
+               />
+             )}
+           </div>
+         </a>
+       </>
       }
     </form>
   );

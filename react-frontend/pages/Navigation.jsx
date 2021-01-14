@@ -8,22 +8,6 @@ import ToggleOn from '../assets/images/icons/toggle-on.svg';
 import ToggleOff from '../assets/images/icons/toggle-off.svg';
 
 function Navigation(props) {
-  const ToggleSearch = (props) => {
-    return (
-      <Button
-        onClick={() => {
-          props.setShowSearch(!props.showSearch);
-          window.scrollTo(0, 0);
-        }}
-        variant="secondary"
-        active={!props.showSearch}
-        disabled={!props.isResults}
-      >
-        <Search />
-      </Button>
-    );
-  };
-
   const NavBar = ({ location }) => {
     return (
       <Navbar sticky="top" bg="dark" variant="dark">
@@ -89,33 +73,6 @@ function Navigation(props) {
             <NavLink to="/library" className="nav-link pr-2 pl-1">
               Library
             </NavLink>
-            {props.isMobile && (
-              <>
-                <div className="toggle-search">
-                  {props.location.pathname == '/crypt' && (
-                    <ToggleSearch
-                      showSearch={props.showCryptSearch}
-                      setShowSearch={props.setShowCryptSearch}
-                      isResults={props.isCryptResults}
-                    />
-                  )}
-                  {props.location.pathname == '/library' && (
-                    <ToggleSearch
-                      showSearch={props.showLibrarySearch}
-                      setShowSearch={props.setShowLibrarySearch}
-                      isResults={props.isLibraryResults}
-                    />
-                  )}
-                  {props.location.pathname == '/twd' && (
-                    <ToggleSearch
-                      showSearch={props.showTwdSearch}
-                      setShowSearch={props.setShowTwdSearch}
-                      isResults={props.isTwdResults}
-                    />
-                  )}
-                </div>
-              </>
-            )}
           </div>
         </Nav>
       </Navbar>

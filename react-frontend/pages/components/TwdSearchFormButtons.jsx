@@ -16,8 +16,8 @@ function TwdSearchFormButtons(props) {
         </Button>
       </div>
       <div>
-        <Button variant="outline-secondary" onClick={props.handleClearButton}>
-          <X /> Clear
+        <Button className="full-height" variant="outline-secondary" onClick={props.handleClearButton}>
+          <X />
         </Button>
       </div>
     </div>

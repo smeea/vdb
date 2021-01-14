@@ -21,11 +21,15 @@ function Twd(props) {
             <TwdResult
               cryptCardBase={props.cryptCardBase}
               libraryCardBase={props.libraryCardBase}
-              decks={props.results}
+              results={props.results}
+              setResults={props.setResults}
               getDecks={props.getDecks}
               isMobile={props.isMobile}
               showImage={props.showImage}
               setShowImage={props.setShowImage}
+              showSearch={props.showSearch}
+              setShowSearch={props.setShowSearch}
+              setActiveDeck={props.setActiveDeck}
             />
           )}
           {props.results === null && (

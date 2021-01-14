@@ -3,9 +3,7 @@
 * Crypt redraw on sharedDeck clone
 * Draw to close buttons on mobile
 * TWD location/winner form reset
-* Add button on mobile alignment/size
 * Discipline search result width (narrow results)
-* White search button spinner
 
 # FEATURES
 * TWD mobile features

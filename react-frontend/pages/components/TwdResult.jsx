@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
+import X from '../../assets/images/icons/x.svg';
 import TwdResultTotal from './TwdResultTotal.jsx';
 import TwdResultDescription from './TwdResultDescription.jsx';
 import TwdResultCrypt from './TwdResultCrypt.jsx';
@@ -13,15 +14,20 @@ function TwdResult(props) {
   const [showCounter, setShowCounter] = useState(0);
   const [deckCounter, setDeckCounter] = useState(0);
 
+  const handleClear = () => {
+    props.setResults(undefined);
+    props.setShowSearch(!props.showSearch);
+  };
+
   useEffect(() => {
-    setDeckCounter(Object.keys(props.decks).length);
+    setDeckCounter(Object.keys(props.results).length);
     setShowCounter(showCounterStep);
-  }, props.decks);
+  }, props.results);
 
   useEffect(() => {
     let newCounter = showCounter;
     setTwdRows(
-      props.decks.map((deck) => {
+      props.results.map((deck) => {
         while (newCounter > 0) {
           newCounter -= 1;
           Object.keys(deck['crypt']).map((i) => {
@@ -37,6 +43,7 @@ function TwdResult(props) {
                   <TwdResultDescription
                     deck={deck}
                     getDecks={props.getDecks}
+                    setActiveDeck={props.setActiveDeck}
                   />
                 </Col>
                 <Col md={12} xl={3}>
@@ -71,11 +78,11 @@ function TwdResult(props) {
         }
       })
     );
-  }, [props.decks, showCounter, props.showImage]);
+  }, [props.results, showCounter, props.showImage]);
 
   return (
     <>
-      <TwdResultTotal decks={props.decks} />
+      <TwdResultTotal decks={props.results} />
       {twdRows}
       {deckCounter > showCounter && (
         <div className="d-flex justify-content-center pb-4 pt-2">
@@ -88,6 +95,13 @@ function TwdResult(props) {
           </Button>
         </div>
       )}
+      {props.isMobile &&
+       <a onClick={handleClear} className="float-1 clear">
+         <div className="pt-1 float-clear">
+           <X viewBox="0 0 16 16"/>
+         </div>
+       </a>
+      }
     </>
   );
 }

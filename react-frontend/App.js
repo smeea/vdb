@@ -121,7 +121,6 @@ function App(props) {
       setDecks(oldState);
     });
 
-    const part = cardid > 200000 ? 'crypt' : 'library';
     if (cardid > 200000) {
       setDecks((prevState) => ({
         ...prevState,
@@ -286,19 +285,12 @@ function App(props) {
       <Router>
         <Navigation
           isMobile={isMobile}
-          showTwdSearch={showTwdSearch}
-          setShowTwdSearch={setShowTwdSearch}
           showCryptSearch={showCryptSearch}
-          setShowCryptSearch={setShowCryptSearch}
           showLibrarySearch={showLibrarySearch}
-          setShowLibrarySearch={setShowLibrarySearch}
           username={username}
           decks={decks}
           activeDeck={activeDeck}
           setActiveDeck={setActiveDeck}
-          isTwdResults={twdResults && true}
-          isCryptResults={cryptResults && true}
-          isLibraryResults={libraryResults && true}
           addMode={addMode}
           setAddMode={setAddMode}
           isActiveDeck={activeDeck ? true : false}
@@ -336,6 +328,7 @@ function App(props) {
                 addMode={addMode}
                 formState={twdFormState}
                 setFormState={setTwdFormState}
+                setActiveDeck={setActiveDeck}
               />
             </Route>
             <Route path="/decks">

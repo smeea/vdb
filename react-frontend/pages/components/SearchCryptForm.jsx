@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Spinner } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
+import X from '../../assets/images/icons/x.svg';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchCryptFormDisciplines from './SearchCryptFormDisciplines.jsx';
 import SearchCryptFormVirtues from './SearchCryptFormVirtues.jsx';
@@ -293,10 +294,12 @@ function SearchCryptForm(props) {
   }, [text])
 
   useEffect(() => {
-    if (preresults.length < showLimit) {
-      props.setResults(preresults)
-    } else {
-      props.setResults(undefined)
+    if (!props.isMobile) {
+      if (preresults.length < showLimit) {
+        props.setResults(preresults)
+      } else {
+        props.setResults(undefined)
+      }
     }
   }, [preresults])
 
@@ -310,7 +313,6 @@ function SearchCryptForm(props) {
         isMobile={props.isMobile}
         preresults={preresults.length}
         showLimit={showLimit}
-        /* spinner={spinnerState} */
       />
       <SearchCryptFormDisciplines
         value={props.formState.disciplines}
@@ -366,18 +368,25 @@ function SearchCryptForm(props) {
         target="crypt"
       />
       {props.isMobile &&
-       <a onClick={handleSubmitButton} className="float">
-         <div className="pt-2 justify-content-between">
-           {!spinnerState ? (
-             <Check2 viewBox="0 0 16 16"/>
-           ) : (
-             <Spinner
-               animation="border"
-               variant="light"
-             />
-           )}
-         </div>
-       </a>
+       <>
+         <a onClick={handleClearButton} className="float-2 clear">
+           <div className="pt-1 float-clear">
+             <X viewBox="0 0 16 16"/>
+           </div>
+         </a>
+         <a onClick={handleSubmitButton} className="float-1 search">
+           <div className="pt-2 float-search">
+             {!spinnerState ? (
+               <Check2 viewBox="0 0 16 16"/>
+             ) : (
+               <Spinner
+                 animation="border"
+                 variant="light"
+               />
+             )}
+           </div>
+         </a>
+       </>
       }
     </form>
   );

@@ -19,9 +19,11 @@ function SearchFormTextAndButtons(props) {
            <Check2 /> FOUND {props.preresults}
          </Button>
         }
-        <Button variant="outline-secondary" onClick={props.handleClearButton}>
-          <X />
-        </Button>
+        {!props.isMobile &&
+         <Button variant="outline-secondary" onClick={props.handleClearButton}>
+           <X />
+         </Button>
+        }
       </InputGroup.Append>
     </InputGroup>
   );

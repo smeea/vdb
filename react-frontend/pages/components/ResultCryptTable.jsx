@@ -60,7 +60,7 @@ function ResultCryptTable(props) {
           {props.className == 'deck-crypt-table' ? (
             <>
               {props.isAuthor ? (
-                <td className="quantity pr-1">
+                <td className="quantity">
                   <DeckCardQuantity
                     cardid={card['Id']}
                     q={q}
@@ -70,7 +70,7 @@ function ResultCryptTable(props) {
                   />
                 </td>
               ) : props.proxySelected ? (
-                <td className="quantity pr-1">
+                <td className="quantity">
                   <DeckCardQuantity
                     cardid={card['Id']}
                     deckid={null}
@@ -94,7 +94,7 @@ function ResultCryptTable(props) {
           ) : (
             <>
               {props.addMode && (
-                <td className="quantity pr-1">
+                <td className="quantity">
                   <ResultAddCard
                     deckCardAdd={props.deckCardAdd}
                     cardid={card['Id']}

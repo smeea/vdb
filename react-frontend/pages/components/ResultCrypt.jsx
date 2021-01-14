@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import X from '../../assets/images/icons/x.svg';
 import ResultCryptTable from './ResultCryptTable.jsx';
 import ResultCryptTotal from './ResultCryptTotal.jsx';
 import resultCryptSort from './resultCryptSort.js';
@@ -13,9 +14,15 @@ function ResultCrypt(props) {
     setSortedCards(() => resultCryptSort(props.cards, method));
   };
 
+  const handleClear = () => {
+    props.setResults(undefined);
+    props.setShowSearch(!props.showSearch);
+  };
+
   useEffect(() => {
     setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
   }, [props.cards, props.sortMethod]);
+
 
   return (
     <>
@@ -39,6 +46,13 @@ function ResultCrypt(props) {
         isWide={true}
         addMode={props.addMode}
       />
+      {props.isMobile &&
+       <a onClick={handleClear} className="float-1 clear">
+         <div className="pt-1 float-clear">
+           <X viewBox="0 0 16 16"/>
+         </div>
+       </a>
+      }
     </>
   );
 }
