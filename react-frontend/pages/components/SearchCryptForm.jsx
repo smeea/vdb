@@ -165,7 +165,7 @@ function SearchCryptForm(props) {
   const handleDisciplinesChange = (event) => {
     const { id, name } = event.target;
     const newState = props.formState.disciplines;
-    const max = (name == 'disciplines') ? 2 : 1;
+    const max = name == 'disciplines' ? 2 : 1;
 
     if (newState[id] < max) {
       newState[id] += 1;
@@ -192,22 +192,17 @@ function SearchCryptForm(props) {
 
   const handleShowResults = () => {
     props.setResults(preresults);
-  }
+  };
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/crypt`;
 
-    const state = { ...props.formState};
+    const state = { ...props.formState };
     state['text'] = text;
 
     const input = JSON.parse(JSON.stringify(state));
 
-    const multiSelectForms = [
-      'disciplines',
-      'titles',
-      'group',
-      'traits',
-    ];
+    const multiSelectForms = ['disciplines', 'titles', 'group', 'traits'];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(
@@ -215,15 +210,11 @@ function SearchCryptForm(props) {
       );
     });
 
-    const multiSelectFormsWithMain = [
-      'set',
-      'precon',
-      'capacity',
-    ];
+    const multiSelectFormsWithMain = ['set', 'precon', 'capacity'];
 
     multiSelectFormsWithMain.map((i) => {
       if (input[i][i] == 'any') {
-        delete input[i]
+        delete input[i];
       }
     });
 
@@ -258,8 +249,8 @@ function SearchCryptForm(props) {
         .then((data) => {
           props.setShowSearch(false);
           const res = data.map((i) => {
-            return(props.cardBase[i])
-          })
+            return props.cardBase[i];
+          });
           if (!props.isMobile) {
             setPreresults(res);
           } else {
@@ -277,13 +268,16 @@ function SearchCryptForm(props) {
 
   useEffect(() => {
     if (!props.isMobile) {
-      if (JSON.stringify(props.formState) == JSON.stringify(defaults) && (props.results)) {
+      if (
+        JSON.stringify(props.formState) == JSON.stringify(defaults) &&
+        props.results
+      ) {
         props.setResults(undefined);
       } else {
         launchRequest();
       }
     }
-  }, [props.formState])
+  }, [props.formState]);
 
   useEffect(() => {
     if (!props.isMobile) {
@@ -291,17 +285,17 @@ function SearchCryptForm(props) {
         launchRequest();
       }
     }
-  }, [text])
+  }, [text]);
 
   useEffect(() => {
     if (!props.isMobile) {
       if (preresults.length < showLimit) {
-        props.setResults(preresults)
+        props.setResults(preresults);
       } else {
-        props.setResults(undefined)
+        props.setResults(undefined);
       }
     }
-  }, [preresults])
+  }, [preresults]);
 
   return (
     <form onSubmit={handleSubmitButton}>
@@ -367,27 +361,24 @@ function SearchCryptForm(props) {
         onChange={handleSelectChange}
         target="crypt"
       />
-      {props.isMobile &&
-       <>
-         <a onClick={handleClearButton} className="float-2 clear">
-           <div className="pt-1 float-clear">
-             <X viewBox="0 0 16 16"/>
-           </div>
-         </a>
-         <a onClick={handleSubmitButton} className="float-1 search">
-           <div className="pt-2 float-search">
-             {!spinnerState ? (
-               <Check2 viewBox="0 0 16 16"/>
-             ) : (
-               <Spinner
-                 animation="border"
-                 variant="light"
-               />
-             )}
-           </div>
-         </a>
-       </>
-      }
+      {props.isMobile && (
+        <>
+          <a onClick={handleClearButton} className="float-2 clear">
+            <div className="pt-1 float-clear">
+              <X viewBox="0 0 16 16" />
+            </div>
+          </a>
+          <a onClick={handleSubmitButton} className="float-1 search">
+            <div className="pt-2 float-search">
+              {!spinnerState ? (
+                <Check2 viewBox="0 0 16 16" />
+              ) : (
+                <Spinner animation="border" variant="light" />
+              )}
+            </div>
+          </a>
+        </>
+      )}
     </form>
   );
 }

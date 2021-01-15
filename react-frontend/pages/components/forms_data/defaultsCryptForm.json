@@ -34,11 +34,11 @@
     "Martyrdom": 0,
     "Redemption": 0,
     "Vengeance": 0,
-    "Vision": 0,
+    "Vision": 0
   },
   "capacity": {
     "capacity": "any",
-    "moreless": "le",
+    "moreless": "le"
   },
   "clan": "any",
   "sect": "any",
@@ -56,7 +56,7 @@
     "priscus": false,
     "cardinal": false,
     "regent": false,
-    "magaji": false,
+    "magaji": false
   },
   "group": {
     "1": false,
@@ -64,7 +64,7 @@
     "3": false,
     "4": false,
     "5": false,
-    "6": false,
+    "6": false
   },
   "traits": {
     "1 intercept": false,
@@ -83,17 +83,17 @@
     "seraph": false,
     "infernal": false,
     "red list": false,
-    "flight": false,
+    "flight": false
   },
   "set": {
     "set": "any",
     "only in": false,
-    "first print": false,
+    "first print": false
   },
   "precon": {
     "precon": "any",
     "only in": false,
-    "first print": false,
+    "first print": false
   },
-  "artist": "any",
+  "artist": "any"
 }

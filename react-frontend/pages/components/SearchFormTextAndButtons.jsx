@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormControl, InputGroup, Spinner, Button } from 'react-bootstrap';
+import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import Check2 from '../../assets/images/icons/check2.svg';
 
@@ -14,16 +14,16 @@ function SearchFormTextAndButtons(props) {
         onChange={props.onChange}
       />
       <InputGroup.Append>
-        {!props.isMobile && props.preresults > props.showLimit &&
-         <Button variant="outline-secondary" onClick={props.handleShowResults}>
-           <Check2 /> FOUND {props.preresults}
-         </Button>
-        }
-        {!props.isMobile &&
-         <Button variant="outline-secondary" onClick={props.handleClearButton}>
-           <X />
-         </Button>
-        }
+        {!props.isMobile && props.preresults > props.showLimit && (
+          <Button variant="outline-secondary" onClick={props.handleShowResults}>
+            <Check2 /> FOUND {props.preresults}
+          </Button>
+        )}
+        {!props.isMobile && (
+          <Button variant="outline-secondary" onClick={props.handleClearButton}>
+            <X />
+          </Button>
+        )}
       </InputGroup.Append>
     </InputGroup>
   );

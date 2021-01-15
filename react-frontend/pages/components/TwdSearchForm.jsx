@@ -99,7 +99,7 @@ function TwdSearchForm(props) {
   const handleMultiChange = (event) => {
     const { name, id, value } = event.target;
     const newState = props.formState[name];
-    const i = value ? value : id
+    const i = value ? value : id;
     newState[i] = !newState[i];
     props.setFormState((prevState) => ({
       ...prevState,
@@ -116,17 +116,25 @@ function TwdSearchForm(props) {
   const handleSubmitButton = (event) => {
     event.preventDefault();
     launchRequest();
-  }
+  };
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/twd`;
 
-    const state = { ...props.formState};
+    const state = { ...props.formState };
     state['event'] = eventText;
 
     const input = JSON.parse(JSON.stringify(state));
 
-    const multiSelectForms = ['crypt', 'library', 'disciplines', 'traits', 'cardtypes', 'date', 'players'];
+    const multiSelectForms = [
+      'crypt',
+      'library',
+      'disciplines',
+      'traits',
+      'cardtypes',
+      'date',
+      'players',
+    ];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(
@@ -222,13 +230,16 @@ function TwdSearchForm(props) {
 
   useEffect(() => {
     if (!props.isMobile) {
-      if (JSON.stringify(props.formState) == JSON.stringify(defaults) && (props.results)) {
+      if (
+        JSON.stringify(props.formState) == JSON.stringify(defaults) &&
+        props.results
+      ) {
         props.setResults(undefined);
       } else {
         launchRequest();
       }
     }
-  }, [props.formState])
+  }, [props.formState]);
 
   useEffect(() => {
     if (!props.isMobile) {
@@ -236,7 +247,7 @@ function TwdSearchForm(props) {
         launchRequest();
       }
     }
-  }, [eventText])
+  }, [eventText]);
 
   return (
     <form onSubmit={handleSubmitButton}>
@@ -397,27 +408,24 @@ function TwdSearchForm(props) {
           />
         </Col>
       </Row>
-      {props.isMobile &&
-       <>
-         <a onClick={handleClearButton} className="float-2 clear">
-           <div className="pt-1 float-clear">
-             <X viewBox="0 0 16 16"/>
-           </div>
-         </a>
-         <a onClick={handleSubmitButton} className="float-1 search">
-           <div className="pt-2 float-search">
-             {!spinnerState ? (
-               <Check2 viewBox="0 0 16 16"/>
-             ) : (
-               <Spinner
-                 animation="border"
-                 variant="light"
-               />
-             )}
-           </div>
-         </a>
-       </>
-      }
+      {props.isMobile && (
+        <>
+          <a onClick={handleClearButton} className="float-2 clear">
+            <div className="pt-1 float-clear">
+              <X viewBox="0 0 16 16" />
+            </div>
+          </a>
+          <a onClick={handleSubmitButton} className="float-1 search">
+            <div className="pt-2 float-search">
+              {!spinnerState ? (
+                <Check2 viewBox="0 0 16 16" />
+              ) : (
+                <Spinner animation="border" variant="light" />
+              )}
+            </div>
+          </a>
+        </>
+      )}
     </form>
   );
 }

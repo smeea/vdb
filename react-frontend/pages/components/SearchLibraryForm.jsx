@@ -120,12 +120,12 @@ function SearchLibraryForm(props) {
 
   const handleShowResults = () => {
     props.setResults(preresults);
-  }
+  };
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/library`;
 
-    const state = { ...props.formState};
+    const state = { ...props.formState };
     state['text'] = text;
 
     const input = JSON.parse(JSON.stringify(state));
@@ -140,25 +140,19 @@ function SearchLibraryForm(props) {
 
     Object.keys(input).forEach(
       (k) =>
-      (input[k] == 'any' ||
-       !input[k] ||
-       Object.keys(input[k]).length === 0) &&
+        (input[k] == 'any' ||
+          !input[k] ||
+          Object.keys(input[k]).length === 0) &&
         delete input[k]
     );
 
-    const multiSelectFormsWithMain = [
-      'set',
-      'precon',
-      'blood',
-      'pool',
-    ];
+    const multiSelectFormsWithMain = ['set', 'precon', 'blood', 'pool'];
 
     multiSelectFormsWithMain.map((i) => {
       if (input[i][i] == 'any') {
-        delete input[i]
+        delete input[i];
       }
     });
-
 
     if (Object.keys(input).length === 0) {
       console.log('submit with empty forms');
@@ -180,8 +174,8 @@ function SearchLibraryForm(props) {
         .then((data) => {
           props.setShowSearch(false);
           const res = data.map((i) => {
-            return(props.cardBase[i])
-          })
+            return props.cardBase[i];
+          });
           if (!props.isMobile) {
             setPreresults(res);
           } else {
@@ -199,13 +193,16 @@ function SearchLibraryForm(props) {
 
   useEffect(() => {
     if (!props.isMobile) {
-      if (JSON.stringify(props.formState) == JSON.stringify(defaults) && (props.results)) {
+      if (
+        JSON.stringify(props.formState) == JSON.stringify(defaults) &&
+        props.results
+      ) {
         props.setResults(undefined);
       } else {
         launchRequest();
       }
     }
-  }, [props.formState])
+  }, [props.formState]);
 
   useEffect(() => {
     if (!props.isMobile) {
@@ -213,17 +210,17 @@ function SearchLibraryForm(props) {
         launchRequest();
       }
     }
-  }, [text])
+  }, [text]);
 
   useEffect(() => {
     if (!props.isMobile) {
       if (preresults.length < showLimit) {
-        props.setResults(preresults)
+        props.setResults(preresults);
       } else {
-        props.setResults(undefined)
+        props.setResults(undefined);
       }
     }
-  }, [preresults])
+  }, [preresults]);
 
   return (
     <form onSubmit={handleSubmitButton}>
@@ -287,27 +284,24 @@ function SearchLibraryForm(props) {
         onChange={handleSelectChange}
         target="library"
       />
-      {props.isMobile &&
-       <>
-         <a onClick={handleClearButton} className="float-2 clear">
-           <div className="pt-1 float-clear">
-             <X viewBox="0 0 16 16"/>
-           </div>
-         </a>
-         <a onClick={handleSubmitButton} className="float-1 search">
-           <div className="pt-2 float-search">
-             {!spinnerState ? (
-               <Check2 viewBox="0 0 16 16"/>
-             ) : (
-               <Spinner
-                 animation="border"
-                 variant="light"
-               />
-             )}
-           </div>
-         </a>
-       </>
-      }
+      {props.isMobile && (
+        <>
+          <a onClick={handleClearButton} className="float-2 clear">
+            <div className="pt-1 float-clear">
+              <X viewBox="0 0 16 16" />
+            </div>
+          </a>
+          <a onClick={handleSubmitButton} className="float-1 search">
+            <div className="pt-2 float-search">
+              {!spinnerState ? (
+                <Check2 viewBox="0 0 16 16" />
+              ) : (
+                <Spinner animation="border" variant="light" />
+              )}
+            </div>
+          </a>
+        </>
+      )}
     </form>
   );
 }

@@ -3,7 +3,7 @@ import React from 'react';
 function TwdSearchFormTraitMonoclan(props) {
   const trait = ['monoclan', 'Mono Clan (any if not selected)'];
 
-  return(
+  return (
     <div className="mr-2 custom-control custom-checkbox">
       <input
         name="traits"
@@ -14,7 +14,10 @@ function TwdSearchFormTraitMonoclan(props) {
         checked={props.value[trait[0]]}
         onChange={(e) => props.onChange(e)}
       />
-      <label htmlFor={`traits-${trait[0]}`} className="mr-2 custom-control-label">
+      <label
+        htmlFor={`traits-${trait[0]}`}
+        className="mr-2 custom-control-label"
+      >
         {trait[1]}
       </label>
     </div>

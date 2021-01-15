@@ -1,9 +1,8 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
-import { Button, Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import PersonFill from '../assets/images/icons/person-fill.svg';
 import InfoCircleFill from '../assets/images/icons/info-circle-fill.svg';
-import Search from '../assets/images/icons/search.svg';
 import ToggleOn from '../assets/images/icons/toggle-on.svg';
 import ToggleOff from '../assets/images/icons/toggle-off.svg';
 

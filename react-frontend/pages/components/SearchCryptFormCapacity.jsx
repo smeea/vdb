@@ -65,7 +65,9 @@ function SearchCryptFormCapacity(props) {
           options={morelessOptions}
           isSearchable={false}
           name="capacity-moreless"
-          value={morelessOptions.find((obj) => obj.value === props.value.moreless)}
+          value={morelessOptions.find(
+            (obj) => obj.value === props.value.moreless
+          )}
           onChange={props.onMorelessChange}
         />
       </Col>

@@ -53,7 +53,9 @@ function SearchLibraryFormPoolCost(props) {
             options={morelessOptions}
             isSearchable={false}
             name="pool-moreless"
-            value={morelessOptions.find((obj) => obj.value === props.value.moreless)}
+            value={morelessOptions.find(
+              (obj) => obj.value === props.value.moreless
+            )}
             onChange={props.onMorelessChange}
           />
         </Col>

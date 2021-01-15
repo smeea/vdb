@@ -53,7 +53,9 @@ function SearchLibraryFormBloodCost(props) {
             options={morelessOptions}
             isSearchable={false}
             name="blood-moreless"
-            value={morelessOptions.find((obj) => obj.value === props.value.moreless)}
+            value={morelessOptions.find(
+              (obj) => obj.value === props.value.moreless
+            )}
             onChange={props.onMorelessChange}
           />
         </Col>

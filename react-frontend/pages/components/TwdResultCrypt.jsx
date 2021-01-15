@@ -61,10 +61,7 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
     return (
       <tr key={index} className={resultTrClass}>
         <td className="quantity-no-buttons px-2">{card.q}</td>
-        <td
-          className="name"
-          onClick={() => setModalCard(card.c)}
-        >
+        <td className="name" onClick={() => setModalCard(card.c)}>
           <div className="px-1">
             <ResultCryptName
               card={card.c}
@@ -81,7 +78,9 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
   return (
     <>
       <div className="px-1">
-        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
+        <b>
+          Crypt [{cryptTotal}] - {cryptGroups}
+        </b>
       </div>
       <table width="100%">
         <tbody>{cardLines}</tbody>

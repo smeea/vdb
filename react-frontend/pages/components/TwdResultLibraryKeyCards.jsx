@@ -8,7 +8,6 @@ function TwdResultLibraryKeyCards({
   showImage,
   setShowImage,
 }) {
-
   const [modalCard, setModalCard] = useState(undefined);
 
   const cardtypeSorted = [
@@ -71,10 +70,7 @@ function TwdResultLibraryKeyCards({
     return (
       <tr key={index} className={resultTrClass}>
         <td className="quantity-no-buttons px-2">{card.q}</td>
-        <td
-          className="name"
-          onClick={() => setModalCard(card.c)}
-        >
+        <td className="name" onClick={() => setModalCard(card.c)}>
           <div className="px-1">
             <ResultLibraryName
               card={card.c}

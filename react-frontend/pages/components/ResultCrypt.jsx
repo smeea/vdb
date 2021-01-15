@@ -23,7 +23,6 @@ function ResultCrypt(props) {
     setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
   }, [props.cards, props.sortMethod]);
 
-
   return (
     <>
       {props.showTotal == true && props.cards.length > 0 && (
@@ -46,13 +45,13 @@ function ResultCrypt(props) {
         isWide={true}
         addMode={props.addMode}
       />
-      {props.isMobile &&
-       <a onClick={handleClear} className="float-1 clear">
-         <div className="pt-1 float-clear">
-           <X viewBox="0 0 16 16"/>
-         </div>
-       </a>
-      }
+      {props.isMobile && (
+        <a onClick={handleClear} className="float-1 clear">
+          <div className="pt-1 float-clear">
+            <X viewBox="0 0 16 16" />
+          </div>
+        </a>
+      )}
     </>
   );
 }

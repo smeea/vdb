@@ -3,11 +3,11 @@
   "discipline": "any",
   "blood": {
     "blood": "any",
-    "moreless": "le",
+    "moreless": "le"
   },
   "pool": {
     "pool": "any",
-    "moreless": "le",
+    "moreless": "le"
   },
   "clan": "any",
   "sect": "any",
@@ -28,17 +28,17 @@
     "black hand": false,
     "seraph": false,
     "anarch": false,
-    "infernal": false,
+    "infernal": false
   },
   "set": {
     "set": "any",
     "only in": false,
-    "first print": false,
+    "first print": false
   },
   "precon": {
     "precon": "any",
     "only in": false,
-    "first print": false,
+    "first print": false
   },
-  "artist": "any",
+  "artist": "any"
 }

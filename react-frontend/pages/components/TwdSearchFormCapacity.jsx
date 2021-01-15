@@ -7,7 +7,7 @@ function TwdSearchFormCapacity(props) {
     ['1,4', 'Low (Avg. < 4.0)'],
     ['4,7.5', 'Mid (Avg. 4.0 - 7.5)'],
     ['7.5,11', 'High (Avg. > 7.5)'],
-  ]
+  ];
 
   const options = [];
 

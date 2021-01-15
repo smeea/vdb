@@ -92,7 +92,9 @@ function DeckNewCryptCard(props) {
               <ResultCryptClan value={props.cardBase[card]['Clan']} />
             </div>
             <div className="d-flex flex-nowrap">
-              <ResultCryptDisciplines value={props.cardBase[card]['Disciplines']} />
+              <ResultCryptDisciplines
+                value={props.cardBase[card]['Disciplines']}
+              />
             </div>
           </div>
         </>

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { OverlayTrigger, Popover, Button } from 'react-bootstrap';
-import InfoCircle from '../../assets/images/icons/info-circle.svg';
+import React from 'react';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import DeckLibraryTable from './DeckLibraryTable.jsx';
 
@@ -100,10 +99,9 @@ function TwdResultLibraryByType(props) {
       <div className="px-1">
         <b>Library [{libraryTotal}]:</b>
       </div>
-       <table width="100%">
-         <tbody>{LibraryTypes}</tbody>
-       </table>
-      }
+      <table width="100%">
+        <tbody>{LibraryTypes}</tbody>
+      </table>
     </>
   );
 }

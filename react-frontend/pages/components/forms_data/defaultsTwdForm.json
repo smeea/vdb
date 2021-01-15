@@ -3,11 +3,11 @@
   "location": "",
   "players": {
     "from": "any",
-    "to": "any",
+    "to": "any"
   },
   "date": {
     "from": "any",
-    "to": "any",
+    "to": "any"
   },
   "crypt": {},
   "library": {},
@@ -24,10 +24,10 @@
     "action modifier": "any",
     "reaction": "any",
     "combat": "any",
-    "event": "any",
+    "event": "any"
   },
   "traits": {
     "star": false,
-    "monoclan": false,
-  },
+    "monoclan": false
+  }
 }

@@ -8,7 +8,10 @@ function TwdSearchFormButtons(props) {
   return (
     <div className="d-flex pb-2 justify-content-between">
       <div className="d-flex">
-        <Button variant="outline-secondary" onClick={() => props.getRandomTwd(10)}>
+        <Button
+          variant="outline-secondary"
+          onClick={() => props.getRandomTwd(10)}
+        >
           <Dice3 /> 10 Random
         </Button>
         <Button variant="outline-secondary" onClick={() => props.getNewTwd(50)}>
@@ -16,7 +19,11 @@ function TwdSearchFormButtons(props) {
         </Button>
       </div>
       <div>
-        <Button className="full-height" variant="outline-secondary" onClick={props.handleClearButton}>
+        <Button
+          className="full-height"
+          variant="outline-secondary"
+          onClick={props.handleClearButton}
+        >
           <X />
         </Button>
       </div>

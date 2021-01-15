@@ -67,14 +67,14 @@ function App(props) {
       .then((data) => {
         if (data.error === undefined) {
           if (JSON.stringify(data) != JSON.stringify(decks)) {
-            Object.keys(data).map(i => {
-              Object.keys(data[i].crypt).map(j => {
-                data[i].crypt[j].c = cryptCardBase[j]
-              })
-              Object.keys(data[i].library).map(j => {
-                data[i].library[j].c = libraryCardBase[j]
-              })
-            })
+            Object.keys(data).map((i) => {
+              Object.keys(data[i].crypt).map((j) => {
+                data[i].crypt[j].c = cryptCardBase[j];
+              });
+              Object.keys(data[i].library).map((j) => {
+                data[i].library[j].c = libraryCardBase[j];
+              });
+            });
             setDecks(data);
           }
         } else {
@@ -254,13 +254,13 @@ function App(props) {
 
   useEffect(() => {
     whoAmI();
-    (!cryptCardBase || !libraryCardBase) && getCardBase()
+    (!cryptCardBase || !libraryCardBase) && getCardBase();
   }, []);
 
   useEffect(() => {
     if (username) {
       whoAmI();
-      (cryptCardBase && libraryCardBase) && getDecks();
+      cryptCardBase && libraryCardBase && getDecks();
     } else {
       setDecks({});
     }

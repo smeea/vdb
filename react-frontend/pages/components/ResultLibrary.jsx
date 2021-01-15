@@ -42,13 +42,13 @@ function ResultLibrary(props) {
         isWide={true}
         addMode={props.addMode}
       />
-      {props.isMobile &&
-       <a onClick={handleClear} className="float-1 clear">
-         <div className="pt-1 float-clear">
-           <X viewBox="0 0 16 16"/>
-         </div>
-       </a>
-      }
+      {props.isMobile && (
+        <a onClick={handleClear} className="float-1 clear">
+          <div className="pt-1 float-clear">
+            <X viewBox="0 0 16 16" />
+          </div>
+        </a>
+      )}
     </>
   );
 }

@@ -39,7 +39,11 @@ function TwdResult(props) {
           return (
             <React.Fragment key={deck['deckid']}>
               <Row className="pt-3 px-0 mx-0">
-                <Col md={12} xl={3} className={props.isMobile ? "px-0" : "px-2"}>
+                <Col
+                  md={12}
+                  xl={3}
+                  className={props.isMobile ? 'px-0' : 'px-2'}
+                >
                   <TwdResultDescription
                     deck={deck}
                     getDecks={props.getDecks}
@@ -47,53 +51,53 @@ function TwdResult(props) {
                     isMobile={props.isMobile}
                   />
                 </Col>
-                {!props.isMobile ?
-                 <>
-                   <Col md={12} xl={3} className="px-2">
-                     <TwdResultCrypt
-                       crypt={deck['crypt']}
-                       isMobile={props.isMobile}
-                       showImage={props.showImage}
-                       setShowImage={props.setShowImage}
-                     />
-                   </Col>
-                   <Col md={12} xl={3} className="px-2">
-                     <TwdResultLibraryByType
-                       library={deck['library']}
-                       isMobile={props.isMobile}
-                       showImage={props.showImage}
-                       setShowImage={props.setShowImage}
-                     />
-                   </Col>
-                   <Col md={12} xl={3} className="px-2">
-                     <TwdResultLibraryKeyCards
-                       library={deck['library']}
-                       isMobile={props.isMobile}
-                       showImage={props.showImage}
-                       setShowImage={props.setShowImage}
-                     />
-                   </Col>
-                 </>
-                 :
-                 <>
-                   <Col xs={6} className="pl-0 pr-1">
-                     <TwdResultCrypt
-                       crypt={deck['crypt']}
-                       isMobile={props.isMobile}
-                       showImage={props.showImage}
-                       setShowImage={props.setShowImage}
-                     />
-                   </Col>
-                   <Col xs={6} className="pl-1 pr-0">
-                     <TwdResultLibraryKeyCards
-                       library={deck['library']}
-                       isMobile={props.isMobile}
-                       showImage={props.showImage}
-                       setShowImage={props.setShowImage}
-                     />
-                   </Col>
-                 </>
-                }
+                {!props.isMobile ? (
+                  <>
+                    <Col md={12} xl={3} className="px-2">
+                      <TwdResultCrypt
+                        crypt={deck['crypt']}
+                        isMobile={props.isMobile}
+                        showImage={props.showImage}
+                        setShowImage={props.setShowImage}
+                      />
+                    </Col>
+                    <Col md={12} xl={3} className="px-2">
+                      <TwdResultLibraryByType
+                        library={deck['library']}
+                        isMobile={props.isMobile}
+                        showImage={props.showImage}
+                        setShowImage={props.setShowImage}
+                      />
+                    </Col>
+                    <Col md={12} xl={3} className="px-2">
+                      <TwdResultLibraryKeyCards
+                        library={deck['library']}
+                        isMobile={props.isMobile}
+                        showImage={props.showImage}
+                        setShowImage={props.setShowImage}
+                      />
+                    </Col>
+                  </>
+                ) : (
+                  <>
+                    <Col xs={6} className="pl-0 pr-1">
+                      <TwdResultCrypt
+                        crypt={deck['crypt']}
+                        isMobile={props.isMobile}
+                        showImage={props.showImage}
+                        setShowImage={props.setShowImage}
+                      />
+                    </Col>
+                    <Col xs={6} className="pl-1 pr-0">
+                      <TwdResultLibraryKeyCards
+                        library={deck['library']}
+                        isMobile={props.isMobile}
+                        showImage={props.showImage}
+                        setShowImage={props.setShowImage}
+                      />
+                    </Col>
+                  </>
+                )}
                 <hr />
               </Row>
               <hr className="mx-0 thick" />
@@ -119,13 +123,13 @@ function TwdResult(props) {
           </Button>
         </div>
       )}
-      {props.isMobile &&
-       <a onClick={handleClear} className="float-1 clear">
-         <div className="pt-1 float-clear">
-           <X viewBox="0 0 16 16"/>
-         </div>
-       </a>
-      }
+      {props.isMobile && (
+        <a onClick={handleClear} className="float-1 clear">
+          <div className="pt-1 float-clear">
+            <X viewBox="0 0 16 16" />
+          </div>
+        </a>
+      )}
     </>
   );
 }

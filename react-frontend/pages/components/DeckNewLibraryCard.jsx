@@ -74,7 +74,9 @@ function DeckNewLibraryCard(props) {
             <div>
               {props.cardBase[card]['Discipline'] && (
                 <span className="px-1">
-                  <ResultLibraryDisciplines value={props.cardBase[card]['Discipline']} />
+                  <ResultLibraryDisciplines
+                    value={props.cardBase[card]['Discipline']}
+                  />
                 </span>
               )}
               {props.cardBase[card]['Clan'] && (
@@ -82,7 +84,8 @@ function DeckNewLibraryCard(props) {
                   <ResultLibraryClan value={props.cardBase[card]['Clan']} />
                 </span>
               )}
-              {(props.cardBase[card]['Blood Cost'] || props.cardBase[card]['Pool Cost']) && (
+              {(props.cardBase[card]['Blood Cost'] ||
+                props.cardBase[card]['Pool Cost']) && (
                 <span className="px-1">
                   <ResultLibraryCost
                     valuePool={props.cardBase[card]['Pool Cost']}

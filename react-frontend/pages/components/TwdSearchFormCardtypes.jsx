@@ -5,45 +5,85 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 
 function TwdSearchFormCardtypes(props) {
   const types = [
-    ['Master', [['1,20', 'Light <20%'],
-                ['20,30', 'Medium 20..30%'],
-                ['30,100', 'Heavy >30%']]
+    [
+      'Master',
+      [
+        ['1,20', 'Light <20%'],
+        ['20,30', 'Medium 20..30%'],
+        ['30,100', 'Heavy >30%'],
+      ],
     ],
-    ['Action', [['1,10', 'Light <10%'],
-                ['10,20', 'Medium 10..20%'],
-                ['20,100', 'Heavy >20%']]
+    [
+      'Action',
+      [
+        ['1,10', 'Light <10%'],
+        ['10,20', 'Medium 10..20%'],
+        ['20,100', 'Heavy >20%'],
+      ],
     ],
-    ['Political Action', [['1,10', 'Light <10%'],
-                          ['10,20', 'Medium 10..20%'],
-                          ['20,100', 'Heavy >20%']]
+    [
+      'Political Action',
+      [
+        ['1,10', 'Light <10%'],
+        ['10,20', 'Medium 10..20%'],
+        ['20,100', 'Heavy >20%'],
+      ],
     ],
-    ['Ally', [['1,5', 'Light <5%'],
-              ['5,15', 'Medium 5..15%'],
-              ['15,100', 'Heavy >15%']]
+    [
+      'Ally',
+      [
+        ['1,5', 'Light <5%'],
+        ['5,15', 'Medium 5..15%'],
+        ['15,100', 'Heavy >15%'],
+      ],
     ],
-    ['Equipment', [['1,5', 'Light <5%'],
-                   ['5,15', 'Medium 5..15%'],
-                   ['15,100', 'Heavy >15%']]
+    [
+      'Equipment',
+      [
+        ['1,5', 'Light <5%'],
+        ['5,15', 'Medium 5..15%'],
+        ['15,100', 'Heavy >15%'],
+      ],
     ],
-    ['Retainer', [['1,5', 'Light <5%'],
-                  ['5,15', 'Medium 5..15%'],
-                  ['15,100', 'Heavy >15%']]
+    [
+      'Retainer',
+      [
+        ['1,5', 'Light <5%'],
+        ['5,15', 'Medium 5..15%'],
+        ['15,100', 'Heavy >15%'],
+      ],
     ],
-    ['Action Modifier', [['1,10', 'Light <10%'],
-                         ['10,20', 'Medium 10..20%'],
-                         ['20,100', 'Heavy >20%']]
+    [
+      'Action Modifier',
+      [
+        ['1,10', 'Light <10%'],
+        ['10,20', 'Medium 10..20%'],
+        ['20,100', 'Heavy >20%'],
+      ],
     ],
-    ['Reaction', [['1,10', 'Light <10%'],
-                  ['10,25', 'Medium 10..25%'],
-                  ['25,100', 'Heavy >25%']]
+    [
+      'Reaction',
+      [
+        ['1,10', 'Light <10%'],
+        ['10,25', 'Medium 10..25%'],
+        ['25,100', 'Heavy >25%'],
+      ],
     ],
-    ['Combat', [['1,15', 'Light <15%'],
-                ['15,30', 'Medium 15..30%'],
-                ['30,100', 'Heavy >30%']]
+    [
+      'Combat',
+      [
+        ['1,15', 'Light <15%'],
+        ['15,30', 'Medium 15..30%'],
+        ['30,100', 'Heavy >30%'],
+      ],
     ],
-    ['Event', [['1,5', 'Light <5%'],
-               ['5,10', 'Medium 5..10%'],
-               ['10,100', 'Heavy >10%']]
+    [
+      'Event',
+      [
+        ['1,5', 'Light <5%'],
+        ['5,10', 'Medium 5..10%'],
+        ['10,100', 'Heavy >10%'],
+      ],
     ],
   ];
 
@@ -61,7 +101,7 @@ function TwdSearchFormCardtypes(props) {
             <span className="margin-half" />
             ANY
           </>
-        )
+        ),
       },
     ];
 
@@ -69,12 +109,12 @@ function TwdSearchFormCardtypes(props) {
       options.push({
         value: j[0],
         name: i[0].toLowerCase(),
-        label: <>{j[1]}</>
+        label: <>{j[1]}</>,
       });
     });
 
     if (counter < 5) {
-      counter += 1
+      counter += 1;
       formsLeft.push(
         <Row className="py-1 mx-0 align-items-center" key={index}>
           <Col xs={2} className="d-flex pl-2 justify-content-center">
@@ -87,7 +127,9 @@ function TwdSearchFormCardtypes(props) {
               options={options}
               isSearchable={false}
               name={i[0]}
-              value={options.find((obj) => obj.value === props.value[i[0].toLowerCase()])}
+              value={options.find(
+                (obj) => obj.value === props.value[i[0].toLowerCase()]
+              )}
               onChange={props.onChange}
             />
           </Col>
@@ -106,7 +148,9 @@ function TwdSearchFormCardtypes(props) {
               options={options}
               isSearchable={false}
               name={i[0]}
-              value={options.find((obj) => obj.value === props.value[i[0].toLowerCase()])}
+              value={options.find(
+                (obj) => obj.value === props.value[i[0].toLowerCase()]
+              )}
               onChange={props.onChange}
             />
           </Col>
@@ -115,7 +159,7 @@ function TwdSearchFormCardtypes(props) {
     }
   });
 
-  return(
+  return (
     <>
       <Row className="mx-0">
         <Col xs={6} className="d-inline pl-0 pr-2">
