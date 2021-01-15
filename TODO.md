@@ -6,7 +6,6 @@
 * Discipline search result width (narrow results)
 
 # FEATURES
-* TWD mobile features
 * Copy image link to card results
 
 # MAYBE LATER FEATURES

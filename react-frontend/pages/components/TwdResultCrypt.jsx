@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ResultCryptName from './ResultCryptName.jsx';
+import ResultCryptModal from './ResultCryptModal.jsx';
 
 function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
   let resultTrClass = 'library-result-even';
+
+  const [modalCard, setModalCard] = useState(undefined);
 
   let cryptGroupMin;
   let cryptGroupMax;
@@ -60,7 +63,7 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
         <td className="quantity-no-buttons px-2">{card.q}</td>
         <td
           className="name"
-          /* onClick={() => setShowModal(card.c)} */
+          onClick={() => setModalCard(card.c)}
         >
           <div className="px-1">
             <ResultCryptName
@@ -77,14 +80,21 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
 
   return (
     <>
-      <div>
-        <b>
-          Crypt [{cryptTotal}] - {cryptGroups}
-        </b>
+      <div className="px-1">
+        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
       </div>
       <table width="100%">
         <tbody>{cardLines}</tbody>
       </table>
+      {isMobile && modalCard && (
+        <ResultCryptModal
+          show={modalCard ? true : false}
+          card={modalCard}
+          showImage={showImage}
+          setShowImage={setShowImage}
+          handleClose={() => setModalCard(false)}
+        />
+      )}
     </>
   );
 }

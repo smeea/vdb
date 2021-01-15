@@ -1,9 +1,10 @@
-import React from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { OverlayTrigger, Popover, Button } from 'react-bootstrap';
+import InfoCircle from '../../assets/images/icons/info-circle.svg';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import DeckLibraryTable from './DeckLibraryTable.jsx';
 
-function TwdResultLibraryByType({ library, isMobile }) {
+function TwdResultLibraryByType(props) {
   const cardtypeSorted = [
     'Master',
     'Conviction',
@@ -32,20 +33,20 @@ function TwdResultLibraryByType({ library, isMobile }) {
   const libraryByType = {};
   const libraryByTypeTotal = {};
 
-  Object.keys(library).map((card) => {
-    libraryTotal += library[card].q;
-    const cardtype = library[card].c['Type'];
+  Object.keys(props.library).map((card) => {
+    libraryTotal += props.library[card].q;
+    const cardtype = props.library[card].c['Type'];
     if (libraryByType[cardtype] === undefined) {
       libraryByType[cardtype] = [];
       libraryByTypeTotal[cardtype] = 0;
     }
-    libraryByType[cardtype].push(library[card]);
-    libraryByTypeTotal[cardtype] += library[card].q;
+    libraryByType[cardtype].push(props.library[card]);
+    libraryByTypeTotal[cardtype] += props.library[card].q;
     if (
       cardtype == 'Master' &&
-      library[card].c['Card Text'].toLowerCase().includes('trifle')
+      props.library[card].c['Card Text'].toLowerCase().includes('trifle')
     ) {
-      trifleTotal += library[card].q;
+      trifleTotal += props.library[card].q;
     }
   });
 
@@ -83,7 +84,7 @@ function TwdResultLibraryByType({ library, isMobile }) {
                   cardtype={cardtype}
                   total={libraryByTypeTotal[cardtype]}
                   trifleTotal={cardtype == 'Master' && trifleTotal}
-                  isMobile={isMobile}
+                  isMobile={props.isMobile}
                   isAuthor={false}
                 />
               </div>
@@ -96,12 +97,13 @@ function TwdResultLibraryByType({ library, isMobile }) {
 
   return (
     <>
-      <div>
+      <div className="px-1">
         <b>Library [{libraryTotal}]:</b>
       </div>
-      <table width="100%">
-        <tbody>{LibraryTypes}</tbody>
-      </table>
+       <table width="100%">
+         <tbody>{LibraryTypes}</tbody>
+       </table>
+      }
     </>
   );
 }

@@ -1,6 +1,6 @@
-import React from 'react';
-// import { OverlayTrigger, Popover } from 'react-bootstrap';
+import React, { useState } from 'react';
 import ResultLibraryName from './ResultLibraryName.jsx';
+import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function TwdResultLibraryKeyCards({
   library,
@@ -8,6 +8,9 @@ function TwdResultLibraryKeyCards({
   showImage,
   setShowImage,
 }) {
+
+  const [modalCard, setModalCard] = useState(undefined);
+
   const cardtypeSorted = [
     'Master',
     'Conviction',
@@ -70,7 +73,7 @@ function TwdResultLibraryKeyCards({
         <td className="quantity-no-buttons px-2">{card.q}</td>
         <td
           className="name"
-          /* onClick={() => setShowModal(card.c)} */
+          onClick={() => setModalCard(card.c)}
         >
           <div className="px-1">
             <ResultLibraryName
@@ -87,7 +90,7 @@ function TwdResultLibraryKeyCards({
 
   return (
     <>
-      <div>
+      <div className="px-1">
         <b>Key Cards (4+ pcs):</b>
       </div>
       <div className="library">
@@ -95,6 +98,15 @@ function TwdResultLibraryKeyCards({
           <tbody>{cardLines}</tbody>
         </table>
       </div>
+      {isMobile && modalCard && (
+        <ResultLibraryModal
+          show={modalCard ? true : false}
+          card={modalCard}
+          showImage={showImage}
+          setShowImage={setShowImage}
+          handleClose={() => setModalCard(false)}
+        />
+      )}
     </>
   );
 }
