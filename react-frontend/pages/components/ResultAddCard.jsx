@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 function ResultAddCard(props) {
-  const handleButton = () => props.deckCardAdd(props.card, props.inDeck);
+  const handleButton = () => !props.inDeck ? props.deckCardAdd(props.card.Id) : console.log("already in deck");
 
   return (
     <Button

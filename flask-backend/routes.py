@@ -162,11 +162,23 @@ def listDecks():
             crypt = {}
             library = {}
             for k, v in deck.cards.items():
+                try:
+                    k = int(k)
+
+                except:
+                    merged_cards = deck.cards.copy()
+                    del merged_cards[k]
+                    deck.cards = merged_cards.copy()
+                    break
+
                 k = int(k)
+
                 if k > 200000:
                     crypt[k] = {'q': v}
                 elif k < 200000:
                     library[k] = {'q': v}
+
+            db.session.commit()
 
             decks[deck.deckid] = {
                 'name': deck.name,
@@ -178,6 +190,7 @@ def listDecks():
                 'deckid': deck.deckid,
                 'timestamp': deck.timestamp,
             }
+
 
         return jsonify(decks)
 
