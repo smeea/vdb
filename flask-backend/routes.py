@@ -162,14 +162,14 @@ def listDecks():
             crypt = {}
             library = {}
             for k, v in deck.cards.items():
-                try:
-                    k = int(k)
+                # try:
+                #     k = int(k)
 
-                except:
-                    merged_cards = deck.cards.copy()
-                    del merged_cards[k]
-                    deck.cards = merged_cards.copy()
-                    break
+                # except:
+                #     merged_cards = deck.cards.copy()
+                #     del merged_cards[k]
+                #     deck.cards = merged_cards.copy()
+                #     break
 
                 k = int(k)
 
@@ -178,7 +178,7 @@ def listDecks():
                 elif k < 200000:
                     library[k] = {'q': v}
 
-            db.session.commit()
+            # db.session.commit()
 
             decks[deck.deckid] = {
                 'name': deck.name,
