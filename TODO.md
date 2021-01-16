@@ -4,7 +4,6 @@
 * Draw to close buttons on mobile
 * TWD location/winner form reset
 * Discipline search result width (narrow results)
-* Bang Nakh image
 
 # FEATURES
 * Copy image link to card results
