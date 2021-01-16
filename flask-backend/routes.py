@@ -355,14 +355,14 @@ def removeDeck():
         return jsonify({'Not logged in.'})
 
 
-@app.route('/api/cards/<int:card_id>', methods=['GET'])
-def showCard(card_id):
-    if card_id >= 200000:
-        card = get_crypt_by_id(card_id)
-        return jsonify(card)
-    elif card_id < 200000:
-        card = get_library_by_id(card_id)
-        return jsonify(card)
+# @app.route('/api/cards/<int:card_id>', methods=['GET'])
+# def showCard(card_id):
+#     if card_id >= 200000:
+#         card = get_crypt_by_id(card_id)
+#         return jsonify(card)
+#     elif card_id < 200000:
+#         card = get_library_by_id(card_id)
+#         return jsonify(card)
 
 
 @app.route('/api/register', methods=['POST'])
@@ -524,10 +524,10 @@ def searchLibraryRoute():
         abort(400)
 
 
-@app.route('/api/cardbase', methods=['GET'])
-def getCardBase():
-    with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_library.json", "r") as library_file:
-        crypt = json.load(crypt_file)
-        library = json.load(library_file)
+# @app.route('/api/cardbase', methods=['GET'])
+# def getCardBase():
+#     with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_library.json", "r") as library_file:
+#         crypt = json.load(crypt_file)
+#         library = json.load(library_file)
 
-        return jsonify({'crypt': crypt, 'library': library})
+#         return jsonify({'crypt': crypt, 'library': library})
