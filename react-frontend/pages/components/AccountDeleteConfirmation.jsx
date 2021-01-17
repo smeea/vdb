@@ -32,7 +32,10 @@ function AccountDeleteConfirmation(props) {
       };
 
       fetch(url, options)
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) throw Error(response.status)
+          return response.json()
+        })
         .then((data) => {
           props.setShow(false);
           props.setUsername(undefined);

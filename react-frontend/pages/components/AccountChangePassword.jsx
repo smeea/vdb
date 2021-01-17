@@ -58,7 +58,10 @@ function AccountChangePassword(props) {
       const fetchPromise = fetch(url, options);
 
       fetchPromise
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) throw Error(response.status)
+          return response.json()
+        })
         .then((data) => {
           setButtonState(true);
           setTimeout(() => {
