@@ -208,13 +208,13 @@ function AccountLogin(props) {
         </Overlay>
       </Form>
       {!props.isMobile ? (
-        <OverlayTooltip delay={{ show: 0, hide: 1500 }} placement="bottom" text={passwordTooltipText}>
-          <div className="d-flex justify-content-center small pl-4">
+        <div className="d-flex justify-content-center small pl-4">
+          <OverlayTooltip delay={{ show: 0, hide: 1500 }} placement="bottom" text={passwordTooltipText}>
             <a href="#">
               <i>Forgot password?</i>
             </a>
-          </div>
-        </OverlayTooltip>
+          </OverlayTooltip>
+        </div>
       ) : (
         <div onClick={() => setShowModal(true)} className="d-flex justify-content-center small pl-4">
           <a href="#">
