@@ -16,7 +16,7 @@ function DeckChangeName(props) {
       setButtonState(true);
       setTimeout(() => {
         setButtonState(false);
-      }, 500);
+      }, 1000);
     } else {
       console.log('Error: submit with empty form');
     }

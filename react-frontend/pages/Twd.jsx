@@ -17,7 +17,7 @@ function Twd(props) {
               : 'col-hide px-0 lx-lg-4'
           }
         >
-          {props.results != undefined && props.results != null && (
+          {props.results && (
             <TwdResult
               cryptCardBase={props.cryptCardBase}
               libraryCardBase={props.libraryCardBase}
@@ -32,11 +32,6 @@ function Twd(props) {
               setActiveDeck={props.setActiveDeck}
             />
           )}
-          {props.results === null && (
-            <AlertMessage className="error-message">
-              <b>NO DECKS FOUND</b>
-            </AlertMessage>
-          )}
         </Col>
         <Col
           md={12}
@@ -47,11 +42,6 @@ function Twd(props) {
               : 'col-hide px-0'
           }
         >
-          {props.isMobile && props.results === null && (
-            <AlertMessage className="error-message">
-              <b>NO DECKS FOUND</b>
-            </AlertMessage>
-          )}
           <TwdSearchForm
             setShowSearch={props.setShowSearch}
             setResults={props.setResults}

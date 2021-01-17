@@ -1,5 +1,4 @@
 # FIX
-* Nice error messages output
 * Crypt redraw on sharedDeck clone
 * Draw to close buttons on mobile
 * TWD location/winner form reset
@@ -7,6 +6,7 @@
 
 # FEATURES
 * Copy image link to card results
+* TWD Deck name filter
 
 # MAYBE LATER FEATURES
 * Precon decks
@@ -32,3 +32,4 @@
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
 * Flask-Restful
+* Check types on backend

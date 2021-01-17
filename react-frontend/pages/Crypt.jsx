@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import EyeFill from '../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
-import AlertMessage from './components/AlertMessage.jsx';
 import ResultCrypt from './components/ResultCrypt.jsx';
 import SearchCryptForm from './components/SearchCryptForm.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
@@ -75,7 +74,7 @@ function Crypt(props) {
               : 'col-hide px-0 lx-lg-4'
           }
         >
-          {props.results != undefined && props.results != null && (
+          {props.results && (
             <ResultCrypt
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -94,15 +93,11 @@ function Crypt(props) {
               isMobile={props.isMobile}
               isWide={props.isWide}
               addMode={props.addMode}
+              setAddMode={props.setAddMode}
               showSearch={props.showSearch}
               setShowSearch={props.setShowSearch}
               setResults={props.setResults}
             />
-          )}
-          {props.results === null && (
-            <AlertMessage className="error-message">
-              <b>NO CARDS FOUND</b>
-            </AlertMessage>
           )}
         </Col>
         <Col
@@ -114,11 +109,6 @@ function Crypt(props) {
               : 'col-hide px-0'
           }
         >
-          {props.isMobile && props.results === null && (
-            <AlertMessage className="error-message">
-              <b>NO CARDS FOUND</b>
-            </AlertMessage>
-          )}
           <SearchCryptForm
             results={props.results}
             setResults={props.setResults}

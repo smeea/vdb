@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Form,
   FormControl,
   InputGroup,
   Button,
   Spinner,
+  Overlay,
 } from 'react-bootstrap';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ModalTooltip from './ModalTooltip.jsx';
@@ -26,6 +27,8 @@ function AccountLogin(props) {
   const [emptyUsername, setEmptyUsername] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
+  const refUsername = useRef(null);
+  const refPassword = useRef(null);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -65,15 +68,12 @@ function AccountLogin(props) {
 
       fetchPromise
         .then((response) => {
-          if (response.ok) {
-            response.json();
-          } else {
-            throw Error(`Error: ${response.status}`);
-          }
+          if (!response.ok) throw Error(response.status)
+          return response.json()
         })
         .then((data) => {
           props.setUsername(state.username);
-          // setSpinnerState(false);
+          setSpinnerState(false);
         })
         .catch((error) => {
           setPasswordError(true);
@@ -85,8 +85,8 @@ function AccountLogin(props) {
           console.log(error);
         });
     } else {
-      !state.username ? setEmptyUsername(true) : setEmptyUsername(false);
-      !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
+      setEmptyUsername(!state.username);
+      setEmptyPassword(!state.password);
     }
   };
 
@@ -99,8 +99,7 @@ function AccountLogin(props) {
     <>
       We do not have automatic password restoration yet.
       <br />
-      Please <a href="mailto:smeea@riseup.net">send me an email</a> with your
-      account username and I will generate temporary password for you.
+    Please <a href="mailto:smeea@riseup.net?subject=VDB - Pasword reset&body=Please reset password for VDB account put-your-account-name-here.">send me an email</a> with your account username and I will generate temporary password for you.
     </>
   );
 
@@ -139,6 +138,7 @@ function AccountLogin(props) {
             value={state.username}
             onChange={handleChange}
             autoFocus={true}
+            ref={refUsername}
           />
           <FormControl
             placeholder="Password"
@@ -146,6 +146,7 @@ function AccountLogin(props) {
             name="password"
             value={state.password}
             onChange={handleChange}
+            ref={refPassword}
           />
           <InputGroup.Append>
             <Button
@@ -172,24 +173,57 @@ function AccountLogin(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        {emptyUsername && <span className="form-error">Enter username</span>}
-        {passwordError && <span className="form-error">Wrong password</span>}
-        {emptyPassword && <span className="form-error">Enter password</span>}
+        <Overlay
+          show={emptyUsername}
+          target={refUsername.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>ENTER USERNAME</b>
+            </div>
+          )}
+        </Overlay>
+        <Overlay
+          show={passwordError}
+          target={refPassword.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>WRONG PASSWORD</b>
+            </div>
+          )}
+        </Overlay>
+        <Overlay
+          show={emptyPassword}
+          target={refPassword.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>ENTER PASSWORD</b>
+            </div>
+          )}
+        </Overlay>
       </Form>
       {!props.isMobile ? (
-        <OverlayTooltip text={passwordTooltipText}>
-          <span className="small">
+        <div className="d-flex justify-content-center small pl-4">
+          <OverlayTooltip delay={{ show: 0, hide: 1500 }} placement="bottom" text={passwordTooltipText}>
             <a href="#">
               <i>Forgot password?</i>
             </a>
-          </span>
-        </OverlayTooltip>
+          </OverlayTooltip>
+        </div>
       ) : (
-        <span onClick={() => setShowModal(true)} className="small">
+        <div onClick={() => setShowModal(true)} className="d-flex justify-content-center small pl-4">
           <a href="#">
             <i>Forgot password?</i>
           </a>
-        </span>
+        </div>
       )}
       {showModal && (
         <ModalTooltip

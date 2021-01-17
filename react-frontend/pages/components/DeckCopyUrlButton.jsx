@@ -11,7 +11,7 @@ function DeckCopyUrlButton(props) {
     setTimeout(() => {
       setState(false);
       props.setShowButtons(false);
-    }, 500);
+    }, 1000);
   };
 
   const [state, setState] = useState(false);

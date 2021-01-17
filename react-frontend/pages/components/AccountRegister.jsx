@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Form,
   FormControl,
   InputGroup,
   Button,
   Spinner,
+  Overlay,
 } from 'react-bootstrap';
 import PersonPlusFill from '../../assets/images/icons/person-plus-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
@@ -23,6 +24,8 @@ function AccountRegister(props) {
   const [emptyUsername, setEmptyUsername] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
+  const refUsername = useRef(null);
+  const refPassword = useRef(null);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -60,7 +63,10 @@ function AccountRegister(props) {
       const fetchPromise = fetch(url, options);
 
       fetchPromise
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) throw Error(response.status)
+          return response.json()
+        })
         .then((data) => {
           props.whoAmI();
           setSpinnerState(false);
@@ -75,8 +81,8 @@ function AccountRegister(props) {
           console.log(error);
         });
     } else {
-      !state.username ? setEmptyUsername(true) : setEmptyUsername(false);
-      !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
+      setEmptyUsername(!state.username);
+      setEmptyPassword(!state.password);
     }
   };
 
@@ -99,6 +105,7 @@ function AccountRegister(props) {
             name="username"
             value={state.username}
             onChange={handleChange}
+            ref={refUsername}
           />
           <FormControl
             placeholder="Password"
@@ -106,6 +113,7 @@ function AccountRegister(props) {
             name="password"
             value={state.password}
             onChange={handleChange}
+            ref={refPassword}
           />
           <InputGroup.Append>
             <Button
@@ -132,11 +140,42 @@ function AccountRegister(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        {emptyUsername && <span className="form-error">Enter username</span>}
-        {usernameError && (
-          <span className="form-error">This username is taken</span>
-        )}
-        {emptyPassword && <span className="form-error">Enter password</span>}
+        <Overlay
+          show={emptyUsername}
+          target={refUsername.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>ENTER USERNAME</b>
+            </div>
+          )}
+        </Overlay>
+        <Overlay
+          show={usernameError}
+          target={refUsername.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>USER ALREADY EXIST</b>
+            </div>
+          )}
+        </Overlay>
+        <Overlay
+          show={emptyPassword}
+          target={refPassword.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>ENTER PASSWORD</b>
+            </div>
+          )}
+        </Overlay>
       </Form>
     </>
   );

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Spinner } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
+import { Spinner, Overlay } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
@@ -19,6 +19,9 @@ function SearchLibraryForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState({});
   const showLimit = 200;
+
+  const [showError, setShowError] = useState(false);
+  const refError = useRef(null);
 
   const defaults = {
     type: 'any',
@@ -111,6 +114,7 @@ function SearchLibraryForm(props) {
     props.setFormState(defaults);
     props.setResults(undefined);
     setPreresults({});
+    setShowError(false);
   };
 
   const handleSubmitButton = (event) => {
@@ -167,6 +171,7 @@ function SearchLibraryForm(props) {
         body: JSON.stringify(input),
       };
 
+      setShowError(false);
       setSpinnerState(true);
 
       fetch(url, options)
@@ -184,7 +189,9 @@ function SearchLibraryForm(props) {
           setSpinnerState(false);
         })
         .catch((error) => {
-          props.setResults(null);
+          props.setResults([]);
+          setPreresults([]);
+          setShowError(true);
           setSpinnerState(false);
           console.log(error);
         });
@@ -286,12 +293,12 @@ function SearchLibraryForm(props) {
       />
       {props.isMobile && (
         <>
-          <a onClick={handleClearButton} className="float-2 clear">
+          <div onClick={handleClearButton} className="float-right-middle clear">
             <div className="pt-1 float-clear">
               <X viewBox="0 0 16 16" />
             </div>
-          </a>
-          <a onClick={handleSubmitButton} className="float-1 search">
+          </div>
+          <div ref={refError} onClick={handleSubmitButton} className="float-right-bottom search">
             <div className="pt-2 float-search">
               {!spinnerState ? (
                 <Check2 viewBox="0 0 16 16" />
@@ -299,7 +306,19 @@ function SearchLibraryForm(props) {
                 <Spinner animation="border" variant="light" />
               )}
             </div>
-          </a>
+            <Overlay
+              show={showError}
+              target={refError.current}
+              placement="left"
+              transition={false}
+            >
+              {({ placement, arrowProps, show: _show, popper, ...props }) => (
+                <div className="error-tooltip" {...props}>
+                  <b>NO CARDS FOUND</b>
+                </div>
+              )}
+            </Overlay>
+          </div>
         </>
       )}
     </form>
