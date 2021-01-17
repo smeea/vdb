@@ -7,7 +7,6 @@
 
 # FEATURES
 * Copy image link to card results
-* Float search to error empty form
 * TWD Deck name filter
 
 # MAYBE LATER FEATURES

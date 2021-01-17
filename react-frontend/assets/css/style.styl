@@ -11,6 +11,12 @@ h5, .h5, h6, .h6
 .error-message
   background: #f090a0
 
+.error-tooltip
+  background: #f090a0
+  border-radius: 5px
+  padding: 0.25em 0.5em
+  z-index: 1
+
 .info-message
   background: #d0d0ea
 
@@ -365,7 +371,7 @@ span.margin-full
   width: 40px
   textAlign: center
 
-a.float-1
+div.float-right-bottom
   position: fixed
   width: 48px
   height: 48px
@@ -376,7 +382,7 @@ a.float-1
   text-align: center
   z-index: 1
 
-a.float-2
+div.float-right-middle
   position:fixed
   width: 48px
   height: 48px
@@ -387,16 +393,41 @@ a.float-2
   text-align: center
   z-index: 1
 
-a.clear
-  background-color: #A06060
+div.float-left-bottom
+  position:fixed
+  width: 48px
+  height: 48px
+  bottom: 15px
+  left: 15px
+  color: white
+  border-radius: 25px
+  text-align: center
+  z-index: 1
 
-a.search
+div.clear
+  background-color: #A06060
+  opacity: 75%
+
+div.search
   background-color: #709070
+  opacity: 75%
+
+div.add-on
+  background-color: #A0A0A0
+  opacity: 75%
+
+div.add-off
+  background-color: #707070
+  opacity: 75%
 
 div.float-search svg
   width: 80%
   height: auto
 
 div.float-clear svg
+  width: 90%
+  height: auto
+
+div.float-add svg
   width: 90%
   height: auto

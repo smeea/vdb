@@ -409,6 +409,7 @@ function App(props) {
                 results={cryptResults}
                 setResults={setCryptResults}
                 addMode={addMode}
+                setAddMode={setAddMode}
                 formState={cryptFormState}
                 setFormState={setCryptFormState}
                 cryptCardBase={cryptCardBase}
@@ -435,6 +436,7 @@ function App(props) {
                 results={libraryResults}
                 setResults={setLibraryResults}
                 addMode={addMode}
+                setAddMode={setAddMode}
                 formState={libraryFormState}
                 setFormState={setLibraryFormState}
                 cryptCardBase={cryptCardBase}
