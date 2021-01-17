@@ -35,8 +35,8 @@ function AccountChangePassword(props) {
     setPasswordError(false);
 
     if (state.password && state.newPassword == state.confirmPassword) {
-      setEmptyEmail(false);
       setEmptyPassword(false);
+      setEmptyNewPassword(false);
       setPasswordConfirmError(false);
 
       const url = `${process.env.API_URL}account`;
