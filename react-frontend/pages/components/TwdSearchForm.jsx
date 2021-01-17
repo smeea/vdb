@@ -123,9 +123,6 @@ function TwdSearchForm(props) {
   };
 
   const launchRequest = () => {
-    setShowError(false);
-    setSpinnerState(true);
-
     const url = `${process.env.API_URL}search/twd`;
 
     const state = { ...props.formState };
@@ -170,6 +167,7 @@ function TwdSearchForm(props) {
         body: JSON.stringify(input),
       };
 
+      setShowError(false);
       setSpinnerState(true);
 
       fetch(url, options)

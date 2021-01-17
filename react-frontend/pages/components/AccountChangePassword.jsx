@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import React, { useState, useRef } from 'react';
+import { Form, FormControl, InputGroup, Button, Overlay } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import LockFill from '../../assets/images/icons/lock-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
@@ -12,10 +12,14 @@ function AccountChangePassword(props) {
     confirmPassword: '',
   });
 
-  const [emptyNewPassword, setEmptyNewPassword] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
+  const [emptyNewPassword, setEmptyNewPassword] = useState(false);
   const [passwordConfirmError, setPasswordConfirmError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const refOldPassword = useRef(null);
+  const refNewPassword = useRef(null);
+  const refConfirmPassword = useRef(null);
+
   const [hidePassword, setHidePassword] = useState(true);
   const [buttonState, setButtonState] = useState(false);
 
@@ -30,9 +34,8 @@ function AccountChangePassword(props) {
   const changePassword = () => {
     setPasswordError(false);
 
-    if (state.confirmPassword != state.newPassword || !state.confirmPassword) {
-      setPasswordConfirmError(true);
-    } else if (state.newPassword && state.password) {
+    if (state.password && state.newPassword == state.confirmPassword) {
+      setEmptyEmail(false);
       setEmptyPassword(false);
       setPasswordConfirmError(false);
 
@@ -55,18 +58,17 @@ function AccountChangePassword(props) {
       const fetchPromise = fetch(url, options);
 
       fetchPromise
-        .then((response) => {
-          if (response.ok) {
-            response.json();
-          } else {
-            throw Error(`Error: ${response.status}`);
-          }
-        })
+        .then((response) => response.json())
         .then((data) => {
           setButtonState(true);
           setTimeout(() => {
             setButtonState(false);
-          }, 500);
+          }, 1000);
+          setState({
+            password: '',
+            newPassword: '',
+            confirmPassword: '',
+          });
           console.log('changed password');
         })
         .catch((error) => {
@@ -78,10 +80,13 @@ function AccountChangePassword(props) {
           console.log(error);
         });
     } else {
-      !state.newPassword
-        ? setEmptyNewPassword(true)
-        : setEmptyNewPassword(false);
-      !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
+      setEmptyPassword(!state.password)
+      setEmptyNewPassword(!state.newPassword)
+      if (state.confirmPassword != state.newPassword || !state.confirmPassword) {
+        setPasswordConfirmError(true);
+      } else {
+        setPasswordConfirmError(false);
+      }
     }
   };
 
@@ -104,6 +109,7 @@ function AccountChangePassword(props) {
             name="password"
             value={state.password}
             onChange={handleChange}
+            ref={refOldPassword}
           />
           <FormControl
             placeholder="New password"
@@ -111,6 +117,7 @@ function AccountChangePassword(props) {
             name="newPassword"
             value={state.newPassword}
             onChange={handleChange}
+            ref={refNewPassword}
           />
           <FormControl
             placeholder="Confirm password"
@@ -118,6 +125,7 @@ function AccountChangePassword(props) {
             name="confirmPassword"
             value={state.confirmPassword}
             onChange={handleChange}
+            ref={refConfirmPassword}
           />
           <InputGroup.Append>
             <Button
@@ -138,18 +146,54 @@ function AccountChangePassword(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        {passwordConfirmError && (
-          <span className="form-error px-2">Confirm new password</span>
-        )}
-        {emptyPassword && (
-          <span className="form-error px-2">Enter old password</span>
-        )}
-        {emptyNewPassword && (
-          <span className="form-error px-2">Enter new password</span>
-        )}
-        {passwordError && (
-          <span className="form-error px-2">Wrong password</span>
-        )}
+        <Overlay
+          show={emptyPassword}
+          target={refOldPassword.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>ENTER OLD PASSWORD</b>
+            </div>
+          )}
+        </Overlay>
+        <Overlay
+          show={passwordError}
+          target={refOldPassword.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>WRONG OLD PASSWORD</b>
+            </div>
+          )}
+        </Overlay>
+        <Overlay
+          show={emptyNewPassword}
+          target={refNewPassword.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>ENTER NEW PASSWORD</b>
+            </div>
+          )}
+        </Overlay>
+        <Overlay
+          show={passwordConfirmError}
+          target={refConfirmPassword.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>NEW PASSWORD IS DIFFERENT</b>
+            </div>
+          )}
+        </Overlay>
       </Form>
     </>
   );

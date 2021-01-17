@@ -200,7 +200,6 @@ function SearchCryptForm(props) {
   };
 
   const launchRequest = () => {
-    setShowError(false);
     const url = `${process.env.API_URL}search/crypt`;
 
     const state = { ...props.formState };
@@ -248,6 +247,7 @@ function SearchCryptForm(props) {
         body: JSON.stringify(input),
       };
 
+      setShowError(false);
       setSpinnerState(true);
 
       fetch(url, options)
@@ -266,6 +266,7 @@ function SearchCryptForm(props) {
         })
         .catch((error) => {
           props.setResults([]);
+          setPreresults([]);
           setShowError(true);
           setSpinnerState(false);
           console.log(error);

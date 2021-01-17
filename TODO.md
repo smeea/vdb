@@ -1,5 +1,4 @@
 # FIX
-* Nice error messages output
 * Crypt redraw on sharedDeck clone
 * Draw to close buttons on mobile
 * TWD location/winner form reset

@@ -127,7 +127,6 @@ function SearchLibraryForm(props) {
   };
 
   const launchRequest = () => {
-    setShowError(false);
     const url = `${process.env.API_URL}search/library`;
 
     const state = { ...props.formState };
@@ -172,6 +171,7 @@ function SearchLibraryForm(props) {
         body: JSON.stringify(input),
       };
 
+      setShowError(false);
       setSpinnerState(true);
 
       fetch(url, options)
@@ -190,6 +190,7 @@ function SearchLibraryForm(props) {
         })
         .catch((error) => {
           props.setResults([]);
+          setPreresults([]);
           setShowError(true);
           setSpinnerState(false);
           console.log(error);
