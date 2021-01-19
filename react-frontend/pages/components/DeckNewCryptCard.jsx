@@ -12,8 +12,6 @@ function DeckNewCryptCard(props) {
   const addNewCard = () => {
     if (!props.cards[selectedValue]) {
       props.deckCardAdd(selectedValue);
-    } else {
-      console.log('already in deck');
     }
     setSelectedValue('');
     props.setShowAdd(false);

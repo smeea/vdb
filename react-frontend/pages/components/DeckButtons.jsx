@@ -17,6 +17,7 @@ function DeckButtons(props) {
             getDecks={props.getDecks}
             setShowInfo={props.setShowInfo}
             setShowButtons={props.setShowButtons}
+            isMobile={props.isMobile}
           />
         </div>
       )}
@@ -35,6 +36,7 @@ function DeckButtons(props) {
             getDecks={props.getDecks}
             setActiveDeck={props.setActiveDeck}
             setShowButtons={props.setShowButtons}
+            isMobile={props.isMobile}
           />
         </div>
       )}

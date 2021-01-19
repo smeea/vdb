@@ -37,18 +37,16 @@ function DeckImportModal(props) {
       .then((response) => response.json())
       .then((data) => {
         newDeckId = data.deckid;
-        console.log('new deck id:', newDeckId);
       })
       .then(() => props.getDecks())
       .then(() => {
         props.setActiveDeck(newDeckId);
-        props.setShowInfo(true);
+        props.isMobile && props.setShowInfo(true);
         setDeckText('');
         props.handleClose();
       })
       .catch((error) => {
         setImportError(true);
-        console.log(error);
       });
     setSpinnerState(false);
   };

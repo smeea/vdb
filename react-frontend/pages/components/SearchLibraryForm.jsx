@@ -158,9 +158,7 @@ function SearchLibraryForm(props) {
       }
     });
 
-    if (Object.keys(input).length === 0) {
-      console.log('submit with empty forms');
-    } else {
+    if (Object.keys(input).length !== 0) {
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -193,7 +191,6 @@ function SearchLibraryForm(props) {
           setPreresults([]);
           setShowError(true);
           setSpinnerState(false);
-          console.log(error);
         });
     }
   };

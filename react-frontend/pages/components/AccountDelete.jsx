@@ -20,6 +20,7 @@ function AccountDelete(props) {
         setShow={setShowConfirmation}
         username={props.username}
         setUsername={props.setUsername}
+        isMobile={props.isMobile}
       />
     </>
   );

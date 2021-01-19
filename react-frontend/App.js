@@ -77,14 +77,11 @@ function App(props) {
             });
             setDecks(data);
           }
-        } else {
-          console.log('Error: ', data.error);
         }
       });
   };
 
   const getCardBase = () => {
-    // const url = `${process.env.API_URL}cardbase`;
     const urlCrypt = `${process.env.ROOT_URL}/cardbase_crypt.json`;
     const urlLibrary = `${process.env.ROOT_URL}/cardbase_library.json`;
     const options = {
@@ -98,8 +95,6 @@ function App(props) {
       .then((data) => {
         if (data.error === undefined) {
           setCryptCardBase(data);
-        } else {
-          console.log('Error: ', data.error);
         }
       });
 
@@ -108,8 +103,6 @@ function App(props) {
       .then((data) => {
         if (data.error === undefined) {
           setLibraryCardBase(data);
-        } else {
-          console.log('Error: ', data.error);
         }
       });
   };

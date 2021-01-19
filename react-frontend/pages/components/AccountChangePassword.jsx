@@ -72,7 +72,6 @@ function AccountChangePassword(props) {
             newPassword: '',
             confirmPassword: '',
           });
-          console.log('changed password');
         })
         .catch((error) => {
           setPasswordError(true);
@@ -80,7 +79,6 @@ function AccountChangePassword(props) {
             ...prevState,
             password: '',
           }));
-          console.log(error);
         });
     } else {
       setEmptyPassword(!state.password)

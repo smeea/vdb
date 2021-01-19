@@ -20,13 +20,14 @@ function Decks(props) {
   const [showInfo, setShowInfo] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
   const { hash } = useLocation();
+  const history = useHistory();
 
   const getDeckFromText = (input) => {
     const name = query.get('name') ? query.get('name') : undefined;
     const author = query.get('author') ? query.get('author') : undefined;
     const description = query.get('description')
-      ? query.get('description')
-      : undefined;
+          ? query.get('description')
+          : undefined;
     const url = `${process.env.API_URL}deck/parse`;
     const options = {
       method: 'POST',
@@ -49,8 +50,6 @@ function Decks(props) {
       .then((data) => {
         if (data.error === undefined) {
           props.setSharedDeck(data);
-        } else {
-          console.log('error: ', data.error);
         }
       });
   };
@@ -68,8 +67,6 @@ function Decks(props) {
       .then((data) => {
         if (data.error === undefined) {
           props.setSharedDeck(data);
-        } else {
-          console.log('error: ', data.error);
         }
       });
   };
@@ -122,8 +119,6 @@ function Decks(props) {
     }
   }, [props.activeDeck]);
 
-  const history = useHistory();
-
   return (
     <Container className="deck-container">
       <Row>
@@ -131,42 +126,41 @@ function Decks(props) {
           <Row className="justify-content-end mx-0">
             {props.username && (
               <>
-                <Col className="px-0 px-lg-3">
-                  <DeckSelect
-                    decks={props.decks}
-                    activeDeck={props.activeDeck}
-                    setActiveDeck={props.setActiveDeck}
-                  />
-                </Col>
-                {props.activeDeck || props.sharedDeck ? (
+                {Object.keys(props.decks).length > 0 ?
+                 <Col className="px-0 px-lg-3">
+                   <DeckSelect
+                     decks={props.decks}
+                     activeDeck={props.activeDeck}
+                     setActiveDeck={props.setActiveDeck}
+                   />
+                 </Col>
+                 : <>
+                     {props.isMobile && (
+                       <Col className="px-0 px-lg-3">
+                         <DeckImport
+                           setActiveDeck={props.setActiveDeck}
+                           getDecks={props.getDecks}
+                           setShowInfo={setShowInfo}
+                           setShowButtons={props.setShowButtons}
+                         />
+                       </Col>
+                     )}
+                   </>
+                }
+                {(props.activeDeck || props.sharedDeck) && props.isMobile && (
                   <>
-                    {props.isMobile && (
-                      <Col
-                        xs="auto"
-                        className="d-flex justify-content-between align-items-center px-0 px-lg-3"
+                    <Col
+                      xs="auto"
+                      className="d-flex justify-content-between align-items-center px-0 px-lg-3"
+                    >
+                      <Button
+                        className="full-height"
+                        variant="outline-secondary"
+                        onClick={() => setShowInfo(!showInfo)}
                       >
-                        <Button
-                          className="full-height"
-                          variant="outline-secondary"
-                          onClick={() => setShowInfo(!showInfo)}
-                        >
-                          <InfoCircle />
-                        </Button>
-                      </Col>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    {props.isMobile && (
-                      <Col className="px-0 px-lg-3">
-                        <DeckImport
-                          setActiveDeck={props.setActiveDeck}
-                          getDecks={props.getDecks}
-                          setShowInfo={setShowInfo}
-                          setShowButtons={props.setShowButtons}
-                        />
-                      </Col>
-                    )}
+                        <InfoCircle />
+                      </Button>
+                    </Col>
                   </>
                 )}
               </>
@@ -176,19 +170,19 @@ function Decks(props) {
         <Col lg={6} className="px-0 px-lg-3">
           {(showInfo ||
             (!props.isMobile && (props.activeDeck || props.sharedDeck))) && (
-            <DeckInfo
-              deck={
-                props.activeDeck
-                  ? props.decks[props.activeDeck]
-                  : props.sharedDeck
-                  ? props.sharedDeck[sharedDeckId]
-                  : null
-              }
-              deckUpdate={deckUpdate}
-              username={props.username}
-              isAuthor={isAuthor}
-            />
-          )}
+              <DeckInfo
+                deck={
+                  props.activeDeck
+                    ? props.decks[props.activeDeck]
+                    : props.sharedDeck
+                    ? props.sharedDeck[sharedDeckId]
+                    : null
+                }
+                deckUpdate={deckUpdate}
+                username={props.username}
+                isAuthor={isAuthor}
+              />
+            )}
         </Col>
         <Col lg={2} className="px-0 px-lg-3">
           {!props.isMobile && (
@@ -272,13 +266,13 @@ function Decks(props) {
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                    ? props.decks[props.activeDeck].crypt
-                    : {}
-                  : props.sharedDeck
-                  ? props.sharedDeck[sharedDeckId]
-                    ? props.sharedDeck[sharedDeckId].crypt
-                    : {}
+                  ? props.decks[props.activeDeck].crypt
                   : {}
+                : props.sharedDeck
+                  ? props.sharedDeck[sharedDeckId]
+                  ? props.sharedDeck[sharedDeckId].crypt
+                  : {}
+                : {}
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -296,13 +290,13 @@ function Decks(props) {
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                    ? props.decks[props.activeDeck].library
-                    : {}
-                  : props.sharedDeck
-                  ? props.sharedDeck[sharedDeckId]
-                    ? props.sharedDeck[sharedDeckId].library
-                    : {}
+                  ? props.decks[props.activeDeck].library
                   : {}
+                : props.sharedDeck
+                  ? props.sharedDeck[sharedDeckId]
+                  ? props.sharedDeck[sharedDeckId].library
+                  : {}
+                : {}
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}

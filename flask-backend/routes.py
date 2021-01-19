@@ -87,11 +87,6 @@ def updateDeck(deckid):
         except Exception:
             pass
         try:
-            if request.json['name']:
-                d.name = request.json['name']
-        except Exception:
-            pass
-        try:
             if request.json['cardAdd']:
                 new_cards = request.json['cardAdd']
                 merged_cards = d.cards.copy()
@@ -103,13 +98,18 @@ def updateDeck(deckid):
         except Exception:
             pass
         try:
-            if request.json['description']:
+            if request.json['name']:
+                d.name = request.json['name']
+        except Exception:
+            pass
+        try:
+            if 'description' in request.json:
                 d.description = request.json['description']
         except Exception:
             pass
         try:
-            if request.json['author']:
-                d.author_public_name = request.json['author']
+            if 'author' in request.json:
+                d.author_public_name = request.json['author'] or ''
         except Exception:
             pass
 

@@ -51,9 +51,7 @@ function AccountChangeName(props) {
             setButtonState(false);
           }, 1000);
         })
-        .catch((error) => {
-          console.log(error);
-        });
+        .catch((error) => {});
     } else {
       setEmptyName(true);
     }

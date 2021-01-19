@@ -11,15 +11,11 @@ function DeckDescription(props) {
   };
 
   const deckChangeDescription = () => {
-    if (state) {
-      props.deckUpdate(props.deckid, 'description', state);
-      setButtonState(true);
-      setTimeout(() => {
-        setButtonState(false);
-      }, 1000);
-    } else {
-      console.log('Error: submit with empty form');
-    }
+    props.deckUpdate(props.deckid, 'description', state);
+    setButtonState(true);
+    setTimeout(() => {
+      setButtonState(false);
+    }, 1000);
   };
 
   const handleSubmitButton = (event) => {
@@ -28,7 +24,7 @@ function DeckDescription(props) {
   };
 
   useEffect(() => {
-    setState(props.description);
+    props.description && setState(props.description);
   }, [props.description]);
 
   return (

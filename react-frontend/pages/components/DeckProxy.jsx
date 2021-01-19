@@ -61,7 +61,6 @@ function DeckProxy(props) {
           props.setShowButtons(false);
         })
         .catch((error) => {
-          console.log(error);
           setSpinnerState(false);
         });
     } else {

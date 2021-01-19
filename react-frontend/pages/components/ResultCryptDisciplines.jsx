@@ -13,7 +13,6 @@ function ResultCryptDisciplines(props) {
     }
   } else {
     if (props.disciplinesSet) {
-      // maxCols = 8;
       const n = props.keyDisciplines + props.nonKeyDisciplines;
       maxCols = n < 8 ? n : 8;
     } else {

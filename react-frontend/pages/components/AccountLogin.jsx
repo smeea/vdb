@@ -82,7 +82,6 @@ function AccountLogin(props) {
             password: '',
           }));
           setSpinnerState(false);
-          console.log(error);
         });
     } else {
       setEmptyUsername(!state.username);
