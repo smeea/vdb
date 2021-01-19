@@ -70,7 +70,6 @@ function DeckExport(props) {
           props.setShowButtons(false);
         })
         .catch((error) => {
-          console.log(error);
           setSpinnerState(false);
         });
     } else {
@@ -112,7 +111,6 @@ function DeckExport(props) {
           props.setShowButtons(false);
         })
         .catch((error) => {
-          console.log(error);
           setSpinnerState(false);
         });
     } else {
@@ -153,7 +151,6 @@ function DeckExport(props) {
         setSpinnerState(false);
       })
       .catch((error) => {
-        console.log(error);
         setDeckError(true);
         setSpinnerState(false);
       });

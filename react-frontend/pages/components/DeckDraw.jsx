@@ -73,8 +73,6 @@ function DeckDraw(props) {
       setRestCrypt(restCrypt);
       setRestLibrary(restLibrary);
       setShowDrawModal(true);
-    } else {
-      console.log('not enough cards for draw');
     }
   };
 
@@ -97,8 +95,6 @@ function DeckDraw(props) {
     let newRestCards = [];
     if (restCrypt.length > 0) {
       [newDrawedCards, newRestCards] = drawCards(restCrypt, 1);
-    } else {
-      console.log('no more cards to draw');
     }
     const allDrawedCards = [...drawedCrypt, ...newDrawedCards];
     setDrawedCrypt(allDrawedCards);
@@ -110,8 +106,6 @@ function DeckDraw(props) {
     let newRestCards = [];
     if (restLibrary.length > 0) {
       [newDrawedCards, newRestCards] = drawCards(restLibrary, 1);
-    } else {
-      console.log('no more cards to draw');
     }
     const allDrawedCards = [...drawedLibrary, ...newDrawedCards];
     setDrawedLibrary(allDrawedCards);

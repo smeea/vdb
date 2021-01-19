@@ -11,15 +11,11 @@ function DeckChangeName(props) {
   };
 
   const deckChangeName = () => {
-    if (state) {
-      props.deckUpdate(props.deckid, 'name', state);
-      setButtonState(true);
-      setTimeout(() => {
-        setButtonState(false);
-      }, 1000);
-    } else {
-      console.log('Error: submit with empty form');
-    }
+    props.deckUpdate(props.deckid, 'name', state);
+    setButtonState(true);
+    setTimeout(() => {
+      setButtonState(false);
+    }, 1000);
   };
 
   const handleSubmitButton = (event) => {

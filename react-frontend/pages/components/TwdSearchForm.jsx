@@ -154,9 +154,7 @@ function TwdSearchForm(props) {
         delete input[k]
     );
 
-    if (Object.keys(input).length === 0) {
-      console.log('submit with empty forms');
-    } else {
+    if (Object.keys(input).length !== 0) {
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -181,7 +179,6 @@ function TwdSearchForm(props) {
           props.setResults([]);
           setShowError(true)
           setSpinnerState(false);
-          console.log(error);
         });
     }
   };
@@ -209,7 +206,6 @@ function TwdSearchForm(props) {
         props.setResults([]);
         setShowError(true);
         setSpinnerState(false);
-        console.log(error);
       });
   };
 
@@ -235,7 +231,6 @@ function TwdSearchForm(props) {
       .catch((error) => {
         props.setResults([]);
         setSpinnerState(false);
-        console.log(error);
       });
   };
 

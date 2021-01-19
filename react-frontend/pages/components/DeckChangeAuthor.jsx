@@ -11,15 +11,11 @@ function DeckChangeAuthor(props) {
   };
 
   const deckChangeAuthor = () => {
-    if (state) {
-      props.deckUpdate(props.deckid, 'author', state);
-      setButtonState(true);
-      setTimeout(() => {
-        setButtonState(false);
-      }, 1000);
-    } else {
-      console.log('Error: submit with empty form');
-    }
+    props.deckUpdate(props.deckid, 'author', state);
+    setButtonState(true);
+    setTimeout(() => {
+      setButtonState(false);
+    }, 1000);
   };
 
   const handleSubmitButton = (event) => {

@@ -78,7 +78,6 @@ function AccountRegister(props) {
             username: '',
           }));
           setSpinnerState(false);
-          console.log(error);
         });
     } else {
       setEmptyUsername(!state.username);

@@ -75,7 +75,6 @@ function AccountChangeEmail(props) {
             ...prevState,
             password: '',
           }));
-          console.log(error);
         });
     } else {
       setEmptyEmail(!state.email);

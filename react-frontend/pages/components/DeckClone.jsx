@@ -26,9 +26,6 @@ function DeckClone(props) {
       .then((data) => {
         if (data.error === undefined) {
           newdeckid = data.deckid;
-          console.log('new deck id:', newdeckid);
-        } else {
-          console.log('error: ', data.error);
         }
       })
       .then(() => props.getDecks())

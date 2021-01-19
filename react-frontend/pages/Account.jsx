@@ -46,6 +46,7 @@ function Account(props) {
                 <AccountDelete
                   username={props.username}
                   setUsername={props.setUsername}
+                  isMobile={props.isMobile}
                 />
               </div>
             </>

@@ -38,16 +38,10 @@ function DeckImport(props) {
 
     fetchPromise
       .then((response) => response.json())
-      .then((data) => {
-        newdeckid = data.deckid;
-        console.log('new deck id:', newdeckid);
-      })
+      .then((data) => newdeckid = data.deckid)
       .then(() => props.getDecks())
       .then(() => props.setActiveDeck(newdeckid))
-      .catch((error) => {
-        setCreateError(true);
-        console.log(error);
-      });
+      .catch((error) => setCreateError(true));
   };
 
   const importDeckFromFile = () => {
@@ -57,8 +51,6 @@ function DeckImport(props) {
     const reader = new FileReader();
     reader.readAsText(fileInput.current.files[0]);
     reader.onload = () => {
-      console.log(reader.result);
-
       const url = `${process.env.API_URL}decks/import`;
       const options = {
         method: 'POST',
@@ -76,24 +68,16 @@ function DeckImport(props) {
 
       fetchPromise
         .then((response) => response.json())
-        .then((data) => {
-          newDeckId = data.deckid;
-          console.log('new deck id:', newDeckId);
-        })
+        .then((data) => newDeckId = data.deckid)
         .then(() => props.getDecks())
-        .then(() => {
-          props.setActiveDeck(newDeckId);
-        })
-        .catch((error) => {
-          setImportError(true);
-          console.log(error);
-        });
+        .then(() => props.setActiveDeck(newDeckId))
+        .catch((error) => setImportError(true));
     };
   };
 
   const handleCreateButton = () => {
     createNewDeck();
-    props.setShowInfo(true);
+    props.isMobile && props.setShowInfo(true);
     props.setShowButtons(false);
   };
 
@@ -144,6 +128,7 @@ function DeckImport(props) {
         setActiveDeck={props.setActiveDeck}
         show={showImportModal}
         setShowInfo={props.setShowInfo}
+        isMobile={props.isMobile}
       />
     </>
   );

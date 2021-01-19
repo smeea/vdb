@@ -5,7 +5,12 @@ import X from '../../assets/images/icons/x.svg';
 function DeckDeleteDeckConfirmation(props) {
   return (
     <>
-      <Modal show={props.show} onHide={props.handleCancel} animation={false}>
+      <Modal
+        show={props.show}
+        onHide={props.handleCancel}
+        animation={false}
+        centered={props.isMobile}
+      >
         <Modal.Body>
           <button
             type="button"

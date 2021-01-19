@@ -44,7 +44,6 @@ function AccountDeleteConfirmation(props) {
         .catch((error) => {
           setPasswordError(true);
           setPassword('');
-          console.log(error);
         });
     } else {
       setEmptyPassword(!password);
@@ -63,7 +62,7 @@ function AccountDeleteConfirmation(props) {
         show={props.show}
         onHide={() => props.setShow(false)}
         animation={false}
-        centered
+        centered={props.isMobile}
       >
         <Modal.Body>
           <button

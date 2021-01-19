@@ -26,9 +26,6 @@ function DeckDelete(props) {
         body: JSON.stringify({ deckid: props.deck.deckid }),
       };
       fetch(url, options).then(() => props.getDecks());
-      console.log('Delete deck: ', props.deck.deckid);
-    } else {
-      console.log('Error: no deck selected');
     }
   };
 
@@ -46,6 +43,7 @@ function DeckDelete(props) {
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
         deckname={props.deck.name}
+        isMobile={props.isMobile}
       />
     </>
   );
