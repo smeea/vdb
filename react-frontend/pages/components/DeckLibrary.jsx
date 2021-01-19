@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import InfoCircle from '../../assets/images/icons/info-circle.svg';
+import X from '../../assets/images/icons/x.svg';
 import DeckLibraryTable from './DeckLibraryTable.jsx';
 import DeckLibraryTotalByTypes from './DeckLibraryTotalByTypes.jsx';
 import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
@@ -204,11 +205,10 @@ function DeckLibrary(props) {
                     <div className="m-2">
                       <button
                         type="button"
-                        className="close"
+                        className="close m-1"
                         onClick={() => setShowAdd(false)}
                       >
-                        <span aria-hidden="true">×</span>
-                        <span className="sr-only">Close</span>
+                        <X width="32" height="32" viewBox="0 0 16 16"/>
                       </button>
                     </div>
                     <div className="d-flex justify-content-center">

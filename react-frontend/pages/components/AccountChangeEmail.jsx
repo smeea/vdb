@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
+import { Form, FormControl, InputGroup, Button, Overlay } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import EnvelopeFill from '../../assets/images/icons/envelope-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
@@ -17,6 +17,8 @@ function AccountChangeEmail(props) {
   const [emptyEmail, setEmptyEmail] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const refEmail = useRef(null);
+  const refPassword = useRef(null);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -53,18 +55,19 @@ function AccountChangeEmail(props) {
 
       fetchPromise
         .then((response) => {
-          if (response.ok) {
-            response.json();
-          } else {
-            throw Error(`Error: ${response.status}`);
-          }
+          if (!response.ok) throw Error(response.status)
+          return response.json()
         })
         .then((data) => {
           props.setEmail(state.email);
           setButtonState(true);
           setTimeout(() => {
             setButtonState(false);
-          }, 500);
+          }, 1000);
+          setState((prevState) => ({
+            ...prevState,
+            password: '',
+          }));
         })
         .catch((error) => {
           setPasswordError(true);
@@ -75,8 +78,8 @@ function AccountChangeEmail(props) {
           console.log(error);
         });
     } else {
-      !state.email ? setEmptyEmail(true) : setEmptyEmail(false);
-      !state.password ? setEmptyPassword(true) : setEmptyPassword(false);
+      setEmptyEmail(!state.email);
+      setEmptyPassword(!state.password);
     }
   };
 
@@ -129,6 +132,7 @@ function AccountChangeEmail(props) {
             name="email"
             value={state.email}
             onChange={handleChange}
+            ref={refEmail}
           />
           <FormControl
             placeholder="Password"
@@ -136,6 +140,7 @@ function AccountChangeEmail(props) {
             name="password"
             value={state.password}
             onChange={handleChange}
+            ref={refPassword}
           />
           <InputGroup.Append>
             {!buttonState ? (
@@ -149,13 +154,42 @@ function AccountChangeEmail(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        {emptyEmail && <span className="form-error px-2">Enter email</span>}
-        {emptyPassword && (
-          <span className="form-error px-2">Enter password</span>
-        )}
-        {passwordError && (
-          <span className="form-error px-2">Wrong password</span>
-        )}
+        <Overlay
+          show={emptyEmail}
+          target={refEmail.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>ENTER EMAIL</b>
+            </div>
+          )}
+        </Overlay>
+        <Overlay
+          show={emptyPassword}
+          target={refPassword.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>ENTER PASSWORD</b>
+            </div>
+          )}
+        </Overlay>
+        <Overlay
+          show={passwordError}
+          target={refPassword.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>WRONG PASSWORD</b>
+            </div>
+          )}
+        </Overlay>
       </Form>
       {showModal && (
         <ModalTooltip

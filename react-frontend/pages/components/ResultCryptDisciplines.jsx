@@ -1,27 +1,29 @@
 import React from 'react';
 
 function ResultCryptDisciplines(props) {
-  let disciplineRows;
-  const emptyRows = [];
+  let disciplineCols;
+  const emptyCols = [];
   let counter = 0;
-  let maxRows;
+  let maxCols;
   if (props.isMobile) {
     if (props.keyDisciplines >= 5) {
-      maxRows = 7;
+      maxCols = 7;
     } else {
-      maxRows = 6;
+      maxCols = 6;
     }
   } else {
     if (props.disciplinesSet) {
-      maxRows = 8;
+      // maxCols = 8;
+      const n = props.keyDisciplines + props.nonKeyDisciplines;
+      maxCols = n < 8 ? n : 8;
     } else {
-      maxRows = 7;
+      maxCols = 7;
     }
   }
-  const width = 100 / maxRows + '%';
+  const width = 100 / maxCols + '%';
 
   if (props.disciplinesSet) {
-    disciplineRows = props.disciplinesSet.map((d, index) => {
+    disciplineCols = props.disciplinesSet.map((d, index) => {
       let imgSrc;
       let imgClass;
       if (props.value[d] == 1) {
@@ -62,7 +64,7 @@ function ResultCryptDisciplines(props) {
       }
     });
   } else {
-    disciplineRows = Object.keys(props.value).map((d, index) => {
+    disciplineCols = Object.keys(props.value).map((d, index) => {
       counter += 1;
       let imgSrc;
       let imgClass;
@@ -91,9 +93,9 @@ function ResultCryptDisciplines(props) {
     });
   }
 
-  while (counter < maxRows) {
+  while (counter < maxCols) {
     counter += 1;
-    emptyRows.push(<td width={width} key={counter}></td>);
+    emptyCols.push(<td width={width} key={counter}></td>);
   }
 
   return (
@@ -101,8 +103,8 @@ function ResultCryptDisciplines(props) {
       <table width="100%">
         <tbody>
           <tr>
-            {disciplineRows}
-            {emptyRows}
+            {disciplineCols}
+            {emptyCols}
           </tr>
         </tbody>
       </table>

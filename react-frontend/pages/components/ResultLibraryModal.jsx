@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Tabs, Tab } from 'react-bootstrap';
+import X from '../../assets/images/icons/x.svg';
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 
 function ResultLibraryModal(props) {
@@ -8,11 +9,10 @@ function ResultLibraryModal(props) {
       <Modal.Body className="p-0">
         <button
           type="button"
-          className="close mx-3 my-2"
+          className="close m-1"
           onClick={props.handleClose}
         >
-          <span aria-hidden="true">×</span>
-          <span className="sr-only">Close</span>
+          <X width="32" height="32" viewBox="0 0 16 16"/>
         </button>
         <Tabs
           transition={false}

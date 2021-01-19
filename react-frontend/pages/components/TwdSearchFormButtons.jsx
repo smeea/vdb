@@ -18,6 +18,7 @@ function TwdSearchFormButtons(props) {
           <LightningFill /> 50 New
         </Button>
       </div>
+      {!props.isMobile &&
       <div>
         <Button
           className="full-height"
@@ -27,6 +28,7 @@ function TwdSearchFormButtons(props) {
           <X />
         </Button>
       </div>
+      }
     </div>
   );
 }

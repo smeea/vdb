@@ -75,7 +75,7 @@ function Library(props) {
               : 'col-hide px-0 lx-lg-4'
           }
         >
-          {props.results != undefined && props.results != null && (
+          {props.results && (
             <ResultLibrary
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -94,15 +94,11 @@ function Library(props) {
               isMobile={props.isMobile}
               isWide={props.isWide}
               addMode={props.addMode}
+              setAddMode={props.setAddMode}
               showSearch={props.showSearch}
               setShowSearch={props.setShowSearch}
               setResults={props.setResults}
             />
-          )}
-          {props.results === null && (
-            <AlertMessage className="error-message">
-              <b>NO CARDS FOUND</b>
-            </AlertMessage>
           )}
         </Col>
         <Col

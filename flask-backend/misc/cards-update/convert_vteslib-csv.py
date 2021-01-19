@@ -41,6 +41,8 @@ with open("vteslib.csv", "r",
         # ASCII-fication of name
         if card ['Id'] == 101670:
             card['ASCII Name'] = "Sacre-Coeur Cathedral, France"
+        elif card ['Id'] == 100130:
+            card['ASCII Name'] = "Bang Nakh - Tiger's Claws"
         else:
             card['ASCII Name'] = letters_to_ascii(card['Name'])
 

@@ -61,7 +61,7 @@ function DeckNewLibraryCard(props) {
               <span className="pl-1">
                 {props.cardBase[card]['Banned'] ? (
                   <>
-                    <strike>{card['Name']}</strike>
+                    <strike>{props.cardBase[card]['Name']}</strike>
                     <span className="pl-1">
                       <Hammer />
                     </span>

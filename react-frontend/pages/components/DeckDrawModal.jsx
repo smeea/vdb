@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
+import X from '../../assets/images/icons/x.svg';
 import ResultCrypt from './ResultCrypt.jsx';
 import ResultLibrary from './ResultLibrary.jsx';
 
@@ -12,18 +13,18 @@ function DeckDrawModal(props) {
       onHide={props.handleClose}
       animation={false}
       size="xl"
+      dialogClassName={!props.isMobile ? "modal-deck-draw" : null}
     >
       <Modal.Body className="p-0">
         <Container fluid>
           <Row className="px-0 pt-2">
-            <Col>
+            <Col className="px-0">
               <button
                 type="button"
-                className="close"
+                className="close m-1"
                 onClick={props.handleClose}
               >
-                <span aria-hidden="true">×</span>
-                <span className="sr-only">Close</span>
+                <X width="32" height="32" viewBox="0 0 16 16"/>
               </button>
               <div className="d-flex justify-content-center">
                 <h5>Deck Draw</h5>
@@ -65,11 +66,12 @@ function DeckDrawModal(props) {
                     cards={props.drawedCrypt}
                     showSort={false}
                     showTotal={false}
+                    hideFloatingButtons={true}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}
                   />
-                  {!props.isMobile && <br />}
+                  <br />
                 </>
               )}
             </Col>
@@ -105,6 +107,7 @@ function DeckDrawModal(props) {
                     cards={props.drawedLibrary}
                     showSort={false}
                     showTotal={false}
+                    hideFloatingButtons={true}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}

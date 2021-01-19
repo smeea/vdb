@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { Form, FormControl, InputGroup, Modal, Button } from 'react-bootstrap';
+import React, { useState, useRef } from 'react';
+import { Form, FormControl, InputGroup, Modal, Button, Overlay } from 'react-bootstrap';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
+import X from '../../assets/images/icons/x.svg';
 
 function AccountDeleteConfirmation(props) {
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
+  const refPassword = useRef(null);
 
   const handleChange = (event) => setPassword(event.target.value);
 
@@ -32,11 +34,8 @@ function AccountDeleteConfirmation(props) {
 
       fetch(url, options)
         .then((response) => {
-          if (response.ok) {
-            response.json();
-          } else {
-            throw Error(`Error: ${response.status}`);
-          }
+          if (!response.ok) throw Error(response.status)
+          return response.json()
         })
         .then((data) => {
           props.setShow(false);
@@ -47,9 +46,10 @@ function AccountDeleteConfirmation(props) {
           setPassword('');
           console.log(error);
         });
+    } else {
+      setEmptyPassword(!password);
     }
 
-    !password ? setEmptyPassword(true) : setEmptyPassword(false);
   };
 
   const handleSubmitButton = (event) => {
@@ -66,9 +66,12 @@ function AccountDeleteConfirmation(props) {
         centered
       >
         <Modal.Body>
-          <button type="button" className="close" onClick={props.handleClose}>
-            <span aria-hidden="true">×</span>
-            <span className="sr-only">Close</span>
+          <button
+            type="button"
+            className="close m-1"
+            onClick={props.handleClose}
+          >
+            <X width="32" height="32" viewBox="0 0 16 16"/>
           </button>
           <h5>
             DELETE ACCOUNT
@@ -94,6 +97,7 @@ function AccountDeleteConfirmation(props) {
                 value={password}
                 onChange={handleChange}
                 autoFocus={true}
+                ref={refPassword}
               />
               <InputGroup.Append>
                 <Button
@@ -114,17 +118,31 @@ function AccountDeleteConfirmation(props) {
                 </Button>
               </InputGroup.Append>
             </InputGroup>
+            <Overlay
+              show={emptyPassword}
+              target={refPassword.current}
+              placement="bottom"
+              transition={false}
+            >
+              {({ placement, arrowProps, show: _show, popper, ...props }) => (
+                <div className="modal-tooltip error-tooltip small" {...props}>
+                  <b>ENTER PASSWORD</b>
+                </div>
+              )}
+            </Overlay>
+            <Overlay
+              show={passwordError}
+              target={refPassword.current}
+              placement="bottom"
+              transition={false}
+            >
+              {({ placement, arrowProps, show: _show, popper, ...props }) => (
+                <div className="modal-tooltip error-tooltip small" {...props}>
+                  <b>WRONG PASSWORD</b>
+                </div>
+              )}
+            </Overlay>
           </Form>
-          {passwordError && (
-            <div>
-              <span className="login-error">Wrong password</span>
-            </div>
-          )}
-          {emptyPassword && (
-            <div>
-              <span className="login-error">Enter password</span>
-            </div>
-          )}
         </Modal.Footer>
       </Modal>
     </>

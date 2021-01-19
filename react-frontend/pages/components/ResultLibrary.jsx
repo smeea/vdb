@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import X from '../../assets/images/icons/x.svg';
+import Plus from '../../assets/images/icons/plus.svg';
+import AlertMessage from './AlertMessage.jsx';
 import ResultLibraryTable from './ResultLibraryTable.jsx';
 import ResultLibraryTotal from './ResultLibraryTotal.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
@@ -23,6 +25,11 @@ function ResultLibrary(props) {
 
   return (
     <>
+      {!props.isMobile && props.cards.length == 0 && (
+        <AlertMessage className="error-message">
+          <b>NO CARDS FOUND</b>
+        </AlertMessage>
+      )}
       {props.showTotal == true && props.cards.length > 0 && (
         <ResultLibraryTotal
           cards={props.cards}
@@ -42,12 +49,27 @@ function ResultLibrary(props) {
         isWide={true}
         addMode={props.addMode}
       />
-      {props.isMobile && (
-        <a onClick={handleClear} className="float-1 clear">
-          <div className="pt-1 float-clear">
-            <X viewBox="0 0 16 16" />
+      {props.isMobile && !props.hideFloatingButtons && (
+        <>
+          <div onClick={handleClear} className="float-right-bottom clear">
+            <div className="pt-1 float-clear">
+              <X viewBox="0 0 16 16" />
+            </div>
           </div>
-        </a>
+          {props.addMode ? (
+            <div onClick={() => props.setAddMode(!props.addMode)} className="float-left-bottom add-on">
+              <div className="pt-1 float-add">
+                <Plus viewBox="0 0 16 16"/>
+              </div>
+            </div>
+          ) : (
+            <div onClick={() => props.setAddMode(!props.addMode)} className="float-left-bottom add-off">
+              <div className="pt-1 float-add">
+                <Plus viewBox="0 0 16 16"/>
+              </div>
+            </div>
+          )}
+        </>
       )}
     </>
   );

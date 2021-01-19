@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
+import { Form, FormControl, InputGroup, Button, Overlay } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import PenFill from '../../assets/images/icons/pen-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ModalTooltip from './ModalTooltip.jsx';
 
 function AccountChangeName(props) {
-  const [emptyPublicName, setEmptyPublicName] = useState(false);
+  const [emptyName, setEmptyName] = useState(false);
   const [state, setState] = useState('');
+  const refName = useRef(null);
 
   const [showModal, setShowModal] = useState(false);
   const [buttonState, setButtonState] = useState(false);
@@ -18,7 +19,7 @@ function AccountChangeName(props) {
 
   const changeName = () => {
     if (state) {
-      setEmptyPublicName(false);
+      setEmptyName(false);
 
       const url = `${process.env.API_URL}account`;
       const input = {
@@ -39,25 +40,22 @@ function AccountChangeName(props) {
 
       fetchPromise
         .then((response) => {
-          if (response.ok) {
-            response.json();
-          } else {
-            throw Error(`Error: ${response.status}`);
-          }
+          if (!response.ok) throw Error(response.status)
+          return response.json()
         })
         .then(() => {
           props.setPublicName(state);
-          setEmptyPublicName(false);
+          setEmptyName(false);
           setButtonState(true);
           setTimeout(() => {
             setButtonState(false);
-          }, 500);
+          }, 1000);
         })
         .catch((error) => {
           console.log(error);
         });
     } else {
-      setEmptyPublicName(true);
+      setEmptyName(true);
     }
   };
 
@@ -112,6 +110,7 @@ function AccountChangeName(props) {
             name="publicName"
             value={state}
             onChange={handleChange}
+            ref={refName}
           />
           <InputGroup.Append>
             {!buttonState ? (
@@ -125,7 +124,18 @@ function AccountChangeName(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        {emptyPublicName && <span className="form-error px-2">Enter name</span>}
+        <Overlay
+          show={emptyName}
+          target={refName.current}
+          placement="bottom"
+          transition={false}
+        >
+          {({ placement, arrowProps, show: _show, popper, ...props }) => (
+            <div className="error-tooltip small" {...props}>
+              <b>ENTER PUBLIC NAME</b>
+            </div>
+          )}
+        </Overlay>
       </Form>
       {showModal && (
         <ModalTooltip

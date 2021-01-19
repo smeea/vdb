@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
+import AlertMessage from './AlertMessage.jsx';
 import TwdResultTotal from './TwdResultTotal.jsx';
 import TwdResultDescription from './TwdResultDescription.jsx';
 import TwdResultCrypt from './TwdResultCrypt.jsx';
@@ -110,25 +111,36 @@ function TwdResult(props) {
 
   return (
     <>
-      <TwdResultTotal decks={props.results} />
-      {twdRows}
-      {deckCounter > showCounter && (
-        <div className="d-flex justify-content-center pb-4 pt-2">
-          <Button
-            variant="outline-secondary"
-            onClick={() => setShowCounter(showCounter + showCounterStep)}
-            block
-          >
-            Show More ({deckCounter - showCounter} left)
-          </Button>
-        </div>
+      {!props.isMobile && props.results.length == 0 && (
+        <AlertMessage className="error-message">
+          <b>NO DECKS FOUND</b>
+        </AlertMessage>
       )}
+      {props.results.length > 0 &&
+       <>
+         <TwdResultTotal decks={props.results} />
+         {twdRows}
+         {deckCounter > showCounter && (
+           <div className="d-flex justify-content-center pb-4 pt-2">
+             <Button
+               variant="outline-secondary"
+               onClick={() => setShowCounter(showCounter + showCounterStep)}
+               block
+             >
+               Show More ({deckCounter - showCounter} left)
+             </Button>
+           </div>
+         )}
+       </>
+      }
       {props.isMobile && (
-        <a onClick={handleClear} className="float-1 clear">
-          <div className="pt-1 float-clear">
-            <X viewBox="0 0 16 16" />
+        <>
+          <div onClick={handleClear} className="float-right-bottom clear">
+            <div className="pt-1 float-clear">
+              <X viewBox="0 0 16 16" />
+            </div>
           </div>
-        </a>
+        </>
       )}
     </>
   );

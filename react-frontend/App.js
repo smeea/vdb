@@ -84,19 +84,30 @@ function App(props) {
   };
 
   const getCardBase = () => {
-    const url = `${process.env.API_URL}cardbase`;
+    // const url = `${process.env.API_URL}cardbase`;
+    const urlCrypt = `${process.env.ROOT_URL}/cardbase_crypt.json`;
+    const urlLibrary = `${process.env.ROOT_URL}/cardbase_library.json`;
     const options = {
       method: 'GET',
       mode: 'cors',
       credentials: 'include',
     };
 
-    fetch(url, options)
+    fetch(urlCrypt, options)
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          setCryptCardBase(data.crypt);
-          setLibraryCardBase(data.library);
+          setCryptCardBase(data);
+        } else {
+          console.log('Error: ', data.error);
+        }
+      });
+
+    fetch(urlLibrary, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          setLibraryCardBase(data);
         } else {
           console.log('Error: ', data.error);
         }
@@ -398,6 +409,7 @@ function App(props) {
                 results={cryptResults}
                 setResults={setCryptResults}
                 addMode={addMode}
+                setAddMode={setAddMode}
                 formState={cryptFormState}
                 setFormState={setCryptFormState}
                 cryptCardBase={cryptCardBase}
@@ -424,6 +436,7 @@ function App(props) {
                 results={libraryResults}
                 setResults={setLibraryResults}
                 addMode={addMode}
+                setAddMode={setAddMode}
                 formState={libraryFormState}
                 setFormState={setLibraryFormState}
                 cryptCardBase={cryptCardBase}
