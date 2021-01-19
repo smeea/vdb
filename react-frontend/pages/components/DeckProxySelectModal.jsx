@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
+import X from '../../assets/images/icons/x.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 
@@ -87,11 +88,10 @@ function DeckDrawModal(props) {
             <Col>
               <button
                 type="button"
-                className="close"
+                className="close m-1"
                 onClick={() => props.setShow(false)}
               >
-                <span aria-hidden="true">×</span>
-                <span className="sr-only">Close</span>
+                <X width="32" height="32" viewBox="0 0 16 16"/>
               </button>
               <div className="d-flex justify-content-center">
                 <h5>Create PDF with Card Proxies</h5>

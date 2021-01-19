@@ -1,14 +1,18 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import X from '../../assets/images/icons/x.svg';
 
 function DeckDeleteDeckConfirmation(props) {
   return (
     <>
       <Modal show={props.show} onHide={props.handleCancel} animation={false}>
         <Modal.Body>
-          <button type="button" className="close" onClick={props.handleClose}>
-            <span aria-hidden="true">×</span>
-            <span className="sr-only">Close</span>
+          <button
+            type="button"
+            className="close m-1"
+            onClick={props.handleClose}
+          >
+            <X width="32" height="32" viewBox="0 0 16 16"/>
           </button>
           <h5>
             DELETE DECK

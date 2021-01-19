@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import InfoCircle from '../../assets/images/icons/info-circle.svg';
+import X from '../../assets/images/icons/x.svg';
 import DeckCryptTotalByCapacity from './DeckCryptTotalByCapacity.jsx';
 import ResultCryptTable from './ResultCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
@@ -43,12 +44,29 @@ function DeckCrypt(props) {
       }
     });
 
+  const nonKeyDisciplinesList = []
+  for (let i = keyDisciplines; i < disciplinesSet.length; i++) {
+    nonKeyDisciplinesList.push(disciplinesSet[i])
+  }
+
+  let nonKeyDisciplines = 0;
+  Object.keys(props.cards).map((card) => {
+    let counter = 0;
+    Object.keys(props.cards[card].c['Disciplines']).map(d => {
+      if (nonKeyDisciplinesList.includes(d)) {
+        counter += 1
+      }
+    });
+    if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
+  });
+
+
   const crypt = {};
   const cryptSide = {};
   let cryptGroupMin;
   let cryptGroupMax;
 
-  Object.keys(props.cards).map((card, index) => {
+  Object.keys(props.cards).map((card) => {
     if (props.cards[card].q > 0) {
       crypt[card] = props.cards[card];
       if (props.cards[card].c['Group'] == 'ANY') {
@@ -165,11 +183,10 @@ function DeckCrypt(props) {
                     <div className="m-2">
                       <button
                         type="button"
-                        className="close"
+                        className="close m-1"
                         onClick={() => setShowAdd(false)}
                       >
-                        <span aria-hidden="true">×</span>
-                        <span className="sr-only">Close</span>
+                        <X width="32" height="32" viewBox="0 0 16 16"/>
                       </button>
                     </div>
                     <div className="d-flex justify-content-center">
@@ -199,6 +216,7 @@ function DeckCrypt(props) {
         isMobile={props.isMobile}
         isWide={props.isWide}
         keyDisciplines={keyDisciplines}
+        nonKeyDisciplines={nonKeyDisciplines}
         proxySelector={props.proxySelector}
         proxyCounter={props.proxyCounter}
         proxySelected={props.proxySelected}

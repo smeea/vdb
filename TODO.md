@@ -1,8 +1,6 @@
 # FIX
 * Crypt redraw on sharedDeck clone
-* Draw to close buttons on mobile
 * TWD location/winner form reset
-* Discipline search result width (narrow results)
 
 # FEATURES
 * Copy image link to card results

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
-import ChevronExpand from '../assets/images/icons/chevron-expand.svg';
+import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
+import X from '../assets/images/icons/x.svg';
 import AlertMessage from './components/AlertMessage.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
 import DeckInfo from './components/DeckInfo.jsx';
@@ -149,14 +150,7 @@ function Decks(props) {
                           variant="outline-secondary"
                           onClick={() => setShowInfo(!showInfo)}
                         >
-                          <ChevronExpand />
-                        </Button>
-                        <Button
-                          className="full-height"
-                          variant="outline-secondary"
-                          onClick={() => setShowButtons(!showButtons)}
-                        >
-                          <List />
+                          <InfoCircle />
                         </Button>
                       </Col>
                     )}
@@ -224,18 +218,18 @@ function Decks(props) {
               show={showButtons}
               onHide={() => setShowButtons(false)}
               animation={false}
+              centered={true}
             >
-              <Modal.Body>
+              <Modal.Body className="p-1">
                 <Container className="px-0" fluid>
                   <Row className="px-0 pb-2">
                     <Col>
                       <button
                         type="button"
-                        className="close"
+                        className="close m-1"
                         onClick={() => setShowButtons(false)}
                       >
-                        <span aria-hidden="true">×</span>
-                        <span className="sr-only">Close</span>
+                        <X width="32" height="32" viewBox="0 0 16 16"/>
                       </button>
                     </Col>
                   </Row>
@@ -342,6 +336,15 @@ function Decks(props) {
             />
           </Col>
         </Row>
+      )}
+      {props.isMobile && (
+        <>
+          <div onClick={() => setShowButtons(!showButtons)} className="float-right-bottom menu">
+            <div className="pt-2 float-menu">
+              <List viewBox="0 0 16 16" />
+            </div>
+          </div>
+        </>
       )}
     </Container>
   );

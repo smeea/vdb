@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Form, FormControl, InputGroup, Modal, Button, Overlay } from 'react-bootstrap';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
+import X from '../../assets/images/icons/x.svg';
 
 function AccountDeleteConfirmation(props) {
   const [password, setPassword] = useState('');
@@ -65,9 +66,12 @@ function AccountDeleteConfirmation(props) {
         centered
       >
         <Modal.Body>
-          <button type="button" className="close" onClick={props.handleClose}>
-            <span aria-hidden="true">×</span>
-            <span className="sr-only">Close</span>
+          <button
+            type="button"
+            className="close m-1"
+            onClick={props.handleClose}
+          >
+            <X width="32" height="32" viewBox="0 0 16 16"/>
           </button>
           <h5>
             DELETE ACCOUNT

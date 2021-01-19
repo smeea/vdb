@@ -52,7 +52,7 @@ function ResultCrypt(props) {
         isWide={true}
         addMode={props.addMode}
       />
-      {props.isMobile && (
+      {props.isMobile && !props.hideFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">
             <div className="pt-1 float-clear">

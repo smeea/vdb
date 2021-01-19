@@ -47,7 +47,7 @@ def get_crypt_by_traits(traits, crypt=crypt):
         counter = 0
         # Below are just dirty hacks to match by 'trait' (card text part).
         # It can break anytime (if card text in CVS card base changes), but
-        # just works for now. Please refer to Python Regexp's ('re' module).
+        # just works for now.
         for trait in traits.keys():
             if trait == 'enter combat':
                 name = re.match(r'^\w+', card['Name'].lower())
@@ -57,10 +57,7 @@ def get_crypt_by_traits(traits, crypt=crypt):
                     counter += 1
 
             elif trait == 'optional press':
-                name = re.match(r'^\w+', card['Name'].lower())
-                if re.search(
-                        r'(he|she|it|they|{}) gets (.*)?{}'.format(
-                            name[0], trait), card['Card Text'].lower()):
+                if re.search(r'gets (.*)?{}'.format(trait), card['Card Text'].lower()):
                     counter += 1
 
             elif trait == '1 bleed':

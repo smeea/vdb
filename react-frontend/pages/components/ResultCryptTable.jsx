@@ -108,11 +108,19 @@ function ResultCryptTable(props) {
           <td className="capacity px-1" onClick={() => setModalCard(card)}>
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
-          <td className="disciplines px-1" onClick={() => setModalCard(card)}>
+          <td
+            className={
+              props.keyDisciplines + props.nonKeyDisciplines < 8
+                ? `disciplines cols-${props.keyDisciplines + props.nonKeyDisciplines} px-1`
+                : "disciplines px-1"
+            }
+            onClick={() => setModalCard(card)}
+          >
             <ResultCryptDisciplines
               value={card['Disciplines']}
               disciplinesSet={props.disciplinesSet}
               keyDisciplines={props.keyDisciplines}
+              nonKeyDisciplines={props.nonKeyDisciplines}
               isMobile={props.isMobile}
             />
           </td>

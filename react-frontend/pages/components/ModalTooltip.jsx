@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Container, Row, Col } from 'react-bootstrap';
+import X from '../../assets/images/icons/x.svg';
 
 function ModalTooltip(props) {
   return (
@@ -15,11 +16,10 @@ function ModalTooltip(props) {
             <Col>
               <button
                 type="button"
-                className="close"
+                className="close m-1"
                 onClick={props.handleClose}
               >
-                <span aria-hidden="true">×</span>
-                <span className="sr-only">Close</span>
+                <X width="32" height="32" viewBox="0 0 16 16"/>
               </button>
               <h6>{props.title}</h6>
             </Col>
