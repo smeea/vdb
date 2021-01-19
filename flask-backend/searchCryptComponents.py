@@ -229,7 +229,7 @@ def get_crypt_by_sect(sect, crypt=crypt):
 
         # For vampires sect is determined only by card['Text']
         # It is another dirty hack (see trait above), but...
-        if re.search(r'^{}[:. $]'.format(sect), card['Card Text'].lower()):
+        if re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect), card['Card Text'].lower()):
             match_cards.append(card)
 
     return match_cards

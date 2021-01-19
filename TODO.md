@@ -1,6 +1,7 @@
 # FIX
 * Crypt redraw on sharedDeck clone
 * TWD location/winner form reset
+* Clear text form to update search
 
 # FEATURES
 * Copy image link to card results
