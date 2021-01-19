@@ -105,7 +105,7 @@ function ResultCryptTable(props) {
               )}
             </>
           )}
-          <td className="capacity px-1" onClick={() => setModalCard(card)}>
+          <td className="capacity pr-1 pl-2" onClick={() => setModalCard(card)}>
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td
@@ -124,7 +124,7 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="name" onClick={() => setModalCard(card)}>
+          <td className="name px-1" onClick={() => setModalCard(card)}>
             <ResultCryptName
               showImage={props.showImage}
               setShowImage={props.setShowImage}

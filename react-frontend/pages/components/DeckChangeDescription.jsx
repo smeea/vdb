@@ -36,7 +36,7 @@ function DeckDescription(props) {
         {props.isAuthor ? (
           <FormControl
             as="textarea"
-            rows={5}
+            rows={6}
             type="text"
             className="form-control"
             value={state}
@@ -45,7 +45,7 @@ function DeckDescription(props) {
         ) : (
           <FormControl
             as="textarea"
-            rows={5}
+            rows={6}
             type="text"
             className="form-control"
             value={state}
