@@ -44,22 +44,21 @@ function DeckCrypt(props) {
       }
     });
 
-  const nonKeyDisciplinesList = []
+  const nonKeyDisciplinesList = [];
   for (let i = keyDisciplines; i < disciplinesSet.length; i++) {
-    nonKeyDisciplinesList.push(disciplinesSet[i])
+    nonKeyDisciplinesList.push(disciplinesSet[i]);
   }
 
   let nonKeyDisciplines = 0;
   Object.keys(props.cards).map((card) => {
     let counter = 0;
-    Object.keys(props.cards[card].c['Disciplines']).map(d => {
+    Object.keys(props.cards[card].c['Disciplines']).map((d) => {
       if (nonKeyDisciplinesList.includes(d)) {
-        counter += 1
+        counter += 1;
       }
     });
     if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
   });
-
 
   const crypt = {};
   const cryptSide = {};
@@ -186,7 +185,7 @@ function DeckCrypt(props) {
                         className="close m-1"
                         onClick={() => setShowAdd(false)}
                       >
-                        <X width="32" height="32" viewBox="0 0 16 16"/>
+                        <X width="32" height="32" viewBox="0 0 16 16" />
                       </button>
                     </div>
                     <div className="d-flex justify-content-center">

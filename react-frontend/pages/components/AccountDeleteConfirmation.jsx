@@ -1,5 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { Form, FormControl, InputGroup, Modal, Button, Overlay } from 'react-bootstrap';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Modal,
+  Button,
+  Overlay,
+} from 'react-bootstrap';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 import X from '../../assets/images/icons/x.svg';
@@ -34,8 +41,8 @@ function AccountDeleteConfirmation(props) {
 
       fetch(url, options)
         .then((response) => {
-          if (!response.ok) throw Error(response.status)
-          return response.json()
+          if (!response.ok) throw Error(response.status);
+          return response.json();
         })
         .then((data) => {
           props.setShow(false);
@@ -48,7 +55,6 @@ function AccountDeleteConfirmation(props) {
     } else {
       setEmptyPassword(!password);
     }
-
   };
 
   const handleSubmitButton = (event) => {
@@ -70,7 +76,7 @@ function AccountDeleteConfirmation(props) {
             className="close m-1"
             onClick={props.handleClose}
           >
-            <X width="32" height="32" viewBox="0 0 16 16"/>
+            <X width="32" height="32" viewBox="0 0 16 16" />
           </button>
           <h5>
             DELETE ACCOUNT

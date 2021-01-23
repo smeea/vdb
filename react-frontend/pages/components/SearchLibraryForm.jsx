@@ -295,7 +295,11 @@ function SearchLibraryForm(props) {
               <X viewBox="0 0 16 16" />
             </div>
           </div>
-          <div ref={refError} onClick={handleSubmitButton} className="float-right-bottom search">
+          <div
+            ref={refError}
+            onClick={handleSubmitButton}
+            className="float-right-bottom search"
+          >
             <div className="pt-2 float-search">
               {!spinnerState ? (
                 <Check2 viewBox="0 0 16 16" />

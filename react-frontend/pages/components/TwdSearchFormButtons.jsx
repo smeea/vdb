@@ -18,17 +18,17 @@ function TwdSearchFormButtons(props) {
           <LightningFill /> 50 New
         </Button>
       </div>
-      {!props.isMobile &&
-      <div>
-        <Button
-          className="full-height"
-          variant="outline-secondary"
-          onClick={props.handleClearButton}
-        >
-          <X />
-        </Button>
-      </div>
-      }
+      {!props.isMobile && (
+        <div>
+          <Button
+            className="full-height"
+            variant="outline-secondary"
+            onClick={props.handleClearButton}
+          >
+            <X />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

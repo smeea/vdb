@@ -2,7 +2,7 @@ import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 
 function OverlayTooltip(props) {
-  const defaultDelay = { show: 0, hide: 300};
+  const defaultDelay = { show: 0, hide: 300 };
 
   return (
     <OverlayTrigger

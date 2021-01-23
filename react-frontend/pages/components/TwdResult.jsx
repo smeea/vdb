@@ -116,23 +116,23 @@ function TwdResult(props) {
           <b>NO DECKS FOUND</b>
         </AlertMessage>
       )}
-      {props.results.length > 0 &&
-       <>
-         <TwdResultTotal decks={props.results} />
-         {twdRows}
-         {deckCounter > showCounter && (
-           <div className="d-flex justify-content-center pb-4 pt-2">
-             <Button
-               variant="outline-secondary"
-               onClick={() => setShowCounter(showCounter + showCounterStep)}
-               block
-             >
-               Show More ({deckCounter - showCounter} left)
-             </Button>
-           </div>
-         )}
-       </>
-      }
+      {props.results.length > 0 && (
+        <>
+          <TwdResultTotal decks={props.results} />
+          {twdRows}
+          {deckCounter > showCounter && (
+            <div className="d-flex justify-content-center pb-4 pt-2">
+              <Button
+                variant="outline-secondary"
+                onClick={() => setShowCounter(showCounter + showCounterStep)}
+                block
+              >
+                Show More ({deckCounter - showCounter} left)
+              </Button>
+            </div>
+          )}
+        </>
+      )}
       {props.isMobile && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">

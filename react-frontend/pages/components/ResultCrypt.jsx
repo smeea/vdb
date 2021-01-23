@@ -60,15 +60,21 @@ function ResultCrypt(props) {
             </div>
           </div>
           {props.addMode ? (
-            <div onClick={() => props.setAddMode(!props.addMode)} className="float-left-bottom add-on">
+            <div
+              onClick={() => props.setAddMode(!props.addMode)}
+              className="float-left-bottom add-on"
+            >
               <div className="pt-1 float-add">
-                <Plus viewBox="0 0 16 16"/>
+                <Plus viewBox="0 0 16 16" />
               </div>
             </div>
           ) : (
-            <div onClick={() => props.setAddMode(!props.addMode)} className="float-left-bottom add-off">
+            <div
+              onClick={() => props.setAddMode(!props.addMode)}
+              className="float-left-bottom add-off"
+            >
               <div className="pt-1 float-add">
-                <Plus viewBox="0 0 16 16"/>
+                <Plus viewBox="0 0 16 16" />
               </div>
             </div>
           )}

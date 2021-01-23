@@ -68,8 +68,8 @@ function AccountLogin(props) {
 
       fetchPromise
         .then((response) => {
-          if (!response.ok) throw Error(response.status)
-          return response.json()
+          if (!response.ok) throw Error(response.status);
+          return response.json();
         })
         .then((data) => {
           props.setUsername(state.username);
@@ -98,7 +98,11 @@ function AccountLogin(props) {
     <>
       We do not have automatic password restoration yet.
       <br />
-    Please <a href="mailto:smeea@riseup.net?subject=VDB - Pasword reset&body=Please reset password for VDB account put-your-account-name-here.">send me an email</a> with your account username and I will generate temporary password for you.
+      Please{' '}
+      <a href="mailto:smeea@riseup.net?subject=VDB - Pasword reset&body=Please reset password for VDB account put-your-account-name-here.">
+        send me an email
+      </a>{' '}
+      with your account username and I will generate temporary password for you.
     </>
   );
 
@@ -211,14 +215,21 @@ function AccountLogin(props) {
       </Form>
       {!props.isMobile ? (
         <div className="d-flex justify-content-center small pl-4">
-          <OverlayTooltip delay={{ show: 0, hide: 1500 }} placement="bottom" text={passwordTooltipText}>
+          <OverlayTooltip
+            delay={{ show: 0, hide: 1500 }}
+            placement="bottom"
+            text={passwordTooltipText}
+          >
             <a href="#">
               <i>Forgot password?</i>
             </a>
           </OverlayTooltip>
         </div>
       ) : (
-        <div onClick={() => setShowModal(true)} className="d-flex justify-content-center small pl-4">
+        <div
+          onClick={() => setShowModal(true)}
+          className="d-flex justify-content-center small pl-4"
+        >
           <a href="#">
             <i>Forgot password?</i>
           </a>

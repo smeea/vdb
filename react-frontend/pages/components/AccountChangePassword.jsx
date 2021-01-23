@@ -1,5 +1,11 @@
 import React, { useState, useRef } from 'react';
-import { Form, FormControl, InputGroup, Button, Overlay } from 'react-bootstrap';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Button,
+  Overlay,
+} from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import LockFill from '../../assets/images/icons/lock-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
@@ -59,8 +65,8 @@ function AccountChangePassword(props) {
 
       fetchPromise
         .then((response) => {
-          if (!response.ok) throw Error(response.status)
-          return response.json()
+          if (!response.ok) throw Error(response.status);
+          return response.json();
         })
         .then((data) => {
           setButtonState(true);
@@ -81,9 +87,12 @@ function AccountChangePassword(props) {
           }));
         });
     } else {
-      setEmptyPassword(!state.password)
-      setEmptyNewPassword(!state.newPassword)
-      if (state.confirmPassword != state.newPassword || !state.confirmPassword) {
+      setEmptyPassword(!state.password);
+      setEmptyNewPassword(!state.newPassword);
+      if (
+        state.confirmPassword != state.newPassword ||
+        !state.confirmPassword
+      ) {
         setPasswordConfirmError(true);
       } else {
         setPasswordConfirmError(false);

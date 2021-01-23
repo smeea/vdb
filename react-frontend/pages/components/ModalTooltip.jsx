@@ -19,7 +19,7 @@ function ModalTooltip(props) {
                 className="close m-1"
                 onClick={props.handleClose}
               >
-                <X width="32" height="32" viewBox="0 0 16 16"/>
+                <X width="32" height="32" viewBox="0 0 16 16" />
               </button>
               <h6>{props.title}</h6>
             </Col>

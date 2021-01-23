@@ -15,8 +15,8 @@ function DeckImportAmaranth(props) {
     const url = `${process.env.ROOT_URL}amaranth_ids.json`;
     fetch(url)
       .then((response) => response.json())
-      .then((data) => data.error === undefined && setIdReference(data))
-  }
+      .then((data) => data.error === undefined && setIdReference(data));
+  };
 
   const handleImportButton = () => {
     setImportError(false);
@@ -27,7 +27,7 @@ function DeckImportAmaranth(props) {
 
       if (idReference) {
         getDeckFromUrl(deckUrl)
-          .then(deck => importDeckFromAmaranth(deck))
+          .then((deck) => importDeckFromAmaranth(deck))
           .then(() => {
             props.isMobile && props.setShowInfo(true);
             setDeckUrl('');
@@ -38,16 +38,16 @@ function DeckImportAmaranth(props) {
             setImportError(true);
             setSpinnerState(false);
           });
-      };
+      }
     } else {
       setEmptyUrl(true);
     }
   };
 
-  const importDeckFromAmaranth = deck => {
-    const cards = {}
+  const importDeckFromAmaranth = (deck) => {
+    const cards = {};
     Object.keys(deck.cards).map((i) => {
-      cards[idReference[i]] = deck.cards[i]
+      cards[idReference[i]] = deck.cards[i];
     });
 
     let newdeckid;
@@ -71,29 +71,30 @@ function DeckImportAmaranth(props) {
 
     fetchPromise
       .then((response) => response.json())
-      .then((data) => newdeckid = data.deckid)
+      .then((data) => (newdeckid = data.deckid))
       .then(() => props.getDecks())
       .then(() => props.setActiveDeck(newdeckid))
       .catch((error) => setImportError(true));
   };
 
-  const getDeckFromUrl = async deckUrl => {
+  const getDeckFromUrl = async (deckUrl) => {
     const url = `${process.env.AMARANTH_API_URL}deck`;
-    const id = deckUrl.replace(/.*#deck\//i, "")
+    const id = deckUrl.replace(/.*#deck\//i, '');
     const options = {
       method: 'POST',
       body: `id=${id}`,
     };
 
-    const response = await fetch(url, options)
-          .catch((error) => setImportError(true));
+    const response = await fetch(url, options).catch((error) =>
+      setImportError(true)
+    );
     const deck = await response.json();
     return deck.result;
   };
 
   useEffect(() => {
-    if (!idReference) getIdReference()
-  }, [])
+    if (!idReference) getIdReference();
+  }, []);
 
   return (
     <Modal
@@ -111,7 +112,7 @@ function DeckImportAmaranth(props) {
           type="text"
           name="url"
           value={deckUrl}
-          onChange={event => setDeckUrl(event.target.value)}
+          onChange={(event) => setDeckUrl(event.target.value)}
           ref={refUrl}
         />
         {!spinnerState ? (

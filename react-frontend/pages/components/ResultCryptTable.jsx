@@ -111,8 +111,10 @@ function ResultCryptTable(props) {
           <td
             className={
               props.keyDisciplines + props.nonKeyDisciplines < 8
-                ? `disciplines cols-${props.keyDisciplines + props.nonKeyDisciplines} px-1`
-                : "disciplines px-1"
+                ? `disciplines cols-${
+                    props.keyDisciplines + props.nonKeyDisciplines
+                  } px-1`
+                : 'disciplines px-1'
             }
             onClick={() => setModalCard(card)}
           >

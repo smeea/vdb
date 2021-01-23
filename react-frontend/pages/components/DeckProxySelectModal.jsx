@@ -91,7 +91,7 @@ function DeckDrawModal(props) {
                 className="close m-1"
                 onClick={() => props.setShow(false)}
               >
-                <X width="32" height="32" viewBox="0 0 16 16"/>
+                <X width="32" height="32" viewBox="0 0 16 16" />
               </button>
               <div className="d-flex justify-content-center">
                 <h5>Create PDF with Card Proxies</h5>

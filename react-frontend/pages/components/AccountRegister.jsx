@@ -64,8 +64,8 @@ function AccountRegister(props) {
 
       fetchPromise
         .then((response) => {
-          if (!response.ok) throw Error(response.status)
-          return response.json()
+          if (!response.ok) throw Error(response.status);
+          return response.json();
         })
         .then((data) => {
           props.whoAmI();

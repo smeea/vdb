@@ -13,7 +13,7 @@ function DeckDrawModal(props) {
       onHide={props.handleClose}
       animation={false}
       size="xl"
-      dialogClassName={!props.isMobile ? "modal-deck-draw" : null}
+      dialogClassName={!props.isMobile ? 'modal-deck-draw' : null}
     >
       <Modal.Body className="p-0">
         <Container fluid>
@@ -24,7 +24,7 @@ function DeckDrawModal(props) {
                 className="close m-1"
                 onClick={props.handleClose}
               >
-                <X width="32" height="32" viewBox="0 0 16 16"/>
+                <X width="32" height="32" viewBox="0 0 16 16" />
               </button>
               <div className="d-flex justify-content-center">
                 <h5>Deck Draw</h5>

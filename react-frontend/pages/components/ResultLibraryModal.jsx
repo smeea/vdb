@@ -7,12 +7,8 @@ function ResultLibraryModal(props) {
   return (
     <Modal show={props.show} onHide={props.handleClose} animation={false}>
       <Modal.Body className="p-0">
-        <button
-          type="button"
-          className="close m-1"
-          onClick={props.handleClose}
-        >
-          <X width="32" height="32" viewBox="0 0 16 16"/>
+        <button type="button" className="close m-1" onClick={props.handleClose}>
+          <X width="32" height="32" viewBox="0 0 16 16" />
         </button>
         <Tabs
           transition={false}

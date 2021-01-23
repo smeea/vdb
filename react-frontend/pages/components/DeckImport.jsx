@@ -42,7 +42,7 @@ function DeckImport(props) {
 
     fetchPromise
       .then((response) => response.json())
-      .then((data) => newdeckid = data.deckid)
+      .then((data) => (newdeckid = data.deckid))
       .then(() => props.getDecks())
       .then(() => props.setActiveDeck(newdeckid))
       .catch((error) => setCreateError(true));
@@ -72,7 +72,7 @@ function DeckImport(props) {
 
       fetchPromise
         .then((response) => response.json())
-        .then((data) => newDeckId = data.deckid)
+        .then((data) => (newDeckId = data.deckid))
         .then(() => props.getDecks())
         .then(() => props.setActiveDeck(newDeckId))
         .catch((error) => setImportError(true));

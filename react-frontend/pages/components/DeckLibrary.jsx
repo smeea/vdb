@@ -208,7 +208,7 @@ function DeckLibrary(props) {
                         className="close m-1"
                         onClick={() => setShowAdd(false)}
                       >
-                        <X width="32" height="32" viewBox="0 0 16 16"/>
+                        <X width="32" height="32" viewBox="0 0 16 16" />
                       </button>
                     </div>
                     <div className="d-flex justify-content-center">

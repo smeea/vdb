@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Form, FormControl, InputGroup, Button, Overlay } from 'react-bootstrap';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Button,
+  Overlay,
+} from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import PenFill from '../../assets/images/icons/pen-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
@@ -40,8 +46,8 @@ function AccountChangeName(props) {
 
       fetchPromise
         .then((response) => {
-          if (!response.ok) throw Error(response.status)
-          return response.json()
+          if (!response.ok) throw Error(response.status);
+          return response.json();
         })
         .then(() => {
           props.setPublicName(state);
