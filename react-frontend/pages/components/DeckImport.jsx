@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import ClipboardPlus from '../../assets/images/icons/clipboard-plus.svg';
-import DeckImportModal from './DeckImportModal.jsx';
+import DeckImportText from './DeckImportText.jsx';
+import DeckImportAmaranth from './DeckImportAmaranth.jsx';
 
 function DeckImport(props) {
   const [importError, setImportError] = useState(false);
-  const [showImportModal, setShowImportModal] = useState(false);
+  const [showTextModal, setShowTextModal] = useState(false);
+  const [showAmaranthModal, setShowAmaranthModal] = useState(false);
   const [createError, setCreateError] = useState('');
 
   const fileInput = React.createRef();
@@ -14,10 +16,12 @@ function DeckImport(props) {
   const handleFileInputClick = () => fileInput.current.click();
 
   const handleCloseImportModal = () => {
-    setShowImportModal(false);
+    setShowTextModal(false);
+    setShowAmaranthModal(false);
     props.setShowButtons(false);
   };
-  const handleOpenImportModal = () => setShowImportModal(true);
+  const handleOpenTextModal = () => setShowTextModal(true);
+  const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 
   const createNewDeck = () => {
     setCreateError(false);
@@ -88,10 +92,13 @@ function DeckImport(props) {
       </Dropdown.Item>
       <Dropdown.Divider />
       <Dropdown.Item href="" onClick={handleFileInputClick}>
-        Import from File
+        Import from File (Amaranth, Lackey, TWD)
       </Dropdown.Item>
-      <Dropdown.Item href="" onClick={handleOpenImportModal}>
-        Import from Text
+      <Dropdown.Item href="" onClick={handleOpenTextModal}>
+        Import from Text (Amaranth, Lackey, TWD)
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={handleOpenAmaranthModal}>
+        Import from Amaranth Deck URL
       </Dropdown.Item>
     </>
   );
@@ -122,11 +129,19 @@ function DeckImport(props) {
           <span className="login-error">Cannot create deck</span>
         </div>
       )}
-      <DeckImportModal
+      <DeckImportText
         handleClose={handleCloseImportModal}
         getDecks={props.getDecks}
         setActiveDeck={props.setActiveDeck}
-        show={showImportModal}
+        show={showTextModal}
+        setShowInfo={props.setShowInfo}
+        isMobile={props.isMobile}
+      />
+      <DeckImportAmaranth
+        handleClose={handleCloseImportModal}
+        getDecks={props.getDecks}
+        setActiveDeck={props.setActiveDeck}
+        show={showAmaranthModal}
         setShowInfo={props.setShowInfo}
         isMobile={props.isMobile}
       />

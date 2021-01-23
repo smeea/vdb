@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import AlertMessage from './components/AlertMessage.jsx';
 import TwdResult from './components/TwdResult.jsx';
 import TwdSearchForm from './components/TwdSearchForm.jsx';
 
@@ -45,7 +44,6 @@ function Twd(props) {
           <TwdSearchForm
             setShowSearch={props.setShowSearch}
             setResults={props.setResults}
-            setCardBase={props.setCardBase}
             cryptCardBase={props.cryptCardBase}
             libraryCardBase={props.libraryCardBase}
             formState={props.formState}

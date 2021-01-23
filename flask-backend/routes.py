@@ -204,10 +204,10 @@ def newDeck():
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
                      name=request.json['deckname'],
-                     author_public_name=current_user.public_name,
-                     description='',
+                     author_public_name=request.json['author'] if 'author' in request.json else current_user.public_name,
+                     description=request.json['description'] if 'description' in request.json else '',
                      author=current_user,
-                     cards={})
+                     cards=request.json['cards'] if 'cards' in request.json else {})
             db.session.add(d)
             db.session.commit()
             return jsonify({

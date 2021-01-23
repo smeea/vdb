@@ -82,8 +82,8 @@ function App(props) {
   };
 
   const getCardBase = () => {
-    const urlCrypt = `${process.env.ROOT_URL}/cardbase_crypt.json`;
-    const urlLibrary = `${process.env.ROOT_URL}/cardbase_library.json`;
+    const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json`;
+    const urlLibrary = `${process.env.ROOT_URL}cardbase_library.json`;
     const options = {
       method: 'GET',
       mode: 'cors',

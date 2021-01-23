@@ -6,6 +6,7 @@
 # FEATURES
 * Copy image link to card results
 * TWD Deck name filter
+* Deck revisions
 
 # MAYBE LATER FEATURES
 * Precon decks
