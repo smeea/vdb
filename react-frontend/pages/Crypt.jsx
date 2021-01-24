@@ -86,8 +86,6 @@ function Crypt(props) {
                 props.decks[props.activeDeck].crypt
               }
               activeDeck={props.activeDeck}
-              showSort={true}
-              showTotal={true}
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
               isMobile={props.isMobile}

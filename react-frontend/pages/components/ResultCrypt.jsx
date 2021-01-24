@@ -32,14 +32,11 @@ function ResultCrypt(props) {
           <b>NO CARDS FOUND</b>
         </AlertMessage>
       )}
-      {props.showTotal == true && props.cards.length > 0 && (
-        <ResultCryptTotal
-          cards={props.cards}
-          value={props.sortMethod}
-          handleChange={handleChange}
-          showSort={props.showSort}
-        />
-      )}
+      <ResultCryptTotal
+        cards={props.cards}
+        value={props.sortMethod}
+        handleChange={handleChange}
+      />
       <ResultCryptTable
         className={className}
         showImage={props.showImage}

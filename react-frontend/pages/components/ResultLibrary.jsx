@@ -30,14 +30,11 @@ function ResultLibrary(props) {
           <b>NO CARDS FOUND</b>
         </AlertMessage>
       )}
-      {props.showTotal == true && props.cards.length > 0 && (
-        <ResultLibraryTotal
-          cards={props.cards}
-          value={props.sortMethod}
-          handleChange={handleChange}
-          showSort={props.showSort}
-        />
-      )}
+      <ResultLibraryTotal
+        cards={props.cards}
+        value={props.sortMethod}
+        handleChange={handleChange}
+      />
       <ResultLibraryTable
         showImage={props.showImage}
         setShowImage={props.setShowImage}

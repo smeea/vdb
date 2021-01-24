@@ -87,8 +87,6 @@ function Library(props) {
                 props.decks[props.activeDeck].library
               }
               activeDeck={props.activeDeck}
-              showSort={true}
-              showTotal={true}
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
               isMobile={props.isMobile}

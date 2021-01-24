@@ -3,10 +3,13 @@ import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import X from '../../assets/images/icons/x.svg';
-import ResultCrypt from './ResultCrypt.jsx';
-import ResultLibrary from './ResultLibrary.jsx';
+import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
+import DeckDrawLibraryTable from './DeckDrawLibraryTable.jsx';
 
 function DeckDrawModal(props) {
+  const totalCrypt = props.drawedCrypt.length + props.restCrypt.length
+  const totalLibrary = props.drawedLibrary.length + props.restLibrary.length
+
   return (
     <Modal
       show={props.show}
@@ -41,7 +44,7 @@ function DeckDrawModal(props) {
                     </div>
                     <div className="d-flex align-items-center">
                       {props.drawedCrypt.length} /{' '}
-                      {props.drawedCrypt.length + props.restCrypt.length}
+                      {totalCrypt}
                     </div>
                     <div>
                       <Button
@@ -62,10 +65,11 @@ function DeckDrawModal(props) {
                       </Button>
                     </div>
                   </div>
-                  <ResultCrypt
-                    cards={props.drawedCrypt}
-                    showSort={false}
-                    showTotal={false}
+                  <DeckDrawCryptTable
+                    crypt={props.crypt}
+                    total={totalCrypt}
+                    resultCards={props.drawedCrypt}
+                    className="search-crypt-table"
                     hideFloatingButtons={true}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}
@@ -84,7 +88,7 @@ function DeckDrawModal(props) {
                     </div>
                     <div className="d-flex align-items-center">
                       {props.drawedLibrary.length} /{' '}
-                      {props.drawedLibrary.length + props.restLibrary.length}
+                      {totalLibrary}
                     </div>
                     <div>
                       <Button
@@ -103,10 +107,11 @@ function DeckDrawModal(props) {
                       </Button>
                     </div>
                   </div>
-                  <ResultLibrary
-                    cards={props.drawedLibrary}
-                    showSort={false}
-                    showTotal={false}
+                  <DeckDrawLibraryTable
+                    library={props.library}
+                    total={totalLibrary}
+                    resultCards={props.drawedLibrary}
+                    className="search-library-table"
                     hideFloatingButtons={true}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Dice3 from '../../assets/images/icons/dice-3-fill.svg';
-
 import DeckDrawModal from './DeckDrawModal.jsx';
 
 function getRandomInt(max) {
@@ -119,6 +118,8 @@ function DeckDraw(props) {
       </Button>
       {showDrawModal && (
         <DeckDrawModal
+          crypt={props.crypt}
+          library={props.library}
           drawedCrypt={drawedCrypt}
           drawedLibrary={drawedLibrary}
           handleReDrawCrypt={handleReDrawCrypt}
