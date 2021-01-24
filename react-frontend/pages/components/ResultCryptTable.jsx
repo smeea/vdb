@@ -129,7 +129,6 @@ function ResultCryptTable(props) {
           <td className="name px-1" onClick={() => setModalCard(card)}>
             <ResultCryptName
               showImage={props.showImage}
-              setShowImage={props.setShowImage}
               card={card}
               isMobile={props.isMobile}
             />
@@ -163,13 +162,14 @@ function ResultCryptTable(props) {
       <table className={props.className}>
         <tbody>{cardRows}</tbody>
       </table>
-      {props.isMobile && modalCard && (
+      {modalCard && (
         <ResultCryptModal
           show={modalCard ? true : false}
           card={modalCard}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => setModalCard(false)}
+          isMobile={props.isMobile}
         />
       )}
     </>

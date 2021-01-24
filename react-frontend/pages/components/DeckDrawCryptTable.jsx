@@ -7,19 +7,19 @@ import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 
-const factorial = n => {
-  return n ? n * factorial(n - 1) : 1;
-}
-
-const combinations = (n, r) => {
-  return factorial(n) / (factorial(r) * factorial(n - r))
-}
-
-const exactProbability = (x, N, n, k) => {
-  return combinations(k, x) * combinations(N - k, n - x) / combinations(N, n)
-}
-
 const probability = (x, N, n, k) => {
+  const factorial = n => {
+    return n ? n * factorial(n - 1) : 1;
+  }
+
+  const combinations = (n, r) => {
+    return factorial(n) / (factorial(r) * factorial(n - r))
+  }
+
+  const exactProbability = (i, N, n, k) => {
+    return combinations(k, i) * combinations(N - k, n - i) / combinations(N, n)
+  }
+
   let prob = 0;
   for (let i = 0; i <= n; i++ ) {
     if (i >= x && i <= k) {

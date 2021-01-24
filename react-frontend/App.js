@@ -18,6 +18,7 @@ const About = lazy(() => import('./pages/About.jsx'));
 const Twd = lazy(() => import('./pages/Twd.jsx'));
 const Decks = lazy(() => import('./pages/Decks.jsx'));
 const Account = lazy(() => import('./pages/Account.jsx'));
+const Cards = lazy(() => import('./pages/Cards.jsx'));
 
 function App(props) {
   const [twdFormState, setTwdFormState] = useState(defaultsTwdForm);
@@ -357,31 +358,6 @@ function App(props) {
                 libraryCardBase={libraryCardBase}
               />
             </Route>
-            <Route
-              path="/decks/:id"
-              component={(props) => (
-                <Decks
-                  changeTimer={changeTimer}
-                  isMobile={isMobile}
-                  isWide={isWide}
-                  decks={decks}
-                  getDecks={getDecks}
-                  activeDeck={activeDeck}
-                  setActiveDeck={setActiveDeck}
-                  sharedDeck={sharedDeck}
-                  setSharedDeck={setSharedDeck}
-                  deckCardAdd={deckCardAdd}
-                  deckCardChange={deckCardChange}
-                  showImage={showImage}
-                  username={username}
-                  whoAmI={whoAmI}
-                  setUsername={setUsername}
-                  id={props.match.params.id}
-                  cryptCardBase={cryptCardBase}
-                  libraryCardBase={libraryCardBase}
-                />
-              )}
-            />
             <Route path="/crypt">
               <Crypt
                 changeTimer={changeTimer}
@@ -436,6 +412,20 @@ function App(props) {
                 libraryCardBase={libraryCardBase}
               />
             </Route>
+            <Route
+              path="/cards/:id"
+              component={(props) => (
+                <Cards
+                  isMobile={isMobile}
+                  isWide={isWide}
+                  id={props.match.params.id}
+                  cryptCardBase={cryptCardBase}
+                  libraryCardBase={libraryCardBase}
+                  showImage={showImage}
+                  setShowImage={setShowImage}
+                />
+              )}
+            />
           </Suspense>
         </Switch>
       </Router>

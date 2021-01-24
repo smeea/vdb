@@ -59,7 +59,6 @@ function ResultLibraryTable(props) {
           <td className="name px-1" onClick={() => setModalCard(card)}>
             <ResultLibraryName
               showImage={props.showImage}
-              setShowImage={props.setShowImage}
               card={card}
               isMobile={props.isMobile}
             />
@@ -78,13 +77,14 @@ function ResultLibraryTable(props) {
       <table className="search-library-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {props.isMobile && modalCard && (
+      {modalCard && (
         <ResultLibraryModal
           show={modalCard ? true : false}
           card={modalCard}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => setModalCard(false)}
+          isMobile={props.isMobile}
         />
       )}
     </>

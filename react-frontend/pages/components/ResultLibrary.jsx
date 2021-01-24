@@ -30,22 +30,26 @@ function ResultLibrary(props) {
           <b>NO CARDS FOUND</b>
         </AlertMessage>
       )}
-      <ResultLibraryTotal
-        cards={props.cards}
-        value={props.sortMethod}
-        handleChange={handleChange}
-      />
-      <ResultLibraryTable
-        showImage={props.showImage}
-        setShowImage={props.setShowImage}
-        library={props.library}
-        activeDeck={props.activeDeck}
-        deckCardAdd={props.deckCardAdd}
-        resultCards={sortedCards}
-        isMobile={props.isMobile}
-        isWide={true}
-        addMode={props.addMode}
-      />
+      {props.cards.length > 0 &&
+       <>
+         <ResultLibraryTotal
+           cards={props.cards}
+           value={props.sortMethod}
+           handleChange={handleChange}
+         />
+         <ResultLibraryTable
+           showImage={props.showImage}
+           setShowImage={props.setShowImage}
+           library={props.library}
+           activeDeck={props.activeDeck}
+           deckCardAdd={props.deckCardAdd}
+           resultCards={sortedCards}
+           isMobile={props.isMobile}
+           isWide={true}
+           addMode={props.addMode}
+         />
+       </>
+      }
       {props.isMobile && !props.hideFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">

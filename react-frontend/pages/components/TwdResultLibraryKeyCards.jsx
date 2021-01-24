@@ -94,7 +94,7 @@ function TwdResultLibraryKeyCards({
           <tbody>{cardLines}</tbody>
         </table>
       </div>
-      {isMobile && modalCard && (
+      {modalCard && (
         <ResultLibraryModal
           show={modalCard ? true : false}
           card={modalCard}

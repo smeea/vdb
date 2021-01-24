@@ -24,10 +24,7 @@ function ResultLibraryName(props) {
             <CardPopover card={props.card}>{props.showImage}</CardPopover>
           }
         >
-          <div
-            className="name"
-            onClick={() => props.setShowImage(!props.showImage)}
-          >
+          <div className="name">
             {props.card['Banned'] ? (
               <>
                 <strike>{props.card['Name']}</strike>

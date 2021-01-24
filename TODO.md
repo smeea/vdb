@@ -4,10 +4,8 @@
 * Clear text form to update search
 
 # FEATURES
-* Copy image link to card results
 * TWD Deck name filter
 * Deck revisions
-* Link to Modal window on Desktop
 * Full account export
 
 # MAYBE LATER FEATURES

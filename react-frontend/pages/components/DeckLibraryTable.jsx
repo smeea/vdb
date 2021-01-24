@@ -89,7 +89,6 @@ function DeckLibraryTable(props) {
             <div className="px-1">
               <ResultLibraryName
                 showImage={props.showImage}
-                setShowImage={props.setShowImage}
                 card={card.c}
                 isMobile={props.isMobile}
               />
@@ -118,13 +117,14 @@ function DeckLibraryTable(props) {
       <table className="deck-library-table">
         <tbody>{cardLines}</tbody>
       </table>
-      {props.isMobile && showModal && (
+      {showModal && (
         <ResultLibraryModal
           show={showModal ? true : false}
           card={showModal}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => setShowModal(false)}
+          isMobile={props.isMobile}
         />
       )}
     </>

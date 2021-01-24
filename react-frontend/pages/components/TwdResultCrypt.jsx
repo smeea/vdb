@@ -85,7 +85,7 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
       <table width="100%">
         <tbody>{cardLines}</tbody>
       </table>
-      {isMobile && modalCard && (
+      {modalCard && (
         <ResultCryptModal
           show={modalCard ? true : false}
           card={modalCard}

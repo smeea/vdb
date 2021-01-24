@@ -1,5 +1,4 @@
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
 import reactStringReplace from 'react-string-replace';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultLibraryType from './ResultLibraryType.jsx';
@@ -9,31 +8,24 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 
-function ResultLibraryPopover(props) {
-  const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
-    .toLowerCase()
-    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-
-  const cardImage = (
-    <img
-      className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
-      src={imgSrc}
-      alt={props.card['Name']}
-      onClick={props.handleClose}
-    />
-  );
-
+function ResultLibraryLayoutText(props) {
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
     return (
-      <span key={index} className="d-inline-block nobr ml-2">
-        {k}:{props.card['Set'][k]}
-      </span>
+      <div className="d-inline-block nobr px-1" key={index}>
+        {k}<div className="d-inline gray">:{props.card['Set'][k]}</div>
+      </div>
     );
   });
 
   const Rulings = Object(props.card['Rulings']).map((k, index) => {
-    return <ListGroup.Item key={index}>{k}</ListGroup.Item>;
+    return <li className="rulings" key={index}>{k}</li>;
   });
+
+  const Artist = props.card['Artist'].length > 1
+        ? props.card['Artist'].map((artist, index) => {
+          return(<div className="d-inline-block nobr px-1" key={index}>{artist}</div>)
+        })
+        : props.card['Artist']
 
   const icons = {
     aus: 'auspex',
@@ -126,67 +118,74 @@ function ResultLibraryPopover(props) {
 
   return (
     <>
-      {!props.showImage ? (
+      <div className="d-flex flex-nowrap justify-content-between align-items-center">
+        <div className="d-flex flex-nowrap align-items-center pb-1">
+          <div>
+            <ResultLibraryType cardtype={props.card['Type']} />
+          </div>
+          <div className="pl-2">
+            <b>{props.card['Name']}</b>
+            {props.card['Banned'] && (
+              <span className="pl-1">
+                <Hammer />
+              </span>
+            )}
+          </div>
+        </div>
+        <div className="pl-1">
+          <ResultLibraryDisciplines value={props.card['Discipline']} />
+          <ResultLibraryClan value={props.card['Clan']} />
+        </div>
+        {props.card['Burn Option'] && (
+          <div className="pl-1">
+            <ResultLibraryBurn value={props.card['Burn Option']} />
+          </div>
+        )}
+        {props.card['Card Text'].includes('Trifle.') && (
+          <div className="pl-1">
+            <ResultLibraryTrifle value={props.card['Card Text']} />
+          </div>
+        )}
+      </div>
+      <hr className="mx-0"/>
+      <div className="py-2">
+        {newText.map((i, index) => {
+          return (
+            <React.Fragment key={index}>
+              {i.map((y, index) => {
+                return <React.Fragment key={index}>{y}</React.Fragment>;
+              })}
+              <br />
+            </React.Fragment>
+          );
+        })}
+      </div>
+      <hr className="mx-0"/>
+      {(props.card['Blood Cost'] || props.card['Pool Cost']) &&
+       <>
+         <div className="d-flex align-items-center justify-content-between">
+           <ResultLibraryCost
+             valuePool={props.card['Pool Cost']}
+             valueBlood={props.card['Blood Cost']}
+           />
+         </div>
+         <hr className="mx-0"/>
+       </>
+      }
+      <div className="py-1"><b>Sets: </b>{Sets}</div>
+      <div className="py-1"><b>Artist: </b>
+        <div className="d-inline px-1">{Artist}</div>
+      </div>
+      {Rulings.length > 0 && (
         <>
-          <div className="d-flex flex-nowrap justify-content-between align-items-center">
-            <div className="d-flex flex-nowrap align-items-center">
-              <div>
-                <ResultLibraryType cardtype={props.card['Type']} />
-              </div>
-              <div className="pl-2">
-                <b>{props.card['Name']}</b>
-                {props.card['Banned'] && (
-                  <span className="pl-1">
-                    <Hammer />
-                  </span>
-                )}
-              </div>
-            </div>
-            <div className="pl-1">
-              <ResultLibraryDisciplines value={props.card['Discipline']} />
-              <ResultLibraryClan value={props.card['Clan']} />
-            </div>
-            {props.card['Burn Option'] && (
-              <div className="pl-1">
-                <ResultLibraryBurn value={props.card['Burn Option']} />
-              </div>
-            )}
-            {props.card['Card Text'].includes('Trifle.') && (
-              <div className="pl-1">
-                <ResultLibraryTrifle value={props.card['Card Text']} />
-              </div>
-            )}
+          <div className="py-1"><b>Rulings: </b></div>
+          <div className="popover-rulings pb-1">
+            <ul className="rulings">{Rulings}</ul>
           </div>
-          <hr />
-          {newText.map((i, index) => {
-            return (
-              <React.Fragment key={index}>
-                {i.map((y, index) => {
-                  return <React.Fragment key={index}>{y}</React.Fragment>;
-                })}
-                <br />
-              </React.Fragment>
-            );
-          })}
-          <hr />
-          <div className="d-flex align-items-center justify-content-between">
-            <ResultLibraryCost
-              valuePool={props.card['Pool Cost']}
-              valueBlood={props.card['Blood Cost']}
-            />
-            <div className="popover-sets px-1">{Sets}</div>
-          </div>
-          {Rulings.length > 0 && (
-            <div className="popover-rulings pt-2">
-              <ListGroup>{Rulings}</ListGroup>
-            </div>
-          )}
         </>
-      ) : (
-        cardImage
       )}
     </>
   );
 }
 
-export default ResultLibraryPopover;
+export default ResultLibraryLayoutText;
