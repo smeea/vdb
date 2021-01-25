@@ -101,6 +101,7 @@ function TwdResultLibraryKeyCards({
           showImage={showImage}
           setShowImage={setShowImage}
           handleClose={() => setModalCard(false)}
+          isMobile={isMobile}
         />
       )}
     </>

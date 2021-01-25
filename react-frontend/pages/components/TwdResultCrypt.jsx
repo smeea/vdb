@@ -92,6 +92,7 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
           showImage={showImage}
           setShowImage={setShowImage}
           handleClose={() => setModalCard(false)}
+          isMobile={isMobile}
         />
       )}
     </>
