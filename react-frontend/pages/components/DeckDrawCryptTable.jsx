@@ -61,11 +61,11 @@ function ResultCryptTable(props) {
         </div>
         <div className="d-flex justify-content-between">
           <div className="pr-2">2+</div>
-          <div>{k <= 2 ? null : `${Math.floor(probability(2, N, n, k) * 100)}%`}</div>
+          <div>{k < 2 ? null : `${Math.floor(probability(2, N, n, k) * 100)}%`}</div>
         </div>
         <div className="d-flex justify-content-between">
           <div className="pr-2">3+</div>
-          <div>{k <= 3 ? null : `${Math.floor(probability(3, N, n, k) * 100)}%`}</div>
+          <div>{k < 3 ? null : `${Math.floor(probability(3, N, n, k) * 100)}%`}</div>
         </div>
       </div>
     );
