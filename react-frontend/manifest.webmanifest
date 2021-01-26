@@ -1,0 +1,16 @@
+{
+  "name": "VDB",
+  "short_name": "VDB",
+  "description": "Card search and deck building app for Vampire the Eternal Struggle (VTES).",
+  "lang": "en-US",
+  "start_url": "/crypt",
+  "display": "standalone",
+  "backgroupd_color": "#fff",
+  "icons": [
+    {
+      "src": "./dist/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
