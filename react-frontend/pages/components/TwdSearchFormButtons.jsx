@@ -14,14 +14,16 @@ function TwdSearchFormButtons(props) {
         >
           <Dice3 /> 10 Random
         </Button>
-        <Button variant="outline-secondary" onClick={() => props.getNewTwd(50)}>
-          <LightningFill /> 50 New
-        </Button>
+
+        <div className="lp-125">
+          <Button variant="outline-secondary" onClick={() => props.getNewTwd(50)}>
+            <LightningFill /> 50 New
+          </Button>
+        </div>
       </div>
       {!props.isMobile && (
-        <div>
+        <div className="d-flex">
           <Button
-            className="full-height"
             variant="outline-secondary"
             onClick={props.handleClearButton}
           >

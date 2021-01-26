@@ -23,8 +23,14 @@ function DeckDescription(props) {
     deckChangeDescription();
   };
 
+  const handleOnBlur = () => {
+    if (state != props.description) {
+      deckChangeDescription();
+    };
+  };
+
   useEffect(() => {
-    props.description && setState(props.description);
+    setState(props.description);
   }, [props.description]);
 
   return (
@@ -41,6 +47,7 @@ function DeckDescription(props) {
             className="form-control"
             value={state}
             onChange={handleChange}
+            onBlur={handleOnBlur}
           />
         ) : (
           <FormControl
@@ -54,7 +61,7 @@ function DeckDescription(props) {
             style={{ background: 'white' }}
           />
         )}
-        {props.isAuthor && (
+        {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
             {!buttonState ? (
               <Button variant="outline-secondary" type="submit">

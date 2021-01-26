@@ -23,8 +23,14 @@ function DeckChangeAuthor(props) {
     deckChangeAuthor();
   };
 
+  const handleOnBlur = () => {
+    if (state != props.author) {
+      deckChangeAuthor();
+    };
+  };
+
   useEffect(() => {
-    props.author && setState(props.author);
+    setState(props.author);
   }, [props.author]);
 
   return (
@@ -39,11 +45,12 @@ function DeckChangeAuthor(props) {
             className="form-control"
             value={state}
             onChange={handleChange}
+            onBlur={handleOnBlur}
           />
         ) : (
           <div className="form-control">{state}</div>
         )}
-        {props.isAuthor && (
+        {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
             {!buttonState ? (
               <Button variant="outline-secondary" type="submit">

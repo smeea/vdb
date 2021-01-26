@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
+import ResultCryptPopover from './ResultCryptPopover.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -70,6 +72,17 @@ function ResultCryptTable(props) {
       </div>
     );
 
+    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
+      return (
+        <Popover ref={ref} {...props}>
+          <Popover.Content>
+            <ResultCryptPopover card={props.card} showImage={children} />
+          </Popover.Content>
+        </Popover>
+      );
+    });
+    CardPopover.displayName = 'CardPopover';
+
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
@@ -87,14 +100,16 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="name px-1" onClick={() => setModalCard(card)}>
-            <ResultCryptName
-              showImage={props.showImage}
-              setShowImage={props.setShowImage}
-              card={card}
-              isMobile={props.isMobile}
-            />
-          </td>
+          <OverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={
+              <CardPopover card={card}>{props.showImage}</CardPopover>
+            }
+          >
+            <td className="name px-1" onClick={() => setModalCard(card)}>
+              <ResultCryptName card={card} />
+            </td>
+          </OverlayTrigger>
           {props.isMobile || !props.isWide ? (
             <td className="clan-group" onClick={() => setModalCard(card)}>
               <div>
@@ -135,7 +150,7 @@ function ResultCryptTable(props) {
       <table className={props.className}>
         <tbody>{cardRows}</tbody>
       </table>
-      {props.isMobile && modalCard && (
+      {modalCard && (
         <ResultCryptModal
           show={modalCard ? true : false}
           card={modalCard}

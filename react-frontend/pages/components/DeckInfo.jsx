@@ -11,18 +11,21 @@ function DeckInfo(props) {
         deckUpdate={props.deckUpdate}
         deckid={props.deck && props.deck.deckid}
         isAuthor={props.isAuthor}
+        isMobile={props.isMobile}
       />
       <DeckChangeDescription
         description={props.deck && props.deck.description}
         deckUpdate={props.deckUpdate}
         deckid={props.deck && props.deck.deckid}
         isAuthor={props.isAuthor}
+        isMobile={props.isMobile}
       />
       <DeckChangeAuthor
         author={props.deck && props.deck.author}
         deckUpdate={props.deckUpdate}
         deckid={props.deck && props.deck.deckid}
         isAuthor={props.isAuthor}
+        isMobile={props.isMobile}
       />
     </>
   );

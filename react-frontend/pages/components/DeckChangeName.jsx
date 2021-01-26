@@ -23,8 +23,14 @@ function DeckChangeName(props) {
     deckChangeName();
   };
 
+  const handleOnBlur = () => {
+    if (state != props.name) {
+      deckChangeName();
+    };
+  };
+
   useEffect(() => {
-    props.name && setState(props.name);
+    setState(props.name);
   }, [props.name]);
 
   return (
@@ -39,11 +45,12 @@ function DeckChangeName(props) {
             className="form-control"
             value={state}
             onChange={handleChange}
+            onBlur={handleOnBlur}
           />
         ) : (
           <div className="form-control">{state}</div>
         )}
-        {props.isAuthor && (
+        {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
             {!buttonState ? (
               <Button variant="outline-secondary" type="submit">

@@ -70,7 +70,9 @@ function ResultCryptModal(props) {
                  handleClose={props.handleClose}
                />
              </div>
-             <CardCopyUrlButton id={props.card['Id']} />
+             <div className="bp-125">
+               <CardCopyUrlButton id={props.card['Id']} />
+             </div>
              <Button
                className="btn-block"
                variant="outline-secondary"

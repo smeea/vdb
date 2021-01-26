@@ -170,12 +170,14 @@ function DeckLibrary(props) {
             <InfoCircle />
           </Button>
           {props.isAuthor && (
-            <Button
-              variant="outline-secondary"
-              onClick={() => setShowAdd(!showAdd)}
-            >
-              +
-            </Button>
+            <div className="lp-125">
+              <Button
+                variant="outline-secondary"
+                onClick={() => setShowAdd(!showAdd)}
+              >
+                +
+              </Button>
+            </div>
           )}
         </div>
       </div>

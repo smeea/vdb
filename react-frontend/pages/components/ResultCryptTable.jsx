@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
+import ResultCryptPopover from './ResultCryptPopover.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -34,6 +36,17 @@ function ResultCryptTable(props) {
         }
       });
     }
+
+    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
+      return (
+        <Popover ref={ref} {...props}>
+          <Popover.Content>
+            <ResultCryptPopover card={props.card} showImage={children} />
+          </Popover.Content>
+        </Popover>
+      );
+    });
+    CardPopover.displayName = 'CardPopover';
 
     return (
       <React.Fragment key={index}>
@@ -126,13 +139,16 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <td className="name px-1" onClick={() => setModalCard(card)}>
-            <ResultCryptName
-              showImage={props.showImage}
-              card={card}
-              isMobile={props.isMobile}
-            />
-          </td>
+          <OverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={
+              <CardPopover card={card}>{props.showImage}</CardPopover>
+            }
+          >
+            <td className="name px-1" onClick={() => setModalCard(card)}>
+              <ResultCryptName card={card} />
+            </td>
+          </OverlayTrigger>
           {props.isMobile || !props.isWide ? (
             <td className="clan-group" onClick={() => setModalCard(card)}>
               <div>

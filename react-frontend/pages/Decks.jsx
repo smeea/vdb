@@ -155,7 +155,6 @@ function Decks(props) {
                       className="d-flex justify-content-between align-items-center px-0 px-lg-3"
                     >
                       <Button
-                        className="full-height"
                         variant="outline-secondary"
                         onClick={() => setShowInfo(!showInfo)}
                       >
@@ -182,6 +181,7 @@ function Decks(props) {
               deckUpdate={deckUpdate}
               username={props.username}
               isAuthor={isAuthor}
+              isMobile={props.isMobile}
             />
           )}
         </Col>

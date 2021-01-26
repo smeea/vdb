@@ -46,9 +46,8 @@ function DeckDrawModal(props) {
                       {props.drawedCrypt.length} /{' '}
                       {totalCrypt}
                     </div>
-                    <div>
+                    <div className="d-flex">
                       <Button
-                        className="full-height"
                         variant="outline-secondary"
                         onClick={props.handleReDrawCrypt}
                       >
@@ -56,13 +55,14 @@ function DeckDrawModal(props) {
                           <ArrowRepeat />
                         </span>
                       </Button>
-                      <Button
-                        className="full-height"
-                        variant="outline-secondary"
-                        onClick={props.handleDrawOneCrypt}
-                      >
-                        +1
-                      </Button>
+                      <div className="lp-125">
+                        <Button
+                          variant="outline-secondary"
+                          onClick={props.handleDrawOneCrypt}
+                        >
+                          +1
+                        </Button>
+                      </div>
                     </div>
                   </div>
                   <DeckDrawCryptTable
@@ -90,21 +90,21 @@ function DeckDrawModal(props) {
                       {props.drawedLibrary.length} /{' '}
                       {totalLibrary}
                     </div>
-                    <div>
+                    <div className="d-flex">
                       <Button
-                        className="full-height"
                         variant="outline-secondary"
                         onClick={props.handleReDrawLibrary}
                       >
                         <ArrowRepeat />
                       </Button>
-                      <Button
-                        className="full-height"
-                        variant="outline-secondary"
-                        onClick={props.handleDrawOneLibrary}
-                      >
-                        +1
-                      </Button>
+                      <div className="lp-125">
+                        <Button
+                          variant="outline-secondary"
+                          onClick={props.handleDrawOneLibrary}
+                        >
+                          +1
+                        </Button>
+                      </div>
                     </div>
                   </div>
                   <DeckDrawLibraryTable

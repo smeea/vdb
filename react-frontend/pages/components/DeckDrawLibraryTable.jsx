@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
+import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -72,6 +74,17 @@ function DeckDrawLibraryTable(props) {
       </div>
     );
 
+    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
+      return (
+        <Popover ref={ref} {...props}>
+          <Popover.Content>
+            <ResultLibraryPopover card={card} showImage={children} />
+          </Popover.Content>
+        </Popover>
+      );
+    });
+    CardPopover.displayName = 'CardPopover';
+
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
@@ -88,14 +101,16 @@ function DeckDrawLibraryTable(props) {
             <ResultLibraryDisciplines value={card['Discipline']} />
             <ResultLibraryClan value={card['Clan']} />
           </td>
-          <td className="name px-1" onClick={() => setModalCard(card)}>
-            <ResultLibraryName
-              showImage={props.showImage}
-              setShowImage={props.setShowImage}
-              card={card}
-              isMobile={props.isMobile}
-            />
-          </td>
+          <OverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={
+              <CardPopover card={props.card}>{props.showImage}</CardPopover>
+            }
+          >
+            <td className="name px-1" onClick={() => setModalCard(card)}>
+              <ResultLibraryName card={card} />
+            </td>
+          </OverlayTrigger>
           <td className="burn px-1" onClick={() => setModalCard(card)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={card['Card Text']} />
@@ -121,7 +136,7 @@ function DeckDrawLibraryTable(props) {
       <table className="search-library-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {props.isMobile && modalCard && (
+      {modalCard && (
         <ResultLibraryModal
           show={modalCard ? true : false}
           card={modalCard}
