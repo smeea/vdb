@@ -139,16 +139,22 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          <OverlayTrigger
-            placement={props.placement ? props.placement : 'right'}
-            overlay={
-              <CardPopover card={card}>{props.showImage}</CardPopover>
-            }
-          >
-            <td className="name px-1" onClick={() => setModalCard(card)}>
-              <ResultCryptName card={card} />
-            </td>
-          </OverlayTrigger>
+          {!props.isMobile ?
+           <OverlayTrigger
+             placement={props.placement ? props.placement : 'right'}
+             overlay={
+               <CardPopover card={card}>{props.showImage}</CardPopover>
+             }
+           >
+             <td className="name px-1" onClick={() => setModalCard(card)}>
+               <ResultCryptName card={card} />
+             </td>
+           </OverlayTrigger>
+           :
+           <td className="name px-1" onClick={() => setModalCard(card)}>
+             <ResultCryptName card={card} />
+           </td>
+          }
           {props.isMobile || !props.isWide ? (
             <td className="clan-group" onClick={() => setModalCard(card)}>
               <div>

@@ -74,16 +74,22 @@ function TwdResultCrypt(props) {
     return (
       <tr key={index} className={resultTrClass}>
         <td className="quantity-no-buttons px-2">{card.q}</td>
-        <OverlayTrigger
-          placement={props.placement ? props.placement : 'right'}
-          overlay={
-            <CardPopover card={card.c}>{props.showImage}</CardPopover>
-          }
-        >
-          <td className="name px-1" onClick={() => setModalCard(card.c)}>
-            <ResultCryptName card={card.c} />
-          </td>
-        </OverlayTrigger>
+        {!props.isMobile ?
+         <OverlayTrigger
+           placement={props.placement ? props.placement : 'right'}
+           overlay={
+             <CardPopover card={card.c}>{props.showImage}</CardPopover>
+           }
+         >
+           <td className="name px-1" onClick={() => setModalCard(card.c)}>
+             <ResultCryptName card={card.c} />
+           </td>
+         </OverlayTrigger>
+         :
+         <td className="name px-1" onClick={() => setModalCard(card.c)}>
+           <ResultCryptName card={card.c} />
+         </td>
+        }
       </tr>
     );
   });

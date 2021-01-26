@@ -101,16 +101,22 @@ function DeckDrawLibraryTable(props) {
             <ResultLibraryDisciplines value={card['Discipline']} />
             <ResultLibraryClan value={card['Clan']} />
           </td>
-          <OverlayTrigger
-            placement={props.placement ? props.placement : 'right'}
-            overlay={
-              <CardPopover card={props.card}>{props.showImage}</CardPopover>
-            }
-          >
-            <td className="name px-1" onClick={() => setModalCard(card)}>
-              <ResultLibraryName card={card} />
-            </td>
-          </OverlayTrigger>
+          {!props.isMobile ?
+           <OverlayTrigger
+             placement={props.placement ? props.placement : 'right'}
+             overlay={
+               <CardPopover card={card}>{props.showImage}</CardPopover>
+             }
+           >
+             <td className="name px-1" onClick={() => setModalCard(card)}>
+               <ResultLibraryName card={card} />
+             </td>
+           </OverlayTrigger>
+           :
+           <td className="name px-1" onClick={() => setModalCard(card)}>
+             <ResultLibraryName card={card} />
+           </td>
+          }
           <td className="burn px-1" onClick={() => setModalCard(card)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={card['Card Text']} />
