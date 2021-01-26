@@ -163,6 +163,7 @@ function ResultCryptTable(props) {
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => setModalCard(false)}
+          isMobile={props.isMobile}
         />
       )}
     </>
