@@ -98,18 +98,22 @@ function DeckLibraryTable(props) {
               <div className="transparent">0</div>
             </td>
           )}
-          <OverlayTrigger
-            placement={props.placement ? props.placement : 'right'}
-            overlay={
-              <CardPopover card={card.c}>{props.showImage}</CardPopover>
-            }
-          >
-          <td className="name" onClick={() => setShowModal(card.c)}>
-            <div className="px-1">
-              <ResultLibraryName card={card.c}/>
-            </div>
-          </td>
-          </OverlayTrigger>
+          {!props.isMobile ?
+           <OverlayTrigger
+             placement={props.placement ? props.placement : 'right'}
+             overlay={
+               <CardPopover card={card.c}>{props.showImage}</CardPopover>
+             }
+           >
+             <td className="name px-1" onClick={() => setShowModal(card.c)}>
+               <ResultLibraryName card={card.c}/>
+             </td>
+           </OverlayTrigger>
+           :
+           <td className="name px-1" onClick={() => setShowModal(card.c)}>
+             <ResultLibraryName card={card.c}/>
+           </td>
+          }
           <td className="cost px-1" onClick={() => setShowModal(card.c)}>
             <ResultLibraryCost
               valueBlood={card.c['Blood Cost']}
