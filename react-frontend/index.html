@@ -4,9 +4,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="VTES Deck Building & Card Search">
         <title>VDB - Card Search & Deck Building</title>
+        <link rel="manifest" href="manifest.json">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="application-name" content="VDB">
+        <meta name="apple-mobile-web-app-title" content="VDB">
+        <meta name="msapplication-starturl" content="/decks">
+        <link rel="icon" href="./dist/apple-touch-icon.png">
+        <link rel="apple-touch-icon" href="./dist/apple-touch-icon.png">
     </head>
     <body>
         <div id="root"></div>
         <script src="./index.js"></script>
+        <script>
+         if ('serviceWorker' in navigator) {
+             window.addEventListener('load', function() {
+                 navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+                     // Registration was successful
+                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                 }, function(err) {
+                     // registration failed :(
+                     console.log('ServiceWorker registration failed: ', err);
+                 }).catch(function(err) {
+                     console.log(err)
+                 });
+             });
+         } else {
+             console.log('service worker is not supported');
+         }
+        </script>
     </body>
 </html>
