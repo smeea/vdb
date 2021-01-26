@@ -22,10 +22,10 @@ function ResultCryptTable(props) {
       card = card.c;
     }
 
-    if (resultTrClass == 'crypt-result-even') {
-      resultTrClass = 'crypt-result-odd';
+    if (resultTrClass == 'result-even') {
+      resultTrClass = 'result-odd';
     } else {
-      resultTrClass = 'crypt-result-even';
+      resultTrClass = 'result-even';
     }
 
     let inDeck;

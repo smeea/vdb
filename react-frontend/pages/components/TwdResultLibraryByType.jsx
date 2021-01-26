@@ -50,7 +50,7 @@ function TwdResultLibraryByType(props) {
   });
 
   const LibraryTypes = [];
-  let resultTrClass = 'library-result-even';
+  let resultTrClass = 'result-even';
 
   for (const cardtype of cardtypeSorted) {
     if (libraryByType[cardtype] !== undefined) {
@@ -65,10 +65,10 @@ function TwdResultLibraryByType(props) {
       });
       TypePopover.displayName = 'TypePopover';
 
-      if (resultTrClass == 'library-result-even') {
-        resultTrClass = 'library-result-odd';
+      if (resultTrClass == 'result-even') {
+        resultTrClass = 'result-odd';
       } else {
-        resultTrClass = 'library-result-even';
+        resultTrClass = 'result-even';
       }
 
       LibraryTypes.push(

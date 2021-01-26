@@ -47,10 +47,10 @@ function ResultCryptTable(props) {
   const n = props.resultCards.length
 
   const cardRows = props.resultCards.map((card, index) => {
-    if (resultTrClass == 'crypt-result-even') {
-      resultTrClass = 'crypt-result-odd';
+    if (resultTrClass == 'result-even') {
+      resultTrClass = 'result-odd';
     } else {
-      resultTrClass = 'crypt-result-even';
+      resultTrClass = 'result-even';
     }
 
     const k = props.crypt[card['Id']].q

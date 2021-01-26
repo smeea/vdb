@@ -1,31 +1,33 @@
 import React, { useState } from 'react';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
+import ResultCryptPopover from './ResultCryptPopover.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 
-function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
-  let resultTrClass = 'library-result-even';
+function TwdResultCrypt(props) {
+  let resultTrClass = 'result-even';
 
   const [modalCard, setModalCard] = useState(undefined);
 
   let cryptGroupMin;
   let cryptGroupMax;
 
-  Object.keys(crypt).map((card, index) => {
-    if (crypt[card].c['Group'] == 'ANY') {
+  Object.keys(props.crypt).map((card, index) => {
+    if (props.crypt[card].c['Group'] == 'ANY') {
       return;
     }
-    if (crypt[card].c['Group'] < cryptGroupMin || cryptGroupMin == undefined) {
-      cryptGroupMin = crypt[card].c['Group'];
+    if (props.crypt[card].c['Group'] < cryptGroupMin || cryptGroupMin == undefined) {
+      cryptGroupMin = props.crypt[card].c['Group'];
     }
     if (cryptGroupMax == undefined) {
-      cryptGroupMax = crypt[card].c['Group'];
+      cryptGroupMax = props.crypt[card].c['Group'];
     }
   });
 
   let cryptTotal = 0;
-  for (const card in crypt) {
+  for (const card in props.crypt) {
     if (card) {
-      cryptTotal += crypt[card].q;
+      cryptTotal += props.crypt[card].q;
     }
   }
 
@@ -49,28 +51,39 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
     }
   };
 
-  const sortedCards = Object.values(crypt).sort(SortByQuantityCapacity);
+  const sortedCards = Object.values(props.crypt).sort(SortByQuantityCapacity);
 
   const cardLines = sortedCards.map((card, index) => {
-    if (resultTrClass == 'library-result-even') {
-      resultTrClass = 'library-result-odd';
+    if (resultTrClass == 'result-even') {
+      resultTrClass = 'result-odd';
     } else {
-      resultTrClass = 'library-result-even';
+      resultTrClass = 'result-even';
     }
+
+    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
+      return (
+        <Popover ref={ref} {...props}>
+          <Popover.Content>
+            <ResultCryptPopover card={card.c} showImage={children} />
+          </Popover.Content>
+        </Popover>
+      );
+    });
+    CardPopover.displayName = 'CardPopover';
 
     return (
       <tr key={index} className={resultTrClass}>
         <td className="quantity-no-buttons px-2">{card.q}</td>
-        <td className="name" onClick={() => setModalCard(card.c)}>
-          <div className="px-1">
-            <ResultCryptName
-              card={card.c}
-              showImage={showImage}
-              setShowImage={setShowImage}
-              isMobile={isMobile}
-            />
-          </div>
-        </td>
+        <OverlayTrigger
+          placement={props.placement ? props.placement : 'right'}
+          overlay={
+            <CardPopover card={card.c}>{props.showImage}</CardPopover>
+          }
+        >
+          <td className="name px-1" onClick={() => setModalCard(card.c)}>
+            <ResultCryptName card={card.c} />
+          </td>
+        </OverlayTrigger>
       </tr>
     );
   });
@@ -89,10 +102,10 @@ function TwdResultCrypt({ crypt, isMobile, showImage, setShowImage }) {
         <ResultCryptModal
           show={modalCard ? true : false}
           card={modalCard}
-          showImage={showImage}
-          setShowImage={setShowImage}
+          showImage={props.showImage}
+          setShowImage={props.setShowImage}
           handleClose={() => setModalCard(false)}
-          isMobile={isMobile}
+          isMobile={props.isMobile}
         />
       )}
     </>

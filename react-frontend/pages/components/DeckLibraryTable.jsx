@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
+import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -9,15 +11,15 @@ import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 
 function DeckLibraryTable(props) {
-  let resultTrClass = 'library-result-even';
+  let resultTrClass = 'result-even';
 
   const [showModal, setShowModal] = useState(undefined);
 
   const cardLines = props.cards.map((card, index) => {
-    if (resultTrClass == 'library-result-even') {
-      resultTrClass = 'library-result-odd';
+    if (resultTrClass == 'result-even') {
+      resultTrClass = 'result-odd';
     } else {
-      resultTrClass = 'library-result-even';
+      resultTrClass = 'result-even';
     }
 
     let DisciplineOrClan;
@@ -28,6 +30,17 @@ function DeckLibraryTable(props) {
         <ResultLibraryDisciplines value={card.c['Discipline']} />
       );
     }
+
+    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
+      return (
+        <Popover ref={ref} {...props}>
+          <Popover.Content>
+            <ResultLibraryPopover card={card.c} showImage={children} />
+          </Popover.Content>
+        </Popover>
+      );
+    });
+    CardPopover.displayName = 'CardPopover';
 
     return (
       <React.Fragment key={index}>
@@ -85,15 +98,18 @@ function DeckLibraryTable(props) {
               <div className="transparent">0</div>
             </td>
           )}
+          <OverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={
+              <CardPopover card={card.c}>{props.showImage}</CardPopover>
+            }
+          >
           <td className="name" onClick={() => setShowModal(card.c)}>
             <div className="px-1">
-              <ResultLibraryName
-                showImage={props.showImage}
-                card={card.c}
-                isMobile={props.isMobile}
-              />
+              <ResultLibraryName card={card.c}/>
             </div>
           </td>
+          </OverlayTrigger>
           <td className="cost px-1" onClick={() => setShowModal(card.c)}>
             <ResultLibraryCost
               valueBlood={card.c['Blood Cost']}
