@@ -10,7 +10,7 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 
-function DeckLibraryTable(props) {
+function InventoryLibraryTable(props) {
   let resultTrClass;
 
   const [showModal, setShowModal] = useState(undefined);
@@ -31,15 +31,6 @@ function DeckLibraryTable(props) {
       );
     }
 
-    let inInventory = null;
-    if (props.inventoryMode) {
-      if (Object.keys(props.inventoryLibrary).includes(card.c['Id'].toString())) {
-        inInventory = props.inventoryLibrary[card.c['Id']].q;
-      } else {
-        inInventory = 0;
-      }
-    }
-
     const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
       return (
         <Popover ref={ref} {...props}>
@@ -51,31 +42,33 @@ function DeckLibraryTable(props) {
     });
     CardPopover.displayName = 'CardPopover';
 
+    let used = 0;
+    let UsedDetails;
+    if (props.consumedCards[card.c['Id']]) {
+      UsedDetails = Object.keys(props.consumedCards[card.c['Id']]).map((id, index) => {
+        used += props.consumedCards[card.c['Id']][id];
+        return (
+          <div key={index}>
+            {props.decks[id]['name']}: {props.consumedCards[card.c['Id']][id]}
+          </div>
+        )
+      })
+    }
+
+    const UsedPopover = React.forwardRef(({ children, ...props }, ref) => {
+      return (
+        <Popover ref={ref} {...props}>
+          <Popover.Content>
+            {UsedDetails}
+          </Popover.Content>
+        </Popover>
+      );
+    });
+    UsedPopover.displayName = 'UsedPopover';
+
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          {props.proxySelected && (
-            <td className="proxy-selector">
-              <div className="custom-control custom-checkbox">
-                <input
-                  id={card.c['Id']}
-                  name="print"
-                  className="custom-control-input"
-                  type="checkbox"
-                  checked={
-                    props.proxySelected[card.c['Id']]
-                      ? props.proxySelected[card.c['Id']].print
-                      : false
-                  }
-                  onChange={(e) => props.proxySelector(e)}
-                />
-                <label
-                  htmlFor={card.c['Id']}
-                  className="custom-control-label"
-                />
-              </div>
-            </td>
-          )}
           {props.isAuthor ? (
             <td className="quantity pr-1">
               <DeckCardQuantity
@@ -83,21 +76,6 @@ function DeckLibraryTable(props) {
                 q={card.q}
                 deckid={props.deckid}
                 cardChange={props.cardChange}
-                isMobile={props.isMobile}
-                inInventory={inInventory}
-              />
-            </td>
-          ) : props.proxySelected ? (
-            <td className="quantity pr-1">
-              <DeckCardQuantity
-                cardid={card.c['Id']}
-                deckid={null}
-                q={
-                  props.proxySelected[card.c['Id']]
-                    ? props.proxySelected[card.c['Id']].q
-                    : 0
-                }
-                cardChange={props.proxyCounter}
                 isMobile={props.isMobile}
               />
             </td>
@@ -108,6 +86,21 @@ function DeckLibraryTable(props) {
               <div className="transparent">0</div>
             </td>
           )}
+          {!props.isMobile && used ?
+           <OverlayTrigger
+             placement={props.placement ? props.placement : 'right'}
+             overlay={
+               <UsedPopover>{true}</UsedPopover>
+             }
+           >
+             <td className="quantity-no-buttons px-2">
+               {used}
+             </td>
+           </OverlayTrigger>
+           :
+           <td className="quantity-no-buttons px-2">
+           </td>
+          }
           {!props.isMobile ?
            <OverlayTrigger
              placement={props.placement ? props.placement : 'right'}
@@ -161,4 +154,4 @@ function DeckLibraryTable(props) {
   );
 }
 
-export default DeckLibraryTable;
+export default InventoryLibraryTable;

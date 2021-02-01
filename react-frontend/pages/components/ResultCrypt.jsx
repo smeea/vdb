@@ -44,12 +44,14 @@ function ResultCrypt(props) {
            showImage={props.showImage}
            setShowImage={props.setShowImage}
            crypt={props.crypt}
+           inventoryCrypt={props.inventoryCrypt}
            activeDeck={props.activeDeck}
-           deckCardAdd={props.deckCardAdd}
+           cardAdd={props.cardAdd}
            resultCards={sortedCards}
            isMobile={props.isMobile}
            isWide={true}
            addMode={props.addMode}
+           inventoryMode={props.inventoryMode}
          />
        </>
       }

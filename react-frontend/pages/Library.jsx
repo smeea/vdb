@@ -40,8 +40,8 @@ function Library(props) {
               <>
                 <DeckCrypt
                   changeTimer={props.changeTimer}
-                  deckCardAdd={props.deckCardAdd}
-                  deckCardChange={props.deckCardChange}
+                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
                   deckid={props.activeDeck}
                   cards={props.decks[props.activeDeck].crypt}
                   showImage={props.showImage}
@@ -50,10 +50,12 @@ function Library(props) {
                   isMobile={props.isMobile}
                   isWide={props.isWide}
                   cardBase={props.cryptCardBase}
+                  inventoryMode={props.inventoryMode}
+                  inventoryCrypt={props.inventory.crypt}
                 />
                 <DeckLibrary
-                  deckCardAdd={props.deckCardAdd}
-                  deckCardChange={props.deckCardChange}
+                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
                   deckid={props.activeDeck}
                   cards={props.decks[props.activeDeck].library}
                   showImage={props.showImage}
@@ -61,6 +63,8 @@ function Library(props) {
                   isAuthor={true}
                   isMobile={props.isMobile}
                   cardBase={props.libraryCardBase}
+                  inventoryMode={props.inventoryMode}
+                  inventoryLibrary={props.inventory.library}
                 />
               </>
             )}
@@ -79,7 +83,7 @@ function Library(props) {
             <ResultLibrary
               showImage={props.showImage}
               setShowImage={props.setShowImage}
-              deckCardAdd={props.deckCardAdd}
+              cardAdd={props.cardAdd}
               cards={props.results}
               library={
                 props.decks &&
@@ -96,6 +100,8 @@ function Library(props) {
               showSearch={props.showSearch}
               setShowSearch={props.setShowSearch}
               setResults={props.setResults}
+              inventoryMode={props.inventoryMode}
+              inventoryLibrary={props.inventory.library}
             />
           )}
         </Col>
@@ -122,6 +128,7 @@ function Library(props) {
             setFormState={props.setFormState}
             isMobile={props.isMobile}
             cardBase={props.libraryCardBase}
+            inventoryMode={props.inventoryMode}
           />
         </Col>
       </Row>

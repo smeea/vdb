@@ -22,19 +22,28 @@ function ResultCryptTable(props) {
       card = card.c;
     }
 
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
+    if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
+    } else {
+      resultTrClass = 'result-odd';
     }
 
     let inDeck;
     if (props.crypt) {
       Object.keys(props.crypt).map((i, index) => {
-        if (i == card.Id) {
+        if (i == card['Id']) {
           inDeck = props.crypt[i].q;
         }
       });
+    }
+
+    let inInventory = null;
+    if (props.inventoryMode) {
+      if (Object.keys(props.inventoryCrypt).includes(card['Id'].toString())) {
+        inInventory = props.inventoryCrypt[card['Id']].q;
+      } else {
+        inInventory = 0;
+      }
     }
 
     const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
@@ -78,8 +87,9 @@ function ResultCryptTable(props) {
                     cardid={card['Id']}
                     q={q}
                     deckid={props.deckid}
-                    deckCardChange={props.deckCardChange}
+                    cardChange={props.cardChange}
                     isMobile={props.isMobile}
+                    inInventory={inInventory}
                   />
                 </td>
               ) : props.proxySelected ? (
@@ -92,7 +102,7 @@ function ResultCryptTable(props) {
                         ? props.proxySelected[card['Id']].q
                         : 0
                     }
-                    deckCardChange={props.proxyCounter}
+                    cardChange={props.proxyCounter}
                     isMobile={props.isMobile}
                   />
                 </td>
@@ -109,11 +119,16 @@ function ResultCryptTable(props) {
               {props.addMode && (
                 <td className="quantity">
                   <ResultAddCard
-                    deckCardAdd={props.deckCardAdd}
+                    cardAdd={props.cardAdd}
                     cardid={card['Id']}
                     card={card}
                     inDeck={inDeck}
                   />
+                </td>
+              )}
+              {props.inventoryMode && (
+                <td className="quantity-no-buttons">
+                  {inInventory}
                 </td>
               )}
             </>

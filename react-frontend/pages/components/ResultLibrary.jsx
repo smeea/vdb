@@ -41,12 +41,14 @@ function ResultLibrary(props) {
            showImage={props.showImage}
            setShowImage={props.setShowImage}
            library={props.library}
+           inventoryLibrary={props.inventoryLibrary}
            activeDeck={props.activeDeck}
-           deckCardAdd={props.deckCardAdd}
+           cardAdd={props.cardAdd}
            resultCards={sortedCards}
            isMobile={props.isMobile}
            isWide={true}
            addMode={props.addMode}
+           inventoryMode={props.inventoryMode}
          />
        </>
       }

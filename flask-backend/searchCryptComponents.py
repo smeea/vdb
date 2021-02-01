@@ -8,13 +8,7 @@ def letters_to_ascii(text):
                    if unicodedata.category(c) != 'Mn')
 
 
-# Card base file. It is JSON (human-readable format) converted from official
-# CVS card base available at vekn.com.
-with open("vtescrypt.json", "r") as crypt_file:
-    crypt = json.load(crypt_file)
-
-
-def get_crypt_by_text(text, crypt=crypt):
+def get_crypt_by_text(text, crypt):
     match_cards = []
     text = text.lower()
     for card in crypt:
@@ -25,7 +19,7 @@ def get_crypt_by_text(text, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_disciplines(disciplines, crypt=crypt):
+def get_crypt_by_disciplines(disciplines, crypt):
     discipline_counter = len(disciplines)
     match_cards = []
     for card in crypt:
@@ -40,7 +34,7 @@ def get_crypt_by_disciplines(disciplines, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_traits(traits, crypt=crypt):
+def get_crypt_by_traits(traits, crypt):
     match_cards = []
     trait_counter = len(traits)
     for card in crypt:
@@ -148,7 +142,7 @@ def get_crypt_by_traits(traits, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_titles(titles, crypt=crypt):
+def get_crypt_by_titles(titles, crypt):
     # Title filter is cummulative i.e. it matches cards matching any
     # chosen title
     match_cards = []
@@ -159,7 +153,7 @@ def get_crypt_by_titles(titles, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_votes(votes, crypt=crypt):
+def get_crypt_by_votes(votes, crypt):
     title_worth = {
         "primogen": 1,
         "prince": 2,
@@ -189,7 +183,7 @@ def get_crypt_by_votes(votes, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_capacity(request, crypt=crypt):
+def get_crypt_by_capacity(request, crypt):
     capacity = int(request['capacity'])
     moreless = request['moreless']
     match_cards = []
@@ -210,7 +204,7 @@ def get_crypt_by_capacity(request, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_clan(clan, crypt=crypt):
+def get_crypt_by_clan(clan, crypt):
     match_cards = []
     for card in crypt:
         if card['Clan'].lower() == clan:
@@ -219,7 +213,7 @@ def get_crypt_by_clan(clan, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_sect(sect, crypt=crypt):
+def get_crypt_by_sect(sect, crypt):
     match_cards = []
     for card in crypt:
         # Imbue 'sect' is defined by card['Type'], others are just 'vampire'
@@ -235,7 +229,7 @@ def get_crypt_by_sect(sect, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_group(group_list, crypt=crypt):
+def get_crypt_by_group(group_list, crypt):
     # Group filter is cummulative i.e. it matches cards matching any
     # chosen groups form field
     match_cards = []
@@ -246,7 +240,7 @@ def get_crypt_by_group(group_list, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_set(request, crypt=crypt):
+def get_crypt_by_set(request, crypt):
     bcp_sets = [
         'V5',
         '25th',
@@ -344,7 +338,7 @@ def get_crypt_by_set(request, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_precon(request, crypt=crypt):
+def get_crypt_by_precon(request, crypt):
     bcp_precons = [
         ['V5', 'PM',],
         ['V5', 'PN',],
@@ -464,7 +458,7 @@ def get_crypt_by_precon(request, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_artist(artist, crypt=crypt):
+def get_crypt_by_artist(artist, crypt):
     match_cards = []
     for card in crypt:
         if artist in card['Artist']:
@@ -473,16 +467,19 @@ def get_crypt_by_artist(artist, crypt=crypt):
     return match_cards
 
 
-def get_crypt_by_id(id):
-    for card in crypt:
-        if card['Id'] == int(id):
-            return card
-
-
-def get_crypt_by_name(name):
+def get_crypt_by_name(name, crypt):
     match_cards = []
     for card in crypt:
         if name.lower() in card['ASCII Name'].lower():
             match_cards.append(card)
 
     return match_cards
+
+
+def get_crypt_by_id(id):
+    with open("vtescrypt.json", "r") as crypt_file:
+        crypt = json.load(crypt_file)
+        for card in crypt:
+            if card['Id'] == int(id):
+                return card
+

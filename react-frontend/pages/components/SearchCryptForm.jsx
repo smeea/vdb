@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Spinner, Overlay } from 'react-bootstrap';
+import { Spinner, Overlay, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
@@ -199,7 +199,12 @@ function SearchCryptForm(props) {
   };
 
   const launchRequest = () => {
-    const url = `${process.env.API_URL}search/crypt`;
+    let url;
+    if (props.inventoryMode) {
+      url = `${process.env.API_URL}search/inventory/crypt`;
+    } else {
+      url = `${process.env.API_URL}search/crypt`;
+    }
 
     const state = { ...props.formState };
     state['text'] = text;
@@ -281,7 +286,7 @@ function SearchCryptForm(props) {
         launchRequest();
       }
     }
-  }, [props.formState]);
+  }, [props.formState, props.inventoryMode]);
 
   useEffect(() => {
     if (!props.isMobile) {

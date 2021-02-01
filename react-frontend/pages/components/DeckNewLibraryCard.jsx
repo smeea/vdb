@@ -12,10 +12,10 @@ function DeckNewLibraryCard(props) {
 
   const addNewCard = () => {
     if (!props.cards[selectedValue]) {
-      props.deckCardAdd(selectedValue);
+      props.cardAdd(selectedValue);
     }
     setSelectedValue('');
-    props.setShowAdd(false);
+    props.setshowAdd && props.setShowAdd(false);
   };
 
   const loadOptions = (inputValue) => {

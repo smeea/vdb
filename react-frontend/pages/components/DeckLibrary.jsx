@@ -7,30 +7,6 @@ import DeckLibraryTotalByTypes from './DeckLibraryTotalByTypes.jsx';
 import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
-function DeckLibraryByTypeTable(props) {
-  return (
-    <>
-      <ResultLibraryType
-        cardtype={props.cardtype}
-        total={props.total}
-        trifleTotal={props.trifleTotal}
-      />
-      <DeckLibraryTable
-        showImage={props.showImage}
-        setShowImage={props.setShowImage}
-        deckid={props.deckid}
-        deckCardChange={props.deckCardChange}
-        cards={props.cards}
-        isAuthor={props.isAuthor}
-        isMobile={props.isMobile}
-        proxySelector={props.proxySelector}
-        proxyCounter={props.proxyCounter}
-        proxySelected={props.proxySelected}
-      />
-    </>
-  );
-}
-
 function DeckLibrary(props) {
   const [showAdd, setShowAdd] = useState(false);
   const [showTotal, setShowTotal] = useState(false);
@@ -113,40 +89,43 @@ function DeckLibrary(props) {
       }
       LibraryDeck.push(
         <div key={cardtype} className="pt-2">
-          <DeckLibraryByTypeTable
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
-            deckCardChange={props.deckCardChange}
-            deckid={props.deckid}
-            cards={libraryByType[cardtype]}
+          <ResultLibraryType
             cardtype={cardtype}
             total={libraryByTypeTotal[cardtype]}
             trifleTotal={cardtype == 'Master' && trifleTotal}
+          />
+          <DeckLibraryTable
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+            deckid={props.deckid}
+            cardChange={props.cardChange}
+            cards={libraryByType[cardtype]}
             isAuthor={props.isAuthor}
             isMobile={props.isMobile}
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
+            inventoryLibrary={props.inventoryLibrary}
+            inventoryMode={props.inventoryMode}
           />
         </div>
       );
     }
 
     if (librarySideByType[cardtype] !== undefined) {
-      let total = 0;
-      for (const card of librarySideByType[cardtype]) {
-        total += card.q;
-      }
       LibrarySideDeck.push(
         <div key={cardtype}>
-          <DeckLibraryByTypeTable
+          <ResultLibraryType
+            cardtype={cardtype}
+            total={0}
+            trifleTotal={cardtype == 'Master' && trifleTotal}
+          />
+          <DeckLibraryTable
             showImage={props.showImage}
             setShowImage={props.setShowImage}
-            deckCardChange={props.deckCardChange}
             deckid={props.deckid}
+            cardChange={props.cardChange}
             cards={librarySideByType[cardtype]}
-            cardtype={cardtype}
-            total={total}
             isAuthor={props.isAuthor}
             isMobile={props.isMobile}
             proxySelector={props.proxySelector}
@@ -189,7 +168,7 @@ function DeckLibrary(props) {
       {showAdd &&
         (!props.isMobile ? (
           <DeckNewLibraryCard
-            deckCardAdd={props.deckCardAdd}
+            cardAdd={props.cardAdd}
             setShowAdd={setShowAdd}
             cards={props.cards}
             cardBase={props.cardBase}
@@ -219,7 +198,7 @@ function DeckLibrary(props) {
                   </Col>
                 </Row>
                 <DeckNewLibraryCard
-                  deckCardAdd={props.deckCardAdd}
+                  cardAdd={props.cardAdd}
                   setShowAdd={setShowAdd}
                   cards={props.cards}
                   cardBase={props.cardBase}

@@ -19,6 +19,7 @@ const Twd = lazy(() => import('./pages/Twd.jsx'));
 const Decks = lazy(() => import('./pages/Decks.jsx'));
 const Account = lazy(() => import('./pages/Account.jsx'));
 const Cards = lazy(() => import('./pages/Cards.jsx'));
+const Inventory = lazy(() => import('./pages/Inventory.jsx'));
 
 function App(props) {
   const [twdFormState, setTwdFormState] = useState(defaultsTwdForm);
@@ -31,6 +32,7 @@ function App(props) {
 
   const [showImage, setShowImage] = useState(true);
   const [addMode, setAddMode] = useState(false);
+  const [inventoryMode, setInventoryMode] = useState(false);
   const [showDeck, setShowDeck] = useState(true);
 
   const [decks, setDecks] = useState({});
@@ -38,12 +40,17 @@ function App(props) {
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
+  const [inventory, setInventory] = useState({})
+  const [consumers, setConsumers] = useState([])
+  const [consumedCards, setConsumedCards] = useState({})
+
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
 
   const [twdResults, setTwdResults] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
+
 
   const isMobile = window.matchMedia('(max-width: 540px)').matches;
   const isWide = window.matchMedia('(min-width: 1600px)').matches;
@@ -54,33 +61,6 @@ function App(props) {
 
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
-
-  const getDecks = () => {
-    const url = `${process.env.API_URL}decks`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          if (JSON.stringify(data) != JSON.stringify(decks)) {
-            Object.keys(data).map((i) => {
-              Object.keys(data[i].crypt).map((j) => {
-                data[i].crypt[j].c = cryptCardBase[j];
-              });
-              Object.keys(data[i].library).map((j) => {
-                data[i].library[j].c = libraryCardBase[j];
-              });
-            });
-            setDecks(data);
-          }
-        }
-      });
-  };
 
   const getCardBase = () => {
     const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json`;
@@ -104,6 +84,198 @@ function App(props) {
       .then((data) => {
         if (data.error === undefined) {
           setLibraryCardBase(data);
+        }
+      });
+  };
+
+  const getConsumers = () => {
+    const url = `${process.env.API_URL}inventory/consumers`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && data.error === undefined) {
+          setConsumers(data);
+        }
+      });
+  };
+
+  const addConsumer = (deckid) => {
+    const url = `${process.env.API_URL}inventory/consumers`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ add: deckid }),
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          setConsumers((prevState) => ([...prevState, deckid]));
+        }
+      });
+  };
+
+  const delConsumer = (deckid) => {
+    const url = `${process.env.API_URL}inventory/consumers`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ delete: deckid }),
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          setConsumers((prevState) => (
+            [...prevState.filter((value) => {return value != deckid})]
+          ));
+        }
+      });
+  };
+
+
+  const getInventory = () => {
+    const url = `${process.env.API_URL}inventory`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          Object.keys(data.crypt).map((i) => {
+            data.crypt[i].c = cryptCardBase[i];
+          });
+          Object.keys(data.library).map((i) => {
+            data.library[i].c = libraryCardBase[i];
+          });
+          setInventory(data);
+        }
+      });
+  };
+
+  const inventoryCardAdd = (cardid) => {
+    const url = `${process.env.API_URL}inventory/add`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ [cardid]: 1 }),
+    };
+
+    const oldState = inventory;
+    fetch(url, options).catch((error) => {
+      setInventory(oldState);
+    });
+
+    if (cardid > 200000) {
+      setInventory((prevState) => ({
+        ...prevState,
+        crypt: {
+          ...prevState.crypt,
+          [cardid]: {
+            c: cryptCardBase[cardid],
+            q: 1,
+          }
+        }
+      }));
+    } else {
+      setInventory((prevState) => ({
+        ...prevState,
+        library: {
+          ...prevState.library,
+          [cardid]: {
+            c: libraryCardBase[cardid],
+            q: 1,
+          }
+        }
+      }));
+    }
+  };
+
+ const inventoryCardChange = (deckid, cardid, count) => {
+    const url = `${process.env.API_URL}inventory/change`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ [cardid]: count }),
+    };
+
+    const oldState = decks;
+
+    fetch(url, options).catch((error) => {
+      setInventory(oldState);
+    });
+
+    const part = cardid > 200000 ? 'crypt' : 'library';
+
+    if (count >= 0) {
+      setInventory((prevState) => ({
+        ...prevState,
+        [part]: {
+          ...prevState[part],
+          [cardid]: {
+            ...prevState[part][cardid],
+            q: count,
+          },
+        },
+      }));
+    } else {
+      setInventory((prevState) => {
+        const oldState = { ...prevState };
+        delete oldState[part][cardid];
+        return oldState;
+      });
+    }
+  };
+
+  const getDecks = () => {
+    const url = `${process.env.API_URL}decks`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          Object.keys(data).map((i) => {
+            Object.keys(data[i].crypt).map((j) => {
+              data[i].crypt[j].c = cryptCardBase[j];
+            });
+            Object.keys(data[i].library).map((j) => {
+              data[i].library[j].c = libraryCardBase[j];
+            });
+          });
+          setDecks(data);
         }
       });
   };
@@ -258,6 +430,34 @@ function App(props) {
   }, [decks]);
 
   useEffect(() => {
+    if (Object.keys(decks).length > 0) {
+      if (consumers && inventory) {
+        const crypt = {}
+        const library = {}
+        consumers.forEach(deckid => {
+          Object.keys(decks[deckid].crypt).forEach(id => {
+            if (crypt[id]) {
+              crypt[id][deckid] = decks[deckid].crypt[id].q;
+            } else {
+              crypt[id] = {}
+              crypt[id][deckid] = decks[deckid].crypt[id].q;
+            }
+          })
+          Object.keys(decks[deckid].library).forEach(id => {
+            if (library[id]) {
+              library[id][deckid] = decks[deckid].library[id].q;
+            } else {
+              library[id] = {}
+              library[id][deckid] = decks[deckid].library[id].q;
+            }
+          })
+        })
+        setConsumedCards({crypt: crypt, library: library})
+      }
+    }
+  }, [consumers, inventory, decks])
+
+  useEffect(() => {
     whoAmI();
     (!cryptCardBase || !libraryCardBase) && getCardBase();
   }, []);
@@ -265,6 +465,8 @@ function App(props) {
   useEffect(() => {
     if (username) {
       whoAmI();
+      getConsumers();
+      cryptCardBase && libraryCardBase && getInventory();
       cryptCardBase && libraryCardBase && getDecks();
     } else {
       setDecks({});
@@ -298,6 +500,8 @@ function App(props) {
           setActiveDeck={setActiveDeck}
           addMode={addMode}
           setAddMode={setAddMode}
+          inventoryMode={inventoryMode}
+          setInventoryMode={setInventoryMode}
           isActiveDeck={activeDeck ? true : false}
         />
 
@@ -336,6 +540,25 @@ function App(props) {
                 setActiveDeck={setActiveDeck}
               />
             </Route>
+            <Route path="/inventory">
+              <Inventory
+                inventory={inventory}
+                getInventory={getInventory}
+                cardAdd={inventoryCardAdd}
+                cardChange={inventoryCardChange}
+                cryptCardBase={cryptCardBase}
+                libraryCardBase={libraryCardBase}
+                isMobile={isMobile}
+                isWide={isWide}
+                showImage={showImage}
+                setShowImage={setShowImage}
+                whoAmI={whoAmI}
+                username={username}
+                setUsername={setUsername}
+                consumedCards={consumedCards}
+                decks={decks}
+              />
+            </Route>
             <Route path="/decks">
               <Decks
                 changeTimer={changeTimer}
@@ -347,12 +570,17 @@ function App(props) {
                 setActiveDeck={setActiveDeck}
                 sharedDeck={sharedDeck}
                 setSharedDeck={setSharedDeck}
-                deckCardAdd={deckCardAdd}
-                deckCardChange={deckCardChange}
+                inventory={inventory}
+                inventoryMode={inventoryMode}
+                consumers={consumers}
+                addConsumer={addConsumer}
+                delConsumer={delConsumer}
+                cardAdd={deckCardAdd}
+                cardChange={deckCardChange}
                 showImage={showImage}
                 setShowImage={setShowImage}
-                username={username}
                 whoAmI={whoAmI}
+                username={username}
                 setUsername={setUsername}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
@@ -367,8 +595,8 @@ function App(props) {
                 setShowSearch={setShowCryptSearch}
                 showDeck={showDeck}
                 setShowDeck={setShowDeck}
-                deckCardAdd={deckCardAdd}
-                deckCardChange={deckCardChange}
+                cardAdd={deckCardAdd}
+                cardChange={deckCardChange}
                 decks={decks}
                 getDecks={getDecks}
                 activeDeck={activeDeck}
@@ -377,6 +605,8 @@ function App(props) {
                 setShowImage={setShowImage}
                 results={cryptResults}
                 setResults={setCryptResults}
+                inventory={inventory}
+                inventoryMode={inventoryMode}
                 addMode={addMode}
                 setAddMode={setAddMode}
                 formState={cryptFormState}
@@ -394,8 +624,8 @@ function App(props) {
                 setShowSearch={setShowLibrarySearch}
                 showDeck={showDeck}
                 setShowDeck={setShowDeck}
-                deckCardAdd={deckCardAdd}
-                deckCardChange={deckCardChange}
+                cardAdd={deckCardAdd}
+                cardChange={deckCardChange}
                 decks={decks}
                 getDecks={getDecks}
                 activeDeck={activeDeck}
@@ -404,6 +634,8 @@ function App(props) {
                 setShowImage={setShowImage}
                 results={libraryResults}
                 setResults={setLibraryResults}
+                inventory={inventory}
+                inventoryMode={inventoryMode}
                 addMode={addMode}
                 setAddMode={setAddMode}
                 formState={libraryFormState}

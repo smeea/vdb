@@ -127,7 +127,12 @@ function SearchLibraryForm(props) {
   };
 
   const launchRequest = () => {
-    const url = `${process.env.API_URL}search/library`;
+    let url;
+    if (props.inventoryMode) {
+      url = `${process.env.API_URL}search/inventory/library`;
+    } else {
+      url = `${process.env.API_URL}search/library`;
+    }
 
     const state = { ...props.formState };
     state['text'] = text;
@@ -206,7 +211,7 @@ function SearchLibraryForm(props) {
         launchRequest();
       }
     }
-  }, [props.formState]);
+  }, [props.formState, props.inventoryMode]);
 
   useEffect(() => {
     if (!props.isMobile) {

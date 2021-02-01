@@ -133,6 +133,16 @@ function Decks(props) {
                       activeDeck={props.activeDeck}
                       setActiveDeck={props.setActiveDeck}
                     />
+                    <Button
+                      onClick={() => props.addConsumer(props.activeDeck)}
+                    >
+                      ADD CONSUMER
+                    </Button>
+                    <Button
+                      onClick={() => props.delConsumer(props.activeDeck)}
+                    >
+                      DELETE CONSUMER
+                    </Button>
                   </Col>
                 ) : (
                   <>
@@ -261,8 +271,8 @@ function Decks(props) {
           <Col lg={7} className="px-0 px-lg-3">
             <DeckCrypt
               changeTimer={props.changeTimer}
-              deckCardAdd={props.deckCardAdd}
-              deckCardChange={props.deckCardChange}
+              cardAdd={props.cardAdd}
+              cardChange={props.cardChange}
               deckid={props.activeDeck ? props.activeDeck : sharedDeckId}
               cards={
                 props.activeDeck
@@ -281,12 +291,14 @@ function Decks(props) {
               isMobile={props.isMobile}
               isWide={props.isWide}
               cardBase={props.cryptCardBase}
+              inventoryMode={props.inventoryMode}
+              inventoryCrypt={props.inventory.crypt}
             />
           </Col>
           <Col lg={5} className="px-0 px-lg-3">
             <DeckLibrary
-              deckCardAdd={props.deckCardAdd}
-              deckCardChange={props.deckCardChange}
+              cardAdd={props.cardAdd}
+              cardChange={props.cardChange}
               deckid={props.activeDeck ? props.activeDeck : sharedDeckId}
               cards={
                 props.activeDeck
@@ -305,6 +317,8 @@ function Decks(props) {
               isMobile={props.isMobile}
               isWide={props.isWide}
               cardBase={props.libraryCardBase}
+              inventoryMode={props.inventoryMode}
+              inventoryLibrary={props.inventory.library}
             />
           </Col>
         </Row>

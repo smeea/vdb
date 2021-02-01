@@ -39,8 +39,8 @@ function Crypt(props) {
               <>
                 <DeckCrypt
                   changeTimer={props.changeTimer}
-                  deckCardAdd={props.deckCardAdd}
-                  deckCardChange={props.deckCardChange}
+                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
                   deckid={props.activeDeck}
                   cards={props.decks[props.activeDeck].crypt}
                   showImage={props.showImage}
@@ -49,10 +49,12 @@ function Crypt(props) {
                   isMobile={props.isMobile}
                   isWide={props.isWide}
                   cardBase={props.cryptCardBase}
+                  inventoryMode={props.inventoryMode}
+                  inventoryCrypt={props.inventory.crypt}
                 />
                 <DeckLibrary
-                  deckCardAdd={props.deckCardAdd}
-                  deckCardChange={props.deckCardChange}
+                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
                   deckid={props.activeDeck}
                   cards={props.decks[props.activeDeck].library}
                   showImage={props.showImage}
@@ -60,6 +62,8 @@ function Crypt(props) {
                   isAuthor={true}
                   isMobile={props.isMobile}
                   cardBase={props.libraryCardBase}
+                  inventoryMode={props.inventoryMode}
+                  inventoryLibrary={props.inventory.library}
                 />
               </>
             )}
@@ -78,7 +82,7 @@ function Crypt(props) {
             <ResultCrypt
               showImage={props.showImage}
               setShowImage={props.setShowImage}
-              deckCardAdd={props.deckCardAdd}
+              cardAdd={props.cardAdd}
               cards={props.results}
               crypt={
                 props.decks &&
@@ -95,6 +99,8 @@ function Crypt(props) {
               showSearch={props.showSearch}
               setShowSearch={props.setShowSearch}
               setResults={props.setResults}
+              inventoryMode={props.inventoryMode}
+              inventoryCrypt={props.inventory.crypt}
             />
           )}
         </Col>
@@ -116,6 +122,7 @@ function Crypt(props) {
             setFormState={props.setFormState}
             isMobile={props.isMobile}
             cardBase={props.cryptCardBase}
+            inventoryMode={props.inventoryMode}
           />
         </Col>
       </Row>

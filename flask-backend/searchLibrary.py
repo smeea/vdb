@@ -1,6 +1,10 @@
+import json
 import searchLibraryComponents
 
-def searchLibrary(request):
+with open("vteslib.json", "r") as library_file:
+    vteslib = json.load(library_file)
+
+def searchLibrary(request, library=vteslib):
     queries = request.json
 
     matches = []
@@ -8,7 +12,7 @@ def searchLibrary(request):
     for k, v in queries.items():
         function_to_call = getattr(searchLibraryComponents, 'get_library_by_' + k)
         if not matches:
-            matches = function_to_call(v)
+            matches = function_to_call(v, library)
         else:
             matches = function_to_call(v, matches)
 

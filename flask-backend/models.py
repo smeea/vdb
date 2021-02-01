@@ -17,6 +17,8 @@ class User(UserMixin, db.Model):
     public_name = db.Column(db.String(64))
     email = db.Column(db.String(64))
     password_hash = db.Column(db.String(128))
+    inventory = db.Column(db.PickleType)
+    inventory_consumers = db.Column(db.PickleType)
     decks = db.relationship('Deck', backref='author', lazy='dynamic')
 
     def __repr__(self):

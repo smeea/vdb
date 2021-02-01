@@ -8,13 +8,7 @@ def letters_to_ascii(text):
                    if unicodedata.category(c) != 'Mn')
 
 
-# Card base file. It is JSON (human-readable format) converted from official
-# CVS card base available at vekn.com.
-with open("vteslib.json", "r") as library_file:
-    library = json.load(library_file)
-
-
-def get_library_by_text(text, library=library):
+def get_library_by_text(text, library):
     match_cards = []
     text = text.lower()
     for card in library:
@@ -25,7 +19,7 @@ def get_library_by_text(text, library=library):
     return match_cards
 
 
-def get_library_by_type(type, library=library):
+def get_library_by_type(type, library):
     match_cards = []
     for card in library:
         if type in card['Type'].lower().split('/'):
@@ -34,7 +28,7 @@ def get_library_by_type(type, library=library):
     return match_cards
 
 
-def get_library_by_discipline(discipline, library=library):
+def get_library_by_discipline(discipline, library):
     match_cards = []
     for card in library:
         if (discipline in card['Discipline'].lower()) or (
@@ -44,7 +38,7 @@ def get_library_by_discipline(discipline, library=library):
     return match_cards
 
 
-def get_library_by_clan(clan, library=library):
+def get_library_by_clan(clan, library):
     match_cards = []
     for card in library:
         if (card['Clan'].lower() == clan) or (clan == 'none'
@@ -54,7 +48,7 @@ def get_library_by_clan(clan, library=library):
     return match_cards
 
 
-def get_library_by_title(title, library=library):
+def get_library_by_title(title, library):
     match_cards = []
     titles = [
         'primogen', 'prince', 'justicar', 'inner circle', 'baron', 'bishop',
@@ -75,7 +69,7 @@ def get_library_by_title(title, library=library):
     return match_cards
 
 
-def get_library_by_sect(sect, library=library):
+def get_library_by_sect(sect, library):
     match_cards = []
     sects = [
         'camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'
@@ -96,7 +90,7 @@ def get_library_by_sect(sect, library=library):
     return match_cards
 
 
-def get_library_by_blood(request, library=library):
+def get_library_by_blood(request, library):
     cost = request['blood']
     moreless = request['moreless']
     match_cards = []
@@ -118,7 +112,7 @@ def get_library_by_blood(request, library=library):
     return match_cards
 
 
-def get_library_by_pool(request, library=library):
+def get_library_by_pool(request, library):
     cost = request['pool']
     moreless = request['moreless']
     match_cards = []
@@ -140,7 +134,7 @@ def get_library_by_pool(request, library=library):
     return match_cards
 
 
-def get_library_by_traits(traits, library=library):
+def get_library_by_traits(traits, library):
     match_cards = []
     trait_counter = len(traits)
     for card in library:
@@ -255,7 +249,7 @@ def get_library_by_traits(traits, library=library):
     return match_cards
 
 
-def get_library_by_set(request, library=library):
+def get_library_by_set(request, library):
     bcp_sets = [
         'V5',
         '25th',
@@ -353,7 +347,7 @@ def get_library_by_set(request, library=library):
     return match_cards
 
 
-def get_library_by_precon(request, library=library):
+def get_library_by_precon(request, library):
     bcp_precons = [
         ['V5', 'PM',],
         ['V5', 'PN',],
@@ -473,7 +467,7 @@ def get_library_by_precon(request, library=library):
     return match_cards
 
 
-def get_library_by_artist(artist, library=library):
+def get_library_by_artist(artist, library):
     match_cards = []
     for card in library:
         if artist in card['Artist']:
@@ -482,15 +476,18 @@ def get_library_by_artist(artist, library=library):
     return match_cards
 
 
-def get_library_by_id(id):
-    for card in library:
-        if card['Id'] == int(id):
-            return card
-
-def get_library_by_name(name):
+def get_library_by_name(name, library):
     match_cards = []
     for card in library:
         if name.lower() in card['ASCII Name'].lower():
             match_cards.append(card)
 
     return match_cards
+
+
+def get_library_by_id(id):
+    with open("vteslib.json", "r") as library_file:
+        library = json.load(library_file)
+        for card in library:
+            if card['Id'] == int(id):
+                return card

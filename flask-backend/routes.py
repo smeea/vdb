@@ -20,6 +20,113 @@ from models import User
 from models import Deck
 
 
+@app.route('/api/inventory', methods=['GET'])
+def listInventory():
+    try:
+        if current_user.is_authenticated:
+            crypt = {}
+            library = {}
+            for k, v in current_user.inventory.items():
+                k = int(k)
+                if k > 200000:
+                    crypt[k] = {'q': v}
+                elif k < 200000:
+                    library[k] = {'q': v}
+            return jsonify({
+                "crypt": crypt,
+                "library": library,
+            })
+
+    except AttributeError:
+        return jsonify({'error': 'not logged'})
+
+@app.route('/api/inventory/add', methods=['POST'])
+def inventoryAddCard():
+    if current_user.is_authenticated:
+        i = current_user.inventory
+        try:
+            new_cards = request.json
+            merged_cards = i.copy() if i else {}
+            for k, v in new_cards.items():
+                if k not in merged_cards:
+                    merged_cards[k] = v
+
+            current_user.inventory = merged_cards.copy()
+        except Exception:
+            pass
+
+        db.session.commit()
+        return jsonify({'inventory card added': 'success'})
+
+    else:
+        return jsonify({'Not logged in.'})
+
+@app.route('/api/inventory/consumers', methods=['GET'])
+def listConsumers():
+    if current_user.is_authenticated:
+        try:
+            consumers = current_user.inventory_consumers
+            return jsonify(consumers)
+
+        except Exception:
+            pass
+
+    else:
+        return jsonify({'Not logged in.'})
+
+
+@app.route('/api/inventory/consumers', methods=['POST'])
+def addConsumers():
+    if current_user.is_authenticated:
+        try:
+            consumers = current_user.inventory_consumers.copy() if current_user.inventory_consumers else []
+
+            if 'add' in request.json:
+                if request.json['add'] not in consumers:
+                    consumers.append(request.json['add'])
+                else:
+                    abort(400)
+                    pass
+            elif 'delete' in request.json:
+                if request.json['delete'] in consumers:
+                    consumers.remove(request.json['delete'])
+                else:
+                    return jsonify({'error': 'not in consumers'})
+
+            current_user.inventory_consumers = consumers
+            db.session.commit()
+            return jsonify({'success add/delete inventory consumer': request.json['add']})
+
+        except Exception:
+            return jsonify({'error': 'error'})
+
+    else:
+        return jsonify({'Not logged in.'})
+
+@app.route('/api/inventory/change', methods=['POST'])
+def inventoryChangeCard():
+    if current_user.is_authenticated:
+        i = current_user.inventory
+        try:
+            new_cards = request.json
+            merged_cards = i.copy() if i else {}
+            for k, v in new_cards.items():
+                if v < 0:
+                    del merged_cards[k]
+                else:
+                    merged_cards[k] = v
+
+            current_user.inventory = merged_cards.copy()
+        except Exception:
+            pass
+
+        db.session.commit()
+        return jsonify({'inventory card change': 'success'})
+
+    else:
+        return jsonify({'Not logged in.'})
+
+
 @app.route('/api/deck/<string:deckid>', methods=['GET'])
 def showDeck(deckid):
     if len(deckid) == 32:
@@ -191,7 +298,6 @@ def listDecks():
                 'timestamp': deck.timestamp,
             }
 
-
         return jsonify(decks)
 
     except AttributeError:
@@ -355,16 +461,6 @@ def removeDeck():
         return jsonify({'Not logged in.'})
 
 
-# @app.route('/api/cards/<int:card_id>', methods=['GET'])
-# def showCard(card_id):
-#     if card_id >= 200000:
-#         card = get_crypt_by_id(card_id)
-#         return jsonify(card)
-#     elif card_id < 200000:
-#         card = get_library_by_id(card_id)
-#         return jsonify(card)
-
-
 @app.route('/api/register', methods=['POST'])
 def register():
     if current_user.is_authenticated:
@@ -524,10 +620,40 @@ def searchLibraryRoute():
         abort(400)
 
 
-# @app.route('/api/cardbase', methods=['GET'])
-# def getCardBase():
-#     with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_library.json", "r") as library_file:
-#         crypt = json.load(crypt_file)
-#         library = json.load(library_file)
+@app.route('/api/search/inventory/crypt', methods=['POST'])
+def searchCryptInventoryRoute():
+    try:
+        crypt = []
+        for k, v in current_user.inventory.items():
+            k = int(k)
+            if k > 200000:
+                crypt.append(get_crypt_by_id(k))
 
-#         return jsonify({'crypt': crypt, 'library': library})
+        result = searchCrypt(request, crypt)
+
+        if result != 400:
+            return jsonify(result)
+        else:
+            abort(400)
+
+    except AttributeError:
+        return jsonify({'error': 'not logged'})
+
+@app.route('/api/search/inventory/library', methods=['POST'])
+def searchLibraryInventoryRoute():
+    try:
+        library = []
+        for k, v in current_user.inventory.items():
+            k = int(k)
+            if k < 200000:
+                library.append(get_library_by_id(k))
+
+        result = searchLibrary(request, library)
+
+        if result != 400:
+            return jsonify(result)
+        else:
+            abort(400)
+
+    except AttributeError:
+        return jsonify({'error': 'not logged'})

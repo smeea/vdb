@@ -2,11 +2,14 @@
 * Crypt redraw on sharedDeck clone
 * TWD location/winner form reset
 * Clear text form to update search
+* Search form to trim spaces
 
 # FEATURES
 * TWD Deck name filter
 * Deck revisions
 * Full account export
+* Search by text including particular word
+* Create 'hard' link to deck
 
 # MAYBE LATER FEATURES
 * Precon decks

@@ -166,7 +166,7 @@ function DeckCrypt(props) {
       {showAdd &&
        (!props.isMobile ? (
          <DeckNewCryptCard
-           deckCardAdd={props.deckCardAdd}
+           cardAdd={props.cardAdd}
            setShowAdd={setShowAdd}
            cards={props.cards}
            cardBase={props.cardBase}
@@ -196,7 +196,7 @@ function DeckCrypt(props) {
                  </Col>
                </Row>
                <DeckNewCryptCard
-                 deckCardAdd={props.deckCardAdd}
+                 cardAdd={props.cardAdd}
                  setShowAdd={setShowAdd}
                  cards={props.cards}
                  cardBase={props.cardBase}
@@ -208,7 +208,7 @@ function DeckCrypt(props) {
       <ResultCryptTable
         className={className}
         deckid={props.deckid}
-        deckCardChange={props.deckCardChange}
+        cardChange={props.cardChange}
         resultCards={sortedCards}
         disciplinesSet={disciplinesSet}
         showImage={props.showImage}
@@ -221,6 +221,8 @@ function DeckCrypt(props) {
         proxySelector={props.proxySelector}
         proxyCounter={props.proxyCounter}
         proxySelected={props.proxySelected}
+        inventoryCrypt={props.inventoryCrypt}
+        inventoryMode={props.inventoryMode}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
@@ -230,7 +232,7 @@ function DeckCrypt(props) {
           <ResultCryptTable
             className={className}
             deckid={props.deckid}
-            deckCardChange={props.deckCardChange}
+            cardChange={props.cardChange}
             resultCards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             showImage={props.showImage}

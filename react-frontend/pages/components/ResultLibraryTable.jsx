@@ -32,6 +32,15 @@ function ResultLibraryTable(props) {
       });
     }
 
+    let inInventory;
+    if (props.inventoryLibrary) {
+      Object.keys(props.inventoryLibrary).map((i, index) => {
+        if (i == card.Id) {
+          inInventory = props.inventoryLibrary[i].q;
+        }
+      });
+    }
+
     const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
       return (
         <Popover ref={ref} {...props}>
@@ -49,11 +58,16 @@ function ResultLibraryTable(props) {
           {props.addMode && (
             <td className="quantity">
               <ResultAddCard
-                deckCardAdd={props.deckCardAdd}
+                cardAdd={props.cardAdd}
                 cardid={card['Id']}
                 inDeck={inDeck}
                 card={card}
               />
+            </td>
+          )}
+          {props.inventoryMode && (
+            <td className="quantity-no-buttons">
+              {inInventory}
             </td>
           )}
           <td className="cost py-0 px-1" onClick={() => setModalCard(card)}>
