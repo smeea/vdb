@@ -17,7 +17,7 @@ function Inventory(props) {
             cardBase={props.cryptCardBase}
           />
           {props.inventory.crypt &&
-           props.consumedCards.crypt &&
+           (props.consumedCards.softCrypt || props.consumedCards.hardCrypt ) &&
            <InventoryCrypt
              cards={props.inventory.crypt}
              showImage={props.showImage}
@@ -27,7 +27,10 @@ function Inventory(props) {
              isWide={props.isWide}
              cardBase={props.cryptCardBase}
              cardChange={props.cardChange}
-             consumedCards={props.consumedCards.crypt}
+             consumedCards={{
+               soft: props.consumedCards.softCrypt,
+               hard: props.consumedCards.hardCrypt,
+             }}
              decks={props.decks}
            />
           }
@@ -39,7 +42,7 @@ function Inventory(props) {
             cardBase={props.libraryCardBase}
           />
           {props.inventory.library &&
-           props.consumedCards.library &&
+           (props.consumedCards.softLibrary || props.consumedCards.hardLibrary ) &&
            <InventoryLibrary
              cards={props.inventory.library}
              showImage={props.showImage}
@@ -49,7 +52,10 @@ function Inventory(props) {
              isWide={props.isWide}
              cardBase={props.libraryCardBase}
              cardChange={props.cardChange}
-             consumedCards={props.consumedCards.library}
+             consumedCards={{
+               soft: props.consumedCards.softLibrary,
+               hard: props.consumedCards.hardLibrary,
+             }}
              decks={props.decks}
            />
           }

@@ -33,23 +33,47 @@ function InventoryCryptTable(props) {
     CardPopover.displayName = 'CardPopover';
 
     let used = 0;
-    let UsedDetails;
-    if (props.consumedCards[card.c['Id']]) {
-      UsedDetails = Object.keys(props.consumedCards[card.c['Id']]).map((id, index) => {
-        used += props.consumedCards[card.c['Id']][id];
+
+    let SoftUsed;
+    if (props.consumedCards.soft[card.c['Id']]) {
+      SoftUsed = Object.keys(props.consumedCards.soft[card.c['Id']]).map((id, index) => {
+        used += props.consumedCards.soft[card.c['Id']][id];
         return (
           <div key={index}>
-            {props.decks[id]['name']}: {props.consumedCards[card.c['Id']][id]}
+            <b>{props.consumedCards.soft[card.c['Id']][id]}</b> - {props.decks[id]['name']}
           </div>
-        )
-      })
+        );
+      });
+    }
+
+    let HardUsed;
+    if (props.consumedCards.hard[card.c['Id']]) {
+      HardUsed = Object.keys(props.consumedCards.hard[card.c['Id']]).map((id, index) => {
+        used += props.consumedCards.hard[card.c['Id']][id];
+        return (
+          <div key={index}>
+            <b>{props.consumedCards.hard[card.c['Id']][id]}</b> - {props.decks[id]['name']}
+          </div>
+        );
+      });
     }
 
     const UsedPopover = React.forwardRef(({ children, ...props }, ref) => {
       return (
         <Popover ref={ref} {...props}>
           <Popover.Content>
-            {UsedDetails}
+            {SoftUsed &&
+             <div className="py-1">
+               <b>Soft:</b>
+               {SoftUsed}
+             </div>
+            }
+            {HardUsed &&
+             <div className="py-1">
+               <b>Hard</b>:
+               {HardUsed}
+             </div>
+            }
           </Popover.Content>
         </Popover>
       );
@@ -151,7 +175,7 @@ function InventoryCryptTable(props) {
       <table className="deck-crypt-table">
         <thead>
           <tr>
-            <th>Free</th>
+            <th>Total</th>
             <th>Used</th>
           </tr>
         </thead>

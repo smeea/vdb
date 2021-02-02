@@ -119,6 +119,16 @@ function Decks(props) {
     }
   }, [props.activeDeck]);
 
+  const toggleConsumer = () => {
+    if (props.consumers[props.activeDeck] == 'soft') {
+      props.addConsumer(props.activeDeck, 'hard');
+    } else if (props.consumers[props.activeDeck] == 'hard') {
+      props.delConsumer(props.activeDeck);
+    } else {
+      props.addConsumer(props.activeDeck, 'soft');
+    }
+  }
+
   return (
     <Container className="deck-container">
       <Row>
@@ -133,16 +143,14 @@ function Decks(props) {
                       activeDeck={props.activeDeck}
                       setActiveDeck={props.setActiveDeck}
                     />
-                    <Button
-                      onClick={() => props.addConsumer(props.activeDeck)}
-                    >
-                      ADD CONSUMER
-                    </Button>
-                    <Button
-                      onClick={() => props.delConsumer(props.activeDeck)}
-                    >
-                      DELETE CONSUMER
-                    </Button>
+                    {props.inventoryMode &&
+                     <Button
+                       variant='outline-secondary'
+                       onClick={() => toggleConsumer()}
+                     >
+                       {props.consumers[props.activeDeck] == 'soft' ? 'SOFT' : props.consumers[props.activeDeck] == 'hard' ? 'HARD' : 'NONE'}
+                     </Button>
+                    }
                   </Col>
                 ) : (
                   <>

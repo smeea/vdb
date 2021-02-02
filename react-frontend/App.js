@@ -41,7 +41,7 @@ function App(props) {
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const [inventory, setInventory] = useState({})
-  const [consumers, setConsumers] = useState([])
+  const [consumers, setConsumers] = useState({})
   const [consumedCards, setConsumedCards] = useState({})
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
@@ -105,8 +105,8 @@ function App(props) {
       });
   };
 
-  const addConsumer = (deckid) => {
-    const url = `${process.env.API_URL}inventory/consumers`;
+  const addConsumer = (deckid, status) => {
+    const url = `${process.env.API_URL}inventory/consumers/${deckid}`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -114,41 +114,37 @@ function App(props) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ add: deckid }),
+      body: JSON.stringify(status),
     };
 
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          setConsumers((prevState) => ([...prevState, deckid]));
+          setConsumers((prevState) => ({...prevState, [deckid]: status}));
         }
       });
   };
 
   const delConsumer = (deckid) => {
-    const url = `${process.env.API_URL}inventory/consumers`;
+    const url = `${process.env.API_URL}inventory/consumers/${deckid}`;
     const options = {
-      method: 'POST',
+      method: 'DELETE',
       mode: 'cors',
       credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ delete: deckid }),
     };
 
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          setConsumers((prevState) => (
-            [...prevState.filter((value) => {return value != deckid})]
-          ));
+          setConsumers((prevState) => {
+            delete prevState[deckid];
+            return {...prevState};
+          });
         }
       });
   };
-
 
   const getInventory = () => {
     const url = `${process.env.API_URL}inventory`;
@@ -432,27 +428,53 @@ function App(props) {
   useEffect(() => {
     if (Object.keys(decks).length > 0) {
       if (consumers && inventory) {
-        const crypt = {}
-        const library = {}
-        consumers.forEach(deckid => {
-          Object.keys(decks[deckid].crypt).forEach(id => {
-            if (crypt[id]) {
-              crypt[id][deckid] = decks[deckid].crypt[id].q;
-            } else {
-              crypt[id] = {}
-              crypt[id][deckid] = decks[deckid].crypt[id].q;
-            }
-          })
-          Object.keys(decks[deckid].library).forEach(id => {
-            if (library[id]) {
-              library[id][deckid] = decks[deckid].library[id].q;
-            } else {
-              library[id] = {}
-              library[id][deckid] = decks[deckid].library[id].q;
-            }
-          })
+        const softCrypt = {}
+        const softLibrary = {}
+        const hardCrypt = {}
+        const hardLibrary = {}
+        Object.keys(consumers).forEach(deckid => {
+          if (consumers[deckid] == 'soft') {
+            Object.keys(decks[deckid].crypt).forEach(id => {
+              if (softCrypt[id]) {
+                softCrypt[id][deckid] = decks[deckid].crypt[id].q;
+              } else {
+                softCrypt[id] = {}
+                softCrypt[id][deckid] = decks[deckid].crypt[id].q;
+              }
+            })
+            Object.keys(decks[deckid].library).forEach(id => {
+              if (softLibrary[id]) {
+                softLibrary[id][deckid] = decks[deckid].library[id].q;
+              } else {
+                softLibrary[id] = {}
+                softLibrary[id][deckid] = decks[deckid].library[id].q;
+              }
+            })
+          } else if (consumers[deckid] == 'hard') {
+            Object.keys(decks[deckid].crypt).forEach(id => {
+              if (hardCrypt[id]) {
+                hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
+              } else {
+                hardCrypt[id] = {}
+                hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
+              }
+            })
+            Object.keys(decks[deckid].library).forEach(id => {
+              if (hardLibrary[id]) {
+                hardLibrary[id][deckid] = decks[deckid].library[id].q;
+              } else {
+                hardLibrary[id] = {}
+                hardLibrary[id][deckid] = decks[deckid].library[id].q;
+              }
+            })
+          }
         })
-        setConsumedCards({crypt: crypt, library: library})
+        setConsumedCards({
+          softCrypt: softCrypt,
+          softLibrary: softLibrary,
+          hardCrypt: hardCrypt,
+          hardLibrary: hardLibrary,
+        })
       }
     }
   }, [consumers, inventory, decks])
@@ -478,6 +500,10 @@ function App(props) {
       setActiveDeck(lastDeck.deckid);
     }
   }, [lastDeck]);
+
+  // useEffect(() => {
+  //   console.log(consumers)
+  // }, [consumers])
 
   // useEffect(() => {
   //   setChangeTimer(!changeTimer);

@@ -65,8 +65,7 @@ def inventoryAddCard():
 def listConsumers():
     if current_user.is_authenticated:
         try:
-            consumers = current_user.inventory_consumers
-            return jsonify(consumers)
+            return jsonify(current_user.inventory_consumers)
 
         except Exception:
             pass
@@ -75,27 +74,31 @@ def listConsumers():
         return jsonify({'Not logged in.'})
 
 
-@app.route('/api/inventory/consumers', methods=['POST'])
-def addConsumers():
+@app.route('/api/inventory/consumers/<string:deckid>', methods=['POST'])
+def changeConsumer(deckid):
     if current_user.is_authenticated:
         try:
-            consumers = current_user.inventory_consumers.copy() if current_user.inventory_consumers else []
-
-            if 'add' in request.json:
-                if request.json['add'] not in consumers:
-                    consumers.append(request.json['add'])
-                else:
-                    abort(400)
-                    pass
-            elif 'delete' in request.json:
-                if request.json['delete'] in consumers:
-                    consumers.remove(request.json['delete'])
-                else:
-                    return jsonify({'error': 'not in consumers'})
-
-            current_user.inventory_consumers = consumers
+            c = current_user.inventory_consumers.copy()
+            c[deckid] = request.json
+            current_user.inventory_consumers = c
             db.session.commit()
-            return jsonify({'success add/delete inventory consumer': request.json['add']})
+            return jsonify({'success change': deckid})
+
+        except Exception:
+            return jsonify({'error': 'error'})
+
+    else:
+        return jsonify({'Not logged in.'})
+
+@app.route('/api/inventory/consumers/<string:deckid>', methods=['DELETE'])
+def removeConsumer(deckid):
+    if current_user.is_authenticated:
+        try:
+            c = current_user.inventory_consumers.copy()
+            del c[deckid]
+            current_user.inventory_consumers = c
+            db.session.commit()
+            return jsonify({'success delete': deckid})
 
         except Exception:
             return jsonify({'error': 'error'})
