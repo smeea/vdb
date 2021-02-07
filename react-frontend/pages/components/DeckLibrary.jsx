@@ -107,6 +107,8 @@ function DeckLibrary(props) {
             proxySelected={props.proxySelected}
             inventoryLibrary={props.inventoryLibrary}
             inventoryMode={props.inventoryMode}
+            usedCards={props.usedCards}
+            decks={props.decks}
           />
         </div>
       );
@@ -131,6 +133,10 @@ function DeckLibrary(props) {
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
+            inventoryLibrary={props.inventoryLibrary}
+            inventoryMode={props.inventoryMode}
+            usedCards={props.usedCards}
+            decks={props.decks}
           />
         </div>
       );

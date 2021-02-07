@@ -61,50 +61,6 @@ def inventoryAddCard():
     else:
         return jsonify({'Not logged in.'})
 
-@app.route('/api/inventory/consumers', methods=['GET'])
-def listConsumers():
-    if current_user.is_authenticated:
-        try:
-            return jsonify(current_user.inventory_consumers)
-
-        except Exception:
-            pass
-
-    else:
-        return jsonify({'Not logged in.'})
-
-
-@app.route('/api/inventory/consumers/<string:deckid>', methods=['POST'])
-def changeConsumer(deckid):
-    if current_user.is_authenticated:
-        try:
-            c = current_user.inventory_consumers.copy()
-            c[deckid] = request.json
-            current_user.inventory_consumers = c
-            db.session.commit()
-            return jsonify({'success change': deckid})
-
-        except Exception:
-            return jsonify({'error': 'error'})
-
-    else:
-        return jsonify({'Not logged in.'})
-
-@app.route('/api/inventory/consumers/<string:deckid>', methods=['DELETE'])
-def removeConsumer(deckid):
-    if current_user.is_authenticated:
-        try:
-            c = current_user.inventory_consumers.copy()
-            del c[deckid]
-            current_user.inventory_consumers = c
-            db.session.commit()
-            return jsonify({'success delete': deckid})
-
-        except Exception:
-            return jsonify({'error': 'error'})
-
-    else:
-        return jsonify({'Not logged in.'})
 
 @app.route('/api/inventory/change', methods=['POST'])
 def inventoryChangeCard():
@@ -196,6 +152,7 @@ def updateDeck(deckid):
                 d.cards = merged_cards.copy()
         except Exception:
             pass
+
         try:
             if request.json['cardAdd']:
                 new_cards = request.json['cardAdd']
@@ -207,19 +164,65 @@ def updateDeck(deckid):
                 d.cards = merged_cards.copy()
         except Exception:
             pass
+
         try:
             if request.json['name']:
                 d.name = request.json['name']
         except Exception:
             pass
+
         try:
             if 'description' in request.json:
                 d.description = request.json['description']
         except Exception:
             pass
+
         try:
             if 'author' in request.json:
                 d.author_public_name = request.json['author'] or ''
+        except Exception:
+            pass
+
+        try:
+            if 'makeFlexible' in request.json:
+                if request.json['makeFlexible'] == 'all':
+                    d.used_in_inventory = {}
+                    d.inventory_type = 's'
+                else:
+                    r = request.json['makeFixed']
+                    used = d.used_in_inventory.copy()
+                    if r in used:
+                        used[r]['s'] = d.cards[r]
+                    else:
+                        used[r] = {'s': d.cards[r]}
+                    d.used_in_inventory = used
+        except Exception:
+            pass
+        try:
+            if 'makeFixed' in request.json:
+                if request.json['makeFixed'] == 'all':
+                    d.used_in_inventory = {}
+                    d.inventory_type = 'h'
+                else:
+                    r = request.json['makeFixed']
+                    used = d.used_in_inventory.copy()
+                    if r in used:
+                        used[r]['h'] = d.cards[r]
+                    else:
+                        used[r] = {'h': d.cards[r]}
+                    d.used_in_inventory = used
+        except Exception:
+            pass
+        try:
+            if 'makeClear' in request.json:
+                if request.json['makeClear'] == 'all':
+                    d.used_in_inventory = {}
+                    d.inventory_type = ''
+                else:
+                    r = request.json['makeClear']
+                    used = d.used_in_inventory.copy()
+                    del(used[r])
+                    d.used_in_inventory = used
         except Exception:
             pass
 
@@ -285,8 +288,18 @@ def listDecks():
 
                 if k > 200000:
                     crypt[k] = {'q': v}
+                    if k in deck.used_in_inventory:
+                        if 's' in deck.used_in_inventory[k]:
+                            crypt[k]['s'] = deck.used_in_inventory[k]['s']
+                        if 'h' in deck.used_in_inventory[k]:
+                            crypt[k]['h'] = deck.used_in_inventory[k]['h']
                 elif k < 200000:
                     library[k] = {'q': v}
+                    if k in deck.used_in_inventory:
+                        if 's' in deck.used_in_inventory[k]:
+                            library[k]['s'] = deck.used_in_inventory[k]['s']
+                        if 'h' in deck.used_in_inventory[k]:
+                            library[k]['h'] = deck.used_in_inventory[k]['h']
 
             # db.session.commit()
 
@@ -300,6 +313,9 @@ def listDecks():
                 'deckid': deck.deckid,
                 'timestamp': deck.timestamp,
             }
+
+            if deck.inventory_type:
+                decks[deck.deckid]['inventory_type'] = deck.inventory_type
 
         return jsonify(decks)
 
@@ -316,7 +332,9 @@ def newDeck():
                      author_public_name=request.json['author'] if 'author' in request.json else current_user.public_name,
                      description=request.json['description'] if 'description' in request.json else '',
                      author=current_user,
-                     cards=request.json['cards'] if 'cards' in request.json else {})
+                     used_in_inventory={},
+                     inventory_type='',
+                     cards={})
             db.session.add(d)
             db.session.commit()
             return jsonify({
@@ -346,6 +364,7 @@ def cloneDeck():
                     author_public_name=deck['author'],
                     description=deck['description'],
                     author=current_user,
+                    inventory={},
                     cards=cards)
         db.session.add(d)
         db.session.commit()
@@ -371,6 +390,7 @@ def cloneDeck():
                      author_public_name=deck['player'],
                      description=deck['description'],
                      author=current_user,
+                     inventory={},
                      cards=cards)
             db.session.add(d)
             db.session.commit()
@@ -388,6 +408,7 @@ def cloneDeck():
                      author_public_name=request.json['author'],
                      description='',
                      author=current_user,
+                     inventory={},
                      cards=targetDeck.cards)
             db.session.add(d)
             db.session.commit()
@@ -413,6 +434,7 @@ def importDeck():
                          author_public_name=author,
                          description=description,
                          author=current_user,
+                         inventory={},
                          cards=cards)
                 db.session.add(d)
                 db.session.commit()

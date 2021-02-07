@@ -41,7 +41,6 @@ function ResultLibrary(props) {
            showImage={props.showImage}
            setShowImage={props.setShowImage}
            library={props.library}
-           inventoryLibrary={props.inventoryLibrary}
            activeDeck={props.activeDeck}
            cardAdd={props.cardAdd}
            resultCards={sortedCards}
@@ -49,6 +48,9 @@ function ResultLibrary(props) {
            isWide={true}
            addMode={props.addMode}
            inventoryMode={props.inventoryMode}
+           inventoryLibrary={props.inventoryLibrary}
+           usedCards={props.usedCards}
+           decks={props.decks}
          />
        </>
       }

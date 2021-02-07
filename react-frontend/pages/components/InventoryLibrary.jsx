@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
+import React from 'react';
 import InventoryLibraryTable from './InventoryLibraryTable.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
@@ -66,7 +65,7 @@ function InventoryLibrary(props) {
             cardChange={props.cardChange}
             decks={props.decks}
             cards={libraryByType[cardtype]}
-            consumedCards={props.consumedCards}
+            usedCards={props.usedCards}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
             isAuthor={props.isAuthor}

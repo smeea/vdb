@@ -40,9 +40,9 @@ function App(props) {
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
-  const [inventory, setInventory] = useState({})
-  const [consumers, setConsumers] = useState({})
-  const [consumedCards, setConsumedCards] = useState({})
+  const [inventory, setInventory] = useState({crypt: {}, library: {}})
+  const [inventoryDecks, setInventoryDecks] = useState({})
+  const [usedCards, setUsedCards] = useState({})
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
@@ -84,64 +84,6 @@ function App(props) {
       .then((data) => {
         if (data.error === undefined) {
           setLibraryCardBase(data);
-        }
-      });
-  };
-
-  const getConsumers = () => {
-    const url = `${process.env.API_URL}inventory/consumers`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data && data.error === undefined) {
-          setConsumers(data);
-        }
-      });
-  };
-
-  const addConsumer = (deckid, status) => {
-    const url = `${process.env.API_URL}inventory/consumers/${deckid}`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(status),
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          setConsumers((prevState) => ({...prevState, [deckid]: status}));
-        }
-      });
-  };
-
-  const delConsumer = (deckid) => {
-    const url = `${process.env.API_URL}inventory/consumers/${deckid}`;
-    const options = {
-      method: 'DELETE',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          setConsumers((prevState) => {
-            delete prevState[deckid];
-            return {...prevState};
-          });
         }
       });
   };
@@ -426,58 +368,92 @@ function App(props) {
   }, [decks]);
 
   useEffect(() => {
-    if (Object.keys(decks).length > 0) {
-      if (consumers && inventory) {
-        const softCrypt = {}
-        const softLibrary = {}
-        const hardCrypt = {}
-        const hardLibrary = {}
-        Object.keys(consumers).forEach(deckid => {
-          if (consumers[deckid] == 'soft') {
-            Object.keys(decks[deckid].crypt).forEach(id => {
-              if (softCrypt[id]) {
-                softCrypt[id][deckid] = decks[deckid].crypt[id].q;
-              } else {
-                softCrypt[id] = {}
-                softCrypt[id][deckid] = decks[deckid].crypt[id].q;
-              }
-            })
-            Object.keys(decks[deckid].library).forEach(id => {
-              if (softLibrary[id]) {
-                softLibrary[id][deckid] = decks[deckid].library[id].q;
-              } else {
-                softLibrary[id] = {}
-                softLibrary[id][deckid] = decks[deckid].library[id].q;
-              }
-            })
-          } else if (consumers[deckid] == 'hard') {
-            Object.keys(decks[deckid].crypt).forEach(id => {
-              if (hardCrypt[id]) {
-                hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
-              } else {
-                hardCrypt[id] = {}
-                hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
-              }
-            })
-            Object.keys(decks[deckid].library).forEach(id => {
-              if (hardLibrary[id]) {
-                hardLibrary[id][deckid] = decks[deckid].library[id].q;
-              } else {
-                hardLibrary[id] = {}
-                hardLibrary[id][deckid] = decks[deckid].library[id].q;
-              }
-            })
+    if (inventory) {
+      const softCrypt = {}
+      const softLibrary = {}
+      const hardCrypt = {}
+      const hardLibrary = {}
+      Object.keys(decks).forEach(deckid => {
+        if (decks[deckid].inventory_type == 's') {
+          Object.keys(decks[deckid].crypt).forEach(id => {
+            if (softCrypt[id]) {
+              softCrypt[id][deckid] = decks[deckid].crypt[id].q;
+            } else {
+              softCrypt[id] = {}
+              softCrypt[id][deckid] = decks[deckid].crypt[id].q;
+            }
+          });
+          Object.keys(decks[deckid].library).forEach(id => {
+            if (softLibrary[id]) {
+              softLibrary[id][deckid] = decks[deckid].library[id].q;
+            } else {
+              softLibrary[id] = {}
+              softLibrary[id][deckid] = decks[deckid].library[id].q;
+            }
+          });
+        } else if (decks[deckid].inventory_type == 'h') {
+          Object.keys(decks[deckid].crypt).forEach(id => {
+            if (hardCrypt[id]) {
+              hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
+            } else {
+              hardCrypt[id] = {}
+              hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
+            }
+          });
+          Object.keys(decks[deckid].library).forEach(id => {
+            if (hardLibrary[id]) {
+              hardLibrary[id][deckid] = decks[deckid].library[id].q;
+            } else {
+              hardLibrary[id] = {}
+              hardLibrary[id][deckid] = decks[deckid].library[id].q;
+            }
+          });
+        }
+        Object.keys(decks[deckid].crypt).forEach(id => {
+          if (decks[deckid].crypt[id].s) {
+            if (softCrypt[id]) {
+              softCrypt[id][deckid] = decks[deckid].crypt[id].s;
+            } else {
+              softCrypt[id] = {}
+              softCrypt[id][deckid] = decks[deckid].crypt[id].s;
+            }
+          }
+          if (decks[deckid].crypt[id].h) {
+            if (hardCrypt[id]) {
+              hardCrypt[id][deckid] = decks[deckid].crypt[id].h;
+            } else {
+              hardCrypt[id] = {}
+              hardCrypt[id][deckid] = decks[deckid].crypt[id].h;
+            }
           }
         })
-        setConsumedCards({
-          softCrypt: softCrypt,
-          softLibrary: softLibrary,
-          hardCrypt: hardCrypt,
-          hardLibrary: hardLibrary,
+        Object.keys(decks[deckid].library).forEach(id => {
+          if (decks[deckid].library[id].s) {
+            if (softLibrary[id]) {
+              softLibrary[id][deckid] = decks[deckid].library[id].s;
+            } else {
+              softLibrary[id] = {}
+              softLibrary[id][deckid] = decks[deckid].library[id].s;
+            }
+          }
+          if (decks[deckid].library[id].h) {
+            if (hardLibrary[id]) {
+              hardLibrary[id][deckid] = decks[deckid].library[id].h;
+            } else {
+              hardLibrary[id] = {}
+              hardLibrary[id][deckid] = decks[deckid].library[id].h;
+            }
+          }
         })
-      }
+      })
+      setUsedCards({
+        softCrypt: softCrypt,
+        softLibrary: softLibrary,
+        hardCrypt: hardCrypt,
+        hardLibrary: hardLibrary,
+      })
     }
-  }, [consumers, inventory, decks])
+  }, [inventory, decks])
 
   useEffect(() => {
     whoAmI();
@@ -487,7 +463,6 @@ function App(props) {
   useEffect(() => {
     if (username) {
       whoAmI();
-      getConsumers();
       cryptCardBase && libraryCardBase && getInventory();
       cryptCardBase && libraryCardBase && getDecks();
     } else {
@@ -500,10 +475,6 @@ function App(props) {
       setActiveDeck(lastDeck.deckid);
     }
   }, [lastDeck]);
-
-  // useEffect(() => {
-  //   console.log(consumers)
-  // }, [consumers])
 
   // useEffect(() => {
   //   setChangeTimer(!changeTimer);
@@ -581,7 +552,7 @@ function App(props) {
                 whoAmI={whoAmI}
                 username={username}
                 setUsername={setUsername}
-                consumedCards={consumedCards}
+                usedCards={usedCards}
                 decks={decks}
               />
             </Route>
@@ -591,6 +562,7 @@ function App(props) {
                 isMobile={isMobile}
                 isWide={isWide}
                 decks={decks}
+                usedCards={usedCards}
                 getDecks={getDecks}
                 activeDeck={activeDeck}
                 setActiveDeck={setActiveDeck}
@@ -598,9 +570,6 @@ function App(props) {
                 setSharedDeck={setSharedDeck}
                 inventory={inventory}
                 inventoryMode={inventoryMode}
-                consumers={consumers}
-                addConsumer={addConsumer}
-                delConsumer={delConsumer}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 showImage={showImage}
@@ -639,6 +608,7 @@ function App(props) {
                 setFormState={setCryptFormState}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
+                usedCards={usedCards}
               />
             </Route>
             <Route path="/library">
@@ -668,6 +638,7 @@ function App(props) {
                 setFormState={setLibraryFormState}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
+                usedCards={usedCards}
               />
             </Route>
             <Route

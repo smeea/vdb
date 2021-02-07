@@ -3,6 +3,7 @@
 * TWD location/winner form reset
 * Clear text form to update search
 * Search form to trim spaces
+* Error popoup for Deck Buttons
 
 # FEATURES
 * TWD Deck name filter

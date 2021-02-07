@@ -2,11 +2,6 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 function DeckCardQuantity(props) {
-  let className = "px-1";
-  if (props.inInventory != null && props.q > props.inInventory) {
-    className += " bg-red"
-  }
-
   return (
     <div className="d-flex align-items-center justify-content-between">
       {props.isMobile ? (
@@ -21,7 +16,11 @@ function DeckCardQuantity(props) {
               -
             </Button>
           </a>
-          <div className={className}>{props.q == 0 ? '' : props.q}</div>
+          <div
+            className={props.inInventory < props.softUsedMax + props.hardUsedTotal ? "px-1 mx-1 bg-red" : "px-1"}
+          >
+            {props.q == 0 ? '' : props.q}
+          </div>
           <a
             className="quantity"
             onClick={() =>
@@ -45,7 +44,7 @@ function DeckCardQuantity(props) {
             -
           </Button>
           <div
-            className={className}
+            className={props.inInventory < props.softUsedMax + props.hardUsedTotal ? "px-1 mx-1 bg-red" : "px-1"}
           >
             {props.q == 0 ? '' : props.q}
           </div>

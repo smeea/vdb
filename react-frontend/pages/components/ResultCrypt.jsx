@@ -44,7 +44,6 @@ function ResultCrypt(props) {
            showImage={props.showImage}
            setShowImage={props.setShowImage}
            crypt={props.crypt}
-           inventoryCrypt={props.inventoryCrypt}
            activeDeck={props.activeDeck}
            cardAdd={props.cardAdd}
            resultCards={sortedCards}
@@ -52,6 +51,9 @@ function ResultCrypt(props) {
            isWide={true}
            addMode={props.addMode}
            inventoryMode={props.inventoryMode}
+           inventoryCrypt={props.inventoryCrypt}
+           usedCards={props.usedCards}
+           decks={props.decks}
          />
        </>
       }

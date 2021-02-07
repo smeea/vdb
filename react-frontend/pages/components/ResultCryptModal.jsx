@@ -3,6 +3,8 @@ import { Modal, Tabs, Tab, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import ImageAlt from '../../assets/images/icons/image-alt.svg';
 import FileTextFill from '../../assets/images/icons/chat-quote-fill.svg';
+import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
+import LockFill from '../../assets/images/icons/lock-fill.svg'
 import ResultCryptLayoutText from './ResultCryptLayoutText.jsx';
 import CardCopyUrlButton from './CardCopyUrlButton.jsx';
 
@@ -21,6 +23,9 @@ function ResultCryptModal(props) {
       />
     );
   };
+
+
+  console.log(props.inventoryMode)
 
   return (
     <Modal
@@ -64,13 +69,20 @@ function ResultCryptModal(props) {
              <CardImage />
            </Col>
            <Col className="py-4 px-4 mr-3">
-             <div className="pb-4">
+             <div className="">
                <ResultCryptLayoutText
                  card={props.card}
                  handleClose={props.handleClose}
                />
              </div>
-             <div className="bp-125">
+             {props.inventoryMode &&
+              <div className="pt-1 px-1">
+                <b>Inventory:</b>
+                {props.usedDescription.soft && <>{props.usedDescription.soft}</>}
+                {props.usedDescription.hard && <>{props.usedDescription.hard}</>}
+              </div>
+             }
+             <div className="bp-125 pt-4">
                <CardCopyUrlButton id={props.card['Id']} />
              </div>
              <Button

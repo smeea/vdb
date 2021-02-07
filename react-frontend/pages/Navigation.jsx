@@ -19,7 +19,7 @@ function Navigation(props) {
               props.location.pathname == '/crypt' ||
               props.location.pathname == '/library') && (
                 <div
-                  className="d-flex align-items-center pl-1"
+                  className="d-flex align-items-center pl-1 pr-4"
                   onClick={() => props.setInventoryMode(!props.inventoryMode)}
                 >
                   <div
@@ -55,7 +55,7 @@ function Navigation(props) {
               (props.location.pathname == '/library' &&
                !props.showLibrarySearch)) && (
                  <div
-                   className="d-flex align-items-center pl-1"
+                   className="d-flex align-items-center pl-1 pr-4"
                    onClick={() => props.setAddMode(!props.addMode)}
                  >
                    <div
@@ -78,7 +78,7 @@ function Navigation(props) {
                          : 'd-inline pl-1 gray-font'
                      }
                    >
-                     Add to Deck Mode
+                     Add-to-Deck Mode
                    </div>
                  </div>
                )}

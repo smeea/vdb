@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
+import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
+import LockFill from '../../assets/images/icons/lock-fill.svg'
+import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
@@ -32,27 +35,34 @@ function InventoryCryptTable(props) {
     });
     CardPopover.displayName = 'CardPopover';
 
-    let used = 0;
+    let softUsedMax = 0;
+    let SoftUsedDescription;
+    if (props.usedCards.soft[card.c['Id']]) {
+      SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map((id, index) => {
+        if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
+          softUsedMax = props.usedCards.soft[card.c['Id']][id];
+        }
 
-    let SoftUsed;
-    if (props.consumedCards.soft[card.c['Id']]) {
-      SoftUsed = Object.keys(props.consumedCards.soft[card.c['Id']]).map((id, index) => {
-        used += props.consumedCards.soft[card.c['Id']][id];
         return (
-          <div key={index}>
-            <b>{props.consumedCards.soft[card.c['Id']][id]}</b> - {props.decks[id]['name']}
+          <div className="d-flex align-items-center" key={index}>
+            <div className="opacity-035"><Diagram3Fill/></div>
+            <div className="px-1"><b>{props.usedCards.soft[card.c['Id']][id]}</b></div>
+            - {props.decks[id]['name']}
           </div>
         );
       });
     }
 
-    let HardUsed;
-    if (props.consumedCards.hard[card.c['Id']]) {
-      HardUsed = Object.keys(props.consumedCards.hard[card.c['Id']]).map((id, index) => {
-        used += props.consumedCards.hard[card.c['Id']][id];
+    let hardUsedTotal = 0;
+    let HardUsedDescription;
+    if (props.usedCards.hard[card.c['Id']]) {
+      HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map((id, index) => {
+        hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
         return (
-          <div key={index}>
-            <b>{props.consumedCards.hard[card.c['Id']][id]}</b> - {props.decks[id]['name']}
+          <div className="d-flex align-items-center" key={index}>
+            <div className="opacity-035"><LockFill/></div>
+            <div className="px-1"><b>{props.usedCards.hard[card.c['Id']][id]}</b></div>
+            - {props.decks[id]['name']}
           </div>
         );
       });
@@ -62,18 +72,24 @@ function InventoryCryptTable(props) {
       return (
         <Popover ref={ref} {...props}>
           <Popover.Content>
-            {SoftUsed &&
-             <div className="py-1">
-               <b>Soft:</b>
-               {SoftUsed}
-             </div>
-            }
-            {HardUsed &&
-             <div className="py-1">
-               <b>Hard</b>:
-               {HardUsed}
-             </div>
-            }
+            <>
+              {children == 0 ?
+               <div className="py-1">
+                 Not used in inventory decks
+               </div>
+               :
+               <>
+                 {softUsedMax > 0 && <>{SoftUsedDescription}</>}
+                 {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
+               </>
+              }
+              <hr/>
+              <div className="d-flex align-items-center" key={index}>
+                <div className="opacity-035"><ArchiveFill/></div>
+                <div className="px-1"><b>{card.q}</b></div>
+                - In Inventory
+              </div>
+            </>
           </Popover.Content>
         </Popover>
       );
@@ -83,36 +99,40 @@ function InventoryCryptTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          {props.isAuthor ? (
-            <td className="quantity">
-              <DeckCardQuantity
-                cardid={card.c['Id']}
-                q={card.q}
-                deckid={props.deckid}
-                cardChange={props.cardChange}
-                isMobile={props.isMobile}
-              />
-            </td>
-          ) : card.q ? (
-            <td className="quantity-no-buttons px-2">{card.q}</td>
-          ) : (
-            <td className="quantity-no-buttons px-2">
-              <div className="transparent">0</div>
-            </td>
-          )}
-          {!props.isMobile && used ?
+          <td className="quantity">
+            <DeckCardQuantity
+              cardid={card.c['Id']}
+              q={card.q}
+              deckid={props.deckid}
+              cardChange={props.cardChange}
+              isMobile={props.isMobile}
+              inInventory={card.q}
+              softUsedMax={softUsedMax}
+              hardUsedTotal={hardUsedTotal}
+            />
+          </td>
+          {!props.isMobile && (softUsedMax || hardUsedTotal) ?
            <OverlayTrigger
              placement={props.placement ? props.placement : 'right'}
              overlay={
-               <UsedPopover>{true}</UsedPopover>
+               <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
              }
            >
-             <td className="quantity-no-buttons px-2">
-               {used}
+             <td className="used">
+               { softUsedMax > 0 &&
+                 <div className="d-flex align-items-center justify-content-center">
+                   <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
+                 </div>
+               }
+               { hardUsedTotal > 0 &&
+                 <div className="d-flex align-items-center justify-content-center">
+                   <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
+                 </div>
+               }
              </td>
            </OverlayTrigger>
            :
-           <td className="quantity-no-buttons px-2">
+           <td className="used">
            </td>
           }
           <td className="capacity pr-1 pl-2" onClick={() => setModalCard(card.c)}>
@@ -189,6 +209,8 @@ function InventoryCryptTable(props) {
           setShowImage={props.setShowImage}
           handleClose={() => setModalCard(false)}
           isMobile={props.isMobile}
+          decks={props.decks}
+          usedCards={props.usedCards}
         />
       )}
     </>

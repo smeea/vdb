@@ -223,6 +223,8 @@ function DeckCrypt(props) {
         proxySelected={props.proxySelected}
         inventoryCrypt={props.inventoryCrypt}
         inventoryMode={props.inventoryMode}
+        usedCards={props.usedCards}
+        decks={props.decks}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
@@ -244,6 +246,10 @@ function DeckCrypt(props) {
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
+            inventoryCrypt={props.inventoryCrypt}
+            inventoryMode={props.inventoryMode}
+            usedCards={props.usedCards}
+            decks={props.decks}
           />
         </div>
       )}

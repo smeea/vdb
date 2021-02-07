@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
+import Diagram3Fill from '../assets/images/icons/diagram-3-fill.svg'
+import LockFill from '../assets/images/icons/lock-fill.svg'
+import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
 import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
@@ -86,6 +89,17 @@ function Decks(props) {
     fetch(url, options).then(() => props.getDecks());
   };
 
+  const toggleInventoryState = () => {
+    const inventoryType = props.decks[props.activeDeck].inventory_type;
+    if (!inventoryType) {
+      deckUpdate(props.activeDeck, 'makeFlexible', 'all')
+    } else if (inventoryType == "s") {
+      deckUpdate(props.activeDeck, 'makeFixed', 'all')
+    } else if (inventoryType == "h") {
+      deckUpdate(props.activeDeck, 'makeClear', 'all')
+    }
+  }
+
   let isAuthor;
   if (props.decks[props.activeDeck]) {
     isAuthor = props.username == props.decks[props.activeDeck].owner;
@@ -119,16 +133,6 @@ function Decks(props) {
     }
   }, [props.activeDeck]);
 
-  const toggleConsumer = () => {
-    if (props.consumers[props.activeDeck] == 'soft') {
-      props.addConsumer(props.activeDeck, 'hard');
-    } else if (props.consumers[props.activeDeck] == 'hard') {
-      props.delConsumer(props.activeDeck);
-    } else {
-      props.addConsumer(props.activeDeck, 'soft');
-    }
-  }
-
   return (
     <Container className="deck-container">
       <Row>
@@ -144,12 +148,33 @@ function Decks(props) {
                       setActiveDeck={props.setActiveDeck}
                     />
                     {props.inventoryMode &&
-                     <Button
-                       variant='outline-secondary'
-                       onClick={() => toggleConsumer()}
-                     >
-                       {props.consumers[props.activeDeck] == 'soft' ? 'SOFT' : props.consumers[props.activeDeck] == 'hard' ? 'HARD' : 'NONE'}
-                     </Button>
+                     <>
+                       <Button
+                         variant='outline-secondary'
+                         onClick={() => toggleInventoryState()}
+                       >
+                         <div className="d-flex align-items-center">
+                           {!props.decks[props.activeDeck].inventory_type &&
+                            <>
+                              <div className="pr-1"><EyeSlashFill/></div>
+                              Virtual
+                            </>
+                           }
+                           {props.decks[props.activeDeck].inventory_type == "s" &&
+                            <>
+                              <div className="pr-1"><Diagram3Fill/></div>
+                              Flexible
+                            </>
+                           }
+                           {props.decks[props.activeDeck].inventory_type == "h" &&
+                            <>
+                              <div className="pr-1"><LockFill/></div>
+                              Fixed
+                            </>
+                           }
+                         </div>
+                       </Button>
+                     </>
                     }
                   </Col>
                 ) : (
@@ -301,6 +326,11 @@ function Decks(props) {
               cardBase={props.cryptCardBase}
               inventoryMode={props.inventoryMode}
               inventoryCrypt={props.inventory.crypt}
+              decks={props.decks}
+              usedCards={{
+                soft: props.usedCards.softCrypt,
+                hard: props.usedCards.hardCrypt,
+              }}
             />
           </Col>
           <Col lg={5} className="px-0 px-lg-3">
@@ -327,6 +357,11 @@ function Decks(props) {
               cardBase={props.libraryCardBase}
               inventoryMode={props.inventoryMode}
               inventoryLibrary={props.inventory.library}
+              decks={props.decks}
+              usedCards={{
+                soft: props.usedCards.softLibrary,
+                hard: props.usedCards.hardLibrary,
+              }}
             />
           </Col>
         </Row>

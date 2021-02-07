@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
+import React from 'react';
 import InventoryCryptTable from './InventoryCryptTable.jsx';
 
 function InventoryCrypt(props) {
@@ -22,7 +21,7 @@ function InventoryCrypt(props) {
         cardChange={props.cardChange}
         decks={props.decks}
         cards={cards}
-        consumedCards={props.consumedCards}
+        usedCards={props.usedCards}
         showImage={props.showImage}
         setShowImage={props.setShowImage}
         isAuthor={props.isAuthor}
