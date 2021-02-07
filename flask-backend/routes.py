@@ -272,6 +272,8 @@ def listDecks():
     try:
         decks = {}
         for deck in current_user.decks.all():
+            if not deck.used_in_inventory:
+                deck.used_in_inventory = {}
             crypt = {}
             library = {}
             for k, v in deck.cards.items():
@@ -332,8 +334,8 @@ def newDeck():
                      author_public_name=request.json['author'] if 'author' in request.json else current_user.public_name,
                      description=request.json['description'] if 'description' in request.json else '',
                      author=current_user,
-                     used_in_inventory={},
                      inventory_type='',
+                     used_in_inventory={},
                      cards={})
             db.session.add(d)
             db.session.commit()
@@ -364,7 +366,8 @@ def cloneDeck():
                     author_public_name=deck['author'],
                     description=deck['description'],
                     author=current_user,
-                    inventory={},
+                    inventory_type='',
+                    used_in_inventory={},
                     cards=cards)
         db.session.add(d)
         db.session.commit()
@@ -390,7 +393,8 @@ def cloneDeck():
                      author_public_name=deck['player'],
                      description=deck['description'],
                      author=current_user,
-                     inventory={},
+                     inventory_type='',
+                     used_in_inventory={},
                      cards=cards)
             db.session.add(d)
             db.session.commit()
@@ -408,7 +412,8 @@ def cloneDeck():
                      author_public_name=request.json['author'],
                      description='',
                      author=current_user,
-                     inventory={},
+                     inventory_type='',
+                     used_in_inventory={},
                      cards=targetDeck.cards)
             db.session.add(d)
             db.session.commit()
@@ -434,7 +439,8 @@ def importDeck():
                          author_public_name=author,
                          description=description,
                          author=current_user,
-                         inventory={},
+                         inventory_type='',
+                         used_in_inventory={},
                          cards=cards)
                 db.session.add(d)
                 db.session.commit()

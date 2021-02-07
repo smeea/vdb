@@ -12,6 +12,10 @@
 * Search by text including particular word
 * Create 'hard' link to deck
 
+* Inventory type icon to deck selector
+* Make flexible button for single card
+* Documentation on Deck building and Inventory Management
+
 # MAYBE LATER FEATURES
 * Precon decks
 * Script to generate json from cvs from text disciplines
