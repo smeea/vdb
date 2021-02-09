@@ -23,6 +23,7 @@ function Crypt(props) {
                     decks={props.decks}
                     activeDeck={props.activeDeck}
                     setActiveDeck={props.setActiveDeck}
+                    inventoryMode={props.inventoryMode}
                   />
                 </Col>
                 <Col xs="auto" className="d-flex pl-0">
@@ -56,6 +57,7 @@ function Crypt(props) {
                     hard: props.usedCards.hardCrypt,
                   }}
                   decks={props.decks}
+                  inSearch={true}
                 />
                 <DeckLibrary
                   cardAdd={props.cardAdd}
@@ -74,6 +76,7 @@ function Crypt(props) {
                     hard: props.usedCards.hardLibrary,
                   }}
                   decks={props.decks}
+                  inSearch={true}
                 />
               </>
             )}

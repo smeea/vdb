@@ -80,6 +80,8 @@ img.card-popover
   background: rgba(0, 0, 170, 0.05);
   border-left: 1px solid lightgray
   border-right: 1px solid lightgray
+.deck-crypt-table td.used
+  width: 45px
 .deck-crypt-table td.disciplines
   width: 48%
 .deck-crypt-table td.disciplines.cols-7
@@ -106,13 +108,14 @@ img.card-popover
   border-collapse: collapse
 .deck-crypt-table .discipline td
   border: none
-.deck-crypt-table td
+.deck-crypt-table td, th
   text-align: center
 .deck-crypt-table td.name
   text-align: left
 .deck-crypt-table td.text
   text-align: left
   font-size: small
+
 .deck-library-table
   width: 100%
 .deck-library-table td
@@ -124,6 +127,8 @@ img.card-popover
   width: 65px
   font-size: 1.1em
   border-left: 1px solid lightgray
+.deck-library-table td.used
+  width: 45px
 .deck-library-table td.quantity-no-buttons
   width: 20px
   font-size: 1.1em
@@ -151,6 +156,54 @@ img.card-popover
 .deck-library-table td.text
   text-align: left
   font-size: small
+
+.inventory-crypt-table
+  width: 100%
+.inventory-crypt-table td
+  height: 32px
+  text-align: center
+.inventory-crypt-table td.quantity
+  width: 65px
+  font-size: 1.1em
+  border-left: 1px solid lightgray
+.inventory-crypt-table td.used
+  width: 45px
+.inventory-crypt-table td.group
+  border-right: 1px solid lightgray
+.inventory-crypt-table td
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  border-collapse: collapse
+.inventory-crypt-table .discipline td
+  border: none
+.inventory-crypt-table td.name
+  text-align: left
+
+.inventory-library-table
+  width: 100%
+.inventory-library-table td
+  height: 37px
+  text-align: center
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  border-collapse: collapse
+.inventory-library-table td.proxy-selector
+  width: 1%
+  border-left: 1px solid lightgray
+.inventory-library-table td.quantity
+  width: 65px
+  font-size: 1.1em
+  border-left: 1px solid lightgray
+.inventory-library-table td.used
+  width: 45px
+.inventory-library-table td.name
+  width: 50%
+  text-align: left
+.inventory-library-table td.cost
+  width: 5%
+.inventory-library-table td.burn
+  width: 7%
+  border-right: 1px solid lightgray
 
 .search-crypt-table
   width: 100%
@@ -368,6 +421,9 @@ textarea.deck-import:focus
   .deck-container
     min-width: 1080px
     max-width: 1080px
+  .inventory-container
+    min-width: 1180px
+    max-width: 1180px
 
 @media (min-width: 1600px)
   .main-container,
@@ -377,6 +433,9 @@ textarea.deck-import:focus
   .deck-container
     min-width: 1080px
     max-width: 1080px
+  .inventory-container
+    min-width: 1180px
+    max-width: 1180px
 
 .dropdown-toggle::after
   content: none
@@ -517,5 +576,18 @@ div.float-add svg
 .lp-125
   padding-left: 0.125rem
 
+.opacity-025
+  opacity: 0.25
+
 .opacity-035
   opacity: 0.35
+
+.opacity-075
+  opacity: 0.75
+
+td.left-offset-8
+  position: absolute
+  left: -8px
+  border-top: 0px
+  border-bottom: 0px
+  opacity: 0.75

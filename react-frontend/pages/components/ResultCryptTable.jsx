@@ -3,6 +3,7 @@ import { OverlayTrigger, Popover } from 'react-bootstrap';
 import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
 import LockFill from '../../assets/images/icons/lock-fill.svg'
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
+import CalculatorFill from '../../assets/images/icons/calculator-fill.svg'
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
@@ -15,14 +16,18 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 
 function ResultCryptTable(props) {
   let resultTrClass;
+  let deckInvType;
 
   const [modalCard, setModalCard] = useState(undefined);
   const [modalUsedDescription, setModalUsedDescription] = useState(undefined)
 
   const cardRows = props.resultCards.map((card, index) => {
     let q;
+    let cardInvType;
     if (props.className == 'deck-crypt-table') {
       q = card.q;
+      cardInvType = card.i;
+      deckInvType = props.decks[props.deckid].inventory_type;
       card = card.c;
     }
 
@@ -52,7 +57,7 @@ function ResultCryptTable(props) {
 
     let softUsedMax = 0;
     let SoftUsedDescription;
-    if (props.usedCards.soft[card['Id']]) {
+    if (props.usedCards && props.usedCards.soft[card['Id']]) {
       SoftUsedDescription = Object.keys(props.usedCards.soft[card['Id']]).map((id, index) => {
         if (softUsedMax < props.usedCards.soft[card['Id']][id]) {
           softUsedMax = props.usedCards.soft[card['Id']][id];
@@ -70,7 +75,7 @@ function ResultCryptTable(props) {
 
     let hardUsedTotal = 0;
     let HardUsedDescription;
-    if (props.usedCards.hard[card['Id']]) {
+    if (props.usedCards && props.usedCards.hard[card['Id']]) {
       HardUsedDescription = Object.keys(props.usedCards.hard[card['Id']]).map((id, index) => {
         hardUsedTotal += props.usedCards.hard[card['Id']][id];
         return (
@@ -82,6 +87,7 @@ function ResultCryptTable(props) {
         );
       });
     }
+
 
     const UsedPopover = React.forwardRef(({ children, ...props }, ref) => {
       return (
@@ -99,6 +105,11 @@ function ResultCryptTable(props) {
                </>
               }
               <hr/>
+              <div className="d-flex align-items-center">
+                <div className="opacity-035"><CalculatorFill/></div>
+                <div className="px-1"><b>{softUsedMax + hardUsedTotal}</b></div>
+                - Total Used
+              </div>
               <div className="d-flex align-items-center" key={index}>
                 <div className="opacity-035"><ArchiveFill/></div>
                 <div className="px-1"><b>{inInventory}</b></div>
@@ -110,7 +121,6 @@ function ResultCryptTable(props) {
       );
     });
     UsedPopover.displayName = 'UsedPopover';
-
 
     const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
       return (
@@ -150,25 +160,39 @@ function ResultCryptTable(props) {
               {props.isAuthor ? (
                 <>
                   {props.inventoryMode ? (
-                    <OverlayTrigger
-                      placement={props.placement ? props.placement : 'right'}
-                      overlay={
-                        <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+                    <>
+                      {deckInvType && !props.inSearch ?
+                       <td className="pt-2 left-offset-8 opacity-075">
+                         <div
+                           className={cardInvType ? "" : "opacity-025"}
+                           onClick={() => props.deckUpdate(props.deckid, cardInvType ? 'makeClear' : deckInvType == 's' ? 'makeFixed' : 'makeFlexible', card['Id'])}
+                         >
+                           { deckInvType == 's' ? <LockFill /> : <Diagram3Fill/> }
+                         </div>
+                       </td>
+                       : null
                       }
-                    >
-                      <td className="quantity">
-                        <DeckCardQuantity
-                          cardid={card['Id']}
-                          q={q}
-                          deckid={props.deckid}
-                          cardChange={props.cardChange}
-                          isMobile={props.isMobile}
-                          inInventory={inInventory}
-                          softUsedMax={softUsedMax}
-                          hardUsedTotal={hardUsedTotal}
-                        />
-                      </td>
-                    </OverlayTrigger>
+                      <OverlayTrigger
+                        placement={props.placement ? props.placement : 'right'}
+                        overlay={
+                          <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+                        }
+                      >
+                        <td className="quantity">
+                          <DeckCardQuantity
+                            cardid={card['Id']}
+                            q={q}
+                            deckid={props.deckid}
+                            cardChange={props.cardChange}
+                            isMobile={props.isMobile}
+                            inInventory={inInventory}
+                            softUsedMax={softUsedMax}
+                            hardUsedTotal={hardUsedTotal}
+                            inventoryType={props.decks[props.deckid].inventory_type}
+                          />
+                        </td>
+                      </OverlayTrigger>
+                    </>
                   )
                    :
                    <td className="quantity">
@@ -236,18 +260,25 @@ function ResultCryptTable(props) {
                       <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                     }
                   >
-                    <td className="used">
-                      { softUsedMax > 0 &&
-                        <div className="d-flex align-items-center justify-content-center">
-                          <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
-                        </div>
-                      }
-                      { hardUsedTotal > 0 &&
-                        <div className="d-flex align-items-center justify-content-center">
-                          <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
-                        </div>
-                      }
-                    </td>
+                    <>
+                      <td className="used">
+                        {(!softUsedMax && !hardUsedTotal) ?
+                         <>-</>
+                         : <>
+                     { softUsedMax > 0 &&
+                       <div className="d-flex align-items-center justify-content-center">
+                         <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
+                       </div>
+                     }
+                     { hardUsedTotal > 0 &&
+                       <div className="d-flex align-items-center justify-content-center">
+                         <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
+                       </div>
+                     }
+                   </>
+                        }
+                      </td>
+                    </>
                   </OverlayTrigger>
                 </>
               )}
@@ -279,13 +310,11 @@ function ResultCryptTable(props) {
              placement={props.placement ? props.placement : 'right'}
              overlay={
                <CardPopover card={card}>{props.showImage}</CardPopover>
-             }
-           >
+             }>
              <td className="name px-1" onClick={() => {
                setModalCard(card);
                setModalUsedDescription({soft: SoftUsedDescription, hard: HardUsedDescription});
-             }
-                                               }>
+             }}>
                <ResultCryptName card={card} />
              </td>
            </OverlayTrigger>

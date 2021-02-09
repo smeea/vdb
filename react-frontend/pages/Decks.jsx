@@ -142,40 +142,42 @@ function Decks(props) {
               <>
                 {Object.keys(props.decks).length > 0 ? (
                   <Col className="px-0 px-lg-3">
-                    <DeckSelect
-                      decks={props.decks}
-                      activeDeck={props.activeDeck}
-                      setActiveDeck={props.setActiveDeck}
-                    />
-                    {props.inventoryMode &&
-                     <>
-                       <Button
-                         variant='outline-secondary'
-                         onClick={() => toggleInventoryState()}
-                       >
-                         <div className="d-flex align-items-center">
-                           {!props.decks[props.activeDeck].inventory_type &&
-                            <>
-                              <div className="pr-1"><EyeSlashFill/></div>
-                              Virtual
-                            </>
-                           }
-                           {props.decks[props.activeDeck].inventory_type == "s" &&
-                            <>
-                              <div className="pr-1"><Diagram3Fill/></div>
-                              Flexible
-                            </>
-                           }
-                           {props.decks[props.activeDeck].inventory_type == "h" &&
-                            <>
-                              <div className="pr-1"><LockFill/></div>
-                              Fixed
-                            </>
-                           }
-                         </div>
-                       </Button>
-                     </>
-                    }
+                    <div className={props.inventoryMode ? "d-flex" : "d-inline"}>
+                      <div className={props.inventoryMode ? "w-75" : "d-inline"}>
+                        <DeckSelect
+                          decks={props.decks}
+                          activeDeck={props.activeDeck}
+                          setActiveDeck={props.setActiveDeck}
+                          inventoryMode={props.inventoryMode}
+                        />
+                      </div>
+                      {props.inventoryMode &&
+                       <>
+                         <Button
+                           variant='outline-secondary'
+                           onClick={() => toggleInventoryState()}
+                         >
+                           <div className="d-flex align-items-center">
+                             {!props.decks[props.activeDeck].inventory_type &&
+                              <>
+                                <div className="pr-1"><EyeSlashFill/></div>Virtual
+                              </>
+                             }
+                             {props.decks[props.activeDeck].inventory_type == "s" &&
+                              <>
+                                <div className="pr-1"><Diagram3Fill/></div>Flexible
+                              </>
+                             }
+                             {props.decks[props.activeDeck].inventory_type == "h" &&
+                              <>
+                                <div className="pr-1"><LockFill/></div>Fixed
+                              </>
+                             }
+                           </div>
+                         </Button>
+                       </>
+                      }
+                    </div>
                   </Col>
                 ) : (
                   <>
@@ -213,20 +215,20 @@ function Decks(props) {
         <Col lg={6} className="px-0 px-lg-3">
           {(showInfo ||
             (!props.isMobile && (props.activeDeck || props.sharedDeck))) && (
-            <DeckInfo
-              deck={
-                props.activeDeck
-                  ? props.decks[props.activeDeck]
-                  : props.sharedDeck
-                  ? props.sharedDeck[sharedDeckId]
-                  : null
-              }
-              deckUpdate={deckUpdate}
-              username={props.username}
-              isAuthor={isAuthor}
-              isMobile={props.isMobile}
-            />
-          )}
+              <DeckInfo
+                deck={
+                  props.activeDeck
+                    ? props.decks[props.activeDeck]
+                    : props.sharedDeck
+                    ? props.sharedDeck[sharedDeckId]
+                    : null
+                }
+                deckUpdate={deckUpdate}
+                username={props.username}
+                isAuthor={isAuthor}
+                isMobile={props.isMobile}
+              />
+            )}
         </Col>
         <Col lg={2} className="px-0 px-lg-3">
           {!props.isMobile && (
@@ -310,13 +312,13 @@ function Decks(props) {
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                    ? props.decks[props.activeDeck].crypt
-                    : {}
-                  : props.sharedDeck
-                  ? props.sharedDeck[sharedDeckId]
-                    ? props.sharedDeck[sharedDeckId].crypt
-                    : {}
+                  ? props.decks[props.activeDeck].crypt
                   : {}
+                : props.sharedDeck
+                  ? props.sharedDeck[sharedDeckId]
+                  ? props.sharedDeck[sharedDeckId].crypt
+                  : {}
+                : {}
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -331,6 +333,7 @@ function Decks(props) {
                 soft: props.usedCards.softCrypt,
                 hard: props.usedCards.hardCrypt,
               }}
+              deckUpdate={deckUpdate}
             />
           </Col>
           <Col lg={5} className="px-0 px-lg-3">
@@ -341,13 +344,13 @@ function Decks(props) {
               cards={
                 props.activeDeck
                   ? props.decks[props.activeDeck]
-                    ? props.decks[props.activeDeck].library
-                    : {}
-                  : props.sharedDeck
-                  ? props.sharedDeck[sharedDeckId]
-                    ? props.sharedDeck[sharedDeckId].library
-                    : {}
+                  ? props.decks[props.activeDeck].library
                   : {}
+                : props.sharedDeck
+                  ? props.sharedDeck[sharedDeckId]
+                  ? props.sharedDeck[sharedDeckId].library
+                  : {}
+                : {}
               }
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -362,6 +365,7 @@ function Decks(props) {
                 soft: props.usedCards.softLibrary,
                 hard: props.usedCards.hardLibrary,
               }}
+              deckUpdate={deckUpdate}
             />
           </Col>
         </Row>

@@ -225,6 +225,8 @@ function DeckCrypt(props) {
         inventoryMode={props.inventoryMode}
         usedCards={props.usedCards}
         decks={props.decks}
+        deckUpdate={props.deckUpdate}
+        inSearch={props.inSearch}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
@@ -250,6 +252,8 @@ function DeckCrypt(props) {
             inventoryMode={props.inventoryMode}
             usedCards={props.usedCards}
             decks={props.decks}
+            deckUpdate={props.deckUpdate}
+            inSearch={props.inSearch}
           />
         </div>
       )}

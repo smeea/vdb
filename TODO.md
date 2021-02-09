@@ -3,7 +3,8 @@
 * TWD location/winner form reset
 * Clear text form to update search
 * Search form to trim spaces
-* Error popoup for Deck Buttons
+* Error popup for Deck Buttons
+* Popover for cards in TWD search form
 
 # FEATURES
 * TWD Deck name filter
@@ -12,9 +13,9 @@
 * Search by text including particular word
 * Create 'hard' link to deck
 
-* Inventory type icon to deck selector
-* Make flexible button for single card
-* Documentation on Deck building and Inventory Management
+* Documentation on Deck-Building and Inventory Management
+* Link to Inventory - with revocable
+* List required cards not in inventory
 
 # MAYBE LATER FEATURES
 * Precon decks
@@ -31,6 +32,7 @@
 * Swipe in card modal image-description
 * Screenshots to Bootstrap/Carousel
 * Online/Offline detection
+* Clear CSS
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ

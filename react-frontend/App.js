@@ -41,7 +41,6 @@ function App(props) {
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const [inventory, setInventory] = useState({crypt: {}, library: {}})
-  const [inventoryDecks, setInventoryDecks] = useState({})
   const [usedCards, setUsedCards] = useState({})
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
@@ -410,39 +409,43 @@ function App(props) {
           });
         }
         Object.keys(decks[deckid].crypt).forEach(id => {
-          if (decks[deckid].crypt[id].s) {
+          if (decks[deckid].crypt[id].i == 's') {
             if (softCrypt[id]) {
-              softCrypt[id][deckid] = decks[deckid].crypt[id].s;
+              softCrypt[id][deckid] = decks[deckid].crypt[id].q;
             } else {
               softCrypt[id] = {}
-              softCrypt[id][deckid] = decks[deckid].crypt[id].s;
+              softCrypt[id][deckid] = decks[deckid].crypt[id].q;
             }
+            delete hardCrypt[id][deckid];
           }
-          if (decks[deckid].crypt[id].h) {
+          if (decks[deckid].crypt[id].i == 'h') {
             if (hardCrypt[id]) {
-              hardCrypt[id][deckid] = decks[deckid].crypt[id].h;
+              hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
             } else {
               hardCrypt[id] = {}
-              hardCrypt[id][deckid] = decks[deckid].crypt[id].h;
+              hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
             }
+            delete softCrypt[id][deckid];
           }
         })
         Object.keys(decks[deckid].library).forEach(id => {
-          if (decks[deckid].library[id].s) {
+          if (decks[deckid].library[id].i == 's') {
             if (softLibrary[id]) {
-              softLibrary[id][deckid] = decks[deckid].library[id].s;
+              softLibrary[id][deckid] = decks[deckid].library[id].q;
             } else {
               softLibrary[id] = {}
-              softLibrary[id][deckid] = decks[deckid].library[id].s;
+              softLibrary[id][deckid] = decks[deckid].library[id].q;
             }
+            delete hardLibrary[id][deckid];
           }
-          if (decks[deckid].library[id].h) {
+          if (decks[deckid].library[id].i == 'h') {
             if (hardLibrary[id]) {
-              hardLibrary[id][deckid] = decks[deckid].library[id].h;
+              hardLibrary[id][deckid] = decks[deckid].library[id].q;
             } else {
               hardLibrary[id] = {}
-              hardLibrary[id][deckid] = decks[deckid].library[id].h;
+              hardLibrary[id][deckid] = decks[deckid].library[id].q;
             }
+            delete softLibrary[id][deckid];
           }
         })
       })

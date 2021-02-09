@@ -8,9 +8,9 @@ import InventoryLibrary from './components/InventoryLibrary.jsx';
 
 function Inventory(props) {
   return (
-    <Container className="main-container">
+    <Container className="inventory-container">
       <Row>
-        <Col lg={5} className="px-0 px-lg-3">
+        <Col lg={7} className="px-0 px-lg-3">
           <DeckNewCryptCard
             cardAdd={props.cardAdd}
             cards={props.inventory.crypt}
@@ -35,7 +35,7 @@ function Inventory(props) {
            />
           }
         </Col>
-        <Col lg={4} className="px-0 px-lg-3">
+        <Col lg={5} className="px-0 px-lg-3">
           <DeckNewLibraryCard
             cardAdd={props.cardAdd}
             cards={props.inventory.library}
@@ -59,8 +59,6 @@ function Inventory(props) {
              decks={props.decks}
            />
           }
-        </Col>
-        <Col lg={3} className="px-0 px-lg-3">
         </Col>
       </Row>
     </Container>

@@ -109,6 +109,8 @@ function DeckLibrary(props) {
             inventoryMode={props.inventoryMode}
             usedCards={props.usedCards}
             decks={props.decks}
+            deckUpdate={props.deckUpdate}
+            inSearch={props.inSearch}
           />
         </div>
       );
@@ -137,6 +139,8 @@ function DeckLibrary(props) {
             inventoryMode={props.inventoryMode}
             usedCards={props.usedCards}
             decks={props.decks}
+            deckUpdate={props.deckUpdate}
+            inSearch={props.inSearch}
           />
         </div>
       );

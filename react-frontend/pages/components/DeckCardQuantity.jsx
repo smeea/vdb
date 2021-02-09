@@ -17,7 +17,7 @@ function DeckCardQuantity(props) {
             </Button>
           </a>
           <div
-            className={props.inInventory < props.softUsedMax + props.hardUsedTotal ? "px-1 mx-1 bg-red" : "px-1"}
+            className={props.inInventory < props.softUsedMax + props.hardUsedTotal && props.inventoryType ? "px-1 mx-1 bg-red" : "px-1"}
           >
             {props.q == 0 ? '' : props.q}
           </div>
@@ -44,7 +44,7 @@ function DeckCardQuantity(props) {
             -
           </Button>
           <div
-            className={props.inInventory < props.softUsedMax + props.hardUsedTotal ? "px-1 mx-1 bg-red" : "px-1"}
+            className={props.inInventory < props.softUsedMax + props.hardUsedTotal && props.inventoryType ? "px-1 mx-1 bg-red" : "px-1"}
           >
             {props.q == 0 ? '' : props.q}
           </div>

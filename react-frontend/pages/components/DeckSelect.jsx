@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
+import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
+import LockFill from '../../assets/images/icons/lock-fill.svg'
+import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 
 function DeckSelect(props) {
   const [state, setState] = useState(props.decks);
@@ -14,9 +17,22 @@ function DeckSelect(props) {
         value: i,
         name: 'deck',
         label: (
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center">
             {state[i]['name']}
-            <div className="pl-2 gray-small">
+            <div className="d-flex align-items-center pl-2 small">
+              {props.inventoryMode &&
+               <div className="pr-2">
+                 {state[i].inventory_type == 's' &&
+                  <Diagram3Fill/>
+                 }
+                 {state[i].inventory_type == 'h' &&
+                  <LockFill/>
+                 }
+                 {!state[i].inventory_type &&
+                  <EyeSlashFill/>
+                 }
+               </div>
+              }
               {new Date(state[i]['timestamp']).toISOString().slice(0, 10)}
             </div>
           </div>

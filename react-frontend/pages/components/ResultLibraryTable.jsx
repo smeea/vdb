@@ -3,6 +3,7 @@ import { OverlayTrigger, Popover } from 'react-bootstrap';
 import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
 import LockFill from '../../assets/images/icons/lock-fill.svg'
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
+import CalculatorFill from '../../assets/images/icons/calculator-fill.svg'
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
@@ -34,15 +35,6 @@ function ResultLibraryTable(props) {
         }
       });
     }
-
-    // let inInventory;
-    // if (props.inventoryLibrary) {
-    //   Object.keys(props.inventoryLibrary).map((i, index) => {
-    //     if (i == card.Id) {
-    //       inInventory = props.inventoryLibrary[i].q;
-    //     }
-    //   });
-    // }
 
     let inInventory = null;
     if (props.inventoryMode) {
@@ -102,6 +94,11 @@ function ResultLibraryTable(props) {
                </>
               }
               <hr/>
+              <div className="d-flex align-items-center">
+                <div className="opacity-035"><CalculatorFill/></div>
+                <div className="px-1"><b>{softUsedMax + hardUsedTotal}</b></div>
+                - Total Used
+              </div>
               <div className="d-flex align-items-center" key={index}>
                 <div className="opacity-035"><ArchiveFill/></div>
                 <div className="px-1"><b>{inInventory}</b></div>
@@ -158,18 +155,18 @@ function ResultLibraryTable(props) {
                   <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                 }
               >
-                <td className="used">
-                  { softUsedMax > 0 &&
-                    <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
-                    </div>
-                  }
-                  { hardUsedTotal > 0 &&
-                    <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
-                    </div>
-                  }
-                </td>
+                 <td className="used">
+                   { softUsedMax > 0 &&
+                     <div className="d-flex align-items-center justify-content-center">
+                       <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
+                     </div>
+                   }
+                   { hardUsedTotal > 0 &&
+                     <div className="d-flex align-items-center justify-content-center">
+                       <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
+                     </div>
+                   }
+                 </td>
               </OverlayTrigger>
             </>
           )}

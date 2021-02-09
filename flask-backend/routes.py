@@ -189,37 +189,36 @@ def updateDeck(deckid):
                     d.used_in_inventory = {}
                     d.inventory_type = 's'
                 else:
-                    r = request.json['makeFixed']
+                    print('flex')
+                    r = str(request.json['makeFlexible'])
                     used = d.used_in_inventory.copy()
-                    if r in used:
-                        used[r]['s'] = d.cards[r]
-                    else:
-                        used[r] = {'s': d.cards[r]}
+                    used[r] = 's'
                     d.used_in_inventory = used
         except Exception:
             pass
+
         try:
             if 'makeFixed' in request.json:
                 if request.json['makeFixed'] == 'all':
                     d.used_in_inventory = {}
                     d.inventory_type = 'h'
                 else:
-                    r = request.json['makeFixed']
+                    print('fixed')
+                    r = str(request.json['makeFixed'])
                     used = d.used_in_inventory.copy()
-                    if r in used:
-                        used[r]['h'] = d.cards[r]
-                    else:
-                        used[r] = {'h': d.cards[r]}
+                    used[r] = 'h'
                     d.used_in_inventory = used
         except Exception:
             pass
+
         try:
             if 'makeClear' in request.json:
                 if request.json['makeClear'] == 'all':
                     d.used_in_inventory = {}
                     d.inventory_type = ''
                 else:
-                    r = request.json['makeClear']
+                    print('clear')
+                    r = str(request.json['makeClear'])
                     used = d.used_in_inventory.copy()
                     del(used[r])
                     d.used_in_inventory = used
@@ -227,6 +226,7 @@ def updateDeck(deckid):
             pass
 
         db.session.commit()
+
         return jsonify({'updated deck': d.deckid})
     else:
         return jsonify({'Not logged in.'})
@@ -272,38 +272,34 @@ def listDecks():
     try:
         decks = {}
         for deck in current_user.decks.all():
+
+            # Fix pre-inventory period decks
             if not deck.used_in_inventory:
                 deck.used_in_inventory = {}
+                db.session.commit()
+            if not deck.inventory_type:
+                deck.inventory_type = ''
+                db.session.commit()
+
+            # deck.used_in_inventory = {}
+            # db.session.commit()
+            print(deck.used_in_inventory)
+
             crypt = {}
             library = {}
             for k, v in deck.cards.items():
-                # try:
-                #     k = int(k)
 
-                # except:
-                #     merged_cards = deck.cards.copy()
-                #     del merged_cards[k]
-                #     deck.cards = merged_cards.copy()
-                #     break
+                int_k = int(k)
 
-                k = int(k)
-
-                if k > 200000:
-                    crypt[k] = {'q': v}
+                if int_k > 200000:
+                    crypt[int_k] = {'q': v}
                     if k in deck.used_in_inventory:
-                        if 's' in deck.used_in_inventory[k]:
-                            crypt[k]['s'] = deck.used_in_inventory[k]['s']
-                        if 'h' in deck.used_in_inventory[k]:
-                            crypt[k]['h'] = deck.used_in_inventory[k]['h']
-                elif k < 200000:
-                    library[k] = {'q': v}
-                    if k in deck.used_in_inventory:
-                        if 's' in deck.used_in_inventory[k]:
-                            library[k]['s'] = deck.used_in_inventory[k]['s']
-                        if 'h' in deck.used_in_inventory[k]:
-                            library[k]['h'] = deck.used_in_inventory[k]['h']
+                        crypt[int_k]['i'] = deck.used_in_inventory[k]
 
-            # db.session.commit()
+                elif int_k < 200000:
+                    library[int_k] = {'q': v}
+                    if k in deck.used_in_inventory:
+                        library[int_k]['i'] = deck.used_in_inventory[k]
 
             decks[deck.deckid] = {
                 'name': deck.name,
@@ -313,11 +309,9 @@ def listDecks():
                 'crypt': crypt,
                 'library': library,
                 'deckid': deck.deckid,
+                'inventory_type': deck.inventory_type,
                 'timestamp': deck.timestamp,
             }
-
-            if deck.inventory_type:
-                decks[deck.deckid]['inventory_type'] = deck.inventory_type
 
         return jsonify(decks)
 

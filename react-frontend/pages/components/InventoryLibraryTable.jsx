@@ -3,6 +3,7 @@ import { OverlayTrigger, Popover } from 'react-bootstrap';
 import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
 import LockFill from '../../assets/images/icons/lock-fill.svg'
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
+import CalculatorFill from '../../assets/images/icons/calculator-fill.svg'
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
@@ -18,7 +19,7 @@ function InventoryLibraryTable(props) {
 
   const [showModal, setShowModal] = useState(undefined);
 
-  const cardLines = props.cards.map((card, index) => {
+  const cardRows = props.cards.map((card, index) => {
     if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
     } else {
@@ -47,7 +48,7 @@ function InventoryLibraryTable(props) {
 
     let softUsedMax = 0;
     let SoftUsedDescription;
-    if (props.usedCards.soft[card.c['Id']]) {
+    if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
       SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map((id, index) => {
         if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
           softUsedMax = props.usedCards.soft[card.c['Id']][id];
@@ -65,7 +66,7 @@ function InventoryLibraryTable(props) {
 
     let hardUsedTotal = 0;
     let HardUsedDescription;
-    if (props.usedCards.hard[card.c['Id']]) {
+    if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
       HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map((id, index) => {
         hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
         return (
@@ -94,6 +95,11 @@ function InventoryLibraryTable(props) {
                </>
               }
               <hr/>
+              <div className="d-flex align-items-center">
+                <div className="opacity-035"><CalculatorFill/></div>
+                <div className="px-1"><b>{softUsedMax + hardUsedTotal}</b></div>
+                - Total Used
+              </div>
               <div className="d-flex align-items-center" key={index}>
                 <div className="opacity-035"><ArchiveFill/></div>
                 <div className="px-1"><b>{card.q}</b></div>
@@ -142,8 +148,7 @@ function InventoryLibraryTable(props) {
              </td>
            </OverlayTrigger>
            :
-           <td className="used">
-           </td>
+           <td className="used">-</td>
           }
           {!props.isMobile ?
            <OverlayTrigger
@@ -181,8 +186,8 @@ function InventoryLibraryTable(props) {
 
   return (
     <>
-      <table className="deck-library-table">
-        <tbody>{cardLines}</tbody>
+      <table className="inventory-library-table">
+        <tbody>{cardRows}</tbody>
       </table>
       {showModal && (
         <ResultLibraryModal
