@@ -18,9 +18,20 @@ function DeckLibraryTable(props) {
   let resultTrClass;
   const deckInvType = props.decks[props.deckid].inventory_type;
 
-  const [showModal, setShowModal] = useState(undefined);
+  const [modalCard, setModalCard] = useState(undefined);
+  const [modalInventory, setModalInventory] = useState(undefined)
 
   const cardRows = props.cards.map((card, index) => {
+    const handleClick = () => {
+      setModalCard(card.c);
+      setModalInventory({
+        inInventory: inInventory,
+        usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+      });
+    }
+
     const cardInvType = card.i;
     if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
@@ -164,7 +175,7 @@ function DeckLibraryTable(props) {
                    : null
                   }
                   <OverlayTrigger
-                    placement={props.placement ? props.placement : 'right'}
+                    placement='left'
                     overlay={
                       <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                     }
@@ -225,25 +236,25 @@ function DeckLibraryTable(props) {
                <CardPopover card={card.c}>{props.showImage}</CardPopover>
              }
            >
-             <td className="name pl-2 pr-1" onClick={() => setShowModal(card.c)}>
+             <td className="name pl-3 pr-2" onClick={() => handleClick()}>
                <ResultLibraryName card={card.c}/>
              </td>
            </OverlayTrigger>
            :
-           <td className="name pl-2 pr-1" onClick={() => setShowModal(card.c)}>
+           <td className="name pl-3 pr-2" onClick={() => handleClick()}>
              <ResultLibraryName card={card.c}/>
            </td>
           }
-          <td className="cost px-1" onClick={() => setShowModal(card.c)}>
+          <td className="cost" onClick={() => handleClick()}>
             <ResultLibraryCost
               valueBlood={card.c['Blood Cost']}
               valuePool={card.c['Pool Cost']}
             />
           </td>
-          <td className="discipline px-1" onClick={() => setShowModal(card.c)}>
+          <td className="disciplines px-3" onClick={() => handleClick()}>
             {DisciplineOrClan}
           </td>
-          <td className="burn px-1" onClick={() => setShowModal(card.c)}>
+          <td className="burn" onClick={() => handleClick()}>
             <ResultLibraryBurn value={card.c['Burn Option']} />
             <ResultLibraryTrifle value={card.c['Card Text']} />
           </td>
@@ -257,14 +268,16 @@ function DeckLibraryTable(props) {
       <table className="deck-library-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {showModal && (
+      {modalCard && (
         <ResultLibraryModal
-          show={showModal ? true : false}
-          card={showModal}
+          show={modalCard ? true : false}
+          card={modalCard}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
-          handleClose={() => setShowModal(false)}
+          handleClose={() => setModalCard(false)}
           isMobile={props.isMobile}
+          inventoryState={modalInventory}
+          inventoryMode={props.inventoryMode}
         />
       )}
     </>

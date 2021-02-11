@@ -19,8 +19,19 @@ function ResultLibraryTable(props) {
   let resultTrClass;
 
   const [modalCard, setModalCard] = useState(undefined);
+  const [modalInventory, setModalInventory] = useState(undefined)
 
   const cardRows = props.resultCards.map((card, index) => {
+    const handleClick = () => {
+      setModalCard(card);
+      setModalInventory({
+        inInventory: inInventory,
+        usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+      });
+    }
+
     if (resultTrClass == 'result-even') {
       resultTrClass = 'result-odd';
     } else {
@@ -138,7 +149,7 @@ function ResultLibraryTable(props) {
           {props.inventoryMode && (
             <>
               <OverlayTrigger
-                placement={props.placement ? props.placement : 'right'}
+                placement='left'
                 overlay={
                   <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                 }
@@ -149,37 +160,30 @@ function ResultLibraryTable(props) {
                   </div>
                 </td>
               </OverlayTrigger>
-              <OverlayTrigger
-                placement={props.placement ? props.placement : 'right'}
-                overlay={
-                  <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+              <td className="used">
+                { softUsedMax > 0 &&
+                  <div className="d-flex align-items-center justify-content-center">
+                    <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
+                  </div>
                 }
-              >
-                 <td className="used">
-                   { softUsedMax > 0 &&
-                     <div className="d-flex align-items-center justify-content-center">
-                       <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
-                     </div>
-                   }
-                   { hardUsedTotal > 0 &&
-                     <div className="d-flex align-items-center justify-content-center">
-                       <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
-                     </div>
-                   }
-                 </td>
-              </OverlayTrigger>
+                { hardUsedTotal > 0 &&
+                  <div className="d-flex align-items-center justify-content-center">
+                    <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
+                  </div>
+                }
+              </td>
             </>
           )}
-          <td className="cost py-0 px-1" onClick={() => setModalCard(card)}>
+          <td className="cost py-0 px-1" onClick={() => handleClick()}>
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}
             />
           </td>
-          <td className="type px-1" onClick={() => setModalCard(card)}>
+          <td className="type px-1" onClick={() => handleClick()}>
             <ResultLibraryType cardtype={card['Type']} />
           </td>
-          <td className="disciplines px-1" onClick={() => setModalCard(card)}>
+          <td className="disciplines px-1" onClick={() => handleClick()}>
             <ResultLibraryDisciplines value={card['Discipline']} />
             <ResultLibraryClan value={card['Clan']} />
           </td>
@@ -190,16 +194,16 @@ function ResultLibraryTable(props) {
                <CardPopover card={card}>{props.showImage}</CardPopover>
              }
            >
-             <td className="name px-1" onClick={() => setModalCard(card)}>
+             <td className="name px-1" onClick={() => handleClick()}>
                <ResultLibraryName card={card} />
              </td>
            </OverlayTrigger>
            :
-           <td className="name px-1" onClick={() => setModalCard(card)}>
+           <td className="name px-1" onClick={() => handleClick()}>
              <ResultLibraryName card={card} />
            </td>
           }
-          <td className="burn px-1" onClick={() => setModalCard(card)}>
+          <td className="burn px-1" onClick={() => handleClick()}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={card['Card Text']} />
           </td>
@@ -221,6 +225,8 @@ function ResultLibraryTable(props) {
           setShowImage={props.setShowImage}
           handleClose={() => setModalCard(false)}
           isMobile={props.isMobile}
+          inventoryState={modalInventory}
+          inventoryMode={props.inventoryMode}
         />
       )}
     </>

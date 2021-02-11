@@ -3,7 +3,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import Diagram3Fill from '../assets/images/icons/diagram-3-fill.svg'
 import LockFill from '../assets/images/icons/lock-fill.svg'
-import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
+import Moon from '../assets/images/icons/moon.svg';
+import Basket3Fill from '../assets/images/icons/basket3-fill.svg';
 import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
@@ -143,7 +144,7 @@ function Decks(props) {
                 {Object.keys(props.decks).length > 0 ? (
                   <Col className="px-0 px-lg-3">
                     <div className={props.inventoryMode ? "d-flex" : "d-inline"}>
-                      <div className={props.inventoryMode ? "w-75" : "d-inline"}>
+                      <div className="w-100 pr-2">
                         <DeckSelect
                           decks={props.decks}
                           activeDeck={props.activeDeck}
@@ -159,25 +160,33 @@ function Decks(props) {
                          >
                            <div className="d-flex align-items-center">
                              {!props.decks[props.activeDeck].inventory_type &&
-                              <>
-                                <div className="pr-1"><EyeSlashFill/></div>Virtual
-                              </>
+                              <Moon/>
                              }
                              {props.decks[props.activeDeck].inventory_type == "s" &&
-                              <>
-                                <div className="pr-1"><Diagram3Fill/></div>Flexible
-                              </>
+                              <Diagram3Fill/>
                              }
                              {props.decks[props.activeDeck].inventory_type == "h" &&
-                              <>
-                                <div className="pr-1"><LockFill/></div>Fixed
-                              </>
+                              <LockFill/>
                              }
                            </div>
                          </Button>
                        </>
                       }
                     </div>
+                    {props.inventoryMode &&
+                     <div className="py-2">
+                       <Button
+                         variant='outline-secondary'
+                         className="btn-block"
+                         onClick={() => props.inventoryDeckAdd(props.decks[props.activeDeck])}
+                       >
+                         <div className="d-flex justify-content-center align-items-center">
+                           <div className="pr-2"><Basket3Fill/></div>
+                           Add Cards from Deck to Inventory
+                         </div>
+                       </Button>
+                     </div>
+                    }
                   </Col>
                 ) : (
                   <>

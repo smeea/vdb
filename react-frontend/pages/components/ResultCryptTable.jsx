@@ -19,9 +19,19 @@ function ResultCryptTable(props) {
   let deckInvType;
 
   const [modalCard, setModalCard] = useState(undefined);
-  const [modalUsedDescription, setModalUsedDescription] = useState(undefined)
+  const [modalInventory, setModalInventory] = useState(undefined)
 
   const cardRows = props.resultCards.map((card, index) => {
+    const handleClick = () => {
+      setModalCard(card);
+      setModalInventory({
+        inInventory: inInventory,
+        usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+      });
+    }
+
     let q;
     let cardInvType;
     if (props.className == 'deck-crypt-table') {
@@ -173,7 +183,7 @@ function ResultCryptTable(props) {
                        : null
                       }
                       <OverlayTrigger
-                        placement={props.placement ? props.placement : 'right'}
+                        placement={props.inSearch ? 'right' : 'left'}
                         overlay={
                           <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                         }
@@ -243,7 +253,7 @@ function ResultCryptTable(props) {
               {props.inventoryMode && (
                 <>
                   <OverlayTrigger
-                    placement={props.placement ? props.placement : 'right'}
+                    placement='left'
                     overlay={
                       <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                     }
@@ -254,37 +264,28 @@ function ResultCryptTable(props) {
                       </div>
                     </td>
                   </OverlayTrigger>
-                  <OverlayTrigger
-                    placement={props.placement ? props.placement : 'right'}
-                    overlay={
-                      <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+                  <td className="used">
+                    {(!softUsedMax && !hardUsedTotal)
+                     ? <>-</>
+                     : <>
+                         { softUsedMax > 0 &&
+                           <div className="d-flex align-items-center justify-content-center">
+                             <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
+                           </div>
+                         }
+                         { hardUsedTotal > 0 &&
+                           <div className="d-flex align-items-center justify-content-center">
+                             <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
+                           </div>
+                         }
+                       </>
                     }
-                  >
-                    <>
-                      <td className="used">
-                        {(!softUsedMax && !hardUsedTotal) ?
-                         <>-</>
-                         : <>
-                     { softUsedMax > 0 &&
-                       <div className="d-flex align-items-center justify-content-center">
-                         <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
-                       </div>
-                     }
-                     { hardUsedTotal > 0 &&
-                       <div className="d-flex align-items-center justify-content-center">
-                         <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
-                       </div>
-                     }
-                   </>
-                        }
-                      </td>
-                    </>
-                  </OverlayTrigger>
+                  </td>
                 </>
               )}
             </>
           )}
-          <td className="capacity pr-1 pl-2" onClick={() => setModalCard(card)}>
+          <td className="capacity pr-1 pl-2" onClick={() => handleClick()}>
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td
@@ -295,7 +296,7 @@ function ResultCryptTable(props) {
                   } px-1`
                 : 'disciplines px-1'
             }
-            onClick={() => setModalCard(card)}
+            onClick={() => handleClick()}
           >
             <ResultCryptDisciplines
               value={card['Disciplines']}
@@ -312,19 +313,24 @@ function ResultCryptTable(props) {
                <CardPopover card={card}>{props.showImage}</CardPopover>
              }>
              <td className="name px-1" onClick={() => {
-               setModalCard(card);
-               setModalUsedDescription({soft: SoftUsedDescription, hard: HardUsedDescription});
+               handleClick();
+               setModalInventory({
+                 inInventory: inInventory,
+                 usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
+                 softUsedMax: softUsedMax,
+                 hardUsedTotal: hardUsedTotal,
+               });
              }}>
                <ResultCryptName card={card} />
              </td>
            </OverlayTrigger>
            :
-           <td className="name px-1" onClick={() => setModalCard(card)}>
+           <td className="name px-1" onClick={() => handleClick()}>
              <ResultCryptName card={card} />
            </td>
           }
           {props.isMobile || !props.isWide ? (
-            <td className="clan-group" onClick={() => setModalCard(card)}>
+            <td className="clan-group" onClick={() => handleClick()}>
               <div>
                 <ResultCryptClan value={card['Clan']} />
               </div>
@@ -334,10 +340,10 @@ function ResultCryptTable(props) {
             </td>
           ) : (
             <>
-              <td className="clan" onClick={() => setModalCard(card)}>
+              <td className="clan" onClick={() => handleClick()}>
                 <ResultCryptClan value={card['Clan']} />
               </td>
-              <td className="group" onClick={() => setModalCard(card)}>
+              <td className="group" onClick={() => handleClick()}>
                 <ResultCryptGroup value={card['Group']} />
               </td>
             </>
@@ -356,11 +362,11 @@ function ResultCryptTable(props) {
         <ResultCryptModal
           show={modalCard ? true : false}
           card={modalCard}
-          usedDescription={modalUsedDescription}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => setModalCard(false)}
           isMobile={props.isMobile}
+          inventoryState={modalInventory}
           inventoryMode={props.inventoryMode}
         />
       )}

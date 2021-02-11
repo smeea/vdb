@@ -5,17 +5,18 @@
 * Search form to trim spaces
 * Error popup for Deck Buttons
 * Popover for cards in TWD search form
+* Add card to deck from mobile to close modal
+* Chance popover in draw in mobile
+* Add to crypt button to floating on mobile
 
 # FEATURES
-* TWD Deck name filter
 * Deck revisions
 * Full account export
 * Search by text including particular word
 * Create 'hard' link to deck
-
-* Documentation on Deck-Building and Inventory Management
-* Link to Inventory - with revocable
+* Create revocable link to Inventory
 * List required cards not in inventory
+* Documentation on Deck-Building and Inventory Management
 
 # MAYBE LATER FEATURES
 * Precon decks

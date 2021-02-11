@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
 import LockFill from '../../assets/images/icons/lock-fill.svg'
-import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
+import Moon from '../../assets/images/icons/moon.svg';
 
 function DeckSelect(props) {
   const [state, setState] = useState(props.decks);
@@ -29,7 +29,7 @@ function DeckSelect(props) {
                   <LockFill/>
                  }
                  {!state[i].inventory_type &&
-                  <EyeSlashFill/>
+                  <Moon/>
                  }
                </div>
               }

@@ -3,8 +3,8 @@ import { Modal, Tabs, Tab, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import ImageAlt from '../../assets/images/icons/image-alt.svg';
 import FileTextFill from '../../assets/images/icons/chat-quote-fill.svg';
-import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
-import LockFill from '../../assets/images/icons/lock-fill.svg'
+import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
+import CalculatorFill from '../../assets/images/icons/calculator-fill.svg'
 import ResultCryptLayoutText from './ResultCryptLayoutText.jsx';
 import CardCopyUrlButton from './CardCopyUrlButton.jsx';
 
@@ -23,9 +23,6 @@ function ResultCryptModal(props) {
       />
     );
   };
-
-
-  console.log(props.inventoryMode)
 
   return (
     <Modal
@@ -65,22 +62,46 @@ function ResultCryptModal(props) {
          </>
          :
          <Row>
-           <Col className="bg-black px-0">
+           <Col lg={5} className="bg-black px-0">
              <CardImage />
            </Col>
            <Col className="py-4 px-4 mr-3">
-             <div className="">
+             <div>
                <ResultCryptLayoutText
                  card={props.card}
                  handleClose={props.handleClose}
                />
              </div>
              {props.inventoryMode &&
-              <div className="pt-1 px-1">
-                <b>Inventory:</b>
-                {props.usedDescription.soft && <>{props.usedDescription.soft}</>}
-                {props.usedDescription.hard && <>{props.usedDescription.hard}</>}
-              </div>
+              <>
+                <hr className="mx-0"/>
+                <div className="pt-1">
+                  <b>Inventory:</b>
+                  <Row>
+                    <Col lg={5}>
+                      <div className="d-flex align-items-center">
+                        <div className="opacity-035"><CalculatorFill/></div>
+                        <div className="px-1"><b>{props.inventoryState.softUsedMax + props.inventoryState.hardUsedTotal}</b></div>
+                        - Total Used
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <div className="opacity-035"><ArchiveFill/></div>
+                        <div className="px-1"><b>{props.inventoryState.inInventory}</b></div>
+                        - In Inventory
+                      </div>
+                    </Col>
+                    <Col>
+                      {props.inventoryState.hardUsedTotal ?
+                       <>
+                         {props.inventoryState.usedDescription.soft && <>{props.inventoryState.usedDescription.soft}</>}
+                         {props.inventoryState.usedDescription.hard && <>{props.inventoryState.usedDescription.hard}</>}
+                       </>
+                       : null
+                      }
+                    </Col>
+                  </Row>
+                </div>
+              </>
              }
              <div className="bp-125 pt-4">
                <CardCopyUrlButton id={props.card['Id']} />

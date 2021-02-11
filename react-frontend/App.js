@@ -110,6 +110,64 @@ function App(props) {
       });
   };
 
+  const inventoryDeckAdd = (deck) => {
+    const cards = {};
+
+    Object.keys(deck.crypt).forEach(card => {
+      if (deck.crypt[card].q) {
+        cards[card] = deck.crypt[card].q
+      }
+    })
+
+    Object.keys(deck.library).forEach(card => {
+      if (deck.library[card].q) {
+        cards[card] = deck.library[card].q
+      }
+    })
+
+    const url = `${process.env.API_URL}inventory/add`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cards),
+    };
+
+    const oldState = inventory;
+    fetch(url, options).catch((error) => {
+      setInventory(oldState);
+    });
+
+    Object.keys(cards).forEach(cardid => {
+      if (cardid > 200000) {
+        setInventory((prevState) => ({
+          ...prevState,
+          crypt: {
+            ...prevState.crypt,
+            [cardid]: {
+              c: cryptCardBase[cardid],
+              q: prevState.crypt[cardid] ? prevState.crypt[cardid].q + cards[cardid] : cards[cardid],
+            }
+          }
+        }));
+      } else {
+        setInventory((prevState) => ({
+          ...prevState,
+          library: {
+            ...prevState.library,
+            [cardid]: {
+              c: libraryCardBase[cardid],
+              q: prevState.library[cardid] ? prevState.library[cardid].q + cards[cardid] : cards[cardid],
+            }
+          }
+        }));
+      }
+    })
+  }
+
   const inventoryCardAdd = (cardid) => {
     const url = `${process.env.API_URL}inventory/add`;
     const options = {
@@ -573,6 +631,7 @@ function App(props) {
                 setSharedDeck={setSharedDeck}
                 inventory={inventory}
                 inventoryMode={inventoryMode}
+                inventoryDeckAdd={inventoryDeckAdd}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 showImage={showImage}

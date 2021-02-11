@@ -56,11 +56,13 @@ function InventoryLibrary(props) {
         libraryByTypeTotal[cardtype] += card.q;
       }
       LibraryDeck.push(
-        <div key={cardtype} className="pt-2">
-          <ResultLibraryType
-            cardtype={cardtype}
-            total={libraryByTypeTotal[cardtype]}
-          />
+        <div key={cardtype} className={props.compact ? null : "pt-2"}>
+          {!props.compact &&
+           <ResultLibraryType
+             cardtype={cardtype}
+             total={libraryByTypeTotal[cardtype]}
+           />
+          }
           <InventoryLibraryTable
             cardChange={props.cardChange}
             decks={props.decks}
@@ -79,9 +81,11 @@ function InventoryLibrary(props) {
 
   return (
     <div className="pt-4">
-      <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-        <b>Library [{libraryTotal}]</b>
-      </div>
+      {!props.compact &&
+       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+         <b>Library [{libraryTotal}]</b>
+       </div>
+      }
       {LibraryDeck}
     </div>
   );

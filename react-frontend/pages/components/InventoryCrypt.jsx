@@ -12,11 +12,13 @@ function InventoryCrypt(props) {
 
   return (
     <div className="pt-4">
-      <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-        <b>
-          Crypt [{total}]
-        </b>
-      </div>
+      {!props.compact &&
+       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+         <b>
+           Crypt [{total}]
+         </b>
+       </div>
+      }
       <InventoryCryptTable
         cardChange={props.cardChange}
         decks={props.decks}
@@ -27,6 +29,7 @@ function InventoryCrypt(props) {
         isAuthor={props.isAuthor}
         isMobile={props.isMobile}
         isWide={props.isWide}
+        compact={props.compact}
       />
     </div>
   );

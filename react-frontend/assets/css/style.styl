@@ -49,12 +49,6 @@ img.card-popover
 .bg-red
   background: lightcoral
 
-.bg-green
-  background: green
-
-.bg-yellow
-  background: yellow
-
 .deck-sidecrypt,
 .deck-sidelibrary
   opacity: 0.55
@@ -67,6 +61,11 @@ img.card-popover
   width: 100%
 .deck-crypt-table td
   height: 32px
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  border-collapse: collapse
+.deck-crypt-table td, th
+  text-align: center
 .deck-crypt-table td.proxy-selector
   width: 1%
   border-left: 1px solid lightgray
@@ -82,44 +81,39 @@ img.card-popover
   border-right: 1px solid lightgray
 .deck-crypt-table td.used
   width: 45px
+.deck-crypt-table td.name
+  text-align: left
+.deck-crypt-table .discipline td
+  border: none
 .deck-crypt-table td.disciplines
   width: 48%
 .deck-crypt-table td.disciplines.cols-7
-  width: 40%
+  width: 235px
 .deck-crypt-table td.disciplines.cols-6
-  width: 36%
+  width: 205px
 .deck-crypt-table td.disciplines.cols-5
-  width: 32%
+  width: 175px
 .deck-crypt-table td.disciplines.cols-4
-  width: 26%
+  width: 145px
 .deck-crypt-table td.disciplines.cols-3
-  width: 20%
+  width: 145px
 .deck-crypt-table td.disciplines.cols-2
-  width: 13%
+  width: 145px
 .deck-crypt-table td.disciplines.cols-1
-  width: 13%
+  width: 145px
 .deck-crypt-table td.group
   border-right: 1px solid lightgray
 .deck-crypt-table td.clan-group
   border-right: 1px solid lightgray
-.deck-crypt-table td
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
-  border-collapse: collapse
-.deck-crypt-table .discipline td
-  border: none
-.deck-crypt-table td, th
-  text-align: center
-.deck-crypt-table td.name
-  text-align: left
-.deck-crypt-table td.text
-  text-align: left
-  font-size: small
 
 .deck-library-table
   width: 100%
 .deck-library-table td
   height: 37px
+  text-align: center
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  border-collapse: collapse
 .deck-library-table td.proxy-selector
   width: 1%
   border-left: 1px solid lightgray
@@ -128,7 +122,7 @@ img.card-popover
   font-size: 1.1em
   border-left: 1px solid lightgray
 .deck-library-table td.used
-  width: 45px
+  width: 50px
 .deck-library-table td.quantity-no-buttons
   width: 20px
   font-size: 1.1em
@@ -136,27 +130,15 @@ img.card-popover
   border-left: 1px solid lightgray
   border-right: 1px solid lightgray
 .deck-library-table td.name
-  width: 50%
+  text-align: left
 .deck-library-table td.cost
-  width: 5%
-.deck-library-table td.clan,
+  width: 25px
 .deck-library-table td.disciplines
-  width: 24%
+  width: 65px
 .deck-library-table td.burn
-  width: 7%
+  width: 30px
   border-right: 1px solid lightgray
-.deck-library-table td
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
-  border-collapse: collapse
-.deck-library-table td
-  text-align: center
-.deck-library-table td.name
-  text-align: left
-.deck-library-table td.text
-  text-align: left
-  font-size: small
-
+    
 .inventory-crypt-table
   width: 100%
 .inventory-crypt-table td
@@ -167,17 +149,23 @@ img.card-popover
   font-size: 1.1em
   border-left: 1px solid lightgray
 .inventory-crypt-table td.used
-  width: 45px
-.inventory-crypt-table td.group
-  border-right: 1px solid lightgray
+  width: 50px
+.inventory-crypt-table td.capacity
+  width: 40px
 .inventory-crypt-table td
   border-top: 1px solid lightgray
   border-bottom: 1px solid lightgray
   border-collapse: collapse
+.inventory-crypt-table td.disciplines
+  width: 230px
 .inventory-crypt-table .discipline td
   border: none
 .inventory-crypt-table td.name
   text-align: left
+.inventory-crypt-table td.clan
+  width: 55px
+.inventory-crypt-table td.group
+  width: 40px
 
 .inventory-library-table
   width: 100%
@@ -195,14 +183,15 @@ img.card-popover
   font-size: 1.1em
   border-left: 1px solid lightgray
 .inventory-library-table td.used
-  width: 45px
+  width: 50px
 .inventory-library-table td.name
-  width: 50%
   text-align: left
 .inventory-library-table td.cost
-  width: 5%
+  width: 25px
+.inventory-library-table td.disciplines
+  width: 65px
 .inventory-library-table td.burn
-  width: 7%
+  width: 30px
   border-right: 1px solid lightgray
 
 .search-crypt-table

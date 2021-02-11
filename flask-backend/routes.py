@@ -50,13 +50,15 @@ def inventoryAddCard():
             for k, v in new_cards.items():
                 if k not in merged_cards:
                     merged_cards[k] = v
+                else:
+                    merged_cards[k] = merged_cards[k] + v
 
             current_user.inventory = merged_cards.copy()
+            db.session.commit()
+            return jsonify({'inventory card added': 'success'})
+
         except Exception:
             pass
-
-        db.session.commit()
-        return jsonify({'inventory card added': 'success'})
 
     else:
         return jsonify({'Not logged in.'})
@@ -76,11 +78,11 @@ def inventoryChangeCard():
                     merged_cards[k] = v
 
             current_user.inventory = merged_cards.copy()
+            db.session.commit()
+            return jsonify({'inventory card change': 'success'})
+
         except Exception:
             pass
-
-        db.session.commit()
-        return jsonify({'inventory card change': 'success'})
 
     else:
         return jsonify({'Not logged in.'})
