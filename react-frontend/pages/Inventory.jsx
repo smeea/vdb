@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button, Dropdown } from 'react-bootstrap';
+import ArchiveFill from '../assets/images/icons/archive-fill.svg'
+import DeckExport from './components/DeckExport.jsx';
 import DeckNewCryptCard from './components/DeckNewCryptCard.jsx';
 import DeckNewLibraryCard from './components/DeckNewLibraryCard.jsx';
 import InventoryCrypt from './components/InventoryCrypt.jsx';
@@ -9,8 +11,85 @@ function Inventory(props) {
   const [newCryptId, setNewCryptId] = useState(undefined);
   const [newLibraryId, setNewLibraryId] = useState(undefined);
 
+  const AddDeckOptions = Object.keys(props.decks).map((deck, index) => {
+    return(
+      <Dropdown.Item
+        href=""
+        key={index}
+        onClick={() => props.inventoryDeckAdd(props.decks[deck])}
+      >
+      <div className="d-flex align-items-center">
+        <div className="pr-3"><ArchiveFill/></div>
+        {props.decks[deck].name}
+      </div>
+      </Dropdown.Item>
+    )
+  });
+
+  const clearInventory = () => {
+    const url = `${process.env.API_URL}inventory/clear`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then(props.setInventory({crypt: {}, library: {}}))
+      .catch((error) => console.log(error));
+  };
+
+
+  const exportInventory = () => {
+    const url = `${process.env.API_URL}inventory/export`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <Container className="inventory-container">
+      <Row className="justify-content-end">
+        <Col lg={3} className="py-1 px-0 px-lg-3">
+          <div className="bp-125">
+            <DeckExport
+              /* setShowButtons={props.setShowButtons} */
+              activeDeck='inventory'
+            />
+          </div>
+          <div className="bp-125">
+            <Button
+              variant='outline-secondary'
+              onClick={() => clearInventory()}
+              className="btn-block"
+            >
+              <div className="d-flex justify-content-center align-items-center">
+                <div className="pr-2"><ArchiveFill/></div>
+                Clear Inventory
+              </div>
+            </Button>
+          </div>
+          <div className="bp-125">
+            <Dropdown>
+              <Dropdown.Toggle
+                className="btn-block" variant="outline-secondary">
+                <div className="d-flex justify-content-center align-items-center">
+                  <div className="pr-2"><ArchiveFill/></div>
+                  Add from Deck
+                </div>
+              </Dropdown.Toggle>
+              <Dropdown.Menu>{AddDeckOptions}</Dropdown.Menu>
+            </Dropdown>
+          </div>
+        </Col>
+      </Row>
       <Row>
         <Col lg={7} className="px-0 px-lg-3">
           <DeckNewCryptCard

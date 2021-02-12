@@ -16,7 +16,10 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 
 function DeckLibraryTable(props) {
   let resultTrClass;
-  const deckInvType = props.decks[props.deckid].inventory_type;
+  let deckInvType = null;
+  if (props.decks && props.deckid) {
+    deckInvType = props.decks[props.deckid].inventory_type;
+  };
 
   const [modalCard, setModalCard] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined)

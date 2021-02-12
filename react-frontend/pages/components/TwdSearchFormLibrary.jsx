@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons.jsx';
@@ -7,8 +8,12 @@ import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
+import ResultLibraryPopover from './ResultLibraryPopover.jsx';
+import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function TwdSearchFormLibrary(props) {
+  const [modalCard, setModalCard] = useState(undefined);
+
   const handleAdd = (event) => {
     const newState = props.state;
     newState[event] = 1;
@@ -21,6 +26,18 @@ function TwdSearchFormLibrary(props) {
   const libraryCardsList = Object.keys(props.state)
     .filter((id) => props.state[id] > 0)
     .map((id, index) => {
+
+      const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
+        return (
+          <Popover ref={ref} {...props}>
+            <Popover.Content>
+              <ResultLibraryPopover card={props.card} showImage={children} />
+            </Popover.Content>
+          </Popover>
+        );
+      });
+      CardPopover.displayName = 'CardPopover';
+
       return (
         <div key={index} className="d-flex align-items-center">
           <TwdSearchFormQuantityButtons
@@ -30,13 +47,16 @@ function TwdSearchFormLibrary(props) {
             q={props.state[id]}
             target="library"
           />
-          <ResultLibraryName
-            isMobile={props.isMobile}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
-            placement="left"
-            card={props.cardBase[id]}
-          />
+          <OverlayTrigger
+            placement='left'
+            overlay={
+              <CardPopover card={props.cardBase[id]}>{props.showImage}</CardPopover>
+            }
+          >
+            <div onClick={() => setModalCard(props.cardBase[id])}>
+              <ResultLibraryName card={props.cardBase[id]}/>
+            </div>
+          </OverlayTrigger>
         </div>
       );
     });
@@ -117,6 +137,16 @@ function TwdSearchFormLibrary(props) {
         )}
       />
       {libraryCardsList}
+      {modalCard && (
+        <ResultLibraryModal
+          show={modalCard ? true : false}
+          card={modalCard}
+          showImage={props.showImage}
+          setShowImage={props.setShowImage}
+          handleClose={() => setModalCard(false)}
+          isMobile={props.isMobile}
+        />
+      )}
     </>
   );
 }

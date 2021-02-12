@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { OverlayTrigger, Popover } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons.jsx';
@@ -6,8 +7,12 @@ import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
+import ResultCryptPopover from './ResultCryptPopover.jsx';
+import ResultCryptModal from './ResultCryptModal.jsx';
 
 function TwdSearchFormCrypt(props) {
+  const [modalCard, setModalCard] = useState(undefined);
+
   const handleAdd = (event) => {
     const newState = props.state;
     newState[event] = 1;
@@ -20,6 +25,18 @@ function TwdSearchFormCrypt(props) {
   const cryptCardsList = Object.keys(props.state)
     .filter((id) => props.state[id] > 0)
     .map((id, index) => {
+
+      const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
+        return (
+          <Popover ref={ref} {...props}>
+            <Popover.Content>
+              <ResultCryptPopover card={props.card} showImage={children} />
+            </Popover.Content>
+          </Popover>
+        );
+      });
+      CardPopover.displayName = 'CardPopover';
+
       return (
         <div key={index} className="d-flex align-items-center">
           <TwdSearchFormQuantityButtons
@@ -29,13 +46,16 @@ function TwdSearchFormCrypt(props) {
             q={props.state[id]}
             target="crypt"
           />
-          <ResultCryptName
-            isMobile={props.isMobile}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
-            placement="left"
-            card={props.cardBase[id]}
-          />
+          <OverlayTrigger
+            placement='left'
+            overlay={
+              <CardPopover card={props.cardBase[id]}>{props.showImage}</CardPopover>
+            }
+          >
+            <div onClick={() => setModalCard(props.cardBase[id])}>
+              <ResultCryptName card={props.cardBase[id]}/>
+            </div>
+          </OverlayTrigger>
         </div>
       );
     });
@@ -119,6 +139,16 @@ function TwdSearchFormCrypt(props) {
         }}
       />
       {cryptCardsList}
+      {modalCard && (
+        <ResultCryptModal
+          show={modalCard ? true : false}
+          card={modalCard}
+          showImage={props.showImage}
+          setShowImage={props.setShowImage}
+          handleClose={() => setModalCard(false)}
+          isMobile={props.isMobile}
+        />
+      )}
     </>
   );
 }

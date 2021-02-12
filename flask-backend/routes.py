@@ -40,6 +40,18 @@ def listInventory():
     except AttributeError:
         return jsonify({'error': 'not logged'})
 
+@app.route('/api/inventory/clear', methods=['GET'])
+def clearInventory():
+    try:
+        if current_user.is_authenticated:
+            current_user.inventory = {}
+            db.session.commit()
+            return jsonify({'clear inventory': 'success'})
+
+    except AttributeError:
+        return jsonify({'error': 'not logged'})
+
+
 @app.route('/api/inventory/add', methods=['POST'])
 def inventoryAddCard():
     if current_user.is_authenticated:
@@ -283,10 +295,6 @@ def listDecks():
                 deck.inventory_type = ''
                 db.session.commit()
 
-            # deck.used_in_inventory = {}
-            # db.session.commit()
-            print(deck.used_in_inventory)
-
             crypt = {}
             library = {}
             for k, v in deck.cards.items():
@@ -456,8 +464,23 @@ def deckExportRoute():
             decks = Deck.query.filter_by(author=current_user).all()
             result = deckExportAll(decks, request.json['format'])
             return jsonify(result)
+        elif request.json['deckid'] == 'inventory' and current_user.is_authenticated:
+            deck = {
+                'cards': current_user.inventory,
+                'author': current_user.public_name,
+                'name': 'Inventory',
+                'description': '',
+            }
+            result = deckExport(deck, request.json['format'])
+            return jsonify(result)
         else:
-            deck = Deck.query.filter_by(deckid=request.json['deckid']).first()
+            d = Deck.query.filter_by(deckid=request.json['deckid']).first()
+            deck = {
+                'cards': d.cards,
+                'name': d.name,
+                'author': d.author.public_name,
+                'description': d.description,
+            }
             result = deckExport(deck, request.json['format'])
             return jsonify(result)
 

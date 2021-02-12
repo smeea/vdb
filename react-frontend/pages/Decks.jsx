@@ -173,20 +173,6 @@ function Decks(props) {
                        </>
                       }
                     </div>
-                    {props.inventoryMode &&
-                     <div className="py-2">
-                       <Button
-                         variant='outline-secondary'
-                         className="btn-block"
-                         onClick={() => props.inventoryDeckAdd(props.decks[props.activeDeck])}
-                       >
-                         <div className="d-flex justify-content-center align-items-center">
-                           <div className="pr-2"><Basket3Fill/></div>
-                           Add Cards from Deck to Inventory
-                         </div>
-                       </Button>
-                     </div>
-                    }
                   </Col>
                 ) : (
                   <>

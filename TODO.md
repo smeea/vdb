@@ -4,14 +4,12 @@
 * Clear text form to update search
 * Search form to trim spaces
 * Error popup for Deck Buttons
-* Popover for cards in TWD search form
 * Add card to deck from mobile to close modal
 * Chance popover in draw in mobile
 * Add to crypt button to floating on mobile
 
 # FEATURES
 * Deck revisions
-* Full account export
 * Search by text including particular word
 * Create 'hard' link to deck
 * Create revocable link to Inventory
@@ -24,6 +22,7 @@
 * Night theme
 * Documentation on updates
 * Makefile for updates
+* Quick card check
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage

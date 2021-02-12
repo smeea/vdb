@@ -161,7 +161,7 @@ function DeckExport(props) {
       <Dropdown>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
           <Download />
-          <span className="pl-1">Save Deck</span>
+          <span className="pl-1">{props.activeDeck == 'inventory' ? 'Save Inventory' : 'Save Deck'}</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {spinnerState && (

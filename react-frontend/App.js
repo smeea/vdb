@@ -433,41 +433,49 @@ function App(props) {
       Object.keys(decks).forEach(deckid => {
         if (decks[deckid].inventory_type == 's') {
           Object.keys(decks[deckid].crypt).forEach(id => {
-            if (softCrypt[id]) {
-              softCrypt[id][deckid] = decks[deckid].crypt[id].q;
-            } else {
-              softCrypt[id] = {}
-              softCrypt[id][deckid] = decks[deckid].crypt[id].q;
+            if (decks[deckid].crypt[id].q) {
+              if (softCrypt[id]) {
+                softCrypt[id][deckid] = decks[deckid].crypt[id].q;
+              } else {
+                softCrypt[id] = {}
+                softCrypt[id][deckid] = decks[deckid].crypt[id].q;
+              }
             }
           });
           Object.keys(decks[deckid].library).forEach(id => {
-            if (softLibrary[id]) {
-              softLibrary[id][deckid] = decks[deckid].library[id].q;
-            } else {
-              softLibrary[id] = {}
-              softLibrary[id][deckid] = decks[deckid].library[id].q;
+            if (decks[deckid].library[id].q) {
+              if (softLibrary[id]) {
+                softLibrary[id][deckid] = decks[deckid].library[id].q;
+              } else {
+                softLibrary[id] = {}
+                softLibrary[id][deckid] = decks[deckid].library[id].q;
+              }
             }
           });
         } else if (decks[deckid].inventory_type == 'h') {
           Object.keys(decks[deckid].crypt).forEach(id => {
-            if (hardCrypt[id]) {
-              hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
-            } else {
-              hardCrypt[id] = {}
-              hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
+            if (decks[deckid].crypt[id].q) {
+              if (hardCrypt[id]) {
+                hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
+              } else {
+                hardCrypt[id] = {}
+                hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
+              }
             }
           });
           Object.keys(decks[deckid].library).forEach(id => {
-            if (hardLibrary[id]) {
-              hardLibrary[id][deckid] = decks[deckid].library[id].q;
-            } else {
-              hardLibrary[id] = {}
-              hardLibrary[id][deckid] = decks[deckid].library[id].q;
+            if (decks[deckid].library[id].q) {
+              if (hardLibrary[id]) {
+                hardLibrary[id][deckid] = decks[deckid].library[id].q;
+              } else {
+                hardLibrary[id] = {}
+                hardLibrary[id][deckid] = decks[deckid].library[id].q;
+              }
             }
           });
         }
         Object.keys(decks[deckid].crypt).forEach(id => {
-          if (decks[deckid].crypt[id].i == 's') {
+          if (decks[deckid].crypt[id].i == 's' && decks[deckid].crypt[id].q) {
             if (softCrypt[id]) {
               softCrypt[id][deckid] = decks[deckid].crypt[id].q;
             } else {
@@ -476,7 +484,7 @@ function App(props) {
             }
             delete hardCrypt[id][deckid];
           }
-          if (decks[deckid].crypt[id].i == 'h') {
+          if (decks[deckid].crypt[id].i == 'h' && decks[deckid].crypt[id].q) {
             if (hardCrypt[id]) {
               hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
             } else {
@@ -487,7 +495,7 @@ function App(props) {
           }
         })
         Object.keys(decks[deckid].library).forEach(id => {
-          if (decks[deckid].library[id].i == 's') {
+          if (decks[deckid].library[id].i == 's' && decks[deckid].library[id].q) {
             if (softLibrary[id]) {
               softLibrary[id][deckid] = decks[deckid].library[id].q;
             } else {
@@ -496,7 +504,7 @@ function App(props) {
             }
             delete hardLibrary[id][deckid];
           }
-          if (decks[deckid].library[id].i == 'h') {
+          if (decks[deckid].library[id].i == 'h' && decks[deckid].library[id].q) {
             if (hardLibrary[id]) {
               hardLibrary[id][deckid] = decks[deckid].library[id].q;
             } else {
@@ -602,6 +610,8 @@ function App(props) {
               <Inventory
                 inventory={inventory}
                 getInventory={getInventory}
+                setInventory={setInventory}
+                inventoryDeckAdd={inventoryDeckAdd}
                 cardAdd={inventoryCardAdd}
                 cardChange={inventoryCardChange}
                 cryptCardBase={cryptCardBase}
@@ -631,7 +641,6 @@ function App(props) {
                 setSharedDeck={setSharedDeck}
                 inventory={inventory}
                 inventoryMode={inventoryMode}
-                inventoryDeckAdd={inventoryDeckAdd}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 showImage={showImage}

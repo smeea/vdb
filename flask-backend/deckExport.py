@@ -7,7 +7,7 @@ def deckExport(d, format):
     try:
         crypt = {}
         library = {}
-        for k, v in d.cards.items():
+        for k, v in d['cards'].items():
             k = int(k)
             if k > 200000 and v > 0:
                 crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
@@ -117,9 +117,9 @@ def deckExport(d, format):
                 cryptMin += capacityList[i]
                 cryptMax += capacityList[-i - 1]
 
-            deck += 'Deck Name: ' + d.name + '\n'
-            deck += 'Author: ' + d.author.public_name + '\n'
-            deck += 'Description: ' + d.description + '\n'
+            deck += 'Deck Name: ' + d['name'] + '\n'
+            deck += 'Author: ' + d['author'] + '\n'
+            deck += 'Description: ' + d['description'] + '\n'
             deck += '\n'
 
             cryptTitle = 'Crypt (' + str(
@@ -241,7 +241,7 @@ def deckExport(d, format):
 
                     deck += '\n'
 
-        return {'name': d.name, 'format': format, 'deck': deck}
+        return {'name': d['name'], 'format': format, 'deck': deck}
 
     except Exception:
         pass
