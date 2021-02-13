@@ -39,21 +39,6 @@ function Inventory(props) {
       .catch((error) => console.log(error));
   };
 
-
-  const exportInventory = () => {
-    const url = `${process.env.API_URL}inventory/export`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch((error) => console.log(error));
-  };
-
   return (
     <Container className="inventory-container">
       <Row className="justify-content-end">
