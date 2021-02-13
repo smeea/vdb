@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
-import Diagram3Fill from '../assets/images/icons/diagram-3-fill.svg'
-import LockFill from '../assets/images/icons/lock-fill.svg'
-import Moon from '../assets/images/icons/moon.svg';
-import Basket3Fill from '../assets/images/icons/basket3-fill.svg';
+import Shuffle from '../assets/images/icons/shuffle.svg'
+import At from '../assets/images/icons/at.svg';
+import PinAngleFill from '../assets/images/icons/pin-angle-fill.svg'
 import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
@@ -135,7 +134,7 @@ function Decks(props) {
   }, [props.activeDeck]);
 
   return (
-    <Container className="deck-container">
+    <Container className={props.isMobile ? "deck-container" : "deck-container py-4"}>
       <Row>
         <Col lg={4} className="px-0">
           <Row className="justify-content-end mx-0">
@@ -160,13 +159,13 @@ function Decks(props) {
                          >
                            <div className="d-flex align-items-center">
                              {!props.decks[props.activeDeck].inventory_type &&
-                              <Moon/>
+                              <At/>
                              }
                              {props.decks[props.activeDeck].inventory_type == "s" &&
-                              <Diagram3Fill/>
+                              <Shuffle/>
                              }
                              {props.decks[props.activeDeck].inventory_type == "h" &&
-                              <LockFill/>
+                              <PinAngleFill/>
                              }
                            </div>
                          </Button>

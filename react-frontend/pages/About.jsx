@@ -39,7 +39,7 @@ function About(props) {
   };
 
   return (
-    <Container className="main-container">
+    <Container className={props.isMobile ? "main-container" : "main-container py-3"}>
       <Row className="justify-content-center">
         <Col md={12} lg={6} className="px-0">
           <div className="px-1 about-version">
@@ -56,8 +56,7 @@ function About(props) {
           <div className="px-1">
             <h5>WHAT IS IT</h5>
             <p>
-              VDB is online card search and deck building tool for Vampire the
-              Eternal Struggle (VTES).
+              VDB is online card search, deck building and inventory (collection) management tool for Vampire the Eternal Struggle (VTES).
               <br />
               It is a successor of{' '}
               <a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
@@ -76,6 +75,9 @@ function About(props) {
               <li>
                 <Link to="/decks">Create your decks</Link>
               </li>
+              <li>
+                <Link to="/inventory">Manage your inventory</Link>
+              </li>
             </ul>
             <h5>FEATURES</h5>
             <ul>
@@ -87,7 +89,6 @@ function About(props) {
                 Wide search options - many filters (tell me if you need
                 additional!)
               </li>
-              <li>Clean, but informative look</li>
               <li>Mobile-friendly</li>
               <li>
                 Import/export to/from popular formats to easy migration and
@@ -97,6 +98,9 @@ function About(props) {
               <li>
                 Search Tournament-Winning Decks (TWD), copy them to your
                 personal deck storage and edit
+              </li>
+              <li>
+                Manage your card collection (inventory) with full search power
               </li>
               <li>Create PDF with proxies of your decks</li>
               <li>Open source, ad-free & privacy-respecting</li>

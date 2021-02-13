@@ -107,9 +107,9 @@ function ResultLibraryModal(props) {
                <CardCopyUrlButton id={props.card['Id']} />
              </div>
              <Button
-               className="btn-block"
                variant="outline-secondary"
                onClick={() => props.setShowImage(!props.showImage)}
+               block
              >
                <div className="d-flex align-items-center justify-content-center">
                  {props.showImage

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
-import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
-import LockFill from '../../assets/images/icons/lock-fill.svg'
-import Moon from '../../assets/images/icons/moon.svg';
+import Shuffle from '../../assets/images/icons/shuffle.svg'
+import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg'
+import At from '../../assets/images/icons/at.svg';
 
 function DeckSelect(props) {
   const [state, setState] = useState(props.decks);
@@ -23,13 +23,13 @@ function DeckSelect(props) {
               {props.inventoryMode &&
                <div className="pr-2">
                  {state[i].inventory_type == 's' &&
-                  <Diagram3Fill/>
+                  <Shuffle/>
                  }
                  {state[i].inventory_type == 'h' &&
-                  <LockFill/>
+                  <PinAngleFill/>
                  }
                  {!state[i].inventory_type &&
-                  <Moon/>
+                  <At/>
                  }
                </div>
               }

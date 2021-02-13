@@ -5,7 +5,7 @@ import TwdSearchForm from './components/TwdSearchForm.jsx';
 
 function Twd(props) {
   return (
-    <Container className="main-container">
+    <Container className={props.isMobile ? "main-container" : "main-container py-3"}>
       <Row className="justify-content-center">
         <Col
           md={12}

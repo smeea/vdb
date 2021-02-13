@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
-import LockFill from '../../assets/images/icons/lock-fill.svg'
+import Shuffle from '../../assets/images/icons/shuffle.svg'
+import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg'
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
 import CalculatorFill from '../../assets/images/icons/calculator-fill.svg'
 import ResultCryptPopover from './ResultCryptPopover.jsx';
@@ -57,7 +57,7 @@ function InventoryCryptTable(props) {
 
         return (
           <div className="d-flex align-items-center" key={index}>
-            <div className="opacity-035"><Diagram3Fill/></div>
+            <div className="opacity-035"><Shuffle/></div>
             <div className="px-1"><b>{props.usedCards.soft[card.c['Id']][id]}</b></div>
             - {props.decks[id]['name']}
           </div>
@@ -72,7 +72,7 @@ function InventoryCryptTable(props) {
         hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
         return (
           <div className="d-flex align-items-center" key={index}>
-            <div className="opacity-035"><LockFill/></div>
+            <div className="opacity-035"><PinAngleFill/></div>
             <div className="px-1"><b>{props.usedCards.hard[card.c['Id']][id]}</b></div>
             - {props.decks[id]['name']}
           </div>
@@ -118,7 +118,7 @@ function InventoryCryptTable(props) {
         <tr className={resultTrClass}>
           <td className="quantity">
             <OverlayTrigger
-              placement={props.placement ? props.placement : 'left'}
+              placement={props.placement ? props.placement : 'right'}
               overlay={
                 <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
               }
@@ -142,12 +142,12 @@ function InventoryCryptTable(props) {
            <td className="used">
              { softUsedMax > 0 &&
                <div className="d-flex align-items-center justify-content-center">
-                 <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
+                 <div className="d-inline opacity-035 pr-1"><Shuffle/></div>{softUsedMax}
                </div>
              }
              { hardUsedTotal > 0 &&
                <div className="d-flex align-items-center justify-content-center">
-                 <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
+                 <div className="d-inline opacity-035 pr-1"><PinAngleFill/></div>{hardUsedTotal}
                </div>
              }
            </td>
@@ -176,12 +176,12 @@ function InventoryCryptTable(props) {
                <CardPopover card={card.c}>{props.showImage}</CardPopover>
              }
            >
-             <td className="name px-3" onClick={() => handleClick()}>
+             <td className="name pl-2" onClick={() => handleClick()}>
                <ResultCryptName card={card.c} />
              </td>
            </OverlayTrigger>
            :
-           <td className="name pl-3" onClick={() => handleClick()}>
+           <td className="name pl-2" onClick={() => handleClick()}>
              <ResultCryptName card={card.c} />
            </td>
           }

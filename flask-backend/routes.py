@@ -40,13 +40,13 @@ def listInventory():
     except AttributeError:
         return jsonify({'error': 'not logged'})
 
-@app.route('/api/inventory/clear', methods=['GET'])
-def clearInventory():
+@app.route('/api/inventory/delete', methods=['GET'])
+def deleteInventory():
     try:
         if current_user.is_authenticated:
             current_user.inventory = {}
             db.session.commit()
-            return jsonify({'clear inventory': 'success'})
+            return jsonify({'delete inventory': 'success'})
 
     except AttributeError:
         return jsonify({'error': 'not logged'})

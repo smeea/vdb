@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
-import LockFill from '../../assets/images/icons/lock-fill.svg'
+import Shuffle from '../../assets/images/icons/shuffle.svg'
+import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg'
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
 import CalculatorFill from '../../assets/images/icons/calculator-fill.svg'
 import ResultCryptPopover from './ResultCryptPopover.jsx';
@@ -75,7 +75,7 @@ function ResultCryptTable(props) {
 
         return (
           <div className="d-flex align-items-center" key={index}>
-            <div className="opacity-035"><Diagram3Fill/></div>
+            <div className="opacity-035"><Shuffle/></div>
             <div className="px-1"><b>{props.usedCards.soft[card['Id']][id]}</b></div>
             - {props.decks[id]['name']}
           </div>
@@ -90,7 +90,7 @@ function ResultCryptTable(props) {
         hardUsedTotal += props.usedCards.hard[card['Id']][id];
         return (
           <div className="d-flex align-items-center" key={index}>
-            <div className="opacity-035"><LockFill/></div>
+            <div className="opacity-035"><PinAngleFill/></div>
             <div className="px-1"><b>{props.usedCards.hard[card['Id']][id]}</b></div>
             - {props.decks[id]['name']}
           </div>
@@ -177,13 +177,13 @@ function ResultCryptTable(props) {
                            className={cardInvType ? "" : "opacity-025"}
                            onClick={() => props.deckUpdate(props.deckid, cardInvType ? 'makeClear' : deckInvType == 's' ? 'makeFixed' : 'makeFlexible', card['Id'])}
                          >
-                           { deckInvType == 's' ? <LockFill /> : <Diagram3Fill/> }
+                           { deckInvType == 's' ? <PinAngleFill /> : <Shuffle/> }
                          </div>
                        </td>
                        : null
                       }
                       <OverlayTrigger
-                        placement={props.inSearch ? 'right' : 'left'}
+                        placement='right'
                         overlay={
                           <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                         }
@@ -270,12 +270,12 @@ function ResultCryptTable(props) {
                      : <>
                          { softUsedMax > 0 &&
                            <div className="d-flex align-items-center justify-content-center">
-                             <div className="d-inline opacity-035 pr-1"><Diagram3Fill/></div>{softUsedMax}
+                             <div className="d-inline opacity-035 pr-1"><Shuffle/></div>{softUsedMax}
                            </div>
                          }
                          { hardUsedTotal > 0 &&
                            <div className="d-flex align-items-center justify-content-center">
-                             <div className="d-inline opacity-035 pr-1"><LockFill/></div>{hardUsedTotal}
+                             <div className="d-inline opacity-035 pr-1"><PinAngleFill/></div>{hardUsedTotal}
                            </div>
                          }
                        </>
@@ -285,7 +285,7 @@ function ResultCryptTable(props) {
               )}
             </>
           )}
-          <td className="capacity pr-1 pl-2" onClick={() => handleClick()}>
+          <td className="capacity px-1" onClick={() => handleClick()}>
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td
@@ -293,8 +293,8 @@ function ResultCryptTable(props) {
               props.keyDisciplines + props.nonKeyDisciplines < 8
                 ? `disciplines cols-${
                     props.keyDisciplines + props.nonKeyDisciplines
-                  } px-1`
-                : 'disciplines px-1'
+                  }`
+                : 'disciplines'
             }
             onClick={() => handleClick()}
           >

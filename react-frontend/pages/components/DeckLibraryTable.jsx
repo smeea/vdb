@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-import Diagram3Fill from '../../assets/images/icons/diagram-3-fill.svg'
-import LockFill from '../../assets/images/icons/lock-fill.svg'
+import Shuffle from '../../assets/images/icons/shuffle.svg'
+import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg'
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
 import CalculatorFill from '../../assets/images/icons/calculator-fill.svg'
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
@@ -70,7 +70,7 @@ function DeckLibraryTable(props) {
 
         return (
           <div className="d-flex align-items-center" key={index}>
-          <div className="opacity-035"><Diagram3Fill/></div>
+          <div className="opacity-035"><Shuffle/></div>
           <div className="px-1"><b>{props.usedCards.soft[card.c['Id']][id]}</b></div>
             - {props.decks[id]['name']}
           </div>
@@ -85,7 +85,7 @@ function DeckLibraryTable(props) {
         hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
         return (
           <div className="d-flex align-items-center" key={index}>
-            <div className="opacity-035"><LockFill/></div>
+            <div className="opacity-035"><PinAngleFill/></div>
             <div className="px-1"><b>{props.usedCards.hard[card.c['Id']][id]}</b></div>
             - {props.decks[id]['name']}
           </div>
@@ -172,13 +172,13 @@ function DeckLibraryTable(props) {
                        className={cardInvType ? "" : "opacity-025"}
                        onClick={() => props.deckUpdate(props.deckid, cardInvType ? 'makeClear' : deckInvType == 's' ? 'makeFixed' : 'makeFlexible', card.c['Id'])}
                      >
-                       { deckInvType == 's' ? <LockFill /> : <Diagram3Fill/> }
+                       { deckInvType == 's' ? <PinAngleFill /> : <Shuffle/> }
                      </div>
                    </td>
                    : null
                   }
                   <OverlayTrigger
-                    placement='left'
+                    placement='right'
                     overlay={
                       <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                     }

@@ -3,6 +3,7 @@
 * TWD location/winner form reset
 * Clear text form to update search
 * Search form to trim spaces
+* Search to look in name + checkbox to search in text
 * Error popup for Deck Buttons
 * Add card to deck from mobile to close modal
 * Chance popover in draw in mobile
@@ -10,11 +11,8 @@
 
 # FEATURES
 * Deck revisions
-* Search by text including particular word
 * Create 'hard' link to deck
 * Create revocable link to Inventory
-* List required cards not in inventory
-* Documentation on Deck-Building and Inventory Management
 
 # MAYBE LATER FEATURES
 * Precon decks

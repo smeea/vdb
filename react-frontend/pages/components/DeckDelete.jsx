@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from '../../assets/images/icons/trash-fill.svg';
-import DeckDeleteConfirmation from './DeckDeleteConfirmation.jsx';
+import DeleteConfirmation from './DeleteConfirmation.jsx';
 
 function DeckDelete(props) {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -38,11 +38,11 @@ function DeckDelete(props) {
       >
         <TrashFill /> Delete Deck
       </Button>
-      <DeckDeleteConfirmation
+      <DeleteConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
-        deckname={props.deck.name}
+        target={`"${props.deck.name}"`}
         isMobile={props.isMobile}
       />
     </>

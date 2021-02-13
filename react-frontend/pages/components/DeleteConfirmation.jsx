@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 
-function DeckDeleteDeckConfirmation(props) {
+function DeleteConfirmation(props) {
   return (
     <>
       <Modal
@@ -20,14 +20,10 @@ function DeckDeleteDeckConfirmation(props) {
             <X width="32" height="32" viewBox="0 0 16 16" />
           </button>
           <h5>
-            DELETE DECK
-            <span className="px-1 pl-2">
-              {'"'}
-              {props.deckname}
-              {'"'}?
-            </span>
+            {`Delete ${props.target}?`}
           </h5>
           <div className="pt-2">
+            {props.text && <h6>{props.text}</h6>}
             <h6>THIS CANNOT BE UNDONE!</h6>
           </div>
         </Modal.Body>
@@ -44,4 +40,4 @@ function DeckDeleteDeckConfirmation(props) {
   );
 }
 
-export default DeckDeleteDeckConfirmation;
+export default DeleteConfirmation;

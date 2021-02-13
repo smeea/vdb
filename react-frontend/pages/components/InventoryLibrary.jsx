@@ -9,6 +9,20 @@ function InventoryLibrary(props) {
     library[card] = props.cards[card];
   });
 
+  if (!props.compact) {
+    Object.keys(props.usedCards.soft).map((card) => {
+      if (!library[card]) {
+        library[card] = {q: 0, c: props.cardBase[card]}
+      }
+    })
+
+    Object.keys(props.usedCards.hard).map((card) => {
+      if (!library[card]) {
+        library[card] = {q: 0, c: props.cardBase[card]}
+      }
+    })
+  };
+
   const cardtypeSorted = [
     'Master',
     'Conviction',

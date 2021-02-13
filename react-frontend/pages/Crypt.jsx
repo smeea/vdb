@@ -12,7 +12,7 @@ function Crypt(props) {
   const [sortMethod, setSortMethod] = useState('Capacity - Min to Max');
 
   return (
-    <Container className="main-container">
+    <Container className={props.isMobile ? "main-container" : "main-container py-3"}>
       <Row>
         {!props.isMobile && (
           <Col md={12} xl={4} className="px-0">

@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import InventoryCryptTable from './InventoryCryptTable.jsx';
-import resultCryptSort from './resultCryptSort.js';
 
 function InventoryCrypt(props) {
   let total = 0;
+  const crypt = {...props.cards}
+
+  if (!props.compact) {
+    Object.keys(props.usedCards.soft).map((card) => {
+      if (!crypt[card]) {
+        crypt[card] = {q: 0, c: props.cardBase[card]}
+      }
+    })
+
+    Object.keys(props.usedCards.hard).map((card) => {
+      if (!crypt[card]) {
+        crypt[card] = {q: 0, c: props.cardBase[card]}
+      }
+    })
+  };
+
   const cards = []
 
-  Object.keys(props.cards).map((card) => {
-    total += props.cards[card].q;
-    cards.push(props.cards[card])
+  Object.keys(crypt).map((card) => {
+    total += crypt[card].q;
+    cards.push(crypt[card])
   });
-
-  Object.keys(props.usedCards.soft).map((card) => {
-    if (!props.cards[card]) {
-      cards.push({q: 0, c: props.cardBase[card]})
-    }
-  })
-
-  Object.keys(props.usedCards.hard).map((card) => {
-    if (!props.cards[card]) {
-      cards.push({q: 0, c: props.cardBase[card]})
-    }
-  })
 
   const byName = (a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {
