@@ -210,7 +210,7 @@ function App(props) {
     }
   };
 
- const inventoryCardChange = (deckid, cardid, count) => {
+  const inventoryCardChange = (deckid, cardid, count) => {
     const url = `${process.env.API_URL}inventory/change`;
     const options = {
       method: 'POST',
@@ -221,33 +221,47 @@ function App(props) {
       },
       body: JSON.stringify({ [cardid]: count }),
     };
-
-    const oldState = decks;
-
-    fetch(url, options).catch((error) => {
-      setInventory(oldState);
-    });
-
     const part = cardid > 200000 ? 'crypt' : 'library';
 
-    if (count >= 0) {
-      setInventory((prevState) => ({
-        ...prevState,
-        [part]: {
-          ...prevState[part],
-          [cardid]: {
-            ...prevState[part][cardid],
-            q: count,
-          },
-        },
-      }));
-    } else {
-      setInventory((prevState) => {
-        const oldState = { ...prevState };
-        delete oldState[part][cardid];
-        return oldState;
+    if (count >= 0 || (count < 0 && inventory[part][cardid])) {
+      const oldState = inventory;
+      fetch(url, options).catch((error) => {
+        setInventory(oldState);
       });
-    }
+
+      if (count >= 0) {
+        if (cardid > 200000) {
+          setInventory((prevState) => {
+            return ({
+              ...prevState,
+              crypt: {
+                ...prevState.crypt,
+                [cardid]: {
+                  c: cryptCardBase[cardid],
+                  q: count,
+                }
+              }
+            })});
+        } else {
+          setInventory((prevState) => ({
+            ...prevState,
+            library: {
+              ...prevState.library,
+              [cardid]: {
+                c: libraryCardBase[cardid],
+                q: count,
+              }
+            }
+          }));
+        }
+      } else {
+        setInventory((prevState) => {
+          const oldState = { ...prevState };
+          delete oldState[part][cardid];
+          return oldState;
+        });
+      }
+    };
   };
 
   const getDecks = () => {
