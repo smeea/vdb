@@ -137,7 +137,7 @@ function ResultLibraryTable(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           {props.addMode && (
-            <td className="quantity">
+            <td className="quantity-add">
               <ResultAddCard
                 cardAdd={props.cardAdd}
                 cardid={card['Id']}

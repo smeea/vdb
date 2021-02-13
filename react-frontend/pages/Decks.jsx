@@ -151,7 +151,7 @@ function Decks(props) {
                           inventoryMode={props.inventoryMode}
                         />
                       </div>
-                      {props.inventoryMode &&
+                      {props.inventoryMode && props.decks[props.activeDeck] &&
                        <>
                          <Button
                            variant='outline-secondary'

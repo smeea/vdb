@@ -241,7 +241,7 @@ function ResultCryptTable(props) {
           ) : (
             <>
               {props.addMode && (
-                <td className="quantity">
+                <td className="quantity-add">
                   <ResultAddCard
                     cardAdd={props.cardAdd}
                     cardid={card['Id']}
