@@ -9,6 +9,7 @@ import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
 import AlertMessage from './components/AlertMessage.jsx';
 import DeckSelect from './components/DeckSelect.jsx';
+import DeckSelectPrecon from './components/DeckSelectPrecon.jsx';
 import DeckInfo from './components/DeckInfo.jsx';
 import DeckButtons from './components/DeckButtons.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
@@ -29,8 +30,8 @@ function Decks(props) {
     const name = query.get('name') ? query.get('name') : undefined;
     const author = query.get('author') ? query.get('author') : undefined;
     const description = query.get('description')
-      ? query.get('description')
-      : undefined;
+          ? query.get('description')
+          : undefined;
     const url = `${process.env.API_URL}deck/parse`;
     const options = {
       method: 'POST',
@@ -137,42 +138,47 @@ function Decks(props) {
     <Container className={props.isMobile ? "deck-container" : "deck-container py-4"}>
       <Row>
         <Col lg={4} className="px-0">
-          <Row className="justify-content-end mx-0">
+          <Row className="align-items-center justify-content-end mx-0 pb-2">
             {props.username && (
               <>
                 {Object.keys(props.decks).length > 0 ? (
-                  <Col className="px-0 px-lg-3">
-                    <div className={props.inventoryMode ? "d-flex" : "d-inline"}>
-                      <div className="w-100 pr-2">
-                        <DeckSelect
-                          decks={props.decks}
-                          activeDeck={props.activeDeck}
-                          setActiveDeck={props.setActiveDeck}
-                          inventoryMode={props.inventoryMode}
-                        />
+                  <>
+                    <Col lg={2} className="px-0 px-lg-3">
+                      <h6>My Decks:</h6>
+                    </Col>
+                    <Col className="px-0 px-lg-3">
+                      <div className={props.inventoryMode ? "d-flex" : "d-inline"}>
+                        <div className="w-100">
+                          <DeckSelect
+                            decks={props.decks}
+                            activeDeck={props.activeDeck}
+                            setActiveDeck={props.setActiveDeck}
+                            inventoryMode={props.inventoryMode}
+                          />
+                        </div>
+                        {props.inventoryMode && props.decks[props.activeDeck] &&
+                         <div className="d-flex pl-2">
+                           <Button
+                             variant='outline-secondary'
+                             onClick={() => toggleInventoryState()}
+                           >
+                             <div className="d-flex align-items-center">
+                               {!props.decks[props.activeDeck].inventory_type &&
+                                <At/>
+                               }
+                               {props.decks[props.activeDeck].inventory_type == "s" &&
+                                <Shuffle/>
+                               }
+                               {props.decks[props.activeDeck].inventory_type == "h" &&
+                                <PinAngleFill/>
+                               }
+                             </div>
+                           </Button>
+                         </div>
+                        }
                       </div>
-                      {props.inventoryMode && props.decks[props.activeDeck] &&
-                       <>
-                         <Button
-                           variant='outline-secondary'
-                           onClick={() => toggleInventoryState()}
-                         >
-                           <div className="d-flex align-items-center">
-                             {!props.decks[props.activeDeck].inventory_type &&
-                              <At/>
-                             }
-                             {props.decks[props.activeDeck].inventory_type == "s" &&
-                              <Shuffle/>
-                             }
-                             {props.decks[props.activeDeck].inventory_type == "h" &&
-                              <PinAngleFill/>
-                             }
-                           </div>
-                         </Button>
-                       </>
-                      }
-                    </div>
-                  </Col>
+                    </Col>
+                  </>
                 ) : (
                   <>
                     {props.isMobile && (
@@ -205,6 +211,21 @@ function Decks(props) {
               </>
             )}
           </Row>
+          {/* <Row className="mx-0 align-items-center"> */}
+          {/*   <Col lg={2} className="px-0 px-lg-3"> */}
+          {/*     <h6>Precon Decks:</h6> */}
+          {/*   </Col> */}
+          {/*   <Col> */}
+          {/*     <div className="px-0"> */}
+          {/*       <DeckSelectPrecon */}
+          {/*         decks={props.preconDecks} */}
+          {/*         activeDeck={props.activeDeck} */}
+          {/*         setActiveDeck={props.setActiveDeck} */}
+          {/*         inventoryMode={props.inventoryMode} */}
+          {/*       /> */}
+          {/*     </div> */}
+          {/*   </Col> */}
+          {/* </Row> */}
         </Col>
         <Col lg={6} className="px-0 px-lg-3">
           {(showInfo ||

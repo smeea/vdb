@@ -36,6 +36,7 @@ function App(props) {
   const [showDeck, setShowDeck] = useState(true);
 
   const [decks, setDecks] = useState({});
+  const [preconDecks, setPreconDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState(undefined);
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
@@ -263,6 +264,31 @@ function App(props) {
       }
     };
   };
+
+  // const getPreconDecks = () => {
+  //   const url = `${process.env.API_URL}decks`;
+  //   const options = {
+  //     method: 'GET',
+  //     mode: 'cors',
+  //     credentials: 'include',
+  //   };
+
+  //   fetch(url, options)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (data.error === undefined) {
+  //         Object.keys(data).map((i) => {
+  //           Object.keys(data[i].crypt).map((j) => {
+  //             data[i].crypt[j].c = cryptCardBase[j];
+  //           });
+  //           Object.keys(data[i].library).map((j) => {
+  //             data[i].library[j].c = libraryCardBase[j];
+  //           });
+  //         });
+  //         setDecks(data);
+  //       }
+  //     });
+  // };
 
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
@@ -647,6 +673,7 @@ function App(props) {
                 isMobile={isMobile}
                 isWide={isWide}
                 decks={decks}
+                preconDecks={preconDecks}
                 usedCards={usedCards}
                 getDecks={getDecks}
                 activeDeck={activeDeck}

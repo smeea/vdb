@@ -18,7 +18,9 @@ function DeckLibraryTable(props) {
   let resultTrClass;
   let deckInvType = null;
   if (props.decks && props.deckid) {
-    deckInvType = props.decks[props.deckid].inventory_type;
+    if (props.inventoryMode && props.decks[props.deckid]) {
+      deckInvType = props.decks[props.deckid].inventory_type;
+    }
   };
 
   const [modalCard, setModalCard] = useState(undefined);
@@ -35,7 +37,6 @@ function DeckLibraryTable(props) {
       });
     }
 
-    const cardInvType = card.i;
     if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
     } else {
@@ -51,80 +52,86 @@ function DeckLibraryTable(props) {
       );
     }
 
+    let cardInvType = null;
     let inInventory = null;
-    if (props.inventoryMode) {
+    let softUsedMax = 0;
+    let hardUsedTotal = 0;
+    let UsedPopover = null;
+
+    if (props.inventoryMode && props.decks[props.deckid]) {
+      cardInvType = card.i;
+
       if (Object.keys(props.inventoryLibrary).includes(card.c['Id'].toString())) {
         inInventory = props.inventoryLibrary[card.c['Id']].q;
       } else {
         inInventory = 0;
       }
-    }
 
-    let softUsedMax = 0;
-    let SoftUsedDescription;
-    if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
-      SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map((id, index) => {
-        if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
-          softUsedMax = props.usedCards.soft[card.c['Id']][id];
-        }
+      let SoftUsedDescription;
+      if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
+        SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map((id, index) => {
+          if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
+            softUsedMax = props.usedCards.soft[card.c['Id']][id];
+          }
 
+          return (
+            <div className="d-flex align-items-center" key={index}>
+              <div className="opacity-035"><Shuffle/></div>
+              <div className="px-1"><b>{props.usedCards.soft[card.c['Id']][id]}</b></div>
+              - {props.decks[id]['name']}
+            </div>
+          );
+        });
+      }
+
+      let HardUsedDescription;
+      if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
+        HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map((id, index) => {
+          hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
+          return (
+            <div className="d-flex align-items-center" key={index}>
+              <div className="opacity-035"><PinAngleFill/></div>
+              <div className="px-1"><b>{props.usedCards.hard[card.c['Id']][id]}</b></div>
+              - {props.decks[id]['name']}
+            </div>
+          );
+        });
+      }
+
+      UsedPopover = React.forwardRef(({ children, ...props }, ref) => {
         return (
-          <div className="d-flex align-items-center" key={index}>
-          <div className="opacity-035"><Shuffle/></div>
-          <div className="px-1"><b>{props.usedCards.soft[card.c['Id']][id]}</b></div>
-            - {props.decks[id]['name']}
-          </div>
+          <Popover ref={ref} {...props}>
+            <Popover.Content>
+              <>
+                {children == 0 ?
+                 <div className="py-1">
+                   Not used in inventory decks
+                 </div>
+                 :
+                 <>
+                   {softUsedMax > 0 && <>{SoftUsedDescription}</>}
+                   {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
+                 </>
+                }
+                <hr/>
+                <div className="d-flex align-items-center">
+                  <div className="opacity-035"><CalculatorFill/></div>
+                  <div className="px-1"><b>{softUsedMax + hardUsedTotal}</b></div>
+                  - Total Used
+                </div>
+                <div className="d-flex align-items-center" key={index}>
+                  <div className="opacity-035"><ArchiveFill/></div>
+                  <div className="px-1"><b>{inInventory}</b></div>
+                  - In Inventory
+                </div>
+              </>
+            </Popover.Content>
+          </Popover>
         );
       });
-    }
+      UsedPopover.displayName = 'UsedPopover';
 
-    let hardUsedTotal = 0;
-    let HardUsedDescription;
-    if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
-      HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map((id, index) => {
-        hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
-        return (
-          <div className="d-flex align-items-center" key={index}>
-            <div className="opacity-035"><PinAngleFill/></div>
-            <div className="px-1"><b>{props.usedCards.hard[card.c['Id']][id]}</b></div>
-            - {props.decks[id]['name']}
-          </div>
-        );
-      });
     }
-
-    const UsedPopover = React.forwardRef(({ children, ...props }, ref) => {
-      return (
-        <Popover ref={ref} {...props}>
-          <Popover.Content>
-            <>
-              {children == 0 ?
-               <div className="py-1">
-                 Not used in inventory decks
-               </div>
-               :
-               <>
-                 {softUsedMax > 0 && <>{SoftUsedDescription}</>}
-                 {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
-               </>
-              }
-              <hr/>
-              <div className="d-flex align-items-center">
-                <div className="opacity-035"><CalculatorFill/></div>
-                <div className="px-1"><b>{softUsedMax + hardUsedTotal}</b></div>
-                - Total Used
-              </div>
-              <div className="d-flex align-items-center" key={index}>
-                <div className="opacity-035"><ArchiveFill/></div>
-                <div className="px-1"><b>{inInventory}</b></div>
-                - In Inventory
-              </div>
-            </>
-          </Popover.Content>
-        </Popover>
-      );
-    });
-    UsedPopover.displayName = 'UsedPopover';
 
     const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
       return (
