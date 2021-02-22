@@ -23,7 +23,7 @@ function DeckButtons(props) {
           />
         </div>
       )}
-      {props.activeDeck && (
+      {props.deck && (
         <div className="bp-125">
           <DeckExport
             activeDeck={props.activeDeck}
@@ -80,7 +80,7 @@ function DeckButtons(props) {
          }
        </>
       }
-      {props.activeDeck && (
+      {props.deck && (
         <div className="bp-125">
           <DeckProxy
             deck={props.deck}

@@ -15,7 +15,7 @@ function Crypt(props) {
     <Container className={props.isMobile ? "main-container" : "main-container py-3"}>
       <Row>
         {!props.isMobile && (
-          <Col md={12} xl={4} className="px-0">
+          <Col md={12} xl={props.username ? 4 : 3} className="px-0">
             {Object.keys(props.decks).length > 0 && (
               <Row>
                 <Col className="pr-0">
@@ -139,6 +139,7 @@ function Crypt(props) {
             inventoryMode={props.inventoryMode}
           />
         </Col>
+        {!props.username && !props.isMobile && <Col xl={1} />}
       </Row>
     </Container>
   );

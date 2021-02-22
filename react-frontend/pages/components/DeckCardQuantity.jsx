@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
 
 function DeckCardQuantity(props) {
@@ -14,6 +14,10 @@ function DeckCardQuantity(props) {
     props.cardChange(props.deckid, props.cardid, parseInt(state));
     setManual(false);
   };
+
+  useEffect(() => {
+    if (state != props.q) setState(props.q)
+  }, [props.q])
 
   return (
     <div className="d-flex align-items-center justify-content-between">
@@ -44,10 +48,12 @@ function DeckCardQuantity(props) {
                      >-</Button>
           }
           <div
-            className={props.inInventory < props.softUsedMax + props.hardUsedTotal && props.inventoryType
-                       ? "px-1 mx-1 bg-red"
-                       : "px-1"
-                      }
+            className={
+              manual ? "px-0" :
+                props.inInventory < props.softUsedMax + props.hardUsedTotal && props.inventoryType
+                ? "px-1 mx-1 bg-red"
+                : "px-1"
+            }
             onClick={() => setManual(true)}
           >
             {manual

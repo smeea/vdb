@@ -160,19 +160,21 @@ function App(props) {
     Object.keys(cards).forEach(cardid => {
       if (cardid > 200000) {
         setInventory((prevState) => {
-          prevState['crypt'][cardid] = {
+          const oldState = {...prevState}
+          oldState.crypt[cardid] = {
             c: cryptCardBase[cardid],
             q: prevState.crypt[cardid] ? prevState.crypt[cardid].q + cards[cardid] : cards[cardid],
           }
+          return(oldState);
         });
-        return(prevState);
       } else {
         setInventory((prevState) => {
-          prevState['library'][cardid] = {
+          const oldState = {...prevState}
+          oldState.library[cardid] = {
             c: libraryCardBase[cardid],
             q: prevState.library[cardid] ? prevState.library[cardid].q + cards[cardid] : cards[cardid],
           }
-          return(prevState);
+          return(oldState);
         });
       }
     });
@@ -197,19 +199,21 @@ function App(props) {
 
     if (cardid > 200000) {
       setInventory((prevState) => {
-        prevState['crypt'][cardid] = {
+        const oldState = {...prevState};
+        oldState['crypt'][cardid] = {
           c: cryptCardBase[cardid],
           q: 1,
         }
-        return(prevState)
+        return(oldState)
       });
     } else {
       setInventory((prevState) => {
-        prevState['library'][cardid] = {
+        const oldState = {...prevState};
+        oldState['library'][cardid] = {
           c: libraryCardBase[cardid],
           q: 1,
         }
-        return(prevState)
+        return(oldState)
       });
     }
   };
@@ -237,13 +241,22 @@ function App(props) {
 
       if (count >= 0) {
         setInventory((prevState) => {
-          prevState[part][cardid].q = count;
+          const oldState = {...prevState};
+          if (oldState[part][cardid]) {
+            oldState[part][cardid].q = count;
+          } else {
+            oldState[part][cardid] = {
+              q: count,
+              c: part == 'crypt' ? cryptCardBase[cardid] : libraryCardBase[cardid],
+            }
+          }
           return(oldState)
         })
       } else {
         setInventory((prevState) => {
-          delete prevState[part][cardid];
-          return prevState;
+          const oldState = {...prevState};
+          delete oldState[part][cardid];
+          return oldState;
         });
       }
     };
@@ -327,19 +340,21 @@ function App(props) {
 
     if (cardid > 200000) {
       setDecks((prevState) => {
-        prevState[activeDeck.deckid]['crypt'][cardid] = {
+        const oldState = {...prevState};
+        oldState[activeDeck.deckid]['crypt'][cardid] = {
           c: cryptCardBase[cardid],
           q: 1,
         }
-        return(prevState);
+        return(oldState);
       });
     } else {
       setDecks((prevState) => {
-        prevState[activeDeck.deckid]['library'][cardid] = {
+        const oldState = {...prevState};
+        oldState[activeDeck.deckid]['library'][cardid] = {
           c: libraryCardBase[cardid],
           q: 1,
         }
-        return(prevState);
+        return(oldState);
       });
     }
 
@@ -370,13 +385,15 @@ function App(props) {
 
     if (count >= 0) {
       setDecks((prevState) => {
-        prevState[deckid][part][cardid].q = count;
-        return(prevState)
+        const oldState = {...prevState};
+        oldState[deckid][part][cardid].q = count;
+        return(oldState)
       });
     } else {
       setDecks((prevState) => {
-        delete prevState[deckid][part][cardid];
-        return prevState;
+        const oldState = {...prevState};
+        delete oldState[deckid][part][cardid];
+        return oldState;
       });
     }
 
@@ -413,9 +430,9 @@ function App(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        setUsername(data.username);
-        setPublicName(data.public_name);
-        setEmail(data.email);
+        data.username && setUsername(data.username);
+        data.public_name && setPublicName(data.public_name);
+        data.email && setEmail(data.email);
       });
   };
 
@@ -553,7 +570,7 @@ function App(props) {
   }, [username, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (lastDeck && !sharedDeck) {
+    if (lastDeck && lastDeck.deckid && !sharedDeck) {
       setActiveDeck({src: 'my', deckid: lastDeck.deckid});
     }
   }, [lastDeck]);
@@ -608,6 +625,7 @@ function App(props) {
                 formState={twdFormState}
                 setFormState={setTwdFormState}
                 setActiveDeck={setActiveDeck}
+                username={username}
               />
             </Route>
             <Route path="/inventory">
@@ -686,6 +704,7 @@ function App(props) {
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
                 usedCards={usedCards}
+                username={username}
               />
             </Route>
             <Route path="/library">
@@ -717,6 +736,7 @@ function App(props) {
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
                 usedCards={usedCards}
+                username={username}
               />
             </Route>
             <Route

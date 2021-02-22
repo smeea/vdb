@@ -62,14 +62,16 @@ function TwdResultDescription(props) {
               />
             </div>
             <div className="bp-125">
-              <DeckClone
-                author={props.deck['player']}
-                name={props.deck['name']}
-                deckid={props.deck['deckid']}
-                getDecks={props.getDecks}
-                setActiveDeck={props.setActiveDeck}
-                setShowButtons={props.setShowButtons}
-              />
+              { props.username &&
+                <DeckClone
+                  author={props.deck['player']}
+                  name={props.deck['name']}
+                  deckid={props.deck['deckid']}
+                  getDecks={props.getDecks}
+                  setActiveDeck={props.setActiveDeck}
+                  setShowButtons={props.setShowButtons}
+                />
+              }
             </div>
           </div>
         </>
@@ -111,14 +113,16 @@ function TwdResultDescription(props) {
             <Col xs={5} className="px-0 mx-0">
               <div className="py-2">
                 <TwdOpenDeckButton deckid={props.deck['deckid']} />
-                <DeckClone
-                  author={props.deck['player']}
-                  name={props.deck['name']}
-                  deckid={props.deck['deckid']}
-                  getDecks={props.getDecks}
-                  setActiveDeck={props.setActiveDeck}
-                  setShowButtons={props.setShowButtons}
-                />
+                { props.username &&
+                  <DeckClone
+                    author={props.deck['player']}
+                    name={props.deck['name']}
+                    deckid={props.deck['deckid']}
+                    getDecks={props.getDecks}
+                    setActiveDeck={props.setActiveDeck}
+                    setShowButtons={props.setShowButtons}
+                  />
+                }
               </div>
             </Col>
           </Row>

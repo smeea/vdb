@@ -17,6 +17,7 @@
 * Different sets images
 * Always-on opt-in deck-mode \ inventory-mode
 * Precon Decks: name, set to description, company from sets.csv
+* Non-logged Crypt/Library layout
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines

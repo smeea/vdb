@@ -50,6 +50,7 @@ function TwdResult(props) {
                     getDecks={props.getDecks}
                     setActiveDeck={props.setActiveDeck}
                     isMobile={props.isMobile}
+                    username={props.username}
                   />
                 </Col>
                 {!props.isMobile ? (

@@ -29,6 +29,7 @@ function Twd(props) {
               showSearch={props.showSearch}
               setShowSearch={props.setShowSearch}
               setActiveDeck={props.setActiveDeck}
+              username={props.username}
             />
           )}
         </Col>

@@ -25,7 +25,7 @@ function Decks(props) {
   const [queryId, setQueryId] = useState(null);
   const { hash } = useLocation();
   const history = useHistory();
-  const [selectFrom, setSelectFrom] = useState('my');
+  const [selectFrom, setSelectFrom] = useState(props.username ? 'my' : 'precons');
 
   const getMissingCrypt = (deck) => {
     const crypt = {}
@@ -151,7 +151,7 @@ function Decks(props) {
 
   let isAuthor;
   if (props.deckRouter(props.activeDeck)) {
-    isAuthor = props.username == props.deckRouter(props.activeDeck).owner;
+    isAuthor = (props.username == props.deckRouter(props.activeDeck).owner) && props.username;
   }
 
   useEffect(() => {
@@ -227,86 +227,69 @@ function Decks(props) {
         <Col lg={9} className="px-0 px-lg-3">
           <Row>
             <Col lg={5} className="px-0 px-lg-3">
-            <Row className="align-items-center justify-content-end mx-0 pb-2">
-              {props.username && (
-                <>
-                  {Object.keys(props.decks).length > 0 ? (
-                    <Col className="px-0">
-                      <div className={props.inventoryMode ? "d-flex" : "d-inline"}>
-                        <div className="w-100">
-                          {selectFrom == 'my' ?
-                           <DeckSelectMy
-                             decks={props.decks}
-                             activeDeck={props.activeDeck}
-                             setActiveDeck={props.setActiveDeck}
-                             inventoryMode={props.inventoryMode}
-                           />
-                           :
-                           <DeckSelectPrecon
-                             activeDeck={props.activeDeck}
-                             setActiveDeck={props.setActiveDeck}
-                           />
-                          }
-                        </div>
-                        {props.inventoryMode && isAuthor && props.deckRouter(props.activeDeck) &&
-                         <div className="d-flex pl-2">
-                           <Button variant='outline-secondary' onClick={() => toggleInventoryState()}>
-                             <div className="d-flex align-items-center">
-                               {!props.deckRouter(props.activeDeck).inventory_type && <At/> }
-                               {props.deckRouter(props.activeDeck).inventory_type == "s" && <Shuffle/> }
-                               {props.deckRouter(props.activeDeck).inventory_type == "h" && <PinAngleFill/> }
-                             </div>
-                           </Button>
-                         </div>
+              <Row className="align-items-center justify-content-end mx-0 pb-2">
+                  <Col className="px-0">
+                    <div className={props.inventoryMode ? "d-flex" : "d-inline"}>
+                      <div className="w-100">
+                        {selectFrom == 'my' ?
+                         <DeckSelectMy
+                           decks={props.decks}
+                           activeDeck={props.activeDeck}
+                           setActiveDeck={props.setActiveDeck}
+                           inventoryMode={props.inventoryMode}
+                         />
+                         :
+                         <DeckSelectPrecon
+                           activeDeck={props.activeDeck}
+                           setActiveDeck={props.setActiveDeck}
+                         />
                         }
                       </div>
-                      <Form className="py-1 my-0">
-                        <Form.Check
-                          className="px-2"
-                          checked={selectFrom == 'my'}
-                          onChange={e => setSelectFrom(e.target.id)}
-                          type="radio"
-                          id="my"
-                          label={<div className="blue"><b>My Decks</b></div>}
-                          inline
-                        />
-                        <Form.Check
-                          className="px-2"
-                          checked={selectFrom == 'precons'}
-                          onChange={e => setSelectFrom(e.target.id)}
-                          type="radio"
-                          id="precons"
-                          label={<div className="blue"><b>Precon Decks</b></div>}
-                          inline
-                        />
-                      </Form>
-                    </Col>
-                  ) : (
-                    <>
-                      {/* {props.isMobile && ( */}
-                      {/*   <Col className="px-0 px-lg-3"> */}
-                      {/*     <DeckImport */}
-                      {/*       setActiveDeck={props.setActiveDeck} */}
-                      {/*       getDecks={props.getDecks} */}
-                      {/*       setShowInfo={setShowInfo} */}
-                      {/*       setShowButtons={props.setShowButtons} */}
-                      {/*     /> */}
-                      {/*   </Col> */}
-                      {/* )} */}
-                    </>
-                  )}
-                  {/* {props.deckRouter(props.activeDeck) && props.isMobile && ( */}
-                  {/*   <> */}
-                  {/*     <Col xs="auto" className="d-flex justify-content-between align-items-center px-0 px-lg-3"> */}
-                  {/*       <Button variant="outline-secondary" onClick={() => setShowInfo(!showInfo)}> */}
-                  {/*         <InfoCircle /> */}
-                  {/*       </Button> */}
-                  {/*     </Col> */}
-                  {/*   </> */}
-                  {/* )} */}
-                </>
-              )}
-            </Row>
+                      {props.inventoryMode && isAuthor && props.deckRouter(props.activeDeck) &&
+                       <div className="d-flex pl-2">
+                         <Button variant='outline-secondary' onClick={() => toggleInventoryState()}>
+                           <div className="d-flex align-items-center">
+                             {!props.deckRouter(props.activeDeck).inventory_type && <At/> }
+                             {props.deckRouter(props.activeDeck).inventory_type == "s" && <Shuffle/> }
+                             {props.deckRouter(props.activeDeck).inventory_type == "h" && <PinAngleFill/> }
+                           </div>
+                         </Button>
+                       </div>
+                      }
+                    </div>
+                    <Form className="py-1 my-0">
+                      {props.username &&
+                       <Form.Check
+                         className="px-2"
+                         checked={selectFrom == 'my'}
+                         onChange={e => setSelectFrom(e.target.id)}
+                         type="radio"
+                         id="my"
+                         label={<div className="blue"><b>My Decks</b></div>}
+                         inline
+                       />
+                      }
+                      <Form.Check
+                        className="px-2"
+                        checked={selectFrom == 'precons'}
+                        onChange={e => setSelectFrom(e.target.id)}
+                        type="radio"
+                        id="precons"
+                        label={<div className="blue"><b>Precon Decks</b></div>}
+                        inline
+                      />
+                    </Form>
+                  </Col>
+                {/* {props.deckRouter(props.activeDeck) && props.isMobile && ( */}
+                {/*   <> */}
+                {/*     <Col xs="auto" className="d-flex justify-content-between align-items-center px-0 px-lg-3"> */}
+                {/*       <Button variant="outline-secondary" onClick={() => setShowInfo(!showInfo)}> */}
+                {/*         <InfoCircle /> */}
+                {/*       </Button> */}
+                {/*     </Col> */}
+                {/*   </> */}
+                {/* )} */}
+              </Row>
             </Col>
             <Col lg={7} className="px-0 px-lg-3">
               {(showInfo || (!props.isMobile && props.deckRouter(props.activeDeck))) && (
@@ -347,134 +330,134 @@ function Decks(props) {
             </Col>
           </Row>
 
-        {props.deckRouter(props.activeDeck) && (
-          <Row>
-            <Col lg={7} className="px-0 px-lg-3">
-              <DeckCrypt
-                changeTimer={props.changeTimer}
-                cardAdd={props.cardAdd}
-                cardChange={props.cardChange}
-                deckid={props.activeDeck.deckid}
-                cards={props.deckRouter(props.activeDeck).crypt}
-                showImage={props.showImage}
-                setShowImage={props.setShowImage}
-                isAuthor={isAuthor}
-                isMobile={props.isMobile}
-                isWide={props.isWide}
-                cardBase={props.cryptCardBase}
-                inventoryMode={props.inventoryMode}
-                inventoryCrypt={props.inventory.crypt}
-                decks={props.decks}
-                usedCards={{
-                  soft: props.usedCards.softCrypt,
-                  hard: props.usedCards.hardCrypt,
-                }}
-                deckUpdate={deckUpdate}
-              />
-            </Col>
-            <Col lg={5} className="px-0 px-lg-3">
-              <DeckLibrary
-                cardAdd={props.cardAdd}
-                cardChange={props.cardChange}
-                deckid={props.activeDeck.deckid}
-                cards={props.deckRouter(props.activeDeck).library}
-                showImage={props.showImage}
-                setShowImage={props.setShowImage}
-                isAuthor={isAuthor}
-                isMobile={props.isMobile}
-                isWide={props.isWide}
-                cardBase={props.libraryCardBase}
-                inventoryMode={props.inventoryMode}
-                inventoryLibrary={props.inventory.library}
-                decks={props.decks}
-                usedCards={{
-                  soft: props.usedCards.softLibrary,
-                  hard: props.usedCards.hardLibrary,
-                }}
-                deckUpdate={deckUpdate}
-              />
-            </Col>
-          </Row>
-        )}
-      </Col>
-      <Col lg={2} className="px-0 px-lg-3">
-        <DeckButtons
-          isMobile={props.isMobile}
-          isAuthor={isAuthor}
-          isWide={props.isWide}
-          inventoryMode={props.inventoryMode}
-          username={props.username}
-          deck={props.deckRouter(props.activeDeck)}
-          getDecks={props.getDecks}
-          activeDeck={props.activeDeck}
-          setActiveDeck={props.setActiveDeck}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
-          setShowInfo={setShowInfo}
-          setShowButtons={setShowButtons}
-          missingCrypt={missingCrypt}
-          missingLibrary={missingLibrary}
-        />
-      </Col>
-    </Row>
-    {/* {props.sharedDeck && ( */}
-    {/*   <AlertMessage */}
-    {/*     className="error-message" */}
-    {/*     value={<b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>} */}
-    {/*   /> */}
-    {/* )} */}
-    {props.isMobile && (
-      <>
-        <div
-          onClick={() => setShowButtons(!showButtons)}
-          className="float-right-bottom menu"
-        >
-          <div className="pt-2 float-menu">
-            <List viewBox="0 0 16 16" />
-          </div>
-        </div>
-      </>
-    )}
-    {showButtons && (
-      <Modal
-        show={showButtons}
-        onHide={() => setShowButtons(false)}
-        animation={false}
-        centered={true}
-      >
-        <Modal.Body className="p-1">
-          <Container className="px-0" fluid>
-            <Row className="px-0 pb-2">
-              <Col>
-                <button
-                  type="button"
-                  className="close m-1"
-                  onClick={() => setShowButtons(false)}
-                >
-                  <X width="32" height="32" viewBox="0 0 16 16" />
-                </button>
+          {props.deckRouter(props.activeDeck) && (
+            <Row>
+              <Col lg={7} className="px-0 px-lg-3">
+                <DeckCrypt
+                  changeTimer={props.changeTimer}
+                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
+                  deckid={props.activeDeck.deckid}
+                  cards={props.deckRouter(props.activeDeck).crypt}
+                  showImage={props.showImage}
+                  setShowImage={props.setShowImage}
+                  isAuthor={isAuthor}
+                  isMobile={props.isMobile}
+                  isWide={props.isWide}
+                  cardBase={props.cryptCardBase}
+                  inventoryMode={props.inventoryMode}
+                  inventoryCrypt={props.inventory.crypt}
+                  decks={props.decks}
+                  usedCards={{
+                    soft: props.usedCards.softCrypt,
+                    hard: props.usedCards.hardCrypt,
+                  }}
+                  deckUpdate={deckUpdate}
+                />
+              </Col>
+              <Col lg={5} className="px-0 px-lg-3">
+                <DeckLibrary
+                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
+                  deckid={props.activeDeck.deckid}
+                  cards={props.deckRouter(props.activeDeck).library}
+                  showImage={props.showImage}
+                  setShowImage={props.setShowImage}
+                  isAuthor={isAuthor}
+                  isMobile={props.isMobile}
+                  isWide={props.isWide}
+                  cardBase={props.libraryCardBase}
+                  inventoryMode={props.inventoryMode}
+                  inventoryLibrary={props.inventory.library}
+                  decks={props.decks}
+                  usedCards={{
+                    soft: props.usedCards.softLibrary,
+                    hard: props.usedCards.hardLibrary,
+                  }}
+                  deckUpdate={deckUpdate}
+                />
               </Col>
             </Row>
-            <DeckButtons
-              isMobile={props.isMobile}
-              isAuthor={isAuthor}
-              isWide={props.isWide}
-              username={props.username}
-              deck={props.deckRouter(props.activeDeck)}
-              getDecks={props.getDecks}
-              activeDeck={props.activeDeck}
-              setActiveDeck={props.setActiveDeck}
-              showImage={props.showImage}
-              setShowImage={props.setShowImage}
-              setShowInfo={setShowInfo}
-              setShowButtons={setShowButtons}
-              missingCrypt={missingCrypt}
-              missingLibrary={missingLibrary}
-            />
-          </Container>
-        </Modal.Body>
-      </Modal>
-    )}
+          )}
+        </Col>
+        <Col lg={2} className="px-0 px-lg-3">
+          <DeckButtons
+            isMobile={props.isMobile}
+            isAuthor={isAuthor}
+            isWide={props.isWide}
+            inventoryMode={props.inventoryMode}
+            username={props.username}
+            deck={props.deckRouter(props.activeDeck)}
+            getDecks={props.getDecks}
+            activeDeck={props.activeDeck}
+            setActiveDeck={props.setActiveDeck}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+            setShowInfo={setShowInfo}
+            setShowButtons={setShowButtons}
+            missingCrypt={missingCrypt}
+            missingLibrary={missingLibrary}
+          />
+        </Col>
+      </Row>
+      {/* {props.sharedDeck && ( */}
+      {/*   <AlertMessage */}
+      {/*     className="error-message" */}
+      {/*     value={<b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>} */}
+      {/*   /> */}
+      {/* )} */}
+      {props.isMobile && (
+        <>
+          <div
+            onClick={() => setShowButtons(!showButtons)}
+            className="float-right-bottom menu"
+          >
+            <div className="pt-2 float-menu">
+              <List viewBox="0 0 16 16" />
+            </div>
+          </div>
+        </>
+      )}
+      {showButtons && (
+        <Modal
+          show={showButtons}
+          onHide={() => setShowButtons(false)}
+          animation={false}
+          centered={true}
+        >
+          <Modal.Body className="p-1">
+            <Container className="px-0" fluid>
+              <Row className="px-0 pb-2">
+                <Col>
+                  <button
+                    type="button"
+                    className="close m-1"
+                    onClick={() => setShowButtons(false)}
+                  >
+                    <X width="32" height="32" viewBox="0 0 16 16" />
+                  </button>
+                </Col>
+              </Row>
+              <DeckButtons
+                isMobile={props.isMobile}
+                isAuthor={isAuthor}
+                isWide={props.isWide}
+                username={props.username}
+                deck={props.deckRouter(props.activeDeck)}
+                getDecks={props.getDecks}
+                activeDeck={props.activeDeck}
+                setActiveDeck={props.setActiveDeck}
+                showImage={props.showImage}
+                setShowImage={props.setShowImage}
+                setShowInfo={setShowInfo}
+                setShowButtons={setShowButtons}
+                missingCrypt={missingCrypt}
+                missingLibrary={missingLibrary}
+              />
+            </Container>
+          </Modal.Body>
+        </Modal>
+      )}
     </Container>
   );
 }

@@ -55,7 +55,7 @@ function DeckNewLibraryCard(props) {
           <div className="d-flex align-items-center justify-content-between">
             <div className="d-flex align-items-center">
               {props.inInventory &&
-               <div className="d-inline align-items-center in-deck mr-2">
+               <div className={`d-inline in-deck mr-2 ${props.cards[card] ? 'border-black' : null}`}>
                  {props.cards[card] && props.cards[card].q}
                </div>
               }
