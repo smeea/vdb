@@ -4,6 +4,7 @@ import ResultCryptSortForm from './ResultCryptSortForm.jsx';
 
 function ResultCryptTotal(props) {
   const byGroups = {};
+  const byGroupsCapacityTotal = {};
   let total = 0;
 
   props.cards.map((card, index) => {
@@ -11,6 +12,11 @@ function ResultCryptTotal(props) {
       byGroups[card['Group']] += 1;
     } else {
       byGroups[card['Group']] = 1;
+    }
+    if (byGroupsCapacityTotal[card['Group']]) {
+      byGroupsCapacityTotal[card['Group']] += card['Capacity']
+    } else {
+      byGroupsCapacityTotal[card['Group']] = card['Capacity']
     }
     total += 1;
   });
@@ -22,6 +28,9 @@ function ResultCryptTotal(props) {
           <b>G{key}:</b>
         </span>
         {byGroups[key]}
+        <div className="d-flex small justify-content-center">
+        ~{Math.round((byGroupsCapacityTotal[key] / byGroups[key]) * 10) / 10}
+        </div>
       </span>
     );
   });

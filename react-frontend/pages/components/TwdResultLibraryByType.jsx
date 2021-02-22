@@ -1,6 +1,5 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-import ResultLibraryType from './ResultLibraryType.jsx';
 import DeckLibraryTable from './DeckLibraryTable.jsx';
 
 function TwdResultLibraryByType(props) {
@@ -71,21 +70,31 @@ function TwdResultLibraryByType(props) {
         resultTrClass = 'result-even';
       }
 
+      const imgClass = 'type-image-results';
+      const cardtypes = cardtype.split('/');
+      const cardtypeImages = cardtypes.map((cardtype, index) => {
+        const imgSrc = `${
+      process.env.ROOT_URL
+    }images/types/${cardtype.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
+        const imgTitle = cardtype;
+        return (
+          <img key={index} className={imgClass} src={imgSrc} title={imgTitle} />
+        );
+      });
+
       LibraryTypes.push(
         <tr key={cardtype} className={resultTrClass}>
           <td className="type">
+            {cardtypeImages}
+          </td>
+          <td className="name">
             <OverlayTrigger
               placement="right"
               overlay={<TypePopover cards={libraryByType[cardtype]} />}
             >
-              <div className="name">
-                <ResultLibraryType
-                  cardtype={cardtype}
-                  total={libraryByTypeTotal[cardtype]}
-                  trifleTotal={cardtype == 'Master' && trifleTotal}
-                  isMobile={props.isMobile}
-                  isAuthor={false}
-                />
+              <div>
+                {cardtype} [{libraryByTypeTotal[cardtype]}]
+                {cardtype == 'Master' && trifleTotal > 0 && <> - {trifleTotal} trifle</>}
               </div>
             </OverlayTrigger>
           </td>
@@ -99,7 +108,7 @@ function TwdResultLibraryByType(props) {
       <div className="px-1">
         <b>Library [{libraryTotal}]:</b>
       </div>
-      <table width="100%">
+      <table className="twd-librarybytype-table">
         <tbody>{LibraryTypes}</tbody>
       </table>
     </>

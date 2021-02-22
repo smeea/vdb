@@ -1,62 +1,77 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React, { useState }  from 'react';
+import { Button, Form, FormControl } from 'react-bootstrap';
 
 function DeckCardQuantity(props) {
+  const [manual, setManual] = useState(false);
+  const [state, setState] = useState(props.q);
+
+  const handleManualChange = (event) => {
+    setState(event.target.value);
+  }
+
+  const handleSubmitButton = (event) => {
+    event.preventDefault();
+    props.cardChange(props.deckid, props.cardid, parseInt(state));
+    setManual(false);
+  };
+
   return (
     <div className="d-flex align-items-center justify-content-between">
       {props.isMobile ? (
         <>
-          <a
-            className="quantity"
-            onClick={() =>
-              props.cardChange(props.deckid, props.cardid, props.q - 1)
-            }
-          >
-            <Button className="quantity" variant="outline-secondary">
-              -
-            </Button>
+          <a className="quantity"
+             onClick={() => props.cardChange(props.deckid, props.cardid, props.q - 1)}>
+            <Button className="quantity" variant="outline-secondary">-</Button>
           </a>
-          <div
-            className={props.inInventory < props.softUsedMax + props.hardUsedTotal && props.inventoryType ? "px-1 mx-1 bg-red" : "px-1"}
-          >
+          <div className={
+            props.inInventory < props.softUsedMax + props.hardUsedTotal && props.inventoryType
+              ? "px-1 mx-1 bg-red"
+              : "px-1"
+          }>
             {props.q == 0 ? '' : props.q}
           </div>
-          <a
-            className="quantity"
-            onClick={() =>
-              props.cardChange(props.deckid, props.cardid, props.q + 1)
-            }
-          >
-            <Button className="quantity" variant="outline-secondary">
-              +
-            </Button>
+          <a className="quantity"
+             onClick={() => props.cardChange(props.deckid, props.cardid, props.q + 1)}>
+            <Button className="quantity" variant="outline-secondary">+</Button>
           </a>
         </>
       ) : (
         <>
-          <Button
-            className="quantity"
-            onClick={() =>
-              props.cardChange(props.deckid, props.cardid, props.q - 1)
-            }
-            variant="outline-secondary"
-          >
-            -
-          </Button>
+          {!manual &&<Button
+                       className="quantity"
+                       onClick={() => props.cardChange(props.deckid, props.cardid, props.q - 1)}
+                       variant="outline-secondary"
+                     >-</Button>
+          }
           <div
-            className={props.inInventory < props.softUsedMax + props.hardUsedTotal && props.inventoryType ? "px-1 mx-1 bg-red" : "px-1"}
+            className={props.inInventory < props.softUsedMax + props.hardUsedTotal && props.inventoryType
+                       ? "px-1 mx-1 bg-red"
+                       : "px-1"
+                      }
+            onClick={() => setManual(true)}
           >
-            {props.q == 0 ? <>&nbsp;&nbsp;</> : props.q}
-          </div>
-          <Button
-            className="quantity"
-            variant="outline-secondary"
-            onClick={() =>
-              props.cardChange(props.deckid, props.cardid, props.q + 1)
+            {manual
+             ? <Form className="m-0" onSubmit={handleSubmitButton}>
+                 <FormControl
+                   className="quantity px-1"
+                   placeholder=""
+                   type="number"
+                   name="Quantity"
+                   autoFocus={true}
+                   value={state}
+                   onBlur={handleSubmitButton}
+                   onChange={handleManualChange}
+                 />
+               </Form>
+             : <>{props.q == 0 ? <>&nbsp;&nbsp;</> : props.q}</>
             }
-          >
-            +
-          </Button>
+          </div>
+          {!manual && <Button
+                        className="quantity"
+                        variant="outline-secondary"
+                        onClick={() => props.cardChange(props.deckid, props.cardid, props.q + 1)}
+                      >+</Button>
+          }
         </>
       )}
     </div>

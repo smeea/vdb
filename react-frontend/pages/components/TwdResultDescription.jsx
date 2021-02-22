@@ -55,15 +55,22 @@ function TwdResultDescription(props) {
             </tbody>
           </table>
           <div className="py-2">
-            <TwdOpenDeckButton deckid={props.deck['deckid']} />
-            <DeckClone
-              author={props.deck['player']}
-              name={props.deck['name']}
-              deckid={props.deck['deckid']}
-              getDecks={props.getDecks}
-              setActiveDeck={props.setActiveDeck}
-              setShowButtons={props.setShowButtons}
-            />
+            <div className="bp-125">
+              <TwdOpenDeckButton
+                deckid={props.deck['deckid']}
+                setActiveDeck={props.setActiveDeck}
+              />
+            </div>
+            <div className="bp-125">
+              <DeckClone
+                author={props.deck['player']}
+                name={props.deck['name']}
+                deckid={props.deck['deckid']}
+                getDecks={props.getDecks}
+                setActiveDeck={props.setActiveDeck}
+                setShowButtons={props.setShowButtons}
+              />
+            </div>
           </div>
         </>
       ) : (

@@ -48,7 +48,6 @@ function Navigation(props) {
               )
             }
             {props.username &&
-             props.isActiveDeck &&
              !props.isMobile &&
              ((props.location.pathname == '/crypt' &&
                !props.showCryptSearch) ||

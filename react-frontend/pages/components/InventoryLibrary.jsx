@@ -3,13 +3,35 @@ import InventoryLibraryTable from './InventoryLibraryTable.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
 function InventoryLibrary(props) {
-  const library = {};
+  let library = {}
 
-  Object.keys(props.cards).map((card, index) => {
-    library[card] = props.cards[card];
-  });
+  if (props.category == "nok") {
+    Object.keys(props.cards).map(card => {
 
-  if (!props.compact) {
+      let softUsedMax = 0;
+      if (props.usedCards.soft[card]) {
+        Object.keys(props.usedCards.soft[card]).map((id) => {
+          if (softUsedMax < props.usedCards.soft[card][id]) {
+            softUsedMax = props.usedCards.soft[card][id];
+          }
+        });
+      }
+      let hardUsedTotal = 0;
+      if (props.usedCards.hard[card]) {
+        Object.keys(props.usedCards.hard[card]).map((id) => {
+          hardUsedTotal += props.usedCards.hard[card][id];
+        });
+      }
+
+      if (props.cards[card].q < softUsedMax + hardUsedTotal) {
+        library[card] = props.cards[card]
+      }
+    })
+  } else {
+    library = {...props.cards}
+  }
+
+  if (!props.compact && props.category != "ok") {
     Object.keys(props.usedCards.soft).map((card) => {
       if (!library[card]) {
         library[card] = {q: 0, c: props.cardBase[card]}
@@ -46,12 +68,12 @@ function InventoryLibrary(props) {
     'Event',
   ];
 
-  let libraryTotal = 0;
+  let total = 0;
   const libraryByType = {};
 
   for (const card in library) {
-    if (card) {
-      libraryTotal += library[card].q;
+    if (props.category != 'ok' || library[card].q > 0) {
+      total += library[card].q;
       const cardtype = library[card].c['Type'];
       if (libraryByType[cardtype] === undefined) {
         libraryByType[cardtype] = [];
@@ -97,7 +119,7 @@ function InventoryLibrary(props) {
     <div className="pt-4">
       {!props.compact &&
        <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-         <b>Library [{libraryTotal}]</b>
+         <b>Library {props.category != "nok" && <>[{total}]</>}</b>
        </div>
       }
       {LibraryDeck}

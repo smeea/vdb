@@ -4,7 +4,7 @@ import EyeFill from '../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
 import ResultCrypt from './components/ResultCrypt.jsx';
 import SearchCryptForm from './components/SearchCryptForm.jsx';
-import DeckSelect from './components/DeckSelect.jsx';
+import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
 import DeckLibrary from './components/DeckLibrary.jsx';
 
@@ -19,7 +19,7 @@ function Crypt(props) {
             {Object.keys(props.decks).length > 0 && (
               <Row>
                 <Col className="pr-0">
-                  <DeckSelect
+                  <DeckSelectMy
                     decks={props.decks}
                     activeDeck={props.activeDeck}
                     setActiveDeck={props.setActiveDeck}
@@ -36,14 +36,14 @@ function Crypt(props) {
                 </Col>
               </Row>
             )}
-            {props.activeDeck && props.showDeck && (
+            {props.deckRouter(props.activeDeck) && props.showDeck && (
               <>
                 <DeckCrypt
                   changeTimer={props.changeTimer}
                   cardAdd={props.cardAdd}
                   cardChange={props.cardChange}
-                  deckid={props.activeDeck}
-                  cards={props.decks[props.activeDeck].crypt}
+                  deckid={props.activeDeck.deckid}
+                  cards={props.deckRouter(props.activeDeck).crypt}
                   showImage={props.showImage}
                   setShowImage={props.setShowImage}
                   isAuthor={true}
@@ -62,8 +62,8 @@ function Crypt(props) {
                 <DeckLibrary
                   cardAdd={props.cardAdd}
                   cardChange={props.cardChange}
-                  deckid={props.activeDeck}
-                  cards={props.decks[props.activeDeck].library}
+                  deckid={props.activeDeck.deckid}
+                  cards={props.deckRouter(props.activeDeck).library}
                   showImage={props.showImage}
                   setShowImage={props.setShowImage}
                   isAuthor={true}
@@ -97,11 +97,7 @@ function Crypt(props) {
               setShowImage={props.setShowImage}
               cardAdd={props.cardAdd}
               cards={props.results}
-              crypt={
-                props.decks &&
-                props.decks[props.activeDeck] &&
-                props.decks[props.activeDeck].crypt
-              }
+              crypt={props.deckRouter(props.activeDeck) && props.deckRouter(props.activeDeck).crypt}
               activeDeck={props.activeDeck}
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}

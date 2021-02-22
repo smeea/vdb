@@ -26,11 +26,12 @@ function ResultCryptTable(props) {
       setModalCard(card);
       setModalInventory({
         inInventory: inInventory,
-        usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
         softUsedMax: softUsedMax,
         hardUsedTotal: hardUsedTotal,
+        usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
       });
     }
+
 
     let q;
     let cardInvType;
@@ -61,16 +62,17 @@ function ResultCryptTable(props) {
     let inInventory = null;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-    let UsedPopover = null;
+    let UsedPopover;
+    let SoftUsedDescription;
+    let HardUsedDescription;
 
-    if (props.inventoryMode && (props.decks[props.deckid] || props.className != 'deck-crypt-table')) {
+    if (props.inventoryMode && (props.deckid || props.className != 'deck-crypt-table')) {
       if (Object.keys(props.inventoryCrypt).includes(card['Id'].toString())) {
         inInventory = props.inventoryCrypt[card['Id']].q;
       } else {
         inInventory = 0;
       }
 
-      let SoftUsedDescription;
       if (props.usedCards && props.usedCards.soft[card['Id']]) {
         SoftUsedDescription = Object.keys(props.usedCards.soft[card['Id']]).map((id, index) => {
           if (softUsedMax < props.usedCards.soft[card['Id']][id]) {
@@ -87,7 +89,6 @@ function ResultCryptTable(props) {
         });
       }
 
-      let HardUsedDescription;
       if (props.usedCards && props.usedCards.hard[card['Id']]) {
         HardUsedDescription = Object.keys(props.usedCards.hard[card['Id']]).map((id, index) => {
           hardUsedTotal += props.usedCards.hard[card['Id']][id];
@@ -100,7 +101,6 @@ function ResultCryptTable(props) {
           );
         });
       }
-
 
       UsedPopover = React.forwardRef(({ children, ...props }, ref) => {
         return (
@@ -123,7 +123,7 @@ function ResultCryptTable(props) {
                   <div className="px-1"><b>{softUsedMax + hardUsedTotal}</b></div>
                   - Total Used
                 </div>
-                <div className="d-flex align-items-center" key={index}>
+                <div className="d-flex align-items-center">
                   <div className="opacity-035"><ArchiveFill/></div>
                   <div className="px-1"><b>{inInventory}</b></div>
                   - In Inventory
@@ -134,7 +134,6 @@ function ResultCryptTable(props) {
         );
       });
       UsedPopover.displayName = 'UsedPopover';
-
     }
 
     const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
@@ -235,13 +234,33 @@ function ResultCryptTable(props) {
                     isMobile={props.isMobile}
                   />
                 </td>
-              ) : q ? (
-                <td className="quantity-no-buttons px-2">{q}</td>
-              ) : (
-                <td className="quantity-no-buttons px-2">
-                  <div className="transparent">0</div>
-                </td>
-              )}
+              ) : <>
+                    {props.inventoryMode ?
+                     <OverlayTrigger
+                       placement='right'
+                       overlay={
+                         <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+                       }
+                     >
+                       <td className="quantity-no-buttons px-2">
+                         <div className={
+                           inInventory < q
+                             ? "quantity px-1 mx-1 bg-red"
+                             : inInventory - hardUsedTotal < q
+                             ? "quantity px-1 mx-1 bg-yellow"
+                             : "quantity px-1"
+                         }>
+                           {q}
+                         </div>
+                       </td>
+                     </OverlayTrigger>
+                     :
+                     <td className="quantity-no-buttons px-2">
+                       {q ? q : <div className="transparent">0</div>}
+                     </td>
+                    }
+                  </>
+              }
             </>
           ) : (
             <>

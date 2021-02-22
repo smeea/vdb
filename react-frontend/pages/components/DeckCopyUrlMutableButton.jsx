@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import ShareFill from '../../assets/images/icons/share-fill.svg';
 
-function DeckCopyUrlButton(props) {
+function DeckCopyUrlMutableButton(props) {
   const deckUrl = `${process.env.ROOT_URL}decks?id=${props.value}`;
 
   const handleButton = () => {
@@ -17,18 +17,10 @@ function DeckCopyUrlButton(props) {
   const [state, setState] = useState(false);
 
   return (
-    <>
-      {!state ? (
-        <Button variant="outline-secondary" onClick={handleButton} block>
-          <ShareFill /> Copy URL
-        </Button>
-      ) : (
-        <Button variant="success" onClick={handleButton} block>
-          <ShareFill /> Copied
-        </Button>
-      )}
-    </>
+    <Button variant={state ? "success" : "outline-secondary"} onClick={handleButton} block>
+      <ShareFill /> {state ? "Copied" : "Copy URL"}
+    </Button>
   );
 }
 
-export default DeckCopyUrlButton;
+export default DeckCopyUrlMutableButton;

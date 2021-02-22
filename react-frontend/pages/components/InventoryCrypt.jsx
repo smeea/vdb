@@ -2,10 +2,35 @@ import React from 'react';
 import InventoryCryptTable from './InventoryCryptTable.jsx';
 
 function InventoryCrypt(props) {
-  let total = 0;
-  const crypt = {...props.cards}
+  let crypt = {}
 
-  if (!props.compact) {
+  if (props.category == "nok") {
+    Object.keys(props.cards).map(card => {
+
+      let softUsedMax = 0;
+      if (props.usedCards.soft[card]) {
+        Object.keys(props.usedCards.soft[card]).map((id) => {
+          if (softUsedMax < props.usedCards.soft[card][id]) {
+            softUsedMax = props.usedCards.soft[card][id];
+          }
+        });
+      }
+      let hardUsedTotal = 0;
+      if (props.usedCards.hard[card]) {
+        Object.keys(props.usedCards.hard[card]).map((id) => {
+          hardUsedTotal += props.usedCards.hard[card][id];
+        });
+      }
+
+      if (props.cards[card].q < softUsedMax + hardUsedTotal) {
+        crypt[card] = props.cards[card]
+      }
+    })
+  } else {
+    crypt = {...props.cards}
+  }
+
+  if (!props.compact && props.category != "ok") {
     Object.keys(props.usedCards.soft).map((card) => {
       if (!crypt[card]) {
         crypt[card] = {q: 0, c: props.cardBase[card]}
@@ -19,11 +44,14 @@ function InventoryCrypt(props) {
     })
   };
 
+  let total = 0;
   const cards = []
 
   Object.keys(crypt).map((card) => {
     total += crypt[card].q;
-    cards.push(crypt[card])
+    if (props.category != "ok" || crypt[card].q > 0) {
+      cards.push(crypt[card]);
+    }
   });
 
   const byName = (a, b) => {
@@ -40,9 +68,7 @@ function InventoryCrypt(props) {
     <div className="pt-4">
       {!props.compact &&
        <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-         <b>
-           Crypt [{total}]
-         </b>
+           <b>Crypt {props.category != "nok" && <>[{total}]</>}</b>
        </div>
       }
       <InventoryCryptTable

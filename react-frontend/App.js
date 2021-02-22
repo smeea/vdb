@@ -9,6 +9,7 @@ import Navigation from './pages/Navigation.jsx';
 import defaultsTwdForm from './pages/components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from './pages/components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from './pages/components/forms_data/defaultsLibraryForm.json';
+import preconDecksData from './preconDecks.json';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 
@@ -37,7 +38,7 @@ function App(props) {
 
   const [decks, setDecks] = useState({});
   const [preconDecks, setPreconDecks] = useState({});
-  const [activeDeck, setActiveDeck] = useState(undefined);
+  const [activeDeck, setActiveDeck] = useState({src: null, deckid: null});
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
@@ -61,6 +62,20 @@ function App(props) {
 
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
+
+  const deckRouter = (pointer) => {
+    if (pointer) {
+      switch (pointer['src']) {
+      case 'my':
+        return(decks && decks[pointer['deckid']]);
+      case 'precons':
+        return(preconDecks && preconDecks[pointer['deckid']]);
+      case 'shared':
+      case 'twd':
+        return(sharedDeck && sharedDeck[pointer['deckid']]);
+      }
+    }
+  }
 
   const getCardBase = () => {
     const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json`;
@@ -137,37 +152,31 @@ function App(props) {
       body: JSON.stringify(cards),
     };
 
-    const oldState = inventory;
+    const oldState = {...inventory};
     fetch(url, options).catch((error) => {
       setInventory(oldState);
     });
 
     Object.keys(cards).forEach(cardid => {
       if (cardid > 200000) {
-        setInventory((prevState) => ({
-          ...prevState,
-          crypt: {
-            ...prevState.crypt,
-            [cardid]: {
-              c: cryptCardBase[cardid],
-              q: prevState.crypt[cardid] ? prevState.crypt[cardid].q + cards[cardid] : cards[cardid],
-            }
+        setInventory((prevState) => {
+          prevState['crypt'][cardid] = {
+            c: cryptCardBase[cardid],
+            q: prevState.crypt[cardid] ? prevState.crypt[cardid].q + cards[cardid] : cards[cardid],
           }
-        }));
+        });
+        return(prevState);
       } else {
-        setInventory((prevState) => ({
-          ...prevState,
-          library: {
-            ...prevState.library,
-            [cardid]: {
-              c: libraryCardBase[cardid],
-              q: prevState.library[cardid] ? prevState.library[cardid].q + cards[cardid] : cards[cardid],
-            }
+        setInventory((prevState) => {
+          prevState['library'][cardid] = {
+            c: libraryCardBase[cardid],
+            q: prevState.library[cardid] ? prevState.library[cardid].q + cards[cardid] : cards[cardid],
           }
-        }));
+          return(prevState);
+        });
       }
-    })
-  }
+    });
+  };
 
   const inventoryCardAdd = (cardid) => {
     const url = `${process.env.API_URL}inventory/add`;
@@ -181,33 +190,27 @@ function App(props) {
       body: JSON.stringify({ [cardid]: 1 }),
     };
 
-    const oldState = inventory;
+    const oldState = {...inventory};
     fetch(url, options).catch((error) => {
       setInventory(oldState);
     });
 
     if (cardid > 200000) {
-      setInventory((prevState) => ({
-        ...prevState,
-        crypt: {
-          ...prevState.crypt,
-          [cardid]: {
-            c: cryptCardBase[cardid],
-            q: 1,
-          }
+      setInventory((prevState) => {
+        prevState['crypt'][cardid] = {
+          c: cryptCardBase[cardid],
+          q: 1,
         }
-      }));
+        return(prevState)
+      });
     } else {
-      setInventory((prevState) => ({
-        ...prevState,
-        library: {
-          ...prevState.library,
-          [cardid]: {
-            c: libraryCardBase[cardid],
-            q: 1,
-          }
+      setInventory((prevState) => {
+        prevState['library'][cardid] = {
+          c: libraryCardBase[cardid],
+          q: 1,
         }
-      }));
+        return(prevState)
+      });
     }
   };
 
@@ -225,70 +228,59 @@ function App(props) {
     const part = cardid > 200000 ? 'crypt' : 'library';
 
     if (count >= 0 || (count < 0 && inventory[part][cardid])) {
-      const oldState = inventory;
+
+      const oldState = {...inventory};
+
       fetch(url, options).catch((error) => {
         setInventory(oldState);
       });
 
       if (count >= 0) {
-        if (cardid > 200000) {
-          setInventory((prevState) => {
-            return ({
-              ...prevState,
-              crypt: {
-                ...prevState.crypt,
-                [cardid]: {
-                  c: cryptCardBase[cardid],
-                  q: count,
-                }
-              }
-            })});
-        } else {
-          setInventory((prevState) => ({
-            ...prevState,
-            library: {
-              ...prevState.library,
-              [cardid]: {
-                c: libraryCardBase[cardid],
-                q: count,
-              }
-            }
-          }));
-        }
+        setInventory((prevState) => {
+          prevState[part][cardid].q = count;
+          return(oldState)
+        })
       } else {
         setInventory((prevState) => {
-          const oldState = { ...prevState };
-          delete oldState[part][cardid];
-          return oldState;
+          delete prevState[part][cardid];
+          return prevState;
         });
       }
     };
   };
 
-  // const getPreconDecks = () => {
-  //   const url = `${process.env.API_URL}decks`;
-  //   const options = {
-  //     method: 'GET',
-  //     mode: 'cors',
-  //     credentials: 'include',
-  //   };
+  const getPreconDecks = () => {
+    const precons = {}
 
-  //   fetch(url, options)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.error === undefined) {
-  //         Object.keys(data).map((i) => {
-  //           Object.keys(data[i].crypt).map((j) => {
-  //             data[i].crypt[j].c = cryptCardBase[j];
-  //           });
-  //           Object.keys(data[i].library).map((j) => {
-  //             data[i].library[j].c = libraryCardBase[j];
-  //           });
-  //         });
-  //         setDecks(data);
-  //       }
-  //     });
-  // };
+    Object.keys(preconDecksData).map((set) => {
+      Object.keys(preconDecksData[set]).map((precon) => {
+        const deckid = `${set}:${precon}`
+        precons[deckid] = {
+          name: `Precon ${deckid}`,
+          deckid: deckid,
+          author: '',
+          description: '',
+          crypt: {},
+          library: {}
+        }
+        Object.keys(preconDecksData[set][precon]).map(card => {
+          if (card > 200000) {
+            precons[deckid]['crypt'][card] = {
+              c: cryptCardBase[card],
+              q: preconDecksData[set][precon][card],
+            }
+          } else {
+            precons[deckid]['library'][card] = {
+              c: libraryCardBase[card],
+              q: preconDecksData[set][precon][card],
+            }
+          }
+        })
+      })
+    });
+
+    setPreconDecks(precons);
+  };
 
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
@@ -316,7 +308,7 @@ function App(props) {
   };
 
   const deckCardAdd = (cardid) => {
-    const url = `${process.env.API_URL}deck/${activeDeck}`;
+    const url = `${process.env.API_URL}deck/${activeDeck.deckid}`;
     const options = {
       method: 'PUT',
       mode: 'cors',
@@ -327,40 +319,28 @@ function App(props) {
       body: JSON.stringify({ cardAdd: { [cardid]: 1 } }),
     };
 
-    const oldState = decks;
+    const oldState = {...decks};
 
     fetch(url, options).catch((error) => {
       setDecks(oldState);
     });
 
     if (cardid > 200000) {
-      setDecks((prevState) => ({
-        ...prevState,
-        [activeDeck]: {
-          ...prevState[activeDeck],
-          crypt: {
-            ...prevState[activeDeck].crypt,
-            [cardid]: {
-              c: cryptCardBase[cardid],
-              q: 1,
-            },
-          },
-        },
-      }));
+      setDecks((prevState) => {
+        prevState[activeDeck.deckid]['crypt'][cardid] = {
+          c: cryptCardBase[cardid],
+          q: 1,
+        }
+        return(prevState);
+      });
     } else {
-      setDecks((prevState) => ({
-        ...prevState,
-        [activeDeck]: {
-          ...prevState[activeDeck],
-          library: {
-            ...prevState[activeDeck].library,
-            [cardid]: {
-              c: libraryCardBase[cardid],
-              q: 1,
-            },
-          },
-        },
-      }));
+      setDecks((prevState) => {
+        prevState[activeDeck.deckid]['library'][cardid] = {
+          c: libraryCardBase[cardid],
+          q: 1,
+        }
+        return(prevState);
+      });
     }
 
     setChangeTimer(!changeTimer);
@@ -378,33 +358,25 @@ function App(props) {
       body: JSON.stringify({ cardChange: { [cardid]: count } }),
     };
 
-    const oldState = decks;
+    const oldState = {...decks};
 
-    fetch(url, options).catch((error) => {
-      setDecks(oldState);
-    });
+    fetch(url, options)
+      .catch((error) => {
+        setDecks(oldState);
+        console.log(error)
+      });
 
     const part = cardid > 200000 ? 'crypt' : 'library';
 
     if (count >= 0) {
-      setDecks((prevState) => ({
-        ...prevState,
-        [deckid]: {
-          ...prevState[deckid],
-          [part]: {
-            ...prevState[deckid][part],
-            [cardid]: {
-              ...prevState[deckid][part][cardid],
-              q: count,
-            },
-          },
-        },
-      }));
+      setDecks((prevState) => {
+        prevState[deckid][part][cardid].q = count;
+        return(prevState)
+      });
     } else {
       setDecks((prevState) => {
-        const oldState = { ...prevState };
-        delete oldState[deckid][part][cardid];
-        return oldState;
+        delete prevState[deckid][part][cardid];
+        return prevState;
       });
     }
 
@@ -577,21 +549,14 @@ function App(props) {
     } else {
       setDecks({});
     }
+    cryptCardBase && libraryCardBase && getPreconDecks();
   }, [username, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (lastDeck && !sharedDeck) {
-      setActiveDeck(lastDeck.deckid);
+      setActiveDeck({src: 'my', deckid: lastDeck.deckid});
     }
   }, [lastDeck]);
-
-  // useEffect(() => {
-  //   setChangeTimer(!changeTimer);
-  // }, [decks[activeDeck] && decks[activeDeck]['Name']]);
-
-  // useEffect(() => {
-  //   setChangeTimer(!changeTimer);
-  // }, [sharedDeck]);
 
   return (
     <div className="App">
@@ -608,7 +573,6 @@ function App(props) {
           setAddMode={setAddMode}
           inventoryMode={inventoryMode}
           setInventoryMode={setInventoryMode}
-          isActiveDeck={activeDeck ? true : false}
         />
 
         <Switch>
@@ -649,7 +613,6 @@ function App(props) {
             <Route path="/inventory">
               <Inventory
                 inventory={inventory}
-                getInventory={getInventory}
                 setInventory={setInventory}
                 inventoryDeckAdd={inventoryDeckAdd}
                 cardAdd={inventoryCardAdd}
@@ -669,6 +632,7 @@ function App(props) {
             </Route>
             <Route path="/decks">
               <Decks
+                deckRouter={deckRouter}
                 changeTimer={changeTimer}
                 isMobile={isMobile}
                 isWide={isWide}
@@ -695,6 +659,7 @@ function App(props) {
             </Route>
             <Route path="/crypt">
               <Crypt
+                deckRouter={deckRouter}
                 changeTimer={changeTimer}
                 isWide={isWide}
                 isMobile={isMobile}
@@ -706,7 +671,7 @@ function App(props) {
                 cardChange={deckCardChange}
                 decks={decks}
                 getDecks={getDecks}
-                activeDeck={activeDeck}
+                activeDeck={activeDeck.src == 'my' ? activeDeck : {src: 'my', deckid: lastDeck.deckid}}
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
                 setShowImage={setShowImage}
@@ -725,6 +690,7 @@ function App(props) {
             </Route>
             <Route path="/library">
               <Library
+                deckRouter={deckRouter}
                 changeTimer={changeTimer}
                 isWide={isWide}
                 isMobile={isMobile}
@@ -736,7 +702,7 @@ function App(props) {
                 cardChange={deckCardChange}
                 decks={decks}
                 getDecks={getDecks}
-                activeDeck={activeDeck}
+                activeDeck={activeDeck.src == 'my' ? activeDeck : {src: 'my', deckid: lastDeck.deckid}}
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
                 setShowImage={setShowImage}

@@ -1,6 +1,11 @@
 import React from 'react';
 import { Figure, Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Telegram from '../assets/images/icons/telegram.svg';
+import Github from '../assets/images/icons/github.svg';
+import Discord from '../assets/images/icons/discord.svg';
+import EnvelopeFill from '../assets/images/icons/envelope-fill.svg';
+import Globe2 from '../assets/images/icons/globe2.svg';
 
 function About(props) {
   const desktopScreenshots = {
@@ -49,7 +54,7 @@ function About(props) {
               <a href="http://www.vekn.net/card-lists">
                 vekn.net official list
               </a>
-              : 2020-12-31
+              : 2021-01-21
             </p>
           </div>
 
@@ -203,16 +208,40 @@ function About(props) {
             <p>Bitcoin (BTC): 3ALLfiv3AWcm7WzgWm9gHmLAAUMRcegBtP</p>
 
             <h5>CONTACTS</h5>
-            <p>
-              <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
-                Discussion thread on vekn.net forum.
-              </a>
-              <br />
-              Please send proposals, bug reports and other feedback via{' '}
-              <a href="https://github.com/smeea/vdb">Github</a> or{' '}
-              <a href="mailto:smeea@riseup.net">email.</a>
-              <br />
-            </p>
+            <ul className="no-bullets">
+              <li>
+                <div className="d-flex align-items-center">
+                  <div className="icon pr-2"><Globe2 /></div>
+                  <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
+                    VEKN.net Forum
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div className="d-flex align-items-center">
+                  <div className="icon pr-2"><Github /></div>
+                  <a href="https://github.com/smeea/vdb">https://github.com/smeea/vdb</a>
+                </div>
+              </li>
+              <li>
+                <div className="d-flex align-items-center">
+                  <div className="icon pr-2"><EnvelopeFill /></div>
+                  <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
+                </div>
+              </li>
+              <li>
+                <div className="d-flex align-items-center">
+                  <div className="icon pr-2"><Telegram /></div>
+                  @smeea
+                </div>
+              </li>
+              <li>
+                <div className="d-flex align-items-center">
+                  <div className="icon pr-2"><Discord /></div>
+                  Smeea#3259
+                </div>
+              </li>
+            </ul>
           </div>
         </Col>
       </Row>

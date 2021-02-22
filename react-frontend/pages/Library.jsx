@@ -5,7 +5,7 @@ import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
 import AlertMessage from './components/AlertMessage.jsx';
 import ResultLibrary from './components/ResultLibrary.jsx';
 import SearchLibraryForm from './components/SearchLibraryForm.jsx';
-import DeckSelect from './components/DeckSelect.jsx';
+import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
 import DeckLibrary from './components/DeckLibrary.jsx';
 
@@ -20,7 +20,7 @@ function Library(props) {
             {Object.keys(props.decks).length > 0 && (
               <Row>
                 <Col className="pr-0">
-                  <DeckSelect
+                  <DeckSelectMy
                     decks={props.decks}
                     activeDeck={props.activeDeck}
                     setActiveDeck={props.setActiveDeck}
@@ -37,14 +37,14 @@ function Library(props) {
                 </Col>
               </Row>
             )}
-            {props.activeDeck && props.showDeck && (
+            {props.deckRouter(props.activeDeck) && props.showDeck && (
               <>
                 <DeckCrypt
                   changeTimer={props.changeTimer}
                   cardAdd={props.cardAdd}
                   cardChange={props.cardChange}
-                  deckid={props.activeDeck}
-                  cards={props.decks[props.activeDeck].crypt}
+                  deckid={props.activeDeck.deckid}
+                  cards={props.deckRouter(props.activeDeck).crypt}
                   showImage={props.showImage}
                   setShowImage={props.setShowImage}
                   isAuthor={true}
@@ -63,8 +63,8 @@ function Library(props) {
                 <DeckLibrary
                   cardAdd={props.cardAdd}
                   cardChange={props.cardChange}
-                  deckid={props.activeDeck}
-                  cards={props.decks[props.activeDeck].library}
+                  deckid={props.activeDeck.deckid}
+                  cards={props.deckRouter(props.activeDeck).library}
                   showImage={props.showImage}
                   setShowImage={props.setShowImage}
                   isAuthor={true}
@@ -98,11 +98,7 @@ function Library(props) {
               setShowImage={props.setShowImage}
               cardAdd={props.cardAdd}
               cards={props.results}
-              library={
-                props.decks &&
-                props.decks[props.activeDeck] &&
-                props.decks[props.activeDeck].library
-              }
+              library={props.deckRouter(props.activeDeck) && props.deckRouter(props.activeDeck).library}
               activeDeck={props.activeDeck}
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}

@@ -43,7 +43,7 @@ function TwdResult(props) {
                 <Col
                   md={12}
                   xl={3}
-                  className={props.isMobile ? 'px-0' : 'px-2'}
+                  className={props.isMobile ? 'px-0' : 'pl-0 pr-2'}
                 >
                   <TwdResultDescription
                     deck={deck}
@@ -70,7 +70,7 @@ function TwdResult(props) {
                         setShowImage={props.setShowImage}
                       />
                     </Col>
-                    <Col md={12} xl={3} className="px-2">
+                    <Col md={12} xl={3} className="pr-0 pl-2">
                       <TwdResultLibraryKeyCards
                         library={deck['library']}
                         isMobile={props.isMobile}

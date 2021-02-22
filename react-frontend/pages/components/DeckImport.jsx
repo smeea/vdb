@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
+import React, { useState, useRef } from 'react';
+import { Dropdown, Overlay } from 'react-bootstrap';
 import ClipboardPlus from '../../assets/images/icons/clipboard-plus.svg';
 import DeckImportText from './DeckImportText.jsx';
 import DeckImportAmaranth from './DeckImportAmaranth.jsx';
 
 function DeckImport(props) {
   const [importError, setImportError] = useState(false);
+  const [createError, setCreateError] = useState('');
   const [showTextModal, setShowTextModal] = useState(false);
   const [showAmaranthModal, setShowAmaranthModal] = useState(false);
-  const [createError, setCreateError] = useState('');
+  const ref = useRef(null);
 
   const fileInput = React.createRef();
 
@@ -44,7 +45,7 @@ function DeckImport(props) {
       .then((response) => response.json())
       .then((data) => (newdeckid = data.deckid))
       .then(() => props.getDecks())
-      .then(() => props.setActiveDeck(newdeckid))
+      .then(() => props.setActiveDeck({src: 'my', deckid: newdeckid}))
       .catch((error) => setCreateError(true));
   };
 
@@ -112,23 +113,13 @@ function DeckImport(props) {
         onChange={handleFileChange}
         style={{ display: 'none' }}
       />
-      <Dropdown>
+      <Dropdown ref={ref}>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
           <ClipboardPlus size={24} />
           <span className="pl-1">Create / Import</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
       </Dropdown>
-      {importError && (
-        <div className="d-flex justify-content-end">
-          <span className="login-error">Cannot import this deck</span>
-        </div>
-      )}
-      {createError && (
-        <div className="d-flex justify-content-start">
-          <span className="login-error">Cannot create deck</span>
-        </div>
-      )}
       <DeckImportText
         handleClose={handleCloseImportModal}
         getDecks={props.getDecks}
@@ -145,6 +136,19 @@ function DeckImport(props) {
         setShowInfo={props.setShowInfo}
         isMobile={props.isMobile}
       />
+      <Overlay
+        show={createError || importError}
+        target={ref.current}
+        placement="left"
+        transition={false}
+      >
+        {({ placement, arrowProps, show: _show, popper, ...props }) => (
+          <div className="modal-tooltip error-tooltip small" {...props}>
+            {createError && <b>ERROR</b>}
+            {importError && <b>CANNOT IMPORT THIS DECK</b>}
+          </div>
+        )}
+      </Overlay>
     </>
   );
 }

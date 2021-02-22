@@ -11,7 +11,7 @@ function DeckNewCryptCard(props) {
 
   const addNewCard = () => {
     if (!props.cards[selectedValue]) props.cardAdd(selectedValue);
-    if (props.inventoryMode) props.setNewId(selectedValue);
+    if (props.inInventory) props.setNewId(selectedValue);
     setSelectedValue('');
     props.setshowAdd && props.setShowAdd(false);
   };
@@ -44,7 +44,7 @@ function DeckNewCryptCard(props) {
     <AsyncSelect
       cacheOptions
       defaultOptions
-      autoFocus={true}
+      autoFocus={!props.inInventory}
       value={selectedValue}
       placeholder="Add Crypt Card"
       loadOptions={loadOptions}
@@ -52,7 +52,12 @@ function DeckNewCryptCard(props) {
       getOptionLabel={(card) => (
         <>
           <div className="d-flex align-items-center justify-content-between">
-            <div>
+            <div className="d-flex align-items-center">
+              {props.inInventory &&
+               <div className="d-inline align-items-center in-deck mr-2">
+                 {props.cards[card] && props.cards[card].q}
+               </div>
+              }
               <ResultCryptCapacity value={props.cardBase[card]['Capacity']} />
               <span className="px-2">
                 {props.cardBase[card]['Banned'] ? (

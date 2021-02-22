@@ -1,5 +1,5 @@
 import React from 'react';
-import DeckExport from './DeckExport.jsx';
+import InventoryExport from './InventoryExport.jsx';
 import InventoryDelete from './InventoryDelete.jsx';
 import InventoryAddDeck from './InventoryAddDeck.jsx';
 import InventoryHelp from './InventoryHelp.jsx';
@@ -13,9 +13,7 @@ function InventoryButtons(props) {
         />
       </div>
       <div className="bp-125">
-        <DeckExport
-          activeDeck='inventory'
-        />
+        <InventoryExport />
       </div>
       <div className="bp-125">
         <InventoryDelete

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
+import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
+import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function TwdResultLibraryKeyCards(props) {
@@ -77,7 +80,10 @@ function TwdResultLibraryKeyCards(props) {
 
     return (
       <tr key={index} className={resultTrClass}>
-        <td className="quantity-no-buttons px-2">{card.q}</td>
+        <td className="quantity-no-buttons px-1">{card.q}</td>
+        <td className="type" onClick={() => handleClick()}>
+          <ResultLibraryType cardtype={card.c['Type']} />
+        </td>
         {!props.isMobile ?
          <OverlayTrigger
            placement={props.placement ? props.placement : 'right'}
@@ -94,6 +100,10 @@ function TwdResultLibraryKeyCards(props) {
            <ResultLibraryName card={card.c} />
          </td>
         }
+        <td className="disciplines" onClick={() => handleClick()}>
+          <ResultLibraryDisciplines value={card.c['Discipline']} />
+          <ResultLibraryClan value={card.c['Clan']} />
+        </td>
       </tr>
     );
   });
@@ -104,7 +114,7 @@ function TwdResultLibraryKeyCards(props) {
         <b>Key Cards (4+ pcs):</b>
       </div>
       <div className="props.library">
-        <table width="100%">
+        <table className="twd-library-table">
           <tbody>{cardLines}</tbody>
         </table>
       </div>

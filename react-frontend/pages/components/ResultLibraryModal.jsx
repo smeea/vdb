@@ -91,13 +91,8 @@ function ResultLibraryModal(props) {
                       </div>
                     </Col>
                     <Col>
-                      {props.inventoryState.hardUsedTotal ?
-                       <>
-                         {props.inventoryState.usedDescription.soft && <>{props.inventoryState.usedDescription.soft}</>}
-                         {props.inventoryState.usedDescription.hard && <>{props.inventoryState.usedDescription.hard}</>}
-                       </>
-                       : null
-                      }
+                      {props.inventoryState.usedDescription.soft && <>{props.inventoryState.usedDescription.soft}</>}
+                      {props.inventoryState.usedDescription.hard && <>{props.inventoryState.usedDescription.hard}</>}
                     </Col>
                   </Row>
                 </div>

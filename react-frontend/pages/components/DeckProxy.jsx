@@ -15,6 +15,11 @@ function DeckProxy(props) {
       <Dropdown.Item href="" onClick={() => proxyDeck()}>
         Full Deck
       </Dropdown.Item>
+      {props.inventoryMode &&
+       <Dropdown.Item href="" onClick={() => proxyMissing()}>
+         Missing Cards
+       </Dropdown.Item>
+      }
       <Dropdown.Item href="" onClick={() => setShowSelectModal(true)}>
         Select Cards
       </Dropdown.Item>
@@ -28,6 +33,17 @@ function DeckProxy(props) {
     });
     Object.keys(props.deck.library).map((key) => {
       cards[key] = props.deck.library[key].q;
+    });
+    proxyCards(cards);
+  };
+
+  const proxyMissing = () => {
+    const cards = {};
+    Object.keys(props.missingCrypt).map((key) => {
+      cards[key] = props.missingCrypt[key].q;
+    });
+    Object.keys(props.missingLibrary).map((key) => {
+      cards[key] = props.missingLibrary[key].q;
     });
     proxyCards(cards);
   };

@@ -2405,7 +2405,7 @@ This minion gets an optional press to end combat on the first round of combat. I
 Stephen Lenoir, Lasombra antitribu","Anarchs:C","","","Steve Prescott","",""
 "100931","Hive Mind","","Action","","Sanguinus","","1","","","+1 stealth action.
 [san] Unlock this Blood Brother and another ready Blood Brother of the same circle. Only one Hive Mind can be played at [san] each turn.
-[SAN] Add 3 blood to a Blood Brother of the same circle in your uncontrolled region.","","HttB:C/A3","","","Jami Waggoner","",""
+[SAN] Add 3 blood to a Blood Brother of the same circle in your uncontrolled region.","","HttB:C/A3","","","Jami Waggoner; Mark Kelly","",""
 "100932","Homunculus","","Retainer","","Protean","","","","","Retainer with 1 life.
 [pro] During any Methuselah's unlock phase, this vampire can burn 1 blood to unlock.
 [PRO] As above, but Homunculus has 2 life.","A pile of bones in a skin bag, a deflated balloon; a hideous bundle.
@@ -3927,7 +3927,7 @@ During your master phase, you may move 1 counter from your pool to this card and
 "101553","Ravnos Carnival","","Master","Ravnos","","1","","","","Master: unique location.
 Put X currency counters on this card when you play it, where X is the number of Ravnos you control. When a Ravnos you control performs an action, you may use these currency counters toward the cost in blood (but not pool) of the action card. Burn this card when the last counter is removed.","","AH:R2, FN:PR, LotN:PR","","","Pat Morrissey; Sam Araya","",""
 "101554","Raw Recruit","","Action","Gargoyle","","","","","","+1 stealth action. Requires a slave.
-(D) Put this card in play and move a vampire in torpor to this card, {face up and} out of play. A vampire you control to whom this Gargoyle is enslaved can remove that vampire from the game as a +1 stealth action to turn this card into a Gargoyle with the same capacity, Fortitude [for], Potence [pot], Visceratika [vis] and flight [FLIGHT], enslaved to the acting vampire's clan.","","HttB:R/A2","","","Jim Pavelec","",""
+(D) Put this card in play and move a vampire in torpor to this card, face up and out of play. A vampire you control to whom this Gargoyle is enslaved can remove that vampire from the game as a +1 stealth action to turn this card into a Gargoyle with the same capacity, Fortitude [for], Potence [pot], Visceratika [vis] and flight [FLIGHT], enslaved to the acting vampire's clan and of the same sect as this Gargoyle.","","HttB:R/A2","","","Jim Pavelec","",""
 "101555","Rayzeel's Song","","Action","","Valeren/Animalism","","","","","[ani] This vampire burns 1 blood to unlock an ally.
 [val] (D) Bleed with +1 bleed.
 [VAL] +1 stealth action. Add 1 life from the blood bank to an ally that has fewer life than his or her starting amount.","The song was originally intended to ease pain. We've refined that idea to make the tune more potent, even addictive.
@@ -4552,7 +4552,7 @@ blades of their bite on him.
 [pro] (D) Bleed at +1 stealth.","","Anarchs:C2/PAB4","anarch","","Steve Ellis","",""
 "101797","Slake the Thirst","","Action Modifier/Combat","","Sanguinus","","","","","Only usable after this Blood Brother gains blood.
 [san] [COMBAT] Choose another ready Blood Brother of the same circle. The chosen Blood Brother gains the same amount of blood.
-[SAN] [ACTION MODIFIER] As above, but usable as an action modifier.","","HttB:C/A2","","","Jami Waggoner","",""
+[SAN] [ACTION MODIFIER] As above, but usable as an action modifier.","","HttB:C/A2","","","Jami Waggoner; Ginés Quiñonero","",""
 "101798","Slam","","Combat","","Potence","","1","","","[pot] Strike: hand strike at +2 damage.
 [POT] As above, with an optional maneuver, only usable to maneuver to close range.","","LotN:C/PG2, KoT:C/PB4, HttB:PGar4","","","Imaginary Friends Studios","",""
 "101799","Slashers, The","","Ally","Brujah","","1","","","","Unique mortal with 3 life. 0 strength, 0 bleed.

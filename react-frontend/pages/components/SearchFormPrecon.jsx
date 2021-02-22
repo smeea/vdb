@@ -23,9 +23,9 @@ function SearchFormPrecon(props) {
         value: i[1] + ':' + i[2],
         name: 'precon',
         label: (
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center">
             <div className="pr-2">{i[3]}</div>
-            <div className="pl-2 gray-small">{`${i[1]} '${i[0]}`}</div>
+            <div className="pl-2 small">{`${i[1]} '${i[0]}`}</div>
           </div>
         ),
       });

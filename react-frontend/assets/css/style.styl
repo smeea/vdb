@@ -23,6 +23,9 @@ h5, .h5, h6, .h6
 .crypt-total
   color: #7575a5
 
+.blue
+  color: #6060cc
+
 .gray
   color: gray
 
@@ -49,6 +52,9 @@ img.card-popover
 .bg-red
   background: lightcoral
 
+.bg-yellow
+  background: #ffb040
+
 .deck-sidecrypt,
 .deck-sidelibrary
   opacity: 0.55
@@ -59,6 +65,8 @@ img.card-popover
 
 .deck-crypt-table
   width: 100%
+  border: 1px solid lightgray
+  border: 1px solid lightgray
 .deck-crypt-table td
   height: 32px
   border-top: 1px solid lightgray
@@ -68,16 +76,13 @@ img.card-popover
   text-align: center
 .deck-crypt-table td.proxy-selector
   width: 1%
-  border-left: 1px solid lightgray
 .deck-crypt-table td.quantity
   width: 65px
   font-size: 1.1em
-  border-left: 1px solid lightgray
 .deck-crypt-table td.quantity-no-buttons
   width: 20px
   font-size: 1.1em
   background: rgba(0, 0, 170, 0.05);
-  border-left: 1px solid lightgray
   border-right: 1px solid lightgray
 .deck-crypt-table td.used
   width: 45px
@@ -103,13 +108,10 @@ img.card-popover
   width: 132px
 .deck-crypt-table td.disciplines.cols-1
   width: 132px
-.deck-crypt-table td.group
-  border-right: 1px solid lightgray
-.deck-crypt-table td.clan-group
-  border-right: 1px solid lightgray
 
 .deck-library-table
   width: 100%
+  border: 1px solid lightgray
 .deck-library-table td
   height: 37px
   text-align: center
@@ -118,11 +120,9 @@ img.card-popover
   border-collapse: collapse
 .deck-library-table td.proxy-selector
   width: 1%
-  border-left: 1px solid lightgray
 .deck-library-table td.quantity
   width: 65px
   font-size: 1.1em
-  border-left: 1px solid lightgray
 .deck-library-table td.used
   width: 50px
 .deck-library-table td.quantity-no-buttons
@@ -139,25 +139,24 @@ img.card-popover
   width: 65px
 .deck-library-table td.burn
   width: 30px
-  border-right: 1px solid lightgray
     
 .inventory-crypt-table
   width: 100%
+  border-left: 1px solid lightgray
+  border-right: 1px solid lightgray
 .inventory-crypt-table td
   height: 32px
   text-align: center
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  border-collapse: collapse
 .inventory-crypt-table td.quantity
   width: 65px
   font-size: 1.1em
-  border-left: 1px solid lightgray
 .inventory-crypt-table td.used
   width: 50px
 .inventory-crypt-table td.capacity
   width: 40px
-.inventory-crypt-table td
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
-  border-collapse: collapse
 .inventory-crypt-table td.disciplines
   width: 231px
 .inventory-crypt-table .discipline td
@@ -171,19 +170,17 @@ img.card-popover
 
 .inventory-library-table
   width: 100%
+  border-left: 1px solid lightgray
+  border-right: 1px solid lightgray
 .inventory-library-table td
   height: 37px
   text-align: center
   border-top: 1px solid lightgray
   border-bottom: 1px solid lightgray
   border-collapse: collapse
-.inventory-library-table td.proxy-selector
-  width: 1%
-  border-left: 1px solid lightgray
 .inventory-library-table td.quantity
   width: 65px
   font-size: 1.1em
-  border-left: 1px solid lightgray
 .inventory-library-table td.used
   width: 50px
 .inventory-library-table td.name
@@ -271,9 +268,72 @@ img.card-popover
   font-size: x-small
   text-align: right
 
+.twd-crypt-table
+  width: 100%
+  border-right: 1px solid lightgray
+  border-left: 1px solid lightgray
+.twd-crypt-table td
+  height: 32px
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  border-collapse: collapse
+.twd-crypt-table td, th
+  text-align: center
+.twd-crypt-table td.quantity-no-buttons
+  width: 22px
+  font-size: 1.1em
+  background: rgba(0, 0, 170, 0.05);
+  border-right: 1px solid lightgray
+.twd-crypt-table td.name
+  text-align: left
+.twd-crypt-table td.clan
+  width: 30px
+
+.twd-library-table
+  width: 100%
+  border-right: 1px solid lightgray
+  border-left: 1px solid lightgray
+.twd-library-table td
+  height: 32px
+  text-align: center
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  border-collapse: collapse
+.twd-library-table td.quantity-no-buttons
+  width: 22px
+  font-size: 1.1em
+  background: rgba(0, 0, 170, 0.05);
+  border-right: 1px solid lightgray
+.twd-library-table td.type
+  width: 50px
+.twd-library-table td.name
+  text-align: left
+
+.twd-librarybytype-table
+  width: 100%
+  border-left: 1px solid lightgray
+  border-right: 1px solid lightgray
+.twd-librarybytype-table td
+  height: 32px
+  text-align: center
+  border-top: 1px solid lightgray
+  border-bottom: 1px solid lightgray
+  border-collapse: collapse
+.twd-librarybytype-table td.name
+  text-align: left
+.twd-librarybytype-table td.type
+  width: 50px
+
 div.popover-sets
   font-size: x-small
   text-align: right
+
+ul.no-bullets
+  padding-left: 0em
+  list-style-type: none
+
+ul.no-bullets .icon
+  color: #404080
 
 ul.rulings
   margin: 0
@@ -301,10 +361,6 @@ span.question-tooltip
 span.form-error
   font-size: small
   color: red
-
-div.gray-small
-  font-size: small
-  color: gray
 
 .capacity-image-results
   height: 23px
@@ -387,6 +443,19 @@ button.in-deck
   background-color: gray
   color: white
 
+div.in-deck
+  width: 20px
+  font-size: 1.2em
+  // border: 3px solid blue
+  text-align: center
+
+input.quantity
+  height: 32px
+  width: 65px
+  font-size: 1.1em
+  color: black
+  text-align: center
+
 .navbar
   padding: 0rem
 
@@ -415,8 +484,8 @@ textarea.deck-import:focus
     min-width: 95%
     max-width: 95%
   .deck-container
-    min-width: 1080px
-    max-width: 1080px
+    min-width: 1420px
+    max-width: 1420px
 
 @media (min-width: 1600px)
   .main-container,
@@ -425,8 +494,8 @@ textarea.deck-import:focus
     min-width: 1550px
     max-width: 1550px
   .deck-container
-    min-width: 1080px
-    max-width: 1080px
+    min-width: 1420px
+    max-width: 1420px
 
 .dropdown-toggle::after
   content: none

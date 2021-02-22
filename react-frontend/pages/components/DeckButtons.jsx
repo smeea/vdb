@@ -2,10 +2,12 @@ import React from 'react';
 import DeckDraw from './DeckDraw.jsx';
 import DeckClone from './DeckClone.jsx';
 import DeckDelete from './DeckDelete.jsx';
-import DeckCopyUrlButton from './DeckCopyUrlButton.jsx';
+import DeckCopyUrlMutableButton from './DeckCopyUrlMutableButton.jsx';
+import DeckCopyUrlCodedButton from './DeckCopyUrlCodedButton.jsx';
 import DeckImport from './DeckImport.jsx';
 import DeckExport from './DeckExport.jsx';
 import DeckProxy from './DeckProxy.jsx';
+import DeckMissing from './DeckMissing.jsx';
 
 function DeckButtons(props) {
   return (
@@ -43,29 +45,50 @@ function DeckButtons(props) {
       {props.username && props.deck && (
         <div className="bp-125">
           <DeckClone
-            author={props.deck.author}
-            name={props.deck.name}
-            deck={props.deck}
-            deckid={props.deck.deckid}
             getDecks={props.getDecks}
+            deck={props.deck}
+            activeDeck={props.activeDeck}
             setActiveDeck={props.setActiveDeck}
             setShowButtons={props.setShowButtons}
           />
         </div>
       )}
-      {props.deck && (
-        <div className="bp-125">
-          <DeckCopyUrlButton
-            value={props.deck.deckid}
-            setShowButtons={props.setShowButtons}
-          />
-        </div>
-      )}
+      {props.deck &&
+       <>
+         {props.deck.deckid.length == 32 ?
+          <>
+            <div className="bp-125">
+              <DeckCopyUrlMutableButton
+                value={props.activeDeck.deckid}
+                setShowButtons={props.setShowButtons}
+              />
+            </div>
+            <div className="bp-125">
+              <DeckCopyUrlCodedButton
+                deck={props.deck}
+                setShowButtons={props.setShowButtons}
+              />
+            </div>
+          </>
+          :
+          <div className="bp-125">
+            <DeckCopyUrlMutableButton
+              value={props.activeDeck.deckid}
+              setShowButtons={props.setShowButtons}
+            />
+          </div>
+         }
+       </>
+      }
       {props.activeDeck && (
         <div className="bp-125">
           <DeckProxy
             deck={props.deck}
+            missingCrypt={props.missingCrypt}
+            missingLibrary={props.missingLibrary}
+            inventoryMode={props.inventoryMode}
             isMobile={props.isMobile}
+            isWide={props.isWide}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
             setShowInfo={props.setShowInfo}
@@ -79,9 +102,26 @@ function DeckButtons(props) {
             crypt={props.deck.crypt}
             library={props.deck.library}
             isMobile={props.isMobile}
+            isWide={props.isWide}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
             setShowButtons={props.setShowButtons}
+          />
+        </div>
+      )}
+      {props.deck && props.inventoryMode && (
+        <div className="bp-125">
+          <DeckMissing
+            name={props.deck.name}
+            missingCrypt={props.missingCrypt}
+            missingLibrary={props.missingLibrary}
+            isMobile={props.isMobile}
+            isWide={props.isWide}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+            setShowButtons={props.setShowButtons}
+            cryptCardBase={props.cryptCardBase}
+            libraryCardBase={props.libraryCardBase}
           />
         </div>
       )}

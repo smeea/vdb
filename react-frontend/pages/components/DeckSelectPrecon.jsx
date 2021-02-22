@@ -1,47 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Select from 'react-select';
+import precons from './forms_data/precons.json';
 
 function DeckSelectPrecon(props) {
-  // console.log(props.decks)
-  const [state, setState] = useState(props.decks);
-
-  const options = Object.keys(state).map((i, index) => {
-    return [
-      {
-        value: i,
-        name: 'deck',
+  const options = []
+  precons.map((i, index) => {
+    if (i[0] != 'any' && i[0] != 'bcp') {
+      options.push({
+        value: `${i[1]}:${i[2]}`,
+        name: 'precon',
         label: (
           <div className="d-flex justify-content-between align-items-center">
-            {state[i]['name']}
-            {/* <div className="d-flex align-items-center pl-2 small"> */}
-            {/*   {new Date(state[i]['timestamp']).toISOString().slice(0, 10)} */}
-            {/* </div> */}
+            <div className="pr-2">{i[3]}</div>
+            <div className="pl-2 small">{`${i[1]} '${i[0]}`}</div>
           </div>
         ),
-      },
-      state[i]['timestamp'],
-    ];
+      });
+    }
   });
 
-  useEffect(() => {
-    setState(props.decks);
-  }, [props.decks]);
-
   return (
-    <Select
-      options={options}
-      isSearchable={false}
-      name="decks"
-      placeholder="Select Deck"
-      value={options.find((obj) => obj.value === props.activeDeck)}
-      onChange={(e) => {
-        if (e.value) {
-          props.setActiveDeck(e.value);
-        } else {
-          props.setActiveDeck(undefined);
-        }
-      }}
-    />
+    <>
+      <Select
+        options={options}
+        isSearchable={false}
+        name="decks"
+        placeholder="Select Deck"
+        value={options.find((obj) => obj.value === props.activeDeck.deckid)}
+        onChange={(e) => props.setActiveDeck({src: 'precons', deckid: e.value})}
+      />
+    </>
   );
 }
 

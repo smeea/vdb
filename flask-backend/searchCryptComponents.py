@@ -13,7 +13,7 @@ def get_crypt_by_text(text, crypt):
     text = text.lower()
     for card in crypt:
         if text in card['Card Text'].lower(
-        ) or text in card['ASCII Name'].lower():
+        ) or text in card['ASCII Name'].lower() or text in card['Name'].lower():
             match_cards.append(card)
 
     return match_cards
@@ -470,7 +470,8 @@ def get_crypt_by_artist(artist, crypt):
 def get_crypt_by_name(name, crypt):
     match_cards = []
     for card in crypt:
-        if name.lower() in card['ASCII Name'].lower():
+        name = name.lower()
+        if name in card['ASCII Name'].lower() or name in card['Name'].lower():
             match_cards.append(card)
 
     return match_cards

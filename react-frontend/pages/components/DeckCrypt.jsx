@@ -114,6 +114,14 @@ function DeckCrypt(props) {
 
   const [sortedState, setSortedState] = useState([]);
 
+  const sortedCards = sortedState
+    .filter((card) => crypt[card])
+    .map((card) => {
+      return crypt[card];
+    });
+
+  const sortedCardsSide = Object.values(cryptSide).sort(SortByCapacity);
+
   useEffect(() => {
     setSortedState(
       Object.values(crypt)
@@ -124,14 +132,6 @@ function DeckCrypt(props) {
         })
     );
   }, [props.changeTimer, props.deckid]);
-
-  const sortedCards = sortedState
-    .filter((card) => crypt[card])
-    .map((card) => {
-      return crypt[card];
-    });
-
-  const sortedCardsSide = Object.values(cryptSide).sort(SortByCapacity);
 
   return (
     <div className="pt-4">
@@ -245,6 +245,7 @@ function DeckCrypt(props) {
             isMobile={props.isMobile}
             isWide={props.isWide}
             keyDisciplines={keyDisciplines}
+            nonKeyDisciplines={nonKeyDisciplines}
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}

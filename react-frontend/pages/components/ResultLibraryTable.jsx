@@ -110,7 +110,7 @@ function ResultLibraryTable(props) {
                 <div className="px-1"><b>{softUsedMax + hardUsedTotal}</b></div>
                 - Total Used
               </div>
-              <div className="d-flex align-items-center" key={index}>
+              <div className="d-flex align-items-center">
                 <div className="opacity-035"><ArchiveFill/></div>
                 <div className="px-1"><b>{inInventory}</b></div>
                 - In Inventory

@@ -36,9 +36,9 @@ def deckExport(d, format):
                     deck += '      '
 
                 if v['c']['Adv']:
-                    deck += v['c']['Name'] + ' (ADV)\n'
+                    deck += v['c']['ASCII Name'] + ' (ADV)\n'
                 else:
-                    deck += v['c']['Name'] + '\n'
+                    deck += v['c']['ASCII Name'] + '\n'
 
         elif format == 'text' or format == 'twd':
 

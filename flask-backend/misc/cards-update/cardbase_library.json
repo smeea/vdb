@@ -23254,7 +23254,8 @@
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Jami Waggoner"
+            "Jami Waggoner",
+            "Mark Kelly"
         ],
         "Capacity":"",
         "ASCII Name":"Hive Mind",
@@ -38724,7 +38725,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a slave.\n(D) Put this card in play and move a vampire in torpor to this card, face up and out of play. A vampire you control to whom this Gargoyle is enslaved can remove that vampire from the game as a +1 stealth action to turn this card into a Gargoyle with the same capacity, Fortitude [for], Potence [pot], Visceratika [vis] and flight [FLIGHT], enslaved to the acting vampire's clan.",
+        "Card Text":"+1 stealth action. Requires a slave.\n(D) Put this card in play and move a vampire in torpor to this card, face up and out of play. A vampire you control to whom this Gargoyle is enslaved can remove that vampire from the game as a +1 stealth action to turn this card into a Gargoyle with the same capacity, Fortitude [for], Potence [pot], Visceratika [vis] and flight [FLIGHT], enslaved to the acting vampire's clan and of the same sect as this Gargoyle.",
         "Set":{
             "HttB":"R/A2"
         },
@@ -44742,7 +44743,8 @@
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Jami Waggoner"
+            "Jami Waggoner",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Capacity":"",
         "ASCII Name":"Slake the Thirst",

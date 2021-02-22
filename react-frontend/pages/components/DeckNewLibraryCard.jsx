@@ -12,7 +12,7 @@ function DeckNewLibraryCard(props) {
 
   const addNewCard = () => {
     if (!props.cards[selectedValue]) props.cardAdd(selectedValue);
-    if (props.inventoryMode) props.setNewId(selectedValue);
+    if (props.inInventory) props.setNewId(selectedValue);
     setSelectedValue('');
     props.setshowAdd && props.setShowAdd(false);
   };
@@ -45,7 +45,7 @@ function DeckNewLibraryCard(props) {
     <AsyncSelect
       cacheOptions
       defaultOptions
-      autoFocus={true}
+      autoFocus={!props.inInventory}
       value={selectedValue}
       placeholder="Add Library Card"
       loadOptions={loadOptions}
@@ -53,7 +53,12 @@ function DeckNewLibraryCard(props) {
       getOptionLabel={(card) => (
         <>
           <div className="d-flex align-items-center justify-content-between">
-            <div>
+            <div className="d-flex align-items-center">
+              {props.inInventory &&
+               <div className="d-inline align-items-center in-deck mr-2">
+                 {props.cards[card] && props.cards[card].q}
+               </div>
+              }
               <ResultLibraryType cardtype={props.cardBase[card]['Type']} />
               <span className="pl-1">
                 {props.cardBase[card]['Banned'] ? (

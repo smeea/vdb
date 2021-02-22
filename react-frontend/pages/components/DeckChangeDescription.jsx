@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
+import ChevronBarExpand from '../../assets/images/icons/chevron-bar-expand.svg';
+import ChevronBarContract from '../../assets/images/icons/chevron-bar-contract.svg';
+import ChatLeftQuoteFill from '../../assets/images/icons/chat-left-quote-fill.svg';
 
 function DeckDescription(props) {
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
+  const [folded, setFolded] = useState(true);
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -37,41 +41,29 @@ function DeckDescription(props) {
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
         <InputGroup.Prepend>
-          <InputGroup.Text>Description</InputGroup.Text>
+          <InputGroup.Text><ChatLeftQuoteFill /></InputGroup.Text>
         </InputGroup.Prepend>
-        {props.isAuthor ? (
-          <FormControl
-            as="textarea"
-            rows={6}
-            type="text"
-            className="form-control"
-            value={state}
-            onChange={handleChange}
-            onBlur={handleOnBlur}
-          />
-        ) : (
-          <FormControl
-            as="textarea"
-            rows={6}
-            type="text"
-            className="form-control"
-            value={state}
-            onChange={handleChange}
-            readOnly
-            style={{ background: 'white' }}
-          />
-        )}
+        <FormControl
+          as={folded ? "input" : "textarea"}
+          rows={8}
+          type="text"
+          className="form-control"
+          value={state}
+          onChange={handleChange}
+          onBlur={handleOnBlur}
+          readOnly={!props.isAuthor}
+          style={{ background: 'white' }}
+        />
+        <InputGroup.Append>
+          <Button variant="outline-secondary" onClick={() => setFolded(!folded)}>
+            {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
+          </Button>
+        </InputGroup.Append>
         {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
-            {!buttonState ? (
-              <Button variant="outline-secondary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="success" type="submit">
-                <Check2 />
-              </Button>
-            )}
+            <Button variant={buttonState ? "success" : "outline-secondary"} type="submit">
+              <Check2 />
+            </Button>
           </InputGroup.Append>
         )}
       </InputGroup>

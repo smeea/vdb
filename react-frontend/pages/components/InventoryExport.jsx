@@ -3,7 +3,7 @@ import FileSaver from 'file-saver';
 import { Spinner, Dropdown, Overlay } from 'react-bootstrap';
 import Download from '../../assets/images/icons/download.svg';
 
-function DeckExport(props) {
+function InventoryExport(props) {
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
   const ref = useRef(null);
@@ -29,101 +29,11 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
         Copy to Clipboard - Lackey
       </Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item href="" onClick={() => exportAll('text')}>
-        Save all decks - Text
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => exportAll('twd')}>
-        Save all decks - TWD
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => exportAll('lackey')}>
-        Save all decks - Lackey
-      </Dropdown.Item>
     </>
   );
 
   const copyDeck = (format) => {
     setError(false);
-    if (props.activeDeck) {
-      setSpinnerState(true);
-
-      const url = `${process.env.API_URL}decks/export`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          deckid: props.activeDeck.deckid,
-          format: format,
-        }),
-      };
-
-      const fetchPromise = fetch(url, options);
-
-      fetchPromise
-        .then((response) => response.json())
-        .then((data) => {
-          navigator.clipboard.writeText(data.deck);
-          setSpinnerState(false);
-          props.setShowButtons(false);
-        })
-        .catch((error) => {
-          setError(true);
-          setSpinnerState(false);
-        });
-    } else {
-      setError(true);
-    }
-  };
-
-  const saveDeck = (format) => {
-    setError(false);
-    if (props.activeDeck) {
-      setSpinnerState(true);
-
-      const url = `${process.env.API_URL}decks/export`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          deckid: props.activeDeck.deckid,
-          format: format,
-        }),
-      };
-
-      const fetchPromise = fetch(url, options);
-
-      fetchPromise
-        .then((response) => response.json())
-        .then((data) => {
-          const file = new File(
-            [data.deck],
-            data.name + '_' + data.format + '.txt',
-            { type: 'text/plain;charset=utf-8' }
-          );
-          FileSaver.saveAs(file);
-          setSpinnerState(false);
-          props.setShowButtons(false);
-        })
-        .catch((error) => {
-          setSpinnerState(false);
-          setError(true);
-        });
-    } else {
-      setError(true);
-    }
-  };
-
-  const exportAll = (format) => {
-    setError(false);
-
     setSpinnerState(true);
 
     const url = `${process.env.API_URL}decks/export`;
@@ -135,7 +45,7 @@ function DeckExport(props) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        deckid: 'all',
+        deckid: 'inventory',
         format: format,
       }),
     };
@@ -145,13 +55,47 @@ function DeckExport(props) {
     fetchPromise
       .then((response) => response.json())
       .then((data) => {
-        data.map((d) => {
-          const file = new File([d.deck], d.name + '_' + d.format + '.txt', {
-            type: 'text/plain;charset=utf-8',
-          });
-          FileSaver.saveAs(file);
-        });
+        navigator.clipboard.writeText(data.deck);
+        // props.setShowButtons(false);
         setSpinnerState(false);
+      })
+      .catch((error) => {
+        setError(true);
+        setSpinnerState(false);
+      });
+  };
+
+  const saveDeck = (format) => {
+    setError(false);
+    setSpinnerState(true);
+
+    const url = `${process.env.API_URL}decks/export`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        deckid: 'inventory',
+        format: format,
+      }),
+    };
+
+    const fetchPromise = fetch(url, options);
+
+    fetchPromise
+      .then((response) => response.json())
+      .then((data) => {
+        const file = new File(
+          [data.deck],
+          data.name + '_' + data.format + '.txt',
+          { type: 'text/plain;charset=utf-8' }
+        );
+        FileSaver.saveAs(file);
+        setSpinnerState(false);
+        // props.setShowButtons(false);
       })
       .catch((error) => {
         setError(true);
@@ -164,7 +108,7 @@ function DeckExport(props) {
       <Dropdown ref={ref}>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
           <Download />
-          <span className="pl-1">Save Deck</span>
+          <span className="pl-1">Save Inventory</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {spinnerState && (
@@ -195,4 +139,4 @@ function DeckExport(props) {
   );
 }
 
-export default DeckExport;
+export default InventoryExport;

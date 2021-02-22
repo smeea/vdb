@@ -23,7 +23,6 @@ function InventoryDelete(props) {
 
     fetch(url, options)
       .then(props.setInventory({crypt: {}, library: {}}))
-      .catch((error) => console.log(error));
   };
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
+import PersonFill from '../../assets/images/icons/person-fill.svg';
 
 function DeckChangeAuthor(props) {
   const [state, setState] = useState('');
@@ -37,30 +38,22 @@ function DeckChangeAuthor(props) {
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
         <InputGroup.Prepend>
-          <InputGroup.Text>Author</InputGroup.Text>
+          <InputGroup.Text><PersonFill/></InputGroup.Text>
         </InputGroup.Prepend>
-        {props.isAuthor ? (
-          <FormControl
-            type="text"
-            className="form-control"
-            value={state}
-            onChange={handleChange}
-            onBlur={handleOnBlur}
-          />
-        ) : (
-          <div className="form-control">{state}</div>
-        )}
+        <FormControl
+          type="text"
+          className="form-control"
+          value={state}
+          onChange={handleChange}
+          onBlur={handleOnBlur}
+          readOnly={!props.isAuthor}
+          style={{ background: 'white' }}
+        />
         {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
-            {!buttonState ? (
-              <Button variant="outline-secondary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="success" type="submit">
-                <Check2 />
-              </Button>
-            )}
+            <Button variant={buttonState ? "success" : "outline-secondary"} type="submit">
+              <Check2 />
+            </Button>
           </InputGroup.Append>
         )}
       </InputGroup>

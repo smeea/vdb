@@ -9,7 +9,7 @@ function DeckDelete(props) {
   const handleConfirm = () => {
     deleteDeck();
     setShowConfirmation(false);
-    props.setActiveDeck(undefined);
+    props.setActiveDeck({src: null, deckid: null});
     props.setShowButtons(false);
   };
 

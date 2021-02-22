@@ -110,9 +110,9 @@ def showDeck(deckid):
         for k, v in deck.cards.items():
             k = int(k)
             if k > 200000:
-                crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
+                crypt[k] = {'q': v}
             elif k < 200000:
-                library[k] = {'c': get_library_by_id(k), 'q': v}
+                library[k] = {'q': v}
 
         decks[deckid] = {
             'name': deck.name,
@@ -131,19 +131,23 @@ def showDeck(deckid):
             twdDecks = json.load(twdDecks_file)
 
             deck = twdDecks[deckid]
-            for i in deck['crypt']:
-                deck['crypt'][i]['c'] = get_crypt_by_id(i)
-            for i in deck['library']:
-                deck['library'][i]['c'] = get_library_by_id(i)
-
             comments = deck['description']
             deck['description'] = 'Date: ' + deck['date'] + '\n'
             deck['description'] += 'Players: ' + str(deck['players']) + '\n'
             deck['description'] += 'Event: ' + deck['event'] + '\n'
             deck['description'] += 'Location: ' + deck['location'] + '\n'
+            deck['author'] = deck['player']
+            del (deck['player'])
+            del (deck['disciplines'])
+            del (deck['format'])
+            del (deck['event'])
+            del (deck['link'])
+            del (deck['location'])
+            del (deck['players'])
+            del (deck['timestamp'])
+            del (deck['score'])
             if comments:
                 deck['description'] += '\n' + comments
-            deck['author'] = deck['player']
 
             decks = { deckid: deck }
             return jsonify(decks)
@@ -340,7 +344,7 @@ def newDeck():
                      author=current_user,
                      inventory_type='',
                      used_in_inventory={},
-                     cards={})
+                     cards=request.json['cards'] if 'cards' in request.json else {})
             db.session.add(d)
             db.session.commit()
             return jsonify({
@@ -380,7 +384,7 @@ def cloneDeck():
             'deckid': deckid
         })
 
-    elif len(request.json['target']) != 32:
+    elif request.json['src'] == 'twd':
         with open("twdDecksById.json", "r") as twdDecks_file:
             twdDecks = json.load(twdDecks_file)
 
@@ -406,30 +410,52 @@ def cloneDeck():
                 'deck cloned': request.json['deckname'],
                 'deckid': deckid
             })
-    elif current_user.is_authenticated:
-        try:
-            targetDeck = Deck.query.filter_by(
-                deckid=request.json['target']).first()
+
+    elif request.json['src'] == 'precons':
+        set, precon = request.json['target'].split(':')
+
+        with open("precons.json", "r") as precons_file:
+            precon_decks = json.load(precons_file)
+            deck = precon_decks[set][precon]
+
+            cards = {}
+            for i in deck:
+                cards[i] = deck[i]
+
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
-                     name=request.json['deckname'],
-                     author_public_name=request.json['author'],
+                     name=f"Preconstructed {set}:{precon}",
+                     author_public_name='VTES Publisher',
                      description='',
                      author=current_user,
                      inventory_type='',
                      used_in_inventory={},
-                     cards=targetDeck.cards)
+                     cards=cards)
             db.session.add(d)
             db.session.commit()
             return jsonify({
                 'deck cloned': request.json['deckname'],
-                'deckid': deckid,
+                'deckid': deckid
             })
-        except Exception:
-            pass
-    else:
-        return jsonify({'Not logged in.'})
 
+    else:
+        targetDeck = Deck.query.filter_by(
+            deckid=request.json['target']).first()
+        deckid = uuid.uuid4().hex
+        d = Deck(deckid=deckid,
+                 name=request.json['deckname'],
+                 author_public_name=request.json['author'],
+                 description='',
+                 author=current_user,
+                 inventory_type='',
+                 used_in_inventory={},
+                 cards=targetDeck.cards)
+        db.session.add(d)
+        db.session.commit()
+        return jsonify({
+            'deck cloned': request.json['deckname'],
+            'deckid': deckid,
+        })
 
 @app.route('/api/decks/import', methods=['POST'])
 def importDeck():

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
+import ResultCryptCapacity from './ResultCryptCapacity.jsx';
+import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 
 function TwdResultCrypt(props) {
@@ -73,7 +75,10 @@ function TwdResultCrypt(props) {
 
     return (
       <tr key={index} className={resultTrClass}>
-        <td className="quantity-no-buttons px-2">{card.q}</td>
+        <td className="quantity-no-buttons px-1">{card.q}</td>
+        <td className="capacity px-1" onClick={() => setModalCard(card.c)}>
+          <ResultCryptCapacity value={card.c['Capacity']} />
+        </td>
         {!props.isMobile ?
          <OverlayTrigger
            placement={props.placement ? props.placement : 'right'}
@@ -90,6 +95,9 @@ function TwdResultCrypt(props) {
            <ResultCryptName card={card.c} />
          </td>
         }
+        <td className="clan px-1" onClick={() => setModalCard(card.c)}>
+          <ResultCryptClan value={card.c['Clan']} />
+        </td>
       </tr>
     );
   });
@@ -97,11 +105,9 @@ function TwdResultCrypt(props) {
   return (
     <>
       <div className="px-1">
-        <b>
-          Crypt [{cryptTotal}] - {cryptGroups}
-        </b>
+        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
       </div>
-      <table width="100%">
+      <table className="twd-crypt-table">
         <tbody>{cardLines}</tbody>
       </table>
       {modalCard && (

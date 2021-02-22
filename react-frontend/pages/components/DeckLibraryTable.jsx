@@ -56,9 +56,11 @@ function DeckLibraryTable(props) {
     let inInventory = null;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-    let UsedPopover = null;
+    let UsedPopover;
+    let SoftUsedDescription;
+    let HardUsedDescription;
 
-    if (props.inventoryMode && props.decks[props.deckid]) {
+    if (props.inventoryMode && props.deckid) {
       cardInvType = card.i;
 
       if (Object.keys(props.inventoryLibrary).includes(card.c['Id'].toString())) {
@@ -67,7 +69,6 @@ function DeckLibraryTable(props) {
         inInventory = 0;
       }
 
-      let SoftUsedDescription;
       if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
         SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map((id, index) => {
           if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
@@ -84,7 +85,6 @@ function DeckLibraryTable(props) {
         });
       }
 
-      let HardUsedDescription;
       if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
         HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map((id, index) => {
           hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
@@ -232,13 +232,33 @@ function DeckLibraryTable(props) {
                 isMobile={props.isMobile}
               />
             </td>
-          ) : card.q ? (
-            <td className="quantity-no-buttons px-2">{card.q}</td>
-          ) : (
-            <td className="quantity-no-buttons px-2">
-              <div className="transparent">0</div>
-            </td>
-          )}
+          ) :  <>
+                 {props.inventoryMode ?
+                  <OverlayTrigger
+                    placement='right'
+                    overlay={
+                      <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+                    }
+                  >
+                    <td className="quantity-no-buttons px-2">
+                      <div className={
+                        inInventory < card.q
+                          ? "quantity px-1 mx-1 bg-red"
+                          : inInventory - hardUsedTotal < card.q
+                          ? "quantity px-1 mx-1 bg-yellow"
+                          : "quantity px-1"
+                      }>
+                        {card.q}
+                      </div>
+                    </td>
+                  </OverlayTrigger>
+                  :
+                  <td className="quantity-no-buttons px-2">
+                    {card.q ? card.q : <div className="transparent">0</div>}
+                  </td>
+                 }
+               </>
+          }
           {!props.isMobile ?
            <OverlayTrigger
              placement={props.placement ? props.placement : 'right'}

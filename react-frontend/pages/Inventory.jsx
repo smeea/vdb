@@ -7,10 +7,12 @@ import DeckNewLibraryCard from './components/DeckNewLibraryCard.jsx';
 import InventoryCrypt from './components/InventoryCrypt.jsx';
 import InventoryLibrary from './components/InventoryLibrary.jsx';
 import InventoryButtons from './components/InventoryButtons.jsx';
+import InventoryShowSelect from './components/InventoryShowSelect.jsx';
 
 function Inventory(props) {
   const [newCryptId, setNewCryptId] = useState(undefined);
   const [newLibraryId, setNewLibraryId] = useState(undefined);
+  const [category, setCategory] = useState('all');
 
   return (
     <Container className={props.isMobile ? "main-container" : "main-container py-4"}>
@@ -24,7 +26,7 @@ function Inventory(props) {
              cards={props.inventory.crypt}
              cardBase={props.cryptCardBase}
              setNewId={setNewCryptId}
-             inventoryMode={true}
+             inInventory={true}
            />
            {newCryptId && props.inventory.crypt[newCryptId] &&
             <InventoryCrypt
@@ -47,6 +49,7 @@ function Inventory(props) {
            {props.inventory.crypt &&
             (props.usedCards.softCrypt || props.usedCards.hardCrypt ) &&
             <InventoryCrypt
+              category={category}
               cards={props.inventory.crypt}
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -69,7 +72,7 @@ function Inventory(props) {
              cards={props.inventory.library}
              cardBase={props.libraryCardBase}
              setNewId={setNewLibraryId}
-             inventoryMode={true}
+             inInventory={true}
            />
            {newLibraryId && props.inventory.library[newLibraryId] &&
             <InventoryLibrary
@@ -89,10 +92,10 @@ function Inventory(props) {
               compact={true}
             />
            }
-
            {props.inventory.library &&
             (props.usedCards.softLibrary || props.usedCards.hardLibrary ) &&
             <InventoryLibrary
+              category={category}
               cards={props.inventory.library}
               showImage={props.showImage}
               setShowImage={props.setShowImage}
@@ -116,6 +119,12 @@ function Inventory(props) {
              setInventory={props.setInventory}
              isMobile={props.isMobile}
            />
+           <div className="px-4 py-2">
+             <InventoryShowSelect
+               category={category}
+               setCategory={setCategory}
+             />
+           </div>
          </Col>
        </Row>
        :

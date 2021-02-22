@@ -4,68 +4,56 @@ import Shuffle from '../../assets/images/icons/shuffle.svg'
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg'
 import At from '../../assets/images/icons/at.svg';
 
-function DeckSelect(props) {
-  const [state, setState] = useState(props.decks);
-
+function DeckSelectMy(props) {
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
   };
 
-  const decksPreOptions = Object.keys(state).map((i, index) => {
+  const preOptions = Object.keys(props.decks).map((i, index) => {
     return [
       {
         value: i,
         name: 'deck',
         label: (
           <div className="d-flex justify-content-between align-items-center">
-            {state[i]['name']}
+            {props.decks[i]['name']}
             <div className="d-flex align-items-center pl-2 small">
               {props.inventoryMode &&
                <div className="pr-2">
-                 {state[i].inventory_type == 's' &&
+                 {props.decks[i].inventory_type == 's' &&
                   <Shuffle/>
                  }
-                 {state[i].inventory_type == 'h' &&
+                 {props.decks[i].inventory_type == 'h' &&
                   <PinAngleFill/>
                  }
-                 {!state[i].inventory_type &&
+                 {!props.decks[i].inventory_type &&
                   <At/>
                  }
                </div>
               }
-              {new Date(state[i]['timestamp']).toISOString().slice(0, 10)}
+              {new Date(props.decks[i]['timestamp']).toISOString().slice(0, 10)}
             </div>
           </div>
         ),
       },
-      state[i]['timestamp'],
+      props.decks[i]['timestamp'],
     ];
   });
 
-  const decksOptions = decksPreOptions.sort(byTimestamp).map((i, index) => {
+  const options = preOptions.sort(byTimestamp).map((i, index) => {
     return i[0];
   });
 
-  useEffect(() => {
-    setState(props.decks);
-  }, [props.decks]);
-
   return (
     <Select
-      options={decksOptions}
+      options={options}
       isSearchable={false}
       name="decks"
       placeholder="Select Deck"
-      value={decksOptions.find((obj) => obj.value === props.activeDeck)}
-      onChange={(e) => {
-        if (e.value) {
-          props.setActiveDeck(e.value);
-        } else {
-          props.setActiveDeck(undefined);
-        }
-      }}
+      value={options.find((obj) => obj.value === props.activeDeck.deckid)}
+      onChange={(e) => props.setActiveDeck({src: 'my', deckid: e.value})}
     />
   );
 }
 
-export default DeckSelect;
+export default DeckSelectMy;

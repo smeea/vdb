@@ -16,7 +16,11 @@ def deckProxy(cards):
         for k, v in cards.items():
             k = int(k)
             if k > 200000 and v > 0:
-                name = get_crypt_by_id(k)['Name']
+                card = get_crypt_by_id(k)
+                name = card['Name']
+                if card['Adv']:
+                    name += 'adv'
+
                 crypt[letters_to_ascii(re.sub('[\\W]', '', name)).lower() + '.jpg'] = v
             elif k < 200000 and v > 0:
                 name = get_library_by_id(k)['Name']

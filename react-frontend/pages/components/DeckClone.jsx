@@ -6,6 +6,19 @@ function DeckClone(props) {
   const cloneDeck = () => {
     let newdeckid;
     const url = `${process.env.API_URL}decks/clone`;
+    const body = {
+      deckname: props.deck.name + ' [by ' + props.deck.author + ']',
+      author: props.deck.author,
+      src: props.activeDeck.src,
+    }
+
+    switch (props.activeDeck['src']) {
+    case 'shared':
+      body['deck'] = props.deck;
+    default:
+      body['target'] = props.deck.deckid;
+    }
+
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -13,12 +26,7 @@ function DeckClone(props) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        deckname: props.name + ' [by ' + props.author + ']',
-        author: props.author,
-        target: props.deckid,
-        deck: props.deck,
-      }),
+      body: JSON.stringify(body),
     };
 
     fetch(url, options)
