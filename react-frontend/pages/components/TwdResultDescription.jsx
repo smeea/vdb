@@ -64,9 +64,8 @@ function TwdResultDescription(props) {
             <div className="bp-125">
               { props.username &&
                 <DeckClone
-                  author={props.deck['player']}
-                  name={props.deck['name']}
-                  deckid={props.deck['deckid']}
+                  deck={props.deck}
+                  activeDeck={{src: 'twd', deckid: props.deck.deckid}}
                   getDecks={props.getDecks}
                   setActiveDeck={props.setActiveDeck}
                   setShowButtons={props.setShowButtons}
