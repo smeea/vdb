@@ -306,6 +306,15 @@ def listDecks():
             library = {}
             for k, v in deck.cards.items():
 
+                if k == 'undefined':
+                    print('user: ', current_user)
+                    print('deck: ', deck)
+                    cards = deck.cards.copy()
+                    del cards['undefined']
+                    deck.cards = cards
+                    db.session.commit()
+                    continue
+
                 int_k = int(k)
 
                 if int_k > 200000:

@@ -3,6 +3,11 @@
 * TWD location/winner form reset
 * Unify modal windows
 * Trim deck description for Deck-In-URL
+* Remove Save All for unlogged user
+* Remove Reflex from Library card search
+* KoT / HTTB / HB / Promo by BCP to BCP-only filters
+* Fix Anthology:LARP
+* Autofocus to modals (import, etc)
 
 # FIX MOBILE
 * Add card to deck from mobile to close modal
