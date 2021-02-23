@@ -10,6 +10,7 @@ def searchTwd(request):
         'event',
         'date',
         'players',
+        'libraryTotal',
         'crypt',
         'library',
         'clan',

@@ -11,6 +11,12 @@
   },
   "crypt": {},
   "library": {},
+  "libraryTotal": {
+    "60-67": false,
+    "68-75": false,
+    "76-83": false,
+    "84-90": false,
+  },
   "clan": "any",
   "capacity": "any",
   "disciplines": {},

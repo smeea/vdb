@@ -6,6 +6,7 @@ import json
 from random import random
 
 from searchTwd import searchTwd
+from searchTwdComponents import sanitizeTwd
 from searchCrypt import searchCrypt
 from searchLibrary import searchLibrary
 from searchCryptComponents import get_crypt_by_id
@@ -136,6 +137,8 @@ def showDeck(deckid):
             deck['description'] += 'Players: ' + str(deck['players']) + '\n'
             deck['description'] += 'Event: ' + deck['event'] + '\n'
             deck['description'] += 'Location: ' + deck['location'] + '\n'
+            if comments:
+                deck['description'] += '\n' + comments
             deck['author'] = deck['player']
             del (deck['player'])
             del (deck['disciplines'])
@@ -146,8 +149,8 @@ def showDeck(deckid):
             del (deck['players'])
             del (deck['timestamp'])
             del (deck['score'])
-            if comments:
-                deck['description'] += '\n' + comments
+            del (deck['cardtypes_ratio'])
+            del (deck['libraryTotal'])
 
             decks = { deckid: deck }
             return jsonify(decks)
@@ -656,11 +659,13 @@ def getPlayers():
 
 @app.route('/api/twd/new/<int:quantity>', methods=['GET'])
 def getNewTwd(quantity):
-    with open("twdNewDecks.json", "r") as twd_file:
+    with open("twdDecks.json", "r") as twd_file:
         twda = json.load(twd_file)
         decks = []
         for i in range(quantity):
-            decks.append(twda[i])
+            deck = sanitizeTwd(twda[i])
+
+            decks.append(deck)
 
         return jsonify(decks)
 
@@ -673,7 +678,9 @@ def getRandomTwd(quantity):
         counter = quantity
         while counter > 0:
             counter -= 1
-            decks.append(twda[round(random()*length)])
+            deck = sanitizeTwd(twda[round(random()*length)])
+
+            decks.append(deck)
 
         return jsonify(decks)
 

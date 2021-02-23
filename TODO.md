@@ -1,13 +1,8 @@
 # FIX
 * Deck select after clone
 * TWD location/winner form reset
-* Clear text form to update search
-* Align icons in buttons
-* Unify modal window
-* Double clan width for library cards
-* Double clan search
-* TWD deck size search
-* Pre-generate TWD-by-group entries for faster search
+* Unify modal windows
+* Trim deck description for Deck-In-URL
 
 # FIX MOBILE
 * Add card to deck from mobile to close modal

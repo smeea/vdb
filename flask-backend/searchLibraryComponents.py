@@ -41,8 +41,8 @@ def get_library_by_discipline(discipline, library):
 def get_library_by_clan(clan, library):
     match_cards = []
     for card in library:
-        if (card['Clan'].lower() == clan) or (clan == 'none'
-                                              and not card['Clan'].lower()):
+        clans = [c.lower() for c in card['Clan'].split('/')]
+        if (clan in clans) or (clan == 'none' and not card['Clan'].lower()):
             match_cards.append(card)
 
     return match_cards

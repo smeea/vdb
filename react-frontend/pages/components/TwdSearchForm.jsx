@@ -16,6 +16,7 @@ import TwdSearchFormTraitMonoclan from './TwdSearchFormTraitMonoclan.jsx';
 import TwdSearchFormDisciplines from './TwdSearchFormDisciplines.jsx';
 import TwdSearchFormCrypt from './TwdSearchFormCrypt.jsx';
 import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
+import TwdSearchFormLibraryTotal from './TwdSearchFormLibraryTotal.jsx';
 
 function TwdSearchForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
@@ -56,6 +57,12 @@ function TwdSearchForm(props) {
     },
     crypt: {},
     library: {},
+    libraryTotal: {
+      "60-67": false,
+      "68-75": false,
+      "76-83": false,
+      "84-90": false,
+    },
   };
 
   const [eventText, setEventText] = useState('');
@@ -138,6 +145,7 @@ function TwdSearchForm(props) {
       'cardtypes',
       'date',
       'players',
+      'libraryTotal',
     ];
 
     multiSelectForms.map((i) => {
@@ -325,6 +333,17 @@ function TwdSearchForm(props) {
             showImage={props.showImage}
             setShowImage={props.setShowImage}
             cardBase={props.libraryCardBase}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex px-0">
+          <label className="h6 mb-0">Library Size:</label>
+        </Col>
+        <Col xs={9} className="d-flex justify-content-end px-0">
+          <TwdSearchFormLibraryTotal
+            value={props.formState.libraryTotal}
+            onChange={handleMultiChange}
           />
         </Col>
       </Row>

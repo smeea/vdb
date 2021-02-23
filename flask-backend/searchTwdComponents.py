@@ -138,24 +138,12 @@ def get_twd_by_cardtypes(cardtype_input, twda=twda):
 
     for deck in twda:
         counter = 0
-        total = 0
-        types = {}
-
-        for k, v in deck['library'].items():
-            t = get_library_by_id(k)['Type'].lower()
-            q = v['q']
-            total += q
-
-            if t not in types:
-                types[t] = q
-            else:
-                types[t] += q
 
         for type, v in cardtypes.items():
-            if type in types:
-                ratio = types[type] / total
-                if ratio > v['min'] and ratio < v['max']:
-                    counter += 1
+            if v['max'] == 0 and type not in deck['cardtypes_ratio']:
+                counter += 1
+            if type in deck['cardtypes_ratio'] and v['min'] < deck['cardtypes_ratio'][type] < v['max']:
+                counter += 1
 
         if cardtypes_counter == counter:
             match_decks.append(deck)
@@ -232,3 +220,30 @@ def get_twd_by_traits(traits, twda=twda):
             match_decks.append(deck)
 
     return match_decks
+
+def get_twd_by_libraryTotal(total_input, twda=twda):
+    total_brackets = []
+    for k in total_input.keys():
+        total_brackets.append([int(i) for i in k.split('-')])
+
+    match_cards = []
+    for deck in twda:
+        for b in total_brackets:
+            if b[0] <= deck['libraryTotal'] <= b[1]:
+                match_cards.append(deck)
+                break
+
+    return match_cards
+
+
+def sanitizeTwd(deck):
+    del (deck['description'])
+    del (deck['disciplines'])
+    del (deck['format'])
+    del (deck['link'])
+    del (deck['timestamp'])
+    del (deck['score'])
+    del (deck['cardtypes_ratio'])
+    del (deck['libraryTotal'])
+
+    return(deck)
