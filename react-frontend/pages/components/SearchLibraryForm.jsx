@@ -250,6 +250,7 @@ function SearchLibraryForm(props) {
       <SearchLibraryFormDiscipline
         value={props.formState.discipline}
         onChange={handleSelectChange}
+        isMobile={props.isMobile}
       />
       <SearchLibraryFormClan
         value={props.formState.clan}

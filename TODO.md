@@ -3,6 +3,11 @@
 * TWD location/winner form reset
 * Clear text form to update search
 * Align icons in buttons
+* Unify modal window
+* Double clan width for library cards
+* Double clan search
+* TWD deck size search
+* Pre-generate TWD-by-group entries for faster search
 
 # FIX MOBILE
 * Add card to deck from mobile to close modal
@@ -17,7 +22,6 @@
 * Different sets images
 * Always-on opt-in deck-mode \ inventory-mode
 * Precon Decks: name, set to description, company from sets.csv
-* Non-logged Crypt/Library layout
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines

@@ -86,7 +86,7 @@ function SearchLibraryFormDiscipline(props) {
       <Col xs={9} className="d-inline px-0">
         <Select
           options={options}
-          isSearchable={false}
+          isSearchable={props.isMobile ? false : true}
           name="discipline"
           value={options.find((obj) => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}

@@ -51,7 +51,7 @@ function Decks(props) {
       if (props.inventory.crypt[card]) miss -= props.inventory.crypt[card].q;
 
       if (miss > 0 ) {
-        crypt[card] = deck.crypt[card];
+        crypt[card] = {...deck.crypt[card]};
         crypt[card].q = miss > deck.crypt[card].q ? deck.crypt[card].q : miss;
       }
     });
@@ -83,7 +83,7 @@ function Decks(props) {
       if (props.inventory.library[card]) miss -= props.inventory.library[card].q;
 
       if (miss > 0 ) {
-        library[card] = deck.library[card];
+        library[card] = {...deck.library[card]};
         library[card].q = miss > deck.library[card].q ? deck.library[card].q : miss;
       }
     });
