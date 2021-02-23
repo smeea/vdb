@@ -44,3 +44,4 @@
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
 * Flask-Restful
+* Check frontend input (quantity/cardid/etc) on backend
