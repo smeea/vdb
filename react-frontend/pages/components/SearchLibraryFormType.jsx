@@ -16,7 +16,6 @@ function SearchLibraryFormType(props) {
     'Political Action',
     'Power',
     'Reaction',
-    'Reflex',
     'Retainer',
   ];
 

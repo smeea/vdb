@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
+import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import AlertMessage from './AlertMessage.jsx';
 import ResultCryptTable from './ResultCryptTable.jsx';
 import ResultCryptTotal from './ResultCryptTotal.jsx';
@@ -64,10 +65,29 @@ function ResultCrypt(props) {
               <X viewBox="0 0 16 16" />
             </div>
           </div>
+          {props.inventoryMode ? (
+            <div
+              onClick={() => props.setInventoryMode(!props.inventoryMode)}
+              className="float-left-bottom inventory-on"
+            >
+              <div className="pt-2 float-inventory">
+                <ArchiveFill viewBox="0 0 16 16" />
+              </div>
+            </div>
+          ) : (
+            <div
+              onClick={() => props.setInventoryMode(!props.inventoryMode)}
+              className="float-left-bottom inventory-off"
+            >
+              <div className="pt-2 float-inventory">
+                <ArchiveFill viewBox="0 0 16 16" />
+              </div>
+            </div>
+          )}
           {props.addMode ? (
             <div
               onClick={() => props.setAddMode(!props.addMode)}
-              className="float-left-bottom add-on"
+              className="float-left-middle add-on"
             >
               <div className="pt-1 float-add">
                 <Plus viewBox="0 0 16 16" />
@@ -76,7 +96,7 @@ function ResultCrypt(props) {
           ) : (
             <div
               onClick={() => props.setAddMode(!props.addMode)}
-              className="float-left-bottom add-off"
+              className="float-left-middle add-off"
             >
               <div className="pt-1 float-add">
                 <Plus viewBox="0 0 16 16" />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import ArchiveFill from '../assets/images/icons/archive-fill.svg';
 import TwdResult from './components/TwdResult.jsx';
 import TwdSearchForm from './components/TwdSearchForm.jsx';
 
@@ -55,6 +56,29 @@ function Twd(props) {
           />
         </Col>
       </Row>
+      {props.isMobile &&
+       <>
+         {props.inventoryMode ? (
+           <div
+             onClick={() => props.setInventoryMode(!props.inventoryMode)}
+             className="float-left-bottom inventory-on"
+           >
+             <div className="pt-2 float-inventory">
+               <ArchiveFill viewBox="0 0 16 16" />
+             </div>
+           </div>
+         ) : (
+           <div
+             onClick={() => props.setInventoryMode(!props.inventoryMode)}
+             className="float-left-bottom inventory-off"
+           >
+             <div className="pt-2 float-inventory">
+               <ArchiveFill viewBox="0 0 16 16" />
+             </div>
+           </div>
+         )}
+       </>
+      }
     </Container>
   );
 }

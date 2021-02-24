@@ -29,16 +29,20 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
         Copy to Clipboard - Lackey
       </Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item href="" onClick={() => exportAll('text')}>
-        Save all decks - Text
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => exportAll('twd')}>
-        Save all decks - TWD
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => exportAll('lackey')}>
-        Save all decks - Lackey
-      </Dropdown.Item>
+      {props.username &&
+       <>
+         <Dropdown.Divider />
+         <Dropdown.Item href="" onClick={() => exportAll('text')}>
+           Save all decks - Text
+         </Dropdown.Item>
+         <Dropdown.Item href="" onClick={() => exportAll('twd')}>
+           Save all decks - TWD
+         </Dropdown.Item>
+         <Dropdown.Item href="" onClick={() => exportAll('lackey')}>
+           Save all decks - Lackey
+         </Dropdown.Item>
+       </>
+      }
     </>
   );
 

@@ -1,20 +1,17 @@
 # FIX
+* Alert message in Deck if wrong url
+* Autofocus to modals (import)
 * Deck select after clone
+* Clone button in TWD to show effect
 * TWD location/winner form reset
-* Unify modal windows
 * Trim deck description for Deck-In-URL
-* Remove Save All for unlogged user
-* Remove Reflex from Library card search
-* KoT / HTTB / HB / Promo by BCP to BCP-only filters
-* Fix Anthology:LARP
-* Autofocus to modals (import, etc)
+* Precon & Set search filters - KoT/HTTB/Etc by BCP to BCP-only filters & Anthology:LARP remove from BCP-only
 
 # FIX MOBILE
 * Add card to deck from mobile to close modal
 * Chance popover in draw in mobile
-* Add to crypt button to floating on mobile
+* Add to crypt/library in button to floating in Deck on mobile
 * Result table css+classes for mobile
-* Discipline images smaller on mobile
 
 # FEATURES
 * Deck revisions
@@ -22,6 +19,9 @@
 * Different sets images
 * Always-on opt-in deck-mode \ inventory-mode
 * Precon Decks: name, set to description, company from sets.csv
+* Rulings from KRCG
+* Export to CSV
+* Inventory data in TWD browser
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines
@@ -40,6 +40,7 @@
 * Screenshots to Bootstrap/Carousel
 * Online/Offline detection
 * Clear CSS
+* Images to avif (fallbacks to webp and jpeg)
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ

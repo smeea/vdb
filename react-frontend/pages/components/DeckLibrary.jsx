@@ -148,9 +148,9 @@ function DeckLibrary(props) {
   }
 
   return (
-    <div className="pt-4">
+    <>
       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-        <b>Library [{libraryTotal}]</b>
+    <b>Library [{libraryTotal}{(libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]</b>
         <div className="d-flex">
           <Button
             variant="outline-secondary"
@@ -224,7 +224,7 @@ function DeckLibrary(props) {
           {LibrarySideDeck}
         </div>
       )}
-    </div>
+    </>
   );
 }
 

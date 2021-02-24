@@ -576,6 +576,18 @@ div.float-right-middle
   text-align: center
   z-index: 1
 
+div.float-left-middle
+  position:fixed
+  width: 48px
+  height: 48px
+  bottom: 75px
+  left: 15px
+  color: white
+  border-radius: 25px
+  text-align: center
+  z-index: 1
+
+
 div.float-left-bottom
   position:fixed
   width: 48px
@@ -595,11 +607,13 @@ div.search
   background-color: #709070
   opacity: 0.75
 
-div.add-on
+div.add-on,
+div.inventory-on
   background-color: #A0A0A0
   opacity: 0.75
 
-div.add-off
+div.add-off,
+div.inventory-off
   background-color: #707070
   opacity: 0.75
 
@@ -621,6 +635,10 @@ div.float-menu svg
 
 div.float-add svg
   width: 90%
+  height: auto
+
+div.float-inventory svg
+  width: 60%
   height: auto
 
 .modal-tooltip

@@ -28,6 +28,7 @@ function DeckButtons(props) {
           <DeckExport
             activeDeck={props.activeDeck}
             setShowButtons={props.setShowButtons}
+            username={props.username}
           />
         </div>
       )}

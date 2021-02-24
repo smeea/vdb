@@ -100,10 +100,12 @@ function TwdResultLibraryKeyCards(props) {
            <ResultLibraryName card={card.c} />
          </td>
         }
-        <td className="disciplines" onClick={() => handleClick()}>
-          <ResultLibraryDisciplines value={card.c['Discipline']} />
-          <ResultLibraryClan value={card.c['Clan']} />
-        </td>
+        {!props.isMobile &&
+         <td className="disciplines" onClick={() => handleClick()}>
+           <ResultLibraryDisciplines value={card.c['Discipline']} />
+           <ResultLibraryClan value={card.c['Clan']} />
+         </td>
+        }
       </tr>
     );
   });

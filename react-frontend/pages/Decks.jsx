@@ -4,16 +4,16 @@ import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from '../assets/images/icons/shuffle.svg'
 import At from '../assets/images/icons/at.svg';
 import PinAngleFill from '../assets/images/icons/pin-angle-fill.svg'
-// import InfoCircle from '../assets/images/icons/info-circle.svg';
+import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
+import ArchiveFill from '../assets/images/icons/archive-fill.svg';
 // import AlertMessage from './components/AlertMessage.jsx';
 import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckSelectPrecon from './components/DeckSelectPrecon.jsx';
 import DeckButtons from './components/DeckButtons.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
 import DeckLibrary from './components/DeckLibrary.jsx';
-// import DeckImport from './components/DeckImport.jsx';
 import DeckChangeName from './components/DeckChangeName.jsx';
 import DeckChangeAuthor from './components/DeckChangeAuthor.jsx';
 import DeckChangeDescription from './components/DeckChangeDescription.jsx';
@@ -221,16 +221,16 @@ function Decks(props) {
 
   return (
     <Container className={props.isMobile ? "deck-container" : "deck-container py-4"}>
-      <Row>
+      <Row className="mx-0">
         <Col lg={1}>
         </Col>
         <Col lg={9} className="px-0 px-lg-3">
-          <Row>
+          <Row className="pb-2 pb-lg-4">
             <Col lg={5} className="px-0 px-lg-3">
-              <Row className="align-items-center justify-content-end mx-0 pb-2">
+              <Row className="align-items-center justify-content-end mx-0">
                   <Col className="px-0">
-                    <div className={props.inventoryMode ? "d-flex" : "d-inline"}>
-                      <div className="w-100">
+                    <div className={props.inventoryMode ? "d-flex" : props.isMobile ? "d-flex justify-content-between" : "d-inline"}>
+                      <div className={props.isMobile ? "w-75" : "w-100"}>
                         {selectFrom == 'my' ?
                          <DeckSelectMy
                            decks={props.decks}
@@ -245,17 +245,26 @@ function Decks(props) {
                          />
                         }
                       </div>
-                      {props.inventoryMode && isAuthor && props.deckRouter(props.activeDeck) &&
-                       <div className="d-flex pl-2">
-                         <Button variant='outline-secondary' onClick={() => toggleInventoryState()}>
-                           <div className="d-flex align-items-center">
-                             {!props.deckRouter(props.activeDeck).inventory_type && <At/> }
-                             {props.deckRouter(props.activeDeck).inventory_type == "s" && <Shuffle/> }
-                             {props.deckRouter(props.activeDeck).inventory_type == "h" && <PinAngleFill/> }
-                           </div>
-                         </Button>
-                       </div>
-                      }
+                      <div className="d-flex">
+                        {props.inventoryMode && isAuthor && props.deckRouter(props.activeDeck) &&
+                         <div className="d-flex pl-2">
+                           <Button variant='outline-secondary' onClick={() => toggleInventoryState()}>
+                             <div className="d-flex align-items-center">
+                               {!props.deckRouter(props.activeDeck).inventory_type && <At/> }
+                               {props.deckRouter(props.activeDeck).inventory_type == "s" && <Shuffle/> }
+                               {props.deckRouter(props.activeDeck).inventory_type == "h" && <PinAngleFill/> }
+                             </div>
+                           </Button>
+                         </div>
+                        }
+                        {props.isMobile && props.deckRouter(props.activeDeck) &&
+                         <div className="d-flex pl-2">
+                           <Button variant="outline-secondary" onClick={() => setShowInfo(!showInfo)}>
+                             <InfoCircle />
+                           </Button>
+                         </div>
+                        }
+                      </div>
                     </div>
                     <Form className="py-1 my-0">
                       {props.username &&
@@ -280,22 +289,13 @@ function Decks(props) {
                       />
                     </Form>
                   </Col>
-                {/* {props.deckRouter(props.activeDeck) && props.isMobile && ( */}
-                {/*   <> */}
-                {/*     <Col xs="auto" className="d-flex justify-content-between align-items-center px-0 px-lg-3"> */}
-                {/*       <Button variant="outline-secondary" onClick={() => setShowInfo(!showInfo)}> */}
-                {/*         <InfoCircle /> */}
-                {/*       </Button> */}
-                {/*     </Col> */}
-                {/*   </> */}
-                {/* )} */}
               </Row>
             </Col>
             <Col lg={7} className="px-0 px-lg-3">
               {(showInfo || (!props.isMobile && props.deckRouter(props.activeDeck))) && (
                 <>
-                  <Row className="mx-0 pb-2">
-                    <Col md={7} className="pl-0 pr-1">
+                  <Row className={props.isMobile ? "mx-0" : "mx-0 pb-2"}>
+                    <Col md={7} className={props.isMobile ? "px-0" : "pl-0 pr-1"}>
                       <DeckChangeName
                         name={props.deckRouter(props.activeDeck).name}
                         deckid={props.activeDeck.deckid}
@@ -304,7 +304,7 @@ function Decks(props) {
                         isMobile={props.isMobile}
                       />
                     </Col>
-                    <Col md={5} className="pl-1 pr-0">
+                    <Col md={5} className={props.isMobile ? "px-0" : "pl-1 pr-0"}>
                       <DeckChangeAuthor
                         author={props.deckRouter(props.activeDeck).author}
                         deckid={props.activeDeck.deckid}
@@ -329,7 +329,11 @@ function Decks(props) {
               )}
             </Col>
           </Row>
-
+          {/* {queryId && */}
+          {/*  <AlertMessage className="error-message p-2 mt-4"> */}
+          {/*    <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b> */}
+          {/*  </AlertMessage> */}
+          {/* } */}
           {props.deckRouter(props.activeDeck) && (
             <Row>
               <Col lg={7} className="px-0 px-lg-3">
@@ -355,7 +359,7 @@ function Decks(props) {
                   deckUpdate={deckUpdate}
                 />
               </Col>
-              <Col lg={5} className="px-0 px-lg-3">
+              <Col lg={5} className="pt-4 pt-lg-0 px-0 px-lg-3">
                 <DeckLibrary
                   cardAdd={props.cardAdd}
                   cardChange={props.cardChange}
@@ -380,32 +384,28 @@ function Decks(props) {
             </Row>
           )}
         </Col>
-        <Col lg={2} className="px-0 px-lg-3">
-          <DeckButtons
-            isMobile={props.isMobile}
-            isAuthor={isAuthor}
-            isWide={props.isWide}
-            inventoryMode={props.inventoryMode}
-            username={props.username}
-            deck={props.deckRouter(props.activeDeck)}
-            getDecks={props.getDecks}
-            activeDeck={props.activeDeck}
-            setActiveDeck={props.setActiveDeck}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
-            setShowInfo={setShowInfo}
-            setShowButtons={setShowButtons}
-            missingCrypt={missingCrypt}
-            missingLibrary={missingLibrary}
-          />
-        </Col>
+        {!props.isMobile &&
+         <Col lg={2} className="px-0 px-lg-3">
+           <DeckButtons
+             isMobile={props.isMobile}
+             isAuthor={isAuthor}
+             isWide={props.isWide}
+             inventoryMode={props.inventoryMode}
+             username={props.username}
+             deck={props.deckRouter(props.activeDeck)}
+             getDecks={props.getDecks}
+             activeDeck={props.activeDeck}
+             setActiveDeck={props.setActiveDeck}
+             showImage={props.showImage}
+             setShowImage={props.setShowImage}
+             setShowInfo={setShowInfo}
+             setShowButtons={setShowButtons}
+             missingCrypt={missingCrypt}
+             missingLibrary={missingLibrary}
+           />
+         </Col>
+        }
       </Row>
-      {/* {props.sharedDeck && ( */}
-      {/*   <AlertMessage */}
-      {/*     className="error-message" */}
-      {/*     value={<b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>} */}
-      {/*   /> */}
-      {/* )} */}
       {props.isMobile && (
         <>
           <div
@@ -458,6 +458,29 @@ function Decks(props) {
           </Modal.Body>
         </Modal>
       )}
+      {props.isMobile &&
+       <>
+         {props.inventoryMode ? (
+           <div
+             onClick={() => props.setInventoryMode(!props.inventoryMode)}
+             className="float-left-bottom inventory-on"
+           >
+             <div className="pt-2 float-inventory">
+               <ArchiveFill viewBox="0 0 16 16" />
+             </div>
+           </div>
+         ) : (
+           <div
+             onClick={() => props.setInventoryMode(!props.inventoryMode)}
+             className="float-left-bottom inventory-off"
+           >
+             <div className="pt-2 float-inventory">
+               <ArchiveFill viewBox="0 0 16 16" />
+             </div>
+           </div>
+         )}
+       </>
+      }
     </Container>
   );
 }

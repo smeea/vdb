@@ -134,10 +134,10 @@ function DeckCrypt(props) {
   }, [props.changeTimer, props.deckid]);
 
   return (
-    <div className="pt-4">
+    <>
       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
         <b>
-          Crypt [{cryptTotal}] - {cryptGroups}
+          Crypt [{cryptTotal}{cryptTotal < 12 && ' of 12+'}] - {cryptGroups}
         </b>
         <div className="d-flex">
           <Button
@@ -258,7 +258,7 @@ function DeckCrypt(props) {
           />
         </div>
       )}
-    </div>
+    </>
   );
 }
 

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Spinner, Overlay, Button } from 'react-bootstrap';
+import { Spinner, Overlay } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
+import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchCryptFormDisciplines from './SearchCryptFormDisciplines.jsx';
 import SearchCryptFormVirtues from './SearchCryptFormVirtues.jsx';
@@ -402,6 +403,25 @@ function SearchCryptForm(props) {
               )}
             </Overlay>
           </div>
+          {props.inventoryMode ? (
+            <div
+              onClick={() => props.setInventoryMode(!props.inventoryMode)}
+              className="float-left-bottom inventory-on"
+            >
+              <div className="pt-2 float-inventory">
+                <ArchiveFill viewBox="0 0 16 16" />
+              </div>
+            </div>
+          ) : (
+            <div
+              onClick={() => props.setInventoryMode(!props.inventoryMode)}
+              className="float-left-bottom inventory-off"
+            >
+              <div className="pt-2 float-inventory">
+                <ArchiveFill viewBox="0 0 16 16" />
+              </div>
+            </div>
+          )}
         </>
       )}
     </form>

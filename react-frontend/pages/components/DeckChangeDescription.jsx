@@ -8,7 +8,7 @@ import ChatLeftQuoteFill from '../../assets/images/icons/chat-left-quote-fill.sv
 function DeckDescription(props) {
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
-  const [folded, setFolded] = useState(true);
+  const [folded, setFolded] = useState(props.isMobile ? false : true);
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -54,11 +54,13 @@ function DeckDescription(props) {
           readOnly={!props.isAuthor}
           style={{ background: 'white' }}
         />
-        <InputGroup.Append>
-          <Button variant="outline-secondary" onClick={() => setFolded(!folded)}>
-            {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
-          </Button>
-        </InputGroup.Append>
+        {!props.isMobile &&
+         <InputGroup.Append>
+           <Button variant="outline-secondary" onClick={() => setFolded(!folded)}>
+             {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
+           </Button>
+         </InputGroup.Append>
+        }
         {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
             <Button variant={buttonState ? "success" : "outline-secondary"} type="submit">

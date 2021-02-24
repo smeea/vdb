@@ -39,46 +39,50 @@ function Library(props) {
             )}
             {props.deckRouter(props.activeDeck) && props.showDeck && (
               <>
-                <DeckCrypt
-                  changeTimer={props.changeTimer}
-                  cardAdd={props.cardAdd}
-                  cardChange={props.cardChange}
-                  deckid={props.activeDeck.deckid}
-                  cards={props.deckRouter(props.activeDeck).crypt}
-                  showImage={props.showImage}
-                  setShowImage={props.setShowImage}
-                  isAuthor={true}
-                  isMobile={props.isMobile}
-                  isWide={props.isWide}
-                  cardBase={props.cryptCardBase}
-                  inventoryMode={props.inventoryMode}
-                  inventoryCrypt={props.inventory.crypt}
-                  usedCards={{
-                    soft: props.usedCards.softCrypt,
-                    hard: props.usedCards.hardCrypt,
-                  }}
-                  decks={props.decks}
-                  inSearch={true}
-                />
-                <DeckLibrary
-                  cardAdd={props.cardAdd}
-                  cardChange={props.cardChange}
-                  deckid={props.activeDeck.deckid}
-                  cards={props.deckRouter(props.activeDeck).library}
-                  showImage={props.showImage}
-                  setShowImage={props.setShowImage}
-                  isAuthor={true}
-                  isMobile={props.isMobile}
-                  cardBase={props.libraryCardBase}
-                  inventoryMode={props.inventoryMode}
-                  inventoryLibrary={props.inventory.library}
-                  usedCards={{
-                    soft: props.usedCards.softLibrary,
-                    hard: props.usedCards.hardLibrary,
-                  }}
-                  decks={props.decks}
-                  inSearch={true}
-                />
+                <div className="pt-4">
+                  <DeckCrypt
+                    changeTimer={props.changeTimer}
+                    cardAdd={props.cardAdd}
+                    cardChange={props.cardChange}
+                    deckid={props.activeDeck.deckid}
+                    cards={props.deckRouter(props.activeDeck).crypt}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                    isAuthor={true}
+                    isMobile={props.isMobile}
+                    isWide={props.isWide}
+                    cardBase={props.cryptCardBase}
+                    inventoryMode={props.inventoryMode}
+                    inventoryCrypt={props.inventory.crypt}
+                    usedCards={{
+                      soft: props.usedCards.softCrypt,
+                      hard: props.usedCards.hardCrypt,
+                    }}
+                    decks={props.decks}
+                    inSearch={true}
+                  />
+                </div>
+                <div className="pt-4">
+                  <DeckLibrary
+                    cardAdd={props.cardAdd}
+                    cardChange={props.cardChange}
+                    deckid={props.activeDeck.deckid}
+                    cards={props.deckRouter(props.activeDeck).library}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                    isAuthor={true}
+                    isMobile={props.isMobile}
+                    cardBase={props.libraryCardBase}
+                    inventoryMode={props.inventoryMode}
+                    inventoryLibrary={props.inventory.library}
+                    usedCards={{
+                      soft: props.usedCards.softLibrary,
+                      hard: props.usedCards.hardLibrary,
+                    }}
+                    decks={props.decks}
+                    inSearch={true}
+                  />
+                </div>
               </>
             )}
           </Col>
@@ -110,6 +114,7 @@ function Library(props) {
               setShowSearch={props.setShowSearch}
               setResults={props.setResults}
               inventoryMode={props.inventoryMode}
+              setInventoryMode={props.setInventoryMode}
               inventoryLibrary={props.inventory.library}
               usedCards={{
                 soft: props.usedCards.softLibrary,
@@ -143,6 +148,7 @@ function Library(props) {
             isMobile={props.isMobile}
             cardBase={props.libraryCardBase}
             inventoryMode={props.inventoryMode}
+            setInventoryMode={props.setInventoryMode}
           />
         </Col>
         {!props.username && !props.isMobile && <Col xl={1} />}

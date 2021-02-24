@@ -15,7 +15,7 @@ with open("vtescrypt.json", "r") as crypt_file, open("vteslib.json", "r") as lib
 
     ids = {}
 
-    for i in response.json()['result']:
+    for idx, i in enumerate(response.json()['result']):
         if ' (ADV)' in i['name']:
             for card in crypt:
                 if letters_to_ascii(i['name'][:-6].lower()) in card['ASCII Name'].lower() and card['Adv']:
@@ -23,11 +23,11 @@ with open("vtescrypt.json", "r") as crypt_file, open("vteslib.json", "r") as lib
 
         else:
             for card in crypt:
-                if letters_to_ascii(i['name'].lower()) in card['ASCII Name'].lower() and not card['Adv']:
+                if letters_to_ascii(i['name'].lower()) == card['ASCII Name'].lower() or i['name'].lower() == card['Name'].lower() and not card['Adv']:
                     ids[str(i['id'])] = card['Id']
 
         for card in library:
-            if letters_to_ascii(i['name'].lower()) in card['ASCII Name'].lower():
+            if letters_to_ascii(i['name'].lower()) == card['ASCII Name'].lower() or i['name'].lower() == card['Name'].lower():
                 ids[str(i['id'])] = card['Id']
 
     # json.dump(ids, amaranth_ids, separators=(',', ':'))

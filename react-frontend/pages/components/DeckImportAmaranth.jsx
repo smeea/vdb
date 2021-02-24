@@ -109,28 +109,31 @@ function DeckImportAmaranth(props) {
       <Modal.Body>
         <FormControl
           placeholder="Amaranth Deck URL e.g. https://amaranth.co.nz/deck#my-best-deck-id"
+          className="deck-import mb-3"
           type="text"
           name="url"
           value={deckUrl}
           onChange={(event) => setDeckUrl(event.target.value)}
           ref={refUrl}
         />
-        {!spinnerState ? (
-          <Button variant="outline-secondary" onClick={handleImportButton}>
-            Import
-          </Button>
-        ) : (
-          <Button variant="outline-secondary" onClick={handleImportButton}>
-            <Spinner
-              as="span"
-              animation="border"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            />
-            Import
-          </Button>
-        )}
+        <div className="d-flex justify-content-end">
+          {!spinnerState ? (
+            <Button variant="outline-secondary" onClick={handleImportButton}>
+              Import
+            </Button>
+          ) : (
+            <Button variant="outline-secondary" onClick={handleImportButton}>
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />
+              Import
+            </Button>
+          )}
+        </div>
         <Overlay
           show={emptyUrl}
           target={refUrl.current}

@@ -59,24 +59,24 @@ function DeckImportText(props) {
   };
 
   const placeholder = `\
-  Paste deck here (text from TWD, Amaranth, Lackey).
+Paste deck here (text from TWD, Amaranth, Lackey).
 
-  It accepts (but work without also) headers like:
-  Deck Name: xxxx
-  Author: xxxx
-  Description: xxxx
+It accepts (but work without also) headers like:
+Deck Name: xxxx
+Author: xxxx
+Description: xxxx
 
-  It accept crypt like (even lowercase):
-  5x Cybele	   10  ANI DAI OBF PRE SER THA	Baali:4
-  5x Cybele
-  5 Cybele
+It accept crypt like (even lowercase):
+5x Cybele	   10  ANI DAI OBF PRE SER THA	Baali:4
+5x Cybele
+5 Cybele
 
-  It accept library like (even lowercase):
-  12x Ashur Tablets
-  12 Ashur Tablets
+It accept library like (even lowercase):
+12x Ashur Tablets
+12 Ashur Tablets
 
-  It will skip other (useless) lines, you don't have to remove it yourself.
-  `;
+It will skip other (useless) lines, you don't have to remove it yourself.
+`;
 
   return (
     <Modal
@@ -91,29 +91,32 @@ function DeckImportText(props) {
       <Modal.Body>
         <FormControl
           as="textarea"
-          className="form-control deck-import"
+          className="mb-3"
           rows="25"
           value={deckText}
           placeholder={placeholder}
           onChange={handleChange}
           ref={refText}
+          autoFocus
         />
-        {!spinnerState ? (
-          <Button variant="outline-secondary" onClick={importDeckFromText}>
-            Import
-          </Button>
-        ) : (
-          <Button variant="outline-secondary" onClick={importDeckFromText}>
-            <Spinner
-              as="span"
-              animation="border"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            />
-            Import
-          </Button>
-        )}
+        <div className="d-flex justify-content-end">
+          {!spinnerState ? (
+            <Button variant="outline-secondary" onClick={importDeckFromText}>
+              Import
+            </Button>
+          ) : (
+            <Button variant="outline-secondary" onClick={importDeckFromText}>
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />
+              Import
+            </Button>
+          )}
+        </div>
         <Overlay
           show={emptyDeckText}
           target={refText.current}

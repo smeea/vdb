@@ -175,7 +175,7 @@ function ResultCryptTable(props) {
                 <>
                   {props.inventoryMode ? (
                     <>
-                      {deckInvType && !props.inSearch ?
+                      {deckInvType && !props.inSearch && !props.isMobile ?
                        <td className="pt-2 left-offset-8 opacity-075">
                          <div
                            className={cardInvType ? "" : "opacity-025"}

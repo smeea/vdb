@@ -621,6 +621,8 @@ function App(props) {
                 setResults={setTwdResults}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
+                inventoryMode={inventoryMode}
+                setInventoryMode={setInventoryMode}
                 addMode={addMode}
                 formState={twdFormState}
                 setFormState={setTwdFormState}
@@ -664,6 +666,7 @@ function App(props) {
                 setSharedDeck={setSharedDeck}
                 inventory={inventory}
                 inventoryMode={inventoryMode}
+                setInventoryMode={setInventoryMode}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 showImage={showImage}
@@ -697,6 +700,7 @@ function App(props) {
                 setResults={setCryptResults}
                 inventory={inventory}
                 inventoryMode={inventoryMode}
+                setInventoryMode={setInventoryMode}
                 addMode={addMode}
                 setAddMode={setAddMode}
                 formState={cryptFormState}
@@ -729,6 +733,7 @@ function App(props) {
                 setResults={setLibraryResults}
                 inventory={inventory}
                 inventoryMode={inventoryMode}
+                setInventoryMode={setInventoryMode}
                 addMode={addMode}
                 setAddMode={setAddMode}
                 formState={libraryFormState}

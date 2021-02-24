@@ -111,17 +111,23 @@ function TwdResultDescription(props) {
             </Col>
             <Col xs={5} className="px-0 mx-0">
               <div className="py-2">
-                <TwdOpenDeckButton deckid={props.deck['deckid']} />
-                { props.username &&
-                  <DeckClone
-                    author={props.deck['player']}
-                    name={props.deck['name']}
+                <div className="bp-125">
+                  <TwdOpenDeckButton
                     deckid={props.deck['deckid']}
-                    getDecks={props.getDecks}
                     setActiveDeck={props.setActiveDeck}
-                    setShowButtons={props.setShowButtons}
                   />
-                }
+                </div>
+                <div className="bp-125">
+                  { props.username &&
+                    <DeckClone
+                      deck={props.deck}
+                      activeDeck={{src: 'twd', deckid: props.deck.deckid}}
+                      getDecks={props.getDecks}
+                      setActiveDeck={props.setActiveDeck}
+                      setShowButtons={props.setShowButtons}
+                    />
+                  }
+                </div>
               </div>
             </Col>
           </Row>
