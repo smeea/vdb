@@ -101,6 +101,7 @@ function DeckImportAmaranth(props) {
     <Modal
       show={props.show}
       onHide={props.handleClose}
+      onShow={() => refUrl.current.focus()}
       animation={false}
       size="lg"
     >

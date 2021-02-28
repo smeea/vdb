@@ -1,10 +1,7 @@
 # FIX
 * Alert message in Deck if wrong url
-* Autofocus to modals (import)
 * Deck select after clone
 * TWD location/winner form reset
-* Set search filters - HTTPAnthology, BCP
-* Precon search - HttB
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Test history.push with deckid

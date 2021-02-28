@@ -82,6 +82,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
     <Modal
       show={props.show}
       onHide={props.handleClose}
+      onShow={() => refText.current.focus()}
       animation={false}
       size="lg"
     >
