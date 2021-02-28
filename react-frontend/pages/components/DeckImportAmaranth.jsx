@@ -25,20 +25,20 @@ function DeckImportAmaranth(props) {
       setEmptyUrl(false);
       setSpinnerState(true);
 
-      // if (idReference) {
-      getDeckFromUrl(deckUrl)
-        .then((deck) => importDeckFromAmaranth(deck))
-        .then(() => {
-          props.isMobile && props.setShowInfo(true);
-          setDeckUrl('');
-          setSpinnerState(false);
-          props.handleClose();
-        })
-        .catch((error) => {
-          setImportError(true);
-          setSpinnerState(false);
-        });
-      // }
+      if (idReference) {
+        getDeckFromUrl(deckUrl)
+          .then((deck) => importDeckFromAmaranth(deck))
+          .then(() => {
+            props.isMobile && props.setShowInfo(true);
+            setDeckUrl('');
+            setSpinnerState(false);
+            props.handleClose();
+          })
+          .catch((error) => {
+            setImportError(true);
+            setSpinnerState(false);
+          });
+      }
     } else {
       setEmptyUrl(true);
     }
@@ -92,9 +92,9 @@ function DeckImportAmaranth(props) {
     return deck.result;
   };
 
-  // useEffect(() => {
-  //   if (!idReference) getIdReference();
-  // }, []);
+  useEffect(() => {
+    if (!idReference) getIdReference();
+  }, []);
 
   return (
     <Modal

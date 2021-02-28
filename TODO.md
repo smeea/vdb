@@ -1,4 +1,5 @@
 # FIX
+* Capacity avg exclude Anarch Convert
 * Alert message in Deck if wrong url
 * Deck select after clone
 * TWD location/winner form reset
