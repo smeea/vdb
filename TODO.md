@@ -1,11 +1,11 @@
 # FIX
-* Capacity avg exclude Anarch Convert
 * Alert message in Deck if wrong url
 * Deck select after clone
 * TWD location/winner form reset
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Test history.push with deckid
+* Input forms margins
 
 # FIX MOBILE
 * Result table css+classes for mobile

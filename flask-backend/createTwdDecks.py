@@ -56,14 +56,20 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
             deck['player'] = 'Unknown'
 
         totalCapacity = 0
+        totalCrypt = 0
 
         for card in i['crypt']['cards']:
-            totalCapacity += card['count'] * get_crypt_by_id(card['id'])['Capacity']
+
+            # Skip Anarch Convert
+            if card['id'] != 200076:
+                totalCapacity += card['count'] * get_crypt_by_id(card['id'])['Capacity']
+                totalCrypt += card['count']
+
             deck['crypt'][card['id']] = {
                 'q': card['count']
             }
 
-        deck['capacity'] = totalCapacity / i['crypt']['count']
+        deck['capacity'] = totalCapacity / totalCrypt
 
         disciplines = []
 

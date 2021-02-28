@@ -65,10 +65,10 @@ function InventoryCrypt(props) {
   const sortedCards = cards.sort(byName);
 
   return (
-    <div className="pt-4">
+    <>
       {!props.compact &&
        <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-           <b>Crypt {props.category != "nok" && <>[{total}]</>}</b>
+         <b>Crypt {props.category != "nok" && <>[{total}]</>}</b>
        </div>
       }
       <InventoryCryptTable
@@ -83,7 +83,7 @@ function InventoryCrypt(props) {
         isWide={props.isWide}
         compact={props.compact}
       />
-    </div>
+    </>
   );
 }
 

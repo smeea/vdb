@@ -10,7 +10,7 @@ function InventoryDelete(props) {
   const handleConfirm = () => {
     deleteInventory();
     setShowConfirmation(false);
-    // props.setShowButtons(false);
+    props.setShowButtons(false);
   };
 
   const deleteInventory = () => {

@@ -47,17 +47,17 @@ function SearchCryptFormTraits(props) {
 
   const traitsRightforms = traitsRight.map((i, index) => {
     return (
-      <div key={index} className="mr-2 custom-control custom-checkbox">
+      <div key={index} className="mr-0 custom-control custom-checkbox">
         <input
           name="traits"
           id={`traits-${i[0]}`}
           value={i[0]}
-          className="mr-2 custom-control-input"
+          className="mr-0 custom-control-input"
           type="checkbox"
           checked={props.value[i[0]]}
           onChange={(e) => props.onChange(e)}
         />
-        <label htmlFor={`traits-${i[0]}`} className="mr-2 custom-control-label">
+        <label htmlFor={`traits-${i[0]}`} className="mr-0 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -72,10 +72,10 @@ function SearchCryptFormTraits(props) {
         </Col>
       </Row>
       <Row className="mx-0">
-        <Col xs={6} className="d-inline">
+        <Col xs={6} className="d-inline pr-0">
           {traitsLeftforms}
         </Col>
-        <Col xs={6} className="d-inline">
+        <Col xs={6} className="d-inline pr-0">
           {traitsRightforms}
         </Col>
       </Row>

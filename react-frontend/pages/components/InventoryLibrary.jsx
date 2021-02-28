@@ -116,14 +116,14 @@ function InventoryLibrary(props) {
   }
 
   return (
-    <div className="pt-4">
+    <>
       {!props.compact &&
        <div className="d-flex align-items-center justify-content-between pl-2 info-message">
          <b>Library {props.category != "nok" && <>[{total}]</>}</b>
        </div>
       }
       {LibraryDeck}
-    </div>
+    </>
   );
 }
 

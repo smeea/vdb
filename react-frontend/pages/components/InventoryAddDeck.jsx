@@ -11,7 +11,10 @@ function InventoryAddDeck(props) {
       <Dropdown.Item
         href=""
         key={index}
-        onClick={() => props.inventoryDeckAdd(props.decks[deck])}
+        onClick={() => {
+          props.inventoryDeckAdd(props.decks[deck]);
+          props.setShowButtons(false);
+        }}
       >
         <div className="d-flex align-items-center">
           <div className="pr-3">

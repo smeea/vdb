@@ -729,8 +729,6 @@ def searchQuickRoute():
     if library != 400:
         result += library
 
-    print(result)
-
     if result:
         return jsonify(result)
     else:

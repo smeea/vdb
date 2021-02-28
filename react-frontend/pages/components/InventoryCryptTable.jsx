@@ -138,7 +138,7 @@ function InventoryCryptTable(props) {
               </div>
             </OverlayTrigger>
           </td>
-          {!props.isMobile && (softUsedMax || hardUsedTotal) ?
+          {softUsedMax || hardUsedTotal ?
            <td className="used">
              { softUsedMax > 0 &&
                <div className="d-flex align-items-center justify-content-center">
@@ -157,18 +157,20 @@ function InventoryCryptTable(props) {
           <td className="capacity" onClick={() => handleClick()}>
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
-          <td
-            className='disciplines'
-            onClick={() => handleClick()}
-          >
-            <ResultCryptDisciplines
-              value={card.c['Disciplines']}
-              disciplinesSet={props.disciplinesSet}
-              keyDisciplines={props.keyDisciplines}
-              nonKeyDisciplines={props.nonKeyDisciplines}
-              isMobile={props.isMobile}
-            />
-          </td>
+          {!props.isMobile &&
+           <td
+             className='disciplines'
+             onClick={() => handleClick()}
+           >
+             <ResultCryptDisciplines
+               value={card.c['Disciplines']}
+               disciplinesSet={props.disciplinesSet}
+               keyDisciplines={props.keyDisciplines}
+               nonKeyDisciplines={props.nonKeyDisciplines}
+               isMobile={props.isMobile}
+             />
+           </td>
+          }
           {!props.isMobile ?
            <OverlayTrigger
              placement={props.placement ? props.placement : 'right'}
@@ -185,25 +187,12 @@ function InventoryCryptTable(props) {
              <ResultCryptName card={card.c} />
            </td>
           }
-          {props.isMobile || !props.isWide ? (
-            <td className="clan-group" onClick={() => handleClick()}>
-              <div>
-                <ResultCryptClan value={card.c['Clan']} />
-              </div>
-              <div className="d-flex small justify-content-end">
-                <ResultCryptGroup value={card.c['Group']} />
-              </div>
-            </td>
-          ) : (
-            <>
-              <td className="clan" onClick={() => handleClick()}>
-                <ResultCryptClan value={card.c['Clan']} />
-              </td>
-              <td className="group" onClick={() => handleClick()}>
-                <ResultCryptGroup value={card.c['Group']} />
-              </td>
-            </>
-          )}
+          <td className="clan" onClick={() => handleClick()}>
+            <ResultCryptClan value={card.c['Clan']} />
+          </td>
+          <td className="group" onClick={() => handleClick()}>
+            <ResultCryptGroup value={card.c['Group']} />
+          </td>
         </tr>
       </React.Fragment>
     );
