@@ -9,7 +9,6 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 function DeckNewLibraryCard(props) {
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
-  const ref = useRef(null);
 
   const addNewCard = () => {
     if (!props.cards[selectedValue]) props.cardAdd(selectedValue);
