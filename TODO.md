@@ -10,7 +10,6 @@
 * Test history.push with deckid
 
 # FIX MOBILE
-* Add card to deck from mobile to restore focus to input
 * Result table css+classes for mobile
 
 # FEATURES

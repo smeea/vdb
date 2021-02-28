@@ -263,8 +263,9 @@ function DeckCrypt(props) {
          onClick={() => setShowAdd(true)}
          className="float-right-top add"
        >
-         <div className="py-1 px-1">
-           <div className="d-flex add-deck-card">🞢C</div>
+         <div className="d-flex py-0 px-1 align-items-top">
+           <div className="d-inline" style={{fontSize: '1.75em'}}>+</div>
+           <div className="d-inline" style={{fontSize: '1.85em'}}>C</div>
          </div>
        </div>
       }

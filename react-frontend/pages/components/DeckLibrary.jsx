@@ -230,8 +230,9 @@ function DeckLibrary(props) {
          className="float-right-middle add"
        >
 
-         <div className="py-1 px-1">
-           <div className="d-flex add-deck-card">🞢L</div>
+         <div className="d-flex py-0 px-1 align-items-top">
+           <div className="d-inline" style={{fontSize: '1.75em'}}>+</div>
+           <div className="d-inline" style={{fontSize: '1.8em'}}>L</div>
          </div>
        </div>
       }
