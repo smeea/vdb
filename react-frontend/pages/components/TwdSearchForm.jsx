@@ -38,7 +38,12 @@ function TwdSearchForm(props) {
     },
     disciplines: {},
     clan: 'any',
-    capacity: 'any',
+    capacity: {
+      "1-4": false,
+      "4-6": false,
+      "6-8": false,
+      "8-11": false,
+    },
     cardtypes: {
       master: 'any',
       action: 'any',
@@ -145,6 +150,7 @@ function TwdSearchForm(props) {
       'cardtypes',
       'date',
       'players',
+      'capacity',
       'libraryTotal',
     ];
 
@@ -368,14 +374,13 @@ function TwdSearchForm(props) {
         </Col>
       </Row>
       <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Capacity:</label>
+        <Col xs={5} className="d-flex px-0">
+          <label className="h6 mb-0">Capacity Average:</label>
         </Col>
-        <Col xs={9} className="d-inline px-0">
+        <Col xs={7} className="d-flex justify-content-end px-0 checkbox-buttons">
           <TwdSearchFormCapacity
             value={props.formState.capacity}
-            onChange={handleSelectChange}
-            isMobile={props.isMobile}
+            onChange={handleMultiChange}
           />
         </Col>
       </Row>

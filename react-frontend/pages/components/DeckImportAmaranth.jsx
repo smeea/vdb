@@ -7,16 +7,16 @@ function DeckImportAmaranth(props) {
   const [importError, setImportError] = useState(false);
   const refUrl = useRef(null);
 
-  // const [idReference, setIdReference] = useState(undefined);
+  const [idReference, setIdReference] = useState(undefined);
 
   const [spinnerState, setSpinnerState] = useState(false);
 
-  // const getIdReference = () => {
-  //   const url = `${process.env.ROOT_URL}amaranth_ids.json`;
-  //   fetch(url)
-  //     .then((response) => response.json())
-  //     .then((data) => data.error === undefined && setIdReference(data));
-  // };
+  const getIdReference = () => {
+    const url = `${process.env.ROOT_URL}amaranth_ids.json`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => data.error === undefined && setIdReference(data));
+  };
 
   const handleImportButton = () => {
     setImportError(false);
@@ -45,37 +45,36 @@ function DeckImportAmaranth(props) {
   };
 
   const importDeckFromAmaranth = (deck) => {
-    // const cards = {};
-    // Object.keys(deck.cards).map((i) => {
-    //   cards[idReference[i]] = deck.cards[i];
-    // });
-    console.log(deck.cards)
+    const cards = {};
+    Object.keys(deck.cards).map((i) => {
+      cards[idReference[i]] = deck.cards[i];
+    });
 
-    // let newdeckid;
-    // const url = `${process.env.API_URL}decks/create`;
-    // const options = {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   credentials: 'include',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     deckname: deck.title,
-    //     author: deck.author,
-    //     description: deck.description,
-    //     cards: cards,
-    //   }),
-    // };
+    let newdeckid;
+    const url = `${process.env.API_URL}decks/create`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        deckname: deck.title,
+        author: deck.author,
+        description: deck.description,
+        cards: cards,
+      }),
+    };
 
-    // const fetchPromise = fetch(url, options);
+    const fetchPromise = fetch(url, options);
 
-    // fetchPromise
-    //   .then((response) => response.json())
-    //   .then((data) => (newdeckid = data.deckid))
-    //   .then(() => props.getDecks())
-    //   .then(() => props.setActiveDeck(newdeckid))
-    //   .catch((error) => setImportError(true));
+    fetchPromise
+      .then((response) => response.json())
+      .then((data) => (newdeckid = data.deckid))
+      .then(() => props.getDecks())
+      .then(() => props.setActiveDeck(newdeckid))
+      .catch((error) => setImportError(true));
   };
 
   const getDeckFromUrl = async (deckUrl) => {

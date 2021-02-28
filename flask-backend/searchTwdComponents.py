@@ -151,39 +151,19 @@ def get_twd_by_cardtypes(cardtype_input, twda=twda):
     return match_decks
 
 
-def get_twd_by_capacity(capacity, twda=twda):
-    [min, max] = capacity.split(',')
-    [min, max] = [float(min), float(max)]
+def get_twd_by_capacity(capacity_input, twda=twda):
+    capacity_brackets = []
+    for k in capacity_input.keys():
+        capacity_brackets.append([int(i) for i in k.split('-')])
 
-    match_decks = []
-
+    match_cards = []
     for deck in twda:
-        cryptTotalCap = 0
-        cryptCards = 0
-        capacityList = []
+        for b in capacity_brackets:
+            if b[0] <= deck['capacity'] <= b[1]:
+                match_cards.append(deck)
+                break
 
-        for k, v in deck['crypt'].items():
-            if k != '200076':
-                c = get_crypt_by_id(k)['Capacity']
-                q = v['q']
-                cryptTotalCap += c * q
-                cryptCards += q
-                for x in range(q):
-                    capacityList.append(c)
-
-        cryptAvg = cryptTotalCap / cryptCards
-
-        cryptMax = 0
-        capacityList.sort()
-
-        for i in range(4):
-            cryptMax += capacityList[-i - 1]
-
-        if cryptAvg >= min and cryptAvg <= max and cryptMax <= max * 4 + 6:
-            match_decks.append(deck)
-
-    return match_decks
-
+    return match_cards
 
 def get_twd_by_traits(traits, twda=twda):
     trait_counter = len(traits)

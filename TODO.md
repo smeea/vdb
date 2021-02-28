@@ -20,8 +20,8 @@
 * Show search results not in inventory (opacity/gray?)
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
-* Capacity pre-calc for twd and checkbox brackets
 * Amaranth import - fetch and id convert on backend
+* Optimize for tablet
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines

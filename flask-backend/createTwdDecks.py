@@ -1,4 +1,5 @@
 import json
+from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
 
 with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDecks_file, open("twdDecksById.json", "w") as twdaDecksById_file:
@@ -8,7 +9,7 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
     total = len(twda)
 
     for idx, i in enumerate(twda):
-        # if idx == 50:
+        # if idx == 5:
         #     break
         print(f"Generating decks: {idx} of {total}")
 
@@ -54,10 +55,15 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
         else:
             deck['player'] = 'Unknown'
 
+        totalCapacity = 0
+
         for card in i['crypt']['cards']:
+            totalCapacity += card['count'] * get_crypt_by_id(card['id'])['Capacity']
             deck['crypt'][card['id']] = {
                 'q': card['count']
             }
+
+        deck['capacity'] = totalCapacity / i['crypt']['count']
 
         disciplines = []
 
