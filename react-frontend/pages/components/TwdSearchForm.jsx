@@ -340,7 +340,7 @@ function TwdSearchForm(props) {
         <Col xs={3} className="d-flex px-0">
           <label className="h6 mb-0">Library Size:</label>
         </Col>
-        <Col xs={9} className="d-flex justify-content-end px-0">
+        <Col xs={9} className="d-flex justify-content-end px-0 checkbox-buttons">
           <TwdSearchFormLibraryTotal
             value={props.formState.libraryTotal}
             onChange={handleMultiChange}

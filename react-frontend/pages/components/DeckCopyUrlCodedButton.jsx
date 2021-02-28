@@ -12,12 +12,12 @@ function DeckCopyUrlCodedButton(props) {
     cards.push(`${card}=${props.deck.library[card].q};`)
   });
 
-  const description = []
-  props.deck.name && description.push(`name=${props.deck.name}`);
-  props.deck.author && description.push(`author=${props.deck.author}`);
-  props.deck.description && description.push(`description=${props.deck.description}`);
+  const info = []
+  props.deck.name && info.push(encodeURI(`name=${props.deck.name}`));
+  props.deck.author && info.push(encodeURI(`author=${props.deck.author}`));
+  props.deck.description && info.push(encodeURI(`description=${props.deck.description.substring(0, 7168)}`).replace(/#/g, "%23").replace(/&/g, "%26").replace(/,/g, '%2C'));
 
-  const url = `${process.env.ROOT_URL}decks?${description.toString().replace(/,/g, "&").replace(/ /g, "%20")}#${cards.toString().replace(/,/g, "").replace(/;$/, "")}`;
+  const url = `${process.env.ROOT_URL}decks?${info.toString().replace(/,/g, "&")}#${cards.toString().replace(/,/g, "").replace(/;$/, "")}`;
 
   const handleButton = () => {
     navigator.clipboard.writeText(url);

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Files from '../../assets/images/icons/files.svg';
 
 function DeckClone(props) {
+  const [state, setState] = useState(false);
+
   const cloneDeck = () => {
     let newdeckid;
     const url = `${process.env.API_URL}decks/clone`;
@@ -38,13 +40,19 @@ function DeckClone(props) {
       })
       .then(() => props.getDecks())
       .then(() => props.setActiveDeck(newdeckid))
-      .then(() => props.setShowButtons(false));
+      .then(() => {
+        setState(true);
+        props.isMobile && props.setShowButtons(false);
+        setTimeout(() => {
+          setState(false);
+        }, 1000);
+      });
   };
 
   return (
     <>
-      <Button variant="outline-secondary" onClick={cloneDeck} block>
-        <Files /> Clone Deck
+      <Button variant={state ? "success" : "outline-secondary"} onClick={cloneDeck} block>
+        <Files /> {state ? "Cloned" : "Clone Deck"}
       </Button>
     </>
   );

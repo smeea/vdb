@@ -158,7 +158,7 @@ function DeckLibrary(props) {
           >
             <InfoCircle />
           </Button>
-          {props.isAuthor && (
+          {props.isAuthor && !props.isMobile && (
             <div className="lp-125">
               <Button
                 variant="outline-secondary"
@@ -224,6 +224,17 @@ function DeckLibrary(props) {
           {LibrarySideDeck}
         </div>
       )}
+      {props.isMobile &&
+       <div
+         onClick={() => setShowAdd(true)}
+         className="float-right-middle add"
+       >
+
+         <div className="py-1 px-1">
+           <div className="d-flex add-deck-card">🞢L</div>
+         </div>
+       </div>
+      }
     </>
   );
 }

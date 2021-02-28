@@ -146,7 +146,7 @@ function DeckCrypt(props) {
           >
             <InfoCircle />
           </Button>
-          {props.isAuthor && (
+          {props.isAuthor && !props.isMobile && (
             <div className="lp-125">
               <Button
                 variant="outline-secondary"
@@ -258,6 +258,16 @@ function DeckCrypt(props) {
           />
         </div>
       )}
+      {props.isMobile &&
+       <div
+         onClick={() => setShowAdd(true)}
+         className="float-right-top add"
+       >
+         <div className="py-1 px-1">
+           <div className="d-flex add-deck-card">🞢C</div>
+         </div>
+       </div>
+      }
     </>
   );
 }

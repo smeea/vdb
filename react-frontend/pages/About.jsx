@@ -83,6 +83,9 @@ function About(props) {
               <li>
                 <Link to="/inventory">Manage your inventory</Link>
               </li>
+              <li>
+                <Link to="/cards">Quick view card by the name</Link>
+              </li>
             </ul>
             <h5>FEATURES</h5>
             <ul>

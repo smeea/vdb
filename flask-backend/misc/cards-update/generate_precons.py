@@ -26,6 +26,7 @@ bundles = {
         "PV": {},
     },
     "Anthology": {
+        "LARP": {},
         "": {},
     },
     "LK": {
@@ -36,12 +37,16 @@ bundles = {
         "PSam": {},
         "PSal": {},
         "PGar": {},
+        "A": {},
+        "B": {},
     },
     "KoT": {
         "PB": {},
         "PM": {},
         "PT": {},
         "PV": {},
+        "A": {},
+        "B": {},
     },
     "LotN": {
         "PA": {},
@@ -103,7 +108,7 @@ bundles = {
     },
 }
 
-with open("vtescrypt.json", "r") as crypt_file, open("vteslib.json", "r+") as library_file, open("precons.json", "w") as precons_file:
+with open("vtescrypt.json", "r") as crypt_file, open("vteslib.json", "r+") as library_file, open("preconDecks.json", "w") as precons_file:
     crypt = json.load(crypt_file)
     library = json.load(library_file)
 

@@ -33,13 +33,13 @@ function InventoryLibrary(props) {
 
   if (!props.compact && props.category != "ok") {
     Object.keys(props.usedCards.soft).map((card) => {
-      if (!library[card]) {
+      if (!props.cards[card]) {
         library[card] = {q: 0, c: props.cardBase[card]}
       }
     })
 
     Object.keys(props.usedCards.hard).map((card) => {
-      if (!library[card]) {
+      if (!props.cards[card]) {
         library[card] = {q: 0, c: props.cardBase[card]}
       }
     })

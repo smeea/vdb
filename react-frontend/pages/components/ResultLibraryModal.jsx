@@ -48,13 +48,36 @@ function ResultLibraryModal(props) {
                <CardImage />
              </Tab>
              <Tab eventKey="text" title="Text">
-               <div className="p-3">
+               <div className="px-3 pt-3">
                  <ResultLibraryLayoutText
                    card={props.card}
                    handleClose={props.handleClose}
                  />
                </div>
-               <div className="px-3 pb-3">
+               {props.inventoryMode &&
+                <>
+                  <div className="px-3 pt-2">
+                    <hr className="mx-0"/>
+                    <div className="pt-1">
+                      <b>Inventory:</b>
+                      <div className="d-flex align-items-center">
+                        <div className="opacity-035"><CalculatorFill/></div>
+                        <div className="px-1"><b>{props.inventoryState.softUsedMax + props.inventoryState.hardUsedTotal}</b></div>
+                        - Total Used
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <div className="opacity-035"><ArchiveFill/></div>
+                        <div className="px-1"><b>{props.inventoryState.inInventory}</b></div>
+                        - In Inventory
+                      </div>
+                      <div className="py-1" />
+                      {props.inventoryState.usedDescription.soft && <>{props.inventoryState.usedDescription.soft}</>}
+                      {props.inventoryState.usedDescription.hard && <>{props.inventoryState.usedDescription.hard}</>}
+                    </div>
+                  </div>
+                </>
+               }
+               <div className="p-3">
                  <CardCopyUrlButton id={props.card['Id']} />
                </div>
              </Tab>
@@ -66,7 +89,7 @@ function ResultLibraryModal(props) {
              <CardImage />
            </Col>
            <Col className="py-4 px-4 mr-3">
-             <div>
+             <div className="pb-1">
                <ResultLibraryLayoutText
                  card={props.card}
                  handleClose={props.handleClose}

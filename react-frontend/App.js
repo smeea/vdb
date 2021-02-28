@@ -745,6 +745,17 @@ function App(props) {
               />
             </Route>
             <Route
+              path="/cards"
+              exact component={(props) => (
+                <Cards
+                  isMobile={isMobile}
+                  isWide={isWide}
+                  cryptCardBase={cryptCardBase}
+                  libraryCardBase={libraryCardBase}
+                />
+              )}
+            />
+            <Route
               path="/cards/:id"
               component={(props) => (
                 <Cards

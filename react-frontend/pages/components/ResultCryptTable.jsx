@@ -349,9 +349,18 @@ function ResultCryptTable(props) {
              </td>
            </OverlayTrigger>
            :
-           <td className="name px-1" onClick={() => handleClick()}>
+           <td className="name px-1" onClick={() => {
+             handleClick();
+             setModalInventory({
+               inInventory: inInventory,
+               usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
+               softUsedMax: softUsedMax,
+               hardUsedTotal: hardUsedTotal,
+             });
+           }}>
              <ResultCryptName card={card} />
            </td>
+
           }
           {props.isMobile || !props.isWide ? (
             <td className="clan-group" onClick={() => handleClick()}>

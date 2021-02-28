@@ -210,7 +210,6 @@ def updateDeck(deckid):
                     d.used_in_inventory = {}
                     d.inventory_type = 's'
                 else:
-                    print('flex')
                     r = str(request.json['makeFlexible'])
                     used = d.used_in_inventory.copy()
                     used[r] = 's'
@@ -224,7 +223,6 @@ def updateDeck(deckid):
                     d.used_in_inventory = {}
                     d.inventory_type = 'h'
                 else:
-                    print('fixed')
                     r = str(request.json['makeFixed'])
                     used = d.used_in_inventory.copy()
                     used[r] = 'h'
@@ -238,7 +236,6 @@ def updateDeck(deckid):
                     d.used_in_inventory = {}
                     d.inventory_type = ''
                 else:
-                    print('clear')
                     r = str(request.json['makeClear'])
                     used = d.used_in_inventory.copy()
                     del(used[r])
@@ -306,6 +303,7 @@ def listDecks():
             library = {}
             for k, v in deck.cards.items():
 
+                # Workaround for wrong id input
                 if k == 'undefined':
                     print('user: ', current_user)
                     print('deck: ', deck)
@@ -407,11 +405,18 @@ def cloneDeck():
             for i in deck['library']:
                 cards[i] = deck['library'][i]['q']
 
+            description = 'Date: ' + deck['date'] + '\n'
+            description += 'Players: ' + str(deck['players']) + '\n'
+            description += 'Event: ' + deck['event'] + '\n'
+            description += 'Location: ' + deck['location'] + '\n'
+            if deck['description']:
+                description += '\n' + deck['description']
+
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
                      name=f"{deck['name']} [by {deck['player']}]",
                      author_public_name=deck['player'],
-                     description=deck['description'],
+                     description=description,
                      author=current_user,
                      inventory_type='',
                      used_in_inventory={},
@@ -707,6 +712,26 @@ def searchCryptRoute():
 def searchLibraryRoute():
     result = searchLibrary(request)
     if result != 400:
+        return jsonify(result)
+    else:
+        abort(400)
+
+
+@app.route('/api/search/quick', methods=['POST'])
+def searchQuickRoute():
+    result = [];
+
+    crypt = searchCrypt(request)
+    if crypt != 400:
+        result += crypt
+
+    library = searchLibrary(request)
+    if library != 400:
+        result += library
+
+    print(result)
+
+    if result:
         return jsonify(result)
     else:
         abort(400)

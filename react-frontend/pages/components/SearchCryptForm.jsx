@@ -318,44 +318,44 @@ function SearchCryptForm(props) {
         preresults={preresults.length}
         showLimit={showLimit}
       />
-      <SearchCryptFormDisciplines
-        value={props.formState.disciplines}
-        onChange={handleDisciplinesChange}
-      />
-      <SearchCryptFormVirtues
-        value={props.formState.disciplines}
-        onChange={handleDisciplinesChange}
-      />
-      <SearchCryptFormCapacity
-        value={props.formState.capacity}
-        onChange={handleNestedChange}
-        onMorelessChange={handleMorelessChange}
-      />
-      <SearchCryptFormClan
-        value={props.formState.clan}
-        onChange={handleSelectChange}
-        isMobile={props.isMobile}
-      />
-      <SearchCryptFormSect
-        value={props.formState.sect}
-        onChange={handleSelectChange}
-      />
-      <SearchCryptFormVotes
-        value={props.formState.votes}
-        onChange={handleSelectChange}
-      />
-      <SearchCryptFormTitles
-        value={props.formState.titles}
-        onChange={handleMultiChange}
-      />
-      <SearchCryptFormGroup
-        value={props.formState.group}
-        onChange={handleMultiChange}
-      />
-      <SearchCryptFormTraits
-        value={props.formState.traits}
-        onChange={handleMultiChange}
-      />
+      {/* <SearchCryptFormDisciplines */}
+      {/*   value={props.formState.disciplines} */}
+      {/*   onChange={handleDisciplinesChange} */}
+      {/* /> */}
+      {/* <SearchCryptFormVirtues */}
+      {/*   value={props.formState.disciplines} */}
+      {/*   onChange={handleDisciplinesChange} */}
+      {/* /> */}
+      {/* <SearchCryptFormCapacity */}
+      {/*   value={props.formState.capacity} */}
+      {/*   onChange={handleNestedChange} */}
+      {/*   onMorelessChange={handleMorelessChange} */}
+      {/* /> */}
+      {/* <SearchCryptFormClan */}
+      {/*   value={props.formState.clan} */}
+      {/*   onChange={handleSelectChange} */}
+      {/*   isMobile={props.isMobile} */}
+      {/* /> */}
+      {/* <SearchCryptFormSect */}
+      {/*   value={props.formState.sect} */}
+      {/*   onChange={handleSelectChange} */}
+      {/* /> */}
+      {/* <SearchCryptFormVotes */}
+      {/*   value={props.formState.votes} */}
+      {/*   onChange={handleSelectChange} */}
+      {/* /> */}
+      {/* <SearchCryptFormTitles */}
+      {/*   value={props.formState.titles} */}
+      {/*   onChange={handleMultiChange} */}
+      {/* /> */}
+      {/* <SearchCryptFormGroup */}
+      {/*   value={props.formState.group} */}
+      {/*   onChange={handleMultiChange} */}
+      {/* /> */}
+      {/* <SearchCryptFormTraits */}
+      {/*   value={props.formState.traits} */}
+      {/*   onChange={handleMultiChange} */}
+      {/* /> */}
       <SearchFormSet
         value={props.formState.set}
         onChange={handleNestedChange}

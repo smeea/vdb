@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultCryptClan from './ResultCryptClan.jsx';
@@ -8,12 +8,14 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 function DeckNewCryptCard(props) {
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
+  const ref = useRef(null);
 
   const addNewCard = () => {
     if (!props.cards[selectedValue]) props.cardAdd(selectedValue);
     if (props.inInventory) props.setNewId(selectedValue);
     setSelectedValue('');
     props.setshowAdd && props.setShowAdd(false);
+    ref.current.focus()
   };
 
   const loadOptions = (inputValue) => {
@@ -49,6 +51,7 @@ function DeckNewCryptCard(props) {
       placeholder="Add Crypt Card"
       loadOptions={loadOptions}
       onChange={handleChange}
+      ref={ref}
       getOptionLabel={(card) => (
         <>
           <div className="d-flex align-items-center justify-content-between">

@@ -17,6 +17,31 @@ artist_fixes = {
     "T. Bradstreet": "Tim Bradstreet",
     "G. Goleash": "Grant Goleash",
 }
+# {
+#         "Alejandro Collucci": "Alejandro Colucci",
+#         "Chet Masterz": "Chet Masters",
+#         "Dimple": 'Nicolas "Dimple" Bigot',
+#         "EM Gist": "E.M. Gist",
+#         "G. Goleash": "Grant Goleash",
+#         "Ginés Quiñonero": "Ginés Quiñonero-Santiago",
+#         "Glenn Osterberger": "Glen Osterberger",
+#         "Heather Kreiter": "Heather V. Kreiter",
+#         "Jeff Holt": 'Jeff "el jefe" Holt',
+#         "L. Snelly": "Lawrence Snelly",
+#         "Mathias Tapia": "Matias Tapia",
+#         "Mattias Tapia": "Matias Tapia",
+#         "Matt Mitchell": "Matthew Mitchell",
+#         "Mike Gaydos": "Michael Gaydos",
+#         "Mike Weaver": "Michael Weaver",
+#         "Nicolas Bigot": 'Nicolas "Dimple" Bigot',
+#         "Pat McEvoy": "Patrick McEvoy",
+#         "Ron Spenser": "Ron Spencer",
+#         "Sam Araya": "Samuel Araya",
+#         "Sandra Chang": "Sandra Chang-Adair",
+#         "T. Bradstreet": "Tim Bradstreet",
+#         "Tom Baxa": "Thomas Baxa",
+#         "zelgaris": 'Tomáš "zelgaris" Zahradníček',
+#     }
 
 with open("vtescrypt.json", "r+") as crypt_file:
     crypt = json.load(crypt_file)

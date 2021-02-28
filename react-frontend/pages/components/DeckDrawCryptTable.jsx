@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
+import { OverlayTrigger, Popover, Modal } from 'react-bootstrap';
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
@@ -42,6 +42,7 @@ function ResultCryptTable(props) {
   let resultTrClass;
 
   const [modalCard, setModalCard] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState(undefined);
 
   const N = props.total
   const n = props.resultCards.length
@@ -136,15 +137,21 @@ function ResultCryptTable(props) {
             </>
           )}
           <td className="prob px-1">
-            <OverlayTooltip
-              delay={{ show: 0, hide: 150 }}
-              placement="right"
-              text={probText}
-            >
-              <div>
-                {`${Math.floor(probability(1, N, n, k) * 100)}%`}
-              </div>
-            </OverlayTooltip>
+            {props.isMobile ?
+             <div onClick={() => setModalDraw({name: card['Name'], prob: probText})}>
+               {`${Math.floor(probability(1, N, n, k) * 100)}%`}
+             </div>
+             :
+             <OverlayTooltip
+               delay={{ show: 0, hide: 150 }}
+               placement="right"
+               text={probText}
+             >
+               <div>
+                 {`${Math.floor(probability(1, N, n, k) * 100)}%`}
+               </div>
+             </OverlayTooltip>
+            }
           </td>
         </tr>
       </React.Fragment>
@@ -165,6 +172,24 @@ function ResultCryptTable(props) {
           handleClose={() => setModalCard(false)}
           isMobile={props.isMobile}
         />
+      )}
+      {modalDraw && (
+        <Modal
+          size="xs"
+          show={modalDraw}
+          className="d-flex justify-content-center"
+          dialogClassName="w-50"
+          onHide={() => setModalDraw(null)}
+          animation={false}
+          centered={true}
+        >
+          <Modal.Header className="px-3 py-2" closeButton>
+            <div className="prob"><b>{modalDraw.name}</b>:</div>
+          </Modal.Header>
+          <Modal.Body className="px-4 py-3" closeButton>
+            {modalDraw.prob}
+          </Modal.Body>
+        </Modal>
       )}
     </>
   );

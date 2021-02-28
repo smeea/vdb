@@ -91,6 +91,7 @@ function TwdSearchFormLibrary(props) {
         placeholder="Add Library Card"
         loadOptions={loadOptions}
         onChange={handleAdd}
+        /* className="select-dropdown" */
         getOptionLabel={(card) => (
           <>
             <div className="d-flex align-items-center justify-content-between">

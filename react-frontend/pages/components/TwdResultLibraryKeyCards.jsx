@@ -33,9 +33,11 @@ function TwdResultLibraryKeyCards(props) {
     'Event',
   ];
 
+  let libraryTotal = 0;
   const libraryByType = {};
 
   Object.keys(props.library).map((card) => {
+    libraryTotal += props.library[card].q;
     const cardtype = props.library[card].c['Type'];
     if (libraryByType[cardtype] === undefined) {
       libraryByType[cardtype] = [];
@@ -113,7 +115,7 @@ function TwdResultLibraryKeyCards(props) {
   return (
     <>
       <div className="px-1">
-        <b>Key Cards (4+ pcs):</b>
+        <b>{props.isMobile && `Library [${libraryTotal}],`} Key Cards:</b>
       </div>
       <div className="props.library">
         <table className="twd-library-table">

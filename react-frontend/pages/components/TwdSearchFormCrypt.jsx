@@ -90,6 +90,7 @@ function TwdSearchFormCrypt(props) {
         placeholder="Add Crypt Card"
         loadOptions={loadOptions}
         onChange={handleAdd}
+        /* className="select-dropdown" */
         getOptionLabel={(card) => {
           return (
             <div className="d-flex align-items-center justify-content-between">

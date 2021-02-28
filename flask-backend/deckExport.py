@@ -24,7 +24,7 @@ def deckExport(d, format):
                 else:
                     deck += '      '
 
-                deck += v['c']['Name'] + '\n'
+                deck += v['c']['ASCII Name'].replace('-', '--').replace('"', "'") + '\n'
 
             deck += 'Crypt:\n'
 
@@ -36,9 +36,9 @@ def deckExport(d, format):
                     deck += '      '
 
                 if v['c']['Adv']:
-                    deck += v['c']['ASCII Name'] + ' (ADV)\n'
+                    deck += v['c']['ASCII Name'].replace('-', '--').replace('"', "'") + ' (ADV)\n'
                 else:
-                    deck += v['c']['ASCII Name'] + '\n'
+                    deck += v['c']['ASCII Name'].replace('-', '--').replace('"', "'") + '\n'
 
         elif format == 'text' or format == 'twd':
 

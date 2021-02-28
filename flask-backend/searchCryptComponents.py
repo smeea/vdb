@@ -252,6 +252,7 @@ def get_crypt_by_set(request, crypt):
 
     sets = [
         'Promo',
+        'POD',
         'V5',
         '25th',
         'FB',
@@ -285,7 +286,6 @@ def get_crypt_by_set(request, crypt):
         'DS',
         'VTES',
         'Jyhad',
-        'POD',
     ];
 
     match_cards = []
@@ -356,6 +356,10 @@ def get_crypt_by_precon(request, crypt):
         ['FB', 'PTr'],
         ['FB', 'PV'],
         ['Anthology', ''],
+        ['KoT', 'A'],
+        ['KoT', 'B'],
+        ['HttB', 'A'],
+        ['HttB', 'B'],
         ['LK', ''],
     ]
 
@@ -370,6 +374,7 @@ def get_crypt_by_precon(request, crypt):
 
     sets = [
         'Promo',
+        'POD',
         'V5',
         '25th',
         'FB',
@@ -403,7 +408,6 @@ def get_crypt_by_precon(request, crypt):
         'DS',
         'VTES',
         'Jyhad',
-        'POD',
     ];
 
     match_cards = []
@@ -412,48 +416,69 @@ def get_crypt_by_precon(request, crypt):
     if precon == 'bcp':
         for card in crypt:
             for bcp_precon in bcp_precons:
-                if bcp_precon[0] in card['Set'] and bcp_precon[1] in card['Set'][bcp_precon[0]]:
-                    if request['only in']:
-                        counter = 0
-                        for k in card['Set'].keys():
-                            if k in bcp_precon[0]:
-                                counter += 1
+                if bcp_precon[0] in card['Set']:
+                    for i in card['Set'][bcp_precon[0]].split('/'):
+                        if card in match_cards:
+                            continue
+                        card_precon = None;
+                        match = re.match(r"(\w+)?(\d+)", i)
+                        if match:
+                            if match.group(1):
+                                card_precon = match.group(1)
+                            else:
+                                card_precon = ""
 
-                        if len(card['Set'].keys()) == counter:
-                            match_cards.append(card)
-                            break
+                            if bcp_precon[1] == card_precon:
+                                if request['only in']:
+                                    counter = 0
+                                    for k in card['Set'].keys():
+                                        if k in bcp_precon[0]:
+                                            counter += 1
 
-                    elif request['first print']:
-                        oldestSetIndex = 0
-                        for k in card['Set'].keys():
-                            if sets.index(k) > oldestSetIndex:
-                                oldestSetIndex = sets.index(k)
+                                    if len(card['Set'].keys()) == counter:
+                                        match_cards.append(card)
 
-                        if oldestSetIndex <= len(bcp_sets):
-                            match_cards.append(card)
-                            break
-                    else:
-                        match_cards.append(card)
-                        break
+                                elif request['first print']:
+                                    oldestSetIndex = 0
+                                    for k in card['Set'].keys():
+                                        if sets.index(k) > oldestSetIndex:
+                                            oldestSetIndex = sets.index(k)
+
+                                    if oldestSetIndex <= len(bcp_sets):
+                                        match_cards.append(card)
+                                else:
+                                    match_cards.append(card)
 
     else:
         precon = precon.split(':')
         for card in crypt:
-            if precon[0] in card['Set'] and precon[1] in card['Set'][precon[0]]:
-                if request['only in']:
-                    if len(card['Set'].keys()) == 1:
-                        match_cards.append(card)
+            if precon[0] in card['Set']:
+                for i in card['Set'][precon[0]].split('/'):
+                    if card in match_cards:
+                        continue
+                    card_precon = None;
+                    match = re.match(r"(\D+)?(\d+)?", i)
+                    if match:
+                        if match.group(1):
+                            card_precon = match.group(1)
+                        else:
+                            card_precon = ""
 
-                elif request['first print']:
-                    oldestSetIndex = 0
-                    for k in card['Set'].keys():
-                        if sets.index(k) > oldestSetIndex:
-                            oldestSetIndex = sets.index(k)
+                        if precon[1] == card_precon:
+                            if request['only in']:
+                                if len(card['Set'].keys()) == 1:
+                                    match_cards.append(card)
 
-                    if oldestSetIndex == sets.index(precon[0]):
-                        match_cards.append(card)
-                else:
-                    match_cards.append(card)
+                            elif request['first print']:
+                                oldestSetIndex = 0
+                                for k in card['Set'].keys():
+                                    if sets.index(k) > oldestSetIndex:
+                                        oldestSetIndex = sets.index(k)
+
+                                if oldestSetIndex == sets.index(precon[0]):
+                                    match_cards.append(card)
+                            else:
+                                match_cards.append(card)
 
     return match_cards
 

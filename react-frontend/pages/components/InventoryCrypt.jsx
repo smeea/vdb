@@ -32,13 +32,13 @@ function InventoryCrypt(props) {
 
   if (!props.compact && props.category != "ok") {
     Object.keys(props.usedCards.soft).map((card) => {
-      if (!crypt[card]) {
+      if (!props.cards[card]) {
         crypt[card] = {q: 0, c: props.cardBase[card]}
       }
     })
 
     Object.keys(props.usedCards.hard).map((card) => {
-      if (!crypt[card]) {
+      if (!props.cards[card]) {
         crypt[card] = {q: 0, c: props.cardBase[card]}
       }
     })
