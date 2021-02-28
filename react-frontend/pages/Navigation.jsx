@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
+import LightningFill from '../assets/images/icons/lightning-fill.svg';
 import PersonFill from '../assets/images/icons/person-fill.svg';
 import InfoCircleFill from '../assets/images/icons/info-circle-fill.svg';
 import ToggleOn from '../assets/images/icons/toggle-on.svg';
@@ -104,6 +105,9 @@ function Navigation(props) {
             </NavLink>
             <NavLink to="/library" className="nav-link pr-2 pl-1">
               Library
+            </NavLink>
+            <NavLink to="/cards" className="nav-link pr-2 pl-1">
+              <LightningFill />
             </NavLink>
           </div>
         </Nav>
