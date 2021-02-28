@@ -314,7 +314,7 @@ function SearchCryptForm(props) {
         showLimit={showLimit}
       />
       {props.inventoryMode &&
-       <div className="d-flex justify-content-end custom-checkbox">
+       <div className="custom-control custom-checkbox">
          <input
            id="hideMissing"
            className="custom-control-input"
