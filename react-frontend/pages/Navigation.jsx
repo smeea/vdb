@@ -95,7 +95,7 @@ function Navigation(props) {
               TWD
             </NavLink>
             <NavLink to="/inventory" className="nav-link pr-2 pl-1">
-              Inventory
+              {props.isMobile ? "Inv" : "Inventory"}
             </NavLink>
             <NavLink to="/decks" className="nav-link pr-2 pl-1">
               Decks

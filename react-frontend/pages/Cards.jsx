@@ -46,8 +46,8 @@ function Cards(props) {
         {props.isMobile ?
          <>
            {props.cryptCardBase && props.libraryCardBase &&
-            <Row className="align-content-center justify-content-center px-2 py-2">
-              <Col lg={8}>
+            <Row className="align-content-center justify-content-center mx-0 px-1 py-2">
+              <Col lg={8} className="px-0">
                 <QuickSelect
                   cryptCardBase={props.cryptCardBase}
                   libraryCardBase={props.libraryCardBase}
