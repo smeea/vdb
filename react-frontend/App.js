@@ -35,6 +35,7 @@ function App(props) {
   const [addMode, setAddMode] = useState(false);
   const [inventoryMode, setInventoryMode] = useState(false);
   const [showDeck, setShowDeck] = useState(true);
+  const [hideMissing, setHideMissing] = useState(false);
 
   const [decks, setDecks] = useState({});
   const [preconDecks, setPreconDecks] = useState({});
@@ -51,7 +52,6 @@ function App(props) {
   const [twdResults, setTwdResults] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
-
 
   const isMobile = window.matchMedia('(max-width: 540px)').matches;
   const isWide = window.matchMedia('(min-width: 1600px)').matches;
@@ -684,6 +684,8 @@ function App(props) {
                 changeTimer={changeTimer}
                 isWide={isWide}
                 isMobile={isMobile}
+                hideMissing={hideMissing}
+                setHideMissing={setHideMissing}
                 showSearch={showCryptSearch}
                 setShowSearch={setShowCryptSearch}
                 showDeck={showDeck}
@@ -717,6 +719,8 @@ function App(props) {
                 changeTimer={changeTimer}
                 isWide={isWide}
                 isMobile={isMobile}
+                hideMissing={hideMissing}
+                setHideMissing={setHideMissing}
                 showSearch={showLibrarySearch}
                 setShowSearch={setShowLibrarySearch}
                 showDeck={showDeck}

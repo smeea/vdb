@@ -100,6 +100,8 @@ function Library(props) {
             <ResultLibrary
               showImage={props.showImage}
               setShowImage={props.setShowImage}
+              hideMissing={props.hideMissing}
+              setHideMissing={props.setHideMissing}
               cardAdd={props.cardAdd}
               cards={props.results}
               library={props.deckRouter(props.activeDeck) && props.deckRouter(props.activeDeck).library}
@@ -146,6 +148,8 @@ function Library(props) {
             formState={props.formState}
             setFormState={props.setFormState}
             isMobile={props.isMobile}
+            hideMissing={props.hideMissing}
+            setHideMissing={props.setHideMissing}
             cardBase={props.libraryCardBase}
             inventoryMode={props.inventoryMode}
             setInventoryMode={props.setInventoryMode}

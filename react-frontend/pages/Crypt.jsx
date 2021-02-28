@@ -99,6 +99,8 @@ function Crypt(props) {
             <ResultCrypt
               showImage={props.showImage}
               setShowImage={props.setShowImage}
+              hideMissing={props.hideMissing}
+              setHideMissing={props.setHideMissing}
               cardAdd={props.cardAdd}
               cards={props.results}
               crypt={props.deckRouter(props.activeDeck) && props.deckRouter(props.activeDeck).crypt}
@@ -140,6 +142,8 @@ function Crypt(props) {
             formState={props.formState}
             setFormState={props.setFormState}
             isMobile={props.isMobile}
+            hideMissing={props.hideMissing}
+            setHideMissing={props.setHideMissing}
             cardBase={props.cryptCardBase}
             inventoryMode={props.inventoryMode}
             setInventoryMode={props.setInventoryMode}

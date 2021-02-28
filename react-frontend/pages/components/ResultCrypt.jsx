@@ -23,8 +23,14 @@ function ResultCrypt(props) {
   };
 
   useEffect(() => {
-    setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
-  }, [props.cards, props.sortMethod]);
+    if (!props.hideMissing) {
+      setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
+    } else {
+      setSortedCards(() => resultCryptSort(
+        props.cards.filter(card => props.inventoryCrypt[card.Id]),
+        props.sortMethod));
+    }
+  }, [props.cards, props.sortMethod, props.hideMissing]);
 
   return (
     <>

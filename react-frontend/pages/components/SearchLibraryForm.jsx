@@ -128,12 +128,7 @@ function SearchLibraryForm(props) {
   };
 
   const launchRequest = () => {
-    let url;
-    if (props.inventoryMode) {
-      url = `${process.env.API_URL}search/inventory/library`;
-    } else {
-      url = `${process.env.API_URL}search/library`;
-    }
+    const url = `${process.env.API_URL}search/library`;
 
     const state = { ...props.formState };
     state['text'] = text;
@@ -212,7 +207,7 @@ function SearchLibraryForm(props) {
         launchRequest();
       }
     }
-  }, [props.formState, props.inventoryMode]);
+  }, [props.formState]);
 
   useEffect(() => {
     if (!props.isMobile) {
@@ -244,6 +239,20 @@ function SearchLibraryForm(props) {
         showLimit={showLimit}
         spinner={spinnerState}
       />
+      {props.inventoryMode &&
+       <div className="custom-control custom-checkbox">
+         <input
+           id="hideMissing"
+           className="custom-control-input"
+           type="checkbox"
+           checked={props.hideMissing}
+           onChange={() => props.setHideMissing(!props.hideMissing)}
+         />
+         <label htmlFor="hideMissing" className="custom-control-label">
+           Hide Missing in Inventory
+         </label>
+       </div>
+      }
       <SearchLibraryFormType
         value={props.formState.type}
         onChange={handleSelectChange}

@@ -284,25 +284,20 @@ function ResultCryptTable(props) {
                   >
                     <td className="quantity px-1">
                       <div className={inInventory < softUsedMax + hardUsedTotal ? "quantity px-1 mx-1 bg-red" : "quantity px-1"}>
-                        {inInventory}
+                        {inInventory > 0 && inInventory}
                       </div>
                     </td>
                   </OverlayTrigger>
                   <td className="used">
-                    {(!softUsedMax && !hardUsedTotal)
-                     ? <>-</>
-                     : <>
-                         { softUsedMax > 0 &&
-                           <div className="d-flex align-items-center justify-content-center">
-                             <div className="d-inline opacity-035 pr-1"><Shuffle/></div>{softUsedMax}
-                           </div>
-                         }
-                         { hardUsedTotal > 0 &&
-                           <div className="d-flex align-items-center justify-content-center">
-                             <div className="d-inline opacity-035 pr-1"><PinAngleFill/></div>{hardUsedTotal}
-                           </div>
-                         }
-                       </>
+                    { softUsedMax > 0 &&
+                      <div className="d-flex align-items-center justify-content-center">
+                        <div className="d-inline opacity-035 pr-1"><Shuffle/></div>{softUsedMax}
+                      </div>
+                    }
+                    { hardUsedTotal > 0 &&
+                      <div className="d-flex align-items-center justify-content-center">
+                        <div className="d-inline opacity-035 pr-1"><PinAngleFill/></div>{hardUsedTotal}
+                      </div>
                     }
                   </td>
                 </>

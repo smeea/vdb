@@ -200,12 +200,7 @@ function SearchCryptForm(props) {
   };
 
   const launchRequest = () => {
-    let url;
-    if (props.inventoryMode) {
-      url = `${process.env.API_URL}search/inventory/crypt`;
-    } else {
-      url = `${process.env.API_URL}search/crypt`;
-    }
+    const url = `${process.env.API_URL}search/crypt`;
 
     const state = { ...props.formState };
     state['text'] = text;
@@ -287,7 +282,7 @@ function SearchCryptForm(props) {
         launchRequest();
       }
     }
-  }, [props.formState, props.inventoryMode]);
+  }, [props.formState]);
 
   useEffect(() => {
     if (!props.isMobile) {
@@ -318,6 +313,20 @@ function SearchCryptForm(props) {
         preresults={preresults.length}
         showLimit={showLimit}
       />
+      {props.inventoryMode &&
+       <div className="d-flex justify-content-end custom-checkbox">
+         <input
+           id="hideMissing"
+           className="custom-control-input"
+           type="checkbox"
+           checked={props.hideMissing}
+           onChange={() => props.setHideMissing(!props.hideMissing)}
+         />
+         <label htmlFor="hideMissing" className="custom-control-label">
+           Hide Missing in Inventory
+         </label>
+       </div>
+      }
       <SearchCryptFormDisciplines
         value={props.formState.disciplines}
         onChange={handleDisciplinesChange}

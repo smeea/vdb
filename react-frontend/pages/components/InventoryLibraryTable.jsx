@@ -148,22 +148,18 @@ function InventoryLibraryTable(props) {
               </div>
             </OverlayTrigger>
           </td>
-          {!props.isMobile && (softUsedMax || hardUsedTotal) ?
-           <td className="used">
-             { softUsedMax > 0 &&
-               <div className="d-flex align-items-center justify-content-center">
-                 <div className="d-inline opacity-035 pr-1"><Shuffle/></div>{softUsedMax}
-               </div>
-             }
-             { hardUsedTotal > 0 &&
-               <div className="d-flex align-items-center justify-content-center">
-                 <div className="d-inline opacity-035 pr-1"><PinAngleFill/></div>{hardUsedTotal}
-               </div>
-             }
-           </td>
-           :
-           <td className="used">-</td>
-          }
+          <td className="used">
+            { softUsedMax > 0 &&
+              <div className="d-flex align-items-center justify-content-center">
+                <div className="d-inline opacity-035 pr-1"><Shuffle/></div>{softUsedMax}
+              </div>
+            }
+            { hardUsedTotal > 0 &&
+              <div className="d-flex align-items-center justify-content-center">
+                <div className="d-inline opacity-035 pr-1"><PinAngleFill/></div>{hardUsedTotal}
+              </div>
+            }
+          </td>
           {!props.isMobile ?
            <OverlayTrigger
              placement={props.placement ? props.placement : 'right'}

@@ -21,8 +21,14 @@ function ResultLibrary(props) {
   };
 
   useEffect(() => {
-    setSortedCards(() => resultLibrarySort(props.cards, props.sortMethod));
-  }, [props.cards, props.sortMethod]);
+    if (!props.hideMissing) {
+      setSortedCards(() => resultLibrarySort(props.cards, props.sortMethod));
+    } else {
+      setSortedCards(() => resultLibrarySort(
+        props.cards.filter(card => props.inventoryLibrary[card.Id]),
+        props.sortMethod));
+    }
+  }, [props.cards, props.sortMethod, props.hideMissing]);
 
   return (
     <>

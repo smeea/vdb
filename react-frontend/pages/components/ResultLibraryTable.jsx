@@ -156,7 +156,7 @@ function ResultLibraryTable(props) {
               >
                 <td className="quantity px-1">
                   <div className={inInventory < softUsedMax + hardUsedTotal ? "quantity px-1 mx-1 bg-red" : "quantity px-1"}>
-                    {inInventory}
+                    {inInventory > 0 && inInventory}
                   </div>
                 </td>
               </OverlayTrigger>
