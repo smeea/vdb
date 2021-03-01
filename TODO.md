@@ -6,19 +6,24 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Test history.push with deckid
 * Input forms margins
+* Quickcard image of advanced crypt
+* The Unaligned mark as (PDF)
+* Crypt result quantity-add width
 
 # FIX MOBILE
 * Result table css+classes for mobile
+* No autofocus on mobile on quick cards
+* Crypt / Library floating on mobile
+* Image / Text floating button on modal on mobile
 
 # FEATURES
 * Deck revisions
 * Create revocable link to Inventory
-* Different sets images
+* Different sets images - vtes.pl
 * Always-on opt-in deck-mode \ inventory-mode
 * Precon Decks: name, set to description, company from sets.csv
 * Rulings from KRCG
 * Inventory data in TWD browser
-* Show search results not in inventory (opacity/gray?)
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
 * Amaranth import - fetch and id convert on backend
