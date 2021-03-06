@@ -13,7 +13,7 @@ function Account(props) {
   return (
     <Container className="main-container">
       <Row className="h-75 align-items-center justify-content-center">
-        <Col md={12} lg={5} className="px-0">
+        <Col md={12} lg={5}>
           {props.username ? (
             <>
               <div className="d-flex align-items-center justify-content-between">
@@ -52,14 +52,18 @@ function Account(props) {
             </>
           ) : (
             <>
-              <AccountLogin
-                setUsername={props.setUsername}
-                isMobile={props.isMobile}
-              />
-              <AccountRegister
-                setUsername={props.setUsername}
-                whoAmI={props.whoAmI}
-              />
+              <div className="py-2">
+                <AccountLogin
+                  setUsername={props.setUsername}
+                  isMobile={props.isMobile}
+                />
+              </div>
+              <div className="py-2">
+                <AccountRegister
+                  setUsername={props.setUsername}
+                  whoAmI={props.whoAmI}
+                />
+              </div>
             </>
           )}
         </Col>

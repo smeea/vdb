@@ -8,6 +8,8 @@ import DeckImport from './DeckImport.jsx';
 import DeckExport from './DeckExport.jsx';
 import DeckProxy from './DeckProxy.jsx';
 import DeckMissing from './DeckMissing.jsx';
+import DeckBranchCreate from './DeckBranchCreate.jsx';
+import DeckBranchDelete from './DeckBranchDelete.jsx';
 
 function DeckButtons(props) {
   return (
@@ -54,6 +56,28 @@ function DeckButtons(props) {
           />
         </div>
       )}
+      {props.isAuthor && props.deck &&
+       <div className="bp-125">
+         <DeckBranchCreate
+           deck={props.deck}
+           getDecks={props.getDecks}
+           activeDeck={props.activeDeck}
+           setActiveDeck={props.setActiveDeck}
+           setShowButtons={props.setShowButtons}
+         />
+       </div>
+      }
+      {props.isAuthor && props.deck && (props.deck.master || props.deck.branches && props.deck.branches.length > 0) &&
+       <div className="bp-125">
+         <DeckBranchDelete
+           deck={props.deck}
+           getDecks={props.getDecks}
+           setActiveDeck={props.setActiveDeck}
+           setShowButtons={props.setShowButtons}
+           isMobile={props.isMobile}
+         />
+       </div>
+      }
       {props.deck &&
        <>
          {props.deck.deckid.length == 32 ?

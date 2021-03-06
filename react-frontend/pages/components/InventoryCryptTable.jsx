@@ -197,14 +197,6 @@ function InventoryCryptTable(props) {
   return (
     <>
       <table className="inventory-crypt-table">
-        {!props.compact &&
-         <thead>
-           <tr>
-             <th>Total</th>
-             <th>Used</th>
-           </tr>
-         </thead>
-        }
         <tbody>{cardRows}</tbody>
       </table>
       {modalCard && (

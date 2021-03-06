@@ -39,8 +39,8 @@ function Twd(props) {
           xl={3}
           className={
             !props.isMobile || (props.isMobile && props.showSearch)
-              ? 'px-0'
-              : 'col-hide px-0'
+              ? props.isMobile ? 'px-1 py-1' : 'px-0'
+              : 'col-hide'
           }
         >
           <TwdSearchForm

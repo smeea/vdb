@@ -1,50 +1,45 @@
 # FIX
 * Alert message in Deck if wrong url
-* Deck select after clone
 * TWD location/winner form reset
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
-* Test history.push with deckid
-* Input forms margins
-* Quickcard image of advanced crypt
-* The Unaligned mark as (PDF)
-* Crypt result quantity-add width
 
 # FIX MOBILE
-* Result table css+classes for mobile
+* Deck on mobile in inventory-mode to hide popover
+* Twd search crypt card on mobile no popover
 * No autofocus on mobile on quick cards
-* Crypt / Library floating on mobile
-* Image / Text floating button on modal on mobile
+* Optimize for tablet
 
 # FEATURES
-* Deck revisions
 * Create revocable link to Inventory
 * Different sets images - vtes.pl
 * Always-on opt-in deck-mode \ inventory-mode
 * Precon Decks: name, set to description, company from sets.csv
 * Rulings from KRCG
 * Inventory data in TWD browser
-* Mark pdf-sets in inventory-mode
+* Mark pdf-sets in inventory-mode and set selector
 * Show missing cards for inventory
 * Amaranth import - fetch and id convert on backend
-* Optimize for tablet
+* Popover on precons in modal preview set section
+* Quick card to show on single result
+* Help popups to Buttons
+* Help sections to About/Pages
+* Discard feature in Draw
+* Sync clients with SSE/WS
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines
 * Night theme
 * Documentation on updates / update script
-* Go to next card in modal preview
+* Go to next card in modal preview (react-swipeable-views?)
 * Export inventory to CSV
-* Full Amaranth account copy
+* Append deckid to address line (history.push)
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Add access_token to cookies or localStorage
 * Forms to React-Hook-Forms / Formik
 * Dynamic media query with react-responsive
-* Swipe search and deck on mobile - react-swipeable-views?
-* Swipe in card modal image-description
 * Screenshots to Bootstrap/Carousel
-* Online/Offline detection
 * Clear CSS
 * Images to avif (fallbacks to webp and jpeg)
 * Analytics: posthog

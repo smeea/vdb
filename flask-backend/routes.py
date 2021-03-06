@@ -161,7 +161,7 @@ def updateDeck(deckid):
         d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
         d.timestamp = datetime.utcnow()
         try:
-            if request.json['cardChange']:
+            if 'cardChange' in request.json:
                 new_cards = request.json['cardChange']
                 merged_cards = d.cards.copy()
                 for k, v in new_cards.items():
@@ -175,7 +175,7 @@ def updateDeck(deckid):
             pass
 
         try:
-            if request.json['cardAdd']:
+            if 'cardAdd' in request.json:
                 new_cards = request.json['cardAdd']
                 merged_cards = d.cards.copy()
                 for k, v in new_cards.items():
@@ -187,8 +187,24 @@ def updateDeck(deckid):
             pass
 
         try:
-            if request.json['name']:
+            if 'name' in request.json:
                 d.name = request.json['name']
+
+                if d.master:
+                    master = Deck.query.filter_by(author=current_user, deckid=d.master).first()
+                    master.name = request.json['name']
+
+                    for i in master.branches:
+                        j = Deck.query.filter_by(author=current_user,
+                                                 deckid=i).first()
+                        j.name = request.json['name']
+
+                elif d.branches:
+                    for i in d.branches:
+                        j = Deck.query.filter_by(author=current_user,
+                                                 deckid=i).first()
+                        j.name = request.json['name']
+
         except Exception:
             pass
 
@@ -201,8 +217,31 @@ def updateDeck(deckid):
         try:
             if 'author' in request.json:
                 d.author_public_name = request.json['author'] or ''
+
+                if d.master:
+                    master = Deck.query.filter_by(author=current_user, deckid=d.master).first()
+                    master.author_public_name = request.json['author']
+
+                    for i in master.branches:
+                        j = Deck.query.filter_by(author=current_user,
+                                                 deckid=i).first()
+                        j.author_public_name = request.json['author']
+
+                elif d.branches:
+                    for i in d.branches:
+                        j = Deck.query.filter_by(author=current_user,
+                                                 deckid=i).first()
+                        j.author_public_name = request.json['author']
+
         except Exception:
             pass
+
+        try:
+            if 'branchName' in request.json:
+                d.branch_name = request.json['branchName'] or ''
+        except Exception:
+            pass
+
 
         try:
             if 'makeFlexible' in request.json:
@@ -304,14 +343,14 @@ def listDecks():
             for k, v in deck.cards.items():
 
                 # Workaround for wrong id input
-                if k == 'undefined':
-                    print('user: ', current_user)
-                    print('deck: ', deck)
-                    cards = deck.cards.copy()
-                    del cards['undefined']
-                    deck.cards = cards
-                    db.session.commit()
-                    continue
+                # if k == 'undefined':
+                #     print('user: ', current_user)
+                #     print('deck: ', deck)
+                #     cards = deck.cards.copy()
+                #     del cards['undefined']
+                #     deck.cards = cards
+                #     db.session.commit()
+                #     continue
 
                 int_k = int(k)
 
@@ -327,6 +366,7 @@ def listDecks():
 
             decks[deck.deckid] = {
                 'name': deck.name,
+                'branchName': deck.branch_name,
                 'owner': deck.author.username,
                 'author': deck.author_public_name,
                 'description': deck.description,
@@ -335,6 +375,8 @@ def listDecks():
                 'deckid': deck.deckid,
                 'inventory_type': deck.inventory_type,
                 'timestamp': deck.timestamp,
+                'master': deck.master,
+                'branches': deck.branches,
             }
 
         return jsonify(decks)
@@ -366,12 +408,90 @@ def newDeck():
     else:
         return jsonify({'Not logged in.'})
 
+@app.route('/api/branch/create', methods=['POST'])
+def createBranch():
+    if current_user.is_authenticated:
+        master = Deck.query.filter_by(author=current_user, deckid=request.json['master']).first()
+        source = Deck.query.filter_by(author=current_user, deckid=request.json['source']).first()
+
+        deckid = uuid.uuid4().hex
+        branch = Deck(deckid=deckid,
+                           name=master.name,
+                           branch_name=f"Rev.  {len(master.branches) + 1}" if master.branches else "Rev. 1",
+                           author_public_name=source.author_public_name,
+                           description=source.description,
+                           author=current_user,
+                           inventory_type='',
+                           master=master.deckid,
+                           used_in_inventory={},
+                           cards=source.cards)
+
+        branches = master.branches.copy() if master.branches else []
+        branches.append(deckid)
+        master.branches = branches
+
+        if not master.branch_name:
+            master.branch_name = 'Original'
+
+        db.session.add(branch)
+        db.session.commit()
+        return jsonify({
+            'new revision master': master.deckid,
+            'new revision source': source.deckid,
+            'new revision deckid': deckid,
+        })
+    else:
+        return jsonify({'Not logged in.'})
+
+@app.route('/api/branch/remove', methods=['POST'])
+def removeBranch():
+    if current_user.is_authenticated:
+        try:
+            d = Deck.query.filter_by(author=current_user,
+                                     deckid=request.json['deckid']).first()
+            if d.master:
+                master = Deck.query.filter_by(author=current_user,
+                                            deckid=d.master).first()
+
+                branches = master.branches.copy()
+                branches.remove(d.deckid)
+                master.branches = branches
+
+                db.session.delete(d)
+                db.session.commit()
+                return jsonify({'branch removed': request.json['deckid']})
+
+            else:
+                j = Deck.query.filter_by(author=current_user,
+                                        deckid=d.branches[-1]).first()
+
+                branches = d.branches.copy()
+                branches.remove(j.deckid)
+                j.branches = branches
+                for i in branches:
+                    k = Deck.query.filter_by(author=current_user,
+                                             deckid=i).first()
+                    k.master = j.deckid
+
+                j.master = None
+
+                db.session.delete(d)
+                db.session.commit()
+                return jsonify({'branch removed': request.json['deckid']})
+
+        except Exception:
+            return jsonify({'error': 'idk'})
+    else:
+        return jsonify({'Not logged in.'})
 
 @app.route('/api/decks/clone', methods=['POST'])
 def cloneDeck():
     if 'deck' in request.json:
         deck = request.json['deck']
         cards = {}
+        del deck['master']
+        del deck['branches']
+        del deck['branchName']
 
         for i in deck['crypt']:
             cards[i] = deck['crypt'][i]['q']
@@ -431,7 +551,7 @@ def cloneDeck():
     elif request.json['src'] == 'precons':
         set, precon = request.json['target'].split(':')
 
-        with open("precons.json", "r") as precons_file:
+        with open("preconDecks.json", "r") as precons_file:
             precon_decks = json.load(precons_file)
             deck = precon_decks[set][precon]
 
@@ -516,7 +636,41 @@ def deckExportRoute():
             }
             result = deckExport(deck, request.json['format'])
             return jsonify(result)
-        else:
+        elif request.json['src'] == 'twd':
+            deckid = request.json['deckid']
+            with open("twdDecksById.json", "r") as twdDecks_file:
+                twdDecks = json.load(twdDecks_file)
+                deck = twdDecks[deckid]
+                comments = deck['description']
+                deck['description'] = 'Date: ' + deck['date'] + '\n'
+                deck['description'] += 'Players: ' + str(deck['players']) + '\n'
+                deck['description'] += 'Event: ' + deck['event'] + '\n'
+                deck['description'] += 'Location: ' + deck['location'] + '\n'
+                print(deck['description'])
+                deck['cards'] = {}
+                for i in deck['crypt']:
+                    deck['cards'][i] = deck['crypt'][i]['q']
+                for i in deck['library']:
+                    deck['cards'][i] = deck['library'][i]['q']
+                if comments:
+                    deck['description'] += '\n' + comments
+                deck['author'] = deck['player']
+                result = deckExport(deck, request.json['format'])
+                return jsonify(result)
+        elif request.json['src'] == 'precons':
+            set, precon = request.json['deckid'].split(':')
+            with open("preconDecks.json", "r") as precons_file:
+                precon_decks = json.load(precons_file)
+                d = precon_decks[set][precon]
+                deck = {
+                    'cards': d,
+                    'name': f"Preconstructed {set}:{precon}",
+                    'author': 'VTES Publisher',
+                    'description': f"Preconstructed deck",
+                }
+                result = deckExport(deck, request.json['format'])
+                return jsonify(result)
+        elif request.json['src'] == 'my':
             d = Deck.query.filter_by(deckid=request.json['deckid']).first()
             deck = {
                 'cards': d.cards,
@@ -545,6 +699,11 @@ def removeDeck():
         try:
             d = Deck.query.filter_by(author=current_user,
                                      deckid=request.json['deckid']).first()
+            if d.branches:
+                for i in d.branches:
+                    j = Deck.query.filter_by(author=current_user,
+                                            deckid=i).first()
+                    db.session.delete(j)
             db.session.delete(d)
             db.session.commit()
             return jsonify({'deck removed': request.json['deckid']})

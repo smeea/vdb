@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import TrashFill from '../../assets/images/icons/trash-fill.svg';
+import NodeMinusFill from '../../assets/images/icons/node-minus-fill.svg';
 import DeleteConfirmation from './DeleteConfirmation.jsx';
 
-function DeckDelete(props) {
+function DeckBranchDelete(props) {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
-    deleteDeck();
+    deleteBranch();
     setShowConfirmation(false);
     props.setActiveDeck({src: null, deckid: null});
     props.setShowButtons(false);
   };
 
-  const deleteDeck = () => {
-    const url = `${process.env.API_URL}decks/remove`;
+  const deleteBranch = () => {
+    const url = `${process.env.API_URL}branch/remove`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -34,17 +34,17 @@ function DeckDelete(props) {
         onClick={() => setShowConfirmation(true)}
         block
       >
-        <TrashFill /> Delete Deck
+        <NodeMinusFill /> Delete Revision
       </Button>
       <DeleteConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
-        target={`deck "${props.deck.name}" and all its versions`}
+        target={`version "${props.deck.branchName}" of deck "${props.deck.name}"`}
         isMobile={props.isMobile}
       />
     </>
   );
 }
 
-export default DeckDelete;
+export default DeckBranchDelete;

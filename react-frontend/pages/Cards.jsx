@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import ArrowRepeat from '../assets/images/icons/arrow-repeat.svg'
 import QuickSelect from './components/QuickSelect.jsx';
 import ResultCryptLayoutText from './components/ResultCryptLayoutText.jsx';
 import ResultLibraryLayoutText from './components/ResultLibraryLayoutText.jsx';
@@ -12,7 +13,7 @@ function Cards(props) {
 
   const CardImage = () => {
     if (card) {
-      const imgSrc = card > 200000 ?
+      const imgSrc = card['Id'] > 200000 ?
             `${process.env.ROOT_URL}images/cards/${card['ASCII Name']
     .toLowerCase()
     .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${card['Adv'] && 'adv'}.jpg`
@@ -46,7 +47,7 @@ function Cards(props) {
         {props.isMobile ?
          <>
            {props.cryptCardBase && props.libraryCardBase &&
-            <Row className="align-content-center justify-content-center mx-0 px-1 py-2">
+            <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
               <Col lg={8} className="px-0">
                 <QuickSelect
                   cryptCardBase={props.cryptCardBase}
@@ -60,28 +61,29 @@ function Cards(props) {
            {card &&
             <Row className="m-0 p-0">
               <Col className="m-0 p-0">
-                <Tabs
-                  transition={false}
-                  activeKey={props.showImage ? 'image' : 'text'}
-                  defaultActiveKey={props.showImage ? 'image' : 'text'}
-                  onSelect={(k) => props.setShowImage(k == 'image' ? true : false)}
-                >
-                  <Tab eventKey="image" title="Image">
-                    <CardImage />
-                  </Tab>
-                  <Tab eventKey="text" title="Text">
-                    <div className="p-3">
-                      {card && card.Id > 200000 && <ResultCryptLayoutText card={card}/>}
-                      {card && card.Id < 200000 && <ResultLibraryLayoutText card={card}/>}
-                    </div>
-                    <div className="px-3 pb-3">
-                      <CardCopyUrlButton id={card.Id} />
-                    </div>
-                  </Tab>
-                </Tabs>
+                {props.showImage
+                 ? <CardImage />
+                 : <>
+                     <div className="p-3">
+                       {card && card.Id > 200000 && <ResultCryptLayoutText card={card}/>}
+                       {card && card.Id < 200000 && <ResultLibraryLayoutText card={card}/>}
+                     </div>
+                     <div className="px-3 pb-3">
+                       <CardCopyUrlButton id={card.Id} />
+                     </div>
+                   </>
+                }
               </Col>
             </Row>
            }
+           <div
+             onClick={() => props.setShowImage(!props.showImage)}
+             className="float-right-bottom add-on"
+           >
+             <div className="pt-1 float-add">
+               <ArrowRepeat viewBox="0 0 16 16" />
+             </div>
+           </div>
          </>
          :
          <>

@@ -172,12 +172,14 @@ def get_crypt_by_votes(votes, crypt):
         "baron": 2
     }
     match_cards = []
+    votes = int(votes)
     for card in crypt:
         if card['Title'] and votes != 0:
-            if title_worth[card['Title']] >= int(votes):
+            if title_worth[card['Title']] >= votes:
                 match_cards.append(card)
 
         elif card['Title'] == '' and votes == 0:
+            print(card['Name'])
             match_cards.append(card)
 
     return match_cards

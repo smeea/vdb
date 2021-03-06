@@ -75,7 +75,7 @@ function DeckImport(props) {
         .then((response) => response.json())
         .then((data) => (newDeckId = data.deckid))
         .then(() => props.getDecks())
-        .then(() => props.setActiveDeck(newDeckId))
+        .then(() => props.setActiveDeck({src: 'my', deckid: newDeckId}))
         .catch((error) => setImportError(true));
     };
   };
@@ -116,7 +116,7 @@ function DeckImport(props) {
       <Dropdown ref={ref}>
         <Dropdown.Toggle className="btn-block" variant="outline-secondary">
           <ClipboardPlus size={24} />
-          <span className="pl-1">Create / Import</span>
+          <span className="pl-1">New / Import</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
       </Dropdown>

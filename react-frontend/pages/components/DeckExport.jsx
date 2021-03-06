@@ -62,6 +62,7 @@ function DeckExport(props) {
         body: JSON.stringify({
           deckid: props.activeDeck.deckid,
           format: format,
+          src: props.activeDeck.src,
         }),
       };
 
@@ -99,6 +100,7 @@ function DeckExport(props) {
         body: JSON.stringify({
           deckid: props.activeDeck.deckid,
           format: format,
+          src: props.activeDeck.src,
         }),
       };
 

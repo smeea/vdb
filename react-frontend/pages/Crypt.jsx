@@ -5,11 +5,17 @@ import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
 import ResultCrypt from './components/ResultCrypt.jsx';
 import SearchCryptForm from './components/SearchCryptForm.jsx';
 import DeckSelectMy from './components/DeckSelectMy.jsx';
+import DeckBranchSelect from './components/DeckBranchSelect.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
 import DeckLibrary from './components/DeckLibrary.jsx';
 
 function Crypt(props) {
   const [sortMethod, setSortMethod] = useState('Capacity - Min to Max');
+
+  let isBranches;
+  if (props.deckRouter(props.activeDeck)) {
+    isBranches = props.deckRouter(props.activeDeck).master || (props.deckRouter(props.activeDeck).branches && props.deckRouter(props.activeDeck).branches.length > 0)
+  }
 
   return (
     <Container className={props.isMobile ? "main-container" : "main-container py-3"}>
@@ -18,21 +24,35 @@ function Crypt(props) {
           <Col md={12} xl={props.username ? 4 : 3} className="px-0">
             {Object.keys(props.decks).length > 0 && (
               <Row>
-                <Col className="pr-0">
-                  <DeckSelectMy
-                    decks={props.decks}
-                    activeDeck={props.activeDeck}
-                    setActiveDeck={props.setActiveDeck}
-                    inventoryMode={props.inventoryMode}
-                  />
-                </Col>
-                <Col xs="auto" className="d-flex pl-0">
-                  <Button
-                    variant="outline-secondary"
-                    onClick={() => props.setShowDeck(!props.showDeck)}
-                  >
-                    {props.showDeck ? <EyeSlashFill /> : <EyeFill />}
-                  </Button>
+                <Col>
+                  <div className={props.isMobile ? "d-flex justify-content-between" : "d-flex"}>
+                    <div className={isBranches ? "w-75" : props.isMobile ? "w-75" : "w-100"}>
+                      <DeckSelectMy
+                        decks={props.decks}
+                        activeDeck={props.activeDeck}
+                        setActiveDeck={props.setActiveDeck}
+                        inventoryMode={props.inventoryMode}
+                      />
+                    </div>
+                    {isBranches &&
+                     <div className="pl-1 w-25">
+                       <DeckBranchSelect
+                         decks={props.decks}
+                         activeDeck={props.activeDeck}
+                         setActiveDeck={props.setActiveDeck}
+                         inventoryMode={props.inventoryMode}
+                       />
+                     </div>
+                    }
+                    <div className="d-flex pl-2">
+                      <Button
+                        variant="outline-secondary"
+                        onClick={() => props.setShowDeck(!props.showDeck)}
+                      >
+                        {props.showDeck ? <EyeSlashFill /> : <EyeFill />}
+                      </Button>
+                    </div>
+                  </div>
                 </Col>
               </Row>
             )}
@@ -130,8 +150,8 @@ function Crypt(props) {
           xl={3}
           className={
             !props.isMobile || (props.isMobile && props.showSearch)
-              ? 'px-0'
-              : 'col-hide px-0'
+              ? props.isMobile ? 'px-1 py-1' : 'px-0'
+              : 'col-hide'
           }
         >
           <SearchCryptForm

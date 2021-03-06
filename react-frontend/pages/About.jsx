@@ -47,7 +47,7 @@ function About(props) {
     <Container className={props.isMobile ? "main-container" : "main-container py-3"}>
       <Row className="justify-content-center">
         <Col md={12} lg={6} className="px-0">
-          <div className="px-1 about-version">
+          <div className="px-2 about-version">
             <h5>VERSION</h5>
             <p>
               Card text based on{' '}
@@ -58,7 +58,7 @@ function About(props) {
             </p>
           </div>
 
-          <div className="px-1">
+          <div className="px-2">
             <h5>WHAT IS IT</h5>
             <p>
               VDB is online card search, deck building and inventory (collection) management tool for Vampire the Eternal Struggle (VTES).

@@ -132,7 +132,7 @@ function AccountLogin(props) {
           </span>
         )}
       </h6>
-      <Form className="mb-2" onSubmit={handleSubmitButton}>
+      <Form className="mb-0" onSubmit={handleSubmitButton}>
         <InputGroup>
           <FormControl
             placeholder="Username"
@@ -214,7 +214,7 @@ function AccountLogin(props) {
         </Overlay>
       </Form>
       {!props.isMobile ? (
-        <div className="d-flex justify-content-center small pl-4">
+        <div className="d-flex justify-content-center small ml-3 pl-4">
           <OverlayTooltip
             delay={{ show: 0, hide: 1500 }}
             placement="bottom"
@@ -228,7 +228,7 @@ function AccountLogin(props) {
       ) : (
         <div
           onClick={() => setShowModal(true)}
-          className="d-flex justify-content-center small pl-4"
+          className="d-flex justify-content-center small ml-3 pl-4"
         >
           <a href="#">
             <i>Forgot password?</i>

@@ -39,7 +39,7 @@ function DeckClone(props) {
         }
       })
       .then(() => props.getDecks())
-      .then(() => props.setActiveDeck(newdeckid))
+      .then(() => props.setActiveDeck({src: 'my', deckid: newdeckid}))
       .then(() => {
         setState(true);
         props.isMobile && props.setShowButtons(false);

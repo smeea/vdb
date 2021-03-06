@@ -5,20 +5,13 @@ function ResultCryptDisciplines(props) {
   const emptyCols = [];
   let counter = 0;
   let maxCols;
-  if (props.isMobile) {
-    if (props.keyDisciplines >= 5) {
-      maxCols = 7;
-    } else {
-      maxCols = 6;
-    }
+  if (props.disciplinesSet) {
+    const n = props.keyDisciplines + props.nonKeyDisciplines;
+    maxCols = n < 8 ? n : props.isMobile ? 7 : 8
   } else {
-    if (props.disciplinesSet) {
-      const n = props.keyDisciplines + props.nonKeyDisciplines;
-      maxCols = n < 8 ? n : 8;
-    } else {
-      maxCols = 7;
-    }
+    maxCols = 7;
   }
+
   const width = 100 / maxCols + '%';
 
   if (props.disciplinesSet) {

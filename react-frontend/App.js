@@ -307,14 +307,15 @@ function App(props) {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          Object.keys(data).map((i) => {
-            Object.keys(data[i].crypt).map((j) => {
-              data[i].crypt[j].c = cryptCardBase[j];
+          Object.keys(data)
+            .map((i) => {
+              Object.keys(data[i].crypt).map((j) => {
+                data[i].crypt[j].c = cryptCardBase[j];
+              });
+              Object.keys(data[i].library).map((j) => {
+                data[i].library[j].c = libraryCardBase[j];
+              });
             });
-            Object.keys(data[i].library).map((j) => {
-              data[i].library[j].c = libraryCardBase[j];
-            });
-          });
           setDecks(data);
         }
       });
@@ -378,7 +379,6 @@ function App(props) {
     fetch(url, options)
       .catch((error) => {
         setDecks(oldState);
-        console.log(error)
       });
 
     const part = cardid > 200000 ? 'crypt' : 'library';
