@@ -3,6 +3,7 @@
 * TWD location/winner form reset
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
+* Fix artists - list from Phoenix
 
 # FIX MOBILE
 * Deck on mobile in inventory-mode to hide popover

@@ -7,9 +7,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":4,
-        "Card Text":"Independent: Aabbt Kindred cannot perform (D) actions unless Nefertiti is ready. Aabbt Kindred can prevent 1 damage each combat. Aabbt Kindred are not unique and do not contest.",
+        "Card Text":"Independent: Aabbt Kindred cannot perform directed actions unless /Nefertiti/ is ready. Aabbt Kindred can prevent 1 damage each combat. Non-unique.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -60,7 +61,8 @@
         "Card Text":"Sabbat.",
         "Set":{
             "Sabbat":"V",
-            "SW":"U"
+            "SW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -110,7 +112,8 @@
         "Capacity":5,
         "Card Text":"Independent: Abdelsobek can unlock a vampire or mummy you control as a +1 stealth action.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -239,7 +242,8 @@
         "Capacity":6,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -599,7 +603,8 @@
         "Capacity":3,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -725,10 +730,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Independent: Once each turn, Aisha may burn 1 blood to get +1 intercept.",
+        "Card Text":"Independent: Once each turn, Aisha can burn 1 blood to get +1 intercept for the current action.",
         "Set":{
             "AH":"V3",
-            "FN":"PS1"
+            "FN":"PS1",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -1607,7 +1613,8 @@
         "Capacity":3,
         "Card Text":"Independent.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -1708,10 +1715,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Sabbat Archbishop of Pittsburgh: If Alvaro abstains during a political action, he gains 2 blood at the end of the action. +1 bleed.",
+        "Card Text":"Sabbat Archbishop of Pittsburgh: After resolution of any political action, if Alvaro abstained (even in torpor), he can gain 2 blood. +1 bleed.",
         "Set":{
             "Sabbat":"V",
-            "SW":"PL"
+            "SW":"PL",
+            "POD":"DTC"
         },
         "Title":"archbishop",
         "Banned":"",
@@ -1763,7 +1771,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Independent: During a political action, Amaravati can burn 2 blood to give each ready Assamite you control +1 vote. Blood cursed.",
+        "Card Text":"Independent: During the polling step of a political action, Amaravati can burn 2 blood to give each ready Assamite you control +1 vote. Blood cursed.",
         "Set":{
             "KMW":"U",
             "POD":"DTC"
@@ -1843,9 +1851,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Independent: Ambrogino has 1 vote (titled). +1 bleed.",
+        "Card Text":"Independent. 1 vote (titled): +1 bleed.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"1 vote",
         "Banned":"",
@@ -1870,9 +1879,10 @@
         "Adv":"Advanced",
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Advanced, Independent. Red List: During your unlock phase, Ambrogino may remove seven cards in your ash heap from the game to gain 2 blood. +1 bleed.\n[MERGED] +1 stealth.",
+        "Card Text":"Independent: During your unlock phase, Ambrogino can remove seven cards in your ash heap from the game to gain 2 blood. Red List. +1 bleed.\n[MERGED] +1 stealth.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -1897,9 +1907,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Sabbat cardinal: Mon\u00e7ada cannot block. Other Methuselahs' actions targeting Mon\u00e7ada cost an additional pool. If Mon\u00e7ada is ready during your discard phase, he can unlock another ready Lasombra.",
+        "Card Text":"Sabbat cardinal: Mon\u00e7ada cannot block. Actions directed at him cost 1 additional pool. If he is ready during your discard phase, you can unlock another ready Lasombra.",
         "Set":{
-            "SW":"U"
+            "SW":"U",
+            "POD":"DTC"
         },
         "Title":"cardinal",
         "Banned":"",
@@ -1976,9 +1987,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":7,
-        "Card Text":"Camarilla primogen: When an action requiring Serpentis [ser] is successful, you may draw a card from your library. Discard down to your hand size afterward. Amenophobis gets +1 bleed when bleeding the Methuselah who has the Edge.",
+        "Card Text":"Camarilla primogen: You can draw 1 card (discard down afterward) after resolution of any successful action requiring Serpentis [ser]. Amenophobis gets +1 bleed against the Methuselah who has the Edge.",
         "Set":{
-            "Gehenna":"U"
+            "Gehenna":"U",
+            "POD":"DTC"
         },
         "Title":"primogen",
         "Banned":"",
@@ -2026,10 +2038,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Independent: Amisa has 2 votes (titled). Amisa can lock a vampire with a capacity above 7 as a (D) action.",
+        "Card Text":"Independent. 2 votes (titled): Amisa can lock a vampire with capacity 8 or more as a (D) action.",
         "Set":{
             "AH":"V3",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -2257,9 +2270,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Independent: Andrea gets +1 stealth when performing an action that requires Necromancy [nec].",
+        "Card Text":"Independent: Andrea gets +1 stealth during actions requiring Necromancy [nec].",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -2342,7 +2356,8 @@
         "Card Text":"Sabbat bishop.",
         "Set":{
             "Third":"V",
-            "HttB":"PKia"
+            "HttB":"PKia",
+            "POD":"DTC"
         },
         "Title":"bishop",
         "Banned":"",
@@ -2512,10 +2527,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Sabbat cardinal: Once each action that Angelica attempts to block, you may burn X master cards from your hand to give her +X intercept.",
+        "Card Text":"Sabbat cardinal: During an action, Angelica can discard X master cards to get +X intercept.",
         "Set":{
             "Sabbat":"V",
-            "SW":"PL"
+            "SW":"PL",
+            "POD":"DTC"
         },
         "Title":"cardinal",
         "Banned":"",
@@ -2704,7 +2720,8 @@
         "Capacity":6,
         "Card Text":"Independent: +1 bleed.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -3107,7 +3124,8 @@
         "Card Text":"Sabbat Archbishop of Chicago: Ant\u00f3n gets 1 optional maneuver during the first round of combat.",
         "Set":{
             "Third":"V",
-            "SP":"PoS2"
+            "SP":"PoS2",
+            "POD":"DTC"
         },
         "Title":"archbishop",
         "Banned":"",
@@ -3185,10 +3203,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Sabbat Archbishop of Atlanta: If Antonio performs a political action and the referendum passes, unlock him at the end of the turn.",
+        "Card Text":"Sabbat Archbishop of Atlanta: If Antonio performs a political action whose referendum passes, he can unlock during the discard phase.",
         "Set":{
             "Sabbat":"V",
-            "SW":"U/PL"
+            "SW":"U/PL",
+            "POD":"DTC"
         },
         "Title":"archbishop",
         "Banned":"",
@@ -3373,9 +3392,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":10,
-        "Card Text":"Sabbat. Black Hand. Seraph: +1 stealth.",
+        "Card Text":"Sabbat: Black Hand. Seraph. +1 stealth.",
         "Set":{
-            "SoC":"V"
+            "SoC":"V",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -3801,9 +3821,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":8,
-        "Card Text":"Camarilla: If Arnulf attempts to block, the acting minion cannot play action modifiers that require Dementation [dem], Dominate [dom], Necromancy [nec] or Presence [pre].",
+        "Card Text":"Camarilla: If Arnulf attempts to block, the acting minion cannot play action modifier cards requiring Dementation [dem], Dominate [dom], Necromancy [nec] or Presence [pre] until the end of the action.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -4064,9 +4085,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":11,
-        "Card Text":"Independent: Augustus has 2 votes (titled). If a vampire you control has been burned since your last turn, Augustus may move that vampire from your ash heap to the ready region as an action that costs 1 pool. +1 bleed.",
+        "Card Text":"Independent. 2 votes (titled): If a vampire you control has been burned since your last turn, Augustus can move that vampire from your ash heap to the ready region (with no blood) as an action that costs 1 pool. +1 bleed.",
         "Set":{
-            "FN":"R"
+            "FN":"R",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -4116,10 +4138,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Sabbat: Aurora may strike for 1R damage.",
+        "Card Text":"Sabbat: Aurora can strike: 1R damage.",
         "Set":{
             "Sabbat":"V",
-            "SW":"PL"
+            "SW":"PL",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -4545,9 +4568,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Independent: Once each turn, if Baldesar is ready, he can reduce the cost of a location or of an equipment you pay by 1 pool or blood. +1 strength.",
+        "Card Text":"Independent: Once each turn, if Baldesar is ready, he can reduce the cost of a location or of an equipment you play by 1 blood or pool. +1 strength.",
         "Set":{
-            "Gehenna":"U"
+            "Gehenna":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -4572,9 +4596,10 @@
         "Adv":"",
         "Group":"3",
         "Capacity":5,
-        "Card Text":"Sabbat. Black Hand Seraph.",
+        "Card Text":"Sabbat: Black Hand. Seraph.",
         "Set":{
-            "BH":"U2"
+            "BH":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -4837,7 +4862,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":1,
-        "Card Text":"Independent: Basir gains 1 blood after you use a master phase action to put a master discipline card on him. He cannot block or play reaction cards. Blood cursed.",
+        "Card Text":"Independent: Basir gains 1 blood after you use a master phase action to put a master Discipline card on him. He cannot block or play reaction cards. Blood cursed.",
         "Set":{
             "KMW":"U",
             "POD":"DTC"
@@ -5205,7 +5230,8 @@
         "Capacity":2,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"PS2"
+            "LotN":"PS2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -5226,9 +5252,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Independent: During your unlock phase, any Giovanni older than the oldest ready Giovanni you control can burn 1 blood to take control of Benedict. Benedict cannot block undirected actions.",
+        "Card Text":"Independent: During your unlock phase, any Giovanni older than the oldest ready Giovanni you control can burn 1 blood to steal Benedict. He cannot block undirected actions.",
         "Set":{
-            "KMW":"PAl"
+            "KMW":"PAl",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -5619,7 +5646,8 @@
         "Capacity":5,
         "Card Text":"Sabbat.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -5646,7 +5674,8 @@
         "Card Text":"Sabbat.",
         "Set":{
             "KMW":"U",
-            "HttB":"PKia"
+            "HttB":"PKia",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -6363,7 +6392,8 @@
         "Capacity":7,
         "Card Text":"Laibon: +1 intercept.",
         "Set":{
-            "LoB":"U"
+            "LoB":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -6439,9 +6469,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Independent: If Cagliostro is ready during your discard phase, you get an additional discard phase action. If Cagliostro is blocked and combat occurs, he may place a corruption counter on the blocking minion when that combat ends.",
+        "Card Text":"Independent: If Cagliostro is ready at the start of your discard phase, you get +1 discard phase action. If he is blocked and combat occurs, he can put 1 corruption counter on the blocking minion after that combat ends.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -6655,7 +6686,8 @@
         "Card Text":"Sabbat.",
         "Set":{
             "Sabbat":"V",
-            "SW":"PL"
+            "SW":"PL",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -6814,10 +6846,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Independent: Carlotta may exchange a library card in your ash heap for a card in your hand as a +1 stealth action that costs 1 blood.",
+        "Card Text":"Independent: Carlotta can exchange one card from your hand for one library card in your ash heap as a +1 stealth action that costs 1 blood.",
         "Set":{
             "DS":"V",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -6866,9 +6899,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":10,
-        "Card Text":"Independent: Carmine has 2 votes (titled). Whenever a wraith enters play, that wraith gains 1 additional life from the blood bank. Carmine may lock to give an acting ally +1 stealth.",
+        "Card Text":"Independent. 2 votes (titled): Wraiths come into play with 1 additional life. Carmine can lock to give any ally +1 stealth.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -6923,7 +6957,8 @@
         "Card Text":"Sabbat Archbishop of Montreal: Carolina is immune to damage from allies and retainers.",
         "Set":{
             "DM":"C",
-            "SP":"PoS2"
+            "SP":"PoS2",
+            "POD":"DTC"
         },
         "Title":"archbishop",
         "Banned":"",
@@ -7261,7 +7296,8 @@
         "Capacity":3,
         "Card Text":"Independent.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -7440,7 +7476,8 @@
         "Capacity":8,
         "Card Text":"Sabbat cardinal: Charles gets 1 optional press each combat.",
         "Set":{
-            "SP":"PoS2"
+            "SP":"PoS2",
+            "POD":"DTC"
         },
         "Title":"cardinal",
         "Banned":"",
@@ -7489,9 +7526,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":4,
-        "Card Text":"Independent: When Chas announces an action, any other Methuselah can discard a master card as an out-of-turn master to cause the action to fail. Chas gets +1 strength when in combat with a titled vampire.",
+        "Card Text":"Independent: As Chas announces an action, any other Methuselah can discard one master card as an out-of-turn master to have the action fail. He gets +1 strength in combat with a titled vampire.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -7905,7 +7943,8 @@
         "Capacity":6,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -8110,9 +8149,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Sabbat: While Conrad is acting, reaction cards cost younger vampires an additional blood.",
+        "Card Text":"Sabbat: While Conrad is acting, reaction cards cost younger vampires 1 additional blood.",
         "Set":{
-            "Third":"V"
+            "Third":"V",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -8300,7 +8340,8 @@
         "Capacity":5,
         "Card Text":"Independent.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -8432,7 +8473,8 @@
         "Capacity":2,
         "Card Text":"Independent.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -8456,7 +8498,8 @@
         "Card Text":"Independent.",
         "Set":{
             "DS":"V2",
-            "Tenth":"B"
+            "Tenth":"B",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -8901,9 +8944,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Independent: Danny gets +1 strength when in combat with a younger vampire.",
+        "Card Text":"Independent: Danny gets +1 strength in combat with a younger vampire.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -9163,10 +9207,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":5,
-        "Card Text":"Independent: Dedefra gets +1 strength when in combat with a Camarilla vampire.",
+        "Card Text":"Independent: Dedefra gets +1 strength in combat with a Camarilla vampire.",
         "Set":{
             "AH":"V3",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -9586,9 +9631,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":8,
-        "Card Text":"Independent: Diego may burn a location as a (D) action that costs 2 blood.",
+        "Card Text":"Independent: Diego can burn a location as a (D) action that costs 2 blood.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -9741,7 +9787,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":10,
-        "Card Text":"Independent: Once each combat, Dmitri can burn 1 blood to prevent all damage from an opposing minion's strike. Once each action, he can burn 1 blood to get +1 stealth. Blood cursed.",
+        "Card Text":"Independent: Once each combat, Dmitri can burn 1 blood to prevent all damage from an opposing minion's strike. During an action, he can burn 1 blood to get +1 stealth. Blood cursed.",
         "Set":{
             "LotN":"PA2",
             "POD":"DTC"
@@ -10096,9 +10142,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":7,
-        "Card Text":"Independent: Michael has 2 votes (titled). He cannot strike to end combat and cannot use presses to end combat. He gets +1 strength on any combat round after the first.",
+        "Card Text":"Independent. 2 votes (titled): Michael cannot strike: combat ends or press to end combat. He gets +1 strength on any round of combat after the first.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -10170,9 +10217,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Independent: During your prey's unlock phase, choose a vampire controlled by a Methuselah other than your predator. If the chosen vampire attempts to bleed before your next unlock phase, he or she moves 1 blood to Donatello.",
+        "Card Text":"Independent: During your prey's unlock phase, you can choose a vampire controlled by a Methuselah other than your predator. If the chosen vampire attempts to bleed before your next unlock phase, they move 1 blood to Donatello.",
         "Set":{
-            "Gehenna":"U"
+            "Gehenna":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -10540,7 +10588,8 @@
         "Capacity":5,
         "Card Text":"Sabbat bishop: Younger vampires must burn 1 blood to attempt to block Julius.",
         "Set":{
-            "Gehenna":"U"
+            "Gehenna":"U",
+            "POD":"DTC"
         },
         "Title":"bishop",
         "Banned":"",
@@ -10563,9 +10612,10 @@
         "Adv":"Advanced",
         "Group":"3",
         "Capacity":5,
-        "Card Text":"Advanced, Sabbat: During a (D) action, Julius may burn 1 blood to get +1 stealth.\n[MERGED] Archbishop of Atlanta: Julius gets +1 strength in combat with a Camarilla vampire.",
+        "Card Text":"Sabbat: During a directed action, Julius can burn 1 blood to get +1 stealth.\n[MERGED] Archbishop of Atlanta: Julius gets +1 strength in combat with a Camarilla vampire.",
         "Set":{
-            "Third":"V"
+            "Third":"V",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -11804,10 +11854,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Independent: Enzo may attempt to block any political action attempted by any Methuselah. He gets +1 intercept against any political action not attempted by a prince, justicar, or Inner Circle member.",
+        "Card Text":"Independent: Enzo ignores the normal prey or predator restrictions for blocking actions while a vampire controlled by another Methuselah is performing a political action. He gets +1 intercept during political actions not performed by a prince, justicar, or Inner Circle member.",
         "Set":{
             "DS":"V",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -11942,7 +11993,8 @@
         "Capacity":2,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -12066,10 +12118,11 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Sabbat. Black Hand.",
+        "Card Text":"Sabbat: Black Hand.",
         "Set":{
             "Third":"V",
-            "HttB":"PKia"
+            "HttB":"PKia",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -12388,7 +12441,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Independent: Evil Jensen can search your crypt for any vampire and move them to your uncontrolled region as a +1 stealth action that costs 2 pool (shuffle afterward). She must burn 1 blood to attempt to block older vampires.",
+        "Card Text":"Independent: Evil Jensen can search your crypt for a vampire and move them to your uncontrolled region as a +1 stealth action that costs 2 pool (shuffle afterward). She must burn 1 blood to attempt to block older vampires.",
         "Set":{
             "HttB":"U/B2"
         },
@@ -12443,9 +12496,10 @@
         "Adv":"",
         "Group":"3",
         "Capacity":6,
-        "Card Text":"Sabbat. Black Hand.",
+        "Card Text":"Sabbat: Black Hand.",
         "Set":{
-            "BH":"U2"
+            "BH":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -13119,7 +13173,8 @@
         "Card Text":"Independent.",
         "Set":{
             "DS":"V",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -13144,7 +13199,8 @@
         "Capacity":6,
         "Card Text":"Independent: Francis gets +1 strength in combat with a Toreador or Toreador antitribu.",
         "Set":{
-            "LotN":"PG2"
+            "LotN":"PG2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -13168,9 +13224,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Sabbat Archbishop of New York: Once per turn, Polonia may burn a blood to get +1 bleed for the current action.",
+        "Card Text":"Sabbat Archbishop of New York: Once each turn, Francisco can burn 1 blood to get +1 bleed for the current action.",
         "Set":{
-            "SW":"PL"
+            "SW":"PL",
+            "POD":"DTC"
         },
         "Title":"archbishop",
         "Banned":"",
@@ -13658,10 +13715,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Independent: During your master phase, Gaspare may burn 2 blood to move a vampire from your ash heap to the top of your crypt. +1 strength.",
+        "Card Text":"Independent: During your master phase, Gaspare can burn 2 blood to move a vampire from your ash heap to the top of your crypt. +1 strength.",
         "Set":{
             "DS":"V",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -14187,9 +14245,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Camarilla Prince of Milan: Any Lasombra controlled by another Methuselah can enter combat with Giangaleazzo as a (D) action. During your discard phase, if there are any Gehenna cards in play, Giangaleazzo can burn a blood to unlock.",
+        "Card Text":"Camarilla Prince of Milan: Any Lasombra can enter combat with Giangaleazzo as a (D) action. If there are any Gehenna events in play during your discard phase, he can burn 1 blood to unlock.",
         "Set":{
-            "Gehenna":"U"
+            "Gehenna":"U",
+            "POD":"DTC"
         },
         "Title":"prince",
         "Banned":"",
@@ -14215,7 +14274,8 @@
         "Capacity":5,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -14291,9 +14351,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Independent: Gillespi gets +1 bleed when bleeding a Methuselah who controls a ready Camarilla vampire.",
+        "Card Text":"Independent: Gillespi gets +1 bleed against a Methuselah who controls a ready Camarilla vampire.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -14369,9 +14430,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":8,
-        "Card Text":"Independent: Del Georgio can remove two copies of the same card in your prey's ash heap from the game to hunt at +2 hunt as a +1 stealth action.",
+        "Card Text":"Independent: Del Georgio can remove two copies of the same card in your prey's ash heap from the game to hunt with +2 hunt as a +1 stealth action.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -14476,7 +14538,8 @@
         "Card Text":"Independent.",
         "Set":{
             "DS":"V",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -14714,10 +14777,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Sabbat priscus: Gratiano gets one additional ballot. +1 bleed.",
+        "Card Text":"Sabbat priscus: Gratiano gets +1 ballot. +1 bleed.",
         "Set":{
             "Sabbat":"V",
-            "SW":"U/PL"
+            "SW":"U/PL",
+            "POD":"DTC"
         },
         "Title":"priscus",
         "Banned":"",
@@ -14953,14 +15017,15 @@
         "Adv":"",
         "Group":"4",
         "Capacity":7,
-        "Card Text":"Independent: Once each turn when another Giovanni announces an action or strike that requires Necromancy [nec], Gualtiero may burn a blood to increase the stealth of that action or the damage done or blood burned by that action or strike by 1 (even if stealth is not yet needed).",
+        "Card Text":"Independent: Once each turn as another Giovanni announces an action or strike requiring Necromancy [nec], Gualtiero can burn 1 blood to give that action +1 stealth, even if stealth is not yet needed, or increase the damage inflicted or blood burned by that action or strike by 1.",
         "Set":{
-            "LoB":"U"
+            "LoB":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
         "Artist":[
-            "Sam Araya"
+            "Samuel Araya"
         ],
         "ASCII Name":"Gualtiero Ghiberti",
         "Disciplines":{
@@ -15033,7 +15098,8 @@
         "Card Text":"Sabbat.",
         "Set":{
             "Sabbat":"V",
-            "SW":"U"
+            "SW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -15056,14 +15122,15 @@
         "Adv":"",
         "Group":"4",
         "Capacity":9,
-        "Card Text":"Independent: While Guillaume is ready, you get +1 hand size for each location you control. Guillaume gets +1 stealth on recruit and employ actions.",
+        "Card Text":"Independent: While Guillaume is ready, you get +1 hand size for each location you control. He gets +1 stealth during recruit and employ actions.",
         "Set":{
-            "LotN":"PG2"
+            "LotN":"PG2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
         "Artist":[
-            "Heather Kreiter"
+            "Heather V. Kreiter"
         ],
         "ASCII Name":"Guillaume Giovanni",
         "Disciplines":{
@@ -15403,7 +15470,8 @@
         "Card Text":"Independent: +1 strength.",
         "Set":{
             "AH":"V3",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -15481,7 +15549,8 @@
         "Capacity":6,
         "Card Text":"Independent: While Halim is ready, mummies you control get +1 stealth.",
         "Set":{
-            "LotN":"PS2"
+            "LotN":"PS2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -16229,9 +16298,10 @@
         "Adv":"",
         "Group":"3",
         "Capacity":7,
-        "Card Text":"Sabbat. Black Hand: You have +1 hand size while Henri is in combat.",
+        "Card Text":"Sabbat: While Henri is in combat, you get +1 hand size. Black Hand.",
         "Set":{
-            "BH":"U2"
+            "BH":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -16355,10 +16425,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Independent: Hesha gets +1 stealth on hunt actions. +1 hunt.",
+        "Card Text":"Independent: Hesha gets +1 stealth when hunting. +1 hunt.",
         "Set":{
             "Promo":"20010302",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -16384,7 +16455,8 @@
         "Capacity":3,
         "Card Text":"Sabbat.",
         "Set":{
-            "BH":"U2"
+            "BH":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -16928,7 +17000,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Independent: After Husamettin burns a vampire with a contract on them, you can search your library for a master discipline card and put it on him (shuffle afterward). Blood cursed.",
+        "Card Text":"Independent: After Husamettin burns a vampire with a contract on them, you can search your library for a master Discipline card and put it on him (shuffle afterward). Blood cursed.",
         "Set":{
             "AH":"V3",
             "FN":"PA",
@@ -17139,7 +17211,8 @@
         "Card Text":"Sabbat.",
         "Set":{
             "Sabbat":"V",
-            "SW":"U/PL"
+            "SW":"U/PL",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -17189,9 +17262,10 @@
         "Adv":"",
         "Group":"3",
         "Capacity":9,
-        "Card Text":"Independent: Ignazio can enter combat with a vampire of capacity less than 7 controlled by your predator or prey as a (D) action. +1 strength.",
+        "Card Text":"Independent: Ignazio can enter combat with a vampire with capacity 6 or less controlled by your predator or prey as a (D) action. +1 strength.",
         "Set":{
-            "BH":"U2"
+            "BH":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -17562,9 +17636,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Independent: During your unlock phase, if Intisar is ready and you control the Edge, you may give another Methuselah 1 pool from your pool to lock a minion of your choice controlled by that Methuselah.",
+        "Card Text":"Independent: If Intisar is ready and you have the Edge during your unlock phase, you can give another Methuselah 1 pool to lock a minion they control.",
         "Set":{
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -17721,7 +17796,8 @@
         "Capacity":5,
         "Card Text":"Independent.",
         "Set":{
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -20292,7 +20368,7 @@
         "Adv":"",
         "Group":"5",
         "Capacity":9,
-        "Card Text":"Laibon magaji: Kabede gets +1 intercept against political actions.",
+        "Card Text":"Laibon magaji: Kabede gets +1 intercept during political actions.",
         "Set":{
             "LotN":"U",
             "POD":"DTC"
@@ -20321,9 +20397,10 @@
         "Adv":"",
         "Group":"3",
         "Capacity":9,
-        "Card Text":"Independent: Kahina has 1 vote (titled). She can call a referendum to inflict 1 damage on each minion who has one of your Corruption counters as a +1 stealth political action.",
+        "Card Text":"Independent. 1 vote (titled): Kahina can call a referendum to inflict 1 damage on each minion who has any of your corruption counters as a +1 stealth political action.",
         "Set":{
-            "Anarchs":"U2"
+            "Anarchs":"U2",
+            "POD":"DTC"
         },
         "Title":"1 vote",
         "Banned":"",
@@ -20954,7 +21031,8 @@
         "Capacity":4,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -21051,10 +21129,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Independent: Kemintiri gets +1 bleed and +1 stealth when bleeding a Methuselah who controls a Ventrue. Any Ventrue controlled by another Methuselah can enter combat with Kemintiri as a (D) action. Kemintiri can enter combat with any Ventrue controlled by another Methuselah as a +1 stealth (D) action.",
+        "Card Text":"Independent: Kemintiri gets +1 bleed and +1 stealth when bleeding a Methuselah who controls a Ventrue. Any Ventrue can enter combat with her as a (D) action. She can enter combat with a Ventrue as a +1 stealth (D) action.",
         "Set":{
             "AH":"V3",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -21083,9 +21162,10 @@
         "Adv":"Advanced",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Advanced, Independent. Red List: +1 stealth.\n[MERGED] Kemintiri has 3 votes (titled). She can play minion cards that require Camarilla, Ventrue, and/or a justicar title as if she met that/those requirement(s).",
+        "Card Text":"Independent: Red List. +1 stealth.\n[MERGED] 3 votes (titled): Kemintiri can play minion cards requiring a Camarilla vampire, a Ventrue, and/or a justicar title as if she met that/those requirement(s).",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -21166,10 +21246,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Independent: Kephamos has 2 votes (titled). +1 bleed.",
+        "Card Text":"Independent. 2 votes (titled): +1 bleed.",
         "Set":{
             "AH":"V3",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -21277,7 +21358,8 @@
         "Card Text":"Independent.",
         "Set":{
             "AH":"V3",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -21352,9 +21434,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Independent: Kay'tall gets +1 stealth on political actions. Vampires with corruption counters cannot cast votes or ballots against any referendums called by Khay'tall.",
+        "Card Text":"Independent: Kay'tall gets +1 stealth during political actions. Vampires with any corruption counters cannot cast votes or ballots against referendums called by Khay'tall.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -21993,9 +22076,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":10,
-        "Card Text":"Independent: Constancia has 2 votes (titled). You may burn the Edge and spend a discard phase action to discard a card at random and draw its replacement from the other cards in your ash heap.",
+        "Card Text":"Independent. 2 votes (titled): You can burn the Edge and use a discard phase action to discard 1 card at random and draw its replacement from the other library cards in your ash heap.",
         "Set":{
-            "LotN":"PG2"
+            "LotN":"PG2",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -22152,7 +22236,8 @@
         "Card Text":"Independent.",
         "Set":{
             "AH":"V3",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -22727,9 +22812,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":4,
-        "Card Text":"Sabbat: Leila may change the sect of an anarch vampire with no blood to Sabbat as a +1 stealth (D) action.",
+        "Card Text":"Sabbat: Leila can change the sect of an Anarch with no blood to Sabbat as a +1 stealth (D) action.",
         "Set":{
-            "Third":"V"
+            "Third":"V",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -22909,7 +22995,8 @@
         "Capacity":3,
         "Card Text":"Independent.",
         "Set":{
-            "Anarchs":"U2"
+            "Anarchs":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -23111,10 +23198,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Sabbat bishop: Lisette gets +1 intercept against any vampire performing a diablerie action.",
+        "Card Text":"Sabbat bishop: Lisette gets +1 intercept during diablerie actions.",
         "Set":{
             "Sabbat":"V",
-            "SW":"PL"
+            "SW":"PL",
+            "POD":"DTC"
         },
         "Title":"bishop",
         "Banned":"",
@@ -23503,7 +23591,8 @@
         "Capacity":8,
         "Card Text":"Sabbat priscus: Leopold can strike, ranged: steal 2 blood or life (becoming blood).",
         "Set":{
-            "SP":"PoS2"
+            "SP":"PoS2",
+            "POD":"DTC"
         },
         "Title":"priscus",
         "Banned":"",
@@ -23560,7 +23649,8 @@
         "Card Text":"Sabbat.",
         "Set":{
             "Third":"V",
-            "HttB":"PKia"
+            "HttB":"PKia",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -23584,9 +23674,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":9,
-        "Card Text":"Independent. Red List: If Lorenzo is ready at the end of combat and the opposing minion is not, Lorenzo may burn 5 blood to move the opposing minion to your ready region (with 1 life for an ally with no life) instead.",
+        "Card Text":"Independent: If Lorenzo is ready at the end of combat and the opposing minion would not, instead Lorenzo can burn 5 blood to move the opposing minion to your ready region, with 1 life for an ally with no life. Red List.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -23821,11 +23912,12 @@
         "Adv":"",
         "Group":"4",
         "Capacity":10,
-        "Card Text":"Sabbat Archbishop of Philadelphia: Once each round after the first, Luca can strike: 2R damage.",
+        "Card Text":"Sabbat Archbishop of Philadelphia: Once each round of combat after the first, Luca can strike: 2R damage.",
         "Set":{
             "Third":"V",
             "HttB":"PKia",
-            "SP":"PoS2"
+            "SP":"PoS2",
+            "POD":"DTC"
         },
         "Title":"archbishop",
         "Banned":"",
@@ -24023,10 +24115,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Independent: Sabbat vampires younger than Lucita get -1 intercept when attempting to block Lucita.",
+        "Card Text":"Independent: Younger Sabbat vampires get -1 intercept against Lucita.",
         "Set":{
             "Promo":"20020811",
-            "SW":"PL"
+            "SW":"PL",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -24051,9 +24144,10 @@
         "Adv":"Advanced",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Advanced, Sabbat: Once each action Lucita performs, she may burn 2 blood to cancel a reaction card played by a vampire with capacity less than 6 as it is played (no cost is paid).\n[MERGED] Archbishop of Aragon.",
+        "Card Text":"Sabbat: During an action Lucita performs, she can burn 2 blood to cancel a reaction card as it is played by a vampire with capacity 5 or less, and its cost is not paid.\n[MERGED] Archbishop of Aragon.",
         "Set":{
-            "Anarchs":"U2"
+            "Anarchs":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -24137,7 +24231,8 @@
         "Capacity":3,
         "Card Text":"Sabbat.",
         "Set":{
-            "Third":"V"
+            "Third":"V",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -24312,9 +24407,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":10,
-        "Card Text":"Independent: Luna has 1 vote (titled). During a referendum, Luna may remove X political action [POLITICALACTION] cards in any ash heaps from the game to gain X votes.",
+        "Card Text":"Independent. 1 vote (titled): During the polling step of any referendum, Luna can remove X political action cards in any ash heaps from the game to get +X votes.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"1 vote",
         "Banned":"",
@@ -25074,9 +25170,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":2,
-        "Card Text":"Independent: Bleed actions cost Marciana an additional blood. Lock Marciana and choose a non-Sabbat vampire to allow that vampire to burn 1 blood to get +1 intercept for the current action.",
+        "Card Text":"Independent: Bleed actions cost Marciana 1 additional blood. During an action, you can lock her and choose a non-Sabbat vampire to allow that vampire to burn 1 blood to get +1 intercept.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -25154,10 +25251,11 @@
         "Adv":"Advanced",
         "Group":"3",
         "Capacity":10,
-        "Card Text":"Advanced, Sabbat: Any Brujah may enter combat with Marcus as a (D) action.\n[MERGED] While he is ready and Sabbat, your Sabbat vampires get +1 bleed against a Methuselah who controls a ready Camarilla vampire.",
+        "Card Text":"Sabbat: Any Brujah can enter combat with Marcus as a (D) action.\n[MERGED] While he is ready and Sabbat, Sabbat vampires you control get +1 bleed against a Methuselah who controls a ready Camarilla vampire.",
         "Set":{
             "Anarchs":"U2",
-            "KMW":"PAn"
+            "KMW":"PAn",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -25183,9 +25281,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Independent: Margaret gets +1 bleed if Francis Milliner is ready. Cards that require Fortitude [for] cost her an additional blood.",
+        "Card Text":"Independent: While /Francis Milliner/ is ready, Margaret gets +1 bleed. Cards requiring Fortitude [for] cost her 1 additional blood.",
         "Set":{
-            "LotN":"PG2"
+            "LotN":"PG2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -25391,9 +25490,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Independent: If Marianna is ready, any other Methuselah controlling a ready Giovanni burns 1 pool during his or her unlock phase. Marianna gets +1 strength when in combat with a Giovanni.",
+        "Card Text":"Independent: While Marianna is ready, any other Methuselah controlling a ready Giovanni burns 1 pool during their unlock phase. She gets +1 strength in combat with a Giovanni.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -25581,7 +25681,8 @@
         "Card Text":"Independent.",
         "Set":{
             "AH":"V3",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -25738,7 +25839,8 @@
         "Capacity":4,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"PS2"
+            "LotN":"PS2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -26632,7 +26734,8 @@
         "Capacity":10,
         "Card Text":"Sabbat cardinal.",
         "Set":{
-            "Third":"V"
+            "Third":"V",
+            "POD":"DTC"
         },
         "Title":"cardinal",
         "Banned":"",
@@ -26658,9 +26761,10 @@
         "Adv":"Advanced",
         "Group":"4",
         "Capacity":10,
-        "Card Text":"Advanced, Sabbat bishop: During your unlock phase, Melinda can lock a Sabbat vampire with capacity less than 7.\n[MERGED] Sabbat regent: +2 bleed.",
+        "Card Text":"Sabbat bishop: During your unlock phase, Melinda can lock a Sabbat vampire with capacity 6 or less.\n[MERGED] Sabbat regent: +2 bleed.",
         "Set":{
-            "Third":"V"
+            "Third":"V",
+            "POD":"DTC"
         },
         "Title":"bishop",
         "Banned":"",
@@ -26927,7 +27031,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Sabbat: If Michael successfully performs an action to enter combat with a minion, he can set the range for the first round of the resulting combat to long.",
+        "Card Text":"Sabbat: If Michael performs a successful action to enter combat with a minion, he can set the range for the first round of the resulting combat to long.",
         "Set":{
             "KMW":"U/PG",
             "POD":"DTC"
@@ -27421,7 +27525,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":11,
-        "Card Text":"Camarilla Tremere Inner Circle: Mistress Fanchon can search your library for any minion card, reveal it, and move it to your hand as a +1 stealth action. +2 bleed.",
+        "Card Text":"Camarilla Tremere Inner Circle: Mistress Fanchon can search your library for a minion card, reveal it, and move it to your hand as a +1 stealth action. +2 bleed.",
         "Set":{
             "KoT":"V/B2"
         },
@@ -27632,10 +27736,11 @@
         "Adv":"",
         "Group":"3",
         "Capacity":11,
-        "Card Text":"Independent. 2 votes (titled): Cards requiring Obtenebration [obt] cost Montano 1 fewer blood. Once each action, he can burn 1 blood to give an acting minion you control +1 stealth. +1 bleed.",
+        "Card Text":"Independent. 2 votes (titled): Cards requiring Obtenebration [obt] cost Montano 1 fewer blood. During an action, he can burn 1 blood to give a minion you control +1 stealth. +1 bleed.",
         "Set":{
             "Promo":"20190408",
-            "Promo-20181004":"HB2"
+            "Promo-20181004":"HB2",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -28264,9 +28369,10 @@
         "Adv":"",
         "Group":"3",
         "Capacity":10,
-        "Card Text":"Sabbat: If Nahir is ready, you may use a master phase action to burn 1 pool to put a research counter on her. Your hand size is +X, where X is the number of research counters she has. +1 bleed.",
+        "Card Text":"Sabbat: If Nahir is ready, you can use a master phase action and burn 1 pool to put 1 research counter on her. You get +1 hand size for each research counter on her. +1 bleed.",
         "Set":{
-            "BH":"U2"
+            "BH":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -28345,9 +28451,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":10,
-        "Card Text":"Independent: Nakhthorheb may unlock once during each of your minion phases. Minions with your corruption counters cannot block him. +1 strength.",
+        "Card Text":"Independent: During your minion phase, Nakhthorheb can unlock. Minions with any of your corruption counters cannot block him. +1 strength.",
         "Set":{
-            "LotN":"PS2"
+            "LotN":"PS2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -28627,9 +28734,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Independent: Nefertiti can place a corruption counter on a minion controlled by your prey as a +1 stealth (D) action that costs 1 blood. +1 bleed.",
+        "Card Text":"Independent: Nefertiti can put 1 corruption counter on a minion controlled by your prey as a +1 stealth (D) action that costs 1 blood. +1 bleed.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -28655,9 +28763,10 @@
         "Adv":"Advanced",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Independent: Nefertiti can search your crypt for an /Aabbt Kindred/ (shuffle afterwards), reveal it and move it to your uncontrolled region as a +1 stealth action.\n[MERGED] Nefertiti can unlock during your minion phase.",
+        "Card Text":"Independent: Nefertiti can search your crypt for a card named /Aabbt Kindred/ (shuffle afterward), reveal it and move it to your uncontrolled region as a +1 stealth action.\n[MERGED] During your minion phase, Nefertiti can unlock.",
         "Set":{
-            "Promo":"20190816"
+            "Promo":"20190816",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -28683,9 +28792,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":9,
-        "Card Text":"Independent: Neferu has 2 votes (titled). Once each referendum, she may burn a blood to change the votes and ballots of a vampire with any of your corruption counters to votes and ballots of your choice.",
+        "Card Text":"Independent. 2 votes (titled): During the polling step of any referendum, Neferu can burn 1 blood to change the votes and ballots of a vampire with any of your corruption counters to votes and ballots of your choice.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -28738,9 +28848,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Independent: Nehsi has 2 votes (titled). Nehsi gets an optional maneuver each combat.",
+        "Card Text":"Independent. 2 votes (titled): Nehsi gets 1 optional maneuver each combat.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -28795,7 +28906,8 @@
         "Card Text":"Independent.",
         "Set":{
             "AH":"V3",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -29372,7 +29484,8 @@
         "Capacity":3,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"PG2"
+            "LotN":"PG2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -29472,9 +29585,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":7,
-        "Card Text":"Independent: If an ally or younger vampire attempts to block Ogwon and fails, that minion burns 1 blood or life when the action resolves (before resolving the action).",
+        "Card Text":"Independent: Any ally or younger vampire who attempts to block Ogwon and fails burns 1 blood or life before action resolution.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -29623,7 +29737,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":7,
-        "Card Text":"Laibon magaji: If you are contesting a vampire, you can use the blood on that vampire or on Olugbenga as pool to pay for that contest. He gets +1 intercept against bleed actions.",
+        "Card Text":"Laibon magaji: If you are contesting a vampire, you can use the blood on that vampire or on Olugbenga as pool to pay for that contest. He gets +1 intercept during bleed actions.",
         "Set":{
             "LoB":"U",
             "POD":"DTC"
@@ -29729,9 +29843,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Laibon: If Otieno is ready, Onaedo gets +1 stealth when attempting a diablerie action.",
+        "Card Text":"Laibon: While /Otieno/ is ready, Onaedo gets +1 stealth during diablerie actions.",
         "Set":{
-            "LoB":"U"
+            "LoB":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -29860,9 +29975,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Laibon: Otieno gets +1 bleed when bleeding a Methuselah who controls a ready Guruhi.",
+        "Card Text":"Laibon: Otieno gets +1 bleed against a Methuselah who controls a ready Guruhi.",
         "Set":{
-            "LoB":"U"
+            "LoB":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -30016,9 +30132,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":7,
-        "Card Text":"Independent: Whenever a wraith enters play, Paolo gains 1 blood. Giovanni get +1 intercept when attempting to block Paolo.",
+        "Card Text":"Independent: As a wraith enters play, Paolo can gain 1 blood. Giovanni get +1 intercept against him.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -30198,10 +30315,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":5,
-        "Card Text":"Independent: Patrizia can employ a retainer from your ash heap as an action. The cost of that action is increased by 1 blood.",
+        "Card Text":"Independent: Patrizia can employ a retainer from your ash heap as an action whose cost is increased by 1 blood (requirements and cost apply as normal).",
         "Set":{
             "AH":"V3",
-            "Tenth":"A"
+            "Tenth":"A",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -30278,7 +30396,8 @@
         "Capacity":2,
         "Card Text":"Independent.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -30348,9 +30467,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":4,
-        "Card Text":"Sabbat: When Paulo is put into play during your influence phase, you may move 1 blood from him to any Lasombra in your uncontrolled region.",
+        "Card Text":"Sabbat: After Paulo enters play during your influence phase, you can move 1 blood from him to a Lasombra in your uncontrolled region.",
         "Set":{
-            "Third":"V"
+            "Third":"V",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -30473,9 +30593,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":9,
-        "Card Text":"Independent: When in combat at close range with an ally that costs less than 4 blood or pool or a vampire with capacity less than 4, Pentweret may give you control of that minion as a strike that costs 2 blood.",
+        "Card Text":"Independent: In combat with an ally costing 3 or fewer blood or pool or a vampire with capacity 3 or less, Pentweret can burn 2 blood to strike: steal that minion.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -30503,7 +30624,8 @@
         "Capacity":8,
         "Card Text":"Sabbat Archbishop of Guadalajara.",
         "Set":{
-            "SP":"PoS2"
+            "SP":"PoS2",
+            "POD":"DTC"
         },
         "Title":"archbishop",
         "Banned":"",
@@ -30980,9 +31102,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Independent: Pochtli may move up to two cards from your ash heap to your library as a +1 stealth action. Shuffle your library afterward.",
+        "Card Text":"Independent: Pochtli can move up to two library cards from your ash heap to your library as a +1 stealth action (shuffle afterward).",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -31035,9 +31158,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":9,
-        "Card Text":"Independent: When Porphyrion enters play, you may search your library for a Treaty of Laibach and move it to your hand (shuffle and discard afterward). +1 stealth.",
+        "Card Text":"Independent: As Porphyrion enters play, you can search your library for a card named /Treaty of Laibach/, reveal it, and move it to your hand (shuffle and discard down afterward). +1 stealth.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -31165,7 +31289,8 @@
         "Capacity":4,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"PG2"
+            "LotN":"PG2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -31407,9 +31532,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Independent: If Qufur is burned from play, you may move him from your ash heap to your uncontrolled region during your next influence phase.",
+        "Card Text":"Independent: If Qufur is burned from play, you can move him from your ash heap to your uncontrolled region during your next influence phase.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -31652,10 +31778,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Independent: Raphael may bleed your predator as a (D) action. +1 bleed.",
+        "Card Text":"Independent: Rafaele can bleed your predator as a (D) action. +1 bleed.",
         "Set":{
             "AH":"V3",
-            "Tenth":"B"
+            "Tenth":"B",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -31791,7 +31918,8 @@
         "Card Text":"Sabbat.",
         "Set":{
             "Sabbat":"V",
-            "SW":"PL"
+            "SW":"PL",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -31997,7 +32125,8 @@
         "Capacity":6,
         "Card Text":"Independent.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -32253,10 +32382,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Independent: Regina has 2 votes (titled). Recruiting allies and employing retainers costs Regina 1 less pool or blood (but never less than 0 pool or blood).",
+        "Card Text":"Independent. 2 votes (titled): Allies and retainers cost Regina 1 fewer blood or pool.",
         "Set":{
             "DS":"V",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -32357,12 +32487,13 @@
         "Capacity":5,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"PS2"
+            "LotN":"PS2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
         "Artist":[
-            "Brian LeBlanc"
+            "Jeff Laubenstein"
         ],
         "ASCII Name":"Renenet",
         "Disciplines":{
@@ -32456,7 +32587,8 @@
         "Capacity":3,
         "Card Text":"Independent.",
         "Set":{
-            "KMW":"U"
+            "KMW":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -33151,7 +33283,8 @@
         "Card Text":"Independent.",
         "Set":{
             "DS":"V2",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -33509,7 +33642,8 @@
         "Capacity":4,
         "Card Text":"Independent.",
         "Set":{
-            "KMW":"PB"
+            "KMW":"PB",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -33717,7 +33851,8 @@
         "Capacity":6,
         "Card Text":"Camarilla: Blood hunts cannot be called on Samat.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -33889,10 +34024,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Independent: If Saqqaf successfully performs an action requiring Serpentis [ser], you gain 1 pool. You may only gain 1 pool this way each turn.",
+        "Card Text":"Independent: Once each turn, you can gain 1 pool after Saqqaf performs a successful action requiring Serpentis [ser].",
         "Set":{
             "AH":"V3",
-            "FN":"PS"
+            "FN":"PS",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -34045,9 +34181,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Independent: During your master phase, if Sarrasine is ready, you may burn the Edge to gain an additional master phase action.",
+        "Card Text":"Independent: If Sarrasine is ready during your master phase, you can burn the Edge to get +1 master phase action.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -34075,7 +34212,8 @@
         "Card Text":"Camarilla Prince of Sydney.\n[MERGED] If Sarrasine is ready during your unlock phase, you can put 1 corruption counter on a minion controlled by your prey.",
         "Set":{
             "TU":"C",
-            "Anthology":"1"
+            "Anthology":"1",
+            "POD":"DTC"
         },
         "Title":"prince",
         "Banned":"",
@@ -34180,9 +34318,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":8,
-        "Card Text":"Sabbat. Black Hand: Saul may burn a blood during your discard phase to unlock another ready Black Hand vampire.",
+        "Card Text":"Sabbat: During your discard phase, Saul can burn 1 blood to unlock another ready Black Hand vampire. Black Hand.",
         "Set":{
-            "SoC":"V"
+            "SoC":"V",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -34648,10 +34787,11 @@
         "Adv":"",
         "Group":"4",
         "Capacity":7,
-        "Card Text":"Independent: At close range, Seren may send the opposing vampire to torpor as a strike if the range in the previous round was long. Not usable if any damage was successfully inflicted on Seren in the previous round.",
+        "Card Text":"Independent: If in the previous round the range was long and no damage was successfully inflicted on Seren, he can strike: send the opposing vampire to torpor.",
         "Set":{
             "Gehenna":"U",
-            "KMW":"PB"
+            "KMW":"PB",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -34758,9 +34898,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":10,
-        "Card Text":"Independent: When Seterpenre enters play, put up to four master: Discipline cards on him from your hand, ash heap and/or library (shuffle afterward). Discipline cards do not affect his capacity.",
+        "Card Text":"Independent: As Seterpenre enters play, put up to four master Discipline cards on him from your hand, ash heap and/or library (shuffle afterward). Discipline cards do not affect his capacity.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -35100,9 +35241,10 @@
         "Adv":"",
         "Group":"5",
         "Capacity":9,
-        "Card Text":"Independent: Shemti has 1 vote (titled). While he is ready and unlocked, any minion successfully performing a (D) action against you takes 1 damage (after resolving the action).",
+        "Card Text":"Independent. 1 vote (titled): While Shemti is ready and unlocked, minions take 1 environmental damage after performing a successful action directed at you (or a card you control).",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"1 vote",
         "Banned":"",
@@ -35256,9 +35398,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Independent: Silvia gets one optional press each combat. +1 strength.",
+        "Card Text":"Independent: Silvia gets 1 optional press each combat. +1 strength.",
         "Set":{
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -35312,7 +35455,8 @@
         "Capacity":5,
         "Card Text":"Independent.",
         "Set":{
-            "FN":"U2"
+            "FN":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -35392,7 +35536,8 @@
         "Capacity":4,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -35943,10 +36088,11 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Independent: During the referendum of a political action, Stefano may burn 1 blood to gain 1 vote.",
+        "Card Text":"Independent: During the polling step of a political action, Stefano can burn 1 blood to get +1 vote.",
         "Set":{
             "DS":"V",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -35998,7 +36144,8 @@
         "Capacity":3,
         "Card Text":"Independent.",
         "Set":{
-            "LotN":"U"
+            "LotN":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -36228,9 +36375,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Independent. Red List: If Sundervere is burned, you burn 1 pool. Once each action, he may burn 1 blood to get an additional +1 bleed. +1 bleed.",
+        "Card Text":"Independent: After Sundervere is burned, you burn 1 pool. During an action, he can burn 1 blood to get an additional +1 bleed. Red List. +1 bleed.",
         "Set":{
-            "LotN":"PS2"
+            "LotN":"PS2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -36307,9 +36455,10 @@
         "Adv":"",
         "Group":"2",
         "Capacity":11,
-        "Card Text":"Independent: Sutekh has 2 votes (titled). You gain a pool each time an action to recruit a Mummy ally is successful. During your unlock, you may move 1 blood between Sutekh and any other Follower of Set you control. +1 bleed.",
+        "Card Text":"Independent. 2 votes (titled): You can gain 1 pool after resolution of any successful action to recruit a mummy ally. During your unlock phase, you can move 1 blood between Sutekh and another Follower of Set you control. +1 bleed.",
         "Set":{
-            "FN":"R"
+            "FN":"R",
+            "POD":"DTC"
         },
         "Title":"2 votes",
         "Banned":"",
@@ -36552,9 +36701,10 @@
         "Adv":"",
         "Group":"3",
         "Capacity":4,
-        "Card Text":"Sabbat: During your unlock phase, an archbishop you control may move 1 blood to Tabitha.",
+        "Card Text":"Sabbat: During your unlock phase, an archbishop you control can move 1 blood from themselves to Tabitha.",
         "Set":{
-            "BH":"U2"
+            "BH":"U2",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -36597,22 +36747,23 @@
     },
     "201337":{
         "Id":201337,
-        "Name":"Talley, the Hound",
+        "Name":"Talley, The Hound",
         "Type":"Vampire",
         "Clan":"Lasombra",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Sabbat: Talley gets +1 intercept when attempting to block any action that targets one of your other minions.",
+        "Card Text":"Sabbat: Talley gets +1 intercept during actions directed at another minion you control.",
         "Set":{
-            "SW":"C"
+            "SW":"C",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
         "Artist":[
             "Lawrence Snelly"
         ],
-        "ASCII Name":"Talley, the Hound",
+        "ASCII Name":"Talley, The Hound",
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
@@ -36791,7 +36942,7 @@
             "BH":"U2"
         },
         "Title":"",
-        "Banned":"2020",
+        "Banned":"",
         "Artist":[
             "Peter Bergting"
         ],
@@ -37491,14 +37642,15 @@
         "Adv":"",
         "Group":"4",
         "Capacity":4,
-        "Card Text":"Independent: During your unlock phase, you may move 1 blood from any Laibon you control to Thomasso.",
+        "Card Text":"Independent: During your unlock phase, you can move 1 blood from a Laibon you control to Thomasso.",
         "Set":{
-            "LoB":"U"
+            "LoB":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
         "Artist":[
-            "Sam Araya"
+            "Samuel Araya"
         ],
         "ASCII Name":"Thomasso Ghiberti",
         "Disciplines":{
@@ -37515,7 +37667,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":10,
-        "Card Text":"Independent. 1 vote (titled): Once each action, Thucimia can give you -2 hand size until your next unlock phase to get +1 bleed. Blood cursed. +1 hand size.",
+        "Card Text":"Independent. 1 vote (titled): During a bleed action, Thucimia can give you -2 hand size until your next unlock phase to get +1 bleed. Blood cursed. +1 hand size.",
         "Set":{
             "LotN":"PA2",
             "POD":"DTC"
@@ -37652,10 +37804,11 @@
         "Adv":"",
         "Group":"3",
         "Capacity":7,
-        "Card Text":"Sabbat: Tobias can give any other non-titled Sabbat vampire you control with a capacity above 5 the title of bishop as an action.",
+        "Card Text":"Sabbat: Tobias can give any other non-titled Sabbat vampire you control with capacity 6 or more the title of bishop as an action.",
         "Set":{
             "CE":"V",
-            "BSC":"X"
+            "BSC":"X",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -38103,7 +38256,7 @@
             "FN":"PR"
         },
         "Title":"",
-        "Banned":"2020",
+        "Banned":"",
         "Artist":[
             "Ken Meyer, Jr."
         ],
@@ -38686,7 +38839,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":11,
-        "Card Text":"Independent. 2 votes (titled): If Ur-Shulgi is ready during your unlock phase, you can search your library for /Tajdid/, reveal it, and move it to your hand. Blood cursed. +1 bleed.",
+        "Card Text":"Independent. 2 votes (titled): If Ur-Shulgi is ready during your unlock phase, you can search your library for a card named /Tajdid/, reveal it, and move it to your hand. Blood cursed. +1 bleed.",
         "Set":{
             "FN":"R",
             "POD":"DTC"
@@ -39296,7 +39449,7 @@
         "Adv":"",
         "Group":"5",
         "Capacity":5,
-        "Card Text":"Camarilla: As Verbruch enters play, you can search your crypt for any Tremere, reveal them, and move them to your uncontrolled region. Flight [FLIGHT]. Tremere slave.",
+        "Card Text":"Camarilla: As Verbruch enters play, you can search your crypt for a Tremere, reveal them, and move them to your uncontrolled region. Flight [FLIGHT]. Tremere slave.",
         "Set":{
             "LK":"2"
         },
@@ -39722,10 +39875,11 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Sabbat bishop: Once each action, Virginie may burn 1 blood to get +1 bleed.",
+        "Card Text":"Sabbat bishop: During an action, Virginie can burn 1 blood to get +1 bleed.",
         "Set":{
             "Third":"V",
-            "HttB":"PKia"
+            "HttB":"PKia",
+            "POD":"DTC"
         },
         "Title":"bishop",
         "Banned":"",
@@ -39803,7 +39957,8 @@
         "Card Text":"Independent.",
         "Set":{
             "DS":"V",
-            "FN":"PG"
+            "FN":"PG",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
@@ -40647,7 +40802,7 @@
         "Adv":"Advanced",
         "Group":"3",
         "Capacity":8,
-        "Card Text":"Sabbat: Yazid gets +1 stealth on (D) actions. Black Hand.\n[MERGED] Anarch.",
+        "Card Text":"Sabbat: Yazid gets +1 stealth during directed actions. Black Hand.\n[MERGED] Anarch.",
         "Set":{
             "Promo":"20190408",
             "POD":"DTC"
@@ -40888,7 +41043,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":5,
-        "Card Text":"Independent: If Yusuf successfully performs an action to equip with an equipment requiring an Assamite, unlock him during the discard phase. Blood cursed.",
+        "Card Text":"Independent: If Yusuf performs a successful action to equip with an equipment requiring an Assamite, he can unlock during the discard phase. Blood cursed.",
         "Set":{
             "FN":"U2",
             "POD":"DTC"
@@ -41022,7 +41177,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Independent: Zahir can search your library for a contract, reveal it, and move it to your hand as a +1 stealth action (shuffle and discard down afterward). Blood cursed.",
+        "Card Text":"Independent: Zahir can search your library for a contract card, reveal it, and move it to your hand as a +1 stealth action (shuffle and discard down afterward). Blood cursed.",
         "Set":{
             "FN":"U2",
             "POD":"DTC"
@@ -41182,9 +41337,10 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Laibon: When Zhenga announces a recruit action or employ action, she may burn X blood. If the action succeeds, she may recruit and employ up to X additional allies and retainers from your hand (pay cost as normal).",
+        "Card Text":"Laibon: As Zhenga announces a recruit or employ action, she can burn X blood. If the action is successful, she can recruit and employ up to X additional allies and retainers from your hand (requirements and cost apply as normal).",
         "Set":{
-            "LoB":"U"
+            "LoB":"U",
+            "POD":"DTC"
         },
         "Title":"",
         "Banned":"",
