@@ -26,7 +26,7 @@ function Crypt(props) {
               <Row>
                 <Col>
                   <div className={props.isMobile ? "d-flex justify-content-between" : "d-flex"}>
-                    <div className={isBranches ? "w-75" : props.isMobile ? "w-75" : "w-100"}>
+                    <div className={isBranches ? "w-75" : "w-100"}>
                       <DeckSelectMy
                         decks={props.decks}
                         activeDeck={props.activeDeck}
@@ -44,7 +44,7 @@ function Crypt(props) {
                        />
                      </div>
                     }
-                    <div className="d-flex pl-2">
+                    <div className="d-flex pl-1">
                       <Button
                         variant="outline-secondary"
                         onClick={() => props.setShowDeck(!props.showDeck)}

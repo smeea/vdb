@@ -417,7 +417,7 @@ def createBranch():
         deckid = uuid.uuid4().hex
         branch = Deck(deckid=deckid,
                            name=master.name,
-                           branch_name=f"Rev.  {len(master.branches) + 1}" if master.branches else "Rev. 1",
+                           branch_name=f"#{len(master.branches) + 1}" if master.branches else "#1",
                            author_public_name=source.author_public_name,
                            description=source.description,
                            author=current_user,

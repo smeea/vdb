@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
+import PaletteFill from '../../assets/images/icons/palette-fill.svg';
 
 function DeckChangeBranchName(props) {
   const [state, setState] = useState('');
@@ -36,6 +37,11 @@ function DeckChangeBranchName(props) {
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
+        {props.isMobile &&
+         <InputGroup.Prepend>
+           <InputGroup.Text><PaletteFill/></InputGroup.Text>
+         </InputGroup.Prepend>
+        }
         <FormControl
           type="text"
           className="form-control"

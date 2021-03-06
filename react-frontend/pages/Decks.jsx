@@ -237,7 +237,7 @@ function Decks(props) {
               <Row className="align-items-center justify-content-end mx-0">
                   <Col className="px-0">
                     <div className={props.inventoryMode ? "d-flex" : props.isMobile ? "d-flex justify-content-between" : "d-flex"}>
-                      <div className={isBranches ? "w-75" : props.isMobile ? "w-75" : "w-100"}>
+                      <div className={isBranches ? "w-75" : "w-100"}>
                         {selectFrom == 'my' ?
                            <DeckSelectMy
                              decks={props.decks}
@@ -264,7 +264,7 @@ function Decks(props) {
                       }
                       <div className="d-flex">
                         {props.inventoryMode && isAuthor && props.deckRouter(props.activeDeck) &&
-                         <div className="d-flex pl-2">
+                         <div className="d-flex pl-1">
                            <Button variant='outline-secondary' onClick={() => toggleInventoryState()}>
                              <div className="d-flex align-items-center">
                                {!props.deckRouter(props.activeDeck).inventory_type && <At/> }
@@ -275,7 +275,7 @@ function Decks(props) {
                          </div>
                         }
                         {props.isMobile && props.deckRouter(props.activeDeck) &&
-                         <div className="d-flex pl-2">
+                         <div className="d-flex pl-1">
                            <Button variant="outline-secondary" onClick={() => setShowInfo(!showInfo)}>
                              <InfoCircle />
                            </Button>
