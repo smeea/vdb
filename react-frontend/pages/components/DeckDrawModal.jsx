@@ -7,8 +7,8 @@ import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
 import DeckDrawLibraryTable from './DeckDrawLibraryTable.jsx';
 
 function DeckDrawModal(props) {
-  const totalCrypt = props.drawedCrypt.length + props.restCrypt.length
-  const totalLibrary = props.drawedLibrary.length + props.restLibrary.length
+  const totalCrypt = props.drawedCrypt.length + props.restCrypt.length;
+  const totalLibrary = props.drawedLibrary.length + props.restLibrary.length;
 
   return (
     <Modal
@@ -43,8 +43,7 @@ function DeckDrawModal(props) {
                       <b>Crypt</b>
                     </div>
                     <div className="d-flex align-items-center">
-                      {props.drawedCrypt.length} /{' '}
-                      {totalCrypt}
+                      {props.drawedCrypt.length} / {totalCrypt}
                     </div>
                     <div className="d-flex">
                       <Button
@@ -87,8 +86,7 @@ function DeckDrawModal(props) {
                       <b>Library</b>
                     </div>
                     <div className="d-flex align-items-center">
-                      {props.drawedLibrary.length} /{' '}
-                      {totalLibrary}
+                      {props.drawedLibrary.length} / {totalLibrary}
                     </div>
                     <div className="d-flex">
                       <Button

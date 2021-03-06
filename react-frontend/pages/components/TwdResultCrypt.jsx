@@ -18,7 +18,10 @@ function TwdResultCrypt(props) {
     if (props.crypt[card].c['Group'] == 'ANY') {
       return;
     }
-    if (props.crypt[card].c['Group'] < cryptGroupMin || cryptGroupMin == undefined) {
+    if (
+      props.crypt[card].c['Group'] < cryptGroupMin ||
+      cryptGroupMin == undefined
+    ) {
       cryptGroupMin = props.crypt[card].c['Group'];
     }
     if (cryptGroupMax == undefined) {
@@ -79,22 +82,20 @@ function TwdResultCrypt(props) {
         <td className="capacity px-1" onClick={() => setModalCard(card.c)}>
           <ResultCryptCapacity value={card.c['Capacity']} />
         </td>
-        {!props.isMobile ?
-         <OverlayTrigger
-           placement={props.placement ? props.placement : 'right'}
-           overlay={
-             <CardPopover card={card.c}>{props.showImage}</CardPopover>
-           }
-         >
-           <td className="name px-1" onClick={() => setModalCard(card.c)}>
-             <ResultCryptName card={card.c} />
-           </td>
-         </OverlayTrigger>
-         :
-         <td className="name px-1" onClick={() => setModalCard(card.c)}>
-           <ResultCryptName card={card.c} />
-         </td>
-        }
+        {!props.isMobile ? (
+          <OverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card.c}>{props.showImage}</CardPopover>}
+          >
+            <td className="name px-1" onClick={() => setModalCard(card.c)}>
+              <ResultCryptName card={card.c} />
+            </td>
+          </OverlayTrigger>
+        ) : (
+          <td className="name px-1" onClick={() => setModalCard(card.c)}>
+            <ResultCryptName card={card.c} />
+          </td>
+        )}
         <td className="clan px-1" onClick={() => setModalCard(card.c)}>
           <ResultCryptClan value={card.c['Clan']} />
         </td>
@@ -105,7 +106,9 @@ function TwdResultCrypt(props) {
   return (
     <>
       <div className="px-1">
-        <b>Crypt [{cryptTotal}] - {cryptGroups}</b>
+        <b>
+          Crypt [{cryptTotal}] - {cryptGroups}
+        </b>
       </div>
       <table className="twd-crypt-table">
         <tbody>{cardLines}</tbody>

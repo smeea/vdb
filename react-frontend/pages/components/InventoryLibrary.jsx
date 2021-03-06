@@ -3,11 +3,10 @@ import InventoryLibraryTable from './InventoryLibraryTable.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 
 function InventoryLibrary(props) {
-  let library = {}
+  let library = {};
 
-  if (props.category == "nok") {
-    Object.keys(props.cards).map(card => {
-
+  if (props.category == 'nok') {
+    Object.keys(props.cards).map((card) => {
       let softUsedMax = 0;
       if (props.usedCards.soft[card]) {
         Object.keys(props.usedCards.soft[card]).map((id) => {
@@ -24,26 +23,26 @@ function InventoryLibrary(props) {
       }
 
       if (props.cards[card].q < softUsedMax + hardUsedTotal) {
-        library[card] = props.cards[card]
+        library[card] = props.cards[card];
       }
-    })
+    });
   } else {
-    library = {...props.cards}
+    library = { ...props.cards };
   }
 
-  if (!props.compact && props.category != "ok") {
+  if (!props.compact && props.category != 'ok') {
     Object.keys(props.usedCards.soft).map((card) => {
       if (!props.cards[card]) {
-        library[card] = {q: 0, c: props.cardBase[card]}
+        library[card] = { q: 0, c: props.cardBase[card] };
       }
-    })
+    });
 
     Object.keys(props.usedCards.hard).map((card) => {
       if (!props.cards[card]) {
-        library[card] = {q: 0, c: props.cardBase[card]}
+        library[card] = { q: 0, c: props.cardBase[card] };
       }
-    })
-  };
+    });
+  }
 
   const cardtypeSorted = [
     'Master',
@@ -92,13 +91,13 @@ function InventoryLibrary(props) {
         libraryByTypeTotal[cardtype] += card.q;
       }
       LibraryDeck.push(
-        <div key={cardtype} className={props.compact ? null : "pt-2"}>
-          {!props.compact &&
-           <ResultLibraryType
-             cardtype={cardtype}
-             total={libraryByTypeTotal[cardtype]}
-           />
-          }
+        <div key={cardtype} className={props.compact ? null : 'pt-2'}>
+          {!props.compact && (
+            <ResultLibraryType
+              cardtype={cardtype}
+              total={libraryByTypeTotal[cardtype]}
+            />
+          )}
           <InventoryLibraryTable
             cardChange={props.cardChange}
             decks={props.decks}
@@ -117,11 +116,11 @@ function InventoryLibrary(props) {
 
   return (
     <>
-      {!props.compact &&
-       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-         <b>Library {props.category != "nok" && <>[{total}]</>}</b>
-       </div>
-      }
+      {!props.compact && (
+        <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+          <b>Library {props.category != 'nok' && <>[{total}]</>}</b>
+        </div>
+      )}
       {LibraryDeck}
     </>
   );

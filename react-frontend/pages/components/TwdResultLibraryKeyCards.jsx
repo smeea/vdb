@@ -86,28 +86,26 @@ function TwdResultLibraryKeyCards(props) {
         <td className="type" onClick={() => handleClick()}>
           <ResultLibraryType cardtype={card.c['Type']} />
         </td>
-        {!props.isMobile ?
-         <OverlayTrigger
-           placement={props.placement ? props.placement : 'right'}
-           overlay={
-             <CardPopover card={card.c}>{props.showImage}</CardPopover>
-           }
-         >
-           <td className="name px-1" onClick={() => setModalCard(card.c)}>
-             <ResultLibraryName card={card.c} />
-           </td>
-         </OverlayTrigger>
-         :
-         <td className="name px-1" onClick={() => setModalCard(card.c)}>
-           <ResultLibraryName card={card.c} />
-         </td>
-        }
-        {!props.isMobile &&
-         <td className="disciplines" onClick={() => handleClick()}>
-           <ResultLibraryDisciplines value={card.c['Discipline']} />
-           <ResultLibraryClan value={card.c['Clan']} />
-         </td>
-        }
+        {!props.isMobile ? (
+          <OverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card.c}>{props.showImage}</CardPopover>}
+          >
+            <td className="name px-1" onClick={() => setModalCard(card.c)}>
+              <ResultLibraryName card={card.c} />
+            </td>
+          </OverlayTrigger>
+        ) : (
+          <td className="name px-1" onClick={() => setModalCard(card.c)}>
+            <ResultLibraryName card={card.c} />
+          </td>
+        )}
+        {!props.isMobile && (
+          <td className="disciplines" onClick={() => handleClick()}>
+            <ResultLibraryDisciplines value={card.c['Discipline']} />
+            <ResultLibraryClan value={card.c['Clan']} />
+          </td>
+        )}
       </tr>
     );
   });

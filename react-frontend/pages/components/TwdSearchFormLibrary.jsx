@@ -26,7 +26,6 @@ function TwdSearchFormLibrary(props) {
   const libraryCardsList = Object.keys(props.state)
     .filter((id) => props.state[id] > 0)
     .map((id, index) => {
-
       const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
         return (
           <Popover ref={ref} {...props}>
@@ -48,13 +47,15 @@ function TwdSearchFormLibrary(props) {
             target="library"
           />
           <OverlayTrigger
-            placement='left'
+            placement="left"
             overlay={
-              <CardPopover card={props.cardBase[id]}>{props.showImage}</CardPopover>
+              <CardPopover card={props.cardBase[id]}>
+                {props.showImage}
+              </CardPopover>
             }
           >
             <div onClick={() => setModalCard(props.cardBase[id])}>
-              <ResultLibraryName card={props.cardBase[id]}/>
+              <ResultLibraryName card={props.cardBase[id]} />
             </div>
           </OverlayTrigger>
         </div>

@@ -30,7 +30,7 @@ function DeckDescription(props) {
   const handleOnBlur = () => {
     if (state != props.description) {
       deckChangeDescription();
-    };
+    }
   };
 
   useEffect(() => {
@@ -41,10 +41,12 @@ function DeckDescription(props) {
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
         <InputGroup.Prepend>
-          <InputGroup.Text><ChatLeftQuoteFill /></InputGroup.Text>
+          <InputGroup.Text>
+            <ChatLeftQuoteFill />
+          </InputGroup.Text>
         </InputGroup.Prepend>
         <FormControl
-          as={folded ? "input" : "textarea"}
+          as={folded ? 'input' : 'textarea'}
           rows={8}
           type="text"
           className="form-control"
@@ -54,16 +56,22 @@ function DeckDescription(props) {
           readOnly={!props.isAuthor}
           style={{ background: 'white' }}
         />
-        {!props.isMobile &&
-         <InputGroup.Append>
-           <Button variant="outline-secondary" onClick={() => setFolded(!folded)}>
-             {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
-           </Button>
-         </InputGroup.Append>
-        }
+        {!props.isMobile && (
+          <InputGroup.Append>
+            <Button
+              variant="outline-secondary"
+              onClick={() => setFolded(!folded)}
+            >
+              {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
+            </Button>
+          </InputGroup.Append>
+        )}
         {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
-            <Button variant={buttonState ? "success" : "outline-secondary"} type="submit">
+            <Button
+              variant={buttonState ? 'success' : 'outline-secondary'}
+              type="submit"
+            >
               <Check2 />
             </Button>
           </InputGroup.Append>

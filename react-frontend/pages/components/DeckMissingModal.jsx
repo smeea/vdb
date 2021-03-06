@@ -60,6 +60,6 @@ function DeckMissingModal(props) {
       </Modal.Body>
     </Modal>
   );
-};
+}
 
 export default DeckMissingModal;

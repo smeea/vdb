@@ -14,9 +14,7 @@ function InventoryButtons(props) {
         />
       </div>
       <div className="bp-125">
-        <InventoryExport
-          setShowButtons={props.setShowButtons}
-        />
+        <InventoryExport setShowButtons={props.setShowButtons} />
       </div>
       <div className="bp-125">
         <InventoryDelete

@@ -39,10 +39,10 @@ function TwdSearchForm(props) {
     disciplines: {},
     clan: 'any',
     capacity: {
-      "1-4": false,
-      "4-6": false,
-      "6-8": false,
-      "8-11": false,
+      '1-4': false,
+      '4-6': false,
+      '6-8': false,
+      '8-11': false,
     },
     cardtypes: {
       master: 'any',
@@ -63,10 +63,10 @@ function TwdSearchForm(props) {
     crypt: {},
     library: {},
     libraryTotal: {
-      "60-67": false,
-      "68-75": false,
-      "76-83": false,
-      "84-90": false,
+      '60-67': false,
+      '68-75': false,
+      '76-83': false,
+      '84-90': false,
     },
   };
 
@@ -346,7 +346,10 @@ function TwdSearchForm(props) {
         <Col xs={3} className="d-flex px-0">
           <label className="h6 mb-0">Library Size:</label>
         </Col>
-        <Col xs={9} className="d-flex justify-content-end px-0 checkbox-buttons">
+        <Col
+          xs={9}
+          className="d-flex justify-content-end px-0 checkbox-buttons"
+        >
           <TwdSearchFormLibraryTotal
             value={props.formState.libraryTotal}
             onChange={handleMultiChange}
@@ -377,7 +380,10 @@ function TwdSearchForm(props) {
         <Col xs={5} className="d-flex px-0">
           <label className="h6 mb-0">Capacity Average:</label>
         </Col>
-        <Col xs={7} className="d-flex justify-content-end px-0 checkbox-buttons">
+        <Col
+          xs={7}
+          className="d-flex justify-content-end px-0 checkbox-buttons"
+        >
           <TwdSearchFormCapacity
             value={props.formState.capacity}
             onChange={handleMultiChange}

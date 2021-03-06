@@ -12,7 +12,11 @@ function DeckMissing(props) {
 
   return (
     <>
-      <Button variant="outline-secondary" onClick={() => setShowModal(true)} block>
+      <Button
+        variant="outline-secondary"
+        onClick={() => setShowModal(true)}
+        block
+      >
         <Cart4 /> Missing Cards
       </Button>
       {showModal && (

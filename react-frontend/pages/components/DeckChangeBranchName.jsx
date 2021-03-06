@@ -27,7 +27,7 @@ function DeckChangeBranchName(props) {
   const handleOnBlur = () => {
     if (state != props.branchName) {
       deckChangeBranchName();
-    };
+    }
   };
 
   useEffect(() => {
@@ -37,11 +37,13 @@ function DeckChangeBranchName(props) {
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
-        {props.isMobile &&
-         <InputGroup.Prepend>
-           <InputGroup.Text><PaletteFill/></InputGroup.Text>
-         </InputGroup.Prepend>
-        }
+        {props.isMobile && (
+          <InputGroup.Prepend>
+            <InputGroup.Text>
+              <PaletteFill />
+            </InputGroup.Text>
+          </InputGroup.Prepend>
+        )}
         <FormControl
           type="text"
           className="form-control"
@@ -53,7 +55,10 @@ function DeckChangeBranchName(props) {
         />
         {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
-            <Button variant={buttonState ? "success" : "outline-secondary"} type="submit">
+            <Button
+              variant={buttonState ? 'success' : 'outline-secondary'}
+              type="submit"
+            >
               <Check2 />
             </Button>
           </InputGroup.Append>

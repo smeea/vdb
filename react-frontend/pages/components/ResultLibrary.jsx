@@ -24,9 +24,12 @@ function ResultLibrary(props) {
     if (!props.hideMissing) {
       setSortedCards(() => resultLibrarySort(props.cards, props.sortMethod));
     } else {
-      setSortedCards(() => resultLibrarySort(
-        props.cards.filter(card => props.inventoryLibrary[card.Id]),
-        props.sortMethod));
+      setSortedCards(() =>
+        resultLibrarySort(
+          props.cards.filter((card) => props.inventoryLibrary[card.Id]),
+          props.sortMethod
+        )
+      );
     }
   }, [props.cards, props.sortMethod, props.hideMissing]);
 
@@ -37,30 +40,30 @@ function ResultLibrary(props) {
           <b>NO CARDS FOUND</b>
         </AlertMessage>
       )}
-      {props.cards.length > 0 &&
-       <>
-         <ResultLibraryTotal
-           cards={props.cards}
-           value={props.sortMethod}
-           handleChange={handleChange}
-         />
-         <ResultLibraryTable
-           showImage={props.showImage}
-           setShowImage={props.setShowImage}
-           library={props.library}
-           activeDeck={props.activeDeck}
-           cardAdd={props.cardAdd}
-           resultCards={sortedCards}
-           isMobile={props.isMobile}
-           isWide={true}
-           addMode={props.addMode}
-           inventoryMode={props.inventoryMode}
-           inventoryLibrary={props.inventoryLibrary}
-           usedCards={props.usedCards}
-           decks={props.decks}
-         />
-       </>
-      }
+      {props.cards.length > 0 && (
+        <>
+          <ResultLibraryTotal
+            cards={props.cards}
+            value={props.sortMethod}
+            handleChange={handleChange}
+          />
+          <ResultLibraryTable
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+            library={props.library}
+            activeDeck={props.activeDeck}
+            cardAdd={props.cardAdd}
+            resultCards={sortedCards}
+            isMobile={props.isMobile}
+            isWide={true}
+            addMode={props.addMode}
+            inventoryMode={props.inventoryMode}
+            inventoryLibrary={props.inventoryLibrary}
+            usedCards={props.usedCards}
+            decks={props.decks}
+          />
+        </>
+      )}
       {props.isMobile && !props.hideFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">

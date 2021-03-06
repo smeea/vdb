@@ -56,55 +56,58 @@ function DeckButtons(props) {
           />
         </div>
       )}
-      {props.isAuthor && props.deck &&
-       <div className="bp-125">
-         <DeckBranchCreate
-           deck={props.deck}
-           getDecks={props.getDecks}
-           activeDeck={props.activeDeck}
-           setActiveDeck={props.setActiveDeck}
-           setShowButtons={props.setShowButtons}
-         />
-       </div>
-      }
-      {props.isAuthor && props.deck && (props.deck.master || props.deck.branches && props.deck.branches.length > 0) &&
-       <div className="bp-125">
-         <DeckBranchDelete
-           deck={props.deck}
-           getDecks={props.getDecks}
-           setActiveDeck={props.setActiveDeck}
-           setShowButtons={props.setShowButtons}
-           isMobile={props.isMobile}
-         />
-       </div>
-      }
-      {props.deck &&
-       <>
-         {props.deck.deckid.length == 32 ?
-          <>
+      {props.isAuthor && props.deck && (
+        <div className="bp-125">
+          <DeckBranchCreate
+            deck={props.deck}
+            getDecks={props.getDecks}
+            activeDeck={props.activeDeck}
+            setActiveDeck={props.setActiveDeck}
+            setShowButtons={props.setShowButtons}
+          />
+        </div>
+      )}
+      {props.isAuthor &&
+        props.deck &&
+        (props.deck.master ||
+          (props.deck.branches && props.deck.branches.length > 0)) && (
+          <div className="bp-125">
+            <DeckBranchDelete
+              deck={props.deck}
+              getDecks={props.getDecks}
+              setActiveDeck={props.setActiveDeck}
+              setShowButtons={props.setShowButtons}
+              isMobile={props.isMobile}
+            />
+          </div>
+        )}
+      {props.deck && (
+        <>
+          {props.deck.deckid.length == 32 ? (
+            <>
+              <div className="bp-125">
+                <DeckCopyUrlMutableButton
+                  value={props.activeDeck.deckid}
+                  setShowButtons={props.setShowButtons}
+                />
+              </div>
+              <div className="bp-125">
+                <DeckCopyUrlCodedButton
+                  deck={props.deck}
+                  setShowButtons={props.setShowButtons}
+                />
+              </div>
+            </>
+          ) : (
             <div className="bp-125">
               <DeckCopyUrlMutableButton
                 value={props.activeDeck.deckid}
                 setShowButtons={props.setShowButtons}
               />
             </div>
-            <div className="bp-125">
-              <DeckCopyUrlCodedButton
-                deck={props.deck}
-                setShowButtons={props.setShowButtons}
-              />
-            </div>
-          </>
-          :
-          <div className="bp-125">
-            <DeckCopyUrlMutableButton
-              value={props.activeDeck.deckid}
-              setShowButtons={props.setShowButtons}
-            />
-          </div>
-         }
-       </>
-      }
+          )}
+        </>
+      )}
       {props.deck && (
         <div className="bp-125">
           <DeckProxy

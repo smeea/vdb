@@ -27,7 +27,7 @@ function DeckChangeName(props) {
   const handleOnBlur = () => {
     if (state != props.name) {
       deckChangeName();
-    };
+    }
   };
 
   useEffect(() => {
@@ -38,7 +38,9 @@ function DeckChangeName(props) {
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
         <InputGroup.Prepend>
-          <InputGroup.Text><StarFill /></InputGroup.Text>
+          <InputGroup.Text>
+            <StarFill />
+          </InputGroup.Text>
         </InputGroup.Prepend>
         <FormControl
           type="text"
@@ -51,7 +53,10 @@ function DeckChangeName(props) {
         />
         {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
-            <Button variant={buttonState ? "success" : "outline-secondary"} type="submit">
+            <Button
+              variant={buttonState ? 'success' : 'outline-secondary'}
+              type="submit"
+            >
               <Check2 />
             </Button>
           </InputGroup.Append>

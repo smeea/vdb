@@ -22,18 +22,17 @@ function DeckBranchCreate(props) {
 
     fetch(url, options)
       .then((response) => response.json())
-      .then((data) => {if (data.error === undefined) newdeckid = data.deckid})
+      .then((data) => {
+        if (data.error === undefined) newdeckid = data.deckid;
+      })
       .then(() => props.getDecks())
-      .then(() => props.setActiveDeck({src: 'my', deckid: newdeckid}));
+      .then(() => props.setActiveDeck({ src: 'my', deckid: newdeckid }))
+      .then(() => props.isMobile && props.setShowInfo(true));
   };
 
   return (
     <>
-      <Button
-        variant="outline-secondary"
-        onClick={branchCreate}
-        block
-      >
+      <Button variant="outline-secondary" onClick={branchCreate} block>
         <NodePlusFill /> New Revision
       </Button>
     </>

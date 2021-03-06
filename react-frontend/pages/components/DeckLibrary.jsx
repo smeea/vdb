@@ -150,7 +150,10 @@ function DeckLibrary(props) {
   return (
     <>
       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-    <b>Library [{libraryTotal}{(libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]</b>
+        <b>
+          Library [{libraryTotal}
+          {(libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
+        </b>
         <div className="d-flex">
           <Button
             variant="outline-secondary"
@@ -224,18 +227,21 @@ function DeckLibrary(props) {
           {LibrarySideDeck}
         </div>
       )}
-      {props.isMobile &&
-       <div
-         onClick={() => setShowAdd(true)}
-         className="float-right-middle add"
-       >
-
-         <div className="d-flex py-0 px-1 align-items-top">
-           <div className="d-inline" style={{fontSize: '1.75em'}}>+</div>
-           <div className="d-inline" style={{fontSize: '1.8em'}}>L</div>
-         </div>
-       </div>
-      }
+      {props.isMobile && (
+        <div
+          onClick={() => setShowAdd(true)}
+          className="float-right-middle add"
+        >
+          <div className="d-flex py-0 px-1 align-items-top">
+            <div className="d-inline" style={{ fontSize: '1.75em' }}>
+              +
+            </div>
+            <div className="d-inline" style={{ fontSize: '1.8em' }}>
+              L
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

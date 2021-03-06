@@ -39,12 +39,12 @@ function App(props) {
 
   const [decks, setDecks] = useState({});
   const [preconDecks, setPreconDecks] = useState({});
-  const [activeDeck, setActiveDeck] = useState({src: null, deckid: null});
+  const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
-  const [inventory, setInventory] = useState({crypt: {}, library: {}})
-  const [usedCards, setUsedCards] = useState({})
+  const [inventory, setInventory] = useState({ crypt: {}, library: {} });
+  const [usedCards, setUsedCards] = useState({});
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
@@ -66,16 +66,16 @@ function App(props) {
   const deckRouter = (pointer) => {
     if (pointer) {
       switch (pointer['src']) {
-      case 'my':
-        return(decks && decks[pointer['deckid']]);
-      case 'precons':
-        return(preconDecks && preconDecks[pointer['deckid']]);
-      case 'shared':
-      case 'twd':
-        return(sharedDeck && sharedDeck[pointer['deckid']]);
+        case 'my':
+          return decks && decks[pointer['deckid']];
+        case 'precons':
+          return preconDecks && preconDecks[pointer['deckid']];
+        case 'shared':
+        case 'twd':
+          return sharedDeck && sharedDeck[pointer['deckid']];
       }
     }
-  }
+  };
 
   const getCardBase = () => {
     const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json`;
@@ -129,17 +129,17 @@ function App(props) {
   const inventoryDeckAdd = (deck) => {
     const cards = {};
 
-    Object.keys(deck.crypt).forEach(card => {
+    Object.keys(deck.crypt).forEach((card) => {
       if (deck.crypt[card].q) {
-        cards[card] = deck.crypt[card].q
+        cards[card] = deck.crypt[card].q;
       }
-    })
+    });
 
-    Object.keys(deck.library).forEach(card => {
+    Object.keys(deck.library).forEach((card) => {
       if (deck.library[card].q) {
-        cards[card] = deck.library[card].q
+        cards[card] = deck.library[card].q;
       }
-    })
+    });
 
     const url = `${process.env.API_URL}inventory/add`;
     const options = {
@@ -152,29 +152,33 @@ function App(props) {
       body: JSON.stringify(cards),
     };
 
-    const oldState = {...inventory};
+    const oldState = { ...inventory };
     fetch(url, options).catch((error) => {
       setInventory(oldState);
     });
 
-    Object.keys(cards).forEach(cardid => {
+    Object.keys(cards).forEach((cardid) => {
       if (cardid > 200000) {
         setInventory((prevState) => {
-          const oldState = {...prevState}
+          const oldState = { ...prevState };
           oldState.crypt[cardid] = {
             c: cryptCardBase[cardid],
-            q: prevState.crypt[cardid] ? prevState.crypt[cardid].q + cards[cardid] : cards[cardid],
-          }
-          return(oldState);
+            q: prevState.crypt[cardid]
+              ? prevState.crypt[cardid].q + cards[cardid]
+              : cards[cardid],
+          };
+          return oldState;
         });
       } else {
         setInventory((prevState) => {
-          const oldState = {...prevState}
+          const oldState = { ...prevState };
           oldState.library[cardid] = {
             c: libraryCardBase[cardid],
-            q: prevState.library[cardid] ? prevState.library[cardid].q + cards[cardid] : cards[cardid],
-          }
-          return(oldState);
+            q: prevState.library[cardid]
+              ? prevState.library[cardid].q + cards[cardid]
+              : cards[cardid],
+          };
+          return oldState;
         });
       }
     });
@@ -192,28 +196,28 @@ function App(props) {
       body: JSON.stringify({ [cardid]: 1 }),
     };
 
-    const oldState = {...inventory};
+    const oldState = { ...inventory };
     fetch(url, options).catch((error) => {
       setInventory(oldState);
     });
 
     if (cardid > 200000) {
       setInventory((prevState) => {
-        const oldState = {...prevState};
+        const oldState = { ...prevState };
         oldState['crypt'][cardid] = {
           c: cryptCardBase[cardid],
           q: 1,
-        }
-        return(oldState)
+        };
+        return oldState;
       });
     } else {
       setInventory((prevState) => {
-        const oldState = {...prevState};
+        const oldState = { ...prevState };
         oldState['library'][cardid] = {
           c: libraryCardBase[cardid],
           q: 1,
-        }
-        return(oldState)
+        };
+        return oldState;
       });
     }
   };
@@ -232,8 +236,7 @@ function App(props) {
     const part = cardid > 200000 ? 'crypt' : 'library';
 
     if (count >= 0 || (count < 0 && inventory[part][cardid])) {
-
-      const oldState = {...inventory};
+      const oldState = { ...inventory };
 
       fetch(url, options).catch((error) => {
         setInventory(oldState);
@@ -241,55 +244,58 @@ function App(props) {
 
       if (count >= 0) {
         setInventory((prevState) => {
-          const oldState = {...prevState};
+          const oldState = { ...prevState };
           if (oldState[part][cardid]) {
             oldState[part][cardid].q = count;
           } else {
             oldState[part][cardid] = {
               q: count,
-              c: part == 'crypt' ? cryptCardBase[cardid] : libraryCardBase[cardid],
-            }
+              c:
+                part == 'crypt'
+                  ? cryptCardBase[cardid]
+                  : libraryCardBase[cardid],
+            };
           }
-          return(oldState)
-        })
+          return oldState;
+        });
       } else {
         setInventory((prevState) => {
-          const oldState = {...prevState};
+          const oldState = { ...prevState };
           delete oldState[part][cardid];
           return oldState;
         });
       }
-    };
+    }
   };
 
   const getPreconDecks = () => {
-    const precons = {}
+    const precons = {};
 
     Object.keys(preconDecksData).map((set) => {
       Object.keys(preconDecksData[set]).map((precon) => {
-        const deckid = `${set}:${precon}`
+        const deckid = `${set}:${precon}`;
         precons[deckid] = {
           name: `Precon ${deckid}`,
           deckid: deckid,
           author: '',
           description: '',
           crypt: {},
-          library: {}
-        }
-        Object.keys(preconDecksData[set][precon]).map(card => {
+          library: {},
+        };
+        Object.keys(preconDecksData[set][precon]).map((card) => {
           if (card > 200000) {
             precons[deckid]['crypt'][card] = {
               c: cryptCardBase[card],
               q: preconDecksData[set][precon][card],
-            }
+            };
           } else {
             precons[deckid]['library'][card] = {
               c: libraryCardBase[card],
               q: preconDecksData[set][precon][card],
-            }
+            };
           }
-        })
-      })
+        });
+      });
     });
 
     setPreconDecks(precons);
@@ -307,15 +313,14 @@ function App(props) {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          Object.keys(data)
-            .map((i) => {
-              Object.keys(data[i].crypt).map((j) => {
-                data[i].crypt[j].c = cryptCardBase[j];
-              });
-              Object.keys(data[i].library).map((j) => {
-                data[i].library[j].c = libraryCardBase[j];
-              });
+          Object.keys(data).map((i) => {
+            Object.keys(data[i].crypt).map((j) => {
+              data[i].crypt[j].c = cryptCardBase[j];
             });
+            Object.keys(data[i].library).map((j) => {
+              data[i].library[j].c = libraryCardBase[j];
+            });
+          });
           setDecks(data);
         }
       });
@@ -333,7 +338,7 @@ function App(props) {
       body: JSON.stringify({ cardAdd: { [cardid]: 1 } }),
     };
 
-    const oldState = {...decks};
+    const oldState = { ...decks };
 
     fetch(url, options).catch((error) => {
       setDecks(oldState);
@@ -341,21 +346,21 @@ function App(props) {
 
     if (cardid > 200000) {
       setDecks((prevState) => {
-        const oldState = {...prevState};
+        const oldState = { ...prevState };
         oldState[activeDeck.deckid]['crypt'][cardid] = {
           c: cryptCardBase[cardid],
           q: 1,
-        }
-        return(oldState);
+        };
+        return oldState;
       });
     } else {
       setDecks((prevState) => {
-        const oldState = {...prevState};
+        const oldState = { ...prevState };
         oldState[activeDeck.deckid]['library'][cardid] = {
           c: libraryCardBase[cardid],
           q: 1,
-        }
-        return(oldState);
+        };
+        return oldState;
       });
     }
 
@@ -374,24 +379,23 @@ function App(props) {
       body: JSON.stringify({ cardChange: { [cardid]: count } }),
     };
 
-    const oldState = {...decks};
+    const oldState = { ...decks };
 
-    fetch(url, options)
-      .catch((error) => {
-        setDecks(oldState);
-      });
+    fetch(url, options).catch((error) => {
+      setDecks(oldState);
+    });
 
     const part = cardid > 200000 ? 'crypt' : 'library';
 
     if (count >= 0) {
       setDecks((prevState) => {
-        const oldState = {...prevState};
+        const oldState = { ...prevState };
         oldState[deckid][part][cardid].q = count;
-        return(oldState)
+        return oldState;
       });
     } else {
       setDecks((prevState) => {
-        const oldState = {...prevState};
+        const oldState = { ...prevState };
         delete oldState[deckid][part][cardid];
         return oldState;
       });
@@ -455,60 +459,60 @@ function App(props) {
 
   useEffect(() => {
     if (inventory) {
-      const softCrypt = {}
-      const softLibrary = {}
-      const hardCrypt = {}
-      const hardLibrary = {}
-      Object.keys(decks).forEach(deckid => {
+      const softCrypt = {};
+      const softLibrary = {};
+      const hardCrypt = {};
+      const hardLibrary = {};
+      Object.keys(decks).forEach((deckid) => {
         if (decks[deckid].inventory_type == 's') {
-          Object.keys(decks[deckid].crypt).forEach(id => {
+          Object.keys(decks[deckid].crypt).forEach((id) => {
             if (decks[deckid].crypt[id].q) {
               if (softCrypt[id]) {
                 softCrypt[id][deckid] = decks[deckid].crypt[id].q;
               } else {
-                softCrypt[id] = {}
+                softCrypt[id] = {};
                 softCrypt[id][deckid] = decks[deckid].crypt[id].q;
               }
             }
           });
-          Object.keys(decks[deckid].library).forEach(id => {
+          Object.keys(decks[deckid].library).forEach((id) => {
             if (decks[deckid].library[id].q) {
               if (softLibrary[id]) {
                 softLibrary[id][deckid] = decks[deckid].library[id].q;
               } else {
-                softLibrary[id] = {}
+                softLibrary[id] = {};
                 softLibrary[id][deckid] = decks[deckid].library[id].q;
               }
             }
           });
         } else if (decks[deckid].inventory_type == 'h') {
-          Object.keys(decks[deckid].crypt).forEach(id => {
+          Object.keys(decks[deckid].crypt).forEach((id) => {
             if (decks[deckid].crypt[id].q) {
               if (hardCrypt[id]) {
                 hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
               } else {
-                hardCrypt[id] = {}
+                hardCrypt[id] = {};
                 hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
               }
             }
           });
-          Object.keys(decks[deckid].library).forEach(id => {
+          Object.keys(decks[deckid].library).forEach((id) => {
             if (decks[deckid].library[id].q) {
               if (hardLibrary[id]) {
                 hardLibrary[id][deckid] = decks[deckid].library[id].q;
               } else {
-                hardLibrary[id] = {}
+                hardLibrary[id] = {};
                 hardLibrary[id][deckid] = decks[deckid].library[id].q;
               }
             }
           });
         }
-        Object.keys(decks[deckid].crypt).forEach(id => {
+        Object.keys(decks[deckid].crypt).forEach((id) => {
           if (decks[deckid].crypt[id].i == 's' && decks[deckid].crypt[id].q) {
             if (softCrypt[id]) {
               softCrypt[id][deckid] = decks[deckid].crypt[id].q;
             } else {
-              softCrypt[id] = {}
+              softCrypt[id] = {};
               softCrypt[id][deckid] = decks[deckid].crypt[id].q;
             }
             delete hardCrypt[id][deckid];
@@ -517,41 +521,47 @@ function App(props) {
             if (hardCrypt[id]) {
               hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
             } else {
-              hardCrypt[id] = {}
+              hardCrypt[id] = {};
               hardCrypt[id][deckid] = decks[deckid].crypt[id].q;
             }
             delete softCrypt[id][deckid];
           }
-        })
-        Object.keys(decks[deckid].library).forEach(id => {
-          if (decks[deckid].library[id].i == 's' && decks[deckid].library[id].q) {
+        });
+        Object.keys(decks[deckid].library).forEach((id) => {
+          if (
+            decks[deckid].library[id].i == 's' &&
+            decks[deckid].library[id].q
+          ) {
             if (softLibrary[id]) {
               softLibrary[id][deckid] = decks[deckid].library[id].q;
             } else {
-              softLibrary[id] = {}
+              softLibrary[id] = {};
               softLibrary[id][deckid] = decks[deckid].library[id].q;
             }
             delete hardLibrary[id][deckid];
           }
-          if (decks[deckid].library[id].i == 'h' && decks[deckid].library[id].q) {
+          if (
+            decks[deckid].library[id].i == 'h' &&
+            decks[deckid].library[id].q
+          ) {
             if (hardLibrary[id]) {
               hardLibrary[id][deckid] = decks[deckid].library[id].q;
             } else {
-              hardLibrary[id] = {}
+              hardLibrary[id] = {};
               hardLibrary[id][deckid] = decks[deckid].library[id].q;
             }
             delete softLibrary[id][deckid];
           }
-        })
-      })
+        });
+      });
       setUsedCards({
         softCrypt: softCrypt,
         softLibrary: softLibrary,
         hardCrypt: hardCrypt,
         hardLibrary: hardLibrary,
-      })
+      });
     }
-  }, [inventory, decks])
+  }, [inventory, decks]);
 
   useEffect(() => {
     whoAmI();
@@ -571,7 +581,7 @@ function App(props) {
 
   useEffect(() => {
     if (lastDeck && lastDeck.deckid && !sharedDeck) {
-      setActiveDeck({src: 'my', deckid: lastDeck.deckid});
+      setActiveDeck({ src: 'my', deckid: lastDeck.deckid });
     }
   }, [lastDeck]);
 
@@ -694,7 +704,11 @@ function App(props) {
                 cardChange={deckCardChange}
                 decks={decks}
                 getDecks={getDecks}
-                activeDeck={activeDeck.src == 'my' ? activeDeck : {src: 'my', deckid: lastDeck.deckid}}
+                activeDeck={
+                  activeDeck.src == 'my'
+                    ? activeDeck
+                    : { src: 'my', deckid: lastDeck.deckid }
+                }
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
                 setShowImage={setShowImage}
@@ -729,7 +743,11 @@ function App(props) {
                 cardChange={deckCardChange}
                 decks={decks}
                 getDecks={getDecks}
-                activeDeck={activeDeck.src == 'my' ? activeDeck : {src: 'my', deckid: lastDeck.deckid}}
+                activeDeck={
+                  activeDeck.src == 'my'
+                    ? activeDeck
+                    : { src: 'my', deckid: lastDeck.deckid }
+                }
                 setActiveDeck={setActiveDeck}
                 showImage={showImage}
                 setShowImage={setShowImage}
@@ -750,7 +768,8 @@ function App(props) {
             </Route>
             <Route
               path="/cards"
-              exact component={(props) => (
+              exact
+              component={(props) => (
                 <Cards
                   isMobile={isMobile}
                   isWide={isWide}

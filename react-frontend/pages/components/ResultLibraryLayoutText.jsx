@@ -12,20 +12,30 @@ function ResultLibraryLayoutText(props) {
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
     return (
       <div className="d-inline-block nobr px-1" key={index}>
-        {k}<div className="d-inline gray">:{props.card['Set'][k]}</div>
+        {k}
+        <div className="d-inline gray">:{props.card['Set'][k]}</div>
       </div>
     );
   });
 
   const Rulings = Object(props.card['Rulings']).map((k, index) => {
-    return <li className="rulings" key={index}>{k}</li>;
+    return (
+      <li className="rulings" key={index}>
+        {k}
+      </li>
+    );
   });
 
-  const Artist = props.card['Artist'].length > 1
-        ? props.card['Artist'].map((artist, index) => {
-          return(<div className="d-inline-block nobr px-1" key={index}>{artist}</div>)
+  const Artist =
+    props.card['Artist'].length > 1
+      ? props.card['Artist'].map((artist, index) => {
+          return (
+            <div className="d-inline-block nobr px-1" key={index}>
+              {artist}
+            </div>
+          );
         })
-        : props.card['Artist']
+      : props.card['Artist'];
 
   const icons = {
     aus: 'auspex',
@@ -147,7 +157,7 @@ function ResultLibraryLayoutText(props) {
           </div>
         )}
       </div>
-      <hr className="mx-0"/>
+      <hr className="mx-0" />
       <div className="py-2">
         {newText.map((i, index) => {
           return (
@@ -160,25 +170,31 @@ function ResultLibraryLayoutText(props) {
           );
         })}
       </div>
-      <hr className="mx-0"/>
-      {(props.card['Blood Cost'] || props.card['Pool Cost']) &&
-       <>
-         <div className="d-flex align-items-center justify-content-between">
-           <ResultLibraryCost
-             valuePool={props.card['Pool Cost']}
-             valueBlood={props.card['Blood Cost']}
-           />
-         </div>
-         <hr className="mx-0"/>
-       </>
-      }
-      <div className="py-1"><b>Sets: </b>{Sets}</div>
-      <div className="py-1"><b>Artist: </b>
+      <hr className="mx-0" />
+      {(props.card['Blood Cost'] || props.card['Pool Cost']) && (
+        <>
+          <div className="d-flex align-items-center justify-content-between">
+            <ResultLibraryCost
+              valuePool={props.card['Pool Cost']}
+              valueBlood={props.card['Blood Cost']}
+            />
+          </div>
+          <hr className="mx-0" />
+        </>
+      )}
+      <div className="py-1">
+        <b>Sets: </b>
+        {Sets}
+      </div>
+      <div className="py-1">
+        <b>Artist: </b>
         <div className="d-inline px-1">{Artist}</div>
       </div>
       {Rulings.length > 0 && (
         <>
-          <div className="py-1"><b>Rulings: </b></div>
+          <div className="py-1">
+            <b>Rulings: </b>
+          </div>
           <div className="popover-rulings pb-1">
             <ul className="rulings">{Rulings}</ul>
           </div>

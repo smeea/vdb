@@ -26,9 +26,12 @@ function ResultCrypt(props) {
     if (!props.hideMissing) {
       setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
     } else {
-      setSortedCards(() => resultCryptSort(
-        props.cards.filter(card => props.inventoryCrypt[card.Id]),
-        props.sortMethod));
+      setSortedCards(() =>
+        resultCryptSort(
+          props.cards.filter((card) => props.inventoryCrypt[card.Id]),
+          props.sortMethod
+        )
+      );
     }
   }, [props.cards, props.sortMethod, props.hideMissing]);
 
@@ -39,31 +42,31 @@ function ResultCrypt(props) {
           <b>NO CARDS FOUND</b>
         </AlertMessage>
       )}
-      {props.cards.length > 0 &&
-       <>
-         <ResultCryptTotal
-           cards={props.cards}
-           value={props.sortMethod}
-           handleChange={handleChange}
-         />
-         <ResultCryptTable
-           className={className}
-           showImage={props.showImage}
-           setShowImage={props.setShowImage}
-           crypt={props.crypt}
-           activeDeck={props.activeDeck}
-           cardAdd={props.cardAdd}
-           resultCards={sortedCards}
-           isMobile={props.isMobile}
-           isWide={true}
-           addMode={props.addMode}
-           inventoryMode={props.inventoryMode}
-           inventoryCrypt={props.inventoryCrypt}
-           usedCards={props.usedCards}
-           decks={props.decks}
-         />
-       </>
-      }
+      {props.cards.length > 0 && (
+        <>
+          <ResultCryptTotal
+            cards={props.cards}
+            value={props.sortMethod}
+            handleChange={handleChange}
+          />
+          <ResultCryptTable
+            className={className}
+            showImage={props.showImage}
+            setShowImage={props.setShowImage}
+            crypt={props.crypt}
+            activeDeck={props.activeDeck}
+            cardAdd={props.cardAdd}
+            resultCards={sortedCards}
+            isMobile={props.isMobile}
+            isWide={true}
+            addMode={props.addMode}
+            inventoryMode={props.inventoryMode}
+            inventoryCrypt={props.inventoryCrypt}
+            usedCards={props.usedCards}
+            decks={props.decks}
+          />
+        </>
+      )}
       {props.isMobile && !props.hideFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">

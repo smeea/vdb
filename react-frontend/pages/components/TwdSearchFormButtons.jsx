@@ -16,17 +16,17 @@ function TwdSearchFormButtons(props) {
         </Button>
 
         <div className="lp-125">
-          <Button variant="outline-secondary" onClick={() => props.getNewTwd(50)}>
+          <Button
+            variant="outline-secondary"
+            onClick={() => props.getNewTwd(50)}
+          >
             <LightningFill /> 50 New
           </Button>
         </div>
       </div>
       {!props.isMobile && (
         <div className="d-flex">
-          <Button
-            variant="outline-secondary"
-            onClick={props.handleClearButton}
-          >
+          <Button variant="outline-secondary" onClick={props.handleClearButton}>
             <X />
           </Button>
         </div>

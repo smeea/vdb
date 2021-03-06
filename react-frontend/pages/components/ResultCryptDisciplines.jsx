@@ -7,7 +7,7 @@ function ResultCryptDisciplines(props) {
   let maxCols;
   if (props.disciplinesSet) {
     const n = props.keyDisciplines + props.nonKeyDisciplines;
-    maxCols = n < 8 ? n : props.isMobile ? 7 : 8
+    maxCols = n < 8 ? n : props.isMobile ? 7 : 8;
   } else {
     maxCols = 7;
   }

@@ -239,20 +239,20 @@ function SearchLibraryForm(props) {
         showLimit={showLimit}
         spinner={spinnerState}
       />
-      {props.inventoryMode &&
-       <div className="custom-control custom-checkbox">
-         <input
-           id="hideMissing"
-           className="custom-control-input"
-           type="checkbox"
-           checked={props.hideMissing}
-           onChange={() => props.setHideMissing(!props.hideMissing)}
-         />
-         <label htmlFor="hideMissing" className="custom-control-label">
-           Hide Missing in Inventory
-         </label>
-       </div>
-      }
+      {props.inventoryMode && (
+        <div className="custom-control custom-checkbox">
+          <input
+            id="hideMissing"
+            className="custom-control-input"
+            type="checkbox"
+            checked={props.hideMissing}
+            onChange={() => props.setHideMissing(!props.hideMissing)}
+          />
+          <label htmlFor="hideMissing" className="custom-control-label">
+            Hide Missing in Inventory
+          </label>
+        </div>
+      )}
       <SearchLibraryFormType
         value={props.formState.type}
         onChange={handleSelectChange}

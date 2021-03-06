@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-import Shuffle from '../../assets/images/icons/shuffle.svg'
-import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg'
-import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
-import CalculatorFill from '../../assets/images/icons/calculator-fill.svg'
+import Shuffle from '../../assets/images/icons/shuffle.svg';
+import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
+import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
+import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
@@ -21,21 +21,24 @@ function DeckLibraryTable(props) {
     if (props.inventoryMode && props.decks[props.deckid]) {
       deckInvType = props.decks[props.deckid].inventory_type;
     }
-  };
+  }
 
   const [modalCard, setModalCard] = useState(undefined);
-  const [modalInventory, setModalInventory] = useState(undefined)
+  const [modalInventory, setModalInventory] = useState(undefined);
 
   const cardRows = props.cards.map((card, index) => {
     const handleClick = () => {
       setModalCard(card.c);
       setModalInventory({
         inInventory: inInventory,
-        usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
+        usedDescription: {
+          soft: SoftUsedDescription,
+          hard: HardUsedDescription,
+        },
         softUsedMax: softUsedMax,
         hardUsedTotal: hardUsedTotal,
       });
-    }
+    };
 
     if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
@@ -63,22 +66,30 @@ function DeckLibraryTable(props) {
     if (props.inventoryMode && props.deckid) {
       cardInvType = card.i;
 
-      if (Object.keys(props.inventoryLibrary).includes(card.c['Id'].toString())) {
+      if (
+        Object.keys(props.inventoryLibrary).includes(card.c['Id'].toString())
+      ) {
         inInventory = props.inventoryLibrary[card.c['Id']].q;
       } else {
         inInventory = 0;
       }
 
       if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
-        SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map((id, index) => {
+        SoftUsedDescription = Object.keys(
+          props.usedCards.soft[card.c['Id']]
+        ).map((id, index) => {
           if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
             softUsedMax = props.usedCards.soft[card.c['Id']][id];
           }
 
           return (
             <div className="d-flex align-items-center" key={index}>
-              <div className="opacity-035"><Shuffle/></div>
-              <div className="px-1"><b>{props.usedCards.soft[card.c['Id']][id]}</b></div>
+              <div className="opacity-035">
+                <Shuffle />
+              </div>
+              <div className="px-1">
+                <b>{props.usedCards.soft[card.c['Id']][id]}</b>
+              </div>
               - {props.decks[id]['name']}
             </div>
           );
@@ -86,12 +97,18 @@ function DeckLibraryTable(props) {
       }
 
       if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
-        HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map((id, index) => {
+        HardUsedDescription = Object.keys(
+          props.usedCards.hard[card.c['Id']]
+        ).map((id, index) => {
           hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
           return (
             <div className="d-flex align-items-center" key={index}>
-              <div className="opacity-035"><PinAngleFill/></div>
-              <div className="px-1"><b>{props.usedCards.hard[card.c['Id']][id]}</b></div>
+              <div className="opacity-035">
+                <PinAngleFill />
+              </div>
+              <div className="px-1">
+                <b>{props.usedCards.hard[card.c['Id']][id]}</b>
+              </div>
               - {props.decks[id]['name']}
             </div>
           );
@@ -103,25 +120,31 @@ function DeckLibraryTable(props) {
           <Popover ref={ref} {...props}>
             <Popover.Content>
               <>
-                {children == 0 ?
-                 <div className="py-1">
-                   Not used in inventory decks
-                 </div>
-                 :
-                 <>
-                   {softUsedMax > 0 && <>{SoftUsedDescription}</>}
-                   {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
-                 </>
-                }
-                <hr/>
+                {children == 0 ? (
+                  <div className="py-1">Not used in inventory decks</div>
+                ) : (
+                  <>
+                    {softUsedMax > 0 && <>{SoftUsedDescription}</>}
+                    {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
+                  </>
+                )}
+                <hr />
                 <div className="d-flex align-items-center">
-                  <div className="opacity-035"><CalculatorFill/></div>
-                  <div className="px-1"><b>{softUsedMax + hardUsedTotal}</b></div>
+                  <div className="opacity-035">
+                    <CalculatorFill />
+                  </div>
+                  <div className="px-1">
+                    <b>{softUsedMax + hardUsedTotal}</b>
+                  </div>
                   - Total Used
                 </div>
                 <div className="d-flex align-items-center" key={index}>
-                  <div className="opacity-035"><ArchiveFill/></div>
-                  <div className="px-1"><b>{inInventory}</b></div>
+                  <div className="opacity-035">
+                    <ArchiveFill />
+                  </div>
+                  <div className="px-1">
+                    <b>{inInventory}</b>
+                  </div>
                   - In Inventory
                 </div>
               </>
@@ -130,7 +153,6 @@ function DeckLibraryTable(props) {
         );
       });
       UsedPopover.displayName = 'UsedPopover';
-
     }
 
     const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
@@ -173,19 +195,28 @@ function DeckLibraryTable(props) {
             <>
               {props.inventoryMode ? (
                 <>
-                  {deckInvType && !props.inSearch ?
-                   <td className="pt-2 left-offset-8 opacity-075">
-                     <div
-                       className={cardInvType ? "" : "opacity-025"}
-                       onClick={() => props.deckUpdate(props.deckid, cardInvType ? 'makeClear' : deckInvType == 's' ? 'makeFixed' : 'makeFlexible', card.c['Id'])}
-                     >
-                       { deckInvType == 's' ? <PinAngleFill /> : <Shuffle/> }
-                     </div>
-                   </td>
-                   : null
-                  }
+                  {deckInvType && !props.inSearch ? (
+                    <td className="pt-2 left-offset-8 opacity-075">
+                      <div
+                        className={cardInvType ? '' : 'opacity-025'}
+                        onClick={() =>
+                          props.deckUpdate(
+                            props.deckid,
+                            cardInvType
+                              ? 'makeClear'
+                              : deckInvType == 's'
+                              ? 'makeFixed'
+                              : 'makeFlexible',
+                            card.c['Id']
+                          )
+                        }
+                      >
+                        {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
+                      </div>
+                    </td>
+                  ) : null}
                   <OverlayTrigger
-                    placement='right'
+                    placement="right"
                     overlay={
                       <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                     }
@@ -205,18 +236,17 @@ function DeckLibraryTable(props) {
                     </td>
                   </OverlayTrigger>
                 </>
-              )
-               :
-               <td className="quantity">
-                 <DeckCardQuantity
-                   cardid={card.c['Id']}
-                   q={card.q}
-                   deckid={props.deckid}
-                   cardChange={props.cardChange}
-                   isMobile={props.isMobile}
-                 />
-               </td>
-              }
+              ) : (
+                <td className="quantity">
+                  <DeckCardQuantity
+                    cardid={card.c['Id']}
+                    q={card.q}
+                    deckid={props.deckid}
+                    cardChange={props.cardChange}
+                    isMobile={props.isMobile}
+                  />
+                </td>
+              )}
             </>
           ) : props.proxySelected ? (
             <td className="quantity">
@@ -232,49 +262,52 @@ function DeckLibraryTable(props) {
                 isMobile={props.isMobile}
               />
             </td>
-          ) :  <>
-                 {props.inventoryMode ?
-                  <OverlayTrigger
-                    placement='right'
-                    overlay={
-                      <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
-                    }
-                  >
-                    <td className="quantity-no-buttons px-2">
-                      <div className={
-                        inInventory < card.q
-                          ? "quantity px-1 mx-1 bg-red"
-                          : inInventory - hardUsedTotal < card.q
-                          ? "quantity px-1 mx-1 bg-yellow"
-                          : "quantity px-1"
-                      }>
-                        {card.q}
-                      </div>
-                    </td>
-                  </OverlayTrigger>
-                  :
+          ) : (
+            <>
+              {props.inventoryMode ? (
+                <OverlayTrigger
+                  placement="right"
+                  overlay={
+                    <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+                  }
+                >
                   <td className="quantity-no-buttons px-2">
-                    {card.q ? card.q : <div className="transparent">0</div>}
+                    <div
+                      className={
+                        inInventory < card.q
+                          ? 'quantity px-1 mx-1 bg-red'
+                          : inInventory - hardUsedTotal < card.q
+                          ? 'quantity px-1 mx-1 bg-yellow'
+                          : 'quantity px-1'
+                      }
+                    >
+                      {card.q}
+                    </div>
                   </td>
-                 }
-               </>
-          }
-          {!props.isMobile ?
-           <OverlayTrigger
-             placement={props.placement ? props.placement : 'right'}
-             overlay={
-               <CardPopover card={card.c}>{props.showImage}</CardPopover>
-             }
-           >
-             <td className="name pl-3 pr-2" onClick={() => handleClick()}>
-               <ResultLibraryName card={card.c}/>
-             </td>
-           </OverlayTrigger>
-           :
-           <td className="name pl-3 pr-2" onClick={() => handleClick()}>
-             <ResultLibraryName card={card.c}/>
-           </td>
-          }
+                </OverlayTrigger>
+              ) : (
+                <td className="quantity-no-buttons px-2">
+                  {card.q ? card.q : <div className="transparent">0</div>}
+                </td>
+              )}
+            </>
+          )}
+          {!props.isMobile ? (
+            <OverlayTrigger
+              placement={props.placement ? props.placement : 'right'}
+              overlay={
+                <CardPopover card={card.c}>{props.showImage}</CardPopover>
+              }
+            >
+              <td className="name pl-3 pr-2" onClick={() => handleClick()}>
+                <ResultLibraryName card={card.c} />
+              </td>
+            </OverlayTrigger>
+          ) : (
+            <td className="name pl-3 pr-2" onClick={() => handleClick()}>
+              <ResultLibraryName card={card.c} />
+            </td>
+          )}
           <td className="cost" onClick={() => handleClick()}>
             <ResultLibraryCost
               valueBlood={card.c['Blood Cost']}

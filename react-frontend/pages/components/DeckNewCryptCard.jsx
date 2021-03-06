@@ -53,11 +53,15 @@ function DeckNewCryptCard(props) {
         <>
           <div className="d-flex align-items-center justify-content-between">
             <div className="d-flex align-items-center">
-              {props.inInventory &&
-               <div className={`d-inline in-deck mr-2 ${props.cards[card] ? 'border-black' : null}`}>
-                 {props.cards[card] && props.cards[card].q}
-               </div>
-              }
+              {props.inInventory && (
+                <div
+                  className={`d-inline in-deck mr-2 ${
+                    props.cards[card] ? 'border-black' : null
+                  }`}
+                >
+                  {props.cards[card] && props.cards[card].q}
+                </div>
+              )}
               <ResultCryptCapacity value={props.cardBase[card]['Capacity']} />
               <span className="px-2">
                 {props.cardBase[card]['Banned'] ? (

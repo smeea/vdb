@@ -12,13 +12,13 @@ function DeckClone(props) {
       deckname: props.deck.name + ' [by ' + props.deck.author + ']',
       author: props.deck.author,
       src: props.activeDeck.src,
-    }
+    };
 
     switch (props.activeDeck['src']) {
-    case 'shared':
-      body['deck'] = props.deck;
-    default:
-      body['target'] = props.deck.deckid;
+      case 'shared':
+        body['deck'] = props.deck;
+      default:
+        body['target'] = props.deck.deckid;
     }
 
     const options = {
@@ -39,7 +39,7 @@ function DeckClone(props) {
         }
       })
       .then(() => props.getDecks())
-      .then(() => props.setActiveDeck({src: 'my', deckid: newdeckid}))
+      .then(() => props.setActiveDeck({ src: 'my', deckid: newdeckid }))
       .then(() => {
         setState(true);
         props.isMobile && props.setShowButtons(false);
@@ -51,8 +51,12 @@ function DeckClone(props) {
 
   return (
     <>
-      <Button variant={state ? "success" : "outline-secondary"} onClick={cloneDeck} block>
-        <Files /> {state ? "Cloned" : "Clone Deck"}
+      <Button
+        variant={state ? 'success' : 'outline-secondary'}
+        onClick={cloneDeck}
+        block
+      >
+        <Files /> {state ? 'Cloned' : 'Clone Deck'}
       </Button>
     </>
   );

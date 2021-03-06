@@ -74,8 +74,10 @@ function TwdResultLibraryByType(props) {
       const cardtypes = cardtype.split('/');
       const cardtypeImages = cardtypes.map((cardtype, index) => {
         const imgSrc = `${
-      process.env.ROOT_URL
-    }images/types/${cardtype.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
+          process.env.ROOT_URL
+        }images/types/${cardtype
+          .toLowerCase()
+          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
         const imgTitle = cardtype;
         return (
           <img key={index} className={imgClass} src={imgSrc} title={imgTitle} />
@@ -84,9 +86,7 @@ function TwdResultLibraryByType(props) {
 
       LibraryTypes.push(
         <tr key={cardtype} className={resultTrClass}>
-          <td className="type">
-            {cardtypeImages}
-          </td>
+          <td className="type">{cardtypeImages}</td>
           <td className="name">
             <OverlayTrigger
               placement="right"
@@ -94,7 +94,9 @@ function TwdResultLibraryByType(props) {
             >
               <div>
                 {cardtype} [{libraryByTypeTotal[cardtype]}]
-                {cardtype == 'Master' && trifleTotal > 0 && <> - {trifleTotal} trifle</>}
+                {cardtype == 'Master' && trifleTotal > 0 && (
+                  <> - {trifleTotal} trifle</>
+                )}
               </div>
             </OverlayTrigger>
           </td>

@@ -27,11 +27,11 @@ function ResultCryptClan(props) {
       </div>
     );
   } else {
-    return(
+    return (
       <span className="clan">
         <img className={imgClass} src={imgSrc} title={props.value} />
       </span>
-    )
+    );
   }
 }
 

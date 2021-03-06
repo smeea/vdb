@@ -137,7 +137,8 @@ function DeckCrypt(props) {
     <>
       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
         <b>
-          Crypt [{cryptTotal}{cryptTotal < 12 && ' of 12+'}] - {cryptGroups}
+          Crypt [{cryptTotal}
+          {cryptTotal < 12 && ' of 12+'}] - {cryptGroups}
         </b>
         <div className="d-flex">
           <Button
@@ -164,47 +165,47 @@ function DeckCrypt(props) {
         </div>
       )}
       {showAdd &&
-       (!props.isMobile ? (
-         <DeckNewCryptCard
-           cardAdd={props.cardAdd}
-           setShowAdd={setShowAdd}
-           cards={props.cards}
-           cardBase={props.cardBase}
-         />
-       ) : (
-         <Modal
-           show={showAdd}
-           onHide={() => setShowAdd(false)}
-           animation={false}
-         >
-           <Modal.Body className="p-0">
-             <Container className="p-0" fluid>
-               <Row className="p-0 m-0">
-                 <Col className="p-0">
-                   <div className="m-2">
-                     <button
-                       type="button"
-                       className="close m-1"
-                       onClick={() => setShowAdd(false)}
-                     >
-                       <X width="32" height="32" viewBox="0 0 16 16" />
-                     </button>
-                   </div>
-                   <div className="d-flex justify-content-center">
-                     <h5>Add Crypt Card</h5>
-                   </div>
-                 </Col>
-               </Row>
-               <DeckNewCryptCard
-                 cardAdd={props.cardAdd}
-                 setShowAdd={setShowAdd}
-                 cards={props.cards}
-                 cardBase={props.cardBase}
-               />
-             </Container>
-           </Modal.Body>
-         </Modal>
-       ))}
+        (!props.isMobile ? (
+          <DeckNewCryptCard
+            cardAdd={props.cardAdd}
+            setShowAdd={setShowAdd}
+            cards={props.cards}
+            cardBase={props.cardBase}
+          />
+        ) : (
+          <Modal
+            show={showAdd}
+            onHide={() => setShowAdd(false)}
+            animation={false}
+          >
+            <Modal.Body className="p-0">
+              <Container className="p-0" fluid>
+                <Row className="p-0 m-0">
+                  <Col className="p-0">
+                    <div className="m-2">
+                      <button
+                        type="button"
+                        className="close m-1"
+                        onClick={() => setShowAdd(false)}
+                      >
+                        <X width="32" height="32" viewBox="0 0 16 16" />
+                      </button>
+                    </div>
+                    <div className="d-flex justify-content-center">
+                      <h5>Add Crypt Card</h5>
+                    </div>
+                  </Col>
+                </Row>
+                <DeckNewCryptCard
+                  cardAdd={props.cardAdd}
+                  setShowAdd={setShowAdd}
+                  cards={props.cards}
+                  cardBase={props.cardBase}
+                />
+              </Container>
+            </Modal.Body>
+          </Modal>
+        ))}
       <ResultCryptTable
         className={className}
         deckid={props.deckid}
@@ -258,17 +259,18 @@ function DeckCrypt(props) {
           />
         </div>
       )}
-      {props.isMobile &&
-       <div
-         onClick={() => setShowAdd(true)}
-         className="float-right-top add"
-       >
-         <div className="d-flex py-0 px-1 align-items-top">
-           <div className="d-inline" style={{fontSize: '1.75em'}}>+</div>
-           <div className="d-inline" style={{fontSize: '1.85em'}}>C</div>
-         </div>
-       </div>
-      }
+      {props.isMobile && (
+        <div onClick={() => setShowAdd(true)} className="float-right-top add">
+          <div className="d-flex py-0 px-1 align-items-top">
+            <div className="d-inline" style={{ fontSize: '1.75em' }}>
+              +
+            </div>
+            <div className="d-inline" style={{ fontSize: '1.85em' }}>
+              C
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

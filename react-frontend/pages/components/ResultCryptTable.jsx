@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
-import Shuffle from '../../assets/images/icons/shuffle.svg'
-import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg'
-import ArchiveFill from '../../assets/images/icons/archive-fill.svg'
-import CalculatorFill from '../../assets/images/icons/calculator-fill.svg'
+import Shuffle from '../../assets/images/icons/shuffle.svg';
+import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
+import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
+import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
 import ResultCryptPopover from './ResultCryptPopover.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
@@ -19,7 +19,7 @@ function ResultCryptTable(props) {
   let deckInvType;
 
   const [modalCard, setModalCard] = useState(undefined);
-  const [modalInventory, setModalInventory] = useState(undefined)
+  const [modalInventory, setModalInventory] = useState(undefined);
 
   const cardRows = props.resultCards.map((card, index) => {
     const handleClick = () => {
@@ -28,10 +28,12 @@ function ResultCryptTable(props) {
         inInventory: inInventory,
         softUsedMax: softUsedMax,
         hardUsedTotal: hardUsedTotal,
-        usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
+        usedDescription: {
+          soft: SoftUsedDescription,
+          hard: HardUsedDescription,
+        },
       });
-    }
-
+    };
 
     let q;
     let cardInvType;
@@ -66,7 +68,10 @@ function ResultCryptTable(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (props.inventoryMode && (props.deckid || props.className != 'deck-crypt-table')) {
+    if (
+      props.inventoryMode &&
+      (props.deckid || props.className != 'deck-crypt-table')
+    ) {
       if (Object.keys(props.inventoryCrypt).includes(card['Id'].toString())) {
         inInventory = props.inventoryCrypt[card['Id']].q;
       } else {
@@ -74,32 +79,44 @@ function ResultCryptTable(props) {
       }
 
       if (props.usedCards && props.usedCards.soft[card['Id']]) {
-        SoftUsedDescription = Object.keys(props.usedCards.soft[card['Id']]).map((id, index) => {
-          if (softUsedMax < props.usedCards.soft[card['Id']][id]) {
-            softUsedMax = props.usedCards.soft[card['Id']][id];
-          }
+        SoftUsedDescription = Object.keys(props.usedCards.soft[card['Id']]).map(
+          (id, index) => {
+            if (softUsedMax < props.usedCards.soft[card['Id']][id]) {
+              softUsedMax = props.usedCards.soft[card['Id']][id];
+            }
 
-          return (
-            <div className="d-flex align-items-center" key={index}>
-              <div className="opacity-035"><Shuffle/></div>
-              <div className="px-1"><b>{props.usedCards.soft[card['Id']][id]}</b></div>
-              - {props.decks[id]['name']}
-            </div>
-          );
-        });
+            return (
+              <div className="d-flex align-items-center" key={index}>
+                <div className="opacity-035">
+                  <Shuffle />
+                </div>
+                <div className="px-1">
+                  <b>{props.usedCards.soft[card['Id']][id]}</b>
+                </div>
+                - {props.decks[id]['name']}
+              </div>
+            );
+          }
+        );
       }
 
       if (props.usedCards && props.usedCards.hard[card['Id']]) {
-        HardUsedDescription = Object.keys(props.usedCards.hard[card['Id']]).map((id, index) => {
-          hardUsedTotal += props.usedCards.hard[card['Id']][id];
-          return (
-            <div className="d-flex align-items-center" key={index}>
-              <div className="opacity-035"><PinAngleFill/></div>
-              <div className="px-1"><b>{props.usedCards.hard[card['Id']][id]}</b></div>
-              - {props.decks[id]['name']}
-            </div>
-          );
-        });
+        HardUsedDescription = Object.keys(props.usedCards.hard[card['Id']]).map(
+          (id, index) => {
+            hardUsedTotal += props.usedCards.hard[card['Id']][id];
+            return (
+              <div className="d-flex align-items-center" key={index}>
+                <div className="opacity-035">
+                  <PinAngleFill />
+                </div>
+                <div className="px-1">
+                  <b>{props.usedCards.hard[card['Id']][id]}</b>
+                </div>
+                - {props.decks[id]['name']}
+              </div>
+            );
+          }
+        );
       }
 
       UsedPopover = React.forwardRef(({ children, ...props }, ref) => {
@@ -107,25 +124,31 @@ function ResultCryptTable(props) {
           <Popover ref={ref} {...props}>
             <Popover.Content>
               <>
-                {children == 0 ?
-                 <div className="py-1">
-                   Not used in inventory decks
-                 </div>
-                 :
-                 <>
-                   {softUsedMax > 0 && <>{SoftUsedDescription}</>}
-                   {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
-                 </>
-                }
-                <hr/>
+                {children == 0 ? (
+                  <div className="py-1">Not used in inventory decks</div>
+                ) : (
+                  <>
+                    {softUsedMax > 0 && <>{SoftUsedDescription}</>}
+                    {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
+                  </>
+                )}
+                <hr />
                 <div className="d-flex align-items-center">
-                  <div className="opacity-035"><CalculatorFill/></div>
-                  <div className="px-1"><b>{softUsedMax + hardUsedTotal}</b></div>
+                  <div className="opacity-035">
+                    <CalculatorFill />
+                  </div>
+                  <div className="px-1">
+                    <b>{softUsedMax + hardUsedTotal}</b>
+                  </div>
                   - Total Used
                 </div>
                 <div className="d-flex align-items-center">
-                  <div className="opacity-035"><ArchiveFill/></div>
-                  <div className="px-1"><b>{inInventory}</b></div>
+                  <div className="opacity-035">
+                    <ArchiveFill />
+                  </div>
+                  <div className="px-1">
+                    <b>{inInventory}</b>
+                  </div>
                   - In Inventory
                 </div>
               </>
@@ -175,21 +198,36 @@ function ResultCryptTable(props) {
                 <>
                   {props.inventoryMode ? (
                     <>
-                      {deckInvType && !props.inSearch && !props.isMobile ?
-                       <td className="pt-2 left-offset-8 opacity-075">
-                         <div
-                           className={cardInvType ? "" : "opacity-025"}
-                           onClick={() => props.deckUpdate(props.deckid, cardInvType ? 'makeClear' : deckInvType == 's' ? 'makeFixed' : 'makeFlexible', card['Id'])}
-                         >
-                           { deckInvType == 's' ? <PinAngleFill /> : <Shuffle/> }
-                         </div>
-                       </td>
-                       : null
-                      }
+                      {deckInvType && !props.inSearch && !props.isMobile ? (
+                        <td className="pt-2 left-offset-8 opacity-075">
+                          <div
+                            className={cardInvType ? '' : 'opacity-025'}
+                            onClick={() =>
+                              props.deckUpdate(
+                                props.deckid,
+                                cardInvType
+                                  ? 'makeClear'
+                                  : deckInvType == 's'
+                                  ? 'makeFixed'
+                                  : 'makeFlexible',
+                                card['Id']
+                              )
+                            }
+                          >
+                            {deckInvType == 's' ? (
+                              <PinAngleFill />
+                            ) : (
+                              <Shuffle />
+                            )}
+                          </div>
+                        </td>
+                      ) : null}
                       <OverlayTrigger
-                        placement='right'
+                        placement="right"
                         overlay={
-                          <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+                          <UsedPopover>
+                            {softUsedMax || hardUsedTotal}
+                          </UsedPopover>
                         }
                       >
                         <td className="quantity">
@@ -202,23 +240,24 @@ function ResultCryptTable(props) {
                             inInventory={inInventory}
                             softUsedMax={softUsedMax}
                             hardUsedTotal={hardUsedTotal}
-                            inventoryType={props.decks[props.deckid].inventory_type}
+                            inventoryType={
+                              props.decks[props.deckid].inventory_type
+                            }
                           />
                         </td>
                       </OverlayTrigger>
                     </>
-                  )
-                   :
-                   <td className="quantity">
-                     <DeckCardQuantity
-                       cardid={card['Id']}
-                       q={q}
-                       deckid={props.deckid}
-                       cardChange={props.cardChange}
-                       isMobile={props.isMobile}
-                     />
-                   </td>
-                  }
+                  ) : (
+                    <td className="quantity">
+                      <DeckCardQuantity
+                        cardid={card['Id']}
+                        q={q}
+                        deckid={props.deckid}
+                        cardChange={props.cardChange}
+                        isMobile={props.isMobile}
+                      />
+                    </td>
+                  )}
                 </>
               ) : props.proxySelected ? (
                 <td className="quantity">
@@ -234,33 +273,38 @@ function ResultCryptTable(props) {
                     isMobile={props.isMobile}
                   />
                 </td>
-              ) : <>
-                    {props.inventoryMode ?
-                     <OverlayTrigger
-                       placement='right'
-                       overlay={
-                         <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
-                       }
-                     >
-                       <td className="quantity-no-buttons px-2">
-                         <div className={
-                           inInventory < q
-                             ? "quantity px-1 mx-1 bg-red"
-                             : inInventory - hardUsedTotal < q
-                             ? "quantity px-1 mx-1 bg-yellow"
-                             : "quantity px-1"
-                         }>
-                           {q}
-                         </div>
-                       </td>
-                     </OverlayTrigger>
-                     :
-                     <td className="quantity-no-buttons px-2">
-                       {q ? q : <div className="transparent">0</div>}
-                     </td>
-                    }
-                  </>
-              }
+              ) : (
+                <>
+                  {props.inventoryMode ? (
+                    <OverlayTrigger
+                      placement="right"
+                      overlay={
+                        <UsedPopover>
+                          {softUsedMax || hardUsedTotal}
+                        </UsedPopover>
+                      }
+                    >
+                      <td className="quantity-no-buttons px-2">
+                        <div
+                          className={
+                            inInventory < q
+                              ? 'quantity px-1 mx-1 bg-red'
+                              : inInventory - hardUsedTotal < q
+                              ? 'quantity px-1 mx-1 bg-yellow'
+                              : 'quantity px-1'
+                          }
+                        >
+                          {q}
+                        </div>
+                      </td>
+                    </OverlayTrigger>
+                  ) : (
+                    <td className="quantity-no-buttons px-2">
+                      {q ? q : <div className="transparent">0</div>}
+                    </td>
+                  )}
+                </>
+              )}
             </>
           ) : (
             <>
@@ -277,34 +321,53 @@ function ResultCryptTable(props) {
               {props.inventoryMode && (
                 <>
                   <OverlayTrigger
-                    placement='left'
+                    placement="left"
                     overlay={
                       <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
                     }
                   >
                     <td className="quantity px-1">
-                      <div className={inInventory < softUsedMax + hardUsedTotal ? "quantity px-1 mx-1 bg-red" : "quantity px-1"}>
+                      <div
+                        className={
+                          inInventory < softUsedMax + hardUsedTotal
+                            ? 'quantity px-1 mx-1 bg-red'
+                            : 'quantity px-1'
+                        }
+                      >
                         {inInventory > 0 && inInventory}
                       </div>
                     </td>
                   </OverlayTrigger>
                   <td className="used">
-                    { softUsedMax > 0 &&
+                    {softUsedMax > 0 && (
                       <div className="d-flex align-items-center justify-content-center">
-                        <div className="d-inline opacity-035 pr-1"><Shuffle/></div>{softUsedMax}
+                        <div className="d-inline opacity-035 pr-1">
+                          <Shuffle />
+                        </div>
+                        {softUsedMax}
                       </div>
-                    }
-                    { hardUsedTotal > 0 &&
+                    )}
+                    {hardUsedTotal > 0 && (
                       <div className="d-flex align-items-center justify-content-center">
-                        <div className="d-inline opacity-035 pr-1"><PinAngleFill/></div>{hardUsedTotal}
+                        <div className="d-inline opacity-035 pr-1">
+                          <PinAngleFill />
+                        </div>
+                        {hardUsedTotal}
                       </div>
-                    }
+                    )}
                   </td>
                 </>
               )}
             </>
           )}
-          <td className={props.isMobile && props.className == 'deck-crypt-table' ? "capacity" : "capacity px-1"} onClick={() => handleClick()}>
+          <td
+            className={
+              props.isMobile && props.className == 'deck-crypt-table'
+                ? 'capacity'
+                : 'capacity px-1'
+            }
+            onClick={() => handleClick()}
+          >
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td
@@ -325,38 +388,48 @@ function ResultCryptTable(props) {
               isMobile={props.isMobile}
             />
           </td>
-          {!props.isMobile ?
-           <OverlayTrigger
-             placement={props.placement ? props.placement : 'right'}
-             overlay={
-               <CardPopover card={card}>{props.showImage}</CardPopover>
-             }>
-             <td className="name px-1" onClick={() => {
-               handleClick();
-               setModalInventory({
-                 inInventory: inInventory,
-                 usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
-                 softUsedMax: softUsedMax,
-                 hardUsedTotal: hardUsedTotal,
-               });
-             }}>
-               <ResultCryptName card={card} />
-             </td>
-           </OverlayTrigger>
-           :
-           <td className="name px-1" onClick={() => {
-             handleClick();
-             setModalInventory({
-               inInventory: inInventory,
-               usedDescription: {soft: SoftUsedDescription, hard: HardUsedDescription},
-               softUsedMax: softUsedMax,
-               hardUsedTotal: hardUsedTotal,
-             });
-           }}>
-             <ResultCryptName card={card} />
-           </td>
-
-          }
+          {!props.isMobile ? (
+            <OverlayTrigger
+              placement={props.placement ? props.placement : 'right'}
+              overlay={<CardPopover card={card}>{props.showImage}</CardPopover>}
+            >
+              <td
+                className="name px-1"
+                onClick={() => {
+                  handleClick();
+                  setModalInventory({
+                    inInventory: inInventory,
+                    usedDescription: {
+                      soft: SoftUsedDescription,
+                      hard: HardUsedDescription,
+                    },
+                    softUsedMax: softUsedMax,
+                    hardUsedTotal: hardUsedTotal,
+                  });
+                }}
+              >
+                <ResultCryptName card={card} />
+              </td>
+            </OverlayTrigger>
+          ) : (
+            <td
+              className="name px-1"
+              onClick={() => {
+                handleClick();
+                setModalInventory({
+                  inInventory: inInventory,
+                  usedDescription: {
+                    soft: SoftUsedDescription,
+                    hard: HardUsedDescription,
+                  },
+                  softUsedMax: softUsedMax,
+                  hardUsedTotal: hardUsedTotal,
+                });
+              }}
+            >
+              <ResultCryptName card={card} />
+            </td>
+          )}
           {props.isMobile || !props.isWide ? (
             <td className="clan-group" onClick={() => handleClick()}>
               <div>

@@ -2,11 +2,7 @@ import React from 'react';
 import { ButtonGroup, ToggleButton } from 'react-bootstrap';
 
 function TwdSearchFormLibraryTotal(props) {
-  const totalBrackets = [ "60-67",
-                          "68-75",
-                          "76-83",
-                          "84-90",
-                        ]
+  const totalBrackets = ['60-67', '68-75', '76-83', '84-90'];
 
   const LibraryTotalButtons = totalBrackets.map((i, index) => {
     return (
@@ -25,9 +21,7 @@ function TwdSearchFormLibraryTotal(props) {
     );
   });
 
-  return (
-    <ButtonGroup toggle>{LibraryTotalButtons}</ButtonGroup>
-  );
+  return <ButtonGroup toggle>{LibraryTotalButtons}</ButtonGroup>;
 }
 
 export default TwdSearchFormLibraryTotal;

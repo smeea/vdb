@@ -14,19 +14,30 @@ function Crypt(props) {
 
   let isBranches;
   if (props.deckRouter(props.activeDeck)) {
-    isBranches = props.deckRouter(props.activeDeck).master || (props.deckRouter(props.activeDeck).branches && props.deckRouter(props.activeDeck).branches.length > 0)
+    isBranches =
+      props.deckRouter(props.activeDeck).master ||
+      (props.deckRouter(props.activeDeck).branches &&
+        props.deckRouter(props.activeDeck).branches.length > 0);
   }
 
   return (
-    <Container className={props.isMobile ? "main-container" : "main-container py-3"}>
+    <Container
+      className={props.isMobile ? 'main-container' : 'main-container py-3'}
+    >
       <Row>
         {!props.isMobile && (
           <Col md={12} xl={props.username ? 4 : 3} className="px-0">
             {Object.keys(props.decks).length > 0 && (
               <Row>
                 <Col>
-                  <div className={props.isMobile ? "d-flex justify-content-between" : "d-flex"}>
-                    <div className={isBranches ? "w-75" : "w-100"}>
+                  <div
+                    className={
+                      props.isMobile
+                        ? 'd-flex justify-content-between'
+                        : 'd-flex'
+                    }
+                  >
+                    <div className={isBranches ? 'w-75' : 'w-100'}>
                       <DeckSelectMy
                         decks={props.decks}
                         activeDeck={props.activeDeck}
@@ -34,16 +45,16 @@ function Crypt(props) {
                         inventoryMode={props.inventoryMode}
                       />
                     </div>
-                    {isBranches &&
-                     <div className="pl-1 w-25">
-                       <DeckBranchSelect
-                         decks={props.decks}
-                         activeDeck={props.activeDeck}
-                         setActiveDeck={props.setActiveDeck}
-                         inventoryMode={props.inventoryMode}
-                       />
-                     </div>
-                    }
+                    {isBranches && (
+                      <div className="pl-1 w-25">
+                        <DeckBranchSelect
+                          decks={props.decks}
+                          activeDeck={props.activeDeck}
+                          setActiveDeck={props.setActiveDeck}
+                          inventoryMode={props.inventoryMode}
+                        />
+                      </div>
+                    )}
                     <div className="d-flex pl-1">
                       <Button
                         variant="outline-secondary"
@@ -123,7 +134,10 @@ function Crypt(props) {
               setHideMissing={props.setHideMissing}
               cardAdd={props.cardAdd}
               cards={props.results}
-              crypt={props.deckRouter(props.activeDeck) && props.deckRouter(props.activeDeck).crypt}
+              crypt={
+                props.deckRouter(props.activeDeck) &&
+                props.deckRouter(props.activeDeck).crypt
+              }
               activeDeck={props.activeDeck}
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
@@ -150,7 +164,9 @@ function Crypt(props) {
           xl={3}
           className={
             !props.isMobile || (props.isMobile && props.showSearch)
-              ? props.isMobile ? 'px-1 py-1' : 'px-0'
+              ? props.isMobile
+                ? 'px-1 py-1'
+                : 'px-0'
               : 'col-hide'
           }
         >

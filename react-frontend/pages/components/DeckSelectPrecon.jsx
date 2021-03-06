@@ -3,7 +3,7 @@ import Select from 'react-select';
 import precons from './forms_data/precons.json';
 
 function DeckSelectPrecon(props) {
-  const options = []
+  const options = [];
   precons.map((i, index) => {
     if (i[0] != 'any' && i[0] != 'bcp') {
       options.push({
@@ -27,7 +27,9 @@ function DeckSelectPrecon(props) {
         name="decks"
         placeholder="Select Deck"
         value={options.find((obj) => obj.value === props.activeDeck.deckid)}
-        onChange={(e) => props.setActiveDeck({src: 'precons', deckid: e.value})}
+        onChange={(e) =>
+          props.setActiveDeck({ src: 'precons', deckid: e.value })
+        }
       />
     </>
   );

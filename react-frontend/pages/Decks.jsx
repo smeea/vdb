@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
-import Shuffle from '../assets/images/icons/shuffle.svg'
+import Shuffle from '../assets/images/icons/shuffle.svg';
 import At from '../assets/images/icons/at.svg';
-import PinAngleFill from '../assets/images/icons/pin-angle-fill.svg'
+import PinAngleFill from '../assets/images/icons/pin-angle-fill.svg';
 import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
@@ -27,12 +27,14 @@ function Decks(props) {
   const [queryId, setQueryId] = useState(null);
   const { hash } = useLocation();
   const history = useHistory();
-  const [selectFrom, setSelectFrom] = useState(props.username ? 'my' : 'precons');
+  const [selectFrom, setSelectFrom] = useState(
+    props.username ? 'my' : 'precons'
+  );
 
   const getMissingCrypt = (deck) => {
-    const crypt = {}
+    const crypt = {};
 
-    Object.keys(deck.crypt).map(card => {
+    Object.keys(deck.crypt).map((card) => {
       let softUsedMax = 0;
       if (props.usedCards.softCrypt[card]) {
         Object.keys(props.usedCards.softCrypt[card]).map((id) => {
@@ -49,22 +51,23 @@ function Decks(props) {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (!deck.inventory_type && deck.crypt[card].q > softUsedMax) miss += deck.crypt[card].q - softUsedMax;
+      if (!deck.inventory_type && deck.crypt[card].q > softUsedMax)
+        miss += deck.crypt[card].q - softUsedMax;
       if (props.inventory.crypt[card]) miss -= props.inventory.crypt[card].q;
 
-      if (miss > 0 ) {
-        crypt[card] = {...deck.crypt[card]};
+      if (miss > 0) {
+        crypt[card] = { ...deck.crypt[card] };
         crypt[card].q = miss > deck.crypt[card].q ? deck.crypt[card].q : miss;
       }
     });
 
-    return(crypt);
+    return crypt;
   };
 
   const getMissingLibrary = (deck) => {
-    const library = {}
+    const library = {};
 
-    Object.keys(deck.library).map(card => {
+    Object.keys(deck.library).map((card) => {
       let softUsedMax = 0;
       if (props.usedCards.softLibrary[card]) {
         Object.keys(props.usedCards.softLibrary[card]).map((id) => {
@@ -81,16 +84,19 @@ function Decks(props) {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (!deck.inventory_type && deck.library[card].q > softUsedMax) miss += deck.library[card].q - softUsedMax;
-      if (props.inventory.library[card]) miss -= props.inventory.library[card].q;
+      if (!deck.inventory_type && deck.library[card].q > softUsedMax)
+        miss += deck.library[card].q - softUsedMax;
+      if (props.inventory.library[card])
+        miss -= props.inventory.library[card].q;
 
-      if (miss > 0 ) {
-        library[card] = {...deck.library[card]};
-        library[card].q = miss > deck.library[card].q ? deck.library[card].q : miss;
+      if (miss > 0) {
+        library[card] = { ...deck.library[card] };
+        library[card].q =
+          miss > deck.library[card].q ? deck.library[card].q : miss;
       }
     });
 
-    return(library);
+    return library;
   };
 
   let missingCrypt;
@@ -98,7 +104,7 @@ function Decks(props) {
   if (props.deckRouter(props.activeDeck)) {
     missingCrypt = getMissingCrypt(props.deckRouter(props.activeDeck));
     missingLibrary = getMissingLibrary(props.deckRouter(props.activeDeck));
-  };
+  }
 
   const getDeck = (deckid) => {
     const url = `${process.env.API_URL}deck/${deckid}`;
@@ -122,7 +128,7 @@ function Decks(props) {
           });
           props.setSharedDeck(data);
         }
-      })
+      });
   };
 
   const deckUpdate = (deckid, field, value) => {
@@ -143,22 +149,27 @@ function Decks(props) {
   const toggleInventoryState = () => {
     const inventoryType = props.decks[props.activeDeck.deckid].inventory_type;
     if (!inventoryType) {
-      deckUpdate(props.activeDeck.deckid, 'makeFlexible', 'all')
-    } else if (inventoryType == "s") {
-      deckUpdate(props.activeDeck.deckid, 'makeFixed', 'all')
-    } else if (inventoryType == "h") {
-      deckUpdate(props.activeDeck.deckid, 'makeClear', 'all')
+      deckUpdate(props.activeDeck.deckid, 'makeFlexible', 'all');
+    } else if (inventoryType == 's') {
+      deckUpdate(props.activeDeck.deckid, 'makeFixed', 'all');
+    } else if (inventoryType == 'h') {
+      deckUpdate(props.activeDeck.deckid, 'makeClear', 'all');
     }
-  }
+  };
 
   let isAuthor;
   if (props.deckRouter(props.activeDeck)) {
-    isAuthor = (props.username == props.deckRouter(props.activeDeck).owner) && props.username;
+    isAuthor =
+      props.username == props.deckRouter(props.activeDeck).owner &&
+      props.username;
   }
 
   let isBranches;
   if (props.deckRouter(props.activeDeck)) {
-    isBranches = props.deckRouter(props.activeDeck).master || (props.deckRouter(props.activeDeck).branches && props.deckRouter(props.activeDeck).branches.length > 0)
+    isBranches =
+      props.deckRouter(props.activeDeck).master ||
+      (props.deckRouter(props.activeDeck).branches &&
+        props.deckRouter(props.activeDeck).branches.length > 0);
   }
 
   useEffect(() => {
@@ -175,12 +186,12 @@ function Decks(props) {
             crypt[j[0]] = {
               q: parseInt(j[1]),
               c: props.cryptCardBase[j[0]],
-            }
+            };
           } else {
             library[j[0]] = {
               q: parseInt(j[1]),
               c: props.libraryCardBase[j[0]],
-            }
+            };
           }
         });
 
@@ -191,27 +202,32 @@ function Decks(props) {
         description: query.get('description') ? query.get('description') : '',
         crypt: crypt,
         library: library,
-      }
+      };
 
-      props.setSharedDeck({'deckInUrl': deck});
-      props.setActiveDeck({src: 'shared', deckid: 'deckInUrl'});
+      props.setSharedDeck({ deckInUrl: deck });
+      props.setActiveDeck({ src: 'shared', deckid: 'deckInUrl' });
     }
   }, [hash, props.cryptCardBase, props.libraryCardBase]);
 
   useEffect(() => {
     if (queryId && props.cryptCardBase && props.libraryCardBase) {
       if (queryId.length == 32) {
-        props.setActiveDeck({src: 'shared', deckid: queryId})
+        props.setActiveDeck({ src: 'shared', deckid: queryId });
       } else {
-        props.setActiveDeck({src: 'twd', deckid: queryId})
+        props.setActiveDeck({ src: 'twd', deckid: queryId });
       }
       getDeck(queryId);
     }
   }, [queryId, props.cryptCardBase, props.libraryCardBase]);
 
   useEffect(() => {
-    if (props.activeDeck.src == 'twd' && !(props.sharedDeck && props.sharedDeck.Id == props.activeDeck.deckid)) {
-      props.cryptCardBase && props.libraryCardBase && getDeck(props.activeDeck.deckid);
+    if (
+      props.activeDeck.src == 'twd' &&
+      !(props.sharedDeck && props.sharedDeck.Id == props.activeDeck.deckid)
+    ) {
+      props.cryptCardBase &&
+        props.libraryCardBase &&
+        getDeck(props.activeDeck.deckid);
     }
   }, [props.activeDeck, props.cryptCardBase, props.libraryCardBase]);
 
@@ -223,114 +239,147 @@ function Decks(props) {
   }, [props.activeDeck, query]);
 
   useEffect(() => {
-    if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons') setSelectFrom(props.activeDeck.src)
-  }, [props.activeDeck])
+    if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons')
+      setSelectFrom(props.activeDeck.src);
+  }, [props.activeDeck]);
 
   return (
-    <Container className={props.isMobile ? "deck-container" : "deck-container py-4"}>
+    <Container
+      className={props.isMobile ? 'deck-container' : 'deck-container py-4'}
+    >
       <Row className="mx-0">
-        <Col lg={1}>
-        </Col>
+        <Col lg={1}></Col>
         <Col lg={9} className="px-0 px-lg-3">
           <Row className="px-1 px-lg-0 pt-1 pt-lg-0 pb-2 pb-lg-4">
             <Col lg={5} className="px-0 px-lg-3">
               <Row className="align-items-center justify-content-end mx-0">
-                  <Col className="px-0">
-                    <div className={props.inventoryMode ? "d-flex" : props.isMobile ? "d-flex justify-content-between" : "d-flex"}>
-                      <div className={isBranches ? "w-75" : "w-100"}>
-                        {selectFrom == 'my' ?
-                           <DeckSelectMy
-                             decks={props.decks}
-                             activeDeck={props.activeDeck}
-                             setActiveDeck={props.setActiveDeck}
-                             inventoryMode={props.inventoryMode}
-                           />
-                         :
-                         <DeckSelectPrecon
-                           activeDeck={props.activeDeck}
-                           setActiveDeck={props.setActiveDeck}
-                         />
-                        }
-                      </div>
-                      {selectFrom == 'my' && isBranches &&
-                       <div className="pl-1 w-25">
-                         <DeckBranchSelect
-                           decks={props.decks}
-                           activeDeck={props.activeDeck}
-                           setActiveDeck={props.setActiveDeck}
-                           inventoryMode={props.inventoryMode}
-                         />
-                       </div>
-                      }
-                      <div className="d-flex">
-                        {props.inventoryMode && isAuthor && props.deckRouter(props.activeDeck) &&
-                         <div className="d-flex pl-1">
-                           <Button variant='outline-secondary' onClick={() => toggleInventoryState()}>
-                             <div className="d-flex align-items-center">
-                               {!props.deckRouter(props.activeDeck).inventory_type && <At/> }
-                               {props.deckRouter(props.activeDeck).inventory_type == "s" && <Shuffle/> }
-                               {props.deckRouter(props.activeDeck).inventory_type == "h" && <PinAngleFill/> }
-                             </div>
-                           </Button>
-                         </div>
-                        }
-                        {props.isMobile && props.deckRouter(props.activeDeck) &&
-                         <div className="d-flex pl-1">
-                           <Button variant="outline-secondary" onClick={() => setShowInfo(!showInfo)}>
-                             <InfoCircle />
-                           </Button>
-                         </div>
-                        }
-                      </div>
+                <Col className="px-0">
+                  <div
+                    className={
+                      props.inventoryMode
+                        ? 'd-flex'
+                        : props.isMobile
+                        ? 'd-flex justify-content-between'
+                        : 'd-flex'
+                    }
+                  >
+                    <div className={isBranches ? 'w-75' : 'w-100'}>
+                      {selectFrom == 'my' ? (
+                        <DeckSelectMy
+                          decks={props.decks}
+                          activeDeck={props.activeDeck}
+                          setActiveDeck={props.setActiveDeck}
+                          inventoryMode={props.inventoryMode}
+                        />
+                      ) : (
+                        <DeckSelectPrecon
+                          activeDeck={props.activeDeck}
+                          setActiveDeck={props.setActiveDeck}
+                        />
+                      )}
                     </div>
-                    {/* {selectFrom == 'my' && */}
-                    {/*  props.deckRouter(props.activeDeck) && */}
-                    {/*  ( */}
-                    {/*    ( */}
-                    {/*      props.deckRouter(props.activeDeck).branches && */}
-                    {/*        props.deckRouter(props.activeDeck).branches.length > 0 */}
-                    {/*    ) */}
-                    {/*      || props.deckRouter(props.activeDeck).master */}
-                    {/*  ) && */}
-                    {/*  <div className="pt-2 w-100"> */}
-                    {/*    <DeckBranchSelect */}
-                    {/*      decks={props.decks} */}
-                    {/*      activeDeck={props.activeDeck} */}
-                    {/*      setActiveDeck={props.setActiveDeck} */}
-                    {/*      inventoryMode={props.inventoryMode} */}
-                    {/*    /> */}
-                    {/*  </div> */}
-                    {/* } */}
-                    <Form className="py-1 my-0">
-                      {props.username &&
-                       <Form.Check
-                         className="px-2"
-                         checked={selectFrom == 'my'}
-                         onChange={e => setSelectFrom(e.target.id)}
-                         type="radio"
-                         id="my"
-                         label={<div className="blue"><b>My Decks</b></div>}
-                         inline
-                       />
-                      }
+                    {selectFrom == 'my' && isBranches && (
+                      <div className="pl-1 w-25">
+                        <DeckBranchSelect
+                          decks={props.decks}
+                          activeDeck={props.activeDeck}
+                          setActiveDeck={props.setActiveDeck}
+                          inventoryMode={props.inventoryMode}
+                        />
+                      </div>
+                    )}
+                    <div className="d-flex">
+                      {props.inventoryMode &&
+                        isAuthor &&
+                        props.deckRouter(props.activeDeck) && (
+                          <div className="d-flex pl-1">
+                            <Button
+                              variant="outline-secondary"
+                              onClick={() => toggleInventoryState()}
+                            >
+                              <div className="d-flex align-items-center">
+                                {!props.deckRouter(props.activeDeck)
+                                  .inventory_type && <At />}
+                                {props.deckRouter(props.activeDeck)
+                                  .inventory_type == 's' && <Shuffle />}
+                                {props.deckRouter(props.activeDeck)
+                                  .inventory_type == 'h' && <PinAngleFill />}
+                              </div>
+                            </Button>
+                          </div>
+                        )}
+                      {props.isMobile && props.deckRouter(props.activeDeck) && (
+                        <div className="d-flex pl-1">
+                          <Button
+                            variant="outline-secondary"
+                            onClick={() => setShowInfo(!showInfo)}
+                          >
+                            <InfoCircle />
+                          </Button>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  {/* {selectFrom == 'my' && */}
+                  {/*  props.deckRouter(props.activeDeck) && */}
+                  {/*  ( */}
+                  {/*    ( */}
+                  {/*      props.deckRouter(props.activeDeck).branches && */}
+                  {/*        props.deckRouter(props.activeDeck).branches.length > 0 */}
+                  {/*    ) */}
+                  {/*      || props.deckRouter(props.activeDeck).master */}
+                  {/*  ) && */}
+                  {/*  <div className="pt-2 w-100"> */}
+                  {/*    <DeckBranchSelect */}
+                  {/*      decks={props.decks} */}
+                  {/*      activeDeck={props.activeDeck} */}
+                  {/*      setActiveDeck={props.setActiveDeck} */}
+                  {/*      inventoryMode={props.inventoryMode} */}
+                  {/*    /> */}
+                  {/*  </div> */}
+                  {/* } */}
+                  <Form className="py-1 my-0">
+                    {props.username && (
                       <Form.Check
                         className="px-2"
-                        checked={selectFrom == 'precons'}
-                        onChange={e => setSelectFrom(e.target.id)}
+                        checked={selectFrom == 'my'}
+                        onChange={(e) => setSelectFrom(e.target.id)}
                         type="radio"
-                        id="precons"
-                        label={<div className="blue"><b>Precon Decks</b></div>}
+                        id="my"
+                        label={
+                          <div className="blue">
+                            <b>My Decks</b>
+                          </div>
+                        }
                         inline
                       />
-                    </Form>
-                  </Col>
+                    )}
+                    <Form.Check
+                      className="px-2"
+                      checked={selectFrom == 'precons'}
+                      onChange={(e) => setSelectFrom(e.target.id)}
+                      type="radio"
+                      id="precons"
+                      label={
+                        <div className="blue">
+                          <b>Precon Decks</b>
+                        </div>
+                      }
+                      inline
+                    />
+                  </Form>
+                </Col>
               </Row>
             </Col>
             <Col lg={7} className="px-0 px-lg-3">
-              {((showInfo && props.deckRouter(props.activeDeck)) || (!props.isMobile && props.deckRouter(props.activeDeck))) && (
+              {((showInfo && props.deckRouter(props.activeDeck)) ||
+                (!props.isMobile && props.deckRouter(props.activeDeck))) && (
                 <>
-                  <Row className={props.isMobile ? "mx-0" : "mx-0 pb-2"}>
-                    <Col md={isBranches ? 6 : 8} className={props.isMobile ? "px-0" : "pl-0 pr-1"}>
+                  <Row className={props.isMobile ? 'mx-0' : 'mx-0 pb-2'}>
+                    <Col
+                      md={isBranches ? 6 : 8}
+                      className={props.isMobile ? 'px-0' : 'pl-0 pr-1'}
+                    >
                       <DeckChangeName
                         name={props.deckRouter(props.activeDeck).name}
                         deckid={props.activeDeck.deckid}
@@ -339,18 +388,26 @@ function Decks(props) {
                         isMobile={props.isMobile}
                       />
                     </Col>
-                    {isBranches &&
-                     <Col md={2} className={props.isMobile ? "px-0" : "pl-0 pr-0"}>
-                       <DeckChangeBranchName
-                         branchName={props.deckRouter(props.activeDeck).branchName}
-                         deckid={props.activeDeck.deckid}
-                         deckUpdate={deckUpdate}
-                         isAuthor={isAuthor}
-                         isMobile={props.isMobile}
-                       />
-                     </Col>
-                    }
-                    <Col md={4} className={props.isMobile ? "px-0" : "pl-1 pr-0"}>
+                    {isBranches && (
+                      <Col
+                        md={2}
+                        className={props.isMobile ? 'px-0' : 'pl-0 pr-0'}
+                      >
+                        <DeckChangeBranchName
+                          branchName={
+                            props.deckRouter(props.activeDeck).branchName
+                          }
+                          deckid={props.activeDeck.deckid}
+                          deckUpdate={deckUpdate}
+                          isAuthor={isAuthor}
+                          isMobile={props.isMobile}
+                        />
+                      </Col>
+                    )}
+                    <Col
+                      md={4}
+                      className={props.isMobile ? 'px-0' : 'pl-1 pr-0'}
+                    >
                       <DeckChangeAuthor
                         author={props.deckRouter(props.activeDeck).author}
                         deckid={props.activeDeck.deckid}
@@ -363,7 +420,9 @@ function Decks(props) {
                   <Row className="mx-0">
                     <Col className="px-0">
                       <DeckChangeDescription
-                        description={props.deckRouter(props.activeDeck).description}
+                        description={
+                          props.deckRouter(props.activeDeck).description
+                        }
                         deckid={props.activeDeck.deckid}
                         deckUpdate={deckUpdate}
                         isAuthor={isAuthor}
@@ -430,27 +489,27 @@ function Decks(props) {
             </Row>
           )}
         </Col>
-        {!props.isMobile &&
-         <Col lg={2} className="px-0 px-lg-3">
-           <DeckButtons
-             isMobile={props.isMobile}
-             isAuthor={isAuthor}
-             isWide={props.isWide}
-             inventoryMode={props.inventoryMode}
-             username={props.username}
-             deck={props.deckRouter(props.activeDeck)}
-             getDecks={props.getDecks}
-             activeDeck={props.activeDeck}
-             setActiveDeck={props.setActiveDeck}
-             showImage={props.showImage}
-             setShowImage={props.setShowImage}
-             setShowInfo={setShowInfo}
-             setShowButtons={setShowButtons}
-             missingCrypt={missingCrypt}
-             missingLibrary={missingLibrary}
-           />
-         </Col>
-        }
+        {!props.isMobile && (
+          <Col lg={2} className="px-0 px-lg-3">
+            <DeckButtons
+              isMobile={props.isMobile}
+              isAuthor={isAuthor}
+              isWide={props.isWide}
+              inventoryMode={props.inventoryMode}
+              username={props.username}
+              deck={props.deckRouter(props.activeDeck)}
+              getDecks={props.getDecks}
+              activeDeck={props.activeDeck}
+              setActiveDeck={props.setActiveDeck}
+              showImage={props.showImage}
+              setShowImage={props.setShowImage}
+              setShowInfo={setShowInfo}
+              setShowButtons={setShowButtons}
+              missingCrypt={missingCrypt}
+              missingLibrary={missingLibrary}
+            />
+          </Col>
+        )}
       </Row>
       {props.isMobile && (
         <>
@@ -505,29 +564,29 @@ function Decks(props) {
           </Modal.Body>
         </Modal>
       )}
-      {props.isMobile &&
-       <>
-         {props.inventoryMode ? (
-           <div
-             onClick={() => props.setInventoryMode(!props.inventoryMode)}
-             className="float-left-bottom inventory-on"
-           >
-             <div className="pt-2 float-inventory">
-               <ArchiveFill viewBox="0 0 16 16" />
-             </div>
-           </div>
-         ) : (
-           <div
-             onClick={() => props.setInventoryMode(!props.inventoryMode)}
-             className="float-left-bottom inventory-off"
-           >
-             <div className="pt-2 float-inventory">
-               <ArchiveFill viewBox="0 0 16 16" />
-             </div>
-           </div>
-         )}
-       </>
-      }
+      {props.isMobile && (
+        <>
+          {props.inventoryMode ? (
+            <div
+              onClick={() => props.setInventoryMode(!props.inventoryMode)}
+              className="float-left-bottom inventory-on"
+            >
+              <div className="pt-2 float-inventory">
+                <ArchiveFill viewBox="0 0 16 16" />
+              </div>
+            </div>
+          ) : (
+            <div
+              onClick={() => props.setInventoryMode(!props.inventoryMode)}
+              className="float-left-bottom inventory-off"
+            >
+              <div className="pt-2 float-inventory">
+                <ArchiveFill viewBox="0 0 16 16" />
+              </div>
+            </div>
+          )}
+        </>
+      )}
     </Container>
   );
 }

@@ -25,7 +25,6 @@ function TwdSearchFormCrypt(props) {
   const cryptCardsList = Object.keys(props.state)
     .filter((id) => props.state[id] > 0)
     .map((id, index) => {
-
       const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
         return (
           <Popover ref={ref} {...props}>
@@ -47,13 +46,15 @@ function TwdSearchFormCrypt(props) {
             target="crypt"
           />
           <OverlayTrigger
-            placement='left'
+            placement="left"
             overlay={
-              <CardPopover card={props.cardBase[id]}>{props.showImage}</CardPopover>
+              <CardPopover card={props.cardBase[id]}>
+                {props.showImage}
+              </CardPopover>
             }
           >
             <div onClick={() => setModalCard(props.cardBase[id])}>
-              <ResultCryptName card={props.cardBase[id]}/>
+              <ResultCryptName card={props.cardBase[id]} />
             </div>
           </OverlayTrigger>
         </div>

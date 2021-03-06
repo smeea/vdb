@@ -14,9 +14,9 @@ function ResultCryptTotal(props) {
       byGroups[card['Group']] = 1;
     }
     if (byGroupsCapacityTotal[card['Group']]) {
-      byGroupsCapacityTotal[card['Group']] += card['Capacity']
+      byGroupsCapacityTotal[card['Group']] += card['Capacity'];
     } else {
-      byGroupsCapacityTotal[card['Group']] = card['Capacity']
+      byGroupsCapacityTotal[card['Group']] = card['Capacity'];
     }
     total += 1;
   });
@@ -29,7 +29,7 @@ function ResultCryptTotal(props) {
         </span>
         {byGroups[key]}
         <div className="d-flex small justify-content-center">
-        ~{Math.round((byGroupsCapacityTotal[key] / byGroups[key]) * 10) / 10}
+          ~{Math.round((byGroupsCapacityTotal[key] / byGroups[key]) * 10) / 10}
         </div>
       </span>
     );

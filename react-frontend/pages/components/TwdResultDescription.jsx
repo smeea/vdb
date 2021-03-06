@@ -62,15 +62,15 @@ function TwdResultDescription(props) {
               />
             </div>
             <div className="bp-125">
-              { props.username &&
+              {props.username && (
                 <DeckClone
                   deck={props.deck}
-                  activeDeck={{src: 'twd', deckid: props.deck.deckid}}
+                  activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
                   getDecks={props.getDecks}
                   setActiveDeck={props.setActiveDeck}
                   setShowButtons={props.setShowButtons}
                 />
-              }
+              )}
             </div>
           </div>
         </>
@@ -118,15 +118,15 @@ function TwdResultDescription(props) {
                   />
                 </div>
                 <div className="bp-125">
-                  { props.username &&
+                  {props.username && (
                     <DeckClone
                       deck={props.deck}
-                      activeDeck={{src: 'twd', deckid: props.deck.deckid}}
+                      activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
                       getDecks={props.getDecks}
                       setActiveDeck={props.setActiveDeck}
                       setShowButtons={props.setShowButtons}
                     />
-                  }
+                  )}
                 </div>
               </div>
             </Col>

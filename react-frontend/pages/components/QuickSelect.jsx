@@ -35,11 +35,11 @@ function QuickSelect(props) {
 
   useEffect(() => {
     if (selectedValue > 200000) {
-      props.setCard(props.cryptCardBase[selectedValue])
-      props.history.push(`/cards/${selectedValue}`)
+      props.setCard(props.cryptCardBase[selectedValue]);
+      props.history.push(`/cards/${selectedValue}`);
     } else if (selectedValue > 100000) {
-      props.setCard(props.libraryCardBase[selectedValue])
-      props.history.push(`/cards/${selectedValue}`)
+      props.setCard(props.libraryCardBase[selectedValue]);
+      props.history.push(`/cards/${selectedValue}`);
     }
   }, [selectedValue]);
 
@@ -54,96 +54,104 @@ function QuickSelect(props) {
       onChange={handleChange}
       getOptionLabel={(cardid) => (
         <>
-          {cardid > 200000 ?
-           <>
-             <div className="d-flex align-items-center justify-content-between">
-               <div className="d-flex align-items-center">
-                 <ResultCryptCapacity value={props.cryptCardBase[cardid]['Capacity']} />
-                 <span className="px-2">
-                   {props.cryptCardBase[cardid]['Banned'] ? (
-                     <>
-                       <strike>{props.cryptCardBase[cardid]['Name']}</strike>
-                       {props.cryptCardBase[cardid]['Adv'] && (
-                         <span className="pl-1">
-                           <img
-                             className="advanced-image-results"
-                             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                             title="Advanced"
-                           />
-                         </span>
-                       )}
-                       <span className="pl-1">
-                         <Hammer />
-                       </span>
-                     </>
-                   ) : (
-                     <>
-                       {props.cryptCardBase[cardid]['Name']}
-                       {props.cryptCardBase[cardid]['Adv'] && (
-                         <span className="pl-1">
-                           <img
-                             className="advanced-image-results"
-                             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                             title="Advanced"
-                           />
-                         </span>
-                       )}
-                     </>
-                   )}
-                 </span>
-                 <ResultCryptClan value={props.cryptCardBase[cardid]['Clan']} />
-               </div>
-               <div className="d-flex flex-nowrap">
-                 <ResultCryptDisciplines
-                   value={props.cryptCardBase[cardid]['Disciplines']}
-                 />
-               </div>
-             </div>
-           </>
-           :
-           <>
-             <div className="d-flex align-items-center justify-content-between">
-               <div className="d-flex align-items-center">
-                 <ResultLibraryType cardtype={props.libraryCardBase[cardid]['Type']} />
-                 <span className="pl-1">
-                   {props.libraryCardBase[cardid]['Banned'] ? (
-                     <>
-                       <strike>{props.libraryCardBase[cardid]['Name']}</strike>
-                       <span className="pl-1">
-                         <Hammer />
-                       </span>
-                     </>
-                   ) : (
-                     <>{props.libraryCardBase[cardid]['Name']}</>
-                   )}
-                 </span>
-               </div>
-               <div>
-                 {props.libraryCardBase[cardid]['Discipline'] && (
-                   <span className="px-1">
-                     <ResultLibraryDisciplines
-                       value={props.libraryCardBase[cardid]['Discipline']}
-                     />
-                   </span>
-                 )}
-                 {props.libraryCardBase[cardid]['Clan'] && (
-                   <span className="px-1">
-                     <ResultLibraryClan value={props.libraryCardBase[cardid]['Clan']} />
-                   </span>
-                 )}
-                 {(props.libraryCardBase[cardid]['Blood Cost'] ||
-                   props.libraryCardBase[cardid]['Pool Cost']) && (
-                     <span className="px-1">
-                       <ResultLibraryCost
-                         valuePool={props.libraryCardBase[cardid]['Pool Cost']}
-                         valueBlood={props.libraryCardBase[cardid]['Blood Cost']}
-                       />
-                     </span>
-                   )}
-               </div>
-             </div>
-           </>
-          }
+          {cardid > 200000 ? (
+            <>
+              <div className="d-flex align-items-center justify-content-between">
+                <div className="d-flex align-items-center">
+                  <ResultCryptCapacity
+                    value={props.cryptCardBase[cardid]['Capacity']}
+                  />
+                  <span className="px-2">
+                    {props.cryptCardBase[cardid]['Banned'] ? (
+                      <>
+                        <strike>{props.cryptCardBase[cardid]['Name']}</strike>
+                        {props.cryptCardBase[cardid]['Adv'] && (
+                          <span className="pl-1">
+                            <img
+                              className="advanced-image-results"
+                              src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                              title="Advanced"
+                            />
+                          </span>
+                        )}
+                        <span className="pl-1">
+                          <Hammer />
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        {props.cryptCardBase[cardid]['Name']}
+                        {props.cryptCardBase[cardid]['Adv'] && (
+                          <span className="pl-1">
+                            <img
+                              className="advanced-image-results"
+                              src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                              title="Advanced"
+                            />
+                          </span>
+                        )}
+                      </>
+                    )}
+                  </span>
+                  <ResultCryptClan
+                    value={props.cryptCardBase[cardid]['Clan']}
+                  />
+                </div>
+                <div className="d-flex flex-nowrap">
+                  <ResultCryptDisciplines
+                    value={props.cryptCardBase[cardid]['Disciplines']}
+                  />
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="d-flex align-items-center justify-content-between">
+                <div className="d-flex align-items-center">
+                  <ResultLibraryType
+                    cardtype={props.libraryCardBase[cardid]['Type']}
+                  />
+                  <span className="pl-1">
+                    {props.libraryCardBase[cardid]['Banned'] ? (
+                      <>
+                        <strike>{props.libraryCardBase[cardid]['Name']}</strike>
+                        <span className="pl-1">
+                          <Hammer />
+                        </span>
+                      </>
+                    ) : (
+                      <>{props.libraryCardBase[cardid]['Name']}</>
+                    )}
+                  </span>
+                </div>
+                <div>
+                  {props.libraryCardBase[cardid]['Discipline'] && (
+                    <span className="px-1">
+                      <ResultLibraryDisciplines
+                        value={props.libraryCardBase[cardid]['Discipline']}
+                      />
+                    </span>
+                  )}
+                  {props.libraryCardBase[cardid]['Clan'] && (
+                    <span className="px-1">
+                      <ResultLibraryClan
+                        value={props.libraryCardBase[cardid]['Clan']}
+                      />
+                    </span>
+                  )}
+                  {(props.libraryCardBase[cardid]['Blood Cost'] ||
+                    props.libraryCardBase[cardid]['Pool Cost']) && (
+                    <span className="px-1">
+                      <ResultLibraryCost
+                        valuePool={props.libraryCardBase[cardid]['Pool Cost']}
+                        valueBlood={props.libraryCardBase[cardid]['Blood Cost']}
+                      />
+                    </span>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
         </>
       )}
     />

@@ -44,7 +44,9 @@ function About(props) {
   };
 
   return (
-    <Container className={props.isMobile ? "main-container" : "main-container py-3"}>
+    <Container
+      className={props.isMobile ? 'main-container' : 'main-container py-3'}
+    >
       <Row className="justify-content-center">
         <Col md={12} lg={6} className="px-0">
           <div className="px-2 about-version">
@@ -61,7 +63,9 @@ function About(props) {
           <div className="px-2">
             <h5>WHAT IS IT</h5>
             <p>
-              VDB is online card search, deck building and inventory (collection) management tool for Vampire the Eternal Struggle (VTES).
+              VDB is online card search, deck building and inventory
+              (collection) management tool for Vampire the Eternal Struggle
+              (VTES).
               <br />
               It is a successor of{' '}
               <a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
@@ -214,7 +218,9 @@ function About(props) {
             <ul className="no-bullets">
               <li>
                 <div className="d-flex align-items-center">
-                  <div className="icon pr-2"><Globe2 /></div>
+                  <div className="icon pr-2">
+                    <Globe2 />
+                  </div>
                   <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
                     VEKN.net Forum
                   </a>
@@ -222,25 +228,35 @@ function About(props) {
               </li>
               <li>
                 <div className="d-flex align-items-center">
-                  <div className="icon pr-2"><Github /></div>
-                  <a href="https://github.com/smeea/vdb">https://github.com/smeea/vdb</a>
+                  <div className="icon pr-2">
+                    <Github />
+                  </div>
+                  <a href="https://github.com/smeea/vdb">
+                    https://github.com/smeea/vdb
+                  </a>
                 </div>
               </li>
               <li>
                 <div className="d-flex align-items-center">
-                  <div className="icon pr-2"><EnvelopeFill /></div>
+                  <div className="icon pr-2">
+                    <EnvelopeFill />
+                  </div>
                   <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
                 </div>
               </li>
               <li>
                 <div className="d-flex align-items-center">
-                  <div className="icon pr-2"><Telegram /></div>
+                  <div className="icon pr-2">
+                    <Telegram />
+                  </div>
                   @smeea
                 </div>
               </li>
               <li>
                 <div className="d-flex align-items-center">
-                  <div className="icon pr-2"><Discord /></div>
+                  <div className="icon pr-2">
+                    <Discord />
+                  </div>
                   Smeea#3259
                 </div>
               </li>

@@ -15,14 +15,14 @@
     "60-67": false,
     "68-75": false,
     "76-83": false,
-    "84-90": false,
+    "84-90": false
   },
   "clan": "any",
   "capacity": {
     "1-4": false,
     "4-6": false,
     "6-8": false,
-    "8-11": false,
+    "8-11": false
   },
   "disciplines": {},
   "cardtypes": {

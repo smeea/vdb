@@ -6,7 +6,9 @@ import TwdSearchForm from './components/TwdSearchForm.jsx';
 
 function Twd(props) {
   return (
-    <Container className={props.isMobile ? "main-container" : "main-container py-3"}>
+    <Container
+      className={props.isMobile ? 'main-container' : 'main-container py-3'}
+    >
       <Row className="justify-content-center">
         <Col
           md={12}
@@ -39,7 +41,9 @@ function Twd(props) {
           xl={3}
           className={
             !props.isMobile || (props.isMobile && props.showSearch)
-              ? props.isMobile ? 'px-1 py-1' : 'px-0'
+              ? props.isMobile
+                ? 'px-1 py-1'
+                : 'px-0'
               : 'col-hide'
           }
         >
@@ -56,29 +60,29 @@ function Twd(props) {
           />
         </Col>
       </Row>
-      {props.isMobile &&
-       <>
-         {props.inventoryMode ? (
-           <div
-             onClick={() => props.setInventoryMode(!props.inventoryMode)}
-             className="float-left-bottom inventory-on"
-           >
-             <div className="pt-2 float-inventory">
-               <ArchiveFill viewBox="0 0 16 16" />
-             </div>
-           </div>
-         ) : (
-           <div
-             onClick={() => props.setInventoryMode(!props.inventoryMode)}
-             className="float-left-bottom inventory-off"
-           >
-             <div className="pt-2 float-inventory">
-               <ArchiveFill viewBox="0 0 16 16" />
-             </div>
-           </div>
-         )}
-       </>
-      }
+      {props.isMobile && (
+        <>
+          {props.inventoryMode ? (
+            <div
+              onClick={() => props.setInventoryMode(!props.inventoryMode)}
+              className="float-left-bottom inventory-on"
+            >
+              <div className="pt-2 float-inventory">
+                <ArchiveFill viewBox="0 0 16 16" />
+              </div>
+            </div>
+          ) : (
+            <div
+              onClick={() => props.setInventoryMode(!props.inventoryMode)}
+              className="float-left-bottom inventory-off"
+            >
+              <div className="pt-2 float-inventory">
+                <ArchiveFill viewBox="0 0 16 16" />
+              </div>
+            </div>
+          )}
+        </>
+      )}
     </Container>
   );
 }

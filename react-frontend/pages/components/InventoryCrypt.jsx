@@ -2,11 +2,10 @@ import React from 'react';
 import InventoryCryptTable from './InventoryCryptTable.jsx';
 
 function InventoryCrypt(props) {
-  let crypt = {}
+  let crypt = {};
 
-  if (props.category == "nok") {
-    Object.keys(props.cards).map(card => {
-
+  if (props.category == 'nok') {
+    Object.keys(props.cards).map((card) => {
       let softUsedMax = 0;
       if (props.usedCards.soft[card]) {
         Object.keys(props.usedCards.soft[card]).map((id) => {
@@ -23,33 +22,33 @@ function InventoryCrypt(props) {
       }
 
       if (props.cards[card].q < softUsedMax + hardUsedTotal) {
-        crypt[card] = props.cards[card]
+        crypt[card] = props.cards[card];
       }
-    })
+    });
   } else {
-    crypt = {...props.cards}
+    crypt = { ...props.cards };
   }
 
-  if (!props.compact && props.category != "ok") {
+  if (!props.compact && props.category != 'ok') {
     Object.keys(props.usedCards.soft).map((card) => {
       if (!props.cards[card]) {
-        crypt[card] = {q: 0, c: props.cardBase[card]}
+        crypt[card] = { q: 0, c: props.cardBase[card] };
       }
-    })
+    });
 
     Object.keys(props.usedCards.hard).map((card) => {
       if (!props.cards[card]) {
-        crypt[card] = {q: 0, c: props.cardBase[card]}
+        crypt[card] = { q: 0, c: props.cardBase[card] };
       }
-    })
-  };
+    });
+  }
 
   let total = 0;
-  const cards = []
+  const cards = [];
 
   Object.keys(crypt).map((card) => {
     total += crypt[card].q;
-    if (props.category != "ok" || crypt[card].q > 0) {
+    if (props.category != 'ok' || crypt[card].q > 0) {
       cards.push(crypt[card]);
     }
   });
@@ -66,11 +65,11 @@ function InventoryCrypt(props) {
 
   return (
     <>
-      {!props.compact &&
-       <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-         <b>Crypt {props.category != "nok" && <>[{total}]</>}</b>
-       </div>
-      }
+      {!props.compact && (
+        <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+          <b>Crypt {props.category != 'nok' && <>[{total}]</>}</b>
+        </div>
+      )}
       <InventoryCryptTable
         cardChange={props.cardChange}
         decks={props.decks}

@@ -9,7 +9,7 @@ function DeckBranchDelete(props) {
   const handleConfirm = () => {
     deleteBranch();
     setShowConfirmation(false);
-    props.setActiveDeck({src: null, deckid: null});
+    props.setActiveDeck({ src: null, deckid: null });
     props.setShowButtons(false);
   };
 
@@ -24,7 +24,9 @@ function DeckBranchDelete(props) {
       },
       body: JSON.stringify({ deckid: props.deck.deckid }),
     };
-    fetch(url, options).then(() => props.getDecks());
+    fetch(url, options)
+      .then(() => props.getDecks())
+      .then(() => props.isMobile && props.setShowInfo(true));
   };
 
   return (

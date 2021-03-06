@@ -5,7 +5,7 @@ import Check2 from '../../assets/images/icons/check2.svg';
 
 function SearchFormTextAndButtons(props) {
   return (
-    <InputGroup className={props.isMobile ? "d-block mb-1" : "mb-2"}>
+    <InputGroup className={props.isMobile ? 'd-block mb-1' : 'mb-2'}>
       <FormControl
         placeholder="Card Name / Text"
         type="text"

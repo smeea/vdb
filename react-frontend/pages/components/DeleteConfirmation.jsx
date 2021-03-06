@@ -19,9 +19,7 @@ function DeleteConfirmation(props) {
           >
             <X width="32" height="32" viewBox="0 0 16 16" />
           </button>
-          <h5>
-            {`Delete ${props.target}?`}
-          </h5>
+          <h5>{`Delete ${props.target}?`}</h5>
           <div className="pt-2">
             {props.text && <h6>{props.text}</h6>}
             <h6>THIS CANNOT BE UNDONE!</h6>

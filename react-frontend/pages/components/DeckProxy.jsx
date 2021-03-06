@@ -15,11 +15,11 @@ function DeckProxy(props) {
       <Dropdown.Item href="" onClick={() => proxyDeck()}>
         Full Deck
       </Dropdown.Item>
-      {props.inventoryMode &&
-       <Dropdown.Item href="" onClick={() => proxyMissing()}>
-         Missing Cards
-       </Dropdown.Item>
-      }
+      {props.inventoryMode && (
+        <Dropdown.Item href="" onClick={() => proxyMissing()}>
+          Missing Cards
+        </Dropdown.Item>
+      )}
       <Dropdown.Item href="" onClick={() => setShowSelectModal(true)}>
         Select Cards
       </Dropdown.Item>

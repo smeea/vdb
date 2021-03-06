@@ -45,7 +45,7 @@ function DeckImport(props) {
       .then((response) => response.json())
       .then((data) => (newdeckid = data.deckid))
       .then(() => props.getDecks())
-      .then(() => props.setActiveDeck({src: 'my', deckid: newdeckid}))
+      .then(() => props.setActiveDeck({ src: 'my', deckid: newdeckid }))
       .catch((error) => setCreateError(true));
   };
 
@@ -75,7 +75,7 @@ function DeckImport(props) {
         .then((response) => response.json())
         .then((data) => (newDeckId = data.deckid))
         .then(() => props.getDecks())
-        .then(() => props.setActiveDeck({src: 'my', deckid: newDeckId}))
+        .then(() => props.setActiveDeck({ src: 'my', deckid: newDeckId }))
         .catch((error) => setImportError(true));
     };
   };
