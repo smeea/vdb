@@ -206,7 +206,7 @@ function About(props) {
                 </a>
               </li>
               <li>
-                TWD by Lionel -Phoenix- Panhaleux from{' '}
+                TWD and rulings by Lionel -Phoenix- Panhaleux from{' '}
                 <a href="https://static.krcg.org/">KRCG</a>
               </li>
             </ul>
