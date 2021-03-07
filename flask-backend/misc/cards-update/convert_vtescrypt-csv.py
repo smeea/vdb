@@ -60,11 +60,10 @@ with open("vtescrypt.csv", "r",
               "w", encoding='utf8') as f_json, open(
                   "cardbase_crypt.json",
                   "w", encoding='utf8') as cardbase_file, open(
-                      "rulings.json",
-                      "r",
-                      encoding='utf8') as f_rulings:
+                      "vtes.json",
+                      "r", encoding='utf8') as krcg_file:
 
-    rulings = json.load(f_rulings)
+    krcg_cards = json.load(krcg_file)
     reader = csv.reader(f_csv)
     fieldnames = next(reader)
     csv_cards = csv.DictReader(f_csv, fieldnames)
@@ -132,9 +131,20 @@ with open("vtescrypt.csv", "r",
 
         # Add rules to card
         card['Rulings'] = []
-        for rule in rulings:
-            if rule == card['Name']:
-                card['Rulings'] = rulings[rule]
+        for c in krcg_cards:
+            if c['id'] == card['Id'] and 'rulings' in c:
+                for rule in c['rulings']['text']:
+                    if match := re.match(r'(.*?)\[... \S+\].*', rule):
+                        text = match.group(1)
+                        card['Rulings'].append({
+                            'text': text,
+                            'refs': {},
+                        })
+
+                for id in c['rulings']['links'].keys():
+                    for i, rule in enumerate(c['rulings']['text']):
+                        if id in rule:
+                            card['Rulings'][i]['refs'][id] = c['rulings']['links'][id]
 
         cards.append(card)
         card_base[card['Id']] = card

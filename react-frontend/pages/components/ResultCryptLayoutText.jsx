@@ -17,9 +17,16 @@ function ResultCryptLayoutText(props) {
   });
 
   const Rulings = Object(props.card['Rulings']).map((k, index) => {
+    const Refs = Object.keys(k['refs']).map((j, idx) => {
+      return (
+        <div className="d-inline small pl-1" key={idx}><a href={k['refs'][j]}>{j}</a></div>
+      );
+    });
+
     return (
       <li className="rulings" key={index}>
-        {k}
+        <div className="d-inline">{k.text}</div>
+        {Refs}
       </li>
     );
   });
