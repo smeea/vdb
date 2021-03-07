@@ -249,7 +249,7 @@ function About(props) {
                   <div className="icon pr-2">
                     <Telegram />
                   </div>
-                  @smeea
+                  <a href="https://t.me/smeea">@smeea</a>
                 </div>
               </li>
               <li>

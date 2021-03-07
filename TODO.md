@@ -16,7 +16,6 @@
 * Different sets images - vtes.pl
 * Always-on opt-in deck-mode \ inventory-mode
 * Precon Decks: name, set to description, company from sets.csv
-* Rulings from KRCG
 * Inventory data in TWD browser
 * Mark pdf-sets in inventory-mode and set selector
 * Show missing cards for inventory
