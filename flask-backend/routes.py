@@ -342,16 +342,6 @@ def listDecks():
             library = {}
             for k, v in deck.cards.items():
 
-                # Workaround for wrong id input
-                # if k == 'undefined':
-                #     print('user: ', current_user)
-                #     print('deck: ', deck)
-                #     cards = deck.cards.copy()
-                #     del cards['undefined']
-                #     deck.cards = cards
-                #     db.session.commit()
-                #     continue
-
                 int_k = int(k)
 
                 if int_k > 200000:
@@ -646,7 +636,6 @@ def deckExportRoute():
                 deck['description'] += 'Players: ' + str(deck['players']) + '\n'
                 deck['description'] += 'Event: ' + deck['event'] + '\n'
                 deck['description'] += 'Location: ' + deck['location'] + '\n'
-                print(deck['description'])
                 deck['cards'] = {}
                 for i in deck['crypt']:
                     deck['cards'][i] = deck['crypt'][i]['q']

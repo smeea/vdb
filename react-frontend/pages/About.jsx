@@ -257,7 +257,7 @@ function About(props) {
                   <div className="icon pr-2">
                     <Discord />
                   </div>
-                  Smeea#3259
+                  <a href="https://discord.com/users/264725500226830336">Smeea#3259</a>
                 </div>
               </li>
             </ul>

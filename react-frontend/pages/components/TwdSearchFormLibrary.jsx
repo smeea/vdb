@@ -46,18 +46,23 @@ function TwdSearchFormLibrary(props) {
             q={props.state[id]}
             target="library"
           />
-          <OverlayTrigger
-            placement="left"
-            overlay={
-              <CardPopover card={props.cardBase[id]}>
-                {props.showImage}
-              </CardPopover>
-            }
-          >
-            <div onClick={() => setModalCard(props.cardBase[id])}>
-              <ResultLibraryName card={props.cardBase[id]} />
-            </div>
-          </OverlayTrigger>
+          {!props.isMobile
+           ? <OverlayTrigger
+               placement="left"
+               overlay={
+                 <CardPopover card={props.cardBase[id]}>
+                   {props.showImage}
+                 </CardPopover>
+               }
+             >
+               <div className="pt-1" onClick={() => setModalCard(props.cardBase[id])}>
+                 <ResultLibraryName card={props.cardBase[id]} />
+               </div>
+             </OverlayTrigger>
+           : <div className="pt-1" onClick={() => setModalCard(props.cardBase[id])}>
+               <ResultLibraryName card={props.cardBase[id]} />
+             </div>
+          }
         </div>
       );
     });
@@ -92,7 +97,7 @@ function TwdSearchFormLibrary(props) {
         placeholder="Add Library Card"
         loadOptions={loadOptions}
         onChange={handleAdd}
-        /* className="select-dropdown" */
+    /* className="select-dropdown" */
         getOptionLabel={(card) => (
           <>
             <div className="d-flex align-items-center justify-content-between">
@@ -126,13 +131,13 @@ function TwdSearchFormLibrary(props) {
                 )}
                 {(props.cardBase[card]['Blood Cost'] ||
                   props.cardBase[card]['Pool Cost']) && (
-                  <span className="px-1">
-                    <ResultLibraryCost
-                      valuePool={props.cardBase[card]['Pool Cost']}
-                      valueBlood={props.cardBase[card]['Blood Cost']}
-                    />
-                  </span>
-                )}
+                    <span className="px-1">
+                      <ResultLibraryCost
+                        valuePool={props.cardBase[card]['Pool Cost']}
+                        valueBlood={props.cardBase[card]['Blood Cost']}
+                      />
+                    </span>
+                  )}
               </div>
             </div>
           </>

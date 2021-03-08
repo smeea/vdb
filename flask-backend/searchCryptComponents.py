@@ -179,7 +179,6 @@ def get_crypt_by_votes(votes, crypt):
                 match_cards.append(card)
 
         elif card['Title'] == '' and votes == 0:
-            print(card['Name'])
             match_cards.append(card)
 
     return match_cards

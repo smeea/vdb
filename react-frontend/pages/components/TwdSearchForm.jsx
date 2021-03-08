@@ -325,6 +325,14 @@ function TwdSearchForm(props) {
         </Col>
       </Row>
       <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
+          <TwdSearchFormTraitStar
+            value={props.formState.traits}
+            onChange={handleMultiChange}
+          />
+        </Col>
+      </Row>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={4} className="d-flex px-0">
           <label className="h6 mb-0">Library Cards:</label>
         </Col>
@@ -391,11 +399,8 @@ function TwdSearchForm(props) {
         </Col>
       </Row>
       <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
-          <TwdSearchFormTraitStar
-            value={props.formState.traits}
-            onChange={handleMultiChange}
-          />
+        <Col xs={5} className="d-flex px-0">
+          <label className="h6 mb-0">Library Disciplines:</label>
         </Col>
       </Row>
       <TwdSearchFormDisciplines
