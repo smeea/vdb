@@ -1832,6 +1832,10 @@
         "value":"Moscow, Russia"
     },
     {
+        "label":"Moscow, Russian Federation",
+        "value":"Moscow, Russian Federation"
+    },
+    {
         "label":"Moskow, Russia",
         "value":"Moskow, Russia"
     },
@@ -2072,16 +2076,8 @@
         "value":"Palma de Mallorca, Spain"
     },
     {
-        "label":"Palma de Mallorca,, Spain",
-        "value":"Palma de Mallorca,, Spain"
-    },
-    {
         "label":"Palma de Malorca, Spain",
         "value":"Palma de Malorca, Spain"
-    },
-    {
-        "label":"Palma, Spain",
-        "value":"Palma, Spain"
     },
     {
         "label":"Pamplona, Spain",
@@ -2330,6 +2326,10 @@
     {
         "label":"Russia",
         "value":"Russia"
+    },
+    {
+        "label":"Russian Federation",
+        "value":"Russian Federation"
     },
     {
         "label":"Rusutj\u00e4rvi, Finland",
