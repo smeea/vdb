@@ -9,41 +9,6 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 
 function ResultLibraryLayoutText(props) {
-  const Sets = Object.keys(props.card['Set']).map((k, index) => {
-    return (
-      <div className="d-inline-block nobr px-1" key={index}>
-        {k}
-        <div className="d-inline gray">:{props.card['Set'][k]}</div>
-      </div>
-    );
-  });
-
-  const Rulings = Object(props.card['Rulings']).map((k, index) => {
-    const Refs = Object.keys(k['refs']).map((j, idx) => {
-      return (
-        <div className="d-inline small pl-1" key={idx}><a href={k['refs'][j]}>{j}</a></div>
-      );
-    });
-
-    return (
-      <li className="rulings" key={index}>
-        <div className="d-inline">{k.text}</div>
-        {Refs}
-      </li>
-    );
-  });
-
-  const Artist =
-    props.card['Artist'].length > 1
-      ? props.card['Artist'].map((artist, index) => {
-          return (
-            <div className="d-inline-block nobr px-1" key={index}>
-              {artist}
-            </div>
-          );
-        })
-      : props.card['Artist'];
-
   const icons = {
     aus: 'auspex',
     abo: 'abombwe',
@@ -119,12 +84,63 @@ function ResultLibraryLayoutText(props) {
     MERGED: 'merged',
   };
 
+  const Sets = Object.keys(props.card['Set']).map((k, index) => {
+    return (
+      <div className="d-inline-block nobr px-1" key={index}>
+        {k}
+        <div className="d-inline gray">:{props.card['Set'][k]}</div>
+      </div>
+    );
+  });
+
+  const Rulings = Object(props.card['Rulings']).map((k, index) => {
+    const Refs = Object.keys(k['refs']).map((j, idx) => {
+      return (
+        <div className="d-inline small pl-1" key={idx}><a href={k['refs'][j]}>{j}</a></div>
+      );
+    });
+
+    const text = k.text.replace(/\(D\)/g, '\u24B9').split('\n');
+    const iconifiedRulingText = [];
+    text.map((i, index) => {
+      iconifiedRulingText.push(
+        reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
+          <img
+            key={index}
+            className="discipline-base-image-results"
+            src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
+            title={match}
+          />
+        ))
+      );
+    });
+
+    return (
+      <li className="rulings" key={index}>
+        <div className="d-inline">{iconifiedRulingText}</div>
+        {Refs}
+      </li>
+    );
+  });
+
+  const Artist =
+    props.card['Artist'].length > 1
+      ? props.card['Artist'].map((artist, index) => {
+          return (
+            <div className="d-inline-block nobr px-1" key={index}>
+              {artist}
+            </div>
+          );
+        })
+      : props.card['Artist'];
+
   const text = props.card['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
-  const newText = [];
+  const iconifiedText = [];
   text.map((i, index) => {
-    newText.push(
+    iconifiedText.push(
       reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
         <img
+          key={index}
           className="discipline-base-image-results"
           src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
           title={match}
@@ -166,7 +182,7 @@ function ResultLibraryLayoutText(props) {
       </div>
       <hr className="mx-0" />
       <div className="py-2">
-        {newText.map((i, index) => {
+        {iconifiedText.map((i, index) => {
           return (
             <React.Fragment key={index}>
               {i.map((y, index) => {
