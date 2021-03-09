@@ -2477,7 +2477,7 @@
             "LotN":"PS3",
             "KoT":"C/PT4"
         },
-        "Requirement":"capacity 7",
+        "Requirement":"capacity 7 or more",
         "Banned":"",
         "Artist":[
             "Monte Moore"
@@ -3260,9 +3260,10 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Ghoul with 3 life. 2 strength, 0 bleed.\nAsanbonsam gets +1 intercept when blocking a (D) action. If he successfully blocks a (D) action, range in the first round of the resulting combat is automatically close (skip the determine range step that round).",
+        "Card Text":"Ghoul with 3 life. 2 strength, 0 bleed.\nAsanbonsam Ghoul gets +1 intercept during directed actions. If Asanbonsam Ghoul blocks a directed action, set the range for the first round of the resulting combat to close.",
         "Set":{
-            "LoB":"R"
+            "LoB":"R",
+            "POD":"DTC"
         },
         "Requirement":"",
         "Banned":"",
@@ -4082,7 +4083,7 @@
         "Set":{
             "EK":"C"
         },
-        "Requirement":"laibon,non-sterile,capacity 4",
+        "Requirement":"laibon,non-sterile,capacity 4 or more",
         "Banned":"",
         "Artist":[
             "Heather V. Kreiter"
@@ -4213,7 +4214,7 @@
         "Set":{
             "FN":"C2"
         },
-        "Requirement":"Independent,Anarch",
+        "Requirement":"Independent,anarch",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -12139,7 +12140,7 @@
         "Set":{
             "LotN":"R"
         },
-        "Requirement":"Independent,Anarch",
+        "Requirement":"Independent,anarch",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -13911,7 +13912,7 @@
             "TR":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -16536,7 +16537,7 @@
             "TR":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -24794,7 +24795,7 @@
             "KMW":"PAn3",
             "LotN":"PA"
         },
-        "Requirement":"Independent,Anarch",
+        "Requirement":"Independent,anarch",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -24866,7 +24867,7 @@
             "Gehenna":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -25457,7 +25458,7 @@
             "Gehenna":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Joel Biske"
@@ -27471,7 +27472,7 @@
             "VTES":"U"
         },
         "Requirement":"",
-        "Banned":"",
+        "Banned":"2020",
         "Artist":[
             "Pete Venters"
         ],
@@ -28494,7 +28495,7 @@
             "TR":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -32510,7 +32511,7 @@
             "TR":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -33821,7 +33822,7 @@
         "Set":{
             "KoT":"U"
         },
-        "Requirement":"",
+        "Requirement":"mortal,ghoul,mage",
         "Banned":"",
         "Artist":[
             "Marian Churchland"
@@ -33889,7 +33890,7 @@
             "AU":"C",
             "Anthology":"4"
         },
-        "Requirement":"unmerged advanced vampire",
+        "Requirement":"unmerged,advanced",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -39165,7 +39166,7 @@
             "LoB":"C",
             "POD":"DTC"
         },
-        "Requirement":"laibon",
+        "Requirement":"laibon,non-titled",
         "Banned":"",
         "Artist":[
             "Abrar Ajmal"
@@ -42325,7 +42326,7 @@
             "KoT":"U/A1",
             "SP":"PoS1"
         },
-        "Requirement":"",
+        "Requirement":"city title",
         "Banned":"",
         "Artist":[
             "Sandra Chang-Adair"
@@ -42524,8 +42525,8 @@
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Andrew Trabbold",
-            "Anson Maddocks"
+            "Anson Maddocks",
+            "Andrew Trabbold"
         ],
         "Capacity":"",
         "ASCII Name":"Patagia: Flaps Allowing Limited Flight",
@@ -43002,7 +43003,7 @@
         "Set":{
             "TR":"R"
         },
-        "Requirement":"baron",
+        "Requirement":"baron,edge",
         "Banned":"",
         "Artist":[
             "Eric Deschamps"
@@ -44589,7 +44590,7 @@
             "TR":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Jim Pavelec"
@@ -46169,7 +46170,7 @@
             "Gehenna":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Attila Adorjany",
@@ -46563,7 +46564,7 @@
         "Set":{
             "V5":"PN4"
         },
-        "Requirement":"",
+        "Requirement":"primogen",
         "Banned":"",
         "Artist":[
             "Felipe Gaona"
@@ -47036,7 +47037,7 @@
         "Set":{
             "DM":"C"
         },
-        "Requirement":"titled sabbat",
+        "Requirement":"sabbat,titled",
         "Banned":"",
         "Artist":[
             "zelgaris"
@@ -48273,7 +48274,7 @@
         "Set":{
             "HttB":"R/A2"
         },
-        "Requirement":"",
+        "Requirement":"slave",
         "Banned":"",
         "Artist":[
             "Jim Pavelec"
@@ -48677,7 +48678,7 @@
         "Set":{
             "LotN":"C/PG3"
         },
-        "Requirement":"Independent,Anarch,capacity {5 or more}",
+        "Requirement":"Independent,anarch,capacity {5 or more}",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -48947,7 +48948,7 @@
         "Set":{
             "AU":"C"
         },
-        "Requirement":"untitled, non-Anarch vampire",
+        "Requirement":"non-titled,non-anarch",
         "Banned":"",
         "Artist":[
             "Carmen Cornet"
@@ -49178,7 +49179,7 @@
             "Gehenna":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Attila Adorjany"
@@ -50460,7 +50461,7 @@
             "AH":"C2",
             "Tenth":"B"
         },
-        "Requirement":"non-sterile",
+        "Requirement":"non-sterile,non-caitiff",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -50897,7 +50898,7 @@
         "Set":{
             "Promo":"20150221"
         },
-        "Requirement":"",
+        "Requirement":"infernal",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -51280,7 +51281,7 @@
             "FN":"PR"
         },
         "Requirement":"",
-        "Banned":"",
+        "Banned":"2020",
         "Artist":[
             "Alan Rabinowitz"
         ],
@@ -54583,7 +54584,7 @@
         "Set":{
             "DM":"C"
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Javier Santos"
@@ -54794,7 +54795,7 @@
         "Set":{
             "HttB":"C/A3"
         },
-        "Requirement":"infernal,capacity 9",
+        "Requirement":"infernal,capacity 9 or more",
         "Banned":"",
         "Artist":[
             "Samuel Araya"
@@ -55801,7 +55802,7 @@
         "Set":{
             "TU":"C"
         },
-        "Requirement":"",
+        "Requirement":"non-titled,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -56537,7 +56538,7 @@
             "Gehenna":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -58325,7 +58326,7 @@
             "TR":"C",
             "POD":"DTC"
         },
-        "Requirement":"Anarch",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -61489,7 +61490,7 @@
             "AH":"R2"
         },
         "Requirement":"",
-        "Banned":"",
+        "Banned":"2020",
         "Artist":[
             "Tom W\u00e4nerstrand"
         ],
@@ -64591,7 +64592,7 @@
             "Anthology":"2",
             "SP":"DoF1/PoS2"
         },
-        "Requirement":"titled sabbat",
+        "Requirement":"sabbat,titled",
         "Banned":"",
         "Artist":[
             "Anna Evertsdotter",
@@ -66585,7 +66586,7 @@
         "Set":{
             "Anthology":"LARP1"
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Mark Kelly"
