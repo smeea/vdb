@@ -4,6 +4,8 @@
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * No error on backend for user creation if already exist
+* Fix AK-47 export to Lackey
+* Fix draw prob bug
 
 # FIX MOBILE
 * No autofocus on mobile on quick cards

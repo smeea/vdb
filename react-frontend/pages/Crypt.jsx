@@ -26,7 +26,7 @@ function Crypt(props) {
     >
       <Row>
         {!props.isMobile && (
-          <Col md={12} xl={props.username ? 4 : 3} className="px-0">
+          <Col md={12} xl={props.username && props.showDeck ? 4 : 3} className="px-0">
             {Object.keys(props.decks).length > 0 && (
               <Row>
                 <Col>
@@ -37,24 +37,28 @@ function Crypt(props) {
                         : 'd-flex'
                     }
                   >
-                    <div className={isBranches ? 'w-75' : 'w-100'}>
-                      <DeckSelectMy
-                        decks={props.decks}
-                        activeDeck={props.activeDeck}
-                        setActiveDeck={props.setActiveDeck}
-                        inventoryMode={props.inventoryMode}
-                      />
-                    </div>
-                    {isBranches && (
-                      <div className="pl-1 w-25">
-                        <DeckBranchSelect
-                          decks={props.decks}
-                          activeDeck={props.activeDeck}
-                          setActiveDeck={props.setActiveDeck}
-                          inventoryMode={props.inventoryMode}
-                        />
-                      </div>
-                    )}
+                    {props.showDeck &&
+                     <>
+                       <div className={isBranches ? 'w-75' : 'w-100'}>
+                         <DeckSelectMy
+                           decks={props.decks}
+                           activeDeck={props.activeDeck}
+                           setActiveDeck={props.setActiveDeck}
+                           inventoryMode={props.inventoryMode}
+                         />
+                       </div>
+                       {isBranches && (
+                         <div className="pl-1 w-25">
+                           <DeckBranchSelect
+                             decks={props.decks}
+                             activeDeck={props.activeDeck}
+                             setActiveDeck={props.setActiveDeck}
+                             inventoryMode={props.inventoryMode}
+                           />
+                         </div>
+                       )}
+                     </>
+                    }
                     <div className="d-flex pl-1">
                       <Button
                         variant="outline-secondary"
@@ -136,7 +140,7 @@ function Crypt(props) {
               cards={props.results}
               crypt={
                 props.deckRouter(props.activeDeck) &&
-                props.deckRouter(props.activeDeck).crypt
+                  props.deckRouter(props.activeDeck).crypt
               }
               activeDeck={props.activeDeck}
               sortMethod={sortMethod}
@@ -165,9 +169,9 @@ function Crypt(props) {
           className={
             !props.isMobile || (props.isMobile && props.showSearch)
               ? props.isMobile
-                ? 'px-1 py-1'
-                : 'px-0'
-              : 'col-hide'
+              ? 'px-1 py-1'
+              : 'px-0'
+            : 'col-hide'
           }
         >
           <SearchCryptForm
@@ -185,7 +189,7 @@ function Crypt(props) {
             setInventoryMode={props.setInventoryMode}
           />
         </Col>
-        {!props.username && !props.isMobile && <Col xl={1} />}
+        {(!props.username || !props.showDeck) && !props.isMobile && <Col xl={1} />}
       </Row>
     </Container>
   );

@@ -7,9 +7,6 @@ import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
 import DeckDrawLibraryTable from './DeckDrawLibraryTable.jsx';
 
 function DeckDrawModal(props) {
-  const totalCrypt = props.drawedCrypt.length + props.restCrypt.length;
-  const totalLibrary = props.drawedLibrary.length + props.restLibrary.length;
-
   return (
     <Modal
       show={props.show}
@@ -43,7 +40,7 @@ function DeckDrawModal(props) {
                       <b>Crypt</b>
                     </div>
                     <div className="d-flex align-items-center">
-                      {props.drawedCrypt.length} / {totalCrypt}
+                      <b>{props.drawedCrypt.length} + {props.restCrypt.length}</b>
                     </div>
                     <div className="d-flex">
                       <Button
@@ -65,8 +62,9 @@ function DeckDrawModal(props) {
                     </div>
                   </div>
                   <DeckDrawCryptTable
+                    burnCrypt={props.burnCrypt}
                     crypt={props.crypt}
-                    total={totalCrypt}
+                    total={props.cryptTotal}
                     resultCards={props.drawedCrypt}
                     className="search-crypt-table"
                     hideFloatingButtons={true}
@@ -75,6 +73,33 @@ function DeckDrawModal(props) {
                     isMobile={props.isMobile}
                   />
                   <br />
+                  {props.burnedCrypt.length > 0 &&
+                   <>
+                     <div className="d-flex justify-content-between info-message">
+                       <div className="d-flex align-items-center px-2">
+                         <b>Ash Heap</b>
+                       </div>
+                       <div className="d-flex align-items-center">
+                         <b>{props.burnedCrypt.length}</b>
+                       </div>
+                       <div className="d-flex align-items-center px-2">
+                         <b>Crypt</b>
+                       </div>
+                     </div>
+                     <DeckDrawCryptTable
+                       burnCrypt={null}
+                       crypt={props.crypt}
+                       total={props.cryptTotal}
+                       resultCards={props.burnedCrypt}
+                       className="search-crypt-table"
+                       hideFloatingButtons={true}
+                       showImage={props.showImage}
+                       setShowImage={props.setShowImage}
+                       isMobile={props.isMobile}
+                     />
+                     <br />
+                   </>
+                  }
                 </>
               )}
             </Col>
@@ -86,7 +111,7 @@ function DeckDrawModal(props) {
                       <b>Library</b>
                     </div>
                     <div className="d-flex align-items-center">
-                      {props.drawedLibrary.length} / {totalLibrary}
+                      <b>{props.drawedLibrary.length} + {props.restLibrary.length}</b>
                     </div>
                     <div className="d-flex">
                       <Button
@@ -106,8 +131,9 @@ function DeckDrawModal(props) {
                     </div>
                   </div>
                   <DeckDrawLibraryTable
+                    burnLibrary={props.burnLibrary}
                     library={props.library}
-                    total={totalLibrary}
+                    total={props.libraryTotal}
                     resultCards={props.drawedLibrary}
                     className="search-library-table"
                     hideFloatingButtons={true}
@@ -115,6 +141,33 @@ function DeckDrawModal(props) {
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}
                   />
+                  <br/>
+                  {props.burnedLibrary.length > 0 &&
+                   <>
+                     <div className="d-flex justify-content-between info-message">
+                       <div className="d-flex align-items-center px-2">
+                         <b>Ash Heap</b>
+                       </div>
+                       <div className="d-flex align-items-center">
+                         <b>{props.burnedLibrary.length}</b>
+                       </div>
+                       <div className="d-flex align-items-center px-2">
+                         <b>Library</b>
+                       </div>
+                     </div>
+                     <DeckDrawLibraryTable
+                       burnLibrary={null}
+                       library={props.library}
+                       total={props.libraryTotal}
+                       resultCards={props.burnedLibrary}
+                       className="search-library-table"
+                       hideFloatingButtons={true}
+                       showImage={props.showImage}
+                       setShowImage={props.setShowImage}
+                       isMobile={props.isMobile}
+                     />
+                   </>
+                  }
                   {!props.isMobile && <br />}
                 </>
               )}

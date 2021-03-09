@@ -6,7 +6,6 @@ import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
-import ResultLibraryModal from './ResultLibraryModal.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
@@ -49,7 +48,6 @@ const probability = (x, N, n, k) => {
 function DeckDrawLibraryTable(props) {
   let resultTrClass;
 
-  const [modalCard, setModalCard] = useState(undefined);
   const [modalDraw, setModalDraw] = useState(undefined);
 
   const N = props.total;
@@ -99,16 +97,16 @@ function DeckDrawLibraryTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <td className="cost py-0 px-1" onClick={() => setModalCard(card)}>
+          <td className="cost py-0 px-1" onClick={() => props.burnLibrary(index)}>
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}
             />
           </td>
-          <td className="type px-1" onClick={() => setModalCard(card)}>
+          <td className="type px-1" onClick={() => props.burnLibrary(index)}>
             <ResultLibraryType cardtype={card['Type']} />
           </td>
-          <td className="disciplines px-1" onClick={() => setModalCard(card)}>
+          <td className="disciplines px-1" onClick={() => props.burnLibrary(index)}>
             <ResultLibraryDisciplines value={card['Discipline']} />
             <ResultLibraryClan value={card['Clan']} />
           </td>
@@ -117,16 +115,16 @@ function DeckDrawLibraryTable(props) {
               placement={props.placement ? props.placement : 'right'}
               overlay={<CardPopover card={card}>{props.showImage}</CardPopover>}
             >
-              <td className="name px-1" onClick={() => setModalCard(card)}>
+              <td className="name px-1" onClick={() => props.burnLibrary(index)}>
                 <ResultLibraryName card={card} />
               </td>
             </OverlayTrigger>
           ) : (
-            <td className="name px-1" onClick={() => setModalCard(card)}>
+            <td className="name px-1" onClick={() => props.burnLibrary(index)}>
               <ResultLibraryName card={card} />
             </td>
           )}
-          <td className="burn px-1" onClick={() => setModalCard(card)}>
+          <td className="burn px-1" onClick={() => props.burnLibrary(index)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={card['Card Text']} />
           </td>
@@ -159,16 +157,6 @@ function DeckDrawLibraryTable(props) {
       <table className="search-library-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {modalCard && (
-        <ResultLibraryModal
-          show={modalCard ? true : false}
-          card={modalCard}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
-          handleClose={() => setModalCard(false)}
-          isMobile={props.isMobile}
-        />
-      )}
       {modalDraw && (
         <Modal
           size="xs"

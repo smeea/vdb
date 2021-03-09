@@ -7,7 +7,6 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
-import ResultCryptModal from './ResultCryptModal.jsx';
 
 const probability = (x, N, n, k) => {
   const factorial = (n) => {
@@ -44,10 +43,9 @@ const probability = (x, N, n, k) => {
   return prob;
 };
 
-function ResultCryptTable(props) {
+function DeckDrawCryptTable(props) {
   let resultTrClass;
 
-  const [modalCard, setModalCard] = useState(undefined);
   const [modalDraw, setModalDraw] = useState(undefined);
 
   const N = props.total;
@@ -97,10 +95,10 @@ function ResultCryptTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <td className="capacity pr-1 pl-2" onClick={() => setModalCard(card)}>
+          <td className="capacity pr-1 pl-2" onClick={() => props.burnCrypt(index)}>
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
-          <td className="disciplines px-1" onClick={() => setModalCard(card)}>
+          <td className="disciplines px-1" onClick={() => props.burnCrypt(index)}>
             <ResultCryptDisciplines
               value={card['Disciplines']}
               disciplinesSet={props.disciplinesSet}
@@ -114,17 +112,17 @@ function ResultCryptTable(props) {
               placement={props.placement ? props.placement : 'right'}
               overlay={<CardPopover card={card}>{props.showImage}</CardPopover>}
             >
-              <td className="name px-1" onClick={() => setModalCard(card)}>
+              <td className="name px-1" onClick={() => props.burnCrypt(index)}>
                 <ResultCryptName card={card} />
               </td>
             </OverlayTrigger>
           ) : (
-            <td className="name px-1" onClick={() => setModalCard(card)}>
+            <td className="name px-1" onClick={() => props.burnCrypt(index)}>
               <ResultCryptName card={card} />
             </td>
           )}
           {props.isMobile || !props.isWide ? (
-            <td className="clan-group" onClick={() => setModalCard(card)}>
+            <td className="clan-group" onClick={() => props.burnCrypt(index)}>
               <div>
                 <ResultCryptClan value={card['Clan']} />
               </div>
@@ -134,10 +132,10 @@ function ResultCryptTable(props) {
             </td>
           ) : (
             <>
-              <td className="clan" onClick={() => setModalCard(card)}>
+              <td className="clan" onClick={() => props.burnCrypt(index)}>
                 <ResultCryptClan value={card['Clan']} />
               </td>
-              <td className="group" onClick={() => setModalCard(card)}>
+              <td className="group" onClick={() => props.burnCrypt(index)}>
                 <ResultCryptGroup value={card['Group']} />
               </td>
             </>
@@ -171,16 +169,6 @@ function ResultCryptTable(props) {
       <table className={props.className}>
         <tbody>{cardRows}</tbody>
       </table>
-      {modalCard && (
-        <ResultCryptModal
-          show={modalCard ? true : false}
-          card={modalCard}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
-          handleClose={() => setModalCard(false)}
-          isMobile={props.isMobile}
-        />
-      )}
       {modalDraw && (
         <Modal
           size="xs"
@@ -205,4 +193,4 @@ function ResultCryptTable(props) {
   );
 }
 
-export default ResultCryptTable;
+export default DeckDrawCryptTable;
