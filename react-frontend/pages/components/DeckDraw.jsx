@@ -124,14 +124,7 @@ function DeckDraw(props) {
   const burnCrypt = index => {
     const hand = drawedCrypt;
     setBurnedCrypt([...burnedCrypt, ...hand.splice(index, 1)])
-    let newDrawedCards = [];
-    let newRestCards = [];
-    if (restCrypt.length > 0) {
-      [newDrawedCards, newRestCards] = drawCards(restCrypt, 1);
-    }
-    const allDrawedCards = [...hand, ...newDrawedCards];
-    setDrawedCrypt(allDrawedCards);
-    setRestCrypt(newRestCards);
+    setDrawedCrypt(hand);
   };
 
   const burnLibrary = index => {
