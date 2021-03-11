@@ -8,6 +8,7 @@
 * Fix draw prob bug
 * Deck Button order + blocks
 * Error-tooltip (no cards found) bug
+* Create account proposal in Decks for unlogged user
 
 # FIX MOBILE
 * No autofocus on mobile on quick cards
@@ -26,7 +27,6 @@
 * Quick card to show on single result
 * Help popups to Buttons
 * Help sections to About/Pages
-* Discard feature in Draw
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines

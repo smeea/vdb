@@ -94,18 +94,7 @@ def get_twd_by_players(request, twda=twda):
 def get_twd_by_clan(clan, twda=twda):
     match_decks = []
     for deck in twda:
-        clan_in_deck = 0
-        crypt_cards = 0
-        for id in deck['crypt']:
-            # Skip Anarch Convert
-            if id != '200076':
-                q = deck['crypt'][id]['q']
-                crypt_cards += q
-
-                if get_crypt_by_id(id)['Clan'].lower() == clan:
-                    clan_in_deck += q
-
-        if (clan_in_deck / crypt_cards) >= 0.65:
+        if deck['clan'].lower() == clan:
             match_decks.append(deck)
 
     return match_decks

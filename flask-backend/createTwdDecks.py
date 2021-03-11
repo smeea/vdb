@@ -67,17 +67,17 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
             if card['id'] != 200076:
                 totalCapacity += card['count'] * get_crypt_by_id(card['id'])['Capacity']
                 totalCrypt += card['count']
-                if get_crypt_by_id(card[id])['Clan'] in clans:
-                    clans[get_crypt_by_id(card[id])['Clan']] += card['count']
+                if (clan := get_crypt_by_id(card['id'])['Clan']) in clans:
+                    clans[clan] += card['count']
                 else:
-                    clans[get_crypt_by_id(card[id])['Clan']] = card['count']
+                    clans[clan] = card['count']
 
             deck['crypt'][card['id']] = {
                 'q': card['count']
             }
 
         for clan, q in clans.items():
-            if q / totalCrypt > 0.65:
+            if q / totalCrypt > 0.5:
                 deck['clan'] = clan
 
         deck['capacity'] = totalCapacity / totalCrypt

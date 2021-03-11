@@ -1,6 +1,0 @@
-https://vdb.smeea.casa/about
-https://vdb.smeea.casa/crypt
-https://vdb.smeea.casa/library
-https://vdb.smeea.casa/twd
-https://vdb.smeea.casa/decks
-https://vdb.smeea.casa/account
