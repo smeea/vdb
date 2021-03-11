@@ -55,6 +55,7 @@ function Cards(props) {
                     libraryCardBase={props.libraryCardBase}
                     setCard={setCard}
                     history={history}
+                    isMobile={props.isMobile}
                   />
                 </Col>
               </Row>
