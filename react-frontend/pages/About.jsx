@@ -49,15 +49,13 @@ function About(props) {
     >
       <Row className="justify-content-center">
         <Col md={12} lg={6} className="px-0">
-          <div className="px-2 about-version">
+          <div className="mt-2 mb-3 py-2 px-2 about-version">
             <h5>VERSION</h5>
-            <p>
-              Card text based on{' '}
-              <a href="http://www.vekn.net/card-lists">
-                vekn.net official list
-              </a>
-              : 2021-03-09
-            </p>
+            Card text based on{' '}
+            <a href="http://www.vekn.net/card-lists">
+              vekn.net official list
+            </a>
+            : 2021-03-09
           </div>
 
           <div className="px-2">

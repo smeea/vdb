@@ -33,7 +33,7 @@ function DeckBranchCreate(props) {
   return (
     <>
       <Button variant="outline-secondary" onClick={branchCreate} block>
-        <NodePlusFill /> New Revision
+        <NodePlusFill width="21" height="21" viewBox="0 0 16 16" /> New Revision
       </Button>
     </>
   );

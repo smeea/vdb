@@ -34,6 +34,7 @@ function ResultCryptModal(props) {
       onHide={props.handleClose}
       animation={false}
       centered={true}
+      contentClassName="no-border"
     >
       <Modal.Body className="p-0">
         {props.isMobile ? (

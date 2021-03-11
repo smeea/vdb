@@ -6,12 +6,8 @@
 * No error on backend for user creation if already exist
 * Fix AK-47 export to Lackey
 * Fix draw prob bug
-* Crypt banned trait
-* Align and style Ash Heap in Deck Draw
 * Deck Button order + blocks
-* Borders to info- boxes
-* No borders in image view in card modal
-* Clan search speed
+* Error-tooltip (no cards found) bug
 
 # FIX MOBILE
 * No autofocus on mobile on quick cards

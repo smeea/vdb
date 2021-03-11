@@ -175,11 +175,6 @@ function Library(props) {
             : 'col-hide'
           }
         >
-          {props.isMobile && props.results === null && (
-            <AlertMessage className="error-message">
-              <b>NO CARDS FOUND</b>
-            </AlertMessage>
-          )}
           <SearchLibraryForm
             results={props.results}
             setResults={props.setResults}
