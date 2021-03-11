@@ -31,10 +31,10 @@ function DeckDrawModal(props) {
               </div>
             </Col>
           </Row>
-          <Row className="px-0">
+          <Row className="px-0 pb-4">
             <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
               {props.drawedCrypt && (
-                <>
+                <div className={props.isMobile ? "pb-4" : null}>
                   <div className="d-flex justify-content-between info-message">
                     <div className="d-flex align-items-center px-2">
                       <b>Crypt</b>
@@ -73,8 +73,7 @@ function DeckDrawModal(props) {
                     isMobile={props.isMobile}
                     isWide={true}
                   />
-                  <br />
-                </>
+                </div>
               )}
             </Col>
             <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
@@ -115,73 +114,71 @@ function DeckDrawModal(props) {
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}
                   />
-                  {!props.isMobile && <br />}
                 </>
               )}
             </Col>
           </Row>
-          <Row className="px-0">
-            <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
-              {props.burnedCrypt.length > 0 &&
-               <>
-                 {props.isMobile && <br />}
-                 <div className="d-flex justify-content-between info-message">
-                   <div className="d-flex align-items-center px-2">
-                     <b>Ash Heap</b>
-                   </div>
-                   <div className="d-flex align-items-center">
-                     <b>{props.burnedCrypt.length}</b>
-                   </div>
-                   <div className="d-flex align-items-center px-2">
-                     <b>Crypt</b>
-                   </div>
-                 </div>
-                 <DeckDrawCryptTable
-                   burnCrypt={null}
-                   crypt={props.crypt}
-                   total={props.cryptTotal}
-                   resultCards={props.burnedCrypt}
-                   className="search-crypt-table"
-                   hideFloatingButtons={true}
-                   showImage={props.showImage}
-                   setShowImage={props.setShowImage}
-                   isMobile={props.isMobile}
-                   isWide={true}
-                 />
-                 <br />
-               </>
-              }
-            </Col>
-            <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
-              {props.burnedLibrary.length > 0 &&
-               <>
-                 <div className="d-flex justify-content-between info-message">
-                   <div className="d-flex align-items-center px-2">
-                     <b>Ash Heap</b>
-                   </div>
-                   <div className="d-flex align-items-center">
-                     <b>{props.burnedLibrary.length}</b>
-                   </div>
-                   <div className="d-flex align-items-center px-2">
-                     <b>Library</b>
-                   </div>
-                 </div>
-                 <DeckDrawLibraryTable
-                   burnLibrary={null}
-                   library={props.library}
-                   total={props.libraryTotal}
-                   resultCards={props.burnedLibrary}
-                   className="search-library-table"
-                   hideFloatingButtons={true}
-                   showImage={props.showImage}
-                   setShowImage={props.setShowImage}
-                   isMobile={props.isMobile}
-                 />
-                 <br/>
-               </>
-              }
-            </Col>
-          </Row>
+          {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) &&
+           <Row className="px-0 pb-4">
+             <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
+               {props.burnedCrypt.length > 0 &&
+                <div className={props.isMobile ? "pb-4" : null}>
+                  <div className="d-flex justify-content-between info-message">
+                    <div className="d-flex align-items-center px-2">
+                      <b>Ash Heap</b>
+                    </div>
+                    <div className="d-flex align-items-center">
+                      <b>{props.burnedCrypt.length}</b>
+                    </div>
+                    <div className="d-flex align-items-center px-2">
+                      <b>Crypt</b>
+                    </div>
+                  </div>
+                  <DeckDrawCryptTable
+                    burnCrypt={null}
+                    crypt={props.crypt}
+                    total={props.cryptTotal}
+                    resultCards={props.burnedCrypt}
+                    className="search-crypt-table"
+                    hideFloatingButtons={true}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                    isMobile={props.isMobile}
+                    isWide={true}
+                  />
+                </div>
+               }
+             </Col>
+             <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
+               {props.burnedLibrary.length > 0 &&
+                <>
+                  <div className="d-flex justify-content-between info-message">
+                    <div className="d-flex align-items-center px-2">
+                      <b>Ash Heap</b>
+                    </div>
+                    <div className="d-flex align-items-center">
+                      <b>{props.burnedLibrary.length}</b>
+                    </div>
+                    <div className="d-flex align-items-center px-2">
+                      <b>Library</b>
+                    </div>
+                  </div>
+                  <DeckDrawLibraryTable
+                    burnLibrary={null}
+                    library={props.library}
+                    total={props.libraryTotal}
+                    resultCards={props.burnedLibrary}
+                    className="search-library-table"
+                    hideFloatingButtons={true}
+                    showImage={props.showImage}
+                    setShowImage={props.setShowImage}
+                    isMobile={props.isMobile}
+                  />
+                </>
+               }
+             </Col>
+           </Row>
+          }
         </Container>
       </Modal.Body>
     </Modal>
