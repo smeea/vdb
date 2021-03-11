@@ -60,36 +60,38 @@ function Cards(props) {
               </Row>
             )}
             {card && (
-              <Row className="m-0 p-0">
-                <Col className="m-0 p-0">
-                  {props.showImage ? (
-                    <CardImage />
-                  ) : (
-                    <>
-                      <div className="p-3">
-                        {card && card.Id > 200000 && (
-                          <ResultCryptLayoutText card={card} />
-                        )}
-                        {card && card.Id < 200000 && (
-                          <ResultLibraryLayoutText card={card} />
-                        )}
-                      </div>
-                      <div className="px-3 pb-3">
-                        <CardCopyUrlButton id={card.Id} />
-                      </div>
-                    </>
-                  )}
-                </Col>
-              </Row>
+              <>
+                <Row className="m-0 p-0">
+                  <Col className="m-0 p-0">
+                    {props.showImage ? (
+                      <CardImage />
+                    ) : (
+                      <>
+                        <div className="p-3">
+                          {card && card.Id > 200000 && (
+                            <ResultCryptLayoutText card={card} />
+                          )}
+                          {card && card.Id < 200000 && (
+                            <ResultLibraryLayoutText card={card} />
+                          )}
+                        </div>
+                        <div className="px-3 pb-3">
+                          <CardCopyUrlButton id={card.Id} />
+                        </div>
+                      </>
+                    )}
+                  </Col>
+                </Row>
+                <div
+                  onClick={() => props.setShowImage(!props.showImage)}
+                  className="float-right-bottom add-on"
+                >
+                  <div className="pt-1 float-add">
+                    <ArrowRepeat viewBox="0 0 16 16" />
+                  </div>
+                </div>
+              </>
             )}
-            <div
-              onClick={() => props.setShowImage(!props.showImage)}
-              className="float-right-bottom add-on"
-            >
-              <div className="pt-1 float-add">
-                <ArrowRepeat viewBox="0 0 16 16" />
-              </div>
-            </div>
           </>
         ) : (
           <>
@@ -101,6 +103,7 @@ function Cards(props) {
                     libraryCardBase={props.libraryCardBase}
                     setCard={setCard}
                     history={history}
+                    isMobile={props.isMobile}
                   />
                 </Col>
               </Row>

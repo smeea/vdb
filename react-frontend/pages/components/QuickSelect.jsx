@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultCryptClan from './ResultCryptClan.jsx';
@@ -12,6 +12,7 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 function QuickSelect(props) {
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
+  const ref = useRef(null);
 
   const loadOptions = (inputValue) => {
     const url = `${process.env.API_URL}search/quick`;
@@ -43,15 +44,20 @@ function QuickSelect(props) {
     }
   }, [selectedValue]);
 
+  useEffect(() => {
+    if (props.history.location.pathname == '/cards') ref.current.focus()
+  }, [])
+
   return (
     <AsyncSelect
       cacheOptions
       defaultOptions
-      autoFocus={true}
+      autoFocus={props.isMobile ? false : true}
       value={selectedValue}
       placeholder="Card Name"
       loadOptions={loadOptions}
       onChange={handleChange}
+      ref={ref}
       getOptionLabel={(cardid) => (
         <>
           {cardid > 200000 ? (
