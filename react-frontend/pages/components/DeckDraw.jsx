@@ -35,7 +35,7 @@ function DeckDraw(props) {
 
       return [drawArray, restArray];
     } else {
-      return [null, null];
+      return [[], []];
     }
   };
 
@@ -70,16 +70,19 @@ function DeckDraw(props) {
   const handleOpenDraw = () => {
     setBurnedCrypt([]);
     setBurnedLibrary([]);
+
     const [drawedCrypt, restCrypt] = initialDrawCards(props.crypt, 4);
+    setDrawedCrypt(drawedCrypt);
+    setRestCrypt(restCrypt);
+    setCryptTotal(restCrypt.length + drawedCrypt.length)
+
     const [drawedLibrary, restLibrary] = initialDrawCards(props.library, 7);
+    setDrawedLibrary(drawedLibrary);
+    setRestLibrary(restLibrary);
+    setLibraryTotal(restLibrary.length + drawedLibrary.length)
+
     if (drawedCrypt || drawedLibrary) {
-      setDrawedCrypt(drawedCrypt);
-      setDrawedLibrary(drawedLibrary);
-      setRestCrypt(restCrypt);
-      setRestLibrary(restLibrary);
       setShowDrawModal(true);
-      setCryptTotal(restCrypt.length + drawedCrypt.length)
-      setLibraryTotal(restLibrary.length + drawedLibrary.length)
     }
   };
 

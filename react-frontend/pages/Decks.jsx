@@ -23,13 +23,19 @@ import DeckChangeDescription from './components/DeckChangeDescription.jsx';
 function Decks(props) {
   const query = new URLSearchParams(useLocation().search);
   const [showInfo, setShowInfo] = useState(false);
-  const [showButtons, setShowButtons] = useState(false);
+  const [showMenuButtons, setShowMenuButtons] = useState(false);
+  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [queryId, setQueryId] = useState(null);
   const { hash } = useLocation();
   const history = useHistory();
   const [selectFrom, setSelectFrom] = useState(
     props.username ? 'my' : 'precons'
   );
+
+  const handleShowButtons = state => {
+    setShowMenuButtons(state);
+    setShowFloatingButtons(!state);
+  }
 
   const getMissingCrypt = (deck) => {
     const crypt = {};
@@ -462,6 +468,8 @@ function Decks(props) {
                     hard: props.usedCards.hardCrypt,
                   }}
                   deckUpdate={deckUpdate}
+                  showFloatingButtons={showFloatingButtons}
+                  setShowFloatingButtons={setShowFloatingButtons}
                 />
               </Col>
               <Col lg={5} className="pt-4 pt-lg-0 px-0 px-lg-3">
@@ -484,6 +492,8 @@ function Decks(props) {
                     hard: props.usedCards.hardLibrary,
                   }}
                   deckUpdate={deckUpdate}
+                  showFloatingButtons={showFloatingButtons}
+                  setShowFloatingButtons={setShowFloatingButtons}
                 />
               </Col>
             </Row>
@@ -504,17 +514,20 @@ function Decks(props) {
               showImage={props.showImage}
               setShowImage={props.setShowImage}
               setShowInfo={setShowInfo}
-              setShowButtons={setShowButtons}
+              setShowButtons={handleShowButtons}
               missingCrypt={missingCrypt}
               missingLibrary={missingLibrary}
             />
           </Col>
         )}
       </Row>
-      {props.isMobile && (
+      {props.isMobile && showFloatingButtons && (
         <>
           <div
-            onClick={() => setShowButtons(!showButtons)}
+            onClick={() => {
+              setShowMenuButtons(true);
+              setShowFloatingButtons(false);
+            }}
             className="float-right-bottom menu"
           >
             <div className="pt-2 float-menu">
@@ -523,21 +536,27 @@ function Decks(props) {
           </div>
         </>
       )}
-      {showButtons && (
+      {showMenuButtons && (
         <Modal
-          show={showButtons}
-          onHide={() => setShowButtons(false)}
+          show={showMenuButtons}
+          onHide={() => {
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
+          }}
           animation={false}
           centered={true}
         >
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
-              <Row className="px-0 pb-2">
+              <Row className="px-0">
                 <Col>
                   <button
                     type="button"
                     className="close m-1"
-                    onClick={() => setShowButtons(false)}
+                    onClick={() => {
+                      setShowMenuButtons(false);
+                      setShowFloatingButtons(true);
+                    }}
                   >
                     <X width="32" height="32" viewBox="0 0 16 16" />
                   </button>
@@ -556,36 +575,22 @@ function Decks(props) {
                 showImage={props.showImage}
                 setShowImage={props.setShowImage}
                 setShowInfo={setShowInfo}
-                setShowButtons={setShowButtons}
+                setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
               />
+              {props.isMobile && (
+                <Button variant="outline-secondary" onClick={() => {
+                  props.setInventoryMode(!props.inventoryMode);
+                  handleShowButtons(false);
+                }}
+                        block>
+                  <ArchiveFill viewBox="0 0 16 16" /> Inventory Mode: {props.inventoryMode ? 'On' : 'Off'}
+                </Button>
+              )}
             </Container>
           </Modal.Body>
         </Modal>
-      )}
-      {props.isMobile && (
-        <>
-          {props.inventoryMode ? (
-            <div
-              onClick={() => props.setInventoryMode(!props.inventoryMode)}
-              className="float-left-bottom inventory-on"
-            >
-              <div className="pt-2 float-inventory">
-                <ArchiveFill viewBox="0 0 16 16" />
-              </div>
-            </div>
-          ) : (
-            <div
-              onClick={() => props.setInventoryMode(!props.inventoryMode)}
-              className="float-left-bottom inventory-off"
-            >
-              <div className="pt-2 float-inventory">
-                <ArchiveFill viewBox="0 0 16 16" />
-              </div>
-            </div>
-          )}
-        </>
       )}
     </Container>
   );

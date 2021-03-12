@@ -228,6 +228,7 @@ function DeckCrypt(props) {
         decks={props.decks}
         deckUpdate={props.deckUpdate}
         inSearch={props.inSearch}
+        setShowFloatingButtons={props.setShowFloatingButtons}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
@@ -256,10 +257,11 @@ function DeckCrypt(props) {
             decks={props.decks}
             deckUpdate={props.deckUpdate}
             inSearch={props.inSearch}
+            setShowFloatingButtons={props.setShowFloatingButtons}
           />
         </div>
       )}
-      {props.isMobile && (
+      {props.isMobile && props.showFloatingButtons && (
         <div onClick={() => setShowAdd(true)} className="float-right-top add">
           <div className="d-flex py-0 px-1 align-items-top">
             <div className="d-inline" style={{ fontSize: '1.75em' }}>

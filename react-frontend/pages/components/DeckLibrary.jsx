@@ -111,6 +111,7 @@ function DeckLibrary(props) {
             decks={props.decks}
             deckUpdate={props.deckUpdate}
             inSearch={props.inSearch}
+            setShowFloatingButtons={props.setShowFloatingButtons}
           />
         </div>
       );
@@ -141,6 +142,7 @@ function DeckLibrary(props) {
             decks={props.decks}
             deckUpdate={props.deckUpdate}
             inSearch={props.inSearch}
+            setShowFloatingButtons={props.setShowFloatingButtons}
           />
         </div>
       );
@@ -227,7 +229,7 @@ function DeckLibrary(props) {
           {LibrarySideDeck}
         </div>
       )}
-      {props.isMobile && (
+      {props.isMobile && props.showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="float-right-middle add"

@@ -24,6 +24,7 @@ function ResultCryptTable(props) {
   const cardRows = props.resultCards.map((card, index) => {
     const handleClick = () => {
       setModalCard(card);
+      props.setShowFloatingButtons(false);
       setModalInventory({
         inInventory: inInventory,
         softUsedMax: softUsedMax,
@@ -482,7 +483,10 @@ function ResultCryptTable(props) {
           card={modalCard}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
-          handleClose={() => setModalCard(false)}
+          handleClose={() => {
+            setModalCard(false);
+            props.setShowFloatingButtons(true);
+          }}
           isMobile={props.isMobile}
           inventoryState={modalInventory}
           inventoryMode={props.inventoryMode}

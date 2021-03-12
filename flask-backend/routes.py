@@ -706,6 +706,8 @@ def removeDeck():
 def register():
     if current_user.is_authenticated:
         return jsonify({'already logged as:': current_user.username})
+    elif User(username=request.json['username']):
+        abort(400)
 
     try:
         user = User(username=request.json['username'],
@@ -715,7 +717,7 @@ def register():
         db.session.commit()
         login_user(user)
         return jsonify({'registered as': user.username})
-    except KeyError:
+    except Exception:
         pass
 
 

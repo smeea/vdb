@@ -7,41 +7,7 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
-
-const probability = (x, N, n, k) => {
-  const factorial = (n) => {
-    return n ? n * factorial(n - 1) : 1;
-  };
-
-  const combinations = (n, r) => {
-    return factorial(n) / (factorial(r) * factorial(n - r));
-  };
-
-  const exactProbability = (i, N, n, k) => {
-    return (
-      (combinations(k, i) * combinations(N - k, n - i)) / combinations(N, n)
-    );
-  };
-
-  let prob = 0;
-  for (let i = 0; i <= n; i++) {
-    if (i >= x && i <= k) {
-      if (N - n < k) {
-        prob = 1;
-        continue;
-      } else {
-        prob += exactProbability(i, N, n, k);
-      }
-    }
-  }
-  if (0.99 < prob && prob < 1) {
-    prob = 0.99;
-  }
-  if (0 < prob && prob < 0.01) {
-    prob = 0.01;
-  }
-  return prob;
-};
+import drawProbability from './drawProbability.js';
 
 function DeckDrawCryptTable(props) {
   let resultTrClass;
@@ -64,18 +30,24 @@ function DeckDrawCryptTable(props) {
       <div className="prob">
         <div className="d-flex justify-content-between">
           <div className="pr-2">1+</div>
-          <div>{`${Math.floor(probability(1, N, n, k) * 100)}%`}</div>
+          <div>{`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}</div>
         </div>
         <div className="d-flex justify-content-between">
           <div className="pr-2">2+</div>
           <div>
-            {k < 2 ? null : `${Math.floor(probability(2, N, n, k) * 100)}%`}
+            {k < 2 ? null : `${Math.floor(drawProbability(2, N, n, k) * 100)}%`}
           </div>
         </div>
         <div className="d-flex justify-content-between">
           <div className="pr-2">3+</div>
           <div>
-            {k < 3 ? null : `${Math.floor(probability(3, N, n, k) * 100)}%`}
+            {k < 3 ? null : `${Math.floor(drawProbability(3, N, n, k) * 100)}%`}
+          </div>
+        </div>
+        <div className="d-flex justify-content-between">
+          <div className="pr-2">4+</div>
+          <div>
+            {k < 4 ? null : `${Math.floor(drawProbability(4, N, n, k) * 100)}%`}
           </div>
         </div>
       </div>
@@ -147,7 +119,7 @@ function DeckDrawCryptTable(props) {
                   setModalDraw({ name: card['Name'], prob: probText })
                 }
               >
-                {`${Math.floor(probability(1, N, n, k) * 100)}%`}
+                {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
               </div>
             ) : (
               <OverlayTooltip
@@ -155,7 +127,7 @@ function DeckDrawCryptTable(props) {
                 placement="right"
                 text={probText}
               >
-                <div>{`${Math.floor(probability(1, N, n, k) * 100)}%`}</div>
+                <div>{`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}</div>
               </OverlayTooltip>
             )}
           </td>

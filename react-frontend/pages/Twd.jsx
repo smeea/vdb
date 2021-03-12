@@ -15,7 +15,7 @@ function Twd(props) {
           xl={9}
           className={
             !(props.isMobile && props.showSearch)
-              ? 'px-0 px-lg-4'
+              ? 'px-0 pr-lg-4'
               : 'col-hide px-0 lx-lg-4'
           }
         >

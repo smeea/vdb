@@ -17,7 +17,8 @@ function Inventory(props) {
   const [newLibraryId, setNewLibraryId] = useState(undefined);
   const [category, setCategory] = useState('all');
   const [showCrypt, setShowCrypt] = useState(true);
-  const [showButtons, setShowButtons] = useState(false);
+  const [showMenuButtons, setShowMenuButtons] = useState(false);
+  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 
   return (
     <Container
@@ -57,6 +58,8 @@ function Inventory(props) {
                         }}
                         decks={props.decks}
                         compact={true}
+                        showFloatingButtons={showFloatingButtons}
+                        setShowFloatingButtons={setShowFloatingButtons}
                       />
                     </div>
                   )}
@@ -79,6 +82,8 @@ function Inventory(props) {
                             hard: props.usedCards.hardCrypt,
                           }}
                           decks={props.decks}
+                          showFloatingButtons={showFloatingButtons}
+                          setShowFloatingButtons={setShowFloatingButtons}
                         />
                       </div>
                     )}
@@ -113,6 +118,8 @@ function Inventory(props) {
                         }}
                         decks={props.decks}
                         compact={true}
+                        showFloatingButtons={showFloatingButtons}
+                        setShowFloatingButtons={setShowFloatingButtons}
                       />
                     </div>
                   )}
@@ -135,19 +142,23 @@ function Inventory(props) {
                             hard: props.usedCards.hardLibrary,
                           }}
                           decks={props.decks}
+                          showFloatingButtons={showFloatingButtons}
+                          setShowFloatingButtons={setShowFloatingButtons}
                         />
                       </div>
                     )}
                 </>
               )}
-              <div
-                onClick={() => setShowCrypt(!showCrypt)}
-                className="float-right-middle add-on"
-              >
-                <div className="pt-1 float-add">
-                  <ArrowRepeat viewBox="0 0 16 16" />
-                </div>
-              </div>
+              {showFloatingButtons &&
+               <div
+                 onClick={() => setShowCrypt(!showCrypt)}
+                 className="float-right-middle add-on"
+               >
+                 <div className="pt-1 float-add">
+                   <ArrowRepeat viewBox="0 0 16 16" />
+                 </div>
+               </div>
+              }
             </>
           ) : (
             <Row>
@@ -179,6 +190,8 @@ function Inventory(props) {
                       }}
                       decks={props.decks}
                       compact={true}
+                      showFloatingButtons={showFloatingButtons}
+                      setShowFloatingButtons={setShowFloatingButtons}
                     />
                   </div>
                 )}
@@ -200,6 +213,8 @@ function Inventory(props) {
                           hard: props.usedCards.hardCrypt,
                         }}
                         decks={props.decks}
+                        showFloatingButtons={showFloatingButtons}
+                        setShowFloatingButtons={setShowFloatingButtons}
                       />
                     </div>
                   )}
@@ -231,6 +246,8 @@ function Inventory(props) {
                       }}
                       decks={props.decks}
                       compact={true}
+                      showFloatingButtons={showFloatingButtons}
+                      setShowFloatingButtons={setShowFloatingButtons}
                     />
                   </div>
                 )}
@@ -253,6 +270,8 @@ function Inventory(props) {
                           hard: props.usedCards.hardLibrary,
                         }}
                         decks={props.decks}
+                        showFloatingButtons={showFloatingButtons}
+                        setShowFloatingButtons={setShowFloatingButtons}
                       />
                     </div>
                   )}
@@ -295,10 +314,13 @@ function Inventory(props) {
           </Col>
         </Row>
       )}
-      {props.isMobile && (
+      {props.isMobile && showFloatingButtons && (
         <>
           <div
-            onClick={() => setShowButtons(!showButtons)}
+            onClick={() => {
+              setShowMenuButtons(true);
+              setShowFloatingButtons(false);
+            }}
             className="float-right-bottom menu"
           >
             <div className="pt-2 float-menu">
@@ -307,21 +329,27 @@ function Inventory(props) {
           </div>
         </>
       )}
-      {showButtons && (
+      {showMenuButtons && (
         <Modal
-          show={showButtons}
-          onHide={() => setShowButtons(false)}
+          show={showMenuButtons}
+          onHide={() => {
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
+          }}
           animation={false}
           centered={true}
         >
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
-              <Row className="px-0 pb-2">
+              <Row className="px-0">
                 <Col>
                   <button
                     type="button"
                     className="close m-1"
-                    onClick={() => setShowButtons(false)}
+                    onClick={() => {
+                      setShowMenuButtons(false);
+                      setShowFloatingButtons(true);
+                    }}
                   >
                     <X width="32" height="32" viewBox="0 0 16 16" />
                   </button>
@@ -332,7 +360,7 @@ function Inventory(props) {
                 inventoryDeckAdd={props.inventoryDeckAdd}
                 setInventory={props.setInventory}
                 isMobile={props.isMobile}
-                setShowButtons={setShowButtons}
+                setShowMenuButtons={setShowMenuButtons}
               />
               <div className="px-4 py-2">
                 <InventoryShowSelect

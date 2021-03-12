@@ -80,6 +80,8 @@ function InventoryCrypt(props) {
         isAuthor={props.isAuthor}
         isMobile={props.isMobile}
         isWide={props.isWide}
+        showFloatingButtons={props.showFloatingButtons}
+        setShowFloatingButtons={props.setShowFloatingButtons}
       />
     </>
   );

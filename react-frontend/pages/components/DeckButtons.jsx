@@ -25,6 +25,17 @@ function DeckButtons(props) {
           />
         </div>
       )}
+      {props.username && props.deck && (
+        <div className="bp-125">
+          <DeckClone
+            getDecks={props.getDecks}
+            deck={props.deck}
+            activeDeck={props.activeDeck}
+            setActiveDeck={props.setActiveDeck}
+            setShowButtons={props.setShowButtons}
+          />
+        </div>
+      )}
       {props.deck && (
         <div className="bp-125">
           <DeckExport
@@ -45,17 +56,6 @@ function DeckButtons(props) {
           />
         </div>
       )}
-      {props.username && props.deck && (
-        <div className="bp-125">
-          <DeckClone
-            getDecks={props.getDecks}
-            deck={props.deck}
-            activeDeck={props.activeDeck}
-            setActiveDeck={props.setActiveDeck}
-            setShowButtons={props.setShowButtons}
-          />
-        </div>
-      )}
       {props.isAuthor && props.deck && (
         <div className="bp-125">
           <DeckBranchCreate
@@ -68,9 +68,9 @@ function DeckButtons(props) {
         </div>
       )}
       {props.isAuthor &&
-        props.deck &&
-        (props.deck.master ||
-          (props.deck.branches && props.deck.branches.length > 0)) && (
+       props.deck &&
+       (props.deck.master ||
+        (props.deck.branches && props.deck.branches.length > 0)) && (
           <div className="bp-125">
             <DeckBranchDelete
               deck={props.deck}

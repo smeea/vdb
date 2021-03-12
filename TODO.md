@@ -3,16 +3,14 @@
 * TWD location/winner form reset
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
-* No error on backend for user creation if already exist
-* Fix AK-47 export to Lackey
-* Fix draw prob bug
-* Deck Button order + blocks
-* Error-tooltip (no cards found) bug
-* Create account proposal in Decks for unlogged user
+* Error-tooltip bug
+* Draw with no cards bug
 
 # FIX MOBILE
-* No autofocus on mobile on quick cards
 * Optimize for tablet
+* Floating buttons with card modal
+* Inventory-mode & Add-mode to burger menu
+* Inventory-mode & Add-mode to burger menu hide with Modal
 
 # FEATURES
 * Create revocable link to Inventory
@@ -21,12 +19,12 @@
 * Precon Decks: name, set to description, company from sets.csv
 * Precon Decks icons (clan)
 * Inventory data in TWD browser
-* Mark pdf-sets in inventory-mode and set selector
+* Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
 * Popover on precons in modal preview set section
 * Quick card to show on single result
-* Help popups to Buttons
 * Help sections to About/Pages
+* Create account proposal in Decks for unlogged user
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines
