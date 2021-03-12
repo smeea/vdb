@@ -167,7 +167,7 @@ function Crypt(props) {
           md={12}
           xl={3}
           className={
-
+            !props.isMobile || (props.isMobile && props.showSearch)
               ? props.isMobile
               ? 'px-1 py-1'
               : 'px-0'
