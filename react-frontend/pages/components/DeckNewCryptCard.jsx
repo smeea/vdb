@@ -63,39 +63,41 @@ function DeckNewCryptCard(props) {
                 </div>
               )}
               <ResultCryptCapacity value={props.cardBase[card]['Capacity']} />
-              <span className="px-2">
+              <div className="px-2">
                 {props.cardBase[card]['Banned'] ? (
                   <>
                     <strike>{props.cardBase[card]['Name']}</strike>
                     {props.cardBase[card]['Adv'] && (
-                      <span className="pl-1">
+                      <div className="d-inline pl-1">
                         <img
                           className="advanced-image-results"
                           src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
                           title="Advanced"
                         />
-                      </span>
+                      </div>
                     )}
-                    <span className="pl-1">
+                    <div className="d-inline pl-1">
                       <Hammer />
-                    </span>
+                    </div>
                   </>
                 ) : (
                   <>
                     {props.cardBase[card]['Name']}
                     {props.cardBase[card]['Adv'] && (
-                      <span className="pl-1">
+                      <div className="d-inline pl-1">
                         <img
                           className="advanced-image-results"
                           src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
                           title="Advanced"
                         />
-                      </span>
+                      </div>
                     )}
                   </>
                 )}
-              </span>
-              <ResultCryptClan value={props.cardBase[card]['Clan']} />
+              </div>
+              <div className="pr-3">
+                <ResultCryptClan value={props.cardBase[card]['Clan']} />
+              </div>
             </div>
             <div className="d-flex flex-nowrap">
               <ResultCryptDisciplines

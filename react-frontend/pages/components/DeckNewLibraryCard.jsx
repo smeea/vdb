@@ -64,40 +64,40 @@ function DeckNewLibraryCard(props) {
                 </div>
               )}
               <ResultLibraryType cardtype={props.cardBase[card]['Type']} />
-              <span className="pl-1">
+              <div className="pl-1">
                 {props.cardBase[card]['Banned'] ? (
                   <>
                     <strike>{props.cardBase[card]['Name']}</strike>
-                    <span className="pl-1">
+                    <div className="d-inline pl-1">
                       <Hammer />
-                    </span>
+                    </div>
                   </>
                 ) : (
                   <>{props.cardBase[card]['Name']}</>
                 )}
-              </span>
+              </div>
             </div>
             <div>
               {props.cardBase[card]['Discipline'] && (
-                <span className="px-1">
+                <div className="d-inline px-3">
                   <ResultLibraryDisciplines
                     value={props.cardBase[card]['Discipline']}
                   />
-                </span>
+                </div>
               )}
               {props.cardBase[card]['Clan'] && (
-                <span className="px-1">
+                <div className="d-inline px-3">
                   <ResultLibraryClan value={props.cardBase[card]['Clan']} />
-                </span>
+                </div>
               )}
               {(props.cardBase[card]['Blood Cost'] ||
                 props.cardBase[card]['Pool Cost']) && (
-                <span className="px-1">
+                <div className="d-inline">
                   <ResultLibraryCost
                     valuePool={props.cardBase[card]['Pool Cost']}
                     valueBlood={props.cardBase[card]['Blood Cost']}
                   />
-                </span>
+                </div>
               )}
             </div>
           </div>

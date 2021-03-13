@@ -44,18 +44,24 @@ function About(props) {
   };
 
   return (
-    <Container
-      className={props.isMobile ? 'main-container' : 'main-container py-3'}
-    >
+    <Container className="main-container">
       <Row className="justify-content-center">
         <Col md={12} lg={6} className="px-0">
-          <div className="mt-2 mb-3 py-2 px-2 about-version">
-            <h5>VERSION</h5>
-            Card text based on{' '}
-            <a href="http://www.vekn.net/card-lists">
-              vekn.net official list
-            </a>
-            : 2021-03-09
+          <div className={props.isMobile ? "d-flex justify-content-between mb-3 logo" : "d-flex justify-content-between my-3 logo" }>
+            <div className="d-flex align-items-center">
+              <img className="logo-image" src={`${process.env.ROOT_URL}images/logo.svg`} title="logo" />
+              <div className="d-inline logo-text px-2">
+                VDB
+              </div>
+            </div>
+            <div className="d-inline pt-2 px-2">
+              <div className="d-flex justify-content-end small">
+                <i>If only I had a laptop...</i>
+              </div>
+              <div className="d-flex justify-content-end small">
+                <i>- Enkidu, the Noah</i>
+              </div>
+            </div>
           </div>
 
           <div className="px-2">
@@ -66,7 +72,7 @@ function About(props) {
               (VTES).
               <br />
               It is a successor of{' '}
-              <a href="https://vtes-db.smeea.casa/about">VTES-DB</a>.
+              <a href="https://vtes-db.smeea.casa/">VTES-DB</a>.
             </p>
             <h5>QUICKSTART</h5>
             <ul>
@@ -125,6 +131,14 @@ function About(props) {
             <div className="d-flex justify-content-between">
               <Screenshots width={125} value={mobileScreenshots} />
             </div>
+            <h5>VERSION</h5>
+            <p>
+              Card text based on{' '}
+              <a href="http://www.vekn.net/card-lists">
+                vekn.net official list
+              </a>
+              : 2021-03-09
+            </p>
             <h5>RELATED PROJECTS</h5>
             <p>
               <a href="https://amaranth.vtes.co.nz/">

@@ -605,7 +605,9 @@ function App(props) {
         <Switch>
           <Suspense fallback={<></>}>
             <Route path="/" exact component={() => <Redirect to="/about" />} />
-            <Route path="/about" exact component={() => <About />} />
+            <Route path="/about" exact component={() => <About
+                                                          isMobile={isMobile}
+                                                        />} />
             <Route path="/account">
               <Account
                 isMobile={isMobile}

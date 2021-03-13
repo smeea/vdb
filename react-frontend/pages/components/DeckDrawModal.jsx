@@ -3,6 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import X from '../../assets/images/icons/x.svg';
+import AlertMessage from './AlertMessage.jsx';
 import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
 import DeckDrawLibraryTable from './DeckDrawLibraryTable.jsx';
 
@@ -33,7 +34,7 @@ function DeckDrawModal(props) {
           </Row>
           <Row className="px-0 pb-4">
             <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
-              {props.drawedCrypt && (
+              {props.drawedCrypt.length > 0 ? (
                 <div className={props.isMobile ? "pb-4" : null}>
                   <div className="d-flex justify-content-between info-message">
                     <div className="d-flex align-items-center px-2">
@@ -74,10 +75,15 @@ function DeckDrawModal(props) {
                     isWide={true}
                   />
                 </div>
-              )}
+              ) : (
+                <AlertMessage className="error-message">
+                  <b>NOT ENOUGH CRYPT CARDS TO DRAW</b>
+                </AlertMessage>
+              )
+              }
             </Col>
             <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
-              {props.drawedLibrary && (
+              {props.drawedLibrary.length > 0 ? (
                 <>
                   <div className="d-flex justify-content-between info-message">
                     <div className="d-flex align-items-center px-2">
@@ -115,7 +121,12 @@ function DeckDrawModal(props) {
                     isMobile={props.isMobile}
                   />
                 </>
-              )}
+              ) : (
+                <AlertMessage className="error-message">
+                  <b>NOT ENOUGH LIBRARY CARDS TO DRAW</b>
+                </AlertMessage>
+              )
+              }
             </Col>
           </Row>
           {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) &&

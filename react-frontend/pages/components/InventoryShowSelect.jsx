@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap';
 
 function InventoryShowSelect(props) {
   return (
-    <Form>
+    <Form className="my-0">
       <Form.Check
         className="px-2"
         type="radio"

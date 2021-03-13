@@ -4,11 +4,13 @@
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Error-tooltip bug
-* Draw with no cards bug
+* Save scrolling position
 
 # FIX MOBILE
 * Optimize for tablet
-* Floating buttons with card modal
+* Close Button on Text Layout
+* Restyle Crypt-Library floating button in Inventory
+* Hide floating buttons with card modal on Crypt/Library
 * Inventory-mode & Add-mode to burger menu
 * Inventory-mode & Add-mode to burger menu hide with Modal
 
@@ -36,15 +38,11 @@
 * Append deckid to address line (history.push)
 
 # IMPROVE TECHNOLOGY - FRONTEND
-* Add access_token to cookies or localStorage
-* Forms to React-Hook-Forms / Formik
-* Dynamic media query with react-responsive
 * Screenshots to Bootstrap/Carousel
 * Clear CSS
-* Images to avif (fallbacks to webp and jpeg)
 * Analytics: posthog
 * Tests: cypress / puppeteer
-* Sync clients with SSE/WS
+* Sync: websockets
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
