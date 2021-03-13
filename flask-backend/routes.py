@@ -693,6 +693,12 @@ def removeDeck():
                     j = Deck.query.filter_by(author=current_user,
                                             deckid=i).first()
                     db.session.delete(j)
+
+            if d.master:
+                j = Deck.query.filter_by(author=current_user,
+                                         deckid=d.master).first()
+                db.session.delete(j)
+
             db.session.delete(d)
             db.session.commit()
             return jsonify({'deck removed': request.json['deckid']})
@@ -706,8 +712,6 @@ def removeDeck():
 def register():
     if current_user.is_authenticated:
         return jsonify({'already logged as:': current_user.username})
-    elif User(username=request.json['username']):
-        abort(400)
 
     try:
         user = User(username=request.json['username'],
@@ -718,7 +722,7 @@ def register():
         login_user(user)
         return jsonify({'registered as': user.username})
     except Exception:
-        pass
+        abort(400)
 
 
 @app.route('/api/login', methods=['GET', 'POST'])

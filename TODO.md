@@ -3,14 +3,13 @@
 * TWD location/winner form reset
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
-* Error-tooltip bug
 * Save scrolling position
 
 # FIX MOBILE
 * Optimize for tablet
 * Close Button on Text Layout
 * Restyle Crypt-Library floating button in Inventory
-* Hide floating buttons with card modal on Crypt/Library
+* Hide floating buttons with card modal on Crypt/Library/TWD
 * Inventory-mode & Add-mode to burger menu
 * Inventory-mode & Add-mode to burger menu hide with Modal
 
