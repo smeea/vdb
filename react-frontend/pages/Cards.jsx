@@ -5,7 +5,7 @@ import ArrowRepeat from '../assets/images/icons/arrow-repeat.svg';
 import QuickSelect from './components/QuickSelect.jsx';
 import ResultCryptLayoutText from './components/ResultCryptLayoutText.jsx';
 import ResultLibraryLayoutText from './components/ResultLibraryLayoutText.jsx';
-import CardCopyUrlButton from './components/CardCopyUrlButton.jsx';
+import ButtonCardCopyUrl from './components/ButtonCardCopyUrl.jsx';
 
 function Cards(props) {
   const history = useHistory();
@@ -77,7 +77,7 @@ function Cards(props) {
                           )}
                         </div>
                         <div className="px-3 pb-3">
-                          <CardCopyUrlButton isMobile={props.isMobile} id={card.Id} />
+                          <ButtonCardCopyUrl isMobile={props.isMobile} id={card.Id} />
                         </div>
                       </>
                     )}
@@ -122,7 +122,7 @@ function Cards(props) {
                     <ResultLibraryLayoutText card={card} />
                   )}
                   <div className="pt-3">
-                    <CardCopyUrlButton isMobile={props.isMobile} id={card.Id} />
+                    <ButtonCardCopyUrl isMobile={props.isMobile} id={card.Id} />
                   </div>
                 </Col>
               </Row>

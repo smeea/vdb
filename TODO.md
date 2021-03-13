@@ -8,9 +8,8 @@
 
 # FIX MOBILE
 * Optimize for tablet
-* Close Button on Text Layout
 * Inventory-mode & Add-mode to burger menu?
-* Hide Missing in Inventory show if inv exist
+* Hide Missing in Inventory in Crypt/Library if inventory exist
 
 # FEATURES
 * Create revocable link to Inventory
@@ -25,6 +24,7 @@
 * Quick card to show on single result
 * Help sections to About/Pages
 * Create account proposal in Decks for unlogged user
+* Add card by word prefixes (Vincent Ripoll PR)
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines

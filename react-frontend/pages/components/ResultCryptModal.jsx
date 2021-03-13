@@ -1,13 +1,12 @@
 import React from 'react';
 import { Modal, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
-import ImageAlt from '../../assets/images/icons/image-alt.svg';
-import FileTextFill from '../../assets/images/icons/chat-quote-fill.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
 import ResultCryptLayoutText from './ResultCryptLayoutText.jsx';
-import CardCopyUrlButton from './CardCopyUrlButton.jsx';
+import ButtonCardCopyUrl from './ButtonCardCopyUrl.jsx';
+import ButtonToggleShowImage from './ButtonToggleShowImage.jsx';
 
 function ResultCryptModal(props) {
   const CardImage = () => {
@@ -43,13 +42,6 @@ function ResultCryptModal(props) {
               <CardImage />
             ) : (
               <>
-                <button
-                  type="button"
-                  className="close m-2 mt-3"
-                  onClick={props.handleClose}
-                >
-                  <X width="32" height="32" viewBox="0 0 16 16" />
-                </button>
                 <div className="px-3 pt-3">
                   <ResultCryptLayoutText
                     card={props.card}
@@ -94,8 +86,11 @@ function ResultCryptModal(props) {
                     </div>
                   </>
                 )}
-                <div className="p-3">
-                  <CardCopyUrlButton isMobile={props.isMobile} id={props.card.Id} />
+                <div className="d-flex justify-content-between p-3">
+                  <ButtonCardCopyUrl isMobile={props.isMobile} id={props.card.Id} />
+                  <Button variant="outline-secondary" onClick={props.handleClose}>
+                    <X width="24" height="24" viewBox="2 2 12 12" /> Close
+                  </Button>
                 </div>
               </>
             )}
@@ -161,32 +156,21 @@ function ResultCryptModal(props) {
                   </div>
                 </>
               )}
-              <div className="bp-125 pt-4">
-                <CardCopyUrlButton isMobile={props.isMobile} id={props.card.Id} />
-              </div>
-              <Button
-                variant="outline-secondary"
-                onClick={() => props.setShowImage(!props.showImage)}
-                block
-              >
-                <div className="d-flex align-items-center justify-content-center">
-                  {props.showImage ? (
-                    <>
-                      <div className="pr-1">
-                        <ImageAlt />
-                      </div>
-                      Image on hover
-                    </>
-                  ) : (
-                    <>
-                      <div className="pr-1">
-                        <FileTextFill />
-                      </div>
-                      Text on hover
-                    </>
-                  )}
+              <div className="d-flex justify-content-between bp-125 pt-4">
+                <div className="d-flex">
+                  <div className="d-flex pr-1">
+                    <ButtonCardCopyUrl isMobile={props.isMobile} id={props.card.Id} />
+                  </div>
+                  <div className="d-flex pr-1">
+                    <ButtonToggleShowImage showImage={props.showImage} setShowImage={props.setShowImage} />
+                  </div>
                 </div>
-              </Button>
+                <Button variant="outline-secondary" onClick={props.handleClose}>
+                  <div>
+                    <X width="24" height="24" viewBox="0 0 16 16" /> Close
+                  </div>
+                </Button>
+              </div>
             </Col>
           </Row>
         )}
