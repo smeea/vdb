@@ -11,6 +11,8 @@ import TwdResultLibraryKeyCards from './TwdResultLibraryKeyCards.jsx';
 function TwdResult(props) {
   const showCounterStep = 25;
 
+  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
+
   const [twdRows, setTwdRows] = useState([]);
   const [showCounter, setShowCounter] = useState(0);
   const [deckCounter, setDeckCounter] = useState(0);
@@ -61,6 +63,7 @@ function TwdResult(props) {
                         isMobile={props.isMobile}
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
+                        setShowFloatingButtons={props.setShowFloatingButtons}
                       />
                     </Col>
                     <Col md={12} xl={3} className="px-2">
@@ -77,6 +80,7 @@ function TwdResult(props) {
                         isMobile={props.isMobile}
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
+                        setShowFloatingButtons={props.setShowFloatingButtons}
                       />
                     </Col>
                   </>
@@ -88,6 +92,7 @@ function TwdResult(props) {
                         isMobile={props.isMobile}
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
+                        setShowFloatingButtons={props.setShowFloatingButtons}
                       />
                     </Col>
                     <Col xs={6} className="pl-1 pr-0">
@@ -96,6 +101,7 @@ function TwdResult(props) {
                         isMobile={props.isMobile}
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
+                        setShowFloatingButtons={props.setShowFloatingButtons}
                       />
                     </Col>
                   </>
@@ -134,7 +140,7 @@ function TwdResult(props) {
           )}
         </>
       )}
-      {props.isMobile && (
+      {props.isMobile && props.showFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">
             <div className="pt-1 float-clear">

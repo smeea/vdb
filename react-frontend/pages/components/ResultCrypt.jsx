@@ -9,6 +9,7 @@ import resultCryptSort from './resultCryptSort.js';
 
 function ResultCrypt(props) {
   const [sortedCards, setSortedCards] = useState([]);
+  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 
   const className = 'search-crypt-table';
 
@@ -64,10 +65,11 @@ function ResultCrypt(props) {
             inventoryCrypt={props.inventoryCrypt}
             usedCards={props.usedCards}
             decks={props.decks}
+            setShowFloatingButtons={setShowFloatingButtons}
           />
         </>
       )}
-      {props.isMobile && !props.hideFloatingButtons && (
+      {props.isMobile && showFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">
             <div className="pt-1 float-clear">

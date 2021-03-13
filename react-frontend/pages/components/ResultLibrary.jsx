@@ -9,6 +9,7 @@ import resultLibrarySort from './resultLibrarySort.js';
 
 function ResultLibrary(props) {
   const [sortedCards, setSortedCards] = useState([]);
+  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 
   const handleChange = (method) => {
     props.setSortMethod(method);
@@ -61,10 +62,11 @@ function ResultLibrary(props) {
             inventoryLibrary={props.inventoryLibrary}
             usedCards={props.usedCards}
             decks={props.decks}
+            setShowFloatingButtons={setShowFloatingButtons}
           />
         </>
       )}
-      {props.isMobile && !props.hideFloatingButtons && (
+      {props.isMobile && showFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">
             <div className="pt-1 float-clear">

@@ -77,7 +77,7 @@ function Cards(props) {
                           )}
                         </div>
                         <div className="px-3 pb-3">
-                          <CardCopyUrlButton id={card.Id} />
+                          <CardCopyUrlButton isMobile={props.isMobile} id={card.Id} />
                         </div>
                       </>
                     )}
@@ -122,7 +122,7 @@ function Cards(props) {
                     <ResultLibraryLayoutText card={card} />
                   )}
                   <div className="pt-3">
-                    <CardCopyUrlButton id={card.Id} />
+                    <CardCopyUrlButton isMobile={props.isMobile} id={card.Id} />
                   </div>
                 </Col>
               </Row>

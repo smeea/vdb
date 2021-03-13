@@ -68,7 +68,6 @@ function DeckDrawModal(props) {
                     total={props.cryptTotal}
                     resultCards={props.drawedCrypt}
                     className="search-crypt-table"
-                    hideFloatingButtons={true}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}
@@ -115,7 +114,6 @@ function DeckDrawModal(props) {
                     total={props.libraryTotal}
                     resultCards={props.drawedLibrary}
                     className="search-library-table"
-                    hideFloatingButtons={true}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}
@@ -151,7 +149,6 @@ function DeckDrawModal(props) {
                     total={props.cryptTotal}
                     resultCards={props.burnedCrypt}
                     className="search-crypt-table"
-                    hideFloatingButtons={true}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}
@@ -180,7 +177,6 @@ function DeckDrawModal(props) {
                     total={props.libraryTotal}
                     resultCards={props.burnedLibrary}
                     className="search-library-table"
-                    hideFloatingButtons={true}
                     showImage={props.showImage}
                     setShowImage={props.setShowImage}
                     isMobile={props.isMobile}

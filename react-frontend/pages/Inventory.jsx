@@ -150,12 +150,11 @@ function Inventory(props) {
                 </>
               )}
               {showFloatingButtons &&
-               <div
-                 onClick={() => setShowCrypt(!showCrypt)}
-                 className="float-right-middle add-on"
-               >
-                 <div className="pt-1 float-add">
-                   <ArrowRepeat viewBox="0 0 16 16" />
+               <div onClick={() => setShowCrypt(!showCrypt)} className="float-right-middle add">
+                 <div className="d-flex py-0 px-1 align-items-top">
+                   <div className="d-inline" style={{ fontSize: '1.85em' }}>
+                     {showCrypt ? "LIB" : "CR"}
+                   </div>
                  </div>
                </div>
               }

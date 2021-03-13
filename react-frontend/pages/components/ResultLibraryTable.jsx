@@ -24,6 +24,7 @@ function ResultLibraryTable(props) {
   const cardRows = props.resultCards.map((card, index) => {
     const handleClick = () => {
       setModalCard(card);
+      props.isMobile && props.setShowFloatingButtons(false);
       setModalInventory({
         inInventory: inInventory,
         usedDescription: {
@@ -254,7 +255,10 @@ function ResultLibraryTable(props) {
           card={modalCard}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
-          handleClose={() => setModalCard(false)}
+          handleClose={() => {
+            setModalCard(false);
+            props.isMobile && props.setShowFloatingButtons(false);
+          }}
           isMobile={props.isMobile}
           inventoryState={modalInventory}
           inventoryMode={props.inventoryMode}

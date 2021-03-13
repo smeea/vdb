@@ -63,6 +63,11 @@ function TwdResultLibraryKeyCards(props) {
   let resultTrClass = 'result-even';
 
   const cardLines = keyCards.map((card, index) => {
+    const handleClick = () => {
+      setModalCard(card.c);
+      props.setShowFloatingButtons(false);
+    }
+
     if (resultTrClass == 'result-even') {
       resultTrClass = 'result-odd';
     } else {
@@ -91,12 +96,12 @@ function TwdResultLibraryKeyCards(props) {
             placement={props.placement ? props.placement : 'right'}
             overlay={<CardPopover card={card.c}>{props.showImage}</CardPopover>}
           >
-            <td className="name px-1" onClick={() => setModalCard(card.c)}>
+            <td className="name px-1" onClick={() => handleClick()}>
               <ResultLibraryName card={card.c} />
             </td>
           </OverlayTrigger>
         ) : (
-          <td className="name px-1" onClick={() => setModalCard(card.c)}>
+          <td className="name px-1" onClick={() => handleClick()}>
             <ResultLibraryName card={card.c} />
           </td>
         )}
@@ -126,7 +131,10 @@ function TwdResultLibraryKeyCards(props) {
           card={modalCard}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
-          handleClose={() => setModalCard(false)}
+          handleClose={() => {
+            setModalCard(false);
+            props.setShowFloatingButtons(true);
+          }}
           isMobile={props.isMobile}
         />
       )}

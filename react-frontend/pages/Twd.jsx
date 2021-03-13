@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ArchiveFill from '../assets/images/icons/archive-fill.svg';
 import TwdResult from './components/TwdResult.jsx';
 import TwdSearchForm from './components/TwdSearchForm.jsx';
 
 function Twd(props) {
+  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
+
   return (
     <Container
       className={props.isMobile ? 'main-container' : 'main-container py-3'}
@@ -33,6 +35,8 @@ function Twd(props) {
               setShowSearch={props.setShowSearch}
               setActiveDeck={props.setActiveDeck}
               username={props.username}
+              showFloatingButtons={showFloatingButtons}
+              setShowFloatingButtons={setShowFloatingButtons}
             />
           )}
         </Col>
@@ -60,7 +64,7 @@ function Twd(props) {
           />
         </Col>
       </Row>
-      {props.isMobile && (
+      {props.isMobile && showFloatingButtons && (
         <>
           {props.inventoryMode ? (
             <div

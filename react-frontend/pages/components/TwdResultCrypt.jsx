@@ -59,6 +59,11 @@ function TwdResultCrypt(props) {
   const sortedCards = Object.values(props.crypt).sort(SortByQuantityCapacity);
 
   const cardLines = sortedCards.map((card, index) => {
+    const handleClick = () => {
+      setModalCard(card.c);
+      props.setShowFloatingButtons(false);
+    }
+
     if (resultTrClass == 'result-even') {
       resultTrClass = 'result-odd';
     } else {
@@ -79,7 +84,7 @@ function TwdResultCrypt(props) {
     return (
       <tr key={index} className={resultTrClass}>
         <td className="quantity-no-buttons px-1">{card.q}</td>
-        <td className="capacity px-1" onClick={() => setModalCard(card.c)}>
+        <td className="capacity px-1" onClick={() => handleClick()}>
           <ResultCryptCapacity value={card.c['Capacity']} />
         </td>
         {!props.isMobile ? (
@@ -87,16 +92,16 @@ function TwdResultCrypt(props) {
             placement={props.placement ? props.placement : 'right'}
             overlay={<CardPopover card={card.c}>{props.showImage}</CardPopover>}
           >
-            <td className="name px-1" onClick={() => setModalCard(card.c)}>
+            <td className="name px-1" onClick={() => handleClick()}>
               <ResultCryptName card={card.c} />
             </td>
           </OverlayTrigger>
         ) : (
-          <td className="name px-1" onClick={() => setModalCard(card.c)}>
+          <td className="name px-1" onClick={() => handleClick()}>
             <ResultCryptName card={card.c} />
           </td>
         )}
-        <td className="clan px-1" onClick={() => setModalCard(card.c)}>
+        <td className="clan px-1" onClick={() => handleClick()}>
           <ResultCryptClan value={card.c['Clan']} />
         </td>
       </tr>
@@ -119,7 +124,10 @@ function TwdResultCrypt(props) {
           card={modalCard}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
-          handleClose={() => setModalCard(false)}
+          handleClose={() => {
+            setModalCard(false);
+            props.setShowFloatingButtons(true);
+          }}
           isMobile={props.isMobile}
         />
       )}

@@ -10,7 +10,7 @@ function CardCopyUrlButton(props) {
     setState(true);
     setTimeout(() => {
       setState(false);
-      props.setShowButtons(false);
+      props.isMobile && props.setShowButtons(false);
     }, 1000);
   };
 

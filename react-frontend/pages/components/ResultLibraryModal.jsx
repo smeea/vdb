@@ -95,7 +95,7 @@ function ResultLibraryModal(props) {
                   </>
                 )}
                 <div className="p-3">
-                  <CardCopyUrlButton id={props.card['Id']} />
+                  <CardCopyUrlButton isMobile={props.isMobile} id={props.card.Id} />
                 </div>
               </>
             )}
@@ -162,7 +162,7 @@ function ResultLibraryModal(props) {
                 </>
               )}
               <div className="bp-125 pt-4">
-                <CardCopyUrlButton id={props.card['Id']} />
+                <CardCopyUrlButton isMobile={props.isMobile} id={props.card.Id} />
               </div>
               <Button
                 variant="outline-secondary"
