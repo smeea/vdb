@@ -34,7 +34,7 @@ function Crypt(props) {
                     className={
                       props.isMobile
                         ? 'd-flex justify-content-between'
-                        : 'd-flex'
+                        : 'd-flex justify-content-end'
                     }
                   >
                     {props.addMode &&

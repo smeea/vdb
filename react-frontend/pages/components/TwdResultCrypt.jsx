@@ -24,9 +24,14 @@ function TwdResultCrypt(props) {
     ) {
       cryptGroupMin = props.crypt[card].c['Group'];
     }
-    if (cryptGroupMax == undefined) {
+
+    if (
+      props.crypt[card].c['Group'] > cryptGroupMax ||
+        cryptGroupMax == undefined
+    ) {
       cryptGroupMax = props.crypt[card].c['Group'];
     }
+
   });
 
   let cryptTotal = 0;

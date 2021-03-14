@@ -4,7 +4,6 @@
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
-* Export from Deck-in-URL
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 
 # FIX MOBILE
@@ -23,7 +22,9 @@
 * Quick card to show on single result
 * Help sections to About/Pages
 * Create account proposal in Decks for unlogged user
-* Add card by word prefixes (Vincent Ripoll PR)
+* Search in deck-select
+* Append revision to deck name in export
+* Search criteries in URL
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines
