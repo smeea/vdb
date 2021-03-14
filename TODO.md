@@ -5,6 +5,7 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Export from Deck-in-URL
+* Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 
 # FIX MOBILE
 * Optimize for tablet

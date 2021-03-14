@@ -501,13 +501,20 @@ def get_library_by_artist(artist, library):
     return match_cards
 
 def is_match_by_initials(initials, text):
-    index = 0
+    prev_index = 0
+
     for c in initials:
-        index = text.find(c, index)
+        index = text.find(c, prev_index)
         if index == -1:
-            return False
-        index += 1
+                return False
+        if index != prev_index:
+            if index != 0 and text[index - 1].isalnum():
+                return False
+
+        prev_index = index + 1
+
     return True
+
 
 def get_library_by_name(pattern, library):
     match_cards = []
@@ -524,7 +531,7 @@ def get_library_by_name(pattern, library):
         if is_match_by_initials(pattern, card['ASCII Name'].lower()) or is_match_by_initials(pattern, card['Name'].lower()):
             match_cards_by_initials.append(card)
 
-    return match_cards + match_cards_by_initials # put "exact" matches first
+    return match_cards + match_cards_by_initials
 
 def get_library_by_id(id):
     with open("vteslib.json", "r") as library_file:

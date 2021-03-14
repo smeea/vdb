@@ -493,14 +493,38 @@ def get_crypt_by_artist(artist, crypt):
     return match_cards
 
 
-def get_crypt_by_name(name, crypt):
-    match_cards = []
-    for card in crypt:
-        name = name.lower()
-        if name in card['ASCII Name'].lower() or name in card['Name'].lower():
-            match_cards.append(card)
+def is_match_by_initials(initials, text):
+    prev_index = 0
 
-    return match_cards
+    for c in initials:
+        index = text.find(c, prev_index)
+        if index == -1:
+                return False
+        if index != prev_index:
+            if index != 0 and text[index - 1].isalnum():
+                return False
+
+        prev_index = index + 1
+
+    return True
+
+
+def get_crypt_by_name(pattern, crypt):
+    match_cards = []
+    remaining_cards = []
+    match_cards_by_initials = []
+    pattern = pattern.lower()
+    for card in crypt:
+        if pattern in card['ASCII Name'].lower() or pattern in card['Name'].lower():
+            match_cards.append(card)
+        else:
+            remaining_cards.append(card)
+
+    for card in remaining_cards:
+        if is_match_by_initials(pattern, card['ASCII Name'].lower()) or is_match_by_initials(pattern, card['Name'].lower()):
+            match_cards_by_initials.append(card)
+
+    return match_cards + match_cards_by_initials
 
 
 def get_crypt_by_id(id):
