@@ -30,7 +30,7 @@ function DeckNewLibraryCard(props) {
       body: JSON.stringify(input),
     };
 
-    if (inputValue.length > 2) {
+    if (inputValue.length > 2 || (inputValue.length == 2 && inputValue === inputValue.toUpperCase())) {
       return fetch(url, options).then((response) => response.json());
     } else {
       return null;
