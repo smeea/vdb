@@ -152,6 +152,7 @@ function Crypt(props) {
               showSearch={props.showSearch}
               setShowSearch={props.setShowSearch}
               setResults={props.setResults}
+              isInventory={props.isInventory}
               inventoryMode={props.inventoryMode}
               setInventoryMode={props.setInventoryMode}
               inventoryCrypt={props.inventory.crypt}
@@ -185,8 +186,8 @@ function Crypt(props) {
             hideMissing={props.hideMissing}
             setHideMissing={props.setHideMissing}
             cardBase={props.cryptCardBase}
+            isInventory={props.isInventory}
             inventoryMode={props.inventoryMode}
-            setInventoryMode={props.setInventoryMode}
           />
         </Col>
         {(!props.username || !props.addMode) && !props.isMobile && <Col xl={1} />}

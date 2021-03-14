@@ -485,7 +485,7 @@ function ResultCryptTable(props) {
           setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCard(false);
-            props.isMobile && props.setShowFloatingButtons(false);
+            props.isMobile && props.setShowFloatingButtons(true);
           }}
           isMobile={props.isMobile}
           inventoryState={modalInventory}

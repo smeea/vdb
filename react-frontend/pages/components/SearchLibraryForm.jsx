@@ -239,7 +239,7 @@ function SearchLibraryForm(props) {
         showLimit={showLimit}
         spinner={spinnerState}
       />
-      {props.inventoryMode && (
+      {props.inventoryMode || (props.isMobile && props.isInventory) && (
         <div className="custom-control custom-checkbox">
           <input
             id="hideMissing"
@@ -336,25 +336,6 @@ function SearchLibraryForm(props) {
               )}
             </Overlay>
           </div>
-          {props.inventoryMode ? (
-            <div
-              onClick={() => props.setInventoryMode(!props.inventoryMode)}
-              className="float-left-bottom inventory-on"
-            >
-              <div className="pt-2 float-inventory">
-                <ArchiveFill viewBox="0 0 16 16" />
-              </div>
-            </div>
-          ) : (
-            <div
-              onClick={() => props.setInventoryMode(!props.inventoryMode)}
-              className="float-left-bottom inventory-off"
-            >
-              <div className="pt-2 float-inventory">
-                <ArchiveFill viewBox="0 0 16 16" />
-              </div>
-            </div>
-          )}
         </>
       )}
     </form>

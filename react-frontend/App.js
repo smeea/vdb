@@ -23,6 +23,9 @@ const Cards = lazy(() => import('./pages/Cards.jsx'));
 const Inventory = lazy(() => import('./pages/Inventory.jsx'));
 
 function App(props) {
+  const isMobile = window.matchMedia('(max-width: 540px)').matches;
+  const isWide = window.matchMedia('(min-width: 1600px)').matches;
+
   const [twdFormState, setTwdFormState] = useState(defaultsTwdForm);
   const [cryptFormState, setCryptFormState] = useState(defaultsCryptForm);
   const [libraryFormState, setLibraryFormState] = useState(defaultsLibraryForm);
@@ -32,7 +35,7 @@ function App(props) {
   const [email, setEmail] = useState(undefined);
 
   const [showImage, setShowImage] = useState(true);
-  const [addMode, setAddMode] = useState(isMobile);
+  const [addMode, setAddMode] = useState(!isMobile);
   const [inventoryMode, setInventoryMode] = useState(false);
   const [hideMissing, setHideMissing] = useState(false);
 
@@ -44,6 +47,7 @@ function App(props) {
 
   const [inventory, setInventory] = useState({ crypt: {}, library: {} });
   const [usedCards, setUsedCards] = useState({});
+  const isInventory = Object.keys(inventory.crypt).length > 0 || Object.keys(inventory.library).length > 0
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
@@ -51,9 +55,6 @@ function App(props) {
   const [twdResults, setTwdResults] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
-
-  const isMobile = window.matchMedia('(max-width: 540px)').matches;
-  const isWide = window.matchMedia('(min-width: 1600px)').matches;
 
   const [showTwdSearch, setShowTwdSearch] = useState(true);
   const [showCryptSearch, setShowCryptSearch] = useState(true);
@@ -713,6 +714,7 @@ function App(props) {
                 setResults={setCryptResults}
                 inventory={inventory}
                 inventoryMode={inventoryMode}
+                isInventory={isInventory}
                 setInventoryMode={setInventoryMode}
                 addMode={addMode}
                 setAddMode={setAddMode}
@@ -750,6 +752,7 @@ function App(props) {
                 setResults={setLibraryResults}
                 inventory={inventory}
                 inventoryMode={inventoryMode}
+                isInventory={isInventory}
                 setInventoryMode={setInventoryMode}
                 addMode={addMode}
                 setAddMode={setAddMode}

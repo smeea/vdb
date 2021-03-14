@@ -72,29 +72,33 @@ function ResultLibrary(props) {
               <X viewBox="0 0 16 16" />
             </div>
           </div>
-          {props.inventoryMode ? (
-            <div
-              onClick={() => props.setInventoryMode(!props.inventoryMode)}
-              className="float-left-bottom inventory-on"
-            >
-              <div className="pt-2 float-inventory">
-                <ArchiveFill viewBox="0 0 16 16" />
-              </div>
-            </div>
-          ) : (
-            <div
-              onClick={() => props.setInventoryMode(!props.inventoryMode)}
-              className="float-left-bottom inventory-off"
-            >
-              <div className="pt-2 float-inventory">
-                <ArchiveFill viewBox="0 0 16 16" />
-              </div>
-            </div>
-          )}
+          {props.isInventory &&
+           <>
+             {props.inventoryMode ? (
+               <div
+                 onClick={() => props.setInventoryMode(!props.inventoryMode)}
+                 className="float-right-top inventory-on"
+               >
+                 <div className="pt-2 float-inventory">
+                   <ArchiveFill viewBox="0 0 16 16" />
+                 </div>
+               </div>
+             ) : (
+               <div
+                 onClick={() => props.setInventoryMode(!props.inventoryMode)}
+                 className="float-right-top inventory-off"
+               >
+                 <div className="pt-2 float-inventory">
+                   <ArchiveFill viewBox="0 0 16 16" />
+                 </div>
+               </div>
+             )}
+           </>
+          }
           {props.addMode ? (
             <div
               onClick={() => props.setAddMode(!props.addMode)}
-              className="float-left-middle add-on"
+              className="float-right-middle add-on"
             >
               <div className="pt-1 float-add">
                 <Plus viewBox="0 0 16 16" />
@@ -103,7 +107,7 @@ function ResultLibrary(props) {
           ) : (
             <div
               onClick={() => props.setAddMode(!props.addMode)}
-              className="float-left-middle add-off"
+              className="float-right-middle add-off"
             >
               <div className="pt-1 float-add">
                 <Plus viewBox="0 0 16 16" />

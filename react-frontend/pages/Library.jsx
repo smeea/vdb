@@ -152,6 +152,7 @@ function Library(props) {
               showSearch={props.showSearch}
               setShowSearch={props.setShowSearch}
               setResults={props.setResults}
+              isInventory={props.isInventory}
               inventoryMode={props.inventoryMode}
               setInventoryMode={props.setInventoryMode}
               inventoryLibrary={props.inventory.library}
@@ -185,8 +186,8 @@ function Library(props) {
             hideMissing={props.hideMissing}
             setHideMissing={props.setHideMissing}
             cardBase={props.libraryCardBase}
+            isInventory={props.isInventory}
             inventoryMode={props.inventoryMode}
-            setInventoryMode={props.setInventoryMode}
           />
         </Col>
         {(!props.username || !props.addMode) && !props.isMobile && <Col xl={1} />}

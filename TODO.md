@@ -9,8 +9,6 @@
 
 # FIX MOBILE
 * Optimize for tablet
-* Inventory-mode & Add-mode to burger menu?
-* Hide Missing in Inventory in Crypt/Library if inventory exist
 
 # FEATURES
 * Create revocable link to Inventory
