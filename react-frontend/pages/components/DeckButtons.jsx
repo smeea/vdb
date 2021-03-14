@@ -39,6 +39,7 @@ function DeckButtons(props) {
       {props.deck && (
         <div className="bp-125">
           <DeckExport
+            deck={props.deck}
             activeDeck={props.activeDeck}
             setShowButtons={props.setShowButtons}
             username={props.username}

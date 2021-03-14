@@ -659,6 +659,10 @@ def deckExportRoute():
                 }
                 result = deckExport(deck, request.json['format'])
                 return jsonify(result)
+        elif request.json['src'] == 'shared':
+            deck = request.json['deck']
+            result = deckExport(deck, request.json['format'])
+            return jsonify(result)
         elif request.json['src'] == 'my':
             d = Deck.query.filter_by(deckid=request.json['deckid']).first()
             deck = {
