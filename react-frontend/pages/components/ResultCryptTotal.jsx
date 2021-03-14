@@ -1,5 +1,4 @@
 import React from 'react';
-import AlertMessage from './AlertMessage.jsx';
 import ResultCryptSortForm from './ResultCryptSortForm.jsx';
 
 function ResultCryptTotal(props) {
@@ -48,7 +47,7 @@ function ResultCryptTotal(props) {
     </>
   );
 
-  return <AlertMessage className="info-message">{value}</AlertMessage>;
+  return <div className="d-flex align-items-center justify-content-between info-message">{value}</div>;
 }
 
 export default ResultCryptTotal;

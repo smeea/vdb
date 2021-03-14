@@ -32,9 +32,8 @@ function App(props) {
   const [email, setEmail] = useState(undefined);
 
   const [showImage, setShowImage] = useState(true);
-  const [addMode, setAddMode] = useState(false);
+  const [addMode, setAddMode] = useState(isMobile);
   const [inventoryMode, setInventoryMode] = useState(false);
-  const [showDeck, setShowDeck] = useState(true);
   const [hideMissing, setHideMissing] = useState(false);
 
   const [decks, setDecks] = useState({});
@@ -596,8 +595,6 @@ function App(props) {
           decks={decks}
           activeDeck={activeDeck}
           setActiveDeck={setActiveDeck}
-          addMode={addMode}
-          setAddMode={setAddMode}
           inventoryMode={inventoryMode}
           setInventoryMode={setInventoryMode}
         />
@@ -700,8 +697,6 @@ function App(props) {
                 setHideMissing={setHideMissing}
                 showSearch={showCryptSearch}
                 setShowSearch={setShowCryptSearch}
-                showDeck={showDeck}
-                setShowDeck={setShowDeck}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 decks={decks}
@@ -739,8 +734,6 @@ function App(props) {
                 setHideMissing={setHideMissing}
                 showSearch={showLibrarySearch}
                 setShowSearch={setShowLibrarySearch}
-                showDeck={showDeck}
-                setShowDeck={setShowDeck}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 decks={decks}

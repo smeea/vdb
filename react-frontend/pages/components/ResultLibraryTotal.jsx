@@ -1,6 +1,4 @@
 import React from 'react';
-
-import AlertMessage from './AlertMessage.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
 
@@ -39,7 +37,7 @@ function ResultLibraryTotal(props) {
     </>
   );
 
-  return <AlertMessage className="info-message">{value}</AlertMessage>;
+  return <div className="d-flex align-items-center justify-content-between info-message">{value}</div>;
 }
 
 export default ResultLibraryTotal;

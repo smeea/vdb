@@ -26,7 +26,7 @@ function Crypt(props) {
     >
       <Row>
         {!props.isMobile && (
-          <Col md={12} xl={props.username && props.showDeck ? 4 : 3} className="px-0">
+          <Col md={12} xl={props.username && props.addMode ? 4 : 3} className="px-0">
             {Object.keys(props.decks).length > 0 && (
               <Row>
                 <Col>
@@ -37,7 +37,7 @@ function Crypt(props) {
                         : 'd-flex'
                     }
                   >
-                    {props.showDeck &&
+                    {props.addMode &&
                      <>
                        <div className={isBranches ? 'w-75' : 'w-100'}>
                          <DeckSelectMy
@@ -62,16 +62,16 @@ function Crypt(props) {
                     <div className="d-flex pl-1">
                       <Button
                         variant="outline-secondary"
-                        onClick={() => props.setShowDeck(!props.showDeck)}
+                        onClick={() => props.setAddMode(!props.addMode)}
                       >
-                        {props.showDeck ? <EyeSlashFill /> : <EyeFill />}
+                        {props.addMode ? <EyeSlashFill /> : <EyeFill />}
                       </Button>
                     </div>
                   </div>
                 </Col>
               </Row>
             )}
-            {props.deckRouter(props.activeDeck) && props.showDeck && (
+            {props.deckRouter(props.activeDeck) && props.addMode && (
               <>
                 <div className="pt-4">
                   <DeckCrypt
@@ -189,7 +189,7 @@ function Crypt(props) {
             setInventoryMode={props.setInventoryMode}
           />
         </Col>
-        {(!props.username || !props.showDeck) && !props.isMobile && <Col xl={1} />}
+        {(!props.username || !props.addMode) && !props.isMobile && <Col xl={1} />}
       </Row>
     </Container>
   );

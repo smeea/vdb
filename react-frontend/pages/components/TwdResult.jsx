@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
-import AlertMessage from './AlertMessage.jsx';
 import TwdResultTotal from './TwdResultTotal.jsx';
 import TwdResultDescription from './TwdResultDescription.jsx';
 import TwdResultCrypt from './TwdResultCrypt.jsx';
@@ -119,9 +118,9 @@ function TwdResult(props) {
   return (
     <>
       {!props.isMobile && props.results.length == 0 && (
-        <AlertMessage className="error-message">
+        <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO DECKS FOUND</b>
-        </AlertMessage>
+        </div>
       )}
       {props.results.length > 0 && (
         <>

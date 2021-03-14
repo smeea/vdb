@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
-import AlertMessage from './AlertMessage.jsx';
 import ResultCryptTable from './ResultCryptTable.jsx';
 import ResultCryptTotal from './ResultCryptTotal.jsx';
 import resultCryptSort from './resultCryptSort.js';
@@ -39,9 +38,9 @@ function ResultCrypt(props) {
   return (
     <>
       {!props.isMobile && props.cards.length == 0 && (
-        <AlertMessage className="error-message">
+        <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO CARDS FOUND</b>
-        </AlertMessage>
+        </div>
       )}
       {props.cards.length > 0 && (
         <>

@@ -1,5 +1,4 @@
 import React from 'react';
-import AlertMessage from './AlertMessage.jsx';
 
 function TwdResultTotal(props) {
   const byYear = {};
@@ -36,6 +35,6 @@ function TwdResultTotal(props) {
     </>
   );
 
-  return <AlertMessage className="info-message">{value}</AlertMessage>;
+  return <div className="d-flex align-items-center justify-content-between info-message">{value}</div>;
 }
 export default TwdResultTotal;

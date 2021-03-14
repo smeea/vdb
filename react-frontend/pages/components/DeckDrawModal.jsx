@@ -3,7 +3,6 @@ import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import X from '../../assets/images/icons/x.svg';
-import AlertMessage from './AlertMessage.jsx';
 import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
 import DeckDrawLibraryTable from './DeckDrawLibraryTable.jsx';
 
@@ -38,7 +37,7 @@ function DeckDrawModal(props) {
                 <div className={props.isMobile ? "pb-4" : null}>
                   <div className="d-flex justify-content-between info-message">
                     <div className="d-flex align-items-center px-2">
-                      <b>Crypt</b>
+                      <b>Uncontrolled</b>
                     </div>
                     <div className="d-flex align-items-center">
                       <b>{props.drawedCrypt.length} + {props.restCrypt.length}</b>
@@ -75,18 +74,17 @@ function DeckDrawModal(props) {
                   />
                 </div>
               ) : (
-                <AlertMessage className="error-message">
+                <div className="d-flex align-items-center justify-content-center error-message p-2">
                   <b>NOT ENOUGH CRYPT CARDS TO DRAW</b>
-                </AlertMessage>
-              )
-              }
+                </div>
+              )}
             </Col>
             <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
               {props.drawedLibrary.length > 0 ? (
                 <>
                   <div className="d-flex justify-content-between info-message">
                     <div className="d-flex align-items-center px-2">
-                      <b>Library</b>
+                      <b>Hand</b>
                     </div>
                     <div className="d-flex align-items-center">
                       <b>{props.drawedLibrary.length} + {props.restLibrary.length}</b>
@@ -120,11 +118,10 @@ function DeckDrawModal(props) {
                   />
                 </>
               ) : (
-                <AlertMessage className="error-message">
+                <div className="d-flex align-items-center justify-content-center error-message p-2">
                   <b>NOT ENOUGH LIBRARY CARDS TO DRAW</b>
-                </AlertMessage>
-              )
-              }
+                </div>
+              )}
             </Col>
           </Row>
           {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) &&
@@ -134,14 +131,12 @@ function DeckDrawModal(props) {
                 <div className={props.isMobile ? "pb-4" : null}>
                   <div className="d-flex justify-content-between info-message">
                     <div className="d-flex align-items-center px-2">
-                      <b>Ash Heap</b>
+                      <b>Controlled</b>
                     </div>
                     <div className="d-flex align-items-center">
                       <b>{props.burnedCrypt.length}</b>
                     </div>
-                    <div className="d-flex align-items-center px-2">
-                      <b>Crypt</b>
-                    </div>
+                    <div />
                   </div>
                   <DeckDrawCryptTable
                     burnCrypt={null}
@@ -167,9 +162,7 @@ function DeckDrawModal(props) {
                     <div className="d-flex align-items-center">
                       <b>{props.burnedLibrary.length}</b>
                     </div>
-                    <div className="d-flex align-items-center px-2">
-                      <b>Library</b>
-                    </div>
+                    <div />
                   </div>
                   <DeckDrawLibraryTable
                     burnLibrary={null}

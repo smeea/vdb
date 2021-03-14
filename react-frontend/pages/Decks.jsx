@@ -8,7 +8,6 @@ import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
 import ArchiveFill from '../assets/images/icons/archive-fill.svg';
-// import AlertMessage from './components/AlertMessage.jsx';
 import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckSelectPrecon from './components/DeckSelectPrecon.jsx';
 import DeckButtons from './components/DeckButtons.jsx';
@@ -441,9 +440,9 @@ function Decks(props) {
             </Col>
           </Row>
           {/* {queryId && */}
-          {/*  <AlertMessage className="error-message p-2 mt-4"> */}
+          {/*  <div className="error-message p-2 mt-4"> */}
           {/*    <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b> */}
-          {/*  </AlertMessage> */}
+          {/*  </div> */}
           {/* } */}
           {props.deckRouter(props.activeDeck) && (
             <Row>

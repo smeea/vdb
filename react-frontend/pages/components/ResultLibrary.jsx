@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
-import AlertMessage from './AlertMessage.jsx';
 import ResultLibraryTable from './ResultLibraryTable.jsx';
 import ResultLibraryTotal from './ResultLibraryTotal.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
@@ -37,9 +36,9 @@ function ResultLibrary(props) {
   return (
     <>
       {!props.isMobile && props.cards.length == 0 && (
-        <AlertMessage className="error-message">
+        <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO CARDS FOUND</b>
-        </AlertMessage>
+        </div>
       )}
       {props.cards.length > 0 && (
         <>
