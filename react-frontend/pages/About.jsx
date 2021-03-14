@@ -6,6 +6,7 @@ import Github from '../assets/images/icons/github.svg';
 import Discord from '../assets/images/icons/discord.svg';
 import EnvelopeFill from '../assets/images/icons/envelope-fill.svg';
 import Globe2 from '../assets/images/icons/globe2.svg';
+import Banner from './components/Banner.jsx';
 
 function About(props) {
   const desktopScreenshots = {
@@ -47,28 +48,7 @@ function About(props) {
     <Container className="main-container">
       <Row className="justify-content-center">
         <Col md={12} lg={6} className="px-0">
-          <div className={props.isMobile ? "d-flex justify-content-between align-items-center mb-3 logo-box" : "d-flex justify-content-between align-items-center my-3 logo-box" }>
-            <div className="d-flex align-items-center">
-              <img className="logo-image" src={`${process.env.ROOT_URL}images/logo.svg`} title="logo" />
-              <div className="d-inline logo-text px-2">
-                VDB
-              </div>
-              <div className="d-inline logo-subtext pl-2">
-                <i>&mdash; your digital retainer</i>
-              </div>
-            </div>
-            {!props.isMobile && (
-              <div className="d-inline px-2">
-                <div className="d-flex justify-content-end small">
-                  <i>If only I had a laptop...</i>
-                </div>
-                <div className="d-flex justify-content-end small">
-                  <i>- Enkidu, The Noah</i>
-                </div>
-              </div>
-            )}
-          </div>
-
+          <Banner isMobile={props.isMobile} />
           <div className="px-2">
             <h5>WHAT IS IT</h5>
             <p>
