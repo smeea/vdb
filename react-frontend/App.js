@@ -580,7 +580,7 @@ function App(props) {
   }, [username, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (lastDeck && lastDeck.deckid && !sharedDeck) {
+    if (lastDeck && lastDeck.deckid && !activeDeck.deckid) {
       setActiveDeck({ src: 'my', deckid: lastDeck.deckid });
     }
   }, [lastDeck]);

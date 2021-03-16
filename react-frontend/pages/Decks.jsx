@@ -218,10 +218,13 @@ function Decks(props) {
     if (queryId && props.cryptCardBase && props.libraryCardBase) {
       if (queryId.length == 32) {
         props.setActiveDeck({ src: 'shared', deckid: queryId });
+        getDeck(queryId);
+      } else if (queryId.includes(':')) {
+        props.setActiveDeck({ src: 'precons', deckid: queryId });
       } else {
         props.setActiveDeck({ src: 'twd', deckid: queryId });
+        getDeck(queryId);
       }
-      getDeck(queryId);
     }
   }, [queryId, props.cryptCardBase, props.libraryCardBase]);
 

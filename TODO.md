@@ -5,6 +5,8 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
+* Error in draw message "not enough card"
+* Card popover out of screen
 
 # FIX MOBILE
 * Optimize for tablet
@@ -24,7 +26,7 @@
 * Create account proposal in Decks for unlogged user
 * Search in deck-select
 * Append revision to deck name in export
-* Search criteries in URL
+* Search criteries store/get from URL
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines
