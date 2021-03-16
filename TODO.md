@@ -24,7 +24,6 @@
 * Help sections to About/Pages
 * Create account proposal in Decks for unlogged user
 * Search in deck-select
-* Append revision to deck name in export
 * Search criteries store/get from URL
 
 # MAYBE LATER FEATURES

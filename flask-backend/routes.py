@@ -669,6 +669,7 @@ def deckExportRoute():
                 'cards': d.cards,
                 'name': d.name,
                 'author': d.author.public_name,
+                'branch_name': d.branch_name,
                 'description': d.description,
             }
             result = deckExport(deck, request.json['format'])

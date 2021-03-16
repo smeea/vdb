@@ -117,10 +117,10 @@ def deckExport(d, format):
                 cryptMin += capacityList[i]
                 cryptMax += capacityList[-i - 1]
 
-            deck += 'Deck Name: ' + d['name'] + '\n'
-            deck += 'Author: ' + d['author'] + '\n'
-            deck += 'Description: ' + d['description'] + '\n'
-            deck += '\n'
+            deck_name = f"{d['name']} [{d['branch_name']}]" if 'branch_name' in d else d['name']
+            deck += f"Name: {deck_name}\n"
+            deck += f"Author: {d['author']}\n"
+            deck += f"Description: {d['description']}\n" + "\n"
 
             cryptTitle = 'Crypt (' + str(
                 cryptTotalCards) + ' cards, min=' + str(
@@ -241,7 +241,7 @@ def deckExport(d, format):
 
                     deck += '\n'
 
-        return {'name': d['name'], 'format': format, 'deck': deck}
+        return {'name': deck_name, 'format': format, 'deck': deck}
 
     except Exception:
         pass
