@@ -215,7 +215,7 @@ function Decks(props) {
   }, [hash, props.cryptCardBase, props.libraryCardBase]);
 
   useEffect(() => {
-    if (queryId && props.cryptCardBase && props.libraryCardBase) {
+    if (queryId && props.activeDeck.deckid != queryId && props.cryptCardBase && props.libraryCardBase) {
       if (queryId.length == 32) {
         props.setActiveDeck({ src: 'shared', deckid: queryId });
         getDeck(queryId);
@@ -242,13 +242,13 @@ function Decks(props) {
   useEffect(() => {
     if (props.activeDeck && query.get('id')) {
       setQueryId(query.get('id'));
-      history.push('/decks');
     }
   }, [props.activeDeck, query]);
 
   useEffect(() => {
     if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons')
       setSelectFrom(props.activeDeck.src);
+    if (props.activeDeck.deckid) history.push(`/decks?id=${props.activeDeck.deckid}`);
   }, [props.activeDeck]);
 
   return (

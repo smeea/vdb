@@ -6,7 +6,6 @@
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Error in draw message "not enough card"
-* Card popover out of screen
 
 # FIX MOBILE
 * Optimize for tablet
