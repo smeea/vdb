@@ -5,7 +5,6 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* Error in draw message "not enough card"
 
 # FIX MOBILE
 * Optimize for tablet
@@ -33,7 +32,6 @@
 * Go to next card in modal preview (react-swipeable-views?)
 * Export inventory to CSV
 * Deck export to JOL
-* Append deckid to address line (history.push)
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Screenshots to Bootstrap/Carousel

@@ -24,7 +24,6 @@ function Decks(props) {
   const [showInfo, setShowInfo] = useState(false);
   const [showMenuButtons, setShowMenuButtons] = useState(false);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
-  const [queryId, setQueryId] = useState(null);
   const { hash } = useLocation();
   const history = useHistory();
   const [selectFrom, setSelectFrom] = useState(
@@ -215,41 +214,40 @@ function Decks(props) {
   }, [hash, props.cryptCardBase, props.libraryCardBase]);
 
   useEffect(() => {
-    if (queryId && props.activeDeck.deckid != queryId && props.cryptCardBase && props.libraryCardBase) {
-      if (queryId.length == 32) {
-        props.setActiveDeck({ src: 'shared', deckid: queryId });
-        getDeck(queryId);
-      } else if (queryId.includes(':')) {
-        props.setActiveDeck({ src: 'precons', deckid: queryId });
+    if (!props.activeDeck.deckid && query.get('id') && props.cryptCardBase && props.libraryCardBase) {
+      if (query.get('id').length == 32) {
+        props.setActiveDeck({ src: 'shared', deckid: query.get('id') });
+        getDeck(query.get('id'));
+      } else if (query.get('id').includes(':')) {
+        props.setActiveDeck({ src: 'precons', deckid: query.get('id') });
       } else {
-        props.setActiveDeck({ src: 'twd', deckid: queryId });
-        getDeck(queryId);
+        props.setActiveDeck({ src: 'twd', deckid: query.get('id') });
+        getDeck(query.get('id'));
       }
     }
-  }, [queryId, props.cryptCardBase, props.libraryCardBase]);
 
-  useEffect(() => {
+    if (props.activeDeck.deckid && props.activeDeck.deckid != query.get('id') && props.activeDeck.deckid != 'deckInUrl') history.push(`/decks?id=${props.activeDeck.deckid}`);
+
     if (
       props.activeDeck.src == 'twd' &&
-      !(props.sharedDeck && props.sharedDeck.Id == props.activeDeck.deckid)
+        !(props.sharedDeck && props.sharedDeck.Id == props.activeDeck.deckid)
     ) {
       props.cryptCardBase &&
         props.libraryCardBase &&
         getDeck(props.activeDeck.deckid);
     }
-  }, [props.activeDeck, props.cryptCardBase, props.libraryCardBase]);
+  }, [query, props.activeDeck, props.cryptCardBase, props.libraryCardBase]);
 
-  useEffect(() => {
-    if (props.activeDeck && query.get('id')) {
-      setQueryId(query.get('id'));
-    }
-  }, [props.activeDeck, query]);
+  console.log(props.activeDeck)
 
   useEffect(() => {
     if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons')
       setSelectFrom(props.activeDeck.src);
-    if (props.activeDeck.deckid != query.get('id')) history.push(`/decks?id=${props.activeDeck.deckid}`);
-  }, [props.activeDeck]);
+
+    if (props.decks && props.decks[props.activeDeck.deckid] && props.activeDeck.src != 'my') {
+      props.setActiveDeck({ src: 'my', deckid: props.activeDeck.deckid })
+    }
+  }, [props.activeDeck, props.decks]);
 
   return (
     <Container
@@ -328,24 +326,6 @@ function Decks(props) {
                       )}
                     </div>
                   </div>
-                  {/* {selectFrom == 'my' && */}
-                  {/*  props.deckRouter(props.activeDeck) && */}
-                  {/*  ( */}
-                  {/*    ( */}
-                  {/*      props.deckRouter(props.activeDeck).branches && */}
-                  {/*        props.deckRouter(props.activeDeck).branches.length > 0 */}
-                  {/*    ) */}
-                  {/*      || props.deckRouter(props.activeDeck).master */}
-                  {/*  ) && */}
-                  {/*  <div className="pt-2 w-100"> */}
-                  {/*    <DeckBranchSelect */}
-                  {/*      decks={props.decks} */}
-                  {/*      activeDeck={props.activeDeck} */}
-                  {/*      setActiveDeck={props.setActiveDeck} */}
-                  {/*      inventoryMode={props.inventoryMode} */}
-                  {/*    /> */}
-                  {/*  </div> */}
-                  {/* } */}
                   <Form className="py-1 my-0">
                     {props.username && (
                       <Form.Check
@@ -442,11 +422,6 @@ function Decks(props) {
               )}
             </Col>
           </Row>
-          {/* {queryId && */}
-          {/*  <div className="error-message p-2 mt-4"> */}
-          {/*    <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b> */}
-          {/*  </div> */}
-          {/* } */}
           {props.deckRouter(props.activeDeck) && (
             <Row>
               <Col lg={7} className="px-0 px-lg-3">

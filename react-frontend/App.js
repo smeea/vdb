@@ -39,14 +39,19 @@ function App(props) {
   const [inventoryMode, setInventoryMode] = useState(false);
   const [hideMissing, setHideMissing] = useState(false);
 
-  const [decks, setDecks] = useState({});
+  const [decks, setDecks] = useState(undefined);
   const [preconDecks, setPreconDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const [inventory, setInventory] = useState({ crypt: {}, library: {} });
-  const [usedCards, setUsedCards] = useState({});
+  const [usedCards, setUsedCards] = useState({
+    softCrypt: {},
+    hardCrypt: {},
+    softLibrary: {},
+    hardLibrary: {},
+  });
   const isInventory = Object.keys(inventory.crypt).length > 0 || Object.keys(inventory.library).length > 0
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
@@ -322,6 +327,8 @@ function App(props) {
             });
           });
           setDecks(data);
+        } else {
+          setDecks({});
         }
       });
   };
@@ -445,20 +452,22 @@ function App(props) {
       return new Date(b[1]) - new Date(a[1]);
     };
 
-    const decksForSort = [];
+    if (decks) {
+      const decksForSort = [];
 
-    Object.keys(decks).map((key) => {
-      decksForSort.push([decks[key], decks[key].timestamp]);
-    });
+      Object.keys(decks).map((key) => {
+        decksForSort.push([decks[key], decks[key].timestamp]);
+      });
 
-    const lastDeckArray = decksForSort.sort(byTimestamp)[0];
-    if (lastDeckArray) {
-      setLastDeck(lastDeckArray[0]);
+      const lastDeckArray = decksForSort.sort(byTimestamp)[0];
+      if (lastDeckArray) {
+        setLastDeck(lastDeckArray[0]);
+      }
     }
   }, [decks]);
 
   useEffect(() => {
-    if (inventory) {
+    if (inventory && decks) {
       const softCrypt = {};
       const softLibrary = {};
       const hardCrypt = {};
@@ -574,7 +583,7 @@ function App(props) {
       cryptCardBase && libraryCardBase && getInventory();
       cryptCardBase && libraryCardBase && getDecks();
     } else {
-      setDecks({});
+      setDecks(undefined);
     }
     cryptCardBase && libraryCardBase && getPreconDecks();
   }, [username, cryptCardBase, libraryCardBase]);

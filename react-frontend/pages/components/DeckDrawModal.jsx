@@ -33,95 +33,95 @@ function DeckDrawModal(props) {
           </Row>
           <Row className="px-0 pb-4">
             <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
-              {props.drawedCrypt.length > 0 ? (
-                <div className={props.isMobile ? "pb-4" : null}>
-                  <div className="d-flex justify-content-between info-message">
-                    <div className="d-flex align-items-center px-2">
-                      <b>Uncontrolled</b>
-                    </div>
-                    <div className="d-flex align-items-center">
-                      <b>{props.drawedCrypt.length} + {props.restCrypt.length}</b>
-                    </div>
-                    <div className="d-flex">
+              <div className={props.isMobile ? "pb-4" : null}>
+                <div className="d-flex justify-content-between info-message">
+                  <div className="d-flex align-items-center px-2">
+                    <b>Uncontrolled</b>
+                  </div>
+                  <div className="d-flex align-items-center">
+                    <b>{props.drawedCrypt.length} + {props.restCrypt.length}</b>
+                  </div>
+                  <div className="d-flex">
+                    <Button
+                      variant="outline-secondary"
+                      onClick={props.handleReDrawCrypt}
+                      disabled={props.cryptTotal < 4}
+                    >
+                      <span className="align-items-center">
+                        <ArrowRepeat />
+                      </span>
+                    </Button>
+                    <div className="lp-125">
                       <Button
                         variant="outline-secondary"
-                        onClick={props.handleReDrawCrypt}
+                        onClick={props.handleDrawOneCrypt}
+                        disabled={props.restCrypt.length < 1}
                       >
-                        <span className="align-items-center">
-                          <ArrowRepeat />
-                        </span>
+                        +1
                       </Button>
-                      <div className="lp-125">
-                        <Button
-                          variant="outline-secondary"
-                          onClick={props.handleDrawOneCrypt}
-                        >
-                          +1
-                        </Button>
-                      </div>
                     </div>
                   </div>
-                  <DeckDrawCryptTable
-                    burnCrypt={props.burnCrypt}
-                    crypt={props.crypt}
-                    total={props.cryptTotal}
-                    resultCards={props.drawedCrypt}
-                    className="search-crypt-table"
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
-                    isMobile={props.isMobile}
-                    isWide={true}
-                  />
                 </div>
-              ) : (
-                <div className="d-flex align-items-center justify-content-center error-message p-2">
-                  <b>NOT ENOUGH CRYPT CARDS TO DRAW</b>
-                </div>
-              )}
+                {props.cryptTotal < 4 &&
+                 <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
+                   <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
+                 </div>
+                }
+                <DeckDrawCryptTable
+                  burnCrypt={props.burnCrypt}
+                  crypt={props.crypt}
+                  total={props.cryptTotal}
+                  resultCards={props.drawedCrypt}
+                  className="search-crypt-table"
+                  showImage={props.showImage}
+                  setShowImage={props.setShowImage}
+                  isMobile={props.isMobile}
+                  isWide={true}
+                />
+              </div>
             </Col>
             <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
-              {props.drawedLibrary.length > 0 ? (
-                <>
-                  <div className="d-flex justify-content-between info-message">
-                    <div className="d-flex align-items-center px-2">
-                      <b>Hand</b>
-                    </div>
-                    <div className="d-flex align-items-center">
-                      <b>{props.drawedLibrary.length} + {props.restLibrary.length}</b>
-                    </div>
-                    <div className="d-flex">
-                      <Button
-                        variant="outline-secondary"
-                        onClick={props.handleReDrawLibrary}
-                      >
-                        <ArrowRepeat />
-                      </Button>
-                      <div className="lp-125">
-                        <Button
-                          variant="outline-secondary"
-                          onClick={props.handleDrawOneLibrary}
-                        >
-                          +1
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                  <DeckDrawLibraryTable
-                    burnLibrary={props.burnLibrary}
-                    library={props.library}
-                    total={props.libraryTotal}
-                    resultCards={props.drawedLibrary}
-                    className="search-library-table"
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
-                    isMobile={props.isMobile}
-                  />
-                </>
-              ) : (
-                <div className="d-flex align-items-center justify-content-center error-message p-2">
-                  <b>NOT ENOUGH LIBRARY CARDS TO DRAW</b>
+              <div className="d-flex justify-content-between info-message">
+                <div className="d-flex align-items-center px-2">
+                  <b>Hand</b>
                 </div>
-              )}
+                <div className="d-flex align-items-center">
+                  <b>{props.drawedLibrary.length} + {props.restLibrary.length}</b>
+                </div>
+                <div className="d-flex">
+                  <Button
+                    variant="outline-secondary"
+                    onClick={props.handleReDrawLibrary}
+                    disabled={props.libraryTotal < 7}
+                  >
+                    <ArrowRepeat />
+                  </Button>
+                  <div className="lp-125">
+                    <Button
+                      variant="outline-secondary"
+                      onClick={props.handleDrawOneLibrary}
+                      disabled={props.restLibrary.length < 1}
+                    >
+                      +1
+                    </Button>
+                  </div>
+                </div>
+              </div>
+              {props.libraryTotal < 7 &&
+               <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
+                 <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
+               </div>
+              }
+              <DeckDrawLibraryTable
+                burnLibrary={props.burnLibrary}
+                library={props.library}
+                total={props.libraryTotal}
+                resultCards={props.drawedLibrary}
+                className="search-library-table"
+                showImage={props.showImage}
+                setShowImage={props.setShowImage}
+                isMobile={props.isMobile}
+              />
             </Col>
           </Row>
           {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) &&
