@@ -248,7 +248,7 @@ function Decks(props) {
   useEffect(() => {
     if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons')
       setSelectFrom(props.activeDeck.src);
-    if (props.activeDeck.deckid) history.push(`/decks?id=${props.activeDeck.deckid}`);
+    if (props.activeDeck.deckid != query.get('id')) history.push(`/decks?id=${props.activeDeck.deckid}`);
   }, [props.activeDeck]);
 
   return (
