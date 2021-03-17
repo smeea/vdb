@@ -80,8 +80,7 @@ def get_crypt_by_traits(traits, crypt):
                     counter += 1
 
             elif trait == '1 stealth':
-                if re.search(r'{}'.format('[:.] \+1 stealth.'),
-                             card['Card Text'].lower()):
+                if re.search(r'{}'.format('[:.] \+1 stealth.'), card['Card Text'].lower()) or re.search(r'{}'.format('gets \+1 stealth on each of (his|her|they) actions'), card['Card Text'].lower()):
                     counter += 1
 
             elif trait == 'additional strike':
