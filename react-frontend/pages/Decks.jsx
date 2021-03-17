@@ -29,6 +29,7 @@ function Decks(props) {
   const [selectFrom, setSelectFrom] = useState(
     props.username ? 'my' : 'precons'
   );
+  const [deckError, setDeckError] = useState(false);
 
   const handleShowButtons = state => {
     setShowMenuButtons(state);
@@ -132,7 +133,8 @@ function Decks(props) {
           });
           props.setSharedDeck(data);
         }
-      });
+      })
+      .catch(error => setDeckError(true));
   };
 
   const deckUpdate = (deckid, field, value) => {
@@ -245,6 +247,8 @@ function Decks(props) {
     if (props.decks && props.decks[props.activeDeck.deckid] && props.activeDeck.src != 'my') {
       props.setActiveDeck({ src: 'my', deckid: props.activeDeck.deckid })
     }
+
+    if (props.deckRouter(props.activeDeck)) setDeckError(false);
   }, [props.activeDeck, props.decks]);
 
   return (
@@ -422,6 +426,15 @@ function Decks(props) {
               )}
             </Col>
           </Row>
+          {deckError &&
+           <Row>
+             <Col className="px-0 px-lg-3">
+               <div className="d-flex align-items-center justify-content-center error-message p-2">
+                 <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>
+               </div>
+             </Col>
+           </Row>
+          }
           {props.deckRouter(props.activeDeck) && (
             <Row>
               <Col lg={7} className="px-0 px-lg-3">

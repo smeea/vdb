@@ -1,5 +1,4 @@
 # FIX
-* Alert message in Deck if wrong url
 * TWD location/winner form reset
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
