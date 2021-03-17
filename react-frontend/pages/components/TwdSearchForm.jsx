@@ -356,7 +356,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col
           xs={9}
-          className="d-flex justify-content-end px-0 checkbox-buttons"
+          className="d-flex justify-content-end px-0 z-index-0"
         >
           <TwdSearchFormLibraryTotal
             value={props.formState.libraryTotal}
@@ -390,7 +390,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col
           xs={7}
-          className="d-flex justify-content-end px-0 checkbox-buttons"
+          className="d-flex justify-content-end px-0 z-index-0"
         >
           <TwdSearchFormCapacity
             value={props.formState.capacity}

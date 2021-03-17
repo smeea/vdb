@@ -97,7 +97,7 @@ function AccountRegister(props) {
         <span className="ml-2">Create account</span>
       </h6>
       <Form className="mb-2" onSubmit={handleSubmitButton}>
-        <InputGroup>
+        <InputGroup className="z-index-0">
           <FormControl
             placeholder="New Username"
             type="text"

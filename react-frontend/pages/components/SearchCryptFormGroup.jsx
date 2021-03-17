@@ -26,7 +26,7 @@ function SearchCryptFormGroup(props) {
       <Col xs={3} className="d-flex px-0">
         <label className="h6 mb-0">Group:</label>
       </Col>
-      <Col xs={9} className="d-flex justify-content-end checkbox-buttons">
+      <Col xs={9} className="d-flex justify-content-end z-index-0">
         <ButtonGroup toggle>{GroupButtons}</ButtonGroup>
       </Col>
     </Row>

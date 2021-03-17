@@ -4,7 +4,6 @@ import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
 import AccountLogin from './components/AccountLogin.jsx';
 import AccountRegister from './components/AccountRegister.jsx';
-import ArrowRepeat from '../assets/images/icons/arrow-repeat.svg';
 import DeckNewCryptCard from './components/DeckNewCryptCard.jsx';
 import DeckNewLibraryCard from './components/DeckNewLibraryCard.jsx';
 import InventoryCrypt from './components/InventoryCrypt.jsx';

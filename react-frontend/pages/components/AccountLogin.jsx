@@ -133,7 +133,7 @@ function AccountLogin(props) {
         )}
       </h6>
       <Form className="mb-0" onSubmit={handleSubmitButton}>
-        <InputGroup>
+        <InputGroup className="z-index-0">
           <FormControl
             placeholder="Username"
             type="text"

@@ -8,6 +8,8 @@ import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
 import ArchiveFill from '../assets/images/icons/archive-fill.svg';
+import AccountLogin from './components/AccountLogin.jsx';
+import AccountRegister from './components/AccountRegister.jsx';
 import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckSelectPrecon from './components/DeckSelectPrecon.jsx';
 import DeckButtons from './components/DeckButtons.jsx';
@@ -331,7 +333,7 @@ function Decks(props) {
                     </div>
                   </div>
                   <Form className="py-1 my-0">
-                    {props.username && (
+                    {props.username && props.decks && (
                       <Form.Check
                         className="px-2"
                         checked={selectFrom == 'my'}
@@ -511,6 +513,27 @@ function Decks(props) {
           </Col>
         )}
       </Row>
+      {!props.username && !props.activeDeck.deckid &&
+       <Row className="h-50 align-items-center justify-content-center px-2">
+         <Col md={12} lg={5} className="px-0">
+           <div className="d-flex justify-content-center pb-3">
+             <h6>Login required to create your decks</h6>
+           </div>
+           <div className="py-2">
+             <AccountLogin
+               setUsername={props.setUsername}
+               isMobile={props.isMobile}
+             />
+           </div>
+           <div className="py-2">
+             <AccountRegister
+               setUsername={props.setUsername}
+               whoAmI={props.whoAmI}
+             />
+           </div>
+         </Col>
+       </Row>
+      }
       {props.isMobile && showFloatingButtons && (
         <>
           <div

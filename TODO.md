@@ -1,4 +1,5 @@
 # FIX
+* Quick card to show on single result
 * TWD location/winner form reset
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
@@ -11,16 +12,13 @@
 # FEATURES
 * Create revocable link to Inventory
 * Different sets images - vtes.pl
-* Always-on opt-in deck-mode \ inventory-mode
 * Precon Decks: name, set to description, company from sets.csv
 * Precon Decks icons (clan)
 * Inventory data in TWD browser
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
 * Popover on precons in modal preview set section
-* Quick card to show on single result
 * Help sections to About/Pages
-* Create account proposal in Decks for unlogged user
 * Search criteries store/get from URL
 
 # MAYBE LATER FEATURES
