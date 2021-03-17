@@ -22,7 +22,6 @@
 * Quick card to show on single result
 * Help sections to About/Pages
 * Create account proposal in Decks for unlogged user
-* Search in deck-select
 * Search criteries store/get from URL
 
 # MAYBE LATER FEATURES

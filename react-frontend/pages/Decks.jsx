@@ -238,8 +238,6 @@ function Decks(props) {
     }
   }, [query, props.activeDeck, props.cryptCardBase, props.libraryCardBase]);
 
-  console.log(props.activeDeck)
-
   useEffect(() => {
     if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons')
       setSelectFrom(props.activeDeck.src);
@@ -276,11 +274,13 @@ function Decks(props) {
                           activeDeck={props.activeDeck}
                           setActiveDeck={props.setActiveDeck}
                           inventoryMode={props.inventoryMode}
+                          isMobile={props.isMobile}
                         />
                       ) : (
                         <DeckSelectPrecon
                           activeDeck={props.activeDeck}
                           setActiveDeck={props.setActiveDeck}
+                          isMobile={props.isMobile}
                         />
                       )}
                     </div>

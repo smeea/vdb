@@ -42,10 +42,20 @@ function DeckSelectMy(props) {
     return i[0];
   });
 
+  const filterOption = ({ label }, string) => {
+    const name = label.props.children[0]
+    if (name) {
+      return name.toLowerCase().includes(string);
+    } else {
+      return true;
+    }
+  };
+
   return (
     <Select
       options={options}
-      isSearchable={false}
+      isSearchable={!props.isMobile}
+      filterOption={filterOption}
       name="decks"
       placeholder="Select Deck"
       value={options.find((obj) => {

@@ -19,12 +19,22 @@ function DeckSelectPrecon(props) {
     }
   });
 
+  const filterOption = ({ label }, string) => {
+    const name = label.props.children[0].props.children
+    if (name) {
+      return name.toLowerCase().includes(string);
+    } else {
+      return true;
+    }
+  };
+
   return (
     <>
       <Select
         options={options}
-        isSearchable={false}
+        isSearchable={!props.isMobile}
         name="decks"
+        filterOption={filterOption}
         placeholder="Select Deck"
         value={options.find((obj) => obj.value === props.activeDeck.deckid)}
         onChange={(e) =>

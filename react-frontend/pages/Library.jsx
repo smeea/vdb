@@ -45,6 +45,7 @@ function Library(props) {
                            activeDeck={props.activeDeck}
                            setActiveDeck={props.setActiveDeck}
                            inventoryMode={props.inventoryMode}
+                           isMobile={props.isMobile}
                          />
                        </div>
                        {isBranches && (
