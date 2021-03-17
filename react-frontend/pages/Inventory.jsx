@@ -55,7 +55,7 @@ function Inventory(props) {
                           soft: props.usedCards.softCrypt,
                           hard: props.usedCards.hardCrypt,
                         }}
-                        decks={props.decks}
+                        decks={props.decks ? props.decks : {}}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
@@ -80,7 +80,7 @@ function Inventory(props) {
                             soft: props.usedCards.softCrypt,
                             hard: props.usedCards.hardCrypt,
                           }}
-                          decks={props.decks}
+                          decks={props.decks ? props.decks : {}}
                           showFloatingButtons={showFloatingButtons}
                           setShowFloatingButtons={setShowFloatingButtons}
                         />
@@ -115,7 +115,7 @@ function Inventory(props) {
                           soft: props.usedCards.softLibrary,
                           hard: props.usedCards.hardLibrary,
                         }}
-                        decks={props.decks}
+                        decks={props.decks ? props.decks : {}}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
@@ -140,7 +140,7 @@ function Inventory(props) {
                             soft: props.usedCards.softLibrary,
                             hard: props.usedCards.hardLibrary,
                           }}
-                          decks={props.decks}
+                          decks={props.decks ? props.decks : {}}
                           showFloatingButtons={showFloatingButtons}
                           setShowFloatingButtons={setShowFloatingButtons}
                         />
@@ -186,7 +186,7 @@ function Inventory(props) {
                         soft: props.usedCards.softCrypt,
                         hard: props.usedCards.hardCrypt,
                       }}
-                      decks={props.decks}
+                      decks={props.decks ? props.decks : {}}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
                       setShowFloatingButtons={setShowFloatingButtons}
@@ -210,7 +210,7 @@ function Inventory(props) {
                           soft: props.usedCards.softCrypt,
                           hard: props.usedCards.hardCrypt,
                         }}
-                        decks={props.decks}
+                        decks={props.decks ? props.decks : {}}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
                       />
@@ -242,7 +242,7 @@ function Inventory(props) {
                         soft: props.usedCards.softLibrary,
                         hard: props.usedCards.hardLibrary,
                       }}
-                      decks={props.decks}
+                      decks={props.decks ? props.decks : {}}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
                       setShowFloatingButtons={setShowFloatingButtons}
@@ -267,7 +267,7 @@ function Inventory(props) {
                           soft: props.usedCards.softLibrary,
                           hard: props.usedCards.hardLibrary,
                         }}
-                        decks={props.decks}
+                        decks={props.decks ? props.decks : {}}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
                       />
@@ -276,7 +276,7 @@ function Inventory(props) {
               </Col>
               <Col lg={2} className="px-0 px-lg-3">
                 <InventoryButtons
-                  decks={props.decks}
+                  decks={props.decks ? props.decks : {}}
                   inventoryDeckAdd={props.inventoryDeckAdd}
                   setInventory={props.setInventory}
                   isMobile={props.isMobile}
@@ -354,7 +354,7 @@ function Inventory(props) {
                 </Col>
               </Row>
               <InventoryButtons
-                decks={props.decks}
+                decks={props.decks ? props.decks : {}}
                 inventoryDeckAdd={props.inventoryDeckAdd}
                 setInventory={props.setInventory}
                 isMobile={props.isMobile}

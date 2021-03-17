@@ -27,7 +27,7 @@ function Crypt(props) {
       <Row>
         {!props.isMobile && (
           <Col md={12} xl={props.username && props.addMode ? 4 : 3} className="px-0">
-            {Object.keys(props.decks).length > 0 && (
+            {props.decks && Object.keys(props.decks).length > 0 && (
               <Row>
                 <Col>
                   <div
