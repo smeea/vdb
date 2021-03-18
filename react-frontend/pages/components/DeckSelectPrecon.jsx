@@ -1,11 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
-import Stack from '../../assets/images/icons/stack.svg';
-import Tornado from '../../assets/images/icons/tornado.svg';
 import precons from './forms_data/precons.json';
 
 function DeckSelectPrecon(props) {
-
   const options = [];
   precons.map((i, index) => {
 
@@ -18,8 +15,6 @@ function DeckSelectPrecon(props) {
         return(
           <div className="d-inline pr-3" key={index}>
             {clan != 'Bundle' && clan != 'Mix' && <img src={imgSrc} className="discipline-base-image-results" />}
-            {clan == 'Bundle' && <Stack />}
-            {clan == 'Mix' && <Tornado />}
           </div>
         )
       })
@@ -30,7 +25,9 @@ function DeckSelectPrecon(props) {
         label: (
           <div className="d-flex justify-content-between align-items-center">
             <div className="pr-2">
-              {clanImages}
+              <div className={clanImages.length == 1 ? "margin-full" : "d-inline"}>
+                {clanImages}
+              </div>
               {i[3]}
             </div>
             <div className="small">{`${i[1]} '${i[0]}`}</div>
