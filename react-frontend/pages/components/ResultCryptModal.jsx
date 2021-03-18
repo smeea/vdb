@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Modal, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
@@ -9,8 +9,10 @@ import ButtonCardCopyUrl from './ButtonCardCopyUrl.jsx';
 import ButtonToggleShowImage from './ButtonToggleShowImage.jsx';
 
 function ResultCryptModal(props) {
+  const [imageSet, setImageSet] = useState(null);
+
   const CardImage = () => {
-    const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card[
+    const imgSrc = `${process.env.ROOT_URL}images/cards/${imageSet ? 'set/' + imageSet + '/' : "" }${props.card[
       'ASCII Name'
     ]
       .toLowerCase()
@@ -39,13 +41,16 @@ function ResultCryptModal(props) {
         {props.isMobile ? (
           <>
             {props.showImage ? (
-              <CardImage />
+              <>
+                <CardImage />
+              </>
             ) : (
               <>
                 <div className="px-3 pt-3">
                   <ResultCryptLayoutText
                     card={props.card}
                     handleClose={props.handleClose}
+                    setImageSet={setImageSet}
                   />
                 </div>
                 {props.inventoryMode && (
@@ -61,7 +66,7 @@ function ResultCryptModal(props) {
                           <div className="px-1">
                             <b>
                               {props.inventoryState.softUsedMax +
-                                props.inventoryState.hardUsedTotal}
+                               props.inventoryState.hardUsedTotal}
                             </b>
                           </div>
                           - Total Used
@@ -113,6 +118,7 @@ function ResultCryptModal(props) {
                 <ResultCryptLayoutText
                   card={props.card}
                   handleClose={props.handleClose}
+                  setImageSet={setImageSet}
                 />
               </div>
               {props.inventoryMode && (
@@ -129,7 +135,7 @@ function ResultCryptModal(props) {
                           <div className="px-1">
                             <b>
                               {props.inventoryState.softUsedMax +
-                                props.inventoryState.hardUsedTotal}
+                               props.inventoryState.hardUsedTotal}
                             </b>
                           </div>
                           - Total Used

@@ -5,14 +5,12 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* Bundle & Misc icons to Precon Select
 
 # FIX MOBILE
 * Optimize for tablet
 
 # FEATURES
 * Create revocable link to Inventory
-* Different sets images - vtes.pl
 * Precon Decks: name, set to description, company from sets.csv
 * Inventory data in TWD browser
 * Mark pdf-sets in inventory-mode

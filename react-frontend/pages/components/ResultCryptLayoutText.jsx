@@ -72,7 +72,7 @@ function ResultCryptLayoutText(props) {
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
     return (
-      <div className="d-inline-block nobr px-1" key={index}>
+      <div className="d-inline-block nobr px-1" onClick={() => props.setImageSet(k.toLowerCase())} key={index}>
         {k}
         <div className="d-inline gray">:{props.card['Set'][k]}</div>
       </div>

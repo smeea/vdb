@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Modal, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
@@ -9,8 +9,10 @@ import ButtonCardCopyUrl from './ButtonCardCopyUrl.jsx';
 import ButtonToggleShowImage from './ButtonToggleShowImage.jsx';
 
 function ResultLibraryModal(props) {
+  const [imageSet, setImageSet] = useState(null);
+
   const CardImage = () => {
-    const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card[
+    const imgSrc = `${process.env.ROOT_URL}images/cards/${imageSet ? 'set/' + imageSet + '/' : "" }${props.card[
       'ASCII Name'
     ]
       .toLowerCase()
@@ -39,13 +41,16 @@ function ResultLibraryModal(props) {
         {props.isMobile ? (
           <>
             {props.showImage ? (
-              <CardImage />
+              <div className="py-2">
+                <CardImage />
+              </div>
             ) : (
               <>
                 <div className="px-3 pt-3">
                   <ResultLibraryLayoutText
                     card={props.card}
                     handleClose={props.handleClose}
+                    setImageSet={setImageSet}
                   />
                 </div>
                 {props.inventoryMode && (
@@ -113,6 +118,7 @@ function ResultLibraryModal(props) {
                 <ResultLibraryLayoutText
                   card={props.card}
                   handleClose={props.handleClose}
+                  setImageSet={setImageSet}
                 />
               </div>
               {props.inventoryMode && (
