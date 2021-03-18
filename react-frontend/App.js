@@ -10,6 +10,7 @@ import defaultsTwdForm from './pages/components/forms_data/defaultsTwdForm.json'
 import defaultsCryptForm from './pages/components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from './pages/components/forms_data/defaultsLibraryForm.json';
 import preconDecksData from './preconDecks.json';
+import preconData from './pages/components/forms_data/precons.json';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 
@@ -279,11 +280,13 @@ function App(props) {
     Object.keys(preconDecksData).map((set) => {
       Object.keys(preconDecksData[set]).map((precon) => {
         const deckid = `${set}:${precon}`;
+        const name = preconData.filter(i => i[1] == set && i[2] == precon)[0][3]
+
         precons[deckid] = {
-          name: `Precon ${deckid}`,
+          name: `${name}`,
           deckid: deckid,
           author: '',
-          description: '',
+          description: `Preconstructed deck from ${set}`,
           crypt: {},
           library: {},
         };

@@ -11,7 +11,6 @@
 
 # FEATURES
 * Create revocable link to Inventory
-* Precon Decks: name, set to description, company from sets.csv
 * Inventory data in TWD browser
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
