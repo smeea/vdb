@@ -1,5 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
+import Stack from '../../assets/images/icons/stack.svg';
+import Tornado from '../../assets/images/icons/tornado.svg';
 import precons from './forms_data/precons.json';
 
 function DeckSelectPrecon(props) {
@@ -15,7 +17,9 @@ function DeckSelectPrecon(props) {
 
         return(
           <div className="d-inline pr-3" key={index}>
-            <img src={imgSrc} className="discipline-base-image-results" />
+            {clan != 'Bundle' || clan != 'Mix' && <img src={imgSrc} className="discipline-base-image-results" />}
+            {clan == 'Bundle' && <Stack />}
+            {clan == 'Mix' && <Tornado />}
           </div>
         )
       })
