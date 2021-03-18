@@ -10,15 +10,16 @@ import ButtonCardCopyUrl from './components/ButtonCardCopyUrl.jsx';
 function Cards(props) {
   const history = useHistory();
   const [card, setCard] = useState(undefined);
+  const [imageSet, setImageSet] = useState(null);
 
   const CardImage = () => {
     if (card) {
       const imgSrc =
         card['Id'] > 200000
-          ? `${process.env.ROOT_URL}images/cards/${card['ASCII Name']
+            ? `${process.env.ROOT_URL}images/cards/${imageSet ? 'set/' + imageSet + '/' : "" }${card['ASCII Name']
               .toLowerCase()
               .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${card['Adv'] && 'adv'}.jpg`
-          : `${process.env.ROOT_URL}images/cards/${card['ASCII Name']
+            : `${process.env.ROOT_URL}images/cards/${imageSet ? 'set/' + imageSet + '/' : "" }${card['ASCII Name']
               .toLowerCase()
               .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
 
@@ -70,10 +71,16 @@ function Cards(props) {
                       <>
                         <div className="p-3">
                           {card && card.Id > 200000 && (
-                            <ResultCryptLayoutText card={card} />
+                            <ResultCryptLayoutText
+                              card={card}
+                              setImageSet={setImageSet}
+                            />
                           )}
                           {card && card.Id < 200000 && (
-                            <ResultLibraryLayoutText card={card} />
+                            <ResultLibraryLayoutText
+                              card={card}
+                              setImageSet={setImageSet}
+                            />
                           )}
                         </div>
                         <div className="px-3 pb-3">
@@ -116,10 +123,16 @@ function Cards(props) {
                 </Col>
                 <Col lg={4}>
                   {card && card.Id > 200000 && (
-                    <ResultCryptLayoutText card={card} />
+                    <ResultCryptLayoutText
+                      card={card}
+                      setImageSet={setImageSet}
+                    />
                   )}
                   {card && card.Id < 200000 && (
-                    <ResultLibraryLayoutText card={card} />
+                    <ResultLibraryLayoutText
+                      card={card}
+                      setImageSet={setImageSet}
+                    />
                   )}
                   <div className="pt-3">
                     <ButtonCardCopyUrl isMobile={props.isMobile} id={card.Id} />

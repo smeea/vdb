@@ -41,9 +41,7 @@ function ResultLibraryModal(props) {
         {props.isMobile ? (
           <>
             {props.showImage ? (
-              <div className="py-2">
-                <CardImage />
-              </div>
+              <CardImage />
             ) : (
               <>
                 <div className="px-3 pt-3">

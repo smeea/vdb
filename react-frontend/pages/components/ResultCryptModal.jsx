@@ -41,9 +41,7 @@ function ResultCryptModal(props) {
         {props.isMobile ? (
           <>
             {props.showImage ? (
-              <>
-                <CardImage />
-              </>
+              <CardImage />
             ) : (
               <>
                 <div className="px-3 pt-3">
