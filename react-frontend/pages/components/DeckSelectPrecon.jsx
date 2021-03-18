@@ -17,7 +17,7 @@ function DeckSelectPrecon(props) {
 
         return(
           <div className="d-inline pr-3" key={index}>
-            {clan != 'Bundle' || clan != 'Mix' && <img src={imgSrc} className="discipline-base-image-results" />}
+            {clan != 'Bundle' && clan != 'Mix' && <img src={imgSrc} className="discipline-base-image-results" />}
             {clan == 'Bundle' && <Stack />}
             {clan == 'Mix' && <Tornado />}
           </div>
