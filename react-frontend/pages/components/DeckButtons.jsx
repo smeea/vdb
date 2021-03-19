@@ -54,6 +54,7 @@ function DeckButtons(props) {
             setActiveDeck={props.setActiveDeck}
             setShowButtons={props.setShowButtons}
             isMobile={props.isMobile}
+            history={props.history}
           />
         </div>
       )}

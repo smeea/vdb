@@ -509,6 +509,7 @@ function Decks(props) {
               setShowButtons={handleShowButtons}
               missingCrypt={missingCrypt}
               missingLibrary={missingLibrary}
+              history={history}
             />
           </Col>
         )}
