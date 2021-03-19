@@ -10,6 +10,8 @@ function SearchFormTextAndButtons(props) {
         placeholder="Card Name / Text"
         type="text"
         name="text"
+        autocomplete="off"
+        spellcheck="false"
         value={props.value}
         onChange={props.onChange}
       />
