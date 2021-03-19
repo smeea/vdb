@@ -18,7 +18,7 @@ import SearchFormArtist from './SearchFormArtist.jsx';
 
 function SearchLibraryForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
-  const [preresults, setPreresults] = useState({});
+  const [preresults, setPreresults] = useState(undefined);
   const showLimit = 200;
 
   const [showError, setShowError] = useState(false);
@@ -114,7 +114,7 @@ function SearchLibraryForm(props) {
     setText('');
     props.setFormState(defaults);
     props.setResults(undefined);
-    setPreresults({});
+    setPreresults(undefined);
     setShowError(false);
   };
 
@@ -188,11 +188,14 @@ function SearchLibraryForm(props) {
           setSpinnerState(false);
         })
         .catch((error) => {
-          props.setResults([]);
-          setPreresults([]);
+          props.setResults(undefined);
+          setPreresults(undefined);
           setShowError(true);
           setSpinnerState(false);
         });
+    } else {
+      props.setResults(undefined);
+      setPreresults(undefined);
     }
   };
 
@@ -200,26 +203,18 @@ function SearchLibraryForm(props) {
     if (!props.isMobile) {
       if (
         JSON.stringify(props.formState) == JSON.stringify(defaults) &&
-        props.results
+          props.results && !text
       ) {
         props.setResults(undefined);
-      } else {
+      } else if (!text || text.length > 2) {
         launchRequest();
       }
     }
-  }, [props.formState]);
+  }, [props.formState, text]);
 
   useEffect(() => {
     if (!props.isMobile) {
-      if (text.length > 1) {
-        launchRequest();
-      }
-    }
-  }, [text]);
-
-  useEffect(() => {
-    if (!props.isMobile) {
-      if (preresults.length < showLimit) {
+      if (preresults && preresults.length < showLimit) {
         props.setResults(preresults);
       } else {
         props.setResults(undefined);
@@ -235,7 +230,7 @@ function SearchLibraryForm(props) {
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
         isMobile={props.isMobile}
-        preresults={preresults.length}
+        preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
         spinner={spinnerState}
       />

@@ -7,8 +7,8 @@ function TwdSearchFormEventAndButtons({ value, onChange }) {
       placeholder="Event Name"
       type="text"
       name="event"
-      autocomplete="off"
-      spellcheck="false"
+      autoComplete="off"
+      spellCheck="false"
       value={value}
       onChange={onChange}
     />
