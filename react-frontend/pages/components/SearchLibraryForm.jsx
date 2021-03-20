@@ -188,8 +188,8 @@ function SearchLibraryForm(props) {
           setSpinnerState(false);
         })
         .catch((error) => {
-          props.setResults(undefined);
-          setPreresults(undefined);
+          props.setResults([]);
+          setPreresults([]);
           setShowError(true);
           setSpinnerState(false);
         });

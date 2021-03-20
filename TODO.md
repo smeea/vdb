@@ -5,6 +5,7 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
+* Error on crypt/library no cards found
 
 # FIX MOBILE
 * Optimize for tablet
