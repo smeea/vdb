@@ -5,19 +5,20 @@ import precons from './forms_data/precons.json';
 function DeckSelectPrecon(props) {
   const options = [];
   precons.map((i, index) => {
-
     if (i[0] != 'any' && i[0] != 'bcp') {
       const clanImages = i[4].map((clan, index) => {
         const imgSrc = `${
           process.env.ROOT_URL
         }images/clans/${clan.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
 
-        return(
+        return (
           <div className="d-inline pr-3" key={index}>
-            {clan != 'Bundle' && clan != 'Mix' && <img src={imgSrc} className="discipline-base-image-results" />}
+            {clan != 'Bundle' && clan != 'Mix' && (
+              <img src={imgSrc} className="discipline-base-image-results" />
+            )}
           </div>
-        )
-      })
+        );
+      });
 
       options.push({
         value: `${i[1]}:${i[2]}`,
@@ -25,7 +26,9 @@ function DeckSelectPrecon(props) {
         label: (
           <div className="d-flex justify-content-between align-items-center">
             <div className="pr-2">
-              <div className={clanImages.length == 1 ? "margin-full" : "d-inline"}>
+              <div
+                className={clanImages.length == 1 ? 'margin-full' : 'd-inline'}
+              >
                 {clanImages}
               </div>
               {i[3]}
@@ -38,7 +41,7 @@ function DeckSelectPrecon(props) {
   });
 
   const filterOption = ({ label }, string) => {
-    const name = label.props.children[0].props.children[1]
+    const name = label.props.children[0].props.children[1];
     if (name) {
       return name.toLowerCase().includes(string);
     } else {

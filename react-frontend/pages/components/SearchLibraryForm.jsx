@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Spinner, Overlay } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
-import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
 import SearchLibraryFormType from './SearchLibraryFormType.jsx';
 import SearchLibraryFormClan from './SearchLibraryFormClan.jsx';
@@ -203,7 +202,8 @@ function SearchLibraryForm(props) {
     if (!props.isMobile) {
       if (
         JSON.stringify(props.formState) == JSON.stringify(defaults) &&
-          props.results && !text
+        props.results &&
+        !text
       ) {
         props.setResults(undefined);
       } else if (!text || text.length > 2) {
@@ -234,20 +234,21 @@ function SearchLibraryForm(props) {
         showLimit={showLimit}
         spinner={spinnerState}
       />
-      {props.inventoryMode || (props.isMobile && props.isInventory) && (
-        <div className="custom-control custom-checkbox">
-          <input
-            id="hideMissing"
-            className="custom-control-input"
-            type="checkbox"
-            checked={props.hideMissing}
-            onChange={() => props.setHideMissing(!props.hideMissing)}
-          />
-          <label htmlFor="hideMissing" className="custom-control-label">
-            Hide Missing in Inventory
-          </label>
-        </div>
-      )}
+      {props.inventoryMode ||
+        (props.isMobile && props.isInventory && (
+          <div className="custom-control custom-checkbox">
+            <input
+              id="hideMissing"
+              className="custom-control-input"
+              type="checkbox"
+              checked={props.hideMissing}
+              onChange={() => props.setHideMissing(!props.hideMissing)}
+            />
+            <label htmlFor="hideMissing" className="custom-control-label">
+              Hide Missing in Inventory
+            </label>
+          </div>
+        ))}
       <SearchLibraryFormType
         value={props.formState.type}
         onChange={handleSelectChange}

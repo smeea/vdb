@@ -69,7 +69,10 @@ function DeckDrawLibraryTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <td className="cost py-0 px-1" onClick={() => props.burnLibrary(index)}>
+          <td
+            className="cost py-0 px-1"
+            onClick={() => props.burnLibrary(index)}
+          >
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}
@@ -78,7 +81,10 @@ function DeckDrawLibraryTable(props) {
           <td className="type px-1" onClick={() => props.burnLibrary(index)}>
             <ResultLibraryType cardtype={card['Type']} />
           </td>
-          <td className="disciplines px-1" onClick={() => props.burnLibrary(index)}>
+          <td
+            className="disciplines px-1"
+            onClick={() => props.burnLibrary(index)}
+          >
             <ResultLibraryDisciplines value={card['Discipline']} />
             <ResultLibraryClan value={card['Clan']} />
           </td>
@@ -87,7 +93,10 @@ function DeckDrawLibraryTable(props) {
               placement={props.placement ? props.placement : 'right'}
               overlay={<CardPopover card={card}>{props.showImage}</CardPopover>}
             >
-              <td className="name px-1" onClick={() => props.burnLibrary(index)}>
+              <td
+                className="name px-1"
+                onClick={() => props.burnLibrary(index)}
+              >
                 <ResultLibraryName card={card} />
               </td>
             </OverlayTrigger>

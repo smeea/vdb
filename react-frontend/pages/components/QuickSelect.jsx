@@ -45,8 +45,9 @@ function QuickSelect(props) {
   }, [selectedValue]);
 
   useEffect(() => {
-    if (props.isMobile && props.history.location.pathname == '/cards') ref.current.focus()
-  }, [])
+    if (props.isMobile && props.history.location.pathname == '/cards')
+      ref.current.focus();
+  }, []);
 
   return (
     <AsyncSelect

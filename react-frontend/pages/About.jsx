@@ -1,5 +1,5 @@
 import React from 'react';
-import { Figure, Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Telegram from '../assets/images/icons/telegram.svg';
 import Github from '../assets/images/icons/github.svg';
@@ -153,15 +153,18 @@ function About(props) {
             <h5>ACKNOWLEDGMENTS</h5>
             <ul>
               <li>
-                Card images by Fernando -Syndelson- Cesar from <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
+                Card images by Fernando -Syndelson- Cesar from{' '}
+                <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
                   FELD
                 </a>
               </li>
               <li>
-                TWD and rulings by Lionel -Phoenix- Panhaleux from <a href="https://static.krcg.org/">KRCG</a>
+                TWD and rulings by Lionel -Phoenix- Panhaleux from{' '}
+                <a href="https://static.krcg.org/">KRCG</a>
               </li>
               <li>
-                Cards scans from different sets by <a href="http://vtes.pl/">VTES.PL</a> Team
+                Cards scans from different sets by{' '}
+                <a href="http://vtes.pl/">VTES.PL</a> Team
               </li>
             </ul>
 
@@ -211,7 +214,9 @@ function About(props) {
                   <div className="icon pr-2">
                     <Discord />
                   </div>
-                  <a href="https://discord.com/users/264725500226830336">Smeea#3259</a>
+                  <a href="https://discord.com/users/264725500226830336">
+                    Smeea#3259
+                  </a>
                 </div>
               </li>
             </ul>

@@ -7,7 +7,7 @@ function ButtonToggleShowImage(props) {
   const [state, setState] = useState(false);
 
   const handleButton = () => {
-    props.setShowImage(!props.showImage)
+    props.setShowImage(!props.showImage);
     setState(true);
     setTimeout(() => {
       setState(false);
@@ -23,7 +23,7 @@ function ButtonToggleShowImage(props) {
         </Button>
       ) : (
         <Button variant="success" onClick={handleButton}>
-          {props.showImage ? "Image" : "Text"} on Hover
+          {props.showImage ? 'Image' : 'Text'} on Hover
         </Button>
       )}
     </>

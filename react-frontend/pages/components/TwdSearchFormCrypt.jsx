@@ -45,23 +45,30 @@ function TwdSearchFormCrypt(props) {
             q={props.state[id]}
             target="crypt"
           />
-          {!props.isMobile
-           ? <OverlayTrigger
-               placement="left"
-               overlay={
-                 <CardPopover card={props.cardBase[id]}>
-                   {props.showImage}
-                 </CardPopover>
-               }
-             >
-               <div className="pt-1" onClick={() => setModalCard(props.cardBase[id])}>
-                 <ResultCryptName card={props.cardBase[id]} />
-               </div>
-             </OverlayTrigger>
-           : <div className="pt-1" onClick={() => setModalCard(props.cardBase[id])}>
-               <ResultCryptName card={props.cardBase[id]} />
-             </div>
-          }
+          {!props.isMobile ? (
+            <OverlayTrigger
+              placement="left"
+              overlay={
+                <CardPopover card={props.cardBase[id]}>
+                  {props.showImage}
+                </CardPopover>
+              }
+            >
+              <div
+                className="pt-1"
+                onClick={() => setModalCard(props.cardBase[id])}
+              >
+                <ResultCryptName card={props.cardBase[id]} />
+              </div>
+            </OverlayTrigger>
+          ) : (
+            <div
+              className="pt-1"
+              onClick={() => setModalCard(props.cardBase[id])}
+            >
+              <ResultCryptName card={props.cardBase[id]} />
+            </div>
+          )}
         </div>
       );
     });
@@ -96,7 +103,7 @@ function TwdSearchFormCrypt(props) {
         placeholder="Add Crypt Card"
         loadOptions={loadOptions}
         onChange={handleAdd}
-    /* className="select-dropdown" */
+        /* className="select-dropdown" */
         getOptionLabel={(card) => {
           return (
             <div className="d-flex align-items-center justify-content-between">

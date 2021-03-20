@@ -67,10 +67,16 @@ function DeckDrawCryptTable(props) {
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
-          <td className="capacity pr-1 pl-2" onClick={() => props.burnCrypt(index)}>
+          <td
+            className="capacity pr-1 pl-2"
+            onClick={() => props.burnCrypt(index)}
+          >
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
-          <td className="disciplines px-1" onClick={() => props.burnCrypt(index)}>
+          <td
+            className="disciplines px-1"
+            onClick={() => props.burnCrypt(index)}
+          >
             <ResultCryptDisciplines
               value={card['Disciplines']}
               disciplinesSet={props.disciplinesSet}

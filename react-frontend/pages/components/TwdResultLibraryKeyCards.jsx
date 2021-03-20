@@ -66,7 +66,7 @@ function TwdResultLibraryKeyCards(props) {
     const handleClick = () => {
       setModalCard(card.c);
       props.setShowFloatingButtons(false);
-    }
+    };
 
     if (resultTrClass == 'result-even') {
       resultTrClass = 'result-odd';

@@ -42,8 +42,9 @@ function InventoryHelp(props) {
           <b>Add cards from you collection:</b>
           <ul>
             <li>
-              One by one using 'Add Card' forms on top (last card you add
-              stays on top so you can change quantity without scrolling down);
+              One by one using &#39;Add Card&#39; forms on top (last card you
+              add stays on top so you can change quantity without scrolling
+              down);
             </li>
             <li>
               Add full deck from your Deck collection (be careful you can add
@@ -53,14 +54,14 @@ function InventoryHelp(props) {
           <b>Search cards from inventory:</b>
           <ul>
             <li>
-              Go to Crypt or Library search page (the one you use to search
-              all VTES cards)
+              Go to Crypt or Library search page (the one you use to search all
+              VTES cards)
             </li>
             <li>Activate Inventory Mode in the top-left corner;</li>
             <li>
-              Now all searches you do will search in your inventory (and you
-              can swap to-from all VTES cards any time to repeat search with
-              new 'source');
+              Now all searches you do will search in your inventory (and you can
+              swap to-from all VTES cards any time to repeat search with new
+              &#39;source&#39;);
             </li>
             <li>
               Two columns left to capacity show: total cards you have in
@@ -68,8 +69,8 @@ function InventoryHelp(props) {
             </li>
           </ul>
           <b>
-            To track how cards are used in your decks, each deck has the one
-            of the following status:
+            To track how cards are used in your decks, each deck has the one of
+            the following status:
           </b>
           <ul>
             <li>
@@ -84,9 +85,9 @@ function InventoryHelp(props) {
               <div className="d-inline px-2">
                 <Shuffle />
               </div>
-              Flexible. These decks can share cards between them, like you
-              want for your temporary test decks or if your card pool is not
-              big (yet).
+              Flexible. These decks can share cards between them, like you want
+              for your temporary test decks or if your card pool is not big
+              (yet).
             </li>
             <li>
               <div className="d-inline px-2">
@@ -109,12 +110,12 @@ function InventoryHelp(props) {
           <b>Oversee!</b>
           <ul>
             <li>
-              After you set status for your decks (and of course you can
-              change it any time), additional ({`'used'`}) column in Search
-              and Inventory pages will be filled with used card quantity in
-              Fixed (total of all Fixed decks, as you dont reuse these cards)
-              and maximum of Flexible in one deck (as you are ready to share
-              them between decks).
+              After you set status for your decks (and of course you can change
+              it any time), additional ({`'used'`}) column in Search and
+              Inventory pages will be filled with used card quantity in Fixed
+              (total of all Fixed decks, as you dont reuse these cards) and
+              maximum of Flexible in one deck (as you are ready to share them
+              between decks).
             </li>
             <li>
               If you have less cards in inventory than you use (total fixed +

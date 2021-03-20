@@ -354,10 +354,7 @@ function TwdSearchForm(props) {
         <Col xs={3} className="d-flex px-0">
           <label className="h6 mb-0">Library Size:</label>
         </Col>
-        <Col
-          xs={9}
-          className="d-flex justify-content-end px-0 z-index-0"
-        >
+        <Col xs={9} className="d-flex justify-content-end px-0 z-index-0">
           <TwdSearchFormLibraryTotal
             value={props.formState.libraryTotal}
             onChange={handleMultiChange}
@@ -388,10 +385,7 @@ function TwdSearchForm(props) {
         <Col xs={5} className="d-flex px-0">
           <label className="h6 mb-0">Capacity Average:</label>
         </Col>
-        <Col
-          xs={7}
-          className="d-flex justify-content-end px-0 z-index-0"
-        >
+        <Col xs={7} className="d-flex justify-content-end px-0 z-index-0">
           <TwdSearchFormCapacity
             value={props.formState.capacity}
             onChange={handleMultiChange}

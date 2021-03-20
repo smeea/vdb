@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PlayCircleFill from '../../assets/images/icons/play-circle-fill.svg';
 
 function TwdOpenDeckButton(props) {

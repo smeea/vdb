@@ -70,9 +70,9 @@ function DeckButtons(props) {
         </div>
       )}
       {props.isAuthor &&
-       props.deck &&
-       (props.deck.master ||
-        (props.deck.branches && props.deck.branches.length > 0)) && (
+        props.deck &&
+        (props.deck.master ||
+          (props.deck.branches && props.deck.branches.length > 0)) && (
           <div className="bp-125">
             <DeckBranchDelete
               deck={props.deck}

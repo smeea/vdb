@@ -26,7 +26,11 @@ function Library(props) {
     >
       <Row>
         {!props.isMobile && (
-          <Col md={12} xl={props.username && props.addMode ? 4 : 3} className="px-0">
+          <Col
+            md={12}
+            xl={props.username && props.addMode ? 4 : 3}
+            className="px-0"
+          >
             {props.decks && Object.keys(props.decks).length > 0 && (
               <Row>
                 <Col>
@@ -37,29 +41,29 @@ function Library(props) {
                         : 'd-flex justify-content-end'
                     }
                   >
-                    {props.addMode &&
-                     <>
-                       <div className={isBranches ? 'w-75' : 'w-100'}>
-                         <DeckSelectMy
-                           decks={props.decks}
-                           activeDeck={props.activeDeck}
-                           setActiveDeck={props.setActiveDeck}
-                           inventoryMode={props.inventoryMode}
-                           isMobile={props.isMobile}
-                         />
-                       </div>
-                       {isBranches && (
-                         <div className="pl-1 w-25">
-                           <DeckBranchSelect
-                             decks={props.decks}
-                             activeDeck={props.activeDeck}
-                             setActiveDeck={props.setActiveDeck}
-                             inventoryMode={props.inventoryMode}
-                           />
-                         </div>
-                       )}
-                     </>
-                    }
+                    {props.addMode && (
+                      <>
+                        <div className={isBranches ? 'w-75' : 'w-100'}>
+                          <DeckSelectMy
+                            decks={props.decks}
+                            activeDeck={props.activeDeck}
+                            setActiveDeck={props.setActiveDeck}
+                            inventoryMode={props.inventoryMode}
+                            isMobile={props.isMobile}
+                          />
+                        </div>
+                        {isBranches && (
+                          <div className="pl-1 w-25">
+                            <DeckBranchSelect
+                              decks={props.decks}
+                              activeDeck={props.activeDeck}
+                              setActiveDeck={props.setActiveDeck}
+                              inventoryMode={props.inventoryMode}
+                            />
+                          </div>
+                        )}
+                      </>
+                    )}
                     <div className="d-flex pl-1">
                       <Button
                         variant="outline-secondary"
@@ -141,7 +145,7 @@ function Library(props) {
               cards={props.results}
               library={
                 props.deckRouter(props.activeDeck) &&
-                  props.deckRouter(props.activeDeck).library
+                props.deckRouter(props.activeDeck).library
               }
               activeDeck={props.activeDeck}
               sortMethod={sortMethod}
@@ -171,9 +175,9 @@ function Library(props) {
           className={
             !props.isMobile || (props.isMobile && props.showSearch)
               ? props.isMobile
-              ? 'px-1 py-1'
-              : 'px-0'
-            : 'col-hide'
+                ? 'px-1 py-1'
+                : 'px-0'
+              : 'col-hide'
           }
         >
           <SearchLibraryForm
@@ -191,7 +195,9 @@ function Library(props) {
             inventoryMode={props.inventoryMode}
           />
         </Col>
-        {(!props.username || !props.addMode) && !props.isMobile && <Col xl={1} />}
+        {(!props.username || !props.addMode) && !props.isMobile && (
+          <Col xl={1} />
+        )}
       </Row>
     </Container>
   );

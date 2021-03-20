@@ -24,7 +24,13 @@
   ["18", "LK", "", "Lost Kindred (B)", ["Bundle"]],
   ["09", "HttB", "PKia", "Lasombra / Kiasyd", ["Lasombra", "Kiasyd"]],
   ["09", "HttB", "PSam", "Nosferatu / Samedi", ["Nosferatu", "Samedi"]],
-  ["09", "HttB", "PSal", "Ventrue / Salubri antitribu", ["Ventrue", "Salubri antitribu"]],
+  [
+    "09",
+    "HttB",
+    "PSal",
+    "Ventrue / Salubri antitribu",
+    ["Ventrue", "Salubri antitribu"]
+  ],
   ["09", "HttB", "PGar", "Tremere / Gargoyle", ["Tremere", "Gargoyle"]],
   ["08", "KoT", "PB", "Brujah", ["Brujah"]],
   ["08", "KoT", "PM", "Malkavian", ["Malkavian"]],

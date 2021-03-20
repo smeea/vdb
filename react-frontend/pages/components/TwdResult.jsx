@@ -10,8 +10,6 @@ import TwdResultLibraryKeyCards from './TwdResultLibraryKeyCards.jsx';
 function TwdResult(props) {
   const showCounterStep = 25;
 
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
-
   const [twdRows, setTwdRows] = useState([]);
   const [showCounter, setShowCounter] = useState(0);
   const [deckCounter, setDeckCounter] = useState(0);

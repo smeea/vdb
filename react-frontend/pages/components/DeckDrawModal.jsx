@@ -33,13 +33,15 @@ function DeckDrawModal(props) {
           </Row>
           <Row className="px-0 pb-4">
             <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
-              <div className={props.isMobile ? "pb-4" : null}>
+              <div className={props.isMobile ? 'pb-4' : null}>
                 <div className="d-flex justify-content-between info-message">
                   <div className="d-flex align-items-center px-2">
                     <b>Uncontrolled</b>
                   </div>
                   <div className="d-flex align-items-center">
-                    <b>{props.drawedCrypt.length} + {props.restCrypt.length}</b>
+                    <b>
+                      {props.drawedCrypt.length} + {props.restCrypt.length}
+                    </b>
                   </div>
                   <div className="d-flex">
                     <Button
@@ -62,11 +64,11 @@ function DeckDrawModal(props) {
                     </div>
                   </div>
                 </div>
-                {props.cryptTotal < 4 &&
-                 <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
-                   <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
-                 </div>
-                }
+                {props.cryptTotal < 4 && (
+                  <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
+                    <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
+                  </div>
+                )}
                 <DeckDrawCryptTable
                   burnCrypt={props.burnCrypt}
                   crypt={props.crypt}
@@ -86,7 +88,9 @@ function DeckDrawModal(props) {
                   <b>Hand</b>
                 </div>
                 <div className="d-flex align-items-center">
-                  <b>{props.drawedLibrary.length} + {props.restLibrary.length}</b>
+                  <b>
+                    {props.drawedLibrary.length} + {props.restLibrary.length}
+                  </b>
                 </div>
                 <div className="d-flex">
                   <Button
@@ -107,11 +111,11 @@ function DeckDrawModal(props) {
                   </div>
                 </div>
               </div>
-              {props.libraryTotal < 7 &&
-               <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
-                 <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
-               </div>
-              }
+              {props.libraryTotal < 7 && (
+                <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
+                  <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
+                </div>
+              )}
               <DeckDrawLibraryTable
                 burnLibrary={props.burnLibrary}
                 library={props.library}
@@ -124,61 +128,61 @@ function DeckDrawModal(props) {
               />
             </Col>
           </Row>
-          {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) &&
-           <Row className="px-0 pb-4">
-             <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
-               {props.burnedCrypt.length > 0 &&
-                <div className={props.isMobile ? "pb-4" : null}>
-                  <div className="d-flex justify-content-between info-message">
-                    <div className="d-flex align-items-center px-2">
-                      <b>Controlled</b>
+          {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) && (
+            <Row className="px-0 pb-4">
+              <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
+                {props.burnedCrypt.length > 0 && (
+                  <div className={props.isMobile ? 'pb-4' : null}>
+                    <div className="d-flex justify-content-between info-message">
+                      <div className="d-flex align-items-center px-2">
+                        <b>Controlled</b>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <b>{props.burnedCrypt.length}</b>
+                      </div>
+                      <div />
                     </div>
-                    <div className="d-flex align-items-center">
-                      <b>{props.burnedCrypt.length}</b>
-                    </div>
-                    <div />
+                    <DeckDrawCryptTable
+                      burnCrypt={null}
+                      crypt={props.crypt}
+                      total={props.cryptTotal}
+                      resultCards={props.burnedCrypt}
+                      className="search-crypt-table"
+                      showImage={props.showImage}
+                      setShowImage={props.setShowImage}
+                      isMobile={props.isMobile}
+                      isWide={true}
+                    />
                   </div>
-                  <DeckDrawCryptTable
-                    burnCrypt={null}
-                    crypt={props.crypt}
-                    total={props.cryptTotal}
-                    resultCards={props.burnedCrypt}
-                    className="search-crypt-table"
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
-                    isMobile={props.isMobile}
-                    isWide={true}
-                  />
-                </div>
-               }
-             </Col>
-             <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
-               {props.burnedLibrary.length > 0 &&
-                <>
-                  <div className="d-flex justify-content-between info-message">
-                    <div className="d-flex align-items-center px-2">
-                      <b>Ash Heap</b>
+                )}
+              </Col>
+              <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
+                {props.burnedLibrary.length > 0 && (
+                  <>
+                    <div className="d-flex justify-content-between info-message">
+                      <div className="d-flex align-items-center px-2">
+                        <b>Ash Heap</b>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <b>{props.burnedLibrary.length}</b>
+                      </div>
+                      <div />
                     </div>
-                    <div className="d-flex align-items-center">
-                      <b>{props.burnedLibrary.length}</b>
-                    </div>
-                    <div />
-                  </div>
-                  <DeckDrawLibraryTable
-                    burnLibrary={null}
-                    library={props.library}
-                    total={props.libraryTotal}
-                    resultCards={props.burnedLibrary}
-                    className="search-library-table"
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
-                    isMobile={props.isMobile}
-                  />
-                </>
-               }
-             </Col>
-           </Row>
-          }
+                    <DeckDrawLibraryTable
+                      burnLibrary={null}
+                      library={props.library}
+                      total={props.libraryTotal}
+                      resultCards={props.burnedLibrary}
+                      className="search-library-table"
+                      showImage={props.showImage}
+                      setShowImage={props.setShowImage}
+                      isMobile={props.isMobile}
+                    />
+                  </>
+                )}
+              </Col>
+            </Row>
+          )}
         </Container>
       </Modal.Body>
     </Modal>

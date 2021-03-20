@@ -216,41 +216,46 @@ function DeckLibraryTable(props) {
                       </div>
                     </td>
                   ) : null}
-                  {!props.isMobile
-                   ? <OverlayTrigger
-                       placement="right"
-                       overlay={
-                         <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
-                       }
-                     >
-                       <td className="quantity">
-                         <DeckCardQuantity
-                           cardid={card.c['Id']}
-                           q={card.q}
-                           deckid={props.deckid}
-                           cardChange={props.cardChange}
-                           isMobile={props.isMobile}
-                           inInventory={inInventory}
-                           softUsedMax={softUsedMax}
-                           hardUsedTotal={hardUsedTotal}
-                           inventoryType={props.decks[props.deckid].inventory_type}
-                         />
-                       </td>
-                     </OverlayTrigger>
-                   : <td className="quantity">
-                       <DeckCardQuantity
-                         cardid={card.c['Id']}
-                         q={card.q}
-                         deckid={props.deckid}
-                         cardChange={props.cardChange}
-                         isMobile={props.isMobile}
-                         inInventory={inInventory}
-                         softUsedMax={softUsedMax}
-                         hardUsedTotal={hardUsedTotal}
-                         inventoryType={props.decks[props.deckid].inventory_type}
-                       />
-                     </td>
-                  }
+                  {!props.isMobile ? (
+                    <OverlayTrigger
+                      placement="right"
+                      overlay={
+                        <UsedPopover>
+                          {softUsedMax || hardUsedTotal}
+                        </UsedPopover>
+                      }
+                    >
+                      <td className="quantity">
+                        <DeckCardQuantity
+                          cardid={card.c['Id']}
+                          q={card.q}
+                          deckid={props.deckid}
+                          cardChange={props.cardChange}
+                          isMobile={props.isMobile}
+                          inInventory={inInventory}
+                          softUsedMax={softUsedMax}
+                          hardUsedTotal={hardUsedTotal}
+                          inventoryType={
+                            props.decks[props.deckid].inventory_type
+                          }
+                        />
+                      </td>
+                    </OverlayTrigger>
+                  ) : (
+                    <td className="quantity">
+                      <DeckCardQuantity
+                        cardid={card.c['Id']}
+                        q={card.q}
+                        deckid={props.deckid}
+                        cardChange={props.cardChange}
+                        isMobile={props.isMobile}
+                        inInventory={inInventory}
+                        softUsedMax={softUsedMax}
+                        hardUsedTotal={hardUsedTotal}
+                        inventoryType={props.decks[props.deckid].inventory_type}
+                      />
+                    </td>
+                  )}
                 </>
               ) : (
                 <td className="quantity">

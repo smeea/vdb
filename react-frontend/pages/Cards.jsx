@@ -16,10 +16,14 @@ function Cards(props) {
     if (card) {
       const imgSrc =
         card['Id'] > 200000
-            ? `${process.env.ROOT_URL}images/cards/${imageSet ? 'set/' + imageSet + '/' : "" }${card['ASCII Name']
+          ? `${process.env.ROOT_URL}images/cards/${
+              imageSet ? 'set/' + imageSet + '/' : ''
+            }${card['ASCII Name']
               .toLowerCase()
               .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${card['Adv'] && 'adv'}.jpg`
-            : `${process.env.ROOT_URL}images/cards/${imageSet ? 'set/' + imageSet + '/' : "" }${card['ASCII Name']
+          : `${process.env.ROOT_URL}images/cards/${
+              imageSet ? 'set/' + imageSet + '/' : ''
+            }${card['ASCII Name']
               .toLowerCase()
               .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
 
@@ -84,7 +88,10 @@ function Cards(props) {
                           )}
                         </div>
                         <div className="px-3 pb-3">
-                          <ButtonCardCopyUrl isMobile={props.isMobile} id={card.Id} />
+                          <ButtonCardCopyUrl
+                            isMobile={props.isMobile}
+                            id={card.Id}
+                          />
                         </div>
                       </>
                     )}

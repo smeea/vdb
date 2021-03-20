@@ -74,12 +74,12 @@ function DeckDraw(props) {
     const [drawedCrypt, restCrypt] = initialDrawCards(props.crypt, 4);
     setDrawedCrypt(drawedCrypt);
     setRestCrypt(restCrypt);
-    setCryptTotal(restCrypt.length + drawedCrypt.length)
+    setCryptTotal(restCrypt.length + drawedCrypt.length);
 
     const [drawedLibrary, restLibrary] = initialDrawCards(props.library, 7);
     setDrawedLibrary(drawedLibrary);
     setRestLibrary(restLibrary);
-    setLibraryTotal(restLibrary.length + drawedLibrary.length)
+    setLibraryTotal(restLibrary.length + drawedLibrary.length);
 
     if (drawedCrypt || drawedLibrary) {
       setShowDrawModal(true);
@@ -124,15 +124,15 @@ function DeckDraw(props) {
     setRestLibrary(newRestCards);
   };
 
-  const burnCrypt = index => {
+  const burnCrypt = (index) => {
     const hand = drawedCrypt;
-    setBurnedCrypt([...burnedCrypt, ...hand.splice(index, 1)])
+    setBurnedCrypt([...burnedCrypt, ...hand.splice(index, 1)]);
     setDrawedCrypt(hand);
   };
 
-  const burnLibrary = index => {
+  const burnLibrary = (index) => {
     const hand = drawedLibrary;
-    setBurnedLibrary([...burnedLibrary, ...hand.splice(index, 1)])
+    setBurnedLibrary([...burnedLibrary, ...hand.splice(index, 1)]);
     let newDrawedCards = [];
     let newRestCards = [];
     if (restLibrary.length > 0) {

@@ -37,7 +37,11 @@ function ResultLibraryTotal(props) {
     </>
   );
 
-  return <div className="d-flex align-items-center justify-content-between info-message">{value}</div>;
+  return (
+    <div className="d-flex align-items-center justify-content-between info-message">
+      {value}
+    </div>
+  );
 }
 
 export default ResultLibraryTotal;

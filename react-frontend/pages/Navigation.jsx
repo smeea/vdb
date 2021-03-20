@@ -14,10 +14,10 @@ function Navigation(props) {
         <Nav className="container justify-content-between">
           <div className="d-flex align-items-center pr-1">
             {props.username &&
-             !props.isMobile &&
-             (props.location.pathname == '/decks' ||
-              props.location.pathname == '/crypt' ||
-              props.location.pathname == '/library') && (
+              !props.isMobile &&
+              (props.location.pathname == '/decks' ||
+                props.location.pathname == '/crypt' ||
+                props.location.pathname == '/library') && (
                 <div
                   className="d-flex align-items-center pl-1 pr-4"
                   onClick={() => props.setInventoryMode(!props.inventoryMode)}

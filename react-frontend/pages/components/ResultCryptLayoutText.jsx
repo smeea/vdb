@@ -72,7 +72,11 @@ function ResultCryptLayoutText(props) {
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
     return (
-      <div className="d-inline-block nobr px-1" onClick={() => props.setImageSet(k.toLowerCase())} key={index}>
+      <div
+        className="d-inline-block nobr px-1"
+        onClick={() => props.setImageSet(k.toLowerCase())}
+        key={index}
+      >
         {k}
         <div className="d-inline gray">:{props.card['Set'][k]}</div>
       </div>
@@ -82,7 +86,9 @@ function ResultCryptLayoutText(props) {
   const Rulings = Object(props.card['Rulings']).map((k, index) => {
     const Refs = Object.keys(k['refs']).map((j, idx) => {
       return (
-        <div className="d-inline small pl-1" key={idx}><a href={k['refs'][j]}>{j}</a></div>
+        <div className="d-inline small pl-1" key={idx}>
+          <a href={k['refs'][j]}>{j}</a>
+        </div>
       );
     });
 

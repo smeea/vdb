@@ -53,7 +53,9 @@ function App(props) {
     softLibrary: {},
     hardLibrary: {},
   });
-  const isInventory = Object.keys(inventory.crypt).length > 0 || Object.keys(inventory.library).length > 0
+  const isInventory =
+    Object.keys(inventory.crypt).length > 0 ||
+    Object.keys(inventory.library).length > 0;
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
@@ -280,7 +282,9 @@ function App(props) {
     Object.keys(preconDecksData).map((set) => {
       Object.keys(preconDecksData[set]).map((precon) => {
         const deckid = `${set}:${precon}`;
-        const name = preconData.filter(i => i[1] == set && i[2] == precon)[0][3]
+        const name = preconData.filter(
+          (i) => i[1] == set && i[2] == precon
+        )[0][3];
 
         precons[deckid] = {
           name: `${name}`,
@@ -615,9 +619,11 @@ function App(props) {
         <Switch>
           <Suspense fallback={<></>}>
             <Route path="/" exact component={() => <Redirect to="/about" />} />
-            <Route path="/about" exact component={() => <About
-                                                          isMobile={isMobile}
-                                                        />} />
+            <Route
+              path="/about"
+              exact
+              component={() => <About isMobile={isMobile} />}
+            />
             <Route path="/account">
               <Account
                 isMobile={isMobile}

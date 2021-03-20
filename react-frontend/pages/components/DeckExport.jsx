@@ -93,7 +93,7 @@ function DeckExport(props) {
         deckid: props.activeDeck.deckid,
         format: format,
         src: props.activeDeck.src,
-      }
+      };
 
       if (input.src == 'shared') {
         const cards = {};
@@ -109,7 +109,7 @@ function DeckExport(props) {
           name: props.deck.name,
           description: props.deck.description,
           author: props.deck.author,
-        }
+        };
       }
 
       const url = `${process.env.API_URL}decks/export`;

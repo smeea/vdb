@@ -40,7 +40,8 @@ function DeckBranchDelete(props) {
         onClick={() => setShowConfirmation(true)}
         block
       >
-        <NodeMinusFill width="21" height="21" viewBox="0 0 16 16" /> Delete Revision
+        <NodeMinusFill width="21" height="21" viewBox="0 0 16 16" /> Delete
+        Revision
       </Button>
       <DeleteConfirmation
         show={showConfirmation}

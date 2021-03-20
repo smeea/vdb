@@ -12,9 +12,9 @@ function ResultCryptModal(props) {
   const [imageSet, setImageSet] = useState(null);
 
   const CardImage = () => {
-    const imgSrc = `${process.env.ROOT_URL}images/cards/${imageSet ? 'set/' + imageSet + '/' : "" }${props.card[
-      'ASCII Name'
-    ]
+    const imgSrc = `${process.env.ROOT_URL}images/cards/${
+      imageSet ? 'set/' + imageSet + '/' : ''
+    }${props.card['ASCII Name']
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
 
@@ -64,7 +64,7 @@ function ResultCryptModal(props) {
                           <div className="px-1">
                             <b>
                               {props.inventoryState.softUsedMax +
-                               props.inventoryState.hardUsedTotal}
+                                props.inventoryState.hardUsedTotal}
                             </b>
                           </div>
                           - Total Used
@@ -90,8 +90,14 @@ function ResultCryptModal(props) {
                   </>
                 )}
                 <div className="d-flex justify-content-between p-3">
-                  <ButtonCardCopyUrl isMobile={props.isMobile} id={props.card.Id} />
-                  <Button variant="outline-secondary" onClick={props.handleClose}>
+                  <ButtonCardCopyUrl
+                    isMobile={props.isMobile}
+                    id={props.card.Id}
+                  />
+                  <Button
+                    variant="outline-secondary"
+                    onClick={props.handleClose}
+                  >
                     <X width="24" height="24" viewBox="2 2 12 12" /> Close
                   </Button>
                 </div>
@@ -133,7 +139,7 @@ function ResultCryptModal(props) {
                           <div className="px-1">
                             <b>
                               {props.inventoryState.softUsedMax +
-                               props.inventoryState.hardUsedTotal}
+                                props.inventoryState.hardUsedTotal}
                             </b>
                           </div>
                           - Total Used
@@ -163,10 +169,16 @@ function ResultCryptModal(props) {
               <div className="d-flex justify-content-between bp-125 pt-4">
                 <div className="d-flex">
                   <div className="d-flex pr-1">
-                    <ButtonCardCopyUrl isMobile={props.isMobile} id={props.card.Id} />
+                    <ButtonCardCopyUrl
+                      isMobile={props.isMobile}
+                      id={props.card.Id}
+                    />
                   </div>
                   <div className="d-flex pr-1">
-                    <ButtonToggleShowImage showImage={props.showImage} setShowImage={props.setShowImage} />
+                    <ButtonToggleShowImage
+                      showImage={props.showImage}
+                      setShowImage={props.setShowImage}
+                    />
                   </div>
                 </div>
                 <Button variant="outline-secondary" onClick={props.handleClose}>

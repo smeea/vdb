@@ -75,29 +75,29 @@ function ResultCrypt(props) {
               <X viewBox="0 0 16 16" />
             </div>
           </div>
-          {props.isInventory &&
-           <>
-             {props.inventoryMode ? (
-               <div
-                 onClick={() => props.setInventoryMode(!props.inventoryMode)}
-                 className="float-right-top inventory-on"
-               >
-                 <div className="pt-2 float-inventory">
-                   <ArchiveFill viewBox="0 0 16 16" />
-                 </div>
-               </div>
-             ) : (
-               <div
-                 onClick={() => props.setInventoryMode(!props.inventoryMode)}
-                 className="float-right-top inventory-off"
-               >
-                 <div className="pt-2 float-inventory">
-                   <ArchiveFill viewBox="0 0 16 16" />
-                 </div>
-               </div>
-             )}
-           </>
-          }
+          {props.isInventory && (
+            <>
+              {props.inventoryMode ? (
+                <div
+                  onClick={() => props.setInventoryMode(!props.inventoryMode)}
+                  className="float-right-top inventory-on"
+                >
+                  <div className="pt-2 float-inventory">
+                    <ArchiveFill viewBox="0 0 16 16" />
+                  </div>
+                </div>
+              ) : (
+                <div
+                  onClick={() => props.setInventoryMode(!props.inventoryMode)}
+                  className="float-right-top inventory-off"
+                >
+                  <div className="pt-2 float-inventory">
+                    <ArchiveFill viewBox="0 0 16 16" />
+                  </div>
+                </div>
+              )}
+            </>
+          )}
           {props.addMode ? (
             <div
               onClick={() => props.setAddMode(!props.addMode)}

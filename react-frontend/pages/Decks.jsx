@@ -33,10 +33,10 @@ function Decks(props) {
   );
   const [deckError, setDeckError] = useState(false);
 
-  const handleShowButtons = state => {
+  const handleShowButtons = (state) => {
     setShowMenuButtons(state);
     setShowFloatingButtons(!state);
-  }
+  };
 
   const getMissingCrypt = (deck) => {
     const crypt = {};
@@ -136,7 +136,7 @@ function Decks(props) {
           props.setSharedDeck(data);
         }
       })
-      .catch(error => setDeckError(true));
+      .catch((error) => setDeckError(true));
   };
 
   const deckUpdate = (deckid, field, value) => {
@@ -218,7 +218,12 @@ function Decks(props) {
   }, [hash, props.cryptCardBase, props.libraryCardBase]);
 
   useEffect(() => {
-    if (!props.activeDeck.deckid && query.get('id') && props.cryptCardBase && props.libraryCardBase) {
+    if (
+      !props.activeDeck.deckid &&
+      query.get('id') &&
+      props.cryptCardBase &&
+      props.libraryCardBase
+    ) {
       if (query.get('id').length == 32) {
         props.setActiveDeck({ src: 'shared', deckid: query.get('id') });
         getDeck(query.get('id'));
@@ -230,11 +235,16 @@ function Decks(props) {
       }
     }
 
-    if (props.activeDeck.deckid && props.activeDeck.deckid != query.get('id') && props.activeDeck.deckid != 'deckInUrl') history.push(`/decks?id=${props.activeDeck.deckid}`);
+    if (
+      props.activeDeck.deckid &&
+      props.activeDeck.deckid != query.get('id') &&
+      props.activeDeck.deckid != 'deckInUrl'
+    )
+      history.push(`/decks?id=${props.activeDeck.deckid}`);
 
     if (
       props.activeDeck.src == 'twd' &&
-        !(props.sharedDeck && props.sharedDeck.Id == props.activeDeck.deckid)
+      !(props.sharedDeck && props.sharedDeck.Id == props.activeDeck.deckid)
     ) {
       props.cryptCardBase &&
         props.libraryCardBase &&
@@ -246,8 +256,12 @@ function Decks(props) {
     if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons')
       setSelectFrom(props.activeDeck.src);
 
-    if (props.decks && props.decks[props.activeDeck.deckid] && props.activeDeck.src != 'my') {
-      props.setActiveDeck({ src: 'my', deckid: props.activeDeck.deckid })
+    if (
+      props.decks &&
+      props.decks[props.activeDeck.deckid] &&
+      props.activeDeck.src != 'my'
+    ) {
+      props.setActiveDeck({ src: 'my', deckid: props.activeDeck.deckid });
     }
 
     if (props.deckRouter(props.activeDeck)) setDeckError(false);
@@ -428,15 +442,15 @@ function Decks(props) {
               )}
             </Col>
           </Row>
-          {deckError &&
-           <Row>
-             <Col className="px-0 px-lg-3">
-               <div className="d-flex align-items-center justify-content-center error-message p-2">
-                 <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>
-               </div>
-             </Col>
-           </Row>
-          }
+          {deckError && (
+            <Row>
+              <Col className="px-0 px-lg-3">
+                <div className="d-flex align-items-center justify-content-center error-message p-2">
+                  <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>
+                </div>
+              </Col>
+            </Row>
+          )}
           {props.deckRouter(props.activeDeck) && (
             <Row>
               <Col lg={7} className="px-0 px-lg-3">
@@ -514,27 +528,27 @@ function Decks(props) {
           </Col>
         )}
       </Row>
-      {!props.username && !props.activeDeck.deckid &&
-       <Row className="h-50 align-items-center justify-content-center px-2">
-         <Col md={12} lg={5} className="px-0">
-           <div className="d-flex justify-content-center pb-3">
-             <h6>Login required to create your decks</h6>
-           </div>
-           <div className="py-2">
-             <AccountLogin
-               setUsername={props.setUsername}
-               isMobile={props.isMobile}
-             />
-           </div>
-           <div className="py-2">
-             <AccountRegister
-               setUsername={props.setUsername}
-               whoAmI={props.whoAmI}
-             />
-           </div>
-         </Col>
-       </Row>
-      }
+      {!props.username && !props.activeDeck.deckid && (
+        <Row className="h-50 align-items-center justify-content-center px-2">
+          <Col md={12} lg={5} className="px-0">
+            <div className="d-flex justify-content-center pb-3">
+              <h6>Login required to create your decks</h6>
+            </div>
+            <div className="py-2">
+              <AccountLogin
+                setUsername={props.setUsername}
+                isMobile={props.isMobile}
+              />
+            </div>
+            <div className="py-2">
+              <AccountRegister
+                setUsername={props.setUsername}
+                whoAmI={props.whoAmI}
+              />
+            </div>
+          </Col>
+        </Row>
+      )}
       {props.isMobile && showFloatingButtons && (
         <>
           <div
@@ -594,12 +608,16 @@ function Decks(props) {
                 missingLibrary={missingLibrary}
               />
               {props.isMobile && (
-                <Button variant="outline-secondary" onClick={() => {
-                  props.setInventoryMode(!props.inventoryMode);
-                  handleShowButtons(false);
-                }}
-                        block>
-                  <ArchiveFill viewBox="0 0 16 16" /> Inventory Mode: {props.inventoryMode ? 'On' : 'Off'}
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => {
+                    props.setInventoryMode(!props.inventoryMode);
+                    handleShowButtons(false);
+                  }}
+                  block
+                >
+                  <ArchiveFill viewBox="0 0 16 16" /> Inventory Mode:{' '}
+                  {props.inventoryMode ? 'On' : 'Off'}
                 </Button>
               )}
             </Container>

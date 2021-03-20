@@ -27,11 +27,10 @@ function TwdResultCrypt(props) {
 
     if (
       props.crypt[card].c['Group'] > cryptGroupMax ||
-        cryptGroupMax == undefined
+      cryptGroupMax == undefined
     ) {
       cryptGroupMax = props.crypt[card].c['Group'];
     }
-
   });
 
   let cryptTotal = 0;
@@ -67,7 +66,7 @@ function TwdResultCrypt(props) {
     const handleClick = () => {
       setModalCard(card.c);
       props.setShowFloatingButtons(false);
-    }
+    };
 
     if (resultTrClass == 'result-even') {
       resultTrClass = 'result-odd';
