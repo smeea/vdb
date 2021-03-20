@@ -479,9 +479,6 @@ def cloneDeck():
     if 'deck' in request.json:
         deck = request.json['deck']
         cards = {}
-        del deck['master']
-        del deck['branches']
-        del deck['branchName']
 
         for i in deck['crypt']:
             cards[i] = deck['crypt'][i]['q']
