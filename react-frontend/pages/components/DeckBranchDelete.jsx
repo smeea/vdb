@@ -9,7 +9,11 @@ function DeckBranchDelete(props) {
   const handleConfirm = () => {
     deleteBranch();
     setShowConfirmation(false);
-    props.setActiveDeck({ src: null, deckid: null });
+    if (props.deck.master) {
+      props.setActiveDeck({ src: 'my', deckid: props.deck.master });
+    } else {
+      props.setActiveDeck({ src: 'my', deckid: props.deck.branches[0] });
+    }
     props.setShowButtons(false);
   };
 

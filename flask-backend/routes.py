@@ -426,9 +426,9 @@ def createBranch():
         db.session.add(branch)
         db.session.commit()
         return jsonify({
-            'new revision master': master.deckid,
-            'new revision source': source.deckid,
-            'new revision deckid': deckid,
+            'master': master.deckid,
+            'source': source.deckid,
+            'deckid': deckid,
         })
     else:
         return jsonify({'Not logged in.'})
