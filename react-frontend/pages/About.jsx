@@ -9,41 +9,6 @@ import Globe2 from '../assets/images/icons/globe2.svg';
 import Banner from './components/Banner.jsx';
 
 function About(props) {
-  const desktopScreenshots = {
-    desktop1: 'Search Crypt - With Deck Editor',
-    desktop2: 'Search Library - Plain',
-    desktop3: 'Deck Viewer',
-  };
-
-  const mobileScreenshots = {
-    mobile1: 'Library Search - Form',
-    mobile2: 'Library Search - Results',
-    mobile3: 'Deck Viewer',
-    mobile4: 'Card Preview - Text',
-    mobile5: 'Card Preview - Image',
-  };
-
-  const Screenshots = ({ value, width }) => {
-    const figures = Object.keys(value).map((key) => {
-      return (
-        <a
-          key={key}
-          href={`${process.env.ROOT_URL}images/screenshots/${key}.png`}
-        >
-          <Figure>
-            <Figure.Image
-              width={width}
-              alt={value[key]}
-              src={`${process.env.ROOT_URL}images/screenshots/${key}min.jpg`}
-            />
-            <Figure.Caption>{value[key]}</Figure.Caption>
-          </Figure>
-        </a>
-      );
-    });
-    return figures;
-  };
-
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
@@ -107,15 +72,6 @@ function About(props) {
               <li>Open source, ad-free & privacy-respecting</li>
               <li>Once familiar with, you will love it!</li>
             </ul>
-            <h5>SCREENSHOTS</h5>
-            <h6>DESKTOP</h6>
-            <div className="d-flex justify-content-between">
-              <Screenshots width={230} value={desktopScreenshots} />
-            </div>
-            <h6>MOBILE</h6>
-            <div className="d-flex justify-content-between">
-              <Screenshots width={125} value={mobileScreenshots} />
-            </div>
             <h5>VERSION</h5>
             <p>
               Card text based on{' '}
