@@ -285,7 +285,7 @@ function App(props) {
         precons[deckid] = {
           name: `${name}`,
           deckid: deckid,
-          author: '',
+          author: 'VTES Team',
           description: `Preconstructed deck from ${set}`,
           crypt: {},
           library: {},

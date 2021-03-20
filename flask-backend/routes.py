@@ -552,7 +552,7 @@ def cloneDeck():
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
                      name=f"Preconstructed {set}:{precon}",
-                     author_public_name='VTES Publisher',
+                     author_public_name='VTES Team',
                      description='',
                      author=current_user,
                      inventory_type='',

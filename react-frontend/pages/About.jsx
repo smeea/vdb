@@ -197,14 +197,15 @@ function About(props) {
             <h5>ACKNOWLEDGMENTS</h5>
             <ul>
               <li>
-                Card images by Fernando -Syndelson- Cesar from{' '}
-                <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
+                Card images by Fernando -Syndelson- Cesar from <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
                   FELD
                 </a>
               </li>
               <li>
-                TWD and rulings by Lionel -Phoenix- Panhaleux from{' '}
-                <a href="https://static.krcg.org/">KRCG</a>
+                TWD and rulings by Lionel -Phoenix- Panhaleux from <a href="https://static.krcg.org/">KRCG</a>
+              </li>
+              <li>
+                Cards scans from different sets by <a href="http://vtes.pl/">VTES.PL</a> Team
               </li>
             </ul>
 
