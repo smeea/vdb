@@ -4,6 +4,7 @@ import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
+import UsedDescription from './UsedDescription.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -47,17 +48,12 @@ function InventoryCryptTable(props) {
           if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
             softUsedMax = props.usedCards.soft[card.c['Id']][id];
           }
-
           return (
-            <div className="d-flex align-items-center" key={index}>
-              <div className="opacity-035">
-                <Shuffle />
-              </div>
-              <div className="px-1">
-                <b>{props.usedCards.soft[card.c['Id']][id]}</b>
-              </div>
-              - {props.decks[id]['name']}
-            </div>
+            <UsedDescription
+              key={index}
+              usedCards={props.usedCards.soft}
+              decks={props.decks}
+            />
           );
         }
       );
@@ -70,15 +66,11 @@ function InventoryCryptTable(props) {
         (id, index) => {
           hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
           return (
-            <div className="d-flex align-items-center" key={index}>
-              <div className="opacity-035">
-                <PinAngleFill />
-              </div>
-              <div className="px-1">
-                <b>{props.usedCards.hard[card.c['Id']][id]}</b>
-              </div>
-              - {props.decks[id]['name']}
-            </div>
+            <UsedDescription
+              key={index}
+              usedCards={props.usedCards.hard}
+              decks={props.decks}
+            />
           );
         }
       );
@@ -150,7 +142,9 @@ function InventoryCryptTable(props) {
           {!props.isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card.c} showImage={props.showImage} />}
+              overlay={
+                <CardPopover card={card.c} showImage={props.showImage} />
+              }
             >
               <td className="name pl-2" onClick={() => handleClick()}>
                 <ResultCryptName card={card.c} />

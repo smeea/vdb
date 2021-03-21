@@ -37,7 +37,12 @@ function TwdSearchFormCrypt(props) {
           {!props.isMobile ? (
             <OverlayTrigger
               placement="left"
-              overlay={<CardPopover card={props.cardBase[id]} showImage={props.showImage} />}
+              overlay={
+                <CardPopover
+                  card={props.cardBase[id]}
+                  showImage={props.showImage}
+                />
+              }
             >
               <div
                 className="pt-1"

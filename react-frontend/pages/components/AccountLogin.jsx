@@ -110,7 +110,8 @@ function AccountLogin(props) {
     <>
       Login is required for Deck Building and Inventory.
       <br />
-      Decks and Inventory are stored on the server and you can access them from any device.
+      Decks and Inventory are stored on the server and you can access them from
+      any device.
     </>
   );
 

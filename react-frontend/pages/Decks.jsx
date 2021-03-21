@@ -175,7 +175,7 @@ function Decks(props) {
     isBranches =
       props.deckRouter(props.activeDeck).master ||
       (props.deckRouter(props.activeDeck).branches &&
-       props.deckRouter(props.activeDeck).branches.length > 0);
+        props.deckRouter(props.activeDeck).branches.length > 0);
   }
 
   useEffect(() => {
@@ -218,9 +218,9 @@ function Decks(props) {
   useEffect(() => {
     if (
       !props.activeDeck.deckid &&
-        query.get('id') &&
-        props.cryptCardBase &&
-        props.libraryCardBase
+      query.get('id') &&
+      props.cryptCardBase &&
+      props.libraryCardBase
     ) {
       if (query.get('id').length == 32) {
         props.setActiveDeck({ src: 'shared', deckid: query.get('id') });
@@ -235,14 +235,14 @@ function Decks(props) {
 
     if (
       props.activeDeck.deckid &&
-        props.activeDeck.deckid != query.get('id') &&
-        props.activeDeck.deckid != 'deckInUrl'
+      props.activeDeck.deckid != query.get('id') &&
+      props.activeDeck.deckid != 'deckInUrl'
     )
       history.push(`/decks?id=${props.activeDeck.deckid}`);
 
     if (
       props.activeDeck.src == 'twd' &&
-        !(props.sharedDeck && props.sharedDeck.Id == props.activeDeck.deckid)
+      !(props.sharedDeck && props.sharedDeck.Id == props.activeDeck.deckid)
     ) {
       props.cryptCardBase &&
         props.libraryCardBase &&
@@ -256,8 +256,8 @@ function Decks(props) {
 
     if (
       props.decks &&
-        props.decks[props.activeDeck.deckid] &&
-        props.activeDeck.src != 'my'
+      props.decks[props.activeDeck.deckid] &&
+      props.activeDeck.src != 'my'
     ) {
       props.setActiveDeck({ src: 'my', deckid: props.activeDeck.deckid });
     }
@@ -314,24 +314,24 @@ function Decks(props) {
                     )}
                     <div className="d-flex">
                       {props.inventoryMode &&
-                       isAuthor &&
-                       props.deckRouter(props.activeDeck) && (
-                         <div className="d-flex pl-1">
-                           <Button
-                             variant="outline-secondary"
-                             onClick={() => toggleInventoryState()}
-                           >
-                             <div className="d-flex align-items-center">
-                               {!props.deckRouter(props.activeDeck)
-                                .inventory_type && <At />}
-                               {props.deckRouter(props.activeDeck)
-                                .inventory_type == 's' && <Shuffle />}
-                               {props.deckRouter(props.activeDeck)
-                                .inventory_type == 'h' && <PinAngleFill />}
-                             </div>
-                           </Button>
-                         </div>
-                       )}
+                        isAuthor &&
+                        props.deckRouter(props.activeDeck) && (
+                          <div className="d-flex pl-1">
+                            <Button
+                              variant="outline-secondary"
+                              onClick={() => toggleInventoryState()}
+                            >
+                              <div className="d-flex align-items-center">
+                                {!props.deckRouter(props.activeDeck)
+                                  .inventory_type && <At />}
+                                {props.deckRouter(props.activeDeck)
+                                  .inventory_type == 's' && <Shuffle />}
+                                {props.deckRouter(props.activeDeck)
+                                  .inventory_type == 'h' && <PinAngleFill />}
+                              </div>
+                            </Button>
+                          </div>
+                        )}
                       {props.isMobile && props.deckRouter(props.activeDeck) && (
                         <div className="d-flex pl-1">
                           <Button
@@ -345,21 +345,23 @@ function Decks(props) {
                     </div>
                   </div>
                   <Form className="py-1 my-0">
-                    {props.username && props.decks && Object.keys(props.decks).length > 0 && (
-                      <Form.Check
-                        className="px-2"
-                        checked={selectFrom == 'my'}
-                        onChange={(e) => setSelectFrom(e.target.id)}
-                        type="radio"
-                        id="my"
-                        label={
-                          <div className="blue">
-                            <b>My Decks</b>
-                          </div>
-                        }
-                        inline
-                      />
-                    )}
+                    {props.username &&
+                      props.decks &&
+                      Object.keys(props.decks).length > 0 && (
+                        <Form.Check
+                          className="px-2"
+                          checked={selectFrom == 'my'}
+                          onChange={(e) => setSelectFrom(e.target.id)}
+                          type="radio"
+                          id="my"
+                          label={
+                            <div className="blue">
+                              <b>My Decks</b>
+                            </div>
+                          }
+                          inline
+                        />
+                      )}
                     <Form.Check
                       className="px-2"
                       checked={selectFrom == 'precons'}
@@ -380,54 +382,28 @@ function Decks(props) {
             <Col lg={7} className="px-0 px-lg-3">
               {((showInfo && props.deckRouter(props.activeDeck)) ||
                 (!props.isMobile && props.deckRouter(props.activeDeck))) && (
-                  <>
-                    <Row className={props.isMobile ? 'mx-0' : 'mx-0 pb-2'}>
+                <>
+                  <Row className={props.isMobile ? 'mx-0' : 'mx-0 pb-2'}>
+                    <Col
+                      md={isBranches ? 6 : 8}
+                      className={props.isMobile ? 'px-0' : 'pl-0 pr-1'}
+                    >
+                      <DeckChangeName
+                        name={props.deckRouter(props.activeDeck).name}
+                        deckid={props.activeDeck.deckid}
+                        deckUpdate={deckUpdate}
+                        isAuthor={isAuthor}
+                        isMobile={props.isMobile}
+                      />
+                    </Col>
+                    {isBranches && (
                       <Col
-                        md={isBranches ? 6 : 8}
-                        className={props.isMobile ? 'px-0' : 'pl-0 pr-1'}
+                        md={2}
+                        className={props.isMobile ? 'px-0' : 'pl-0 pr-0'}
                       >
-                        <DeckChangeName
-                          name={props.deckRouter(props.activeDeck).name}
-                          deckid={props.activeDeck.deckid}
-                          deckUpdate={deckUpdate}
-                          isAuthor={isAuthor}
-                          isMobile={props.isMobile}
-                        />
-                      </Col>
-                      {isBranches && (
-                        <Col
-                          md={2}
-                          className={props.isMobile ? 'px-0' : 'pl-0 pr-0'}
-                        >
-                          <DeckChangeBranchName
-                            branchName={
-                              props.deckRouter(props.activeDeck).branchName
-                            }
-                            deckid={props.activeDeck.deckid}
-                            deckUpdate={deckUpdate}
-                            isAuthor={isAuthor}
-                            isMobile={props.isMobile}
-                          />
-                        </Col>
-                      )}
-                      <Col
-                        md={4}
-                        className={props.isMobile ? 'px-0' : 'pl-1 pr-0'}
-                      >
-                        <DeckChangeAuthor
-                          author={props.deckRouter(props.activeDeck).author}
-                          deckid={props.activeDeck.deckid}
-                          deckUpdate={deckUpdate}
-                          isAuthor={isAuthor}
-                          isMobile={props.isMobile}
-                        />
-                      </Col>
-                    </Row>
-                    <Row className="mx-0">
-                      <Col className="px-0">
-                        <DeckChangeDescription
-                          description={
-                            props.deckRouter(props.activeDeck).description
+                        <DeckChangeBranchName
+                          branchName={
+                            props.deckRouter(props.activeDeck).branchName
                           }
                           deckid={props.activeDeck.deckid}
                           deckUpdate={deckUpdate}
@@ -435,9 +411,35 @@ function Decks(props) {
                           isMobile={props.isMobile}
                         />
                       </Col>
-                    </Row>
-                  </>
-                )}
+                    )}
+                    <Col
+                      md={4}
+                      className={props.isMobile ? 'px-0' : 'pl-1 pr-0'}
+                    >
+                      <DeckChangeAuthor
+                        author={props.deckRouter(props.activeDeck).author}
+                        deckid={props.activeDeck.deckid}
+                        deckUpdate={deckUpdate}
+                        isAuthor={isAuthor}
+                        isMobile={props.isMobile}
+                      />
+                    </Col>
+                  </Row>
+                  <Row className="mx-0">
+                    <Col className="px-0">
+                      <DeckChangeDescription
+                        description={
+                          props.deckRouter(props.activeDeck).description
+                        }
+                        deckid={props.activeDeck.deckid}
+                        deckUpdate={deckUpdate}
+                        isAuthor={isAuthor}
+                        isMobile={props.isMobile}
+                      />
+                    </Col>
+                  </Row>
+                </>
+              )}
             </Col>
           </Row>
           {deckError && (
@@ -533,7 +535,9 @@ function Decks(props) {
               <h6>Login required to create your decks.</h6>
             </div>
             <div className="d-flex justify-content-center pb-3">
-              <h6>(you can browse official preconstructed decks without login)</h6>
+              <h6>
+                (you can browse official preconstructed decks without login)
+              </h6>
             </div>
             <div className="py-2">
               <AccountLogin

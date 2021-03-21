@@ -4,6 +4,7 @@ import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
+import UsedDescription from './UsedDescription.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -68,17 +69,12 @@ function ResultLibraryTable(props) {
           if (softUsedMax < props.usedCards.soft[card['Id']][id]) {
             softUsedMax = props.usedCards.soft[card['Id']][id];
           }
-
           return (
-            <div className="d-flex align-items-center" key={index}>
-              <div className="opacity-035">
-                <Shuffle />
-              </div>
-              <div className="px-1">
-                <b>{props.usedCards.soft[card['Id']][id]}</b>
-              </div>
-              - {props.decks[id]['name']}
-            </div>
+            <UsedDescription
+              key={index}
+              usedCards={props.usedCards.soft}
+              decks={props.decks}
+            />
           );
         }
       );
@@ -91,15 +87,11 @@ function ResultLibraryTable(props) {
         (id, index) => {
           hardUsedTotal += props.usedCards.hard[card['Id']][id];
           return (
-            <div className="d-flex align-items-center" key={index}>
-              <div className="opacity-035">
-                <PinAngleFill />
-              </div>
-              <div className="px-1">
-                <b>{props.usedCards.hard[card['Id']][id]}</b>
-              </div>
-              - {props.decks[id]['name']}
-            </div>
+            <UsedDescription
+              key={index}
+              usedCards={props.usedCards.hard}
+              decks={props.decks}
+            />
           );
         }
       );

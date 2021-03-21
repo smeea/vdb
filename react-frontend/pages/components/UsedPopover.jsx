@@ -3,8 +3,15 @@ import { Popover } from 'react-bootstrap';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
 
-const UsedPopover = React.forwardRef(( props, ref) => {
-  const { softUsedMax, hardUsedTotal, SoftUsedDescription, HardUsedDescription, inInventory, ...rest } = props;
+const UsedPopover = React.forwardRef((props, ref) => {
+  const {
+    softUsedMax,
+    hardUsedTotal,
+    SoftUsedDescription,
+    HardUsedDescription,
+    inInventory,
+    ...rest
+  } = props;
 
   return (
     <Popover ref={ref} {...rest}>
