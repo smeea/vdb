@@ -72,8 +72,8 @@ function ResultLibraryTable(props) {
           return (
             <UsedDescription
               key={index}
-              usedCards={props.usedCards.soft}
-              decks={props.decks}
+              q={props.usedCards.soft[card['Id']][id]}
+              deckName={props.decks[id]['name']}
             />
           );
         }
@@ -89,8 +89,8 @@ function ResultLibraryTable(props) {
           return (
             <UsedDescription
               key={index}
-              usedCards={props.usedCards.hard}
-              decks={props.decks}
+              q={props.usedCards.hard[card['Id']][id]}
+              deckName={props.decks[id]['name']}
             />
           );
         }

@@ -51,8 +51,8 @@ function InventoryCryptTable(props) {
           return (
             <UsedDescription
               key={index}
-              usedCards={props.usedCards.soft}
-              decks={props.decks}
+              q={props.usedCards.soft[card.c['Id']][id]}
+              deckName={props.decks[id]['name']}
             />
           );
         }
@@ -68,8 +68,8 @@ function InventoryCryptTable(props) {
           return (
             <UsedDescription
               key={index}
-              usedCards={props.usedCards.hard}
-              decks={props.decks}
+              q={props.usedCards.hard[card.c['Id']][id]}
+              deckName={props.decks[id]['name']}
             />
           );
         }

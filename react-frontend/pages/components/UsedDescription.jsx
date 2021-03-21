@@ -3,14 +3,14 @@ import Shuffle from '../../assets/images/icons/shuffle.svg';
 
 const UsedDescription = (props) => {
   return (
-    <div className="d-flex align-items-center" key={index}>
+    <div className="d-flex align-items-center">
       <div className="opacity-035">
         <Shuffle />
       </div>
       <div className="px-1">
-        <b>{props.usedCards[card['Id']][id]}</b>
+        <b>{props.q}</b>
       </div>
-      - {props.decks[id]['name']}
+      - {props.deckName}
     </div>
   );
 };
