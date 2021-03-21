@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
+import { OverlayTrigger } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
+import CardPopover from './CardPopover.jsx';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
-import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function TwdSearchFormLibrary(props) {
@@ -26,17 +26,6 @@ function TwdSearchFormLibrary(props) {
   const libraryCardsList = Object.keys(props.state)
     .filter((id) => props.state[id] > 0)
     .map((id, index) => {
-      const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
-        return (
-          <Popover ref={ref} {...props}>
-            <Popover.Content>
-              <ResultLibraryPopover card={props.card} showImage={children} />
-            </Popover.Content>
-          </Popover>
-        );
-      });
-      CardPopover.displayName = 'CardPopover';
-
       return (
         <div key={index} className="d-flex align-items-center">
           <TwdSearchFormQuantityButtons
@@ -49,11 +38,7 @@ function TwdSearchFormLibrary(props) {
           {!props.isMobile ? (
             <OverlayTrigger
               placement="left"
-              overlay={
-                <CardPopover card={props.cardBase[id]}>
-                  {props.showImage}
-                </CardPopover>
-              }
+              overlay={<CardPopover card={props.cardBase[id]} showImage={props.showImage} />}
             >
               <div
                 className="pt-1"

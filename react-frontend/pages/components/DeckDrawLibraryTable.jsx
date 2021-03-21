@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Popover, Modal } from 'react-bootstrap';
-import ResultLibraryPopover from './ResultLibraryPopover.jsx';
+import { OverlayTrigger, Modal } from 'react-bootstrap';
+import CardPopover from './CardPopover.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -55,17 +55,6 @@ function DeckDrawLibraryTable(props) {
       </div>
     );
 
-    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
-      return (
-        <Popover ref={ref} {...props}>
-          <Popover.Content>
-            <ResultLibraryPopover card={card} showImage={children} />
-          </Popover.Content>
-        </Popover>
-      );
-    });
-    CardPopover.displayName = 'CardPopover';
-
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
@@ -91,7 +80,7 @@ function DeckDrawLibraryTable(props) {
           {!props.isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card}>{props.showImage}</CardPopover>}
+              overlay={<CardPopover card={card} showImage={props.showImage} />}
             >
               <td
                 className="name px-1"

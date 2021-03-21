@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Popover, Modal } from 'react-bootstrap';
-import ResultCryptPopover from './ResultCryptPopover.jsx';
+import { OverlayTrigger, Modal } from 'react-bootstrap';
+import CardPopover from './CardPopover.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -53,17 +53,6 @@ function DeckDrawCryptTable(props) {
       </div>
     );
 
-    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
-      return (
-        <Popover ref={ref} {...props}>
-          <Popover.Content>
-            <ResultCryptPopover card={props.card} showImage={children} />
-          </Popover.Content>
-        </Popover>
-      );
-    });
-    CardPopover.displayName = 'CardPopover';
-
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
@@ -88,7 +77,7 @@ function DeckDrawCryptTable(props) {
           {!props.isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card}>{props.showImage}</CardPopover>}
+              overlay={<CardPopover card={card} showImage={props.showImage} />}
             >
               <td className="name px-1" onClick={() => props.burnCrypt(index)}>
                 <ResultCryptName card={card} />

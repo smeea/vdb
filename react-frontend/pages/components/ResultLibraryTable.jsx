@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
+import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
-import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
-import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
-import ResultLibraryPopover from './ResultLibraryPopover.jsx';
+import CardPopover from './CardPopover.jsx';
+import UsedPopover from './UsedPopover.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -62,6 +61,7 @@ function ResultLibraryTable(props) {
 
     let softUsedMax = 0;
     let SoftUsedDescription;
+
     if (props.usedCards.soft[card['Id']]) {
       SoftUsedDescription = Object.keys(props.usedCards.soft[card['Id']]).map(
         (id, index) => {
@@ -105,56 +105,6 @@ function ResultLibraryTable(props) {
       );
     }
 
-    const UsedPopover = React.forwardRef(({ children, ...props }, ref) => {
-      return (
-        <Popover ref={ref} {...props}>
-          <Popover.Content>
-            <>
-              {children == 0 ? (
-                <div className="py-1">Not used in inventory decks</div>
-              ) : (
-                <>
-                  {softUsedMax > 0 && <>{SoftUsedDescription}</>}
-                  {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
-                </>
-              )}
-              <hr />
-              <div className="d-flex align-items-center">
-                <div className="opacity-035">
-                  <CalculatorFill />
-                </div>
-                <div className="px-1">
-                  <b>{softUsedMax + hardUsedTotal}</b>
-                </div>
-                - Total Used
-              </div>
-              <div className="d-flex align-items-center">
-                <div className="opacity-035">
-                  <ArchiveFill />
-                </div>
-                <div className="px-1">
-                  <b>{inInventory}</b>
-                </div>
-                - In Inventory
-              </div>
-            </>
-          </Popover.Content>
-        </Popover>
-      );
-    });
-    UsedPopover.displayName = 'UsedPopover';
-
-    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
-      return (
-        <Popover ref={ref} {...props}>
-          <Popover.Content>
-            <ResultLibraryPopover card={card} showImage={children} />
-          </Popover.Content>
-        </Popover>
-      );
-    });
-    CardPopover.displayName = 'CardPopover';
-
     return (
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
@@ -173,7 +123,13 @@ function ResultLibraryTable(props) {
               <OverlayTrigger
                 placement="left"
                 overlay={
-                  <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+                  <UsedPopover
+                    softUsedMax={softUsedMax}
+                    hardUsedTotal={hardUsedTotal}
+                    inInventory={inInventory}
+                    SoftUsedDescription={SoftUsedDescription}
+                    HardUsedDescription={HardUsedDescription}
+                  />
                 }
               >
                 <td className="quantity px-1">
@@ -224,7 +180,7 @@ function ResultLibraryTable(props) {
           {!props.isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card}>{props.showImage}</CardPopover>}
+              overlay={<CardPopover card={card} showImage={props.showImage} />}
             >
               <td className="name px-1" onClick={() => handleClick()}>
                 <ResultLibraryName card={card} />

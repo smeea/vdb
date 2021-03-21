@@ -5,7 +5,6 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* Don't show My Decks without decks
 
 # FIX MOBILE
 * Optimize for tablet

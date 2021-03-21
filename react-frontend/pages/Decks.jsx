@@ -250,8 +250,6 @@ function Decks(props) {
     }
   }, [query, props.activeDeck, props.cryptCardBase, props.libraryCardBase]);
 
-  console.log(selectFrom)
-
   useEffect(() => {
     if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons')
       setSelectFrom(props.activeDeck.src);

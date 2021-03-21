@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
-import ResultLibraryPopover from './ResultLibraryPopover.jsx';
+import { OverlayTrigger } from 'react-bootstrap';
+import CardPopover from './CardPopover.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
@@ -74,17 +74,6 @@ function TwdResultLibraryKeyCards(props) {
       resultTrClass = 'result-even';
     }
 
-    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
-      return (
-        <Popover ref={ref} {...props}>
-          <Popover.Content>
-            <ResultLibraryPopover card={card.c} showImage={children} />
-          </Popover.Content>
-        </Popover>
-      );
-    });
-    CardPopover.displayName = 'CardPopover';
-
     return (
       <tr key={index} className={resultTrClass}>
         <td className="quantity-no-buttons px-1">{card.q}</td>
@@ -94,7 +83,7 @@ function TwdResultLibraryKeyCards(props) {
         {!props.isMobile ? (
           <OverlayTrigger
             placement={props.placement ? props.placement : 'right'}
-            overlay={<CardPopover card={card.c}>{props.showImage}</CardPopover>}
+            overlay={<CardPopover card={card.c} showImage={props.showImage} />}
           >
             <td className="name px-1" onClick={() => handleClick()}>
               <ResultLibraryName card={card.c} />

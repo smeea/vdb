@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
-import ResultCryptPopover from './ResultCryptPopover.jsx';
+import { OverlayTrigger } from 'react-bootstrap';
+import CardPopover from './CardPopover.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
@@ -74,17 +74,6 @@ function TwdResultCrypt(props) {
       resultTrClass = 'result-even';
     }
 
-    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
-      return (
-        <Popover ref={ref} {...props}>
-          <Popover.Content>
-            <ResultCryptPopover card={card.c} showImage={children} />
-          </Popover.Content>
-        </Popover>
-      );
-    });
-    CardPopover.displayName = 'CardPopover';
-
     return (
       <tr key={index} className={resultTrClass}>
         <td className="quantity-no-buttons px-1">{card.q}</td>
@@ -94,7 +83,7 @@ function TwdResultCrypt(props) {
         {!props.isMobile ? (
           <OverlayTrigger
             placement={props.placement ? props.placement : 'right'}
-            overlay={<CardPopover card={card.c}>{props.showImage}</CardPopover>}
+            overlay={<CardPopover card={card.c} showImage={props.showImage} />}
           >
             <td className="name px-1" onClick={() => handleClick()}>
               <ResultCryptName card={card.c} />

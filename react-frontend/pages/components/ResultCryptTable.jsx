@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Popover } from 'react-bootstrap';
+import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
-import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
-import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
-import ResultCryptPopover from './ResultCryptPopover.jsx';
+import CardPopover from './CardPopover.jsx';
+import UsedPopover from './UsedPopover.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -65,7 +64,6 @@ function ResultCryptTable(props) {
     let inInventory = null;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-    let UsedPopover;
     let SoftUsedDescription;
     let HardUsedDescription;
 
@@ -120,56 +118,7 @@ function ResultCryptTable(props) {
         );
       }
 
-      UsedPopover = React.forwardRef(({ children, ...props }, ref) => {
-        return (
-          <Popover ref={ref} {...props}>
-            <Popover.Content>
-              <>
-                {children == 0 ? (
-                  <div className="py-1">Not used in inventory decks</div>
-                ) : (
-                  <>
-                    {softUsedMax > 0 && <>{SoftUsedDescription}</>}
-                    {hardUsedTotal > 0 && <>{HardUsedDescription}</>}
-                  </>
-                )}
-                <hr />
-                <div className="d-flex align-items-center">
-                  <div className="opacity-035">
-                    <CalculatorFill />
-                  </div>
-                  <div className="px-1">
-                    <b>{softUsedMax + hardUsedTotal}</b>
-                  </div>
-                  - Total Used
-                </div>
-                <div className="d-flex align-items-center">
-                  <div className="opacity-035">
-                    <ArchiveFill />
-                  </div>
-                  <div className="px-1">
-                    <b>{inInventory}</b>
-                  </div>
-                  - In Inventory
-                </div>
-              </>
-            </Popover.Content>
-          </Popover>
-        );
-      });
-      UsedPopover.displayName = 'UsedPopover';
     }
-
-    const CardPopover = React.forwardRef(({ children, ...props }, ref) => {
-      return (
-        <Popover ref={ref} {...props}>
-          <Popover.Content>
-            <ResultCryptPopover card={props.card} showImage={children} />
-          </Popover.Content>
-        </Popover>
-      );
-    });
-    CardPopover.displayName = 'CardPopover';
 
     return (
       <React.Fragment key={index}>
@@ -223,13 +172,17 @@ function ResultCryptTable(props) {
                           </div>
                         </td>
                       ) : null}
-                      {props.isMobile ? (
+                      {!props.isMobile ? (
                         <OverlayTrigger
                           placement="right"
                           overlay={
-                            <UsedPopover>
-                              {softUsedMax || hardUsedTotal}
-                            </UsedPopover>
+                            <UsedPopover
+                              softUsedMax={softUsedMax}
+                              hardUsedTotal={hardUsedTotal}
+                              inInventory={inInventory}
+                              SoftUsedDescription={SoftUsedDescription}
+                              HardUsedDescription={HardUsedDescription}
+                            />
                           }
                         >
                           <td className="quantity">
@@ -298,9 +251,13 @@ function ResultCryptTable(props) {
                     <OverlayTrigger
                       placement="right"
                       overlay={
-                        <UsedPopover>
-                          {softUsedMax || hardUsedTotal}
-                        </UsedPopover>
+                        <UsedPopover
+                          softUsedMax={softUsedMax}
+                          hardUsedTotal={hardUsedTotal}
+                          inInventory={inInventory}
+                          SoftUsedDescription={SoftUsedDescription}
+                          HardUsedDescription={HardUsedDescription}
+                        />
                       }
                     >
                       <td className="quantity-no-buttons px-2">
@@ -342,7 +299,13 @@ function ResultCryptTable(props) {
                   <OverlayTrigger
                     placement="left"
                     overlay={
-                      <UsedPopover>{softUsedMax || hardUsedTotal}</UsedPopover>
+                      <UsedPopover
+                        softUsedMax={softUsedMax}
+                        hardUsedTotal={hardUsedTotal}
+                        inInventory={inInventory}
+                        SoftUsedDescription={SoftUsedDescription}
+                        HardUsedDescription={HardUsedDescription}
+                      />
                     }
                   >
                     <td className="quantity px-1">
@@ -410,7 +373,7 @@ function ResultCryptTable(props) {
           {!props.isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card}>{props.showImage}</CardPopover>}
+              overlay={<CardPopover card={card} showImage={props.showImage} />}
             >
               <td
                 className="name px-1"
