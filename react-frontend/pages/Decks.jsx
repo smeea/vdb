@@ -229,7 +229,6 @@ function Decks(props) {
         props.setActiveDeck({ src: 'precons', deckid: query.get('id') });
       } else {
         props.setActiveDeck({ src: 'twd', deckid: query.get('id') });
-        getDeck(query.get('id'));
       }
     }
 
@@ -242,7 +241,7 @@ function Decks(props) {
 
     if (
       props.activeDeck.src == 'twd' &&
-      !(props.sharedDeck && props.sharedDeck.Id == props.activeDeck.deckid)
+      !(props.sharedDeck && props.sharedDeck[props.activeDeck.deckid])
     ) {
       props.cryptCardBase &&
         props.libraryCardBase &&
