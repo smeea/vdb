@@ -14,6 +14,10 @@ def deckExport(d, format):
             elif k < 200000 and v > 0:
                 library[k] = {'c': get_library_by_id(k), 'q': v}
 
+        deck_name = d['name']
+        if d['branch_name']:
+            deck_name += f" [{d['branch_name']}]"
+
         deck = ''
 
         if format == 'lackey':
@@ -117,7 +121,6 @@ def deckExport(d, format):
                 cryptMin += capacityList[i]
                 cryptMax += capacityList[-i - 1]
 
-            deck_name = f"{d['name']} [{d['branch_name']}]" if 'branch_name' in d else d['name']
             deck += f"Name: {deck_name}\n"
             deck += f"Author: {d['author']}\n"
             deck += f"Description: {d['description']}\n" + "\n"
