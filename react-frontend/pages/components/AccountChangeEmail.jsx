@@ -115,7 +115,7 @@ function AccountChangeEmail(props) {
     <>
       <h6 className="d-flex align-items-center px-1">
         <EnvelopeFill />
-        <span className="ml-2">Change email</span>
+        <span className="ml-2">Change email (optional)</span>
         {!props.isMobile ? (
           <OverlayTooltip text={tooltipText}>
             <span className="question-tooltip ml-1">[?]</span>

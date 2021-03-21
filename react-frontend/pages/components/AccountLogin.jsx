@@ -108,9 +108,9 @@ function AccountLogin(props) {
 
   const loginTooltipText = (
     <>
-      Login is required for Deck Building.
+      Login is required for Deck Building and Inventory.
       <br />
-      Decks are stored on the server and you can access them from any device.
+      Decks and Inventory are stored on the server and you can access them from any device.
     </>
   );
 
