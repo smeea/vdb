@@ -77,6 +77,7 @@ function ResultLibraryLayoutText(props) {
     MASTER: 'master',
     POWER: 'power',
     REACTION: 'reaction',
+    REFLEX: 'reflex',
     RETAINER: 'retainer',
     '1CONVICTION': 'con1',
     '2CONVICTION': 'con2',
