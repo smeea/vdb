@@ -15,13 +15,20 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
 
         deck = {
             'deckid': i['id'],
+            'name': 'Unknown',
             'event': i['event'],
             'date': i['date'],
             'location': i['place'],
+            'score': 'Unknown',
+            'format': 'Unknown',
+            'players': 'Unknown',
+            'player': 'Unknown',
             'crypt': {},
             'clan': '',
+            'description': '',
             'library': {},
             'libraryTotal': i['library']['count'],
+            'link': '',
             'disciplines': [],
             'cardtypes_ratio': {},
             'timestamp': i['date'],
@@ -29,32 +36,18 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
 
         if 'players_count' in i:
             deck['players'] = i['players_count']
-        else:
-            deck['players'] = 'Unknown'
         if 'tournament_format' in i:
             deck['format'] = i['tournament_format']
-        else:
-            deck['format'] = 'Unknown'
         if 'comments' in i:
             deck['description'] = i['comments']
-        else:
-            deck['description'] = ''
         if 'score' in i:
             deck['score'] = i['score']
-        else:
-            deck['score'] = 'Unknown'
         if 'event_link' in i:
             deck['link'] = i['event_link']
-        else:
-            deck['link'] = ''
         if 'name' in i:
             deck['name'] = i['name']
-        else:
-            deck['name'] = 'Unknown'
         if 'player' in i:
             deck['player'] = i['player']
-        else:
-            deck['player'] = 'Unknown'
 
         totalCapacity = 0
         totalCrypt = 0

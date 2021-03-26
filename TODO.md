@@ -5,9 +5,13 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
+* Fix reflex as undefined.svg in card text modal
+* Import revisions from Amaranth
+* Update cards to 2021-03-24
 
 # FIX MOBILE
 * Optimize for tablet
+* Floating close mobile card view
 
 # FEATURES
 * Create revocable link to Inventory

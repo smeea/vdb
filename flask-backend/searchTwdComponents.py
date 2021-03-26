@@ -169,9 +169,14 @@ def get_twd_by_traits(traits, twda=twda):
                 for k, v in deck['crypt'].items():
                     # Skip Anarch Convert
                     if k != '200076':
-                        if v['q'] >= min:
-                            counter += 1
-                            break
+                        if get_crypt_by_id(k)['Adv'] and str((int(k) - 1)) in deck['crypt']:
+                            if v['q'] + deck['crypt'][str(int(k) - 1)]['q'] >= min:
+                                counter += 1
+                                break
+                        else:
+                            if v['q'] >= min:
+                                counter += 1
+                                break
 
             if trait == 'monoclan':
                 clans = []
@@ -206,7 +211,8 @@ def get_twd_by_libraryTotal(total_input, twda=twda):
 
 
 def sanitizeTwd(deck):
-    del (deck['description'])
+    if 'description' in deck:
+        del (deck['description'])
     del (deck['disciplines'])
     del (deck['format'])
     del (deck['link'])
