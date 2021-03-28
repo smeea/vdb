@@ -5,6 +5,9 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
+* TWD disciplines search with multi-disciplines
+* Exact match to crypt/library search by text
+* TWD library disciplines to respect crypt disciplines
 
 # FIX MOBILE
 * Optimize for tablet

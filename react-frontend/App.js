@@ -17,6 +17,7 @@ import './assets/css/style.styl';
 const Crypt = lazy(() => import('./pages/Crypt.jsx'));
 const Library = lazy(() => import('./pages/Library.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
+const Documentation = lazy(() => import('./pages/Documentation.jsx'));
 const Twd = lazy(() => import('./pages/Twd.jsx'));
 const Decks = lazy(() => import('./pages/Decks.jsx'));
 const Account = lazy(() => import('./pages/Account.jsx'));
@@ -623,6 +624,11 @@ function App(props) {
               path="/about"
               exact
               component={() => <About isMobile={isMobile} />}
+            />
+            <Route
+              path="/documentation"
+              exact
+              component={() => <Documentation isMobile={isMobile} />}
             />
             <Route path="/account">
               <Account
