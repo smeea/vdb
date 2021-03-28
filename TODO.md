@@ -5,12 +5,11 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* Import revisions from Amaranth
 * Update cards to 2021-03-24
 
 # FIX MOBILE
 * Optimize for tablet
-* Floating close mobile card view
+* Inventory-mode on mobile in Deck
 
 # FEATURES
 * Create revocable link to Inventory
@@ -30,15 +29,12 @@
 * Deck export to JOL
 
 # IMPROVE TECHNOLOGY - FRONTEND
-* Screenshots to Bootstrap/Carousel
 * Clear CSS
-* Analytics: posthog
 * Tests: cypress / puppeteer
 * Sync: websockets
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Use Celery + Redis / RabbitMQ
-* Flask-Restful
 * Check frontend input (quantity/cardid/etc) on backend
 * Update API endpoints
 * Add error codes to return

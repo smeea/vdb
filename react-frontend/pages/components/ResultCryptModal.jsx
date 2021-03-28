@@ -43,69 +43,60 @@ function ResultCryptModal(props) {
             {props.showImage ? (
               <CardImage />
             ) : (
-              <>
-                <div className="px-3 pt-3">
-                  <ResultCryptLayoutText
-                    card={props.card}
-                    handleClose={props.handleClose}
-                    setImageSet={setImageSet}
-                  />
-                </div>
+              <div className="p-3">
+                <ResultCryptLayoutText
+                  card={props.card}
+                  handleClose={props.handleClose}
+                  setImageSet={setImageSet}
+                />
                 {props.inventoryMode && (
                   <>
-                    <div className="px-3 pt-2">
-                      <hr className="mx-0" />
-                      <div className="pt-1">
-                        <b>Inventory:</b>
-                        <div className="d-flex align-items-center">
-                          <div className="opacity-035">
-                            <CalculatorFill />
-                          </div>
-                          <div className="px-1">
-                            <b>
-                              {props.inventoryState.softUsedMax +
-                                props.inventoryState.hardUsedTotal}
-                            </b>
-                          </div>
-                          - Total Used
+                    <hr className="mx-0" />
+                    <div className="pt-1">
+                      <b>Inventory:</b>
+                      <div className="d-flex align-items-center">
+                        <div className="opacity-035">
+                          <CalculatorFill />
                         </div>
-                        <div className="d-flex align-items-center">
-                          <div className="opacity-035">
-                            <ArchiveFill />
-                          </div>
-                          <div className="px-1">
-                            <b>{props.inventoryState.inInventory}</b>
-                          </div>
-                          - In Inventory
+                        <div className="px-1">
+                          <b>
+                            {props.inventoryState.softUsedMax +
+                             props.inventoryState.hardUsedTotal}
+                          </b>
                         </div>
-                        <div className="py-1" />
-                        {props.inventoryState.usedDescription.soft && (
-                          <>{props.inventoryState.usedDescription.soft}</>
-                        )}
-                        {props.inventoryState.usedDescription.hard && (
-                          <>{props.inventoryState.usedDescription.hard}</>
-                        )}
+                        - Total Used
                       </div>
+                      <div className="d-flex align-items-center">
+                        <div className="opacity-035">
+                          <ArchiveFill />
+                        </div>
+                        <div className="px-1">
+                          <b>{props.inventoryState.inInventory}</b>
+                        </div>
+                        - In Inventory
+                      </div>
+                      {props.inventoryState.usedDescription.soft && (
+                        <>{props.inventoryState.usedDescription.soft}</>
+                      )}
+                      {props.inventoryState.usedDescription.hard && (
+                        <>{props.inventoryState.usedDescription.hard}</>
+                      )}
                     </div>
                   </>
                 )}
-                <div className="d-flex justify-content-between p-3">
-                  <ButtonCardCopyUrl
-                    isMobile={props.isMobile}
-                    id={props.card.Id}
-                  />
-                  <Button
-                    variant="outline-secondary"
-                    onClick={props.handleClose}
-                  >
-                    <X width="24" height="24" viewBox="2 2 12 12" /> Close
-                  </Button>
-                </div>
-              </>
+              </div>
             )}
             <div
+              onClick={props.handleClose}
+              className="float-right-bottom clear"
+            >
+              <div className="pt-1 float-clear">
+                <X viewBox="0 0 16 16" />
+              </div>
+            </div>
+            <div
               onClick={() => props.setShowImage(!props.showImage)}
-              className="float-right-bottom add-on"
+              className="float-right-middle add-on"
             >
               <div className="pt-1 float-add">
                 <ArrowRepeat viewBox="0 0 16 16" />
@@ -139,7 +130,7 @@ function ResultCryptModal(props) {
                           <div className="px-1">
                             <b>
                               {props.inventoryState.softUsedMax +
-                                props.inventoryState.hardUsedTotal}
+                               props.inventoryState.hardUsedTotal}
                             </b>
                           </div>
                           - Total Used
