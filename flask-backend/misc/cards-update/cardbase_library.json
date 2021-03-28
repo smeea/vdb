@@ -47056,7 +47056,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable at close range at the end of a round of combat in which this minion inflicted more damage at close range than the opposing vampire. Not usable by a minion being burned or going into torpor.\nPut this card on the opposing vampire, and this minion inflicts 1 point of damage. The victim cannot hunt until this card is removed. Any vampire(s) may burn this card with two +1 stealth actions. If the victim must hunt and cannot, he or she goes into torpor. A vampire can have only 1 Pulled Fangs.",
+        "Card Text":"Only usable at close range at the end of a round of combat in which this minion successfully inflicted more damage than the opposing vampire. Not usable by a minion being burned or going into torpor.\nPut this card on the opposing vampire, and this minion inflicts 1 point of damage on them. The attached vampire cannot hunt. Any vampire(s) can burn this card with two +1 stealth actions. If the attached vampire must hunt and cannot, they go into torpor. A vampire can have only 1 Pulled Fangs.",
         "Set":{
             "Jyhad":"R2",
             "VTES":"R",
