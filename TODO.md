@@ -5,9 +5,6 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* TWD disciplines search with multi-disciplines
-* Exact match to crypt/library search by text
-* TWD library disciplines to respect crypt disciplines
 
 # FIX MOBILE
 * Optimize for tablet
@@ -19,8 +16,8 @@
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
 * Popover on precons in modal preview set section
-* Help sections to About/Pages
-* Search criteries store/get from URL
+* TWD library disciplines to match crypt disciplines
+* Exact match to crypt/library search by text
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines
@@ -41,3 +38,4 @@
 * Update API endpoints
 * Add error codes to return
 * Amaranth import - fetch and id convert on backend
+* Unidecode for unicode-to-ascii

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import { Row, Col, Spinner, Overlay } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
@@ -21,6 +22,28 @@ import TwdSearchFormLibraryTotal from './TwdSearchFormLibraryTotal.jsx';
 function TwdSearchForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;
+
+  const history = useHistory();
+  const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
+
+  useEffect(() => {
+    if (props.cryptCardBase && props.libraryCardBase && query) {
+      props.setFormState((prevState) => {
+        const state = {...prevState}
+        Object.keys(query).map(i => {
+          if (typeof query[i] === 'object') {
+            Object.keys(query[i]).map(j => {
+              state[i][j] = query[i][j];
+            })
+          } else {
+            state[i] = query[i];
+          }
+        })
+        return state;
+      });
+    };
+  }, [props.cryptCardBase, props.libraryCardBase])
+
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
@@ -127,6 +150,7 @@ function TwdSearchForm(props) {
     props.setFormState(defaults);
     props.setResults(undefined);
     setShowError(false);
+    history.push('/twd');
   };
 
   const handleSubmitButton = (event) => {
@@ -137,9 +161,7 @@ function TwdSearchForm(props) {
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/twd`;
 
-    const state = { ...props.formState };
-    state['event'] = eventText;
-
+    const state = { ...props.formState, event: eventText };
     const input = JSON.parse(JSON.stringify(state));
 
     const multiSelectForms = [
@@ -169,6 +191,8 @@ function TwdSearchForm(props) {
     );
 
     if (Object.keys(input).length !== 0) {
+      history.push(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`)
+
       const options = {
         method: 'POST',
         mode: 'cors',
