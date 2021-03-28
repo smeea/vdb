@@ -162,19 +162,20 @@ def get_twd_by_traits(traits, twda=twda):
         for trait in traits.keys():
 
             if trait == 'star':
-                min = 5
                 if '200076' in deck['crypt']:
-                    min = 4
+                    total = deck['cryptTotal'] - deck['crypt']['200076']['q']
+                else:
+                    total = deck['cryptTotal']
 
                 for k, v in deck['crypt'].items():
                     # Skip Anarch Convert
                     if k != '200076':
                         if get_crypt_by_id(k)['Adv'] and str((int(k) - 1)) in deck['crypt']:
-                            if v['q'] + deck['crypt'][str(int(k) - 1)]['q'] >= min:
+                            if (v['q'] + deck['crypt'][str(int(k) - 1)]['q']) / total > 0.38:
                                 counter += 1
                                 break
                         else:
-                            if v['q'] >= min:
+                            if v['q'] / total > 0.38:
                                 counter += 1
                                 break
 

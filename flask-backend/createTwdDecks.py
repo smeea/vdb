@@ -15,42 +15,27 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
 
         deck = {
             'deckid': i['id'],
-            'name': 'Unknown',
+            'name': i['name'] if 'name' in i else 'Unknown',
             'event': i['event'],
             'date': i['date'],
             'location': i['place'],
-            'score': 'Unknown',
-            'format': 'Unknown',
-            'players': 'Unknown',
-            'player': 'Unknown',
+            'score': i['score'] if 'score' in i else 'Unknown',
+            'format': i['tournament_format'] if 'tournament_format' in i else 'Unknown',
+            'players': i['players_count'] if 'players_count' in i else 'Unknown',
+            'player': i['player'] if 'player' in i else 'Unknown',
             'crypt': {},
+            'cryptTotal': i['crypt']['count'],
             'clan': '',
-            'description': '',
+            'description': i['comments'] if 'comments' in i else '',
             'library': {},
             'libraryTotal': i['library']['count'],
-            'link': '',
+            'link': i['event_link'] if 'event_link' in i else'',
             'disciplines': [],
             'cardtypes_ratio': {},
             'timestamp': i['date'],
         }
 
-        if 'players_count' in i:
-            deck['players'] = i['players_count']
-        if 'tournament_format' in i:
-            deck['format'] = i['tournament_format']
-        if 'comments' in i:
-            deck['description'] = i['comments']
-        if 'score' in i:
-            deck['score'] = i['score']
-        if 'event_link' in i:
-            deck['link'] = i['event_link']
-        if 'name' in i:
-            deck['name'] = i['name']
-        if 'player' in i:
-            deck['player'] = i['player']
-
         totalCapacity = 0
-        totalCrypt = 0
 
         clans = {}
 
@@ -59,7 +44,6 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
             # Skip Anarch Convert
             if card['id'] != 200076:
                 totalCapacity += card['count'] * get_crypt_by_id(card['id'])['Capacity']
-                totalCrypt += card['count']
                 if (clan := get_crypt_by_id(card['id'])['Clan']) in clans:
                     clans[clan] += card['count']
                 else:
@@ -70,15 +54,15 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
             }
 
         for clan, q in clans.items():
-            if q / totalCrypt > 0.5:
+            if q / deck['cryptTotal'] > 0.5:
                 deck['clan'] = clan
 
-        deck['capacity'] = totalCapacity / totalCrypt
+        deck['capacity'] = totalCapacity / deck['cryptTotal']
 
         disciplines = []
 
         for type in i['library']['cards']:
-            deck['cardtypes_ratio'][type['type'].lower()] = type['count'] / i['library']['count']
+            deck['cardtypes_ratio'][type['type'].lower()] = type['count'] / deck['libraryTotal']
 
             for card in type['cards']:
 

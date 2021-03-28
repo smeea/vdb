@@ -5,7 +5,6 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* Update cards to 2021-03-24
 
 # FIX MOBILE
 * Optimize for tablet
@@ -24,7 +23,7 @@
 * Script to generate json from cvs from text disciplines
 * Night theme
 * Documentation on updates / update script
-* Go to next card in modal preview (react-swipeable-views?)
+* Go to next card in modal preview (react-swipeable-views?) - with quantity in Deck
 * Export inventory to CSV
 * Deck export to JOL
 
