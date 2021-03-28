@@ -31,7 +31,9 @@ function TwdSearchForm(props) {
       props.setFormState((prevState) => {
         const state = {...prevState}
         Object.keys(query).map(i => {
-          if (typeof query[i] === 'object') {
+          if (i === 'event') {
+            setEventText(query[i])
+          } else if (typeof query[i] === 'object') {
             Object.keys(query[i]).map(j => {
               state[i][j] = query[i][j];
             })
