@@ -102,8 +102,8 @@ function About(props) {
                   <b>Amaranth</b>
                 </a>
                 <br />
-                Online card search and deck-building tool. I use *many* ideas from
-                Amaranth.
+                Online card search and deck-building tool. I use *many* ideas
+                from Amaranth.
               </p>
               <p>
                 <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
@@ -148,8 +148,8 @@ function About(props) {
             <div className="pt-2">
               <h5>PRIVACY</h5>
               <p>
-                We respect privacy and promise not to use/share your data (email,
-                decks, etc).
+                We respect privacy and promise not to use/share your data
+                (email, decks, etc).
                 <br />
                 This service is ad-free and there are no trackers of your
                 activity.
@@ -160,7 +160,9 @@ function About(props) {
               <h5>FOR DEVELOPERS</h5>
               <p>
                 Development happens in{' '}
-                <a href="https://github.com/smeea/vdb">this Github repository.</a>
+                <a href="https://github.com/smeea/vdb">
+                  this Github repository.
+                </a>
                 <br />
                 Source code of the site is available under free{' '}
                 <a href="https://en.wikipedia.org/wiki/MIT_License">

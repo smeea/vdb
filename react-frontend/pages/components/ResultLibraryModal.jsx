@@ -61,7 +61,7 @@ function ResultLibraryModal(props) {
                         <div className="px-1">
                           <b>
                             {props.inventoryState.softUsedMax +
-                             props.inventoryState.hardUsedTotal}
+                              props.inventoryState.hardUsedTotal}
                           </b>
                         </div>
                         - Total Used
@@ -130,7 +130,7 @@ function ResultLibraryModal(props) {
                           <div className="px-1">
                             <b>
                               {props.inventoryState.softUsedMax +
-                               props.inventoryState.hardUsedTotal}
+                                props.inventoryState.hardUsedTotal}
                             </b>
                           </div>
                           - Total Used
