@@ -91,7 +91,7 @@ function About(props) {
                 <a href="http://www.vekn.net/card-lists">
                   vekn.net official list
                 </a>
-                : 2021-03-09
+                : 2021-03-24
               </p>
             </div>
 
