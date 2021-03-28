@@ -35,11 +35,11 @@ function Documentation(props) {
                   Match cards if name or card text includes given string (not
                   only starting at the beginning of the word)
                 </li>
-                <li>
-                  Exact match of the word can be achieved with double-quoting
-                  (e.g. &quot;controlled&quot; will not match cards with
-                  uncontrolled in card text)
-                </li>
+                {/* <li> */}
+                {/*   Exact match of the word can be achieved with double-quoting */}
+                {/*   (e.g. &quot;controlled&quot; will not match cards with */}
+                {/*   uncontrolled in card text) */}
+                {/* </li> */}
                 <li>Case insensitive</li>
                 <li>
                   Accept latin-only and unicode letters as card name (e.g. will
@@ -78,11 +78,11 @@ function Documentation(props) {
                   Match cards if name or card text includes given string (not
                   only starting at the beginning of the word)
                 </li>
-                <li>
-                  Exact match of the word can be achieved with double-quoting
-                  (e.g. &quot;controlled&quot; will not match cards with
-                  uncontrolled in card text)
-                </li>
+                {/* <li> */}
+                {/*   Exact match of the word can be achieved with double-quoting */}
+                {/*   (e.g. &quot;controlled&quot; will not match cards with */}
+                {/*   uncontrolled in card text) */}
+                {/* </li> */}
                 <li>Case insensitive</li>
                 <li>
                   Accept Latin-only or Unicode letters as card name
