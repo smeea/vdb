@@ -40,4 +40,3 @@
 * Update API endpoints
 * Add error codes to return
 * Amaranth import - fetch and id convert on backend
-* Unidecode for unicode-to-ascii

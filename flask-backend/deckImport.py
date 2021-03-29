@@ -1,11 +1,6 @@
 import json
 import re
-import unicodedata
-
-
-def letters_to_ascii(text):
-    return ''.join(c for c in unicodedata.normalize('NFD', text)
-                   if unicodedata.category(c) != 'Mn')
+from unidecode import unidecode
 
 
 with open("vtescrypt.json", "r") as crypt_file:
@@ -58,19 +53,19 @@ def deckImport(deckText):
         if not adv:
             for card in crypt:
                 if (cardname == card['Name'].lower()
-                        or cardname == letters_to_ascii(
+                        or cardname == unidecode(
                             card['Name'].lower())) and not card['Adv']:
                     deck['cards'][str(card['Id'])] = quantity
 
             for card in library:
                 if cardname == card['Name'].lower(
-                ) or cardname == letters_to_ascii(card['Name'].lower()):
+                ) or cardname == unidecode(card['Name'].lower()):
                     deck['cards'][str(card['Id'])] = quantity
 
         else:
             for card in crypt:
                 if (cardname == card['Name'].lower()
-                        or cardname == letters_to_ascii(
+                        or cardname == unidecode(
                             card['Name'].lower())) and card['Adv']:
                     deck['cards'][str(card['Id'])] = quantity
 

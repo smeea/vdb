@@ -1,13 +1,7 @@
 import json
 import re
-import unicodedata
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
-
-
-def letters_to_ascii(text):
-    return ''.join(c for c in unicodedata.normalize('NFD', text)
-                   if unicodedata.category(c) != 'Mn')
 
 
 with open("twdDecks.json", "r") as twd_file:

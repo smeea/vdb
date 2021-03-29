@@ -1,13 +1,9 @@
 from fpdf import FPDF
-import unicodedata
+from unidecode import unidecode
 import re
 import base64
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
-
-def letters_to_ascii(text):
-    return ''.join(c for c in unicodedata.normalize('NFD', text)
-                   if unicodedata.category(c) != 'Mn')
 
 def deckProxy(cards):
     try:
@@ -21,10 +17,10 @@ def deckProxy(cards):
                 if card['Adv']:
                     name += 'adv'
 
-                crypt[letters_to_ascii(re.sub('[\\W]', '', name)).lower() + '.jpg'] = v
+                crypt[unidecode(re.sub('[\\W]', '', name)).lower() + '.jpg'] = v
             elif k < 200000 and v > 0:
                 name = get_library_by_id(k)['Name']
-                library[letters_to_ascii(re.sub('[\\W]', '', name)).lower() + '.jpg'] = v
+                library[unidecode(re.sub('[\\W]', '', name)).lower() + '.jpg'] = v
 
         imagelist = []
 
