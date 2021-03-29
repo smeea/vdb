@@ -35,7 +35,7 @@ function ResultLibraryModal(props) {
       onHide={props.handleClose}
       animation={false}
       centered={true}
-      contentClassName="no-border"
+      dialogClassName="no-border"
     >
       <Modal.Body className="p-0">
         {props.isMobile ? (

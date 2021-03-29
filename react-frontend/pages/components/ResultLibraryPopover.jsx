@@ -131,7 +131,7 @@ function ResultLibraryPopover(props) {
   return (
     <>
       {!props.showImage ? (
-        <>
+        <div className="py-1">
           <div className="d-flex flex-nowrap justify-content-between align-items-center">
             <div className="d-flex flex-nowrap align-items-center">
               <div>
@@ -185,7 +185,7 @@ function ResultLibraryPopover(props) {
               <ListGroup>{Rulings}</ListGroup>
             </div>
           )}
-        </>
+        </div>
       ) : (
         cardImage
       )}

@@ -5,6 +5,7 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
+* Fix SharedArrayBuffer
 
 # FIX MOBILE
 * Optimize for tablet
@@ -18,6 +19,7 @@
 * Popover on precons in modal preview set section
 * TWD library disciplines to match crypt disciplines
 * Exact match to crypt/library search by text
+* Offline web-app
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines
