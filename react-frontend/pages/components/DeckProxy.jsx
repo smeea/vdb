@@ -74,7 +74,7 @@ function DeckProxy(props) {
           const file = 'data:application/pdf;base64,' + data;
           saveAs(file, `${props.deck['name']}.pdf`);
           setSpinnerState(false);
-          props.setShowButtons(false);
+          props.isMobile && props.setShowButtons(false);
         })
         .catch((error) => {
           setSpinnerState(false);

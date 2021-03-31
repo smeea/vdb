@@ -56,7 +56,7 @@ function InventoryExport(props) {
       .then((response) => response.json())
       .then((data) => {
         navigator.clipboard.writeText(data.deck);
-        props.setShowButtons(false);
+        props.isMobile && props.setShowButtons(false);
         setSpinnerState(false);
       })
       .catch((error) => {
@@ -95,7 +95,7 @@ function InventoryExport(props) {
         );
         FileSaver.saveAs(file);
         setSpinnerState(false);
-        props.setShowButtons(false);
+        props.isMobile && props.setShowButtons(false);
       })
       .catch((error) => {
         setError(true);

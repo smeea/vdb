@@ -72,7 +72,7 @@ function DeckDrawModal(props) {
       });
     props.proxyCards(cards);
     props.setShow(false);
-    props.setShowButtons(false);
+    props.isMobile && props.setShowButtons(false);
   };
 
   return (

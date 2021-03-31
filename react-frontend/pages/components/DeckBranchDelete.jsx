@@ -14,7 +14,7 @@ function DeckBranchDelete(props) {
     } else {
       props.setActiveDeck({ src: 'my', deckid: props.deck.branches[0] });
     }
-    props.setShowButtons(false);
+    props.isMobile && props.setShowButtons(false);
   };
 
   const deleteBranch = () => {

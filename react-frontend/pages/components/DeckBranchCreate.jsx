@@ -27,7 +27,7 @@ function DeckBranchCreate(props) {
       })
       .then(() => props.getDecks())
       .then(() => props.setActiveDeck({ src: 'my', deckid: newdeckid }))
-      .then(() => props.isMobile && props.setShowInfo(true));
+      .then(() => props.isMobile && props.setShowButtons(false));
   };
 
   return (

@@ -19,7 +19,7 @@ function DeckImport(props) {
   const handleCloseImportModal = () => {
     setShowTextModal(false);
     setShowAmaranthModal(false);
-    props.setShowButtons(false);
+    props.isMobile && props.setShowButtons(false);
   };
   const handleOpenTextModal = () => setShowTextModal(true);
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
@@ -83,7 +83,7 @@ function DeckImport(props) {
   const handleCreateButton = () => {
     createNewDeck();
     props.isMobile && props.setShowInfo(true);
-    props.setShowButtons(false);
+    props.isMobile && props.setShowButtons(false);
   };
 
   const ImportButtonOptions = (

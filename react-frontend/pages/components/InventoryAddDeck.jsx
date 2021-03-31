@@ -13,7 +13,7 @@ function InventoryAddDeck(props) {
         key={index}
         onClick={() => {
           props.inventoryDeckAdd(props.decks[deck]);
-          props.setShowButtons(false);
+          props.isMobile && props.setShowButtons(false);
         }}
       >
         <div className="d-flex align-items-center">

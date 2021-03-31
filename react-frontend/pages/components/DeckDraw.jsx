@@ -64,7 +64,7 @@ function DeckDraw(props) {
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
-    props.setShowButtons(false);
+    props.isMobile && props.setShowButtons(false);
   };
 
   const handleOpenDraw = () => {

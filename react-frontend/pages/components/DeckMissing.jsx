@@ -7,7 +7,7 @@ function DeckMissing(props) {
   const [showModal, setShowModal] = useState(undefined);
   const handleCloseModal = () => {
     setShowModal(false);
-    props.setShowButtons(false);
+    props.isMobile && props.setShowButtons(false);
   };
 
   return (

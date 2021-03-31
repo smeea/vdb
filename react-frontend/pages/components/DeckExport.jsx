@@ -73,7 +73,7 @@ function DeckExport(props) {
         .then((data) => {
           navigator.clipboard.writeText(data.deck);
           setSpinnerState(false);
-          props.setShowButtons(false);
+          props.isMobile && props.setShowButtons(false);
         })
         .catch((error) => {
           setError(true);
@@ -135,7 +135,7 @@ function DeckExport(props) {
           );
           FileSaver.saveAs(file);
           setSpinnerState(false);
-          props.setShowButtons(false);
+          props.isMobile && props.setShowButtons(false);
         })
         .catch((error) => {
           setSpinnerState(false);

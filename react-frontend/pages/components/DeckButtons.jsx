@@ -33,6 +33,7 @@ function DeckButtons(props) {
             activeDeck={props.activeDeck}
             setActiveDeck={props.setActiveDeck}
             setShowButtons={props.setShowButtons}
+            isMobile={props.isMobile}
           />
         </div>
       )}
@@ -43,6 +44,7 @@ function DeckButtons(props) {
             activeDeck={props.activeDeck}
             setShowButtons={props.setShowButtons}
             username={props.username}
+            isMobile={props.isMobile}
           />
         </div>
       )}
@@ -66,6 +68,7 @@ function DeckButtons(props) {
             activeDeck={props.activeDeck}
             setActiveDeck={props.setActiveDeck}
             setShowButtons={props.setShowButtons}
+            isMobile={props.isMobile}
           />
         </div>
       )}
@@ -91,12 +94,14 @@ function DeckButtons(props) {
                 <DeckCopyUrlMutableButton
                   value={props.activeDeck.deckid}
                   setShowButtons={props.setShowButtons}
+                  isMobile={props.isMobile}
                 />
               </div>
               <div className="bp-125">
                 <DeckCopyUrlCodedButton
                   deck={props.deck}
                   setShowButtons={props.setShowButtons}
+                  isMobile={props.isMobile}
                 />
               </div>
             </>
@@ -105,6 +110,7 @@ function DeckButtons(props) {
               <DeckCopyUrlMutableButton
                 value={props.activeDeck.deckid}
                 setShowButtons={props.setShowButtons}
+                isMobile={props.isMobile}
               />
             </div>
           )}

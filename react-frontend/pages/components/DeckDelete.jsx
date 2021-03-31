@@ -11,7 +11,7 @@ function DeckDelete(props) {
     setShowConfirmation(false);
     props.setActiveDeck({ src: null, deckid: null });
     props.history.push('/decks');
-    props.setShowButtons(false);
+    props.isMobile && props.setShowButtons(false);
   };
 
   const deleteDeck = () => {
