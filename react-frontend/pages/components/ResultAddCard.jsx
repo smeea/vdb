@@ -9,6 +9,7 @@ function ResultAddCard(props) {
       className={props.inDeck > 0 ? 'in' : 'add'}
       variant="outline-secondary"
       onClick={handleButton}
+      block
     >
       {props.inDeck > 0 ? props.inDeck : '+'}
     </Button>
