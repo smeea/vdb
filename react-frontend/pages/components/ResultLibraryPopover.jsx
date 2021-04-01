@@ -10,35 +10,6 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 
 function ResultLibraryPopover(props) {
-  const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
-    .toLowerCase()
-    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-
-  const cardImage = (
-    <img
-      className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
-      src={imgSrc}
-      alt={props.card['Name']}
-      onClick={props.handleClose}
-    />
-  );
-
-  const Sets = Object.keys(props.card['Set']).map((k, index) => {
-    return (
-      <span key={index} className="d-inline-block nobr ml-2">
-        {k}:{props.card['Set'][k]}
-      </span>
-    );
-  });
-
-  const Rulings = Object(props.card['Rulings']).map((k, index) => {
-    return (
-      <ListGroup.Item className="rulings p-2" key={index}>
-        {k.text}
-      </ListGroup.Item>
-    );
-  });
-
   const icons = {
     aus: 'auspex',
     abo: 'abombwe',
@@ -107,12 +78,57 @@ function ResultLibraryPopover(props) {
     MASTER: 'master',
     POWER: 'power',
     REACTION: 'reaction',
+    REFLEX: 'reflex',
     RETAINER: 'retainer',
     '1CONVICTION': 'con1',
     '2CONVICTION': 'con2',
     FLIGHT: 'flight',
     MERGED: 'merged',
   };
+
+  const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
+    .toLowerCase()
+    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
+
+  const cardImage = (
+    <img
+      className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
+      src={imgSrc}
+      alt={props.card['Name']}
+      onClick={props.handleClose}
+    />
+  );
+
+  const Sets = Object.keys(props.card['Set']).map((k, index) => {
+    return (
+      <span key={index} className="d-inline-block nobr ml-2">
+        {k}:{props.card['Set'][k]}
+      </span>
+    );
+  });
+
+  const Rulings = Object(props.card['Rulings']).map((k, index) => {
+    const text = k.text.replace(/\(D\)/g, '\u24B9').split('\n');
+    const iconifiedRulingText = [];
+    text.map((i, index) => {
+      iconifiedRulingText.push(
+        reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
+          <img
+            key={index}
+            className="popover-discipline-image"
+            src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
+            title={match}
+          />
+        ))
+      );
+    });
+
+    return (
+      <ListGroup.Item className="rulings p-2" key={index}>
+        <div className="d-inline">{iconifiedRulingText}</div>
+      </ListGroup.Item>
+    );
+  });
 
   const text = props.card['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
   const newText = [];
@@ -181,7 +197,7 @@ function ResultLibraryPopover(props) {
             <div className="popover-sets px-1">{Sets}</div>
           </div>
           {Rulings.length > 0 && (
-            <div className="small pt-2">
+            <div className="popover-rulings pt-2">
               <ListGroup>{Rulings}</ListGroup>
             </div>
           )}

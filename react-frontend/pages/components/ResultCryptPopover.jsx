@@ -8,35 +8,6 @@ import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 
 function ResultCryptPopover(props) {
-  const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
-    .toLowerCase()
-    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
-
-  const cardImage = (
-    <img
-      className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
-      src={imgSrc}
-      alt={props.card['Name']}
-      onClick={props.handleClose}
-    />
-  );
-
-  const Sets = Object.keys(props.card['Set']).map((k, index) => {
-    return (
-      <span key={index} className="d-inline-block nobr ml-2">
-        {k}:{props.card['Set'][k]}
-      </span>
-    );
-  });
-
-  const Rulings = Object(props.card['Rulings']).map((k, index) => {
-    return (
-      <ListGroup.Item className="rulings p-2" key={index}>
-        {k.text}
-      </ListGroup.Item>
-    );
-  });
-
   const icons = {
     aus: 'auspex',
     abo: 'abombwe',
@@ -99,6 +70,50 @@ function ResultCryptPopover(props) {
     FLIGHT: 'flight',
     MERGED: 'merged',
   };
+
+  const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
+    .toLowerCase()
+    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
+
+  const cardImage = (
+    <img
+      className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
+      src={imgSrc}
+      alt={props.card['Name']}
+      onClick={props.handleClose}
+    />
+  );
+
+  const Sets = Object.keys(props.card['Set']).map((k, index) => {
+    return (
+      <span key={index} className="d-inline-block nobr ml-2">
+        {k}:{props.card['Set'][k]}
+      </span>
+    );
+  });
+
+  const Rulings = Object(props.card['Rulings']).map((k, index) => {
+    const text = k.text.replace(/\(D\)/g, '\u24B9').split('\n');
+    const iconifiedRulingText = [];
+    text.map((i, index) => {
+      iconifiedRulingText.push(
+        reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
+          <img
+            key={index}
+            className="popover-discipline-image"
+            src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
+            title={match}
+          />
+        ))
+      );
+    });
+
+    return (
+      <ListGroup.Item className="rulings p-2" key={index}>
+        <div className="d-inline">{iconifiedRulingText}</div>
+      </ListGroup.Item>
+    );
+  });
 
   const text = props.card['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
   const newText = [];
@@ -163,7 +178,7 @@ function ResultCryptPopover(props) {
             <ResultCryptCapacity value={props.card['Capacity']} />
           </div>
           {Rulings.length > 0 && (
-            <div className="small pt-2">
+            <div className="popover-rulings pt-2">
               <ListGroup>{Rulings}</ListGroup>
             </div>
           )}
