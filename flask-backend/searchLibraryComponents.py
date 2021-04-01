@@ -4,10 +4,9 @@ import re
 
 def get_library_by_text(text, library):
     match_cards = []
-    text = text.lower()
+    text = text.replace('"', '(\W|^|$)')
     for card in library:
-        if text in card['Card Text'].lower(
-        ) or text in card['ASCII Name'].lower() or text in card['Name'].lower():
+        if re.search(text, card['Card Text'], re.IGNORECASE) or re.search(text, card['Name'], re.IGNORECASE) or re.search(text, card['ASCII Name'], re.IGNORECASE) :
             match_cards.append(card)
 
     return match_cards
@@ -144,97 +143,97 @@ def get_library_by_traits(traits, library):
                 if re.search(
                         r'{}'.format(
                             '\-[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\+[0-9]+ intercept|gets -([0-9]|x)+ stealth|stealth to 0'
-                        ), card['Card Text'].lower()):
+                        ), card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'stealth':
                 if re.search(
                         r'{}'.format(
                             '\+[0-9]+ stealth(?! \(d\))(?! \w)(?! action)|\-[0-9]+ intercept'
-                        ), card['Card Text'].lower()):
+                        ), card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'bleed':
                 if re.search(r'{}'.format('\+[0-9]+ bleed'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'strength':
                 if re.search(r'{}'.format('\+[0-9]+ strength'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'dodge':
-                if re.search(r'{}'.format('dodge'), card['Card Text'].lower()):
+                if re.search(r'{}'.format('dodge'), card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'maneuver':
                 if re.search(r'{}'.format('optional maneuver'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'additional strike':
                 if re.search(r'{}'.format('additional strike'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'aggravated':
                 if re.search(r'{}'.format('(?<!non-)aggravated'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'prevent':
                 if re.search(r'{}'.format('(?<!un)prevent'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'press':
                 if re.search(r'{}'.format('(optional )?press'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'combat ends':
                 if re.search(r'{}'.format('combat ends'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'enter combat':
                 if re.search(r'{}'.format('enter combat'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'bounce bleed':
                 if re.search(
                         r'{}'.format(
                             'change the target of the bleed|is now bleeding'),
-                        card['Card Text'].lower()):
+                        card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'black hand':
                 if re.search(r'{}'.format('black hand'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'seraph':
                 if re.search(r'{}'.format('seraph'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'anarch':
                 if re.search(r'{}'.format('anarch'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'infernal':
                 if re.search(r'{}'.format('infernal'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'banned':
                 if card['Banned']:
                     counter += 1
 
-            elif re.search(r'{}'.format(trait), card['Card Text'].lower()):
+            elif re.search(r'{}'.format(trait), card['Card Text'], re.IGNORECASE):
                 counter += 1
 
         if trait_counter == counter:

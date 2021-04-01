@@ -4,10 +4,9 @@ import re
 
 def get_crypt_by_text(text, crypt):
     match_cards = []
-    text = text.lower()
+    text = text.replace('"', '(\W|^|$)')
     for card in crypt:
-        if text in card['Card Text'].lower(
-        ) or text in card['ASCII Name'].lower() or text in card['Name'].lower():
+        if re.search(text, card['Card Text'], re.IGNORECASE) or re.search(text, card['Name'], re.IGNORECASE) or re.search(text, card['ASCII Name'], re.IGNORECASE) :
             match_cards.append(card)
 
     return match_cards
@@ -38,95 +37,95 @@ def get_crypt_by_traits(traits, crypt):
         # just works for now.
         for trait in traits.keys():
             if trait == 'enter combat':
-                name = re.match(r'^\w+', card['Name'].lower())
+                name = re.match(r'^\w+', card['Name'], re.IGNORECASE)
                 if re.search(
                         r'(he|she|it|they|{}) (can|may)( .* to)? {}'.format(
-                            name[0], trait), card['Card Text'].lower()):
+                            name[0], trait), card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'optional press':
-                if re.search(r'gets (.*)?{}'.format(trait), card['Card Text'].lower()):
+                if re.search(r'gets (.*)?{}'.format(trait), card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == '1 bleed':
                 if re.search(r'{}'.format('[:.] \+. bleed.'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == '2 bleed':
                 if re.search(r'{}'.format('[:.] \+2 bleed.'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == '1 strength':
                 if re.search(r'{}'.format('[:.] \+. strength.'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == '2 strength':
                 if re.search(r'{}'.format('[:.] \+2 strength.'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == '1 intercept':
                 if re.search(r'{}'.format('[:.] \+1 intercept.'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == '1 stealth':
-                if re.search(r'{}'.format('[:.] \+1 stealth.'), card['Card Text'].lower()) or re.search(r'{}'.format('gets \+1 stealth on each of (his|her|they) actions'), card['Card Text'].lower()):
+                if re.search(r'{}'.format('[:.] \+1 stealth.'), card['Card Text'], re.IGNORECASE) or re.search(r'{}'.format('gets \+1 stealth on each of (his|her|they) actions'), card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'additional strike':
                 if re.search(r'{}'.format('additional strike'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'optional maneuver':
                 if re.search(r'{}'.format('optional maneuver'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'prevent':
                 if re.search(r'{}'.format('(?<!un)prevent(?<!able)'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'aggravated':
                 if re.search(r'{}'.format('(?<!non-)aggravated'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'black hand':
                 if re.search(r'{}'.format('black hand[ .:]'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'seraph':
                 if re.search(r'{}'.format('seraph[.:]'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'infernal':
                 if re.search(r'{}'.format('infernal[.:]'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'red list':
                 if re.search(r'{}'.format('red list[.:]'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'flight':
                 if re.search(r'{}'.format('\[flight\]\.'),
-                             card['Card Text'].lower()):
+                             card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'banned':
                 if card['Banned']:
                     counter += 1
 
-            elif re.search(r'{}'.format(trait), card['Card Text'].lower()):
+            elif re.search(r'{}'.format(trait), card['Card Text'], re.IGNORECASE):
                 counter += 1
 
         if trait_counter == counter:
@@ -217,7 +216,7 @@ def get_crypt_by_sect(sect, crypt):
 
         # For vampires sect is determined only by card['Text']
         # It is another dirty hack (see trait above), but...
-        if re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect), card['Card Text'].lower()):
+        if re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect), card['Card Text'], re.IGNORECASE):
             match_cards.append(card)
 
     return match_cards

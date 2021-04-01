@@ -5,8 +5,6 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* Fix SharedArrayBuffer
-* Name/Author/Description from Imported Deck
 * Chance of draw to documentation
 
 # FIX MOBILE
@@ -20,8 +18,7 @@
 * Show missing cards for inventory
 * Popover on precons in modal preview set section
 * TWD library disciplines to match crypt disciplines
-* Exact match to crypt/library search by text
-* Offline web-app
+* Offline PWA support
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines

@@ -121,7 +121,7 @@ def deckExport(d, format):
                 cryptMin += capacityList[i]
                 cryptMax += capacityList[-i - 1]
 
-            deck += f"Name: {deck_name}\n"
+            deck += f"Deck Name: {deck_name}\n"
             deck += f"Author: {d['author']}\n"
             deck += f"Description: {d['description']}\n" + "\n"
 
