@@ -104,9 +104,11 @@ function ResultLibraryTable(props) {
             <td className="quantity-add">
               <ResultAddCard
                 cardAdd={props.cardAdd}
+                cardChange={props.cardChange}
                 cardid={card['Id']}
-                inDeck={inDeck}
+                deckid={props.activeDeck.deckid}
                 card={card}
+                inDeck={inDeck}
               />
             </td>
           )}

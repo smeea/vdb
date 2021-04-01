@@ -142,6 +142,7 @@ function Library(props) {
               hideMissing={props.hideMissing}
               setHideMissing={props.setHideMissing}
               cardAdd={props.cardAdd}
+              cardChange={props.cardChange}
               cards={props.results}
               library={
                 props.deckRouter(props.activeDeck) &&

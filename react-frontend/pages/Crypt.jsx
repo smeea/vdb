@@ -142,6 +142,7 @@ function Crypt(props) {
               hideMissing={props.hideMissing}
               setHideMissing={props.setHideMissing}
               cardAdd={props.cardAdd}
+              cardChange={props.cardChange}
               cards={props.results}
               crypt={
                 props.deckRouter(props.activeDeck) &&

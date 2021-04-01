@@ -53,6 +53,7 @@ function ResultLibrary(props) {
             library={props.library}
             activeDeck={props.activeDeck}
             cardAdd={props.cardAdd}
+            cardChange={props.cardChange}
             resultCards={sortedCards}
             isMobile={props.isMobile}
             isWide={true}
