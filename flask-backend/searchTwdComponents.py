@@ -206,8 +206,7 @@ def get_twd_by_libraryTotal(total_input, twda=twda):
 
 
 def sanitizeTwd(deck):
-    if 'description' in deck:
-        del (deck['description'])
+    del (deck['description'])
     del (deck['disciplines'])
     del (deck['format'])
     del (deck['link'])
@@ -215,5 +214,7 @@ def sanitizeTwd(deck):
     del (deck['score'])
     del (deck['cardtypes_ratio'])
     del (deck['libraryTotal'])
+    del (deck['cryptTotal'])
+    del (deck['clan'])
 
     return(deck)

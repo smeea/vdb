@@ -844,13 +844,13 @@ def getRandomTwd(quantity):
     with open("twdDecks.json", "r") as twd_file:
         twda = json.load(twd_file)
         decks = []
-        length = len(twda)
-        counter = quantity
-        while counter > 0:
-            counter -= 1
-            deck = sanitizeTwd(twda[round(random()*length)])
+        max_id = len(twda) - 1
+        counter = 0
+        while counter < quantity:
+            counter += 1
+            deck = twda[round(random()*max_id)]
 
-            decks.append(deck)
+            decks.append(sanitizeTwd(deck))
 
         return jsonify(decks)
 

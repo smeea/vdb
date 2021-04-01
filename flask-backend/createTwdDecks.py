@@ -59,8 +59,6 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
 
         deck['capacity'] = totalCapacity / deck['cryptTotal']
 
-        disciplines = []
-
         for type in i['library']['cards']:
             deck['cardtypes_ratio'][type['type'].lower()] = type['count'] / deck['libraryTotal']
 
@@ -73,19 +71,16 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
                 card_discipline_entry = get_library_by_id(card['id'])['Discipline']
                 if '&' in card_discipline_entry:
                     for discipline in card_discipline_entry.split(' & '):
-                        if discipline not in disciplines:
-                            disciplines.append(discipline)
+                        if discipline not in deck['disciplines']:
+                            deck['disciplines'].append(discipline)
 
                 elif '/' in card_discipline_entry:
                     for discipline in card_discipline_entry.split('/'):
-                        if discipline not in disciplines:
-                            disciplines.append(discipline)
+                        if discipline not in deck['disciplines']:
+                            deck['disciplines'].append(discipline)
 
-                elif card_discipline_entry and card_discipline_entry not in disciplines:
-                    disciplines.append(card_discipline_entry)
-
-
-        deck['disciplines'] = disciplines
+                elif card_discipline_entry and card_discipline_entry not in deck['disciplines']:
+                    deck['disciplines'].append(card_discipline_entry)
 
         decks.append(deck)
         decks_by_id[i['id']] = deck

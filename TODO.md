@@ -8,7 +8,6 @@
 * Fix SharedArrayBuffer
 * Name/Author/Description from Imported Deck
 * Chance of draw to documentation
-* deck['disciplines'] mandatory in twd
 
 # FIX MOBILE
 * Optimize for tablet
