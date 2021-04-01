@@ -163,7 +163,7 @@ function ResultCryptPopover(props) {
             <ResultCryptCapacity value={props.card['Capacity']} />
           </div>
           {Rulings.length > 0 && (
-            <div className="popover-rulings pt-2">
+            <div className="small pt-2">
               <ListGroup>{Rulings}</ListGroup>
             </div>
           )}

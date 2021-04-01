@@ -26,7 +26,7 @@ function Documentation(props) {
 
             <div className="pt-2">
               <h5>
-                <Link to="/crypt">CRYPT SEARCH</Link>
+                <Link to="/crypt" className="blue">CRYPT SEARCH</Link>
               </h5>
 
               <h6>Name or Text</h6>
@@ -69,7 +69,7 @@ function Documentation(props) {
 
             <div className="pt-2">
               <h5>
-                <Link to="/library">LIBRARY SEARCH</Link>
+                <Link to="/library" className="blue">LIBRARY SEARCH</Link>
               </h5>
 
               <h6>Name or Text</h6>
@@ -100,7 +100,7 @@ function Documentation(props) {
 
             <div className="pt-2">
               <h5>
-                <Link to="/twd">TWD SEARCH</Link>
+                <Link to="/twd" className="blue">TWD SEARCH</Link>
               </h5>
 
               <h6>Star Vampire</h6>
@@ -186,14 +186,14 @@ function Documentation(props) {
 
             {/* <div className="pt-2"> */}
             {/*   <h5> */}
-            {/*     <Link to="/decks">DECK BUILDING</Link> */}
+            {/*     <Link to="/decks" className="blue">DECK BUILDING</Link> */}
             {/*   </h5> */}
             {/*   TODO */}
             {/* </div> */}
 
             <div className="pt-2">
               <h5>
-                <Link to="/inventory">INVENTORY MANAGEMENT</Link>
+                <Link to="/inventory" className="blue">INVENTORY MANAGEMENT</Link>
               </h5>
               Inventory management in VDB let you browse your card collection
               with existing crypt/library search and track how collection is

@@ -225,7 +225,7 @@ function ResultLibraryLayoutText(props) {
           <div className="py-1">
             <b>Rulings: </b>
           </div>
-          <div className="popover-rulings pb-1">
+          <div className="small pb-1">
             <ul className="rulings">{Rulings}</ul>
           </div>
         </>

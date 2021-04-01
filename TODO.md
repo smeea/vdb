@@ -32,7 +32,6 @@
 * Deck export to JOL
 
 # IMPROVE TECHNOLOGY - FRONTEND
-* Clear CSS
 * Tests: cypress / puppeteer
 * Sync: websockets
 

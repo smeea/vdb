@@ -181,7 +181,7 @@ function ResultLibraryPopover(props) {
             <div className="popover-sets px-1">{Sets}</div>
           </div>
           {Rulings.length > 0 && (
-            <div className="popover-rulings pt-2">
+            <div className="small pt-2">
               <ListGroup>{Rulings}</ListGroup>
             </div>
           )}
