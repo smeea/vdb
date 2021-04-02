@@ -37,7 +37,7 @@ function App(props) {
   const [email, setEmail] = useState(undefined);
 
   const [showImage, setShowImage] = useState(true);
-  const [addMode, setAddMode] = useState(!isMobile);
+  const [addMode, setAddMode] = useState(false);
   const [inventoryMode, setInventoryMode] = useState(false);
   const [hideMissing, setHideMissing] = useState(false);
 
@@ -450,6 +450,7 @@ function App(props) {
       .then((response) => response.json())
       .then((data) => {
         data.username && setUsername(data.username);
+        data.username && !isMobile && setAddMode(true);
         data.public_name && setPublicName(data.public_name);
         data.email && setEmail(data.email);
       });

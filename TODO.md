@@ -19,6 +19,7 @@
 * Popover on precons in modal preview set section
 * TWD library disciplines to match crypt disciplines
 * Offline PWA support
+* Draw table for full deck
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines
