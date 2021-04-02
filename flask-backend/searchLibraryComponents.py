@@ -500,9 +500,11 @@ def is_match_by_initials(initials, text):
         index = text.find(c, prev_index)
         if index == -1:
                 return False
-        if index != prev_index:
-            if index != 0 and text[index - 1].isalnum():
-                return False
+        if index != prev_index and index != 0:
+            while text[index - 1].isalnum():
+                index = text.find(c, index + 1)
+                if index == -1:
+                    return False
 
         prev_index = index + 1
 
