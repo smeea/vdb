@@ -6,7 +6,6 @@
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Chance of draw to documentation
-* Conviction icon fill
 * Proxy size?
 
 # FIX MOBILE

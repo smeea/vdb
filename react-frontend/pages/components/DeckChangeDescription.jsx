@@ -39,7 +39,7 @@ function DeckDescription(props) {
 
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
-      <InputGroup>
+      <InputGroup className="z-index-0">
         <InputGroup.Prepend>
           <InputGroup.Text>
             <ChatLeftQuoteFill />
