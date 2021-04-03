@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
+import { OverlayTrigger, Modal } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
+import OverlayTooltip from './OverlayTooltip.jsx';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
@@ -13,6 +14,9 @@ import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
+import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
+import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
+import drawProbability from './drawProbability.js';
 
 function DeckLibraryTable(props) {
   let resultTrClass;
@@ -25,6 +29,7 @@ function DeckLibraryTable(props) {
 
   const [modalCard, setModalCard] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState(undefined);
 
   const cardRows = props.cards.map((card, index) => {
     const handleClick = () => {
@@ -285,13 +290,34 @@ function DeckLibraryTable(props) {
               valuePool={card.c['Pool Cost']}
             />
           </td>
-          <td className="disciplines px-3" onClick={() => handleClick()}>
+          <td className="disciplines px-1" onClick={() => handleClick()}>
             {DisciplineOrClan}
           </td>
           <td className="burn" onClick={() => handleClick()}>
             <ResultLibraryBurn value={card.c['Burn Option']} />
             <ResultLibraryTrifle value={card.c['Card Text']} />
           </td>
+          {props.showInfo &&
+           <td className="prob px-1">
+             {props.isMobile ? (
+               <div
+                 onClick={() =>
+                   setModalDraw({ name: card.c['Name'], prob: <DeckDrawProbabilityText N={props.libraryTotal} n={7} k={card.q} /> })
+                 }
+               >
+                 {`${Math.floor(drawProbability(1, props.libraryTotal, 7, card.q) * 100)}%`}
+               </div>
+             ) : (
+               <OverlayTooltip
+                 delay={{ show: 0, hide: 0 }}
+                 placement="right"
+                 text={<DeckDrawProbabilityText N={props.libraryTotal} n={7} k={card.q}/>}
+               >
+                 <div>{`${Math.floor(drawProbability(1, props.libraryTotal, 7, card.q) * 100)}%`}</div>
+               </OverlayTooltip>
+             )}
+           </td>
+          }
         </tr>
       </React.Fragment>
     );
@@ -317,6 +343,11 @@ function DeckLibraryTable(props) {
           inventoryMode={props.inventoryMode}
         />
       )}
+      {modalDraw && <DeckDrawProbabilityModal
+                      modalDraw={modalDraw}
+                      setModalDraw={setModalDraw}
+                    />
+      }
     </>
   );
 }

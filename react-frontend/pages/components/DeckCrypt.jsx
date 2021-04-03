@@ -8,7 +8,7 @@ import DeckNewCryptCard from './DeckNewCryptCard.jsx';
 
 function DeckCrypt(props) {
   const [showAdd, setShowAdd] = useState(false);
-  const [showTotal, setShowTotal] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   const className = 'deck-crypt-table';
 
@@ -143,7 +143,7 @@ function DeckCrypt(props) {
         <div className="d-flex">
           <Button
             variant="outline-secondary"
-            onClick={() => setShowTotal(!showTotal)}
+            onClick={() => setShowInfo(!showInfo)}
           >
             <InfoCircle />
           </Button>
@@ -159,7 +159,7 @@ function DeckCrypt(props) {
           )}
         </div>
       </div>
-      {showTotal && (
+      {showInfo && (
         <div className="info-message pl-2">
           <DeckCryptTotalByCapacity cards={props.cards} />
         </div>
@@ -211,7 +211,9 @@ function DeckCrypt(props) {
         deckid={props.deckid}
         cardChange={props.cardChange}
         resultCards={sortedCards}
+        cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
+        showInfo={showInfo}
         showImage={props.showImage}
         setShowImage={props.setShowImage}
         isAuthor={props.isAuthor}

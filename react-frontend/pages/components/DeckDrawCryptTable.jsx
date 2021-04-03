@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { OverlayTrigger, Modal } from 'react-bootstrap';
+import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
@@ -7,6 +7,8 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
+import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
+import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import drawProbability from './drawProbability.js';
 
 function DeckDrawCryptTable(props) {
@@ -25,33 +27,6 @@ function DeckDrawCryptTable(props) {
     }
 
     const k = props.crypt[card['Id']].q;
-
-    const probText = (
-      <div className="prob">
-        <div className="d-flex justify-content-between">
-          <div className="pr-2">1+</div>
-          <div>{`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}</div>
-        </div>
-        <div className="d-flex justify-content-between">
-          <div className="pr-2">2+</div>
-          <div>
-            {k < 2 ? null : `${Math.floor(drawProbability(2, N, n, k) * 100)}%`}
-          </div>
-        </div>
-        <div className="d-flex justify-content-between">
-          <div className="pr-2">3+</div>
-          <div>
-            {k < 3 ? null : `${Math.floor(drawProbability(3, N, n, k) * 100)}%`}
-          </div>
-        </div>
-        <div className="d-flex justify-content-between">
-          <div className="pr-2">4+</div>
-          <div>
-            {k < 4 ? null : `${Math.floor(drawProbability(4, N, n, k) * 100)}%`}
-          </div>
-        </div>
-      </div>
-    );
 
     return (
       <React.Fragment key={index}>
@@ -111,16 +86,16 @@ function DeckDrawCryptTable(props) {
             {props.isMobile ? (
               <div
                 onClick={() =>
-                  setModalDraw({ name: card['Name'], prob: probText })
+                  setModalDraw({ name: card['Name'], prob: <DeckDrawProbabilityText N={N} n={n} k={k} /> })
                 }
               >
                 {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
               </div>
             ) : (
               <OverlayTooltip
-                delay={{ show: 0, hide: 150 }}
+                delay={{ show: 0, hide: 0 }}
                 placement="right"
-                text={probText}
+                text={<DeckDrawProbabilityText N={N} n={n} k={k}/>}
               >
                 <div>{`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}</div>
               </OverlayTooltip>
@@ -136,26 +111,11 @@ function DeckDrawCryptTable(props) {
       <table className={props.className}>
         <tbody>{cardRows}</tbody>
       </table>
-      {modalDraw && (
-        <Modal
-          size="xs"
-          show={modalDraw}
-          className="d-flex justify-content-center"
-          dialogClassName="w-50"
-          onHide={() => setModalDraw(null)}
-          animation={false}
-          centered={true}
-        >
-          <Modal.Header className="px-3 py-2" closeButton>
-            <div className="prob">
-              <b>{modalDraw.name}</b>:
-            </div>
-          </Modal.Header>
-          <Modal.Body className="px-4 py-3" closeButton>
-            {modalDraw.prob}
-          </Modal.Body>
-        </Modal>
-      )}
+      {modalDraw && <DeckDrawProbabilityModal
+                      modalDraw={modalDraw}
+                      setModalDraw={setModalDraw}
+                    />
+      }
     </>
   );
 }

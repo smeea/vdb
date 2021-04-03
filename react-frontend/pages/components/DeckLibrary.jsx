@@ -9,7 +9,7 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 
 function DeckLibrary(props) {
   const [showAdd, setShowAdd] = useState(false);
-  const [showTotal, setShowTotal] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   const library = {};
   const librarySide = {};
@@ -95,6 +95,8 @@ function DeckLibrary(props) {
             trifleTotal={cardtype == 'Master' && trifleTotal}
           />
           <DeckLibraryTable
+            libraryTotal={libraryTotal}
+            showInfo={showInfo}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
             deckid={props.deckid}
@@ -159,7 +161,7 @@ function DeckLibrary(props) {
         <div className="d-flex">
           <Button
             variant="outline-secondary"
-            onClick={() => setShowTotal(!showTotal)}
+            onClick={() => setShowInfo(!showInfo)}
           >
             <InfoCircle />
           </Button>
@@ -175,7 +177,7 @@ function DeckLibrary(props) {
           )}
         </div>
       </div>
-      {showTotal && (
+      {showInfo && (
         <div className="info-message pl-2">
           <DeckLibraryTotalByTypes byTypes={libraryByTypeTotal} />
         </div>

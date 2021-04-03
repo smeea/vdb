@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
+import OverlayTooltip from './OverlayTooltip.jsx';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
@@ -13,6 +14,9 @@ import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
+import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
+import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
+import drawProbability from './drawProbability.js';
 
 function ResultCryptTable(props) {
   let resultTrClass;
@@ -20,6 +24,7 @@ function ResultCryptTable(props) {
 
   const [modalCard, setModalCard] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState(undefined);
 
   const cardRows = props.resultCards.map((card, index) => {
     const handleClick = () => {
@@ -424,6 +429,27 @@ function ResultCryptTable(props) {
               </td>
             </>
           )}
+          {props.showInfo &&
+           <td className="prob px-1">
+             {props.isMobile ? (
+               <div
+                 onClick={() =>
+                   setModalDraw({ name: card['Name'], prob: <DeckDrawProbabilityText N={props.cryptTotal} n={4} k={q} /> })
+                 }
+               >
+                 {`${Math.floor(drawProbability(1, props.cryptTotal, 4, q) * 100)}%`}
+               </div>
+             ) : (
+               <OverlayTooltip
+                 delay={{ show: 0, hide: 0 }}
+                 placement="right"
+                 text={<DeckDrawProbabilityText N={props.cryptTotal} n={4} k={q}/>}
+               >
+                 <div>{`${Math.floor(drawProbability(1, props.cryptTotal, 4, q) * 100)}%`}</div>
+               </OverlayTooltip>
+             )}
+           </td>
+          }
         </tr>
       </React.Fragment>
     );
@@ -449,6 +475,11 @@ function ResultCryptTable(props) {
           inventoryMode={props.inventoryMode}
         />
       )}
+      {modalDraw && <DeckDrawProbabilityModal
+                      modalDraw={modalDraw}
+                      setModalDraw={setModalDraw}
+                    />
+      }
     </>
   );
 }
