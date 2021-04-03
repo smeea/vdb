@@ -5,7 +5,6 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* Chance of draw to documentation
 
 # FIX MOBILE
 * If no results but url on mobile to run search
