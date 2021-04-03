@@ -93,8 +93,8 @@ function DeckImportAmaranth(props) {
   };
 
   useEffect(() => {
-    if (!idReference) getIdReference();
-  }, []);
+    if (props.show && !idReference) getIdReference();
+  }, [props.show]);
 
   return (
     <Modal

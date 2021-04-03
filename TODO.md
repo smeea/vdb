@@ -6,7 +6,6 @@
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Chance of draw to documentation
-* Proxy size?
 
 # FIX MOBILE
 * If no results but url on mobile to run search
@@ -40,4 +39,3 @@
 * Check frontend input (quantity/cardid/etc) on backend
 * Update API endpoints
 * Add error codes to return
-* Amaranth import - fetch and id convert on backend
