@@ -11,7 +11,7 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
     for idx, i in enumerate(twda):
         # if idx == 5:
         #     break
-        print(f"Generating decks: {idx} of {total}")
+        print(f"Generating decks: {idx + 1} of {total}")
 
         deck = {
             'deckid': i['id'],
@@ -39,8 +39,9 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
 
         clans = {}
 
-        for card in i['crypt']['cards']:
+        cryptDisciplines = set()
 
+        for card in i['crypt']['cards']:
             # Skip Anarch Convert
             if card['id'] != 200076:
                 totalCapacity += card['count'] * get_crypt_by_id(card['id'])['Capacity']
@@ -52,6 +53,9 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
             deck['crypt'][card['id']] = {
                 'q': card['count']
             }
+
+            for discipline in get_crypt_by_id(card['id'])['Disciplines'].keys():
+                cryptDisciplines.add(discipline)
 
         for clan, q in clans.items():
             if q / deck['cryptTotal'] > 0.5:
@@ -79,7 +83,7 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
                         if discipline not in deck['disciplines']:
                             deck['disciplines'].append(discipline)
 
-                elif card_discipline_entry and card_discipline_entry not in deck['disciplines']:
+                elif card_discipline_entry and card_discipline_entry not in deck['disciplines'] and card_discipline_entry in cryptDisciplines:
                     deck['disciplines'].append(card_discipline_entry)
 
         decks.append(deck)
@@ -101,7 +105,7 @@ with open("twda.json", "r") as twda_input, open("twdLocations.json", "w") as twd
     for idx, i in enumerate(twda):
         # if idx == 0:
         #     break
-        print(f"Generating players & locations: {idx} of {total}")
+        # print(f"Generating players & locations: {idx + 1} of {total}")
 
         place = i['place'].split(', ')
         locations.add(place.pop())
