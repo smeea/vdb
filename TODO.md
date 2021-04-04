@@ -23,7 +23,6 @@
 * Script to generate json from cvs from text disciplines
 * Night theme
 * Documentation on updates / update script
-* Go to next card in modal preview (react-swipeable-views?) - with quantity in Deck
 * Export inventory to CSV
 * Deck export to JOL
 

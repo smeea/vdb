@@ -16,21 +16,33 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 function InventoryCryptTable(props) {
   let resultTrClass;
 
-  const [modalCard, setModalCard] = useState(undefined);
+  const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+
+  const handleModalCardChange = (d) => {
+    const maxIdx = props.cards.length - 1;
+
+    if (modalCardIdx + d < 0) {
+      setModalCardIdx(maxIdx)
+    } else if (modalCardIdx + d > maxIdx) {
+      setModalCardIdx(0)
+    } else {
+      setModalCardIdx(modalCardIdx + d)
+    }
+  }
 
   const cardRows = props.cards.map((card, index) => {
     const handleClick = () => {
-      setModalCard(card.c);
-      props.setShowFloatingButtons(false);
+      setModalCardIdx(index);
+      props.isMobile && props.setShowFloatingButtons(false);
       setModalInventory({
         inInventory: card.q,
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
         usedDescription: {
           soft: SoftUsedDescription,
           hard: HardUsedDescription,
         },
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
       });
     };
 
@@ -41,7 +53,10 @@ function InventoryCryptTable(props) {
     }
 
     let softUsedMax = 0;
+    let hardUsedTotal = 0;
     let SoftUsedDescription;
+    let HardUsedDescription;
+
     if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
       SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map(
         (id, index) => {
@@ -59,8 +74,6 @@ function InventoryCryptTable(props) {
       );
     }
 
-    let hardUsedTotal = 0;
-    let HardUsedDescription;
     if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
       HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map(
         (id, index) => {
@@ -171,15 +184,15 @@ function InventoryCryptTable(props) {
       <table className="inventory-crypt-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {modalCard && (
+      {modalCardIdx !== undefined && (
         <ResultCryptModal
-          show={modalCard ? true : false}
-          card={modalCard}
+          card={props.cards[modalCardIdx].c}
+          handleModalCardChange={handleModalCardChange}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => {
-            setModalCard(false);
-            props.setShowFloatingButtons(true);
+            setModalCardIdx(undefined);
+            props.isMobile && props.setShowFloatingButtons(true);
           }}
           isMobile={props.isMobile}
           inventoryState={modalInventory}

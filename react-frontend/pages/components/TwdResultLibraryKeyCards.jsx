@@ -8,7 +8,19 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function TwdResultLibraryKeyCards(props) {
-  const [modalCard, setModalCard] = useState(undefined);
+  const [modalCardIdx, setModalCardIdx] = useState(undefined);
+
+  const handleModalCardChange = (d) => {
+    const maxIdx = keyCards.length - 1;
+
+    if (modalCardIdx + d < 0) {
+      setModalCardIdx(maxIdx)
+    } else if (modalCardIdx + d > maxIdx) {
+      setModalCardIdx(0)
+    } else {
+      setModalCardIdx(modalCardIdx + d)
+    }
+  }
 
   const cardtypeSorted = [
     'Master',
@@ -64,8 +76,8 @@ function TwdResultLibraryKeyCards(props) {
 
   const cardLines = keyCards.map((card, index) => {
     const handleClick = () => {
-      setModalCard(card.c);
-      props.setShowFloatingButtons(false);
+      setModalCardIdx(index);
+      props.isMobile && props.setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-even') {
@@ -114,15 +126,15 @@ function TwdResultLibraryKeyCards(props) {
           <tbody>{cardLines}</tbody>
         </table>
       </div>
-      {modalCard && (
+      {modalCardIdx !== undefined && (
         <ResultLibraryModal
-          show={modalCard ? true : false}
-          card={modalCard}
+          card={keyCards[modalCardIdx].c}
+          handleModalCardChange={handleModalCardChange}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => {
-            setModalCard(false);
-            props.setShowFloatingButtons(true);
+            setModalCardIdx(undefined);
+            props.isMobile && props.setShowFloatingButtons(true);
           }}
           isMobile={props.isMobile}
         />

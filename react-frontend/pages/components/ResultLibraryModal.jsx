@@ -3,6 +3,10 @@ import { Modal, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
+import ChevronCompactLeft from '../../assets/images/icons/chevron-compact-left.svg';
+import ChevronCompactRight from '../../assets/images/icons/chevron-compact-right.svg';
+import ChevronLeft from '../../assets/images/icons/chevron-left.svg';
+import ChevronRight from '../../assets/images/icons/chevron-right.svg';
 import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
 import ResultLibraryLayoutText from './ResultLibraryLayoutText.jsx';
 import ButtonCardCopyUrl from './ButtonCardCopyUrl.jsx';
@@ -31,7 +35,7 @@ function ResultLibraryModal(props) {
   return (
     <Modal
       size="lg"
-      show={props.show}
+      show={true}
       onHide={props.handleClose}
       animation={false}
       centered={true}
@@ -41,7 +45,15 @@ function ResultLibraryModal(props) {
         {props.isMobile ? (
           <>
             {props.showImage ? (
-              <CardImage />
+              <>
+                <CardImage />
+                <div onClick={() => props.handleModalCardChange(-1)} className="prev-card-mobile">
+                  <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16"/>
+                </div>
+                <div onClick={() => props.handleModalCardChange(1)} className="next-card-mobile">
+                  <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16"/>
+                </div>
+              </>
             ) : (
               <div className="p-3">
                 <ResultLibraryLayoutText
@@ -104,11 +116,11 @@ function ResultLibraryModal(props) {
             </div>
           </>
         ) : (
-          <Row>
+          <Row className="mx-0">
             <Col lg={5} className="bg-black px-0">
               <CardImage />
             </Col>
-            <Col className="py-4 px-4 mr-3">
+            <Col className="p-4">
               <div className="pb-1">
                 <ResultLibraryLayoutText
                   card={props.card}
@@ -179,6 +191,12 @@ function ResultLibraryModal(props) {
                 </Button>
               </div>
             </Col>
+            <div onClick={() => props.handleModalCardChange(-1)} className="prev-card">
+              <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16"/>
+            </div>
+            <div onClick={() => props.handleModalCardChange(1)} className="next-card">
+              <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16"/>
+            </div>
           </Row>
         )}
       </Modal.Body>

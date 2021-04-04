@@ -9,7 +9,19 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 function TwdResultCrypt(props) {
   let resultTrClass = 'result-even';
 
-  const [modalCard, setModalCard] = useState(undefined);
+  const [modalCardIdx, setModalCardIdx] = useState(undefined);
+
+  const handleModalCardChange = (d) => {
+    const maxIdx = sortedCards.length - 1;
+
+    if (modalCardIdx + d < 0) {
+      setModalCardIdx(maxIdx)
+    } else if (modalCardIdx + d > maxIdx) {
+      setModalCardIdx(0)
+    } else {
+      setModalCardIdx(modalCardIdx + d)
+    }
+  }
 
   let cryptGroupMin;
   let cryptGroupMax;
@@ -64,8 +76,8 @@ function TwdResultCrypt(props) {
 
   const cardLines = sortedCards.map((card, index) => {
     const handleClick = () => {
-      setModalCard(card.c);
-      props.setShowFloatingButtons(false);
+      setModalCardIdx(index);
+      props.isMobile && props.setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-even') {
@@ -111,15 +123,15 @@ function TwdResultCrypt(props) {
       <table className="twd-crypt-table">
         <tbody>{cardLines}</tbody>
       </table>
-      {modalCard && (
+      {modalCardIdx !== undefined && (
         <ResultCryptModal
-          show={modalCard ? true : false}
-          card={modalCard}
+          card={sortedCards[modalCardIdx].c}
+          handleModalCardChange={handleModalCardChange}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => {
-            setModalCard(false);
-            props.setShowFloatingButtons(true);
+            setModalCardIdx(undefined);
+            props.isMobile && props.setShowFloatingButtons(true);
           }}
           isMobile={props.isMobile}
         />

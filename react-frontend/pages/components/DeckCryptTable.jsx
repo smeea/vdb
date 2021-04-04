@@ -7,24 +7,18 @@ import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
-import ResultLibraryBurn from './ResultLibraryBurn.jsx';
-import ResultLibraryClan from './ResultLibraryClan.jsx';
-import ResultLibraryCost from './ResultLibraryCost.jsx';
-import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
-import ResultLibraryName from './ResultLibraryName.jsx';
-import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
+import ResultCryptCapacity from './ResultCryptCapacity.jsx';
+import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
+import ResultCryptName from './ResultCryptName.jsx';
+import ResultCryptClan from './ResultCryptClan.jsx';
+import ResultCryptGroup from './ResultCryptGroup.jsx';
 import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
 import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import drawProbability from './drawProbability.js';
 
-function DeckLibraryTable(props) {
+function DeckCryptTable(props) {
   let resultTrClass;
-  let deckInvType = null;
-  if (props.decks && props.deckid) {
-    if (props.inventoryMode && props.decks[props.deckid]) {
-      deckInvType = props.decks[props.deckid].inventory_type;
-    }
-  }
+  let deckInvType;
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
@@ -43,22 +37,18 @@ function DeckLibraryTable(props) {
       });
     };
 
+    let cardInvType;
+    if (props.inventoryMode && props.decks[props.deckid]) {
+      cardInvType = card.i;
+      deckInvType = props.decks[props.deckid].inventory_type;
+    }
+
     if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
     } else {
       resultTrClass = 'result-odd';
     }
 
-    let DisciplineOrClan;
-    if (card.c['Clan']) {
-      DisciplineOrClan = <ResultLibraryClan value={card.c['Clan']} />;
-    } else {
-      DisciplineOrClan = (
-        <ResultLibraryDisciplines value={card.c['Discipline']} />
-      );
-    }
-
-    let cardInvType = null;
     let inInventory = null;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
@@ -66,46 +56,42 @@ function DeckLibraryTable(props) {
     let HardUsedDescription;
 
     if (props.inventoryMode && props.deckid) {
-      cardInvType = card.i;
-
-      if (
-        Object.keys(props.inventoryLibrary).includes(card.c['Id'].toString())
-      ) {
-        inInventory = props.inventoryLibrary[card.c['Id']].q;
+      if (Object.keys(props.inventoryCrypt).includes(card.c['Id'].toString())) {
+        inInventory = props.inventoryCrypt[card.c['Id']].q;
       } else {
         inInventory = 0;
       }
 
       if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
-        SoftUsedDescription = Object.keys(
-          props.usedCards.soft[card.c['Id']]
-        ).map((id, index) => {
-          if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
-            softUsedMax = props.usedCards.soft[card.c['Id']][id];
+        SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map(
+          (id, index) => {
+            if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
+              softUsedMax = props.usedCards.soft[card.c['Id']][id];
+            }
+            return (
+              <UsedDescription
+                key={index}
+                q={props.usedCards.soft[card.c['Id']][id]}
+                deckName={props.decks[id]['name']}
+              />
+            );
           }
-          return (
-            <UsedDescription
-              key={index}
-              q={props.usedCards.soft[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
-            />
-          );
-        });
+        );
       }
 
       if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
-        HardUsedDescription = Object.keys(
-          props.usedCards.hard[card.c['Id']]
-        ).map((id, index) => {
-          hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
-          return (
-            <UsedDescription
-              key={index}
-              q={props.usedCards.hard[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
-            />
-          );
-        });
+        HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map(
+          (id, index) => {
+            hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
+            return (
+              <UsedDescription
+                key={index}
+                q={props.usedCards.hard[card.c['Id']][id]}
+                deckName={props.decks[id]['name']}
+              />
+            );
+          }
+        );
       }
     }
 
@@ -127,10 +113,7 @@ function DeckLibraryTable(props) {
                   }
                   onChange={(e) => props.proxySelector(e)}
                 />
-                <label
-                  htmlFor={card.c['Id']}
-                  className="custom-control-label"
-                />
+                <label htmlFor={card.c['Id']} className="custom-control-label" />
               </div>
             </td>
           )}
@@ -138,7 +121,7 @@ function DeckLibraryTable(props) {
             <>
               {props.inventoryMode ? (
                 <>
-                  {deckInvType && !props.inSearch ? (
+                  {deckInvType && !props.inSearch && !props.isMobile ? (
                     <td className="pt-2 left-offset-8 opacity-075">
                       <div
                         className={cardInvType ? '' : 'opacity-025'}
@@ -154,7 +137,11 @@ function DeckLibraryTable(props) {
                           )
                         }
                       >
-                        {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
+                        {deckInvType == 's' ? (
+                          <PinAngleFill />
+                        ) : (
+                          <Shuffle />
+                        )}
                       </div>
                     </td>
                   ) : null}
@@ -198,7 +185,9 @@ function DeckLibraryTable(props) {
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
-                        inventoryType={props.decks[props.deckid].inventory_type}
+                        inventoryType={
+                          props.decks[props.deckid].inventory_type
+                        }
                       />
                     </td>
                   )}
@@ -249,7 +238,7 @@ function DeckLibraryTable(props) {
                       className={
                         inInventory < card.q
                           ? 'quantity px-1 mx-1 bg-red'
-                          : inInventory - hardUsedTotal < card.q
+                          : inInventory - hardUsedTotal < q
                           ? 'quantity px-1 mx-1 bg-yellow'
                           : 'quantity px-1'
                       }
@@ -265,52 +254,80 @@ function DeckLibraryTable(props) {
               )}
             </>
           )}
+          <td
+            className={props.isMobile ? 'capacity' : 'capacity px-1'}
+            onClick={() => handleClick()}
+          >
+            <ResultCryptCapacity value={card.c['Capacity']} />
+          </td>
+          <td
+            className={
+              props.keyDisciplines + props.nonKeyDisciplines < 8
+                ? `disciplines cols-${
+                    props.keyDisciplines + props.nonKeyDisciplines
+                  }`
+                : 'disciplines'
+            }
+            onClick={() => handleClick()}
+          >
+            <ResultCryptDisciplines
+              value={card.c['Disciplines']}
+              disciplinesSet={props.disciplinesSet}
+              keyDisciplines={props.keyDisciplines}
+              nonKeyDisciplines={props.nonKeyDisciplines}
+              isMobile={props.isMobile}
+            />
+          </td>
           {!props.isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={
-                <CardPopover card={card.c} showImage={props.showImage} />
-              }
+              overlay={<CardPopover card={card.c} showImage={props.showImage} />}
             >
-              <td className="name pl-3 pr-2" onClick={() => handleClick()}>
-                <ResultLibraryName card={card.c} />
+              <td className="name px-1" onClick={() => handleClick()}>
+                <ResultCryptName card={card.c} />
               </td>
             </OverlayTrigger>
           ) : (
-            <td className="name pl-3 pr-2" onClick={() => handleClick()}>
-              <ResultLibraryName card={card.c} />
+            <td className="name px-1" onClick={() => handleClick()}>
+              <ResultCryptName card={card.c} />
             </td>
           )}
-          <td className="cost" onClick={() => handleClick()}>
-            <ResultLibraryCost
-              valueBlood={card.c['Blood Cost']}
-              valuePool={card.c['Pool Cost']}
-            />
-          </td>
-          <td className="disciplines px-1" onClick={() => handleClick()}>
-            {DisciplineOrClan}
-          </td>
-          <td className="burn" onClick={() => handleClick()}>
-            <ResultLibraryBurn value={card.c['Burn Option']} />
-            <ResultLibraryTrifle value={card.c['Card Text']} />
-          </td>
+          {props.isMobile || !props.isWide ? (
+            <td className="clan-group" onClick={() => handleClick()}>
+              <div>
+                <ResultCryptClan value={card.c['Clan']} />
+              </div>
+              <div className="d-flex small justify-content-end">
+                <ResultCryptGroup value={card.c['Group']} />
+              </div>
+            </td>
+          ) : (
+            <>
+              <td className="clan" onClick={() => handleClick()}>
+                <ResultCryptClan value={card.c['Clan']} />
+              </td>
+              <td className="group" onClick={() => handleClick()}>
+                <ResultCryptGroup value={card.c['Group']} />
+              </td>
+            </>
+          )}
           {props.showInfo &&
            <td className="prob px-1">
              {props.isMobile ? (
                <div
                  onClick={() =>
-                   setModalDraw({ name: card.c['Name'], prob: <DeckDrawProbabilityText N={props.libraryTotal} n={7} k={card.q} /> })
+                   setModalDraw({ name: card.c['Name'], prob: <DeckDrawProbabilityText N={props.cryptTotal} n={4} k={card.q} /> })
                  }
                >
-                 {`${Math.floor(drawProbability(1, props.libraryTotal, 7, card.q) * 100)}%`}
+                 {`${Math.floor(drawProbability(1, props.cryptTotal, 4, card.q) * 100)}%`}
                </div>
              ) : (
                <OverlayTooltip
                  delay={{ show: 0, hide: 0 }}
                  placement="right"
-                 text={<DeckDrawProbabilityText N={props.libraryTotal} n={7} k={card.q}/>}
+                 text={<DeckDrawProbabilityText N={props.cryptTotal} n={4} k={card.q}/>}
                >
-                 <div>{`${Math.floor(drawProbability(1, props.libraryTotal, 7, card.q) * 100)}%`}</div>
+                 <div>{`${Math.floor(drawProbability(1, props.cryptTotal, 4, card.q) * 100)}%`}</div>
                </OverlayTooltip>
              )}
            </td>
@@ -322,7 +339,7 @@ function DeckLibraryTable(props) {
 
   return (
     <>
-      <table className="deck-library-table">
+      <table className="deck-crypt-table">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && <DeckDrawProbabilityModal
@@ -334,4 +351,4 @@ function DeckLibraryTable(props) {
   );
 }
 
-export default DeckLibraryTable;
+export default DeckCryptTable;

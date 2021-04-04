@@ -18,12 +18,24 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 function ResultLibraryTable(props) {
   let resultTrClass;
 
-  const [modalCard, setModalCard] = useState(undefined);
+  const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+
+  const handleModalCardChange = (d) => {
+    const maxIdx = props.resultCards.length - 1;
+
+    if (modalCardIdx + d < 0) {
+      setModalCardIdx(maxIdx)
+    } else if (modalCardIdx + d > maxIdx) {
+      setModalCardIdx(0)
+    } else {
+      setModalCardIdx(modalCardIdx + d)
+    }
+  }
 
   const cardRows = props.resultCards.map((card, index) => {
     const handleClick = () => {
-      setModalCard(card);
+      setModalCardIdx(index);
       props.isMobile && props.setShowFloatingButtons(false);
       setModalInventory({
         inInventory: inInventory,
@@ -199,14 +211,14 @@ function ResultLibraryTable(props) {
       <table className="search-library-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {modalCard && (
+      {modalCardIdx !== undefined && (
         <ResultLibraryModal
-          show={modalCard ? true : false}
-          card={modalCard}
+          card={props.resultCards[modalCardIdx]}
+          handleModalCardChange={handleModalCardChange}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => {
-            setModalCard(false);
+            setModalCardIdx(undefined);
             props.isMobile && props.setShowFloatingButtons(true);
           }}
           isMobile={props.isMobile}

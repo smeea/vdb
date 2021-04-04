@@ -6,13 +6,33 @@ import DeckLibraryTable from './DeckLibraryTable.jsx';
 import DeckLibraryTotalByTypes from './DeckLibraryTotalByTypes.jsx';
 import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function DeckLibrary(props) {
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+  const [modalInventory, setModalInventory] = useState(undefined);
+  const [modalCardIdx, setModalCardIdx] = useState(undefined);
+
+  const handleModalCardOpen = (i) => {
+    setModalCardIdx(libraryCards.indexOf(i))
+  }
+
+  const handleModalCardChange = (d) => {
+    const maxIdx = libraryCards.length - 1;
+
+    if (modalCardIdx + d < 0) {
+      setModalCardIdx(maxIdx)
+    } else if (modalCardIdx + d > maxIdx) {
+      setModalCardIdx(0)
+    } else {
+      setModalCardIdx(modalCardIdx + d)
+    }
+  }
 
   const library = {};
   const librarySide = {};
+  const libraryCards = []
 
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
@@ -79,6 +99,7 @@ function DeckLibrary(props) {
     if (libraryByType[cardtype] !== undefined) {
       libraryByTypeTotal[cardtype] = 0;
       for (const card of libraryByType[cardtype]) {
+        libraryCards.push(card.c)
         libraryByTypeTotal[cardtype] += card.q;
         if (
           cardtype == 'Master' &&
@@ -95,6 +116,8 @@ function DeckLibrary(props) {
             trifleTotal={cardtype == 'Master' && trifleTotal}
           />
           <DeckLibraryTable
+            handleModalCardOpen={handleModalCardOpen}
+            setModalInventory={setModalInventory}
             libraryTotal={libraryTotal}
             showInfo={showInfo}
             showImage={props.showImage}
@@ -120,6 +143,10 @@ function DeckLibrary(props) {
     }
 
     if (librarySideByType[cardtype] !== undefined) {
+      // for (const card of libraryByType[cardtype]) {
+      //   libraryCards.push(card.c)
+      // }
+
       LibrarySideDeck.push(
         <div key={cardtype}>
           <ResultLibraryType
@@ -128,6 +155,8 @@ function DeckLibrary(props) {
             trifleTotal={cardtype == 'Master' && trifleTotal}
           />
           <DeckLibraryTable
+            handleModalCardChange={handleModalCardChange}
+            setModalInventory={setModalInventory}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
             deckid={props.deckid}
@@ -245,6 +274,21 @@ function DeckLibrary(props) {
             </div>
           </div>
         </div>
+      )}
+      {modalCardIdx !== undefined && (
+        <ResultLibraryModal
+          card={libraryCards[modalCardIdx]}
+          handleModalCardChange={handleModalCardChange}
+          showImage={props.showImage}
+          setShowImage={props.setShowImage}
+          handleClose={() => {
+            setModalCardIdx(undefined);
+            props.isMobile && props.setShowFloatingButtons(true);
+          }}
+          isMobile={props.isMobile}
+          inventoryState={modalInventory}
+          inventoryMode={props.inventoryMode}
+        />
       )}
     </>
   );

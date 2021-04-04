@@ -3,14 +3,32 @@ import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import InfoCircle from '../../assets/images/icons/info-circle.svg';
 import X from '../../assets/images/icons/x.svg';
 import DeckCryptTotalByCapacity from './DeckCryptTotalByCapacity.jsx';
-import ResultCryptTable from './ResultCryptTable.jsx';
+import DeckCryptTable from './DeckCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
+import ResultCryptModal from './ResultCryptModal.jsx';
 
 function DeckCrypt(props) {
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
-  const className = 'deck-crypt-table';
+  const [modalCardIdx, setModalCardIdx] = useState(undefined);
+  const [modalInventory, setModalInventory] = useState(undefined);
+
+  const handleModalCardOpen = (i) => {
+    setModalCardIdx(cryptCards.indexOf(i))
+  }
+
+  const handleModalCardChange = (d) => {
+    const maxIdx = cryptCards.length - 1;
+
+    if (modalCardIdx + d < 0) {
+      setModalCardIdx(maxIdx)
+    } else if (modalCardIdx + d > maxIdx) {
+      setModalCardIdx(0)
+    } else {
+      setModalCardIdx(modalCardIdx + d)
+    }
+  }
 
   const disciplinesDict = {};
   for (const card of Object.keys(props.cards)) {
@@ -62,6 +80,7 @@ function DeckCrypt(props) {
 
   const crypt = {};
   const cryptSide = {};
+  const cryptCards = [];
   let cryptGroupMin;
   let cryptGroupMax;
 
@@ -117,6 +136,7 @@ function DeckCrypt(props) {
   const sortedCards = sortedState
     .filter((card) => crypt[card])
     .map((card) => {
+      cryptCards.push(crypt[card].c)
       return crypt[card];
     });
 
@@ -206,11 +226,12 @@ function DeckCrypt(props) {
             </Modal.Body>
           </Modal>
         ))}
-      <ResultCryptTable
-        className={className}
+      <DeckCryptTable
+        handleModalCardOpen={handleModalCardOpen}
+        setModalInventory={setModalInventory}
         deckid={props.deckid}
         cardChange={props.cardChange}
-        resultCards={sortedCards}
+        cards={sortedCards}
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}
@@ -237,11 +258,12 @@ function DeckCrypt(props) {
           <div className="d-flex align-items-center justify-content-between pl-2">
             <b>Side Crypt</b>
           </div>
-          <ResultCryptTable
-            className={className}
+          <DeckCryptTable
+            handleModalCardOpen={handleModalCardOpen}
+            setModalInventory={setModalInventory}
             deckid={props.deckid}
             cardChange={props.cardChange}
-            resultCards={sortedCardsSide}
+            cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
@@ -274,6 +296,21 @@ function DeckCrypt(props) {
             </div>
           </div>
         </div>
+      )}
+      {modalCardIdx !== undefined && (
+        <ResultCryptModal
+          card={cryptCards[modalCardIdx]}
+          handleModalCardChange={handleModalCardChange}
+          showImage={props.showImage}
+          setShowImage={props.setShowImage}
+          handleClose={() => {
+            setModalCardIdx(undefined);
+            props.isMobile && props.setShowFloatingButtons(true);
+          }}
+          isMobile={props.isMobile}
+          inventoryState={modalInventory}
+          inventoryMode={props.inventoryMode}
+        />
       )}
     </>
   );
