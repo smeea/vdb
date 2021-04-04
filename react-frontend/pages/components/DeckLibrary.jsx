@@ -15,24 +15,24 @@ function DeckLibrary(props) {
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
 
   const handleModalCardOpen = (i) => {
-    setModalCardIdx(libraryCards.indexOf(i))
-  }
+    setModalCardIdx(libraryCards.indexOf(i));
+  };
 
   const handleModalCardChange = (d) => {
     const maxIdx = libraryCards.length - 1;
 
     if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx)
+      setModalCardIdx(maxIdx);
     } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0)
+      setModalCardIdx(0);
     } else {
-      setModalCardIdx(modalCardIdx + d)
+      setModalCardIdx(modalCardIdx + d);
     }
-  }
+  };
 
   const library = {};
   const librarySide = {};
-  const libraryCards = []
+  const libraryCards = [];
 
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
@@ -99,7 +99,7 @@ function DeckLibrary(props) {
     if (libraryByType[cardtype] !== undefined) {
       libraryByTypeTotal[cardtype] = 0;
       for (const card of libraryByType[cardtype]) {
-        libraryCards.push(card.c)
+        libraryCards.push(card.c);
         libraryByTypeTotal[cardtype] += card.q;
         if (
           cardtype == 'Master' &&

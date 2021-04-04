@@ -86,7 +86,10 @@ function DeckDrawCryptTable(props) {
             {props.isMobile ? (
               <div
                 onClick={() =>
-                  setModalDraw({ name: card['Name'], prob: <DeckDrawProbabilityText N={N} n={n} k={k} /> })
+                  setModalDraw({
+                    name: card['Name'],
+                    prob: <DeckDrawProbabilityText N={N} n={n} k={k} />,
+                  })
                 }
               >
                 {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
@@ -95,7 +98,7 @@ function DeckDrawCryptTable(props) {
               <OverlayTooltip
                 delay={{ show: 0, hide: 0 }}
                 placement="right"
-                text={<DeckDrawProbabilityText N={N} n={n} k={k}/>}
+                text={<DeckDrawProbabilityText N={N} n={n} k={k} />}
               >
                 <div>{`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}</div>
               </OverlayTooltip>
@@ -111,11 +114,12 @@ function DeckDrawCryptTable(props) {
       <table className={props.className}>
         <tbody>{cardRows}</tbody>
       </table>
-      {modalDraw && <DeckDrawProbabilityModal
-                      modalDraw={modalDraw}
-                      setModalDraw={setModalDraw}
-                    />
-      }
+      {modalDraw && (
+        <DeckDrawProbabilityModal
+          modalDraw={modalDraw}
+          setModalDraw={setModalDraw}
+        />
+      )}
     </>
   );
 }

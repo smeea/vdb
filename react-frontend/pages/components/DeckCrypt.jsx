@@ -15,20 +15,20 @@ function DeckCrypt(props) {
   const [modalInventory, setModalInventory] = useState(undefined);
 
   const handleModalCardOpen = (i) => {
-    setModalCardIdx(cryptCards.indexOf(i))
-  }
+    setModalCardIdx(cryptCards.indexOf(i));
+  };
 
   const handleModalCardChange = (d) => {
     const maxIdx = cryptCards.length - 1;
 
     if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx)
+      setModalCardIdx(maxIdx);
     } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0)
+      setModalCardIdx(0);
     } else {
-      setModalCardIdx(modalCardIdx + d)
+      setModalCardIdx(modalCardIdx + d);
     }
-  }
+  };
 
   const disciplinesDict = {};
   for (const card of Object.keys(props.cards)) {
@@ -136,7 +136,7 @@ function DeckCrypt(props) {
   const sortedCards = sortedState
     .filter((card) => crypt[card])
     .map((card) => {
-      cryptCards.push(crypt[card].c)
+      cryptCards.push(crypt[card].c);
       return crypt[card];
     });
 

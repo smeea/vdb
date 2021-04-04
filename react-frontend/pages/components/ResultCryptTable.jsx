@@ -23,13 +23,13 @@ function ResultCryptTable(props) {
     const maxIdx = props.resultCards.length - 1;
 
     if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx)
+      setModalCardIdx(maxIdx);
     } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0)
+      setModalCardIdx(0);
     } else {
-      setModalCardIdx(modalCardIdx + d)
+      setModalCardIdx(modalCardIdx + d);
     }
-  }
+  };
 
   const cardRows = props.resultCards.map((card, index) => {
     const handleClick = () => {
@@ -111,7 +111,7 @@ function ResultCryptTable(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           {props.addMode && (
-            <td className="quantity-add">
+            <td className="quantity-add pr-1">
               <ResultAddCard
                 cardAdd={props.cardAdd}
                 cardChange={props.cardChange}
@@ -168,16 +168,10 @@ function ResultCryptTable(props) {
               </td>
             </>
           )}
-          <td
-            className={'capacity px-1'}
-            onClick={() => handleClick()}
-          >
+          <td className={'capacity px-1'} onClick={() => handleClick()}>
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
-          <td
-            className="disciplines"
-            onClick={() => handleClick()}
-          >
+          <td className="disciplines" onClick={() => handleClick()}>
             <ResultCryptDisciplines
               value={card['Disciplines']}
               isMobile={props.isMobile}

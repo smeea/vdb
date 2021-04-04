@@ -26,7 +26,9 @@ function Documentation(props) {
 
             <div className="pt-2">
               <h5>
-                <Link to="/crypt" className="blue">CRYPT SEARCH</Link>
+                <Link to="/crypt" className="blue">
+                  CRYPT SEARCH
+                </Link>
               </h5>
 
               <h6>Name or Text</h6>
@@ -38,7 +40,8 @@ function Documentation(props) {
                 <li>
                   Exact match of the word can be achieved with double-quoting
                   (e.g. &quot;controlled&quot; will not match cards with
-                  uncontrolled in card text). One double-quote is also fine to limit word from one side.
+                  uncontrolled in card text). One double-quote is also fine to
+                  limit word from one side.
                 </li>
                 <li>Case insensitive</li>
                 <li>
@@ -69,7 +72,9 @@ function Documentation(props) {
 
             <div className="pt-2">
               <h5>
-                <Link to="/library" className="blue">LIBRARY SEARCH</Link>
+                <Link to="/library" className="blue">
+                  LIBRARY SEARCH
+                </Link>
               </h5>
 
               <h6>Name or Text</h6>
@@ -81,7 +86,8 @@ function Documentation(props) {
                 <li>
                   Exact match of the word can be achieved with double-quoting
                   (e.g. &quot;controlled&quot; will not match cards with
-                  uncontrolled in card text). One double-quote is also fine to limit word from one side.
+                  uncontrolled in card text). One double-quote is also fine to
+                  limit word from one side.
                 </li>
                 <li>Case insensitive</li>
                 <li>
@@ -100,7 +106,9 @@ function Documentation(props) {
 
             <div className="pt-2">
               <h5>
-                <Link to="/twd" className="blue">TWD SEARCH</Link>
+                <Link to="/twd" className="blue">
+                  TWD SEARCH
+                </Link>
               </h5>
 
               <h6>Star Vampire</h6>
@@ -112,11 +120,15 @@ function Documentation(props) {
                   <ul>
                     <li>
                       E.g.: 5x Arika + 7x Other is Star Deck
-                      <tt><i> -&gt; 5/12 = 41%</i></tt>
+                      <tt>
+                        <i> -&gt; 5/12 = 41%</i>
+                      </tt>
                     </li>
                     <li>
                       Ex: 4x Arika + 4x AC + 4x Other is Star Deck
-                      <tt><i> -&gt; 4/(4+4) = 50%</i></tt>
+                      <tt>
+                        <i> -&gt; 4/(4+4) = 50%</i>
+                      </tt>
                     </li>
                   </ul>
                   Reason for strange percentage (38%) is to include decks with 5
@@ -133,8 +145,11 @@ function Documentation(props) {
                   given clan, excluding Anarch Convert (does not counted at all)
                   <ul>
                     <li>
-                      E.g.: 5x Ventrue + 3 Anarch Convert + 3x Other is Ventrue Deck
-                      <tt><i> -&gt; 5/(5+3) = 62%</i></tt>
+                      E.g.: 5x Ventrue + 3 Anarch Convert + 3x Other is Ventrue
+                      Deck
+                      <tt>
+                        <i> -&gt; 5/(5+3) = 62%</i>
+                      </tt>
                     </li>
                   </ul>
                 </li>
@@ -146,8 +161,11 @@ function Documentation(props) {
                   Calculated excluding Anarch Convert (does not counted at all)
                   <ul>
                     <li>
-                      E.g.: 5x 11-cap + 4x Anarch Convert + 3x 3-cap is 8 avg. cap
-                      <tt><i> -&gt; (5*11+3*3)/(5+3) = 8</i></tt>
+                      E.g.: 5x 11-cap + 4x Anarch Convert + 3x 3-cap is 8 avg.
+                      cap
+                      <tt>
+                        <i> -&gt; (5*11+3*3)/(5+3) = 8</i>
+                      </tt>
                     </li>
                   </ul>
                 </li>
@@ -174,32 +192,56 @@ function Documentation(props) {
 
             <div className="pt-2">
               <h5>
-                <Link to="/decks" className="blue">DECK BUILDING</Link>
+                <Link to="/decks" className="blue">
+                  DECK BUILDING
+                </Link>
               </h5>
 
               <h6>Draw Probability</h6>
               <ul>
                 <li>
-                  Draw probability in main deck window available on (i) button is calculated as initial draw of 4 crypt and 7 library.
+                  Draw probability in main deck window available on (i) button
+                  is calculated as initial draw of 4 crypt and 7 library.
                 </li>
                 <li>
-                  Draw probability in draw simulator available on Deck Draw button is calculated as chance to initially draw cards in existing hand (with respect to hand size and discarded cards). It is not the chance to draw additional cards to your hand, but chance to draw cards in the hand in the first place (imagine you return hand to the library, excluding already played cards, shuffle it and draw back to your hand size).
+                  Draw probability in draw simulator available on Deck Draw
+                  button is calculated as chance to initially draw cards in
+                  existing hand (with respect to hand size and discarded cards).
+                  It is not the chance to draw additional cards to your hand,
+                  but chance to draw cards in the hand in the first place
+                  (imagine you return hand to the library, excluding already
+                  played cards, shuffle it and draw back to your hand size).
                 </li>
-              <li>
-                Draw calculation code (requires a little programming literacy to read) is <a href="https://github.com/smeea/vdb/blob/master/react-frontend/pages/components/drawProbability.js">there</a>.<br />
-                Where:<br />
-                <i>i</i> is copies in hand we calculate agains (e.g. i=2 to draw 2 copy of the card)<br />
-                <i>N</i> is total cards in deck (e.g. N=12 for crypt size of 12)<br />
-                <i>n</i> is hand size (e.g. n=4 for initial crypt draw of 4 card)<br />
-                <i>k</i> is copy of particular card in deck (e.g. k=5 for 5 copy of Arika in the deck)<br />
-              </li>
+                <li>
+                  Draw calculation code (requires a little programming literacy
+                  to read) is{' '}
+                  <a href="https://github.com/smeea/vdb/blob/master/react-frontend/pages/components/drawProbability.js">
+                    there
+                  </a>
+                  .<br />
+                  Where:
+                  <br />
+                  <i>i</i> is copies in hand we calculate agains (e.g. i=2 to
+                  draw 2 copy of the card)
+                  <br />
+                  <i>N</i> is total cards in deck (e.g. N=12 for crypt size of
+                  12)
+                  <br />
+                  <i>n</i> is hand size (e.g. n=4 for initial crypt draw of 4
+                  card)
+                  <br />
+                  <i>k</i> is copy of particular card in deck (e.g. k=5 for 5
+                  copy of Arika in the deck)
+                  <br />
+                </li>
               </ul>
-
             </div>
 
             <div className="pt-2">
               <h5>
-                <Link to="/inventory" className="blue">INVENTORY MANAGEMENT</Link>
+                <Link to="/inventory" className="blue">
+                  INVENTORY MANAGEMENT
+                </Link>
               </h5>
               Inventory management in VDB let you browse your card collection
               with existing crypt/library search and track how collection is

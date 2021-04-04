@@ -25,13 +25,13 @@ function ResultLibraryTable(props) {
     const maxIdx = props.resultCards.length - 1;
 
     if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx)
+      setModalCardIdx(maxIdx);
     } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0)
+      setModalCardIdx(0);
     } else {
-      setModalCardIdx(modalCardIdx + d)
+      setModalCardIdx(modalCardIdx + d);
     }
-  }
+  };
 
   const cardRows = props.resultCards.map((card, index) => {
     const handleClick = () => {
@@ -113,7 +113,7 @@ function ResultLibraryTable(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           {props.addMode && (
-            <td className="quantity-add">
+            <td className="quantity-add pr-1">
               <ResultAddCard
                 cardAdd={props.cardAdd}
                 cardChange={props.cardChange}

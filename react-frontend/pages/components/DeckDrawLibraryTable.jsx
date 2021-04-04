@@ -77,7 +77,10 @@ function DeckDrawLibraryTable(props) {
             {props.isMobile ? (
               <div
                 onClick={() =>
-                  setModalDraw({ name: card['Name'], prob: <DeckDrawProbabilityText N={N} n={n} k={k} />})
+                  setModalDraw({
+                    name: card['Name'],
+                    prob: <DeckDrawProbabilityText N={N} n={n} k={k} />,
+                  })
                 }
               >
                 {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
@@ -86,7 +89,7 @@ function DeckDrawLibraryTable(props) {
               <OverlayTooltip
                 delay={{ show: 0, hide: 0 }}
                 placement="right"
-                text={<DeckDrawProbabilityText N={N} n={n} k={k}/>}
+                text={<DeckDrawProbabilityText N={N} n={n} k={k} />}
               >
                 <div>{`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}</div>
               </OverlayTooltip>
@@ -102,11 +105,12 @@ function DeckDrawLibraryTable(props) {
       <table className="search-library-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {modalDraw && <DeckDrawProbabilityModal
-                      modalDraw={modalDraw}
-                      setModalDraw={setModalDraw}
-                    />
-      }
+      {modalDraw && (
+        <DeckDrawProbabilityModal
+          modalDraw={modalDraw}
+          setModalDraw={setModalDraw}
+        />
+      )}
     </>
   );
 }

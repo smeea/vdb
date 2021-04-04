@@ -1,8 +1,8 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 
-const DeckDrawProbabilityModal = ({modalDraw, setModalDraw}) => {
-  return(
+const DeckDrawProbabilityModal = ({ modalDraw, setModalDraw }) => {
+  return (
     <Modal
       size="xs"
       show={modalDraw ? true : false}
@@ -21,7 +21,7 @@ const DeckDrawProbabilityModal = ({modalDraw, setModalDraw}) => {
         {modalDraw.prob}
       </Modal.Body>
     </Modal>
-  )
+  );
 };
 
 export default DeckDrawProbabilityModal;

@@ -24,13 +24,13 @@ function InventoryLibraryTable(props) {
     const maxIdx = props.cards.length - 1;
 
     if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx)
+      setModalCardIdx(maxIdx);
     } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0)
+      setModalCardIdx(0);
     } else {
-      setModalCardIdx(modalCardIdx + d)
+      setModalCardIdx(modalCardIdx + d);
     }
-  }
+  };
 
   const cardRows = props.cards.map((card, index) => {
     const handleClick = () => {

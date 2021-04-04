@@ -16,8 +16,7 @@ function ResultLibraryDisciplines(props) {
         items -= 1;
         return (
           <span key={index}>
-            <img className={imgClass} src={imgSrc} title={imgTitle} />
-            {'+'}
+            <img className={imgClass} src={imgSrc} title={imgTitle} />+
           </span>
         );
       } else {
@@ -40,8 +39,7 @@ function ResultLibraryDisciplines(props) {
         items -= 1;
         return (
           <span key={index}>
-            <img className={imgClass} src={imgSrc} title={imgTitle} />
-            {' / '}
+            <img className={imgClass} src={imgSrc} title={imgTitle} />/
           </span>
         );
       } else {

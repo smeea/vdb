@@ -5,8 +5,6 @@ import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from '../../assets/images/icons/chevron-compact-left.svg';
 import ChevronCompactRight from '../../assets/images/icons/chevron-compact-right.svg';
-import ChevronLeft from '../../assets/images/icons/chevron-left.svg';
-import ChevronRight from '../../assets/images/icons/chevron-right.svg';
 import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
 import ResultLibraryLayoutText from './ResultLibraryLayoutText.jsx';
 import ButtonCardCopyUrl from './ButtonCardCopyUrl.jsx';
@@ -47,11 +45,25 @@ function ResultLibraryModal(props) {
             {props.showImage ? (
               <>
                 <CardImage />
-                <div onClick={() => props.handleModalCardChange(-1)} className="prev-card-mobile">
-                  <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16"/>
+                <div
+                  onClick={() => props.handleModalCardChange(-1)}
+                  className="prev-card-mobile"
+                >
+                  <ChevronCompactLeft
+                    width="48"
+                    height="64"
+                    viewBox="4 0 12 16"
+                  />
                 </div>
-                <div onClick={() => props.handleModalCardChange(1)} className="next-card-mobile">
-                  <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16"/>
+                <div
+                  onClick={() => props.handleModalCardChange(1)}
+                  className="next-card-mobile"
+                >
+                  <ChevronCompactRight
+                    width="48"
+                    height="64"
+                    viewBox="0 0 12 16"
+                  />
                 </div>
               </>
             ) : (
@@ -191,11 +203,17 @@ function ResultLibraryModal(props) {
                 </Button>
               </div>
             </Col>
-            <div onClick={() => props.handleModalCardChange(-1)} className="prev-card">
-              <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16"/>
+            <div
+              onClick={() => props.handleModalCardChange(-1)}
+              className="prev-card"
+            >
+              <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
             </div>
-            <div onClick={() => props.handleModalCardChange(1)} className="next-card">
-              <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16"/>
+            <div
+              onClick={() => props.handleModalCardChange(1)}
+              className="next-card"
+            >
+              <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
             </div>
           </Row>
         )}

@@ -27,23 +27,22 @@ function SearchLibraryForm(props) {
   useEffect(() => {
     if (props.cardBase && query) {
       props.setFormState((prevState) => {
-        const state = {...prevState}
-        Object.keys(query).map(i => {
+        const state = { ...prevState };
+        Object.keys(query).map((i) => {
           if (i === 'text') {
-            setText(query[i])
+            setText(query[i]);
           } else if (typeof query[i] === 'object') {
-            Object.keys(query[i]).map(j => {
+            Object.keys(query[i]).map((j) => {
               state[i][j] = query[i][j];
-            })
+            });
           } else {
             state[i] = query[i];
           }
-        })
+        });
         return state;
       });
-    };
-  }, [props.cardBase])
-
+    }
+  }, [props.cardBase]);
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
@@ -183,7 +182,7 @@ function SearchLibraryForm(props) {
     });
 
     if (Object.keys(input).length !== 0) {
-      history.push(`/library?q=${encodeURIComponent(JSON.stringify(input))}`)
+      history.push(`/library?q=${encodeURIComponent(JSON.stringify(input))}`);
 
       const options = {
         method: 'POST',
@@ -261,20 +260,20 @@ function SearchLibraryForm(props) {
         spinner={spinnerState}
       />
       {props.inventoryMode ||
-       (props.isMobile && props.isInventory && (
-         <div className="custom-control custom-checkbox">
-           <input
-             id="hideMissing"
-             className="custom-control-input"
-             type="checkbox"
-             checked={props.hideMissing}
-             onChange={() => props.setHideMissing(!props.hideMissing)}
-           />
-           <label htmlFor="hideMissing" className="custom-control-label">
-             Hide Missing in Inventory
-           </label>
-         </div>
-       ))}
+        (props.isMobile && props.isInventory && (
+          <div className="custom-control custom-checkbox">
+            <input
+              id="hideMissing"
+              className="custom-control-input"
+              type="checkbox"
+              checked={props.hideMissing}
+              onChange={() => props.setHideMissing(!props.hideMissing)}
+            />
+            <label htmlFor="hideMissing" className="custom-control-label">
+              Hide Missing in Inventory
+            </label>
+          </div>
+        ))}
       <SearchLibraryFormType
         value={props.formState.type}
         onChange={handleSelectChange}

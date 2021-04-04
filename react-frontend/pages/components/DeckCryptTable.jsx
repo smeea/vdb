@@ -63,35 +63,35 @@ function DeckCryptTable(props) {
       }
 
       if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
-        SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map(
-          (id, index) => {
-            if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
-              softUsedMax = props.usedCards.soft[card.c['Id']][id];
-            }
-            return (
-              <UsedDescription
-                key={index}
-                q={props.usedCards.soft[card.c['Id']][id]}
-                deckName={props.decks[id]['name']}
-              />
-            );
+        SoftUsedDescription = Object.keys(
+          props.usedCards.soft[card.c['Id']]
+        ).map((id, index) => {
+          if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
+            softUsedMax = props.usedCards.soft[card.c['Id']][id];
           }
-        );
+          return (
+            <UsedDescription
+              key={index}
+              q={props.usedCards.soft[card.c['Id']][id]}
+              deckName={props.decks[id]['name']}
+            />
+          );
+        });
       }
 
       if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
-        HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map(
-          (id, index) => {
-            hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
-            return (
-              <UsedDescription
-                key={index}
-                q={props.usedCards.hard[card.c['Id']][id]}
-                deckName={props.decks[id]['name']}
-              />
-            );
-          }
-        );
+        HardUsedDescription = Object.keys(
+          props.usedCards.hard[card.c['Id']]
+        ).map((id, index) => {
+          hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
+          return (
+            <UsedDescription
+              key={index}
+              q={props.usedCards.hard[card.c['Id']][id]}
+              deckName={props.decks[id]['name']}
+            />
+          );
+        });
       }
     }
 
@@ -113,7 +113,10 @@ function DeckCryptTable(props) {
                   }
                   onChange={(e) => props.proxySelector(e)}
                 />
-                <label htmlFor={card.c['Id']} className="custom-control-label" />
+                <label
+                  htmlFor={card.c['Id']}
+                  className="custom-control-label"
+                />
               </div>
             </td>
           )}
@@ -137,11 +140,7 @@ function DeckCryptTable(props) {
                           )
                         }
                       >
-                        {deckInvType == 's' ? (
-                          <PinAngleFill />
-                        ) : (
-                          <Shuffle />
-                        )}
+                        {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
                       </div>
                     </td>
                   ) : null}
@@ -185,9 +184,7 @@ function DeckCryptTable(props) {
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
-                        inventoryType={
-                          props.decks[props.deckid].inventory_type
-                        }
+                        inventoryType={props.decks[props.deckid].inventory_type}
                       />
                     </td>
                   )}
@@ -281,7 +278,9 @@ function DeckCryptTable(props) {
           {!props.isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card.c} showImage={props.showImage} />}
+              overlay={
+                <CardPopover card={card.c} showImage={props.showImage} />
+              }
             >
               <td className="name px-1" onClick={() => handleClick()}>
                 <ResultCryptName card={card.c} />
@@ -311,27 +310,46 @@ function DeckCryptTable(props) {
               </td>
             </>
           )}
-          {props.showInfo &&
-           <td className="prob px-1">
-             {props.isMobile ? (
-               <div
-                 onClick={() =>
-                   setModalDraw({ name: card.c['Name'], prob: <DeckDrawProbabilityText N={props.cryptTotal} n={4} k={card.q} /> })
-                 }
-               >
-                 {`${Math.floor(drawProbability(1, props.cryptTotal, 4, card.q) * 100)}%`}
-               </div>
-             ) : (
-               <OverlayTooltip
-                 delay={{ show: 0, hide: 0 }}
-                 placement="right"
-                 text={<DeckDrawProbabilityText N={props.cryptTotal} n={4} k={card.q}/>}
-               >
-                 <div>{`${Math.floor(drawProbability(1, props.cryptTotal, 4, card.q) * 100)}%`}</div>
-               </OverlayTooltip>
-             )}
-           </td>
-          }
+          {props.showInfo && (
+            <td className="prob px-1">
+              {props.isMobile ? (
+                <div
+                  onClick={() =>
+                    setModalDraw({
+                      name: card.c['Name'],
+                      prob: (
+                        <DeckDrawProbabilityText
+                          N={props.cryptTotal}
+                          n={4}
+                          k={card.q}
+                        />
+                      ),
+                    })
+                  }
+                >
+                  {`${Math.floor(
+                    drawProbability(1, props.cryptTotal, 4, card.q) * 100
+                  )}%`}
+                </div>
+              ) : (
+                <OverlayTooltip
+                  delay={{ show: 0, hide: 0 }}
+                  placement="right"
+                  text={
+                    <DeckDrawProbabilityText
+                      N={props.cryptTotal}
+                      n={4}
+                      k={card.q}
+                    />
+                  }
+                >
+                  <div>{`${Math.floor(
+                    drawProbability(1, props.cryptTotal, 4, card.q) * 100
+                  )}%`}</div>
+                </OverlayTooltip>
+              )}
+            </td>
+          )}
         </tr>
       </React.Fragment>
     );
@@ -342,11 +360,12 @@ function DeckCryptTable(props) {
       <table className="deck-crypt-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {modalDraw && <DeckDrawProbabilityModal
-                      modalDraw={modalDraw}
-                      setModalDraw={setModalDraw}
-                    />
-      }
+      {modalDraw && (
+        <DeckDrawProbabilityModal
+          modalDraw={modalDraw}
+          setModalDraw={setModalDraw}
+        />
+      )}
     </>
   );
 }

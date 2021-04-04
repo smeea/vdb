@@ -28,22 +28,22 @@ function SearchCryptForm(props) {
   useEffect(() => {
     if (props.cardBase && query) {
       props.setFormState((prevState) => {
-        const state = {...prevState}
-        Object.keys(query).map(i => {
+        const state = { ...prevState };
+        Object.keys(query).map((i) => {
           if (i === 'text') {
-            setText(query[i])
+            setText(query[i]);
           } else if (typeof query[i] === 'object') {
-            Object.keys(query[i]).map(j => {
+            Object.keys(query[i]).map((j) => {
               state[i][j] = query[i][j];
-            })
+            });
           } else {
             state[i] = query[i];
           }
-        })
+        });
         return state;
       });
-    };
-  }, [props.cardBase])
+    }
+  }, [props.cardBase]);
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
@@ -247,9 +247,9 @@ function SearchCryptForm(props) {
 
     Object.keys(input).forEach(
       (k) =>
-      (input[k] == 'any' ||
-       !input[k] ||
-       Object.keys(input[k]).length === 0) &&
+        (input[k] == 'any' ||
+          !input[k] ||
+          Object.keys(input[k]).length === 0) &&
         delete input[k]
     );
     if (input['capacity'] == null) {
@@ -257,7 +257,7 @@ function SearchCryptForm(props) {
     }
 
     if (Object.keys(input).length !== 0) {
-      history.push(`/crypt?q=${encodeURIComponent(JSON.stringify(input))}`)
+      history.push(`/crypt?q=${encodeURIComponent(JSON.stringify(input))}`);
 
       const options = {
         method: 'POST',
@@ -302,8 +302,8 @@ function SearchCryptForm(props) {
     if (!props.isMobile) {
       if (
         JSON.stringify(props.formState) == JSON.stringify(defaults) &&
-          props.results &&
-          !text
+        props.results &&
+        !text
       ) {
         props.setResults(undefined);
       } else if (!text || text.length > 2) {
@@ -334,20 +334,20 @@ function SearchCryptForm(props) {
         showLimit={showLimit}
       />
       {props.inventoryMode ||
-       (props.isMobile && props.isInventory && (
-         <div className="custom-control custom-checkbox">
-           <input
-             id="hideMissing"
-             className="custom-control-input"
-             type="checkbox"
-             checked={props.hideMissing}
-             onChange={() => props.setHideMissing(!props.hideMissing)}
-           />
-           <label htmlFor="hideMissing" className="custom-control-label">
-             Hide Missing in Inventory
-           </label>
-         </div>
-       ))}
+        (props.isMobile && props.isInventory && (
+          <div className="custom-control custom-checkbox">
+            <input
+              id="hideMissing"
+              className="custom-control-input"
+              type="checkbox"
+              checked={props.hideMissing}
+              onChange={() => props.setHideMissing(!props.hideMissing)}
+            />
+            <label htmlFor="hideMissing" className="custom-control-label">
+              Hide Missing in Inventory
+            </label>
+          </div>
+        ))}
       <SearchCryptFormDisciplines
         value={props.formState.disciplines}
         onChange={handleDisciplinesChange}

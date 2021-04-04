@@ -29,23 +29,22 @@ function TwdSearchForm(props) {
   useEffect(() => {
     if (props.cryptCardBase && props.libraryCardBase && query) {
       props.setFormState((prevState) => {
-        const state = {...prevState}
-        Object.keys(query).map(i => {
+        const state = { ...prevState };
+        Object.keys(query).map((i) => {
           if (i === 'event') {
-            setEventText(query[i])
+            setEventText(query[i]);
           } else if (typeof query[i] === 'object') {
-            Object.keys(query[i]).map(j => {
+            Object.keys(query[i]).map((j) => {
               state[i][j] = query[i][j];
-            })
+            });
           } else {
             state[i] = query[i];
           }
-        })
+        });
         return state;
       });
-    };
-  }, [props.cryptCardBase, props.libraryCardBase])
-
+    }
+  }, [props.cryptCardBase, props.libraryCardBase]);
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
@@ -193,7 +192,7 @@ function TwdSearchForm(props) {
     );
 
     if (Object.keys(input).length !== 0) {
-      history.push(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`)
+      history.push(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`);
 
       const options = {
         method: 'POST',

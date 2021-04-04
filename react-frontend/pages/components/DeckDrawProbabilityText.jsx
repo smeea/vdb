@@ -1,8 +1,8 @@
 import React from 'react';
 import drawProbability from './drawProbability.js';
 
-const DeckDrawProbabilityText = ({N, n, k}) => {
-  return(
+const DeckDrawProbabilityText = ({ N, n, k }) => {
+  return (
     <div className="prob">
       <div className="d-flex justify-content-between">
         <div className="pr-2">1+</div>
@@ -28,6 +28,6 @@ const DeckDrawProbabilityText = ({N, n, k}) => {
       </div>
     </div>
   );
-}
+};
 
 export default DeckDrawProbabilityText;
