@@ -15,7 +15,7 @@ def deckExport(d, format):
                 library[k] = {'c': get_library_by_id(k), 'q': v}
 
         deck_name = d['name']
-        if d['branch_name']:
+        if 'branch_name' in d:
             deck_name += f" [{d['branch_name']}]"
 
         deck = ''
