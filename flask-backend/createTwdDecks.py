@@ -39,6 +39,7 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
 
         clans = {}
 
+        disciplines = set()
         cryptDisciplines = set()
 
         for card in i['crypt']['cards']:
@@ -75,16 +76,18 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
                 card_discipline_entry = get_library_by_id(card['id'])['Discipline']
                 if '&' in card_discipline_entry:
                     for discipline in card_discipline_entry.split(' & '):
-                        if discipline not in deck['disciplines']:
-                            deck['disciplines'].append(discipline)
+                        if discipline in cryptDisciplines:
+                            disciplines.add(discipline)
 
                 elif '/' in card_discipline_entry:
                     for discipline in card_discipline_entry.split('/'):
-                        if discipline not in deck['disciplines']:
-                            deck['disciplines'].append(discipline)
+                        if discipline in cryptDisciplines:
+                            disciplines.add(discipline)
 
-                elif card_discipline_entry and card_discipline_entry not in deck['disciplines'] and card_discipline_entry in cryptDisciplines:
-                    deck['disciplines'].append(card_discipline_entry)
+                elif card_discipline_entry in cryptDisciplines:
+                    disciplines.add(card_discipline_entry)
+
+        deck['disciplines'] = list(disciplines)
 
         decks.append(deck)
         decks_by_id[i['id']] = deck
