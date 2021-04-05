@@ -4,7 +4,7 @@ import re
 
 def get_crypt_by_text(text, crypt):
     match_cards = []
-    text = text.replace('"', '(\W|^|$)')
+    text = text.replace(' "', '"').replace('" ', '"').replace('"', '(\W|^|$)')
     for card in crypt:
         if re.search(text, card['Card Text'], re.IGNORECASE) or re.search(text, card['Name'], re.IGNORECASE) or re.search(text, card['ASCII Name'], re.IGNORECASE) :
             match_cards.append(card)
