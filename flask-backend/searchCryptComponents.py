@@ -520,9 +520,6 @@ def get_crypt_by_name(pattern, crypt):
 
 
 def get_crypt_by_id(id):
-    with open("vtescrypt.json", "r") as crypt_file:
+    with open("cardbase_crypt.json", "r") as crypt_file:
         crypt = json.load(crypt_file)
-        for card in crypt:
-            if card['Id'] == int(id):
-                return card
-
+        return crypt[str(id)]

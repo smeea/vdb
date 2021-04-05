@@ -15,6 +15,7 @@ from deckExport import deckExport
 from deckExportAll import deckExportAll
 from deckImport import deckImport
 from deckProxy import deckProxy
+from inventoryExport import inventoryExport
 from api import app
 from api import db
 from models import User
@@ -40,6 +41,21 @@ def listInventory():
 
     except AttributeError:
         return jsonify({'error': 'not logged'})
+
+@app.route('/api/inventory/export', methods=['POST'])
+def inventoryExportRoute():
+    try:
+        deck = {
+            'cards': current_user.inventory,
+            'author': current_user.public_name,
+        }
+        result = inventoryExport(deck, request.json['format'])
+
+        return jsonify(result)
+
+    except Exception:
+        pass
+
 
 @app.route('/api/inventory/delete', methods=['GET'])
 def deleteInventory():
@@ -613,15 +629,6 @@ def deckExportRoute():
         if request.json['deckid'] == 'all' and current_user.is_authenticated:
             decks = Deck.query.filter_by(author=current_user).all()
             result = deckExportAll(decks, request.json['format'])
-            return jsonify(result)
-        elif request.json['deckid'] == 'inventory' and current_user.is_authenticated:
-            deck = {
-                'cards': current_user.inventory,
-                'author': current_user.public_name,
-                'name': 'Inventory',
-                'description': '',
-            }
-            result = deckExport(deck, request.json['format'])
             return jsonify(result)
         elif request.json['src'] == 'twd':
             deckid = request.json['deckid']

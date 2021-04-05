@@ -529,8 +529,6 @@ def get_library_by_name(pattern, library):
     return match_cards + match_cards_by_initials
 
 def get_library_by_id(id):
-    with open("vteslib.json", "r") as library_file:
+    with open("cardbase_library.json", "r") as library_file:
         library = json.load(library_file)
-        for card in library:
-            if card['Id'] == int(id):
-                return card
+        return library[str(id)]

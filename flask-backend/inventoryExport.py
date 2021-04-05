@@ -1,9 +1,13 @@
+from datetime import date
 import json
 import re
 
 
-def deckExport(d, format):
+def inventoryExport(d, format):
     try:
+        cryptTotal = 0
+        libraryTotal = 0
+
         crypt = {}
         library = {}
 
@@ -15,22 +19,20 @@ def deckExport(d, format):
                     k = int(k)
                     if k > 200000:
                         crypt[k] = {'c': cryptBase[str(k)], 'q': v}
+                        cryptTotal += v
                     elif k < 200000:
                         library[k] = {'c': libraryBase[str(k)], 'q': v}
+                        libraryTotal += v
 
         deck = []
 
-        deck_name = d['name']
-        if 'branch_name' in d and d['branch_name']:
-            deck_name += f" [{d['branch_name']}]"
-
         if format == 'lackey':
             # Library export
-            sorted_library_keys = sorted(library, key=lambda x: (library[x]['c']['Name']))
+            sorted_library = sorted(library.values(), key=lambda x: x['c']['Name'])
 
-            for id in sorted_library_keys:
-                q = library[id]['q']
-                c = library[id]['c']
+            for i in sorted_library:
+                q = i['q']
+                c = i['c']
                 deck.append(str(q))
                 if q < 10:
                     deck.append('       ')
@@ -58,7 +60,7 @@ def deckExport(d, format):
                 else:
                     deck.append(c['ASCII Name'].replace('"', "'") + '\n')
 
-        elif format == 'text' or format == 'twd':
+        elif format == 'text':
             # Crypt export
             disciplinesList = {
                 'Auspex': 'aus',
@@ -98,53 +100,26 @@ def deckExport(d, format):
                 'Vision': 'vis',
             }
 
-            cryptTotalCap = 0
-            capacityList = []
+            cryptUnique = len(crypt.keys())
 
-            for k, v in crypt.items():
-                cryptTotalCap += v['c']['Capacity'] * v['q']
-                for x in range(v['q']):
-                    capacityList.append(v['c']['Capacity'])
-
-            cryptTotalCards = len(capacityList)
-            cryptAvg = cryptTotalCap / cryptTotalCards if cryptTotalCards else 0
-
-            cryptMin = 0
-            cryptMax = 0
-            capacityList.sort()
-
-            counter = 4 if len(capacityList) >= 4 else len(capacityList)
-            for i in range(counter):
-                cryptMin += capacityList[i]
-                cryptMax += capacityList[-i - 1]
-
-            deck.append(f"Deck Name: {deck_name}\n")
-            deck.append(f"Author: {d['author']}\n")
-            deck.append(f"Description: {d['description']}\n")
+            deck.append(f"Inventory: {d['author']}\n")
+            deck.append(f"Dated: {date.today().strftime('%d %B %Y')}\n")
             deck.append("\n")
 
-            cryptTitle = 'Crypt (' + str(
-                cryptTotalCards) + ' cards, min=' + str(
-                    cryptMin) + ' max=' + str(cryptMax) + ' avg=' + str(
-                        round(cryptAvg, 2)) + ')\n'
+            cryptUniqueTitle = f"Crypt Unique Cards: {cryptUnique}\n"
+            cryptTotalTitle = f"Crypt Total Cards: {cryptTotal}\n"
 
             if format == 'twd':
-                cryptSub = re.sub('.', '-', cryptTitle)
+                cryptSub = re.sub('.', '-', cryptTotalTitle)
             elif format == 'text':
-                cryptSub = re.sub('.', '=', cryptTitle)
+                cryptSub = re.sub('.', '=', cryptTotalTitle)
 
-            deck.append(cryptTitle)
+            deck.append(cryptUniqueTitle)
+            deck.append(cryptTotalTitle)
             deck.append(cryptSub)
 
-            if format == 'text':
-                sorted_crypt = sorted(
-                    sorted(sorted(crypt.values(),
-                                  key=lambda x: x['c']['Name']),
-                           key=lambda x: x['c']['Capacity'], reverse = True),
-                    key=lambda x: x['q'], reverse = True)
-            else:
-                sorted_crypt = sorted(crypt.values(), key=lambda x: x['c']['Name'])
 
+            sorted_crypt_keys = sorted(crypt, key=lambda x: (crypt[x]['c']['Name']))
             cryptExport = {}
             longestQuantity = 0
             longestName = 0
@@ -152,9 +127,9 @@ def deckExport(d, format):
             longestCapacity = 0
             longestDisciplines = 0
 
-            for i in sorted_crypt:
-                q = i['q']
-                c = i['c']
+            for id in sorted_crypt_keys:
+                q = crypt[id]['q']
+                c = crypt[id]['c']
 
                 baseDisciplines = []
                 supDisciplines = []
@@ -202,36 +177,16 @@ def deckExport(d, format):
                 capacitySpaces = longestCapacity - len(str(v['Capacity']))
                 titleSpaces = longestTitle - len(v['Title']) + 3
 
-                deck.append(' ' * quantitySpaces + str(v['Quantity']) + 'x ')
-                deck.append(k + ' ' * nameSpaces)
-                deck.append(' ' * capacitySpaces + str(v['Capacity']) + '  ')
-                deck.append(v['Disciplines'] + ' ' * disSpaces)
-                deck.append(v['Title'] + ' ' * titleSpaces)
-                deck.append(v['Clan'] + ':' + v['Group'] + '\n')
+                deck.append(f"{' ' * quantitySpaces}{v['Quantity']}x ")
+                deck.append(f"{k}{' ' * nameSpaces}")
+                deck.append(f"{' ' * capacitySpaces}{v['Capacity']}  ")
+                deck.append(f"{v['Disciplines']}{' ' * disSpaces}")
+                deck.append(f"{v['Title']}{' ' * titleSpaces}")
+                deck.append(f"{v['Clan']}:{v['Group']}\n")
 
             deck.append('\n')
 
-            byType = {}
-            byTypeTotal = {}
-
-            libraryTotal = 0
-            libraryMax = 0
-
-            for k, v in library.items():
-                libraryTotal += v['q']
-                if v['q'] > libraryMax:
-                    libraryMax = v['q']
-                cardType = v['c']['Type']
-                cardName = v['c']['Name']
-                if cardType not in byType:
-                    byType[cardType] = {}
-                    byType[cardType][cardName] = v['q']
-                    byTypeTotal[cardType] = v['q']
-                else:
-                    byType[cardType][cardName] = v['q']
-                    byTypeTotal[cardType] += v['q']
-
-
+            # Library export
             byTypeOrder = [
                 'Master',
                 'Conviction',
@@ -255,12 +210,33 @@ def deckExport(d, format):
                 'Event',
             ]
 
-            libraryTitle = f"Library ({libraryTotal} cards)\n"
-            deck.append(libraryTitle)
+            byType = {}
+            byTypeTotal = {}
 
-            if format == 'text':
-                librarySub = re.sub('.', '=', libraryTitle)
-                deck.append(librarySub)
+            libraryUnique = len(library.keys())
+
+            for k, v in library.items():
+                cardType = v['c']['Type']
+                cardName = v['c']['Name']
+                if cardType not in byType:
+                    byType[cardType] = {}
+                    byType[cardType][cardName] = v['q']
+                    byTypeTotal[cardType] = v['q']
+                else:
+                    byType[cardType][cardName] = v['q']
+                    byTypeTotal[cardType] += v['q']
+
+            libraryUniqueTitle = f"Library Unique Cards: {libraryUnique}\n"
+            libraryTotalTitle = f"Library Total Cards: {libraryTotal}\n"
+
+            if format == 'twd':
+                librarySub = re.sub('.', '-', libraryTotalTitle)
+            elif format == 'text':
+                librarySub = re.sub('.', '=', libraryTotalTitle)
+
+            deck.append(libraryUniqueTitle)
+            deck.append(libraryTotalTitle)
+            deck.append(librarySub)
 
             for i in byTypeOrder:
                 if i in byType:
@@ -274,12 +250,8 @@ def deckExport(d, format):
                     sorted_library_keys = sorted(byType[i].keys())
                     for k in sorted_library_keys:
                         q = byType[i][k]
-                        if format == 'text' and libraryMax >= 10:
-                            if q < 10:
-                                deck.append(f" {q}x {k}\n")
-                            else:
-                                deck.append(f"{q}x {k}\n")
-
+                        if q < 10:
+                            deck.append(f" {q}x {k}\n")
                         else:
                             deck.append(f"{q}x {k}\n")
 
@@ -287,7 +259,7 @@ def deckExport(d, format):
 
         deck_str = ''.join(deck)
 
-        return {'name': deck_name, 'format': format, 'deck': deck_str}
+        return {'name': f"Inventory - {d['author']}", 'format': format, 'deck': deck_str}
 
     except Exception:
         pass

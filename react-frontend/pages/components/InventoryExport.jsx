@@ -13,18 +13,12 @@ function InventoryExport(props) {
       <Dropdown.Item href="" onClick={() => saveDeck('text')}>
         Save as file - Text
       </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => saveDeck('twd')}>
-        Save as file - TWD
-      </Dropdown.Item>
       <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
         Save as file - Lackey
       </Dropdown.Item>
       <Dropdown.Divider />
       <Dropdown.Item href="" onClick={() => copyDeck('text')}>
         Copy to Clipboard - Text
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => copyDeck('twd')}>
-        Copy to Clipboard - TWD
       </Dropdown.Item>
       <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
         Copy to Clipboard - Lackey
@@ -36,7 +30,7 @@ function InventoryExport(props) {
     setError(false);
     setSpinnerState(true);
 
-    const url = `${process.env.API_URL}decks/export`;
+    const url = `${process.env.API_URL}inventory/export`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -45,7 +39,6 @@ function InventoryExport(props) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        deckid: 'inventory',
         format: format,
       }),
     };
@@ -69,7 +62,7 @@ function InventoryExport(props) {
     setError(false);
     setSpinnerState(true);
 
-    const url = `${process.env.API_URL}decks/export`;
+    const url = `${process.env.API_URL}inventory/export`;
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -78,7 +71,6 @@ function InventoryExport(props) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        deckid: 'inventory',
         format: format,
       }),
     };
