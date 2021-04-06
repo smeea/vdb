@@ -1,7 +1,5 @@
 import json
 import re
-from searchCryptComponents import get_crypt_by_id
-from searchLibraryComponents import get_library_by_id
 
 
 with open("twdDecks.json", "r") as twd_file:
@@ -154,36 +152,8 @@ def get_twd_by_traits(traits, twda=twda):
     for deck in twda:
         counter = 0
         for trait in traits.keys():
-
-            if trait == 'star':
-                if '200076' in deck['crypt']:
-                    total = deck['cryptTotal'] - deck['crypt']['200076']['q']
-                else:
-                    total = deck['cryptTotal']
-
-                for k, v in deck['crypt'].items():
-                    # Skip Anarch Convert
-                    if k != '200076':
-                        if get_crypt_by_id(k)['Adv'] and str((int(k) - 1)) in deck['crypt']:
-                            if (v['q'] + deck['crypt'][str(int(k) - 1)]['q']) / total > 0.38:
-                                counter += 1
-                                break
-                        else:
-                            if v['q'] / total > 0.38:
-                                counter += 1
-                                break
-
-            if trait == 'monoclan':
-                clans = []
-
-                for k, v in deck['crypt'].items():
-                    clan = get_crypt_by_id(k)['Clan']
-                    if k != '200076' and clan not in clans:
-                        clans.append(get_crypt_by_id(k)['Clan'])
-
-                if len(clans) <= 1:
-                    counter += 1
-                    break
+            if trait in deck['traits']:
+                counter += 1
 
         if trait_counter == counter:
             match_decks.append(deck)
@@ -216,5 +186,6 @@ def sanitizeTwd(deck):
     del (deck['libraryTotal'])
     del (deck['cryptTotal'])
     del (deck['clan'])
+    del (deck['traits'])
 
     return(deck)

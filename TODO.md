@@ -6,6 +6,7 @@
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Restyle card quantity in Inventory
+* Quantity width for export library cards deck/inventory
 
 # FIX MOBILE
 * If no results but url on mobile to run search
@@ -24,11 +25,11 @@
 * Script to generate json from cvs from text disciplines
 * Night theme
 * Documentation on updates / update script
-* Export inventory to CSV
+* Export inventory to CSV / .ods
 * Deck export to JOL
 
 # IMPROVE TECHNOLOGY - FRONTEND
-* Tests: cypress / puppeteer
+* Tests: cypress
 * Sync: websockets
 
 # IMPROVE TECHNOLOGY - BACKEND

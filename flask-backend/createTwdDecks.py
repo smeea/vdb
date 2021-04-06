@@ -26,7 +26,8 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
             'crypt': {},
             'cryptTotal': i['crypt']['count'],
             'clan': '',
-            'description': i['comments'] if 'comments' in i else '',
+            'traits': [],
+            'description': i['comments'] if 'comments' in i else 'x',
             'library': {},
             'libraryTotal': i['library']['count'],
             'link': i['event_link'] if 'event_link' in i else'',
@@ -36,42 +37,57 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json", "w") as twdaDec
         }
 
         totalCapacity = 0
+        totalCryptExAC = 0
 
         clans = {}
 
         disciplines = set()
         cryptDisciplines = set()
 
+        crypt = {}
         for card in i['crypt']['cards']:
-            # Skip Anarch Convert
+            crypt[card['id']] = card['count']
             if card['id'] != 200076:
-                totalCapacity += card['count'] * get_crypt_by_id(card['id'])['Capacity']
-                if (clan := get_crypt_by_id(card['id'])['Clan']) in clans:
-                    clans[clan] += card['count']
+                totalCryptExAC += card['count']
+
+        for id, q in crypt.items():
+            # Skip Anarch Convert
+            if id != 200076:
+                totalCapacity += q * get_crypt_by_id(id)['Capacity']
+
+                if (clan := get_crypt_by_id(id)['Clan']) in clans:
+                    clans[clan] += q
                 else:
-                    clans[clan] = card['count']
+                    clans[clan] = q
 
-            deck['crypt'][card['id']] = {
-                'q': card['count']
-            }
+            if 'star' not in deck['traits'] and id != 200076:
+                if get_crypt_by_id(id)['Adv'] and id - 1 in crypt:
+                    if (q + crypt[id - 1]) / totalCryptExAC > 0.38:
+                        deck['traits'].append('star')
+                else:
+                    if q / totalCryptExAC > 0.38:
+                        deck['traits'].append('star')
 
-            for discipline in get_crypt_by_id(card['id'])['Disciplines'].keys():
+            deck['crypt'][id] = {'q': q}
+
+            for discipline in get_crypt_by_id(id)['Disciplines'].keys():
                 cryptDisciplines.add(discipline)
 
         for clan, q in clans.items():
             if q / deck['cryptTotal'] > 0.5:
                 deck['clan'] = clan
 
-        deck['capacity'] = totalCapacity / deck['cryptTotal']
+        if len(clans) <= 1 and 'monoclan' not in deck['traits']:
+            deck['traits'].append('monoclan')
+
+        deck['capacity'] = totalCapacity / totalCryptExAC
 
         for type in i['library']['cards']:
             deck['cardtypes_ratio'][type['type'].lower()] = type['count'] / deck['libraryTotal']
 
             for card in type['cards']:
 
-                deck['library'][card['id']] = {
-                    'q': card['count']
-                }
+                deck['library'][card['id']] = { 'q': card['count'] }
 
                 card_discipline_entry = get_library_by_id(card['id'])['Discipline']
                 if '&' in card_discipline_entry:
