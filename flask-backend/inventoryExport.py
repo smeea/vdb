@@ -10,6 +10,8 @@ def inventoryExport(d, format):
 
         crypt = {}
         library = {}
+        maxCrypt = 0
+        maxLibrary = 0
 
         with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_library.json", "r") as library_file:
             cryptBase = json.load(crypt_file)
@@ -20,9 +22,13 @@ def inventoryExport(d, format):
                     if k > 200000:
                         crypt[k] = {'c': cryptBase[str(k)], 'q': v}
                         cryptTotal += v
+                        if maxCrypt < v:
+                            maxCrypt = v
                     elif k < 200000:
                         library[k] = {'c': libraryBase[str(k)], 'q': v}
                         libraryTotal += v
+                        if maxLibrary < v:
+                            maxLibrary = v
 
         deck = []
 
@@ -33,13 +39,9 @@ def inventoryExport(d, format):
             for i in sorted_library:
                 q = i['q']
                 c = i['c']
-                deck.append(str(q))
-                if q < 10:
-                    deck.append('       ')
-                else:
-                    deck.append('      ')
+                deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
 
-                deck.append(c['ASCII Name'].replace('"', "'") + '\n')
+                deck.append(c['ASCII Name'].replace('"', "'") + "\n")
 
             # Crypt export
             deck.append('Crypt:\n')
@@ -49,11 +51,7 @@ def inventoryExport(d, format):
             for i in sorted_crypt:
                 q = i['q']
                 c = i['c']
-                deck.append(str(q))
-                if q < 10:
-                    deck.append('       ')
-                else:
-                    deck.append('      ')
+                deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
 
                 if c['Adv']:
                     deck.append(c['ASCII Name'].replace('"', "'") + ' (ADV)\n')
@@ -109,19 +107,14 @@ def inventoryExport(d, format):
             cryptUniqueTitle = f"Crypt Unique Cards: {cryptUnique}\n"
             cryptTotalTitle = f"Crypt Total Cards: {cryptTotal}\n"
 
-            if format == 'twd':
-                cryptSub = re.sub('.', '-', cryptTotalTitle)
-            elif format == 'text':
-                cryptSub = re.sub('.', '=', cryptTotalTitle)
+            cryptSub = re.sub('.', '=', cryptTotalTitle)
 
             deck.append(cryptUniqueTitle)
             deck.append(cryptTotalTitle)
             deck.append(cryptSub)
 
-
             sorted_crypt_keys = sorted(crypt, key=lambda x: (crypt[x]['c']['Name']))
             cryptExport = {}
-            longestQuantity = 0
             longestName = 0
             longestTitle = 0
             longestCapacity = 0
@@ -157,8 +150,6 @@ def inventoryExport(d, format):
                     'Group': c['Group']
                 }
 
-                if len(str(q)) > longestQuantity:
-                    longestQuantity = len(str(q))
                 if len(c['Name']) > longestName:
                     longestName = len(c['Name'])
                 if len(c['Title']) > longestTitle:
@@ -169,7 +160,7 @@ def inventoryExport(d, format):
                     longestDisciplines = len(disciplines)
 
             for k, v in cryptExport.items():
-                quantitySpaces = longestQuantity - len(str(v['Quantity']))
+                quantitySpaces = len(str(maxCrypt)) - len(str(v['Quantity']))
 
                 nameSpaces = longestName - len(k) + 3
                 disSpaces = longestDisciplines - len(v['Disciplines']) + 3
@@ -184,7 +175,7 @@ def inventoryExport(d, format):
                 deck.append(f"{v['Title']}{' ' * titleSpaces}")
                 deck.append(f"{v['Clan']}:{v['Group']}\n")
 
-            deck.append('\n')
+            deck.append("\n")
 
             # Library export
             byTypeOrder = [
@@ -229,10 +220,7 @@ def inventoryExport(d, format):
             libraryUniqueTitle = f"Library Unique Cards: {libraryUnique}\n"
             libraryTotalTitle = f"Library Total Cards: {libraryTotal}\n"
 
-            if format == 'twd':
-                librarySub = re.sub('.', '-', libraryTotalTitle)
-            elif format == 'text':
-                librarySub = re.sub('.', '=', libraryTotalTitle)
+            librarySub = re.sub('.', '=', libraryTotalTitle)
 
             deck.append(libraryUniqueTitle)
             deck.append(libraryTotalTitle)
@@ -250,10 +238,8 @@ def inventoryExport(d, format):
                     sorted_library_keys = sorted(byType[i].keys())
                     for k in sorted_library_keys:
                         q = byType[i][k]
-                        if q < 10:
-                            deck.append(f" {q}x {k}\n")
-                        else:
-                            deck.append(f"{q}x {k}\n")
+                        quantitySpaces = len(str(maxLibrary)) - len(str(q))
+                        deck.append(f"{' ' * quantitySpaces}{q}x {k}\n")
 
                     deck.append('\n')
 

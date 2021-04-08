@@ -6,6 +6,8 @@ def deckExport(d, format):
     try:
         crypt = {}
         library = {}
+        maxCrypt = 0
+        maxLibrary = 0
 
         with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_library.json", "r") as library_file:
             cryptBase = json.load(crypt_file)
@@ -15,8 +17,12 @@ def deckExport(d, format):
                     k = int(k)
                     if k > 200000:
                         crypt[k] = {'c': cryptBase[str(k)], 'q': v}
+                        if maxCrypt < v:
+                            maxCrypt = v
                     elif k < 200000:
                         library[k] = {'c': libraryBase[str(k)], 'q': v}
+                        if maxLibrary < v:
+                            maxLibrary = v
 
         deck = []
 
@@ -31,11 +37,7 @@ def deckExport(d, format):
             for id in sorted_library_keys:
                 q = library[id]['q']
                 c = library[id]['c']
-                deck.append(str(q))
-                if q < 10:
-                    deck.append('       ')
-                else:
-                    deck.append('      ')
+                deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
 
                 deck.append(c['ASCII Name'].replace('"', "'") + '\n')
 
@@ -47,11 +49,7 @@ def deckExport(d, format):
             for i in sorted_crypt:
                 q = i['q']
                 c = i['c']
-                deck.append(str(q))
-                if q < 10:
-                    deck.append('       ')
-                else:
-                    deck.append('      ')
+                deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
 
                 if c['Adv']:
                     deck.append(c['ASCII Name'].replace('"', "'") + ' (ADV)\n')
@@ -146,7 +144,6 @@ def deckExport(d, format):
                 sorted_crypt = sorted(crypt.values(), key=lambda x: x['c']['Name'])
 
             cryptExport = {}
-            longestQuantity = 0
             longestName = 0
             longestTitle = 0
             longestCapacity = 0
@@ -182,8 +179,6 @@ def deckExport(d, format):
                     'Group': c['Group']
                 }
 
-                if len(str(q)) > longestQuantity:
-                    longestQuantity = len(str(q))
                 if len(c['Name']) > longestName:
                     longestName = len(c['Name'])
                 if len(c['Title']) > longestTitle:
@@ -194,33 +189,32 @@ def deckExport(d, format):
                     longestDisciplines = len(disciplines)
 
             for k, v in cryptExport.items():
-                quantitySpaces = longestQuantity - len(str(v['Quantity']))
-
+                quantitySpaces = len(str(maxCrypt)) - len(str(v['Quantity']))
                 nameSpaces = longestName - len(k) + 3
                 disSpaces = longestDisciplines - len(v['Disciplines']) + 3
-
                 capacitySpaces = longestCapacity - len(str(v['Capacity']))
                 titleSpaces = longestTitle - len(v['Title']) + 3
 
-                deck.append(' ' * quantitySpaces + str(v['Quantity']) + 'x ')
+                if format == 'text':
+                    deck.append(f"{' ' * quantitySpaces}{v['Quantity']}x ")
+                else:
+                    deck.append(f"{v['Quantity']}x{' ' * quantitySpaces} ")
                 deck.append(k + ' ' * nameSpaces)
                 deck.append(' ' * capacitySpaces + str(v['Capacity']) + '  ')
                 deck.append(v['Disciplines'] + ' ' * disSpaces)
                 deck.append(v['Title'] + ' ' * titleSpaces)
                 deck.append(v['Clan'] + ':' + v['Group'] + '\n')
 
-            deck.append('\n')
+            deck.append("\n")
 
+            # Library export
             byType = {}
             byTypeTotal = {}
 
             libraryTotal = 0
-            libraryMax = 0
 
             for k, v in library.items():
                 libraryTotal += v['q']
-                if v['q'] > libraryMax:
-                    libraryMax = v['q']
                 cardType = v['c']['Type']
                 cardName = v['c']['Name']
                 if cardType not in byType:
@@ -274,14 +268,11 @@ def deckExport(d, format):
                     sorted_library_keys = sorted(byType[i].keys())
                     for k in sorted_library_keys:
                         q = byType[i][k]
-                        if format == 'text' and libraryMax >= 10:
-                            if q < 10:
-                                deck.append(f" {q}x {k}\n")
-                            else:
-                                deck.append(f"{q}x {k}\n")
-
+                        quantitySpaces = len(str(maxLibrary)) - len(str(q))
+                        if format == 'text':
+                            deck.append(f"{' ' * quantitySpaces}{q}x {k}\n")
                         else:
-                            deck.append(f"{q}x {k}\n")
+                            deck.append(f"{q}x{' ' * quantitySpaces} {k}\n")
 
                     deck.append('\n')
 

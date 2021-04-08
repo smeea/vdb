@@ -32,21 +32,21 @@ def deckImport(deckText):
 
         if '(ADV)' in i:
             if cardMatch := re.match(
-                    r'^([0-9]+)x?\s+(.*?)(\s\(ADV\))(\s+\d+.*)', i):
+                    r'^ *([0-9]+)x?\s+(.*?)(\s\(ADV\))(\s+\d+.*)', i):
                 cardname = cardMatch.group(2).lower()
                 quantity = int(cardMatch.group(1))
                 adv = True
 
-            elif cardMatch := re.match(r'^([0-9]+)x?\s+(.*)(\s\(ADV\))', i):
+            elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*)(\s\(ADV\))', i):
                 cardname = cardMatch.group(2).lower()
                 quantity = int(cardMatch.group(1))
                 adv = True
 
-        elif cardMatch := re.match(r'^([0-9]+)x?\s+(.*?)(\s+\d+.*)', i):
+        elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*?)(\s+\d+.*)', i):
             cardname = cardMatch.group(2).lower()
             quantity = int(cardMatch.group(1))
 
-        elif cardMatch := re.match(r'^([0-9]+)x?\s+(.*)', i):
+        elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*)', i):
             cardname = cardMatch.group(2).lower()
             quantity = int(cardMatch.group(1))
 
