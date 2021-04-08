@@ -72,7 +72,7 @@ function DeckDrawModal(props) {
                 <DeckDrawCryptTable
                   burnCrypt={props.burnCrypt}
                   crypt={props.crypt}
-                  total={props.cryptTotal}
+                  total={props.drawedCrypt.length + props.restCrypt.length}
                   resultCards={props.drawedCrypt}
                   className="search-crypt-table"
                   showImage={props.showImage}
@@ -119,7 +119,7 @@ function DeckDrawModal(props) {
               <DeckDrawLibraryTable
                 burnLibrary={props.burnLibrary}
                 library={props.library}
-                total={props.libraryTotal}
+                total={props.drawedLibrary.length + props.restLibrary.length}
                 resultCards={props.drawedLibrary}
                 className="search-library-table"
                 showImage={props.showImage}
@@ -145,7 +145,7 @@ function DeckDrawModal(props) {
                     <DeckDrawCryptTable
                       burnCrypt={null}
                       crypt={props.crypt}
-                      total={props.cryptTotal}
+                      total={props.drawedCrypt.length + props.restCrypt.length}
                       resultCards={props.burnedCrypt}
                       className="search-crypt-table"
                       showImage={props.showImage}
@@ -171,7 +171,7 @@ function DeckDrawModal(props) {
                     <DeckDrawLibraryTable
                       burnLibrary={null}
                       library={props.library}
-                      total={props.libraryTotal}
+                      total={props.drawedLibrary.length + props.restLibrary.length}
                       resultCards={props.burnedLibrary}
                       className="search-library-table"
                       showImage={props.showImage}
