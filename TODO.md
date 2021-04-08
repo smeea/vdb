@@ -6,7 +6,7 @@
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Restyle card quantity in Inventory
-* Quantity width for export library cards deck/inventory
+* Scroll modal for deck through library + crypt
 
 # FIX MOBILE
 * If no results but url on mobile to run search
@@ -18,6 +18,7 @@
 * Inventory data in TWD browser
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
+* Inventory add from precon
 * Popover on precons in modal preview set section
 * Offline PWA support
 
@@ -37,3 +38,4 @@
 * Check frontend input (quantity/cardid/etc) on backend
 * Update API endpoints
 * Add error codes to return
+* Unify tests for current_user

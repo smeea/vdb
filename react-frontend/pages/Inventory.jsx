@@ -281,6 +281,7 @@ function Inventory(props) {
                 <InventoryButtons
                   decks={props.decks ? props.decks : {}}
                   inventoryDeckAdd={props.inventoryDeckAdd}
+                  inventoryAddToState={props.inventoryAddToState}
                   setInventory={props.setInventory}
                   isMobile={props.isMobile}
                 />
@@ -359,6 +360,7 @@ function Inventory(props) {
               <InventoryButtons
                 decks={props.decks ? props.decks : {}}
                 inventoryDeckAdd={props.inventoryDeckAdd}
+                inventoryAddToState={props.inventoryAddToState}
                 setInventory={props.setInventory}
                 isMobile={props.isMobile}
                 setShowMenuButtons={setShowMenuButtons}

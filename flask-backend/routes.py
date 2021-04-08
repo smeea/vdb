@@ -16,6 +16,7 @@ from deckExportAll import deckExportAll
 from deckImport import deckImport
 from deckProxy import deckProxy
 from inventoryExport import inventoryExport
+from inventoryImportParse import inventoryImportParse
 from api import app
 from api import db
 from models import User
@@ -56,6 +57,28 @@ def inventoryExportRoute():
     except Exception:
         pass
 
+@app.route('/api/inventory/import', methods=['POST'])
+def inventoryImportRoute():
+    if current_user.is_authenticated:
+        i = current_user.inventory
+        try:
+            new_cards = inventoryImportParse(request.json)
+            merged_cards = i.copy() if i else {}
+            for k, v in new_cards.items():
+                if k not in merged_cards:
+                    merged_cards[k] = v
+                else:
+                    merged_cards[k] = merged_cards[k] + v
+
+            current_user.inventory = merged_cards.copy()
+            db.session.commit()
+            return jsonify(new_cards)
+
+        except Exception:
+            return jsonify("error")
+
+    else:
+        return jsonify({'Not logged in.'})
 
 @app.route('/api/inventory/delete', methods=['GET'])
 def deleteInventory():

@@ -166,6 +166,10 @@ function App(props) {
       setInventory(oldState);
     });
 
+    inventoryAddToState(cards)
+  }
+
+  const inventoryAddToState = (cards) => {
     Object.keys(cards).forEach((cardid) => {
       if (cardid > 200000) {
         setInventory((prevState) => {
@@ -670,6 +674,7 @@ function App(props) {
                 inventory={inventory}
                 setInventory={setInventory}
                 inventoryDeckAdd={inventoryDeckAdd}
+                inventoryAddToState={inventoryAddToState}
                 cardAdd={inventoryCardAdd}
                 cardChange={inventoryCardChange}
                 cryptCardBase={cryptCardBase}
