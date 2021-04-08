@@ -12,22 +12,38 @@ function DeckCrypt(props) {
   const [showInfo, setShowInfo] = useState(false);
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
+  const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
 
   const handleModalCardOpen = (i) => {
     setModalCardIdx(cryptCards.indexOf(i));
   };
 
-  const handleModalCardChange = (d) => {
-    const maxIdx = cryptCards.length - 1;
+  const handleModalSideCardOpen = (i) => {
+    setModalSideCardIdx(cryptSideCards.indexOf(i));
+  };
 
-    if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx);
-    } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0);
+  const handleModalCardChange = (d) => {
+    if (modalCardIdx !== undefined) {
+      const maxIdx = cryptCards.length - 1;
+      if (modalCardIdx + d < 0) {
+        setModalCardIdx(maxIdx);
+      } else if (modalCardIdx + d > maxIdx) {
+        setModalCardIdx(0);
+      } else {
+        setModalCardIdx(modalCardIdx + d);
+      };
     } else {
-      setModalCardIdx(modalCardIdx + d);
-    }
+      const maxIdx = cryptSideCards.length - 1;
+
+      if (modalSideCardIdx + d < 0) {
+        setModalSideCardIdx(maxIdx);
+      } else if (modalSideCardIdx + d > maxIdx) {
+        setModalSideCardIdx(0);
+      } else {
+        setModalSideCardIdx(modalSideCardIdx + d);
+      };
+    };
   };
 
   const disciplinesDict = {};
@@ -81,6 +97,7 @@ function DeckCrypt(props) {
   const crypt = {};
   const cryptSide = {};
   const cryptCards = [];
+  const cryptSideCards = [];
   let cryptGroupMin;
   let cryptGroupMax;
 
@@ -140,7 +157,12 @@ function DeckCrypt(props) {
       return crypt[card];
     });
 
-  const sortedCardsSide = Object.values(cryptSide).sort(SortByCapacity);
+  const sortedCardsSide = Object.values(cryptSide)
+        .sort(SortByCapacity)
+        .map((card) => {
+          cryptSideCards.push(card.c);
+          return card;
+        });
 
   useEffect(() => {
     setSortedState(
@@ -259,7 +281,7 @@ function DeckCrypt(props) {
             <b>Side Crypt</b>
           </div>
           <DeckCryptTable
-            handleModalCardOpen={handleModalCardOpen}
+            handleModalCardOpen={handleModalSideCardOpen}
             setModalInventory={setModalInventory}
             deckid={props.deckid}
             cardChange={props.cardChange}
@@ -297,14 +319,15 @@ function DeckCrypt(props) {
           </div>
         </div>
       )}
-      {modalCardIdx !== undefined && (
+      {(modalCardIdx !== undefined || modalSideCardIdx !== undefined)&& (
         <ResultCryptModal
-          card={cryptCards[modalCardIdx]}
+          card={modalCardIdx !== undefined ? cryptCards[modalCardIdx] : cryptSideCards[modalSideCardIdx]}
           handleModalCardChange={handleModalCardChange}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
+            setModalSideCardIdx(undefined);
             props.isMobile && props.setShowFloatingButtons(true);
           }}
           isMobile={props.isMobile}

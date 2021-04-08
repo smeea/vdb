@@ -11,28 +11,47 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 function DeckLibrary(props) {
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const [modalInventory, setModalInventory] = useState(undefined);
+
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
+  const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);
+  const [modalInventory, setModalInventory] = useState(undefined);
 
   const handleModalCardOpen = (i) => {
     setModalCardIdx(libraryCards.indexOf(i));
   };
 
-  const handleModalCardChange = (d) => {
-    const maxIdx = libraryCards.length - 1;
+  const handleModalSideCardOpen = (i) => {
+    setModalSideCardIdx(librarySideCards.indexOf(i));
+  };
 
-    if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx);
-    } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0);
+  const handleModalCardChange = (d) => {
+    if (modalCardIdx !== undefined) {
+      const maxIdx = libraryCards.length - 1;
+
+      if (modalCardIdx + d < 0) {
+        setModalCardIdx(maxIdx);
+      } else if (modalCardIdx + d > maxIdx) {
+        setModalCardIdx(0);
+      } else {
+        setModalCardIdx(modalCardIdx + d);
+      };
     } else {
-      setModalCardIdx(modalCardIdx + d);
-    }
+      const maxIdx = librarySideCards.length - 1;
+
+      if (modalSideCardIdx + d < 0) {
+        setModalSideCardIdx(maxIdx);
+      } else if (modalSideCardIdx + d > maxIdx) {
+        setModalSideCardIdx(0);
+      } else {
+        setModalSideCardIdx(modalSideCardIdx + d);
+      };
+    };
   };
 
   const library = {};
   const librarySide = {};
   const libraryCards = [];
+  const librarySideCards = [];
 
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
@@ -143,9 +162,9 @@ function DeckLibrary(props) {
     }
 
     if (librarySideByType[cardtype] !== undefined) {
-      // for (const card of libraryByType[cardtype]) {
-      //   libraryCards.push(card.c)
-      // }
+      for (const card of librarySideByType[cardtype]) {
+        librarySideCards.push(card.c)
+      }
 
       LibrarySideDeck.push(
         <div key={cardtype}>
@@ -155,7 +174,7 @@ function DeckLibrary(props) {
             trifleTotal={cardtype == 'Master' && trifleTotal}
           />
           <DeckLibraryTable
-            handleModalCardChange={handleModalCardChange}
+            handleModalCardOpen={handleModalSideCardOpen}
             setModalInventory={setModalInventory}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
@@ -275,14 +294,15 @@ function DeckLibrary(props) {
           </div>
         </div>
       )}
-      {modalCardIdx !== undefined && (
+      {(modalCardIdx !== undefined || modalSideCardIdx !== undefined)&& (
         <ResultLibraryModal
-          card={libraryCards[modalCardIdx]}
+          card={modalCardIdx !== undefined ? libraryCards[modalCardIdx] : librarySideCards[modalSideCardIdx]}
           handleModalCardChange={handleModalCardChange}
           showImage={props.showImage}
           setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
+            setModalSideCardIdx(undefined);
             props.isMobile && props.setShowFloatingButtons(true);
           }}
           isMobile={props.isMobile}
