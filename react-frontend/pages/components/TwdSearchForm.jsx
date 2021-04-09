@@ -336,10 +336,10 @@ function TwdSearchForm(props) {
       {props.inventoryMode && (
         <>
           <Row className="py-1 pl-1 mx-0 align-items-center">
-            <Col xs={7} className="d-flex px-0">
+            <Col xs={6} className="d-flex px-0">
               <label className="h6 mb-0">In Inventory by Crypt:</label>
             </Col>
-            <Col xs={5} className="d-inline px-0">
+            <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
                 value={props.formState.matchInventory.crypt}
                 name={'crypt'}
@@ -349,10 +349,10 @@ function TwdSearchForm(props) {
             </Col>
           </Row>
           <Row className="py-1 pl-1 mx-0 align-items-center">
-            <Col xs={7} className="d-flex px-0">
+            <Col xs={6} className="d-flex px-0">
               <label className="h6 mb-0">In Inventory by Library:</label>
             </Col>
-            <Col xs={5} className="d-inline px-0">
+            <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
                 value={props.formState.matchInventory.library}
                 name={'library'}
@@ -362,7 +362,7 @@ function TwdSearchForm(props) {
             </Col>
           </Row>
           <Row className="py-1 pl-1 mx-0 align-items-center">
-            <Col xs={{ span: 5, offset: 7 }} className="d-inline px-0">
+            <Col xs={{ span: 6, offset: 6 }} className="d-inline px-0">
               <TwdSearchFormMatchInventoryScaling
                 value={props.formState.matchInventory.scaling}
                 onChange={handleMatchInventoryScalingChange}
