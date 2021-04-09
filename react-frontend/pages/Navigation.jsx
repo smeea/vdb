@@ -17,7 +17,8 @@ function Navigation(props) {
               !props.isMobile &&
               (props.location.pathname == '/decks' ||
                 props.location.pathname == '/crypt' ||
-                props.location.pathname == '/library') && (
+                props.location.pathname == '/library' ||
+                props.location.pathname == '/twd') && (
                 <div
                   className="d-flex align-items-center pl-1 pr-4"
                   onClick={() => props.setInventoryMode(!props.inventoryMode)}

@@ -7,6 +7,7 @@ from random import random
 
 from searchTwd import searchTwd
 from searchTwdComponents import sanitizeTwd
+from searchTwdComponents import matchInventory
 from searchCrypt import searchCrypt
 from searchLibrary import searchLibrary
 from searchCryptComponents import get_crypt_by_id
@@ -839,6 +840,13 @@ def logout():
 @app.route('/api/search/twd', methods=['POST'])
 def searchTwdRoute():
     result = searchTwd(request)
+
+    if 'matchInventory' in request.json:
+        if result != 400:
+            result = matchInventory(request.json['matchInventory'], current_user.inventory, result)
+        else:
+            result = matchInventory(request.json['matchInventory'], current_user.inventory)
+
     if result != 400:
         return jsonify(result)
     else:

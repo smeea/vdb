@@ -174,6 +174,50 @@ def get_twd_by_libraryTotal(total_input, twda=twda):
 
     return match_cards
 
+def matchInventory(request, inventory, twda=twda):
+    crypt_ratio = float(request['crypt']) if 'crypt' in request else None
+    library_ratio = float(request['library']) if 'library' in request else None
+    scaling = request['scaling'] if 'scaling' in request else False
+
+    match_decks = []
+
+    for deck in twda:
+        if crypt_ratio:
+            min_counter = round(deck['cryptTotal'] * crypt_ratio)
+            counter = 0
+
+            for card, v in deck['crypt'].items():
+                if card in inventory:
+                    q = v['q']
+                    if q > inventory[card]:
+                        counter += inventory[card]
+                    else:
+                        counter += q
+
+            if counter < min_counter:
+                continue
+
+        if library_ratio:
+            counter = 0
+            scaling_factor = deck['libraryTotal'] / 60
+            min_counter = 60 * library_ratio if scaling else deck['libraryTotal'] * library_ratio
+
+            for card, v in deck['library'].items():
+                if card in inventory:
+                    q = v['q'] / scaling_factor if scaling else v['q']
+
+                    if q > inventory[card]:
+                        counter += inventory[card]
+                    else:
+                        counter += q
+
+            if counter < min_counter:
+                continue
+
+        match_decks.append(deck)
+
+    return match_decks
+
 
 def sanitizeTwd(deck):
     del (deck['description'])

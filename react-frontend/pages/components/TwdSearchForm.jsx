@@ -18,6 +18,8 @@ import TwdSearchFormDisciplines from './TwdSearchFormDisciplines.jsx';
 import TwdSearchFormCrypt from './TwdSearchFormCrypt.jsx';
 import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
 import TwdSearchFormLibraryTotal from './TwdSearchFormLibraryTotal.jsx';
+import TwdSearchFormMatchInventory from './TwdSearchFormMatchInventory.jsx';
+import TwdSearchFormMatchInventoryScaling from './TwdSearchFormMatchInventoryScaling.jsx';
 
 function TwdSearchForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
@@ -92,6 +94,11 @@ function TwdSearchForm(props) {
       '76-83': false,
       '84-90': false,
     },
+    matchInventory: {
+      crypt: 'any',
+      library: 'any',
+      scaling: false,
+    },
   };
 
   const [eventText, setEventText] = useState('');
@@ -135,6 +142,25 @@ function TwdSearchForm(props) {
     }));
   };
 
+  const handleMatchInventoryChange = (event) => {
+    const { name, value } = event;
+    const newState = props.formState.matchInventory;
+    newState[name] = value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      matchInventory: newState,
+    }));
+  };
+
+  const handleMatchInventoryScalingChange = () => {
+    const newState = props.formState.matchInventory;
+    newState.scaling = !props.formState.matchInventory.scaling;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      matchInventory: newState,
+    }));
+  };
+
   const handleMultiChange = (event) => {
     const { name, id, value } = event.target;
     const newState = props.formState[name];
@@ -162,7 +188,10 @@ function TwdSearchForm(props) {
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/twd`;
 
-    const state = { ...props.formState, event: eventText };
+    const state = {
+      ...props.formState,
+      event: eventText,
+    };
     const input = JSON.parse(JSON.stringify(state));
 
     const multiSelectForms = [
@@ -175,6 +204,7 @@ function TwdSearchForm(props) {
       'players',
       'capacity',
       'libraryTotal',
+      'matchInventory',
     ];
 
     multiSelectForms.map((i) => {
@@ -303,6 +333,44 @@ function TwdSearchForm(props) {
         getNewTwd={getNewTwd}
         getRandomTwd={getRandomTwd}
       />
+      {(props.inventoryMode || (props.isMobile && props.isInventory)) && (
+        <>
+          <Row className="py-1 pl-1 mx-0 align-items-center">
+            <Col xs={7} className="d-flex px-0">
+              <label className="h6 mb-0">Match Inventory by Crypt:</label>
+            </Col>
+            <Col xs={5} className="d-inline px-0">
+              <TwdSearchFormMatchInventory
+                value={props.formState.matchInventory.crypt}
+                name={'crypt'}
+                onChange={handleMatchInventoryChange}
+                isMobile={props.isMobile}
+              />
+            </Col>
+          </Row>
+          <Row className="py-1 pl-1 mx-0 align-items-center">
+            <Col xs={7} className="d-flex px-0">
+              <label className="h6 mb-0">Match Inventory by Library:</label>
+            </Col>
+            <Col xs={5} className="d-inline px-0">
+              <TwdSearchFormMatchInventory
+                value={props.formState.matchInventory.library}
+                name={'library'}
+                onChange={handleMatchInventoryChange}
+                isMobile={props.isMobile}
+              />
+            </Col>
+          </Row>
+          <Row className="py-1 pl-1 mx-0 align-items-center">
+            <Col xs={{ span: 5, offset: 7 }} className="d-inline px-0">
+              <TwdSearchFormMatchInventoryScaling
+                value={props.formState.matchInventory.scaling}
+                onChange={handleMatchInventoryScalingChange}
+              />
+            </Col>
+          </Row>
+        </>
+      )}
       <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={2} className="d-flex px-0">
           <label className="h6 mb-0">Year:</label>

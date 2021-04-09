@@ -61,6 +61,7 @@ function Twd(props) {
             isMobile={props.isMobile}
             showImage={props.showImage}
             setShowImage={props.setShowImage}
+            inventoryMode={props.inventoryMode}
           />
         </Col>
       </Row>
