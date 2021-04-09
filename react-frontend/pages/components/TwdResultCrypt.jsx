@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
+import UsedPopover from './UsedPopover.jsx';
+import UsedDescription from './UsedDescription.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
@@ -86,9 +88,84 @@ function TwdResultCrypt(props) {
       resultTrClass = 'result-even';
     }
 
+    let inInventory = null;
+    let softUsedMax = 0;
+    let hardUsedTotal = 0;
+    let SoftUsedDescription;
+    let HardUsedDescription;
+
+    if (props.inventoryMode) {
+      if (Object.keys(props.inventoryCrypt).includes(card.c['Id'].toString())) {
+        inInventory = props.inventoryCrypt[card.c['Id']].q;
+      } else {
+        inInventory = 0;
+      }
+
+      if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
+        SoftUsedDescription = Object.keys(
+          props.usedCards.soft[card.c['Id']]
+        ).map((id, index) => {
+          if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
+            softUsedMax = props.usedCards.soft[card.c['Id']][id];
+          }
+          return (
+            <UsedDescription
+              key={index}
+              q={props.usedCards.soft[card.c['Id']][id]}
+              deckName={props.decks[id]['name']}
+            />
+          );
+        });
+      }
+
+      if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
+        HardUsedDescription = Object.keys(
+          props.usedCards.hard[card.c['Id']]
+        ).map((id, index) => {
+          hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
+          return (
+            <UsedDescription
+              key={index}
+              q={props.usedCards.hard[card.c['Id']][id]}
+              deckName={props.decks[id]['name']}
+            />
+          );
+        });
+      }
+    }
+
     return (
       <tr key={index} className={resultTrClass}>
-        <td className="quantity-no-buttons px-1">{card.q}</td>
+        {props.inventoryMode ? (
+          <OverlayTrigger
+            placement="right"
+            overlay={
+              <UsedPopover
+                softUsedMax={softUsedMax}
+                hardUsedTotal={hardUsedTotal}
+                inInventory={inInventory}
+                SoftUsedDescription={SoftUsedDescription}
+                HardUsedDescription={HardUsedDescription}
+              />
+            }
+          >
+            <td className="quantity-no-buttons px-1">
+              <div
+                className={
+                  inInventory < card.q
+                    ? 'quantity px-1 mx-1 bg-red'
+                    : inInventory - hardUsedTotal < card.q
+                    ? 'quantity px-1 mx-1 bg-yellow'
+                    : 'quantity px-1'
+                }
+              >
+                {card.q}
+              </div>
+            </td>
+          </OverlayTrigger>
+        ) : (
+          <td className="quantity-no-buttons px-1">{card.q}</td>
+        )}
         <td className="capacity px-1" onClick={() => handleClick()}>
           <ResultCryptCapacity value={card.c['Capacity']} />
         </td>

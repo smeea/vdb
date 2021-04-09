@@ -11,16 +11,15 @@
 * If no results but url on mobile to run search
 * Optimize for tablet
 * Inventory-mode on mobile in Deck
+* Inventory-mode on mobile in TWD
 
 # FEATURES
 * Create revocable link to Inventory
-* Inventory data in TWD browser
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
 * Inventory add from precon
 * Popover on precons in modal preview set section
 * Offline PWA support
-* Find TWD matching your Inventory
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines

@@ -57,7 +57,17 @@ function TwdResultLibraryByType(props) {
         return (
           <Popover ref={ref} {...props}>
             <Popover.Content>
-              <DeckLibraryTable cards={props.cards} />
+              <DeckLibraryTable
+                deckid={true}
+                cards={props.cards}
+                inventoryMode={props.inventoryMode}
+                inventoryLibrary={props.inventory.library}
+                usedCards={{
+                  soft: props.usedCards.softLibrary,
+                  hard: props.usedCards.hardLibrary,
+                }}
+                decks={props.decks}
+              />
             </Popover.Content>
           </Popover>
         );
@@ -90,7 +100,15 @@ function TwdResultLibraryByType(props) {
           <td className="name">
             <OverlayTrigger
               placement="right"
-              overlay={<TypePopover cards={libraryByType[cardtype]} />}
+              overlay={
+                <TypePopover
+                  cards={libraryByType[cardtype]}
+                  inventoryMode={props.inventoryMode}
+                  inventory={props.inventory}
+                  usedCards={props.usedCards}
+                  decks={props.decks}
+                />
+              }
             >
               <div>
                 {cardtype} [{libraryByTypeTotal[cardtype]}]

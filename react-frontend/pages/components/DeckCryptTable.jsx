@@ -235,7 +235,7 @@ function DeckCryptTable(props) {
                       className={
                         inInventory < card.q
                           ? 'quantity px-1 mx-1 bg-red'
-                          : inInventory - hardUsedTotal < q
+                          : inInventory - hardUsedTotal < card.q
                           ? 'quantity px-1 mx-1 bg-yellow'
                           : 'quantity px-1'
                       }

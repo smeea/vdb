@@ -61,6 +61,13 @@ function TwdResult(props) {
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
+                        inventoryMode={props.inventoryMode}
+                        inventoryCrypt={props.inventory.crypt}
+                        usedCards={{
+                          soft: props.usedCards.softCrypt,
+                          hard: props.usedCards.hardCrypt,
+                        }}
+                        decks={props.decks}
                       />
                     </Col>
                     <Col md={12} xl={3} className="px-2">
@@ -69,6 +76,10 @@ function TwdResult(props) {
                         isMobile={props.isMobile}
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
+                        inventoryMode={props.inventoryMode}
+                        inventory={props.inventory}
+                        usedCards={props.usedCards}
+                        decks={props.decks}
                       />
                     </Col>
                     <Col md={12} xl={3} className="pr-0 pl-2">
@@ -78,6 +89,13 @@ function TwdResult(props) {
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
+                        inventoryMode={props.inventoryMode}
+                        inventoryLibrary={props.inventory.library}
+                        usedCards={{
+                          soft: props.usedCards.softLibrary,
+                          hard: props.usedCards.hardLibrary,
+                        }}
+                        decks={props.decks}
                       />
                     </Col>
                   </>
@@ -90,6 +108,13 @@ function TwdResult(props) {
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
+                        inventoryMode={props.inventoryMode}
+                        inventoryLibrary={props.inventory.library}
+                        usedCards={{
+                          soft: props.usedCards.softLibrary,
+                          hard: props.usedCards.hardLibrary,
+                        }}
+                        decks={props.decks}
                       />
                     </Col>
                     <Col xs={6} className="pl-1 pr-0">
@@ -99,6 +124,13 @@ function TwdResult(props) {
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
+                        inventoryMode={props.inventoryMode}
+                        inventoryLibrary={props.inventory.library}
+                        usedCards={{
+                          soft: props.usedCards.softLibrary,
+                          hard: props.usedCards.hardLibrary,
+                        }}
+                        decks={props.decks}
                       />
                     </Col>
                   </>

@@ -660,9 +660,11 @@ function App(props) {
                 setResults={setTwdResults}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
+                inventory={inventory}
                 inventoryMode={inventoryMode}
+                usedCards={usedCards}
+                decks={decks}
                 setInventoryMode={setInventoryMode}
-                addMode={addMode}
                 formState={twdFormState}
                 setFormState={setTwdFormState}
                 setActiveDeck={setActiveDeck}

@@ -37,6 +37,10 @@ function Twd(props) {
               username={props.username}
               showFloatingButtons={showFloatingButtons}
               setShowFloatingButtons={setShowFloatingButtons}
+              inventory={props.inventory}
+              inventoryMode={props.inventoryMode}
+              usedCards={props.usedCards}
+              decks={props.decks}
             />
           )}
         </Col>
