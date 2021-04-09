@@ -34,7 +34,7 @@ function DeckLibrary(props) {
         setModalCardIdx(0);
       } else {
         setModalCardIdx(modalCardIdx + d);
-      };
+      }
     } else {
       const maxIdx = librarySideCards.length - 1;
 
@@ -44,8 +44,8 @@ function DeckLibrary(props) {
         setModalSideCardIdx(0);
       } else {
         setModalSideCardIdx(modalSideCardIdx + d);
-      };
-    };
+      }
+    }
   };
 
   const library = {};
@@ -163,7 +163,7 @@ function DeckLibrary(props) {
 
     if (librarySideByType[cardtype] !== undefined) {
       for (const card of librarySideByType[cardtype]) {
-        librarySideCards.push(card.c)
+        librarySideCards.push(card.c);
       }
 
       LibrarySideDeck.push(
@@ -294,9 +294,13 @@ function DeckLibrary(props) {
           </div>
         </div>
       )}
-      {(modalCardIdx !== undefined || modalSideCardIdx !== undefined)&& (
+      {(modalCardIdx !== undefined || modalSideCardIdx !== undefined) && (
         <ResultLibraryModal
-          card={modalCardIdx !== undefined ? libraryCards[modalCardIdx] : librarySideCards[modalSideCardIdx]}
+          card={
+            modalCardIdx !== undefined
+              ? libraryCards[modalCardIdx]
+              : librarySideCards[modalSideCardIdx]
+          }
           handleModalCardChange={handleModalCardChange}
           showImage={props.showImage}
           setShowImage={props.setShowImage}

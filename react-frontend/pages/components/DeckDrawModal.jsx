@@ -171,7 +171,9 @@ function DeckDrawModal(props) {
                     <DeckDrawLibraryTable
                       burnLibrary={null}
                       library={props.library}
-                      total={props.drawedLibrary.length + props.restLibrary.length}
+                      total={
+                        props.drawedLibrary.length + props.restLibrary.length
+                      }
                       resultCards={props.burnedLibrary}
                       className="search-library-table"
                       showImage={props.showImage}

@@ -5,7 +5,6 @@
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* Restyle card quantity in Inventory
 * Scroll modal for deck through library + crypt
 
 # FIX MOBILE
@@ -21,6 +20,7 @@
 * Inventory add from precon
 * Popover on precons in modal preview set section
 * Offline PWA support
+* Find TWD matching your Inventory
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines

@@ -32,7 +32,7 @@ function DeckCrypt(props) {
         setModalCardIdx(0);
       } else {
         setModalCardIdx(modalCardIdx + d);
-      };
+      }
     } else {
       const maxIdx = cryptSideCards.length - 1;
 
@@ -42,8 +42,8 @@ function DeckCrypt(props) {
         setModalSideCardIdx(0);
       } else {
         setModalSideCardIdx(modalSideCardIdx + d);
-      };
-    };
+      }
+    }
   };
 
   const disciplinesDict = {};
@@ -158,11 +158,11 @@ function DeckCrypt(props) {
     });
 
   const sortedCardsSide = Object.values(cryptSide)
-        .sort(SortByCapacity)
-        .map((card) => {
-          cryptSideCards.push(card.c);
-          return card;
-        });
+    .sort(SortByCapacity)
+    .map((card) => {
+      cryptSideCards.push(card.c);
+      return card;
+    });
 
   useEffect(() => {
     setSortedState(
@@ -319,9 +319,13 @@ function DeckCrypt(props) {
           </div>
         </div>
       )}
-      {(modalCardIdx !== undefined || modalSideCardIdx !== undefined)&& (
+      {(modalCardIdx !== undefined || modalSideCardIdx !== undefined) && (
         <ResultCryptModal
-          card={modalCardIdx !== undefined ? cryptCards[modalCardIdx] : cryptSideCards[modalSideCardIdx]}
+          card={
+            modalCardIdx !== undefined
+              ? cryptCards[modalCardIdx]
+              : cryptSideCards[modalSideCardIdx]
+          }
           handleModalCardChange={handleModalCardChange}
           showImage={props.showImage}
           setShowImage={props.setShowImage}

@@ -166,8 +166,8 @@ function App(props) {
       setInventory(oldState);
     });
 
-    inventoryAddToState(cards)
-  }
+    inventoryAddToState(cards);
+  };
 
   const inventoryAddToState = (cards) => {
     Object.keys(cards).forEach((cardid) => {

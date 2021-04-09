@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Button, Overlay } from 'react-bootstrap';
 import Upload from '../../assets/images/icons/upload.svg';
-import ClipboardPlus from '../../assets/images/icons/clipboard-plus.svg';
 
 function InventoryImport(props) {
   const [importError, setImportError] = useState(false);
@@ -26,7 +25,7 @@ function InventoryImport(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(reader.result)
+        body: JSON.stringify(reader.result),
       };
 
       const fetchPromise = fetch(url, options);

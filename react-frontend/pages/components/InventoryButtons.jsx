@@ -5,7 +5,6 @@ import InventoryDelete from './InventoryDelete.jsx';
 import InventoryAddDeck from './InventoryAddDeck.jsx';
 
 function InventoryButtons(props) {
-
   return (
     <>
       <div className="bp-125">
