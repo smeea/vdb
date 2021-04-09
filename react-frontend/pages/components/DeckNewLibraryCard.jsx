@@ -44,7 +44,6 @@ function DeckNewLibraryCard(props) {
   return (
     <AsyncSelect
       cacheOptions
-      defaultOptions
       autoFocus={!props.inInventory}
       value={selectedValue}
       placeholder="Add Library Card"
@@ -56,7 +55,7 @@ function DeckNewLibraryCard(props) {
             <div className="d-flex align-items-center">
               {props.inInventory && (
                 <div
-                  className={`d-inline in-deck mr-2 ${
+                  className={`d-inline in-inventory mr-2 ${
                     props.cards[card] ? 'border-black' : null
                   }`}
                 >
