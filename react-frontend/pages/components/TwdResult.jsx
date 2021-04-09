@@ -8,7 +8,7 @@ import TwdResultLibraryByType from './TwdResultLibraryByType.jsx';
 import TwdResultLibraryKeyCards from './TwdResultLibraryKeyCards.jsx';
 
 function TwdResult(props) {
-  const showCounterStep = 25;
+  const showCounterStep = 20;
 
   const [twdRows, setTwdRows] = useState([]);
   const [showCounter, setShowCounter] = useState(0);
