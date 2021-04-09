@@ -333,11 +333,11 @@ function TwdSearchForm(props) {
         getNewTwd={getNewTwd}
         getRandomTwd={getRandomTwd}
       />
-      {(props.inventoryMode || (props.isMobile && props.isInventory)) && (
+      {props.inventoryMode && (
         <>
           <Row className="py-1 pl-1 mx-0 align-items-center">
             <Col xs={7} className="d-flex px-0">
-              <label className="h6 mb-0">Match Inventory by Crypt:</label>
+              <label className="h6 mb-0">In Inventory by Crypt:</label>
             </Col>
             <Col xs={5} className="d-inline px-0">
               <TwdSearchFormMatchInventory
@@ -350,7 +350,7 @@ function TwdSearchForm(props) {
           </Row>
           <Row className="py-1 pl-1 mx-0 align-items-center">
             <Col xs={7} className="d-flex px-0">
-              <label className="h6 mb-0">Match Inventory by Library:</label>
+              <label className="h6 mb-0">In Inventory by Library:</label>
             </Col>
             <Col xs={5} className="d-inline px-0">
               <TwdSearchFormMatchInventory

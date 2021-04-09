@@ -11,6 +11,7 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 
 function TwdResultLibraryKeyCards(props) {
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
+  const [modalInventory, setModalInventory] = useState(undefined);
 
   const handleModalCardChange = (d) => {
     const maxIdx = keyCards.length - 1;
@@ -80,6 +81,15 @@ function TwdResultLibraryKeyCards(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       props.isMobile && props.setShowFloatingButtons(false);
+      setModalInventory({
+        inInventory: inInventory,
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+        usedDescription: {
+          soft: SoftUsedDescription,
+          hard: HardUsedDescription,
+        },
+      });
     };
 
     if (resultTrClass == 'result-even') {
@@ -139,32 +149,50 @@ function TwdResultLibraryKeyCards(props) {
     return (
       <tr key={index} className={resultTrClass}>
         {props.inventoryMode ? (
-          <OverlayTrigger
-            placement="right"
-            overlay={
-              <UsedPopover
-                softUsedMax={softUsedMax}
-                hardUsedTotal={hardUsedTotal}
-                inInventory={inInventory}
-                SoftUsedDescription={SoftUsedDescription}
-                HardUsedDescription={HardUsedDescription}
-              />
-            }
-          >
-            <td className="quantity-no-buttons px-1">
-              <div
-                className={
-                  inInventory < card.q
-                    ? 'quantity px-1 mx-1 bg-red'
-                    : inInventory - hardUsedTotal < card.q
-                    ? 'quantity px-1 mx-1 bg-yellow'
-                    : 'quantity px-1'
+          <>
+            {props.isMobile ? (
+              <td className="quantity-no-buttons px-1">
+                <div
+                  className={
+                    inInventory < card.q
+                      ? 'bg-red'
+                      : inInventory - hardUsedTotal < card.q
+                      ? 'bg-yellow'
+                      : null
+                  }
+                >
+                  {card.q}
+                </div>
+              </td>
+            ) : (
+              <OverlayTrigger
+                placement="right"
+                overlay={
+                  <UsedPopover
+                    softUsedMax={softUsedMax}
+                    hardUsedTotal={hardUsedTotal}
+                    inInventory={inInventory}
+                    SoftUsedDescription={SoftUsedDescription}
+                    HardUsedDescription={HardUsedDescription}
+                  />
                 }
               >
-                {card.q}
-              </div>
-            </td>
-          </OverlayTrigger>
+                <td className="quantity-no-buttons px-1">
+                  <div
+                    className={
+                      inInventory < card.q
+                        ? 'bg-red'
+                        : inInventory - hardUsedTotal < card.q
+                        ? 'bg-yellow'
+                        : null
+                    }
+                  >
+                    {card.q}
+                  </div>
+                </td>
+              </OverlayTrigger>
+            )}
+          </>
         ) : (
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
@@ -216,6 +244,8 @@ function TwdResultLibraryKeyCards(props) {
             props.isMobile && props.setShowFloatingButtons(true);
           }}
           isMobile={props.isMobile}
+          inventoryState={modalInventory}
+          inventoryMode={props.inventoryMode}
         />
       )}
     </>

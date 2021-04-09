@@ -1,5 +1,4 @@
 # FIX
-* Quick card to show on single result
 * TWD location/winner form reset
 * First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
 * Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
@@ -8,12 +7,11 @@
 * Scroll modal for deck through library + crypt
 
 # FIX MOBILE
-* If no results but url on mobile to run search
 * Optimize for tablet
-* Inventory-mode on mobile in Deck
-* Inventory-mode on mobile in TWD
 
 # FEATURES
+* Quick card to show on single result
+* If no results but url on mobile to run search
 * Create revocable link to Inventory
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory

@@ -109,10 +109,10 @@ function TwdResult(props) {
                         setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                         inventoryMode={props.inventoryMode}
-                        inventoryLibrary={props.inventory.library}
+                        inventoryCrypt={props.inventory.crypt}
                         usedCards={{
-                          soft: props.usedCards.softLibrary,
-                          hard: props.usedCards.hardLibrary,
+                          soft: props.usedCards.softCrypt,
+                          hard: props.usedCards.hardCrypt,
                         }}
                         decks={props.decks}
                       />

@@ -74,7 +74,7 @@ function Twd(props) {
           {props.inventoryMode ? (
             <div
               onClick={() => props.setInventoryMode(!props.inventoryMode)}
-              className="float-left-bottom inventory-on"
+              className="float-right-top inventory-on"
             >
               <div className="pt-2 float-inventory">
                 <ArchiveFill viewBox="0 0 16 16" />
@@ -83,7 +83,7 @@ function Twd(props) {
           ) : (
             <div
               onClick={() => props.setInventoryMode(!props.inventoryMode)}
-              className="float-left-bottom inventory-off"
+              className="float-right-top inventory-off"
             >
               <div className="pt-2 float-inventory">
                 <ArchiveFill viewBox="0 0 16 16" />

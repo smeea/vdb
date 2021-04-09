@@ -144,7 +144,21 @@ function DeckCryptTable(props) {
                       </div>
                     </td>
                   ) : null}
-                  {!props.isMobile ? (
+                  {props.isMobile ? (
+                    <td className="quantity">
+                      <DeckCardQuantity
+                        cardid={card.c['Id']}
+                        q={card.q}
+                        deckid={props.deckid}
+                        cardChange={props.cardChange}
+                        isMobile={props.isMobile}
+                        inInventory={inInventory}
+                        softUsedMax={softUsedMax}
+                        hardUsedTotal={hardUsedTotal}
+                        inventoryType={props.decks[props.deckid].inventory_type}
+                      />
+                    </td>
+                  ) : (
                     <OverlayTrigger
                       placement="right"
                       overlay={
@@ -173,20 +187,6 @@ function DeckCryptTable(props) {
                         />
                       </td>
                     </OverlayTrigger>
-                  ) : (
-                    <td className="quantity">
-                      <DeckCardQuantity
-                        cardid={card.c['Id']}
-                        q={card.q}
-                        deckid={props.deckid}
-                        cardChange={props.cardChange}
-                        isMobile={props.isMobile}
-                        inInventory={inInventory}
-                        softUsedMax={softUsedMax}
-                        hardUsedTotal={hardUsedTotal}
-                        inventoryType={props.decks[props.deckid].inventory_type}
-                      />
-                    </td>
                   )}
                 </>
               ) : (
@@ -218,34 +218,52 @@ function DeckCryptTable(props) {
           ) : (
             <>
               {props.inventoryMode ? (
-                <OverlayTrigger
-                  placement="right"
-                  overlay={
-                    <UsedPopover
-                      softUsedMax={softUsedMax}
-                      hardUsedTotal={hardUsedTotal}
-                      inInventory={inInventory}
-                      SoftUsedDescription={SoftUsedDescription}
-                      HardUsedDescription={HardUsedDescription}
-                    />
-                  }
-                >
-                  <td className="quantity-no-buttons px-2">
-                    <div
-                      className={
-                        inInventory < card.q
-                          ? 'quantity px-1 mx-1 bg-red'
-                          : inInventory - hardUsedTotal < card.q
-                          ? 'quantity px-1 mx-1 bg-yellow'
-                          : 'quantity px-1'
+                <>
+                  {props.isMobile ? (
+                    <td className="quantity-no-buttons px-1">
+                      <div
+                        className={
+                          inInventory < card.q
+                            ? 'bg-red'
+                            : inInventory - hardUsedTotal < card.q
+                            ? 'bg-yellow'
+                            : null
+                        }
+                      >
+                        {card.q}
+                      </div>
+                    </td>
+                  ) : (
+                    <OverlayTrigger
+                      placement="right"
+                      overlay={
+                        <UsedPopover
+                          softUsedMax={softUsedMax}
+                          hardUsedTotal={hardUsedTotal}
+                          inInventory={inInventory}
+                          SoftUsedDescription={SoftUsedDescription}
+                          HardUsedDescription={HardUsedDescription}
+                        />
                       }
                     >
-                      {card.q}
-                    </div>
-                  </td>
-                </OverlayTrigger>
+                      <td className="quantity-no-buttons px-1">
+                        <div
+                          className={
+                            inInventory < card.q
+                              ? 'bg-red'
+                              : inInventory - hardUsedTotal < card.q
+                              ? 'bg-yellow'
+                              : null
+                          }
+                        >
+                          {card.q}
+                        </div>
+                      </td>
+                    </OverlayTrigger>
+                  )}
+                </>
               ) : (
-                <td className="quantity-no-buttons px-2">
+                <td className="quantity-no-buttons px-1">
                   {card.q ? card.q : <div className="transparent">0</div>}
                 </td>
               )}
