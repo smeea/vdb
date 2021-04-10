@@ -168,7 +168,10 @@ function ResultCryptTable(props) {
               </td>
             </>
           )}
-          <td className={'capacity px-1'} onClick={() => handleClick()}>
+          <td
+            className={props.isMobile ? 'capacity px-1' : 'capacity px-2'}
+            onClick={() => handleClick()}
+          >
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>

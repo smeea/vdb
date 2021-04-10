@@ -32,7 +32,7 @@ function DeckDrawCryptTable(props) {
       <React.Fragment key={index}>
         <tr className={resultTrClass}>
           <td
-            className="capacity pr-1 pl-2"
+            className={props.isMobile ? 'capacity px-1' : 'capacity px-2'}
             onClick={() => props.burnCrypt(index)}
           >
             <ResultCryptCapacity value={card['Capacity']} />
