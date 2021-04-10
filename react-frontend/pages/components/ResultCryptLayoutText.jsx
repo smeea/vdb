@@ -1,10 +1,12 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
 import Hammer from '../../assets/images/icons/hammer.svg';
+import OverlayTooltip from './OverlayTooltip.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
+import sets from './forms_data/setsAndPrecons.json';
 
 function ResultCryptLayoutText(props) {
   const icons = {
@@ -71,14 +73,41 @@ function ResultCryptLayoutText(props) {
   };
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
+    const n = props.card['Set'][k];
+
+    const fullName = (
+      <>
+        <b>{sets[k].name}</b> - {sets[k].year}
+        <br />
+        {sets[k].precons && sets[k].precons[n] ? (
+          <>{sets[k].precons[n]}</>
+        ) : (
+          <>
+            <i>[in booster]</i>
+          </>
+        )}
+      </>
+    );
+
     return (
       <div
         className="d-inline-block nobr px-1"
         onClick={() => props.setImageSet(k.toLowerCase())}
         key={index}
       >
-        {k}
-        <div className="d-inline gray">:{props.card['Set'][k]}</div>
+        {props.isMobile ? (
+          <div className="d-inline">
+            {k}
+            <div className="d-inline gray">:{props.card['Set'][k]}</div>
+          </div>
+        ) : (
+          <OverlayTooltip text={fullName} placement="bottom">
+            <div className="d-inline">
+              {k}
+              <div className="d-inline gray">:{props.card['Set'][k]}</div>
+            </div>
+          </OverlayTooltip>
+        )}
       </div>
     );
   });

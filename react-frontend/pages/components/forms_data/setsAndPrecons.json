@@ -1,0 +1,265 @@
+{
+  "Promo": {
+    "name": "Promo",
+    "year": "N/A"
+  },
+  "POD": {
+    "name": "Print-on-Demand (DTC)",
+    "year": "N/A"
+  },
+  "V5": {
+    "name": "Fifth Edition",
+    "year": "2020",
+    "precons": {
+      "PM": "Malkavian",
+      "PN": "Nosferatu",
+      "PTo": "Toreador",
+      "PTr": "Tremere",
+      "PV": "Ventrue"
+    }
+  },
+  "25th": {
+    "name": "25th Anniversary",
+    "year": "2019",
+    "precons": {
+      "": "25th Anniversary (Stanislava)",
+    }
+  },
+  "FB": {
+    "name": "First Blood",
+    "year": "2019",
+    "precons": {
+      "PM": "Malkavian",
+      "PN": "Nosferatu",
+      "PTo": "Toreador",
+      "PTr": "Tremere",
+      "PV": "Ventrue"
+    }
+  },
+  "SP": {
+    "name": "Sabbat Preconstructed",
+    "year": "2019",
+    "precons": {
+      "LB": "Libertine Ball",
+      "PwN": "Pact with Nephandi",
+      "DoF": "Den of Fiends",
+      "PoS": "Parliament of Shadows"
+    }
+  },
+  "KoTR": {
+    "name": "Keepers of Tradition Reprint",
+    "year": "2018",
+    "precons": {
+      "A": "Keepers of Tradition 1 (Bundle)",
+      "B": "Keepers of Tradition 2 (Bundle)"
+    }
+  },
+  "HttBR": {
+    "name": "Heirs to the Blood Reprint",
+    "year": "2018",
+    "precons": {
+      "A": "1 (Bundle)",
+      "B": "2 (Bundle)"
+    }
+  },
+  "Anthology": {
+    "name": "Anthology",
+    "year": "2018",
+    "precons": {
+      "": "Bundle"
+    }
+  },
+  "LK": {
+    "name": "Lost Kindred",
+    "year": "2018",
+    "precons": {
+      "": "Bundle"
+    }
+  },
+  "AU": {
+    "name": "Anarchs Unbound (PDF)",
+    "year": "2016"
+  },
+  "TU": {
+    "name": "The Unaligned (PDF)",
+    "year": "2014"
+  },
+  "DM": {
+    "name": "Danse Macabre (PDF)",
+    "year": "2013"
+  },
+  "HttB": {
+    "name": "Heirs to the Blood",
+    "year": "2010",
+    "precons": {
+      "PKia": "Lasombra / Kiasyd",
+      "PSam": "Nosferatu / Samedi",
+      "PSal": "Ventrue / Salubri antitribu",
+      "PGar": "Tremere / Gargoyle"
+    }
+  },
+  "EK": {
+    "name": "Ebony Kingdom",
+    "year": "2009"
+  },
+  "BSC": {
+    "name": "Blood Shadowed Court",
+    "year": "2008",
+    "precons": {
+      "X": "Bundle"
+    }
+  },
+  "KoT": {
+    "name": "Keepers of Tradition",
+    "year": "2008",
+    "precons": {
+      "PB": "Brujah",
+      "PM": "Malkavian",
+      "PT": "Toreador",
+      "PV": "Ventrue"
+    }
+  },
+  "TR": {
+    "name": "Twilight Rebellion",
+    "year": "2008"
+  },
+  "SoC": {
+    "name": "Sword of Caine",
+    "year": "2007"
+  },
+  "LotN": {
+    "name": "Lords of the Night",
+    "year": "2007",
+    "precons": {
+      "PA": "Assamite",
+      "PS": "Follower of Set",
+      "PG": "Giovanni",
+      "PR": "Ravnos"
+    }
+  },
+  "NoR": {
+    "name": "Nights of Reckoning",
+    "year": "2006"
+  },
+  "Third": {
+    "name": "Third Edition",
+    "year": "2006",
+    "precons": {
+      "PB": "Brujah antitribu",
+      "PM": "Malkavian antitribu",
+      "PTr": "Tremere antitribu",
+      "PTz": "Tzimisce"
+    }
+  },
+  "KMW": {
+    "name": "Kindred Most Wanted",
+    "year": "2005",
+    "precons": {
+      "PAl": "Alastors",
+      "PAn": "Anathema",
+      "PB": "Baali",
+      "PG": "Gangrel antitribu"
+    }
+  },
+  "LoB": {
+    "name": "Legacies of Blood",
+    "year": "2005",
+    "precons": {
+      "PA": "Akunanse",
+      "PG": "Guruhi",
+      "PI": "Ishtarri",
+      "PO": "Osebo"
+    }
+  },
+  "Gehenna": {
+    "name": "Gehenna",
+    "year": "2004"
+  },
+  "Tenth": {
+    "name": "10th Anniversary",
+    "year": "2004",
+    "precons": {
+      "A": "A (Bundle)",
+      "B": "B (Bundle)"
+    }
+  },
+  "Anarchs": {
+    "name": "Anarchs",
+    "year": "2003",
+    "precons": {
+      "PAB": "Barons",
+      "PAG": "Gangs",
+      "PG": "Gangrel"
+    }
+  },
+  "BH": {
+    "name": "Black Hand",
+    "year": "2003",
+    "precons": {
+      "PM": "Malkavian antitribu",
+      "PN": "Nosferatu antitribu",
+      "PTo": "Toreador antitribu",
+      "PTr": "Tremere antitribu"
+    }
+  },
+  "CE": {
+    "name": "Camarilla Edition",
+    "year": "2002",
+    "precons": {
+      "PB": "Brujah",
+      "PM": "Malkavian",
+      "PN": "Nosferatu",
+      "PTo": "Toreador",
+      "PTr": "Tremere",
+      "PV": "Ventrue"
+    }
+  },
+  "BL": {
+    "name": "Bloodlines",
+    "year": "2001"
+  },
+  "FN": {
+    "name": "Final Nights",
+    "year": "2001",
+    "precons": {
+      "PA": "Assamite",
+      "PF": "Follower of Set",
+      "PG": "Giovanni",
+      "PR": "Ravnos"
+    }
+  },
+  "SW": {
+    "name": "Sabbat War",
+    "year": "2000",
+    "precons": {
+      "PB": "Brujah antitribu",
+      "PL": "Lasombra",
+      "PT": "Tzimisce",
+      "PV": "Ventrue antitribu"
+    }
+  },
+  "Sabbat": {
+    "name": "Sabbat",
+    "year": "1996"
+  },
+  "AH": {
+    "name": "Ancient Hearts",
+    "year": "1996"
+  },
+  "DS": {
+    "name": "Dark Sovereigns",
+    "year": "1995"
+  },
+  "VTES": {
+    "name": "V:TES",
+    "year": "1995"
+  },
+  "VTES": {
+    "name": "V:TES",
+    "year": "1995"
+  },
+  "Jyhad": {
+    "name": "Jyhad",
+    "year": "1994"
+  }
+}

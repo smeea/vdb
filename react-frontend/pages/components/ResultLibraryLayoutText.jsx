@@ -1,12 +1,14 @@
 import React from 'react';
 import reactStringReplace from 'react-string-replace';
 import Hammer from '../../assets/images/icons/hammer.svg';
+import OverlayTooltip from './OverlayTooltip.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
+import sets from './forms_data/setsAndPrecons.json';
 
 function ResultLibraryLayoutText(props) {
   const icons = {
@@ -86,14 +88,46 @@ function ResultLibraryLayoutText(props) {
   };
 
   const Sets = Object.keys(props.card['Set']).map((k, index) => {
+    const n = props.card['Set'][k];
+    const abbrevs = {
+      U: 'Uncommon',
+      R: 'Rare',
+      C: 'Common',
+    };
+
+    const fullName = (
+      <>
+        <b>{sets[k].name}</b> - {sets[k].year}
+        <br />
+        {sets[k].precons && sets[k].precons[n] ? (
+          <>{sets[k].precons[n]}</>
+        ) : (
+          <>
+            {abbrevs[n]} <i>[in booster]</i>
+          </>
+        )}
+      </>
+    );
+
     return (
       <div
         className="d-inline-block nobr px-1"
         onClick={() => props.setImageSet(k.toLowerCase())}
         key={index}
       >
-        {k}
-        <div className="d-inline gray">:{props.card['Set'][k]}</div>
+        {props.isMobile ? (
+          <div className="d-inline">
+            {k}
+            <div className="d-inline gray">:{props.card['Set'][k]}</div>
+          </div>
+        ) : (
+          <OverlayTooltip text={fullName} placement="bottom">
+            <div className="d-inline">
+              {k}
+              <div className="d-inline gray">:{props.card['Set'][k]}</div>
+            </div>
+          </OverlayTooltip>
+        )}
       </div>
     );
   });

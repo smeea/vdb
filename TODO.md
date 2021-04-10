@@ -5,6 +5,7 @@
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt
+* Fix 10th anniversary search
 
 # FIX MOBILE
 * Optimize for tablet

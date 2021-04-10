@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import precons from './forms_data/precons.json';
+import precons from './forms_data/preconOptions.json';
 
 function SearchFormPrecon(props) {
   const options = [];

@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import precons from './forms_data/precons.json';
+import precons from './forms_data/preconOptions.json';
 
 function DeckSelectPrecon(props) {
   const options = [];
