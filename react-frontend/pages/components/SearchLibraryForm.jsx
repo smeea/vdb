@@ -157,7 +157,7 @@ function SearchLibraryForm(props) {
     const state = { ...props.formState, text: text };
     const input = JSON.parse(JSON.stringify(state));
 
-    const multiSelectForms = ['traits'];
+    const multiSelectForms = ['traits', 'set', 'precon'];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(

@@ -288,7 +288,7 @@ def get_crypt_by_set(request, crypt):
         for card in crypt:
             for k in card['Set'].keys():
                 if k in bcp_sets:
-                    if request['only in']:
+                    if 'only in' in request:
                         counter = 0
                         for k in card['Set'].keys():
                             if k in bcp_sets:
@@ -297,7 +297,7 @@ def get_crypt_by_set(request, crypt):
                         if len(card['Set'].keys()) == counter:
                             match_cards.append(card)
                             break
-                    elif request['first print']:
+                    elif 'first print' in request:
                         oldestSetIndex = 0
                         for k in card['Set'].keys():
                             if sets.index(k) > oldestSetIndex:
@@ -313,11 +313,11 @@ def get_crypt_by_set(request, crypt):
     else:
         for card in crypt:
             if set in card['Set']:
-                if request['only in']:
+                if 'only in' in request:
                     if len(card['Set'].keys()) == 1:
                         match_cards.append(card)
 
-                elif request['first print']:
+                elif 'first print' in request:
                     oldestSetIndex = 0
                     for k in card['Set'].keys():
                         if sets.index(k) > oldestSetIndex:
@@ -414,7 +414,7 @@ def get_crypt_by_precon(request, crypt):
                         if card in match_cards:
                             continue
                         card_precon = None;
-                        match = re.match(r"(\w+)?(\d+)", i)
+                        match = re.match(r"(\w+)?(\d+)?", i)
                         if match:
                             if match.group(1):
                                 card_precon = match.group(1)
@@ -422,7 +422,7 @@ def get_crypt_by_precon(request, crypt):
                                 card_precon = ""
 
                             if bcp_precon[1] == card_precon:
-                                if request['only in']:
+                                if 'only in' in request:
                                     counter = 0
                                     for k in card['Set'].keys():
                                         if k in bcp_precon[0]:
@@ -431,7 +431,7 @@ def get_crypt_by_precon(request, crypt):
                                     if len(card['Set'].keys()) == counter:
                                         match_cards.append(card)
 
-                                elif request['first print']:
+                                elif 'first print' in request:
                                     oldestSetIndex = 0
                                     for k in card['Set'].keys():
                                         if sets.index(k) > oldestSetIndex:
@@ -458,11 +458,11 @@ def get_crypt_by_precon(request, crypt):
                             card_precon = ""
 
                         if precon[1] == card_precon:
-                            if request['only in']:
+                            if 'only in' in request:
                                 if len(card['Set'].keys()) == 1:
                                     match_cards.append(card)
 
-                            elif request['first print']:
+                            elif 'first print' in request:
                                 oldestSetIndex = 0
                                 for k in card['Set'].keys():
                                     if sets.index(k) > oldestSetIndex:

@@ -229,7 +229,14 @@ function SearchCryptForm(props) {
     const state = { ...props.formState, text: text };
     const input = JSON.parse(JSON.stringify(state));
 
-    const multiSelectForms = ['disciplines', 'titles', 'group', 'traits'];
+    const multiSelectForms = [
+      'disciplines',
+      'titles',
+      'group',
+      'traits',
+      'set',
+      'precon',
+    ];
 
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(
