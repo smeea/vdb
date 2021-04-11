@@ -21,9 +21,6 @@ function About(props) {
                 VDB is online card search, deck building and inventory
                 (collection) management tool for Vampire the Eternal Struggle
                 (VTES).
-                <br />
-                It is a successor of{' '}
-                <a href="https://vtes-db.smeea.casa/">VTES-DB</a>.
               </p>
             </div>
 
@@ -62,18 +59,13 @@ function About(props) {
                   to your decks on-the-fly
                 </li>
                 <li>
-                  Wide search options - many filters (tell me if you need
-                  additional!)
+                  Wide search options for cards and Tournament-Winning Decks
+                  (TWD)
                 </li>
-                <li>Mobile-friendly</li>
+                <li>Mobile-friendly (best on screens &gt;6&quot;)</li>
                 <li>
-                  Import/export to/from popular formats to easy migration and
-                  backup - you can paste text from TWDA or import from
-                  Amaranth/Lackey to quickly start
-                </li>
-                <li>
-                  Search Tournament-Winning Decks (TWD), copy them to your
-                  personal deck storage and edit
+                  Import/export your decks to/from popular formats (Amaranth,
+                  Lackey, TWD)
                 </li>
                 <li>
                   Manage your card collection (inventory) with full search power
@@ -151,8 +143,7 @@ function About(props) {
                 We respect privacy and promise not to use/share your data
                 (email, decks, etc).
                 <br />
-                This service is ad-free and there are no trackers of your
-                activity.
+                We do not track your activity.
               </p>
             </div>
 
@@ -175,22 +166,18 @@ function About(props) {
 
             <div className="pt-2">
               <h5>ACKNOWLEDGMENTS</h5>
-              <ul>
-                <li>
-                  Card images by Fernando -Syndelson- Cesar from{' '}
-                  <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
-                    FELD
-                  </a>
-                </li>
-                <li>
-                  TWD and rulings by Lionel -Phoenix- Panhaleux from{' '}
-                  <a href="https://static.krcg.org/">KRCG</a>
-                </li>
-                <li>
-                  Cards scans from different sets by{' '}
-                  <a href="http://vtes.pl/">VTES.PL</a> Team
-                </li>
-              </ul>
+              <p>
+                Card images by Fernando &quot;Syndelson&quot; Cesar from{' '}
+                <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
+                  FELD
+                </a>
+                <br />
+                TWD and rulings by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
+                <a href="https://static.krcg.org/">KRCG</a>
+                <br />
+                Cards scans from different sets by{' '}
+                <a href="http://vtes.pl/">VTES.PL</a> Team
+              </p>
             </div>
 
             <div className="pt-2">
