@@ -88,7 +88,7 @@ function TwdSearchFormClan(props) {
   return (
     <Select
       options={options}
-      isSearchable={props.isMobile ? false : true}
+      isSearchable={!props.isMobile}
       name="clan"
       value={options.find((obj) => obj.value === props.value.toLowerCase())}
       onChange={props.onChange}

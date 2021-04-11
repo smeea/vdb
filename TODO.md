@@ -1,11 +1,8 @@
 # FIX
 * TWD location/winner form reset
-* First Printed / Only In - change from set to precon-check for Reprints (HttB, KoT)
-* Set search - change from set to precon-check for Reprints (HttB, KoT, Anthology)
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt
-* Fix 10th anniversary search
 
 # FIX MOBILE
 * Optimize for tablet
@@ -17,7 +14,6 @@
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
 * Inventory add from precon
-* Popover on precons in modal preview set section
 * Offline PWA support
 
 # MAYBE LATER FEATURES

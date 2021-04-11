@@ -56,6 +56,21 @@ function SearchFormPrecon(props) {
     );
   });
 
+  const filterOption = ({ label, value }, string) => {
+    let name = undefined;
+    if (value == 'any' || value == 'bcp') {
+      name = label.props.children[1];
+    } else {
+      name = label.props.children[0].props.children;
+    }
+
+    if (name) {
+      return name.toLowerCase().includes(string);
+    } else {
+      return true;
+    }
+  };
+
   return (
     <>
       <Row className="pt-1 pl-1 mx-0 align-items-center">
@@ -65,7 +80,8 @@ function SearchFormPrecon(props) {
         <Col xs={9} className="d-inline px-0">
           <Select
             options={options}
-            isSearchable={false}
+            isSearchable={!props.isMobile}
+            filterOption={filterOption}
             name="precon"
             value={options.find((obj) => obj.value === props.value.precon)}
             onChange={props.onChange}

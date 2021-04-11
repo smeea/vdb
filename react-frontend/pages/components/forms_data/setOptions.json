@@ -1,8 +1,8 @@
 [
   ["any", "ANY"],
   ["bcp", "ANY BCP"],
-  ["Promo", "Promo"],
-  ["POD", "Print-on-Demand (DTC)"],
+  ["Promo", "Promo", ""],
+  ["POD", "Print-on-Demand (DTC)", ""],
   ["V5", "Fifth Edition", "2020"],
   ["25th", "25th Anniversary", "2019"],
   ["FB", "First Blood", "2019"],

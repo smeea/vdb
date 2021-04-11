@@ -95,7 +95,7 @@ function SearchLibraryFormClan(props) {
       <Col xs={9} className="d-inline px-0">
         <Select
           options={options}
-          isSearchable={props.isMobile ? false : true}
+          isSearchable={!props.isMobile}
           name="clan"
           value={options.find((obj) => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}

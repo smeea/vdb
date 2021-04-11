@@ -9,7 +9,7 @@ const ResultLayoutTextText = (props) => {
     <>
       {text.map((i, index) => {
         return (
-          <>
+          <React.Fragment key={index}>
             {reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
               <img
                 key={index}
@@ -19,7 +19,7 @@ const ResultLayoutTextText = (props) => {
               />
             ))}
             <br />
-          </>
+          </React.Fragment>
         );
       })}
     </>

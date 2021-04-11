@@ -397,11 +397,13 @@ function SearchCryptForm(props) {
         value={props.formState.set}
         onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
+        isMobile={props.isMobile}
       />
       <SearchFormPrecon
         value={props.formState.precon}
         onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
+        isMobile={props.isMobile}
       />
       <SearchFormArtist
         value={props.formState.artist}

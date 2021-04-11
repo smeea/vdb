@@ -18,18 +18,12 @@ function SearchFormSet(props) {
           </>
         ),
       });
-    } else if (!i[2]) {
-      options.push({
-        value: i[0],
-        name: 'set',
-        label: i[1],
-      });
     } else {
       options.push({
         value: i[0],
         name: 'set',
         label: (
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center">
             <div className="pr-2">{i[1]}</div>
             <div className="pl-2 small">{i[2]}</div>
           </div>
@@ -62,6 +56,21 @@ function SearchFormSet(props) {
     );
   });
 
+  const filterOption = ({ label, value }, string) => {
+    let name = undefined;
+    if (value == 'any' || value == 'bcp') {
+      name = label.props.children[1];
+    } else {
+      name = label.props.children[0].props.children;
+    }
+
+    if (name) {
+      return name.toLowerCase().includes(string);
+    } else {
+      return true;
+    }
+  };
+
   return (
     <>
       <Row className="pt-1 pl-1 mx-0 align-items-center">
@@ -71,7 +80,8 @@ function SearchFormSet(props) {
         <Col xs={9} className="d-inline px-0">
           <Select
             options={options}
-            isSearchable={false}
+            isSearchable={!props.isMobile}
+            filterOption={filterOption}
             name="set"
             value={options.find((obj) => obj.value === props.value.set)}
             onChange={props.onChange}
