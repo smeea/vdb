@@ -96,7 +96,6 @@ function DeckDrawCryptTable(props) {
               </div>
             ) : (
               <OverlayTooltip
-                delay={{ show: 0, hide: 0 }}
                 placement="right"
                 text={<DeckDrawProbabilityText N={N} n={n} k={k} />}
               >

@@ -239,6 +239,8 @@ def get_crypt_by_set(request, crypt):
         '25th',
         'FB',
         'SP',
+        'KoTR',
+        'HttBR',
         'Anthology',
         'LK',
     ]
@@ -250,6 +252,8 @@ def get_crypt_by_set(request, crypt):
         '25th',
         'FB',
         'SP',
+        'KoTR',
+        'HttBR',
         'Anthology',
         'LK',
         'AU',
@@ -282,12 +286,15 @@ def get_crypt_by_set(request, crypt):
     ];
 
     match_cards = []
-    set = request['set']
+    r_set = request['set']
 
-    if set == 'bcp':
+    if r_set == 'bcp':
         for card in crypt:
-            for k in card['Set'].keys():
-                if k in bcp_sets:
+            for c_set in card['Set'].keys():
+                if c_set in bcp_sets:
+                    if card in match_cards:
+                        continue
+
                     if 'only in' in request:
                         counter = 0
                         for k in card['Set'].keys():
@@ -296,23 +303,23 @@ def get_crypt_by_set(request, crypt):
 
                         if len(card['Set'].keys()) == counter:
                             match_cards.append(card)
-                            break
+
                     elif 'first print' in request:
                         oldestSetIndex = 0
                         for k in card['Set'].keys():
                             if sets.index(k) > oldestSetIndex:
-                                oldestSetIndex = sets.index(k)
+                                # add 2 because of 'Promo' and 'DTC'
+                                oldestSetIndex = sets.index(k) + 2
 
-                        if oldestSetIndex <= len(bcp_sets):
+                        if oldestSetIndex < len(bcp_sets):
                             match_cards.append(card)
-                            break
+
                     else:
                         match_cards.append(card)
-                        break
 
     else:
         for card in crypt:
-            if set in card['Set']:
+            if r_set in card['Set']:
                 if 'only in' in request:
                     if len(card['Set'].keys()) == 1:
                         match_cards.append(card)
@@ -323,7 +330,7 @@ def get_crypt_by_set(request, crypt):
                         if sets.index(k) > oldestSetIndex:
                             oldestSetIndex = sets.index(k)
 
-                    if oldestSetIndex == sets.index(set):
+                    if oldestSetIndex == sets.index(r_set):
                         match_cards.append(card)
                 else:
                     match_cards.append(card)
@@ -332,35 +339,13 @@ def get_crypt_by_set(request, crypt):
 
 
 def get_crypt_by_precon(request, crypt):
-    bcp_precons = [
-        ['V5', 'PM',],
-        ['V5', 'PN',],
-        ['V5', 'PTo'],
-        ['V5', 'PTr'],
-        ['V5', 'PV'],
-        ['SP', 'LB'],
-        ['SP', 'PwN'],
-        ['SP', 'DoF'],
-        ['SP', 'PoS'],
-        ['25th', ''],
-        ['FB', 'PM'],
-        ['FB', 'PN'],
-        ['FB', 'PTo'],
-        ['FB', 'PTr'],
-        ['FB', 'PV'],
-        ['Anthology', ''],
-        ['KoT', 'A'],
-        ['KoT', 'B'],
-        ['HttB', 'A'],
-        ['HttB', 'B'],
-        ['LK', ''],
-    ]
-
     bcp_sets = [
         'V5',
         '25th',
         'FB',
         'SP',
+        'KoTR',
+        'HttBR',
         'Anthology',
         'LK',
     ]
@@ -372,6 +357,8 @@ def get_crypt_by_precon(request, crypt):
         '25th',
         'FB',
         'SP',
+        'KoTR',
+        'HttBR',
         'Anthology',
         'LK',
         'AU',
@@ -403,75 +390,62 @@ def get_crypt_by_precon(request, crypt):
         'Jyhad',
     ];
 
-    match_cards = []
-    precon = request['precon']
+    booster_subsets = ["V", "C", "U", "R"]
 
-    if precon == 'bcp':
+    match_cards = []
+    req = request['precon']
+
+    if req == 'bcp':
         for card in crypt:
-            for bcp_precon in bcp_precons:
-                if bcp_precon[0] in card['Set']:
-                    for i in card['Set'][bcp_precon[0]].split('/'):
+            for c_set, c_subsets in card['Set'].items():
+                if c_set in bcp_sets:
+                    for c_subset in c_subsets.keys():
                         if card in match_cards:
                             continue
-                        card_precon = None;
-                        match = re.match(r"(\w+)?(\d+)?", i)
-                        if match:
-                            if match.group(1):
-                                card_precon = match.group(1)
-                            else:
-                                card_precon = ""
 
-                            if bcp_precon[1] == card_precon:
-                                if 'only in' in request:
-                                    counter = 0
-                                    for k in card['Set'].keys():
-                                        if k in bcp_precon[0]:
-                                            counter += 1
-
-                                    if len(card['Set'].keys()) == counter:
-                                        match_cards.append(card)
-
-                                elif 'first print' in request:
-                                    oldestSetIndex = 0
-                                    for k in card['Set'].keys():
-                                        if sets.index(k) > oldestSetIndex:
-                                            oldestSetIndex = sets.index(k)
-
-                                    if oldestSetIndex <= len(bcp_sets):
-                                        match_cards.append(card)
-                                else:
-                                    match_cards.append(card)
-
-    else:
-        precon = precon.split(':')
-        for card in crypt:
-            if precon[0] in card['Set']:
-                for i in card['Set'][precon[0]].split('/'):
-                    if card in match_cards:
-                        continue
-                    card_precon = None;
-                    match = re.match(r"(\D+)?(\d+)?", i)
-                    if match:
-                        if match.group(1):
-                            card_precon = match.group(1)
-                        else:
-                            card_precon = ""
-
-                        if precon[1] == card_precon:
+                        if c_subset not in booster_subsets and card not in match_cards:
                             if 'only in' in request:
-                                if len(card['Set'].keys()) == 1:
+                                counter = 0
+                                for k in card['Set'].keys():
+                                    if k in bcp_sets:
+                                        counter += 1
+
+                                if len(card['Set'].keys()) == counter:
                                     match_cards.append(card)
 
                             elif 'first print' in request:
                                 oldestSetIndex = 0
                                 for k in card['Set'].keys():
                                     if sets.index(k) > oldestSetIndex:
-                                        oldestSetIndex = sets.index(k)
+                                        # add 2 because of 'Promo' and 'DTC'
+                                        oldestSetIndex = sets.index(k) + 2
 
-                                if oldestSetIndex == sets.index(precon[0]):
+                                if oldestSetIndex < len(bcp_sets):
                                     match_cards.append(card)
+
                             else:
                                 match_cards.append(card)
+
+    else:
+        [r_set, r_subset] = req.split(':')
+
+        for card in crypt:
+            if r_set in card['Set'] and r_subset in card['Set'][r_set]:
+                if 'only in' in request:
+                    if len(card['Set'].keys()) == 1:
+                        match_cards.append(card)
+
+                elif 'first print' in request:
+                    oldestSetIndex = 0
+                    for k in card['Set'].keys():
+                        if sets.index(k) > oldestSetIndex:
+                            oldestSetIndex = sets.index(k)
+
+                    if oldestSetIndex == sets.index(r_set):
+                        match_cards.append(card)
+
+                else:
+                    match_cards.append(card)
 
     return match_cards
 

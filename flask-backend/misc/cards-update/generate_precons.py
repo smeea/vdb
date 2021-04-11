@@ -15,6 +15,14 @@ bundles = {
         "DoF": {},
         "PoS": {},
     },
+    "HttBR": {
+        "A": {},
+        "B": {},
+    },
+    "KoTR": {
+        "A": {},
+        "B": {},
+    },
     "25th": {
         "": {},
     },
@@ -36,16 +44,12 @@ bundles = {
         "PSam": {},
         "PSal": {},
         "PGar": {},
-        "A": {},
-        "B": {},
     },
     "KoT": {
         "PB": {},
         "PM": {},
         "PT": {},
         "PV": {},
-        "A": {},
-        "B": {},
     },
     "BSC": {
         "X": {},
@@ -120,15 +124,7 @@ with open("vtescrypt.json", "r") as crypt_file, open("vteslib.json", "r+") as li
             if card_set in bundles:
                 for precon in bundles[card_set].keys():
                     if precon in card_precons:
-                        if q_match := re.match(r'^(\D+)([0-9]+)?', card_precons):
-                            if q_match.group(2):
-                                q = q_match.group(2)
-                            else:
-                                q = 1
-                        else:
-                            q = card["Set"][card_set]
-
-                        bundles[card_set][precon][card["Id"]] = int(q)
+                        bundles[card_set][precon][card["Id"]] = int(card_precons[precon])
 
     # json.dump(precons, precons_file, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)

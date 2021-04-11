@@ -53,7 +53,46 @@ with open("vteslib.csv", "r",
                 set = set.split(':')
             elif '-' in set:
                 set = set.split('-')
-            card['Set'][set[0]] = set[1]
+
+            card['Set'][set[0]] = {}
+
+            precons = set[1].split('/')
+
+            # Fix for KoT & HttB Reprints (marked in CSV as KoT, but have only bundles named "A" or "B" not existing in original KoT)
+            if set[0] in ["KoT", "HttB"]:
+                counter = 0
+                for precon in precons:
+                    if re.match(r'(A|B)[0-9]?', precon):
+                        counter += 1
+
+                if counter > 0:
+                    card['Set'][f"{set[0]}R"] = {}
+                if counter < len(precons):
+                    card['Set'][set[0]] = {}
+
+            else:
+                card['Set'][set[0]] = {}
+
+            for precon in precons:
+                if set[0] in ["KoT", "HttB"] and (m := re.match(r'^(A|B)([0-9]+)?', precon)):
+                    s = f"{set[0]}R"
+                    if m.group(2):
+                        card['Set'][s][m.group(1)] = m.group(2)
+                    else:
+                        card['Set'][s][m.group(1)] = 1
+
+                else:
+                    if m := re.match(r'^(\D+)([0-9]+)?', precon):
+                        if m.group(1) in ["C", "U", "R", "V", "DTC", "Promo"]:
+                            card['Set'][set[0]][m.group(1)] = True
+                        elif m.group(2):
+                            card['Set'][set[0]][m.group(1)] = m.group(2)
+                        else:
+                            card['Set'][set[0]][m.group(1)] = 1
+                    elif m := re.match(r'^[0-9]$', precon):
+                        card['Set'][set[0]][""] = precon
+                    else:
+                        card['Set'][set[0]][precon] = True
 
         # Remove useless fields
         for k in useless_fields:
