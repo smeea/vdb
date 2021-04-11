@@ -23,7 +23,7 @@ const ResultLayoutTextSets = (props) => {
       } else {
         return (
           <li className="rulings" key={idx}>
-            Booster: {abbrevs[i]}
+            {abbrevs[i]}
           </li>
         );
       }

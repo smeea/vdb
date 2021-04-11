@@ -15,6 +15,7 @@
 * Show missing cards for inventory
 * Inventory add from precon
 * Offline PWA support
+* Card modal popovers in text/rulings like /Card Name/ or {Card Name}
 
 # MAYBE LATER FEATURES
 * Script to generate json from cvs from text disciplines

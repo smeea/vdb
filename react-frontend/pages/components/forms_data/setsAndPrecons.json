@@ -11,39 +11,39 @@
     "name": "Fifth Edition",
     "year": "2020",
     "precons": {
-      "PM": "Preconstructed: Malkavian",
-      "PN": "Preconstructed: Nosferatu",
-      "PTo": "Preconstructed: Toreador",
-      "PTr": "Preconstructed: Tremere",
-      "PV": "Preconstructed: Ventrue"
+      "PM": "Malkavian",
+      "PN": "Nosferatu",
+      "PTo": "Toreador",
+      "PTr": "Tremere",
+      "PV": "Ventrue"
     }
   },
   "25th": {
     "name": "25th Anniversary",
     "year": "2019",
     "precons": {
-      "": "Preconstructed: 25th Anniversary (Stanislava)",
+      "": "25th Anniversary (Stanislava)",
     }
   },
   "FB": {
     "name": "First Blood",
     "year": "2019",
     "precons": {
-      "PM": "Preconstructed: Malkavian",
-      "PN": "Preconstructed: Nosferatu",
-      "PTo": "Preconstructed: Toreador",
-      "PTr": "Preconstructed: Tremere",
-      "PV": "Preconstructed: Ventrue"
+      "PM": "Malkavian",
+      "PN": "Nosferatu",
+      "PTo": "Toreador",
+      "PTr": "Tremere",
+      "PV": "Ventrue"
     }
   },
   "SP": {
     "name": "Sabbat Preconstructed:",
     "year": "2019",
     "precons": {
-      "LB": "Preconstructed: Libertine Ball",
-      "PwN": "Preconstructed: Pact with Nephandi",
-      "DoF": "Preconstructed: Den of Fiends",
-      "PoS": "Preconstructed: Parliament of Shadows"
+      "LB": "Libertine Ball",
+      "PwN": "Pact with Nephandi",
+      "DoF": "Den of Fiends",
+      "PoS": "Parliament of Shadows"
     }
   },
   "KoTR": {
@@ -92,10 +92,10 @@
     "name": "Heirs to the Blood",
     "year": "2010",
     "precons": {
-      "PKia": "Preconstructed: Lasombra / Kiasyd",
-      "PSam": "Preconstructed: Nosferatu / Samedi",
-      "PSal": "Preconstructed: Ventrue / Salubri antitribu",
-      "PGar": "Preconstructed: Tremere / Gargoyle"
+      "PKia": "Lasombra / Kiasyd",
+      "PSam": "Nosferatu / Samedi",
+      "PSal": "Ventrue / Salubri antitribu",
+      "PGar": "Tremere / Gargoyle"
     }
   },
   "EK": {
@@ -113,10 +113,10 @@
     "name": "Keepers of Tradition",
     "year": "2008",
     "precons": {
-      "PB": "Preconstructed: Brujah",
-      "PM": "Preconstructed: Malkavian",
-      "PT": "Preconstructed: Toreador",
-      "PV": "Preconstructed: Ventrue"
+      "PB": "Brujah",
+      "PM": "Malkavian",
+      "PT": "Toreador",
+      "PV": "Ventrue"
     }
   },
   "TR": {
@@ -131,10 +131,10 @@
     "name": "Lords of the Night",
     "year": "2007",
     "precons": {
-      "PA": "Preconstructed: Assamite",
-      "PS": "Preconstructed: Follower of Set",
-      "PG": "Preconstructed: Giovanni",
-      "PR": "Preconstructed: Ravnos"
+      "PA": "Assamite",
+      "PS": "Follower of Set",
+      "PG": "Giovanni",
+      "PR": "Ravnos"
     }
   },
   "NoR": {
@@ -145,30 +145,30 @@
     "name": "Third Edition",
     "year": "2006",
     "precons": {
-      "PB": "Preconstructed: Brujah antitribu",
-      "PM": "Preconstructed: Malkavian antitribu",
-      "PTr": "Preconstructed: Tremere antitribu",
-      "PTz": "Preconstructed: Tzimisce"
+      "PB": "Brujah antitribu",
+      "PM": "Malkavian antitribu",
+      "PTr": "Tremere antitribu",
+      "PTz": "Tzimisce"
     }
   },
   "KMW": {
     "name": "Kindred Most Wanted",
     "year": "2005",
     "precons": {
-      "PAl": "Preconstructed: Alastors",
-      "PAn": "Preconstructed: Anathema",
-      "PB": "Preconstructed: Baali",
-      "PG": "Preconstructed: Gangrel antitribu"
+      "PAl": "Alastors",
+      "PAn": "Anathema",
+      "PB": "Baali",
+      "PG": "Gangrel antitribu"
     }
   },
   "LoB": {
     "name": "Legacies of Blood",
     "year": "2005",
     "precons": {
-      "PA": "Preconstructed: Akunanse",
-      "PG": "Preconstructed: Guruhi",
-      "PI": "Preconstructed: Ishtarri",
-      "PO": "Preconstructed: Osebo"
+      "PA": "Akunanse",
+      "PG": "Guruhi",
+      "PI": "Ishtarri",
+      "PO": "Osebo"
     }
   },
   "Gehenna": {
@@ -187,31 +187,31 @@
     "name": "Anarchs",
     "year": "2003",
     "precons": {
-      "PAB": "Preconstructed: Barons",
-      "PAG": "Preconstructed: Gangs",
-      "PG": "Preconstructed: Gangrel"
+      "PAB": "Barons",
+      "PAG": "Gangs",
+      "PG": "Gangrel"
     }
   },
   "BH": {
     "name": "Black Hand",
     "year": "2003",
     "precons": {
-      "PM": "Preconstructed: Malkavian antitribu",
-      "PN": "Preconstructed: Nosferatu antitribu",
-      "PTo": "Preconstructed: Toreador antitribu",
-      "PTr": "Preconstructed: Tremere antitribu"
+      "PM": "Malkavian antitribu",
+      "PN": "Nosferatu antitribu",
+      "PTo": "Toreador antitribu",
+      "PTr": "Tremere antitribu"
     }
   },
   "CE": {
     "name": "Camarilla Edition",
     "year": "2002",
     "precons": {
-      "PB": "Preconstructed: Brujah",
-      "PM": "Preconstructed: Malkavian",
-      "PN": "Preconstructed: Nosferatu",
-      "PTo": "Preconstructed: Toreador",
-      "PTr": "Preconstructed: Tremere",
-      "PV": "Preconstructed: Ventrue"
+      "PB": "Brujah",
+      "PM": "Malkavian",
+      "PN": "Nosferatu",
+      "PTo": "Toreador",
+      "PTr": "Tremere",
+      "PV": "Ventrue"
     }
   },
   "BL": {
@@ -222,20 +222,20 @@
     "name": "Final Nights",
     "year": "2001",
     "precons": {
-      "PA": "Preconstructed: Assamite",
-      "PF": "Preconstructed: Follower of Set",
-      "PG": "Preconstructed: Giovanni",
-      "PR": "Preconstructed: Ravnos"
+      "PA": "Assamite",
+      "PS": "Follower of Set",
+      "PG": "Giovanni",
+      "PR": "Ravnos"
     }
   },
   "SW": {
     "name": "Sabbat War",
     "year": "2000",
     "precons": {
-      "PB": "Preconstructed: Brujah antitribu",
-      "PL": "Preconstructed: Lasombra",
-      "PT": "Preconstructed: Tzimisce",
-      "PV": "Preconstructed: Ventrue antitribu"
+      "PB": "Brujah antitribu",
+      "PL": "Lasombra",
+      "PT": "Tzimisce",
+      "PV": "Ventrue antitribu"
     }
   },
   "Sabbat": {
