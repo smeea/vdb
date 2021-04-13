@@ -51,11 +51,20 @@ function DeckSelectMy(props) {
     }
   };
 
+  // const customStyle = {
+  //   option: (base, state) => ({
+  //     ...base,
+  //     backgroundColor: state.isSelected ? 'red' : 'green',
+  //   }),
+  // };
+
   return (
     <Select
       options={options}
       isSearchable={!props.isMobile}
       filterOption={filterOption}
+      /* styles={customStyle} */
+      classNamePrefix="react-select"
       name="decks"
       placeholder="Select Deck"
       value={options.find((obj) => {

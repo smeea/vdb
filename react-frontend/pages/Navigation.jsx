@@ -6,13 +6,21 @@ import PersonFill from '../assets/images/icons/person-fill.svg';
 import InfoCircleFill from '../assets/images/icons/info-circle-fill.svg';
 import ToggleOn from '../assets/images/icons/toggle-on.svg';
 import ToggleOff from '../assets/images/icons/toggle-off.svg';
+import SunFill from '../assets/images/icons/sun-fill.svg';
+import MoonFill from '../assets/images/icons/moon-fill.svg';
 
 function Navigation(props) {
   const NavBar = ({ location }) => {
     return (
-      <Navbar sticky="top" bg="dark" variant="dark">
+      <Navbar sticky="top" variant="dark">
         <Nav className="container justify-content-between">
           <div className="d-flex align-items-center pr-1">
+            <div
+              className="text-light px-2"
+              onClick={() => props.toggleTheme()}
+            >
+              {props.isDarkTheme ? <MoonFill /> : <SunFill />}
+            </div>
             {props.username &&
               !props.isMobile &&
               (props.location.pathname == '/decks' ||

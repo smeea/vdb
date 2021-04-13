@@ -6,6 +6,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Navigation from './pages/Navigation.jsx';
+import ThemeContext from './context/ThemeContext';
 import defaultsTwdForm from './pages/components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from './pages/components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from './pages/components/forms_data/defaultsLibraryForm.json';
@@ -71,6 +72,9 @@ function App(props) {
 
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
+
+  const { dark, toggle } = React.useContext(ThemeContext);
+  console.log(dark);
 
   const deckRouter = (pointer) => {
     if (pointer) {
@@ -608,7 +612,7 @@ function App(props) {
   }, [lastDeck]);
 
   return (
-    <div className="App">
+    <div className={`App ${dark ? 'dark-theme' : null}`}>
       <Router>
         <Navigation
           isMobile={isMobile}
@@ -620,6 +624,8 @@ function App(props) {
           setActiveDeck={setActiveDeck}
           inventoryMode={inventoryMode}
           setInventoryMode={setInventoryMode}
+          isDarkTheme={dark}
+          toggleTheme={toggle}
         />
 
         <Switch>

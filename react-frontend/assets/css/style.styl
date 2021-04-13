@@ -1,38 +1,42 @@
-a, span.link-like
-  color: #306090
+// :root {
+// }
+
+body
+  color: var(--fg-primary)
+  background: var(--bg-primary)
+
+a, span.link-like, .name, .prob
+  color: var(--fg-link)
 
 h5, .h5, h6, .h6
   font-weight: bold
-  color: #6060cc
+  color: var(--fg-secondary)
 
 .no-border div.modal-content
   border: none
 
 .error-message
-  background: #f090a0
+  background: var(--bg-error)
   padding: 0.5em
-  border: 1px solid gray
+  border: 1px solid var(--border-primary)
 
 .error-tooltip
-  background: #f090a0
+  background: var(--bg-error)
   border-radius: 5px
   padding: 0.25em 0.5em
   z-index: 1
 
 .info-message
-  background: #d0d0ea
+  background: var(--bg-secondary)
 
 .pale-blue
   color: #7575a5
 
 .blue
-  color: #6060cc
+  color: var(--fg-secondary)
 
 .gray
   color: gray
-
-.name, .prob
-  color: #306090
 
 .bg-black
   background: black
@@ -50,12 +54,46 @@ h5, .h5, h6, .h6
   height: 18px
 
 .form-control:focus,
-.custom-select:focus
+.custom-select:focus,
   box-shadow: none
-  border-color: gray
+  border-color: var(--border-primary)
+  background: var(--bg-primary)
+  color: var(--fg-primary)
+
+.form-control,
+.custom-select
+  background: var(--bg-primary)
+  border-color: var(--border-secondary)
+  color: var(--fg-primary)
+
+.input-group-text
+  background: var(--bg-secondary)
+  color: var(--fg-primary)
+
+.navbar
+  background: var(--bg-nav)
+
+.modal-content
+  background: var(--bg-primary)
+
+.popover
+  border-color: var(--border-secondary)
+  background: var(--bg-primary)
+
+.popover-body
+  color: var(--fg-primary)
+
+.react-select
+  &__value-container
+    background: var(--bg-primary)
+  &__dropdown-indicator
+    background: var(--bg-primary)
+  &__menu-list
+    background: var(--bg-primary)
+    color: var(--fg-primary)
 
 .logo-box
-  background: #d0d0ea
+  background: var(--bg-secondary)
   padding: 0.5em
   border: 1px solid darkgray
 
@@ -65,11 +103,11 @@ h5, .h5, h6, .h6
 .logo-text
   font-weight: bold
   font-size: xx-large
-  color: #6060cc
+  color: var(--fg-secondary)
 
 .logo-subtext
   font-size: x-large
-  color: #6060cc
+  color: var(--fg-secondary)
 
 img.card-popover
   height: 420px
@@ -106,12 +144,11 @@ img.card-popover
 
 .deck-crypt-table
   width: 100%
-  border: 1px solid lightgray
-  border: 1px solid lightgray
+  border: 1px solid var(--border-secondary)
 .deck-crypt-table td
   height: 32px
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
+  border-top: 1px solid var(--border-secondary)
+  border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
 .deck-crypt-table td, th
   text-align: center
@@ -124,7 +161,7 @@ img.card-popover
   width: 28px
   font-size: 1.1em
   background: rgba(0, 0, 170, 0.05);
-  border-right: 1px solid lightgray
+  border-right: 1px solid var(--border-secondary)
 .deck-crypt-table td.used
   width: 45px
 .deck-crypt-table td.capacity
@@ -150,18 +187,18 @@ img.card-popover
 .deck-crypt-table td.disciplines.cols-1
   width: 132px
 .deck-crypt-table td.prob
-  border-left: 1px solid lightgray
+  border-left: 1px solid var(--border-secondary)
   text-align: right
   width: 36px
 
 .deck-library-table
   width: 100%
-  border: 1px solid lightgray
+  border: 1px solid var(--border-secondary)
 .deck-library-table td
   height: 37px
   text-align: center
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
+  border-top: 1px solid var(--border-secondary)
+  border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
 .deck-library-table td.proxy-selector
   width: 1%
@@ -172,7 +209,7 @@ img.card-popover
   width: 28px
   font-size: 1.1em
   background: rgba(0, 0, 170, 0.05);
-  border-right: 1px solid lightgray
+  border-right: 1px solid var(--border-secondary)
 .deck-library-table td.name
   text-align: left
 .deck-library-table td.cost
@@ -182,19 +219,19 @@ img.card-popover
 .deck-library-table td.burn
   width: 30px
 .deck-library-table td.prob
-  border-left: 1px solid lightgray
+  border-left: 1px solid var(--border-secondary)
   text-align: right
   width: 36px
     
 .inventory-crypt-table
   width: 100%
-  border-left: 1px solid lightgray
-  border-right: 1px solid lightgray
+  border-left: 1px solid var(--border-secondary)
+  border-right: 1px solid var(--border-secondary)
 .inventory-crypt-table td
   height: 32px
   text-align: center
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
+  border-top: 1px solid var(--border-secondary)
+  border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
 .inventory-crypt-table td.quantity
   width: 65px
@@ -216,13 +253,13 @@ img.card-popover
 
 .inventory-library-table
   width: 100%
-  border-left: 1px solid lightgray
-  border-right: 1px solid lightgray
+  border-left: 1px solid var(--border-secondary)
+  border-right: 1px solid var(--border-secondary)
 .inventory-library-table td
   height: 37px
   text-align: center
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
+  border-top: 1px solid var(--border-secondary)
+  border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
 .inventory-library-table td.quantity
   width: 65px
@@ -237,16 +274,16 @@ img.card-popover
   width: 70px
 .inventory-library-table td.burn
   width: 30px
-  border-right: 1px solid lightgray
+  border-right: 1px solid var(--border-secondary)
 
 .search-crypt-table
   width: 100%
-  border-left: 1px solid lightgray
-  border-right: 1px solid lightgray
+  border-left: 1px solid var(--border-secondary)
+  border-right: 1px solid var(--border-secondary)
 .search-crypt-table td
   height: 32px
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
+  border-top: 1px solid var(--border-secondary)
+  border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
   text-align: center
 .search-crypt-table td.quantity-add
@@ -272,12 +309,12 @@ img.card-popover
 
 .search-library-table
   width: 100%
-  border-left: 1px solid lightgray
-  border-right: 1px solid lightgray
+  border-left: 1px solid var(--border-secondary)
+  border-right: 1px solid var(--border-secondary)
 .search-library-table td
   height: 36px
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
+  border-top: 1px solid var(--border-secondary)
+  border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
   text-align: center
 .search-library-table td.quantity-add
@@ -302,12 +339,12 @@ img.card-popover
 
 .twd-crypt-table
   width: 100%
-  border-right: 1px solid lightgray
-  border-left: 1px solid lightgray
+  border-right: 1px solid var(--border-secondary)
+  border-left: 1px solid var(--border-secondary)
 .twd-crypt-table td
   height: 32px
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
+  border-top: 1px solid var(--border-secondary)
+  border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
 .twd-crypt-table td, th
   text-align: center
@@ -315,7 +352,7 @@ img.card-popover
   width: 28px
   font-size: 1.1em
   background: rgba(0, 0, 170, 0.05);
-  border-right: 1px solid lightgray
+  border-right: 1px solid var(--border-secondary)
 .twd-crypt-table td.name
   text-align: left
 .twd-crypt-table td.clan
@@ -323,19 +360,19 @@ img.card-popover
 
 .twd-library-table
   width: 100%
-  border-right: 1px solid lightgray
-  border-left: 1px solid lightgray
+  border-right: 1px solid var(--border-secondary)
+  border-left: 1px solid var(--border-secondary)
 .twd-library-table td
   height: 32px
   text-align: center
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
+  border-top: 1px solid var(--border-secondary)
+  border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
 .twd-library-table td.quantity-no-buttons
   width: 28px
   font-size: 1.1em
   background: rgba(0, 0, 170, 0.05);
-  border-right: 1px solid lightgray
+  border-right: 1px solid var(--border-secondary)
 .twd-library-table td.type
   width: 50px
 .twd-library-table td.name
@@ -343,13 +380,13 @@ img.card-popover
 
 .twd-librarybytype-table
   width: 100%
-  border-left: 1px solid lightgray
-  border-right: 1px solid lightgray
+  border-left: 1px solid var(--border-secondary)
+  border-right: 1px solid var(--border-secondary)
 .twd-librarybytype-table td
   height: 32px
   text-align: center
-  border-top: 1px solid lightgray
-  border-bottom: 1px solid lightgray
+  border-top: 1px solid var(--border-secondary)
+  border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
 .twd-librarybytype-table td.name
   text-align: left
@@ -444,7 +481,10 @@ font-1.85
   display: flex
 
 .result-odd
-  background-color: #eaeaea
+  background-color: var(--bg-primary)
+
+.result-even
+  background-color: var(--bg-third)
 
 a.quantity
   position:relative
@@ -461,7 +501,9 @@ button.quantity
   width: 18px
   height: 27px
   padding: 0px
-  background: rgba(255, 255, 255, 0.75)
+  background: var(--bg-button)
+  color: var(--fg-button)
+  border: 1px solid var(--border-button)
 
 .quantity-add button
   width: 24px
@@ -469,7 +511,8 @@ button.quantity
   padding: 0px
 
 .quantity-add button.add
-  background: rgba(255, 255, 255, 0.75)
+  background: var(--bg-button)
+  border: 1px solid var(--border-button)
 
 .quantity-add button.in
   background-color: gray
@@ -498,7 +541,7 @@ hr
   margin: 0.5rem
 
 hr.thick
-  border: 2px solid lightgray 
+  border: 2px solid var(--border-secondary)
 
 .nobr
   white-space: nowrap

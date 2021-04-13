@@ -18,7 +18,7 @@
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name}
 
 # MAYBE LATER FEATURES
-* Script to generate json from cvs from text disciplines
+* Update cardbase script
 * Night theme
 * Documentation on updates / update script
 

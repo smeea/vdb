@@ -49,7 +49,6 @@ function DeckChangeName(props) {
           onChange={handleChange}
           onBlur={handleOnBlur}
           readOnly={!props.isAuthor}
-          style={{ background: 'white' }}
         />
         {props.isMobile && props.isAuthor && (
           <InputGroup.Append>
