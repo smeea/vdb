@@ -197,6 +197,14 @@ function Documentation(props) {
                 </Link>
               </h5>
 
+              <h6>Hints</h6>
+              <ul>
+                <li>
+                  You can change card quantity by clicking on the quantity to
+                  enter number manual
+                </li>
+              </ul>
+
               <h6>Draw Probability</h6>
               <ul>
                 <li>

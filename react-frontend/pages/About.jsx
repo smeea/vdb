@@ -64,13 +64,13 @@ function About(props) {
                 </li>
                 <li>Mobile-friendly (best on screens &gt;6&quot;)</li>
                 <li>
-                  Import/export your decks to/from popular formats (Amaranth,
-                  Lackey, TWD)
+                  Import/export your decks to popular formats (Amaranth, Lackey,
+                  TWD)
                 </li>
                 <li>
                   Manage your card collection (inventory) with full search power
                 </li>
-                <li>Create PDF with proxies of your decks</li>
+                <li>Create printable PDF with proxy cards</li>
                 <li>Open source, ad-free & privacy-respecting</li>
                 <li>Once familiar with, you will love it!</li>
               </ul>

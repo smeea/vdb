@@ -21,16 +21,12 @@
 * Script to generate json from cvs from text disciplines
 * Night theme
 * Documentation on updates / update script
-* Export inventory to CSV / .ods
-* Deck export to JOL
 
 # IMPROVE TECHNOLOGY - FRONTEND
-* Tests: cypress
 * Sync: websockets
 
 # IMPROVE TECHNOLOGY - BACKEND
-* Use Celery + Redis / RabbitMQ
-* Check frontend input (quantity/cardid/etc) on backend
+* Check frontend input (quantity/cardid) on backend
 * Update API endpoints
 * Add error codes to return
 * Unify tests for current_user
