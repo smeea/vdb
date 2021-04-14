@@ -140,7 +140,7 @@ function ResultCryptTable(props) {
                   <div
                     className={
                       inInventory < softUsedMax + hardUsedTotal
-                        ? 'quantity px-1 mx-1 bg-red'
+                        ? 'quantity px-1 mx-1 inv-miss-full'
                         : 'quantity px-1'
                     }
                   >

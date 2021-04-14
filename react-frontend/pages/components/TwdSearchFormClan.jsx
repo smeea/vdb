@@ -87,6 +87,7 @@ function TwdSearchFormClan(props) {
 
   return (
     <Select
+      classNamePrefix="react-select"
       options={options}
       isSearchable={!props.isMobile}
       name="clan"

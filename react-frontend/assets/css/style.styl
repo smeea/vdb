@@ -29,8 +29,8 @@ h5, .h5, h6, .h6
 .info-message
   background: var(--bg-secondary)
 
-.pale-blue
-  color: #7575a5
+.total-year, .total-group
+  color: var(--fg-third)
 
 .blue
   color: var(--fg-secondary)
@@ -41,11 +41,11 @@ h5, .h5, h6, .h6
 .bg-black
   background: black
 
-.bg-red
-  background: lightcoral
+.inv-miss-full
+  background: var(--inventory-miss-full)
 
-.bg-yellow
-  background: #ffa040
+.inv-miss-part
+  background: var(--inventory-miss-part)
 
 .popover-rulings
   font-size: small
@@ -53,21 +53,40 @@ h5, .h5, h6, .h6
 .popover-discipline-image
   height: 18px
 
-.form-control:focus,
-.custom-select:focus,
-  box-shadow: none
-  border-color: var(--border-primary)
-  background: var(--bg-primary)
-  color: var(--fg-primary)
-
 .form-control,
+.form-control:focus,
 .custom-select
-  background: var(--bg-primary)
-  border-color: var(--border-secondary)
+  background: var(--bg-primary) !important
   color: var(--fg-primary)
+  border-color: var(--bg-secondary)
 
 .input-group-text
   background: var(--bg-secondary)
+  color: var(--bg-gray)
+  border-color: var(--bg-secondary)
+
+.input-group-append
+  background: var(--bg-secondary)
+  color: var(--fg-primary)
+
+div.input-group-append > button.btn-outline-secondary
+  border-color: var(--bg-secondary)
+
+button.btn-outline-secondary
+  color: var(--fg-button)
+  background: var(--bg-button)
+  border: 1px solid var(--border-button)
+
+button.btn-outline-secondary:hover
+  background: var(--bg-button-hover)
+
+.button-block
+  padding-bottom: 3px
+.button-block button
+  background: var(--bg-button-secondary)
+  border: 1px solid var(--border-third)
+
+.close
   color: var(--fg-primary)
 
 .navbar
@@ -84,6 +103,11 @@ h5, .h5, h6, .h6
   color: var(--fg-primary)
 
 .react-select
+  &__single-value
+    color: var(--fg-primary) !important
+  &__control
+    background: var(--bg-primary) !important
+    border-color: var(--border-forms) !important
   &__value-container
     background: var(--bg-primary)
   &__dropdown-indicator
@@ -91,11 +115,13 @@ h5, .h5, h6, .h6
   &__menu-list
     background: var(--bg-primary)
     color: var(--fg-primary)
+  &__indicators
+    background: var(--bg-primary)
 
 .logo-box
   background: var(--bg-secondary)
   padding: 0.5em
-  border: 1px solid darkgray
+  border: 1px solid var(--border-button)
 
 .logo-image
   height: 48px
@@ -187,7 +213,6 @@ img.card-popover
 .deck-crypt-table td.disciplines.cols-1
   width: 132px
 .deck-crypt-table td.prob
-  border-left: 1px solid var(--border-secondary)
   text-align: right
   width: 36px
 
@@ -195,7 +220,7 @@ img.card-popover
   width: 100%
   border: 1px solid var(--border-secondary)
 .deck-library-table td
-  height: 37px
+  height: 38px
   text-align: center
   border-top: 1px solid var(--border-secondary)
   border-bottom: 1px solid var(--border-secondary)
@@ -213,13 +238,13 @@ img.card-popover
 .deck-library-table td.name
   text-align: left
 .deck-library-table td.cost
+  vertical-align: top
   width: 25px
 .deck-library-table td.disciplines
   width: 88px
 .deck-library-table td.burn
   width: 30px
 .deck-library-table td.prob
-  border-left: 1px solid var(--border-secondary)
   text-align: right
   width: 36px
     
@@ -425,6 +450,7 @@ font-1.85
 
 .capacity-image-results
   height: 23px
+  opacity: var(--capacity-opacity)
 .discipline-base-image-results
   height: 24px
 .discipline-superior-image-results
@@ -439,7 +465,10 @@ font-1.85
   height: 20px
 .type-image-results
   height: 25px
-.cost-image-results
+.cost-blood-image-results
+  height: 30px
+  padding-top: 2px
+.cost-pool-image-results
   height: 35px
 .discipline-base-image-forms
   width: 34px
@@ -501,21 +530,14 @@ button.quantity
   width: 18px
   height: 27px
   padding: 0px
-  background: var(--bg-button)
-  color: var(--fg-button)
-  border: 1px solid var(--border-button)
 
 .quantity-add button
   width: 24px
   height: 33px
   padding: 0px
 
-.quantity-add button.add
-  background: var(--bg-button)
-  border: 1px solid var(--border-button)
-
 .quantity-add button.in
-  background-color: gray
+  background: gray
   color: white
 
 div.in-inventory
@@ -717,30 +739,15 @@ div.float-inventory svg
 .modal-deck-draw
   width: 65%
 
-.bt-125
-  padding-top: 0.125rem
-
-.bp-125
-  padding-bottom: 0.125rem
-
-.rp-125
-  padding-right: 0.125rem
-
-.lp-125
-  padding-left: 0.125rem
-
-.opacity-025
-  opacity: 0.25
+.opacity-015
+  opacity: 0.15
 
 .opacity-035
   opacity: 0.35
 
-.opacity-075
-  opacity: 0.75
-
-td.left-offset-8
+td.inventory-card-custom
   position: absolute
-  left: -8px
-  border-top: 0px
-  border-bottom: 0px
+  left: -6px
+  margin-top: 10px
+  border: none
   opacity: 0.75

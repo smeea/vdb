@@ -16,7 +16,7 @@ function Navigation(props) {
         <Nav className="container justify-content-between">
           <div className="d-flex align-items-center pr-1">
             <div
-              className="text-light px-2"
+              className="text-light pl-2 pr-4"
               onClick={() => props.toggleTheme()}
             >
               {props.isDarkTheme ? <MoonFill /> : <SunFill />}

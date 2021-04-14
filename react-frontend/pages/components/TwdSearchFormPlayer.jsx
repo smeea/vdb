@@ -32,6 +32,7 @@ function TwdSearchFormPlayer({ value, setValue }) {
 
   return (
     <AsyncSelect
+      classNamePrefix="react-select"
       cacheOptions
       autoFocus={false}
       placeholder="Player"

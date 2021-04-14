@@ -36,6 +36,7 @@ function SearchLibraryFormSect(props) {
       </Col>
       <Col xs={9} className="d-inline px-0">
         <Select
+          classNamePrefix="react-select"
           options={options}
           isSearchable={false}
           name="sect"

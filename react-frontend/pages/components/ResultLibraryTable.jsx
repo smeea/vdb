@@ -142,7 +142,7 @@ function ResultLibraryTable(props) {
                   <div
                     className={
                       inInventory < softUsedMax + hardUsedTotal
-                        ? 'quantity px-1 mx-1 bg-red'
+                        ? 'quantity px-1 mx-1 inv-miss-full'
                         : 'quantity px-1'
                     }
                   >
@@ -170,7 +170,7 @@ function ResultLibraryTable(props) {
               </td>
             </>
           )}
-          <td className="cost py-0 px-1" onClick={() => handleClick()}>
+          <td className="cost px-1" onClick={() => handleClick()}>
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}

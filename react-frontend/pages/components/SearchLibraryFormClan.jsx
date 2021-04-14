@@ -94,6 +94,7 @@ function SearchLibraryFormClan(props) {
       </Col>
       <Col xs={9} className="d-inline px-0">
         <Select
+          classNamePrefix="react-select"
           options={options}
           isSearchable={!props.isMobile}
           name="clan"

@@ -55,13 +55,13 @@ function TwdResultDescription(props) {
             </tbody>
           </table>
           <div className="py-2">
-            <div className="bp-125">
+            <div className="button-block">
               <TwdOpenDeckButton
                 deckid={props.deck['deckid']}
                 setActiveDeck={props.setActiveDeck}
               />
             </div>
-            <div className="bp-125">
+            <div className="button-block">
               {props.username && (
                 <DeckClone
                   deck={props.deck}
@@ -111,13 +111,13 @@ function TwdResultDescription(props) {
             </Col>
             <Col xs={5} className="px-0 mx-0">
               <div className="py-2">
-                <div className="bp-125">
+                <div className="button-block">
                   <TwdOpenDeckButton
                     deckid={props.deck['deckid']}
                     setActiveDeck={props.setActiveDeck}
                   />
                 </div>
-                <div className="bp-125">
+                <div className="button-block">
                   {props.username && (
                     <DeckClone
                       deck={props.deck}

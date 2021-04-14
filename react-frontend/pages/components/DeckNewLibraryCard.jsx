@@ -43,6 +43,7 @@ function DeckNewLibraryCard(props) {
 
   return (
     <AsyncSelect
+      classNamePrefix="react-select"
       cacheOptions
       autoFocus={!props.inInventory}
       value={selectedValue}

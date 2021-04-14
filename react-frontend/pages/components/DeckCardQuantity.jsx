@@ -37,7 +37,7 @@ function DeckCardQuantity(props) {
             className={
               props.inInventory < props.softUsedMax + props.hardUsedTotal &&
               props.inventoryType
-                ? 'px-1 mx-1 bg-red'
+                ? 'px-1 mx-1 inv-miss-full'
                 : 'px-1'
             }
           >
@@ -73,7 +73,7 @@ function DeckCardQuantity(props) {
                 ? 'px-0'
                 : props.inInventory < props.softUsedMax + props.hardUsedTotal &&
                   props.inventoryType
-                ? 'px-1 mx-1 bg-red'
+                ? 'px-1 mx-1 inv-miss-full'
                 : 'px-1'
             }
             onClick={() => setManual(true)}

@@ -62,6 +62,7 @@ function SearchCryptFormCapacity(props) {
       </Col>
       <Col xs={4} className="d-inline px-0">
         <Select
+          classNamePrefix="react-select"
           options={morelessOptions}
           isSearchable={false}
           name="capacity-moreless"
@@ -71,8 +72,9 @@ function SearchCryptFormCapacity(props) {
           onChange={props.onMorelessChange}
         />
       </Col>
-      <Col xs={5} className="d-inline px-0">
+      <Col xs={5} className="d-inline pr-0 pl-1">
         <Select
+          classNamePrefix="react-select"
           options={options}
           isSearchable={false}
           name="capacity"

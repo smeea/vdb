@@ -32,6 +32,7 @@ function TwdSearchFormLocation({ value, setValue }) {
 
   return (
     <AsyncSelect
+      classNamePrefix="react-select"
       cacheOptions
       autoFocus={false}
       placeholder="Location"

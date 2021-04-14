@@ -133,6 +133,7 @@ function TwdSearchFormCardtypes(props) {
           </Col>
           <Col xs={10} className="d-inline px-0">
             <Select
+              classNamePrefix="react-select"
               options={options}
               isSearchable={false}
               name={i[0]}
@@ -154,6 +155,7 @@ function TwdSearchFormCardtypes(props) {
           </Col>
           <Col xs={10} className="d-inline px-0">
             <Select
+              classNamePrefix="react-select"
               options={options}
               isSearchable={false}
               name={i[0]}

@@ -139,9 +139,9 @@ function DeckLibraryTable(props) {
               {props.inventoryMode ? (
                 <>
                   {deckInvType && !props.inSearch ? (
-                    <td className="pt-2 left-offset-8 opacity-075">
+                    <td className="inventory-card-custom">
                       <div
-                        className={cardInvType ? '' : 'opacity-025'}
+                        className={cardInvType ? '' : 'opacity-015'}
                         onClick={() =>
                           props.deckUpdate(
                             props.deckid,
@@ -238,9 +238,9 @@ function DeckLibraryTable(props) {
                       <div
                         className={
                           inInventory < card.q
-                            ? 'bg-red'
+                            ? 'inv-miss-full'
                             : inInventory - hardUsedTotal < card.q
-                            ? 'bg-yellow'
+                            ? 'inv-miss-part'
                             : null
                         }
                       >
@@ -264,9 +264,9 @@ function DeckLibraryTable(props) {
                         <div
                           className={
                             inInventory < card.q
-                              ? 'bg-red'
+                              ? 'inv-miss-full'
                               : inInventory - hardUsedTotal < card.q
-                              ? 'bg-yellow'
+                              ? 'inv-miss-part'
                               : null
                           }
                         >

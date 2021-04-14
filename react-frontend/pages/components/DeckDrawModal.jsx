@@ -53,7 +53,7 @@ function DeckDrawModal(props) {
                         <ArrowRepeat />
                       </span>
                     </Button>
-                    <div className="lp-125">
+                    <div className="pl-1">
                       <Button
                         variant="outline-secondary"
                         onClick={props.handleDrawOneCrypt}
@@ -100,7 +100,7 @@ function DeckDrawModal(props) {
                   >
                     <ArrowRepeat />
                   </Button>
-                  <div className="lp-125">
+                  <div className="pl-1">
                     <Button
                       variant="outline-secondary"
                       onClick={props.handleDrawOneLibrary}

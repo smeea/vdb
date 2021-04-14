@@ -37,6 +37,7 @@ function TwdSearchFormPlayers(props) {
       <Row className="mx-0 align-items-center">
         <Col xs={5} className="d-inline px-0">
           <Select
+            classNamePrefix="react-select"
             options={playersFromOptions}
             isSearchable={false}
             name="players-from"
@@ -51,6 +52,7 @@ function TwdSearchFormPlayers(props) {
         </Col>
         <Col xs={5} className="d-inline px-0">
           <Select
+            classNamePrefix="react-select"
             options={playersToOptions}
             isSearchable={false}
             name="players-to"

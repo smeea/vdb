@@ -155,9 +155,9 @@ function TwdResultLibraryKeyCards(props) {
                 <div
                   className={
                     inInventory < card.q
-                      ? 'bg-red'
+                      ? 'inv-miss-full'
                       : inInventory - hardUsedTotal < card.q
-                      ? 'bg-yellow'
+                      ? 'inv-miss-part'
                       : null
                   }
                 >
@@ -181,9 +181,9 @@ function TwdResultLibraryKeyCards(props) {
                   <div
                     className={
                       inInventory < card.q
-                        ? 'bg-red'
+                        ? 'inv-miss-full'
                         : inInventory - hardUsedTotal < card.q
-                        ? 'bg-yellow'
+                        ? 'inv-miss-part'
                         : null
                     }
                   >

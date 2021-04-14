@@ -190,7 +190,7 @@ function DeckCrypt(props) {
             <InfoCircle />
           </Button>
           {props.isAuthor && !props.isMobile && (
-            <div className="lp-125">
+            <div className="pl-1">
               <Button
                 variant="outline-secondary"
                 onClick={() => setShowAdd(!showAdd)}

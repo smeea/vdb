@@ -181,7 +181,7 @@ function ResultCryptModal(props) {
                   </div>
                 </>
               )}
-              <div className="d-flex justify-content-between bp-125 pt-4">
+              <div className="d-flex justify-content-between pt-4">
                 <div className="d-flex">
                   <div className="d-flex pr-1">
                     <ButtonCardCopyUrl

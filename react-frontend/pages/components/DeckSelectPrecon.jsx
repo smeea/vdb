@@ -14,7 +14,7 @@ function DeckSelectPrecon(props) {
         return (
           <div className="d-inline pr-3" key={index}>
             {clan != 'Bundle' && clan != 'Mix' && (
-              <img src={imgSrc} className="discipline-base-image-results" />
+              <img src={imgSrc} className="clan-image-results" />
             )}
           </div>
         );
@@ -52,6 +52,7 @@ function DeckSelectPrecon(props) {
   return (
     <>
       <Select
+        classNamePrefix="react-select"
         options={options}
         isSearchable={!props.isMobile}
         name="decks"

@@ -15,7 +15,7 @@ function TwdSearchFormButtons(props) {
           <Dice3 /> 10 Random
         </Button>
 
-        <div className="lp-125">
+        <div className="pl-1">
           <Button
             variant="outline-secondary"
             onClick={() => props.getNewTwd(50)}

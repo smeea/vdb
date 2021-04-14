@@ -17,7 +17,7 @@ function TwdResultTotal(props) {
   const totalOutput = Object.keys(byYear).map((key, index) => {
     return (
       <span key={index} className="d-inline-block nobr pr-3">
-        <span className="pale-blue">
+        <span className="total-year">
           <b>{key}: </b>
         </span>
         {byYear[key]}

@@ -73,8 +73,7 @@ function App(props) {
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
 
-  const { dark, toggle } = React.useContext(ThemeContext);
-  console.log(dark);
+  const { isDarkTheme, toggleTheme } = React.useContext(ThemeContext);
 
   const deckRouter = (pointer) => {
     if (pointer) {
@@ -612,7 +611,7 @@ function App(props) {
   }, [lastDeck]);
 
   return (
-    <div className={`App ${dark ? 'dark-theme' : null}`}>
+    <div className="App">
       <Router>
         <Navigation
           isMobile={isMobile}
@@ -624,8 +623,8 @@ function App(props) {
           setActiveDeck={setActiveDeck}
           inventoryMode={inventoryMode}
           setInventoryMode={setInventoryMode}
-          isDarkTheme={dark}
-          toggleTheme={toggle}
+          isDarkTheme={isDarkTheme}
+          toggleTheme={toggleTheme}
         />
 
         <Switch>

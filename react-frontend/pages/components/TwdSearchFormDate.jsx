@@ -63,6 +63,7 @@ function TwdSearchFormDate(props) {
       <Row className="mx-0 align-items-center">
         <Col xs={5} className="d-inline px-0">
           <Select
+            classNamePrefix="react-select"
             options={dateFromOptions}
             isSearchable={false}
             name="date-from"
@@ -75,6 +76,7 @@ function TwdSearchFormDate(props) {
         </Col>
         <Col xs={5} className="d-inline px-0">
           <Select
+            classNamePrefix="react-select"
             options={dateToOptions}
             isSearchable={false}
             name="date-to"
