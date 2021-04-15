@@ -630,17 +630,19 @@ function Decks(props) {
                 history={history}
               />
               {props.isMobile && (
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => {
-                    props.setInventoryMode(!props.inventoryMode);
-                    handleShowButtons(false);
-                  }}
-                  block
-                >
-                  <ArchiveFill viewBox="0 0 16 16" /> Inventory Mode:{' '}
-                  {props.inventoryMode ? 'On' : 'Off'}
-                </Button>
+                <div className="button-block">
+                  <Button
+                    variant="outline-secondary"
+                    onClick={() => {
+                      props.setInventoryMode(!props.inventoryMode);
+                      handleShowButtons(false);
+                    }}
+                    block
+                  >
+                    <ArchiveFill viewBox="0 0 16 16" /> Toggle Inventory Mode (
+                    {props.inventoryMode ? 'On' : 'Off'})
+                  </Button>
+                </div>
               )}
             </Container>
           </Modal.Body>
