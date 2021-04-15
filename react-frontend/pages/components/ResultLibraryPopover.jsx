@@ -49,7 +49,7 @@ function ResultLibraryPopover(props) {
               <div>
                 <ResultLibraryType cardtype={props.card['Type']} />
               </div>
-              <div className="pl-2">
+              <div className="name pl-2">
                 <b>{props.card['Name']}</b>
                 {props.card['Banned'] && (
                   <span className="pl-1">
