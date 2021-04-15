@@ -77,7 +77,7 @@ function SearchCryptFormClan(props) {
         label: (
           <>
             <span className="margin-full">
-              <img src={imgSrc} className="discipline-base-image-results" />
+              <img src={imgSrc} className="clan-image-results" />
             </span>
             {i}
           </>

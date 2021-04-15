@@ -19,7 +19,6 @@
 
 # MAYBE LATER FEATURES
 * Update cardbase script
-* Night theme
 * Documentation on updates / update script
 
 # IMPROVE TECHNOLOGY - FRONTEND

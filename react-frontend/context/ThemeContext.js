@@ -70,6 +70,7 @@ const lightTheme = [
   '--capacity-opacity: 1',
   '--inventory-miss-full: lightcoral',
   '--inventory-miss-part: #ffa040',
+  '--clan-icon-brightness: 1',
 ];
 
 const darkTheme = [
@@ -96,4 +97,5 @@ const darkTheme = [
   '--capacity-opacity: 0.9',
   '--inventory-miss-full: #c02000',
   '--inventory-miss-part: #706535',
+  '--clan-icon-brightness: 0.3',
 ];
