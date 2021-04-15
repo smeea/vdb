@@ -88,6 +88,7 @@ function DeckLibraryTable(props) {
               key={index}
               q={props.usedCards.soft[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
+              t="s"
             />
           );
         });
@@ -103,6 +104,7 @@ function DeckLibraryTable(props) {
               key={index}
               q={props.usedCards.hard[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
+              t="h"
             />
           );
         });

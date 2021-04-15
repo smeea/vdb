@@ -85,6 +85,7 @@ function ResultCryptTable(props) {
                 key={index}
                 q={props.usedCards.soft[card['Id']][id]}
                 deckName={props.decks[id]['name']}
+                t="s"
               />
             );
           }
@@ -100,6 +101,7 @@ function ResultCryptTable(props) {
                 key={index}
                 q={props.usedCards.hard[card['Id']][id]}
                 deckName={props.decks[id]['name']}
+                t="h"
               />
             );
           }
