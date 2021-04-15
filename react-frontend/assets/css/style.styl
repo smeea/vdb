@@ -1,12 +1,44 @@
-// :root {
-// }
+:root
+  --fg-primary: #202530
+  --fg-secondary: #6060cc
+  --fg-third: #7575a5
+  --fg-gray: gray
+  --fg-button: #707080
+  --fg-name: #306090
+  --bg-nav: #303040
+  --bg-primary: #ffffff
+  --bg-secondary: #d0d0ea
+  --bg-third: #eaeaea
+  --bg-error: #f090a0
+  --bg-button: #ffffff
+  --bg-button-hover: #707580
+  --bg-button-secondary: #ffffff
+  --bg-menu-focused: #c0c0ff
+  --bg-menu-selected: #7070ff
+  --bg-gray: #495057
+  --border-primary: gray
+  --border-secondary: lightgray
+  --border-third: gray
+  --border-button: #808080
+  --border-forms: lightgray
+  --inventory-miss-full: lightcoral
+  --inventory-miss-part: #ffa040
+  --clan-icon-brightness: 100%
+  --icons-brightness: 100%
+  --logo-brightness: 100%
 
 body
   color: var(--fg-primary)
   background: var(--bg-primary)
 
-a, span.link-like, .name, .prob
-  color: var(--fg-link)
+a, span.link-like, .prob
+  color: var(--fg-secondary)
+
+a:hover, span.link-like:hover
+  color: var(--fg-secondary)
+
+.name
+  color: var(--fg-name)
 
 h5, .h5, h6, .h6
   font-weight: bold
@@ -69,9 +101,6 @@ h5, .h5, h6, .h6
   background: var(--bg-secondary)
   color: var(--fg-primary)
 
-div.input-group-append > button.btn-outline-secondary
-  border-color: var(--bg-secondary)
-
 button.btn-outline-secondary
   color: var(--fg-button)
   background: var(--bg-button)
@@ -79,6 +108,9 @@ button.btn-outline-secondary
 
 button.btn-outline-secondary:hover
   background: var(--bg-button-hover)
+
+label.btn-outline-secondary:not(.disabled).active
+  background: var(--bg-button-hover) !important
 
 .button-block
   padding-bottom: 3px
@@ -117,6 +149,10 @@ button.btn-outline-secondary:hover
     color: var(--fg-primary)
   &__indicators
     background: var(--bg-primary)
+  &__option--is-focused
+    background: var(--bg-menu-focused) !important
+  &__option--is-selected
+    background: var(--bg-menu-selected) !important
 
 .logo-box
   background: var(--bg-secondary)
@@ -125,6 +161,7 @@ button.btn-outline-secondary:hover
 
 .logo-image
   height: 48px
+  filter: brightness(var(--logo-brightness))
 
 .logo-text
   font-weight: bold
@@ -454,11 +491,16 @@ font-1.85
 
 .capacity-image-results
   height: 23px
-  opacity: var(--capacity-opacity)
+  filter: brightness(var(--icons-brightness))
 .discipline-base-image-results
   height: 24px
 .discipline-superior-image-results
   height: 27px
+.discipline-base-image-results,
+.discipline-base-image-forms,
+.discipline-superior-image-results,
+.discipline-superior-image-forms
+  filter: brightness(var(--icons-brightness))
 .clan-image-results
   height: 24px
   filter: brightness(var(--clan-icon-brightness))
@@ -468,13 +510,17 @@ font-1.85
   height: 24px
 .advanced-image-results
   height: 20px
+  filter: brightness(var(--icons-brightness))
 .type-image-results
   height: 25px
+  filter: brightness(var(--icons-brightness))
 .cost-blood-image-results
   height: 30px
   padding-top: 2px
+  filter: brightness(var(--icons-brightness))
 .cost-pool-image-results
   height: 35px
+  filter: brightness(var(--icons-brightness))
 .discipline-base-image-forms
   width: 34px
   height: 34px
