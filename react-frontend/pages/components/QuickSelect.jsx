@@ -51,9 +51,9 @@ function QuickSelect(props) {
 
   return (
     <AsyncSelect
+      classNamePrefix="react-select"
       cacheOptions
-      defaultOptions
-      autoFocus={props.isMobile ? false : true}
+      autoFocus={!props.isMobile}
       value={selectedValue}
       placeholder="Card Name"
       loadOptions={loadOptions}
