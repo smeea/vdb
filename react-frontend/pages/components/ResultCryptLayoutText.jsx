@@ -17,7 +17,7 @@ function ResultCryptLayoutText(props) {
           <div>
             <ResultCryptClan value={props.card['Clan']} />
           </div>
-          <div className="pl-2">
+          <div className="name pl-2">
             <b>{props.card['Name']}</b>
             {props.card['Banned'] && (
               <span className="pl-1">
