@@ -3,6 +3,7 @@
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt
+* Full precon decks name
 
 # FIX MOBILE
 * Optimize for tablet
@@ -16,6 +17,7 @@
 * Inventory add from precon
 * Offline PWA support
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name}
+* Search for similar TWD decks
 
 # MAYBE LATER FEATURES
 * Update cardbase script

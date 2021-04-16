@@ -4,6 +4,10 @@ flask-backend/venv/
 flask-backend/app.db
 flask-backend/.flaskenv
 react-frontend/node_modules/
-react-frontend/dist/
+react-frontend/dist/*
+!react-frontend/dist/amaranth_ids.json
+!react-frontend/dist/cardbase_crypt.json
+!react-frontend/dist/cardbase_library.json
+!react-frontend/dist/artistsCrypt.json
+!react-frontend/dist/artistsLibrary.json
 react-frontend/.cache/
-

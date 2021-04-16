@@ -50,6 +50,7 @@ Start backend:
 Start frontend:
 ```
     cd react-backend
+    cp -r assets/images dist
     npm install
     parcel serve index.html
 ```
