@@ -298,7 +298,7 @@ def get_library_by_set(request, library):
     r_set = request['set']
 
     if r_set == 'bcp':
-        for card in crypt:
+        for card in library:
             for c_set in card['Set'].keys():
                 if c_set in bcp_sets:
                     if card in match_cards:
@@ -327,7 +327,7 @@ def get_library_by_set(request, library):
                         match_cards.append(card)
 
     else:
-        for card in crypt:
+        for card in library:
             if r_set in card['Set']:
                 if 'only in' in request:
                     if len(card['Set'].keys()) == 1:
@@ -404,7 +404,7 @@ def get_library_by_precon(request, library):
     req = request['precon']
 
     if req == 'bcp':
-        for card in crypt:
+        for card in library:
             for c_set, c_subsets in card['Set'].items():
                 if c_set in bcp_sets:
                     for c_subset in c_subsets.keys():
@@ -437,7 +437,7 @@ def get_library_by_precon(request, library):
     else:
         [r_set, r_subset] = req.split(':')
 
-        for card in crypt:
+        for card in library:
             if r_set in card['Set'] and r_subset in card['Set'][r_set]:
                 if 'only in' in request:
                     if len(card['Set'].keys()) == 1:
