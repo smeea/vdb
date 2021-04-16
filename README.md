@@ -44,6 +44,7 @@ Start backend:
     pip install -r requirements.txt
     export FLASK_APP=api
     export FLASK_ENV=development
+    flask db init
     flask run
 ```
 
@@ -52,7 +53,7 @@ Start frontend:
     cd react-backend
     cp -r assets/images dist
     npm install
-    parcel serve index.html
+    npx parcel serve index.html
 ```
 
 ### Production Deployment
