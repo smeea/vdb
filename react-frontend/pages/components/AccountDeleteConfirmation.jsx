@@ -112,7 +112,7 @@ function AccountDeleteConfirmation(props) {
                 >
                   {hidePassword ? <EyeFill /> : <EyeSlashFill />}
                 </Button>
-                <Button variant="outline-danger" type="submit">
+                <Button variant="danger" type="submit">
                   Delete
                 </Button>
                 <Button

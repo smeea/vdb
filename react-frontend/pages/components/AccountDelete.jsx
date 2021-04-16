@@ -8,10 +8,7 @@ function AccountDelete(props) {
 
   return (
     <>
-      <Button
-        variant="outline-danger"
-        onClick={() => setShowConfirmation(true)}
-      >
+      <Button variant="danger" onClick={() => setShowConfirmation(true)}>
         <TrashFill />
         <span className="ml-1">Delete account</span>
       </Button>

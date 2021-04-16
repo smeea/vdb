@@ -26,7 +26,7 @@ function DeleteConfirmation(props) {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="outline-danger" onClick={props.handleConfirm}>
+          <Button variant="danger" onClick={props.handleConfirm}>
             Delete
           </Button>
           <Button variant="outline-secondary" onClick={props.handleCancel}>
