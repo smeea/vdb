@@ -1,6 +1,6 @@
 # VDB
 
-VDB is web service for card search, deck building & inventory management for [Vampire the Eternal Struggle (VTES)][https://www.vekn.net/what-is-v-tes] collectible card game.
+VDB is web service for card search, deck building & inventory management for [Vampire the Eternal Struggle (VTES)](https://www.vekn.net/what-is-v-tes) collectible card game.
 
 Public instance is available at https://vdb.smeea.casa.
 
@@ -83,4 +83,4 @@ There are no coding style requirements established.
 ## LICENSE
 
 MIT for everything, except:
-- Card images and game-related icons at `react-frontend/assets/images/`, which are copyrighted by Paradox Interactive AB and used under [Dark Pack][https://www.worldofdarkness.com/dark-pack] agreement.
+- Card images and game-related icons at `react-frontend/assets/images/`, which are copyrighted by Paradox Interactive AB and used under [Dark Pack](https://www.worldofdarkness.com/dark-pack) agreement.
