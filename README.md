@@ -70,9 +70,7 @@ For reference:
 Public instance at https://vdb.smeea.casa runs from master branch without any changes (except database, which is excluded from this repo) using `gunicorn` and `nginx`.
 
 ## SUPPORT / HELP
-If you need support/help don't hesitate to fill Issue or contact me.
-
-## CONTACTS
+If you need support/help don't hesitate to fill Issue or send me an email to smeea@riseup.net.
 
 ## CONTRIBUTION
 Contributions in both frontend and backend parts are welcome, but please create an issue first to discuss if the feature/fix (and it's particular implementation) can be merged at all before spending any resources.
