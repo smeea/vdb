@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Navigation from './pages/Navigation.jsx';
 import ThemeContext from './context/ThemeContext';
+import AppContext from './context/AppContext';
 import defaultsTwdForm from './pages/components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from './pages/components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from './pages/components/forms_data/defaultsLibraryForm.json';
@@ -26,16 +27,9 @@ const Cards = lazy(() => import('./pages/Cards.jsx'));
 const Inventory = lazy(() => import('./pages/Inventory.jsx'));
 
 function App(props) {
-  const isMobile = window.matchMedia('(max-width: 540px)').matches;
-  const isWide = window.matchMedia('(min-width: 1600px)').matches;
-
   const [twdFormState, setTwdFormState] = useState(defaultsTwdForm);
   const [cryptFormState, setCryptFormState] = useState(defaultsCryptForm);
   const [libraryFormState, setLibraryFormState] = useState(defaultsLibraryForm);
-
-  const [username, setUsername] = useState(undefined);
-  const [publicName, setPublicName] = useState(undefined);
-  const [email, setEmail] = useState(undefined);
 
   const [showImage, setShowImage] = useState(true);
   const [addMode, setAddMode] = useState(false);
@@ -74,6 +68,16 @@ function App(props) {
   const [timers, setTimers] = useState([]);
 
   const { isDarkTheme, toggleTheme } = React.useContext(ThemeContext);
+  const {
+    isMobile,
+    isWide,
+    username,
+    setUsername,
+    publicName,
+    setPublicName,
+    email,
+    setEmail,
+  } = React.useContext(AppContext);
 
   const deckRouter = (pointer) => {
     if (pointer) {
@@ -524,7 +528,6 @@ function App(props) {
           Object.keys(decks[deckid].library).forEach((id) => {
             if (decks[deckid].library[id].q) {
               if (hardLibrary[id]) {
-                hardLibrary[id][deckid] = decks[deckid].library[id].q;
               } else {
                 hardLibrary[id] = {};
                 hardLibrary[id][deckid] = decks[deckid].library[id].q;
@@ -614,7 +617,6 @@ function App(props) {
     <div className="App">
       <Router>
         <Navigation
-          isMobile={isMobile}
           showCryptSearch={showCryptSearch}
           showLibrarySearch={showLibrarySearch}
           username={username}

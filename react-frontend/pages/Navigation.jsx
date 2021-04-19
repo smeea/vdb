@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import LightningFill from '../assets/images/icons/lightning-fill.svg';
@@ -8,8 +8,11 @@ import ToggleOn from '../assets/images/icons/toggle-on.svg';
 import ToggleOff from '../assets/images/icons/toggle-off.svg';
 import SunFill from '../assets/images/icons/sun-fill.svg';
 import MoonFill from '../assets/images/icons/moon-fill.svg';
+import AppContext from '../context/AppContext.js';
 
 function Navigation(props) {
+  const { isMobile } = useContext(AppContext);
+
   const NavBar = ({ location }) => {
     return (
       <Navbar sticky="top" variant="dark">
@@ -22,7 +25,7 @@ function Navigation(props) {
               {props.isDarkTheme ? <MoonFill /> : <SunFill />}
             </div>
             {props.username &&
-              !props.isMobile &&
+              !isMobile &&
               (props.location.pathname == '/decks' ||
                 props.location.pathname == '/crypt' ||
                 props.location.pathname == '/library' ||
@@ -61,13 +64,13 @@ function Navigation(props) {
               {props.username ? <PersonFill /> : 'Login'}
             </NavLink>
             <NavLink to="/about" className="nav-link pr-2 pl-1">
-              {props.isMobile ? <InfoCircleFill /> : 'About'}
+              {isMobile ? <InfoCircleFill /> : 'About'}
             </NavLink>
             <NavLink to="/twd" className="nav-link pr-2 pl-1">
               TWD
             </NavLink>
             <NavLink to="/inventory" className="nav-link pr-2 pl-1">
-              {props.isMobile ? 'Inv' : 'Inventory'}
+              {isMobile ? 'Inv' : 'Inventory'}
             </NavLink>
             <NavLink to="/decks" className="nav-link pr-2 pl-1">
               Decks
