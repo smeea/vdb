@@ -799,15 +799,17 @@ div.float-inventory svg
 .modal-deck-draw
   width: 65%
 
-.opacity-015
-  opacity: 0.15
-
 .opacity-035
-  opacity: 0.35
+  opacity: 35%
 
 td.inventory-card-custom
   position: absolute
   left: -6px
-  margin-top: 10px
   border: none
-  opacity: 0.75
+  color: var(--fg-primary)
+
+td.inventory-card-custom .not-selected
+  opacity: 0%
+
+tr:hover td.inventory-card-custom .not-selected
+  opacity: 35%

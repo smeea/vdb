@@ -127,9 +127,9 @@ function DeckCryptTable(props) {
               {props.inventoryMode ? (
                 <>
                   {deckInvType && !props.inSearch && !props.isMobile ? (
-                    <td className="inventory-card-custom">
+                    <td className="d-flex align-items-center inventory-card-custom">
                       <div
-                        className={cardInvType ? '' : 'opacity-015'}
+                        className={cardInvType ? '' : 'not-selected'}
                         onClick={() =>
                           props.deckUpdate(
                             props.deckid,
