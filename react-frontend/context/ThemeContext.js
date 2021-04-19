@@ -86,7 +86,7 @@ const darkTheme = [
   '--bg-primary: #252530',
   '--bg-secondary: #353545',
   '--bg-third: #303040',
-  '--bg-error: #c00000',
+  '--bg-error: #952010',
   '--bg-warning: #b08000',
   '--bg-button: #404050',
   '--bg-button-hover: #505060',

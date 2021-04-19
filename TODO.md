@@ -9,19 +9,23 @@
 * Optimize for tablet
 
 # FEATURES
-* Quick card to show on single result
 * If no results but url on mobile to run search
 * Create revocable link to Inventory
 * Mark pdf-sets in inventory-mode
 * Show missing cards for inventory
 * Inventory add from precon
+* Inventory add from decks with select form (mark decks already in)
 * Offline PWA support
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name}
 * Search for similar TWD decks
+* Search with text exclusion
+* Documentation on regex search
 
 # MAYBE LATER FEATURES
 * Update cardbase script
 * Documentation on updates / update script
+* Card text update
+* Site localization
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Sync: websockets
