@@ -48,6 +48,12 @@ function Documentation(props) {
                   Accept latin-only and unicode letters as card name (e.g. will
                   match Lise & Lisé, Zurich & Zürich)
                 </li>
+                <li>
+                  Accept{' '}
+                  <a href="https://www.w3schools.com/python/python_regex.asp">
+                    Python Regular Expressions
+                  </a>
+                </li>
               </ul>
 
               <h6>Traits</h6>
@@ -91,10 +97,14 @@ function Documentation(props) {
                 </li>
                 <li>Case insensitive</li>
                 <li>
-                  Accept Latin-only or Unicode letters as card name
-                  <ul>
-                    <li>E.g.: will match Lise & Lisé, Zurich and Zürich</li>
-                  </ul>
+                  Accept latin-only and unicode letters as card name (e.g. will
+                  match Lise & Lisé, Zurich & Zürich)
+                </li>
+                <li>
+                  Accept{' '}
+                  <a href="https://www.w3schools.com/python/python_regex.asp">
+                    Python Regular Expressions
+                  </a>
                 </li>
               </ul>
 

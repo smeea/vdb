@@ -18,7 +18,6 @@
 * Offline PWA support
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name}
 * Search for similar TWD decks
-* Documentation on regex search
 
 # MAYBE LATER FEATURES
 * Update cardbase script
