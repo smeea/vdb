@@ -44,12 +44,15 @@ function App(props) {
 
   const [inventoryCrypt, setInventoryCrypt] = useState({});
   const [inventoryLibrary, setInventoryLibrary] = useState({});
-  const [usedCards, setUsedCards] = useState({
-    softCrypt: {},
-    hardCrypt: {},
-    softLibrary: {},
-    hardLibrary: {},
+  const [usedCryptCards, setUsedCryptCards] = useState({
+    soft: {},
+    hard: {},
   });
+  const [usedLibraryCards, setUsedLibraryCards] = useState({
+    soft: {},
+    hard: {},
+  });
+
   const isInventory =
     Object.keys(inventoryCrypt).length > 0 ||
     Object.keys(inventoryLibrary).length > 0;
@@ -170,9 +173,11 @@ function App(props) {
       body: JSON.stringify(cards),
     };
 
-    const oldState = { ...inventory };
+    const oldCryptState = { ...inventoryCrypt };
+    const oldLibraryState = { ...inventoryLibrary };
     fetch(url, options).catch((error) => {
-      setInventory(oldState);
+      setInventoryCrypt(oldCryptState);
+      setInventoryLibrary(oldLibraryState);
     });
 
     inventoryAddToState(cards);
@@ -181,23 +186,23 @@ function App(props) {
   const inventoryAddToState = (cards) => {
     Object.keys(cards).forEach((cardid) => {
       if (cardid > 200000) {
-        setInventory((prevState) => {
+        setInventoryCrypt((prevState) => {
           const oldState = { ...prevState };
-          oldState.crypt[cardid] = {
+          oldState[cardid] = {
             c: cryptCardBase[cardid],
-            q: prevState.crypt[cardid]
-              ? prevState.crypt[cardid].q + cards[cardid]
+            q: prevState[cardid]
+              ? prevState[cardid].q + cards[cardid]
               : cards[cardid],
           };
           return oldState;
         });
       } else {
-        setInventory((prevState) => {
+        setInventoryLibrary((prevState) => {
           const oldState = { ...prevState };
-          oldState.library[cardid] = {
+          oldState[cardid] = {
             c: libraryCardBase[cardid],
-            q: prevState.library[cardid]
-              ? prevState.library[cardid].q + cards[cardid]
+            q: prevState[cardid]
+              ? prevState[cardid].q + cards[cardid]
               : cards[cardid],
           };
           return oldState;
@@ -218,24 +223,31 @@ function App(props) {
       body: JSON.stringify({ [cardid]: 1 }),
     };
 
-    const oldState = { ...inventory };
-    fetch(url, options).catch((error) => {
-      setInventory(oldState);
-    });
-
     if (cardid > 200000) {
-      setInventory((prevState) => {
+      const oldState = { ...inventoryCrypt };
+
+      fetch(url, options).catch((error) => {
+        setInventoryCrypt(oldState);
+      });
+
+      setInventoryCrypt((prevState) => {
         const oldState = { ...prevState };
-        oldState['crypt'][cardid] = {
+        oldState[cardid] = {
           c: cryptCardBase[cardid],
           q: 1,
         };
         return oldState;
       });
     } else {
-      setInventory((prevState) => {
+      const oldState = { ...inventoryLibrary };
+
+      fetch(url, options).catch((error) => {
+        setInventoryLibrary(oldState);
+      });
+
+      setInventoryLibrary((prevState) => {
         const oldState = { ...prevState };
-        oldState['library'][cardid] = {
+        oldState[cardid] = {
           c: libraryCardBase[cardid],
           q: 1,
         };
@@ -261,27 +273,25 @@ function App(props) {
         const oldState = { ...inventoryCrypt };
 
         fetch(url, options).catch((error) => {
-          setInventory(oldState);
+          setInventoryCrypt(oldState);
         });
 
         if (count >= 0) {
           setInventoryCrypt((prevState) => {
-            const oldState = { ...prevState };
-            if (oldState[cardid]) {
-              oldState[cardid].q = count;
+            if (prevState[cardid]) {
+              prevState[cardid].q = count;
             } else {
-              oldState[cardid] = {
+              prevState[cardid] = {
                 q: count,
                 c: cryptCardBase[cardid],
               };
             }
-            return oldState;
+            return prevState;
           });
         } else {
-          setInventory((prevState) => {
-            const oldState = { ...prevState };
-            delete oldState[cardid];
-            return oldState;
+          setInventoryCrypt((prevState) => {
+            delete prevState[cardid];
+            return prevState;
           });
         }
       }
@@ -290,7 +300,7 @@ function App(props) {
         const oldState = { ...inventoryLibrary };
 
         fetch(url, options).catch((error) => {
-          setInventory(oldState);
+          setInventoryLibrary(oldState);
         });
 
         if (count >= 0) {
@@ -307,7 +317,7 @@ function App(props) {
             return oldState;
           });
         } else {
-          setInventory((prevState) => {
+          setInventoryLibrary((prevState) => {
             const oldState = { ...prevState };
             delete oldState[cardid];
             return oldState;
@@ -516,7 +526,7 @@ function App(props) {
   }, [decks]);
 
   useEffect(() => {
-    if (inventoryCrypt && inventoryLibrary && decks) {
+    if (decks) {
       const softCrypt = {};
       const softLibrary = {};
       const hardCrypt = {};
@@ -611,14 +621,16 @@ function App(props) {
           }
         });
       });
-      setUsedCards({
-        softCrypt: softCrypt,
-        softLibrary: softLibrary,
-        hardCrypt: hardCrypt,
-        hardLibrary: hardLibrary,
+      setUsedCryptCards({
+        soft: softCrypt,
+        hard: hardCrypt,
+      });
+      setUsedLibraryCards({
+        soft: softLibrary,
+        hard: hardLibrary,
       });
     }
-  }, [inventoryCrypt, inventoryLibrary, decks]);
+  }, [decks]);
 
   useEffect(() => {
     whoAmI();
@@ -700,7 +712,8 @@ function App(props) {
                 inventoryLibrary={inventoryLibrary}
                 inventoryMode={inventoryMode}
                 setInventoryMode={setInventoryMode}
-                usedCards={usedCards}
+                usedCryptCards={usedCryptCards}
+                usedLibraryCards={usedLibraryCards}
                 decks={decks}
                 formState={twdFormState}
                 setFormState={setTwdFormState}
@@ -727,7 +740,8 @@ function App(props) {
                 whoAmI={whoAmI}
                 username={username}
                 setUsername={setUsername}
-                usedCards={usedCards}
+                usedCryptCards={usedCryptCards}
+                usedLibraryCards={usedLibraryCards}
                 decks={decks}
               />
             </Route>
@@ -739,7 +753,8 @@ function App(props) {
                 isWide={isWide}
                 decks={decks}
                 preconDecks={preconDecks}
-                usedCards={usedCards}
+                usedCryptCards={usedCryptCards}
+                usedLibraryCards={usedLibraryCards}
                 getDecks={getDecks}
                 activeDeck={activeDeck}
                 setActiveDeck={setActiveDeck}
@@ -796,7 +811,8 @@ function App(props) {
                 setFormState={setCryptFormState}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
-                usedCards={usedCards}
+                usedCryptCards={usedCryptCards}
+                usedLibraryCards={usedLibraryCards}
                 username={username}
               />
             </Route>
@@ -835,7 +851,8 @@ function App(props) {
                 setFormState={setLibraryFormState}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
-                usedCards={usedCards}
+                usedCryptCards={usedCryptCards}
+                usedLibraryCards={usedLibraryCards}
                 username={username}
               />
             </Route>

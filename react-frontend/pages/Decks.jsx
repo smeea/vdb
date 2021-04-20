@@ -41,17 +41,17 @@ function Decks(props) {
 
     Object.keys(deck.crypt).map((card) => {
       let softUsedMax = 0;
-      if (props.usedCards.softCrypt[card]) {
-        Object.keys(props.usedCards.softCrypt[card]).map((id) => {
-          if (softUsedMax < props.usedCards.softCrypt[card][id]) {
-            softUsedMax = props.usedCards.softCrypt[card][id];
+      if (props.usedCryptCards.soft[card]) {
+        Object.keys(props.usedCryptCards.soft[card]).map((id) => {
+          if (softUsedMax < props.usedCryptCards.soft[card][id]) {
+            softUsedMax = props.usedCryptCards.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (props.usedCards.hardCrypt[card]) {
-        Object.keys(props.usedCards.hardCrypt[card]).map((id) => {
-          hardUsedTotal += props.usedCards.hardCrypt[card][id];
+      if (props.usedCryptCards.hard[card]) {
+        Object.keys(props.usedCryptCards.hard[card]).map((id) => {
+          hardUsedTotal += props.usedCryptCards.hard[card][id];
         });
       }
 
@@ -74,17 +74,17 @@ function Decks(props) {
 
     Object.keys(deck.library).map((card) => {
       let softUsedMax = 0;
-      if (props.usedCards.softLibrary[card]) {
-        Object.keys(props.usedCards.softLibrary[card]).map((id) => {
-          if (softUsedMax < props.usedCards.softLibrary[card][id]) {
-            softUsedMax = props.usedCards.softLibrary[card][id];
+      if (props.usedLibraryCards.soft[card]) {
+        Object.keys(props.usedLibraryCards.soft[card]).map((id) => {
+          if (softUsedMax < props.usedLibraryCards.soft[card][id]) {
+            softUsedMax = props.usedLibraryCards.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (props.usedCards.hardLibrary[card]) {
-        Object.keys(props.usedCards.hardLibrary[card]).map((id) => {
-          hardUsedTotal += props.usedCards.hardLibrary[card][id];
+      if (props.usedLibraryCards.hard[card]) {
+        Object.keys(props.usedLibraryCards.hard[card]).map((id) => {
+          hardUsedTotal += props.usedLibraryCards.hard[card][id];
         });
       }
 
@@ -467,10 +467,7 @@ function Decks(props) {
                   inventoryMode={props.inventoryMode}
                   inventoryCrypt={props.inventoryCrypt}
                   decks={props.decks}
-                  usedCards={{
-                    soft: props.usedCards.softCrypt,
-                    hard: props.usedCards.hardCrypt,
-                  }}
+                  usedCards={props.usedCryptCards}
                   deckUpdate={deckUpdate}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}
@@ -491,10 +488,7 @@ function Decks(props) {
                   inventoryMode={props.inventoryMode}
                   inventoryLibrary={props.inventoryLibrary}
                   decks={props.decks}
-                  usedCards={{
-                    soft: props.usedCards.softLibrary,
-                    hard: props.usedCards.hardLibrary,
-                  }}
+                  usedCards={props.usedLibraryCards}
                   deckUpdate={deckUpdate}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}

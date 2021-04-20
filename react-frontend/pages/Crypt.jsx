@@ -93,10 +93,7 @@ function Crypt(props) {
                     cardBase={props.cryptCardBase}
                     inventoryMode={props.inventoryMode}
                     inventoryCrypt={props.inventoryCrypt}
-                    usedCards={{
-                      soft: props.usedCards.softCrypt,
-                      hard: props.usedCards.hardCrypt,
-                    }}
+                    usedCards={props.usedCryptCards}
                     decks={props.decks}
                     inSearch={true}
                   />
@@ -114,10 +111,7 @@ function Crypt(props) {
                     cardBase={props.libraryCardBase}
                     inventoryMode={props.inventoryMode}
                     inventoryLibrary={props.inventoryLibrary}
-                    usedCards={{
-                      soft: props.usedCards.softLibrary,
-                      hard: props.usedCards.hardLibrary,
-                    }}
+                    usedCards={props.usedLibraryCards}
                     decks={props.decks}
                     inSearch={true}
                   />
@@ -162,10 +156,7 @@ function Crypt(props) {
               inventoryMode={props.inventoryMode}
               setInventoryMode={props.setInventoryMode}
               inventoryCrypt={props.inventoryCrypt}
-              usedCards={{
-                soft: props.usedCards.softCrypt,
-                hard: props.usedCards.hardCrypt,
-              }}
+              usedCards={props.usedCryptCards}
               decks={props.decks}
             />
           )}

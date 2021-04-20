@@ -62,10 +62,7 @@ function TwdResultLibraryByType(props) {
                 cards={props.cards}
                 inventoryMode={props.inventoryMode}
                 inventoryLibrary={props.inventoryLibrary}
-                usedCards={{
-                  soft: props.usedCards.softLibrary,
-                  hard: props.usedCards.hardLibrary,
-                }}
+                usedCards={props.usedLibraryCards}
                 decks={props.decks}
               />
             </Popover.Content>
@@ -105,7 +102,7 @@ function TwdResultLibraryByType(props) {
                   cards={libraryByType[cardtype]}
                   inventoryMode={props.inventoryMode}
                   inventoryLibrary={props.inventoryLibrary}
-                  usedCards={props.usedCards}
+                  usedCards={props.usedLibraryCards}
                   decks={props.decks}
                 />
               }

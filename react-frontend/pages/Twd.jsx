@@ -40,7 +40,8 @@ function Twd(props) {
               inventoryCrypt={props.inventoryCrypt}
               inventoryLibrary={props.inventoryLibrary}
               inventoryMode={props.inventoryMode}
-              usedCards={props.usedCards}
+              usedCryptCards={props.usedLibraryCards}
+              usedLibraryCards={props.usedCryptCards}
               decks={props.decks}
             />
           )}
