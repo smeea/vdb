@@ -5,7 +5,7 @@ import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
-import DeckCardQuantity from './DeckCardQuantity.jsx';
+import InventoryCardQuantity from './InventoryCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
@@ -118,14 +118,11 @@ function InventoryLibraryTable(props) {
               }
             >
               <div>
-                <DeckCardQuantity
+                <InventoryCardQuantity
                   cardid={card.c['Id']}
                   q={card.q}
-                  deckid={props.deckid}
                   cardChange={props.cardChange}
                   isMobile={props.isMobile}
-                  inInventory={card.q}
-                  inventoryType={true}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
                 />

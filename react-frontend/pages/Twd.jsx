@@ -37,7 +37,8 @@ function Twd(props) {
               username={props.username}
               showFloatingButtons={showFloatingButtons}
               setShowFloatingButtons={setShowFloatingButtons}
-              inventory={props.inventory}
+              inventoryCrypt={props.inventoryCrypt}
+              inventoryLibrary={props.inventoryLibrary}
               inventoryMode={props.inventoryMode}
               usedCards={props.usedCards}
               decks={props.decks}

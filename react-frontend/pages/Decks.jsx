@@ -58,7 +58,7 @@ function Decks(props) {
       let miss = softUsedMax + hardUsedTotal;
       if (!deck.inventory_type && deck.crypt[card].q > softUsedMax)
         miss += deck.crypt[card].q - softUsedMax;
-      if (props.inventory.crypt[card]) miss -= props.inventory.crypt[card].q;
+      if (props.inventoryCrypt[card]) miss -= props.inventoryCrypt[card].q;
 
       if (miss > 0) {
         crypt[card] = { ...deck.crypt[card] };
@@ -91,8 +91,7 @@ function Decks(props) {
       let miss = softUsedMax + hardUsedTotal;
       if (!deck.inventory_type && deck.library[card].q > softUsedMax)
         miss += deck.library[card].q - softUsedMax;
-      if (props.inventory.library[card])
-        miss -= props.inventory.library[card].q;
+      if (props.inventoryLibrary[card]) miss -= props.inventoryLibrary[card].q;
 
       if (miss > 0) {
         library[card] = { ...deck.library[card] };
@@ -466,7 +465,7 @@ function Decks(props) {
                   isWide={props.isWide}
                   cardBase={props.cryptCardBase}
                   inventoryMode={props.inventoryMode}
-                  inventoryCrypt={props.inventory.crypt}
+                  inventoryCrypt={props.inventoryCrypt}
                   decks={props.decks}
                   usedCards={{
                     soft: props.usedCards.softCrypt,
@@ -490,7 +489,7 @@ function Decks(props) {
                   isWide={props.isWide}
                   cardBase={props.libraryCardBase}
                   inventoryMode={props.inventoryMode}
-                  inventoryLibrary={props.inventory.library}
+                  inventoryLibrary={props.inventoryLibrary}
                   decks={props.decks}
                   usedCards={{
                     soft: props.usedCards.softLibrary,

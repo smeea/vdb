@@ -20,6 +20,7 @@
 * Search for similar TWD decks
 * Search with text exclusion
 * Documentation on regex search
+* Improve inventory performance on many entries
 
 # MAYBE LATER FEATURES
 * Update cardbase script

@@ -5,7 +5,7 @@ import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
-import DeckCardQuantity from './DeckCardQuantity.jsx';
+import InventoryCardQuantity from './InventoryCardQuantity.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
@@ -108,14 +108,11 @@ function InventoryCryptTable(props) {
               }
             >
               <div>
-                <DeckCardQuantity
+                <InventoryCardQuantity
                   cardid={card.c['Id']}
                   q={card.q}
-                  deckid={props.deckid}
                   cardChange={props.cardChange}
                   isMobile={props.isMobile}
-                  inInventory={card.q}
-                  inventoryType={true}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
                 />

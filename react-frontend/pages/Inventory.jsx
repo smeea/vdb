@@ -32,17 +32,17 @@ function Inventory(props) {
                   <div className="pt-1 px-1">
                     <DeckNewCryptCard
                       cardAdd={props.cardAdd}
-                      cards={props.inventory.crypt}
+                      cards={props.inventoryCrypt}
                       cardBase={props.cryptCardBase}
                       setNewId={setNewCryptId}
                       inInventory={true}
                     />
                   </div>
-                  {newCryptId && props.inventory.crypt[newCryptId] && (
+                  {newCryptId && props.inventoryCrypt[newCryptId] && (
                     <div className="pb-2 pt-3">
                       <InventoryCrypt
                         cards={{
-                          [newCryptId]: props.inventory.crypt[newCryptId],
+                          [newCryptId]: props.inventoryCrypt[newCryptId],
                         }}
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
@@ -62,13 +62,13 @@ function Inventory(props) {
                       />
                     </div>
                   )}
-                  {props.inventory.crypt &&
+                  {props.inventoryCrypt &&
                     (props.usedCards.softCrypt ||
                       props.usedCards.hardCrypt) && (
                       <div className="pt-1">
                         <InventoryCrypt
                           category={category}
-                          cards={props.inventory.crypt}
+                          cards={props.inventoryCrypt}
                           showImage={props.showImage}
                           setShowImage={props.setShowImage}
                           isAuthor={true}
@@ -92,17 +92,17 @@ function Inventory(props) {
                   <div className="pt-1 px-1">
                     <DeckNewLibraryCard
                       cardAdd={props.cardAdd}
-                      cards={props.inventory.library}
+                      cards={props.inventoryLibrary}
                       cardBase={props.libraryCardBase}
                       setNewId={setNewLibraryId}
                       inInventory={true}
                     />
                   </div>
-                  {newLibraryId && props.inventory.library[newLibraryId] && (
+                  {newLibraryId && props.inventoryLibrary[newLibraryId] && (
                     <div className="pb-2 pt-3">
                       <InventoryLibrary
                         cards={{
-                          [newLibraryId]: props.inventory.library[newLibraryId],
+                          [newLibraryId]: props.inventoryLibrary[newLibraryId],
                         }}
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
@@ -122,13 +122,13 @@ function Inventory(props) {
                       />
                     </div>
                   )}
-                  {props.inventory.library &&
+                  {props.inventoryLibrary &&
                     (props.usedCards.softLibrary ||
                       props.usedCards.hardLibrary) && (
                       <div className="pt-1">
                         <InventoryLibrary
                           category={category}
-                          cards={props.inventory.library}
+                          cards={props.inventoryLibrary}
                           showImage={props.showImage}
                           setShowImage={props.setShowImage}
                           isAuthor={true}
@@ -167,16 +167,16 @@ function Inventory(props) {
               <Col lg={5} className="px-0 px-lg-3">
                 <DeckNewCryptCard
                   cardAdd={props.cardAdd}
-                  cards={props.inventory.crypt}
+                  cards={props.inventoryCrypt}
                   cardBase={props.cryptCardBase}
                   setNewId={setNewCryptId}
                   inInventory={true}
                 />
-                {newCryptId && props.inventory.crypt[newCryptId] && (
+                {newCryptId && props.inventoryCrypt[newCryptId] && (
                   <div className="pt-4">
                     <InventoryCrypt
                       cards={{
-                        [newCryptId]: props.inventory.crypt[newCryptId],
+                        [newCryptId]: props.inventoryCrypt[newCryptId],
                       }}
                       showImage={props.showImage}
                       setShowImage={props.setShowImage}
@@ -196,12 +196,12 @@ function Inventory(props) {
                     />
                   </div>
                 )}
-                {props.inventory.crypt &&
+                {props.inventoryCrypt &&
                   (props.usedCards.softCrypt || props.usedCards.hardCrypt) && (
                     <div className="pt-4">
                       <InventoryCrypt
                         category={category}
-                        cards={props.inventory.crypt}
+                        cards={props.inventoryCrypt}
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
                         isAuthor={true}
@@ -223,16 +223,16 @@ function Inventory(props) {
               <Col lg={4} className="px-0 px-lg-3">
                 <DeckNewLibraryCard
                   cardAdd={props.cardAdd}
-                  cards={props.inventory.library}
+                  cards={props.inventoryLibrary}
                   cardBase={props.libraryCardBase}
                   setNewId={setNewLibraryId}
                   inInventory={true}
                 />
-                {newLibraryId && props.inventory.library[newLibraryId] && (
+                {newLibraryId && props.inventoryLibrary[newLibraryId] && (
                   <div className="pt-4">
                     <InventoryLibrary
                       cards={{
-                        [newLibraryId]: props.inventory.library[newLibraryId],
+                        [newLibraryId]: props.inventoryLibrary[newLibraryId],
                       }}
                       showImage={props.showImage}
                       setShowImage={props.setShowImage}
@@ -252,13 +252,13 @@ function Inventory(props) {
                     />
                   </div>
                 )}
-                {props.inventory.library &&
+                {props.inventoryLibrary &&
                   (props.usedCards.softLibrary ||
                     props.usedCards.hardLibrary) && (
                     <div className="pt-4">
                       <InventoryLibrary
                         category={category}
-                        cards={props.inventory.library}
+                        cards={props.inventoryLibrary}
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
                         isAuthor={true}

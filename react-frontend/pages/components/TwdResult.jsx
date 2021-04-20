@@ -62,7 +62,7 @@ function TwdResult(props) {
                         setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                         inventoryMode={props.inventoryMode}
-                        inventoryCrypt={props.inventory.crypt}
+                        inventoryCrypt={props.inventoryCrypt}
                         usedCards={{
                           soft: props.usedCards.softCrypt,
                           hard: props.usedCards.hardCrypt,
@@ -77,7 +77,7 @@ function TwdResult(props) {
                         showImage={props.showImage}
                         setShowImage={props.setShowImage}
                         inventoryMode={props.inventoryMode}
-                        inventory={props.inventory}
+                        inventoryLibrary={props.inventoryLibrary}
                         usedCards={props.usedCards}
                         decks={props.decks}
                       />
@@ -90,7 +90,7 @@ function TwdResult(props) {
                         setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                         inventoryMode={props.inventoryMode}
-                        inventoryLibrary={props.inventory.library}
+                        inventoryLibrary={props.inventoryLibrary}
                         usedCards={{
                           soft: props.usedCards.softLibrary,
                           hard: props.usedCards.hardLibrary,
@@ -109,7 +109,7 @@ function TwdResult(props) {
                         setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                         inventoryMode={props.inventoryMode}
-                        inventoryCrypt={props.inventory.crypt}
+                        inventoryCrypt={props.inventoryCrypt}
                         usedCards={{
                           soft: props.usedCards.softCrypt,
                           hard: props.usedCards.hardCrypt,
@@ -125,7 +125,7 @@ function TwdResult(props) {
                         setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                         inventoryMode={props.inventoryMode}
-                        inventoryLibrary={props.inventory.library}
+                        inventoryLibrary={props.inventoryLibrary}
                         usedCards={{
                           soft: props.usedCards.softLibrary,
                           hard: props.usedCards.hardLibrary,

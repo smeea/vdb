@@ -42,7 +42,8 @@ function App(props) {
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
-  const [inventory, setInventory] = useState({ crypt: {}, library: {} });
+  const [inventoryCrypt, setInventoryCrypt] = useState({});
+  const [inventoryLibrary, setInventoryLibrary] = useState({});
   const [usedCards, setUsedCards] = useState({
     softCrypt: {},
     hardCrypt: {},
@@ -50,8 +51,8 @@ function App(props) {
     hardLibrary: {},
   });
   const isInventory =
-    Object.keys(inventory.crypt).length > 0 ||
-    Object.keys(inventory.library).length > 0;
+    Object.keys(inventoryCrypt).length > 0 ||
+    Object.keys(inventoryLibrary).length > 0;
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
@@ -137,7 +138,8 @@ function App(props) {
           Object.keys(data.library).map((i) => {
             data.library[i].c = libraryCardBase[i];
           });
-          setInventory(data);
+          setInventoryCrypt(data.crypt);
+          setInventoryLibrary(data.library);
         }
       });
   };
@@ -242,7 +244,7 @@ function App(props) {
     }
   };
 
-  const inventoryCardChange = (deckid, cardid, count) => {
+  const inventoryCardChange = (cardid, count) => {
     const url = `${process.env.API_URL}inventory/change`;
     const options = {
       method: 'POST',
@@ -253,37 +255,64 @@ function App(props) {
       },
       body: JSON.stringify({ [cardid]: count }),
     };
-    const part = cardid > 200000 ? 'crypt' : 'library';
 
-    if (count >= 0 || (count < 0 && inventory[part][cardid])) {
-      const oldState = { ...inventory };
+    if (cardid > 200000) {
+      if (count >= 0 || (count < 0 && inventoryCrypt[cardid])) {
+        const oldState = { ...inventoryCrypt };
 
-      fetch(url, options).catch((error) => {
-        setInventory(oldState);
-      });
-
-      if (count >= 0) {
-        setInventory((prevState) => {
-          const oldState = { ...prevState };
-          if (oldState[part][cardid]) {
-            oldState[part][cardid].q = count;
-          } else {
-            oldState[part][cardid] = {
-              q: count,
-              c:
-                part == 'crypt'
-                  ? cryptCardBase[cardid]
-                  : libraryCardBase[cardid],
-            };
-          }
-          return oldState;
+        fetch(url, options).catch((error) => {
+          setInventory(oldState);
         });
-      } else {
-        setInventory((prevState) => {
-          const oldState = { ...prevState };
-          delete oldState[part][cardid];
-          return oldState;
+
+        if (count >= 0) {
+          setInventoryCrypt((prevState) => {
+            const oldState = { ...prevState };
+            if (oldState[cardid]) {
+              oldState[cardid].q = count;
+            } else {
+              oldState[cardid] = {
+                q: count,
+                c: cryptCardBase[cardid],
+              };
+            }
+            return oldState;
+          });
+        } else {
+          setInventory((prevState) => {
+            const oldState = { ...prevState };
+            delete oldState[cardid];
+            return oldState;
+          });
+        }
+      }
+    } else {
+      if (count >= 0 || (count < 0 && inventoryLibrary[cardid])) {
+        const oldState = { ...inventoryLibrary };
+
+        fetch(url, options).catch((error) => {
+          setInventory(oldState);
         });
+
+        if (count >= 0) {
+          setInventoryLibrary((prevState) => {
+            const oldState = { ...prevState };
+            if (oldState[cardid]) {
+              oldState[cardid].q = count;
+            } else {
+              oldState[cardid] = {
+                q: count,
+                c: libraryCardBase[cardid],
+              };
+            }
+            return oldState;
+          });
+        } else {
+          setInventory((prevState) => {
+            const oldState = { ...prevState };
+            delete oldState[cardid];
+            return oldState;
+          });
+        }
       }
     }
   };
@@ -487,7 +516,7 @@ function App(props) {
   }, [decks]);
 
   useEffect(() => {
-    if (inventory && decks) {
+    if (inventoryCrypt && inventoryLibrary && decks) {
       const softCrypt = {};
       const softLibrary = {};
       const hardCrypt = {};
@@ -589,7 +618,7 @@ function App(props) {
         hardLibrary: hardLibrary,
       });
     }
-  }, [inventory, decks]);
+  }, [inventoryCrypt, inventoryLibrary, decks]);
 
   useEffect(() => {
     whoAmI();
@@ -667,11 +696,12 @@ function App(props) {
                 setResults={setTwdResults}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
-                inventory={inventory}
+                inventoryCrypt={inventoryCrypt}
+                inventoryLibrary={inventoryLibrary}
                 inventoryMode={inventoryMode}
+                setInventoryMode={setInventoryMode}
                 usedCards={usedCards}
                 decks={decks}
-                setInventoryMode={setInventoryMode}
                 formState={twdFormState}
                 setFormState={setTwdFormState}
                 setActiveDeck={setActiveDeck}
@@ -680,8 +710,10 @@ function App(props) {
             </Route>
             <Route path="/inventory">
               <Inventory
-                inventory={inventory}
-                setInventory={setInventory}
+                inventoryCrypt={inventoryCrypt}
+                inventoryLibrary={inventoryLibrary}
+                setInventoryCrypt={setInventoryCrypt}
+                setInventoryLibrary={setInventoryLibrary}
                 inventoryDeckAdd={inventoryDeckAdd}
                 inventoryAddToState={inventoryAddToState}
                 cardAdd={inventoryCardAdd}
@@ -713,9 +745,11 @@ function App(props) {
                 setActiveDeck={setActiveDeck}
                 sharedDeck={sharedDeck}
                 setSharedDeck={setSharedDeck}
-                inventory={inventory}
+                inventoryCrypt={inventoryCrypt}
+                inventoryLibrary={inventoryLibrary}
+                setInventoryCrypt={setInventoryCrypt}
+                setInventoryLibrary={setInventoryLibrary}
                 inventoryMode={inventoryMode}
-                setInventoryMode={setInventoryMode}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 showImage={showImage}
@@ -751,10 +785,11 @@ function App(props) {
                 setShowImage={setShowImage}
                 results={cryptResults}
                 setResults={setCryptResults}
-                inventory={inventory}
+                inventoryCrypt={inventoryCrypt}
+                inventoryLibrary={inventoryLibrary}
                 inventoryMode={inventoryMode}
-                isInventory={isInventory}
                 setInventoryMode={setInventoryMode}
+                isInventory={isInventory}
                 addMode={addMode}
                 setAddMode={setAddMode}
                 formState={cryptFormState}
@@ -789,7 +824,8 @@ function App(props) {
                 setShowImage={setShowImage}
                 results={libraryResults}
                 setResults={setLibraryResults}
-                inventory={inventory}
+                inventoryCrypt={inventoryCrypt}
+                inventoryLibrary={inventoryLibrary}
                 inventoryMode={inventoryMode}
                 isInventory={isInventory}
                 setInventoryMode={setInventoryMode}

@@ -92,7 +92,7 @@ function Library(props) {
                     isWide={props.isWide}
                     cardBase={props.cryptCardBase}
                     inventoryMode={props.inventoryMode}
-                    inventoryCrypt={props.inventory.crypt}
+                    inventoryCrypt={props.inventoryCrypt}
                     usedCards={{
                       soft: props.usedCards.softCrypt,
                       hard: props.usedCards.hardCrypt,
@@ -113,7 +113,7 @@ function Library(props) {
                     isMobile={props.isMobile}
                     cardBase={props.libraryCardBase}
                     inventoryMode={props.inventoryMode}
-                    inventoryLibrary={props.inventory.library}
+                    inventoryLibrary={props.inventoryLibrary}
                     usedCards={{
                       soft: props.usedCards.softLibrary,
                       hard: props.usedCards.hardLibrary,
@@ -161,7 +161,7 @@ function Library(props) {
               isInventory={props.isInventory}
               inventoryMode={props.inventoryMode}
               setInventoryMode={props.setInventoryMode}
-              inventoryLibrary={props.inventory.library}
+              inventoryLibrary={props.inventoryLibrary}
               usedCards={{
                 soft: props.usedCards.softLibrary,
                 hard: props.usedCards.hardLibrary,
