@@ -96,18 +96,7 @@ function InventoryCryptTable(props) {
         <React.Fragment key={card.c['Id']}>
           <tr className={resultTrClass}>
             <td className="quantity">
-              <OverlayTrigger
-                placement={props.placement ? props.placement : 'right'}
-                overlay={
-                  <UsedPopover
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                    inInventory={card.q}
-                    SoftUsedDescription={SoftUsedDescription}
-                    HardUsedDescription={HardUsedDescription}
-                  />
-                }
-              >
+              {props.isMobile ? (
                 <div>
                   <InventoryCardQuantity
                     cardid={card.c['Id']}
@@ -118,7 +107,31 @@ function InventoryCryptTable(props) {
                     hardUsedTotal={hardUsedTotal}
                   />
                 </div>
-              </OverlayTrigger>
+              ) : (
+                <OverlayTrigger
+                  placement={props.placement ? props.placement : 'right'}
+                  overlay={
+                    <UsedPopover
+                      softUsedMax={softUsedMax}
+                      hardUsedTotal={hardUsedTotal}
+                      inInventory={card.q}
+                      SoftUsedDescription={SoftUsedDescription}
+                      HardUsedDescription={HardUsedDescription}
+                    />
+                  }
+                >
+                  <div>
+                    <InventoryCardQuantity
+                      cardid={card.c['Id']}
+                      q={card.q}
+                      cardChange={props.cardChange}
+                      isMobile={props.isMobile}
+                      softUsedMax={softUsedMax}
+                      hardUsedTotal={hardUsedTotal}
+                    />
+                  </div>
+                </OverlayTrigger>
+              )}
             </td>
             <td className="used">
               {softUsedMax > 0 && (

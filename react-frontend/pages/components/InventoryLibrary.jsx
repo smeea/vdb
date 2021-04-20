@@ -68,6 +68,7 @@ function InventoryLibrary(props) {
   ];
 
   let total = 0;
+  const unique = Object.keys(props.cards).length;
   const libraryByType = {};
 
   for (const card in library) {
@@ -119,7 +120,14 @@ function InventoryLibrary(props) {
     <>
       {!props.compact && (
         <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-          <b>Library {props.category != 'nok' && <>[{total}]</>}</b>
+          <b>
+            Library{' '}
+            {props.category != 'nok' && (
+              <>
+                - {total} total, {unique} unique
+              </>
+            )}
+          </b>
         </div>
       )}
       {LibraryDeck}

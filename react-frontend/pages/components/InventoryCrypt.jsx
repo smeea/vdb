@@ -44,6 +44,7 @@ function InventoryCrypt(props) {
   }
 
   let total = 0;
+  const unique = Object.keys(props.cards).length;
   const cards = [];
 
   Object.keys(crypt).map((card) => {
@@ -67,7 +68,14 @@ function InventoryCrypt(props) {
     <>
       {!props.compact && (
         <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-          <b>Crypt {props.category != 'nok' && <>[{total}]</>}</b>
+          <b>
+            Crypt{' '}
+            {props.category != 'nok' && (
+              <>
+                - {total} total, {unique} unique
+              </>
+            )}
+          </b>
         </div>
       )}
       <InventoryCryptTable
