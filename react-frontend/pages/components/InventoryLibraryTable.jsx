@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -32,154 +32,156 @@ function InventoryLibraryTable(props) {
     }
   };
 
-  const cardRows = props.cards.map((card, index) => {
-    const handleClick = () => {
-      setModalCardIdx(index);
-      props.isMobile && props.setShowFloatingButtons(false);
-      setModalInventory({
-        inInventory: card.q,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-      });
-    };
+  const cardRows = useMemo(() =>
+    props.cards.map((card, index) => {
+      const handleClick = () => {
+        setModalCardIdx(index);
+        props.isMobile && props.setShowFloatingButtons(false);
+        setModalInventory({
+          inInventory: card.q,
+          usedDescription: {
+            soft: SoftUsedDescription,
+            hard: HardUsedDescription,
+          },
+          softUsedMax: softUsedMax,
+          hardUsedTotal: hardUsedTotal,
+        });
+      };
 
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
+      if (resultTrClass == 'result-odd') {
+        resultTrClass = 'result-even';
+      } else {
+        resultTrClass = 'result-odd';
+      }
 
-    let DisciplineOrClan;
-    if (card.c['Clan']) {
-      DisciplineOrClan = <ResultLibraryClan value={card.c['Clan']} />;
-    } else {
-      DisciplineOrClan = (
-        <ResultLibraryDisciplines value={card.c['Discipline']} />
-      );
-    }
+      let DisciplineOrClan;
+      if (card.c['Clan']) {
+        DisciplineOrClan = <ResultLibraryClan value={card.c['Clan']} />;
+      } else {
+        DisciplineOrClan = (
+          <ResultLibraryDisciplines value={card.c['Discipline']} />
+        );
+      }
 
-    let softUsedMax = 0;
-    let hardUsedTotal = 0;
-    let SoftUsedDescription;
-    let HardUsedDescription;
+      let softUsedMax = 0;
+      let hardUsedTotal = 0;
+      let SoftUsedDescription;
+      let HardUsedDescription;
 
-    if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
-      SoftUsedDescription = Object.keys(props.usedCards.soft[card.c['Id']]).map(
-        (id, index) => {
+      if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
+        SoftUsedDescription = Object.keys(
+          props.usedCards.soft[card.c['Id']]
+        ).map((id) => {
           if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
             softUsedMax = props.usedCards.soft[card.c['Id']][id];
           }
           return (
             <UsedDescription
-              key={index}
+              key={card.c['Id']}
               q={props.usedCards.soft[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
               t="s"
             />
           );
-        }
-      );
-    }
+        });
+      }
 
-    if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
-      HardUsedDescription = Object.keys(props.usedCards.hard[card.c['Id']]).map(
-        (id, index) => {
+      if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
+        HardUsedDescription = Object.keys(
+          props.usedCards.hard[card.c['Id']]
+        ).map((id) => {
           hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
           return (
             <UsedDescription
-              key={index}
+              key={card.c['Id']}
               q={props.usedCards.hard[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
               t="h"
             />
           );
-        }
-      );
-    }
+        });
+      }
 
-    return (
-      <React.Fragment key={index}>
-        <tr className={resultTrClass}>
-          <td className="quantity">
-            <OverlayTrigger
-              placement="right"
-              overlay={
-                <UsedPopover
-                  softUsedMax={softUsedMax}
-                  hardUsedTotal={hardUsedTotal}
-                  inInventory={card.q}
-                  SoftUsedDescription={SoftUsedDescription}
-                  HardUsedDescription={HardUsedDescription}
-                />
-              }
-            >
-              <div>
-                <InventoryCardQuantity
-                  cardid={card.c['Id']}
-                  q={card.q}
-                  cardChange={props.cardChange}
-                  isMobile={props.isMobile}
-                  softUsedMax={softUsedMax}
-                  hardUsedTotal={hardUsedTotal}
-                />
-              </div>
-            </OverlayTrigger>
-          </td>
-          <td className="used">
-            {softUsedMax > 0 && (
-              <div className="d-flex align-items-center justify-content-center">
-                <div className="d-inline opacity-035 pr-1">
-                  <Shuffle />
+      return (
+        <React.Fragment key={card.c['Id']}>
+          <tr className={resultTrClass}>
+            <td className="quantity">
+              <OverlayTrigger
+                placement="right"
+                overlay={
+                  <UsedPopover
+                    softUsedMax={softUsedMax}
+                    hardUsedTotal={hardUsedTotal}
+                    inInventory={card.q}
+                    SoftUsedDescription={SoftUsedDescription}
+                    HardUsedDescription={HardUsedDescription}
+                  />
+                }
+              >
+                <div>
+                  <InventoryCardQuantity
+                    cardid={card.c['Id']}
+                    q={card.q}
+                    cardChange={props.cardChange}
+                    isMobile={props.isMobile}
+                    softUsedMax={softUsedMax}
+                    hardUsedTotal={hardUsedTotal}
+                  />
                 </div>
-                {softUsedMax}
-              </div>
-            )}
-            {hardUsedTotal > 0 && (
-              <div className="d-flex align-items-center justify-content-center">
-                <div className="d-inline opacity-035 pr-1">
-                  <PinAngleFill />
+              </OverlayTrigger>
+            </td>
+            <td className="used">
+              {softUsedMax > 0 && (
+                <div className="d-flex align-items-center justify-content-center">
+                  <div className="d-inline opacity-035 pr-1">
+                    <Shuffle />
+                  </div>
+                  {softUsedMax}
                 </div>
-                {hardUsedTotal}
-              </div>
-            )}
-          </td>
-          {!props.isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={
-                <CardPopover card={card.c} showImage={props.showImage} />
-              }
-            >
+              )}
+              {hardUsedTotal > 0 && (
+                <div className="d-flex align-items-center justify-content-center">
+                  <div className="d-inline opacity-035 pr-1">
+                    <PinAngleFill />
+                  </div>
+                  {hardUsedTotal}
+                </div>
+              )}
+            </td>
+            {!props.isMobile ? (
+              <OverlayTrigger
+                placement={props.placement ? props.placement : 'right'}
+                overlay={
+                  <CardPopover card={card.c} showImage={props.showImage} />
+                }
+              >
+                <td className="name px-2" onClick={() => handleClick()}>
+                  <ResultLibraryName card={card.c} />
+                </td>
+              </OverlayTrigger>
+            ) : (
               <td className="name px-2" onClick={() => handleClick()}>
                 <ResultLibraryName card={card.c} />
               </td>
-            </OverlayTrigger>
-          ) : (
-            <td className="name px-2" onClick={() => handleClick()}>
-              <ResultLibraryName card={card.c} />
+            )}
+            <td className="cost" onClick={() => handleClick()}>
+              <ResultLibraryCost
+                valueBlood={card.c['Blood Cost']}
+                valuePool={card.c['Pool Cost']}
+              />
             </td>
-          )}
-          <td className="cost" onClick={() => handleClick()}>
-            <ResultLibraryCost
-              valueBlood={card.c['Blood Cost']}
-              valuePool={card.c['Pool Cost']}
-            />
-          </td>
-          <td className="disciplines" onClick={() => handleClick()}>
-            {DisciplineOrClan}
-          </td>
-          <td className="burn" onClick={() => handleClick()}>
-            <ResultLibraryBurn value={card.c['Burn Option']} />
-            <ResultLibraryTrifle value={card.c['Card Text']} />
-          </td>
-        </tr>
-      </React.Fragment>
-    );
-  });
+            <td className="disciplines" onClick={() => handleClick()}>
+              {DisciplineOrClan}
+            </td>
+            <td className="burn" onClick={() => handleClick()}>
+              <ResultLibraryBurn value={card.c['Burn Option']} />
+              <ResultLibraryTrifle value={card.c['Card Text']} />
+            </td>
+          </tr>
+        </React.Fragment>
+      );
+    })
+  );
 
   return (
     <>

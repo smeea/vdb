@@ -277,21 +277,18 @@ function App(props) {
         });
 
         if (count >= 0) {
-          setInventoryCrypt((prevState) => {
-            if (prevState[cardid]) {
-              prevState[cardid].q = count;
-            } else {
-              prevState[cardid] = {
-                q: count,
-                c: cryptCardBase[cardid],
-              };
-            }
-            return prevState;
-          });
+          setInventoryCrypt((prevState) => ({
+            ...prevState,
+            [cardid]: {
+              ...prevState[cardid],
+              q: count,
+            },
+          }));
         } else {
           setInventoryCrypt((prevState) => {
-            delete prevState[cardid];
-            return prevState;
+            state = { ...oldState };
+            delete state[cardid];
+            return state;
           });
         }
       }
@@ -304,23 +301,18 @@ function App(props) {
         });
 
         if (count >= 0) {
-          setInventoryLibrary((prevState) => {
-            const oldState = { ...prevState };
-            if (oldState[cardid]) {
-              oldState[cardid].q = count;
-            } else {
-              oldState[cardid] = {
-                q: count,
-                c: libraryCardBase[cardid],
-              };
-            }
-            return oldState;
-          });
+          setInventoryLibrary((prevState) => ({
+            ...prevState,
+            [cardid]: {
+              ...prevState[cardid],
+              q: count,
+            },
+          }));
         } else {
           setInventoryLibrary((prevState) => {
-            const oldState = { ...prevState };
-            delete oldState[cardid];
-            return oldState;
+            state = { ...oldState };
+            delete state[cardid];
+            return state;
           });
         }
       }
