@@ -16,7 +16,7 @@ with open("vteslib.csv", "r",
           encoding='utf8') as f_csv, open(
               "vteslib.json",
               "w", encoding='utf8') as f_json, open(
-                  "cardbase_library.json",
+                  "cardbase_lib.json",
                   "w", encoding='utf8') as cardbase_file, open(
                       "vtes.json",
                       "r", encoding='utf8') as krcg_file:

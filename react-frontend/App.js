@@ -81,7 +81,21 @@ function App(props) {
     setPublicName,
     email,
     setEmail,
+    lang,
+    setLang,
+    localizedCards,
+    setLocalizedCards,
   } = React.useContext(AppContext);
+
+  const toggleLang = () => {
+    if (lang === 'en-EN') {
+      setLang('es-ES');
+    } else if (lang === 'es-ES') {
+      setLang('fr-FR');
+    } else {
+      setLang('en-EN');
+    }
+  };
 
   const deckRouter = (pointer) => {
     if (pointer) {
@@ -99,7 +113,7 @@ function App(props) {
 
   const getCardBase = () => {
     const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json`;
-    const urlLibrary = `${process.env.ROOT_URL}cardbase_library.json`;
+    const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -122,6 +136,54 @@ function App(props) {
         }
       });
   };
+
+  const changeCardLang = (lang) => {
+    const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.${lang}.json`;
+    const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.${lang}.json`;
+
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(urlCrypt, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          setCryptCardBase((prevState) => {
+            const state = { ...prevState };
+            Object.keys(data).map((k) => {
+              state[k]['Name'] = data[k]['Name'];
+              state[k]['Card Text'] = data[k]['Card Text'];
+              console.log(data[k]);
+            });
+            return state;
+          });
+        }
+      });
+
+    fetch(urlLibrary, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          setLibraryCardBase((prevState) => {
+            const state = { ...prevState };
+            Object.keys(data).map((k) => {
+              state[k]['Name'] = data[k]['Name'];
+              state[k]['Card Text'] = data[k]['Card Text'];
+            });
+            return state;
+          });
+        }
+      });
+  };
+
+  useEffect(() => {
+    if (cryptCardBase && libraryCardBase) {
+      changeCardLang(lang);
+    }
+  }, [lang]);
 
   const getInventory = () => {
     const url = `${process.env.API_URL}inventory`;
@@ -660,6 +722,8 @@ function App(props) {
           setInventoryMode={setInventoryMode}
           isDarkTheme={isDarkTheme}
           toggleTheme={toggleTheme}
+          lang={lang}
+          toggleLang={toggleLang}
         />
 
         <Switch>

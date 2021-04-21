@@ -8,6 +8,9 @@ import ToggleOn from '../assets/images/icons/toggle-on.svg';
 import ToggleOff from '../assets/images/icons/toggle-off.svg';
 import SunFill from '../assets/images/icons/sun-fill.svg';
 import MoonFill from '../assets/images/icons/moon-fill.svg';
+import FlagEn from '../assets/images/misc/en.svg';
+import FlagEs from '../assets/images/misc/es.svg';
+import FlagFr from '../assets/images/misc/fr.svg';
 import AppContext from '../context/AppContext.js';
 
 function Navigation(props) {
@@ -18,6 +21,15 @@ function Navigation(props) {
       <Navbar sticky="top" variant="dark">
         <Nav className="container justify-content-between">
           <div className="d-flex align-items-center pr-1">
+            <div className="pl-2 pr-4" onClick={() => props.toggleLang()}>
+              {props.lang == 'en-EN' ? (
+                <FlagEn width="18" height="18" viewBox="0 0 500 500" />
+              ) : props.lang == 'es-ES' ? (
+                <FlagEs width="18" height="18" viewBox="0 0 500 500" />
+              ) : (
+                <FlagFr width="18" height="18" viewBox="0 0 500 500" />
+              )}
+            </div>
             <div
               className="text-light pl-2 pr-4"
               onClick={() => props.toggleTheme()}

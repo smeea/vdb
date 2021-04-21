@@ -1,5 +1,4 @@
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
 import reactStringReplace from 'react-string-replace';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import icons from './forms_data/disciplineIcons.json';
@@ -11,9 +10,14 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLayoutTextSets from './ResultLayoutTextSets.jsx';
 import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryPopover(props) {
-  const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
+  const { lang } = React.useContext(AppContext);
+
+  const imgSrc = `${process.env.ROOT_URL}images/cards/${
+    lang === 'en-EN' ? '' : lang + '/'
+  }${props.card['ASCII Name']
     .toLowerCase()
     .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
 

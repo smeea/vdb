@@ -8,9 +8,14 @@ import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultLayoutTextSets from './ResultLayoutTextSets.jsx';
 import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function ResultCryptPopover(props) {
-  const imgSrc = `${process.env.ROOT_URL}images/cards/${props.card['ASCII Name']
+  const { lang } = React.useContext(AppContext);
+
+  const imgSrc = `${process.env.ROOT_URL}images/cards/${
+    lang === 'en-EN' ? '' : lang + '/'
+  }${props.card['ASCII Name']
     .toLowerCase()
     .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
 
