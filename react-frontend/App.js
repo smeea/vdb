@@ -82,20 +82,10 @@ function App(props) {
     email,
     setEmail,
     lang,
-    setLang,
+    toggleLang,
     localizedCards,
     setLocalizedCards,
   } = React.useContext(AppContext);
-
-  const toggleLang = () => {
-    if (lang === 'en-EN') {
-      setLang('es-ES');
-    } else if (lang === 'es-ES') {
-      setLang('fr-FR');
-    } else {
-      setLang('en-EN');
-    }
-  };
 
   const deckRouter = (pointer) => {
     if (pointer) {
@@ -120,7 +110,7 @@ function App(props) {
       credentials: 'include',
     };
 
-    fetch(urlCrypt, options)
+    const fetchCrypt = fetch(urlCrypt, options)
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
@@ -128,13 +118,17 @@ function App(props) {
         }
       });
 
-    fetch(urlLibrary, options)
+    const fetchLibrary = fetch(urlLibrary, options)
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
           setLibraryCardBase(data);
         }
       });
+
+    const promises = [fetchCrypt, fetchLibrary];
+
+    Promise.all(promises).then(() => changeCardLang(lang));
   };
 
   const changeCardLang = (lang) => {
@@ -156,7 +150,6 @@ function App(props) {
             Object.keys(data).map((k) => {
               state[k]['Name'] = data[k]['Name'];
               state[k]['Card Text'] = data[k]['Card Text'];
-              console.log(data[k]);
             });
             return state;
           });

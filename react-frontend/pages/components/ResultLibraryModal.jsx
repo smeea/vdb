@@ -9,13 +9,15 @@ import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
 import ResultLibraryLayoutText from './ResultLibraryLayoutText.jsx';
 import ButtonCardCopyUrl from './ButtonCardCopyUrl.jsx';
 import ButtonToggleShowImage from './ButtonToggleShowImage.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryModal(props) {
+  const { lang } = React.useContext(AppContext);
   const [imageSet, setImageSet] = useState(null);
 
   const CardImage = () => {
     const imgSrc = `${process.env.ROOT_URL}images/cards/${
-      imageSet ? 'set/' + imageSet + '/' : ''
+      imageSet ? 'set/' + imageSet + '/' : lang === 'en-EN' ? '' : lang + '/'
     }${props.card['ASCII Name']
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 
 const AppContext = React.createContext({
   isMobile: false,
@@ -23,8 +23,31 @@ export const AppProvider = (props) => {
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
-  const [lang, setLang] = useState('en-EN');
+  const [lang, setLang] = useState(window.localStorage.getItem('lang'));
   const [localizedCards, setLocalizedCards] = useState(undefined);
+
+  const toggleLang = () => {
+    if (lang === 'en-EN') {
+      setLang('es-ES');
+      window.localStorage.setItem('lang', 'es-ES');
+    } else if (lang === 'es-ES') {
+      setLang('fr-FR');
+      window.localStorage.setItem('lang', 'fr-FR');
+    } else {
+      setLang('en-EN');
+      window.localStorage.setItem('lang', 'en-EN');
+    }
+  };
+
+  useLayoutEffect(() => {
+    const lastLang = window.localStorage.getItem('lang');
+
+    if (lastLang) {
+      setLang(lastLang);
+    } else {
+      setLang('en-EN');
+    }
+  }, [lang]);
 
   return (
     <AppContext.Provider
@@ -38,7 +61,7 @@ export const AppProvider = (props) => {
         email,
         setEmail,
         lang,
-        setLang,
+        toggleLang,
         localizedCards,
         setLocalizedCards,
       }}
