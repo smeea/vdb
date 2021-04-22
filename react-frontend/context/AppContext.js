@@ -35,17 +35,9 @@ export const AppProvider = (props) => {
   const [nativeCrypt, setNativeCrypt] = useState(undefined);
   const [nativeLibrary, setNativeLibrary] = useState(undefined);
 
-  const toggleLang = () => {
-    if (lang === 'en-EN') {
-      setLang('es-ES');
-      window.localStorage.setItem('lang', 'es-ES');
-    } else if (lang === 'es-ES') {
-      setLang('fr-FR');
-      window.localStorage.setItem('lang', 'fr-FR');
-    } else {
-      setLang('en-EN');
-      window.localStorage.setItem('lang', 'en-EN');
-    }
+  const changeLang = (lang) => {
+    setLang(lang);
+    window.localStorage.setItem('lang', lang);
   };
 
   useLayoutEffect(() => {
@@ -70,7 +62,7 @@ export const AppProvider = (props) => {
         email,
         setEmail,
         lang,
-        toggleLang,
+        changeLang,
         localizedCrypt,
         setLocalizedCrypt,
         localizedLibrary,

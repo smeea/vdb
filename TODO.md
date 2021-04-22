@@ -24,7 +24,6 @@
 # MAYBE LATER FEATURES
 * Update cardbase script
 * Documentation on updates / update script
-* Card text update
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Sync: websockets

@@ -6,7 +6,6 @@ import {
   Redirect,
 } from 'react-router-dom';
 import Navigation from './pages/Navigation.jsx';
-import ThemeContext from './context/ThemeContext';
 import AppContext from './context/AppContext';
 import defaultsTwdForm from './pages/components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from './pages/components/forms_data/defaultsCryptForm.json';
@@ -71,7 +70,6 @@ function App(props) {
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
 
-  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const {
     isMobile,
     isWide,
@@ -82,7 +80,6 @@ function App(props) {
     email,
     setEmail,
     lang,
-    toggleLang,
     localizedCrypt,
     setLocalizedCrypt,
     localizedLibrary,
@@ -772,10 +769,7 @@ function App(props) {
           setActiveDeck={setActiveDeck}
           inventoryMode={inventoryMode}
           setInventoryMode={setInventoryMode}
-          isDarkTheme={isDarkTheme}
-          toggleTheme={toggleTheme}
           lang={lang}
-          toggleLang={toggleLang}
         />
 
         <Switch>
