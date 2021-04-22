@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import InfoCircle from '../../assets/images/icons/info-circle.svg';
 import X from '../../assets/images/icons/x.svg';
@@ -7,8 +7,10 @@ import DeckLibraryTotalByTypes from './DeckLibraryTotalByTypes.jsx';
 import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function DeckLibrary(props) {
+  const { nativeLibrary } = useContext(AppContext);
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
@@ -122,7 +124,7 @@ function DeckLibrary(props) {
         libraryByTypeTotal[cardtype] += card.q;
         if (
           cardtype == 'Master' &&
-          card.c['Card Text'].toLowerCase().includes('trifle')
+          nativeLibrary[card.c.Id]['Card Text'].toLowerCase().includes('trifle')
         ) {
           trifleTotal += card.q;
         }

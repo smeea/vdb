@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
@@ -10,8 +10,11 @@ import ResultLayoutTextSets from './ResultLayoutTextSets.jsx';
 import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
 import ResultLayoutTextArtist from './ResultLayoutTextArtist.jsx';
 import ResultLayoutTextText from './ResultLayoutTextText.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryLayoutText(props) {
+  const { nativeLibrary } = useContext(AppContext);
+
   return (
     <>
       <div className="d-flex flex-nowrap justify-content-between align-items-center">
@@ -37,9 +40,11 @@ function ResultLibraryLayoutText(props) {
             <ResultLibraryBurn value={props.card['Burn Option']} />
           </div>
         )}
-        {props.card['Card Text'].includes('Trifle.') && (
+        {nativeLibrary[props.card.Id]['Card Text'].includes('Trifle.') && (
           <div className="pl-1">
-            <ResultLibraryTrifle value={props.card['Card Text']} />
+            <ResultLibraryTrifle
+              value={nativeLibrary[props.card.Id]['Card Text']}
+            />
           </div>
         )}
       </div>

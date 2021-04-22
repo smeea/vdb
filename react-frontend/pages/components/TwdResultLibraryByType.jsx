@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import DeckLibraryTable from './DeckLibraryTable.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function TwdResultLibraryByType(props) {
+  const { nativeLibrary } = useContext(AppContext);
+
   const cardtypeSorted = [
     'Master',
     'Conviction',
@@ -42,7 +45,7 @@ function TwdResultLibraryByType(props) {
     libraryByTypeTotal[cardtype] += props.library[card].q;
     if (
       cardtype == 'Master' &&
-      props.library[card].c['Card Text'].toLowerCase().includes('trifle')
+      nativeLibrary[card]['Card Text'].toLowerCase().includes('trifle')
     ) {
       trifleTotal += props.library[card].q;
     }

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -13,8 +13,10 @@ import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function InventoryLibraryTable(props) {
+  const { nativeLibrary } = useContext(AppContext);
   let resultTrClass;
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
@@ -188,7 +190,9 @@ function InventoryLibraryTable(props) {
             </td>
             <td className="burn" onClick={() => handleClick()}>
               <ResultLibraryBurn value={card.c['Burn Option']} />
-              <ResultLibraryTrifle value={card.c['Card Text']} />
+              <ResultLibraryTrifle
+                value={nativeLibrary[card.c.Id]['Card Text']}
+              />
             </td>
           </tr>
         </React.Fragment>

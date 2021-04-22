@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -16,8 +16,11 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
 import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import drawProbability from './drawProbability.js';
+import AppContext from '../../context/AppContext.js';
 
 function DeckLibraryTable(props) {
+  const { nativeLibrary } = useContext(AppContext);
+
   let resultTrClass;
   let deckInvType = null;
   if (props.decks && props.deckid) {
@@ -312,7 +315,9 @@ function DeckLibraryTable(props) {
           </td>
           <td className="burn" onClick={() => handleClick()}>
             <ResultLibraryBurn value={card.c['Burn Option']} />
-            <ResultLibraryTrifle value={card.c['Card Text']} />
+            <ResultLibraryTrifle
+              value={nativeLibrary[card.c.Id]['Card Text']}
+            />
           </td>
           {props.showInfo && (
             <td className="prob px-1">

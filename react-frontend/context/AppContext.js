@@ -15,6 +15,10 @@ const AppContext = React.createContext({
   setLocalizedCrypt: () => {},
   localizedLibrary: undefined,
   setLocalizedLibrary: () => {},
+  nativeCrypt: undefined,
+  setNativeCrypt: () => {},
+  nativeLibrary: undefined,
+  setNativeLibrary: () => {},
 });
 
 export default AppContext;
@@ -28,6 +32,8 @@ export const AppProvider = (props) => {
   const [lang, setLang] = useState(window.localStorage.getItem('lang'));
   const [localizedCrypt, setLocalizedCrypt] = useState(undefined);
   const [localizedLibrary, setLocalizedLibrary] = useState(undefined);
+  const [nativeCrypt, setNativeCrypt] = useState(undefined);
+  const [nativeLibrary, setNativeLibrary] = useState(undefined);
 
   const toggleLang = () => {
     if (lang === 'en-EN') {
@@ -69,6 +75,10 @@ export const AppProvider = (props) => {
         setLocalizedCrypt,
         localizedLibrary,
         setLocalizedLibrary,
+        nativeCrypt,
+        setNativeCrypt,
+        nativeLibrary,
+        setNativeLibrary,
       }}
     >
       {props.children}

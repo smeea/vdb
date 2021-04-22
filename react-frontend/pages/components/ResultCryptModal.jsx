@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Modal, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
@@ -12,7 +12,7 @@ import ButtonToggleShowImage from './ButtonToggleShowImage.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultCryptModal(props) {
-  const { localizedCrypt, lang } = React.useContext(AppContext);
+  const { localizedCrypt, lang } = useContext(AppContext);
   const [imageSet, setImageSet] = useState(null);
 
   const CardImage = () => {

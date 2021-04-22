@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import reactStringReplace from 'react-string-replace';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import icons from './forms_data/disciplineIcons.json';
@@ -13,7 +13,7 @@ import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryPopover(props) {
-  const { localizedLibrary, lang } = React.useContext(AppContext);
+  const { nativeLibrary, localizedLibrary, lang } = useContext(AppContext);
 
   const imgSrc = `${process.env.ROOT_URL}images/cards/${
     localizedLibrary &&
@@ -75,9 +75,11 @@ function ResultLibraryPopover(props) {
                 <ResultLibraryBurn value={props.card['Burn Option']} />
               </div>
             )}
-            {props.card['Card Text'].includes('Trifle.') && (
+            {nativeLibrary[props.card.Id]['Card Text'].includes('Trifle.') && (
               <div className="pl-1">
-                <ResultLibraryTrifle value={props.card['Card Text']} />
+                <ResultLibraryTrifle
+                  value={nativeLibrary[props.card.Id]['Card Text']}
+                />
               </div>
             )}
           </div>

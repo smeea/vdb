@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import reactStringReplace from 'react-string-replace';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import icons from './forms_data/disciplineIcons.json';
@@ -11,7 +11,7 @@ import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultCryptPopover(props) {
-  const { localizedCrypt, lang } = React.useContext(AppContext);
+  const { localizedCrypt, lang } = useContext(AppContext);
 
   const imgSrc = `${process.env.ROOT_URL}images/cards/${
     localizedCrypt &&

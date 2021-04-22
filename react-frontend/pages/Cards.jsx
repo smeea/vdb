@@ -9,9 +9,7 @@ import ButtonCardCopyUrl from './components/ButtonCardCopyUrl.jsx';
 import AppContext from '../context/AppContext.js';
 
 function Cards(props) {
-  const { localizedCrypt, localizedLibrary, lang } = React.useContext(
-    AppContext
-  );
+  const { localizedCrypt, localizedLibrary, lang } = useContext(AppContext);
   const history = useHistory();
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);

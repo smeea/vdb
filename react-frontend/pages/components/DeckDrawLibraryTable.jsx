@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';
@@ -12,12 +12,12 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
 import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import drawProbability from './drawProbability.js';
+import AppContext from '../../context/AppContext.js';
 
 function DeckDrawLibraryTable(props) {
+  const { nativeLibrary } = useContext(AppContext);
   let resultTrClass;
-
   const [modalDraw, setModalDraw] = useState(undefined);
-
   const N = props.total;
   const n = props.resultCards.length;
 
@@ -71,7 +71,7 @@ function DeckDrawLibraryTable(props) {
           )}
           <td className="burn px-1" onClick={() => props.burnLibrary(index)}>
             <ResultLibraryBurn value={card['Burn Option']} />
-            <ResultLibraryTrifle value={card['Card Text']} />
+            <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />
           </td>
           <td className="prob px-1">
             {props.isMobile ? (

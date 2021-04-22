@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -14,8 +14,10 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryTable(props) {
+  const { nativeLibrary } = useContext(AppContext);
   let resultTrClass;
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
@@ -201,7 +203,7 @@ function ResultLibraryTable(props) {
           )}
           <td className="burn px-1" onClick={() => handleClick()}>
             <ResultLibraryBurn value={card['Burn Option']} />
-            <ResultLibraryTrifle value={card['Card Text']} />
+            <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />
           </td>
         </tr>
       </React.Fragment>

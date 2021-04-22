@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useContext, Suspense, lazy } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -59,8 +59,6 @@ function App(props) {
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
-  const [nativeCrypt, setNativeCrypt] = useState(undefined);
-  const [nativeLibrary, setNativeLibrary] = useState(undefined);
 
   const [twdResults, setTwdResults] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
@@ -73,7 +71,7 @@ function App(props) {
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
 
-  const { isDarkTheme, toggleTheme } = React.useContext(ThemeContext);
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const {
     isMobile,
     isWide,
@@ -86,10 +84,14 @@ function App(props) {
     lang,
     toggleLang,
     localizedCrypt,
-    localizedLibrary,
     setLocalizedCrypt,
+    localizedLibrary,
     setLocalizedLibrary,
-  } = React.useContext(AppContext);
+    nativeCrypt,
+    setNativeCrypt,
+    nativeLibrary,
+    setNativeLibrary,
+  } = useContext(AppContext);
 
   const deckRouter = (pointer) => {
     if (pointer) {
