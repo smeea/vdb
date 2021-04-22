@@ -340,21 +340,20 @@ function SearchCryptForm(props) {
         preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
       />
-      {props.inventoryMode ||
-        (props.isMobile && props.isInventory && (
-          <div className="custom-control custom-checkbox">
-            <input
-              id="hideMissing"
-              className="custom-control-input"
-              type="checkbox"
-              checked={props.hideMissing}
-              onChange={() => props.setHideMissing(!props.hideMissing)}
-            />
-            <label htmlFor="hideMissing" className="custom-control-label">
-              Hide Missing in Inventory
-            </label>
-          </div>
-        ))}
+      {(props.inventoryMode || (props.isMobile && props.isInventory)) && (
+        <div className="custom-control custom-checkbox">
+          <input
+            id="hideMissing"
+            className="custom-control-input"
+            type="checkbox"
+            checked={props.hideMissing}
+            onChange={() => props.setHideMissing(!props.hideMissing)}
+          />
+          <label htmlFor="hideMissing" className="custom-control-label">
+            Hide Missing in Inventory
+          </label>
+        </div>
+      )}
       <SearchCryptFormDisciplines
         value={props.formState.disciplines}
         onChange={handleDisciplinesChange}
