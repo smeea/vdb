@@ -11,8 +11,10 @@ const AppContext = React.createContext({
   setPublicName: () => {},
   email: undefined,
   setEmail: () => {},
-  localizedCards: undefined,
-  setLocalizedCards: () => {},
+  localizedCrypt: undefined,
+  setLocalizedCrypt: () => {},
+  localizedLibrary: undefined,
+  setLocalizedLibrary: () => {},
 });
 
 export default AppContext;
@@ -24,7 +26,8 @@ export const AppProvider = (props) => {
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
   const [lang, setLang] = useState(window.localStorage.getItem('lang'));
-  const [localizedCards, setLocalizedCards] = useState(undefined);
+  const [localizedCrypt, setLocalizedCrypt] = useState(undefined);
+  const [localizedLibrary, setLocalizedLibrary] = useState(undefined);
 
   const toggleLang = () => {
     if (lang === 'en-EN') {
@@ -62,8 +65,10 @@ export const AppProvider = (props) => {
         setEmail,
         lang,
         toggleLang,
-        localizedCards,
-        setLocalizedCards,
+        localizedCrypt,
+        setLocalizedCrypt,
+        localizedLibrary,
+        setLocalizedLibrary,
       }}
     >
       {props.children}

@@ -59,6 +59,8 @@ function App(props) {
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
+  const [nativeCrypt, setNativeCrypt] = useState(undefined);
+  const [nativeLibrary, setNativeLibrary] = useState(undefined);
 
   const [twdResults, setTwdResults] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
@@ -83,8 +85,10 @@ function App(props) {
     setEmail,
     lang,
     toggleLang,
-    localizedCards,
-    setLocalizedCards,
+    localizedCrypt,
+    localizedLibrary,
+    setLocalizedCrypt,
+    setLocalizedLibrary,
   } = React.useContext(AppContext);
 
   const deckRouter = (pointer) => {
@@ -110,28 +114,40 @@ function App(props) {
       credentials: 'include',
     };
 
-    const fetchCrypt = fetch(urlCrypt, options)
+    fetch(urlCrypt, options)
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
           setCryptCardBase(data);
+          const en = {};
+          Object.keys(data).map((id) => {
+            en[id] = {
+              Name: data[id]['Name'],
+              'Card Text': data[id]['Card Text'],
+            };
+          });
+          setNativeCrypt(en);
         }
       });
 
-    const fetchLibrary = fetch(urlLibrary, options)
+    fetch(urlLibrary, options)
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
           setLibraryCardBase(data);
+          const en = {};
+          Object.keys(data).map((id) => {
+            en[id] = {
+              Name: data[id]['Name'],
+              'Card Text': data[id]['Card Text'],
+            };
+          });
+          setNativeLibrary(en);
         }
       });
-
-    const promises = [fetchCrypt, fetchLibrary];
-
-    Promise.all(promises).then(() => changeCardLang(lang));
   };
 
-  const changeCardLang = (lang) => {
+  const getLocalization = (lang) => {
     const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.${lang}.json`;
     const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.${lang}.json`;
 
@@ -145,14 +161,10 @@ function App(props) {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          setCryptCardBase((prevState) => {
-            const state = { ...prevState };
-            Object.keys(data).map((k) => {
-              state[k]['Name'] = data[k]['Name'];
-              state[k]['Card Text'] = data[k]['Card Text'];
-            });
-            return state;
-          });
+          setLocalizedCrypt((prevState) => ({
+            ...prevState,
+            [lang]: data,
+          }));
         }
       });
 
@@ -160,21 +172,66 @@ function App(props) {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          setLibraryCardBase((prevState) => {
-            const state = { ...prevState };
-            Object.keys(data).map((k) => {
-              state[k]['Name'] = data[k]['Name'];
-              state[k]['Card Text'] = data[k]['Card Text'];
-            });
-            return state;
-          });
+          setLocalizedLibrary((prevState) => ({
+            ...prevState,
+            [lang]: data,
+          }));
         }
       });
   };
 
+  const applyLocalization = (lang, part) => {
+    const nativeSrc = part == 'crypt' ? nativeCrypt : nativeLibrary;
+    const setState = part == 'crypt' ? setCryptCardBase : setLibraryCardBase;
+
+    setState((prevState) => {
+      const state = { ...prevState };
+      Object.keys(nativeSrc).map((k) => {
+        state[k]['Name'] = nativeSrc[k]['Name'];
+        state[k]['Card Text'] = nativeSrc[k]['Card Text'];
+      });
+
+      if (lang != 'en-EN') {
+        const localizedSrc =
+          part == 'crypt' ? localizedCrypt[lang] : localizedLibrary[lang];
+
+        Object.keys(localizedSrc).map((k) => {
+          state[k]['Name'] = localizedSrc[k]['Name'];
+          state[k]['Card Text'] = localizedSrc[k]['Card Text'];
+        });
+      }
+      return state;
+    });
+  };
+
   useEffect(() => {
-    if (cryptCardBase && libraryCardBase) {
-      changeCardLang(lang);
+    if (lang == 'en-EN') {
+      if (nativeCrypt) {
+        applyLocalization(lang, 'crypt');
+      }
+    } else if (nativeCrypt && localizedCrypt && localizedCrypt[lang]) {
+      applyLocalization(lang, 'crypt');
+    }
+  }, [lang, nativeCrypt, localizedCrypt]);
+
+  useEffect(() => {
+    if (lang == 'en-EN') {
+      if (nativeLibrary) {
+        applyLocalization(lang, 'library');
+      }
+    } else if (nativeLibrary && localizedLibrary && localizedLibrary[lang]) {
+      applyLocalization(lang, 'library');
+    }
+  }, [lang, nativeLibrary, localizedLibrary]);
+
+  useEffect(() => {
+    if (lang != 'en-EN') {
+      if (
+        !(localizedCrypt && localizedCrypt[lang]) ||
+        !(localizedLibrary && localizedLibrary[lang])
+      ) {
+        getLocalization(lang);
+      }
     }
   }, [lang]);
 
