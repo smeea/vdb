@@ -11,11 +11,15 @@ import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultCryptPopover(props) {
-  const { lang } = React.useContext(AppContext);
+  const { localizedCrypt, lang } = React.useContext(AppContext);
 
   const imgSrc = `${process.env.ROOT_URL}images/cards/${
-    lang === 'en-EN' ? '' : lang + '/'
-  }${props.card['ASCII Name']
+    localizedCrypt &&
+    localizedCrypt[lang] &&
+    localizedCrypt[lang][props.card['Id']]
+      ? lang
+      : 'en-EN'
+  }/${props.card['ASCII Name']
     .toLowerCase()
     .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
 

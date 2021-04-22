@@ -12,12 +12,18 @@ import ButtonToggleShowImage from './ButtonToggleShowImage.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultCryptModal(props) {
-  const { lang } = React.useContext(AppContext);
+  const { localizedCrypt, lang } = React.useContext(AppContext);
   const [imageSet, setImageSet] = useState(null);
 
   const CardImage = () => {
     const imgSrc = `${process.env.ROOT_URL}images/cards/${
-      imageSet ? 'set/' + imageSet + '/' : lang === 'en-EN' ? '' : lang + '/'
+      imageSet
+        ? 'set/' + imageSet + '/'
+        : localizedCrypt &&
+          localizedCrypt[lang] &&
+          localizedCrypt[lang][props.card['Id']]
+        ? lang + '/'
+        : 'en-EN/'
     }${props.card['ASCII Name']
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;

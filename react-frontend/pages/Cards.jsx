@@ -9,7 +9,9 @@ import ButtonCardCopyUrl from './components/ButtonCardCopyUrl.jsx';
 import AppContext from '../context/AppContext.js';
 
 function Cards(props) {
-  const { lang } = React.useContext(AppContext);
+  const { localizedCrypt, localizedLibrary, lang } = React.useContext(
+    AppContext
+  );
   const history = useHistory();
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
@@ -21,18 +23,22 @@ function Cards(props) {
           ? `${process.env.ROOT_URL}images/cards/${
               imageSet
                 ? 'set/' + imageSet + '/'
-                : lang === 'en-EN'
-                ? ''
-                : lang + '/'
+                : localizedCrypt &&
+                  localizedCrypt[lang] &&
+                  localizedCrypt[lang][card['Id']]
+                ? lang + '/'
+                : 'en-EN/'
             }${card['ASCII Name']
               .toLowerCase()
               .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${card['Adv'] && 'adv'}.jpg`
           : `${process.env.ROOT_URL}images/cards/${
               imageSet
                 ? 'set/' + imageSet + '/'
-                : lang === 'en-EN'
-                ? ''
-                : lang + '/'
+                : localizedLibrary &&
+                  localizedLibrary[lang] &&
+                  localizedLibrary[lang][card['Id']]
+                ? lang + '/'
+                : 'en-EN/'
             }${card['ASCII Name']
               .toLowerCase()
               .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;

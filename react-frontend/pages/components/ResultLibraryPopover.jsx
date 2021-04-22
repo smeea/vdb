@@ -13,11 +13,15 @@ import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryPopover(props) {
-  const { lang } = React.useContext(AppContext);
+  const { localizedLibrary, lang } = React.useContext(AppContext);
 
   const imgSrc = `${process.env.ROOT_URL}images/cards/${
-    lang === 'en-EN' ? '' : lang + '/'
-  }${props.card['ASCII Name']
+    localizedLibrary &&
+    localizedLibrary[lang] &&
+    localizedLibrary[lang][props.card['Id']]
+      ? lang
+      : 'en-EN'
+  }/${props.card['ASCII Name']
     .toLowerCase()
     .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
 

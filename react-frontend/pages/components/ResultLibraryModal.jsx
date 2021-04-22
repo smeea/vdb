@@ -12,12 +12,18 @@ import ButtonToggleShowImage from './ButtonToggleShowImage.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryModal(props) {
-  const { lang } = React.useContext(AppContext);
+  const { localizedLibrary, lang } = React.useContext(AppContext);
   const [imageSet, setImageSet] = useState(null);
 
   const CardImage = () => {
     const imgSrc = `${process.env.ROOT_URL}images/cards/${
-      imageSet ? 'set/' + imageSet + '/' : lang === 'en-EN' ? '' : lang + '/'
+      imageSet
+        ? 'set/' + imageSet + '/'
+        : localizedLibrary &&
+          localizedLibrary[lang] &&
+          localizedLibrary[lang][props.card['Id']]
+        ? lang + '/'
+        : 'en-EN/'
     }${props.card['ASCII Name']
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;

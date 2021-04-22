@@ -23,7 +23,6 @@
 * Update cardbase script
 * Documentation on updates / update script
 * Card text update
-* Site localization
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Sync: websockets
