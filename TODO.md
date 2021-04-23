@@ -4,9 +4,7 @@
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt
 * Full precon decks name
-* Menu for app buttons in mobile
 * Click on burned card from draw to open modal
-* Click outside of mobile/lang menu to hide it
 
 # FIX MOBILE
 * Optimize for tablet
