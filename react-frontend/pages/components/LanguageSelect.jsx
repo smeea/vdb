@@ -1,8 +1,8 @@
 import React, { useRef, useState, useContext } from 'react';
 import { Overlay, Popover } from 'react-bootstrap';
-import FlagEn from '../../assets/images/misc/en.svg';
-import FlagEs from '../../assets/images/misc/es.svg';
-import FlagFr from '../../assets/images/misc/fr.svg';
+import FlagEn from '../../assets/images/flags/en.svg';
+import FlagEs from '../../assets/images/flags/es.svg';
+import FlagFr from '../../assets/images/flags/fr.svg';
 import AppContext from '../../context/AppContext.js';
 
 const LanguageSelect = (props) => {
