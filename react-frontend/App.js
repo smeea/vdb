@@ -12,6 +12,7 @@ import defaultsCryptForm from './pages/components/forms_data/defaultsCryptForm.j
 import defaultsLibraryForm from './pages/components/forms_data/defaultsLibraryForm.json';
 import preconDecksData from './preconDecks.json';
 import preconData from './pages/components/forms_data/preconOptions.json';
+import setsAndPrecons from './pages/components/forms_data/setsAndPrecons.json';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
 
@@ -444,7 +445,7 @@ function App(props) {
           name: `${name}`,
           deckid: deckid,
           author: 'VTES Team',
-          description: `Preconstructed deck from ${set}`,
+          description: `Preconstructed from "${setsAndPrecons[set]['name']}" [${setsAndPrecons[set]['year']}]`,
           crypt: {},
           library: {},
         };

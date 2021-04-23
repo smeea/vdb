@@ -34,10 +34,6 @@ const LanguageSelect = (props) => {
       <div className="d-flex align-items-center justify-content-between">
         {options}
       </div>
-      <div className="px-2 pt-2 pb-1 small">
-        [*] only printed since '19
-        <br /> available in non-english
-      </div>
     </>
   );
 
