@@ -12,7 +12,7 @@ function Banner(props) {
       <div className="d-flex align-items-center">
         <img
           className="logo-image"
-          src={`${process.env.ROOT_URL}images/logo.svg`}
+          src={`${process.env.ROOT_URL}images/misc/logo.svg`}
           title="logo"
         />
         <div className="d-inline logo-text px-2">VDB</div>

@@ -45,13 +45,14 @@ Start backend:
     export FLASK_APP=api
     export FLASK_ENV=development
     flask db init
+    flask db migrate
+    flask db upgrade
     flask run
 ```
 
 Start frontend:
 ```
     cd react-backend
-    cp -r assets/images dist
     npm install
     npx parcel serve index.html
 ```
