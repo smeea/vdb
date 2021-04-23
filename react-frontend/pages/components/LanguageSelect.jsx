@@ -28,12 +28,27 @@ const LanguageSelect = (props) => {
     );
   });
 
-  const Flag = languages[lang];
+  const Menu = () => (
+    <>
+      <div className="px-2 pb-1">Card Language:</div>
+      <div className="d-flex align-items-center justify-content-between">
+        {options}
+      </div>
+      <div className="px-2 pt-2 pb-1 small">
+        [*] only printed since '19
+        <br /> available in non-english
+      </div>
+    </>
+  );
+
+  const SelectedFlag = languages[lang];
 
   return (
     <>
       {isMobile ? (
-        <>{options}</>
+        <div>
+          <Menu />
+        </div>
       ) : (
         <>
           <div
@@ -41,15 +56,13 @@ const LanguageSelect = (props) => {
             className="px-3"
             onClick={() => setShowMenu(!showMenu)}
           >
-            <Flag width="18" height="18" viewBox="0 0 500 500" />
+            <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
           </div>
           <Overlay target={menuRef} show={showMenu} placement="bottom">
             {({ placement, arrowProps, show: _show, popper, ...props }) => (
-              <Popover {...props} className="langPopover">
+              <Popover {...props} className="navMenu">
                 <Popover.Content>
-                  <div className="d-flex align-items-center justify-content-between">
-                    {options}
-                  </div>
+                  <Menu />
                 </Popover.Content>
               </Popover>
             )}

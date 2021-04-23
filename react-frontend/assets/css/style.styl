@@ -163,18 +163,13 @@ label.btn-outline-secondary:not(.disabled).active
   background: var(--bg-button-hover)
   color: var(--fg-primary)
 
-.mobile-menu
-  background: var(--bg-nav)
-  border: 1px solid var(--bg-button)
-  border-radius: 5px
-  position: absolute
-  top: 40px
-  left: 0px
-
-.langPopover
+.navMenu
   margin-top: 18px
 
-.langPopover div.arrow
+.navMenu.mobile
+  margin-top: 12px
+
+.navMenu div.arrow
   display: none
 
 .flag-active
@@ -692,14 +687,18 @@ div.gray-font-toggle svg
   width: 30px
   height: 30px
   color: darkgray
+
 div.white-font-toggle svg 
   width: 30px
   height: 30px
   color: white
-div.gray-font 
+
+.gray-font 
   color: darkgray
-div.white-font 
+.white-font 
   color: white
+.main-font
+  color: var(--fg-primary)
 
 div.col-hide
   display:none
