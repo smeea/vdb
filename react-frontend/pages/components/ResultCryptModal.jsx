@@ -157,7 +157,11 @@ function ResultCryptModal(props) {
                       <Col lg={5}>
                         <div className="d-flex align-items-center">
                           <div className="opacity-035">
-                            <CalculatorFill />
+                            <CalculatorFill
+                              width="14"
+                              height="14"
+                              viewBox="0 0 16 16"
+                            />
                           </div>
                           <div className="px-1">
                             <b>
@@ -169,7 +173,11 @@ function ResultCryptModal(props) {
                         </div>
                         <div className="d-flex align-items-center">
                           <div className="opacity-035">
-                            <ArchiveFill />
+                            <ArchiveFill
+                              width="14"
+                              height="14"
+                              viewBox="0 0 16 16"
+                            />
                           </div>
                           <div className="px-1">
                             <b>{props.inventoryState.inInventory}</b>

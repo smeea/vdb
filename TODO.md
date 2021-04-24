@@ -18,6 +18,7 @@
 * Offline PWA support
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name}
 * Search for similar TWD decks
+* Keyboard navigation + swipes in card view
 
 # MAYBE LATER FEATURES
 * Update cardbase script

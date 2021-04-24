@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
-import Shuffle from '../../assets/images/icons/shuffle.svg';
-import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
+import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
@@ -129,50 +128,41 @@ function ResultLibraryTable(props) {
             </td>
           )}
           {props.inventoryMode && (
-            <>
-              <OverlayTrigger
-                placement="left"
-                overlay={
-                  <UsedPopover
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                    inInventory={inInventory}
-                    SoftUsedDescription={SoftUsedDescription}
-                    HardUsedDescription={HardUsedDescription}
-                  />
-                }
-              >
-                <td className="quantity px-1">
-                  <div
-                    className={
-                      inInventory < softUsedMax + hardUsedTotal
-                        ? 'quantity px-1 mx-1 inv-miss-full'
-                        : 'quantity px-1'
-                    }
-                  >
-                    {inInventory > 0 && inInventory}
-                  </div>
-                </td>
-              </OverlayTrigger>
-              <td className="used">
-                {softUsedMax > 0 && (
-                  <div className="d-flex align-items-center justify-content-center">
-                    <div className="d-inline opacity-035 pr-1">
-                      <Shuffle />
-                    </div>
-                    {softUsedMax}
-                  </div>
-                )}
-                {hardUsedTotal > 0 && (
-                  <div className="d-flex align-items-center justify-content-center">
-                    <div className="d-inline opacity-035 pr-1">
-                      <PinAngleFill />
-                    </div>
-                    {hardUsedTotal}
-                  </div>
-                )}
+            <OverlayTrigger
+              placement="left"
+              overlay={
+                <UsedPopover
+                  softUsedMax={softUsedMax}
+                  hardUsedTotal={hardUsedTotal}
+                  inInventory={inInventory}
+                  SoftUsedDescription={SoftUsedDescription}
+                  HardUsedDescription={HardUsedDescription}
+                />
+              }
+            >
+              <td className="quantity">
+                <div
+                  className={
+                    inInventory < softUsedMax + hardUsedTotal
+                      ? 'd-flex align-items-center justify-content-center quantity px-1 ml-1 inv-miss-full'
+                      : 'd-flex align-items-center justify-content-center quantity px-1 ml-1'
+                  }
+                >
+                  {inInventory > 0 && (
+                    <>
+                      <div className="pr-1 opacity-035">
+                        <ArchiveFill
+                          width="14"
+                          height="14"
+                          viewBox="0 0 16 16"
+                        />
+                      </div>
+                      {inInventory}
+                    </>
+                  )}
+                </div>
               </td>
-            </>
+            </OverlayTrigger>
           )}
           <td className="cost px-1" onClick={() => handleClick()}>
             <ResultLibraryCost

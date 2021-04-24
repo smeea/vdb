@@ -149,7 +149,7 @@ function InventoryLibraryTable(props) {
               {softUsedMax > 0 && (
                 <div className="d-flex align-items-center justify-content-center">
                   <div className="d-inline opacity-035 pr-1">
-                    <Shuffle />
+                    <Shuffle width="14" height="14" viewBox="0 0 16 16" />
                   </div>
                   {softUsedMax}
                 </div>
@@ -157,7 +157,7 @@ function InventoryLibraryTable(props) {
               {hardUsedTotal > 0 && (
                 <div className="d-flex align-items-center justify-content-center">
                   <div className="d-inline opacity-035 pr-1">
-                    <PinAngleFill />
+                    <PinAngleFill width="14" height="14" viewBox="0 0 16 16" />
                   </div>
                   {hardUsedTotal}
                 </div>
@@ -170,12 +170,12 @@ function InventoryLibraryTable(props) {
                   <CardPopover card={card.c} showImage={props.showImage} />
                 }
               >
-                <td className="name px-2" onClick={() => handleClick()}>
+                <td className="name px-1" onClick={() => handleClick()}>
                   <ResultLibraryName card={card.c} />
                 </td>
               </OverlayTrigger>
             ) : (
-              <td className="name px-2" onClick={() => handleClick()}>
+              <td className="name px-1" onClick={() => handleClick()}>
                 <ResultLibraryName card={card.c} />
               </td>
             )}

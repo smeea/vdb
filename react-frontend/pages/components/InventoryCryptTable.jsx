@@ -137,7 +137,7 @@ function InventoryCryptTable(props) {
               {softUsedMax > 0 && (
                 <div className="d-flex align-items-center justify-content-center">
                   <div className="d-inline opacity-035 pr-1">
-                    <Shuffle />
+                    <Shuffle width="14" height="14" viewBox="0 0 16 16" />
                   </div>
                   {softUsedMax}
                 </div>
@@ -145,7 +145,7 @@ function InventoryCryptTable(props) {
               {hardUsedTotal > 0 && (
                 <div className="d-flex align-items-center justify-content-center">
                   <div className="d-inline opacity-035 pr-1">
-                    <PinAngleFill />
+                    <PinAngleFill width="14" height="14" viewBox="0 0 16 16" />
                   </div>
                   {hardUsedTotal}
                 </div>
@@ -155,7 +155,7 @@ function InventoryCryptTable(props) {
               <ResultCryptCapacity value={card.c['Capacity']} />
             </td>
             {!props.isMobile && (
-              <td className="disciplines" onClick={() => handleClick()}>
+              <td className="disciplines px-1" onClick={() => handleClick()}>
                 <ResultCryptDisciplines
                   value={card.c['Disciplines']}
                   disciplinesSet={props.disciplinesSet}
@@ -172,12 +172,12 @@ function InventoryCryptTable(props) {
                   <CardPopover card={card.c} showImage={props.showImage} />
                 }
               >
-                <td className="name pl-2" onClick={() => handleClick()}>
+                <td className="name" onClick={() => handleClick()}>
                   <ResultCryptName card={card.c} />
                 </td>
               </OverlayTrigger>
             ) : (
-              <td className="name pl-2" onClick={() => handleClick()}>
+              <td className="name" onClick={() => handleClick()}>
                 <ResultCryptName card={card.c} />
               </td>
             )}
