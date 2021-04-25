@@ -4,6 +4,7 @@
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt
 * Click on burned card from draw to open modal
+* Error in twd sanitizeTwd with del (deck['description'])
 
 # FIX MOBILE
 * Optimize for tablet
@@ -19,6 +20,7 @@
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name}
 * Search for similar TWD decks
 * Keyboard navigation + swipes in card view
+* Localized proxies
 
 # MAYBE LATER FEATURES
 * Update cardbase script

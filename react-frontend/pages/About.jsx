@@ -160,7 +160,7 @@ function About(props) {
                   MIT license.
                 </a>
                 <br />
-                Card images & icons are copyrighted by Authors / Publishers.
+                Card images & icons are copyrighted by Paradox Interactive AB.
               </p>
             </div>
 
@@ -194,7 +194,7 @@ function About(props) {
                       <Globe2 />
                     </div>
                     <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
-                      VEKN.net Forum
+                      VEKN.net forum
                     </a>
                   </div>
                 </li>
