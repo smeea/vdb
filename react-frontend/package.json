@@ -32,7 +32,7 @@
   "dependencies": {
     "browserslist": "^4.16.5",
     "file-saver": "^2.0.5",
-    "react-bootstrap": "^1.5.2",
+    "react-bootstrap": "^1.1.1",
     "react-router-dom": "^5.2.0",
     "react-string-replace": "^0.4.4",
     "stylus": "^0.54.8"
