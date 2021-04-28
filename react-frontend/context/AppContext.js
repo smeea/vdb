@@ -29,7 +29,7 @@ export const AppProvider = (props) => {
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
-  const [lang, setLang] = useState(window.localStorage.getItem('lang'));
+  const [lang, setLang] = useState('en-EN');
   const [localizedCrypt, setLocalizedCrypt] = useState(undefined);
   const [localizedLibrary, setLocalizedLibrary] = useState(undefined);
   const [nativeCrypt, setNativeCrypt] = useState(undefined);
