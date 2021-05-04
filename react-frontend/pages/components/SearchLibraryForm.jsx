@@ -19,7 +19,7 @@ import SearchFormArtist from './SearchFormArtist.jsx';
 function SearchLibraryForm(props) {
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
-  const showLimit = 200;
+  const showLimit = 300;
 
   const history = useHistory();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
