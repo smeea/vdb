@@ -12,6 +12,7 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
+import ResultCryptTitle from './ResultCryptTitle.jsx';
 import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
 import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import drawProbability from './drawProbability.js';
@@ -311,6 +312,9 @@ function DeckCryptTable(props) {
               <ResultCryptName card={card.c} />
             </td>
           )}
+          <td className="title pr-2" onClick={() => handleClick()}>
+            <ResultCryptTitle value={card.c.Title} />
+          </td>
           {props.isMobile || !props.isWide ? (
             <td className="clan-group" onClick={() => handleClick()}>
               <div>

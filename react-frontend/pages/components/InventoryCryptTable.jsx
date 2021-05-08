@@ -11,6 +11,7 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
+import ResultCryptTitle from './ResultCryptTitle.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 
 function InventoryCryptTable(props) {
@@ -181,6 +182,9 @@ function InventoryCryptTable(props) {
                 <ResultCryptName card={card.c} />
               </td>
             )}
+            <td className="title pr-2" onClick={() => handleClick()}>
+              <ResultCryptTitle value={card.c.Title} />
+            </td>
             <td className="clan" onClick={() => handleClick()}>
               <ResultCryptClan value={card.c['Clan']} />
             </td>

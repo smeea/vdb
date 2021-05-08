@@ -9,6 +9,7 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
+import ResultCryptTitle from './ResultCryptTitle.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 
@@ -188,6 +189,9 @@ function ResultCryptTable(props) {
               <ResultCryptName card={card} />
             </td>
           )}
+          <td className="title pr-2" onClick={() => handleClick()}>
+            <ResultCryptTitle value={card.Title} />
+          </td>
           {props.isMobile || !props.isWide ? (
             <td className="clan-group" onClick={() => handleClick()}>
               <ResultCryptClan value={card['Clan']} />
