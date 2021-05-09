@@ -10,9 +10,9 @@ const ResultLayoutTextText = (props) => {
       {text.map((i, index) => {
         return (
           <React.Fragment key={index}>
-            {reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
+            {reactStringReplace(i, /\[(\w+)\]/g, (match, idx) => (
               <img
-                key={index}
+                key={idx}
                 className="discipline-base-image-results"
                 src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
                 title={match}

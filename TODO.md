@@ -5,6 +5,8 @@
 * Scroll modal for deck through library + crypt
 * Click on burned card from draw to open modal
 * Error in twd sanitizeTwd with del (deck['description'])
+* Type icon in iconized card text
+* InventoryMode error on hover in twd bytypes cards
 
 # FIX MOBILE
 * Optimize for tablet

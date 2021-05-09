@@ -185,7 +185,7 @@ function Decks(props) {
       hash
         .slice(1)
         .split(';')
-        .map((i, index) => {
+        .map((i) => {
           const j = i.split('=');
           if (j[0] > 200000) {
             crypt[j[0]] = {

@@ -57,7 +57,7 @@ function ResultLibraryTable(props) {
 
     let inDeck;
     if (props.library) {
-      Object.keys(props.library).map((i, index) => {
+      Object.keys(props.library).map((i) => {
         if (i == card.Id) {
           inDeck = props.library[i].q;
         }
@@ -78,13 +78,13 @@ function ResultLibraryTable(props) {
 
     if (props.usedCards.soft[card['Id']]) {
       SoftUsedDescription = Object.keys(props.usedCards.soft[card['Id']]).map(
-        (id, index) => {
+        (id) => {
           if (softUsedMax < props.usedCards.soft[card['Id']][id]) {
             softUsedMax = props.usedCards.soft[card['Id']][id];
           }
           return (
             <UsedDescription
-              key={index}
+              key={id}
               q={props.usedCards.soft[card['Id']][id]}
               deckName={props.decks[id]['name']}
               t="s"
@@ -98,11 +98,11 @@ function ResultLibraryTable(props) {
     let HardUsedDescription;
     if (props.usedCards.hard[card['Id']]) {
       HardUsedDescription = Object.keys(props.usedCards.hard[card['Id']]).map(
-        (id, index) => {
+        (id) => {
           hardUsedTotal += props.usedCards.hard[card['Id']][id];
           return (
             <UsedDescription
-              key={index}
+              key={id}
               q={props.usedCards.hard[card['Id']][id]}
               deckName={props.decks[id]['name']}
               t="h"
@@ -113,7 +113,7 @@ function ResultLibraryTable(props) {
     }
 
     return (
-      <React.Fragment key={index}>
+      <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
           {props.addMode && (
             <td className="quantity-add pr-1">

@@ -14,11 +14,11 @@ const ResultLayoutTextRulings = (props) => {
 
     const text = k.text.replace(/\(D\)/g, '\u24B9').split('\n');
     const iconifiedRulingText = [];
-    text.map((i, index) => {
+    text.map((i) => {
       iconifiedRulingText.push(
-        reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
+        reactStringReplace(i, /\[(\w+)\]/g, (match, idx) => (
           <img
-            key={index}
+            key={idx}
             className="discipline-base-image-results"
             src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
             title={match}

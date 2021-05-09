@@ -25,9 +25,9 @@ function TwdSearchFormLibrary(props) {
 
   const libraryCardsList = Object.keys(props.state)
     .filter((id) => props.state[id] > 0)
-    .map((id, index) => {
+    .map((id) => {
       return (
-        <div key={index} className="d-flex align-items-center">
+        <div key={id} className="d-flex align-items-center">
           <TwdSearchFormQuantityButtons
             state={props.state}
             setState={props.setState}

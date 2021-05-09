@@ -14,13 +14,13 @@ function TwdResultTotal(props) {
     total += 1;
   });
 
-  const totalOutput = Object.keys(byYear).map((key, index) => {
+  const totalOutput = Object.keys(byYear).map((k) => {
     return (
-      <span key={index} className="d-inline-block nobr pr-3">
+      <span key={k} className="d-inline-block nobr pr-3">
         <span className="total-year">
-          <b>{key}: </b>
+          <b>{k}: </b>
         </span>
-        {byYear[key]}
+        {byYear[k]}
       </span>
     );
   });

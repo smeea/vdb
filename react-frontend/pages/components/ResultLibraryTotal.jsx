@@ -15,11 +15,11 @@ function ResultLibraryTotal(props) {
     total += 1;
   });
 
-  const totalOutput = Object.keys(byTypes).map((key, index) => {
+  const totalOutput = Object.keys(byTypes).map((k, index) => {
     return (
-      <span key={index} className="d-inline-block nobr pr-3">
-        <ResultLibraryType cardtype={key} />
-        {byTypes[key]}
+      <span key={k} className="d-inline-block nobr pr-3">
+        <ResultLibraryType cardtype={k} />
+        {byTypes[k]}
       </span>
     );
   });

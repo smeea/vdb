@@ -33,11 +33,12 @@ function ResultCryptPopover(props) {
   );
 
   const text = props.card['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
-  const newText = [];
-  text.map((i, index) => {
-    newText.push(
-      reactStringReplace(i, /\[(\w+)\]/g, (match, x) => (
+  const iconizedText = [];
+  text.map((i) => {
+    iconizedText.push(
+      reactStringReplace(i, /\[(\w+)\]/g, (match, idx) => (
         <img
+          key={idx}
           className="discipline-base-image-results"
           src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
           title={match}
@@ -78,11 +79,11 @@ function ResultCryptPopover(props) {
             </div>
           </div>
           <hr />
-          {newText.map((i, index) => {
+          {iconizedText.map((i, index) => {
             return (
               <React.Fragment key={index}>
-                {i.map((y, index) => {
-                  return <React.Fragment key={index}>{y}</React.Fragment>;
+                {i.map((y, idx) => {
+                  return <React.Fragment key={idx}>{y}</React.Fragment>;
                 })}
                 <br />
               </React.Fragment>

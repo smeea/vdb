@@ -6,7 +6,7 @@ function ResultCryptTotal(props) {
   const byGroupsCapacityTotal = {};
   let total = 0;
 
-  props.cards.map((card, index) => {
+  props.cards.map((card) => {
     if (byGroups[card['Group']]) {
       byGroups[card['Group']] += 1;
     } else {
@@ -20,15 +20,15 @@ function ResultCryptTotal(props) {
     total += 1;
   });
 
-  const totalOutput = Object.keys(byGroups).map((key, index) => {
+  const totalOutput = Object.keys(byGroups).map((k) => {
     return (
-      <span key={index} className="d-inline-block nobr pr-3">
+      <span key={k} className="d-inline-block nobr pr-3">
         <span className="total-group">
-          <b>G{key}:</b>
+          <b>G{k}:</b>
         </span>
-        {byGroups[key]}
+        {byGroups[k]}
         <div className="d-flex small justify-content-center">
-          ~{Math.round((byGroupsCapacityTotal[key] / byGroups[key]) * 10) / 10}
+          ~{Math.round((byGroupsCapacityTotal[key] / byGroups[k]) * 10) / 10}
         </div>
       </span>
     );

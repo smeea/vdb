@@ -31,7 +31,7 @@ function DeckLibraryTable(props) {
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
-  const cardRows = props.cards.map((card, index) => {
+  const cardRows = props.cards.map((card) => {
     const handleClick = () => {
       props.handleModalCardOpen(card.c);
       props.isMobile && props.setShowFloatingButtons(false);
@@ -82,13 +82,13 @@ function DeckLibraryTable(props) {
       if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
         SoftUsedDescription = Object.keys(
           props.usedCards.soft[card.c['Id']]
-        ).map((id, index) => {
+        ).map((id) => {
           if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
             softUsedMax = props.usedCards.soft[card.c['Id']][id];
           }
           return (
             <UsedDescription
-              key={index}
+              key={id}
               q={props.usedCards.soft[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
               t="s"
@@ -100,11 +100,11 @@ function DeckLibraryTable(props) {
       if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
         HardUsedDescription = Object.keys(
           props.usedCards.hard[card.c['Id']]
-        ).map((id, index) => {
+        ).map((id) => {
           hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
           return (
             <UsedDescription
-              key={index}
+              key={id}
               q={props.usedCards.hard[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
               t="h"
@@ -115,7 +115,7 @@ function DeckLibraryTable(props) {
     }
 
     return (
-      <React.Fragment key={index}>
+      <React.Fragment key={card.c['Id']}>
         <tr className={resultTrClass}>
           {props.proxySelected && (
             <td className="proxy-selector">

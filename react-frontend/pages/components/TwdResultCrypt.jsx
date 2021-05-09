@@ -29,7 +29,7 @@ function TwdResultCrypt(props) {
   let cryptGroupMin;
   let cryptGroupMax;
 
-  Object.keys(props.crypt).map((card, index) => {
+  Object.keys(props.crypt).map((card) => {
     if (props.crypt[card].c['Group'] == 'ANY') {
       return;
     }
@@ -114,13 +114,13 @@ function TwdResultCrypt(props) {
       if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
         SoftUsedDescription = Object.keys(
           props.usedCards.soft[card.c['Id']]
-        ).map((id, index) => {
+        ).map((id) => {
           if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
             softUsedMax = props.usedCards.soft[card.c['Id']][id];
           }
           return (
             <UsedDescription
-              key={index}
+              key={id}
               q={props.usedCards.soft[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
             />
@@ -131,11 +131,11 @@ function TwdResultCrypt(props) {
       if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
         HardUsedDescription = Object.keys(
           props.usedCards.hard[card.c['Id']]
-        ).map((id, index) => {
+        ).map((id) => {
           hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
           return (
             <UsedDescription
-              key={index}
+              key={id}
               q={props.usedCards.hard[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
             />
@@ -145,7 +145,7 @@ function TwdResultCrypt(props) {
     }
 
     return (
-      <tr key={index} className={resultTrClass}>
+      <tr key={card.c['Id']} className={resultTrClass}>
         {props.inventoryMode ? (
           <>
             {props.isMobile ? (
