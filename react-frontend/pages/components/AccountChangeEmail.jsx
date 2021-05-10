@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import {
   Form,
   FormControl,
@@ -10,8 +10,11 @@ import Check2 from '../../assets/images/icons/check2.svg';
 import EnvelopeFill from '../../assets/images/icons/envelope-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ModalTooltip from './ModalTooltip.jsx';
+import AppContext from '../../context/AppContext';
 
 function AccountChangeEmail(props) {
+  const { email, setEmail, isMobile } = useContext(AppContext);
+
   const [state, setState] = useState({
     password: '',
     email: '',
@@ -65,7 +68,7 @@ function AccountChangeEmail(props) {
           return response.json();
         })
         .then((data) => {
-          props.setEmail(state.email);
+          setEmail(state.email);
           setButtonState(true);
           setTimeout(() => {
             setButtonState(false);
@@ -94,13 +97,13 @@ function AccountChangeEmail(props) {
   };
 
   useEffect(() => {
-    if (props.email) {
+    if (email) {
       setState((prevState) => ({
         ...prevState,
-        email: props.email,
+        email: email,
       }));
     }
-  }, [props.email]);
+  }, [email]);
 
   const tooltipText = (
     <>
@@ -116,7 +119,7 @@ function AccountChangeEmail(props) {
       <h6 className="d-flex align-items-center px-1">
         <EnvelopeFill />
         <span className="ml-2">Change email (optional)</span>
-        {!props.isMobile ? (
+        {!isMobile ? (
           <OverlayTooltip text={tooltipText}>
             <span className="question-tooltip ml-1">[?]</span>
           </OverlayTooltip>

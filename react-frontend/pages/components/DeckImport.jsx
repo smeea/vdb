@@ -1,10 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { Dropdown, Overlay } from 'react-bootstrap';
 import ClipboardPlus from '../../assets/images/icons/clipboard-plus.svg';
 import DeckImportText from './DeckImportText.jsx';
 import DeckImportAmaranth from './DeckImportAmaranth.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function DeckImport(props) {
+  const { isMobile } = useContext(AppContext);
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');
   const [showTextModal, setShowTextModal] = useState(false);
@@ -19,7 +21,7 @@ function DeckImport(props) {
   const handleCloseImportModal = () => {
     setShowTextModal(false);
     setShowAmaranthModal(false);
-    props.isMobile && props.setShowButtons(false);
+    isMobile && props.setShowButtons(false);
   };
   const handleOpenTextModal = () => setShowTextModal(true);
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
@@ -82,8 +84,8 @@ function DeckImport(props) {
 
   const handleCreateButton = () => {
     createNewDeck();
-    props.isMobile && props.setShowInfo(true);
-    props.isMobile && props.setShowButtons(false);
+    isMobile && props.setShowInfo(true);
+    isMobile && props.setShowButtons(false);
   };
 
   const ImportButtonOptions = (
@@ -126,7 +128,6 @@ function DeckImport(props) {
         setActiveDeck={props.setActiveDeck}
         show={showTextModal}
         setShowInfo={props.setShowInfo}
-        isMobile={props.isMobile}
       />
       <DeckImportAmaranth
         handleClose={handleCloseImportModal}
@@ -134,7 +135,6 @@ function DeckImport(props) {
         setActiveDeck={props.setActiveDeck}
         show={showAmaranthModal}
         setShowInfo={props.setShowInfo}
-        isMobile={props.isMobile}
       />
       <Overlay
         show={createError || importError}

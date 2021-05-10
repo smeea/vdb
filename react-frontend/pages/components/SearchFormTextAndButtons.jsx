@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import Check2 from '../../assets/images/icons/check2.svg';
+import AppContext from '../../context/AppContext.js';
 
 function SearchFormTextAndButtons(props) {
+  const { isMobile } = useContext(AppContext);
+
   return (
-    <InputGroup className={props.isMobile ? 'd-block mb-1' : 'mb-2'}>
+    <InputGroup className={isMobile ? 'd-block mb-1' : 'mb-2'}>
       <FormControl
         placeholder="Card Name / Text"
         type="text"
@@ -16,12 +19,12 @@ function SearchFormTextAndButtons(props) {
         onChange={props.onChange}
       />
       <InputGroup.Append>
-        {!props.isMobile && props.preresults > props.showLimit && (
+        {!isMobile && props.preresults > props.showLimit && (
           <Button variant="outline-secondary" onClick={props.handleShowResults}>
             <Check2 /> FOUND {props.preresults}
           </Button>
         )}
-        {!props.isMobile && (
+        {!isMobile && (
           <Button variant="outline-secondary" onClick={props.handleClearButton}>
             <X />
           </Button>

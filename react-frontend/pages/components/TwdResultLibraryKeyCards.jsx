@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContextt } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
@@ -8,8 +8,10 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function TwdResultLibraryKeyCards(props) {
+  const { inventoryMode, isMobile } = useContext(AppContext);
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
 
@@ -80,7 +82,7 @@ function TwdResultLibraryKeyCards(props) {
   const cardLines = keyCards.map((card, index) => {
     const handleClick = () => {
       setModalCardIdx(index);
-      props.isMobile && props.setShowFloatingButtons(false);
+      isMobile && props.setShowFloatingButtons(false);
       setModalInventory({
         inInventory: inInventory,
         softUsedMax: softUsedMax,
@@ -104,7 +106,7 @@ function TwdResultLibraryKeyCards(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (props.inventoryMode) {
+    if (inventoryMode) {
       if (
         Object.keys(props.inventoryLibrary).includes(card.c['Id'].toString())
       ) {
@@ -148,9 +150,9 @@ function TwdResultLibraryKeyCards(props) {
 
     return (
       <tr key={card.c['Id']} className={resultTrClass}>
-        {props.inventoryMode ? (
+        {inventoryMode ? (
           <>
-            {props.isMobile ? (
+            {isMobile ? (
               <td className="quantity-no-buttons px-1">
                 <div
                   className={
@@ -199,10 +201,10 @@ function TwdResultLibraryKeyCards(props) {
         <td className="type" onClick={() => handleClick()}>
           <ResultLibraryType cardtype={card.c['Type']} />
         </td>
-        {!props.isMobile ? (
+        {!isMobile ? (
           <OverlayTrigger
             placement={props.placement ? props.placement : 'right'}
-            overlay={<CardPopover card={card.c} showImage={props.showImage} />}
+            overlay={<CardPopover card={card.c} />}
           >
             <td className="name px-1" onClick={() => handleClick()}>
               <ResultLibraryName card={card.c} />
@@ -213,7 +215,7 @@ function TwdResultLibraryKeyCards(props) {
             <ResultLibraryName card={card.c} />
           </td>
         )}
-        {!props.isMobile && (
+        {!isMobile && (
           <td className="disciplines" onClick={() => handleClick()}>
             <ResultLibraryDisciplines value={card.c['Discipline']} />
             <ResultLibraryClan value={card.c['Clan']} />
@@ -226,7 +228,7 @@ function TwdResultLibraryKeyCards(props) {
   return (
     <>
       <div className="px-1">
-        <b>{props.isMobile && `Library [${libraryTotal}],`} Key Cards:</b>
+        <b>{isMobile && `Library [${libraryTotal}],`} Key Cards:</b>
       </div>
       <div className="props.library">
         <table className="twd-library-table">
@@ -237,15 +239,11 @@ function TwdResultLibraryKeyCards(props) {
         <ResultLibraryModal
           card={keyCards[modalCardIdx].c}
           handleModalCardChange={handleModalCardChange}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
-            props.isMobile && props.setShowFloatingButtons(true);
+            isMobile && props.setShowFloatingButtons(true);
           }}
-          isMobile={props.isMobile}
           inventoryState={modalInventory}
-          inventoryMode={props.inventoryMode}
         />
       )}
     </>

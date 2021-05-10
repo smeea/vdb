@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import EyeFill from '../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
@@ -8,8 +8,10 @@ import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckBranchSelect from './components/DeckBranchSelect.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
 import DeckLibrary from './components/DeckLibrary.jsx';
+import AppContext from '../context/AppContext.js';
 
 function Library(props) {
+  const { addMode, setAddMode, username, isMobile } = useContext(AppContext);
   const [sortMethod, setSortMethod] = useState('Type');
 
   let isBranches;
@@ -21,35 +23,27 @@ function Library(props) {
   }
 
   return (
-    <Container
-      className={props.isMobile ? 'main-container' : 'main-container py-3'}
-    >
+    <Container className={isMobile ? 'main-container' : 'main-container py-3'}>
       <Row>
-        {!props.isMobile && (
-          <Col
-            md={12}
-            xl={props.username && props.addMode ? 4 : 3}
-            className="px-0"
-          >
+        {!isMobile && (
+          <Col md={12} xl={username && addMode ? 4 : 3} className="px-0">
             {props.decks && Object.keys(props.decks).length > 0 && (
               <Row>
                 <Col>
                   <div
                     className={
-                      props.isMobile
+                      isMobile
                         ? 'd-flex justify-content-between'
                         : 'd-flex justify-content-end'
                     }
                   >
-                    {props.addMode && (
+                    {addMode && (
                       <>
                         <div className={isBranches ? 'w-75' : 'w-100'}>
                           <DeckSelectMy
                             decks={props.decks}
                             activeDeck={props.activeDeck}
                             setActiveDeck={props.setActiveDeck}
-                            inventoryMode={props.inventoryMode}
-                            isMobile={props.isMobile}
                           />
                         </div>
                         {isBranches && (
@@ -58,7 +52,6 @@ function Library(props) {
                               decks={props.decks}
                               activeDeck={props.activeDeck}
                               setActiveDeck={props.setActiveDeck}
-                              inventoryMode={props.inventoryMode}
                             />
                           </div>
                         )}
@@ -67,16 +60,16 @@ function Library(props) {
                     <div className="d-flex pl-1">
                       <Button
                         variant="outline-secondary"
-                        onClick={() => props.setAddMode(!props.addMode)}
+                        onClick={() => setAddMode(!addMode)}
                       >
-                        {props.addMode ? <EyeSlashFill /> : <EyeFill />}
+                        {addMode ? <EyeSlashFill /> : <EyeFill />}
                       </Button>
                     </div>
                   </div>
                 </Col>
               </Row>
             )}
-            {props.deckRouter(props.activeDeck) && props.addMode && (
+            {props.deckRouter(props.activeDeck) && addMode && (
               <>
                 <div className="pt-4">
                   <DeckCrypt
@@ -85,13 +78,8 @@ function Library(props) {
                     cardChange={props.cardChange}
                     deckid={props.activeDeck.deckid}
                     cards={props.deckRouter(props.activeDeck).crypt}
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
                     isAuthor={true}
-                    isMobile={props.isMobile}
-                    isWide={props.isWide}
                     cardBase={props.cryptCardBase}
-                    inventoryMode={props.inventoryMode}
                     inventoryCrypt={props.inventoryCrypt}
                     usedCards={props.usedCryptCards}
                     decks={props.decks}
@@ -104,12 +92,8 @@ function Library(props) {
                     cardChange={props.cardChange}
                     deckid={props.activeDeck.deckid}
                     cards={props.deckRouter(props.activeDeck).library}
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
                     isAuthor={true}
-                    isMobile={props.isMobile}
                     cardBase={props.libraryCardBase}
-                    inventoryMode={props.inventoryMode}
                     inventoryLibrary={props.inventoryLibrary}
                     usedCards={props.usedLibraryCards}
                     decks={props.decks}
@@ -124,17 +108,13 @@ function Library(props) {
           md={12}
           xl={5}
           className={
-            !(props.isMobile && props.showSearch)
+            !(isMobile && props.showSearch)
               ? 'px-0 px-lg-4'
               : 'col-hide px-0 lx-lg-4'
           }
         >
           {props.results && (
             <ResultLibrary
-              showImage={props.showImage}
-              setShowImage={props.setShowImage}
-              hideMissing={props.hideMissing}
-              setHideMissing={props.setHideMissing}
               cardAdd={props.cardAdd}
               cardChange={props.cardChange}
               cards={props.results}
@@ -145,16 +125,10 @@ function Library(props) {
               activeDeck={props.activeDeck}
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
-              isMobile={props.isMobile}
-              isWide={props.isWide}
-              addMode={props.addMode}
-              setAddMode={props.setAddMode}
               showSearch={props.showSearch}
               setShowSearch={props.setShowSearch}
               setResults={props.setResults}
               isInventory={props.isInventory}
-              inventoryMode={props.inventoryMode}
-              setInventoryMode={props.setInventoryMode}
               inventoryLibrary={props.inventoryLibrary}
               usedCards={props.usedLibraryCards}
               decks={props.decks}
@@ -165,8 +139,8 @@ function Library(props) {
           md={12}
           xl={3}
           className={
-            !props.isMobile || (props.isMobile && props.showSearch)
-              ? props.isMobile
+            !isMobile || (isMobile && props.showSearch)
+              ? isMobile
                 ? 'px-1 py-1'
                 : 'px-0'
               : 'col-hide'
@@ -179,17 +153,11 @@ function Library(props) {
             setShowSearch={props.setShowSearch}
             formState={props.formState}
             setFormState={props.setFormState}
-            isMobile={props.isMobile}
-            hideMissing={props.hideMissing}
-            setHideMissing={props.setHideMissing}
             cardBase={props.libraryCardBase}
             isInventory={props.isInventory}
-            inventoryMode={props.inventoryMode}
           />
         </Col>
-        {(!props.username || !props.addMode) && !props.isMobile && (
-          <Col xl={1} />
-        )}
+        {(!username || !addMode) && !isMobile && <Col xl={1} />}
       </Row>
     </Container>
   );

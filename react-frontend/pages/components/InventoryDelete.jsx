@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from '../../assets/images/icons/trash-fill.svg';
 import DeleteConfirmation from './DeleteConfirmation.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function InventoryDelete(props) {
+  const { isMobile } = useContext(AppContext);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     deleteInventory();
     setShowConfirmation(false);
-    props.isMobile && props.setShowButtons(false);
+    isMobile && props.setShowButtons(false);
   };
 
   const deleteInventory = () => {
@@ -43,7 +45,6 @@ function InventoryDelete(props) {
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
         target="Inventory"
-        isMobile={props.isMobile}
       />
     </>
   );

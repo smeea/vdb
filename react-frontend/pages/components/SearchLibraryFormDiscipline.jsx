@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
+import AppContext from '../../context/AppContext.js';
 
 function SearchLibraryFormDiscipline(props) {
+  const { isMobile } = useContext(AppContext);
+
   const disciplines = [
     'ANY',
     'NONE',
@@ -87,7 +90,7 @@ function SearchLibraryFormDiscipline(props) {
         <Select
           classNamePrefix="react-select"
           options={options}
-          isSearchable={!props.isMobile}
+          isSearchable={!isMobile}
           name="discipline"
           value={options.find((obj) => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}

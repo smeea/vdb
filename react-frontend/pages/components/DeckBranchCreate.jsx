@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import NodePlusFill from '../../assets/images/icons/node-plus-fill.svg';
+import AppContext from '../../context/AppContext';
 
 function DeckBranchCreate(props) {
+  const { isMobile } = useContext(AppContext);
+
   const branchCreate = () => {
     let newdeckid;
     const url = `${process.env.API_URL}branch/create`;
@@ -27,7 +30,7 @@ function DeckBranchCreate(props) {
       })
       .then(() => props.getDecks())
       .then(() => props.setActiveDeck({ src: 'my', deckid: newdeckid }))
-      .then(() => props.isMobile && props.setShowButtons(false));
+      .then(() => isMobile && props.setShowButtons(false));
   };
 
   return (

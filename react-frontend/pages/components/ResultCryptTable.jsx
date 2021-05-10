@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CardPopover from './CardPopover.jsx';
@@ -12,12 +12,13 @@ import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptTitle from './ResultCryptTitle.jsx';
 import ResultAddCard from './ResultAddCard.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
+import AppContext from '../../context/AppContext';
 
 function ResultCryptTable(props) {
-  let resultTrClass;
-
+  const { addMode, inventoryMode, isMobile } = useContext(AppContext);
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+  let resultTrClass;
 
   const handleModalCardChange = (d) => {
     const maxIdx = props.resultCards.length - 1;
@@ -34,7 +35,7 @@ function ResultCryptTable(props) {
   const cardRows = props.resultCards.map((card, index) => {
     const handleClick = () => {
       setModalCardIdx(index);
-      props.isMobile && props.setShowFloatingButtons(false);
+      isMobile && props.setShowFloatingButtons(false);
       setModalInventory({
         inInventory: inInventory,
         softUsedMax: softUsedMax,
@@ -67,7 +68,7 @@ function ResultCryptTable(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (props.inventoryMode) {
+    if (inventoryMode) {
       if (Object.keys(props.inventoryCrypt).includes(card['Id'].toString())) {
         inInventory = props.inventoryCrypt[card['Id']].q;
       } else {
@@ -112,7 +113,7 @@ function ResultCryptTable(props) {
     return (
       <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
-          {props.addMode && (
+          {addMode && (
             <td className="quantity-add pr-1">
               <ResultAddCard
                 cardAdd={props.cardAdd}
@@ -124,7 +125,7 @@ function ResultCryptTable(props) {
               />
             </td>
           )}
-          {props.inventoryMode && (
+          {inventoryMode && (
             <>
               <OverlayTrigger
                 placement="left"
@@ -164,21 +165,18 @@ function ResultCryptTable(props) {
             </>
           )}
           <td
-            className={props.isMobile ? 'capacity px-1' : 'capacity px-2'}
+            className={isMobile ? 'capacity px-1' : 'capacity px-2'}
             onClick={() => handleClick()}
           >
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
-            <ResultCryptDisciplines
-              value={card['Disciplines']}
-              isMobile={props.isMobile}
-            />
+            <ResultCryptDisciplines value={card['Disciplines']} />
           </td>
-          {!props.isMobile ? (
+          {!isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card} showImage={props.showImage} />}
+              overlay={<CardPopover card={card} />}
             >
               <td className="name px-1" onClick={() => handleClick()}>
                 <ResultCryptName card={card} />
@@ -192,7 +190,7 @@ function ResultCryptTable(props) {
           <td className="title pr-2" onClick={() => handleClick()}>
             <ResultCryptTitle value={card.Title} />
           </td>
-          {props.isMobile || !props.isWide ? (
+          {isMobile ? (
             <td className="clan-group" onClick={() => handleClick()}>
               <ResultCryptClan value={card['Clan']} />
               <div className="d-flex small justify-content-end">
@@ -223,15 +221,11 @@ function ResultCryptTable(props) {
         <ResultCryptModal
           card={props.resultCards[modalCardIdx]}
           handleModalCardChange={handleModalCardChange}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
-            props.isMobile && props.setShowFloatingButtons(true);
+            isMobile && props.setShowFloatingButtons(true);
           }}
-          isMobile={props.isMobile}
           inventoryState={modalInventory}
-          inventoryMode={props.inventoryMode}
         />
       )}
     </>

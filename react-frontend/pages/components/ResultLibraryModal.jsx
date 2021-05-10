@@ -12,7 +12,14 @@ import ButtonToggleShowImage from './ButtonToggleShowImage.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryModal(props) {
-  const { localizedLibrary, lang } = useContext(AppContext);
+  const {
+    showImage,
+    setShowImage,
+    inventoryMode,
+    localizedLibrary,
+    lang,
+    isMobile,
+  } = useContext(AppContext);
   const [imageSet, setImageSet] = useState(null);
 
   const CardImage = () => {
@@ -48,9 +55,9 @@ function ResultLibraryModal(props) {
       dialogClassName="no-border"
     >
       <Modal.Body className="p-0">
-        {props.isMobile ? (
+        {isMobile ? (
           <>
-            {props.showImage ? (
+            {showImage ? (
               <>
                 <CardImage />
                 <div
@@ -81,7 +88,7 @@ function ResultLibraryModal(props) {
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
                 />
-                {props.inventoryMode && (
+                {inventoryMode && (
                   <>
                     <hr className="mx-0" />
                     <div className="pt-1">
@@ -127,7 +134,7 @@ function ResultLibraryModal(props) {
               </div>
             </div>
             <div
-              onClick={() => props.setShowImage(!props.showImage)}
+              onClick={() => setShowImage(!showImage)}
               className="float-right-middle add-on"
             >
               <div className="pt-1 float-add">
@@ -148,7 +155,7 @@ function ResultLibraryModal(props) {
                   setImageSet={setImageSet}
                 />
               </div>
-              {props.inventoryMode && (
+              {inventoryMode && (
                 <>
                   <hr className="mx-0" />
                   <div className="pt-1">
@@ -192,16 +199,10 @@ function ResultLibraryModal(props) {
               <div className="d-flex justify-content-between pt-4">
                 <div className="d-flex">
                   <div className="d-flex pr-1">
-                    <ButtonCardCopyUrl
-                      isMobile={props.isMobile}
-                      id={props.card.Id}
-                    />
+                    <ButtonCardCopyUrl id={props.card.Id} />
                   </div>
                   <div className="d-flex pr-1">
-                    <ButtonToggleShowImage
-                      showImage={props.showImage}
-                      setShowImage={props.setShowImage}
-                    />
+                    <ButtonToggleShowImage />
                   </div>
                 </div>
                 <Button variant="outline-secondary" onClick={props.handleClose}>

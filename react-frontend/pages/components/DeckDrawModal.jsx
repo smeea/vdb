@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import X from '../../assets/images/icons/x.svg';
 import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
 import DeckDrawLibraryTable from './DeckDrawLibraryTable.jsx';
+import AppContext from '../../context/AppContext';
 
 function DeckDrawModal(props) {
+  const { isMobile } = useContext(AppContext);
+
   return (
     <Modal
       show={props.show}
       onHide={props.handleClose}
       animation={false}
       size="xl"
-      dialogClassName={!props.isMobile ? 'modal-deck-draw' : null}
+      dialogClassName={!isMobile ? 'modal-deck-draw' : null}
     >
       <Modal.Body className="p-0">
         <Container fluid>
@@ -33,7 +36,7 @@ function DeckDrawModal(props) {
           </Row>
           <Row className="px-0 pb-4">
             <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
-              <div className={props.isMobile ? 'pb-4' : null}>
+              <div className={isMobile ? 'pb-4' : null}>
                 <div className="d-flex justify-content-between info-message">
                   <div className="d-flex align-items-center px-2">
                     <b>Uncontrolled</b>
@@ -75,10 +78,6 @@ function DeckDrawModal(props) {
                   total={props.drawedCrypt.length + props.restCrypt.length}
                   resultCards={props.drawedCrypt}
                   className="search-crypt-table"
-                  showImage={props.showImage}
-                  setShowImage={props.setShowImage}
-                  isMobile={props.isMobile}
-                  isWide={true}
                 />
               </div>
             </Col>
@@ -122,9 +121,6 @@ function DeckDrawModal(props) {
                 total={props.drawedLibrary.length + props.restLibrary.length}
                 resultCards={props.drawedLibrary}
                 className="search-library-table"
-                showImage={props.showImage}
-                setShowImage={props.setShowImage}
-                isMobile={props.isMobile}
               />
             </Col>
           </Row>
@@ -132,7 +128,7 @@ function DeckDrawModal(props) {
             <Row className="px-0 pb-4">
               <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
                 {props.burnedCrypt.length > 0 && (
-                  <div className={props.isMobile ? 'pb-4' : null}>
+                  <div className={isMobile ? 'pb-4' : null}>
                     <div className="d-flex justify-content-between info-message">
                       <div className="d-flex align-items-center px-2">
                         <b>Controlled</b>
@@ -148,10 +144,6 @@ function DeckDrawModal(props) {
                       total={props.drawedCrypt.length + props.restCrypt.length}
                       resultCards={props.burnedCrypt}
                       className="search-crypt-table"
-                      showImage={props.showImage}
-                      setShowImage={props.setShowImage}
-                      isMobile={props.isMobile}
-                      isWide={true}
                     />
                   </div>
                 )}
@@ -176,9 +168,6 @@ function DeckDrawModal(props) {
                       }
                       resultCards={props.burnedLibrary}
                       className="search-library-table"
-                      showImage={props.showImage}
-                      setShowImage={props.setShowImage}
-                      isMobile={props.isMobile}
                     />
                   </>
                 )}

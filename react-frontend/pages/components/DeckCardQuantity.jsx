@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
+import AppContext from '../../context/AppContext.js';
 
 function DeckCardQuantity(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(props.q);
 
@@ -21,7 +24,7 @@ function DeckCardQuantity(props) {
 
   return (
     <div className="d-flex align-items-center justify-content-between">
-      {props.isMobile ? (
+      {isMobile ? (
         <>
           <a
             className="quantity"

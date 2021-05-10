@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import ResultCryptTable from './ResultCryptTable.jsx';
 import ResultCryptTotal from './ResultCryptTotal.jsx';
 import resultCryptSort from './resultCryptSort.js';
+import AppContext from '../../context/AppContext.js';
 
 function ResultCrypt(props) {
+  const {
+    addMode,
+    setAddMode,
+    inventoryMode,
+    setInventoryMode,
+    isMobile,
+  } = useContext(AppContext);
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
-
   const className = 'search-crypt-table';
 
   const handleChange = (method) => {
@@ -37,7 +44,7 @@ function ResultCrypt(props) {
 
   return (
     <>
-      {!props.isMobile && props.cards.length == 0 && (
+      {!isMobile && props.cards.length == 0 && (
         <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO CARDS FOUND</b>
         </div>
@@ -51,17 +58,11 @@ function ResultCrypt(props) {
           />
           <ResultCryptTable
             className={className}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             crypt={props.crypt}
             activeDeck={props.activeDeck}
             cardAdd={props.cardAdd}
             cardChange={props.cardChange}
             resultCards={sortedCards}
-            isMobile={props.isMobile}
-            isWide={true}
-            addMode={props.addMode}
-            inventoryMode={props.inventoryMode}
             inventoryCrypt={props.inventoryCrypt}
             usedCards={props.usedCards}
             decks={props.decks}
@@ -69,7 +70,7 @@ function ResultCrypt(props) {
           />
         </>
       )}
-      {props.isMobile && showFloatingButtons && (
+      {isMobile && showFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">
             <div className="pt-1 float-clear">
@@ -80,7 +81,7 @@ function ResultCrypt(props) {
             <>
               {props.inventoryMode ? (
                 <div
-                  onClick={() => props.setInventoryMode(!props.inventoryMode)}
+                  onClick={() => setInventoryMode(!inventoryMode)}
                   className="float-right-top inventory-on"
                 >
                   <div className="pt-2 float-inventory">
@@ -89,7 +90,7 @@ function ResultCrypt(props) {
                 </div>
               ) : (
                 <div
-                  onClick={() => props.setInventoryMode(!props.inventoryMode)}
+                  onClick={() => setInventoryMode(!inventoryMode)}
                   className="float-right-top inventory-off"
                 >
                   <div className="pt-2 float-inventory">
@@ -99,9 +100,9 @@ function ResultCrypt(props) {
               )}
             </>
           )}
-          {props.addMode ? (
+          {addMode ? (
             <div
-              onClick={() => props.setAddMode(!props.addMode)}
+              onClick={() => setAddMode(!addMode)}
               className="float-right-middle add-on"
             >
               <div className="pt-1 float-add">
@@ -110,7 +111,7 @@ function ResultCrypt(props) {
             </div>
           ) : (
             <div
-              onClick={() => props.setAddMode(!props.addMode)}
+              onClick={() => setAddMode(!addMode)}
               className="float-right-middle add-off"
             >
               <div className="pt-1 float-add">

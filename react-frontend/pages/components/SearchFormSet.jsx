@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import sets from './forms_data/setOptions.json';
+import AppContext from '../../context/AppContext.js';
 
 function SearchFormSet(props) {
+  const { isMobile } = useContext(AppContext);
   const options = [];
 
   sets.map((i, index) => {
@@ -81,7 +83,7 @@ function SearchFormSet(props) {
           <Select
             classNamePrefix="react-select"
             options={options}
-            isSearchable={!props.isMobile}
+            isSearchable={!isMobile}
             filterOption={filterOption}
             name="set"
             value={options.find((obj) => obj.value === props.value.set)}

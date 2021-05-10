@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import ResultLibraryTable from './ResultLibraryTable.jsx';
 import ResultLibraryTotal from './ResultLibraryTotal.jsx';
 import resultLibrarySort from './resultLibrarySort.js';
+import AppContext from '../../context/AppContext.js';
 
 function ResultLibrary(props) {
+  const {
+    addMode,
+    setAddMode,
+    inventoryMode,
+    setInventoryMode,
+    isMobile,
+  } = useContext(AppContext);
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 
@@ -35,7 +43,7 @@ function ResultLibrary(props) {
 
   return (
     <>
-      {!props.isMobile && props.cards.length == 0 && (
+      {!isMobile && props.cards.length == 0 && (
         <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO CARDS FOUND</b>
         </div>
@@ -48,17 +56,11 @@ function ResultLibrary(props) {
             handleChange={handleChange}
           />
           <ResultLibraryTable
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             library={props.library}
             activeDeck={props.activeDeck}
             cardAdd={props.cardAdd}
             cardChange={props.cardChange}
             resultCards={sortedCards}
-            isMobile={props.isMobile}
-            isWide={true}
-            addMode={props.addMode}
-            inventoryMode={props.inventoryMode}
             inventoryLibrary={props.inventoryLibrary}
             usedCards={props.usedCards}
             decks={props.decks}
@@ -66,7 +68,7 @@ function ResultLibrary(props) {
           />
         </>
       )}
-      {props.isMobile && showFloatingButtons && (
+      {isMobile && showFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">
             <div className="pt-1 float-clear">
@@ -75,9 +77,9 @@ function ResultLibrary(props) {
           </div>
           {props.isInventory && (
             <>
-              {props.inventoryMode ? (
+              {inventoryMode ? (
                 <div
-                  onClick={() => props.setInventoryMode(!props.inventoryMode)}
+                  onClick={() => setInventoryMode(!inventoryMode)}
                   className="float-right-top inventory-on"
                 >
                   <div className="pt-2 float-inventory">
@@ -86,7 +88,7 @@ function ResultLibrary(props) {
                 </div>
               ) : (
                 <div
-                  onClick={() => props.setInventoryMode(!props.inventoryMode)}
+                  onClick={() => setInventoryMode(!inventoryMode)}
                   className="float-right-top inventory-off"
                 >
                   <div className="pt-2 float-inventory">
@@ -96,9 +98,9 @@ function ResultLibrary(props) {
               )}
             </>
           )}
-          {props.addMode ? (
+          {addMode ? (
             <div
-              onClick={() => props.setAddMode(!props.addMode)}
+              onClick={() => setAddMode(!addMode)}
               className="float-right-middle add-on"
             >
               <div className="pt-1 float-add">
@@ -107,7 +109,7 @@ function ResultLibrary(props) {
             </div>
           ) : (
             <div
-              onClick={() => props.setAddMode(!props.addMode)}
+              onClick={() => setAddMode(!addMode)}
               className="float-right-middle add-off"
             >
               <div className="pt-1 float-add">

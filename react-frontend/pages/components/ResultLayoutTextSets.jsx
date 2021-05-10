@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import setsData from './forms_data/setsAndPrecons.json';
+import AppContext from '../../context/AppContext';
 
 const ResultLayoutTextSets = (props) => {
+  const { isMobile } = useContext(AppContext);
+
   const Sets = Object.keys(props.sets).map((k, index) => {
     const preconsShort = Object.keys(props.sets[k]).join('/');
 
@@ -43,7 +46,7 @@ const ResultLayoutTextSets = (props) => {
         onClick={() => props.setImageSet(k.toLowerCase())}
         key={index}
       >
-        {props.isMobile ? (
+        {isMobile ? (
           <div className="d-inline">
             {k}
             <div className="d-inline gray">

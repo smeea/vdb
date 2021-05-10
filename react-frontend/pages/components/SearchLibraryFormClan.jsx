@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
+import AppContext from '../../context/AppContext.js';
 
 function SearchLibraryFormClan(props) {
+  const { isMobile } = useContext(AppContext);
+
   const clans = [
     'ANY',
     'NONE',
@@ -96,7 +99,7 @@ function SearchLibraryFormClan(props) {
         <Select
           classNamePrefix="react-select"
           options={options}
-          isSearchable={!props.isMobile}
+          isSearchable={!isMobile}
           name="clan"
           value={options.find((obj) => obj.value === props.value.toLowerCase())}
           onChange={props.onChange}

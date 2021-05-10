@@ -1,7 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import { FormControl, Modal, Button, Spinner, Overlay } from 'react-bootstrap';
+import AppContext from '../../context/AppContext';
 
 function DeckImportAmaranth(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyUrl, setEmptyUrl] = useState(false);
   const [importError, setImportError] = useState(false);
@@ -29,7 +32,7 @@ function DeckImportAmaranth(props) {
         getDeckFromUrl(deckUrl)
           .then((deck) => importDeckFromAmaranth(deck))
           .then(() => {
-            props.isMobile && props.setShowInfo(true);
+            isMobile && props.setShowInfo(true);
             setDeckUrl('');
             setSpinnerState(false);
             props.handleClose();

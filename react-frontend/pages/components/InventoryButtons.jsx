@@ -19,7 +19,6 @@ function InventoryButtons(props) {
       <div className="button-block">
         <InventoryDelete
           setInventory={props.setInventory}
-          isMobile={props.isMobile}
           setShowButtons={props.setShowButtons}
         />
       </div>

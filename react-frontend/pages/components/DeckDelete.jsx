@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from '../../assets/images/icons/trash-fill.svg';
 import DeleteConfirmation from './DeleteConfirmation.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function DeckDelete(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [showConfirmation, setShowConfirmation] = useState(false);
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
@@ -11,7 +14,7 @@ function DeckDelete(props) {
     setShowConfirmation(false);
     props.setActiveDeck({ src: null, deckid: null });
     props.history.push('/decks');
-    props.isMobile && props.setShowButtons(false);
+    isMobile && props.setShowButtons(false);
   };
 
   const deleteDeck = () => {
@@ -42,7 +45,6 @@ function DeckDelete(props) {
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
         target={`deck "${props.deck.name}" and all its versions`}
-        isMobile={props.isMobile}
       />
     </>
   );

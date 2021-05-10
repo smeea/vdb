@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Spinner, Overlay } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
@@ -15,8 +15,10 @@ import SearchLibraryFormPoolCost from './SearchLibraryFormPoolCost.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
 import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function SearchLibraryForm(props) {
+  const { hideMissing, setHideMissing, isMobile } = useContext(AppContext);
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
   const showLimit = 300;
@@ -204,7 +206,7 @@ function SearchLibraryForm(props) {
           const res = data.map((i) => {
             return props.cardBase[i];
           });
-          if (!props.isMobile) {
+          if (!isMobile) {
             setPreresults(res);
           } else {
             props.setResults(res);
@@ -224,7 +226,7 @@ function SearchLibraryForm(props) {
   };
 
   useEffect(() => {
-    if (!props.isMobile) {
+    if (!isMobile) {
       if (
         JSON.stringify(props.formState) == JSON.stringify(defaults) &&
         props.results &&
@@ -238,7 +240,7 @@ function SearchLibraryForm(props) {
   }, [props.formState, text]);
 
   useEffect(() => {
-    if (!props.isMobile) {
+    if (!isMobile) {
       if (preresults && preresults.length < showLimit) {
         props.setResults(preresults);
       } else {
@@ -254,19 +256,18 @@ function SearchLibraryForm(props) {
         onChange={handleTextChange}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
-        isMobile={props.isMobile}
         preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
         spinner={spinnerState}
       />
-      {(props.inventoryMode || (props.isMobile && props.isInventory)) && (
+      {(props.inventoryMode || (isMobile && props.isInventory)) && (
         <div className="custom-control custom-checkbox">
           <input
             id="hideMissing"
             className="custom-control-input"
             type="checkbox"
-            checked={props.hideMissing}
-            onChange={() => props.setHideMissing(!props.hideMissing)}
+            checked={hideMissing}
+            onChange={() => setHideMissing(!hideMissing)}
           />
           <label htmlFor="hideMissing" className="custom-control-label">
             Hide Missing in Inventory
@@ -280,12 +281,10 @@ function SearchLibraryForm(props) {
       <SearchLibraryFormDiscipline
         value={props.formState.discipline}
         onChange={handleSelectChange}
-        isMobile={props.isMobile}
       />
       <SearchLibraryFormClan
         value={props.formState.clan}
         onChange={handleSelectChange}
-        isMobile={props.isMobile}
       />
       <SearchLibraryFormSect
         value={props.formState.sect}
@@ -313,20 +312,18 @@ function SearchLibraryForm(props) {
         value={props.formState.set}
         onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
-        isMobile={props.isMobile}
       />
       <SearchFormPrecon
         value={props.formState.precon}
         onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
-        isMobile={props.isMobile}
       />
       <SearchFormArtist
         value={props.formState.artist}
         onChange={handleSelectChange}
         target="library"
       />
-      {props.isMobile && (
+      {isMobile && (
         <>
           <div onClick={handleClearButton} className="float-right-middle clear">
             <div className="pt-1 float-clear">

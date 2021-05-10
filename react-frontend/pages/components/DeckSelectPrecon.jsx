@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Select from 'react-select';
 import precons from './forms_data/preconOptions.json';
+import AppContext from '../../context/AppContext.js';
 
 function DeckSelectPrecon(props) {
+  const { isMobile } = useContext(AppContext);
+
   const options = [];
   precons.map((i, index) => {
     if (i[0] != 'any' && i[0] != 'bcp') {
@@ -54,7 +57,7 @@ function DeckSelectPrecon(props) {
       <Select
         classNamePrefix="react-select"
         options={options}
-        isSearchable={!props.isMobile}
+        isSearchable={!isMobile}
         name="decks"
         filterOption={filterOption}
         placeholder="Select Deck"

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import precons from './forms_data/preconOptions.json';
+import AppContext from '../../context/AppContext.js';
 
 function SearchFormPrecon(props) {
+  const { isMobile } = useContext(AppContext);
   const options = [];
 
   precons.map((i, index) => {
@@ -81,7 +83,7 @@ function SearchFormPrecon(props) {
           <Select
             classNamePrefix="react-select"
             options={options}
-            isSearchable={!props.isMobile}
+            isSearchable={!isMobile}
             filterOption={filterOption}
             name="precon"
             value={options.find((obj) => obj.value === props.value.precon)}

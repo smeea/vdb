@@ -28,7 +28,7 @@ function ResultCryptTotal(props) {
         </span>
         {byGroups[k]}
         <div className="d-flex small justify-content-center">
-          ~{Math.round((byGroupsCapacityTotal[key] / byGroups[k]) * 10) / 10}
+          ~{Math.round((byGroupsCapacityTotal[k] / byGroups[k]) * 10) / 10}
         </div>
       </span>
     );

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Select from 'react-select';
+import AppContext from '../../context/AppContext.js';
 
 function TwdSearchFormClan(props) {
+  const { isMobile } = useContext(AppContext);
+
   const clans = [
     'ANY',
     'Abomination',
@@ -89,7 +92,7 @@ function TwdSearchFormClan(props) {
     <Select
       classNamePrefix="react-select"
       options={options}
-      isSearchable={!props.isMobile}
+      isSearchable={!isMobile}
       name="clan"
       value={options.find((obj) => obj.value === props.value.toLowerCase())}
       onChange={props.onChange}

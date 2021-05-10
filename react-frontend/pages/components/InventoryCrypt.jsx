@@ -83,10 +83,6 @@ function InventoryCrypt(props) {
         decks={props.decks}
         cards={sortedCards}
         usedCards={props.usedCards}
-        showImage={props.showImage}
-        setShowImage={props.setShowImage}
-        isMobile={props.isMobile}
-        isWide={props.isWide}
         showFloatingButtons={props.showFloatingButtons}
         setShowFloatingButtons={props.setShowFloatingButtons}
       />

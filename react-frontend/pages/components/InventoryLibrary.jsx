@@ -104,10 +104,6 @@ function InventoryLibrary(props) {
             decks={props.decks}
             cards={libraryByType[cardtype]}
             usedCards={props.usedCards}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
-            isMobile={props.isMobile}
-            isWide={props.isWide}
             showFloatingButtons={props.showFloatingButtons}
             setShowFloatingButtons={props.setShowFloatingButtons}
           />

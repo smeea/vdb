@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import TwdResultTotal from './TwdResultTotal.jsx';
@@ -6,10 +6,11 @@ import TwdResultDescription from './TwdResultDescription.jsx';
 import TwdResultCrypt from './TwdResultCrypt.jsx';
 import TwdResultLibraryByType from './TwdResultLibraryByType.jsx';
 import TwdResultLibraryKeyCards from './TwdResultLibraryKeyCards.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function TwdResult(props) {
+  const { showImage, isMobile } = useContext(AppContext);
   const showCounterStep = 20;
-
   const [twdRows, setTwdRows] = useState([]);
   const [showCounter, setShowCounter] = useState(0);
   const [deckCounter, setDeckCounter] = useState(0);
@@ -39,29 +40,19 @@ function TwdResult(props) {
           return (
             <React.Fragment key={deck['deckid']}>
               <Row className="pt-3 px-0 mx-0">
-                <Col
-                  md={12}
-                  xl={3}
-                  className={props.isMobile ? 'px-0' : 'pl-0 pr-2'}
-                >
+                <Col md={12} xl={3} className={isMobile ? 'px-0' : 'pl-0 pr-2'}>
                   <TwdResultDescription
                     deck={deck}
                     getDecks={props.getDecks}
                     setActiveDeck={props.setActiveDeck}
-                    isMobile={props.isMobile}
-                    username={props.username}
                   />
                 </Col>
-                {!props.isMobile ? (
+                {!isMobile ? (
                   <>
                     <Col md={12} xl={3} className="px-2">
                       <TwdResultCrypt
                         crypt={deck['crypt']}
-                        isMobile={props.isMobile}
-                        showImage={props.showImage}
-                        setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
-                        inventoryMode={props.inventoryMode}
                         inventoryCrypt={props.inventoryCrypt}
                         usedCards={props.usedCryptCards}
                         decks={props.decks}
@@ -70,10 +61,6 @@ function TwdResult(props) {
                     <Col md={12} xl={3} className="px-2">
                       <TwdResultLibraryByType
                         library={deck['library']}
-                        isMobile={props.isMobile}
-                        showImage={props.showImage}
-                        setShowImage={props.setShowImage}
-                        inventoryMode={props.inventoryMode}
                         inventoryLibrary={props.inventoryLibrary}
                         usedCards={props.usedLibraryCards}
                         decks={props.decks}
@@ -82,11 +69,7 @@ function TwdResult(props) {
                     <Col md={12} xl={3} className="pr-0 pl-2">
                       <TwdResultLibraryKeyCards
                         library={deck['library']}
-                        isMobile={props.isMobile}
-                        showImage={props.showImage}
-                        setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
-                        inventoryMode={props.inventoryMode}
                         inventoryLibrary={props.inventoryLibrary}
                         usedCards={props.usedLibraryCards}
                         decks={props.decks}
@@ -98,11 +81,7 @@ function TwdResult(props) {
                     <Col xs={6} className="pl-0 pr-1">
                       <TwdResultCrypt
                         crypt={deck['crypt']}
-                        isMobile={props.isMobile}
-                        showImage={props.showImage}
-                        setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
-                        inventoryMode={props.inventoryMode}
                         inventoryCrypt={props.inventoryCrypt}
                         usedCards={props.usedCryptCards}
                         decks={props.decks}
@@ -111,11 +90,7 @@ function TwdResult(props) {
                     <Col xs={6} className="pl-1 pr-0">
                       <TwdResultLibraryKeyCards
                         library={deck['library']}
-                        isMobile={props.isMobile}
-                        showImage={props.showImage}
-                        setShowImage={props.setShowImage}
                         setShowFloatingButtons={props.setShowFloatingButtons}
-                        inventoryMode={props.inventoryMode}
                         inventoryLibrary={props.inventoryLibrary}
                         usedCards={props.usedLibraryCards}
                         decks={props.decks}
@@ -131,11 +106,11 @@ function TwdResult(props) {
         }
       })
     );
-  }, [props.results, showCounter, props.showImage]);
+  }, [props.results, showCounter, showImage]);
 
   return (
     <>
-      {!props.isMobile && props.results.length == 0 && (
+      {!isMobile && props.results.length == 0 && (
         <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO DECKS FOUND</b>
         </div>
@@ -157,7 +132,7 @@ function TwdResult(props) {
           )}
         </>
       )}
-      {props.isMobile && props.showFloatingButtons && (
+      {isMobile && props.showFloatingButtons && (
         <>
           <div onClick={handleClear} className="float-right-bottom clear">
             <div className="pt-1 float-clear">

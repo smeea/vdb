@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Row, Col, Spinner, Overlay } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
@@ -20,8 +20,11 @@ import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
 import TwdSearchFormLibraryTotal from './TwdSearchFormLibraryTotal.jsx';
 import TwdSearchFormMatchInventory from './TwdSearchFormMatchInventory.jsx';
 import TwdSearchFormMatchInventoryScaling from './TwdSearchFormMatchInventoryScaling.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function TwdSearchForm(props) {
+  const { inventoryMode, isMobile } = useContext(AppContext);
+
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;
 
@@ -304,7 +307,7 @@ function TwdSearchForm(props) {
   };
 
   useEffect(() => {
-    if (!props.isMobile) {
+    if (!isMobile) {
       if (
         JSON.stringify(props.formState) == JSON.stringify(defaults) &&
         props.results
@@ -317,7 +320,7 @@ function TwdSearchForm(props) {
   }, [props.formState]);
 
   useEffect(() => {
-    if (!props.isMobile) {
+    if (!isMobile) {
       if (eventText.length > 1) {
         launchRequest();
       }
@@ -328,12 +331,11 @@ function TwdSearchForm(props) {
     <form onSubmit={handleSubmitButton}>
       <TwdSearchFormButtons
         handleClearButton={handleClearButton}
-        isMobile={props.isMobile}
         showLimit={showLimit}
         getNewTwd={getNewTwd}
         getRandomTwd={getRandomTwd}
       />
-      {props.inventoryMode && (
+      {inventoryMode && (
         <>
           <Row className="py-1 pl-1 mx-0 align-items-center">
             <Col xs={6} className="d-flex px-0">
@@ -344,7 +346,6 @@ function TwdSearchForm(props) {
                 value={props.formState.matchInventory.crypt}
                 name={'crypt'}
                 onChange={handleMatchInventoryChange}
-                isMobile={props.isMobile}
               />
             </Col>
           </Row>
@@ -357,7 +358,6 @@ function TwdSearchForm(props) {
                 value={props.formState.matchInventory.library}
                 name={'library'}
                 onChange={handleMatchInventoryChange}
-                isMobile={props.isMobile}
               />
             </Col>
           </Row>
@@ -410,9 +410,6 @@ function TwdSearchForm(props) {
             state={props.formState.crypt}
             setState={props.setFormState}
             spinner={spinnerState}
-            isMobile={props.isMobile}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             cardBase={props.cryptCardBase}
           />
         </Col>
@@ -436,9 +433,6 @@ function TwdSearchForm(props) {
             state={props.formState.library}
             setState={props.setFormState}
             spinner={spinnerState}
-            isMobile={props.isMobile}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             cardBase={props.libraryCardBase}
           />
         </Col>
@@ -462,7 +456,6 @@ function TwdSearchForm(props) {
           <TwdSearchFormClan
             value={props.formState.clan}
             onChange={handleSelectChange}
-            isMobile={props.isMobile}
           />
         </Col>
       </Row>
@@ -499,7 +492,6 @@ function TwdSearchForm(props) {
           <TwdSearchFormCardtypes
             value={props.formState.cardtypes}
             onChange={handleCardtypeChange}
-            isMobile={props.isMobile}
           />
         </Col>
       </Row>
@@ -536,7 +528,7 @@ function TwdSearchForm(props) {
           />
         </Col>
       </Row>
-      {props.isMobile && (
+      {isMobile && (
         <>
           <div onClick={handleClearButton} className="float-right-middle clear">
             <div className="pt-1 float-clear">

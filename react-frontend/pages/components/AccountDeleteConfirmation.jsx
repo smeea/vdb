@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import {
   Form,
   FormControl,
@@ -10,8 +10,11 @@ import {
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 import X from '../../assets/images/icons/x.svg';
+import AppContext from '../../context/AppContext';
 
 function AccountDeleteConfirmation(props) {
+  const { username, setUsername, isMobile } = useContext(AppContext);
+
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
@@ -46,7 +49,7 @@ function AccountDeleteConfirmation(props) {
         })
         .then((data) => {
           props.setShow(false);
-          props.setUsername(undefined);
+          setUsername(undefined);
         })
         .catch((error) => {
           setPasswordError(true);
@@ -68,7 +71,7 @@ function AccountDeleteConfirmation(props) {
         show={props.show}
         onHide={() => props.setShow(false)}
         animation={false}
-        centered={props.isMobile}
+        centered={isMobile}
       >
         <Modal.Body>
           <button
@@ -82,7 +85,7 @@ function AccountDeleteConfirmation(props) {
             DELETE ACCOUNT
             <span className="px-1 pl-2">
               {'"'}
-              {props.username}
+              {username}
               {'"'}?
             </span>
           </h5>

@@ -10,7 +10,7 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckLibrary(props) {
-  const { nativeLibrary } = useContext(AppContext);
+  const { nativeLibrary, isMobile } = useContext(AppContext);
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
@@ -141,18 +141,14 @@ function DeckLibrary(props) {
             setModalInventory={setModalInventory}
             libraryTotal={libraryTotal}
             showInfo={showInfo}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             deckid={props.deckid}
             cardChange={props.cardChange}
             cards={libraryByType[cardtype]}
             isAuthor={props.isAuthor}
-            isMobile={props.isMobile}
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
             inventoryLibrary={props.inventoryLibrary}
-            inventoryMode={props.inventoryMode}
             usedCards={props.usedCards}
             decks={props.decks}
             deckUpdate={props.deckUpdate}
@@ -178,18 +174,14 @@ function DeckLibrary(props) {
           <DeckLibraryTable
             handleModalCardOpen={handleModalSideCardOpen}
             setModalInventory={setModalInventory}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             deckid={props.deckid}
             cardChange={props.cardChange}
             cards={librarySideByType[cardtype]}
             isAuthor={props.isAuthor}
-            isMobile={props.isMobile}
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
             inventoryLibrary={props.inventoryLibrary}
-            inventoryMode={props.inventoryMode}
             usedCards={props.usedCards}
             decks={props.decks}
             deckUpdate={props.deckUpdate}
@@ -215,7 +207,7 @@ function DeckLibrary(props) {
           >
             <InfoCircle />
           </Button>
-          {props.isAuthor && !props.isMobile && (
+          {props.isAuthor && !isMobile && (
             <div className="pl-1">
               <Button
                 variant="outline-secondary"
@@ -233,7 +225,7 @@ function DeckLibrary(props) {
         </div>
       )}
       {showAdd &&
-        (!props.isMobile ? (
+        (!isMobile ? (
           <DeckNewLibraryCard
             cardAdd={props.cardAdd}
             setShowAdd={setShowAdd}
@@ -281,7 +273,7 @@ function DeckLibrary(props) {
           {LibrarySideDeck}
         </div>
       )}
-      {props.isMobile && props.showFloatingButtons && (
+      {isMobile && props.showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="float-right-middle add"
@@ -304,16 +296,12 @@ function DeckLibrary(props) {
               : librarySideCards[modalSideCardIdx]
           }
           handleModalCardChange={handleModalCardChange}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
             setModalSideCardIdx(undefined);
-            props.isMobile && props.setShowFloatingButtons(true);
+            isMobile && props.setShowFloatingButtons(true);
           }}
-          isMobile={props.isMobile}
           inventoryState={modalInventory}
-          inventoryMode={props.inventoryMode}
         />
       )}
     </>

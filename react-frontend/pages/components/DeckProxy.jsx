@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { saveAs } from 'file-saver';
 import { Spinner, Dropdown } from 'react-bootstrap';
 import Printer from '../../assets/images/icons/printer.svg';
+import AppContext from '../../context/AppContext.js';
 
 import DeckProxySelectModal from './DeckProxySelectModal.jsx';
 
 function DeckProxy(props) {
+  const { isMobile } = useContext(AppContext);
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState(undefined);
@@ -74,7 +76,7 @@ function DeckProxy(props) {
           const file = 'data:application/pdf;base64,' + data;
           saveAs(file, `${props.deck['name']}.pdf`);
           setSpinnerState(false);
-          props.isMobile && props.setShowButtons(false);
+          isMobile && props.setShowButtons(false);
         })
         .catch((error) => {
           setSpinnerState(false);
@@ -115,8 +117,6 @@ function DeckProxy(props) {
           setShow={setShowSelectModal}
           deck={props.deck}
           proxyCards={proxyCards}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
         />
       )}
     </>

@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import NodeMinusFill from '../../assets/images/icons/node-minus-fill.svg';
 import DeleteConfirmation from './DeleteConfirmation.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function DeckBranchDelete(props) {
+  const { isMobile } = useContext(AppContext);
   const [showConfirmation, setShowConfirmation] = useState(false);
+
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     deleteBranch();
@@ -14,7 +17,7 @@ function DeckBranchDelete(props) {
     } else {
       props.setActiveDeck({ src: 'my', deckid: props.deck.branches[0] });
     }
-    props.isMobile && props.setShowButtons(false);
+    isMobile && props.setShowButtons(false);
   };
 
   const deleteBranch = () => {
@@ -30,7 +33,7 @@ function DeckBranchDelete(props) {
     };
     fetch(url, options)
       .then(() => props.getDecks())
-      .then(() => props.isMobile && props.setShowInfo(true));
+      .then(() => isMobile && props.setShowInfo(true));
   };
 
   return (
@@ -48,7 +51,6 @@ function DeckBranchDelete(props) {
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
         target={`version "${props.deck.branchName}" of deck "${props.deck.name}"`}
-        isMobile={props.isMobile}
       />
     </>
   );

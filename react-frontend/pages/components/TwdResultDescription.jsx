@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import TwdOpenDeckButton from './TwdOpenDeckButton.jsx';
 import DeckClone from './DeckClone.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function TwdResultDescription(props) {
+  const { username, isMobile } = useContext(AppContext);
+
   return (
     <>
-      {!props.isMobile ? (
+      {!isMobile ? (
         <>
           <table className="d-inline">
             <tbody>
@@ -62,7 +65,7 @@ function TwdResultDescription(props) {
               />
             </div>
             <div className="button-block">
-              {props.username && (
+              {username && (
                 <DeckClone
                   deck={props.deck}
                   activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
@@ -118,7 +121,7 @@ function TwdResultDescription(props) {
                   />
                 </div>
                 <div className="button-block">
-                  {props.username && (
+                  {username && (
                     <DeckClone
                       deck={props.deck}
                       activeDeck={{ src: 'twd', deckid: props.deck.deckid }}

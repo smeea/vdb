@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -13,8 +13,11 @@ import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptTitle from './ResultCryptTitle.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function InventoryCryptTable(props) {
+  const { isMobile } = useContext(AppContext);
+
   let resultTrClass;
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
@@ -36,7 +39,7 @@ function InventoryCryptTable(props) {
     props.cards.map((card, index) => {
       const handleClick = () => {
         setModalCardIdx(index);
-        props.isMobile && props.setShowFloatingButtons(false);
+        isMobile && props.setShowFloatingButtons(false);
         setModalInventory({
           inInventory: card.q,
           softUsedMax: softUsedMax,
@@ -97,13 +100,12 @@ function InventoryCryptTable(props) {
         <React.Fragment key={card.c['Id']}>
           <tr className={resultTrClass}>
             <td className="quantity">
-              {props.isMobile ? (
+              {isMobile ? (
                 <div>
                   <InventoryCardQuantity
                     cardid={card.c['Id']}
                     q={card.q}
                     cardChange={props.cardChange}
-                    isMobile={props.isMobile}
                     softUsedMax={softUsedMax}
                     hardUsedTotal={hardUsedTotal}
                   />
@@ -126,7 +128,6 @@ function InventoryCryptTable(props) {
                       cardid={card.c['Id']}
                       q={card.q}
                       cardChange={props.cardChange}
-                      isMobile={props.isMobile}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
                     />
@@ -155,23 +156,20 @@ function InventoryCryptTable(props) {
             <td className="capacity" onClick={() => handleClick()}>
               <ResultCryptCapacity value={card.c['Capacity']} />
             </td>
-            {!props.isMobile && (
+            {!isMobile && (
               <td className="disciplines px-1" onClick={() => handleClick()}>
                 <ResultCryptDisciplines
                   value={card.c['Disciplines']}
                   disciplinesSet={props.disciplinesSet}
                   keyDisciplines={props.keyDisciplines}
                   nonKeyDisciplines={props.nonKeyDisciplines}
-                  isMobile={props.isMobile}
                 />
               </td>
             )}
-            {!props.isMobile ? (
+            {!isMobile ? (
               <OverlayTrigger
                 placement={props.placement ? props.placement : 'right'}
-                overlay={
-                  <CardPopover card={card.c} showImage={props.showImage} />
-                }
+                overlay={<CardPopover card={card.c} />}
               >
                 <td className="name" onClick={() => handleClick()}>
                   <ResultCryptName card={card.c} />
@@ -206,15 +204,11 @@ function InventoryCryptTable(props) {
         <ResultCryptModal
           card={props.cards[modalCardIdx].c}
           handleModalCardChange={handleModalCardChange}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
-            props.isMobile && props.setShowFloatingButtons(true);
+            isMobile && props.setShowFloatingButtons(true);
           }}
-          isMobile={props.isMobile}
           inventoryState={modalInventory}
-          inventoryMode={true}
         />
       )}
     </>

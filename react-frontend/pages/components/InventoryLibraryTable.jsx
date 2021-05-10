@@ -16,7 +16,7 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryLibraryTable(props) {
-  const { nativeLibrary } = useContext(AppContext);
+  const { nativeLibrary, isMobile } = useContext(AppContext);
   let resultTrClass;
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
@@ -38,7 +38,7 @@ function InventoryLibraryTable(props) {
     props.cards.map((card, index) => {
       const handleClick = () => {
         setModalCardIdx(index);
-        props.isMobile && props.setShowFloatingButtons(false);
+        isMobile && props.setShowFloatingButtons(false);
         setModalInventory({
           inInventory: card.q,
           usedDescription: {
@@ -108,13 +108,12 @@ function InventoryLibraryTable(props) {
         <React.Fragment key={card.c['Id']}>
           <tr className={resultTrClass}>
             <td className="quantity">
-              {props.isMobile ? (
+              {isMobile ? (
                 <div>
                   <InventoryCardQuantity
                     cardid={card.c['Id']}
                     q={card.q}
                     cardChange={props.cardChange}
-                    isMobile={props.isMobile}
                     softUsedMax={softUsedMax}
                     hardUsedTotal={hardUsedTotal}
                   />
@@ -137,7 +136,6 @@ function InventoryLibraryTable(props) {
                       cardid={card.c['Id']}
                       q={card.q}
                       cardChange={props.cardChange}
-                      isMobile={props.isMobile}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
                     />
@@ -163,12 +161,10 @@ function InventoryLibraryTable(props) {
                 </div>
               )}
             </td>
-            {!props.isMobile ? (
+            {!isMobile ? (
               <OverlayTrigger
                 placement={props.placement ? props.placement : 'right'}
-                overlay={
-                  <CardPopover card={card.c} showImage={props.showImage} />
-                }
+                overlay={<CardPopover card={card.c} />}
               >
                 <td className="name px-1" onClick={() => handleClick()}>
                   <ResultLibraryName card={card.c} />
@@ -209,15 +205,11 @@ function InventoryLibraryTable(props) {
         <ResultLibraryModal
           card={props.cards[modalCardIdx].c}
           handleModalCardChange={handleModalCardChange}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
-            props.isMobile && props.setShowFloatingButtons(true);
+            isMobile && props.setShowFloatingButtons(true);
           }}
-          isMobile={props.isMobile}
           inventoryState={modalInventory}
-          inventoryMode={true}
         />
       )}
     </>

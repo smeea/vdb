@@ -31,11 +31,6 @@ function App(props) {
   const [cryptFormState, setCryptFormState] = useState(defaultsCryptForm);
   const [libraryFormState, setLibraryFormState] = useState(defaultsLibraryForm);
 
-  const [showImage, setShowImage] = useState(true);
-  const [addMode, setAddMode] = useState(false);
-  const [inventoryMode, setInventoryMode] = useState(false);
-  const [hideMissing, setHideMissing] = useState(false);
-
   const [decks, setDecks] = useState(undefined);
   const [preconDecks, setPreconDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
@@ -73,12 +68,9 @@ function App(props) {
 
   const {
     isMobile,
-    isWide,
     username,
     setUsername,
-    publicName,
     setPublicName,
-    email,
     setEmail,
     lang,
     localizedCrypt,
@@ -89,6 +81,7 @@ function App(props) {
     setNativeCrypt,
     nativeLibrary,
     setNativeLibrary,
+    setAddMode,
   } = useContext(AppContext);
 
   const deckRouter = (pointer) => {
@@ -764,64 +757,41 @@ function App(props) {
         <Navigation
           showCryptSearch={showCryptSearch}
           showLibrarySearch={showLibrarySearch}
-          username={username}
           decks={decks}
           activeDeck={activeDeck}
           setActiveDeck={setActiveDeck}
-          inventoryMode={inventoryMode}
-          setInventoryMode={setInventoryMode}
           lang={lang}
         />
 
         <Switch>
           <Suspense fallback={<></>}>
             <Route path="/" exact component={() => <Redirect to="/about" />} />
-            <Route
-              path="/about"
-              exact
-              component={() => <About isMobile={isMobile} />}
-            />
+            <Route path="/about" exact component={() => <About />} />
             <Route
               path="/documentation"
               exact
-              component={() => <Documentation isMobile={isMobile} />}
+              component={() => <Documentation />}
             />
             <Route path="/account">
-              <Account
-                isMobile={isMobile}
-                username={username}
-                publicName={publicName}
-                email={email}
-                setUsername={setUsername}
-                setPublicName={setPublicName}
-                setEmail={setEmail}
-                whoAmI={whoAmI}
-              />
+              <Account whoAmI={whoAmI} />
             </Route>
             <Route path="/twd">
               <Twd
-                isWide={isWide}
-                isMobile={isMobile}
                 showSearch={showTwdSearch}
                 setShowSearch={setShowTwdSearch}
                 getDecks={getDecks}
-                showImage={showImage}
-                setShowImage={setShowImage}
                 results={twdResults}
                 setResults={setTwdResults}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
                 inventoryCrypt={inventoryCrypt}
                 inventoryLibrary={inventoryLibrary}
-                inventoryMode={inventoryMode}
-                setInventoryMode={setInventoryMode}
                 usedCryptCards={usedCryptCards}
                 usedLibraryCards={usedLibraryCards}
                 decks={decks}
                 formState={twdFormState}
                 setFormState={setTwdFormState}
                 setActiveDeck={setActiveDeck}
-                username={username}
               />
             </Route>
             <Route path="/inventory">
@@ -836,13 +806,7 @@ function App(props) {
                 cardChange={inventoryCardChange}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
-                isMobile={isMobile}
-                isWide={isWide}
-                showImage={showImage}
-                setShowImage={setShowImage}
                 whoAmI={whoAmI}
-                username={username}
-                setUsername={setUsername}
                 usedCryptCards={usedCryptCards}
                 usedLibraryCards={usedLibraryCards}
                 decks={decks}
@@ -852,8 +816,6 @@ function App(props) {
               <Decks
                 deckRouter={deckRouter}
                 changeTimer={changeTimer}
-                isMobile={isMobile}
-                isWide={isWide}
                 decks={decks}
                 preconDecks={preconDecks}
                 usedCryptCards={usedCryptCards}
@@ -867,14 +829,9 @@ function App(props) {
                 inventoryLibrary={inventoryLibrary}
                 setInventoryCrypt={setInventoryCrypt}
                 setInventoryLibrary={setInventoryLibrary}
-                inventoryMode={inventoryMode}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
-                showImage={showImage}
-                setShowImage={setShowImage}
                 whoAmI={whoAmI}
-                username={username}
-                setUsername={setUsername}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
               />
@@ -883,10 +840,6 @@ function App(props) {
               <Crypt
                 deckRouter={deckRouter}
                 changeTimer={changeTimer}
-                isWide={isWide}
-                isMobile={isMobile}
-                hideMissing={hideMissing}
-                setHideMissing={setHideMissing}
                 showSearch={showCryptSearch}
                 setShowSearch={setShowCryptSearch}
                 cardAdd={deckCardAdd}
@@ -899,34 +852,23 @@ function App(props) {
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
                 setActiveDeck={setActiveDeck}
-                showImage={showImage}
-                setShowImage={setShowImage}
                 results={cryptResults}
                 setResults={setCryptResults}
                 inventoryCrypt={inventoryCrypt}
                 inventoryLibrary={inventoryLibrary}
-                inventoryMode={inventoryMode}
-                setInventoryMode={setInventoryMode}
                 isInventory={isInventory}
-                addMode={addMode}
-                setAddMode={setAddMode}
                 formState={cryptFormState}
                 setFormState={setCryptFormState}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
                 usedCryptCards={usedCryptCards}
                 usedLibraryCards={usedLibraryCards}
-                username={username}
               />
             </Route>
             <Route path="/library">
               <Library
                 deckRouter={deckRouter}
                 changeTimer={changeTimer}
-                isWide={isWide}
-                isMobile={isMobile}
-                hideMissing={hideMissing}
-                setHideMissing={setHideMissing}
                 showSearch={showLibrarySearch}
                 setShowSearch={setShowLibrarySearch}
                 cardAdd={deckCardAdd}
@@ -939,24 +881,17 @@ function App(props) {
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
                 setActiveDeck={setActiveDeck}
-                showImage={showImage}
-                setShowImage={setShowImage}
                 results={libraryResults}
                 setResults={setLibraryResults}
                 inventoryCrypt={inventoryCrypt}
                 inventoryLibrary={inventoryLibrary}
-                inventoryMode={inventoryMode}
                 isInventory={isInventory}
-                setInventoryMode={setInventoryMode}
-                addMode={addMode}
-                setAddMode={setAddMode}
                 formState={libraryFormState}
                 setFormState={setLibraryFormState}
                 cryptCardBase={cryptCardBase}
                 libraryCardBase={libraryCardBase}
                 usedCryptCards={usedCryptCards}
                 usedLibraryCards={usedLibraryCards}
-                username={username}
               />
             </Route>
             <Route
@@ -964,8 +899,6 @@ function App(props) {
               exact
               component={(props) => (
                 <Cards
-                  isMobile={isMobile}
-                  isWide={isWide}
                   cryptCardBase={cryptCardBase}
                   libraryCardBase={libraryCardBase}
                 />
@@ -975,13 +908,9 @@ function App(props) {
               path="/cards/:id"
               component={(props) => (
                 <Cards
-                  isMobile={isMobile}
-                  isWide={isWide}
                   id={props.match.params.id}
                   cryptCardBase={cryptCardBase}
                   libraryCardBase={libraryCardBase}
-                  showImage={showImage}
-                  setShowImage={setShowImage}
                 />
               )}
             />

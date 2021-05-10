@@ -15,9 +15,9 @@ import drawProbability from './drawProbability.js';
 import AppContext from '../../context/AppContext.js';
 
 function DeckDrawLibraryTable(props) {
-  const { nativeLibrary } = useContext(AppContext);
-  let resultTrClass;
+  const { nativeLibrary, isMobile } = useContext(AppContext);
   const [modalDraw, setModalDraw] = useState(undefined);
+  let resultTrClass;
   const N = props.total;
   const n = props.resultCards.length;
 
@@ -52,10 +52,10 @@ function DeckDrawLibraryTable(props) {
             <ResultLibraryDisciplines value={card['Discipline']} />
             <ResultLibraryClan value={card['Clan']} />
           </td>
-          {!props.isMobile ? (
+          {!isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card} showImage={props.showImage} />}
+              overlay={<CardPopover card={card} />}
             >
               <td
                 className="name px-1"
@@ -74,7 +74,7 @@ function DeckDrawLibraryTable(props) {
             <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />
           </td>
           <td className="prob px-1">
-            {props.isMobile ? (
+            {isMobile ? (
               <div
                 onClick={() =>
                   setModalDraw({

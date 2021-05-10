@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import {
   Form,
   FormControl,
@@ -10,8 +10,11 @@ import Check2 from '../../assets/images/icons/check2.svg';
 import PenFill from '../../assets/images/icons/pen-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ModalTooltip from './ModalTooltip.jsx';
+import AppContext from '../../context/AppContext';
 
 function AccountChangeName(props) {
+  const { publicName, setPublicName, isMobile } = useContext(AppContext);
+
   const [emptyName, setEmptyName] = useState(false);
   const [state, setState] = useState('');
   const refName = useRef(null);
@@ -50,7 +53,7 @@ function AccountChangeName(props) {
           return response.json();
         })
         .then(() => {
-          props.setPublicName(state);
+          setPublicName(state);
           setEmptyName(false);
           setButtonState(true);
           setTimeout(() => {
@@ -69,10 +72,10 @@ function AccountChangeName(props) {
   };
 
   useEffect(() => {
-    if (props.publicName) {
-      setState(props.publicName);
+    if (publicName) {
+      setState(publicName);
     }
-  }, [props.publicName]);
+  }, [publicName]);
 
   const tooltipText = (
     <>
@@ -93,7 +96,7 @@ function AccountChangeName(props) {
       <h6 className="d-flex align-items-center px-1">
         <PenFill />
         <span className="ml-2">Change public name</span>
-        {!props.isMobile ? (
+        {!isMobile ? (
           <OverlayTooltip text={tooltipText}>
             <span className="question-tooltip ml-1">[?]</span>
           </OverlayTooltip>

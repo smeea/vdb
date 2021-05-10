@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import DeckBranchCreate from './DeckBranchCreate.jsx';
 import DeckBranchDelete from './DeckBranchDelete.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function DeckBranchButtons(props) {
+  const { username } = useContext(AppContext);
+
   return (
     <>
-      {props.username && props.deck && (
+      {username && props.deck && (
         <DeckBranchCreate
           deck={props.deck}
           getDecks={props.getDecks}
@@ -20,7 +23,6 @@ function DeckBranchButtons(props) {
           getDecks={props.getDecks}
           setActiveDeck={props.setActiveDeck}
           setShowButtons={props.setShowButtons}
-          isMobile={props.isMobile}
         />
       )}
     </>

@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import PersonFill from '../../assets/images/icons/person-fill.svg';
+import AppContext from '../../context/AppContext.js';
 
 function DeckChangeAuthor(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
 
@@ -50,7 +53,7 @@ function DeckChangeAuthor(props) {
           onBlur={handleOnBlur}
           readOnly={!props.isAuthor}
         />
-        {props.isMobile && props.isAuthor && (
+        {isMobile && props.isAuthor && (
           <InputGroup.Append>
             <Button
               variant={buttonState ? 'success' : 'outline-secondary'}

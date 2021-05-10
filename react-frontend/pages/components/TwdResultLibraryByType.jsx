@@ -63,7 +63,6 @@ function TwdResultLibraryByType(props) {
               <DeckLibraryTable
                 deckid={true}
                 cards={props.cards}
-                inventoryMode={props.inventoryMode}
                 inventoryLibrary={props.inventoryLibrary}
                 usedCards={props.usedLibraryCards}
                 decks={props.decks}
@@ -103,7 +102,6 @@ function TwdResultLibraryByType(props) {
               overlay={
                 <TypePopover
                   cards={libraryByType[cardtype]}
-                  inventoryMode={props.inventoryMode}
                   inventoryLibrary={props.inventoryLibrary}
                   usedCards={props.usedLibraryCards}
                   decks={props.decks}

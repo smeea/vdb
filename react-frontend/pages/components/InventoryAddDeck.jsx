@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import FolderPlus from '../../assets/images/icons/folder-plus.svg';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import At from '../../assets/images/icons/at.svg';
+import AppContext from '../../context/AppContext.js';
 
 function InventoryAddDeck(props) {
+  const { isMobile } = useContext(AppContext);
+
   const AddDeckOptions = Object.keys(props.decks).map((deck, index) => {
     return (
       <Dropdown.Item
@@ -13,7 +16,7 @@ function InventoryAddDeck(props) {
         key={index}
         onClick={() => {
           props.inventoryDeckAdd(props.decks[deck]);
-          props.isMobile && props.setShowButtons(false);
+          isMobile && props.setShowButtons(false);
         }}
       >
         <div className="d-flex align-items-center">

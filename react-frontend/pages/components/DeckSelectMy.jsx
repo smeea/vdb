@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Select from 'react-select';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import At from '../../assets/images/icons/at.svg';
+import AppContext from '../../context/AppContext.js';
 
 function DeckSelectMy(props) {
+  const { isMobile } = useContext(AppContext);
+
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
   };
@@ -56,7 +59,7 @@ function DeckSelectMy(props) {
       className="react-select-container"
       classNamePrefix="react-select"
       options={options}
-      isSearchable={!props.isMobile}
+      isSearchable={!isMobile}
       filterOption={filterOption}
       name="decks"
       placeholder="Select Deck"

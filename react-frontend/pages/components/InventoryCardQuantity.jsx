@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
+import AppContext from '../../context/AppContext.js';
 
 function InventoryCardQuantity(props) {
+  const { isMobile } = useContext(AppContext);
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(props.q);
 
@@ -22,7 +24,7 @@ function InventoryCardQuantity(props) {
 
   return (
     <div className="d-flex align-items-center justify-content-between">
-      {props.isMobile ? (
+      {isMobile ? (
         <>
           <a className="quantity" onClick={() => handleQuantityChange(-1)}>
             <Button className="quantity" variant="outline-secondary">

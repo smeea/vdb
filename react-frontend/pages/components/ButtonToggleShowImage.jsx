@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import ImageAlt from '../../assets/images/icons/image-alt.svg';
 import FileTextFill from '../../assets/images/icons/chat-quote-fill.svg';
+import AppContext from '../../context/AppContext.js';
 
 function ButtonToggleShowImage(props) {
+  const { showImage, setShowImage, isMobile } = useContext(AppContext);
   const [state, setState] = useState(false);
 
   const handleButton = () => {
-    props.setShowImage(!props.showImage);
+    setShowImage(!showImage);
     setState(true);
     setTimeout(() => {
       setState(false);
-      props.isMobile && props.setShowButtons(false);
+      isMobile && props.setShowButtons(false);
     }, 1000);
   };
 
@@ -19,11 +21,11 @@ function ButtonToggleShowImage(props) {
     <>
       {!state ? (
         <Button variant="outline-secondary" onClick={handleButton}>
-          {props.showImage ? <ImageAlt /> : <FileTextFill />}
+          {showImage ? <ImageAlt /> : <FileTextFill />}
         </Button>
       ) : (
         <Button variant="success" onClick={handleButton}>
-          {props.showImage ? 'Image' : 'Text'} on Hover
+          {showImage ? 'Image' : 'Text'} on Hover
         </Button>
       )}
     </>

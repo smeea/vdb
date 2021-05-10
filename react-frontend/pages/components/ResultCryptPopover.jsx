@@ -11,7 +11,7 @@ import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultCryptPopover(props) {
-  const { localizedCrypt, lang } = useContext(AppContext);
+  const { showImage, localizedCrypt, lang } = useContext(AppContext);
 
   const imgSrc = `${process.env.ROOT_URL}images/cards/${
     localizedCrypt &&
@@ -49,7 +49,7 @@ function ResultCryptPopover(props) {
 
   return (
     <>
-      {!props.showImage ? (
+      {!showImage ? (
         <div className="py-1">
           <div className="d-flex flex-nowrap justify-content-between align-items-center">
             <div className="d-flex flex-nowrap align-items-center">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import InfoCircle from '../../assets/images/icons/info-circle.svg';
 import X from '../../assets/images/icons/x.svg';
@@ -6,8 +6,11 @@ import DeckCryptTotalByCapacity from './DeckCryptTotalByCapacity.jsx';
 import DeckCryptTable from './DeckCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
+import AppContext from '../../context/AppContext';
 
 function DeckCrypt(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
@@ -189,7 +192,7 @@ function DeckCrypt(props) {
           >
             <InfoCircle />
           </Button>
-          {props.isAuthor && !props.isMobile && (
+          {props.isAuthor && !isMobile && (
             <div className="pl-1">
               <Button
                 variant="outline-secondary"
@@ -207,7 +210,7 @@ function DeckCrypt(props) {
         </div>
       )}
       {showAdd &&
-        (!props.isMobile ? (
+        (!isMobile ? (
           <DeckNewCryptCard
             cardAdd={props.cardAdd}
             setShowAdd={setShowAdd}
@@ -257,18 +260,13 @@ function DeckCrypt(props) {
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}
-        showImage={props.showImage}
-        setShowImage={props.setShowImage}
         isAuthor={props.isAuthor}
-        isMobile={props.isMobile}
-        isWide={props.isWide}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
         proxySelector={props.proxySelector}
         proxyCounter={props.proxyCounter}
         proxySelected={props.proxySelected}
         inventoryCrypt={props.inventoryCrypt}
-        inventoryMode={props.inventoryMode}
         usedCards={props.usedCards}
         decks={props.decks}
         deckUpdate={props.deckUpdate}
@@ -287,18 +285,13 @@ function DeckCrypt(props) {
             cardChange={props.cardChange}
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             isAuthor={props.isAuthor}
-            isMobile={props.isMobile}
-            isWide={props.isWide}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
             inventoryCrypt={props.inventoryCrypt}
-            inventoryMode={props.inventoryMode}
             usedCards={props.usedCards}
             decks={props.decks}
             deckUpdate={props.deckUpdate}
@@ -307,7 +300,7 @@ function DeckCrypt(props) {
           />
         </div>
       )}
-      {props.isMobile && props.showFloatingButtons && (
+      {isMobile && props.showFloatingButtons && (
         <div onClick={() => setShowAdd(true)} className="float-right-top add">
           <div className="d-flex py-0 px-1 align-items-top">
             <div className="d-inline" style={{ fontSize: '1.75em' }}>
@@ -327,16 +320,12 @@ function DeckCrypt(props) {
               : cryptSideCards[modalSideCardIdx]
           }
           handleModalCardChange={handleModalCardChange}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
             setModalSideCardIdx(undefined);
-            props.isMobile && props.setShowFloatingButtons(true);
+            isMobile && props.setShowFloatingButtons(true);
           }}
-          isMobile={props.isMobile}
           inventoryState={modalInventory}
-          inventoryMode={props.inventoryMode}
         />
       )}
     </>

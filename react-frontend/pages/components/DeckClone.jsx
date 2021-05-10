@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import Files from '../../assets/images/icons/files.svg';
+import AppContext from '../../context/AppContext.js';
 
 function DeckClone(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [state, setState] = useState(false);
 
   const cloneDeck = () => {
@@ -42,7 +45,7 @@ function DeckClone(props) {
       .then(() => props.setActiveDeck({ src: 'my', deckid: newdeckid }))
       .then(() => {
         setState(true);
-        props.isMobile && props.setShowButtons(false);
+        isMobile && props.setShowButtons(false);
         setTimeout(() => {
           setState(false);
         }, 1000);

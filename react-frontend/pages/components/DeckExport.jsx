@@ -1,9 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import FileSaver from 'file-saver';
 import { Spinner, Dropdown, Overlay } from 'react-bootstrap';
 import Download from '../../assets/images/icons/download.svg';
+import AppContext from '../../context/AppContext';
 
 function DeckExport(props) {
+  const { username, isMobile } = useContext(AppContext);
+
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
   const ref = useRef(null);
@@ -29,7 +32,7 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
         Copy to Clipboard - Lackey
       </Dropdown.Item>
-      {props.username && (
+      {username && (
         <>
           <Dropdown.Divider />
           <Dropdown.Item href="" onClick={() => exportAll('text')}>
@@ -73,7 +76,7 @@ function DeckExport(props) {
         .then((data) => {
           navigator.clipboard.writeText(data.deck);
           setSpinnerState(false);
-          props.isMobile && props.setShowButtons(false);
+          isMobile && props.setShowButtons(false);
         })
         .catch((error) => {
           setError(true);
@@ -135,7 +138,7 @@ function DeckExport(props) {
           );
           FileSaver.saveAs(file);
           setSpinnerState(false);
-          props.isMobile && props.setShowButtons(false);
+          isMobile && props.setShowButtons(false);
         })
         .catch((error) => {
           setSpinnerState(false);

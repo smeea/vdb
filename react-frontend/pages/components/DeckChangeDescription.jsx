@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import ChevronBarExpand from '../../assets/images/icons/chevron-bar-expand.svg';
 import ChevronBarContract from '../../assets/images/icons/chevron-bar-contract.svg';
 import ChatLeftQuoteFill from '../../assets/images/icons/chat-left-quote-fill.svg';
+import AppContext from '../../context/AppContext';
 
 function DeckDescription(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
-  const [folded, setFolded] = useState(props.isMobile ? false : true);
+  const [folded, setFolded] = useState(isMobile ? false : true);
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -55,7 +58,7 @@ function DeckDescription(props) {
           onBlur={handleOnBlur}
           readOnly={!props.isAuthor}
         />
-        {!props.isMobile && (
+        {!isMobile && (
           <InputGroup.Append>
             <Button
               variant="outline-secondary"
@@ -65,7 +68,7 @@ function DeckDescription(props) {
             </Button>
           </InputGroup.Append>
         )}
-        {props.isMobile && props.isAuthor && (
+        {isMobile && props.isAuthor && (
           <InputGroup.Append>
             <Button
               variant={buttonState ? 'success' : 'outline-secondary'}

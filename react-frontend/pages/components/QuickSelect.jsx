@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultCryptClan from './ResultCryptClan.jsx';
@@ -10,6 +10,8 @@ import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 
 function QuickSelect(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
   const ref = useRef(null);
@@ -45,7 +47,7 @@ function QuickSelect(props) {
   }, [selectedValue]);
 
   useEffect(() => {
-    if (props.isMobile && props.history.location.pathname == '/cards')
+    if (isMobile && props.history.location.pathname == '/cards')
       ref.current.focus();
   }, []);
 
@@ -53,7 +55,7 @@ function QuickSelect(props) {
     <AsyncSelect
       classNamePrefix="react-select"
       cacheOptions
-      autoFocus={!props.isMobile}
+      autoFocus={!isMobile}
       value={selectedValue}
       placeholder="Card Name"
       loadOptions={loadOptions}

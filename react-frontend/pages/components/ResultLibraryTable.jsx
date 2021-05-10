@@ -16,11 +16,12 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryTable(props) {
-  const { nativeLibrary } = useContext(AppContext);
-  let resultTrClass;
-
+  const { addMode, inventoryMode, nativeLibrary, isMobile } = useContext(
+    AppContext
+  );
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+  let resultTrClass;
 
   const handleModalCardChange = (d) => {
     const maxIdx = props.resultCards.length - 1;
@@ -37,7 +38,7 @@ function ResultLibraryTable(props) {
   const cardRows = props.resultCards.map((card, index) => {
     const handleClick = () => {
       setModalCardIdx(index);
-      props.isMobile && props.setShowFloatingButtons(false);
+      isMobile && props.setShowFloatingButtons(false);
       setModalInventory({
         inInventory: inInventory,
         usedDescription: {
@@ -65,7 +66,7 @@ function ResultLibraryTable(props) {
     }
 
     let inInventory = null;
-    if (props.inventoryMode) {
+    if (inventoryMode) {
       if (Object.keys(props.inventoryLibrary).includes(card['Id'].toString())) {
         inInventory = props.inventoryLibrary[card['Id']].q;
       } else {
@@ -115,7 +116,7 @@ function ResultLibraryTable(props) {
     return (
       <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
-          {props.addMode && (
+          {addMode && (
             <td className="quantity-add pr-1">
               <ResultAddCard
                 cardAdd={props.cardAdd}
@@ -127,7 +128,7 @@ function ResultLibraryTable(props) {
               />
             </td>
           )}
-          {props.inventoryMode && (
+          {inventoryMode && (
             <OverlayTrigger
               placement="left"
               overlay={
@@ -177,10 +178,10 @@ function ResultLibraryTable(props) {
             <ResultLibraryDisciplines value={card['Discipline']} />
             <ResultLibraryClan value={card['Clan']} />
           </td>
-          {!props.isMobile ? (
+          {!isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card} showImage={props.showImage} />}
+              overlay={<CardPopover card={card} />}
             >
               <td className="name px-1" onClick={() => handleClick()}>
                 <ResultLibraryName card={card} />
@@ -209,15 +210,11 @@ function ResultLibraryTable(props) {
         <ResultLibraryModal
           card={props.resultCards[modalCardIdx]}
           handleModalCardChange={handleModalCardChange}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
-            props.isMobile && props.setShowFloatingButtons(true);
+            isMobile && props.setShowFloatingButtons(true);
           }}
-          isMobile={props.isMobile}
           inventoryState={modalInventory}
-          inventoryMode={props.inventoryMode}
         />
       )}
     </>

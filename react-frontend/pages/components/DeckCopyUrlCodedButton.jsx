@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import ShareFill from '../../assets/images/icons/share-fill.svg';
+import AppContext from '../../context/AppContext.js';
 
 function DeckCopyUrlCodedButton(props) {
+  const { isMobile } = useContext(AppContext);
   const cards = [];
 
   Object.keys(props.deck.crypt).map((card) => {
@@ -35,7 +37,7 @@ function DeckCopyUrlCodedButton(props) {
     setState(true);
     setTimeout(() => {
       setState(false);
-      props.isMobile && props.setShowButtons(false);
+      isMobile && props.setShowButtons(false);
     }, 1000);
   };
 

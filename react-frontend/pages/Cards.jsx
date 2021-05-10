@@ -9,7 +9,14 @@ import ButtonCardCopyUrl from './components/ButtonCardCopyUrl.jsx';
 import AppContext from '../context/AppContext.js';
 
 function Cards(props) {
-  const { localizedCrypt, localizedLibrary, lang } = useContext(AppContext);
+  const {
+    showImage,
+    setShowImage,
+    localizedCrypt,
+    localizedLibrary,
+    lang,
+    isMobile,
+  } = useContext(AppContext);
   const history = useHistory();
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
@@ -64,7 +71,7 @@ function Cards(props) {
   return (
     <Container className="p-0">
       <>
-        {props.isMobile ? (
+        {isMobile ? (
           <>
             {props.cryptCardBase && props.libraryCardBase && (
               <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
@@ -74,7 +81,6 @@ function Cards(props) {
                     libraryCardBase={props.libraryCardBase}
                     setCard={setCard}
                     history={history}
-                    isMobile={props.isMobile}
                   />
                 </Col>
               </Row>
@@ -83,7 +89,7 @@ function Cards(props) {
               <>
                 <Row className="m-0 p-0">
                   <Col className="m-0 p-0">
-                    {props.showImage ? (
+                    {showImage ? (
                       <CardImage />
                     ) : (
                       <>
@@ -102,17 +108,14 @@ function Cards(props) {
                           )}
                         </div>
                         <div className="px-3 pb-3">
-                          <ButtonCardCopyUrl
-                            isMobile={props.isMobile}
-                            id={card.Id}
-                          />
+                          <ButtonCardCopyUrl id={card.Id} />
                         </div>
                       </>
                     )}
                   </Col>
                 </Row>
                 <div
-                  onClick={() => props.setShowImage(!props.showImage)}
+                  onClick={() => setShowImage(!showImage)}
                   className="float-right-bottom add-on"
                 >
                   <div className="pt-1 float-add">
@@ -132,7 +135,6 @@ function Cards(props) {
                     libraryCardBase={props.libraryCardBase}
                     setCard={setCard}
                     history={history}
-                    isMobile={props.isMobile}
                   />
                 </Col>
               </Row>
@@ -156,7 +158,7 @@ function Cards(props) {
                     />
                   )}
                   <div className="pt-3">
-                    <ButtonCardCopyUrl isMobile={props.isMobile} id={card.Id} />
+                    <ButtonCardCopyUrl id={card.Id} />
                   </div>
                 </Col>
               </Row>

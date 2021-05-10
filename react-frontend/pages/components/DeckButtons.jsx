@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import DeckDraw from './DeckDraw.jsx';
 import DeckClone from './DeckClone.jsx';
 import DeckDelete from './DeckDelete.jsx';
@@ -10,22 +10,24 @@ import DeckProxy from './DeckProxy.jsx';
 import DeckMissing from './DeckMissing.jsx';
 import DeckBranchCreate from './DeckBranchCreate.jsx';
 import DeckBranchDelete from './DeckBranchDelete.jsx';
+import AppContext from '../../context/AppContext';
 
 function DeckButtons(props) {
+  const { username } = useContext(AppContext);
+
   return (
     <>
-      {props.username && (
+      {username && (
         <div className="button-block">
           <DeckImport
             setActiveDeck={props.setActiveDeck}
             getDecks={props.getDecks}
             setShowInfo={props.setShowInfo}
             setShowButtons={props.setShowButtons}
-            isMobile={props.isMobile}
           />
         </div>
       )}
-      {props.username && props.deck && (
+      {username && props.deck && (
         <div className="button-block">
           <DeckClone
             getDecks={props.getDecks}
@@ -33,7 +35,6 @@ function DeckButtons(props) {
             activeDeck={props.activeDeck}
             setActiveDeck={props.setActiveDeck}
             setShowButtons={props.setShowButtons}
-            isMobile={props.isMobile}
           />
         </div>
       )}
@@ -43,8 +44,6 @@ function DeckButtons(props) {
             deck={props.deck}
             activeDeck={props.activeDeck}
             setShowButtons={props.setShowButtons}
-            username={props.username}
-            isMobile={props.isMobile}
           />
         </div>
       )}
@@ -55,7 +54,6 @@ function DeckButtons(props) {
             getDecks={props.getDecks}
             setActiveDeck={props.setActiveDeck}
             setShowButtons={props.setShowButtons}
-            isMobile={props.isMobile}
             history={props.history}
           />
         </div>
@@ -68,7 +66,6 @@ function DeckButtons(props) {
             activeDeck={props.activeDeck}
             setActiveDeck={props.setActiveDeck}
             setShowButtons={props.setShowButtons}
-            isMobile={props.isMobile}
           />
         </div>
       )}
@@ -82,7 +79,6 @@ function DeckButtons(props) {
               getDecks={props.getDecks}
               setActiveDeck={props.setActiveDeck}
               setShowButtons={props.setShowButtons}
-              isMobile={props.isMobile}
             />
           </div>
         )}
@@ -94,14 +90,12 @@ function DeckButtons(props) {
                 <DeckCopyUrlMutableButton
                   value={props.activeDeck.deckid}
                   setShowButtons={props.setShowButtons}
-                  isMobile={props.isMobile}
                 />
               </div>
               <div className="button-block">
                 <DeckCopyUrlCodedButton
                   deck={props.deck}
                   setShowButtons={props.setShowButtons}
-                  isMobile={props.isMobile}
                 />
               </div>
             </>
@@ -110,7 +104,6 @@ function DeckButtons(props) {
               <DeckCopyUrlMutableButton
                 value={props.activeDeck.deckid}
                 setShowButtons={props.setShowButtons}
-                isMobile={props.isMobile}
               />
             </div>
           )}
@@ -122,11 +115,6 @@ function DeckButtons(props) {
             deck={props.deck}
             missingCrypt={props.missingCrypt}
             missingLibrary={props.missingLibrary}
-            inventoryMode={props.inventoryMode}
-            isMobile={props.isMobile}
-            isWide={props.isWide}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             setShowInfo={props.setShowInfo}
             setShowButtons={props.setShowButtons}
           />
@@ -137,10 +125,6 @@ function DeckButtons(props) {
           <DeckDraw
             crypt={props.deck.crypt}
             library={props.deck.library}
-            isMobile={props.isMobile}
-            isWide={props.isWide}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             setShowButtons={props.setShowButtons}
           />
         </div>
@@ -151,10 +135,6 @@ function DeckButtons(props) {
             name={props.deck.name}
             missingCrypt={props.missingCrypt}
             missingLibrary={props.missingLibrary}
-            isMobile={props.isMobile}
-            isWide={props.isWide}
-            showImage={props.showImage}
-            setShowImage={props.setShowImage}
             setShowButtons={props.setShowButtons}
             cryptCardBase={props.cryptCardBase}
             libraryCardBase={props.libraryCardBase}

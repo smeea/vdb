@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -16,8 +16,11 @@ import ResultCryptTitle from './ResultCryptTitle.jsx';
 import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
 import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import drawProbability from './drawProbability.js';
+import AppContext from '../../context/AppContext';
 
 function DeckCryptTable(props) {
+  const { isMobile } = useContext(AppContext);
+
   let resultTrClass;
   let deckInvType;
 
@@ -26,7 +29,7 @@ function DeckCryptTable(props) {
   const cardRows = props.cards.map((card) => {
     const handleClick = () => {
       props.handleModalCardOpen(card.c);
-      props.isMobile && props.setShowFloatingButtons(false);
+      isMobile && props.setShowFloatingButtons(false);
       props.setModalInventory({
         inInventory: inInventory,
         softUsedMax: softUsedMax,
@@ -127,7 +130,7 @@ function DeckCryptTable(props) {
             <>
               {props.inventoryMode ? (
                 <>
-                  {deckInvType && !props.inSearch && !props.isMobile ? (
+                  {deckInvType && !props.inSearch && !isMobile ? (
                     <td className="d-flex align-items-center inventory-card-custom">
                       <div
                         className={cardInvType ? '' : 'not-selected'}
@@ -147,14 +150,13 @@ function DeckCryptTable(props) {
                       </div>
                     </td>
                   ) : null}
-                  {props.isMobile ? (
+                  {isMobile ? (
                     <td className="quantity">
                       <DeckCardQuantity
                         cardid={card.c['Id']}
                         q={card.q}
                         deckid={props.deckid}
                         cardChange={props.cardChange}
-                        isMobile={props.isMobile}
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
@@ -180,7 +182,6 @@ function DeckCryptTable(props) {
                           q={card.q}
                           deckid={props.deckid}
                           cardChange={props.cardChange}
-                          isMobile={props.isMobile}
                           inInventory={inInventory}
                           softUsedMax={softUsedMax}
                           hardUsedTotal={hardUsedTotal}
@@ -199,7 +200,6 @@ function DeckCryptTable(props) {
                     q={card.q}
                     deckid={props.deckid}
                     cardChange={props.cardChange}
-                    isMobile={props.isMobile}
                   />
                 </td>
               )}
@@ -215,14 +215,13 @@ function DeckCryptTable(props) {
                     : 0
                 }
                 cardChange={props.proxyCounter}
-                isMobile={props.isMobile}
               />
             </td>
           ) : (
             <>
               {props.inventoryMode ? (
                 <>
-                  {props.isMobile ? (
+                  {isMobile ? (
                     <td className="quantity-no-buttons px-1">
                       <div
                         className={
@@ -273,7 +272,7 @@ function DeckCryptTable(props) {
             </>
           )}
           <td
-            className={props.isMobile ? 'capacity' : 'capacity px-1'}
+            className={isMobile ? 'capacity' : 'capacity px-1'}
             onClick={() => handleClick()}
           >
             <ResultCryptCapacity value={card.c['Capacity']} />
@@ -293,15 +292,12 @@ function DeckCryptTable(props) {
               disciplinesSet={props.disciplinesSet}
               keyDisciplines={props.keyDisciplines}
               nonKeyDisciplines={props.nonKeyDisciplines}
-              isMobile={props.isMobile}
             />
           </td>
-          {!props.isMobile ? (
+          {!isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={
-                <CardPopover card={card.c} showImage={props.showImage} />
-              }
+              overlay={<CardPopover card={card.c} />}
             >
               <td className="name px-1" onClick={() => handleClick()}>
                 <ResultCryptName card={card.c} />
@@ -315,7 +311,7 @@ function DeckCryptTable(props) {
           <td className="title pr-2" onClick={() => handleClick()}>
             <ResultCryptTitle value={card.c.Title} />
           </td>
-          {props.isMobile || !props.isWide ? (
+          {isMobile ? (
             <td className="clan-group" onClick={() => handleClick()}>
               <div>
                 <ResultCryptClan value={card.c['Clan']} />
@@ -336,7 +332,7 @@ function DeckCryptTable(props) {
           )}
           {props.showInfo && (
             <td className="prob px-1">
-              {props.isMobile ? (
+              {isMobile ? (
                 <div
                   onClick={() =>
                     setModalDraw({

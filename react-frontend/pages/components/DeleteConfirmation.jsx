@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
+import AppContext from '../../context/AppContext.js';
 
 function DeleteConfirmation(props) {
+  const { isMobile } = useContext(AppContext);
+
   return (
     <>
       <Modal
         show={props.show}
         onHide={props.handleCancel}
         animation={false}
-        centered={props.isMobile}
+        centered={isMobile}
       >
         <Modal.Body>
           <button

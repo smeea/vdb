@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
@@ -10,8 +10,11 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function TwdSearchFormLibrary(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [modalCard, setModalCard] = useState(undefined);
 
   const handleAdd = (event) => {
@@ -35,15 +38,10 @@ function TwdSearchFormLibrary(props) {
             q={props.state[id]}
             target="library"
           />
-          {!props.isMobile ? (
+          {!isMobile ? (
             <OverlayTrigger
               placement="left"
-              overlay={
-                <CardPopover
-                  card={props.cardBase[id]}
-                  showImage={props.showImage}
-                />
-              }
+              overlay={<CardPopover card={props.cardBase[id]} />}
             >
               <div
                 className="pt-1"
@@ -145,10 +143,7 @@ function TwdSearchFormLibrary(props) {
         <ResultLibraryModal
           show={modalCard ? true : false}
           card={modalCard}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
           handleClose={() => setModalCard(false)}
-          isMobile={props.isMobile}
         />
       )}
     </>

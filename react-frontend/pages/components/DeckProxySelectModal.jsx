@@ -4,8 +4,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function DeckDrawModal(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [selectedCards, setSelectedCards] = useState({});
   const [toggleState, setToggleState] = useState(false);
 
@@ -72,7 +75,7 @@ function DeckDrawModal(props) {
       });
     props.proxyCards(cards);
     props.setShow(false);
-    props.isMobile && props.setShowButtons(false);
+    isMobile && props.setShowButtons(false);
   };
 
   return (
@@ -104,16 +107,12 @@ function DeckDrawModal(props) {
                 <>
                   <DeckCrypt
                     cards={props.deck.crypt}
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
                     isAuthor={false}
-                    isMobile={props.isMobile}
-                    isWide={props.isWide}
                     proxySelector={proxySelector}
                     proxyCounter={proxyCounter}
                     proxySelected={selectedCards}
                   />
-                  {!props.isMobile && <br />}
+                  {!isMobile && <br />}
                 </>
               )}
             </Col>
@@ -122,16 +121,12 @@ function DeckDrawModal(props) {
                 <>
                   <DeckLibrary
                     cards={props.deck.library}
-                    showImage={props.showImage}
-                    setShowImage={props.setShowImage}
                     isAuthor={false}
-                    isMobile={props.isMobile}
-                    isWide={props.isWide}
                     proxySelector={proxySelector}
                     proxyCounter={proxyCounter}
                     proxySelected={selectedCards}
                   />
-                  {!props.isMobile && <br />}
+                  {!isMobile && <br />}
                 </>
               )}
             </Col>

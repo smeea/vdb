@@ -4,15 +4,15 @@ import ResultCryptPopover from './ResultCryptPopover.jsx';
 import ResultLibraryPopover from './ResultLibraryPopover.jsx';
 
 const CardPopover = React.forwardRef((props, ref) => {
-  const { card, showImage, ...rest } = props;
+  const { card, ...rest } = props;
 
   return (
     <Popover ref={ref} {...rest}>
       <Popover.Content>
         {props.card.Id > 200000 ? (
-          <ResultCryptPopover card={card} showImage={showImage} />
+          <ResultCryptPopover card={card} />
         ) : (
-          <ResultLibraryPopover card={card} showImage={showImage} />
+          <ResultLibraryPopover card={card} />
         )}
       </Popover.Content>
     </Popover>

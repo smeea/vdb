@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import PaletteFill from '../../assets/images/icons/palette-fill.svg';
+import AppContext from '../../context/AppContext.js';
 
 function DeckChangeBranchName(props) {
+  const { isMobile } = useContext(AppContext);
+
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
 
@@ -37,7 +40,7 @@ function DeckChangeBranchName(props) {
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
-        {props.isMobile && (
+        {isMobile && (
           <InputGroup.Prepend>
             <InputGroup.Text>
               <PaletteFill />
@@ -52,7 +55,7 @@ function DeckChangeBranchName(props) {
           onBlur={handleOnBlur}
           readOnly={!props.isAuthor}
         />
-        {props.isMobile && props.isAuthor && (
+        {isMobile && props.isAuthor && (
           <InputGroup.Append>
             <Button
               variant={buttonState ? 'success' : 'outline-secondary'}

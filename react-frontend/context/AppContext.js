@@ -2,11 +2,10 @@ import React, { useState, useLayoutEffect } from 'react';
 
 const AppContext = React.createContext({
   isMobile: false,
-  isWide: false,
   username: undefined,
+  setUsername: () => {},
   lang: 'en-EN',
   setLang: () => {},
-  setUsername: () => {},
   publicName: undefined,
   setPublicName: () => {},
   email: undefined,
@@ -19,13 +18,20 @@ const AppContext = React.createContext({
   setNativeCrypt: () => {},
   nativeLibrary: undefined,
   setNativeLibrary: () => {},
+  hideMissing: false,
+  setHideMissing: () => {},
+  inventoryMode: false,
+  setInventoryMode: () => {},
+  addMode: false,
+  setAddMode: () => {},
+  showImage: true,
+  setShowImage: () => {},
 });
 
 export default AppContext;
 
 export const AppProvider = (props) => {
   const isMobile = window.matchMedia('(max-width: 540px)').matches;
-  const isWide = window.matchMedia('(min-width: 1600px)').matches;
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
@@ -34,6 +40,10 @@ export const AppProvider = (props) => {
   const [localizedLibrary, setLocalizedLibrary] = useState(undefined);
   const [nativeCrypt, setNativeCrypt] = useState(undefined);
   const [nativeLibrary, setNativeLibrary] = useState(undefined);
+  const [showImage, setShowImage] = useState(true);
+  const [addMode, setAddMode] = useState(false);
+  const [inventoryMode, setInventoryMode] = useState(false);
+  const [hideMissing, setHideMissing] = useState(false);
 
   const changeLang = (lang) => {
     setLang(lang);
@@ -54,7 +64,6 @@ export const AppProvider = (props) => {
     <AppContext.Provider
       value={{
         isMobile,
-        isWide,
         username,
         setUsername,
         publicName,
@@ -71,6 +80,14 @@ export const AppProvider = (props) => {
         setNativeCrypt,
         nativeLibrary,
         setNativeLibrary,
+        hideMissing,
+        setHideMissing,
+        inventoryMode,
+        setInventoryMode,
+        addMode,
+        setAddMode,
+        showImage,
+        setShowImage,
       }}
     >
       {props.children}

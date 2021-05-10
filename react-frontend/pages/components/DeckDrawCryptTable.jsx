@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';
@@ -10,12 +10,12 @@ import ResultCryptGroup from './ResultCryptGroup.jsx';
 import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
 import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import drawProbability from './drawProbability.js';
+import AppContext from '../../context/AppContext.js';
 
 function DeckDrawCryptTable(props) {
-  let resultTrClass;
-
+  const { isMobile } = useContext(AppContext);
   const [modalDraw, setModalDraw] = useState(undefined);
-
+  let resultTrClass;
   const N = props.total;
   const n = props.resultCards.length;
 
@@ -32,7 +32,7 @@ function DeckDrawCryptTable(props) {
       <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
           <td
-            className={props.isMobile ? 'capacity px-1' : 'capacity px-2'}
+            className={isMobile ? 'capacity px-1' : 'capacity px-2'}
             onClick={() => props.burnCrypt(index)}
           >
             <ResultCryptCapacity value={card['Capacity']} />
@@ -46,13 +46,12 @@ function DeckDrawCryptTable(props) {
               disciplinesSet={props.disciplinesSet}
               keyDisciplines={props.keyDisciplines}
               nonKeyDisciplines={props.nonKeyDisciplines}
-              isMobile={props.isMobile}
             />
           </td>
-          {!props.isMobile ? (
+          {!isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card} showImage={props.showImage} />}
+              overlay={<CardPopover card={card} />}
             >
               <td className="name px-1" onClick={() => props.burnCrypt(index)}>
                 <ResultCryptName card={card} />
@@ -63,7 +62,7 @@ function DeckDrawCryptTable(props) {
               <ResultCryptName card={card} />
             </td>
           )}
-          {props.isMobile || !props.isWide ? (
+          {isMobile ? (
             <td className="clan-group" onClick={() => props.burnCrypt(index)}>
               <div>
                 <ResultCryptClan value={card['Clan']} />
@@ -83,7 +82,7 @@ function DeckDrawCryptTable(props) {
             </>
           )}
           <td className="prob px-1">
-            {props.isMobile ? (
+            {isMobile ? (
               <div
                 onClick={() =>
                   setModalDraw({

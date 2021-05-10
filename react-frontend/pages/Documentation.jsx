@@ -11,7 +11,7 @@ function Documentation(props) {
     <Container className="main-container">
       <Row className="justify-content-center">
         <Col md={12} lg={6} className="px-0">
-          <Banner isMobile={props.isMobile} />
+          <Banner />
           <div className="px-2">
             <div className="pt-2">
               <h5>HELP / DOCUMENTATION</h5>

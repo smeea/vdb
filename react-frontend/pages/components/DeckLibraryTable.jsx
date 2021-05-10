@@ -19,7 +19,7 @@ import drawProbability from './drawProbability.js';
 import AppContext from '../../context/AppContext.js';
 
 function DeckLibraryTable(props) {
-  const { nativeLibrary } = useContext(AppContext);
+  const { nativeLibrary, isMobile } = useContext(AppContext);
 
   let resultTrClass;
   let deckInvType = null;
@@ -34,7 +34,7 @@ function DeckLibraryTable(props) {
   const cardRows = props.cards.map((card) => {
     const handleClick = () => {
       props.handleModalCardOpen(card.c);
-      props.isMobile && props.setShowFloatingButtons(false);
+      isMobile && props.setShowFloatingButtons(false);
       props.setModalInventory({
         inInventory: inInventory,
         softUsedMax: softUsedMax,
@@ -163,7 +163,7 @@ function DeckLibraryTable(props) {
                       </div>
                     </td>
                   ) : null}
-                  {!props.isMobile ? (
+                  {!isMobile ? (
                     <OverlayTrigger
                       placement="right"
                       overlay={
@@ -182,7 +182,6 @@ function DeckLibraryTable(props) {
                           q={card.q}
                           deckid={props.deckid}
                           cardChange={props.cardChange}
-                          isMobile={props.isMobile}
                           inInventory={inInventory}
                           softUsedMax={softUsedMax}
                           hardUsedTotal={hardUsedTotal}
@@ -199,7 +198,6 @@ function DeckLibraryTable(props) {
                         q={card.q}
                         deckid={props.deckid}
                         cardChange={props.cardChange}
-                        isMobile={props.isMobile}
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
@@ -215,7 +213,6 @@ function DeckLibraryTable(props) {
                     q={card.q}
                     deckid={props.deckid}
                     cardChange={props.cardChange}
-                    isMobile={props.isMobile}
                   />
                 </td>
               )}
@@ -231,14 +228,13 @@ function DeckLibraryTable(props) {
                     : 0
                 }
                 cardChange={props.proxyCounter}
-                isMobile={props.isMobile}
               />
             </td>
           ) : (
             <>
               {props.inventoryMode ? (
                 <>
-                  {props.isMobile ? (
+                  {isMobile ? (
                     <td className="quantity-no-buttons px-1">
                       <div
                         className={
@@ -288,12 +284,10 @@ function DeckLibraryTable(props) {
               )}
             </>
           )}
-          {!props.isMobile ? (
+          {!isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={
-                <CardPopover card={card.c} showImage={props.showImage} />
-              }
+              overlay={<CardPopover card={card.c} />}
             >
               <td className="name pl-3 pr-2" onClick={() => handleClick()}>
                 <ResultLibraryName card={card.c} />
@@ -321,7 +315,7 @@ function DeckLibraryTable(props) {
           </td>
           {props.showInfo && (
             <td className="prob px-1">
-              {props.isMobile ? (
+              {isMobile ? (
                 <div
                   onClick={() =>
                     setModalDraw({

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import DoorClosedFill from '../../assets/images/icons/door-closed-fill.svg';
+import AppContext from '../../context/AppContext';
 
 function AccountLogout(props) {
+  const { setUsername } = useContext(AppContext);
+
   const logoutUser = () => {
     const url = `${process.env.API_URL}logout`;
     const options = {
@@ -12,7 +15,7 @@ function AccountLogout(props) {
     };
     fetch(url, options);
 
-    props.setUsername(undefined);
+    setUsername(undefined);
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Row, Col, Modal } from 'react-bootstrap';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
@@ -10,8 +10,11 @@ import InventoryCrypt from './components/InventoryCrypt.jsx';
 import InventoryLibrary from './components/InventoryLibrary.jsx';
 import InventoryButtons from './components/InventoryButtons.jsx';
 import InventoryShowSelect from './components/InventoryShowSelect.jsx';
+import AppContext from '../context/AppContext';
 
 function Inventory(props) {
+  const { username, isMobile } = useContext(AppContext);
+
   const [newCryptId, setNewCryptId] = useState(undefined);
   const [newLibraryId, setNewLibraryId] = useState(undefined);
   const [category, setCategory] = useState('all');
@@ -21,11 +24,11 @@ function Inventory(props) {
 
   return (
     <Container
-      className={props.isMobile ? 'main-container px-0' : 'main-container py-4'}
+      className={isMobile ? 'main-container px-0' : 'main-container py-4'}
     >
-      {props.username ? (
+      {username ? (
         <>
-          {props.isMobile ? (
+          {isMobile ? (
             <>
               {showCrypt ? (
                 <>
@@ -44,10 +47,6 @@ function Inventory(props) {
                         cards={{
                           [newCryptId]: props.inventoryCrypt[newCryptId],
                         }}
-                        showImage={props.showImage}
-                        setShowImage={props.setShowImage}
-                        isMobile={props.isMobile}
-                        isWide={props.isWide}
                         cardBase={props.cryptCardBase}
                         cardChange={props.cardChange}
                         usedCards={props.usedCryptCards}
@@ -65,10 +64,6 @@ function Inventory(props) {
                         <InventoryCrypt
                           category={category}
                           cards={props.inventoryCrypt}
-                          showImage={props.showImage}
-                          setShowImage={props.setShowImage}
-                          isMobile={props.isMobile}
-                          isWide={props.isWide}
                           cardBase={props.cryptCardBase}
                           cardChange={props.cardChange}
                           usedCards={props.usedCryptCards}
@@ -96,10 +91,6 @@ function Inventory(props) {
                         cards={{
                           [newLibraryId]: props.inventoryLibrary[newLibraryId],
                         }}
-                        showImage={props.showImage}
-                        setShowImage={props.setShowImage}
-                        isMobile={props.isMobile}
-                        isWide={props.isWide}
                         cardBase={props.libraryCardBase}
                         cardChange={props.cardChange}
                         usedCards={props.usedLibraryCards}
@@ -117,10 +108,6 @@ function Inventory(props) {
                         <InventoryLibrary
                           category={category}
                           cards={props.inventoryLibrary}
-                          showImage={props.showImage}
-                          setShowImage={props.setShowImage}
-                          isMobile={props.isMobile}
-                          isWide={props.isWide}
                           cardBase={props.libraryCardBase}
                           cardChange={props.cardChange}
                           usedCards={props.usedLibraryCards}
@@ -162,10 +149,6 @@ function Inventory(props) {
                       cards={{
                         [newCryptId]: props.inventoryCrypt[newCryptId],
                       }}
-                      showImage={props.showImage}
-                      setShowImage={props.setShowImage}
-                      isMobile={props.isMobile}
-                      isWide={props.isWide}
                       cardBase={props.cryptCardBase}
                       cardChange={props.cardChange}
                       usedCards={props.usedCryptCards}
@@ -182,10 +165,6 @@ function Inventory(props) {
                       <InventoryCrypt
                         category={category}
                         cards={props.inventoryCrypt}
-                        showImage={props.showImage}
-                        setShowImage={props.setShowImage}
-                        isMobile={props.isMobile}
-                        isWide={props.isWide}
                         cardBase={props.cryptCardBase}
                         cardChange={props.cardChange}
                         usedCards={props.usedCryptCards}
@@ -210,10 +189,6 @@ function Inventory(props) {
                       cards={{
                         [newLibraryId]: props.inventoryLibrary[newLibraryId],
                       }}
-                      showImage={props.showImage}
-                      setShowImage={props.setShowImage}
-                      isMobile={props.isMobile}
-                      isWide={props.isWide}
                       cardBase={props.libraryCardBase}
                       cardChange={props.cardChange}
                       usedCards={props.usedLibraryCards}
@@ -231,10 +206,6 @@ function Inventory(props) {
                       <InventoryLibrary
                         category={category}
                         cards={props.inventoryLibrary}
-                        showImage={props.showImage}
-                        setShowImage={props.setShowImage}
-                        isMobile={props.isMobile}
-                        isWide={props.isWide}
                         cardBase={props.libraryCardBase}
                         cardChange={props.cardChange}
                         usedCards={props.usedLibraryCards}
@@ -251,7 +222,6 @@ function Inventory(props) {
                   inventoryDeckAdd={props.inventoryDeckAdd}
                   inventoryAddToState={props.inventoryAddToState}
                   setInventory={props.setInventory}
-                  isMobile={props.isMobile}
                 />
                 <div className="px-4 py-2">
                   <InventoryShowSelect
@@ -270,21 +240,15 @@ function Inventory(props) {
               <h6>Login required to manage inventory</h6>
             </div>
             <div className="py-2">
-              <AccountLogin
-                setUsername={props.setUsername}
-                isMobile={props.isMobile}
-              />
+              <AccountLogin />
             </div>
             <div className="py-2">
-              <AccountRegister
-                setUsername={props.setUsername}
-                whoAmI={props.whoAmI}
-              />
+              <AccountRegister whoAmI={props.whoAmI} />
             </div>
           </Col>
         </Row>
       )}
-      {props.isMobile && showFloatingButtons && (
+      {isMobile && showFloatingButtons && (
         <>
           <div
             onClick={() => {
@@ -330,7 +294,6 @@ function Inventory(props) {
                 inventoryDeckAdd={props.inventoryDeckAdd}
                 inventoryAddToState={props.inventoryAddToState}
                 setInventory={props.setInventory}
-                isMobile={props.isMobile}
                 setShowMenuButtons={setShowMenuButtons}
               />
               <div className="px-4 py-2">

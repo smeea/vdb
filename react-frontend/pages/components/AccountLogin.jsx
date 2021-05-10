@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import {
   Form,
   FormControl,
@@ -13,8 +13,11 @@ import DoorOpenFill from '../../assets/images/icons/door-open-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 import Check2 from '../../assets/images/icons/check2.svg';
+import AppContext from '../../context/AppContext';
 
 function AccountLogin(props) {
+  const { setUsername, isMobile } = useContext(AppContext);
+
   const [state, setState] = useState({
     username: '',
     password: '',
@@ -72,7 +75,7 @@ function AccountLogin(props) {
           return response.json();
         })
         .then((data) => {
-          props.setUsername(state.username);
+          setUsername(state.username);
           setSpinnerState(false);
         })
         .catch((error) => {
@@ -120,7 +123,7 @@ function AccountLogin(props) {
       <h6 className="d-flex align-items-center">
         <DoorOpenFill />
         <span className="ml-2">Login</span>
-        {!props.isMobile ? (
+        {!isMobile ? (
           <OverlayTooltip text={loginTooltipText}>
             <span className="question-tooltip ml-1">[?]</span>
           </OverlayTooltip>
@@ -214,7 +217,7 @@ function AccountLogin(props) {
           )}
         </Overlay>
       </Form>
-      {!props.isMobile ? (
+      {!isMobile ? (
         <div className="d-flex justify-content-center small ml-3 pl-4">
           <OverlayTooltip
             delay={{ show: 0, hide: 31500 }}

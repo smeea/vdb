@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
@@ -7,10 +7,11 @@ import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function TwdResultCrypt(props) {
+  const { isMobile } = useContext(AppContext);
   let resultTrClass = 'result-even';
-
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
 
@@ -80,7 +81,7 @@ function TwdResultCrypt(props) {
   const cardLines = sortedCards.map((card, index) => {
     const handleClick = () => {
       setModalCardIdx(index);
-      props.isMobile && props.setShowFloatingButtons(false);
+      isMobile && props.setShowFloatingButtons(false);
       setModalInventory({
         inInventory: inInventory,
         softUsedMax: softUsedMax,
@@ -148,7 +149,7 @@ function TwdResultCrypt(props) {
       <tr key={card.c['Id']} className={resultTrClass}>
         {props.inventoryMode ? (
           <>
-            {props.isMobile ? (
+            {isMobile ? (
               <td className="quantity-no-buttons px-1">
                 <div
                   className={
@@ -197,10 +198,10 @@ function TwdResultCrypt(props) {
         <td className="capacity px-1" onClick={() => handleClick()}>
           <ResultCryptCapacity value={card.c['Capacity']} />
         </td>
-        {!props.isMobile ? (
+        {!isMobile ? (
           <OverlayTrigger
             placement={props.placement ? props.placement : 'right'}
-            overlay={<CardPopover card={card.c} showImage={props.showImage} />}
+            overlay={<CardPopover card={card.c} />}
           >
             <td className="name px-1" onClick={() => handleClick()}>
               <ResultCryptName card={card.c} />
@@ -232,15 +233,11 @@ function TwdResultCrypt(props) {
         <ResultCryptModal
           card={sortedCards[modalCardIdx].c}
           handleModalCardChange={handleModalCardChange}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
           handleClose={() => {
             setModalCardIdx(undefined);
-            props.isMobile && props.setShowFloatingButtons(true);
+            isMobile && props.setShowFloatingButtons(true);
           }}
-          isMobile={props.isMobile}
           inventoryState={modalInventory}
-          inventoryMode={props.inventoryMode}
         />
       )}
     </>

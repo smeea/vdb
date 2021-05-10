@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../../context/AppContext.js';
 
 function Banner(props) {
+  const { isMobile } = useContext(AppContext);
+
   return (
     <div
       className={
-        props.isMobile
+        isMobile
           ? 'd-flex justify-content-between align-items-center mb-3 logo-box'
           : 'd-flex justify-content-between align-items-center my-3 logo-box'
       }
@@ -20,7 +23,7 @@ function Banner(props) {
           <i>&mdash; your digital retainer</i>
         </div>
       </div>
-      {!props.isMobile && (
+      {!isMobile && (
         <div className="d-inline px-2">
           <div className="d-flex justify-content-end small">
             <i>If only I had a laptop...</i>

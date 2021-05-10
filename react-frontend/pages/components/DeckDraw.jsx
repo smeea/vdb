@@ -64,7 +64,7 @@ function DeckDraw(props) {
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
-    props.isMobile && props.setShowButtons(false);
+    isMobile && props.setShowButtons(false);
   };
 
   const handleOpenDraw = () => {
@@ -168,9 +168,6 @@ function DeckDraw(props) {
           restLibrary={restLibrary}
           show={showDrawModal}
           handleClose={handleCloseDrawModal}
-          showImage={props.showImage}
-          setShowImage={props.setShowImage}
-          isMobile={props.isMobile}
           setShowButtons={props.setShowButtons}
         />
       )}
