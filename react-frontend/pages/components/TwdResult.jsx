@@ -61,20 +61,15 @@ function TwdResult(props) {
                       <TwdResultCrypt
                         crypt={deck['crypt']}
                         setShowFloatingButtons={props.setShowFloatingButtons}
-                        decks={props.decks}
                       />
                     </Col>
                     <Col md={12} xl={3} className="px-2">
-                      <TwdResultLibraryByType
-                        library={deck['library']}
-                        decks={props.decks}
-                      />
+                      <TwdResultLibraryByType library={deck['library']} />
                     </Col>
                     <Col md={12} xl={3} className="pr-0 pl-2">
                       <TwdResultLibraryKeyCards
                         library={deck['library']}
                         setShowFloatingButtons={props.setShowFloatingButtons}
-                        decks={props.decks}
                       />
                     </Col>
                   </>
@@ -84,14 +79,12 @@ function TwdResult(props) {
                       <TwdResultCrypt
                         crypt={deck['crypt']}
                         setShowFloatingButtons={props.setShowFloatingButtons}
-                        decks={props.decks}
                       />
                     </Col>
                     <Col xs={6} className="pl-1 pr-0">
                       <TwdResultLibraryKeyCards
                         library={deck['library']}
                         setShowFloatingButtons={props.setShowFloatingButtons}
-                        decks={props.decks}
                       />
                     </Col>
                   </>
@@ -115,7 +108,7 @@ function TwdResult(props) {
       )}
       {twdResults.length > 0 && (
         <>
-          <TwdResultTotal decks={twdResults} />
+          <TwdResultTotal />
           {twdRows}
           {deckCounter > showCounter && (
             <div className="d-flex justify-content-center pb-4 pt-2">

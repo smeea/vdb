@@ -6,14 +6,14 @@ import At from '../../assets/images/icons/at.svg';
 import AppContext from '../../context/AppContext.js';
 
 function DeckSelectMy(props) {
-  const { isMobile } = useContext(AppContext);
+  const { decks, isMobile } = useContext(AppContext);
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
   };
 
-  const preOptions = Object.keys(props.decks)
-    .filter((i) => !props.decks[i].master)
+  const preOptions = Object.keys(decks)
+    .filter((i) => !decks[i].master)
     .map((i, index) => {
       return [
         {
@@ -21,23 +21,21 @@ function DeckSelectMy(props) {
           name: 'deck',
           label: (
             <div className="d-flex justify-content-between align-items-center">
-              {props.decks[i]['name']}
+              {decks[i]['name']}
               <div className="d-flex align-items-center pl-2 small">
                 {props.inventoryMode && (
                   <div className="pr-2">
-                    {props.decks[i].inventory_type == 's' && <Shuffle />}
-                    {props.decks[i].inventory_type == 'h' && <PinAngleFill />}
-                    {!props.decks[i].inventory_type && <At />}
+                    {decks[i].inventory_type == 's' && <Shuffle />}
+                    {decks[i].inventory_type == 'h' && <PinAngleFill />}
+                    {!decks[i].inventory_type && <At />}
                   </div>
                 )}
-                {new Date(props.decks[i]['timestamp'])
-                  .toISOString()
-                  .slice(0, 10)}
+                {new Date(decks[i]['timestamp']).toISOString().slice(0, 10)}
               </div>
             </div>
           ),
         },
-        props.decks[i]['timestamp'],
+        decks[i]['timestamp'],
       ];
     });
 
@@ -64,10 +62,10 @@ function DeckSelectMy(props) {
       placeholder="Select Deck"
       value={options.find((obj) => {
         if (
-          props.decks[props.activeDeck.deckid] &&
-          props.decks[props.activeDeck.deckid].master
+          decks[props.activeDeck.deckid] &&
+          decks[props.activeDeck.deckid].master
         ) {
-          return obj.value === props.decks[props.activeDeck.deckid].master;
+          return obj.value === decks[props.activeDeck.deckid].master;
         } else {
           return obj.value === props.activeDeck.deckid;
         }

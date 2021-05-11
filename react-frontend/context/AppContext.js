@@ -22,6 +22,7 @@ const AppContext = React.createContext({
   setHideMissing: () => {},
   inventoryMode: false,
   setInventoryMode: () => {},
+  isInventory: undefined,
 
   cryptCardBase: undefined,
   setCryptCardBase: () => {},
@@ -65,6 +66,9 @@ const AppContext = React.createContext({
   setInventoryCrypt: () => {},
   inventoryLibrary: undefined,
   setInventoryLibrary: () => {},
+
+  decks: undefined,
+  setDecks: () => {},
 });
 
 export default AppContext;
@@ -111,6 +115,8 @@ export const AppProvider = (props) => {
   const [inventoryCrypt, setInventoryCrypt] = useState({});
   const [inventoryLibrary, setInventoryLibrary] = useState({});
 
+  const [decks, setDecks] = useState(undefined);
+
   const changeLang = (lang) => {
     setLang(lang);
     window.localStorage.setItem('lang', lang);
@@ -125,6 +131,10 @@ export const AppProvider = (props) => {
       setLang('en-EN');
     }
   }, [lang]);
+
+  const isInventory =
+    Object.keys(inventoryCrypt).length > 0 ||
+    Object.keys(inventoryLibrary).length > 0;
 
   return (
     <AppContext.Provider
@@ -142,6 +152,7 @@ export const AppProvider = (props) => {
         setHideMissing,
         inventoryMode,
         setInventoryMode,
+        isInventory,
         addMode,
         setAddMode,
         showImage,
@@ -190,6 +201,9 @@ export const AppProvider = (props) => {
         setInventoryCrypt,
         inventoryLibrary,
         setInventoryLibrary,
+
+        decks,
+        setDecks,
       }}
     >
       {props.children}

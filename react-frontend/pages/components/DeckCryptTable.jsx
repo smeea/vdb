@@ -19,7 +19,9 @@ import drawProbability from './drawProbability.js';
 import AppContext from '../../context/AppContext';
 
 function DeckCryptTable(props) {
-  const { inventoryCrypt, usedCryptCards, isMobile } = useContext(AppContext);
+  const { decks, inventoryCrypt, usedCryptCards, isMobile } = useContext(
+    AppContext
+  );
 
   let resultTrClass;
   let deckInvType;
@@ -42,9 +44,9 @@ function DeckCryptTable(props) {
     };
 
     let cardInvType;
-    if (props.inventoryMode && props.decks[props.deckid]) {
+    if (props.inventoryMode && decks[props.deckid]) {
       cardInvType = card.i;
-      deckInvType = props.decks[props.deckid].inventory_type;
+      deckInvType = decks[props.deckid].inventory_type;
     }
 
     if (resultTrClass == 'result-odd') {
@@ -77,7 +79,7 @@ function DeckCryptTable(props) {
             <UsedDescription
               key={id}
               q={usedCryptCards.soft[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="s"
             />
           );
@@ -93,7 +95,7 @@ function DeckCryptTable(props) {
             <UsedDescription
               key={id}
               q={usedCryptCards.hard[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="h"
             />
           );
@@ -160,7 +162,7 @@ function DeckCryptTable(props) {
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
-                        inventoryType={props.decks[props.deckid].inventory_type}
+                        inventoryType={decks[props.deckid].inventory_type}
                       />
                     </td>
                   ) : (
@@ -185,9 +187,7 @@ function DeckCryptTable(props) {
                           inInventory={inInventory}
                           softUsedMax={softUsedMax}
                           hardUsedTotal={hardUsedTotal}
-                          inventoryType={
-                            props.decks[props.deckid].inventory_type
-                          }
+                          inventoryType={decks[props.deckid].inventory_type}
                         />
                       </td>
                     </OverlayTrigger>

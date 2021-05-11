@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryTotal(props) {
+  const { libraryResults } = useContext(AppContext);
   const byTypes = {};
   let total = 0;
 
-  props.cards.map((card, index) => {
+  libraryResults.map((card, index) => {
     if (byTypes[card['Type']]) {
       byTypes[card['Type']] += 1;
     } else {

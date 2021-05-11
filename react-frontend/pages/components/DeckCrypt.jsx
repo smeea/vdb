@@ -264,7 +264,6 @@ function DeckCrypt(props) {
         proxySelector={props.proxySelector}
         proxyCounter={props.proxyCounter}
         proxySelected={props.proxySelected}
-        decks={props.decks}
         deckUpdate={props.deckUpdate}
         inSearch={props.inSearch}
         setShowFloatingButtons={props.setShowFloatingButtons}
@@ -287,7 +286,6 @@ function DeckCrypt(props) {
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
-            decks={props.decks}
             deckUpdate={props.deckUpdate}
             inSearch={props.inSearch}
             setShowFloatingButtons={props.setShowFloatingButtons}

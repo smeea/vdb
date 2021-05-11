@@ -16,6 +16,7 @@ import AppContext from '../../context/AppContext';
 
 function ResultCryptTable(props) {
   const {
+    decks,
     inventoryCrypt,
     usedCryptCards,
     addMode,
@@ -91,7 +92,7 @@ function ResultCryptTable(props) {
               <UsedDescription
                 key={id}
                 q={usedCryptCards.soft[card['Id']][id]}
-                deckName={props.decks[id]['name']}
+                deckName={decks[id]['name']}
                 t="s"
               />
             );
@@ -107,7 +108,7 @@ function ResultCryptTable(props) {
               <UsedDescription
                 key={id}
                 q={usedCryptCards.hard[card['Id']][id]}
-                deckName={props.decks[id]['name']}
+                deckName={decks[id]['name']}
                 t="h"
               />
             );

@@ -1,25 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Select from 'react-select';
+import AppContext from '../../context/AppContext.js';
 
 function DeckBranchSelect(props) {
+  const { decks } = useContext(AppContext);
+
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
   };
 
-  const deck = props.decks[props.activeDeck.deckid];
-  const master = props.decks[deck.master];
+  const deck = decks[props.activeDeck.deckid];
+  const master = decks[deck.master];
 
   let branches;
   if (master) {
     branches = { [master.deckid]: master };
     master.branches.map((i) => {
-      branches[i] = props.decks[i];
+      branches[i] = decks[i];
     });
   } else {
     branches = { [deck.deckid]: deck };
     if (deck.branches) {
       deck.branches.map((i) => {
-        branches[i] = props.decks[i];
+        branches[i] = decks[i];
       });
     }
   }
@@ -29,9 +32,9 @@ function DeckBranchSelect(props) {
       {
         value: i,
         name: 'deck',
-        label: props.decks[i].branchName,
+        label: decks[i].branchName,
       },
-      props.decks[i]['timestamp'],
+      decks[i]['timestamp'],
     ];
   });
 

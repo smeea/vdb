@@ -20,6 +20,7 @@ import AppContext from '../../context/AppContext.js';
 
 function DeckLibraryTable(props) {
   const {
+    decks,
     inventoryLibrary,
     usedLibraryCards,
     nativeLibrary,
@@ -28,9 +29,9 @@ function DeckLibraryTable(props) {
 
   let resultTrClass;
   let deckInvType = null;
-  if (props.decks && props.deckid) {
-    if (props.inventoryMode && props.decks[props.deckid]) {
-      deckInvType = props.decks[props.deckid].inventory_type;
+  if (decks && props.deckid) {
+    if (props.inventoryMode && decks[props.deckid]) {
+      deckInvType = decks[props.deckid].inventory_type;
     }
   }
 
@@ -93,7 +94,7 @@ function DeckLibraryTable(props) {
             <UsedDescription
               key={id}
               q={usedLibraryCards.soft[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="s"
             />
           );
@@ -109,7 +110,7 @@ function DeckLibraryTable(props) {
             <UsedDescription
               key={id}
               q={usedLibraryCards.hard[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="h"
             />
           );
@@ -188,9 +189,7 @@ function DeckLibraryTable(props) {
                           inInventory={inInventory}
                           softUsedMax={softUsedMax}
                           hardUsedTotal={hardUsedTotal}
-                          inventoryType={
-                            props.decks[props.deckid].inventory_type
-                          }
+                          inventoryType={decks[props.deckid].inventory_type}
                         />
                       </td>
                     </OverlayTrigger>
@@ -204,7 +203,7 @@ function DeckLibraryTable(props) {
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
-                        inventoryType={props.decks[props.deckid].inventory_type}
+                        inventoryType={decks[props.deckid].inventory_type}
                       />
                     </td>
                   )}

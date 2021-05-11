@@ -19,6 +19,7 @@ function ResultCrypt(props) {
     inventoryMode,
     setInventoryMode,
     isMobile,
+    isInventory,
   } = useContext(AppContext);
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
@@ -57,7 +58,6 @@ function ResultCrypt(props) {
       {cryptResults.length > 0 && (
         <>
           <ResultCryptTotal
-            cards={cryptResults}
             value={props.sortMethod}
             handleChange={handleChange}
           />
@@ -68,7 +68,6 @@ function ResultCrypt(props) {
             cardAdd={props.cardAdd}
             cardChange={props.cardChange}
             resultCards={sortedCards}
-            decks={props.decks}
             setShowFloatingButtons={setShowFloatingButtons}
           />
         </>
@@ -80,7 +79,7 @@ function ResultCrypt(props) {
               <X viewBox="0 0 16 16" />
             </div>
           </div>
-          {props.isInventory && (
+          {isInventory && (
             <>
               {props.inventoryMode ? (
                 <div

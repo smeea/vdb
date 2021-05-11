@@ -34,7 +34,6 @@ function Twd(props) {
               setActiveDeck={props.setActiveDeck}
               showFloatingButtons={showFloatingButtons}
               setShowFloatingButtons={setShowFloatingButtons}
-              decks={props.decks}
             />
           )}
         </Col>

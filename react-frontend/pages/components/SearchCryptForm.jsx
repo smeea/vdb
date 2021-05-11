@@ -21,6 +21,7 @@ import AppContext from '../../context/AppContext.js';
 
 function SearchCryptForm(props) {
   const {
+    isInventory,
     setShowCryptSearch,
     setCryptResults,
     cryptFormState,
@@ -354,7 +355,7 @@ function SearchCryptForm(props) {
         preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
       />
-      {(inventoryMode || (isMobile && props.isInventory)) && (
+      {(inventoryMode || (isMobile && isInventory)) && (
         <div className="custom-control custom-checkbox">
           <input
             id="hideMissing"

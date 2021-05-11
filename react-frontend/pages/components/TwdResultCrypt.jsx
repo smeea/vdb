@@ -10,7 +10,9 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function TwdResultCrypt(props) {
-  const { inventoryCrypt, usedCryptCards, isMobile } = useContext(AppContext);
+  const { decks, inventoryCrypt, usedCryptCards, isMobile } = useContext(
+    AppContext
+  );
   let resultTrClass = 'result-even';
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
@@ -123,7 +125,7 @@ function TwdResultCrypt(props) {
             <UsedDescription
               key={id}
               q={usedCryptCards.soft[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
             />
           );
         });
@@ -138,7 +140,7 @@ function TwdResultCrypt(props) {
             <UsedDescription
               key={id}
               q={usedCryptCards.hard[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
             />
           );
         });

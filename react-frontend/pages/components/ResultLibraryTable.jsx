@@ -17,6 +17,7 @@ import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryTable(props) {
   const {
+    decks,
     inventoryLibrary,
     usedLibraryCards,
     addMode,
@@ -92,7 +93,7 @@ function ResultLibraryTable(props) {
             <UsedDescription
               key={id}
               q={usedLibraryCards.soft[card['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="s"
             />
           );
@@ -110,7 +111,7 @@ function ResultLibraryTable(props) {
             <UsedDescription
               key={id}
               q={usedLibraryCards.hard[card['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="h"
             />
           );

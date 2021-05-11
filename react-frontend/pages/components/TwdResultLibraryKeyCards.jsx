@@ -12,6 +12,7 @@ import AppContext from '../../context/AppContext.js';
 
 function TwdResultLibraryKeyCards(props) {
   const {
+    decks,
     inventoryLibrary,
     usedLibraryCards,
     inventoryMode,
@@ -129,7 +130,7 @@ function TwdResultLibraryKeyCards(props) {
             <UsedDescription
               key={id}
               q={usedLibraryCards.soft[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
             />
           );
         });
@@ -144,7 +145,7 @@ function TwdResultLibraryKeyCards(props) {
             <UsedDescription
               key={id}
               q={usedLibraryCards.hard[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
             />
           );
         });

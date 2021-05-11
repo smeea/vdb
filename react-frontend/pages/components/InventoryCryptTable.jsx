@@ -16,7 +16,7 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryCryptTable(props) {
-  const { usedCryptCards, isMobile } = useContext(AppContext);
+  const { decks, usedCryptCards, isMobile } = useContext(AppContext);
 
   let resultTrClass;
 
@@ -73,7 +73,7 @@ function InventoryCryptTable(props) {
             <UsedDescription
               key={card.c['Id']}
               q={usedCryptCards.soft[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="s"
             />
           );
@@ -89,7 +89,7 @@ function InventoryCryptTable(props) {
             <UsedDescription
               key={card.c['Id']}
               q={usedCryptCards.hard[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="h"
             />
           );

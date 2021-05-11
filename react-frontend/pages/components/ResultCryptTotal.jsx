@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ResultCryptSortForm from './ResultCryptSortForm.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function ResultCryptTotal(props) {
+  const { cryptResults } = useContext(AppContext);
   const byGroups = {};
   const byGroupsCapacityTotal = {};
   let total = 0;
 
-  props.cards.map((card) => {
+  cryptResults.map((card) => {
     if (byGroups[card['Group']]) {
       byGroups[card['Group']] += 1;
     } else {

@@ -52,17 +52,15 @@ function App(props) {
     setInventoryCrypt,
     inventoryLibrary,
     setInventoryLibrary,
+    decks,
+    setDecks,
   } = useContext(AppContext);
 
-  const [decks, setDecks] = useState(undefined);
-  const [preconDecks, setPreconDecks] = useState({});
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
-  const isInventory =
-    Object.keys(inventoryCrypt).length > 0 ||
-    Object.keys(inventoryLibrary).length > 0;
+  const [preconDecks, setPreconDecks] = useState({});
 
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
@@ -739,7 +737,6 @@ function App(props) {
       <Router>
         <ThemeProvider>
           <Navigation
-            decks={decks}
             activeDeck={activeDeck}
             setActiveDeck={setActiveDeck}
             lang={lang}
@@ -759,11 +756,7 @@ function App(props) {
               <Account whoAmI={whoAmI} />
             </Route>
             <Route path="/twd">
-              <Twd
-                getDecks={getDecks}
-                decks={decks}
-                setActiveDeck={setActiveDeck}
-              />
+              <Twd getDecks={getDecks} setActiveDeck={setActiveDeck} />
             </Route>
             <Route path="/inventory">
               <Inventory
@@ -772,14 +765,12 @@ function App(props) {
                 cardAdd={inventoryCardAdd}
                 cardChange={inventoryCardChange}
                 whoAmI={whoAmI}
-                decks={decks}
               />
             </Route>
             <Route path="/decks">
               <Decks
                 deckRouter={deckRouter}
                 changeTimer={changeTimer}
-                decks={decks}
                 preconDecks={preconDecks}
                 getDecks={getDecks}
                 activeDeck={activeDeck}
@@ -797,7 +788,6 @@ function App(props) {
                 changeTimer={changeTimer}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
-                decks={decks}
                 getDecks={getDecks}
                 activeDeck={
                   activeDeck.src == 'my'
@@ -805,7 +795,6 @@ function App(props) {
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
                 setActiveDeck={setActiveDeck}
-                isInventory={isInventory}
               />
             </Route>
             <Route path="/library">
@@ -814,7 +803,6 @@ function App(props) {
                 changeTimer={changeTimer}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
-                decks={decks}
                 getDecks={getDecks}
                 activeDeck={
                   activeDeck.src == 'my'
@@ -822,7 +810,6 @@ function App(props) {
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
                 setActiveDeck={setActiveDeck}
-                isInventory={isInventory}
               />
             </Route>
             <Route path="/cards" exact component={(props) => <Cards />} />

@@ -19,6 +19,7 @@ function ResultLibrary(props) {
     inventoryMode,
     setInventoryMode,
     isMobile,
+    isInventory,
   } = useContext(AppContext);
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
@@ -56,7 +57,6 @@ function ResultLibrary(props) {
       {libraryResults.length > 0 && (
         <>
           <ResultLibraryTotal
-            cards={libraryResults}
             value={props.sortMethod}
             handleChange={handleChange}
           />
@@ -66,7 +66,6 @@ function ResultLibrary(props) {
             cardAdd={props.cardAdd}
             cardChange={props.cardChange}
             resultCards={sortedCards}
-            decks={props.decks}
             setShowFloatingButtons={setShowFloatingButtons}
           />
         </>
@@ -78,7 +77,7 @@ function ResultLibrary(props) {
               <X viewBox="0 0 16 16" />
             </div>
           </div>
-          {props.isInventory && (
+          {isInventory && (
             <>
               {inventoryMode ? (
                 <div

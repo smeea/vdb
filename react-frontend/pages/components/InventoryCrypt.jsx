@@ -82,7 +82,6 @@ function InventoryCrypt(props) {
       )}
       <InventoryCryptTable
         cardChange={props.cardChange}
-        decks={props.decks}
         cards={sortedCards}
         showFloatingButtons={props.showFloatingButtons}
         setShowFloatingButtons={props.setShowFloatingButtons}

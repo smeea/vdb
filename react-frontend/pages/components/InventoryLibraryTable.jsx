@@ -16,7 +16,9 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryLibraryTable(props) {
-  const { usedLibraryCards, nativeLibrary, isMobile } = useContext(AppContext);
+  const { decks, usedLibraryCards, nativeLibrary, isMobile } = useContext(
+    AppContext
+  );
   let resultTrClass;
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
@@ -81,7 +83,7 @@ function InventoryLibraryTable(props) {
             <UsedDescription
               key={card.c['Id']}
               q={usedLibraryCards.soft[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="s"
             />
           );
@@ -97,7 +99,7 @@ function InventoryLibraryTable(props) {
             <UsedDescription
               key={card.c['Id']}
               q={usedLibraryCards.hard[card.c['Id']][id]}
-              deckName={props.decks[id]['name']}
+              deckName={decks[id]['name']}
               t="h"
             />
           );

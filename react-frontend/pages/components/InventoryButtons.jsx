@@ -25,7 +25,6 @@ function InventoryButtons(props) {
       <div className="button-block">
         <InventoryAddDeck
           inventoryDeckAdd={props.inventoryDeckAdd}
-          decks={props.decks}
           setShowButtons={props.setShowButtons}
         />
       </div>

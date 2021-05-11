@@ -103,7 +103,6 @@ function InventoryLibrary(props) {
           )}
           <InventoryLibraryTable
             cardChange={props.cardChange}
-            decks={props.decks}
             cards={libraryByType[cardtype]}
             showFloatingButtons={props.showFloatingButtons}
             setShowFloatingButtons={props.setShowFloatingButtons}

@@ -54,7 +54,6 @@ function Inventory(props) {
                           [newCryptId]: inventoryCrypt[newCryptId],
                         }}
                         cardChange={props.cardChange}
-                        decks={props.decks ? props.decks : {}}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
@@ -68,7 +67,6 @@ function Inventory(props) {
                           category={category}
                           cards={inventoryCrypt}
                           cardChange={props.cardChange}
-                          decks={props.decks ? props.decks : {}}
                           showFloatingButtons={showFloatingButtons}
                           setShowFloatingButtons={setShowFloatingButtons}
                         />
@@ -92,7 +90,6 @@ function Inventory(props) {
                           [newLibraryId]: inventoryLibrary[newLibraryId],
                         }}
                         cardChange={props.cardChange}
-                        decks={props.decks ? props.decks : {}}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
@@ -106,7 +103,6 @@ function Inventory(props) {
                           category={category}
                           cards={inventoryLibrary}
                           cardChange={props.cardChange}
-                          decks={props.decks ? props.decks : {}}
                           showFloatingButtons={showFloatingButtons}
                           setShowFloatingButtons={setShowFloatingButtons}
                         />
@@ -144,7 +140,6 @@ function Inventory(props) {
                         [newCryptId]: inventoryCrypt[newCryptId],
                       }}
                       cardChange={props.cardChange}
-                      decks={props.decks ? props.decks : {}}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
                       setShowFloatingButtons={setShowFloatingButtons}
@@ -158,7 +153,6 @@ function Inventory(props) {
                         category={category}
                         cards={inventoryCrypt}
                         cardChange={props.cardChange}
-                        decks={props.decks ? props.decks : {}}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
                       />
@@ -179,7 +173,6 @@ function Inventory(props) {
                         [newLibraryId]: inventoryLibrary[newLibraryId],
                       }}
                       cardChange={props.cardChange}
-                      decks={props.decks ? props.decks : {}}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
                       setShowFloatingButtons={setShowFloatingButtons}
@@ -193,7 +186,6 @@ function Inventory(props) {
                         category={category}
                         cards={inventoryLibrary}
                         cardChange={props.cardChange}
-                        decks={props.decks ? props.decks : {}}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
                       />
@@ -202,7 +194,6 @@ function Inventory(props) {
               </Col>
               <Col lg={2} className="px-0 px-lg-3">
                 <InventoryButtons
-                  decks={props.decks ? props.decks : {}}
                   inventoryDeckAdd={props.inventoryDeckAdd}
                   inventoryAddToState={props.inventoryAddToState}
                   setInventory={props.setInventory}
@@ -274,7 +265,6 @@ function Inventory(props) {
                 </Col>
               </Row>
               <InventoryButtons
-                decks={props.decks ? props.decks : {}}
                 inventoryDeckAdd={props.inventoryDeckAdd}
                 inventoryAddToState={props.inventoryAddToState}
                 setInventory={props.setInventory}

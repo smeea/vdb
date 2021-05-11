@@ -12,6 +12,7 @@ import AppContext from '../context/AppContext.js';
 
 function Library(props) {
   const {
+    decks,
     showLibrarySearch,
     libraryResults,
     addMode,
@@ -34,7 +35,7 @@ function Library(props) {
       <Row>
         {!isMobile && (
           <Col md={12} xl={username && addMode ? 4 : 3} className="px-0">
-            {props.decks && Object.keys(props.decks).length > 0 && (
+            {decks && Object.keys(decks).length > 0 && (
               <Row>
                 <Col>
                   <div
@@ -48,7 +49,6 @@ function Library(props) {
                       <>
                         <div className={isBranches ? 'w-75' : 'w-100'}>
                           <DeckSelectMy
-                            decks={props.decks}
                             activeDeck={props.activeDeck}
                             setActiveDeck={props.setActiveDeck}
                           />
@@ -56,7 +56,6 @@ function Library(props) {
                         {isBranches && (
                           <div className="pl-1 w-25">
                             <DeckBranchSelect
-                              decks={props.decks}
                               activeDeck={props.activeDeck}
                               setActiveDeck={props.setActiveDeck}
                             />
@@ -86,7 +85,6 @@ function Library(props) {
                     deckid={props.activeDeck.deckid}
                     cards={props.deckRouter(props.activeDeck).crypt}
                     isAuthor={true}
-                    decks={props.decks}
                     inSearch={true}
                   />
                 </div>
@@ -97,7 +95,6 @@ function Library(props) {
                     deckid={props.activeDeck.deckid}
                     cards={props.deckRouter(props.activeDeck).library}
                     isAuthor={true}
-                    decks={props.decks}
                     inSearch={true}
                   />
                 </div>
@@ -125,8 +122,6 @@ function Library(props) {
               activeDeck={props.activeDeck}
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
-              isInventory={props.isInventory}
-              decks={props.decks}
             />
           )}
         </Col>
@@ -141,7 +136,7 @@ function Library(props) {
               : 'col-hide'
           }
         >
-          <SearchLibraryForm isInventory={props.isInventory} />
+          <SearchLibraryForm />
         </Col>
         {(!username || !addMode) && !isMobile && <Col xl={1} />}
       </Row>

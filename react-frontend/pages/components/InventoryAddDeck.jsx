@@ -7,25 +7,25 @@ import At from '../../assets/images/icons/at.svg';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryAddDeck(props) {
-  const { isMobile } = useContext(AppContext);
+  const { decks, isMobile } = useContext(AppContext);
 
-  const AddDeckOptions = Object.keys(props.decks).map((deck, index) => {
+  const AddDeckOptions = Object.keys(decks).map((deck, index) => {
     return (
       <Dropdown.Item
         href=""
         key={index}
         onClick={() => {
-          props.inventoryDeckAdd(props.decks[deck]);
+          props.inventoryDeckAdd(decks[deck]);
           isMobile && props.setShowButtons(false);
         }}
       >
         <div className="d-flex align-items-center">
           <div className="pr-3">
-            {props.decks[deck].inventory_type == 's' && <Shuffle />}
-            {props.decks[deck].inventory_type == 'h' && <PinAngleFill />}
-            {!props.decks[deck].inventory_type && <At />}
+            {decks[deck].inventory_type == 's' && <Shuffle />}
+            {decks[deck].inventory_type == 'h' && <PinAngleFill />}
+            {!decks[deck].inventory_type && <At />}
           </div>
-          {props.decks[deck].name}
+          {decks[deck].name}
         </div>
       </Dropdown.Item>
     );

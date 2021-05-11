@@ -24,6 +24,7 @@ import AppContext from '../context/AppContext';
 
 function Decks(props) {
   const {
+    decks,
     inventoryCrypt,
     inventoryLibrary,
     usedCryptCards,
@@ -166,7 +167,7 @@ function Decks(props) {
   };
 
   const toggleInventoryState = () => {
-    const inventoryType = props.decks[props.activeDeck.deckid].inventory_type;
+    const inventoryType = decks[props.activeDeck.deckid].inventory_type;
     if (!inventoryType) {
       deckUpdate(props.activeDeck.deckid, 'makeFlexible', 'all');
     } else if (inventoryType == 's') {
@@ -263,15 +264,15 @@ function Decks(props) {
       setSelectFrom(props.activeDeck.src);
 
     if (
-      props.decks &&
-      props.decks[props.activeDeck.deckid] &&
+      decks &&
+      decks[props.activeDeck.deckid] &&
       props.activeDeck.src != 'my'
     ) {
       props.setActiveDeck({ src: 'my', deckid: props.activeDeck.deckid });
     }
 
     if (props.deckRouter(props.activeDeck)) setDeckError(false);
-  }, [props.activeDeck, props.decks]);
+  }, [props.activeDeck, decks]);
 
   return (
     <Container className={isMobile ? 'deck-container' : 'deck-container py-4'}>
@@ -294,7 +295,6 @@ function Decks(props) {
                     <div className={isBranches ? 'w-75' : 'w-100'}>
                       {selectFrom == 'my' ? (
                         <DeckSelectMy
-                          decks={props.decks}
                           activeDeck={props.activeDeck}
                           setActiveDeck={props.setActiveDeck}
                         />
@@ -308,7 +308,6 @@ function Decks(props) {
                     {selectFrom == 'my' && isBranches && (
                       <div className="pl-1 w-25">
                         <DeckBranchSelect
-                          decks={props.decks}
                           activeDeck={props.activeDeck}
                           setActiveDeck={props.setActiveDeck}
                         />
@@ -347,23 +346,21 @@ function Decks(props) {
                     </div>
                   </div>
                   <Form className="py-1 my-0">
-                    {username &&
-                      props.decks &&
-                      Object.keys(props.decks).length > 0 && (
-                        <Form.Check
-                          className="px-2"
-                          checked={selectFrom == 'my'}
-                          onChange={(e) => setSelectFrom(e.target.id)}
-                          type="radio"
-                          id="my"
-                          label={
-                            <div className="blue">
-                              <b>My Decks</b>
-                            </div>
-                          }
-                          inline
-                        />
-                      )}
+                    {username && decks && Object.keys(decks).length > 0 && (
+                      <Form.Check
+                        className="px-2"
+                        checked={selectFrom == 'my'}
+                        onChange={(e) => setSelectFrom(e.target.id)}
+                        type="radio"
+                        id="my"
+                        label={
+                          <div className="blue">
+                            <b>My Decks</b>
+                          </div>
+                        }
+                        inline
+                      />
+                    )}
                     <Form.Check
                       className="px-2"
                       checked={selectFrom == 'precons'}
@@ -453,7 +450,6 @@ function Decks(props) {
                   deckid={props.activeDeck.deckid}
                   cards={props.deckRouter(props.activeDeck).crypt}
                   isAuthor={isAuthor}
-                  decks={props.decks}
                   deckUpdate={deckUpdate}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}
@@ -466,7 +462,6 @@ function Decks(props) {
                   deckid={props.activeDeck.deckid}
                   cards={props.deckRouter(props.activeDeck).library}
                   isAuthor={isAuthor}
-                  decks={props.decks}
                   deckUpdate={deckUpdate}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}
@@ -513,7 +508,7 @@ function Decks(props) {
         </Row>
       )}
 
-      {username && props.decks && Object.keys(props.decks).length == 0 && (
+      {username && decks && Object.keys(decks).length == 0 && (
         <Row className="h-50 align-items-center justify-content-center px-2">
           <Col md={12} lg={5} className="justify-content-center px-0">
             <div className="d-flex justify-content-center py-2">
