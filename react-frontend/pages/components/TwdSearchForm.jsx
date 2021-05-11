@@ -36,9 +36,7 @@ function TwdSearchForm(props) {
       props.setFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
-          if (i === 'event') {
-            setEventText(query[i]);
-          } else if (typeof query[i] === 'object') {
+          if (typeof query[i] === 'object') {
             Object.keys(query[i]).map((j) => {
               state[i][j] = query[i][j];
             });
@@ -55,6 +53,7 @@ function TwdSearchForm(props) {
   const refError = useRef(null);
 
   const defaults = {
+    eventText: '',
     player: '',
     location: '',
     players: {
@@ -104,8 +103,13 @@ function TwdSearchForm(props) {
     },
   };
 
-  const [eventText, setEventText] = useState('');
-  const handleEventTextChange = (event) => setEventText(event.target.value);
+  const handleEventTextChange = (event) => {
+    const value = event.target.value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      eventText: value,
+    }));
+  };
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
@@ -176,7 +180,6 @@ function TwdSearchForm(props) {
   };
 
   const handleClearButton = () => {
-    setEventText('');
     props.setFormState(defaults);
     props.setResults(undefined);
     setShowError(false);
@@ -190,12 +193,7 @@ function TwdSearchForm(props) {
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/twd`;
-
-    const state = {
-      ...props.formState,
-      event: eventText,
-    };
-    const input = JSON.parse(JSON.stringify(state));
+    const input = JSON.parse(JSON.stringify(props.formState));
 
     const multiSelectForms = [
       'crypt',
@@ -313,19 +311,14 @@ function TwdSearchForm(props) {
         props.results
       ) {
         props.setResults(undefined);
-      } else {
+      } else if (
+        !props.formState.eventText ||
+        props.formState.eventText.length > 1
+      ) {
         launchRequest();
       }
     }
   }, [props.formState]);
-
-  useEffect(() => {
-    if (!isMobile) {
-      if (eventText.length > 1) {
-        launchRequest();
-      }
-    }
-  }, [eventText]);
 
   return (
     <form onSubmit={handleSubmitButton}>
@@ -501,7 +494,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormEvent
-            value={eventText}
+            value={props.formState.eventText}
             onChange={handleEventTextChange}
           />
         </Col>

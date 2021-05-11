@@ -16,6 +16,7 @@ import SearchCryptFormTraits from './SearchCryptFormTraits.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
 import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
+import defaultsCryptForm from './forms_data/defaultsCryptForm.json';
 import AppContext from '../../context/AppContext.js';
 
 function SearchCryptForm(props) {
@@ -35,9 +36,7 @@ function SearchCryptForm(props) {
       props.setFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
-          if (i === 'text') {
-            setText(query[i]);
-          } else if (typeof query[i] === 'object') {
+          if (typeof query[i] === 'object') {
             Object.keys(query[i]).map((j) => {
               state[i][j] = query[i][j];
             });
@@ -54,6 +53,7 @@ function SearchCryptForm(props) {
   const refError = useRef(null);
 
   const defaults = {
+    text: '',
     disciplines: {
       Abombwe: 0,
       Animalism: 0,
@@ -153,11 +153,17 @@ function SearchCryptForm(props) {
     artist: 'any',
   };
 
-  const [text, setText] = useState('');
-  const handleTextChange = (event) => setText(event.target.value);
+  const handleTextChange = (event) => {
+    const value = event.target.value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      text: value,
+    }));
+  };
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
+    const newState = props.formState[name];
     props.setFormState((prevState) => ({
       ...prevState,
       [name]: value,
@@ -211,7 +217,6 @@ function SearchCryptForm(props) {
   };
 
   const handleClearButton = () => {
-    setText('');
     props.setFormState(defaults);
     props.setResults(undefined);
     setPreresults(undefined);
@@ -230,9 +235,7 @@ function SearchCryptForm(props) {
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/crypt`;
-
-    const state = { ...props.formState, text: text };
-    const input = JSON.parse(JSON.stringify(state));
+    const input = JSON.parse(JSON.stringify(props.formState));
 
     const multiSelectForms = [
       'disciplines',
@@ -314,18 +317,17 @@ function SearchCryptForm(props) {
     if (!isMobile) {
       if (
         JSON.stringify(props.formState) == JSON.stringify(defaults) &&
-        props.results &&
-        !text
+        props.results
       ) {
         props.setResults(undefined);
-      } else if (!text || text.length > 2) {
+      } else if (!props.formState.text || props.formState.text.length > 2) {
         launchRequest();
       }
     }
-  }, [props.formState, text]);
+  }, [props.formState]);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && preresults) {
       if (preresults && preresults.length < showLimit) {
         props.setResults(preresults);
       } else {
@@ -337,7 +339,7 @@ function SearchCryptForm(props) {
   return (
     <form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
-        value={text}
+        value={props.formState.text}
         onChange={handleTextChange}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}

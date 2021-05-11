@@ -31,9 +31,7 @@ function SearchLibraryForm(props) {
       props.setFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
-          if (i === 'text') {
-            setText(query[i]);
-          } else if (typeof query[i] === 'object') {
+          if (typeof query[i] === 'object') {
             Object.keys(query[i]).map((j) => {
               state[i][j] = query[i][j];
             });
@@ -50,6 +48,7 @@ function SearchLibraryForm(props) {
   const refError = useRef(null);
 
   const defaults = {
+    text: '',
     type: 'any',
     discipline: 'any',
     blood: {
@@ -94,8 +93,13 @@ function SearchLibraryForm(props) {
     artist: 'any',
   };
 
-  const [text, setText] = useState('');
-  const handleTextChange = (event) => setText(event.target.value);
+  const handleTextChange = (event) => {
+    const value = event.target.value;
+    props.setFormState((prevState) => ({
+      ...prevState,
+      text: value,
+    }));
+  };
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
@@ -136,7 +140,6 @@ function SearchLibraryForm(props) {
   };
 
   const handleClearButton = () => {
-    setText('');
     props.setFormState(defaults);
     props.setResults(undefined);
     setPreresults(undefined);
@@ -155,9 +158,7 @@ function SearchLibraryForm(props) {
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/library`;
-
-    const state = { ...props.formState, text: text };
-    const input = JSON.parse(JSON.stringify(state));
+    const input = JSON.parse(JSON.stringify(props.formState));
 
     const multiSelectForms = ['traits', 'set', 'precon'];
 
@@ -229,15 +230,14 @@ function SearchLibraryForm(props) {
     if (!isMobile) {
       if (
         JSON.stringify(props.formState) == JSON.stringify(defaults) &&
-        props.results &&
-        !text
+        props.results
       ) {
         props.setResults(undefined);
-      } else if (!text || text.length > 2) {
+      } else if (!props.formState.text || props.formState.text.length > 2) {
         launchRequest();
       }
     }
-  }, [props.formState, text]);
+  }, [props.formState]);
 
   useEffect(() => {
     if (!isMobile) {
@@ -252,7 +252,7 @@ function SearchLibraryForm(props) {
   return (
     <form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
-        value={text}
+        value={props.formState.text}
         onChange={handleTextChange}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
