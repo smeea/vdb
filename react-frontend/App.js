@@ -56,29 +56,15 @@ function App(props) {
     setDecks,
     activeDeck,
     setActiveDeck,
+    sharedDeck,
+    setSharedDeck,
+    getDecks,
   } = useContext(AppContext);
 
   const [lastDeck, setLastDeck] = useState({});
-  const [sharedDeck, setSharedDeck] = useState(undefined);
-
   const [preconDecks, setPreconDecks] = useState({});
-
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
-
-  const deckRouter = (pointer) => {
-    if (pointer) {
-      switch (pointer['src']) {
-        case 'my':
-          return decks && decks[pointer['deckid']];
-        case 'precons':
-          return preconDecks && preconDecks[pointer['deckid']];
-        case 'shared':
-        case 'twd':
-          return sharedDeck && sharedDeck[pointer['deckid']];
-      }
-    }
-  };
 
   const getCardBase = () => {
     const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json`;
@@ -178,38 +164,6 @@ function App(props) {
       return state;
     });
   };
-
-  useEffect(() => {
-    if (lang == 'en-EN') {
-      if (nativeCrypt) {
-        applyLocalization(lang, 'crypt');
-      }
-    } else if (nativeCrypt && localizedCrypt && localizedCrypt[lang]) {
-      applyLocalization(lang, 'crypt');
-    }
-  }, [lang, nativeCrypt, localizedCrypt]);
-
-  useEffect(() => {
-    if (lang == 'en-EN') {
-      if (nativeLibrary) {
-        applyLocalization(lang, 'library');
-      }
-    } else if (nativeLibrary && localizedLibrary && localizedLibrary[lang]) {
-      applyLocalization(lang, 'library');
-    }
-  }, [lang, nativeLibrary, localizedLibrary]);
-
-  useEffect(() => {
-    if (lang != 'en-EN') {
-      if (
-        !(localizedCrypt && localizedCrypt[lang]) ||
-        !(localizedLibrary && localizedLibrary[lang])
-      ) {
-        getLocalization(lang);
-      }
-    }
-  }, [lang]);
-
   const getInventory = () => {
     const url = `${process.env.API_URL}inventory`;
     const options = {
@@ -439,35 +393,7 @@ function App(props) {
         });
       });
     });
-
     setPreconDecks(precons);
-  };
-
-  const getDecks = () => {
-    const url = `${process.env.API_URL}decks`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          Object.keys(data).map((i) => {
-            Object.keys(data[i].crypt).map((j) => {
-              data[i].crypt[j].c = cryptCardBase[j];
-            });
-            Object.keys(data[i].library).map((j) => {
-              data[i].library[j].c = libraryCardBase[j];
-            });
-          });
-          setDecks(data);
-        } else {
-          setDecks({});
-        }
-      });
   };
 
   const deckCardAdd = (cardid) => {
@@ -565,6 +491,24 @@ function App(props) {
     };
 
     startTimer();
+  };
+
+  const whoAmI = () => {
+    const url = `${process.env.API_URL}login`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        data.username && setUsername(data.username);
+        data.username && !isMobile && setAddMode(true);
+        data.public_name && setPublicName(data.public_name);
+        data.email && setEmail(data.email);
+      });
   };
 
   useEffect(() => {
@@ -693,24 +637,6 @@ function App(props) {
     }
   }, [decks]);
 
-  const whoAmI = () => {
-    const url = `${process.env.API_URL}login`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        data.username && setUsername(data.username);
-        data.username && !isMobile && setAddMode(true);
-        data.public_name && setPublicName(data.public_name);
-        data.email && setEmail(data.email);
-      });
-  };
-
   useEffect(() => {
     whoAmI();
     (!cryptCardBase || !libraryCardBase) && getCardBase();
@@ -733,6 +659,37 @@ function App(props) {
     }
   }, [lastDeck]);
 
+  useEffect(() => {
+    if (lang == 'en-EN') {
+      if (nativeCrypt) {
+        applyLocalization(lang, 'crypt');
+      }
+    } else if (nativeCrypt && localizedCrypt && localizedCrypt[lang]) {
+      applyLocalization(lang, 'crypt');
+    }
+  }, [lang, nativeCrypt, localizedCrypt]);
+
+  useEffect(() => {
+    if (lang == 'en-EN') {
+      if (nativeLibrary) {
+        applyLocalization(lang, 'library');
+      }
+    } else if (nativeLibrary && localizedLibrary && localizedLibrary[lang]) {
+      applyLocalization(lang, 'library');
+    }
+  }, [lang, nativeLibrary, localizedLibrary]);
+
+  useEffect(() => {
+    if (lang != 'en-EN') {
+      if (
+        !(localizedCrypt && localizedCrypt[lang]) ||
+        !(localizedLibrary && localizedLibrary[lang])
+      ) {
+        getLocalization(lang);
+      }
+    }
+  }, [lang]);
+
   return (
     <div className="App">
       <Router>
@@ -753,7 +710,7 @@ function App(props) {
               <Account />
             </Route>
             <Route path="/twd">
-              <Twd getDecks={getDecks} />
+              <Twd />
             </Route>
             <Route path="/inventory">
               <Inventory
@@ -765,24 +722,18 @@ function App(props) {
             </Route>
             <Route path="/decks">
               <Decks
-                deckRouter={deckRouter}
                 changeTimer={changeTimer}
                 preconDecks={preconDecks}
-                getDecks={getDecks}
                 activeDeck={activeDeck}
-                sharedDeck={sharedDeck}
-                setSharedDeck={setSharedDeck}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
               />
             </Route>
             <Route path="/crypt">
               <Crypt
-                deckRouter={deckRouter}
                 changeTimer={changeTimer}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
-                getDecks={getDecks}
                 activeDeck={
                   activeDeck.src == 'my'
                     ? activeDeck
@@ -792,11 +743,9 @@ function App(props) {
             </Route>
             <Route path="/library">
               <Library
-                deckRouter={deckRouter}
                 changeTimer={changeTimer}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
-                getDecks={getDecks}
                 activeDeck={
                   activeDeck.src == 'my'
                     ? activeDeck

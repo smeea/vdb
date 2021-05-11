@@ -11,7 +11,6 @@ function DeckBranchButtons(props) {
       {username && props.deck && (
         <DeckBranchCreate
           deck={props.deck}
-          getDecks={props.getDecks}
           activeDeck={props.activeDeck}
           setShowButtons={props.setShowButtons}
         />
@@ -19,7 +18,6 @@ function DeckBranchButtons(props) {
       {props.isAuthor && props.deck && (
         <DeckBranchDelete
           deck={props.deck}
-          getDecks={props.getDecks}
           setShowButtons={props.setShowButtons}
         />
       )}

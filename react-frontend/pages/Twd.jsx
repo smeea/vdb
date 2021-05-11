@@ -30,7 +30,6 @@ function Twd(props) {
         >
           {twdResults && (
             <TwdResult
-              getDecks={props.getDecks}
               showFloatingButtons={showFloatingButtons}
               setShowFloatingButtons={setShowFloatingButtons}
             />

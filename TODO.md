@@ -6,6 +6,7 @@
 * Click on burned card from draw to open modal
 * Error in twd sanitizeTwd with del (deck['description'])
 * InventoryMode error in twd bytypes cards
+* Increase quantity of missing card in inventory
 
 # FIX MOBILE
 * Optimize for tablet

@@ -20,7 +20,6 @@ function DeckButtons(props) {
       {username && (
         <div className="button-block">
           <DeckImport
-            getDecks={props.getDecks}
             setShowInfo={props.setShowInfo}
             setShowButtons={props.setShowButtons}
           />
@@ -29,7 +28,6 @@ function DeckButtons(props) {
       {username && props.deck && (
         <div className="button-block">
           <DeckClone
-            getDecks={props.getDecks}
             deck={props.deck}
             activeDeck={props.activeDeck}
             setShowButtons={props.setShowButtons}
@@ -49,7 +47,6 @@ function DeckButtons(props) {
         <div className="button-block">
           <DeckDelete
             deck={props.deck}
-            getDecks={props.getDecks}
             setShowButtons={props.setShowButtons}
             history={props.history}
           />
@@ -59,7 +56,6 @@ function DeckButtons(props) {
         <div className="button-block">
           <DeckBranchCreate
             deck={props.deck}
-            getDecks={props.getDecks}
             activeDeck={props.activeDeck}
             setShowButtons={props.setShowButtons}
           />
@@ -72,7 +68,6 @@ function DeckButtons(props) {
           <div className="button-block">
             <DeckBranchDelete
               deck={props.deck}
-              getDecks={props.getDecks}
               setShowButtons={props.setShowButtons}
             />
           </div>

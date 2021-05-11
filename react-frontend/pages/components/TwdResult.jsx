@@ -49,7 +49,7 @@ function TwdResult(props) {
             <React.Fragment key={deck['deckid']}>
               <Row className="pt-3 px-0 mx-0">
                 <Col md={12} xl={3} className={isMobile ? 'px-0' : 'pl-0 pr-2'}>
-                  <TwdResultDescription deck={deck} getDecks={props.getDecks} />
+                  <TwdResultDescription deck={deck} />
                 </Col>
                 {!isMobile ? (
                   <>

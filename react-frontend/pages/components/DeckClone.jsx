@@ -4,7 +4,7 @@ import Files from '../../assets/images/icons/files.svg';
 import AppContext from '../../context/AppContext.js';
 
 function DeckClone(props) {
-  const { setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
 
   const [state, setState] = useState(false);
 
@@ -41,7 +41,7 @@ function DeckClone(props) {
           newdeckid = data.deckid;
         }
       })
-      .then(() => props.getDecks())
+      .then(() => getDecks())
       .then(() => setActiveDeck({ src: 'my', deckid: newdeckid }))
       .then(() => {
         setState(true);

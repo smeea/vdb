@@ -71,6 +71,10 @@ const AppContext = React.createContext({
   setDecks: () => {},
   activeDeck: undefined,
   setActiveDeck: () => {},
+  sharedDeck: undefined,
+  setSharedDeck: () => {},
+  getDecks: () => {},
+  deckRouter: () => {},
 });
 
 export default AppContext;
@@ -117,6 +121,7 @@ export const AppProvider = (props) => {
 
   const [decks, setDecks] = useState(undefined);
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
+  const [sharedDeck, setSharedDeck] = useState(undefined);
 
   const changeLang = (lang) => {
     setLang(lang);
@@ -136,6 +141,47 @@ export const AppProvider = (props) => {
   const isInventory =
     Object.keys(inventoryCrypt).length > 0 ||
     Object.keys(inventoryLibrary).length > 0;
+
+  const getDecks = () => {
+    const url = `${process.env.API_URL}decks`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error === undefined) {
+          Object.keys(data).map((i) => {
+            Object.keys(data[i].crypt).map((j) => {
+              data[i].crypt[j].c = cryptCardBase[j];
+            });
+            Object.keys(data[i].library).map((j) => {
+              data[i].library[j].c = libraryCardBase[j];
+            });
+          });
+          setDecks(data);
+        } else {
+          setDecks({});
+        }
+      });
+  };
+
+  const deckRouter = (pointer) => {
+    if (pointer) {
+      switch (pointer['src']) {
+        case 'my':
+          return decks && decks[pointer['deckid']];
+        case 'precons':
+          return preconDecks && preconDecks[pointer['deckid']];
+        case 'shared':
+        case 'twd':
+          return sharedDeck && sharedDeck[pointer['deckid']];
+      }
+    }
+  };
 
   return (
     <AppContext.Provider
@@ -207,6 +253,10 @@ export const AppProvider = (props) => {
         setDecks,
         activeDeck,
         setActiveDeck,
+        sharedDeck,
+        setSharedDeck,
+        getDecks,
+        deckRouter,
       }}
     >
       {props.children}

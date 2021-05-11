@@ -66,7 +66,6 @@ function TwdResultDescription(props) {
                 <DeckClone
                   deck={props.deck}
                   activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
-                  getDecks={props.getDecks}
                   setShowButtons={props.setShowButtons}
                 />
               )}
@@ -118,7 +117,6 @@ function TwdResultDescription(props) {
                     <DeckClone
                       deck={props.deck}
                       activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
-                      getDecks={props.getDecks}
                       setShowButtons={props.setShowButtons}
                     />
                   )}

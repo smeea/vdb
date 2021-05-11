@@ -6,7 +6,7 @@ import DeckImportAmaranth from './DeckImportAmaranth.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckImport(props) {
-  const { setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');
   const [showTextModal, setShowTextModal] = useState(false);
@@ -46,7 +46,7 @@ function DeckImport(props) {
     fetchPromise
       .then((response) => response.json())
       .then((data) => (newdeckid = data.deckid))
-      .then(() => props.getDecks())
+      .then(() => getDecks())
       .then(() => setActiveDeck({ src: 'my', deckid: newdeckid }))
       .catch((error) => setCreateError(true));
   };
@@ -76,7 +76,7 @@ function DeckImport(props) {
       fetchPromise
         .then((response) => response.json())
         .then((data) => (newDeckId = data.deckid))
-        .then(() => props.getDecks())
+        .then(() => getDecks())
         .then(() => setActiveDeck({ src: 'my', deckid: newDeckId }))
         .catch((error) => setImportError(true));
     };
@@ -124,13 +124,13 @@ function DeckImport(props) {
       </Dropdown>
       <DeckImportText
         handleClose={handleCloseImportModal}
-        getDecks={props.getDecks}
+        getDecks={getDecks}
         show={showTextModal}
         setShowInfo={props.setShowInfo}
       />
       <DeckImportAmaranth
         handleClose={handleCloseImportModal}
-        getDecks={props.getDecks}
+        getDecks={getDecks}
         show={showAmaranthModal}
         setShowInfo={props.setShowInfo}
       />

@@ -5,7 +5,7 @@ import DeleteConfirmation from './DeleteConfirmation.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckDelete(props) {
-  const { setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const handleCancel = () => setShowConfirmation(false);
@@ -28,7 +28,7 @@ function DeckDelete(props) {
       },
       body: JSON.stringify({ deckid: props.deck.deckid }),
     };
-    fetch(url, options).then(() => props.getDecks());
+    fetch(url, options).then(() => getDecks());
   };
 
   return (

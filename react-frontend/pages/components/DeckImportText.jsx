@@ -3,7 +3,7 @@ import { FormControl, Modal, Button, Spinner, Overlay } from 'react-bootstrap';
 import AppContext from '../../context/AppContext';
 
 function DeckImportText(props) {
-  const { setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
 
   const [deckText, setDeckText] = useState('');
   const [emptyDeckText, setEmptyDeckText] = useState(false);
@@ -44,7 +44,7 @@ function DeckImportText(props) {
         .then((data) => {
           newDeckId = data.deckid;
         })
-        .then(() => props.getDecks())
+        .then(() => getDecks())
         .then(() => {
           setActiveDeck(newDeckId);
           isMobile && props.setShowInfo(true);

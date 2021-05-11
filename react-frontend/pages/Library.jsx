@@ -12,6 +12,7 @@ import AppContext from '../context/AppContext.js';
 
 function Library(props) {
   const {
+    deckRouter,
     decks,
     showLibrarySearch,
     libraryResults,
@@ -23,11 +24,11 @@ function Library(props) {
   const [sortMethod, setSortMethod] = useState('Type');
 
   let isBranches;
-  if (props.deckRouter(props.activeDeck)) {
+  if (deckRouter(props.activeDeck)) {
     isBranches =
-      props.deckRouter(props.activeDeck).master ||
-      (props.deckRouter(props.activeDeck).branches &&
-        props.deckRouter(props.activeDeck).branches.length > 0);
+      deckRouter(props.activeDeck).master ||
+      (deckRouter(props.activeDeck).branches &&
+        deckRouter(props.activeDeck).branches.length > 0);
   }
 
   return (
@@ -69,7 +70,7 @@ function Library(props) {
                 </Col>
               </Row>
             )}
-            {props.deckRouter(props.activeDeck) && addMode && (
+            {deckRouter(props.activeDeck) && addMode && (
               <>
                 <div className="pt-4">
                   <DeckCrypt
@@ -77,7 +78,7 @@ function Library(props) {
                     cardAdd={props.cardAdd}
                     cardChange={props.cardChange}
                     deckid={props.activeDeck.deckid}
-                    cards={props.deckRouter(props.activeDeck).crypt}
+                    cards={deckRouter(props.activeDeck).crypt}
                     isAuthor={true}
                     inSearch={true}
                   />
@@ -87,7 +88,7 @@ function Library(props) {
                     cardAdd={props.cardAdd}
                     cardChange={props.cardChange}
                     deckid={props.activeDeck.deckid}
-                    cards={props.deckRouter(props.activeDeck).library}
+                    cards={deckRouter(props.activeDeck).library}
                     isAuthor={true}
                     inSearch={true}
                   />
@@ -110,8 +111,8 @@ function Library(props) {
               cardAdd={props.cardAdd}
               cardChange={props.cardChange}
               library={
-                props.deckRouter(props.activeDeck) &&
-                props.deckRouter(props.activeDeck).library
+                deckRouter(props.activeDeck) &&
+                deckRouter(props.activeDeck).library
               }
               activeDeck={props.activeDeck}
               sortMethod={sortMethod}
