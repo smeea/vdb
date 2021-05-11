@@ -240,7 +240,7 @@ function SearchLibraryForm(props) {
   }, [props.formState]);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && preresults) {
       if (preresults && preresults.length < showLimit) {
         props.setResults(preresults);
       } else {
