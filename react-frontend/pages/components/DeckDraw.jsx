@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import Dice3 from '../../assets/images/icons/dice-3-fill.svg';
 import DeckDrawModal from './DeckDrawModal.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
 function DeckDraw(props) {
+  const { isMobile } = useContext(AppContext);
   const initialDrawCards = (cards, quantity) => {
     let cardsTotal = 0;
     for (const i of Object.keys(cards)) {

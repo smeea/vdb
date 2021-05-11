@@ -30,7 +30,7 @@ function DeckDrawCryptTable(props) {
     const k = props.crypt[card['Id']].q;
 
     return (
-      <React.Fragment key={card['Id']}>
+      <React.Fragment key={`${index}-${card['Id']}`}>
         <tr className={resultTrClass}>
           <td
             className={isMobile ? 'capacity px-1' : 'capacity px-2'}

@@ -31,7 +31,7 @@ function DeckDrawLibraryTable(props) {
     const k = props.library[card['Id']].q;
 
     return (
-      <React.Fragment key={card['Id']}>
+      <React.Fragment key={`${index}-${card['Id']}`}>
         <tr className={resultTrClass}>
           <td
             className="cost py-0 px-1"
