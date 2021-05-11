@@ -59,10 +59,11 @@ function App(props) {
     sharedDeck,
     setSharedDeck,
     getDecks,
+    preconDecks,
+    setPreconDecks,
   } = useContext(AppContext);
 
   const [lastDeck, setLastDeck] = useState({});
-  const [preconDecks, setPreconDecks] = useState({});
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
 
@@ -723,7 +724,6 @@ function App(props) {
             <Route path="/decks">
               <Decks
                 changeTimer={changeTimer}
-                preconDecks={preconDecks}
                 activeDeck={activeDeck}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}

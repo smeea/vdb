@@ -35,7 +35,7 @@ function Crypt(props) {
     <Container className={isMobile ? 'main-container' : 'main-container py-3'}>
       <Row>
         {!isMobile && (
-          <Col md={12} xl={username && addMode ? 4 : 3} className="px-0">
+          <Col xl={username && addMode ? 4 : 3} className="hide-narrow px-0">
             {decks && Object.keys(decks).length > 0 && (
               <Row>
                 <Col>
@@ -98,12 +98,13 @@ function Crypt(props) {
           </Col>
         )}
         <Col
-          md={12}
+          xs={12}
+          md={8}
           xl={5}
           className={
-            !(isMobile && showCryptSearch)
-              ? 'px-0 px-lg-4'
-              : 'col-hide px-0 lx-lg-4'
+            isMobile && showCryptSearch
+              ? 'col-hide px-0'
+              : 'px-0 px-md-2 px-xl-4'
           }
         >
           {cryptResults && (
@@ -121,13 +122,14 @@ function Crypt(props) {
           )}
         </Col>
         <Col
-          md={12}
+          xs={12}
+          md={4}
           xl={3}
           className={
             !isMobile || (isMobile && showCryptSearch)
               ? isMobile
-                ? 'px-1 py-1'
-                : 'px-0'
+                ? 'p-1'
+                : 'px-md-2 px-xl-0'
               : 'col-hide'
           }
         >

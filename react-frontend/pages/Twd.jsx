@@ -20,12 +20,13 @@ function Twd(props) {
     <Container className={isMobile ? 'main-container' : 'main-container py-3'}>
       <Row className="justify-content-center">
         <Col
-          md={12}
+          xs={12}
+          md={8}
           xl={9}
           className={
             !(isMobile && showTwdSearch)
               ? 'px-0 pr-lg-4'
-              : 'col-hide px-0 lx-lg-4'
+              : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
           {twdResults && (
@@ -36,13 +37,14 @@ function Twd(props) {
           )}
         </Col>
         <Col
-          md={12}
+          xs={12}
+          md={4}
           xl={3}
           className={
             !isMobile || (isMobile && showTwdSearch)
               ? isMobile
-                ? 'px-1 py-1'
-                : 'px-0'
+                ? 'p-1'
+                : 'px-md-2 px-xl-0'
               : 'col-hide'
           }
         >

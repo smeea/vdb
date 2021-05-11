@@ -19,13 +19,16 @@ import drawProbability from './drawProbability.js';
 import AppContext from '../../context/AppContext';
 
 function DeckCryptTable(props) {
-  const { decks, inventoryCrypt, usedCryptCards, isMobile } = useContext(
-    AppContext
-  );
+  const {
+    decks,
+    inventoryCrypt,
+    usedCryptCards,
+    isMobile,
+    isWide,
+  } = useContext(AppContext);
 
   let resultTrClass;
   let deckInvType;
-
   const [modalDraw, setModalDraw] = useState(undefined);
 
   const cardRows = props.cards.map((card) => {
@@ -308,31 +311,47 @@ function DeckCryptTable(props) {
               <ResultCryptName card={card.c} />
             </td>
           )}
-          {!isMobile && (
-            <td className="title pr-2" onClick={() => handleClick()}>
-              <ResultCryptTitle value={card.c['Title']} />
-            </td>
-          )}
-          {isMobile ? (
-            <td className="clan-group" onClick={() => handleClick()}>
-              <div>
-                <ResultCryptClan value={card.c['Clan']} />
-              </div>
-              <div className="d-flex small justify-content-end">
-                <b>
-                  <ResultCryptTitle value={card.c['Title']} />
-                </b>
-                <ResultCryptGroup value={card.c['Group']} />
-              </div>
-            </td>
-          ) : (
+          {isWide ? (
             <>
+              <td className="title pr-2" onClick={() => handleClick()}>
+                <ResultCryptTitle value={card.c['Title']} />
+              </td>
               <td className="clan" onClick={() => handleClick()}>
                 <ResultCryptClan value={card.c['Clan']} />
               </td>
               <td className="group" onClick={() => handleClick()}>
                 <ResultCryptGroup value={card.c['Group']} />
               </td>
+            </>
+          ) : (
+            <>
+              {isMobile ? (
+                <td className="clan-group" onClick={() => handleClick()}>
+                  <div>
+                    <ResultCryptClan value={card.c['Clan']} />
+                  </div>
+                  <div className="d-flex small justify-content-end">
+                    <b>
+                      <ResultCryptTitle value={card.c['Title']} />
+                    </b>
+                    <ResultCryptGroup value={card.c['Group']} />
+                  </div>
+                </td>
+              ) : (
+                <>
+                  <td className="title pr-2" onClick={() => handleClick()}>
+                    <ResultCryptTitle value={card.c['Title']} />
+                  </td>
+                  <td className="clan-group" onClick={() => handleClick()}>
+                    <div>
+                      <ResultCryptClan value={card.c['Clan']} />
+                    </div>
+                    <div className="d-flex small justify-content-end">
+                      <ResultCryptGroup value={card.c['Group']} />
+                    </div>
+                  </td>
+                </>
+              )}
             </>
           )}
           {props.showInfo && (

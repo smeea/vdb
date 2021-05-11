@@ -125,8 +125,8 @@ function Inventory(props) {
             </>
           ) : (
             <Row>
-              <Col lg={1}></Col>
-              <Col lg={5} className="px-0 px-lg-3">
+              <Col lg={1} className="hide-narrow"></Col>
+              <Col lg={6} xl={5} className="px-0 px-md-1 px-xl-3">
                 <DeckNewCryptCard
                   cardAdd={props.cardAdd}
                   cards={inventoryCrypt}
@@ -159,7 +159,7 @@ function Inventory(props) {
                     </div>
                   )}
               </Col>
-              <Col lg={4} className="px-0 px-lg-3">
+              <Col lg={4} xl={4} className="px-0 px-md-1 px-xl-3">
                 <DeckNewLibraryCard
                   cardAdd={props.cardAdd}
                   cards={inventoryLibrary}
@@ -192,7 +192,7 @@ function Inventory(props) {
                     </div>
                   )}
               </Col>
-              <Col lg={2} className="px-0 px-lg-3">
+              <Col lg={2} className="px-0 px-md-1 px-xl-3">
                 <InventoryButtons
                   inventoryDeckAdd={props.inventoryDeckAdd}
                   inventoryAddToState={props.inventoryAddToState}

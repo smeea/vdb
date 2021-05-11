@@ -23,6 +23,7 @@
 * Search for similar TWD decks
 * Keyboard navigation + swipes in card view
 * Localized proxies
+* Improve add-from-deck to inventory menu
 
 # MAYBE LATER FEATURES
 * Update cardbase script

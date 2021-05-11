@@ -5,6 +5,7 @@ import defaultsLibraryForm from '../pages/components/forms_data/defaultsLibraryF
 
 const AppContext = React.createContext({
   isMobile: false,
+  isWide: false,
   username: undefined,
   setUsername: () => {},
   lang: 'en-EN',
@@ -67,6 +68,8 @@ const AppContext = React.createContext({
   inventoryLibrary: undefined,
   setInventoryLibrary: () => {},
 
+  preconDecks: undefined,
+  setPreconDecks: () => {},
   decks: undefined,
   setDecks: () => {},
   activeDeck: undefined,
@@ -81,6 +84,7 @@ export default AppContext;
 
 export const AppProvider = (props) => {
   const isMobile = window.matchMedia('(max-width: 540px)').matches;
+  const isWide = window.matchMedia('(min-width: 1600px)').matches;
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
@@ -119,6 +123,7 @@ export const AppProvider = (props) => {
     hard: {},
   });
 
+  const [preconDecks, setPreconDecks] = useState({});
   const [decks, setDecks] = useState(undefined);
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [sharedDeck, setSharedDeck] = useState(undefined);
@@ -187,6 +192,7 @@ export const AppProvider = (props) => {
     <AppContext.Provider
       value={{
         isMobile,
+        isWide,
         username,
         setUsername,
         publicName,
@@ -249,6 +255,8 @@ export const AppProvider = (props) => {
         inventoryLibrary,
         setInventoryLibrary,
 
+        preconDecks,
+        setPreconDecks,
         decks,
         setDecks,
         activeDeck,

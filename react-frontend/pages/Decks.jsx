@@ -280,11 +280,11 @@ function Decks(props) {
   }, [props.activeDeck, decks]);
 
   return (
-    <Container className={isMobile ? 'deck-container' : 'deck-container py-4'}>
+    <Container className={isMobile ? 'deck-container' : 'deck-container py-3'}>
       <Row className="mx-0">
-        <Col lg={1}></Col>
-        <Col lg={9} className="px-0 px-lg-3">
-          <Row className="px-1 px-lg-0 pt-1 pt-lg-0 pb-2 pb-lg-4">
+        <Col xl={1} className="hide-narrow"></Col>
+        <Col lg={10} xl={9} className="px-0 px-lg-1 px-xl-3">
+          <Row className="px-1 pt-1 pb-2 px-lg-0 pt-lg-0 pb-lg-4">
             <Col lg={5} className="px-0 px-lg-3">
               <Row className="align-items-center justify-content-end mx-0">
                 <Col className="px-0">
@@ -434,7 +434,7 @@ function Decks(props) {
           )}
           {deckRouter(props.activeDeck) && (
             <Row>
-              <Col lg={7} className="px-0 px-lg-3">
+              <Col lg={7} className="px-0 pl-md-3 pr-md-2 px-xl-3">
                 <DeckCrypt
                   changeTimer={props.changeTimer}
                   cardAdd={props.cardAdd}
@@ -447,7 +447,7 @@ function Decks(props) {
                   setShowFloatingButtons={setShowFloatingButtons}
                 />
               </Col>
-              <Col lg={5} className="pt-4 pt-lg-0 px-0 px-lg-3">
+              <Col lg={5} className="pt-4 pt-lg-0 px-0 pl-md-2 pr-md-3 px-xl-3">
                 <DeckLibrary
                   cardAdd={props.cardAdd}
                   cardChange={props.cardChange}
@@ -463,7 +463,7 @@ function Decks(props) {
           )}
         </Col>
         {!isMobile && (
-          <Col lg={2} className="px-0 px-lg-3">
+          <Col lg={2} className="px-0 px-lg-2 px-xl-3">
             <DeckButtons
               isAuthor={isAuthor}
               deck={deckRouter(props.activeDeck)}

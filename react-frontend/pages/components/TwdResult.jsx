@@ -48,28 +48,15 @@ function TwdResult(props) {
           return (
             <React.Fragment key={deck['deckid']}>
               <Row className="pt-3 px-0 mx-0">
-                <Col md={12} xl={3} className={isMobile ? 'px-0' : 'pl-0 pr-2'}>
+                <Col
+                  xs={12}
+                  md={12}
+                  xl={3}
+                  className={isMobile ? 'px-0' : 'pl-0 pr-2'}
+                >
                   <TwdResultDescription deck={deck} />
                 </Col>
-                {!isMobile ? (
-                  <>
-                    <Col md={12} xl={3} className="px-2">
-                      <TwdResultCrypt
-                        crypt={deck['crypt']}
-                        setShowFloatingButtons={props.setShowFloatingButtons}
-                      />
-                    </Col>
-                    <Col md={12} xl={3} className="px-2">
-                      <TwdResultLibraryByType library={deck['library']} />
-                    </Col>
-                    <Col md={12} xl={3} className="pr-0 pl-2">
-                      <TwdResultLibraryKeyCards
-                        library={deck['library']}
-                        setShowFloatingButtons={props.setShowFloatingButtons}
-                      />
-                    </Col>
-                  </>
-                ) : (
+                {isMobile ? (
                   <>
                     <Col xs={6} className="pl-0 pr-1">
                       <TwdResultCrypt
@@ -78,6 +65,24 @@ function TwdResult(props) {
                       />
                     </Col>
                     <Col xs={6} className="pl-1 pr-0">
+                      <TwdResultLibraryKeyCards
+                        library={deck['library']}
+                        setShowFloatingButtons={props.setShowFloatingButtons}
+                      />
+                    </Col>
+                  </>
+                ) : (
+                  <>
+                    <Col xs={12} md={4} xl={3} className="px-2">
+                      <TwdResultCrypt
+                        crypt={deck['crypt']}
+                        setShowFloatingButtons={props.setShowFloatingButtons}
+                      />
+                    </Col>
+                    <Col xs={12} md={4} xl={3} className="px-2">
+                      <TwdResultLibraryByType library={deck['library']} />
+                    </Col>
+                    <Col xs={12} md={4} xl={3} className="pr-0 pl-2">
                       <TwdResultLibraryKeyCards
                         library={deck['library']}
                         setShowFloatingButtons={props.setShowFloatingButtons}

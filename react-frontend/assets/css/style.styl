@@ -653,15 +653,29 @@ textarea.deck-import:focus
 .add-new-card
   max-width: 100%
 
+@media (min-width: 768px) and (max-width: 1279px)
+  .main-container,
+  .inventory-container
+  .navbar-nav,
+  .deck-container
+    min-width: 768px
+    max-width: 1024px
+  .hide-narrow
+    display: none
+  .modal-deck-draw
+    width: 80%
+
 @media (min-width: 1280px) and (max-width: 1599px)
   .main-container,
   .inventory-container
   .navbar-nav
     min-width: 95%
-    max-width: 95%
+    max-width: 100%
   .deck-container
-    min-width: 1460px
+    min-width: 1280px
     max-width: 1460px
+  .modal-deck-draw
+    width: 65%
 
 @media (min-width: 1600px)
   .main-container,
@@ -672,6 +686,8 @@ textarea.deck-import:focus
   .deck-container
     min-width: 1460px
     max-width: 1460px
+  .modal-deck-draw
+    width: 65%
 
 .dropdown-toggle::after
   content: none
@@ -714,14 +730,14 @@ a:link.noUnderline, a:visited.noUnderline
 a:hover.noUnderline
   text-decoration: none
 
-.margin-half
-  display: inline-block
-  width: 20px
-  textAlign: center
-
 .margin-third
   display: inline-block
   width: 10px
+  textAlign: center
+
+.margin-half
+  display: inline-block
+  width: 20px
   textAlign: center
 
 .margin-full
@@ -815,9 +831,6 @@ div.float-inventory svg
 
 .modal-tooltip
   z-index: 1100
-
-.modal-deck-draw
-  width: 65%
 
 .opacity-035
   opacity: 35%

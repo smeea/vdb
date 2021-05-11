@@ -22,6 +22,7 @@ function ResultCryptTable(props) {
     addMode,
     inventoryMode,
     isMobile,
+    isWide,
   } = useContext(AppContext);
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
@@ -194,29 +195,47 @@ function ResultCryptTable(props) {
               <ResultCryptName card={card} />
             </td>
           )}
-          {!isMobile && (
-            <td className="title pr-2" onClick={() => handleClick()}>
-              <ResultCryptTitle value={card.Title} />
-            </td>
-          )}
-          {isMobile ? (
-            <td className="clan-group" onClick={() => handleClick()}>
-              <ResultCryptClan value={card['Clan']} />
-              <div className="d-flex small justify-content-end">
-                <b>
-                  <ResultCryptTitle value={card.Title} />
-                </b>
-                <ResultCryptGroup value={card['Group']} />
-              </div>
-            </td>
-          ) : (
+          {isWide ? (
             <>
+              <td className="title pr-2" onClick={() => handleClick()}>
+                <ResultCryptTitle value={card['Title']} />
+              </td>
               <td className="clan" onClick={() => handleClick()}>
                 <ResultCryptClan value={card['Clan']} />
               </td>
               <td className="group" onClick={() => handleClick()}>
                 <ResultCryptGroup value={card['Group']} />
               </td>
+            </>
+          ) : (
+            <>
+              {isMobile ? (
+                <td className="clan-group" onClick={() => handleClick()}>
+                  <div>
+                    <ResultCryptClan value={card['Clan']} />
+                  </div>
+                  <div className="d-flex small justify-content-end">
+                    <b>
+                      <ResultCryptTitle value={card['Title']} />
+                    </b>
+                    <ResultCryptGroup value={card['Group']} />
+                  </div>
+                </td>
+              ) : (
+                <>
+                  <td className="title pr-2" onClick={() => handleClick()}>
+                    <ResultCryptTitle value={card['Title']} />
+                  </td>
+                  <td className="clan-group" onClick={() => handleClick()}>
+                    <div>
+                      <ResultCryptClan value={card['Clan']} />
+                    </div>
+                    <div className="d-flex small justify-content-end">
+                      <ResultCryptGroup value={card['Group']} />
+                    </div>
+                  </td>
+                </>
+              )}
             </>
           )}
         </tr>
