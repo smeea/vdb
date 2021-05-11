@@ -9,27 +9,30 @@ import AppContext from '../../context/AppContext.js';
 function InventoryAddDeck(props) {
   const { decks, isMobile } = useContext(AppContext);
 
-  const AddDeckOptions = Object.keys(decks).map((deck, index) => {
-    return (
-      <Dropdown.Item
-        href=""
-        key={index}
-        onClick={() => {
-          props.inventoryDeckAdd(decks[deck]);
-          isMobile && props.setShowButtons(false);
-        }}
-      >
-        <div className="d-flex align-items-center">
-          <div className="pr-3">
-            {decks[deck].inventory_type == 's' && <Shuffle />}
-            {decks[deck].inventory_type == 'h' && <PinAngleFill />}
-            {!decks[deck].inventory_type && <At />}
+  let AddDeckOptions;
+  if (decks) {
+    AddDeckOptions = Object.keys(decks).map((deck, index) => {
+      return (
+        <Dropdown.Item
+          href=""
+          key={index}
+          onClick={() => {
+            props.inventoryDeckAdd(decks[deck]);
+            isMobile && props.setShowButtons(false);
+          }}
+        >
+          <div className="d-flex align-items-center">
+            <div className="pr-3">
+              {decks[deck].inventory_type == 's' && <Shuffle />}
+              {decks[deck].inventory_type == 'h' && <PinAngleFill />}
+              {!decks[deck].inventory_type && <At />}
+            </div>
+            {decks[deck].name}
           </div>
-          {decks[deck].name}
-        </div>
-      </Dropdown.Item>
-    );
-  });
+        </Dropdown.Item>
+      );
+    });
+  }
 
   return (
     <Dropdown>
