@@ -53,7 +53,7 @@ function TwdSearchForm(props) {
   const refError = useRef(null);
 
   const defaults = {
-    eventText: '',
+    event: '',
     player: '',
     location: '',
     players: {
@@ -103,11 +103,11 @@ function TwdSearchForm(props) {
     },
   };
 
-  const handleEventTextChange = (event) => {
+  const handleEventChange = (event) => {
     const value = event.target.value;
     props.setFormState((prevState) => ({
       ...prevState,
-      eventText: value,
+      event: value,
     }));
   };
 
@@ -311,10 +311,7 @@ function TwdSearchForm(props) {
         props.results
       ) {
         props.setResults(undefined);
-      } else if (
-        !props.formState.eventText ||
-        props.formState.eventText.length > 1
-      ) {
+      } else if (!props.formState.event || props.formState.event.length > 2) {
         launchRequest();
       }
     }
@@ -494,8 +491,8 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormEvent
-            value={props.formState.eventText}
-            onChange={handleEventTextChange}
+            value={props.formState.event}
+            onChange={handleEventChange}
           />
         </Col>
       </Row>
