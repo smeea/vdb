@@ -77,7 +77,7 @@ const lightTheme = [
 
 const darkTheme = [
   '--fg-primary: #e0e0e0',
-  '--fg-secondary: #a0a0ff',
+  '--fg-secondary: #95a5ff',
   '--fg-third: #9090c0',
   '--fg-gray: #a9a9a9',
   '--fg-button: #c0c0e0',
