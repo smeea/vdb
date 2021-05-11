@@ -24,6 +24,7 @@ import AppContext from '../context/AppContext';
 
 function Decks(props) {
   const {
+    setActiveDeck,
     decks,
     inventoryCrypt,
     inventoryLibrary,
@@ -223,7 +224,7 @@ function Decks(props) {
       };
 
       props.setSharedDeck({ deckInUrl: deck });
-      props.setActiveDeck({ src: 'shared', deckid: 'deckInUrl' });
+      setActiveDeck({ src: 'shared', deckid: 'deckInUrl' });
     }
   }, [hash, cryptCardBase, libraryCardBase]);
 
@@ -235,12 +236,12 @@ function Decks(props) {
       libraryCardBase
     ) {
       if (query.get('id').length == 32) {
-        props.setActiveDeck({ src: 'shared', deckid: query.get('id') });
+        setActiveDeck({ src: 'shared', deckid: query.get('id') });
         getDeck(query.get('id'));
       } else if (query.get('id').includes(':')) {
-        props.setActiveDeck({ src: 'precons', deckid: query.get('id') });
+        setActiveDeck({ src: 'precons', deckid: query.get('id') });
       } else {
-        props.setActiveDeck({ src: 'twd', deckid: query.get('id') });
+        setActiveDeck({ src: 'twd', deckid: query.get('id') });
       }
     }
 
@@ -268,7 +269,7 @@ function Decks(props) {
       decks[props.activeDeck.deckid] &&
       props.activeDeck.src != 'my'
     ) {
-      props.setActiveDeck({ src: 'my', deckid: props.activeDeck.deckid });
+      setActiveDeck({ src: 'my', deckid: props.activeDeck.deckid });
     }
 
     if (props.deckRouter(props.activeDeck)) setDeckError(false);
@@ -294,23 +295,14 @@ function Decks(props) {
                   >
                     <div className={isBranches ? 'w-75' : 'w-100'}>
                       {selectFrom == 'my' ? (
-                        <DeckSelectMy
-                          activeDeck={props.activeDeck}
-                          setActiveDeck={props.setActiveDeck}
-                        />
+                        <DeckSelectMy activeDeck={props.activeDeck} />
                       ) : (
-                        <DeckSelectPrecon
-                          activeDeck={props.activeDeck}
-                          setActiveDeck={props.setActiveDeck}
-                        />
+                        <DeckSelectPrecon activeDeck={props.activeDeck} />
                       )}
                     </div>
                     {selectFrom == 'my' && isBranches && (
                       <div className="pl-1 w-25">
-                        <DeckBranchSelect
-                          activeDeck={props.activeDeck}
-                          setActiveDeck={props.setActiveDeck}
-                        />
+                        <DeckBranchSelect activeDeck={props.activeDeck} />
                       </div>
                     )}
                     <div className="d-flex">
@@ -477,7 +469,6 @@ function Decks(props) {
               deck={props.deckRouter(props.activeDeck)}
               getDecks={props.getDecks}
               activeDeck={props.activeDeck}
-              setActiveDeck={props.setActiveDeck}
               setShowInfo={setShowInfo}
               setShowButtons={handleShowButtons}
               missingCrypt={missingCrypt}
@@ -502,7 +493,7 @@ function Decks(props) {
               <AccountLogin />
             </div>
             <div className="py-2">
-              <AccountRegister whoAmI={props.whoAmI} />
+              <AccountRegister />
             </div>
           </Col>
         </Row>
@@ -570,7 +561,6 @@ function Decks(props) {
                 deck={props.deckRouter(props.activeDeck)}
                 getDecks={props.getDecks}
                 activeDeck={props.activeDeck}
-                setActiveDeck={props.setActiveDeck}
                 setShowInfo={setShowInfo}
                 setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}

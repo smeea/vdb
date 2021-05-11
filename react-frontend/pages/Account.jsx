@@ -47,7 +47,7 @@ function Account(props) {
                 <AccountLogin />
               </div>
               <div className="py-2">
-                <AccountRegister whoAmI={props.whoAmI} />
+                <AccountRegister />
               </div>
             </>
           )}

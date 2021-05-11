@@ -4,7 +4,7 @@ import precons from './forms_data/preconOptions.json';
 import AppContext from '../../context/AppContext.js';
 
 function DeckSelectPrecon(props) {
-  const { isMobile } = useContext(AppContext);
+  const { setActiveDeck, isMobile } = useContext(AppContext);
 
   const options = [];
   precons.map((i, index) => {
@@ -62,9 +62,7 @@ function DeckSelectPrecon(props) {
         filterOption={filterOption}
         placeholder="Select Deck"
         value={options.find((obj) => obj.value === props.activeDeck.deckid)}
-        onChange={(e) =>
-          props.setActiveDeck({ src: 'precons', deckid: e.value })
-        }
+        onChange={(e) => setActiveDeck({ src: 'precons', deckid: e.value })}
       />
     </>
   );

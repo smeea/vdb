@@ -59,10 +59,7 @@ function TwdResultDescription(props) {
           </table>
           <div className="py-2">
             <div className="button-block">
-              <TwdOpenDeckButton
-                deckid={props.deck['deckid']}
-                setActiveDeck={props.setActiveDeck}
-              />
+              <TwdOpenDeckButton deckid={props.deck['deckid']} />
             </div>
             <div className="button-block">
               {username && (
@@ -70,7 +67,6 @@ function TwdResultDescription(props) {
                   deck={props.deck}
                   activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
                   getDecks={props.getDecks}
-                  setActiveDeck={props.setActiveDeck}
                   setShowButtons={props.setShowButtons}
                 />
               )}
@@ -115,10 +111,7 @@ function TwdResultDescription(props) {
             <Col xs={5} className="px-0 mx-0">
               <div className="py-2">
                 <div className="button-block">
-                  <TwdOpenDeckButton
-                    deckid={props.deck['deckid']}
-                    setActiveDeck={props.setActiveDeck}
-                  />
+                  <TwdOpenDeckButton deckid={props.deck['deckid']} />
                 </div>
                 <div className="button-block">
                   {username && (
@@ -126,7 +119,6 @@ function TwdResultDescription(props) {
                       deck={props.deck}
                       activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
                       getDecks={props.getDecks}
-                      setActiveDeck={props.setActiveDeck}
                       setShowButtons={props.setShowButtons}
                     />
                   )}

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PlayCircleFill from '../../assets/images/icons/play-circle-fill.svg';
+import AppContext from '../../context/AppContext';
 
 function TwdOpenDeckButton(props) {
+  const { setActiveDeck } = useContext(AppContext);
+
   const handleClick = () => {
-    props.setActiveDeck({ src: 'twd', deckid: props.deckid });
+    setActiveDeck({ src: 'twd', deckid: props.deckid });
   };
 
   return (

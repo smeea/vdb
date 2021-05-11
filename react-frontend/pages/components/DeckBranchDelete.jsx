@@ -5,7 +5,7 @@ import DeleteConfirmation from './DeleteConfirmation.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckBranchDelete(props) {
-  const { isMobile } = useContext(AppContext);
+  const { setActiveDeck, isMobile } = useContext(AppContext);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
@@ -13,9 +13,9 @@ function DeckBranchDelete(props) {
     deleteBranch();
     setShowConfirmation(false);
     if (props.deck.master) {
-      props.setActiveDeck({ src: 'my', deckid: props.deck.master });
+      setActiveDeck({ src: 'my', deckid: props.deck.master });
     } else {
-      props.setActiveDeck({ src: 'my', deckid: props.deck.branches[0] });
+      setActiveDeck({ src: 'my', deckid: props.deck.branches[0] });
     }
     isMobile && props.setShowButtons(false);
   };

@@ -54,9 +54,10 @@ function App(props) {
     setInventoryLibrary,
     decks,
     setDecks,
+    activeDeck,
+    setActiveDeck,
   } = useContext(AppContext);
 
-  const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [lastDeck, setLastDeck] = useState({});
   const [sharedDeck, setSharedDeck] = useState(undefined);
 
@@ -566,24 +567,6 @@ function App(props) {
     startTimer();
   };
 
-  const whoAmI = () => {
-    const url = `${process.env.API_URL}login`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        data.username && setUsername(data.username);
-        data.username && !isMobile && setAddMode(true);
-        data.public_name && setPublicName(data.public_name);
-        data.email && setEmail(data.email);
-      });
-  };
-
   useEffect(() => {
     const byTimestamp = (a, b) => {
       return new Date(b[1]) - new Date(a[1]);
@@ -710,6 +693,24 @@ function App(props) {
     }
   }, [decks]);
 
+  const whoAmI = () => {
+    const url = `${process.env.API_URL}login`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        data.username && setUsername(data.username);
+        data.username && !isMobile && setAddMode(true);
+        data.public_name && setPublicName(data.public_name);
+        data.email && setEmail(data.email);
+      });
+  };
+
   useEffect(() => {
     whoAmI();
     (!cryptCardBase || !libraryCardBase) && getCardBase();
@@ -736,11 +737,7 @@ function App(props) {
     <div className="App">
       <Router>
         <ThemeProvider>
-          <Navigation
-            activeDeck={activeDeck}
-            setActiveDeck={setActiveDeck}
-            lang={lang}
-          />
+          <Navigation activeDeck={activeDeck} />
         </ThemeProvider>
 
         <Switch>
@@ -753,10 +750,10 @@ function App(props) {
               component={() => <Documentation />}
             />
             <Route path="/account">
-              <Account whoAmI={whoAmI} />
+              <Account />
             </Route>
             <Route path="/twd">
-              <Twd getDecks={getDecks} setActiveDeck={setActiveDeck} />
+              <Twd getDecks={getDecks} />
             </Route>
             <Route path="/inventory">
               <Inventory
@@ -764,7 +761,6 @@ function App(props) {
                 inventoryAddToState={inventoryAddToState}
                 cardAdd={inventoryCardAdd}
                 cardChange={inventoryCardChange}
-                whoAmI={whoAmI}
               />
             </Route>
             <Route path="/decks">
@@ -774,12 +770,10 @@ function App(props) {
                 preconDecks={preconDecks}
                 getDecks={getDecks}
                 activeDeck={activeDeck}
-                setActiveDeck={setActiveDeck}
                 sharedDeck={sharedDeck}
                 setSharedDeck={setSharedDeck}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
-                whoAmI={whoAmI}
               />
             </Route>
             <Route path="/crypt">
@@ -794,7 +788,6 @@ function App(props) {
                     ? activeDeck
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
-                setActiveDeck={setActiveDeck}
               />
             </Route>
             <Route path="/library">
@@ -809,7 +802,6 @@ function App(props) {
                     ? activeDeck
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
-                setActiveDeck={setActiveDeck}
               />
             </Route>
             <Route path="/cards" exact component={(props) => <Cards />} />

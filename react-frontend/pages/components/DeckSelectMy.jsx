@@ -6,7 +6,7 @@ import At from '../../assets/images/icons/at.svg';
 import AppContext from '../../context/AppContext.js';
 
 function DeckSelectMy(props) {
-  const { decks, isMobile } = useContext(AppContext);
+  const { setActiveDeck, decks, isMobile } = useContext(AppContext);
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
@@ -70,7 +70,7 @@ function DeckSelectMy(props) {
           return obj.value === props.activeDeck.deckid;
         }
       })}
-      onChange={(e) => props.setActiveDeck({ src: 'my', deckid: e.value })}
+      onChange={(e) => setActiveDeck({ src: 'my', deckid: e.value })}
     />
   );
 }

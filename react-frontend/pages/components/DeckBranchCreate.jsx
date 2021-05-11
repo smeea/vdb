@@ -4,7 +4,7 @@ import NodePlusFill from '../../assets/images/icons/node-plus-fill.svg';
 import AppContext from '../../context/AppContext';
 
 function DeckBranchCreate(props) {
-  const { isMobile } = useContext(AppContext);
+  const { setActiveDeck, isMobile } = useContext(AppContext);
 
   const branchCreate = () => {
     let newdeckid;
@@ -29,7 +29,7 @@ function DeckBranchCreate(props) {
         if (data.error === undefined) newdeckid = data.deckid;
       })
       .then(() => props.getDecks())
-      .then(() => props.setActiveDeck({ src: 'my', deckid: newdeckid }))
+      .then(() => setActiveDeck({ src: 'my', deckid: newdeckid }))
       .then(() => isMobile && props.setShowButtons(false));
   };
 

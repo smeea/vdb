@@ -69,6 +69,8 @@ const AppContext = React.createContext({
 
   decks: undefined,
   setDecks: () => {},
+  activeDeck: undefined,
+  setActiveDeck: () => {},
 });
 
 export default AppContext;
@@ -94,11 +96,16 @@ export const AppProvider = (props) => {
   const [twdFormState, setTwdFormState] = useState(defaultsTwdForm);
   const [cryptFormState, setCryptFormState] = useState(defaultsCryptForm);
   const [libraryFormState, setLibraryFormState] = useState(defaultsLibraryForm);
+  const [showTwdSearch, setShowTwdSearch] = useState(true);
+  const [showCryptSearch, setShowCryptSearch] = useState(true);
+  const [showLibrarySearch, setShowLibrarySearch] = useState(true);
 
   const [twdResults, setTwdResults] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
 
+  const [inventoryCrypt, setInventoryCrypt] = useState({});
+  const [inventoryLibrary, setInventoryLibrary] = useState({});
   const [usedCryptCards, setUsedCryptCards] = useState({
     soft: {},
     hard: {},
@@ -108,14 +115,8 @@ export const AppProvider = (props) => {
     hard: {},
   });
 
-  const [showTwdSearch, setShowTwdSearch] = useState(true);
-  const [showCryptSearch, setShowCryptSearch] = useState(true);
-  const [showLibrarySearch, setShowLibrarySearch] = useState(true);
-
-  const [inventoryCrypt, setInventoryCrypt] = useState({});
-  const [inventoryLibrary, setInventoryLibrary] = useState({});
-
   const [decks, setDecks] = useState(undefined);
+  const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
 
   const changeLang = (lang) => {
     setLang(lang);
@@ -204,6 +205,8 @@ export const AppProvider = (props) => {
 
         decks,
         setDecks,
+        activeDeck,
+        setActiveDeck,
       }}
     >
       {props.children}

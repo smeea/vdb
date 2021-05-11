@@ -5,14 +5,14 @@ import DeleteConfirmation from './DeleteConfirmation.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckDelete(props) {
-  const { isMobile } = useContext(AppContext);
+  const { setActiveDeck, isMobile } = useContext(AppContext);
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     deleteDeck();
     setShowConfirmation(false);
-    props.setActiveDeck({ src: null, deckid: null });
+    setActiveDeck({ src: null, deckid: null });
     props.history.push('/decks');
     isMobile && props.setShowButtons(false);
   };

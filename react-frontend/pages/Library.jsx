@@ -48,17 +48,11 @@ function Library(props) {
                     {addMode && (
                       <>
                         <div className={isBranches ? 'w-75' : 'w-100'}>
-                          <DeckSelectMy
-                            activeDeck={props.activeDeck}
-                            setActiveDeck={props.setActiveDeck}
-                          />
+                          <DeckSelectMy activeDeck={props.activeDeck} />
                         </div>
                         {isBranches && (
                           <div className="pl-1 w-25">
-                            <DeckBranchSelect
-                              activeDeck={props.activeDeck}
-                              setActiveDeck={props.setActiveDeck}
-                            />
+                            <DeckBranchSelect activeDeck={props.activeDeck} />
                           </div>
                         )}
                       </>

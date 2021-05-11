@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import {
   Form,
   FormControl,
@@ -11,15 +11,15 @@ import PersonPlusFill from '../../assets/images/icons/person-plus-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 import Check2 from '../../assets/images/icons/check2.svg';
+import AppContext from '../../context/AppContext';
 
 function AccountRegister(props) {
+  const { setUsername } = useContext(AppContext);
   const [state, setState] = useState({
     username: '',
     password: '',
   });
-
   const [spinnerState, setSpinnerState] = useState(false);
-
   const [usernameError, setUsernameError] = useState(false);
   const [emptyUsername, setEmptyUsername] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
@@ -68,7 +68,7 @@ function AccountRegister(props) {
           return response.json();
         })
         .then((data) => {
-          props.whoAmI();
+          setUsername(state.username);
           setSpinnerState(false);
         })
         .catch((error) => {

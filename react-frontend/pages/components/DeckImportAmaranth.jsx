@@ -3,15 +3,12 @@ import { FormControl, Modal, Button, Spinner, Overlay } from 'react-bootstrap';
 import AppContext from '../../context/AppContext';
 
 function DeckImportAmaranth(props) {
-  const { isMobile } = useContext(AppContext);
-
+  const { setActiveDeck, isMobile } = useContext(AppContext);
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyUrl, setEmptyUrl] = useState(false);
   const [importError, setImportError] = useState(false);
   const refUrl = useRef(null);
-
   const [idReference, setIdReference] = useState(undefined);
-
   const [spinnerState, setSpinnerState] = useState(false);
 
   const getIdReference = () => {
@@ -76,7 +73,7 @@ function DeckImportAmaranth(props) {
       .then((response) => response.json())
       .then((data) => (newdeckid = data.deckid))
       .then(() => props.getDecks())
-      .then(() => props.setActiveDeck(newdeckid))
+      .then(() => setActiveDeck(newdeckid))
       .catch((error) => setImportError(true));
   };
 

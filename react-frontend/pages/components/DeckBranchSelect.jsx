@@ -3,7 +3,7 @@ import Select from 'react-select';
 import AppContext from '../../context/AppContext.js';
 
 function DeckBranchSelect(props) {
-  const { decks } = useContext(AppContext);
+  const { setActiveDeck, decks } = useContext(AppContext);
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
@@ -50,7 +50,7 @@ function DeckBranchSelect(props) {
       name="decks"
       placeholder="Select Deck"
       value={options.find((obj) => obj.value === props.activeDeck.deckid)}
-      onChange={(e) => props.setActiveDeck({ src: 'my', deckid: e.value })}
+      onChange={(e) => setActiveDeck({ src: 'my', deckid: e.value })}
     />
   );
 }
