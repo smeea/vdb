@@ -18,14 +18,14 @@ const AppContext = React.createContext({
   setNativeCrypt: () => {},
   nativeLibrary: undefined,
   setNativeLibrary: () => {},
+  showImage: true,
+  setShowImage: () => {},
+  addMode: false,
+  setAddMode: () => {},
   hideMissing: false,
   setHideMissing: () => {},
   inventoryMode: false,
   setInventoryMode: () => {},
-  addMode: false,
-  setAddMode: () => {},
-  showImage: true,
-  setShowImage: () => {},
 });
 
 export default AppContext;

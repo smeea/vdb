@@ -5,8 +5,9 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
-import Navigation from './pages/Navigation.jsx';
+import { ThemeProvider } from './context/ThemeContext.js';
 import AppContext from './context/AppContext';
+import Navigation from './pages/Navigation.jsx';
 import defaultsTwdForm from './pages/components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from './pages/components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from './pages/components/forms_data/defaultsLibraryForm.json';
@@ -754,14 +755,16 @@ function App(props) {
   return (
     <div className="App">
       <Router>
-        <Navigation
-          showCryptSearch={showCryptSearch}
-          showLibrarySearch={showLibrarySearch}
-          decks={decks}
-          activeDeck={activeDeck}
-          setActiveDeck={setActiveDeck}
-          lang={lang}
-        />
+        <ThemeProvider>
+          <Navigation
+            showCryptSearch={showCryptSearch}
+            showLibrarySearch={showLibrarySearch}
+            decks={decks}
+            activeDeck={activeDeck}
+            setActiveDeck={setActiveDeck}
+            lang={lang}
+          />
+        </ThemeProvider>
 
         <Switch>
           <Suspense fallback={<></>}>
