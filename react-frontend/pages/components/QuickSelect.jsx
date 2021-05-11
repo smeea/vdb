@@ -8,6 +8,7 @@ import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function QuickSelect(props) {
   const { isMobile } = useContext(AppContext);

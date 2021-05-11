@@ -41,6 +41,7 @@ function DeckBranchSelect(props) {
 
   return (
     <Select
+      classNamePrefix="react-select"
       options={options}
       isSearchable={false}
       name="decks"

@@ -56,7 +56,6 @@ function DeckSelectMy(props) {
 
   return (
     <Select
-      className="react-select-container"
       classNamePrefix="react-select"
       options={options}
       isSearchable={!isMobile}
