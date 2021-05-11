@@ -187,13 +187,18 @@ function ResultCryptTable(props) {
               <ResultCryptName card={card} />
             </td>
           )}
-          <td className="title pr-2" onClick={() => handleClick()}>
-            <ResultCryptTitle value={card.Title} />
-          </td>
+          {!isMobile && (
+            <td className="title pr-2" onClick={() => handleClick()}>
+              <ResultCryptTitle value={card.Title} />
+            </td>
+          )}
           {isMobile ? (
             <td className="clan-group" onClick={() => handleClick()}>
               <ResultCryptClan value={card['Clan']} />
               <div className="d-flex small justify-content-end">
+                <b>
+                  <ResultCryptTitle value={card.Title} />
+                </b>
                 <ResultCryptGroup value={card['Group']} />
               </div>
             </td>

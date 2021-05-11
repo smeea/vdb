@@ -7,6 +7,7 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
+import ResultCryptTitle from './ResultCryptTitle.jsx';
 import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
 import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import drawProbability from './drawProbability.js';
@@ -62,12 +63,20 @@ function DeckDrawCryptTable(props) {
               <ResultCryptName card={card} />
             </td>
           )}
+          {!isMobile && (
+            <td className="title pr-2" onClick={() => handleClick()}>
+              <ResultCryptTitle value={card['Title']} />
+            </td>
+          )}
           {isMobile ? (
             <td className="clan-group" onClick={() => props.burnCrypt(index)}>
               <div>
                 <ResultCryptClan value={card['Clan']} />
               </div>
               <div className="d-flex small justify-content-end">
+                <b>
+                  <ResultCryptTitle value={card['Title']} />
+                </b>
                 <ResultCryptGroup value={card['Group']} />
               </div>
             </td>
