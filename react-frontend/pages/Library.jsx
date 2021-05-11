@@ -102,7 +102,7 @@ function Library(props) {
           md={8}
           xl={5}
           className={
-            isMobile && showCryptSearch
+            isMobile && showLibrarySearch
               ? 'col-hide px-0'
               : 'px-0 px-md-2 px-xl-4'
           }
@@ -126,7 +126,7 @@ function Library(props) {
           md={4}
           xl={3}
           className={
-            !isMobile || (isMobile && showCryptSearch)
+            !isMobile || (isMobile && showLibrarySearch)
               ? isMobile
                 ? 'p-1'
                 : 'px-md-2 px-xl-0'
