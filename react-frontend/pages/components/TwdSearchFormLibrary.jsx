@@ -13,7 +13,7 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function TwdSearchFormLibrary(props) {
-  const { isMobile } = useContext(AppContext);
+  const { libraryCardBase, isMobile } = useContext(AppContext);
 
   const [modalCard, setModalCard] = useState(undefined);
 
@@ -41,21 +41,21 @@ function TwdSearchFormLibrary(props) {
           {!isMobile ? (
             <OverlayTrigger
               placement="left"
-              overlay={<CardPopover card={props.cardBase[id]} />}
+              overlay={<CardPopover card={libraryCardBase[id]} />}
             >
               <div
                 className="pt-1"
-                onClick={() => setModalCard(props.cardBase[id])}
+                onClick={() => setModalCard(libraryCardBase[id])}
               >
-                <ResultLibraryName card={props.cardBase[id]} />
+                <ResultLibraryName card={libraryCardBase[id]} />
               </div>
             </OverlayTrigger>
           ) : (
             <div
               className="pt-1"
-              onClick={() => setModalCard(props.cardBase[id])}
+              onClick={() => setModalCard(libraryCardBase[id])}
             >
-              <ResultLibraryName card={props.cardBase[id]} />
+              <ResultLibraryName card={libraryCardBase[id]} />
             </div>
           )}
         </div>
@@ -97,39 +97,39 @@ function TwdSearchFormLibrary(props) {
           <>
             <div className="d-flex align-items-center justify-content-between">
               <div>
-                <ResultLibraryType cardtype={props.cardBase[card]['Type']} />
+                <ResultLibraryType cardtype={libraryCardBase[card]['Type']} />
                 <span className="pl-1">
-                  {props.cardBase[card]['Banned'] ? (
+                  {libraryCardBase[card]['Banned'] ? (
                     <>
-                      <strike>{props.cardBase[card]['Name']}</strike>
+                      <strike>{libraryCardBase[card]['Name']}</strike>
                       <span className="pl-1">
                         <Hammer />
                       </span>
                     </>
                   ) : (
-                    <>{props.cardBase[card]['Name']}</>
+                    <>{libraryCardBase[card]['Name']}</>
                   )}
                 </span>
               </div>
               <div>
-                {props.cardBase[card]['Discipline'] && (
+                {libraryCardBase[card]['Discipline'] && (
                   <span className="px-1">
                     <ResultLibraryDisciplines
-                      value={props.cardBase[card]['Discipline']}
+                      value={libraryCardBase[card]['Discipline']}
                     />
                   </span>
                 )}
-                {props.cardBase[card]['Clan'] && (
+                {libraryCardBase[card]['Clan'] && (
                   <span className="px-1">
-                    <ResultLibraryClan value={props.cardBase[card]['Clan']} />
+                    <ResultLibraryClan value={libraryCardBase[card]['Clan']} />
                   </span>
                 )}
-                {(props.cardBase[card]['Blood Cost'] ||
-                  props.cardBase[card]['Pool Cost']) && (
+                {(libraryCardBase[card]['Blood Cost'] ||
+                  libraryCardBase[card]['Pool Cost']) && (
                   <span className="px-1">
                     <ResultLibraryCost
-                      valuePool={props.cardBase[card]['Pool Cost']}
-                      valueBlood={props.cardBase[card]['Blood Cost']}
+                      valuePool={libraryCardBase[card]['Pool Cost']}
+                      valueBlood={libraryCardBase[card]['Blood Cost']}
                     />
                   </span>
                 )}

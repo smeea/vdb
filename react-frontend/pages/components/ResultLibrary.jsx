@@ -9,6 +9,11 @@ import AppContext from '../../context/AppContext.js';
 
 function ResultLibrary(props) {
   const {
+    inventoryLibrary,
+    showLibrarySearch,
+    setShowLibrarySearch,
+    libraryResults,
+    setLibraryResults,
     addMode,
     setAddMode,
     inventoryMode,
@@ -20,38 +25,38 @@ function ResultLibrary(props) {
 
   const handleChange = (method) => {
     props.setSortMethod(method);
-    setSortedCards(() => resultLibrarySort(props.cards, method));
+    setSortedCards(() => resultLibrarySort(libraryResults, method));
   };
 
   const handleClear = () => {
-    props.setResults(undefined);
-    props.setShowSearch(!props.showSearch);
+    setLibraryResults(undefined);
+    setShowLibrarySearch(!showLibrarySearch);
   };
 
   useEffect(() => {
     if (!props.hideMissing) {
-      setSortedCards(() => resultLibrarySort(props.cards, props.sortMethod));
+      setSortedCards(() => resultLibrarySort(libraryResults, props.sortMethod));
     } else {
       setSortedCards(() =>
         resultLibrarySort(
-          props.cards.filter((card) => props.inventoryLibrary[card.Id]),
+          libraryResults.filter((card) => inventoryLibrary[card.Id]),
           props.sortMethod
         )
       );
     }
-  }, [props.cards, props.sortMethod, props.hideMissing]);
+  }, [libraryResults, props.sortMethod, props.hideMissing]);
 
   return (
     <>
-      {!isMobile && props.cards.length == 0 && (
+      {!isMobile && libraryResults.length == 0 && (
         <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO CARDS FOUND</b>
         </div>
       )}
-      {props.cards.length > 0 && (
+      {libraryResults.length > 0 && (
         <>
           <ResultLibraryTotal
-            cards={props.cards}
+            cards={libraryResults}
             value={props.sortMethod}
             handleChange={handleChange}
           />
@@ -61,8 +66,6 @@ function ResultLibrary(props) {
             cardAdd={props.cardAdd}
             cardChange={props.cardChange}
             resultCards={sortedCards}
-            inventoryLibrary={props.inventoryLibrary}
-            usedCards={props.usedCards}
             decks={props.decks}
             setShowFloatingButtons={setShowFloatingButtons}
           />

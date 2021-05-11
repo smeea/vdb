@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function DeckNewCryptCard(props) {
+  const { cryptCardBase } = useContext(AppContext);
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
 
@@ -62,12 +64,12 @@ function DeckNewCryptCard(props) {
                   {props.cards[card] && props.cards[card].q}
                 </div>
               )}
-              <ResultCryptCapacity value={props.cardBase[card]['Capacity']} />
+              <ResultCryptCapacity value={cryptCardBase[card]['Capacity']} />
               <div className="px-2">
-                {props.cardBase[card]['Banned'] ? (
+                {cryptCardBase[card]['Banned'] ? (
                   <>
-                    <strike>{props.cardBase[card]['Name']}</strike>
-                    {props.cardBase[card]['Adv'] && (
+                    <strike>{cryptCardBase[card]['Name']}</strike>
+                    {cryptCardBase[card]['Adv'] && (
                       <div className="d-inline pl-1">
                         <img
                           className="advanced-image-results"
@@ -82,8 +84,8 @@ function DeckNewCryptCard(props) {
                   </>
                 ) : (
                   <>
-                    {props.cardBase[card]['Name']}
-                    {props.cardBase[card]['Adv'] && (
+                    {cryptCardBase[card]['Name']}
+                    {cryptCardBase[card]['Adv'] && (
                       <div className="d-inline pl-1">
                         <img
                           className="advanced-image-results"
@@ -96,12 +98,12 @@ function DeckNewCryptCard(props) {
                 )}
               </div>
               <div className="pr-3">
-                <ResultCryptClan value={props.cardBase[card]['Clan']} />
+                <ResultCryptClan value={cryptCardBase[card]['Clan']} />
               </div>
             </div>
             <div className="d-flex flex-nowrap">
               <ResultCryptDisciplines
-                value={props.cardBase[card]['Disciplines']}
+                value={cryptCardBase[card]['Disciplines']}
               />
             </div>
           </div>

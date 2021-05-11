@@ -10,6 +10,8 @@ import AppContext from '../context/AppContext.js';
 
 function Cards(props) {
   const {
+    cryptCardBase,
+    libraryCardBase,
     showImage,
     setShowImage,
     localizedCrypt,
@@ -61,27 +63,22 @@ function Cards(props) {
   };
 
   useEffect(() => {
-    if (props.id > 200000 && props.cryptCardBase) {
-      setCard(props.cryptCardBase[props.id]);
-    } else if (props.id < 200000 && props.libraryCardBase) {
-      setCard(props.libraryCardBase[props.id]);
+    if (props.id > 200000 && cryptCardBase) {
+      setCard(cryptCardBase[props.id]);
+    } else if (props.id < 200000 && libraryCardBase) {
+      setCard(libraryCardBase[props.id]);
     }
-  }, [props.id, props.cryptCardBase, props.libraryCardBase]);
+  }, [props.id, cryptCardBase, libraryCardBase]);
 
   return (
     <Container className="p-0">
       <>
         {isMobile ? (
           <>
-            {props.cryptCardBase && props.libraryCardBase && (
+            {cryptCardBase && libraryCardBase && (
               <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
                 <Col lg={8} className="px-0">
-                  <QuickSelect
-                    cryptCardBase={props.cryptCardBase}
-                    libraryCardBase={props.libraryCardBase}
-                    setCard={setCard}
-                    history={history}
-                  />
+                  <QuickSelect setCard={setCard} history={history} />
                 </Col>
               </Row>
             )}
@@ -127,15 +124,10 @@ function Cards(props) {
           </>
         ) : (
           <>
-            {props.cryptCardBase && props.libraryCardBase && (
+            {cryptCardBase && libraryCardBase && (
               <Row className="align-content-center justify-content-center py-3">
                 <Col lg={8}>
-                  <QuickSelect
-                    cryptCardBase={props.cryptCardBase}
-                    libraryCardBase={props.libraryCardBase}
-                    setCard={setCard}
-                    history={history}
-                  />
+                  <QuickSelect setCard={setCard} history={history} />
                 </Col>
               </Row>
             )}

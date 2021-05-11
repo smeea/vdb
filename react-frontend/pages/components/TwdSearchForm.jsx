@@ -23,7 +23,16 @@ import TwdSearchFormMatchInventoryScaling from './TwdSearchFormMatchInventorySca
 import AppContext from '../../context/AppContext.js';
 
 function TwdSearchForm(props) {
-  const { inventoryMode, isMobile } = useContext(AppContext);
+  const {
+    setShowTwdSearch,
+    setTwdResults,
+    twdFormState,
+    setTwdFormState,
+    cryptCardBase,
+    libraryCardBase,
+    inventoryMode,
+    isMobile,
+  } = useContext(AppContext);
 
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;
@@ -32,8 +41,8 @@ function TwdSearchForm(props) {
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
-    if (props.cryptCardBase && props.libraryCardBase && query) {
-      props.setFormState((prevState) => {
+    if (cryptCardBase && libraryCardBase && query) {
+      setTwdFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
           if (typeof query[i] === 'object') {
@@ -47,7 +56,7 @@ function TwdSearchForm(props) {
         return state;
       });
     }
-  }, [props.cryptCardBase, props.libraryCardBase]);
+  }, [cryptCardBase, libraryCardBase]);
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
@@ -105,7 +114,7 @@ function TwdSearchForm(props) {
 
   const handleEventChange = (event) => {
     const value = event.target.value;
-    props.setFormState((prevState) => ({
+    setTwdFormState((prevState) => ({
       ...prevState,
       event: value,
     }));
@@ -113,7 +122,7 @@ function TwdSearchForm(props) {
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
-    props.setFormState((prevState) => ({
+    setTwdFormState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -121,9 +130,9 @@ function TwdSearchForm(props) {
 
   const handleCardtypeChange = (event) => {
     const { name, value } = event;
-    const newState = props.formState.cardtypes;
+    const newState = twdFormState.cardtypes;
     newState[name] = value;
-    props.setFormState((prevState) => ({
+    setTwdFormState((prevState) => ({
       ...prevState,
       cardtypes: newState,
     }));
@@ -131,9 +140,9 @@ function TwdSearchForm(props) {
 
   const handleDateChange = (event) => {
     const { name, value } = event;
-    const newState = props.formState.date;
+    const newState = twdFormState.date;
     newState[name] = value;
-    props.setFormState((prevState) => ({
+    setTwdFormState((prevState) => ({
       ...prevState,
       date: newState,
     }));
@@ -141,9 +150,9 @@ function TwdSearchForm(props) {
 
   const handlePlayersChange = (event) => {
     const { name, value } = event;
-    const newState = props.formState.players;
+    const newState = twdFormState.players;
     newState[name] = value;
-    props.setFormState((prevState) => ({
+    setTwdFormState((prevState) => ({
       ...prevState,
       players: newState,
     }));
@@ -151,18 +160,18 @@ function TwdSearchForm(props) {
 
   const handleMatchInventoryChange = (event) => {
     const { name, value } = event;
-    const newState = props.formState.matchInventory;
+    const newState = twdFormState.matchInventory;
     newState[name] = value;
-    props.setFormState((prevState) => ({
+    setTwdFormState((prevState) => ({
       ...prevState,
       matchInventory: newState,
     }));
   };
 
   const handleMatchInventoryScalingChange = () => {
-    const newState = props.formState.matchInventory;
-    newState.scaling = !props.formState.matchInventory.scaling;
-    props.setFormState((prevState) => ({
+    const newState = twdFormState.matchInventory;
+    newState.scaling = !twdFormState.matchInventory.scaling;
+    setTwdFormState((prevState) => ({
       ...prevState,
       matchInventory: newState,
     }));
@@ -170,18 +179,18 @@ function TwdSearchForm(props) {
 
   const handleMultiChange = (event) => {
     const { name, id, value } = event.target;
-    const newState = props.formState[name];
+    const newState = twdFormState[name];
     const i = value ? value : id;
     newState[i] = !newState[i];
-    props.setFormState((prevState) => ({
+    setTwdFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
   };
 
   const handleClearButton = () => {
-    props.setFormState(defaults);
-    props.setResults(undefined);
+    setTwdFormState(defaults);
+    setTwdResults(undefined);
     setShowError(false);
     history.push('/twd');
   };
@@ -193,7 +202,7 @@ function TwdSearchForm(props) {
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/twd`;
-    const input = JSON.parse(JSON.stringify(props.formState));
+    const input = JSON.parse(JSON.stringify(twdFormState));
 
     const multiSelectForms = [
       'crypt',
@@ -241,12 +250,12 @@ function TwdSearchForm(props) {
       fetch(url, options)
         .then((response) => response.json())
         .then((data) => {
-          props.setShowSearch(false);
-          props.setResults(data);
+          setShowTwdSearch(false);
+          setTwdResults(data);
           setSpinnerState(false);
         })
         .catch((error) => {
-          props.setResults([]);
+          setTwdResults([]);
           setShowError(true);
           setSpinnerState(false);
         });
@@ -256,7 +265,7 @@ function TwdSearchForm(props) {
   const getNewTwd = (q) => {
     setSpinnerState(true);
     setShowError(false);
-    props.setFormState(defaults);
+    setTwdFormState(defaults);
 
     const url = `${process.env.API_URL}twd/new/${q}`;
     const options = {
@@ -268,19 +277,19 @@ function TwdSearchForm(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        props.setShowSearch(false);
-        props.setResults(data);
+        setShowTwdSearch(false);
+        setTwdResults(data);
         setSpinnerState(false);
       })
       .catch((error) => {
-        props.setResults([]);
+        setTwdResults([]);
         setShowError(true);
         setSpinnerState(false);
       });
   };
 
   const getRandomTwd = (q) => {
-    props.setFormState(defaults);
+    setTwdFormState(defaults);
     setShowError(false);
     setSpinnerState(true);
 
@@ -294,12 +303,12 @@ function TwdSearchForm(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        props.setShowSearch(false);
-        props.setResults(data);
+        setShowTwdSearch(false);
+        setTwdResults(data);
         setSpinnerState(false);
       })
       .catch((error) => {
-        props.setResults([]);
+        setTwdResults([]);
         setSpinnerState(false);
       });
   };
@@ -307,15 +316,15 @@ function TwdSearchForm(props) {
   useEffect(() => {
     if (!isMobile) {
       if (
-        JSON.stringify(props.formState) == JSON.stringify(defaults) &&
+        JSON.stringify(twdFormState) == JSON.stringify(defaults) &&
         props.results
       ) {
-        props.setResults(undefined);
-      } else if (!props.formState.event || props.formState.event.length > 2) {
+        setTwdResults(undefined);
+      } else if (!twdFormState.event || twdFormState.event.length > 2) {
         launchRequest();
       }
     }
-  }, [props.formState]);
+  }, [twdFormState]);
 
   return (
     <form onSubmit={handleSubmitButton}>
@@ -333,7 +342,7 @@ function TwdSearchForm(props) {
             </Col>
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
-                value={props.formState.matchInventory.crypt}
+                value={twdFormState.matchInventory.crypt}
                 name={'crypt'}
                 onChange={handleMatchInventoryChange}
               />
@@ -345,7 +354,7 @@ function TwdSearchForm(props) {
             </Col>
             <Col xs={6} className="d-inline px-0">
               <TwdSearchFormMatchInventory
-                value={props.formState.matchInventory.library}
+                value={twdFormState.matchInventory.library}
                 name={'library'}
                 onChange={handleMatchInventoryChange}
               />
@@ -354,7 +363,7 @@ function TwdSearchForm(props) {
           <Row className="py-1 pl-1 mx-0 align-items-center">
             <Col xs={{ span: 6, offset: 6 }} className="d-inline px-0">
               <TwdSearchFormMatchInventoryScaling
-                value={props.formState.matchInventory.scaling}
+                value={twdFormState.matchInventory.scaling}
                 onChange={handleMatchInventoryScalingChange}
               />
             </Col>
@@ -370,7 +379,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={8} className="d-inline px-0">
           <TwdSearchFormDate
-            date={props.formState.date}
+            date={twdFormState.date}
             onChange={handleDateChange}
           />
         </Col>
@@ -384,7 +393,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={8} className="d-inline px-0">
           <TwdSearchFormPlayers
-            players={props.formState.players}
+            players={twdFormState.players}
             onChange={handlePlayersChange}
           />
         </Col>
@@ -397,17 +406,16 @@ function TwdSearchForm(props) {
       <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
           <TwdSearchFormCrypt
-            state={props.formState.crypt}
-            setState={props.setFormState}
+            state={twdFormState.crypt}
+            setState={setTwdFormState}
             spinner={spinnerState}
-            cardBase={props.cryptCardBase}
           />
         </Col>
       </Row>
       <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
           <TwdSearchFormTraitStar
-            value={props.formState.traits}
+            value={twdFormState.traits}
             onChange={handleMultiChange}
           />
         </Col>
@@ -420,10 +428,9 @@ function TwdSearchForm(props) {
       <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
           <TwdSearchFormLibrary
-            state={props.formState.library}
-            setState={props.setFormState}
+            state={twdFormState.library}
+            setState={setTwdFormState}
             spinner={spinnerState}
-            cardBase={props.libraryCardBase}
           />
         </Col>
       </Row>
@@ -433,7 +440,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={9} className="d-flex justify-content-end px-0 z-index-0">
           <TwdSearchFormLibraryTotal
-            value={props.formState.libraryTotal}
+            value={twdFormState.libraryTotal}
             onChange={handleMultiChange}
           />
         </Col>
@@ -444,7 +451,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormClan
-            value={props.formState.clan}
+            value={twdFormState.clan}
             onChange={handleSelectChange}
           />
         </Col>
@@ -452,7 +459,7 @@ function TwdSearchForm(props) {
       <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
           <TwdSearchFormTraitMonoclan
-            value={props.formState.traits}
+            value={twdFormState.traits}
             onChange={handleMultiChange}
           />
         </Col>
@@ -463,7 +470,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={7} className="d-flex justify-content-end px-0 z-index-0">
           <TwdSearchFormCapacity
-            value={props.formState.capacity}
+            value={twdFormState.capacity}
             onChange={handleMultiChange}
           />
         </Col>
@@ -474,13 +481,13 @@ function TwdSearchForm(props) {
         </Col>
       </Row>
       <TwdSearchFormDisciplines
-        disciplines={props.formState.disciplines}
+        disciplines={twdFormState.disciplines}
         onChange={handleMultiChange}
       />
       <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline pr-0 pl-1">
           <TwdSearchFormCardtypes
-            value={props.formState.cardtypes}
+            value={twdFormState.cardtypes}
             onChange={handleCardtypeChange}
           />
         </Col>
@@ -491,7 +498,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormEvent
-            value={props.formState.event}
+            value={twdFormState.event}
             onChange={handleEventChange}
           />
         </Col>
@@ -502,8 +509,8 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormLocation
-            value={props.formState.location}
-            setValue={props.setFormState}
+            value={twdFormState.location}
+            setValue={setTwdFormState}
           />
         </Col>
       </Row>
@@ -513,8 +520,8 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormPlayer
-            value={props.formState.player}
-            setValue={props.setFormState}
+            value={twdFormState.player}
+            setValue={setTwdFormState}
           />
         </Col>
       </Row>

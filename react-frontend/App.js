@@ -8,9 +8,6 @@ import {
 import { ThemeProvider } from './context/ThemeContext.js';
 import AppContext from './context/AppContext';
 import Navigation from './pages/Navigation.jsx';
-import defaultsTwdForm from './pages/components/forms_data/defaultsTwdForm.json';
-import defaultsCryptForm from './pages/components/forms_data/defaultsCryptForm.json';
-import defaultsLibraryForm from './pages/components/forms_data/defaultsLibraryForm.json';
 import preconDecksData from './preconDecks.json';
 import preconData from './pages/components/forms_data/preconOptions.json';
 import setsAndPrecons from './pages/components/forms_data/setsAndPrecons.json';
@@ -28,45 +25,6 @@ const Cards = lazy(() => import('./pages/Cards.jsx'));
 const Inventory = lazy(() => import('./pages/Inventory.jsx'));
 
 function App(props) {
-  const [twdFormState, setTwdFormState] = useState(defaultsTwdForm);
-  const [cryptFormState, setCryptFormState] = useState(defaultsCryptForm);
-  const [libraryFormState, setLibraryFormState] = useState(defaultsLibraryForm);
-
-  const [decks, setDecks] = useState(undefined);
-  const [preconDecks, setPreconDecks] = useState({});
-  const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
-  const [lastDeck, setLastDeck] = useState({});
-  const [sharedDeck, setSharedDeck] = useState(undefined);
-
-  const [inventoryCrypt, setInventoryCrypt] = useState({});
-  const [inventoryLibrary, setInventoryLibrary] = useState({});
-  const [usedCryptCards, setUsedCryptCards] = useState({
-    soft: {},
-    hard: {},
-  });
-  const [usedLibraryCards, setUsedLibraryCards] = useState({
-    soft: {},
-    hard: {},
-  });
-
-  const isInventory =
-    Object.keys(inventoryCrypt).length > 0 ||
-    Object.keys(inventoryLibrary).length > 0;
-
-  const [cryptCardBase, setCryptCardBase] = useState(undefined);
-  const [libraryCardBase, setLibraryCardBase] = useState(undefined);
-
-  const [twdResults, setTwdResults] = useState(undefined);
-  const [cryptResults, setCryptResults] = useState(undefined);
-  const [libraryResults, setLibraryResults] = useState(undefined);
-
-  const [showTwdSearch, setShowTwdSearch] = useState(true);
-  const [showCryptSearch, setShowCryptSearch] = useState(true);
-  const [showLibrarySearch, setShowLibrarySearch] = useState(true);
-
-  const [changeTimer, setChangeTimer] = useState(false);
-  const [timers, setTimers] = useState([]);
-
   const {
     isMobile,
     username,
@@ -74,6 +32,7 @@ function App(props) {
     setPublicName,
     setEmail,
     lang,
+    changeLang,
     localizedCrypt,
     setLocalizedCrypt,
     localizedLibrary,
@@ -83,7 +42,30 @@ function App(props) {
     nativeLibrary,
     setNativeLibrary,
     setAddMode,
+    cryptCardBase,
+    setCryptCardBase,
+    libraryCardBase,
+    setLibraryCardBase,
+    setUsedCryptCards,
+    setUsedLibraryCards,
+    inventoryCrypt,
+    setInventoryCrypt,
+    inventoryLibrary,
+    setInventoryLibrary,
   } = useContext(AppContext);
+
+  const [decks, setDecks] = useState(undefined);
+  const [preconDecks, setPreconDecks] = useState({});
+  const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
+  const [lastDeck, setLastDeck] = useState({});
+  const [sharedDeck, setSharedDeck] = useState(undefined);
+
+  const isInventory =
+    Object.keys(inventoryCrypt).length > 0 ||
+    Object.keys(inventoryLibrary).length > 0;
+
+  const [changeTimer, setChangeTimer] = useState(false);
+  const [timers, setTimers] = useState([]);
 
   const deckRouter = (pointer) => {
     if (pointer) {
@@ -757,8 +739,6 @@ function App(props) {
       <Router>
         <ThemeProvider>
           <Navigation
-            showCryptSearch={showCryptSearch}
-            showLibrarySearch={showLibrarySearch}
             decks={decks}
             activeDeck={activeDeck}
             setActiveDeck={setActiveDeck}
@@ -780,38 +760,18 @@ function App(props) {
             </Route>
             <Route path="/twd">
               <Twd
-                showSearch={showTwdSearch}
-                setShowSearch={setShowTwdSearch}
                 getDecks={getDecks}
-                results={twdResults}
-                setResults={setTwdResults}
-                cryptCardBase={cryptCardBase}
-                libraryCardBase={libraryCardBase}
-                inventoryCrypt={inventoryCrypt}
-                inventoryLibrary={inventoryLibrary}
-                usedCryptCards={usedCryptCards}
-                usedLibraryCards={usedLibraryCards}
                 decks={decks}
-                formState={twdFormState}
-                setFormState={setTwdFormState}
                 setActiveDeck={setActiveDeck}
               />
             </Route>
             <Route path="/inventory">
               <Inventory
-                inventoryCrypt={inventoryCrypt}
-                inventoryLibrary={inventoryLibrary}
-                setInventoryCrypt={setInventoryCrypt}
-                setInventoryLibrary={setInventoryLibrary}
                 inventoryDeckAdd={inventoryDeckAdd}
                 inventoryAddToState={inventoryAddToState}
                 cardAdd={inventoryCardAdd}
                 cardChange={inventoryCardChange}
-                cryptCardBase={cryptCardBase}
-                libraryCardBase={libraryCardBase}
                 whoAmI={whoAmI}
-                usedCryptCards={usedCryptCards}
-                usedLibraryCards={usedLibraryCards}
                 decks={decks}
               />
             </Route>
@@ -821,30 +781,20 @@ function App(props) {
                 changeTimer={changeTimer}
                 decks={decks}
                 preconDecks={preconDecks}
-                usedCryptCards={usedCryptCards}
-                usedLibraryCards={usedLibraryCards}
                 getDecks={getDecks}
                 activeDeck={activeDeck}
                 setActiveDeck={setActiveDeck}
                 sharedDeck={sharedDeck}
                 setSharedDeck={setSharedDeck}
-                inventoryCrypt={inventoryCrypt}
-                inventoryLibrary={inventoryLibrary}
-                setInventoryCrypt={setInventoryCrypt}
-                setInventoryLibrary={setInventoryLibrary}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 whoAmI={whoAmI}
-                cryptCardBase={cryptCardBase}
-                libraryCardBase={libraryCardBase}
               />
             </Route>
             <Route path="/crypt">
               <Crypt
                 deckRouter={deckRouter}
                 changeTimer={changeTimer}
-                showSearch={showCryptSearch}
-                setShowSearch={setShowCryptSearch}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 decks={decks}
@@ -855,25 +805,13 @@ function App(props) {
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
                 setActiveDeck={setActiveDeck}
-                results={cryptResults}
-                setResults={setCryptResults}
-                inventoryCrypt={inventoryCrypt}
-                inventoryLibrary={inventoryLibrary}
                 isInventory={isInventory}
-                formState={cryptFormState}
-                setFormState={setCryptFormState}
-                cryptCardBase={cryptCardBase}
-                libraryCardBase={libraryCardBase}
-                usedCryptCards={usedCryptCards}
-                usedLibraryCards={usedLibraryCards}
               />
             </Route>
             <Route path="/library">
               <Library
                 deckRouter={deckRouter}
                 changeTimer={changeTimer}
-                showSearch={showLibrarySearch}
-                setShowSearch={setShowLibrarySearch}
                 cardAdd={deckCardAdd}
                 cardChange={deckCardChange}
                 decks={decks}
@@ -884,38 +822,13 @@ function App(props) {
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
                 setActiveDeck={setActiveDeck}
-                results={libraryResults}
-                setResults={setLibraryResults}
-                inventoryCrypt={inventoryCrypt}
-                inventoryLibrary={inventoryLibrary}
                 isInventory={isInventory}
-                formState={libraryFormState}
-                setFormState={setLibraryFormState}
-                cryptCardBase={cryptCardBase}
-                libraryCardBase={libraryCardBase}
-                usedCryptCards={usedCryptCards}
-                usedLibraryCards={usedLibraryCards}
               />
             </Route>
-            <Route
-              path="/cards"
-              exact
-              component={(props) => (
-                <Cards
-                  cryptCardBase={cryptCardBase}
-                  libraryCardBase={libraryCardBase}
-                />
-              )}
-            />
+            <Route path="/cards" exact component={(props) => <Cards />} />
             <Route
               path="/cards/:id"
-              component={(props) => (
-                <Cards
-                  id={props.match.params.id}
-                  cryptCardBase={cryptCardBase}
-                  libraryCardBase={libraryCardBase}
-                />
-              )}
+              component={(props) => <Cards id={props.match.params.id} />}
             />
           </Suspense>
         </Switch>

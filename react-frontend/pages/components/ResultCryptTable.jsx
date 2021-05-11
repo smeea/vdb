@@ -15,7 +15,13 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext';
 
 function ResultCryptTable(props) {
-  const { addMode, inventoryMode, isMobile } = useContext(AppContext);
+  const {
+    inventoryCrypt,
+    usedCryptCards,
+    addMode,
+    inventoryMode,
+    isMobile,
+  } = useContext(AppContext);
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
   let resultTrClass;
@@ -69,22 +75,22 @@ function ResultCryptTable(props) {
     let HardUsedDescription;
 
     if (inventoryMode) {
-      if (Object.keys(props.inventoryCrypt).includes(card['Id'].toString())) {
-        inInventory = props.inventoryCrypt[card['Id']].q;
+      if (Object.keys(inventoryCrypt).includes(card['Id'].toString())) {
+        inInventory = inventoryCrypt[card['Id']].q;
       } else {
         inInventory = 0;
       }
 
-      if (props.usedCards && props.usedCards.soft[card['Id']]) {
-        SoftUsedDescription = Object.keys(props.usedCards.soft[card['Id']]).map(
+      if (usedCryptCards && usedCryptCards.soft[card['Id']]) {
+        SoftUsedDescription = Object.keys(usedCryptCards.soft[card['Id']]).map(
           (id) => {
-            if (softUsedMax < props.usedCards.soft[card['Id']][id]) {
-              softUsedMax = props.usedCards.soft[card['Id']][id];
+            if (softUsedMax < usedCryptCards.soft[card['Id']][id]) {
+              softUsedMax = usedCryptCards.soft[card['Id']][id];
             }
             return (
               <UsedDescription
                 key={id}
-                q={props.usedCards.soft[card['Id']][id]}
+                q={usedCryptCards.soft[card['Id']][id]}
                 deckName={props.decks[id]['name']}
                 t="s"
               />
@@ -93,14 +99,14 @@ function ResultCryptTable(props) {
         );
       }
 
-      if (props.usedCards && props.usedCards.hard[card['Id']]) {
-        HardUsedDescription = Object.keys(props.usedCards.hard[card['Id']]).map(
+      if (usedCryptCards && usedCryptCards.hard[card['Id']]) {
+        HardUsedDescription = Object.keys(usedCryptCards.hard[card['Id']]).map(
           (id) => {
-            hardUsedTotal += props.usedCards.hard[card['Id']][id];
+            hardUsedTotal += usedCryptCards.hard[card['Id']][id];
             return (
               <UsedDescription
                 key={id}
-                q={props.usedCards.hard[card['Id']][id]}
+                q={usedCryptCards.hard[card['Id']][id]}
                 deckName={props.decks[id]['name']}
                 t="h"
               />

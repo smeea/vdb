@@ -16,7 +16,7 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryCryptTable(props) {
-  const { isMobile } = useContext(AppContext);
+  const { usedCryptCards, isMobile } = useContext(AppContext);
 
   let resultTrClass;
 
@@ -62,17 +62,17 @@ function InventoryCryptTable(props) {
       let SoftUsedDescription;
       let HardUsedDescription;
 
-      if (props.usedCards && props.usedCards.soft[card.c['Id']]) {
+      if (usedCryptCards && usedCryptCards.soft[card.c['Id']]) {
         SoftUsedDescription = Object.keys(
-          props.usedCards.soft[card.c['Id']]
+          usedCryptCards.soft[card.c['Id']]
         ).map((id) => {
-          if (softUsedMax < props.usedCards.soft[card.c['Id']][id]) {
-            softUsedMax = props.usedCards.soft[card.c['Id']][id];
+          if (softUsedMax < usedCryptCards.soft[card.c['Id']][id]) {
+            softUsedMax = usedCryptCards.soft[card.c['Id']][id];
           }
           return (
             <UsedDescription
               key={card.c['Id']}
-              q={props.usedCards.soft[card.c['Id']][id]}
+              q={usedCryptCards.soft[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
               t="s"
             />
@@ -80,15 +80,15 @@ function InventoryCryptTable(props) {
         });
       }
 
-      if (props.usedCards && props.usedCards.hard[card.c['Id']]) {
+      if (usedCryptCards && usedCryptCards.hard[card.c['Id']]) {
         HardUsedDescription = Object.keys(
-          props.usedCards.hard[card.c['Id']]
+          usedCryptCards.hard[card.c['Id']]
         ).map((id) => {
-          hardUsedTotal += props.usedCards.hard[card.c['Id']][id];
+          hardUsedTotal += usedCryptCards.hard[card.c['Id']][id];
           return (
             <UsedDescription
               key={card.c['Id']}
-              q={props.usedCards.hard[card.c['Id']][id]}
+              q={usedCryptCards.hard[card.c['Id']][id]}
               deckName={props.decks[id]['name']}
               t="h"
             />

@@ -148,8 +148,6 @@ function DeckLibrary(props) {
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
-            inventoryLibrary={props.inventoryLibrary}
-            usedCards={props.usedCards}
             decks={props.decks}
             deckUpdate={props.deckUpdate}
             inSearch={props.inSearch}
@@ -181,8 +179,6 @@ function DeckLibrary(props) {
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
-            inventoryLibrary={props.inventoryLibrary}
-            usedCards={props.usedCards}
             decks={props.decks}
             deckUpdate={props.deckUpdate}
             inSearch={props.inSearch}
@@ -230,7 +226,6 @@ function DeckLibrary(props) {
             cardAdd={props.cardAdd}
             setShowAdd={setShowAdd}
             cards={props.cards}
-            cardBase={props.cardBase}
           />
         ) : (
           <Modal
@@ -260,7 +255,6 @@ function DeckLibrary(props) {
                   cardAdd={props.cardAdd}
                   setShowAdd={setShowAdd}
                   cards={props.cards}
-                  cardBase={props.cardBase}
                 />
               </Container>
             </Modal.Body>

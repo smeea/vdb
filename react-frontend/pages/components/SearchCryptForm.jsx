@@ -20,9 +20,17 @@ import defaultsCryptForm from './forms_data/defaultsCryptForm.json';
 import AppContext from '../../context/AppContext.js';
 
 function SearchCryptForm(props) {
-  const { inventoryMode, hideMissing, setHideMissing, isMobile } = useContext(
-    AppContext
-  );
+  const {
+    setShowCryptSearch,
+    setCryptResults,
+    cryptFormState,
+    setCryptFormState,
+    cryptCardBase,
+    inventoryMode,
+    hideMissing,
+    setHideMissing,
+    isMobile,
+  } = useContext(AppContext);
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
@@ -32,8 +40,8 @@ function SearchCryptForm(props) {
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
-    if (props.cardBase && query) {
-      props.setFormState((prevState) => {
+    if (cryptCardBase && query) {
+      setCryptFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
           if (typeof query[i] === 'object') {
@@ -47,7 +55,7 @@ function SearchCryptForm(props) {
         return state;
       });
     }
-  }, [props.cardBase]);
+  }, [cryptCardBase]);
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
@@ -155,7 +163,7 @@ function SearchCryptForm(props) {
 
   const handleTextChange = (event) => {
     const value = event.target.value;
-    props.setFormState((prevState) => ({
+    setCryptFormState((prevState) => ({
       ...prevState,
       text: value,
     }));
@@ -163,8 +171,8 @@ function SearchCryptForm(props) {
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
-    const newState = props.formState[name];
-    props.setFormState((prevState) => ({
+    const newState = cryptFormState[name];
+    setCryptFormState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -172,9 +180,9 @@ function SearchCryptForm(props) {
 
   const handleMultiChange = (event) => {
     const { name, value } = event.target;
-    const newState = props.formState[name];
+    const newState = cryptFormState[name];
     newState[value] = !newState[value];
-    props.setFormState((prevState) => ({
+    setCryptFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
@@ -182,9 +190,9 @@ function SearchCryptForm(props) {
 
   const handleNestedChange = (event) => {
     const { name, value } = event;
-    const newState = props.formState[name];
+    const newState = cryptFormState[name];
     newState[name] = value;
-    props.setFormState((prevState) => ({
+    setCryptFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
@@ -192,9 +200,9 @@ function SearchCryptForm(props) {
 
   const handleMorelessChange = (event) => {
     const { name, value } = event;
-    const newState = props.formState[name];
+    const newState = cryptFormState[name];
     newState['moreless'] = value;
-    props.setFormState((prevState) => ({
+    setCryptFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
@@ -202,7 +210,7 @@ function SearchCryptForm(props) {
 
   const handleDisciplinesChange = (event) => {
     const { id, name } = event.target;
-    const newState = props.formState.disciplines;
+    const newState = cryptFormState.disciplines;
     const max = name == 'disciplines' ? 2 : 1;
 
     if (newState[id] < max) {
@@ -210,15 +218,15 @@ function SearchCryptForm(props) {
     } else {
       newState[id] = 0;
     }
-    props.setFormState((prevState) => ({
+    setCryptFormState((prevState) => ({
       ...prevState,
       disciplines: newState,
     }));
   };
 
   const handleClearButton = () => {
-    props.setFormState(defaults);
-    props.setResults(undefined);
+    setCryptFormState(defaults);
+    setCryptResults(undefined);
     setPreresults(undefined);
     setShowError(false);
     history.push('/crypt');
@@ -230,12 +238,12 @@ function SearchCryptForm(props) {
   };
 
   const handleShowResults = () => {
-    props.setResults(preresults);
+    setCryptResults(preresults);
   };
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/crypt`;
-    const input = JSON.parse(JSON.stringify(props.formState));
+    const input = JSON.parse(JSON.stringify(cryptFormState));
 
     const multiSelectForms = [
       'disciplines',
@@ -290,25 +298,25 @@ function SearchCryptForm(props) {
       fetch(url, options)
         .then((response) => response.json())
         .then((data) => {
-          props.setShowSearch(false);
+          setShowCryptSearch(false);
           const res = data.map((i) => {
-            return props.cardBase[i];
+            return cryptCardBase[i];
           });
           if (!isMobile) {
             setPreresults(res);
           } else {
-            props.setResults(res);
+            setCryptResults(res);
           }
           setSpinnerState(false);
         })
         .catch((error) => {
-          props.setResults([]);
+          setCryptResults([]);
           setPreresults([]);
           setShowError(true);
           setSpinnerState(false);
         });
     } else {
-      props.setResults(undefined);
+      setCryptResults(undefined);
       setPreresults(undefined);
     }
   };
@@ -316,22 +324,22 @@ function SearchCryptForm(props) {
   useEffect(() => {
     if (!isMobile) {
       if (
-        JSON.stringify(props.formState) == JSON.stringify(defaults) &&
+        JSON.stringify(cryptFormState) == JSON.stringify(defaults) &&
         props.results
       ) {
-        props.setResults(undefined);
-      } else if (!props.formState.text || props.formState.text.length > 2) {
+        setCryptResults(undefined);
+      } else if (!cryptFormState.text || cryptFormState.text.length > 2) {
         launchRequest();
       }
     }
-  }, [props.formState]);
+  }, [cryptFormState]);
 
   useEffect(() => {
     if (!isMobile && preresults) {
       if (preresults && preresults.length < showLimit) {
-        props.setResults(preresults);
+        setCryptResults(preresults);
       } else {
-        props.setResults(undefined);
+        setCryptResults(undefined);
       }
     }
   }, [preresults]);
@@ -339,7 +347,7 @@ function SearchCryptForm(props) {
   return (
     <form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
-        value={props.formState.text}
+        value={cryptFormState.text}
         onChange={handleTextChange}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
@@ -361,54 +369,54 @@ function SearchCryptForm(props) {
         </div>
       )}
       <SearchCryptFormDisciplines
-        value={props.formState.disciplines}
+        value={cryptFormState.disciplines}
         onChange={handleDisciplinesChange}
       />
       <SearchCryptFormVirtues
-        value={props.formState.disciplines}
+        value={cryptFormState.disciplines}
         onChange={handleDisciplinesChange}
       />
       <SearchCryptFormCapacity
-        value={props.formState.capacity}
+        value={cryptFormState.capacity}
         onChange={handleNestedChange}
         onMorelessChange={handleMorelessChange}
       />
       <SearchCryptFormClan
-        value={props.formState.clan}
+        value={cryptFormState.clan}
         onChange={handleSelectChange}
       />
       <SearchCryptFormSect
-        value={props.formState.sect}
+        value={cryptFormState.sect}
         onChange={handleSelectChange}
       />
       <SearchCryptFormVotes
-        value={props.formState.votes}
+        value={cryptFormState.votes}
         onChange={handleSelectChange}
       />
       <SearchCryptFormTitles
-        value={props.formState.titles}
+        value={cryptFormState.titles}
         onChange={handleMultiChange}
       />
       <SearchCryptFormGroup
-        value={props.formState.group}
+        value={cryptFormState.group}
         onChange={handleMultiChange}
       />
       <SearchCryptFormTraits
-        value={props.formState.traits}
+        value={cryptFormState.traits}
         onChange={handleMultiChange}
       />
       <SearchFormSet
-        value={props.formState.set}
+        value={cryptFormState.set}
         onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
       />
       <SearchFormPrecon
-        value={props.formState.precon}
+        value={cryptFormState.precon}
         onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
       />
       <SearchFormArtist
-        value={props.formState.artist}
+        value={cryptFormState.artist}
         onChange={handleSelectChange}
         target="crypt"
       />

@@ -23,9 +23,18 @@ import DeckChangeDescription from './components/DeckChangeDescription.jsx';
 import AppContext from '../context/AppContext';
 
 function Decks(props) {
-  const { inventoryMode, setInventoryMode, username, isMobile } = useContext(
-    AppContext
-  );
+  const {
+    inventoryCrypt,
+    inventoryLibrary,
+    usedCryptCards,
+    usedLibraryCards,
+    cryptCardBase,
+    libraryCardBase,
+    inventoryMode,
+    setInventoryMode,
+    username,
+    isMobile,
+  } = useContext(AppContext);
 
   const query = new URLSearchParams(useLocation().search);
   const [showInfo, setShowInfo] = useState(false);
@@ -46,24 +55,24 @@ function Decks(props) {
 
     Object.keys(deck.crypt).map((card) => {
       let softUsedMax = 0;
-      if (props.usedCryptCards.soft[card]) {
-        Object.keys(props.usedCryptCards.soft[card]).map((id) => {
-          if (softUsedMax < props.usedCryptCards.soft[card][id]) {
-            softUsedMax = props.usedCryptCards.soft[card][id];
+      if (usedCryptCards.soft[card]) {
+        Object.keys(usedCryptCards.soft[card]).map((id) => {
+          if (softUsedMax < usedCryptCards.soft[card][id]) {
+            softUsedMax = usedCryptCards.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (props.usedCryptCards.hard[card]) {
-        Object.keys(props.usedCryptCards.hard[card]).map((id) => {
-          hardUsedTotal += props.usedCryptCards.hard[card][id];
+      if (usedCryptCards.hard[card]) {
+        Object.keys(usedCryptCards.hard[card]).map((id) => {
+          hardUsedTotal += usedCryptCards.hard[card][id];
         });
       }
 
       let miss = softUsedMax + hardUsedTotal;
       if (!deck.inventory_type && deck.crypt[card].q > softUsedMax)
         miss += deck.crypt[card].q - softUsedMax;
-      if (props.inventoryCrypt[card]) miss -= props.inventoryCrypt[card].q;
+      if (inventoryCrypt[card]) miss -= inventoryCrypt[card].q;
 
       if (miss > 0) {
         crypt[card] = { ...deck.crypt[card] };
@@ -79,24 +88,24 @@ function Decks(props) {
 
     Object.keys(deck.library).map((card) => {
       let softUsedMax = 0;
-      if (props.usedLibraryCards.soft[card]) {
-        Object.keys(props.usedLibraryCards.soft[card]).map((id) => {
-          if (softUsedMax < props.usedLibraryCards.soft[card][id]) {
-            softUsedMax = props.usedLibraryCards.soft[card][id];
+      if (usedLibraryCards.soft[card]) {
+        Object.keys(usedLibraryCards.soft[card]).map((id) => {
+          if (softUsedMax < usedLibraryCards.soft[card][id]) {
+            softUsedMax = usedLibraryCards.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (props.usedLibraryCards.hard[card]) {
-        Object.keys(props.usedLibraryCards.hard[card]).map((id) => {
-          hardUsedTotal += props.usedLibraryCards.hard[card][id];
+      if (usedLibraryCards.hard[card]) {
+        Object.keys(usedLibraryCards.hard[card]).map((id) => {
+          hardUsedTotal += usedLibraryCards.hard[card][id];
         });
       }
 
       let miss = softUsedMax + hardUsedTotal;
       if (!deck.inventory_type && deck.library[card].q > softUsedMax)
         miss += deck.library[card].q - softUsedMax;
-      if (props.inventoryLibrary[card]) miss -= props.inventoryLibrary[card].q;
+      if (inventoryLibrary[card]) miss -= inventoryLibrary[card].q;
 
       if (miss > 0) {
         library[card] = { ...deck.library[card] };
@@ -129,10 +138,10 @@ function Decks(props) {
         if (data.error === undefined) {
           Object.keys(data).map((i) => {
             Object.keys(data[i].crypt).map((j) => {
-              data[i].crypt[j].c = props.cryptCardBase[j];
+              data[i].crypt[j].c = cryptCardBase[j];
             });
             Object.keys(data[i].library).map((j) => {
-              data[i].library[j].c = props.libraryCardBase[j];
+              data[i].library[j].c = libraryCardBase[j];
             });
           });
           props.setSharedDeck(data);
@@ -181,7 +190,7 @@ function Decks(props) {
   }
 
   useEffect(() => {
-    if (hash && props.cryptCardBase && props.libraryCardBase) {
+    if (hash && cryptCardBase && libraryCardBase) {
       const crypt = {};
       const library = {};
 
@@ -193,12 +202,12 @@ function Decks(props) {
           if (j[0] > 200000) {
             crypt[j[0]] = {
               q: parseInt(j[1]),
-              c: props.cryptCardBase[j[0]],
+              c: cryptCardBase[j[0]],
             };
           } else {
             library[j[0]] = {
               q: parseInt(j[1]),
-              c: props.libraryCardBase[j[0]],
+              c: libraryCardBase[j[0]],
             };
           }
         });
@@ -215,14 +224,14 @@ function Decks(props) {
       props.setSharedDeck({ deckInUrl: deck });
       props.setActiveDeck({ src: 'shared', deckid: 'deckInUrl' });
     }
-  }, [hash, props.cryptCardBase, props.libraryCardBase]);
+  }, [hash, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (
       !props.activeDeck.deckid &&
       query.get('id') &&
-      props.cryptCardBase &&
-      props.libraryCardBase
+      cryptCardBase &&
+      libraryCardBase
     ) {
       if (query.get('id').length == 32) {
         props.setActiveDeck({ src: 'shared', deckid: query.get('id') });
@@ -245,11 +254,9 @@ function Decks(props) {
       props.activeDeck.src == 'twd' &&
       !(props.sharedDeck && props.sharedDeck[props.activeDeck.deckid])
     ) {
-      props.cryptCardBase &&
-        props.libraryCardBase &&
-        getDeck(props.activeDeck.deckid);
+      cryptCardBase && libraryCardBase && getDeck(props.activeDeck.deckid);
     }
-  }, [query, props.activeDeck, props.cryptCardBase, props.libraryCardBase]);
+  }, [query, props.activeDeck, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons')
@@ -446,10 +453,7 @@ function Decks(props) {
                   deckid={props.activeDeck.deckid}
                   cards={props.deckRouter(props.activeDeck).crypt}
                   isAuthor={isAuthor}
-                  cardBase={props.cryptCardBase}
-                  inventoryCrypt={props.inventoryCrypt}
                   decks={props.decks}
-                  usedCards={props.usedCryptCards}
                   deckUpdate={deckUpdate}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}
@@ -462,10 +466,7 @@ function Decks(props) {
                   deckid={props.activeDeck.deckid}
                   cards={props.deckRouter(props.activeDeck).library}
                   isAuthor={isAuthor}
-                  cardBase={props.libraryCardBase}
-                  inventoryLibrary={props.inventoryLibrary}
                   decks={props.decks}
-                  usedCards={props.usedLibraryCards}
                   deckUpdate={deckUpdate}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}

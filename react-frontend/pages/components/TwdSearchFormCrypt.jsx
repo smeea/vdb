@@ -12,7 +12,7 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function TwdSearchFormCrypt(props) {
-  const { isMobile } = useContext(AppContext);
+  const { cryptCardBase, isMobile } = useContext(AppContext);
   const [modalCard, setModalCard] = useState(undefined);
 
   const handleAdd = (event) => {
@@ -39,21 +39,21 @@ function TwdSearchFormCrypt(props) {
           {!isMobile ? (
             <OverlayTrigger
               placement="left"
-              overlay={<CardPopover card={props.cardBase[id]} />}
+              overlay={<CardPopover card={cryptCardBase[id]} />}
             >
               <div
                 className="pt-1"
-                onClick={() => setModalCard(props.cardBase[id])}
+                onClick={() => setModalCard(cryptCardBase[id])}
               >
-                <ResultCryptName card={props.cardBase[id]} />
+                <ResultCryptName card={cryptCardBase[id]} />
               </div>
             </OverlayTrigger>
           ) : (
             <div
               className="pt-1"
-              onClick={() => setModalCard(props.cardBase[id])}
+              onClick={() => setModalCard(cryptCardBase[id])}
             >
-              <ResultCryptName card={props.cardBase[id]} />
+              <ResultCryptName card={cryptCardBase[id]} />
             </div>
           )}
         </div>
@@ -94,12 +94,12 @@ function TwdSearchFormCrypt(props) {
           <>
             <div className="d-flex align-items-center justify-content-between">
               <div className="d-flex align-items-center">
-                <ResultCryptCapacity value={props.cardBase[card]['Capacity']} />
+                <ResultCryptCapacity value={cryptCardBase[card]['Capacity']} />
                 <div className="px-2">
-                  {props.cardBase[card]['Banned'] ? (
+                  {cryptCardBase[card]['Banned'] ? (
                     <>
-                      <strike>{props.cardBase[card]['Name']}</strike>
-                      {props.cardBase[card]['Adv'] && (
+                      <strike>{cryptCardBase[card]['Name']}</strike>
+                      {cryptCardBase[card]['Adv'] && (
                         <div className="d-inline pl-1">
                           <img
                             className="advanced-image-results"
@@ -114,8 +114,8 @@ function TwdSearchFormCrypt(props) {
                     </>
                   ) : (
                     <>
-                      {props.cardBase[card]['Name']}
-                      {props.cardBase[card]['Adv'] && (
+                      {cryptCardBase[card]['Name']}
+                      {cryptCardBase[card]['Adv'] && (
                         <div className="d-inline pl-1">
                           <img
                             className="advanced-image-results"
@@ -128,12 +128,12 @@ function TwdSearchFormCrypt(props) {
                   )}
                 </div>
                 <div className="pr-3">
-                  <ResultCryptClan value={props.cardBase[card]['Clan']} />
+                  <ResultCryptClan value={cryptCardBase[card]['Clan']} />
                 </div>
               </div>
               <div className="d-flex flex-nowrap">
                 <ResultCryptDisciplines
-                  value={props.cardBase[card]['Disciplines']}
+                  value={cryptCardBase[card]['Disciplines']}
                 />
               </div>
             </div>

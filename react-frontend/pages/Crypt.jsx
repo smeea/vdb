@@ -11,7 +11,14 @@ import DeckLibrary from './components/DeckLibrary.jsx';
 import AppContext from '../context/AppContext';
 
 function Crypt(props) {
-  const { addMode, setAddMode, username, isMobile } = useContext(AppContext);
+  const {
+    showCryptSearch,
+    cryptResults,
+    addMode,
+    setAddMode,
+    username,
+    isMobile,
+  } = useContext(AppContext);
   const [sortMethod, setSortMethod] = useState('Capacity - Min to Max');
 
   let isBranches;
@@ -79,9 +86,6 @@ function Crypt(props) {
                     deckid={props.activeDeck.deckid}
                     cards={props.deckRouter(props.activeDeck).crypt}
                     isAuthor={true}
-                    cardBase={props.cryptCardBase}
-                    inventoryCrypt={props.inventoryCrypt}
-                    usedCards={props.usedCryptCards}
                     decks={props.decks}
                     inSearch={true}
                   />
@@ -93,9 +97,6 @@ function Crypt(props) {
                     deckid={props.activeDeck.deckid}
                     cards={props.deckRouter(props.activeDeck).library}
                     isAuthor={true}
-                    cardBase={props.libraryCardBase}
-                    inventoryLibrary={props.inventoryLibrary}
-                    usedCards={props.usedLibraryCards}
                     decks={props.decks}
                     inSearch={true}
                   />
@@ -108,16 +109,15 @@ function Crypt(props) {
           md={12}
           xl={5}
           className={
-            !(isMobile && props.showSearch)
+            !(isMobile && showCryptSearch)
               ? 'px-0 px-lg-4'
               : 'col-hide px-0 lx-lg-4'
           }
         >
-          {props.results && (
+          {cryptResults && (
             <ResultCrypt
               cardAdd={props.cardAdd}
               cardChange={props.cardChange}
-              cards={props.results}
               crypt={
                 props.deckRouter(props.activeDeck) &&
                 props.deckRouter(props.activeDeck).crypt
@@ -125,12 +125,7 @@ function Crypt(props) {
               activeDeck={props.activeDeck}
               sortMethod={sortMethod}
               setSortMethod={setSortMethod}
-              showSearch={props.showSearch}
-              setShowSearch={props.setShowSearch}
-              setResults={props.setResults}
               isInventory={props.isInventory}
-              inventoryCrypt={props.inventoryCrypt}
-              usedCards={props.usedCryptCards}
               decks={props.decks}
             />
           )}
@@ -139,23 +134,14 @@ function Crypt(props) {
           md={12}
           xl={3}
           className={
-            !isMobile || (isMobile && props.showSearch)
+            !isMobile || (isMobile && showCryptSearch)
               ? isMobile
                 ? 'px-1 py-1'
                 : 'px-0'
               : 'col-hide'
           }
         >
-          <SearchCryptForm
-            results={props.results}
-            setResults={props.setResults}
-            showSearch={props.showSearch}
-            setShowSearch={props.setShowSearch}
-            formState={props.formState}
-            setFormState={props.setFormState}
-            cardBase={props.cryptCardBase}
-            isInventory={props.isInventory}
-          />
+          <SearchCryptForm isInventory={props.isInventory} />
         </Col>
         {(!username || !addMode) && !isMobile && <Col xl={1} />}
       </Row>

@@ -30,8 +30,6 @@ function DeckMissing(props) {
           setShow={setShowModal}
           handleClose={handleCloseModal}
           setShowButtons={props.setShowButtons}
-          cryptCardBase={props.cryptCardBase}
-          libraryCardBase={props.libraryCardBase}
         />
       )}
     </>

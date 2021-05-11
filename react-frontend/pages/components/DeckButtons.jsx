@@ -136,8 +136,6 @@ function DeckButtons(props) {
             missingCrypt={props.missingCrypt}
             missingLibrary={props.missingLibrary}
             setShowButtons={props.setShowButtons}
-            cryptCardBase={props.cryptCardBase}
-            libraryCardBase={props.libraryCardBase}
           />
         </div>
       )}

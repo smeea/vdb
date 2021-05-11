@@ -18,7 +18,16 @@ import SearchFormArtist from './SearchFormArtist.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function SearchLibraryForm(props) {
-  const { hideMissing, setHideMissing, isMobile } = useContext(AppContext);
+  const {
+    setShowLibrarySearch,
+    setLibraryResults,
+    libraryFormState,
+    setLibraryFormState,
+    libraryCardBase,
+    hideMissing,
+    setHideMissing,
+    isMobile,
+  } = useContext(AppContext);
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
   const showLimit = 300;
@@ -27,8 +36,8 @@ function SearchLibraryForm(props) {
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
-    if (props.cardBase && query) {
-      props.setFormState((prevState) => {
+    if (libraryCardBase && query) {
+      setLibraryFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
           if (typeof query[i] === 'object') {
@@ -42,7 +51,7 @@ function SearchLibraryForm(props) {
         return state;
       });
     }
-  }, [props.cardBase]);
+  }, [libraryCardBase]);
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
@@ -95,7 +104,7 @@ function SearchLibraryForm(props) {
 
   const handleTextChange = (event) => {
     const value = event.target.value;
-    props.setFormState((prevState) => ({
+    setLibraryFormState((prevState) => ({
       ...prevState,
       text: value,
     }));
@@ -103,7 +112,7 @@ function SearchLibraryForm(props) {
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
-    props.setFormState((prevState) => ({
+    setLibraryFormState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -111,9 +120,9 @@ function SearchLibraryForm(props) {
 
   const handleMultiChange = (event) => {
     const { name, value } = event.target;
-    const newState = props.formState[name];
+    const newState = libraryFormState[name];
     newState[value] = !newState[value];
-    props.setFormState((prevState) => ({
+    setLibraryFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
@@ -121,9 +130,9 @@ function SearchLibraryForm(props) {
 
   const handleNestedChange = (event) => {
     const { name, value } = event;
-    const newState = props.formState[name];
+    const newState = libraryFormState[name];
     newState[name] = value;
-    props.setFormState((prevState) => ({
+    setLibraryFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
@@ -131,17 +140,17 @@ function SearchLibraryForm(props) {
 
   const handleMorelessChange = (event) => {
     const { name, value } = event;
-    const newState = props.formState[name];
+    const newState = libraryFormState[name];
     newState['moreless'] = value;
-    props.setFormState((prevState) => ({
+    setLibraryFormState((prevState) => ({
       ...prevState,
       [name]: newState,
     }));
   };
 
   const handleClearButton = () => {
-    props.setFormState(defaults);
-    props.setResults(undefined);
+    setLibraryFormState(defaults);
+    setLibraryResults(undefined);
     setPreresults(undefined);
     setShowError(false);
     history.push('/library');
@@ -153,12 +162,12 @@ function SearchLibraryForm(props) {
   };
 
   const handleShowResults = () => {
-    props.setResults(preresults);
+    setLibraryResults(preresults);
   };
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/library`;
-    const input = JSON.parse(JSON.stringify(props.formState));
+    const input = JSON.parse(JSON.stringify(libraryFormState));
 
     const multiSelectForms = ['traits', 'set', 'precon'];
 
@@ -203,25 +212,25 @@ function SearchLibraryForm(props) {
       fetch(url, options)
         .then((response) => response.json())
         .then((data) => {
-          props.setShowSearch(false);
+          setShowLibrarySearch(false);
           const res = data.map((i) => {
-            return props.cardBase[i];
+            return libraryCardBase[i];
           });
           if (!isMobile) {
             setPreresults(res);
           } else {
-            props.setResults(res);
+            setLibraryResults(res);
           }
           setSpinnerState(false);
         })
         .catch((error) => {
-          props.setResults([]);
+          setLibraryResults([]);
           setPreresults([]);
           setShowError(true);
           setSpinnerState(false);
         });
     } else {
-      props.setResults(undefined);
+      setLibraryResults(undefined);
       setPreresults(undefined);
     }
   };
@@ -229,22 +238,22 @@ function SearchLibraryForm(props) {
   useEffect(() => {
     if (!isMobile) {
       if (
-        JSON.stringify(props.formState) == JSON.stringify(defaults) &&
+        JSON.stringify(libraryFormState) == JSON.stringify(defaults) &&
         props.results
       ) {
-        props.setResults(undefined);
-      } else if (!props.formState.text || props.formState.text.length > 2) {
+        setLibraryResults(undefined);
+      } else if (!libraryFormState.text || libraryFormState.text.length > 2) {
         launchRequest();
       }
     }
-  }, [props.formState]);
+  }, [libraryFormState]);
 
   useEffect(() => {
     if (!isMobile && preresults) {
       if (preresults && preresults.length < showLimit) {
-        props.setResults(preresults);
+        setLibraryResults(preresults);
       } else {
-        props.setResults(undefined);
+        setLibraryResults(undefined);
       }
     }
   }, [preresults]);
@@ -252,7 +261,7 @@ function SearchLibraryForm(props) {
   return (
     <form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
-        value={props.formState.text}
+        value={libraryFormState.text}
         onChange={handleTextChange}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
@@ -275,51 +284,51 @@ function SearchLibraryForm(props) {
         </div>
       )}
       <SearchLibraryFormType
-        value={props.formState.type}
+        value={libraryFormState.type}
         onChange={handleSelectChange}
       />
       <SearchLibraryFormDiscipline
-        value={props.formState.discipline}
+        value={libraryFormState.discipline}
         onChange={handleSelectChange}
       />
       <SearchLibraryFormClan
-        value={props.formState.clan}
+        value={libraryFormState.clan}
         onChange={handleSelectChange}
       />
       <SearchLibraryFormSect
-        value={props.formState.sect}
+        value={libraryFormState.sect}
         onChange={handleSelectChange}
       />
       <SearchLibraryFormTitle
-        value={props.formState.title}
+        value={libraryFormState.title}
         onChange={handleSelectChange}
       />
       <SearchLibraryFormBloodCost
-        value={props.formState.blood}
+        value={libraryFormState.blood}
         onChange={handleNestedChange}
         onMorelessChange={handleMorelessChange}
       />
       <SearchLibraryFormPoolCost
-        value={props.formState.pool}
+        value={libraryFormState.pool}
         onChange={handleNestedChange}
         onMorelessChange={handleMorelessChange}
       />
       <SearchLibraryFormTraits
-        value={props.formState.traits}
+        value={libraryFormState.traits}
         onChange={handleMultiChange}
       />
       <SearchFormSet
-        value={props.formState.set}
+        value={libraryFormState.set}
         onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
       />
       <SearchFormPrecon
-        value={props.formState.precon}
+        value={libraryFormState.precon}
         onChange={handleNestedChange}
         onChangeOptions={handleMultiChange}
       />
       <SearchFormArtist
-        value={props.formState.artist}
+        value={libraryFormState.artist}
         onChange={handleSelectChange}
         target="library"
       />

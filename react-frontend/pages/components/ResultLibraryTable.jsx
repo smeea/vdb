@@ -16,9 +16,14 @@ import ResultLibraryType from './ResultLibraryType.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryTable(props) {
-  const { addMode, inventoryMode, nativeLibrary, isMobile } = useContext(
-    AppContext
-  );
+  const {
+    inventoryLibrary,
+    usedLibraryCards,
+    addMode,
+    inventoryMode,
+    nativeLibrary,
+    isMobile,
+  } = useContext(AppContext);
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
   let resultTrClass;
@@ -67,8 +72,8 @@ function ResultLibraryTable(props) {
 
     let inInventory = null;
     if (inventoryMode) {
-      if (Object.keys(props.inventoryLibrary).includes(card['Id'].toString())) {
-        inInventory = props.inventoryLibrary[card['Id']].q;
+      if (Object.keys(inventoryLibrary).includes(card['Id'].toString())) {
+        inInventory = inventoryLibrary[card['Id']].q;
       } else {
         inInventory = 0;
       }
@@ -77,16 +82,16 @@ function ResultLibraryTable(props) {
     let softUsedMax = 0;
     let SoftUsedDescription;
 
-    if (props.usedCards.soft[card['Id']]) {
-      SoftUsedDescription = Object.keys(props.usedCards.soft[card['Id']]).map(
+    if (usedLibraryCards.soft[card['Id']]) {
+      SoftUsedDescription = Object.keys(usedLibraryCards.soft[card['Id']]).map(
         (id) => {
-          if (softUsedMax < props.usedCards.soft[card['Id']][id]) {
-            softUsedMax = props.usedCards.soft[card['Id']][id];
+          if (softUsedMax < usedLibraryCards.soft[card['Id']][id]) {
+            softUsedMax = usedLibraryCards.soft[card['Id']][id];
           }
           return (
             <UsedDescription
               key={id}
-              q={props.usedCards.soft[card['Id']][id]}
+              q={usedLibraryCards.soft[card['Id']][id]}
               deckName={props.decks[id]['name']}
               t="s"
             />
@@ -97,14 +102,14 @@ function ResultLibraryTable(props) {
 
     let hardUsedTotal = 0;
     let HardUsedDescription;
-    if (props.usedCards.hard[card['Id']]) {
-      HardUsedDescription = Object.keys(props.usedCards.hard[card['Id']]).map(
+    if (usedLibraryCards.hard[card['Id']]) {
+      HardUsedDescription = Object.keys(usedLibraryCards.hard[card['Id']]).map(
         (id) => {
-          hardUsedTotal += props.usedCards.hard[card['Id']][id];
+          hardUsedTotal += usedLibraryCards.hard[card['Id']][id];
           return (
             <UsedDescription
               key={id}
-              q={props.usedCards.hard[card['Id']][id]}
+              q={usedLibraryCards.hard[card['Id']][id]}
               deckName={props.decks[id]['name']}
               t="h"
             />

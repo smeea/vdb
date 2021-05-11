@@ -11,7 +11,7 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function QuickSelect(props) {
-  const { isMobile } = useContext(AppContext);
+  const { cryptCardBase, libraryCardBase, isMobile } = useContext(AppContext);
 
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
@@ -39,10 +39,10 @@ function QuickSelect(props) {
 
   useEffect(() => {
     if (selectedValue > 200000) {
-      props.setCard(props.cryptCardBase[selectedValue]);
+      props.setCard(cryptCardBase[selectedValue]);
       props.history.push(`/cards/${selectedValue}`);
     } else if (selectedValue > 100000) {
-      props.setCard(props.libraryCardBase[selectedValue]);
+      props.setCard(libraryCardBase[selectedValue]);
       props.history.push(`/cards/${selectedValue}`);
     }
   }, [selectedValue]);
@@ -69,13 +69,13 @@ function QuickSelect(props) {
               <div className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center">
                   <ResultCryptCapacity
-                    value={props.cryptCardBase[cardid]['Capacity']}
+                    value={cryptCardBase[cardid]['Capacity']}
                   />
                   <span className="px-2">
-                    {props.cryptCardBase[cardid]['Banned'] ? (
+                    {cryptCardBase[cardid]['Banned'] ? (
                       <>
-                        <strike>{props.cryptCardBase[cardid]['Name']}</strike>
-                        {props.cryptCardBase[cardid]['Adv'] && (
+                        <strike>{cryptCardBase[cardid]['Name']}</strike>
+                        {cryptCardBase[cardid]['Adv'] && (
                           <span className="pl-1">
                             <img
                               className="advanced-image-results"
@@ -90,8 +90,8 @@ function QuickSelect(props) {
                       </>
                     ) : (
                       <>
-                        {props.cryptCardBase[cardid]['Name']}
-                        {props.cryptCardBase[cardid]['Adv'] && (
+                        {cryptCardBase[cardid]['Name']}
+                        {cryptCardBase[cardid]['Adv'] && (
                           <span className="pl-1">
                             <img
                               className="advanced-image-results"
@@ -103,13 +103,11 @@ function QuickSelect(props) {
                       </>
                     )}
                   </span>
-                  <ResultCryptClan
-                    value={props.cryptCardBase[cardid]['Clan']}
-                  />
+                  <ResultCryptClan value={cryptCardBase[cardid]['Clan']} />
                 </div>
                 <div className="d-flex flex-nowrap">
                   <ResultCryptDisciplines
-                    value={props.cryptCardBase[cardid]['Disciplines']}
+                    value={cryptCardBase[cardid]['Disciplines']}
                   />
                 </div>
               </div>
@@ -119,42 +117,42 @@ function QuickSelect(props) {
               <div className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center">
                   <ResultLibraryType
-                    cardtype={props.libraryCardBase[cardid]['Type']}
+                    cardtype={libraryCardBase[cardid]['Type']}
                   />
                   <span className="pl-1">
-                    {props.libraryCardBase[cardid]['Banned'] ? (
+                    {libraryCardBase[cardid]['Banned'] ? (
                       <>
-                        <strike>{props.libraryCardBase[cardid]['Name']}</strike>
+                        <strike>{libraryCardBase[cardid]['Name']}</strike>
                         <span className="pl-1">
                           <Hammer />
                         </span>
                       </>
                     ) : (
-                      <>{props.libraryCardBase[cardid]['Name']}</>
+                      <>{libraryCardBase[cardid]['Name']}</>
                     )}
                   </span>
                 </div>
                 <div>
-                  {props.libraryCardBase[cardid]['Discipline'] && (
+                  {libraryCardBase[cardid]['Discipline'] && (
                     <span className="px-1">
                       <ResultLibraryDisciplines
-                        value={props.libraryCardBase[cardid]['Discipline']}
+                        value={libraryCardBase[cardid]['Discipline']}
                       />
                     </span>
                   )}
-                  {props.libraryCardBase[cardid]['Clan'] && (
+                  {libraryCardBase[cardid]['Clan'] && (
                     <span className="px-1">
                       <ResultLibraryClan
-                        value={props.libraryCardBase[cardid]['Clan']}
+                        value={libraryCardBase[cardid]['Clan']}
                       />
                     </span>
                   )}
-                  {(props.libraryCardBase[cardid]['Blood Cost'] ||
-                    props.libraryCardBase[cardid]['Pool Cost']) && (
+                  {(libraryCardBase[cardid]['Blood Cost'] ||
+                    libraryCardBase[cardid]['Pool Cost']) && (
                     <span className="px-1">
                       <ResultLibraryCost
-                        valuePool={props.libraryCardBase[cardid]['Pool Cost']}
-                        valueBlood={props.libraryCardBase[cardid]['Blood Cost']}
+                        valuePool={libraryCardBase[cardid]['Pool Cost']}
+                        valueBlood={libraryCardBase[cardid]['Blood Cost']}
                       />
                     </span>
                   )}

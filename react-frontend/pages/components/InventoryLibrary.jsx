@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import InventoryLibraryTable from './InventoryLibraryTable.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function InventoryLibrary(props) {
+  const { usedLibraryCards, libraryCardBase } = useContext(AppContext);
   let library = {};
 
   if (props.category == 'nok') {
     Object.keys(props.cards).map((card) => {
       let softUsedMax = 0;
-      if (props.usedCards.soft[card]) {
-        Object.keys(props.usedCards.soft[card]).map((id) => {
-          if (softUsedMax < props.usedCards.soft[card][id]) {
-            softUsedMax = props.usedCards.soft[card][id];
+      if (usedLibraryCards.soft[card]) {
+        Object.keys(usedLibraryCards.soft[card]).map((id) => {
+          if (softUsedMax < usedLibraryCards.soft[card][id]) {
+            softUsedMax = usedLibraryCards.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (props.usedCards.hard[card]) {
-        Object.keys(props.usedCards.hard[card]).map((id) => {
-          hardUsedTotal += props.usedCards.hard[card][id];
+      if (usedLibraryCards.hard[card]) {
+        Object.keys(usedLibraryCards.hard[card]).map((id) => {
+          hardUsedTotal += usedLibraryCards.hard[card][id];
         });
       }
 
@@ -31,15 +33,15 @@ function InventoryLibrary(props) {
   }
 
   if (!props.compact && props.category != 'ok') {
-    Object.keys(props.usedCards.soft).map((card) => {
+    Object.keys(usedLibraryCards.soft).map((card) => {
       if (!props.cards[card]) {
-        library[card] = { q: 0, c: props.cardBase[card] };
+        library[card] = { q: 0, c: libraryCardBase[card] };
       }
     });
 
-    Object.keys(props.usedCards.hard).map((card) => {
+    Object.keys(usedLibraryCards.hard).map((card) => {
       if (!props.cards[card]) {
-        library[card] = { q: 0, c: props.cardBase[card] };
+        library[card] = { q: 0, c: libraryCardBase[card] };
       }
     });
   }
@@ -103,7 +105,6 @@ function InventoryLibrary(props) {
             cardChange={props.cardChange}
             decks={props.decks}
             cards={libraryByType[cardtype]}
-            usedCards={props.usedCards}
             showFloatingButtons={props.showFloatingButtons}
             setShowFloatingButtons={props.setShowFloatingButtons}
           />

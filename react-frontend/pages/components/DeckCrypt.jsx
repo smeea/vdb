@@ -215,7 +215,6 @@ function DeckCrypt(props) {
             cardAdd={props.cardAdd}
             setShowAdd={setShowAdd}
             cards={props.cards}
-            cardBase={props.cardBase}
           />
         ) : (
           <Modal
@@ -245,7 +244,6 @@ function DeckCrypt(props) {
                   cardAdd={props.cardAdd}
                   setShowAdd={setShowAdd}
                   cards={props.cards}
-                  cardBase={props.cardBase}
                 />
               </Container>
             </Modal.Body>
@@ -266,8 +264,6 @@ function DeckCrypt(props) {
         proxySelector={props.proxySelector}
         proxyCounter={props.proxyCounter}
         proxySelected={props.proxySelected}
-        inventoryCrypt={props.inventoryCrypt}
-        usedCards={props.usedCards}
         decks={props.decks}
         deckUpdate={props.deckUpdate}
         inSearch={props.inSearch}
@@ -291,8 +287,6 @@ function DeckCrypt(props) {
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
-            inventoryCrypt={props.inventoryCrypt}
-            usedCards={props.usedCards}
             decks={props.decks}
             deckUpdate={props.deckUpdate}
             inSearch={props.inSearch}

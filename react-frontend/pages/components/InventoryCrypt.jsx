@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import InventoryCryptTable from './InventoryCryptTable.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function InventoryCrypt(props) {
+  const { usedCryptCards, cryptCardBase } = useContext(AppContext);
   let crypt = {};
 
   if (props.category == 'nok') {
     Object.keys(props.cards).map((card) => {
       let softUsedMax = 0;
-      if (props.usedCards.soft[card]) {
-        Object.keys(props.usedCards.soft[card]).map((id) => {
-          if (softUsedMax < props.usedCards.soft[card][id]) {
-            softUsedMax = props.usedCards.soft[card][id];
+      if (usedCryptCards.soft[card]) {
+        Object.keys(usedCryptCards.soft[card]).map((id) => {
+          if (softUsedMax < usedCryptCards.soft[card][id]) {
+            softUsedMax = usedCryptCards.soft[card][id];
           }
         });
       }
       let hardUsedTotal = 0;
-      if (props.usedCards.hard[card]) {
-        Object.keys(props.usedCards.hard[card]).map((id) => {
-          hardUsedTotal += props.usedCards.hard[card][id];
+      if (usedCryptCards.hard[card]) {
+        Object.keys(usedCryptCards.hard[card]).map((id) => {
+          hardUsedTotal += usedCryptCards.hard[card][id];
         });
       }
 
@@ -30,15 +32,15 @@ function InventoryCrypt(props) {
   }
 
   if (!props.compact && props.category != 'ok') {
-    Object.keys(props.usedCards.soft).map((card) => {
+    Object.keys(usedCryptCards.soft).map((card) => {
       if (!props.cards[card]) {
-        crypt[card] = { q: 0, c: props.cardBase[card] };
+        crypt[card] = { q: 0, c: cryptCardBase[card] };
       }
     });
 
-    Object.keys(props.usedCards.hard).map((card) => {
+    Object.keys(usedCryptCards.hard).map((card) => {
       if (!props.cards[card]) {
-        crypt[card] = { q: 0, c: props.cardBase[card] };
+        crypt[card] = { q: 0, c: cryptCardBase[card] };
       }
     });
   }
@@ -82,7 +84,6 @@ function InventoryCrypt(props) {
         cardChange={props.cardChange}
         decks={props.decks}
         cards={sortedCards}
-        usedCards={props.usedCards}
         showFloatingButtons={props.showFloatingButtons}
         setShowFloatingButtons={props.setShowFloatingButtons}
       />

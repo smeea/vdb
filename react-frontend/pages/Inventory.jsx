@@ -13,7 +13,14 @@ import InventoryShowSelect from './components/InventoryShowSelect.jsx';
 import AppContext from '../context/AppContext';
 
 function Inventory(props) {
-  const { username, isMobile } = useContext(AppContext);
+  const {
+    inventoryCrypt,
+    inventoryLibrary,
+    usedCryptCards,
+    usedLibraryCards,
+    username,
+    isMobile,
+  } = useContext(AppContext);
 
   const [newCryptId, setNewCryptId] = useState(undefined);
   const [newLibraryId, setNewLibraryId] = useState(undefined);
@@ -35,21 +42,18 @@ function Inventory(props) {
                   <div className="pt-1 px-1">
                     <DeckNewCryptCard
                       cardAdd={props.cardAdd}
-                      cards={props.inventoryCrypt}
-                      cardBase={props.cryptCardBase}
+                      cards={inventoryCrypt}
                       setNewId={setNewCryptId}
                       inInventory={true}
                     />
                   </div>
-                  {newCryptId && props.inventoryCrypt[newCryptId] && (
+                  {newCryptId && inventoryCrypt[newCryptId] && (
                     <div className="pb-2 pt-3">
                       <InventoryCrypt
                         cards={{
-                          [newCryptId]: props.inventoryCrypt[newCryptId],
+                          [newCryptId]: inventoryCrypt[newCryptId],
                         }}
-                        cardBase={props.cryptCardBase}
                         cardChange={props.cardChange}
-                        usedCards={props.usedCryptCards}
                         decks={props.decks ? props.decks : {}}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
@@ -57,16 +61,13 @@ function Inventory(props) {
                       />
                     </div>
                   )}
-                  {props.inventoryCrypt &&
-                    (props.usedCryptCards.soft ||
-                      props.usedCryptCards.hard) && (
+                  {inventoryCrypt &&
+                    (usedCryptCards.soft || usedCryptCards.hard) && (
                       <div className="pt-1">
                         <InventoryCrypt
                           category={category}
-                          cards={props.inventoryCrypt}
-                          cardBase={props.cryptCardBase}
+                          cards={inventoryCrypt}
                           cardChange={props.cardChange}
-                          usedCards={props.usedCryptCards}
                           decks={props.decks ? props.decks : {}}
                           showFloatingButtons={showFloatingButtons}
                           setShowFloatingButtons={setShowFloatingButtons}
@@ -79,21 +80,18 @@ function Inventory(props) {
                   <div className="pt-1 px-1">
                     <DeckNewLibraryCard
                       cardAdd={props.cardAdd}
-                      cards={props.inventoryLibrary}
-                      cardBase={props.libraryCardBase}
+                      cards={inventoryLibrary}
                       setNewId={setNewLibraryId}
                       inInventory={true}
                     />
                   </div>
-                  {newLibraryId && props.inventoryLibrary[newLibraryId] && (
+                  {newLibraryId && inventoryLibrary[newLibraryId] && (
                     <div className="pb-2 pt-3">
                       <InventoryLibrary
                         cards={{
-                          [newLibraryId]: props.inventoryLibrary[newLibraryId],
+                          [newLibraryId]: inventoryLibrary[newLibraryId],
                         }}
-                        cardBase={props.libraryCardBase}
                         cardChange={props.cardChange}
-                        usedCards={props.usedLibraryCards}
                         decks={props.decks ? props.decks : {}}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
@@ -101,16 +99,13 @@ function Inventory(props) {
                       />
                     </div>
                   )}
-                  {props.inventoryLibrary &&
-                    (props.usedLibraryCards.soft ||
-                      props.usedLibraryCards.hard) && (
+                  {inventoryLibrary &&
+                    (usedLibraryCards.soft || usedLibraryCards.hard) && (
                       <div className="pt-1">
                         <InventoryLibrary
                           category={category}
-                          cards={props.inventoryLibrary}
-                          cardBase={props.libraryCardBase}
+                          cards={inventoryLibrary}
                           cardChange={props.cardChange}
-                          usedCards={props.usedLibraryCards}
                           decks={props.decks ? props.decks : {}}
                           showFloatingButtons={showFloatingButtons}
                           setShowFloatingButtons={setShowFloatingButtons}
@@ -138,20 +133,17 @@ function Inventory(props) {
               <Col lg={5} className="px-0 px-lg-3">
                 <DeckNewCryptCard
                   cardAdd={props.cardAdd}
-                  cards={props.inventoryCrypt}
-                  cardBase={props.cryptCardBase}
+                  cards={inventoryCrypt}
                   setNewId={setNewCryptId}
                   inInventory={true}
                 />
-                {newCryptId && props.inventoryCrypt[newCryptId] && (
+                {newCryptId && inventoryCrypt[newCryptId] && (
                   <div className="pt-4">
                     <InventoryCrypt
                       cards={{
-                        [newCryptId]: props.inventoryCrypt[newCryptId],
+                        [newCryptId]: inventoryCrypt[newCryptId],
                       }}
-                      cardBase={props.cryptCardBase}
                       cardChange={props.cardChange}
-                      usedCards={props.usedCryptCards}
                       decks={props.decks ? props.decks : {}}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
@@ -159,15 +151,13 @@ function Inventory(props) {
                     />
                   </div>
                 )}
-                {props.inventoryCrypt &&
-                  (props.usedCryptCards.soft || props.usedCryptCards.hard) && (
+                {inventoryCrypt &&
+                  (usedCryptCards.soft || usedCryptCards.hard) && (
                     <div className="pt-4">
                       <InventoryCrypt
                         category={category}
-                        cards={props.inventoryCrypt}
-                        cardBase={props.cryptCardBase}
+                        cards={inventoryCrypt}
                         cardChange={props.cardChange}
-                        usedCards={props.usedCryptCards}
                         decks={props.decks ? props.decks : {}}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
@@ -178,20 +168,17 @@ function Inventory(props) {
               <Col lg={4} className="px-0 px-lg-3">
                 <DeckNewLibraryCard
                   cardAdd={props.cardAdd}
-                  cards={props.inventoryLibrary}
-                  cardBase={props.libraryCardBase}
+                  cards={inventoryLibrary}
                   setNewId={setNewLibraryId}
                   inInventory={true}
                 />
-                {newLibraryId && props.inventoryLibrary[newLibraryId] && (
+                {newLibraryId && inventoryLibrary[newLibraryId] && (
                   <div className="pt-4">
                     <InventoryLibrary
                       cards={{
-                        [newLibraryId]: props.inventoryLibrary[newLibraryId],
+                        [newLibraryId]: inventoryLibrary[newLibraryId],
                       }}
-                      cardBase={props.libraryCardBase}
                       cardChange={props.cardChange}
-                      usedCards={props.usedLibraryCards}
                       decks={props.decks ? props.decks : {}}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
@@ -199,16 +186,13 @@ function Inventory(props) {
                     />
                   </div>
                 )}
-                {props.inventoryLibrary &&
-                  (props.usedLibraryCards.soft ||
-                    props.usedLibraryCards.hard) && (
+                {inventoryLibrary &&
+                  (usedLibraryCards.soft || usedLibraryCards.hard) && (
                     <div className="pt-4">
                       <InventoryLibrary
                         category={category}
-                        cards={props.inventoryLibrary}
-                        cardBase={props.libraryCardBase}
+                        cards={inventoryLibrary}
                         cardChange={props.cardChange}
-                        usedCards={props.usedLibraryCards}
                         decks={props.decks ? props.decks : {}}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}

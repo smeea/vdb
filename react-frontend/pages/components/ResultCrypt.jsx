@@ -9,6 +9,11 @@ import AppContext from '../../context/AppContext.js';
 
 function ResultCrypt(props) {
   const {
+    inventoryCrypt,
+    showCryptSearch,
+    setShowCryptSearch,
+    cryptResults,
+    setCryptResults,
     addMode,
     setAddMode,
     inventoryMode,
@@ -21,38 +26,38 @@ function ResultCrypt(props) {
 
   const handleChange = (method) => {
     props.setSortMethod(method);
-    setSortedCards(() => resultCryptSort(props.cards, method));
+    setSortedCards(() => resultCryptSort(cryptResults, method));
   };
 
   const handleClear = () => {
-    props.setResults(undefined);
-    props.setShowSearch(!props.showSearch);
+    setCryptResults(undefined);
+    setShowCryptSearch(!showCryptSearch);
   };
 
   useEffect(() => {
     if (!props.hideMissing) {
-      setSortedCards(() => resultCryptSort(props.cards, props.sortMethod));
+      setSortedCards(() => resultCryptSort(cryptResults, props.sortMethod));
     } else {
       setSortedCards(() =>
         resultCryptSort(
-          props.cards.filter((card) => props.inventoryCrypt[card.Id]),
+          cryptResults.filter((card) => inventoryCrypt[card.Id]),
           props.sortMethod
         )
       );
     }
-  }, [props.cards, props.sortMethod, props.hideMissing]);
+  }, [cryptResults, props.sortMethod, props.hideMissing]);
 
   return (
     <>
-      {!isMobile && props.cards.length == 0 && (
+      {!isMobile && cryptResults.length == 0 && (
         <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO CARDS FOUND</b>
         </div>
       )}
-      {props.cards.length > 0 && (
+      {cryptResults.length > 0 && (
         <>
           <ResultCryptTotal
-            cards={props.cards}
+            cards={cryptResults}
             value={props.sortMethod}
             handleChange={handleChange}
           />
@@ -63,8 +68,6 @@ function ResultCrypt(props) {
             cardAdd={props.cardAdd}
             cardChange={props.cardChange}
             resultCards={sortedCards}
-            inventoryCrypt={props.inventoryCrypt}
-            usedCards={props.usedCards}
             decks={props.decks}
             setShowFloatingButtons={setShowFloatingButtons}
           />

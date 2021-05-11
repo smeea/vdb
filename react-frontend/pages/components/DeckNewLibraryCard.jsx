@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function DeckNewLibraryCard(props) {
+  const { libraryCardBase } = useContext(AppContext);
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
 
@@ -63,39 +65,39 @@ function DeckNewLibraryCard(props) {
                   {props.cards[card] && props.cards[card].q}
                 </div>
               )}
-              <ResultLibraryType cardtype={props.cardBase[card]['Type']} />
+              <ResultLibraryType cardtype={libraryCardBase[card]['Type']} />
               <div className="pl-1">
-                {props.cardBase[card]['Banned'] ? (
+                {libraryCardBase[card]['Banned'] ? (
                   <>
-                    <strike>{props.cardBase[card]['Name']}</strike>
+                    <strike>{libraryCardBase[card]['Name']}</strike>
                     <div className="d-inline pl-1">
                       <Hammer />
                     </div>
                   </>
                 ) : (
-                  <>{props.cardBase[card]['Name']}</>
+                  <>{libraryCardBase[card]['Name']}</>
                 )}
               </div>
             </div>
             <div>
-              {props.cardBase[card]['Discipline'] && (
+              {libraryCardBase[card]['Discipline'] && (
                 <div className="d-inline px-3">
                   <ResultLibraryDisciplines
-                    value={props.cardBase[card]['Discipline']}
+                    value={libraryCardBase[card]['Discipline']}
                   />
                 </div>
               )}
-              {props.cardBase[card]['Clan'] && (
+              {libraryCardBase[card]['Clan'] && (
                 <div className="d-inline px-3">
-                  <ResultLibraryClan value={props.cardBase[card]['Clan']} />
+                  <ResultLibraryClan value={libraryCardBase[card]['Clan']} />
                 </div>
               )}
-              {(props.cardBase[card]['Blood Cost'] ||
-                props.cardBase[card]['Pool Cost']) && (
+              {(libraryCardBase[card]['Blood Cost'] ||
+                libraryCardBase[card]['Pool Cost']) && (
                 <div className="d-inline">
                   <ResultLibraryCost
-                    valuePool={props.cardBase[card]['Pool Cost']}
-                    valueBlood={props.cardBase[card]['Blood Cost']}
+                    valuePool={libraryCardBase[card]['Pool Cost']}
+                    valueBlood={libraryCardBase[card]['Blood Cost']}
                   />
                 </div>
               )}

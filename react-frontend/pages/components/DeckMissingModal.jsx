@@ -35,18 +35,10 @@ function DeckMissingModal(props) {
           </Row>
           <Row className="px-0 pb-4">
             <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
-              <DeckCrypt
-                cards={props.crypt}
-                isAuthor={false}
-                cardBase={props.cryptCardBase}
-              />
+              <DeckCrypt cards={props.crypt} isAuthor={false} />
             </Col>
             <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
-              <DeckLibrary
-                cards={props.library}
-                isAuthor={false}
-                cardBase={props.libraryCardBase}
-              />
+              <DeckLibrary cards={props.library} isAuthor={false} />
             </Col>
           </Row>
         </Container>
