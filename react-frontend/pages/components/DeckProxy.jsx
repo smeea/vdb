@@ -7,7 +7,7 @@ import AppContext from '../../context/AppContext.js';
 import DeckProxySelectModal from './DeckProxySelectModal.jsx';
 
 function DeckProxy(props) {
-  const { isMobile } = useContext(AppContext);
+  const { inventoryMode, isMobile } = useContext(AppContext);
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState(undefined);
@@ -17,7 +17,7 @@ function DeckProxy(props) {
       <Dropdown.Item href="" onClick={() => proxyDeck()}>
         Full Deck
       </Dropdown.Item>
-      {props.inventoryMode && (
+      {inventoryMode && (
         <Dropdown.Item href="" onClick={() => proxyMissing()}>
           Missing Cards
         </Dropdown.Item>

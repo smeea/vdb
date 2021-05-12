@@ -81,7 +81,7 @@ function ResultCrypt(props) {
           </div>
           {isInventory && (
             <>
-              {props.inventoryMode ? (
+              {inventoryMode ? (
                 <div
                   onClick={() => setInventoryMode(!inventoryMode)}
                   className="float-right-top inventory-on"

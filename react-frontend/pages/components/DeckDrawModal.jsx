@@ -214,9 +214,7 @@ function DeckDrawModal(props) {
               handleModalCardChange={handleModalCryptCardChange}
               handleClose={() => {
                 setModalCryptCardIdx(undefined);
-                /* isMobile && props.setShowFloatingButtons(true); */
               }}
-              /* inventoryState={modalInventory} */
             />
           )}
           {modalLibraryCardIdx !== undefined && (
@@ -225,9 +223,7 @@ function DeckDrawModal(props) {
               handleModalCardChange={handleModalLibraryCardChange}
               handleClose={() => {
                 setModalLibraryCardIdx(undefined);
-                /* isMobile && props.setShowFloatingButtons(true); */
               }}
-              /* inventoryState={modalInventory} */
             />
           )}
         </Container>

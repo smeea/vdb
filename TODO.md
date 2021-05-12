@@ -6,9 +6,6 @@
 * Error in twd sanitizeTwd with del (deck['description'])
 * InventoryMode error in twd bytypes cards
 * Increase quantity of missing card in inventory
-* Inventory mode in Deck card modal - no results
-* Inventory mode in Crypt/Library - no highlight of missing if 0 quantity
-* Add popover in Deck on quantity to show inventory popover (in inventory mode)
 * Add popover in Inventory to Used column (same as for quantity)
 
 # FIX MOBILE

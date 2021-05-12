@@ -38,7 +38,7 @@ function InventoryCardQuantity(props) {
                 : 'px-1'
             }
           >
-            {state == 0 ? '' : state}
+            {state == 0 ? <>&nbsp;&nbsp;</> : state}
           </div>
           <a className="quantity" onClick={() => handleQuantityChange(1)}>
             <Button className="quantity" variant="outline-secondary">

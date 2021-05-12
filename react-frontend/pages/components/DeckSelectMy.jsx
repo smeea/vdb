@@ -6,7 +6,9 @@ import At from '../../assets/images/icons/at.svg';
 import AppContext from '../../context/AppContext.js';
 
 function DeckSelectMy(props) {
-  const { setActiveDeck, decks, isMobile } = useContext(AppContext);
+  const { inventoryMode, setActiveDeck, decks, isMobile } = useContext(
+    AppContext
+  );
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
@@ -23,7 +25,7 @@ function DeckSelectMy(props) {
             <div className="d-flex justify-content-between align-items-center">
               {decks[i]['name']}
               <div className="d-flex align-items-center pl-2 small">
-                {props.inventoryMode && (
+                {inventoryMode && (
                   <div className="pr-2">
                     {decks[i].inventory_type == 's' && <Shuffle />}
                     {decks[i].inventory_type == 'h' && <PinAngleFill />}

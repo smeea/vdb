@@ -21,6 +21,7 @@ import AppContext from '../../context/AppContext.js';
 function DeckLibraryTable(props) {
   const {
     decks,
+    inventoryMode,
     inventoryLibrary,
     usedLibraryCards,
     nativeLibrary,
@@ -30,7 +31,7 @@ function DeckLibraryTable(props) {
   let resultTrClass;
   let deckInvType = null;
   if (decks && props.deckid) {
-    if (props.inventoryMode && decks[props.deckid]) {
+    if (inventoryMode && decks[props.deckid]) {
       deckInvType = decks[props.deckid].inventory_type;
     }
   }
@@ -74,7 +75,7 @@ function DeckLibraryTable(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (props.inventoryMode && props.deckid) {
+    if (inventoryMode && props.deckid) {
       cardInvType = card.i;
 
       if (Object.keys(inventoryLibrary).includes(card.c['Id'].toString())) {
@@ -145,7 +146,7 @@ function DeckLibraryTable(props) {
           )}
           {props.isAuthor ? (
             <>
-              {props.inventoryMode ? (
+              {inventoryMode ? (
                 <>
                   {deckInvType && !props.inSearch ? (
                     <td className="d-flex align-items-center inventory-card-custom">
@@ -234,7 +235,7 @@ function DeckLibraryTable(props) {
             </td>
           ) : (
             <>
-              {props.inventoryMode ? (
+              {inventoryMode ? (
                 <>
                   {isMobile ? (
                     <td className="quantity-no-buttons px-1">

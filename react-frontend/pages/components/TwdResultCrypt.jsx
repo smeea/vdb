@@ -10,9 +10,13 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function TwdResultCrypt(props) {
-  const { decks, inventoryCrypt, usedCryptCards, isMobile } = useContext(
-    AppContext
-  );
+  const {
+    decks,
+    inventoryMode,
+    inventoryCrypt,
+    usedCryptCards,
+    isMobile,
+  } = useContext(AppContext);
   let resultTrClass = 'result-even';
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
@@ -107,7 +111,7 @@ function TwdResultCrypt(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (props.inventoryMode) {
+    if (inventoryMode) {
       if (Object.keys(inventoryCrypt).includes(card.c['Id'].toString())) {
         inInventory = inventoryCrypt[card.c['Id']].q;
       } else {
@@ -149,7 +153,7 @@ function TwdResultCrypt(props) {
 
     return (
       <tr key={card.c['Id']} className={resultTrClass}>
-        {props.inventoryMode ? (
+        {inventoryMode ? (
           <>
             {isMobile ? (
               <td className="quantity-no-buttons px-1">

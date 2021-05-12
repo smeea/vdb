@@ -155,7 +155,7 @@ function ResultLibraryTable(props) {
                       : 'd-flex align-items-center justify-content-center quantity px-1 ml-1'
                   }
                 >
-                  {inInventory > 0 && (
+                  {inInventory > 0 ? (
                     <>
                       <div className="pr-1 opacity-035">
                         <ArchiveFill
@@ -166,6 +166,8 @@ function ResultLibraryTable(props) {
                       </div>
                       {inInventory}
                     </>
+                  ) : (
+                    <>&nbsp;&nbsp;</>
                   )}
                 </div>
               </td>

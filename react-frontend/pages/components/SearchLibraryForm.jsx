@@ -20,6 +20,7 @@ import AppContext from '../../context/AppContext.js';
 function SearchLibraryForm(props) {
   const {
     isInventory,
+    inventoryMode,
     setShowLibrarySearch,
     setLibraryResults,
     libraryFormState,
@@ -270,7 +271,7 @@ function SearchLibraryForm(props) {
         showLimit={showLimit}
         spinner={spinnerState}
       />
-      {(props.inventoryMode || (isMobile && isInventory)) && (
+      {(inventoryMode || (isMobile && isInventory)) && (
         <div className="custom-control custom-checkbox">
           <input
             id="hideMissing"

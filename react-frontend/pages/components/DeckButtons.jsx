@@ -13,7 +13,7 @@ import DeckBranchDelete from './DeckBranchDelete.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckButtons(props) {
-  const { username } = useContext(AppContext);
+  const { inventoryMode, username } = useContext(AppContext);
 
   return (
     <>
@@ -119,7 +119,7 @@ function DeckButtons(props) {
           />
         </div>
       )}
-      {props.deck && props.inventoryMode && (
+      {props.deck && inventoryMode && (
         <div className="button-block">
           <DeckMissing
             name={props.deck.name}

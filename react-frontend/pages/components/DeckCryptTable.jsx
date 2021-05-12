@@ -21,6 +21,7 @@ import AppContext from '../../context/AppContext';
 function DeckCryptTable(props) {
   const {
     decks,
+    inventoryMode,
     inventoryCrypt,
     usedCryptCards,
     isMobile,
@@ -47,7 +48,7 @@ function DeckCryptTable(props) {
     };
 
     let cardInvType;
-    if (props.inventoryMode && decks[props.deckid]) {
+    if (inventoryMode && decks[props.deckid]) {
       cardInvType = card.i;
       deckInvType = decks[props.deckid].inventory_type;
     }
@@ -64,7 +65,7 @@ function DeckCryptTable(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (props.inventoryMode && props.deckid) {
+    if (inventoryMode && props.deckid) {
       if (Object.keys(inventoryCrypt).includes(card.c['Id'].toString())) {
         inInventory = inventoryCrypt[card.c['Id']].q;
       } else {
@@ -133,7 +134,7 @@ function DeckCryptTable(props) {
           )}
           {props.isAuthor ? (
             <>
-              {props.inventoryMode ? (
+              {inventoryMode ? (
                 <>
                   {deckInvType && !props.inSearch && !isMobile ? (
                     <td className="d-flex align-items-center inventory-card-custom">
@@ -222,7 +223,7 @@ function DeckCryptTable(props) {
             </td>
           ) : (
             <>
-              {props.inventoryMode ? (
+              {inventoryMode ? (
                 <>
                   {isMobile ? (
                     <td className="quantity-no-buttons px-1">
