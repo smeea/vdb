@@ -34,13 +34,13 @@ function DeckDrawCryptTable(props) {
         <tr className={resultTrClass}>
           <td
             className={isMobile ? 'capacity px-1' : 'capacity px-2'}
-            onClick={() => props.burnCrypt(index)}
+            onClick={() => props.handleClick(index)}
           >
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td
             className="disciplines px-1"
-            onClick={() => props.burnCrypt(index)}
+            onClick={() => props.handleClick(index)}
           >
             <ResultCryptDisciplines
               value={card['Disciplines']}
@@ -54,12 +54,15 @@ function DeckDrawCryptTable(props) {
               placement={props.placement ? props.placement : 'right'}
               overlay={<CardPopover card={card} />}
             >
-              <td className="name px-1" onClick={() => props.burnCrypt(index)}>
+              <td
+                className="name px-1"
+                onClick={() => props.handleClick(index)}
+              >
                 <ResultCryptName card={card} />
               </td>
             </OverlayTrigger>
           ) : (
-            <td className="name px-1" onClick={() => props.burnCrypt(index)}>
+            <td className="name px-1" onClick={() => props.handleClick(index)}>
               <ResultCryptName card={card} />
             </td>
           )}

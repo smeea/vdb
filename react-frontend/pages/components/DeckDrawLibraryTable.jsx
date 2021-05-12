@@ -35,19 +35,19 @@ function DeckDrawLibraryTable(props) {
         <tr className={resultTrClass}>
           <td
             className="cost py-0 px-1"
-            onClick={() => props.burnLibrary(index)}
+            onClick={() => props.handleClick(index)}
           >
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}
             />
           </td>
-          <td className="type px-1" onClick={() => props.burnLibrary(index)}>
+          <td className="type px-1" onClick={() => props.handleClick(index)}>
             <ResultLibraryType cardtype={card['Type']} />
           </td>
           <td
             className="disciplines px-1"
-            onClick={() => props.burnLibrary(index)}
+            onClick={() => props.handleClick(index)}
           >
             <ResultLibraryDisciplines value={card['Discipline']} />
             <ResultLibraryClan value={card['Clan']} />
@@ -59,17 +59,17 @@ function DeckDrawLibraryTable(props) {
             >
               <td
                 className="name px-1"
-                onClick={() => props.burnLibrary(index)}
+                onClick={() => props.handleClick(index)}
               >
                 <ResultLibraryName card={card} />
               </td>
             </OverlayTrigger>
           ) : (
-            <td className="name px-1" onClick={() => props.burnLibrary(index)}>
+            <td className="name px-1" onClick={() => props.handleClick(index)}>
               <ResultLibraryName card={card} />
             </td>
           )}
-          <td className="burn px-1" onClick={() => props.burnLibrary(index)}>
+          <td className="burn px-1" onClick={() => props.handleClick(index)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />
           </td>

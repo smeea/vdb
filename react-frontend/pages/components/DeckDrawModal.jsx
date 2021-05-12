@@ -1,14 +1,49 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import X from '../../assets/images/icons/x.svg';
+import ResultCryptModal from './ResultCryptModal.jsx';
+import ResultLibraryModal from './ResultLibraryModal.jsx';
 import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
 import DeckDrawLibraryTable from './DeckDrawLibraryTable.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckDrawModal(props) {
   const { isMobile } = useContext(AppContext);
+
+  const [modalCryptCardIdx, setModalCryptCardIdx] = useState(undefined);
+  const [modalLibraryCardIdx, setModalLibraryCardIdx] = useState(undefined);
+  const handleModalCryptCardOpen = (i) => {
+    setModalCryptCardIdx(i);
+  };
+  const handleModalLibraryCardOpen = (i) => {
+    setModalLibraryCardIdx(i);
+  };
+  const handleModalCryptCardChange = (d) => {
+    if (modalCryptCardIdx !== undefined) {
+      const maxIdx = props.burnedCrypt.length - 1;
+      if (modalCryptCardIdx + d < 0) {
+        setModalCryptCardIdx(maxIdx);
+      } else if (modalCryptCardIdx + d > maxIdx) {
+        setModalCryptCardIdx(0);
+      } else {
+        setModalCryptCardIdx(modalCryptCardIdx + d);
+      }
+    }
+  };
+  const handleModalLibraryCardChange = (d) => {
+    if (modalLibraryCardIdx !== undefined) {
+      const maxIdx = props.burnedLibrary.length - 1;
+      if (modalLibraryCardIdx + d < 0) {
+        setModalLibraryCardIdx(maxIdx);
+      } else if (modalLibraryCardIdx + d > maxIdx) {
+        setModalLibraryCardIdx(0);
+      } else {
+        setModalLibraryCardIdx(modalLibraryCardIdx + d);
+      }
+    }
+  };
 
   return (
     <Modal
@@ -73,7 +108,7 @@ function DeckDrawModal(props) {
                   </div>
                 )}
                 <DeckDrawCryptTable
-                  burnCrypt={props.burnCrypt}
+                  handleClick={props.burnCrypt}
                   crypt={props.crypt}
                   total={props.drawedCrypt.length + props.restCrypt.length}
                   resultCards={props.drawedCrypt}
@@ -116,7 +151,7 @@ function DeckDrawModal(props) {
                 </div>
               )}
               <DeckDrawLibraryTable
-                burnLibrary={props.burnLibrary}
+                handleClick={props.burnLibrary}
                 library={props.library}
                 total={props.drawedLibrary.length + props.restLibrary.length}
                 resultCards={props.drawedLibrary}
@@ -139,7 +174,7 @@ function DeckDrawModal(props) {
                       <div />
                     </div>
                     <DeckDrawCryptTable
-                      burnCrypt={null}
+                      handleClick={handleModalCryptCardOpen}
                       crypt={props.crypt}
                       total={props.drawedCrypt.length + props.restCrypt.length}
                       resultCards={props.burnedCrypt}
@@ -161,7 +196,7 @@ function DeckDrawModal(props) {
                       <div />
                     </div>
                     <DeckDrawLibraryTable
-                      burnLibrary={null}
+                      handleClick={handleModalLibraryCardOpen}
                       library={props.library}
                       total={
                         props.drawedLibrary.length + props.restLibrary.length
@@ -173,6 +208,28 @@ function DeckDrawModal(props) {
                 )}
               </Col>
             </Row>
+          )}
+          {modalCryptCardIdx !== undefined && (
+            <ResultCryptModal
+              card={props.burnedCrypt[modalCryptCardIdx]}
+              handleModalCardChange={handleModalCryptCardChange}
+              handleClose={() => {
+                setModalCryptCardIdx(undefined);
+                /* isMobile && props.setShowFloatingButtons(true); */
+              }}
+              /* inventoryState={modalInventory} */
+            />
+          )}
+          {modalLibraryCardIdx !== undefined && (
+            <ResultLibraryModal
+              card={props.burnedLibrary[modalLibraryCardIdx]}
+              handleModalCardChange={handleModalLibraryCardChange}
+              handleClose={() => {
+                setModalLibraryCardIdx(undefined);
+                /* isMobile && props.setShowFloatingButtons(true); */
+              }}
+              /* inventoryState={modalInventory} */
+            />
           )}
         </Container>
       </Modal.Body>
