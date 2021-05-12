@@ -125,8 +125,8 @@ function Inventory(props) {
             </>
           ) : (
             <Row>
-              <Col lg={1} className="hide-narrow"></Col>
-              <Col lg={6} xl={5} className="px-0 px-md-1 px-xl-3">
+              <Col xl={1} className="hide-narrow"></Col>
+              <Col md={6} xl={5} className="px-0 px-md-1 px-xl-3">
                 <DeckNewCryptCard
                   cardAdd={props.cardAdd}
                   cards={inventoryCrypt}
@@ -159,7 +159,7 @@ function Inventory(props) {
                     </div>
                   )}
               </Col>
-              <Col lg={4} xl={4} className="px-0 px-md-1 px-xl-3">
+              <Col md={4} xl={4} className="px-0 px-md-1 px-xl-3">
                 <DeckNewLibraryCard
                   cardAdd={props.cardAdd}
                   cards={inventoryLibrary}
@@ -192,7 +192,7 @@ function Inventory(props) {
                     </div>
                   )}
               </Col>
-              <Col lg={2} className="px-0 px-md-1 px-xl-3">
+              <Col md={2} className="px-0 px-md-1 px-xl-3">
                 <InventoryButtons
                   inventoryDeckAdd={props.inventoryDeckAdd}
                   inventoryAddToState={props.inventoryAddToState}
@@ -210,7 +210,7 @@ function Inventory(props) {
         </>
       ) : (
         <Row className="h-75 align-items-center justify-content-center px-2">
-          <Col md={12} lg={5}>
+          <Col xs={12} md={5}>
             <div className="d-flex justify-content-center pb-3">
               <h6>Login required to manage inventory</h6>
             </div>

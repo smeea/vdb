@@ -9,7 +9,6 @@
 * Increase quantity of missing card in inventory
 
 # FIX MOBILE
-* Optimize for tablet
 
 # FEATURES
 * If no results but url on mobile to run search

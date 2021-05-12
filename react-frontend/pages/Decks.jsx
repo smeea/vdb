@@ -283,9 +283,9 @@ function Decks(props) {
     <Container className={isMobile ? 'deck-container' : 'deck-container py-3'}>
       <Row className="mx-0">
         <Col xl={1} className="hide-narrow"></Col>
-        <Col lg={10} xl={9} className="px-0 px-lg-1 px-xl-3">
+        <Col md={10} xl={9} className="px-0 px-lg-1 px-xl-3">
           <Row className="px-1 pt-1 pb-2 px-lg-0 pt-lg-0 pb-lg-4">
-            <Col lg={5} className="px-0 px-lg-3">
+            <Col md={5} className="px-0 px-lg-3">
               <Row className="align-items-center justify-content-end mx-0">
                 <Col className="px-0">
                   <div
@@ -374,7 +374,7 @@ function Decks(props) {
                 </Col>
               </Row>
             </Col>
-            <Col lg={7} className="px-0 px-lg-3">
+            <Col md={7} className="px-0 px-lg-3">
               {((showInfo && deckRouter(props.activeDeck)) ||
                 (!isMobile && deckRouter(props.activeDeck))) && (
                 <>
@@ -434,7 +434,7 @@ function Decks(props) {
           )}
           {deckRouter(props.activeDeck) && (
             <Row>
-              <Col lg={7} className="px-0 pl-md-3 pr-md-2 px-xl-3">
+              <Col md={7} className="px-0 pl-md-3 pr-md-2 px-xl-3">
                 <DeckCrypt
                   changeTimer={props.changeTimer}
                   cardAdd={props.cardAdd}
@@ -447,7 +447,7 @@ function Decks(props) {
                   setShowFloatingButtons={setShowFloatingButtons}
                 />
               </Col>
-              <Col lg={5} className="pt-4 pt-lg-0 px-0 pl-md-2 pr-md-3 px-xl-3">
+              <Col md={5} className="pt-4 pt-lg-0 px-0 pl-md-2 pr-md-3 px-xl-3">
                 <DeckLibrary
                   cardAdd={props.cardAdd}
                   cardChange={props.cardChange}
@@ -463,7 +463,7 @@ function Decks(props) {
           )}
         </Col>
         {!isMobile && (
-          <Col lg={2} className="px-0 px-lg-2 px-xl-3">
+          <Col md={2} className="px-0 px-lg-2 px-xl-3">
             <DeckButtons
               isAuthor={isAuthor}
               deck={deckRouter(props.activeDeck)}
@@ -479,7 +479,7 @@ function Decks(props) {
       </Row>
       {!username && !props.activeDeck.deckid && (
         <Row className="h-50 align-items-center justify-content-center px-2">
-          <Col md={12} lg={5} className="px-0">
+          <Col xs={12} md={5} className="px-0">
             <div className="d-flex justify-content-center pt-4 pb-2">
               <h6>Login required to create your decks.</h6>
             </div>
@@ -500,7 +500,7 @@ function Decks(props) {
 
       {username && decks && Object.keys(decks).length == 0 && (
         <Row className="h-50 align-items-center justify-content-center px-2">
-          <Col md={12} lg={5} className="justify-content-center px-0">
+          <Col xs={12} md={5} className="justify-content-center px-0">
             <div className="d-flex justify-content-center py-2">
               <h6>You do not have any decks in your collection yet.</h6>
             </div>

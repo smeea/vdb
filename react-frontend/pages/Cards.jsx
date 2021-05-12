@@ -77,7 +77,7 @@ function Cards(props) {
           <>
             {cryptCardBase && libraryCardBase && (
               <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
-                <Col lg={8} className="px-0">
+                <Col md={8} className="px-0">
                   <QuickSelect setCard={setCard} history={history} />
                 </Col>
               </Row>
@@ -126,17 +126,17 @@ function Cards(props) {
           <>
             {cryptCardBase && libraryCardBase && (
               <Row className="align-content-center justify-content-center py-3">
-                <Col lg={8}>
+                <Col md={8}>
                   <QuickSelect setCard={setCard} history={history} />
                 </Col>
               </Row>
             )}
             {card && (
               <Row className="align-content-center justify-content-center py-3">
-                <Col lg={4}>
+                <Col md={4}>
                   <CardImage />
                 </Col>
-                <Col lg={4}>
+                <Col md={4}>
                   {card && card.Id > 200000 && (
                     <ResultCryptLayoutText
                       card={card}

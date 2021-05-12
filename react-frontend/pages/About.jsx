@@ -12,7 +12,7 @@ function About(props) {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
-        <Col md={12} lg={6} className="px-0">
+        <Col xs={12} md={6} className="px-0">
           <Banner />
           <div className="px-2">
             <div className="pt-2">

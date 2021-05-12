@@ -144,7 +144,7 @@ function ResultCryptModal(props) {
           </>
         ) : (
           <Row className="mx-0">
-            <Col lg={5} className="bg-black px-0">
+            <Col md={5} className="bg-black px-0">
               <CardImage />
             </Col>
             <Col className="p-4">
@@ -161,7 +161,7 @@ function ResultCryptModal(props) {
                   <div className="pt-1">
                     <b>Inventory:</b>
                     <Row>
-                      <Col lg={5}>
+                      <Col md={5}>
                         <div className="d-flex align-items-center">
                           <div className="opacity-035">
                             <CalculatorFill

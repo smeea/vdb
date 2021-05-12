@@ -102,7 +102,7 @@ function DeckDrawModal(props) {
             </Col>
           </Row>
           <Row className="px-0">
-            <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
+            <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
               {props.deck.crypt && (
                 <>
                   <DeckCrypt
@@ -116,7 +116,7 @@ function DeckDrawModal(props) {
                 </>
               )}
             </Col>
-            <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
+            <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4">
               {props.deck.library && (
                 <>
                   <DeckLibrary

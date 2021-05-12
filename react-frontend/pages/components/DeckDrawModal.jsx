@@ -35,7 +35,7 @@ function DeckDrawModal(props) {
             </Col>
           </Row>
           <Row className="px-0 pb-4">
-            <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
+            <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
               <div className={isMobile ? 'pb-4' : null}>
                 <div className="d-flex justify-content-between info-message">
                   <div className="d-flex align-items-center px-2">
@@ -81,7 +81,7 @@ function DeckDrawModal(props) {
                 />
               </div>
             </Col>
-            <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
+            <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4">
               <div className="d-flex justify-content-between info-message">
                 <div className="d-flex align-items-center px-2">
                   <b>Hand</b>
@@ -126,7 +126,7 @@ function DeckDrawModal(props) {
           </Row>
           {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) && (
             <Row className="px-0 pb-4">
-              <Col md={12} lg={7} className="px-0 pl-lg-4 pr-lg-3">
+              <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
                 {props.burnedCrypt.length > 0 && (
                   <div className={isMobile ? 'pb-4' : null}>
                     <div className="d-flex justify-content-between info-message">
@@ -148,7 +148,7 @@ function DeckDrawModal(props) {
                   </div>
                 )}
               </Col>
-              <Col md={12} lg={5} className="px-0 pl-lg-3 pr-lg-4">
+              <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4">
                 {props.burnedLibrary.length > 0 && (
                   <>
                     <div className="d-flex justify-content-between info-message">
