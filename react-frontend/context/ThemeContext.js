@@ -49,10 +49,9 @@ export const ThemeProvider = (props) => {
 const lightTheme = [
   '--fg-primary: #202530',
   '--fg-secondary: #6060cc',
-  '--fg-third: #7575a5',
   '--fg-gray: #808080',
   '--fg-button: #707080',
-  '--fg-name: #306090',
+  '--fg-name: #3060b0',
   '--bg-nav: #303040',
   '--bg-primary: #ffffff',
   '--bg-secondary: #d0d0ea',
@@ -77,8 +76,7 @@ const lightTheme = [
 
 const darkTheme = [
   '--fg-primary: #e0e0e0',
-  '--fg-secondary: #95a5ff',
-  '--fg-third: #9090c0',
+  '--fg-secondary: #80b0ff',
   '--fg-gray: #a9a9a9',
   '--fg-button: #c0c0e0',
   '--fg-name: #d59000',
