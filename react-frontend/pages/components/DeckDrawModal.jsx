@@ -50,7 +50,6 @@ function DeckDrawModal(props) {
       show={props.show}
       onHide={props.handleClose}
       animation={false}
-      size="xl"
       dialogClassName={!isMobile ? 'modal-deck-draw' : null}
     >
       <Modal.Body className="p-0">
