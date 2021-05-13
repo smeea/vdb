@@ -8,14 +8,14 @@ function SearchLibraryFormTraits(props) {
     ['bleed', '+Bleed'],
     ['strength', '+Strength'],
     ['dodge', 'Dodge'],
-    ['optional maneuver', 'Maneuver'],
+    ['maneuver', 'Maneuver'],
     ['additional strike', 'Additional Strike'],
     ['aggravated', 'Aggravated'],
     ['prevent', 'Prevent'],
   ];
 
   const traitsRight = [
-    ['optional press', 'Press'],
+    ['press', 'Press'],
     ['combat ends', 'Combat Ends'],
     ['enter combat', 'Enter combat'],
     ['bounce bleed', 'Bounce Bleed'],

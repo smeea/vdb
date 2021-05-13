@@ -6,7 +6,9 @@ def get_library_by_text(text, library):
     match_cards = []
     text = text.replace(' "', '"').replace('" ', '"').replace('"', '(\W|^|$)')
     for card in library:
-        if re.search(text, card['Card Text'], re.IGNORECASE) or re.search(text, card['Name'], re.IGNORECASE) or re.search(text, card['ASCII Name'], re.IGNORECASE) :
+        if re.search(text, card['Card Text'], re.IGNORECASE) or re.search(
+                text, card['Name'], re.IGNORECASE) or re.search(
+                    text, card['ASCII Name'], re.IGNORECASE):
             match_cards.append(card)
 
     return match_cards
@@ -154,26 +156,12 @@ def get_library_by_traits(traits, library):
                     counter += 1
 
             elif trait == 'bleed':
-                if re.search(r'{}'.format('\+[0-9]+ bleed'),
-                             card['Card Text'], re.IGNORECASE):
+                if re.search(r'{}'.format('\+[0-9]+ bleed'), card['Card Text'],
+                             re.IGNORECASE):
                     counter += 1
 
             elif trait == 'strength':
                 if re.search(r'{}'.format('\+[0-9]+ strength'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'dodge':
-                if re.search(r'{}'.format('dodge'), card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'maneuver':
-                if re.search(r'{}'.format('optional maneuver'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'additional strike':
-                if re.search(r'{}'.format('additional strike'),
                              card['Card Text'], re.IGNORECASE):
                     counter += 1
 
@@ -183,23 +171,8 @@ def get_library_by_traits(traits, library):
                     counter += 1
 
             elif trait == 'prevent':
-                if re.search(r'{}'.format('(?<!un)prevent'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'press':
-                if re.search(r'{}'.format('(optional )?press'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'combat ends':
-                if re.search(r'{}'.format('combat ends'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'enter combat':
-                if re.search(r'{}'.format('enter combat'),
-                             card['Card Text'], re.IGNORECASE):
+                if re.search(r'{}'.format('(?<!un)prevent'), card['Card Text'],
+                             re.IGNORECASE):
                     counter += 1
 
             elif trait == 'bounce bleed':
@@ -209,31 +182,12 @@ def get_library_by_traits(traits, library):
                         card['Card Text'], re.IGNORECASE):
                     counter += 1
 
-            elif trait == 'black hand':
-                if re.search(r'{}'.format('black hand'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'seraph':
-                if re.search(r'{}'.format('seraph'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'anarch':
-                if re.search(r'{}'.format('anarch'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'infernal':
-                if re.search(r'{}'.format('infernal'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
             elif trait == 'banned':
                 if card['Banned']:
                     counter += 1
 
-            elif re.search(r'{}'.format(trait), card['Card Text'], re.IGNORECASE):
+            elif re.search(r'{}'.format(trait), card['Card Text'],
+                           re.IGNORECASE):
                 counter += 1
 
         if trait_counter == counter:
@@ -292,7 +246,7 @@ def get_library_by_set(request, library):
         'DS',
         'VTES',
         'Jyhad',
-    ];
+    ]
 
     match_cards = []
     r_set = request['set']
@@ -346,6 +300,7 @@ def get_library_by_set(request, library):
 
     return match_cards
 
+
 def get_library_by_precon(request, library):
     bcp_sets = [
         'V5',
@@ -396,7 +351,7 @@ def get_library_by_precon(request, library):
         'DS',
         'VTES',
         'Jyhad',
-    ];
+    ]
 
     booster_subsets = ["V", "C", "U", "R"]
 
@@ -466,13 +421,14 @@ def get_library_by_artist(artist, library):
 
     return match_cards
 
+
 def is_match_by_initials(initials, text):
     prev_index = 0
 
     for c in initials:
         index = text.find(c, prev_index)
         if index == -1:
-                return False
+            return False
         if index != prev_index and index != 0:
             while text[index - 1].isalnum():
                 index = text.find(c, index + 1)
@@ -490,16 +446,20 @@ def get_library_by_name(pattern, library):
     match_cards_by_initials = []
     pattern = pattern.lower()
     for card in library:
-        if pattern in card['ASCII Name'].lower() or pattern in card['Name'].lower():
+        if pattern in card['ASCII Name'].lower(
+        ) or pattern in card['Name'].lower():
             match_cards.append(card)
         else:
             remaining_cards.append(card)
 
     for card in remaining_cards:
-        if is_match_by_initials(pattern, card['ASCII Name'].lower()) or is_match_by_initials(pattern, card['Name'].lower()):
+        if is_match_by_initials(
+                pattern, card['ASCII Name'].lower()) or is_match_by_initials(
+                    pattern, card['Name'].lower()):
             match_cards_by_initials.append(card)
 
     return match_cards + match_cards_by_initials
+
 
 def get_library_by_id(id):
     with open("cardbase_library.json", "r") as library_file:

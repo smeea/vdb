@@ -6,7 +6,9 @@ def get_crypt_by_text(text, crypt):
     match_cards = []
     text = text.replace(' "', '"').replace('" ', '"').replace('"', '(\W|^|$)')
     for card in crypt:
-        if re.search(text, card['Card Text'], re.IGNORECASE) or re.search(text, card['Name'], re.IGNORECASE) or re.search(text, card['ASCII Name'], re.IGNORECASE) :
+        if re.search(text, card['Card Text'], re.IGNORECASE) or re.search(
+                text, card['Name'], re.IGNORECASE) or re.search(
+                    text, card['ASCII Name'], re.IGNORECASE):
             match_cards.append(card)
 
     return match_cards
@@ -44,7 +46,8 @@ def get_crypt_by_traits(traits, crypt):
                     counter += 1
 
             elif trait == 'optional press':
-                if re.search(r'gets (.*)?{}'.format(trait), card['Card Text'], re.IGNORECASE):
+                if re.search(r'gets (.*)?{}'.format(trait), card['Card Text'],
+                             re.IGNORECASE):
                     counter += 1
 
             elif trait == '1 bleed':
@@ -73,17 +76,13 @@ def get_crypt_by_traits(traits, crypt):
                     counter += 1
 
             elif trait == '1 stealth':
-                if re.search(r'{}'.format('[:.] \+1 stealth.'), card['Card Text'], re.IGNORECASE) or re.search(r'{}'.format('gets \+1 stealth on each of (his|her|they) actions'), card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'additional strike':
-                if re.search(r'{}'.format('additional strike'),
-                             card['Card Text'], re.IGNORECASE):
-                    counter += 1
-
-            elif trait == 'optional maneuver':
-                if re.search(r'{}'.format('optional maneuver'),
-                             card['Card Text'], re.IGNORECASE):
+                if re.search(
+                        r'{}'.format('[:.] \+1 stealth.'), card['Card Text'],
+                        re.IGNORECASE
+                ) or re.search(
+                        r'{}'.format(
+                            'gets \+1 stealth on each of (his|her|they) actions'
+                        ), card['Card Text'], re.IGNORECASE):
                     counter += 1
 
             elif trait == 'prevent':
@@ -102,30 +101,31 @@ def get_crypt_by_traits(traits, crypt):
                     counter += 1
 
             elif trait == 'seraph':
-                if re.search(r'{}'.format('seraph[.:]'),
-                             card['Card Text'], re.IGNORECASE):
+                if re.search(r'{}'.format('seraph[.:]'), card['Card Text'],
+                             re.IGNORECASE):
                     counter += 1
 
             elif trait == 'infernal':
-                if re.search(r'{}'.format('infernal[.:]'),
-                             card['Card Text'], re.IGNORECASE):
+                if re.search(r'{}'.format('infernal[.:]'), card['Card Text'],
+                             re.IGNORECASE):
                     counter += 1
 
             elif trait == 'red list':
-                if re.search(r'{}'.format('red list[.:]'),
-                             card['Card Text'], re.IGNORECASE):
+                if re.search(r'{}'.format('red list[.:]'), card['Card Text'],
+                             re.IGNORECASE):
                     counter += 1
 
             elif trait == 'flight':
-                if re.search(r'{}'.format('\[flight\]\.'),
-                             card['Card Text'], re.IGNORECASE):
+                if re.search(r'{}'.format('\[flight\]\.'), card['Card Text'],
+                             re.IGNORECASE):
                     counter += 1
 
             elif trait == 'banned':
                 if card['Banned']:
                     counter += 1
 
-            elif re.search(r'{}'.format(trait), card['Card Text'], re.IGNORECASE):
+            elif re.search(r'{}'.format(trait), card['Card Text'],
+                           re.IGNORECASE):
                 counter += 1
 
         if trait_counter == counter:
@@ -216,7 +216,8 @@ def get_crypt_by_sect(sect, crypt):
 
         # For vampires sect is determined only by card['Text']
         # It is another dirty hack (see trait above), but...
-        if re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect), card['Card Text'], re.IGNORECASE):
+        if re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect),
+                     card['Card Text'], re.IGNORECASE):
             match_cards.append(card)
 
     return match_cards
@@ -283,7 +284,7 @@ def get_crypt_by_set(request, crypt):
         'DS',
         'VTES',
         'Jyhad',
-    ];
+    ]
 
     match_cards = []
     r_set = request['set']
@@ -388,7 +389,7 @@ def get_crypt_by_precon(request, crypt):
         'DS',
         'VTES',
         'Jyhad',
-    ];
+    ]
 
     booster_subsets = ["V", "C", "U", "R"]
 
@@ -465,7 +466,7 @@ def is_match_by_initials(initials, text):
     for c in initials:
         index = text.find(c, prev_index)
         if index == -1:
-                return False
+            return False
         if index != prev_index:
             if index != 0 and text[index - 1].isalnum():
                 return False
@@ -481,13 +482,16 @@ def get_crypt_by_name(pattern, crypt):
     match_cards_by_initials = []
     pattern = pattern.lower()
     for card in crypt:
-        if pattern in card['ASCII Name'].lower() or pattern in card['Name'].lower():
+        if pattern in card['ASCII Name'].lower(
+        ) or pattern in card['Name'].lower():
             match_cards.append(card)
         else:
             remaining_cards.append(card)
 
     for card in remaining_cards:
-        if is_match_by_initials(pattern, card['ASCII Name'].lower()) or is_match_by_initials(pattern, card['Name'].lower()):
+        if is_match_by_initials(
+                pattern, card['ASCII Name'].lower()) or is_match_by_initials(
+                    pattern, card['Name'].lower()):
             match_cards_by_initials.append(card)
 
     return match_cards + match_cards_by_initials

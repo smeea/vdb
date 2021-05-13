@@ -10,8 +10,8 @@ function SearchCryptFormTraits(props) {
     ['1 strength', '+1 strength'],
     ['2 strength', '+2 strength'],
     ['additional strike', 'Additional Strike'],
-    ['optional maneuver', 'Maneuver'],
-    ['optional press', 'Press'],
+    ['maneuver', 'Maneuver'],
+    ['press', 'Press'],
   ];
 
   const traitsRight = [
