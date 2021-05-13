@@ -101,9 +101,15 @@ export const AppProvider = (props) => {
   const [nativeCrypt, setNativeCrypt] = useState(undefined);
   const [nativeLibrary, setNativeLibrary] = useState(undefined);
 
-  const [twdFormState, setTwdFormState] = useState(defaultsTwdForm);
-  const [cryptFormState, setCryptFormState] = useState(defaultsCryptForm);
-  const [libraryFormState, setLibraryFormState] = useState(defaultsLibraryForm);
+  const [twdFormState, setTwdFormState] = useState(
+    JSON.parse(JSON.stringify(defaultsTwdForm))
+  );
+  const [cryptFormState, setCryptFormState] = useState(
+    JSON.parse(JSON.stringify(defaultsCryptForm))
+  );
+  const [libraryFormState, setLibraryFormState] = useState(
+    JSON.parse(JSON.stringify(defaultsLibraryForm))
+  );
   const [showTwdSearch, setShowTwdSearch] = useState(true);
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);

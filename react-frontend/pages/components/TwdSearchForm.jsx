@@ -20,6 +20,7 @@ import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
 import TwdSearchFormLibraryTotal from './TwdSearchFormLibraryTotal.jsx';
 import TwdSearchFormMatchInventory from './TwdSearchFormMatchInventory.jsx';
 import TwdSearchFormMatchInventoryScaling from './TwdSearchFormMatchInventoryScaling.jsx';
+import defaults from './forms_data/defaultsTwdForm.json';
 import AppContext from '../../context/AppContext.js';
 
 function TwdSearchForm(props) {
@@ -60,57 +61,6 @@ function TwdSearchForm(props) {
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
-
-  const defaults = {
-    event: '',
-    player: '',
-    location: '',
-    players: {
-      to: 'any',
-      from: 'any',
-    },
-    date: {
-      to: 'any',
-      from: 'any',
-    },
-    disciplines: {},
-    clan: 'any',
-    capacity: {
-      '1-4': false,
-      '4-6': false,
-      '6-8': false,
-      '8-11': false,
-    },
-    cardtypes: {
-      master: 'any',
-      action: 'any',
-      'political action': 'any',
-      ally: 'any',
-      equipment: 'any',
-      retainer: 'any',
-      'action modifier': 'any',
-      reaction: 'any',
-      combat: 'any',
-      event: 'any',
-    },
-    traits: {
-      star: false,
-      monoclan: false,
-    },
-    crypt: {},
-    library: {},
-    libraryTotal: {
-      '60-67': false,
-      '68-75': false,
-      '76-83': false,
-      '84-90': false,
-    },
-    matchInventory: {
-      crypt: 'any',
-      library: 'any',
-      scaling: false,
-    },
-  };
 
   const handleEventChange = (event) => {
     const value = event.target.value;
@@ -189,7 +139,7 @@ function TwdSearchForm(props) {
   };
 
   const handleClearButton = () => {
-    setTwdFormState(defaults);
+    setTwdFormState(JSON.parse(JSON.stringify(defaults)));
     setTwdResults(undefined);
     setShowError(false);
     history.push('/twd');
@@ -265,7 +215,7 @@ function TwdSearchForm(props) {
   const getNewTwd = (q) => {
     setSpinnerState(true);
     setShowError(false);
-    setTwdFormState(defaults);
+    setTwdFormState(JSON.parse(JSON.stringify(defaults)));
 
     const url = `${process.env.API_URL}twd/new/${q}`;
     const options = {
@@ -289,7 +239,7 @@ function TwdSearchForm(props) {
   };
 
   const getRandomTwd = (q) => {
-    setTwdFormState(defaults);
+    setTwdFormState(JSON.parse(JSON.stringify(defaults)));
     setShowError(false);
     setSpinnerState(true);
 

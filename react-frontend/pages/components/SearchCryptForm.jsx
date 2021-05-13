@@ -16,7 +16,7 @@ import SearchCryptFormTraits from './SearchCryptFormTraits.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
 import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
-import defaultsCryptForm from './forms_data/defaultsCryptForm.json';
+import defaults from './forms_data/defaultsCryptForm.json';
 import AppContext from '../../context/AppContext.js';
 
 function SearchCryptForm(props) {
@@ -60,107 +60,6 @@ function SearchCryptForm(props) {
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
-
-  const defaults = {
-    text: '',
-    disciplines: {
-      Abombwe: 0,
-      Animalism: 0,
-      Auspex: 0,
-      Celerity: 0,
-      Chimerstry: 0,
-      Daimoinon: 0,
-      Dementation: 0,
-      Dominate: 0,
-      Fortitude: 0,
-      Melpominee: 0,
-      Mytherceria: 0,
-      Necromancy: 0,
-      Obeah: 0,
-      Obfuscate: 0,
-      Obtenebration: 0,
-      Potence: 0,
-      Presence: 0,
-      Protean: 0,
-      Quietus: 0,
-      Sanguinus: 0,
-      Serpentis: 0,
-      Spiritus: 0,
-      Temporis: 0,
-      Thanatosis: 0,
-      Thaumaturgy: 0,
-      Valeren: 0,
-      Vicissitude: 0,
-      Visceratika: 0,
-      Defense: 0,
-      Innocence: 0,
-      Judgment: 0,
-      Martyrdom: 0,
-      Redemption: 0,
-      Vengeance: 0,
-      Vision: 0,
-    },
-    capacity: {
-      capacity: 'any',
-      moreless: 'le',
-    },
-    clan: 'any',
-    sect: 'any',
-    votes: 'any',
-    titles: {
-      primogen: false,
-      prince: false,
-      justicar: false,
-      innercircle: false,
-      baron: false,
-      '1 votes': false,
-      '2 votes': false,
-      bishop: false,
-      archbishop: false,
-      priscus: false,
-      cardinal: false,
-      regent: false,
-      magaji: false,
-    },
-    group: {
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-      5: false,
-      6: false,
-    },
-    traits: {
-      '1 intercept': false,
-      '1 stealth': false,
-      '1 bleed': false,
-      '2 bleed': false,
-      '1 strength': false,
-      '2 strength': false,
-      'additional strike': false,
-      maneuver: false,
-      press: false,
-      prevent: false,
-      aggravated: false,
-      'enter combat': false,
-      'black hand': false,
-      seraph: false,
-      infernal: false,
-      'red list': false,
-      flight: false,
-    },
-    set: {
-      set: 'any',
-      'only in': false,
-      'first print': false,
-    },
-    precon: {
-      precon: 'any',
-      'only in': false,
-      'first print': false,
-    },
-    artist: 'any',
-  };
 
   const handleTextChange = (event) => {
     const value = event.target.value;
@@ -226,7 +125,7 @@ function SearchCryptForm(props) {
   };
 
   const handleClearButton = () => {
-    setCryptFormState(defaults);
+    setCryptFormState(JSON.parse(JSON.stringify(defaults)));
     setCryptResults(undefined);
     setPreresults(undefined);
     setShowError(false);

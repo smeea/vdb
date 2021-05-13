@@ -15,6 +15,7 @@ import SearchLibraryFormPoolCost from './SearchLibraryFormPoolCost.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
 import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
+import defaults from './forms_data/defaultsLibraryForm.json';
 import AppContext from '../../context/AppContext.js';
 
 function SearchLibraryForm(props) {
@@ -57,52 +58,6 @@ function SearchLibraryForm(props) {
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
-
-  const defaults = {
-    text: '',
-    type: 'any',
-    discipline: 'any',
-    blood: {
-      blood: 'any',
-      moreless: 'le',
-    },
-    pool: {
-      pool: 'any',
-      moreless: 'le',
-    },
-    clan: 'any',
-    sect: 'any',
-    title: 'any',
-    traits: {
-      intercept: false,
-      stealth: false,
-      bleed: false,
-      strength: false,
-      dodge: false,
-      maneuver: false,
-      'additional strike': false,
-      aggravated: false,
-      prevent: false,
-      press: false,
-      'combat ends': false,
-      'bounce bleed': false,
-      'black hand': false,
-      seraph: false,
-      anarch: false,
-      infernal: false,
-    },
-    set: {
-      set: 'any',
-      'only in': false,
-      'first print': false,
-    },
-    precon: {
-      precon: 'any',
-      'only in': false,
-      'first print': false,
-    },
-    artist: 'any',
-  };
 
   const handleTextChange = (event) => {
     const value = event.target.value;
@@ -151,7 +106,7 @@ function SearchLibraryForm(props) {
   };
 
   const handleClearButton = () => {
-    setLibraryFormState(defaults);
+    setLibraryFormState(JSON.parse(JSON.stringify(defaults)));
     setLibraryResults(undefined);
     setPreresults(undefined);
     setShowError(false);
