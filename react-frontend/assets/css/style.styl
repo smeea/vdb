@@ -165,6 +165,13 @@ label.btn-outline-secondary:not(.disabled).active
   background: var(--bg-button-hover)
   color: var(--fg-primary)
 
+.custom-control-input~.custom-control-label:before
+  background-color: var(--bg-checkbox)
+
+.custom-control-input:checked~.custom-control-label:before
+  border-color: var(--bg-checkbox-selected)
+  background-color: var(--bg-checkbox-selected)
+
 .navMenu
   margin-top: 18px
 
@@ -524,7 +531,7 @@ font-1.85
 .discipline-base-image-forms,
 .discipline-superior-image-results,
 .discipline-superior-image-forms
-  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0px .5px var(--border-primary))
+  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0px 0.75px var(--disciplines-shadow))
 .clan-image-results
   height: 24px
   filter: brightness(var(--clan-icon-brightness))
@@ -636,6 +643,7 @@ input.quantity
 
 hr
   margin: 0.5rem
+  border-color: var(--border-secondary)
 
 hr.thick
   border: 2px solid var(--border-secondary)

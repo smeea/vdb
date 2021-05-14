@@ -23,6 +23,8 @@
 * Keyboard navigation + swipes in card view
 * Localized proxies
 * Improve add-from-deck to inventory menu
+* Add original images ("scans") for PDF sets
+* Deck tags
 
 # MAYBE LATER FEATURES
 * Update cardbase script
