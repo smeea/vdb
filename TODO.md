@@ -4,7 +4,7 @@
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt
 * Error in twd sanitizeTwd with del (deck['description'])
-* Add popover in Inventory to Used column (same as for quantity)
+* Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 
 # FIX MOBILE
 
@@ -16,7 +16,6 @@
 * Inventory add from precon
 * Inventory add from decks with select form (mark decks already in)
 * Offline PWA support
-* Card modal popovers in text/rulings like /Card Name/ or {Card Name}
 * Search for similar TWD decks
 * Keyboard navigation + swipes in card view
 * Localized proxies

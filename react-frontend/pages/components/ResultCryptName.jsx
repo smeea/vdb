@@ -12,7 +12,7 @@ function ResultCryptName(props) {
 
   return (
     <>
-      <div className="name">
+      <div className="d-inline name">
         {props.card['Banned'] ? (
           <>
             <strike>{props.card['Name']}</strike>
