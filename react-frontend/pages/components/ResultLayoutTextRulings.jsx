@@ -30,7 +30,7 @@ const ResultLayoutTextRulings = (props) => {
     const RulingText = text.map((i, index) => {
       let replacedText;
 
-      replacedText = reactStringReplace(i, /\[(\w+)\]/g, (match, idx) => (
+      replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => (
         <img
           key={idx}
           className="discipline-base-image-results"
@@ -41,7 +41,7 @@ const ResultLayoutTextRulings = (props) => {
 
       replacedText = reactStringReplace(
         replacedText,
-        /{(.*)}/g,
+        /{(.*?)}/g,
         (match, idx) => {
           const cardBase = { ...nativeCrypt, ...nativeLibrary };
           const cardid = Object.keys(cardBase).find(

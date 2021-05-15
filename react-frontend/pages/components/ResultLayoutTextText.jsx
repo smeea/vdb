@@ -15,7 +15,7 @@ const ResultLayoutTextText = (props) => {
   const CardText = text.map((i, index) => {
     let replacedText;
 
-    replacedText = reactStringReplace(i, /\[(\w+)\]/g, (match, idx) => (
+    replacedText = reactStringReplace(i, /\[(\w+?)\]/g, (match, idx) => (
       <img
         key={`${match}-${idx}`}
         className="discipline-base-image-results"
@@ -26,7 +26,7 @@ const ResultLayoutTextText = (props) => {
 
     replacedText = reactStringReplace(
       replacedText,
-      /\/(.*)\//g,
+      /\/(.*?)\//g,
       (match, idx) => {
         const cardBase = { ...cryptCardBase, ...libraryCardBase };
         const cardid = Object.keys(cardBase).find(
