@@ -8,7 +8,13 @@ import ResultCryptName from './ResultCryptName.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 
 const ResultLayoutTextRulings = (props) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useContext(AppContext);
+  const {
+    nativeCrypt,
+    nativeLibrary,
+    cryptCardBase,
+    libraryCardBase,
+    isMobile,
+  } = useContext(AppContext);
 
   const Rulings = Object(props.rulings).map((k, index) => {
     const Refs = Object.keys(k['refs']).map((j, idx) => {
@@ -37,7 +43,7 @@ const ResultLayoutTextRulings = (props) => {
         replacedText,
         /{(.*)}/g,
         (match, idx) => {
-          const cardBase = { ...cryptCardBase, ...libraryCardBase };
+          const cardBase = { ...nativeCrypt, ...nativeLibrary };
           const cardid = Object.keys(cardBase).find(
             (j) => cardBase[j]['Name'] == match
           );
@@ -78,7 +84,9 @@ const ResultLayoutTextRulings = (props) => {
               </span>
             );
           } else {
-            return <React.Fragment key={idx}>/{match}/</React.Fragment>;
+            return (
+              <React.Fragment key={idx}>&#123;{match}&#125;</React.Fragment>
+            );
           }
         }
       );
