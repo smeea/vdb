@@ -9,17 +9,40 @@ def letters_to_ascii(text):
                    if unicodedata.category(c) != 'Mn')
 
 
+artist_fixes = {
+    "Alejandro Collucci": "Alejandro Colucci",
+    "Chet Masterz": "Chet Masters",
+    "Dimple": "Nicolas Bigot",
+    "EM Gist": "Erik Gist",
+    "G. Goleash": "Grant Goleash",
+    "Gin\u00e9s Qui\u00f1onero-Santiago": "Gin\u00e9s Qui\u00f1onero",
+    "Glenn Osterberger": "Glen Osterberger",
+    "Heather V. Kreiter": "Heather Kreiter",
+    "Jeff \"el jefe\" Holt": "Jeff Holt",
+    "L. Snelly": "Lawrence Snelly",
+    "Mathias Tapia": "Matias Tapia",
+    "Mattias Tapia": "Matias Tapia",
+    "Matt Mitchell": "Matthew Mitchell",
+    "Mike Gaydos": "Michael Gaydos",
+    "Mike Weaver": "Michael Weaver",
+    "Nicolas \"Dimple\" Bigot": "Nicolas Bigot",
+    "Pat McEvoy": "Patrick McEvoy",
+    "Ron Spenser": "Ron Spencer",
+    "Sam Araya": "Samuel Araya",
+    "Sandra Chang": "Sandra Chang-Adair",
+    "T. Bradstreet": "Tim Bradstreet",
+    "Tom Baxa": "Thomas Baxa",
+    "zelgaris": "Tomáš Zahradníček",
+}
+
 integer_fields = ['Id']
 useless_fields = ['Aka', 'Flavor Text', 'Draft']
 
-with open("vteslib.csv", "r",
-          encoding='utf8') as f_csv, open(
-              "vteslib.json",
-              "w", encoding='utf8') as f_json, open(
-                  "cardbase_lib.json",
-                  "w", encoding='utf8') as cardbase_file, open(
-                      "vtes.json",
-                      "r", encoding='utf8') as krcg_file:
+with open("vteslib.csv", "r", encoding='utf8') as f_csv, open(
+        "vteslib.json", "w", encoding='utf8') as f_json, open(
+            "cardbase_lib.json", "w", encoding='utf8') as cardbase_file, open(
+                "vtes.json", "r", encoding='utf8') as krcg_file, open(
+                    "artistsLib.json", "w", encoding='utf8') as artists_file:
 
     krcg_cards = json.load(krcg_file)
     reader = csv.reader(f_csv)
@@ -27,6 +50,7 @@ with open("vteslib.csv", "r",
     csv_cards = csv.DictReader(f_csv, fieldnames)
     cards = []
     card_base = {}
+    artistsSet = set()
 
     for card in csv_cards:
 
@@ -38,9 +62,9 @@ with open("vteslib.csv", "r",
                 pass
 
         # ASCII-fication of name
-        if card ['Id'] == 101670:
+        if card['Id'] == 101670:
             card['ASCII Name'] = "Sacre-Coeur Cathedral, France"
-        elif card ['Id'] == 100130:
+        elif card['Id'] == 100130:
             card['ASCII Name'] = "Bang Nakh - Tiger's Claws"
         else:
             card['ASCII Name'] = letters_to_ascii(card['Name'])
@@ -74,7 +98,8 @@ with open("vteslib.csv", "r",
                 card['Set'][set[0]] = {}
 
             for precon in precons:
-                if set[0] in ["KoT", "HttB"] and (m := re.match(r'^(A|B)([0-9]+)?', precon)):
+                if set[0] in ["KoT", "HttB"] and (m := re.match(
+                        r'^(A|B)([0-9]+)?', precon)):
                     s = f"{set[0]}R"
                     if m.group(2):
                         card['Set'][s][m.group(1)] = m.group(2)
@@ -98,7 +123,16 @@ with open("vteslib.csv", "r",
         for k in useless_fields:
             del card[k]
 
-        card['Artist'] = re.split('; | & ', card['Artist'])
+        artists = []
+        for artist in re.split('; | & ', card['Artist']):
+            if artist in artist_fixes.keys():
+                artists.append(artist_fixes[artist])
+                artistsSet.add(artist_fixes[artist])
+            else:
+                artists.append(artist)
+                artistsSet.add(artist)
+
+        card['Artist'] = artists
 
         # Remove {} and spaces in []
         card['Card Text'] = re.sub('[{}]', '', card['Card Text'])
@@ -112,6 +146,7 @@ with open("vteslib.csv", "r",
                 for rule in c['rulings']['text']:
                     if match := re.match(r'(.*?)\[... \S+\].*', rule):
                         text = match.group(1)
+                        text = re.sub(r'{The (\w+)}', r'{\1, The}', text)
                         card['Rulings'].append({
                             'text': text,
                             'refs': {},
@@ -120,13 +155,18 @@ with open("vteslib.csv", "r",
                 for id in c['rulings']['links'].keys():
                     for i, rule in enumerate(c['rulings']['text']):
                         if id in rule:
-                            card['Rulings'][i]['refs'][id] = c['rulings']['links'][id]
+                            card['Rulings'][i]['refs'][id] = c['rulings'][
+                                'links'][id]
 
+        card_base[card['Id']] = card.copy()
 
+        del card['Rulings']
         cards.append(card)
-        card_base[card['Id']] = card
+
+    artists = sorted(artistsSet)
 
     # json.dump(cards, f_json, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
     json.dump(cards, f_json, indent=4, separators=(',', ':'))
     json.dump(card_base, cardbase_file, indent=4, separators=(',', ':'))
+    json.dump(artists, artists_file, indent=4, separators=(',', ':'))
