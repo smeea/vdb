@@ -45,15 +45,16 @@ function ResultLibraryTable(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
-      setModalInventory({
-        inInventory: inInventory,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-      });
+      inventoryMode &&
+        setModalInventory({
+          inInventory: inInventory,
+          usedDescription: {
+            soft: SoftUsedDescription,
+            hard: HardUsedDescription,
+          },
+          softUsedMax: softUsedMax,
+          hardUsedTotal: hardUsedTotal,
+        });
     };
 
     if (resultTrClass == 'result-even') {

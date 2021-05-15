@@ -11,13 +11,8 @@ import ResultLibraryModal from './ResultLibraryModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function TwdResultLibraryKeyCards(props) {
-  const {
-    decks,
-    inventoryLibrary,
-    usedLibraryCards,
-    inventoryMode,
-    isMobile,
-  } = useContext(AppContext);
+  const { decks, inventoryLibrary, usedLibraryCards, inventoryMode, isMobile } =
+    useContext(AppContext);
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
 
@@ -89,15 +84,16 @@ function TwdResultLibraryKeyCards(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
-      setModalInventory({
-        inInventory: inInventory,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
+      inventoryMode &&
+        setModalInventory({
+          inInventory: inInventory,
+          softUsedMax: softUsedMax,
+          hardUsedTotal: hardUsedTotal,
+          usedDescription: {
+            soft: SoftUsedDescription,
+            hard: HardUsedDescription,
+          },
+        });
     };
 
     if (resultTrClass == 'result-even') {

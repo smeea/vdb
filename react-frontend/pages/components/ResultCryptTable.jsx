@@ -44,15 +44,16 @@ function ResultCryptTable(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
-      setModalInventory({
-        inInventory: inInventory,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
+      inventoryMode &&
+        setModalInventory({
+          inInventory: inInventory,
+          softUsedMax: softUsedMax,
+          hardUsedTotal: hardUsedTotal,
+          usedDescription: {
+            soft: SoftUsedDescription,
+            hard: HardUsedDescription,
+          },
+        });
     };
 
     if (resultTrClass == 'result-odd') {

@@ -10,13 +10,8 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function TwdResultCrypt(props) {
-  const {
-    decks,
-    inventoryMode,
-    inventoryCrypt,
-    usedCryptCards,
-    isMobile,
-  } = useContext(AppContext);
+  const { decks, inventoryMode, inventoryCrypt, usedCryptCards, isMobile } =
+    useContext(AppContext);
   let resultTrClass = 'result-even';
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
@@ -88,15 +83,16 @@ function TwdResultCrypt(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
-      setModalInventory({
-        inInventory: inInventory,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
+      inventoryMode &&
+        setModalInventory({
+          inInventory: inInventory,
+          softUsedMax: softUsedMax,
+          hardUsedTotal: hardUsedTotal,
+          usedDescription: {
+            soft: SoftUsedDescription,
+            hard: HardUsedDescription,
+          },
+        });
     };
 
     if (resultTrClass == 'result-even') {
