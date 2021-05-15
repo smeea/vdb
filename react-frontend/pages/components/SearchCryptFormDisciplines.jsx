@@ -53,8 +53,16 @@ function SearchCryptFormDisciplines(props) {
             id={i}
             onClick={(e) => props.onChange(e)}
           />
-          <img className="discipline-base-image-forms" src={imgSrcBase} />
-          <img className="discipline-superior-image-forms" src={imgSrcSup} />
+          <img
+            className="discipline-base-image-forms"
+            title={i}
+            src={imgSrcBase}
+          />
+          <img
+            className="discipline-superior-image-forms"
+            title={i}
+            src={imgSrcSup}
+          />
         </label>
       </div>
     );

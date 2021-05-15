@@ -29,7 +29,7 @@ function SearchCryptFormVirtues(props) {
             id={i}
             onClick={(e) => props.onChange(e)}
           />
-          <img className="virtue-image" src={imgSrc} />
+          <img className="virtue-image" title={i} src={imgSrc} />
         </label>
       </div>
     );
