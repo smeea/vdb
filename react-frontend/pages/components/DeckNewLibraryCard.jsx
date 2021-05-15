@@ -13,7 +13,8 @@ function DeckNewLibraryCard(props) {
   const handleChange = (value) => setSelectedValue(value);
 
   const addNewCard = () => {
-    if (!props.cards[selectedValue]) props.cardAdd(selectedValue);
+    if (!props.cards[selectedValue])
+      props.cardChange(props.deckid, selectedValue, 1);
     if (props.inInventory) props.setNewId(selectedValue);
     setSelectedValue('');
     props.setShowAdd && props.setShowAdd(false);

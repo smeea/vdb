@@ -41,7 +41,7 @@ function Inventory(props) {
                 <>
                   <div className="pt-1 px-1">
                     <DeckNewCryptCard
-                      cardAdd={props.cardAdd}
+                      cardChange={props.cardChange}
                       cards={inventoryCrypt}
                       setNewId={setNewCryptId}
                       inInventory={true}
@@ -77,7 +77,7 @@ function Inventory(props) {
                 <>
                   <div className="pt-1 px-1">
                     <DeckNewLibraryCard
-                      cardAdd={props.cardAdd}
+                      cardChange={props.cardChange}
                       cards={inventoryLibrary}
                       setNewId={setNewLibraryId}
                       inInventory={true}
@@ -128,7 +128,7 @@ function Inventory(props) {
               <Col xl={1} className="hide-narrow"></Col>
               <Col md={6} xl={5} className="px-0 px-md-1 px-xl-3">
                 <DeckNewCryptCard
-                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
                   cards={inventoryCrypt}
                   setNewId={setNewCryptId}
                   inInventory={true}
@@ -161,7 +161,7 @@ function Inventory(props) {
               </Col>
               <Col md={4} xl={4} className="px-0 px-md-1 px-xl-3">
                 <DeckNewLibraryCard
-                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
                   cards={inventoryLibrary}
                   setNewId={setNewLibraryId}
                   inInventory={true}

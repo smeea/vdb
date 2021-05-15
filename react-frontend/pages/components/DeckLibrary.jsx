@@ -221,9 +221,10 @@ function DeckLibrary(props) {
       {showAdd &&
         (!isMobile ? (
           <DeckNewLibraryCard
-            cardAdd={props.cardAdd}
+            cardChange={props.cardChange}
             setShowAdd={setShowAdd}
             cards={props.cards}
+            deckid={props.deckid}
           />
         ) : (
           <Modal
@@ -250,9 +251,10 @@ function DeckLibrary(props) {
                   </Col>
                 </Row>
                 <DeckNewLibraryCard
-                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
                   setShowAdd={setShowAdd}
                   cards={props.cards}
+                  deckid={props.deckid}
                 />
               </Container>
             </Modal.Body>

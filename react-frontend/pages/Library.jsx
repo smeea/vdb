@@ -75,7 +75,6 @@ function Library(props) {
                 <div className="pt-4">
                   <DeckCrypt
                     changeTimer={props.changeTimer}
-                    cardAdd={props.cardAdd}
                     cardChange={props.cardChange}
                     deckid={props.activeDeck.deckid}
                     cards={deckRouter(props.activeDeck).crypt}
@@ -85,7 +84,6 @@ function Library(props) {
                 </div>
                 <div className="pt-4">
                   <DeckLibrary
-                    cardAdd={props.cardAdd}
                     cardChange={props.cardChange}
                     deckid={props.activeDeck.deckid}
                     cards={deckRouter(props.activeDeck).library}
@@ -109,7 +107,6 @@ function Library(props) {
         >
           {libraryResults && (
             <ResultLibrary
-              cardAdd={props.cardAdd}
               cardChange={props.cardChange}
               library={
                 deckRouter(props.activeDeck) &&

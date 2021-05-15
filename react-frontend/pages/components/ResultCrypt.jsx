@@ -65,7 +65,6 @@ function ResultCrypt(props) {
             className={className}
             crypt={props.crypt}
             activeDeck={props.activeDeck}
-            cardAdd={props.cardAdd}
             cardChange={props.cardChange}
             resultCards={sortedCards}
             setShowFloatingButtons={setShowFloatingButtons}

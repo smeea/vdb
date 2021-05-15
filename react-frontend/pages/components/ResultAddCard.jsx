@@ -2,10 +2,9 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 function ResultAddCard(props) {
-  const handleButton = () =>
-    props.inDeck > 0
-      ? props.cardChange(props.deckid, props.card.Id, props.inDeck + 1)
-      : props.cardAdd(props.card.Id);
+  const handleButton = () => {
+    props.cardChange(props.deckid, props.card.Id, props.inDeck + 1);
+  };
 
   return (
     <Button

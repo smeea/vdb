@@ -4,8 +4,6 @@
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt
 * Error in twd sanitizeTwd with del (deck['description'])
-* InventoryMode error in twd bytypes cards
-* Increase quantity of missing card in inventory
 * Add popover in Inventory to Used column (same as for quantity)
 
 # FIX MOBILE

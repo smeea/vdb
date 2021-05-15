@@ -437,7 +437,6 @@ function Decks(props) {
               <Col md={7} className="px-0 pl-md-3 pr-md-2 px-xl-3">
                 <DeckCrypt
                   changeTimer={props.changeTimer}
-                  cardAdd={props.cardAdd}
                   cardChange={props.cardChange}
                   deckid={props.activeDeck.deckid}
                   cards={deckRouter(props.activeDeck).crypt}
@@ -449,7 +448,6 @@ function Decks(props) {
               </Col>
               <Col md={5} className="pt-4 pt-lg-0 px-0 pl-md-2 pr-md-3 px-xl-3">
                 <DeckLibrary
-                  cardAdd={props.cardAdd}
                   cardChange={props.cardChange}
                   deckid={props.activeDeck.deckid}
                   cards={deckRouter(props.activeDeck).library}

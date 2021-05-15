@@ -61,21 +61,11 @@ function ResultCryptTable(props) {
       resultTrClass = 'result-odd';
     }
 
-    let inDeck;
-    if (props.crypt) {
-      Object.keys(props.crypt).map((i) => {
-        if (i == card['Id']) {
-          inDeck = props.crypt[i].q;
-        }
-      });
-    }
+    const inDeck =
+      (props.crypt && props.crypt[card['Id']] && props.crypt[card['Id']].q) ||
+      0;
 
     let inInventory = null;
-    let softUsedMax = 0;
-    let hardUsedTotal = 0;
-    let SoftUsedDescription;
-    let HardUsedDescription;
-
     if (inventoryMode) {
       if (Object.keys(inventoryCrypt).includes(card['Id'].toString())) {
         inInventory = inventoryCrypt[card['Id']].q;
@@ -83,6 +73,8 @@ function ResultCryptTable(props) {
         inInventory = 0;
       }
 
+      let softUsedMax = 0;
+      let SoftUsedDescription;
       if (usedCryptCards && usedCryptCards.soft[card['Id']]) {
         SoftUsedDescription = Object.keys(usedCryptCards.soft[card['Id']]).map(
           (id) => {
@@ -101,6 +93,8 @@ function ResultCryptTable(props) {
         );
       }
 
+      let hardUsedTotal = 0;
+      let HardUsedDescription;
       if (usedCryptCards && usedCryptCards.hard[card['Id']]) {
         HardUsedDescription = Object.keys(usedCryptCards.hard[card['Id']]).map(
           (id) => {
@@ -124,7 +118,6 @@ function ResultCryptTable(props) {
           {addMode && (
             <td className="quantity-add pr-1">
               <ResultAddCard
-                cardAdd={props.cardAdd}
                 cardChange={props.cardChange}
                 cardid={card['Id']}
                 deckid={props.activeDeck.deckid}

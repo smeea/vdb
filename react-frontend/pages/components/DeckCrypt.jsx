@@ -212,9 +212,10 @@ function DeckCrypt(props) {
       {showAdd &&
         (!isMobile ? (
           <DeckNewCryptCard
-            cardAdd={props.cardAdd}
+            cardChange={props.cardChange}
             setShowAdd={setShowAdd}
             cards={props.cards}
+            deckid={props.deckid}
           />
         ) : (
           <Modal
@@ -241,9 +242,10 @@ function DeckCrypt(props) {
                   </Col>
                 </Row>
                 <DeckNewCryptCard
-                  cardAdd={props.cardAdd}
+                  cardChange={props.cardChange}
                   setShowAdd={setShowAdd}
                   cards={props.cards}
+                  deckid={props.deckid}
                 />
               </Container>
             </Modal.Body>

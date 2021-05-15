@@ -62,14 +62,11 @@ function ResultLibraryTable(props) {
       resultTrClass = 'result-even';
     }
 
-    let inDeck;
-    if (props.library) {
-      Object.keys(props.library).map((i) => {
-        if (i == card.Id) {
-          inDeck = props.library[i].q;
-        }
-      });
-    }
+    const inDeck =
+      (props.library &&
+        props.library[card['Id']] &&
+        props.library[card['Id']].q) ||
+      0;
 
     let inInventory = null;
     if (inventoryMode) {
@@ -78,14 +75,14 @@ function ResultLibraryTable(props) {
       } else {
         inInventory = 0;
       }
-    }
 
-    let softUsedMax = 0;
-    let SoftUsedDescription;
+      let softUsedMax = 0;
+      let SoftUsedDescription;
 
-    if (usedLibraryCards.soft[card['Id']]) {
-      SoftUsedDescription = Object.keys(usedLibraryCards.soft[card['Id']]).map(
-        (id) => {
+      if (usedLibraryCards.soft[card['Id']]) {
+        SoftUsedDescription = Object.keys(
+          usedLibraryCards.soft[card['Id']]
+        ).map((id) => {
           if (softUsedMax < usedLibraryCards.soft[card['Id']][id]) {
             softUsedMax = usedLibraryCards.soft[card['Id']][id];
           }
@@ -97,15 +94,15 @@ function ResultLibraryTable(props) {
               t="s"
             />
           );
-        }
-      );
-    }
+        });
+      }
 
-    let hardUsedTotal = 0;
-    let HardUsedDescription;
-    if (usedLibraryCards.hard[card['Id']]) {
-      HardUsedDescription = Object.keys(usedLibraryCards.hard[card['Id']]).map(
-        (id) => {
+      let hardUsedTotal = 0;
+      let HardUsedDescription;
+      if (usedLibraryCards.hard[card['Id']]) {
+        HardUsedDescription = Object.keys(
+          usedLibraryCards.hard[card['Id']]
+        ).map((id) => {
           hardUsedTotal += usedLibraryCards.hard[card['Id']][id];
           return (
             <UsedDescription
@@ -115,8 +112,8 @@ function ResultLibraryTable(props) {
               t="h"
             />
           );
-        }
-      );
+        });
+      }
     }
 
     return (
@@ -125,7 +122,6 @@ function ResultLibraryTable(props) {
           {addMode && (
             <td className="quantity-add pr-1">
               <ResultAddCard
-                cardAdd={props.cardAdd}
                 cardChange={props.cardChange}
                 cardid={card['Id']}
                 deckid={props.activeDeck.deckid}
