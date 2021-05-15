@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import reactStringReplace from 'react-string-replace';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import icons from './forms_data/disciplineIcons.json';
 import ResultLibraryType from './ResultLibraryType.jsx';
@@ -8,14 +7,14 @@ import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
+import ResultLayoutTextText from './ResultLayoutTextText.jsx';
 import ResultLayoutTextSets from './ResultLayoutTextSets.jsx';
 import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryPopover(props) {
-  const { showImage, nativeLibrary, localizedLibrary, lang } = useContext(
-    AppContext
-  );
+  const { showImage, nativeLibrary, localizedLibrary, lang } =
+    useContext(AppContext);
 
   const imgSrc = `${process.env.ROOT_URL}images/cards/${
     localizedLibrary &&
@@ -35,21 +34,6 @@ function ResultLibraryPopover(props) {
       onClick={props.handleClose}
     />
   );
-
-  const text = props.card['Card Text'].replace(/\(D\)/g, '\u24B9').split('\n');
-  const iconizedText = [];
-  text.map((i) => {
-    iconizedText.push(
-      reactStringReplace(i, /\[(\w+)\]/g, (match, idx) => (
-        <img
-          key={idx}
-          className="discipline-base-image-results"
-          src={`${process.env.ROOT_URL}images/disciplines/${icons[match]}.svg`}
-          title={match}
-        />
-      ))
-    );
-  });
 
   return (
     <>
@@ -87,16 +71,7 @@ function ResultLibraryPopover(props) {
             )}
           </div>
           <hr />
-          {iconizedText.map((i, index) => {
-            return (
-              <React.Fragment key={index}>
-                {i.map((y, idx) => {
-                  return <React.Fragment key={idx}>{y}</React.Fragment>;
-                })}
-                <br />
-              </React.Fragment>
-            );
-          })}
+          <ResultLayoutTextText text={props.card['Card Text']} />
           <hr />
           <div className="d-flex align-items-center justify-content-between">
             <ResultLibraryCost
