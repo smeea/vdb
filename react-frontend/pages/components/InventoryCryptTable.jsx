@@ -134,21 +134,65 @@ function InventoryCryptTable(props) {
               )}
             </td>
             <td className="used">
-              {softUsedMax > 0 && (
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-inline opacity-035 pr-1">
-                    <Shuffle width="14" height="14" viewBox="0 0 16 16" />
+              {isMobile ? (
+                <>
+                  {softUsedMax > 0 && (
+                    <div className="d-flex align-items-center justify-content-center">
+                      <div className="d-inline opacity-035 pr-1">
+                        <Shuffle width="14" height="14" viewBox="0 0 16 16" />
+                      </div>
+                      {softUsedMax}
+                    </div>
+                  )}
+                  {hardUsedTotal > 0 && (
+                    <div className="d-flex align-items-center justify-content-center">
+                      <div className="d-inline opacity-035 pr-1">
+                        <PinAngleFill
+                          width="14"
+                          height="14"
+                          viewBox="0 0 16 16"
+                        />
+                      </div>
+                      {hardUsedTotal}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <OverlayTrigger
+                  placement={props.placement ? props.placement : 'right'}
+                  overlay={
+                    <UsedPopover
+                      softUsedMax={softUsedMax}
+                      hardUsedTotal={hardUsedTotal}
+                      inInventory={card.q}
+                      SoftUsedDescription={SoftUsedDescription}
+                      HardUsedDescription={HardUsedDescription}
+                    />
+                  }
+                >
+                  <div>
+                    {softUsedMax > 0 && (
+                      <div className="d-flex align-items-center justify-content-center">
+                        <div className="d-inline opacity-035 pr-1">
+                          <Shuffle width="14" height="14" viewBox="0 0 16 16" />
+                        </div>
+                        {softUsedMax}
+                      </div>
+                    )}
+                    {hardUsedTotal > 0 && (
+                      <div className="d-flex align-items-center justify-content-center">
+                        <div className="d-inline opacity-035 pr-1">
+                          <PinAngleFill
+                            width="14"
+                            height="14"
+                            viewBox="0 0 16 16"
+                          />
+                        </div>
+                        {hardUsedTotal}
+                      </div>
+                    )}
                   </div>
-                  {softUsedMax}
-                </div>
-              )}
-              {hardUsedTotal > 0 && (
-                <div className="d-flex align-items-center justify-content-center">
-                  <div className="d-inline opacity-035 pr-1">
-                    <PinAngleFill width="14" height="14" viewBox="0 0 16 16" />
-                  </div>
-                  {hardUsedTotal}
-                </div>
+                </OverlayTrigger>
               )}
             </td>
             <td className="capacity" onClick={() => handleClick()}>
