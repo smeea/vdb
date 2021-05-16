@@ -44,6 +44,7 @@ def listInventory():
     except AttributeError:
         return jsonify({'error': 'not logged'})
 
+
 @app.route('/api/inventory/export', methods=['POST'])
 def inventoryExportRoute():
     try:
@@ -57,6 +58,7 @@ def inventoryExportRoute():
 
     except Exception:
         pass
+
 
 @app.route('/api/inventory/import', methods=['POST'])
 def inventoryImportRoute():
@@ -80,6 +82,7 @@ def inventoryImportRoute():
 
     else:
         return jsonify({'Not logged in.'})
+
 
 @app.route('/api/inventory/delete', methods=['GET'])
 def deleteInventory():
@@ -179,6 +182,7 @@ def showDeck(deckid):
             deck['description'] += 'Location: ' + deck['location'] + '\n'
             if comments:
                 deck['description'] += '\n' + comments
+
             deck['author'] = deck['player']
             del (deck['player'])
             del (deck['disciplines'])
@@ -192,8 +196,9 @@ def showDeck(deckid):
             del (deck['cardtypes_ratio'])
             del (deck['libraryTotal'])
 
-            decks = { deckid: deck }
+            decks = {deckid: deck}
             return jsonify(decks)
+
 
 @app.route('/api/deck/<string:deckid>', methods=['PUT'])
 def updateDeck(deckid):
@@ -231,7 +236,8 @@ def updateDeck(deckid):
                 d.name = request.json['name']
 
                 if d.master:
-                    master = Deck.query.filter_by(author=current_user, deckid=d.master).first()
+                    master = Deck.query.filter_by(author=current_user,
+                                                  deckid=d.master).first()
                     master.name = request.json['name']
 
                     for i in master.branches:
@@ -259,7 +265,8 @@ def updateDeck(deckid):
                 d.author_public_name = request.json['author'] or ''
 
                 if d.master:
-                    master = Deck.query.filter_by(author=current_user, deckid=d.master).first()
+                    master = Deck.query.filter_by(author=current_user,
+                                                  deckid=d.master).first()
                     master.author_public_name = request.json['author']
 
                     for i in master.branches:
@@ -281,7 +288,6 @@ def updateDeck(deckid):
                 d.branch_name = request.json['branchName'] or ''
         except Exception:
             pass
-
 
         try:
             if 'makeFlexible' in request.json:
@@ -317,7 +323,7 @@ def updateDeck(deckid):
                 else:
                     r = str(request.json['makeClear'])
                     used = d.used_in_inventory.copy()
-                    del(used[r])
+                    del (used[r])
                     d.used_in_inventory = used
         except Exception:
             pass
@@ -327,6 +333,7 @@ def updateDeck(deckid):
         return jsonify({'updated deck': d.deckid})
     else:
         return jsonify({'Not logged in.'})
+
 
 @app.route('/api/deck/parse', methods=['POST'])
 def parseDeck():
@@ -341,7 +348,7 @@ def parseDeck():
             elif k < 200000:
                 library[k] = {'c': get_library_by_id(k), 'q': v}
 
-        decks = { }
+        decks = {}
         decks['deckInUrl'] = {
             'name': '',
             'owner': '',
@@ -353,16 +360,17 @@ def parseDeck():
             'timestamp': datetime.utcnow()
         }
         if 'name' in request.json:
-            decks['deckInUrl']['name']= request.json['name']
+            decks['deckInUrl']['name'] = request.json['name']
         if 'author' in request.json:
-            decks['deckInUrl']['author']= request.json['author']
+            decks['deckInUrl']['author'] = request.json['author']
         if 'description' in request.json:
-            decks['deckInUrl']['description']= request.json['description']
+            decks['deckInUrl']['description'] = request.json['description']
 
         return jsonify(decks)
 
     except AttributeError:
         return jsonify({'error': 'not logged'})
+
 
 @app.route('/api/decks', methods=['GET'])
 def listDecks():
@@ -414,19 +422,23 @@ def listDecks():
     except AttributeError:
         return jsonify({'error': 'not logged'})
 
+
 @app.route('/api/decks/create', methods=['POST'])
 def newDeck():
     if current_user.is_authenticated:
         try:
             deckid = uuid.uuid4().hex
-            d = Deck(deckid=deckid,
-                     name=request.json['deckname'],
-                     author_public_name=request.json['author'] if 'author' in request.json else current_user.public_name,
-                     description=request.json['description'] if 'description' in request.json else '',
-                     author=current_user,
-                     inventory_type='',
-                     used_in_inventory={},
-                     cards=request.json['cards'] if 'cards' in request.json else {})
+            d = Deck(
+                deckid=deckid,
+                name=request.json['deckname'],
+                author_public_name=request.json['author']
+                if 'author' in request.json else current_user.public_name,
+                description=request.json['description']
+                if 'description' in request.json else '',
+                author=current_user,
+                inventory_type='',
+                used_in_inventory={},
+                cards=request.json['cards'] if 'cards' in request.json else {})
             db.session.add(d)
             db.session.commit()
             return jsonify({
@@ -438,23 +450,27 @@ def newDeck():
     else:
         return jsonify({'Not logged in.'})
 
+
 @app.route('/api/branch/create', methods=['POST'])
 def createBranch():
     if current_user.is_authenticated:
-        master = Deck.query.filter_by(author=current_user, deckid=request.json['master']).first()
-        source = Deck.query.filter_by(author=current_user, deckid=request.json['source']).first()
+        master = Deck.query.filter_by(author=current_user,
+                                      deckid=request.json['master']).first()
+        source = Deck.query.filter_by(author=current_user,
+                                      deckid=request.json['source']).first()
 
         deckid = uuid.uuid4().hex
         branch = Deck(deckid=deckid,
-                           name=master.name,
-                           branch_name=f"#{len(master.branches) + 1}" if master.branches else "#1",
-                           author_public_name=source.author_public_name,
-                           description=source.description,
-                           author=current_user,
-                           inventory_type='',
-                           master=master.deckid,
-                           used_in_inventory={},
-                           cards=source.cards)
+                      name=master.name,
+                      branch_name=f"#{len(master.branches) + 1}"
+                      if master.branches else "#1",
+                      author_public_name=source.author_public_name,
+                      description=source.description,
+                      author=current_user,
+                      inventory_type='',
+                      master=master.deckid,
+                      used_in_inventory={},
+                      cards=source.cards)
 
         branches = master.branches.copy() if master.branches else []
         branches.append(deckid)
@@ -473,6 +489,7 @@ def createBranch():
     else:
         return jsonify({'Not logged in.'})
 
+
 @app.route('/api/branch/remove', methods=['POST'])
 def removeBranch():
     if current_user.is_authenticated:
@@ -481,7 +498,7 @@ def removeBranch():
                                      deckid=request.json['deckid']).first()
             if d.master:
                 master = Deck.query.filter_by(author=current_user,
-                                            deckid=d.master).first()
+                                              deckid=d.master).first()
 
                 branches = master.branches.copy()
                 branches.remove(d.deckid)
@@ -493,7 +510,7 @@ def removeBranch():
 
             else:
                 j = Deck.query.filter_by(author=current_user,
-                                        deckid=d.branches[-1]).first()
+                                         deckid=d.branches[-1]).first()
 
                 branches = d.branches.copy()
                 branches.remove(j.deckid)
@@ -514,6 +531,7 @@ def removeBranch():
     else:
         return jsonify({'Not logged in.'})
 
+
 @app.route('/api/decks/clone', methods=['POST'])
 def cloneDeck():
     if 'deck' in request.json:
@@ -527,13 +545,13 @@ def cloneDeck():
 
         deckid = uuid.uuid4().hex
         d = Deck(deckid=deckid,
-                    name=f"{deck['name']} [by {deck['author']}]",
-                    author_public_name=deck['author'],
-                    description=deck['description'],
-                    author=current_user,
-                    inventory_type='',
-                    used_in_inventory={},
-                    cards=cards)
+                 name=f"{deck['name']} [by {deck['author']}]",
+                 author_public_name=deck['author'],
+                 description=deck['description'],
+                 author=current_user,
+                 inventory_type='',
+                 used_in_inventory={},
+                 cards=cards)
         db.session.add(d)
         db.session.commit()
         return jsonify({
@@ -621,11 +639,13 @@ def cloneDeck():
             'deckid': deckid,
         })
 
+
 @app.route('/api/decks/import', methods=['POST'])
 def importDeck():
     if current_user.is_authenticated:
         try:
-            [name, author, description, cards] = deckImport(request.json['deckText'])
+            [name, author, description,
+             cards] = deckImport(request.json['deckText'])
             if len(cards) > 0:
                 deckid = uuid.uuid4().hex
                 d = Deck(deckid=deckid,
@@ -661,7 +681,8 @@ def deckExportRoute():
                 deck = twdDecks[deckid]
                 comments = deck['description']
                 deck['description'] = 'Date: ' + deck['date'] + '\n'
-                deck['description'] += 'Players: ' + str(deck['players']) + '\n'
+                deck['description'] += 'Players: ' + str(
+                    deck['players']) + '\n'
                 deck['description'] += 'Event: ' + deck['event'] + '\n'
                 deck['description'] += 'Location: ' + deck['location'] + '\n'
                 deck['cards'] = {}
@@ -706,6 +727,7 @@ def deckExportRoute():
     except Exception:
         pass
 
+
 @app.route('/api/decks/proxy', methods=['POST'])
 def deckProxyRoute():
     try:
@@ -724,7 +746,7 @@ def removeDeck():
             if d.branches:
                 for i in d.branches:
                     j = Deck.query.filter_by(author=current_user,
-                                            deckid=i).first()
+                                             deckid=i).first()
                     db.session.delete(j)
 
             if d.master:
@@ -843,9 +865,11 @@ def searchTwdRoute():
 
     if 'matchInventory' in request.json:
         if result != 400:
-            result = matchInventory(request.json['matchInventory'], current_user.inventory, result)
+            result = matchInventory(request.json['matchInventory'],
+                                    current_user.inventory, result)
         else:
-            result = matchInventory(request.json['matchInventory'], current_user.inventory)
+            result = matchInventory(request.json['matchInventory'],
+                                    current_user.inventory)
 
     if result != 400:
         return jsonify(result)
@@ -877,6 +901,7 @@ def getNewTwd(quantity):
 
         return jsonify(decks)
 
+
 @app.route('/api/twd/random/<int:quantity>', methods=['GET'])
 def getRandomTwd(quantity):
     with open("twdDecks.json", "r") as twd_file:
@@ -886,7 +911,7 @@ def getRandomTwd(quantity):
         counter = 0
         while counter < quantity:
             counter += 1
-            deck = twda[round(random()*max_id)]
+            deck = twda[round(random() * max_id)]
 
             decks.append(sanitizeTwd(deck))
 
@@ -913,7 +938,7 @@ def searchLibraryRoute():
 
 @app.route('/api/search/quick', methods=['POST'])
 def searchQuickRoute():
-    result = [];
+    result = []
 
     crypt = searchCrypt(request)
     if crypt != 400:
