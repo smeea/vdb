@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Modal, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
@@ -20,7 +20,29 @@ function ResultLibraryModal(props) {
     lang,
     isMobile,
   } = useContext(AppContext);
+
   const [imageSet, setImageSet] = useState(null);
+
+  const handleKeyDown = (event) => {
+    switch (event.key) {
+      case 'ArrowLeft':
+        props.handleModalCardChange(-1);
+        break;
+      case 'ArrowRight':
+        props.handleModalCardChange(1);
+        break;
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [props.card]);
 
   const CardImage = () => {
     const imgSrc = `${process.env.ROOT_URL}images/cards/${
