@@ -386,6 +386,13 @@ def listDecks():
                 deck.inventory_type = ''
                 db.session.commit()
 
+            # Fix bad imports
+            if 'undefined' in deck.cards:
+                new_cards = deck.cards.copy()
+                del new_cards['undefined']
+                deck.cards = new_cards
+                db.session.commit()
+
             crypt = {}
             library = {}
             for k, v in deck.cards.items():
