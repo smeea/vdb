@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import { Modal, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
@@ -37,12 +38,19 @@ function ResultLibraryModal(props) {
   };
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
+    if (!isMobile) {
+      window.addEventListener('keydown', handleKeyDown);
 
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }
   }, [props.card]);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedRight: (eventData) => props.handleModalCardChange(-1),
+    onSwipedLeft: (eventData) => props.handleModalCardChange(1),
+  });
 
   const CardImage = () => {
     const imgSrc = `${process.env.ROOT_URL}images/cards/${
@@ -78,7 +86,7 @@ function ResultLibraryModal(props) {
     >
       <Modal.Body className="p-0">
         {isMobile ? (
-          <>
+          <div {...swipeHandlers}>
             {showImage ? (
               <>
                 <CardImage />
@@ -163,7 +171,7 @@ function ResultLibraryModal(props) {
                 <ArrowRepeat viewBox="0 0 16 16" />
               </div>
             </div>
-          </>
+          </div>
         ) : (
           <Row className="mx-0">
             <Col md={5} className="bg-black px-0">
