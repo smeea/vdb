@@ -18,7 +18,6 @@
 * Inventory add from decks with select form (mark decks already in)
 * Offline PWA support
 * Search for similar TWD decks
-* Swipes in modal card view
 * Localized proxies
 * Deck tags
 * Library wake trait
