@@ -1,0 +1,96 @@
+Aabbt Kindred -> /Nefertiti/
+Arriette Sylla -> Orun
+Bindusara, Historian of the Kindred -> Arcane Library
+Bindusara, Historian of the Kindred -> Elder Library
+Bindusara, Historian of the Kindred -> Fragment of the Book of Nod
+Cesewayo -> Aye
+Dan Murdock -> Giant's Blood
+Edith Blount -> Enid Blount
+Elizabeth Dimitros -> Hesha Ruhadze
+Enid Blount -> Edith Blount
+Ganhuru -> Ubende
+Greensleeves -> Humo
+Humo -> Greensleeves
+Jayne Jonestown -> Society of Leopold
+Jibade el-Bahrawi -> Aye
+Johann Matheson -> Ecstasy
+Johann Matheson -> XTC-Laced Blood
+Karsh -> /Blood Hunt/
+Lambach -> Eye of Hazimel
+Luanda Magere -> Orun
+Margaret Milliner -> /Francis Milliner/
+Menele -> /Helena/
+Nefertiti -> /Aabbt Kindred/
+Ngozi Ekwensu -> Orun
+Onaedo -> /Otieno/
+Porphyrion -> /Treaty of Laibach/
+Radu Bistri -> Purchase Pact
+Rico Loco -> Bomb
+Rurik Rakoczy -> /Ludmijla Rakoczy/
+Tarautas -> Blood Doll
+Tarautas -> Minion Tap
+Toy -> Toy Chest Test
+Umdava -> Aye
+Umdava -> Orun
+Ur-Shulgi, The Shepherd -> /Tajdid/
+Valkyrie -> Brunhilde
+Vassily Taltos -> Blood Doll
+Victor Donaldson -> /Golconda: Inner Peace/
+Viri -> /Zizi/
+Zizi -> /Viri/
+
+Anachronism -> Ivory Bow
+Aye -> Orun
+Becoming of Ennoia -> Earth Meld
+Bind the Night-Walker -> Kerrie
+Brutal Influence -> Orun
+Crusade: Aragon -> Lucita
+Crusader Sword, The -> True Faith
+Devil-Channel: Feet -> Aye
+Disengage -> Immortal Grapple
+Disengage -> Mighty Grapple
+Dusk Work -> Aye
+Elder Intervention -> Pack Tactics
+Exile -> Orun
+Guinea-Bissau Carnival -> Aye
+Hanging Fermata -> Choir
+Harmony -> Choir
+Hide -> Illuminate
+Immense Size -> Immortal Grapple
+Immense Size -> Mighty Grapple
+Imperator -> Blood Hunt
+Into Thin Air -> Lost in Crowds
+Invoke Poison Glands -> Orun
+Jua Vema -> Aye
+Living Wood Staff -> Cleave
+Lost in Crowds -> /Into Thin Air/
+Mausoleum, Venice, The -> /Ventrue Headquarters/
+Mundane -> Orun
+Neebi -> Aye
+Nkishi -> Aye
+Nkishi -> Orun
+Oath, The -> Taste of Vitae
+Orun -> Aye
+Pack Tactics -> Elder Intervention
+Pallid -> Aye
+Penitent Resilience -> Flash Grenade
+Preternatural Strength -> /Torn Signpost/
+Savannah Runner -> Aye
+Shame -> Humanitas
+Shame -> Memories of Mortality
+Sire's Index Finger -> Brujah Frenzy
+Sire's Index Finger -> Drawing Out the Beast
+Sire's Index Finger -> Rötschreck
+Sire's Index Finger -> Terror Frenzy
+Smite -> IR Goggles
+Smite -> Laptop Computer
+Smite -> Phased Motion Detector
+Static Virtue -> Aye
+Static Virtue -> Orun
+Supernatural Resistance -> Orun
+Terrorists -> Bomb
+Transcendent Laibon -> Aye
+Transcendent Laibon -> Orun
+Unholy Radiance -> Orun
+Vessel -> /Blood Doll/
+Villein -> /Minion Tap/
