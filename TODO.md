@@ -6,7 +6,6 @@
 * Error in twd sanitizeTwd with del (deck['description'])
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 * Proxy layout - dark border, smaller margin
-* Double conviction icon opacity
 
 # FIX MOBILE
 

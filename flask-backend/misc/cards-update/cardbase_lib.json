@@ -1877,7 +1877,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a vampire with capacity above 6. This vampire cannot have or use any ranged weapons except the Ivory Bow. (If he or she currently has any, they are burned.)",
+        "Card Text":"Master.\nPut this card on a vampire with capacity above 6. This vampire cannot have or use any ranged weapons except the /Ivory Bow/. (If he or she currently has any, they are burned.)",
         "Set":{
             "AH":{
                 "C":true
@@ -4552,7 +4552,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: trifle.\nPut this card on a Laibon. This Laibon may lock this card to cancel a Frenzy card played on him or her as it is played. This Laibon may burn a blood and lock three of his or her Aye to be able to play reaction cards and attempt to block as if unlocked for the current action. If this Laibon burns a minion, equipment, or location in play, he or she burns one Aye. Burn this card if this Laibon has more Orun and Aye than his or her capacity.",
+        "Card Text":"Master: trifle.\nPut this card on a Laibon. This Laibon may lock this card to cancel a Frenzy card played on him or her as it is played. This Laibon may burn a blood and lock three of his or her Aye to be able to play reaction cards and attempt to block as if unlocked for the current action. If this Laibon burns a minion, equipment, or location in play, he or she burns one Aye. Burn this card if this Laibon has more /Orun/ and Aye than his or her capacity.",
         "Set":{
             "LoB":{
                 "C":true
@@ -5604,7 +5604,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Gehenna. Do not replace until your next discard phase.\nRequires at least two other Gehenna cards controlled by other Methuselahs in play. During each Methuselah's unlock phase, he or she chooses a ready vampire he or she controls. The chosen vampire takes 1 unpreventable damage. Earth Meld cards cost 2 additional blood.",
+        "Card Text":"Gehenna. Do not replace until your next discard phase.\nRequires at least two other Gehenna cards controlled by other Methuselahs in play. During each Methuselah's unlock phase, he or she chooses a ready vampire he or she controls. The chosen vampire takes 1 unpreventable damage. /Earth Meld/ cards cost 2 additional blood.",
         "Set":{
             "Gehenna":{
                 "R":true
@@ -6114,7 +6114,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a minion with a Kerrie. Usable by a locked minion.\nPlay during a (D) action directed at this minion or a card on this minion. Only usable when a vampire without Auspex [aus] is acting. The action ends (unsuccessfully), and no cost is paid. A minion may play only one Bind the Night-Walker each turn.",
+        "Card Text":"Requires a minion with a /Kerrie/. Usable by a locked minion.\nPlay during a (D) action directed at this minion or a card on this minion. Only usable when a vampire without Auspex [aus] is acting. The action ends (unsuccessfully), and no cost is paid. A minion may play only one Bind the Night-Walker each turn.",
         "Set":{
             "LoB":{
                 "R":true
@@ -9770,7 +9770,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pot] (D) Bleed at +1 bleed. When the action is announced, this vampire may lock X Orun on him or her to get an additional +X bleed.\n[POT] +1 stealth action. Lock X Orun on this vampire to move X blood from the bank to a younger Laibon in your uncontrolled region.",
+        "Card Text":"[pot] (D) Bleed at +1 bleed. When the action is announced, this vampire may lock X /Orun/ on him or her to get an additional +X bleed.\n[POT] +1 stealth action. Lock X /Orun/ on this vampire to move X blood from the bank to a younger Laibon in your uncontrolled region.",
         "Set":{
             "EK":{
                 "C":true
@@ -16644,7 +16644,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a Sabbat vampire. Title.\nIf this referendum passes, put this card on the acting vampire to represent the unique Sabbat title of Archbishop of Aragon. If Lucita is in play and is Sabbat, put this card on her instead.",
+        "Card Text":"Requires a Sabbat vampire. Title.\nIf this referendum passes, put this card on the acting vampire to represent the unique Sabbat title of Archbishop of Aragon. If /Lucita/ is in play and is Sabbat, put this card on her instead.",
         "Set":{
             "Promo":{
                 "20090929":true
@@ -17239,7 +17239,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique melee weapon.\nStrength+1 aggravated damage each strike. Only usable by a minion with True Faith or an imbued. Vampires opposing this minion with True Faith or this imbued cannot use maneuvers to go to close range.",
+        "Card Text":"Unique melee weapon.\nStrength+1 aggravated damage each strike. Only usable by a minion with /True Faith/ or an imbued. Vampires opposing this minion with /True Faith/ or this imbued cannot use maneuvers to go to close range.",
         "Set":{
             "NoR":{
                 "R":true
@@ -19719,7 +19719,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Frenzy (this vampire). Not usable if the opposing minion has flight [FLIGHT]. Strike: dodge with an optional press.\n[ABO] As above, and this vampire locks an Aye on him or her to unlock.",
+        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Frenzy (this vampire). Not usable if the opposing minion has flight [FLIGHT]. Strike: dodge with an optional press.\n[ABO] As above, and this vampire locks an /Aye/ on him or her to unlock.",
         "Set":{
             "EK":{
                 "C":true
@@ -20338,7 +20338,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Do not replace until after combat.\nPress, only usable to end combat. Alternatively, burn 1 blood to cancel a grapple card (such as Immortal Grapple or Mighty Grapple) as it is played (no cost is paid for that card).",
+        "Card Text":"Do not replace until after combat.\nPress, only usable to end combat. Alternatively, burn 1 blood to cancel a grapple card (such as /Immortal Grapple/ or /Mighty Grapple/) as it is played (no cost is paid for that card).",
         "Set":{
             "KMW":{
                 "C":true
@@ -22014,7 +22014,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Requires a Laibon with three or more Aye.\nPlay after resolving an action (successfully or not). Lock three Aye on this Laibon to unlock him or her.",
+        "Card Text":"Requires a Laibon with three or more /Aye/.\nPlay after resolving an action (successfully or not). Lock three /Aye/ on this Laibon to unlock him or her.",
         "Set":{
             "EK":{
                 "C":true
@@ -22871,7 +22871,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Do not replace until after this action.\nOnly usable during a bleed against you. This vampire gets +2 intercept. A vampire cannot play both Pack Tactics and Elder Intervention in the same action.",
+        "Card Text":"Do not replace until after this action.\nOnly usable during a bleed against you. This vampire gets +2 intercept. A vampire cannot play both /Pack Tactics/ and Elder Intervention in the same action.",
         "Set":{
             "VTES":{
                 "C":true
@@ -24918,7 +24918,7 @@
         "Blood Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[pre] (D) Lock an ally or younger vampire and unlock this acting vampire.\n[PRE] (D) Lock X Orun on this vampire to send a vampire or imbued with capacity or cost 2X or less to his or her owner's uncontrolled region.",
+        "Card Text":"+1 stealth action.\n[pre] (D) Lock an ally or younger vampire and unlock this acting vampire.\n[PRE] (D) Lock X /Orun/ on this vampire to send a vampire or imbued with capacity or cost 2X or less to his or her owner's uncontrolled region.",
         "Set":{
             "EK":{
                 "C":true
@@ -32259,7 +32259,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play. Each Laibon gets +X stealth when hunting and gains X+1 additional blood from the bank if successful, where X is the number of Aye he or she has. Burn this card during your next unlock phase. Only one Guinea-Bissau Carnival may be played in a game.",
+        "Card Text":"Master.\nPut this card in play. Each Laibon gets +X stealth when hunting and gains X+1 additional blood from the bank if successful, where X is the number of /Aye/ he or she has. Burn this card during your next unlock phase. Only one Guinea-Bissau Carnival may be played in a game.",
         "Set":{
             "EK":{
                 "R":true
@@ -32657,7 +32657,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: out-of-turn.\nPlay during your influence phase. No Choir cards are burned during this influence phase. Not usable if you played a Hanging Fermata during your last turn.",
+        "Card Text":"Master: out-of-turn.\nPlay during your influence phase. No /Choir/ cards are burned during this influence phase. Not usable if you played a Hanging Fermata during your last turn.",
         "Set":{
             "LoB":{
                 "C":true
@@ -32838,7 +32838,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n(D) Your prey burns 3 pool for each Choir card you control. Burn all Choir cards you control.",
+        "Card Text":"+1 stealth action.\n(D) Your prey burns 3 pool for each /Choir/ card you control. Burn all /Choir/ cards you control.",
         "Set":{
             "HttB":{
                 "R":true
@@ -33960,7 +33960,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Not usable by an imbued with Illuminate.\n[ACTIONMODIFIER] [1CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1CONVICTION] Only usable during a monster's (D) action targeting this imbued. The action fails.",
+        "Card Text":"Not usable by an imbued with /Illuminate/.\n[ACTIONMODIFIER] [1CONVICTION] Only usable as the action is announced. Monsters get -1 intercept against this action.\n[REACTION] [1CONVICTION] Only usable during a monster's (D) action targeting this imbued. The action fails.",
         "Set":{
             "NoR":{
                 "R":true
@@ -35320,7 +35320,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined.\n[vic] The opposing minion cannot play grapple cards (such as Immortal Grapple and Mighty Grapple) this combat. A vampire may play only one Immense Size each combat.\n[VIC] As above, with an optional press this round.",
+        "Card Text":"Only usable before range is determined.\n[vic] The opposing minion cannot play grapple cards (such as /Immortal Grapple/ and /Mighty Grapple/) this combat. A vampire may play only one Immense Size each combat.\n[VIC] As above, with an optional press this round.",
         "Set":{
             "KMW":{
                 "R":true
@@ -35424,7 +35424,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Title.\nChoose a Camarilla vampire with capacity 8 or more. If this referendum is successful, put this card on the chosen vampire to represent the unique Camarilla title of Imperator (worth 3 votes). This vampire may play a Blood Hunt card from your hand or ash heap as a prince. This vampire gets 3 additional votes in blood hunt referendums.",
+        "Card Text":"Title.\nChoose a Camarilla vampire with capacity 8 or more. If this referendum is successful, put this card on the chosen vampire to represent the unique Camarilla title of Imperator (worth 3 votes). This vampire may play a /Blood Hunt/ card from your hand or ash heap as a prince. This vampire gets 3 additional votes in blood hunt referendums.",
         "Set":{
             "Promo":{
                 "20090401":true
@@ -36870,7 +36870,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Do not replace until your unlock phase.\n[obf] +1 stealth. Once this action, this vampire may burn 1 blood to give an ally or younger vampire -1 intercept. Into Thin Air and Lost in Crowds cannot both be played on the same action.\n[OBF] As above, but for +2 stealth.",
+        "Card Text":"Do not replace until your unlock phase.\n[obf] +1 stealth. Once this action, this vampire may burn 1 blood to give an ally or younger vampire -1 intercept. Into Thin Air and /Lost in Crowds/ cannot both be played on the same action.\n[OBF] As above, but for +2 stealth.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -37000,7 +37000,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Strike: hand strike at +1 damage.\n[ABO] Strike: burn the opposing animal or mortal, or strike: hand strike at +X damage, where X is the number of Orun on this vampire.",
+        "Card Text":"[abo] [REFLEX] Cancel a frenzy card played on this vampire as it is played.\n[abo] Strike: hand strike at +1 damage.\n[ABO] Strike: burn the opposing animal or mortal, or strike: hand strike at +X damage, where X is the number of /Orun/ on this vampire.",
         "Set":{
             "EK":{
                 "C":true
@@ -37821,7 +37821,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] This vampire treats aggravated damage as normal damage this round.\n[FOR] As above, but for the remainder of the action if you lock an Aye on him or her.",
+        "Card Text":"[for] This vampire treats aggravated damage as normal damage this round.\n[FOR] As above, but for the remainder of the action if you lock an /Aye/ on him or her.",
         "Set":{
             "EK":{
                 "C":true
@@ -41018,7 +41018,7 @@
         "Blood Cost":"",
         "Conviction Cost":"X",
         "Burn Option":"",
-        "Card Text":"Unique melee weapon.\nStrength damage each strike. Imbued inflict +X damage each strike with this weapon. Using Cleave with this weapon will not burn this weapon.",
+        "Card Text":"Unique melee weapon.\nStrength damage each strike. Imbued inflict +X damage each strike with this weapon. Using /Cleave/ with this weapon will not burn this weapon.",
         "Set":{
             "NoR":{
                 "R":true
@@ -46240,7 +46240,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a Laibon with no Orun and no Mundane. Cards that require Disciplines cost this vampire 1 additional blood. Burn this card if this vampire gets an Orun. Alternatively, when a minion with no Orun plays an action card requiring a Discipline or Virtue, play this card to your ash heap as an out-of-turn master to cancel that card as it is played.",
+        "Card Text":"Master.\nPut this card on a Laibon with no /Orun/ and no Mundane. Cards that require Disciplines cost this vampire 1 additional blood. Burn this card if this vampire gets an /Orun/. Alternatively, when a minion with no /Orun/ plays an action card requiring a Discipline or Virtue, play this card to your ash heap as an out-of-turn master to cancel that card as it is played.",
         "Set":{
             "EK":{
                 "C":true
@@ -46804,7 +46804,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Requires a Laibon with three or more Aye.\nOnly usable before range is determined. Set the range for this round. Skip the determine range step this round.",
+        "Card Text":"Requires a Laibon with three or more /Aye/.\nOnly usable before range is determined. Set the range for this round. Skip the determine range step this round.",
         "Set":{
             "EK":{
                 "C":true
@@ -47567,7 +47567,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment. Requires a Laibon.\nYou may use a master phase action to search your library or ash heap for an Aye or an Orun and put that card on this Laibon.",
+        "Card Text":"Unique equipment. Requires a Laibon.\nYou may use a master phase action to search your library or ash heap for an /Aye/ or an /Orun/ and put that card on this Laibon.",
         "Set":{
             "EK":{
                 "R":true
@@ -48153,7 +48153,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Play when a vampire gains blood from a Taste of Vitae or steals blood from this vampire. Put an oath counter on that vampire. This vampire may put another oath counter on that vampire as a (D) action. A vampire with 2 oath counters from this vampire cannot block or enter combat with this vampire. A vampire can play only one Oath each round.",
+        "Card Text":"Play when a vampire gains blood from a /Taste of Vitae/ or steals blood from this vampire. Put an oath counter on that vampire. This vampire may put another oath counter on that vampire as a (D) action. A vampire with 2 oath counters from this vampire cannot block or enter combat with this vampire. A vampire can play only one Oath each round.",
         "Set":{
             "KoT":{
                 "C":true
@@ -49019,7 +49019,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: trifle.\nPut this card on a Laibon. For non-Orun cards played by Methuselahs other than this Laibon's controller, this Laibon is considered to have 2 additional capacity. A Laibon gets an additional vote for every three Orun he or she has. If this Laibon successfully bleeds for more than 2 or successfully performs a (D) action against a non-mortal minion, he or she burns one Orun. Burn this card if this Laibon has more Orun and Aye than his or her capacity.",
+        "Card Text":"Master: trifle.\nPut this card on a Laibon. For non-Orun cards played by Methuselahs other than this Laibon's controller, this Laibon is considered to have 2 additional capacity. A Laibon gets an additional vote for every three Orun he or she has. If this Laibon successfully bleeds for more than 2 or successfully performs a (D) action against a non-mortal minion, he or she burns one Orun. Burn this card if this Laibon has more Orun and /Aye/ than his or her capacity.",
         "Set":{
             "LoB":{
                 "C":true
@@ -49497,7 +49497,7 @@
         "Blood Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Do not replace until after this action.\nOnly usable during a bleed against you. This reacting vampire gets +2 intercept. A vampire cannot play both Pack Tactics and Elder Intervention during the same action.",
+        "Card Text":"Do not replace until after this action.\nOnly usable during a bleed against you. This reacting vampire gets +2 intercept. A vampire cannot play both Pack Tactics and /Elder Intervention/ during the same action.",
         "Set":{
             "Sabbat":{
                 "C":true
@@ -49631,7 +49631,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a Laibon with no Aye and no Pallid. This vampire gets -1 stealth. Burn this card if this vampire gets an Aye. Alternatively, when a vampire with no Aye or a zombie is acting, play this card to your ash heap as an out-of-turn master to give a vampire you control +1 intercept.",
+        "Card Text":"Master.\nPut this card on a Laibon with no /Aye/ and no Pallid. This vampire gets -1 stealth. Burn this card if this vampire gets an /Aye/. Alternatively, when a vampire with no /Aye/ or a zombie is acting, play this card to your ash heap as an out-of-turn master to give a vampire you control +1 intercept.",
         "Set":{
             "EK":{
                 "C":true
@@ -50736,7 +50736,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and Flash Grenades have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTIONMODIFIER] Only usable as the action is announced. Choose any vampire. The chosen vampire cannot block this action.",
+        "Card Text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and /Flash/ /Grenade/s have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTIONMODIFIER] Only usable as the action is announced. Choose any vampire. The chosen vampire cannot block this action.",
         "Set":{
             "HttB":{
                 "C":true
@@ -61474,7 +61474,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a Laibon.\n[cel] This Laibon burns 1 blood to get +1 intercept.\n[CEL] Lock this Laibon or an Aye on him or her to unlock another ready Laibon. Not usable by a blocking Laibon.",
+        "Card Text":"Requires a Laibon.\n[cel] This Laibon burns 1 blood to get +1 intercept.\n[CEL] Lock this Laibon or an /Aye/ on him or her to unlock another ready Laibon. Not usable by a blocking Laibon.",
         "Set":{
             "EK":{
                 "R":true
@@ -64174,7 +64174,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[COMBAT] [2CONVICTION] Only usable before strikes are chosen.\nBurn this card. The opposing monster takes an amount of damage equal to his or her strength, then combat ends. Not usable on an infernal minion, a vampire with capacity above 7, nor a vampire who has Memories of Mortality or Humanitas.",
+        "Card Text":"[COMBAT] [2CONVICTION] Only usable before strikes are chosen.\nBurn this card. The opposing monster takes an amount of damage equal to his or her strength, then combat ends. Not usable on an infernal minion, a vampire with capacity above 7, nor a vampire who has /Memories of Mortality/ or /Humanitas/.",
         "Set":{
             "NoR":{
                 "C":true
@@ -65323,7 +65323,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nThe vampire with this equipment is immune to frenzy cards (including Brujah Frenzy, Drawing Out the Beast, Frenzy, R\u00f6tschreck and Terror Frenzy).",
+        "Card Text":"Unique equipment.\nThe vampire with this equipment is immune to frenzy cards (including /Brujah Frenzy/, /Drawing Out the Beast/, Frenzy, /R\u00f6tschreck/ and /Terror Frenzy/).",
         "Set":{
             "BH":{
                 "R":true
@@ -66352,7 +66352,7 @@
         "Blood Cost":"",
         "Conviction Cost":"3",
         "Burn Option":"",
-        "Card Text":"Strike: strength+1 aggravated ranged damage. Even if the strike is dodged, burn any electronic equipment (e.g., IR Goggles, Laptop Computer, or Phased Motion Detector) on either combatant.",
+        "Card Text":"Strike: strength+1 aggravated ranged damage. Even if the strike is dodged, burn any electronic equipment (e.g., /IR Goggles/, /Laptop Computer/, or /Phased Motion Detector/) on either combatant.",
         "Set":{
             "NoR":{
                 "R":true
@@ -68305,7 +68305,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master. Requires a ready Laibon.\nChoose a Laibon you control. If this Laibon was moved to your ready region during your last influence phase, then for every two capacity above 4 this Laibon has, you may move one Aye and one Orun from your hand or library to this Laibon. Otherwise, you may move one Aye or one Orun from your hand or library to this Laibon. Shuffle afterward.",
+        "Card Text":"Master. Requires a ready Laibon.\nChoose a Laibon you control. If this Laibon was moved to your ready region during your last influence phase, then for every two capacity above 4 this Laibon has, you may move one /Aye/ and one /Orun/ from your hand or library to this Laibon. Otherwise, you may move one /Aye/ or one /Orun/ from your hand or library to this Laibon. Shuffle afterward.",
         "Set":{
             "LoB":{
                 "R":true
@@ -69959,7 +69959,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Requires a Laibon with three or more Orun.\nLock an Orun on this Laibon to cancel an action card targeting this Laibon or a strike card as it is played. Not usable to cancel a card that doesn't require a Discipline or that requires Celerity [cel] or Potence [pot].",
+        "Card Text":"Requires a Laibon with three or more /Orun/.\nLock an /Orun/ on this Laibon to cancel an action card targeting this Laibon or a strike card as it is played. Not usable to cancel a card that doesn't require a Discipline or that requires Celerity [cel] or Potence [pot].",
         "Set":{
             "EK":{
                 "C":true
@@ -72236,7 +72236,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Mortal with 1 life. 2 strength, 1 bleed.\nTerrorists may take a +1 stealth action to go through your library, find a Bomb, and equip them with it. Pay the cost to equip as normal. Reshuffle your library afterwards.",
+        "Card Text":"Mortal with 1 life. 2 strength, 1 bleed.\nTerrorists may take a +1 stealth action to go through your library, find a /Bomb/, and equip them with it. Pay the cost to equip as normal. Reshuffle your library afterwards.",
         "Set":{
             "AH":{
                 "R":true
@@ -74023,7 +74023,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Unique master.\nPut this card on a Laibon with at least three Aye and three Orun. During your unlock phase, this Laibon gains 1 blood. Allies and younger vampires must burn 1 blood or life to attempt to block this Laibon or to target this Laibon with a (D) action. Burn this card if this minion is not ready or has fewer than three Aye or three Orun.",
+        "Card Text":"Unique master.\nPut this card on a Laibon with at least three /Aye/ and three /Orun/. During your unlock phase, this Laibon gains 1 blood. Allies and younger vampires must burn 1 blood or life to attempt to block this Laibon or to target this Laibon with a (D) action. Burn this card if this minion is not ready or has fewer than three /Aye/ or three /Orun/.",
         "Set":{
             "EK":{
                 "R":true
@@ -76237,7 +76237,7 @@
         "Blood Cost":"",
         "Conviction Cost":"",
         "Burn Option":"Y",
-        "Card Text":"Requires a Laibon with three or more Orun.\nOnly usable during a referendum. Usable by a locked Laibon. Gain 4 votes.",
+        "Card Text":"Requires a Laibon with three or more /Orun/.\nOnly usable during a referendum. Usable by a locked Laibon. Gain 4 votes.",
         "Set":{
             "EK":{
                 "C":true

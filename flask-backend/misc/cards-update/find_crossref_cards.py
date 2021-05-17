@@ -1,5 +1,4 @@
 import json
-import re
 
 blacklist = [
     'Auspex',
@@ -56,11 +55,18 @@ blacklist = [
     'Guru',
     'Changeling',
     'Zombie',
+    'Wash',
+    'Nod',
+    'Crow',
+    'Contract',
+    'Luc',
+    'Monster',
+    'Inquisition',
 ]
 
-with open("cardbase_crypt.json", "r",
+with open("cardbase_crypt.json", "r+",
           encoding='utf8') as crypt_file, open("cardbase_lib.json",
-                                               "r",
+                                               "r+",
                                                encoding='utf8') as lib_file:
 
     crypt = json.load(crypt_file)
@@ -79,6 +85,21 @@ with open("cardbase_crypt.json", "r",
                     'Name'] not in card['Name'] and other_card['Name'] in card[
                         'Card Text']:
                 if f"/{other_card['Name']}/" in card['Card Text']:
-                    print(f"{card['Name']} -> /{other_card['Name']}/")
+                    print(f"OK: {card['Name']} -> /{other_card['Name']}/")
                 else:
-                    print(f"{card['Name']} -> {other_card['Name']}")
+                    if int(id) > 200000:
+                        crypt[id]['Card Text'] = crypt[id][
+                            'Card Text'].replace(other_card['Name'],
+                                                 f"/{other_card['Name']}/")
+                    else:
+                        library[id]['Card Text'] = library[id][
+                            'Card Text'].replace(other_card['Name'],
+                                                 f"/{other_card['Name']}/")
+
+                    print(f"FIXED: {card['Name']} -> {other_card['Name']}")
+
+    crypt_file.seek(0)
+    lib_file.seek(0)
+
+    json.dump(crypt, crypt_file, indent=4, separators=(',', ':'))
+    json.dump(library, lib_file, indent=4, separators=(',', ':'))
