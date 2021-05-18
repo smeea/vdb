@@ -10,19 +10,22 @@
 # FIX MOBILE
 
 # FEATURES
-* If no results but url on mobile to run search
+* Update cardbase script
 * Create revocable link to Inventory
 * Show missing cards for inventory
 * Inventory add from precon
 * Inventory add from decks with select form (mark decks already in)
-* Offline PWA support
 * Search for similar TWD decks
 * Localized proxies
 * Deck tags
 * Library wake trait
 
+# MOBILE FEATURES
+* If no results but url on mobile to run search
+* Offline PWA support
+* Swipes to increase quantity on the result table
+
 # MAYBE LATER FEATURES
-* Update cardbase script
 * Documentation on updates / update script
 
 # IMPROVE TECHNOLOGY - FRONTEND
