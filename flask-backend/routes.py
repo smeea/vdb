@@ -29,6 +29,10 @@ def listInventory():
     try:
         if current_user.is_authenticated:
 
+            # Fix users without inventory
+            if not current_user.inventory:
+                current_user.inventory = {}
+
             # Fix bad imports
             if 'undefined' in current_user.inventory:
                 new_cards = current_user.inventory.copy()
