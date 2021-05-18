@@ -28,8 +28,17 @@ from models import Deck
 def listInventory():
     try:
         if current_user.is_authenticated:
+
+            # Fix bad imports
+            if 'undefined' in current_user.inventory:
+                new_cards = current_user.inventory.copy()
+                del new_cards['undefined']
+                current_user.inventory = new_cards
+                db.session.commit()
+
             crypt = {}
             library = {}
+
             for k, v in current_user.inventory.items():
                 k = int(k)
                 if k > 200000:
