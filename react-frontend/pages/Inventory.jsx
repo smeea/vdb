@@ -196,7 +196,8 @@ function Inventory(props) {
                 <InventoryButtons
                   inventoryDeckAdd={props.inventoryDeckAdd}
                   inventoryAddToState={props.inventoryAddToState}
-                  setInventory={props.setInventory}
+                  setInventoryCrypt={props.setInventoryCrypt}
+                  setInventoryLibrary={props.setInventoryLibrary}
                 />
                 <div className="px-4 py-2">
                   <InventoryShowSelect
@@ -267,7 +268,8 @@ function Inventory(props) {
               <InventoryButtons
                 inventoryDeckAdd={props.inventoryDeckAdd}
                 inventoryAddToState={props.inventoryAddToState}
-                setInventory={props.setInventory}
+                setInventoryCrypt={props.setInventoryCrypt}
+                setInventoryLibrary={props.setInventoryLibrary}
                 setShowMenuButtons={setShowMenuButtons}
               />
               <div className="px-4 py-2">

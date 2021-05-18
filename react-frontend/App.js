@@ -284,7 +284,7 @@ function App(props) {
           }));
         } else {
           setInventoryCrypt((prevState) => {
-            state = { ...oldState };
+            const state = { ...prevState };
             delete state[cardid];
             return state;
           });
@@ -308,7 +308,7 @@ function App(props) {
           }));
         } else {
           setInventoryLibrary((prevState) => {
-            state = { ...oldState };
+            const state = { ...prevState };
             delete state[cardid];
             return state;
           });
@@ -653,6 +653,8 @@ function App(props) {
                 inventoryDeckAdd={inventoryDeckAdd}
                 inventoryAddToState={inventoryAddToState}
                 cardChange={inventoryCardChange}
+                setInventoryCrypt={setInventoryCrypt}
+                setInventoryLibrary={setInventoryLibrary}
               />
             </Route>
             <Route path="/decks">

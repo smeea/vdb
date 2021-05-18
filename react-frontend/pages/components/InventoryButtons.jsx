@@ -18,7 +18,8 @@ function InventoryButtons(props) {
       </div>
       <div className="button-block">
         <InventoryDelete
-          setInventory={props.setInventory}
+          setInventoryCrypt={props.setInventoryCrypt}
+          setInventoryLibrary={props.setInventoryLibrary}
           setShowButtons={props.setShowButtons}
         />
       </div>

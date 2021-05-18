@@ -18,7 +18,7 @@ function InventoryCardQuantity(props) {
   };
 
   const handleQuantityChange = (diff) => {
-    setState(state + diff);
+    if (state + diff >= 0) setState(state + diff);
     props.cardChange(props.cardid, state + diff);
   };
 

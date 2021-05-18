@@ -23,7 +23,10 @@ function InventoryDelete(props) {
       credentials: 'include',
     };
 
-    fetch(url, options).then(props.setInventory({ crypt: {}, library: {} }));
+    fetch(url, options).then(() => {
+      props.setInventoryCrypt({});
+      props.setInventoryLibrary({});
+    });
   };
 
   return (
