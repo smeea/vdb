@@ -785,8 +785,11 @@ def register():
         return jsonify({'already logged as:': current_user.username})
 
     try:
-        user = User(username=request.json['username'],
-                    public_name=request.json['username'])
+        user = User(
+            username=request.json['username'],
+            public_name=request.json['username'],
+            inventory={},
+        )
         user.set_password(request.json['password'])
         db.session.add(user)
         db.session.commit()
