@@ -41,17 +41,17 @@ function SearchFormPrecon(props) {
 
   const preconOptionsForm = preconOptions.map((i, index) => {
     return (
-      <div key={index} className="mr-3 custom-control custom-checkbox">
+      <div key={index} className="custom-control custom-checkbox">
         <input
           id={`precon-${i[0]}`}
           value={i[0]}
           name="precon"
-          className="mr-2 custom-control-input"
+          className="custom-control-input"
           type="checkbox"
           checked={props.value[i[0]]}
           onChange={(e) => props.onChangeOptions(e)}
         />
-        <label htmlFor={`precon-${i[0]}`} className="mr-2 custom-control-label">
+        <label htmlFor={`precon-${i[0]}`} className="mr-4 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -92,8 +92,10 @@ function SearchFormPrecon(props) {
         </Col>
       </Row>
       <Row className="pb-1 pl-1 mx-0 align-items-center">
-        <Col xs={3} />
-        <Col xs={9} className="d-flex justify-content-end">
+        <Col
+          xs={{ span: 9, offset: 3 }}
+          className="d-flex justify-content-end px-0"
+        >
           {preconOptionsForm}
         </Col>
       </Row>
