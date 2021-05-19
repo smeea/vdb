@@ -5,6 +5,7 @@ import base64
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
 
+
 def deckProxy(cards):
     try:
         crypt = {}
@@ -17,10 +18,12 @@ def deckProxy(cards):
                 if card['Adv']:
                     name += 'adv'
 
-                crypt[unidecode(re.sub('[\\W]', '', name)).lower() + '.jpg'] = v
+                crypt[unidecode(re.sub('[\\W]', '', name)).lower() +
+                      '.jpg'] = v
             elif k < 200000 and v > 0:
                 name = get_library_by_id(k)['Name']
-                library[unidecode(re.sub('[\\W]', '', name)).lower() + '.jpg'] = v
+                library[unidecode(re.sub('[\\W]', '', name)).lower() +
+                        '.jpg'] = v
 
         imagelist = []
 
@@ -36,7 +39,7 @@ def deckProxy(cards):
 
         w = 63
         h = 88
-        gap = 0.5
+        gap = 0.2
         left_margin = 10
         top_margin = 10
 
@@ -44,9 +47,12 @@ def deckProxy(cards):
         y_counter = 0
 
         pdf.add_page()
+        pdf.set_fill_color(60, 60, 60)
+        pdf.rect(left_margin, top_margin, 189.4, 264.4, 'F')
 
         for image in imagelist:
-            pdf.image('./cards/' + image, (w + gap) * x_counter + left_margin, (h + gap) * y_counter + top_margin, w, h)
+            pdf.image('./cards/' + image, (w + gap) * x_counter + left_margin,
+                      (h + gap) * y_counter + top_margin, w, h)
 
             x_counter += 1
 
@@ -56,6 +62,8 @@ def deckProxy(cards):
 
             if y_counter == 3:
                 pdf.add_page()
+                pdf.set_fill_color(60, 60, 60)
+                pdf.rect(left_margin, top_margin, 189.4, 264.4, 'F')
                 y_counter = 0
 
         file = pdf.output(dest='S').encode('latin-1')
