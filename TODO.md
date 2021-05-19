@@ -17,7 +17,6 @@
 * Search for similar TWD decks
 * Localized proxies
 * Deck tags
-* Library wake trait
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search

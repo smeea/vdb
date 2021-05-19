@@ -80,11 +80,13 @@
     "prevent": false,
     "aggravated": false,
     "enter combat": false,
+    "unlock": false,
     "black hand": false,
     "seraph": false,
     "infernal": false,
     "red list": false,
-    "flight": false
+    "flight": false,
+    "banned": false
   },
   "set": {
     "set": "any",

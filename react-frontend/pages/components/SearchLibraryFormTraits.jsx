@@ -12,13 +12,14 @@ function SearchLibraryFormTraits(props) {
     ['additional strike', 'Additional Strike'],
     ['aggravated', 'Aggravated'],
     ['prevent', 'Prevent'],
+    ['press', 'Press'],
   ];
 
   const traitsRight = [
-    ['press', 'Press'],
     ['combat ends', 'Combat Ends'],
     ['enter combat', 'Enter combat'],
     ['bounce bleed', 'Bounce Bleed'],
+    ['unlock', 'Wake / Unlock'],
     ['black hand', 'Black Hand'],
     ['seraph', 'Seraph'],
     ['anarch', 'Anarch'],

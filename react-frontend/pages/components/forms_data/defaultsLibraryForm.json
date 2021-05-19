@@ -25,11 +25,14 @@
     "prevent": false,
     "press": false,
     "combat ends": false,
+    "enter combat": false,
     "bounce bleed": false,
+    "unlock": false,
     "black hand": false,
     "seraph": false,
     "anarch": false,
-    "infernal": false
+    "infernal": false,
+    "banned": false
   },
   "set": {
     "set": "any",

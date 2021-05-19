@@ -95,6 +95,11 @@ def get_crypt_by_traits(traits, crypt):
                              card['Card Text'], re.IGNORECASE):
                     counter += 1
 
+            elif trait == 'unlock':
+                if re.search(r'{}'.format('(?!not )unlock(?! phase|ed)|wakes'),
+                             card['Card Text'], re.IGNORECASE):
+                    counter += 1
+
             elif trait == 'black hand':
                 if re.search(r'{}'.format('black hand[ .:]'),
                              card['Card Text'], re.IGNORECASE):

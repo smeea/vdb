@@ -182,6 +182,11 @@ def get_library_by_traits(traits, library):
                         card['Card Text'], re.IGNORECASE):
                     counter += 1
 
+            elif trait == 'unlock':
+                if re.search(r'{}'.format('(?!not )unlock(?! phase|ed)|wakes'),
+                             card['Card Text'], re.IGNORECASE):
+                    counter += 1
+
             elif trait == 'banned':
                 if card['Banned']:
                     counter += 1

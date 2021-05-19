@@ -9,15 +9,16 @@ function SearchCryptFormTraits(props) {
     ['2 bleed', '+2 bleed'],
     ['1 strength', '+1 strength'],
     ['2 strength', '+2 strength'],
-    ['additional strike', 'Additional Strike'],
     ['maneuver', 'Maneuver'],
-    ['press', 'Press'],
+    ['additional strike', 'Additional Strike'],
+    ['aggravated', 'Aggravated'],
+    ['prevent', 'Prevent'],
   ];
 
   const traitsRight = [
-    ['prevent', 'Prevent'],
-    ['aggravated', 'Aggravated'],
+    ['press', 'Press'],
     ['enter combat', 'Enter combat'],
+    ['unlock', 'Unlock'],
     ['black hand', 'Black Hand'],
     ['seraph', 'Seraph'],
     ['infernal', 'Infernal'],
