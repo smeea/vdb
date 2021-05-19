@@ -36,5 +36,3 @@
 * Update API endpoints
 * Add error codes to return
 * Unify tests for current_user
-* Exception for no deck
-* ListInventory to check for undefined

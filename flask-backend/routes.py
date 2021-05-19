@@ -161,7 +161,11 @@ def inventoryChangeCard():
 def showDeck(deckid):
     if len(deckid) == 32:
         decks = {}
+
         deck = Deck.query.filter_by(deckid=deckid).first()
+        if not deck:
+            abort(400)
+
         crypt = {}
         library = {}
         for k, v in deck.cards.items():
