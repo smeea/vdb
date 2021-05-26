@@ -25,6 +25,7 @@ function SearchLibraryFormTraits(props) {
     ['anarch', 'Anarch'],
     ['infernal', 'Infernal'],
     ['banned', 'Banned'],
+    ['burn', 'Burn Option'],
   ];
 
   const traitsLeftforms = traitsLeft.map((i, index) => {

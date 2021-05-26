@@ -191,6 +191,10 @@ def get_library_by_traits(traits, library):
                 if card['Banned']:
                     counter += 1
 
+            elif trait == 'burn':
+                if card['Burn Option']:
+                    counter += 1
+
             elif re.search(r'{}'.format(trait), card['Card Text'],
                            re.IGNORECASE):
                 counter += 1

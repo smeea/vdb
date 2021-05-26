@@ -32,7 +32,8 @@
     "seraph": false,
     "anarch": false,
     "infernal": false,
-    "banned": false
+    "banned": false,
+    "burn": false
   },
   "set": {
     "set": "any",
