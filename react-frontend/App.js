@@ -32,7 +32,6 @@ function App(props) {
     setPublicName,
     setEmail,
     lang,
-    changeLang,
     localizedCrypt,
     setLocalizedCrypt,
     localizedLibrary,

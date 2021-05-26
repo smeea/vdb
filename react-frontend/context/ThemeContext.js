@@ -103,7 +103,7 @@ const darkTheme = [
   '--border-button: #404050',
   '--border-forms: #404050',
   '--disciplines-shadow: #606070',
-  '--clan-icon-brightness: 60%',
+  '--clan-icon-brightness: 65%',
   '--icons-brightness: 85%',
   '--logo-brightness: 150%',
 ];
