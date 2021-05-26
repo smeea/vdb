@@ -8,10 +8,12 @@ import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
 import ArchiveFill from '../assets/images/icons/archive-fill.svg';
+import BinocularsFill from '../assets/images/icons/binoculars-fill.svg';
 import AccountLogin from './components/AccountLogin.jsx';
 import AccountRegister from './components/AccountRegister.jsx';
 import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckSelectPrecon from './components/DeckSelectPrecon.jsx';
+import DeckSelectAdvModal from './components/DeckSelectAdvModal.jsx';
 import DeckButtons from './components/DeckButtons.jsx';
 import DeckBranchSelect from './components/DeckBranchSelect.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
@@ -44,6 +46,7 @@ function Decks(props) {
 
   const query = new URLSearchParams(useLocation().search);
   const [showInfo, setShowInfo] = useState(false);
+  const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
   const [showMenuButtons, setShowMenuButtons] = useState(false);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const { hash } = useLocation();
@@ -341,36 +344,46 @@ function Decks(props) {
                       )}
                     </div>
                   </div>
-                  <Form className="py-1 my-0">
-                    {username && decks && Object.keys(decks).length > 0 && (
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Form className="py-1 my-0">
+                      {username && decks && Object.keys(decks).length > 0 && (
+                        <Form.Check
+                          className="px-2"
+                          checked={selectFrom == 'my'}
+                          onChange={(e) => setSelectFrom(e.target.id)}
+                          type="radio"
+                          id="my"
+                          label={
+                            <div className="blue">
+                              <b>My Decks</b>
+                            </div>
+                          }
+                          inline
+                        />
+                      )}
                       <Form.Check
                         className="px-2"
-                        checked={selectFrom == 'my'}
+                        checked={selectFrom == 'precons'}
                         onChange={(e) => setSelectFrom(e.target.id)}
                         type="radio"
-                        id="my"
+                        id="precons"
                         label={
                           <div className="blue">
-                            <b>My Decks</b>
+                            <b>Precon Decks</b>
                           </div>
                         }
                         inline
                       />
-                    )}
-                    <Form.Check
-                      className="px-2"
-                      checked={selectFrom == 'precons'}
-                      onChange={(e) => setSelectFrom(e.target.id)}
-                      type="radio"
-                      id="precons"
-                      label={
-                        <div className="blue">
-                          <b>Precon Decks</b>
-                        </div>
-                      }
-                      inline
-                    />
-                  </Form>
+                    </Form>
+                    <div className="py-1">
+                      <Button
+                        variant="outline-secondary"
+                        onClick={() => setShowDeckSelectAdv(!showDeckSelectAdv)}
+                      >
+                        <BinocularsFill />
+                      </Button>
+                    </div>
+                  </div>
                 </Col>
               </Row>
             </Col>
@@ -581,6 +594,13 @@ function Decks(props) {
             </Container>
           </Modal.Body>
         </Modal>
+      )}
+      {showDeckSelectAdv && (
+        <DeckSelectAdvModal
+          cardChange={props.cardChange}
+          handleClose={() => setShowDeckSelectAdv(false)}
+          show={showDeckSelectAdv}
+        />
       )}
     </Container>
   );
