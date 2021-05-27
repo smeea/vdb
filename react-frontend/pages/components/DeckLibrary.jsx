@@ -148,7 +148,6 @@ function DeckLibrary(props) {
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
-            deckUpdate={props.deckUpdate}
             inSearch={props.inSearch}
             setShowFloatingButtons={props.setShowFloatingButtons}
           />
@@ -178,7 +177,6 @@ function DeckLibrary(props) {
             proxySelector={props.proxySelector}
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
-            deckUpdate={props.deckUpdate}
             inSearch={props.inSearch}
             setShowFloatingButtons={props.setShowFloatingButtons}
           />

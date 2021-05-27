@@ -7,7 +7,7 @@ import ChatLeftQuoteFill from '../../assets/images/icons/chat-left-quote-fill.sv
 import AppContext from '../../context/AppContext';
 
 function DeckDescription(props) {
-  const { isMobile } = useContext(AppContext);
+  const { deckUpdate, isMobile } = useContext(AppContext);
 
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
@@ -18,7 +18,7 @@ function DeckDescription(props) {
   };
 
   const deckChangeDescription = () => {
-    props.deckUpdate(props.deckid, 'description', state);
+    deckUpdate(props.deckid, 'description', state);
     setButtonState(true);
     setTimeout(() => {
       setButtonState(false);

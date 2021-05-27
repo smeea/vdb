@@ -5,7 +5,7 @@ import PersonFill from '../../assets/images/icons/person-fill.svg';
 import AppContext from '../../context/AppContext.js';
 
 function DeckChangeAuthor(props) {
-  const { isMobile } = useContext(AppContext);
+  const { deckUpdate, isMobile } = useContext(AppContext);
 
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
@@ -15,7 +15,7 @@ function DeckChangeAuthor(props) {
   };
 
   const deckChangeAuthor = () => {
-    props.deckUpdate(props.deckid, 'author', state);
+    deckUpdate(props.deckid, 'author', state);
     setButtonState(true);
     setTimeout(() => {
       setButtonState(false);

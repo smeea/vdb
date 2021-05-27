@@ -5,7 +5,7 @@ import PaletteFill from '../../assets/images/icons/palette-fill.svg';
 import AppContext from '../../context/AppContext.js';
 
 function DeckChangeBranchName(props) {
-  const { isMobile } = useContext(AppContext);
+  const { deckUpdate, isMobile } = useContext(AppContext);
 
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
@@ -15,7 +15,7 @@ function DeckChangeBranchName(props) {
   };
 
   const deckChangeBranchName = () => {
-    props.deckUpdate(props.deckid, 'branchName', state);
+    deckUpdate(props.deckid, 'branchName', state);
     setButtonState(true);
     setTimeout(() => {
       setButtonState(false);

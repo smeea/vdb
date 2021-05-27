@@ -26,6 +26,7 @@ function DeckCryptTable(props) {
     usedCryptCards,
     isMobile,
     isWide,
+    deckUpdate,
   } = useContext(AppContext);
 
   let resultTrClass;
@@ -141,7 +142,7 @@ function DeckCryptTable(props) {
                       <div
                         className={cardInvType ? '' : 'not-selected'}
                         onClick={() =>
-                          props.deckUpdate(
+                          deckUpdate(
                             props.deckid,
                             cardInvType
                               ? 'makeClear'

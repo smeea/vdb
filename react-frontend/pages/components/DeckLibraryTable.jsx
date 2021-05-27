@@ -26,6 +26,7 @@ function DeckLibraryTable(props) {
     usedLibraryCards,
     nativeLibrary,
     isMobile,
+    deckUpdate,
   } = useContext(AppContext);
 
   let resultTrClass;
@@ -153,7 +154,7 @@ function DeckLibraryTable(props) {
                       <div
                         className={cardInvType ? '' : 'not-selected'}
                         onClick={() =>
-                          props.deckUpdate(
+                          deckUpdate(
                             props.deckid,
                             cardInvType
                               ? 'makeClear'

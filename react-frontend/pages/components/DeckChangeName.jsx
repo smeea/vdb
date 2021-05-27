@@ -5,7 +5,7 @@ import StarFill from '../../assets/images/icons/star-fill.svg';
 import AppContext from '../../context/AppContext.js';
 
 function DeckChangeName(props) {
-  const { isMobile } = useContext(AppContext);
+  const { deckUpdate, isMobile } = useContext(AppContext);
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
 
@@ -14,7 +14,7 @@ function DeckChangeName(props) {
   };
 
   const deckChangeName = () => {
-    props.deckUpdate(props.deckid, 'name', state);
+    deckUpdate(props.deckid, 'name', state);
     setButtonState(true);
     setTimeout(() => {
       setButtonState(false);

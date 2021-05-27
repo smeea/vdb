@@ -78,6 +78,7 @@ const AppContext = React.createContext({
   setSharedDeck: () => {},
   getDecks: () => {},
   deckRouter: () => {},
+  deckUpdate: () => {},
 });
 
 export default AppContext;
@@ -180,6 +181,21 @@ export const AppProvider = (props) => {
       });
   };
 
+  const deckUpdate = (deckid, field, value) => {
+    const url = `${process.env.API_URL}deck/${deckid}`;
+    const options = {
+      method: 'PUT',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ [field]: value }),
+    };
+
+    fetch(url, options).then(() => getDecks());
+  };
+
   const deckRouter = (pointer) => {
     if (pointer) {
       switch (pointer['src']) {
@@ -271,6 +287,7 @@ export const AppProvider = (props) => {
         setSharedDeck,
         getDecks,
         deckRouter,
+        deckUpdate,
       }}
     >
       {props.children}

@@ -26,6 +26,7 @@ import AppContext from '../context/AppContext';
 
 function Decks(props) {
   const {
+    deckUpdate,
     deckRouter,
     getDecks,
     setActiveDeck,
@@ -157,21 +158,6 @@ function Decks(props) {
         }
       })
       .catch((error) => setDeckError(true));
-  };
-
-  const deckUpdate = (deckid, field, value) => {
-    const url = `${process.env.API_URL}deck/${deckid}`;
-    const options = {
-      method: 'PUT',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ [field]: value }),
-    };
-
-    fetch(url, options).then(() => getDecks());
   };
 
   const toggleInventoryState = () => {
@@ -399,7 +385,6 @@ function Decks(props) {
                       <DeckChangeName
                         name={deckRouter(props.activeDeck).name}
                         deckid={props.activeDeck.deckid}
-                        deckUpdate={deckUpdate}
                         isAuthor={isAuthor}
                       />
                     </Col>
@@ -408,7 +393,6 @@ function Decks(props) {
                         <DeckChangeBranchName
                           branchName={deckRouter(props.activeDeck).branchName}
                           deckid={props.activeDeck.deckid}
-                          deckUpdate={deckUpdate}
                           isAuthor={isAuthor}
                         />
                       </Col>
@@ -417,7 +401,6 @@ function Decks(props) {
                       <DeckChangeAuthor
                         author={deckRouter(props.activeDeck).author}
                         deckid={props.activeDeck.deckid}
-                        deckUpdate={deckUpdate}
                         isAuthor={isAuthor}
                       />
                     </Col>
@@ -427,7 +410,6 @@ function Decks(props) {
                       <DeckChangeDescription
                         description={deckRouter(props.activeDeck).description}
                         deckid={props.activeDeck.deckid}
-                        deckUpdate={deckUpdate}
                         isAuthor={isAuthor}
                       />
                     </Col>
@@ -454,7 +436,6 @@ function Decks(props) {
                   deckid={props.activeDeck.deckid}
                   cards={deckRouter(props.activeDeck).crypt}
                   isAuthor={isAuthor}
-                  deckUpdate={deckUpdate}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}
                 />
@@ -465,7 +446,6 @@ function Decks(props) {
                   deckid={props.activeDeck.deckid}
                   cards={deckRouter(props.activeDeck).library}
                   isAuthor={isAuthor}
-                  deckUpdate={deckUpdate}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}
                 />
