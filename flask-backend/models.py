@@ -40,6 +40,7 @@ class Deck(db.Model):
     inventory_type = db.Column(db.String(1))
     master = db.Column(db.String(32))
     branches = db.Column(db.PickleType)
+    tags = db.Column(db.PickleType)
     used_in_inventory = db.Column(db.PickleType)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

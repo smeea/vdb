@@ -9,7 +9,11 @@ function OverlayTooltip(props) {
       placement={props.placement ? props.placement : 'right'}
       delay={props.delay ? props.delay : defaultDelay}
       show={props.show}
-      overlay={<Popover content>{props.text}</Popover>}
+      overlay={
+        <Popover className={props.className} content>
+          {props.text}
+        </Popover>
+      }
     >
       {props.children}
     </OverlayTrigger>

@@ -157,6 +157,34 @@ label.btn-outline-secondary:not(.disabled).active
   &__option--is-selected
     background: var(--bg-menu-selected) !important
 
+.react-select-tags
+  &__input
+    color: var(--fg-primary) !important
+  &__control
+    background: rgba(0, 0, 0, 0) !important
+    border-color: rgba(0, 0, 0, 0) !important
+  &__dropdown-indicator,
+  &__indicators
+    display: none !important
+  &__menu-list
+    background: var(--bg-primary)
+    color: var(--fg-primary)
+  &__option--is-focused
+    background: var(--bg-menu-focused) !important
+  &__option--is-selected
+    background: var(--bg-menu-selected) !important
+  &__multi-value
+    background: var(--bg-button) !important
+  &__multi-value__label
+    color: var(--fg-primary) !important
+  &__multi-value__remove
+    background: var(--bg-button) !important
+  &__multi-value__remove:hover
+    color: var(--fg-button) !important
+    background: var(--bg-button-hover) !important
+  &__multi-value-container
+    background: var(--bg-primary)
+
 .dropdown-menu
   background: var(--bg-button)
 .dropdown-item
@@ -206,7 +234,8 @@ label.btn-outline-secondary:not(.disabled).active
 .text-overflow
   white-space: nowrap
   overflow: hidden
-  width: 200px
+  text-overflow: ellipsis
+  width: 300px
 
 img.card-popover
   height: 420px
@@ -494,6 +523,13 @@ img.card-popover
   text-align: left
 .twd-librarybytype-table td.type
   width: 50px
+
+.decks-table .tags
+  width: 100%
+.decks-table .crypt, .library
+  color: var(--fg-secondary)
+.decks-table .clan
+  text-align: center
 
 div.popover-sets
   font-size: x-small
@@ -843,6 +879,9 @@ div.float-inventory svg
 
 .modal-tooltip
   z-index: 1100
+
+.adv-select
+  z-index: 1050 !important
 
 .opacity-035
   opacity: 35%

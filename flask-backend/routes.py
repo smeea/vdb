@@ -345,6 +345,13 @@ def updateDeck(deckid):
         except Exception:
             pass
 
+        try:
+            if 'setTags' in request.json:
+                new_tags = request.json['setTags']
+                d.tags = new_tags
+        except Exception:
+            pass
+
         db.session.commit()
 
         return jsonify({'updated deck': d.deckid})
@@ -403,6 +410,11 @@ def listDecks():
                 deck.inventory_type = ''
                 db.session.commit()
 
+            # Fix pre-tags decks
+            if not deck.tags:
+                deck.tags = []
+                db.session.commit()
+
             # Fix bad imports
             if 'undefined' in deck.cards:
                 new_cards = deck.cards.copy()
@@ -439,6 +451,7 @@ def listDecks():
                 'timestamp': deck.timestamp,
                 'master': deck.master,
                 'branches': deck.branches,
+                'tags': deck.tags,
             }
 
         return jsonify(decks)
@@ -461,6 +474,7 @@ def newDeck():
                 if 'description' in request.json else '',
                 author=current_user,
                 inventory_type='',
+                tags=[],
                 used_in_inventory={},
                 cards=request.json['cards'] if 'cards' in request.json else {})
             db.session.add(d)
@@ -492,6 +506,7 @@ def createBranch():
                       description=source.description,
                       author=current_user,
                       inventory_type='',
+                      tags=[],
                       master=master.deckid,
                       used_in_inventory={},
                       cards=source.cards)
@@ -574,6 +589,7 @@ def cloneDeck():
                  description=deck['description'],
                  author=current_user,
                  inventory_type='',
+                 tags=[],
                  used_in_inventory={},
                  cards=cards)
         db.session.add(d)
@@ -608,6 +624,7 @@ def cloneDeck():
                      description=description,
                      author=current_user,
                      inventory_type='',
+                     tags=['twd'],
                      used_in_inventory={},
                      cards=cards)
             db.session.add(d)
@@ -635,6 +652,7 @@ def cloneDeck():
                      description='',
                      author=current_user,
                      inventory_type='',
+                     tags=['precon'],
                      used_in_inventory={},
                      cards=cards)
             db.session.add(d)
@@ -654,6 +672,7 @@ def cloneDeck():
                  description='',
                  author=current_user,
                  inventory_type='',
+                 tags=[],
                  used_in_inventory={},
                  cards=targetDeck.cards)
         db.session.add(d)
@@ -678,6 +697,7 @@ def importDeck():
                          description=description,
                          author=current_user,
                          inventory_type='',
+                         tags=[],
                          used_in_inventory={},
                          cards=cards)
                 db.session.add(d)
