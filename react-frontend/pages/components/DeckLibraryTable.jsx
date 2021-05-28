@@ -27,6 +27,7 @@ function DeckLibraryTable(props) {
     nativeLibrary,
     isMobile,
     deckUpdate,
+    deckCardChange,
   } = useContext(AppContext);
 
   let resultTrClass;
@@ -187,7 +188,7 @@ function DeckLibraryTable(props) {
                           cardid={card.c['Id']}
                           q={card.q}
                           deckid={props.deckid}
-                          cardChange={props.cardChange}
+                          cardChange={deckCardChange}
                           inInventory={inInventory}
                           softUsedMax={softUsedMax}
                           hardUsedTotal={hardUsedTotal}
@@ -201,7 +202,7 @@ function DeckLibraryTable(props) {
                         cardid={card.c['Id']}
                         q={card.q}
                         deckid={props.deckid}
-                        cardChange={props.cardChange}
+                        cardChange={deckCardChange}
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
@@ -216,7 +217,7 @@ function DeckLibraryTable(props) {
                     cardid={card.c['Id']}
                     q={card.q}
                     deckid={props.deckid}
-                    cardChange={props.cardChange}
+                    cardChange={deckCardChange}
                   />
                 </td>
               )}

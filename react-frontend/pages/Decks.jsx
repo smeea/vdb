@@ -431,8 +431,6 @@ function Decks(props) {
             <Row>
               <Col md={7} className="px-0 pl-md-3 pr-md-2 px-xl-3">
                 <DeckCrypt
-                  changeTimer={props.changeTimer}
-                  cardChange={props.cardChange}
                   deckid={props.activeDeck.deckid}
                   cards={deckRouter(props.activeDeck).crypt}
                   isAuthor={isAuthor}
@@ -442,7 +440,6 @@ function Decks(props) {
               </Col>
               <Col md={5} className="pt-4 pt-lg-0 px-0 pl-md-2 pr-md-3 px-xl-3">
                 <DeckLibrary
-                  cardChange={props.cardChange}
                   deckid={props.activeDeck.deckid}
                   cards={deckRouter(props.activeDeck).library}
                   isAuthor={isAuthor}
@@ -577,7 +574,6 @@ function Decks(props) {
       )}
       {showDeckSelectAdv && (
         <DeckSelectAdvModal
-          cardChange={props.cardChange}
           handleClose={() => setShowDeckSelectAdv(false)}
           show={showDeckSelectAdv}
         />

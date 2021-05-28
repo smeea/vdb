@@ -2,9 +2,8 @@ import React, { useState, useContext } from 'react';
 import { saveAs } from 'file-saver';
 import { Spinner, Dropdown } from 'react-bootstrap';
 import Printer from '../../assets/images/icons/printer.svg';
-import AppContext from '../../context/AppContext.js';
-
 import DeckProxySelectModal from './DeckProxySelectModal.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function DeckProxy(props) {
   const { inventoryMode, isMobile } = useContext(AppContext);

@@ -4,8 +4,8 @@ import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
 import AccountLogin from './components/AccountLogin.jsx';
 import AccountRegister from './components/AccountRegister.jsx';
-import DeckNewCryptCard from './components/DeckNewCryptCard.jsx';
-import DeckNewLibraryCard from './components/DeckNewLibraryCard.jsx';
+import InventoryNewCryptCard from './components/InventoryNewCryptCard.jsx';
+import InventoryNewLibraryCard from './components/InventoryNewLibraryCard.jsx';
 import InventoryCrypt from './components/InventoryCrypt.jsx';
 import InventoryLibrary from './components/InventoryLibrary.jsx';
 import InventoryButtons from './components/InventoryButtons.jsx';
@@ -40,8 +40,7 @@ function Inventory(props) {
               {showCrypt ? (
                 <>
                   <div className="pt-1 px-1">
-                    <DeckNewCryptCard
-                      cardChange={props.cardChange}
+                    <InventoryNewCryptCard
                       cards={inventoryCrypt}
                       setNewId={setNewCryptId}
                       inInventory={true}
@@ -53,7 +52,6 @@ function Inventory(props) {
                         cards={{
                           [newCryptId]: inventoryCrypt[newCryptId],
                         }}
-                        cardChange={props.cardChange}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
@@ -66,7 +64,6 @@ function Inventory(props) {
                         <InventoryCrypt
                           category={category}
                           cards={inventoryCrypt}
-                          cardChange={props.cardChange}
                           showFloatingButtons={showFloatingButtons}
                           setShowFloatingButtons={setShowFloatingButtons}
                         />
@@ -76,8 +73,7 @@ function Inventory(props) {
               ) : (
                 <>
                   <div className="pt-1 px-1">
-                    <DeckNewLibraryCard
-                      cardChange={props.cardChange}
+                    <InventoryNewLibraryCard
                       cards={inventoryLibrary}
                       setNewId={setNewLibraryId}
                       inInventory={true}
@@ -89,7 +85,6 @@ function Inventory(props) {
                         cards={{
                           [newLibraryId]: inventoryLibrary[newLibraryId],
                         }}
-                        cardChange={props.cardChange}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
@@ -102,7 +97,6 @@ function Inventory(props) {
                         <InventoryLibrary
                           category={category}
                           cards={inventoryLibrary}
-                          cardChange={props.cardChange}
                           showFloatingButtons={showFloatingButtons}
                           setShowFloatingButtons={setShowFloatingButtons}
                         />
@@ -127,8 +121,7 @@ function Inventory(props) {
             <Row>
               <Col xl={1} className="hide-narrow"></Col>
               <Col md={6} xl={5} className="px-0 px-md-1 px-xl-3">
-                <DeckNewCryptCard
-                  cardChange={props.cardChange}
+                <InventoryNewCryptCard
                   cards={inventoryCrypt}
                   setNewId={setNewCryptId}
                   inInventory={true}
@@ -139,7 +132,6 @@ function Inventory(props) {
                       cards={{
                         [newCryptId]: inventoryCrypt[newCryptId],
                       }}
-                      cardChange={props.cardChange}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
                       setShowFloatingButtons={setShowFloatingButtons}
@@ -152,7 +144,6 @@ function Inventory(props) {
                       <InventoryCrypt
                         category={category}
                         cards={inventoryCrypt}
-                        cardChange={props.cardChange}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
                       />
@@ -160,8 +151,7 @@ function Inventory(props) {
                   )}
               </Col>
               <Col md={4} xl={4} className="px-0 px-md-1 px-xl-3">
-                <DeckNewLibraryCard
-                  cardChange={props.cardChange}
+                <InventoryNewLibraryCard
                   cards={inventoryLibrary}
                   setNewId={setNewLibraryId}
                   inInventory={true}
@@ -172,7 +162,6 @@ function Inventory(props) {
                       cards={{
                         [newLibraryId]: inventoryLibrary[newLibraryId],
                       }}
-                      cardChange={props.cardChange}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
                       setShowFloatingButtons={setShowFloatingButtons}
@@ -185,7 +174,6 @@ function Inventory(props) {
                       <InventoryLibrary
                         category={category}
                         cards={inventoryLibrary}
-                        cardChange={props.cardChange}
                         showFloatingButtons={showFloatingButtons}
                         setShowFloatingButtons={setShowFloatingButtons}
                       />

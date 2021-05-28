@@ -3,7 +3,7 @@ import { Button, Form, FormControl } from 'react-bootstrap';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryCardQuantity(props) {
-  const { isMobile } = useContext(AppContext);
+  const { inventoryCardChange, isMobile } = useContext(AppContext);
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(props.q);
 
@@ -13,13 +13,13 @@ function InventoryCardQuantity(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    props.cardChange(props.cardid, parseInt(state));
+    inventoryCardChange(props.cardid, parseInt(state));
     setManual(false);
   };
 
   const handleQuantityChange = (diff) => {
     if (state + diff >= 0) setState(state + diff);
-    props.cardChange(props.cardid, state + diff);
+    inventoryCardChange(props.cardid, state + diff);
   };
 
   return (

@@ -63,7 +63,6 @@ function ResultLibrary(props) {
           <ResultLibraryTable
             library={props.library}
             activeDeck={props.activeDeck}
-            cardChange={props.cardChange}
             resultCards={sortedCards}
             setShowFloatingButtons={setShowFloatingButtons}
           />

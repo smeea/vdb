@@ -79,6 +79,9 @@ const AppContext = React.createContext({
   getDecks: () => {},
   deckRouter: () => {},
   deckUpdate: () => {},
+  deckCardChange: () => {},
+  inventoryCardChange: () => {},
+  changeTimer: undefined,
 });
 
 export default AppContext;
@@ -134,6 +137,9 @@ export const AppProvider = (props) => {
   const [decks, setDecks] = useState(undefined);
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [sharedDeck, setSharedDeck] = useState(undefined);
+
+  const [changeTimer, setChangeTimer] = useState(false);
+  const [timers, setTimers] = useState([]);
 
   const changeLang = (lang) => {
     setLang(lang);
@@ -196,6 +202,82 @@ export const AppProvider = (props) => {
     fetch(url, options).then(() => getDecks());
   };
 
+  const deckCardChange = (deckid, cardid, count) => {
+    const url = `${process.env.API_URL}deck/${deckid}`;
+    const options = {
+      method: 'PUT',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ cardChange: { [cardid]: count } }),
+    };
+
+    const oldState = { ...decks };
+
+    fetch(url, options).catch((error) => {
+      setDecks(oldState);
+    });
+
+    if (count >= 0) {
+      if (cardid > 200000) {
+        setDecks((prevState) => {
+          const oldState = { ...prevState };
+          oldState[deckid]['crypt'][cardid] = {
+            c: cryptCardBase[cardid],
+            q: count,
+          };
+          return oldState;
+        });
+      } else {
+        setDecks((prevState) => {
+          const oldState = { ...prevState };
+          oldState[deckid]['library'][cardid] = {
+            c: libraryCardBase[cardid],
+            q: count,
+          };
+          return oldState;
+        });
+      }
+    } else {
+      if (cardid > 200000) {
+        setDecks((prevState) => {
+          const oldState = { ...prevState };
+          delete oldState[deckid]['crypt'][cardid];
+          return oldState;
+        });
+      } else {
+        setDecks((prevState) => {
+          const oldState = { ...prevState };
+          delete oldState[deckid]['library'][cardid];
+          return oldState;
+        });
+      }
+    }
+
+    const startTimer = () => {
+      let counter = 1;
+      timers.map((timerId) => {
+        clearInterval(timerId);
+      });
+      setTimers([]);
+
+      const timerId = setInterval(() => {
+        if (counter > 0) {
+          counter = counter - 1;
+        } else {
+          clearInterval(timerId);
+          setChangeTimer(!changeTimer);
+        }
+      }, 500);
+
+      setTimers([...timers, timerId]);
+    };
+
+    startTimer();
+  };
+
   const deckRouter = (pointer) => {
     if (pointer) {
       switch (pointer['src']) {
@@ -206,6 +288,69 @@ export const AppProvider = (props) => {
         case 'shared':
         case 'twd':
           return sharedDeck && sharedDeck[pointer['deckid']];
+      }
+    }
+  };
+
+  const inventoryCardChange = (cardid, count) => {
+    const url = `${process.env.API_URL}inventory/change`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ [cardid]: count }),
+    };
+
+    if (cardid > 200000) {
+      if (count >= 0 || (count < 0 && inventoryCrypt[cardid])) {
+        const oldState = { ...inventoryCrypt };
+
+        fetch(url, options).catch((error) => {
+          setInventoryCrypt(oldState);
+        });
+
+        if (count >= 0) {
+          setInventoryCrypt((prevState) => ({
+            ...prevState,
+            [cardid]: {
+              c: cryptCardBase[cardid],
+              q: count,
+            },
+          }));
+        } else {
+          setInventoryCrypt((prevState) => {
+            const state = { ...prevState };
+            delete state[cardid];
+            return state;
+          });
+        }
+      }
+    } else {
+      if (count >= 0 || (count < 0 && inventoryLibrary[cardid])) {
+        const oldState = { ...inventoryLibrary };
+
+        fetch(url, options).catch((error) => {
+          setInventoryLibrary(oldState);
+        });
+
+        if (count >= 0) {
+          setInventoryLibrary((prevState) => ({
+            ...prevState,
+            [cardid]: {
+              c: libraryCardBase[cardid],
+              q: count,
+            },
+          }));
+        } else {
+          setInventoryLibrary((prevState) => {
+            const state = { ...prevState };
+            delete state[cardid];
+            return state;
+          });
+        }
       }
     }
   };
@@ -288,6 +433,9 @@ export const AppProvider = (props) => {
         getDecks,
         deckRouter,
         deckUpdate,
+        deckCardChange,
+        inventoryCardChange,
+        changeTimer,
       }}
     >
       {props.children}

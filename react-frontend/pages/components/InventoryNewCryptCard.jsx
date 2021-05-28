@@ -1,23 +1,22 @@
 import React, { useEffect, useState, useContext } from 'react';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
-import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
-import ResultLibraryCost from './ResultLibraryCost.jsx';
-import ResultLibraryClan from './ResultLibraryClan.jsx';
+import ResultCryptClan from './ResultCryptClan.jsx';
+import ResultCryptCapacity from './ResultCryptCapacity.jsx';
+import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import AppContext from '../../context/AppContext.js';
 
-function DeckNewLibraryCard(props) {
-  const { deckCardChange, libraryCardBase } = useContext(AppContext);
+function InventoryNewCryptCard(props) {
+  const { inventoryCardChange, cryptCardBase } = useContext(AppContext);
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
 
   const addNewCard = () => {
     if (!props.cards[selectedValue]) {
       if (props.inInventory) {
-        deckCardChange(selectedValue, 1);
+        inventoryCardChange(selectedValue, 1);
       } else {
-        deckCardChange(props.deckid, selectedValue, 1);
+        inventoryCardChange(props.deckid, selectedValue, 1);
       }
     }
     if (props.inInventory) props.setNewId(selectedValue);
@@ -26,7 +25,7 @@ function DeckNewLibraryCard(props) {
   };
 
   const loadOptions = (inputValue) => {
-    const url = `${process.env.API_URL}search/library`;
+    const url = `${process.env.API_URL}search/crypt`;
     const input = { name: inputValue };
     const options = {
       method: 'POST',
@@ -55,7 +54,7 @@ function DeckNewLibraryCard(props) {
       cacheOptions
       autoFocus={!props.inInventory}
       value={selectedValue}
-      placeholder="Add Library Card"
+      placeholder="Add Crypt Card"
       loadOptions={loadOptions}
       onChange={handleChange}
       getOptionLabel={(card) => (
@@ -71,42 +70,47 @@ function DeckNewLibraryCard(props) {
                   {props.cards[card] && props.cards[card].q}
                 </div>
               )}
-              <ResultLibraryType cardtype={libraryCardBase[card]['Type']} />
-              <div className="pl-1">
-                {libraryCardBase[card]['Banned'] ? (
+              <ResultCryptCapacity value={cryptCardBase[card]['Capacity']} />
+              <div className="px-2">
+                {cryptCardBase[card]['Banned'] ? (
                   <>
-                    <strike>{libraryCardBase[card]['Name']}</strike>
+                    <strike>{cryptCardBase[card]['Name']}</strike>
+                    {cryptCardBase[card]['Adv'] && (
+                      <div className="d-inline pl-1">
+                        <img
+                          className="advanced-image-results"
+                          src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                          title="Advanced"
+                        />
+                      </div>
+                    )}
                     <div className="d-inline pl-1">
                       <Hammer />
                     </div>
                   </>
                 ) : (
-                  <>{libraryCardBase[card]['Name']}</>
+                  <>
+                    {cryptCardBase[card]['Name']}
+                    {cryptCardBase[card]['Adv'] && (
+                      <div className="d-inline pl-1">
+                        <img
+                          className="advanced-image-results"
+                          src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                          title="Advanced"
+                        />
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
+              <div className="pr-3">
+                <ResultCryptClan value={cryptCardBase[card]['Clan']} />
+              </div>
             </div>
-            <div>
-              {libraryCardBase[card]['Discipline'] && (
-                <div className="d-inline px-3">
-                  <ResultLibraryDisciplines
-                    value={libraryCardBase[card]['Discipline']}
-                  />
-                </div>
-              )}
-              {libraryCardBase[card]['Clan'] && (
-                <div className="d-inline px-3">
-                  <ResultLibraryClan value={libraryCardBase[card]['Clan']} />
-                </div>
-              )}
-              {(libraryCardBase[card]['Blood Cost'] ||
-                libraryCardBase[card]['Pool Cost']) && (
-                <div className="d-inline">
-                  <ResultLibraryCost
-                    valuePool={libraryCardBase[card]['Pool Cost']}
-                    valueBlood={libraryCardBase[card]['Blood Cost']}
-                  />
-                </div>
-              )}
+            <div className="d-flex flex-nowrap">
+              <ResultCryptDisciplines
+                value={cryptCardBase[card]['Disciplines']}
+              />
             </div>
           </div>
         </>
@@ -115,4 +119,4 @@ function DeckNewLibraryCard(props) {
   );
 }
 
-export default DeckNewLibraryCard;
+export default InventoryNewCryptCard;

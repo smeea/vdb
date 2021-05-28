@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
@@ -6,7 +6,7 @@ import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import AppContext from '../../context/AppContext.js';
 
-function DeckDrawModal(props) {
+function DeckProxySelectModal(props) {
   const { isMobile } = useContext(AppContext);
 
   const [selectedCards, setSelectedCards] = useState({});
@@ -148,4 +148,4 @@ function DeckDrawModal(props) {
   );
 }
 
-export default DeckDrawModal;
+export default DeckProxySelectModal;

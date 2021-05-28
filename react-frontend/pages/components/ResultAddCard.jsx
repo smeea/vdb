@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
+import AppContext from '../../context/AppContext.js';
 
 function ResultAddCard(props) {
+  const { deckCardChange } = useContext(AppContext);
+
   const handleButton = () => {
-    props.cardChange(props.deckid, props.card.Id, props.inDeck + 1);
+    deckCardChange(props.deckid, props.card.Id, props.inDeck + 1);
   };
 
   return (

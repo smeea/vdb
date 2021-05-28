@@ -97,8 +97,6 @@ function DeckSelectAdvModal(props) {
               text={
                 <DeckCrypt
                   deckid={deckid}
-                  changeTimer={props.changeTimer}
-                  cardChange={props.cardChange}
                   cards={decks[deckid].crypt}
                   isAuthor={true}
                 />
@@ -116,8 +114,6 @@ function DeckSelectAdvModal(props) {
               text={
                 <DeckLibrary
                   deckid={deckid}
-                  changeTimer={props.changeTimer}
-                  cardChange={props.cardChange}
                   cards={decks[deckid].library}
                   isAuthor={true}
                 />

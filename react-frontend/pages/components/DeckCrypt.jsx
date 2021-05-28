@@ -9,7 +9,7 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckCrypt(props) {
-  const { isMobile } = useContext(AppContext);
+  const { changeTimer, isMobile } = useContext(AppContext);
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -176,7 +176,7 @@ function DeckCrypt(props) {
           return i['c']['Id'];
         })
     );
-  }, [props.changeTimer, props.deckid]);
+  }, [changeTimer, props.deckid]);
 
   return (
     <>
@@ -212,7 +212,6 @@ function DeckCrypt(props) {
       {showAdd &&
         (!isMobile ? (
           <DeckNewCryptCard
-            cardChange={props.cardChange}
             setShowAdd={setShowAdd}
             cards={props.cards}
             deckid={props.deckid}
@@ -242,7 +241,6 @@ function DeckCrypt(props) {
                   </Col>
                 </Row>
                 <DeckNewCryptCard
-                  cardChange={props.cardChange}
                   setShowAdd={setShowAdd}
                   cards={props.cards}
                   deckid={props.deckid}
@@ -255,7 +253,6 @@ function DeckCrypt(props) {
         handleModalCardOpen={handleModalCardOpen}
         setModalInventory={setModalInventory}
         deckid={props.deckid}
-        cardChange={props.cardChange}
         cards={sortedCards}
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
@@ -278,7 +275,6 @@ function DeckCrypt(props) {
             handleModalCardOpen={handleModalSideCardOpen}
             setModalInventory={setModalInventory}
             deckid={props.deckid}
-            cardChange={props.cardChange}
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             isAuthor={props.isAuthor}

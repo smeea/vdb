@@ -114,7 +114,6 @@ function InventoryLibraryTable(props) {
                   <InventoryCardQuantity
                     cardid={card.c['Id']}
                     q={card.q}
-                    cardChange={props.cardChange}
                     softUsedMax={softUsedMax}
                     hardUsedTotal={hardUsedTotal}
                   />
@@ -136,7 +135,6 @@ function InventoryLibraryTable(props) {
                     <InventoryCardQuantity
                       cardid={card.c['Id']}
                       q={card.q}
-                      cardChange={props.cardChange}
                       softUsedMax={softUsedMax}
                       hardUsedTotal={hardUsedTotal}
                     />

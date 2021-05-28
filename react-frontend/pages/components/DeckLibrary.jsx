@@ -142,7 +142,6 @@ function DeckLibrary(props) {
             libraryTotal={libraryTotal}
             showInfo={showInfo}
             deckid={props.deckid}
-            cardChange={props.cardChange}
             cards={libraryByType[cardtype]}
             isAuthor={props.isAuthor}
             proxySelector={props.proxySelector}
@@ -171,7 +170,6 @@ function DeckLibrary(props) {
             handleModalCardOpen={handleModalSideCardOpen}
             setModalInventory={setModalInventory}
             deckid={props.deckid}
-            cardChange={props.cardChange}
             cards={librarySideByType[cardtype]}
             isAuthor={props.isAuthor}
             proxySelector={props.proxySelector}
@@ -219,7 +217,6 @@ function DeckLibrary(props) {
       {showAdd &&
         (!isMobile ? (
           <DeckNewLibraryCard
-            cardChange={props.cardChange}
             setShowAdd={setShowAdd}
             cards={props.cards}
             deckid={props.deckid}
@@ -249,7 +246,6 @@ function DeckLibrary(props) {
                   </Col>
                 </Row>
                 <DeckNewLibraryCard
-                  cardChange={props.cardChange}
                   setShowAdd={setShowAdd}
                   cards={props.cards}
                   deckid={props.deckid}

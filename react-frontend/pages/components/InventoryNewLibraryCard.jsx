@@ -7,17 +7,17 @@ import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import AppContext from '../../context/AppContext.js';
 
-function DeckNewLibraryCard(props) {
-  const { deckCardChange, libraryCardBase } = useContext(AppContext);
+function InventoryNewLibraryCard(props) {
+  const { inventoryCardChange, libraryCardBase } = useContext(AppContext);
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
 
   const addNewCard = () => {
     if (!props.cards[selectedValue]) {
       if (props.inInventory) {
-        deckCardChange(selectedValue, 1);
+        inventoryCardChange(selectedValue, 1);
       } else {
-        deckCardChange(props.deckid, selectedValue, 1);
+        inventoryCardChange(props.deckid, selectedValue, 1);
       }
     }
     if (props.inInventory) props.setNewId(selectedValue);
@@ -115,4 +115,4 @@ function DeckNewLibraryCard(props) {
   );
 }
 
-export default DeckNewLibraryCard;
+export default InventoryNewLibraryCard;

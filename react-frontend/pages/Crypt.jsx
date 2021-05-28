@@ -74,8 +74,6 @@ function Crypt(props) {
               <>
                 <div className="pt-4">
                   <DeckCrypt
-                    changeTimer={props.changeTimer}
-                    cardChange={props.cardChange}
                     deckid={props.activeDeck.deckid}
                     cards={deckRouter(props.activeDeck).crypt}
                     isAuthor={true}
@@ -84,7 +82,6 @@ function Crypt(props) {
                 </div>
                 <div className="pt-4">
                   <DeckLibrary
-                    cardChange={props.cardChange}
                     deckid={props.activeDeck.deckid}
                     cards={deckRouter(props.activeDeck).library}
                     isAuthor={true}
@@ -107,7 +104,6 @@ function Crypt(props) {
         >
           {cryptResults && (
             <ResultCrypt
-              cardChange={props.cardChange}
               crypt={
                 deckRouter(props.activeDeck) &&
                 deckRouter(props.activeDeck).crypt

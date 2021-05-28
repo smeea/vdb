@@ -7,16 +7,16 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckNewCryptCard(props) {
-  const { cryptCardBase } = useContext(AppContext);
+  const { deckCardChange, cryptCardBase } = useContext(AppContext);
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
 
   const addNewCard = () => {
     if (!props.cards[selectedValue]) {
       if (props.inInventory) {
-        props.cardChange(selectedValue, 1);
+        deckCardChange(selectedValue, 1);
       } else {
-        props.cardChange(props.deckid, selectedValue, 1);
+        deckCardChange(props.deckid, selectedValue, 1);
       }
     }
     if (props.inInventory) props.setNewId(selectedValue);
