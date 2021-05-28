@@ -57,9 +57,9 @@ function DeckClone(props) {
       <Button
         variant={state ? 'success' : 'outline-secondary'}
         onClick={cloneDeck}
-        block
+        block={!props.noText}
       >
-        <Files /> {state ? 'Cloned' : 'Clone Deck'}
+        <Files /> {!props.noText && (state ? 'Cloned' : 'Clone Deck')}
       </Button>
     </>
   );

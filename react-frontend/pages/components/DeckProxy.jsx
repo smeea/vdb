@@ -87,10 +87,13 @@ function DeckProxy(props) {
 
   return (
     <>
-      <Dropdown>
-        <Dropdown.Toggle className="btn-block" variant="outline-secondary">
+      <Dropdown className="d-inline">
+        <Dropdown.Toggle
+          className={!props.noText ? 'btn-block' : 'btn'}
+          variant="outline-secondary"
+        >
           <Printer />
-          <span className="pl-1">PDF Proxy</span>
+          {!props.noText && <span className="pl-1">PDF Proxy</span>}
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {spinnerState && (

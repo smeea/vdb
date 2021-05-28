@@ -18,6 +18,10 @@ function DeckTags(props) {
     value: tag,
   }));
 
+  const NoOptionsMessage = (props) => {
+    return <div className="d-flex justify-content-center">Enter new tag</div>;
+  };
+
   return (
     <CreatableSelect
       classNamePrefix="react-select-tags"
@@ -27,6 +31,7 @@ function DeckTags(props) {
       onChange={handleChange}
       defaultValue={tags}
       placeholder={false}
+      components={{ NoOptionsMessage }}
     />
   );
 }

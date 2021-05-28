@@ -22,9 +22,9 @@ function DeckCopyUrlMutableButton(props) {
     <Button
       variant={state ? 'success' : 'outline-secondary'}
       onClick={handleButton}
-      block
+      block={!props.noText}
     >
-      <ShareFill /> {state ? 'Copied' : 'Copy URL'}
+      <ShareFill /> {!props.noText && (state ? 'Copied' : 'Copy URL')}
     </Button>
   );
 }
