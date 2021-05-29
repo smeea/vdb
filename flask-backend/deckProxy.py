@@ -47,10 +47,13 @@ def deckProxy(cards):
         y_counter = 0
 
         pdf.add_page()
-        pdf.set_fill_color(60, 60, 60)
-        pdf.rect(left_margin, top_margin, 189.4, 264.4, 'F')
+        pdf.set_fill_color(40, 40, 40)
 
         for image in imagelist:
+            pdf.rect((left_margin + x_counter * (w + gap)),
+                     (top_margin + y_counter * (h + gap)), (w + gap),
+                     (h + gap), 'F')
+
             pdf.image('./cards/' + image, (w + gap) * x_counter + left_margin,
                       (h + gap) * y_counter + top_margin, w, h)
 
@@ -62,8 +65,7 @@ def deckProxy(cards):
 
             if y_counter == 3:
                 pdf.add_page()
-                pdf.set_fill_color(60, 60, 60)
-                pdf.rect(left_margin, top_margin, 189.4, 264.4, 'F')
+                pdf.set_fill_color(40, 40, 40)
                 y_counter = 0
 
         file = pdf.output(dest='S').encode('latin-1')
