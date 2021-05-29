@@ -17,13 +17,11 @@
 * Inventory add from decks with select form (mark decks already in)
 * Search for similar TWD decks
 * Localized proxies
-* Deck tags
 * Narrow search by clicks (i.e. twd author)
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search
 * Offline PWA support
-* Swipes to increase quantity on the result table
 
 # MAYBE LATER FEATURES
 * Documentation on updates / update script

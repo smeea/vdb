@@ -103,14 +103,14 @@ function DeckSelectAdvModal(props) {
               className="adv-select"
               text={
                 <Row>
-                  <Col>
+                  <Col md={7}>
                     <DeckCrypt
                       deckid={deck.deckid}
                       cards={deck.crypt}
                       isAuthor={true}
                     />
                   </Col>
-                  <Col>
+                  <Col md={5}>
                     <DeckLibrary
                       deckid={deck.deckid}
                       cards={deck.library}
@@ -171,7 +171,8 @@ function DeckSelectAdvModal(props) {
       show={props.show}
       onHide={props.handleClose}
       animation={false}
-      dialogClassName={!isMobile ? 'modal-deck-draw' : null}
+      size="xl"
+      /* dialogClassName={!isMobile ? 'modal-deck-draw' : null} */
     >
       <Modal.Body>
         <DeckTotal setSortMethod={setSortMethod} />
