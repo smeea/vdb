@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import DeckSelectSortForm from './DeckSelectSortForm.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckTotal(props) {
@@ -35,7 +34,7 @@ function DeckTotal(props) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <DeckSelectSortForm onChange={props.setSortMethod} />
+      <div />
     </>
   );
 

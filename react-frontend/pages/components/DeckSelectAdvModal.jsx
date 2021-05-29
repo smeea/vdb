@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Modal, Button, Row, Col } from 'react-bootstrap';
+import { Modal, Button, Row, Col, FormControl } from 'react-bootstrap';
+import Select from 'react-select';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import Check from '../../assets/images/icons/check.svg';
 import X from '../../assets/images/icons/x.svg';
@@ -8,9 +9,11 @@ import DeckLibrary from './DeckLibrary.jsx';
 import DeckTags from './DeckTags.jsx';
 import DeckTotal from './DeckTotal.jsx';
 import DeckDelete from './DeckDelete.jsx';
+import DeckBranchDelete from './DeckBranchDelete.jsx';
 import DeckClone from './DeckClone.jsx';
 import DeckProxy from './DeckProxy.jsx';
 import DeckCopyUrlMutableButton from './DeckCopyUrlMutableButton.jsx';
+import DeckSelectSortForm from './DeckSelectSortForm.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import resultDecksSort from './resultDecksSort.js';
 import OverlayTooltip from './OverlayTooltip.jsx';
@@ -23,7 +26,19 @@ function DeckSelectAdvModal(props) {
   const [sortMethod, setSortMethod] = useState('byName');
   const [sortedDecks, setSortedDecks] = useState([]);
   const [showDeck, setShowDeck] = useState(undefined);
+  const [revFilter, setRevFilter] = useState(false);
+  const [nameFilter, setNameFilter] = useState('');
+  const [tagsFilter, setTagsFilter] = useState([]);
   let resultTrClass;
+
+  const handleChangeNameFilter = (event) => {
+    setNameFilter(event.target.value);
+  };
+
+  const handleChangeTagsFilter = (event) => {
+    const tags = event.map((t) => t.value);
+    setTagsFilter(tags);
+  };
 
   const handleOpen = (deckid) => {
     setActiveDeck({ src: 'my', deckid: deckid });
@@ -44,16 +59,41 @@ function DeckSelectAdvModal(props) {
 
   useEffect(() => {
     if (Object.values(decks).length > 0) {
-      const sorted = resultDecksSort(Object.values(decks), sortMethod);
+      let filtered = Object.values(decks);
+
+      if (nameFilter) {
+        filtered = filtered.filter((deck) => {
+          if (deck.name.toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0)
+            return true;
+        });
+      }
+
+      if (tagsFilter) {
+        filtered = filtered.filter((deck) => {
+          let counter = 0;
+          tagsFilter.map((tag) => {
+            if (deck.tags.includes(tag)) counter += 1;
+          });
+          if (counter >= tagsFilter.length) return true;
+        });
+      }
+
+      if (!revFilter) {
+        filtered = filtered.filter((deck) => {
+          if (!deck.master) return true;
+        });
+      }
+
+      const sorted = resultDecksSort(filtered, sortMethod);
       setSortedDecks(sorted);
     }
-  }, [decks, sortMethod]);
+  }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
 
   const deckRows = sortedDecks.map((deck, index) => {
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
+    if (resultTrClass == 'result-even') {
       resultTrClass = 'result-odd';
+    } else {
+      resultTrClass = 'result-even';
     }
 
     const clans = {};
@@ -89,11 +129,11 @@ function DeckSelectAdvModal(props) {
     return (
       <React.Fragment key={deck.deckid}>
         <tr className={resultTrClass}>
-          <td className="clan px-2" onClick={() => handleOpen(deck.deckid)}>
+          <td className="clan" onClick={() => handleOpen(deck.deckid)}>
             {clan && <ResultCryptClan value={clan} />}
           </td>
           <td
-            className="name px-2"
+            className="name"
             onMouseEnter={() => setShowDeck(deck.deckid)}
             onMouseLeave={() => setShowDeck(false)}
           >
@@ -126,24 +166,33 @@ function DeckSelectAdvModal(props) {
                 title={deck.name}
               >
                 {deck.name}
-                {deck.branchName && (
-                  <div
-                    className="d-inline pl-2 revision"
-                    title={deck.branchName}
-                  >
-                    {deck.branchName}
-                  </div>
-                )}
+                {revFilter &&
+                  deck.branchName &&
+                  (deck.master ||
+                    (deck.branches && deck.branches.length > 0)) && (
+                    <div
+                      className="d-inline pl-2 revision"
+                      title={deck.branchName}
+                    >
+                      {deck.branchName}
+                    </div>
+                  )}
               </div>
             </OverlayTooltip>
           </td>
-          <td className="date px-2" onClick={() => handleOpen(deck.deckid)}>
+          <td className="date" onClick={() => handleOpen(deck.deckid)}>
             {new Date(deck.timestamp).toISOString().slice(0, 10)}
           </td>
           <td className="tags">
             <DeckTags defaultTagsOptions={defaultTagsOptions} deck={deck} />
           </td>
           <td className="buttons">
+            {revFilter &&
+              (deck.master || (deck.branches && deck.branches.length > 0)) && (
+                <div className="d-inline pl-1">
+                  <DeckBranchDelete noText={true} deck={deck} />
+                </div>
+              )}
             <div className="d-inline pl-1">
               <DeckDelete noText={true} deck={deck} />
             </div>
@@ -172,11 +221,54 @@ function DeckSelectAdvModal(props) {
       onHide={props.handleClose}
       animation={false}
       size="xl"
-      /* dialogClassName={!isMobile ? 'modal-deck-draw' : null} */
     >
       <Modal.Body>
-        <DeckTotal setSortMethod={setSortMethod} />
+        <DeckTotal />
         <table className="decks-table">
+          <thead>
+            <tr>
+              <th className="clan"></th>
+              <th className="name">
+                <FormControl
+                  placeholder="Filter by Name"
+                  type="text"
+                  name="text"
+                  autoComplete="off"
+                  spellCheck="false"
+                  value={nameFilter}
+                  onChange={handleChangeNameFilter}
+                />
+              </th>
+              <th className="date"></th>
+              <th className="tags">
+                <Select
+                  classNamePrefix="tags-filter react-select-tags"
+                  isMulti
+                  options={defaultTagsOptions}
+                  onChange={handleChangeTagsFilter}
+                  defaultValue={tagsFilter}
+                  placeholder="Filter by Tags"
+                />
+              </th>
+              <th className="buttons">
+                <div className="d-flex justify-content-end align-items-center">
+                  <div className="d-inline align-items-bottom custom-control custom-checkbox pr-3">
+                    <input
+                      id="revFilter"
+                      className="custom-control-input"
+                      type="checkbox"
+                      checked={revFilter}
+                      onChange={() => setRevFilter(!revFilter)}
+                    />
+                    <label htmlFor="revFilter" className="custom-control-label">
+                      Revisions
+                    </label>
+                  </div>
+                  <DeckSelectSortForm onChange={setSortMethod} />
+                </div>
+              </th>
+            </tr>
+          </thead>
           <tbody>{deckRows}</tbody>
         </table>
       </Modal.Body>

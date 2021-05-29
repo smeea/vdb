@@ -361,14 +361,18 @@ function Decks(props) {
                         inline
                       />
                     </Form>
-                    <div className="py-1">
-                      <Button
-                        variant="outline-secondary"
-                        onClick={() => setShowDeckSelectAdv(!showDeckSelectAdv)}
-                      >
-                        <BinocularsFill />
-                      </Button>
-                    </div>
+                    {decks && (
+                      <div className="py-1">
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() =>
+                            setShowDeckSelectAdv(!showDeckSelectAdv)
+                          }
+                        >
+                          <BinocularsFill />
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </Col>
               </Row>

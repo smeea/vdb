@@ -185,6 +185,9 @@ label.btn-outline-secondary:not(.disabled).active
   &__multi-value-container
     background: var(--bg-primary)
 
+.tags-filter
+  border-color: var(--border-secondary) !important
+
 .dropdown-menu
   background: var(--bg-button)
 .dropdown-item
@@ -523,21 +526,24 @@ img.card-popover
 .twd-librarybytype-table td.type
   width: 50px
 
-.decks-table .tags
-  width: 100%
+.decks-table .clan
+  text-align: center
+  min-width: 50px
 .decks-table .name
-  width: 250px
-.decks-table .crypt, .library
-  color: var(--fg-secondary)
+  min-width: 250px
 .decks-table .revision
   color: var(--fg-button)
 .decks-table .date
-  white-space: nowrap
-.decks-table .clan
   text-align: center
+  min-width: 100px
+  white-space: nowrap
+.decks-table .tags
+  width: 100%
 .decks-table .buttons
-  min-width: 200px
+  min-width: 240px
   text-align: right
+.decks-table th
+  font-weight: normal
 
 div.popover-sets
   font-size: x-small

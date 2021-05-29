@@ -21,6 +21,7 @@ function DeckSelectSortForm(props) {
     <DropdownButton
       variant="outline-secondary"
       id="sort-button"
+      className="d-inline"
       title={<SortDown />}
     >
       {SortButtonOptions}
