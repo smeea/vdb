@@ -5,12 +5,12 @@ import {
   InputGroup,
   Button,
   Spinner,
-  Overlay,
 } from 'react-bootstrap';
 import PersonPlusFill from '../../assets/images/icons/person-plus-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 import Check2 from '../../assets/images/icons/check2.svg';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function AccountRegister(props) {
@@ -139,42 +139,27 @@ function AccountRegister(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        <Overlay
+        <ErrorOverlay
           show={emptyUsername}
           target={refUsername.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>ENTER USERNAME</b>
-            </div>
-          )}
-        </Overlay>
-        <Overlay
+          ENTER USERNAME
+        </ErrorOverlay>
+        <ErrorOverlay
           show={usernameError}
           target={refUsername.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>USER ALREADY EXIST</b>
-            </div>
-          )}
-        </Overlay>
-        <Overlay
+          USER ALREADY EXIST
+        </ErrorOverlay>
+        <ErrorOverlay
           show={emptyPassword}
           target={refPassword.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>ENTER PASSWORD</b>
-            </div>
-          )}
-        </Overlay>
+          ENTER PASSROD
+        </ErrorOverlay>
       </Form>
     </>
   );

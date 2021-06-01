@@ -1,15 +1,9 @@
 import React, { useState, useRef, useContext } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Modal,
-  Button,
-  Overlay,
-} from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Modal, Button } from 'react-bootstrap';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
 import X from '../../assets/images/icons/x.svg';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function AccountDeleteConfirmation(props) {
@@ -126,30 +120,22 @@ function AccountDeleteConfirmation(props) {
                 </Button>
               </InputGroup.Append>
             </InputGroup>
-            <Overlay
+            <ErrorOverlay
               show={emptyPassword}
               target={refPassword.current}
               placement="bottom"
-              transition={false}
+              modal={true}
             >
-              {({ placement, arrowProps, show: _show, popper, ...props }) => (
-                <div className="modal-tooltip error-tooltip small" {...props}>
-                  <b>ENTER PASSWORD</b>
-                </div>
-              )}
-            </Overlay>
-            <Overlay
+              ENTER PASSWORD
+            </ErrorOverlay>
+            <ErrorOverlay
               show={passwordError}
               target={refPassword.current}
               placement="bottom"
-              transition={false}
+              modal={true}
             >
-              {({ placement, arrowProps, show: _show, popper, ...props }) => (
-                <div className="modal-tooltip error-tooltip small" {...props}>
-                  <b>WRONG PASSWORD</b>
-                </div>
-              )}
-            </Overlay>
+              WRONG PASSWORD
+            </ErrorOverlay>
           </Form>
         </Modal.Footer>
       </Modal>

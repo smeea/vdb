@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Overlay,
-} from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import EnvelopeFill from '../../assets/images/icons/envelope-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import ModalTooltip from './ModalTooltip.jsx';
 import AppContext from '../../context/AppContext';
 
@@ -162,42 +157,27 @@ function AccountChangeEmail(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        <Overlay
+        <ErrorOverlay
           show={emptyEmail}
           target={refEmail.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>ENTER EMAIL</b>
-            </div>
-          )}
-        </Overlay>
-        <Overlay
+          ENTER EMAIL
+        </ErrorOverlay>
+        <ErrorOverlay
           show={emptyPassword}
           target={refPassword.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>ENTER PASSWORD</b>
-            </div>
-          )}
-        </Overlay>
-        <Overlay
+          ENTER PASSWORD
+        </ErrorOverlay>
+        <ErrorOverlay
           show={passwordError}
           target={refPassword.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>WRONG PASSWORD</b>
-            </div>
-          )}
-        </Overlay>
+          WRONG PASSWORD
+        </ErrorOverlay>
       </Form>
       {showModal && (
         <ModalTooltip

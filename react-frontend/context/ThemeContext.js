@@ -56,7 +56,7 @@ const lightTheme = [
   '--bg-primary: #ffffff',
   '--bg-secondary: #d0d0ea',
   '--bg-third: #eaeaea',
-  '--bg-error: #f08080',
+  '--bg-error: #d05060',
   '--bg-warning: #ffa040',
   '--bg-button: #ffffff',
   '--bg-button-hover: #707580',

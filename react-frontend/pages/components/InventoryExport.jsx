@@ -1,7 +1,8 @@
 import React, { useState, useRef, useContext } from 'react';
 import FileSaver from 'file-saver';
-import { Spinner, Dropdown, Overlay } from 'react-bootstrap';
+import { Spinner, Dropdown } from 'react-bootstrap';
 import Download from '../../assets/images/icons/download.svg';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function InventoryExport(props) {
@@ -118,18 +119,9 @@ function InventoryExport(props) {
           {ExportButtonOptions}
         </Dropdown.Menu>
       </Dropdown>
-      <Overlay
-        show={error}
-        target={ref.current}
-        placement="left"
-        transition={false}
-      >
-        {({ placement, arrowProps, show: _show, popper, ...props }) => (
-          <div className="modal-tooltip error-tooltip small" {...props}>
-            <b>ERROR</b>
-          </div>
-        )}
-      </Overlay>
+      <ErrorOverlay show={error} target={ref.current} placement="left">
+        ERROR
+      </ErrorOverlay>
     </>
   );
 }

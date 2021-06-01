@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { Button, Overlay } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Upload from '../../assets/images/icons/upload.svg';
+import ErrorOverlay from './ErrorOverlay.jsx';
 
 function InventoryImport(props) {
   const [importError, setImportError] = useState(false);
@@ -55,18 +56,14 @@ function InventoryImport(props) {
         <Upload />
         <span className="pl-1">Import from File</span>
       </Button>
-      <Overlay
+      <ErrorOverlay
         show={importError}
         target={ref.current}
         placement="left"
-        transition={false}
+        modal={true}
       >
-        {({ placement, arrowProps, show: _show, popper, ...props }) => (
-          <div className="modal-tooltip error-tooltip small" {...props}>
-            {importError && <b>CANNOT IMPORT THIS INVENTORY</b>}
-          </div>
-        )}
-      </Overlay>
+        CANNOT IMPORT THIS INVENTORY
+      </ErrorOverlay>
     </>
   );
 }

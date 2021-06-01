@@ -1,15 +1,10 @@
 import React, { useState, useRef } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Overlay,
-} from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import LockFill from '../../assets/images/icons/lock-fill.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
+import ErrorOverlay from './ErrorOverlay.jsx';
 
 function AccountChangePassword(props) {
   const [state, setState] = useState({
@@ -156,54 +151,34 @@ function AccountChangePassword(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        <Overlay
+        <ErrorOverlay
           show={emptyPassword}
           target={refOldPassword.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>ENTER OLD PASSWORD</b>
-            </div>
-          )}
-        </Overlay>
-        <Overlay
+          ENTER OLD PASSWORD
+        </ErrorOverlay>
+        <ErrorOverlay
           show={passwordError}
           target={refOldPassword.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>WRONG OLD PASSWORD</b>
-            </div>
-          )}
-        </Overlay>
-        <Overlay
+          WRONG OLD PASSWORD
+        </ErrorOverlay>
+        <ErrorOverlay
           show={emptyNewPassword}
           target={refNewPassword.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>ENTER NEW PASSWORD</b>
-            </div>
-          )}
-        </Overlay>
-        <Overlay
+          ENTER NEW PASSWORD
+        </ErrorOverlay>
+        <ErrorOverlay
           show={passwordConfirmError}
           target={refConfirmPassword.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>NEW PASSWORD IS DIFFERENT</b>
-            </div>
-          )}
-        </Overlay>
+          NEW PASSWORDS DOES NOT MATCH
+        </ErrorOverlay>
       </Form>
     </>
   );

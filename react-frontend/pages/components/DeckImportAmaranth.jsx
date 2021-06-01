@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
-import { FormControl, Modal, Button, Spinner, Overlay } from 'react-bootstrap';
+import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckImportAmaranth(props) {
@@ -135,30 +136,22 @@ function DeckImportAmaranth(props) {
             </Button>
           )}
         </div>
-        <Overlay
+        <ErrorOverlay
           show={emptyUrl}
           target={refUrl.current}
           placement="bottom"
-          transition={false}
+          modal={true}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="modal-tooltip error-tooltip small" {...props}>
-              <b>ERROR IN URL</b>
-            </div>
-          )}
-        </Overlay>
-        <Overlay
+          ERROR IN URL
+        </ErrorOverlay>
+        <ErrorOverlay
           show={importError}
           target={refUrl.current}
           placement="bottom"
-          transition={false}
+          modal={true}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="modal-tooltip error-tooltip small" {...props}>
-              <b>ERROR DURING IMPORT</b>
-            </div>
-          )}
-        </Overlay>
+          ERROR DURING IMPORT
+        </ErrorOverlay>
       </Modal.Body>
     </Modal>
   );

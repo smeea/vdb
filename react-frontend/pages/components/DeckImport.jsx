@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext } from 'react';
-import { Dropdown, Overlay } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import ClipboardPlus from '../../assets/images/icons/clipboard-plus.svg';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import DeckImportText from './DeckImportText.jsx';
 import DeckImportAmaranth from './DeckImportAmaranth.jsx';
 import AppContext from '../../context/AppContext.js';
@@ -134,19 +135,15 @@ function DeckImport(props) {
         show={showAmaranthModal}
         setShowInfo={props.setShowInfo}
       />
-      <Overlay
+      <ErrorOverlay
         show={createError || importError}
         target={ref.current}
         placement="left"
-        transition={false}
+        modal={true}
       >
-        {({ placement, arrowProps, show: _show, popper, ...props }) => (
-          <div className="modal-tooltip error-tooltip small" {...props}>
-            {createError && <b>ERROR</b>}
-            {importError && <b>CANNOT IMPORT THIS DECK</b>}
-          </div>
-        )}
-      </Overlay>
+        {createError && <b>ERROR</b>}
+        {importError && <b>CANNOT IMPORT THIS DECK</b>}
+      </ErrorOverlay>
     </>
   );
 }

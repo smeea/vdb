@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { Row, Col, Spinner, Overlay } from 'react-bootstrap';
+import { Row, Col, Spinner } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import TwdSearchFormButtons from './TwdSearchFormButtons.jsx';
 import TwdSearchFormPlayer from './TwdSearchFormPlayer.jsx';
 import TwdSearchFormPlayers from './TwdSearchFormPlayers.jsx';
@@ -494,18 +495,13 @@ function TwdSearchForm(props) {
                 <Spinner animation="border" variant="light" />
               )}
             </div>
-            <Overlay
+            <ErrorOverlay
               show={showError}
               target={refError.current}
               placement="left"
-              transition={false}
             >
-              {({ placement, arrowProps, show: _show, popper, ...props }) => (
-                <div className="error-tooltip" {...props}>
-                  <b>NO DECKS FOUND</b>
-                </div>
-              )}
-            </Overlay>
+              NO DECKS FOUND
+            </ErrorOverlay>
           </div>
         </>
       )}

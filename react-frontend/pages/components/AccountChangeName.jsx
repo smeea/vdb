@@ -1,15 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import {
-  Form,
-  FormControl,
-  InputGroup,
-  Button,
-  Overlay,
-} from 'react-bootstrap';
+import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import PenFill from '../../assets/images/icons/pen-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ModalTooltip from './ModalTooltip.jsx';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function AccountChangeName(props) {
@@ -131,18 +126,13 @@ function AccountChangeName(props) {
             )}
           </InputGroup.Append>
         </InputGroup>
-        <Overlay
+        <ErrorOverlay
           show={emptyName}
           target={refName.current}
           placement="bottom"
-          transition={false}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="error-tooltip small" {...props}>
-              <b>ENTER PUBLIC NAME</b>
-            </div>
-          )}
-        </Overlay>
+          ENTER PUBLIC NAME
+        </ErrorOverlay>
       </Form>
       {showModal && (
         <ModalTooltip

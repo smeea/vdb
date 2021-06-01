@@ -1,5 +1,6 @@
 import React, { useState, useRef, useContext } from 'react';
-import { FormControl, Modal, Button, Spinner, Overlay } from 'react-bootstrap';
+import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckImportText(props) {
@@ -121,30 +122,22 @@ It will skip other (useless) lines, you don't have to remove it yourself.
             </Button>
           )}
         </div>
-        <Overlay
+        <ErrorOverlay
           show={emptyDeckText}
           target={refText.current}
           placement="bottom"
-          transition={false}
+          modal={true}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="modal-tooltip error-tooltip small" {...props}>
-              <b>ENTER DECK LIST</b>
-            </div>
-          )}
-        </Overlay>
-        <Overlay
+          ENTER DECK LIST
+        </ErrorOverlay>
+        <ErrorOverlay
           show={importError}
           target={refText.current}
           placement="bottom"
-          transition={false}
+          modal={true}
         >
-          {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <div className="modal-tooltip error-tooltip small" {...props}>
-              <b>ERROR DURING IMPORT</b>
-            </div>
-          )}
-        </Overlay>
+          ERROR DURING IMPORT
+        </ErrorOverlay>
       </Modal.Body>
     </Modal>
   );
