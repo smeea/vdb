@@ -195,19 +195,23 @@ function DeckLibrary(props) {
           {(libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
         </b>
         <div className="d-flex">
-          <div className="d-flex align-items-center pr-3">
+          <div
+            className="d-flex align-items-center pr-3"
+            title="Total Blood Cost"
+          >
             <img
               className="cost-blood-image-results pb-1 pr-1"
               src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
-              title="Total Blood Cost"
             />
             <b>{bloodTotal}</b>
           </div>
-          <div className="d-flex align-items-center pr-3">
+          <div
+            className="d-flex align-items-center pr-3"
+            title="Total Pool Cost"
+          >
             <img
               className="cost-pool-image-results py-1 pr-1"
               src={process.env.ROOT_URL + 'images/misc/poolX.png'}
-              title="Total Pool Cost"
             />
             <b>{poolTotal}</b>
           </div>

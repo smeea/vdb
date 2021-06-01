@@ -21,7 +21,6 @@
 * Search for similar TWD decks
 * Localized proxies
 * Narrow search by clicks (i.e. twd author)
-* Onhover in total
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search
