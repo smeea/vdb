@@ -87,28 +87,32 @@ function DeckLibrary(props) {
   ];
 
   let libraryTotal = 0;
+  let poolTotal = 0;
+  let bloodTotal = 0;
   const libraryByType = {};
   const librarySideByType = {};
 
   for (const card in library) {
-    if (card) {
-      libraryTotal += library[card].q;
-      const cardtype = library[card].c['Type'];
-      if (libraryByType[cardtype] === undefined) {
-        libraryByType[cardtype] = [];
-      }
-      libraryByType[cardtype].push(library[card]);
+    if (!isNaN(library[card].c['Blood Cost'])) {
+      bloodTotal += library[card].c['Blood Cost'] * library[card].q;
     }
+    if (!isNaN(library[card].c['Pool Cost'])) {
+      poolTotal += library[card].c['Pool Cost'] * library[card].q;
+    }
+    libraryTotal += library[card].q;
+    const cardtype = library[card].c['Type'];
+    if (libraryByType[cardtype] === undefined) {
+      libraryByType[cardtype] = [];
+    }
+    libraryByType[cardtype].push(library[card]);
   }
 
   for (const card in librarySide) {
-    if (card) {
-      const cardtype = librarySide[card].c['Type'];
-      if (librarySideByType[cardtype] === undefined) {
-        librarySideByType[cardtype] = [];
-      }
-      librarySideByType[cardtype].push(librarySide[card]);
+    const cardtype = librarySide[card].c['Type'];
+    if (librarySideByType[cardtype] === undefined) {
+      librarySideByType[cardtype] = [];
     }
+    librarySideByType[cardtype].push(librarySide[card]);
   }
 
   const libraryByTypeTotal = {};
@@ -191,6 +195,22 @@ function DeckLibrary(props) {
           {(libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
         </b>
         <div className="d-flex">
+          <div className="d-flex align-items-center pr-3">
+            <img
+              className="cost-blood-image-results pb-1 pr-1"
+              src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
+              title="Total Blood Cost"
+            />
+            <b>{bloodTotal}</b>
+          </div>
+          <div className="d-flex align-items-center pr-3">
+            <img
+              className="cost-pool-image-results py-1 pr-1"
+              src={process.env.ROOT_URL + 'images/misc/poolX.png'}
+              title="Total Pool Cost"
+            />
+            <b>{poolTotal}</b>
+          </div>
           <Button
             variant="outline-secondary"
             onClick={() => setShowInfo(!showInfo)}

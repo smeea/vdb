@@ -22,7 +22,6 @@
 * Localized proxies
 * Narrow search by clicks (i.e. twd author)
 * Onhover in total
-* Pool/Blood cost of Library
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search
