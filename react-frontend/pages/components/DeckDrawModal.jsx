@@ -178,6 +178,7 @@ function DeckDrawModal(props) {
                       total={props.drawedCrypt.length + props.restCrypt.length}
                       resultCards={props.burnedCrypt}
                       className="search-crypt-table"
+                      ashHeap={true}
                     />
                   </div>
                 )}
@@ -202,6 +203,7 @@ function DeckDrawModal(props) {
                       }
                       resultCards={props.burnedLibrary}
                       className="search-library-table"
+                      ashHeap={true}
                     />
                   </>
                 )}

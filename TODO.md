@@ -4,9 +4,13 @@
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt
 * Error in twd sanitizeTwd with del (deck['description'])
+* Inventory icon to advanced deck select
+* Background error message popup
+* Autoswitch to imported deck
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
+* Float inventory button in crypt/library
 
 # FEATURES
 * Update cardbase script
@@ -17,6 +21,8 @@
 * Search for similar TWD decks
 * Localized proxies
 * Narrow search by clicks (i.e. twd author)
+* Onhover in total
+* Pool/Blood cost of Library
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search

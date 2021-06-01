@@ -74,24 +74,30 @@ function DeckDrawLibraryTable(props) {
             <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />
           </td>
           <td className="prob px-1">
-            {isMobile ? (
-              <div
-                onClick={() =>
-                  setModalDraw({
-                    name: card['Name'],
-                    prob: <DeckDrawProbabilityText N={N} n={n} k={k} />,
-                  })
-                }
-              >
-                {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
-              </div>
-            ) : (
-              <OverlayTooltip
-                placement="right"
-                text={<DeckDrawProbabilityText N={N} n={n} k={k} />}
-              >
-                <div>{`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}</div>
-              </OverlayTooltip>
+            {!props.ashHeap && (
+              <>
+                {isMobile ? (
+                  <div
+                    onClick={() =>
+                      setModalDraw({
+                        name: card['Name'],
+                        prob: <DeckDrawProbabilityText N={N} n={n} k={k} />,
+                      })
+                    }
+                  >
+                    {`${Math.floor(drawProbability(1, N, n, k) * 100)}%`}
+                  </div>
+                ) : (
+                  <OverlayTooltip
+                    placement="right"
+                    text={<DeckDrawProbabilityText N={N} n={n} k={k} />}
+                  >
+                    <div>{`${Math.floor(
+                      drawProbability(1, N, n, k) * 100
+                    )}%`}</div>
+                  </OverlayTooltip>
+                )}
+              </>
             )}
           </td>
         </tr>
