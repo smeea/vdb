@@ -67,6 +67,11 @@ function ResultCryptTable(props) {
       0;
 
     let inInventory = null;
+    let softUsedMax = 0;
+    let SoftUsedDescription;
+    let hardUsedTotal = 0;
+    let HardUsedDescription;
+
     if (inventoryMode) {
       if (Object.keys(inventoryCrypt).includes(card['Id'].toString())) {
         inInventory = inventoryCrypt[card['Id']].q;
@@ -74,8 +79,6 @@ function ResultCryptTable(props) {
         inInventory = 0;
       }
 
-      let softUsedMax = 0;
-      let SoftUsedDescription;
       if (usedCryptCards && usedCryptCards.soft[card['Id']]) {
         SoftUsedDescription = Object.keys(usedCryptCards.soft[card['Id']]).map(
           (id) => {
@@ -94,8 +97,6 @@ function ResultCryptTable(props) {
         );
       }
 
-      let hardUsedTotal = 0;
-      let HardUsedDescription;
       if (usedCryptCards && usedCryptCards.hard[card['Id']]) {
         HardUsedDescription = Object.keys(usedCryptCards.hard[card['Id']]).map(
           (id) => {

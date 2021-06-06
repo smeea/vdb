@@ -70,15 +70,17 @@ function ResultLibraryTable(props) {
       0;
 
     let inInventory = null;
+    let softUsedMax = 0;
+    let SoftUsedDescription;
+    let hardUsedTotal = 0;
+    let HardUsedDescription;
+
     if (inventoryMode) {
       if (Object.keys(inventoryLibrary).includes(card['Id'].toString())) {
         inInventory = inventoryLibrary[card['Id']].q;
       } else {
         inInventory = 0;
       }
-
-      let softUsedMax = 0;
-      let SoftUsedDescription;
 
       if (usedLibraryCards.soft[card['Id']]) {
         SoftUsedDescription = Object.keys(
@@ -98,8 +100,6 @@ function ResultLibraryTable(props) {
         });
       }
 
-      let hardUsedTotal = 0;
-      let HardUsedDescription;
       if (usedLibraryCards.hard[card['Id']]) {
         HardUsedDescription = Object.keys(
           usedLibraryCards.hard[card['Id']]
