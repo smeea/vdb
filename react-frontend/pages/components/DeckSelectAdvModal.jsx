@@ -4,6 +4,9 @@ import Select from 'react-select';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import Check from '../../assets/images/icons/check.svg';
 import X from '../../assets/images/icons/x.svg';
+import Shuffle from '../../assets/images/icons/shuffle.svg';
+import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
+import At from '../../assets/images/icons/at.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import DeckTags from './DeckTags.jsx';
@@ -20,8 +23,15 @@ import OverlayTooltip from './OverlayTooltip.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckSelectAdvModal(props) {
-  const { cryptCardBase, libraryCardBase, decks, setActiveDeck, isMobile } =
-    useContext(AppContext);
+  const {
+    cryptCardBase,
+    libraryCardBase,
+    decks,
+    deckUpdate,
+    setActiveDeck,
+    isMobile,
+    inventoryMode,
+  } = useContext(AppContext);
 
   const [sortMethod, setSortMethod] = useState('byName');
   const [sortedDecks, setSortedDecks] = useState([]);
@@ -126,9 +136,39 @@ function DeckSelectAdvModal(props) {
       }
     });
 
+    const toggleInventoryState = () => {
+      const inventoryType = deck.inventory_type;
+      if (!inventoryType) {
+        deckUpdate(deck.deckid, 'makeFlexible', 'all');
+      } else if (inventoryType == 's') {
+        deckUpdate(deck.deckid, 'makeFixed', 'all');
+      } else if (inventoryType == 'h') {
+        deckUpdate(deck.deckid, 'makeClear', 'all');
+      }
+    };
+
     return (
       <React.Fragment key={deck.deckid}>
         <tr className={resultTrClass}>
+          {inventoryMode && (
+            <td className="inventory" onClick={() => toggleInventoryState()}>
+              <div
+                className="px-2"
+                title={
+                  deck.inventory_type === 's'
+                    ? 'Flexible'
+                    : deck.inventory_type === 'h'
+                    ? 'Fixed'
+                    : 'Virtual'
+                }
+              >
+                {deck.inventory_type == 's' && <Shuffle />}
+                {deck.inventory_type == 'h' && <PinAngleFill />}
+                {!deck.inventory_type && <At />}
+              </div>
+            </td>
+          )}
+
           <td className="clan" onClick={() => handleOpen(deck.deckid)}>
             {clan && <ResultCryptClan value={clan} />}
           </td>
@@ -227,6 +267,7 @@ function DeckSelectAdvModal(props) {
         <table className="decks-table">
           <thead>
             <tr>
+              {inventoryMode && <th className="inventory"></th>}
               <th className="clan"></th>
               <th className="name">
                 <FormControl

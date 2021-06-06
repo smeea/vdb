@@ -52,6 +52,7 @@ blacklist = [
     'Frenzy',
     'Dodge',
     'Lock',
+    'Determine',
     'Guru',
     'Changeling',
     'Zombie',

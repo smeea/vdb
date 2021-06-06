@@ -17,7 +17,7 @@ function SearchLibraryFormTraits(props) {
 
   const traitsRight = [
     ['combat ends', 'Combat Ends'],
-    ['enter combat', 'Enter combat'],
+    ['enter combat', 'Enter Combat'],
     ['bounce bleed', 'Bounce Bleed'],
     ['unlock', 'Wake / Unlock'],
     ['black hand', 'Black Hand'],

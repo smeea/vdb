@@ -4,8 +4,6 @@
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt
 * Error in twd sanitizeTwd with del (deck['description'])
-* Inventory icon to advanced deck select
-* Background error message popup
 * Autoswitch to imported deck
 
 # FIX MOBILE
