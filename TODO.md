@@ -8,7 +8,6 @@
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
-* Float inventory button in crypt/library
 
 # FEATURES
 * Update cardbase script

@@ -144,7 +144,8 @@ def get_crypt_by_titles(titles, crypt):
     # chosen title
     match_cards = []
     for card in crypt:
-        if card['Title'].lower() in titles.keys():
+        if card['Title'].lower() in titles.keys(
+        ) or not card['Title'] and 'none' in titles.keys():
             match_cards.append(card)
 
     return match_cards

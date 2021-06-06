@@ -57,7 +57,8 @@
     "priscus": false,
     "cardinal": false,
     "regent": false,
-    "magaji": false
+    "magaji": false,
+    "none": false
   },
   "group": {
     "1": false,
