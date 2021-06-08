@@ -5,6 +5,8 @@
 * Scroll modal for deck through library + crypt
 * Error in twd sanitizeTwd with del (deck['description'])
 * Autoswitch to imported deck
+* Show count for new cards in Inventory
+* Fix inventory card quantity to sync in new card window
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
@@ -18,6 +20,7 @@
 * Search for similar TWD decks
 * Localized proxies
 * Narrow search by clicks (i.e. twd author)
+* Tags to deck main window
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search

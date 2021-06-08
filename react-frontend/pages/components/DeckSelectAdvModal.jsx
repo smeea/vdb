@@ -4,6 +4,7 @@ import Select from 'react-select';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import Check from '../../assets/images/icons/check.svg';
 import X from '../../assets/images/icons/x.svg';
+import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import At from '../../assets/images/icons/at.svg';
@@ -172,53 +173,69 @@ function DeckSelectAdvModal(props) {
           <td className="clan" onClick={() => handleOpen(deck.deckid)}>
             {clan && <ResultCryptClan value={clan} />}
           </td>
-          <td
-            className="name"
-            onMouseEnter={() => setShowDeck(deck.deckid)}
-            onMouseLeave={() => setShowDeck(false)}
-          >
-            <OverlayTooltip
-              placement="right"
-              show={showDeck === deck.deckid}
-              className="adv-select"
-              text={
-                <Row>
-                  <Col md={7}>
-                    <DeckCrypt
-                      deckid={deck.deckid}
-                      cards={deck.crypt}
-                      inAdvSelect={true}
-                    />
-                  </Col>
-                  <Col md={5}>
-                    <DeckLibrary
-                      deckid={deck.deckid}
-                      cards={deck.library}
-                      inAdvSelect={true}
-                    />
-                  </Col>
-                </Row>
-              }
+          <td className="name" onClick={() => handleOpen(deck.deckid)}>
+            <div
+              className="d-flex text-overflow name justify-content-between"
+              title={deck.name}
             >
-              <div
-                className="d-flex text-overflow name justify-content-between"
-                onClick={() => handleOpen(deck.deckid)}
-                title={deck.name}
-              >
-                {deck.name}
-                {revFilter &&
-                  deck.branchName &&
-                  (deck.master ||
-                    (deck.branches && deck.branches.length > 0)) && (
-                    <div
-                      className="d-inline pl-2 revision"
-                      title={deck.branchName}
+              {deck.name}
+              {revFilter &&
+                deck.branchName &&
+                (deck.master ||
+                  (deck.branches && deck.branches.length > 0)) && (
+                  <div
+                    className="d-inline pl-2 revision"
+                    title={deck.branchName}
+                  >
+                    {deck.branchName}
+                  </div>
+                )}
+            </div>
+          </td>
+          <td className="preview">
+            <div
+              className="m-2"
+              onMouseEnter={() => setShowDeck(deck.deckid)}
+              onMouseLeave={() => setShowDeck(false)}
+            >
+              <OverlayTooltip
+                placement="right"
+                show={showDeck === deck.deckid}
+                className="adv-select"
+                text={
+                  <Row>
+                    <Col
+                      md={7}
+                      onClick={(event) => {
+                        if (event.target === event.currentTarget)
+                          setShowDeck(false);
+                      }}
                     >
-                      {deck.branchName}
-                    </div>
-                  )}
-              </div>
-            </OverlayTooltip>
+                      <DeckCrypt
+                        deckid={deck.deckid}
+                        cards={deck.crypt}
+                        inAdvSelect={true}
+                      />
+                    </Col>
+                    <Col
+                      md={5}
+                      onClick={(event) => {
+                        if (event.target === event.currentTarget)
+                          setShowDeck(false);
+                      }}
+                    >
+                      <DeckLibrary
+                        deckid={deck.deckid}
+                        cards={deck.library}
+                        inAdvSelect={true}
+                      />
+                    </Col>
+                  </Row>
+                }
+              >
+                <EyeFill />
+              </OverlayTooltip>
+            </div>
           </td>
           <td className="date" onClick={() => handleOpen(deck.deckid)}>
             {new Date(deck.timestamp).toISOString().slice(0, 10)}
@@ -280,6 +297,7 @@ function DeckSelectAdvModal(props) {
                   onChange={handleChangeNameFilter}
                 />
               </th>
+              <th className="preview"></th>
               <th className="date"></th>
               <th className="tags">
                 <Select
