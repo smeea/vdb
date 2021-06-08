@@ -403,7 +403,13 @@ function DeckCryptTable(props) {
 
   return (
     <>
-      <table className="deck-crypt-table">
+      <table
+        className={
+          props.inAdvSelect
+            ? 'adv-deck-table deck-crypt-table'
+            : 'deck-crypt-table'
+        }
+      >
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (

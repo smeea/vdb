@@ -187,14 +187,14 @@ function DeckSelectAdvModal(props) {
                     <DeckCrypt
                       deckid={deck.deckid}
                       cards={deck.crypt}
-                      isAuthor={true}
+                      inAdvSelect={true}
                     />
                   </Col>
                   <Col md={5}>
                     <DeckLibrary
                       deckid={deck.deckid}
                       cards={deck.library}
-                      isAuthor={true}
+                      inAdvSelect={true}
                     />
                   </Col>
                 </Row>

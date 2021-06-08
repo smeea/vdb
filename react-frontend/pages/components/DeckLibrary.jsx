@@ -139,6 +139,7 @@ function DeckLibrary(props) {
             cardtype={cardtype}
             total={libraryByTypeTotal[cardtype]}
             trifleTotal={cardtype == 'Master' && trifleTotal}
+            inAdvSelect={props.inAdvSelect}
           />
           <DeckLibraryTable
             handleModalCardOpen={handleModalCardOpen}
@@ -152,6 +153,7 @@ function DeckLibrary(props) {
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
             inSearch={props.inSearch}
+            inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}
           />
         </div>
@@ -180,6 +182,7 @@ function DeckLibrary(props) {
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
             inSearch={props.inSearch}
+            inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}
           />
         </div>
@@ -215,21 +218,25 @@ function DeckLibrary(props) {
             />
             <b>{poolTotal}</b>
           </div>
-          <Button
-            variant="outline-secondary"
-            onClick={() => setShowInfo(!showInfo)}
-          >
-            <InfoCircle />
-          </Button>
-          {props.isAuthor && !isMobile && (
-            <div className="pl-1">
+          {!props.inAdvSelect && (
+            <>
               <Button
                 variant="outline-secondary"
-                onClick={() => setShowAdd(!showAdd)}
+                onClick={() => setShowInfo(!showInfo)}
               >
-                +
+                <InfoCircle />
               </Button>
-            </div>
+              {props.isAuthor && !isMobile && (
+                <div className="pl-1">
+                  <Button
+                    variant="outline-secondary"
+                    onClick={() => setShowAdd(!showAdd)}
+                  >
+                    +
+                  </Button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
@@ -279,7 +286,7 @@ function DeckLibrary(props) {
           </Modal>
         ))}
       {LibraryDeck}
-      {Object.keys(librarySide).length > 0 && (
+      {Object.keys(librarySide).length > 0 && !props.inAdvSelect && (
         <div className="deck-sidelibrary pt-2">
           <b>Side Library</b>
           {LibrarySideDeck}

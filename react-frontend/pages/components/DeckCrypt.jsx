@@ -185,24 +185,26 @@ function DeckCrypt(props) {
           Crypt [{cryptTotal}
           {cryptTotal < 12 && ' of 12+'}] - {cryptGroups}
         </b>
-        <div className="d-flex">
-          <Button
-            variant="outline-secondary"
-            onClick={() => setShowInfo(!showInfo)}
-          >
-            <InfoCircle />
-          </Button>
-          {props.isAuthor && !isMobile && (
-            <div className="pl-1">
-              <Button
-                variant="outline-secondary"
-                onClick={() => setShowAdd(!showAdd)}
-              >
-                +
-              </Button>
-            </div>
-          )}
-        </div>
+        {!props.inAdvSelect && (
+          <div className="d-flex">
+            <Button
+              variant="outline-secondary"
+              onClick={() => setShowInfo(!showInfo)}
+            >
+              <InfoCircle />
+            </Button>
+            {props.isAuthor && !isMobile && (
+              <div className="pl-1">
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => setShowAdd(!showAdd)}
+                >
+                  +
+                </Button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
       {showInfo && (
         <div className="info-message pl-2">
@@ -264,9 +266,10 @@ function DeckCrypt(props) {
         proxyCounter={props.proxyCounter}
         proxySelected={props.proxySelected}
         inSearch={props.inSearch}
+        inAdvSelect={props.inAdvSelect}
         setShowFloatingButtons={props.setShowFloatingButtons}
       />
-      {Object.keys(cryptSide).length > 0 && (
+      {Object.keys(cryptSide).length > 0 && !props.inAdvSelect && (
         <div className="deck-sidecrypt pt-2">
           <div className="d-flex align-items-center justify-content-between pl-2">
             <b>Side Crypt</b>
@@ -284,6 +287,7 @@ function DeckCrypt(props) {
             proxyCounter={props.proxyCounter}
             proxySelected={props.proxySelected}
             inSearch={props.inSearch}
+            inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}
           />
         </div>
