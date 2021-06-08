@@ -7,14 +7,10 @@ function InventoryNewCryptCard(props) {
   const [selectedValue, setSelectedValue] = useState(null);
 
   const addNewCard = () => {
-    if (!props.cards[selectedValue]) {
-      if (props.inInventory) {
-        inventoryCardChange(selectedValue, 1);
-      } else {
-        inventoryCardChange(props.deckid, selectedValue, 1);
-      }
+    if (!(props.cards[selectedValue] && props.cards[selectedValue].q > 0)) {
+      inventoryCardChange(selectedValue, 1);
     }
-    if (props.inInventory) props.setNewId(selectedValue);
+    props.setNewId(selectedValue);
     setSelectedValue('');
     props.setShowAdd && props.setShowAdd(false);
   };

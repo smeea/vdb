@@ -7,14 +7,9 @@ function DeckNewCryptCard(props) {
   const [selectedValue, setSelectedValue] = useState(null);
 
   const addNewCard = () => {
-    if (!props.cards[selectedValue]) {
-      if (props.inInventory) {
-        deckCardChange(selectedValue, 1);
-      } else {
-        deckCardChange(props.deckid, selectedValue, 1);
-      }
+    if (!(props.cards[selectedValue] && props.cards[selectedValue].q > 0)) {
+      deckCardChange(props.deckid, selectedValue, 1);
     }
-    if (props.inInventory) props.setNewId(selectedValue);
     setSelectedValue('');
     props.setShowAdd && props.setShowAdd(false);
   };
