@@ -5,7 +5,6 @@
 * Scroll modal for deck through library + crypt
 * Error in twd sanitizeTwd with del (deck['description'])
 * Autoswitch to imported deck
-* Show count for new cards in Inventory
 * Fix inventory card quantity to sync in new card window
 
 # FIX MOBILE

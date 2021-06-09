@@ -352,9 +352,21 @@ def updateDeck(deckid):
         except Exception:
             pass
 
+        if d.master:
+            old_master = Deck.query.filter_by(author=current_user,
+                                              deckid=d.master).first()
+            branches = old_master.branches.copy()
+            branches.remove(d.deckid)
+            branches.append(old_master.deckid)
+            d.branches = branches
+            d.master = None
+            old_master.master = d.deckid
+            old_master.branches = None
+
         db.session.commit()
 
         return jsonify({'updated deck': d.deckid})
+
     else:
         return jsonify({'Not logged in.'})
 
@@ -748,7 +760,7 @@ def deckExportRoute():
                     'cards': d,
                     'name': f"Preconstructed {set}:{precon}",
                     'author': 'VTES Publisher',
-                    'description': f"Preconstructed deck",
+                    'description': 'Preconstructed deck',
                 }
                 result = deckExport(deck, request.json['format'])
                 return jsonify(result)
