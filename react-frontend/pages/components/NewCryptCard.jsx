@@ -7,7 +7,7 @@ import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function NewCryptCard(props) {
-  const { cryptCardBase } = useContext(AppContext);
+  const { inventoryCrypt, cryptCardBase } = useContext(AppContext);
 
   const handleChange = (value) => props.setSelectedValue(value);
 
@@ -47,10 +47,10 @@ function NewCryptCard(props) {
               {props.inInventory && (
                 <div
                   className={`d-inline in-inventory mr-2 ${
-                    props.cards[card] ? 'border-black' : null
+                    inventoryCrypt[card] ? 'border-black' : null
                   }`}
                 >
-                  {props.cards[card] && props.cards[card].q}
+                  {inventoryCrypt[card] && inventoryCrypt[card].q}
                 </div>
               )}
               <ResultCryptCapacity value={cryptCardBase[card]['Capacity']} />

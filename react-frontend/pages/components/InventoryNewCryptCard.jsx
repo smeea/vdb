@@ -23,6 +23,7 @@ function InventoryNewCryptCard(props) {
     <NewCryptCard
       selectedValue={selectedValue}
       setSelectedValue={setSelectedValue}
+      inInventory={true}
     />
   );
 }

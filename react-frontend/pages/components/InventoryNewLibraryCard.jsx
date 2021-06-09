@@ -23,6 +23,7 @@ function InventoryNewLibraryCard(props) {
     <NewLibraryCard
       selectedValue={selectedValue}
       setSelectedValue={setSelectedValue}
+      inInventory={true}
     />
   );
 }

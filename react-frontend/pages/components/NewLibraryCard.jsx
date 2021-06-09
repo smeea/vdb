@@ -8,7 +8,7 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function NewLibraryCard(props) {
-  const { libraryCardBase } = useContext(AppContext);
+  const { inventoryLibrary, libraryCardBase } = useContext(AppContext);
 
   const handleChange = (value) => props.setSelectedValue(value);
 
@@ -48,10 +48,10 @@ function NewLibraryCard(props) {
               {props.inInventory && (
                 <div
                   className={`d-inline in-inventory mr-2 ${
-                    props.cards[card] ? 'border-black' : null
+                    inventoryLibrary[card] ? 'border-black' : null
                   }`}
                 >
-                  {props.cards[card] && props.cards[card].q}
+                  {inventoryLibrary[card] && inventoryLibrary[card].q}
                 </div>
               )}
               <ResultLibraryType cardtype={libraryCardBase[card]['Type']} />
