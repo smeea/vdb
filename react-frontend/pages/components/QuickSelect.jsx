@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import AsyncSelect from 'react-select/async';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultCryptClan from './ResultCryptClan.jsx';
@@ -13,6 +14,7 @@ import AppContext from '../../context/AppContext.js';
 function QuickSelect(props) {
   const { cryptCardBase, libraryCardBase, isMobile } = useContext(AppContext);
 
+  const history = useHistory();
   const [selectedValue, setSelectedValue] = useState(null);
   const handleChange = (value) => setSelectedValue(value);
   const ref = useRef(null);
@@ -40,16 +42,15 @@ function QuickSelect(props) {
   useEffect(() => {
     if (selectedValue > 200000) {
       props.setCard(cryptCardBase[selectedValue]);
-      props.history.push(`/cards/${selectedValue}`);
+      history.push(`/cards/${selectedValue}`);
     } else if (selectedValue > 100000) {
       props.setCard(libraryCardBase[selectedValue]);
-      props.history.push(`/cards/${selectedValue}`);
+      history.push(`/cards/${selectedValue}`);
     }
   }, [selectedValue]);
 
   useEffect(() => {
-    if (isMobile && props.history.location.pathname == '/cards')
-      ref.current.focus();
+    if (isMobile && history.location.pathname == '/cards') ref.current.focus();
   }, []);
 
   return (

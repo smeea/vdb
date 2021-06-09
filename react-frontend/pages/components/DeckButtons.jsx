@@ -45,11 +45,7 @@ function DeckButtons(props) {
       )}
       {props.isAuthor && props.deck && (
         <div className="button-block">
-          <DeckDelete
-            deck={props.deck}
-            setShowButtons={props.setShowButtons}
-            history={props.history}
-          />
+          <DeckDelete deck={props.deck} setShowButtons={props.setShowButtons} />
         </div>
       )}
       {props.isAuthor && props.deck && (

@@ -19,7 +19,6 @@ function Cards(props) {
     lang,
     isMobile,
   } = useContext(AppContext);
-  const history = useHistory();
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
 
@@ -78,7 +77,7 @@ function Cards(props) {
             {cryptCardBase && libraryCardBase && (
               <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
                 <Col md={8} className="px-0">
-                  <QuickSelect setCard={setCard} history={history} />
+                  <QuickSelect setCard={setCard} />
                 </Col>
               </Row>
             )}
@@ -127,7 +126,7 @@ function Cards(props) {
             {cryptCardBase && libraryCardBase && (
               <Row className="align-content-center justify-content-center py-3">
                 <Col md={8}>
-                  <QuickSelect setCard={setCard} history={history} />
+                  <QuickSelect setCard={setCard} />
                 </Col>
               </Row>
             )}

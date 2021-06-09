@@ -464,7 +464,6 @@ function Decks(props) {
               setShowButtons={handleShowButtons}
               missingCrypt={missingCrypt}
               missingLibrary={missingLibrary}
-              history={history}
             />
           </Col>
         )}
@@ -555,7 +554,6 @@ function Decks(props) {
                 setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
-                history={history}
               />
               {isMobile && (
                 <div className="button-block">

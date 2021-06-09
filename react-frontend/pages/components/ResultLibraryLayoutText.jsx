@@ -40,13 +40,14 @@ function ResultLibraryLayoutText(props) {
             <ResultLibraryBurn value={props.card['Burn Option']} />
           </div>
         )}
-        {nativeLibrary[props.card.Id]['Card Text'].includes('Trifle.') && (
-          <div className="pl-1">
-            <ResultLibraryTrifle
-              value={nativeLibrary[props.card.Id]['Card Text']}
-            />
-          </div>
-        )}
+        {nativeLibrary &&
+          nativeLibrary[props.card.Id]['Card Text'].includes('Trifle.') && (
+            <div className="pl-1">
+              <ResultLibraryTrifle
+                value={nativeLibrary[props.card.Id]['Card Text']}
+              />
+            </div>
+          )}
       </div>
       <hr className="mx-0" />
       <div className="py-2">
