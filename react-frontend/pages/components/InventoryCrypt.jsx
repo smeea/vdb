@@ -46,7 +46,9 @@ function InventoryCrypt(props) {
   }
 
   let total = 0;
-  const unique = Object.keys(props.cards).length;
+  const unique = Object.keys(props.cards).filter(
+    (card) => props.cards[card].q > 0
+  ).length;
   const cards = [];
 
   Object.keys(crypt).map((card) => {
