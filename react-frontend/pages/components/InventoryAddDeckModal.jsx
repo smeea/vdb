@@ -173,8 +173,7 @@ function InventoryAddDeckModal(props) {
               title={deck.name}
             >
               {deck.name}
-              {revFilter &&
-                deck.branchName &&
+              {deck.branchName &&
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
                   <div
