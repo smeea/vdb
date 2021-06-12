@@ -263,6 +263,14 @@ function InventoryAddDeckModal(props) {
       size="xl"
     >
       <Modal.Body>
+        <div className="d-block error-message">
+          At the moment cards in inventory sometimes does not updates
+          immediatelly after you click ADD or DELETE deck buttons.
+          <br />
+          Please refresh the page (F5) manually after you add/delete deck from
+          inventory and do not add/delete deck many times{' '}
+          <i>because nothing happened</i>.
+        </div>
         <DeckTotal />
         <table className="decks-table">
           <thead>
