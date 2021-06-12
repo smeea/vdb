@@ -10,6 +10,7 @@ import InventoryCrypt from './components/InventoryCrypt.jsx';
 import InventoryLibrary from './components/InventoryLibrary.jsx';
 import InventoryButtons from './components/InventoryButtons.jsx';
 import InventoryShowSelect from './components/InventoryShowSelect.jsx';
+import InventoryAddDeckModal from './components/InventoryAddDeckModal.jsx';
 import AppContext from '../context/AppContext';
 
 function Inventory(props) {
@@ -28,6 +29,8 @@ function Inventory(props) {
   const [showCrypt, setShowCrypt] = useState(true);
   const [showMenuButtons, setShowMenuButtons] = useState(false);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
+  const [showAddDeck, setShowAddDeck] = useState(false);
+  const [showAddPrecon, setShowAddPrecon] = useState(false);
 
   return (
     <Container
@@ -182,7 +185,8 @@ function Inventory(props) {
               </Col>
               <Col md={2} className="px-0 px-md-1 px-xl-3">
                 <InventoryButtons
-                  inventoryDeckAdd={props.inventoryDeckAdd}
+                  setShowAddDeck={setShowAddDeck}
+                  setShowAddPrecon={setShowAddPrecon}
                   inventoryAddToState={props.inventoryAddToState}
                   setInventoryCrypt={props.setInventoryCrypt}
                   setInventoryLibrary={props.setInventoryLibrary}
@@ -254,7 +258,8 @@ function Inventory(props) {
                 </Col>
               </Row>
               <InventoryButtons
-                inventoryDeckAdd={props.inventoryDeckAdd}
+                setShowAddDeck={setShowAddDeck}
+                setShowAddPrecon={setShowAddPrecon}
                 inventoryAddToState={props.inventoryAddToState}
                 setInventoryCrypt={props.setInventoryCrypt}
                 setInventoryLibrary={props.setInventoryLibrary}
@@ -270,6 +275,17 @@ function Inventory(props) {
           </Modal.Body>
         </Modal>
       )}
+      {showAddDeck && (
+        <InventoryAddDeckModal
+          show={showAddDeck}
+          handleClose={() => setShowAddDeck(false)}
+          inventoryDeckAdd={props.inventoryDeckAdd}
+          inventoryDeckDelete={props.inventoryDeckDelete}
+        />
+      )}
+      {/* {showAddPrecon && ( */}
+      {/*   <InventoryAddPreconModal inventoryDeckAdd={props.inventoryDeckAdd} /> */}
+      {/* )} */}
     </Container>
   );
 }

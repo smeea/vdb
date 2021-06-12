@@ -251,6 +251,78 @@ function App(props) {
     });
   };
 
+  const inventoryDeckDelete = (deck) => {
+    const cards = {};
+
+    Object.keys(deck.crypt).forEach((card) => {
+      if (deck.crypt[card].q) {
+        cards[card] = deck.crypt[card].q;
+      }
+    });
+
+    Object.keys(deck.library).forEach((card) => {
+      if (deck.library[card].q) {
+        cards[card] = deck.library[card].q;
+      }
+    });
+
+    const url = `${process.env.API_URL}inventory/del`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cards),
+    };
+
+    const oldCryptState = { ...inventoryCrypt };
+    const oldLibraryState = { ...inventoryLibrary };
+    fetch(url, options).catch((error) => {
+      setInventoryCrypt(oldCryptState);
+      setInventoryLibrary(oldLibraryState);
+    });
+
+    inventoryDeleteFromState(cards);
+  };
+
+  const inventoryDeleteFromState = (cards) => {
+    Object.keys(cards).forEach((cardid) => {
+      if (cardid > 200000) {
+        setInventoryCrypt((prevState) => {
+          const oldState = { ...prevState };
+          if (prevState[cardid]) {
+            if (prevState[cardid].q > cards[cardid]) {
+              oldState[cardid] = {
+                c: cryptCardBase[cardid],
+                q: prevState[cardid].q - cards[cardid],
+              };
+            } else {
+              delete oldState[cardid];
+            }
+          }
+          return oldState;
+        });
+      } else {
+        setInventoryLibrary((prevState) => {
+          const oldState = { ...prevState };
+          if (prevState[cardid]) {
+            if (prevState[cardid].q > cards[cardid]) {
+              oldState[cardid] = {
+                c: libraryCardBase[cardid],
+                q: prevState[cardid].q - cards[cardid],
+              };
+            } else {
+              delete oldState[cardid];
+            }
+          }
+          return oldState;
+        });
+      }
+    });
+  };
+
   const getPreconDecks = () => {
     const precons = {};
 
@@ -509,6 +581,7 @@ function App(props) {
             <Route path="/inventory">
               <Inventory
                 inventoryDeckAdd={inventoryDeckAdd}
+                inventoryDeckDelete={inventoryDeckDelete}
                 inventoryAddToState={inventoryAddToState}
                 setInventoryCrypt={setInventoryCrypt}
                 setInventoryLibrary={setInventoryLibrary}

@@ -133,6 +133,31 @@ def inventoryAddCard():
         return jsonify({'Not logged in.'})
 
 
+@app.route('/api/inventory/del', methods=['POST'])
+def inventoryDelCard():
+    if current_user.is_authenticated:
+        i = current_user.inventory
+        try:
+            new_cards = request.json
+            merged_cards = i.copy() if i else {}
+            for k, v in new_cards.items():
+                if k in merged_cards:
+                    if merged_cards[k] > v:
+                        merged_cards[k] = merged_cards[k] - v
+                    else:
+                        del merged_cards[k]
+
+            current_user.inventory = merged_cards.copy()
+            db.session.commit()
+            return jsonify({'inventory card deleted': 'success'})
+
+        except Exception:
+            pass
+
+    else:
+        return jsonify({'Not logged in.'})
+
+
 @app.route('/api/inventory/change', methods=['POST'])
 def inventoryChangeCard():
     if current_user.is_authenticated:

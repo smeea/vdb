@@ -8,22 +8,20 @@ import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import At from '../../assets/images/icons/at.svg';
+import Plus from '../../assets/images/icons/plus.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import DeckTags from './DeckTags.jsx';
 import DeckTotal from './DeckTotal.jsx';
-import DeckDelete from './DeckDelete.jsx';
-import DeckBranchDelete from './DeckBranchDelete.jsx';
-import DeckClone from './DeckClone.jsx';
-import DeckProxy from './DeckProxy.jsx';
-import DeckCopyUrlMutableButton from './DeckCopyUrlMutableButton.jsx';
 import DeckSelectSortForm from './DeckSelectSortForm.jsx';
+import InventoryDeckAddButton from './InventoryDeckAddButton.jsx';
+import InventoryDeckDeleteButton from './InventoryDeckDeleteButton.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import resultDecksSort from './resultDecksSort.js';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import AppContext from '../../context/AppContext';
 
-function DeckSelectAdvModal(props) {
+function InventoryAddDeckModal(props) {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -31,7 +29,6 @@ function DeckSelectAdvModal(props) {
     deckUpdate,
     setActiveDeck,
     isMobile,
-    inventoryMode,
   } = useContext(AppContext);
 
   const [sortMethod, setSortMethod] = useState('byName');
@@ -151,25 +148,22 @@ function DeckSelectAdvModal(props) {
     return (
       <React.Fragment key={deck.deckid}>
         <tr className={resultTrClass}>
-          {inventoryMode && (
-            <td className="inventory" onClick={() => toggleInventoryState()}>
-              <div
-                className="px-2"
-                title={
-                  deck.inventory_type === 's'
-                    ? 'Flexible'
-                    : deck.inventory_type === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
-                }
-              >
-                {deck.inventory_type == 's' && <Shuffle />}
-                {deck.inventory_type == 'h' && <PinAngleFill />}
-                {!deck.inventory_type && <At />}
-              </div>
-            </td>
-          )}
-
+          <td className="inventory" onClick={() => toggleInventoryState()}>
+            <div
+              className="px-2"
+              title={
+                deck.inventory_type === 's'
+                  ? 'Flexible'
+                  : deck.inventory_type === 'h'
+                  ? 'Fixed'
+                  : 'Virtual'
+              }
+            >
+              {deck.inventory_type == 's' && <Shuffle />}
+              {deck.inventory_type == 'h' && <PinAngleFill />}
+              {!deck.inventory_type && <At />}
+            </div>
+          </td>
           <td className="clan" onClick={() => handleOpen(deck.deckid)}>
             {clan && <ResultCryptClan value={clan} />}
           </td>
@@ -179,7 +173,8 @@ function DeckSelectAdvModal(props) {
               title={deck.name}
             >
               {deck.name}
-              {deck.branchName &&
+              {revFilter &&
+                deck.branchName &&
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
                   <div
@@ -243,27 +238,17 @@ function DeckSelectAdvModal(props) {
             <DeckTags defaultTagsOptions={defaultTagsOptions} deck={deck} />
           </td>
           <td className="buttons">
-            {revFilter &&
-              (deck.master || (deck.branches && deck.branches.length > 0)) && (
-                <div className="d-inline pl-1">
-                  <DeckBranchDelete noText={true} deck={deck} />
-                </div>
-              )}
             <div className="d-inline pl-1">
-              <DeckDelete noText={true} deck={deck} />
-            </div>
-            <div className="d-inline pl-1">
-              <DeckClone
-                activeDeck={{ src: 'my', deckid: deck.deckid }}
-                noText={true}
+              <InventoryDeckAddButton
+                inventoryDeckAdd={props.inventoryDeckAdd}
                 deck={deck}
               />
             </div>
             <div className="d-inline pl-1">
-              <DeckCopyUrlMutableButton noText={true} value={deck.deckid} />
-            </div>
-            <div className="d-inline pl-1">
-              <DeckProxy noText={true} deck={deck} />
+              <InventoryDeckDeleteButton
+                inventoryDeckDelete={props.inventoryDeckDelete}
+                deck={deck}
+              />
             </div>
           </td>
         </tr>
@@ -283,7 +268,7 @@ function DeckSelectAdvModal(props) {
         <table className="decks-table">
           <thead>
             <tr>
-              {inventoryMode && <th className="inventory"></th>}
+              <th className="inventory"></th>
               <th className="clan"></th>
               <th className="name">
                 <FormControl
@@ -334,4 +319,4 @@ function DeckSelectAdvModal(props) {
   );
 }
 
-export default DeckSelectAdvModal;
+export default InventoryAddDeckModal;
