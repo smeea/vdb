@@ -31,7 +31,7 @@ function TwdResult(props) {
   useEffect(() => {
     setDeckCounter(Object.keys(twdResults).length);
     setShowCounter(showCounterStep);
-  }, twdResults);
+  }, [twdResults]);
 
   useEffect(() => {
     let newCounter = showCounter;
