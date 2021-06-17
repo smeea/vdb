@@ -107,6 +107,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as f_csv, open(
         # Convert sets to dict
         sets = card['Set'].split(', ')
         card['Set'] = {}
+
         for set in sets:
             if '-' in set:
                 set = set.split('-')
@@ -127,7 +128,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as f_csv, open(
                 if counter < len(precons):
                     card['Set'][set[0]] = {}
 
-            else:
+            elif set[0] not in card['Set']:
                 card['Set'][set[0]] = {}
 
             for precon in precons:

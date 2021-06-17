@@ -6460,6 +6460,7 @@
         "Card Text":"Anarch Baron of Fortaleza.",
         "Set":{
             "Promo":{
+                "20190601":true,
                 "20200511":true
             }
         },
@@ -6808,6 +6809,7 @@
         "Card Text":"Anarch Baron of Manila.",
         "Set":{
             "Promo":{
+                "20191027":true,
                 "20200511":true
             }
         },
@@ -7894,7 +7896,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Sabbat Archbishop of Detroit: Each round of combat, before range is determined, Cailean can set the range for that round. If he does so, skip the /Determine/ Range step for that round.",
+        "Card Text":"Sabbat Archbishop of Detroit: Each round of combat, before range is determined, Cailean can set the range for that round. If he does so, skip the Determine Range step for that round.",
         "Set":{
             "Sabbat":{
                 "V":true
@@ -8216,6 +8218,8 @@
         "Card Text":"Independent: If The Capuchin is burned, move him to his owner's uncontrolled region and you get +3 transfers at the start of your next influence phase. +1 bleed. +2 hand size. +1 intercept.",
         "Set":{
             "Promo":{
+                "20150219":true,
+                "20181004:HB2":true,
                 "20190408":true
             }
         },
@@ -8585,6 +8589,7 @@
         "Card Text":"Anarch Baron of Columbus.",
         "Set":{
             "Promo":{
+                "20190615":true,
                 "20200511":true
             }
         },
@@ -13024,6 +13029,8 @@
         "Card Text":"Independent: Cards requiring Vicissitude [vic] cost The Dracon 1 fewer blood. He inflicts +1 damage or steals 1 additional blood or life with ranged strikes (even at close range). Flight [FLIGHT]. +1 bleed. +2 strength.",
         "Set":{
             "Promo":{
+                "20150216":true,
+                "20181004:HB2":true,
                 "20190408":true
             }
         },
@@ -19512,6 +19519,7 @@
         "Card Text":"Independent: Helena pays no blood costs for reaction cards requiring Auspex [aus] or Dominate [dom]. Infernal.\n[MERGED] Helena is immune to damage from demons and gets +1 level of Daimoinon [dai] and Obtenebration [obt].",
         "Set":{
             "Promo":{
+                "20051001":true,
                 "20190408":true
             }
         },
@@ -22031,6 +22039,7 @@
         "Card Text":"Anarch Baron of Versailles.",
         "Set":{
             "Promo":{
+                "20190818":true,
                 "20200511":true
             }
         },
@@ -24949,6 +24958,7 @@
         "Card Text":"Camarilla: Karsh can play cards named /Blood Hunt/ from your hand or ash heap as a prince. He gets +3 votes in blood hunt referendums. He cannot block infernal vampires.\n[MERGED] Imperator (3 votes): +1 intercept.",
         "Set":{
             "Promo":{
+                "20100510":true,
                 "20190408":true
             }
         },
@@ -27548,6 +27558,7 @@
         "Card Text":"Anarch Baron of Canberra.",
         "Set":{
             "Promo":{
+                "20191005":true,
                 "20200511":true
             }
         },
@@ -28314,6 +28325,8 @@
         "Card Text":"Camarilla: Cards requiring Thaumaturgy [tha] cost Lord Tremere 1 fewer blood. During your minion phase, you can lock or unlock another ready Tremere or Tremere antitribu. +2 bleed. +1 intercept.",
         "Set":{
             "Promo":{
+                "20150220":true,
+                "20181004:HB2":true,
                 "20190408":true
             }
         },
@@ -32382,6 +32395,7 @@
         "Card Text":"Independent: While /Helena/ is ready, minion cards cost Menele 1 fewer blood.\n[MERGED] Menele can strike: steal 2 blood or life (becoming blood).",
         "Set":{
             "Promo":{
+                "20090929":true,
                 "20190408":true
             }
         },
@@ -33203,6 +33217,8 @@
         "Card Text":"Camarilla: Mithras gets +2 votes. Once each action he performs, he can burn 2 blood to cancel a reaction card as it is played by a younger vampire, and its cost is not paid. +2 bleed. +1 strength.",
         "Set":{
             "Promo":{
+                "20150218":true,
+                "20181004:HB2":true,
                 "20190408":true
             }
         },
@@ -33379,6 +33395,8 @@
         "Card Text":"Independent. 2 votes (titled): Cards requiring Obtenebration [obt] cost Montano 1 fewer blood. During an action, he can burn 1 blood to give a minion you control +1 stealth. +1 bleed.",
         "Set":{
             "Promo":{
+                "20150217":true,
+                "20181004:HB2":true,
                 "20190408":true
             },
             "POD":{
@@ -34817,6 +34835,7 @@
         "Card Text":"Independent: Once each turn, Nergal can reduce the cost of a card he plays by 1 blood. Infernal. +2 bleed.",
         "Set":{
             "Promo":{
+                "20051001":true,
                 "20190408":true
             }
         },
@@ -34854,6 +34873,7 @@
         "Card Text":"Independent: While Nergal is acting, reaction cards cost 1 additional blood. Once each action, he can burn 1 blood to get +1 stealth. Infernal.",
         "Set":{
             "Promo":{
+                "20080203":true,
                 "20190408":true
             }
         },
@@ -49325,6 +49345,7 @@
         "Card Text":"Sabbat: Yazid gets +1 stealth during directed actions. Black Hand.\n[MERGED] Anarch.",
         "Set":{
             "Promo":{
+                "20090929":true,
                 "20190408":true
             },
             "POD":{

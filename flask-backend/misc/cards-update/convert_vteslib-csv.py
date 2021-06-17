@@ -94,7 +94,7 @@ with open("vteslib.csv", "r", encoding='utf8') as f_csv, open(
                 if counter < len(precons):
                     card['Set'][set[0]] = {}
 
-            else:
+            elif set[0] not in card['Set']:
                 card['Set'][set[0]] = {}
 
             for precon in precons:
