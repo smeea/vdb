@@ -1,5 +1,4 @@
 # FIX
-* TWD location/winner form reset
 * Save scrolling position
 * Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
 * Scroll modal for deck through library + crypt

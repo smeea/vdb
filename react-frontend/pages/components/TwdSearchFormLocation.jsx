@@ -1,9 +1,9 @@
 import React from 'react';
 import AsyncSelect from 'react-select/async';
 
-function TwdSearchFormLocation({ value, setValue }) {
+function TwdSearchFormLocation(props) {
   const handleChange = (v) => {
-    setValue((prevState) => ({
+    props.setValue((prevState) => ({
       ...prevState,
       location: v.value,
     }));
@@ -38,6 +38,14 @@ function TwdSearchFormLocation({ value, setValue }) {
       autoFocus={false}
       placeholder="Location"
       loadOptions={loadOptions}
+      value={
+        props.value
+          ? {
+              label: props.value,
+              value: props.value,
+            }
+          : null
+      }
       onChange={handleChange}
     />
   );

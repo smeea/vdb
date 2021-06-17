@@ -1,9 +1,9 @@
 import React from 'react';
 import AsyncSelect from 'react-select/async';
 
-function TwdSearchFormPlayer({ value, setValue }) {
+function TwdSearchFormPlayer(props) {
   const handleChange = (v) => {
-    setValue((prevState) => ({
+    props.setValue((prevState) => ({
       ...prevState,
       player: v.value,
     }));
@@ -38,6 +38,14 @@ function TwdSearchFormPlayer({ value, setValue }) {
       autoFocus={false}
       placeholder="Player"
       loadOptions={loadOptions}
+      value={
+        props.value
+          ? {
+              label: props.value,
+              value: props.value,
+            }
+          : null
+      }
       onChange={handleChange}
     />
   );
