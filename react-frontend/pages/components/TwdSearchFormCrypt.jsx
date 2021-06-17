@@ -25,7 +25,7 @@ function TwdSearchFormCrypt(props) {
   };
 
   const cryptCardsList = Object.keys(props.state)
-    .filter((id) => props.state[id] > 0)
+    .filter((id) => props.state[id] >= 0)
     .map((id) => {
       return (
         <div key={id} className="d-flex align-items-center">

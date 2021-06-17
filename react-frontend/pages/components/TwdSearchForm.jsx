@@ -156,8 +156,6 @@ function TwdSearchForm(props) {
     const input = JSON.parse(JSON.stringify(twdFormState));
 
     const multiSelectForms = [
-      'crypt',
-      'library',
       'disciplines',
       'traits',
       'cardtypes',
@@ -172,6 +170,14 @@ function TwdSearchForm(props) {
       Object.keys(input[i]).forEach(
         (k) => (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k]
       );
+    });
+
+    const cardsForms = ['crypt', 'library'];
+
+    cardsForms.map((i) => {
+      Object.keys(input[i]).forEach((k) => {
+        input[i][k] == -1 && delete input[i][k];
+      });
     });
 
     Object.keys(input).forEach(

@@ -21,7 +21,7 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
       >
         -
       </Button>
-      <div className="px-1">{q}</div>
+      <div className="px-1">{q ? '≥ ' + q : '= 0'}</div>
       <Button
         className="quantity"
         variant="outline-secondary"

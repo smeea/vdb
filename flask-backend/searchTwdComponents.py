@@ -1,7 +1,6 @@
 import json
 import re
 
-
 with open("twdDecks.json", "r") as twd_file:
     twda = json.load(twd_file)
 
@@ -12,8 +11,13 @@ def get_twd_by_crypt(crypt, twda=twda):
     for deck in twda:
         counter = 0
         for card, q in crypt.items():
-            if card in deck['crypt'].keys() and deck['crypt'][card]['q'] >= q:
-                counter += 1
+            if q:
+                if card in deck['crypt'].keys(
+                ) and deck['crypt'][card]['q'] >= q:
+                    counter += 1
+            else:
+                if card not in deck['crypt'].keys():
+                    counter += 1
 
         if counter == cards_counter:
             match_decks.append(deck)
@@ -27,13 +31,19 @@ def get_twd_by_library(library, twda=twda):
     for deck in twda:
         counter = 0
         for card, q in library.items():
-            if card in deck['library'].keys() and deck['library'][card]['q'] >= q:
-                counter += 1
+            if q:
+                if card in deck['library'].keys(
+                ) and deck['library'][card]['q'] >= q:
+                    counter += 1
+            else:
+                if card not in deck['library'].keys():
+                    counter += 1
 
         if counter == cards_counter:
             match_decks.append(deck)
 
     return match_decks
+
 
 def get_twd_by_player(player, twda=twda):
     match_decks = []
@@ -52,6 +62,7 @@ def get_twd_by_location(location, twda=twda):
 
     return match_decks
 
+
 def get_twd_by_event(event, twda=twda):
     match_decks = []
     for deck in twda:
@@ -59,6 +70,7 @@ def get_twd_by_event(event, twda=twda):
             match_decks.append(deck)
 
     return match_decks
+
 
 def get_twd_by_date(request, twda=twda):
     date_from = int(request['from']) if 'from' in request else 1997
@@ -72,16 +84,19 @@ def get_twd_by_date(request, twda=twda):
 
     return match_decks
 
+
 def get_twd_by_players(request, twda=twda):
     players_from = int(request['from']) if 'from' in request else 1
     players_to = int(request['to']) if 'to' in request else 1000
     match_decks = []
 
     for deck in twda:
-        if deck['players'] != 'Unknown' and players_from <= deck['players'] <= players_to:
+        if deck['players'] != 'Unknown' and players_from <= deck[
+                'players'] <= players_to:
             match_decks.append(deck)
 
     return match_decks
+
 
 def get_twd_by_clan(clan, twda=twda):
     match_decks = []
@@ -90,6 +105,7 @@ def get_twd_by_clan(clan, twda=twda):
             match_decks.append(deck)
 
     return match_decks
+
 
 def get_twd_by_disciplines(disciplines, twda=twda):
     disciplines_counter = len(disciplines)
@@ -106,13 +122,14 @@ def get_twd_by_disciplines(disciplines, twda=twda):
 
     return match_decks
 
+
 def get_twd_by_cardtypes(cardtype_input, twda=twda):
     cardtypes_counter = len(cardtype_input)
     cardtypes = {}
 
     for k, v in cardtype_input.items():
         [min, max] = v.split(',')
-        [min, max] = [float(min)/100, float(max)/100]
+        [min, max] = [float(min) / 100, float(max) / 100]
         cardtypes[k] = {'min': min, 'max': max}
 
     match_decks = []
@@ -123,7 +140,8 @@ def get_twd_by_cardtypes(cardtype_input, twda=twda):
         for type, v in cardtypes.items():
             if v['max'] == 0 and type not in deck['cardtypes_ratio']:
                 counter += 1
-            if type in deck['cardtypes_ratio'] and v['min'] < deck['cardtypes_ratio'][type] < v['max']:
+            if type in deck['cardtypes_ratio'] and v['min'] < deck[
+                    'cardtypes_ratio'][type] < v['max']:
                 counter += 1
 
         if cardtypes_counter == counter:
@@ -146,6 +164,7 @@ def get_twd_by_capacity(capacity_input, twda=twda):
 
     return match_cards
 
+
 def get_twd_by_traits(traits, twda=twda):
     trait_counter = len(traits)
     match_decks = []
@@ -160,6 +179,7 @@ def get_twd_by_traits(traits, twda=twda):
 
     return match_decks
 
+
 def get_twd_by_libraryTotal(total_input, twda=twda):
     total_brackets = []
     for k in total_input.keys():
@@ -173,6 +193,7 @@ def get_twd_by_libraryTotal(total_input, twda=twda):
                 break
 
     return match_cards
+
 
 def matchInventory(request, inventory, twda=twda):
     crypt_ratio = float(request['crypt']) if 'crypt' in request else None
@@ -200,7 +221,8 @@ def matchInventory(request, inventory, twda=twda):
         if library_ratio:
             counter = 0
             scaling_factor = deck['libraryTotal'] / 60
-            min_counter = 60 * library_ratio if scaling else deck['libraryTotal'] * library_ratio
+            min_counter = 60 * library_ratio if scaling else deck[
+                'libraryTotal'] * library_ratio
 
             for card, v in deck['library'].items():
                 if card in inventory:
@@ -232,4 +254,4 @@ def sanitizeTwd(deck):
     del (deck['clan'])
     del (deck['traits'])
 
-    return(deck)
+    return (deck)
