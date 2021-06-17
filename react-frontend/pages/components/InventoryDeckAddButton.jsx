@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
+import Check2 from '../../assets/images/icons/check2.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import ModalConfirmation from './ModalConfirmation.jsx';
 import AppContext from '../../context/AppContext.js';
@@ -18,11 +19,14 @@ function InventoryDeckAddButton(props) {
   return (
     <>
       <Button
+        className={props.inInventory ? 'inventory-in' : ''}
         variant="outline-secondary"
         onClick={() => setShowConfirmation(true)}
-        title="Add Deck to Inventory"
+        title={
+          props.inInventory ? 'Already in Inventory' : 'Add Deck to Inventory'
+        }
       >
-        <Plus />
+        {props.inInventory ? <Check2 /> : <Plus />}
       </Button>
       <ModalConfirmation
         show={showConfirmation}

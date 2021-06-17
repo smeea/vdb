@@ -25,6 +25,8 @@ function InventoryAddDeckModal(props) {
   const {
     cryptCardBase,
     libraryCardBase,
+    inventoryCrypt,
+    inventoryLibrary,
     decks,
     deckUpdate,
     setActiveDeck,
@@ -104,10 +106,22 @@ function InventoryAddDeckModal(props) {
       resultTrClass = 'result-even';
     }
 
+    let cryptInInventory = true;
+    let libraryInInventory = true;
+
     const clans = {};
     let cryptTotal = 0;
 
     const crypt = Object.keys(deck.crypt).map((cardid) => {
+      if (deck.crypt[cardid].q != 0) {
+        if (
+          !inventoryCrypt[cardid] ||
+          inventoryCrypt[cardid].q < deck.crypt[cardid].q
+        ) {
+          cryptInInventory = false;
+        }
+      }
+
       if (cardid != 200076) {
         const clan = cryptCardBase[cardid].Clan;
 
@@ -124,8 +138,19 @@ function InventoryAddDeckModal(props) {
     });
 
     const library = Object.keys(deck.library).map((cardid) => {
+      if (deck.library[cardid].q != 0) {
+        if (
+          !inventoryLibrary[cardid] ||
+          inventoryLibrary[cardid].q < deck.library[cardid].q
+        ) {
+          libraryInInventory = false;
+        }
+      }
+
       return <div key={cardid}>{libraryCardBase[cardid].Name}</div>;
     });
+
+    const inInventory = cryptInInventory && libraryInInventory ? true : false;
 
     let clan;
     Object.keys(clans).forEach((c) => {
@@ -241,12 +266,14 @@ function InventoryAddDeckModal(props) {
               <InventoryDeckAddButton
                 inventoryDeckAdd={props.inventoryDeckAdd}
                 deck={deck}
+                inInventory={inInventory}
               />
             </div>
             <div className="d-inline pl-1">
               <InventoryDeckDeleteButton
                 inventoryDeckDelete={props.inventoryDeckDelete}
                 deck={deck}
+                inInventory={inInventory}
               />
             </div>
           </td>

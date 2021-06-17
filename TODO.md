@@ -15,7 +15,6 @@
 * Create revocable link to Inventory
 * Show missing cards for inventory
 * Inventory add from precon
-* Inventory add from decks with select form (mark decks already in)
 * Search for similar TWD decks
 * Localized proxies
 * Narrow search by clicks (i.e. twd author)

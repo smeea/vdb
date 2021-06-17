@@ -21,6 +21,7 @@ function InventoryDeckDeleteButton(props) {
         variant="outline-secondary"
         onClick={() => setShowConfirmation(true)}
         title="Remove Deck from Inventory"
+        disabled={!props.inInventory}
       >
         <TrashFill />
       </Button>
