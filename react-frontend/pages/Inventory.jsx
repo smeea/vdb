@@ -11,6 +11,7 @@ import InventoryLibrary from './components/InventoryLibrary.jsx';
 import InventoryButtons from './components/InventoryButtons.jsx';
 import InventoryShowSelect from './components/InventoryShowSelect.jsx';
 import InventoryAddDeckModal from './components/InventoryAddDeckModal.jsx';
+import InventoryAddPreconModal from './components/InventoryAddPreconModal.jsx';
 import AppContext from '../context/AppContext';
 
 function Inventory(props) {
@@ -283,9 +284,14 @@ function Inventory(props) {
           inventoryDeckDelete={props.inventoryDeckDelete}
         />
       )}
-      {/* {showAddPrecon && ( */}
-      {/*   <InventoryAddPreconModal inventoryDeckAdd={props.inventoryDeckAdd} /> */}
-      {/* )} */}
+      {showAddPrecon && (
+        <InventoryAddPreconModal
+          show={showAddPrecon}
+          handleClose={() => setShowAddPrecon(false)}
+          inventoryDeckAdd={props.inventoryDeckAdd}
+          inventoryDeckDelete={props.inventoryDeckDelete}
+        />
+      )}
     </Container>
   );
 }

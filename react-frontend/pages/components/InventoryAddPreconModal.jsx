@@ -11,7 +11,6 @@ import At from '../../assets/images/icons/at.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
-import DeckTags from './DeckTags.jsx';
 import DeckTotal from './DeckTotal.jsx';
 import DeckSelectSortForm from './DeckSelectSortForm.jsx';
 import InventoryDeckAddButton from './InventoryDeckAddButton.jsx';
@@ -20,6 +19,7 @@ import ResultCryptClan from './ResultCryptClan.jsx';
 import resultDecksSort from './resultDecksSort.js';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import AppContext from '../../context/AppContext';
+import setData from './forms_data/setsAndPrecons.json';
 
 function InventoryAddDeckModal(props) {
   const {
@@ -27,43 +27,23 @@ function InventoryAddDeckModal(props) {
     libraryCardBase,
     inventoryCrypt,
     inventoryLibrary,
-    decks,
-    deckUpdate,
+    preconDecks,
     isMobile,
   } = useContext(AppContext);
 
-  const [sortMethod, setSortMethod] = useState('byName');
+  const [sortMethod, setSortMethod] = useState('byDate');
   const [sortedDecks, setSortedDecks] = useState([]);
   const [showDeck, setShowDeck] = useState(undefined);
-  const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
-  const [tagsFilter, setTagsFilter] = useState([]);
   let resultTrClass;
 
   const handleChangeNameFilter = (event) => {
     setNameFilter(event.target.value);
   };
 
-  const handleChangeTagsFilter = (event) => {
-    const tags = event.map((t) => t.value);
-    setTagsFilter(tags);
-  };
-
-  const allTags = new Set();
-  Object.keys(decks).map((deckid) => {
-    decks[deckid].tags.map((tag) => {
-      allTags.add(tag);
-    });
-  });
-
-  const defaultTagsOptions = [...allTags].map((tag) => ({
-    label: tag,
-    value: tag,
-  }));
-
   useEffect(() => {
-    if (Object.values(decks).length > 0) {
-      let filtered = Object.values(decks);
+    if (Object.values(preconDecks).length > 0) {
+      let filtered = Object.values(preconDecks);
 
       if (nameFilter) {
         filtered = filtered.filter((deck) => {
@@ -72,26 +52,10 @@ function InventoryAddDeckModal(props) {
         });
       }
 
-      if (tagsFilter) {
-        filtered = filtered.filter((deck) => {
-          let counter = 0;
-          tagsFilter.map((tag) => {
-            if (deck.tags.includes(tag)) counter += 1;
-          });
-          if (counter >= tagsFilter.length) return true;
-        });
-      }
-
-      if (!revFilter) {
-        filtered = filtered.filter((deck) => {
-          if (!deck.master) return true;
-        });
-      }
-
       const sorted = resultDecksSort(filtered, sortMethod);
       setSortedDecks(sorted);
     }
-  }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
+  }, [preconDecks, nameFilter, sortMethod]);
 
   const deckRows = sortedDecks.map((deck, index) => {
     if (resultTrClass == 'result-even') {
@@ -146,44 +110,22 @@ function InventoryAddDeckModal(props) {
 
     const inInventory = cryptInInventory && libraryInInventory ? true : false;
 
-    let clan;
-    Object.keys(clans).forEach((c) => {
-      if (clans[c] / cryptTotal > 0.5) {
-        clan = c;
+    const clanIcons = Object.keys(clans).map((c) => {
+      if (clans[c] / cryptTotal >= 0.4) {
+        return (
+          <div className="d-inline px-2" key={c}>
+            <ResultCryptClan value={c} />
+          </div>
+        );
       }
     });
 
-    const toggleInventoryState = () => {
-      const inventoryType = deck.inventory_type;
-      if (!inventoryType) {
-        deckUpdate(deck.deckid, 'makeFlexible', 'all');
-      } else if (inventoryType == 's') {
-        deckUpdate(deck.deckid, 'makeFixed', 'all');
-      } else if (inventoryType == 'h') {
-        deckUpdate(deck.deckid, 'makeClear', 'all');
-      }
-    };
+    const [set, precon] = deck.deckid.split(':');
 
     return (
       <React.Fragment key={deck.deckid}>
         <tr className={resultTrClass}>
-          <td className="inventory" onClick={() => toggleInventoryState()}>
-            <div
-              className="px-2"
-              title={
-                deck.inventory_type === 's'
-                  ? 'Flexible'
-                  : deck.inventory_type === 'h'
-                  ? 'Fixed'
-                  : 'Virtual'
-              }
-            >
-              {deck.inventory_type == 's' && <Shuffle />}
-              {deck.inventory_type == 'h' && <PinAngleFill />}
-              {!deck.inventory_type && <At />}
-            </div>
-          </td>
-          <td className="clan">{clan && <ResultCryptClan value={clan} />}</td>
+          <td className="clan">{clanIcons.length > 0 && clanIcons}</td>
           <td className="name">
             <div
               className="d-flex text-overflow name justify-content-between"
@@ -247,11 +189,10 @@ function InventoryAddDeckModal(props) {
               </OverlayTooltip>
             </div>
           </td>
-          <td className="date">
-            {new Date(deck.timestamp).toISOString().slice(0, 10)}
-          </td>
-          <td className="tags">
-            <DeckTags defaultTagsOptions={defaultTagsOptions} deck={deck} />
+          <td className="set">
+            {setData[set].year}
+            <span className="px-3">–</span>
+            {setData[set].name}
           </td>
           <td className="buttons">
             <div className="d-inline pl-1">
@@ -283,10 +224,9 @@ function InventoryAddDeckModal(props) {
     >
       <Modal.Body>
         <DeckTotal />
-        <table className="decks-table">
+        <table className="precons-table">
           <thead>
             <tr>
-              <th className="inventory"></th>
               <th className="clan"></th>
               <th className="name">
                 <FormControl
@@ -300,31 +240,9 @@ function InventoryAddDeckModal(props) {
                 />
               </th>
               <th className="preview"></th>
-              <th className="date"></th>
-              <th className="tags">
-                <Select
-                  classNamePrefix="tags-filter react-select-tags"
-                  isMulti
-                  options={defaultTagsOptions}
-                  onChange={handleChangeTagsFilter}
-                  defaultValue={tagsFilter}
-                  placeholder="Filter by Tags"
-                />
-              </th>
+              <th className="set"></th>
               <th className="buttons">
                 <div className="d-flex justify-content-end align-items-center">
-                  <div className="d-inline align-items-bottom custom-control custom-checkbox pr-3">
-                    <input
-                      id="revFilter"
-                      className="custom-control-input"
-                      type="checkbox"
-                      checked={revFilter}
-                      onChange={() => setRevFilter(!revFilter)}
-                    />
-                    <label htmlFor="revFilter" className="custom-control-label">
-                      Revisions
-                    </label>
-                  </div>
                   <DeckSelectSortForm onChange={setSortMethod} />
                 </div>
               </th>

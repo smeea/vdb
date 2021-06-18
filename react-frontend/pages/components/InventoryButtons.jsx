@@ -7,7 +7,7 @@ import FolderPlus from '../../assets/images/icons/folder-plus.svg';
 import AppContext from '../../context/AppContext';
 
 function InventoryButtons(props) {
-  const { decks } = useContext(AppContext);
+  const { decks, preconDecks } = useContext(AppContext);
 
   return (
     <>
@@ -43,20 +43,22 @@ function InventoryButtons(props) {
           </Button>
         </div>
       )}
-      {/* <div className="button-block"> */}
-      {/*   <Button */}
-      {/*     variant="outline-secondary" */}
-      {/*     onClick={() => props.setShowAddPrecon(true)} */}
-      {/*     block */}
-      {/*   > */}
-      {/*     <div className="d-flex justify-content-center align-items-center"> */}
-      {/*       <div className="pr-2"> */}
-      {/*         <FolderPlus /> */}
-      {/*       </div> */}
-      {/*       Add from Precon */}
-      {/*     </div> */}
-      {/*   </Button> */}
-      {/* </div> */}
+      {preconDecks && (
+        <div className="button-block">
+          <Button
+            variant="outline-secondary"
+            onClick={() => props.setShowAddPrecon(true)}
+            block
+          >
+            <div className="d-flex justify-content-center align-items-center">
+              <div className="pr-2">
+                <FolderPlus />
+              </div>
+              Add from Precon
+            </div>
+          </Button>
+        </div>
+      )}
     </>
   );
 }
