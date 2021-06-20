@@ -493,6 +493,12 @@ def listDecks():
                         d.master = deck.deckid
                         db.session.commit()
 
+            # Fix cards
+            cards = {}
+            for k, v in deck.cards.items():
+                cards[str(k)] = v
+                deck.cards = cards
+
             crypt = {}
             library = {}
             for k, v in deck.cards.items():
