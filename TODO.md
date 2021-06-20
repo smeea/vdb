@@ -13,7 +13,6 @@
 * Update cardbase script
 * Create revocable link to Inventory
 * Show missing cards for inventory
-* Inventory add from precon
 * Search for similar TWD decks
 * Localized proxies
 * Narrow search by clicks (i.e. twd author)
@@ -28,6 +27,7 @@
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Sync: websockets
+* Reduce hook calls (login, decks, inventory)
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardid) on backend
