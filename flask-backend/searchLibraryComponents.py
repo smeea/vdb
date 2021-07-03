@@ -58,7 +58,8 @@ def get_library_by_title(title, library):
             if counter == 0:
                 match_cards.append(card)
 
-        elif title.lower() in card['Requirement'].lower():
+        elif title.lower() in card['Requirement'].lower(
+        ) and not 'non-' + title in card['Requirement'].lower():
             match_cards.append(card)
 
     return match_cards

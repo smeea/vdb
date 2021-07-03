@@ -6,6 +6,8 @@ function SearchLibraryFormTitle(props) {
   const titles = [
     'ANY',
     'NONE',
+    'Non-titled',
+    'Titled',
     'Primogen',
     'Prince',
     'Justicar',

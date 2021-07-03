@@ -14,9 +14,12 @@
 * Create revocable link to Inventory
 * Show missing cards for inventory
 * Search for similar TWD decks
-* Localized proxies
+* Localized proxies and from scans
 * Narrow search by clicks (i.e. twd author)
 * Tags to deck main window
+* Trait 'never in twda'
+* Random cards button to Crypt/Library
+* Multiple filters (C: Clan, Sect, L: Disciplines, Clan, Sect, Title)
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search
