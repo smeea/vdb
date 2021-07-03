@@ -1,8 +1,5 @@
 # FIX
 * Save scrolling position
-* Add card by initials - miss some searches (i.e. 'shordes' -> shambling hordes)
-* Scroll modal for deck through library + crypt
-* Error in twd sanitizeTwd with del (deck['description'])
 * Autoswitch to imported deck
 * Fix inventory card quantity to sync in new card window
 
@@ -17,10 +14,8 @@
 * Localized proxies and from scans
 * Narrow search by clicks (i.e. twd author)
 * Tags to deck main window
-* Trait 'never in twda'
 * Random cards button to Crypt/Library
 * Multiple filters (C: Clan, Sect, L: Disciplines, Clan, Sect, Title)
-* Add release date to card
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search

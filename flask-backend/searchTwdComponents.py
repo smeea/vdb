@@ -242,16 +242,19 @@ def matchInventory(request, inventory, twda=twda):
 
 
 def sanitizeTwd(deck):
-    del (deck['description'])
-    del (deck['disciplines'])
-    del (deck['format'])
-    del (deck['link'])
-    del (deck['timestamp'])
-    del (deck['score'])
-    del (deck['cardtypes_ratio'])
-    del (deck['libraryTotal'])
-    del (deck['cryptTotal'])
-    del (deck['clan'])
-    del (deck['traits'])
+    try:
+        del (deck['description'])
+        del (deck['disciplines'])
+        del (deck['format'])
+        del (deck['link'])
+        del (deck['timestamp'])
+        del (deck['score'])
+        del (deck['cardtypes_ratio'])
+        del (deck['libraryTotal'])
+        del (deck['cryptTotal'])
+        del (deck['clan'])
+        del (deck['traits'])
+    except KeyError:
+        pass
 
     return (deck)
