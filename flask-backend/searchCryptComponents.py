@@ -129,6 +129,10 @@ def get_crypt_by_traits(traits, crypt):
                 if card['Banned']:
                     counter += 1
 
+            elif trait == 'non-twd':
+                if not card['Twd']:
+                    counter += 1
+
             elif re.search(r'{}'.format(trait), card['Card Text'],
                            re.IGNORECASE):
                 counter += 1

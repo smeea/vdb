@@ -24,8 +24,9 @@ function SearchLibraryFormTraits(props) {
     ['seraph', 'Seraph'],
     ['anarch', 'Anarch'],
     ['infernal', 'Infernal'],
-    ['banned', 'Banned'],
     ['burn', 'Burn Option'],
+    ['banned', 'Banned'],
+    ['non-twd', 'Not in TWD'],
   ];
 
   const traitsLeftforms = traitsLeft.map((i, index) => {

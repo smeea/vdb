@@ -192,6 +192,10 @@ def get_library_by_traits(traits, library):
                 if card['Banned']:
                     counter += 1
 
+            elif trait == 'non-twd':
+                if not card['Twd']:
+                    counter += 1
+
             elif trait == 'burn':
                 if card['Burn Option']:
                     counter += 1

@@ -20,6 +20,7 @@
 * Trait 'never in twda'
 * Random cards button to Crypt/Library
 * Multiple filters (C: Clan, Sect, L: Disciplines, Clan, Sect, Title)
+* Add release date to card
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search

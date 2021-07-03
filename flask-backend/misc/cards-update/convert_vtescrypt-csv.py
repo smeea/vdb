@@ -81,19 +81,22 @@ integer_fields = ['Id', 'Capacity'] + disciplines
 useless_fields = ['Aka']
 
 with open("vtescrypt.csv", "r", encoding='utf8') as f_csv, open(
-        "vtescrypt.json", "w", encoding='utf8') as f_json, open(
+        "vtescrypt.json", "w", encoding='utf8') as cardbase_backend_file, open(
             "cardbase_crypt.json", "w",
-            encoding='utf8') as cardbase_file, open(
+            encoding='utf8') as cardbase_frontend_file, open(
                 "vtes.json", "r", encoding='utf8') as krcg_file, open(
-                    "artistsCrypt.json", "w", encoding='utf8') as artists_file:
+                    "artistsCrypt.json", "w",
+                    encoding='utf8') as artists_file, open(
+                        "../../twda.json", "r") as twda_input:
 
     krcg_cards = json.load(krcg_file)
     reader = csv.reader(f_csv)
     fieldnames = next(reader)
     csv_cards = csv.DictReader(f_csv, fieldnames)
-    cards = []
-    card_base = {}
+    cards_backend = []
+    cards_frontend = {}
     artistsSet = set()
+    twda = json.load(twda_input)
 
     for card in csv_cards:
 
@@ -221,15 +224,66 @@ with open("vtescrypt.csv", "r", encoding='utf8') as f_csv, open(
                             card['Rulings'][i]['refs'][id] = c['rulings'][
                                 'links'][id]
 
-        card_base[card['Id']] = card.copy()
+        # Add twda info
+        card['Twd'] = False
+        for i in twda:
+            if card['Twd']:
+                continue
+            # deckid = i['id']
+            # date = int(i['date'][:4])
 
-        del card['Rulings']
-        cards.append(card)
+            for c in i['crypt']['cards']:
+                if c['id'] == card['Id']:
+                    card['Twd'] = True
+
+        # Prepare for export
+        cards_frontend[card['Id']] = {
+            'Id': card['Id'],
+            'Name': card['Name'],
+            'Clan': card['Clan'],
+            'Adv': card['Adv'],
+            'Group': card['Group'],
+            'Capacity': card['Capacity'],
+            'Card Text': card['Card Text'],
+            'Set': card['Set'],
+            'Title': card['Title'],
+            'Banned': card['Banned'],
+            'Artist': card['Artist'],
+            'ASCII Name': card['ASCII Name'],
+            'Disciplines': card['Disciplines'],
+            'Rulings': card['Rulings'],
+        }
+
+        card_backend = {
+            'Id': card['Id'],
+            'Name': card['Name'],
+            'Type': card['Type'],
+            'Clan': card['Clan'],
+            'Adv': card['Adv'],
+            'Group': card['Group'],
+            'Capacity': card['Capacity'],
+            'Card Text': card['Card Text'],
+            'Set': card['Set'],
+            'Title': card['Title'],
+            'Banned': card['Banned'],
+            'Artist': card['Artist'],
+            'ASCII Name': card['ASCII Name'],
+            'Disciplines': card['Disciplines'],
+            'Twd': card['Twd'],
+        }
+
+        cards_backend.append(card_backend)
 
     artists = sorted(artistsSet)
 
     # json.dump(cards, f_json, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
-    json.dump(cards, f_json, indent=4, separators=(',', ':'))
-    json.dump(card_base, cardbase_file, indent=4, separators=(',', ':'))
+    json.dump(cards_backend,
+              cardbase_backend_file,
+              indent=4,
+              separators=(',', ':'))
+    json.dump(cards_frontend,
+              cardbase_frontend_file,
+              indent=4,
+              separators=(',', ':'))
     json.dump(artists, artists_file, indent=4, separators=(',', ':'))
