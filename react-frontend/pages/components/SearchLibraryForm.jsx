@@ -36,6 +36,8 @@ function SearchLibraryForm(props) {
   const [preresults, setPreresults] = useState(undefined);
   const showLimit = 300;
 
+  const [disciplineFormQuantity, setDisciplineFormQuantity] = useState(1);
+
   const history = useHistory();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -76,6 +78,19 @@ function SearchLibraryForm(props) {
     }));
   };
 
+  const handleMultiSelectChange = (event, id) => {
+    const i = id.name;
+    const { name, value } = event;
+    setLibraryFormState((prevState) => {
+      const v = prevState[name];
+      v[i] = value;
+      return {
+        ...prevState,
+        [name]: v,
+      };
+    });
+  };
+
   const handleMultiChange = (event) => {
     const { name, value } = event.target;
     const newState = libraryFormState[name];
@@ -111,6 +126,7 @@ function SearchLibraryForm(props) {
     setLibraryResults(undefined);
     setPreresults(undefined);
     setShowError(false);
+    setDisciplineFormQuantity(1);
     history.push('/library');
   };
 
@@ -247,7 +263,10 @@ function SearchLibraryForm(props) {
       />
       <SearchLibraryFormDiscipline
         value={libraryFormState.discipline}
-        onChange={handleSelectChange}
+        onChange={handleMultiSelectChange}
+        setFormState={setLibraryFormState}
+        formQuantity={disciplineFormQuantity}
+        setFormQuantity={setDisciplineFormQuantity}
       />
       <SearchLibraryFormClan
         value={libraryFormState.clan}

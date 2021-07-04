@@ -1,7 +1,7 @@
 {
   "text": "",
   "type": "any",
-  "discipline": "any",
+  "discipline": ["any"],
   "blood": {
     "blood": "any",
     "moreless": "le"

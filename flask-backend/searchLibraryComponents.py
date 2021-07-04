@@ -23,12 +23,14 @@ def get_library_by_type(type, library):
     return match_cards
 
 
-def get_library_by_discipline(discipline, library):
+def get_library_by_discipline(disciplines, library):
     match_cards = []
     for card in library:
-        if (discipline in card['Discipline'].lower()) or (
-                discipline == 'none' and not card['Discipline'].lower()):
-            match_cards.append(card)
+        for discipline in disciplines:
+            if (discipline in card['Discipline'].lower()) or (
+                    discipline == 'none' and not card['Discipline'].lower()):
+                if card not in match_cards:
+                    match_cards.append(card)
 
     return match_cards
 
