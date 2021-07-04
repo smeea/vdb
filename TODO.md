@@ -14,7 +14,6 @@
 * Localized proxies and from scans
 * Narrow search by clicks (i.e. twd author)
 * Tags to deck main window
-* Random cards button to Crypt/Library
 * Multiple filters (C: Clan, Sect, L: Disciplines, Clan, Sect, Title)
 
 # MOBILE FEATURES

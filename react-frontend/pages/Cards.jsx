@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import ArrowRepeat from '../assets/images/icons/arrow-repeat.svg';
+import Dice3 from '../assets/images/icons/dice-3-fill.svg';
 import QuickSelect from './components/QuickSelect.jsx';
 import ResultCryptLayoutText from './components/ResultCryptLayoutText.jsx';
 import ResultLibraryLayoutText from './components/ResultLibraryLayoutText.jsx';
@@ -19,8 +20,10 @@ function Cards(props) {
     lang,
     isMobile,
   } = useContext(AppContext);
+
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
+  const history = useHistory();
 
   const CardImage = () => {
     if (card) {
@@ -61,6 +64,24 @@ function Cards(props) {
     }
   };
 
+  const randomCrypt = () => {
+    const id =
+      Math.floor(
+        Math.random() * Math.floor(Object.keys(cryptCardBase).length)
+      ) + 200000;
+    setCard(cryptCardBase[id]);
+    history.push(`/cards/${id}`);
+  };
+
+  const randomLibrary = () => {
+    const id =
+      Math.floor(
+        Math.random() * Math.floor(Object.keys(libraryCardBase).length)
+      ) + 100000;
+    setCard(libraryCardBase[id]);
+    history.push(`/cards/${id}`);
+  };
+
   useEffect(() => {
     if (props.id > 200000 && cryptCardBase) {
       setCard(cryptCardBase[props.id]);
@@ -78,6 +99,22 @@ function Cards(props) {
               <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
                 <Col md={8} className="px-0">
                   <QuickSelect setCard={setCard} />
+                  <div
+                    onClick={() => randomCrypt()}
+                    className="d-flex justify-content-center align-items-center float-right-top random"
+                  >
+                    <div className="float-random">
+                      <Dice3 viewBox="0 0 16 16" /> C
+                    </div>
+                  </div>
+                  <div
+                    onClick={() => randomLibrary()}
+                    className="d-flex justify-content-center align-items-center float-right-middle random"
+                  >
+                    <div className="float-random">
+                      <Dice3 viewBox="0 0 16 16" /> L
+                    </div>
+                  </div>
                 </Col>
               </Row>
             )}
@@ -122,39 +159,61 @@ function Cards(props) {
             )}
           </>
         ) : (
-          <>
-            {cryptCardBase && libraryCardBase && (
-              <Row className="align-content-center justify-content-center py-3">
-                <Col md={8}>
-                  <QuickSelect setCard={setCard} />
-                </Col>
-              </Row>
+          <Row>
+            <Col md={{ span: 8, offset: 2 }}>
+              {cryptCardBase && libraryCardBase && (
+                <Row className="align-content-center justify-content-center py-3">
+                  <Col>
+                    <QuickSelect setCard={setCard} />
+                  </Col>
+                </Row>
+              )}
+              {card && (
+                <Row className="align-content-center justify-content-center py-3">
+                  <Col md={6}>
+                    <CardImage />
+                  </Col>
+                  <Col md={6}>
+                    {card && card.Id > 200000 && (
+                      <ResultCryptLayoutText
+                        card={card}
+                        setImageSet={setImageSet}
+                      />
+                    )}
+                    {card && card.Id < 200000 && (
+                      <ResultLibraryLayoutText
+                        card={card}
+                        setImageSet={setImageSet}
+                      />
+                    )}
+                    <div className="pt-3">
+                      <ButtonCardCopyUrl id={card.Id} />
+                    </div>
+                  </Col>
+                </Row>
+              )}
+            </Col>
+            {!isMobile && (
+              <Col>
+                <div className="py-3 px-4">
+                  <Button
+                    variant="outline-secondary"
+                    onClick={() => randomCrypt()}
+                    block
+                  >
+                    <Dice3 /> Crypt
+                  </Button>
+                  <Button
+                    variant="outline-secondary"
+                    onClick={() => randomLibrary()}
+                    block
+                  >
+                    <Dice3 /> Library
+                  </Button>
+                </div>
+              </Col>
             )}
-            {card && (
-              <Row className="align-content-center justify-content-center py-3">
-                <Col md={4}>
-                  <CardImage />
-                </Col>
-                <Col md={4}>
-                  {card && card.Id > 200000 && (
-                    <ResultCryptLayoutText
-                      card={card}
-                      setImageSet={setImageSet}
-                    />
-                  )}
-                  {card && card.Id < 200000 && (
-                    <ResultLibraryLayoutText
-                      card={card}
-                      setImageSet={setImageSet}
-                    />
-                  )}
-                  <div className="pt-3">
-                    <ButtonCardCopyUrl id={card.Id} />
-                  </div>
-                </Col>
-              </Row>
-            )}
-          </>
+          </Row>
         )}
       </>
     </Container>
