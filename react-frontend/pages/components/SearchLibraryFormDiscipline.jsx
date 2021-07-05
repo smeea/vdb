@@ -1,9 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
+import Select from 'react-select';
 import Plus from '../../assets/images/icons/plus.svg';
 import Dash from '../../assets/images/icons/dash.svg';
-import Select from 'react-select';
 import AppContext from '../../context/AppContext.js';
+import AdditionalForms from './SearchLibraryFormAdditionalForms.jsx';
 
 function SearchLibraryFormDiscipline(props) {
   const { isMobile } = useContext(AppContext);
@@ -84,49 +85,6 @@ function SearchLibraryFormDiscipline(props) {
     }
   });
 
-  const Forms = () => {
-    const forms = [];
-    for (let i = 1; i < props.formQuantity; i++) {
-      forms.push(
-        <Row key={i} className="py-1 pl-1 mx-0 align-items-center">
-          <Col xs={3} className="d-flex justify-content-end pr-1">
-            {props.formQuantity > 1 && props.formQuantity == i + 1 && (
-              <>
-                <Button
-                  className="add-form"
-                  variant="outline-secondary"
-                  onClick={() => delForm()}
-                >
-                  <Dash />
-                </Button>
-                <Button
-                  className="add-form"
-                  variant="outline-secondary"
-                  onClick={() => addForm()}
-                >
-                  <Plus />
-                </Button>
-              </>
-            )}
-          </Col>
-          <Col xs={9} className="d-inline px-0">
-            <Select
-              classNamePrefix="react-select"
-              options={options}
-              isSearchable={!isMobile}
-              name={i}
-              value={options.find(
-                (obj) => obj.value === props.value[i].toLowerCase()
-              )}
-              onChange={props.onChange}
-            />
-          </Col>
-        </Row>
-      );
-    }
-    return <>{forms}</>;
-  };
-
   const addForm = () => {
     props.setFormState((prevState) => {
       const v = prevState.discipline;
@@ -136,35 +94,41 @@ function SearchLibraryFormDiscipline(props) {
         discipline: v,
       };
     });
-    props.setFormQuantity(props.formQuantity + 1);
   };
 
-  const delForm = () => {
+  const delForm = (i) => {
     props.setFormState((prevState) => {
       const v = prevState.discipline;
-      v.pop();
+      v.splice(i, 1);
       return {
         ...prevState,
         discipline: v,
       };
     });
-    props.setFormQuantity(props.formQuantity - 1);
   };
 
   return (
     <>
       <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={3} className="pl-0 pr-1">
+        <Col xs={3} className="px-0">
           <label className="h6 mb-0">Discipline:</label>
-          {props.formQuantity == 1 && (
-            <div className="d-flex justify-content-end">
-              {props.value[0] !== 'any' && (
+          {props.value[0] !== 'any' && (
+            <div className="d-flex justify-content-end pr-1">
+              {props.value.length == 1 ? (
                 <Button
                   className="add-form"
                   variant="outline-secondary"
                   onClick={() => addForm()}
                 >
                   <Plus />
+                </Button>
+              ) : (
+                <Button
+                  className="add-form"
+                  variant="outline-secondary"
+                  onClick={() => delForm(0)}
+                >
+                  <Dash />
                 </Button>
               )}
             </div>
@@ -179,11 +143,17 @@ function SearchLibraryFormDiscipline(props) {
             value={options.find(
               (obj) => obj.value === props.value[0].toLowerCase()
             )}
-            onChange={(event, id) => props.onChange(event, id)}
+            onChange={props.onChange}
           />
         </Col>
       </Row>
-      <Forms />
+      <AdditionalForms
+        value={props.value}
+        addForm={addForm}
+        delForm={delForm}
+        options={options}
+        onChange={props.onChange}
+      />
     </>
   );
 }

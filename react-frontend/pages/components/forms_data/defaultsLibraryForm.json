@@ -1,6 +1,6 @@
 {
   "text": "",
-  "type": "any",
+  "type": ["any"],
   "discipline": ["any"],
   "blood": {
     "blood": "any",
@@ -10,9 +10,9 @@
     "pool": "any",
     "moreless": "le"
   },
-  "clan": "any",
-  "sect": "any",
-  "title": "any",
+  "clan": ["any"],
+  "sect": ["any"],
+  "title": ["any"],
   "traits": {
     "intercept": false,
     "stealth": false,

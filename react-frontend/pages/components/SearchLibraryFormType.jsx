@@ -1,6 +1,10 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import Select from 'react-select';
+import Plus from '../../assets/images/icons/plus.svg';
+import Dash from '../../assets/images/icons/dash.svg';
+import AppContext from '../../context/AppContext.js';
+import AdditionalForms from './SearchLibraryFormAdditionalForms.jsx';
 
 function SearchLibraryFormType(props) {
   const types = [
@@ -34,9 +38,9 @@ function SearchLibraryFormType(props) {
         ),
       });
     } else {
-      const imgSrc = `${
-        process.env.ROOT_URL
-      }images/types/${i.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
+      const imgSrc = `${process.env.ROOT_URL}images/types/${i
+        .toLowerCase()
+        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
       options.push({
         value: i.toLowerCase(),
         name: 'type',
@@ -52,22 +56,76 @@ function SearchLibraryFormType(props) {
     }
   });
 
+  const addForm = () => {
+    props.setFormState((prevState) => {
+      const v = prevState.type;
+      v.push('any');
+      return {
+        ...prevState,
+        type: v,
+      };
+    });
+  };
+
+  const delForm = (i) => {
+    props.setFormState((prevState) => {
+      const v = prevState.type;
+      v.splice(i, 1);
+      return {
+        ...prevState,
+        type: v,
+      };
+    });
+  };
+
   return (
-    <Row className="py-1 pl-1 mx-0 align-items-center">
-      <Col xs={3} className="d-flex px-0">
-        <label className="h6 mb-0">Type:</label>
-      </Col>
-      <Col xs={9} className="d-inline px-0">
-        <Select
-          classNamePrefix="react-select"
-          options={options}
-          isSearchable={false}
-          name="type"
-          value={options.find((obj) => obj.value === props.value.toLowerCase())}
-          onChange={props.onChange}
-        />
-      </Col>
-    </Row>
+    <>
+      <Row className="py-1 pl-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex justify-content-between px-0">
+          <label className="h6 mb-0">Type:</label>
+          {props.value[0] !== 'any' && (
+            <div className="d-flex justify-content-end pr-1">
+              {props.value.length == 1 ? (
+                <Button
+                  className="add-form"
+                  variant="outline-secondary"
+                  onClick={() => addForm()}
+                >
+                  <Plus />
+                </Button>
+              ) : (
+                <Button
+                  className="add-form"
+                  variant="outline-secondary"
+                  onClick={() => delForm(0)}
+                >
+                  <Dash />
+                </Button>
+              )}
+            </div>
+          )}
+        </Col>
+        <Col xs={9} className="d-inline px-0">
+          <Select
+            classNamePrefix="react-select"
+            options={options}
+            isSearchable={false}
+            name={0}
+            value={options.find(
+              (obj) => obj.value === props.value[0].toLowerCase()
+            )}
+            onChange={props.onChange}
+          />
+        </Col>
+      </Row>
+      <AdditionalForms
+        value={props.value}
+        addForm={addForm}
+        delForm={delForm}
+        options={options}
+        onChange={props.onChange}
+      />
+    </>
   );
 }
 

@@ -36,8 +36,6 @@ function SearchLibraryForm(props) {
   const [preresults, setPreresults] = useState(undefined);
   const showLimit = 300;
 
-  const [disciplineFormQuantity, setDisciplineFormQuantity] = useState(1);
-
   const history = useHistory();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -126,7 +124,6 @@ function SearchLibraryForm(props) {
     setLibraryResults(undefined);
     setPreresults(undefined);
     setShowError(false);
-    setDisciplineFormQuantity(1);
     history.push('/library');
   };
 
@@ -259,26 +256,28 @@ function SearchLibraryForm(props) {
       )}
       <SearchLibraryFormType
         value={libraryFormState.type}
-        onChange={handleSelectChange}
+        onChange={handleMultiSelectChange}
+        setFormState={setLibraryFormState}
       />
       <SearchLibraryFormDiscipline
         value={libraryFormState.discipline}
         onChange={handleMultiSelectChange}
         setFormState={setLibraryFormState}
-        formQuantity={disciplineFormQuantity}
-        setFormQuantity={setDisciplineFormQuantity}
       />
       <SearchLibraryFormClan
         value={libraryFormState.clan}
-        onChange={handleSelectChange}
+        onChange={handleMultiSelectChange}
+        setFormState={setLibraryFormState}
       />
       <SearchLibraryFormSect
         value={libraryFormState.sect}
-        onChange={handleSelectChange}
+        onChange={handleMultiSelectChange}
+        setFormState={setLibraryFormState}
       />
       <SearchLibraryFormTitle
         value={libraryFormState.title}
-        onChange={handleSelectChange}
+        onChange={handleMultiSelectChange}
+        setFormState={setLibraryFormState}
       />
       <SearchLibraryFormBloodCost
         value={libraryFormState.blood}
