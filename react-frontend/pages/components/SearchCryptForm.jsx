@@ -79,6 +79,19 @@ function SearchCryptForm(props) {
     }));
   };
 
+  const handleMultiSelectChange = (event, id) => {
+    const i = id.name;
+    const { name, value } = event;
+    setCryptFormState((prevState) => {
+      const v = prevState[name];
+      v[i] = value;
+      return {
+        ...prevState,
+        [name]: v,
+      };
+    });
+  };
+
   const handleMultiChange = (event) => {
     const { name, value } = event.target;
     const newState = cryptFormState[name];
@@ -284,11 +297,13 @@ function SearchCryptForm(props) {
       />
       <SearchCryptFormClan
         value={cryptFormState.clan}
-        onChange={handleSelectChange}
+        onChange={handleMultiSelectChange}
+        setFormState={setCryptFormState}
       />
       <SearchCryptFormSect
         value={cryptFormState.sect}
-        onChange={handleSelectChange}
+        onChange={handleMultiSelectChange}
+        setFormState={setCryptFormState}
       />
       <SearchCryptFormVotes
         value={cryptFormState.votes}

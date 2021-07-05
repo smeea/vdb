@@ -41,8 +41,8 @@
     "capacity": "any",
     "moreless": "le"
   },
-  "clan": "any",
-  "sect": "any",
+  "clan": ["any"],
+  "sect": ["any"],
   "votes": "any",
   "titles": {
     "primogen": false,

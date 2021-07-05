@@ -207,28 +207,30 @@ def get_crypt_by_capacity(request, crypt):
     return match_cards
 
 
-def get_crypt_by_clan(clan, crypt):
+def get_crypt_by_clan(clans, crypt):
     match_cards = []
     for card in crypt:
-        if card['Clan'].lower() == clan:
-            match_cards.append(card)
+        for clan in clans:
+            if card['Clan'].lower() == clan:
+                match_cards.append(card)
 
     return match_cards
 
 
-def get_crypt_by_sect(sect, crypt):
+def get_crypt_by_sect(sects, crypt):
     match_cards = []
     for card in crypt:
-        # Imbue 'sect' is defined by card['Type'], others are just 'vampire'
-        if sect == 'imbued' and card['Type'].lower() == sect:
-            match_cards.append(card)
-            continue
+        for sect in sects:
+            # Imbue 'sect' is defined by card['Type'], others are just 'vampire'
+            if sect == 'imbued' and card['Type'].lower() == sect:
+                match_cards.append(card)
+                continue
 
-        # For vampires sect is determined only by card['Text']
-        # It is another dirty hack (see trait above), but...
-        if re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect),
-                     card['Card Text'], re.IGNORECASE):
-            match_cards.append(card)
+            # For vampires sect is determined only by card['Text']
+            # It is another dirty hack (see trait above), but...
+            if re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect),
+                         card['Card Text'], re.IGNORECASE):
+                match_cards.append(card)
 
     return match_cards
 
