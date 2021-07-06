@@ -216,30 +216,35 @@ def showDeck(deckid):
         with open("twdDecksById.json", "r") as twdDecks_file:
             twdDecks = json.load(twdDecks_file)
 
-            deck = twdDecks[deckid]
-            comments = deck['description']
-            deck['description'] = 'Date: ' + deck['date'] + '\n'
-            deck['description'] += 'Players: ' + str(deck['players']) + '\n'
-            deck['description'] += 'Event: ' + deck['event'] + '\n'
-            deck['description'] += 'Location: ' + deck['location'] + '\n'
-            if comments:
-                deck['description'] += '\n' + comments
+            try:
+                deck = twdDecks[deckid]
+                comments = deck['description']
+                deck['description'] = 'Date: ' + deck['date'] + '\n'
+                deck['description'] += 'Players: ' + str(
+                    deck['players']) + '\n'
+                deck['description'] += 'Event: ' + deck['event'] + '\n'
+                deck['description'] += 'Location: ' + deck['location'] + '\n'
+                if comments:
+                    deck['description'] += '\n' + comments
 
-            deck['author'] = deck['player']
-            del (deck['player'])
-            del (deck['disciplines'])
-            del (deck['format'])
-            del (deck['event'])
-            del (deck['link'])
-            del (deck['location'])
-            del (deck['players'])
-            del (deck['timestamp'])
-            del (deck['score'])
-            del (deck['cardtypes_ratio'])
-            del (deck['libraryTotal'])
+                deck['author'] = deck['player']
+                del (deck['player'])
+                del (deck['disciplines'])
+                del (deck['format'])
+                del (deck['event'])
+                del (deck['link'])
+                del (deck['location'])
+                del (deck['players'])
+                del (deck['timestamp'])
+                del (deck['score'])
+                del (deck['cardtypes_ratio'])
+                del (deck['libraryTotal'])
 
-            decks = {deckid: deck}
-            return jsonify(decks)
+                decks = {deckid: deck}
+                return jsonify(decks)
+
+            except KeyError:
+                abort(400)
 
 
 @app.route('/api/deck/<string:deckid>', methods=['PUT'])
