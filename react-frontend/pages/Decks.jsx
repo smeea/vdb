@@ -28,7 +28,6 @@ function Decks(props) {
   const {
     deckUpdate,
     deckRouter,
-    getDecks,
     setActiveDeck,
     sharedDeck,
     setSharedDeck,
@@ -254,8 +253,11 @@ function Decks(props) {
   }, [query, props.activeDeck, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons')
+    if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons') {
       setSelectFrom(props.activeDeck.src);
+    } else if (props.activeDeck.src == 'twd' && decks && decks.length > 0) {
+      setSelectFrom('my');
+    }
 
     if (
       decks &&

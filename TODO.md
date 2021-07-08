@@ -1,7 +1,6 @@
 # FIX
 * Save scrolling position
 * Fix inventory card quantity to sync in new card window
-* Twd not to switch deck to precon
 * Update documentation for inventory
 
 # FIX MOBILE
