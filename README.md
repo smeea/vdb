@@ -82,4 +82,4 @@ There are no coding style requirements established.
 ## LICENSE
 
 MIT for everything, except:
-- Card images and game-related icons at `react-frontend/assets/images/`, which are copyrighted by Paradox Interactive AB and used under [Dark Pack](https://www.worldofdarkness.com/dark-pack) agreement.
+- Card images and game-related icons at `react-frontend/assets/images/` and card texts which are copyrighted by Paradox Interactive AB and used under [Dark Pack](https://www.worldofdarkness.com/dark-pack) agreement.
