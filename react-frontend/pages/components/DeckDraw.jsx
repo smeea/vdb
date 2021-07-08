@@ -9,7 +9,7 @@ function getRandomInt(max) {
 }
 
 function DeckDraw(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile, libraryCardBase } = useContext(AppContext);
   const initialDrawCards = (cards, quantity) => {
     let cardsTotal = 0;
     for (const i of Object.keys(cards)) {
@@ -145,6 +145,18 @@ function DeckDraw(props) {
     setRestLibrary(newRestCards);
   };
 
+  let burnedPoolTotal = 0;
+  let burnedBloodTotal = 0;
+
+  burnedLibrary.map((card) => {
+    if (card['Blood Cost'] && !isNaN(card['Blood Cost'])) {
+      burnedBloodTotal += parseInt(card['Blood Cost']);
+    }
+    if (card['Pool Cost'] && !isNaN(card['Pool Cost'])) {
+      burnedPoolTotal += parseInt(card['Pool Cost']);
+    }
+  });
+
   return (
     <>
       <Button variant="outline-secondary" onClick={handleOpenDraw} block>
@@ -171,6 +183,8 @@ function DeckDraw(props) {
           show={showDrawModal}
           handleClose={handleCloseDrawModal}
           setShowButtons={props.setShowButtons}
+          burnedPoolTotal={burnedPoolTotal}
+          burnedBloodTotal={burnedBloodTotal}
         />
       )}
     </>

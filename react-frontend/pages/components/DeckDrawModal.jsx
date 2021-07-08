@@ -193,7 +193,30 @@ function DeckDrawModal(props) {
                       <div className="d-flex align-items-center">
                         <b>{props.burnedLibrary.length}</b>
                       </div>
-                      <div />
+                      <div className="d-flex">
+                        <div
+                          className="d-flex align-items-center pr-3"
+                          title="Total Blood Cost"
+                        >
+                          <img
+                            className="cost-blood-image-results pb-1 pr-1"
+                            src={
+                              process.env.ROOT_URL + 'images/misc/bloodX.png'
+                            }
+                          />
+                          <b>{props.burnedBloodTotal}</b>
+                        </div>
+                        <div
+                          className="d-flex align-items-center pr-3"
+                          title="Total Pool Cost"
+                        >
+                          <img
+                            className="cost-pool-image-results py-1 pr-1"
+                            src={process.env.ROOT_URL + 'images/misc/poolX.png'}
+                          />
+                          <b>{props.burnedPoolTotal}</b>
+                        </div>
+                      </div>
                     </div>
                     <DeckDrawLibraryTable
                       handleClick={handleModalLibraryCardOpen}

@@ -17,7 +17,6 @@
 * Narrow search by clicks (i.e. twd author)
 * Tags to deck main window
 * Draw -1 card
-* Show cost of ash heap in draw
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search
