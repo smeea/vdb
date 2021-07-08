@@ -3,7 +3,6 @@
 * Autoswitch to imported deck
 * Fix inventory card quantity to sync in new card window
 * Twd not to switch deck to precon
-* Mobile burger buttons to close menu
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
@@ -16,7 +15,6 @@
 * Localized proxies and from scans
 * Narrow search by clicks (i.e. twd author)
 * Tags to deck main window
-* Draw -1 card
 
 # MOBILE FEATURES
 * If no results but url on mobile to run search

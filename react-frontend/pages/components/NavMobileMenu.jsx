@@ -30,13 +30,21 @@ const NavMobileMenu = (props) => {
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
             <Popover {...props} className="navMenu mobile">
               <Popover.Content>
-                <NavLink to="/account" className="nav-link px-2 py-1">
+                <NavLink
+                  to="/account"
+                  onClick={() => setShowMenu(false)}
+                  className="nav-link px-2 py-1"
+                >
                   <div className="d-flex align-items-center main-font">
                     <PersonFill />
                     <div className="pl-2">{username ? 'Account' : 'Login'}</div>
                   </div>
                 </NavLink>
-                <NavLink to="/about" className="nav-link px-2 py-1">
+                <NavLink
+                  to="/about"
+                  onClick={() => setShowMenu(false)}
+                  className="nav-link px-2 py-1"
+                >
                   <div className="d-flex align-items-center main-font">
                     <InfoCircleFill />
                     <div className="pl-2">About</div>
@@ -44,22 +52,16 @@ const NavMobileMenu = (props) => {
                 </NavLink>
                 <div
                   className="d-flex align-items-center px-2 py-1"
-                  onClick={() => toggleTheme()}
+                  onClick={() => {
+                    toggleTheme();
+                    setShowMenu(false);
+                  }}
                 >
-                  {isDarkTheme ? (
-                    <>
-                      <MoonFill />
-                      <div className="pl-2">Dark Theme</div>
-                    </>
-                  ) : (
-                    <>
-                      <SunFill />
-                      <div className="pl-2">Light Theme</div>
-                    </>
-                  )}
+                  {isDarkTheme ? <SunFill /> : <MoonFill />}
+                  <div className="pl-2">Switch Theme</div>
                 </div>
                 <div className="d-flex align-items-center justify-content-between py-2">
-                  <LanguageSelect />
+                  <LanguageSelect setShowMenu={setShowMenu} />
                 </div>
               </Popover.Content>
             </Popover>
