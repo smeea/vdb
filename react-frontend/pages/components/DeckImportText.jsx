@@ -47,8 +47,7 @@ function DeckImportText(props) {
         })
         .then(() => getDecks())
         .then(() => {
-          setActiveDeck(newDeckId);
-          isMobile && props.setShowInfo(true);
+          setActiveDeck({ src: 'my', deckid: newDeckId });
           setDeckText('');
           setSpinnerState(false);
           props.handleClose();

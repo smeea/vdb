@@ -78,14 +78,16 @@ function DeckImport(props) {
         .then((response) => response.json())
         .then((data) => (newDeckId = data.deckid))
         .then(() => getDecks())
-        .then(() => setActiveDeck({ src: 'my', deckid: newDeckId }))
+        .then(() => {
+          setActiveDeck({ src: 'my', deckid: newDeckId });
+          isMobile && props.setShowButtons(false);
+        })
         .catch((error) => setImportError(true));
     };
   };
 
   const handleCreateButton = () => {
     createNewDeck();
-    isMobile && props.setShowInfo(true);
     isMobile && props.setShowButtons(false);
   };
 
@@ -127,13 +129,11 @@ function DeckImport(props) {
         handleClose={handleCloseImportModal}
         getDecks={getDecks}
         show={showTextModal}
-        setShowInfo={props.setShowInfo}
       />
       <DeckImportAmaranth
         handleClose={handleCloseImportModal}
         getDecks={getDecks}
         show={showAmaranthModal}
-        setShowInfo={props.setShowInfo}
       />
       <ErrorOverlay
         show={createError || importError}

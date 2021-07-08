@@ -30,7 +30,6 @@ function DeckImportAmaranth(props) {
         getDeckFromUrl(deckUrl)
           .then((deck) => importDeckFromAmaranth(deck))
           .then(() => {
-            isMobile && props.setShowInfo(true);
             setDeckUrl('');
             setSpinnerState(false);
             props.handleClose();
@@ -51,7 +50,7 @@ function DeckImportAmaranth(props) {
       cards[idReference[i]] = deck.cards[i];
     });
 
-    let newdeckid;
+    let newDeckId;
     const url = `${process.env.API_URL}decks/create`;
     const options = {
       method: 'POST',
@@ -72,9 +71,12 @@ function DeckImportAmaranth(props) {
 
     fetchPromise
       .then((response) => response.json())
-      .then((data) => (newdeckid = data.deckid))
+      .then((data) => (newDeckId = data.deckid))
       .then(() => getDecks())
-      .then(() => setActiveDeck(newdeckid))
+      .then(() => {
+        setActiveDeck({ src: 'my', deckid: newDeckId });
+      })
+
       .catch((error) => setImportError(true));
   };
 

@@ -1,8 +1,8 @@
 # FIX
 * Save scrolling position
-* Autoswitch to imported deck
 * Fix inventory card quantity to sync in new card window
 * Twd not to switch deck to precon
+* Update documentation for inventory
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
