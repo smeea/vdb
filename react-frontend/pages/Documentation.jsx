@@ -337,18 +337,17 @@ function Documentation(props) {
               <ul>
                 <li>
                   After you set status for your decks (and of course you can
-                  change it any time), additional ({`'used'`}) column in Search
-                  and Inventory pages will be filled with used card quantity in
-                  Fixed (total of all Fixed decks, as you dont reuse these
-                  cards) and maximum of Flexible in one deck (as you are ready
-                  to share them between decks).
+                  change it any time), you can turn on Inventory Mode and hover
+                  over card quantity in Deck and Search to see additional (
+                  {`'used'`}) information about the card in your Inventory and
+                  Decks - Fixed (total of all Fixed decks, as you dont reuse
+                  these cards) and maximum of Flexible in one deck (as you are
+                  ready to share them between decks). Same information is
+                  available as second column in Inventory.
                 </li>
                 <li>
                   If you have less cards in inventory than you use (total fixed
                   + maximum flexible), then card quantity highlighted in red
-                </li>
-                <li>
-                  You can hover mouse over card quantity for more details.
                 </li>
                 <li>
                   Cards from the decks you {`'use'`} (Fixed or Flexible) are
