@@ -81,6 +81,15 @@ function DeckDrawModal(props) {
                     </b>
                   </div>
                   <div className="d-flex">
+                    <div className="pr-1">
+                      <Button
+                        variant="outline-secondary"
+                        onClick={() => props.handleCryptHandSize(-1)}
+                        disabled={props.drawedCrypt.length < 1}
+                      >
+                        -1
+                      </Button>
+                    </div>
                     <Button
                       variant="outline-secondary"
                       onClick={props.handleReDrawCrypt}
@@ -93,7 +102,7 @@ function DeckDrawModal(props) {
                     <div className="pl-1">
                       <Button
                         variant="outline-secondary"
-                        onClick={props.handleDrawOneCrypt}
+                        onClick={() => props.handleCryptHandSize(1)}
                         disabled={props.restCrypt.length < 1}
                       >
                         +1
@@ -126,6 +135,15 @@ function DeckDrawModal(props) {
                   </b>
                 </div>
                 <div className="d-flex">
+                  <div className="pr-1">
+                    <Button
+                      variant="outline-secondary"
+                      onClick={() => props.handleLibraryHandSize(-1)}
+                      disabled={props.drawedLibrary.length < 1}
+                    >
+                      -1
+                    </Button>
+                  </div>
                   <Button
                     variant="outline-secondary"
                     onClick={props.handleReDrawLibrary}
@@ -136,7 +154,7 @@ function DeckDrawModal(props) {
                   <div className="pl-1">
                     <Button
                       variant="outline-secondary"
-                      onClick={props.handleDrawOneLibrary}
+                      onClick={() => props.handleLibraryHandSize(1)}
                       disabled={props.restLibrary.length < 1}
                     >
                       +1

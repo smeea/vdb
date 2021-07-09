@@ -13,7 +13,6 @@
 * Localized proxies and from scans
 * Narrow search by clicks (i.e. twd author)
 * Tags to deck main window
-* Draw +-1 on hooks
 * Update cards to KS
 
 # MOBILE FEATURES

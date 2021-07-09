@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import Dice3 from '../../assets/images/icons/dice-3-fill.svg';
 import DeckDrawModal from './DeckDrawModal.jsx';
@@ -9,40 +9,10 @@ function getRandomInt(max) {
 }
 
 function DeckDraw(props) {
-  const { isMobile, libraryCardBase } = useContext(AppContext);
-  const initialDrawCards = (cards, quantity) => {
-    let cardsTotal = 0;
-    for (const i of Object.keys(cards)) {
-      cardsTotal += cards[i].q;
-    }
-
-    if (quantity <= cardsTotal) {
-      const restArray = [];
-      const drawArray = [];
-
-      Object.keys(cards).map((card) => {
-        let q = cards[card].q;
-        while (q > 0) {
-          q -= 1;
-          restArray.push(cards[card].c);
-        }
-      });
-
-      while (quantity > 0) {
-        const randomId = getRandomInt(restArray.length);
-        drawArray.push(restArray[randomId]);
-        restArray.splice(randomId, 1);
-        quantity -= 1;
-      }
-
-      return [drawArray, restArray];
-    } else {
-      return [[], []];
-    }
-  };
+  const { isMobile } = useContext(AppContext);
 
   const drawCards = (cards, quantity) => {
-    const restArray = cards;
+    const restArray = [...cards];
     const drawArray = [];
 
     while (quantity > 0) {
@@ -54,15 +24,85 @@ function DeckDraw(props) {
     return [drawArray, restArray];
   };
 
+  const [crypt, setCrypt] = useState(undefined);
+  const [library, setLibrary] = useState(undefined);
   const [showDrawModal, setShowDrawModal] = useState(undefined);
+  const [libraryHandSize, setLibraryHandSize] = useState(7);
+  const [cryptHandSize, setCryptHandSize] = useState(4);
   const [cryptTotal, setCryptTotal] = useState(undefined);
   const [libraryTotal, setLibraryTotal] = useState(undefined);
   const [restCrypt, setRestCrypt] = useState(undefined);
   const [restLibrary, setRestLibrary] = useState(undefined);
-  const [drawedCrypt, setDrawedCrypt] = useState(undefined);
-  const [drawedLibrary, setDrawedLibrary] = useState(undefined);
+  const [drawedCrypt, setDrawedCrypt] = useState([]);
+  const [drawedLibrary, setDrawedLibrary] = useState([]);
   const [burnedCrypt, setBurnedCrypt] = useState([]);
   const [burnedLibrary, setBurnedLibrary] = useState([]);
+
+  useEffect(() => {
+    if (Object.keys(props.crypt).length > 0) {
+      let total = 0;
+      const arr = [];
+      Object.keys(props.crypt).map((card) => {
+        total += props.crypt[card].q;
+        for (let i = 0; i < props.crypt[card].q; i++) {
+          arr.push(props.crypt[card].c);
+        }
+      });
+      setCryptTotal(total);
+      setCrypt(arr);
+      setRestCrypt(crypt);
+    }
+  }, [props.crypt]);
+
+  useEffect(() => {
+    if (Object.keys(props.library).length > 0) {
+      let total = 0;
+      const arr = [];
+      Object.keys(props.library).map((card) => {
+        total += props.library[card].q;
+        for (let i = 0; i < props.library[card].q; i++) {
+          arr.push(props.library[card].c);
+        }
+      });
+      setLibraryTotal(total);
+      setLibrary(arr);
+      setRestLibrary(library);
+    }
+  }, [props.library]);
+
+  useEffect(() => {
+    if (restCrypt) {
+      if (drawedCrypt.length < cryptHandSize) {
+        const diff = cryptHandSize - drawedCrypt.length;
+        const [draw, rest] = drawCards(restCrypt, diff);
+        setDrawedCrypt([...drawedCrypt, ...draw]);
+        setRestCrypt(rest);
+      } else if (drawedCrypt.length > cryptHandSize) {
+        const diff = drawedCrypt.length - cryptHandSize;
+        const overhead = drawedCrypt.slice(-diff);
+        setDrawedCrypt([...drawedCrypt.slice(0, drawedCrypt.length - diff)]);
+        setRestCrypt([...restCrypt, ...overhead]);
+      }
+    }
+  }, [restCrypt, cryptHandSize]);
+
+  useEffect(() => {
+    if (restLibrary) {
+      if (drawedLibrary.length < libraryHandSize) {
+        const diff = libraryHandSize - drawedLibrary.length;
+        const [draw, rest] = drawCards(restLibrary, diff);
+        setDrawedLibrary([...drawedLibrary, ...draw]);
+        setRestLibrary(rest);
+      } else if (drawedLibrary.length > libraryHandSize) {
+        const diff = drawedLibrary.length - libraryHandSize;
+        const overhead = drawedLibrary.slice(-diff);
+        setDrawedLibrary([
+          ...drawedLibrary.slice(0, drawedLibrary.length - diff),
+        ]);
+        setRestLibrary([...restLibrary, ...overhead]);
+      }
+    }
+  }, [restLibrary, libraryHandSize]);
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
@@ -72,58 +112,35 @@ function DeckDraw(props) {
   const handleOpenDraw = () => {
     setBurnedCrypt([]);
     setBurnedLibrary([]);
-
-    const [drawedCrypt, restCrypt] = initialDrawCards(props.crypt, 4);
-    setDrawedCrypt(drawedCrypt);
-    setRestCrypt(restCrypt);
-    setCryptTotal(restCrypt.length + drawedCrypt.length);
-
-    const [drawedLibrary, restLibrary] = initialDrawCards(props.library, 7);
-    setDrawedLibrary(drawedLibrary);
-    setRestLibrary(restLibrary);
-    setLibraryTotal(restLibrary.length + drawedLibrary.length);
-
-    if (drawedCrypt || drawedLibrary) {
-      setShowDrawModal(true);
-    }
+    setDrawedCrypt([]);
+    setDrawedLibrary([]);
+    setRestCrypt(crypt);
+    setRestLibrary(library);
+    setShowDrawModal(true);
   };
 
   const handleReDrawCrypt = () => {
-    const allCards = [...drawedCrypt, ...restCrypt, ...burnedCrypt];
-    const [drawedCards, restCards] = drawCards(allCards, 4);
-    setDrawedCrypt(drawedCards);
-    setRestCrypt(restCards);
+    setCryptHandSize(4);
+    const [draw, rest] = drawCards(crypt, 4);
+    setDrawedCrypt(draw);
+    setRestCrypt(rest);
     setBurnedCrypt([]);
   };
 
   const handleReDrawLibrary = () => {
-    const allCards = [...drawedLibrary, ...restLibrary, ...burnedLibrary];
-    const [drawedCards, restCards] = drawCards(allCards, 7);
-    setDrawedLibrary(drawedCards);
-    setRestLibrary(restCards);
+    setLibraryHandSize(7);
+    const [draw, rest] = drawCards(library, 7);
+    setDrawedLibrary(draw);
+    setRestLibrary(rest);
     setBurnedLibrary([]);
   };
 
-  const handleDrawCryptOne = () => {
-    let newDrawedCards = [];
-    let newRestCards = [];
-    if (restCrypt.length > 0) {
-      [newDrawedCards, newRestCards] = drawCards(restCrypt, 1);
-    }
-    const allDrawedCards = [...drawedCrypt, ...newDrawedCards];
-    setDrawedCrypt(allDrawedCards);
-    setRestCrypt(newRestCards);
+  const handleCryptHandSize = (q) => {
+    setCryptHandSize(cryptHandSize + q);
   };
 
-  const handleDrawLibraryOne = () => {
-    let newDrawedCards = [];
-    let newRestCards = [];
-    if (restLibrary.length > 0) {
-      [newDrawedCards, newRestCards] = drawCards(restLibrary, 1);
-    }
-    const allDrawedCards = [...drawedLibrary, ...newDrawedCards];
-    setDrawedLibrary(allDrawedCards);
-    setRestLibrary(newRestCards);
+  const handleLibraryHandSize = (q) => {
+    setLibraryHandSize(libraryHandSize + q);
   };
 
   const burnCrypt = (index) => {
@@ -172,8 +189,8 @@ function DeckDraw(props) {
           drawedLibrary={drawedLibrary}
           handleReDrawCrypt={handleReDrawCrypt}
           handleReDrawLibrary={handleReDrawLibrary}
-          handleDrawOneCrypt={handleDrawCryptOne}
-          handleDrawOneLibrary={handleDrawLibraryOne}
+          handleCryptHandSize={handleCryptHandSize}
+          handleLibraryHandSize={handleLibraryHandSize}
           burnCrypt={burnCrypt}
           burnedCrypt={burnedCrypt}
           burnLibrary={burnLibrary}
