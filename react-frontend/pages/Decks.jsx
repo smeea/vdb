@@ -255,7 +255,11 @@ function Decks(props) {
   useEffect(() => {
     if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons') {
       setSelectFrom(props.activeDeck.src);
-    } else if (props.activeDeck.src == 'twd' && decks && decks.length > 0) {
+    } else if (
+      props.activeDeck.src == 'twd' &&
+      decks &&
+      Object.keys(decks).length > 0
+    ) {
       setSelectFrom('my');
     }
 
