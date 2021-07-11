@@ -147,6 +147,7 @@ function DeckDraw(props) {
     const hand = drawedCrypt;
     setBurnedCrypt([...burnedCrypt, ...hand.splice(index, 1)]);
     setDrawedCrypt(hand);
+    setCryptHandSize(cryptHandSize - 1);
   };
 
   const burnLibrary = (index) => {

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import Hammer from '../../assets/images/icons/hammer.svg';
-import icons from './forms_data/disciplineIcons.json';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
