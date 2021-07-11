@@ -142,7 +142,6 @@ function SearchCryptForm(props) {
     setCryptResults(undefined);
     setPreresults(undefined);
     setShowError(false);
-    history.push('/crypt');
   };
 
   const handleSubmitButton = (event) => {
@@ -233,6 +232,12 @@ function SearchCryptForm(props) {
       setPreresults(undefined);
     }
   };
+
+  useEffect(() => {
+    if (isMobile && query && cryptFormState) {
+      launchRequest();
+    }
+  }, [cryptFormState]);
 
   useEffect(() => {
     if (!isMobile) {

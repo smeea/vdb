@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
@@ -21,9 +22,11 @@ function ResultCrypt(props) {
     isMobile,
     isInventory,
   } = useContext(AppContext);
+
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const className = 'search-crypt-table';
+  const history = useHistory();
 
   const handleChange = (method) => {
     props.setSortMethod(method);
@@ -31,6 +34,7 @@ function ResultCrypt(props) {
   };
 
   const handleClear = () => {
+    history.push('/crypt');
     setCryptResults(undefined);
     setShowCryptSearch(!showCryptSearch);
   };

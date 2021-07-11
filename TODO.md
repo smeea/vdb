@@ -16,7 +16,6 @@
 * Update cards to KS
 
 # MOBILE FEATURES
-* If no results but url on mobile to run search
 * Offline PWA support
 
 # MAYBE LATER FEATURES
