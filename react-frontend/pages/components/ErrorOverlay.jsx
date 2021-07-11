@@ -3,7 +3,6 @@ import { Overlay } from 'react-bootstrap';
 
 const ErrorOverlay = (props) => {
   const text = props.children;
-  const modal = props.modal;
   const className = props.modal
     ? 'modal-tooltip error-tooltip'
     : 'error-tooltip';

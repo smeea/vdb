@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import Hammer from '../../assets/images/icons/hammer.svg';
-import icons from './forms_data/disciplineIcons.json';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';

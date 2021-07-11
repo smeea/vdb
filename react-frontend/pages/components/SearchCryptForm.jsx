@@ -72,7 +72,6 @@ function SearchCryptForm(props) {
 
   const handleSelectChange = (event) => {
     const { name, value } = event;
-    const newState = cryptFormState[name];
     setCryptFormState((prevState) => ({
       ...prevState,
       [name]: value,

@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Modal, Button, Row, Col, FormControl } from 'react-bootstrap';
+import { Modal, Row, Col, FormControl } from 'react-bootstrap';
 import Select from 'react-select';
-import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
-import Check from '../../assets/images/icons/check.svg';
-import X from '../../assets/images/icons/x.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -24,15 +21,8 @@ import OverlayTooltip from './OverlayTooltip.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckSelectAdvModal(props) {
-  const {
-    cryptCardBase,
-    libraryCardBase,
-    decks,
-    deckUpdate,
-    setActiveDeck,
-    isMobile,
-    inventoryMode,
-  } = useContext(AppContext);
+  const { cryptCardBase, decks, deckUpdate, setActiveDeck, inventoryMode } =
+    useContext(AppContext);
 
   const [sortMethod, setSortMethod] = useState('byName');
   const [sortedDecks, setSortedDecks] = useState([]);
@@ -110,7 +100,7 @@ function DeckSelectAdvModal(props) {
     const clans = {};
     let cryptTotal = 0;
 
-    const crypt = Object.keys(deck.crypt).map((cardid) => {
+    Object.keys(deck.crypt).map((cardid) => {
       if (cardid != 200076) {
         const clan = cryptCardBase[cardid].Clan;
 
@@ -122,12 +112,6 @@ function DeckSelectAdvModal(props) {
           cryptTotal += deck.crypt[cardid].q;
         }
       }
-
-      return <div key={cardid}>{cryptCardBase[cardid].Name}</div>;
-    });
-
-    const library = Object.keys(deck.library).map((cardid) => {
-      return <div key={cardid}>{libraryCardBase[cardid].Name}</div>;
     });
 
     let clan;

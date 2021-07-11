@@ -4,7 +4,7 @@ import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckImportAmaranth(props) {
-  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck } = useContext(AppContext);
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyUrl, setEmptyUrl] = useState(false);
   const [importError, setImportError] = useState(false);

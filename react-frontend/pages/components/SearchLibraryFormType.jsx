@@ -3,7 +3,6 @@ import { Row, Col, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import Plus from '../../assets/images/icons/plus.svg';
 import Dash from '../../assets/images/icons/dash.svg';
-import AppContext from '../../context/AppContext.js';
 import AdditionalForms from './SearchAdditionalForms.jsx';
 
 function SearchLibraryFormType(props) {

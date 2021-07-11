@@ -1,10 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import CreatableSelect from 'react-select/creatable';
-import X from '../../assets/images/icons/x.svg';
 import AppContext from '../../context/AppContext';
 
 function DeckTags(props) {
-  const { deckUpdate, isMobile } = useContext(AppContext);
+  const { deckUpdate } = useContext(AppContext);
 
   const setTags = (tags) => deckUpdate(props.deck.deckid, 'setTags', tags);
 

@@ -4,7 +4,7 @@ import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckImportText(props) {
-  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck } = useContext(AppContext);
 
   const [deckText, setDeckText] = useState('');
   const [emptyDeckText, setEmptyDeckText] = useState(false);

@@ -55,10 +55,7 @@ function App(props) {
     setDecks,
     activeDeck,
     setActiveDeck,
-    sharedDeck,
-    setSharedDeck,
     getDecks,
-    preconDecks,
     setPreconDecks,
   } = useContext(AppContext);
 

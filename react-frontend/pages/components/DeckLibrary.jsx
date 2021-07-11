@@ -93,26 +93,30 @@ function DeckLibrary(props) {
   const librarySideByType = {};
 
   for (const card in library) {
-    if (!isNaN(library[card].c['Blood Cost'])) {
-      bloodTotal += library[card].c['Blood Cost'] * library[card].q;
+    if (library.hasOwnProperty(card)) {
+      if (!isNaN(library[card].c['Blood Cost'])) {
+        bloodTotal += library[card].c['Blood Cost'] * library[card].q;
+      }
+      if (!isNaN(library[card].c['Pool Cost'])) {
+        poolTotal += library[card].c['Pool Cost'] * library[card].q;
+      }
+      libraryTotal += library[card].q;
+      const cardtype = library[card].c['Type'];
+      if (libraryByType[cardtype] === undefined) {
+        libraryByType[cardtype] = [];
+      }
+      libraryByType[cardtype].push(library[card]);
     }
-    if (!isNaN(library[card].c['Pool Cost'])) {
-      poolTotal += library[card].c['Pool Cost'] * library[card].q;
-    }
-    libraryTotal += library[card].q;
-    const cardtype = library[card].c['Type'];
-    if (libraryByType[cardtype] === undefined) {
-      libraryByType[cardtype] = [];
-    }
-    libraryByType[cardtype].push(library[card]);
   }
 
   for (const card in librarySide) {
-    const cardtype = librarySide[card].c['Type'];
-    if (librarySideByType[cardtype] === undefined) {
-      librarySideByType[cardtype] = [];
+    if (librarySide.hasOwnProperty(card)) {
+      const cardtype = librarySide[card].c['Type'];
+      if (librarySideByType[cardtype] === undefined) {
+        librarySideByType[cardtype] = [];
+      }
+      librarySideByType[cardtype].push(librarySide[card]);
     }
-    librarySideByType[cardtype].push(librarySide[card]);
   }
 
   const libraryByTypeTotal = {};

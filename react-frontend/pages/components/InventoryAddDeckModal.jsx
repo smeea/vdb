@@ -1,14 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Modal, Button, Row, Col, FormControl } from 'react-bootstrap';
+import { Modal, Row, Col, FormControl } from 'react-bootstrap';
 import Select from 'react-select';
-import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
-import Check from '../../assets/images/icons/check.svg';
-import X from '../../assets/images/icons/x.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import At from '../../assets/images/icons/at.svg';
-import Plus from '../../assets/images/icons/plus.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import DeckTags from './DeckTags.jsx';
@@ -29,7 +25,6 @@ function InventoryAddDeckModal(props) {
     inventoryLibrary,
     decks,
     deckUpdate,
-    isMobile,
   } = useContext(AppContext);
 
   const [sortMethod, setSortMethod] = useState('byName');
@@ -106,7 +101,7 @@ function InventoryAddDeckModal(props) {
     const clans = {};
     let cryptTotal = 0;
 
-    const crypt = Object.keys(deck.crypt).map((cardid) => {
+    Object.keys(deck.crypt).map((cardid) => {
       if (deck.crypt[cardid].q != 0) {
         if (
           !inventoryCrypt[cardid] ||
@@ -131,7 +126,7 @@ function InventoryAddDeckModal(props) {
       return <div key={cardid}>{cryptCardBase[cardid].Name}</div>;
     });
 
-    const library = Object.keys(deck.library).map((cardid) => {
+    Object.keys(deck.library).map((cardid) => {
       if (deck.library[cardid].q != 0) {
         if (
           !inventoryLibrary[cardid] ||
