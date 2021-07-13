@@ -14,6 +14,9 @@
 * Narrow search by clicks (i.e. twd author)
 * Tags to deck main window
 * Update cards to KS
+* Deck search
+* Deck/twd search without accents
+* Card recommendation
 
 # MOBILE FEATURES
 * Offline PWA support
