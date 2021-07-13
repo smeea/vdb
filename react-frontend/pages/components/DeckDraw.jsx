@@ -110,6 +110,8 @@ function DeckDraw(props) {
   };
 
   const handleOpenDraw = () => {
+    setCryptHandSize(4);
+    setLibraryHandSize(7);
     setBurnedCrypt([]);
     setBurnedLibrary([]);
     setDrawedCrypt([]);
