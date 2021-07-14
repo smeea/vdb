@@ -58,6 +58,35 @@ function DeckSelectAdvModal(props) {
     value: tag,
   }));
 
+  const cardInDeck = (deck, query) => {
+    const normalizedQuery = query
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '');
+
+    for (const id of Object.keys(deck.crypt)) {
+      const normalizedCardName = deck.crypt[id].c['Name']
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '');
+
+      if (normalizedCardName.includes(normalizedQuery)) {
+        return true;
+      }
+    }
+
+    for (const id of Object.keys(deck.library)) {
+      const normalizedCardName = deck.library[id].c['Name']
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '');
+
+      if (normalizedCardName.includes(normalizedQuery)) {
+        return true;
+      }
+    }
+  };
+
   useEffect(() => {
     if (Object.values(decks).length > 0) {
       let filtered = Object.values(decks);
@@ -73,8 +102,11 @@ function DeckSelectAdvModal(props) {
             .normalize('NFD')
             .replace(/\p{Diacritic}/gu, '');
 
-          if (normalizedDeckName.indexOf(normalizedNameFilter) >= 0)
+          if (normalizedDeckName.includes(normalizedNameFilter)) return true;
+
+          if (cardInDeck(deck, nameFilter)) {
             return true;
+          }
         });
       }
 
@@ -280,7 +312,7 @@ function DeckSelectAdvModal(props) {
               <th className="clan"></th>
               <th className="name">
                 <FormControl
-                  placeholder="Filter by Name"
+                  placeholder="Filter by Deck or Card Name"
                   type="text"
                   name="text"
                   autoComplete="off"

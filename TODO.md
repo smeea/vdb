@@ -13,7 +13,6 @@
 * Localized proxies and from scans
 * Tags to deck main window
 * Update cards to KS
-* Deck search
 * Card recommendation
 
 # MOBILE FEATURES
