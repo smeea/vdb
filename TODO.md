@@ -11,7 +11,6 @@
 * Show missing cards for inventory
 * Search for similar TWD decks
 * Localized proxies and from scans
-* Narrow search by clicks (i.e. twd author)
 * Tags to deck main window
 * Update cards to KS
 * Deck search

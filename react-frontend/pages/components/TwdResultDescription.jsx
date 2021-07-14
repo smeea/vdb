@@ -5,7 +5,21 @@ import DeckClone from './DeckClone.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function TwdResultDescription(props) {
-  const { username, isMobile } = useContext(AppContext);
+  const { setTwdFormState, username, isMobile } = useContext(AppContext);
+
+  const handlePlayerClick = (player) => {
+    setTwdFormState((prevState) => ({
+      ...prevState,
+      player: player,
+    }));
+  };
+
+  const handleLocationClick = (location) => {
+    setTwdFormState((prevState) => ({
+      ...prevState,
+      location: location,
+    }));
+  };
 
   return (
     <>
@@ -90,14 +104,26 @@ function TwdResultDescription(props) {
                 <td className="d-inline">
                   <b>Location</b>:
                 </td>
-                <td className="pl-2">{props.deck['location']}</td>
+                <td className="pl-2">
+                  <div
+                    className="link-like"
+                    onClick={() => handleLocationClick(props.deck['location'])}
+                  >
+                    {props.deck['location']}
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td className="d-inline">
                   <b>Player</b>:
                 </td>
                 <td className="pl-2">
-                  {props.deck['player']} <br />
+                  <div
+                    className="link-like"
+                    onClick={() => handlePlayerClick(props.deck['player'])}
+                  >
+                    {props.deck['player']} <br />
+                  </div>
                 </td>
               </tr>
               <tr>
