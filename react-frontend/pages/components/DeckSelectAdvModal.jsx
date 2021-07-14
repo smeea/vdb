@@ -64,7 +64,16 @@ function DeckSelectAdvModal(props) {
 
       if (nameFilter) {
         filtered = filtered.filter((deck) => {
-          if (deck.name.toLowerCase().indexOf(nameFilter.toLowerCase()) >= 0)
+          const normalizedNameFilter = nameFilter
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/\p{Diacritic}/gu, '');
+          const normalizedDeckName = deck.name
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/\p{Diacritic}/gu, '');
+
+          if (normalizedDeckName.indexOf(normalizedNameFilter) >= 0)
             return true;
         });
       }
