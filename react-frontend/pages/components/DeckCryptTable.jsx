@@ -31,7 +31,6 @@ function DeckCryptTable(props) {
   } = useContext(AppContext);
 
   let resultTrClass;
-  let deckInvType;
   const [modalDraw, setModalDraw] = useState(undefined);
 
   const cardRows = props.cards.map((card) => {
@@ -49,6 +48,7 @@ function DeckCryptTable(props) {
       });
     };
 
+    let deckInvType;
     let cardInvType;
     if (inventoryMode && decks[props.deckid]) {
       cardInvType = card.i;

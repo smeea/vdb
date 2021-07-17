@@ -20,6 +20,7 @@ function ResultLibrary(props) {
     setInventoryMode,
     isMobile,
     isInventory,
+    hideMissing,
   } = useContext(AppContext);
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
@@ -35,7 +36,7 @@ function ResultLibrary(props) {
   };
 
   useEffect(() => {
-    if (!props.hideMissing) {
+    if (!hideMissing) {
       setSortedCards(() => resultLibrarySort(libraryResults, props.sortMethod));
     } else {
       setSortedCards(() =>
@@ -45,7 +46,7 @@ function ResultLibrary(props) {
         )
       );
     }
-  }, [libraryResults, props.sortMethod, props.hideMissing]);
+  }, [libraryResults, props.sortMethod, hideMissing]);
 
   return (
     <>

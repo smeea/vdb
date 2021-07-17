@@ -21,6 +21,7 @@ function ResultCrypt(props) {
     setInventoryMode,
     isMobile,
     isInventory,
+    hideMissing,
   } = useContext(AppContext);
 
   const [sortedCards, setSortedCards] = useState([]);
@@ -40,7 +41,7 @@ function ResultCrypt(props) {
   };
 
   useEffect(() => {
-    if (!props.hideMissing) {
+    if (!hideMissing) {
       setSortedCards(() => resultCryptSort(cryptResults, props.sortMethod));
     } else {
       setSortedCards(() =>
@@ -50,7 +51,7 @@ function ResultCrypt(props) {
         )
       );
     }
-  }, [cryptResults, props.sortMethod, props.hideMissing]);
+  }, [cryptResults, props.sortMethod, hideMissing]);
 
   return (
     <>
