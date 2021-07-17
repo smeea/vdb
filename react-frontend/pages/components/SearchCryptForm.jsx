@@ -282,7 +282,7 @@ function SearchCryptForm(props) {
             onChange={() => setHideMissing(!hideMissing)}
           />
           <label htmlFor="hideMissing" className="custom-control-label">
-            Hide Missing in Inventory
+            Search in Inventory
           </label>
         </div>
       )}
