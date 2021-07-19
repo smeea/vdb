@@ -1,6 +1,12 @@
 # FIX
 * Save scrolling position
 * Fix inventory card quantity to sync in new card window
+* Player/location click in twd on mobile
+* Inventory mode draw card modal bug
+* Inventory buttons on mobile to close button modal
+* Improve adv deck opening speed
+* Reset set when changing card with arrows
+* Shorten deck name Adv Deck Select
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
@@ -14,6 +20,16 @@
 * Tags to deck main window
 * Update cards to KS
 * Card recommendation
+* No requirement trait to library
+* Feldb inventory import
+* Deck/revision diff
+* Save image/text hover to localStorage
+* Save inventorymode to local storage
+* Capacity filter to library
+* Search results to show correct number and auto-results if "Search in Inventory"
+* Remove location/player from TWD search
+* "Cards newer than" to set filter
+* Custom art to proxy
 
 # MOBILE FEATURES
 * Offline PWA support
