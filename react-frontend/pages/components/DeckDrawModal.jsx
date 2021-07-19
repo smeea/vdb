@@ -7,19 +7,150 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
 import DeckDrawLibraryTable from './DeckDrawLibraryTable.jsx';
+import UsedDescription from './UsedDescription.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckDrawModal(props) {
-  const { isMobile } = useContext(AppContext);
+  const {
+    decks,
+    isMobile,
+    inventoryMode,
+    inventoryCrypt,
+    inventoryLibrary,
+    usedCryptCards,
+    usedLibraryCards,
+  } = useContext(AppContext);
 
   const [modalCryptCardIdx, setModalCryptCardIdx] = useState(undefined);
   const [modalLibraryCardIdx, setModalLibraryCardIdx] = useState(undefined);
+  const [modalInventory, setModalInventory] = useState(undefined);
+
   const handleModalCryptCardOpen = (i) => {
     setModalCryptCardIdx(i);
+
+    const card = props.burnedCrypt[i];
+    let inInventory = null;
+    let softUsedMax = 0;
+    let hardUsedTotal = 0;
+    let SoftUsedDescription;
+    let HardUsedDescription;
+
+    if (inventoryMode) {
+      if (Object.keys(inventoryCrypt).includes(card['Id'].toString())) {
+        inInventory = inventoryCrypt[card['Id']].q;
+      } else {
+        inInventory = 0;
+      }
+
+      if (usedCryptCards && usedCryptCards.soft[card['Id']]) {
+        SoftUsedDescription = Object.keys(usedCryptCards.soft[card['Id']]).map(
+          (id) => {
+            if (softUsedMax < usedCryptCards.soft[card['Id']][id]) {
+              softUsedMax = usedCryptCards.soft[card['Id']][id];
+            }
+            return (
+              <UsedDescription
+                key={id}
+                q={usedCryptCards.soft[card['Id']][id]}
+                deckName={decks[id]['name']}
+                t="s"
+              />
+            );
+          }
+        );
+      }
+
+      if (usedCryptCards && usedCryptCards.hard[card['Id']]) {
+        HardUsedDescription = Object.keys(usedCryptCards.hard[card['Id']]).map(
+          (id) => {
+            hardUsedTotal += usedCryptCards.hard[card['Id']][id];
+            return (
+              <UsedDescription
+                key={id}
+                q={usedCryptCards.hard[card['Id']][id]}
+                deckName={decks[id]['name']}
+                t="h"
+              />
+            );
+          }
+        );
+      }
+    }
+
+    setModalInventory({
+      inInventory: inInventory,
+      softUsedMax: softUsedMax,
+      hardUsedTotal: hardUsedTotal,
+      usedDescription: {
+        soft: SoftUsedDescription,
+        hard: HardUsedDescription,
+      },
+    });
   };
+
   const handleModalLibraryCardOpen = (i) => {
     setModalLibraryCardIdx(i);
+
+    const card = props.burnedLibrary[i];
+    let inInventory = null;
+    let softUsedMax = 0;
+    let hardUsedTotal = 0;
+    let SoftUsedDescription;
+    let HardUsedDescription;
+
+    if (inventoryMode) {
+      if (Object.keys(inventoryLibrary).includes(card['Id'].toString())) {
+        inInventory = inventoryLibrary[card['Id']].q;
+      } else {
+        inInventory = 0;
+      }
+
+      if (usedLibraryCards && usedLibraryCards.soft[card['Id']]) {
+        SoftUsedDescription = Object.keys(
+          usedLibraryCards.soft[card['Id']]
+        ).map((id) => {
+          if (softUsedMax < usedLibraryCards.soft[card['Id']][id]) {
+            softUsedMax = usedLibraryCards.soft[card['Id']][id];
+          }
+          return (
+            <UsedDescription
+              key={id}
+              q={usedLibraryCards.soft[card['Id']][id]}
+              deckName={decks[id]['name']}
+              t="s"
+            />
+          );
+        });
+      }
+
+      if (usedLibraryCards && usedLibraryCards.hard[card['Id']]) {
+        HardUsedDescription = Object.keys(
+          usedLibraryCards.hard[card['Id']]
+        ).map((id) => {
+          hardUsedTotal += usedLibraryCards.hard[card['Id']][id];
+          return (
+            <UsedDescription
+              key={id}
+              q={usedLibraryCards.hard[card['Id']][id]}
+              deckName={decks[id]['name']}
+              t="h"
+            />
+          );
+        });
+      }
+    }
+
+    setModalInventory({
+      inInventory: inInventory,
+      softUsedMax: softUsedMax,
+      hardUsedTotal: hardUsedTotal,
+      usedDescription: {
+        soft: SoftUsedDescription,
+        hard: HardUsedDescription,
+      },
+    });
   };
+
   const handleModalCryptCardChange = (d) => {
     if (modalCryptCardIdx !== undefined) {
       const maxIdx = props.burnedCrypt.length - 1;
@@ -197,6 +328,7 @@ function DeckDrawModal(props) {
                       resultCards={props.burnedCrypt}
                       className="search-crypt-table"
                       ashHeap={true}
+                      setModalInventory={setModalInventory}
                     />
                   </div>
                 )}
@@ -258,6 +390,7 @@ function DeckDrawModal(props) {
               handleClose={() => {
                 setModalCryptCardIdx(undefined);
               }}
+              inventoryState={modalInventory}
             />
           )}
           {modalLibraryCardIdx !== undefined && (
@@ -267,6 +400,7 @@ function DeckDrawModal(props) {
               handleClose={() => {
                 setModalLibraryCardIdx(undefined);
               }}
+              inventoryState={modalInventory}
             />
           )}
         </Container>

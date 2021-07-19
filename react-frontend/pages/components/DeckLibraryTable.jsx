@@ -77,7 +77,7 @@ function DeckLibraryTable(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (inventoryMode && props.deckid) {
+    if (inventoryMode) {
       cardInvType = card.i;
 
       if (Object.keys(inventoryLibrary).includes(card.c['Id'].toString())) {

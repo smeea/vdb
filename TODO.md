@@ -1,7 +1,6 @@
 # FIX
 * Save scrolling position
 * Fix inventory card quantity to sync in new card window
-* Inventory mode draw card modal bug
 * Improve adv deck opening speed
 
 # FIX MOBILE

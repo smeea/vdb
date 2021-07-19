@@ -67,7 +67,7 @@ function DeckCryptTable(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (inventoryMode && props.deckid) {
+    if (inventoryMode) {
       if (Object.keys(inventoryCrypt).includes(card.c['Id'].toString())) {
         inInventory = inventoryCrypt[card.c['Id']].q;
       } else {
