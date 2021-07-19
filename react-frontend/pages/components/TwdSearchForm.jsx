@@ -28,6 +28,7 @@ function TwdSearchForm(props) {
   const {
     setShowTwdSearch,
     setTwdResults,
+    twdResults,
     twdFormState,
     setTwdFormState,
     cryptCardBase,
@@ -38,7 +39,6 @@ function TwdSearchForm(props) {
 
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;
-
   const history = useHistory();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
@@ -59,6 +59,66 @@ function TwdSearchForm(props) {
       });
     }
   }, [cryptCardBase, libraryCardBase]);
+
+  useEffect(() => {
+    if (isMobile && cryptCardBase && libraryCardBase && query) {
+      const input = JSON.parse(JSON.stringify(twdFormState));
+      const multiSelectForms = [
+        'disciplines',
+        'traits',
+        'cardtypes',
+        'date',
+        'players',
+        'capacity',
+        'libraryTotal',
+        'matchInventory',
+      ];
+
+      multiSelectForms.map((i) => {
+        Object.keys(input[i]).forEach(
+          (k) =>
+            (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k]
+        );
+      });
+
+      const cardsForms = ['crypt', 'library'];
+      cardsForms.map((i) => {
+        Object.keys(input[i]).forEach((k) => {
+          input[i][k] == -1 && delete input[i][k];
+        });
+      });
+
+      Object.keys(input).forEach(
+        (k) =>
+          (input[k] == 'any' ||
+            !input[k] ||
+            Object.keys(input[k]).length === 0) &&
+          delete input[k]
+      );
+
+      if (JSON.stringify(query) != JSON.stringify(input)) {
+        setTwdFormState((prevState) => {
+          const state = JSON.parse(JSON.stringify(defaults));
+          Object.keys(query).map((i) => {
+            if (typeof query[i] === 'object') {
+              Object.keys(query[i]).map((j) => {
+                state[i][j] = query[i][j];
+              });
+            } else {
+              state[i] = query[i];
+            }
+          });
+          return state;
+        });
+      }
+    }
+  }, [cryptCardBase, libraryCardBase, query]);
+
+  useEffect(() => {
+    if (isMobile && query && twdFormState) {
+      launchRequest();
+    }
+  }, [twdFormState]);
 
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
@@ -274,7 +334,7 @@ function TwdSearchForm(props) {
     if (!isMobile) {
       if (
         JSON.stringify(twdFormState) == JSON.stringify(defaults) &&
-        props.results
+        twdResults
       ) {
         setTwdResults(undefined);
       } else if (!twdFormState.event || twdFormState.event.length > 2) {

@@ -1,24 +1,40 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import TwdOpenDeckButton from './TwdOpenDeckButton.jsx';
 import DeckClone from './DeckClone.jsx';
 import AppContext from '../../context/AppContext.js';
+import defaults from './forms_data/defaultsTwdForm.json';
 
 function TwdResultDescription(props) {
   const { setTwdFormState, username, isMobile } = useContext(AppContext);
+  const history = useHistory();
+  const def = JSON.parse(JSON.stringify(defaults));
 
   const handlePlayerClick = (player) => {
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      player: player,
-    }));
+    if (isMobile) {
+      history.push(
+        `/twd?q=${encodeURIComponent(JSON.stringify({ player: player }))}`
+      );
+    } else {
+      setTwdFormState((prevState) => ({
+        ...def,
+        player: player,
+      }));
+    }
   };
 
   const handleLocationClick = (location) => {
-    setTwdFormState((prevState) => ({
-      ...prevState,
-      location: location,
-    }));
+    if (isMobile) {
+      history.push(
+        `/twd?q=${encodeURIComponent(JSON.stringify({ location: location }))}`
+      );
+    } else {
+      setTwdFormState((prevState) => ({
+        ...def,
+        location: location,
+      }));
+    }
   };
 
   return (
@@ -45,14 +61,28 @@ function TwdResultDescription(props) {
                     <td className="d-inline">
                       <b>Location</b>:
                     </td>
-                    <td className="pl-2">{props.deck['location']}</td>
+                    <td className="pl-2">
+                      <div
+                        className="link-like"
+                        onClick={() =>
+                          handleLocationClick(props.deck['location'])
+                        }
+                      >
+                        {props.deck['location']}
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td className="d-inline">
                       <b>Player</b>:
                     </td>
                     <td className="pl-2">
-                      {props.deck['player']} <br />
+                      <div
+                        className="link-like"
+                        onClick={() => handlePlayerClick(props.deck['player'])}
+                      >
+                        {props.deck['player']} <br />
+                      </div>
                     </td>
                   </tr>
                 </tbody>
