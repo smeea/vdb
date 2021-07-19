@@ -33,6 +33,11 @@ function Inventory(props) {
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
 
+  const handleShowButtons = (state) => {
+    setShowMenuButtons(state);
+    setShowFloatingButtons(!state);
+  };
+
   return (
     <Container
       className={isMobile ? 'main-container px-0' : 'main-container py-4'}
@@ -191,6 +196,7 @@ function Inventory(props) {
                   inventoryAddToState={props.inventoryAddToState}
                   setInventoryCrypt={props.setInventoryCrypt}
                   setInventoryLibrary={props.setInventoryLibrary}
+                  setShowButtons={handleShowButtons}
                 />
                 <div className="px-4 py-2">
                   <InventoryShowSelect
@@ -264,7 +270,7 @@ function Inventory(props) {
                 inventoryAddToState={props.inventoryAddToState}
                 setInventoryCrypt={props.setInventoryCrypt}
                 setInventoryLibrary={props.setInventoryLibrary}
-                setShowMenuButtons={setShowMenuButtons}
+                setShowButtons={handleShowButtons}
               />
               <div className="px-4 py-2">
                 <InventoryShowSelect
