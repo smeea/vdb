@@ -1,11 +1,9 @@
 # FIX
 * Save scrolling position
 * Fix inventory card quantity to sync in new card window
-* Player/location click in twd on mobile
 * Inventory mode draw card modal bug
 * Inventory buttons on mobile to close button modal
 * Improve adv deck opening speed
-* Reset set when changing card with arrows
 * Shorten deck name Adv Deck Select
 
 # FIX MOBILE

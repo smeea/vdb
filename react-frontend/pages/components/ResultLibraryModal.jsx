@@ -27,9 +27,11 @@ function ResultLibraryModal(props) {
   const handleKeyDown = (event) => {
     switch (event.key) {
       case 'ArrowLeft':
+        setImageSet(null);
         props.handleModalCardChange(-1);
         break;
       case 'ArrowRight':
+        setImageSet(null);
         props.handleModalCardChange(1);
         break;
       default:
