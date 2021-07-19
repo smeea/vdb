@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
@@ -22,8 +23,10 @@ function ResultLibrary(props) {
     isInventory,
     hideMissing,
   } = useContext(AppContext);
+
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
+  const history = useHistory();
 
   const handleChange = (method) => {
     props.setSortMethod(method);
@@ -31,6 +34,7 @@ function ResultLibrary(props) {
   };
 
   const handleClear = () => {
+    history.push('/library');
     setLibraryResults(undefined);
     setShowLibrarySearch(!showLibrarySearch);
   };

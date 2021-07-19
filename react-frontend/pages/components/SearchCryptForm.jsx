@@ -24,6 +24,7 @@ function SearchCryptForm(props) {
   const {
     isInventory,
     setShowCryptSearch,
+    cryptResults,
     setCryptResults,
     cryptFormState,
     setCryptFormState,
@@ -243,7 +244,7 @@ function SearchCryptForm(props) {
     if (!isMobile) {
       if (
         JSON.stringify(cryptFormState) == JSON.stringify(defaults) &&
-        props.results
+        cryptResults
       ) {
         setCryptResults(undefined);
       } else if (!cryptFormState.text || cryptFormState.text.length > 2) {

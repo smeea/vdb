@@ -24,6 +24,7 @@ function SearchLibraryForm(props) {
     isInventory,
     inventoryMode,
     setShowLibrarySearch,
+    libraryResults,
     setLibraryResults,
     libraryFormState,
     setLibraryFormState,
@@ -124,7 +125,6 @@ function SearchLibraryForm(props) {
     setLibraryResults(undefined);
     setPreresults(undefined);
     setShowError(false);
-    history.push('/library');
   };
 
   const handleSubmitButton = (event) => {
@@ -207,10 +207,16 @@ function SearchLibraryForm(props) {
   };
 
   useEffect(() => {
+    if (isMobile && query && libraryFormState) {
+      launchRequest();
+    }
+  }, [libraryFormState]);
+
+  useEffect(() => {
     if (!isMobile) {
       if (
         JSON.stringify(libraryFormState) == JSON.stringify(defaults) &&
-        props.results
+        libraryResults
       ) {
         setLibraryResults(undefined);
       } else if (!libraryFormState.text || libraryFormState.text.length > 2) {
