@@ -4,7 +4,6 @@
 * Inventory mode draw card modal bug
 * Inventory buttons on mobile to close button modal
 * Improve adv deck opening speed
-* Shorten deck name Adv Deck Select
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
