@@ -9,36 +9,64 @@ def letters_to_ascii(text):
                    if unicodedata.category(c) != 'Mn')
 
 
-disciplines = [
-    'Auspex',
-    'Abombwe',
-    'Animalism',
-    'Celerity',
-    'Chimerstry',
-    'Daimoinon',
-    'Dementation',
-    'Dominate',
-    'Fortitude',
-    'Melpominee',
-    'Mytherceria',
-    'Necromancy',
-    'Obeah',
-    'Obfuscate',
-    'Obtenebration',
-    'Potence',
-    'Presence',
-    'Protean',
-    'Serpentis',
-    'Sanguinus',
-    'Spiritus',
-    'Temporis',
-    'Thanatosis',
-    'Thaumaturgy',
-    'Quietus',
-    'Valeren',
-    'Vicissitude',
-    'Visceratika',
-]
+disciplines = {
+    'aus': ['Auspex', 1],
+    'abo': ['Abombwe', 1],
+    'ani': ['Animalism', 1],
+    'cel': ['Celerity', 1],
+    'chi': ['Chimerstry', 1],
+    'dai': ['Daimoinon', 1],
+    'dem': ['Dementation', 1],
+    'dom': ['Dominate', 1],
+    'for': ['Fortitude', 1],
+    'mel': ['Melpominee', 1],
+    'myt': ['Mytherceria', 1],
+    'nec': ['Necromancy', 1],
+    'obe': ['Obeah', 1],
+    'obf': ['Obfuscate', 1],
+    'obt': ['Obtenebration', 1],
+    'pot': ['Potence', 1],
+    'pre': ['Presence', 1],
+    'pro': ['Protean', 1],
+    'ser': ['Serpentis', 1],
+    'san': ['Sanguinus', 1],
+    'spi': ['Spiritus', 1],
+    'tem': ['Temporis', 1],
+    'tha': ['Thaumaturgy', 1],
+    'thn': ['Thanatosis', 1],
+    'qui': ['Quietus', 1],
+    'val': ['Valeren', 1],
+    'vic': ['Vicissitude', 1],
+    'vis': ['Visceratika', 1],
+    'AUS': ['Auspex', 2],
+    'ABO': ['Abombwe', 2],
+    'ANI': ['Animalism', 2],
+    'CEL': ['Celerity', 2],
+    'CHI': ['Chimerstry', 2],
+    'DAI': ['Daimoinon', 2],
+    'DEM': ['Dementation', 2],
+    'DOM': ['Dominate', 2],
+    'FOR': ['Fortitude', 2],
+    'MEL': ['Melpominee', 2],
+    'MYT': ['Mytherceria', 2],
+    'NEC': ['Necromancy', 2],
+    'OBE': ['Obeah', 2],
+    'OBF': ['Obfuscate', 2],
+    'OBT': ['Obtenebration', 2],
+    'POT': ['Potence', 2],
+    'PRE': ['Presence', 2],
+    'PRO': ['Protean', 2],
+    'SER': ['Serpentis', 2],
+    'SAN': ['Sanguinus', 2],
+    'SPI': ['Spiritus', 2],
+    'TEM': ['Temporis', 2],
+    'THA': ['Thaumaturgy', 2],
+    'THN': ['Thanatosis', 2],
+    'QUI': ['Quietus', 2],
+    'VAL': ['Valeren', 2],
+    'VIC': ['Vicissitude', 2],
+    'VIS': ['Visceratika', 2],
+}
 
 virtues = {
     'def': 'Defense',
@@ -47,7 +75,7 @@ virtues = {
     'mar': 'Martyrdom',
     'red': 'Redemption',
     'ven': 'Vengeance',
-    'vis': 'Vision',
+    'viz': 'Vision',
 }
 
 artist_fixes = {
@@ -77,10 +105,10 @@ artist_fixes = {
 }
 
 # Groups are not integers because of ANY-group vampires (e.g. Anarch Convert)
-integer_fields = ['Id', 'Capacity'] + disciplines
+integer_fields = ['Id', 'Capacity']
 useless_fields = ['Aka']
 
-with open("vtescrypt.csv", "r", encoding='utf8') as f_csv, open(
+with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
         "vtescrypt.json", "w", encoding='utf8') as cardbase_backend_file, open(
             "cardbase_crypt.json", "w",
             encoding='utf8') as cardbase_frontend_file, open(
@@ -90,9 +118,11 @@ with open("vtescrypt.csv", "r", encoding='utf8') as f_csv, open(
                         "../../twda.json", "r") as twda_input:
 
     krcg_cards = json.load(krcg_file)
-    reader = csv.reader(f_csv)
-    fieldnames = next(reader)
-    csv_cards = csv.DictReader(f_csv, fieldnames)
+
+    reader_main = csv.reader(main_csv)
+    fieldnames_main = next(reader_main)
+    csv_cards = csv.DictReader(main_csv, fieldnames_main)
+
     cards_backend = []
     cards_frontend = {}
     artistsSet = set()
@@ -119,7 +149,8 @@ with open("vtescrypt.csv", "r", encoding='utf8') as f_csv, open(
 
             precons = set[1].split('/')
 
-            # Fix for KoT & HttB Reprints (marked in CSV as KoT, but have only bundles named "A" or "B" not existing in original KoT)
+            # Fix for KoT & HttB Reprints (marked in CSV as KoT, but have only
+            # bundles named "A" or "B" not existing in original KoT)
             if set[0] in ["KoT", "HttB"]:
                 counter = 0
                 for precon in precons:
@@ -169,25 +200,22 @@ with open("vtescrypt.csv", "r", encoding='utf8') as f_csv, open(
 
         # Remove empty disciplines/virtues
         if card['Type'] == 'Imbued':
-            card['Virtues'] = {}
-            for virtue in virtues:
-                if virtue in card['Disciplines']:
-                    card['Virtues'][virtues[virtue]] = 1
+            card_disciplines_letters = card['Disciplines'].split()
+            card_disciplines = {}
+            for d in card_disciplines_letters:
+                if d in virtues:
+                    card_disciplines[virtues[d]] = 1
 
-            del card['Disciplines']
-            card['Disciplines'] = card['Virtues']
-            del card['Virtues']
-            for d in disciplines:
-                del card[d]
+            card['Disciplines'] = card_disciplines
+
         elif card['Type'] == 'Vampire':
-            del card['Disciplines']
-            card['Disciplines'] = {}
-            for k, v in card.items():
-                if k in disciplines and v > 0:
-                    card['Disciplines'][k] = v
+            card_disciplines_letters = card['Disciplines'].split()
+            card_disciplines = {}
+            for d in card_disciplines_letters:
+                if d in disciplines:
+                    card_disciplines[disciplines[d][0]] = disciplines[d][1]
 
-            for d in disciplines:
-                del card[d]
+            card['Disciplines'] = card_disciplines
 
         artists = []
         for artist in re.split('; | & ', card['Artist']):

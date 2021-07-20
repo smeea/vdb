@@ -36,27 +36,42 @@ artist_fixes = {
 }
 
 integer_fields = ['Id']
-useless_fields = ['Aka', 'Flavor Text', 'Draft']
+useless_fields = ['Aka', 'Flavor Text']
 
-with open("vteslib.csv", "r", encoding='utf8') as f_csv, open(
-        "vteslib.json", "w", encoding='utf8') as cardbase_backend_file, open(
-            "cardbase_lib.json", "w",
-            encoding='utf8') as cardbase_frontend_file, open(
-                "vtes.json", "r", encoding='utf8') as krcg_file, open(
-                    "artistsLib.json", "w",
-                    encoding='utf8') as artists_file, open(
-                        "../../twda.json", "r") as twda_input:
+with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
+        "vteslibmeta.csv", "r", encoding='utf8') as meta_csv, open(
+            "vteslib.json", "w",
+            encoding='utf8') as cardbase_backend_file, open(
+                "cardbase_lib.json", "w",
+                encoding='utf8') as cardbase_frontend_file, open(
+                    "vtes.json", "r", encoding='utf8') as krcg_file, open(
+                        "artistsLib.json", "w",
+                        encoding='utf8') as artists_file, open(
+                            "../../twda.json", "r") as twda_input:
 
     krcg_cards = json.load(krcg_file)
-    reader = csv.reader(f_csv)
-    fieldnames = next(reader)
-    csv_cards = csv.DictReader(f_csv, fieldnames)
+
+    reader_main = csv.reader(main__csv)
+    fieldnames_main = next(reader_main)
+    csv_cards = csv.DictReader(main__csv, fieldnames_main)
+
+    reader_meta = csv.reader(meta_csv)
+    fieldnames_meta = next(reader_meta)
+    csv_meta = csv.DictReader(meta_csv, fieldnames_meta)
+
     cards_backend = []
     cards_frontend = {}
     artistsSet = set()
     twda = json.load(twda_input)
 
     for card in csv_cards:
+
+        # Add Requirements
+        for c in csv_meta:
+            if c['Id'] == card['Id']:
+                card['Requirement'] = c['Requirement']
+        if 'Requirement' not in card:
+            card['Requirement'] = ''
 
         # Convert some fields values to integers
         for k in integer_fields:

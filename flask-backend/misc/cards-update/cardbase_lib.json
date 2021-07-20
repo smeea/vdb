@@ -242,7 +242,7 @@
                 "PSal":"3"
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -376,7 +376,7 @@
                 "R":true
             }
         },
-        "Requirement":"non-sterile",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -419,7 +419,7 @@
                 "R":true
             }
         },
-        "Requirement":"1 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Richard Thomas"
@@ -484,7 +484,7 @@
                 "U":true
             }
         },
-        "Requirement":"justicar,inner circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Scott Kirschner"
@@ -828,13 +828,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\n[ani] Only usable during a bleed action. +1 bleed (limited).\n[chi] Only usable during the polling step of a political action. This anarch gets +3 votes.\n[pot] If this anarch is blocked, they get +1 strength in the resulting combat.",
+        "Card Text":"Requires an Anarch.\n[ani] Only usable during a bleed action. +1 bleed (limited).\n[chi] Only usable during the polling step of a political action. This Anarch gets +3 votes.\n[pot] If this Anarch is blocked, they get +1 strength during the resulting combat.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -1393,7 +1394,7 @@
                 "R":true
             }
         },
-        "Requirement":"justicar,inner circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Monte Moore"
@@ -1430,7 +1431,7 @@
                 "R":true
             }
         },
-        "Requirement":"2 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Thomas Denmark"
@@ -1911,7 +1912,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -2038,7 +2039,7 @@
                 "PAB":"2"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -2062,7 +2063,7 @@
                 "R":true
             }
         },
-        "Requirement":"non-anarch,titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -2187,7 +2188,7 @@
                 "PAl":"2"
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Casper"
@@ -2261,7 +2262,7 @@
                 "PO":"4"
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Alexander Dunnigan"
@@ -2481,7 +2482,7 @@
                 "C":true
             }
         },
-        "Requirement":"imbued",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -2872,7 +2873,7 @@
                 "PT":"4"
             }
         },
-        "Requirement":"capacity 7 or more",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Monte Moore"
@@ -3068,7 +3069,7 @@
                 "PAl":"3"
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Heather Hudson"
@@ -3577,7 +3578,7 @@
                 "U":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Fred Harper"
@@ -4060,7 +4061,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"capacity 5 or less",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Randy Gallegos"
@@ -4313,7 +4314,7 @@
                 "U":true
             }
         },
-        "Requirement":"cardinal,regent,inquisitor",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -4750,7 +4751,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon,non-sterile,capacity 4 or more",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -4910,7 +4911,7 @@
                 "C":true
             }
         },
-        "Requirement":"Independent,anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -5320,7 +5321,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -5362,13 +5363,15 @@
         "Card Text":"Only usable before range is determined. A vampire can play only one Bear's Skin each combat.\n[ani][pro] This round, this vampire gets +1 strength and can prevent 1 damage.\n[ANI][PRO] This combat, this vampire gets +1 strength and can prevent 1 damage each round.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Heather Kreiter"
+            "Heather Kreiter",
+            "Mitch Mueller"
         ],
         "Rulings":[],
         "ASCII Name":"Bear's Skin"
@@ -5426,7 +5429,7 @@
                 "A":"2"
             }
         },
-        "Requirement":"non-sterile",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Kyri Koniotis"
@@ -5463,7 +5466,7 @@
                 "R":true
             }
         },
-        "Requirement":"2 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Alejandro Colucci"
@@ -5538,7 +5541,7 @@
                 "C":true
             }
         },
-        "Requirement":"magaji",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -5624,7 +5627,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -5839,7 +5842,7 @@
                 "R":true
             }
         },
-        "Requirement":"prince",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "David Kimmel"
@@ -6066,7 +6069,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -6131,7 +6134,7 @@
                 "R":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -6155,7 +6158,7 @@
                 "C":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -6353,7 +6356,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -6784,7 +6787,8 @@
         "Card Text":"Only usable before range is determined. A vampire can play only one Blight each combat.\n[nec] The opposing minion gets -1 strength this combat.\n[NEC] As above, and this combat, the opposing minion cannot use additional strikes or presses to continue combat.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"4"
             }
         },
         "Requirement":"",
@@ -7164,7 +7168,7 @@
                 "R":true
             }
         },
-        "Requirement":"imbued",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Mark Poole"
@@ -7292,7 +7296,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Ken Meyer, Jr."
@@ -7393,7 +7397,7 @@
                 "U":true
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Pete Venters",
@@ -7539,7 +7543,7 @@
                 "R":true
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Patrick Lambert"
@@ -7683,7 +7687,7 @@
                 "R":true
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -7868,7 +7872,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Tom Biondillo"
@@ -7938,7 +7942,7 @@
                 "R":true
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "John Matson"
@@ -8010,7 +8014,7 @@
                 "PN":"2"
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -8149,7 +8153,7 @@
                 "C":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Fred Harper"
@@ -8373,16 +8377,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\n[cel] Maneuver or press.\n[pre] Cancel the opposing minion's aim, frenzy, or grapple card as it is played, and its cost is not paid.\n[tha] Strike: hand strike at +1 damage. This damage cannot be prevented by cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage on this vampire this round.",
+        "Card Text":"Requires an Anarch.\n[cel] Maneuver or press.\n[pre] Cancel an aim, frenzy, or grapple card as it is played by the opposing minion, and its cost is not paid.\n[tha] Strike: hand strike at +1 damage. This damage cannot be prevented by cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage this round.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek"
+            "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek",
+            "Peter Bergting"
         ],
         "Rulings":[
             {
@@ -8723,7 +8729,7 @@
                 "PAG":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Fred Hooper"
@@ -9257,7 +9263,7 @@
                 "PSal":"2"
             }
         },
-        "Requirement":"non-sterile,capacity above 2",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -9297,7 +9303,7 @@
                 "C":true
             }
         },
-        "Requirement":"same circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -10244,7 +10250,7 @@
                 "PV":"2"
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Douglas Shuler"
@@ -10573,7 +10579,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -10616,7 +10622,7 @@
                 "U":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Hannibal King"
@@ -10644,7 +10650,7 @@
                 "PT":1
             }
         },
-        "Requirement":"archbishop,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "David Fooden"
@@ -10677,7 +10683,7 @@
                 "U":true
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Michael Astrachan"
@@ -10695,13 +10701,14 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready anarch. Unique location. Hunting ground.\nDuring your unlock phase, a ready anarch you control can gain 1 blood, and, if you control a ready baron, another ready anarch you control can gain 1 blood as well. A vampire can gain blood from only one hunting ground each turn.",
+        "Card Text":"Requires a ready Anarch. Unique location. Hunting ground.\nDuring your unlock phase, a ready Anarch you control can gain 1 blood, and, if you control a ready baron, another ready Anarch you control can gain 1 blood as well. A vampire can gain blood from only one hunting ground each turn.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"1"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Javier Santos"
@@ -11530,7 +11537,7 @@
                 "R":true
             }
         },
-        "Requirement":"priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -11561,7 +11568,7 @@
                 "R":true
             }
         },
-        "Requirement":"baron",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jim Pavelec"
@@ -12369,7 +12376,7 @@
                 "U":true
             }
         },
-        "Requirement":"sabbat,titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Patrick McEvoy"
@@ -12653,7 +12660,7 @@
                 "R":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Ron Van Halen"
@@ -12677,7 +12684,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Theodore Black"
@@ -12708,7 +12715,7 @@
                 "R":true
             }
         },
-        "Requirement":"imbued",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -12760,7 +12767,7 @@
                 "PM":1
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -12811,7 +12818,7 @@
                 "C":true
             }
         },
-        "Requirement":"same circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -12943,7 +12950,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"capacity 5 or more",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -13110,7 +13117,7 @@
                 "R":true
             }
         },
-        "Requirement":"capacity above 5",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -13282,7 +13289,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"prince,justicar,inner circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Harold Arthur McNeill"
@@ -13486,7 +13493,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -13841,7 +13848,7 @@
                 "PTo":1
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Christopher Rush"
@@ -13973,7 +13980,7 @@
                 "R":true
             }
         },
-        "Requirement":"Independent,anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -14760,7 +14767,7 @@
                 "R":true
             }
         },
-        "Requirement":"2 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Joel Biske"
@@ -14926,7 +14933,7 @@
                 "A":1
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Harold Arthur McNeill"
@@ -15054,7 +15061,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -15102,7 +15109,7 @@
                 "R":true
             }
         },
-        "Requirement":"infernal",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -15238,7 +15245,7 @@
                 "C":true
             }
         },
-        "Requirement":"same circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -15502,7 +15509,7 @@
                 "V":true
             }
         },
-        "Requirement":"prince,justicar,inner circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Harold Arthur McNeill"
@@ -15563,7 +15570,7 @@
                 "R":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -15674,7 +15681,7 @@
                 "B":1
             }
         },
-        "Requirement":"non-camarilla,capacity above 7",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Lawrence Snelly"
@@ -15794,7 +15801,7 @@
                 "PGar":1
             }
         },
-        "Requirement":"non-sterile",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -15831,7 +15838,7 @@
                 "U":true
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent,non-sterile",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Michael Astrachan"
@@ -16007,7 +16014,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -16174,7 +16181,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -16198,7 +16205,7 @@
                 "20090929":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -16225,7 +16232,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Richard Thomas"
@@ -16249,7 +16256,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -16276,7 +16283,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -16300,7 +16307,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -16327,7 +16334,7 @@
                 "PM":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "James Allen Higgins"
@@ -16357,7 +16364,7 @@
                 "PB":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Clint Langley"
@@ -16381,7 +16388,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Theodore Black"
@@ -16405,7 +16412,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -16429,7 +16436,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Joel Biske"
@@ -16456,7 +16463,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -16480,7 +16487,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -16504,7 +16511,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Ken Meyer, Jr."
@@ -16531,7 +16538,7 @@
                 "PV":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Heather J. McKinney"
@@ -16558,7 +16565,7 @@
                 "PTo":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Robinson"
@@ -16585,7 +16592,7 @@
                 "PM":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Mike Danza"
@@ -16609,7 +16616,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -16639,7 +16646,7 @@
                 "PTr":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Dave Seeley"
@@ -16669,7 +16676,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Clint Langley"
@@ -16696,7 +16703,7 @@
                 "PB":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -16723,7 +16730,7 @@
                 "PM":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Clint Langley"
@@ -16747,7 +16754,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Mark Poole"
@@ -16802,7 +16809,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -16833,7 +16840,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -17310,16 +17317,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Frenzy. Only usable before range is determined. A vampire can play only one Dam the Heart's River each combat.\n[qui] This combat, each strike or damaging effect made against the opposing minion inflicts +1 damage.\n[QUI] As above, and this combat, strikes cost the opposing minion 1 additional blood or life, and the opposing minion can choose not to strike.",
+        "Card Text":"Frenzy. Only usable before range is determined. A vampire can play only one Dam the Heart's River each combat.\n[qui] This combat, each strike or damaging effect made against the opposing minion inflicts +1 damage.\n[QUI] As above, and this combat, strikes cost the opposing minion 1 additional blood or life, and they can choose not to strike.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Jake Smidt"
+            "Jake Smidt",
+            "Esther Sanz"
         ],
         "Rulings":[
             {
@@ -17546,7 +17555,7 @@
                 "A":"2"
             }
         },
-        "Requirement":"capacity 8 or more",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Marian Churchland"
@@ -17564,10 +17573,11 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined. A minion can play only one Dark Steel each combat.\n[obt][pot] The opposing minion takes 1 environmental damage each round of combat during normal strike resolution at close range. This vampire gets 1 optional maneuver this round, only usable to get to close range.\n[OBT][POT] As above, but for 2 environmental damage.",
+        "Card Text":"Only usable before range is determined. A vampire can play only one Dark Steel each combat.\n[obt][pot] The opposing minion takes 1 environmental damage each round of combat during normal strike resolution at close range. This vampire gets 1 optional maneuver this round, only usable to get to close range.\n[OBT][POT] As above, but for 2 environmental damage.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             }
         },
         "Requirement":"",
@@ -18015,7 +18025,7 @@
                 "PG":1
             }
         },
-        "Requirement":"capacity above 5",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Edward Beard, Jr."
@@ -18269,7 +18279,7 @@
                 "R":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -18733,7 +18743,7 @@
                 "C":true
             }
         },
-        "Requirement":"archbishop,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -18995,7 +19005,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -20136,7 +20146,7 @@
                 "PAG":"4"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -20627,16 +20637,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. Only usable at close range.\n[obf] Strike: burn equipment or retainer with first strike.\n[pro] Strike: hand strike, aggravated.\n[ser] Strike: steal 2 blood or life (becoming blood).",
+        "Card Text":"Requires an Anarch. Only usable at close range.\n[obf] Strike: burn equipment or retainer with first strike.\n[pro] Strike: hand strike, aggravated.\n[ser] Strike: steal 2 blood or life (becoming blood).",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek"
+            "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek",
+            "Esther Sanz"
         ],
         "Rulings":[
             {
@@ -21211,7 +21223,7 @@
                 "R":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -21425,7 +21437,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Justin Norman"
@@ -21493,13 +21505,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\n[ani] Strike: hand strike at +1 damage. This strike cannot be dodged.\n[cel] Strike: dodge, with 1 additional strike (limited).\n[pot] Strike: hand strike at +2 damage.",
+        "Card Text":"Requires an Anarch.\n[ani] Strike: hand strike at +1 damage. This strike cannot be dodged.\n[cel] Strike: dodge, with 1 additional strike (limited).\n[pot] Strike: hand strike at +2 damage.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Javier Santos"
@@ -21727,7 +21740,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -21772,16 +21785,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\nChoose one or more Methuselahs. Successful referendum means each chosen Methuselah burns 1 pool, plus 3 additional pool if they control a ready titled vampire. In this referendum, each priscus gets -1 ballot, each non-priscus titled vampire gets -1 vote, and burning the Edge is worth 1 additional vote.",
+        "Card Text":"Requires an Anarch.\nChoose one or more Methuselahs. Successful referendum means each chosen Methuselah burns 1 pool, plus 3 additional pool if they control a ready titled vampire. In this referendum, each priscus gets -1 ballot, each non-priscus titled vampire gets -1 vote, and burning the Edge is worth 1 additional vote.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Jared Smith"
+            "Jared Smith",
+            "Peter Bergting"
         ],
         "Rulings":[],
         "ASCII Name":"Eat the Rich"
@@ -22048,7 +22063,7 @@
                 "R":true
             }
         },
-        "Requirement":"1 Gehenna",
+        "Requirement":"",
         "Banned":"2008",
         "Artist":[
             "John Bridges"
@@ -22448,7 +22463,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Roel Wielinga"
@@ -22538,7 +22553,7 @@
                 "PG":"2"
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -22585,7 +22600,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Tom Biondillo"
@@ -22797,7 +22812,7 @@
                 "LB":"9"
             }
         },
-        "Requirement":"non-sterile",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Pete Venters",
@@ -22872,7 +22887,7 @@
                 "R":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -22951,7 +22966,7 @@
                 "C":true
             }
         },
-        "Requirement":"baron",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -23247,7 +23262,7 @@
                 "":"1"
             }
         },
-        "Requirement":"capacity 10 or more",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Marian Churchland",
@@ -23285,7 +23300,8 @@
         "Card Text":"Unique location.\nLock to get +1 hand size this turn. Lock during your influence phase to get +1 transfer.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"1"
             },
             "25th":{
                 "":"1"
@@ -23785,7 +23801,7 @@
                 "C":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -23889,7 +23905,8 @@
         "Card Text":"+1 stealth action. Unique.\n[pot][pre] Put this card in play and unlock this vampire. Minions you control get +1 strength. Burn this card during your unlock phase.\n[POT][PRE] As above, and you can burn this card to cancel an action card requiring Dementation [dem], Dominate [dom] or Presence [pre] that would target you (or a card you control) as it is played.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"3"
             }
         },
         "Requirement":"",
@@ -24003,7 +24020,7 @@
                 "PKia":1
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -24165,7 +24182,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -24227,7 +24244,7 @@
                 "PTr":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Richard Thomas"
@@ -24275,7 +24292,7 @@
                 "R":true
             }
         },
-        "Requirement":"imbued",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -24993,7 +25010,7 @@
                 "R":true
             }
         },
-        "Requirement":"3 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Mark Poole"
@@ -25044,7 +25061,7 @@
                 "R":true
             }
         },
-        "Requirement":"3 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "matrix von z"
@@ -25190,7 +25207,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -25668,7 +25685,7 @@
                 "PAB":1
             }
         },
-        "Requirement":"anarch,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -25699,7 +25716,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -25730,7 +25747,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -25762,7 +25779,7 @@
                 "PAB":1
             }
         },
-        "Requirement":"anarch,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc",
@@ -25794,7 +25811,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -25826,7 +25843,7 @@
                 "PAB":1
             }
         },
-        "Requirement":"anarch,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -26081,16 +26098,17 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an anarch.\nUnlock this vampire, choose a Discipline they have at superior, and put this card on another ready non-titled vampire you control. The attached vampire is considered Anarch and gets +1 level of the chosen Discipline. If the attached vampire changes sect, burn this card. A vampire can have only one Field Training.",
+        "Card Text":"+1 stealth action. Requires an Anarch.\nUnlock this vampire, choose a Discipline they have at superior, and put this card on another ready non-titled vampire you control. The attached vampire is considered Anarch and gets +1 level of the chosen Discipline. If the attached vampire changes sect, burn this card. A vampire can have only one Field Training.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             },
             "Anthology":{
                 "":"4"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek",
@@ -26137,7 +26155,7 @@
                 "C":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Fred Harper"
@@ -26170,7 +26188,7 @@
                 "U":true
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Melissa Benson",
@@ -26251,7 +26269,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -26346,7 +26364,7 @@
                 "A":1
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "David Fooden"
@@ -26404,7 +26422,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Greg Boychuk"
@@ -26429,7 +26447,7 @@
                 "PAB":1
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -26462,7 +26480,7 @@
                 "R":true
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Pete Venters",
@@ -26572,7 +26590,7 @@
                 "20080810":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Erik Gist"
@@ -27076,7 +27094,8 @@
         "Card Text":"Only usable before range is determined. A vampire can play only one Focus the Blood each combat.\nPut this card and 1 blood on this Assamite. This vampire can burn this card to reduce the cost of a combat card they play by 1 blood.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"4"
             }
         },
         "Requirement":"",
@@ -27218,7 +27237,7 @@
                 "R":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -27702,7 +27721,7 @@
                 "PM":"5"
             }
         },
-        "Requirement":"capacity 5",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Fred Hooper"
@@ -28174,7 +28193,7 @@
                 "20090401":true
             }
         },
-        "Requirement":"2 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -28208,7 +28227,7 @@
                 "PV":"3"
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Kieran Yanner",
@@ -28357,7 +28376,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -28530,7 +28549,7 @@
                 "PA":1
             }
         },
-        "Requirement":"Independent,anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -28616,7 +28635,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -28762,10 +28781,11 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Usable by a locked vampire.\n[nec] Unlock a mummy, wraith, or zombie ally you control.\n[NEC] Unlock up to two mummy, wraith, or zombie allies you control.",
+        "Card Text":"Usable by a locked vampire.\n[nec] Unlock a mummy, wraith, or zombie ally you control.\n[NEC] Unlock up to two mummy, wraith, and/or zombie allies you control.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"4"
             }
         },
         "Requirement":"",
@@ -28900,7 +28920,7 @@
                 "PG":"2"
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -29285,7 +29305,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Joel Biske"
@@ -29466,7 +29486,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -29664,10 +29684,11 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique wraith with 2 life. 1 strength, 1 bleed.\nIf another minion you control is in combat, Gianna can lock and burn herself to burn an equipment on the opposing minion, or lock during strike resolution to inflict 1 unpreventable damage on the opposing minion.",
+        "Card Text":"Unique wraith with 2 life. 1 strength, 1 bleed.\nIf another minion you control is in combat, Gianna can lock and burn herself to burn an equipment on the opposing minion, or lock during normal strike resolution to inflict 1 unpreventable damage on the opposing minion.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"1"
             }
         },
         "Requirement":"",
@@ -29816,7 +29837,8 @@
         "Card Text":"+1 stealth action.\nPut this card on this Gangrel with any number of cards requiring Protean [pro] from your hand face down and out of play (you can look at the cards at any time). This Gangrel can play these cards as if from your hand. Burn this card if it has no cards on it. A vampire can have only one Gift of Proteus.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"4"
             }
         },
         "Requirement":"",
@@ -29973,7 +29995,8 @@
         "Card Text":"Unique wraith with 1 life. 0 strength, 0 bleed.\nIf a Giovanni you control is in combat, you can lock Giulia before range is determined to set the range for the round to close.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"1"
             }
         },
         "Requirement":"",
@@ -30251,7 +30274,7 @@
                 "PAB":"4"
             }
         },
-        "Requirement":"non-anarch,non-titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -30935,7 +30958,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Matt Dixon"
@@ -31028,7 +31051,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Chris Richards"
@@ -31222,7 +31245,7 @@
                 "R":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Patrick McEvoy"
@@ -31322,13 +31345,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. More than one discipline can be used to play this card. This anarch attempts to block.\n[aus] +1 intercept, even if intercept is not yet needed.\n[cel] This anarch gets 1 optional maneuver during the resulting combat if they block.\n[for] This anarch does not lock for blocking this action.",
+        "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. This Anarch attempts to block.\n[aus] +1 intercept, even if intercept is not yet needed.\n[cel] This Anarch gets 1 optional maneuver during the resulting combat if they block.\n[for] This Anarch does not lock for blocking this action.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Carmen Cornet"
@@ -31419,7 +31443,7 @@
                 "R":true
             }
         },
-        "Requirement":"cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -31568,10 +31592,11 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Location.\nThis card comes in play with 1 counter for each anarch you control. After an anarch comes in play under your control, or after a vampire you control becomes Anarch, add 1 counter to this card. An anarch you control can use these counters to pay some or all of the blood or pool cost of an equipment they equip.",
+        "Card Text":"Location.\nThis card comes into play with 1 counter for each Anarch you control. After an Anarch comes into play under your control, or after a vampire you control becomes Anarch, add 1 counter to this card. An Anarch you control can use these counters to pay some or all of the blood or pool cost of an equipment they equip.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             }
         },
         "Requirement":"",
@@ -31657,13 +31682,15 @@
         "Card Text":"Only usable during the first round of combat.\n[chi] Maneuver.\n[CHI] This vampire burns 1 blood to cancel the opposing minion's strike card as it is played, and its cost is not paid (the minion chooses another strike). A vampire can play only one Hall of Mirrors at superior each combat.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "James Richardson"
+            "James Richardson",
+            "Samuel Araya"
         ],
         "Rulings":[
             {
@@ -31719,7 +31746,7 @@
                 "PTr":1
             }
         },
-        "Requirement":"sabbat,titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "matrix von z"
@@ -31983,7 +32010,7 @@
                 "U":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Abrar Ajmal"
@@ -32015,7 +32042,7 @@
                 "R":true
             }
         },
-        "Requirement":"cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -32098,7 +32125,7 @@
                 "PGar":1
             }
         },
-        "Requirement":"non-sterile",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Richard Thomas"
@@ -32217,7 +32244,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Matt Dixon"
@@ -32723,7 +32750,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -33164,7 +33191,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -33218,7 +33245,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Roel Wielinga"
@@ -33307,7 +33334,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Greg Boychuk"
@@ -33669,7 +33696,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Christopher Shy"
@@ -34127,13 +34154,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. More than one discipline can be used to play this card. (D) Bleed.\n[cel] Unlock this anarch if the bleed is successful.\n[chi] This action is at +1 stealth.\n[pre] The bleed is at +1 bleed.",
+        "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[cel] Unlock this Anarch if the bleed is successful.\n[chi] This is a +1 stealth action.\n[pre] The bleed is with +1 bleed.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Carmen Cornet"
@@ -34263,10 +34291,11 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Unique.\n[chi] Put this card in play with 1 counter. During your unlock phase, a ready vampire with Chimerstry [chi] you control can move 1 blood to this card. You can burn X counters from this card to reduce a bleed against you by X.\n[CHI] As above, but this card is put in play with 2 counters.",
+        "Card Text":"+1 stealth action. Unique.\n[chi] Put this card in play with 1 counter. During your unlock phase, a ready vampire with Chimerstry [chi] you control can move 1 blood to this card. You can burn X counters from this card to reduce a bleed against you by X.\n[CHI] As above, but this card comes into play with 2 counters.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"4"
             }
         },
         "Requirement":"",
@@ -34293,7 +34322,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Ron Spencer"
@@ -34494,7 +34523,7 @@
                 "C":true
             }
         },
-        "Requirement":"justicar,inner circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Rebecca Guay"
@@ -34607,7 +34636,7 @@
                 "PAG":"2"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Chet Masters"
@@ -34669,10 +34698,11 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play with 1 counter for each Follower of Set and mummy you control. Once each action, you can burn 1 counter from this card to give a mummy you control +1 bleed or +1 strength. Burn this card if it has no counters.",
+        "Card Text":"Unique.\nPut this card in play with 1 counter for each Follower of Set and mummy you control. During an action, you can burn 1 counter from this card to give a mummy you control +1 bleed or +1 strength. Burn this card if it has no counters.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"2"
             }
         },
         "Requirement":"",
@@ -35205,7 +35235,7 @@
                 "A":"1"
             }
         },
-        "Requirement":"infernal",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Erica Danell"
@@ -35429,7 +35459,7 @@
                 "PG":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -35490,10 +35520,11 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"(D) Burn the Edge to burn 2 blood from a vampire controlled by another Methuselah, or to cause your prey to burn 2 pool.",
+        "Card Text":"(D) Burn the Edge to burn 3 blood from a vampire controlled by another Methuselah, or to burn 3 pool from your prey.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             }
         },
         "Requirement":"",
@@ -35615,7 +35646,8 @@
         "Card Text":"[cel][pro] +1 stealth.\n[CEL][PRO] Only usable after resolution of a successful action. Unlock this vampire. A vampire can play only one Instantaneous Transformation at superior each turn.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             },
             "Anthology":{
                 "":"4"
@@ -35947,7 +35979,7 @@
                 "R":true
             }
         },
-        "Requirement":"cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Rick O'Brien"
@@ -36653,7 +36685,7 @@
                 "C":true
             }
         },
-        "Requirement":"non-camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Imaginary Friends Studios"
@@ -36827,7 +36859,7 @@
                 "R":true
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Richard Kane Ferguson"
@@ -36864,7 +36896,7 @@
                 "U":true
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -36918,7 +36950,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold",
@@ -37103,7 +37135,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -37155,7 +37187,7 @@
                 "PI":"2"
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -37232,7 +37264,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -37637,7 +37669,7 @@
                 "PV":1
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"2005",
         "Artist":[
             "Quinton Hoover"
@@ -38119,7 +38151,7 @@
                 "R":true
             }
         },
-        "Requirement":"infernal",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Joel Biske"
@@ -38297,7 +38329,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Justin Norman"
@@ -38361,7 +38393,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -38523,7 +38555,7 @@
                 "20081119":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Efrem Palacios"
@@ -38773,7 +38805,7 @@
                 "U":true
             }
         },
-        "Requirement":"mortal,ghoul,mage",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Marian Churchland"
@@ -38841,13 +38873,14 @@
         "Card Text":"+2 stealth action. Requires an unmerged advanced vampire.\nUnlock this vampire, search your crypt (shuffle afterward), uncontrolled region, and/or ash heap for their base version, and merge them with it.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             },
             "Anthology":{
                 "":"4"
             }
         },
-        "Requirement":"unmerged,advanced",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -38944,7 +38977,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Dave Seeley"
@@ -38979,7 +39012,7 @@
                 "B":1
             }
         },
-        "Requirement":"prince,justicar,inner circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Casper"
@@ -39140,7 +39173,7 @@
                 "20030901":true
             }
         },
-        "Requirement":"capacity above 7",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -39383,7 +39416,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -39417,7 +39450,7 @@
                 "R":true
             }
         },
-        "Requirement":"non-anarch,titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -39970,7 +40003,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -40122,7 +40155,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Alejandro Colucci"
@@ -41168,13 +41201,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. More than one discipline can be used to play this card. (D) Enter combat with a locked minion.\n[cel] This anarch gets 1 optional maneuver during that combat.\n[obf] This action is at +1 stealth.\n[pot] This anarch gets +1 strength during that combat.",
+        "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Enter combat with a locked minion.\n[cel] This Anarch gets 1 optional maneuver during that combat.\n[obf] This is a +1 stealth action.\n[pot] This Anarch gets +1 strength during that combat.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Grzegorz Bobrowski"
@@ -41206,7 +41240,7 @@
                 "R":true
             }
         },
-        "Requirement":"non-camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -41780,7 +41814,7 @@
                 "PN":"2"
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -41934,10 +41968,11 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+2 stealth action.\nPut this card on this vampire and unlock him or her. You can burn this card to give this vampire +2 intercept during a (D) action against you (or a card you control). A vampire can have only one Marked Territory.",
+        "Card Text":"+2 stealth action.\nPut this card on this vampire and unlock them. You can burn this card to give this vampire +2 intercept during an action directed at you (or a card you control). A vampire can have only one Marked Territory.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"3"
             }
         },
         "Requirement":"",
@@ -42025,7 +42060,7 @@
                 "C":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -42140,7 +42175,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -42494,7 +42529,7 @@
                 "U":true
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Mark Poole"
@@ -42980,13 +43015,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. Only usable as the action is announced. More than one discipline can be used to play this card.\n[dem] Choose a titled vampire or a younger vampire. The chosen vampire cannot block this action.\n[obf] +1 stealth, even if stealth is not yet needed.\n[pre] If this action is blocked, this anarch can strike: combat ends during the first round of the resulting combat.",
+        "Card Text":"Requires an Anarch. Only usable as the action is announced. More than one Discipline can be used to play this card.\n[dem] Choose a titled vampire or a younger vampire. The chosen vampire cannot block this action.\n[obf] +1 stealth, even if stealth is not yet needed.\n[pre] If this action is blocked, this Anarch can strike: combat ends during the first round of the resulting combat.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jared Smith"
@@ -43289,7 +43325,7 @@
                 "A":1
             }
         },
-        "Requirement":"justicar,inner circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -43691,7 +43727,7 @@
                 "C":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -44180,7 +44216,7 @@
                 "R":true
             }
         },
-        "Requirement":"imbued",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Veronica Jones"
@@ -44245,7 +44281,7 @@
                 "PAB":"4"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -44347,7 +44383,7 @@
                 "A":"2"
             }
         },
-        "Requirement":"capacity 7 or more",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -44480,7 +44516,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -44541,7 +44577,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Corey Macourek"
@@ -44816,7 +44852,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"laibon,non-titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Abrar Ajmal"
@@ -45188,7 +45224,7 @@
                 "C":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -45377,7 +45413,8 @@
         "Card Text":"Unique wraith with 1 life.\nWhile this vampire is in combat, you get +2 hand size, and the opposing minion is considered the acting minion.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"1"
             }
         },
         "Requirement":"",
@@ -45440,7 +45477,7 @@
                 "PV":"2"
             }
         },
-        "Requirement":"titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -45541,7 +45578,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Michael Gaydos"
@@ -45774,16 +45811,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\n[aus] Look at the acting Methuselah's hand.\n[chi] Unlock another ready minion you control. That minion attempts to block.\n[dem] Give another minion you control +1 intercept.",
+        "Card Text":"Requires an Anarch.\n[aus] Look at the acting Methuselah's hand.\n[chi] Choose another ready minion you control. The chosen minion unlocks and attempts to block.\n[dem] Give another minion you control +1 intercept.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Jared Smith"
+            "Jared Smith",
+            "Mar\u00eda Lor\u00e9n"
         ],
         "Rulings":[
             {
@@ -45913,7 +45952,7 @@
                 "R":true
             }
         },
-        "Requirement":"1 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -46023,16 +46062,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. Only usable as the action is announced. More than one discipline can be used to play this card.\n[ani] If this action is blocked, the opposing minion cannot use maneuvers in the resulting combat.\n[for] Vampires must burn 1 blood to attempt to block this action.\n[vic] If this action is blocked, this anarch gets +1 strength in the resulting combat.",
+        "Card Text":"Requires an Anarch. Only usable as the action is announced. More than one Discipline can be used to play this card.\n[ani] If this action is blocked, the opposing minion cannot maneuver during the resulting combat.\n[for] Vampires must burn 1 blood to attempt to block this action.\n[vic] If this action is blocked, this Anarch gets +1 strength during the resulting combat.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Rub\u00e9n Bravo"
+            "Rub\u00e9n Bravo",
+            "Mart\u00edn de Diego"
         ],
         "Rulings":[
             {
@@ -46284,7 +46325,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Vince Locke"
@@ -46347,7 +46388,7 @@
                 "C":true
             }
         },
-        "Requirement":"magaji",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -46751,7 +46792,7 @@
                 "C":true
             }
         },
-        "Requirement":"sabbat,capacity above 7",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -47138,7 +47179,7 @@
                 "C":true
             }
         },
-        "Requirement":"same circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Lawrence Snelly"
@@ -47172,7 +47213,7 @@
                 "U":true
             }
         },
-        "Requirement":"primogen",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Josh Timbrook"
@@ -47489,7 +47530,7 @@
                 "R":true
             }
         },
-        "Requirement":"baron",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -47507,10 +47548,11 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pre][ser] Reduce a bleed against you by 2.\n[PRE][SER] Only usable during a political action, after blocks are declined. Cancel an action modifier as it is played, and its cost is not paid.",
+        "Card Text":"[pre][ser] Reduce a bleed against you by 2.\n[PRE][SER] Only usable during a political action, after blocks are declined. Cancel an action modifier card as it is played, and its cost is not paid.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"4"
             }
         },
         "Requirement":"",
@@ -48010,7 +48052,7 @@
                 "PG":1
             }
         },
-        "Requirement":"laibon,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -48396,7 +48438,7 @@
                 "PoS":"1"
             }
         },
-        "Requirement":"city title",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Sandra Chang-Adair"
@@ -48487,7 +48529,7 @@
                 "PV":"5"
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "L. A. Williams",
@@ -49172,7 +49214,7 @@
                 "R":true
             }
         },
-        "Requirement":"baron,edge",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Eric Deschamps"
@@ -49764,7 +49806,7 @@
                 "B":"1"
             }
         },
-        "Requirement":"titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Juan Calle"
@@ -50007,7 +50049,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -50969,7 +51011,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Eric Deschamps"
@@ -50996,7 +51038,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jim Pavelec"
@@ -51225,7 +51267,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Michael Gaydos"
@@ -51429,7 +51471,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -51508,7 +51550,7 @@
                 "R":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -51532,7 +51574,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Michael Weaver"
@@ -51556,7 +51598,7 @@
                 "R":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Liz Danforth"
@@ -51596,7 +51638,7 @@
                 "PV":1
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Josh Timbrook",
@@ -51624,7 +51666,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Dave Roach",
@@ -51656,7 +51698,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -51693,7 +51735,7 @@
                 "R":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Edward Beard, Jr.",
@@ -51718,7 +51760,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Tom W\u00e4nerstrand"
@@ -51749,7 +51791,7 @@
                 "R":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Pete Venters"
@@ -51789,7 +51831,7 @@
                 "PM":1
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Robert McNeill",
@@ -51820,7 +51862,7 @@
                 "R":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "N\u00e9 N\u00e9 Thomas",
@@ -51851,7 +51893,7 @@
                 "R":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Richard Thomas",
@@ -51876,7 +51918,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Harold Arthur McNeill"
@@ -51900,7 +51942,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Casper"
@@ -51924,7 +51966,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Michael Weaver"
@@ -51955,7 +51997,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Stuart Beel"
@@ -51995,7 +52037,7 @@
                 "PT":1
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Kaja Foglio",
@@ -52023,7 +52065,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Mark Tedin"
@@ -52047,7 +52089,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Pete Venters"
@@ -52080,7 +52122,7 @@
                 "PV":1
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "James Stowe",
@@ -52105,7 +52147,7 @@
                 "R":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Max Shade Fellwalker"
@@ -52136,7 +52178,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -52170,7 +52212,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -52207,7 +52249,7 @@
                 "R":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Nicola Leonard",
@@ -52232,7 +52274,7 @@
                 "U":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Tom W\u00e4nerstrand"
@@ -52266,7 +52308,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Mark Tedin",
@@ -52300,7 +52342,7 @@
                 "PT":1
             }
         },
-        "Requirement":"camarilla",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "John Bridges",
@@ -52791,7 +52833,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Attila Adorjany",
@@ -52830,16 +52872,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique contract. Trifle.\nChoose a ready Assamite you control, and put this card on a minion controlled by your prey. The chosen Assamite can enter combat with the attached minion as a +1 stealth (D) action. If the attached minion is about to leave the ready region, you can burn this card to gain 3 pool.",
+        "Card Text":"Unique contract. Trifle.\nChoose a ready Assamite you control and put this card on a minion controlled by your prey. The chosen Assamite can enter combat with the attached minion as a +1 stealth (D) action. If the attached minion is about to leave the ready region, you can burn this card to gain 3 pool.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Anna Evertsdotter"
+            "Anna Evertsdotter",
+            "Krasen Maximov"
         ],
         "Rulings":[
             {
@@ -52867,7 +52911,7 @@
                 "R":true
             }
         },
-        "Requirement":"titled,non-red list",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Travis Ingram"
@@ -52919,7 +52963,7 @@
                 "C":true
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -53107,13 +53151,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. Only usable after a successful (D) action.\nPut this card in play. You can burn this card during the polling step of a political action to get +2 votes.",
+        "Card Text":"Requires an Anarch. Only usable after resolution of a successful directed action.\nPut this card in play. You can burn this card during the polling step of a political action to get +2 votes.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Javier Santos"
@@ -53204,7 +53249,7 @@
                 "PV":1
             }
         },
-        "Requirement":"justicar,inner circle",
+        "Requirement":"",
         "Banned":"2008",
         "Artist":[
             "Phillip Tan"
@@ -53228,7 +53273,7 @@
                 "PN":"4"
             }
         },
-        "Requirement":"primogen",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Felipe Gaona"
@@ -53299,13 +53344,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\n+1 intercept, with an additional +1 intercept if the acting vampire is titled.",
+        "Card Text":"Requires an Anarch.\n+1 intercept, with an additional +1 intercept if the acting vampire is titled.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -53710,7 +53756,7 @@
                 "20080810":true
             }
         },
-        "Requirement":"non-anarch,non-red list",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Erik Gist"
@@ -53765,16 +53811,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a titled Sabbat vampire.\nChoose a ready younger vampire controlled by another Methuselah. Successful referendum means this vampire steals 3 blood from the chosen vampire.",
+        "Card Text":"Requires a titled Sabbat vampire.\nChoose a ready younger vampire controlled by another Methuselah, and allocate 3 of their blood between 1 or more other vampires (including this acting vampire). Successful referendum means the blood is distributed as you chose.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             }
         },
-        "Requirement":"sabbat,titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Tom\u00e1\u0161 Zahradn\u00ed\u010dek"
+            "Tom\u00e1\u0161 Zahradn\u00ed\u010dek",
+            "Samuel Araya"
         ],
         "Rulings":[],
         "ASCII Name":"Public Vilification"
@@ -53997,7 +54045,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -54728,7 +54776,7 @@
                 "PAB":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -55247,7 +55295,7 @@
                 "A":"2"
             }
         },
-        "Requirement":"slave",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jim Pavelec"
@@ -55632,7 +55680,7 @@
                 "PAn":1
             }
         },
-        "Requirement":"red list",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian Miskelley"
@@ -55663,7 +55711,7 @@
                 "R":true
             }
         },
-        "Requirement":"2 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -55695,7 +55743,7 @@
                 "PG":"3"
             }
         },
-        "Requirement":"Independent,anarch,capacity {5 or more}",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -55795,13 +55843,15 @@
         "Card Text":"+1 stealth action. Requires a Black Hand vampire.\nDraw 1 card from your crypt and reveal it. Add 1 blood from the blood bank to it if it is a Black Hand vampire.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Anna Evertsdotter"
+            "Anna Evertsdotter",
+            "Mart\u00edn de Diego"
         ],
         "Rulings":[],
         "ASCII Name":"Recruitment Exercise"
@@ -55963,7 +56013,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"titled,non-red list",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -55981,13 +56031,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"Yes",
-        "Card Text":"Requires a non-titled, non-Anarch vampire.\nPut this card on this vampire. This vampire is considered Anarch. Burn this card if this vampire changes sect.",
+        "Card Text":"Requires a non-titled non-Anarch vampire.\nPut this card on this vampire. This vampire is considered Anarch. Burn this card if this vampire changes sect.",
         "Set":{
             "AU":{
-                "C":true
+                "C":true,
+                "":"2"
             }
         },
-        "Requirement":"non-titled,non-anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Carmen Cornet"
@@ -56239,7 +56290,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Attila Adorjany"
@@ -56509,7 +56560,7 @@
                 "PB":1
             }
         },
-        "Requirement":"titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -56832,7 +56883,7 @@
                 "R":true
             }
         },
-        "Requirement":"magaji",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Ron Spencer"
@@ -57541,7 +57592,7 @@
                 "C":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -57669,7 +57720,7 @@
                 "B":1
             }
         },
-        "Requirement":"non-sterile,non-caitiff",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -57887,7 +57938,7 @@
                 "C":true
             }
         },
-        "Requirement":"baron",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -57915,13 +57966,15 @@
         "Card Text":"(D) Burn a location and burn 2 pool from its controller.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"2"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek"
+            "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek",
+            "Mart\u00edn de Diego"
         ],
         "Rulings":[],
         "ASCII Name":"Rewilding"
@@ -58151,13 +58204,17 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an infernal minion. Unique.\nPut this card in play. Your prey burns 1 pool at the end of each action in which you have burned corruption counters. Any Methuselah can burn a vampire he or she controls with corruption counters during his or her unlock phase to burn this card.",
+        "Card Text":"+1 stealth action. Requires an infernal minion. Unique.\nPut this card in play. Your prey burns 1 pool after resolution of each action during which you have burned corruption counters. Any Methuselah can burn a vampire they control with any corruption counters during their unlock phase to burn this card.",
         "Set":{
             "Promo":{
                 "20150221":true
+            },
+            "TU":{
+                "A":"1",
+                "B":"1"
             }
         },
-        "Requirement":"infernal",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -58181,7 +58238,7 @@
                 "R":true
             }
         },
-        "Requirement":"1 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -58221,7 +58278,7 @@
                 "A":"1"
             }
         },
-        "Requirement":"2 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Samuel Araya"
@@ -58915,7 +58972,7 @@
                 "20090401":true
             }
         },
-        "Requirement":"titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Juan Antonio Serrano Garcia"
@@ -59040,7 +59097,7 @@
                 "PSal":"2"
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -59175,10 +59232,11 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 2 life. 2 strength, 1 bleed.\nOnce each action, Saatet-ta can lock to give a Follower of Set you control +1 stealth, +1 intercept, or +1 bleed. If she is burned, shuffle her in her owner's library.",
+        "Card Text":"Unique mummy with 2 life. 2 strength, 1 bleed.\nDuring an action, Saatet-ta can lock to give a Follower of Set you control +1 stealth, +1 intercept, or +1 bleed. If she is burned, shuffle her into her owner's library.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"1"
             }
         },
         "Requirement":"",
@@ -59221,7 +59279,7 @@
                 "U":true
             }
         },
-        "Requirement":"archbishop,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Ken Meyer, Jr."
@@ -59256,7 +59314,7 @@
                 "PB":1
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Lawrence Snelly"
@@ -59308,7 +59366,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Quinton Hoover"
@@ -59410,7 +59468,7 @@
                 "B":1
             }
         },
-        "Requirement":"sabbat,capacity above 7",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Clint Langley"
@@ -59648,7 +59706,8 @@
         "Card Text":"Only usable before range is determined. A vampire can play only one Sanguine Entrapment each round.\n[cel][qui] The opposing minion cannot strike: dodge this round.\n[CEL][QUI] The opposing minion cannot strike: combat ends this round.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"4"
             }
         },
         "Requirement":"",
@@ -59795,7 +59854,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Vince Locke"
@@ -60241,7 +60300,7 @@
                 "U":true
             }
         },
-        "Requirement":"titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Justin Norman"
@@ -60587,7 +60646,7 @@
                 "PV":"4"
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "L. A. Williams",
@@ -60711,7 +60770,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Roel Wielinga"
@@ -61043,7 +61102,7 @@
                 "C":true
             }
         },
-        "Requirement":"capacity above 6",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Eric Lofgren"
@@ -61238,7 +61297,7 @@
                 "U":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -61262,7 +61321,7 @@
                 "R":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -61378,16 +61437,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pre][ser] Strike: combat ends.\n[PRE][SER] As above, and if the range is close, this vampire burns 1 blood to put this card on the opposing minion and lock him or her. The attached minion does not unlock as normal. Burn this card during his or her unlock phase.",
+        "Card Text":"[pre][ser] Strike: combat ends.\n[PRE][SER] As above, and if the range is close, this vampire burns 1 blood to put this card on the opposing minion and lock them. The attached minion does not unlock as normal. Burn this card during their unlock phase.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Anna Evertsdotter"
+            "Anna Evertsdotter",
+            "Samuel Araya"
         ],
         "Rulings":[
             {
@@ -61818,7 +61879,8 @@
         "Card Text":"[obf][pot] [COMBAT] Maneuver, only usable to get to close range, or press, only usable to continue combat.\n[OBF][POT] [ACTIONMODIFIER] Only usable after a combat resulting from a block. Not usable if the blocking minion is ready. This vampire burns 1 blood to continue the action as if unblocked.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             }
         },
         "Requirement":"",
@@ -62332,10 +62394,11 @@
         "Card Text":"Unique contract. Trifle. Requires a Black Hand vampire.\nPut this card on a ready minion. Every Black Hand vampire is considered chosen for this contract. Any Black Hand vampire can enter combat with this minon as a +1 stealth (D) action. Burn this card if this minion is not ready.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Javier Santos"
@@ -62359,7 +62422,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -62569,7 +62632,7 @@
                 "A":"3"
             }
         },
-        "Requirement":"infernal,capacity 9 or more",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Samuel Araya"
@@ -62629,7 +62692,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -62943,7 +63006,7 @@
                 "R":true
             }
         },
-        "Requirement":"archbishop,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Mike Danza"
@@ -63070,16 +63133,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pot][pre] (D) Bleed with +1 bleed. If this action is blocked, before range is determined during the first round of the resulting combat, this vampire can gain +1 strength that combat.\n[POT][PRE] (D) As above, but at +2 bleed.",
+        "Card Text":"[pot][pre] (D) Bleed with +1 bleed. If this action is blocked, before range is determined during the first round of the resulting combat, this vampire can gain +1 strength that combat.\n[POT][PRE] As above, but at +2 bleed and this vampire can gain +2 strength.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Tom\u00e1\u0161 Zahradn\u00ed\u010dek"
+            "Tom\u00e1\u0161 Zahradn\u00ed\u010dek",
+            "Mitch Mueller"
         ],
         "Rulings":[],
         "ASCII Name":"Show of Force"
@@ -63640,7 +63705,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -63673,7 +63738,7 @@
                 "R":true
             }
         },
-        "Requirement":"prince,justicar",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Kaja Foglio",
@@ -63699,13 +63764,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a non-titled Gangrel with capacity 5 or more. Unique.\nPut this card on this Gangrel and unlock him or her. This non-titled Gangrel gets +2 votes in referendums called by a Gangrel. Any older non-titled Gangrel can steal this card as a +1 stealth (D) action.",
+        "Card Text":"+1 stealth action. Requires a non-titled Gangrel with capacity 5 or more. Unique.\nPut this card on this Gangrel and unlock them. This non-titled Gangrel gets +2 votes in referendums called by a Gangrel. Any older non-titled Gangrel can steal this card as a +1 stealth (D) action.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"1"
             }
         },
-        "Requirement":"non-titled,capacity 5 or more",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -63961,7 +64027,7 @@
                 "PAB":"4"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -64353,7 +64419,7 @@
                 "R":true
             }
         },
-        "Requirement":"1 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -64440,7 +64506,7 @@
                 "PAG":"3"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Fred Hooper"
@@ -64464,7 +64530,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -64571,7 +64637,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -65511,7 +65577,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jim Nelson"
@@ -65995,10 +66061,11 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"A vampire can play only one Spiritual Guidance each combat.\nPlay a combat card from your ash heap as if from your hand. When that card would be burned, instead remove it from the game.",
+        "Card Text":"A vampire can play only one Spiritual Guidance each combat.\nPlay a combat card from your ash heap as if from your hand. If that card would be burned, instead remove it from the game.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"4"
             },
             "Anthology":{
                 "":"4"
@@ -66104,16 +66171,18 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable after a successful (D) action.\nThis vampire gains 1 blood and you gain 1 pool.",
+        "Card Text":"Only usable after resolution of a successful directed action.\nThis vampire gains 1 blood and you gain 1 pool.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "August B\u00f8gedal Hansen"
+            "August B\u00f8gedal Hansen",
+            "Krasen Maximov"
         ],
         "Rulings":[],
         "ASCII Name":"Spoils of War"
@@ -66447,7 +66516,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Ken Meyer, Jr."
@@ -66478,7 +66547,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Christopher Shy"
@@ -66559,7 +66628,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -66588,7 +66657,7 @@
                 "C":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -66661,7 +66730,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -67090,7 +67159,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Abrar Ajmal"
@@ -67958,7 +68027,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Alan Rabinowitz"
@@ -68057,7 +68126,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -68239,13 +68308,15 @@
         "Card Text":"[chi] (D) Bleed with +1 bleed.\n[CHI] As above, and minion cards that reduce the bleed or change its target cost 1 additional blood or life.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "James Richardson"
+            "James Richardson",
+            "Krasen Maximov"
         ],
         "Rulings":[],
         "ASCII Name":"Suspension of Disbelief"
@@ -68344,7 +68415,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -68388,7 +68459,7 @@
                 "R":true
             }
         },
-        "Requirement":"baron",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -69602,7 +69673,7 @@
                 "C":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -69911,7 +69982,7 @@
                 "C":true
             }
         },
-        "Requirement":"sabbat,titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -70075,7 +70146,7 @@
                 "R":true
             }
         },
-        "Requirement":"justicar",
+        "Requirement":"",
         "Banned":"2016",
         "Artist":[
             "Christopher Rush",
@@ -70212,7 +70283,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -70637,7 +70708,7 @@
                 "R":true
             }
         },
-        "Requirement":"non-sterile,capacity less than 3",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -70678,7 +70749,8 @@
         "Card Text":"+1 stealth action.\nAdd 2 blood to a Gangrel in your uncontrolled region.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"4"
             }
         },
         "Requirement":"",
@@ -70714,7 +70786,7 @@
                 "U":true
             }
         },
-        "Requirement":"prince,justicar,non-sterile",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "L. A. Williams",
@@ -70788,7 +70860,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -70963,7 +71035,7 @@
                 "C":true
             }
         },
-        "Requirement":"same circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -71228,7 +71300,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat,capacity above 6",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "James Allen Higgins"
@@ -71829,7 +71901,7 @@
                 "PB":1
             }
         },
-        "Requirement":"sabbat,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Dennis Calero"
@@ -71887,7 +71959,7 @@
                 "C":true
             }
         },
-        "Requirement":"prince,justicar,inner circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Richard Kane Ferguson"
@@ -72173,7 +72245,7 @@
                 "R":true
             }
         },
-        "Requirement":"magaji",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Caleb Cleaveland"
@@ -72471,7 +72543,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Thomas Manning"
@@ -73051,7 +73123,7 @@
                 "PAl":"3"
             }
         },
-        "Requirement":"titled,non-red list",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -73075,7 +73147,7 @@
                 "C":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -73166,7 +73238,7 @@
                 "C":true
             }
         },
-        "Requirement":"non-sterile,capacity above 4",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -73784,7 +73856,8 @@
         "Card Text":"+1 stealth action. Requires a titled Sabbat vampire. Unique.\nPut this card in play with 3 counters. Once each action, a Sabbat vampire you control can burn 1 counter from this card to unlock and attempt to block with +1 intercept, even if intercept is not yet needed. Burn this card if it has no counters.",
         "Set":{
             "DM":{
-                "C":true
+                "C":true,
+                "":"4"
             },
             "Anthology":{
                 "":"2"
@@ -73794,7 +73867,7 @@
                 "PoS":"2"
             }
         },
-        "Requirement":"sabbat,titled",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Anna Evertsdotter",
@@ -73955,7 +74028,7 @@
                 "C":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Alexander Dunnigan"
@@ -74168,7 +74241,7 @@
                 "C":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Michael Gaydos"
@@ -74267,7 +74340,7 @@
                 "":"1"
             }
         },
-        "Requirement":"infernal",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc",
@@ -74936,7 +75009,7 @@
                 "PL":"2"
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Phillip Tan"
@@ -75133,7 +75206,8 @@
         "Card Text":"[ser] Only usable during the polling step of a political action. Put 1 corruption counter on a minion casting votes or ballots in this referendum.\n[SER] Only usable during the polling step of a political action before votes and ballots are cast. Minions with any corruption counters cannot cast votes or ballots during this referendum.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "B":"4"
             }
         },
         "Requirement":"",
@@ -75225,7 +75299,7 @@
                 "A":"1"
             }
         },
-        "Requirement":"infernal",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Paul Ballard"
@@ -76068,13 +76142,13 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique ghoul with 2 life. 2 strength, 1 bleed. Requires an anarch.\nVivienne can play cards requiring basic Celerity [cel] or Fortitude [for] as a vampire. Vampires you control get -1 stealth on political actions. A vampire you control can give control of Vivienne to another Methuselah as a (D) action. A vampire controlled by another Methuselah can steal Vivienne as a (D) action.",
+        "Card Text":"Unique ghoul with 2 life. 2 strength, 1 bleed. Requires an Anarch.\nVivienne can play cards requiring basic Celerity [cel] and/or Fortitude [for] as an Anarch vampire. Vampires you control get -1 stealth during political actions. A vampire you control can give another Methuselah control of Vivienne as a (D) action. A vampire controlled by another Methuselah can steal Vivienne as a (D) action.",
         "Set":{
             "Anthology":{
                 "LARP":"1"
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Mark Kelly"
@@ -76814,7 +76888,7 @@
                 "U":true
             }
         },
-        "Requirement":"archbishop,priscus,cardinal,regent",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Tom Gianni"
@@ -77170,7 +77244,7 @@
                 "C":true
             }
         },
-        "Requirement":"black hand",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -77194,7 +77268,7 @@
                 "R":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -77218,7 +77292,7 @@
                 "R":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -77242,7 +77316,7 @@
                 "R":true
             }
         },
-        "Requirement":"seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Chet Masters"
@@ -77266,7 +77340,7 @@
                 "R":true
             }
         },
-        "Requirement":"1 Gehenna,seraph",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -77293,7 +77367,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"non-sterile,capacity 5 or more",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -77779,7 +77853,7 @@
                 "R":true
             }
         },
-        "Requirement":"laibon",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Pat Loboyko"
@@ -78110,7 +78184,7 @@
                 "U":true
             }
         },
-        "Requirement":"primogen",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -78505,7 +78579,7 @@
                 "R":true
             }
         },
-        "Requirement":"anarch",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -78529,7 +78603,7 @@
                 "R":true
             }
         },
-        "Requirement":"1 Gehenna",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -78572,7 +78646,7 @@
                 "U":true
             }
         },
-        "Requirement":"inner circle",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Ron Spencer"
@@ -78711,7 +78785,7 @@
                 "R":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Glen Osterberger"
@@ -78929,7 +79003,8 @@
         "Card Text":"Only usable after resolution of an unsuccessful action.\n[cel] Unlock this vampire at the end of the turn.\n[CEL] Unlock this vampire.",
         "Set":{
             "TU":{
-                "C":true
+                "C":true,
+                "A":"2"
             },
             "Anthology":{
                 "":"4"
@@ -78979,7 +79054,7 @@
                 "C":true
             }
         },
-        "Requirement":"sabbat",
+        "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jim Nelson"

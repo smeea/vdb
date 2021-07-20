@@ -487,6 +487,6 @@ def get_library_by_name(pattern, library):
 
 
 def get_library_by_id(id):
-    with open("cardbase_library.json", "r") as library_file:
+    with open("cardbase_lib.json", "r") as library_file:
         library = json.load(library_file)
         return library[str(id)]
