@@ -51,7 +51,7 @@ function SearchFormPrecon(props) {
           checked={props.value[i[0]]}
           onChange={(e) => props.onChangeOptions(e)}
         />
-        <label htmlFor={`precon-${i[0]}`} className="mr-4 custom-control-label">
+        <label htmlFor={`precon-${i[0]}`} className="ml-3 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -92,10 +92,7 @@ function SearchFormPrecon(props) {
         </Col>
       </Row>
       <Row className="pb-1 pl-1 mx-0 align-items-center">
-        <Col
-          xs={{ span: 9, offset: 3 }}
-          className="d-flex justify-content-end px-0"
-        >
+        <Col className="d-flex justify-content-end px-0">
           {preconOptionsForm}
         </Col>
       </Row>

@@ -20,7 +20,6 @@
 * Capacity filter to library
 * Search results to show correct number and auto-results if "Search in Inventory"
 * Remove location/player from TWD search
-* "Cards newer than" to set filter
 * Custom art to proxy
 
 # MOBILE FEATURES

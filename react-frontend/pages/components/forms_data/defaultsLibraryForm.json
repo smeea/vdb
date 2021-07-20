@@ -40,7 +40,8 @@
   "set": {
     "set": "any",
     "only in": false,
-    "first print": false
+    "first print": false,
+    "or newer": false
   },
   "precon": {
     "precon": "any",

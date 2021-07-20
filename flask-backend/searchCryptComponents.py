@@ -301,52 +301,61 @@ def get_crypt_by_set(request, crypt):
     match_cards = []
     r_set = request['set']
 
-    if r_set == 'bcp':
+    if 'or newer' in request:
+        oldestSetIndex = sets.index(r_set)
+
         for card in crypt:
-            for c_set in card['Set'].keys():
-                if c_set in bcp_sets:
-                    if card in match_cards:
-                        continue
+            for k in card['Set'].keys():
+                if sets.index(k) <= oldestSetIndex and sets.index(k) > 1:
+                    match_cards.append(card)
 
+    else:
+        if r_set == 'bcp':
+            for card in crypt:
+                for c_set in card['Set'].keys():
+                    if c_set in bcp_sets:
+                        if card in match_cards:
+                            continue
+
+                        if 'only in' in request:
+                            counter = 0
+                            for k in card['Set'].keys():
+                                if k in bcp_sets:
+                                    counter += 1
+
+                            if len(card['Set'].keys()) == counter:
+                                match_cards.append(card)
+
+                        elif 'first print' in request:
+                            oldestSetIndex = 0
+                            for k in card['Set'].keys():
+                                if sets.index(k) > oldestSetIndex:
+                                    # add 2 because of 'Promo' and 'DTC'
+                                    oldestSetIndex = sets.index(k) + 2
+
+                            if oldestSetIndex < len(bcp_sets):
+                                match_cards.append(card)
+
+                        else:
+                            match_cards.append(card)
+
+        else:
+            for card in crypt:
+                if r_set in card['Set']:
                     if 'only in' in request:
-                        counter = 0
-                        for k in card['Set'].keys():
-                            if k in bcp_sets:
-                                counter += 1
-
-                        if len(card['Set'].keys()) == counter:
+                        if len(card['Set'].keys()) == 1:
                             match_cards.append(card)
 
                     elif 'first print' in request:
                         oldestSetIndex = 0
                         for k in card['Set'].keys():
                             if sets.index(k) > oldestSetIndex:
-                                # add 2 because of 'Promo' and 'DTC'
-                                oldestSetIndex = sets.index(k) + 2
+                                oldestSetIndex = sets.index(k)
 
-                        if oldestSetIndex < len(bcp_sets):
+                        if oldestSetIndex == sets.index(r_set):
                             match_cards.append(card)
-
                     else:
                         match_cards.append(card)
-
-    else:
-        for card in crypt:
-            if r_set in card['Set']:
-                if 'only in' in request:
-                    if len(card['Set'].keys()) == 1:
-                        match_cards.append(card)
-
-                elif 'first print' in request:
-                    oldestSetIndex = 0
-                    for k in card['Set'].keys():
-                        if sets.index(k) > oldestSetIndex:
-                            oldestSetIndex = sets.index(k)
-
-                    if oldestSetIndex == sets.index(r_set):
-                        match_cards.append(card)
-                else:
-                    match_cards.append(card)
 
     return match_cards
 
