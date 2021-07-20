@@ -121,6 +121,7 @@ function SearchLibraryForm(props) {
   };
 
   const handleClearButton = () => {
+    if (!isMobile) history.push('/library');
     setLibraryFormState(JSON.parse(JSON.stringify(defaults)));
     setLibraryResults(undefined);
     setPreresults(undefined);

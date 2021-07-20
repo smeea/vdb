@@ -139,6 +139,7 @@ function SearchCryptForm(props) {
   };
 
   const handleClearButton = () => {
+    if (!isMobile) history.push('/crypt');
     setCryptFormState(JSON.parse(JSON.stringify(defaults)));
     setCryptResults(undefined);
     setPreresults(undefined);
