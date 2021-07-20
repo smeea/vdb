@@ -27,6 +27,7 @@ function SearchLibraryFormTraits(props) {
     ['burn', 'Burn Option'],
     ['banned', 'Banned'],
     ['non-twd', 'Not in TWD'],
+    ['no-requirements', 'No Requirements'],
   ];
 
   const traitsLeftforms = traitsLeft.map((i, index) => {

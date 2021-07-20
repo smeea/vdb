@@ -7,15 +7,12 @@
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 
 # FEATURES
-* Update cardbase script
 * Create revocable link to Inventory
 * Show missing cards for inventory
 * Search for similar TWD decks
 * Localized proxies and from scans
 * Tags to deck main window
-* Update cards to KS
 * Card recommendation
-* No requirement trait to library
 * Feldb inventory import
 * Deck/revision diff
 * Save image/text hover to localStorage

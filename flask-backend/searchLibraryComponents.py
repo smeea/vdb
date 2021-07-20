@@ -211,6 +211,13 @@ def get_library_by_traits(traits, library):
                 if card['Burn Option']:
                     counter += 1
 
+            elif trait == 'no-requirements':
+                if not card['Requirement'] and not card[
+                        'Discipline'] and not card[
+                            'Clan'] and 'requires a' not in card[
+                                'Card Text'].lower():
+                    counter += 1
+
             elif re.search(r'{}'.format(trait), card['Card Text'],
                            re.IGNORECASE):
                 counter += 1
