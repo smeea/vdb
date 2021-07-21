@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
 import AppContext from '../../context/AppContext.js';
 
@@ -6,6 +6,10 @@ function InventoryCardQuantity(props) {
   const { inventoryCardChange, isMobile } = useContext(AppContext);
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(props.q);
+
+  useEffect(() => {
+    setState(props.q);
+  }, [props.q]);
 
   const handleManualChange = (event) => {
     setState(event.target.value);

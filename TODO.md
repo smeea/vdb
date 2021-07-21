@@ -1,7 +1,5 @@
 # FIX
 * Save scrolling position
-* Fix inventory card quantity to sync in new card window
-* Improve adv deck opening speed
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
@@ -15,7 +13,7 @@
 * Card recommendation
 * Feldb inventory import
 * Deck/revision diff
-* Custom art to proxy
+* Add help to pages
 
 # MOBILE FEATURES
 * Offline PWA support
