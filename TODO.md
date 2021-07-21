@@ -16,8 +16,6 @@
 * Card recommendation
 * Feldb inventory import
 * Deck/revision diff
-* Save image/text hover to localStorage
-* Save inventorymode to local storage
 * Remove location/player from TWD search
 * Custom art to proxy
 

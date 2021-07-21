@@ -14,7 +14,7 @@ function Cards(props) {
     cryptCardBase,
     libraryCardBase,
     showImage,
-    setShowImage,
+    toggleShowImage,
     localizedCrypt,
     localizedLibrary,
     lang,
@@ -148,7 +148,7 @@ function Cards(props) {
                   </Col>
                 </Row>
                 <div
-                  onClick={() => setShowImage(!showImage)}
+                  onClick={() => toggleShowImage()}
                   className="float-right-bottom add-on"
                 >
                   <div className="pt-1 float-add">

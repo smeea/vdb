@@ -15,7 +15,7 @@ import AppContext from '../../context/AppContext.js';
 function ResultCryptModal(props) {
   const {
     showImage,
-    setShowImage,
+    toggleShowImage,
     inventoryMode,
     localizedCrypt,
     lang,
@@ -166,7 +166,7 @@ function ResultCryptModal(props) {
               </div>
             </div>
             <div
-              onClick={() => setShowImage(!showImage)}
+              onClick={() => toggleShowImage()}
               className="float-right-middle add-on"
             >
               <div className="pt-1 float-add">

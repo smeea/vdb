@@ -10,7 +10,7 @@ function Twd(props) {
     showTwdSearch,
     twdResults,
     inventoryMode,
-    setInventoryMode,
+    toggleInventoryMode,
     isMobile,
   } = useContext(AppContext);
 
@@ -55,7 +55,7 @@ function Twd(props) {
         <>
           {inventoryMode ? (
             <div
-              onClick={() => setInventoryMode(!inventoryMode)}
+              onClick={() => toggleInventoryMode()}
               className="float-right-top inventory-on"
             >
               <div className="pt-2 float-inventory">
@@ -64,7 +64,7 @@ function Twd(props) {
             </div>
           ) : (
             <div
-              onClick={() => setInventoryMode(!inventoryMode)}
+              onClick={() => toggleInventoryMode()}
               className="float-right-top inventory-off"
             >
               <div className="pt-2 float-inventory">

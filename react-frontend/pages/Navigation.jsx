@@ -14,7 +14,7 @@ import NavMobileMenu from './components/NavMobileMenu.jsx';
 import LanguageSelect from './components/LanguageSelect.jsx';
 
 function Navigation(props) {
-  const { inventoryMode, setInventoryMode, isMobile, username } =
+  const { inventoryMode, toggleInventoryMode, isMobile, username } =
     useContext(AppContext);
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
@@ -39,7 +39,7 @@ function Navigation(props) {
               location.pathname == '/twd') && (
               <div
                 className="d-flex align-items-center px-3"
-                onClick={() => setInventoryMode(!inventoryMode)}
+                onClick={() => toggleInventoryMode()}
               >
                 <div
                   className={

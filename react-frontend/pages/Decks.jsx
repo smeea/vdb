@@ -39,7 +39,7 @@ function Decks(props) {
     cryptCardBase,
     libraryCardBase,
     inventoryMode,
-    setInventoryMode,
+    toggleInventoryMode,
     username,
     isMobile,
   } = useContext(AppContext);
@@ -566,7 +566,7 @@ function Decks(props) {
                   <Button
                     variant="outline-secondary"
                     onClick={() => {
-                      setInventoryMode(!inventoryMode);
+                      toggleInventoryMode();
                       handleShowButtons(false);
                     }}
                     block

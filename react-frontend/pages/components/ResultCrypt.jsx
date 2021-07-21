@@ -18,7 +18,7 @@ function ResultCrypt(props) {
     addMode,
     setAddMode,
     inventoryMode,
-    setInventoryMode,
+    toggleInventoryMode,
     isMobile,
     isInventory,
     hideMissing,
@@ -86,7 +86,7 @@ function ResultCrypt(props) {
             <>
               {inventoryMode ? (
                 <div
-                  onClick={() => setInventoryMode(!inventoryMode)}
+                  onClick={() => toggleInventoryMode()}
                   className="float-right-top inventory-on"
                 >
                   <div className="pt-2 float-inventory">
@@ -95,7 +95,7 @@ function ResultCrypt(props) {
                 </div>
               ) : (
                 <div
-                  onClick={() => setInventoryMode(!inventoryMode)}
+                  onClick={() => toggleInventoryMode()}
                   className="float-right-top inventory-off"
                 >
                   <div className="pt-2 float-inventory">

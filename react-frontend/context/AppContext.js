@@ -16,13 +16,13 @@ const AppContext = React.createContext({
   setEmail: () => {},
   localizedCrypt: undefined,
   showImage: true,
-  setShowImage: () => {},
+  toggleShowImage: () => {},
   addMode: false,
   setAddMode: () => {},
   hideMissing: false,
   setHideMissing: () => {},
   inventoryMode: false,
-  setInventoryMode: () => {},
+  toggleInventoryMode: () => {},
   isInventory: undefined,
 
   cryptCardBase: undefined,
@@ -89,6 +89,7 @@ export default AppContext;
 export const AppProvider = (props) => {
   const isMobile = window.matchMedia('(max-width: 540px)').matches;
   const isWide = window.matchMedia('(min-width: 1600px)').matches;
+
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
@@ -155,6 +156,32 @@ export const AppProvider = (props) => {
       setLang('en-EN');
     }
   }, [lang]);
+
+  const toggleShowImage = () => {
+    setShowImage(!showImage);
+    window.localStorage.setItem('showImage', !showImage);
+  };
+
+  useLayoutEffect(() => {
+    if (window.localStorage.getItem('showImage') === 'false') {
+      setShowImage(false);
+    } else {
+      setShowImage(true);
+    }
+  }, [showImage]);
+
+  const toggleInventoryMode = () => {
+    setInventoryMode(!inventoryMode);
+    window.localStorage.setItem('inventoryMode', !inventoryMode);
+  };
+
+  useLayoutEffect(() => {
+    if (window.localStorage.getItem('inventoryMode') === 'true') {
+      setInventoryMode(true);
+    } else {
+      setInventoryMode(false);
+    }
+  }, [inventoryMode]);
 
   const isInventory =
     Object.keys(inventoryCrypt).length > 0 ||
@@ -371,12 +398,12 @@ export const AppProvider = (props) => {
         hideMissing,
         setHideMissing,
         inventoryMode,
-        setInventoryMode,
+        toggleInventoryMode,
         isInventory,
         addMode,
         setAddMode,
         showImage,
-        setShowImage,
+        toggleShowImage,
 
         cryptCardBase,
         setCryptCardBase,

@@ -15,7 +15,7 @@ import AppContext from '../../context/AppContext.js';
 function ResultLibraryModal(props) {
   const {
     showImage,
-    setShowImage,
+    toggleShowImage,
     inventoryMode,
     localizedLibrary,
     lang,
@@ -166,7 +166,7 @@ function ResultLibraryModal(props) {
               </div>
             </div>
             <div
-              onClick={() => setShowImage(!showImage)}
+              onClick={() => toggleShowImage()}
               className="float-right-middle add-on"
             >
               <div className="pt-1 float-add">

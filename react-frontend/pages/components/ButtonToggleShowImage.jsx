@@ -5,11 +5,11 @@ import FileTextFill from '../../assets/images/icons/chat-quote-fill.svg';
 import AppContext from '../../context/AppContext.js';
 
 function ButtonToggleShowImage(props) {
-  const { showImage, setShowImage, isMobile } = useContext(AppContext);
+  const { showImage, toggleShowImage, isMobile } = useContext(AppContext);
   const [state, setState] = useState(false);
 
   const handleButton = () => {
-    setShowImage(!showImage);
+    toggleShowImage();
     setState(true);
     setTimeout(() => {
       setState(false);

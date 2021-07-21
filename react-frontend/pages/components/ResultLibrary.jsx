@@ -18,7 +18,7 @@ function ResultLibrary(props) {
     addMode,
     setAddMode,
     inventoryMode,
-    setInventoryMode,
+    toggleInventoryMode,
     isMobile,
     isInventory,
     hideMissing,
@@ -84,7 +84,7 @@ function ResultLibrary(props) {
             <>
               {inventoryMode ? (
                 <div
-                  onClick={() => setInventoryMode(!inventoryMode)}
+                  onClick={() => toggleInventoryMode()}
                   className="float-right-top inventory-on"
                 >
                   <div className="pt-2 float-inventory">
@@ -93,7 +93,7 @@ function ResultLibrary(props) {
                 </div>
               ) : (
                 <div
-                  onClick={() => setInventoryMode(!inventoryMode)}
+                  onClick={() => toggleInventoryMode()}
                   className="float-right-top inventory-off"
                 >
                   <div className="pt-2 float-inventory">
