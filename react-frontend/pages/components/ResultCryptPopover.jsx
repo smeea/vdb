@@ -63,7 +63,9 @@ function ResultCryptPopover(props) {
             </div>
           </div>
           <hr />
-          <ResultLayoutTextText text={props.card['Card Text']} />
+          <div className="popover-card-text">
+            <ResultLayoutTextText text={props.card['Card Text']} />
+          </div>
           <hr />
           <div className="d-flex align-items-center justify-content-between">
             <ResultCryptDisciplines value={props.card['Disciplines']} />
@@ -80,7 +82,7 @@ function ResultCryptPopover(props) {
               <div className="py-1">
                 <b>Rulings: </b>
               </div>
-              <div className="small pb-1">
+              <div className="popover-rulings small pb-1">
                 <ResultLayoutTextRulings rulings={props.card['Rulings']} />
               </div>
             </>
