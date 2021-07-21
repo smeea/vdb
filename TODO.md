@@ -2,6 +2,8 @@
 * Save scrolling position
 * Fix inventory card quantity to sync in new card window
 * Improve adv deck opening speed
+* Search results to show correct number and auto-results if "Search in Inventory"
+* Width of card text popover
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
@@ -17,8 +19,6 @@
 * Deck/revision diff
 * Save image/text hover to localStorage
 * Save inventorymode to local storage
-* Capacity filter to library
-* Search results to show correct number and auto-results if "Search in Inventory"
 * Remove location/player from TWD search
 * Custom art to proxy
 

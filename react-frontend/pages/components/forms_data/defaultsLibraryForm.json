@@ -10,6 +10,10 @@
     "pool": "any",
     "moreless": "le"
   },
+  "capacity": {
+    "capacity": "any",
+    "moreless": "le"
+  },
   "clan": ["any"],
   "sect": ["any"],
   "title": ["any"],

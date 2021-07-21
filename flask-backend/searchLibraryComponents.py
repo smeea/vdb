@@ -463,6 +463,34 @@ def get_library_by_artist(artist, library):
     return match_cards
 
 
+def get_library_by_capacity(request, library):
+    capacity = int(request['capacity'])
+
+    moreless = request['moreless']
+    match_cards = []
+
+    for card in library:
+        if moreless == 'le':
+            for i in range(1, capacity):
+                if re.search(
+                        f'requires .* (of|with) capacity less than {i + 1}',
+                        card['Card Text'], re.IGNORECASE) or re.search(
+                            f'requires .* (of|with) capacity {i} or less',
+                            card['Card Text'], re.IGNORECASE):
+                    match_cards.append(card)
+
+        elif moreless == 'ge':
+            for i in range(capacity, 11):
+                if re.search(
+                        f'requires .* (of|with) capacity {i} or more',
+                        card['Card Text'], re.IGNORECASE) or re.search(
+                            f'requires .* (of|with) capacity above {i - 1}',
+                            card['Card Text'], re.IGNORECASE):
+                    match_cards.append(card)
+
+    return match_cards
+
+
 def is_match_by_initials(initials, text):
     prev_index = 0
 

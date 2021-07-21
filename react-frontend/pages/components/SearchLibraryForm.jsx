@@ -12,6 +12,7 @@ import SearchLibraryFormDiscipline from './SearchLibraryFormDiscipline.jsx';
 import SearchLibraryFormTraits from './SearchLibraryFormTraits.jsx';
 import SearchLibraryFormBloodCost from './SearchLibraryFormBloodCost.jsx';
 import SearchLibraryFormPoolCost from './SearchLibraryFormPoolCost.jsx';
+import SearchLibraryFormCapacity from './SearchLibraryFormCapacity.jsx';
 import SearchFormSet from './SearchFormSet.jsx';
 import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
@@ -157,7 +158,13 @@ function SearchLibraryForm(props) {
         delete input[k]
     );
 
-    const multiSelectFormsWithMain = ['set', 'precon', 'blood', 'pool'];
+    const multiSelectFormsWithMain = [
+      'set',
+      'precon',
+      'blood',
+      'pool',
+      'capacity',
+    ];
 
     multiSelectFormsWithMain.map((i) => {
       if (input[i][i] == 'any') {
@@ -293,6 +300,11 @@ function SearchLibraryForm(props) {
       />
       <SearchLibraryFormPoolCost
         value={libraryFormState.pool}
+        onChange={handleNestedChange}
+        onMorelessChange={handleMorelessChange}
+      />
+      <SearchLibraryFormCapacity
+        value={libraryFormState.capacity}
         onChange={handleNestedChange}
         onMorelessChange={handleMorelessChange}
       />
