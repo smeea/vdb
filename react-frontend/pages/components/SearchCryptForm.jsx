@@ -33,6 +33,7 @@ function SearchCryptForm(props) {
     hideMissing,
     setHideMissing,
     isMobile,
+    inventoryCrypt,
   } = useContext(AppContext);
 
   const [spinnerState, setSpinnerState] = useState(false);
@@ -217,7 +218,13 @@ function SearchCryptForm(props) {
             return cryptCardBase[i];
           });
           if (!isMobile) {
-            setPreresults(res);
+            if (hideMissing) {
+              setPreresults(() =>
+                res.filter((card) => inventoryCrypt[card.Id])
+              );
+            } else {
+              setPreresults(res);
+            }
           } else {
             setCryptResults(res);
           }
@@ -252,11 +259,11 @@ function SearchCryptForm(props) {
         launchRequest();
       }
     }
-  }, [cryptFormState]);
+  }, [cryptFormState, hideMissing]);
 
   useEffect(() => {
     if (!isMobile && preresults) {
-      if (preresults && preresults.length < showLimit) {
+      if (preresults.length < showLimit) {
         setCryptResults(preresults);
       } else {
         setCryptResults(undefined);

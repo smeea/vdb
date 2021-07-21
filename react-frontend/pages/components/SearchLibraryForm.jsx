@@ -33,7 +33,9 @@ function SearchLibraryForm(props) {
     hideMissing,
     setHideMissing,
     isMobile,
+    inventoryLibrary,
   } = useContext(AppContext);
+
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
   const showLimit = 300;
@@ -196,7 +198,13 @@ function SearchLibraryForm(props) {
             return libraryCardBase[i];
           });
           if (!isMobile) {
-            setPreresults(res);
+            if (hideMissing) {
+              setPreresults(() =>
+                res.filter((card) => inventoryLibrary[card.Id])
+              );
+            } else {
+              setPreresults(res);
+            }
           } else {
             setLibraryResults(res);
           }
@@ -231,11 +239,11 @@ function SearchLibraryForm(props) {
         launchRequest();
       }
     }
-  }, [libraryFormState]);
+  }, [libraryFormState, hideMissing]);
 
   useEffect(() => {
     if (!isMobile && preresults) {
-      if (preresults && preresults.length < showLimit) {
+      if (preresults.length < showLimit) {
         setLibraryResults(preresults);
       } else {
         setLibraryResults(undefined);

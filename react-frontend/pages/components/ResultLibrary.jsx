@@ -10,7 +10,6 @@ import AppContext from '../../context/AppContext.js';
 
 function ResultLibrary(props) {
   const {
-    inventoryLibrary,
     showLibrarySearch,
     setShowLibrarySearch,
     libraryResults,
@@ -21,7 +20,6 @@ function ResultLibrary(props) {
     toggleInventoryMode,
     isMobile,
     isInventory,
-    hideMissing,
   } = useContext(AppContext);
 
   const [sortedCards, setSortedCards] = useState([]);
@@ -40,17 +38,8 @@ function ResultLibrary(props) {
   };
 
   useEffect(() => {
-    if (!hideMissing) {
-      setSortedCards(() => resultLibrarySort(libraryResults, props.sortMethod));
-    } else {
-      setSortedCards(() =>
-        resultLibrarySort(
-          libraryResults.filter((card) => inventoryLibrary[card.Id]),
-          props.sortMethod
-        )
-      );
-    }
-  }, [libraryResults, props.sortMethod, hideMissing]);
+    setSortedCards(() => resultLibrarySort(libraryResults, props.sortMethod));
+  }, [libraryResults, props.sortMethod]);
 
   return (
     <>

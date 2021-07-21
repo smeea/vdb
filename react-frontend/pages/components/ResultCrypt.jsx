@@ -10,7 +10,6 @@ import AppContext from '../../context/AppContext.js';
 
 function ResultCrypt(props) {
   const {
-    inventoryCrypt,
     showCryptSearch,
     setShowCryptSearch,
     cryptResults,
@@ -21,7 +20,6 @@ function ResultCrypt(props) {
     toggleInventoryMode,
     isMobile,
     isInventory,
-    hideMissing,
   } = useContext(AppContext);
 
   const [sortedCards, setSortedCards] = useState([]);
@@ -41,17 +39,8 @@ function ResultCrypt(props) {
   };
 
   useEffect(() => {
-    if (!hideMissing) {
-      setSortedCards(() => resultCryptSort(cryptResults, props.sortMethod));
-    } else {
-      setSortedCards(() =>
-        resultCryptSort(
-          cryptResults.filter((card) => inventoryCrypt[card.Id]),
-          props.sortMethod
-        )
-      );
-    }
-  }, [cryptResults, props.sortMethod, hideMissing]);
+    setSortedCards(() => resultCryptSort(cryptResults, props.sortMethod));
+  }, [cryptResults, props.sortMethod]);
 
   return (
     <>
