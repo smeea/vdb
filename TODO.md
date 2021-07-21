@@ -15,7 +15,6 @@
 * Card recommendation
 * Feldb inventory import
 * Deck/revision diff
-* Remove location/player from TWD search
 * Custom art to proxy
 
 # MOBILE FEATURES

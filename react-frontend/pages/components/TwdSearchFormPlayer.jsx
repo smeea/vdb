@@ -5,7 +5,7 @@ function TwdSearchFormPlayer(props) {
   const handleChange = (v) => {
     props.setValue((prevState) => ({
       ...prevState,
-      player: v.value,
+      player: v ? v.value : '',
     }));
   };
 
@@ -38,6 +38,7 @@ function TwdSearchFormPlayer(props) {
       autoFocus={false}
       placeholder="Player"
       loadOptions={loadOptions}
+      isClearable={true}
       value={
         props.value
           ? {

@@ -5,7 +5,7 @@ function TwdSearchFormLocation(props) {
   const handleChange = (v) => {
     props.setValue((prevState) => ({
       ...prevState,
-      location: v.value,
+      location: v ? v.value : '',
     }));
   };
 
@@ -38,6 +38,7 @@ function TwdSearchFormLocation(props) {
       autoFocus={false}
       placeholder="Location"
       loadOptions={loadOptions}
+      isClearable={true}
       value={
         props.value
           ? {
