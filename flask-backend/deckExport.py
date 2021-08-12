@@ -9,9 +9,12 @@ def deckExport(d, format):
         maxCrypt = 0
         maxLibrary = 0
 
-        with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_library.json", "r") as library_file:
+        with open("cardbase_crypt.json",
+                  "r") as crypt_file, open("cardbase_lib.json",
+                                           "r") as library_file:
             cryptBase = json.load(crypt_file)
             libraryBase = json.load(library_file)
+
             for k, v in d['cards'].items():
                 if v > 0:
                     k = int(k)
@@ -32,7 +35,9 @@ def deckExport(d, format):
 
         if format == 'lackey':
             # Library export
-            sorted_library_keys = sorted(library, key=lambda x: (library[x]['c']['Name']))
+            sorted_library_keys = sorted(library,
+                                         key=lambda x:
+                                         (library[x]['c']['Name']))
 
             for id in sorted_library_keys:
                 q = library[id]['q']
@@ -135,13 +140,15 @@ def deckExport(d, format):
             deck.append(cryptSub)
 
             if format == 'text':
-                sorted_crypt = sorted(
-                    sorted(sorted(crypt.values(),
-                                  key=lambda x: x['c']['Name']),
-                           key=lambda x: x['c']['Capacity'], reverse = True),
-                    key=lambda x: x['q'], reverse = True)
+                sorted_crypt = sorted(sorted(sorted(
+                    crypt.values(), key=lambda x: x['c']['Name']),
+                                             key=lambda x: x['c']['Capacity'],
+                                             reverse=True),
+                                      key=lambda x: x['q'],
+                                      reverse=True)
             else:
-                sorted_crypt = sorted(crypt.values(), key=lambda x: x['c']['Name'])
+                sorted_crypt = sorted(crypt.values(),
+                                      key=lambda x: x['c']['Name'])
 
             cryptExport = {}
             longestName = 0
@@ -224,7 +231,6 @@ def deckExport(d, format):
                 else:
                     byType[cardType][cardName] = v['q']
                     byTypeTotal[cardType] += v['q']
-
 
             byTypeOrder = [
                 'Master',

@@ -61,11 +61,11 @@ def listInventory():
 @app.route('/api/inventory/export', methods=['POST'])
 def inventoryExportRoute():
     try:
-        deck = {
+        inventory = {
             'cards': current_user.inventory,
             'author': current_user.public_name,
         }
-        result = inventoryExport(deck, request.json['format'])
+        result = inventoryExport(inventory, request.json['format'])
 
         return jsonify(result)
 

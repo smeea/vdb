@@ -13,7 +13,9 @@ def inventoryExport(d, format):
         maxCrypt = 0
         maxLibrary = 0
 
-        with open("cardbase_crypt.json", "r") as crypt_file, open("cardbase_library.json", "r") as library_file:
+        with open("cardbase_crypt.json",
+                  "r") as crypt_file, open("cardbase_lib.json",
+                                           "r") as library_file:
             cryptBase = json.load(crypt_file)
             libraryBase = json.load(library_file)
             for k, v in d['cards'].items():
@@ -34,7 +36,8 @@ def inventoryExport(d, format):
 
         if format == 'lackey':
             # Library export
-            sorted_library = sorted(library.values(), key=lambda x: x['c']['Name'])
+            sorted_library = sorted(library.values(),
+                                    key=lambda x: x['c']['Name'])
 
             for i in sorted_library:
                 q = i['q']
@@ -113,7 +116,8 @@ def inventoryExport(d, format):
             deck.append(cryptTotalTitle)
             deck.append(cryptSub)
 
-            sorted_crypt_keys = sorted(crypt, key=lambda x: (crypt[x]['c']['Name']))
+            sorted_crypt_keys = sorted(crypt,
+                                       key=lambda x: (crypt[x]['c']['Name']))
             cryptExport = {}
             longestName = 0
             longestTitle = 0
@@ -245,7 +249,11 @@ def inventoryExport(d, format):
 
         deck_str = ''.join(deck)
 
-        return {'name': f"Inventory - {d['author']}", 'format': format, 'deck': deck_str}
+        return {
+            'name': f"Inventory - {d['author']}",
+            'format': format,
+            'deck': deck_str
+        }
 
     except Exception:
         pass
