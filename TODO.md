@@ -20,8 +20,6 @@
 * Add help to pages
 * Decklist endpoint
 * Codex link + feedback to Phoenix
-* Update rulings
-* Update cards
 * Public deck archive
 * Csv export
 * Export to JOL

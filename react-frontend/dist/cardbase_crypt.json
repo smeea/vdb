@@ -584,7 +584,7 @@
                 }
             },
             {
-                "text":"A weapon available from his ability can be chose for a {Concealed Weapon}. ",
+                "text":"A weapon available from his ability can be chosen for a {Concealed Weapon}. ",
                 "refs":{
                     "[LSJ 20060913]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GpSAQnN6GnY/m/6EqRGDT3u08J"
                 }
@@ -1361,7 +1361,14 @@
             "Dominate":1,
             "Thaumaturgy":1
         },
-        "Rulings":[]
+        "Rulings":[
+            {
+                "text":"If a card transforms the damage he inflicts to aggravated (eg. {True Faith}), this includes the damage from his ability. ",
+                "refs":{
+                    "[ANK 20210620]":"https://www.vekn.net/forum/rules-questions/79186-alejandro-aguirre-true-faith#102522"
+                }
+            }
+        ]
     },
     "200045":{
         "Id":200045,
@@ -4795,6 +4802,31 @@
             }
         ]
     },
+    "201620":{
+        "Id":201620,
+        "Name":"Ashlesha",
+        "Clan":"Ravnos",
+        "Adv":"",
+        "Group":"2",
+        "Capacity":3,
+        "Card Text":"Independent.",
+        "Set":{
+            "Promo":{
+                "20210701":true
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ASCII Name":"Ashlesha",
+        "Disciplines":{
+            "Auspex":1,
+            "Chimerstry":1
+        },
+        "Rulings":[]
+    },
     "201533":{
         "Id":201533,
         "Name":"Ashley",
@@ -7630,6 +7662,18 @@
                 "refs":{
                     "[LSJ 20100228]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/yDeGOj1RBuU/k2CfIfBk770J"
                 }
+            },
+            {
+                "text":"When he burns from aggravated damage, additional damage is lost. ",
+                "refs":{
+                    "[ANK 20210424]":"https://www.vekn.net/forum/rules-questions/79121-burning-byzar-during-combat#102140"
+                }
+            },
+            {
+                "text":"If {Amaranth} burns him and he comes back in torpor, another {Amaranth} can be played. ",
+                "refs":{
+                    "[ANK 20210424]":"https://www.vekn.net/forum/rules-questions/79121-burning-byzar-during-combat#102140"
+                }
             }
         ]
     },
@@ -8031,13 +8075,13 @@
         },
         "Rulings":[
             {
-                "text":"If he burns, he looses all cards and counters on him, all cards and effects lose track of him and he is considered a new vampire for all game purposes (eg. {Rack, The} do not target him anymore). ",
+                "text":"If he burns, he looses all cards and counters on him, all cards and effects lose track of him and he is considered a new vampire for all game purposes (eg. {Rack, The} does not target him anymore). ",
                 "refs":{
                     "[ANK 20200417]":"http://www.vekn.net/forum/rules-questions/78568-the-capuchin-burns-temporary-control?start=12#99616"
                 }
             },
             {
-                "text":"If his controller is not his original owner and he burns, he goes to his original owner ash heap, breaking all control effect, then to his owner's uncontrolled area. The Methusalah who was controlling him when he burned gets the additional transfers. ",
+                "text":"If his controller is not his original owner and he burns, he goes to his original owner ash heap, breaking all control effect, then to his owner's uncontrolled area. The Methuselah who was controlling him when he burned gets the additional transfers. ",
                 "refs":{
                     "[ANK 20200417]":"http://www.vekn.net/forum/rules-questions/78568-the-capuchin-burns-temporary-control?start=12#99616"
                 }
@@ -12737,9 +12781,9 @@
         },
         "Rulings":[
             {
-                "text":"If his opponent plays superior {Terror Frenzy}, Dragos has to burn one blood for each combat card he plays in that combat. ",
+                "text":"If his opponent plays superior {Terror Frenzy}, Dragos does not burn one additional blood for combat card he plays (reversal of previous rulings). ",
                 "refs":{
-                    "[LSJ 19990223]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/ixjWcYQhwVo/2lUY05CrexoJ"
+                    "[LSJ 20090107]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qPDLvbgqfCg/m/DlRVFoE_C64J"
                 }
             }
         ]
@@ -26537,7 +26581,7 @@
                 }
             },
             {
-                "text":"When a Methusalah decides to get no transfer, he can still use other effects that put blood on his uncontrolled vampires (eg. [DOM] {Govern the Unaligned}, {Powerbase: Montreal}). ",
+                "text":"When a Methuselah decides to get no transfer, he can still use other effects that put blood on his uncontrolled vampires (eg. [DOM] {Govern the Unaligned}, {Powerbase: Montreal}). ",
                 "refs":{
                     "[LSJ 20100527]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Tr3X4DsZr-8/O06iXN6LtzsJ"
                 }
@@ -26626,6 +26670,34 @@
             "Dominate":1,
             "Obtenebration":1,
             "Presence":1
+        },
+        "Rulings":[]
+    },
+    "201622":{
+        "Id":201622,
+        "Name":"Len Konopka",
+        "Clan":"Nosferatu antitribu",
+        "Adv":"",
+        "Group":"3",
+        "Capacity":8,
+        "Card Text":"Sabbat: If Len is ready at the start of your influence phase, you get +1 transfer. Black Hand.",
+        "Set":{
+            "Promo":{
+                "20210701":true
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ASCII Name":"Len Konopka",
+        "Disciplines":{
+            "Dominate":1,
+            "Serpentis":1,
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":2
         },
         "Rulings":[]
     },
@@ -27611,7 +27683,14 @@
             "Necromancy":2,
             "Potence":2
         },
-        "Rulings":[]
+        "Rulings":[
+            {
+                "text":"Cannot use his ability after {Amaranth} resolves. ",
+                "refs":{
+                    "[ANK 20210705]":"https://www.vekn.net/forum/rules-questions/79211-lorenzo-detuono-timing-questions#102632"
+                }
+            }
+        ]
     },
     "200859":{
         "Id":200859,
@@ -39798,6 +39877,12 @@
                 "refs":{
                     "[ANK 20200420-2]":"http://www.vekn.net/forum/rules-questions/58209-santaleous-questions?start=6#99643"
                 }
+            },
+            {
+                "text":"When using his ability, the cost of the canceled card must still be paid. ",
+                "refs":{
+                    "[LSJ 20090601-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RkEUabeJNdM/m/JEGebBucNfEJ"
+                }
             }
         ]
     },
@@ -46867,10 +46952,11 @@
         "Adv":"",
         "Group":"3",
         "Capacity":10,
-        "Card Text":"Independent: Vlad can play and use cards requiring a title or a sect as if he had that title or were of that sect. +1 bleed.",
+        "Card Text":"Independent: Vlad uses and can play cards requiring a title or a sect as if he had that required title or were of that required sect. +1 bleed.",
         "Set":{
             "Promo":{
-                "20150221":true
+                "20150215":true,
+                "20210701":true
             }
         },
         "Title":"",
@@ -47168,7 +47254,7 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }

@@ -4582,6 +4582,32 @@
         "Twd":true
     },
     {
+        "Id":201620,
+        "Name":"Ashlesha",
+        "Type":"Vampire",
+        "Clan":"Ravnos",
+        "Adv":"",
+        "Group":"2",
+        "Capacity":3,
+        "Card Text":"Independent.",
+        "Set":{
+            "Promo":{
+                "20210701":true
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ASCII Name":"Ashlesha",
+        "Disciplines":{
+            "Auspex":1,
+            "Chimerstry":1
+        },
+        "Twd":false
+    },
+    {
         "Id":201533,
         "Name":"Ashley",
         "Type":"Vampire",
@@ -26001,6 +26027,35 @@
         "Twd":true
     },
     {
+        "Id":201622,
+        "Name":"Len Konopka",
+        "Type":"Vampire",
+        "Clan":"Nosferatu antitribu",
+        "Adv":"",
+        "Group":"3",
+        "Capacity":8,
+        "Card Text":"Sabbat: If Len is ready at the start of your influence phase, you get +1 transfer. Black Hand.",
+        "Set":{
+            "Promo":{
+                "20210701":true
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ASCII Name":"Len Konopka",
+        "Disciplines":{
+            "Dominate":1,
+            "Serpentis":1,
+            "Animalism":2,
+            "Obfuscate":2,
+            "Potence":2
+        },
+        "Twd":false
+    },
+    {
         "Id":200830,
         "Name":"Lena Rowe",
         "Type":"Vampire",
@@ -40568,7 +40623,7 @@
             "Animalism":1,
             "Obfuscate":2
         },
-        "Twd":false
+        "Twd":true
     },
     {
         "Id":201298,
@@ -45472,10 +45527,11 @@
         "Adv":"",
         "Group":"3",
         "Capacity":10,
-        "Card Text":"Independent: Vlad can play and use cards requiring a title or a sect as if he had that title or were of that sect. +1 bleed.",
+        "Card Text":"Independent: Vlad uses and can play cards requiring a title or a sect as if he had that required title or were of that required sect. +1 bleed.",
         "Set":{
             "Promo":{
-                "20150221":true
+                "20150215":true,
+                "20210701":true
             }
         },
         "Title":"",

@@ -890,6 +890,8 @@ The Code of Milan","BH:C/PM","","David Day",""
 "100351","City Gangrel Connections","","Master","Gangrel antitribu","","","","","","Master: unique location.
 You get 1 additional vote during each political action.","Watch yourself around them. They love the Beast.
 Democritus, Ventrue","Sabbat:U, KMW:PG","","Fred Harper",""
+"102234","City Star Taxi","","Ally","Ravnos","","3","","","","Mortal with 2 life. 0 strength, 0 bleed.
+This ally can strike: 1R damage. This ally gets one optional maneuver each combat. This ally can lock to give a Ravnos you control +1 stealth.","She asks me to take her to the Warehouse District with no questions asked — and she tips well.","Promo-20210701","","Kyri Koniotis",""
 "100352","Claiming the Body","","Action Modifier","","Sanguinus","","1","","","Requires a ready unlocked Blood Brother of the same circle as another one who has just been blocked.
 [san] Cancel the combat and end the action. (Do not unlock the blocking minion.)
 [SAN] As above, and unlock the acting Blood Brother.","","LoB:C","","Peter Bergting",""
@@ -1264,6 +1266,8 @@ Gain 2 pool.","","KoT:U/A2","","Marian Churchland",""
 "100495","Dark Steel","","Combat","","Obtenebration & Potence","","","","","Only usable before range is determined. A vampire can play only one Dark Steel each combat.
 [obt][pot] The opposing minion takes 1 environmental damage each round of combat during normal strike resolution at close range. This vampire gets 1 optional maneuver this round, only usable to get to close range.
 [OBT][POT] As above, but for 2 environmental damage.","","DM:C/4","","Javier Santos",""
+"102235","Dark Web Procurer","","Ally","Assamite","","2","","","","Mortal with 1 life. 1 strength, 1 bleed.
+Dark Web Procurer can search your library (shuffle afterward) for a non-unique equipment card costing 1 or fewer pool and equip with it as a +1 stealth action (requirements and cost apply as normal).","There's that Jumpstarter going on that you can't miss. Payment in bitecoins, as usual.","Promo-20210701","","Marta Ruiz Anguera",""
 "100496","Darkling Trickery","","Combat","","Mytherceria/Obtenebration","","","","","[obt] Press, only usable to end combat.
 [myt] Maneuver or press.
 [MYT] Only usable if the opposing minion strikes with a weapon that inflicts ranged damage. That weapon inflicts no damage. The opposing minion takes 1R environmental damage during normal strike resolution.","","BL:R1, LoB:R, POD:DTC","","Dennis Calero",""
@@ -1475,6 +1479,8 @@ Put this card on a Black Hand vampire. Vampires must burn 1 blood to attempt to 
 [obf] Strike: burn equipment or retainer with first strike.
 [pro] Strike: hand strike, aggravated.
 [ser] Strike: steal 2 blood or life (becoming blood).","","AU:C/3","","Tomáš ""zelgaris"" Zahradníček; Esther Sanz",""
+"102220","Double Deuce","","Ally","Gangrel","","2","","","","Unique werewolf with 3 life. 1 strength, 1 bleed.
+Double Deuce has +1 stealth. If Double Deuce has 2 or fewer life during your unlock phase, he gains 1 life.","","Promo-20210701","","Peter Scholtz",""
 "100577","Dr. Marisa Fletcher, CDC","","Event","","","","","","","Government.
 During your unlock phase, add two counters to this card from the blood bank. When a vampire with capacity less than X is blocked while hunting, where X is the number of counters on this card, burn that vampire and all the counters on this card.","","KMW:R","","Ken Meyer, Jr.",""
 "100578","Draba","","Action/Reaction","","Chimerstry","","1","","","[chi] +1 stealth action. (D) Put this card on a ready minion. You still control this card. Burn this card to reduce that minion's stealth to 0. The minion may still increase his or her stealth.
@@ -5402,7 +5408,7 @@ Put this card in play with 4 counters. You get +1 hand size for each counter on 
 [obe] Put this card in play and move up to 2 blood from the opposing vampire to this card. During your unlock phase, return the blood counters to that vampire and burn this card.
 [OBE] As [obe] above, but move up to 3 blood to this card.","","BL:U2, LoB:R","","Jim Nelson",""
 "102128","Vivienne Géroux","","Ally","","","1","","","","Unique ghoul with 2 life. 2 strength, 1 bleed. Requires an Anarch.
-Vivienne can play cards requiring basic Celerity [cel] and/or Fortitude [for] as an Anarch vampire. Vampires you control get -1 stealth during political actions. A vampire you control can give another Methuselah control of Vivienne as a (D) action. A vampire controlled by another Methuselah can steal Vivienne as a (D) action.","","Anthology:LARP1;Promo-20210709","","Mark Kelly",""
+Vivienne can play cards requiring basic Celerity [cel] and/or Fortitude [for] as an Anarch vampire. Vampires you control get -1 stealth during political actions. A vampire you control can give another Methuselah control of Vivienne as a (D) action. A vampire controlled by another Methuselah can steal Vivienne as a (D) action.","","Anthology:LARP1, Promo-20210709","","Mark Kelly",""
 "102129","Voice of Madness","","Reaction","","Dementation","","1","","","Only usable when this vampire successfully blocks an ally or younger vampire.
 [dem] Lock this reacting vampire. Combat does not occur.
 [DEM] As above, and the acting minion burns 1 blood or life.","It is everything singing in my head at once.

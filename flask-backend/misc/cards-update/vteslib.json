@@ -254,7 +254,7 @@
         ],
         "Rulings":[
             {
-                "text":"The +1 intercept applies to \u24b9 actions against cards controlled by the controller. It does not apply to \u24b9 actions against another Methusalah. ",
+                "text":"The +1 intercept applies to \u24b9 actions against cards controlled by the controller. It does not apply to \u24b9 actions against another Methuselah. ",
                 "refs":{
                     "[LSJ 20061222]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/WUKedBpp_h0/m/LpJkrGZWvg0J"
                 }
@@ -1041,7 +1041,14 @@
         "Artist":[
             "Monte Moore"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[OBT] The opponent does not go to torpor, {Undead Persistance} cannot be played. ",
+                "refs":{
+                    "[LSJ 20040608]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/p1uCHeAO7ak/m/n7qfDGYXuu4J"
+                }
+            }
+        ],
         "ASCII Name":"Ahriman's Demesne",
         "Twd":false
     },
@@ -1264,6 +1271,12 @@
                 "text":"If burned and shuffled into the library, other effects that apply when it is burned still apply (eg. {Set's Curse} puts an ally into play). ",
                 "refs":{
                     "[ANK 20200813]":"http://www.vekn.net/forum/rules-questions/78798-mummies-and-burning-effects#100529"
+                }
+            },
+            {
+                "text":"Is not shuffled into the library when it is discarded. ",
+                "refs":{
+                    "[LSJ 20010710]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
                 }
             }
         ],
@@ -1565,6 +1578,12 @@
                 "refs":{
                     "[ANK 20200813]":"http://www.vekn.net/forum/rules-questions/78798-mummies-and-burning-effects#100529"
                 }
+            },
+            {
+                "text":"Is not shuffled into the library when it is discarded. ",
+                "refs":{
+                    "[LSJ 20010710]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+                }
             }
         ],
         "ASCII Name":"Amam the Devourer",
@@ -1691,7 +1710,7 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -2419,7 +2438,7 @@
         ],
         "Rulings":[
             {
-                "text":"Applies a pool gain then a pool loss. {Poison Pill} register a 5 pool loss in all cases, a Methusalah cannot withdraw even if the total was positive. ",
+                "text":"Applies a pool gain then a pool loss. {Poison Pill} register a 5 pool loss in all cases, a Methuselah cannot withdraw even if the total was positive. ",
                 "refs":{
                     "[ANK 20180813]":"http://www.vekn.net/forum/rules-questions/76917-poison-pill-ancient-influence#89940"
                 }
@@ -2428,6 +2447,12 @@
                 "text":"If multiple ousts happen, players whose prey gets ousted get a victory point, even if they are being ousted themselves. Only the surviving ones get 6 pool from the oust of their prey (not of their grand-prey). ",
                 "refs":{
                     "[LSJ 20000309]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/ykAzsCzPkvg/bVefVZeCoQwJ"
+                }
+            },
+            {
+                "text":"Burning the card for a vote is not considered playing it. ",
+                "refs":{
+                    "[ANK 20210309-2]":"https://www.vekn.net/forum/rules-questions/79005-rulebook-gaining-votes?start=6#101807"
                 }
             }
         ],
@@ -3652,6 +3677,12 @@
                 "text":"Requirements do not apply when taking control of a card already in play. ",
                 "refs":{
                     "[TOM 19960226-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/16y-ZD7Xats/oMeZDnSFdYAJ"
+                }
+            },
+            {
+                "text":"Effects applied during the discard phase are applied before you return the ally. If you lose control of the ally before that, you do not return it. ",
+                "refs":{
+                    "[ANK 20210313]":"https://www.vekn.net/forum/rules-questions/79072-until-the-end-vs-during-art-of-love-steals-informant#101841"
                 }
             }
         ],
@@ -5017,7 +5048,7 @@
                 }
             },
             {
-                "text":"If the vampire is permanently controlled by a Methusalah other than his owner, it goes to that Methusalah uncontrolled region and is still controlled by him. It is removed from the game if that Methusalah is ousted and kept in game if his owner is ousted. ",
+                "text":"If the vampire is permanently controlled by a Methuselah other than his owner, it goes to that Methuselah uncontrolled region and is still controlled by him. It is removed from the game if that Methuselah is ousted and kept in game if his owner is ousted. ",
                 "refs":{
                     "[ANK 20200408-2]":"http://www.vekn.net/forum/rules-questions/78562-banishment?start=6#99533"
                 }
@@ -5109,7 +5140,7 @@
         ],
         "Rulings":[
             {
-                "text":"[mal] is unaffected by {Orun}. [MAL] is affected by {Orun}. ",
+                "text":"[mal] is unaffected by {Orun}. [MAL] is affected by {Orun} (add and substract before applying the minimum of 1). ",
                 "refs":{
                     "[ANK 20180719-1]":"http://www.vekn.net/forum/rules-questions/76836-orun-barrenness-rtr?start=6#89073"
                 }
@@ -6437,9 +6468,21 @@
                 }
             },
             {
-                "text":"[QUI] Does not ignore the normal prey, predator or target restrictions. Read: \"This vampire unlocks and attempts to block\". ",
+                "text":"[QUI] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). ",
+                "refs":{
+                    "[LSJ 20010714-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9U-jt3p3R_Q/WxDJwkgc25kJ"
+                }
+            },
+            {
+                "text":"[QUI] Does not ignore the normal prey, predator or target restrictions. ",
                 "refs":{
                     "[ANK 20180623]":"http://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+                }
+            },
+            {
+                "text":"[QUI] The block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}). ",
+                "refs":{
+                    "[LSJ 20090514]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -7043,7 +7086,7 @@
                 }
             },
             {
-                "text":"[dom][pre] [COMBAT][REACTION] Can be played by a minion of a Methusalah not involved in the current combat. ",
+                "text":"[dom][pre] [COMBAT][REACTION] Can be played by a minion of a Methuselah not involved in the current combat. ",
                 "refs":{
                     "[ANK 20181101]":"http://www.vekn.net/forum/rules-questions/77132-save-face#91633"
                 }
@@ -8067,7 +8110,14 @@
         "Artist":[
             "Steve Ellis"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Does not prevent {Consanguineous Boon} to be played. ",
+                "refs":{
+                    "[LSJ 20040531-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6K2TqucrNzg/m/41EuHsVjHlYJ"
+                }
+            }
+        ],
         "ASCII Name":"Blood Trade",
         "Twd":true
     },
@@ -10463,13 +10513,19 @@
         ],
         "Rulings":[
             {
-                "text":"At superior, you choose X and then discard that many animals form your hand and cannot use any animals drawn to replace the ones you are discarding as further discards. ",
+                "text":"Does not render immune to a previously-played Frenzy card. ",
+                "refs":{
+                    "[LSJ 20040210]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/FWzKVXDEJ5k/ITxevWshkYIJ"
+                }
+            },
+            {
+                "text":"[ANI][PRO] you choose X and then discard that many animals form your hand and cannot use any animals drawn to replace the ones you are discarding as further discards. ",
                 "refs":{
                     "[LSJ 20060215]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/BhecJx5BqtQ/nqEdwFmnQnwJ"
                 }
             },
             {
-                "text":"The damage inflicted by the superior is environmental damage. ",
+                "text":"[ANI][PRO] The damage is environmental. ",
                 "refs":{
                     "[LSJ 20060217]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/BhecJx5BqtQ/MjBL57IRDjQJ"
                 }
@@ -11948,7 +12004,7 @@
                 }
             },
             {
-                "text":"[SPI] If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"[SPI] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -13154,6 +13210,31 @@
         "Twd":true
     },
     {
+        "Id":102234,
+        "Name":"City Star Taxi",
+        "Type":"Ally",
+        "Clan":"Ravnos",
+        "Discipline":"",
+        "Blood Cost":"",
+        "Pool Cost":"3",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally can strike: 1R damage. This ally gets one optional maneuver each combat. This ally can lock to give a Ravnos you control +1 stealth.",
+        "Set":{
+            "Promo":{
+                "20210701":true
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Kyri Koniotis"
+        ],
+        "Rulings":[],
+        "ASCII Name":"City Star Taxi",
+        "Twd":false
+    },
+    {
         "Id":100352,
         "Name":"Claiming the Body",
         "Type":"Action Modifier",
@@ -13353,7 +13434,7 @@
         ],
         "Rulings":[
             {
-                "text":"[pro] Must be played before strike resolution and damage prevention in order to affect the current strike. (can be played after both strikes have been chosen) ",
+                "text":"[pro] Must be played before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen. ",
                 "refs":{
                     "[RTR 19960112]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/d3n3StNS7no/k2NmZFUl9fAJ"
                 }
@@ -14767,7 +14848,7 @@
         ],
         "Rulings":[
             {
-                "text":"Is directed at all Methusalah controlling one of the chosen targets. ",
+                "text":"Is directed at all Methuselah controlling one of the chosen targets. ",
                 "refs":{
                     "[KOT 20081119]":"http://www.vekn.net/card-lists/140-keepers-of-tradition",
                     "[ANK 20180917]":"http://www.vekn.net/forum/rules-questions/77011-condemn-the-sins-of-the-father#90639"
@@ -15401,13 +15482,13 @@
         ],
         "Rulings":[
             {
-                "text":"Cannot allocate all X points to a single Methusalah, but you can allocate points to yourself. ",
+                "text":"Cannot allocate all X points to a single Methuselah, but you can allocate points to yourself. ",
                 "refs":{
                     "[LSJ 20000622]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/znQHUWouQkw/-T_Tx-YRwrAJ"
                 }
             },
             {
-                "text":"Can allocate more points than a Methusalah has pool. ",
+                "text":"Can allocate more points than a Methuselah has pool. ",
                 "refs":{
                     "[LSJ 20020819]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WONdURITUdk/9EnfVPy0P-MJ"
                 }
@@ -15741,7 +15822,14 @@
         "Artist":[
             "Fred Harper"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The vampire's controller chooses to use the effect of the card or not. ",
+                "refs":{
+                    "[ANK 20210309-3]":"https://www.vekn.net/forum/rules-questions/79065-master-cards-attached-to-a-stolen-minion#101806"
+                }
+            }
+        ],
         "ASCII Name":"Corporal Reservoir",
         "Twd":true
     },
@@ -15974,6 +16062,12 @@
                 "text":"Cannot be used if the vampires cannot attempt to block the action (eg. {Daring the Dawn}). ",
                 "refs":{
                     "[LSJ 20010714-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9U-jt3p3R_Q/WxDJwkgc25kJ"
+                }
+            },
+            {
+                "text":"Does not ignore the normal prey, predator or target restrictions. ",
+                "refs":{
+                    "[ANK 20180623]":"http://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
                 }
             },
             {
@@ -17344,7 +17438,7 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -17710,7 +17804,7 @@
         ],
         "Rulings":[
             {
-                "text":"This is not a directed action, even when targeting another Methusalah's ash heap. ",
+                "text":"This is not a directed action, even when targeting another Methuselah's ash heap. ",
                 "refs":{
                     "[LSJ 20010627]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NhNCVCCDyU0/I5Yph3-UUPsJ",
                     "[ANK 20181129]":"http://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
@@ -18002,7 +18096,7 @@
                 }
             },
             {
-                "text":"If used to cancel an action, the action is not performed in respect to section 6.1 of the rules and the minion is free to attempt the same action again. ",
+                "text":"If used to cancel an action, the action is not performed in respect to section 3 of the rules. ",
                 "refs":{
                     "[LSJ 19980212]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fLFLlXZXHqA/ggjw8aGjdRoJ"
                 }
@@ -18095,6 +18189,31 @@
         "Twd":true
     },
     {
+        "Id":102235,
+        "Name":"Dark Web Procurer",
+        "Type":"Ally",
+        "Clan":"Assamite",
+        "Discipline":"",
+        "Blood Cost":"",
+        "Pool Cost":"2",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Mortal with 1 life. 1 strength, 1 bleed.\nDark Web Procurer can search your library (shuffle afterward) for a non-unique equipment card costing 1 or fewer pool and equip with it as a +1 stealth action (requirements and cost apply as normal).",
+        "Set":{
+            "Promo":{
+                "20210701":true
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Marta Ruiz Anguera"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Dark Web Procurer",
+        "Twd":false
+    },
+    {
         "Id":100496,
         "Name":"Darkling Trickery",
         "Type":"Combat",
@@ -18122,12 +18241,6 @@
             "Dennis Calero"
         ],
         "Rulings":[
-            {
-                "text":"[MYT] Damage is environmental. ",
-                "refs":{
-                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
-                }
-            },
             {
                 "text":"[MYT] Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike. ",
                 "refs":{
@@ -20013,7 +20126,7 @@
                 }
             },
             {
-                "text":"If used to cancel an action, the action is not performed in respect to section 6.1 of the rules and the minion is free to attempt the same action again. ",
+                "text":"If used to cancel an action, the action is not performed in respect to section 3 of the rules and the minion is free to attempt the same action again. ",
                 "refs":{
                     "[LSJ 19980212]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fLFLlXZXHqA/ggjw8aGjdRoJ"
                 }
@@ -20522,7 +20635,7 @@
                 }
             },
             {
-                "text":"If used to \"change\" the control of a location or equipment representing a location to the same Methusalah, the location cannot be moved to another minion controlled by the same Methusalah. ",
+                "text":"If used to \"change\" the control of a location or equipment representing a location to the same Methuselah, the location cannot be moved to another minion controlled by the same Methuselah. ",
                 "refs":{
                     "[LSJ 19971002]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/RY_nhdykKP0/fOdKJtOy4kgJ"
                 }
@@ -20688,7 +20801,14 @@
         "Artist":[
             "William O'Connor"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[dem] can be played by a vampire with superior Dementation [DEM]. ",
+                "refs":{
+                    "[PIB 20130311]":"https://www.vekn.net/forum/rules-questions/46009-dive-into-madness#46013"
+                }
+            }
+        ],
         "ASCII Name":"Dive into Madness",
         "Twd":true
     },
@@ -21238,6 +21358,31 @@
         "Twd":true
     },
     {
+        "Id":102220,
+        "Name":"Double Deuce",
+        "Type":"Ally",
+        "Clan":"Gangrel",
+        "Discipline":"",
+        "Blood Cost":"",
+        "Pool Cost":"2",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique werewolf with 3 life. 1 strength, 1 bleed.\nDouble Deuce has +1 stealth. If Double Deuce has 2 or fewer life during your unlock phase, he gains 1 life.",
+        "Set":{
+            "Promo":{
+                "20210701":true
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Peter Scholtz"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Double Deuce",
+        "Twd":false
+    },
+    {
         "Id":100577,
         "Name":"Dr. Marisa Fletcher, CDC",
         "Type":"Event",
@@ -21303,7 +21448,7 @@
                 }
             },
             {
-                "text":"If another Methusalah is the target, he must declare whether he attempts or declines to block before Draba can be used ([chi]) or played ([CHI]). ",
+                "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Draba can be used ([chi]) or played ([CHI]). ",
                 "refs":{
                     "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
                     "[ANK 20200607]":"http://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
@@ -21757,6 +21902,12 @@
                 "text":"Cards that are not replaced count against the hand size. ",
                 "refs":{
                     "[ANK 20180318]":"http://www.vekn.net/forum/rules-questions/76464-dnr-counts-against-hand-size-meddling-of-semsith-and-raptor#85841"
+                }
+            },
+            {
+                "text":"The hand size bonus ends during the discard phase, it can be ordered as the acting Methuselah wishes against other end-of-turn and discard phase effects, following normal sequencing rules. ",
+                "refs":{
+                    "[LSJ 20020904-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ObuKimgcCpI/m/PVsmKoSZueoJ"
                 }
             },
             {
@@ -24645,7 +24796,7 @@
                 }
             },
             {
-                "text":"[SER] is not a directed action, even when targeting another Methusalah's ash heap. ",
+                "text":"[SER] is not a directed action, even when targeting another Methuselah's ash heap. ",
                 "refs":{
                     "[LSJ 20010627]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NhNCVCCDyU0/I5Yph3-UUPsJ",
                     "[ANK 20181129]":"http://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
@@ -24699,6 +24850,12 @@
                 }
             },
             {
+                "text":"When used to block, does not ignore the normal prey, predator or target restrictions. ",
+                "refs":{
+                    "[ANK 20180623]":"http://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+                }
+            },
+            {
                 "text":"The block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}). ",
                 "refs":{
                     "[LSJ 20090514]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
@@ -24734,10 +24891,16 @@
         ],
         "Rulings":[
             {
-                "text":"Pay the cost at the same time you gain pool from it, you do not get ousted in between. ",
+                "text":"Pay the cost at the same time you gain pool from it, you do not get ousted in between (ie. can be played when at 4 pool). ",
                 "refs":{
                     "[LSJ 20020620]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WoXWzLYaFSY/ug3CHnpMCUQJ",
                     "[LSJ 20080612]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/THFR8YTXxGI/ocQc4IRWP1AJ"
+                }
+            },
+            {
+                "text":"You must be able to pay the cost to play it (ie. cannot be played when at 3 pool). ",
+                "refs":{
+                    "[ANK 20210714-2]":"https://www.vekn.net/forum/rules-questions/79217-clarification-needed-on-eternals-of-sirius-rulings?start=6#102696"
                 }
             }
         ],
@@ -25033,7 +25196,7 @@
         ],
         "Rulings":[
             {
-                "text":"The pool of the highest bidder goes to the target Methusalah. The loosers do not lose pool. ",
+                "text":"The pool of the highest bidder goes to the target Methuselah. The loosers do not lose pool. ",
                 "refs":{
                     "[LSJ 20031121-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/cfs3xTrlpWw/7qfMkeQbcMkJ"
                 }
@@ -26599,7 +26762,7 @@
         ],
         "Rulings":[
             {
-                "text":"[ANI][OBF] The chosen Methusalah discards, then burn 4 cards, then replace the discarded card. ",
+                "text":"[ANI][OBF] The chosen Methuselah discards, then burn 4 cards, then replace the discarded card. ",
                 "refs":{
                     "[ANK 20180725]":"http://www.vekn.net/forum/rules-questions/76858-feline-saboteur-timing#89295"
                 }
@@ -27769,7 +27932,7 @@
                 }
             },
             {
-                "text":"[VIS] If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"[VIS] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -27930,7 +28093,7 @@
                 }
             },
             {
-                "text":"[MYT] If another Methusalah is the target, he must declare whether he attempts or declines to block before Folderol can be played. ",
+                "text":"[MYT] If another Methuselah is the target, he must declare whether he attempts or declines to block before Folderol can be played. ",
                 "refs":{
                     "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626"
                 }
@@ -28099,6 +28262,12 @@
                 "text":"{Mask of a Thousand Faces} cannot be used to take over, since it requires an unlocked vampire and the action requires a locked one. ",
                 "refs":{
                     "[LSJ 20020927]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wg3PH7vOs1s/gYFNbAwk84gJ"
+                }
+            },
+            {
+                "text":"Cards usable after action resolution (eg. {Freak Drive}) can be played before the damage is taken. ",
+                "refs":{
+                    "[LSJ 20010715]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/u91PfJOfOjE/m/BS264hmTIEgJ"
                 }
             }
         ],
@@ -28323,7 +28492,7 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -28634,7 +28803,7 @@
                 }
             },
             {
-                "text":"[PRO] If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"[PRO] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -30028,7 +30197,15 @@
         "Artist":[
             "William O'Connor"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The ability to burn an opponent going to torpor is not part of the strike. It can be used if the opponent dodges the strike but is still going to torpor. ",
+                "refs":{
+                    "[ANK 20210612]":"https://www.vekn.net/forum/rules-questions/79173-confirmation-needed-about-garrote?start=6#102470",
+                    "[LSJ 20020416-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/tEC5uN8yqUE/m/czJYA-Pt00sJ"
+                }
+            }
+        ],
         "ASCII Name":"Garrote",
         "Twd":true
     },
@@ -30227,7 +30404,7 @@
         ],
         "Rulings":[
             {
-                "text":"This is not a directed action, even when targeting another Methusalah's ash heap. ",
+                "text":"This is not a directed action, even when targeting another Methuselah's ash heap. ",
                 "refs":{
                     "[LSJ 20010627]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NhNCVCCDyU0/I5Yph3-UUPsJ",
                     "[ANK 20181129]":"http://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
@@ -31649,7 +31826,14 @@
         "Artist":[
             "Peter Bergting"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Search the crypt for only one Kiasyd, not any number. ",
+                "refs":{
+                    "[ANK 20210304]":"https://www.vekn.net/forum/rules-questions/79058-great-symposium#101761"
+                }
+            }
+        ],
         "ASCII Name":"Great Symposium",
         "Twd":true
     },
@@ -31827,6 +32011,12 @@
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872",
                     "[LSJ 20060515]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/bzusnKlnYr8/OSMvzE7YjokJ"
+                }
+            },
+            {
+                "text":"Can play cards requiring [cel] or [pot] but not both. ",
+                "refs":{
+                    "[ANK 20180731-1]":"http://www.vekn.net/forum/rules-questions/76877-vivienne-geroux-and-anarh-cards#89482"
                 }
             }
         ],
@@ -32085,6 +32275,12 @@
                 }
             },
             {
+                "text":"When used to block, does not ignore the normal prey, predator or target restrictions. ",
+                "refs":{
+                    "[ANK 20180623]":"http://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+                }
+            },
+            {
                 "text":"If used to unlock, the block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}). ",
                 "refs":{
                     "[LSJ 20090514]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
@@ -32227,7 +32423,7 @@
         ],
         "Rulings":[
             {
-                "text":"Must be played before block is successful, but can be played after the acting Methusalah declined to add stealth. ",
+                "text":"Must be played before block is successful, but can be played after the acting Methuselah declined to add stealth. ",
                 "refs":{
                     "[ANK 20180926]":"http://www.vekn.net/forum/rules-questions/77030-is-guardian-vigil-playable-after-the-block-succeeds#90768"
                 }
@@ -33607,6 +33803,12 @@
                 "refs":{
                     "[ANK 20170804]":"http://www.vekn.net/forum/rules-questions/76053-heidelberg-castle-and-moving-blood#82874"
                 }
+            },
+            {
+                "text":"Can be used between two actions during another Methuselah's turn. ",
+                "refs":{
+                    "[ANK 20210608]":"https://www.vekn.net/forum/rules-questions/79166-correct-time-to-use-heidelberg-castle-germany-for-non-acting-player?start=12#102425"
+                }
             }
         ],
         "ASCII Name":"Heidelberg Castle, Germany",
@@ -34062,7 +34264,7 @@
                 }
             },
             {
-                "text":"[val], [VAL] If another Methusalah is the target, he must declare whether he attempts or declines to block before Hide the Heart can be played. ",
+                "text":"[val], [VAL] If another Methuselah is the target, he must declare whether he attempts or declines to block before Hide the Heart can be played. ",
                 "refs":{
                     "[LSJ 20100507]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vJQTPYtp-Eg/m/6_nkxd28-v8J",
                     "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626"
@@ -34971,7 +35173,7 @@
         ],
         "Rulings":[
             {
-                "text":"If another Methusalah is the target, he must declare whether he attempts or declines to block before Ignis Fatuus can be played. ",
+                "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Ignis Fatuus can be played. ",
                 "refs":{
                     "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
                     "[ANK 20200607]":"http://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
@@ -36657,7 +36859,7 @@
         ],
         "Rulings":[
             {
-                "text":"[FOR][CEL] Can be played if the action is unblocked even if it has no effect due to lack of a suitable target. ",
+                "text":"[CEL][PRO] Can be played if the action is unblocked even if it has no effect due to lack of a suitable target. ",
                 "refs":{
                     "[LSJ 20070411]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/umdINigMKqs/l6GFRVKdkMsJ"
                 }
@@ -37834,6 +38036,12 @@
         ],
         "Rulings":[
             {
+                "text":"Equipping it does not put a counter on it ",
+                "refs":{
+                    "[LSJ 20100207-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VpXj3lre1BQ/m/Ou4J4lv8mSAJ"
+                }
+            },
+            {
                 "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements. ",
                 "refs":{
                     "[ANK 20180719-3]":"http://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
@@ -38473,7 +38681,7 @@
         ],
         "Rulings":[
             {
-                "text":"The action to put a minion from any ash heap into play is not a directed action, even when targeting another Methusalah's ash heap. ",
+                "text":"The action to put a minion from any ash heap into play is not a directed action, even when targeting another Methuselah's ash heap. ",
                 "refs":{
                     "[LSJ 20010627]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NhNCVCCDyU0/I5Yph3-UUPsJ",
                     "[ANK 20181129]":"http://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
@@ -38528,6 +38736,12 @@
                 "refs":{
                     "[ANK 20200813]":"http://www.vekn.net/forum/rules-questions/78798-mummies-and-burning-effects#100529"
                 }
+            },
+            {
+                "text":"Is not shuffled into the library when it is discarded. ",
+                "refs":{
+                    "[LSJ 20010710]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+                }
             }
         ],
         "ASCII Name":"Kherebutu",
@@ -38572,7 +38786,7 @@
                 }
             },
             {
-                "text":"The effect is ordered as the acting Methusalah wishes during his unlock phase (eg. can be used on {Nocturn} before it burns). ",
+                "text":"The effect is ordered as the acting Methuselah wishes during his unlock phase (eg. can be used on {Nocturn} before it burns). ",
                 "refs":{
                     "[ANK 20170625]":"http://www.vekn.net/forum/rules-questions/75929-khobar-towers-and-nocturns#82336"
                 }
@@ -38932,13 +39146,13 @@
         ],
         "Rulings":[
             {
-                "text":"Cannot allocate 4 points to a single Methusalah, but you can allocate points to yourself. ",
+                "text":"Cannot allocate 4 points to a single Methuselah, but you can allocate points to yourself. ",
                 "refs":{
                     "[LSJ 20000622]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/znQHUWouQkw/-T_Tx-YRwrAJ"
                 }
             },
             {
-                "text":"Can allocate more points than a Methusalah has pool. ",
+                "text":"Can allocate more points than a Methuselah has pool. ",
                 "refs":{
                     "[LSJ 20020819]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WONdURITUdk/9EnfVPy0P-MJ"
                 }
@@ -39635,7 +39849,43 @@
         "Artist":[
             "Efrem Palacios"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The anarch can return to play when it again has blood >= capacity on it at the end of its Methuselah's influence phase. ",
+                "refs":{
+                    "[TOM 19951209]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/qP2j6CpBUDI/2qsG4E23bl4J",
+                    "[ANK 20210630]":"https://www.vekn.net/forum/rules-questions/79205-lay-low-vs-banishment#102601"
+                }
+            },
+            {
+                "text":"The anarch will remember all effects that had been applied to him, just as contested vampires do. This includes gained or lost titles. ",
+                "refs":{
+                    "[ANK 20210630]":"https://www.vekn.net/forum/rules-questions/79205-lay-low-vs-banishment#102601",
+                    "[RTR 20000501]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/MKrA0hBXuaU/1M5LOLftKWAJ"
+                }
+            },
+            {
+                "text":"\"for the rest of the game\" effects pointing at the anarch from other sources will resume if and when the vampire comes back into play. ",
+                "refs":{
+                    "[ANK 20210630]":"https://www.vekn.net/forum/rules-questions/79205-lay-low-vs-banishment#102601",
+                    "[TOM 19960210]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/PiOmH08RyVw/CqzTRcOLDNIJ"
+                }
+            },
+            {
+                "text":"\"breaking any temporary control effects\" means the anarch is placed in his last permanent controller's uncontrolled region. ",
+                "refs":{
+                    "[ANK 20210630]":"https://www.vekn.net/forum/rules-questions/79205-lay-low-vs-banishment#102601",
+                    "[RTR 20000501]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/MKrA0hBXuaU/1M5LOLftKWAJ"
+                }
+            },
+            {
+                "text":"If the vampire is permanently controlled by a Methuselah other than his owner, it goes to that Methuselah uncontrolled region and is still controlled by him. It is removed from the game if that Methuselah is ousted and kept in game if his owner is ousted. ",
+                "refs":{
+                    "[ANK 20210630]":"https://www.vekn.net/forum/rules-questions/79205-lay-low-vs-banishment#102601",
+                    "[ANK 20200408-2]":"http://www.vekn.net/forum/rules-questions/78562-banishment?start=6#99533"
+                }
+            }
+        ],
         "ASCII Name":"Lay Low",
         "Twd":false
     },
@@ -40850,7 +41100,7 @@
         ],
         "Rulings":[
             {
-                "text":"Can allocate more points than a Methusalah has pool. ",
+                "text":"Can allocate more points than a Methuselah has pool. ",
                 "refs":{
                     "[LSJ 20020819]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WONdURITUdk/9EnfVPy0P-MJ"
                 }
@@ -43119,7 +43369,7 @@
         ],
         "Rulings":[
             {
-                "text":"Can be burned during an action that targets only part of the Methusalah that were targeted by the first action. ",
+                "text":"Can be burned during an action that targets only part of the Methuselah that were targeted by the first action. ",
                 "refs":{
                     "[LSJ 20100527]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Tr3X4DsZr-8/O06iXN6LtzsJ"
                 }
@@ -43302,7 +43552,7 @@
                 }
             },
             {
-                "text":"Can be played by a minion of a Methusalah not involved in the current combat. ",
+                "text":"Can be played by a minion of a Methuselah not involved in the current combat. ",
                 "refs":{
                     "[ANK 20181101]":"http://www.vekn.net/forum/rules-questions/77132-save-face#91633"
                 }
@@ -43471,12 +43721,13 @@
                 }
             },
             {
-                "text":"The action remains the same. All action modifiers remain in effect, but inherent modifiers (a minion's inherent +1 bleed for example) do not. Other effects applied to the action also carry over to the new masking vampire. ",
+                "text":"The action remains the same. All action modifiers remain in effect, but inherent modifiers (a minion's inherent +1 bleed for example) do not. All other effects carry over to the new masking vampire. ",
                 "refs":{
                     "[RTR 19951110]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/TXfganI5B2o/QYh3AdPNbUwJ",
                     "[LSJ 19971201]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0I7KUhvhAig/kLiqzfugXTwJ",
                     "[RTR 20030519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NOBWXWrd-vA/iEOpQp1uhvAJ",
-                    "[LSJ 20030521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Ude2or4n9nI/6u41LfeOpQQJ"
+                    "[LSJ 20030521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Ude2or4n9nI/6u41LfeOpQQJ",
+                    "[ANK 20210309]":"https://www.vekn.net/forum/rules-questions/79063-daring-the-dawn-and-then-mask-of-a-thousand-faces#101805"
                 }
             },
             {
@@ -43676,7 +43927,7 @@
         ],
         "Rulings":[
             {
-                "text":"Multiple copies may be played by different Methusalahs after a single action, but all would be burned during the vampire's next unlock phase. ",
+                "text":"Multiple copies may be played by different Methuselahs after a single action, but all would be burned during the vampire's next unlock phase. ",
                 "refs":{
                     "[TOM 19950921]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/--zrAV3UcGI/Ywq8gud9r6cJ"
                 }
@@ -44805,13 +45056,13 @@
                 }
             },
             {
-                "text":"[DOM] Is removed if its controller (the Methusalah who played it) is ousted (rulings before 2008-11-19 have been reversed). ",
+                "text":"[DOM] Is removed if its controller (the Methuselah who played it) is ousted (rulings before 2008-11-19 have been reversed). ",
                 "refs":{
                     "[ANK 20181110]":"http://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
                 }
             },
             {
-                "text":"[DOM] The stolen minion is removed from the game when he should return to a Methusalah who has been ousted. ",
+                "text":"[DOM] The stolen minion is removed from the game when he should return to a Methuselah who has been ousted. ",
                 "refs":{
                     "[ANK 20181110]":"http://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
                 }
@@ -45098,7 +45349,7 @@
                 }
             },
             {
-                "text":"[CHI] If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"[CHI] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -45633,7 +45884,7 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -45940,7 +46191,7 @@
                 }
             },
             {
-                "text":"[VAL] If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"[VAL] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -47042,6 +47293,12 @@
                 "refs":{
                     "[ANK 20200813]":"http://www.vekn.net/forum/rules-questions/78798-mummies-and-burning-effects#100529"
                 }
+            },
+            {
+                "text":"Is not shuffled into the library when it is discarded. ",
+                "refs":{
+                    "[LSJ 20010710]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+                }
             }
         ],
         "ASCII Name":"Nephren-Ka",
@@ -47101,7 +47358,7 @@
         ],
         "Rulings":[
             {
-                "text":"[aus] If another Methusalah is the target, he must declare whether he attempts or declines to block before Netwar can be played. ",
+                "text":"[aus] If another Methuselah is the target, he must declare whether he attempts or declines to block before Netwar can be played. ",
                 "refs":{
                     "[LSJ 20100507]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vJQTPYtp-Eg/m/6_nkxd28-v8J",
                     "[ANK 20210131-1]":"https://www.vekn.net/forum/rules-questions/79007-netwar-timing#101527"
@@ -47470,6 +47727,18 @@
         ],
         "Rulings":[
             {
+                "text":"You cannot end your unlock phase or pass the impulse if you control a minion you haven't locked or burned a card for. ",
+                "refs":{
+                    "[ANK 20210322]":"https://www.vekn.net/forum/rules-questions/79080-nightmares-upon-nightmares#101906"
+                }
+            },
+            {
+                "text":"You can handle the effect by locking an already locked minion, then use his Infernal trait to unlock them. ",
+                "refs":{
+                    "[ANK 20210322-2]":"https://www.vekn.net/forum/rules-questions/79080-nightmares-upon-nightmares?start=6#101910"
+                }
+            },
+            {
                 "text":"Mortal allies are not affected, and vampires with capacity above the number of Gehenna cards in play are not affected. ",
                 "refs":{
                     "[LSJ 20040415]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/XTya9MiAiqc/4cejLmkUwEMJ"
@@ -47684,7 +47953,14 @@
         "Artist":[
             "Heather Kreiter"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"It still burns if a block is attempted and then an effect prevents the block (eg. {Daring the Dawn}). ",
+                "refs":{
+                    "[LSJ 20090810]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/g3ukXdsh8xo/m/0qTp2vtFVz8J"
+                }
+            }
+        ],
         "ASCII Name":"No Secrets From the Magaji",
         "Twd":true
     },
@@ -48046,7 +48322,7 @@
                 }
             },
             {
-                "text":"Can be played by a minion of a Methusalah not involved in the current combat. ",
+                "text":"Can be played by a minion of a Methuselah not involved in the current combat. ",
                 "refs":{
                     "[ANK 20181101]":"http://www.vekn.net/forum/rules-questions/77132-save-face#91633"
                 }
@@ -48535,7 +48811,7 @@
         ],
         "Rulings":[
             {
-                "text":"Is a \u24b9 action if a vampire controlled by another Methusalah is chosen. ",
+                "text":"Is a \u24b9 action if a vampire controlled by another Methuselah is chosen. ",
                 "refs":{
                     "[ANK 20190606]":"http://www.vekn.net/forum/rules-questions/77692-of-noble-blood#95258"
                 }
@@ -49077,7 +49353,7 @@
         ],
         "Rulings":[
             {
-                "text":"A vampire with multiple Oruns will only burn one Orun if he successfully bleeds for 2 or more. ",
+                "text":"A vampire with multiple Oruns will only burn one Orun if he successfully bleeds for more than 2. ",
                 "refs":{
                     "[LSJ 20090603]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/LpFSLRuWONA/Ma_3LtLeyCAJ"
                 }
@@ -49166,6 +49442,12 @@
                 "text":"If Auspex [aus] was used to block him, the blocker can use an effect to set the range, but not a {Sniper Rifle} as it would require him to strike with it, which he cannot. ",
                 "refs":{
                     "[LSJ 20100827]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/cnJrGIiDqpw/KfaS7kEfk_8J"
+                }
+            },
+            {
+                "text":"If no Auspex [aus] was used previously, an Auspex [aus] strike can be used (eg. {Charismatic Aura}). ",
+                "refs":{
+                    "[ANK 20210614]":"https://www.vekn.net/forum/rules-questions/79177-ossian-vs-charismatic-aura#102483"
                 }
             }
         ],
@@ -49890,7 +50172,7 @@
         ],
         "Rulings":[
             {
-                "text":"Can not be played if there is no legal target (no other Methusalah with more pool than you). ",
+                "text":"Can not be played if there is no legal target (no other Methuselah with more pool than you). ",
                 "refs":{
                     "[ANK 20191228]":"http://www.vekn.net/forum/rules-questions/78262-parity-shift-without-target#98358"
                 }
@@ -49902,9 +50184,15 @@
                 }
             },
             {
-                "text":"If the target has less than 3 pool when referendum passes, the Methusalah calling the referendum chooses how to distribute within the bounds of the terms. ",
+                "text":"If the target has less than 3 pool when referendum passes, the Methuselah calling the referendum chooses how to distribute within the bounds of the terms. ",
                 "refs":{
                     "[LSJ 20010606]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2Dj_N6wtifI/j_bddYqDbOYJ"
+                }
+            },
+            {
+                "text":"Changes in pool during the referendum (after terms are chosen) do not affect the outcome. ",
+                "refs":{
+                    "[LSJ 20041004]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/UZbyxuVsTJE/m/47dqvgl6t2QJ"
                 }
             }
         ],
@@ -50753,7 +51041,7 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -51064,6 +51352,12 @@
                 "text":"\"Once each turn\" means once during each player's turn. ",
                 "refs":{
                     "[ANK 20180719-4]":"http://www.vekn.net/forum/rules-questions/76833-once-each-turn#89014"
+                }
+            },
+            {
+                "text":"The vampire's controller chooses to use the effect of the card or not. ",
+                "refs":{
+                    "[ANK 20210309-3]":"https://www.vekn.net/forum/rules-questions/79065-master-cards-attached-to-a-stolen-minion#101806"
                 }
             }
         ],
@@ -51471,7 +51765,7 @@
                 }
             },
             {
-                "text":"This does not count as performing the action to recruit this ally in respect to section 6.1 of the rules. The same vampire can recruit the same ally the normal way later this turn if he unlocks (and/or Piper it a second time). ",
+                "text":"This does not count as performing the action to recruit this ally in respect to section 3 of the rules. The same vampire can recruit the same ally the normal way later this turn if he unlocks (and/or Piper it a second time). ",
                 "refs":{
                     "[LSJ 20080815]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0_1JBbdwi74/c1GepnS4ylEJ"
                 }
@@ -52028,7 +52322,14 @@
         "Artist":[
             "Brian Ashmore"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Burning the card for a vote is not considered playing it. ",
+                "refs":{
+                    "[ANK 20210309-2]":"https://www.vekn.net/forum/rules-questions/79005-rulebook-gaining-votes?start=6#101807"
+                }
+            }
+        ],
         "ASCII Name":"Political Stranglehold",
         "Twd":true
     },
@@ -54150,7 +54451,7 @@
         ],
         "Rulings":[
             {
-                "text":"This is not a directed action, even when targeting another Methusalah's ash heap. ",
+                "text":"This is not a directed action, even when targeting another Methuselah's ash heap. ",
                 "refs":{
                     "[LSJ 20010627]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NhNCVCCDyU0/I5Yph3-UUPsJ",
                     "[ANK 20181129]":"http://www.vekn.net/forum/rules-questions/77198-pressing-flesh-from-other-player-s-ash-heap#92145"
@@ -55847,6 +56148,12 @@
                 "refs":{
                     "[ANK 20200813]":"http://www.vekn.net/forum/rules-questions/78798-mummies-and-burning-effects#100529"
                 }
+            },
+            {
+                "text":"Is not shuffled into the library when it is discarded. ",
+                "refs":{
+                    "[LSJ 20010710]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
+                }
             }
         ],
         "ASCII Name":"Qetu the Evil Doer",
@@ -57318,13 +57625,14 @@
         ],
         "Rulings":[
             {
-                "text":"Cannot allocate 6 points to a single Methusalah, but you can allocate points to yourself. ",
+                "text":"Cannot allocate 6 points to a single Methuselah, and you cannot allocate points to yourself. ",
                 "refs":{
-                    "[LSJ 20000622]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/znQHUWouQkw/-T_Tx-YRwrAJ"
+                    "[LSJ 20000622]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/znQHUWouQkw/-T_Tx-YRwrAJ",
+                    "[LSJ 20100129]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/X8Uu7Sk56P4/m/fgP7NfnDpCkJ"
                 }
             },
             {
-                "text":"Can allocate more points than a Methusalah has pool. ",
+                "text":"Can allocate more points than a Methuselah has pool. ",
                 "refs":{
                     "[LSJ 20020819]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WONdURITUdk/9EnfVPy0P-MJ"
                 }
@@ -58202,6 +58510,12 @@
                 "text":"If multiple ousts happen, players whose prey gets ousted get a victory point, even if they are being ousted themselves. Only the surviving ones get 6 pool from the oust of their prey (not of their grand-prey). ",
                 "refs":{
                     "[LSJ 20000309]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/ykAzsCzPkvg/bVefVZeCoQwJ"
+                }
+            },
+            {
+                "text":"Burning the card for a vote is not considered playing it. ",
+                "refs":{
+                    "[ANK 20210309-2]":"https://www.vekn.net/forum/rules-questions/79005-rulebook-gaining-votes?start=6#101807"
                 }
             }
         ],
@@ -59932,19 +60246,19 @@
                 }
             },
             {
-                "text":"Methusalahs do not gain the pool granted by a bleed action (eg. {Kindred Spirit}) if they do not have the edge or a VP beforehand. ",
+                "text":"Methuselahs do not gain the pool granted by a bleed action (eg. {Kindred Spirit}) if they do not have the edge or a VP beforehand. ",
                 "refs":{
                     "[LSJ 20100206-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/reXyybyIYX8/m/jeCyjdiZ5T4J"
                 }
             },
             {
-                "text":"Methusalahs gain the pool granted by an effect after a successful bleed action (eg. {unnamed, The}), since they get the edge before the effect kicks in. ",
+                "text":"Methuselahs gain the pool granted by an effect after a successful bleed action (eg. {unnamed, The}), since they get the edge before the effect kicks in. ",
                 "refs":{
                     "[LSJ 20100210-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wt2kuUJXoRI/m/XbHSJHMfk08J"
                 }
             },
             {
-                "text":"When ousting their prey, Methusalahs decide if they gain the VP before or after gaining the pool. ",
+                "text":"When ousting their prey, Methuselahs decide if they gain the VP before or after gaining the pool. ",
                 "refs":{
                     "[LSJ 20100208]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wt2kuUJXoRI/m/CyHXMb-Cn_0J"
                 }
@@ -60701,7 +61015,14 @@
         "Artist":[
             "Mark Poole"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Only works when unlocking minions using their Infernal ability (eg. not with {Path of Evil Revelations} nor {Metro Underground}). ",
+                "refs":{
+                    "[LSJ 20050228-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/xBb9HQz2KPo/m/sKirLvafQqUJ"
+                }
+            }
+        ],
         "ASCII Name":"Ruins of Charizel",
         "Twd":true
     },
@@ -60922,6 +61243,12 @@
                 "text":"If burned and shuffled into the library, other effects that apply when it is burned still apply (eg. {Set's Curse} puts an ally into play). ",
                 "refs":{
                     "[ANK 20200813]":"http://www.vekn.net/forum/rules-questions/78798-mummies-and-burning-effects#100529"
+                }
+            },
+            {
+                "text":"Is not shuffled into the library when it is discarded. ",
+                "refs":{
+                    "[LSJ 20010710]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
                 }
             }
         ],
@@ -61179,9 +61506,15 @@
         ],
         "Rulings":[
             {
-                "text":"If the target has a {Soul Gem of Etrius}, the Gem effet applies and it cannot be transfered. ",
+                "text":"If the target has a {Soul Gem of Etrius}, the Gem effect applies and it cannot be transfered. ",
                 "refs":{
                     "[LSJ 19970516]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8Vzkc74MvCs/R95JjEen3-AJ"
+                }
+            },
+            {
+                "text":"If the target does not burn (eg. {Byzar}'s ability) then no blood is gained and no equipment transfered. ",
+                "refs":{
+                    "[LSJ 20100423]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/YnQCu0GeMhc/m/ET__SGvjD7QJ"
                 }
             }
         ],
@@ -61584,7 +61917,7 @@
                 }
             },
             {
-                "text":"Can be played by a minion of a Methusalah not involved in the current combat. ",
+                "text":"Can be played by a minion of a Methuselah not involved in the current combat. ",
                 "refs":{
                     "[ANK 20181101]":"http://www.vekn.net/forum/rules-questions/77132-save-face#91633"
                 }
@@ -61831,7 +62164,7 @@
                 }
             },
             {
-                "text":"If another Methusalah is the target, he must declare whether he attempts or declines to block before Scobax can be played. ",
+                "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Scobax can be played. ",
                 "refs":{
                     "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
                     "[ANK 20200607]":"http://www.vekn.net/forum/rules-questions/78676-draba-timing#100043"
@@ -62057,7 +62390,7 @@
         ],
         "Rulings":[
             {
-                "text":"If the option to burn a vampire is used, the card goes to the predator immediately, even if there is still a mandatory effect to resolve. If not, the predator must take the card when he has the opportunity to play an effect, after the acting Methusalah applied other mandatory effects (eg. losing blood to {Dragonbound}). ",
+                "text":"If the option to burn a vampire is used, the card goes to the predator immediately, even if there is still a mandatory effect to resolve. If not, the predator must take the card when he has the opportunity to play an effect, after the acting Methuselah applied other mandatory effects (eg. losing blood to {Dragonbound}). ",
                 "refs":{
                     "[ANK 20200508-1]":"http://www.vekn.net/forum/rules-questions/78622-scourge-of-the-enochians-timing?start=12#99786"
                 }
@@ -62371,6 +62704,12 @@
                 "text":"Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). ",
                 "refs":{
                     "[LSJ 20010714-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9U-jt3p3R_Q/WxDJwkgc25kJ"
+                }
+            },
+            {
+                "text":"Does not ignore the normal prey, predator or target restrictions. ",
+                "refs":{
+                    "[ANK 20180623]":"http://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
                 }
             },
             {
@@ -62831,6 +63170,24 @@
                 "text":"[ANI] Can be used by a vampire who is already attempting to block. ",
                 "refs":{
                     "[ANK 20181122-2]":"http://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+                }
+            },
+            {
+                "text":"[ANI] Cannot be used if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). ",
+                "refs":{
+                    "[LSJ 20010714-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9U-jt3p3R_Q/WxDJwkgc25kJ"
+                }
+            },
+            {
+                "text":"[ANI] Does not ignore the normal prey, predator or target restrictions. ",
+                "refs":{
+                    "[ANK 20180623]":"http://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+                }
+            },
+            {
+                "text":"[ANI] The block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}). ",
+                "refs":{
+                    "[LSJ 20090514]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
             }
         ],
@@ -63576,7 +63933,7 @@
                 }
             },
             {
-                "text":"[OBT] If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"[OBT] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -63635,7 +63992,7 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -64074,7 +64431,14 @@
         "Artist":[
             "Drew Tucker"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[OBT] has no additional effect on a retainer. ",
+                "refs":{
+                    "[LSJ 20010303]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/OjxDSCbB6i4/m/xmsYv7Y27w4J"
+                }
+            }
+        ],
         "ASCII Name":"Shadow Twin",
         "Twd":true
     },
@@ -64674,7 +65038,7 @@
         ],
         "Rulings":[
             {
-                "text":"[ANI] Is directed at all Methusalah controlling a card that require Animalism [ani]. ",
+                "text":"[ANI] Is directed at all Methuselah controlling a card that require Animalism [ani]. ",
                 "refs":{
                     "[LSJ 20080809-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/1jW6GXrIRSU/7ywPFR39rb4J",
                     "[KOT 20081119]":"http://www.vekn.net/card-lists/140-keepers-of-tradition"
@@ -65879,6 +66243,12 @@
                 }
             },
             {
+                "text":"Can be played at any time blood is gained, including after action resolution (eg. {Games of Instinct}). ",
+                "refs":{
+                    "[LSJ 20100325]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PWhoejXDuuA/m/5565uQm2dpEJ"
+                }
+            },
+            {
                 "text":"A vampire with no circle designation is in his own unique circle. Vampires with the same name (eg. {Embrace, The}, non-unique vampires) do not share a circle by default, each has his own circle of one by default. ",
                 "refs":{
                     "[LSJ 20020609]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Q_Lk0DPHqC8/nAfGfCvsISgJ"
@@ -66399,7 +66769,7 @@
                 }
             },
             {
-                "text":"Other Methusalah can pay with any combination of pool and different vampires to meet the total number of counters. ",
+                "text":"Other Methuselah can pay with any combination of pool and different vampires to meet the total number of counters. ",
                 "refs":{
                     "[ANK 20181006]":"http://www.vekn.net/forum/rules-questions/77053-smiling-jack#91000"
                 }
@@ -67424,7 +67794,7 @@
         ],
         "Rulings":[
             {
-                "text":"Is a \u24b9 action against all other Methusalahs ",
+                "text":"Is a \u24b9 action against all other Methuselahs ",
                 "refs":{
                     "[PIB 20150821]":"http://www.vekn.net/forum/rules-questions/72609-sowing-dissension?start=6#72632",
                     "[RTR 20080808]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/1jW6GXrIRSU/8QTYL98kB0gJ"
@@ -67800,7 +68170,7 @@
                 }
             },
             {
-                "text":"[OBE] The minion is removed from the game when he should return to a Methusalah who has been ousted. ",
+                "text":"[OBE] The minion is removed from the game when he should return to a Methuselah who has been ousted. ",
                 "refs":{
                     "[ANK 20181110]":"http://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
                 }
@@ -69625,7 +69995,7 @@
                 }
             },
             {
-                "text":"If no copy of a named card is in the ash heap upon resolution (eg. {The Erciyes Fragments} was used to take it), the effect still resolves for the other copies and the acting Methusalah discards 3 cards. ",
+                "text":"If no copy of a named card is in the ash heap upon resolution (eg. {The Erciyes Fragments} was used to take it), the effect still resolves for the other copies and the acting Methuselah discards 3 cards. ",
                 "refs":{
                     "[LSJ 20090722]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/r-N65rA52uo/OXW8xk1r1iMJ"
                 }
@@ -71582,6 +71952,12 @@
         ],
         "Rulings":[
             {
+                "text":"Cannot be played against an ally. ",
+                "refs":{
+                    "[PIB 20121028]":"http://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=6#39843"
+                }
+            },
+            {
                 "text":"Must be played after the presses are handled and can be played if the round ends prematurely. ",
                 "refs":{
                     "[RTR 20030519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NOBWXWrd-vA/iEOpQp1uhvAJ"
@@ -72026,7 +72402,7 @@
                 }
             },
             {
-                "text":"The stolen minion is removed from the game when he should return to a Methusalah who has been ousted. ",
+                "text":"The stolen minion is removed from the game when he should return to a Methuselah who has been ousted. ",
                 "refs":{
                     "[ANK 20181110]":"http://www.vekn.net/forum/rules-questions/76844-some-questions?start=6#91778"
                 }
@@ -72063,13 +72439,13 @@
                 }
             },
             {
-                "text":"If used to steal a minion targeted by an action, the action continues with the same target. Methusalahs who declined to block do not get another opportunity. If the target is not legal anymore (eg. [DOM] {Slaughtering the Herd}), the action ends with no effect. ",
+                "text":"If used to steal a minion targeted by an action, the action continues with the same target. Methuselahs who declined to block do not get another opportunity. If the target is not legal anymore (eg. [DOM] {Slaughtering the Herd}), the action ends with no effect. ",
                 "refs":{
                     "[LSJ 20020725]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wCPFIH_g5ZE/inchZQXKRrsJ"
                 }
             },
             {
-                "text":"If used to steal a minion during an action, Methusalahs who declined to block are still declining to block. The new controller, if he is eligible and has not declined to block yet, can block with the stolen minion even if the previous controller has declined to block. ",
+                "text":"If used to steal a minion during an action, Methuselahs who declined to block are still declining to block. The new controller, if he is eligible and has not declined to block yet, can block with the stolen minion even if the previous controller has declined to block. ",
                 "refs":{
                     "[PIB 20150501]":"http://www.vekn.net/forum/rules-questions/70780-change-of-control-during-the-action?start=6#70800"
                 }
@@ -72851,7 +73227,7 @@
                 }
             },
             {
-                "text":"If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -73491,7 +73867,7 @@
                 }
             },
             {
-                "text":"[mel] [MEL] If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"[mel] [MEL] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -73600,7 +73976,20 @@
             "Jeff Menges",
             "Brian LeBlanc"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Sets base strength. It can reduce the base strength of a minion (eg. {Rock Cat}). ",
+                "refs":{
+                    "[PIB 20130303]":"https://www.vekn.net/forum/rules-questions/45620-rock-cat-vs-torn-signpost#45626"
+                }
+            },
+            {
+                "text":"Any \"+X strength\" effect adds to it. ",
+                "refs":{
+                    "[LSJ 20100813]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nOb3cmvA_3U/m/0UJqPZGujHsJ"
+                }
+            }
+        ],
         "ASCII Name":"Torn Signpost",
         "Twd":true
     },
@@ -73672,7 +74061,7 @@
                 }
             },
             {
-                "text":"[CEL] If the action continues \"as if unblocked\", Methusalah that had declined to block before do not get another opportunity to block. ",
+                "text":"[CEL] If the action continues \"as if unblocked\", Methuselah that had declined to block before do not get another opportunity to block. ",
                 "refs":{
                     "[ANK 20190116]":"http://www.vekn.net/forum/rules-questions/77302-strike-combat-ends-continue-with-the-action#92916"
                 }
@@ -74612,7 +75001,14 @@
         "Artist":[
             "Jeremy C. Bills"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Can be played with no ready vampire. ",
+                "refs":{
+                    "[ANK 20210717]":"https://www.vekn.net/forum/rules-questions/79228-tribute-to-the-master#102716"
+                }
+            }
+        ],
         "ASCII Name":"Tribute to the Master",
         "Twd":true
     },
@@ -74867,7 +75263,13 @@
                 }
             },
             {
-                "text":"If used to unlock, the block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}). ",
+                "text":"When used to block, does not ignore the normal prey, predator or target restrictions. ",
+                "refs":{
+                    "[ANK 20180623]":"http://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
+                }
+            },
+            {
+                "text":"When used to block, the block attempt and subsequent combat still happen if the action lacks a suitable target because of the unlock (eg. {Ambush}). ",
                 "refs":{
                     "[LSJ 20090514]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/PKQ6lQUBUOI/m/Zra43F1WXGcJ"
                 }
@@ -75384,6 +75786,12 @@
                 "text":"If burned and shuffled into the library, other effects that apply when it is burned still apply (eg. {Set's Curse} puts an ally into play). ",
                 "refs":{
                     "[ANK 20200813]":"http://www.vekn.net/forum/rules-questions/78798-mummies-and-burning-effects#100529"
+                }
+            },
+            {
+                "text":"Is not shuffled into the library when it is discarded. ",
+                "refs":{
+                    "[LSJ 20010710]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/GsI1UyH54jU/m/x9LfDZX1vR4J"
                 }
             }
         ],
@@ -75943,6 +76351,12 @@
                 "text":"Cannot be used to unlock if the vampire cannot attempt to block the action (eg. {Daring the Dawn}). ",
                 "refs":{
                     "[LSJ 20010714-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9U-jt3p3R_Q/WxDJwkgc25kJ"
+                }
+            },
+            {
+                "text":"When used to block, does not ignore the normal prey, predator or target restrictions. ",
+                "refs":{
+                    "[ANK 20180623]":"http://www.vekn.net/forum/rules-questions/76748-black-sunrise#88361"
                 }
             },
             {
@@ -76865,6 +77279,13 @@
                 "refs":{
                     "[ANK 20170227]":"http://www.vekn.net/forum/rules-questions/75632-untapping-an-untapped-minion-triggers#80891",
                     "[LSJ 20020408]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4LXlqwmGQGc/m/S8aQ4et5KMIJ"
+                }
+            },
+            {
+                "text":"The counter is placed after range is determined, before strikes are chosen (defensive strikes like dodge or combat ends do not avoid it). ",
+                "refs":{
+                    "[ANK 20210422]":"https://www.vekn.net/forum/rules-questions/79111-vampiric-disease-and-dodge#102098",
+                    "[LSJ 20040830]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/KHMhiNiSKo4/m/MCfo9aA-EjcJ"
                 }
             }
         ],
@@ -78057,6 +78478,12 @@
                 }
             },
             {
+                "text":"You must be able to pay the cost to play it (eg. cannot play a third Villein with only 1 pool). ",
+                "refs":{
+                    "[ANK 20210714]":"https://www.vekn.net/forum/rules-questions/79224-can-i-do-a-3rd-villein-in-a-vampire-if-i-have-only-1-pool-remaining#102697"
+                }
+            },
+            {
                 "text":"If the target has less blood at resolution than the amount annouced, you take what you can. ",
                 "refs":{
                     "[LSJ 20100216]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/nrXTh1XKJJ8/KF7iiXQk3jsJ",
@@ -78276,6 +78703,9 @@
         "Set":{
             "Anthology":{
                 "LARP":"1"
+            },
+            "Promo":{
+                "20210709":true
             }
         },
         "Requirement":"anarch",
@@ -78285,9 +78715,9 @@
         ],
         "Rulings":[
             {
-                "text":"Cannot play cards requiring both [for] and [cel]. ",
+                "text":"Can play cards requiring both [for] and [cel]. ",
                 "refs":{
-                    "[ANK 20180731-1]":"http://www.vekn.net/forum/rules-questions/76877-vivienne-geroux-and-anarh-cards#89482"
+                    "[ANK 20210719]":"https://www.vekn.net/forum/rules-questions/76877-vivienne-geroux-and-anarh-cards?start=6#102731"
                 }
             },
             {
@@ -78586,7 +79016,7 @@
                 }
             },
             {
-                "text":"Cannot be played if there is no minion or retainer in any Methusalah's ash heap. ",
+                "text":"Cannot be played if there is no minion or retainer in any Methuselah's ash heap. ",
                 "refs":{
                     "[ANK 20200420-3]":"http://www.vekn.net/forum/rules-questions/78574-vulture-s-buffet#99642"
                 }
@@ -79574,7 +80004,7 @@
         ],
         "Rulings":[
             {
-                "text":"[DEM] Is directed at all Methusalah controlling an ally. ",
+                "text":"[DEM] Is directed at all Methuselah controlling an ally. ",
                 "refs":{
                     "[LSJ 20080809-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/1jW6GXrIRSU/7ywPFR39rb4J",
                     "[KOT 20081119]":"http://www.vekn.net/card-lists/140-keepers-of-tradition"
@@ -79885,7 +80315,7 @@
                 }
             },
             {
-                "text":"[AUS][SER] If the action targets multiple Methusalah, you choose one minion, which must be controlled by one of the target Methusalah. ",
+                "text":"[AUS][SER] If the action targets multiple Methuselah, you choose one minion, which must be controlled by one of the target Methuselah. ",
                 "refs":{
                     "[ANK 20180515]":"http://www.vekn.net/forum/rules-questions/76612-weigh-the-heart-and-mulible-targets#86920"
                 }
@@ -79930,7 +80360,7 @@
         ],
         "Rulings":[
             {
-                "text":"If the damage is reduced (eg. {Nephandus}), the corresponding token is not burned (contrary to prevented damage). ",
+                "text":"If the damage is reduced (eg. {Nephandus}) or not inflicted (eg. {Blood Fury}), the corresponding token is not burned (contrary to prevented damage). ",
                 "refs":{
                     "[LSJ 20100519]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/criytfhw97o/sj9_vGAi-xQJ"
                 }
@@ -80609,7 +81039,7 @@
         ],
         "Rulings":[
             {
-                "text":"[pro] Must be played before strike resolution (and damage prevention) in order to affect the current strike ",
+                "text":"[pro] Must be played before strike resolution and damage prevention in order to affect the current strike. Can be played after both strikes have been chosen. ",
                 "refs":{
                     "[RTR 19960112]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/d3n3StNS7no/k2NmZFUl9fAJ"
                 }
@@ -81003,6 +81433,12 @@
                 "text":"If the acting minion is not ready after the combat, then the action ends and no referendum is conducted. ",
                 "refs":{
                     "[LSJ 20060902]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/QAKz6Qtr7Ts/JpnA6qgxS2oJ"
+                }
+            },
+            {
+                "text":"The action cost, if any, is paid before Yawp Court gets locked. ",
+                "refs":{
+                    "[LSJ 20080201]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/y5Uoc7nEulU/m/Nbp6ZMfhj1wJ"
                 }
             },
             {
