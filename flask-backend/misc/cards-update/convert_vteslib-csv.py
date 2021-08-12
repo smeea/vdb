@@ -58,6 +58,9 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
     reader_meta = csv.reader(meta_csv)
     fieldnames_meta = next(reader_meta)
     csv_meta = csv.DictReader(meta_csv, fieldnames_meta)
+    requirements = []
+    for c in csv_meta:
+        requirements.append(c)
 
     cards_backend = []
     cards_frontend = {}
@@ -65,11 +68,11 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
     twda = json.load(twda_input)
 
     for card in csv_cards:
-
         # Add Requirements
-        for c in csv_meta:
+        for c in requirements:
             if c['Id'] == card['Id']:
                 card['Requirement'] = c['Requirement']
+
         if 'Requirement' not in card:
             card['Requirement'] = ''
 

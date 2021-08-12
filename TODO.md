@@ -1,10 +1,20 @@
 # FIX
 * Save scrolling position
+* Remove lazy loading
+* Select My on shared deck open
+* Draw last cards bug
+* MAL & STR icon in rulings
+* Clan sect filter
+* Fix mobile autosearch on filter change after error search
+* Hee BGB letter
+* Select click color on mobile
+* Check draw calculation with played cards and add to documentation
 
 # FIX MOBILE
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 
 # FEATURES
+* Deck crypt sort by capacity option
 * Create revocable link to Inventory
 * Show missing cards for inventory
 * Search for similar TWD decks
@@ -14,6 +24,16 @@
 * Feldb inventory import
 * Deck/revision diff
 * Add help to pages
+* Decklist endpoint
+* Codex link + feedback to Phoenix
+* Update rulings
+* Update cards
+* Public deck archive
+* Csv export
+* Export to JOL
+* Total controlled cost to draw
+* Draw to show transfers
+* Add to deck from /Cards
 
 # MOBILE FEATURES
 * Offline PWA support

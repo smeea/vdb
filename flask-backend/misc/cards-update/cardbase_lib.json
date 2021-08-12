@@ -242,7 +242,7 @@
                 "PSal":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -376,7 +376,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -419,7 +419,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"1 Gehenna",
         "Banned":"",
         "Artist":[
             "Richard Thomas"
@@ -484,7 +484,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"justicar,inner circle",
         "Banned":"",
         "Artist":[
             "Scott Kirschner"
@@ -835,7 +835,7 @@
                 "":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -1394,7 +1394,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"justicar,inner circle",
         "Banned":"",
         "Artist":[
             "Monte Moore"
@@ -1431,7 +1431,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"2 Gehenna",
         "Banned":"",
         "Artist":[
             "Thomas Denmark"
@@ -1912,7 +1912,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -2039,7 +2039,7 @@
                 "PAB":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -2063,7 +2063,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"non-anarch,titled",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -2188,7 +2188,7 @@
                 "PAl":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Steve Casper"
@@ -2262,7 +2262,7 @@
                 "PO":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Alexander Dunnigan"
@@ -2482,7 +2482,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"imbued",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -2873,7 +2873,7 @@
                 "PT":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 7 or more",
         "Banned":"",
         "Artist":[
             "Monte Moore"
@@ -3069,7 +3069,7 @@
                 "PAl":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Heather Hudson"
@@ -3578,7 +3578,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Fred Harper"
@@ -4061,7 +4061,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 5 or less",
         "Banned":"",
         "Artist":[
             "Randy Gallegos"
@@ -4314,7 +4314,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"cardinal,regent,inquisitor",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -4751,7 +4751,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon,non-sterile,capacity 4 or more",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -4911,7 +4911,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"Independent,anarch",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -5321,7 +5321,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -5429,7 +5429,7 @@
                 "A":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile",
         "Banned":"",
         "Artist":[
             "Kyri Koniotis"
@@ -5466,7 +5466,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"2 Gehenna",
         "Banned":"",
         "Artist":[
             "Alejandro Colucci"
@@ -5541,7 +5541,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"magaji",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -5627,7 +5627,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -5842,7 +5842,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince",
         "Banned":"",
         "Artist":[
             "David Kimmel"
@@ -6069,7 +6069,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -6134,7 +6134,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -6158,7 +6158,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -6356,7 +6356,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -7168,7 +7168,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"imbued",
         "Banned":"",
         "Artist":[
             "Mark Poole"
@@ -7296,7 +7296,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Ken Meyer, Jr."
@@ -7397,7 +7397,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Pete Venters",
@@ -7543,7 +7543,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Patrick Lambert"
@@ -7687,7 +7687,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -7872,7 +7872,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Tom Biondillo"
@@ -7942,7 +7942,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "John Matson"
@@ -8014,7 +8014,7 @@
                 "PN":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -8153,7 +8153,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Fred Harper"
@@ -8384,7 +8384,7 @@
                 "":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek",
@@ -8729,7 +8729,7 @@
                 "PAG":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Fred Hooper"
@@ -9263,7 +9263,7 @@
                 "PSal":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile,capacity 3 or more",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -9303,7 +9303,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"same circle",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -10250,7 +10250,7 @@
                 "PV":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Douglas Shuler"
@@ -10579,7 +10579,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -10622,7 +10622,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Hannibal King"
@@ -10650,7 +10650,7 @@
                 "PT":1
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,cardinal,regent",
         "Banned":"",
         "Artist":[
             "David Fooden"
@@ -10683,7 +10683,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Michael Astrachan"
@@ -10708,7 +10708,7 @@
                 "":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Javier Santos"
@@ -11537,7 +11537,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -11568,7 +11568,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"baron",
         "Banned":"",
         "Artist":[
             "Jim Pavelec"
@@ -12376,7 +12376,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat,titled",
         "Banned":"",
         "Artist":[
             "Patrick McEvoy"
@@ -12660,7 +12660,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Ron Van Halen"
@@ -12684,7 +12684,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Theodore Black"
@@ -12715,7 +12715,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"imbued",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -12767,7 +12767,7 @@
                 "PM":1
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -12818,7 +12818,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"same circle",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -12950,7 +12950,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -13117,7 +13117,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 6 or more",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -13289,7 +13289,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar,inner circle",
         "Banned":"",
         "Artist":[
             "Harold Arthur McNeill"
@@ -13493,7 +13493,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -13848,7 +13848,7 @@
                 "PTo":1
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Christopher Rush"
@@ -13980,7 +13980,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"Independent,anarch",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -14767,7 +14767,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"2 Gehenna",
         "Banned":"",
         "Artist":[
             "Joel Biske"
@@ -14933,7 +14933,7 @@
                 "A":1
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Harold Arthur McNeill"
@@ -15061,7 +15061,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -15109,7 +15109,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"infernal",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -15245,7 +15245,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"same circle",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -15509,7 +15509,7 @@
                 "V":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar,inner circle",
         "Banned":"",
         "Artist":[
             "Harold Arthur McNeill"
@@ -15570,7 +15570,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -15681,7 +15681,7 @@
                 "B":1
             }
         },
-        "Requirement":"",
+        "Requirement":"non-camarilla,capacity 8 or more",
         "Banned":"",
         "Artist":[
             "Lawrence Snelly"
@@ -15801,7 +15801,7 @@
                 "PGar":1
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -15838,7 +15838,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent,non-sterile",
         "Banned":"",
         "Artist":[
             "Michael Astrachan"
@@ -16014,7 +16014,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -16181,7 +16181,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -16205,7 +16205,7 @@
                 "20090929":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -16232,7 +16232,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Richard Thomas"
@@ -16256,7 +16256,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -16283,7 +16283,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -16307,7 +16307,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -16334,7 +16334,7 @@
                 "PM":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "James Allen Higgins"
@@ -16364,7 +16364,7 @@
                 "PB":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Clint Langley"
@@ -16388,7 +16388,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Theodore Black"
@@ -16412,7 +16412,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -16436,7 +16436,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Joel Biske"
@@ -16463,7 +16463,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -16487,7 +16487,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -16511,7 +16511,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Ken Meyer, Jr."
@@ -16538,7 +16538,7 @@
                 "PV":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Heather J. McKinney"
@@ -16565,7 +16565,7 @@
                 "PTo":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Andrew Robinson"
@@ -16592,7 +16592,7 @@
                 "PM":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Mike Danza"
@@ -16616,7 +16616,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -16646,7 +16646,7 @@
                 "PTr":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Dave Seeley"
@@ -16676,7 +16676,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Clint Langley"
@@ -16703,7 +16703,7 @@
                 "PB":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -16730,7 +16730,7 @@
                 "PM":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Clint Langley"
@@ -16754,7 +16754,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Mark Poole"
@@ -16809,7 +16809,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -16840,7 +16840,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -17555,7 +17555,7 @@
                 "A":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 8 or more",
         "Banned":"",
         "Artist":[
             "Marian Churchland"
@@ -18025,7 +18025,7 @@
                 "PG":1
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 6 or more",
         "Banned":"",
         "Artist":[
             "Edward Beard, Jr."
@@ -18279,7 +18279,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -18743,7 +18743,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -19005,7 +19005,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -20146,7 +20146,7 @@
                 "PAG":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -20644,7 +20644,7 @@
                 "":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek",
@@ -21223,7 +21223,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -21437,7 +21437,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Justin Norman"
@@ -21512,7 +21512,7 @@
                 "":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Javier Santos"
@@ -21740,7 +21740,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -21792,7 +21792,7 @@
                 "":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Jared Smith",
@@ -22063,7 +22063,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"1 Gehenna",
         "Banned":"2008",
         "Artist":[
             "John Bridges"
@@ -22463,7 +22463,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Roel Wielinga"
@@ -22553,7 +22553,7 @@
                 "PG":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -22600,7 +22600,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Tom Biondillo"
@@ -22812,7 +22812,7 @@
                 "LB":"9"
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile",
         "Banned":"",
         "Artist":[
             "Pete Venters",
@@ -22887,7 +22887,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -22966,7 +22966,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"baron",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -23262,7 +23262,7 @@
                 "":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 10 or more",
         "Banned":"",
         "Artist":[
             "Marian Churchland",
@@ -23624,7 +23624,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"unmerged,base",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -23801,7 +23801,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -24020,7 +24020,7 @@
                 "PKia":1
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -24182,7 +24182,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -24244,7 +24244,7 @@
                 "PTr":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Richard Thomas"
@@ -24292,7 +24292,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"imbued",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -25010,7 +25010,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"3 Gehenna",
         "Banned":"",
         "Artist":[
             "Mark Poole"
@@ -25061,7 +25061,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"3 Gehenna",
         "Banned":"",
         "Artist":[
             "matrix von z"
@@ -25207,7 +25207,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -25685,7 +25685,7 @@
                 "PAB":1
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -25716,7 +25716,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -25747,7 +25747,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -25779,7 +25779,7 @@
                 "PAB":1
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc",
@@ -25811,7 +25811,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -25843,7 +25843,7 @@
                 "PAB":1
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -26108,7 +26108,7 @@
                 "":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek",
@@ -26155,7 +26155,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Fred Harper"
@@ -26188,7 +26188,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Melissa Benson",
@@ -26269,7 +26269,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -26364,7 +26364,7 @@
                 "A":1
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "David Fooden"
@@ -26422,7 +26422,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Greg Boychuk"
@@ -26447,7 +26447,7 @@
                 "PAB":1
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -26480,7 +26480,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Pete Venters",
@@ -26590,7 +26590,7 @@
                 "20080810":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Erik Gist"
@@ -27237,7 +27237,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -27721,7 +27721,7 @@
                 "PM":"5"
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Fred Hooper"
@@ -28193,7 +28193,7 @@
                 "20090401":true
             }
         },
-        "Requirement":"",
+        "Requirement":"2 Gehenna",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -28227,7 +28227,7 @@
                 "PV":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Kieran Yanner",
@@ -28376,7 +28376,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -28549,7 +28549,7 @@
                 "PA":1
             }
         },
-        "Requirement":"",
+        "Requirement":"Independent,anarch",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -28635,7 +28635,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -28920,7 +28920,7 @@
                 "PG":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -29305,7 +29305,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Joel Biske"
@@ -29486,7 +29486,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -30274,7 +30274,7 @@
                 "PAB":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"non-anarch,non-titled",
         "Banned":"",
         "Artist":[
             "Andrew Bates"
@@ -30958,7 +30958,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Matt Dixon"
@@ -31051,7 +31051,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Chris Richards"
@@ -31245,7 +31245,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Patrick McEvoy"
@@ -31352,7 +31352,7 @@
                 "":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Carmen Cornet"
@@ -31443,7 +31443,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"cardinal,regent",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -31746,7 +31746,7 @@
                 "PTr":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat,titled",
         "Banned":"",
         "Artist":[
             "matrix von z"
@@ -32010,7 +32010,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Abrar Ajmal"
@@ -32042,7 +32042,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"cardinal,regent",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -32125,7 +32125,7 @@
                 "PGar":1
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile",
         "Banned":"",
         "Artist":[
             "Richard Thomas"
@@ -32244,7 +32244,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Matt Dixon"
@@ -32750,7 +32750,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -33191,7 +33191,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -33245,7 +33245,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Roel Wielinga"
@@ -33334,7 +33334,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Greg Boychuk"
@@ -33696,7 +33696,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Christopher Shy"
@@ -34161,7 +34161,7 @@
                 "":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Carmen Cornet"
@@ -34322,7 +34322,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Ron Spencer"
@@ -34523,7 +34523,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"justicar,inner circle",
         "Banned":"",
         "Artist":[
             "Rebecca Guay"
@@ -34636,7 +34636,7 @@
                 "PAG":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Chet Masters"
@@ -35235,7 +35235,7 @@
                 "A":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"infernal",
         "Banned":"",
         "Artist":[
             "Erica Danell"
@@ -35459,7 +35459,7 @@
                 "PG":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "David Day"
@@ -35979,7 +35979,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"cardinal,regent",
         "Banned":"",
         "Artist":[
             "Rick O'Brien"
@@ -36685,7 +36685,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"non-camarilla",
         "Banned":"",
         "Artist":[
             "Imaginary Friends Studios"
@@ -36859,7 +36859,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Richard Kane Ferguson"
@@ -36896,7 +36896,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -36950,7 +36950,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold",
@@ -37135,7 +37135,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -37187,7 +37187,7 @@
                 "PI":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -37264,7 +37264,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -37669,7 +37669,7 @@
                 "PV":1
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"2005",
         "Artist":[
             "Quinton Hoover"
@@ -38151,7 +38151,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"infernal",
         "Banned":"",
         "Artist":[
             "Joel Biske"
@@ -38329,7 +38329,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Justin Norman"
@@ -38393,7 +38393,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -38555,7 +38555,7 @@
                 "20081119":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Efrem Palacios"
@@ -38805,7 +38805,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"mortal,ghoul,mage",
         "Banned":"",
         "Artist":[
             "Marian Churchland"
@@ -38880,7 +38880,7 @@
                 "":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"unmerged,advanced",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -38977,7 +38977,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Dave Seeley"
@@ -39012,7 +39012,7 @@
                 "B":1
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar,inner circle",
         "Banned":"",
         "Artist":[
             "Steve Casper"
@@ -39173,7 +39173,7 @@
                 "20030901":true
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 8 or more",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -39416,7 +39416,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -39450,7 +39450,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"non-anarch,titled",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -40003,7 +40003,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -40155,7 +40155,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Alejandro Colucci"
@@ -41208,7 +41208,7 @@
                 "":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Grzegorz Bobrowski"
@@ -41240,7 +41240,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"non-camarilla",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -41814,7 +41814,7 @@
                 "PN":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -42060,7 +42060,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "James Stowe"
@@ -42175,7 +42175,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -42529,7 +42529,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Mark Poole"
@@ -43022,7 +43022,7 @@
                 "":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Jared Smith"
@@ -43325,7 +43325,7 @@
                 "A":1
             }
         },
-        "Requirement":"",
+        "Requirement":"justicar,inner circle",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -43727,7 +43727,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -44216,7 +44216,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"imbued",
         "Banned":"",
         "Artist":[
             "Veronica Jones"
@@ -44281,7 +44281,7 @@
                 "PAB":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -44383,7 +44383,7 @@
                 "A":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 7 or more",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -44516,7 +44516,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -44577,7 +44577,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Corey Macourek"
@@ -44852,7 +44852,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon,non-titled",
         "Banned":"",
         "Artist":[
             "Abrar Ajmal"
@@ -45224,7 +45224,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -45477,7 +45477,7 @@
                 "PV":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"titled",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -45578,7 +45578,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Michael Gaydos"
@@ -45818,7 +45818,7 @@
                 "":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Jared Smith",
@@ -45952,7 +45952,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"1 Gehenna",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -46069,7 +46069,7 @@
                 "":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Rub\u00e9n Bravo",
@@ -46325,7 +46325,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Vince Locke"
@@ -46388,7 +46388,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"magaji",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -46792,7 +46792,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat,capacity 8 or more",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -47179,7 +47179,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"same circle",
         "Banned":"",
         "Artist":[
             "Lawrence Snelly"
@@ -47213,7 +47213,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"primogen",
         "Banned":"",
         "Artist":[
             "Josh Timbrook"
@@ -47530,7 +47530,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"baron",
         "Banned":"",
         "Artist":[
             "John Bridges"
@@ -48052,7 +48052,7 @@
                 "PG":1
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -48438,7 +48438,7 @@
                 "PoS":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"city title",
         "Banned":"",
         "Artist":[
             "Sandra Chang-Adair"
@@ -48529,7 +48529,7 @@
                 "PV":"5"
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "L. A. Williams",
@@ -49214,7 +49214,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"baron,edge",
         "Banned":"",
         "Artist":[
             "Eric Deschamps"
@@ -49806,7 +49806,7 @@
                 "B":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"titled",
         "Banned":"",
         "Artist":[
             "Juan Calle"
@@ -50049,7 +50049,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -51011,7 +51011,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Eric Deschamps"
@@ -51038,7 +51038,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Jim Pavelec"
@@ -51267,7 +51267,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Michael Gaydos"
@@ -51471,7 +51471,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -51550,7 +51550,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -51574,7 +51574,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Michael Weaver"
@@ -51598,7 +51598,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Liz Danforth"
@@ -51638,7 +51638,7 @@
                 "PV":1
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Josh Timbrook",
@@ -51666,7 +51666,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Dave Roach",
@@ -51698,7 +51698,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -51735,7 +51735,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Edward Beard, Jr.",
@@ -51760,7 +51760,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Tom W\u00e4nerstrand"
@@ -51791,7 +51791,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Pete Venters"
@@ -51831,7 +51831,7 @@
                 "PM":1
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Robert McNeill",
@@ -51862,7 +51862,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "N\u00e9 N\u00e9 Thomas",
@@ -51893,7 +51893,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Richard Thomas",
@@ -51918,7 +51918,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Harold Arthur McNeill"
@@ -51942,7 +51942,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Steve Casper"
@@ -51966,7 +51966,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Michael Weaver"
@@ -51997,7 +51997,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Stuart Beel"
@@ -52037,7 +52037,7 @@
                 "PT":1
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Kaja Foglio",
@@ -52065,7 +52065,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Mark Tedin"
@@ -52089,7 +52089,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Pete Venters"
@@ -52122,7 +52122,7 @@
                 "PV":1
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "James Stowe",
@@ -52147,7 +52147,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Max Shade Fellwalker"
@@ -52178,7 +52178,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -52212,7 +52212,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "L. A. Williams"
@@ -52249,7 +52249,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Nicola Leonard",
@@ -52274,7 +52274,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Tom W\u00e4nerstrand"
@@ -52308,7 +52308,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "Mark Tedin",
@@ -52342,7 +52342,7 @@
                 "PT":1
             }
         },
-        "Requirement":"",
+        "Requirement":"camarilla",
         "Banned":"",
         "Artist":[
             "John Bridges",
@@ -52833,7 +52833,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Attila Adorjany",
@@ -52911,7 +52911,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"titled,non-red list",
         "Banned":"",
         "Artist":[
             "Travis Ingram"
@@ -52963,7 +52963,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -53158,7 +53158,7 @@
                 "":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Javier Santos"
@@ -53249,7 +53249,7 @@
                 "PV":1
             }
         },
-        "Requirement":"",
+        "Requirement":"justicar,inner circle",
         "Banned":"2008",
         "Artist":[
             "Phillip Tan"
@@ -53273,7 +53273,7 @@
                 "PN":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"primogen",
         "Banned":"",
         "Artist":[
             "Felipe Gaona"
@@ -53351,7 +53351,7 @@
                 "":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -53756,7 +53756,7 @@
                 "20080810":true
             }
         },
-        "Requirement":"",
+        "Requirement":"non-anarch,non-red list",
         "Banned":"",
         "Artist":[
             "Erik Gist"
@@ -53818,7 +53818,7 @@
                 "":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat,titled",
         "Banned":"",
         "Artist":[
             "Tom\u00e1\u0161 Zahradn\u00ed\u010dek",
@@ -54045,7 +54045,7 @@
                 "PTz":1
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -54776,7 +54776,7 @@
                 "PAB":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Steve Prescott"
@@ -55295,7 +55295,7 @@
                 "A":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"slave",
         "Banned":"",
         "Artist":[
             "Jim Pavelec"
@@ -55680,7 +55680,7 @@
                 "PAn":1
             }
         },
-        "Requirement":"",
+        "Requirement":"red list",
         "Banned":"",
         "Artist":[
             "Brian Miskelley"
@@ -55711,7 +55711,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"2 Gehenna",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -55743,7 +55743,7 @@
                 "PG":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"Independent,anarch,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -55847,7 +55847,7 @@
                 "":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Anna Evertsdotter",
@@ -56013,7 +56013,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"",
+        "Requirement":"titled,non-red list",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -56038,7 +56038,7 @@
                 "":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"non-titled,non-anarch",
         "Banned":"",
         "Artist":[
             "Carmen Cornet"
@@ -56290,7 +56290,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Attila Adorjany"
@@ -56560,7 +56560,7 @@
                 "PB":1
             }
         },
-        "Requirement":"",
+        "Requirement":"titled",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -56883,7 +56883,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"magaji",
         "Banned":"",
         "Artist":[
             "Ron Spencer"
@@ -57592,7 +57592,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -57720,7 +57720,7 @@
                 "B":1
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile,non-caitiff",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -57938,7 +57938,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"baron",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -58214,7 +58214,7 @@
                 "B":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"infernal",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -58238,7 +58238,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"1 Gehenna",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -58278,7 +58278,7 @@
                 "A":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"2 Gehenna",
         "Banned":"",
         "Artist":[
             "Samuel Araya"
@@ -58972,7 +58972,7 @@
                 "20090401":true
             }
         },
-        "Requirement":"",
+        "Requirement":"titled",
         "Banned":"",
         "Artist":[
             "Juan Antonio Serrano Garcia"
@@ -59097,7 +59097,7 @@
                 "PSal":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -59279,7 +59279,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Ken Meyer, Jr."
@@ -59314,7 +59314,7 @@
                 "PB":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Lawrence Snelly"
@@ -59366,7 +59366,7 @@
                 "PAl":1
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Quinton Hoover"
@@ -59468,7 +59468,7 @@
                 "B":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat,capacity 8 or more",
         "Banned":"",
         "Artist":[
             "Clint Langley"
@@ -59854,7 +59854,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Vince Locke"
@@ -60300,7 +60300,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"titled",
         "Banned":"",
         "Artist":[
             "Justin Norman"
@@ -60646,7 +60646,7 @@
                 "PV":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "L. A. Williams",
@@ -60770,7 +60770,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Roel Wielinga"
@@ -61102,7 +61102,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"capacity 7 or more",
         "Banned":"",
         "Artist":[
             "Eric Lofgren"
@@ -61297,7 +61297,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -61321,7 +61321,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -62398,7 +62398,7 @@
                 "":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Javier Santos"
@@ -62422,7 +62422,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -62632,7 +62632,7 @@
                 "A":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"infernal,capacity 9 or more",
         "Banned":"",
         "Artist":[
             "Samuel Araya"
@@ -62692,7 +62692,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -63006,7 +63006,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Mike Danza"
@@ -63705,7 +63705,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "William O'Connor"
@@ -63738,7 +63738,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "Kaja Foglio",
@@ -63771,7 +63771,7 @@
                 "A":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"non-titled,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Gin\u00e9s Qui\u00f1onero"
@@ -64027,7 +64027,7 @@
                 "PAB":"4"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Steve Ellis"
@@ -64419,7 +64419,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"1 Gehenna",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -64506,7 +64506,7 @@
                 "PAG":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Fred Hooper"
@@ -64530,7 +64530,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Leif Jones"
@@ -64637,7 +64637,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -65577,7 +65577,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Jim Nelson"
@@ -66516,7 +66516,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Ken Meyer, Jr."
@@ -66547,7 +66547,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Christopher Shy"
@@ -66628,7 +66628,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Becky Jollensten"
@@ -66657,7 +66657,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -66730,7 +66730,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Peter Bergting"
@@ -67159,7 +67159,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Abrar Ajmal"
@@ -68027,7 +68027,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Alan Rabinowitz"
@@ -68126,7 +68126,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -68415,7 +68415,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -68459,7 +68459,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"baron",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -69673,7 +69673,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -69982,7 +69982,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat,titled",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -70146,7 +70146,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"justicar",
         "Banned":"2016",
         "Artist":[
             "Christopher Rush",
@@ -70283,7 +70283,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Durwin Talon"
@@ -70708,7 +70708,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile,capacity 2 or less",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -70786,7 +70786,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar,non-sterile",
         "Banned":"",
         "Artist":[
             "L. A. Williams",
@@ -70860,7 +70860,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Heather Kreiter"
@@ -71035,7 +71035,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"same circle",
         "Banned":"",
         "Artist":[
             "Avery Butterworth"
@@ -71300,7 +71300,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat,capacity 7 or more",
         "Banned":"",
         "Artist":[
             "James Allen Higgins"
@@ -71901,7 +71901,7 @@
                 "PB":1
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Dennis Calero"
@@ -71959,7 +71959,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"prince,justicar,inner circle",
         "Banned":"",
         "Artist":[
             "Richard Kane Ferguson"
@@ -72245,7 +72245,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"magaji",
         "Banned":"",
         "Artist":[
             "Caleb Cleaveland"
@@ -72543,7 +72543,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Thomas Manning"
@@ -73123,7 +73123,7 @@
                 "PAl":"3"
             }
         },
-        "Requirement":"",
+        "Requirement":"titled,non-red list",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -73147,7 +73147,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -73238,7 +73238,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -73867,7 +73867,7 @@
                 "PoS":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat,titled",
         "Banned":"",
         "Artist":[
             "Anna Evertsdotter",
@@ -74028,7 +74028,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Alexander Dunnigan"
@@ -74241,7 +74241,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Michael Gaydos"
@@ -74340,7 +74340,7 @@
                 "":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"infernal",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc",
@@ -75009,7 +75009,7 @@
                 "PL":"2"
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Phillip Tan"
@@ -75299,7 +75299,7 @@
                 "A":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"infernal",
         "Banned":"",
         "Artist":[
             "Paul Ballard"
@@ -76148,7 +76148,7 @@
                 "LARP":"1"
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Mark Kelly"
@@ -76888,7 +76888,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"archbishop,priscus,cardinal,regent",
         "Banned":"",
         "Artist":[
             "Tom Gianni"
@@ -77244,7 +77244,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"black hand",
         "Banned":"",
         "Artist":[
             "Drew Tucker"
@@ -77268,7 +77268,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Rik Martin"
@@ -77292,7 +77292,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -77316,7 +77316,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"seraph",
         "Banned":"",
         "Artist":[
             "Chet Masters"
@@ -77340,7 +77340,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"1 Gehenna,seraph",
         "Banned":"",
         "Artist":[
             "Jeremy McHugh"
@@ -77367,7 +77367,7 @@
                 "DTC":true
             }
         },
-        "Requirement":"",
+        "Requirement":"non-sterile,capacity 5 or more",
         "Banned":"",
         "Artist":[
             "Jeff Holt"
@@ -77853,7 +77853,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"laibon",
         "Banned":"",
         "Artist":[
             "Pat Loboyko"
@@ -78184,7 +78184,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"primogen",
         "Banned":"",
         "Artist":[
             "Andrew Trabbold"
@@ -78579,7 +78579,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"anarch",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -78603,7 +78603,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"1 Gehenna",
         "Banned":"",
         "Artist":[
             "Brian LeBlanc"
@@ -78646,7 +78646,7 @@
                 "U":true
             }
         },
-        "Requirement":"",
+        "Requirement":"inner circle",
         "Banned":"",
         "Artist":[
             "Ron Spencer"
@@ -78785,7 +78785,7 @@
                 "R":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Glen Osterberger"
@@ -79054,7 +79054,7 @@
                 "C":true
             }
         },
-        "Requirement":"",
+        "Requirement":"sabbat",
         "Banned":"",
         "Artist":[
             "Jim Nelson"
