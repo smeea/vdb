@@ -2,7 +2,6 @@
 * Save scrolling position
 * Select My on shared deck open
 * Draw last cards bug
-* MAL & STR icon in rulings
 * Fix mobile autosearch on filter change after error search
 * Select click color on mobile
 * Check draw calculation with played cards and add to documentation
