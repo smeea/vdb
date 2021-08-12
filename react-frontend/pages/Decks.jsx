@@ -256,7 +256,7 @@ function Decks(props) {
     if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons') {
       setSelectFrom(props.activeDeck.src);
     } else if (
-      props.activeDeck.src == 'twd' &&
+      (props.activeDeck.src == 'twd' || props.activeDeck.src == 'shared') &&
       decks &&
       Object.keys(decks).length > 0
     ) {

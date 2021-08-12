@@ -1,11 +1,10 @@
 # FIX
 * Save scrolling position
-* Select My on shared deck open
-* Fix mobile autosearch on filter change after error search
-* Select click color on mobile
 * Check draw calculation with played cards and add to documentation
 
 # FIX MOBILE
+* Select click color on mobile
+* Fix mobile autosearch on filter change after error search
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 
 # FEATURES
