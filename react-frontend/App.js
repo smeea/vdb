@@ -7,22 +7,21 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext.js';
 import AppContext from './context/AppContext';
+import About from './pages/About.jsx';
+import Account from './pages/Account.jsx';
+import Cards from './pages/Cards.jsx';
+import Crypt from './pages/Crypt.jsx';
+import Decks from './pages/Decks.jsx';
+import Documentation from './pages/Documentation.jsx';
+import Inventory from './pages/Inventory.jsx';
+import Library from './pages/Library.jsx';
 import Navigation from './pages/Navigation.jsx';
+import Twd from './pages/Twd.jsx';
 import preconDecksData from './preconDecks.json';
 import preconData from './pages/components/forms_data/preconOptions.json';
 import setsAndPrecons from './pages/components/forms_data/setsAndPrecons.json';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
-
-const Crypt = lazy(() => import('./pages/Crypt.jsx'));
-const Library = lazy(() => import('./pages/Library.jsx'));
-const About = lazy(() => import('./pages/About.jsx'));
-const Documentation = lazy(() => import('./pages/Documentation.jsx'));
-const Twd = lazy(() => import('./pages/Twd.jsx'));
-const Decks = lazy(() => import('./pages/Decks.jsx'));
-const Account = lazy(() => import('./pages/Account.jsx'));
-const Cards = lazy(() => import('./pages/Cards.jsx'));
-const Inventory = lazy(() => import('./pages/Inventory.jsx'));
 
 function App(props) {
   const {

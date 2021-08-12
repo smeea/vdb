@@ -1,12 +1,9 @@
 # FIX
 * Save scrolling position
-* Remove lazy loading
 * Select My on shared deck open
 * Draw last cards bug
 * MAL & STR icon in rulings
-* Clan sect filter
 * Fix mobile autosearch on filter change after error search
-* Hee BGB letter
 * Select click color on mobile
 * Check draw calculation with played cards and add to documentation
 
