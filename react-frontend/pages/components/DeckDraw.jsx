@@ -159,6 +159,8 @@ function DeckDraw(props) {
     let newRestCards = [];
     if (restLibrary.length > 0) {
       [newDrawedCards, newRestCards] = drawCards(restLibrary, 1);
+    } else {
+      setLibraryHandSize(libraryHandSize - 1);
     }
     const allDrawedCards = [...hand, ...newDrawedCards];
     setDrawedLibrary(allDrawedCards);

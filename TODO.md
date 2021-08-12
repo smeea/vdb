@@ -1,7 +1,6 @@
 # FIX
 * Save scrolling position
 * Select My on shared deck open
-* Draw last cards bug
 * Fix mobile autosearch on filter change after error search
 * Select click color on mobile
 * Check draw calculation with played cards and add to documentation
