@@ -73,10 +73,12 @@ function DeckDraw(props) {
   useEffect(() => {
     if (restCrypt) {
       if (drawedCrypt.length < cryptHandSize) {
-        const diff = cryptHandSize - drawedCrypt.length;
-        const [draw, rest] = drawCards(restCrypt, diff);
-        setDrawedCrypt([...drawedCrypt, ...draw]);
-        setRestCrypt(rest);
+        if (cryptHandSize - drawedCrypt.length <= restCrypt.length) {
+          const diff = cryptHandSize - drawedCrypt.length;
+          const [draw, rest] = drawCards(restCrypt, diff);
+          setDrawedCrypt([...drawedCrypt, ...draw]);
+          setRestCrypt(rest);
+        }
       } else if (drawedCrypt.length > cryptHandSize) {
         const diff = drawedCrypt.length - cryptHandSize;
         const overhead = drawedCrypt.slice(-diff);
@@ -89,10 +91,12 @@ function DeckDraw(props) {
   useEffect(() => {
     if (restLibrary) {
       if (drawedLibrary.length < libraryHandSize) {
-        const diff = libraryHandSize - drawedLibrary.length;
-        const [draw, rest] = drawCards(restLibrary, diff);
-        setDrawedLibrary([...drawedLibrary, ...draw]);
-        setRestLibrary(rest);
+        if (libraryHandSize - drawedLibrary.length <= restLibrary.length) {
+          const diff = libraryHandSize - drawedLibrary.length;
+          const [draw, rest] = drawCards(restLibrary, diff);
+          setDrawedLibrary([...drawedLibrary, ...draw]);
+          setRestLibrary(rest);
+        }
       } else if (drawedLibrary.length > libraryHandSize) {
         const diff = drawedLibrary.length - libraryHandSize;
         const overhead = drawedLibrary.slice(-diff);

@@ -1,6 +1,7 @@
 # FIX
 * Save scrolling position
 * Check draw calculation with played cards and add to documentation
+* vekn forum: @Hobbesgoblin Inventory bug https://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool?start=78#102803
 
 # FIX MOBILE
 * Select click color on mobile
@@ -26,6 +27,8 @@
 * Total controlled cost to draw
 * Draw to show transfers
 * Add to deck from /Cards
+* Add to deck without scrolling to top
+* vekn forum: @Hobbesgoblin Highlight status of missing in the selected proxy https://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool?start=78#102888
 
 # MOBILE FEATURES
 * Offline PWA support
