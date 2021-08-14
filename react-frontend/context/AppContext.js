@@ -24,6 +24,8 @@ const AppContext = React.createContext({
   inventoryMode: false,
   toggleInventoryMode: () => {},
   isInventory: undefined,
+  cryptSortByCap: false,
+  toggleCryptSort: () => {},
 
   cryptCardBase: undefined,
   setCryptCardBase: () => {},
@@ -98,6 +100,7 @@ export const AppProvider = (props) => {
   const [addMode, setAddMode] = useState(false);
   const [inventoryMode, setInventoryMode] = useState(false);
   const [hideMissing, setHideMissing] = useState(false);
+  const [cryptSortByCap, setCryptSortByCap] = useState(false);
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
@@ -186,6 +189,19 @@ export const AppProvider = (props) => {
   const isInventory =
     Object.keys(inventoryCrypt).length > 0 ||
     Object.keys(inventoryLibrary).length > 0;
+
+  const toggleCryptSort = () => {
+    setCryptSortByCap(!cryptSortByCap);
+    window.localStorage.setItem('cryptSortByCap', !cryptSortByCap);
+  };
+
+  useLayoutEffect(() => {
+    if (window.localStorage.getItem('inventoryMode') === 'true') {
+      setInventoryMode(true);
+    } else {
+      setInventoryMode(false);
+    }
+  }, [inventoryMode]);
 
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
@@ -404,6 +420,8 @@ export const AppProvider = (props) => {
         setAddMode,
         showImage,
         toggleShowImage,
+        cryptSortByCap,
+        toggleCryptSort,
 
         cryptCardBase,
         setCryptCardBase,

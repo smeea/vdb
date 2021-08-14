@@ -5,11 +5,12 @@ import X from '../../assets/images/icons/x.svg';
 import DeckCryptTotalByCapacity from './DeckCryptTotalByCapacity.jsx';
 import DeckCryptTable from './DeckCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
+import DeckCryptSortButton from './DeckCryptSortButton.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckCrypt(props) {
-  const { changeTimer, isMobile } = useContext(AppContext);
+  const { cryptSortByCap, changeTimer, isMobile } = useContext(AppContext);
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -168,15 +169,26 @@ function DeckCrypt(props) {
     });
 
   useEffect(() => {
-    setSortedState(
-      Object.values(crypt)
-        .sort(SortByCapacity)
-        .sort(SortByQuantity)
-        .map((i) => {
-          return i['c']['Id'];
-        })
-    );
-  }, [changeTimer, props.deckid]);
+    if (cryptSortByCap) {
+      setSortedState(
+        Object.values(crypt)
+          .sort(SortByQuantity)
+          .sort(SortByCapacity)
+          .map((i) => {
+            return i['c']['Id'];
+          })
+      );
+    } else {
+      setSortedState(
+        Object.values(crypt)
+          .sort(SortByCapacity)
+          .sort(SortByQuantity)
+          .map((i) => {
+            return i['c']['Id'];
+          })
+      );
+    }
+  }, [changeTimer, props.deckid, cryptSortByCap]);
 
   return (
     <>
@@ -187,6 +199,9 @@ function DeckCrypt(props) {
         </b>
         {!props.inAdvSelect && (
           <div className="d-flex">
+            <div className="pr-1">
+              <DeckCryptSortButton />
+            </div>
             <Button
               variant="outline-secondary"
               onClick={() => setShowInfo(!showInfo)}

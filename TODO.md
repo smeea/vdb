@@ -8,7 +8,6 @@
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 
 # FEATURES
-* Deck crypt sort by capacity option
 * Create revocable link to Inventory
 * Show missing cards for inventory
 * Localized proxies and from scans
