@@ -7,10 +7,12 @@ import QuickSelect from './components/QuickSelect.jsx';
 import ResultCryptLayoutText from './components/ResultCryptLayoutText.jsx';
 import ResultLibraryLayoutText from './components/ResultLibraryLayoutText.jsx';
 import ButtonCardCopyUrl from './components/ButtonCardCopyUrl.jsx';
+import ButtonAddCard from './components/ButtonAddCard.jsx';
 import AppContext from '../context/AppContext.js';
 
 function Cards(props) {
   const {
+    decks,
     cryptCardBase,
     libraryCardBase,
     showImage,
@@ -19,6 +21,7 @@ function Cards(props) {
     localizedLibrary,
     lang,
     isMobile,
+    activeDeck,
   } = useContext(AppContext);
 
   const [card, setCard] = useState(undefined);
@@ -81,6 +84,20 @@ function Cards(props) {
     setCard(libraryCardBase[id]);
     history.push(`/cards/${id}`);
   };
+
+  let inDeck = 0;
+  if (
+    card &&
+    decks &&
+    decks[activeDeck.deckid] &&
+    (decks[activeDeck.deckid].crypt[card.Id] ||
+      decks[activeDeck.deckid].library[card.Id])
+  ) {
+    inDeck =
+      card.Id > 200000
+        ? decks[activeDeck.deckid].crypt[card.Id].q
+        : decks[activeDeck.deckid].library[card.Id].q;
+  }
 
   useEffect(() => {
     if (props.id > 200000 && cryptCardBase) {
@@ -187,7 +204,18 @@ function Cards(props) {
                       />
                     )}
                     <div className="pt-3">
-                      <ButtonCardCopyUrl id={card.Id} />
+                      <div className="d-inline pr-1">
+                        <ButtonCardCopyUrl id={card.Id} />
+                      </div>
+                      <div className="d-inline pr-1">
+                        <ButtonAddCard
+                          cardid={card.Id}
+                          deckid={activeDeck.deckid}
+                          card={card}
+                          inDeck={inDeck}
+                          inZap={true}
+                        />
+                      </div>
                     </div>
                   </Col>
                 </Row>

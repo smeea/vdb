@@ -4,7 +4,7 @@ import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
-import ResultAddCard from './ResultAddCard.jsx';
+import ButtonAddCard from './ButtonAddCard.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
@@ -122,7 +122,7 @@ function ResultLibraryTable(props) {
         <tr className={resultTrClass}>
           {addMode && (
             <td className="quantity-add pr-1">
-              <ResultAddCard
+              <ButtonAddCard
                 cardid={card['Id']}
                 deckid={props.activeDeck.deckid}
                 card={card}

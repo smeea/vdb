@@ -22,7 +22,12 @@ function ButtonCardCopyUrl(props) {
   return (
     <>
       {!state ? (
-        <Button variant="outline-secondary" onClick={handleButton}>
+        <Button
+          className="card-buttons"
+          variant="outline-secondary"
+          onClick={handleButton}
+          title="Copy URL"
+        >
           <ShareFill />
         </Button>
       ) : (

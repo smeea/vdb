@@ -10,7 +10,7 @@ import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptTitle from './ResultCryptTitle.jsx';
-import ResultAddCard from './ResultAddCard.jsx';
+import ButtonAddCard from './ButtonAddCard.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext';
 
@@ -119,7 +119,7 @@ function ResultCryptTable(props) {
         <tr className={resultTrClass}>
           {addMode && (
             <td className="quantity-add pr-1">
-              <ResultAddCard
+              <ButtonAddCard
                 cardid={card['Id']}
                 deckid={props.activeDeck.deckid}
                 card={card}
