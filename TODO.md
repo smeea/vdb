@@ -1,11 +1,9 @@
 # FIX
 * Save scrolling position
-* Check draw calculation with played cards and add to documentation
 * vekn forum: @Hobbesgoblin Inventory bug https://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool?start=78#102803
 
 # FIX MOBILE
 * Select click color on mobile
-* Fix mobile autosearch on filter change after error search
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 
 # FEATURES

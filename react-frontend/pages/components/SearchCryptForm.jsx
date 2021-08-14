@@ -231,6 +231,7 @@ function SearchCryptForm(props) {
           setSpinnerState(false);
         })
         .catch((error) => {
+          if (isMobile) history.push('/crypt');
           setCryptResults([]);
           setPreresults([]);
           setShowError(true);

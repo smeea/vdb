@@ -211,6 +211,7 @@ function SearchLibraryForm(props) {
           setSpinnerState(false);
         })
         .catch((error) => {
+          if (isMobile) history.push('/library');
           setLibraryResults([]);
           setPreresults([]);
           setShowError(true);
