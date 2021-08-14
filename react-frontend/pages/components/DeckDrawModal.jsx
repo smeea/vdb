@@ -202,7 +202,7 @@ function DeckDrawModal(props) {
           <Row className="px-0 pb-4">
             <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
               <div className={isMobile ? 'pb-4' : null}>
-                <div className="d-flex justify-content-between info-message">
+                <div className="d-flex justify-content-between title-line">
                   <div className="d-flex align-items-center px-2">
                     <b>Uncontrolled</b>
                   </div>
@@ -259,7 +259,7 @@ function DeckDrawModal(props) {
               </div>
             </Col>
             <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4">
-              <div className="d-flex justify-content-between info-message">
+              <div className="d-flex justify-content-between title-line">
                 <div className="d-flex align-items-center px-2">
                   <b>Hand</b>
                 </div>
@@ -315,7 +315,7 @@ function DeckDrawModal(props) {
               <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
                 {props.burnedCrypt.length > 0 && (
                   <div className={isMobile ? 'pb-4' : null}>
-                    <div className="d-flex justify-content-between info-message">
+                    <div className="d-flex justify-content-between title-line">
                       <div className="d-flex align-items-center px-2">
                         <b>Controlled</b>
                       </div>
@@ -327,7 +327,7 @@ function DeckDrawModal(props) {
                         title="Total Capacity"
                       >
                         <img
-                          className="cost-blood-image-results pb-1 pr-1"
+                          className="capacity-image-results pr-1"
                           src={process.env.ROOT_URL + 'images/misc/capX.png'}
                         />
                         <b>{props.burnedCapacityTotal}</b>
@@ -348,7 +348,7 @@ function DeckDrawModal(props) {
               <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4">
                 {props.burnedLibrary.length > 0 && (
                   <>
-                    <div className="d-flex justify-content-between info-message">
+                    <div className="d-flex justify-content-between title-line">
                       <div className="d-flex align-items-center px-2">
                         <b>Ash Heap</b>
                       </div>
