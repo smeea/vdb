@@ -83,7 +83,7 @@ function About(props) {
                 <a href="http://www.vekn.net/card-lists">
                   vekn.net official list
                 </a>
-                : 2021-03-24
+                : 2021-08-04
               </p>
             </div>
 
@@ -97,14 +97,6 @@ function About(props) {
                 Online card search and deck-building tool. I use *many* ideas
                 from Amaranth.
               </p>
-              <p>
-                <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
-                  <b>FELD</b>
-                </a>
-                <br />
-                Deck-building application for Windows.
-                <br />
-              </p>
 
               <p>
                 <a href="https://codex-of-the-damned.org/">
@@ -112,15 +104,6 @@ function About(props) {
                 </a>
                 <br />
                 Strategy portal.
-              </p>
-
-              <p>
-                <span className="link-like">
-                  <b>Secret Library</b>
-                </span>
-                <br />
-                Now resting in peace, but probably inspired most of existing
-                projects including this one.
               </p>
 
               <p>
@@ -141,9 +124,7 @@ function About(props) {
               <h5>PRIVACY</h5>
               <p>
                 We respect privacy and promise not to use/share your data
-                (email, decks, etc).
-                <br />
-                We do not track your activity.
+                (email, decks, etc), and not to track your activity.
               </p>
             </div>
 
@@ -194,7 +175,7 @@ function About(props) {
                       <Globe2 />
                     </div>
                     <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
-                      VEKN.net forum
+                      VEKN.net forum thread
                     </a>
                   </div>
                 </li>

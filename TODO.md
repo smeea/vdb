@@ -11,20 +11,19 @@
 * Deck crypt sort by capacity option
 * Create revocable link to Inventory
 * Show missing cards for inventory
-* Search for similar TWD decks
 * Localized proxies and from scans
 * Tags to deck main window
-* Card recommendation
-* Feldb inventory import
-* Deck/revision diff
-* Add help to pages
-* Decklist endpoint
+* Decklist endpoint + token
 * Codex link + feedback to Phoenix
-* Public deck archive
-* Csv export
-* Export to JOL
 * Add to deck without scrolling to top
 * vekn forum: @Hobbesgoblin Highlight status of missing in the selected proxy https://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool?start=78#102888
+* CSV export
+* Export to JOL
+* Feldb inventory import
+* Deck/revision diff
+* Public deck archive
+* Card recommendation
+* Search for similar TWD decks
 
 # MOBILE FEATURES
 * Offline PWA support
