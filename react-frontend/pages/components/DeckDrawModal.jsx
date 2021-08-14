@@ -319,7 +319,16 @@ function DeckDrawModal(props) {
                       <div className="d-flex align-items-center">
                         <b>{props.burnedCrypt.length}</b>
                       </div>
-                      <div />
+                      <div
+                        className="d-flex align-items-center pr-3"
+                        title="Total Capacity"
+                      >
+                        <img
+                          className="cost-blood-image-results pb-1 pr-1"
+                          src={process.env.ROOT_URL + 'images/misc/capX.png'}
+                        />
+                        <b>{props.burnedCapacityTotal}</b>
+                      </div>
                     </div>
                     <DeckDrawCryptTable
                       handleClick={handleModalCryptCardOpen}

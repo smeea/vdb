@@ -111,6 +111,11 @@ function DeckDraw(props) {
     setRestLibrary(newRestCards);
   };
 
+  let burnedCapacityTotal = 0;
+  burnedCrypt.map((card) => {
+    burnedCapacityTotal += parseInt(card['Capacity']);
+  });
+
   let burnedPoolTotal = 0;
   let burnedBloodTotal = 0;
 
@@ -187,6 +192,7 @@ function DeckDraw(props) {
           show={showDrawModal}
           handleClose={handleCloseDrawModal}
           setShowButtons={props.setShowButtons}
+          burnedCapacityTotal={burnedCapacityTotal}
           burnedPoolTotal={burnedPoolTotal}
           burnedBloodTotal={burnedBloodTotal}
         />

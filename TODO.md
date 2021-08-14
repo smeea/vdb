@@ -22,7 +22,6 @@
 * Public deck archive
 * Csv export
 * Export to JOL
-* Total controlled cost to draw
 * Draw to show transfers
 * Add to deck from /Cards
 * Add to deck without scrolling to top
