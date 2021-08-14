@@ -22,7 +22,6 @@
 * Public deck archive
 * Csv export
 * Export to JOL
-* Draw to show transfers
 * Add to deck from /Cards
 * Add to deck without scrolling to top
 * vekn forum: @Hobbesgoblin Highlight status of missing in the selected proxy https://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool?start=78#102888

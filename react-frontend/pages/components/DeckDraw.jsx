@@ -47,13 +47,20 @@ function DeckDraw(props) {
   const [drawedLibrary, setDrawedLibrary] = useState([]);
   const [burnedCrypt, setBurnedCrypt] = useState([]);
   const [burnedLibrary, setBurnedLibrary] = useState([]);
+  const [initialTransfers, setInitialTransfers] = useState(undefined);
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
     isMobile && props.setShowButtons(false);
   };
 
+  const randomTransfers = () => {
+    const t = [1, 2, 3, 4, 4];
+    return t[getRandomInt(5)];
+  };
+
   const handleOpenDraw = () => {
+    setInitialTransfers(randomTransfers());
     setCryptHandSize(4);
     setLibraryHandSize(7);
     setBurnedCrypt([]);
@@ -66,6 +73,7 @@ function DeckDraw(props) {
   };
 
   const handleReDrawCrypt = () => {
+    setInitialTransfers(randomTransfers());
     setCryptHandSize(4);
     const [draw, rest] = drawCards(cryptArr, 4);
     setDrawedCrypt(draw);
@@ -177,6 +185,7 @@ function DeckDraw(props) {
           library={props.library}
           cryptTotal={cryptArr.length}
           libraryTotal={libraryArr.length}
+          initialTransfers={initialTransfers}
           drawedCrypt={drawedCrypt}
           drawedLibrary={drawedLibrary}
           handleReDrawCrypt={handleReDrawCrypt}

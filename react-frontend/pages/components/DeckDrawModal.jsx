@@ -212,6 +212,9 @@ function DeckDrawModal(props) {
                     </b>
                   </div>
                   <div className="d-flex">
+                    <div className="d-flex align-items-center pr-2">
+                      <b>{props.initialTransfers}t</b>
+                    </div>
                     <div className="pr-1">
                       <Button
                         variant="outline-secondary"
