@@ -24,17 +24,20 @@ const ResultLayoutTextSets = (props) => {
           </li>
         );
       } else {
-        return (
-          <li className="rulings" key={idx}>
-            {abbrevs[i]}
-          </li>
-        );
+        if (i !== 'DTC') {
+          return (
+            <li className="rulings" key={idx}>
+              {abbrevs[i]}
+            </li>
+          );
+        }
       }
     });
 
     const popoverText = (
       <>
-        <b>{setsData[k].name}</b> - {setsData[k].year}
+        <b>{setsData[k].name}</b>
+        {k !== 'POD' && ' - ' + setsData[k].year}
         <br />
         <ul className="rulings">{preconsDetailed}</ul>
       </>
