@@ -67,7 +67,10 @@ def inventoryExportRoute():
         }
         result = inventoryExport(inventory, request.json['format'])
 
-        return jsonify(result)
+        if request.json['format'] == 'csv':
+            return result
+        else:
+            return jsonify(result)
 
     except Exception:
         pass
@@ -796,10 +799,11 @@ def importDeck():
 @app.route('/api/decks/export', methods=['POST'])
 def deckExportRoute():
     try:
+        result = None
         if request.json['deckid'] == 'all' and current_user.is_authenticated:
             decks = Deck.query.filter_by(author=current_user).all()
             result = deckExportAll(decks, request.json['format'])
-            return jsonify(result)
+
         elif request.json['src'] == 'twd':
             deckid = request.json['deckid']
             with open("twdDecksById.json", "r") as twdDecks_file:
@@ -820,7 +824,7 @@ def deckExportRoute():
                     deck['description'] += '\n' + comments
                 deck['author'] = deck['player']
                 result = deckExport(deck, request.json['format'])
-                return jsonify(result)
+
         elif request.json['src'] == 'precons':
             set, precon = request.json['deckid'].split(':')
             with open("preconDecks.json", "r") as precons_file:
@@ -833,11 +837,11 @@ def deckExportRoute():
                     'description': 'Preconstructed deck',
                 }
                 result = deckExport(deck, request.json['format'])
-                return jsonify(result)
+
         elif request.json['src'] == 'shared':
             deck = request.json['deck']
             result = deckExport(deck, request.json['format'])
-            return jsonify(result)
+
         elif request.json['src'] == 'my':
             d = Deck.query.filter_by(deckid=request.json['deckid']).first()
             deck = {
@@ -848,6 +852,10 @@ def deckExportRoute():
                 'description': d.description,
             }
             result = deckExport(deck, request.json['format'])
+
+        if request.json['format'] == 'csv':
+            return result
+        else:
             return jsonify(result)
 
     except Exception:

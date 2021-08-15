@@ -23,6 +23,9 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
         Save as file - Lackey
       </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
+        Save as file - CSV (MS Excel)
+      </Dropdown.Item>
       <Dropdown.Divider />
       <Dropdown.Item href="" onClick={() => copyDeck('text')}>
         Copy to Clipboard - Text
@@ -129,22 +132,37 @@ function DeckExport(props) {
 
       const fetchPromise = fetch(url, options);
 
-      fetchPromise
-        .then((response) => response.json())
-        .then((data) => {
-          const file = new File(
-            [data.deck],
-            data.name + '_' + data.format + '.txt',
-            { type: 'text/plain;charset=utf-8' }
-          );
-          FileSaver.saveAs(file);
-          setSpinnerState(false);
-          isMobile && props.setShowButtons(false);
-        })
-        .catch((error) => {
-          setSpinnerState(false);
-          setError(true);
-        });
+      if (format === 'csv') {
+        fetchPromise
+          .then((response) => response.text())
+          .then((data) => {
+            const file = 'data:text/csv;base64,' + data;
+            saveAs(file, `${props.deck['name']}.csv`);
+            setSpinnerState(false);
+            isMobile && props.setShowButtons(false);
+          })
+          .catch((error) => {
+            setSpinnerState(false);
+            setError(true);
+          });
+      } else {
+        fetchPromise
+          .then((response) => response.json())
+          .then((data) => {
+            const file = new File(
+              [data.deck],
+              data.name + '_' + data.format + '.txt',
+              { type: 'text/plain;charset=utf-8' }
+            );
+            FileSaver.saveAs(file);
+            setSpinnerState(false);
+            isMobile && props.setShowButtons(false);
+          })
+          .catch((error) => {
+            setSpinnerState(false);
+            setError(true);
+          });
+      }
     } else {
       setError(true);
     }

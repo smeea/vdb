@@ -1,5 +1,8 @@
 import json
 import re
+import csv
+import base64
+import io
 
 
 def deckExport(d, format):
@@ -33,7 +36,34 @@ def deckExport(d, format):
         if 'branch_name' in d and d['branch_name']:
             deck_name += f" [{d['branch_name']}]"
 
-        if format == 'lackey':
+        if format == 'csv':
+            f = io.StringIO()
+            writer = csv.writer(f)
+
+            # Crypt export
+            sorted_crypt = sorted(crypt.values(), key=lambda x: x['c']['Name'])
+            for i in sorted_crypt:
+                q = i['q']
+                c = i['c']
+                name = c['ASCII Name'].replace('"', "'")
+                if c['Adv']:
+                    name = name + " (ADV)"
+
+                writer.writerow([q, name])
+
+            # Library export
+            writer.writerow([])
+            sorted_library = sorted(library.values(),
+                                    key=lambda x: x['c']['Name'])
+            for i in sorted_library:
+                q = i['q']
+                c = i['c']
+                name = c['ASCII Name'].replace('"', "'")
+                writer.writerow([q, name])
+
+            return base64.b64encode(f.getvalue().encode('latin-1'))
+
+        elif format == 'lackey':
             # Library export
             sorted_library_keys = sorted(library,
                                          key=lambda x:

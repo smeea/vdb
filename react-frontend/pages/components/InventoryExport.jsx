@@ -6,7 +6,7 @@ import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function InventoryExport(props) {
-  const { isMobile } = useContext(AppContext);
+  const { publicName, isMobile } = useContext(AppContext);
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -19,6 +19,9 @@ function InventoryExport(props) {
       </Dropdown.Item>
       <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
         Save as file - Lackey
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
+        Save as file - CSV (MS Excel)
       </Dropdown.Item>
       <Dropdown.Divider />
       <Dropdown.Item href="" onClick={() => copyDeck('text')}>
@@ -81,22 +84,37 @@ function InventoryExport(props) {
 
     const fetchPromise = fetch(url, options);
 
-    fetchPromise
-      .then((response) => response.json())
-      .then((data) => {
-        const file = new File(
-          [data.deck],
-          data.name + '_' + data.format + '.txt',
-          { type: 'text/plain;charset=utf-8' }
-        );
-        FileSaver.saveAs(file);
-        setSpinnerState(false);
-        isMobile && props.setShowButtons(false);
-      })
-      .catch((error) => {
-        setError(true);
-        setSpinnerState(false);
-      });
+    if (format === 'csv') {
+      fetchPromise
+        .then((response) => response.text())
+        .then((data) => {
+          const file = 'data:text/csv;base64,' + data;
+          saveAs(file, `Inventory - ${publicName}.csv`);
+          setSpinnerState(false);
+          isMobile && props.setShowButtons(false);
+        })
+        .catch((error) => {
+          setSpinnerState(false);
+          setError(true);
+        });
+    } else {
+      fetchPromise
+        .then((response) => response.json())
+        .then((data) => {
+          const file = new File(
+            [data.deck],
+            data.name + '_' + data.format + '.txt',
+            { type: 'text/plain;charset=utf-8' }
+          );
+          FileSaver.saveAs(file);
+          setSpinnerState(false);
+          isMobile && props.setShowButtons(false);
+        })
+        .catch((error) => {
+          setError(true);
+          setSpinnerState(false);
+        });
+    }
   };
 
   return (
