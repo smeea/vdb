@@ -50,7 +50,7 @@ function DeckCryptTable(props) {
 
     let deckInvType;
     let cardInvType;
-    if (inventoryMode && decks[props.deckid]) {
+    if (inventoryMode && decks && props.deckid && decks[props.deckid]) {
       cardInvType = card.i;
       deckInvType = decks[props.deckid].inventory_type;
     }
@@ -67,7 +67,7 @@ function DeckCryptTable(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (inventoryMode) {
+    if (decks && inventoryMode) {
       if (Object.keys(inventoryCrypt).includes(card.c['Id'].toString())) {
         inInventory = inventoryCrypt[card.c['Id']].q;
       } else {
@@ -136,7 +136,7 @@ function DeckCryptTable(props) {
           )}
           {props.isAuthor ? (
             <>
-              {inventoryMode ? (
+              {inventoryMode && decks ? (
                 <>
                   {deckInvType && !props.inSearch && !isMobile ? (
                     <td className="d-flex align-items-center inventory-card-custom">

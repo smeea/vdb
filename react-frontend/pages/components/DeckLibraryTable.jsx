@@ -32,10 +32,8 @@ function DeckLibraryTable(props) {
 
   let resultTrClass;
   let deckInvType = null;
-  if (decks && props.deckid) {
-    if (inventoryMode && decks[props.deckid]) {
-      deckInvType = decks[props.deckid].inventory_type;
-    }
+  if (inventoryMode && decks && props.deckid && decks[props.deckid]) {
+    deckInvType = decks[props.deckid].inventory_type;
   }
 
   const [modalDraw, setModalDraw] = useState(undefined);
@@ -77,7 +75,7 @@ function DeckLibraryTable(props) {
     let SoftUsedDescription;
     let HardUsedDescription;
 
-    if (inventoryMode) {
+    if (decks && inventoryMode) {
       cardInvType = card.i;
 
       if (Object.keys(inventoryLibrary).includes(card.c['Id'].toString())) {
@@ -148,7 +146,7 @@ function DeckLibraryTable(props) {
           )}
           {props.isAuthor ? (
             <>
-              {inventoryMode ? (
+              {inventoryMode && decks ? (
                 <>
                   {deckInvType && !props.inSearch ? (
                     <td className="d-flex align-items-center inventory-card-custom">

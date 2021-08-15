@@ -434,6 +434,7 @@ function App(props) {
           Object.keys(decks[deckid].library).forEach((id) => {
             if (decks[deckid].library[id].q) {
               if (hardLibrary[id]) {
+                hardLibrary[id][deckid] = decks[deckid].library[id].q;
               } else {
                 hardLibrary[id] = {};
                 hardLibrary[id][deckid] = decks[deckid].library[id].q;
