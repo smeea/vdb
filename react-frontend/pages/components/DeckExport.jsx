@@ -23,6 +23,9 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
         Save as file - Lackey
       </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => saveDeck('jol')}>
+        Save as file - JOL
+      </Dropdown.Item>
       <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
         Save as file - CSV (MS Excel)
       </Dropdown.Item>
@@ -36,6 +39,9 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
         Copy to Clipboard - Lackey
       </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => copyDeck('jol')}>
+        Copy to Clipboard - JOL
+      </Dropdown.Item>
       {username && (
         <>
           <Dropdown.Divider />
@@ -47,6 +53,12 @@ function DeckExport(props) {
           </Dropdown.Item>
           <Dropdown.Item href="" onClick={() => exportAll('lackey')}>
             Save all decks - Lackey
+          </Dropdown.Item>
+          <Dropdown.Item href="" onClick={() => exportAll('jol')}>
+            Save all decks - JOL
+          </Dropdown.Item>
+          <Dropdown.Item href="" onClick={() => exportAll('csv')}>
+            Save all decks - CSV (Excel)
           </Dropdown.Item>
         </>
       )}

@@ -14,7 +14,6 @@
 * Decklist endpoint + token
 * Add to deck without scrolling to top
 * vekn forum: @Hobbesgoblin Highlight status of missing in the selected proxy https://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool?start=78#102888
-* Export to JOL
 * Feldb inventory import
 * Deck/revision diff
 * Public deck archive

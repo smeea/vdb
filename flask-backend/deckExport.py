@@ -63,6 +63,24 @@ def deckExport(d, format):
 
             return base64.b64encode(f.getvalue().encode('latin-1'))
 
+        elif format == 'jol':
+            sorted_crypt = sorted(crypt.values(), key=lambda x: x['c']['Name'])
+            for i in sorted_crypt:
+                q = i['q']
+                c = i['c']
+                name = c['ASCII Name'].replace('"', "'")
+                if c['Adv']:
+                    name = name + " (ADV)"
+                deck.append(f"{q}x{name}\n")
+
+            sorted_library = sorted(library.values(),
+                                    key=lambda x: x['c']['Name'])
+            for i in sorted_library:
+                q = i['q']
+                c = i['c']
+                name = c['ASCII Name'].replace('"', "'")
+                deck.append(f"{q}x{name}\n")
+
         elif format == 'lackey':
             # Library export
             sorted_library_keys = sorted(library,
