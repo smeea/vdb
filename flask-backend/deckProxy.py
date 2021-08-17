@@ -49,6 +49,8 @@ def deckProxy(cards):
         pdf.add_page()
         pdf.set_fill_color(40, 40, 40)
 
+        page = 1
+
         for image in imagelist:
             pdf.rect((left_margin + x_counter * (w + gap)),
                      (top_margin + y_counter * (h + gap)), (w + gap),
@@ -63,7 +65,8 @@ def deckProxy(cards):
                 y_counter += 1
                 x_counter = 0
 
-            if y_counter == 3:
+            if y_counter == 3 and page * 9 < len(imagelist):
+                page += 1
                 pdf.add_page()
                 pdf.set_fill_color(40, 40, 40)
                 y_counter = 0
