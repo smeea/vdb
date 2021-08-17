@@ -153,9 +153,10 @@ function DeckLibrary(props) {
             deckid={props.deckid}
             cards={libraryByType[cardtype]}
             isAuthor={props.isAuthor}
-            proxySelector={props.proxySelector}
-            proxyCounter={props.proxyCounter}
+            handleProxySelector={props.handleProxySelector}
+            handleProxyCounter={props.handleProxyCounter}
             proxySelected={props.proxySelected}
+            inProxy={props.inProxy}
             inSearch={props.inSearch}
             inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}
@@ -182,9 +183,10 @@ function DeckLibrary(props) {
             deckid={props.deckid}
             cards={librarySideByType[cardtype]}
             isAuthor={props.isAuthor}
-            proxySelector={props.proxySelector}
-            proxyCounter={props.proxyCounter}
+            handleProxySelector={props.handleProxySelector}
+            handleProxyCounter={props.handleProxyCounter}
             proxySelected={props.proxySelected}
+            inProxy={props.inProxy}
             inSearch={props.inSearch}
             inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}

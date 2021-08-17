@@ -45,7 +45,7 @@ function DeckProxySelectModal(props) {
     setToggleState(!toggleState);
   };
 
-  const proxySelector = (e) => {
+  const handleProxySelector = (e) => {
     const { id, name } = e.target;
     const newState = selectedCards;
     newState[id][name] = !newState[id][name];
@@ -55,7 +55,7 @@ function DeckProxySelectModal(props) {
     }));
   };
 
-  const proxyCounter = (deckid, id, q) => {
+  const handleProxyCounter = (deckid, id, q) => {
     const newState = selectedCards;
     newState[id].q = q;
     setSelectedCards((prevState) => ({
@@ -107,10 +107,11 @@ function DeckProxySelectModal(props) {
                 <>
                   <DeckCrypt
                     cards={props.deck.crypt}
-                    isAuthor={false}
-                    proxySelector={proxySelector}
-                    proxyCounter={proxyCounter}
+                    deckid={props.deck.deckid}
+                    handleProxySelector={handleProxySelector}
+                    handleProxyCounter={handleProxyCounter}
                     proxySelected={selectedCards}
+                    inProxy={true}
                   />
                   {!isMobile && <br />}
                 </>
@@ -121,10 +122,11 @@ function DeckProxySelectModal(props) {
                 <>
                   <DeckLibrary
                     cards={props.deck.library}
-                    isAuthor={false}
-                    proxySelector={proxySelector}
-                    proxyCounter={proxyCounter}
+                    deckid={props.deck.deckid}
+                    handleProxySelector={handleProxySelector}
+                    handleProxyCounter={handleProxyCounter}
                     proxySelected={selectedCards}
+                    inProxy={true}
                   />
                   {!isMobile && <br />}
                 </>

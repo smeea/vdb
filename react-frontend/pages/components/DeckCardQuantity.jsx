@@ -7,6 +7,7 @@ function DeckCardQuantity(props) {
 
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(props.q);
+  const [miss, setMiss] = useState(false);
 
   const handleManualChange = (event) => {
     setState(event.target.value);
@@ -22,6 +23,24 @@ function DeckCardQuantity(props) {
     if (state != props.q) setState(props.q);
   }, [props.q]);
 
+  useEffect(() => {
+    if (props.inventoryType) {
+      if (props.inProxy) {
+        setMiss(
+          props.inInventory + props.q < props.softUsedMax + props.hardUsedTotal
+        );
+      } else {
+        setMiss(props.inInventory < props.softUsedMax + props.hardUsedTotal);
+      }
+    }
+  }, [
+    props.q,
+    props.inventoryType,
+    props.inProxy,
+    props.softUsedMax,
+    props.hardUsedTotal,
+  ]);
+
   return (
     <div className="d-flex align-items-center justify-content-between">
       {isMobile ? (
@@ -36,14 +55,7 @@ function DeckCardQuantity(props) {
               -
             </Button>
           </a>
-          <div
-            className={
-              props.inInventory < props.softUsedMax + props.hardUsedTotal &&
-              props.inventoryType
-                ? 'px-1 mx-1 inv-miss-full'
-                : 'px-1'
-            }
-          >
+          <div className={miss ? 'px-1 mx-1 inv-miss-full' : 'px-1'}>
             {props.q == 0 ? '' : props.q}
           </div>
           <a
@@ -72,12 +84,7 @@ function DeckCardQuantity(props) {
           )}
           <div
             className={
-              manual
-                ? 'px-0'
-                : props.inInventory < props.softUsedMax + props.hardUsedTotal &&
-                  props.inventoryType
-                ? 'px-1 mx-1 inv-miss-full'
-                : 'px-1'
+              manual ? 'px-0' : miss ? 'px-1 mx-1 inv-miss-full' : 'px-1'
             }
             onClick={() => setManual(true)}
           >

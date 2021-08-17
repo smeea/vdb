@@ -277,9 +277,10 @@ function DeckCrypt(props) {
         isAuthor={props.isAuthor}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
-        proxySelector={props.proxySelector}
-        proxyCounter={props.proxyCounter}
+        handleProxySelector={props.handleProxySelector}
+        handleProxyCounter={props.handleProxyCounter}
         proxySelected={props.proxySelected}
+        inProxy={props.inProxy}
         inSearch={props.inSearch}
         inAdvSelect={props.inAdvSelect}
         setShowFloatingButtons={props.setShowFloatingButtons}
@@ -298,9 +299,10 @@ function DeckCrypt(props) {
             isAuthor={props.isAuthor}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
-            proxySelector={props.proxySelector}
-            proxyCounter={props.proxyCounter}
+            handleProxySelector={props.handleProxySelector}
+            handleProxyCounter={props.handleProxyCounter}
             proxySelected={props.proxySelected}
+            inProxy={props.inProxy}
             inSearch={props.inSearch}
             inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}
