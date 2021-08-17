@@ -27,7 +27,7 @@ function DeckExport(props) {
         Save as file - JOL
       </Dropdown.Item>
       <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
-        Save as file - CSV (MS Excel)
+        Save as file - CSV
       </Dropdown.Item>
       <Dropdown.Divider />
       <Dropdown.Item href="" onClick={() => copyDeck('text')}>
@@ -58,7 +58,7 @@ function DeckExport(props) {
             Save all decks - JOL
           </Dropdown.Item>
           <Dropdown.Item href="" onClick={() => exportAll('csv')}>
-            Save all decks - CSV (Excel)
+            Save all decks - CSV
           </Dropdown.Item>
         </>
       )}

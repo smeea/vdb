@@ -21,7 +21,7 @@ function InventoryExport(props) {
         Save as file - Lackey
       </Dropdown.Item>
       <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
-        Save as file - CSV (MS Excel)
+        Save as file - CSV
       </Dropdown.Item>
       <Dropdown.Divider />
       <Dropdown.Item href="" onClick={() => copyDeck('text')}>
