@@ -270,7 +270,9 @@ function DeckCryptTable(props) {
                         <td className="quantity-no-buttons px-1">
                           <div
                             className={
-                              inInventory < card.q
+                              props.inMissing
+                                ? null
+                                : inInventory < card.q
                                 ? 'inv-miss-full'
                                 : inInventory - hardUsedTotal < card.q
                                 ? 'inv-miss-part'
@@ -296,7 +298,9 @@ function DeckCryptTable(props) {
                           <td className="quantity-no-buttons px-1">
                             <div
                               className={
-                                inInventory < card.q
+                                props.inMissing
+                                  ? null
+                                  : inInventory < card.q
                                   ? 'inv-miss-full'
                                   : inInventory - hardUsedTotal < card.q
                                   ? 'inv-miss-part'

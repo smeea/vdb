@@ -282,6 +282,7 @@ function DeckCrypt(props) {
         proxySelected={props.proxySelected}
         inProxy={props.inProxy}
         inSearch={props.inSearch}
+        inMissing={props.inMissing}
         inAdvSelect={props.inAdvSelect}
         setShowFloatingButtons={props.setShowFloatingButtons}
       />
@@ -304,6 +305,7 @@ function DeckCrypt(props) {
             proxySelected={props.proxySelected}
             inProxy={props.inProxy}
             inSearch={props.inSearch}
+            inMissing={props.inMissing}
             inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}
           />
