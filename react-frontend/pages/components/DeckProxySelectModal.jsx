@@ -83,7 +83,7 @@ function DeckProxySelectModal(props) {
       show={props.show}
       onHide={() => props.setShow(false)}
       animation={false}
-      size="xl"
+      dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
       <Modal.Body className="p-0">
         <Container fluid>

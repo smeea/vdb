@@ -14,8 +14,7 @@ function DeckMissingModal(props) {
       show={props.show}
       onHide={props.handleClose}
       animation={false}
-      size="xl"
-      dialogClassName={!isMobile ? 'modal-deck-draw' : null}
+      dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
       <Modal.Body className="p-0">
         <Container fluid>

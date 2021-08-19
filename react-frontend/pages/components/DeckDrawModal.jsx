@@ -181,7 +181,7 @@ function DeckDrawModal(props) {
       show={props.show}
       onHide={props.handleClose}
       animation={false}
-      dialogClassName={!isMobile ? 'modal-deck-draw' : null}
+      dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
       <Modal.Body className="p-0">
         <Container fluid>
