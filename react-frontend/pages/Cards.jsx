@@ -157,8 +157,19 @@ function Cards(props) {
                             />
                           )}
                         </div>
-                        <div className="px-3 pb-3">
-                          <ButtonCardCopyUrl id={card.Id} />
+                        <div className="px-3 pt-3">
+                          <div className="d-inline pr-2">
+                            <ButtonCardCopyUrl id={card.Id} />
+                          </div>
+                          <div className="d-inline pr-2">
+                            <ButtonAddCard
+                              cardid={card.Id}
+                              deckid={activeDeck.deckid}
+                              card={card}
+                              inDeck={inDeck}
+                              inZap={true}
+                            />
+                          </div>
                         </div>
                       </>
                     )}
