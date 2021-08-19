@@ -1,9 +1,12 @@
 # FIX
 * Save scrolling position
+* Yellow-missing inventory
 
 # FIX MOBILE
 * Select click color on mobile
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
+* On mobile full screen deck draw
+* Add from /cards onMobile
 
 # FEATURES
 * Create revocable link to Inventory
