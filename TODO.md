@@ -1,6 +1,5 @@
 # FIX
 * Save scrolling position
-* DeckCrypTable / DeckLibraryTable unify deckinvtype
 
 # FIX MOBILE
 * Select click color on mobile

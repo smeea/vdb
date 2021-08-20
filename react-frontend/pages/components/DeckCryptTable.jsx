@@ -31,6 +31,11 @@ function DeckCryptTable(props) {
   } = useContext(AppContext);
 
   let resultTrClass;
+  let deckInvType = null;
+  if (inventoryMode && decks && props.deckid && decks[props.deckid]) {
+    deckInvType = decks[props.deckid].inventory_type;
+  }
+
   const [modalDraw, setModalDraw] = useState(undefined);
 
   const cardRows = props.cards.map((card) => {
@@ -48,19 +53,13 @@ function DeckCryptTable(props) {
       });
     };
 
-    let deckInvType;
-    let cardInvType;
-    if (inventoryMode && decks && props.deckid && decks[props.deckid]) {
-      cardInvType = card.i;
-      deckInvType = decks[props.deckid].inventory_type;
-    }
-
     if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
     } else {
       resultTrClass = 'result-odd';
     }
 
+    let cardInvType = null;
     let inInventory = null;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
@@ -68,6 +67,8 @@ function DeckCryptTable(props) {
     let HardUsedDescription;
 
     if (decks && inventoryMode) {
+      cardInvType = card.i;
+
       if (Object.keys(inventoryCrypt).includes(card.c['Id'].toString())) {
         inInventory = inventoryCrypt[card.c['Id']].q;
       } else {
