@@ -27,11 +27,22 @@ function DeckCardQuantity(props) {
     if (props.inventoryType) {
       if (props.inProxy) {
         setMiss(
-          props.inInventory + props.q < props.softUsedMax + props.hardUsedTotal
+          props.inInventory + (props.isSelected ? props.q : 0) <
+            props.softUsedMax + props.hardUsedTotal
+            ? 'inv-miss-full'
+            : null
         );
       } else {
-        setMiss(props.inInventory < props.softUsedMax + props.hardUsedTotal);
+        setMiss(
+          props.inInventory < props.softUsedMax + props.hardUsedTotal
+            ? props.inInventory < props.q
+              ? 'inv-miss-full'
+              : 'inv-miss-part'
+            : null
+        );
       }
+    } else {
+      setMiss(null);
     }
   }, [
     props.q,
@@ -39,6 +50,7 @@ function DeckCardQuantity(props) {
     props.inProxy,
     props.softUsedMax,
     props.hardUsedTotal,
+    props.isSelected,
   ]);
 
   return (
@@ -55,7 +67,7 @@ function DeckCardQuantity(props) {
               -
             </Button>
           </a>
-          <div className={miss ? 'px-1 mx-1 inv-miss-full' : 'px-1'}>
+          <div className={miss ? `px-1 mx-1 ${miss}` : 'px-1'}>
             {props.q == 0 ? '' : props.q}
           </div>
           <a
@@ -83,9 +95,7 @@ function DeckCardQuantity(props) {
             </Button>
           )}
           <div
-            className={
-              manual ? 'px-0' : miss ? 'px-1 mx-1 inv-miss-full' : 'px-1'
-            }
+            className={manual ? 'px-0' : miss ? `px-1 mx-1 ${miss}` : 'px-1'}
             onClick={() => setManual(true)}
           >
             {manual ? (

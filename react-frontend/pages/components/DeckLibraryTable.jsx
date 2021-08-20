@@ -172,6 +172,10 @@ function DeckLibraryTable(props) {
                       hardUsedTotal={hardUsedTotal}
                       inventoryType={decks[props.deckid].inventory_type}
                       cardChange={props.handleProxyCounter}
+                      isSelected={
+                        props.proxySelected[card.c['Id']] &&
+                        props.proxySelected[card.c['Id']].print
+                      }
                     />
                   </td>
                 </OverlayTrigger>
@@ -283,9 +287,9 @@ function DeckLibraryTable(props) {
                               props.inMissing
                                 ? null
                                 : inInventory < card.q
-                                ? 'inv-miss-full'
-                                : inInventory - hardUsedTotal < card.q
                                 ? 'inv-miss-part'
+                                : inInventory < hardUsedTotal
+                                ? 'inv-miss-full'
                                 : null
                             }
                           >
@@ -311,9 +315,9 @@ function DeckLibraryTable(props) {
                                 props.inMissing
                                   ? null
                                   : inInventory < card.q
-                                  ? 'inv-miss-full'
-                                  : inInventory - hardUsedTotal < card.q
                                   ? 'inv-miss-part'
+                                  : inInventory < hardUsedTotal
+                                  ? 'inv-miss-full'
                                   : null
                               }
                             >
