@@ -1,6 +1,5 @@
 # FIX
 * Save scrolling position
-* Yellow-missing inventory
 * DeckCrypTable / DeckLibraryTable unify deckinvtype
 
 # FIX MOBILE
