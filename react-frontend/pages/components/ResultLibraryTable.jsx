@@ -57,10 +57,10 @@ function ResultLibraryTable(props) {
         });
     };
 
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
+    if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
+    } else {
+      resultTrClass = 'result-odd';
     }
 
     const inDeck =

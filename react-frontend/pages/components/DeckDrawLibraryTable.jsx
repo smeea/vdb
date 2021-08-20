@@ -22,10 +22,10 @@ function DeckDrawLibraryTable(props) {
   const n = props.resultCards.length;
 
   const cardRows = props.resultCards.map((card, index) => {
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
+    if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
+    } else {
+      resultTrClass = 'result-odd';
     }
 
     const k = props.library[card['Id']].q;

@@ -1,8 +1,7 @@
 # FIX
 * Save scrolling position
 * Yellow-missing inventory
-* deckcrypttable / decklibrarytable unify deckinvtype
-* order of odd/even colors
+* DeckCrypTable / DeckLibraryTable unify deckinvtype
 
 # FIX MOBILE
 * Select click color on mobile
@@ -15,7 +14,7 @@
 * Localized proxies and from scans
 * Tags to deck main window
 * Add to deck without scrolling to top
-* vekn forum: @Hobbesgoblin Highlight status of missing in the selected proxy https://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool?start=78#102888
+* Crypt unique draw chances to info line
 * Feldb inventory import
 * Script to update images from org
 * Deck/revision diff
