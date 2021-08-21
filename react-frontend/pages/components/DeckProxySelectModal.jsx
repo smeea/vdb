@@ -183,14 +183,16 @@ function DeckProxySelectModal(props) {
             <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
               {props.deck.crypt && (
                 <>
-                  <DeckCrypt
-                    cards={props.deck.crypt}
-                    deckid={props.deck.deckid}
-                    handleProxySelector={handleProxySelector}
-                    handleProxyCounter={handleProxyCounter}
-                    proxySelected={selectedCards}
-                    inProxy={true}
-                  />
+                  <div className={isMobile ? null : 'sticky-modal'}>
+                    <DeckCrypt
+                      cards={props.deck.crypt}
+                      deckid={props.deck.deckid}
+                      handleProxySelector={handleProxySelector}
+                      handleProxyCounter={handleProxyCounter}
+                      proxySelected={selectedCards}
+                      inProxy={true}
+                    />
+                  </div>
                   {!isMobile && <br />}
                 </>
               )}

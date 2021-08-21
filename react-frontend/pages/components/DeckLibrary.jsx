@@ -201,99 +201,101 @@ function DeckLibrary(props) {
 
   return (
     <>
-      <div className="d-flex align-items-center justify-content-between pl-2 info-message">
-        <b>
-          Library [{libraryTotal}
-          {(libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
-        </b>
-        <div className="d-flex">
-          <div
-            className="d-flex align-items-center pr-3"
-            title="Total Blood Cost"
-          >
-            <img
-              className="cost-blood-image-results pb-1 pr-1"
-              src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
-            />
-            <b>{bloodTotal}</b>
+      <div className={props.inDeckTab ? 'sticky-lib-indeck pt-4' : null}>
+        <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+          <b>
+            Library [{libraryTotal}
+            {(libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
+          </b>
+          <div className="d-flex">
+            <div
+              className="d-flex align-items-center pr-3"
+              title="Total Blood Cost"
+            >
+              <img
+                className="cost-blood-image-results pb-1 pr-1"
+                src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
+              />
+              <b>{bloodTotal}</b>
+            </div>
+            <div
+              className="d-flex align-items-center pr-3"
+              title="Total Pool Cost"
+            >
+              <img
+                className="cost-pool-image-results py-1 pr-1"
+                src={process.env.ROOT_URL + 'images/misc/poolX.png'}
+              />
+              <b>{poolTotal}</b>
+            </div>
+            {!props.inAdvSelect && (
+              <>
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => setShowInfo(!showInfo)}
+                >
+                  <InfoCircle />
+                </Button>
+                {props.isAuthor && !isMobile && (
+                  <div className="pl-1">
+                    <Button
+                      variant="outline-secondary"
+                      onClick={() => setShowAdd(!showAdd)}
+                    >
+                      +
+                    </Button>
+                  </div>
+                )}
+              </>
+            )}
           </div>
-          <div
-            className="d-flex align-items-center pr-3"
-            title="Total Pool Cost"
-          >
-            <img
-              className="cost-pool-image-results py-1 pr-1"
-              src={process.env.ROOT_URL + 'images/misc/poolX.png'}
-            />
-            <b>{poolTotal}</b>
-          </div>
-          {!props.inAdvSelect && (
-            <>
-              <Button
-                variant="outline-secondary"
-                onClick={() => setShowInfo(!showInfo)}
-              >
-                <InfoCircle />
-              </Button>
-              {props.isAuthor && !isMobile && (
-                <div className="pl-1">
-                  <Button
-                    variant="outline-secondary"
-                    onClick={() => setShowAdd(!showAdd)}
-                  >
-                    +
-                  </Button>
-                </div>
-              )}
-            </>
-          )}
         </div>
+        {showInfo && (
+          <div className="info-message pl-2">
+            <DeckLibraryTotalByTypes byTypes={libraryByTypeTotal} />
+          </div>
+        )}
+        {showAdd &&
+          (!isMobile ? (
+            <DeckNewLibraryCard
+              setShowAdd={setShowAdd}
+              cards={props.cards}
+              deckid={props.deckid}
+            />
+          ) : (
+            <Modal
+              show={showAdd}
+              onHide={() => setShowAdd(false)}
+              animation={false}
+            >
+              <Modal.Body className="p-0">
+                <Container className="p-0" fluid>
+                  <Row className="p-0 m-0">
+                    <Col className="p-0">
+                      <div className="m-2">
+                        <button
+                          type="button"
+                          className="close m-1"
+                          onClick={() => setShowAdd(false)}
+                        >
+                          <X width="32" height="32" viewBox="0 0 16 16" />
+                        </button>
+                      </div>
+                      <div className="d-flex justify-content-center">
+                        <h5>Add Library Card</h5>
+                      </div>
+                    </Col>
+                  </Row>
+                  <DeckNewLibraryCard
+                    setShowAdd={setShowAdd}
+                    cards={props.cards}
+                    deckid={props.deckid}
+                  />
+                </Container>
+              </Modal.Body>
+            </Modal>
+          ))}
       </div>
-      {showInfo && (
-        <div className="info-message pl-2">
-          <DeckLibraryTotalByTypes byTypes={libraryByTypeTotal} />
-        </div>
-      )}
-      {showAdd &&
-        (!isMobile ? (
-          <DeckNewLibraryCard
-            setShowAdd={setShowAdd}
-            cards={props.cards}
-            deckid={props.deckid}
-          />
-        ) : (
-          <Modal
-            show={showAdd}
-            onHide={() => setShowAdd(false)}
-            animation={false}
-          >
-            <Modal.Body className="p-0">
-              <Container className="p-0" fluid>
-                <Row className="p-0 m-0">
-                  <Col className="p-0">
-                    <div className="m-2">
-                      <button
-                        type="button"
-                        className="close m-1"
-                        onClick={() => setShowAdd(false)}
-                      >
-                        <X width="32" height="32" viewBox="0 0 16 16" />
-                      </button>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                      <h5>Add Library Card</h5>
-                    </div>
-                  </Col>
-                </Row>
-                <DeckNewLibraryCard
-                  setShowAdd={setShowAdd}
-                  cards={props.cards}
-                  deckid={props.deckid}
-                />
-              </Container>
-            </Modal.Body>
-          </Modal>
-        ))}
       {LibraryDeck}
       {Object.keys(librarySide).length > 0 && !props.inAdvSelect && (
         <div className="deck-sidelibrary pt-2">

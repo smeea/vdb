@@ -32,47 +32,39 @@ function Crypt(props) {
   }
 
   return (
-    <Container className={isMobile ? 'main-container' : 'main-container py-3'}>
+    <Container
+      className={isMobile ? 'main-container' : 'main-container pt-0 pb-3'}
+    >
       <Row>
         {!isMobile && (
           <Col xl={username && addMode ? 4 : 3} className="hide-narrow px-0">
             {decks && Object.keys(decks).length > 0 && (
-              <Row>
-                <Col>
-                  <div
-                    className={
-                      isMobile
-                        ? 'd-flex justify-content-between'
-                        : 'd-flex justify-content-end'
-                    }
-                  >
-                    {addMode && (
-                      <>
-                        <div className={isBranches ? 'w-75' : 'w-100'}>
-                          <DeckSelectMy activeDeck={props.activeDeck} />
-                        </div>
-                        {isBranches && (
-                          <div className="pl-1 w-25">
-                            <DeckBranchSelect activeDeck={props.activeDeck} />
-                          </div>
-                        )}
-                      </>
-                    )}
-                    <div className="d-flex pl-1">
-                      <Button
-                        variant="outline-secondary"
-                        onClick={() => setAddMode(!addMode)}
-                      >
-                        {addMode ? <EyeSlashFill /> : <EyeFill />}
-                      </Button>
+              <div className="d-flex justify-content-end sticky-insearch pt-3 pb-2">
+                {addMode && (
+                  <>
+                    <div className={isBranches ? 'w-75' : 'w-100'}>
+                      <DeckSelectMy activeDeck={props.activeDeck} />
                     </div>
-                  </div>
-                </Col>
-              </Row>
+                    {isBranches && (
+                      <div className="pl-1 w-25">
+                        <DeckBranchSelect activeDeck={props.activeDeck} />
+                      </div>
+                    )}
+                  </>
+                )}
+                <div className="d-flex pl-1">
+                  <Button
+                    variant="outline-secondary"
+                    onClick={() => setAddMode(!addMode)}
+                  >
+                    {addMode ? <EyeSlashFill /> : <EyeFill />}
+                  </Button>
+                </div>
+              </div>
             )}
             {deckRouter(props.activeDeck) && addMode && (
               <>
-                <div className="pt-4">
+                <div className="pt-2">
                   <DeckCrypt
                     deckid={props.activeDeck.deckid}
                     cards={deckRouter(props.activeDeck).crypt}
@@ -99,7 +91,7 @@ function Crypt(props) {
           className={
             isMobile && showCryptSearch
               ? 'col-hide px-0'
-              : 'px-0 px-md-2 px-xl-4'
+              : 'px-0 px-md-2 px-xl-4 pt-3'
           }
         >
           {cryptResults && (
@@ -122,7 +114,7 @@ function Crypt(props) {
             !isMobile || (isMobile && showCryptSearch)
               ? isMobile
                 ? 'p-1'
-                : 'px-md-2 px-xl-0'
+                : 'px-md-2 px-xl-0 pt-3'
               : 'col-hide'
           }
         >

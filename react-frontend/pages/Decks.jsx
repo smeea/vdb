@@ -279,7 +279,7 @@ function Decks(props) {
       <Row className="mx-0">
         <Col xl={1} className="hide-narrow"></Col>
         <Col md={10} xl={9} className="px-0 px-lg-1 px-xl-3">
-          <Row className="px-1 pt-1 pb-2 px-lg-0 pt-lg-0 pb-lg-4">
+          <Row className="px-1 pt-1 pb-2 px-lg-0 pt-lg-0">
             <Col md={5} className="px-0 px-lg-3">
               <Row className="align-items-center justify-content-end mx-0">
                 <Col className="px-0">
@@ -439,17 +439,20 @@ function Decks(props) {
           )}
           {deckRouter(props.activeDeck) && (
             <Row>
-              <Col md={7} className="px-0 pl-md-3 pr-md-2 px-xl-3">
-                <DeckCrypt
-                  deckid={props.activeDeck.deckid}
-                  cards={deckRouter(props.activeDeck).crypt}
-                  isAuthor={isAuthor}
-                  showFloatingButtons={showFloatingButtons}
-                  setShowFloatingButtons={setShowFloatingButtons}
-                />
+              <Col md={7} className="px-0 pl-md-3 pr-md-2 px-xl-3 pt-lg-4">
+                <div className={isMobile ? null : 'sticky'}>
+                  <DeckCrypt
+                    deckid={props.activeDeck.deckid}
+                    cards={deckRouter(props.activeDeck).crypt}
+                    isAuthor={isAuthor}
+                    showFloatingButtons={showFloatingButtons}
+                    setShowFloatingButtons={setShowFloatingButtons}
+                  />
+                </div>
               </Col>
               <Col md={5} className="pt-4 pt-lg-0 px-0 pl-md-2 pr-md-3 px-xl-3">
                 <DeckLibrary
+                  inDeckTab={true}
                   deckid={props.activeDeck.deckid}
                   cards={deckRouter(props.activeDeck).library}
                   isAuthor={isAuthor}
@@ -462,15 +465,17 @@ function Decks(props) {
         </Col>
         {!isMobile && (
           <Col md={2} className="px-0 px-lg-2 px-xl-3">
-            <DeckButtons
-              isAuthor={isAuthor}
-              deck={deckRouter(props.activeDeck)}
-              activeDeck={props.activeDeck}
-              setShowInfo={setShowInfo}
-              setShowButtons={handleShowButtons}
-              missingCrypt={missingCrypt}
-              missingLibrary={missingLibrary}
-            />
+            <div className="sticky">
+              <DeckButtons
+                isAuthor={isAuthor}
+                deck={deckRouter(props.activeDeck)}
+                activeDeck={props.activeDeck}
+                setShowInfo={setShowInfo}
+                setShowButtons={handleShowButtons}
+                missingCrypt={missingCrypt}
+                missingLibrary={missingLibrary}
+              />
+            </div>
           </Col>
         )}
       </Row>
