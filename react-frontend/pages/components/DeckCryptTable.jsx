@@ -192,7 +192,7 @@ function DeckCryptTable(props) {
                   {inventoryMode && decks ? (
                     <>
                       {deckInvType && !props.inSearch && !isMobile ? (
-                        <td className="d-flex align-items-center inventory-card-custom">
+                        <td className="d-flex align-items-center inventory-card-custom-crypt">
                           <div
                             className={cardInvType ? '' : 'not-selected'}
                             onClick={() =>

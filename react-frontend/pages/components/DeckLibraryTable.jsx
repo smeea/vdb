@@ -201,7 +201,7 @@ function DeckLibraryTable(props) {
                   {inventoryMode && decks ? (
                     <>
                       {deckInvType && !props.inSearch ? (
-                        <td className="d-flex align-items-center inventory-card-custom">
+                        <td className="d-flex align-items-center inventory-card-custom-library">
                           <div
                             className={cardInvType ? '' : 'not-selected'}
                             onClick={() =>

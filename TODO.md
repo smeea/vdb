@@ -1,5 +1,6 @@
 # FIX
 * Save scrolling position
+* Icon resolution in Chrome
 
 # FIX MOBILE
 * Select click color on mobile

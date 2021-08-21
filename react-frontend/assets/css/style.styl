@@ -1030,14 +1030,24 @@ div.float-inventory svg
 .opacity-035
   opacity: 0.35
 
-td.inventory-card-custom
+td.inventory-card-custom-crypt
+  position: absolute
+  left: -22px
+  border: none
+  color: var(--fg-primary)
+
+td.inventory-card-custom-library
   position: absolute
   left: -6px
   border: none
   color: var(--fg-primary)
 
-td.inventory-card-custom .not-selected
+
+td.inventory-card-custom-crypt .not-selected,
+td.inventory-card-custom-library .not-selected
   opacity: 0
 
-tr:hover td.inventory-card-custom .not-selected
+tr:hover td.inventory-card-custom-crypt .not-selected,
+tr:hover td.inventory-card-custom-library .not-selected
+  opacity: 0
   opacity: 0.35
