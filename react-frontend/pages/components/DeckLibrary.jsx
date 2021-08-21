@@ -201,7 +201,11 @@ function DeckLibrary(props) {
 
   return (
     <>
-      <div className={props.inDeckTab ? 'sticky-lib-indeck pt-4' : null}>
+      <div
+        className={
+          props.inDeckTab && !isMobile ? 'sticky-lib-indeck pt-4' : null
+        }
+      >
         <div className="d-flex align-items-center justify-content-between pl-2 info-message">
           <b>
             Library [{libraryTotal}
