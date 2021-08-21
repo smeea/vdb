@@ -40,7 +40,7 @@ function Inventory(props) {
 
   return (
     <Container
-      className={isMobile ? 'main-container px-0' : 'main-container py-3'}
+      className={isMobile ? 'main-container px-0' : 'main-container pt-0 pb-3'}
     >
       {username ? (
         <>
@@ -130,13 +130,15 @@ function Inventory(props) {
             <Row className="mx-0">
               <Col xl={1} className="hide-narrow"></Col>
               <Col md={6} xl={5} className="px-0 px-lg-1 px-xl-3">
-                <InventoryNewCryptCard
-                  cards={inventoryCrypt}
-                  setNewId={setNewCryptId}
-                  inInventory={true}
-                />
+                <div className="sticky-insearch pt-3 pb-2">
+                  <InventoryNewCryptCard
+                    cards={inventoryCrypt}
+                    setNewId={setNewCryptId}
+                    inInventory={true}
+                  />
+                </div>
                 {newCryptId && inventoryCrypt[newCryptId] && (
-                  <div className="pt-4">
+                  <div className="py-2">
                     <InventoryCrypt
                       cards={{
                         [newCryptId]: inventoryCrypt[newCryptId],
@@ -149,7 +151,7 @@ function Inventory(props) {
                 )}
                 {inventoryCrypt &&
                   (usedCryptCards.soft || usedCryptCards.hard) && (
-                    <div className="pt-4">
+                    <div className="pt-2">
                       <InventoryCrypt
                         category={category}
                         cards={inventoryCrypt}
@@ -160,11 +162,13 @@ function Inventory(props) {
                   )}
               </Col>
               <Col md={4} xl={4} className="px-0 px-lg-3">
-                <InventoryNewLibraryCard
-                  cards={inventoryLibrary}
-                  setNewId={setNewLibraryId}
-                  inInventory={true}
-                />
+                <div className="sticky-insearch pt-3 pb-2">
+                  <InventoryNewLibraryCard
+                    cards={inventoryLibrary}
+                    setNewId={setNewLibraryId}
+                    inInventory={true}
+                  />
+                </div>
                 {newLibraryId && inventoryLibrary[newLibraryId] && (
                   <div className="pt-4">
                     <InventoryLibrary
@@ -179,7 +183,7 @@ function Inventory(props) {
                 )}
                 {inventoryLibrary &&
                   (usedLibraryCards.soft || usedLibraryCards.hard) && (
-                    <div className="pt-4">
+                    <div className="py-2">
                       <InventoryLibrary
                         category={category}
                         cards={inventoryLibrary}
