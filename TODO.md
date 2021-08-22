@@ -14,7 +14,7 @@
 * Add to deck without scrolling to top
 * Crypt unique draw chances to info line
 * Feldb inventory import
-* Script to update images from org
+* Script to update images/rulings/twd from static.krcg.org
 * Deck/revision diff
 * Public deck archive
 * Card recommendation

@@ -328,7 +328,7 @@ function DeckDrawModal(props) {
                       >
                         <img
                           className="capacity-image-results pr-1"
-                          src={process.env.ROOT_URL + 'images/misc/CapX.png'}
+                          src={process.env.ROOT_URL + 'images/misc/capX.png'}
                         />
                         <b>{props.burnedCapacityTotal}</b>
                       </div>
