@@ -1,8 +1,8 @@
 const drawProbability = (x, N, n, k) => {
-  // x - target cards in draw
-  // N - total cards
-  // n - drawed cards
-  // k - target cards in pool
+  // x - target cards in draw (e.g. i=2 to draw 2 copy of the card)
+  // N - total cards (e.g. N=12 for total crypt size of 12)
+  // n - drawed cards (e.g. n=4 for initial crypt draw of 4 card)
+  // k - target cards in pool (e.g. k=5 for 5 copies of Arika in the deck)
 
   const factorial = (n) => {
     return n ? n * factorial(n - 1) : 1;

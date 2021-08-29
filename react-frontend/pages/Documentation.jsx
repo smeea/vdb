@@ -255,21 +255,7 @@ function Documentation(props) {
                   <a href="https://github.com/smeea/vdb/blob/master/react-frontend/pages/components/drawProbability.js">
                     there
                   </a>
-                  .<br />
-                  Where:
-                  <br />
-                  <i>i</i> is copies in hand we calculate agains (e.g. i=2 to
-                  draw 2 copy of the card)
-                  <br />
-                  <i>N</i> is total cards in deck (e.g. N=12 for crypt size of
-                  12)
-                  <br />
-                  <i>n</i> is hand size (e.g. n=4 for initial crypt draw of 4
-                  card)
-                  <br />
-                  <i>k</i> is copy of particular card in deck (e.g. k=5 for 5
-                  copy of Arika in the deck)
-                  <br />
+                  .
                 </li>
               </ul>
             </div>
