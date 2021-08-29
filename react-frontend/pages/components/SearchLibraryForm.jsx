@@ -64,6 +64,29 @@ function SearchLibraryForm(props) {
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
 
+  const toggleLogic = (form) => {
+    switch (form) {
+      case 'type':
+        setLibraryFormState((prevState) => ({
+          ...prevState,
+          type: {
+            ...prevState['type'],
+            logicAnd: !libraryFormState.type.logicAnd,
+          },
+        }));
+        break;
+      case 'discipline':
+        setLibraryFormState((prevState) => ({
+          ...prevState,
+          discipline: {
+            ...prevState['discipline'],
+            logicAnd: !libraryFormState.discipline.logicAnd,
+          },
+        }));
+        break;
+    }
+  };
+
   const handleTextChange = (event) => {
     const value = event.target.value;
     setLibraryFormState((prevState) => ({
@@ -89,6 +112,22 @@ function SearchLibraryForm(props) {
       return {
         ...prevState,
         [name]: v,
+      };
+    });
+  };
+
+  const handleLogicMultiSelectChange = (event, id) => {
+    const i = id.name;
+    const { name, value } = event;
+    setLibraryFormState((prevState) => {
+      const v = prevState[name][name];
+      v[i] = value;
+      return {
+        ...prevState,
+        [name]: {
+          ...prevState[name],
+          [name]: v,
+        },
       };
     });
   };
@@ -145,11 +184,33 @@ function SearchLibraryForm(props) {
     const input = JSON.parse(JSON.stringify(libraryFormState));
 
     const multiSelectForms = ['traits', 'set', 'precon'];
-
     multiSelectForms.map((i) => {
       Object.keys(input[i]).forEach(
         (k) => input[i][k] == 0 && delete input[i][k]
       );
+    });
+
+    const andOrForms = ['type', 'discipline'];
+    andOrForms.map((i) => {
+      if (Object.keys(input[i][i]).length === 1 && input[i][i][0] === 'any') {
+        delete input[i];
+      }
+      if (input[i] && input[i][i]) {
+        input[i][i] = input[i][i].filter((j) => j !== 'any');
+      }
+    });
+
+    const multiSelectFormsWithMain = [
+      'set',
+      'precon',
+      'blood',
+      'pool',
+      'capacity',
+    ];
+    multiSelectFormsWithMain.map((i) => {
+      if (input[i][i] == 'any') {
+        delete input[i];
+      }
     });
 
     Object.keys(input).forEach(
@@ -159,20 +220,6 @@ function SearchLibraryForm(props) {
           Object.keys(input[k]).length === 0) &&
         delete input[k]
     );
-
-    const multiSelectFormsWithMain = [
-      'set',
-      'precon',
-      'blood',
-      'pool',
-      'capacity',
-    ];
-
-    multiSelectFormsWithMain.map((i) => {
-      if (input[i][i] == 'any') {
-        delete input[i];
-      }
-    });
 
     if (Object.keys(input).length !== 0) {
       history.push(`/library?q=${encodeURIComponent(JSON.stringify(input))}`);
@@ -279,13 +326,15 @@ function SearchLibraryForm(props) {
       )}
       <SearchLibraryFormType
         value={libraryFormState.type}
-        onChange={handleMultiSelectChange}
+        onChange={handleLogicMultiSelectChange}
         setFormState={setLibraryFormState}
+        toggleLogic={toggleLogic}
       />
       <SearchLibraryFormDiscipline
         value={libraryFormState.discipline}
-        onChange={handleMultiSelectChange}
+        onChange={handleLogicMultiSelectChange}
         setFormState={setLibraryFormState}
+        toggleLogic={toggleLogic}
       />
       <SearchLibraryFormClan
         value={libraryFormState.clan}

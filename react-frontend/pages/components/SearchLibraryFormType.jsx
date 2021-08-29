@@ -57,11 +57,14 @@ function SearchLibraryFormType(props) {
 
   const addForm = () => {
     props.setFormState((prevState) => {
-      const v = prevState.type;
+      const v = prevState.type.type;
       v.push('any');
       return {
         ...prevState,
-        type: v,
+        type: {
+          ...prevState['type'],
+          type: v,
+        },
       };
     });
   };
@@ -72,7 +75,10 @@ function SearchLibraryFormType(props) {
       v.splice(i, 1);
       return {
         ...prevState,
-        type: v,
+        type: {
+          ...prevState['type'],
+          type: v,
+        },
       };
     });
   };
@@ -80,11 +86,11 @@ function SearchLibraryFormType(props) {
   return (
     <>
       <Row className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex justify-content-between px-0">
+        <Col xs={3} className="px-0">
           <label className="h6 mb-0">Type:</label>
-          {props.value[0] !== 'any' && (
+          {props.value.type[0] !== 'any' && (
             <div className="d-flex justify-content-end pr-1">
-              {props.value.length == 1 ? (
+              {props.value.type.length == 1 ? (
                 <Button
                   className="add-form"
                   variant="outline-secondary"
@@ -111,18 +117,21 @@ function SearchLibraryFormType(props) {
             isSearchable={false}
             name={0}
             value={options.find(
-              (obj) => obj.value === props.value[0].toLowerCase()
+              (obj) => obj.value === props.value.type[0].toLowerCase()
             )}
             onChange={props.onChange}
           />
         </Col>
       </Row>
       <AdditionalForms
-        value={props.value}
+        value={props.value.type}
+        logicAnd={props.value.logicAnd}
+        toggleLogic={props.toggleLogic}
         addForm={addForm}
         delForm={delForm}
         options={options}
         onChange={props.onChange}
+        form={'type'}
       />
     </>
   );

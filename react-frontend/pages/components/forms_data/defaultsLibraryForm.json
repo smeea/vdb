@@ -1,7 +1,13 @@
 {
   "text": "",
-  "type": ["any"],
-  "discipline": ["any"],
+  "type": {
+    "type": ["any"],
+    "logicAnd": true
+  },
+  "discipline": {
+    "discipline": ["any"],
+    "logicAnd": true
+  },
   "blood": {
     "blood": "any",
     "moreless": "le"

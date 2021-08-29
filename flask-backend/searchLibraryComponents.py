@@ -14,25 +14,54 @@ def get_library_by_text(text, library):
     return match_cards
 
 
-def get_library_by_type(types, library):
+def get_library_by_type(request, library):
+    types = request['type']
+    logicAnd = request['logicAnd']
+
     match_cards = []
-    for card in library:
-        for type in types:
-            if type in card['Type'].lower().split('/'):
-                if card not in match_cards:
-                    match_cards.append(card)
+
+    if logicAnd:
+        for card in library:
+            counter = len(types)
+            for type in types:
+                if type in card['Type'].lower().split('/'):
+                    counter -= 1
+
+            if counter == 0 and card not in match_cards:
+                match_cards.append(card)
+
+    else:
+        for card in library:
+            for type in types:
+                if type in card['Type'].lower().split('/'):
+                    if card not in match_cards:
+                        match_cards.append(card)
 
     return match_cards
 
 
-def get_library_by_discipline(disciplines, library):
+def get_library_by_discipline(request, library):
+    disciplines = request['discipline']
+    logicAnd = request['logicAnd']
+
     match_cards = []
-    for card in library:
-        for discipline in disciplines:
-            if (discipline in card['Discipline'].lower()) or (
-                    discipline == 'none' and not card['Discipline'].lower()):
-                if card not in match_cards:
-                    match_cards.append(card)
+    if logicAnd:
+        for card in library:
+            counter = len(disciplines)
+            for discipline in disciplines:
+                if discipline in card['Discipline'].lower():
+                    counter -= 1
+
+            if counter == 0 and card not in match_cards:
+                match_cards.append(card)
+    else:
+        for card in library:
+            for discipline in disciplines:
+                if (discipline in card['Discipline'].lower()) or (
+                        discipline == 'none'
+                        and not card['Discipline'].lower()):
+                    if card not in match_cards:
+                        match_cards.append(card)
 
     return match_cards
 

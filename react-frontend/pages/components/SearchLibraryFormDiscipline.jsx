@@ -87,11 +87,14 @@ function SearchLibraryFormDiscipline(props) {
 
   const addForm = () => {
     props.setFormState((prevState) => {
-      const v = prevState.discipline;
+      const v = prevState.discipline.discipline;
       v.push('any');
       return {
         ...prevState,
-        discipline: v,
+        discipline: {
+          ...prevState['discipline'],
+          discipline: v,
+        },
       };
     });
   };
@@ -102,7 +105,10 @@ function SearchLibraryFormDiscipline(props) {
       v.splice(i, 1);
       return {
         ...prevState,
-        discipline: v,
+        discipline: {
+          ...prevState['discipline'],
+          discipline: v,
+        },
       };
     });
   };
@@ -112,9 +118,9 @@ function SearchLibraryFormDiscipline(props) {
       <Row className="py-1 pl-1 mx-0 align-items-center">
         <Col xs={3} className="px-0">
           <label className="h6 mb-0">Discipline:</label>
-          {props.value[0] !== 'any' && (
+          {props.value.discipline[0] !== 'any' && (
             <div className="d-flex justify-content-end pr-1">
-              {props.value.length == 1 ? (
+              {props.value.discipline.length == 1 ? (
                 <Button
                   className="add-form"
                   variant="outline-secondary"
@@ -141,18 +147,21 @@ function SearchLibraryFormDiscipline(props) {
             isSearchable={!isMobile}
             name={0}
             value={options.find(
-              (obj) => obj.value === props.value[0].toLowerCase()
+              (obj) => obj.value === props.value.discipline[0].toLowerCase()
             )}
             onChange={props.onChange}
           />
         </Col>
       </Row>
       <AdditionalForms
-        value={props.value}
+        value={props.value.discipline}
+        logicAnd={props.value.logicAnd}
+        toggleLogic={props.toggleLogic}
         addForm={addForm}
         delForm={delForm}
         options={options}
         onChange={props.onChange}
+        form={'discipline'}
       />
     </>
   );
