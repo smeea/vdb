@@ -1,7 +1,6 @@
 :root
   --fg-primary: #202530
   --fg-secondary: #6060cc
-  --fg-gray: #808080
   --fg-button: #707080
   --fg-name: #3060b0
   --bg-nav: #303040
@@ -11,6 +10,7 @@
   --bg-error: #f08080
   --bg-warning: #ffa040
   --bg-button: #ffffff
+  --bg-button-error: #f08090
   --bg-button-hover: #707580
   --bg-button-secondary: #ffffff
   --bg-menu-focused: #c0c0ff
@@ -108,7 +108,7 @@ h5, .h5, h6, .h6
 
 .input-group-text
   background: var(--bg-secondary)
-  color: var(--bg-gray)
+  color: var(--fg-button)
   border-color: var(--bg-secondary)
 
 .input-group-append
@@ -122,12 +122,17 @@ button.btn-outline-secondary
 
 button.btn-outline-secondary:hover
   background: var(--bg-button-hover)
+  border: 1px solid var(--border-primary)
 
 label.btn-outline-secondary:not(.disabled).active
   background: var(--bg-button-hover) !important
+label.btn-outline-secondary
+  border: 1px solid var(--border-button)
+label.btn-outline-secondary:hover
+  background: var(--bg-menu-focused) !important
 
 button.btn-danger
-  background: var(--bg-error)
+  background: var(--bg-button-error)
   border: 1px solid var(--border-button)
 
 .button-block
@@ -604,7 +609,7 @@ font-1.85
 
 .question-tooltip
   font-size: middle
-  color: var(--fg-gray)
+  color: var(--fg-button)
 
 .capacity-image-results
   height: 23px

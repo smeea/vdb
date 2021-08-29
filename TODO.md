@@ -1,10 +1,11 @@
 # FIX
 * Save scrolling position
+* Update day theme color
 
 # FIX MOBILE
 * Select click color on mobile
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
-* Advanced deck select window
+* Advanced deck select window and inventory precon import
 
 # FEATURES
 * Create revocable link to Inventory
@@ -19,6 +20,12 @@
 * Public deck archive
 * Card recommendation
 * Search for similar TWD decks
+* And/or selector multi filter
+* Adding and/or filter to open selector
+* Permanent link with url
+* Description deck-in-url
+* Crypt draw to narrower disciplines
+* Crypt draw same columns as deck crypt
 
 # MOBILE FEATURES
 * Offline PWA support
