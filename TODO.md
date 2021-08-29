@@ -25,7 +25,6 @@
 * Permanent link with url
 * Description deck-in-url
 * Crypt draw to narrower disciplines
-* Crypt draw same columns as deck crypt
 
 # MOBILE FEATURES
 * Offline PWA support

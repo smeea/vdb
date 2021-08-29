@@ -254,7 +254,10 @@ function DeckDrawModal(props) {
                   crypt={props.crypt}
                   total={props.drawedCrypt.length + props.restCrypt.length}
                   resultCards={props.drawedCrypt}
-                  className="search-crypt-table"
+                  className="deck-crypt-table"
+                  disciplinesSet={props.disciplinesSet}
+                  keyDisciplines={props.keyDisciplines}
+                  nonKeyDisciplines={props.nonKeyDisciplines}
                 />
               </div>
             </Col>
@@ -341,6 +344,9 @@ function DeckDrawModal(props) {
                       className="search-crypt-table"
                       ashHeap={true}
                       setModalInventory={setModalInventory}
+                      disciplinesSet={props.disciplinesSet}
+                      keyDisciplines={props.keyDisciplines}
+                      nonKeyDisciplines={props.nonKeyDisciplines}
                     />
                   </div>
                 )}

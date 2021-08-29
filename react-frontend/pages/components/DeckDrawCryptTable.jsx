@@ -39,7 +39,13 @@ function DeckDrawCryptTable(props) {
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td
-            className="disciplines px-1"
+            className={
+              props.keyDisciplines + props.nonKeyDisciplines < 8
+                ? `disciplines cols-${
+                    props.keyDisciplines + props.nonKeyDisciplines
+                  }`
+                : 'disciplines'
+            }
             onClick={() => props.handleClick(index)}
           >
             <ResultCryptDisciplines

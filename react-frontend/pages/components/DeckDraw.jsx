@@ -49,6 +49,54 @@ function DeckDraw(props) {
   const [burnedLibrary, setBurnedLibrary] = useState([]);
   const [initialTransfers, setInitialTransfers] = useState(undefined);
 
+  const disciplinesDict = {};
+  for (const card of Object.keys(props.crypt)) {
+    for (const d of Object.keys(props.crypt[card].c['Disciplines'])) {
+      if (disciplinesDict[d] === undefined) {
+        disciplinesDict[d] = 0;
+        disciplinesDict[d] += props.crypt[card].q;
+      } else {
+        disciplinesDict[d] += props.crypt[card].q;
+      }
+    }
+  }
+
+  const disciplinesForSort = [];
+  Object.keys(disciplinesDict).map((key) => {
+    disciplinesForSort.push([key, disciplinesDict[key]]);
+  });
+
+  const disciplinesSet = disciplinesForSort
+    .sort((a, b) => b[1] - a[1])
+    .map((i) => {
+      return i[0];
+    });
+
+  let keyDisciplines = 0;
+  disciplinesForSort
+    .sort((a, b) => b[1] - a[1])
+    .map((i) => {
+      if (i[1] >= 5) {
+        keyDisciplines += 1;
+      }
+    });
+
+  const nonKeyDisciplinesList = [];
+  for (let i = keyDisciplines; i < disciplinesSet.length; i++) {
+    nonKeyDisciplinesList.push(disciplinesSet[i]);
+  }
+
+  let nonKeyDisciplines = 0;
+  Object.keys(props.crypt).map((card) => {
+    let counter = 0;
+    Object.keys(props.crypt[card].c['Disciplines']).map((d) => {
+      if (nonKeyDisciplinesList.includes(d)) {
+        counter += 1;
+      }
+    });
+    if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
+  });
+
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
     isMobile && props.setShowButtons(false);
@@ -204,6 +252,9 @@ function DeckDraw(props) {
           burnedCapacityTotal={burnedCapacityTotal}
           burnedPoolTotal={burnedPoolTotal}
           burnedBloodTotal={burnedBloodTotal}
+          disciplinesSet={disciplinesSet}
+          keyDisciplines={keyDisciplines}
+          nonKeyDisciplines={nonKeyDisciplines}
         />
       )}
     </>
