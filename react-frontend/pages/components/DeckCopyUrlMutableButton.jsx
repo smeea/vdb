@@ -22,6 +22,7 @@ function DeckCopyUrlMutableButton(props) {
     <Button
       variant={state ? 'success' : 'outline-secondary'}
       onClick={handleButton}
+      title="Copy URL of the deck, following future updates"
       block={!props.noText}
     >
       <ShareFill /> {!props.noText && (state ? 'Copied' : 'Copy URL')}

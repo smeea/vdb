@@ -3,6 +3,7 @@ import DeckDraw from './DeckDraw.jsx';
 import DeckClone from './DeckClone.jsx';
 import DeckDelete from './DeckDelete.jsx';
 import DeckCopyUrlMutableButton from './DeckCopyUrlMutableButton.jsx';
+import DeckCopyUrlImmutableButton from './DeckCopyUrlImmutableButton.jsx';
 import DeckCopyUrlCodedButton from './DeckCopyUrlCodedButton.jsx';
 import DeckImport from './DeckImport.jsx';
 import DeckExport from './DeckExport.jsx';
@@ -74,6 +75,12 @@ function DeckButtons(props) {
             <>
               <div className="button-block">
                 <DeckCopyUrlMutableButton
+                  value={props.activeDeck.deckid}
+                  setShowButtons={props.setShowButtons}
+                />
+              </div>
+              <div className="button-block">
+                <DeckCopyUrlImmutableButton
                   value={props.activeDeck.deckid}
                   setShowButtons={props.setShowButtons}
                 />

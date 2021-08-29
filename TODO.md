@@ -1,6 +1,5 @@
 # FIX
 * Save scrolling position
-* Update day theme color
 
 # FIX MOBILE
 * Select click color on mobile
@@ -20,8 +19,6 @@
 * Public deck archive
 * Card recommendation
 * Search for similar TWD decks
-* Permanent link with url
-* Description deck-in-url
 
 # MOBILE FEATURES
 * Offline PWA support

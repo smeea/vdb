@@ -205,7 +205,7 @@ def showDeck(deckid):
 
         decks[deckid] = {
             'name': deck.name,
-            'owner': deck.author.username,
+            'owner': deck.author.username if deck.author else None,
             'author': deck.author_public_name,
             'description': deck.description,
             'crypt': crypt,
@@ -766,6 +766,26 @@ def cloneDeck():
             'deck cloned': request.json['deckname'],
             'deckid': deckid,
         })
+
+
+@app.route('/api/decks/urlclone', methods=['POST'])
+def urlCloneDeck():
+    print(request.json)
+    targetDeck = Deck.query.filter_by(deckid=request.json['target']).first()
+    deckid = uuid.uuid4().hex
+    d = Deck(deckid=deckid,
+             name=targetDeck.name,
+             author_public_name=targetDeck.author_public_name,
+             description=targetDeck.description,
+             inventory_type='',
+             tags=[],
+             used_in_inventory={},
+             cards=targetDeck.cards)
+    db.session.add(d)
+    db.session.commit()
+    return jsonify({
+        'deckid': deckid,
+    })
 
 
 @app.route('/api/decks/import', methods=['POST'])

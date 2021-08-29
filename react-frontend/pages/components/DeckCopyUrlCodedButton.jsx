@@ -47,6 +47,7 @@ function DeckCopyUrlCodedButton(props) {
     <Button
       variant={state ? 'success' : 'outline-secondary'}
       onClick={handleButton}
+      title="Copy long URL, containing current deck state"
       block
     >
       <ShareFill /> {state ? 'Copied' : 'Copy Deck-in-URL'}

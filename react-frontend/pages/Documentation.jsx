@@ -203,7 +203,7 @@ function Documentation(props) {
             <div className="pt-2">
               <h5>
                 <Link to="/decks" className="blue">
-                  DECK BUILDING
+                  DECK BUILDING / VIEWING
                 </Link>
               </h5>
 
@@ -212,6 +212,25 @@ function Documentation(props) {
                 <li>
                   You can change card quantity by clicking on the quantity to
                   enter number manual
+                </li>
+              </ul>
+
+              <h6>URLs</h6>
+              <ul>
+                <li>
+                  Standard URL (Copy URL button) - copy URL to the deck and
+                  follow your changes.
+                </li>
+                <li>
+                  Immutable URL - create link to unchangeable copy of the deck.
+                  Good for forum/blog posts and where you want everybody to have
+                  same exact deck forever (your future changes in the deck will
+                  not change the deck by the link).
+                </li>
+                <li>
+                  Deck-in-URL - copy URL containing everything about the deck.
+                  Bulletproof, can be decoded even if VDB is dead. Good, but
+                  long.
                 </li>
               </ul>
 

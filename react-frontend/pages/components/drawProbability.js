@@ -1,4 +1,9 @@
 const drawProbability = (x, N, n, k) => {
+  // x - target cards in draw
+  // N - total cards
+  // n - drawed cards
+  // k - target cards in pool
+
   const factorial = (n) => {
     return n ? n * factorial(n - 1) : 1;
   };
