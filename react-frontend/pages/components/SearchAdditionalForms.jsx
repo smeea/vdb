@@ -38,17 +38,18 @@ const AdditionalForms = (props) => {
             classNamePrefix="react-select"
             options={props.options}
             isSearchable={!isMobile}
+            defaultMenuIsOpen={true}
             name={i}
             value={props.options.find(
               (obj) => obj.value === props.value[i].toLowerCase()
             )}
             onChange={props.onChange}
-            /* onChange={(event, id) => props.onChange(event, id)} */
           />
         </Col>
       </Row>
     );
   }
+
   return <>{forms}</>;
 };
 

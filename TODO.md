@@ -21,7 +21,6 @@
 * Card recommendation
 * Search for similar TWD decks
 * And/or selector multi filter
-* Adding and/or filter to open selector
 * Permanent link with url
 * Description deck-in-url
 
