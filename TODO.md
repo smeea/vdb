@@ -24,7 +24,6 @@
 * Adding and/or filter to open selector
 * Permanent link with url
 * Description deck-in-url
-* Crypt draw to narrower disciplines
 
 # MOBILE FEATURES
 * Offline PWA support

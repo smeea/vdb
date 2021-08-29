@@ -37,7 +37,7 @@ function Crypt(props) {
     >
       <Row>
         {!isMobile && (
-          <Col xl={username && addMode ? 4 : 3} className="hide-narrow px-0">
+          <Col xl={username && addMode ? 4 : 3} className="px-0">
             {decks && Object.keys(decks).length > 0 && (
               <div className="d-flex justify-content-end sticky-insearch pt-3 pb-2">
                 {addMode && (
@@ -91,7 +91,7 @@ function Crypt(props) {
           className={
             isMobile && showCryptSearch
               ? 'col-hide px-0'
-              : 'px-0 px-md-2 px-xl-4 pt-3'
+              : 'px-0 px-md-2 px-xl-4 pt-xl-3'
           }
         >
           {cryptResults && (
