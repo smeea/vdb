@@ -11,7 +11,6 @@
 * Show missing cards for inventory
 * Localized proxies and from scans
 * Tags to deck main window
-* Add to deck without scrolling to top
 * Crypt unique draw chances to info line
 * Feldb inventory import
 * Script to update images/rulings/twd from static.krcg.org
@@ -32,6 +31,9 @@
 * Sync: websockets
 * Reduce hook calls (login, decks, inventory)
 * Move autocompletion to frontend
+* Update to parcel 2
+* Update to react-bootstrap 2
+* Migrate to tailwindcss
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardid) on backend
