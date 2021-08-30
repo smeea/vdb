@@ -1,10 +1,12 @@
 # FIX
 * Save scrolling position
+* Type filter align + button
 
 # FIX MOBILE
 * Select click color on mobile
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 * Advanced deck select window and inventory precon import
+* Modal border
 
 # FEATURES
 * Create revocable link to Inventory
@@ -19,6 +21,8 @@
 * Public deck archive
 * Card recommendation
 * Search for similar TWD decks
+* How can I help section - twd, rulings
+* Move navbar to bottom on mobile
 
 # MOBILE FEATURES
 * Offline PWA support

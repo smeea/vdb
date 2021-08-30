@@ -91,7 +91,7 @@ function Library(props) {
           className={
             isMobile && showLibrarySearch
               ? 'col-hide px-0'
-              : 'px-0 px-md-2 px-xl-4 pt-3'
+              : 'px-0 px-md-2 px-xl-4 pt-xl-3'
           }
         >
           {libraryResults && (

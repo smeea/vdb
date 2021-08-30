@@ -114,7 +114,7 @@ function Crypt(props) {
             !isMobile || (isMobile && showCryptSearch)
               ? isMobile
                 ? 'p-1'
-                : 'px-md-2 px-xl-0 pt-3'
+                : 'px-md-2 px-xl-0 pt-xl-3'
               : 'col-hide'
           }
         >
