@@ -1,6 +1,5 @@
 # FIX
 * Save scrolling position
-* Type filter align + button
 
 # FIX MOBILE
 * Select click color on mobile
