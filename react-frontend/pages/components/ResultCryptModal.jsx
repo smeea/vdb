@@ -84,7 +84,7 @@ function ResultCryptModal(props) {
       onHide={props.handleClose}
       animation={false}
       centered={true}
-      dialogClassName="no-border"
+      dialogClassName={props.inDraw ? 'in-draw' : 'no-border'}
     >
       <Modal.Body className="p-0">
         {isMobile ? (

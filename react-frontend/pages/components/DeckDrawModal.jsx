@@ -409,6 +409,7 @@ function DeckDrawModal(props) {
                 setModalCryptCardIdx(undefined);
               }}
               inventoryState={modalInventory}
+              inDraw={true}
             />
           )}
           {modalLibraryCardIdx !== undefined && (
@@ -419,6 +420,7 @@ function DeckDrawModal(props) {
                 setModalLibraryCardIdx(undefined);
               }}
               inventoryState={modalInventory}
+              inDraw={true}
             />
           )}
         </Container>

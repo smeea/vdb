@@ -65,7 +65,7 @@ const lightTheme = [
   '--bg-menu-selected: #7070ff',
   '--bg-checkbox: #ffffff',
   '--bg-checkbox-selected: #7070ff',
-  '--border-primary: #808080',
+  '--border-primary: #757590',
   '--border-secondary: #e0e5ff',
   '--border-third: #a0b0ff',
   '--border-button: #8090ff',

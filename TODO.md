@@ -5,7 +5,6 @@
 * Select click color on mobile
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 * Advanced deck select window and inventory precon import
-* Modal border
 
 # FEATURES
 * Create revocable link to Inventory
