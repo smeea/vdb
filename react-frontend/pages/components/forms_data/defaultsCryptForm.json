@@ -87,7 +87,9 @@
     "infernal": false,
     "red list": false,
     "flight": false,
-    "banned": false
+    "advanced": false,
+    "banned": false,
+    "non-twd": false
   },
   "set": {
     "set": "any",

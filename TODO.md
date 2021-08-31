@@ -1,5 +1,7 @@
 # FIX
 * Save scrolling position
+* Rename share buttons +hints
+* Recalculate draw chances exclude from total played cards
 
 # FIX MOBILE
 * Select click color on mobile

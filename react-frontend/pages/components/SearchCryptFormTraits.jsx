@@ -13,10 +13,10 @@ function SearchCryptFormTraits(props) {
     ['additional strike', 'Additional Strike'],
     ['aggravated', 'Aggravated'],
     ['prevent', 'Prevent'],
+    ['press', 'Press'],
   ];
 
   const traitsRight = [
-    ['press', 'Press'],
     ['enter combat', 'Enter combat'],
     ['unlock', 'Unlock'],
     ['black hand', 'Black Hand'],
@@ -24,6 +24,7 @@ function SearchCryptFormTraits(props) {
     ['infernal', 'Infernal'],
     ['red list', 'Red List'],
     ['flight', 'Flight'],
+    ['advanced', 'Advanced'],
     ['banned', 'Banned'],
     ['non-twd', 'Not in TWD'],
   ];

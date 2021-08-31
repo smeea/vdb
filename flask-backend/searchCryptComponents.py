@@ -125,6 +125,10 @@ def get_crypt_by_traits(traits, crypt):
                              re.IGNORECASE):
                     counter += 1
 
+            elif trait == 'advanced':
+                if card['Adv']:
+                    counter += 1
+
             elif trait == 'banned':
                 if card['Banned']:
                     counter += 1
