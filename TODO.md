@@ -2,11 +2,14 @@
 * Save scrolling position
 * Rename share buttons +hints
 * Recalculate draw chances exclude from total played cards
+* Day theme font darker for buttons
+* Day theme selector gray parts to theme
 
 # FIX MOBILE
 * Select click color on mobile
 * Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
 * Advanced deck select window and inventory precon import
+* Draw to close buttons
 
 # FEATURES
 * Create revocable link to Inventory
@@ -21,10 +24,10 @@
 * Card recommendation
 * Search for similar TWD decks
 * How can I help section - twd, rulings
-* Move navbar to bottom on mobile
 
 # MOBILE FEATURES
 * Offline PWA support
+* Move navbar to bottom
 
 # MAYBE LATER FEATURES
 * Documentation on updates / update script
@@ -42,3 +45,6 @@
 * Update API endpoints
 * Add error codes to return
 * Unify tests for current_user
+
+* Remove bottom gap in draw (on mobile?)
+* Test new button gaps on mobile
