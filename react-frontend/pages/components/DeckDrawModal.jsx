@@ -199,9 +199,9 @@ function DeckDrawModal(props) {
               </div>
             </Col>
           </Row>
-          <Row className="px-0 pb-4">
+          <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
             <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
-              <div className={isMobile ? 'pb-4' : null}>
+              <div>
                 <div className="d-flex justify-content-between title-line">
                   <div className="d-flex align-items-center px-2">
                     <b>Uncontrolled</b>
@@ -261,7 +261,7 @@ function DeckDrawModal(props) {
                 />
               </div>
             </Col>
-            <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4">
+            <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4 pt-4 pt-md-0">
               <div className="d-flex justify-content-between title-line">
                 <div className="d-flex align-items-center px-2">
                   <b>Hand</b>
@@ -314,10 +314,10 @@ function DeckDrawModal(props) {
             </Col>
           </Row>
           {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) && (
-            <Row className="px-0 pb-4">
+            <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
               <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
                 {props.burnedCrypt.length > 0 && (
-                  <div className={isMobile ? 'pb-4' : null}>
+                  <div className="pt-4 pt-md-0">
                     <div className="d-flex justify-content-between title-line">
                       <div className="d-flex align-items-center px-2">
                         <b>Controlled</b>
@@ -353,7 +353,7 @@ function DeckDrawModal(props) {
               </Col>
               <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4">
                 {props.burnedLibrary.length > 0 && (
-                  <>
+                  <div className="pt-4 pt-md-0">
                     <div className="d-flex justify-content-between title-line">
                       <div className="d-flex align-items-center px-2">
                         <b>Ash Heap</b>
@@ -396,7 +396,7 @@ function DeckDrawModal(props) {
                       className="search-library-table"
                       ashHeap={true}
                     />
-                  </>
+                  </div>
                 )}
               </Col>
             </Row>

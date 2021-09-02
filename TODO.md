@@ -45,6 +45,3 @@
 * Update API endpoints
 * Add error codes to return
 * Unify tests for current_user
-
-* Remove bottom gap in draw (on mobile?)
-* Test new button gaps on mobile
