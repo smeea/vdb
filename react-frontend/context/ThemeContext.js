@@ -49,7 +49,7 @@ export const ThemeProvider = (props) => {
 const lightTheme = [
   '--fg-primary: #202530',
   '--fg-secondary: #6060cc',
-  '--fg-button: #6090c0',
+  '--fg-button: #6060b0',
   '--fg-name: #3060b0',
   '--bg-nav: #303040',
   '--bg-primary: #ffffff',

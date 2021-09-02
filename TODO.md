@@ -2,7 +2,6 @@
 * Save scrolling position
 * Rename share buttons +hints
 * Recalculate draw chances exclude from total played cards
-* Day theme font darker for buttons
 * Day theme selector gray parts to theme
 
 # FIX MOBILE
