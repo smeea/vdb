@@ -479,7 +479,7 @@ function Decks(props) {
           </Col>
         )}
       </Row>
-      {!username && !props.activeDeck.deckid && (
+      {username === '' && !props.activeDeck.deckid && (
         <Row className="h-50 align-items-center justify-content-center px-2">
           <Col xs={12} md={5} className="px-0">
             <div className="d-flex justify-content-center pt-4 pb-2">

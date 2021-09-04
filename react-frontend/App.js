@@ -366,7 +366,7 @@ function App(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        data.username && setUsername(data.username);
+        setUsername(data.username);
         data.username && !isMobile && setAddMode(true);
         data.public_name && setPublicName(data.public_name);
         data.email && setEmail(data.email);

@@ -4,7 +4,6 @@
 * Recalculate draw chances exclude from total played cards
 * Day theme selector gray parts to theme
 * Fix NONE discipline library search
-* Dont show login form in Deck before login
 * Modal borders in draw to darker or draw modal to darker
 
 # FIX MOBILE
