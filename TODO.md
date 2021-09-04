@@ -3,7 +3,6 @@
 * Rename share buttons +hints
 * Recalculate draw chances exclude from total played cards
 * Day theme selector gray parts to theme
-* Fix NONE discipline library search
 * Modal borders in draw to darker or draw modal to darker
 
 # FIX MOBILE

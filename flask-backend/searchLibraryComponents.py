@@ -49,7 +49,9 @@ def get_library_by_discipline(request, library):
         for card in library:
             counter = len(disciplines)
             for discipline in disciplines:
-                if discipline in card['Discipline'].lower():
+                if (discipline in card['Discipline'].lower()) or (
+                        discipline == 'none'
+                        and not card['Discipline'].lower()):
                     counter -= 1
 
             if counter == 0 and card not in match_cards:
