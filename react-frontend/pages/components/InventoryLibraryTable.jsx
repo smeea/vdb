@@ -251,6 +251,7 @@ function InventoryLibraryTable(props) {
             isMobile && props.setShowFloatingButtons(true);
           }}
           inventoryState={modalInventory}
+          forceInventoryMode={true}
         />
       )}
     </>

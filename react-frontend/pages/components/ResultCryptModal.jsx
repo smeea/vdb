@@ -120,7 +120,7 @@ function ResultCryptModal(props) {
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
                 />
-                {inventoryMode && (
+                {(props.forceInventoryMode || inventoryMode) && (
                   <>
                     <hr className="mx-0" />
                     <div className="pt-1">
@@ -187,7 +187,7 @@ function ResultCryptModal(props) {
                   setImageSet={setImageSet}
                 />
               </div>
-              {inventoryMode && (
+              {(props.forceInventoryMode || inventoryMode) && (
                 <>
                   <hr className="mx-0" />
                   <div className="pt-1">

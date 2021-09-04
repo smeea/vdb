@@ -3,6 +3,9 @@
 * Rename share buttons +hints
 * Recalculate draw chances exclude from total played cards
 * Day theme selector gray parts to theme
+* Fix NONE discipline library search
+* Dont show login form in Deck before login
+* Modal borders in draw to darker or draw modal to darker
 
 # FIX MOBILE
 * Select click color on mobile
@@ -23,6 +26,7 @@
 * Card recommendation
 * Search for similar TWD decks
 * How can I help section - twd, rulings
+* Add KS bundles
 
 # MOBILE FEATURES
 * Offline PWA support

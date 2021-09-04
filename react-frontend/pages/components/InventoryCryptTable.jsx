@@ -281,6 +281,7 @@ function InventoryCryptTable(props) {
             isMobile && props.setShowFloatingButtons(true);
           }}
           inventoryState={modalInventory}
+          forceInventoryMode={true}
         />
       )}
     </>
