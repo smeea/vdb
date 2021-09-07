@@ -47,7 +47,7 @@ def inventoryExport(d, format):
                 q = i['q']
                 c = i['c']
                 name = c['ASCII Name'].replace('"', "'")
-                if c['Adv']:
+                if c['Adv'] and c['Adv'][0]:
                     name = name + " (ADV)"
 
                 writer.writerow([q, name])
@@ -86,7 +86,7 @@ def inventoryExport(d, format):
                 c = i['c']
                 deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
 
-                if c['Adv']:
+                if c['Adv'] and c['Adv'][0]:
                     deck.append(c['ASCII Name'].replace('"', "'") + ' (ADV)\n')
                 else:
                     deck.append(c['ASCII Name'].replace('"', "'") + '\n')
@@ -168,12 +168,9 @@ def inventoryExport(d, format):
 
                 disciplines = ' '.join(baseDisciplines + supDisciplines)
 
-                name = ''
-
-                if c['Adv']:
-                    name = c['Name'] + ' (ADV)'
-                else:
-                    name = c['Name']
+                name = c['Name']
+                if c['Adv'] and c['Adv'][0]:
+                    name = name + ' (ADV)'
 
                 cryptExport[name] = {
                     'Quantity': q,
@@ -184,8 +181,8 @@ def inventoryExport(d, format):
                     'Group': c['Group']
                 }
 
-                if len(c['Name']) > longestName:
-                    longestName = len(c['Name'])
+                if len(len) > longestName:
+                    longestName = len(name)
                 if len(c['Title']) > longestTitle:
                     longestTitle = len(c['Title'])
                 if len(str(c['Capacity'])) > longestCapacity:

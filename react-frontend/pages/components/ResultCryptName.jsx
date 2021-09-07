@@ -2,14 +2,6 @@ import React from 'react';
 import Hammer from '../../assets/images/icons/hammer.svg';
 
 function ResultCryptName(props) {
-  const imgClass = 'advanced-image-results';
-  let imgSrc = '';
-  let imgTitle = '';
-  if (props.card['Adv']) {
-    imgSrc = `${process.env.ROOT_URL}images/misc/advanced.svg`;
-    imgTitle = 'Advanced';
-  }
-
   return (
     <>
       <div className="d-inline name">
@@ -18,9 +10,13 @@ function ResultCryptName(props) {
         ) : (
           <>{props.card['Name']}</>
         )}
-        {props.card['Adv'] && (
+        {props.card['Adv'][0] && (
           <span className="pl-1">
-            <img className={imgClass} src={imgSrc} title={imgTitle} />
+            <img
+              className="advanced-image-results"
+              src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+              title="Advanced"
+            />
           </span>
         )}
         {props.card['Banned'] && (

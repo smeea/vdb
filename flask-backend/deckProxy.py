@@ -15,7 +15,7 @@ def deckProxy(cards):
             if k > 200000 and v > 0:
                 card = get_crypt_by_id(k)
                 name = card['Name']
-                if card['Adv']:
+                if card['Adv'] and card['Adv'][0]:
                     name += 'adv'
 
                 crypt[unidecode(re.sub('[\\W]', '', name)).lower() +

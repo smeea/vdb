@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { OverlayTrigger } from 'react-bootstrap';
+import AppContext from '../../context/AppContext';
 import Hammer from '../../assets/images/icons/hammer.svg';
+import CardPopover from './CardPopover.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
@@ -10,6 +13,8 @@ import ResultLayoutTextArtist from './ResultLayoutTextArtist.jsx';
 import ResultLayoutTextText from './ResultLayoutTextText.jsx';
 
 function ResultCryptLayoutText(props) {
+  const { isMobile, cryptCardBase } = useContext(AppContext);
+
   return (
     <>
       <div className="d-flex flex-nowrap justify-content-between align-items-center">
@@ -25,7 +30,7 @@ function ResultCryptLayoutText(props) {
             ) : (
               <b>{props.card['Name']}</b>
             )}
-            {props.card['Adv'] && (
+            {props.card['Adv'][0] && (
               <span className="pl-1">
                 <img
                   className="advanced-image-results"
@@ -39,6 +44,31 @@ function ResultCryptLayoutText(props) {
                 <Hammer />
               </span>
             )}
+            {props.card['Adv'][1] &&
+              (isMobile ? (
+                !props.card['Adv'][0] && (
+                  <span className="adv pl-2">
+                    [has{' '}
+                    <img
+                      className="advanced-image-results"
+                      src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
+                      title="Advanced"
+                    />
+                    ]
+                  </span>
+                )
+              ) : (
+                <OverlayTrigger
+                  placement={props.placement ? props.placement : 'right'}
+                  overlay={
+                    <CardPopover card={cryptCardBase[props.card['Adv'][1]]} />
+                  }
+                >
+                  <span className="adv pl-2">
+                    [see {`${props.card['Adv'][0] ? 'Base' : 'Adv'}`}]
+                  </span>
+                </OverlayTrigger>
+              ))}
           </div>
         </div>
         <div className="pl-2">

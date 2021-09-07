@@ -66,8 +66,9 @@ with open("twda.json", "r") as twda_input, open("twdDecks.json",
                     clans[clan] = q
 
             if 'star' not in deck['traits'] and id != 200076:
-                if get_crypt_by_id(id)['Adv'] and id - 1 in crypt:
-                    if (q + crypt[id - 1]) / totalCryptExAC > 0.38:
+                adv = get_crypt_by_id(id)['Adv']
+                if adv and adv[1] in crypt:
+                    if (q + crypt[adv[1]]) / totalCryptExAC > 0.38:
                         deck['traits'].append('star')
                 else:
                     if q / totalCryptExAC > 0.38:

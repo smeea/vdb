@@ -58,7 +58,7 @@ function NewCryptCard(props) {
                 {cryptCardBase[card]['Banned'] ? (
                   <>
                     <strike>{cryptCardBase[card]['Name']}</strike>
-                    {cryptCardBase[card]['Adv'] && (
+                    {cryptCardBase[card]['Adv'][0] && (
                       <div className="d-inline pl-1">
                         <img
                           className="advanced-image-results"
@@ -74,7 +74,7 @@ function NewCryptCard(props) {
                 ) : (
                   <>
                     {cryptCardBase[card]['Name']}
-                    {cryptCardBase[card]['Adv'] && (
+                    {cryptCardBase[card]['Adv'][0] && (
                       <div className="d-inline pl-1">
                         <img
                           className="advanced-image-results"

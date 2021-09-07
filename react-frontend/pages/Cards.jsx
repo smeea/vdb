@@ -42,7 +42,9 @@ function Cards(props) {
                 : 'en-EN/'
             }${card['ASCII Name']
               .toLowerCase()
-              .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${card['Adv'] && 'adv'}.jpg`
+              .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
+              card['Adv'][0] ? 'adv' : ''
+            }.jpg`
           : `${process.env.ROOT_URL}images/cards/${
               imageSet
                 ? 'set/' + imageSet + '/'

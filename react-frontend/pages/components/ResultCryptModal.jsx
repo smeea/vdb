@@ -65,7 +65,9 @@ function ResultCryptModal(props) {
         : 'en-EN/'
     }${props.card['ASCII Name']
       .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
+      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
+      props.card['Adv'][0] ? 'adv' : ''
+    }.jpg`;
 
     return (
       <img

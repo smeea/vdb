@@ -48,8 +48,12 @@ with open("twda.json",
     library = {}
 
     for card in vtescrypt:
+        name = card['Name']
+        if card['Adv'] and card['Adv'][0]:
+            name += ' ADV'
+
         crypt[card['Id']] = {
-            'name': card['Name'] if not card['Adv'] else card['Name'] + ' ADV',
+            'name': name,
             'twd': '-',
             'twd_date': '-',
         }

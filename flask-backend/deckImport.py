@@ -2,7 +2,6 @@ import json
 import re
 from unidecode import unidecode
 
-
 with open("vtescrypt.json", "r") as crypt_file:
     crypt = json.load(crypt_file)
 
@@ -50,23 +49,21 @@ def deckImport(deckText):
             cardname = cardMatch.group(2).lower()
             quantity = int(cardMatch.group(1))
 
-        if not adv:
-            for card in crypt:
-                if (cardname == card['Name'].lower()
-                        or cardname == unidecode(
-                            card['Name'].lower())) and not card['Adv']:
+        for card in crypt:
+            card_adv = False
+            if card['Adv'] and card['Adv'][0]:
+                card_adv = True
+
+            if (cardname == card['Name'].lower()
+                    or cardname == unidecode(card['Name'].lower())):
+                if adv and card_adv:
+                    deck['cards'][str(card['Id'])] = quantity
+                if not adv and not card_adv:
                     deck['cards'][str(card['Id'])] = quantity
 
-            for card in library:
-                if cardname == card['Name'].lower(
-                ) or cardname == unidecode(card['Name'].lower()):
-                    deck['cards'][str(card['Id'])] = quantity
-
-        else:
-            for card in crypt:
-                if (cardname == card['Name'].lower()
-                        or cardname == unidecode(
-                            card['Name'].lower())) and card['Adv']:
-                    deck['cards'][str(card['Id'])] = quantity
+        for card in library:
+            if cardname == card['Name'].lower() or cardname == unidecode(
+                    card['Name'].lower()):
+                deck['cards'][str(card['Id'])] = quantity
 
     return (deck['name'], deck['author'], deck['description'], deck['cards'])

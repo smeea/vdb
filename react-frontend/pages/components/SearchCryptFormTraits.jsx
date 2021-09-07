@@ -24,7 +24,7 @@ function SearchCryptFormTraits(props) {
     ['infernal', 'Infernal'],
     ['red list', 'Red List'],
     ['flight', 'Flight'],
-    ['advanced', 'Advanced'],
+    ['advancement', 'Advancement'],
     ['banned', 'Banned'],
     ['non-twd', 'Not in TWD'],
   ];

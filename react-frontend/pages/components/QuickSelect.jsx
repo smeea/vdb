@@ -76,7 +76,7 @@ function QuickSelect(props) {
                     {cryptCardBase[cardid]['Banned'] ? (
                       <>
                         <strike>{cryptCardBase[cardid]['Name']}</strike>
-                        {cryptCardBase[cardid]['Adv'] && (
+                        {cryptCardBase[cardid]['Adv'][0] && (
                           <span className="pl-1">
                             <img
                               className="advanced-image-results"
@@ -92,7 +92,7 @@ function QuickSelect(props) {
                     ) : (
                       <>
                         {cryptCardBase[cardid]['Name']}
-                        {cryptCardBase[cardid]['Adv'] && (
+                        {cryptCardBase[cardid]['Adv'][0] && (
                           <span className="pl-1">
                             <img
                               className="advanced-image-results"

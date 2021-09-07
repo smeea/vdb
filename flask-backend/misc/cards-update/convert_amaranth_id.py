@@ -22,13 +22,13 @@ with open("vtescrypt.json",
         if ' (ADV)' in i['name']:
             for card in crypt:
                 if letters_to_ascii(i['name'][:-6].lower(
-                )) in card['ASCII Name'].lower() and card['Adv']:
+                )) in card['ASCII Name'].lower() and card['Adv'][0]:
                     ids[str(i['id'])] = card['Id']
 
         else:
             for card in crypt:
                 if letters_to_ascii(i['name'].lower(
-                )) == card['ASCII Name'].lower() and not card['Adv']:
+                )) == card['ASCII Name'].lower() and not card['Adv'][0]:
                     ids[str(i['id'])] = card['Id']
 
         for card in library:

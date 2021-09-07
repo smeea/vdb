@@ -46,7 +46,7 @@ def deckExport(d, format):
                 q = i['q']
                 c = i['c']
                 name = c['ASCII Name'].replace('"', "'")
-                if c['Adv']:
+                if c['Adv'] and c['Adv']:
                     name = name + " (ADV)"
 
                 writer.writerow([q, name])
@@ -69,7 +69,7 @@ def deckExport(d, format):
                 q = i['q']
                 c = i['c']
                 name = c['ASCII Name'].replace('"', "'")
-                if c['Adv']:
+                if c['Adv'] and c['Adv']:
                     name = name + " (ADV)"
                 deck.append(f"{q}x{name}\n")
 
@@ -104,7 +104,7 @@ def deckExport(d, format):
                 c = i['c']
                 deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
 
-                if c['Adv']:
+                if c['Adv'] and c['Adv']:
                     deck.append(c['ASCII Name'].replace('"', "'") + ' (ADV)\n')
                 else:
                     deck.append(c['ASCII Name'].replace('"', "'") + '\n')
@@ -218,12 +218,9 @@ def deckExport(d, format):
 
                 disciplines = ' '.join(baseDisciplines + supDisciplines)
 
-                name = ''
-
-                if c['Adv']:
-                    name = c['Name'] + ' (ADV)'
-                else:
-                    name = c['Name']
+                name = c['Name']
+                if c['Adv'] and c['Adv'][0]:
+                    name = name + ' (ADV)'
 
                 cryptExport[name] = {
                     'Quantity': q,
@@ -234,8 +231,8 @@ def deckExport(d, format):
                     'Group': c['Group']
                 }
 
-                if len(c['Name']) > longestName:
-                    longestName = len(c['Name'])
+                if len(name) > longestName:
+                    longestName = len(name)
                 if len(c['Title']) > longestTitle:
                     longestTitle = len(c['Title'])
                 if len(str(c['Capacity'])) > longestCapacity:

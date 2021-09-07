@@ -20,7 +20,9 @@ function ResultCryptPopover(props) {
       : 'en-EN'
   }/${props.card['ASCII Name']
     .toLowerCase()
-    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'] && 'adv'}.jpg`;
+    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
+    props.card['Adv'][0] ? 'adv' : ''
+  }.jpg`;
 
   const cardImage = (
     <img
@@ -47,7 +49,7 @@ function ResultCryptPopover(props) {
                     <Hammer />
                   </span>
                 )}
-                {props.card['Adv'] && (
+                {props.card['Adv'][0] && (
                   <span className="pl-1">
                     <img
                       className="advanced-image-results"

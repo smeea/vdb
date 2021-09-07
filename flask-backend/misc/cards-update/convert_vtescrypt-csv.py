@@ -128,7 +128,11 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
     artistsSet = set()
     twda = json.load(twda_input)
 
+    cards = []
     for card in csv_cards:
+        cards.append(card)
+
+    for card in cards:
 
         # Convert some fields values to integers
         for k in integer_fields:
@@ -264,12 +268,21 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                 if c['id'] == card['Id']:
                     card['Twd'] = True
 
+        # Add Advancement info
+        for c in cards:
+            if c['Name'] == card['Name'] and c['Id'] != card['Id']:
+                isAdv = True if card['Adv'] else False
+                card['Advancement'] = [isAdv, c['Id']]
+
+        if 'Advancement' not in card:
+            card['Advancement'] = ""
+
         # Prepare for export
         cards_frontend[card['Id']] = {
             'Id': card['Id'],
             'Name': card['Name'],
             'Clan': card['Clan'],
-            'Adv': card['Adv'],
+            'Adv': card['Advancement'],
             'Group': card['Group'],
             'Capacity': card['Capacity'],
             'Card Text': card['Card Text'],
@@ -287,7 +300,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
             'Name': card['Name'],
             'Type': card['Type'],
             'Clan': card['Clan'],
-            'Adv': card['Adv'],
+            'Adv': card['Advancement'],
             'Group': card['Group'],
             'Capacity': card['Capacity'],
             'Card Text': card['Card Text'],

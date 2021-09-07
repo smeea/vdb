@@ -1002,7 +1002,10 @@
         "Name":"Al-Ashrad, Amr of Alamut",
         "Type":"Vampire",
         "Clan":"Assamite",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200036"
+        ],
         "Group":"2",
         "Capacity":9,
         "Card Text":"Independent: Al-Ashrad can burn a location requiring a clan as a (D) action that costs 2 blood. Blood cursed. +1 bleed.",
@@ -1037,7 +1040,10 @@
         "Name":"Al-Ashrad, Amr of Alamut",
         "Type":"Vampire",
         "Clan":"Assamite",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200035
+        ],
         "Group":"2",
         "Capacity":9,
         "Card Text":"Camarilla: During the first round of combat, Al-Ashrad can use strikes requiring Thaumaturgy [tha] that are not usable during the first round. Blood cursed.\n[MERGED] Assamite Inner Circle: +1 bleed.",
@@ -1158,7 +1164,10 @@
         "Name":"Alan Sovereign",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200041"
+        ],
         "Group":"3",
         "Capacity":6,
         "Card Text":"Camarilla: When you play an investment card, add an additional counter to it from the blood bank.",
@@ -1189,7 +1198,10 @@
         "Name":"Alan Sovereign",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200040
+        ],
         "Group":"3",
         "Capacity":6,
         "Card Text":"Advanced, Camarilla: While Alan is ready, you may pay some or all of the pool cost of equipping from any investment cards you control.\n[MERGED] During your master phase, if Alan is ready, you may move a counter from any investment card to your pool.",
@@ -1551,7 +1563,10 @@
         "Name":"Alfred Benezri",
         "Type":"Vampire",
         "Clan":"Pander",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200052"
+        ],
         "Group":"3",
         "Capacity":6,
         "Card Text":"Sabbat bishop: Alfred gets -1 strength in combat with an ally.",
@@ -1582,7 +1597,10 @@
         "Name":"Alfred Benezri",
         "Type":"Vampire",
         "Clan":"Pander",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200051
+        ],
         "Group":"3",
         "Capacity":7,
         "Card Text":"Advanced, Sabbat bishop: If Alfred is ready, he may lock before range is determined to end combat between two other Sabbat vampires.\n[MERGED] Archbishop of Montreal: Once each referendum, he may burn 1 blood to gain 1 vote.",
@@ -2118,7 +2136,10 @@
         "Name":"Ambrogino Giovanni",
         "Type":"Vampire",
         "Clan":"Giovanni",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200069"
+        ],
         "Group":"2",
         "Capacity":9,
         "Card Text":"Independent. 1 vote (titled): +1 bleed.",
@@ -2150,7 +2171,10 @@
         "Name":"Ambrogino Giovanni",
         "Type":"Vampire",
         "Clan":"Giovanni",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200068
+        ],
         "Group":"2",
         "Capacity":9,
         "Card Text":"Independent: During your unlock phase, Ambrogino can remove seven cards in your ash heap from the game to gain 2 blood. Red List. +1 bleed.\n[MERGED] +1 stealth.",
@@ -3918,7 +3942,10 @@
         "Name":"Appolonius",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200126"
+        ],
         "Group":"1",
         "Capacity":10,
         "Card Text":"Camarilla primogen: Appolonius gets one optional press each combat. +1 bleed.",
@@ -3953,7 +3980,10 @@
         "Name":"Appolonius",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200125
+        ],
         "Group":"1",
         "Capacity":10,
         "Card Text":"Anarch: Appolonius gets +1 bleed for each titled vampire controlled by the target Methuselah.\n[MERGED] Baron of London: Appolonius can enter combat with a minion as a (D) action.",
@@ -5612,7 +5642,10 @@
         "Name":"Batsheva",
         "Type":"Vampire",
         "Clan":"Guruhi",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200177"
+        ],
         "Group":"4",
         "Capacity":6,
         "Card Text":"Laibon: Batsheva gets +1 strength in combat with a Tzimisce.",
@@ -5640,7 +5673,10 @@
         "Name":"Batsheva",
         "Type":"Vampire",
         "Clan":"Guruhi",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200176
+        ],
         "Group":"4",
         "Capacity":6,
         "Card Text":"Advanced, Laibon: Batsheva gets +1 strength in combat with a Malkavian.\n[MERGED] +1 strength (in addition to her bonus against Malkavian and Tzimisce).",
@@ -5817,7 +5853,10 @@
         "Name":"Beckett",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200184"
+        ],
         "Group":"3",
         "Capacity":7,
         "Card Text":"Independent: Beckett can allow you to draw 3 cards from your library as a +1 stealth action. Discard down to your hand size afterward.",
@@ -5845,7 +5884,10 @@
         "Name":"Beckett",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200183
+        ],
         "Group":"3",
         "Capacity":8,
         "Card Text":"Advanced, Independent: While Beckett is ready, you have +X hand size, where X is the number of Gehenna cards in play. If Beckett leaves the ready region, discard your hand.",
@@ -6795,7 +6837,10 @@
         "Name":"Boss Callihan",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200213"
+        ],
         "Group":"3",
         "Capacity":5,
         "Card Text":"Camarilla: Callihan cannot rescue other vampires from torpor.",
@@ -6823,7 +6868,10 @@
         "Name":"Boss Callihan",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200212
+        ],
         "Group":"3",
         "Capacity":5,
         "Card Text":"Anarch: Callihan gets -1 intercept against Sabbat vampires.\n[MERGED] Baron of New York.",
@@ -7165,7 +7213,10 @@
         "Name":"Brunhilde",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200224"
+        ],
         "Group":"3",
         "Capacity":8,
         "Card Text":"Independent: Brunhilde gets +1 bleed when bleeding a Methuselah who controls a ready Ventrue. +1 strength.",
@@ -7193,7 +7244,10 @@
         "Name":"Brunhilde",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200223
+        ],
         "Group":"3",
         "Capacity":8,
         "Card Text":"Anarch Baron of Stockholm: The action to become Anarch costs vampires you control 0 blood.\n[MERGED] Brunhilde can enter combat with a non-Anarch vampire as a (D) action.",
@@ -7256,7 +7310,10 @@
         "Name":"Bulscu",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200227"
+        ],
         "Group":"5",
         "Capacity":8,
         "Card Text":"Camarilla: If you control the Edge, Bulscu can steal a location or an equipment costing 3 or fewer blood or pool as a (D) action.",
@@ -7288,7 +7345,10 @@
         "Name":"Bulscu",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200226
+        ],
         "Group":"5",
         "Capacity":8,
         "Card Text":"Camarilla: Bulscu gets +1 stealth during actions directed at a location or an equipment. +1 strength.\n[MERGED] Prince of Budapest.",
@@ -8418,7 +8478,10 @@
         "Name":"Cesewayo",
         "Type":"Vampire",
         "Clan":"Osebo",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200263"
+        ],
         "Group":"4",
         "Capacity":10,
         "Card Text":"Laibon magaji: Once each action, Cesewayo may burn 1 blood to get +1 intercept.",
@@ -8448,7 +8511,10 @@
         "Name":"Cesewayo",
         "Type":"Vampire",
         "Clan":"Osebo",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200262
+        ],
         "Group":"4",
         "Capacity":10,
         "Card Text":"Advanced, Laibon magaji: During a (D) action against you, Cesewayo may lock an Aye on him to unlock.\n[MERGED] Cesewayo gets two additional votes.",
@@ -8965,7 +9031,10 @@
         "Name":"Claudio Severino",
         "Type":"Vampire",
         "Clan":"Tremere",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200279"
+        ],
         "Group":"5",
         "Capacity":9,
         "Card Text":"Camarilla: Combat cards cost an opposing vampire an additional blood. During your unlock phase, burn 1 pool if there are no Gehenna cards in play.",
@@ -8994,7 +9063,10 @@
         "Name":"Claudio Severino",
         "Type":"Vampire",
         "Clan":"Tremere",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200278
+        ],
         "Group":"5",
         "Capacity":9,
         "Card Text":"Camarilla: If Claudio is ready, you can use a discard phase action to discard a card requiring Thaumaturgy [tha] to gain 1 pool.\n[MERGED] Claudio can burn 1 blood to get +1 stealth.",
@@ -9454,7 +9526,10 @@
         "Name":"Count Germaine",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200293"
+        ],
         "Group":"4",
         "Capacity":8,
         "Card Text":"Camarilla: Minions opposing Germaine in combat cannot use weapons. Germaine can enter combat with any Toreador controlled by another Methuselah as a (D) action.",
@@ -9486,7 +9561,10 @@
         "Name":"Count Germaine",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200292
+        ],
         "Group":"4",
         "Capacity":8,
         "Card Text":"Independent: Germaine gets +2 bleed against a Methuselah who controls a titled non-Independent, non-Anarch vampire. Red List.\n[MERGED] Anarch: Germaine gets 1 optional press each combat.",
@@ -10087,7 +10165,10 @@
         "Name":"Dancin' Dana",
         "Type":"Vampire",
         "Clan":"Malkavian",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200314"
+        ],
         "Group":"1",
         "Capacity":6,
         "Card Text":"Camarilla: +1 strength.",
@@ -10120,7 +10201,10 @@
         "Name":"Dancin' Dana",
         "Type":"Vampire",
         "Clan":"Malkavian",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200313
+        ],
         "Group":"1",
         "Capacity":6,
         "Card Text":"Anarch.\n[MERGED] While Dancin' Dana is in combat, you get +1 hand size.",
@@ -10177,7 +10261,10 @@
         "Name":"Danielle Diron",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200317"
+        ],
         "Group":"3",
         "Capacity":7,
         "Card Text":"Independent: Danielle has 1 vote (titled). During your unlock phase, if Danielle is ready and has no blood, move 2 blood from the blood bank to her.",
@@ -10205,7 +10292,10 @@
         "Name":"Danielle Diron",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200316
+        ],
         "Group":"3",
         "Capacity":7,
         "Card Text":"Anarch: During the polling step of any referendum, Danielle can burn 1 blood to get +1 vote.\n[MERGED] Baron of Berlin.",
@@ -11419,7 +11509,10 @@
         "Name":"Dominique",
         "Type":"Vampire",
         "Clan":"Ventrue antitribu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200358"
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Sabbat: As a (D) action, Dominique may put a vandal counter on a location. If a location has a number of vandal counters equal to its cost (or 1 vandal counter if it has no cost), burn it.",
@@ -11452,7 +11545,10 @@
         "Name":"Dominique",
         "Type":"Vampire",
         "Clan":"Ventrue antitribu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200357
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Advanced, Sabbat: During your unlock phase, you may burn a location you control to gain X pool, where X is the cost of that location.\n[MERGED] Anarch Baron of Paris.",
@@ -12124,7 +12220,10 @@
         "Name":"Dr. Julius Sutphen",
         "Type":"Vampire",
         "Clan":"Lasombra",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200379"
+        ],
         "Group":"3",
         "Capacity":5,
         "Card Text":"Sabbat bishop: Younger vampires must burn 1 blood to attempt to block Julius.",
@@ -12154,7 +12253,10 @@
         "Name":"Dr. Julius Sutphen",
         "Type":"Vampire",
         "Clan":"Lasombra",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200378
+        ],
         "Group":"3",
         "Capacity":5,
         "Card Text":"Sabbat: During a directed action, Julius can burn 1 blood to get +1 stealth.\n[MERGED] Archbishop of Atlanta: Julius gets +1 strength in combat with a Camarilla vampire.",
@@ -12630,7 +12732,10 @@
         "Name":"Dylan",
         "Type":"Vampire",
         "Clan":"Ventrue antitribu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200395"
+        ],
         "Group":"2",
         "Capacity":6,
         "Card Text":"Sabbat: +1 bleed.",
@@ -12662,7 +12767,10 @@
         "Name":"Dylan",
         "Type":"Vampire",
         "Clan":"Ventrue antitribu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200394
+        ],
         "Group":"2",
         "Capacity":6,
         "Card Text":"Advanced, Sabbat. Red List: Dylan gets +1 stealth when bleeding. +1 strength. Infernal.",
@@ -13563,7 +13671,10 @@
         "Name":"Enzo Giovanni, Pentex Board of Directors",
         "Type":"Vampire",
         "Clan":"Giovanni",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200426"
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Independent: Enzo ignores the normal prey or predator restrictions for blocking actions while a vampire controlled by another Methuselah is performing a political action. He gets +1 intercept during political actions not performed by a prince, justicar, or Inner Circle member.",
@@ -13598,7 +13709,10 @@
         "Name":"Enzo Giovanni, Pentex Board of Directors",
         "Type":"Vampire",
         "Clan":"Giovanni",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200425
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Independent: During the polling step of any political action, Enzo can burn 1 blood to get +4 votes against the referendum.\n[MERGED] If a referendum fails, your prey burns 1 pool.",
@@ -14735,7 +14849,10 @@
         "Name":"Ferox, The Rock Lord",
         "Type":"Vampire",
         "Clan":"Gargoyle",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200465"
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Independent: Ferox can enter combat with a Nosferatu controlled by another Methuselah as a (D) action. Younger vampires must burn 1 blood to attempt to block Ferox. Ferox cannot commit diablerie. Flight [FLIGHT].",
@@ -14763,7 +14880,10 @@
         "Name":"Ferox, The Rock Lord",
         "Type":"Vampire",
         "Clan":"Gargoyle",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200464
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Advanced, Independent: Minions opposing Ferox in combat cannot play cards that require Necromancy [nec] or Thaumaturgy [tha]. He cannot commit diablerie. Flight [FLIGHT].\n[MERGED] Ferox gets +1 intercept when attempting to block (D) actions.",
@@ -15919,7 +16039,10 @@
         "Name":"Gengis",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200503"
+        ],
         "Group":"3",
         "Capacity":3,
         "Card Text":"Camarilla: Any Brujah controlled by another Methuselah can take a (D) action to unlock Gengis and take control of him until the end of the turn. Gengis cannot block that action.",
@@ -15955,7 +16078,10 @@
         "Name":"Gengis",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200502
+        ],
         "Group":"3",
         "Capacity":3,
         "Card Text":"Anarch: If Gengis is blocked by a titled vampire, he does not unlock as normal during your next unlock phase.\n[MERGED] Gengis gets +1 level of Auspex [aus] and Celerity [cel].",
@@ -16712,7 +16838,10 @@
         "Name":"Goratrix",
         "Type":"Vampire",
         "Clan":"Tremere antitribu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200529"
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Sabbat: Goratrix can steal 2 blood as a ranged strike. +1 bleed.",
@@ -16741,7 +16870,10 @@
         "Name":"Goratrix",
         "Type":"Vampire",
         "Clan":"Tremere",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200528
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Advanced, Camarilla: Goratrix can burn a Tremere antitribu as a (D) action.\n[MERGED] Once each action, Goratrix may burn 1 blood to get an additional +1 bleed.",
@@ -17892,7 +18024,10 @@
         "Name":"Hannibal",
         "Type":"Vampire",
         "Clan":"Malkavian antitribu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200566"
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Sabbat cardinal: Hannibal may steal up to 2 blood from any Sabbat vampire as a (D) action.",
@@ -17928,7 +18063,10 @@
         "Name":"Hannibal",
         "Type":"Vampire",
         "Clan":"Malkavian antitribu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200565
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Advanced, Sabbat cardinal: Once during each Methuselah's minion phase, Hannibal may burn 2 blood to unlock.",
@@ -18542,7 +18680,10 @@
         "Name":"Helena",
         "Type":"Vampire",
         "Clan":"Toreador",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200587"
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Camarilla: If Helena is locked and ready, she can burn a blood to be able to attempt to block and/or play reaction cards that require Auspex [aus] as if unlocked for the remainder of the action. +1 bleed.",
@@ -18575,7 +18716,10 @@
         "Name":"Helena",
         "Type":"Vampire",
         "Clan":"Toreador",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200586
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Independent: Helena pays no blood costs for reaction cards requiring Auspex [aus] or Dominate [dom]. Infernal.\n[MERGED] Helena is immune to damage from demons and gets +1 level of Daimoinon [dai] and Obtenebration [obt].",
@@ -20479,7 +20623,10 @@
         "Name":"Ivan Krenyenko",
         "Type":"Vampire",
         "Clan":"Ravnos",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200649"
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Independent: If Ivan is ready during your unlock phase, you may search your library for a non-location equipment card, show it to all players and put it in your hand. Discard down to your hand size and shuffle your library afterward. +1 strength.",
@@ -20508,7 +20655,10 @@
         "Name":"Ivan Krenyenko",
         "Type":"Vampire",
         "Clan":"Ravnos",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200648
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Independent: Equipment costs Ivan 2 fewer blood or pool to equip. +1 bleed.\n[MERGED] +1 strength.",
@@ -20630,7 +20780,10 @@
         "Name":"Jack Dawson",
         "Type":"Vampire",
         "Clan":"Samedi",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200654"
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Independent: When you move Jack from your uncontrolled region to your ready region, you may equip him with a weapon card from your hand (pay the cost to equip as normal).",
@@ -20660,7 +20813,10 @@
         "Name":"Jack Dawson",
         "Type":"Vampire",
         "Clan":"Samedi",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200653
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Independent: Jack can burn 1 blood to get 1 additional strike (limited), only usable to strike with the a weapon he used this round. He gets first strike in combat with a werewolf.",
@@ -21113,7 +21269,10 @@
         "Name":"Jan Pieterzoon",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200670"
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Camarilla: While Jan is ready, every Methuselah's hand size is reduced by 1. +1 bleed.",
@@ -21144,7 +21303,10 @@
         "Name":"Jan Pieterzoon",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200669
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Independent: Jan can burn 3 blood to cancel a Gehenna card as it is played.\n[MERGED] While Jan is Independent or Anarch and there are any Gehenna cards in play, he gets +3 votes.",
@@ -21449,7 +21611,10 @@
         "Name":"Javier Montoya",
         "Type":"Vampire",
         "Clan":"Tremere",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200681"
+        ],
         "Group":"2",
         "Capacity":9,
         "Card Text":"Camarilla Prince of Barcelona: Javier burns 1 less blood when rescuing a vampire in torpor. +1 bleed.",
@@ -21481,7 +21646,10 @@
         "Name":"Javier Montoya",
         "Type":"Vampire",
         "Clan":"Tremere",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200680
+        ],
         "Group":"2",
         "Capacity":9,
         "Card Text":"Anarch: During your minion phase, Javier can burn 1 blood to unlock a younger ready Anarch.\n[MERGED] Baron of Barcelona.",
@@ -21821,7 +21989,10 @@
         "Name":"Jeremy MacNeil",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200694"
+        ],
         "Group":"3",
         "Capacity":7,
         "Card Text":"Camarilla.",
@@ -21856,7 +22027,10 @@
         "Name":"Jeremy MacNeil",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200693
+        ],
         "Group":"3",
         "Capacity":8,
         "Card Text":"Advanced, Independent: Jeremy can enter combat with a younger vampire controlled by your predator or prey as a (D) action.\n[MERGED] Anarch Baron of Los Angeles.",
@@ -22001,7 +22175,10 @@
         "Name":"Jessica",
         "Type":"Vampire",
         "Clan":"Toreador antitribu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200700"
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Sabbat bishop.",
@@ -22033,7 +22210,10 @@
         "Name":"Jessica",
         "Type":"Vampire",
         "Clan":"Toreador antitribu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200699
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Advanced, Sabbat bishop: Jessica gets +1 stealth on political actions.\n[MERGED] Archbishop of Brussels.",
@@ -22119,7 +22299,10 @@
         "Name":"Jibade el-Bahrawi",
         "Type":"Vampire",
         "Clan":"Ishtarri",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200704"
+        ],
         "Group":"4",
         "Capacity":9,
         "Card Text":"Laibon: Jibade gets +1 stealth when recruiting, employing, or taking an action to put a vampire in play. Allies and retainers cost him 1 less blood or pool.",
@@ -22148,7 +22331,10 @@
         "Name":"Jibade el-Bahrawi",
         "Type":"Vampire",
         "Clan":"Ishtarri",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200703
+        ],
         "Group":"4",
         "Capacity":9,
         "Card Text":"Advanced, Laibon: If Jibade is ready, he may burn a blood and lock X Aye on him to prevent X damage to any ally or retainer in combat.",
@@ -23485,7 +23671,10 @@
         "Name":"Kamiri wa Itherero",
         "Type":"Vampire",
         "Clan":"Akunanse",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200750"
+        ],
         "Group":"4",
         "Capacity":10,
         "Card Text":"Laibon: Younger vampires must burn 1 blood to attempt to block Kamiri. If an ally blocks Kamiri and combat occurs, burn the ally at the end of the action.",
@@ -23515,7 +23704,10 @@
         "Name":"Kamiri wa Itherero",
         "Type":"Vampire",
         "Clan":"Akunanse",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200749
+        ],
         "Group":"4",
         "Capacity":10,
         "Card Text":"Advanced, Laibon: Kamiri can inflict 2 unpreventable damage on a minion as a (D) action.\n[MERGED] Once each action, Kamiri may burn 1 blood to give an acting Laibon +1 stealth.",
@@ -23728,7 +23920,10 @@
         "Name":"Karsh",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200758"
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Camarilla: Karsh may enter combat with a locked non-Camarilla vampire controlled by another Methuselah as a (D) action. Once each round, he can burn 1 blood to treat aggravated damage as normal damage for the current round.",
@@ -23757,7 +23952,10 @@
         "Name":"Karsh",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200757
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Camarilla: Karsh can play cards named /Blood Hunt/ from your hand or ash heap as a prince. He gets +3 votes in blood hunt referendums. He cannot block infernal vampires.\n[MERGED] Imperator (3 votes): +1 intercept.",
@@ -24111,7 +24309,10 @@
         "Name":"Kemintiri",
         "Type":"Vampire",
         "Clan":"Follower of Set",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200770"
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Independent: Kemintiri gets +1 bleed and +1 stealth when bleeding a Methuselah who controls a Ventrue. Any Ventrue can enter combat with her as a (D) action. She can enter combat with a Ventrue as a +1 stealth (D) action.",
@@ -24147,7 +24348,10 @@
         "Name":"Kemintiri",
         "Type":"Vampire",
         "Clan":"Follower of Set",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200769
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Independent: Red List. +1 stealth.\n[MERGED] 3 votes (titled): Kemintiri can play minion cards requiring a Camarilla vampire, a Ventrue, and/or a justicar title as if she met that/those requirement(s).",
@@ -25383,7 +25587,10 @@
         "Name":"Lambach",
         "Type":"Vampire",
         "Clan":"Tzimisce",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200811"
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Sabbat cardinal: Once each combat, Lambach may burn 1 blood to make the damage from his hand strikes aggravated for the current round. +1 strength.",
@@ -25417,7 +25624,10 @@
         "Name":"Lambach",
         "Type":"Vampire",
         "Clan":"Tzimisce",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200810
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Advanced, Independent: Lambach has 2 votes (titled). He can equip with an Eye of Hazimel at no cost from your library as a +1 stealth action (shuffle afterward).\n[MERGED] He unlocks when he successfully performs an action to put a vampire in play.",
@@ -25730,7 +25940,10 @@
         "Name":"Lazarus",
         "Type":"Vampire",
         "Clan":"Tremere",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200821"
+        ],
         "Group":"1",
         "Capacity":9,
         "Card Text":"Camarilla primogen: Lazarus may inflict 1R damage as a strike.",
@@ -25765,7 +25978,10 @@
         "Name":"Lazarus",
         "Type":"Vampire",
         "Clan":"Tremere",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200820
+        ],
         "Group":"1",
         "Capacity":9,
         "Card Text":"Advanced, Camarilla primogen: Lazarus gets one optional maneuver each combat.\n[MERGED] Once each combat, Lazarus may burn 1 blood to get one press, only usable to continue combat.",
@@ -27126,7 +27342,10 @@
         "Name":"Louis Fortier",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200863"
+        ],
         "Group":"4",
         "Capacity":5,
         "Card Text":"Camarilla.",
@@ -27155,7 +27374,10 @@
         "Name":"Louis Fortier",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200862
+        ],
         "Group":"4",
         "Capacity":5,
         "Card Text":"Anarch.\n[MERGED] Louis gets +1 level of Dominate [dom] and Presence [pre].",
@@ -27508,7 +27730,10 @@
         "Name":"Lucita",
         "Type":"Vampire",
         "Clan":"Lasombra",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200875"
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Independent: Younger Sabbat vampires get -1 intercept against Lucita.",
@@ -27543,7 +27768,10 @@
         "Name":"Lucita",
         "Type":"Vampire",
         "Clan":"Lasombra",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200874
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Sabbat: During an action Lucita performs, she can burn 2 blood to cancel a reaction card as it is played by a vampire with capacity 5 or less, and its cost is not paid.\n[MERGED] Archbishop of Aragon.",
@@ -28420,7 +28648,10 @@
         "Name":"Maldavis",
         "Type":"Vampire",
         "Clan":"Caitiff",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200904"
+        ],
         "Group":"3",
         "Capacity":4,
         "Card Text":"Camarilla: Any ready primogen can burn 1 blood from Maldavis as a +1 stealth (D) action. Maldavis gets -1 bleed when bleeding a Methuselah who controls a ready primogen.",
@@ -28447,7 +28678,10 @@
         "Name":"Maldavis",
         "Type":"Vampire",
         "Clan":"Caitiff",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200903
+        ],
         "Group":"3",
         "Capacity":4,
         "Card Text":"Anarch: Primogen get +1 vote in referendums called by Maldavis.\n[MERGED] Baron of Chicago.",
@@ -28762,7 +28996,10 @@
         "Name":"Marcus Vitel",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200916"
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Camarilla Prince of Washington, D.C.: Marcus can burn a retainer as a +1 stealth (D) action. While Marcus is ready and a prince, Sabbat vampires you control get +1 bleed when bleeding a Methuselah who controls a ready Camarilla vampire.",
@@ -28801,7 +29038,10 @@
         "Name":"Marcus Vitel",
         "Type":"Vampire",
         "Clan":"Lasombra",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200915
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Sabbat: Any Brujah can enter combat with Marcus as a (D) action.\n[MERGED] While he is ready and Sabbat, Sabbat vampires you control get +1 bleed against a Methuselah who controls a ready Camarilla vampire.",
@@ -28923,7 +29163,10 @@
         "Name":"Marguerite Foccart",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200921"
+        ],
         "Group":"4",
         "Capacity":6,
         "Card Text":"Camarilla: Marguerite gets +1 intercept vs. political actions.",
@@ -28951,7 +29194,10 @@
         "Name":"Marguerite Foccart",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200920
+        ],
         "Group":"4",
         "Capacity":6,
         "Card Text":"Anarch: Marguerite gets +1 strength in combat with a titled vampire.\n[MERGED] +1 strength.",
@@ -28980,7 +29226,10 @@
         "Name":"Maria Stone",
         "Type":"Vampire",
         "Clan":"Gangrel antitribu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200923"
+        ],
         "Group":"3",
         "Capacity":5,
         "Card Text":"Sabbat.",
@@ -29011,7 +29260,10 @@
         "Name":"Maria Stone",
         "Type":"Vampire",
         "Clan":"Ahrimane",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200922
+        ],
         "Group":"3",
         "Capacity":5,
         "Card Text":"Advanced, Sabbat: -1 strength. Sterile.\n[MERGED] Maria doesn't suffer -1 strength from her special text, and she has superior Spiritus [SPI].",
@@ -29808,7 +30060,10 @@
         "Name":"Masika",
         "Type":"Vampire",
         "Clan":"Toreador",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200951"
+        ],
         "Group":"1",
         "Capacity":10,
         "Card Text":"Camarilla primogen: During any Methuselah's discard phase, Masika may unlock. +1 bleed.",
@@ -29841,7 +30096,10 @@
         "Name":"Masika",
         "Type":"Vampire",
         "Clan":"Toreador",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200950
+        ],
         "Group":"1",
         "Capacity":10,
         "Card Text":"Camarilla primogen: Once each action, Masika can discard a political action card to give a minion you control +1 intercept.\n[MERGED] Prince of Lisbon.",
@@ -30456,7 +30714,10 @@
         "Name":"Melinda Galbraith",
         "Type":"Vampire",
         "Clan":"Lasombra",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200971"
+        ],
         "Group":"4",
         "Capacity":10,
         "Card Text":"Sabbat cardinal.",
@@ -30489,7 +30750,10 @@
         "Name":"Melinda Galbraith",
         "Type":"Vampire",
         "Clan":"Toreador antitribu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200970
+        ],
         "Group":"4",
         "Capacity":10,
         "Card Text":"Sabbat bishop: During your unlock phase, Melinda can lock a Sabbat vampire with capacity 6 or less.\n[MERGED] Sabbat regent: +2 bleed.",
@@ -30614,7 +30878,10 @@
         "Name":"Menele",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"",
+        "Adv":[
+            false,
+            "200976"
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Camarilla: During your unlock phase, you may move 2 blood from Menele to a younger vampire in your uncontrolled region. +1 bleed.",
@@ -30651,7 +30918,10 @@
         "Name":"Menele",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            200975
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Independent: While /Helena/ is ready, minion cards cost Menele 1 fewer blood.\n[MERGED] Menele can strike: steal 2 blood or life (becoming blood).",
@@ -32727,7 +32997,10 @@
         "Name":"Nefertiti",
         "Type":"Vampire",
         "Clan":"Follower of Set",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201520"
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Independent: Nefertiti can put 1 corruption counter on a minion controlled by your prey as a +1 stealth (D) action that costs 1 blood. +1 bleed.",
@@ -32760,7 +33033,10 @@
         "Name":"Nefertiti",
         "Type":"Vampire",
         "Clan":"Follower of Set",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201042
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Independent: Nefertiti can search your crypt for a card named /Aabbt Kindred/ (shuffle afterward), reveal it and move it to your uncontrolled region as a +1 stealth action.\n[MERGED] During your minion phase, Nefertiti can unlock.",
@@ -32951,7 +33227,10 @@
         "Name":"Nergal",
         "Type":"Vampire",
         "Clan":"Baali",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201049"
+        ],
         "Group":"5",
         "Capacity":10,
         "Card Text":"Independent: Once each turn, Nergal can reduce the cost of a card he plays by 1 blood. Infernal. +2 bleed.",
@@ -32982,7 +33261,10 @@
         "Name":"Nergal",
         "Type":"Vampire",
         "Clan":"Baali",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201048
+        ],
         "Group":"5",
         "Capacity":10,
         "Card Text":"Independent: While Nergal is acting, reaction cards cost 1 additional blood. Once each action, he can burn 1 blood to get +1 stealth. Infernal.",
@@ -34953,7 +35235,10 @@
         "Name":"Petaniqua",
         "Type":"Vampire",
         "Clan":"Malkavian",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201113"
+        ],
         "Group":"4",
         "Capacity":9,
         "Card Text":"Camarilla. Red List: During any round of combat after the first, a minion opposing Petaniqua takes 2 points of damage before range is determined. Recruiting allies and employing retainers costs Petaniqua 1 less blood or pool. +1 bleed. Infernal.",
@@ -34984,7 +35269,10 @@
         "Name":"Petaniqua",
         "Type":"Vampire",
         "Clan":"Baali",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201112
+        ],
         "Group":"4",
         "Capacity":9,
         "Card Text":"Advanced, Independent. Red List: Once each combat, Petaniqua may burn a blood to gain a press. Petaniqua may recruit a werewolf ally as if she meets the requirements of playing that card. +1 strength. Infernal.",
@@ -35832,7 +36120,10 @@
         "Name":"Quentin King III",
         "Type":"Vampire",
         "Clan":"Malkavian",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201142"
+        ],
         "Group":"3",
         "Capacity":7,
         "Card Text":"Camarilla Prince of Boston.",
@@ -35863,7 +36154,10 @@
         "Name":"Quentin King III",
         "Type":"Vampire",
         "Clan":"Malkavian",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201141
+        ],
         "Group":"3",
         "Capacity":7,
         "Card Text":"Advanced, Camarilla.\n[MERGED] If Quentin is ready during your unlock phase, you may move 1 blood from the blood bank to a ready older vampire. Once each action, Quentin can burn 1 blood to get +1 bleed.",
@@ -36360,7 +36654,10 @@
         "Name":"Ramona",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201159"
+        ],
         "Group":"2",
         "Capacity":4,
         "Card Text":"Camarilla: During your unlock phase, you may move 1 blood from any ready Gangrel you control to Ramona.",
@@ -36389,7 +36686,10 @@
         "Name":"Ramona",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201158
+        ],
         "Group":"2",
         "Capacity":4,
         "Card Text":"Advanced, Camarilla: During your unlock phase, you may move 1 blood from Ramona to any ready Gangrel you control.\n[MERGED] During your master phase, you may move 1 blood from Ramona to your pool.",
@@ -37006,7 +37306,10 @@
         "Name":"Reverend Adams",
         "Type":"Vampire",
         "Clan":"Caitiff",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201181"
+        ],
         "Group":"4",
         "Capacity":3,
         "Card Text":"Independent: Reverend Adams gets -1 stealth on political actions. Older vampires do not lock for successfully blocking Reverend Adams.",
@@ -37032,7 +37335,10 @@
         "Name":"Reverend Adams",
         "Type":"Vampire",
         "Clan":"Ventrue",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201180
+        ],
         "Group":"4",
         "Capacity":4,
         "Card Text":"Advanced, Camarilla: During your master phase, you may look at the top X cards of your library, where X is the number of Gehenna cards in play. Older vampires do not lock for successfully blocking Adams.",
@@ -38935,7 +39241,10 @@
         "Name":"Sarrasine",
         "Type":"Vampire",
         "Clan":"Follower of Set",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201243"
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Independent: If Sarrasine is ready during your master phase, you can burn the Edge to get +1 master phase action.",
@@ -38967,7 +39276,10 @@
         "Name":"Sarrasine",
         "Type":"Vampire",
         "Clan":"Follower of Set",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201242
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Camarilla Prince of Sydney.\n[MERGED] If Sarrasine is ready during your unlock phase, you can put 1 corruption counter on a minion controlled by your prey.",
@@ -39004,7 +39316,10 @@
         "Name":"Sascha Vykos, The Angel of Caine",
         "Type":"Vampire",
         "Clan":"Tzimisce",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201245"
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Sabbat priscus: When a vampire opposing Sascha in combat goes to torpor, you may choose to increase your hand size by 2 for the remainder of the turn. This ability can be used only once per turn.",
@@ -39036,7 +39351,10 @@
         "Name":"Sascha Vykos, The Angel of Caine",
         "Type":"Vampire",
         "Clan":"Tzimisce",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201244
+        ],
         "Group":"2",
         "Capacity":8,
         "Card Text":"Advanced, Sabbat Archbishop of Washington, D.C.: If Sascha is ready, you may draw a card from your library after another Methuselah plays a master card.\n[MERGED] Sabbat cardinal.",
@@ -39384,7 +39702,10 @@
         "Name":"S\u00e9bastien Goulet",
         "Type":"Vampire",
         "Clan":"Gangrel antitribu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201258"
+        ],
         "Group":"3",
         "Capacity":8,
         "Card Text":"Sabbat: Allies and retainers cost S\u00e9bastien 1 less blood or pool. Once each action, he can burn 1 blood to get +1 bleed.",
@@ -39416,7 +39737,10 @@
         "Name":"S\u00e9bastien Goulet",
         "Type":"Vampire",
         "Clan":"Gangrel antitribu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201257
+        ],
         "Group":"3",
         "Capacity":8,
         "Card Text":"Sabbat: S\u00e9bastien gets +1 stealth on recruit and employ actions.\n[MERGED] He can steal an ally or retainer as a +1 stealth (D) action.",
@@ -39445,7 +39769,10 @@
         "Name":"Sela",
         "Type":"Vampire",
         "Clan":"Brujah antitribu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201260"
+        ],
         "Group":"2",
         "Capacity":6,
         "Card Text":"Sabbat bishop: If Sela becomes an archbishop, each ready bishop controlled by your prey burns 1 blood. +1 bleed.",
@@ -39476,7 +39803,10 @@
         "Name":"Sela",
         "Type":"Vampire",
         "Clan":"Brujah antitribu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201259
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Advanced, Sabbat Archbishop of Rome: Sela gets +1 stealth on (D) actions directed at a Methuselah who controls a ready bishop.",
@@ -41455,7 +41785,10 @@
         "Name":"Sundown",
         "Type":"Vampire",
         "Clan":"Nosferatu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201326"
+        ],
         "Group":"3",
         "Capacity":6,
         "Card Text":"Camarilla: During a referendum, Sundown can burn 1 blood to gain 1 vote.",
@@ -41483,7 +41816,10 @@
         "Name":"Sundown",
         "Type":"Vampire",
         "Clan":"Nosferatu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201325
+        ],
         "Group":"3",
         "Capacity":6,
         "Card Text":"Anarch.\n[MERGED] If Sundown is ready during the polling step of any referendum, you can discard a political action card to force any vampire to abstain.",
@@ -42093,7 +42429,10 @@
         "Name":"Tariq, The Silent",
         "Type":"Vampire",
         "Clan":"Assamite",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201345"
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Independent: While Tariq is controlled, he gets -4 capacity. He can enter combat with a vampire as a (D) action. Blood hunts cannot be called on him.",
@@ -42125,7 +42464,10 @@
         "Name":"Tariq, The Silent",
         "Type":"Vampire",
         "Clan":"Assamite",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201344
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Sabbat: While Tariq is controlled, he gets -4 capacity. He can strike, ranged: steal 1 blood or life (becoming blood). Black Hand. Red List.\n[MERGED] Independent: Tariq's capacity is not reduced by his card text.",
@@ -42339,7 +42681,10 @@
         "Name":"Tegyrius, Vizier",
         "Type":"Vampire",
         "Clan":"Assamite",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201353"
+        ],
         "Group":"2",
         "Capacity":9,
         "Card Text":"Camarilla: If Tegyrius is ready, any Assamite can put 1 allegiance counter on themselves as a +1 stealth action. Any Assamite with any allegiance counters is considered Camarilla. Blood cursed. +1 strength.",
@@ -42371,7 +42716,10 @@
         "Name":"Tegyrius, Vizier",
         "Type":"Vampire",
         "Clan":"Assamite",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201352
+        ],
         "Group":"2",
         "Capacity":9,
         "Card Text":"Camarilla: While Tegyrius is ready, each Camarilla Assamite can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.\n[MERGED] Assamite Justicar.",
@@ -42640,7 +42988,10 @@
         "Name":"Theo Bell",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201363"
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Camarilla: Theo may enter combat with any ready minion controlled by another Methuselah as a (D) action. If you control a ready prince or justicar, blood hunts cannot be called on Theo.",
@@ -42671,7 +43022,10 @@
         "Name":"Theo Bell",
         "Type":"Vampire",
         "Clan":"Brujah",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201362
+        ],
         "Group":"2",
         "Capacity":7,
         "Card Text":"Advanced, Independent: +1 strength. If there are any Gehenna cards in play, any justicar or Inner Circle member can call a referendum to burn Theo as a +1 stealth political action. If that referendum is canceled or fails, the acting vampire goes to torpor.",
@@ -43671,7 +44025,10 @@
         "Name":"Tusk, The Talebearer",
         "Type":"Vampire",
         "Clan":"Nosferatu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201396"
+        ],
         "Group":"1",
         "Capacity":6,
         "Card Text":"Camarilla: While Tusk is ready, you may look at the top card in your library.",
@@ -43704,7 +44061,10 @@
         "Name":"Tusk, The Talebearer",
         "Type":"Vampire",
         "Clan":"Nosferatu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201395
+        ],
         "Group":"1",
         "Capacity":6,
         "Card Text":"Advanced, Camarilla: During the declaration of Tusk's action, you may burn the top card of your library. If the burned card requires Obfuscate [obf], Tusk gets +1 stealth for the current action. Otherwise, Tusk burns 1 blood.",
@@ -44467,7 +44827,10 @@
         "Name":"Valerius Maior, Hell's Fool",
         "Type":"Vampire",
         "Clan":"Tremere",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201422"
+        ],
         "Group":"4",
         "Capacity":7,
         "Card Text":"Camarilla. Red List: If Valerius strikes with a strike that requires Thaumaturgy [tha], he gains an optional additional strike (limited), only usable to strike with a strike that requires Thaumaturgy. Infernal.",
@@ -44498,7 +44861,10 @@
         "Name":"Valerius Maior, Hell's Fool",
         "Type":"Vampire",
         "Clan":"Tremere antitribu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201421
+        ],
         "Group":"4",
         "Capacity":7,
         "Card Text":"Advanced, Sabbat. Red List: If Valerius attempts to block, the acting minion cannot play action modifier or combat cards that require Chimerstry [chi] or Obfuscate [obf]. Infernal.\n[MERGED] Independent: Valerius becomes non-infernal and non-Red List as he merges. While merged, his capacity is reduced by 2.",
@@ -46185,7 +46551,10 @@
         "Name":"Xaviar",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201478"
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Independent: Xaviar has 2 votes (titled). He can prevent 1 damage each combat. Once each combat, before range is determined, he may burn 2 blood to get +2 strength for the remainder of combat.",
@@ -46219,7 +46588,10 @@
         "Name":"Xaviar",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201477
+        ],
         "Group":"3",
         "Capacity":10,
         "Card Text":"Camarilla Gangrel Justicar: You can unlock Xaviar after a referendum called by him passes.",
@@ -46425,7 +46797,10 @@
         "Name":"Yazid Tamari",
         "Type":"Vampire",
         "Clan":"Assamite",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201486"
+        ],
         "Group":"3",
         "Capacity":8,
         "Card Text":"Sabbat: Black Hand. Seraph. +1 bleed.",
@@ -46457,7 +46832,10 @@
         "Name":"Yazid Tamari",
         "Type":"Vampire",
         "Clan":"Assamite",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201485
+        ],
         "Group":"3",
         "Capacity":8,
         "Card Text":"Sabbat: Yazid gets +1 stealth during directed actions. Black Hand.\n[MERGED] Anarch.",
@@ -46518,7 +46896,10 @@
         "Name":"Yong-Sun, Harmonist",
         "Type":"Vampire",
         "Clan":"Nosferatu antitribu",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201489"
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Sabbat cardinal: Yong-Sun may burn the top card of your prey's crypt as a (D) action.",
@@ -46550,7 +46931,10 @@
         "Name":"Yong-Sun, Harmonist",
         "Type":"Vampire",
         "Clan":"Nosferatu antitribu",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201488
+        ],
         "Group":"2",
         "Capacity":10,
         "Card Text":"Advanced, Sabbat cardinal: Yong-Sun gets +X bleed, where X is the number of vampires in the target Methuselah's ash heap.",
@@ -46823,7 +47207,10 @@
         "Name":"Zack North",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"",
+        "Adv":[
+            false,
+            "201499"
+        ],
         "Group":"1",
         "Capacity":6,
         "Card Text":"Camarilla: +1 strength.",
@@ -46857,7 +47244,10 @@
         "Name":"Zack North",
         "Type":"Vampire",
         "Clan":"Gangrel",
-        "Adv":"Advanced",
+        "Adv":[
+            true,
+            201498
+        ],
         "Group":"1",
         "Capacity":6,
         "Card Text":"Anarch.\n[MERGED] Once each round of combat, Zack can burn 1 blood to make the damage from his hand strikes aggravated that round.",
