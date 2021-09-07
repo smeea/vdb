@@ -2,7 +2,6 @@
 * Save scrolling position
 * Rename share buttons +hints
 * Day theme selector gray parts to theme
-* Removing multi-filter
 
 # FIX MOBILE
 * Select click color on mobile

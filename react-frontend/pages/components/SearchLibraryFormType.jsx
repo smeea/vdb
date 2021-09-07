@@ -71,7 +71,7 @@ function SearchLibraryFormType(props) {
 
   const delForm = (i) => {
     props.setFormState((prevState) => {
-      const v = prevState.type;
+      const v = prevState.type.type;
       v.splice(i, 1);
       return {
         ...prevState,

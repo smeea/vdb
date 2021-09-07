@@ -101,7 +101,7 @@ function SearchLibraryFormDiscipline(props) {
 
   const delForm = (i) => {
     props.setFormState((prevState) => {
-      const v = prevState.discipline;
+      const v = prevState.discipline.discipline;
       v.splice(i, 1);
       return {
         ...prevState,
