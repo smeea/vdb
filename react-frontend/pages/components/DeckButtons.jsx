@@ -2,9 +2,7 @@ import React, { useContext } from 'react';
 import DeckDraw from './DeckDraw.jsx';
 import DeckClone from './DeckClone.jsx';
 import DeckDelete from './DeckDelete.jsx';
-import DeckCopyUrlMutableButton from './DeckCopyUrlMutableButton.jsx';
-import DeckCopyUrlImmutableButton from './DeckCopyUrlImmutableButton.jsx';
-import DeckCopyUrlCodedButton from './DeckCopyUrlCodedButton.jsx';
+import DeckCopyUrl from './DeckCopyUrl.jsx';
 import DeckImport from './DeckImport.jsx';
 import DeckExport from './DeckExport.jsx';
 import DeckProxy from './DeckProxy.jsx';
@@ -70,37 +68,13 @@ function DeckButtons(props) {
           </div>
         )}
       {props.deck && (
-        <>
-          {props.deck.deckid.length == 32 ? (
-            <>
-              <div className="button-block">
-                <DeckCopyUrlMutableButton
-                  value={props.activeDeck.deckid}
-                  setShowButtons={props.setShowButtons}
-                />
-              </div>
-              <div className="button-block">
-                <DeckCopyUrlImmutableButton
-                  value={props.activeDeck.deckid}
-                  setShowButtons={props.setShowButtons}
-                />
-              </div>
-              <div className="button-block">
-                <DeckCopyUrlCodedButton
-                  deck={props.deck}
-                  setShowButtons={props.setShowButtons}
-                />
-              </div>
-            </>
-          ) : (
-            <div className="button-block">
-              <DeckCopyUrlMutableButton
-                value={props.activeDeck.deckid}
-                setShowButtons={props.setShowButtons}
-              />
-            </div>
-          )}
-        </>
+        <div className="button-block">
+          <DeckCopyUrl
+            isAuthor={props.isAuthor}
+            deck={props.deck}
+            setShowButtons={props.setShowButtons}
+          />
+        </div>
       )}
       {props.deck && (
         <div className="button-block">

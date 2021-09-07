@@ -1,6 +1,5 @@
 # FIX
 * Save scrolling position
-* Rename share buttons +hints
 * Day theme selector gray parts to theme
 
 # FIX MOBILE
@@ -23,7 +22,6 @@
 * Search for similar TWD decks
 * How can I help section - twd, rulings
 * Add KS bundles
-* Go to ADV/base vampire version
 
 # MOBILE FEATURES
 * Offline PWA support

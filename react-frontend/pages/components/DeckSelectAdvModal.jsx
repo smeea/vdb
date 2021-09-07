@@ -13,7 +13,7 @@ import DeckDelete from './DeckDelete.jsx';
 import DeckBranchDelete from './DeckBranchDelete.jsx';
 import DeckClone from './DeckClone.jsx';
 import DeckProxy from './DeckProxy.jsx';
-import DeckCopyUrlMutableButton from './DeckCopyUrlMutableButton.jsx';
+import DeckCopyUrl from './DeckCopyUrl.jsx';
 import DeckSelectSortForm from './DeckSelectSortForm.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import resultDecksSort from './resultDecksSort.js';
@@ -285,7 +285,7 @@ function DeckSelectAdvModal(props) {
               />
             </div>
             <div className="d-inline pl-1">
-              <DeckCopyUrlMutableButton noText={true} value={deck.deckid} />
+              <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
             </div>
             <div className="d-inline pl-1">
               <DeckProxy noText={true} deck={deck} />
