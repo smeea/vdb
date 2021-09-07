@@ -3,7 +3,7 @@
 * Rename share buttons +hints
 * Recalculate draw chances exclude from total played cards
 * Day theme selector gray parts to theme
-* Modal borders in draw to darker or draw modal to darker
+* Removing multi-filter
 
 # FIX MOBILE
 * Select click color on mobile
