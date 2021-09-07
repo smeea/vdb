@@ -15,7 +15,7 @@ function ResultCrypt(props) {
     cryptResults,
     setCryptResults,
     addMode,
-    setAddMode,
+    toggleAddMode,
     inventoryMode,
     toggleInventoryMode,
     isMobile,
@@ -96,7 +96,7 @@ function ResultCrypt(props) {
           )}
           {addMode ? (
             <div
-              onClick={() => setAddMode(!addMode)}
+              onClick={() => toggleAddMode()}
               className="float-right-middle add-on"
             >
               <div className="pt-1 float-add">
@@ -105,7 +105,7 @@ function ResultCrypt(props) {
             </div>
           ) : (
             <div
-              onClick={() => setAddMode(!addMode)}
+              onClick={() => toggleAddMode()}
               className="float-right-middle add-off"
             >
               <div className="pt-1 float-add">

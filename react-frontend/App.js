@@ -25,7 +25,6 @@ import './assets/css/style.styl';
 
 function App(props) {
   const {
-    isMobile,
     username,
     setUsername,
     setPublicName,
@@ -39,7 +38,6 @@ function App(props) {
     setNativeCrypt,
     nativeLibrary,
     setNativeLibrary,
-    setAddMode,
     cryptCardBase,
     setCryptCardBase,
     libraryCardBase,
@@ -367,7 +365,6 @@ function App(props) {
       .then((response) => response.json())
       .then((data) => {
         setUsername(data.username);
-        data.username && !isMobile && setAddMode(true);
         data.public_name && setPublicName(data.public_name);
         data.email && setEmail(data.email);
       });

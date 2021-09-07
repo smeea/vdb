@@ -18,7 +18,7 @@ const AppContext = React.createContext({
   showImage: true,
   toggleShowImage: () => {},
   addMode: false,
-  setAddMode: () => {},
+  toggleAddMode: () => {},
   hideMissing: false,
   setHideMissing: () => {},
   inventoryMode: false,
@@ -196,12 +196,25 @@ export const AppProvider = (props) => {
   };
 
   useLayoutEffect(() => {
-    if (window.localStorage.getItem('inventoryMode') === 'true') {
-      setInventoryMode(true);
+    if (window.localStorage.getItem('cryptSortByCap') === 'true') {
+      setCryptSortByCap(true);
     } else {
-      setInventoryMode(false);
+      setCryptSortByCap(false);
     }
-  }, [inventoryMode]);
+  }, [cryptSortByCap]);
+
+  const toggleAddMode = () => {
+    setAddMode(!addMode);
+    window.localStorage.setItem('addMode', !addMode);
+  };
+
+  useLayoutEffect(() => {
+    if (window.localStorage.getItem('addMode') === 'false') {
+      setAddMode(false);
+    } else {
+      setAddMode(true);
+    }
+  }, [addMode]);
 
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
@@ -417,7 +430,7 @@ export const AppProvider = (props) => {
         toggleInventoryMode,
         isInventory,
         addMode,
-        setAddMode,
+        toggleAddMode,
         showImage,
         toggleShowImage,
         cryptSortByCap,

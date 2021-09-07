@@ -17,7 +17,7 @@ function Crypt(props) {
     showCryptSearch,
     cryptResults,
     addMode,
-    setAddMode,
+    toggleAddMode,
     username,
     isMobile,
   } = useContext(AppContext);
@@ -55,7 +55,7 @@ function Crypt(props) {
                 <div className="d-flex pl-1">
                   <Button
                     variant="outline-secondary"
-                    onClick={() => setAddMode(!addMode)}
+                    onClick={() => toggleAddMode()}
                   >
                     {addMode ? <EyeSlashFill /> : <EyeFill />}
                   </Button>

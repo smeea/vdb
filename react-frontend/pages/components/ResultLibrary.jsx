@@ -15,7 +15,7 @@ function ResultLibrary(props) {
     libraryResults,
     setLibraryResults,
     addMode,
-    setAddMode,
+    toggleAddMode,
     inventoryMode,
     toggleInventoryMode,
     isMobile,
@@ -94,7 +94,7 @@ function ResultLibrary(props) {
           )}
           {addMode ? (
             <div
-              onClick={() => setAddMode(!addMode)}
+              onClick={() => toggleAddMode()}
               className="float-right-middle add-on"
             >
               <div className="pt-1 float-add">
@@ -103,7 +103,7 @@ function ResultLibrary(props) {
             </div>
           ) : (
             <div
-              onClick={() => setAddMode(!addMode)}
+              onClick={() => toggleAddMode()}
               className="float-right-middle add-off"
             >
               <div className="pt-1 float-add">

@@ -17,6 +17,7 @@ import AppContext from '../../context/AppContext';
 function ResultCryptTable(props) {
   const {
     decks,
+    activeDeck,
     inventoryCrypt,
     usedCryptCards,
     addMode,
@@ -117,7 +118,7 @@ function ResultCryptTable(props) {
     return (
       <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
-          {addMode && (
+          {activeDeck.deckid && addMode && (
             <td className="quantity-add pr-1">
               <ButtonAddCard
                 cardid={card['Id']}

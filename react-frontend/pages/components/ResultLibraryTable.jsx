@@ -18,6 +18,7 @@ import AppContext from '../../context/AppContext.js';
 function ResultLibraryTable(props) {
   const {
     decks,
+    activeDeck,
     inventoryLibrary,
     usedLibraryCards,
     addMode,
@@ -120,7 +121,7 @@ function ResultLibraryTable(props) {
     return (
       <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
-          {addMode && (
+          {activeDeck.deckid && addMode && (
             <td className="quantity-add pr-1">
               <ButtonAddCard
                 cardid={card['Id']}
