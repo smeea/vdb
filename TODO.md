@@ -23,6 +23,7 @@
 * Search for similar TWD decks
 * How can I help section - twd, rulings
 * Add KS bundles
+* Go to ADV/base vampire version
 
 # MOBILE FEATURES
 * Offline PWA support

@@ -18,11 +18,12 @@ function ResultCryptLayoutText(props) {
             <ResultCryptClan value={props.card['Clan']} />
           </div>
           <div className="name pl-2">
-            <b>{props.card['Name']}</b>
-            {props.card['Banned'] && (
-              <span className="pl-1">
-                <Hammer />
-              </span>
+            {props.card['Banned'] ? (
+              <strike>
+                <b>{props.card['Name']}</b>
+              </strike>
+            ) : (
+              <b>{props.card['Name']}</b>
             )}
             {props.card['Adv'] && (
               <span className="pl-1">
@@ -31,6 +32,11 @@ function ResultCryptLayoutText(props) {
                   src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
                   title="Advanced"
                 />
+              </span>
+            )}
+            {props.card['Banned'] && (
+              <span className="pl-1">
+                <Hammer />
               </span>
             )}
           </div>

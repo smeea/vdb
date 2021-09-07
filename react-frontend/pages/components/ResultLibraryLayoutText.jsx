@@ -23,7 +23,13 @@ function ResultLibraryLayoutText(props) {
             <ResultLibraryType cardtype={props.card['Type']} />
           </div>
           <div className="name pl-2">
-            <b>{props.card['Name']}</b>
+            {props.card['Banned'] ? (
+              <strike>
+                <b>{props.card['Name']}</b>
+              </strike>
+            ) : (
+              <b>{props.card['Name']}</b>
+            )}
             {props.card['Banned'] && (
               <span className="pl-1">
                 <Hammer />
