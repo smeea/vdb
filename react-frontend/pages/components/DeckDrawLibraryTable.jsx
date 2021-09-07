@@ -18,8 +18,23 @@ function DeckDrawLibraryTable(props) {
   const { nativeLibrary, isMobile } = useContext(AppContext);
   const [modalDraw, setModalDraw] = useState(undefined);
   let resultTrClass;
-  const N = props.total;
-  const n = props.resultCards.length;
+
+  let N = 0;
+  let n = 0;
+  const nonPlayed = {};
+
+  if (props.restCards && props.resultCards) {
+    N = props.restCards.length + props.resultCards.length;
+    n = props.resultCards.length;
+
+    [...props.restCards, ...props.resultCards].forEach((c) => {
+      if (c.Id in nonPlayed) {
+        nonPlayed[c.Id] += 1;
+      } else {
+        nonPlayed[c.Id] = 1;
+      }
+    });
+  }
 
   const cardRows = props.resultCards.map((card, index) => {
     if (resultTrClass == 'result-odd') {
@@ -28,7 +43,7 @@ function DeckDrawLibraryTable(props) {
       resultTrClass = 'result-odd';
     }
 
-    const k = props.library[card['Id']].q;
+    const k = nonPlayed[card.Id];
 
     return (
       <React.Fragment key={`${index}-${card['Id']}`}>

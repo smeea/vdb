@@ -1,7 +1,6 @@
 # FIX
 * Save scrolling position
 * Rename share buttons +hints
-* Recalculate draw chances exclude from total played cards
 * Day theme selector gray parts to theme
 * Removing multi-filter
 

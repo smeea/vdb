@@ -17,8 +17,23 @@ function DeckDrawCryptTable(props) {
   const { isMobile, isWide } = useContext(AppContext);
   const [modalDraw, setModalDraw] = useState(undefined);
   let resultTrClass;
-  const N = props.total;
-  const n = props.resultCards.length;
+
+  let N = 0;
+  let n = 0;
+  const nonPlayed = {};
+
+  if (props.restCards && props.resultCards) {
+    N = props.restCards.length + props.resultCards.length;
+    n = props.resultCards.length;
+
+    [...props.restCards, ...props.resultCards].forEach((c) => {
+      if (c.Id in nonPlayed) {
+        nonPlayed[c.Id] += 1;
+      } else {
+        nonPlayed[c.Id] = 1;
+      }
+    });
+  }
 
   const cardRows = props.resultCards.map((card, index) => {
     if (resultTrClass == 'result-odd') {
@@ -27,7 +42,7 @@ function DeckDrawCryptTable(props) {
       resultTrClass = 'result-odd';
     }
 
-    const k = props.crypt[card['Id']].q;
+    const k = nonPlayed[card.Id];
 
     return (
       <React.Fragment key={`${index}-${card['Id']}`}>
@@ -74,20 +89,26 @@ function DeckDrawCryptTable(props) {
           )}
           {isWide ? (
             <>
-              <td className="title pr-2" onClick={() => handleClick()}>
+              <td
+                className="title pr-2"
+                onClick={() => props.handleClick(index)}
+              >
                 <ResultCryptTitle value={card['Title']} />
               </td>
-              <td className="clan" onClick={() => handleClick()}>
+              <td className="clan" onClick={() => props.handleClick(index)}>
                 <ResultCryptClan value={card['Clan']} />
               </td>
-              <td className="group" onClick={() => handleClick()}>
+              <td className="group" onClick={() => props.handleClick(index)}>
                 <ResultCryptGroup value={card['Group']} />
               </td>
             </>
           ) : (
             <>
               {isMobile ? (
-                <td className="clan-group" onClick={() => handleClick()}>
+                <td
+                  className="clan-group"
+                  onClick={() => props.handleClick(index)}
+                >
                   <div>
                     <ResultCryptClan value={card['Clan']} />
                   </div>
@@ -100,10 +121,16 @@ function DeckDrawCryptTable(props) {
                 </td>
               ) : (
                 <>
-                  <td className="title pr-2" onClick={() => handleClick()}>
+                  <td
+                    className="title pr-2"
+                    onClick={() => props.handleClick(index)}
+                  >
                     <ResultCryptTitle value={card['Title']} />
                   </td>
-                  <td className="clan-group" onClick={() => handleClick()}>
+                  <td
+                    className="clan-group"
+                    onClick={() => props.handleClick(index)}
+                  >
                     <div>
                       <ResultCryptClan value={card['Clan']} />
                     </div>

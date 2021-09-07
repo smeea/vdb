@@ -251,8 +251,7 @@ function DeckDrawModal(props) {
                 )}
                 <DeckDrawCryptTable
                   handleClick={props.burnCrypt}
-                  crypt={props.crypt}
-                  total={props.drawedCrypt.length + props.restCrypt.length}
+                  restCards={props.restCrypt}
                   resultCards={props.drawedCrypt}
                   className="deck-crypt-table"
                   disciplinesSet={props.disciplinesSet}
@@ -306,8 +305,7 @@ function DeckDrawModal(props) {
               )}
               <DeckDrawLibraryTable
                 handleClick={props.burnLibrary}
-                library={props.library}
-                total={props.drawedLibrary.length + props.restLibrary.length}
+                restCards={props.restLibrary}
                 resultCards={props.drawedLibrary}
                 className="search-library-table"
               />
@@ -338,8 +336,6 @@ function DeckDrawModal(props) {
                     </div>
                     <DeckDrawCryptTable
                       handleClick={handleModalCryptCardOpen}
-                      crypt={props.crypt}
-                      total={props.drawedCrypt.length + props.restCrypt.length}
                       resultCards={props.burnedCrypt}
                       className="search-crypt-table"
                       ashHeap={true}
@@ -388,10 +384,6 @@ function DeckDrawModal(props) {
                     </div>
                     <DeckDrawLibraryTable
                       handleClick={handleModalLibraryCardOpen}
-                      library={props.library}
-                      total={
-                        props.drawedLibrary.length + props.restLibrary.length
-                      }
                       resultCards={props.burnedLibrary}
                       className="search-library-table"
                       ashHeap={true}
