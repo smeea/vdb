@@ -21,7 +21,6 @@
 * Card recommendation
 * Search for similar TWD decks
 * How can I help section - twd, rulings
-* Add KS bundles
 
 # MOBILE FEATURES
 * Offline PWA support

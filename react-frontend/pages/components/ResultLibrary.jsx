@@ -92,25 +92,26 @@ function ResultLibrary(props) {
               )}
             </>
           )}
-          {addMode ? (
-            <div
-              onClick={() => toggleAddMode()}
-              className="float-right-middle add-on"
-            >
-              <div className="pt-1 float-add">
-                <Plus viewBox="0 0 16 16" />
+          {props.activeDeck.deckid &&
+            (addMode ? (
+              <div
+                onClick={() => toggleAddMode()}
+                className="float-right-middle add-on"
+              >
+                <div className="pt-1 float-add">
+                  <Plus viewBox="0 0 16 16" />
+                </div>
               </div>
-            </div>
-          ) : (
-            <div
-              onClick={() => toggleAddMode()}
-              className="float-right-middle add-off"
-            >
-              <div className="pt-1 float-add">
-                <Plus viewBox="0 0 16 16" />
+            ) : (
+              <div
+                onClick={() => toggleAddMode()}
+                className="float-right-middle add-off"
+              >
+                <div className="pt-1 float-add">
+                  <Plus viewBox="0 0 16 16" />
+                </div>
               </div>
-            </div>
-          )}
+            ))}
         </>
       )}
     </>

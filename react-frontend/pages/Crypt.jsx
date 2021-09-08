@@ -18,7 +18,6 @@ function Crypt(props) {
     cryptResults,
     addMode,
     toggleAddMode,
-    username,
     isMobile,
   } = useContext(AppContext);
   const [sortMethod, setSortMethod] = useState('Capacity - Min to Max');
@@ -37,10 +36,10 @@ function Crypt(props) {
     >
       <Row>
         {!isMobile && (
-          <Col xl={username && addMode ? 4 : 3} className="px-0">
+          <Col xl={props.activeDeck.deckid && addMode ? 4 : 3} className="px-0">
             {decks && Object.keys(decks).length > 0 && (
               <div className="d-flex justify-content-end sticky-insearch pt-3 pb-2">
-                {addMode && (
+                {props.activeDeck.deckid && addMode && (
                   <>
                     <div className={isBranches ? 'w-75' : 'w-100'}>
                       <DeckSelectMy activeDeck={props.activeDeck} />
@@ -62,7 +61,7 @@ function Crypt(props) {
                 </div>
               </div>
             )}
-            {deckRouter(props.activeDeck) && addMode && (
+            {props.activeDeck.deckid && addMode && (
               <>
                 <div className="pt-2">
                   <DeckCrypt
@@ -120,7 +119,7 @@ function Crypt(props) {
         >
           <SearchCryptForm />
         </Col>
-        {(!username || !addMode) && !isMobile && <Col xl={1} />}
+        {(!props.activeDeck.deckid || !addMode) && !isMobile && <Col xl={1} />}
       </Row>
     </Container>
   );
