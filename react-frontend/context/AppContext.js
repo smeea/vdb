@@ -3,93 +3,7 @@ import defaultsTwdForm from '../pages/components/forms_data/defaultsTwdForm.json
 import defaultsCryptForm from '../pages/components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from '../pages/components/forms_data/defaultsLibraryForm.json';
 
-const AppContext = React.createContext({
-  isMobile: false,
-  isWide: false,
-  username: undefined,
-  setUsername: () => {},
-  lang: 'en-EN',
-  setLang: () => {},
-  publicName: undefined,
-  setPublicName: () => {},
-  email: undefined,
-  setEmail: () => {},
-  localizedCrypt: undefined,
-  showImage: true,
-  toggleShowImage: () => {},
-  addMode: false,
-  toggleAddMode: () => {},
-  hideMissing: false,
-  setHideMissing: () => {},
-  inventoryMode: false,
-  toggleInventoryMode: () => {},
-  isInventory: undefined,
-  cryptSortByCap: false,
-  toggleCryptSort: () => {},
-
-  cryptSearchSort: undefined,
-  librarySearchSort: undefined,
-  changeCryptSearchSort: () => {},
-  changeLibrarySearchSort: () => {},
-
-  cryptCardBase: undefined,
-  setCryptCardBase: () => {},
-  libraryCardBase: undefined,
-  setLibraryCardBase: () => {},
-  setLocalizedCrypt: () => {},
-  localizedLibrary: undefined,
-  setLocalizedLibrary: () => {},
-  nativeCrypt: undefined,
-  setNativeCrypt: () => {},
-  nativeLibrary: undefined,
-  setNativeLibrary: () => {},
-
-  twdFormState: undefined,
-  setTwdFormState: () => {},
-  cryptFormState: undefined,
-  setCryptFormState: () => {},
-  libraryFormState: undefined,
-  setLibraryFormState: () => {},
-
-  twdResults: undefined,
-  setTwdResults: () => {},
-  cryptResults: undefined,
-  setCryptResults: () => {},
-  libraryResults: undefined,
-  setLibraryResults: () => {},
-
-  usedCryptCards: undefined,
-  setUsedCryptCards: () => {},
-  usedLibraryCards: undefined,
-  setUsedLibraryCards: () => {},
-
-  showTwdSearch: undefined,
-  setShowTwdSearch: () => {},
-  showCryptSearch: undefined,
-  setShowCryptSearch: () => {},
-  showLibrarySearch: undefined,
-  setShowLibrarySearch: () => {},
-
-  inventoryCrypt: undefined,
-  setInventoryCrypt: () => {},
-  inventoryLibrary: undefined,
-  setInventoryLibrary: () => {},
-
-  preconDecks: undefined,
-  setPreconDecks: () => {},
-  decks: undefined,
-  setDecks: () => {},
-  activeDeck: undefined,
-  setActiveDeck: () => {},
-  sharedDeck: undefined,
-  setSharedDeck: () => {},
-  getDecks: () => {},
-  deckRouter: () => {},
-  deckUpdate: () => {},
-  deckCardChange: () => {},
-  inventoryCardChange: () => {},
-  changeTimer: undefined,
-});
+const AppContext = React.createContext();
 
 export default AppContext;
 
@@ -101,11 +15,11 @@ export const AppProvider = (props) => {
   const [publicName, setPublicName] = useState(undefined);
   const [email, setEmail] = useState(undefined);
   const [lang, setLang] = useState('en-EN');
-  const [showImage, setShowImage] = useState(true);
-  const [addMode, setAddMode] = useState(false);
-  const [inventoryMode, setInventoryMode] = useState(false);
-  const [hideMissing, setHideMissing] = useState(false);
-  const [cryptSortByCap, setCryptSortByCap] = useState(false);
+  const [showImage, setShowImage] = useState(undefined);
+  const [addMode, setAddMode] = useState(undefined);
+  const [inventoryMode, setInventoryMode] = useState(undefined);
+  const [hideMissing, setHideMissing] = useState(undefined);
+  const [cryptSortByCap, setCryptSortByCap] = useState(undefined);
   const [cryptSearchSort, setCryptSearchSort] = useState(undefined);
   const [librarySearchSort, setLibrarySearchSort] = useState(undefined);
 
@@ -157,41 +71,15 @@ export const AppProvider = (props) => {
     window.localStorage.setItem('lang', lang);
   };
 
-  useLayoutEffect(() => {
-    const lastLang = window.localStorage.getItem('lang');
-
-    if (lastLang) {
-      setLang(lastLang);
-    } else {
-      setLang('en-EN');
-    }
-  }, [lang]);
-
   const toggleShowImage = () => {
     setShowImage(!showImage);
     window.localStorage.setItem('showImage', !showImage);
   };
 
-  useLayoutEffect(() => {
-    if (window.localStorage.getItem('showImage') === 'false') {
-      setShowImage(false);
-    } else {
-      setShowImage(true);
-    }
-  }, [showImage]);
-
   const toggleInventoryMode = () => {
     setInventoryMode(!inventoryMode);
     window.localStorage.setItem('inventoryMode', !inventoryMode);
   };
-
-  useLayoutEffect(() => {
-    if (window.localStorage.getItem('inventoryMode') === 'true') {
-      setInventoryMode(true);
-    } else {
-      setInventoryMode(false);
-    }
-  }, [inventoryMode]);
 
   const isInventory =
     Object.keys(inventoryCrypt).length > 0 ||
@@ -201,14 +89,6 @@ export const AppProvider = (props) => {
     setCryptSortByCap(!cryptSortByCap);
     window.localStorage.setItem('cryptSortByCap', !cryptSortByCap);
   };
-
-  useLayoutEffect(() => {
-    if (window.localStorage.getItem('cryptSortByCap') === 'true') {
-      setCryptSortByCap(true);
-    } else {
-      setCryptSortByCap(false);
-    }
-  }, [cryptSortByCap]);
 
   const changeCryptSearchSort = (method) => {
     setCryptSearchSort(method);
@@ -220,34 +100,61 @@ export const AppProvider = (props) => {
     window.localStorage.setItem('librarySearchSort', method);
   };
 
-  useLayoutEffect(() => {
-    const c = window.localStorage.getItem('cryptSearchSort');
-    if (c) {
-      setCryptSearchSort(c);
-    } else {
-      setCryptSearchSort('Capacity - Min to Max');
-    }
-
-    const l = window.localStorage.getItem('librarySearchSort');
-    if (l) {
-      setLibrarySearchSort(l);
-    } else {
-      setLibrarySearchSort('Type');
-    }
-  }, []);
-
   const toggleAddMode = () => {
     setAddMode(!addMode);
     window.localStorage.setItem('addMode', !addMode);
   };
 
   useLayoutEffect(() => {
-    if (window.localStorage.getItem('addMode') === 'false') {
+    const cs = window.localStorage.getItem('cryptSearchSort');
+    if (cs) {
+      setCryptSearchSort(cs);
+    } else {
+      setCryptSearchSort('Capacity - Min to Max');
+    }
+
+    const ls = window.localStorage.getItem('librarySearchSort');
+    if (ls) {
+      setLibrarySearchSort(ls);
+    } else {
+      setLibrarySearchSort('Type');
+    }
+
+    const lg = window.localStorage.getItem('lang');
+    if (lg) {
+      setLang(lg);
+    } else {
+      setLang('en-EN');
+    }
+
+    const am = window.localStorage.getItem('addMode');
+    if (am === 'false') {
       setAddMode(false);
     } else {
       setAddMode(true);
     }
-  }, [addMode]);
+
+    const im = window.localStorage.getItem('inventoryMode');
+    if (im === 'true') {
+      setInventoryMode(true);
+    } else {
+      setInventoryMode(false);
+    }
+
+    const csc = window.localStorage.getItem('cryptSortByCap');
+    if (csc === 'true') {
+      setCryptSortByCap(true);
+    } else {
+      setCryptSortByCap(false);
+    }
+
+    const si = window.localStorage.getItem('showImage');
+    if (si === 'false') {
+      setShowImage(false);
+    } else {
+      setShowImage(true);
+    }
+  }, []);
 
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
