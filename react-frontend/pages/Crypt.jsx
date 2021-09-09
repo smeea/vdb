@@ -20,7 +20,6 @@ function Crypt(props) {
     toggleAddMode,
     isMobile,
   } = useContext(AppContext);
-  const [sortMethod, setSortMethod] = useState('Capacity - Min to Max');
 
   let isBranches;
   if (deckRouter(props.activeDeck)) {
@@ -100,8 +99,6 @@ function Crypt(props) {
                 deckRouter(props.activeDeck).crypt
               }
               activeDeck={props.activeDeck}
-              sortMethod={sortMethod}
-              setSortMethod={setSortMethod}
             />
           )}
         </Col>

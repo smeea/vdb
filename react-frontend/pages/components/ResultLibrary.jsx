@@ -20,6 +20,8 @@ function ResultLibrary(props) {
     toggleInventoryMode,
     isMobile,
     isInventory,
+    librarySearchSort,
+    changeLibrarySearchSort,
   } = useContext(AppContext);
 
   const [sortedCards, setSortedCards] = useState([]);
@@ -27,7 +29,7 @@ function ResultLibrary(props) {
   const history = useHistory();
 
   const handleChange = (method) => {
-    props.setSortMethod(method);
+    changeLibrarySearchSort(method);
     setSortedCards(() => resultLibrarySort(libraryResults, method));
   };
 
@@ -38,8 +40,8 @@ function ResultLibrary(props) {
   };
 
   useEffect(() => {
-    setSortedCards(() => resultLibrarySort(libraryResults, props.sortMethod));
-  }, [libraryResults, props.sortMethod]);
+    setSortedCards(() => resultLibrarySort(libraryResults, librarySearchSort));
+  }, [libraryResults]);
 
   return (
     <>
@@ -51,7 +53,7 @@ function ResultLibrary(props) {
       {libraryResults.length > 0 && (
         <>
           <ResultLibraryTotal
-            value={props.sortMethod}
+            value={librarySearchSort}
             handleChange={handleChange}
           />
           <ResultLibraryTable

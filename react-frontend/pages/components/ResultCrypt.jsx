@@ -20,6 +20,8 @@ function ResultCrypt(props) {
     toggleInventoryMode,
     isMobile,
     isInventory,
+    cryptSearchSort,
+    changeCryptSearchSort,
   } = useContext(AppContext);
 
   const [sortedCards, setSortedCards] = useState([]);
@@ -28,7 +30,7 @@ function ResultCrypt(props) {
   const history = useHistory();
 
   const handleChange = (method) => {
-    props.setSortMethod(method);
+    changeCryptSearchSort(method);
     setSortedCards(() => resultCryptSort(cryptResults, method));
   };
 
@@ -39,8 +41,8 @@ function ResultCrypt(props) {
   };
 
   useEffect(() => {
-    setSortedCards(() => resultCryptSort(cryptResults, props.sortMethod));
-  }, [cryptResults, props.sortMethod]);
+    setSortedCards(() => resultCryptSort(cryptResults, cryptSearchSort));
+  }, [cryptResults]);
 
   return (
     <>
@@ -52,7 +54,7 @@ function ResultCrypt(props) {
       {cryptResults.length > 0 && (
         <>
           <ResultCryptTotal
-            value={props.sortMethod}
+            value={cryptSearchSort}
             handleChange={handleChange}
           />
           <ResultCryptTable

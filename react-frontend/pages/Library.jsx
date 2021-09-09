@@ -20,7 +20,6 @@ function Library(props) {
     toggleAddMode,
     isMobile,
   } = useContext(AppContext);
-  const [sortMethod, setSortMethod] = useState('Type');
 
   let isBranches;
   if (deckRouter(props.activeDeck)) {
@@ -100,8 +99,6 @@ function Library(props) {
                 deckRouter(props.activeDeck).library
               }
               activeDeck={props.activeDeck}
-              sortMethod={sortMethod}
-              setSortMethod={setSortMethod}
             />
           )}
         </Col>

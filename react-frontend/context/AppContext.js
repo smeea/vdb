@@ -27,6 +27,11 @@ const AppContext = React.createContext({
   cryptSortByCap: false,
   toggleCryptSort: () => {},
 
+  cryptSearchSort: undefined,
+  librarySearchSort: undefined,
+  changeCryptSearchSort: () => {},
+  changeLibrarySearchSort: () => {},
+
   cryptCardBase: undefined,
   setCryptCardBase: () => {},
   libraryCardBase: undefined,
@@ -101,6 +106,8 @@ export const AppProvider = (props) => {
   const [inventoryMode, setInventoryMode] = useState(false);
   const [hideMissing, setHideMissing] = useState(false);
   const [cryptSortByCap, setCryptSortByCap] = useState(false);
+  const [cryptSearchSort, setCryptSearchSort] = useState(undefined);
+  const [librarySearchSort, setLibrarySearchSort] = useState(undefined);
 
   const [cryptCardBase, setCryptCardBase] = useState(undefined);
   const [libraryCardBase, setLibraryCardBase] = useState(undefined);
@@ -202,6 +209,32 @@ export const AppProvider = (props) => {
       setCryptSortByCap(false);
     }
   }, [cryptSortByCap]);
+
+  const changeCryptSearchSort = (method) => {
+    setCryptSearchSort(method);
+    window.localStorage.setItem('cryptSearchSort', method);
+  };
+
+  const changeLibrarySearchSort = (method) => {
+    setLibrarySearchSort(method);
+    window.localStorage.setItem('librarySearchSort', method);
+  };
+
+  useLayoutEffect(() => {
+    const c = window.localStorage.getItem('cryptSearchSort');
+    if (c) {
+      setCryptSearchSort(c);
+    } else {
+      setCryptSearchSort('Capacity - Min to Max');
+    }
+
+    const l = window.localStorage.getItem('librarySearchSort');
+    if (l) {
+      setLibrarySearchSort(l);
+    } else {
+      setLibrarySearchSort('Type');
+    }
+  }, []);
 
   const toggleAddMode = () => {
     setAddMode(!addMode);
@@ -435,6 +468,10 @@ export const AppProvider = (props) => {
         toggleShowImage,
         cryptSortByCap,
         toggleCryptSort,
+        cryptSearchSort,
+        librarySearchSort,
+        changeCryptSearchSort,
+        changeLibrarySearchSort,
 
         cryptCardBase,
         setCryptCardBase,

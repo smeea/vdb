@@ -21,7 +21,7 @@
 * Card recommendation
 * Search for similar TWD decks
 * How can I help section - twd, rulings
-* Store sorting in localStorage
+* Card text history
 
 # MOBILE FEATURES
 * Offline PWA support
