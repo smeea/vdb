@@ -31,7 +31,6 @@
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Sync: websockets
-* Reduce hook calls (login, decks, inventory)
 * Move autocompletion to frontend
 * Update to parcel 2
 * Update to react-bootstrap 2

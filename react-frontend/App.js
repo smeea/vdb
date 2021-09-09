@@ -499,19 +499,23 @@ function App(props) {
 
   useEffect(() => {
     whoAmI();
-    (!cryptCardBase || !libraryCardBase) && getCardBase();
+    getCardBase();
   }, []);
 
   useEffect(() => {
-    if (username) {
-      whoAmI();
-      cryptCardBase && libraryCardBase && getInventory();
-      cryptCardBase && libraryCardBase && getDecks();
+    cryptCardBase && libraryCardBase && getPreconDecks();
+  }, [cryptCardBase, libraryCardBase]);
+
+  useEffect(() => {
+    if (username && nativeCrypt && nativeLibrary) {
+      getInventory();
+      getDecks();
     } else {
+      setInventoryCrypt({});
+      setInventoryLibrary({});
       setDecks(undefined);
     }
-    cryptCardBase && libraryCardBase && getPreconDecks();
-  }, [username, cryptCardBase, libraryCardBase]);
+  }, [username, nativeCrypt, nativeLibrary]);
 
   useEffect(() => {
     if (lastDeck && lastDeck.deckid && !activeDeck.deckid) {
