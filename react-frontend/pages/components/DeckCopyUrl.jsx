@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, Dropdown } from 'react-bootstrap';
 import ShareFill from '../../assets/images/icons/share-fill.svg';
 import AppContext from '../../context/AppContext.js';

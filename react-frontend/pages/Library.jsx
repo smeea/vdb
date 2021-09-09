@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import EyeFill from '../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../assets/images/icons/eye-slash-fill.svg';
