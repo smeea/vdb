@@ -7,8 +7,8 @@ import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
+import DeckCryptDisciplines from './DeckCryptDisciplines.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
-import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
@@ -343,7 +343,7 @@ function DeckCryptTable(props) {
             }
             onClick={() => handleClick()}
           >
-            <ResultCryptDisciplines
+            <DeckCryptDisciplines
               value={card.c['Disciplines']}
               disciplinesSet={props.disciplinesSet}
               keyDisciplines={props.keyDisciplines}
