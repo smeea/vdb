@@ -16,7 +16,8 @@ import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function AccountLogin(props) {
-  const { setUsername, isMobile } = useContext(AppContext);
+  const { setPublicName, setEmail, setUsername, isMobile } =
+    useContext(AppContext);
 
   const [state, setState] = useState({
     username: '',
@@ -76,6 +77,8 @@ function AccountLogin(props) {
         })
         .then((data) => {
           setUsername(state.username);
+          setPublicName(data.public_name);
+          setEmail(data.email);
           setSpinnerState(false);
         })
         .catch((error) => {

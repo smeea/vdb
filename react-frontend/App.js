@@ -365,8 +365,8 @@ function App(props) {
       .then((response) => response.json())
       .then((data) => {
         setUsername(data.username);
-        data.public_name && setPublicName(data.public_name);
-        data.email && setEmail(data.email);
+        setPublicName(data.public_name);
+        setEmail(data.email);
       });
   };
 
@@ -507,13 +507,18 @@ function App(props) {
   }, [cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (username && nativeCrypt && nativeLibrary) {
-      getInventory();
-      getDecks();
+    if (username) {
+      if (nativeCrypt && nativeLibrary) {
+        getInventory();
+        getDecks();
+      }
     } else {
       setInventoryCrypt({});
       setInventoryLibrary({});
       setDecks(undefined);
+      setActiveDeck({ src: null, deckid: null });
+      setLastDeck({});
+      setEmail(undefined);
     }
   }, [username, nativeCrypt, nativeLibrary]);
 
@@ -586,7 +591,7 @@ function App(props) {
               />
             </Route>
             <Route path="/decks">
-              <Decks activeDeck={activeDeck} />
+              <Decks />
             </Route>
             <Route path="/crypt">
               <Crypt

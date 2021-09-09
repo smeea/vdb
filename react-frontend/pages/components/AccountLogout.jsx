@@ -15,7 +15,7 @@ function AccountLogout(props) {
     };
     fetch(url, options);
 
-    setUsername(undefined);
+    setUsername('');
   };
 
   return (

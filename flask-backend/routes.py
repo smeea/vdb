@@ -956,7 +956,11 @@ def login():
                     request.json['password']):
                 return jsonify({'error': 'invalid username or password'}), 401
             login_user(user, remember=request.json['remember'])
-            return jsonify({'logged in as': current_user.username})
+            return jsonify({
+                'logged in as': current_user.username,
+                'email': current_user.email,
+                'public_name': current_user.public_name,
+            })
         except KeyError:
             pass
 

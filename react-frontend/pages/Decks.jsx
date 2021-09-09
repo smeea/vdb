@@ -28,6 +28,7 @@ function Decks(props) {
   const {
     deckUpdate,
     deckRouter,
+    activeDeck,
     setActiveDeck,
     sharedDeck,
     setSharedDeck,
@@ -128,9 +129,9 @@ function Decks(props) {
 
   let missingCrypt;
   let missingLibrary;
-  if (deckRouter(props.activeDeck)) {
-    missingCrypt = getMissingCrypt(deckRouter(props.activeDeck));
-    missingLibrary = getMissingLibrary(deckRouter(props.activeDeck));
+  if (deckRouter(activeDeck)) {
+    missingCrypt = getMissingCrypt(deckRouter(activeDeck));
+    missingLibrary = getMissingLibrary(deckRouter(activeDeck));
   }
 
   const getDeck = (deckid) => {
@@ -160,27 +161,27 @@ function Decks(props) {
   };
 
   const toggleInventoryState = () => {
-    const inventoryType = decks[props.activeDeck.deckid].inventory_type;
+    const inventoryType = decks[activeDeck.deckid].inventory_type;
     if (!inventoryType) {
-      deckUpdate(props.activeDeck.deckid, 'makeFlexible', 'all');
+      deckUpdate(activeDeck.deckid, 'makeFlexible', 'all');
     } else if (inventoryType == 's') {
-      deckUpdate(props.activeDeck.deckid, 'makeFixed', 'all');
+      deckUpdate(activeDeck.deckid, 'makeFixed', 'all');
     } else if (inventoryType == 'h') {
-      deckUpdate(props.activeDeck.deckid, 'makeClear', 'all');
+      deckUpdate(activeDeck.deckid, 'makeClear', 'all');
     }
   };
 
   let isAuthor;
-  if (deckRouter(props.activeDeck)) {
-    isAuthor = username == deckRouter(props.activeDeck).owner && username;
+  if (deckRouter(activeDeck)) {
+    isAuthor = username == deckRouter(activeDeck).owner && username;
   }
 
   let isBranches;
-  if (deckRouter(props.activeDeck)) {
+  if (deckRouter(activeDeck)) {
     isBranches =
-      deckRouter(props.activeDeck).master ||
-      (deckRouter(props.activeDeck).branches &&
-        deckRouter(props.activeDeck).branches.length > 0);
+      deckRouter(activeDeck).master ||
+      (deckRouter(activeDeck).branches &&
+        deckRouter(activeDeck).branches.length > 0);
   }
 
   useEffect(() => {
@@ -222,7 +223,7 @@ function Decks(props) {
 
   useEffect(() => {
     if (
-      !props.activeDeck.deckid &&
+      !activeDeck.deckid &&
       query.get('id') &&
       cryptCardBase &&
       libraryCardBase
@@ -238,41 +239,37 @@ function Decks(props) {
     }
 
     if (
-      props.activeDeck.deckid &&
-      props.activeDeck.deckid != query.get('id') &&
-      props.activeDeck.deckid != 'deckInUrl'
+      activeDeck.deckid &&
+      activeDeck.deckid != query.get('id') &&
+      activeDeck.deckid != 'deckInUrl'
     )
-      history.push(`/decks?id=${props.activeDeck.deckid}`);
+      history.push(`/decks?id=${activeDeck.deckid}`);
 
     if (
-      props.activeDeck.src == 'twd' &&
-      !(sharedDeck && sharedDeck[props.activeDeck.deckid])
+      activeDeck.src == 'twd' &&
+      !(sharedDeck && sharedDeck[activeDeck.deckid])
     ) {
-      cryptCardBase && libraryCardBase && getDeck(props.activeDeck.deckid);
+      cryptCardBase && libraryCardBase && getDeck(activeDeck.deckid);
     }
-  }, [query, props.activeDeck, cryptCardBase, libraryCardBase]);
+  }, [query, activeDeck, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (props.activeDeck.src == 'my' || props.activeDeck.src == 'precons') {
-      setSelectFrom(props.activeDeck.src);
+    if (activeDeck.src == 'my' || activeDeck.src == 'precons') {
+      setSelectFrom(activeDeck.src);
     } else if (
-      (props.activeDeck.src == 'twd' || props.activeDeck.src == 'shared') &&
+      (activeDeck.src == 'twd' || activeDeck.src == 'shared') &&
       decks &&
       Object.keys(decks).length > 0
     ) {
       setSelectFrom('my');
     }
 
-    if (
-      decks &&
-      decks[props.activeDeck.deckid] &&
-      props.activeDeck.src != 'my'
-    ) {
-      setActiveDeck({ src: 'my', deckid: props.activeDeck.deckid });
+    if (decks && decks[activeDeck.deckid] && activeDeck.src != 'my') {
+      setActiveDeck({ src: 'my', deckid: activeDeck.deckid });
     }
 
-    if (deckRouter(props.activeDeck)) setDeckError(false);
-  }, [props.activeDeck, decks]);
+    if (deckRouter(activeDeck)) setDeckError(false);
+  }, [activeDeck, decks]);
 
   return (
     <Container className={isMobile ? 'deck-container' : 'deck-container py-3'}>
@@ -294,37 +291,36 @@ function Decks(props) {
                   >
                     <div className={isBranches ? 'w-75' : 'w-100'}>
                       {selectFrom == 'my' ? (
-                        <DeckSelectMy activeDeck={props.activeDeck} />
+                        <DeckSelectMy activeDeck={activeDeck} />
                       ) : (
-                        <DeckSelectPrecon activeDeck={props.activeDeck} />
+                        <DeckSelectPrecon activeDeck={activeDeck} />
                       )}
                     </div>
                     {selectFrom == 'my' && isBranches && (
                       <div className="pl-1 w-25">
-                        <DeckBranchSelect activeDeck={props.activeDeck} />
+                        <DeckBranchSelect activeDeck={activeDeck} />
                       </div>
                     )}
                     <div className="d-flex">
-                      {inventoryMode &&
-                        isAuthor &&
-                        deckRouter(props.activeDeck) && (
-                          <div className="d-flex pl-1">
-                            <Button
-                              variant="outline-secondary"
-                              onClick={() => toggleInventoryState()}
-                            >
-                              <div className="d-flex align-items-center">
-                                {!deckRouter(props.activeDeck)
-                                  .inventory_type && <At />}
-                                {deckRouter(props.activeDeck).inventory_type ==
-                                  's' && <Shuffle />}
-                                {deckRouter(props.activeDeck).inventory_type ==
-                                  'h' && <PinAngleFill />}
-                              </div>
-                            </Button>
-                          </div>
-                        )}
-                      {isMobile && deckRouter(props.activeDeck) && (
+                      {inventoryMode && isAuthor && deckRouter(activeDeck) && (
+                        <div className="d-flex pl-1">
+                          <Button
+                            variant="outline-secondary"
+                            onClick={() => toggleInventoryState()}
+                          >
+                            <div className="d-flex align-items-center">
+                              {!deckRouter(activeDeck).inventory_type && <At />}
+                              {deckRouter(activeDeck).inventory_type == 's' && (
+                                <Shuffle />
+                              )}
+                              {deckRouter(activeDeck).inventory_type == 'h' && (
+                                <PinAngleFill />
+                              )}
+                            </div>
+                          </Button>
+                        </div>
+                      )}
+                      {isMobile && deckRouter(activeDeck) && (
                         <div className="d-flex pl-1">
                           <Button
                             variant="outline-secondary"
@@ -384,8 +380,8 @@ function Decks(props) {
               </Row>
             </Col>
             <Col md={7} className="px-0 px-lg-3">
-              {((showInfo && deckRouter(props.activeDeck)) ||
-                (!isMobile && deckRouter(props.activeDeck))) && (
+              {((showInfo && deckRouter(activeDeck)) ||
+                (!isMobile && deckRouter(activeDeck))) && (
                 <>
                   <Row className={isMobile ? 'mx-0' : 'mx-0 pb-2'}>
                     <Col
@@ -393,24 +389,24 @@ function Decks(props) {
                       className={isMobile ? 'px-0' : 'pl-0 pr-1'}
                     >
                       <DeckChangeName
-                        name={deckRouter(props.activeDeck).name}
-                        deckid={props.activeDeck.deckid}
+                        name={deckRouter(activeDeck).name}
+                        deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
                       />
                     </Col>
                     {isBranches && (
                       <Col md={2} className={isMobile ? 'px-0' : 'pl-0 pr-0'}>
                         <DeckChangeBranchName
-                          branchName={deckRouter(props.activeDeck).branchName}
-                          deckid={props.activeDeck.deckid}
+                          branchName={deckRouter(activeDeck).branchName}
+                          deckid={activeDeck.deckid}
                           isAuthor={isAuthor}
                         />
                       </Col>
                     )}
                     <Col md={4} className={isMobile ? 'px-0' : 'pl-1 pr-0'}>
                       <DeckChangeAuthor
-                        author={deckRouter(props.activeDeck).author}
-                        deckid={props.activeDeck.deckid}
+                        author={deckRouter(activeDeck).author}
+                        deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
                       />
                     </Col>
@@ -418,8 +414,8 @@ function Decks(props) {
                   <Row className="mx-0">
                     <Col className="px-0">
                       <DeckChangeDescription
-                        description={deckRouter(props.activeDeck).description}
-                        deckid={props.activeDeck.deckid}
+                        description={deckRouter(activeDeck).description}
+                        deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
                       />
                     </Col>
@@ -437,13 +433,13 @@ function Decks(props) {
               </Col>
             </Row>
           )}
-          {deckRouter(props.activeDeck) && (
+          {deckRouter(activeDeck) && (
             <Row>
               <Col md={7} className="px-0 pl-md-3 pr-md-2 px-xl-3 pt-lg-4">
                 <div className={isMobile ? null : 'sticky'}>
                   <DeckCrypt
-                    deckid={props.activeDeck.deckid}
-                    cards={deckRouter(props.activeDeck).crypt}
+                    deckid={activeDeck.deckid}
+                    cards={deckRouter(activeDeck).crypt}
                     isAuthor={isAuthor}
                     showFloatingButtons={showFloatingButtons}
                     setShowFloatingButtons={setShowFloatingButtons}
@@ -453,8 +449,8 @@ function Decks(props) {
               <Col md={5} className="pt-4 pt-lg-0 px-0 pl-md-2 pr-md-3 px-xl-3">
                 <DeckLibrary
                   inDeckTab={true}
-                  deckid={props.activeDeck.deckid}
-                  cards={deckRouter(props.activeDeck).library}
+                  deckid={activeDeck.deckid}
+                  cards={deckRouter(activeDeck).library}
                   isAuthor={isAuthor}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}
@@ -468,8 +464,8 @@ function Decks(props) {
             <div className="sticky">
               <DeckButtons
                 isAuthor={isAuthor}
-                deck={deckRouter(props.activeDeck)}
-                activeDeck={props.activeDeck}
+                deck={deckRouter(activeDeck)}
+                activeDeck={activeDeck}
                 setShowInfo={setShowInfo}
                 setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
@@ -479,7 +475,7 @@ function Decks(props) {
           </Col>
         )}
       </Row>
-      {username === '' && !props.activeDeck.deckid && (
+      {username === '' && !activeDeck.deckid && (
         <Row className="h-50 align-items-center justify-content-center px-2">
           <Col xs={12} md={5} className="px-0">
             <div className="d-flex justify-content-center pt-4 pb-2">
@@ -559,8 +555,8 @@ function Decks(props) {
               </Row>
               <DeckButtons
                 isAuthor={isAuthor}
-                deck={deckRouter(props.activeDeck)}
-                activeDeck={props.activeDeck}
+                deck={deckRouter(activeDeck)}
+                activeDeck={activeDeck}
                 setShowInfo={setShowInfo}
                 setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
