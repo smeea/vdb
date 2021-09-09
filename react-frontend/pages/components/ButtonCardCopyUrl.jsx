@@ -16,6 +16,7 @@ function ButtonCardCopyUrl(props) {
     setTimeout(() => {
       setState(false);
     }, 1000);
+    isMobile && props.setShowButtons(false);
   };
 
   return (
