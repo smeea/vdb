@@ -10,9 +10,9 @@ function DeckSelectPrecon(props) {
   precons.map((i, index) => {
     if (i[0] != 'any' && i[0] != 'bcp') {
       const clanImages = i[4].map((clan, index) => {
-        const imgSrc = `${
-          process.env.ROOT_URL
-        }images/clans/${clan.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
+        const imgSrc = `${process.env.ROOT_URL}images/clans/${clan
+          .toLowerCase()
+          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
 
         return (
           <div className="d-inline pr-3" key={index}>

@@ -6,10 +6,42 @@ import AppContext from '../../context/AppContext.js';
 
 function SearchFormPrecon(props) {
   const { isMobile } = useContext(AppContext);
-  const options = [];
 
+  const options = [];
   precons.map((i, index) => {
-    if (i[0] == 'any' || i[0] == 'bcp') {
+    if (i[0] != 'any' && i[0] != 'bcp') {
+      const clanImages = i[4].map((clan, index) => {
+        const imgSrc = `${process.env.ROOT_URL}images/clans/${clan
+          .toLowerCase()
+          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
+
+        return (
+          <div className="d-inline pr-3" key={index}>
+            {clan != 'Bundle' && clan != 'Mix' && (
+              <img src={imgSrc} className="clan-image-results" />
+            )}
+          </div>
+        );
+      });
+
+      options.push({
+        value: `${i[1]}:${i[2]}`,
+        name: 'precon',
+        label: (
+          <div className="d-flex justify-content-between align-items-center">
+            <div className="pr-2">
+              <div
+                className={clanImages.length == 1 ? 'margin-full' : 'd-inline'}
+              >
+                {clanImages}
+              </div>
+              {i[3]}
+            </div>
+            <div className="small">{`${i[1]} '${i[0]}`}</div>
+          </div>
+        ),
+      });
+    } else {
       options.push({
         value: i[0],
         name: 'precon',
@@ -18,17 +50,6 @@ function SearchFormPrecon(props) {
             <span className="margin-full" />
             {i[1]}
           </>
-        ),
-      });
-    } else {
-      options.push({
-        value: i[1] + ':' + i[2],
-        name: 'precon',
-        label: (
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="pr-2">{i[3]}</div>
-            <div className="pl-2 small">{`${i[1]} '${i[0]}`}</div>
-          </div>
         ),
       });
     }
@@ -58,14 +79,13 @@ function SearchFormPrecon(props) {
     );
   });
 
-  const filterOption = ({ label, value }, string) => {
-    let name = undefined;
-    if (value == 'any' || value == 'bcp') {
+  const filterOption = ({ label }, string) => {
+    const l = label.props.children[1];
+    if (l == 'any' || l == 'bcp') {
       name = label.props.children[1];
     } else {
       name = label.props.children[0].props.children;
     }
-
     if (name) {
       return name.toLowerCase().includes(string);
     } else {
