@@ -450,8 +450,12 @@ img.card-popover
   width: 30px
   font-size: 1.1em
   background: rgba(0, 0, 170, 0.05);
-.search-crypt-table td.disciplines
-  width: 231px
+.search-crypt-table td.disciplines td
+  min-width: 28px
+@media (max-width: 576px)
+  .search-crypt-table td.disciplines td
+    min-width: 25px
+
 .search-crypt-table td.name
   text-align: left
 .search-crypt-table td.prob
@@ -625,6 +629,7 @@ font-1.85
   height: 24px
 .discipline-superior-image-results
   height: 27px
+
 .discipline-base-image-results,
 .discipline-base-image-forms,
 .discipline-superior-image-results,

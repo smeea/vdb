@@ -28,6 +28,13 @@ function ResultCryptTable(props) {
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
   let resultTrClass;
+  let maxDisciplines = 0;
+  props.resultCards.map((card) => {
+    const n = Object.keys(card['Disciplines']).length;
+    if (maxDisciplines < n) {
+      maxDisciplines = n;
+    }
+  });
 
   const handleModalCardChange = (d) => {
     const maxIdx = props.resultCards.length - 1;
@@ -176,14 +183,17 @@ function ResultCryptTable(props) {
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
-            <ResultCryptDisciplines value={card['Disciplines']} />
+            <ResultCryptDisciplines
+              maxDisciplines={maxDisciplines}
+              value={card['Disciplines']}
+            />
           </td>
           {!isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
               overlay={<CardPopover card={card} />}
             >
-              <td className="name px-1" onClick={() => handleClick()}>
+              <td className="name px-2" onClick={() => handleClick()}>
                 <ResultCryptName card={card} />
               </td>
             </OverlayTrigger>
