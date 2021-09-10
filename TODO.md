@@ -14,6 +14,7 @@
 * Crypt unique draw chances to info line
 * Deck/revision diff
 * How can I help section - twd, rulings
+* TWD new/random to respect url
 
 # BIG FEATURES
 * Card text history
