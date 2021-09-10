@@ -328,7 +328,7 @@ function DeckCryptTable(props) {
             </>
           )}
           <td
-            className={isMobile ? 'capacity px-1' : 'capacity px-2'}
+            className={isMobile ? 'capacity' : 'capacity px-1'}
             onClick={() => handleClick()}
           >
             <ResultCryptCapacity value={card.c['Capacity']} />
@@ -351,7 +351,7 @@ function DeckCryptTable(props) {
               </td>
             </OverlayTrigger>
           ) : (
-            <td className="name px-1" onClick={() => handleClick()}>
+            <td className="name" onClick={() => handleClick()}>
               <ResultCryptName card={card.c} />
             </td>
           )}

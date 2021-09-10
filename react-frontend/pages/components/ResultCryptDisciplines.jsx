@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import AppContext from '../../context/AppContext';
 
 function ResultCryptDisciplines(props) {
-  const { isMobile } = useContext(AppContext);
-
   const emptyCols = [];
   let counter = 0;
   const width = 100 / props.maxDisciplines + '%';
@@ -36,16 +34,14 @@ function ResultCryptDisciplines(props) {
   }
 
   return (
-    <span className="discipline">
-      <table width="100%">
-        <tbody>
-          <tr>
-            {disciplineCols}
-            {emptyCols}
-          </tr>
-        </tbody>
-      </table>
-    </span>
+    <table className="disicipline" width="100%">
+      <tbody>
+        <tr>
+          {disciplineCols}
+          {emptyCols}
+        </tr>
+      </tbody>
+    </table>
   );
 }
 

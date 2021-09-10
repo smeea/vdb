@@ -4,7 +4,6 @@ import AppContext from '../../context/AppContext';
 function DeckCryptDisciplines(props) {
   const { isMobile } = useContext(AppContext);
 
-  let disciplineCols;
   const emptyCols = [];
   let counter = 0;
   let maxCols;
@@ -17,59 +16,22 @@ function DeckCryptDisciplines(props) {
 
   const width = 100 / maxCols + '%';
 
-  if (props.disciplinesSet) {
-    disciplineCols = props.disciplinesSet.map((d, index) => {
-      let imgSrc;
-      let imgClass;
-      if (props.value[d] == 1) {
-        imgSrc = `${process.env.ROOT_URL}images/disciplines/${d
-          .toLowerCase()
-          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
-        imgClass = 'discipline-base-image-results';
-      } else if (props.value[d] == 2) {
-        imgSrc = `${process.env.ROOT_URL}images/disciplines/${d
-          .toLowerCase()
-          .replace(/[\s,:!?'.\-]/g, '')}sup.svg`;
-        imgClass = 'discipline-superior-image-results';
-      }
-      if (counter < props.keyDisciplines) {
-        counter += 1;
-        return (
-          <td width={width} key={index}>
-            {props.value[d] && (
-              <img className={imgClass} src={imgSrc} title={d} />
-            )}
-          </td>
-        );
-      } else if (props.value[d]) {
-        counter += 1;
-        return (
-          <td width={width} key={index}>
-            {props.value[d] && (
-              <img className={imgClass} src={imgSrc} title={d} />
-            )}
-          </td>
-        );
-      } else {
-        return null;
-      }
-    });
-  } else {
-    disciplineCols = Object.keys(props.value).map((d, index) => {
+  const disciplineCols = props.disciplinesSet.map((d, index) => {
+    let imgSrc;
+    let imgClass;
+    if (props.value[d] == 1) {
+      imgSrc = `${process.env.ROOT_URL}images/disciplines/${d
+        .toLowerCase()
+        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
+      imgClass = 'discipline-base-image-results';
+    } else if (props.value[d] == 2) {
+      imgSrc = `${process.env.ROOT_URL}images/disciplines/${d
+        .toLowerCase()
+        .replace(/[\s,:!?'.\-]/g, '')}sup.svg`;
+      imgClass = 'discipline-superior-image-results';
+    }
+    if (counter < props.keyDisciplines) {
       counter += 1;
-      let imgSrc;
-      let imgClass;
-      if (props.value[d] == 1) {
-        imgSrc = `${process.env.ROOT_URL}images/disciplines/${d
-          .toLowerCase()
-          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
-        imgClass = 'discipline-base-image-results';
-      } else if (props.value[d] == 2) {
-        imgSrc = `${process.env.ROOT_URL}images/disciplines/${d
-          .toLowerCase()
-          .replace(/[\s,:!?'.\-]/g, '')}sup.svg`;
-        imgClass = 'discipline-superior-image-results';
-      }
       return (
         <td width={width} key={index}>
           {props.value[d] && (
@@ -77,8 +39,19 @@ function DeckCryptDisciplines(props) {
           )}
         </td>
       );
-    });
-  }
+    } else if (props.value[d]) {
+      counter += 1;
+      return (
+        <td width={width} key={index}>
+          {props.value[d] && (
+            <img className={imgClass} src={imgSrc} title={d} />
+          )}
+        </td>
+      );
+    } else {
+      return null;
+    }
+  });
 
   while (counter < maxCols) {
     counter += 1;
@@ -86,16 +59,14 @@ function DeckCryptDisciplines(props) {
   }
 
   return (
-    <span className="discipline">
-      <table width="100%">
-        <tbody>
-          <tr>
-            {disciplineCols}
-            {emptyCols}
-          </tr>
-        </tbody>
-      </table>
-    </span>
+    <table className="discipline" width="100%">
+      <tbody>
+        <tr>
+          {disciplineCols}
+          {emptyCols}
+        </tr>
+      </tbody>
+    </table>
   );
 }
 
