@@ -16,7 +16,7 @@ function SearchFormPrecon(props) {
           .replace(/[\s,:!?'.\-]/g, '')}.svg`;
 
         return (
-          <div className="d-inline pr-3" key={index}>
+          <div className="d-inline" key={index}>
             {clan != 'Bundle' && clan != 'Mix' && (
               <img src={imgSrc} className="clan-image-results" />
             )}
