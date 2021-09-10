@@ -1,6 +1,5 @@
 # FIX
 * Save scrolling position
-* Day theme selector gray parts to theme
 
 # FIX MOBILE
 * Select click color on mobile
