@@ -6,9 +6,8 @@ import At from '../../assets/images/icons/at.svg';
 import AppContext from '../../context/AppContext.js';
 
 function DeckSelectMy(props) {
-  const { inventoryMode, setActiveDeck, decks, isMobile } = useContext(
-    AppContext
-  );
+  const { inventoryMode, setActiveDeck, decks, isMobile } =
+    useContext(AppContext);
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
@@ -23,7 +22,7 @@ function DeckSelectMy(props) {
           name: 'deck',
           label: (
             <div className="d-flex justify-content-between align-items-center">
-              {decks[i]['name']}
+              <div className="d-inline trimmed">{decks[i]['name']}</div>
               <div className="d-flex align-items-center pl-2 small">
                 {inventoryMode && (
                   <div className="pr-2">
@@ -46,7 +45,7 @@ function DeckSelectMy(props) {
   });
 
   const filterOption = ({ label }, string) => {
-    const name = label.props.children[0];
+    const name = label.props.children[0].props.children;
     if (name) {
       return name.toLowerCase().includes(string);
     } else {

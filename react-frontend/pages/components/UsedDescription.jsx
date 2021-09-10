@@ -19,7 +19,9 @@ const UsedDescription = (props) => {
         <b>{props.q}</b>
       </div>
       <div
-        className={isMobile ? 'd-inline trimmed-275' : 'd-inline trimmed-200'}
+        className={
+          isMobile ? 'd-inline trimmed mw-275' : 'd-inline trimmed mw-200'
+        }
       >
         {' '}
         - {props.deckName}

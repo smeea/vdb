@@ -200,7 +200,7 @@ function DeckSelectAdvModal(props) {
           </td>
           <td className="name" onClick={() => handleOpen(deck.deckid)}>
             <div
-              className="d-flex trimmed-200 name justify-content-between"
+              className="d-flex trimmed mw-200 name justify-content-between"
               title={deck.name}
             >
               {deck.name}
