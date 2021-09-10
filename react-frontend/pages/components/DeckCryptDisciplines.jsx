@@ -6,13 +6,8 @@ function DeckCryptDisciplines(props) {
 
   const emptyCols = [];
   let counter = 0;
-  let maxCols;
-  if (props.disciplinesSet) {
-    const n = props.keyDisciplines + props.nonKeyDisciplines;
-    maxCols = n < 8 ? n : isMobile ? 7 : 8;
-  } else {
-    maxCols = 7;
-  }
+  const n = props.keyDisciplines + props.nonKeyDisciplines;
+  const maxCols = n < 8 ? n : isMobile ? 7 : 8;
 
   const width = 100 / maxCols + '%';
 
@@ -59,7 +54,7 @@ function DeckCryptDisciplines(props) {
   }
 
   return (
-    <table className="discipline" width="100%">
+    <table className="disciplines">
       <tbody>
         <tr>
           {disciplineCols}

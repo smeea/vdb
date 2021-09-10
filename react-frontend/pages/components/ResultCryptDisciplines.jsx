@@ -1,5 +1,4 @@
 import React from 'react';
-import AppContext from '../../context/AppContext';
 
 function ResultCryptDisciplines(props) {
   const emptyCols = [];
@@ -34,7 +33,7 @@ function ResultCryptDisciplines(props) {
   }
 
   return (
-    <table className="disicipline" width="100%">
+    <table className="disciplines">
       <tbody>
         <tr>
           {disciplineCols}

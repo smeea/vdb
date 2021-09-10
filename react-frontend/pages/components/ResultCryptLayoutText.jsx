@@ -80,7 +80,7 @@ function ResultCryptLayoutText(props) {
         <ResultLayoutTextText text={props.card['Card Text']} />
       </div>
       <hr className="mx-0" />
-      <div className="d-flex align-items-center justify-content-between py-1">
+      <div className="d-flex align-items-center justify-content-between">
         <ResultCryptDisciplines value={props.card['Disciplines']} />
         <ResultCryptCapacity value={props.card['Capacity']} />
       </div>

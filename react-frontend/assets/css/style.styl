@@ -74,9 +74,6 @@ h5, .h5, h6, .h6
   background: var(--bg-secondary)
   height: 38px
 
-.total-year, .total-group
-  color: var(--fg-secondary)
-
 .blue
   color: var(--fg-secondary)
 
@@ -310,6 +307,12 @@ img.card-popover
 .deck-sidelibrary img
   opacity: 0.6
 
+table.disciplines td
+  border: none
+td.prob
+  text-align: right
+  width: 36px
+
 .deck-crypt-table
   width: 100%
   border: 1px solid var(--border-secondary)
@@ -336,17 +339,11 @@ img.card-popover
   width: 40px
 .deck-crypt-table td.name
   text-align: left
-.deck-crypt-table .discipline td
-  border: none
 .deck-crypt-table td.disciplines td
-  min-width: 28px
+  min-width: 27px
 @media (max-width: 576px)
   .deck-crypt-table td.disciplines td
-    min-width: 27px
-
-.deck-crypt-table td.prob
-  text-align: right
-  width: 36px
+    min-width: 25px
 
 .deck-library-table
   width: 100%
@@ -376,17 +373,12 @@ img.card-popover
   width: 88px
 .deck-library-table td.burn
   width: 30px
-.deck-library-table td.prob
-  text-align: right
-  width: 36px
 
 .inventory-crypt-table
   width: 100%
-  border-left: 1px solid var(--border-secondary)
-  border-right: 1px solid var(--border-secondary)
+  border: 1px solid var(--border-secondary)
 .inventory-crypt-table td
   height: 32px
-  text-align: center
   border-top: 1px solid var(--border-secondary)
   border-bottom: 1px solid var(--border-secondary)
   border-collapse: collapse
@@ -399,8 +391,6 @@ img.card-popover
   width: 32px
 .inventory-crypt-table td.disciplines
   width: 231px
-.inventory-crypt-table .discipline td
-  border: none
 .inventory-crypt-table td.name
   text-align: left
 .inventory-crypt-table td.clan
@@ -463,11 +453,6 @@ img.card-popover
 
 .search-crypt-table td.name
   text-align: left
-.search-crypt-table td.prob
-  text-align: right
-  width: 36px
-.search-crypt-table .discipline td
-  border: none
 
 .search-library-table
   width: 100%
@@ -490,9 +475,6 @@ img.card-popover
   width: 30px
   font-size: 1.1em
   background: rgba(0, 0, 170, 0.05);
-.search-library-table td.prob
-  text-align: right
-  width: 36px
 .search-library-table td.cost
   vertical-align: top
   width: 25px
@@ -634,6 +616,11 @@ font-1.85
   height: 24px
 .discipline-superior-image-results
   height: 27px
+@media (max-width: 576px)
+  .discipline-base-image-results
+    height: 23px
+  .discipline-superior-image-results
+    height: 25px
 
 .discipline-base-image-results,
 .discipline-base-image-forms,
@@ -686,8 +673,6 @@ font-1.85
     width: 25px
   td.burn
     width: 20px
-  td.prob
-    width: 36px
   .capacity-image-results
     height: 17px
   .discipline-base-image-results

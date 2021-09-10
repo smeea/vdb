@@ -369,33 +369,17 @@ function DeckCryptTable(props) {
             </>
           ) : (
             <>
-              {isMobile ? (
-                <td className="clan-group" onClick={() => handleClick()}>
-                  <div>
-                    <ResultCryptClan value={card.c['Clan']} />
-                  </div>
-                  <div className="d-flex small justify-content-end">
-                    <b>
-                      <ResultCryptTitle value={card.c['Title']} />
-                    </b>
-                    <ResultCryptGroup value={card.c['Group']} />
-                  </div>
-                </td>
-              ) : (
-                <>
-                  <td className="title pr-2" onClick={() => handleClick()}>
+              <td className="clan-group" onClick={() => handleClick()}>
+                <div>
+                  <ResultCryptClan value={card.c['Clan']} />
+                </div>
+                <div className="d-flex small justify-content-end">
+                  <b>
                     <ResultCryptTitle value={card.c['Title']} />
-                  </td>
-                  <td className="clan-group" onClick={() => handleClick()}>
-                    <div>
-                      <ResultCryptClan value={card.c['Clan']} />
-                    </div>
-                    <div className="d-flex small justify-content-end">
-                      <ResultCryptGroup value={card.c['Group']} />
-                    </div>
-                  </td>
-                </>
-              )}
+                  </b>
+                  <ResultCryptGroup value={card.c['Group']} />
+                </div>
+              </td>
             </>
           )}
           {props.showInfo && (

@@ -25,7 +25,7 @@ function ResultCryptTotal(props) {
   const totalOutput = Object.keys(byGroups).map((k) => {
     return (
       <span key={k} className="d-inline-block nobr pr-3">
-        <span className="total-group">
+        <span className="blue">
           <b>G{k}:</b>
         </span>
         {byGroups[k]}

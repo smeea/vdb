@@ -198,7 +198,7 @@ function ResultCryptTable(props) {
               </td>
             </OverlayTrigger>
           ) : (
-            <td className="name px-1" onClick={() => handleClick()}>
+            <td className="name" onClick={() => handleClick()}>
               <ResultCryptName card={card} />
             </td>
           )}
@@ -216,33 +216,17 @@ function ResultCryptTable(props) {
             </>
           ) : (
             <>
-              {isMobile ? (
-                <td className="clan-group" onClick={() => handleClick()}>
-                  <div>
-                    <ResultCryptClan value={card['Clan']} />
-                  </div>
-                  <div className="d-flex small justify-content-end">
-                    <b>
-                      <ResultCryptTitle value={card['Title']} />
-                    </b>
-                    <ResultCryptGroup value={card['Group']} />
-                  </div>
-                </td>
-              ) : (
-                <>
-                  <td className="title pr-2" onClick={() => handleClick()}>
+              <td className="clan-group" onClick={() => handleClick()}>
+                <div>
+                  <ResultCryptClan value={card['Clan']} />
+                </div>
+                <div className="d-flex small justify-content-end">
+                  <b>
                     <ResultCryptTitle value={card['Title']} />
-                  </td>
-                  <td className="clan-group" onClick={() => handleClick()}>
-                    <div>
-                      <ResultCryptClan value={card['Clan']} />
-                    </div>
-                    <div className="d-flex small justify-content-end">
-                      <ResultCryptGroup value={card['Group']} />
-                    </div>
-                  </td>
-                </>
-              )}
+                  </b>
+                  <ResultCryptGroup value={card['Group']} />
+                </div>
+              </td>
             </>
           )}
         </tr>
