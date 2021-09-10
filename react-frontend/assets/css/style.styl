@@ -323,22 +323,12 @@ img.card-popover
   text-align: left
 .deck-crypt-table .discipline td
   border: none
-.deck-crypt-table td.disciplines
-  width: 264px
-.deck-crypt-table td.disciplines.cols-7
-  width: 231px
-.deck-crypt-table td.disciplines.cols-6
-  width: 198px
-.deck-crypt-table td.disciplines.cols-5
-  width: 165px
-.deck-crypt-table td.disciplines.cols-4
-  width: 132px
-.deck-crypt-table td.disciplines.cols-3
-  width: 132px
-.deck-crypt-table td.disciplines.cols-2
-  width: 132px
-.deck-crypt-table td.disciplines.cols-1
-  width: 132px
+.deck-crypt-table td.disciplines td
+  min-width: 28px
+@media (max-width: 576px)
+  .deck-crypt-table td.disciplines td
+    min-width: 25px
+
 .deck-crypt-table td.prob
   text-align: right
   width: 36px
@@ -675,20 +665,8 @@ font-1.85
     width: 22px
   td.capacity
     width: 25px
-  td.disciplines.cols-7
-    width: 175px
-  td.disciplines.cols-6
-    width: 150px
-  td.disciplines.cols-5
-    width: 125px
-  td.disciplines.cols-4
-    width: 100px
-  td.disciplines.cols-3
-    width: 100px
-  td.disciplines.cols-2
-    width: 100px
-  td.disciplines.cols-1
-    width: 100px
+  td.disciplines td
+    min-width: 18px
   td.cost
     width: 25px
   td.burn

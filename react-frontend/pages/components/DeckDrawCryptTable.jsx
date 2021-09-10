@@ -3,7 +3,7 @@ import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
-import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
+import DeckCryptDisciplines from './DeckCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
@@ -53,17 +53,8 @@ function DeckDrawCryptTable(props) {
           >
             <ResultCryptCapacity value={card['Capacity']} />
           </td>
-          <td
-            className={
-              props.keyDisciplines + props.nonKeyDisciplines < 8
-                ? `disciplines cols-${
-                    props.keyDisciplines + props.nonKeyDisciplines
-                  }`
-                : 'disciplines'
-            }
-            onClick={() => props.handleClick(index)}
-          >
-            <ResultCryptDisciplines
+          <td className="disciplines" onClick={() => props.handleClick(index)}>
+            <DeckCryptDisciplines
               value={card['Disciplines']}
               disciplinesSet={props.disciplinesSet}
               keyDisciplines={props.keyDisciplines}

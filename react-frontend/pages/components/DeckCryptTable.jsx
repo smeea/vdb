@@ -328,21 +328,12 @@ function DeckCryptTable(props) {
             </>
           )}
           <td
-            className={isMobile ? 'capacity' : 'capacity px-1'}
+            className={isMobile ? 'capacity px-1' : 'capacity px-2'}
             onClick={() => handleClick()}
           >
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
-          <td
-            className={
-              props.keyDisciplines + props.nonKeyDisciplines < 8
-                ? `disciplines cols-${
-                    props.keyDisciplines + props.nonKeyDisciplines
-                  }`
-                : 'disciplines'
-            }
-            onClick={() => handleClick()}
-          >
+          <td className="disciplines" onClick={() => handleClick()}>
             <DeckCryptDisciplines
               value={card.c['Disciplines']}
               disciplinesSet={props.disciplinesSet}
@@ -355,7 +346,7 @@ function DeckCryptTable(props) {
               placement={props.placement ? props.placement : 'right'}
               overlay={<CardPopover card={card.c} />}
             >
-              <td className="name px-1" onClick={() => handleClick()}>
+              <td className="name px-2" onClick={() => handleClick()}>
                 <ResultCryptName card={card.c} />
               </td>
             </OverlayTrigger>
