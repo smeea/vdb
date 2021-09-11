@@ -79,7 +79,7 @@ function ResultLibraryPopover(props) {
               valuePool={props.card['Pool Cost']}
               valueBlood={props.card['Blood Cost']}
             />
-            <div className="popover-sets px-1">
+            <div className="popover-sets">
               <ResultLayoutTextSets
                 setImageSet={props.setImageSet}
                 sets={props.card['Set']}

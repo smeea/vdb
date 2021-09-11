@@ -45,7 +45,7 @@ const ResultLayoutTextSets = (props) => {
 
     return (
       <div
-        className="d-inline-block nobr px-1"
+        className="d-inline-block nobr pr-2"
         onClick={() => props.setImageSet(k.toLowerCase())}
         key={index}
       >
@@ -70,7 +70,7 @@ const ResultLayoutTextSets = (props) => {
     );
   });
 
-  return <>{Sets}</>;
+  return <div className="d-inline pl-2">{Sets}</div>;
 };
 
 export default ResultLayoutTextSets;
