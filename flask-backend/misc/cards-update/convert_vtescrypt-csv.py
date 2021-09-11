@@ -153,7 +153,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
 
             precons = set[1].split('/')
 
-            # Fix for KoT & HttB Reprints (marked in CSV as KoT, but have only
+            # Fix for KoT, HttB Reprints (marked in CSV as KoT, but have only
             # bundles named "A" or "B" not existing in original KoT)
             if set[0] in ["KoT", "HttB"]:
                 counter = 0
@@ -166,30 +166,50 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                 if counter < len(precons):
                     card['Set'][set[0]] = {}
 
-            elif set[0] not in card['Set']:
+            elif set[0] not in ["AU", "DM", "TU"
+                                ] and set[0] not in card['Set']:
                 card['Set'][set[0]] = {}
 
-            for precon in precons:
-                if set[0] in ["KoT", "HttB"] and (m := re.match(
-                        r'^(A|B)([0-9]+)?', precon)):
-                    s = f"{set[0]}R"
-                    if m.group(2):
-                        card['Set'][s][m.group(1)] = m.group(2)
+            # Fix for DM, TU, AU Kickstarter Unleashed (merge into Kickstarter Unleashed set)
+            if set[0] in ["DM", "TU", "AU"]:
+                for precon in precons:
+                    if precon == 'C':
+                        card['Set'][set[0]] = {'C': True}
                     else:
-                        card['Set'][s][m.group(1)] = 1
+                        # print(precon, card['Name'])
+                        if "KSU" not in card['Set']:
+                            card['Set']["KSU"] = {}
 
-                else:
-                    if m := re.match(r'^(\D+)([0-9]+)?', precon):
-                        if m.group(1) in ["C", "U", "R", "V", "DTC", "Promo"]:
-                            card['Set'][set[0]][m.group(1)] = True
-                        elif m.group(2):
-                            card['Set'][set[0]][m.group(1)] = m.group(2)
+                        if m := re.match(r'^(A|B)([0-9]+)?', precon):
+                            card['Set']["KSU"][
+                                f"{set[0]}{m.group(1)}"] = m.group(2)
                         else:
-                            card['Set'][set[0]][m.group(1)] = 1
-                    elif m := re.match(r'^[0-9]$', precon):
-                        card['Set'][set[0]][""] = precon
+                            card['Set']["KSU"][set[0]] = precon
+
+            else:
+                for precon in precons:
+                    if set[0] in ["KoT", "HttB"] and (m := re.match(
+                            r'^(A|B)([0-9]+)?', precon)):
+                        s = f"{set[0]}R"
+                        if m.group(2):
+                            card['Set'][s][m.group(1)] = m.group(2)
+                        else:
+                            card['Set'][s][m.group(1)] = 1
+
                     else:
-                        card['Set'][set[0]][precon] = True
+                        if m := re.match(r'^(\D+)([0-9]+)?', precon):
+                            if m.group(1) in [
+                                    "C", "U", "R", "V", "DTC", "Promo"
+                            ]:
+                                card['Set'][set[0]][m.group(1)] = True
+                            elif m.group(2):
+                                card['Set'][set[0]][m.group(1)] = m.group(2)
+                            else:
+                                card['Set'][set[0]][m.group(1)] = 1
+                        elif m := re.match(r'^[0-9]$', precon):
+                            card['Set'][set[0]][""] = precon
+                        else:
+                            card['Set'][set[0]][precon] = True
 
         # ASCII-fication of name
 

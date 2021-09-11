@@ -1,7 +1,12 @@
 import json
-import re
 
 bundles = {
+    "KSU": {
+        "AU": {},
+        "DM": {},
+        "TUA": {},
+        "TUB": {},
+    },
     "V5": {
         "PM": {},
         "PN": {},
@@ -115,7 +120,9 @@ bundles = {
     },
 }
 
-with open("vtescrypt.json", "r") as crypt_file, open("vteslib.json", "r+") as library_file, open("preconDecks.json", "w") as precons_file:
+with open("vtescrypt.json",
+          "r") as crypt_file, open("vteslib.json", "r") as library_file, open(
+              "preconDecks.json", "w") as precons_file:
     crypt = json.load(crypt_file)
     library = json.load(library_file)
 
@@ -124,7 +131,8 @@ with open("vtescrypt.json", "r") as crypt_file, open("vteslib.json", "r+") as li
             if card_set in bundles:
                 for precon in bundles[card_set].keys():
                     if precon in card_precons:
-                        bundles[card_set][precon][card["Id"]] = int(card_precons[precon])
+                        bundles[card_set][precon][card["Id"]] = int(
+                            card_precons[precon])
 
     # json.dump(precons, precons_file, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)

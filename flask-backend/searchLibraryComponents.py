@@ -261,6 +261,7 @@ def get_library_by_traits(traits, library):
 
 def get_library_by_set(request, library):
     bcp_sets = [
+        'KSU',
         'V5',
         '25th',
         'FB',
@@ -274,6 +275,7 @@ def get_library_by_set(request, library):
     sets = [
         'Promo',
         'POD',
+        'KSU',
         'V5',
         '25th',
         'FB',
@@ -375,6 +377,7 @@ def get_library_by_set(request, library):
 
 def get_library_by_precon(request, library):
     bcp_sets = [
+        'KSU',
         'V5',
         '25th',
         'FB',
@@ -388,6 +391,7 @@ def get_library_by_precon(request, library):
     sets = [
         'Promo',
         'POD',
+        'KSU',
         'V5',
         '25th',
         'FB',

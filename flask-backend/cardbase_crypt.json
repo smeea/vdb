@@ -186,8 +186,10 @@
         "Card Text":"Camarilla: Blood cursed.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -416,8 +418,10 @@
         "Card Text":"Independent: Adri gets +1 intercept against Followers of Set.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -799,8 +803,10 @@
         "Card Text":"Sabbat: Younger Camarilla vampires get -1 intercept against Aimery.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"",
@@ -1103,8 +1109,10 @@
         "Card Text":"Camarilla: During the first round of combat, Al-Ashrad can use strikes requiring Thaumaturgy [tha] that are not usable during the first round. Blood cursed.\n[MERGED] Assamite Inner Circle: +1 bleed.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -1449,8 +1457,10 @@
         "Card Text":"Sabbat: During an action, Alex can burn 1 blood to get +1 intercept.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -2184,8 +2194,10 @@
         "Card Text":"Sabbat.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"",
@@ -4140,8 +4152,10 @@
         "Card Text":"Anarch: Appolonius gets +1 bleed for each titled vampire controlled by the target Methuselah.\n[MERGED] Baron of London: Appolonius can enter combat with a minion as a (D) action.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             },
             "Anthology":{
                 "":"1"
@@ -4336,8 +4350,10 @@
         "Card Text":"Anarch: Ariane gets -1 stealth during undirected actions.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -4659,8 +4675,10 @@
         "Card Text":"Camarilla primogen: If Art is ready during your minion phase, you can unlock a werewolf you control.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"primogen",
@@ -5379,8 +5397,10 @@
         "Card Text":"Independent: Cards requiring Obtenebration [obt] cost Badr 1 fewer blood.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -6558,8 +6578,10 @@
         "Card Text":"Independent: After Bez leaves the ready region, discard 2 cards at random.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -7166,8 +7188,10 @@
         "Card Text":"Anarch: Callihan gets -1 intercept against Sabbat vampires.\n[MERGED] Baron of New York.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -7529,8 +7553,10 @@
         "Card Text":"Anarch Baron of Stockholm: The action to become Anarch costs vampires you control 0 blood.\n[MERGED] Brunhilde can enter combat with a non-Anarch vampire as a (D) action.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             },
             "Anthology":{
                 "":"1"
@@ -7636,9 +7662,9 @@
             "Promo":{
                 "20150214":true
             },
-            "TU":{
-                "A":"1",
-                "B":"1"
+            "KSU":{
+                "TUA":"1",
+                "TUB":"1"
             }
         },
         "Title":"",
@@ -7747,8 +7773,10 @@
         "Card Text":"Independent.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -8086,8 +8114,10 @@
         "Card Text":"Sabbat.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             },
             "Anthology":{
                 "":"1"
@@ -8372,8 +8402,10 @@
         "Card Text":"Sabbat Archbishop of Montreal: Carolina is immune to damage from allies and retainers.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "SP":{
                 "PoS":"2"
@@ -9334,8 +9366,10 @@
         "Card Text":"Sabbat: Black Hand.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"",
@@ -9403,9 +9437,9 @@
             "Promo":{
                 "20150211":true
             },
-            "TU":{
-                "A":"1",
-                "B":"1"
+            "KSU":{
+                "TUA":"1",
+                "TUB":"1"
             }
         },
         "Title":"",
@@ -9927,8 +9961,10 @@
         "Card Text":"Independent: If Jocalo is ready after your predator or prey uses a discard phase action, you can look at that Methuselah's hand (after the replacement card is drawn, if any). +1 bleed. +1 hand size.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -10198,8 +10234,10 @@
         "Card Text":"Anarch.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -10344,8 +10382,10 @@
         "Card Text":"Anarch: After Daliah enters combat, she can gain 1 blood.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -10524,8 +10564,10 @@
         "Card Text":"Anarch.\n[MERGED] While Dancin' Dana is in combat, you get +1 hand size.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -10626,8 +10668,10 @@
         "Card Text":"Anarch: During the polling step of any referendum, Danielle can burn 1 blood to get +1 vote.\n[MERGED] Baron of Berlin.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -10747,8 +10791,10 @@
         "Card Text":"Sabbat cardinal: Selina gets +1 stealth during political actions.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -10931,8 +10977,10 @@
         "Card Text":"Sabbat Archbishop of Paris: Vampires must burn 1 blood to cast votes and ballots against referendums called by De Sade.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"archbishop",
@@ -11075,8 +11123,10 @@
         "Card Text":"Independent: Delizbieta gets +1 intercept during actions directed at a Ravnos you control.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -11262,8 +11312,10 @@
         "Card Text":"Anarch.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             },
             "Anthology":{
                 "":"1"
@@ -11350,8 +11402,10 @@
         "Card Text":"Independent.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             },
             "Anthology":{
                 "":"1"
@@ -11801,8 +11855,10 @@
         "Card Text":"Independent.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             },
             "Anthology":{
                 "":"1"
@@ -12645,8 +12701,10 @@
         "Card Text":"Independent.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             },
             "Anthology":{
                 "":"1"
@@ -12719,8 +12777,10 @@
         "Card Text":"Independent: Allies and retainers requiring Necromancy [nec] or Giovanni cost Oliver 1 fewer blood or pool.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -12806,8 +12866,10 @@
         "Card Text":"Independent.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -12956,8 +13018,10 @@
         "Card Text":"Sabbat bishop: Drozodny can move a political action card from your ash heap to your hand as a +1 stealth action (discard afterward).",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"bishop",
@@ -13718,8 +13782,10 @@
         "Card Text":"Independent: /Hesha Ruhadze/ cannot block Elizabeth.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -13961,8 +14027,10 @@
         "Card Text":"Camarilla Prince of Cordoba: Blood cursed.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"prince",
@@ -14103,8 +14171,10 @@
         "Card Text":"Independent: During the polling step of any political action, Enzo can burn 1 blood to get +4 votes against the referendum.\n[MERGED] If a referendum fails, your prey burns 1 pool.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -15429,8 +15499,10 @@
         "Card Text":"Independent: Blood cursed.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             },
             "Anthology":{
                 "":"1"
@@ -16519,8 +16591,10 @@
         "Card Text":"Anarch: If Gengis is blocked by a titled vampire, he does not unlock as normal during your next unlock phase.\n[MERGED] Gengis gets +1 level of Auspex [aus] and Celerity [cel].",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -16636,8 +16710,10 @@
         "Card Text":"Sabbat: During your unlock phase, Gerald can burn 1 blood to make a younger non-titled Sabbat vampire you control Black Hand. Black Hand. Seraph.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -16800,8 +16876,10 @@
         "Card Text":"Independent: Ghede can enter combat with a minion as a (D) action. Combat cards requiring Serpentis [ser] cost him 1 fewer blood.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -17214,8 +17292,10 @@
         "Card Text":"Independent: Glycon can enter combat with a locked minion as a (D) action.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -17243,8 +17323,10 @@
         "Card Text":"Sabbat: Once each turn after combat involving Dan ends, Dan can burn 1 blood to unlock if the opposing minion is not ready.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -20100,8 +20182,10 @@
         "Card Text":"Sabbat: +1 intercept.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -20551,8 +20635,10 @@
         "Card Text":"Independent. 1 vote (titled): Imanna gets +1 vote in referendums she calls. Blood cursed.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"1 vote",
@@ -20839,8 +20925,10 @@
         "Card Text":"Camarilla primogen: Allies requiring a Gangrel cost Inyanga 1 fewer blood or pool. +1 intercept.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             },
             "Anthology":{
                 "":"1"
@@ -20905,8 +20993,10 @@
         "Card Text":"Anarch.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -21162,8 +21252,10 @@
         "Card Text":"Independent: Equipment costs Ivan 2 fewer blood or pool to equip. +1 bleed.\n[MERGED] +1 strength.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -22192,8 +22284,10 @@
         "Card Text":"Anarch: During your minion phase, Javier can burn 1 blood to unlock a younger ready Anarch.\n[MERGED] Baron of Barcelona.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -22386,8 +22480,10 @@
         "Card Text":"Anarch: Cards that cost blood cost Jenna 1 additional blood to play. Sterile.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -23184,8 +23280,10 @@
         "Card Text":"Sabbat Archbishop of Amsterdam.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"archbishop",
@@ -24360,8 +24458,10 @@
         "Card Text":"Sabbat: During your turn, you can lock or unlock another ready Black Hand vampire. Black Hand. +1 bleed. +1 strength.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -24437,8 +24537,10 @@
         "Card Text":"Sabbat Archbishop of Lisbon: Karmenita can burn an equipment or a location as a (D) action that costs 1 blood.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"archbishop",
@@ -26842,8 +26944,10 @@
         "Card Text":"Sabbat Archbishop of Port-au-Prince: Followers of Set controlled by other Methuselahs cannot cast votes or ballots in referendums called by Legba.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"archbishop",
@@ -27261,8 +27365,10 @@
         "Card Text":"Independent: You and Lisandro can play cards requiring a Samedi or a Ventrue antitribu as if he were of that required clan. +1 stealth.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -28062,8 +28168,10 @@
         "Card Text":"Anarch.\n[MERGED] Louis gets +1 level of Dominate [dom] and Presence [pre].",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             },
             "Anthology":{
                 "":"1"
@@ -28629,8 +28737,10 @@
         "Card Text":"Sabbat bishop: Cards requiring Animalism [ani] cost Ludmijla 1 fewer blood.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -28893,8 +29003,10 @@
         "Card Text":"Independent: If Lupo is ready during your unlock phase, another ready Giovanni you control can gain 1 blood.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -29192,8 +29304,10 @@
         "Card Text":"Independent: After a minion in combat with Madeleine leaves the ready region, their controller burns 1 pool.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -29363,8 +29477,10 @@
         "Card Text":"Independent.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -29420,8 +29536,10 @@
         "Card Text":"Anarch: Primogen get +1 vote in referendums called by Maldavis.\n[MERGED] Baron of Chicago.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -29971,8 +30089,10 @@
         "Card Text":"Anarch: Marguerite gets +1 strength in combat with a titled vampire.\n[MERGED] +1 strength.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -30493,8 +30613,10 @@
         "Card Text":"Camarilla Prince of Milwaukee: Mark gets an additional +1 strength in combat with a werewolf. +1 strength.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             },
             "25th":{
                 "":"2"
@@ -30713,8 +30835,10 @@
         "Card Text":"Independent: Equipment costs Martino 1 fewer blood or pool to equip.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -31145,8 +31269,10 @@
         "Card Text":"Independent: After a minion in combat with Matasuntha leaves the ready region, you can gain 1 pool. +2 strength.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             },
             "Anthology":{
                 "":"1"
@@ -31232,8 +31358,10 @@
         "Card Text":"Sabbat: If Mateusz is Sabbat and not Black Hand, he can become Black Hand as a +1 stealth action that costs 1 blood.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -31557,8 +31685,10 @@
         "Card Text":"Anarch: During your turn, you can burn the Edge to add 1 blood to an Anarch you control.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             },
             "Anthology":{
                 "":"1"
@@ -31760,8 +31890,10 @@
         "Card Text":"Sabbat Archbishop of London: During an action she performs, M\u00e9lusine can burn 1 blood to give a younger blocking vampire -2 intercept.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"archbishop",
@@ -32310,8 +32442,10 @@
         "Card Text":"Sabbat cardinal: Other Methuselahs cannot play master cards targeting Mimir. +1 bleed.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -32513,8 +32647,10 @@
         "Card Text":"Sabbat Archbishop of Pittsburgh.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"archbishop",
@@ -32714,8 +32850,10 @@
         "Card Text":"Anarch.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             },
             "Anthology":{
                 "":"1"
@@ -35212,8 +35350,10 @@
         "Card Text":"Independent: Blood cursed.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             },
             "Anthology":{
                 "":"1"
@@ -36053,8 +36193,10 @@
         "Card Text":"Sabbat.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -36563,8 +36705,10 @@
         "Card Text":"Anarch: You and Philip can play cards requiring a Ventrue as if he were a Ventrue.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -38129,8 +38273,10 @@
         "Card Text":"Camarilla Prince of Athens: During the polling step of any referendum, Rebekah can discard a card requiring Auspex [aus] to get +2 votes. Blood cursed.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"prince",
@@ -38793,8 +38939,10 @@
         "Card Text":"Sabbat priscus: Righteous gets +1 intercept against infernal minions and +1 strength in combat with an infernal minion.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"priscus",
@@ -39150,8 +39298,10 @@
         "Card Text":"Independent: Rosa gets +1 stealth when employing retainers.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Title":"",
@@ -39903,8 +40053,10 @@
         "Card Text":"Anarch: While Salvador is ready, cards requiring an Anarch cost you and Anarchs you control 1 fewer blood or pool.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             },
             "Anthology":{
                 "":"1"
@@ -39934,8 +40086,10 @@
         "Card Text":"Independent.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             },
             "Anthology":{
                 "":"1"
@@ -40106,8 +40260,10 @@
         "Card Text":"Independent.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -40419,8 +40575,10 @@
         "Card Text":"Camarilla Prince of Sydney.\n[MERGED] If Sarrasine is ready during your unlock phase, you can put 1 corruption counter on a minion controlled by your prey.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             },
             "Anthology":{
                 "":"1"
@@ -41364,8 +41522,10 @@
         "Card Text":"Independent.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             },
             "Anthology":{
                 "":"1"
@@ -42146,8 +42306,10 @@
         "Card Text":"Sabbat.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -42855,8 +43017,10 @@
         "Card Text":"Sabbat Archbishop of Berlin: While Strohmann is acting, reaction cards requiring Auspex [aus] cost 1 additional blood. +1 bleed.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"archbishop",
@@ -43058,8 +43222,10 @@
         "Card Text":"Anarch.\n[MERGED] If Sundown is ready during the polling step of any referendum, you can discard a political action card to force any vampire to abstain.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -43312,8 +43478,10 @@
         "Card Text":"Sabbat: Synner-G can unlock after successfully equipping with an electronic equipment from your hand.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             },
             "Anthology":{
                 "":"1"
@@ -45011,8 +45179,10 @@
         "Card Text":"Anarch: After your minion phase ends, lock Tori if she did not perform an action this turn.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -46284,8 +46454,10 @@
         "Card Text":"Independent: Valkyrie cannot perform directed actions unless /Brunhilde/ is ready. Non-unique. +1 strength.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"4"
             },
             "Anthology":{
                 "":"4"
@@ -46699,8 +46871,10 @@
         "Card Text":"Sabbat priscus: Vestgeir can play a political action card from another Methuselah's ash heap as if it were in your hand; when that card would be burned, instead remove it from the game. +1 bleed.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"priscus",
@@ -46760,8 +46934,10 @@
         "Card Text":"Anarch: You and Victor can play cards requiring a Camarilla vampire as if Victor were a Camarilla vampire. While Victor is a Baron, you and Victor can play cards requiring a Prince as if Victor were a Prince.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -47484,8 +47660,10 @@
         "Card Text":"Anarch: Once each turn, an Anarch you control can unlock after successfully equipping with a vehicle from your hand.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",
@@ -47893,9 +48071,9 @@
             "Promo":{
                 "20150212":true
             },
-            "TU":{
-                "A":"1",
-                "B":"1"
+            "KSU":{
+                "TUA":"1",
+                "TUB":"1"
             }
         },
         "Title":"",
@@ -47942,8 +48120,10 @@
         "Card Text":"Camarilla: Wise Frog strikes with first strike in combat with a younger vampire. Blood cursed.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Title":"",
@@ -48133,8 +48313,10 @@
         "Card Text":"Camarilla Gangrel Justicar: You can unlock Xaviar after a referendum called by him passes.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             },
             "25th":{
                 "":"2"
@@ -48264,8 +48446,10 @@
         "Card Text":"Sabbat Archbishop of Guatemala City: Xipe can steal an ally or retainer as a +1 stealth (D) action that costs 1 blood. +1 strength.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "DM":"2"
             }
         },
         "Title":"archbishop",
@@ -48813,8 +48997,10 @@
         "Card Text":"Anarch.\n[MERGED] Once each round of combat, Zack can burn 1 blood to make the damage from his hand strikes aggravated that round.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Title":"",

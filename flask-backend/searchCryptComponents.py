@@ -252,6 +252,7 @@ def get_crypt_by_group(group_list, crypt):
 
 def get_crypt_by_set(request, crypt):
     bcp_sets = [
+        'KSU',
         'V5',
         '25th',
         'FB',
@@ -265,6 +266,7 @@ def get_crypt_by_set(request, crypt):
     sets = [
         'Promo',
         'POD',
+        'KSU',
         'V5',
         '25th',
         'FB',
@@ -366,6 +368,7 @@ def get_crypt_by_set(request, crypt):
 
 def get_crypt_by_precon(request, crypt):
     bcp_sets = [
+        'KSU',
         'V5',
         '25th',
         'FB',
@@ -379,6 +382,7 @@ def get_crypt_by_precon(request, crypt):
     sets = [
         'Promo',
         'POD',
+        'KSU',
         'V5',
         '25th',
         'FB',

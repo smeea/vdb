@@ -7,6 +7,16 @@
     "name": "Print-on-Demand (DTC)",
     "year": "N/A"
   },
+  "KSU": {
+    "name": "Unleashed (Kickstarter)",
+    "year": "2021",
+    "precons": {
+      "AU": "Anarchs Unbound",
+      "DM": "Danse Macabre",
+      "TUA": "The Unaligned 1",
+      "TUB": "The Unaligned 2"
+    }
+  },
   "V5": {
     "name": "Fifth Edition",
     "year": "2020",

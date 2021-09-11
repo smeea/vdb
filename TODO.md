@@ -1,6 +1,5 @@
 # FIX
 * Save scrolling position
-* On hover with long sets
 
 # FIX MOBILE
 * Select click color on mobile
@@ -16,6 +15,8 @@
 * Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url
+* Check for banned cards in deck
+* Add Unleased set
 
 # BIG FEATURES
 * Card text history

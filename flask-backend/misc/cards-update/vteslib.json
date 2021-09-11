@@ -852,8 +852,10 @@
         "Card Text":"Requires an Anarch.\n[ani] Only usable during a bleed action. +1 bleed (limited).\n[chi] Only usable during the polling step of a political action. This Anarch gets +3 votes.\n[pot] If this Anarch is blocked, they get +1 strength during the resulting combat.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Requirement":"anarch",
@@ -5538,8 +5540,10 @@
         "Card Text":"Only usable before range is determined. A vampire can play only one Bear's Skin each combat.\n[ani][pro] This round, this vampire gets +1 strength and can prevent 1 damage.\n[ANI][PRO] This combat, this vampire gets +1 strength and can prevent 1 damage each round.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"4"
             }
         },
         "Requirement":"",
@@ -7016,8 +7020,10 @@
         "Card Text":"Only usable before range is determined. A vampire can play only one Blight each combat.\n[nec] The opposing minion gets -1 strength this combat.\n[NEC] As above, and this combat, the opposing minion cannot use additional strikes or presses to continue combat.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"4"
             }
         },
         "Requirement":"",
@@ -8661,8 +8667,10 @@
         "Card Text":"Requires an Anarch.\n[cel] Maneuver or press.\n[pre] Cancel an aim, frenzy, or grapple card as it is played by the opposing minion, and its cost is not paid.\n[tha] Strike: hand strike at +1 damage. This damage cannot be prevented by cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage this round.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"3"
+                "C":true
+            },
+            "KSU":{
+                "AU":"3"
             }
         },
         "Requirement":"anarch",
@@ -11056,8 +11064,10 @@
         "Card Text":"Requires a ready Anarch. Unique location. Hunting ground.\nDuring your unlock phase, a ready Anarch you control can gain 1 blood, and, if you control a ready baron, another ready Anarch you control can gain 1 blood as well. A vampire can gain blood from only one hunting ground each turn.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"1"
+                "C":true
+            },
+            "KSU":{
+                "AU":"1"
             }
         },
         "Requirement":"anarch",
@@ -17903,8 +17913,10 @@
         "Card Text":"Frenzy. Only usable before range is determined. A vampire can play only one Dam the Heart's River each combat.\n[qui] This combat, each strike or damaging effect made against the opposing minion inflicts +1 damage.\n[QUI] As above, and this combat, strikes cost the opposing minion 1 additional blood or life, and they can choose not to strike.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"4"
             }
         },
         "Requirement":"",
@@ -18165,8 +18177,10 @@
         "Card Text":"Only usable before range is determined. A vampire can play only one Dark Steel each combat.\n[obt][pot] The opposing minion takes 1 environmental damage each round of combat during normal strike resolution at close range. This vampire gets 1 optional maneuver this round, only usable to get to close range.\n[OBT][POT] As above, but for 2 environmental damage.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             }
         },
         "Requirement":"",
@@ -21336,8 +21350,10 @@
         "Card Text":"Requires an Anarch. Only usable at close range.\n[obf] Strike: burn equipment or retainer with first strike.\n[pro] Strike: hand strike, aggravated.\n[ser] Strike: steal 2 blood or life (becoming blood).",
         "Set":{
             "AU":{
-                "C":true,
-                "":"3"
+                "C":true
+            },
+            "KSU":{
+                "AU":"3"
             }
         },
         "Requirement":"anarch",
@@ -22256,8 +22272,10 @@
         "Card Text":"Requires an Anarch.\n[ani] Strike: hand strike at +1 damage. This strike cannot be dodged.\n[cel] Strike: dodge, with 1 additional strike (limited).\n[pot] Strike: hand strike at +2 damage.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"3"
+                "C":true
+            },
+            "KSU":{
+                "AU":"3"
             }
         },
         "Requirement":"anarch",
@@ -22544,8 +22562,10 @@
         "Card Text":"Requires an Anarch.\nChoose one or more Methuselahs. Successful referendum means each chosen Methuselah burns 1 pool, plus 3 additional pool if they control a ready titled vampire. In this referendum, each priscus gets -1 ballot, each non-priscus titled vampire gets -1 vote, and burning the Edge is worth 1 additional vote.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Requirement":"anarch",
@@ -24097,8 +24117,10 @@
         "Card Text":"Unique location.\nLock to get +1 hand size this turn. Lock during your influence phase to get +1 transfer.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"1"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"1"
             },
             "25th":{
                 "":"1"
@@ -24719,8 +24741,10 @@
         "Card Text":"+1 stealth action. Unique.\n[pot][pre] Put this card in play and unlock this vampire. Minions you control get +1 strength. Burn this card during your unlock phase.\n[POT][PRE] As above, and you can burn this card to cancel an action card requiring Dementation [dem], Dominate [dom] or Presence [pre] that would target you (or a card you control) as it is played.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"3"
+                "C":true
+            },
+            "KSU":{
+                "DM":"3"
             }
         },
         "Requirement":"",
@@ -26989,8 +27013,10 @@
         "Card Text":"+1 stealth action. Requires an Anarch.\nUnlock this vampire, choose a Discipline they have at superior, and put this card on another ready non-titled vampire you control. The attached vampire is considered Anarch and gets +1 level of the chosen Discipline. If the attached vampire changes sect, burn this card. A vampire can have only one Field Training.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             },
             "Anthology":{
                 "":"4"
@@ -28010,8 +28036,10 @@
         "Card Text":"Only usable before range is determined. A vampire can play only one Focus the Blood each combat.\nPut this card and 1 blood on this Assamite. This vampire can burn this card to reduce the cost of a combat card they play by 1 blood.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"4"
             }
         },
         "Requirement":"",
@@ -29750,8 +29778,10 @@
         "Card Text":"Usable by a locked vampire.\n[nec] Unlock a mummy, wraith, or zombie ally you control.\n[NEC] Unlock up to two mummy, wraith, and/or zombie allies you control.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"4"
             }
         },
         "Requirement":"",
@@ -30687,8 +30717,10 @@
         "Card Text":"Unique wraith with 2 life. 1 strength, 1 bleed.\nIf another minion you control is in combat, Gianna can lock and burn herself to burn an equipment on the opposing minion, or lock during normal strike resolution to inflict 1 unpreventable damage on the opposing minion.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"1"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"1"
             }
         },
         "Requirement":"",
@@ -30841,8 +30873,10 @@
         "Card Text":"+1 stealth action.\nPut this card on this Gangrel with any number of cards requiring Protean [pro] from your hand face down and out of play (you can look at the cards at any time). This Gangrel can play these cards as if from your hand. Burn this card if it has no cards on it. A vampire can have only one Gift of Proteus.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"4"
             }
         },
         "Requirement":"",
@@ -31004,8 +31038,10 @@
         "Card Text":"Unique wraith with 1 life. 0 strength, 0 bleed.\nIf a Giovanni you control is in combat, you can lock Giulia before range is determined to set the range for the round to close.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"1"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"1"
             }
         },
         "Requirement":"",
@@ -32412,8 +32448,10 @@
         "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. This Anarch attempts to block.\n[aus] +1 intercept, even if intercept is not yet needed.\n[cel] This Anarch gets 1 optional maneuver during the resulting combat if they block.\n[for] This Anarch does not lock for blocking this action.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"3"
+                "C":true
+            },
+            "KSU":{
+                "AU":"3"
             }
         },
         "Requirement":"anarch",
@@ -32667,8 +32705,10 @@
         "Card Text":"Location.\nThis card comes into play with 1 counter for each Anarch you control. After an Anarch comes into play under your control, or after a vampire you control becomes Anarch, add 1 counter to this card. An Anarch you control can use these counters to pay some or all of the blood or pool cost of an equipment they equip.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Requirement":"",
@@ -32757,8 +32797,10 @@
         "Card Text":"Only usable during the first round of combat.\n[chi] Maneuver.\n[CHI] This vampire burns 1 blood to cancel the opposing minion's strike card as it is played, and its cost is not paid (the minion chooses another strike). A vampire can play only one Hall of Mirrors at superior each combat.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"4"
             }
         },
         "Requirement":"",
@@ -35311,8 +35353,10 @@
         "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[cel] Unlock this Anarch if the bleed is successful.\n[chi] This is a +1 stealth action.\n[pre] The bleed is with +1 bleed.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"3"
+                "C":true
+            },
+            "KSU":{
+                "AU":"3"
             }
         },
         "Requirement":"anarch",
@@ -35451,8 +35495,10 @@
         "Card Text":"+1 stealth action. Unique.\n[chi] Put this card in play with 1 counter. During your unlock phase, a ready vampire with Chimerstry [chi] you control can move 1 blood to this card. You can burn X counters from this card to reduce a bleed against you by X.\n[CHI] As above, but this card comes into play with 2 counters.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"4"
             }
         },
         "Requirement":"",
@@ -35870,8 +35916,10 @@
         "Card Text":"Unique.\nPut this card in play with 1 counter for each Follower of Set and mummy you control. During an action, you can burn 1 counter from this card to give a mummy you control +1 bleed or +1 strength. Burn this card if it has no counters.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"2"
             }
         },
         "Requirement":"",
@@ -36715,8 +36763,10 @@
         "Card Text":"(D) Burn the Edge to burn 3 blood from a vampire controlled by another Methuselah, or to burn 3 pool from your prey.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             }
         },
         "Requirement":"",
@@ -36842,8 +36892,10 @@
         "Card Text":"[cel][pro] +1 stealth.\n[CEL][PRO] Only usable after resolution of a successful action. Unlock this vampire. A vampire can play only one Instantaneous Transformation at superior each turn.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             },
             "Anthology":{
                 "":"4"
@@ -40208,8 +40260,10 @@
         "Card Text":"+2 stealth action. Requires an unmerged advanced vampire.\nUnlock this vampire, search your crypt (shuffle afterward), uncontrolled region, and/or ash heap for their base version, and merge them with it.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             },
             "Anthology":{
                 "":"4"
@@ -42601,8 +42655,10 @@
         "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Enter combat with a locked minion.\n[cel] This Anarch gets 1 optional maneuver during that combat.\n[obf] This is a +1 stealth action.\n[pot] This Anarch gets +1 strength during that combat.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"3"
+                "C":true
+            },
+            "KSU":{
+                "AU":"3"
             }
         },
         "Requirement":"anarch",
@@ -43391,8 +43447,10 @@
         "Card Text":"+2 stealth action.\nPut this card on this vampire and unlock them. You can burn this card to give this vampire +2 intercept during an action directed at you (or a card you control). A vampire can have only one Marked Territory.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"3"
+                "C":true
+            },
+            "KSU":{
+                "DM":"3"
             }
         },
         "Requirement":"",
@@ -44468,8 +44526,10 @@
         "Card Text":"Requires an Anarch. Only usable as the action is announced. More than one Discipline can be used to play this card.\n[dem] Choose a titled vampire or a younger vampire. The chosen vampire cannot block this action.\n[obf] +1 stealth, even if stealth is not yet needed.\n[pre] If this action is blocked, this Anarch can strike: combat ends during the first round of the resulting combat.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Requirement":"anarch",
@@ -46928,8 +46988,10 @@
         "Card Text":"Unique wraith with 1 life.\nWhile this vampire is in combat, you get +2 hand size, and the opposing minion is considered the acting minion.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"1"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"1"
             }
         },
         "Requirement":"",
@@ -47346,8 +47408,10 @@
         "Card Text":"Requires an Anarch.\n[aus] Look at the acting Methuselah's hand.\n[chi] Choose another ready minion you control. The chosen minion unlocks and attempts to block.\n[dem] Give another minion you control +1 intercept.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Requirement":"anarch",
@@ -47604,8 +47668,10 @@
         "Card Text":"Requires an Anarch. Only usable as the action is announced. More than one Discipline can be used to play this card.\n[ani] If this action is blocked, the opposing minion cannot maneuver during the resulting combat.\n[for] Vampires must burn 1 blood to attempt to block this action.\n[vic] If this action is blocked, this Anarch gets +1 strength during the resulting combat.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Requirement":"anarch",
@@ -49152,8 +49218,10 @@
         "Card Text":"[pre][ser] Reduce a bleed against you by 2.\n[PRE][SER] Only usable during a political action, after blocks are declined. Cancel an action modifier card as it is played, and its cost is not paid.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"4"
             }
         },
         "Requirement":"",
@@ -54663,8 +54731,10 @@
         "Card Text":"Unique contract. Trifle.\nChoose a ready Assamite you control and put this card on a minion controlled by your prey. The chosen Assamite can enter combat with the attached minion as a +1 stealth (D) action. If the attached minion is about to leave the ready region, you can burn this card to gain 3 pool.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"4"
             }
         },
         "Requirement":"",
@@ -54951,8 +55021,10 @@
         "Card Text":"Requires an Anarch. Only usable after resolution of a successful directed action.\nPut this card in play. You can burn this card during the polling step of a political action to get +2 votes.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"3"
+                "C":true
+            },
+            "KSU":{
+                "AU":"3"
             }
         },
         "Requirement":"anarch",
@@ -55150,8 +55222,10 @@
         "Card Text":"Requires an Anarch.\n+1 intercept, with an additional +1 intercept if the acting vampire is titled.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Requirement":"anarch",
@@ -55630,8 +55704,10 @@
         "Card Text":"Requires a titled Sabbat vampire.\nChoose a ready younger vampire controlled by another Methuselah, and allocate 3 of their blood between 1 or more other vampires (including this acting vampire). Successful referendum means the blood is distributed as you chose.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             }
         },
         "Requirement":"sabbat,titled",
@@ -57722,8 +57798,10 @@
         "Card Text":"+1 stealth action. Requires a Black Hand vampire.\nDraw 1 card from your crypt and reveal it. Add 1 blood from the blood bank to it if it is a Black Hand vampire.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             }
         },
         "Requirement":"black hand",
@@ -57918,8 +57996,10 @@
         "Card Text":"Requires a non-titled non-Anarch vampire.\nPut this card on this vampire. This vampire is considered Anarch. Burn this card if this vampire changes sect.",
         "Set":{
             "AU":{
-                "C":true,
-                "":"2"
+                "C":true
+            },
+            "KSU":{
+                "AU":"2"
             }
         },
         "Requirement":"non-titled,non-anarch",
@@ -59913,8 +59993,10 @@
         "Card Text":"(D) Burn a location and burn 2 pool from its controller.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             }
         },
         "Requirement":"",
@@ -60162,9 +60244,10 @@
             "Promo":{
                 "20150221":true
             },
-            "TU":{
-                "A":"1",
-                "B":"1"
+            "TU":{},
+            "KSU":{
+                "TUA":"1",
+                "TUB":"1"
             }
         },
         "Requirement":"infernal",
@@ -61223,8 +61306,10 @@
         "Card Text":"Unique mummy with 2 life. 2 strength, 1 bleed.\nDuring an action, Saatet-ta can lock to give a Follower of Set you control +1 stealth, +1 intercept, or +1 bleed. If she is burned, shuffle her into her owner's library.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"1"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"1"
             }
         },
         "Requirement":"",
@@ -61720,8 +61805,10 @@
         "Card Text":"Only usable before range is determined. A vampire can play only one Sanguine Entrapment each round.\n[cel][qui] The opposing minion cannot strike: dodge this round.\n[CEL][QUI] The opposing minion cannot strike: combat ends this round.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"4"
             }
         },
         "Requirement":"",
@@ -63526,8 +63613,10 @@
         "Card Text":"[pre][ser] Strike: combat ends.\n[PRE][SER] As above, and if the range is close, this vampire burns 1 blood to put this card on the opposing minion and lock them. The attached minion does not unlock as normal. Burn this card during their unlock phase.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"4"
             }
         },
         "Requirement":"",
@@ -63974,8 +64063,10 @@
         "Card Text":"[obf][pot] [COMBAT] Maneuver, only usable to get to close range, or press, only usable to continue combat.\n[OBF][POT] [ACTIONMODIFIER] Only usable after a combat resulting from a block. Not usable if the blocking minion is ready. This vampire burns 1 blood to continue the action as if unblocked.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             }
         },
         "Requirement":"",
@@ -64509,8 +64600,10 @@
         "Card Text":"Unique contract. Trifle. Requires a Black Hand vampire.\nPut this card on a ready minion. Every Black Hand vampire is considered chosen for this contract. Any Black Hand vampire can enter combat with this minon as a +1 stealth (D) action. Burn this card if this minion is not ready.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             }
         },
         "Requirement":"black hand",
@@ -65274,8 +65367,10 @@
         "Card Text":"[pot][pre] (D) Bleed with +1 bleed. If this action is blocked, before range is determined during the first round of the resulting combat, this vampire can gain +1 strength that combat.\n[POT][PRE] As above, but at +2 bleed and this vampire can gain +2 strength.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             }
         },
         "Requirement":"",
@@ -65922,8 +66017,10 @@
         "Card Text":"+1 stealth action. Requires a non-titled Gangrel with capacity 5 or more. Unique.\nPut this card on this Gangrel and unlock them. This non-titled Gangrel gets +2 votes in referendums called by a Gangrel. Any older non-titled Gangrel can steal this card as a +1 stealth (D) action.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"1"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"1"
             }
         },
         "Requirement":"non-titled,capacity 5 or more",
@@ -68287,8 +68384,10 @@
         "Card Text":"A vampire can play only one Spiritual Guidance each combat.\nPlay a combat card from your ash heap as if from your hand. If that card would be burned, instead remove it from the game.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"4"
             },
             "Anthology":{
                 "":"4"
@@ -68400,8 +68499,10 @@
         "Card Text":"Only usable after resolution of a successful directed action.\nThis vampire gains 1 blood and you gain 1 pool.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             }
         },
         "Requirement":"",
@@ -70591,8 +70692,10 @@
         "Card Text":"[chi] (D) Bleed with +1 bleed.\n[CHI] As above, and minion cards that reduce the bleed or change its target cost 1 additional blood or life.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"4"
             }
         },
         "Requirement":"",
@@ -73099,8 +73202,10 @@
         "Card Text":"+1 stealth action.\nAdd 2 blood to a Gangrel in your uncontrolled region.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"4"
             }
         },
         "Requirement":"",
@@ -76329,8 +76434,10 @@
         "Card Text":"+1 stealth action. Requires a titled Sabbat vampire. Unique.\nPut this card in play with 3 counters. Once each action, a Sabbat vampire you control can burn 1 counter from this card to unlock and attempt to block with +1 intercept, even if intercept is not yet needed. Burn this card if it has no counters.",
         "Set":{
             "DM":{
-                "C":true,
-                "":"4"
+                "C":true
+            },
+            "KSU":{
+                "DM":"4"
             },
             "Anthology":{
                 "":"2"
@@ -77729,8 +77836,10 @@
         "Card Text":"[ser] Only usable during the polling step of a political action. Put 1 corruption counter on a minion casting votes or ballots in this referendum.\n[SER] Only usable during the polling step of a political action before votes and ballots are cast. Minions with any corruption counters cannot cast votes or ballots during this referendum.",
         "Set":{
             "TU":{
-                "C":true,
-                "B":"4"
+                "C":true
+            },
+            "KSU":{
+                "TUB":"4"
             }
         },
         "Requirement":"",
@@ -81647,8 +81756,10 @@
         "Card Text":"Only usable after resolution of an unsuccessful action.\n[cel] Unlock this vampire at the end of the turn.\n[CEL] Unlock this vampire.",
         "Set":{
             "TU":{
-                "C":true,
-                "A":"2"
+                "C":true
+            },
+            "KSU":{
+                "TUA":"2"
             },
             "Anthology":{
                 "":"4"
