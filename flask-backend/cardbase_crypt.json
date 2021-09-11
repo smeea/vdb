@@ -4632,7 +4632,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":3,
-        "Card Text":"Laibon: If Arriette has no Orun, she gets -1 bleed.",
+        "Card Text":"Laibon: If Arriette has no /Orun/, she gets -1 bleed.",
         "Set":{
             "EK":{
                 "U":true
@@ -6666,7 +6666,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Camarilla: Bindusara can take an action to allow you to search your library for an Arcane Library, Elder Library or Fragment of the Book of Nod and put that card in play. (Pay cost as normal.) Shuffle your library afterward. +1 bleed.",
+        "Card Text":"Camarilla: Bindusara can take an action to allow you to search your library for an /Arcane Library/, /Elder Library/ or /Fragment of the Book of Nod/ and put that card in play. (Pay cost as normal.) Shuffle your library afterward. +1 bleed.",
         "Set":{
             "AH":{
                 "V":true
@@ -8850,7 +8850,7 @@
         ],
         "Group":"4",
         "Capacity":10,
-        "Card Text":"Advanced, Laibon magaji: During a (D) action against you, Cesewayo may lock an Aye on him to unlock.\n[MERGED] Cesewayo gets two additional votes.",
+        "Card Text":"Advanced, Laibon magaji: During a (D) action against you, Cesewayo may lock an /Aye/ on him to unlock.\n[MERGED] Cesewayo gets two additional votes.",
         "Set":{
             "EK":{
                 "U":true
@@ -10457,7 +10457,7 @@
         "Adv":"",
         "Group":"1",
         "Capacity":3,
-        "Card Text":"Camarilla: Dan may take an action to allow you to go though your library, find Giant's Blood, and take it into your hand (reshuffle afterwards and discard to your maximum hand size).",
+        "Card Text":"Camarilla: Dan may take an action to allow you to go though your library, find /Giant's Blood/, and take it into your hand (reshuffle afterwards and discard to your maximum hand size).",
         "Set":{
             "Promo":{
                 "19960101":true
@@ -13321,7 +13321,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":5,
-        "Card Text":"Camarilla: If Enid Blount is in your ready region, Edith gets an optional maneuver and an optional press each combat.",
+        "Card Text":"Camarilla: If /Enid Blount/ is in your ready region, Edith gets an optional maneuver and an optional press each combat.",
         "Set":{
             "CE":{
                 "V":true
@@ -13986,7 +13986,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":5,
-        "Card Text":"Camarilla: If Edith Blount is in your ready region, she may burn a blood to give Enid +1 stealth for the current action.",
+        "Card Text":"Camarilla: If /Edith Blount/ is in your ready region, she may burn a blood to give Enid +1 stealth for the current action.",
         "Set":{
             "CE":{
                 "V":true
@@ -16164,7 +16164,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":7,
-        "Card Text":"Laibon: Ganhuru can prevent 1 non-aggravated damage each combat. If Ubende is ready, you gain a pool whenever Ganhuru successfully bleeds your prey.",
+        "Card Text":"Laibon: Ganhuru can prevent 1 non-aggravated damage each combat. If /Ubende/ is ready, you gain a pool whenever Ganhuru successfully bleeds your prey.",
         "Set":{
             "LoB":{
                 "PI":"2"
@@ -17548,7 +17548,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":7,
-        "Card Text":"Sabbat priscus: If you also control Humo, Greensleeves may burn a blood to give Humo +1 bleed during a bleed action.",
+        "Card Text":"Sabbat priscus: If you also control /Humo/, Greensleeves may burn a blood to give /Humo/ +1 bleed during a bleed action.",
         "Set":{
             "Third":{
                 "V":true
@@ -20036,7 +20036,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Sabbat: If you also control Greensleeves and he is ready, Humo may burn a blood to give Greensleeves +1 stealth once each action.",
+        "Card Text":"Sabbat: If you also control /Greensleeves/ and he is ready, Humo may burn a blood to give /Greensleeves/ +1 stealth once each action.",
         "Set":{
             "Third":{
                 "V":true
@@ -22245,7 +22245,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":2,
-        "Card Text":"Sabbat. Red List: Jayne gets an additional +1 stealth when hunting, but -1 stealth on any other actions. If Jayne is ready during your unlock phase and the Society of Leopold is in play, you may move the Society to any ready vampire.",
+        "Card Text":"Sabbat. Red List: Jayne gets an additional +1 stealth when hunting, but -1 stealth on any other actions. If Jayne is ready during your unlock phase and the /Society of Leopold/ is in play, you may move the Society to any ready vampire.",
         "Set":{
             "KMW":{
                 "PAn":1
@@ -22564,7 +22564,7 @@
         ],
         "Group":"3",
         "Capacity":8,
-        "Card Text":"Advanced, Independent: Jeremy can enter combat with a younger vampire controlled by your predator or prey as a (D) action.\n[MERGED] Anarch Baron of Los Angeles.",
+        "Card Text":"Advanced, Independent: Jeremy can enter combat with a younger vampire controlled by your predator or prey as a (D) action.\n[MERGED] Anarch Baron of Los /Angel/es.",
         "Set":{
             "Anarchs":{
                 "U":true,
@@ -22858,7 +22858,7 @@
         ],
         "Group":"4",
         "Capacity":9,
-        "Card Text":"Advanced, Laibon: If Jibade is ready, he may burn a blood and lock X Aye on him to prevent X damage to any ally or retainer in combat.",
+        "Card Text":"Advanced, Laibon: If Jibade is ready, he may burn a blood and lock X /Aye/ on him to prevent X damage to any ally or retainer in combat.",
         "Set":{
             "EK":{
                 "U":true
@@ -23124,7 +23124,7 @@
         "Adv":"",
         "Group":"5",
         "Capacity":4,
-        "Card Text":"Independent: Ecstasy, The Jones and XTC-Laced Blood cannot target Johann.",
+        "Card Text":"Independent: /Ecstasy/, /Jones, The/ and /XTC-Laced Blood/ cannot target Johann.",
         "Set":{
             "LotN":{
                 "U":true
@@ -26244,7 +26244,7 @@
         ],
         "Group":"2",
         "Capacity":10,
-        "Card Text":"Advanced, Independent: Lambach has 2 votes (titled). He can equip with an Eye of Hazimel at no cost from your library as a +1 stealth action (shuffle afterward).\n[MERGED] He unlocks when he successfully performs an action to put a vampire in play.",
+        "Card Text":"Advanced, Independent: Lambach has 2 votes (titled). He can equip with an Eye of /Hazimel/ at no cost from your library as a +1 stealth action (shuffle afterward).\n[MERGED] He unlocks when he successfully performs an action to put a vampire in play.",
         "Set":{
             "Promo":{
                 "20030901":true
@@ -28098,7 +28098,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Laibon: Luanda gets +1 strength for each Orun he has.",
+        "Card Text":"Laibon: Luanda gets +1 strength for each /Orun/ he has.",
         "Set":{
             "EK":{
                 "U":true
@@ -34373,7 +34373,7 @@
         "Adv":"",
         "Group":"5",
         "Capacity":9,
-        "Card Text":"Laibon magaji: Once each combat, Ngozi may lock an Orun on her to make damage from her hand strikes aggravated for the current round.",
+        "Card Text":"Laibon magaji: Once each combat, Ngozi may lock an /Orun/ on her to make damage from her hand strikes aggravated for the current round.",
         "Set":{
             "EK":{
                 "U":true
@@ -37519,7 +37519,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Sabbat cardinal: During your unlock phase, Radu gains 1 blood if the Purchase Pact is in play.",
+        "Card Text":"Sabbat cardinal: During your unlock phase, Radu gains 1 blood if the /Purchase Pact/ is in play.",
         "Set":{
             "Third":{
                 "PTz":"2"
@@ -38721,7 +38721,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":2,
-        "Card Text":"Sabbat. Black Hand: If Rico is ready during your master phase, move a Bomb from your hand or ash heap to him (no cost) or he takes 1 damage. During your unlock phase, if Rico is ready and has a Bomb, burn the Bomb and another ready minion you control takes 2 damage.",
+        "Card Text":"Sabbat. Black Hand: If Rico is ready during your master phase, move a /Bomb/ from your hand or ash heap to him (no cost) or he takes 1 damage. During your unlock phase, if Rico is ready and has a /Bomb/, burn the /Bomb/ and another ready minion you control takes 2 damage.",
         "Set":{
             "Third":{
                 "V":true
@@ -43660,7 +43660,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":4,
-        "Card Text":"Camarilla: While Tarautas is ready, Blood Doll and Minion Tap cards cost an additional pool.",
+        "Card Text":"Camarilla: While Tarautas is ready, /Blood Doll/ and /Minion Tap/ cards cost an additional pool.",
         "Set":{
             "TR":{
                 "U":true
@@ -45072,7 +45072,7 @@
         "Adv":"",
         "Group":"5",
         "Capacity":2,
-        "Card Text":"Sabbat: Toy cannot act or block. Toy Chest Test cannot be played on him. Malkavian antitribu slave.",
+        "Card Text":"Sabbat: Toy cannot act or block. /Toy Chest Test/ cannot be played on him. Malkavian antitribu slave.",
         "Set":{
             "HttBR":{
                 "A":"1"
@@ -45746,7 +45746,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":9,
-        "Card Text":"Laibon magaji: You may use a master phase action to search your library or ash heap for an Aye or Orun to place on a ready Laibon.",
+        "Card Text":"Laibon magaji: You may use a master phase action to search your library or ash heap for an /Aye/ or /Orun/ to place on a ready Laibon.",
         "Set":{
             "EK":{
                 "U":true
@@ -46520,7 +46520,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Independent: Vassily may burn a hunting ground or a Blood Doll card as a (D) action.",
+        "Card Text":"Independent: Vassily may burn a hunting ground or a /Blood Doll/ card as a (D) action.",
         "Set":{
             "LotN":{
                 "PR":"2"

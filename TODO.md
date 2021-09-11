@@ -1,5 +1,6 @@
 # FIX
 * Save scrolling position
+* On hover with long sets
 
 # FIX MOBILE
 * Select click color on mobile

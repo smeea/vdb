@@ -75,26 +75,30 @@ with open("cardbase_crypt.json", "r+",
     cards = {**crypt, **library}
 
     for id, card in cards.items():
-        other_cards = cards.copy()
-        del other_cards[id]
-
         if id == '100001':
             print('\n')
 
-        for other_card in other_cards.values():
-            if other_card['Name'] not in blacklist and other_card[
-                    'Name'] not in card['Name'] and other_card['Name'] in card[
-                        'Card Text']:
-                if f"/{other_card['Name']}/" in card['Card Text']:
+        for other_card in cards.values():
+            if other_card['Id'] == int(id):
+                continue
+
+            name = other_card['Name']
+            if ', The' in name:
+                name = name.replace(', The', '')
+                name = f"The {name}"
+
+            if name not in blacklist and name not in card[
+                    'Name'] and name in card['Card Text']:
+                if f"/{name}/" in card['Card Text']:
                     print(f"OK: {card['Name']} -> /{other_card['Name']}/")
                 else:
                     if int(id) > 200000:
                         crypt[id]['Card Text'] = crypt[id][
-                            'Card Text'].replace(other_card['Name'],
+                            'Card Text'].replace(name,
                                                  f"/{other_card['Name']}/")
                     else:
                         library[id]['Card Text'] = library[id][
-                            'Card Text'].replace(other_card['Name'],
+                            'Card Text'].replace(name,
                                                  f"/{other_card['Name']}/")
 
                     print(f"FIXED: {card['Name']} -> {other_card['Name']}")
