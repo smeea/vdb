@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Select from 'react-select';
+import GiftFill from '../../assets/images/icons/gift-fill.svg';
 import precons from './forms_data/preconOptions.json';
 import AppContext from '../../context/AppContext.js';
 
@@ -15,8 +16,12 @@ function DeckSelectPrecon(props) {
           .replace(/[\s,:!?'.\-]/g, '')}.svg`;
 
         return (
-          <div className="d-inline pr-3" key={index}>
-            {clan != 'Bundle' && clan != 'Mix' && (
+          <div className="d-inline" key={index}>
+            {clan === 'Bundle' ? (
+              <div className="d-inline clan-image-results">
+                <GiftFill />
+              </div>
+            ) : clan === 'Mix' ? null : (
               <img src={imgSrc} className="clan-image-results" />
             )}
           </div>

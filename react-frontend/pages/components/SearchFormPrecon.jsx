@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
+import GiftFill from '../../assets/images/icons/gift-fill.svg';
 import precons from './forms_data/preconOptions.json';
 import AppContext from '../../context/AppContext.js';
 
@@ -17,7 +18,11 @@ function SearchFormPrecon(props) {
 
         return (
           <div className="d-inline" key={index}>
-            {clan != 'Bundle' && clan != 'Mix' && (
+            {clan === 'Bundle' ? (
+              <div className="d-inline clan-image-results">
+                <GiftFill />
+              </div>
+            ) : clan === 'Mix' ? null : (
               <img src={imgSrc} className="clan-image-results" />
             )}
           </div>
