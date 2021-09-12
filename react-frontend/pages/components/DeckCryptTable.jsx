@@ -343,7 +343,7 @@ function DeckCryptTable(props) {
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
-            {props.disciplinesSet.length < 14 ? (
+            {props.disciplinesSet.length < 13 ? (
               <DeckCryptDisciplines
                 value={card.c['Disciplines']}
                 disciplinesSet={props.disciplinesSet}
