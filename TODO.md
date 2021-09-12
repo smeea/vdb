@@ -1,5 +1,6 @@
 # FIX
 * Save scrolling position
+* Fix too many disciplines in deck (e.g. bundles)
 
 # FIX MOBILE
 * Select click color on mobile
@@ -16,7 +17,6 @@
 * How can I help section - twd, rulings
 * TWD new/random to respect url
 * Check for banned cards in deck
-* Add Unleased set
 
 # BIG FEATURES
 * Card text history

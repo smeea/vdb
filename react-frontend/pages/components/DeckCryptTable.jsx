@@ -8,6 +8,7 @@ import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import DeckCryptDisciplines from './DeckCryptDisciplines.jsx';
+import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
@@ -334,12 +335,19 @@ function DeckCryptTable(props) {
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
-            <DeckCryptDisciplines
-              value={card.c['Disciplines']}
-              disciplinesSet={props.disciplinesSet}
-              keyDisciplines={props.keyDisciplines}
-              nonKeyDisciplines={props.nonKeyDisciplines}
-            />
+            {props.disciplinesSet.length < 14 ? (
+              <DeckCryptDisciplines
+                value={card.c['Disciplines']}
+                disciplinesSet={props.disciplinesSet}
+                keyDisciplines={props.keyDisciplines}
+                nonKeyDisciplines={props.nonKeyDisciplines}
+              />
+            ) : (
+              <ResultCryptDisciplines
+                value={card.c['Disciplines']}
+                maxDisciplines={7}
+              />
+            )}
           </td>
           {!isMobile ? (
             <OverlayTrigger
