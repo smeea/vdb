@@ -1,6 +1,5 @@
 # FIX
 * Save scrolling position
-* Fix too many disciplines in deck (e.g. bundles)
 
 # FIX MOBILE
 * Select click color on mobile

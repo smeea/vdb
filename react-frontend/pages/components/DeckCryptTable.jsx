@@ -39,6 +39,14 @@ function DeckCryptTable(props) {
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
+  let maxDisciplines = 0;
+  props.cards.map((card) => {
+    const n = Object.keys(card.c['Disciplines']).length;
+    if (maxDisciplines < n) {
+      maxDisciplines = n;
+    }
+  });
+
   const cardRows = props.cards.map((card) => {
     const handleClick = () => {
       props.handleModalCardOpen(card.c);
@@ -345,7 +353,7 @@ function DeckCryptTable(props) {
             ) : (
               <ResultCryptDisciplines
                 value={card.c['Disciplines']}
-                maxDisciplines={7}
+                maxDisciplines={maxDisciplines}
               />
             )}
           </td>
