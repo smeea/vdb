@@ -21,8 +21,14 @@ import OverlayTooltip from './OverlayTooltip.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckSelectAdvModal(props) {
-  const { cryptCardBase, decks, deckUpdate, setActiveDeck, inventoryMode } =
-    useContext(AppContext);
+  const {
+    cryptCardBase,
+    decks,
+    deckUpdate,
+    setActiveDeck,
+    inventoryMode,
+    isMobile,
+  } = useContext(AppContext);
 
   const [sortMethod, setSortMethod] = useState('byName');
   const [sortedDecks, setSortedDecks] = useState([]);
@@ -176,7 +182,7 @@ function DeckSelectAdvModal(props) {
     return (
       <React.Fragment key={deck.deckid}>
         <tr className={resultTrClass}>
-          {inventoryMode && (
+          {inventoryMode && !isMobile && (
             <td className="inventory" onClick={() => toggleInventoryState()}>
               <div
                 className="px-2"
@@ -194,13 +200,14 @@ function DeckSelectAdvModal(props) {
               </div>
             </td>
           )}
-
-          <td className="clan" onClick={() => handleOpen(deck.deckid)}>
-            {clan && <ResultCryptClan value={clan} />}
-          </td>
-          <td className="name" onClick={() => handleOpen(deck.deckid)}>
+          {!isMobile && (
+            <td className="clan" onClick={() => handleOpen(deck.deckid)}>
+              {clan && <ResultCryptClan value={clan} />}
+            </td>
+          )}
+          <td className="name px-1" onClick={() => handleOpen(deck.deckid)}>
             <div
-              className="d-flex trimmed mw-200 name justify-content-between"
+              className="d-flex trimmed name justify-content-between"
               title={deck.name}
             >
               {deck.name}
@@ -216,81 +223,88 @@ function DeckSelectAdvModal(props) {
                 )}
             </div>
           </td>
-          <td className="preview">
-            <div
-              className="m-2"
-              onMouseEnter={() => setShowDeck(deck.deckid)}
-              onMouseLeave={() => setShowDeck(false)}
-            >
-              <OverlayTooltip
-                placement="right"
-                show={showDeck === deck.deckid}
-                className="adv-select"
-                text={
-                  <Row>
-                    <Col
-                      md={7}
-                      onClick={(event) => {
-                        if (event.target === event.currentTarget)
-                          setShowDeck(false);
-                      }}
-                    >
-                      <DeckCrypt
-                        deckid={deck.deckid}
-                        cards={deck.crypt}
-                        inAdvSelect={true}
-                      />
-                    </Col>
-                    <Col
-                      md={5}
-                      onClick={(event) => {
-                        if (event.target === event.currentTarget)
-                          setShowDeck(false);
-                      }}
-                    >
-                      <DeckLibrary
-                        deckid={deck.deckid}
-                        cards={deck.library}
-                        inAdvSelect={true}
-                      />
-                    </Col>
-                  </Row>
-                }
+          {!isMobile && (
+            <td className="preview">
+              <div
+                className="m-2"
+                onMouseEnter={() => setShowDeck(deck.deckid)}
+                onMouseLeave={() => setShowDeck(false)}
               >
-                <EyeFill />
-              </OverlayTooltip>
-            </div>
-          </td>
-          <td className="date" onClick={() => handleOpen(deck.deckid)}>
-            {new Date(deck.timestamp).toISOString().slice(0, 10)}
-          </td>
+                <OverlayTooltip
+                  placement="right"
+                  show={showDeck === deck.deckid}
+                  className="adv-select"
+                  text={
+                    <Row>
+                      <Col
+                        md={7}
+                        onClick={(event) => {
+                          if (event.target === event.currentTarget)
+                            setShowDeck(false);
+                        }}
+                      >
+                        <DeckCrypt
+                          deckid={deck.deckid}
+                          cards={deck.crypt}
+                          inAdvSelect={true}
+                        />
+                      </Col>
+                      <Col
+                        md={5}
+                        onClick={(event) => {
+                          if (event.target === event.currentTarget)
+                            setShowDeck(false);
+                        }}
+                      >
+                        <DeckLibrary
+                          deckid={deck.deckid}
+                          cards={deck.library}
+                          inAdvSelect={true}
+                        />
+                      </Col>
+                    </Row>
+                  }
+                >
+                  <EyeFill />
+                </OverlayTooltip>
+              </div>
+            </td>
+          )}
+          {!isMobile && (
+            <td className="date" onClick={() => handleOpen(deck.deckid)}>
+              {new Date(deck.timestamp).toISOString().slice(0, 10)}
+            </td>
+          )}
           <td className="tags">
             <DeckTags defaultTagsOptions={defaultTagsOptions} deck={deck} />
           </td>
-          <td className="buttons">
-            {revFilter &&
-              (deck.master || (deck.branches && deck.branches.length > 0)) && (
-                <div className="d-inline pl-1">
-                  <DeckBranchDelete noText={true} deck={deck} />
-                </div>
-              )}
-            <div className="d-inline pl-1">
-              <DeckDelete noText={true} deck={deck} />
-            </div>
-            <div className="d-inline pl-1">
-              <DeckClone
-                activeDeck={{ src: 'my', deckid: deck.deckid }}
-                noText={true}
-                deck={deck}
-              />
-            </div>
-            <div className="d-inline pl-1">
-              <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
-            </div>
-            <div className="d-inline pl-1">
-              <DeckProxy noText={true} deck={deck} />
-            </div>
-          </td>
+          {!isMobile && (
+            <td className="buttons">
+              {revFilter &&
+                (deck.master ||
+                  (deck.branches && deck.branches.length > 0)) && (
+                  <div className="d-inline pl-1">
+                    <DeckBranchDelete noText={true} deck={deck} />
+                  </div>
+                )}
+              <div className="d-inline pl-1">
+                <DeckDelete noText={true} deck={deck} />
+              </div>
+              <div className="d-inline pl-1">
+                <DeckClone
+                  activeDeck={{ src: 'my', deckid: deck.deckid }}
+                  noText={true}
+                  deck={deck}
+                />
+              </div>
+              <div className="d-inline pl-1">
+                <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
+              </div>
+              <div className="d-inline pl-1">
+                <DeckProxy noText={true} deck={deck} />
+              </div>
+            </td>
+          )}
         </tr>
       </React.Fragment>
     );
@@ -302,15 +316,16 @@ function DeckSelectAdvModal(props) {
       onHide={props.handleClose}
       animation={false}
       size="xl"
+      dialogClassName={isMobile ? 'm-0' : null}
     >
-      <Modal.Body>
+      <Modal.Body className={isMobile ? 'p-0' : null}>
         <DeckTotal />
         <table className="decks-table">
           <thead>
             <tr>
-              {inventoryMode && <th className="inventory"></th>}
-              <th className="clan"></th>
-              <th className="name">
+              {inventoryMode && !isMobile && <th className="inventory"></th>}
+              {!isMobile && <th className="clan"></th>}
+              <th className="name trimmed mw-175">
                 <FormControl
                   placeholder="Filter by Deck or Card Name"
                   type="text"
@@ -321,8 +336,8 @@ function DeckSelectAdvModal(props) {
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              <th className="preview"></th>
-              <th className="date"></th>
+              {!isMobile && <th className="preview"></th>}
+              {!isMobile && <th className="date"></th>}
               <th className="tags">
                 <Select
                   classNamePrefix="tags-filter react-select-tags"
@@ -331,25 +346,31 @@ function DeckSelectAdvModal(props) {
                   onChange={handleChangeTagsFilter}
                   defaultValue={tagsFilter}
                   placeholder="Filter by Tags"
+                  isSearchable={!isMobile}
                 />
               </th>
-              <th className="buttons">
-                <div className="d-flex justify-content-end align-items-center">
-                  <div className="d-inline align-items-bottom custom-control custom-checkbox pr-3">
-                    <input
-                      id="revFilter"
-                      className="custom-control-input"
-                      type="checkbox"
-                      checked={revFilter}
-                      onChange={() => setRevFilter(!revFilter)}
-                    />
-                    <label htmlFor="revFilter" className="custom-control-label">
-                      Revisions
-                    </label>
+              {!isMobile && (
+                <th className="buttons">
+                  <div className="d-flex justify-content-end align-items-center">
+                    <div className="d-inline align-items-bottom custom-control custom-checkbox pr-3">
+                      <input
+                        id="revFilter"
+                        className="custom-control-input"
+                        type="checkbox"
+                        checked={revFilter}
+                        onChange={() => setRevFilter(!revFilter)}
+                      />
+                      <label
+                        htmlFor="revFilter"
+                        className="custom-control-label"
+                      >
+                        Revisions
+                      </label>
+                    </div>
+                    <DeckSelectSortForm onChange={setSortMethod} />
                   </div>
-                  <DeckSelectSortForm onChange={setSortMethod} />
-                </div>
-              </th>
+                </th>
+              )}
             </tr>
           </thead>
           <tbody>{deckRows}</tbody>

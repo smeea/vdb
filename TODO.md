@@ -2,16 +2,13 @@
 * Save scrolling position
 
 # FIX MOBILE
-* Select click color on mobile
-* Card modal popovers in text/rulings like /Card Name/ or {Card Name} to open on mobile
-* Advanced deck select window and inventory precon import
+* Inventory precon/deck import
 
 # FEATURES
 * Create revocable link to Inventory
 * Show missing cards for inventory
 * Localized proxies and from scans
 * Tags to deck main window
-* Crypt unique draw chances to info line
 * Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url

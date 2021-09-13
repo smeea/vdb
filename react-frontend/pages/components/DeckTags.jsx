@@ -3,7 +3,7 @@ import CreatableSelect from 'react-select/creatable';
 import AppContext from '../../context/AppContext';
 
 function DeckTags(props) {
-  const { deckUpdate } = useContext(AppContext);
+  const { deckUpdate, isMobile } = useContext(AppContext);
 
   const setTags = (tags) => deckUpdate(props.deck.deckid, 'setTags', tags);
 
@@ -17,10 +17,6 @@ function DeckTags(props) {
     value: tag,
   }));
 
-  const NoOptionsMessage = (props) => {
-    return <div className="d-flex justify-content-center">Enter new tag</div>;
-  };
-
   return (
     <CreatableSelect
       classNamePrefix="react-select-tags"
@@ -30,7 +26,6 @@ function DeckTags(props) {
       onChange={handleChange}
       defaultValue={tags}
       placeholder={false}
-      components={{ NoOptionsMessage }}
     />
   );
 }
