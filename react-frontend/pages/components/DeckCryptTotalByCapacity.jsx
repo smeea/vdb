@@ -1,36 +1,46 @@
 import React from 'react';
+import drawUniqueProbability from './drawUniqueProbability.js';
 
 function DeckCryptTotalByCapacity(props) {
   let cryptTotalCap = 0;
-  const capacityList = [];
+  let cryptTotalQ = 0;
+  const quantityList = [];
 
-  Object.keys(props.cards).map((key, index) => {
-    cryptTotalCap += props.cards[key]['c']['Capacity'] * props.cards[key]['q'];
-    [...Array(props.cards[key]['q'])].map((_, i) => {
-      capacityList.push(props.cards[key]['c']['Capacity']);
-    });
+  Object.keys(props.cards).map((id, index) => {
+    cryptTotalCap += props.cards[id]['c']['Capacity'] * props.cards[id]['q'];
+    cryptTotalQ += props.cards[id].q;
+    quantityList.push(props.cards[id].q);
   });
 
-  const cryptAvg =
-    Math.round((cryptTotalCap / capacityList.length) * 100) / 100;
+  const uniqueDraw = drawUniqueProbability(quantityList, 4).map((i, idx) => {
+    if (i > 0 && i < 0.01) i = 0.01;
+    if (i > 0.999) i = 1;
 
-  let cryptMin = 0;
-  let cryptMax = 0;
-  capacityList.sort((a, b) => {
-    return a - b;
+    if (i > 0) {
+      return (
+        <div
+          className="d-inline pl-3"
+          key={idx}
+          title={`Chance to draw ${idx} unique vampires`}
+        >
+          <span className="blue">
+            <b>{idx}:</b>
+          </span>{' '}
+          {Math.round(i * 100)}%
+        </div>
+      );
+    }
   });
 
-  [...Array(4)].map((_, i) => {
-    cryptMin += capacityList.shift();
-    cryptMax += capacityList.pop();
-  });
+  const cryptAvg = Math.round((cryptTotalCap / cryptTotalQ) * 100) / 100;
 
   return (
-    <>
-      <div className="d-inline pr-2">Min={cryptMin}</div>
-      <div className="d-inline px-2">Max={cryptMax}</div>
-      <div className="d-inline pl-2">Avg={cryptAvg}</div>
-    </>
+    <div className="d-flex justify-content-between">
+      <div className="d-inline">
+        <span className="blue">Avg. cap:</span> {cryptAvg}
+      </div>
+      <div className="d-inline">{uniqueDraw}</div>
+    </div>
   );
 }
 

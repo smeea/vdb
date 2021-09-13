@@ -227,8 +227,8 @@ function DeckCrypt(props) {
         )}
       </div>
       {showInfo && (
-        <div className="info-message pl-2">
-          <DeckCryptTotalByCapacity cards={props.cards} />
+        <div className="info-message px-2">
+          <DeckCryptTotalByCapacity cards={crypt} />
         </div>
       )}
       {showAdd &&
