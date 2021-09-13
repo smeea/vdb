@@ -228,7 +228,7 @@ function TwdResultLibraryKeyCards(props) {
   return (
     <>
       <div className="px-1">
-        <b>{isMobile && `Library [${libraryTotal}],`} Key Cards:</b>
+        <b>{isMobile && `Library [${libraryTotal}],`} Key Cards</b>
       </div>
       <div className="props.library">
         <table className="twd-library-table">

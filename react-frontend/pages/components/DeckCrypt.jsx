@@ -102,6 +102,7 @@ function DeckCrypt(props) {
   const cryptSide = {};
   const cryptCards = [];
   const cryptSideCards = [];
+  let hasBanned = false;
   let cryptGroupMin;
   let cryptGroupMax;
 
@@ -110,6 +111,9 @@ function DeckCrypt(props) {
       crypt[card] = props.cards[card];
       if (props.cards[card].c['Group'] == 'ANY') {
         return;
+      }
+      if (props.cards[card].c['Banned']) {
+        hasBanned = true;
       }
       if (
         props.cards[card].c['Group'] < cryptGroupMin ||
@@ -196,6 +200,7 @@ function DeckCrypt(props) {
         <b>
           Crypt [{cryptTotal}
           {cryptTotal < 12 && ' of 12+'}] - {cryptGroups}
+          {hasBanned && ' - WITH BANNED'}
         </b>
         {!props.inAdvSelect && (
           <div className="d-flex">

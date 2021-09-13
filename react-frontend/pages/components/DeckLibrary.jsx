@@ -55,10 +55,14 @@ function DeckLibrary(props) {
   const librarySide = {};
   const libraryCards = [];
   const librarySideCards = [];
+  let hasBanned = false;
 
   Object.keys(props.cards).map((card, index) => {
     if (props.cards[card].q > 0) {
       library[card] = props.cards[card];
+      if (props.cards[card].c['Banned']) {
+        hasBanned = true;
+      }
     } else {
       librarySide[card] = props.cards[card];
     }
@@ -210,6 +214,7 @@ function DeckLibrary(props) {
           <b>
             Library [{libraryTotal}
             {(libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
+            {hasBanned && ' - WITH BANNED'}
           </b>
           <div className="d-flex">
             <div

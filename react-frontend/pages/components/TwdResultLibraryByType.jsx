@@ -29,12 +29,16 @@ function TwdResultLibraryByType(props) {
     'Event',
   ];
 
+  let hasBanned = false;
   let libraryTotal = 0;
   let trifleTotal = 0;
   const libraryByType = {};
   const libraryByTypeTotal = {};
 
   Object.keys(props.library).map((card) => {
+    if (props.library[card].c['Banned']) {
+      hasBanned = true;
+    }
     libraryTotal += props.library[card].q;
     const cardtype = props.library[card].c['Type'];
     if (libraryByType[cardtype] === undefined) {
@@ -76,9 +80,7 @@ function TwdResultLibraryByType(props) {
       const imgClass = 'type-image-results';
       const cardtypes = cardtype.split('/');
       const cardtypeImages = cardtypes.map((cardtype, index) => {
-        const imgSrc = `${
-          process.env.ROOT_URL
-        }images/types/${cardtype
+        const imgSrc = `${process.env.ROOT_URL}images/types/${cardtype
           .toLowerCase()
           .replace(/[\s,:!?'.\-]/g, '')}.svg`;
         const imgTitle = cardtype;
@@ -111,7 +113,9 @@ function TwdResultLibraryByType(props) {
   return (
     <>
       <div className="px-1">
-        <b>Library [{libraryTotal}]:</b>
+        <b>
+          Library [{libraryTotal}]{hasBanned && ' - WITH BANNED'}
+        </b>
       </div>
       <table className="twd-librarybytype-table">
         <tbody>{LibraryTypes}</tbody>

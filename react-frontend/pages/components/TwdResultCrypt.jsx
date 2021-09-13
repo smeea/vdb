@@ -30,8 +30,12 @@ function TwdResultCrypt(props) {
 
   let cryptGroupMin;
   let cryptGroupMax;
+  let hasBanned = false;
 
   Object.keys(props.crypt).map((card) => {
+    if (props.crypt[card].c['Banned']) {
+      hasBanned = true;
+    }
     if (props.crypt[card].c['Group'] == 'ANY') {
       return;
     }
@@ -226,6 +230,7 @@ function TwdResultCrypt(props) {
       <div className="px-1">
         <b>
           Crypt [{cryptTotal}] - {cryptGroups}
+          {hasBanned && ' - WITH BANNED'}
         </b>
       </div>
       <table className="twd-crypt-table">
