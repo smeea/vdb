@@ -39,7 +39,6 @@ function TwdResult(props) {
 
   useEffect(() => {
     let newCounter = showCounter;
-    const total = twdResults.length;
 
     setTwdRows(
       twdResults.map((deck, index) => {
@@ -98,7 +97,7 @@ function TwdResult(props) {
                 )}
                 <hr />
               </Row>
-              {index + 1 < total && <hr className="mx-0 thick" />}
+              {index + 1 < showCounter && <hr className="mx-0 thick" />}
             </React.Fragment>
           );
         }

@@ -15,7 +15,6 @@
 * Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url
-* Check for banned cards in deck
 
 # BIG FEATURES
 * Card text history
