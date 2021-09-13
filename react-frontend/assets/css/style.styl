@@ -222,8 +222,14 @@ button.btn-danger:hover
     background: var(--bg-button) !important
   &__multi-value__label
     color: var(--fg-primary) !important
+    border-top: 1px solid var(--border-forms)
+    border-bottom: 1px solid var(--border-forms)
+    border-left: 1px solid var(--border-forms)
   &__multi-value__remove
     background: var(--bg-button) !important
+    border-top: 1px solid var(--border-forms)
+    border-bottom: 1px solid var(--border-forms)
+    border-right: 1px solid var(--border-forms)
   &__multi-value__remove:hover
     color: var(--fg-button) !important
     background: var(--bg-button-hover) !important
@@ -546,6 +552,10 @@ td.prob
   width: 50px
 
 .decks-table
+  border: 1px solid var(--border-secondary)
+  td
+    border-top: 1px solid var(--border-secondary)
+    border-bottom: 1px solid var(--border-secondary)
   .clan
     text-align: center
     min-width: 50px
