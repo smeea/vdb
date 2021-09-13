@@ -6,69 +6,75 @@ import AppContext from '../../context/AppContext';
 const ResultLayoutTextSets = (props) => {
   const { isMobile } = useContext(AppContext);
 
-  const Sets = Object.keys(props.sets).map((k, index) => {
-    const preconsShort = Object.keys(props.sets[k]).join('/');
+  const byYear = (a, b) => {
+    return setsData[a].year - setsData[b].year;
+  };
 
-    const preconsDetailed = Object.keys(props.sets[k]).map((i, idx) => {
-      const abbrevs = {
-        U: 'Uncommon',
-        R: 'Rare',
-        C: 'Common',
-        V: 'Vampire',
-      };
+  const Sets = Object.keys(props.sets)
+    .sort(byYear)
+    .map((k, index) => {
+      const preconsShort = Object.keys(props.sets[k]).join('/');
 
-      if (setsData[k].precons && setsData[k].precons[i]) {
-        return (
-          <li className="rulings" key={idx}>
-            {setsData[k].precons[i]} - {props.sets[k][i]}x
-          </li>
-        );
-      } else {
-        if (i !== 'DTC') {
+      const preconsDetailed = Object.keys(props.sets[k]).map((i, idx) => {
+        const abbrevs = {
+          U: 'Uncommon',
+          R: 'Rare',
+          C: 'Common',
+          V: 'Vampire',
+        };
+
+        if (setsData[k].precons && setsData[k].precons[i]) {
           return (
             <li className="rulings" key={idx}>
-              {abbrevs[i]}
+              {setsData[k].precons[i]} - {props.sets[k][i]}x
             </li>
           );
+        } else {
+          if (i !== 'DTC') {
+            return (
+              <li className="rulings" key={idx}>
+                {abbrevs[i]}
+              </li>
+            );
+          }
         }
-      }
-    });
+      });
 
-    const popoverText = (
-      <>
-        <b>{setsData[k].name}</b>
-        {k !== 'POD' && ' - ' + setsData[k].year}
-        <br />
-        <ul className="rulings">{preconsDetailed}</ul>
-      </>
-    );
+      const popoverText = (
+        <>
+          <b>{setsData[k].name}</b>
+          {k !== 'POD' && ' - ' + setsData[k].year}
+          <br />
+          <ul className="rulings">{preconsDetailed}</ul>
+        </>
+      );
 
-    return (
-      <div
-        className="d-inline-block nobr pr-2"
-        onClick={() => props.setImageSet(k.toLowerCase())}
-        key={index}
-      >
-        {isMobile ? (
-          <div className="d-inline">
-            {k}
-            <div className="d-inline gray">
-              {preconsShort ? `:${preconsShort}` : null}
-            </div>
-          </div>
-        ) : (
-          <OverlayTooltip text={popoverText} placement="bottom">
+      return (
+        <div
+          className="d-inline-block nobr pr-2"
+          onClick={() => props.setImageSet(k.toLowerCase())}
+          key={index}
+        >
+          {isMobile ? (
             <div className="d-inline">
               {k}
               <div className="d-inline gray">
                 {preconsShort ? `:${preconsShort}` : null}
               </div>
             </div>
-          </OverlayTooltip>
-        )}
-      </div>
-    );
-  });
+          ) : (
+            <OverlayTooltip text={popoverText} placement="bottom">
+              <div className="d-inline">
+                {k}
+                <div className="d-inline gray">
+                  {preconsShort ? `:${preconsShort}` : null}
+                </div>
+              </div>
+            </OverlayTooltip>
+          )}
+        </div>
+      );
+    });
 
   return <div className="d-inline pl-2">{Sets}</div>;
 };
