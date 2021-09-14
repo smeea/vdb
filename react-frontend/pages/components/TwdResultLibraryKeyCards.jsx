@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
@@ -13,8 +13,69 @@ import AppContext from '../../context/AppContext.js';
 function TwdResultLibraryKeyCards(props) {
   const { decks, inventoryLibrary, usedLibraryCards, inventoryMode, isMobile } =
     useContext(AppContext);
+
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+
+  useEffect(() => {
+    if (inventoryMode && modalCardIdx !== undefined) {
+      const cardid = keyCards[modalCardIdx].c.Id;
+
+      let inInventory = 0;
+      let softUsedMax = 0;
+      let SoftUsedDescription;
+      let hardUsedTotal = 0;
+      let HardUsedDescription;
+
+      if (Object.keys(inventoryLibrary).includes(cardid.toString())) {
+        inInventory = inventoryLibrary[cardid].q;
+      }
+
+      if (usedLibraryCards && usedLibraryCards.soft[cardid]) {
+        SoftUsedDescription = Object.keys(usedLibraryCards.soft[cardid]).map(
+          (id) => {
+            if (softUsedMax < usedLibraryCards.soft[cardid][id]) {
+              softUsedMax = usedLibraryCards.soft[cardid][id];
+            }
+            return (
+              <UsedDescription
+                key={id}
+                q={usedLibraryCards.soft[cardid][id]}
+                deckName={decks[id]['name']}
+                t="s"
+              />
+            );
+          }
+        );
+      }
+
+      if (usedLibraryCards && usedLibraryCards.hard[cardid]) {
+        HardUsedDescription = Object.keys(usedLibraryCards.hard[cardid]).map(
+          (id) => {
+            hardUsedTotal += usedLibraryCards.hard[cardid][id];
+            return (
+              <UsedDescription
+                key={id}
+                q={usedLibraryCards.hard[cardid][id]}
+                deckName={decks[id]['name']}
+                t="h"
+              />
+            );
+          }
+        );
+      }
+
+      setModalInventory({
+        inInventory: inInventory,
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+        usedDescription: {
+          soft: SoftUsedDescription,
+          hard: HardUsedDescription,
+        },
+      });
+    }
+  }, [modalCardIdx, inventoryMode]);
 
   const handleModalCardChange = (d) => {
     const maxIdx = keyCards.length - 1;
@@ -84,16 +145,6 @@ function TwdResultLibraryKeyCards(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
-      inventoryMode &&
-        setModalInventory({
-          inInventory: inInventory,
-          softUsedMax: softUsedMax,
-          hardUsedTotal: hardUsedTotal,
-          usedDescription: {
-            soft: SoftUsedDescription,
-            hard: HardUsedDescription,
-          },
-        });
     };
 
     if (resultTrClass == 'result-even') {

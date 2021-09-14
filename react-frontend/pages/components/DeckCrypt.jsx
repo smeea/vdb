@@ -7,10 +7,19 @@ import DeckCryptTable from './DeckCryptTable.jsx';
 import DeckNewCryptCard from './DeckNewCryptCard.jsx';
 import DeckCryptSortButton from './DeckCryptSortButton.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
+import UsedDescription from './UsedDescription.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckCrypt(props) {
-  const { cryptSortByCap, changeTimer, isMobile } = useContext(AppContext);
+  const {
+    decks,
+    inventoryMode,
+    inventoryCrypt,
+    usedCryptCards,
+    cryptSortByCap,
+    changeTimer,
+    isMobile,
+  } = useContext(AppContext);
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -18,6 +27,71 @@ function DeckCrypt(props) {
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+
+  useEffect(() => {
+    if (inventoryMode && modalCardIdx !== undefined) {
+      const cardid =
+        modalCardIdx !== undefined
+          ? cryptCards[modalCardIdx].Id
+          : cryptSideCards[modalSideCardIdx].Id;
+
+      let inInventory = 0;
+      let softUsedMax = 0;
+      let hardUsedTotal = 0;
+      let SoftUsedDescription;
+      let HardUsedDescription;
+
+      if (decks && inventoryMode) {
+        if (Object.keys(inventoryCrypt).includes(cardid.toString())) {
+          inInventory = inventoryCrypt[cardid].q;
+        }
+
+        if (usedCryptCards && usedCryptCards.soft[cardid]) {
+          SoftUsedDescription = Object.keys(usedCryptCards.soft[cardid]).map(
+            (id) => {
+              if (softUsedMax < usedCryptCards.soft[cardid][id]) {
+                softUsedMax = usedCryptCards.soft[cardid][id];
+              }
+              return (
+                <UsedDescription
+                  key={id}
+                  q={usedCryptCards.soft[cardid][id]}
+                  deckName={decks[id]['name']}
+                  t="s"
+                />
+              );
+            }
+          );
+        }
+
+        if (usedCryptCards && usedCryptCards.hard[cardid]) {
+          HardUsedDescription = Object.keys(usedCryptCards.hard[cardid]).map(
+            (id) => {
+              hardUsedTotal += usedCryptCards.hard[cardid][id];
+              return (
+                <UsedDescription
+                  key={id}
+                  q={usedCryptCards.hard[cardid][id]}
+                  deckName={decks[id]['name']}
+                  t="h"
+                />
+              );
+            }
+          );
+        }
+      }
+
+      setModalInventory({
+        inInventory: inInventory,
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+        usedDescription: {
+          soft: SoftUsedDescription,
+          hard: HardUsedDescription,
+        },
+      });
+    }
+  }, [modalCardIdx]);
 
   const handleModalCardOpen = (i) => {
     setModalCardIdx(cryptCards.indexOf(i));

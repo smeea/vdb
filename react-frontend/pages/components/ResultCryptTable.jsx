@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CardPopover from './CardPopover.jsx';
@@ -25,8 +25,70 @@ function ResultCryptTable(props) {
     isMobile,
     isWide,
   } = useContext(AppContext);
+
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+
+  useEffect(() => {
+    if (inventoryMode && modalCardIdx !== undefined) {
+      const cardid = props.resultCards[modalCardIdx].Id;
+
+      let inInventory = 0;
+      let softUsedMax = 0;
+      let SoftUsedDescription;
+      let hardUsedTotal = 0;
+      let HardUsedDescription;
+
+      if (Object.keys(inventoryCrypt).includes(cardid.toString())) {
+        inInventory = inventoryCrypt[cardid].q;
+      }
+
+      if (usedCryptCards && usedCryptCards.soft[cardid]) {
+        SoftUsedDescription = Object.keys(usedCryptCards.soft[cardid]).map(
+          (id) => {
+            if (softUsedMax < usedCryptCards.soft[cardid][id]) {
+              softUsedMax = usedCryptCards.soft[cardid][id];
+            }
+            return (
+              <UsedDescription
+                key={id}
+                q={usedCryptCards.soft[cardid][id]}
+                deckName={decks[id]['name']}
+                t="s"
+              />
+            );
+          }
+        );
+      }
+
+      if (usedCryptCards && usedCryptCards.hard[cardid]) {
+        HardUsedDescription = Object.keys(usedCryptCards.hard[cardid]).map(
+          (id) => {
+            hardUsedTotal += usedCryptCards.hard[cardid][id];
+            return (
+              <UsedDescription
+                key={id}
+                q={usedCryptCards.hard[cardid][id]}
+                deckName={decks[id]['name']}
+                t="h"
+              />
+            );
+          }
+        );
+      }
+
+      setModalInventory({
+        inInventory: inInventory,
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+        usedDescription: {
+          soft: SoftUsedDescription,
+          hard: HardUsedDescription,
+        },
+      });
+    }
+  }, [modalCardIdx, inventoryMode]);
+
   let resultTrClass;
   let maxDisciplines = 0;
   props.resultCards.map((card) => {
@@ -52,16 +114,6 @@ function ResultCryptTable(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
-      inventoryMode &&
-        setModalInventory({
-          inInventory: inInventory,
-          softUsedMax: softUsedMax,
-          hardUsedTotal: hardUsedTotal,
-          usedDescription: {
-            soft: SoftUsedDescription,
-            hard: HardUsedDescription,
-          },
-        });
     };
 
     if (resultTrClass == 'result-odd') {

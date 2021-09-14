@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -16,10 +16,68 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryCryptTable(props) {
-  const { decks, usedCryptCards, isMobile, isWide } = useContext(AppContext);
+  const { decks, usedCryptCards, inventoryCrypt, isMobile, isWide } =
+    useContext(AppContext);
+
   let resultTrClass;
+
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+
+  useEffect(() => {
+    if (modalCardIdx !== undefined) {
+      const cardid = props.cards[modalCardIdx].c.Id;
+
+      let softUsedMax = 0;
+      let hardUsedTotal = 0;
+      let SoftUsedDescription;
+      let HardUsedDescription;
+
+      if (usedCryptCards && usedCryptCards.soft[cardid]) {
+        SoftUsedDescription = Object.keys(usedCryptCards.soft[cardid]).map(
+          (id) => {
+            if (softUsedMax < usedCryptCards.soft[cardid][id]) {
+              softUsedMax = usedCryptCards.soft[cardid][id];
+            }
+            return (
+              <UsedDescription
+                key={cardid}
+                q={usedCryptCards.soft[cardid][id]}
+                deckName={decks[id]['name']}
+                t="s"
+              />
+            );
+          }
+        );
+      }
+
+      if (usedCryptCards && usedCryptCards.hard[cardid]) {
+        HardUsedDescription = Object.keys(usedCryptCards.hard[cardid]).map(
+          (id) => {
+            hardUsedTotal += usedCryptCards.hard[cardid][id];
+            return (
+              <UsedDescription
+                key={cardid}
+                q={usedCryptCards.hard[cardid][id]}
+                deckName={decks[id]['name']}
+                t="h"
+              />
+            );
+          }
+        );
+      }
+
+      setModalInventory({
+        inInventory: inventoryCrypt[cardid] ? inventoryCrypt[cardid].q : 0,
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+        usedDescription: {
+          soft: SoftUsedDescription,
+          hard: HardUsedDescription,
+        },
+      });
+    }
+  }, [modalCardIdx]);
 
   const handleModalCardChange = (d) => {
     const maxIdx = props.cards.length - 1;
@@ -37,15 +95,6 @@ function InventoryCryptTable(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
-      setModalInventory({
-        inInventory: card.q,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
     };
 
     if (resultTrClass == 'result-odd') {

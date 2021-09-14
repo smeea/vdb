@@ -51,15 +51,6 @@ function DeckCryptTable(props) {
     const handleClick = () => {
       props.handleModalCardOpen(card.c);
       isMobile && props.setShowFloatingButtons(false);
-      props.setModalInventory({
-        inInventory: inInventory,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
     };
 
     if (resultTrClass == 'result-odd') {

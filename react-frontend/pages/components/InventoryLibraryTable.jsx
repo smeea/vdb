@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -16,12 +16,68 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryLibraryTable(props) {
-  const { decks, usedLibraryCards, nativeLibrary, isMobile } =
+  const { decks, usedLibraryCards, inventoryLibrary, nativeLibrary, isMobile } =
     useContext(AppContext);
+
   let resultTrClass;
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+
+  useEffect(() => {
+    if (modalCardIdx !== undefined) {
+      const cardid = props.cards[modalCardIdx].c.Id;
+
+      let softUsedMax = 0;
+      let hardUsedTotal = 0;
+      let SoftUsedDescription;
+      let HardUsedDescription;
+
+      if (usedLibraryCards && usedLibraryCards.soft[cardid]) {
+        SoftUsedDescription = Object.keys(usedLibraryCards.soft[cardid]).map(
+          (id) => {
+            if (softUsedMax < usedLibraryCards.soft[cardid][id]) {
+              softUsedMax = usedLibraryCards.soft[cardid][id];
+            }
+            return (
+              <UsedDescription
+                key={cardid}
+                q={usedLibraryCards.soft[cardid][id]}
+                deckName={decks[id]['name']}
+                t="s"
+              />
+            );
+          }
+        );
+      }
+
+      if (usedLibraryCards && usedLibraryCards.hard[cardid]) {
+        HardUsedDescription = Object.keys(usedLibraryCards.hard[cardid]).map(
+          (id) => {
+            hardUsedTotal += usedLibraryCards.hard[cardid][id];
+            return (
+              <UsedDescription
+                key={cardid}
+                q={usedLibraryCards.hard[cardid][id]}
+                deckName={decks[id]['name']}
+                t="h"
+              />
+            );
+          }
+        );
+      }
+
+      setModalInventory({
+        inInventory: inventoryLibrary[cardid] ? inventoryLibrary[cardid].q : 0,
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+        usedDescription: {
+          soft: SoftUsedDescription,
+          hard: HardUsedDescription,
+        },
+      });
+    }
+  }, [modalCardIdx]);
 
   const handleModalCardChange = (d) => {
     const maxIdx = props.cards.length - 1;
@@ -39,15 +95,6 @@ function InventoryLibraryTable(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
-      setModalInventory({
-        inInventory: card.q,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-      });
     };
 
     if (resultTrClass == 'result-odd') {

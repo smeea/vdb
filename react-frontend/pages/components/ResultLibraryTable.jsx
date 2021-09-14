@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CardPopover from './CardPopover.jsx';
@@ -26,8 +26,70 @@ function ResultLibraryTable(props) {
     nativeLibrary,
     isMobile,
   } = useContext(AppContext);
+
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+
+  useEffect(() => {
+    if (inventoryMode && modalCardIdx !== undefined) {
+      const cardid = props.resultCards[modalCardIdx].Id;
+
+      let inInventory = 0;
+      let softUsedMax = 0;
+      let SoftUsedDescription;
+      let hardUsedTotal = 0;
+      let HardUsedDescription;
+
+      if (Object.keys(inventoryLibrary).includes(cardid.toString())) {
+        inInventory = inventoryLibrary[cardid].q;
+      }
+
+      if (usedLibraryCards && usedLibraryCards.soft[cardid]) {
+        SoftUsedDescription = Object.keys(usedLibraryCards.soft[cardid]).map(
+          (id) => {
+            if (softUsedMax < usedLibraryCards.soft[cardid][id]) {
+              softUsedMax = usedLibraryCards.soft[cardid][id];
+            }
+            return (
+              <UsedDescription
+                key={id}
+                q={usedLibraryCards.soft[cardid][id]}
+                deckName={decks[id]['name']}
+                t="s"
+              />
+            );
+          }
+        );
+      }
+
+      if (usedLibraryCards && usedLibraryCards.hard[cardid]) {
+        HardUsedDescription = Object.keys(usedLibraryCards.hard[cardid]).map(
+          (id) => {
+            hardUsedTotal += usedLibraryCards.hard[cardid][id];
+            return (
+              <UsedDescription
+                key={id}
+                q={usedLibraryCards.hard[cardid][id]}
+                deckName={decks[id]['name']}
+                t="h"
+              />
+            );
+          }
+        );
+      }
+
+      setModalInventory({
+        inInventory: inInventory,
+        softUsedMax: softUsedMax,
+        hardUsedTotal: hardUsedTotal,
+        usedDescription: {
+          soft: SoftUsedDescription,
+          hard: HardUsedDescription,
+        },
+      });
+    }
+  }, [modalCardIdx, inventoryMode]);
+
   let resultTrClass;
 
   const handleModalCardChange = (d) => {
@@ -46,16 +108,6 @@ function ResultLibraryTable(props) {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
-      inventoryMode &&
-        setModalInventory({
-          inInventory: inInventory,
-          usedDescription: {
-            soft: SoftUsedDescription,
-            hard: HardUsedDescription,
-          },
-          softUsedMax: softUsedMax,
-          hardUsedTotal: hardUsedTotal,
-        });
     };
 
     if (resultTrClass == 'result-odd') {
