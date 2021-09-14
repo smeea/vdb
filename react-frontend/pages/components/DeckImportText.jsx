@@ -4,7 +4,7 @@ import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckImportText(props) {
-  const { getDecks, setActiveDeck } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
 
   const [deckText, setDeckText] = useState('');
   const [emptyDeckText, setEmptyDeckText] = useState(false);
@@ -88,22 +88,32 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       onShow={() => refText.current.focus()}
       animation={false}
       size="lg"
+      dialogClassName={isMobile ? 'm-0' : null}
     >
-      <Modal.Header closeButton>
-        <Modal.Title>Import deck from text</Modal.Title>
+      <Modal.Header
+        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 px-4'}
+        closeButton
+      >
+        <h5>Import from Text</h5>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className={isMobile ? 'px-0 pt-0' : 'px-4 pt-2'}>
         <FormControl
           as="textarea"
           className="mb-3"
-          rows="25"
+          rows={isMobile ? '20' : '25'}
           value={deckText}
           placeholder={placeholder}
           onChange={handleChange}
           ref={refText}
           autoFocus
         />
-        <div className="d-flex justify-content-end">
+        <div
+          className={
+            isMobile
+              ? 'd-flex justify-content-end py-0 px-3'
+              : 'd-flex justify-content-end py-1'
+          }
+        >
           {!spinnerState ? (
             <Button variant="outline-secondary" onClick={importDeckFromText}>
               Import

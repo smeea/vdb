@@ -4,7 +4,7 @@ import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckImportAmaranth(props) {
-  const { getDecks, setActiveDeck } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyUrl, setEmptyUrl] = useState(false);
   const [importError, setImportError] = useState(false);
@@ -106,13 +106,18 @@ function DeckImportAmaranth(props) {
       onShow={() => refUrl.current.focus()}
       animation={false}
       size="lg"
+      centered={isMobile}
+      dialogClassName={isMobile ? 'm-0' : null}
     >
-      <Modal.Header closeButton>
-        <Modal.Title>Import deck from Amaranth Deck URL</Modal.Title>
+      <Modal.Header
+        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 px-4'}
+        closeButton
+      >
+        <h5>Import from Amaranth URL</h5>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className={isMobile ? 'px-0 pt-0' : 'px-4 pt-2'}>
         <FormControl
-          placeholder="Amaranth Deck URL e.g. https://amaranth.co.nz/deck#my-best-deck-id"
+          placeholder="e.g. https://amaranth.co.nz/deck#my-best-deck-id"
           className="deck-import mb-3"
           type="text"
           name="url"
@@ -120,7 +125,13 @@ function DeckImportAmaranth(props) {
           onChange={(event) => setDeckUrl(event.target.value)}
           ref={refUrl}
         />
-        <div className="d-flex justify-content-end">
+        <div
+          className={
+            isMobile
+              ? 'd-flex justify-content-end py-0 px-3'
+              : 'd-flex justify-content-end py-1'
+          }
+        >
           {!spinnerState ? (
             <Button variant="outline-secondary" onClick={handleImportButton}>
               Import

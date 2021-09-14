@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
-import X from '../../assets/images/icons/x.svg';
 import ResultCryptModal from './ResultCryptModal.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
@@ -183,22 +182,14 @@ function DeckDrawModal(props) {
       animation={false}
       dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
+      <Modal.Header
+        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 px-4'}
+        closeButton
+      >
+        <h5>Deck Draw</h5>
+      </Modal.Header>
       <Modal.Body className="p-0">
         <Container fluid>
-          <Row className="px-0 pt-2">
-            <Col className="px-0">
-              <button
-                type="button"
-                className="close m-1"
-                onClick={props.handleClose}
-              >
-                <X width="32" height="32" viewBox="0 0 16 16" />
-              </button>
-              <div className="d-flex justify-content-center">
-                <h5>Deck Draw</h5>
-              </div>
-            </Col>
-          </Row>
           <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
             <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
               <div>

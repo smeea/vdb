@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
-import X from '../../assets/images/icons/x.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import AppContext from '../../context/AppContext.js';
@@ -163,22 +162,14 @@ function DeckProxySelectModal(props) {
       animation={false}
       dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
+      <Modal.Header
+        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 px-4'}
+        closeButton
+      >
+        <h5>Create PDF with Card Proxies</h5>
+      </Modal.Header>
       <Modal.Body className="p-0">
         <Container fluid>
-          <Row className="px-0 pt-2">
-            <Col>
-              <button
-                type="button"
-                className="close m-1"
-                onClick={() => props.setShow(false)}
-              >
-                <X width="32" height="32" viewBox="0 0 16 16" />
-              </button>
-              <div className="d-flex justify-content-center">
-                <h5>Create PDF with Card Proxies</h5>
-              </div>
-            </Col>
-          </Row>
           <Row className="px-0">
             <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
               {props.deck.crypt && (
@@ -213,27 +204,42 @@ function DeckProxySelectModal(props) {
               )}
             </Col>
           </Row>
+          <div
+            className={
+              isMobile
+                ? 'd-flex justify-content-end pt-2 py-2'
+                : 'd-flex justify-content-end px-2 pb-4'
+            }
+          >
+            <div className="pl-2">
+              <Button
+                variant="outline-secondary"
+                onClick={handleGenerateButton}
+              >
+                Generate
+              </Button>
+            </div>
+            <div className="pl-2">
+              <Button
+                variant="outline-secondary"
+                onClick={() => handleToggleSelectButton()}
+              >
+                Select / Deselect All
+              </Button>
+            </div>
+            {inventoryMode && (
+              <div className="pl-2">
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => handleToggleResolveButton()}
+                >
+                  Add Missing in Inventory
+                </Button>
+              </div>
+            )}
+          </div>
         </Container>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="outline-secondary" onClick={handleGenerateButton}>
-          Generate
-        </Button>
-        <Button
-          variant="outline-secondary"
-          onClick={() => handleToggleSelectButton()}
-        >
-          Select / Deselect All
-        </Button>
-        {inventoryMode && (
-          <Button
-            variant="outline-secondary"
-            onClick={() => handleToggleResolveButton()}
-          >
-            Add Missing in Inventory
-          </Button>
-        )}
-      </Modal.Footer>
     </Modal>
   );
 }

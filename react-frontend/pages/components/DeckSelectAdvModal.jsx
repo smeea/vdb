@@ -318,7 +318,13 @@ function DeckSelectAdvModal(props) {
       size="xl"
       dialogClassName={isMobile ? 'm-0' : null}
     >
-      <Modal.Body className={isMobile ? 'p-0' : null}>
+      <Modal.Header
+        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 pl-3 pr-4'}
+        closeButton
+      >
+        <h5>Select Deck</h5>
+      </Modal.Header>
+      <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
         <DeckTotal />
         <table className="decks-table">
           <thead>

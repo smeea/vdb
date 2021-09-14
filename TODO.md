@@ -1,5 +1,10 @@
 # FIX
 * Save scrolling position
+* Bundle clan icons to inventory import
+* Shorten deck name in inventory import
+* Update inventory information after scrolling through cards
+* Unify modal windows
+* Import to inventory quantity highlights
 
 # FIX MOBILE
 * Inventory precon/deck import
