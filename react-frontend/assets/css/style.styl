@@ -48,8 +48,11 @@ h5, .h5, h6, .h6
   font-weight: bold
   color: var(--fg-secondary)
 
-.no-border div.modal-content
-  border: none
+div.modal-content .modal-header
+  border-bottom: none
+
+div.no-border
+  border: none !important
 
 .in-draw div.modal-content
   border: 1px solid var(--border-nest-modal)
@@ -327,6 +330,8 @@ td.prob
 .deck-crypt-table
   width: 100%
   border: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
 .deck-crypt-table td
   height: 32px
   border-top: 1px solid var(--border-secondary)
@@ -359,6 +364,8 @@ td.prob
 .deck-library-table
   width: 100%
   border: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
 .deck-library-table td
   height: 38px
   text-align: center
@@ -388,6 +395,8 @@ td.prob
 .inventory-crypt-table
   width: 100%
   border: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
 .inventory-crypt-table td
   height: 32px
   border-top: 1px solid var(--border-secondary)
@@ -413,6 +422,8 @@ td.prob
   width: 100%
   border-left: 1px solid var(--border-secondary)
   border-right: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
 .inventory-library-table td
   height: 37px
   text-align: center
@@ -439,6 +450,8 @@ td.prob
   width: 100%
   border-left: 1px solid var(--border-secondary)
   border-right: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
 .search-crypt-table td
   height: 32px
   border-top: 1px solid var(--border-secondary)
@@ -461,7 +474,6 @@ td.prob
 @media (max-width: 576px)
   .search-crypt-table td.disciplines td
     min-width: 25px
-
 .search-crypt-table td.name
   text-align: left
 
@@ -469,6 +481,8 @@ td.prob
   width: 100%
   border-left: 1px solid var(--border-secondary)
   border-right: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
 .search-library-table td
   height: 36px
   border-top: 1px solid var(--border-secondary)
@@ -553,6 +567,8 @@ td.prob
 
 .decks-table
   border: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
   td
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
@@ -565,7 +581,6 @@ td.prob
     @media (max-width: 576px)
       max-width: 200px
       min-width: 200px
-
   .revision
     color: var(--fg-button)
   .date
@@ -580,19 +595,61 @@ td.prob
   th
     font-weight: normal
 
-.precons-table
+.inv-import-decks-table
+  border: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
+  td
+    border-top: 1px solid var(--border-secondary)
+    border-bottom: 1px solid var(--border-secondary)
+  .clan
+    text-align: center
+    min-width: 50px
+  .name
+    min-width: 250px
+    max-width: 250px
+    @media (max-width: 576px)
+      max-width: 230px
+      min-width: 230px
+  .revision
+    color: var(--fg-button)
+  .date
+    text-align: center
+    min-width: 100px
+    white-space: nowrap
+  .tags
+    width: 100%
+  .buttons
+    min-width: 92px
+    @media (max-width: 576px)
+      min-width: 100%
+    text-align: right
+  th
+    font-weight: normal
+
+.inv-import-precons-table
+  border: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
+  td
+    border-top: 1px solid var(--border-secondary)
+    border-bottom: 1px solid var(--border-secondary)
   .clan
     text-align: center
     min-width: 90px
   .preview
     min-width: 40px
   .name
-    min-width: 300px
+    min-width: 250px
+    max-width: 250px
+    @media (max-width: 576px)
+      max-width: 135px
+      min-width: 135px
   .set
     width: 100%
     color: var(--fg-button)
   .buttons
-    min-width: 120px
+    min-width: 92px
     text-align: right
   th
     font-weight: normal

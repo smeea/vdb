@@ -8,7 +8,6 @@ import At from '../../assets/images/icons/at.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import DeckTags from './DeckTags.jsx';
-import DeckTotal from './DeckTotal.jsx';
 import DeckSelectSortForm from './DeckSelectSortForm.jsx';
 import InventoryDeckAddButton from './InventoryDeckAddButton.jsx';
 import InventoryDeckDeleteButton from './InventoryDeckDeleteButton.jsx';
@@ -25,6 +24,7 @@ function InventoryAddDeckModal(props) {
     inventoryLibrary,
     decks,
     deckUpdate,
+    isMobile,
   } = useContext(AppContext);
 
   const [sortMethod, setSortMethod] = useState('byName');
@@ -162,26 +162,30 @@ function InventoryAddDeckModal(props) {
     return (
       <React.Fragment key={deck.deckid}>
         <tr className={resultTrClass}>
-          <td className="inventory" onClick={() => toggleInventoryState()}>
+          {!isMobile && (
+            <td className="inventory" onClick={() => toggleInventoryState()}>
+              <div
+                className="px-2"
+                title={
+                  deck.inventory_type === 's'
+                    ? 'Flexible'
+                    : deck.inventory_type === 'h'
+                    ? 'Fixed'
+                    : 'Virtual'
+                }
+              >
+                {deck.inventory_type == 's' && <Shuffle />}
+                {deck.inventory_type == 'h' && <PinAngleFill />}
+                {!deck.inventory_type && <At />}
+              </div>
+            </td>
+          )}
+          {!isMobile && (
+            <td className="clan">{clan && <ResultCryptClan value={clan} />}</td>
+          )}
+          <td className="name px-1">
             <div
-              className="px-2"
-              title={
-                deck.inventory_type === 's'
-                  ? 'Flexible'
-                  : deck.inventory_type === 'h'
-                  ? 'Fixed'
-                  : 'Virtual'
-              }
-            >
-              {deck.inventory_type == 's' && <Shuffle />}
-              {deck.inventory_type == 'h' && <PinAngleFill />}
-              {!deck.inventory_type && <At />}
-            </div>
-          </td>
-          <td className="clan">{clan && <ResultCryptClan value={clan} />}</td>
-          <td className="name">
-            <div
-              className="d-flex text-overflow name justify-content-between"
+              className="d-flex trimmed name justify-content-between"
               title={deck.name}
             >
               {deck.name}
@@ -197,57 +201,63 @@ function InventoryAddDeckModal(props) {
                 )}
             </div>
           </td>
-          <td className="preview">
-            <div
-              className="m-2"
-              onMouseEnter={() => setShowDeck(deck.deckid)}
-              onMouseLeave={() => setShowDeck(false)}
-            >
-              <OverlayTooltip
-                placement="right"
-                show={showDeck === deck.deckid}
-                className="adv-select"
-                text={
-                  <Row>
-                    <Col
-                      md={7}
-                      onClick={(event) => {
-                        if (event.target === event.currentTarget)
-                          setShowDeck(false);
-                      }}
-                    >
-                      <DeckCrypt
-                        deckid={deck.deckid}
-                        cards={deck.crypt}
-                        inAdvSelect={true}
-                      />
-                    </Col>
-                    <Col
-                      md={5}
-                      onClick={(event) => {
-                        if (event.target === event.currentTarget)
-                          setShowDeck(false);
-                      }}
-                    >
-                      <DeckLibrary
-                        deckid={deck.deckid}
-                        cards={deck.library}
-                        inAdvSelect={true}
-                      />
-                    </Col>
-                  </Row>
-                }
+          {!isMobile && (
+            <td className="preview">
+              <div
+                className="m-2"
+                onMouseEnter={() => setShowDeck(deck.deckid)}
+                onMouseLeave={() => setShowDeck(false)}
               >
-                <EyeFill />
-              </OverlayTooltip>
-            </div>
-          </td>
-          <td className="date">
-            {new Date(deck.timestamp).toISOString().slice(0, 10)}
-          </td>
-          <td className="tags">
-            <DeckTags defaultTagsOptions={defaultTagsOptions} deck={deck} />
-          </td>
+                <OverlayTooltip
+                  placement="right"
+                  show={showDeck === deck.deckid}
+                  className="adv-select"
+                  text={
+                    <Row>
+                      <Col
+                        md={7}
+                        onClick={(event) => {
+                          if (event.target === event.currentTarget)
+                            setShowDeck(false);
+                        }}
+                      >
+                        <DeckCrypt
+                          deckid={deck.deckid}
+                          cards={deck.crypt}
+                          inAdvSelect={true}
+                        />
+                      </Col>
+                      <Col
+                        md={5}
+                        onClick={(event) => {
+                          if (event.target === event.currentTarget)
+                            setShowDeck(false);
+                        }}
+                      >
+                        <DeckLibrary
+                          deckid={deck.deckid}
+                          cards={deck.library}
+                          inAdvSelect={true}
+                        />
+                      </Col>
+                    </Row>
+                  }
+                >
+                  <EyeFill />
+                </OverlayTooltip>
+              </div>
+            </td>
+          )}
+          {!isMobile && (
+            <td className="date">
+              {new Date(deck.timestamp).toISOString().slice(0, 10)}
+            </td>
+          )}
+          {!isMobile && (
+            <td className="tags">
+              <DeckTags defaultTagsOptions={defaultTagsOptions} deck={deck} />
+            </td>
+          )}
           <td className="buttons">
             <div className="d-inline pl-1">
               <InventoryDeckAddButton
@@ -275,14 +285,20 @@ function InventoryAddDeckModal(props) {
       onHide={props.handleClose}
       animation={false}
       size="xl"
+      dialogClassName={isMobile ? 'm-0' : null}
     >
-      <Modal.Body>
-        <DeckTotal />
-        <table className="decks-table">
+      <Modal.Header
+        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 pl-3 pr-4'}
+        closeButton
+      >
+        <h5>Import Deck to Inventory</h5>
+      </Modal.Header>
+      <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
+        <table className="inv-import-decks-table">
           <thead>
             <tr>
-              <th className="inventory"></th>
-              <th className="clan"></th>
+              {!isMobile && <th className="inventory"></th>}
+              {!isMobile && <th className="clan"></th>}
               <th className="name">
                 <FormControl
                   placeholder="Filter by Name"
@@ -294,20 +310,22 @@ function InventoryAddDeckModal(props) {
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              <th className="preview"></th>
-              <th className="date"></th>
-              <th className="tags">
-                <Select
-                  classNamePrefix="tags-filter react-select-tags"
-                  isMulti
-                  options={defaultTagsOptions}
-                  onChange={handleChangeTagsFilter}
-                  defaultValue={tagsFilter}
-                  placeholder="Filter by Tags"
-                />
-              </th>
+              {!isMobile && <th className="preview"></th>}
+              {!isMobile && <th className="date"></th>}
+              {!isMobile && (
+                <th className="tags">
+                  <Select
+                    classNamePrefix="tags-filter react-select-tags"
+                    isMulti
+                    options={defaultTagsOptions}
+                    onChange={handleChangeTagsFilter}
+                    defaultValue={tagsFilter}
+                    placeholder="Filter by Tags"
+                  />
+                </th>
+              )}
               <th className="buttons">
-                <div className="d-flex justify-content-end align-items-center">
+                <div className="d-flex justify-content-end align-items-center pl-2">
                   <div className="d-inline align-items-bottom custom-control custom-checkbox pr-3">
                     <input
                       id="revFilter"
@@ -317,7 +335,7 @@ function InventoryAddDeckModal(props) {
                       onChange={() => setRevFilter(!revFilter)}
                     />
                     <label htmlFor="revFilter" className="custom-control-label">
-                      Revisions
+                      {isMobile ? 'Rev' : 'Revisions'}
                     </label>
                   </div>
                   <DeckSelectSortForm onChange={setSortMethod} />
