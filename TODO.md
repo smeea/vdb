@@ -2,7 +2,6 @@
 * Save scrolling position
 * Bundle clan icons to inventory import
 * Import to inventory quantity highlights
-* Revision name incrementation
 
 # FIX MOBILE
 
