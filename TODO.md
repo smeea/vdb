@@ -2,9 +2,9 @@
 * Save scrolling position
 * Bundle clan icons to inventory import
 * Import to inventory quantity highlights
+* Revision name incrementation
 
 # FIX MOBILE
-* Split inventory info in card preview in two columns
 
 # FEATURES
 * Create revocable link to Inventory

@@ -7,13 +7,14 @@ import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
+import ResultLayoutTextInventory from './ResultLayoutTextInventory.jsx';
 import ResultLayoutTextSets from './ResultLayoutTextSets.jsx';
 import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
 import ResultLayoutTextArtist from './ResultLayoutTextArtist.jsx';
 import ResultLayoutTextText from './ResultLayoutTextText.jsx';
 
 function ResultCryptLayoutText(props) {
-  const { isMobile, cryptCardBase } = useContext(AppContext);
+  const { inventoryMode, isMobile, cryptCardBase } = useContext(AppContext);
 
   return (
     <>
@@ -106,6 +107,15 @@ function ResultCryptLayoutText(props) {
           <div className="small pb-1">
             <ResultLayoutTextRulings rulings={props.card['Rulings']} />
           </div>
+        </>
+      )}
+      {(props.forceInventoryMode || inventoryMode) && props.inventoryState && (
+        <>
+          <hr className="mx-0" />
+          <div className="py-1">
+            <b>Inventory:</b>
+          </div>
+          <ResultLayoutTextInventory inventoryState={props.inventoryState} />
         </>
       )}
     </>

@@ -6,6 +6,7 @@ import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
+import ResultLayoutTextInventory from './ResultLayoutTextInventory.jsx';
 import ResultLayoutTextSets from './ResultLayoutTextSets.jsx';
 import ResultLayoutTextRulings from './ResultLayoutTextRulings.jsx';
 import ResultLayoutTextArtist from './ResultLayoutTextArtist.jsx';
@@ -13,7 +14,7 @@ import ResultLayoutTextText from './ResultLayoutTextText.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryLayoutText(props) {
-  const { nativeLibrary } = useContext(AppContext);
+  const { inventoryMode, nativeLibrary } = useContext(AppContext);
 
   return (
     <>
@@ -87,11 +88,20 @@ function ResultLibraryLayoutText(props) {
       {Object.keys(props.card['Rulings']).length > 0 && (
         <>
           <div className="py-1">
-            <b>Rulings: </b>
+            <b>Rulings:</b>
           </div>
           <div className="small pb-1">
             <ResultLayoutTextRulings rulings={props.card['Rulings']} />
           </div>
+        </>
+      )}
+      {(props.forceInventoryMode || inventoryMode) && props.inventoryState && (
+        <>
+          <hr className="mx-0" />
+          <div className="py-1">
+            <b>Inventory:</b>
+          </div>
+          <ResultLayoutTextInventory inventoryState={props.inventoryState} />
         </>
       )}
     </>

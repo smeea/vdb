@@ -119,43 +119,9 @@ function ResultLibraryModal(props) {
                   card={props.card}
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
+                  inventoryState={props.inventoryState}
+                  forceInventory={props.forceInventory}
                 />
-                {(props.forceInventoryMode || inventoryMode) &&
-                  props.inventoryState && (
-                    <>
-                      <hr className="mx-0" />
-                      <div className="pt-1">
-                        <b>Inventory:</b>
-                        <div className="d-flex align-items-center">
-                          <div className="opacity-035">
-                            <CalculatorFill />
-                          </div>
-                          <div className="px-1">
-                            <b>
-                              {props.inventoryState.softUsedMax +
-                                props.inventoryState.hardUsedTotal}
-                            </b>
-                          </div>
-                          - Total Used
-                        </div>
-                        <div className="d-flex align-items-center">
-                          <div className="opacity-035">
-                            <ArchiveFill />
-                          </div>
-                          <div className="px-1">
-                            <b>{props.inventoryState.inInventory}</b>
-                          </div>
-                          - In Inventory
-                        </div>
-                        {props.inventoryState.usedDescription.soft && (
-                          <>{props.inventoryState.usedDescription.soft}</>
-                        )}
-                        {props.inventoryState.usedDescription.hard && (
-                          <>{props.inventoryState.usedDescription.hard}</>
-                        )}
-                      </div>
-                    </>
-                  )}
               </div>
             )}
             <div
@@ -186,50 +152,10 @@ function ResultLibraryModal(props) {
                   card={props.card}
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
+                  inventoryState={props.inventoryState}
+                  forceInventory={props.forceInventory}
                 />
               </div>
-              {(props.forceInventoryMode || inventoryMode) &&
-                props.inventoryState && (
-                  <>
-                    <hr className="mx-0" />
-                    <div className="pt-1">
-                      <b>Inventory:</b>
-                      <Row>
-                        <Col md={5}>
-                          <div className="d-flex align-items-center">
-                            <div className="opacity-035">
-                              <CalculatorFill />
-                            </div>
-                            <div className="px-1">
-                              <b>
-                                {props.inventoryState.softUsedMax +
-                                  props.inventoryState.hardUsedTotal}
-                              </b>
-                            </div>
-                            - Total Used
-                          </div>
-                          <div className="d-flex align-items-center">
-                            <div className="opacity-035">
-                              <ArchiveFill />
-                            </div>
-                            <div className="px-1">
-                              <b>{props.inventoryState.inInventory}</b>
-                            </div>
-                            - In Inventory
-                          </div>
-                        </Col>
-                        <Col>
-                          {props.inventoryState.usedDescription.soft && (
-                            <>{props.inventoryState.usedDescription.soft}</>
-                          )}
-                          {props.inventoryState.usedDescription.hard && (
-                            <>{props.inventoryState.usedDescription.hard}</>
-                          )}
-                        </Col>
-                      </Row>
-                    </div>
-                  </>
-                )}
               <div className="d-flex justify-content-between pt-4">
                 <div className="d-flex">
                   <div className="d-flex pr-1">
