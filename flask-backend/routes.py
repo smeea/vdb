@@ -31,10 +31,13 @@ def listInventory():
 
             # Fix users without inventory
             if not current_user.inventory:
+                print(current_user.username, 'fix user without inventory')
                 current_user.inventory = {}
 
             # Fix bad imports
             if 'undefined' in current_user.inventory:
+                print(current_user.username,
+                      'fix user with undefined in inventory')
                 new_cards = current_user.inventory.copy()
                 del new_cards['undefined']
                 current_user.inventory = new_cards
@@ -213,6 +216,7 @@ def showDeck(deckid):
             'deckid': deck.deckid,
             'timestamp': deck.timestamp,
         }
+
         return jsonify(decks)
 
     else:
@@ -450,21 +454,25 @@ def listDecks():
         decks = {}
         for deck in current_user.decks.all():
 
-            # Fix pre-inventory period decks
-            if not deck.used_in_inventory:
-                deck.used_in_inventory = {}
-                db.session.commit()
-            if not deck.inventory_type:
-                deck.inventory_type = ''
-                db.session.commit()
+            # # Fix pre-inventory period decks
+            # if not deck.used_in_inventory:
+            #     print(deck.deckid, 'fix non-used_in_inventory decks')
+            #     deck.used_in_inventory = {}
+            #     db.session.commit()
+            # if not deck.inventory_type:
+            #     print(deck.deckid, 'fix non-inventory_type decks')
+            #     deck.inventory_type = ''
+            #     db.session.commit()
 
-            # Fix pre-tags decks
-            if not deck.tags:
-                deck.tags = []
-                db.session.commit()
+            # # Fix pre-tags decks
+            # if not deck.tags:
+            #     print(deck.deckid, 'fix pre-tags decks')
+            #     deck.tags = []
+            #     db.session.commit()
 
             # Fix bad imports
             if 'undefined' in deck.cards:
+                print(deck.deckid, 'del undefined cards')
                 new_cards = deck.cards.copy()
                 del new_cards['undefined']
                 deck.cards = new_cards
@@ -501,11 +509,13 @@ def listDecks():
                         d.master = deck.deckid
                         db.session.commit()
 
-            # Fix cards
-            cards = {}
-            for k, v in deck.cards.items():
-                cards[str(k)] = v
-                deck.cards = cards
+            # # Fix cards
+            # cards = {}
+            # for k, v in deck.cards.items():
+            #     if k is not str(k):
+            #         print(deck.deckid, 'fix cards id')
+            #         cards[str(k)] = v
+            #         deck.cards = cards
 
             crypt = {}
             library = {}
@@ -564,6 +574,7 @@ def newDeck():
                 cards=request.json['cards'] if 'cards' in request.json else {})
             db.session.add(d)
             db.session.commit()
+
             return jsonify({
                 'new deck created': request.json['deckname'],
                 'deckid': deckid,
