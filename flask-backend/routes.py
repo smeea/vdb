@@ -28,12 +28,6 @@ from models import Deck
 def listInventory():
     try:
         if current_user.is_authenticated:
-            # Fix users without inventory
-            if not current_user.inventory:
-                print(current_user.username, 'fix user without inventory')
-                current_user.inventory = {}
-                db.session.commit()
-
             # Fix bad imports
             if 'undefined' in current_user.inventory:
                 print(current_user.username,
