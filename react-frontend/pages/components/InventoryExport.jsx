@@ -20,6 +20,9 @@ function InventoryExport(props) {
       <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
         Save as file - Lackey
       </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => saveDeck('xlsx')}>
+        Save as file - Excel
+      </Dropdown.Item>
       <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
         Save as file - CSV
       </Dropdown.Item>
@@ -84,12 +87,24 @@ function InventoryExport(props) {
 
     const fetchPromise = fetch(url, options);
 
-    if (format === 'csv') {
+    const d = new Date();
+    const date = `${d.getFullYear()}-${d.getMonth() < 9 ? 0 : ''}${
+      d.getMonth() + 1
+    }-${d.getDate() < 10 ? 0 : ''}${d.getDate()}`;
+
+    if (format === 'xlsx' || format === 'csv') {
       fetchPromise
         .then((response) => response.text())
         .then((data) => {
-          const file = 'data:text/csv;base64,' + data;
-          saveAs(file, `Inventory - ${publicName}.csv`);
+          let mime = 'data:text/csv';
+          let extension = 'csv';
+          if (format === 'xlsx') {
+            mime =
+              'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+            extension = 'xlsx';
+          }
+          const file = `${mime};base64,${data}`;
+          saveAs(file, `Inventory ${date}.${extension}`);
           setSpinnerState(false);
           isMobile && props.setShowButtons(false);
         })
@@ -103,7 +118,7 @@ function InventoryExport(props) {
         .then((data) => {
           const file = new File(
             [data.deck],
-            data.name + '_' + data.format + '.txt',
+            `Inventory ${date} [${format}].txt`,
             { type: 'text/plain;charset=utf-8' }
           );
           FileSaver.saveAs(file);

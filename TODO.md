@@ -2,6 +2,7 @@
 * Save scrolling position
 * Bundle clan icons to inventory import
 * Import to inventory quantity highlights
+* Exportall formats (csv, xlsx)
 
 # FIX MOBILE
 
@@ -13,6 +14,7 @@
 * Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url
+* Export all decks in zip
 
 # BIG FEATURES
 * Card text history

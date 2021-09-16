@@ -70,7 +70,7 @@ def inventoryExportRoute():
         }
         result = inventoryExport(inventory, request.json['format'])
 
-        if request.json['format'] == 'csv':
+        if request.json['format'] == 'xlsx' or request.json['format'] == 'csv':
             return result
         else:
             return jsonify(result)
@@ -781,7 +781,7 @@ def cloneDeck():
 
 @app.route('/api/decks/urlclone', methods=['POST'])
 def urlCloneDeck():
-    print(request.json)
+    print('url clone: ', request.json['target'])
     targetDeck = Deck.query.filter_by(deckid=request.json['target']).first()
     deckid = uuid.uuid4().hex
     d = Deck(deckid=deckid,
@@ -884,7 +884,8 @@ def deckExportRoute():
             }
             result = deckExport(deck, request.json['format'])
 
-        if request.json['format'] == 'csv':
+        if (request.json['format'] == 'xlsx'
+                or request.json['format'] == 'csv'):
             return result
         else:
             return jsonify(result)

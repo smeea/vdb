@@ -4,6 +4,7 @@ import { Spinner, Dropdown } from 'react-bootstrap';
 import Download from '../../assets/images/icons/download.svg';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
+import JSZip from 'jszip';
 
 function DeckExport(props) {
   const { username, isMobile } = useContext(AppContext);
@@ -25,6 +26,9 @@ function DeckExport(props) {
       </Dropdown.Item>
       <Dropdown.Item href="" onClick={() => saveDeck('jol')}>
         Save as file - JOL
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => saveDeck('xlsx')}>
+        Save as file - Excel
       </Dropdown.Item>
       <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
         Save as file - CSV
@@ -57,9 +61,12 @@ function DeckExport(props) {
           <Dropdown.Item href="" onClick={() => exportAll('jol')}>
             Save all decks - JOL
           </Dropdown.Item>
-          <Dropdown.Item href="" onClick={() => exportAll('csv')}>
-            Save all decks - CSV
-          </Dropdown.Item>
+          {/* <Dropdown.Item href="" onClick={() => exportAll('xlsx')}> */}
+          {/*   Save all decks - Excel */}
+          {/* </Dropdown.Item> */}
+          {/* <Dropdown.Item href="" onClick={() => exportAll('csv')}> */}
+          {/*   Save all decks - CSV */}
+          {/* </Dropdown.Item> */}
         </>
       )}
     </>
@@ -144,12 +151,19 @@ function DeckExport(props) {
 
       const fetchPromise = fetch(url, options);
 
-      if (format === 'csv') {
+      if (format === 'xlsx' || format === 'csv') {
         fetchPromise
           .then((response) => response.text())
           .then((data) => {
-            const file = 'data:text/csv;base64,' + data;
-            saveAs(file, `${props.deck['name']}.csv`);
+            let mime = 'data:text/csv';
+            let extension = 'csv';
+            if (format === 'xlsx') {
+              mime =
+                'data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+              extension = 'xlsx';
+            }
+            const file = `${mime};base64,${data}`;
+            saveAs(file, `${props.deck['name']}.${extension}`);
             setSpinnerState(false);
             isMobile && props.setShowButtons(false);
           })
@@ -163,7 +177,7 @@ function DeckExport(props) {
           .then((data) => {
             const file = new File(
               [data.deck],
-              data.name + '_' + data.format + '.txt',
+              `${data.name} [${data.format}].txt`,
               { type: 'text/plain;charset=utf-8' }
             );
             FileSaver.saveAs(file);
@@ -201,21 +215,34 @@ function DeckExport(props) {
 
     const fetchPromise = fetch(url, options);
 
-    fetchPromise
-      .then((response) => response.json())
-      .then((data) => {
-        data.map((d) => {
-          const file = new File([d.deck], d.name + '_' + d.format + '.txt', {
-            type: 'text/plain;charset=utf-8',
+    if (format === 'xlsx' || format === 'csv') {
+      // TODO
+    } else {
+      fetchPromise
+        .then((response) => response.json())
+        .then((data) => {
+          const zip = new JSZip();
+          const d = new Date();
+          const date = `${d.getFullYear()}-${d.getMonth() < 9 ? 0 : ''}${
+            d.getMonth() + 1
+          }-${d.getDate() < 10 ? 0 : ''}${d.getDate()}`;
+          data.map((d) => {
+            zip
+              .folder(`Decks ${date} [${format}]`)
+              .file(`${d.name} [${d.format}].txt`, d.deck);
           });
-          FileSaver.saveAs(file);
+          zip
+            .generateAsync({ type: 'blob' })
+            .then((blob) =>
+              FileSaver.saveAs(blob, `Decks ${date} [${format}].zip`)
+            );
+          setSpinnerState(false);
+        })
+        .catch((error) => {
+          setError(true);
+          setSpinnerState(false);
         });
-        setSpinnerState(false);
-      })
-      .catch((error) => {
-        setError(true);
-        setSpinnerState(false);
-      });
+    }
   };
 
   return (

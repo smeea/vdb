@@ -1,7 +1,3 @@
-import base64
-import zipfile
-import json
-import sys
 from deckExport import deckExport
 
 
@@ -17,10 +13,14 @@ def deckExportAll(decks, format):
         }
 
         result = deckExport(deck, format)
-        mydecks.append({
-            'name': result['name'],
-            'format': format,
-            'deck': result['deck']
-        })
+
+        if format == 'csv' or format == 'xlsx':
+            pass
+        else:
+            mydecks.append({
+                'name': result['name'],
+                'format': format,
+                'deck': result['deck']
+            })
 
     return (mydecks)

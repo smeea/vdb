@@ -2,6 +2,7 @@ from datetime import date
 import json
 import re
 import csv
+from openpyxl import Workbook
 import base64
 import io
 
@@ -42,6 +43,27 @@ def inventoryExport(d, format):
             writer = csv.writer(f)
 
             # Crypt export
+            for i in crypt.values():
+                q = i['q']
+                id = i['c']['Id']
+                writer.writerow([q, id])
+
+            # Library export
+            for i in library.values():
+                q = i['q']
+                id = i['c']['Id']
+                writer.writerow([q, id])
+
+            return base64.b64encode(f.getvalue().encode('latin-1'))
+
+        elif format == 'xlsx':
+            fb = io.BytesIO()
+            wb = Workbook()
+            ws_crypt = wb.active
+            ws_crypt.title = "Crypt"
+            ws_library = wb.create_sheet(title="Library")
+
+            # Crypt export
             sorted_crypt = sorted(crypt.values(), key=lambda x: x['c']['Name'])
             for i in sorted_crypt:
                 q = i['q']
@@ -50,19 +72,20 @@ def inventoryExport(d, format):
                 if c['Adv'] and c['Adv'][0]:
                     name = name + " (ADV)"
 
-                writer.writerow([q, name])
+                ws_crypt.append([q, name])
 
             # Library export
-            writer.writerow([])
             sorted_library = sorted(library.values(),
                                     key=lambda x: x['c']['Name'])
             for i in sorted_library:
                 q = i['q']
                 c = i['c']
                 name = c['ASCII Name'].replace('"', "'")
-                writer.writerow([q, name])
+                ws_library.append([q, name])
 
-            return base64.b64encode(f.getvalue().encode('latin-1'))
+            wb.save(fb)
+
+            return base64.b64encode(fb.getvalue())
 
         elif format == 'lackey':
             # Library export
@@ -181,7 +204,7 @@ def inventoryExport(d, format):
                     'Group': c['Group']
                 }
 
-                if len(len) > longestName:
+                if len(name) > longestName:
                     longestName = len(name)
                 if len(c['Title']) > longestTitle:
                     longestTitle = len(c['Title'])
