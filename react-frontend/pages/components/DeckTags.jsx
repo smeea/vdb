@@ -3,7 +3,7 @@ import CreatableSelect from 'react-select/creatable';
 import AppContext from '../../context/AppContext';
 
 function DeckTags(props) {
-  const { deckUpdate, isMobile } = useContext(AppContext);
+  const { deckUpdate } = useContext(AppContext);
   const [tags, setTags] = useState(undefined);
 
   const handleChange = (event) => {
@@ -22,6 +22,9 @@ function DeckTags(props) {
     }
   }, [props.deck]);
 
+  const placeholder = <div className="form-placeholder">Click to add tags</div>;
+  const noOptionsMessage = () => 'Enter new tag';
+
   return (
     <CreatableSelect
       classNamePrefix={
@@ -32,7 +35,8 @@ function DeckTags(props) {
       options={props.allTagsOptions}
       onChange={handleChange}
       value={tags}
-      placeholder="click to add tag"
+      placeholder={placeholder}
+      noOptionsMessage={noOptionsMessage}
     />
   );
 }

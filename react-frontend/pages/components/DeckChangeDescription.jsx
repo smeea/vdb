@@ -11,7 +11,6 @@ function DeckDescription(props) {
 
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
-  const [folded, setFolded] = useState(isMobile ? false : true);
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -49,7 +48,7 @@ function DeckDescription(props) {
           </InputGroup.Text>
         </InputGroup.Prepend>
         <FormControl
-          as={folded ? 'input' : 'textarea'}
+          as={props.folded ? 'input' : 'textarea'}
           rows={8}
           type="text"
           className="form-control"
@@ -62,9 +61,9 @@ function DeckDescription(props) {
           <InputGroup.Append>
             <Button
               variant="outline-secondary"
-              onClick={() => setFolded(!folded)}
+              onClick={() => props.setFolded(!props.folded)}
             >
-              {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
+              {props.folded ? <ChevronBarExpand /> : <ChevronBarContract />}
             </Button>
           </InputGroup.Append>
         )}

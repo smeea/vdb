@@ -152,6 +152,9 @@ button.btn-danger:hover
   background: var(--bg-button-secondary)
   border: 1px solid var(--border-third)
 
+.pt-05
+  padding-top: 2px
+
 .close
   color: var(--fg-primary)
 
@@ -217,6 +220,8 @@ button.btn-danger:hover
   &__dropdown-indicator,
   &__indicators
     display: none !important
+  &__menu
+    z-index:  2 !important
   &__menu-list
     background: var(--bg-primary)
     color: var(--fg-primary)
@@ -247,6 +252,11 @@ button.btn-danger:hover
 
 .tags-filter
   border-color: var(--border-secondary) !important
+
+.form-placeholder
+  padding-left: 6px
+  font-size: small
+  color: var(--border-primary)
 
 .dropdown-menu
   background: var(--bg-button)
@@ -947,6 +957,7 @@ div.sticky-lib-indeck
   background-color: var(--bg-primary)
   position: sticky;
   top: 32
+  z-index: 1
 
 .dropdown-toggle::after
   content: none

@@ -55,6 +55,9 @@ function Decks(props) {
   const history = useHistory();
   const [selectFrom, setSelectFrom] = useState('precons');
   const [deckError, setDeckError] = useState(false);
+  const [foldedDescription, setFoldedDescription] = useState(
+    isMobile ? false : true
+  );
   const [allTagsOptions, setAllTagsOptions] = useState(undefined);
 
   const handleShowButtons = (state) => {
@@ -424,7 +427,10 @@ function Decks(props) {
                         />
                       </Col>
                     )}
-                    <Col md={4} className={isMobile ? 'px-0' : 'pl-1 pr-0'}>
+                    <Col
+                      md={4}
+                      className={isMobile ? 'px-0 pt-05' : 'pl-1 pr-0'}
+                    >
                       <DeckChangeAuthor
                         author={deckRouter(activeDeck).author}
                         deckid={activeDeck.deckid}
@@ -433,21 +439,36 @@ function Decks(props) {
                     </Col>
                   </Row>
                   <Row className="mx-0">
-                    <Col className="px-0">
+                    <Col className={isMobile ? 'px-0 pt-05' : 'px-0'}>
                       <DeckChangeDescription
                         description={deckRouter(activeDeck).description}
                         deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
+                        folded={foldedDescription}
+                        setFolded={setFoldedDescription}
                       />
                     </Col>
-                    <Col className="pl-2 pr-0">
-                      <DeckTags
-                        allTagsOptions={allTagsOptions}
-                        deck={deckRouter(activeDeck)}
-                        bordered={true}
-                      />
-                    </Col>
+                    {foldedDescription &&
+                      (deckRouter(activeDeck).tags || isAuthor) && (
+                        <Col className="pl-2 pr-0">
+                          <DeckTags
+                            allTagsOptions={allTagsOptions}
+                            deck={deckRouter(activeDeck)}
+                            bordered={true}
+                          />
+                        </Col>
+                      )}
                   </Row>
+                  {!foldedDescription &&
+                    (deckRouter(activeDeck).tags || isAuthor) && (
+                      <div className="d-block pt-2">
+                        <DeckTags
+                          allTagsOptions={allTagsOptions}
+                          deck={deckRouter(activeDeck)}
+                          bordered={true}
+                        />
+                      </div>
+                    )}
                 </>
               )}
             </Col>
