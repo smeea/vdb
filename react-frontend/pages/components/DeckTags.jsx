@@ -25,11 +25,17 @@ function DeckTags(props) {
   const placeholder = <div className="form-placeholder">Click to add tags</div>;
   const noOptionsMessage = () => 'Enter new tag';
 
+  let classNamePrefix = 'react-select-tags';
+  if (props.bordered) {
+    classNamePrefix = 'bordered ' + classNamePrefix;
+  }
+  if (!props.isAuthor) {
+    classNamePrefix = 'tags-no-remove ' + classNamePrefix;
+  }
+
   return (
     <CreatableSelect
-      classNamePrefix={
-        props.bordered ? 'bordered react-select-tags' : 'react-select-tags'
-      }
+      classNamePrefix={classNamePrefix}
       isMulti
       isClearable={false}
       options={props.allTagsOptions}

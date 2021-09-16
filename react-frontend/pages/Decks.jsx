@@ -455,6 +455,7 @@ function Decks(props) {
                             allTagsOptions={allTagsOptions}
                             deck={deckRouter(activeDeck)}
                             bordered={true}
+                            isAuthor={isAuthor}
                           />
                         </Col>
                       )}
