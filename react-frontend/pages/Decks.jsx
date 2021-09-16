@@ -14,6 +14,7 @@ import AccountRegister from './components/AccountRegister.jsx';
 import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckSelectPrecon from './components/DeckSelectPrecon.jsx';
 import DeckSelectAdvModal from './components/DeckSelectAdvModal.jsx';
+import DeckTags from './components/DeckTags.jsx';
 import DeckButtons from './components/DeckButtons.jsx';
 import DeckBranchSelect from './components/DeckBranchSelect.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
@@ -54,6 +55,7 @@ function Decks(props) {
   const history = useHistory();
   const [selectFrom, setSelectFrom] = useState('precons');
   const [deckError, setDeckError] = useState(false);
+  const [allTagsOptions, setAllTagsOptions] = useState(undefined);
 
   const handleShowButtons = (state) => {
     setShowMenuButtons(state);
@@ -183,6 +185,25 @@ function Decks(props) {
       (deckRouter(activeDeck).branches &&
         deckRouter(activeDeck).branches.length > 0);
   }
+
+  useEffect(() => {
+    const allTags = new Set();
+
+    if (decks) {
+      Object.keys(decks).map((deckid) => {
+        decks[deckid].tags.map((tag) => {
+          allTags.add(tag);
+        });
+      });
+    }
+
+    const options = [...allTags].map((tag) => ({
+      label: tag,
+      value: tag,
+    }));
+
+    setAllTagsOptions(options);
+  }, [decks]);
 
   useEffect(() => {
     if (hash && cryptCardBase && libraryCardBase) {
@@ -419,6 +440,13 @@ function Decks(props) {
                         isAuthor={isAuthor}
                       />
                     </Col>
+                    <Col className="pl-2 pr-0">
+                      <DeckTags
+                        allTagsOptions={allTagsOptions}
+                        deck={deckRouter(activeDeck)}
+                        bordered={true}
+                      />
+                    </Col>
                   </Row>
                 </>
               )}
@@ -585,6 +613,7 @@ function Decks(props) {
         <DeckSelectAdvModal
           handleClose={() => setShowDeckSelectAdv(false)}
           show={showDeckSelectAdv}
+          allTagsOptions={allTagsOptions}
         />
       )}
     </Container>

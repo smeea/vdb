@@ -1,31 +1,38 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import CreatableSelect from 'react-select/creatable';
 import AppContext from '../../context/AppContext';
 
 function DeckTags(props) {
   const { deckUpdate, isMobile } = useContext(AppContext);
-
-  const setTags = (tags) => deckUpdate(props.deck.deckid, 'setTags', tags);
+  const [tags, setTags] = useState(undefined);
 
   const handleChange = (event) => {
-    const tags = event.map((t) => t.value);
-    setTags(tags);
+    const v = event.map((t) => t.value);
+    deckUpdate(props.deck.deckid, 'setTags', v);
   };
 
-  const tags = props.deck.tags.map((tag) => ({
-    label: tag,
-    value: tag,
-  }));
+  useEffect(() => {
+    if (props.deck.tags) {
+      setTags(
+        props.deck.tags.map((tag) => ({
+          label: tag,
+          value: tag,
+        }))
+      );
+    }
+  }, [props.deck]);
 
   return (
     <CreatableSelect
-      classNamePrefix="react-select-tags"
+      classNamePrefix={
+        props.bordered ? 'bordered react-select-tags' : 'react-select-tags'
+      }
       isMulti
       isClearable={false}
-      options={props.defaultTagsOptions}
+      options={props.allTagsOptions}
       onChange={handleChange}
-      defaultValue={tags}
-      placeholder={false}
+      value={tags}
+      placeholder="click to add tag"
     />
   );
 }

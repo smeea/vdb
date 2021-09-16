@@ -206,6 +206,9 @@ button.btn-danger:hover
     background: var(--bg-menu-selected) !important
 
 .react-select-tags
+  z-index: 2 !important
+  &__value-container
+    padding: 2px 2px !important
   &__input
     color: var(--fg-primary) !important
   &__control
@@ -238,6 +241,9 @@ button.btn-danger:hover
     background: var(--bg-button-hover) !important
   &__multi-value-container
     background: var(--bg-primary)
+
+.bordered.react-select-tags__control
+    border: 1px solid var(--border-secondary) !important
 
 .tags-filter
   border-color: var(--border-secondary) !important
@@ -941,7 +947,6 @@ div.sticky-lib-indeck
   background-color: var(--bg-primary)
   position: sticky;
   top: 32
-  z-index: 1
 
 .dropdown-toggle::after
   content: none

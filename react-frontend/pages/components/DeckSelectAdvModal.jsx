@@ -52,18 +52,6 @@ function DeckSelectAdvModal(props) {
     props.handleClose();
   };
 
-  const allTags = new Set();
-  Object.keys(decks).map((deckid) => {
-    decks[deckid].tags.map((tag) => {
-      allTags.add(tag);
-    });
-  });
-
-  const defaultTagsOptions = [...allTags].map((tag) => ({
-    label: tag,
-    value: tag,
-  }));
-
   const cardInDeck = (deck, query) => {
     const normalizedQuery = query
       .toLowerCase()
@@ -276,7 +264,7 @@ function DeckSelectAdvModal(props) {
             </td>
           )}
           <td className="tags">
-            <DeckTags defaultTagsOptions={defaultTagsOptions} deck={deck} />
+            <DeckTags allTagsOptions={props.allTagsOptions} deck={deck} />
           </td>
           {!isMobile && (
             <td className="buttons">
@@ -348,7 +336,7 @@ function DeckSelectAdvModal(props) {
                 <Select
                   classNamePrefix="tags-filter react-select-tags"
                   isMulti
-                  options={defaultTagsOptions}
+                  options={props.allTagsOptions}
                   onChange={handleChangeTagsFilter}
                   defaultValue={tagsFilter}
                   placeholder="Filter by Tags"
