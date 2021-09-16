@@ -28,24 +28,25 @@ from models import Deck
 def listInventory():
     try:
         if current_user.is_authenticated:
-            # Fix bad imports
-            if 'undefined' in current_user.inventory:
-                print(current_user.username,
-                      'fix user with undefined in inventory')
-                new_cards = current_user.inventory.copy()
-                del new_cards['undefined']
-                current_user.inventory = new_cards
-                db.session.commit()
-
             crypt = {}
             library = {}
+            if current_user.inventory:
+                # # Fix bad imports
+                # if 'undefined' in current_user.inventory:
+                #     print(current_user.username,
+                #           'fix user with undefined in inventory')
+                #     new_cards = current_user.inventory.copy()
+                #     del new_cards['undefined']
+                #     current_user.inventory = new_cards
+                #     db.session.commit()
 
-            for k, v in current_user.inventory.items():
-                k = int(k)
-                if k > 200000:
-                    crypt[k] = {'q': v}
-                elif k < 200000:
-                    library[k] = {'q': v}
+                for k, v in current_user.inventory.items():
+                    k = int(k)
+                    if k > 200000:
+                        crypt[k] = {'q': v}
+                    elif k < 200000:
+                        library[k] = {'q': v}
+
             return jsonify({
                 "crypt": crypt,
                 "library": library,
