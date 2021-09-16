@@ -1,9 +1,12 @@
-import React from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { Row, Col } from 'react-bootstrap';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
+import AppContext from '../../context/AppContext';
 
 const ResultLayoutTextInventory = (props) => {
+  const { isMobile } = useContext(AppContext);
+
   return (
     <Row>
       <Col xs={6} lg={5} className="pr-2">
@@ -29,7 +32,7 @@ const ResultLayoutTextInventory = (props) => {
           - In Inventory
         </div>
       </Col>
-      <Col xs={6} lg={7} className="pl-0">
+      <Col xs={12} lg={7} className={isMobile ? 'pt-2' : 'pl-0'}>
         {props.inventoryState.usedDescription.soft && (
           <>{props.inventoryState.usedDescription.soft}</>
         )}
