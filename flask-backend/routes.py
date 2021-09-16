@@ -215,6 +215,7 @@ def showDeck(deckid):
             'library': library,
             'deckid': deck.deckid,
             'timestamp': deck.timestamp,
+            'tags': deck.tags,
         }
 
         return jsonify(decks)
