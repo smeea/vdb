@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import cryptArtists from './forms_data/artistsCrypt.json';
 import libraryArtists from './forms_data/artistsLib.json';
+import AppContext from '../../context/AppContext.js';
 
 function SearchFormArtist(props) {
+  const { isMobile } = useContext(AppContext);
+
   let artists;
   props.target == 'crypt'
     ? (artists = cryptArtists)
@@ -39,6 +42,7 @@ function SearchFormArtist(props) {
           classNamePrefix="react-select"
           options={options}
           onChange={props.onChange}
+          menuPlacement={isMobile ? 'top' : 'bottom'}
           name="artist"
           placeholder="Artist"
           value={options.find((obj) => obj.value === props.value)}

@@ -140,6 +140,7 @@ function SearchFormPrecon(props) {
             classNamePrefix="react-select"
             options={options}
             isSearchable={!isMobile}
+            menuPlacement={isMobile ? 'top' : 'bottom'}
             filterOption={filterOption}
             name="precon"
             value={options.find((obj) => obj.value === props.value.precon)}

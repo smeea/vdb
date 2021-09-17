@@ -105,6 +105,7 @@ function SearchFormSet(props) {
             classNamePrefix="react-select"
             options={options}
             isSearchable={!isMobile}
+            menuPlacement={isMobile ? 'top' : 'bottom'}
             filterOption={filterOption}
             name="set"
             value={options.find((obj) => obj.value === props.value.set)}
