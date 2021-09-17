@@ -18,7 +18,6 @@ import Library from './pages/Library.jsx';
 import Navigation from './pages/Navigation.jsx';
 import Twd from './pages/Twd.jsx';
 import preconDecksData from './preconDecks.json';
-import preconData from './pages/components/forms_data/preconOptions.json';
 import setsAndPrecons from './pages/components/forms_data/setsAndPrecons.json';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
@@ -323,9 +322,7 @@ function App(props) {
     Object.keys(preconDecksData).map((set) => {
       Object.keys(preconDecksData[set]).map((precon) => {
         const deckid = `${set}:${precon}`;
-        const name = preconData.filter(
-          (i) => i[1] == set && i[2] == precon
-        )[0][3];
+        const name = setsAndPrecons[set]['precons'][precon]['name'];
 
         precons[deckid] = {
           name: `${name}`,

@@ -2,16 +2,47 @@ import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import GiftFill from '../../assets/images/icons/gift-fill.svg';
-import precons from './forms_data/preconOptions.json';
+import setsAndPrecons from './forms_data/setsAndPrecons.json';
 import AppContext from '../../context/AppContext.js';
 
 function SearchFormPrecon(props) {
   const { isMobile } = useContext(AppContext);
 
+  const preOptions = [
+    {
+      set: 'any',
+      name: 'ANY',
+    },
+    {
+      set: 'bcp',
+      name: 'ANY BCP',
+    },
+  ];
+
+  Object.keys(setsAndPrecons).map((i) => {
+    if (setsAndPrecons[i].hasOwnProperty('precons')) {
+      const set = i;
+      const year = setsAndPrecons[i].year;
+      Object.keys(setsAndPrecons[i].precons).map((j) => {
+        const precon = j;
+        const name = setsAndPrecons[i].precons[j].name;
+        const clans = setsAndPrecons[i].precons[j].clan.split('/');
+        preOptions.push({
+          set: set,
+          precon: precon,
+          year: year,
+          name: name,
+          clans: clans,
+        });
+      });
+    }
+  });
+
   const options = [];
-  precons.map((i, index) => {
-    if (i[0] != 'any' && i[0] != 'bcp') {
-      const clanImages = i[4].map((clan, index) => {
+
+  preOptions.map((i, index) => {
+    if (i.set != 'any' && i.set != 'bcp') {
+      const clanImages = i.clans.map((clan, index) => {
         const imgSrc = `${process.env.ROOT_URL}images/clans/${clan
           .toLowerCase()
           .replace(/[\s,:!?'.\-]/g, '')}.svg`;
@@ -30,7 +61,7 @@ function SearchFormPrecon(props) {
       });
 
       options.push({
-        value: `${i[1]}:${i[2]}`,
+        value: `${i.set}:${i.precon}`,
         name: 'precon',
         label: (
           <div className="d-flex justify-content-between align-items-center">
@@ -40,20 +71,20 @@ function SearchFormPrecon(props) {
               >
                 {clanImages}
               </div>
-              {i[3]}
+              {i.name}
             </div>
-            <div className="small">{`${i[1]} '${i[0]}`}</div>
+            <div className="small">{`${i.set} '${i.year}`}</div>
           </div>
         ),
       });
     } else {
       options.push({
-        value: i[0],
+        value: i.set,
         name: 'precon',
         label: (
           <>
             <span className="margin-full" />
-            {i[1]}
+            {i.name}
           </>
         ),
       });

@@ -1,33 +1,53 @@
 import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import sets from './forms_data/setOptions.json';
+import setsAndPrecons from './forms_data/setsAndPrecons.json';
 import AppContext from '../../context/AppContext.js';
 
 function SearchFormSet(props) {
   const { isMobile } = useContext(AppContext);
+
+  const preOptions = [
+    {
+      set: 'any',
+      name: 'ANY',
+    },
+    {
+      set: 'bcp',
+      name: 'ANY BCP',
+    },
+  ];
+
+  Object.keys(setsAndPrecons).map((i) => {
+    preOptions.push({
+      set: i,
+      name: setsAndPrecons[i].name,
+      year: setsAndPrecons[i].year,
+    });
+  });
+
   const options = [];
 
-  sets.map((i, index) => {
-    if (i[0] == 'any' || i[0] == 'bcp') {
+  preOptions.map((i, index) => {
+    if (i.set == 'any' || i.set == 'bcp') {
       options.push({
-        value: i[0],
+        value: i.set,
         name: 'set',
         label: (
           <>
             <span className="margin-full" />
-            {i[1]}
+            {i.name}
           </>
         ),
       });
     } else {
       options.push({
-        value: i[0],
+        value: i.set,
         name: 'set',
         label: (
           <div className="d-flex justify-content-between align-items-center">
-            <div className="pr-2">{i[1]}</div>
-            <div className="pl-2 small">{i[2]}</div>
+            <div className="pr-2">{i.name}</div>
+            <div className="pl-2 small">{i.year}</div>
           </div>
         ),
       });

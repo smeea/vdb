@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import OverlayTooltip from './OverlayTooltip.jsx';
-import setsData from './forms_data/setsAndPrecons.json';
+import setsAndPrecons from './forms_data/setsAndPrecons.json';
 import AppContext from '../../context/AppContext';
 
 const ResultLayoutTextSets = (props) => {
   const { isMobile } = useContext(AppContext);
 
   const byYear = (a, b) => {
-    return setsData[a].year - setsData[b].year;
+    return setsAndPrecons[a].year - setsAndPrecons[b].year;
   };
 
   const Sets = Object.keys(props.sets)
@@ -23,10 +23,10 @@ const ResultLayoutTextSets = (props) => {
           V: 'Vampire',
         };
 
-        if (setsData[k].precons && setsData[k].precons[i]) {
+        if (setsAndPrecons[k].precons && setsAndPrecons[k].precons[i]) {
           return (
             <li className="rulings" key={idx}>
-              {setsData[k].precons[i]} - {props.sets[k][i]}x
+              {setsAndPrecons[k].precons[i]} - {props.sets[k][i]}x
             </li>
           );
         } else {
@@ -42,8 +42,8 @@ const ResultLayoutTextSets = (props) => {
 
       const popoverText = (
         <>
-          <b>{setsData[k].name}</b>
-          {k !== 'POD' && ' - ' + setsData[k].year}
+          <b>{setsAndPrecons[k].name}</b>
+          {k !== 'POD' && ' - ' + setsAndPrecons[k].year}
           <br />
           <ul className="rulings">{preconsDetailed}</ul>
         </>

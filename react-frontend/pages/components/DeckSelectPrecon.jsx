@@ -1,51 +1,71 @@
 import React, { useContext } from 'react';
 import Select from 'react-select';
 import GiftFill from '../../assets/images/icons/gift-fill.svg';
-import precons from './forms_data/preconOptions.json';
+import setsAndPrecons from './forms_data/setsAndPrecons.json';
 import AppContext from '../../context/AppContext.js';
 
 function DeckSelectPrecon(props) {
   const { setActiveDeck, isMobile } = useContext(AppContext);
 
-  const options = [];
-  precons.map((i, index) => {
-    if (i[0] != 'any' && i[0] != 'bcp') {
-      const clanImages = i[4].map((clan, index) => {
-        const imgSrc = `${process.env.ROOT_URL}images/clans/${clan
-          .toLowerCase()
-          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
+  const preOptions = [];
 
-        return (
-          <div className="d-inline" key={index}>
-            {clan === 'Bundle' ? (
-              <div className="d-inline clan-image-results">
-                <GiftFill />
-              </div>
-            ) : clan === 'Mix' ? null : (
-              <img src={imgSrc} className="clan-image-results" />
-            )}
-          </div>
-        );
-      });
-
-      options.push({
-        value: `${i[1]}:${i[2]}`,
-        name: 'precon',
-        label: (
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="pr-2">
-              <div
-                className={clanImages.length == 1 ? 'margin-full' : 'd-inline'}
-              >
-                {clanImages}
-              </div>
-              {i[3]}
-            </div>
-            <div className="small">{`${i[1]} '${i[0]}`}</div>
-          </div>
-        ),
+  Object.keys(setsAndPrecons).map((i) => {
+    if (setsAndPrecons[i].hasOwnProperty('precons')) {
+      const set = i;
+      const year = setsAndPrecons[i].year;
+      Object.keys(setsAndPrecons[i].precons).map((j) => {
+        const precon = j;
+        const name = setsAndPrecons[i].precons[j].name;
+        const clans = setsAndPrecons[i].precons[j].clan.split('/');
+        preOptions.push({
+          set: set,
+          precon: precon,
+          year: year,
+          name: name,
+          clans: clans,
+        });
       });
     }
+  });
+
+  const options = [];
+
+  preOptions.map((i, index) => {
+    const clanImages = i.clans.map((clan, index) => {
+      const imgSrc = `${process.env.ROOT_URL}images/clans/${clan
+        .toLowerCase()
+        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
+
+      return (
+        <div className="d-inline" key={index}>
+          {clan === 'Bundle' ? (
+            <div className="d-inline clan-image-results">
+              <GiftFill />
+            </div>
+          ) : clan === 'Mix' ? null : (
+            <img src={imgSrc} className="clan-image-results" />
+          )}
+        </div>
+      );
+    });
+
+    options.push({
+      value: `${i.set}:${i.precon}`,
+      name: 'precon',
+      label: (
+        <div className="d-flex justify-content-between align-items-center">
+          <div className="pr-2">
+            <div
+              className={clanImages.length == 1 ? 'margin-full' : 'd-inline'}
+            >
+              {clanImages}
+            </div>
+            {i.name}
+          </div>
+          <div className="small">{`${i.set} '${i.year}`}</div>
+        </div>
+      ),
+    });
   });
 
   const filterOption = ({ label }, string) => {
