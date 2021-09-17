@@ -26,7 +26,7 @@ const ResultLayoutTextSets = (props) => {
         if (setsAndPrecons[k].precons && setsAndPrecons[k].precons[i]) {
           return (
             <li className="rulings" key={idx}>
-              {setsAndPrecons[k].precons[i]} - {props.sets[k][i]}x
+              {setsAndPrecons[k].precons[i].name} - {props.sets[k][i]}x
             </li>
           );
         } else {
