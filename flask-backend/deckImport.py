@@ -32,38 +32,42 @@ def deckImport(deckText):
         if '(ADV)' in i:
             if cardMatch := re.match(
                     r'^ *([0-9]+)x?\s+(.*?)(\s\(ADV\))(\s+\d+.*)', i):
-                cardname = cardMatch.group(2).lower()
+                cardname = cardMatch.group(2)
                 quantity = int(cardMatch.group(1))
                 adv = True
 
             elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*)(\s\(ADV\))', i):
-                cardname = cardMatch.group(2).lower()
+                cardname = cardMatch.group(2)
                 quantity = int(cardMatch.group(1))
                 adv = True
 
         elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*?)(\s+\d+.*)', i):
-            cardname = cardMatch.group(2).lower()
+            cardname = cardMatch.group(2)
             quantity = int(cardMatch.group(1))
 
         elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*)', i):
-            cardname = cardMatch.group(2).lower()
+            cardname = cardMatch.group(2)
             quantity = int(cardMatch.group(1))
 
+        cardname = re.sub(r'\W', '', unidecode(cardname)).lower()
+
         for card in crypt:
+            csv_cardname = re.sub(r'\W', '', unidecode(card['Name'])).lower()
+
             card_adv = False
             if card['Adv'] and card['Adv'][0]:
                 card_adv = True
 
-            if (cardname == card['Name'].lower()
-                    or cardname == unidecode(card['Name'].lower())):
+            if (cardname == csv_cardname):
                 if adv and card_adv:
                     deck['cards'][str(card['Id'])] = quantity
                 if not adv and not card_adv:
                     deck['cards'][str(card['Id'])] = quantity
 
         for card in library:
-            if cardname == card['Name'].lower() or cardname == unidecode(
-                    card['Name'].lower()):
+            csv_cardname = re.sub(r'\W', '', unidecode(card['Name'])).lower()
+
+            if cardname == csv_cardname:
                 deck['cards'][str(card['Id'])] = quantity
 
     return (deck['name'], deck['author'], deck['description'], deck['cards'])

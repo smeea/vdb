@@ -1,6 +1,5 @@
 # FIX
 * Save scrolling position
-* Bundle clan icons to inventory import
 * Import to inventory quantity highlights
 
 # FIX MOBILE
@@ -9,7 +8,6 @@
 * Create revocable link to Inventory
 * Show missing cards for inventory
 * Localized proxies and from scans
-* Tags to deck main window
 * Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url
@@ -23,18 +21,19 @@
 # MOBILE FEATURES
 * Offline PWA support
 * Move navbar to bottom
+* Close modal windows with floating button
 
 # MAYBE LATER FEATURES
 * Documentation on updates / update script
 * Script to update images/rulings/twd from static.krcg.org
 
 # IMPROVE TECHNOLOGY - FRONTEND
-* Sync: websockets
+* Sync with websockets
 * Move autocompletion to frontend
+* Move export to frontend
 * Update to parcel 2
 * Update to react-bootstrap 2
 * Migrate to tailwindcss
-* Move export to frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardid) on backend
