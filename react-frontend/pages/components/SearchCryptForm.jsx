@@ -18,6 +18,7 @@ import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import defaults from './forms_data/defaultsCryptForm.json';
+import sanitizeFormState from './sanitizeFormState.js';
 import AppContext from '../../context/AppContext.js';
 
 function SearchCryptForm(props) {
@@ -158,41 +159,7 @@ function SearchCryptForm(props) {
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/crypt`;
-    const input = JSON.parse(JSON.stringify(cryptFormState));
-
-    const multiSelectForms = [
-      'disciplines',
-      'titles',
-      'group',
-      'traits',
-      'set',
-      'precon',
-    ];
-
-    multiSelectForms.map((i) => {
-      Object.keys(input[i]).forEach(
-        (k) => input[i][k] == 0 && delete input[i][k]
-      );
-    });
-
-    const multiSelectFormsWithMain = ['set', 'precon', 'capacity'];
-
-    multiSelectFormsWithMain.map((i) => {
-      if (input[i][i] == 'any') {
-        delete input[i];
-      }
-    });
-
-    Object.keys(input).forEach(
-      (k) =>
-        (input[k] == 'any' ||
-          !input[k] ||
-          Object.keys(input[k]).length === 0) &&
-        delete input[k]
-    );
-    if (input['capacity'] == null) {
-      delete input['capacitymoreless'];
-    }
+    const input = sanitizeFormState('crypt', cryptFormState);
 
     if (Object.keys(input).length !== 0) {
       history.push(`/crypt?q=${encodeURIComponent(JSON.stringify(input))}`);

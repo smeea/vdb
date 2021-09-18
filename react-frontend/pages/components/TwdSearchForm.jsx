@@ -22,6 +22,7 @@ import TwdSearchFormLibraryTotal from './TwdSearchFormLibraryTotal.jsx';
 import TwdSearchFormMatchInventory from './TwdSearchFormMatchInventory.jsx';
 import TwdSearchFormMatchInventoryScaling from './TwdSearchFormMatchInventoryScaling.jsx';
 import defaults from './forms_data/defaultsTwdForm.json';
+import sanitizeFormState from './sanitizeFormState.js';
 import AppContext from '../../context/AppContext.js';
 
 function TwdSearchForm(props) {
@@ -62,39 +63,7 @@ function TwdSearchForm(props) {
 
   useEffect(() => {
     if (isMobile && cryptCardBase && libraryCardBase && query) {
-      const input = JSON.parse(JSON.stringify(twdFormState));
-      const multiSelectForms = [
-        'disciplines',
-        'traits',
-        'cardtypes',
-        'date',
-        'players',
-        'capacity',
-        'libraryTotal',
-        'matchInventory',
-      ];
-
-      multiSelectForms.map((i) => {
-        Object.keys(input[i]).forEach(
-          (k) =>
-            (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k]
-        );
-      });
-
-      const cardsForms = ['crypt', 'library'];
-      cardsForms.map((i) => {
-        Object.keys(input[i]).forEach((k) => {
-          input[i][k] == -1 && delete input[i][k];
-        });
-      });
-
-      Object.keys(input).forEach(
-        (k) =>
-          (input[k] == 'any' ||
-            !input[k] ||
-            Object.keys(input[k]).length === 0) &&
-          delete input[k]
-      );
+      const input = sanitizeFormState('crypt', cryptFormState);
 
       if (JSON.stringify(query) != JSON.stringify(input)) {
         setTwdFormState((prevState) => {
@@ -213,40 +182,7 @@ function TwdSearchForm(props) {
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/twd`;
-    const input = JSON.parse(JSON.stringify(twdFormState));
-
-    const multiSelectForms = [
-      'disciplines',
-      'traits',
-      'cardtypes',
-      'date',
-      'players',
-      'capacity',
-      'libraryTotal',
-      'matchInventory',
-    ];
-
-    multiSelectForms.map((i) => {
-      Object.keys(input[i]).forEach(
-        (k) => (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k]
-      );
-    });
-
-    const cardsForms = ['crypt', 'library'];
-
-    cardsForms.map((i) => {
-      Object.keys(input[i]).forEach((k) => {
-        input[i][k] == -1 && delete input[i][k];
-      });
-    });
-
-    Object.keys(input).forEach(
-      (k) =>
-        (input[k] == 'any' ||
-          !input[k] ||
-          Object.keys(input[k]).length === 0) &&
-        delete input[k]
-    );
+    const input = sanitizeFormState('twd', twdFormState);
 
     if (Object.keys(input).length !== 0) {
       history.push(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`);

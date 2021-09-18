@@ -18,6 +18,7 @@ import SearchFormPrecon from './SearchFormPrecon.jsx';
 import SearchFormArtist from './SearchFormArtist.jsx';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import defaults from './forms_data/defaultsLibraryForm.json';
+import sanitizeFormState from './sanitizeFormState.js';
 import AppContext from '../../context/AppContext.js';
 
 function SearchLibraryForm(props) {
@@ -181,45 +182,7 @@ function SearchLibraryForm(props) {
 
   const launchRequest = () => {
     const url = `${process.env.API_URL}search/library`;
-    const input = JSON.parse(JSON.stringify(libraryFormState));
-
-    const multiSelectForms = ['traits', 'set', 'precon'];
-    multiSelectForms.map((i) => {
-      Object.keys(input[i]).forEach(
-        (k) => input[i][k] == 0 && delete input[i][k]
-      );
-    });
-
-    const andOrForms = ['type', 'discipline'];
-    andOrForms.map((i) => {
-      if (Object.keys(input[i][i]).length === 1 && input[i][i][0] === 'any') {
-        delete input[i];
-      }
-      if (input[i] && input[i][i]) {
-        input[i][i] = input[i][i].filter((j) => j !== 'any');
-      }
-    });
-
-    const multiSelectFormsWithMain = [
-      'set',
-      'precon',
-      'blood',
-      'pool',
-      'capacity',
-    ];
-    multiSelectFormsWithMain.map((i) => {
-      if (input[i][i] == 'any') {
-        delete input[i];
-      }
-    });
-
-    Object.keys(input).forEach(
-      (k) =>
-        (input[k] == 'any' ||
-          !input[k] ||
-          Object.keys(input[k]).length === 0) &&
-        delete input[k]
-    );
+    const input = sanitizeFormState('library', libraryFormState);
 
     if (Object.keys(input).length !== 0) {
       history.push(`/library?q=${encodeURIComponent(JSON.stringify(input))}`);
