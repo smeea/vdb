@@ -26,12 +26,14 @@ function Navigation(props) {
     toggleInventoryMode,
     isMobile,
     username,
+    activeDeck,
   } = useContext(AppContext);
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
   let twdUrl = '/twd';
   let cryptUrl = '/crypt';
   let libraryUrl = '/library';
+  let decksUrl = '/decks';
 
   if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
     const input = sanitizeFormState('crypt', cryptFormState);
@@ -44,6 +46,9 @@ function Navigation(props) {
   if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
     const input = sanitizeFormState('twd', twdFormState);
     twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
+  }
+  if (activeDeck.deckid) {
+    decksUrl = `/decks?id=${activeDeck.deckid}`;
   }
 
   return (
@@ -111,7 +116,7 @@ function Navigation(props) {
           <NavLink to="/inventory" className="nav-link pr-2 pl-1">
             Inventory
           </NavLink>
-          <NavLink to="/decks" className="nav-link pr-2 pl-1">
+          <NavLink to={decksUrl} className="nav-link pr-2 pl-1">
             Decks
           </NavLink>
           <NavLink to={cryptUrl} className="nav-link pr-2 pl-1">

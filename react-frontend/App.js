@@ -560,7 +560,7 @@ function App(props) {
     <div className="App">
       <Router>
         <ThemeProvider>
-          <Navigation activeDeck={activeDeck} />
+          <Navigation />
         </ThemeProvider>
 
         <Switch>

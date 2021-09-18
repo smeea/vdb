@@ -163,7 +163,12 @@ function TwdSearchForm(props) {
     const input = sanitizeFormState('twd', twdFormState);
 
     if (Object.keys(input).length !== 0) {
-      history.push(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`);
+      if (
+        history.location.search !=
+        `?q=${encodeURIComponent(JSON.stringify(input))}`
+      ) {
+        history.push(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`);
+      }
 
       const options = {
         method: 'POST',

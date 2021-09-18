@@ -1,10 +1,9 @@
 # FIX
 * Save scrolling position
 * Import to inventory quantity highlights
-* Unify navigation-urls
-* Remove useless search launches from url
 
 # FIX MOBILE
+* Hide buttons with draw
 
 # FEATURES
 * Create revocable link to Inventory
