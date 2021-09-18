@@ -62,28 +62,6 @@ function TwdSearchForm(props) {
   }, [cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (isMobile && cryptCardBase && libraryCardBase && query) {
-      const input = sanitizeFormState('crypt', cryptFormState);
-
-      if (JSON.stringify(query) != JSON.stringify(input)) {
-        setTwdFormState((prevState) => {
-          const state = JSON.parse(JSON.stringify(defaults));
-          Object.keys(query).map((i) => {
-            if (typeof query[i] === 'object') {
-              Object.keys(query[i]).map((j) => {
-                state[i][j] = query[i][j];
-              });
-            } else {
-              state[i] = query[i];
-            }
-          });
-          return state;
-        });
-      }
-    }
-  }, [cryptCardBase, libraryCardBase, query]);
-
-  useEffect(() => {
     if (isMobile && query && twdFormState) {
       launchRequest();
     }

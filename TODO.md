@@ -3,8 +3,6 @@
 * Import to inventory quantity highlights
 * Unify navigation-urls
 * Remove useless search launches from url
-* Check in crypt/lib/twd:
-  if (isMobile && cryptCardBase && libraryCardBase && query)
 
 # FIX MOBILE
 
