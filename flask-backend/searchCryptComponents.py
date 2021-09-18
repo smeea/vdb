@@ -155,9 +155,18 @@ def get_crypt_by_titles(titles, crypt):
     # chosen title
     match_cards = []
     for card in crypt:
-        if card['Title'].lower() in titles.keys(
-        ) or not card['Title'] and 'none' in titles.keys():
+        if not card['Title'] and 'none' in titles.keys():
             match_cards.append(card)
+            continue
+        if card['Title'].lower() in titles.keys():
+            match_cards.append(card)
+            continue
+        if card['Adv'] and card['Adv'][0]:
+            for title in titles.keys():
+                if re.search(r'{} {}'.format('\[MERGED\]', title),
+                             card['Card Text'], re.IGNORECASE):
+                    match_cards.append(card)
+                    continue
 
     return match_cards
 
