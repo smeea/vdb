@@ -17,7 +17,9 @@ function Twd(props) {
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 
   return (
-    <Container className={isMobile ? 'main-container' : 'main-container py-3'}>
+    <Container
+      className={isMobile ? 'main-container' : 'main-container py-3 px-4'}
+    >
       <Row className="justify-content-center">
         <Col
           xs={12}

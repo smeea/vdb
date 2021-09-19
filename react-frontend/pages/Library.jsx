@@ -31,7 +31,7 @@ function Library(props) {
 
   return (
     <Container
-      className={isMobile ? 'main-container' : 'main-container pt-0 pb-3'}
+      className={isMobile ? 'main-container' : 'main-container pt-0 pb-3 px-4'}
     >
       <Row>
         {!isMobile && (

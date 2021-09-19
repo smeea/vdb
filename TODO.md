@@ -37,7 +37,5 @@
 * Migrate to tailwindcss
 
 # IMPROVE TECHNOLOGY - BACKEND
-* Check frontend input (quantity/cardid) on backend
-* Update API endpoints
-* Add error codes to return
+* Check frontend input (quantity/cardior codes to return
 * Unify tests for current_user
