@@ -194,6 +194,8 @@ button.btn-danger:hover
     background: var(--bg-primary)
   &__dropdown-indicator
     background: var(--bg-primary)
+  &__menu
+    z-index:  3 !important
   &__menu-list
     background: var(--bg-primary)
     color: var(--fg-primary)
@@ -209,7 +211,6 @@ button.btn-danger:hover
     background: var(--bg-menu-selected) !important
 
 .react-select-tags
-  z-index: 2 !important
   &__value-container
     padding: 2px 2px !important
   &__input
@@ -948,12 +949,22 @@ textarea.deck-import:focus
 div.sticky
   position: sticky;
   top: 56
+  z-index: 2
 
 div.sticky-insearch
   background-color: var(--bg-primary)
   position: sticky;
   top: 40
+  z-index: 2
+
+div.sticky-inv-result
+  background-color: var(--bg-primary)
+  position: sticky;
+  top: 102
   z-index: 1
+
+div.sticky-inv-result.mobile
+  top: 86
 
 div.sticky-modal
   position: sticky;
