@@ -270,7 +270,13 @@ function DeckCrypt(props) {
 
   return (
     <>
-      <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+      <div
+        className={
+          isMobile
+            ? 'd-flex align-items-center justify-content-between pl-2 pr-1 info-message'
+            : 'd-flex align-items-center justify-content-between pl-2 info-message'
+        }
+      >
         <b>
           Crypt [{cryptTotal}
           {cryptTotal < 12 && ' of 12+'}] - {cryptGroups}
