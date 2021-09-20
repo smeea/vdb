@@ -5,48 +5,20 @@ import AppContext from '../../context/AppContext.js';
 
 function InventoryLibrary(props) {
   const { usedLibraryCards, libraryCardBase } = useContext(AppContext);
-  let library = {};
 
-  if (props.category == 'nok') {
-    Object.keys(props.cards).map((card) => {
-      let softUsedMax = 0;
-      if (usedLibraryCards.soft[card]) {
-        Object.keys(usedLibraryCards.soft[card]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card][id]) {
-            softUsedMax = usedLibraryCards.soft[card][id];
-          }
-        });
-      }
-      let hardUsedTotal = 0;
-      if (usedLibraryCards.hard[card]) {
-        Object.keys(usedLibraryCards.hard[card]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card][id];
-        });
-      }
+  let haveTotal = 0;
+  let haveUnique = 0;
+  let missingTotal = 0;
+  let missingUnique = 0;
 
-      if (props.cards[card].q < softUsedMax + hardUsedTotal) {
-        library[card] = props.cards[card];
-      }
-    });
-  } else {
-    library = { ...props.cards };
-  }
+  const libraryByType = {};
+  const libraryByTypeTotal = {};
+  const libraryByTypeUnique = {};
+  const missingLibraryByType = {};
+  const missingLibraryByTypeTotal = {};
+  const LibraryDeckSortedByType = [];
 
-  if (!props.compact && props.category != 'ok') {
-    Object.keys(usedLibraryCards.soft).map((card) => {
-      if (!props.cards[card]) {
-        library[card] = { q: 0, c: libraryCardBase[card] };
-      }
-    });
-
-    Object.keys(usedLibraryCards.hard).map((card) => {
-      if (!props.cards[card]) {
-        library[card] = { q: 0, c: libraryCardBase[card] };
-      }
-    });
-  }
-
-  const cardtypeSorted = [
+  const cardtypesSorted = [
     'Master',
     'Conviction',
     'Power',
@@ -69,66 +41,175 @@ function InventoryLibrary(props) {
     'Event',
   ];
 
-  let total = 0;
+  cardtypesSorted.map((cardtype) => {
+    libraryByType[cardtype] = {};
+    libraryByTypeTotal[cardtype] = 0;
+    libraryByTypeUnique[cardtype] = 0;
+    missingLibraryByType[cardtype] = {};
+    missingLibraryByTypeTotal[cardtype] = 0;
+  });
 
-  const unique = Object.keys(props.cards).filter(
-    (card) => props.cards[card].q > 0
-  ).length;
-  const libraryByType = {};
+  if (props.compact) {
+    Object.keys(props.cards).map((card) => {
+      const cardtype = props.cards[card].c['Type'];
+      libraryByType[cardtype] = props.cards[card];
+    });
+  } else {
+    Object.keys(props.cards).map((card) => {
+      const cardtype = props.cards[card].c['Type'];
 
-  for (const card in library) {
-    if (props.category != 'ok' || library[card].q > 0) {
-      total += library[card].q;
-      const cardtype = library[card].c['Type'];
-      if (libraryByType[cardtype] === undefined) {
-        libraryByType[cardtype] = [];
+      if (props.cards[card].q > 0) {
+        haveUnique += 1;
+        haveTotal += props.cards[card].q;
+        libraryByTypeTotal[cardtype] += props.cards[card].q;
+        libraryByTypeUnique[cardtype] += 1;
       }
-      libraryByType[cardtype].push(library[card]);
-    }
-  }
 
-  const libraryByTypeTotal = {};
-  const LibraryDeck = [];
-
-  for (const cardtype of cardtypeSorted) {
-    if (libraryByType[cardtype] !== undefined) {
-      libraryByTypeTotal[cardtype] = 0;
-      for (const card of libraryByType[cardtype]) {
-        libraryByTypeTotal[cardtype] += card.q;
+      let softUsedMax = 0;
+      if (usedLibraryCards.soft[card]) {
+        Object.keys(usedLibraryCards.soft[card]).map((id) => {
+          if (softUsedMax < usedLibraryCards.soft[card][id]) {
+            softUsedMax = usedLibraryCards.soft[card][id];
+          }
+        });
       }
-      LibraryDeck.push(
-        <div key={cardtype} className={props.compact ? null : 'pt-2'}>
-          {!props.compact && (
-            <ResultLibraryType
-              cardtype={cardtype}
-              total={libraryByTypeTotal[cardtype]}
+
+      let hardUsedTotal = 0;
+      if (usedLibraryCards.hard[card]) {
+        Object.keys(usedLibraryCards.hard[card]).map((id) => {
+          hardUsedTotal += usedLibraryCards.hard[card][id];
+        });
+      }
+
+      const miss = softUsedMax + hardUsedTotal - props.cards[card].q;
+
+      if (miss > 0) {
+        missingLibraryByType[cardtype][card] = {
+          q: miss,
+          c: props.cards[card].c,
+        };
+      }
+
+      if (props.category == 'nok') {
+        if (miss > 0) {
+          libraryByType[cardtype][card] = props.cards[card];
+        }
+      } else {
+        libraryByType[cardtype][card] = props.cards[card];
+      }
+    });
+
+    Object.keys(usedLibraryCards.soft).map((card) => {
+      if (!props.cards[card]) {
+        const cardtype = libraryCardBase[card]['Type'];
+
+        if (!props.compact && props.category != 'ok') {
+          libraryByType[cardtype][card] = { q: 0, c: libraryCardBase[card] };
+        }
+
+        let softUsedMax = 0;
+        Object.keys(usedLibraryCards.soft[card]).map((id) => {
+          if (softUsedMax < usedLibraryCards.soft[card][id]) {
+            softUsedMax = usedLibraryCards.soft[card][id];
+          }
+        });
+
+        missingLibraryByType[cardtype][card] = {
+          q: softUsedMax,
+          c: libraryCardBase[card],
+        };
+      }
+    });
+
+    Object.keys(usedLibraryCards.hard).map((card) => {
+      if (!props.cards[card]) {
+        const cardtype = libraryCardBase[card]['Type'];
+
+        if (!props.compact && props.category != 'ok') {
+          libraryByType[cardtype][card] = { q: 0, c: libraryCardBase[card] };
+        }
+
+        let hardUsedTotal = 0;
+        if (usedLibraryCards.hard[card]) {
+          Object.keys(usedLibraryCards.hard[card]).map((id) => {
+            hardUsedTotal += usedLibraryCards.hard[card][id];
+          });
+        }
+
+        if (missingLibraryByType[cardtype][card]) {
+          missingLibraryByType[cardtype][card].q += hardUsedTotal;
+        } else {
+          missingLibraryByType[cardtype][card] = {
+            q: hardUsedTotal,
+            c: libraryCardBase[card],
+          };
+        }
+      }
+    });
+
+    Object.keys(missingLibraryByType).map((cardtype) => {
+      Object.values(missingLibraryByType[cardtype]).map((card) => {
+        missingUnique += 1;
+        missingTotal += card.q;
+        missingLibraryByTypeTotal[cardtype] += card.q;
+      });
+    });
+
+    cardtypesSorted.map((cardtype) => {
+      if (Object.keys(libraryByType[cardtype]).length) {
+        LibraryDeckSortedByType.push(
+          <div key={cardtype} className={props.compact ? null : 'pt-2'}>
+            {!props.compact && (
+              <div className="d-flex justify-content-between">
+                <div className="d-inline">
+                  <ResultLibraryType cardtype={cardtype} total={0} />-{' '}
+                  {libraryByTypeTotal[cardtype]} total (
+                  {libraryByTypeUnique[cardtype]} unique)
+                </div>
+                <div className="d-inline">
+                  {missingLibraryByTypeTotal[cardtype]} miss (
+                  {Object.values(missingLibraryByType[cardtype]).length} unique)
+                </div>
+              </div>
+            )}
+            <InventoryLibraryTable
+              cards={Object.values(libraryByType[cardtype])}
+              showFloatingButtons={props.showFloatingButtons}
+              setShowFloatingButtons={props.setShowFloatingButtons}
             />
-          )}
-          <InventoryLibraryTable
-            cards={libraryByType[cardtype]}
-            showFloatingButtons={props.showFloatingButtons}
-            setShowFloatingButtons={props.setShowFloatingButtons}
-          />
-        </div>
-      );
-    }
+          </div>
+        );
+      }
+    });
   }
 
   return (
     <>
       {!props.compact && (
-        <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+        <div className="d-flex align-items-center justify-content-between px-2 info-message">
           <b>
-            Library{' '}
-            {props.category != 'nok' && (
+            Library
+            {haveTotal ? (
               <>
-                - {total} total, {unique} unique
+                {' '}
+                - {haveTotal} total ({haveUnique} unique)
               </>
+            ) : (
+              <></>
+            )}
+          </b>
+          <b>
+            {missingTotal ? (
+              <>
+                {missingTotal} miss ({missingUnique} unique)
+              </>
+            ) : (
+              <></>
             )}
           </b>
         </div>
       )}
-      {LibraryDeck}
+      {LibraryDeckSortedByType}
     </>
   );
 }

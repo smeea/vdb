@@ -3,7 +3,6 @@
 * Import to inventory quantity highlights
 
 # FIX MOBILE
-* Hide buttons with draw
 
 # FEATURES
 * Create revocable link to Inventory

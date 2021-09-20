@@ -4,10 +4,26 @@ import AppContext from '../../context/AppContext.js';
 
 function InventoryCrypt(props) {
   const { usedCryptCards, cryptCardBase } = useContext(AppContext);
-  let crypt = {};
 
-  if (props.category == 'nok') {
+  let haveTotal = 0;
+  let haveUnique = 0;
+  let missingTotal = 0;
+  let missingUnique = 0;
+
+  const crypt = {};
+  const missingCrypt = {};
+
+  if (props.compact) {
     Object.keys(props.cards).map((card) => {
+      crypt[card] = props.cards[card];
+    });
+  } else {
+    Object.keys(props.cards).map((card) => {
+      if (props.cards[card].q > 0) {
+        haveUnique += 1;
+        haveTotal += props.cards[card].q;
+      }
+
       let softUsedMax = 0;
       if (usedCryptCards.soft[card]) {
         Object.keys(usedCryptCards.soft[card]).map((id) => {
@@ -16,6 +32,7 @@ function InventoryCrypt(props) {
           }
         });
       }
+
       let hardUsedTotal = 0;
       if (usedCryptCards.hard[card]) {
         Object.keys(usedCryptCards.hard[card]).map((id) => {
@@ -23,40 +40,63 @@ function InventoryCrypt(props) {
         });
       }
 
-      if (props.cards[card].q < softUsedMax + hardUsedTotal) {
+      const miss = softUsedMax + hardUsedTotal - props.cards[card].q;
+
+      if (miss > 0) {
+        missingCrypt[card] = { q: miss, c: props.cards[card].c };
+      }
+
+      if (props.category == 'nok') {
+        if (miss > 0) {
+          crypt[card] = props.cards[card];
+        }
+      } else {
         crypt[card] = props.cards[card];
       }
     });
-  } else {
-    crypt = { ...props.cards };
-  }
 
-  if (!props.compact && props.category != 'ok') {
     Object.keys(usedCryptCards.soft).map((card) => {
       if (!props.cards[card]) {
-        crypt[card] = { q: 0, c: cryptCardBase[card] };
+        if (!props.compact && props.category != 'ok') {
+          crypt[card] = { q: 0, c: cryptCardBase[card] };
+        }
+
+        let softUsedMax = 0;
+        Object.keys(usedCryptCards.soft[card]).map((id) => {
+          if (softUsedMax < usedCryptCards.soft[card][id]) {
+            softUsedMax = usedCryptCards.soft[card][id];
+          }
+        });
+
+        missingCrypt[card] = { q: softUsedMax, c: cryptCardBase[card] };
       }
     });
 
     Object.keys(usedCryptCards.hard).map((card) => {
       if (!props.cards[card]) {
-        crypt[card] = { q: 0, c: cryptCardBase[card] };
+        if (!props.compact && props.category != 'ok') {
+          crypt[card] = { q: 0, c: cryptCardBase[card] };
+        }
+
+        let hardUsedTotal = 0;
+        if (usedCryptCards.hard[card]) {
+          Object.keys(usedCryptCards.hard[card]).map((id) => {
+            hardUsedTotal += usedCryptCards.hard[card][id];
+          });
+        }
+
+        if (missingCrypt[card]) {
+          missingCrypt[card].q += hardUsedTotal;
+        } else {
+          missingCrypt[card] = { q: hardUsedTotal, c: cryptCardBase[card] };
+        }
       }
     });
+    Object.keys(missingCrypt).map((card) => {
+      missingUnique += 1;
+      missingTotal += missingCrypt[card].q;
+    });
   }
-
-  let total = 0;
-  const unique = Object.keys(props.cards).filter(
-    (card) => props.cards[card].q > 0
-  ).length;
-  const cards = [];
-
-  Object.keys(crypt).map((card) => {
-    total += crypt[card].q;
-    if (props.category != 'ok' || crypt[card].q > 0) {
-      cards.push(crypt[card]);
-    }
-  });
 
   const byName = (a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {
@@ -66,18 +106,30 @@ function InventoryCrypt(props) {
     }
   };
 
-  const sortedCards = cards.sort(byName);
+  const sortedCards = Object.values(crypt).sort(byName);
 
   return (
     <>
       {!props.compact && (
-        <div className="d-flex align-items-center justify-content-between pl-2 info-message">
+        <div className="d-flex align-items-center justify-content-between px-2 info-message">
           <b>
-            Crypt{' '}
-            {props.category != 'nok' && (
+            Crypt
+            {haveTotal ? (
               <>
-                - {total} total, {unique} unique
+                {' '}
+                - {haveTotal} total ({haveUnique} unique)
               </>
+            ) : (
+              <></>
+            )}
+          </b>
+          <b>
+            {missingTotal ? (
+              <>
+                {missingTotal} miss ({missingUnique} unique)
+              </>
+            ) : (
+              <></>
             )}
           </b>
         </div>

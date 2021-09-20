@@ -31,9 +31,9 @@ function ResultLibraryType(props) {
     );
   } else if (props.total == 0) {
     return (
-      <div className="d-flex align-items-center">
+      <div className="d-inline align-items-center">
         {cardtypeImages}
-        <div className="px-1">{props.cardtype}</div>
+        <div className="d-inline px-1">{props.cardtype}</div>
       </div>
     );
   } else {

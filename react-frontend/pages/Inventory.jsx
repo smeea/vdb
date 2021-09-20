@@ -48,7 +48,7 @@ function Inventory(props) {
             <>
               {showCrypt ? (
                 <>
-                  <div className="pt-1 px-1">
+                  <div className="sticky-insearch py-1 px-1">
                     <InventoryNewCryptCard
                       cards={inventoryCrypt}
                       setNewId={setNewCryptId}
@@ -56,7 +56,7 @@ function Inventory(props) {
                     />
                   </div>
                   {newCryptId && inventoryCrypt[newCryptId] && (
-                    <div className="pb-2 pt-3">
+                    <div className="sticky-inv-result mobile py-1">
                       <InventoryCrypt
                         cards={{
                           [newCryptId]: inventoryCrypt[newCryptId],
@@ -81,7 +81,7 @@ function Inventory(props) {
                 </>
               ) : (
                 <>
-                  <div className="pt-1 px-1">
+                  <div className="sticky-insearch py-1 px-1">
                     <InventoryNewLibraryCard
                       cards={inventoryLibrary}
                       setNewId={setNewLibraryId}
@@ -89,7 +89,7 @@ function Inventory(props) {
                     />
                   </div>
                   {newLibraryId && inventoryLibrary[newLibraryId] && (
-                    <div className="pb-2 pt-3">
+                    <div className="sticky-inv-result mobile py1">
                       <InventoryLibrary
                         cards={{
                           [newLibraryId]: inventoryLibrary[newLibraryId],
@@ -138,7 +138,7 @@ function Inventory(props) {
                   />
                 </div>
                 {newCryptId && inventoryCrypt[newCryptId] && (
-                  <div className="py-2">
+                  <div className="sticky-inv-result py-2">
                     <InventoryCrypt
                       cards={{
                         [newCryptId]: inventoryCrypt[newCryptId],
@@ -170,7 +170,7 @@ function Inventory(props) {
                   />
                 </div>
                 {newLibraryId && inventoryLibrary[newLibraryId] && (
-                  <div className="pt-4">
+                  <div className="sticky-inv-result py-2">
                     <InventoryLibrary
                       cards={{
                         [newLibraryId]: inventoryLibrary[newLibraryId],
