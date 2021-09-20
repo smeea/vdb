@@ -52,7 +52,9 @@ function InventoryLibrary(props) {
   if (props.compact) {
     Object.keys(props.cards).map((card) => {
       const cardtype = props.cards[card].c['Type'];
-      libraryByType[cardtype] = props.cards[card];
+      libraryByType[cardtype] = {
+        card: props.cards[card],
+      };
     });
   } else {
     Object.keys(props.cards).map((card) => {
@@ -154,34 +156,34 @@ function InventoryLibrary(props) {
         missingLibraryByTypeTotal[cardtype] += card.q;
       });
     });
-
-    cardtypesSorted.map((cardtype) => {
-      if (Object.keys(libraryByType[cardtype]).length) {
-        LibraryDeckSortedByType.push(
-          <div key={cardtype} className={props.compact ? null : 'pt-2'}>
-            {!props.compact && (
-              <div className="d-flex justify-content-between">
-                <div className="d-inline">
-                  <ResultLibraryType cardtype={cardtype} total={0} />-{' '}
-                  {libraryByTypeTotal[cardtype]} total (
-                  {libraryByTypeUnique[cardtype]} unique)
-                </div>
-                <div className="d-inline">
-                  {missingLibraryByTypeTotal[cardtype]} miss (
-                  {Object.values(missingLibraryByType[cardtype]).length} unique)
-                </div>
-              </div>
-            )}
-            <InventoryLibraryTable
-              cards={Object.values(libraryByType[cardtype])}
-              showFloatingButtons={props.showFloatingButtons}
-              setShowFloatingButtons={props.setShowFloatingButtons}
-            />
-          </div>
-        );
-      }
-    });
   }
+
+  cardtypesSorted.map((cardtype) => {
+    if (Object.keys(libraryByType[cardtype]).length) {
+      LibraryDeckSortedByType.push(
+        <div key={cardtype} className={props.compact ? null : 'pt-2'}>
+          {!props.compact && (
+            <div className="d-flex justify-content-between">
+              <div className="d-inline">
+                <ResultLibraryType cardtype={cardtype} total={0} />-{' '}
+                {libraryByTypeTotal[cardtype]} total (
+                {libraryByTypeUnique[cardtype]} unique)
+              </div>
+              <div className="d-inline">
+                {missingLibraryByTypeTotal[cardtype]} miss (
+                {Object.values(missingLibraryByType[cardtype]).length} unique)
+              </div>
+            </div>
+          )}
+          <InventoryLibraryTable
+            cards={Object.values(libraryByType[cardtype])}
+            showFloatingButtons={props.showFloatingButtons}
+            setShowFloatingButtons={props.setShowFloatingButtons}
+          />
+        </div>
+      );
+    }
+  });
 
   return (
     <>
