@@ -15,6 +15,7 @@ import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckSelectPrecon from './components/DeckSelectPrecon.jsx';
 import DeckSelectAdvModal from './components/DeckSelectAdvModal.jsx';
 import DeckTags from './components/DeckTags.jsx';
+import DeckDraw from './components/DeckDraw.jsx';
 import DeckButtons from './components/DeckButtons.jsx';
 import DeckBranchSelect from './components/DeckBranchSelect.jsx';
 import DeckCrypt from './components/DeckCrypt.jsx';
@@ -47,6 +48,9 @@ function Decks(props) {
   } = useContext(AppContext);
 
   const query = new URLSearchParams(useLocation().search);
+  const [showImportText, setShowImportText] = useState(false);
+  const [showImportAmaranth, setShowImportAmaranth] = useState(false);
+  const [showDraw, setShowDraw] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
   const [showMenuButtons, setShowMenuButtons] = useState(false);
@@ -517,6 +521,7 @@ function Decks(props) {
                 deck={deckRouter(activeDeck)}
                 activeDeck={activeDeck}
                 setShowInfo={setShowInfo}
+                setShowDraw={setShowDraw}
                 setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
@@ -608,6 +613,7 @@ function Decks(props) {
                 deck={deckRouter(activeDeck)}
                 activeDeck={activeDeck}
                 setShowInfo={setShowInfo}
+                setShowDraw={setShowDraw}
                 setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
@@ -637,6 +643,15 @@ function Decks(props) {
           show={showDeckSelectAdv}
           allTagsOptions={allTagsOptions}
         />
+      )}
+      {showDraw && (
+        <div className="button-block">
+          <DeckDraw
+            setShow={setShowDraw}
+            deck={deckRouter(activeDeck)}
+            setShowFloatingButtons={setShowFloatingButtons}
+          />
+        </div>
       )}
     </Container>
   );

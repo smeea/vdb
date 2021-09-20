@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import DeckDraw from './DeckDraw.jsx';
+import { Button } from 'react-bootstrap';
 import DeckClone from './DeckClone.jsx';
 import DeckDelete from './DeckDelete.jsx';
 import DeckCopyUrl from './DeckCopyUrl.jsx';
@@ -10,9 +10,10 @@ import DeckMissing from './DeckMissing.jsx';
 import DeckBranchCreate from './DeckBranchCreate.jsx';
 import DeckBranchDelete from './DeckBranchDelete.jsx';
 import AppContext from '../../context/AppContext';
+import Dice3 from '../../assets/images/icons/dice-3-fill.svg';
 
 function DeckButtons(props) {
-  const { inventoryMode, username } = useContext(AppContext);
+  const { inventoryMode, username, isMobile } = useContext(AppContext);
 
   return (
     <>
@@ -84,16 +85,22 @@ function DeckButtons(props) {
             missingLibrary={props.missingLibrary}
             setShowInfo={props.setShowInfo}
             setShowButtons={props.setShowButtons}
+            setShowProxySelect={props.setShowProxySelect}
           />
         </div>
       )}
       {props.deck && (
         <div className="button-block">
-          <DeckDraw
-            crypt={props.deck.crypt}
-            library={props.deck.library}
-            setShowButtons={props.setShowButtons}
-          />
+          <Button
+            onClick={() => {
+              isMobile && props.setShowButtons(false);
+              props.setShowDraw(true);
+            }}
+            variant="outline-secondary"
+            block
+          >
+            <Dice3 /> Draw Cards
+          </Button>
         </div>
       )}
       {props.deck && inventoryMode && (

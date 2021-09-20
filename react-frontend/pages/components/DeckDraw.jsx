@@ -1,8 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
-import Dice3 from '../../assets/images/icons/dice-3-fill.svg';
 import DeckDrawModal from './DeckDrawModal.jsx';
-import AppContext from '../../context/AppContext.js';
+import AppContext from '../../context/AppContext';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -12,16 +10,16 @@ function DeckDraw(props) {
   const { isMobile } = useContext(AppContext);
 
   const cryptArr = [];
-  Object.keys(props.crypt).map((card) => {
-    for (let i = 0; i < props.crypt[card].q; i++) {
-      cryptArr.push(props.crypt[card].c);
+  Object.keys(props.deck.crypt).map((card) => {
+    for (let i = 0; i < props.deck.crypt[card].q; i++) {
+      cryptArr.push(props.deck.crypt[card].c);
     }
   });
 
   const libraryArr = [];
-  Object.keys(props.library).map((card) => {
-    for (let i = 0; i < props.library[card].q; i++) {
-      libraryArr.push(props.library[card].c);
+  Object.keys(props.deck.library).map((card) => {
+    for (let i = 0; i < props.deck.library[card].q; i++) {
+      libraryArr.push(props.deck.library[card].c);
     }
   });
 
@@ -38,7 +36,7 @@ function DeckDraw(props) {
     return [drawArray, restArray];
   };
 
-  const [showDrawModal, setShowDrawModal] = useState(undefined);
+  const [showDrawModal, setShowDrawModal] = useState(false);
   const [libraryHandSize, setLibraryHandSize] = useState(7);
   const [cryptHandSize, setCryptHandSize] = useState(4);
   const [restCrypt, setRestCrypt] = useState(undefined);
@@ -50,13 +48,13 @@ function DeckDraw(props) {
   const [initialTransfers, setInitialTransfers] = useState(undefined);
 
   const disciplinesDict = {};
-  for (const card of Object.keys(props.crypt)) {
-    for (const d of Object.keys(props.crypt[card].c['Disciplines'])) {
+  for (const card of Object.keys(props.deck.crypt)) {
+    for (const d of Object.keys(props.deck.crypt[card].c['Disciplines'])) {
       if (disciplinesDict[d] === undefined) {
         disciplinesDict[d] = 0;
-        disciplinesDict[d] += props.crypt[card].q;
+        disciplinesDict[d] += props.deck.crypt[card].q;
       } else {
-        disciplinesDict[d] += props.crypt[card].q;
+        disciplinesDict[d] += props.deck.crypt[card].q;
       }
     }
   }
@@ -87,9 +85,9 @@ function DeckDraw(props) {
   }
 
   let nonKeyDisciplines = 0;
-  Object.keys(props.crypt).map((card) => {
+  Object.keys(props.deck.crypt).map((card) => {
     let counter = 0;
-    Object.keys(props.crypt[card].c['Disciplines']).map((d) => {
+    Object.keys(props.deck.crypt[card].c['Disciplines']).map((d) => {
       if (nonKeyDisciplinesList.includes(d)) {
         counter += 1;
       }
@@ -99,7 +97,7 @@ function DeckDraw(props) {
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
-    isMobile && props.setShowButtons(false);
+    props.setShow(false);
   };
 
   const randomTransfers = () => {
@@ -107,7 +105,7 @@ function DeckDraw(props) {
     return t[getRandomInt(5)];
   };
 
-  const handleOpenDraw = () => {
+  useEffect(() => {
     setInitialTransfers(randomTransfers());
     setCryptHandSize(4);
     setLibraryHandSize(7);
@@ -118,7 +116,8 @@ function DeckDraw(props) {
     setRestCrypt(cryptArr);
     setRestLibrary(libraryArr);
     setShowDrawModal(true);
-  };
+    props.setShowFloatingButtons(false);
+  }, []);
 
   const handleReDrawCrypt = () => {
     setInitialTransfers(randomTransfers());
@@ -224,13 +223,10 @@ function DeckDraw(props) {
 
   return (
     <>
-      <Button variant="outline-secondary" onClick={handleOpenDraw} block>
-        <Dice3 /> Draw Cards
-      </Button>
       {showDrawModal && (
         <DeckDrawModal
-          crypt={props.crypt}
-          library={props.library}
+          crypt={props.deck.crypt}
+          library={props.deck.library}
           cryptTotal={cryptArr.length}
           libraryTotal={libraryArr.length}
           initialTransfers={initialTransfers}
@@ -248,7 +244,6 @@ function DeckDraw(props) {
           restLibrary={restLibrary}
           show={showDrawModal}
           handleClose={handleCloseDrawModal}
-          setShowButtons={props.setShowButtons}
           burnedCapacityTotal={burnedCapacityTotal}
           burnedPoolTotal={burnedPoolTotal}
           burnedBloodTotal={burnedBloodTotal}
