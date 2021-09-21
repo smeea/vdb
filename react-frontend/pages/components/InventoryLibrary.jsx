@@ -163,15 +163,25 @@ function InventoryLibrary(props) {
       LibraryDeckSortedByType.push(
         <div key={cardtype} className={props.compact ? null : 'pt-2'}>
           {!props.compact && (
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between pr-1">
               <div className="d-inline">
-                <ResultLibraryType cardtype={cardtype} total={0} />-{' '}
-                {libraryByTypeTotal[cardtype]} total (
-                {libraryByTypeUnique[cardtype]} unique)
+                <ResultLibraryType cardtype={cardtype} total={0} />
+                {libraryByTypeTotal[cardtype] ? (
+                  <>
+                    {'- '}
+                    {libraryByTypeTotal[cardtype]} (
+                    {libraryByTypeUnique[cardtype]} uniq)
+                  </>
+                ) : null}
               </div>
-              <div className="d-inline">
-                {missingLibraryByTypeTotal[cardtype]} miss (
-                {Object.values(missingLibraryByType[cardtype]).length} unique)
+              <div className="d-inline gray">
+                {missingLibraryByTypeTotal[cardtype] ? (
+                  <>
+                    {missingLibraryByTypeTotal[cardtype]} (
+                    {Object.values(missingLibraryByType[cardtype]).length} uniq)
+                    miss
+                  </>
+                ) : null}
               </div>
             </div>
           )}
@@ -194,21 +204,21 @@ function InventoryLibrary(props) {
             {haveTotal ? (
               <>
                 {' '}
-                - {haveTotal} total ({haveUnique} unique)
+                - {haveTotal} ({haveUnique} uniq)
               </>
             ) : (
               <></>
             )}
           </b>
-          <b>
+          <div className="d-inline gray">
             {missingTotal ? (
-              <>
-                {missingTotal} miss ({missingUnique} unique)
-              </>
+              <b>
+                {missingTotal} ({missingUnique} uniq) miss
+              </b>
             ) : (
               <></>
             )}
-          </b>
+          </div>
         </div>
       )}
       {LibraryDeckSortedByType}

@@ -117,21 +117,21 @@ function InventoryCrypt(props) {
             {haveTotal ? (
               <>
                 {' '}
-                - {haveTotal} total ({haveUnique} unique)
+                - {haveTotal} ({haveUnique} uniq)
               </>
             ) : (
               <></>
             )}
           </b>
-          <b>
+          <div className="d-inline gray">
             {missingTotal ? (
-              <>
-                {missingTotal} miss ({missingUnique} unique)
-              </>
+              <b>
+                {missingTotal} ({missingUnique} uniq) miss
+              </b>
             ) : (
               <></>
             )}
-          </b>
+          </div>
         </div>
       )}
       <InventoryCryptTable
