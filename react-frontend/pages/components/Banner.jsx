@@ -19,20 +19,20 @@ function Banner(props) {
           title="logo"
         />
         <div className="d-inline logo-text px-2">VDB</div>
-        <div className="d-inline logo-subtext pl-2">
-          <i>&mdash; your digital retainer</i>
+        {!isMobile && (
+          <div className="d-inline logo-subtext pl-2">
+            <i>&mdash; your digital retainer</i>
+          </div>
+        )}
+      </div>
+      <div className="d-inline px-2">
+        <div className="d-flex justify-content-end small">
+          <i>If only I had a laptop...</i>
+        </div>
+        <div className="d-flex justify-content-end small">
+          <i>- Enkidu, The Noah</i>
         </div>
       </div>
-      {!isMobile && (
-        <div className="d-inline px-2">
-          <div className="d-flex justify-content-end small">
-            <i>If only I had a laptop...</i>
-          </div>
-          <div className="d-flex justify-content-end small">
-            <i>- Enkidu, The Noah</i>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

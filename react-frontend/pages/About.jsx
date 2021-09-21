@@ -12,7 +12,7 @@ function About(props) {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
-        <Col xs={12} md={6} className="px-0">
+        <Col xs={12} md={5} className="px-0">
           <Banner />
           <div className="px-2">
             <div className="pt-2">
@@ -65,7 +65,7 @@ function About(props) {
                 <li>Mobile-friendly (best on screens &gt;6&quot;)</li>
                 <li>
                   Import/export your decks to popular formats (Amaranth, Lackey,
-                  TWD)
+                  Excel)
                 </li>
                 <li>
                   Manage your card collection (inventory) with full search power
@@ -175,7 +175,7 @@ function About(props) {
                       <Globe2 />
                     </div>
                     <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
-                      VEKN.net forum thread
+                      VEKN.net forum
                     </a>
                   </div>
                 </li>
