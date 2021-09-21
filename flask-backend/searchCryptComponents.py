@@ -163,7 +163,7 @@ def get_crypt_by_titles(titles, crypt):
             continue
         if card['Adv'] and card['Adv'][0]:
             for title in titles.keys():
-                if re.search(r'{} {}'.format('\[MERGED\]', title),
+                if re.search(r'{} {}'.format('\[MERGED\] ?\w*', title),
                              card['Card Text'], re.IGNORECASE):
                     match_cards.append(card)
                     continue
