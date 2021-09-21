@@ -36,6 +36,8 @@ function DeckSelectAdvModal(props) {
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
   const [tagsFilter, setTagsFilter] = useState([]);
+  const [clanFilter, setClanFilter] = useState('any');
+
   let resultTrClass;
 
   const handleChangeNameFilter = (event) => {
@@ -81,9 +83,84 @@ function DeckSelectAdvModal(props) {
     }
   };
 
+  const allDecksClans = new Set();
+  Object.values(decks).map((deck, index) => {
+    const clans = {};
+    let cryptTotal = 0;
+
+    Object.keys(deck.crypt).map((cardid) => {
+      if (cardid != 200076) {
+        const clan = cryptCardBase[cardid].Clan;
+
+        if (clan in clans) {
+          clans[cryptCardBase[cardid].Clan] += deck.crypt[cardid].q;
+          cryptTotal += deck.crypt[cardid].q;
+        } else {
+          clans[cryptCardBase[cardid].Clan] = deck.crypt[cardid].q;
+          cryptTotal += deck.crypt[cardid].q;
+        }
+      }
+    });
+
+    Object.keys(clans).forEach((c) => {
+      if (clans[c] / cryptTotal > 0.5) {
+        allDecksClans.add(c);
+      }
+    });
+  });
+
+  const clanOptions = [
+    {
+      value: 'any',
+      name: 'clan',
+      label: 'ANY',
+    },
+    {
+      value: '',
+      name: 'clan',
+      label: 'NONE',
+    },
+  ];
+  allDecksClans.forEach((i, index) => {
+    clanOptions.push({
+      value: i.toLowerCase(),
+      name: 'clan',
+      label: <ResultCryptClan value={i} />,
+    });
+  });
+
   useEffect(() => {
     if (Object.values(decks).length > 0) {
       let filtered = Object.values(decks);
+
+      if (clanFilter !== 'any') {
+        filtered = filtered.filter((deck) => {
+          const clans = {};
+          let cryptTotal = 0;
+
+          Object.keys(deck.crypt).map((cardid) => {
+            if (cardid != 200076) {
+              const clan = cryptCardBase[cardid].Clan;
+              if (clan in clans) {
+                clans[cryptCardBase[cardid].Clan] += deck.crypt[cardid].q;
+                cryptTotal += deck.crypt[cardid].q;
+              } else {
+                clans[cryptCardBase[cardid].Clan] = deck.crypt[cardid].q;
+                cryptTotal += deck.crypt[cardid].q;
+              }
+            }
+          });
+
+          let clan = '';
+          Object.keys(clans).forEach((c) => {
+            if (clans[c] / cryptTotal > 0.5) {
+              clan = c;
+            }
+          });
+
+          if (clan.toLowerCase() === clanFilter) return true;
+        });
+      }
 
       if (nameFilter) {
         filtered = filtered.filter((deck) => {
@@ -123,7 +200,9 @@ function DeckSelectAdvModal(props) {
       const sorted = resultDecksSort(filtered, sortMethod);
       setSortedDecks(sorted);
     }
-  }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
+  }, [decks, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);
+
+  let cryptTotal = 0;
 
   const deckRows = sortedDecks.map((deck, index) => {
     if (resultTrClass == 'result-even') {
@@ -318,7 +397,19 @@ function DeckSelectAdvModal(props) {
           <thead>
             <tr>
               {inventoryMode && !isMobile && <th className="inventory"></th>}
-              {!isMobile && <th className="clan"></th>}
+              {!isMobile && (
+                <th className="clan">
+                  <Select
+                    classNamePrefix="react-select"
+                    options={clanOptions}
+                    onChange={(e) => setClanFilter(e.value)}
+                    value={clanOptions.find(
+                      (obj) => obj.value === clanFilter.toLowerCase()
+                    )}
+                    isSearchable={!isMobile}
+                  />
+                </th>
+              )}
               <th className="name trimmed mw-175">
                 <FormControl
                   placeholder="Filter by Deck or Card Name"
