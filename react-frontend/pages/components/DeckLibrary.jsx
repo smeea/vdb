@@ -3,7 +3,7 @@ import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import InfoCircle from '../../assets/images/icons/info-circle.svg';
 import X from '../../assets/images/icons/x.svg';
 import DeckLibraryTable from './DeckLibraryTable.jsx';
-import DeckLibraryTotalByTypes from './DeckLibraryTotalByTypes.jsx';
+import DeckLibraryTotalInfo from './DeckLibraryTotalInfo.jsx';
 import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
@@ -169,43 +169,50 @@ function DeckLibrary(props) {
   let bloodTotal = 0;
   const libraryByType = {};
   const librarySideByType = {};
+  const libraryByDisciplinesTotal = {};
 
-  for (const card in library) {
-    if (library.hasOwnProperty(card)) {
-      if (!isNaN(library[card].c['Blood Cost'])) {
-        bloodTotal += library[card].c['Blood Cost'] * library[card].q;
-      }
-      if (!isNaN(library[card].c['Pool Cost'])) {
-        poolTotal += library[card].c['Pool Cost'] * library[card].q;
-      }
-      libraryTotal += library[card].q;
-      const cardtype = library[card].c['Type'];
-      if (libraryByType[cardtype] === undefined) {
-        libraryByType[cardtype] = [];
-      }
-      libraryByType[cardtype].push(library[card]);
+  Object.keys(library).map((card) => {
+    if (!isNaN(library[card].c['Blood Cost'])) {
+      bloodTotal += library[card].c['Blood Cost'] * library[card].q;
     }
-  }
+    if (!isNaN(library[card].c['Pool Cost'])) {
+      poolTotal += library[card].c['Pool Cost'] * library[card].q;
+    }
 
-  for (const card in librarySide) {
-    if (librarySide.hasOwnProperty(card)) {
-      const cardtype = librarySide[card].c['Type'];
-      if (librarySideByType[cardtype] === undefined) {
-        librarySideByType[cardtype] = [];
-      }
-      librarySideByType[cardtype].push(librarySide[card]);
+    libraryTotal += library[card].q;
+
+    const cardtype = library[card].c['Type'];
+    if (libraryByType[cardtype] === undefined) {
+      libraryByType[cardtype] = [];
     }
-  }
+    libraryByType[cardtype].push(library[card]);
+
+    const disciplines = library[card].c['Discipline'];
+    if (disciplines) {
+      if (libraryByDisciplinesTotal[disciplines] === undefined) {
+        libraryByDisciplinesTotal[disciplines] = 0;
+      }
+      libraryByDisciplinesTotal[disciplines] += library[card].q;
+    }
+  });
+
+  Object.keys(librarySide).map((card) => {
+    const cardtype = librarySide[card].c['Type'];
+    if (librarySideByType[cardtype] === undefined) {
+      librarySideByType[cardtype] = [];
+    }
+    librarySideByType[cardtype].push(librarySide[card]);
+  });
 
   const libraryByTypeTotal = {};
   let trifleTotal = 0;
   const LibraryDeck = [];
   const LibrarySideDeck = [];
 
-  for (const cardtype of cardtypeSorted) {
+  cardtypeSorted.map((cardtype) => {
     if (libraryByType[cardtype] !== undefined) {
       libraryByTypeTotal[cardtype] = 0;
-      for (const card of libraryByType[cardtype]) {
+      Object.values(libraryByType[cardtype]).map((card) => {
         libraryCards.push(card.c);
         libraryByTypeTotal[cardtype] += card.q;
         if (
@@ -214,7 +221,7 @@ function DeckLibrary(props) {
         ) {
           trifleTotal += card.q;
         }
-      }
+      });
       LibraryDeck.push(
         <div key={cardtype} className="pt-2">
           <ResultLibraryType
@@ -245,9 +252,9 @@ function DeckLibrary(props) {
     }
 
     if (librarySideByType[cardtype] !== undefined) {
-      for (const card of librarySideByType[cardtype]) {
+      Object.values(librarySideByType[cardtype]).map((card) => {
         librarySideCards.push(card.c);
-      }
+      });
 
       LibrarySideDeck.push(
         <div key={cardtype}>
@@ -274,7 +281,7 @@ function DeckLibrary(props) {
         </div>
       );
     }
-  }
+  });
 
   return (
     <>
@@ -340,7 +347,10 @@ function DeckLibrary(props) {
         </div>
         {showInfo && (
           <div className="info-message pl-2">
-            <DeckLibraryTotalByTypes byTypes={libraryByTypeTotal} />
+            <DeckLibraryTotalInfo
+              byDisciplines={libraryByDisciplinesTotal}
+              byTypes={libraryByTypeTotal}
+            />
           </div>
         )}
         {showAdd &&
