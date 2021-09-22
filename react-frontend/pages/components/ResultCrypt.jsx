@@ -73,29 +73,6 @@ function ResultCrypt(props) {
               <X viewBox="0 0 16 16" />
             </div>
           </div>
-          {isInventory && (
-            <>
-              {inventoryMode ? (
-                <div
-                  onClick={() => toggleInventoryMode()}
-                  className="float-right-top inventory-on"
-                >
-                  <div className="pt-2 float-inventory">
-                    <ArchiveFill viewBox="0 0 16 16" />
-                  </div>
-                </div>
-              ) : (
-                <div
-                  onClick={() => toggleInventoryMode()}
-                  className="float-right-top inventory-off"
-                >
-                  <div className="pt-2 float-inventory">
-                    <ArchiveFill viewBox="0 0 16 16" />
-                  </div>
-                </div>
-              )}
-            </>
-          )}
           {props.activeDeck.deckid &&
             (addMode ? (
               <div

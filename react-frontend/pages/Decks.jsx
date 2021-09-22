@@ -7,7 +7,6 @@ import PinAngleFill from '../assets/images/icons/pin-angle-fill.svg';
 import InfoCircle from '../assets/images/icons/info-circle.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
-import ArchiveFill from '../assets/images/icons/archive-fill.svg';
 import BinocularsFill from '../assets/images/icons/binoculars-fill.svg';
 import AccountLogin from './components/AccountLogin.jsx';
 import AccountRegister from './components/AccountRegister.jsx';
@@ -42,7 +41,6 @@ function Decks(props) {
     cryptCardBase,
     libraryCardBase,
     inventoryMode,
-    toggleInventoryMode,
     username,
     isMobile,
   } = useContext(AppContext);
@@ -616,21 +614,6 @@ function Decks(props) {
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
               />
-              {isMobile && (
-                <div className="button-block">
-                  <Button
-                    variant="outline-secondary"
-                    onClick={() => {
-                      toggleInventoryMode();
-                      handleShowButtons(false);
-                    }}
-                    block
-                  >
-                    <ArchiveFill viewBox="0 0 16 16" /> Toggle Inventory Mode (
-                    {inventoryMode ? 'On' : 'Off'})
-                  </Button>
-                </div>
-              )}
             </Container>
           </Modal.Body>
         </Modal>

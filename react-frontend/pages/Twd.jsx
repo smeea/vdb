@@ -6,13 +6,7 @@ import TwdSearchForm from './components/TwdSearchForm.jsx';
 import AppContext from '../context/AppContext.js';
 
 function Twd(props) {
-  const {
-    showTwdSearch,
-    twdResults,
-    inventoryMode,
-    toggleInventoryMode,
-    isMobile,
-  } = useContext(AppContext);
+  const { showTwdSearch, twdResults, isMobile } = useContext(AppContext);
 
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 
@@ -53,29 +47,6 @@ function Twd(props) {
           <TwdSearchForm />
         </Col>
       </Row>
-      {isMobile && showFloatingButtons && (
-        <>
-          {inventoryMode ? (
-            <div
-              onClick={() => toggleInventoryMode()}
-              className="float-right-top inventory-on"
-            >
-              <div className="pt-2 float-inventory">
-                <ArchiveFill viewBox="0 0 16 16" />
-              </div>
-            </div>
-          ) : (
-            <div
-              onClick={() => toggleInventoryMode()}
-              className="float-right-top inventory-off"
-            >
-              <div className="pt-2 float-inventory">
-                <ArchiveFill viewBox="0 0 16 16" />
-              </div>
-            </div>
-          )}
-        </>
-      )}
     </Container>
   );
 }

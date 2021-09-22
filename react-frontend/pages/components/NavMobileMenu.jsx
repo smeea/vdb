@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { Overlay, Popover } from 'react-bootstrap';
 import PersonFill from '../../assets/images/icons/person-fill.svg';
 import InfoCircleFill from '../../assets/images/icons/info-circle-fill.svg';
+import ToggleOn from '../../assets/images/icons/toggle-on.svg';
+import ToggleOff from '../../assets/images/icons/toggle-off.svg';
+import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import SunFill from '../../assets/images/icons/sun-fill.svg';
 import MoonFill from '../../assets/images/icons/moon-fill.svg';
 import List from '../../assets/images/icons/list.svg';
@@ -11,7 +14,8 @@ import AppContext from '../../context/AppContext.js';
 import ThemeContext from '../../context/ThemeContext.js';
 
 const NavMobileMenu = (props) => {
-  const { username } = useContext(AppContext);
+  const { inventoryMode, toggleInventoryMode, username } =
+    useContext(AppContext);
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
@@ -57,8 +61,20 @@ const NavMobileMenu = (props) => {
                     setShowMenu(false);
                   }}
                 >
-                  {isDarkTheme ? <SunFill /> : <MoonFill />}
-                  <div className="pl-2">Switch Theme</div>
+                  {isDarkTheme ? <MoonFill /> : <SunFill />}
+                  <div className="pl-2">Theme</div>
+                </div>
+                <div
+                  className="d-flex align-items-center px-2 py-1"
+                  onClick={() => {
+                    toggleInventoryMode();
+                    setShowMenu(false);
+                  }}
+                >
+                  {inventoryMode ? <ToggleOn /> : <ToggleOff />}
+                  <div className={inventoryMode ? 'pl-2' : 'gray pl-2'}>
+                    Inventory Mode
+                  </div>
                 </div>
                 <div className="d-flex align-items-center justify-content-between py-2">
                   <LanguageSelect setShowMenu={setShowMenu} />
