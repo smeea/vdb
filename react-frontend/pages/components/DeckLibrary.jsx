@@ -2,13 +2,17 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import InfoCircle from '../../assets/images/icons/info-circle.svg';
 import X from '../../assets/images/icons/x.svg';
+import OverlayTooltip from './OverlayTooltip.jsx';
 import DeckLibraryTable from './DeckLibraryTable.jsx';
 import DeckLibraryTotalInfo from './DeckLibraryTotalInfo.jsx';
 import DeckNewLibraryCard from './DeckNewLibraryCard.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import UsedDescription from './UsedDescription.jsx';
+import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
+import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import AppContext from '../../context/AppContext.js';
+import drawProbability from './drawProbability.js';
 
 function DeckLibrary(props) {
   const {
@@ -26,6 +30,7 @@ function DeckLibrary(props) {
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);
   const [modalInventory, setModalInventory] = useState(undefined);
+  const [modalDraw, setModalDraw] = useState(undefined);
 
   useEffect(() => {
     if (inventoryMode && modalCardIdx !== undefined) {
@@ -224,12 +229,63 @@ function DeckLibrary(props) {
       });
       LibraryDeck.push(
         <div key={cardtype} className="pt-2">
-          <ResultLibraryType
-            cardtype={cardtype}
-            total={libraryByTypeTotal[cardtype]}
-            trifleTotal={cardtype == 'Master' && trifleTotal}
-            inAdvSelect={props.inAdvSelect}
-          />
+          <div className="d-flex justify-content-between pr-2">
+            <ResultLibraryType
+              cardtype={cardtype}
+              total={libraryByTypeTotal[cardtype]}
+              trifleTotal={cardtype == 'Master' && trifleTotal}
+              inAdvSelect={props.inAdvSelect}
+            />
+            {showInfo && (
+              <>
+                {isMobile ? (
+                  <div
+                    onClick={() =>
+                      setModalDraw({
+                        name: cardtype,
+                        prob: (
+                          <DeckDrawProbabilityText
+                            N={libraryTotal}
+                            n={7}
+                            k={libraryByTypeTotal[cardtype]}
+                          />
+                        ),
+                      })
+                    }
+                  >
+                    {`${Math.floor(
+                      drawProbability(
+                        1,
+                        libraryTotal,
+                        7,
+                        libraryByTypeTotal[cardtype]
+                      ) * 100
+                    )}%`}
+                  </div>
+                ) : (
+                  <OverlayTooltip
+                    placement="right"
+                    text={
+                      <DeckDrawProbabilityText
+                        N={libraryTotal}
+                        n={7}
+                        k={libraryByTypeTotal[cardtype]}
+                      />
+                    }
+                  >
+                    <div className="d-inline">{`${Math.floor(
+                      drawProbability(
+                        1,
+                        libraryTotal,
+                        7,
+                        libraryByTypeTotal[cardtype]
+                      ) * 100
+                    )}%`}</div>
+                  </OverlayTooltip>
+                )}
+              </>
+            )}
+          </div>
           <DeckLibraryTable
             handleModalCardOpen={handleModalCardOpen}
             setModalInventory={setModalInventory}
@@ -430,6 +486,12 @@ function DeckLibrary(props) {
             isMobile && props.setShowFloatingButtons(true);
           }}
           inventoryState={modalInventory}
+        />
+      )}
+      {modalDraw && (
+        <DeckDrawProbabilityModal
+          modalDraw={modalDraw}
+          setModalDraw={setModalDraw}
         />
       )}
     </>

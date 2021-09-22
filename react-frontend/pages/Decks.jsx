@@ -48,8 +48,6 @@ function Decks(props) {
   } = useContext(AppContext);
 
   const query = new URLSearchParams(useLocation().search);
-  const [showImportText, setShowImportText] = useState(false);
-  const [showImportAmaranth, setShowImportAmaranth] = useState(false);
   const [showDraw, setShowDraw] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);

@@ -18,12 +18,12 @@ function ResultLibraryType(props) {
       <div
         className={
           props.inAdvSelect
-            ? 'd-flex align-items-center adv-deck-table'
-            : 'd-flex align-items-center'
+            ? 'd-inline align-items-center adv-deck-table'
+            : 'd-inline align-items-center'
         }
       >
         {cardtypeImages}
-        <div className="px-1">
+        <div className="d-inline px-1">
           {props.cardtype} [{props.total}]
           {props.trifleTotal ? <> - {props.trifleTotal} trifle</> : null}
         </div>

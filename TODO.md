@@ -12,8 +12,6 @@
 * How can I help section - twd, rulings
 * TWD new/random to respect url
 * Import Lackey .dek
-* Draw chances for cardtypes
-* Clan filter in Adv deck select
 
 # BIG FEATURES
 * Card text history
