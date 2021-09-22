@@ -2,25 +2,17 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { Modal, Row, Col, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
-import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from '../../assets/images/icons/chevron-compact-left.svg';
 import ChevronCompactRight from '../../assets/images/icons/chevron-compact-right.svg';
-import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
 import ResultLibraryLayoutText from './ResultLibraryLayoutText.jsx';
 import ButtonCardCopyUrl from './ButtonCardCopyUrl.jsx';
 import ButtonToggleShowImage from './ButtonToggleShowImage.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryModal(props) {
-  const {
-    showImage,
-    toggleShowImage,
-    inventoryMode,
-    localizedLibrary,
-    lang,
-    isMobile,
-  } = useContext(AppContext);
+  const { showImage, toggleShowImage, localizedLibrary, lang, isMobile } =
+    useContext(AppContext);
 
   const [imageSet, setImageSet] = useState(null);
 

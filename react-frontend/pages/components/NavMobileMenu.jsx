@@ -5,7 +5,6 @@ import PersonFill from '../../assets/images/icons/person-fill.svg';
 import InfoCircleFill from '../../assets/images/icons/info-circle-fill.svg';
 import ToggleOn from '../../assets/images/icons/toggle-on.svg';
 import ToggleOff from '../../assets/images/icons/toggle-off.svg';
-import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import SunFill from '../../assets/images/icons/sun-fill.svg';
 import MoonFill from '../../assets/images/icons/moon-fill.svg';
 import List from '../../assets/images/icons/list.svg';

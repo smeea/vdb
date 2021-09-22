@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
-import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import ResultCryptTable from './ResultCryptTable.jsx';
 import ResultCryptTotal from './ResultCryptTotal.jsx';
 import resultCryptSort from './resultCryptSort.js';
@@ -16,10 +15,7 @@ function ResultCrypt(props) {
     setCryptResults,
     addMode,
     toggleAddMode,
-    inventoryMode,
-    toggleInventoryMode,
     isMobile,
-    isInventory,
     cryptSearchSort,
     changeCryptSearchSort,
   } = useContext(AppContext);

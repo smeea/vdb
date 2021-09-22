@@ -6,7 +6,7 @@ import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function InventoryExport(props) {
-  const { publicName, isMobile } = useContext(AppContext);
+  const { isMobile } = useContext(AppContext);
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);

@@ -202,8 +202,6 @@ function DeckSelectAdvModal(props) {
     }
   }, [decks, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);
 
-  let cryptTotal = 0;
-
   const deckRows = sortedDecks.map((deck, index) => {
     if (resultTrClass == 'result-even') {
       resultTrClass = 'result-odd';

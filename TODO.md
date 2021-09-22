@@ -6,7 +6,6 @@
 
 # FEATURES
 * Create revocable link to Inventory
-* Show missing cards for inventory
 * Localized proxies and from scans
 * Deck/revision diff
 * How can I help section - twd, rulings

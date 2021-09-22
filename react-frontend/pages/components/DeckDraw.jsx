@@ -1,14 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import DeckDrawModal from './DeckDrawModal.jsx';
-import AppContext from '../../context/AppContext';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
 function DeckDraw(props) {
-  const { isMobile } = useContext(AppContext);
-
   const cryptArr = [];
   Object.keys(props.deck.crypt).map((card) => {
     for (let i = 0; i < props.deck.crypt[card].q; i++) {

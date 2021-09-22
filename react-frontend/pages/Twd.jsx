@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import ArchiveFill from '../assets/images/icons/archive-fill.svg';
 import TwdResult from './components/TwdResult.jsx';
 import TwdSearchForm from './components/TwdSearchForm.jsx';
 import AppContext from '../context/AppContext.js';
