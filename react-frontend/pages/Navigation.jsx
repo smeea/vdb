@@ -52,7 +52,11 @@ function Navigation(props) {
   }
 
   return (
-    <Navbar sticky="top" variant="dark">
+    <Navbar
+      fixed={isMobile ? 'bottom' : null}
+      sticky={isMobile ? null : 'top'}
+      variant="dark"
+    >
       <Nav className="container justify-content-between">
         <div className="d-flex align-items-center pr-1">
           {isMobile && <NavMobileMenu />}

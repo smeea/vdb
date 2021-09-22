@@ -284,7 +284,8 @@ button.btn-danger:hover
   margin-top: 18px
 
 .navMenu.mobile
-  margin-top: 12px
+  top: -223px !important
+  left: -4px !important
 
 .navMenu div.arrow
   display: none
@@ -916,9 +917,13 @@ textarea.deck-import:focus
 .add-new-card
   max-width: 100%
 
+@media (max-width: 576px)
+  .main-container,
+  .deck-container
+    padding-bottom: 40px
+
 @media (min-width: 768px) and (max-width: 1199px)
   .main-container,
-  .inventory-container
   .navbar-nav,
   .deck-container
     min-width: 768px
@@ -930,7 +935,6 @@ textarea.deck-import:focus
 
 @media (min-width: 1200px) and (max-width: 1599px)
   .main-container,
-  .inventory-container
   .navbar-nav
     min-width: 95%
     max-width: 100%
@@ -942,7 +946,6 @@ textarea.deck-import:focus
 
 @media (min-width: 1600px)
   .main-container,
-  .inventory-container
   .navbar-nav
     min-width: 1550px
     max-width: 1550px
@@ -961,6 +964,8 @@ div.sticky-insearch
   background-color: var(--bg-primary)
   position: sticky;
   top: 40
+  @media (max-width: 576px)
+    top: 0
   z-index: 2
 
 div.sticky-inv-result
@@ -1052,7 +1057,7 @@ div.float-right-bottom,
 div.float-left-top,
 div.float-left-middle,
 div.float-left-bottom
-  position:fixed
+  position: fixed
   width: 48px
   height: 48px
   color: white
@@ -1061,27 +1066,27 @@ div.float-left-bottom
   z-index: 1
 
 div.float-right-top
-  bottom: 135px
+  bottom: 175px
   right: 15px
 
 div.float-right-middle
-  bottom: 75px
+  bottom: 115px
   right: 15px
 
 div.float-right-bottom
-  bottom: 15px
+  bottom: 55px
   right: 15px
 
 div.float-left-top
-  bottom: 135px
+  bottom: 175px
   left: 15px
 
 div.float-left-middle
-  bottom: 75px
+  bottom: 115px
   left: 15px
 
 div.float-left-bottom
-  bottom: 15px
+  bottom: 55px
   left: 15px
 
 div.clear
