@@ -279,8 +279,9 @@ function DeckCrypt(props) {
       >
         <b>
           Crypt [{cryptTotal}
-          {cryptTotal < 12 && ' of 12+'}] - {cryptGroups}
-          {hasBanned && ' - WITH BANNED'}
+          {!props.inMissing && cryptTotal < 12 && ' of 12+'}]
+          {!props.inMissing && ` - ${cryptGroups}`}
+          {!props.inMissing && hasBanned && ' - WITH BANNED'}
         </b>
         {!props.inAdvSelect && (
           <div className="d-flex">

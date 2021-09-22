@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import InventoryExport from './InventoryExport.jsx';
 import InventoryImport from './InventoryImport.jsx';
 import InventoryDelete from './InventoryDelete.jsx';
+import InventoryMissing from './InventoryMissing.jsx';
 import FolderPlus from '../../assets/images/icons/folder-plus.svg';
 import AppContext from '../../context/AppContext';
 
@@ -59,6 +60,13 @@ function InventoryButtons(props) {
           </Button>
         </div>
       )}
+      <div className="button-block">
+        <InventoryMissing
+          missingCrypt={props.missingCrypt}
+          missingLibrary={props.missingLibrary}
+          setShowButtons={props.setShowButtons}
+        />
+      </div>
     </>
   );
 }

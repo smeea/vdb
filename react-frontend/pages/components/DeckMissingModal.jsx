@@ -25,7 +25,11 @@ function DeckMissingModal(props) {
         <Container fluid>
           <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
             <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
-              <div className={isMobile ? null : 'sticky-modal'}>
+              <div
+                className={
+                  isMobile || props.inInventory ? null : 'sticky-modal'
+                }
+              >
                 <DeckCrypt
                   cards={props.crypt}
                   isAuthor={false}

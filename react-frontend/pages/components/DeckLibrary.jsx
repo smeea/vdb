@@ -355,30 +355,36 @@ function DeckLibrary(props) {
         >
           <b>
             Library [{libraryTotal}
-            {(libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
-            {hasBanned && ' - WITH BANNED'}
+            {!props.inMissing &&
+              (libraryTotal < 60 || libraryTotal > 90) &&
+              ' of 60-90'}
+            ]{!props.inMissing && hasBanned && ' - WITH BANNED'}
           </b>
           <div className="d-flex">
-            <div
-              className="d-flex align-items-center pr-3"
-              title="Total Blood Cost"
-            >
-              <img
-                className="cost-blood-image-results pb-1 pr-1"
-                src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
-              />
-              <b>{bloodTotal}</b>
-            </div>
-            <div
-              className="d-flex align-items-center pr-3"
-              title="Total Pool Cost"
-            >
-              <img
-                className="cost-pool-image-results py-1 pr-1"
-                src={process.env.ROOT_URL + 'images/misc/poolX.png'}
-              />
-              <b>{poolTotal}</b>
-            </div>
+            {!props.inMissing && (
+              <>
+                <div
+                  className="d-flex align-items-center pr-3"
+                  title="Total Blood Cost"
+                >
+                  <img
+                    className="cost-blood-image-results pb-1 pr-1"
+                    src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
+                  />
+                  <b>{bloodTotal}</b>
+                </div>
+                <div
+                  className="d-flex align-items-center pr-3"
+                  title="Total Pool Cost"
+                >
+                  <img
+                    className="cost-pool-image-results py-1 pr-1"
+                    src={process.env.ROOT_URL + 'images/misc/poolX.png'}
+                  />
+                  <b>{poolTotal}</b>
+                </div>
+              </>
+            )}
             {!props.inAdvSelect && (
               <>
                 <Button
