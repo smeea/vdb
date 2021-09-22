@@ -14,10 +14,20 @@ function DeckImport(props) {
   const [showAmaranthModal, setShowAmaranthModal] = useState(false);
   const ref = useRef(null);
 
-  const fileInput = React.createRef();
+  const fileInputTxt = React.createRef();
+  const fileInputDek = React.createRef();
 
-  const handleFileChange = () => importDeckFromFile();
-  const handleFileInputClick = () => fileInput.current.click();
+  const handleFileChange = (format) => importDeckFromFile(format);
+  const handleFileInputClick = (format) => {
+    switch (format) {
+      case 'txt':
+        fileInputTxt.current.click();
+        break;
+      case 'dek':
+        fileInputDek.current.click();
+        break;
+    }
+  };
 
   const handleCloseImportModal = () => {
     setShowTextModal(false);
@@ -52,13 +62,66 @@ function DeckImport(props) {
       .catch((error) => setCreateError(true));
   };
 
-  const importDeckFromFile = () => {
+  const importDeckFromFile = (format) => {
     setImportError(false);
+
+    let fileInput;
+    switch (format) {
+      case 'txt':
+        fileInput = fileInputTxt;
+        break;
+      case 'dek':
+        fileInput = fileInputDek;
+        break;
+    }
 
     let newDeckId;
     const reader = new FileReader();
     reader.readAsText(fileInput.current.files[0]);
     reader.onload = () => {
+      let result;
+      switch (format) {
+        case 'txt':
+          result = reader.result;
+          break;
+        case 'dek':
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(reader.result, 'text/xml');
+          const xmlCrypt =
+            xmlDoc.getElementsByTagName('deck')[0].childNodes[5].children;
+          const xmlLibrary =
+            xmlDoc.getElementsByTagName('deck')[0].childNodes[3].children;
+
+          const crypt = {};
+          Object.values(xmlCrypt).map((i) => {
+            const cardName = i.childNodes[0].childNodes[0].data;
+            if (!crypt[cardName]) {
+              crypt[cardName] = 0;
+            }
+            crypt[cardName] += 1;
+          });
+
+          const library = {};
+          Object.values(xmlLibrary).map((i) => {
+            const cardName = i.childNodes[0].childNodes[0].data;
+            if (!library[cardName]) {
+              library[cardName] = 0;
+            }
+            library[cardName] += 1;
+          });
+
+          result = '';
+
+          Object.keys(crypt).map((card) => {
+            result += `${crypt[card]} ${card}\n`;
+          });
+
+          Object.keys(library).map((card) => {
+            result += `${library[card]} ${card}\n`;
+          });
+          break;
+      }
+
       const url = `${process.env.API_URL}decks/import`;
       const options = {
         method: 'POST',
@@ -68,7 +131,7 @@ function DeckImport(props) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          deckText: reader.result,
+          deckText: result,
         }),
       };
 
@@ -97,11 +160,14 @@ function DeckImport(props) {
         Create New Deck
       </Dropdown.Item>
       <Dropdown.Divider />
-      <Dropdown.Item href="" onClick={handleFileInputClick}>
-        Import from File (Amaranth, Lackey, TWD)
+      <Dropdown.Item href="" onClick={() => handleFileInputClick('txt')}>
+        Import from File - Amaranth, Lackey .TXT, TWD
+      </Dropdown.Item>
+      <Dropdown.Item href="" onClick={() => handleFileInputClick('dek')}>
+        Import from File - Lackey .DEK
       </Dropdown.Item>
       <Dropdown.Item href="" onClick={handleOpenTextModal}>
-        Import from Text (Amaranth, Lackey, TWD)
+        Import from Text - Amaranth, Lackey .TXT, TWD
       </Dropdown.Item>
       <Dropdown.Item href="" onClick={handleOpenAmaranthModal}>
         Import from Amaranth Deck URL
@@ -112,10 +178,17 @@ function DeckImport(props) {
   return (
     <>
       <input
-        ref={fileInput}
+        ref={fileInputTxt}
         accept="text/*"
         type="file"
-        onChange={handleFileChange}
+        onChange={() => handleFileChange('txt')}
+        style={{ display: 'none' }}
+      />
+      <input
+        ref={fileInputDek}
+        accept="text/*"
+        type="file"
+        onChange={() => handleFileChange('dek')}
         style={{ display: 'none' }}
       />
       <Dropdown ref={ref}>
