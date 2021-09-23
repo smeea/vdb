@@ -23,10 +23,10 @@ const NavMobileMenu = (props) => {
     <>
       <div
         ref={menuRef}
-        className="white-font ps-2 pt-1"
+        className="white-font ps-2"
         onClick={() => setShowMenu(!showMenu)}
       >
-        <List width="24" height="24" viewBox="0 0 16 16" />
+        <List width="30" height="30" viewBox="0 0 16 16" />
       </div>
       {showMenu && (
         <Overlay

@@ -118,6 +118,7 @@ function Navigation(props) {
             TWD
           </NavLink>
           <NavLink to="/inventory" className="nav-link pe-2 ps-1">
+            {/* Inventory */}
             {isMobile ? 'Inv' : 'Inventory'}
           </NavLink>
           <NavLink to={decksUrl} className="nav-link pe-2 ps-1">
@@ -129,8 +130,8 @@ function Navigation(props) {
           <NavLink to={libraryUrl} className="nav-link pe-2 ps-1">
             Library
           </NavLink>
-          <NavLink to="/cards" className="nav-link pe-2 ps-1">
-            <LightningFill />
+          <NavLink to="/cards" className="nav-link pe-3 ps-2">
+            <LightningFill width="18" height="18" viewBox="0 0 16 16" />
           </NavLink>
         </div>
       </Nav>

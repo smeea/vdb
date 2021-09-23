@@ -2,6 +2,7 @@
 * Card custom inventory status for Library
 * Dropdowns full width
 * Button active color
+* Precon KSU clone on backend
 
 # FIX MOBILE
 
