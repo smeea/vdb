@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
+import X from '../../assets/images/icons/x.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import AppContext from '../../context/AppContext.js';
@@ -163,15 +163,20 @@ function DeckProxySelectModal(props) {
       dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
       <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 px-4'}
-        closeButton
+        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
       >
         <h5>Create PDF with Card Proxies</h5>
+        <Button
+          variant="outline-secondary"
+          onClick={() => props.setShow(false)}
+        >
+          <X width="32" height="32" viewBox="0 0 16 16" />
+        </Button>
       </Modal.Header>
       <Modal.Body className="p-0">
         <Container fluid>
           <Row className="px-0">
-            <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
+            <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
               {props.deck.crypt && (
                 <>
                   <div className={isMobile ? null : 'sticky-modal'}>
@@ -188,7 +193,7 @@ function DeckProxySelectModal(props) {
                 </>
               )}
             </Col>
-            <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4">
+            <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
               {props.deck.library && (
                 <>
                   <DeckLibrary
@@ -211,26 +216,23 @@ function DeckProxySelectModal(props) {
                 : 'd-flex justify-content-end px-2 pb-4'
             }
           >
-            <div className="pl-2">
-              <Button
-                variant="outline-secondary"
-                onClick={handleGenerateButton}
-              >
+            <div className="ps-2">
+              <Button variant="primary" onClick={handleGenerateButton}>
                 Generate
               </Button>
             </div>
-            <div className="pl-2">
+            <div className="ps-2">
               <Button
-                variant="outline-secondary"
+                variant="primary"
                 onClick={() => handleToggleSelectButton()}
               >
                 Select / Deselect All
               </Button>
             </div>
             {inventoryMode && (
-              <div className="pl-2">
+              <div className="ps-2">
                 <Button
-                  variant="outline-secondary"
+                  variant="primary"
                   onClick={() => handleToggleResolveButton()}
                 >
                   Add Missing in Inventory

@@ -19,9 +19,8 @@ function ButtonAddCard(props) {
   return (
     <Button
       className={props.inDeck > 0 ? 'in' : 'add'}
-      variant="outline-secondary"
+      variant="primary"
       onClick={handleButton}
-      block={!props.inZap}
       title={title}
     >
       {props.inDeck ? props.inDeck : '+'}

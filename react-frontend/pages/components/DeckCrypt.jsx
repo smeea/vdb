@@ -273,8 +273,8 @@ function DeckCrypt(props) {
       <div
         className={
           isMobile
-            ? 'd-flex align-items-center justify-content-between pl-2 pr-1 info-message'
-            : 'd-flex align-items-center justify-content-between pl-2 info-message'
+            ? 'd-flex align-items-center justify-content-between ps-2 pe-1 info-message'
+            : 'd-flex align-items-center justify-content-between ps-2 info-message'
         }
       >
         <b>
@@ -285,21 +285,15 @@ function DeckCrypt(props) {
         </b>
         {!props.inAdvSelect && (
           <div className="d-flex">
-            <div className="pr-1">
+            <div className="pe-1">
               <DeckCryptSortButton />
             </div>
-            <Button
-              variant="outline-secondary"
-              onClick={() => setShowInfo(!showInfo)}
-            >
+            <Button variant="primary" onClick={() => setShowInfo(!showInfo)}>
               <InfoCircle />
             </Button>
             {props.isAuthor && !isMobile && (
-              <div className="pl-1">
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => setShowAdd(!showAdd)}
-                >
+              <div className="ps-1">
+                <Button variant="primary" onClick={() => setShowAdd(!showAdd)}>
                   +
                 </Button>
               </div>
@@ -374,7 +368,7 @@ function DeckCrypt(props) {
       />
       {Object.keys(cryptSide).length > 0 && !props.inAdvSelect && (
         <div className="deck-sidecrypt pt-2">
-          <div className="d-flex align-items-center justify-content-between pl-2">
+          <div className="d-flex align-items-center justify-content-between ps-2">
             <b>Side Crypt</b>
           </div>
           <DeckCryptTable

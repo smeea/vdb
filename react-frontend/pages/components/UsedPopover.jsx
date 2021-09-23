@@ -15,7 +15,7 @@ const UsedPopover = React.forwardRef((props, ref) => {
 
   return (
     <Popover ref={ref} {...rest}>
-      <Popover.Content>
+      <Popover.Body>
         <>
           {softUsedMax == 0 && hardUsedTotal == 0 ? (
             <div className="py-1">Not used in inventory decks</div>
@@ -45,7 +45,7 @@ const UsedPopover = React.forwardRef((props, ref) => {
             - In Inventory
           </div>
         </>
-      </Popover.Content>
+      </Popover.Body>
     </Popover>
   );
 });

@@ -81,7 +81,7 @@ function DeckDrawCryptTable(props) {
           {isWide ? (
             <>
               <td
-                className="title pr-2"
+                className="title pe-2"
                 onClick={() => props.handleClick(index)}
               >
                 <ResultCryptTitle value={card['Title']} />
@@ -113,7 +113,7 @@ function DeckDrawCryptTable(props) {
               ) : (
                 <>
                   <td
-                    className="title pr-2"
+                    className="title pe-2"
                     onClick={() => props.handleClick(index)}
                   >
                     <ResultCryptTitle value={card['Title']} />

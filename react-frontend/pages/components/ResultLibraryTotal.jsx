@@ -19,7 +19,7 @@ function ResultLibraryTotal(props) {
 
   const totalOutput = Object.keys(byTypes).map((k, index) => {
     return (
-      <span key={k} className="d-inline-block nobr pr-3">
+      <span key={k} className="d-inline-block nobr pe-3">
         <ResultLibraryType cardtype={k} />
         {byTypes[k]}
       </span>

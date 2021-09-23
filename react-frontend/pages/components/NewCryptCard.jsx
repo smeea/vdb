@@ -46,7 +46,7 @@ function NewCryptCard(props) {
             <div className="d-flex align-items-center">
               {props.inInventory && (
                 <div
-                  className={`d-inline in-inventory mr-2 ${
+                  className={`d-inline in-inventory me-2 ${
                     inventoryCrypt[card] ? 'border-black' : null
                   }`}
                 >
@@ -59,7 +59,7 @@ function NewCryptCard(props) {
                   <>
                     <strike>{cryptCardBase[card]['Name']}</strike>
                     {cryptCardBase[card]['Adv'][0] && (
-                      <div className="d-inline pl-1">
+                      <div className="d-inline ps-1">
                         <img
                           className="advanced-image-results"
                           src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
@@ -67,7 +67,7 @@ function NewCryptCard(props) {
                         />
                       </div>
                     )}
-                    <div className="d-inline pl-1">
+                    <div className="d-inline ps-1">
                       <Hammer />
                     </div>
                   </>
@@ -75,7 +75,7 @@ function NewCryptCard(props) {
                   <>
                     {cryptCardBase[card]['Name']}
                     {cryptCardBase[card]['Adv'][0] && (
-                      <div className="d-inline pl-1">
+                      <div className="d-inline ps-1">
                         <img
                           className="advanced-image-results"
                           src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
@@ -86,7 +86,7 @@ function NewCryptCard(props) {
                   </>
                 )}
               </div>
-              <div className="pr-3">
+              <div className="pe-3">
                 <ResultCryptClan value={cryptCardBase[card]['Clan']} />
               </div>
             </div>

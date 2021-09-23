@@ -20,7 +20,7 @@ function Banner(props) {
         />
         <div className="d-inline logo-text px-2">VDB</div>
         {!isMobile && (
-          <div className="d-inline logo-subtext pl-2">
+          <div className="d-inline logo-subtext ps-2">
             <i>&mdash; your digital retainer</i>
           </div>
         )}

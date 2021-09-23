@@ -11,25 +11,19 @@ function TwdSearchFormButtons(props) {
   return (
     <div className="d-flex pb-2 justify-content-between">
       <div className="d-flex">
-        <Button
-          variant="outline-secondary"
-          onClick={() => props.getRandomTwd(10)}
-        >
+        <Button variant="primary" onClick={() => props.getRandomTwd(10)}>
           <Dice3 /> 10 Random
         </Button>
 
-        <div className="pl-1">
-          <Button
-            variant="outline-secondary"
-            onClick={() => props.getNewTwd(50)}
-          >
+        <div className="ps-1">
+          <Button variant="primary" onClick={() => props.getNewTwd(50)}>
             <LightningFill /> 50 New
           </Button>
         </div>
       </div>
       {!isMobile && (
         <div className="d-flex">
-          <Button variant="outline-secondary" onClick={props.handleClearButton}>
+          <Button variant="primary" onClick={props.handleClearButton}>
             <X />
           </Button>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Stack, Button } from 'react-bootstrap';
 import ArrowRepeat from '../assets/images/icons/arrow-repeat.svg';
 import Dice3 from '../assets/images/icons/dice-3-fill.svg';
 import QuickSelect from './components/QuickSelect.jsx';
@@ -160,10 +160,10 @@ function Cards(props) {
                           )}
                         </div>
                         <div className="px-3 pt-3">
-                          <div className="d-inline pr-2">
+                          <div className="d-inline pe-2">
                             <ButtonCardCopyUrl id={card.Id} />
                           </div>
-                          <div className="d-inline pr-2">
+                          <div className="d-inline pe-2">
                             <ButtonAddCard
                               cardid={card.Id}
                               deckid={activeDeck.deckid}
@@ -217,10 +217,10 @@ function Cards(props) {
                       />
                     )}
                     <div className="pt-3">
-                      <div className="d-inline pr-1">
+                      <div className="d-inline pe-1">
                         <ButtonCardCopyUrl id={card.Id} />
                       </div>
-                      <div className="d-inline pr-1">
+                      <div className="d-inline pe-1">
                         <ButtonAddCard
                           cardid={card.Id}
                           deckid={activeDeck.deckid}
@@ -236,22 +236,22 @@ function Cards(props) {
             </Col>
             {!isMobile && (
               <Col>
-                <div className="py-3 px-4">
+                <Stack gap={1} className="py-3 px-2">
                   <Button
-                    variant="outline-secondary"
+                    variant="secondary"
                     onClick={() => randomCrypt()}
                     block
                   >
                     <Dice3 /> Crypt
                   </Button>
                   <Button
-                    variant="outline-secondary"
+                    variant="secondary"
                     onClick={() => randomLibrary()}
                     block
                   >
                     <Dice3 /> Library
                   </Button>
-                </div>
+                </Stack>
               </Col>
             )}
           </Row>

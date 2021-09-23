@@ -40,6 +40,10 @@ function InventoryImport(props) {
 
   return (
     <>
+      <Button ref={ref} onClick={handleFileInputClick} variant="secondary">
+        <Upload />
+        <span className="ps-1">Import from File</span>
+      </Button>
       <input
         ref={fileInput}
         accept="text/*"
@@ -47,15 +51,6 @@ function InventoryImport(props) {
         onChange={handleFileChange}
         style={{ display: 'none' }}
       />
-      <Button
-        ref={ref}
-        onClick={handleFileInputClick}
-        variant="outline-secondary"
-        block
-      >
-        <Upload />
-        <span className="pl-1">Import from File</span>
-      </Button>
       <ErrorOverlay
         show={importError}
         target={ref.current}

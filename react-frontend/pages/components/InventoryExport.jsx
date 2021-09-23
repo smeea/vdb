@@ -135,9 +135,9 @@ function InventoryExport(props) {
   return (
     <>
       <Dropdown ref={ref}>
-        <Dropdown.Toggle className="btn-block" variant="outline-secondary">
+        <Dropdown.Toggle variant="secondary">
           <Download />
-          <span className="pl-1">Save Inventory</span>
+          <span className="ps-1">Save Inventory</span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {spinnerState && (

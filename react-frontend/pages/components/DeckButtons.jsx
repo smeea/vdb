@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button } from 'react-bootstrap';
+import { Stack, Button } from 'react-bootstrap';
 import DeckClone from './DeckClone.jsx';
 import DeckDelete from './DeckDelete.jsx';
 import DeckCopyUrl from './DeckCopyUrl.jsx';
@@ -16,104 +16,83 @@ function DeckButtons(props) {
   const { inventoryMode, username, isMobile } = useContext(AppContext);
 
   return (
-    <>
+    <Stack gap={1}>
       {username && (
-        <div className="button-block">
-          <DeckImport
-            setShowInfo={props.setShowInfo}
-            setShowButtons={props.setShowButtons}
-          />
-        </div>
+        <DeckImport
+          setShowInfo={props.setShowInfo}
+          setShowButtons={props.setShowButtons}
+        />
       )}
       {username && props.deck && (
-        <div className="button-block">
-          <DeckClone
-            deck={props.deck}
-            activeDeck={props.activeDeck}
-            setShowButtons={props.setShowButtons}
-          />
-        </div>
+        <DeckClone
+          deck={props.deck}
+          activeDeck={props.activeDeck}
+          setShowButtons={props.setShowButtons}
+        />
       )}
       {props.deck && (
-        <div className="button-block">
-          <DeckExport
-            deck={props.deck}
-            activeDeck={props.activeDeck}
-            setShowButtons={props.setShowButtons}
-          />
-        </div>
+        <DeckExport
+          deck={props.deck}
+          activeDeck={props.activeDeck}
+          setShowButtons={props.setShowButtons}
+        />
       )}
       {props.isAuthor && props.deck && (
-        <div className="button-block">
-          <DeckDelete deck={props.deck} setShowButtons={props.setShowButtons} />
-        </div>
+        <DeckDelete deck={props.deck} setShowButtons={props.setShowButtons} />
       )}
       {props.isAuthor && props.deck && (
-        <div className="button-block">
-          <DeckBranchCreate
-            deck={props.deck}
-            activeDeck={props.activeDeck}
-            setShowButtons={props.setShowButtons}
-          />
-        </div>
+        <DeckBranchCreate
+          deck={props.deck}
+          activeDeck={props.activeDeck}
+          setShowButtons={props.setShowButtons}
+        />
       )}
       {props.isAuthor &&
         props.deck &&
         (props.deck.master ||
           (props.deck.branches && props.deck.branches.length > 0)) && (
-          <div className="button-block">
-            <DeckBranchDelete
-              deck={props.deck}
-              setShowButtons={props.setShowButtons}
-            />
-          </div>
+          <DeckBranchDelete
+            deck={props.deck}
+            setShowButtons={props.setShowButtons}
+          />
         )}
       {props.deck && (
-        <div className="button-block">
-          <DeckCopyUrl
-            isAuthor={props.isAuthor}
-            deck={props.deck}
-            setShowButtons={props.setShowButtons}
-          />
-        </div>
+        <DeckCopyUrl
+          isAuthor={props.isAuthor}
+          deck={props.deck}
+          setShowButtons={props.setShowButtons}
+        />
       )}
       {props.deck && (
-        <div className="button-block">
-          <DeckProxy
-            deck={props.deck}
-            missingCrypt={props.missingCrypt}
-            missingLibrary={props.missingLibrary}
-            setShowInfo={props.setShowInfo}
-            setShowButtons={props.setShowButtons}
-            setShowProxySelect={props.setShowProxySelect}
-          />
-        </div>
+        <DeckProxy
+          deck={props.deck}
+          missingCrypt={props.missingCrypt}
+          missingLibrary={props.missingLibrary}
+          setShowInfo={props.setShowInfo}
+          setShowButtons={props.setShowButtons}
+          setShowProxySelect={props.setShowProxySelect}
+        />
       )}
       {props.deck && (
-        <div className="button-block">
-          <Button
-            onClick={() => {
-              isMobile && props.setShowButtons(false);
-              props.setShowDraw(true);
-            }}
-            variant="outline-secondary"
-            block
-          >
-            <Dice3 /> Draw Cards
-          </Button>
-        </div>
+        <Button
+          onClick={() => {
+            isMobile && props.setShowButtons(false);
+            props.setShowDraw(true);
+          }}
+          variant="secondary"
+        >
+          <Dice3 /> Draw Cards
+        </Button>
       )}
       {props.deck && inventoryMode && (
-        <div className="button-block">
-          <DeckMissing
-            name={props.deck.name}
-            missingCrypt={props.missingCrypt}
-            missingLibrary={props.missingLibrary}
-            setShowButtons={props.setShowButtons}
-          />
-        </div>
+        <DeckMissing
+          name={props.deck.name}
+          missingCrypt={props.missingCrypt}
+          missingLibrary={props.missingLibrary}
+          setShowButtons={props.setShowButtons}
+        />
       )}
-    </>
+    </Stack>
   );
 }
 

@@ -65,7 +65,7 @@ function SearchFormPrecon(props) {
         name: 'precon',
         label: (
           <div className="d-flex justify-content-between align-items-center">
-            <div className="pr-2">
+            <div className="pe-2">
               <div
                 className={clanImages.length == 1 ? 'margin-full' : 'd-inline'}
               >
@@ -108,7 +108,7 @@ function SearchFormPrecon(props) {
           checked={props.value[i[0]]}
           onChange={(e) => props.onChangeOptions(e)}
         />
-        <label htmlFor={`precon-${i[0]}`} className="ml-3 custom-control-label">
+        <label htmlFor={`precon-${i[0]}`} className="ms-3 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -131,7 +131,7 @@ function SearchFormPrecon(props) {
 
   return (
     <>
-      <Row className="pt-1 pl-1 mx-0 align-items-center">
+      <Row className="pt-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
           <label className="h6 mb-0">Precon:</label>
         </Col>
@@ -148,7 +148,7 @@ function SearchFormPrecon(props) {
           />
         </Col>
       </Row>
-      <Row className="pb-1 pl-1 mx-0 align-items-center">
+      <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">
           {preconOptionsForm}
         </Col>

@@ -20,7 +20,7 @@ function ButtonToggleShowImage(props) {
   return (
     <>
       {!state ? (
-        <Button variant="outline-secondary" onClick={handleButton}>
+        <Button variant="primary" onClick={handleButton}>
           {showImage ? <ImageAlt /> : <FileTextFill />}
         </Button>
       ) : (

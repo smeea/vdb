@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Modal, Row, Col, FormControl } from 'react-bootstrap';
+import { Modal, Row, Col, FormControl, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import At from '../../assets/images/icons/at.svg';
+import X from '../../assets/images/icons/x.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import DeckTags from './DeckTags.jsx';
@@ -280,7 +281,7 @@ function DeckSelectAdvModal(props) {
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
                   <div
-                    className="d-inline pl-2 revision"
+                    className="d-inline ps-2 revision"
                     title={deck.branchName}
                   >
                     {deck.branchName}
@@ -348,24 +349,24 @@ function DeckSelectAdvModal(props) {
               {revFilter &&
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
-                  <div className="d-inline pl-1">
+                  <div className="d-inline ps-1">
                     <DeckBranchDelete noText={true} deck={deck} />
                   </div>
                 )}
-              <div className="d-inline pl-1">
+              <div className="d-inline ps-1">
                 <DeckDelete noText={true} deck={deck} />
               </div>
-              <div className="d-inline pl-1">
+              <div className="d-inline ps-1">
                 <DeckClone
                   activeDeck={{ src: 'my', deckid: deck.deckid }}
                   noText={true}
                   deck={deck}
                 />
               </div>
-              <div className="d-inline pl-1">
+              <div className="d-inline ps-1">
                 <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
               </div>
-              <div className="d-inline pl-1">
+              <div className="d-inline ps-1">
                 <DeckProxy noText={true} deck={deck} />
               </div>
             </td>
@@ -384,10 +385,12 @@ function DeckSelectAdvModal(props) {
       dialogClassName={isMobile ? 'm-0' : null}
     >
       <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 pl-3 pr-4'}
-        closeButton
+        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 ps-3 pe-4'}
       >
         <h5>Select Deck</h5>
+        <Button variant="outline-secondary" onClick={props.handleClose}>
+          <X width="32" height="32" viewBox="0 0 16 16" />
+        </Button>
       </Modal.Header>
       <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
         <DeckTotal />
@@ -435,7 +438,7 @@ function DeckSelectAdvModal(props) {
               {!isMobile && (
                 <th className="buttons">
                   <div className="d-flex justify-content-end align-items-center">
-                    <div className="d-inline align-items-bottom custom-control custom-checkbox pr-3">
+                    <div className="d-inline align-items-bottom custom-control custom-checkbox pe-3">
                       <input
                         id="revFilter"
                         className="custom-control-input"

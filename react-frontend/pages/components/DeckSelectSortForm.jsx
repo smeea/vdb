@@ -19,7 +19,7 @@ function DeckSelectSortForm(props) {
 
   return (
     <DropdownButton
-      variant="outline-secondary"
+      variant="primary"
       id="sort-button"
       className="d-inline"
       title={<SortDown />}

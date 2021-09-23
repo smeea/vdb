@@ -1,27 +1,25 @@
 import React from 'react';
-import { ButtonGroup, ToggleButton } from 'react-bootstrap';
+import { ButtonGroup, Button } from 'react-bootstrap';
 
 function TwdSearchFormLibraryTotal(props) {
   const totalBrackets = ['60-67', '68-75', '76-83', '84-90'];
 
   const LibraryTotalButtons = totalBrackets.map((i, index) => {
     return (
-      <ToggleButton
+      <Button
         className="group-form"
         key={index}
         value={i}
         name="libraryTotal"
-        variant="outline-secondary"
-        type="checkbox"
-        checked={props.value[i]}
-        onChange={(e) => props.onChange(e)}
+        variant={props.value[i] ? 'third' : 'outline-primary'}
+        onClick={(e) => props.onChange(e)}
       >
         {i}
-      </ToggleButton>
+      </Button>
     );
   });
 
-  return <ButtonGroup toggle>{LibraryTotalButtons}</ButtonGroup>;
+  return <ButtonGroup>{LibraryTotalButtons}</ButtonGroup>;
 }
 
 export default TwdSearchFormLibraryTotal;

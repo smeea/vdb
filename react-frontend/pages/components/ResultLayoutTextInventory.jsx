@@ -9,7 +9,7 @@ const ResultLayoutTextInventory = (props) => {
 
   return (
     <Row>
-      <Col xs={6} lg={5} className="pr-2">
+      <Col xs={6} lg={5} className="pe-2">
         <div className="d-flex align-items-center">
           <div className="opacity-035">
             <CalculatorFill width="14" height="14" viewBox="0 0 16 16" />
@@ -32,7 +32,7 @@ const ResultLayoutTextInventory = (props) => {
           - In Inventory
         </div>
       </Col>
-      <Col xs={12} lg={7} className={isMobile ? 'pt-2' : 'pl-0'}>
+      <Col xs={12} lg={7} className={isMobile ? 'pt-2' : 'ps-0'}>
         {props.inventoryState.usedDescription.soft && (
           <>{props.inventoryState.usedDescription.soft}</>
         )}

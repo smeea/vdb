@@ -63,7 +63,7 @@ function DeckCardQuantity(props) {
               props.cardChange(props.deckid, props.cardid, props.q - 1)
             }
           >
-            <Button className="quantity" variant="outline-secondary">
+            <Button className="quantity" variant="primary">
               -
             </Button>
           </a>
@@ -76,7 +76,7 @@ function DeckCardQuantity(props) {
               props.cardChange(props.deckid, props.cardid, props.q + 1)
             }
           >
-            <Button className="quantity" variant="outline-secondary">
+            <Button className="quantity" variant="primary">
               +
             </Button>
           </a>
@@ -89,7 +89,7 @@ function DeckCardQuantity(props) {
               onClick={() =>
                 props.cardChange(props.deckid, props.cardid, props.q - 1)
               }
-              variant="outline-secondary"
+              variant="primary"
             >
               -
             </Button>
@@ -118,7 +118,7 @@ function DeckCardQuantity(props) {
           {!manual && (
             <Button
               className="quantity"
-              variant="outline-secondary"
+              variant="primary"
               onClick={() =>
                 props.cardChange(props.deckid, props.cardid, props.q + 1)
               }

@@ -22,7 +22,7 @@ function Account(props) {
               <div className="d-flex align-items-center justify-content-between">
                 <h6 className="d-flex align-items-center px-1">
                   <PersonFill />
-                  <span className="ml-2">Logged as: {username}</span>
+                  <span className="ms-2">Logged as: {username}</span>
                 </h6>
                 <div>
                   <AccountLogout />

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Container, Row, Col, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
 import AccountLogin from './components/AccountLogin.jsx';
@@ -254,22 +254,22 @@ function Inventory(props) {
           animation={false}
           centered={true}
         >
+          <Modal.Header
+            className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
+          >
+            <h5></h5>
+            <Button
+              variant="outline-secondary"
+              onClick={() => {
+                setShowMenuButtons(false);
+                setShowFloatingButtons(true);
+              }}
+            >
+              <X width="32" height="32" viewBox="0 0 16 16" />
+            </Button>
+          </Modal.Header>
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
-              <Row className="px-0">
-                <Col>
-                  <button
-                    type="button"
-                    className="close m-1"
-                    onClick={() => {
-                      setShowMenuButtons(false);
-                      setShowFloatingButtons(true);
-                    }}
-                  >
-                    <X width="32" height="32" viewBox="0 0 16 16" />
-                  </button>
-                </Col>
-              </Row>
               <InventoryButtons
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}

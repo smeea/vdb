@@ -1,5 +1,6 @@
 import React, { useState, useRef, useContext } from 'react';
 import { FormControl, Modal, Button, Spinner } from 'react-bootstrap';
+import X from '../../assets/images/icons/x.svg';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
@@ -91,10 +92,12 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       dialogClassName={isMobile ? 'm-0' : null}
     >
       <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 px-4'}
-        closeButton
+        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
       >
         <h5>Import from Text</h5>
+        <Button variant="outline-secondary" onClick={props.handleClose}>
+          <X width="32" height="32" viewBox="0 0 16 16" />
+        </Button>
       </Modal.Header>
       <Modal.Body className={isMobile ? 'px-0 pt-0' : 'px-4 pt-2'}>
         <FormControl
@@ -115,11 +118,11 @@ It will skip other (useless) lines, you don't have to remove it yourself.
           }
         >
           {!spinnerState ? (
-            <Button variant="outline-secondary" onClick={importDeckFromText}>
+            <Button variant="primary" onClick={importDeckFromText}>
               Import
             </Button>
           ) : (
-            <Button variant="outline-secondary" onClick={importDeckFromText}>
+            <Button variant="primary" onClick={importDeckFromText}>
               <Spinner
                 as="span"
                 animation="border"

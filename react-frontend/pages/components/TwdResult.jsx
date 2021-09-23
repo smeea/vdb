@@ -52,24 +52,24 @@ function TwdResult(props) {
           });
           return (
             <React.Fragment key={deck['deckid']}>
-              <Row className="pt-3 px-0 mx-0">
+              <Row className="py-2 px-0 mx-0">
                 <Col
                   xs={12}
                   md={12}
                   xl={3}
-                  className={isMobile ? 'px-0' : 'pl-0 pr-2'}
+                  className={isMobile ? 'px-0' : 'ps-0 pe-2'}
                 >
                   <TwdResultDescription deck={deck} />
                 </Col>
                 {isMobile ? (
                   <>
-                    <Col xs={6} className="pl-0 pr-1">
+                    <Col xs={6} className="ps-0 pe-1">
                       <TwdResultCrypt
                         crypt={deck['crypt']}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                       />
                     </Col>
-                    <Col xs={6} className="pl-1 pr-0">
+                    <Col xs={6} className="ps-1 pe-0">
                       <TwdResultLibraryKeyCards
                         library={deck['library']}
                         setShowFloatingButtons={props.setShowFloatingButtons}
@@ -87,7 +87,7 @@ function TwdResult(props) {
                     <Col xs={12} md={4} xl={3} className="px-2">
                       <TwdResultLibraryByType library={deck['library']} />
                     </Col>
-                    <Col xs={12} md={4} xl={3} className="pr-0 pl-2">
+                    <Col xs={12} md={4} xl={3} className="pe-0 ps-2">
                       <TwdResultLibraryKeyCards
                         library={deck['library']}
                         setShowFloatingButtons={props.setShowFloatingButtons}
@@ -95,7 +95,6 @@ function TwdResult(props) {
                     </Col>
                   </>
                 )}
-                <hr />
               </Row>
               {index + 1 < showCounter && <hr className="mx-0 thick" />}
             </React.Fragment>
@@ -119,7 +118,7 @@ function TwdResult(props) {
           {deckCounter > showCounter && (
             <div className="d-flex justify-content-center pb-4 pt-2">
               <Button
-                variant="outline-secondary"
+                variant="primary"
                 onClick={() => setShowCounter(showCounter + showCounterStep)}
                 block
               >

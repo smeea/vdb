@@ -1,6 +1,7 @@
 # FIX
-* Save scrolling position
-* Import to inventory quantity highlights
+* Card custom inventory status for Library
+* Dropdowns full width
+* Button active color
 
 # FIX MOBILE
 
@@ -31,7 +32,6 @@
 * Move export to frontend
 * Update to parcel 2
 * Update to react-bootstrap 2
-* Migrate to tailwindcss
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardior codes to return

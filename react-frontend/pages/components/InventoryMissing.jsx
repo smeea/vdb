@@ -148,11 +148,7 @@ function InventoryMissing(props) {
 
   return (
     <>
-      <Button
-        variant="outline-secondary"
-        onClick={() => calculateMissing()}
-        block
-      >
+      <Button variant="secondary" onClick={() => calculateMissing()}>
         <Cart4 /> Missing Cards
       </Button>
       {showModal && (

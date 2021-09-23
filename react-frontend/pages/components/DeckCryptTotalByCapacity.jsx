@@ -19,7 +19,7 @@ function DeckCryptTotalByCapacity(props) {
     if (i > 0) {
       return (
         <div
-          className="d-inline pl-3"
+          className="d-inline ps-3"
           key={idx}
           title={`Chance to draw ${idx} unique vampires`}
         >

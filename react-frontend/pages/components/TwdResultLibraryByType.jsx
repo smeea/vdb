@@ -63,9 +63,9 @@ function TwdResultLibraryByType(props) {
       const TypePopover = React.forwardRef(({ children, ...props }, ref) => {
         return (
           <Popover ref={ref} {...props}>
-            <Popover.Content>
+            <Popover.Body>
               <DeckLibraryTable deckid={true} cards={props.cards} />
-            </Popover.Content>
+            </Popover.Body>
           </Popover>
         );
       });

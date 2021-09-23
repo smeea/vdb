@@ -41,12 +41,10 @@ function DeckDescription(props) {
 
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
-      <InputGroup className="z-index-0">
-        <InputGroup.Prepend>
-          <InputGroup.Text>
-            <ChatLeftQuoteFill />
-          </InputGroup.Text>
-        </InputGroup.Prepend>
+      <InputGroup>
+        <InputGroup.Text>
+          <ChatLeftQuoteFill />
+        </InputGroup.Text>
         <FormControl
           as={props.folded ? 'input' : 'textarea'}
           rows={8}
@@ -58,24 +56,17 @@ function DeckDescription(props) {
           readOnly={!props.isAuthor}
         />
         {!isMobile && (
-          <InputGroup.Append>
-            <Button
-              variant="outline-secondary"
-              onClick={() => props.setFolded(!props.folded)}
-            >
-              {props.folded ? <ChevronBarExpand /> : <ChevronBarContract />}
-            </Button>
-          </InputGroup.Append>
+          <Button
+            variant="primary"
+            onClick={() => props.setFolded(!props.folded)}
+          >
+            {props.folded ? <ChevronBarExpand /> : <ChevronBarContract />}
+          </Button>
         )}
         {isMobile && props.isAuthor && (
-          <InputGroup.Append>
-            <Button
-              variant={buttonState ? 'success' : 'outline-secondary'}
-              type="submit"
-            >
-              <Check2 />
-            </Button>
-          </InputGroup.Append>
+          <Button variant={buttonState ? 'success' : 'primary'} type="submit">
+            <Check2 />
+          </Button>
         )}
       </InputGroup>
     </Form>

@@ -31,7 +31,7 @@ function InventoryCardQuantity(props) {
       {isMobile ? (
         <>
           <a className="quantity" onClick={() => handleQuantityChange(-1)}>
-            <Button className="quantity" variant="outline-secondary">
+            <Button className="quantity" variant="primary">
               -
             </Button>
           </a>
@@ -45,7 +45,7 @@ function InventoryCardQuantity(props) {
             {state == 0 ? <>&nbsp;&nbsp;</> : state}
           </div>
           <a className="quantity" onClick={() => handleQuantityChange(1)}>
-            <Button className="quantity" variant="outline-secondary">
+            <Button className="quantity" variant="primary">
               +
             </Button>
           </a>
@@ -56,7 +56,7 @@ function InventoryCardQuantity(props) {
             <Button
               className="quantity"
               onClick={() => handleQuantityChange(-1)}
-              variant="outline-secondary"
+              variant="primary"
             >
               -
             </Button>
@@ -91,7 +91,7 @@ function InventoryCardQuantity(props) {
           {!manual && (
             <Button
               className="quantity"
-              variant="outline-secondary"
+              variant="primary"
               onClick={() => handleQuantityChange(1)}
             >
               +

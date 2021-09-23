@@ -8,7 +8,7 @@ function ResultLibraryName(props) {
         {props.card['Banned'] ? (
           <>
             <strike>{props.card['Name']}</strike>
-            <span className="pl-1">
+            <span className="ps-1">
               <Hammer />
             </span>
           </>

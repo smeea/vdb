@@ -31,7 +31,7 @@ function ModalConfirmation(props) {
           <Button variant="danger" onClick={props.handleConfirm}>
             {props.buttonText}
           </Button>
-          <Button variant="outline-secondary" onClick={props.handleCancel}>
+          <Button variant="primary" onClick={props.handleCancel}>
             Cancel
           </Button>
         </Modal.Footer>

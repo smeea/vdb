@@ -31,6 +31,7 @@ body
 
 a, .prob, .link-like
   color: var(--fg-secondary)
+  text-decoration: none
 
 .link-like:hover
   text-decoration: underline
@@ -108,8 +109,7 @@ div.popover-sets
   height: 18px
 
 .form-control,
-.form-control:focus,
-.custom-select
+.form-control:focus
   background: var(--bg-primary) !important
   color: var(--fg-primary)
   border-color: var(--bg-secondary)
@@ -119,25 +119,47 @@ div.popover-sets
   color: var(--fg-button)
   border-color: var(--bg-secondary)
 
-.input-group-append
-  background: var(--bg-secondary)
+button.btn-primary
   color: var(--fg-primary)
-
-button.btn-outline-secondary
-  color: var(--fg-button)
   background: var(--bg-button)
   border: 1px solid var(--border-button)
-
-button.btn-outline-secondary:hover
+button.btn-primary:hover
   background: var(--bg-button-hover)
   border: 1px solid var(--border-primary)
 
-label.btn-outline-secondary:not(.disabled).active
-  background: var(--bg-button-hover) !important
-label.btn-outline-secondary
+button.btn-secondary
+  color: var(--fg-button)
+  background: var(--bg-button-secondary)
+  border: 1px solid var(--border-third)
+button.btn-secondary:hover
+  background: var(--bg-button-hover)
+  border: 1px solid var(--border-primary)
+
+button.btn-third
+  background: var(--bg-button-hover)
+  border: 1px solid gray
+  color: var(--fg-primary)
+button.btn-third:hover
+  background: var(--border-primary)
+  color: var(--fg-primary)
+
+button.btn-outline-primary
   border: 1px solid var(--border-button)
-label.btn-outline-secondary:hover
-  background: var(--bg-menu-focused) !important
+  background: none
+  color: gray
+button.btn-outline-primary:hover
+  background: var(--bg-menu-focused)
+  border: 1px solid var(--border-primary)
+
+button.btn-outline-secondary
+  padding: 0
+  border: none
+  background: none
+  color: gray
+button.btn-outline-secondary:hover
+  border: none
+  background: none
+  color: darkgray
 
 button.btn-danger
   background: var(--bg-button-error)
@@ -145,12 +167,6 @@ button.btn-danger
 
 button.btn-danger:hover
   background: var(--bg-button-error-hover)
-
-.button-block
-  padding-bottom: 4px
-.button-block button
-  background: var(--bg-button-secondary)
-  border: 1px solid var(--border-third)
 
 .pt-05
   padding-top: 2px
@@ -280,14 +296,7 @@ button.btn-danger:hover
   border-color: var(--bg-checkbox-selected)
   background-color: var(--bg-checkbox-selected)
 
-.navMenu
-  margin-top: 18px
-
-.navMenu.mobile
-  top: -252px !important
-  left: -4px !important
-
-.navMenu div.arrow
+.navMenu div.popover-arrow
   display: none
 
 .flag-active
@@ -328,6 +337,7 @@ img.card-popover
   left: 0px
 .next-card-mobile
   right: 0px
+
 .prev-card,
 .next-card
   position: absolute
@@ -701,12 +711,6 @@ ul.rulings
 li.rulings
   padding: 3px
 
-font-1.7
-  font-size: 1.7em
-
-font-1.85
-  font-size: 1.85em
-
 .question-tooltip
   font-size: middle
   color: var(--fg-button)
@@ -766,7 +770,7 @@ font-1.85
   height: 29px
 
 .adv-deck-table
-  font-size: 0.85rem
+  font-size: 0.80rem
   td
     height: 22px
   td.quantity-no-buttons
@@ -899,11 +903,11 @@ input.quantity
   padding: 0rem
 
 hr
+  color: var(--border-primary)
   margin: 0.5rem
-  border-color: var(--border-secondary)
 
 hr.thick
-  border: 2px solid var(--border-secondary)
+  border: 2px solid var(--border-primary)
 
 .nobr
   white-space: nowrap
@@ -1023,12 +1027,16 @@ div.white-font-toggle svg
 div.col-hide
   display:none
 
-div.transparent
-  opacity: 0
-
-a:link.noUnderline, a:visited.noUnderline
+a:link, a:visited
   text-decoration: none
-a:hover.noUnderline
+a:hover
+  text-decoration: underline
+
+@media (max-width: 576px)
+  a.nav-link
+    font-size: large
+
+a.nav-link:hover
   text-decoration: none
 
 .margin-third
@@ -1047,9 +1055,6 @@ a:hover.noUnderline
 @media (max-width: 576px)
   .margin-full
     width: 33px
-
-div.z-index-0
-  z-index: 0
 
 div.float-right-top,
 div.float-right-middle,
@@ -1101,11 +1106,8 @@ div.add-off
   background-color: #A0A0A0
   opacity: 0.8
 
-div.add-on
-  background-color: #707070
-  opacity: 0.8
-
 div.add,
+div.add-on,
 div.menu
   background-color: #707070
   opacity: 0.8
@@ -1118,16 +1120,13 @@ div.float-search svg
   width: 80%
   height: auto
 
+div.float-add svg,
 div.float-clear svg
   width: 90%
   height: auto
 
 div.float-menu svg
   width: 75%
-  height: auto
-
-div.float-add svg
-  width: 90%
   height: auto
 
 div.float-random svg
@@ -1151,15 +1150,16 @@ div.float-random
 td.inventory-card-custom-crypt
   position: absolute
   left: -22px
+  padding-top: 8px
   border: none
   color: var(--fg-primary)
 
 td.inventory-card-custom-library
   position: absolute
-  left: -6px
+  left: 51% // FIX
+  padding-top: 8px
   border: none
   color: var(--fg-primary)
-
 
 td.inventory-card-custom-crypt .not-selected,
 td.inventory-card-custom-library .not-selected
@@ -1167,5 +1167,4 @@ td.inventory-card-custom-library .not-selected
 
 tr:hover td.inventory-card-custom-crypt .not-selected,
 tr:hover td.inventory-card-custom-library .not-selected
-  opacity: 0
   opacity: 0.35

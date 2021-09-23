@@ -12,13 +12,13 @@ const AdditionalForms = (props) => {
 
   for (let i = 1; i < props.value.length; i++) {
     forms.push(
-      <Row key={i} className="py-1 pl-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex justify-content-between px-0 pr-1">
+      <Row key={i} className="py-1 ps-1 mx-0 align-items-center">
+        <Col xs={3} className="d-flex justify-content-between px-0 pe-1">
           <div className="px-0">
             {props.form && (
               <Button
                 className="logic-form"
-                variant="outline-secondary"
+                variant="primary"
                 onClick={() => props.toggleLogic(props.form)}
                 title={props.logicAnd ? 'And' : 'Or'}
               >
@@ -30,16 +30,16 @@ const AdditionalForms = (props) => {
             {i == props.value.length - 1 && (
               <Button
                 className="add-form"
-                variant="outline-secondary"
+                variant="primary"
                 onClick={() => props.addForm()}
               >
                 <Plus />
               </Button>
             )}
-            <div className="d-inline pl-1">
+            <div className="d-inline ps-1">
               <Button
                 className="add-form"
-                variant="outline-secondary"
+                variant="primary"
                 onClick={() => props.delForm(i)}
               >
                 <Dash />

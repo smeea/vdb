@@ -90,15 +90,15 @@ function AccountChangeName(props) {
     <>
       <h6 className="d-flex align-items-center px-1">
         <PenFill />
-        <span className="ml-2">Change public name</span>
+        <span className="ms-2">Change public name</span>
         {!isMobile ? (
           <OverlayTooltip text={tooltipText}>
-            <span className="question-tooltip ml-1">[?]</span>
+            <span className="question-tooltip ms-1">[?]</span>
           </OverlayTooltip>
         ) : (
           <span
             onClick={() => setShowModal(true)}
-            className="question-tooltip ml-1"
+            className="question-tooltip ms-1"
           >
             [?]
           </span>
@@ -114,17 +114,15 @@ function AccountChangeName(props) {
             onChange={handleChange}
             ref={refName}
           />
-          <InputGroup.Append>
-            {!buttonState ? (
-              <Button variant="outline-secondary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="success" type="submit">
-                <Check2 />
-              </Button>
-            )}
-          </InputGroup.Append>
+          {!buttonState ? (
+            <Button variant="primary" type="submit">
+              <Check2 />
+            </Button>
+          ) : (
+            <Button variant="success" type="submit">
+              <Check2 />
+            </Button>
+          )}
         </InputGroup>
         <ErrorOverlay
           show={emptyName}

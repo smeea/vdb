@@ -23,9 +23,9 @@ function DeckSelectMy(props) {
           label: (
             <div className="d-flex justify-content-between align-items-center">
               <div className="d-inline trimmed">{decks[i]['name']}</div>
-              <div className="d-flex align-items-center pl-2 small">
+              <div className="d-flex align-items-center ps-2 small">
                 {inventoryMode && (
-                  <div className="pr-2">
+                  <div className="pe-2">
                     {decks[i].inventory_type == 's' && <Shuffle />}
                     {decks[i].inventory_type == 'h' && <PinAngleFill />}
                     {!decks[i].inventory_type && <At />}

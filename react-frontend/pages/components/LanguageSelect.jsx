@@ -55,12 +55,33 @@ const LanguageSelect = (props) => {
           >
             <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
           </div>
-          <Overlay target={menuRef} show={showMenu} placement="bottom">
-            {({ placement, arrowProps, show: _show, popper, ...props }) => (
+          <Overlay
+            target={menuRef}
+            show={showMenu}
+            placement="bottom"
+            popperConfig={{
+              modifiers: [
+                {
+                  name: 'offset',
+                  options: {
+                    offset: [0, 15],
+                  },
+                },
+              ],
+            }}
+          >
+            {({
+              placement,
+              popperConfig,
+              arrowProps,
+              show: _show,
+              popper,
+              ...props
+            }) => (
               <Popover {...props} className="navMenu">
-                <Popover.Content>
+                <Popover.Body>
                   <Menu />
-                </Popover.Content>
+                </Popover.Body>
               </Popover>
             )}
           </Overlay>

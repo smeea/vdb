@@ -125,22 +125,22 @@ function AccountLogin(props) {
     <>
       <h6 className="d-flex align-items-center">
         <DoorOpenFill />
-        <span className="ml-2">Login</span>
+        <span className="ms-2">Login</span>
         {!isMobile ? (
           <OverlayTooltip text={loginTooltipText}>
-            <span className="question-tooltip ml-1">[?]</span>
+            <span className="question-tooltip ms-1">[?]</span>
           </OverlayTooltip>
         ) : (
           <span
             onClick={() => setShowModal(true)}
-            className="question-tooltip ml-1"
+            className="question-tooltip ms-1"
           >
             [?]
           </span>
         )}
       </h6>
       <Form className="mb-0" onSubmit={handleSubmitButton}>
-        <InputGroup className="z-index-0">
+        <InputGroup>
           <FormControl
             placeholder="Username"
             type="text"
@@ -158,30 +158,28 @@ function AccountLogin(props) {
             onChange={handleChange}
             ref={refPassword}
           />
-          <InputGroup.Append>
-            <Button
-              tabIndex="-1"
-              variant="outline-secondary"
-              onClick={() => setHidePassword(!hidePassword)}
-            >
-              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+          <Button
+            tabIndex="-1"
+            variant="primary"
+            onClick={() => setHidePassword(!hidePassword)}
+          >
+            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+          </Button>
+          {!spinnerState ? (
+            <Button variant="primary" type="submit">
+              <Check2 />
             </Button>
-            {!spinnerState ? (
-              <Button variant="outline-secondary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="outline-secondary">
-                <Spinner
-                  as="span"
-                  animation="border"
-                  size="sm"
-                  role="status"
-                  aria-hidden="true"
-                />
-              </Button>
-            )}
-          </InputGroup.Append>
+          ) : (
+            <Button variant="primary">
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />
+            </Button>
+          )}
         </InputGroup>
         <ErrorOverlay
           show={emptyUsername}
@@ -206,7 +204,7 @@ function AccountLogin(props) {
         </ErrorOverlay>
       </Form>
       {!isMobile ? (
-        <div className="d-flex justify-content-center small ml-3 pl-4">
+        <div className="d-flex justify-content-center small ms-3 ps-4">
           <OverlayTooltip
             delay={{ show: 0, hide: 31500 }}
             placement="bottom"
@@ -220,7 +218,7 @@ function AccountLogin(props) {
       ) : (
         <div
           onClick={() => setShowModal(true)}
-          className="d-flex justify-content-center small ml-3 pl-4"
+          className="d-flex justify-content-center small ms-3 ps-4"
         >
           <a href="#">
             <i>Forgot password?</i>

@@ -40,11 +40,9 @@ function DeckChangeAuthor(props) {
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
-        <InputGroup.Prepend>
-          <InputGroup.Text>
-            <PersonFill />
-          </InputGroup.Text>
-        </InputGroup.Prepend>
+        <InputGroup.Text>
+          <PersonFill />
+        </InputGroup.Text>
         <FormControl
           type="text"
           className="form-control"
@@ -54,14 +52,9 @@ function DeckChangeAuthor(props) {
           readOnly={!props.isAuthor}
         />
         {isMobile && props.isAuthor && (
-          <InputGroup.Append>
-            <Button
-              variant={buttonState ? 'success' : 'outline-secondary'}
-              type="submit"
-            >
-              <Check2 />
-            </Button>
-          </InputGroup.Append>
+          <Button variant={buttonState ? 'success' : 'primary'} type="submit">
+            <Check2 />
+          </Button>
         )}
       </InputGroup>
     </Form>

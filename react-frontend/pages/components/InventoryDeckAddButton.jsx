@@ -20,7 +20,7 @@ function InventoryDeckAddButton(props) {
     <>
       <Button
         className={props.inInventory ? 'inventory-in' : ''}
-        variant="outline-secondary"
+        variant="primary"
         onClick={() => setShowConfirmation(true)}
         title={
           props.inInventory ? 'Already in Inventory' : 'Add Deck to Inventory'

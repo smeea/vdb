@@ -94,10 +94,10 @@ function AccountRegister(props) {
     <>
       <h6 className="d-flex align-items-center">
         <PersonPlusFill />
-        <span className="ml-2">Create account</span>
+        <span className="ms-2">Create account</span>
       </h6>
       <Form className="mb-2" onSubmit={handleSubmitButton}>
-        <InputGroup className="z-index-0">
+        <InputGroup>
           <FormControl
             placeholder="New Username"
             type="text"
@@ -114,30 +114,28 @@ function AccountRegister(props) {
             onChange={handleChange}
             ref={refPassword}
           />
-          <InputGroup.Append>
-            <Button
-              tabIndex="-1"
-              variant="outline-secondary"
-              onClick={() => setHidePassword(!hidePassword)}
-            >
-              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+          <Button
+            tabIndex="-1"
+            variant="primary"
+            onClick={() => setHidePassword(!hidePassword)}
+          >
+            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+          </Button>
+          {!spinnerState ? (
+            <Button variant="primary" type="submit">
+              <Check2 />
             </Button>
-            {!spinnerState ? (
-              <Button variant="outline-secondary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="outline-secondary">
-                <Spinner
-                  as="span"
-                  animation="border"
-                  size="sm"
-                  role="status"
-                  aria-hidden="true"
-                />
-              </Button>
-            )}
-          </InputGroup.Append>
+          ) : (
+            <Button variant="primary">
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />
+            </Button>
+          )}
         </InputGroup>
         <ErrorOverlay
           show={emptyUsername}

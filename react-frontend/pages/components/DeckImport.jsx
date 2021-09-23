@@ -177,6 +177,23 @@ function DeckImport(props) {
 
   return (
     <>
+      <Dropdown ref={ref}>
+        <Dropdown.Toggle variant="secondary">
+          <ClipboardPlus size={24} />
+          <span className="ps-1">New / Import</span>
+        </Dropdown.Toggle>
+        <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
+      </Dropdown>
+      <DeckImportText
+        handleClose={handleCloseImportModal}
+        getDecks={getDecks}
+        show={showTextModal}
+      />
+      <DeckImportAmaranth
+        handleClose={handleCloseImportModal}
+        getDecks={getDecks}
+        show={showAmaranthModal}
+      />
       <input
         ref={fileInputTxt}
         accept="text/*"
@@ -190,23 +207,6 @@ function DeckImport(props) {
         type="file"
         onChange={() => handleFileChange('dek')}
         style={{ display: 'none' }}
-      />
-      <Dropdown ref={ref}>
-        <Dropdown.Toggle className="btn-block" variant="outline-secondary">
-          <ClipboardPlus size={24} />
-          <span className="pl-1">New / Import</span>
-        </Dropdown.Toggle>
-        <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
-      </Dropdown>
-      <DeckImportText
-        handleClose={handleCloseImportModal}
-        getDecks={getDecks}
-        show={showTextModal}
-      />
-      <DeckImportAmaranth
-        handleClose={handleCloseImportModal}
-        getDecks={getDecks}
-        show={showAmaranthModal}
       />
       <ErrorOverlay
         show={createError || importError}

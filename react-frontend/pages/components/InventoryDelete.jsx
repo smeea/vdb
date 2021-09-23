@@ -31,13 +31,9 @@ function InventoryDelete(props) {
 
   return (
     <>
-      <Button
-        variant="outline-secondary"
-        onClick={() => setShowConfirmation(true)}
-        block
-      >
+      <Button variant="secondary" onClick={() => setShowConfirmation(true)}>
         <div className="d-flex justify-content-center align-items-center">
-          <div className="pr-2">
+          <div className="pe-2">
             <TrashFill />
           </div>
           Delete Inventory

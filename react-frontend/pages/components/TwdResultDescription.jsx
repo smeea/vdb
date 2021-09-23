@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Stack } from 'react-bootstrap';
 import TwdOpenDeckButton from './TwdOpenDeckButton.jsx';
 import DeckClone from './DeckClone.jsx';
 import AppContext from '../../context/AppContext.js';
@@ -41,7 +41,7 @@ function TwdResultDescription(props) {
     <>
       {isMobile ? (
         <>
-          <Row className="px-0 pl-1 mx-0">
+          <Row className="px-0 ps-1 mx-0">
             <Col xs={7} className="px-0 mx-0">
               <table className="d-inline">
                 <tbody>
@@ -49,19 +49,19 @@ function TwdResultDescription(props) {
                     <td className="d-inline">
                       <b>Date:</b>
                     </td>
-                    <td className="pl-2">{props.deck['date']}</td>
+                    <td className="ps-2">{props.deck['date']}</td>
                   </tr>
                   <tr>
                     <td className="d-inline">
                       <b>Players</b>:
                     </td>
-                    <td className="pl-2">{props.deck['players']}</td>
+                    <td className="ps-2">{props.deck['players']}</td>
                   </tr>
                   <tr>
                     <td className="d-inline">
                       <b>Location</b>:
                     </td>
-                    <td className="pl-2">
+                    <td className="ps-2">
                       <div
                         className="link-like"
                         onClick={() =>
@@ -76,7 +76,7 @@ function TwdResultDescription(props) {
                     <td className="d-inline">
                       <b>Player</b>:
                     </td>
-                    <td className="pl-2">
+                    <td className="ps-2">
                       <div
                         className="link-like"
                         onClick={() => handlePlayerClick(props.deck['player'])}
@@ -89,20 +89,16 @@ function TwdResultDescription(props) {
               </table>
             </Col>
             <Col xs={5} className="px-0 mx-0">
-              <div className="py-2">
-                <div className="button-block">
-                  <TwdOpenDeckButton deckid={props.deck['deckid']} />
-                </div>
-                <div className="button-block">
-                  {username && (
-                    <DeckClone
-                      deck={props.deck}
-                      activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
-                      setShowButtons={props.setShowButtons}
-                    />
-                  )}
-                </div>
-              </div>
+              <Stack gap={1} className="py-2">
+                <TwdOpenDeckButton deckid={props.deck['deckid']} />
+                {username && (
+                  <DeckClone
+                    deck={props.deck}
+                    activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
+                    setShowButtons={props.setShowButtons}
+                  />
+                )}
+              </Stack>
             </Col>
           </Row>
         </>
@@ -114,19 +110,19 @@ function TwdResultDescription(props) {
                 <td className="d-inline">
                   <b>Date:</b>
                 </td>
-                <td className="pl-2">{props.deck['date']}</td>
+                <td className="ps-2">{props.deck['date']}</td>
               </tr>
               <tr>
                 <td className="d-inline">
                   <b>Players</b>:
                 </td>
-                <td className="pl-2">{props.deck['players']}</td>
+                <td className="ps-2">{props.deck['players']}</td>
               </tr>
               <tr>
                 <td className="d-inline">
                   <b>Event</b>:
                 </td>
-                <td className="pl-2">
+                <td className="ps-2">
                   <a href={props.deck['link']}>{props.deck['event']}</a>
                 </td>
               </tr>
@@ -134,7 +130,7 @@ function TwdResultDescription(props) {
                 <td className="d-inline">
                   <b>Location</b>:
                 </td>
-                <td className="pl-2">
+                <td className="ps-2">
                   <div
                     className="link-like"
                     onClick={() => handleLocationClick(props.deck['location'])}
@@ -147,7 +143,7 @@ function TwdResultDescription(props) {
                 <td className="d-inline">
                   <b>Player</b>:
                 </td>
-                <td className="pl-2">
+                <td className="ps-2">
                   <div
                     className="link-like"
                     onClick={() => handlePlayerClick(props.deck['player'])}
@@ -160,26 +156,22 @@ function TwdResultDescription(props) {
                 <td className="d-inline">
                   <b>Deck</b>:
                 </td>
-                <td className="pl-2">
+                <td className="ps-2">
                   {props.deck['name']} <br />
                 </td>
               </tr>
             </tbody>
           </table>
-          <div className="py-2">
-            <div className="button-block">
-              <TwdOpenDeckButton deckid={props.deck['deckid']} />
-            </div>
-            <div className="button-block">
-              {username && (
-                <DeckClone
-                  deck={props.deck}
-                  activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
-                  setShowButtons={props.setShowButtons}
-                />
-              )}
-            </div>
-          </div>
+          <Stack gap={1} className="py-2">
+            <TwdOpenDeckButton deckid={props.deck['deckid']} />
+            {username && (
+              <DeckClone
+                deck={props.deck}
+                activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
+                setShowButtons={props.setShowButtons}
+              />
+            )}
+          </Stack>
         </>
       )}
     </>

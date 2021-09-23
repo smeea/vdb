@@ -229,7 +229,7 @@ function DeckLibrary(props) {
       });
       LibraryDeck.push(
         <div key={cardtype} className="pt-2">
-          <div className="d-flex justify-content-between pr-2">
+          <div className="d-flex justify-content-between pe-2">
             <ResultLibraryType
               cardtype={cardtype}
               total={libraryByTypeTotal[cardtype]}
@@ -349,8 +349,8 @@ function DeckLibrary(props) {
         <div
           className={
             isMobile
-              ? 'd-flex align-items-center justify-content-between pl-2 pr-1 info-message'
-              : 'd-flex align-items-center justify-content-between pl-2 info-message'
+              ? 'd-flex align-items-center justify-content-between ps-2 pe-1 info-message'
+              : 'd-flex align-items-center justify-content-between ps-2 info-message'
           }
         >
           <b>
@@ -364,21 +364,21 @@ function DeckLibrary(props) {
             {!props.inMissing && (
               <>
                 <div
-                  className="d-flex align-items-center pr-3"
+                  className="d-flex align-items-center pe-3"
                   title="Total Blood Cost"
                 >
                   <img
-                    className="cost-blood-image-results pb-1 pr-1"
+                    className="cost-blood-image-results pb-1 pe-1"
                     src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
                   />
                   <b>{bloodTotal}</b>
                 </div>
                 <div
-                  className="d-flex align-items-center pr-3"
+                  className="d-flex align-items-center pe-3"
                   title="Total Pool Cost"
                 >
                   <img
-                    className="cost-pool-image-results py-1 pr-1"
+                    className="cost-pool-image-results py-1 pe-1"
                     src={process.env.ROOT_URL + 'images/misc/poolX.png'}
                   />
                   <b>{poolTotal}</b>
@@ -388,15 +388,15 @@ function DeckLibrary(props) {
             {!props.inAdvSelect && (
               <>
                 <Button
-                  variant="outline-secondary"
+                  variant="primary"
                   onClick={() => setShowInfo(!showInfo)}
                 >
                   <InfoCircle />
                 </Button>
                 {props.isAuthor && !isMobile && (
-                  <div className="pl-1">
+                  <div className="ps-1">
                     <Button
-                      variant="outline-secondary"
+                      variant="primary"
                       onClick={() => setShowAdd(!showAdd)}
                     >
                       +
@@ -408,7 +408,7 @@ function DeckLibrary(props) {
           </div>
         </div>
         {showInfo && (
-          <div className="info-message pl-2">
+          <div className="info-message ps-2">
             <DeckLibraryTotalInfo
               byDisciplines={libraryByDisciplinesTotal}
               byTypes={libraryByTypeTotal}

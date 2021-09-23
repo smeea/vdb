@@ -54,7 +54,7 @@ function DeckSelectPrecon(props) {
       name: 'precon',
       label: (
         <div className="d-flex justify-content-between align-items-center">
-          <div className="pr-2">
+          <div className="pe-2">
             <div
               className={clanImages.length == 1 ? 'margin-full' : 'd-inline'}
             >

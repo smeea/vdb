@@ -152,14 +152,14 @@ function ResultCryptModal(props) {
               </div>
               <div className="d-flex justify-content-between pt-4">
                 <div className="d-flex">
-                  <div className="d-flex pr-1">
+                  <div className="d-flex pe-1">
                     <ButtonCardCopyUrl id={props.card.Id} />
                   </div>
-                  <div className="d-flex pr-1">
+                  <div className="d-flex pe-1">
                     <ButtonToggleShowImage />
                   </div>
                 </div>
-                <Button variant="outline-secondary" onClick={props.handleClose}>
+                <Button variant="primary" onClick={props.handleClose}>
                   <div>
                     <X width="24" height="24" viewBox="0 0 16 16" /> Close
                   </div>

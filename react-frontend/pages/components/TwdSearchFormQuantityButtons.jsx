@@ -12,10 +12,10 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-between pr-2">
+    <div className="d-flex align-items-center justify-content-between pe-2">
       <Button
         className="quantity"
-        variant="outline-secondary"
+        variant="primary"
         onClick={() => handleChange(id, q - 1)}
         block
       >
@@ -24,7 +24,7 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
       <div className="px-1">{q ? '≥ ' + q : '= 0'}</div>
       <Button
         className="quantity"
-        variant="outline-secondary"
+        variant="primary"
         onClick={() => handleChange(id, q + 1)}
         block
       >

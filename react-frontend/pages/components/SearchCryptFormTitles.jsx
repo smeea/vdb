@@ -62,14 +62,14 @@ function SearchCryptFormTitles(props) {
 
   return (
     <>
-      <Row className="mx-0 py-1 pl-1">
+      <Row className="mx-0 py-1 ps-1">
         <Col className="d-flex px-0">
           <label className="h6 mb-0">Title:</label>
         </Col>
       </Row>
       <Row className="mx-0">
-        <Col className="d-inline pr-0">{titlesLeftforms}</Col>
-        <Col className="d-inline pr-0">{titlesRightforms}</Col>
+        <Col className="d-inline pe-0">{titlesLeftforms}</Col>
+        <Col className="d-inline pe-0">{titlesRightforms}</Col>
       </Row>
     </>
   );

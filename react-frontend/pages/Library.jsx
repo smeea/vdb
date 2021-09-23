@@ -44,17 +44,14 @@ function Library(props) {
                       <DeckSelectMy activeDeck={props.activeDeck} />
                     </div>
                     {isBranches && (
-                      <div className="pl-1 w-25">
+                      <div className="ps-1 w-25">
                         <DeckBranchSelect activeDeck={props.activeDeck} />
                       </div>
                     )}
                   </>
                 )}
-                <div className="d-flex pl-1">
-                  <Button
-                    variant="outline-secondary"
-                    onClick={() => toggleAddMode()}
-                  >
+                <div className="d-flex ps-1">
+                  <Button variant="primary" onClick={() => toggleAddMode()}>
                     {addMode ? <EyeSlashFill /> : <EyeFill />}
                   </Button>
                 </div>

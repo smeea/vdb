@@ -77,7 +77,7 @@ function QuickSelect(props) {
                       <>
                         <strike>{cryptCardBase[cardid]['Name']}</strike>
                         {cryptCardBase[cardid]['Adv'][0] && (
-                          <span className="pl-1">
+                          <span className="ps-1">
                             <img
                               className="advanced-image-results"
                               src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
@@ -85,7 +85,7 @@ function QuickSelect(props) {
                             />
                           </span>
                         )}
-                        <span className="pl-1">
+                        <span className="ps-1">
                           <Hammer />
                         </span>
                       </>
@@ -93,7 +93,7 @@ function QuickSelect(props) {
                       <>
                         {cryptCardBase[cardid]['Name']}
                         {cryptCardBase[cardid]['Adv'][0] && (
-                          <span className="pl-1">
+                          <span className="ps-1">
                             <img
                               className="advanced-image-results"
                               src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
@@ -120,11 +120,11 @@ function QuickSelect(props) {
                   <ResultLibraryType
                     cardtype={libraryCardBase[cardid]['Type']}
                   />
-                  <span className="pl-1">
+                  <span className="ps-1">
                     {libraryCardBase[cardid]['Banned'] ? (
                       <>
                         <strike>{libraryCardBase[cardid]['Name']}</strike>
-                        <span className="pl-1">
+                        <span className="ps-1">
                           <Hammer />
                         </span>
                       </>

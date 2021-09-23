@@ -20,7 +20,7 @@ function Twd(props) {
           xl={9}
           className={
             !(isMobile && showTwdSearch)
-              ? 'px-0 pr-lg-4'
+              ? 'px-0 pe-lg-4'
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >

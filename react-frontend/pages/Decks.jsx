@@ -321,15 +321,15 @@ function Decks(props) {
                       )}
                     </div>
                     {selectFrom == 'my' && isBranches && (
-                      <div className="pl-1 w-25">
+                      <div className="ps-1 w-25">
                         <DeckBranchSelect activeDeck={activeDeck} />
                       </div>
                     )}
                     <div className="d-flex">
                       {inventoryMode && isAuthor && deckRouter(activeDeck) && (
-                        <div className="d-flex pl-1">
+                        <div className="d-flex ps-1">
                           <Button
-                            variant="outline-secondary"
+                            variant="primary"
                             onClick={() => toggleInventoryState()}
                           >
                             <div className="d-flex align-items-center">
@@ -345,9 +345,9 @@ function Decks(props) {
                         </div>
                       )}
                       {isMobile && deckRouter(activeDeck) && (
-                        <div className="d-flex pl-1">
+                        <div className="d-flex ps-1">
                           <Button
-                            variant="outline-secondary"
+                            variant="primary"
                             onClick={() => setShowInfo(!showInfo)}
                           >
                             <InfoCircle />
@@ -357,10 +357,9 @@ function Decks(props) {
                     </div>
                   </div>
                   <div className="d-flex justify-content-between align-items-center">
-                    <Form className="py-1 my-0">
+                    <Form className="py-1 my-0 px-2">
                       {username && decks && Object.keys(decks).length > 0 && (
                         <Form.Check
-                          className="px-2"
                           checked={selectFrom == 'my'}
                           onChange={(e) => setSelectFrom(e.target.id)}
                           type="radio"
@@ -374,7 +373,6 @@ function Decks(props) {
                         />
                       )}
                       <Form.Check
-                        className="px-2"
                         checked={selectFrom == 'precons'}
                         onChange={(e) => setSelectFrom(e.target.id)}
                         type="radio"
@@ -390,7 +388,7 @@ function Decks(props) {
                     {decks && (
                       <div className="py-1">
                         <Button
-                          variant="outline-secondary"
+                          variant="primary"
                           onClick={() =>
                             setShowDeckSelectAdv(!showDeckSelectAdv)
                           }
@@ -410,7 +408,7 @@ function Decks(props) {
                   <Row className={isMobile ? 'mx-0' : 'mx-0 pb-2'}>
                     <Col
                       md={isBranches ? 6 : 8}
-                      className={isMobile ? 'px-0' : 'pl-0 pr-1'}
+                      className={isMobile ? 'px-0' : 'ps-0 pe-1'}
                     >
                       <DeckChangeName
                         name={deckRouter(activeDeck).name}
@@ -419,7 +417,7 @@ function Decks(props) {
                       />
                     </Col>
                     {isBranches && (
-                      <Col md={2} className={isMobile ? 'px-0' : 'pl-0 pr-0'}>
+                      <Col md={2} className={isMobile ? 'px-0' : 'px-1'}>
                         <DeckChangeBranchName
                           branchName={deckRouter(activeDeck).branchName}
                           deckid={activeDeck.deckid}
@@ -429,7 +427,7 @@ function Decks(props) {
                     )}
                     <Col
                       md={4}
-                      className={isMobile ? 'px-0 pt-05' : 'pl-1 pr-0'}
+                      className={isMobile ? 'px-0 pt-05' : 'ps-1 pe-0'}
                     >
                       <DeckChangeAuthor
                         author={deckRouter(activeDeck).author}
@@ -450,7 +448,7 @@ function Decks(props) {
                     </Col>
                     {foldedDescription &&
                       (deckRouter(activeDeck).tags || isAuthor) && (
-                        <Col className="pl-2 pr-0">
+                        <Col className="ps-2 pe-0">
                           <DeckTags
                             allTagsOptions={allTagsOptions}
                             deck={deckRouter(activeDeck)}
@@ -485,7 +483,7 @@ function Decks(props) {
           )}
           {deckRouter(activeDeck) && (
             <Row>
-              <Col md={7} className="px-0 pl-md-3 pr-md-2 px-xl-3 pt-lg-4">
+              <Col md={7} className="px-0 ps-md-3 pe-md-2 px-xl-3 pt-lg-4">
                 <div className={isMobile ? null : 'sticky'}>
                   <DeckCrypt
                     deckid={activeDeck.deckid}
@@ -496,7 +494,7 @@ function Decks(props) {
                   />
                 </div>
               </Col>
-              <Col md={5} className="pt-4 pt-lg-0 px-0 pl-md-2 pr-md-3 px-xl-3">
+              <Col md={5} className="pt-4 pt-lg-0 px-0 ps-md-2 pe-md-3 px-xl-3">
                 <DeckLibrary
                   inDeckTab={true}
                   deckid={activeDeck.deckid}
@@ -588,22 +586,14 @@ function Decks(props) {
           animation={false}
           centered={true}
         >
+          <Modal.Header
+            className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
+          ></Modal.Header>
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
-              <Row className="px-0">
-                <Col>
-                  <button
-                    type="button"
-                    className="close m-1"
-                    onClick={() => {
-                      setShowMenuButtons(false);
-                      setShowFloatingButtons(true);
-                    }}
-                  >
-                    <X width="32" height="32" viewBox="0 0 16 16" />
-                  </button>
-                </Col>
-              </Row>
+              <Button variant="outline-secondary" onClick={props.handleCancel}>
+                <X width="32" height="32" viewBox="0 0 16 16" />
+              </Button>
               <DeckButtons
                 isAuthor={isAuthor}
                 deck={deckRouter(activeDeck)}

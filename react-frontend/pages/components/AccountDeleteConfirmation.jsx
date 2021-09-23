@@ -1,8 +1,8 @@
 import React, { useState, useRef, useContext } from 'react';
 import { Form, FormControl, InputGroup, Modal, Button } from 'react-bootstrap';
+import X from '../../assets/images/icons/x.svg';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import EyeSlashFill from '../../assets/images/icons/eye-slash-fill.svg';
-import X from '../../assets/images/icons/x.svg';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
@@ -67,22 +67,25 @@ function AccountDeleteConfirmation(props) {
         animation={false}
         centered={isMobile}
       >
-        <Modal.Body>
-          <button
-            type="button"
-            className="close m-1"
-            onClick={props.handleClose}
-          >
-            <X width="32" height="32" viewBox="0 0 16 16" />
-          </button>
+        <Modal.Header
+          className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
+        >
           <h5>
             DELETE ACCOUNT
-            <span className="px-1 pl-2">
+            <span className="px-1 ps-2">
               {'"'}
               {username}
               {'"'}?
             </span>
           </h5>
+          <Button
+            variant="outline-secondary"
+            onClick={() => props.setShow(false)}
+          >
+            <X width="32" height="32" viewBox="0 0 16 16" />
+          </Button>
+        </Modal.Header>
+        <Modal.Body>
           <div className="pt-2">
             <h6>THIS CANNOT BE UNDONE!</h6>
           </div>
@@ -101,24 +104,19 @@ function AccountDeleteConfirmation(props) {
                 autoFocus={true}
                 ref={refPassword}
               />
-              <InputGroup.Append>
-                <Button
-                  tabIndex="-1"
-                  variant="outline-secondary"
-                  onClick={() => setHidePassword(!hidePassword)}
-                >
-                  {hidePassword ? <EyeFill /> : <EyeSlashFill />}
-                </Button>
-                <Button variant="danger" type="submit">
-                  Delete
-                </Button>
-                <Button
-                  variant="outline-secondary"
-                  onClick={() => props.setShow(false)}
-                >
-                  Cancel
-                </Button>
-              </InputGroup.Append>
+              <Button
+                tabIndex="-1"
+                variant="primary"
+                onClick={() => setHidePassword(!hidePassword)}
+              >
+                {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+              </Button>
+              <Button variant="danger" type="submit">
+                Delete
+              </Button>
+              <Button variant="primary" onClick={() => props.setShow(false)}>
+                Cancel
+              </Button>
             </InputGroup>
             <ErrorOverlay
               show={emptyPassword}

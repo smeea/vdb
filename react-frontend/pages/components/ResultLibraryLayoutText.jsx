@@ -23,7 +23,7 @@ function ResultLibraryLayoutText(props) {
           <div>
             <ResultLibraryType cardtype={props.card['Type']} />
           </div>
-          <div className="name pl-2">
+          <div className="name ps-2">
             {props.card['Banned'] ? (
               <strike>
                 <b>{props.card['Name']}</b>
@@ -32,24 +32,24 @@ function ResultLibraryLayoutText(props) {
               <b>{props.card['Name']}</b>
             )}
             {props.card['Banned'] && (
-              <span className="pl-1">
+              <span className="ps-1">
                 <Hammer />
               </span>
             )}
           </div>
         </div>
-        <div className="pl-1">
+        <div className="ps-1">
           <ResultLibraryDisciplines value={props.card['Discipline']} />
           <ResultLibraryClan value={props.card['Clan']} />
         </div>
         {props.card['Burn Option'] && (
-          <div className="pl-1">
+          <div className="ps-1">
             <ResultLibraryBurn value={props.card['Burn Option']} />
           </div>
         )}
         {nativeLibrary &&
           nativeLibrary[props.card.Id]['Card Text'].includes('Trifle.') && (
-            <div className="pl-1">
+            <div className="ps-1">
               <ResultLibraryTrifle
                 value={nativeLibrary[props.card.Id]['Card Text']}
               />

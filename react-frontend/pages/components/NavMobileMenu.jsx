@@ -23,16 +23,30 @@ const NavMobileMenu = (props) => {
     <>
       <div
         ref={menuRef}
-        className="white-font pl-2 pt-1"
+        className="white-font ps-2 pt-1"
         onClick={() => setShowMenu(!showMenu)}
       >
         <List width="24" height="24" viewBox="0 0 16 16" />
       </div>
       {showMenu && (
-        <Overlay target={menuRef} show={showMenu} placement="bottom">
+        <Overlay
+          popperConfig={{
+            modifiers: [
+              {
+                name: 'offset',
+                options: {
+                  offset: [0, -255],
+                },
+              },
+            ],
+          }}
+          target={menuRef}
+          show={showMenu}
+          placement="bottom"
+        >
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
             <Popover {...props} className="navMenu mobile">
-              <Popover.Content>
+              <Popover.Body>
                 <NavLink
                   to="/account"
                   onClick={() => setShowMenu(false)}
@@ -40,7 +54,7 @@ const NavMobileMenu = (props) => {
                 >
                   <div className="d-flex align-items-center main-font">
                     <PersonFill />
-                    <div className="pl-2">{username ? 'Account' : 'Login'}</div>
+                    <div className="ps-2">{username ? 'Account' : 'Login'}</div>
                   </div>
                 </NavLink>
                 <NavLink
@@ -50,7 +64,7 @@ const NavMobileMenu = (props) => {
                 >
                   <div className="d-flex align-items-center main-font">
                     <InfoCircleFill />
-                    <div className="pl-2">About</div>
+                    <div className="ps-2">About</div>
                   </div>
                 </NavLink>
                 <div
@@ -61,7 +75,7 @@ const NavMobileMenu = (props) => {
                   }}
                 >
                   {isDarkTheme ? <MoonFill /> : <SunFill />}
-                  <div className="pl-2">Theme</div>
+                  <div className="ps-2">Theme</div>
                 </div>
                 <div
                   className="d-flex align-items-center px-2 py-1"
@@ -71,14 +85,14 @@ const NavMobileMenu = (props) => {
                   }}
                 >
                   {inventoryMode ? <ToggleOn /> : <ToggleOff />}
-                  <div className={inventoryMode ? 'pl-2' : 'gray pl-2'}>
+                  <div className={inventoryMode ? 'ps-2' : 'gray ps-2'}>
                     Inventory Mode
                   </div>
                 </div>
                 <div className="d-flex align-items-center justify-content-between py-2">
                   <LanguageSelect setShowMenu={setShowMenu} />
                 </div>
-              </Popover.Content>
+              </Popover.Body>
             </Popover>
           )}
         </Overlay>

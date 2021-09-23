@@ -193,7 +193,7 @@ function InventoryLibraryTable(props) {
               <>
                 {softUsedMax > 0 && (
                   <div className="d-flex align-items-center justify-content-center">
-                    <div className="d-inline opacity-035 pr-1">
+                    <div className="d-inline opacity-035 pe-1">
                       <Shuffle width="14" height="14" viewBox="0 0 16 16" />
                     </div>
                     {softUsedMax}
@@ -201,7 +201,7 @@ function InventoryLibraryTable(props) {
                 )}
                 {hardUsedTotal > 0 && (
                   <div className="d-flex align-items-center justify-content-center">
-                    <div className="d-inline opacity-035 pr-1">
+                    <div className="d-inline opacity-035 pe-1">
                       <PinAngleFill
                         width="14"
                         height="14"
@@ -228,7 +228,7 @@ function InventoryLibraryTable(props) {
                 <div>
                   {softUsedMax > 0 && (
                     <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pr-1">
+                      <div className="d-inline opacity-035 pe-1">
                         <Shuffle width="14" height="14" viewBox="0 0 16 16" />
                       </div>
                       {softUsedMax}
@@ -236,7 +236,7 @@ function InventoryLibraryTable(props) {
                   )}
                   {hardUsedTotal > 0 && (
                     <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pr-1">
+                      <div className="d-inline opacity-035 pe-1">
                         <PinAngleFill
                           width="14"
                           height="14"

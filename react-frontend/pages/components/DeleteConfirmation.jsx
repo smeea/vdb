@@ -14,15 +14,15 @@ function DeleteConfirmation(props) {
         animation={false}
         centered={isMobile}
       >
-        <Modal.Body>
-          <button
-            type="button"
-            className="close m-1"
-            onClick={props.handleClose}
-          >
-            <X width="32" height="32" viewBox="0 0 16 16" />
-          </button>
+        <Modal.Header
+          className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
+        >
           <h5>{`Delete ${props.target}?`}</h5>
+          <Button variant="outline-secondary" onClick={props.handleCancel}>
+            <X width="32" height="32" viewBox="0 0 16 16" />
+          </Button>
+        </Modal.Header>
+        <Modal.Body>
           <div className="pt-2">
             {props.text && <h6>{props.text}</h6>}
             <h6>THIS CANNOT BE UNDONE!</h6>
@@ -32,7 +32,7 @@ function DeleteConfirmation(props) {
           <Button variant="danger" onClick={props.handleConfirm}>
             Delete
           </Button>
-          <Button variant="outline-secondary" onClick={props.handleCancel}>
+          <Button variant="primary" onClick={props.handleCancel}>
             Cancel
           </Button>
         </Modal.Footer>

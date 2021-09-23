@@ -20,11 +20,7 @@ function ResultCryptSortForm(props) {
   });
 
   return (
-    <DropdownButton
-      variant="outline-secondary"
-      id="sort-button"
-      title={<SortDown />}
-    >
+    <DropdownButton variant="primary" id="sort-button" title={<SortDown />}>
       {SortButtonOptions}
     </DropdownButton>
   );

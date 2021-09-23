@@ -7,7 +7,7 @@ function DeckCryptSortButton(props) {
   const { cryptSortByCap, toggleCryptSort } = useContext(AppContext);
 
   return (
-    <Button variant="outline-secondary" title="Sort" onClick={toggleCryptSort}>
+    <Button variant="primary" title="Sort" onClick={toggleCryptSort}>
       <SortDown />
       {cryptSortByCap ? ' C' : ' Q'}
     </Button>

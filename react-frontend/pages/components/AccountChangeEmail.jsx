@@ -113,15 +113,15 @@ function AccountChangeEmail(props) {
     <>
       <h6 className="d-flex align-items-center px-1">
         <EnvelopeFill />
-        <span className="ml-2">Change email (optional)</span>
+        <span className="ms-2">Change email (optional)</span>
         {!isMobile ? (
           <OverlayTooltip text={tooltipText}>
-            <span className="question-tooltip ml-1">[?]</span>
+            <span className="question-tooltip ms-1">[?]</span>
           </OverlayTooltip>
         ) : (
           <span
             onClick={() => setShowModal(true)}
-            className="question-tooltip ml-1"
+            className="question-tooltip ms-1"
           >
             [?]
           </span>
@@ -145,17 +145,15 @@ function AccountChangeEmail(props) {
             onChange={handleChange}
             ref={refPassword}
           />
-          <InputGroup.Append>
-            {!buttonState ? (
-              <Button variant="outline-secondary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="success" type="submit">
-                <Check2 />
-              </Button>
-            )}
-          </InputGroup.Append>
+          {!buttonState ? (
+            <Button variant="primary" type="submit">
+              <Check2 />
+            </Button>
+          ) : (
+            <Button variant="success" type="submit">
+              <Check2 />
+            </Button>
+          )}
         </InputGroup>
         <ErrorOverlay
           show={emptyEmail}

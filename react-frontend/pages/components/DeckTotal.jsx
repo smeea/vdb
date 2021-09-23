@@ -19,7 +19,7 @@ function DeckTotal(props) {
 
   const totalOutput = Object.keys(byTags).map((k) => {
     return (
-      <span key={k} className="d-inline-block nobr pr-3">
+      <span key={k} className="d-inline-block nobr pe-3">
         <span className="blue">
           <b>{k}:</b>
         </span>

@@ -41,11 +41,9 @@ function DeckChangeBranchName(props) {
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
         {isMobile && (
-          <InputGroup.Prepend>
-            <InputGroup.Text>
-              <PaletteFill />
-            </InputGroup.Text>
-          </InputGroup.Prepend>
+          <InputGroup.Text>
+            <PaletteFill />
+          </InputGroup.Text>
         )}
         <FormControl
           type="text"
@@ -56,14 +54,9 @@ function DeckChangeBranchName(props) {
           readOnly={!props.isAuthor}
         />
         {isMobile && props.isAuthor && (
-          <InputGroup.Append>
-            <Button
-              variant={buttonState ? 'success' : 'outline-secondary'}
-              type="submit"
-            >
-              <Check2 />
-            </Button>
-          </InputGroup.Append>
+          <Button variant={buttonState ? 'success' : 'primary'} type="submit">
+            <Check2 />
+          </Button>
         )}
       </InputGroup>
     </Form>

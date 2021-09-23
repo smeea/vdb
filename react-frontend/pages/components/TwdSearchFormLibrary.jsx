@@ -98,11 +98,11 @@ function TwdSearchFormLibrary(props) {
             <div className="d-flex align-items-center justify-content-between">
               <div>
                 <ResultLibraryType cardtype={libraryCardBase[card]['Type']} />
-                <span className="pl-1">
+                <span className="ps-1">
                   {libraryCardBase[card]['Banned'] ? (
                     <>
                       <strike>{libraryCardBase[card]['Name']}</strike>
-                      <span className="pl-1">
+                      <span className="ps-1">
                         <Hammer />
                       </span>
                     </>

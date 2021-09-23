@@ -104,7 +104,7 @@ function AccountChangePassword(props) {
     <>
       <h6 className="d-flex align-items-center px-1">
         <LockFill />
-        <span className="ml-2">Change password</span>
+        <span className="ms-2">Change password</span>
       </h6>
       <Form className="my-1" onSubmit={handleSubmitButton}>
         <InputGroup>
@@ -132,24 +132,22 @@ function AccountChangePassword(props) {
             onChange={handleChange}
             ref={refConfirmPassword}
           />
-          <InputGroup.Append>
-            <Button
-              tabIndex="-1"
-              variant="outline-secondary"
-              onClick={() => setHidePassword(!hidePassword)}
-            >
-              {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+          <Button
+            tabIndex="-1"
+            variant="primary"
+            onClick={() => setHidePassword(!hidePassword)}
+          >
+            {hidePassword ? <EyeFill /> : <EyeSlashFill />}
+          </Button>
+          {!buttonState ? (
+            <Button variant="primary" type="submit">
+              <Check2 />
             </Button>
-            {!buttonState ? (
-              <Button variant="outline-secondary" type="submit">
-                <Check2 />
-              </Button>
-            ) : (
-              <Button variant="success" type="submit">
-                <Check2 />
-              </Button>
-            )}
-          </InputGroup.Append>
+          ) : (
+            <Button variant="success" type="submit">
+              <Check2 />
+            </Button>
+          )}
         </InputGroup>
         <ErrorOverlay
           show={emptyPassword}

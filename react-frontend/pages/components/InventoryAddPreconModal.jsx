@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Modal, Row, Col, FormControl } from 'react-bootstrap';
+import { Modal, Row, Col, FormControl, Button } from 'react-bootstrap';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import GiftFill from '../../assets/images/icons/gift-fill.svg';
+import X from '../../assets/images/icons/x.svg';
 import DeckCrypt from './DeckCrypt.jsx';
 import DeckLibrary from './DeckLibrary.jsx';
 import DeckSelectSortForm from './DeckSelectSortForm.jsx';
@@ -130,7 +131,7 @@ function InventoryAddDeckModal(props) {
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
                   <div
-                    className="d-inline pl-2 revision"
+                    className="d-inline ps-2 revision"
                     title={deck.branchName}
                   >
                     {deck.branchName}
@@ -202,14 +203,14 @@ function InventoryAddDeckModal(props) {
             )}
           </td>
           <td className="buttons">
-            <div className="d-inline pl-1">
+            <div className="d-inline ps-1">
               <InventoryDeckAddButton
                 inventoryDeckAdd={props.inventoryDeckAdd}
                 deck={deck}
                 inInventory={inInventory}
               />
             </div>
-            <div className="d-inline pl-1">
+            <div className="d-inline ps-1">
               <InventoryDeckDeleteButton
                 inventoryDeckDelete={props.inventoryDeckDelete}
                 deck={deck}
@@ -231,10 +232,12 @@ function InventoryAddDeckModal(props) {
       dialogClassName={isMobile ? 'm-0' : null}
     >
       <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 pl-3 pr-4'}
-        closeButton
+        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 ps-3 pe-4'}
       >
         <h5>Import Precon to Inventory</h5>
+        <Button variant="outline-secondary" onClick={props.handleClose}>
+          <X width="32" height="32" viewBox="0 0 16 16" />
+        </Button>
       </Modal.Header>
       <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
         <table className="inv-import-precons-table">

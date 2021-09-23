@@ -184,7 +184,7 @@ function InventoryCryptTable(props) {
               <>
                 {softUsedMax > 0 && (
                   <div className="d-flex align-items-center justify-content-center">
-                    <div className="d-inline opacity-035 pr-1">
+                    <div className="d-inline opacity-035 pe-1">
                       <Shuffle width="14" height="14" viewBox="0 0 16 16" />
                     </div>
                     {softUsedMax}
@@ -192,7 +192,7 @@ function InventoryCryptTable(props) {
                 )}
                 {hardUsedTotal > 0 && (
                   <div className="d-flex align-items-center justify-content-center">
-                    <div className="d-inline opacity-035 pr-1">
+                    <div className="d-inline opacity-035 pe-1">
                       <PinAngleFill
                         width="14"
                         height="14"
@@ -219,7 +219,7 @@ function InventoryCryptTable(props) {
                 <div>
                   {softUsedMax > 0 && (
                     <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pr-1">
+                      <div className="d-inline opacity-035 pe-1">
                         <Shuffle width="14" height="14" viewBox="0 0 16 16" />
                       </div>
                       {softUsedMax}
@@ -227,7 +227,7 @@ function InventoryCryptTable(props) {
                   )}
                   {hardUsedTotal > 0 && (
                     <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pr-1">
+                      <div className="d-inline opacity-035 pe-1">
                         <PinAngleFill
                           width="14"
                           height="14"
@@ -270,7 +270,7 @@ function InventoryCryptTable(props) {
           )}
           {isWide ? (
             <>
-              <td className="title pr-2" onClick={() => handleClick()}>
+              <td className="title pe-2" onClick={() => handleClick()}>
                 <ResultCryptTitle value={card.c['Title']} />
               </td>
               <td className="clan" onClick={() => handleClick()}>
@@ -296,7 +296,7 @@ function InventoryCryptTable(props) {
                 </td>
               ) : (
                 <>
-                  <td className="title pr-2" onClick={() => handleClick()}>
+                  <td className="title pe-2" onClick={() => handleClick()}>
                     <ResultCryptTitle value={card.c['Title']} />
                   </td>
                   <td className="clan-group" onClick={() => handleClick()}>

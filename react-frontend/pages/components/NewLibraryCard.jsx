@@ -47,7 +47,7 @@ function NewLibraryCard(props) {
             <div className="d-flex align-items-center">
               {props.inInventory && (
                 <div
-                  className={`d-inline in-inventory mr-2 ${
+                  className={`d-inline in-inventory me-2 ${
                     inventoryLibrary[card] ? 'border-black' : null
                   }`}
                 >
@@ -55,11 +55,11 @@ function NewLibraryCard(props) {
                 </div>
               )}
               <ResultLibraryType cardtype={libraryCardBase[card]['Type']} />
-              <div className="pl-1">
+              <div className="ps-1">
                 {libraryCardBase[card]['Banned'] ? (
                   <>
                     <strike>{libraryCardBase[card]['Name']}</strike>
-                    <div className="d-inline pl-1">
+                    <div className="d-inline ps-1">
                       <Hammer />
                     </div>
                   </>

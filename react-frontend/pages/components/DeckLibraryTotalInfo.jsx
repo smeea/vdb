@@ -7,7 +7,7 @@ function DeckLibraryTotalInfo(props) {
 
   const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
     return (
-      <span key={idx} className="d-inline-block nobr pl-0 pr-3">
+      <span key={idx} className="d-inline-block nobr ps-0 pe-3">
         <ResultLibraryType cardtype={t} />
         {props.byTypes[t]}{' '}
         <span className="gray">
@@ -23,7 +23,7 @@ function DeckLibraryTotalInfo(props) {
 
   const DisciplinesInfo = byDisciplinesSorted.map((d, idx) => {
     return (
-      <span key={idx} className="d-inline-block nobr pl-0 pr-3">
+      <span key={idx} className="d-inline-block nobr ps-0 pe-3">
         <ResultLibraryDisciplines value={d} />
         {props.byDisciplines[d]}{' '}
         <span className="gray">

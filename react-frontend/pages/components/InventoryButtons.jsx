@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button } from 'react-bootstrap';
+import { Stack, Button } from 'react-bootstrap';
 import InventoryExport from './InventoryExport.jsx';
 import InventoryImport from './InventoryImport.jsx';
 import InventoryDelete from './InventoryDelete.jsx';
@@ -11,63 +11,46 @@ function InventoryButtons(props) {
   const { decks, preconDecks } = useContext(AppContext);
 
   return (
-    <>
-      <div className="button-block">
-        <InventoryExport setShowButtons={props.setShowButtons} />
-      </div>
-      <div className="button-block">
-        <InventoryImport
-          inventoryAddToState={props.inventoryAddToState}
-          setShowButtons={props.setShowButtons}
-        />
-      </div>
-      <div className="button-block">
-        <InventoryDelete
-          setInventoryCrypt={props.setInventoryCrypt}
-          setInventoryLibrary={props.setInventoryLibrary}
-          setShowButtons={props.setShowButtons}
-        />
-      </div>
+    <Stack gap={1}>
+      <InventoryExport setShowButtons={props.setShowButtons} />
+      <InventoryImport
+        inventoryAddToState={props.inventoryAddToState}
+        setShowButtons={props.setShowButtons}
+      />
+      <InventoryDelete
+        setInventoryCrypt={props.setInventoryCrypt}
+        setInventoryLibrary={props.setInventoryLibrary}
+        setShowButtons={props.setShowButtons}
+      />
       {decks && (
-        <div className="button-block">
-          <Button
-            variant="outline-secondary"
-            onClick={() => props.setShowAddDeck(true)}
-            block
-          >
-            <div className="d-flex justify-content-center align-items-center">
-              <div className="pr-2">
-                <FolderPlus />
-              </div>
-              Add from Deck
+        <Button variant="secondary" onClick={() => props.setShowAddDeck(true)}>
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="pe-2">
+              <FolderPlus />
             </div>
-          </Button>
-        </div>
+            Add from Deck
+          </div>
+        </Button>
       )}
       {preconDecks && (
-        <div className="button-block">
-          <Button
-            variant="outline-secondary"
-            onClick={() => props.setShowAddPrecon(true)}
-            block
-          >
-            <div className="d-flex justify-content-center align-items-center">
-              <div className="pr-2">
-                <FolderPlus />
-              </div>
-              Add from Precon
+        <Button
+          variant="secondary"
+          onClick={() => props.setShowAddPrecon(true)}
+        >
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="pe-2">
+              <FolderPlus />
             </div>
-          </Button>
-        </div>
+            Add from Precon
+          </div>
+        </Button>
       )}
-      <div className="button-block">
-        <InventoryMissing
-          missingCrypt={props.missingCrypt}
-          missingLibrary={props.missingLibrary}
-          setShowButtons={props.setShowButtons}
-        />
-      </div>
-    </>
+      <InventoryMissing
+        missingCrypt={props.missingCrypt}
+        missingLibrary={props.missingLibrary}
+        setShowButtons={props.setShowButtons}
+      />
+    </Stack>
   );
 }
 

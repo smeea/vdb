@@ -69,16 +69,16 @@ function SearchCryptFormTraits(props) {
 
   return (
     <>
-      <Row className="mx-0 py-1 pl-1">
+      <Row className="mx-0 py-1 ps-1">
         <Col className="d-flex px-0">
           <label className="h6 mb-0">Traits:</label>
         </Col>
       </Row>
       <Row className="mx-0">
-        <Col xs={6} className="d-inline pr-0">
+        <Col xs={6} className="d-inline pe-0">
           {traitsLeftforms}
         </Col>
-        <Col xs={6} className="d-inline pr-0">
+        <Col xs={6} className="d-inline pe-0">
           {traitsRightforms}
         </Col>
       </Row>

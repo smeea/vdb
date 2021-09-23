@@ -11,7 +11,7 @@ function ResultCryptName(props) {
           <>{props.card['Name']}</>
         )}
         {props.card['Adv'][0] && (
-          <span className="pl-1">
+          <span className="ps-1">
             <img
               className="advanced-image-results"
               src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
@@ -20,7 +20,7 @@ function ResultCryptName(props) {
           </span>
         )}
         {props.card['Banned'] && (
-          <span className="pl-1">
+          <span className="ps-1">
             <Hammer />
           </span>
         )}

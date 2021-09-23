@@ -8,13 +8,13 @@ const CardPopover = React.forwardRef((props, ref) => {
 
   return (
     <Popover ref={ref} {...rest}>
-      <Popover.Content>
+      <Popover.Body>
         {props.card.Id > 200000 ? (
           <ResultCryptPopover card={card} />
         ) : (
           <ResultLibraryPopover card={card} />
         )}
-      </Popover.Content>
+      </Popover.Body>
     </Popover>
   );
 });

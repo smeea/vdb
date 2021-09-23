@@ -19,7 +19,7 @@ function AccountLogout(props) {
   };
 
   return (
-    <Button variant="outline-secondary" onClick={logoutUser}>
+    <Button variant="primary" onClick={logoutUser}>
       <DoorClosedFill /> Logout
     </Button>
   );

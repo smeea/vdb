@@ -163,7 +163,7 @@ function InventoryLibrary(props) {
       LibraryDeckSortedByType.push(
         <div key={cardtype} className={props.compact ? null : 'pt-2'}>
           {!props.compact && (
-            <div className="d-flex justify-content-between pr-1">
+            <div className="d-flex justify-content-between pe-1">
               <div className="d-inline">
                 <ResultLibraryType cardtype={cardtype} total={0} />
                 {libraryByTypeTotal[cardtype] ? (

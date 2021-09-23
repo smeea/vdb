@@ -57,8 +57,8 @@ function Navigation(props) {
       sticky={isMobile ? null : 'top'}
       variant="dark"
     >
-      <Nav className="container justify-content-between">
-        <div className="d-flex align-items-center pr-1">
+      <Nav className="container justify-content-between px-0">
+        <div className="d-flex align-items-center pe-1">
           {isMobile && <NavMobileMenu />}
           {!isMobile && (
             <>
@@ -94,8 +94,8 @@ function Navigation(props) {
                 <div
                   className={
                     inventoryMode
-                      ? 'd-inline pl-1 white-font'
-                      : 'd-inline pl-1 gray-font'
+                      ? 'd-inline ps-1 white-font'
+                      : 'd-inline ps-1 gray-font'
                   }
                 >
                   Inventory Mode
@@ -106,30 +106,30 @@ function Navigation(props) {
         <div className="d-flex align-items-center">
           {!isMobile && (
             <>
-              <NavLink to="/account" className="nav-link pr-2 pl-1">
+              <NavLink to="/account" className="nav-link pe-2 ps-1">
                 {username ? <PersonFill /> : 'Login'}
               </NavLink>
-              <NavLink to="/about" className="nav-link pr-2 pl-1">
+              <NavLink to="/about" className="nav-link pe-2 ps-1">
                 {isMobile ? <InfoCircleFill /> : 'About'}
               </NavLink>
             </>
           )}
-          <NavLink to={twdUrl} className="nav-link pr-2 pl-1">
+          <NavLink to={twdUrl} className="nav-link pe-2 ps-1">
             TWD
           </NavLink>
-          <NavLink to="/inventory" className="nav-link pr-2 pl-1">
-            Inventory
+          <NavLink to="/inventory" className="nav-link pe-2 ps-1">
+            {isMobile ? 'Inv' : 'Inventory'}
           </NavLink>
-          <NavLink to={decksUrl} className="nav-link pr-2 pl-1">
+          <NavLink to={decksUrl} className="nav-link pe-2 ps-1">
             Decks
           </NavLink>
-          <NavLink to={cryptUrl} className="nav-link pr-2 pl-1">
+          <NavLink to={cryptUrl} className="nav-link pe-2 ps-1">
             Crypt
           </NavLink>
-          <NavLink to={libraryUrl} className="nav-link pr-2 pl-1">
+          <NavLink to={libraryUrl} className="nav-link pe-2 ps-1">
             Library
           </NavLink>
-          <NavLink to="/cards" className="nav-link pr-2 pl-1">
+          <NavLink to="/cards" className="nav-link pe-2 ps-1">
             <LightningFill />
           </NavLink>
         </div>

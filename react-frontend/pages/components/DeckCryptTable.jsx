@@ -116,7 +116,7 @@ function DeckCryptTable(props) {
           {props.inProxy ? (
             <>
               <td className="proxy-selector">
-                <div className="ml-1 custom-control custom-checkbox">
+                <div className="ms-1 custom-control custom-checkbox">
                   <input
                     id={card.c['Id']}
                     name="print"
@@ -320,7 +320,7 @@ function DeckCryptTable(props) {
                     </>
                   ) : (
                     <td className="quantity-no-buttons px-1">
-                      {card.q ? card.q : <div className="transparent">0</div>}
+                      {card.q ? card.q : null}
                     </td>
                   )}
                 </>
@@ -364,7 +364,7 @@ function DeckCryptTable(props) {
           )}
           {isWide ? (
             <>
-              <td className="title pr-2" onClick={() => handleClick()}>
+              <td className="title pe-2" onClick={() => handleClick()}>
                 <ResultCryptTitle value={card.c['Title']} />
               </td>
               <td className="clan" onClick={() => handleClick()}>

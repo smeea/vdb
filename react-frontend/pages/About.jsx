@@ -171,7 +171,7 @@ function About(props) {
               <ul className="no-bullets">
                 <li>
                   <div className="d-flex align-items-center">
-                    <div className="icon pr-2">
+                    <div className="icon pe-2">
                       <Globe2 />
                     </div>
                     <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78924-vdb-online-card-search-deck-building-tool">
@@ -181,7 +181,7 @@ function About(props) {
                 </li>
                 <li>
                   <div className="d-flex align-items-center">
-                    <div className="icon pr-2">
+                    <div className="icon pe-2">
                       <Github />
                     </div>
                     <a href="https://github.com/smeea/vdb">
@@ -191,7 +191,7 @@ function About(props) {
                 </li>
                 <li>
                   <div className="d-flex align-items-center">
-                    <div className="icon pr-2">
+                    <div className="icon pe-2">
                       <EnvelopeFill />
                     </div>
                     <a href="mailto:smeea@riseup.net">smeea@riseup.net</a>
@@ -199,7 +199,7 @@ function About(props) {
                 </li>
                 <li>
                   <div className="d-flex align-items-center">
-                    <div className="icon pr-2">
+                    <div className="icon pe-2">
                       <Telegram />
                     </div>
                     <a href="https://t.me/smeea">@smeea</a>
@@ -207,7 +207,7 @@ function About(props) {
                 </li>
                 <li>
                   <div className="d-flex align-items-center">
-                    <div className="icon pr-2">
+                    <div className="icon pe-2">
                       <Discord />
                     </div>
                     <a href="https://discord.com/users/264725500226830336">

@@ -116,7 +116,7 @@ function DeckLibraryTable(props) {
           {props.inProxy ? (
             <>
               <td className="proxy-selector">
-                <div className="ml-1 custom-control custom-checkbox">
+                <div className="ms-1 custom-control custom-checkbox">
                   <input
                     id={card.c['Id']}
                     name="print"
@@ -320,7 +320,7 @@ function DeckLibraryTable(props) {
                     </>
                   ) : (
                     <td className="quantity-no-buttons px-1">
-                      {card.q ? card.q : <div className="transparent">0</div>}
+                      {card.q ? card.q : null}
                     </td>
                   )}
                 </>
@@ -332,12 +332,12 @@ function DeckLibraryTable(props) {
               placement={props.placement ? props.placement : 'right'}
               overlay={<CardPopover card={card.c} />}
             >
-              <td className="name pl-3 pr-2" onClick={() => handleClick()}>
+              <td className="name ps-3 pe-2" onClick={() => handleClick()}>
                 <ResultLibraryName card={card.c} />
               </td>
             </OverlayTrigger>
           ) : (
-            <td className="name pl-3 pr-2" onClick={() => handleClick()}>
+            <td className="name ps-3 pe-2" onClick={() => handleClick()}>
               <ResultLibraryName card={card.c} />
             </td>
           )}

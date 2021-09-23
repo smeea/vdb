@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
+import X from '../../assets/images/icons/x.svg';
 import ArrowRepeat from '../../assets/images/icons/arrow-repeat.svg';
 import ResultCryptModal from './ResultCryptModal.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
@@ -183,15 +183,17 @@ function DeckDrawModal(props) {
       dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
       <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 pl-2 pr-3' : 'pt-3 pb-1 px-4'}
-        closeButton
+        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
       >
         <h5>Deck Draw</h5>
+        <Button variant="outline-secondary" onClick={props.handleClose}>
+          <X width="32" height="32" viewBox="0 0 16 16" />
+        </Button>
       </Modal.Header>
       <Modal.Body className="p-0">
         <Container fluid>
           <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
-            <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
+            <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
               <div>
                 <div className="d-flex justify-content-between title-line">
                   <div className="d-flex align-items-center px-2">
@@ -203,12 +205,12 @@ function DeckDrawModal(props) {
                     </b>
                   </div>
                   <div className="d-flex">
-                    <div className="d-flex align-items-center pr-2">
+                    <div className="d-flex align-items-center pe-2">
                       <b>{props.initialTransfers}t</b>
                     </div>
-                    <div className="pr-1">
+                    <div className="pe-1">
                       <Button
-                        variant="outline-secondary"
+                        variant="primary"
                         onClick={() => props.handleCryptHandSize(-1)}
                         disabled={props.drawedCrypt.length < 1}
                       >
@@ -216,7 +218,7 @@ function DeckDrawModal(props) {
                       </Button>
                     </div>
                     <Button
-                      variant="outline-secondary"
+                      variant="primary"
                       onClick={props.handleReDrawCrypt}
                       disabled={props.cryptTotal < 4}
                     >
@@ -224,9 +226,9 @@ function DeckDrawModal(props) {
                         <ArrowRepeat />
                       </span>
                     </Button>
-                    <div className="pl-1">
+                    <div className="ps-1">
                       <Button
-                        variant="outline-secondary"
+                        variant="primary"
                         onClick={() => props.handleCryptHandSize(1)}
                         disabled={props.restCrypt.length < 1}
                       >
@@ -251,7 +253,7 @@ function DeckDrawModal(props) {
                 />
               </div>
             </Col>
-            <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4 pt-4 pt-md-0">
+            <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4 pt-4 pt-md-0">
               <div className="d-flex justify-content-between title-line">
                 <div className="d-flex align-items-center px-2">
                   <b>Hand</b>
@@ -262,9 +264,9 @@ function DeckDrawModal(props) {
                   </b>
                 </div>
                 <div className="d-flex">
-                  <div className="pr-1">
+                  <div className="pe-1">
                     <Button
-                      variant="outline-secondary"
+                      variant="primary"
                       onClick={() => props.handleLibraryHandSize(-1)}
                       disabled={props.drawedLibrary.length < 1}
                     >
@@ -272,15 +274,15 @@ function DeckDrawModal(props) {
                     </Button>
                   </div>
                   <Button
-                    variant="outline-secondary"
+                    variant="primary"
                     onClick={props.handleReDrawLibrary}
                     disabled={props.libraryTotal < 7}
                   >
                     <ArrowRepeat />
                   </Button>
-                  <div className="pl-1">
+                  <div className="ps-1">
                     <Button
-                      variant="outline-secondary"
+                      variant="primary"
                       onClick={() => props.handleLibraryHandSize(1)}
                       disabled={props.restLibrary.length < 1}
                     >
@@ -304,7 +306,7 @@ function DeckDrawModal(props) {
           </Row>
           {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) && (
             <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
-              <Col xs={12} md={7} className="px-0 pl-lg-4 pr-lg-3">
+              <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
                 {props.burnedCrypt.length > 0 && (
                   <div className="pt-4 pt-md-0">
                     <div className="d-flex justify-content-between title-line">
@@ -315,11 +317,11 @@ function DeckDrawModal(props) {
                         <b>{props.burnedCrypt.length}</b>
                       </div>
                       <div
-                        className="d-flex align-items-center pr-3"
+                        className="d-flex align-items-center pe-3"
                         title="Total Capacity"
                       >
                         <img
-                          className="capacity-image-results pr-1"
+                          className="capacity-image-results pe-1"
                           src={process.env.ROOT_URL + 'images/misc/capX.png'}
                         />
                         <b>{props.burnedCapacityTotal}</b>
@@ -338,7 +340,7 @@ function DeckDrawModal(props) {
                   </div>
                 )}
               </Col>
-              <Col xs={12} md={5} className="px-0 pl-lg-3 pr-lg-4">
+              <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
                 {props.burnedLibrary.length > 0 && (
                   <div className="pt-4 pt-md-0">
                     <div className="d-flex justify-content-between title-line">
@@ -350,11 +352,11 @@ function DeckDrawModal(props) {
                       </div>
                       <div className="d-flex">
                         <div
-                          className="d-flex align-items-center pr-3"
+                          className="d-flex align-items-center pe-3"
                           title="Total Blood Cost"
                         >
                           <img
-                            className="cost-blood-image-results pb-1 pr-1"
+                            className="cost-blood-image-results pb-1 pe-1"
                             src={
                               process.env.ROOT_URL + 'images/misc/bloodX.png'
                             }
@@ -362,11 +364,11 @@ function DeckDrawModal(props) {
                           <b>{props.burnedBloodTotal}</b>
                         </div>
                         <div
-                          className="d-flex align-items-center pr-3"
+                          className="d-flex align-items-center pe-3"
                           title="Total Pool Cost"
                         >
                           <img
-                            className="cost-pool-image-results py-1 pr-1"
+                            className="cost-pool-image-results py-1 pe-1"
                             src={process.env.ROOT_URL + 'images/misc/poolX.png'}
                           />
                           <b>{props.burnedPoolTotal}</b>

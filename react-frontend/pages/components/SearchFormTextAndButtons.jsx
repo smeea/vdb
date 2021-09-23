@@ -18,18 +18,16 @@ function SearchFormTextAndButtons(props) {
         value={props.value}
         onChange={props.onChange}
       />
-      <InputGroup.Append>
-        {!isMobile && props.preresults > props.showLimit && (
-          <Button variant="outline-secondary" onClick={props.handleShowResults}>
-            <Check2 /> FOUND {props.preresults}
-          </Button>
-        )}
-        {!isMobile && (
-          <Button variant="outline-secondary" onClick={props.handleClearButton}>
-            <X />
-          </Button>
-        )}
-      </InputGroup.Append>
+      {!isMobile && props.preresults > props.showLimit && (
+        <Button variant="primary" onClick={props.handleShowResults}>
+          <Check2 /> FOUND {props.preresults}
+        </Button>
+      )}
+      {!isMobile && (
+        <Button variant="primary" onClick={props.handleClearButton}>
+          <X />
+        </Button>
+      )}
     </InputGroup>
   );
 }

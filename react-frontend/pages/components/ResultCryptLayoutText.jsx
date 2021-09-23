@@ -23,7 +23,7 @@ function ResultCryptLayoutText(props) {
           <div>
             <ResultCryptClan value={props.card['Clan']} />
           </div>
-          <div className="name pl-2">
+          <div className="name ps-2">
             {props.card['Banned'] ? (
               <strike>
                 <b>{props.card['Name']}</b>
@@ -32,7 +32,7 @@ function ResultCryptLayoutText(props) {
               <b>{props.card['Name']}</b>
             )}
             {props.card['Adv'][0] && (
-              <span className="pl-1">
+              <span className="ps-1">
                 <img
                   className="advanced-image-results"
                   src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
@@ -41,14 +41,14 @@ function ResultCryptLayoutText(props) {
               </span>
             )}
             {props.card['Banned'] && (
-              <span className="pl-1">
+              <span className="ps-1">
                 <Hammer />
               </span>
             )}
             {props.card['Adv'][1] &&
               (isMobile ? (
                 !props.card['Adv'][0] && (
-                  <span className="adv pl-2">
+                  <span className="adv ps-2">
                     [has{' '}
                     <img
                       className="advanced-image-results"
@@ -65,14 +65,14 @@ function ResultCryptLayoutText(props) {
                     <CardPopover card={cryptCardBase[props.card['Adv'][1]]} />
                   }
                 >
-                  <span className="adv pl-2">
+                  <span className="adv ps-2">
                     [see {`${props.card['Adv'][0] ? 'Base' : 'Adv'}`}]
                   </span>
                 </OverlayTrigger>
               ))}
           </div>
         </div>
-        <div className="pl-2">
+        <div className="ps-2">
           <ResultCryptGroup value={props.card['Group']} />
         </div>
       </div>

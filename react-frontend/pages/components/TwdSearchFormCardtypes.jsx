@@ -110,7 +110,7 @@ function TwdSearchFormCardtypes(props) {
       {
         value: 'any',
         name: i[0].toLowerCase(),
-        label: <div className="pl-4">ANY</div>,
+        label: <div className="ps-4">ANY</div>,
       },
     ];
 
@@ -126,7 +126,7 @@ function TwdSearchFormCardtypes(props) {
       counter += 1;
       formsLeft.push(
         <Row className="py-1 mx-0 align-items-center" key={index}>
-          <Col xs={2} className="d-flex pl-2 justify-content-center">
+          <Col xs={2} className="d-flex ps-2 justify-content-center">
             <label className="h7 mb-0">
               <ResultLibraryType cardtype={i[0]} />
             </label>
@@ -148,7 +148,7 @@ function TwdSearchFormCardtypes(props) {
     } else {
       formsRight.push(
         <Row className="py-1 mx-0 align-items-center" key={index}>
-          <Col xs={2} className="d-flex pl-2 justify-content-center">
+          <Col xs={2} className="d-flex ps-2 justify-content-center">
             <label className="h7 mb-0">
               <ResultLibraryType cardtype={i[0]} />
             </label>
@@ -173,10 +173,10 @@ function TwdSearchFormCardtypes(props) {
   return (
     <>
       <Row className="mx-0">
-        <Col xs={6} className="d-inline pl-0 pr-2">
+        <Col xs={6} className="d-inline ps-0 pe-2">
           {formsLeft}
         </Col>
-        <Col xs={6} className="d-inline pl-2 pr-0">
+        <Col xs={6} className="d-inline ps-2 pe-0">
           {formsRight}
         </Col>
       </Row>

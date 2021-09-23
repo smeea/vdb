@@ -115,15 +115,15 @@ function SearchLibraryFormDiscipline(props) {
 
   return (
     <>
-      <Row className="py-1 pl-1 mx-0 align-items-center">
+      <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="px-0">
           <label className="h6 mb-0">Discipline:</label>
           {props.value.discipline[0] !== 'any' && (
-            <div className="d-flex justify-content-end pr-1">
+            <div className="d-flex justify-content-end pe-1">
               {props.value.discipline.length == 1 ? (
                 <Button
                   className="add-form"
-                  variant="outline-secondary"
+                  variant="primary"
                   onClick={() => addForm()}
                 >
                   <Plus />
@@ -131,7 +131,7 @@ function SearchLibraryFormDiscipline(props) {
               ) : (
                 <Button
                   className="add-form"
-                  variant="outline-secondary"
+                  variant="primary"
                   onClick={() => delForm(0)}
                 >
                   <Dash />

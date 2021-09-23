@@ -85,15 +85,15 @@ function SearchLibraryFormType(props) {
 
   return (
     <>
-      <Row className="py-1 pl-1 mx-0 align-items-center">
+      <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex justify-content-between px-0">
           <label className="h6 mb-0">Type:</label>
           {props.value.type[0] !== 'any' && (
-            <div className="d-flex justify-content-end pr-1">
+            <div className="d-flex justify-content-end pe-1">
               {props.value.type.length == 1 ? (
                 <Button
                   className="add-form"
-                  variant="outline-secondary"
+                  variant="primary"
                   onClick={() => addForm()}
                 >
                   <Plus />
@@ -101,7 +101,7 @@ function SearchLibraryFormType(props) {
               ) : (
                 <Button
                   className="add-form"
-                  variant="outline-secondary"
+                  variant="primary"
                   onClick={() => delForm(0)}
                 >
                   <Dash />

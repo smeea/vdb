@@ -178,7 +178,7 @@ function ResultCryptTable(props) {
       <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
           {activeDeck.deckid && addMode && (
-            <td className="quantity-add pr-1">
+            <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card['Id']}
                 deckid={props.activeDeck.deckid}
@@ -205,13 +205,13 @@ function ResultCryptTable(props) {
                   <div
                     className={
                       inInventory < softUsedMax + hardUsedTotal
-                        ? 'd-flex align-items-center justify-content-center quantity px-1 ml-1 inv-miss-full'
-                        : 'd-flex align-items-center justify-content-center quantity px-1 ml-1'
+                        ? 'd-flex align-items-center justify-content-center quantity px-1 ms-1 inv-miss-full'
+                        : 'd-flex align-items-center justify-content-center quantity px-1 ms-1'
                     }
                   >
                     {inInventory > 0 ? (
                       <>
-                        <div className="pr-1 opacity-035">
+                        <div className="pe-1 opacity-035">
                           <ArchiveFill
                             width="14"
                             height="14"
@@ -256,7 +256,7 @@ function ResultCryptTable(props) {
           )}
           {isWide ? (
             <>
-              <td className="title pr-2" onClick={() => handleClick()}>
+              <td className="title pe-2" onClick={() => handleClick()}>
                 <ResultCryptTitle value={card['Title']} />
               </td>
               <td className="clan" onClick={() => handleClick()}>

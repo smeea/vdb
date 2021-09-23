@@ -46,8 +46,8 @@ function SearchFormSet(props) {
         name: 'set',
         label: (
           <div className="d-flex justify-content-between align-items-center">
-            <div className="pr-2">{i.name}</div>
-            <div className="pl-2 small">{i.year}</div>
+            <div className="pe-2">{i.name}</div>
+            <div className="ps-2 small">{i.year}</div>
           </div>
         ),
       });
@@ -72,7 +72,7 @@ function SearchFormSet(props) {
           checked={props.value[i[0]]}
           onChange={(e) => props.onChangeOptions(e)}
         />
-        <label htmlFor={`set-${i[0]}`} className="ml-3 custom-control-label">
+        <label htmlFor={`set-${i[0]}`} className="ms-3 custom-control-label">
           {i[1]}
         </label>
       </div>
@@ -96,7 +96,7 @@ function SearchFormSet(props) {
 
   return (
     <>
-      <Row className="pt-1 pl-1 mx-0 align-items-center">
+      <Row className="pt-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
           <label className="h6 mb-0">Set:</label>
         </Col>
@@ -113,7 +113,7 @@ function SearchFormSet(props) {
           />
         </Col>
       </Row>
-      <Row className="pb-1 pl-1 mx-0 align-items-center">
+      <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">{setOptionsForm}</Col>
       </Row>
     </>
