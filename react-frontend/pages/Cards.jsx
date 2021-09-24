@@ -237,18 +237,10 @@ function Cards(props) {
             {!isMobile && (
               <Col>
                 <Stack gap={1} className="py-3 px-2">
-                  <Button
-                    variant="secondary"
-                    onClick={() => randomCrypt()}
-                    block
-                  >
+                  <Button variant="secondary" onClick={() => randomCrypt()}>
                     <Dice3 /> Crypt
                   </Button>
-                  <Button
-                    variant="secondary"
-                    onClick={() => randomLibrary()}
-                    block
-                  >
+                  <Button variant="secondary" onClick={() => randomLibrary()}>
                     <Dice3 /> Library
                   </Button>
                 </Stack>

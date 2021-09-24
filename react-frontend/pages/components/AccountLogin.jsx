@@ -206,7 +206,7 @@ function AccountLogin(props) {
       {!isMobile ? (
         <div className="d-flex justify-content-center small ms-3 ps-4">
           <OverlayTooltip
-            delay={{ show: 0, hide: 31500 }}
+            delay={{ show: 0, hide: 2000 }}
             placement="bottom"
             text={passwordTooltipText}
           >

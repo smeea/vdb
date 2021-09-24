@@ -616,13 +616,11 @@ function Decks(props) {
         />
       )}
       {showDraw && (
-        <div className="button-block">
-          <DeckDraw
-            setShow={setShowDraw}
-            deck={deckRouter(activeDeck)}
-            setShowFloatingButtons={setShowFloatingButtons}
-          />
-        </div>
+        <DeckDraw
+          setShow={setShowDraw}
+          deck={deckRouter(activeDeck)}
+          setShowFloatingButtons={setShowFloatingButtons}
+        />
       )}
     </Container>
   );

@@ -120,7 +120,6 @@ function TwdResult(props) {
               <Button
                 variant="primary"
                 onClick={() => setShowCounter(showCounter + showCounterStep)}
-                block
               >
                 Show More ({deckCounter - showCounter} left)
               </Button>

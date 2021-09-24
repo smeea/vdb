@@ -10,8 +10,8 @@ function OverlayTooltip(props) {
       delay={props.delay ? props.delay : defaultDelay}
       show={props.show}
       overlay={
-        <Popover className={props.className} content>
-          {props.text}
+        <Popover className={props.className}>
+          <div className="p-2">{props.text}</div>
         </Popover>
       }
     >

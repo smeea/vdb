@@ -17,7 +17,6 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
         className="quantity"
         variant="primary"
         onClick={() => handleChange(id, q - 1)}
-        block
       >
         -
       </Button>
@@ -26,7 +25,6 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
         className="quantity"
         variant="primary"
         onClick={() => handleChange(id, q + 1)}
-        block
       >
         +
       </Button>
