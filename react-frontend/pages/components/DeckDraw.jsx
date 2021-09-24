@@ -95,6 +95,7 @@ function DeckDraw(props) {
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
     props.setShow(false);
+    props.setShowFloatingButtons(true);
   };
 
   const randomTransfers = () => {

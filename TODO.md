@@ -3,6 +3,7 @@
 * Dropdowns full width
 * Button active color
 * Precon KSU clone on backend
+* Deck name unidecode (for adv deck select) and other filters in TWD
 
 # FIX MOBILE
 
