@@ -13892,7 +13892,7 @@
                 "text":"Can use his ability only once per referendum. ",
                 "refs":{
                     "[ANK 20180307-2]":"http://www.vekn.net/forum/rules-questions/76451-ellison-humboldt-and-matteus-flesh-sculptor?start=0#85598",
-                    "[RBK 20181001-11]":"http://www.vekn.net/rulebook/11-special-terms"
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
                 }
             }
         ]
@@ -28445,7 +28445,7 @@
                 "text":"The stolen equipment cannot be used until the next round. ",
                 "refs":{
                     "[LSJ 19980206]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/p_uyqQgE9Ms/86kfy6jI0lUJ",
-                    "[RBK 20181001-645]":"http://www.vekn.net/rulebook#6.4.5.strikeeffects"
+                    "[RBK 20200701-7]":"https://www.vekn.net/rulebook#steal-equipment"
                 }
             }
         ]
@@ -37295,7 +37295,7 @@
                 "text":"Her ability can be used only once per minion phase. ",
                 "refs":{
                     "[ANK 20190207]":"http://www.vekn.net/forum/rules-questions/77344-black-chantry-rulebook-feedback?start=18#93328",
-                    "[RBK 20181001-11]":"http://www.vekn.net/rulebook/11-special-terms"
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
                 }
             }
         ]
@@ -43564,7 +43564,7 @@
                 "text":"Must be unlocked with at least 2 blood to use his ability. ",
                 "refs":{
                     "[ANK 20200508-2]":"http://www.vekn.net/forum/rules-questions/78623-locked-t-j-and-referendum#99791",
-                    "[RBK 20181001-11]":"http://www.vekn.net/rulebook/11-special-terms"
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
                 }
             },
             {
@@ -47212,6 +47212,19 @@
                 "text":"Striga and Maleficia are not vampire traits. ",
                 "refs":{
                     "[LSJ 20100226]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/JnycCGrNQmY/CCqxwTVXpbEJ"
+                }
+            },
+            {
+                "text":"When meeting a requirement, the controller can choose how he meets it (eg. he can play {Anarch Secession} as a Prince of any city, even a made-up one). ",
+                "refs":{
+                    "[PIB 20150306]":"http://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=12#69696",
+                    "[PIB 20150307]":"http://www.vekn.net/forum/rules-questions/69627-vlad-tepes-regent?start=18#69732"
+                }
+            },
+            {
+                "text":"He can meet a given generic requirement (eg. Prince) only once, however he decides to meet it (eg. city choice). ",
+                "refs":{
+                    "[ANK 20210812]":"https://www.vekn.net/forum/rules-questions/79278-vidal-jarbeaux-cards-requiring-prince#102892"
                 }
             }
         ]

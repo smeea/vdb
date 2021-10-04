@@ -3932,7 +3932,7 @@
                 "text":"[for] If played by an ally, the ally is burned instead of going to torpor. ",
                 "refs":{
                     "[ANK 20170412]":"http://www.vekn.net/forum/rules-questions/75723-pressing-flesh-ashes-to-ashes#81448",
-                    "[RBK 20181001-163]":"http://www.vekn.net/rulebook#1.6.3.minioncards"
+                    "[RBK 20200701-6]":"https://www.vekn.net/rulebook#allies"
                 }
             },
             {
@@ -4722,7 +4722,7 @@
                 "text":"The bearer (if he unlocks normally) unlocks at the beginning of the unlock phase, before this effect can be used. ",
                 "refs":{
                     "[PIB 20151009]":"http://www.vekn.net/forum/rules-questions/73577-baleful-doll#73580",
-                    "[RBK 20181001-4]":"http://www.vekn.net/rulebook/4-unlock-phase"
+                    "[RBK 20200701-1]":"https://www.vekn.net/rulebook#unlock-phase"
                 }
             }
         ],
@@ -6651,7 +6651,14 @@
         "Artist":[
             "Leif Jones"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Only a controlled vampire can be burned from play. Uncontrolled and contested vampires do not qualify. ",
+                "refs":{
+                    "[ANK 20210813]":"https://www.vekn.net/forum/rules-questions/79279-might-of-the-camarilla-burned-from-play#102903"
+                }
+            }
+        ],
         "ASCII Name":"Blessed Resilience"
     },
     "100182":{
@@ -10998,7 +11005,7 @@
                 "text":"The effect to burn a hostage counter can be done only once per turn. ",
                 "refs":{
                     "[ANK 20200729]":"http://www.vekn.net/forum/rules-questions/78776-is-carver-s-meat-packing-and-storage-burn-hostage-counter-a-during-x-do-y#100448",
-                    "[RBK 20181001-11]":"http://www.vekn.net/rulebook/11-special-terms"
+                    "[RBK 20200701-4]":"https://www.vekn.net/rulebook#wording-templates"
                 }
             }
         ],
@@ -15715,7 +15722,26 @@
         "Artist":[
             "Steve Prescott"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Needs not be unlocked to let you look at a card. ",
+                "refs":{
+                    "[LSJ 20001102]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LlPyLJjLdx0/m/mXimdmP14GEJ"
+                }
+            },
+            {
+                "text":"Multiple Courier can look at and discard the top library card in succession. ",
+                "refs":{
+                    "[LSJ 20001102]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LlPyLJjLdx0/m/mXimdmP14GEJ"
+                }
+            },
+            {
+                "text":"One Courier only lets you look at the top library card once per bleed. ",
+                "refs":{
+                    "[LSJ 20001102-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/LlPyLJjLdx0/m/eVTwHPkEgOMJ"
+                }
+            }
+        ],
         "ASCII Name":"Courier"
     },
     "100435":{
@@ -19201,7 +19227,20 @@
         "Artist":[
             "Avery Butterworth"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cannot be used to cancel an action card after using a reaction to \"unlock and attempt to block\". ",
+                "refs":{
+                    "[LSJ 20021011]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9WWIzxek9Nc/PlIwI11sNpkJ"
+                }
+            },
+            {
+                "text":"If used to cancel a card that had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Determine"
     },
     "100535":{
@@ -33383,10 +33422,11 @@
                 }
             },
             {
-                "text":"[val], [VAL] If another Methuselah is the target, he must declare whether he attempts or declines to block before Hide the Heart can be played. ",
+                "text":"[val], [VAL] Sequencing applies. For example, if another Methuselah is targeted by the action, they must declare if they attempt or decline to block before you can play Hide the Heart. ",
                 "refs":{
                     "[LSJ 20100507]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/vJQTPYtp-Eg/m/6_nkxd28-v8J",
-                    "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626"
+                    "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
+                    "[RBK 20200701-2]":"https://www.vekn.net/rulebook#sequencing"
                 }
             }
         ],
@@ -46688,10 +46728,10 @@
         ],
         "Rulings":[
             {
-                "text":"\"loses the benefit\" means he gets no vote, is note considered titled, and yields the title immediately if it would contest. ",
+                "text":"\"loses the benefit\" means he gets no vote, is not considered titled, and yields the title immediately if it would contest. ",
                 "refs":{
                     "[LSJ 20080602]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/Y7CLzywq1Lk/m/LXmN17pA7_UJ",
-                    "[RBK 20181001-10]":"http://www.vekn.net/rulebook/10-vampire-sects"
+                    "[RBK 20200701-3]":"https://www.vekn.net/rulebook/6-vampire-sects"
                 }
             },
             {
@@ -47903,7 +47943,7 @@
         ],
         "Rulings":[
             {
-                "text":"[SER][PRE] Can be used to cancel an action modifier player \"after the action/referendum is successful\" (eg. {Voter Captivatoin} or {Freak Drive}). ",
+                "text":"[SER][PRE] Can be used to cancel an action modifier player \"after the action/referendum is successful\" (eg. {Voter Captivation} or {Freak Drive}). ",
                 "refs":{
                     "[ANK 20180909]":"http://www.vekn.net/forum/rules-questions/76987-ophidian-gaze-and-post-referendum-action-modifiers#90501"
                 }
@@ -48221,23 +48261,22 @@
         ],
         "Rulings":[
             {
-                "text":"[OBT] If the combat continues or a new combat begins, no damage is done. ",
+                "text":"[OBT] If the combat continues or a new combat begins, no blood is burned. ",
                 "refs":{
                     "[RTR 20020501]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/M1snoR2msbQ/RFwCmX3anDkJ"
                 }
             },
             {
-                "text":"[OBT] If the strike is dodged, no damage is done. ",
+                "text":"[OBT] If the strike is dodged, no blood is burned. ",
                 "refs":{
                     "[LSJ 19980526]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/tRTwM9wYaVI/jdC09vmHk3kJ",
                     "[RTR 20041202]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WUWh7AdooDU/vojisZMCSnsJ"
                 }
             },
             {
-                "text":"[OBT] Is a damage dealing strike and can be modified by other effects like {Target Vitals} or {Dam the Heart's River}, even if they are done after combat. ",
+                "text":"[OBT] Does not inflict damage (eg. does not benefit from {Target Vitals}). ",
                 "refs":{
-                    "[ANK 20170111]":"http://www.vekn.net/forum/rules-questions/72635-dam-the-heart-s-river-and-catatonic-fear?start=6#80117",
-                    "[PIB 20130319]":"http://www.vekn.net/forum/rules-questions/46164-catatonic-fear-and-loving-agony#46168"
+                    "[LSJ 20080226]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NAfcSQEiLXY/m/GyMO2byB0AkJ"
                 }
             }
         ],
@@ -51382,7 +51421,32 @@
         "Artist":[
             "Eric Deschamps"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cannot be played during combat. ",
+                "refs":{
+                    "[LSJ 20080618]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9FAkwIsuYZc/m/gCoYa59TEGIJ"
+                }
+            },
+            {
+                "text":"Cannot be used to cancel an action card after using a reaction to \"unlock and attempt to block\". ",
+                "refs":{
+                    "[LSJ 20021011]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9WWIzxek9Nc/PlIwI11sNpkJ"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            },
+            {
+                "text":"Other reaction cards (eg. wake effects) cannot be used as there is no action. ",
+                "refs":{
+                    "[PIB 20120808]":"http://www.vekn.net/forum/rules-questions/34265-rules-tweak-suggestion-rewind-time-et-al?start=12#34448"
+                }
+            }
+        ],
         "ASCII Name":"Power of All"
     },
     "101429":{
@@ -56992,6 +57056,12 @@
         ],
         "Rulings":[
             {
+                "text":"Applies a pool gain then a pool loss. {Poison Pill} ignores the gain and only takes the loss into account, a Methuselah cannot withdraw even if the total was positive. ",
+                "refs":{
+                    "[ANK 20180813]":"http://www.vekn.net/forum/rules-questions/76917-poison-pill-ancient-influence#89940"
+                }
+            },
+            {
                 "text":"If multiple ousts happen, players whose prey gets ousted get a victory point, even if they are being ousted themselves. Only the surviving ones get 6 pool from the oust of their prey (not of their grand-prey). ",
                 "refs":{
                     "[LSJ 20000309]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/ykAzsCzPkvg/bVefVZeCoQwJ"
@@ -58419,6 +58489,12 @@
                 "text":"[TEM] Other reaction cards (eg. wake effects) cannot be used as there is no action. ",
                 "refs":{
                     "[PIB 20120808]":"http://www.vekn.net/forum/rules-questions/34265-rules-tweak-suggestion-rewind-time-et-al?start=12#34448"
+                }
+            },
+            {
+                "text":"[TEM] Cannot be played during combat. ",
+                "refs":{
+                    "[LSJ 20080618]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9FAkwIsuYZc/m/gCoYa59TEGIJ"
                 }
             }
         ],
@@ -68273,7 +68349,7 @@
                 "text":"If used to cancel a Trifle, the target does not get an extra Master Phase Action from the canceled Trifle. ",
                 "refs":{
                     "[LSJ 20090126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/3Cd-DNfT7yQ/m/-BfYOkP1OUUJ",
-                    "[RBK 20181001-162]":"http://www.vekn.net/rulebook#1.6.2.mastercards"
+                    "[RBK 20200701-5]":"https://www.vekn.net/rulebook#trifle"
                 }
             }
         ],
@@ -69773,7 +69849,7 @@
         ],
         "Rulings":[
             {
-                "text":"Is played during the Strike phase (6.4.3) even if you commit to a strike in the Determine Range phase (6.4.2) (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
+                "text":"Is played during the Strike phase even if you commit to a strike in the Determine Range phase (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
                 "refs":{
                     "[LSJ 20080409]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/jrN1Pc_Quk0/XwWAWfq_KRIJ"
                 }
@@ -69810,7 +69886,7 @@
         ],
         "Rulings":[
             {
-                "text":"Is played during the Strike phase (6.4.3) even if you commit to a strike in the Determine Range phase (6.4.2) (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
+                "text":"Is played during the Strike phase even if you commit to a strike in the Determine Range phase (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
                 "refs":{
                     "[LSJ 20080409]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/jrN1Pc_Quk0/XwWAWfq_KRIJ"
                 }
@@ -69860,7 +69936,7 @@
         ],
         "Rulings":[
             {
-                "text":"Is played during the Strike phase (6.4.3) even if you commit to a strike in the Determine Range phase (6.4.2) (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
+                "text":"Is played during the Strike phase even if you commit to a strike in the Determine Range phase (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
                 "refs":{
                     "[LSJ 20080409]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/jrN1Pc_Quk0/XwWAWfq_KRIJ"
                 }
@@ -69900,7 +69976,7 @@
         ],
         "Rulings":[
             {
-                "text":"Is played during the Strike phase (6.4.3) even if you commit to a strike in the Determine Range phase (6.4.2) (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
+                "text":"Is played during the Strike phase even if you commit to a strike in the Determine Range phase (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
                 "refs":{
                     "[LSJ 20080409]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/jrN1Pc_Quk0/XwWAWfq_KRIJ"
                 }
@@ -69954,7 +70030,7 @@
         ],
         "Rulings":[
             {
-                "text":"Is played during the Strike phase (6.4.3) even if you commit to a strike in the Determine Range phase (6.4.2) (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
+                "text":"Is played during the Strike phase even if you commit to a strike in the Determine Range phase (eg. {Thrown Gate}). Cannot be played if the strike cannot be chosen anymore during the Strike phase (eg. {Immortal Grapple}). ",
                 "refs":{
                     "[LSJ 20080409]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/jrN1Pc_Quk0/XwWAWfq_KRIJ"
                 }
@@ -72857,7 +72933,32 @@
         "Artist":[
             "Mathias Kollros"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cannot be played during combat. ",
+                "refs":{
+                    "[LSJ 20080618]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9FAkwIsuYZc/m/gCoYa59TEGIJ"
+                }
+            },
+            {
+                "text":"Cannot be used to cancel an action card after using a reaction to \"unlock and attempt to block\". ",
+                "refs":{
+                    "[LSJ 20021011]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9WWIzxek9Nc/PlIwI11sNpkJ"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            },
+            {
+                "text":"Other reaction cards (eg. wake effects) cannot be used as there is no action. ",
+                "refs":{
+                    "[PIB 20120808]":"http://www.vekn.net/forum/rules-questions/34265-rules-tweak-suggestion-rewind-time-et-al?start=12#34448"
+                }
+            }
+        ],
         "ASCII Name":"Treat the Sick Mind"
     },
     "102017":{
@@ -77663,7 +77764,7 @@
                 "refs":{
                     "[ANK 20170124]":"http://www.vekn.net/forum/rules-questions/75556-vessel-wash-and-mpa#80362",
                     "[LSJ 20090126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/3Cd-DNfT7yQ/m/-BfYOkP1OUUJ",
-                    "[RBK 20181001-162]":"http://www.vekn.net/rulebook#1.6.2.mastercards"
+                    "[RBK 20200701-5]":"https://www.vekn.net/rulebook#trifle"
                 }
             },
             {

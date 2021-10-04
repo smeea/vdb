@@ -246,7 +246,6 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
             'Requirement': card['Requirement'],
             'Banned': card['Banned'],
             'Artist': card['Artist'],
-            'Rulings': card['Rulings'],
             'ASCII Name': card['ASCII Name'],
             'Twd': card['Twd'],
         }
