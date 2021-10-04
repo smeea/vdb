@@ -58,9 +58,10 @@ function Navigation(props) {
       variant="dark"
     >
       <Nav className="container justify-content-between px-0">
-        <div className="d-flex align-items-center pe-1">
-          {isMobile && <NavMobileMenu />}
-          {!isMobile && (
+        <div className="d-flex align-items-center">
+          {isMobile ? (
+            <NavMobileMenu />
+          ) : (
             <>
               <LanguageSelect />
               <div className="white-font px-3" onClick={() => toggleTheme()}>
@@ -94,8 +95,8 @@ function Navigation(props) {
                 <div
                   className={
                     inventoryMode
-                      ? 'd-inline ps-1 white-font'
-                      : 'd-inline ps-1 gray-font'
+                      ? 'd-inline ps-2 white-font'
+                      : 'd-inline ps-2 gray-font'
                   }
                 >
                   Inventory Mode
@@ -118,7 +119,6 @@ function Navigation(props) {
             TWD
           </NavLink>
           <NavLink to="/inventory" className="nav-link pe-2 ps-1">
-            {/* Inventory */}
             {isMobile ? 'Inv' : 'Inventory'}
           </NavLink>
           <NavLink to={decksUrl} className="nav-link pe-2 ps-1">

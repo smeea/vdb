@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Form, Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import GiftFill from '../../assets/images/icons/gift-fill.svg';
 import setsAndPrecons from './forms_data/setsAndPrecons.json';
@@ -98,20 +98,16 @@ function SearchFormPrecon(props) {
 
   const preconOptionsForm = preconOptions.map((i, index) => {
     return (
-      <div key={index} className="custom-control custom-checkbox">
-        <input
-          id={`precon-${i[0]}`}
-          value={i[0]}
-          name="precon"
-          className="custom-control-input"
-          type="checkbox"
-          checked={props.value[i[0]]}
-          onChange={(e) => props.onChangeOptions(e)}
-        />
-        <label htmlFor={`precon-${i[0]}`} className="ms-3 custom-control-label">
-          {i[1]}
-        </label>
-      </div>
+      <Form.Check
+        key={index}
+        name="precon"
+        value={i[0]}
+        type="checkbox"
+        id={`precon-${i[0]}`}
+        label={i[1]}
+        checked={props.value[i[0]]}
+        onChange={(e) => props.onChangeOptions(e)}
+      />
     );
   });
 

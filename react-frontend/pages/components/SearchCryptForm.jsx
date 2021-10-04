@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { Spinner } from 'react-bootstrap';
+import { Form, Spinner } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
@@ -245,7 +245,7 @@ function SearchCryptForm(props) {
   }, [preresults]);
 
   return (
-    <form onSubmit={handleSubmitButton}>
+    <Form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
         value={cryptFormState.text}
         onChange={handleTextChange}
@@ -255,18 +255,12 @@ function SearchCryptForm(props) {
         showLimit={showLimit}
       />
       {(inventoryMode || (isMobile && isInventory)) && (
-        <div className="custom-control custom-checkbox">
-          <input
-            id="hideMissing"
-            className="custom-control-input"
-            type="checkbox"
-            checked={hideMissing}
-            onChange={() => setHideMissing(!hideMissing)}
-          />
-          <label htmlFor="hideMissing" className="custom-control-label">
-            Search in Inventory
-          </label>
-        </div>
+        <Form.Check
+          type="checkbox"
+          id="hideMissing"
+          label="Search in Inventory"
+          onChange={() => setHideMissing(!hideMissing)}
+        />
       )}
       <SearchCryptFormDisciplines
         value={cryptFormState.disciplines}
@@ -351,7 +345,7 @@ function SearchCryptForm(props) {
           </div>
         </>
       )}
-    </form>
+    </Form>
   );
 }
 

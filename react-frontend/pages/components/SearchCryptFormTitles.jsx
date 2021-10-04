@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Form, Row, Col } from 'react-bootstrap';
 
 function SearchCryptFormTitles(props) {
   const titlesLeft = [
@@ -24,39 +24,31 @@ function SearchCryptFormTitles(props) {
 
   const titlesLeftforms = titlesLeft.map((i, index) => {
     return (
-      <div key={index} className="custom-control custom-checkbox">
-        <input
-          name="titles"
-          id={`title-${i[0]}`}
-          value={i[0]}
-          className="custom-control-input"
-          type="checkbox"
-          checked={props.value[i[0]]}
-          onChange={(e) => props.onChange(e)}
-        />
-        <label htmlFor={`title-${i[0]}`} className="custom-control-label">
-          {i[1]}
-        </label>
-      </div>
+      <Form.Check
+        key={index}
+        name="titles"
+        value={i[0]}
+        type="checkbox"
+        id={`title-${i[0]}`}
+        label={i[1]}
+        checked={props.value[i[0]]}
+        onChange={(e) => props.onChange(e)}
+      />
     );
   });
 
   const titlesRightforms = titlesRight.map((i, index) => {
     return (
-      <div key={index} className="custom-control custom-checkbox">
-        <input
-          name="titles"
-          id={`title-${i[0]}`}
-          value={i[0]}
-          className="custom-control-input"
-          type="checkbox"
-          checked={props.value[i[0]]}
-          onChange={(e) => props.onChange(e)}
-        />
-        <label htmlFor={`title-${i[0]}`} className="custom-control-label">
-          {i[1]}
-        </label>
-      </div>
+      <Form.Check
+        key={index}
+        name="titles"
+        value={i[0]}
+        type="checkbox"
+        id={`title-${i[0]}`}
+        label={i[1]}
+        checked={props.value[i[0]]}
+        onChange={(e) => props.onChange(e)}
+      />
     );
   });
 

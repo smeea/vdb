@@ -45,9 +45,15 @@ a:hover, span.link-like:hover
 .title, .adv
   color: var(--fg-secondary)
 
-h5, .h5, h6, .h6
+h5, h6
   font-weight: bold
   color: var(--fg-secondary)
+
+.small
+  font-size: small
+
+code
+  color: var(--fg-primary)
 
 div.modal-content .modal-header
   border-bottom: none
@@ -702,6 +708,9 @@ ul.no-bullets
 ul.no-bullets .icon
   color: var(--fg-secondary)
 
+ul.no-bullets li
+  padding-left: 0
+
 ul.rulings
   margin: 0
   padding-left: 1.5em
@@ -1031,10 +1040,6 @@ a:link, a:visited
   text-decoration: none
 a:hover
   text-decoration: underline
-
-@media (max-width: 576px)
-  a.nav-link
-    font-size: large
 
 a.nav-link:hover
   text-decoration: none

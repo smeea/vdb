@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Form, Row, Col } from 'react-bootstrap';
 
 function SearchLibraryFormTraits(props) {
   const traitsLeft = [
@@ -32,39 +32,31 @@ function SearchLibraryFormTraits(props) {
 
   const traitsLeftforms = traitsLeft.map((i, index) => {
     return (
-      <div key={index} className="custom-control custom-checkbox">
-        <input
-          name="traits"
-          id={`traits-${i[0]}`}
-          value={i[0]}
-          className="custom-control-input"
-          type="checkbox"
-          checked={props.value[i[0]]}
-          onChange={(e) => props.onChange(e)}
-        />
-        <label htmlFor={`traits-${i[0]}`} className="custom-control-label">
-          {i[1]}
-        </label>
-      </div>
+      <Form.Check
+        key={index}
+        name="traits"
+        value={i[0]}
+        type="checkbox"
+        checked={props.value[i[0]]}
+        id={`traits-${i[0]}`}
+        label={i[1]}
+        onChange={(e) => props.onChange(e)}
+      />
     );
   });
 
   const traitsRightforms = traitsRight.map((i, index) => {
     return (
-      <div key={index} className="custom-control custom-checkbox">
-        <input
-          name="traits"
-          id={`traits-${i[0]}`}
-          value={i[0]}
-          className="custom-control-input"
-          type="checkbox"
-          checked={props.value[i[0]]}
-          onChange={(e) => props.onChange(e)}
-        />
-        <label htmlFor={`traits-${i[0]}`} className="custom-control-label">
-          {i[1]}
-        </label>
-      </div>
+      <Form.Check
+        key={index}
+        name="traits"
+        value={i[0]}
+        type="checkbox"
+        checked={props.value[i[0]]}
+        id={`traits-${i[0]}`}
+        label={i[1]}
+        onChange={(e) => props.onChange(e)}
+      />
     );
   });
 

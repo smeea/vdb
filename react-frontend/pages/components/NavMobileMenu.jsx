@@ -75,7 +75,7 @@ const NavMobileMenu = (props) => {
                   }}
                 >
                   {isDarkTheme ? <MoonFill /> : <SunFill />}
-                  <div className="ps-2">Theme</div>
+                  <div className="ps-2">Switch Theme</div>
                 </div>
                 <div
                   className="d-flex align-items-center px-2 py-1"

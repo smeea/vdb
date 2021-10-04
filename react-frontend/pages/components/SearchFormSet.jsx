@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Form, Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import setsAndPrecons from './forms_data/setsAndPrecons.json';
 import AppContext from '../../context/AppContext.js';
@@ -62,20 +62,16 @@ function SearchFormSet(props) {
 
   const setOptionsForm = setOptions.map((i, index) => {
     return (
-      <div key={index} className="custom-control custom-checkbox">
-        <input
-          id={`set-${i[0]}`}
-          value={i[0]}
-          name="set"
-          className="custom-control-input"
-          type="checkbox"
-          checked={props.value[i[0]]}
-          onChange={(e) => props.onChangeOptions(e)}
-        />
-        <label htmlFor={`set-${i[0]}`} className="ms-3 custom-control-label">
-          {i[1]}
-        </label>
-      </div>
+      <Form.Check
+        key={index}
+        name="set"
+        value={i[0]}
+        type="checkbox"
+        id={`set-${i[0]}`}
+        label={i[1]}
+        checked={props.value[i[0]]}
+        onChange={(e) => props.onChangeOptions(e)}
+      />
     );
   });
 

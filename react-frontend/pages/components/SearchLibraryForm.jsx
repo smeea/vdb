@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { Spinner } from 'react-bootstrap';
+import { Form, Spinner } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
 import SearchFormTextAndButtons from './SearchFormTextAndButtons.jsx';
@@ -268,7 +268,7 @@ function SearchLibraryForm(props) {
   }, [preresults]);
 
   return (
-    <form onSubmit={handleSubmitButton}>
+    <Form onSubmit={handleSubmitButton}>
       <SearchFormTextAndButtons
         value={libraryFormState.text}
         onChange={handleTextChange}
@@ -279,18 +279,12 @@ function SearchLibraryForm(props) {
         spinner={spinnerState}
       />
       {(inventoryMode || (isMobile && isInventory)) && (
-        <div className="custom-control custom-checkbox">
-          <input
-            id="hideMissing"
-            className="custom-control-input"
-            type="checkbox"
-            checked={hideMissing}
-            onChange={() => setHideMissing(!hideMissing)}
-          />
-          <label htmlFor="hideMissing" className="custom-control-label">
-            Search in Inventory
-          </label>
-        </div>
+        <Form.Check
+          type="checkbox"
+          id="hideMissing"
+          label="Search in Inventory"
+          onChange={() => setHideMissing(!hideMissing)}
+        />
       )}
       <SearchLibraryFormType
         value={libraryFormState.type}
@@ -382,7 +376,7 @@ function SearchLibraryForm(props) {
           </div>
         </>
       )}
-    </form>
+    </Form>
   );
 }
 

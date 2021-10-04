@@ -13,8 +13,6 @@ import TwdSearchFormDate from './TwdSearchFormDate.jsx';
 import TwdSearchFormClan from './TwdSearchFormClan.jsx';
 import TwdSearchFormCardtypes from './TwdSearchFormCardtypes.jsx';
 import TwdSearchFormCapacity from './TwdSearchFormCapacity.jsx';
-import TwdSearchFormTraitStar from './TwdSearchFormTraitStar.jsx';
-import TwdSearchFormTraitMonoclan from './TwdSearchFormTraitMonoclan.jsx';
 import TwdSearchFormDisciplines from './TwdSearchFormDisciplines.jsx';
 import TwdSearchFormCrypt from './TwdSearchFormCrypt.jsx';
 import TwdSearchFormLibrary from './TwdSearchFormLibrary.jsx';
@@ -350,9 +348,14 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
-          <TwdSearchFormTraitStar
-            value={twdFormState.traits}
-            onChange={handleMultiChange}
+          <Form.Check
+            name="traits"
+            value="star"
+            type="checkbox"
+            id="traits-star"
+            label="With Star Vampire"
+            checked={twdFormState.traits.star}
+            onChange={(e) => handleMultiChange(e)}
           />
         </Col>
       </Row>
@@ -394,9 +397,14 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
-          <TwdSearchFormTraitMonoclan
-            value={twdFormState.traits}
-            onChange={handleMultiChange}
+          <Form.Check
+            name="traits"
+            value="monoclan"
+            type="checkbox"
+            id="traits-monoclan"
+            label="Mono Clan (any if not selected)"
+            checked={twdFormState.traits.monoclan}
+            onChange={(e) => handleMultiChange(e)}
           />
         </Col>
       </Row>

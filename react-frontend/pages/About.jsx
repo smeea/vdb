@@ -163,7 +163,9 @@ function About(props) {
 
             <div className="pt-2">
               <h5>DONATIONS</h5>
-              <p>Bitcoin (BTC): 3ALLfiv3AWcm7WzgWm9gHmLAAUMRcegBtP</p>
+              <p>
+                Bitcoin (BTC): <code>3ALLfiv3AWcm7WzgWm9gHmLAAUMRcegBtP</code>
+              </p>
             </div>
 
             <div className="pt-2">
