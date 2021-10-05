@@ -123,13 +123,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
             </Button>
           ) : (
             <Button variant="primary" onClick={importDeckFromText}>
-              <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-              />
+              <Spinner as="span" animation="border" size="sm" />
               Import
             </Button>
           )}

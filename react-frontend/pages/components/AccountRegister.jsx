@@ -127,13 +127,7 @@ function AccountRegister(props) {
             </Button>
           ) : (
             <Button variant="primary">
-              <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-              />
+              <Spinner as="span" animation="border" size="sm" />
             </Button>
           )}
         </InputGroup>

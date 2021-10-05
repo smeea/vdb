@@ -180,8 +180,12 @@ function DeckImport(props) {
     <>
       <Dropdown>
         <Dropdown.Toggle as={BlockButton} variant="secondary">
-          <ClipboardPlus size={24} />
-          <span className="ps-1">New / Import</span>
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="pe-2">
+              <ClipboardPlus size={24} />
+            </div>
+            New / Import
+          </div>
         </Dropdown.Toggle>
         <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
       </Dropdown>

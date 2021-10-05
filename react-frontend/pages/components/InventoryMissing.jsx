@@ -149,7 +149,12 @@ function InventoryMissing(props) {
   return (
     <>
       <Button variant="secondary" onClick={() => calculateMissing()}>
-        <Cart4 /> Missing Cards
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="pe-2">
+            <Cart4 />
+          </div>
+          Missing Cards
+        </div>
       </Button>
       {showModal && (
         <DeckMissingModal

@@ -36,7 +36,6 @@ function TwdSearchFormDate(props) {
   const dateToOptions = [];
 
   years.map((i, index) => {
-    console.log(props.date);
     if (
       i === 'ANY' ||
       props.date.to === 'any' ||

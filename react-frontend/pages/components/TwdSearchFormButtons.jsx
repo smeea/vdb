@@ -12,12 +12,21 @@ function TwdSearchFormButtons(props) {
     <div className="d-flex pb-2 justify-content-between">
       <div className="d-flex">
         <Button variant="primary" onClick={() => props.getRandomTwd(10)}>
-          <Dice3 /> 10 Random
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="pe-2">
+              <Dice3 />
+            </div>
+            10 Random
+          </div>
         </Button>
-
         <div className="ps-1">
           <Button variant="primary" onClick={() => props.getNewTwd(50)}>
-            <LightningFill /> 50 New
+            <div className="d-flex justify-content-center align-items-center">
+              <div className="pe-2">
+                <LightningFill />
+              </div>
+              50 New
+            </div>
           </Button>
         </div>
       </div>

@@ -39,7 +39,12 @@ function DeckDelete(props) {
         variant={props.noText ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
       >
-        <TrashFill /> {!props.noText && 'Delete Deck'}
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="pe-2">
+            <TrashFill />
+          </div>
+          {!props.noText && 'Delete Deck'}
+        </div>
       </Button>
       <DeleteConfirmation
         show={showConfirmation}

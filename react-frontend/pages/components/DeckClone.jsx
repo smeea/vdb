@@ -58,7 +58,12 @@ function DeckClone(props) {
         variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
         onClick={cloneDeck}
       >
-        <Files /> {!props.noText && (state ? 'Cloned' : 'Clone Deck')}
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="pe-2">
+            <Files />
+          </div>
+          {!props.noText && (state ? 'Cloned' : 'Clone Deck')}
+        </div>
       </Button>
     </>
   );

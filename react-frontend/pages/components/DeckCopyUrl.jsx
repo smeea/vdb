@@ -120,7 +120,12 @@ function DeckCopyUrl(props) {
             as={props.noText ? Button : BlockButton}
             variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
           >
-            <ShareFill /> {!props.noText && (state ? 'Copied' : 'Copy URL')}
+            <div className="d-flex justify-content-center align-items-center">
+              <div className="pe-2">
+                <ShareFill />
+              </div>
+              {!props.noText && (state ? 'Copied' : 'Copy URL')}
+            </div>
           </Dropdown.Toggle>
           <Dropdown.Menu>{Options}</Dropdown.Menu>
         </Dropdown>

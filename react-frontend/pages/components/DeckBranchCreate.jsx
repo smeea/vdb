@@ -36,7 +36,12 @@ function DeckBranchCreate(props) {
   return (
     <>
       <Button variant="secondary" onClick={branchCreate}>
-        <NodePlusFill width="21" height="21" viewBox="0 0 16 16" /> New Revision
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="pe-2">
+            <NodePlusFill width="21" height="21" viewBox="0 0 16 16" />
+          </div>
+          New Revision
+        </div>
       </Button>
     </>
   );

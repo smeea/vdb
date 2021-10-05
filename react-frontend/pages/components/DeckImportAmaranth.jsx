@@ -141,13 +141,7 @@ function DeckImportAmaranth(props) {
             </Button>
           ) : (
             <Button variant="primary" onClick={handleImportButton}>
-              <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-              />
+              <Spinner as="span" animation="border" size="sm" />
               Import
             </Button>
           )}

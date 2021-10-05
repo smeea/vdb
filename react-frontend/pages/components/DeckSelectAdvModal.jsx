@@ -439,7 +439,7 @@ function DeckSelectAdvModal(props) {
               </th>
               {!isMobile && (
                 <th className="buttons">
-                  <div className="d-flex justify-content-end align-items-center py-1">
+                  <div className="d-flex justify-content-end align-items-center py-1 pe-1">
                     <Form.Check
                       className="pe-2"
                       type="checkbox"

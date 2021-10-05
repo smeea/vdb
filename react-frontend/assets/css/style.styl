@@ -126,16 +126,24 @@ div.popover-sets
   color: var(--fg-primary)
   border-color: var(--bg-secondary)
 
+.form-check-input
+  background: var(--bg-checkbox)
+
+.form-check-input:checked
+  border-color: var(--bg-checkbox-selected)
+  background: var(--bg-checkbox-selected)
+
 .input-group-text
   background: var(--bg-secondary)
   color: var(--fg-button)
   border-color: var(--bg-secondary)
 
 button.btn-primary
-  color: var(--fg-primary)
+  color: var(--fg-button)
   background: var(--bg-button)
   border: 1px solid var(--border-button)
 button.btn-primary:focus
+  color: var(--fg-button)
   background: var(--bg-button)
 button.btn-primary:disabled
   opacity: 0.4
@@ -151,6 +159,7 @@ button.btn-secondary
   background: var(--bg-button-secondary)
   border: 1px solid var(--border-third)
 button.btn-secondary:focus
+  color: var(--fg-button)
   background: var(--bg-button-secondary)
 button.btn-secondary:hover
   background: var(--bg-button-hover)
@@ -161,6 +170,7 @@ button.btn-third
   border: 1px solid gray
   color: var(--fg-primary)
 button.btn-third:focus
+  color: var(--fg-primary)
   background: var(--bg-button-hover)
 button.btn-third:hover
   background: var(--border-primary)
@@ -171,6 +181,7 @@ button.btn-outline-primary
   background: none
   color: gray
 button.btn-outline-primary:focus
+  color: gray
   background: none
 button.btn-outline-primary:hover
   background: var(--bg-menu-focused)
@@ -182,6 +193,7 @@ button.btn-outline-secondary
   background: none
   color: gray
 button.btn-outline-secondary:focus
+  color: gray
   background: var(--bg-button-hover)
 button.btn-outline-secondary:hover
   border: none
@@ -192,7 +204,7 @@ button.btn-danger
   background: var(--bg-button-error)
   border: 1px solid var(--border-button)
 button.btn-danger:focus
-  background: var(--bg-button-hover)
+  background: var(--bg-button-error-hover)
 button.btn-danger:hover
   background: var(--bg-button-error-hover)
 
@@ -275,14 +287,17 @@ button.btn-danger:hover
   &__option--is-selected
     background: var(--bg-menu-selected) !important
   &__multi-value
+    border-radius: 4px !important
     background: var(--bg-button) !important
   &__multi-value__label
     color: var(--fg-primary) !important
+    border-radius: 4px 0px 0px 4px !important
     border-top: 1px solid var(--border-forms)
     border-bottom: 1px solid var(--border-forms)
     border-left: 1px solid var(--border-forms)
   &__multi-value__remove
     background: var(--bg-button) !important
+    border-radius: 0px 4px 4px 0px !important
     border-top: 1px solid var(--border-forms)
     border-bottom: 1px solid var(--border-forms)
     border-right: 1px solid var(--border-forms)
@@ -293,7 +308,7 @@ button.btn-danger:hover
     background: var(--bg-primary)
 
 .bordered.react-select-tags__control
-    border: 1px solid var(--border-secondary) !important
+  border: 1px solid var(--border-secondary) !important
 
 .tags-filter
   border-color: var(--border-secondary) !important
@@ -303,6 +318,8 @@ button.btn-danger:hover
     display: none
   .react-select-tags__multi-value__label
     padding-right: 8px !important
+    border-radius: 4px !important
+    border: 1px solid var(--border-secondary)
 
 .form-placeholder
   padding-left: 6px
@@ -316,13 +333,6 @@ button.btn-danger:hover
 .dropdown-item:hover
   background: var(--bg-button-hover)
   color: var(--fg-primary)
-
-.custom-control-input~.custom-control-label:before
-  background-color: var(--bg-checkbox)
-
-.custom-control-input:checked~.custom-control-label:before
-  border-color: var(--bg-checkbox-selected)
-  background-color: var(--bg-checkbox-selected)
 
 .navMenu div.popover-arrow
   display: none

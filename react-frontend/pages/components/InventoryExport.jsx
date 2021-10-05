@@ -137,19 +137,15 @@ function InventoryExport(props) {
     <>
       <Dropdown>
         <Dropdown.Toggle as={BlockButton} variant="secondary">
-          <Download />
-          <span className="ps-1">Save Inventory</span>
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="pe-2">
+              <Download />
+            </div>
+            Save Inventory
+          </div>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          {spinnerState && (
-            <Spinner
-              as="span"
-              animation="border"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            />
-          )}
+          {spinnerState && <Spinner as="span" animation="border" size="sm" />}
           {ExportButtonOptions}
         </Dropdown.Menu>
       </Dropdown>

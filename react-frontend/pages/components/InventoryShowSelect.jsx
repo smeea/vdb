@@ -22,7 +22,7 @@ function InventoryShowSelect(props) {
         id="ok"
         label={
           <div className="blue">
-            <b>Only Owned Cards</b>
+            <b>Only Owned</b>
           </div>
         }
         checked={props.category == 'ok'}
@@ -34,7 +34,7 @@ function InventoryShowSelect(props) {
         id="nok"
         label={
           <div className="blue">
-            <b>Only Problem Cards</b>
+            <b>Only Problems</b>
           </div>
         }
         checked={props.category == 'nok'}

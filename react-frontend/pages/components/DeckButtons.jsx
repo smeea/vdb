@@ -81,7 +81,12 @@ function DeckButtons(props) {
           }}
           variant="secondary"
         >
-          <Dice3 /> Draw Cards
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="pe-2">
+              <Dice3 />
+            </div>
+            Draw Cards
+          </div>
         </Button>
       )}
       {props.deck && inventoryMode && (

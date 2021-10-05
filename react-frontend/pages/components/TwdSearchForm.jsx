@@ -306,12 +306,9 @@ function TwdSearchForm(props) {
       )}
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={2} className="d-flex px-0">
-          <label className="h6 mb-0">Year:</label>
+          <div className="bold blue px-0">Year:</div>
         </Col>
-        <Col xs={2} className="d-flex px-1 justify-content-end">
-          <label className="h6 mb-0">from</label>
-        </Col>
-        <Col xs={8} className="d-inline px-0">
+        <Col xs={10} className="d-inline px-0">
           <TwdSearchFormDate
             date={twdFormState.date}
             onChange={handleDateChange}
@@ -320,12 +317,9 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={2} className="d-flex px-0">
-          <label className="h6 mb-0">Players:</label>
+          <div className="bold blue px-0">Players:</div>
         </Col>
-        <Col xs={2} className="d-flex px-1 justify-content-end">
-          <label className="h6 mb-0">min</label>
-        </Col>
-        <Col xs={8} className="d-inline px-0">
+        <Col xs={10} className="d-inline px-0">
           <TwdSearchFormPlayers
             players={twdFormState.players}
             onChange={handlePlayersChange}
@@ -333,9 +327,7 @@ function TwdSearchForm(props) {
         </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={4} className="d-flex px-0">
-          <label className="h6 mb-0">Crypt Cards:</label>
-        </Col>
+        <div className="bold blue px-0">Crypt Cards:</div>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
@@ -360,9 +352,7 @@ function TwdSearchForm(props) {
         </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={4} className="d-flex px-0">
-          <label className="h6 mb-0">Library Cards:</label>
-        </Col>
+        <div className="bold blue px-0">Library Cards:</div>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={12} className="d-inline px-0">
@@ -375,7 +365,7 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Library Size:</label>
+          <div className="bold blue px-0">Library Size:</div>
         </Col>
         <Col xs={9} className="d-flex justify-content-end px-0">
           <TwdSearchFormLibraryTotal
@@ -386,7 +376,7 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Clan:</label>
+          <div className="bold blue px-0">Clan:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormClan
@@ -410,7 +400,7 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={5} className="d-flex px-0">
-          <label className="h6 mb-0">Capacity Average:</label>
+          <div className="bold blue px-0">Capacity Average:</div>
         </Col>
         <Col xs={7} className="d-flex justify-content-end px-0">
           <TwdSearchFormCapacity
@@ -421,7 +411,7 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={5} className="d-flex px-0">
-          <label className="h6 mb-0">Library Disciplines:</label>
+          <div className="bold blue px-0">Library Disciplines:</div>
         </Col>
       </Row>
       <TwdSearchFormDisciplines
@@ -438,7 +428,7 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Event:</label>
+          <div className="bold blue px-0">Event:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormEvent
@@ -449,7 +439,7 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Location:</label>
+          <div className="bold blue px-0">Location:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormLocation
@@ -460,7 +450,7 @@ function TwdSearchForm(props) {
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Winner:</label>
+          <div className="bold blue px-0">Winner:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormPlayer

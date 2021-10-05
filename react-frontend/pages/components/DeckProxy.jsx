@@ -93,19 +93,15 @@ function DeckProxy(props) {
           as={props.noText ? Button : BlockButton}
           variant={props.noText ? 'primary' : 'secondary'}
         >
-          <Printer />
-          {!props.noText && <span className="ps-1">PDF Proxy</span>}
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="pe-2">
+              <Printer />
+            </div>
+            {!props.noText && 'PDF Proxy'}
+          </div>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          {spinnerState && (
-            <Spinner
-              as="span"
-              animation="border"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            />
-          )}
+          {spinnerState && <Spinner as="span" animation="border" size="sm" />}
           {ProxyButtonOptions}
         </Dropdown.Menu>
       </Dropdown>

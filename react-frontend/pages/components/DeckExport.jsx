@@ -250,19 +250,15 @@ function DeckExport(props) {
     <>
       <Dropdown>
         <Dropdown.Toggle as={BlockButton} variant="secondary">
-          <Download />
-          <span className="ps-1">Export Deck</span>
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="pe-2">
+              <Download />
+            </div>
+            Export Deck
+          </div>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          {spinnerState && (
-            <Spinner
-              as="span"
-              animation="border"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            />
-          )}
+          {spinnerState && <Spinner as="span" animation="border" size="sm" />}
           {ExportButtonOptions}
         </Dropdown.Menu>
       </Dropdown>

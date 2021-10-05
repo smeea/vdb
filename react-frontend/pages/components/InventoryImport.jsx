@@ -41,8 +41,12 @@ function InventoryImport(props) {
   return (
     <>
       <Button ref={ref} onClick={handleFileInputClick} variant="secondary">
-        <Upload />
-        <span className="ps-1">Import from File</span>
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="pe-2">
+            <Upload />
+          </div>
+          Import from File
+        </div>
       </Button>
       <input
         ref={fileInput}
