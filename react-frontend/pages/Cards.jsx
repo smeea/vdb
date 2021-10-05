@@ -110,7 +110,7 @@ function Cards(props) {
   }, [props.id, cryptCardBase, libraryCardBase]);
 
   return (
-    <Container className="p-0">
+    <Container className="cards-container p-0">
       <>
         {isMobile ? (
           <>

@@ -166,6 +166,10 @@ function ResultCryptModal(props) {
                 </Button>
               </div>
             </Col>
+          </Row>
+        )}
+        {!isMobile && (
+          <>
             <div
               onClick={() => props.handleModalCardChange(-1)}
               className="prev-card"
@@ -178,7 +182,7 @@ function ResultCryptModal(props) {
             >
               <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
             </div>
-          </Row>
+          </>
         )}
       </Modal.Body>
     </Modal>

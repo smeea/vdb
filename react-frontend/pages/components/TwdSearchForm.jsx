@@ -410,9 +410,7 @@ function TwdSearchForm(props) {
         </Col>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={5} className="d-flex px-0">
-          <div className="bold blue px-0">Library Disciplines:</div>
-        </Col>
+        <div className="bold blue px-0">Library Disciplines:</div>
       </Row>
       <TwdSearchFormDisciplines
         disciplines={twdFormState.disciplines}
