@@ -7,8 +7,8 @@ import AppContext from '../../context/AppContext.js';
 function SearchFormTextAndButtons(props) {
   const { isMobile } = useContext(AppContext);
 
-  return (
-    <InputGroup className={isMobile ? 'd-block mb-1' : 'mb-2'}>
+  if (isMobile) {
+    return (
       <FormControl
         placeholder="Card Name / Text"
         type="text"
@@ -18,18 +18,30 @@ function SearchFormTextAndButtons(props) {
         value={props.value}
         onChange={props.onChange}
       />
-      {!isMobile && props.preresults > props.showLimit && (
-        <Button variant="primary" onClick={props.handleShowResults}>
-          <Check2 /> FOUND {props.preresults}
-        </Button>
-      )}
-      {!isMobile && (
+    );
+  } else {
+    return (
+      <InputGroup className="mb-2">
+        <FormControl
+          placeholder="Card Name / Text"
+          type="text"
+          name="text"
+          autoComplete="off"
+          spellCheck="false"
+          value={props.value}
+          onChange={props.onChange}
+        />
+        {props.preresults > props.showLimit && (
+          <Button variant="primary" onClick={props.handleShowResults}>
+            <Check2 /> FOUND {props.preresults}
+          </Button>
+        )}
         <Button variant="primary" onClick={props.handleClearButton}>
           <X />
         </Button>
-      )}
-    </InputGroup>
-  );
+      </InputGroup>
+    );
+  }
 }
 
 export default SearchFormTextAndButtons;
