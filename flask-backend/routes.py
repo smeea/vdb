@@ -460,11 +460,11 @@ def listDecks():
             #     deck.inventory_type = ''
             #     db.session.commit()
 
-            # # Fix pre-tags decks
-            # if not deck.tags:
-            #     print(deck.deckid, 'fix pre-tags decks')
-            #     deck.tags = []
-            #     db.session.commit()
+            # Fix pre-tags decks
+            if not deck.tags:
+                print(deck.deckid, 'fix pre-tags decks')
+                deck.tags = []
+                db.session.commit()
 
             # Fix bad imports
             if 'undefined' in deck.cards:
@@ -598,7 +598,7 @@ def createBranch():
                       description=source.description,
                       author=current_user,
                       inventory_type='',
-                      tags=[],
+                      tags=master.tags,
                       master=master.deckid,
                       used_in_inventory={},
                       cards=source.cards)
