@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
+import { Form, OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
@@ -116,24 +116,18 @@ function DeckLibraryTable(props) {
           {props.inProxy ? (
             <>
               <td className="proxy-selector">
-                <div className="ms-1 custom-control custom-checkbox">
-                  <input
-                    id={card.c['Id']}
-                    name="print"
-                    className="custom-control-input"
-                    type="checkbox"
-                    checked={
-                      props.proxySelected[card.c['Id']]
-                        ? props.proxySelected[card.c['Id']].print
-                        : false
-                    }
-                    onChange={(e) => props.handleProxySelector(e)}
-                  />
-                  <label
-                    htmlFor={card.c['Id']}
-                    className="custom-control-label"
-                  />
-                </div>
+                <Form.Check
+                  className="px-1"
+                  type="checkbox"
+                  id={card.c['Id']}
+                  name="print"
+                  checked={
+                    props.proxySelected[card.c['Id']]
+                      ? props.proxySelected[card.c['Id']].print
+                      : false
+                  }
+                  onChange={(e) => props.handleProxySelector(e)}
+                />
               </td>
               {inventoryMode && decks ? (
                 <OverlayTrigger
