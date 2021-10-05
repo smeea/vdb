@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { saveAs } from 'file-saver';
-import { Spinner, Dropdown } from 'react-bootstrap';
+import { Button, Spinner, Dropdown } from 'react-bootstrap';
 import Printer from '../../assets/images/icons/printer.svg';
 import DeckProxySelectModal from './DeckProxySelectModal.jsx';
+import BlockButton from './BlockButton.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckProxy(props) {
@@ -87,10 +88,10 @@ function DeckProxy(props) {
 
   return (
     <>
-      <Dropdown>
+      <Dropdown className="d-inline">
         <Dropdown.Toggle
-          /* className={!props.noText ? 'btn-block' : 'btn'} */
-          variant="secondary"
+          as={props.noText ? Button : BlockButton}
+          variant={props.noText ? 'primary' : 'secondary'}
         >
           <Printer />
           {!props.noText && <span className="ps-1">PDF Proxy</span>}

@@ -38,7 +38,10 @@ function DeckBranchDelete(props) {
 
   return (
     <>
-      <Button variant="secondary" onClick={() => setShowConfirmation(true)}>
+      <Button
+        variant={props.noText ? 'primary' : 'secondary'}
+        onClick={() => setShowConfirmation(true)}
+      >
         <NodeMinusFill
           width={props.noText ? '16' : '21'}
           height={props.noText ? '16' : '21'}

@@ -13,7 +13,7 @@ function ResultLibrarySortForm(props) {
 
   const SortButtonOptions = sortMethods.map((i, index) => {
     return (
-      <Dropdown.Item key={index} href="" onClick={() => props.onChange(i)}>
+      <Dropdown.Item key={index} onClick={() => props.onChange(i)}>
         Sort by {i}
       </Dropdown.Item>
     );

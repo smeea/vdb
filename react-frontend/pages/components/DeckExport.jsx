@@ -2,6 +2,7 @@ import React, { useState, useRef, useContext } from 'react';
 import FileSaver from 'file-saver';
 import { Spinner, Dropdown } from 'react-bootstrap';
 import Download from '../../assets/images/icons/download.svg';
+import BlockButton from './BlockButton.jsx';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 import JSZip from 'jszip';
@@ -247,8 +248,8 @@ function DeckExport(props) {
 
   return (
     <>
-      <Dropdown ref={ref}>
-        <Dropdown.Toggle variant="secondary">
+      <Dropdown>
+        <Dropdown.Toggle as={BlockButton} variant="secondary">
           <Download />
           <span className="ps-1">Export Deck</span>
         </Dropdown.Toggle>

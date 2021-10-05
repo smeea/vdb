@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import ClipboardPlus from '../../assets/images/icons/clipboard-plus.svg';
+import BlockButton from './BlockButton.jsx';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import DeckImportText from './DeckImportText.jsx';
 import DeckImportAmaranth from './DeckImportAmaranth.jsx';
@@ -156,20 +157,20 @@ function DeckImport(props) {
 
   const ImportButtonOptions = (
     <>
-      <Dropdown.Item href="" onClick={handleCreateButton}>
+      <Dropdown.Item onClick={handleCreateButton}>
         Create New Deck
       </Dropdown.Item>
       <Dropdown.Divider />
-      <Dropdown.Item href="" onClick={() => handleFileInputClick('txt')}>
+      <Dropdown.Item onClick={() => handleFileInputClick('txt')}>
         Import from File - Amaranth, Lackey .TXT, TWD
       </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => handleFileInputClick('dek')}>
+      <Dropdown.Item onClick={() => handleFileInputClick('dek')}>
         Import from File - Lackey .DEK
       </Dropdown.Item>
-      <Dropdown.Item href="" onClick={handleOpenTextModal}>
+      <Dropdown.Item onClick={handleOpenTextModal}>
         Import from Text - Amaranth, Lackey .TXT, TWD
       </Dropdown.Item>
-      <Dropdown.Item href="" onClick={handleOpenAmaranthModal}>
+      <Dropdown.Item onClick={handleOpenAmaranthModal}>
         Import from Amaranth Deck URL
       </Dropdown.Item>
     </>
@@ -177,8 +178,8 @@ function DeckImport(props) {
 
   return (
     <>
-      <Dropdown ref={ref}>
-        <Dropdown.Toggle variant="secondary">
+      <Dropdown>
+        <Dropdown.Toggle as={BlockButton} variant="secondary">
           <ClipboardPlus size={24} />
           <span className="ps-1">New / Import</span>
         </Dropdown.Toggle>

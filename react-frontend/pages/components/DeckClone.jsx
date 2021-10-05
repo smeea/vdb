@@ -54,7 +54,10 @@ function DeckClone(props) {
 
   return (
     <>
-      <Button variant={state ? 'success' : 'secondary'} onClick={cloneDeck}>
+      <Button
+        variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
+        onClick={cloneDeck}
+      >
         <Files /> {!props.noText && (state ? 'Cloned' : 'Clone Deck')}
       </Button>
     </>

@@ -7,11 +7,7 @@ function DeckSelectSortForm(props) {
 
   const SortButtonOptions = Object.keys(sortMethods).map((k) => {
     return (
-      <Dropdown.Item
-        key={k}
-        href=""
-        onClick={() => props.onChange(sortMethods[k])}
-      >
+      <Dropdown.Item key={k} onClick={() => props.onChange(sortMethods[k])}>
         Sort by {k}
       </Dropdown.Item>
     );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Modal, Row, Col, FormControl, Button } from 'react-bootstrap';
+import { Modal, Form, Row, Col, FormControl, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
@@ -260,14 +260,14 @@ function InventoryAddDeckModal(props) {
             </td>
           )}
           <td className="buttons">
-            <div className="d-inline ps-1">
+            <div className="d-inline pe-1">
               <InventoryDeckAddButton
                 inventoryDeckAdd={props.inventoryDeckAdd}
                 deck={deck}
                 inInventory={inInventory}
               />
             </div>
-            <div className="d-inline ps-1">
+            <div className="d-inline pe-1">
               <InventoryDeckDeleteButton
                 inventoryDeckDelete={props.inventoryDeckDelete}
                 deck={deck}
@@ -328,19 +328,15 @@ function InventoryAddDeckModal(props) {
                 </th>
               )}
               <th className="buttons">
-                <div className="d-flex justify-content-end align-items-center ps-2">
-                  <div className="d-inline align-items-bottom custom-control custom-checkbox pe-3">
-                    <input
-                      id="revFilter"
-                      className="custom-control-input"
-                      type="checkbox"
-                      checked={revFilter}
-                      onChange={() => setRevFilter(!revFilter)}
-                    />
-                    <label htmlFor="revFilter" className="custom-control-label">
-                      {isMobile ? 'Rev' : 'Revisions'}
-                    </label>
-                  </div>
+                <div className="d-flex justify-content-end align-items-center px-1">
+                  <Form.Check
+                    className="pe-2"
+                    type="checkbox"
+                    id="revFilter"
+                    label={isMobile ? 'Rev' : 'Revisions'}
+                    checked={revFilter}
+                    onChange={() => setRevFilter(!revFilter)}
+                  />
                   <DeckSelectSortForm onChange={setSortMethod} />
                 </div>
               </th>

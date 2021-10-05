@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Button, Dropdown } from 'react-bootstrap';
 import ShareFill from '../../assets/images/icons/share-fill.svg';
+import BlockButton from './BlockButton.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckCopyUrl(props) {
@@ -89,14 +90,12 @@ function DeckCopyUrl(props) {
   const Options = (
     <>
       <Dropdown.Item
-        href=""
         onClick={handleStandardButton}
         title="Copy URL (will follow deck changes, if any)"
       >
         Standard URL
       </Dropdown.Item>
       <Dropdown.Item
-        href=""
         onClick={handleDeckInUrlButton}
         title="Copy long URL containing full deck info (will not follow deck changes)"
       >
@@ -104,7 +103,6 @@ function DeckCopyUrl(props) {
       </Dropdown.Item>
       {props.isAuthor && (
         <Dropdown.Item
-          href=""
           onClick={handleSnapshotButton}
           title="Copy URL to snapshot of the deck (will not follow deck changes)"
         >
@@ -118,7 +116,10 @@ function DeckCopyUrl(props) {
     <>
       {props.deck.deckid.length == 32 ? (
         <Dropdown className="d-inline">
-          <Dropdown.Toggle variant={state ? 'success' : 'secondary'}>
+          <Dropdown.Toggle
+            as={props.noText ? Button : BlockButton}
+            variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
+          >
             <ShareFill /> {!props.noText && (state ? 'Copied' : 'Copy URL')}
           </Dropdown.Toggle>
           <Dropdown.Menu>{Options}</Dropdown.Menu>

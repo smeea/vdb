@@ -1,8 +1,6 @@
 # FIX
 * Card custom inventory status for Library
-* Dropdowns full width
-* Button active color
-* Precon KSU clone on backend
+* Button active, disabled color
 * Deck name unidecode (for adv deck select) and other filters in TWD
 * Vtes-decks, bloodlibrary, vtes-hook to About
 * Keys of cardid in results / decks with unique prefix

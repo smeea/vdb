@@ -587,13 +587,18 @@ function Decks(props) {
           centered={true}
         >
           <Modal.Header
-            className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
+            className={isMobile ? 'py-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
           ></Modal.Header>
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
-              <Button variant="outline-secondary" onClick={props.handleCancel}>
-                <X width="32" height="32" viewBox="0 0 16 16" />
-              </Button>
+              <div className="d-flex justify-content-end">
+                <Button
+                  variant="outline-secondary"
+                  onClick={props.handleCancel}
+                >
+                  <X width="32" height="32" viewBox="0 0 16 16" />
+                </Button>
+              </div>
               <DeckButtons
                 isAuthor={isAuthor}
                 deck={deckRouter(activeDeck)}

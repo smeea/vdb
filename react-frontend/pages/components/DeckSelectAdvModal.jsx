@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Modal, Row, Col, FormControl, Button } from 'react-bootstrap';
+import { Modal, Form, Row, Col, FormControl, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
@@ -349,24 +349,24 @@ function DeckSelectAdvModal(props) {
               {revFilter &&
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (
-                  <div className="d-inline ps-1">
+                  <div className="d-inline pe-1">
                     <DeckBranchDelete noText={true} deck={deck} />
                   </div>
                 )}
-              <div className="d-inline ps-1">
+              <div className="d-inline pe-1">
                 <DeckDelete noText={true} deck={deck} />
               </div>
-              <div className="d-inline ps-1">
+              <div className="d-inline pe-1">
                 <DeckClone
                   activeDeck={{ src: 'my', deckid: deck.deckid }}
                   noText={true}
                   deck={deck}
                 />
               </div>
-              <div className="d-inline ps-1">
+              <div className="d-inline pe-1">
                 <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
               </div>
-              <div className="d-inline ps-1">
+              <div className="d-inline pe-1">
                 <DeckProxy noText={true} deck={deck} />
               </div>
             </td>
@@ -437,22 +437,15 @@ function DeckSelectAdvModal(props) {
               </th>
               {!isMobile && (
                 <th className="buttons">
-                  <div className="d-flex justify-content-end align-items-center">
-                    <div className="d-inline align-items-bottom custom-control custom-checkbox pe-3">
-                      <input
-                        id="revFilter"
-                        className="custom-control-input"
-                        type="checkbox"
-                        checked={revFilter}
-                        onChange={() => setRevFilter(!revFilter)}
-                      />
-                      <label
-                        htmlFor="revFilter"
-                        className="custom-control-label"
-                      >
-                        Revisions
-                      </label>
-                    </div>
+                  <div className="d-flex justify-content-end align-items-center py-1">
+                    <Form.Check
+                      className="pe-2"
+                      type="checkbox"
+                      id="revFilter"
+                      label={isMobile ? 'Rev' : 'Revisions'}
+                      checked={revFilter}
+                      onChange={() => setRevFilter(!revFilter)}
+                    />
                     <DeckSelectSortForm onChange={setSortMethod} />
                   </div>
                 </th>

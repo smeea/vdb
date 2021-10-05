@@ -203,14 +203,14 @@ function InventoryAddDeckModal(props) {
             )}
           </td>
           <td className="buttons">
-            <div className="d-inline ps-1">
+            <div className="d-inline pe-1">
               <InventoryDeckAddButton
                 inventoryDeckAdd={props.inventoryDeckAdd}
                 deck={deck}
                 inInventory={inInventory}
               />
             </div>
-            <div className="d-inline ps-1">
+            <div className="d-inline pe-1">
               <InventoryDeckDeleteButton
                 inventoryDeckDelete={props.inventoryDeckDelete}
                 deck={deck}
@@ -268,7 +268,7 @@ function InventoryAddDeckModal(props) {
                 />
               </th>
               <th className="buttons">
-                <div className="d-flex justify-content-end align-items-center">
+                <div className="d-flex justify-content-end align-items-center px-1">
                   <DeckSelectSortForm onChange={setSortMethod} />
                 </div>
               </th>

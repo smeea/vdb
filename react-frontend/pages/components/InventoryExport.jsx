@@ -2,6 +2,7 @@ import React, { useState, useRef, useContext } from 'react';
 import FileSaver from 'file-saver';
 import { Spinner, Dropdown } from 'react-bootstrap';
 import Download from '../../assets/images/icons/download.svg';
+import BlockButton from './BlockButton.jsx';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
@@ -134,8 +135,8 @@ function InventoryExport(props) {
 
   return (
     <>
-      <Dropdown ref={ref}>
-        <Dropdown.Toggle variant="secondary">
+      <Dropdown>
+        <Dropdown.Toggle as={BlockButton} variant="secondary">
           <Download />
           <span className="ps-1">Save Inventory</span>
         </Dropdown.Toggle>
