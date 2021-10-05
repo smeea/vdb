@@ -4,7 +4,7 @@ import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from '../assets/images/icons/shuffle.svg';
 import At from '../assets/images/icons/at.svg';
 import PinAngleFill from '../assets/images/icons/pin-angle-fill.svg';
-import InfoCircle from '../assets/images/icons/info-circle.svg';
+import ChatLeftQuoteFill from '../assets/images/icons/chat-left-quote-fill.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
 import BinocularsFill from '../assets/images/icons/binoculars-fill.svg';
@@ -300,7 +300,7 @@ function Decks(props) {
       <Row className="mx-0">
         <Col xl={1} className="hide-narrow"></Col>
         <Col md={10} xl={9} className="px-0 px-lg-1 px-xl-3">
-          <Row className="px-1 pt-1 pb-2 px-lg-0 pt-lg-0">
+          <Row className="px-1 pt-1 pb-0 pb-lg-2 px-lg-0 pt-lg-0">
             <Col md={5} className="px-0 px-lg-3">
               <Row className="align-items-center justify-content-end mx-0">
                 <Col className="px-0">
@@ -344,16 +344,6 @@ function Decks(props) {
                           </Button>
                         </div>
                       )}
-                      {isMobile && deckRouter(activeDeck) && (
-                        <div className="d-flex ps-1">
-                          <Button
-                            variant="primary"
-                            onClick={() => setShowInfo(!showInfo)}
-                          >
-                            <InfoCircle />
-                          </Button>
-                        </div>
-                      )}
                     </div>
                   </div>
                   <div className="d-flex justify-content-between align-items-center">
@@ -379,24 +369,36 @@ function Decks(props) {
                         id="precons"
                         label={
                           <div className="blue">
-                            <b>Precon Decks</b>
+                            <b>Products</b>
                           </div>
                         }
                         inline
                       />
                     </Form>
-                    {decks && (
-                      <div className="py-1">
-                        <Button
-                          variant="primary"
-                          onClick={() =>
-                            setShowDeckSelectAdv(!showDeckSelectAdv)
-                          }
-                        >
-                          <BinocularsFill />
-                        </Button>
-                      </div>
-                    )}
+                    <div className="d-flex py-1">
+                      {decks && (
+                        <div className="py-1">
+                          <Button
+                            variant="primary"
+                            onClick={() =>
+                              setShowDeckSelectAdv(!showDeckSelectAdv)
+                            }
+                          >
+                            <BinocularsFill />
+                          </Button>
+                        </div>
+                      )}
+                      {isMobile && deckRouter(activeDeck) && (
+                        <div className="d-flex ps-1 py-1">
+                          <Button
+                            variant="primary"
+                            onClick={() => setShowInfo(!showInfo)}
+                          >
+                            <ChatLeftQuoteFill />
+                          </Button>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </Col>
               </Row>
@@ -417,7 +419,7 @@ function Decks(props) {
                       />
                     </Col>
                     {isBranches && (
-                      <Col md={2} className={isMobile ? 'px-0' : 'px-1'}>
+                      <Col md={2} className={isMobile ? 'px-0 pt-05' : 'px-1'}>
                         <DeckChangeBranchName
                           branchName={deckRouter(activeDeck).branchName}
                           deckid={activeDeck.deckid}
@@ -460,7 +462,7 @@ function Decks(props) {
                   </Row>
                   {!foldedDescription &&
                     (deckRouter(activeDeck).tags || isAuthor) && (
-                      <div className="d-block pt-2">
+                      <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
                         <DeckTags
                           allTagsOptions={allTagsOptions}
                           deck={deckRouter(activeDeck)}

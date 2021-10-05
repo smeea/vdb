@@ -103,7 +103,7 @@ function InventoryAddDeckModal(props) {
         .replace(/[\s,:!?'.\-]/g, '')}.svg`;
 
       return (
-        <div className="d-inline" key={index}>
+        <div className="d-inline px-1" key={index}>
           {clan === 'Bundle' ? (
             <div className="d-inline clan-image-results">
               <GiftFill />

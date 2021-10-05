@@ -129,6 +129,13 @@ button.btn-primary
   color: var(--fg-primary)
   background: var(--bg-button)
   border: 1px solid var(--border-button)
+button.btn-primary:focus
+  background: var(--bg-button)
+button.btn-primary:disabled
+  opacity: 0.4
+  color: var(--fg-primary)
+  background: var(--bg-button)
+  border: 1px solid var(--border-button)
 button.btn-primary:hover
   background: var(--bg-button-hover)
   border: 1px solid var(--border-primary)
@@ -137,6 +144,8 @@ button.btn-secondary
   color: var(--fg-button)
   background: var(--bg-button-secondary)
   border: 1px solid var(--border-third)
+button.btn-secondary:focus
+  background: var(--bg-button-secondary)
 button.btn-secondary:hover
   background: var(--bg-button-hover)
   border: 1px solid var(--border-primary)
@@ -145,6 +154,8 @@ button.btn-third
   background: var(--bg-button-hover)
   border: 1px solid gray
   color: var(--fg-primary)
+button.btn-third:focus
+  background: var(--bg-button-hover)
 button.btn-third:hover
   background: var(--border-primary)
   color: var(--fg-primary)
@@ -153,6 +164,8 @@ button.btn-outline-primary
   border: 1px solid var(--border-button)
   background: none
   color: gray
+button.btn-outline-primary:focus
+  background: none
 button.btn-outline-primary:hover
   background: var(--bg-menu-focused)
   border: 1px solid var(--border-primary)
@@ -162,6 +175,8 @@ button.btn-outline-secondary
   border: none
   background: none
   color: gray
+button.btn-outline-secondary:focus
+  background: var(--bg-button-hover)
 button.btn-outline-secondary:hover
   border: none
   background: none
@@ -170,7 +185,8 @@ button.btn-outline-secondary:hover
 button.btn-danger
   background: var(--bg-button-error)
   border: 1px solid var(--border-button)
-
+button.btn-danger:focus
+  background: var(--bg-button-hover)
 button.btn-danger:hover
   background: var(--bg-button-error-hover)
 
@@ -244,7 +260,7 @@ button.btn-danger:hover
   &__indicators
     display: none !important
   &__menu
-    z-index:  2 !important
+    z-index:  3 !important
   &__menu-list
     background: var(--bg-primary)
     color: var(--fg-primary)
@@ -614,7 +630,7 @@ td.prob
     border-bottom: 1px solid var(--border-secondary)
   .clan
     text-align: center
-    min-width: 85px
+    min-width: 90px
   .name
     min-width: 250px
     max-width: 250px
@@ -1036,12 +1052,12 @@ div.white-font-toggle svg
 div.col-hide
   display:none
 
-a:link, a:visited
-  text-decoration: none
 a:hover
   text-decoration: underline
 
-a.nav-link:hover
+a:link,
+a:visited,
+a.nav-link:hover, a:hover.dropdown-item
   text-decoration: none
 
 .margin-third

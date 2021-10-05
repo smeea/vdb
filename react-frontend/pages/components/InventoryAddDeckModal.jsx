@@ -292,11 +292,11 @@ function InventoryAddDeckModal(props) {
         className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 ps-3 pe-4'}
       >
         <h5>Import Deck to Inventory</h5>
-      </Modal.Header>
-      <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
         <Button variant="outline-secondary" onClick={props.handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
+      </Modal.Header>
+      <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
         <table className="inv-import-decks-table">
           <thead>
             <tr>
