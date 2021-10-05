@@ -36,33 +36,49 @@ function TwdSearchFormDate(props) {
   const dateToOptions = [];
 
   years.map((i, index) => {
-    dateFromOptions.push({
-      value: i.toLowerCase(),
-      name: 'from',
-      label: (
-        <>
-          <span className="margin-third" />
-          {i}
-        </>
-      ),
-    });
+    console.log(props.date);
+    if (
+      i === 'ANY' ||
+      props.date.to === 'any' ||
+      parseInt(i) <= props.date.to
+    ) {
+      dateFromOptions.push({
+        value: i.toLowerCase(),
+        name: 'from',
+        label: (
+          <>
+            <span className="margin-third" />
+            {i}
+          </>
+        ),
+      });
+    }
 
-    dateToOptions.push({
-      value: i.toLowerCase(),
-      name: 'to',
-      label: (
-        <>
-          <span className="margin-third" />
-          {i}
-        </>
-      ),
-    });
+    if (
+      i === 'ANY' ||
+      props.date.from === 'any' ||
+      parseInt(i) >= props.date.from
+    ) {
+      dateToOptions.push({
+        value: i.toLowerCase(),
+        name: 'to',
+        label: (
+          <>
+            <span className="margin-third" />
+            {i}
+          </>
+        ),
+      });
+    }
   });
 
   return (
     <>
       <Row className="mx-0 align-items-center">
-        <Col xs={5} className="d-inline px-0">
+        <Col xs={2} className="d-flex px-1 justify-content-end">
+          <div className="px-0">from</div>
+        </Col>
+        <Col xs={4} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={dateFromOptions}
@@ -73,9 +89,9 @@ function TwdSearchFormDate(props) {
           />
         </Col>
         <Col xs={2} className="d-flex px-1 justify-content-end">
-          <label className="h6 mb-0">to</label>
+          <div className="px-0">to</div>
         </Col>
-        <Col xs={5} className="d-inline px-0">
+        <Col xs={4} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={dateToOptions}

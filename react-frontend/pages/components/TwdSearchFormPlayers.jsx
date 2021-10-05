@@ -9,33 +9,48 @@ function TwdSearchFormPlayers(props) {
   const playersToOptions = [];
 
   players.map((i, index) => {
-    playersFromOptions.push({
-      value: i.toLowerCase(),
-      name: 'from',
-      label: (
-        <>
-          <span className="margin-third" />
-          {i}
-        </>
-      ),
-    });
+    if (
+      i === 'ANY' ||
+      props.players.to === 'any' ||
+      parseInt(i) < props.players.to
+    ) {
+      playersFromOptions.push({
+        value: i.toLowerCase(),
+        name: 'from',
+        label: (
+          <>
+            <span className="margin-third" />
+            {i}
+          </>
+        ),
+      });
+    }
 
-    playersToOptions.push({
-      value: i.toLowerCase(),
-      name: 'to',
-      label: (
-        <>
-          <span className="margin-third" />
-          {i}
-        </>
-      ),
-    });
+    if (
+      i === 'ANY' ||
+      props.players.from === 'any' ||
+      parseInt(i) > props.players.from
+    ) {
+      playersToOptions.push({
+        value: i.toLowerCase(),
+        name: 'to',
+        label: (
+          <>
+            <span className="margin-third" />
+            {i}
+          </>
+        ),
+      });
+    }
   });
 
   return (
     <>
       <Row className="mx-0 align-items-center">
-        <Col xs={5} className="d-inline px-0">
+        <Col xs={2} className="d-flex px-1 justify-content-end">
+          <div className="px-0">min</div>
+        </Col>
+        <Col xs={4} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={playersFromOptions}
@@ -48,9 +63,9 @@ function TwdSearchFormPlayers(props) {
           />
         </Col>
         <Col xs={2} className="d-flex px-1 justify-content-end">
-          <label className="h6 mb-0">max</label>
+          <div className="px-0">max</div>
         </Col>
-        <Col xs={5} className="d-inline px-0">
+        <Col xs={4} className="d-inline px-0">
           <Select
             classNamePrefix="react-select"
             options={playersToOptions}
