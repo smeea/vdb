@@ -246,12 +246,7 @@ function InventoryCryptTable(props) {
           </td>
           {!isMobile && (
             <td className="disciplines px-1" onClick={() => handleClick()}>
-              <ResultCryptDisciplines
-                value={card.c['Disciplines']}
-                disciplinesSet={props.disciplinesSet}
-                keyDisciplines={props.keyDisciplines}
-                nonKeyDisciplines={props.nonKeyDisciplines}
-              />
+              <ResultCryptDisciplines value={card.c['Disciplines']} />
             </td>
           )}
           {!isMobile ? (

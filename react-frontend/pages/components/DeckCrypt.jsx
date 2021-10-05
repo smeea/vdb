@@ -136,52 +136,18 @@ function DeckCrypt(props) {
     }
   }
 
-  const disciplinesForSort = [];
-  Object.keys(disciplinesDict).map((key) => {
-    disciplinesForSort.push([key, disciplinesDict[key]]);
-  });
-
-  const disciplinesSet = disciplinesForSort
-    .sort((a, b) => b[1] - a[1])
-    .map((i) => {
-      return i[0];
-    });
-
-  let keyDisciplines = 0;
-  disciplinesForSort
-    .sort((a, b) => b[1] - a[1])
-    .map((i) => {
-      if (i[1] >= 5) {
-        keyDisciplines += 1;
-      }
-    });
-
-  const nonKeyDisciplinesList = [];
-  for (let i = keyDisciplines; i < disciplinesSet.length; i++) {
-    nonKeyDisciplinesList.push(disciplinesSet[i]);
-  }
-
-  let nonKeyDisciplines = 0;
-  Object.keys(props.cards).map((card) => {
-    let counter = 0;
-    Object.keys(props.cards[card].c['Disciplines']).map((d) => {
-      if (nonKeyDisciplinesList.includes(d)) {
-        counter += 1;
-      }
-    });
-    if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
-  });
-
   const crypt = {};
   const cryptSide = {};
   const cryptCards = [];
   const cryptSideCards = [];
+  let cryptTotal = 0;
   let hasBanned = false;
   let cryptGroupMin;
   let cryptGroupMax;
 
   Object.keys(props.cards).map((card) => {
     if (props.cards[card].q > 0) {
+      cryptTotal += props.cards[card].q;
       crypt[card] = props.cards[card];
       if (props.cards[card].c['Group'] == 'ANY') {
         return;
@@ -206,12 +172,41 @@ function DeckCrypt(props) {
     }
   });
 
-  let cryptTotal = 0;
-  for (const card in crypt) {
-    if (card) {
-      cryptTotal += crypt[card].q;
-    }
+  const disciplinesForSort = [];
+  Object.keys(disciplinesDict).map((key) => {
+    disciplinesForSort.push([key, disciplinesDict[key]]);
+  });
+
+  const disciplinesSet = disciplinesForSort
+    .sort((a, b) => b[1] - a[1])
+    .map((i) => {
+      return i[0];
+    });
+
+  let keyDisciplines = 0;
+  disciplinesForSort
+    .sort((a, b) => b[1] - a[1])
+    .map((i) => {
+      if (i[1] > cryptTotal * 0.4) {
+        keyDisciplines += 1;
+      }
+    });
+
+  const nonKeyDisciplinesList = [];
+  for (let i = keyDisciplines; i < disciplinesSet.length; i++) {
+    nonKeyDisciplinesList.push(disciplinesSet[i]);
   }
+
+  let nonKeyDisciplines = 0;
+  Object.keys(props.cards).map((card) => {
+    let counter = 0;
+    Object.keys(props.cards[card].c['Disciplines']).map((d) => {
+      if (nonKeyDisciplinesList.includes(d)) {
+        counter += 1;
+      }
+    });
+    if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
+  });
 
   let cryptGroups;
   if (cryptGroupMax - cryptGroupMin == 1) {
