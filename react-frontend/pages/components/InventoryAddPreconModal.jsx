@@ -181,7 +181,9 @@ function InventoryAddDeckModal(props) {
                     </Row>
                   }
                 >
-                  <EyeFill />
+                  <div>
+                    <EyeFill />
+                  </div>
                 </OverlayTooltip>
               </div>
             </td>

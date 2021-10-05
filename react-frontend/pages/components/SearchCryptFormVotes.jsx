@@ -30,7 +30,7 @@ function SearchCryptFormVotes(props) {
   return (
     <Row className="py-1 ps-1 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
-        <label className="h6 mb-0">Votes:</label>
+        <div className="bold blue">Votes:</div>
       </Col>
       <Col xs={9} className="d-inline px-0">
         <Select

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Form, Row, Col } from 'react-bootstrap';
+import { Form, Stack, Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import GiftFill from '../../assets/images/icons/gift-fill.svg';
 import setsAndPrecons from './forms_data/setsAndPrecons.json';
@@ -129,7 +129,7 @@ function SearchFormPrecon(props) {
     <>
       <Row className="pt-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Precon:</label>
+          <div className="bold blue">Precon:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <Select
@@ -146,7 +146,9 @@ function SearchFormPrecon(props) {
       </Row>
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">
-          {preconOptionsForm}
+          <Stack direction="horizontal" gap={3}>
+            {preconOptionsForm}
+          </Stack>
         </Col>
       </Row>
     </>

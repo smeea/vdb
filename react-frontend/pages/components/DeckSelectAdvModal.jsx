@@ -331,7 +331,9 @@ function DeckSelectAdvModal(props) {
                     </Row>
                   }
                 >
-                  <EyeFill />
+                  <div>
+                    <EyeFill />
+                  </div>
                 </OverlayTooltip>
               </div>
             </td>

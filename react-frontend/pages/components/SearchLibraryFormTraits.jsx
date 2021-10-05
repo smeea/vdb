@@ -64,7 +64,7 @@ function SearchLibraryFormTraits(props) {
     <>
       <Row className="mx-0 py-1 ps-1">
         <Col className="d-flex px-0">
-          <label className="h6 mb-0">Traits:</label>
+          <div className="bold blue">Traits:</div>
         </Col>
       </Row>
       <Row className="mx-0">

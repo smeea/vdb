@@ -57,7 +57,7 @@ function SearchFormCapacity(props) {
   return (
     <Row className="py-1 ps-1 mx-0 align-items-center">
       <Col xs={3} className="d-flex px-0">
-        <label className="h6 mb-0">Capacity:</label>
+        <div className="bold blue">Capacity:</div>
       </Col>
       <Col xs={4} className="d-inline px-0">
         <Select

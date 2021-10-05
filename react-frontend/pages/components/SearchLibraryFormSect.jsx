@@ -58,7 +58,7 @@ function SearchLibraryFormSect(props) {
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex justify-content-between px-0">
-          <label className="h6 mb-0">Sect:</label>
+          <div className="bold blue">Sect:</div>
           {props.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
               {props.value.length == 1 ? (

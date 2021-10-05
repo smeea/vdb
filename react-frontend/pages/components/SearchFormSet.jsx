@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Form, Row, Col } from 'react-bootstrap';
+import { Form, Stack, Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import setsAndPrecons from './forms_data/setsAndPrecons.json';
 import AppContext from '../../context/AppContext.js';
@@ -94,7 +94,7 @@ function SearchFormSet(props) {
     <>
       <Row className="pt-1 ps-1 mx-0 align-items-center">
         <Col xs={3} className="d-flex px-0">
-          <label className="h6 mb-0">Set:</label>
+          <div className="bold blue">Set:</div>
         </Col>
         <Col xs={9} className="d-inline px-0">
           <Select
@@ -110,7 +110,11 @@ function SearchFormSet(props) {
         </Col>
       </Row>
       <Row className="pb-1 ps-1 mx-0 align-items-center">
-        <Col className="d-flex justify-content-end px-0">{setOptionsForm}</Col>
+        <Col className="d-flex justify-content-end px-0">
+          <Stack direction="horizontal" gap={3}>
+            {setOptionsForm}
+          </Stack>
+        </Col>
       </Row>
     </>
   );

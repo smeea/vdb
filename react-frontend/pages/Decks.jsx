@@ -369,7 +369,7 @@ function Decks(props) {
                         id="precons"
                         label={
                           <div className="blue">
-                            <b>Products</b>
+                            <b>Precons</b>
                           </div>
                         }
                         inline
