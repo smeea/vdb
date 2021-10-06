@@ -1,6 +1,7 @@
 # FIX
 * Card custom inventory status for Library
 * Deck name unidecode (for adv deck select) and other filters in TWD
+* Fix ErrorOverlay
 
 # FIX MOBILE
 
@@ -10,6 +11,8 @@
 * Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url
+* Scans from https://sutekh.vtes.za.net/cardimages/
+* Case-insensitive accounts
 
 # BIG FEATURES
 * Card text history
@@ -30,7 +33,6 @@
 * Move autocompletion to frontend
 * Move export to frontend
 * Update to parcel 2
-* Update to react-bootstrap 2
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardior codes to return

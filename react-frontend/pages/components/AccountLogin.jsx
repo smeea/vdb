@@ -28,6 +28,7 @@ function AccountLogin(props) {
   const [showModal, setShowModal] = useState(false);
 
   const [passwordError, setPasswordError] = useState(false);
+  const [connectionError, setConnectionError] = useState(false);
   const [emptyUsername, setEmptyUsername] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
@@ -44,6 +45,7 @@ function AccountLogin(props) {
 
   const loginUser = () => {
     setPasswordError(false);
+    setConnectionError(false);
 
     if (state.username && state.password) {
       setEmptyUsername(false);
@@ -81,12 +83,16 @@ function AccountLogin(props) {
           setEmail(data.email);
           setSpinnerState(false);
         })
-        .catch((error) => {
-          setPasswordError(true);
-          setState((prevState) => ({
-            ...prevState,
-            password: '',
-          }));
+        .catch((e) => {
+          if (e.message == 401) {
+            setPasswordError(true);
+            setState((prevState) => ({
+              ...prevState,
+              password: '',
+            }));
+          } else {
+            setConnectionError(true);
+          }
           setSpinnerState(false);
         });
     } else {
@@ -188,6 +194,13 @@ function AccountLogin(props) {
           placement="bottom"
         >
           WRONG PASSWORD
+        </ErrorOverlay>
+        <ErrorOverlay
+          show={connectionError}
+          target={refPassword.current}
+          placement="bottom"
+        >
+          CONNECTION PROBLEM
         </ErrorOverlay>
         <ErrorOverlay
           show={emptyPassword}
