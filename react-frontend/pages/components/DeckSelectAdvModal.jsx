@@ -186,7 +186,7 @@ function DeckSelectAdvModal(props) {
         filtered = filtered.filter((deck) => {
           let counter = 0;
           tagsFilter.map((tag) => {
-            if (deck.tags.includes(tag)) counter += 1;
+            if (deck.tags && deck.tags.includes(tag)) counter += 1;
           });
           if (counter >= tagsFilter.length) return true;
         });

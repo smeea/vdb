@@ -7,14 +7,16 @@ function DeckTotal(props) {
   let total = 0;
 
   Object.values(decks).map((deck) => {
-    deck.tags.map((tag) => {
-      if (byTags[tag]) {
-        byTags[tag] += 1;
-      } else {
-        byTags[tag] = 1;
-      }
-    });
-    total += 1;
+    if (deck.tags) {
+      deck.tags.map((tag) => {
+        if (byTags[tag]) {
+          byTags[tag] += 1;
+        } else {
+          byTags[tag] = 1;
+        }
+      });
+      total += 1;
+    }
   });
 
   const totalOutput = Object.keys(byTags).map((k) => {

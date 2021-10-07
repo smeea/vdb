@@ -47,9 +47,11 @@ function InventoryAddDeckModal(props) {
 
   const allTags = new Set();
   Object.keys(decks).map((deckid) => {
-    decks[deckid].tags.map((tag) => {
-      allTags.add(tag);
-    });
+    if (decks[deckid].tags) {
+      decks[deckid].tags.map((tag) => {
+        allTags.add(tag);
+      });
+    }
   });
 
   const defaultTagsOptions = [...allTags].map((tag) => ({
@@ -72,7 +74,7 @@ function InventoryAddDeckModal(props) {
         filtered = filtered.filter((deck) => {
           let counter = 0;
           tagsFilter.map((tag) => {
-            if (deck.tags.includes(tag)) counter += 1;
+            if (deck.tags && deck.tags.includes(tag)) counter += 1;
           });
           if (counter >= tagsFilter.length) return true;
         });

@@ -31,15 +31,6 @@ def listInventory():
             crypt = {}
             library = {}
             if current_user.inventory:
-                # # Fix bad imports
-                # if 'undefined' in current_user.inventory:
-                #     print(current_user.username,
-                #           'fix user with undefined in inventory')
-                #     new_cards = current_user.inventory.copy()
-                #     del new_cards['undefined']
-                #     current_user.inventory = new_cards
-                #     db.session.commit()
-
                 for k, v in current_user.inventory.items():
                     k = int(k)
                     if k > 200000:
@@ -449,23 +440,6 @@ def listDecks():
     try:
         decks = {}
         for deck in current_user.decks.all():
-
-            # # Fix pre-inventory period decks
-            # if not deck.used_in_inventory:
-            #     print(deck.deckid, 'fix non-used_in_inventory decks')
-            #     deck.used_in_inventory = {}
-            #     db.session.commit()
-            # if not deck.inventory_type:
-            #     print(deck.deckid, 'fix non-inventory_type decks')
-            #     deck.inventory_type = ''
-            #     db.session.commit()
-
-            # Fix pre-tags decks
-            if not deck.tags:
-                print(deck.deckid, 'fix pre-tags decks')
-                deck.tags = []
-                db.session.commit()
-
             # Fix bad imports
             if 'undefined' in deck.cards:
                 print(deck.deckid, 'del undefined cards')
@@ -504,14 +478,6 @@ def listDecks():
                         print(b, 'fix bad master')
                         d.master = deck.deckid
                         db.session.commit()
-
-            # # Fix cards
-            # cards = {}
-            # for k, v in deck.cards.items():
-            #     if k is not str(k):
-            #         print(deck.deckid, 'fix cards id')
-            #         cards[str(k)] = v
-            #         deck.cards = cards
 
             crypt = {}
             library = {}
@@ -565,7 +531,6 @@ def newDeck():
                 if 'description' in request.json else '',
                 author=current_user,
                 inventory_type='',
-                tags=[],
                 used_in_inventory={},
                 cards=request.json['cards'] if 'cards' in request.json else {})
             db.session.add(d)
@@ -598,7 +563,7 @@ def createBranch():
                       description=source.description,
                       author=current_user,
                       inventory_type='',
-                      tags=master.tags,
+                      tags=source.tags,
                       master=master.deckid,
                       used_in_inventory={},
                       cards=source.cards)
@@ -681,7 +646,6 @@ def cloneDeck():
                  description=deck['description'],
                  author=current_user,
                  inventory_type='',
-                 tags=[],
                  used_in_inventory={},
                  cards=cards)
         db.session.add(d)
@@ -764,8 +728,8 @@ def cloneDeck():
                  description='',
                  author=current_user,
                  inventory_type='',
-                 tags=[],
                  used_in_inventory={},
+                 tags=targetDeck.tags,
                  cards=targetDeck.cards)
         db.session.add(d)
         db.session.commit()
@@ -785,7 +749,6 @@ def urlCloneDeck():
              author_public_name=targetDeck.author_public_name,
              description=targetDeck.description,
              inventory_type='',
-             tags=[],
              used_in_inventory={},
              cards=targetDeck.cards)
     db.session.add(d)
@@ -809,7 +772,6 @@ def importDeck():
                          description=description,
                          author=current_user,
                          inventory_type='',
-                         tags=[],
                          used_in_inventory={},
                          cards=cards)
                 db.session.add(d)

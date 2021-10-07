@@ -15,6 +15,7 @@
 * Case-insensitive accounts
 * Set/Precon multi-filters
 * Deck crypt sort by group
+* Export all in xlsx and csv
 
 # BIG FEATURES
 * Card text history

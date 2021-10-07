@@ -194,9 +194,11 @@ function Decks(props) {
 
     if (decks) {
       Object.keys(decks).map((deckid) => {
-        decks[deckid].tags.map((tag) => {
-          allTags.add(tag);
-        });
+        if (decks[deckid].tags) {
+          decks[deckid].tags.map((tag) => {
+            allTags.add(tag);
+          });
+        }
       });
     }
 

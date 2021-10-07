@@ -19,6 +19,8 @@ function DeckTags(props) {
           value: tag,
         }))
       );
+    } else {
+      setTags(undefined);
     }
   }, [props.deck]);
 
