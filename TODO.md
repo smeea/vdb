@@ -35,7 +35,6 @@
 * Sync with websockets
 * Move autocompletion to frontend
 * Move export to frontend
-* Update to parcel 2
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardior codes to return

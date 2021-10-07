@@ -3,6 +3,7 @@ flask-backend/migrations/
 flask-backend/venv/
 flask-backend/app.db
 flask-backend/.flaskenv
+react-frontend/.parcel-cache/
 react-frontend/node_modules/
 react-frontend/dist/*
 !react-frontend/dist/images/
