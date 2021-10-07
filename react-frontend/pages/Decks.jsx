@@ -570,11 +570,9 @@ function Decks(props) {
               setShowMenuButtons(true);
               setShowFloatingButtons(false);
             }}
-            className="float-right-bottom menu"
+            className="d-flex float-right-bottom float-menu align-items-center justify-content-center"
           >
-            <div className="pt-2 float-menu">
-              <List viewBox="0 0 16 16" />
-            </div>
+            <List viewBox="0 0 16 16" />
           </div>
         </>
       )}

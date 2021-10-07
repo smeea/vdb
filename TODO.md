@@ -13,6 +13,8 @@
 * TWD new/random to respect url
 * Scans from https://sutekh.vtes.za.net/cardimages/
 * Case-insensitive accounts
+* Set/Precon multi-filters
+* Deck crypt sort by group
 
 # BIG FEATURES
 * Card text history

@@ -120,19 +120,15 @@ function ResultCryptModal(props) {
             )}
             <div
               onClick={props.handleClose}
-              className="float-right-bottom clear"
+              className="d-flex float-right-middle float-clear align-items-center justify-content-center"
             >
-              <div className="pt-1 float-clear">
-                <X viewBox="0 0 16 16" />
-              </div>
+              <X viewBox="0 0 16 16" />
             </div>
             <div
               onClick={() => toggleShowImage()}
-              className="float-right-middle add-on"
+              className="d-flex float-right-bottom float-turn align-items-center justify-content-center"
             >
-              <div className="pt-1 float-add">
-                <ArrowRepeat viewBox="0 0 16 16" />
-              </div>
+              <ArrowRepeat viewBox="0 0 16 16" />
             </div>
           </div>
         ) : (

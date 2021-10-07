@@ -459,23 +459,22 @@ function TwdSearchForm(props) {
       </Row>
       {isMobile && (
         <>
-          <div onClick={handleClearButton} className="float-right-middle clear">
-            <div className="pt-1 float-clear">
-              <X viewBox="0 0 16 16" />
-            </div>
+          <div
+            onClick={handleClearButton}
+            className="d-flex float-right-middle float-clear align-items-center justify-content-center"
+          >
+            <X viewBox="0 0 16 16" />
           </div>
           <div
             ref={refError}
             onClick={handleSubmitButton}
-            className="float-right-bottom search"
+            className="d-flex float-right-bottom float-search align-items-center justify-content-center"
           >
-            <div className="pt-2 float-search">
-              {!spinnerState ? (
-                <Check2 viewBox="0 0 16 16" />
-              ) : (
-                <Spinner animation="border" variant="light" />
-              )}
-            </div>
+            {!spinnerState ? (
+              <Check2 viewBox="0 0 16 16" className="pt-1" />
+            ) : (
+              <Spinner animation="border" variant="light" />
+            )}
             <ErrorOverlay
               show={showError}
               target={refError.current}

@@ -120,19 +120,15 @@ function Cards(props) {
                   <QuickSelect setCard={setCard} />
                   <div
                     onClick={() => randomCrypt()}
-                    className="d-flex justify-content-center align-items-center float-right-top random"
+                    className="d-flex float-right-top float-random align-items-center justify-content-center"
                   >
-                    <div className="float-random">
-                      <Dice3 viewBox="0 0 16 16" /> C
-                    </div>
+                    <Dice3 viewBox="0 0 16 16" className="pe-1" /> C
                   </div>
                   <div
                     onClick={() => randomLibrary()}
-                    className="d-flex justify-content-center align-items-center float-right-middle random"
+                    className="d-flex float-right-middle float-random align-items-center justify-content-center"
                   >
-                    <div className="float-random">
-                      <Dice3 viewBox="0 0 16 16" /> L
-                    </div>
+                    <Dice3 viewBox="0 0 16 16" className="pe-1" /> L
                   </div>
                 </Col>
               </Row>
@@ -179,11 +175,9 @@ function Cards(props) {
                 </Row>
                 <div
                   onClick={() => toggleShowImage()}
-                  className="float-right-bottom add-on"
+                  className="d-flex float-right-bottom float-turn align-items-center justify-content-center"
                 >
-                  <div className="pt-1 float-add">
-                    <ArrowRepeat viewBox="0 0 16 16" />
-                  </div>
+                  <ArrowRepeat viewBox="0 0 16 16" />
                 </div>
               </>
             )}

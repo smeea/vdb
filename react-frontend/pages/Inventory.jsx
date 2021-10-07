@@ -116,12 +116,10 @@ function Inventory(props) {
               {showFloatingButtons && (
                 <div
                   onClick={() => setShowCrypt(!showCrypt)}
-                  className="float-right-middle add"
+                  className="d-flex float-right-middle float-add-on align-items-center justify-content-center"
                 >
-                  <div className="d-flex py-0 px-1 align-items-top">
-                    <div className="d-inline" style={{ fontSize: '1.85em' }}>
-                      {showCrypt ? 'LIB' : 'CR'}
-                    </div>
+                  <div className="d-inline" style={{ fontSize: '1.6em' }}>
+                    {showCrypt ? 'LIB' : 'CR'}
                   </div>
                 </div>
               )}
@@ -236,11 +234,9 @@ function Inventory(props) {
               setShowMenuButtons(true);
               setShowFloatingButtons(false);
             }}
-            className="float-right-bottom menu"
+            className="d-flex float-right-bottom float-menu align-items-center justify-content-center"
           >
-            <div className="pt-2 float-menu">
-              <List viewBox="0 0 16 16" />
-            </div>
+            <List viewBox="0 0 16 16" />
           </div>
         </>
       )}

@@ -29,7 +29,7 @@ body
   color: var(--fg-primary)
   background: var(--bg-primary)
 
-a, .prob, .link-like
+a, .prob, .link-like, a.quantity:hover
   color: var(--fg-secondary)
   text-decoration: none
 
@@ -1116,70 +1116,56 @@ div.float-left-bottom
 div.float-right-top
   bottom: 175px
   right: 15px
-
 div.float-right-middle
   bottom: 115px
   right: 15px
-
 div.float-right-bottom
   bottom: 55px
   right: 15px
-
 div.float-left-top
   bottom: 175px
   left: 15px
-
 div.float-left-middle
   bottom: 115px
   left: 15px
-
 div.float-left-bottom
   bottom: 55px
   left: 15px
 
-div.clear
-  background-color: #A06060
-  opacity: 0.8
-
-div.search
+div.float-search
   background-color: #709070
   opacity: 0.8
-
-div.add-off
+div.float-add-off
   background-color: #A0A0A0
   opacity: 0.8
-
-div.add,
-div.add-on,
-div.menu
+div.float-add-on,
+div.float-menu,
+div.float-turn
   background-color: #707070
   opacity: 0.8
-
-div.random
+div.float-clear
+  background-color: #A06060
+  opacity: 0.8
+div.float-random
   background-color: #404040
   opacity: 0.3
+  font-weight: bold
 
-div.float-search svg
-  width: 80%
-  height: auto
-
-div.float-add svg,
+div.float-add-on svg,
+div.float-add-off svg,
+div.float-turn svg,
 div.float-clear svg
   width: 90%
   height: auto
-
+div.float-search svg
+  width: 80%
+  height: auto
 div.float-menu svg
   width: 75%
   height: auto
-
 div.float-random svg
   width: 50%
   height: auto
-
-div.float-random
-  width: 80%
-  height: auto
-  font-weight: bold
 
 .modal-tooltip
   z-index: 1100

@@ -314,30 +314,20 @@ function DeckCrypt(props) {
             onHide={() => setShowAdd(false)}
             animation={false}
           >
+            <Modal.Header
+              className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
+            >
+              <h5>Add Crypt Card</h5>
+              <Button variant="outline-secondary" onClick={props.handleClose}>
+                <X width="32" height="32" viewBox="0 0 16 16" />
+              </Button>
+            </Modal.Header>
             <Modal.Body className="p-0">
-              <Container className="p-0" fluid>
-                <Row className="p-0 m-0">
-                  <Col className="p-0">
-                    <div className="m-2">
-                      <button
-                        type="button"
-                        className="close m-1"
-                        onClick={() => setShowAdd(false)}
-                      >
-                        <X width="32" height="32" viewBox="0 0 16 16" />
-                      </button>
-                    </div>
-                    <div className="d-flex justify-content-center">
-                      <h5>Add Crypt Card</h5>
-                    </div>
-                  </Col>
-                </Row>
-                <DeckNewCryptCard
-                  setShowAdd={setShowAdd}
-                  cards={props.cards}
-                  deckid={props.deckid}
-                />
-              </Container>
+              <DeckNewCryptCard
+                setShowAdd={setShowAdd}
+                cards={props.cards}
+                deckid={props.deckid}
+              />
             </Modal.Body>
           </Modal>
         ))}
@@ -387,14 +377,15 @@ function DeckCrypt(props) {
         </div>
       )}
       {isMobile && props.showFloatingButtons && (
-        <div onClick={() => setShowAdd(true)} className="float-right-top add">
-          <div className="d-flex py-0 px-1 align-items-top">
-            <div className="d-inline" style={{ fontSize: '1.75em' }}>
-              +
-            </div>
-            <div className="d-inline" style={{ fontSize: '1.85em' }}>
-              C
-            </div>
+        <div
+          onClick={() => setShowAdd(true)}
+          className="d-flex float-right-top float-add-on align-items-center justify-content-center"
+        >
+          <div className="d-inline" style={{ fontSize: '1.4em' }}>
+            +
+          </div>
+          <div className="d-inline" style={{ fontSize: '1.6em' }}>
+            C
           </div>
         </div>
       )}

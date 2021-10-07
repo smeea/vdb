@@ -129,10 +129,11 @@ function TwdResult(props) {
       )}
       {isMobile && props.showFloatingButtons && (
         <>
-          <div onClick={handleClear} className="float-right-bottom clear">
-            <div className="pt-1 float-clear">
-              <X viewBox="0 0 16 16" />
-            </div>
+          <div
+            onClick={handleClear}
+            className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+          >
+            <X viewBox="0 0 16 16" />
           </div>
         </>
       )}
