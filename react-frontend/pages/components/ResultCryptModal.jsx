@@ -114,7 +114,7 @@ function ResultCryptModal(props) {
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
                   inventoryState={props.inventoryState}
-                  forceInventory={props.forceInventory}
+                  forceInventoryMode={props.forceInventoryMode}
                 />
               </div>
             )}
@@ -143,7 +143,7 @@ function ResultCryptModal(props) {
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
                   inventoryState={props.inventoryState}
-                  forceInventory={props.forceInventory}
+                  forceInventoryMode={props.forceInventoryMode}
                 />
               </div>
               <div className="d-flex justify-content-between pt-4">
