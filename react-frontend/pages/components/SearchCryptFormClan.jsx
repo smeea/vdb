@@ -117,7 +117,10 @@ function SearchCryptFormClan(props) {
   return (
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={3} className="d-flex justify-content-between px-0">
+        <Col
+          xs={3}
+          className="d-flex justify-content-between align-items-center px-0"
+        >
           <div className="bold blue">Clan:</div>
           {props.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">

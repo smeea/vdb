@@ -2,6 +2,7 @@
 * Card custom inventory status for Library
 * Deck name unidecode (for adv deck select) and other filters in TWD
 * Fix ErrorOverlay
+* Day theme button focus color
 
 # FIX MOBILE
 
