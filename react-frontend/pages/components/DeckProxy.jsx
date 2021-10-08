@@ -94,7 +94,7 @@ function DeckProxy(props) {
           variant={props.noText ? 'primary' : 'secondary'}
         >
           <div className="d-flex justify-content-center align-items-center">
-            <div className="pe-2">
+            <div className={props.noText ? null : 'pe-2'}>
               <Printer />
             </div>
             {!props.noText && 'PDF Proxy'}

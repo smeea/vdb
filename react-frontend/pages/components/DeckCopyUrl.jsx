@@ -121,7 +121,7 @@ function DeckCopyUrl(props) {
             variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
           >
             <div className="d-flex justify-content-center align-items-center">
-              <div className="pe-2">
+              <div className={props.noText ? null : 'pe-2'}>
                 <ShareFill />
               </div>
               {!props.noText && (state ? 'Copied' : 'Copy URL')}

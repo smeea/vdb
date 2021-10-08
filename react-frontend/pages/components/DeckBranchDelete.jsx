@@ -42,12 +42,16 @@ function DeckBranchDelete(props) {
         variant={props.noText ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
       >
-        <NodeMinusFill
-          width={props.noText ? '16' : '21'}
-          height={props.noText ? '16' : '21'}
-          viewBox="0 0 16 16"
-        />{' '}
-        {!props.noText && 'Delete Revision'}
+        <div className="d-flex justify-content-center align-items-center">
+          <div className={props.noText ? null : 'pe-2'}>
+            <NodeMinusFill
+              width={props.noText ? '16' : '21'}
+              height={props.noText ? '16' : '21'}
+              viewBox="0 0 16 16"
+            />
+          </div>
+          {!props.noText && 'Delete Revision'}
+        </div>
       </Button>
       <DeleteConfirmation
         show={showConfirmation}

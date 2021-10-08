@@ -40,7 +40,7 @@ function DeckDelete(props) {
         onClick={() => setShowConfirmation(true)}
       >
         <div className="d-flex justify-content-center align-items-center">
-          <div className="pe-2">
+          <div className={props.noText ? null : 'pe-2'}>
             <TrashFill />
           </div>
           {!props.noText && 'Delete Deck'}

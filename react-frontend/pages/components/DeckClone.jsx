@@ -59,7 +59,7 @@ function DeckClone(props) {
         onClick={cloneDeck}
       >
         <div className="d-flex justify-content-center align-items-center">
-          <div className="pe-2">
+          <div className={props.noText ? null : 'pe-2'}>
             <Files />
           </div>
           {!props.noText && (state ? 'Cloned' : 'Clone Deck')}
