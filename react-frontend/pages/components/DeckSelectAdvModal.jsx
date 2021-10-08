@@ -344,7 +344,11 @@ function DeckSelectAdvModal(props) {
             </td>
           )}
           <td className="tags">
-            <DeckTags allTagsOptions={props.allTagsOptions} deck={deck} />
+            <DeckTags
+              allTagsOptions={props.allTagsOptions}
+              isAuthor={true}
+              deck={deck}
+            />
           </td>
           {!isMobile && (
             <td className="buttons">
