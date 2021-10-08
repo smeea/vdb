@@ -81,10 +81,6 @@ export const AppProvider = (props) => {
     window.localStorage.setItem('inventoryMode', !inventoryMode);
   };
 
-  const isInventory =
-    Object.keys(inventoryCrypt).length > 0 ||
-    Object.keys(inventoryLibrary).length > 0;
-
   const toggleCryptSort = () => {
     setCryptSortByCap(!cryptSortByCap);
     window.localStorage.setItem('cryptSortByCap', !cryptSortByCap);
@@ -368,7 +364,6 @@ export const AppProvider = (props) => {
         setHideMissing,
         inventoryMode,
         toggleInventoryMode,
-        isInventory,
         addMode,
         toggleAddMode,
         showImage,

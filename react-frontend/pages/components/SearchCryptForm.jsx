@@ -23,7 +23,6 @@ import AppContext from '../../context/AppContext.js';
 
 function SearchCryptForm(props) {
   const {
-    isInventory,
     setShowCryptSearch,
     cryptResults,
     setCryptResults,
@@ -254,13 +253,15 @@ function SearchCryptForm(props) {
         preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
       />
-      {(inventoryMode || (isMobile && isInventory)) && (
-        <Form.Check
-          type="checkbox"
-          id="hideMissing"
-          label="Search in Inventory"
-          onChange={() => setHideMissing(!hideMissing)}
-        />
+      {inventoryMode && (
+        <div className={isMobile ? 'pt-1 ps-1' : 'ps-2'}>
+          <Form.Check
+            type="checkbox"
+            id="hideMissing"
+            label="Search in Inventory"
+            onChange={() => setHideMissing(!hideMissing)}
+          />
+        </div>
       )}
       <SearchCryptFormDisciplines
         value={cryptFormState.disciplines}
