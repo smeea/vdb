@@ -157,7 +157,8 @@ function About(props) {
                 <a href="https://static.krcg.org/">KRCG</a>
                 <br />
                 Cards scans from different sets by{' '}
-                <a href="http://vtes.pl/">VTES.PL</a> Team
+                <a href="http://vtes.pl/">VTES.PL</a> and{' '}
+                <a href="https://sutekh.vtes.za.net">Sutekh</a>
               </p>
             </div>
 

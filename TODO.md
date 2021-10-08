@@ -11,8 +11,6 @@
 * Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url
-* Scans from https://sutekh.vtes.za.net/cardimages/
-* Case-insensitive accounts
 * Set/Precon multi-filters
 * Deck crypt sort by group
 * Export all in xlsx and csv
@@ -34,8 +32,10 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 * Sync with websockets
 * Move autocompletion to frontend
+* Move search to frontend
 * Move export to frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardior codes to return
 * Unify tests for current_user
+* Case-insensitive accounts
