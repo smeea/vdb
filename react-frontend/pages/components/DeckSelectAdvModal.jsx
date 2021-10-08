@@ -439,12 +439,14 @@ function DeckSelectAdvModal(props) {
               </th>
               {!isMobile && (
                 <th className="buttons">
-                  <div className="d-flex justify-content-end align-items-center py-1 pe-1">
+                  <div className="d-flex justify-content-end align-items-center">
                     <Form.Check
-                      className="pe-2"
+                      className="pt-05 pe-3"
                       type="checkbox"
                       id="revFilter"
-                      label={isMobile ? 'Rev' : 'Revisions'}
+                      label=<div className="d-flex pt-05">
+                        {isMobile ? 'Rev' : 'Revisions'}
+                      </div>
                       checked={revFilter}
                       onChange={() => setRevFilter(!revFilter)}
                     />
