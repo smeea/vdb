@@ -836,7 +836,7 @@ def deckExportRoute():
             deck = {
                 'cards': d.cards,
                 'name': d.name,
-                'author': d.author.public_name,
+                'author': d.author_public_name,
                 'branch_name': d.branch_name,
                 'description': d.description,
             }
