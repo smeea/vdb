@@ -158,7 +158,7 @@ function About(props) {
                 <br />
                 Cards scans from different sets by{' '}
                 <a href="http://vtes.pl/">VTES.PL</a> and{' '}
-                <a href="https://sutekh.vtes.za.net">Sutekh</a>
+                <a href="https://ccggamez.com">CCGAMEZ.COM</a>
               </p>
             </div>
 
