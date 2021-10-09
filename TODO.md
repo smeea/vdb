@@ -15,17 +15,15 @@
 * Export all in xlsx and csv
 
 # BIG FEATURES
-* Card text history
 * Search for similar TWD decks
 * Public deck archive
 * Card recommendation
 
 # MOBILE FEATURES
-* Offline PWA support
 * Close modal windows with floating button
 
 # MAYBE LATER FEATURES
-* Documentation on updates / update script
+* Documentation on updates
 * Script to update images/rulings/twd from static.krcg.org
 
 # IMPROVE TECHNOLOGY - FRONTEND

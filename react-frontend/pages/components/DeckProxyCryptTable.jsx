@@ -113,8 +113,9 @@ function DeckProxyCryptTable(props) {
           label: (
             <div className="small">
               {setsAndPrecons[i].name}
-              {" '"}
-              {setsAndPrecons[i].year.slice(2, 4)}
+              {setsAndPrecons[i].year
+                ? ` '${setsAndPrecons[i].year.slice(2, 4)}`
+                : null}
             </div>
           ),
         });
