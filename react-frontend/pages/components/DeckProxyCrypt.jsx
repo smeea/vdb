@@ -1,16 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Modal, Button } from 'react-bootstrap';
-import InfoCircle from '../../assets/images/icons/info-circle.svg';
-import X from '../../assets/images/icons/x.svg';
-import DeckCryptTotalByCapacity from './DeckCryptTotalByCapacity.jsx';
-import DeckCryptTable from './DeckCryptTable.jsx';
-import DeckNewCryptCard from './DeckNewCryptCard.jsx';
-import DeckCryptSortButton from './DeckCryptSortButton.jsx';
+import DeckProxyCryptTable from './DeckProxyCryptTable.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 import UsedDescription from './UsedDescription.jsx';
 import AppContext from '../../context/AppContext';
 
-function DeckCrypt(props) {
+function DeckProxyCrypt(props) {
   const {
     decks,
     inventoryMode,
@@ -20,9 +14,6 @@ function DeckCrypt(props) {
     changeTimer,
     isMobile,
   } = useContext(AppContext);
-
-  const [showAdd, setShowAdd] = useState(false);
-  const [showInfo, setShowInfo] = useState(false);
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);
@@ -141,34 +132,22 @@ function DeckCrypt(props) {
   const cryptCards = [];
   const cryptSideCards = [];
   let cryptTotal = 0;
-  let hasBanned = false;
-  let cryptGroupMin;
-  let cryptGroupMax;
+  let cryptTotalSelected = 0;
 
   Object.keys(props.cards).map((card) => {
     if (props.cards[card].q > 0) {
       cryptTotal += props.cards[card].q;
       crypt[card] = props.cards[card];
-      if (props.cards[card].c['Group'] == 'ANY') {
-        return;
-      }
-      if (props.cards[card].c['Banned']) {
-        hasBanned = true;
-      }
-      if (
-        props.cards[card].c['Group'] < cryptGroupMin ||
-        cryptGroupMin == undefined
-      ) {
-        cryptGroupMin = props.cards[card].c['Group'];
-      }
-      if (
-        props.cards[card].c['Group'] > cryptGroupMax ||
-        cryptGroupMax == undefined
-      ) {
-        cryptGroupMax = props.cards[card].c['Group'];
-      }
     } else {
       cryptSide[card] = props.cards[card];
+    }
+
+    if (
+      props.proxySelected[card] &&
+      props.proxySelected[card].print &&
+      props.proxySelected[card].q > 0
+    ) {
+      cryptTotalSelected += props.proxySelected[card].q;
     }
   });
 
@@ -207,15 +186,6 @@ function DeckCrypt(props) {
     });
     if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
   });
-
-  let cryptGroups;
-  if (cryptGroupMax - cryptGroupMin == 1) {
-    cryptGroups = 'G' + cryptGroupMin + '-' + cryptGroupMax;
-  } else if (cryptGroupMax - cryptGroupMin == 0) {
-    cryptGroups = 'G' + cryptGroupMax;
-  } else {
-    cryptGroups = 'ERROR IN GROUPS';
-  }
 
   const SortByQuantity = (a, b) => {
     return b.q - a.q;
@@ -261,7 +231,7 @@ function DeckCrypt(props) {
           })
       );
     }
-  }, [changeTimer, props.deckid, cryptSortByCap]);
+  }, [changeTimer, cryptSortByCap]);
 
   return (
     <>
@@ -272,79 +242,18 @@ function DeckCrypt(props) {
             : 'd-flex align-items-center justify-content-between ps-2 info-message'
         }
       >
-        <b>
-          Crypt [{cryptTotal}
-          {!props.inMissing && cryptTotal < 12 && ' of 12+'}]
-          {!props.inMissing && ` - ${cryptGroups}`}
-          {!props.inMissing && hasBanned && ' - WITH BANNED'}
-        </b>
-        {!props.inAdvSelect && (
-          <div className="d-flex">
-            <div className="pe-1">
-              <DeckCryptSortButton />
-            </div>
-            <Button variant="primary" onClick={() => setShowInfo(!showInfo)}>
-              <InfoCircle />
-            </Button>
-            {props.isAuthor && !isMobile && (
-              <div className="ps-1">
-                <Button variant="primary" onClick={() => setShowAdd(!showAdd)}>
-                  +
-                </Button>
-              </div>
-            )}
-          </div>
-        )}
+        <b>Crypt [{cryptTotalSelected}]</b>
       </div>
-      {showInfo && (
-        <div className="info-message px-2">
-          <DeckCryptTotalByCapacity cards={crypt} />
-        </div>
-      )}
-      {showAdd &&
-        (!isMobile ? (
-          <DeckNewCryptCard
-            setShowAdd={setShowAdd}
-            cards={props.cards}
-            deckid={props.deckid}
-          />
-        ) : (
-          <Modal
-            show={showAdd}
-            onHide={() => setShowAdd(false)}
-            animation={false}
-          >
-            <Modal.Header
-              className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
-            >
-              <h5>Add Crypt Card</h5>
-              <Button variant="outline-secondary" onClick={props.handleClose}>
-                <X width="32" height="32" viewBox="0 0 16 16" />
-              </Button>
-            </Modal.Header>
-            <Modal.Body className="p-0">
-              <DeckNewCryptCard
-                setShowAdd={setShowAdd}
-                cards={props.cards}
-                deckid={props.deckid}
-              />
-            </Modal.Body>
-          </Modal>
-        ))}
-      <DeckCryptTable
+      <DeckProxyCryptTable
         handleModalCardOpen={handleModalCardOpen}
         setModalInventory={setModalInventory}
-        deckid={props.deckid}
         cards={sortedCards}
-        cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
-        showInfo={showInfo}
-        isAuthor={props.isAuthor}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
-        inSearch={props.inSearch}
-        inMissing={props.inMissing}
-        inAdvSelect={props.inAdvSelect}
+        handleProxySelector={props.handleProxySelector}
+        handleProxyCounter={props.handleProxyCounter}
+        proxySelected={props.proxySelected}
         setShowFloatingButtons={props.setShowFloatingButtons}
       />
       {Object.keys(cryptSide).length > 0 && !props.inAdvSelect && (
@@ -352,33 +261,18 @@ function DeckCrypt(props) {
           <div className="d-flex align-items-center justify-content-between ps-2">
             <b>Side Crypt</b>
           </div>
-          <DeckCryptTable
+          <DeckProxyCryptTable
             handleModalCardOpen={handleModalSideCardOpen}
             setModalInventory={setModalInventory}
-            deckid={props.deckid}
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
-            isAuthor={props.isAuthor}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
-            inSearch={props.inSearch}
-            inMissing={props.inMissing}
-            inAdvSelect={props.inAdvSelect}
+            handleProxySelector={props.handleProxySelector}
+            handleProxyCounter={props.handleProxyCounter}
+            proxySelected={props.proxySelected}
             setShowFloatingButtons={props.setShowFloatingButtons}
           />
-        </div>
-      )}
-      {isMobile && props.showFloatingButtons && (
-        <div
-          onClick={() => setShowAdd(true)}
-          className="d-flex float-right-top float-add-on align-items-center justify-content-center"
-        >
-          <div className="d-inline" style={{ fontSize: '1.4em' }}>
-            +
-          </div>
-          <div className="d-inline" style={{ fontSize: '1.6em' }}>
-            C
-          </div>
         </div>
       )}
       {(modalCardIdx !== undefined || modalSideCardIdx !== undefined) && (
@@ -401,4 +295,4 @@ function DeckCrypt(props) {
   );
 }
 
-export default DeckCrypt;
+export default DeckProxyCrypt;

@@ -1,6 +1,5 @@
 # FIX
-* Card custom inventory status for Library
-* Deck name unidecode (for adv deck select) and other filters in TWD
+* Card custom inventory status for Library (remove props.inSearch on fix)
 * Fix ErrorOverlay
 
 # FIX MOBILE

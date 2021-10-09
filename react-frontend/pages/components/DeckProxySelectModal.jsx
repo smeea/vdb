@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
-import DeckCrypt from './DeckCrypt.jsx';
-import DeckLibrary from './DeckLibrary.jsx';
+import DeckProxyCrypt from './DeckProxyCrypt.jsx';
+import DeckProxyLibrary from './DeckProxyLibrary.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckProxySelectModal(props) {
@@ -15,7 +15,7 @@ function DeckProxySelectModal(props) {
     inventoryMode,
   } = useContext(AppContext);
 
-  const [selectedCards, setSelectedCards] = useState({});
+  const [proxySelected, setProxySelected] = useState({});
   const [toggleState, setToggleState] = useState(false);
 
   useEffect(() => {
@@ -33,11 +33,11 @@ function DeckProxySelectModal(props) {
       };
     });
 
-    setSelectedCards(cards);
+    setProxySelected(cards);
   }, [props.deck]);
 
   const handleToggleSelectButton = () => {
-    const newState = selectedCards;
+    const newState = proxySelected;
     if (toggleState) {
       Object.keys(newState).map((key) => {
         newState[key].print = false;
@@ -47,7 +47,7 @@ function DeckProxySelectModal(props) {
         newState[key].print = true;
       });
     }
-    setSelectedCards(newState);
+    setProxySelected(newState);
     setToggleState(!toggleState);
   };
 
@@ -119,23 +119,23 @@ function DeckProxySelectModal(props) {
       }
     });
 
-    setSelectedCards({ ...selectedCards, ...crypt, ...library });
+    setProxySelected({ ...proxySelected, ...crypt, ...library });
   };
 
   const handleProxySelector = (e) => {
     const { id, name } = e.target;
-    const newState = selectedCards;
+    const newState = proxySelected;
     newState[id][name] = !newState[id][name];
-    setSelectedCards((prevState) => ({
+    setProxySelected((prevState) => ({
       ...prevState,
       [id]: newState[id],
     }));
   };
 
   const handleProxyCounter = (deckid, id, q) => {
-    const newState = selectedCards;
+    const newState = proxySelected;
     newState[id].q = q;
-    setSelectedCards((prevState) => ({
+    setProxySelected((prevState) => ({
       ...prevState,
       [id]: newState[id],
     }));
@@ -143,12 +143,12 @@ function DeckProxySelectModal(props) {
 
   const handleGenerateButton = () => {
     const cards = {};
-    Object.keys(selectedCards)
+    Object.keys(proxySelected)
       .filter((key) => {
-        return selectedCards[key].print;
+        return proxySelected[key].print;
       })
       .map((key) => {
-        cards[key] = selectedCards[key].q;
+        cards[key] = proxySelected[key].q;
       });
     props.proxyCards(cards);
     props.setShow(false);
@@ -180,13 +180,11 @@ function DeckProxySelectModal(props) {
               {props.deck.crypt && (
                 <>
                   <div className={isMobile ? null : 'sticky-modal'}>
-                    <DeckCrypt
+                    <DeckProxyCrypt
                       cards={props.deck.crypt}
-                      deckid={props.deck.deckid}
                       handleProxySelector={handleProxySelector}
                       handleProxyCounter={handleProxyCounter}
-                      proxySelected={selectedCards}
-                      inProxy={true}
+                      proxySelected={proxySelected}
                     />
                   </div>
                   {!isMobile && <br />}
@@ -196,12 +194,12 @@ function DeckProxySelectModal(props) {
             <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
               {props.deck.library && (
                 <>
-                  <DeckLibrary
+                  <DeckProxyLibrary
                     cards={props.deck.library}
                     deckid={props.deck.deckid}
                     handleProxySelector={handleProxySelector}
                     handleProxyCounter={handleProxyCounter}
-                    proxySelected={selectedCards}
+                    proxySelected={proxySelected}
                     inProxy={true}
                   />
                   {!isMobile && <br />}
