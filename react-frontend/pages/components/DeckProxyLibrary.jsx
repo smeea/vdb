@@ -215,6 +215,7 @@ function DeckProxyLibrary(props) {
             setModalInventory={setModalInventory}
             cards={libraryByType[cardtype]}
             handleProxySelector={props.handleProxySelector}
+            handleSetSelector={props.handleSetSelector}
             handleProxyCounter={props.handleProxyCounter}
             proxySelected={props.proxySelected}
             setShowFloatingButtons={props.setShowFloatingButtons}
@@ -240,6 +241,7 @@ function DeckProxyLibrary(props) {
             setModalInventory={setModalInventory}
             cards={librarySideByType[cardtype]}
             handleProxySelector={props.handleProxySelector}
+            handleSetSelector={props.handleSetSelector}
             handleProxyCounter={props.handleProxyCounter}
             proxySelected={props.proxySelected}
             setShowFloatingButtons={props.setShowFloatingButtons}

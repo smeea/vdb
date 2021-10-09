@@ -132,13 +132,29 @@ function DeckProxySelectModal(props) {
     }));
   };
 
-  const handleProxyCounter = (deckid, id, q) => {
+  const handleSetSelector = (e) => {
+    const { id, value } = e;
     const newState = proxySelected;
-    newState[id].q = q;
+    if (value) {
+      newState[id].set = value;
+    } else {
+      delete newState[id].set;
+    }
     setProxySelected((prevState) => ({
       ...prevState,
       [id]: newState[id],
     }));
+  };
+
+  const handleProxyCounter = (deckid, id, q) => {
+    if (q >= 0) {
+      const newState = proxySelected;
+      newState[id].q = q;
+      setProxySelected((prevState) => ({
+        ...prevState,
+        [id]: newState[id],
+      }));
+    }
   };
 
   const handleGenerateButton = () => {
@@ -148,7 +164,10 @@ function DeckProxySelectModal(props) {
         return proxySelected[key].print;
       })
       .map((key) => {
-        cards[key] = proxySelected[key].q;
+        cards[key] = {
+          q: proxySelected[key].q,
+          set: proxySelected[key].set,
+        };
       });
     props.proxyCards(cards);
     props.setShow(false);
@@ -160,7 +179,7 @@ function DeckProxySelectModal(props) {
       show={props.show}
       onHide={() => props.setShow(false)}
       animation={false}
-      dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
+      dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
     >
       <Modal.Header
         className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
@@ -175,14 +194,15 @@ function DeckProxySelectModal(props) {
       </Modal.Header>
       <Modal.Body className="p-0">
         <Container fluid>
-          <Row className="px-0">
-            <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
+          <Row className="px-0 pe-lg-4">
+            <Col xs={12} md={7} className="px-0 px-lg-4">
               {props.deck.crypt && (
                 <>
                   <div className={isMobile ? null : 'sticky-modal'}>
                     <DeckProxyCrypt
                       cards={props.deck.crypt}
                       handleProxySelector={handleProxySelector}
+                      handleSetSelector={handleSetSelector}
                       handleProxyCounter={handleProxyCounter}
                       proxySelected={proxySelected}
                     />
@@ -191,16 +211,16 @@ function DeckProxySelectModal(props) {
                 </>
               )}
             </Col>
-            <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
+            <Col xs={12} md={5} className="px-0">
               {props.deck.library && (
                 <>
                   <DeckProxyLibrary
                     cards={props.deck.library}
                     deckid={props.deck.deckid}
                     handleProxySelector={handleProxySelector}
+                    handleSetSelector={handleSetSelector}
                     handleProxyCounter={handleProxyCounter}
                     proxySelected={proxySelected}
-                    inProxy={true}
                   />
                   {!isMobile && <br />}
                 </>

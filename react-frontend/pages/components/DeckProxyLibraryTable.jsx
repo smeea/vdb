@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
-import { Form, OverlayTrigger } from 'react-bootstrap';
+import Select from 'react-select';
+import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
+import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
@@ -10,6 +12,7 @@ import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
+import setsAndPrecons from './forms_data/setsAndPrecons.json';
 import AppContext from '../../context/AppContext.js';
 
 function DeckProxyLibraryTable(props) {
@@ -19,6 +22,8 @@ function DeckProxyLibraryTable(props) {
     inventoryLibrary,
     usedLibraryCards,
     nativeLibrary,
+    lang,
+    localizedLibrary,
     isMobile,
   } = useContext(AppContext);
 
@@ -93,6 +98,56 @@ function DeckProxyLibraryTable(props) {
       }
     }
 
+    const setOptions = [
+      {
+        value: '',
+        id: card.c['Id'],
+        label: <div className="small">Newest (default)</div>,
+      },
+    ];
+
+    Object.keys(setsAndPrecons).map((i) => {
+      if (card.c['Set'][i] && i !== 'POD') {
+        setOptions.push({
+          value: i.toLowerCase(),
+          id: card.c['Id'],
+          label: (
+            <div className="small">
+              {setsAndPrecons[i].name}
+              {" '"}
+              {setsAndPrecons[i].year.slice(2, 4)}
+            </div>
+          ),
+        });
+      }
+    });
+
+    const imgPath =
+      props.proxySelected[card.c['Id']] && props.proxySelected[card.c['Id']].set
+        ? `${process.env.ROOT_URL}images/cards/set/${
+            props.proxySelected[card.c['Id']].set
+          }`
+        : `${process.env.ROOT_URL}images/cards/${
+            localizedLibrary &&
+            localizedLibrary[lang] &&
+            localizedLibrary[lang][card.c['Id']]
+              ? lang
+              : 'en-EN'
+          }`;
+
+    const imgFile = `${card.c['ASCII Name']
+      .toLowerCase()
+      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
+
+    const CardImage = (
+      <img
+        className="card-popover"
+        src={`${imgPath}/${imgFile}`}
+        alt={card.c['Name']}
+        onClick={props.handleClose}
+      />
+    );
+
     return (
       <React.Fragment key={card.c['Id']}>
         <tr className={resultTrClass}>
@@ -132,7 +187,7 @@ function DeckProxyLibraryTable(props) {
                       ? props.proxySelected[card.c['Id']].q
                       : 0
                   }
-                  inProxy={props.inProxy}
+                  inProxy={true}
                   inInventory={inInventory}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
@@ -187,6 +242,43 @@ function DeckProxyLibraryTable(props) {
               value={nativeLibrary[card.c.Id]['Card Text']}
             />
           </td>
+          {!isMobile && (
+            <>
+              <td className="proxy-set">
+                <Select
+                  classNamePrefix="react-select"
+                  options={setOptions}
+                  isSearchable={false}
+                  name="set"
+                  placeholder="Set"
+                  value={setOptions.find((obj) => {
+                    if (
+                      props.proxySelected[card.c['Id']] &&
+                      props.proxySelected[card.c['Id']].set
+                    ) {
+                      obj.value ===
+                        props.proxySelected[card.c['Id']].set.toLowerCase();
+                    }
+                  })}
+                  onChange={props.handleSetSelector}
+                />
+              </td>
+              <OverlayTrigger
+                placement="left"
+                overlay={
+                  <Popover>
+                    <Popover.Body>{CardImage}</Popover.Body>
+                  </Popover>
+                }
+              >
+                <td className="proxy-set-image">
+                  <div>
+                    <EyeFill />
+                  </div>
+                </td>
+              </OverlayTrigger>
+            </>
+          )}
         </tr>
       </React.Fragment>
     );

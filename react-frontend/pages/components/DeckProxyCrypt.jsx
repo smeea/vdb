@@ -252,6 +252,7 @@ function DeckProxyCrypt(props) {
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
         handleProxySelector={props.handleProxySelector}
+        handleSetSelector={props.handleSetSelector}
         handleProxyCounter={props.handleProxyCounter}
         proxySelected={props.proxySelected}
         setShowFloatingButtons={props.setShowFloatingButtons}
@@ -269,6 +270,7 @@ function DeckProxyCrypt(props) {
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
             handleProxySelector={props.handleProxySelector}
+            handleSetSelector={props.handleSetSelector}
             handleProxyCounter={props.handleProxyCounter}
             proxySelected={props.proxySelected}
             setShowFloatingButtons={props.setShowFloatingButtons}

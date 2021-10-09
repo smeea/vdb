@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
-import { Form, OverlayTrigger } from 'react-bootstrap';
+import Select from 'react-select';
+import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
+import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import UsedDescription from './UsedDescription.jsx';
@@ -11,6 +13,7 @@ import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
 import ResultCryptTitle from './ResultCryptTitle.jsx';
+import setsAndPrecons from './forms_data/setsAndPrecons.json';
 import AppContext from '../../context/AppContext';
 
 function DeckProxyCryptTable(props) {
@@ -19,8 +22,9 @@ function DeckProxyCryptTable(props) {
     inventoryMode,
     inventoryCrypt,
     usedCryptCards,
+    lang,
+    localizedCrypt,
     isMobile,
-    isWide,
   } = useContext(AppContext);
 
   let resultTrClass;
@@ -93,6 +97,58 @@ function DeckProxyCryptTable(props) {
       }
     }
 
+    const setOptions = [
+      {
+        value: '',
+        id: card.c['Id'],
+        label: <div className="small">Newest (default)</div>,
+      },
+    ];
+
+    Object.keys(setsAndPrecons).map((i) => {
+      if (card.c['Set'][i] && i !== 'POD') {
+        setOptions.push({
+          value: i.toLowerCase(),
+          id: card.c['Id'],
+          label: (
+            <div className="small">
+              {setsAndPrecons[i].name}
+              {" '"}
+              {setsAndPrecons[i].year.slice(2, 4)}
+            </div>
+          ),
+        });
+      }
+    });
+
+    const imgPath =
+      props.proxySelected[card.c['Id']] && props.proxySelected[card.c['Id']].set
+        ? `${process.env.ROOT_URL}images/cards/set/${
+            props.proxySelected[card.c['Id']].set
+          }`
+        : `${process.env.ROOT_URL}images/cards/${
+            localizedCrypt &&
+            localizedCrypt[lang] &&
+            localizedCrypt[lang][card.c['Id']]
+              ? lang
+              : 'en-EN'
+          }`;
+
+    const imgFile = `${card.c['ASCII Name']
+      .toLowerCase()
+      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
+      card.c['Adv'][0] ? 'adv' : ''
+    }.jpg`;
+
+    const CardImage = (
+      <img
+        className="card-popover"
+        src={`${imgPath}/${imgFile}`}
+        alt={card.c['Name']}
+        onClick={props.handleClose}
+      />
+    );
+
     return (
       <React.Fragment key={card.c['Id']}>
         <tr className={resultTrClass}>
@@ -132,7 +188,7 @@ function DeckProxyCryptTable(props) {
                       ? props.proxySelected[card.c['Id']].q
                       : 0
                   }
-                  inProxy={props.inProxy}
+                  inProxy={true}
                   inInventory={inInventory}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
@@ -193,31 +249,52 @@ function DeckProxyCryptTable(props) {
               <ResultCryptName card={card.c} />
             </td>
           )}
-          {isWide ? (
-            <>
-              <td className="title pe-2" onClick={() => handleClick()}>
+          <td className="clan-group" onClick={() => handleClick()}>
+            <div>
+              <ResultCryptClan value={card.c['Clan']} />
+            </div>
+            <div className="d-flex small justify-content-end">
+              <b>
                 <ResultCryptTitle value={card.c['Title']} />
-              </td>
-              <td className="clan" onClick={() => handleClick()}>
-                <ResultCryptClan value={card.c['Clan']} />
-              </td>
-              <td className="group" onClick={() => handleClick()}>
-                <ResultCryptGroup value={card.c['Group']} />
-              </td>
-            </>
-          ) : (
+              </b>
+              <ResultCryptGroup value={card.c['Group']} />
+            </div>
+          </td>
+          {!isMobile && (
             <>
-              <td className="clan-group" onClick={() => handleClick()}>
-                <div>
-                  <ResultCryptClan value={card.c['Clan']} />
-                </div>
-                <div className="d-flex small justify-content-end">
-                  <b>
-                    <ResultCryptTitle value={card.c['Title']} />
-                  </b>
-                  <ResultCryptGroup value={card.c['Group']} />
-                </div>
+              <td className="proxy-set">
+                <Select
+                  classNamePrefix="react-select"
+                  options={setOptions}
+                  isSearchable={false}
+                  name="set"
+                  placeholder="Set"
+                  value={setOptions.find((obj) => {
+                    if (
+                      props.proxySelected[card.c['Id']] &&
+                      props.proxySelected[card.c['Id']].set
+                    ) {
+                      obj.value ===
+                        props.proxySelected[card.c['Id']].set.toLowerCase();
+                    }
+                  })}
+                  onChange={props.handleSetSelector}
+                />
               </td>
+              <OverlayTrigger
+                placement="right"
+                overlay={
+                  <Popover>
+                    <Popover.Body>{CardImage}</Popover.Body>
+                  </Popover>
+                }
+              >
+                <td className="proxy-set-image">
+                  <div>
+                    <EyeFill />
+                  </div>
+                </td>
+              </OverlayTrigger>
             </>
           )}
         </tr>

@@ -113,103 +113,57 @@ function DeckLibraryTable(props) {
     return (
       <React.Fragment key={card.c['Id']}>
         <tr className={resultTrClass}>
-          {props.inProxy ? (
-            <>
-              <td className="proxy-selector">
-                <Form.Check
-                  className="px-1"
-                  type="checkbox"
-                  id={card.c['Id']}
-                  name="print"
-                  checked={
-                    props.proxySelected[card.c['Id']]
-                      ? props.proxySelected[card.c['Id']].print
-                      : false
-                  }
-                  onChange={(e) => props.handleProxySelector(e)}
-                />
-              </td>
-              {inventoryMode && decks ? (
-                <OverlayTrigger
-                  placement="right"
-                  overlay={
-                    <UsedPopover
-                      softUsedMax={softUsedMax}
-                      hardUsedTotal={hardUsedTotal}
-                      inInventory={inInventory}
-                      SoftUsedDescription={SoftUsedDescription}
-                      HardUsedDescription={HardUsedDescription}
-                    />
-                  }
-                >
-                  <td className="quantity">
-                    <DeckCardQuantity
-                      cardid={card.c['Id']}
-                      deckid={null}
-                      q={
-                        props.proxySelected[card.c['Id']]
-                          ? props.proxySelected[card.c['Id']].q
-                          : 0
-                      }
-                      inProxy={props.inProxy}
-                      inInventory={inInventory}
-                      softUsedMax={softUsedMax}
-                      hardUsedTotal={hardUsedTotal}
-                      inventoryType={decks[props.deckid].inventory_type}
-                      cardChange={props.handleProxyCounter}
-                      isSelected={
-                        props.proxySelected[card.c['Id']] &&
-                        props.proxySelected[card.c['Id']].print
-                      }
-                    />
-                  </td>
-                </OverlayTrigger>
-              ) : (
-                <td className="quantity">
-                  <DeckCardQuantity
-                    cardid={card.c['Id']}
-                    deckid={null}
-                    q={
-                      props.proxySelected[card.c['Id']]
-                        ? props.proxySelected[card.c['Id']].q
-                        : 0
-                    }
-                    cardChange={props.handleProxyCounter}
-                  />
-                </td>
-              )}
-            </>
-          ) : (
-            <>
-              {props.isAuthor ? (
-                <>
-                  {inventoryMode && decks ? (
-                    <>
-                      {deckInvType && !props.inSearch ? (
-                        <td className="d-flex align-items-center inventory-card-custom-library">
-                          <div
-                            className={cardInvType ? '' : 'not-selected'}
-                            onClick={() =>
-                              deckUpdate(
-                                props.deckid,
-                                cardInvType
-                                  ? 'makeClear'
-                                  : deckInvType == 's'
-                                  ? 'makeFixed'
-                                  : 'makeFlexible',
-                                card.c['Id']
-                              )
-                            }
-                          >
-                            {deckInvType == 's' ? (
-                              <PinAngleFill />
-                            ) : (
-                              <Shuffle />
-                            )}
-                          </div>
-                        </td>
-                      ) : null}
-                      {isMobile ? (
+          <>
+            {props.isAuthor ? (
+              <>
+                {inventoryMode && decks ? (
+                  <>
+                    {deckInvType && !props.inSearch ? (
+                      <td className="d-flex align-items-center inventory-card-custom-library">
+                        <div
+                          className={cardInvType ? '' : 'not-selected'}
+                          onClick={() =>
+                            deckUpdate(
+                              props.deckid,
+                              cardInvType
+                                ? 'makeClear'
+                                : deckInvType == 's'
+                                ? 'makeFixed'
+                                : 'makeFlexible',
+                              card.c['Id']
+                            )
+                          }
+                        >
+                          {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
+                        </div>
+                      </td>
+                    ) : null}
+                    {isMobile ? (
+                      <td className="quantity">
+                        <DeckCardQuantity
+                          cardid={card.c['Id']}
+                          q={card.q}
+                          deckid={props.deckid}
+                          cardChange={deckCardChange}
+                          inInventory={inInventory}
+                          softUsedMax={softUsedMax}
+                          hardUsedTotal={hardUsedTotal}
+                          inventoryType={decks[props.deckid].inventory_type}
+                        />
+                      </td>
+                    ) : (
+                      <OverlayTrigger
+                        placement="right"
+                        overlay={
+                          <UsedPopover
+                            softUsedMax={softUsedMax}
+                            hardUsedTotal={hardUsedTotal}
+                            inInventory={inInventory}
+                            SoftUsedDescription={SoftUsedDescription}
+                            HardUsedDescription={HardUsedDescription}
+                          />
+                        }
+                      >
                         <td className="quantity">
                           <DeckCardQuantity
                             cardid={card.c['Id']}
@@ -222,50 +176,53 @@ function DeckLibraryTable(props) {
                             inventoryType={decks[props.deckid].inventory_type}
                           />
                         </td>
-                      ) : (
-                        <OverlayTrigger
-                          placement="right"
-                          overlay={
-                            <UsedPopover
-                              softUsedMax={softUsedMax}
-                              hardUsedTotal={hardUsedTotal}
-                              inInventory={inInventory}
-                              SoftUsedDescription={SoftUsedDescription}
-                              HardUsedDescription={HardUsedDescription}
-                            />
+                      </OverlayTrigger>
+                    )}
+                  </>
+                ) : (
+                  <td className="quantity">
+                    <DeckCardQuantity
+                      cardid={card.c['Id']}
+                      q={card.q}
+                      deckid={props.deckid}
+                      cardChange={deckCardChange}
+                    />
+                  </td>
+                )}
+              </>
+            ) : (
+              <>
+                {inventoryMode && decks ? (
+                  <>
+                    {isMobile ? (
+                      <td className="quantity-no-buttons px-1">
+                        <div
+                          className={
+                            props.inMissing
+                              ? null
+                              : inInventory < card.q
+                              ? 'inv-miss-part'
+                              : inInventory < hardUsedTotal
+                              ? 'inv-miss-full'
+                              : null
                           }
                         >
-                          <td className="quantity">
-                            <DeckCardQuantity
-                              cardid={card.c['Id']}
-                              q={card.q}
-                              deckid={props.deckid}
-                              cardChange={deckCardChange}
-                              inInventory={inInventory}
-                              softUsedMax={softUsedMax}
-                              hardUsedTotal={hardUsedTotal}
-                              inventoryType={decks[props.deckid].inventory_type}
-                            />
-                          </td>
-                        </OverlayTrigger>
-                      )}
-                    </>
-                  ) : (
-                    <td className="quantity">
-                      <DeckCardQuantity
-                        cardid={card.c['Id']}
-                        q={card.q}
-                        deckid={props.deckid}
-                        cardChange={deckCardChange}
-                      />
-                    </td>
-                  )}
-                </>
-              ) : (
-                <>
-                  {inventoryMode && decks ? (
-                    <>
-                      {isMobile ? (
+                          {card.q}
+                        </div>
+                      </td>
+                    ) : (
+                      <OverlayTrigger
+                        placement="right"
+                        overlay={
+                          <UsedPopover
+                            softUsedMax={softUsedMax}
+                            hardUsedTotal={hardUsedTotal}
+                            inInventory={inInventory}
+                            SoftUsedDescription={SoftUsedDescription}
+                            HardUsedDescription={HardUsedDescription}
+                          />
+                        }
+                      >
                         <td className="quantity-no-buttons px-1">
                           <div
                             className={
@@ -281,46 +238,17 @@ function DeckLibraryTable(props) {
                             {card.q}
                           </div>
                         </td>
-                      ) : (
-                        <OverlayTrigger
-                          placement="right"
-                          overlay={
-                            <UsedPopover
-                              softUsedMax={softUsedMax}
-                              hardUsedTotal={hardUsedTotal}
-                              inInventory={inInventory}
-                              SoftUsedDescription={SoftUsedDescription}
-                              HardUsedDescription={HardUsedDescription}
-                            />
-                          }
-                        >
-                          <td className="quantity-no-buttons px-1">
-                            <div
-                              className={
-                                props.inMissing
-                                  ? null
-                                  : inInventory < card.q
-                                  ? 'inv-miss-part'
-                                  : inInventory < hardUsedTotal
-                                  ? 'inv-miss-full'
-                                  : null
-                              }
-                            >
-                              {card.q}
-                            </div>
-                          </td>
-                        </OverlayTrigger>
-                      )}
-                    </>
-                  ) : (
-                    <td className="quantity-no-buttons px-1">
-                      {card.q ? card.q : null}
-                    </td>
-                  )}
-                </>
-              )}
-            </>
-          )}
+                      </OverlayTrigger>
+                    )}
+                  </>
+                ) : (
+                  <td className="quantity-no-buttons px-1">
+                    {card.q ? card.q : null}
+                  </td>
+                )}
+              </>
+            )}
+          </>
           {!isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}

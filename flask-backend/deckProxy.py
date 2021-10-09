@@ -2,38 +2,44 @@ from fpdf import FPDF
 from unidecode import unidecode
 import re
 import base64
+import os.path
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
 
 
-def deckProxy(cards):
+def deckProxy(input):
     try:
-        crypt = {}
-        library = {}
-        for k, v in cards.items():
+        cards = {}
+        for k, v in input.items():
             k = int(k)
-            if k > 200000 and v > 0:
+            name = None
+
+            if k > 200000 and v['q'] > 0:
                 card = get_crypt_by_id(k)
                 name = card['Name']
                 if card['Adv'] and card['Adv'][0]:
                     name += 'adv'
-
-                crypt[unidecode(re.sub('[\\W]', '', name)).lower() +
-                      '.jpg'] = v
-            elif k < 200000 and v > 0:
+            elif k < 200000 and v['q'] > 0:
                 name = get_library_by_id(k)['Name']
-                library[unidecode(re.sub('[\\W]', '', name)).lower() +
-                        '.jpg'] = v
 
-        imagelist = []
+            filename = unidecode(re.sub('[\\W]', '', name)).lower() + '.jpg'
+            file = None
+            if 'set' in v and os.path.exists(
+                    f"./cards/set/{v['set']}/{filename}"):
+                file = f"./cards/set/{v['set']}/{filename}"
+            else:
+                file = f"./cards/{filename}"
 
-        for card in sorted(crypt.keys()):
-            for i in range(crypt[card]):
-                imagelist.append(card)
+            cards[name] = {
+                'file': file,
+                'q': v['q'],
+            }
 
-        for card in sorted(library.keys()):
-            for i in range(library[card]):
-                imagelist.append(card)
+        cardlist = []
+
+        for card in sorted(cards.keys()):
+            for i in range(cards[card]['q']):
+                cardlist.append(cards[card])
 
         pdf = FPDF('P', 'mm', 'A4')
 
@@ -51,12 +57,12 @@ def deckProxy(cards):
 
         page = 1
 
-        for image in imagelist:
+        for c in cardlist:
             pdf.rect((left_margin + x_counter * (w + gap)),
                      (top_margin + y_counter * (h + gap)), (w + gap),
                      (h + gap), 'F')
 
-            pdf.image('./cards/' + image, (w + gap) * x_counter + left_margin,
+            pdf.image(c['file'], (w + gap) * x_counter + left_margin,
                       (h + gap) * y_counter + top_margin, w, h)
 
             x_counter += 1
@@ -65,14 +71,14 @@ def deckProxy(cards):
                 y_counter += 1
                 x_counter = 0
 
-            if y_counter == 3 and page * 9 < len(imagelist):
+            if y_counter == 3 and page * 9 < len(cardlist):
                 page += 1
                 pdf.add_page()
                 pdf.set_fill_color(40, 40, 40)
                 y_counter = 0
 
-        file = pdf.output(dest='S').encode('latin-1')
-        return base64.b64encode(file)
+        output = pdf.output(dest='S').encode('latin-1')
+        return base64.b64encode(output)
 
     except Exception:
         pass
