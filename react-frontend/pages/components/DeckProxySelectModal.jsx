@@ -164,10 +164,12 @@ function DeckProxySelectModal(props) {
         return proxySelected[key].print;
       })
       .map((key) => {
-        cards[key] = {
-          q: proxySelected[key].q,
-          set: proxySelected[key].set,
-        };
+        if (proxySelected[key].q > 0) {
+          cards[key] = {
+            q: proxySelected[key].q,
+            set: proxySelected[key].set,
+          };
+        }
       });
     props.proxyCards(cards);
     props.setShow(false);

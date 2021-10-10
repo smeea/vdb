@@ -31,14 +31,18 @@ function DeckProxy(props) {
   const proxyDeck = () => {
     const cards = {};
     Object.keys(props.deck.crypt).map((key) => {
-      cards[key] = {
-        q: props.deck.crypt[key].q,
-      };
+      if (props.deck.crypt[key].q > 0) {
+        cards[key] = {
+          q: props.deck.crypt[key].q,
+        };
+      }
     });
     Object.keys(props.deck.library).map((key) => {
-      cards[key] = {
-        q: props.deck.library[key].q,
-      };
+      if (props.deck.library[key].q > 0) {
+        cards[key] = {
+          q: props.deck.library[key].q,
+        };
+      }
     });
     proxyCards(cards);
   };
