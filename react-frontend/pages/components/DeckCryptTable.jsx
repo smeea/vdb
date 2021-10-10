@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Form, OverlayTrigger } from 'react-bootstrap';
+import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';

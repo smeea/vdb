@@ -20,7 +20,6 @@
 * Card recommendation
 
 # MOBILE FEATURES
-* Close modal windows with floating button
 
 # MAYBE LATER FEATURES
 * Documentation on updates
@@ -33,6 +32,6 @@
 * Move export to frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
-* Check frontend input (quantity/cardior codes to return
+* Check frontend input (quantity/cardior codes to return)
 * Unify tests for current_user
 * Case-insensitive accounts

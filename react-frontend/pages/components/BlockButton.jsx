@@ -15,4 +15,6 @@ const BlockButton = React.forwardRef(({ children, onClick, variant }, ref) => (
   </div>
 ));
 
+BlockButton.displayName = 'BlockButton';
+
 export default BlockButton;
