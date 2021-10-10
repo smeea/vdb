@@ -150,7 +150,7 @@ function AccountRegister(props) {
           target={refPassword.current}
           placement="bottom"
         >
-          ENTER PASSROD
+          ENTER PASSWORD
         </ErrorOverlay>
       </Form>
     </>
