@@ -118,22 +118,28 @@ function DeckLibraryTable(props) {
               {inventoryMode && decks ? (
                 <>
                   {deckInvType && !props.inSearch ? (
-                    <td className="d-flex align-items-center inventory-card-custom-library">
-                      <div
-                        className={cardInvType ? '' : 'not-selected'}
-                        onClick={() =>
-                          deckUpdate(
-                            props.deckid,
+                    <td>
+                      <div className="d-flex relative align-items-center">
+                        <div
+                          className={
                             cardInvType
-                              ? 'makeClear'
-                              : deckInvType == 's'
-                              ? 'makeFixed'
-                              : 'makeFlexible',
-                            card.c['Id']
-                          )
-                        }
-                      >
-                        {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
+                              ? 'inventory-card-custom'
+                              : 'inventory-card-custom not-selected'
+                          }
+                          onClick={() =>
+                            deckUpdate(
+                              props.deckid,
+                              cardInvType
+                                ? 'makeClear'
+                                : deckInvType == 's'
+                                ? 'makeFixed'
+                                : 'makeFlexible',
+                              card.c['Id']
+                            )
+                          }
+                        >
+                          {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
+                        </div>
                       </div>
                     </td>
                   ) : null}

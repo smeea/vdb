@@ -1,5 +1,4 @@
 # FIX
-* Card custom inventory status for Library (remove props.inSearch on fix)
 * Fix ErrorOverlay
 
 # FIX MOBILE
