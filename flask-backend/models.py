@@ -17,7 +17,7 @@ class User(UserMixin, db.Model):
     public_name = db.Column(db.String(64))
     email = db.Column(db.String(64))
     password_hash = db.Column(db.String(128))
-    inventory = db.Column(db.PickleType)
+    inventory = db.Column(db.PickleType, default={})
     decks = db.relationship('Deck', backref='author', lazy='dynamic')
 
     def __repr__(self):
@@ -32,16 +32,16 @@ class User(UserMixin, db.Model):
 
 class Deck(db.Model):
     deckid = db.Column(db.String(32), primary_key=True)
-    name = db.Column(db.String(64))
-    branch_name = db.Column(db.String(32))
+    name = db.Column(db.String(64), default='New Deck')
+    branch_name = db.Column(db.String(32), default='#0')
     author_public_name = db.Column(db.String(64))
-    description = db.Column(db.String(8192))
-    cards = db.Column(db.PickleType)
-    inventory_type = db.Column(db.String(1))
+    description = db.Column(db.String(8192), default='')
+    cards = db.Column(db.PickleType, default={})
+    inventory_type = db.Column(db.String(1), default='')
     master = db.Column(db.String(32))
-    branches = db.Column(db.PickleType)
-    tags = db.Column(db.PickleType)
-    used_in_inventory = db.Column(db.PickleType)
+    branches = db.Column(db.PickleType, default=[])
+    tags = db.Column(db.PickleType, default=[])
+    used_in_inventory = db.Column(db.PickleType, default={})
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

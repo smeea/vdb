@@ -78,7 +78,7 @@ function AccountLogin(props) {
           return response.json();
         })
         .then((data) => {
-          setUsername(state.username);
+          setUsername(data.username);
           setPublicName(data.public_name);
           setEmail(data.email);
           setSpinnerState(false);

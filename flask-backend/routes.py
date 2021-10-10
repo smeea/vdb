@@ -481,6 +481,7 @@ def listDecks():
 
             crypt = {}
             library = {}
+
             for k, v in deck.cards.items():
 
                 int_k = int(k)
@@ -522,17 +523,19 @@ def newDeck():
     if current_user.is_authenticated:
         try:
             deckid = uuid.uuid4().hex
-            d = Deck(
-                deckid=deckid,
-                name=request.json['deckname'],
-                author_public_name=request.json['author']
-                if 'author' in request.json else current_user.public_name,
-                description=request.json['description']
-                if 'description' in request.json else '',
-                author=current_user,
-                inventory_type='',
-                used_in_inventory={},
-                cards=request.json['cards'] if 'cards' in request.json else {})
+            author = request.json[
+                'author'] if 'author' in request.json else current_user.public_name
+            description = request.json[
+                'description'] if 'description' in request.json else ''
+            cards = request.json['cards'] if 'cards' in request.json else {}
+
+            d = Deck(deckid=deckid,
+                     name=request.json['deckname'],
+                     author_public_name=author,
+                     description=description,
+                     author=current_user,
+                     cards=cards)
+
             db.session.add(d)
             db.session.commit()
 
@@ -553,27 +556,22 @@ def createBranch():
                                       deckid=request.json['master']).first()
         source = Deck.query.filter_by(author=current_user,
                                       deckid=request.json['source']).first()
+        branch_name = f"#{len(master.branches) + 1}" if master.branches else "#1"
 
         deckid = uuid.uuid4().hex
         branch = Deck(deckid=deckid,
                       name=master.name,
-                      branch_name=f"#{len(master.branches) + 1}"
-                      if master.branches else "#1",
+                      branch_name=branch_name,
                       author_public_name=source.author_public_name,
                       description=source.description,
                       author=current_user,
-                      inventory_type='',
                       tags=source.tags,
                       master=master.deckid,
-                      used_in_inventory={},
                       cards=source.cards)
 
         branches = master.branches.copy() if master.branches else []
         branches.append(deckid)
         master.branches = branches
-
-        if not master.branch_name:
-            master.branch_name = 'Original'
 
         db.session.add(branch)
         db.session.commit()
@@ -616,7 +614,7 @@ def removeBranch():
                                              deckid=i).first()
                     k.master = j.deckid
 
-                j.master = None
+                j.master = ''
 
                 db.session.delete(d)
                 db.session.commit()
@@ -645,8 +643,6 @@ def cloneDeck():
                  author_public_name=deck['author'],
                  description=deck['description'],
                  author=current_user,
-                 inventory_type='',
-                 used_in_inventory={},
                  cards=cards)
         db.session.add(d)
         db.session.commit()
@@ -679,9 +675,7 @@ def cloneDeck():
                      author_public_name=deck['player'],
                      description=description,
                      author=current_user,
-                     inventory_type='',
                      tags=['twd'],
-                     used_in_inventory={},
                      cards=cards)
             db.session.add(d)
             db.session.commit()
@@ -707,9 +701,7 @@ def cloneDeck():
                      author_public_name='VTES Team',
                      description='',
                      author=current_user,
-                     inventory_type='',
                      tags=['precon'],
-                     used_in_inventory={},
                      cards=cards)
             db.session.add(d)
             db.session.commit()
@@ -727,8 +719,6 @@ def cloneDeck():
                  author_public_name=request.json['author'],
                  description='',
                  author=current_user,
-                 inventory_type='',
-                 used_in_inventory={},
                  tags=targetDeck.tags,
                  cards=targetDeck.cards)
         db.session.add(d)
@@ -748,8 +738,6 @@ def urlCloneDeck():
              name=targetDeck.name,
              author_public_name=targetDeck.author_public_name,
              description=targetDeck.description,
-             inventory_type='',
-             used_in_inventory={},
              cards=targetDeck.cards)
     db.session.add(d)
     db.session.commit()
@@ -771,8 +759,6 @@ def importDeck():
                          author_public_name=author,
                          description=description,
                          author=current_user,
-                         inventory_type='',
-                         used_in_inventory={},
                          cards=cards)
                 db.session.add(d)
                 db.session.commit()
@@ -896,7 +882,6 @@ def register():
         user = User(
             username=request.json['username'].lower(),
             public_name=request.json['username'],
-            inventory={},
         )
         user.set_password(request.json['password'])
         db.session.add(user)
@@ -927,7 +912,7 @@ def login():
                 return jsonify({'error': 'invalid username or password'}), 401
             login_user(user, remember=request.json['remember'])
             return jsonify({
-                'logged in as': current_user.username,
+                'username': current_user.username,
                 'email': current_user.email,
                 'public_name': current_user.public_name,
             })
