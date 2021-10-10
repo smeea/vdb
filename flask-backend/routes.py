@@ -894,7 +894,7 @@ def register():
 
     try:
         user = User(
-            username=request.json['username'],
+            username=request.json['username'].lower(),
             public_name=request.json['username'],
             inventory={},
         )
@@ -921,7 +921,7 @@ def login():
     elif request.method == 'POST':
         try:
             user = User.query.filter_by(
-                username=request.json['username']).first()
+                username=request.json['username'].lower()).first()
             if user is None or not user.check_password(
                     request.json['password']):
                 return jsonify({'error': 'invalid username or password'}), 401
