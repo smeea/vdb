@@ -1,6 +1,7 @@
 import json
 
 sets = {
+    "KSU": 2021,
     "V5": 2020,
     "25th": 2019,
     "FB": 2019,

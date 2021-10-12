@@ -552,6 +552,10 @@
         "value":"Brian Wellington"
     },
     {
+        "label":"Bruno Benassuly",
+        "value":"Bruno Benassuly"
+    },
+    {
         "label":"Bruno Keiti Tamane",
         "value":"Bruno Keiti Tamane"
     },
@@ -800,6 +804,14 @@
         "value":"C\u00e9sar Brera"
     },
     {
+        "label":"C\u00e9sar Ruip\u00e9rez",
+        "value":"C\u00e9sar Ruip\u00e9rez"
+    },
+    {
+        "label":"C\u00e9zar Ruip\u00e9rez",
+        "value":"C\u00e9zar Ruip\u00e9rez"
+    },
+    {
         "label":"D.J. Chagnon",
         "value":"D.J. Chagnon"
     },
@@ -838,6 +850,10 @@
     {
         "label":"Daniel Alves",
         "value":"Daniel Alves"
+    },
+    {
+        "label":"Daniel Bastos",
+        "value":"Daniel Bastos"
     },
     {
         "label":"Daniel Boud",
@@ -1056,6 +1072,10 @@
         "value":"Dawid Cyran"
     },
     {
+        "label":"Dayvisson Magalh\u00e3es Alves",
+        "value":"Dayvisson Magalh\u00e3es Alves"
+    },
+    {
         "label":"Da\u00f0i",
         "value":"Da\u00f0i"
     },
@@ -1106,6 +1126,10 @@
     {
         "label":"Diego Lopes",
         "value":"Diego Lopes"
+    },
+    {
+        "label":"Diego Rodrigues",
+        "value":"Diego Rodrigues"
     },
     {
         "label":"Diego Spallattie",
@@ -1182,6 +1206,10 @@
     {
         "label":"Ed Gon\u00e7alves",
         "value":"Ed Gon\u00e7alves"
+    },
+    {
+        "label":"Ed Gon\u00e7a\u00e7ves",
+        "value":"Ed Gon\u00e7a\u00e7ves"
     },
     {
         "label":"Edd Phipps",
@@ -1360,6 +1388,10 @@
         "value":"Fernando Grossi"
     },
     {
+        "label":"Fernando Lima",
+        "value":"Fernando Lima"
+    },
+    {
         "label":"Fernando Marinho",
         "value":"Fernando Marinho"
     },
@@ -1490,6 +1522,10 @@
     {
         "label":"Fr\u00e9d\u00e9rick Thouin",
         "value":"Fr\u00e9d\u00e9rick Thouin"
+    },
+    {
+        "label":"Gabriel Carnino",
+        "value":"Gabriel Carnino"
     },
     {
         "label":"Gabriel Ron",
@@ -2084,8 +2120,12 @@
         "value":"Jo Herroelen"
     },
     {
-        "label":"Joab Rogerio barbosa da Silva",
-        "value":"Joab Rogerio barbosa da Silva"
+        "label":"Joab Rogerio",
+        "value":"Joab Rogerio"
+    },
+    {
+        "label":"Joab Rogerio Barbosa da Silva",
+        "value":"Joab Rogerio Barbosa da Silva"
     },
     {
         "label":"Joachim Randa",
@@ -2304,6 +2344,10 @@
         "value":"Jose Caballero"
     },
     {
+        "label":"Jose Luis Manuel",
+        "value":"Jose Luis Manuel"
+    },
+    {
         "label":"Jose Vicente Coll",
         "value":"Jose Vicente Coll"
     },
@@ -2330,6 +2374,10 @@
     {
         "label":"Jos\u00e9 Mar\u00eda Prieto",
         "value":"Jos\u00e9 Mar\u00eda Prieto"
+    },
+    {
+        "label":"Jos\u00e9 M\u00e1s Cruz",
+        "value":"Jos\u00e9 M\u00e1s Cruz"
     },
     {
         "label":"Jos\u00e9 Roberio Barbosa da Silva",
@@ -2796,8 +2844,16 @@
         "value":"Maciej Frankowiak"
     },
     {
+        "label":"Maciej Jamroszczak",
+        "value":"Maciej Jamroszczak"
+    },
+    {
         "label":"Maciej Kozlowski",
         "value":"Maciej Kozlowski"
+    },
+    {
+        "label":"Magnus Eriksson",
+        "value":"Magnus Eriksson"
     },
     {
         "label":"Magnus Hultin",
@@ -3042,6 +3098,10 @@
     {
         "label":"Mateus Souza",
         "value":"Mateus Souza"
+    },
+    {
+        "label":"Matheus Oliveira",
+        "value":"Matheus Oliveira"
     },
     {
         "label":"Mathias Olsson",
