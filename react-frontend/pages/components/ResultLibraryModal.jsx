@@ -117,16 +117,16 @@ function ResultLibraryModal(props) {
               </div>
             )}
             <div
-              onClick={props.handleClose}
-              className="d-flex float-right-middle float-clear align-items-center justify-content-center"
-            >
-              <X viewBox="0 0 16 16" />
-            </div>
-            <div
               onClick={() => toggleShowImage()}
-              className="d-flex float-right-bottom float-turn align-items-center justify-content-center"
+              className="d-flex float-right-middle float-turn align-items-center justify-content-center"
             >
               <ArrowRepeat viewBox="0 0 16 16" />
+            </div>
+            <div
+              onClick={props.handleClose}
+              className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+            >
+              <X viewBox="0 0 16 16" />
             </div>
           </div>
         ) : (
