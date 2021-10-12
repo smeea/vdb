@@ -91,6 +91,38 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
         else:
             card['ASCII Name'] = letters_to_ascii(card['Name'])
 
+        # Multi-disciplines to alphabetic order
+        if card['Discipline']:
+            if '/' in card['Discipline']:
+                disciplines = card['Discipline'].split('/')
+                disciplines = sorted(disciplines)
+                for idx, i in enumerate(disciplines):
+                    if idx == 0:
+                        card['Discipline'] = i
+                    else:
+                        card['Discipline'] += f"/{i}"
+
+            elif '&' in card['Discipline']:
+                disciplines = card['Discipline'].split(' & ')
+                disciplines = sorted(disciplines)
+                for idx, i in enumerate(disciplines):
+                    if idx == 0:
+                        card['Discipline'] = i
+                    else:
+                        card['Discipline'] += f" & {i}"
+
+        # Multi-types to alphabetic order
+        if card['Type']:
+            if '/' in card['Discipline']:
+                types = card['Type'].split('/')
+                types = sorted(types)
+                for idx, i in enumerate(types):
+                    if idx == 0:
+                        card['Type'] = i
+                    else:
+                        card['Type'] += f"/{i}"
+
+
         # Convert sets to dict
         sets = card['Set'].split(', ')
         card['Set'] = {}

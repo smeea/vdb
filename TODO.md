@@ -11,6 +11,7 @@
 * Set/Precon multi-filters
 * Deck crypt sort by group
 * Export all in xlsx and csv
+* Bookmarks/recent decks
 
 # BIG FEATURES
 * Search for similar TWD decks
