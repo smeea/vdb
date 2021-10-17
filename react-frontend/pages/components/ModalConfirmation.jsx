@@ -14,19 +14,24 @@ function ModalConfirmation(props) {
         animation={false}
         centered={isMobile}
       >
-        <Modal.Body>
-          <button
-            type="button"
-            className="close m-1"
-            onClick={props.handleClose}
+        <Modal.Header
+          className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
+        >
+          <h5>{props.headerText}</h5>
+          <Button
+            variant="outline-secondary"
+            onClick={() => props.setShow(false)}
           >
             <X width="32" height="32" viewBox="0 0 16 16" />
-          </button>
-          <h5>{props.headerText}</h5>
-          <div className="pt-2">
-            {props.mainText && <h6>{props.mainText}</h6>}
-          </div>
-        </Modal.Body>
+          </Button>
+        </Modal.Header>
+        {props.mainText && (
+          <Modal.Body>
+            <div className="pt-2">
+              <h6>{props.mainText}</h6>
+            </div>
+          </Modal.Body>
+        )}
         <Modal.Footer>
           <Button variant="danger" onClick={props.handleConfirm}>
             {props.buttonText}
