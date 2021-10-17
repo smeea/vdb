@@ -1,8 +1,6 @@
 # FIX
-* Hide floating with deck info open on mobile
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
-* Width of deck draw middle screen
 * Imbued export to lakcey
 * Resort decks in selection after deck update
 
