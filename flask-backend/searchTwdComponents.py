@@ -1,5 +1,4 @@
 import json
-import re
 
 with open("twdDecks.json", "r") as twd_file:
     twda = json.load(twd_file)
@@ -198,7 +197,7 @@ def get_twd_by_libraryTotal(total_input, twda=twda):
 def matchInventory(request, inventory, twda=twda):
     crypt_ratio = float(request['crypt']) if 'crypt' in request else None
     library_ratio = float(request['library']) if 'library' in request else None
-    scaling = request['scaling'] if 'scaling' in request else False
+    scaling = int(request['scaling']) if 'scaling' in request else False
 
     match_decks = []
 
@@ -220,8 +219,8 @@ def matchInventory(request, inventory, twda=twda):
 
         if library_ratio:
             counter = 0
-            scaling_factor = deck['libraryTotal'] / 60
-            min_counter = 60 * library_ratio if scaling else deck[
+            scaling_factor = deck['libraryTotal'] / scaling if scaling else None
+            min_counter = scaling * library_ratio if scaling else deck[
                 'libraryTotal'] * library_ratio
 
             for card, v in deck['library'].items():

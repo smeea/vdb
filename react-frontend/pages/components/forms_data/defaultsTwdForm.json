@@ -45,6 +45,6 @@
   "matchInventory": {
     "crypt": "any",
     "library": "any",
-    "scaling": false
+    "scaling": "0"
   }
 }

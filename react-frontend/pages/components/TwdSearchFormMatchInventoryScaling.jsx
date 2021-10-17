@@ -5,10 +5,12 @@ function TwdSearchFormMatchInventoryScaling(props) {
   return (
     <Form.Check
       type="checkbox"
-      id="scaling"
-      label="Scale to 60 cards"
-      checked={props.value}
-      onChange={(e) => props.onChange(e)}
+      id={props.target}
+      htmlFor={props.target}
+      name={props.target}
+      label={`Scale to ${props.target} cards`}
+      checked={props.value === props.target}
+      onChange={props.onChange}
     />
   );
 }

@@ -124,9 +124,13 @@ function TwdSearchForm(props) {
     }));
   };
 
-  const handleMatchInventoryScalingChange = () => {
+  const handleMatchInventoryScalingChange = (e) => {
     const newState = twdFormState.matchInventory;
-    newState.scaling = !twdFormState.matchInventory.scaling;
+    if (e.target.checked) {
+      newState.scaling = e.target.name;
+    } else {
+      newState.scaling = false;
+    }
     setTwdFormState((prevState) => ({
       ...prevState,
       matchInventory: newState,
@@ -297,6 +301,12 @@ function TwdSearchForm(props) {
           <Row className="py-1 ps-1 mx-0 align-items-center">
             <Col xs={{ span: 6, offset: 6 }} className="d-inline px-0">
               <TwdSearchFormMatchInventoryScaling
+                target="60"
+                value={twdFormState.matchInventory.scaling}
+                onChange={handleMatchInventoryScalingChange}
+              />
+              <TwdSearchFormMatchInventoryScaling
+                target="75"
                 value={twdFormState.matchInventory.scaling}
                 onChange={handleMatchInventoryScalingChange}
               />
