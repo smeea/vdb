@@ -1,7 +1,6 @@
 # FIX
 * Hide floating with deck info open on mobile
 * Check online and errors on wrong deckid/search
-* Ruling link separate window
 * Check deck proxy errors
 * Width of deck draw middle screen
 * Imbued export to lakcey
@@ -18,12 +17,8 @@
 * Set/Precon multi-filters
 * Deck crypt sort by group
 * Export all in xlsx and csv
-<<<<<<< HEAD
-* Last opened decks
 * Hide decks from deck selection
-=======
 * Bookmarks/recent decks
->>>>>>> dd8beb2a720a690dd348e0e1fbf40ab3cb1a27f3
 
 # BIG FEATURES
 * Search for similar TWD decks

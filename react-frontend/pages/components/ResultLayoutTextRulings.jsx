@@ -20,7 +20,9 @@ const ResultLayoutTextRulings = (props) => {
     const Refs = Object.keys(k['refs']).map((j, idx) => {
       return (
         <div className="d-inline small ps-1" key={idx}>
-          <a href={k['refs'][j]}>{j}</a>
+          <a target="_blank" rel="noreferrer" href={k['refs'][j]}>
+            {j}
+          </a>
         </div>
       );
     });
