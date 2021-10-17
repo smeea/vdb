@@ -6,7 +6,6 @@
 * Width of deck draw middle screen
 * Imbued export to lakcey
 * Hide add card buttons on mobile on no isAuthor
-* Count non-discipline and clans in %, exclude masters from count
 * Resort decks in selection after deck update
 
 # FIX MOBILE

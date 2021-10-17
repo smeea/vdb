@@ -175,6 +175,7 @@ function DeckLibrary(props) {
   const libraryByType = {};
   const librarySideByType = {};
   const libraryByDisciplinesTotal = {};
+  const libraryByClansTotal = {};
 
   Object.keys(library).map((card) => {
     if (!isNaN(library[card].c['Blood Cost'])) {
@@ -198,6 +199,21 @@ function DeckLibrary(props) {
         libraryByDisciplinesTotal[disciplines] = 0;
       }
       libraryByDisciplinesTotal[disciplines] += library[card].q;
+    }
+
+    clans = library[card].c['Clan'];
+    if (clans && library[card].c['Type'] !== 'Master') {
+      if (libraryByClansTotal[clans] === undefined) {
+        libraryByClansTotal[clans] = 0;
+      }
+      libraryByClansTotal[clans] += library[card].q;
+    }
+
+    if (!disciplines && !clans && library[card].c['Type'] !== 'Master') {
+      if (libraryByDisciplinesTotal['any'] === undefined) {
+        libraryByDisciplinesTotal['any'] = 0;
+      }
+      libraryByDisciplinesTotal['any'] += library[card].q;
     }
   });
 
@@ -404,6 +420,7 @@ function DeckLibrary(props) {
             <DeckLibraryTotalInfo
               byDisciplines={libraryByDisciplinesTotal}
               byTypes={libraryByTypeTotal}
+              byClans={libraryByClansTotal}
             />
           </div>
         )}

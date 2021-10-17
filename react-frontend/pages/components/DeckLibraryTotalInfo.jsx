@@ -1,9 +1,11 @@
 import React from 'react';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
+import ResultLibraryClan from './ResultLibraryClan.jsx';
 
 function DeckLibraryTotalInfo(props) {
   const total = Object.values(props.byTypes).reduce((a, b) => a + b, 0);
+  const totalExMasters = total - props.byTypes['Master'];
 
   const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
     return (
@@ -21,13 +23,35 @@ function DeckLibraryTotalInfo(props) {
     return props.byDisciplines[b] - props.byDisciplines[a];
   });
 
+  const byClansSorted = Object.keys(props.byClans).sort((a, b) => {
+    return props.byClans[b] - props.byClans[a];
+  });
+
   const DisciplinesInfo = byDisciplinesSorted.map((d, idx) => {
     return (
       <span key={idx} className="d-inline-block nobr ps-0 pe-3">
-        <ResultLibraryDisciplines value={d} />
-        {props.byDisciplines[d]}{' '}
+        {d === 'any' ? (
+          <span title="No Disciplines">ND </span>
+        ) : (
+          <>
+            <ResultLibraryDisciplines value={d} />
+            {props.byDisciplines[d]}{' '}
+          </>
+        )}
         <span className="gray">
-          ({Math.round((props.byDisciplines[d] / total) * 100)}%)
+          ({Math.round((props.byDisciplines[d] / totalExMasters) * 100)}%)
+        </span>
+      </span>
+    );
+  });
+
+  const ClansInfo = byClansSorted.map((d, idx) => {
+    return (
+      <span key={idx} className="d-inline-block nobr ps-0 pe-3">
+        <ResultLibraryClan value={d} />
+        {props.byClans[d]}{' '}
+        <span className="gray">
+          ({Math.round((props.byClans[d] / total) * 100)}%)
         </span>
       </span>
     );
@@ -37,6 +61,7 @@ function DeckLibraryTotalInfo(props) {
     <>
       <div className="py-2">{TypesInfo}</div>
       <div className="pt-1 pb-2">{DisciplinesInfo}</div>
+      <div className="pt-1 pb-2">{ClansInfo}</div>
     </>
   );
 }
