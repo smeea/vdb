@@ -180,7 +180,6 @@ function AccountChangeEmail(props) {
       {showModal && (
         <ModalTooltip
           text={tooltipText}
-          title="Email"
           show={showModal}
           setShow={setShowModal}
         />

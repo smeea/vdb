@@ -135,7 +135,6 @@ function AccountChangeName(props) {
       {showModal && (
         <ModalTooltip
           text={tooltipText}
-          title="Public name"
           show={showModal}
           setShow={setShowModal}
         />
