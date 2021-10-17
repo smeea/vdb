@@ -49,8 +49,8 @@ function DeckDrawLibraryTable(props) {
       <React.Fragment key={`${index}-${card['Id']}`}>
         <tr className={resultTrClass}>
           <td
-            className="cost py-0 px-1"
-            onClick={() => props.handleClick(index)}
+            className={card['Blood Cost'] ? 'cost blood px-1' : 'cost px-1'}
+            onClick={() => handleClick()}
           >
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}

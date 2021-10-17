@@ -1,4 +1,13 @@
 # FIX
+* Hide floating with deck info open on mobile
+* Check online and errors on wrong deckid/search
+* Ruling link separate window
+* Check deck proxy errors
+* Width of deck draw middle screen
+* Imbued export to lakcey
+* Hide add card buttons on mobile on no isAuthor
+* Count non-discipline and clans in %, exclude masters from count
+* Resort decks in selection after deck update
 
 # FIX MOBILE
 
@@ -11,6 +20,8 @@
 * Set/Precon multi-filters
 * Deck crypt sort by group
 * Export all in xlsx and csv
+* Last opened decks
+* Hide decks from deck selection
 
 # BIG FEATURES
 * Search for similar TWD decks

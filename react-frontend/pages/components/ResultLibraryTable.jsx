@@ -222,7 +222,10 @@ function ResultLibraryTable(props) {
               </td>
             </OverlayTrigger>
           )}
-          <td className="cost px-1" onClick={() => handleClick()}>
+          <td
+            className={card['Blood Cost'] ? 'cost blood px-1' : 'cost px-1'}
+            onClick={() => handleClick()}
+          >
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}

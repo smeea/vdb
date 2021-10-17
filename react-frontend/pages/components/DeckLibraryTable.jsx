@@ -267,7 +267,10 @@ function DeckLibraryTable(props) {
               <ResultLibraryName card={card.c} />
             </td>
           )}
-          <td className="cost" onClick={() => handleClick()}>
+          <td
+            className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
+            onClick={() => handleClick()}
+          >
             <ResultLibraryCost
               valueBlood={card.c['Blood Cost']}
               valuePool={card.c['Pool Cost']}
