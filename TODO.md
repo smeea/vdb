@@ -5,7 +5,6 @@
 * Check deck proxy errors
 * Width of deck draw middle screen
 * Imbued export to lakcey
-* Hide add card buttons on mobile on no isAuthor
 * Resort decks in selection after deck update
 
 # FIX MOBILE

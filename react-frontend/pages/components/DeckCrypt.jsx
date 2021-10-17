@@ -368,7 +368,7 @@ function DeckCrypt(props) {
           />
         </div>
       )}
-      {isMobile && props.showFloatingButtons && (
+      {isMobile && props.isAuthor && props.showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-top float-add-on align-items-center justify-content-center"
