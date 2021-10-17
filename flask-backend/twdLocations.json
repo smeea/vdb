@@ -76,6 +76,10 @@
         "value":"Amstelveen, Netherlands"
     },
     {
+        "label":"Andaluc\u00eda, Spain",
+        "value":"Andaluc\u00eda, Spain"
+    },
+    {
         "label":"Angers, France",
         "value":"Angers, France"
     },
@@ -130,6 +134,10 @@
     {
         "label":"Avrill\u00e9, France",
         "value":"Avrill\u00e9, France"
+    },
+    {
+        "label":"Ayora, Spain",
+        "value":"Ayora, Spain"
     },
     {
         "label":"Bad Nauheim, Germany",
@@ -418,6 +426,10 @@
     {
         "label":"Cambridge, England",
         "value":"Cambridge, England"
+    },
+    {
+        "label":"Campina Grande, Brasil",
+        "value":"Campina Grande, Brasil"
     },
     {
         "label":"Campina Grande, Brazil",
@@ -1440,6 +1452,10 @@
         "value":"La Guilde du Joueur, Trois-Rivi\u00e8res, Quebec"
     },
     {
+        "label":"La Pobla de Vallbona, Spain",
+        "value":"La Pobla de Vallbona, Spain"
+    },
+    {
         "label":"La guilde du joueur, Trois-Rivi\u00e8res, Quebec",
         "value":"La guilde du joueur, Trois-Rivi\u00e8res, Quebec"
     },
@@ -2084,6 +2100,10 @@
         "value":"Palma de Malorca, Spain"
     },
     {
+        "label":"Palma, Spain",
+        "value":"Palma, Spain"
+    },
+    {
         "label":"Pamplona, Spain",
         "value":"Pamplona, Spain"
     },
@@ -2190,6 +2210,10 @@
     {
         "label":"Praia Grande, Brazil",
         "value":"Praia Grande, Brazil"
+    },
+    {
+        "label":"Prato, Italy",
+        "value":"Prato, Italy"
     },
     {
         "label":"Pretoria, Tshwane, South Africa",
@@ -2390,6 +2414,10 @@
     {
         "label":"San Sebasti\u00e1n, Spain",
         "value":"San Sebasti\u00e1n, Spain"
+    },
+    {
+        "label":"San Vicente del Raspeig, Spain",
+        "value":"San Vicente del Raspeig, Spain"
     },
     {
         "label":"Santa Clara, California",
@@ -2782,6 +2810,10 @@
     {
         "label":"Utrecht, The Netherlands",
         "value":"Utrecht, The Netherlands"
+    },
+    {
+        "label":"Valencia, Spain",
+        "value":"Valencia, Spain"
     },
     {
         "label":"Vantaa, Finland",
