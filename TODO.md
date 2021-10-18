@@ -4,6 +4,7 @@
 * Imbued export to lakcey
 * Resort decks in selection after deck update
 * Merge DeleteConfirmation and ModalConfirmation
+* POD set dont change image
 
 # FIX MOBILE
 

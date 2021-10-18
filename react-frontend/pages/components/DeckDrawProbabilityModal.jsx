@@ -6,7 +6,7 @@ const DeckDrawProbabilityModal = (props) => {
   return (
     <Modal
       size="xs"
-      show={props.modalDraw ? true : false}
+      show={props.modalDraw}
       className="d-flex justify-content-center"
       dialogClassName="w-50"
       onHide={() => props.setModalDraw(null)}
@@ -15,7 +15,7 @@ const DeckDrawProbabilityModal = (props) => {
     >
       <Modal.Header className="px-3 pt-2 pb-1">
         <div className="prob">
-          <b>{props.modalDraw.name}</b>:
+          <b>{props.modalDraw.name}</b>
         </div>
         <Button
           variant="outline-secondary"
@@ -24,7 +24,6 @@ const DeckDrawProbabilityModal = (props) => {
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
-      <hr />
       <Modal.Body className="px-3 py-2">{props.modalDraw.prob}</Modal.Body>
     </Modal>
   );
