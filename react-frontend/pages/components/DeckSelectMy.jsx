@@ -15,6 +15,7 @@ function DeckSelectMy(props) {
 
   const preOptions = Object.keys(decks)
     .filter((i) => !decks[i].master)
+    .filter((i) => !decks[i].hidden)
     .map((i, index) => {
       return [
         {

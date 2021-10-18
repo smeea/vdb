@@ -296,6 +296,14 @@ def updateDeck(deckid):
             pass
 
         try:
+            if 'hidden' in request.json:
+                d.hidden = request.json['hidden']
+
+        except Exception:
+            pass
+
+
+        try:
             if 'description' in request.json:
                 d.description = request.json['description']
         except Exception:
@@ -505,6 +513,7 @@ def listDecks():
                 'crypt': crypt,
                 'library': library,
                 'deckid': deck.deckid,
+                'hidden': deck.hidden,
                 'inventory_type': deck.inventory_type,
                 'timestamp': deck.timestamp,
                 'master': deck.master,

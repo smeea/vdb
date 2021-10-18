@@ -11,6 +11,7 @@ import DeckLibrary from './DeckLibrary.jsx';
 import DeckTags from './DeckTags.jsx';
 import DeckTotal from './DeckTotal.jsx';
 import DeckDelete from './DeckDelete.jsx';
+import DeckHide from './DeckHide.jsx';
 import DeckBranchDelete from './DeckBranchDelete.jsx';
 import DeckClone from './DeckClone.jsx';
 import DeckProxy from './DeckProxy.jsx';
@@ -352,6 +353,9 @@ function DeckSelectAdvModal(props) {
           </td>
           {!isMobile && (
             <td className="buttons">
+              <div className="d-inline pe-1">
+                <DeckHide deckid={deck.deckid} />
+              </div>
               {revFilter &&
                 (deck.master ||
                   (deck.branches && deck.branches.length > 0)) && (

@@ -2,7 +2,6 @@
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
 * Imbued export to lakcey
-* Resort decks in selection after deck update
 
 # FIX MOBILE
 
@@ -15,7 +14,6 @@
 * Set/Precon multi-filters
 * Deck crypt sort by group
 * Export all in xlsx and csv
-* Hide decks from deck selection
 * Bookmarks/recent decks
 
 # BIG FEATURES

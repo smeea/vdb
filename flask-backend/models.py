@@ -39,6 +39,7 @@ class Deck(db.Model):
     cards = db.Column(db.PickleType, default={})
     inventory_type = db.Column(db.String(1), default='')
     master = db.Column(db.String(32))
+    hidden = db.Column(db.Boolean, default=False)
     branches = db.Column(db.PickleType, default=[])
     tags = db.Column(db.PickleType, default=[])
     used_in_inventory = db.Column(db.PickleType, default={})
