@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import TrashFill from '../../assets/images/icons/trash-fill.svg';
-import DeleteConfirmation from './DeleteConfirmation.jsx';
+import ModalConfirmation from './ModalConfirmation.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckDelete(props) {
@@ -46,11 +46,13 @@ function DeckDelete(props) {
           {!props.noText && 'Delete Deck'}
         </div>
       </Button>
-      <DeleteConfirmation
+      <ModalConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
-        target={`deck "${props.deck.name}" and all its versions`}
+        headerText={`Delete deck "${props.deck.name} and all its revisions"`}
+        mainText="THIS CANNOT BE UNDONE!"
+        buttonText="Delete"
       />
     </>
   );

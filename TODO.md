@@ -3,7 +3,6 @@
 * Check deck proxy errors
 * Imbued export to lakcey
 * Resort decks in selection after deck update
-* Merge DeleteConfirmation and ModalConfirmation
 
 # FIX MOBILE
 

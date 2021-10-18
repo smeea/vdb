@@ -1,6 +1,5 @@
 import React from 'react';
-import { Modal, Container, Row, Col } from 'react-bootstrap';
-import X from '../../assets/images/icons/x.svg';
+import { Modal } from 'react-bootstrap';
 
 function ModalTooltip(props) {
   return (

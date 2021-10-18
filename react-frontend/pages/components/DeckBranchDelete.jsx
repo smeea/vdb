@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import NodeMinusFill from '../../assets/images/icons/node-minus-fill.svg';
-import DeleteConfirmation from './DeleteConfirmation.jsx';
+import ModalConfirmation from './ModalConfirmation.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckBranchDelete(props) {
@@ -53,11 +53,13 @@ function DeckBranchDelete(props) {
           {!props.noText && 'Delete Revision'}
         </div>
       </Button>
-      <DeleteConfirmation
+      <ModalConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
-        target={`version "${props.deck.branchName}" of deck "${props.deck.name}"`}
+        headerText={`Delete revision "${props.deck.branchName} of deck "${props.deck.name}"`}
+        mainText="THIS CANNOT BE UNDONE!"
+        buttonText="Delete"
       />
     </>
   );

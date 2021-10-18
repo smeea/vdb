@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import TrashFill from '../../assets/images/icons/trash-fill.svg';
-import DeleteConfirmation from './DeleteConfirmation.jsx';
+import ModalConfirmation from './ModalConfirmation.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryDelete(props) {
@@ -39,11 +39,13 @@ function InventoryDelete(props) {
           Delete Inventory
         </div>
       </Button>
-      <DeleteConfirmation
+      <ModalConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
-        target="Inventory"
+        headerText={`Delete Inventory`}
+        mainText="THIS CANNOT BE UNDONE!"
+        buttonText="Delete"
       />
     </>
   );
