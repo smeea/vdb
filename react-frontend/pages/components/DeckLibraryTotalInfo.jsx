@@ -31,7 +31,12 @@ function DeckLibraryTotalInfo(props) {
     return (
       <span key={idx} className="d-inline-block nobr ps-0 pe-3">
         {d === 'any' ? (
-          <span title="No Disciplines">ND </span>
+          <>
+            <span title="No Disciplines">
+              <b>ND</b>
+            </span>{' '}
+            {props.byDisciplines['any']}{' '}
+          </>
         ) : (
           <>
             <ResultLibraryDisciplines value={d} />
@@ -60,8 +65,9 @@ function DeckLibraryTotalInfo(props) {
   return (
     <>
       <div className="py-2">{TypesInfo}</div>
-      <div className="pt-1 pb-2">{DisciplinesInfo}</div>
-      <div className="pt-1 pb-2">{ClansInfo}</div>
+      <div className="pt-2">Excluding Masters:</div>
+      <div className="py-1">{DisciplinesInfo}</div>
+      <div className="pb-2">{ClansInfo}</div>
     </>
   );
 }
