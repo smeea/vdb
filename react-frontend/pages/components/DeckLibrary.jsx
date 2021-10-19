@@ -201,7 +201,7 @@ function DeckLibrary(props) {
       libraryByDisciplinesTotal[disciplines] += library[card].q;
     }
 
-    clans = library[card].c['Clan'];
+    const clans = library[card].c['Clan'];
     if (clans && library[card].c['Type'] !== 'Master') {
       if (libraryByClansTotal[clans] === undefined) {
         libraryByClansTotal[clans] = 0;
