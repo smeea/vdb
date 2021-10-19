@@ -662,11 +662,9 @@ td.prob
     text-align: center
     min-width: 90px
   .name
-    min-width: 250px
-    max-width: 250px
+    width: 250px
     @media (max-width: 576px)
-      max-width: 200px
-      min-width: 200px
+      width: 200px
   .revision
     color: var(--fg-button)
   .date
@@ -678,6 +676,9 @@ td.prob
   .buttons
     min-width: 240px
     text-align: right
+  @media (max-width: 576px)
+    .buttons
+      min-width: 0px
   th
     font-weight: normal
 
@@ -838,6 +839,7 @@ li.rulings
     width: 25px
   td.burn
     width: 20px
+  td.burn
   .capacity-image-results
     height: 17px
   .discipline-base-image-results

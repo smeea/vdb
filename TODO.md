@@ -2,6 +2,7 @@
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
 * Imbued export to lakcey
+* Autosearch on mobile on page swap
 
 # FIX MOBILE
 
