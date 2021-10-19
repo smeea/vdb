@@ -35,17 +35,19 @@ function Navigation(props) {
   let libraryUrl = '/library';
   let decksUrl = '/decks';
 
-  if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
-    const input = sanitizeFormState('crypt', cryptFormState);
-    cryptUrl = `/crypt?q=${encodeURIComponent(JSON.stringify(input))}`;
-  }
-  if (JSON.stringify(libraryFormState) != JSON.stringify(libraryDefaults)) {
-    const input = sanitizeFormState('library', libraryFormState);
-    libraryUrl = `/library?q=${encodeURIComponent(JSON.stringify(input))}`;
-  }
-  if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
-    const input = sanitizeFormState('twd', twdFormState);
-    twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
+  if (!isMobile) {
+    if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
+      const input = sanitizeFormState('crypt', cryptFormState);
+      cryptUrl = `/crypt?q=${encodeURIComponent(JSON.stringify(input))}`;
+    }
+    if (JSON.stringify(libraryFormState) != JSON.stringify(libraryDefaults)) {
+      const input = sanitizeFormState('library', libraryFormState);
+      libraryUrl = `/library?q=${encodeURIComponent(JSON.stringify(input))}`;
+    }
+    if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
+      const input = sanitizeFormState('twd', twdFormState);
+      twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
+    }
   }
   if (activeDeck.deckid) {
     decksUrl = `/decks?id=${activeDeck.deckid}`;
