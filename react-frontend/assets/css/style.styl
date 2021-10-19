@@ -438,6 +438,8 @@ td.prob
   td.disciplines td
     @media (max-width: 576px)
       min-width: 25px
+    @media (max-width: 400px)
+      min-width: 23px
 
 .deck-library-table
   width: 100%
@@ -554,10 +556,11 @@ td.prob
     font-size: 1.1em
     background: rgba(0, 0, 170, 0.05);
   td.disciplines td
-    min-width: 28px
-  @media (max-width: 576px)
-    .search-crypt-table td.disciplines td
+    @media (max-width: 576px)
       min-width: 25px
+    @media (max-width: 400px)
+      min-width: 23px
+
   td.name
     text-align: left
 
@@ -777,13 +780,17 @@ li.rulings
   filter: brightness(var(--icons-brightness))
 .discipline-base-image-results
   height: 24px
+  @media (max-width: 576px)
+    height: 23px
+  @media (max-width: 400px)
+    height: 21px
 .discipline-superior-image-results
   height: 27px
-@media (max-width: 576px)
-  .discipline-base-image-results
-    height: 23px
-  .discipline-superior-image-results
+  @media (max-width: 576px)
     height: 25px
+  @media (max-width: 400px)
+    height: 23px
+
 
 .discipline-base-image-results,
 .discipline-base-image-forms,
