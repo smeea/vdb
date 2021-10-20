@@ -106,14 +106,28 @@ function SearchLibraryForm(props) {
   const handleMultiSelectChange = (event, id) => {
     const i = id.name;
     const { name, value } = event;
-    setLibraryFormState((prevState) => {
-      const v = prevState[name];
-      v[i] = value;
-      return {
-        ...prevState,
-        [name]: v,
-      };
-    });
+    if (name == 'set' || name == 'precon') {
+      setLibraryFormState((prevState) => {
+        const v = prevState[name][name];
+        v[i] = value;
+        return {
+          ...prevState,
+          [name]: {
+            ...prevState[name],
+            [name]: v,
+          },
+        };
+      });
+    } else {
+      setLibraryFormState((prevState) => {
+        const v = prevState[name];
+        v[i] = value;
+        return {
+          ...prevState,
+          [name]: v,
+        };
+      });
+    }
   };
 
   const handleLogicMultiSelectChange = (event, id) => {
@@ -335,13 +349,15 @@ function SearchLibraryForm(props) {
       />
       <SearchFormSet
         value={libraryFormState.set}
-        onChange={handleNestedChange}
+        onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
+        setFormState={setLibraryFormState}
       />
       <SearchFormPrecon
         value={libraryFormState.precon}
-        onChange={handleNestedChange}
+        onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
+        setFormState={setLibraryFormState}
       />
       <SearchFormArtist
         value={libraryFormState.artist}

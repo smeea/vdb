@@ -11,7 +11,6 @@
 * Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url
-* Set/Precon multi-filters
 * Export all in xlsx and csv
 * Bookmarks/recent decks
 * Import from FELDB

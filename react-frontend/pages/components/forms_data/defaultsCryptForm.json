@@ -92,13 +92,13 @@
     "non-twd": false
   },
   "set": {
-    "set": "any",
+    "set": ["any"],
     "only in": false,
     "first print": false,
     "or newer": false
   },
   "precon": {
-    "precon": "any",
+    "precon": ["any"],
     "only in": false,
     "first print": false
   },

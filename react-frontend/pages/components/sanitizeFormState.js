@@ -41,15 +41,23 @@ const sanitizeFormState = (target, state) => {
 
   switch (target) {
     case 'crypt':
-      multiSelectFormsWithMain = ['set', 'precon', 'capacity'];
+      multiSelectFormsWithMain = ['capacity'];
       break;
     case 'library':
-      multiSelectFormsWithMain = ['set', 'precon', 'blood', 'pool', 'capacity'];
+      multiSelectFormsWithMain = ['blood', 'pool', 'capacity'];
       break;
   }
 
   multiSelectFormsWithMain.map((i) => {
     if (input[i][i] == 'any') {
+      delete input[i];
+    }
+  });
+
+  const multiSelectFormsWithOptions = ['set', 'precon'];
+
+  multiSelectFormsWithOptions.map((i) => {
+    if (!input[i][i]) {
       delete input[i];
     }
   });
