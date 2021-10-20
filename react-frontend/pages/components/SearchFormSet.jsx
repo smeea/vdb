@@ -169,6 +169,7 @@ function SearchFormSet(props) {
         </Col>
       </Row>
       <AdditionalForms
+        menuPlacement={isMobile ? 'top' : 'bottom'}
         value={props.value.set}
         addForm={addForm}
         delForm={delForm}

@@ -53,6 +53,7 @@ const AdditionalForms = (props) => {
             options={props.options}
             isSearchable={!isMobile}
             defaultMenuIsOpen={props.value[i] === 'any'}
+            menuPlacement={props.menuPlacement ? props.menuPlacement : 'bottom'}
             name={i}
             value={props.options.find(
               (obj) => obj.value === props.value[i].toLowerCase()

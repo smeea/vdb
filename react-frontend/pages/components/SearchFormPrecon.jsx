@@ -200,6 +200,7 @@ function SearchFormPrecon(props) {
         </Col>
       </Row>
       <AdditionalForms
+        menuPlacement={isMobile ? 'top' : 'bottom'}
         value={props.value.precon}
         addForm={addForm}
         delForm={delForm}
