@@ -2,6 +2,7 @@
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
 * Imbued export to lakcey
+* Last filter to 'ANY' to reset query in url
 
 # FIX MOBILE
 
@@ -11,7 +12,6 @@
 * Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url
-* Set/Precon multi-filters
 * Export all in xlsx and csv
 * Bookmarks/recent decks
 * Import from FELDB

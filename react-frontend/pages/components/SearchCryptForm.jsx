@@ -83,14 +83,29 @@ function SearchCryptForm(props) {
   const handleMultiSelectChange = (event, id) => {
     const i = id.name;
     const { name, value } = event;
-    setCryptFormState((prevState) => {
-      const v = prevState[name];
-      v[i] = value;
-      return {
-        ...prevState,
-        [name]: v,
-      };
-    });
+
+    if (name == 'set' || name == 'precon') {
+      setCryptFormState((prevState) => {
+        const v = prevState[name][name];
+        v[i] = value;
+        return {
+          ...prevState,
+          [name]: {
+            ...prevState[name],
+            [name]: v,
+          },
+        };
+      });
+    } else {
+      setCryptFormState((prevState) => {
+        const v = prevState[name];
+        v[i] = value;
+        return {
+          ...prevState,
+          [name]: v,
+        };
+      });
+    }
   };
 
   const handleMultiChange = (event) => {
@@ -304,13 +319,15 @@ function SearchCryptForm(props) {
       />
       <SearchFormSet
         value={cryptFormState.set}
-        onChange={handleNestedChange}
+        onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
+        setFormState={setCryptFormState}
       />
       <SearchFormPrecon
         value={cryptFormState.precon}
-        onChange={handleNestedChange}
+        onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
+        setFormState={setCryptFormState}
       />
       <SearchFormArtist
         value={cryptFormState.artist}

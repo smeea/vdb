@@ -317,63 +317,71 @@ def get_library_by_set(request, library):
     ]
 
     match_cards = []
-    r_set = request['set']
+    r_sets = request['set']
 
-    if 'or newer' in request:
-        oldestSetIndex = sets.index(r_set)
+    for r_set in r_sets:
+        if 'or newer' in request:
+            oldestSetIndex = sets.index(r_set)
 
-        for card in library:
-            for k in card['Set'].keys():
-                if sets.index(k) <= oldestSetIndex and sets.index(k) > 1:
-                    match_cards.append(card)
-
-    else:
-        if r_set == 'bcp':
             for card in library:
-                for c_set in card['Set'].keys():
-                    if c_set in bcp_sets:
-                        if card in match_cards:
-                            continue
+                for k in card['Set'].keys():
+                    if sets.index(k) <= oldestSetIndex and sets.index(k) > 1:
+                        if card not in match_cards:
+                            match_cards.append(card)
 
+        else:
+            if r_set == 'bcp':
+                for card in library:
+                    for c_set in card['Set'].keys():
+                        if c_set in bcp_sets:
+                            if card in match_cards:
+                                continue
+
+                            if 'only in' in request:
+                                counter = 0
+                                for k in card['Set'].keys():
+                                    if k in bcp_sets:
+                                        counter += 1
+
+                                if len(card['Set'].keys()) == counter:
+                                    if card not in match_cards:
+                                        match_cards.append(card)
+
+                            elif 'first print' in request:
+                                oldestSetIndex = 0
+                                for k in card['Set'].keys():
+                                    if sets.index(k) > oldestSetIndex:
+                                        # add 2 because of 'Promo' and 'DTC'
+                                        oldestSetIndex = sets.index(k) + 2
+
+                                if oldestSetIndex < len(bcp_sets):
+                                    if card not in match_cards:
+                                        match_cards.append(card)
+
+                            else:
+                                if card not in match_cards:
+                                    match_cards.append(card)
+
+            else:
+                for card in library:
+                    if r_set in card['Set']:
                         if 'only in' in request:
-                            counter = 0
-                            for k in card['Set'].keys():
-                                if k in bcp_sets:
-                                    counter += 1
-
-                            if len(card['Set'].keys()) == counter:
-                                match_cards.append(card)
+                            if len(card['Set'].keys()) == 1:
+                                if card not in match_cards:
+                                    match_cards.append(card)
 
                         elif 'first print' in request:
                             oldestSetIndex = 0
                             for k in card['Set'].keys():
                                 if sets.index(k) > oldestSetIndex:
-                                    # add 2 because of 'Promo' and 'DTC'
-                                    oldestSetIndex = sets.index(k) + 2
+                                    oldestSetIndex = sets.index(k)
 
-                            if oldestSetIndex < len(bcp_sets):
-                                match_cards.append(card)
-
+                            if oldestSetIndex == sets.index(r_set):
+                                if card not in match_cards:
+                                    match_cards.append(card)
                         else:
-                            match_cards.append(card)
-
-        else:
-            for card in library:
-                if r_set in card['Set']:
-                    if 'only in' in request:
-                        if len(card['Set'].keys()) == 1:
-                            match_cards.append(card)
-
-                    elif 'first print' in request:
-                        oldestSetIndex = 0
-                        for k in card['Set'].keys():
-                            if sets.index(k) > oldestSetIndex:
-                                oldestSetIndex = sets.index(k)
-
-                        if oldestSetIndex == sets.index(r_set):
-                            match_cards.append(card)
-                    else:
-                        match_cards.append(card)
+                            if card not in match_cards:
+                                match_cards.append(card)
 
     return match_cards
 
@@ -435,59 +443,66 @@ def get_library_by_precon(request, library):
     booster_subsets = ["V", "C", "U", "R"]
 
     match_cards = []
-    req = request['precon']
+    reqs = request['precon']
 
-    if req == 'bcp':
-        for card in library:
-            for c_set, c_subsets in card['Set'].items():
-                if c_set in bcp_sets:
-                    for c_subset in c_subsets.keys():
-                        if card in match_cards:
-                            continue
+    for req in reqs:
+        if req == 'bcp':
+            for card in library:
+                for c_set, c_subsets in card['Set'].items():
+                    if c_set in bcp_sets:
+                        for c_subset in c_subsets.keys():
+                            if card in match_cards:
+                                continue
 
-                        if c_subset not in booster_subsets and card not in match_cards:
-                            if 'only in' in request:
-                                counter = 0
-                                for k in card['Set'].keys():
-                                    if k in bcp_sets:
-                                        counter += 1
+                            if c_subset not in booster_subsets and card not in match_cards:
+                                if 'only in' in request:
+                                    counter = 0
+                                    for k in card['Set'].keys():
+                                        if k in bcp_sets:
+                                            counter += 1
 
-                                if len(card['Set'].keys()) == counter:
-                                    match_cards.append(card)
+                                    if len(card['Set'].keys()) == counter:
+                                        if card not in match_cards:
+                                            match_cards.append(card)
 
-                            elif 'first print' in request:
-                                oldestSetIndex = 0
-                                for k in card['Set'].keys():
-                                    if sets.index(k) > oldestSetIndex:
-                                        # add 2 because of 'Promo' and 'DTC'
-                                        oldestSetIndex = sets.index(k) + 2
+                                elif 'first print' in request:
+                                    oldestSetIndex = 0
+                                    for k in card['Set'].keys():
+                                        if sets.index(k) > oldestSetIndex:
+                                            # add 2 because of 'Promo' and 'DTC'
+                                            oldestSetIndex = sets.index(k) + 2
 
-                                if oldestSetIndex < len(bcp_sets):
-                                    match_cards.append(card)
+                                    if oldestSetIndex < len(bcp_sets):
+                                        if card not in match_cards:
+                                            match_cards.append(card)
 
-                            else:
+                                else:
+                                    if card not in match_cards:
+                                        match_cards.append(card)
+
+        else:
+            [r_set, r_subset] = req.split(':')
+
+            for card in library:
+                if r_set in card['Set'] and r_subset in card['Set'][r_set]:
+                    if 'only in' in request:
+                        if len(card['Set'].keys()) == 1:
+                            if card not in match_cards:
                                 match_cards.append(card)
 
-    else:
-        [r_set, r_subset] = req.split(':')
+                    elif 'first print' in request:
+                        oldestSetIndex = 0
+                        for k in card['Set'].keys():
+                            if sets.index(k) > oldestSetIndex:
+                                oldestSetIndex = sets.index(k)
 
-        for card in library:
-            if r_set in card['Set'] and r_subset in card['Set'][r_set]:
-                if 'only in' in request:
-                    if len(card['Set'].keys()) == 1:
-                        match_cards.append(card)
+                        if oldestSetIndex == sets.index(r_set):
+                            if card not in match_cards:
+                                match_cards.append(card)
 
-                elif 'first print' in request:
-                    oldestSetIndex = 0
-                    for k in card['Set'].keys():
-                        if sets.index(k) > oldestSetIndex:
-                            oldestSetIndex = sets.index(k)
-
-                    if oldestSetIndex == sets.index(r_set):
-                        match_cards.append(card)
-
-                else:
-                    match_cards.append(card)
+                    else:
+                        if card not in match_cards:
+                            match_cards.append(card)
 
     return match_cards
 
