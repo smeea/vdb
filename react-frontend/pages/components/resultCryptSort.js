@@ -1,10 +1,6 @@
 function resultCryptSort(cards, sortMethod) {
   const byName = (a, b) => {
-    if (a['ASCII Name'] < b['ASCII Name']) {
-      return -1;
-    } else {
-      return 1;
-    }
+    a['ASCII Name'] - b['ASCII Name'];
   };
 
   const byClan = (a, b) => {

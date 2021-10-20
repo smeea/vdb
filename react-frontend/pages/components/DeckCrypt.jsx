@@ -8,6 +8,7 @@ import DeckNewCryptCard from './DeckNewCryptCard.jsx';
 import DeckCryptSortButton from './DeckCryptSortButton.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
 import UsedDescription from './UsedDescription.jsx';
+import deckCryptSort from './deckCryptSort.js';
 import AppContext from '../../context/AppContext';
 
 function DeckCrypt(props) {
@@ -16,7 +17,7 @@ function DeckCrypt(props) {
     inventoryMode,
     inventoryCrypt,
     usedCryptCards,
-    cryptSortByCap,
+    cryptDeckSort,
     changeTimer,
     isMobile,
   } = useContext(AppContext);
@@ -217,15 +218,8 @@ function DeckCrypt(props) {
     cryptGroups = 'ERROR IN GROUPS';
   }
 
-  const SortByQuantity = (a, b) => {
-    return b.q - a.q;
-  };
-
-  const SortByCapacity = (a, b) => {
-    return b.c['Capacity'] - a.c['Capacity'];
-  };
-
   const [sortedState, setSortedState] = useState([]);
+  const [sortedSideState, setSortedSideState] = useState([]);
 
   const sortedCards = sortedState
     .filter((card) => crypt[card])
@@ -234,34 +228,29 @@ function DeckCrypt(props) {
       return crypt[card];
     });
 
-  const sortedCardsSide = Object.values(cryptSide)
-    .sort(SortByCapacity)
+  const sortedCardsSide = sortedSideState
+    .filter((card) => cryptSide[card])
     .map((card) => {
-      cryptSideCards.push(card.c);
-      return card;
+      cryptSideCards.push(cryptSide[card].c);
+      return cryptSide[card];
     });
 
   useEffect(() => {
-    if (cryptSortByCap) {
+    if (cryptDeckSort) {
+      const sorted = deckCryptSort(Object.values(crypt), cryptDeckSort);
+      const sortedSide = deckCryptSort(Object.values(cryptSide), cryptDeckSort);
       setSortedState(
-        Object.values(crypt)
-          .sort(SortByQuantity)
-          .sort(SortByCapacity)
-          .map((i) => {
-            return i['c']['Id'];
-          })
+        sorted.map((i) => {
+          return i['c']['Id'];
+        })
       );
-    } else {
-      setSortedState(
-        Object.values(crypt)
-          .sort(SortByCapacity)
-          .sort(SortByQuantity)
-          .map((i) => {
-            return i['c']['Id'];
-          })
+      setSortedSideState(
+        sortedSide.map((i) => {
+          return i['c']['Id'];
+        })
       );
     }
-  }, [changeTimer, props.deckid, cryptSortByCap]);
+  }, [changeTimer, props.deckid, cryptDeckSort]);
 
   return (
     <>

@@ -12,9 +12,9 @@
 * How can I help section - twd, rulings
 * TWD new/random to respect url
 * Set/Precon multi-filters
-* Deck crypt sort by group
 * Export all in xlsx and csv
 * Bookmarks/recent decks
+* Import from FELDB
 
 # BIG FEATURES
 * Search for similar TWD decks

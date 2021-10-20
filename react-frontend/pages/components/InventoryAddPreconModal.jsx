@@ -8,7 +8,7 @@ import DeckLibrary from './DeckLibrary.jsx';
 import DeckSelectSortForm from './DeckSelectSortForm.jsx';
 import InventoryDeckAddButton from './InventoryDeckAddButton.jsx';
 import InventoryDeckDeleteButton from './InventoryDeckDeleteButton.jsx';
-import resultDecksSort from './resultDecksSort.js';
+import decksSort from './decksSort.js';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import AppContext from '../../context/AppContext';
 import setsAndPrecons from './forms_data/setsAndPrecons.json';
@@ -55,7 +55,7 @@ function InventoryAddDeckModal(props) {
         });
       }
 
-      const sorted = resultDecksSort(filtered, sortMethod);
+      const sorted = decksSort(filtered, sortMethod);
       setSortedDecks(sorted);
     }
   }, [preconDecks, nameFilter, setFilter, sortMethod]);

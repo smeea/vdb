@@ -1,10 +1,6 @@
-function resultDecksSort(decks, sortMethod) {
+function decksSort(decks, sortMethod) {
   const byName = (a, b) => {
-    if (a.name < b.name) {
-      return -1;
-    } else {
-      return 1;
-    }
+    a.name - b.name;
   };
 
   const byTimestamp = (a, b) => {
@@ -25,4 +21,4 @@ function resultDecksSort(decks, sortMethod) {
   }
 }
 
-export default resultDecksSort;
+export default decksSort;

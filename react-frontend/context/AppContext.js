@@ -19,7 +19,7 @@ export const AppProvider = (props) => {
   const [addMode, setAddMode] = useState(undefined);
   const [inventoryMode, setInventoryMode] = useState(undefined);
   const [hideMissing, setHideMissing] = useState(undefined);
-  const [cryptSortByCap, setCryptSortByCap] = useState(undefined);
+  const [cryptDeckSort, setCryptDeckSort] = useState(undefined);
   const [cryptSearchSort, setCryptSearchSort] = useState(undefined);
   const [librarySearchSort, setLibrarySearchSort] = useState(undefined);
 
@@ -81,9 +81,9 @@ export const AppProvider = (props) => {
     window.localStorage.setItem('inventoryMode', !inventoryMode);
   };
 
-  const toggleCryptSort = () => {
-    setCryptSortByCap(!cryptSortByCap);
-    window.localStorage.setItem('cryptSortByCap', !cryptSortByCap);
+  const changeCryptDeckSort = (method) => {
+    setCryptDeckSort(method);
+    window.localStorage.setItem('cryptDeckSort', method);
   };
 
   const changeCryptSearchSort = (method) => {
@@ -102,11 +102,18 @@ export const AppProvider = (props) => {
   };
 
   useLayoutEffect(() => {
-    const cs = window.localStorage.getItem('cryptSearchSort');
-    if (cs) {
-      setCryptSearchSort(cs);
+    const css = window.localStorage.getItem('cryptSearchSort');
+    if (css) {
+      setCryptSearchSort(css);
     } else {
       setCryptSearchSort('Capacity - Min to Max');
+    }
+
+    const cds = window.localStorage.getItem('cryptDeckSort');
+    if (cds) {
+      setCryptDeckSort(cds);
+    } else {
+      setCryptDeckSort('Quantity');
     }
 
     const ls = window.localStorage.getItem('librarySearchSort');
@@ -135,13 +142,6 @@ export const AppProvider = (props) => {
       setInventoryMode(true);
     } else {
       setInventoryMode(false);
-    }
-
-    const csc = window.localStorage.getItem('cryptSortByCap');
-    if (csc === 'true') {
-      setCryptSortByCap(true);
-    } else {
-      setCryptSortByCap(false);
     }
 
     const si = window.localStorage.getItem('showImage');
@@ -368,9 +368,10 @@ export const AppProvider = (props) => {
         toggleAddMode,
         showImage,
         toggleShowImage,
-        cryptSortByCap,
-        toggleCryptSort,
+        changeCryptSearchSort,
+        changeCryptDeckSort,
         cryptSearchSort,
+        cryptDeckSort,
         librarySearchSort,
         changeCryptSearchSort,
         changeLibrarySearchSort,

@@ -10,7 +10,7 @@ function DeckProxyCrypt(props) {
     inventoryMode,
     inventoryCrypt,
     usedCryptCards,
-    cryptSortByCap,
+    cryptDeckSort,
     changeTimer,
     isMobile,
   } = useContext(AppContext);
@@ -212,7 +212,7 @@ function DeckProxyCrypt(props) {
     });
 
   useEffect(() => {
-    if (cryptSortByCap) {
+    if (cryptDeckSort) {
       setSortedState(
         Object.values(crypt)
           .sort(SortByQuantity)
@@ -231,7 +231,7 @@ function DeckProxyCrypt(props) {
           })
       );
     }
-  }, [changeTimer, cryptSortByCap]);
+  }, [changeTimer, cryptDeckSort]);
 
   return (
     <>

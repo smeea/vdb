@@ -18,7 +18,7 @@ import DeckProxy from './DeckProxy.jsx';
 import DeckCopyUrl from './DeckCopyUrl.jsx';
 import DeckSelectSortForm from './DeckSelectSortForm.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
-import resultDecksSort from './resultDecksSort.js';
+import decksSort from './decksSort.js';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import AppContext from '../../context/AppContext';
 
@@ -199,7 +199,7 @@ function DeckSelectAdvModal(props) {
         });
       }
 
-      const sorted = resultDecksSort(filtered, sortMethod);
+      const sorted = decksSort(filtered, sortMethod);
       setSortedDecks(sorted);
     }
   }, [decks, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);
