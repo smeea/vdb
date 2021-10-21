@@ -248,142 +248,144 @@ function DeckSelectAdvModal(props) {
 
     return (
       <React.Fragment key={deck.deckid}>
-        <tr className={resultTrClass}>
-          {inventoryMode && !isMobile && (
-            <td className="inventory" onClick={() => toggleInventoryState()}>
-              <div
-                className="px-2"
-                title={
-                  deck.inventory_type === 's'
-                    ? 'Flexible'
-                    : deck.inventory_type === 'h'
-                    ? 'Fixed'
-                    : 'Virtual'
-                }
-              >
-                {deck.inventory_type == 's' && <Shuffle />}
-                {deck.inventory_type == 'h' && <PinAngleFill />}
-                {!deck.inventory_type && <At />}
-              </div>
-            </td>
-          )}
-          {!isMobile && (
-            <td className="clan" onClick={() => handleOpen(deck.deckid)}>
-              {clan && <ResultCryptClan value={clan} />}
-            </td>
-          )}
-          <td className="name px-1" onClick={() => handleOpen(deck.deckid)}>
-            <div
-              className="d-flex trimmed name justify-content-between"
-              title={deck.name}
-            >
-              {deck.name}
-              {deck.branchName &&
-                (deck.master ||
-                  (deck.branches && deck.branches.length > 0)) && (
-                  <div
-                    className="d-inline ps-2 revision"
-                    title={deck.branchName}
-                  >
-                    {deck.branchName}
-                  </div>
-                )}
-            </div>
-          </td>
-          {!isMobile && (
-            <td className="preview">
-              <div
-                className="m-2"
-                onMouseEnter={() => setShowDeck(deck.deckid)}
-                onMouseLeave={() => setShowDeck(false)}
-              >
-                <OverlayTooltip
-                  placement="right"
-                  show={showDeck === deck.deckid}
-                  className="adv-select"
-                  text={
-                    <Row>
-                      <Col
-                        md={7}
-                        onClick={(event) => {
-                          if (event.target === event.currentTarget)
-                            setShowDeck(false);
-                        }}
-                      >
-                        <DeckCrypt
-                          deckid={deck.deckid}
-                          cards={deck.crypt}
-                          inAdvSelect={true}
-                        />
-                      </Col>
-                      <Col
-                        md={5}
-                        onClick={(event) => {
-                          if (event.target === event.currentTarget)
-                            setShowDeck(false);
-                        }}
-                      >
-                        <DeckLibrary
-                          deckid={deck.deckid}
-                          cards={deck.library}
-                          inAdvSelect={true}
-                        />
-                      </Col>
-                    </Row>
+        {decks[deck.deckid] && (
+          <tr className={resultTrClass}>
+            {inventoryMode && !isMobile && (
+              <td className="inventory" onClick={() => toggleInventoryState()}>
+                <div
+                  className="px-2"
+                  title={
+                    deck.inventory_type === 's'
+                      ? 'Flexible'
+                      : deck.inventory_type === 'h'
+                      ? 'Fixed'
+                      : 'Virtual'
                   }
                 >
-                  <div>
-                    <EyeFill />
-                  </div>
-                </OverlayTooltip>
-              </div>
-            </td>
-          )}
-          {!isMobile && (
-            <td className="date" onClick={() => handleOpen(deck.deckid)}>
-              {new Date(deck.timestamp).toISOString().slice(0, 10)}
-            </td>
-          )}
-          <td className="tags">
-            <DeckTags
-              allTagsOptions={props.allTagsOptions}
-              isAuthor={true}
-              deck={deck}
-            />
-          </td>
-          <td className="buttons">
-            <div className="d-inline pe-1">
-              <DeckHide deckid={deck.deckid} />
-            </div>
+                  {deck.inventory_type == 's' && <Shuffle />}
+                  {deck.inventory_type == 'h' && <PinAngleFill />}
+                  {!deck.inventory_type && <At />}
+                </div>
+              </td>
+            )}
             {!isMobile && (
-              <>
-                {revFilter &&
+              <td className="clan" onClick={() => handleOpen(deck.deckid)}>
+                {clan && <ResultCryptClan value={clan} />}
+              </td>
+            )}
+            <td className="name px-1" onClick={() => handleOpen(deck.deckid)}>
+              <div
+                className="d-flex trimmed name justify-content-between"
+                title={deck.name}
+              >
+                {deck.name}
+                {deck.branchName &&
                   (deck.master ||
                     (deck.branches && deck.branches.length > 0)) && (
-                    <div className="d-inline pe-1">
-                      <DeckBranchDelete noText={true} deck={deck} />
+                    <div
+                      className="d-inline ps-2 revision"
+                      title={deck.branchName}
+                    >
+                      {deck.branchName}
                     </div>
                   )}
-                <div className="d-inline pe-1">
-                  <DeckDelete noText={true} deck={deck} />
+              </div>
+            </td>
+            {!isMobile && (
+              <td className="preview">
+                <div
+                  className="m-2"
+                  onMouseEnter={() => setShowDeck(deck.deckid)}
+                  onMouseLeave={() => setShowDeck(false)}
+                >
+                  <OverlayTooltip
+                    placement="right"
+                    show={showDeck === deck.deckid}
+                    className="adv-select"
+                    text={
+                      <Row>
+                        <Col
+                          md={7}
+                          onClick={(event) => {
+                            if (event.target === event.currentTarget)
+                              setShowDeck(false);
+                          }}
+                        >
+                          <DeckCrypt
+                            deckid={deck.deckid}
+                            cards={deck.crypt}
+                            inAdvSelect={true}
+                          />
+                        </Col>
+                        <Col
+                          md={5}
+                          onClick={(event) => {
+                            if (event.target === event.currentTarget)
+                              setShowDeck(false);
+                          }}
+                        >
+                          <DeckLibrary
+                            deckid={deck.deckid}
+                            cards={deck.library}
+                            inAdvSelect={true}
+                          />
+                        </Col>
+                      </Row>
+                    }
+                  >
+                    <div>
+                      <EyeFill />
+                    </div>
+                  </OverlayTooltip>
                 </div>
-                <div className="d-inline pe-1">
-                  <DeckClone
-                    activeDeck={{ src: 'my', deckid: deck.deckid }}
-                    noText={true}
-                    deck={deck}
-                  />
-                </div>
-                <div className="d-inline pe-1">
-                  <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
-                </div>
-                <div className="d-inline pe-1">
-                  <DeckProxy noText={true} deck={deck} />
-                </div>
-              </>
+              </td>
             )}
-          </td>
-        </tr>
+            {!isMobile && (
+              <td className="date" onClick={() => handleOpen(deck.deckid)}>
+                {new Date(deck.timestamp).toISOString().slice(0, 10)}
+              </td>
+            )}
+            <td className="tags">
+              <DeckTags
+                allTagsOptions={props.allTagsOptions}
+                isAuthor={true}
+                deck={deck}
+              />
+            </td>
+            <td className="buttons">
+              <div className="d-inline pe-1">
+                <DeckHide deckid={deck.deckid} />
+              </div>
+              {!isMobile && (
+                <>
+                  {revFilter &&
+                    (deck.master ||
+                      (deck.branches && deck.branches.length > 0)) && (
+                      <div className="d-inline pe-1">
+                        <DeckBranchDelete noText={true} deck={deck} />
+                      </div>
+                    )}
+                  <div className="d-inline pe-1">
+                    <DeckDelete noText={true} deck={deck} />
+                  </div>
+                  <div className="d-inline pe-1">
+                    <DeckClone
+                      activeDeck={{ src: 'my', deckid: deck.deckid }}
+                      noText={true}
+                      deck={deck}
+                    />
+                  </div>
+                  <div className="d-inline pe-1">
+                    <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
+                  </div>
+                  <div className="d-inline pe-1">
+                    <DeckProxy noText={true} deck={deck} />
+                  </div>
+                </>
+              )}
+            </td>
+          </tr>
+        )}
       </React.Fragment>
     );
   });

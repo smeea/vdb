@@ -1,7 +1,7 @@
 # FIX
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
-* Deck Delete from AdvDeckSelect
+* Deck name sort
 
 # FIX MOBILE
 
@@ -14,6 +14,8 @@
 * Export all in xlsx and csv
 * Bookmarks/recent decks
 * Import from FELDB
+* Negative filters
+* Keywords search
 
 # BIG FEATURES
 * Search for similar TWD decks
