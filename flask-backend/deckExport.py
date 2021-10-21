@@ -128,9 +128,9 @@ def deckExport(d, format):
                 deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
 
                 if c['Adv'] and c['Adv'][0]:
-                    deck.append(c['ASCII Name'].replace('"', "'") + ' (ADV)\n')
+                    deck.append(f"{c['ASCII Name']} (ADV)\n")
                 else:
-                    deck.append(c['ASCII Name'].replace('"', "'") + '\n')
+                    deck.append(f"{c['ASCII Name']}\n")
 
         elif format == 'text' or format == 'twd':
             # Crypt export

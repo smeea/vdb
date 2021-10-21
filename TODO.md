@@ -1,8 +1,7 @@
 # FIX
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
-* Imbued export to lakcey
-* Last filter to 'ANY' to reset query in url
+* Deck Delete from AdvDeckSelect
 
 # FIX MOBILE
 
