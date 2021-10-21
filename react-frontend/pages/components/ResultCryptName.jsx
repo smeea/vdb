@@ -6,7 +6,9 @@ function ResultCryptName(props) {
     <>
       <div className="d-inline name">
         {props.card['Banned'] ? (
-          <strike>{props.card['Name']}</strike>
+          <>
+            <strike>{props.card['Name']}</strike>
+          </>
         ) : (
           <>{props.card['Name']}</>
         )}
@@ -21,7 +23,7 @@ function ResultCryptName(props) {
         )}
         {props.card['Banned'] && (
           <span className="ps-1">
-            <Hammer />
+            [{props.card['Banned']} <Hammer />]
           </span>
         )}
       </div>

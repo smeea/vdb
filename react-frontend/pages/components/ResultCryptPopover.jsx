@@ -43,11 +43,14 @@ function ResultCryptPopover(props) {
                 <ResultCryptClan value={props.card['Clan']} />
               </div>
               <div className="name ps-2">
-                <b>{props.card['Name']}</b>
-                {props.card['Banned'] && (
-                  <span className="ps-1">
-                    <Hammer />
-                  </span>
+                {props.card['Banned'] ? (
+                  <>
+                    <strike>
+                      <b>{props.card['Name']}</b>
+                    </strike>
+                  </>
+                ) : (
+                  <b>{props.card['Name']}</b>
                 )}
                 {props.card['Adv'][0] && (
                   <span className="ps-1">
@@ -56,6 +59,11 @@ function ResultCryptPopover(props) {
                       src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
                       title="Advanced"
                     />
+                  </span>
+                )}
+                {props.card['Banned'] && (
+                  <span className="ps-1">
+                    [{props.card['Banned']} <Hammer />]
                   </span>
                 )}
               </div>

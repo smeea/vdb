@@ -33,7 +33,7 @@ function ResultLibraryLayoutText(props) {
             )}
             {props.card['Banned'] && (
               <span className="ps-1">
-                <Hammer />
+                [{props.card['Banned']} <Hammer />]
               </span>
             )}
           </div>

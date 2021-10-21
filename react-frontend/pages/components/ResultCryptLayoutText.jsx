@@ -25,9 +25,11 @@ function ResultCryptLayoutText(props) {
           </div>
           <div className="name ps-2">
             {props.card['Banned'] ? (
-              <strike>
-                <b>{props.card['Name']}</b>
-              </strike>
+              <>
+                <strike>
+                  <b>{props.card['Name']}</b>
+                </strike>
+              </>
             ) : (
               <b>{props.card['Name']}</b>
             )}
@@ -42,7 +44,7 @@ function ResultCryptLayoutText(props) {
             )}
             {props.card['Banned'] && (
               <span className="ps-1">
-                <Hammer />
+                [{props.card['Banned']} <Hammer />]
               </span>
             )}
             {props.card['Adv'][1] &&
