@@ -1,7 +1,6 @@
 # FIX
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
-* Deck name sort
 
 # FIX MOBILE
 

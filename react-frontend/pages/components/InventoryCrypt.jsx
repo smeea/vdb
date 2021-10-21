@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import InventoryCryptTable from './InventoryCryptTable.jsx';
+import resultCryptSort from './resultCryptSort.js';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryCrypt(props) {
@@ -101,9 +102,11 @@ function InventoryCrypt(props) {
   const byName = (a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {
       return -1;
-    } else {
+    }
+    if (a.c['ASCII Name'] > b.c['ASCII Name']) {
       return 1;
     }
+    return 0;
   };
 
   const sortedCards = Object.values(crypt).sort(byName);

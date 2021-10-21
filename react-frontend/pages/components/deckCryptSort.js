@@ -1,6 +1,12 @@
 function deckCryptSort(cards, sortMethod) {
   const byName = (a, b) => {
-    a.c['ASCII Name'] - b.c['ASCII Name'];
+    if (a.c['ASCII Name'] < b.c['ASCII Name']) {
+      return -1;
+    }
+    if (a.c['ASCII Name'] > b.c['ASCII Name']) {
+      return 1;
+    }
+    return 0;
   };
 
   const byCapacity = (a, b) => {

@@ -2,19 +2,21 @@ function resultLibrarySort(cards, sortMethod) {
   const byName = (a, b) => {
     if (a['ASCII Name'] < b['ASCII Name']) {
       return -1;
-    } else {
+    }
+    if (a['ASCII Name'] > b['ASCII Name']) {
       return 1;
     }
+    return 0;
   };
 
   const byType = (a, b) => {
     if (a['Type'] < b['Type']) {
       return -1;
-    } else if (a['Type'] == b['Type']) {
-      return 0;
-    } else {
+    }
+    if (a['Type'] > b['Type']) {
       return 1;
     }
+    return 0;
   };
 
   const byBloodCost = (a, b) => {
@@ -34,29 +36,33 @@ function resultLibrarySort(cards, sortMethod) {
   const byClan = (a, b) => {
     if (a['Clan'] && !b['Clan']) {
       return -1;
-    } else if (!a['Clan'] && b['Clan']) {
+    }
+    if (!a['Clan'] && b['Clan']) {
       return 1;
-    } else if (a['Clan'] > b['Clan']) {
-      return 1;
-    } else if (a['Clan'] == b['Clan']) {
-      return 0;
-    } else {
+    }
+    if (a['Clan'] < b['Clan']) {
       return -1;
     }
+    if (a['Clan'] > b['Clan']) {
+      return 1;
+    }
+    return 0;
   };
 
   const byDiscipline = (a, b) => {
     if (a['Discipline'] && !b['Discipline']) {
       return -1;
-    } else if (!a['Discipline'] && b['Discipline']) {
+    }
+    if (!a['Discipline'] && b['Discipline']) {
       return 1;
-    } else if (a['Discipline'] > b['Discipline']) {
-      return 1;
-    } else if (a['Discipline'] == b['Discipline']) {
-      return 0;
-    } else {
+    }
+    if (a['Discipline'] < b['Discipline']) {
       return -1;
     }
+    if (a['Discipline'] > b['Discipline']) {
+      return -1;
+    }
+    return 0;
   };
 
   if (cards) {

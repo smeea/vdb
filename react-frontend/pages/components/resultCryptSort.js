@@ -1,16 +1,22 @@
 function resultCryptSort(cards, sortMethod) {
   const byName = (a, b) => {
-    a['ASCII Name'] - b['ASCII Name'];
+    if (a['ASCII Name'] < b['ASCII Name']) {
+      return -1;
+    }
+    if (a['ASCII Name'] > b['ASCII Name']) {
+      return 1;
+    }
+    return 0;
   };
 
   const byClan = (a, b) => {
     if (a['Clan'] < b['Clan']) {
       return -1;
-    } else if (a['Clan'] == b['Clan']) {
-      return 0;
-    } else {
+    }
+    if (a['Clan'] > b['Clan']) {
       return 1;
     }
+    return 0;
   };
 
   const byCapacity = (a, b) => {
