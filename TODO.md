@@ -1,13 +1,13 @@
 # FIX
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
+* Precon select width after branch select
 
 # FIX MOBILE
 
 # FEATURES
 * Create revocable link to Inventory
 * Localized proxies
-* Deck/revision diff
 * How can I help section - twd, rulings
 * TWD new/random to respect url
 * Export all in xlsx and csv

@@ -151,15 +151,13 @@ function Decks(props) {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          Object.keys(data).map((i) => {
-            Object.keys(data[i].crypt).map((j) => {
-              data[i].crypt[j].c = cryptCardBase[j];
-            });
-            Object.keys(data[i].library).map((j) => {
-              data[i].library[j].c = libraryCardBase[j];
-            });
+          Object.keys(data.crypt).map((i) => {
+            data.crypt[i].c = cryptCardBase[i];
           });
-          setSharedDeck(data);
+          Object.keys(data.library).map((i) => {
+            data.library[i].c = libraryCardBase[i];
+          });
+          setSharedDeck({ [data.deckid]: data });
         }
       })
       .catch((error) => setDeckError(true));
@@ -177,12 +175,9 @@ function Decks(props) {
   };
 
   let isAuthor;
-  if (deckRouter(activeDeck)) {
-    isAuthor = username == deckRouter(activeDeck).owner && username;
-  }
-
   let isBranches;
   if (deckRouter(activeDeck)) {
+    isAuthor = username == deckRouter(activeDeck).owner && username;
     isBranches =
       deckRouter(activeDeck).master ||
       (deckRouter(activeDeck).branches &&
@@ -261,6 +256,7 @@ function Decks(props) {
         setActiveDeck({ src: 'precons', deckid: query.get('id') });
       } else {
         setActiveDeck({ src: 'twd', deckid: query.get('id') });
+        getDeck(query.get('id'));
       }
     }
 
@@ -316,13 +312,13 @@ function Decks(props) {
                     }
                   >
                     <div className={isBranches ? 'w-75' : 'w-100'}>
-                      {selectFrom == 'my' ? (
+                      {selectFrom == 'my' && decks ? (
                         <DeckSelectMy activeDeck={activeDeck} />
                       ) : (
                         <DeckSelectPrecon activeDeck={activeDeck} />
                       )}
                     </div>
-                    {selectFrom == 'my' && isBranches && (
+                    {selectFrom == 'my' && decks && isBranches && (
                       <div className="ps-1 w-25">
                         <DeckBranchSelect activeDeck={activeDeck} />
                       </div>
@@ -348,7 +344,7 @@ function Decks(props) {
                       )}
                     </div>
                   </div>
-                  <div className="d-flex justify-content-between align-items-center">
+                  <div className="d-flex justify-content-between align-items-center pt-1">
                     <Form className="py-1 my-0 px-2">
                       {username && decks && Object.keys(decks).length > 0 && (
                         <Form.Check
@@ -377,7 +373,7 @@ function Decks(props) {
                         inline
                       />
                     </Form>
-                    <div className="d-flex py-1">
+                    <div className="d-flex">
                       {decks && (
                         <div className="py-1">
                           <Button
@@ -487,7 +483,7 @@ function Decks(props) {
           )}
           {deckRouter(activeDeck) && (
             <Row>
-              <Col md={7} className="px-0 ps-md-3 pe-md-2 px-xl-3 pt-lg-4">
+              <Col md={7} className="px-0 ps-md-3 pe-md-2 px-lg-3 pt-lg-4">
                 <div className={isMobile ? null : 'sticky'}>
                   <DeckCrypt
                     deckid={activeDeck.deckid}
@@ -498,7 +494,7 @@ function Decks(props) {
                   />
                 </div>
               </Col>
-              <Col md={5} className="pt-4 pt-lg-0 px-0 ps-md-2 pe-md-3 px-xl-3">
+              <Col md={5} className="pt-4 pt-lg-0 px-0 ps-md-2 pe-md-3 px-lg-3">
                 <DeckLibrary
                   inDeckTab={true}
                   deckid={activeDeck.deckid}

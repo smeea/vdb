@@ -87,7 +87,11 @@ function DeckSelectPrecon(props) {
         filterOption={filterOption}
         placeholder="Select Deck"
         value={options.find((obj) => obj.value === props.activeDeck.deckid)}
-        onChange={(e) => setActiveDeck({ src: 'precons', deckid: e.value })}
+        onChange={(e) => {
+          props.setActiveDeck
+            ? props.setActiveDeck({ src: 'precons', deckid: e.value })
+            : setActiveDeck({ src: 'precons', deckid: e.value });
+        }}
       />
     </>
   );

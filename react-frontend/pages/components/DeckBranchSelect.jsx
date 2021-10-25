@@ -50,7 +50,11 @@ function DeckBranchSelect(props) {
       name="decks"
       placeholder="Select Deck"
       value={options.find((obj) => obj.value === props.activeDeck.deckid)}
-      onChange={(e) => setActiveDeck({ src: 'my', deckid: e.value })}
+      onChange={(e) => {
+        props.setActiveDeck
+          ? props.setActiveDeck({ src: 'my', deckid: e.value })
+          : setActiveDeck({ src: 'my', deckid: e.value });
+      }}
     />
   );
 }

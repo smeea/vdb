@@ -72,7 +72,11 @@ function DeckSelectMy(props) {
           return obj.value === props.activeDeck.deckid;
         }
       })}
-      onChange={(e) => setActiveDeck({ src: 'my', deckid: e.value })}
+      onChange={(e) => {
+        props.setActiveDeck
+          ? props.setActiveDeck({ src: 'my', deckid: e.value })
+          : setActiveDeck({ src: 'my', deckid: e.value });
+      }}
     />
   );
 }

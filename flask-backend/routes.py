@@ -192,7 +192,7 @@ def showDeck(deckid):
             elif k < 200000:
                 library[k] = {'q': v}
 
-        decks[deckid] = {
+        deck = {
             'name': deck.name,
             'owner': deck.author.username if deck.author else None,
             'author': deck.author_public_name,
@@ -204,7 +204,7 @@ def showDeck(deckid):
             'tags': deck.tags,
         }
 
-        return jsonify(decks)
+        return jsonify(deck)
 
     else:
         with open("twdDecksById.json", "r") as twdDecks_file:
@@ -234,8 +234,7 @@ def showDeck(deckid):
                 del (deck['cardtypes_ratio'])
                 del (deck['libraryTotal'])
 
-                decks = {deckid: deck}
-                return jsonify(decks)
+                return jsonify(deck)
 
             except KeyError:
                 abort(400)

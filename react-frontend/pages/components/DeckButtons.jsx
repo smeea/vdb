@@ -8,6 +8,7 @@ import DeckExport from './DeckExport.jsx';
 import DeckProxy from './DeckProxy.jsx';
 import DeckMissing from './DeckMissing.jsx';
 import DeckDrawButton from './DeckDrawButton.jsx';
+import DeckDiffButton from './DeckDiffButton.jsx';
 import DeckBranchCreate from './DeckBranchCreate.jsx';
 import DeckBranchDelete from './DeckBranchDelete.jsx';
 import AppContext from '../../context/AppContext';
@@ -56,6 +57,12 @@ function DeckButtons(props) {
             setShowButtons={props.setShowButtons}
           />
         )}
+      {props.deck && (
+        <DeckDiffButton
+          deckid={props.deck.deckid}
+          setShowButtons={props.setShowButtons}
+        />
+      )}
       {props.deck && (
         <DeckCopyUrl
           isAuthor={props.isAuthor}

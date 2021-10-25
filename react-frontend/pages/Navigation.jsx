@@ -75,6 +75,7 @@ function Navigation(props) {
             !isMobile &&
             (location.pathname == '/decks' ||
               location.pathname == '/crypt' ||
+              location.pathname == '/diff' ||
               location.pathname == '/library' ||
               location.pathname == '/twd') && (
               <div
