@@ -281,7 +281,13 @@ function Diff(props) {
                       : 'd-flex'
                   }
                 >
-                  <div className={isBranchesFrom ? 'w-75' : 'w-100'}>
+                  <div
+                    className={
+                      isBranchesFrom && selectFrom == 'from-my'
+                        ? 'w-75'
+                        : 'w-100'
+                    }
+                  >
                     {selectFrom == 'from-my' && decks ? (
                       <DeckSelectMy activeDeck={activeDeck} />
                     ) : (
@@ -385,7 +391,11 @@ function Diff(props) {
                       : 'd-flex'
                   }
                 >
-                  <div className={isBranchesTo ? 'w-75' : 'w-100'}>
+                  <div
+                    className={
+                      isBranchesTo && selectTo == 'to-my' ? 'w-75' : 'w-100'
+                    }
+                  >
                     {selectTo == 'to-my' && decks ? (
                       <DeckSelectMy
                         activeDeck={secondaryDeck}

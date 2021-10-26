@@ -311,7 +311,11 @@ function Decks(props) {
                         : 'd-flex'
                     }
                   >
-                    <div className={isBranches ? 'w-75' : 'w-100'}>
+                    <div
+                      className={
+                        isBranches && selectFrom == 'my' ? 'w-75' : 'w-100'
+                      }
+                    >
                       {selectFrom == 'my' && decks ? (
                         <DeckSelectMy activeDeck={activeDeck} />
                       ) : (

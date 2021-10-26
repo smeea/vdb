@@ -1,7 +1,9 @@
 # FIX
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
-* Precon select width after branch select
+* InventoryMode for Diff
+* Diff summary
+* Diff buttons: show missing, proxy missing cards
 
 # FIX MOBILE
 
