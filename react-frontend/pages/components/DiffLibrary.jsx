@@ -378,7 +378,7 @@ function DiffLibrary(props) {
 
   return (
     <>
-      <div className="sticky-lib-indeck pt-4">
+      <div className={isMobile ? null : 'sticky-lib-indeck pt-4'}>
         <div
           className={
             isMobile
