@@ -21,7 +21,7 @@ import ArrowLeftRight from '../assets/images/icons/arrow-left-right.svg';
 import DeckSelectMy from './components/DeckSelectMy.jsx';
 import DeckBranchSelect from './components/DeckBranchSelect.jsx';
 import DeckSelectPrecon from './components/DeckSelectPrecon.jsx';
-// import DeckButtons from './components/DeckButtons.jsx';
+import DiffButtons from './components/DiffButtons.jsx';
 import DiffCrypt from './components/DiffCrypt.jsx';
 import DiffLibrary from './components/DiffLibrary.jsx';
 import AppContext from '../context/AppContext';
@@ -234,6 +234,46 @@ function Diff(props) {
 
     if (deckToRouter(secondaryDeck)) setDeckErrorTo(false);
   }, [secondaryDeck, decks]);
+
+  const [missingCrypt, setMissingCrypt] = useState({});
+  const [missingLibrary, setMissingLibrary] = useState({});
+
+  useEffect(() => {
+    if (deckRouter(activeDeck) && deckToRouter(secondaryDeck)) {
+      const fromCrypt = deckRouter(activeDeck).crypt;
+      const fromLibrary = deckRouter(activeDeck).library;
+      const toCrypt = deckToRouter(secondaryDeck).crypt;
+      const toLibrary = deckToRouter(secondaryDeck).library;
+
+      const crypt = {};
+      const library = {};
+
+      Object.keys(toCrypt).map((card) => {
+        if (!fromCrypt[card]) {
+          crypt[card] = { q: toCrypt[card].q, c: cryptCardBase[card] };
+        } else if (toCrypt[card].q > fromCrypt[card].q) {
+          crypt[card] = {
+            q: toCrypt[card].q - fromCrypt[card].q,
+            c: cryptCardBase[card],
+          };
+        }
+      });
+
+      Object.keys(toLibrary).map((card) => {
+        if (!fromLibrary[card]) {
+          library[card] = { q: toLibrary[card].q, c: libraryCardBase[card] };
+        } else if (toLibrary[card].q > fromLibrary[card].q) {
+          library[card] = {
+            q: toLibrary[card].q - fromLibrary[card].q,
+            c: libraryCardBase[card],
+          };
+        }
+      });
+
+      setMissingCrypt(crypt);
+      setMissingLibrary(library);
+    }
+  }, [decks, activeDeck, secondaryDeck]);
 
   return (
     <Container className={isMobile ? 'deck-container' : 'deck-container py-3'}>
@@ -510,7 +550,18 @@ function Diff(props) {
         </Col>
         {!isMobile && (
           <Col md={2} className="px-0 px-lg-2 px-xl-3">
-            <div className="sticky">{/* BUTTONS */}</div>
+            <div className="sticky">
+              <DiffButtons
+                isAuthor={isAuthor}
+                deck={deckRouter(activeDeck)}
+                activeDeck={activeDeck}
+                setShowButtons={handleShowButtons}
+                missingCrypt={missingCrypt}
+                missingLibrary={missingLibrary}
+                fromQuery={fromQuery}
+                toQuery={toQuery}
+              />
+            </div>
           </Col>
         )}
       </Row>
@@ -550,7 +601,15 @@ function Diff(props) {
                   <X width="32" height="32" viewBox="0 0 16 16" />
                 </Button>
               </div>
-              BUTTONS
+              <DiffButtons
+                deck={deckRouter(activeDeck)}
+                activeDeck={activeDeck}
+                setShowButtons={handleShowButtons}
+                missingCrypt={missingCrypt}
+                missingLibrary={missingLibrary}
+                fromQuery={fromQuery}
+                toQuery={toQuery}
+              />
             </Container>
           </Modal.Body>
         </Modal>

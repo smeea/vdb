@@ -50,14 +50,18 @@ function DeckProxy(props) {
   const proxyMissing = () => {
     const cards = {};
     Object.keys(props.missingCrypt).map((key) => {
-      cards[key] = {
-        q: props.missingCrypt[key].q,
-      };
+      if (props.missingCrypt[key].q > 0) {
+        cards[key] = {
+          q: props.missingCrypt[key].q,
+        };
+      }
     });
     Object.keys(props.missingLibrary).map((key) => {
-      cards[key] = {
-        q: props.missingLibrary[key].q,
-      };
+      if (props.missingLibrary[key].q > 0) {
+        cards[key] = {
+          q: props.missingLibrary[key].q,
+        };
+      }
     });
     proxyCards(cards);
   };
@@ -100,23 +104,34 @@ function DeckProxy(props) {
 
   return (
     <>
-      <Dropdown className="d-inline">
-        <Dropdown.Toggle
-          as={props.noText ? Button : BlockButton}
-          variant={props.noText ? 'primary' : 'secondary'}
-        >
+      {props.inDiff ? (
+        <Button variant="secondary" onClick={() => proxyMissing()}>
           <div className="d-flex justify-content-center align-items-center">
-            <div className={props.noText ? null : 'pe-2'}>
+            <div className="pe-2">
               <Printer />
             </div>
-            {!props.noText && 'PDF Proxy'}
+            Proxy Missing
           </div>
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          {spinnerState && <Spinner as="span" animation="border" size="sm" />}
-          {ProxyButtonOptions}
-        </Dropdown.Menu>
-      </Dropdown>
+        </Button>
+      ) : (
+        <Dropdown className="d-inline">
+          <Dropdown.Toggle
+            as={props.noText ? Button : BlockButton}
+            variant={props.noText ? 'primary' : 'secondary'}
+          >
+            <div className="d-flex justify-content-center align-items-center">
+              <div className={props.noText ? null : 'pe-2'}>
+                <Printer />
+              </div>
+              {!props.noText && 'PDF Proxy'}
+            </div>
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {spinnerState && <Spinner as="span" animation="border" size="sm" />}
+            {ProxyButtonOptions}
+          </Dropdown.Menu>
+        </Dropdown>
+      )}
       {deckError && (
         <div className="d-flex justify-content-start">
           <span className="login-error">Select deck to proxy</span>
@@ -127,6 +142,8 @@ function DeckProxy(props) {
           show={showSelectModal}
           setShow={setShowSelectModal}
           deck={props.deck}
+          missingCrypt={props.missingCrypt}
+          missingLibrary={props.missingLibrary}
           proxyCards={proxyCards}
         />
       )}

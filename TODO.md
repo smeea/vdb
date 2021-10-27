@@ -3,7 +3,7 @@
 * Check deck proxy errors
 * InventoryMode for Diff
 * Diff summary
-* Diff buttons: show missing, proxy missing cards
+* Add noborder to missing cards, proxy select modals
 
 # FIX MOBILE
 
@@ -17,6 +17,7 @@
 * Import from FELDB
 * Negative filters
 * Keywords search
+* TWD <= and == in card search
 
 # BIG FEATURES
 * Search for similar TWD decks
