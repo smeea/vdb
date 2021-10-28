@@ -293,7 +293,11 @@ function InventoryAddDeckModal(props) {
       dialogClassName={isMobile ? 'm-0' : null}
     >
       <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 ps-3 pe-4'}
+        className={
+          isMobile
+            ? 'no-border pt-2 pb-0 ps-2 pe-3'
+            : 'no-border pt-3 pb-1 ps-3 pe-4'
+        }
       >
         <h5>Import Deck to Inventory</h5>
         <Button variant="outline-secondary" onClick={props.handleClose}>

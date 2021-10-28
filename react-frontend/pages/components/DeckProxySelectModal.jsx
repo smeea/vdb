@@ -184,7 +184,11 @@ function DeckProxySelectModal(props) {
       dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
     >
       <Modal.Header
-        className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
+        className={
+          isMobile
+            ? 'no-border pt-2 pb-0 ps-2 pe-3'
+            : 'no-border pt-3 pb-1 px-4'
+        }
       >
         <h5>Create PDF with Card Proxies</h5>
         <Button
