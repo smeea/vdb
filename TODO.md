@@ -4,6 +4,9 @@
 * InventoryMode for Diff
 * Diff summary
 * Add noborder to missing cards, proxy select modals
+* Back to Decks Button to Diff
+* Missing Cards / Proxy -> Rename to "Show/Proxy Differences"
+* InventoryMode to Diff
 
 # FIX MOBILE
 
