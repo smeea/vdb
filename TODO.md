@@ -14,7 +14,6 @@
 * Import from FELDB
 * Negative filters
 * Keywords search
-* TWD <= and == in card search
 * InventoryMode for Diff
 
 # BIG FEATURES

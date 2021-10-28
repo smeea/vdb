@@ -17,7 +17,10 @@ function TwdSearchFormCrypt(props) {
 
   const handleAdd = (event) => {
     const newState = props.state;
-    newState[event] = 1;
+    newState[event] = {
+      q: 1,
+      m: 'gt',
+    };
     props.setState((prevState) => ({
       ...prevState,
       crypt: newState,
@@ -25,15 +28,15 @@ function TwdSearchFormCrypt(props) {
   };
 
   const cryptCardsList = Object.keys(props.state)
-    .filter((id) => props.state[id] >= 0)
+    .filter((id) => props.state[id].q >= 0)
     .map((id) => {
       return (
-        <div key={id} className="d-flex align-items-center">
+        <div key={id} className="d-flex align-items-center pt-1">
           <TwdSearchFormQuantityButtons
             state={props.state}
             setState={props.setState}
             id={id}
-            q={props.state[id]}
+            q={props.state[id].q}
             target="crypt"
           />
           {!isMobile ? (
@@ -41,18 +44,12 @@ function TwdSearchFormCrypt(props) {
               placement="left"
               overlay={<CardPopover card={cryptCardBase[id]} />}
             >
-              <div
-                className="pt-1"
-                onClick={() => setModalCard(cryptCardBase[id])}
-              >
+              <div onClick={() => setModalCard(cryptCardBase[id])}>
                 <ResultCryptName card={cryptCardBase[id]} />
               </div>
             </OverlayTrigger>
           ) : (
-            <div
-              className="pt-1"
-              onClick={() => setModalCard(cryptCardBase[id])}
-            >
+            <div onClick={() => setModalCard(cryptCardBase[id])}>
               <ResultCryptName card={cryptCardBase[id]} />
             </div>
           )}

@@ -9,11 +9,23 @@ def get_twd_by_crypt(crypt, twda=twda):
     match_decks = []
     for deck in twda:
         counter = 0
-        for card, q in crypt.items():
+        for card, v in crypt.items():
+            q, m = v['q'], v['m']
             if q:
-                if card in deck['crypt'].keys(
-                ) and deck['crypt'][card]['q'] >= q:
-                    counter += 1
+                if m == 'gt':
+                    if card in deck['crypt'].keys(
+                    ) and deck['crypt'][card]['q'] >= q:
+                        counter += 1
+
+                if m == 'lt':
+                    if card not in deck['crypt'].keys(
+                    ) or deck['crypt'][card]['q'] <= q:
+                        counter += 1
+
+                if m == 'eq':
+                    if card in deck['crypt'].keys(
+                    ) and deck['crypt'][card]['q'] == q:
+                        counter += 1
             else:
                 if card not in deck['crypt'].keys():
                     counter += 1
@@ -29,11 +41,23 @@ def get_twd_by_library(library, twda=twda):
     match_decks = []
     for deck in twda:
         counter = 0
-        for card, q in library.items():
+        for card, v in library.items():
+            q, m = v['q'], v['m']
             if q:
-                if card in deck['library'].keys(
-                ) and deck['library'][card]['q'] >= q:
-                    counter += 1
+                if m == 'gt':
+                    if card in deck['library'].keys(
+                    ) and deck['library'][card]['q'] >= q:
+                        counter += 1
+
+                if m == 'lt':
+                    if card not in deck['library'].keys(
+                    ) or deck['library'][card]['q'] <= q:
+                        counter += 1
+
+                if m == 'eq':
+                    if card in deck['library'].keys(
+                    ) and deck['library'][card]['q'] == q:
+                        counter += 1
             else:
                 if card not in deck['library'].keys():
                     counter += 1

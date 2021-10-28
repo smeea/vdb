@@ -19,7 +19,10 @@ function TwdSearchFormLibrary(props) {
 
   const handleAdd = (event) => {
     const newState = props.state;
-    newState[event] = 1;
+    newState[event] = {
+      q: 1,
+      m: 'gt',
+    };
     props.setState((prevState) => ({
       ...prevState,
       library: newState,
@@ -27,15 +30,15 @@ function TwdSearchFormLibrary(props) {
   };
 
   const libraryCardsList = Object.keys(props.state)
-    .filter((id) => props.state[id] >= 0)
+    .filter((id) => props.state[id].q >= 0)
     .map((id) => {
       return (
-        <div key={id} className="d-flex align-items-center">
+        <div key={id} className="d-flex align-items-center pt-1">
           <TwdSearchFormQuantityButtons
             state={props.state}
             setState={props.setState}
             id={id}
-            q={props.state[id]}
+            q={props.state[id].q}
             target="library"
           />
           {!isMobile ? (
@@ -43,18 +46,12 @@ function TwdSearchFormLibrary(props) {
               placement="left"
               overlay={<CardPopover card={libraryCardBase[id]} />}
             >
-              <div
-                className="pt-1"
-                onClick={() => setModalCard(libraryCardBase[id])}
-              >
+              <div onClick={() => setModalCard(libraryCardBase[id])}>
                 <ResultLibraryName card={libraryCardBase[id]} />
               </div>
             </OverlayTrigger>
           ) : (
-            <div
-              className="pt-1"
-              onClick={() => setModalCard(libraryCardBase[id])}
-            >
+            <div onClick={() => setModalCard(libraryCardBase[id])}>
               <ResultLibraryName card={libraryCardBase[id]} />
             </div>
           )}
