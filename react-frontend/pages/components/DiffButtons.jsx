@@ -35,6 +35,7 @@ function DiffButtons(props) {
           missingCrypt={props.missingCrypt}
           missingLibrary={props.missingLibrary}
           setShowButtons={props.setShowButtons}
+          inDiff={true}
         />
       )}
     </Stack>

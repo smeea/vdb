@@ -1,8 +1,6 @@
 # FIX
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
-* InventoryMode for Diff
-* Diff summary
 
 # FIX MOBILE
 
@@ -17,6 +15,7 @@
 * Negative filters
 * Keywords search
 * TWD <= and == in card search
+* InventoryMode for Diff
 
 # BIG FEATURES
 * Search for similar TWD decks

@@ -110,7 +110,7 @@ function DeckProxy(props) {
             <div className="pe-2">
               <Printer />
             </div>
-            Proxy Missing
+            Proxy Changes
           </div>
         </Button>
       ) : (

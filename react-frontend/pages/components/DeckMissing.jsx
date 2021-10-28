@@ -15,7 +15,7 @@ function DeckMissing(props) {
   return (
     <>
       <Button variant="secondary" onClick={() => setShowModal(true)}>
-        <Cart4 /> Missing Cards
+        <Cart4 /> {props.inDiff ? 'Show Changes' : 'Missing Cards'}
       </Button>
       {showModal && (
         <DeckMissingModal
