@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import ClipboardPlus from '../../assets/images/icons/clipboard-plus.svg';
+import Upload from '../../assets/images/icons/upload.svg';
 import BlockButton from './BlockButton.jsx';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import DeckImportText from './DeckImportText.jsx';
@@ -17,6 +18,7 @@ function DeckImport(props) {
 
   const fileInputTxt = React.createRef();
   const fileInputDek = React.createRef();
+  const fileInputEld = React.createRef();
 
   const handleFileChange = (format) => importDeckFromFile(format);
   const handleFileInputClick = (format) => {
@@ -26,6 +28,9 @@ function DeckImport(props) {
         break;
       case 'dek':
         fileInputDek.current.click();
+        break;
+      case 'eld':
+        fileInputEld.current.click();
         break;
     }
   };
@@ -74,6 +79,9 @@ function DeckImport(props) {
       case 'dek':
         fileInput = fileInputDek;
         break;
+      case 'eld':
+        fileInput = fileInputEld;
+        break;
     }
 
     let newDeckId;
@@ -121,9 +129,36 @@ function DeckImport(props) {
             result += `${library[card]} ${card}\n`;
           });
           break;
+        case 'eld':
+          result = '';
+          const cards = reader.result.split('\n');
+          cards.forEach((res) => {
+            const card = res.split(',');
+            if (card.length >= 5) {
+              let name = card[0].slice(1);
+              const n = card.length - 5;
+              if (n) {
+                for (let i = 1; i <= n; i++) {
+                  name += `, ${card[i]}`;
+                }
+              }
+              name = name.slice(0, -1);
+              const q = card[n + 1];
+
+              if (q && name) result += `${q} ${name}\n`;
+            }
+          });
+          break;
       }
 
-      const url = `${process.env.API_URL}decks/import`;
+      const url = `${process.env.API_URL}${
+        props.inInventory ? 'inventory' : 'decks'
+      }/import`;
+      const body = props.inInventory
+        ? JSON.stringify(result)
+        : JSON.stringify({
+            deckText: result,
+          });
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -131,22 +166,27 @@ function DeckImport(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          deckText: result,
-        }),
+        body: body,
       };
 
       const fetchPromise = fetch(url, options);
 
-      fetchPromise
-        .then((response) => response.json())
-        .then((data) => (newDeckId = data.deckid))
-        .then(() => getDecks())
-        .then(() => {
-          setActiveDeck({ src: 'my', deckid: newDeckId });
-          isMobile && props.setShowButtons(false);
-        })
-        .catch((error) => setImportError(true));
+      if (props.inInventory) {
+        fetchPromise
+          .then((response) => response.json())
+          .then((cards) => props.inventoryAddToState(cards))
+          .catch((error) => setImportError(true));
+      } else {
+        fetchPromise
+          .then((response) => response.json())
+          .then((data) => (newDeckId = data.deckid))
+          .then(() => getDecks())
+          .then(() => {
+            setActiveDeck({ src: 'my', deckid: newDeckId });
+            isMobile && props.setShowButtons(false);
+          })
+          .catch((error) => setImportError(true));
+      }
     };
   };
 
@@ -157,22 +197,37 @@ function DeckImport(props) {
 
   const ImportButtonOptions = (
     <>
-      <Dropdown.Item onClick={handleCreateButton}>
-        Create New Deck
-      </Dropdown.Item>
-      <Dropdown.Divider />
+      {!props.inInventory && (
+        <>
+          <Dropdown.Item onClick={handleCreateButton}>
+            Create New Deck
+          </Dropdown.Item>
+          <Dropdown.Divider />
+        </>
+      )}
       <Dropdown.Item onClick={() => handleFileInputClick('txt')}>
         Import from File - Amaranth, Lackey .TXT, TWD
       </Dropdown.Item>
-      <Dropdown.Item onClick={() => handleFileInputClick('dek')}>
-        Import from File - Lackey .DEK
-      </Dropdown.Item>
-      <Dropdown.Item onClick={handleOpenTextModal}>
-        Import from Text - Amaranth, Lackey .TXT, TWD
-      </Dropdown.Item>
-      <Dropdown.Item onClick={handleOpenAmaranthModal}>
-        Import from Amaranth Deck URL
-      </Dropdown.Item>
+      {!props.inInventory && (
+        <Dropdown.Item onClick={() => handleFileInputClick('dek')}>
+          Import from File - Lackey .DEK
+        </Dropdown.Item>
+      )}
+      {props.inInventory && (
+        <Dropdown.Item onClick={() => handleFileInputClick('eld')}>
+          Import from File - FELDB .CSV
+        </Dropdown.Item>
+      )}
+      {!props.inInventory && (
+        <Dropdown.Item onClick={handleOpenTextModal}>
+          Import from Text - Amaranth, Lackey .TXT, TWD
+        </Dropdown.Item>
+      )}
+      {!props.inInventory && (
+        <Dropdown.Item onClick={handleOpenAmaranthModal}>
+          Import from Amaranth Deck URL
+        </Dropdown.Item>
+      )}
     </>
   );
 
@@ -181,10 +236,21 @@ function DeckImport(props) {
       <Dropdown>
         <Dropdown.Toggle as={BlockButton} variant="secondary">
           <div className="d-flex justify-content-center align-items-center">
-            <div className="pe-2">
-              <ClipboardPlus size={24} />
-            </div>
-            New / Import
+            {props.inInventory ? (
+              <>
+                <div className="pe-2">
+                  <Upload />
+                </div>
+                Import from File
+              </>
+            ) : (
+              <>
+                <div className="pe-2">
+                  <ClipboardPlus size={24} />
+                </div>
+                New / Import
+              </>
+            )}
           </div>
         </Dropdown.Toggle>
         <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
@@ -211,6 +277,13 @@ function DeckImport(props) {
         accept="text/*"
         type="file"
         onChange={() => handleFileChange('dek')}
+        style={{ display: 'none' }}
+      />
+      <input
+        ref={fileInputEld}
+        accept="text/*"
+        type="file"
+        onChange={() => handleFileChange('eld')}
         style={{ display: 'none' }}
       />
       <ErrorOverlay

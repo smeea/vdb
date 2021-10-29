@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Stack, Button } from 'react-bootstrap';
 import InventoryExport from './InventoryExport.jsx';
-import InventoryImport from './InventoryImport.jsx';
+import DeckImport from './DeckImport.jsx';
 import InventoryDelete from './InventoryDelete.jsx';
 import InventoryMissing from './InventoryMissing.jsx';
 import FolderPlus from '../../assets/images/icons/folder-plus.svg';
@@ -13,9 +13,10 @@ function InventoryButtons(props) {
   return (
     <Stack gap={1}>
       <InventoryExport setShowButtons={props.setShowButtons} />
-      <InventoryImport
+      <DeckImport
         inventoryAddToState={props.inventoryAddToState}
         setShowButtons={props.setShowButtons}
+        inInventory={true}
       />
       <InventoryDelete
         setInventoryCrypt={props.setInventoryCrypt}

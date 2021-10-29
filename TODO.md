@@ -11,7 +11,6 @@
 * TWD new/random to respect url
 * Export all in xlsx and csv
 * Bookmarks/recent decks
-* Import from FELDB
 * Negative filters
 * Keywords search
 * InventoryMode for Diff
