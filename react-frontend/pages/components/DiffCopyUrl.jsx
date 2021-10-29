@@ -25,7 +25,12 @@ function DeckCopyUrl(props) {
         variant={state ? 'success' : 'secondary'}
         onClick={handleStandardButton}
       >
-        <ShareFill /> {state ? 'Copied' : 'Copy URL'}
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="pe-2">
+            <ShareFill />
+          </div>
+          {state ? 'Copied' : 'Copy URL'}
+        </div>
       </Button>
     </>
   );

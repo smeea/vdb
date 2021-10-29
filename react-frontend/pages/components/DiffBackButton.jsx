@@ -13,7 +13,12 @@ function DeckCopyUrl(props) {
           history.push(props.deckid ? `/decks?id=${props.deckid}` : '/decks')
         }
       >
-        <Folder2Open /> Back to Deck
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="pe-2">
+            <Folder2Open />
+          </div>
+          Back to Deck
+        </div>
       </Button>
     </>
   );

@@ -19,7 +19,7 @@ function DeckProxy(props) {
       </Dropdown.Item>
       {inventoryMode && (
         <Dropdown.Item href="" onClick={() => proxyMissing()}>
-          Missing Cards
+          Missing in Inventory
         </Dropdown.Item>
       )}
       <Dropdown.Item href="" onClick={() => setShowSelectModal(true)}>
@@ -110,7 +110,7 @@ function DeckProxy(props) {
             <div className="pe-2">
               <Printer />
             </div>
-            Proxy Changes
+            Proxy Missing
           </div>
         </Button>
       ) : (

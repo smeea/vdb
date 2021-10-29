@@ -15,7 +15,12 @@ function DeckMissing(props) {
   return (
     <>
       <Button variant="secondary" onClick={() => setShowModal(true)}>
-        <Cart4 /> {props.inDiff ? 'Show Changes' : 'Missing Cards'}
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="pe-2">
+            <Cart4 />
+          </div>
+          {props.inDiff ? 'Missing in Source' : 'Missing in Inventory'}
+        </div>
       </Button>
       {showModal && (
         <DeckMissingModal
