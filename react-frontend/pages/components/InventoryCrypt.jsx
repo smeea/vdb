@@ -93,6 +93,7 @@ function InventoryCrypt(props) {
         }
       }
     });
+
     Object.keys(missingCrypt).map((card) => {
       missingUnique += 1;
       missingTotal += missingCrypt[card].q;

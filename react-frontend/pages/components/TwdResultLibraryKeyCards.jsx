@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
@@ -15,67 +14,6 @@ function TwdResultLibraryKeyCards(props) {
     useContext(AppContext);
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
-  const [modalInventory, setModalInventory] = useState(undefined);
-
-  useEffect(() => {
-    if (inventoryMode && modalCardIdx !== undefined) {
-      const cardid = keyCards[modalCardIdx].c.Id;
-
-      let inInventory = 0;
-      let softUsedMax = 0;
-      let SoftUsedDescription;
-      let hardUsedTotal = 0;
-      let HardUsedDescription;
-
-      if (Object.keys(inventoryLibrary).includes(cardid.toString())) {
-        inInventory = inventoryLibrary[cardid].q;
-      }
-
-      if (usedLibraryCards && usedLibraryCards.soft[cardid]) {
-        SoftUsedDescription = Object.keys(usedLibraryCards.soft[cardid]).map(
-          (id) => {
-            if (softUsedMax < usedLibraryCards.soft[cardid][id]) {
-              softUsedMax = usedLibraryCards.soft[cardid][id];
-            }
-            return (
-              <UsedDescription
-                key={id}
-                q={usedLibraryCards.soft[cardid][id]}
-                deckName={decks[id]['name']}
-                t="s"
-              />
-            );
-          }
-        );
-      }
-
-      if (usedLibraryCards && usedLibraryCards.hard[cardid]) {
-        HardUsedDescription = Object.keys(usedLibraryCards.hard[cardid]).map(
-          (id) => {
-            hardUsedTotal += usedLibraryCards.hard[cardid][id];
-            return (
-              <UsedDescription
-                key={id}
-                q={usedLibraryCards.hard[cardid][id]}
-                deckName={decks[id]['name']}
-                t="h"
-              />
-            );
-          }
-        );
-      }
-
-      setModalInventory({
-        inInventory: inInventory,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
-    }
-  }, [modalCardIdx, inventoryMode]);
 
   const handleModalCardChange = (d) => {
     const maxIdx = keyCards.length - 1;
@@ -153,48 +91,26 @@ function TwdResultLibraryKeyCards(props) {
       resultTrClass = 'result-even';
     }
 
-    let inInventory = null;
+    let inInventory = 0;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-    let SoftUsedDescription;
-    let HardUsedDescription;
 
     if (inventoryMode) {
-      if (Object.keys(inventoryLibrary).includes(card.c['Id'].toString())) {
+      if (inventoryLibrary[card.c['Id']]) {
         inInventory = inventoryLibrary[card.c['Id']].q;
-      } else {
-        inInventory = 0;
       }
 
       if (usedLibraryCards && usedLibraryCards.soft[card.c['Id']]) {
-        SoftUsedDescription = Object.keys(
-          usedLibraryCards.soft[card.c['Id']]
-        ).map((id) => {
+        Object.keys(usedLibraryCards.soft[card.c['Id']]).map((id) => {
           if (softUsedMax < usedLibraryCards.soft[card.c['Id']][id]) {
             softUsedMax = usedLibraryCards.soft[card.c['Id']][id];
           }
-          return (
-            <UsedDescription
-              key={id}
-              q={usedLibraryCards.soft[card.c['Id']][id]}
-              deckName={decks[id]['name']}
-            />
-          );
         });
       }
 
       if (usedLibraryCards && usedLibraryCards.hard[card.c['Id']]) {
-        HardUsedDescription = Object.keys(
-          usedLibraryCards.hard[card.c['Id']]
-        ).map((id) => {
+        Object.keys(usedLibraryCards.hard[card.c['Id']]).map((id) => {
           hardUsedTotal += usedLibraryCards.hard[card.c['Id']][id];
-          return (
-            <UsedDescription
-              key={id}
-              q={usedLibraryCards.hard[card.c['Id']][id]}
-              deckName={decks[id]['name']}
-            />
-          );
         });
       }
     }
@@ -220,15 +136,7 @@ function TwdResultLibraryKeyCards(props) {
             ) : (
               <OverlayTrigger
                 placement="right"
-                overlay={
-                  <UsedPopover
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                    inInventory={inInventory}
-                    SoftUsedDescription={SoftUsedDescription}
-                    HardUsedDescription={HardUsedDescription}
-                  />
-                }
+                overlay={<UsedPopover cardid={card.c['Id']} />}
               >
                 <td className="quantity-no-buttons px-1">
                   <div
@@ -294,7 +202,6 @@ function TwdResultLibraryKeyCards(props) {
             setModalCardIdx(undefined);
             isMobile && props.setShowFloatingButtons(true);
           }}
-          inventoryState={modalInventory}
         />
       )}
     </>

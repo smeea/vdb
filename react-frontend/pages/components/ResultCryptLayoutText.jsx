@@ -25,11 +25,9 @@ function ResultCryptLayoutText(props) {
           </div>
           <div className="name ps-2">
             {props.card['Banned'] ? (
-              <>
-                <strike>
-                  <b>{props.card['Name']}</b>
-                </strike>
-              </>
+              <strike>
+                <b>{props.card['Name']}</b>
+              </strike>
             ) : (
               <b>{props.card['Name']}</b>
             )}
@@ -104,20 +102,20 @@ function ResultCryptLayoutText(props) {
       {Object.keys(props.card['Rulings']).length > 0 && (
         <>
           <div className="py-1">
-            <b>Rulings: </b>
+            <b>Rulings:</b>
           </div>
           <div className="small pb-1">
             <ResultLayoutTextRulings rulings={props.card['Rulings']} />
           </div>
         </>
       )}
-      {(props.forceInventoryMode || inventoryMode) && props.inventoryState && (
+      {(props.forceInventoryMode || inventoryMode) && (
         <>
           <hr className="mx-0" />
           <div className="py-1">
             <b>Inventory:</b>
           </div>
-          <ResultLayoutTextInventory inventoryState={props.inventoryState} />
+          <ResultLayoutTextInventory cardid={props.card['Id']} />
         </>
       )}
     </>

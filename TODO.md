@@ -1,8 +1,6 @@
 # FIX
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
-* Rename Import from file Inventory button
-* Move inventory-mode repetitive code to component
 
 # FIX MOBILE
 

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import DeckProxyLibraryTable from './DeckProxyLibraryTable.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckProxyLibrary(props) {
@@ -17,72 +16,6 @@ function DeckProxyLibrary(props) {
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);
-  const [modalInventory, setModalInventory] = useState(undefined);
-
-  useEffect(() => {
-    if (inventoryMode && modalCardIdx !== undefined) {
-      const cardid =
-        modalCardIdx !== undefined
-          ? libraryCards[modalCardIdx].Id
-          : librarySideCards[modalSideCardIdx].Id;
-
-      let inInventory = 0;
-      let softUsedMax = 0;
-      let hardUsedTotal = 0;
-      let SoftUsedDescription;
-      let HardUsedDescription;
-
-      if (decks && inventoryMode) {
-        if (Object.keys(inventoryLibrary).includes(cardid.toString())) {
-          inInventory = inventoryLibrary[cardid].q;
-        }
-
-        if (usedLibraryCards && usedLibraryCards.soft[cardid]) {
-          SoftUsedDescription = Object.keys(usedLibraryCards.soft[cardid]).map(
-            (id) => {
-              if (softUsedMax < usedLibraryCards.soft[cardid][id]) {
-                softUsedMax = usedLibraryCards.soft[cardid][id];
-              }
-              return (
-                <UsedDescription
-                  key={id}
-                  q={usedLibraryCards.soft[cardid][id]}
-                  deckName={decks[id]['name']}
-                  t="s"
-                />
-              );
-            }
-          );
-        }
-
-        if (usedLibraryCards && usedLibraryCards.hard[cardid]) {
-          HardUsedDescription = Object.keys(usedLibraryCards.hard[cardid]).map(
-            (id) => {
-              hardUsedTotal += usedLibraryCards.hard[cardid][id];
-              return (
-                <UsedDescription
-                  key={id}
-                  q={usedLibraryCards.hard[cardid][id]}
-                  deckName={decks[id]['name']}
-                  t="h"
-                />
-              );
-            }
-          );
-        }
-      }
-
-      setModalInventory({
-        inInventory: inInventory,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
-    }
-  }, [modalCardIdx, inventoryMode]);
 
   const handleModalCardOpen = (i) => {
     setModalCardIdx(libraryCards.indexOf(i));
@@ -212,7 +145,6 @@ function DeckProxyLibrary(props) {
           </div>
           <DeckProxyLibraryTable
             handleModalCardOpen={handleModalCardOpen}
-            setModalInventory={setModalInventory}
             cards={libraryByType[cardtype]}
             handleProxySelector={props.handleProxySelector}
             handleSetSelector={props.handleSetSelector}
@@ -238,7 +170,6 @@ function DeckProxyLibrary(props) {
           />
           <DeckProxyLibraryTable
             handleModalCardOpen={handleModalSideCardOpen}
-            setModalInventory={setModalInventory}
             cards={librarySideByType[cardtype]}
             handleProxySelector={props.handleProxySelector}
             handleSetSelector={props.handleSetSelector}
@@ -288,7 +219,6 @@ function DeckProxyLibrary(props) {
             setModalSideCardIdx(undefined);
             isMobile && props.setShowFloatingButtons(true);
           }}
-          inventoryState={modalInventory}
         />
       )}
     </>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import DeckProxyCryptTable from './DeckProxyCryptTable.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckProxyCrypt(props) {
@@ -17,72 +16,6 @@ function DeckProxyCrypt(props) {
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);
-  const [modalInventory, setModalInventory] = useState(undefined);
-
-  useEffect(() => {
-    if (inventoryMode && modalCardIdx !== undefined) {
-      const cardid =
-        modalCardIdx !== undefined
-          ? cryptCards[modalCardIdx].Id
-          : cryptSideCards[modalSideCardIdx].Id;
-
-      let inInventory = 0;
-      let softUsedMax = 0;
-      let hardUsedTotal = 0;
-      let SoftUsedDescription;
-      let HardUsedDescription;
-
-      if (decks && inventoryMode) {
-        if (Object.keys(inventoryCrypt).includes(cardid.toString())) {
-          inInventory = inventoryCrypt[cardid].q;
-        }
-
-        if (usedCryptCards && usedCryptCards.soft[cardid]) {
-          SoftUsedDescription = Object.keys(usedCryptCards.soft[cardid]).map(
-            (id) => {
-              if (softUsedMax < usedCryptCards.soft[cardid][id]) {
-                softUsedMax = usedCryptCards.soft[cardid][id];
-              }
-              return (
-                <UsedDescription
-                  key={id}
-                  q={usedCryptCards.soft[cardid][id]}
-                  deckName={decks[id]['name']}
-                  t="s"
-                />
-              );
-            }
-          );
-        }
-
-        if (usedCryptCards && usedCryptCards.hard[cardid]) {
-          HardUsedDescription = Object.keys(usedCryptCards.hard[cardid]).map(
-            (id) => {
-              hardUsedTotal += usedCryptCards.hard[cardid][id];
-              return (
-                <UsedDescription
-                  key={id}
-                  q={usedCryptCards.hard[cardid][id]}
-                  deckName={decks[id]['name']}
-                  t="h"
-                />
-              );
-            }
-          );
-        }
-      }
-
-      setModalInventory({
-        inInventory: inInventory,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
-    }
-  }, [modalCardIdx, inventoryMode]);
 
   const handleModalCardOpen = (i) => {
     setModalCardIdx(cryptCards.indexOf(i));
@@ -246,7 +179,6 @@ function DeckProxyCrypt(props) {
       </div>
       <DeckProxyCryptTable
         handleModalCardOpen={handleModalCardOpen}
-        setModalInventory={setModalInventory}
         cards={sortedCards}
         disciplinesSet={disciplinesSet}
         keyDisciplines={keyDisciplines}
@@ -264,7 +196,6 @@ function DeckProxyCrypt(props) {
           </div>
           <DeckProxyCryptTable
             handleModalCardOpen={handleModalSideCardOpen}
-            setModalInventory={setModalInventory}
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             keyDisciplines={keyDisciplines}
@@ -290,7 +221,6 @@ function DeckProxyCrypt(props) {
             setModalSideCardIdx(undefined);
             isMobile && props.setShowFloatingButtons(true);
           }}
-          inventoryState={modalInventory}
         />
       )}
     </>

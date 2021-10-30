@@ -111,7 +111,6 @@ function ResultLibraryModal(props) {
                   card={props.card}
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
-                  inventoryState={props.inventoryState}
                   forceInventoryMode={props.forceInventoryMode}
                 />
               </div>
@@ -140,7 +139,6 @@ function ResultLibraryModal(props) {
                   card={props.card}
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
-                  inventoryState={props.inventoryState}
                   forceInventoryMode={props.forceInventoryMode}
                 />
               </div>

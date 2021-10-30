@@ -4,7 +4,6 @@ import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import InventoryCardQuantity from './InventoryCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -22,62 +21,6 @@ function InventoryLibraryTable(props) {
   let resultTrClass;
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
-  const [modalInventory, setModalInventory] = useState(undefined);
-
-  useEffect(() => {
-    if (modalCardIdx !== undefined) {
-      const cardid = props.cards[modalCardIdx].c.Id;
-
-      let softUsedMax = 0;
-      let hardUsedTotal = 0;
-      let SoftUsedDescription;
-      let HardUsedDescription;
-
-      if (usedLibraryCards && usedLibraryCards.soft[cardid]) {
-        SoftUsedDescription = Object.keys(usedLibraryCards.soft[cardid]).map(
-          (id) => {
-            if (softUsedMax < usedLibraryCards.soft[cardid][id]) {
-              softUsedMax = usedLibraryCards.soft[cardid][id];
-            }
-            return (
-              <UsedDescription
-                key={cardid}
-                q={usedLibraryCards.soft[cardid][id]}
-                deckName={decks[id]['name']}
-                t="s"
-              />
-            );
-          }
-        );
-      }
-
-      if (usedLibraryCards && usedLibraryCards.hard[cardid]) {
-        HardUsedDescription = Object.keys(usedLibraryCards.hard[cardid]).map(
-          (id) => {
-            hardUsedTotal += usedLibraryCards.hard[cardid][id];
-            return (
-              <UsedDescription
-                key={cardid}
-                q={usedLibraryCards.hard[cardid][id]}
-                deckName={decks[id]['name']}
-                t="h"
-              />
-            );
-          }
-        );
-      }
-
-      setModalInventory({
-        inInventory: inventoryLibrary[cardid] ? inventoryLibrary[cardid].q : 0,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
-    }
-  }, [modalCardIdx]);
 
   const handleModalCardChange = (d) => {
     const maxIdx = props.cards.length - 1;
@@ -114,40 +57,18 @@ function InventoryLibraryTable(props) {
 
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-    let SoftUsedDescription;
-    let HardUsedDescription;
 
     if (usedLibraryCards && usedLibraryCards.soft[card.c['Id']]) {
-      SoftUsedDescription = Object.keys(
-        usedLibraryCards.soft[card.c['Id']]
-      ).map((id) => {
+      Object.keys(usedLibraryCards.soft[card.c['Id']]).map((id) => {
         if (softUsedMax < usedLibraryCards.soft[card.c['Id']][id]) {
           softUsedMax = usedLibraryCards.soft[card.c['Id']][id];
         }
-        return (
-          <UsedDescription
-            key={card.c['Id']}
-            q={usedLibraryCards.soft[card.c['Id']][id]}
-            deckName={decks[id]['name']}
-            t="s"
-          />
-        );
       });
     }
 
     if (usedLibraryCards && usedLibraryCards.hard[card.c['Id']]) {
-      HardUsedDescription = Object.keys(
-        usedLibraryCards.hard[card.c['Id']]
-      ).map((id) => {
+      Object.keys(usedLibraryCards.hard[card.c['Id']]).map((id) => {
         hardUsedTotal += usedLibraryCards.hard[card.c['Id']][id];
-        return (
-          <UsedDescription
-            key={card.c['Id']}
-            q={usedLibraryCards.hard[card.c['Id']][id]}
-            deckName={decks[id]['name']}
-            t="h"
-          />
-        );
       });
     }
 
@@ -167,15 +88,7 @@ function InventoryLibraryTable(props) {
             ) : (
               <OverlayTrigger
                 placement="right"
-                overlay={
-                  <UsedPopover
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                    inInventory={card.q}
-                    SoftUsedDescription={SoftUsedDescription}
-                    HardUsedDescription={HardUsedDescription}
-                  />
-                }
+                overlay={<UsedPopover cardid={card.c.Id} />}
               >
                 <div>
                   <InventoryCardQuantity
@@ -215,15 +128,7 @@ function InventoryLibraryTable(props) {
             ) : (
               <OverlayTrigger
                 placement={props.placement ? props.placement : 'right'}
-                overlay={
-                  <UsedPopover
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                    inInventory={card.q}
-                    SoftUsedDescription={SoftUsedDescription}
-                    HardUsedDescription={HardUsedDescription}
-                  />
-                }
+                overlay={<UsedPopover cardid={card.c.Id} />}
               >
                 <div>
                   {softUsedMax > 0 && (
@@ -300,7 +205,6 @@ function InventoryLibraryTable(props) {
             setModalCardIdx(undefined);
             isMobile && props.setShowFloatingButtons(true);
           }}
-          inventoryState={modalInventory}
           forceInventoryMode={true}
         />
       )}

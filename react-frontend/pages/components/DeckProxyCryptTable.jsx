@@ -4,7 +4,6 @@ import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import DeckCryptDisciplines from './DeckCryptDisciplines.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -49,50 +48,26 @@ function DeckProxyCryptTable(props) {
       resultTrClass = 'result-odd';
     }
 
-    let inInventory = null;
+    let inInventory = 0;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-    let SoftUsedDescription;
-    let HardUsedDescription;
 
     if (decks && inventoryMode) {
-      if (Object.keys(inventoryCrypt).includes(card.c['Id'].toString())) {
+      if (inventoryCrypt[card.c['Id']]) {
         inInventory = inventoryCrypt[card.c['Id']].q;
-      } else {
-        inInventory = 0;
       }
 
       if (usedCryptCards && usedCryptCards.soft[card.c['Id']]) {
-        SoftUsedDescription = Object.keys(
-          usedCryptCards.soft[card.c['Id']]
-        ).map((id) => {
+        Object.keys(usedCryptCards.soft[card.c['Id']]).map((id) => {
           if (softUsedMax < usedCryptCards.soft[card.c['Id']][id]) {
             softUsedMax = usedCryptCards.soft[card.c['Id']][id];
           }
-          return (
-            <UsedDescription
-              key={id}
-              q={usedCryptCards.soft[card.c['Id']][id]}
-              deckName={decks[id]['name']}
-              t="s"
-            />
-          );
         });
       }
 
       if (usedCryptCards && usedCryptCards.hard[card.c['Id']]) {
-        HardUsedDescription = Object.keys(
-          usedCryptCards.hard[card.c['Id']]
-        ).map((id) => {
+        Object.keys(usedCryptCards.hard[card.c['Id']]).map((id) => {
           hardUsedTotal += usedCryptCards.hard[card.c['Id']][id];
-          return (
-            <UsedDescription
-              key={id}
-              q={usedCryptCards.hard[card.c['Id']][id]}
-              deckName={decks[id]['name']}
-              t="h"
-            />
-          );
         });
       }
     }
@@ -170,15 +145,7 @@ function DeckProxyCryptTable(props) {
           {inventoryMode && decks ? (
             <OverlayTrigger
               placement="right"
-              overlay={
-                <UsedPopover
-                  softUsedMax={softUsedMax}
-                  hardUsedTotal={hardUsedTotal}
-                  inInventory={inInventory}
-                  SoftUsedDescription={SoftUsedDescription}
-                  HardUsedDescription={HardUsedDescription}
-                />
-              }
+              overlay={<UsedPopover cardid={card.c['Id']} />}
             >
               <td className="quantity">
                 <DeckCardQuantity

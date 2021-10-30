@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
@@ -15,67 +14,6 @@ function TwdResultCrypt(props) {
 
   let resultTrClass = 'result-even';
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
-  const [modalInventory, setModalInventory] = useState(undefined);
-
-  useEffect(() => {
-    if (inventoryMode && modalCardIdx !== undefined) {
-      const cardid = sortedCards[modalCardIdx].c.Id;
-
-      let inInventory = 0;
-      let softUsedMax = 0;
-      let SoftUsedDescription;
-      let hardUsedTotal = 0;
-      let HardUsedDescription;
-
-      if (Object.keys(inventoryCrypt).includes(cardid.toString())) {
-        inInventory = inventoryCrypt[cardid].q;
-      }
-
-      if (usedCryptCards && usedCryptCards.soft[cardid]) {
-        SoftUsedDescription = Object.keys(usedCryptCards.soft[cardid]).map(
-          (id) => {
-            if (softUsedMax < usedCryptCards.soft[cardid][id]) {
-              softUsedMax = usedCryptCards.soft[cardid][id];
-            }
-            return (
-              <UsedDescription
-                key={id}
-                q={usedCryptCards.soft[cardid][id]}
-                deckName={decks[id]['name']}
-                t="s"
-              />
-            );
-          }
-        );
-      }
-
-      if (usedCryptCards && usedCryptCards.hard[cardid]) {
-        HardUsedDescription = Object.keys(usedCryptCards.hard[cardid]).map(
-          (id) => {
-            hardUsedTotal += usedCryptCards.hard[cardid][id];
-            return (
-              <UsedDescription
-                key={id}
-                q={usedCryptCards.hard[cardid][id]}
-                deckName={decks[id]['name']}
-                t="h"
-              />
-            );
-          }
-        );
-      }
-
-      setModalInventory({
-        inInventory: inInventory,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
-    }
-  }, [modalCardIdx, inventoryMode]);
 
   const handleModalCardChange = (d) => {
     const maxIdx = sortedCards.length - 1;
@@ -156,48 +94,26 @@ function TwdResultCrypt(props) {
       resultTrClass = 'result-even';
     }
 
-    let inInventory = null;
+    let inInventory = 0;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-    let SoftUsedDescription;
-    let HardUsedDescription;
 
     if (inventoryMode) {
-      if (Object.keys(inventoryCrypt).includes(card.c['Id'].toString())) {
+      if (inventoryCrypt[card.c['Id']]) {
         inInventory = inventoryCrypt[card.c['Id']].q;
-      } else {
-        inInventory = 0;
       }
 
       if (usedCryptCards && usedCryptCards.soft[card.c['Id']]) {
-        SoftUsedDescription = Object.keys(
-          usedCryptCards.soft[card.c['Id']]
-        ).map((id) => {
+        Object.keys(usedCryptCards.soft[card.c['Id']]).map((id) => {
           if (softUsedMax < usedCryptCards.soft[card.c['Id']][id]) {
             softUsedMax = usedCryptCards.soft[card.c['Id']][id];
           }
-          return (
-            <UsedDescription
-              key={id}
-              q={usedCryptCards.soft[card.c['Id']][id]}
-              deckName={decks[id]['name']}
-            />
-          );
         });
       }
 
       if (usedCryptCards && usedCryptCards.hard[card.c['Id']]) {
-        HardUsedDescription = Object.keys(
-          usedCryptCards.hard[card.c['Id']]
-        ).map((id) => {
+        Object.keys(usedCryptCards.hard[card.c['Id']]).map((id) => {
           hardUsedTotal += usedCryptCards.hard[card.c['Id']][id];
-          return (
-            <UsedDescription
-              key={id}
-              q={usedCryptCards.hard[card.c['Id']][id]}
-              deckName={decks[id]['name']}
-            />
-          );
         });
       }
     }
@@ -223,15 +139,7 @@ function TwdResultCrypt(props) {
             ) : (
               <OverlayTrigger
                 placement="right"
-                overlay={
-                  <UsedPopover
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                    inInventory={inInventory}
-                    SoftUsedDescription={SoftUsedDescription}
-                    HardUsedDescription={HardUsedDescription}
-                  />
-                }
+                overlay={<UsedPopover cardid={card.c['Id']} />}
               >
                 <td className="quantity-no-buttons px-1">
                   <div
@@ -295,7 +203,6 @@ function TwdResultCrypt(props) {
             setModalCardIdx(undefined);
             isMobile && props.setShowFloatingButtons(true);
           }}
-          inventoryState={modalInventory}
         />
       )}
     </>

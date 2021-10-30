@@ -1,17 +1,70 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Popover } from 'react-bootstrap';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CalculatorFill from '../../assets/images/icons/calculator-fill.svg';
+import UsedDescription from './UsedDescription.jsx';
+import AppContext from '../../context/AppContext';
 
 const UsedPopover = React.forwardRef((props, ref) => {
   const {
-    softUsedMax,
-    hardUsedTotal,
-    SoftUsedDescription,
-    HardUsedDescription,
-    inInventory,
-    ...rest
-  } = props;
+    isMobile,
+    decks,
+    usedCryptCards,
+    usedLibraryCards,
+    inventoryCrypt,
+    inventoryLibrary,
+  } = useContext(AppContext);
+
+  const { cardid, ...rest } = props;
+
+  let softUsedMax = 0;
+  let hardUsedTotal = 0;
+  let SoftUsedDescription;
+  let HardUsedDescription;
+  let usedCards = null;
+
+  let inInventory = 0;
+  if (cardid > 200000) {
+    if (inventoryCrypt[cardid]) {
+      inInventory = inventoryCrypt[cardid].q;
+    }
+    usedCards = usedCryptCards;
+  } else {
+    if (inventoryLibrary[cardid]) {
+      inInventory = inventoryLibrary[cardid].q;
+    }
+    usedCards = usedLibraryCards;
+  }
+
+  if (usedCards && usedCards.soft[cardid]) {
+    SoftUsedDescription = Object.keys(usedCards.soft[cardid]).map((id) => {
+      if (softUsedMax < usedCards.soft[cardid][id]) {
+        softUsedMax = usedCards.soft[cardid][id];
+      }
+      return (
+        <UsedDescription
+          key={id}
+          q={usedCards.soft[cardid][id]}
+          deckName={decks[id]['name']}
+          t="s"
+        />
+      );
+    });
+  }
+
+  if (usedCards && usedCards.hard[cardid]) {
+    HardUsedDescription = Object.keys(usedCards.hard[cardid]).map((id) => {
+      hardUsedTotal += usedCards.hard[cardid][id];
+      return (
+        <UsedDescription
+          key={id}
+          q={usedCards.hard[cardid][id]}
+          deckName={decks[id]['name']}
+          t="h"
+        />
+      );
+    });
+  }
 
   return (
     <Popover ref={ref} {...rest}>

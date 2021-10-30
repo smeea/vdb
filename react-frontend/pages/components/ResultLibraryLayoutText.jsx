@@ -95,13 +95,13 @@ function ResultLibraryLayoutText(props) {
           </div>
         </>
       )}
-      {(props.forceInventoryMode || inventoryMode) && props.inventoryState && (
+      {(props.forceInventoryMode || inventoryMode) && (
         <>
           <hr className="mx-0" />
           <div className="py-1">
             <b>Inventory:</b>
           </div>
-          <ResultLayoutTextInventory inventoryState={props.inventoryState} />
+          <ResultLayoutTextInventory cardid={props.card['Id']} />
         </>
       )}
     </>

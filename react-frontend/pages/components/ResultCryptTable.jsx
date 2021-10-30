@@ -3,7 +3,6 @@ import { OverlayTrigger } from 'react-bootstrap';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
@@ -27,67 +26,6 @@ function ResultCryptTable(props) {
   } = useContext(AppContext);
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
-  const [modalInventory, setModalInventory] = useState(undefined);
-
-  useEffect(() => {
-    if (inventoryMode && modalCardIdx !== undefined) {
-      const cardid = props.resultCards[modalCardIdx].Id;
-
-      let inInventory = 0;
-      let softUsedMax = 0;
-      let SoftUsedDescription;
-      let hardUsedTotal = 0;
-      let HardUsedDescription;
-
-      if (Object.keys(inventoryCrypt).includes(cardid.toString())) {
-        inInventory = inventoryCrypt[cardid].q;
-      }
-
-      if (usedCryptCards && usedCryptCards.soft[cardid]) {
-        SoftUsedDescription = Object.keys(usedCryptCards.soft[cardid]).map(
-          (id) => {
-            if (softUsedMax < usedCryptCards.soft[cardid][id]) {
-              softUsedMax = usedCryptCards.soft[cardid][id];
-            }
-            return (
-              <UsedDescription
-                key={id}
-                q={usedCryptCards.soft[cardid][id]}
-                deckName={decks[id]['name']}
-                t="s"
-              />
-            );
-          }
-        );
-      }
-
-      if (usedCryptCards && usedCryptCards.hard[cardid]) {
-        HardUsedDescription = Object.keys(usedCryptCards.hard[cardid]).map(
-          (id) => {
-            hardUsedTotal += usedCryptCards.hard[cardid][id];
-            return (
-              <UsedDescription
-                key={id}
-                q={usedCryptCards.hard[cardid][id]}
-                deckName={decks[id]['name']}
-                t="h"
-              />
-            );
-          }
-        );
-      }
-
-      setModalInventory({
-        inInventory: inInventory,
-        softUsedMax: softUsedMax,
-        hardUsedTotal: hardUsedTotal,
-        usedDescription: {
-          soft: SoftUsedDescription,
-          hard: HardUsedDescription,
-        },
-      });
-    }
-  }, [modalCardIdx, inventoryMode]);
 
   let resultTrClass;
   let maxDisciplines = 0;
@@ -126,51 +64,27 @@ function ResultCryptTable(props) {
       (props.crypt && props.crypt[card['Id']] && props.crypt[card['Id']].q) ||
       0;
 
-    let inInventory = null;
     let softUsedMax = 0;
-    let SoftUsedDescription;
     let hardUsedTotal = 0;
-    let HardUsedDescription;
 
+    let inInventory = 0;
     if (inventoryMode) {
-      if (Object.keys(inventoryCrypt).includes(card['Id'].toString())) {
+      if (inventoryCrypt[card['Id']]) {
         inInventory = inventoryCrypt[card['Id']].q;
-      } else {
-        inInventory = 0;
       }
 
-      if (usedCryptCards && usedCryptCards.soft[card['Id']]) {
-        SoftUsedDescription = Object.keys(usedCryptCards.soft[card['Id']]).map(
-          (id) => {
-            if (softUsedMax < usedCryptCards.soft[card['Id']][id]) {
-              softUsedMax = usedCryptCards.soft[card['Id']][id];
-            }
-            return (
-              <UsedDescription
-                key={id}
-                q={usedCryptCards.soft[card['Id']][id]}
-                deckName={decks[id]['name']}
-                t="s"
-              />
-            );
+      if (usedCryptCards.soft[card['Id']]) {
+        Object.keys(usedCryptCards.soft[card['Id']]).map((id) => {
+          if (softUsedMax < usedCryptCards.soft[card['Id']][id]) {
+            softUsedMax = usedCryptCards.soft[card['Id']][id];
           }
-        );
+        });
       }
 
-      if (usedCryptCards && usedCryptCards.hard[card['Id']]) {
-        HardUsedDescription = Object.keys(usedCryptCards.hard[card['Id']]).map(
-          (id) => {
-            hardUsedTotal += usedCryptCards.hard[card['Id']][id];
-            return (
-              <UsedDescription
-                key={id}
-                q={usedCryptCards.hard[card['Id']][id]}
-                deckName={decks[id]['name']}
-                t="h"
-              />
-            );
-          }
-        );
+      if (usedCryptCards.hard[card['Id']]) {
+        Object.keys(usedCryptCards.hard[card['Id']]).map((id) => {
+          hardUsedTotal += usedCryptCards.hard[card['Id']][id];
+        });
       }
     }
 
@@ -191,15 +105,7 @@ function ResultCryptTable(props) {
             <>
               <OverlayTrigger
                 placement="left"
-                overlay={
-                  <UsedPopover
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                    inInventory={inInventory}
-                    SoftUsedDescription={SoftUsedDescription}
-                    HardUsedDescription={HardUsedDescription}
-                  />
-                }
+                overlay={<UsedPopover cardid={card['Id']} />}
               >
                 <td className="quantity">
                   <div
@@ -299,7 +205,6 @@ function ResultCryptTable(props) {
             setModalCardIdx(undefined);
             isMobile && props.setShowFloatingButtons(true);
           }}
-          inventoryState={modalInventory}
         />
       )}
     </>

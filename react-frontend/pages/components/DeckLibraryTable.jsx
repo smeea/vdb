@@ -5,7 +5,6 @@ import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -60,52 +59,28 @@ function DeckLibraryTable(props) {
     }
 
     let cardInvType = null;
-    let inInventory = null;
+    let inInventory = 0;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-    let SoftUsedDescription;
-    let HardUsedDescription;
 
     if (decks && inventoryMode) {
       cardInvType = card.i;
 
-      if (Object.keys(inventoryLibrary).includes(card.c['Id'].toString())) {
+      if (inventoryLibrary[card.c['Id']]) {
         inInventory = inventoryLibrary[card.c['Id']].q;
-      } else {
-        inInventory = 0;
       }
 
       if (usedLibraryCards && usedLibraryCards.soft[card.c['Id']]) {
-        SoftUsedDescription = Object.keys(
-          usedLibraryCards.soft[card.c['Id']]
-        ).map((id) => {
+        Object.keys(usedLibraryCards.soft[card.c['Id']]).map((id) => {
           if (softUsedMax < usedLibraryCards.soft[card.c['Id']][id]) {
             softUsedMax = usedLibraryCards.soft[card.c['Id']][id];
           }
-          return (
-            <UsedDescription
-              key={id}
-              q={usedLibraryCards.soft[card.c['Id']][id]}
-              deckName={decks[id]['name']}
-              t="s"
-            />
-          );
         });
       }
 
       if (usedLibraryCards && usedLibraryCards.hard[card.c['Id']]) {
-        HardUsedDescription = Object.keys(
-          usedLibraryCards.hard[card.c['Id']]
-        ).map((id) => {
+        Object.keys(usedLibraryCards.hard[card.c['Id']]).map((id) => {
           hardUsedTotal += usedLibraryCards.hard[card.c['Id']][id];
-          return (
-            <UsedDescription
-              key={id}
-              q={usedLibraryCards.hard[card.c['Id']][id]}
-              deckName={decks[id]['name']}
-              t="h"
-            />
-          );
         });
       }
     }
@@ -159,15 +134,7 @@ function DeckLibraryTable(props) {
                   ) : (
                     <OverlayTrigger
                       placement="right"
-                      overlay={
-                        <UsedPopover
-                          softUsedMax={softUsedMax}
-                          hardUsedTotal={hardUsedTotal}
-                          inInventory={inInventory}
-                          SoftUsedDescription={SoftUsedDescription}
-                          HardUsedDescription={HardUsedDescription}
-                        />
-                      }
+                      overlay={<UsedPopover cardid={card.c['Id']} />}
                     >
                       <td className="quantity">
                         <DeckCardQuantity
@@ -218,15 +185,7 @@ function DeckLibraryTable(props) {
                   ) : (
                     <OverlayTrigger
                       placement="right"
-                      overlay={
-                        <UsedPopover
-                          softUsedMax={softUsedMax}
-                          hardUsedTotal={hardUsedTotal}
-                          inInventory={inInventory}
-                          SoftUsedDescription={SoftUsedDescription}
-                          HardUsedDescription={HardUsedDescription}
-                        />
-                      }
+                      overlay={<UsedPopover cardid={card.c['Id']} />}
                     >
                       <td className="quantity-no-buttons px-1">
                         <div
