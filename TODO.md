@@ -1,6 +1,8 @@
 # FIX
 * Check online and errors on wrong deckid/search
 * Check deck proxy errors
+* Rename Import from file Inventory button
+* Move inventory-mode repetitive code to component
 
 # FIX MOBILE
 
@@ -29,6 +31,7 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 * Sync with websockets
 * Move autocompletion to frontend
+* Improve inventory render performance
 * Move search to frontend
 * Move export to frontend
 
