@@ -7,6 +7,7 @@ import ArrowUp from '../../assets/images/icons/arrow-up.svg';
 import Dash from '../../assets/images/icons/dash.svg';
 import OverlayTooltip from './OverlayTooltip.jsx';
 import CardPopover from './CardPopover.jsx';
+import UsedPopover from './UsedPopover.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import DeckCryptDisciplines from './DeckCryptDisciplines.jsx';
 import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
@@ -118,14 +119,36 @@ function DiffCryptTable(props) {
       <React.Fragment key={card.c['Id']}>
         <tr className={resultTrClass}>
           {props.isAuthor ? (
-            <td className="quantity">
-              <DeckCardQuantity
-                cardid={card.c['Id']}
-                q={qFrom}
-                deckid={props.deckid}
-                cardChange={deckCardChange}
-              />
-            </td>
+            <>
+              {inventoryMode && decks ? (
+                <OverlayTrigger
+                  placement="right"
+                  overlay={<UsedPopover cardid={card.c['Id']} />}
+                >
+                  <td className="quantity">
+                    <DeckCardQuantity
+                      cardid={card.c['Id']}
+                      q={qFrom}
+                      deckid={props.deckid}
+                      cardChange={deckCardChange}
+                      inInventory={inInventory}
+                      softUsedMax={softUsedMax}
+                      hardUsedTotal={hardUsedTotal}
+                      inventoryType={decks[props.deckid].inventory_type}
+                    />
+                  </td>
+                </OverlayTrigger>
+              ) : (
+                <td className="quantity">
+                  <DeckCardQuantity
+                    cardid={card.c['Id']}
+                    q={qFrom}
+                    deckid={props.deckid}
+                    cardChange={deckCardChange}
+                  />
+                </td>
+              )}
+            </>
           ) : (
             <td className="quantity-no-buttons px-1">{qFrom ? qFrom : null}</td>
           )}

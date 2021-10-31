@@ -13,7 +13,6 @@
 * Bookmarks/recent decks
 * Negative filters
 * Keywords search
-* InventoryMode for Diff
 
 # BIG FEATURES
 * Search for similar TWD decks
