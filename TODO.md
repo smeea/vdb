@@ -32,6 +32,7 @@
 * Improve inventory render performance
 * Move search to frontend
 * Move export to frontend
+* Move import to frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardior codes to return)

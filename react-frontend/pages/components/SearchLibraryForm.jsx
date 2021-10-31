@@ -221,6 +221,7 @@ function SearchLibraryForm(props) {
       fetch(url, options)
         .then((response) => response.json())
         .then((data) => {
+          setSpinnerState(false);
           setShowLibrarySearch(false);
           const res = data.map((i) => {
             return libraryCardBase[i];
@@ -236,14 +237,13 @@ function SearchLibraryForm(props) {
           } else {
             setLibraryResults(res);
           }
-          setSpinnerState(false);
         })
         .catch((error) => {
           if (isMobile) history.push('/library');
+          setSpinnerState(false);
           setLibraryResults([]);
           setPreresults([]);
           setShowError(true);
-          setSpinnerState(false);
         });
     } else {
       setLibraryResults(undefined);

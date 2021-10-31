@@ -68,16 +68,16 @@ function AccountRegister(props) {
           return response.json();
         })
         .then((data) => {
-          setUsername(state.username);
           setSpinnerState(false);
+          setUsername(state.username);
         })
         .catch((error) => {
+          setSpinnerState(false);
           setUsernameError(true);
           setState((prevState) => ({
             ...prevState,
             username: '',
           }));
-          setSpinnerState(false);
         });
     } else {
       setEmptyUsername(!state.username);

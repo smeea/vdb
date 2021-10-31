@@ -78,13 +78,14 @@ function AccountLogin(props) {
           return response.json();
         })
         .then((data) => {
+          setSpinnerState(false);
           setUsername(data.username);
           setPublicName(data.public_name);
           setEmail(data.email);
-          setSpinnerState(false);
         })
         .catch((e) => {
           if (e.message == 401) {
+            setSpinnerState(false);
             setPasswordError(true);
             setState((prevState) => ({
               ...prevState,
@@ -93,7 +94,6 @@ function AccountLogin(props) {
           } else {
             setConnectionError(true);
           }
-          setSpinnerState(false);
         });
     } else {
       setEmptyUsername(!state.username);

@@ -200,6 +200,7 @@ function SearchCryptForm(props) {
         .then((response) => response.json())
         .then((data) => {
           setShowCryptSearch(false);
+          setSpinnerState(false);
           const res = data.map((i) => {
             return cryptCardBase[i];
           });
@@ -214,14 +215,13 @@ function SearchCryptForm(props) {
           } else {
             setCryptResults(res);
           }
-          setSpinnerState(false);
         })
         .catch((error) => {
+          setSpinnerState(false);
           if (isMobile) history.push('/crypt');
           setCryptResults([]);
           setPreresults([]);
           setShowError(true);
-          setSpinnerState(false);
         });
     } else {
       setCryptResults(undefined);

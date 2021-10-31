@@ -98,13 +98,13 @@ function DeckExport(props) {
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          navigator.clipboard.writeText(data.deck);
           setSpinnerState(false);
+          navigator.clipboard.writeText(data.deck);
           isMobile && props.setShowButtons(false);
         })
         .catch((error) => {
-          setError(true);
           setSpinnerState(false);
+          setError(true);
         });
     } else {
       setError(true);

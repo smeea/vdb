@@ -188,14 +188,14 @@ function TwdSearchForm(props) {
       fetch(url, options)
         .then((response) => response.json())
         .then((data) => {
+          setSpinnerState(false);
           setShowTwdSearch(false);
           setTwdResults(data);
-          setSpinnerState(false);
         })
         .catch((error) => {
+          setSpinnerState(false);
           setTwdResults([]);
           setShowError(true);
-          setSpinnerState(false);
         });
     }
   };
@@ -215,21 +215,21 @@ function TwdSearchForm(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
+        setSpinnerState(false);
         setShowTwdSearch(false);
         setTwdResults(data);
-        setSpinnerState(false);
       })
       .catch((error) => {
+        setSpinnerState(false);
         setTwdResults([]);
         setShowError(true);
-        setSpinnerState(false);
       });
   };
 
   const getRandomTwd = (q) => {
+    setSpinnerState(true);
     setTwdFormState(JSON.parse(JSON.stringify(defaults)));
     setShowError(false);
-    setSpinnerState(true);
 
     const url = `${process.env.API_URL}twd/random/${q}`;
     const options = {
@@ -241,13 +241,13 @@ function TwdSearchForm(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
+        setSpinnerState(false);
         setShowTwdSearch(false);
         setTwdResults(data);
-        setSpinnerState(false);
       })
       .catch((error) => {
-        setTwdResults([]);
         setSpinnerState(false);
+        setTwdResults([]);
       });
   };
 
