@@ -3,8 +3,6 @@
 * Sort library by discipline (and check others)
 * Import long inventory
 * Inventory search in crypt/library to show X/Y
-* Library blood cost >= 0 to include 0
-* Library pool cost >= 0 to include 0
 * Same group vampires images
 * Compare mode wrong Missing calculation
 * Remove card from twd card search
