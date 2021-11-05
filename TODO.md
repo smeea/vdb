@@ -1,12 +1,10 @@
 # FIX
 * Move additional-filter-forms to components
-* Sort library by discipline (and check others)
 * Import long inventory
 * Inventory search in crypt/library to show X/Y
 * Same group vampires images
 * Compare mode wrong Missing calculation
 * Crypt/Library set/precon search dont remove multiform value on change to 'any'
-* Remove useless InventoryUsed code from TWD
 
 # FIX MOBILE
 

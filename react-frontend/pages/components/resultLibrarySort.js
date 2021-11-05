@@ -60,7 +60,7 @@ function resultLibrarySort(cards, sortMethod) {
       return -1;
     }
     if (a['Discipline'] > b['Discipline']) {
-      return -1;
+      return 1;
     }
     return 0;
   };
