@@ -1,10 +1,8 @@
 # FIX
-* Move additional-filter-forms to components
 * Import long inventory
 * Inventory search in crypt/library to show X/Y
-* Same group vampires images
 * Compare mode wrong Missing calculation
-* Crypt/Library set/precon search dont remove multiform value on change to 'any'
+* Change url to empty on last form changed to 'any'
 
 # FIX MOBILE
 

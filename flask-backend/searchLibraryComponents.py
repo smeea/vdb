@@ -157,7 +157,7 @@ def get_library_by_sect(request, library):
     ]
 
     for card in library:
-        if request['v']:
+        if request['logic'] == 'or':
             for sect in sects:
                 if sect == 'not required':
                     counter = 0
@@ -172,7 +172,7 @@ def get_library_by_sect(request, library):
                     if card not in match_cards:
                         match_cards.append(card)
 
-        else:
+        elif request['logic'] == 'not':
             counter = 0
             for sect in sects:
                 if sect.lower() not in card['Requirement'].lower():
