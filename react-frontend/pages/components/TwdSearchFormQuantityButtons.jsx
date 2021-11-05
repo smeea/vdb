@@ -4,10 +4,15 @@ import { Button } from 'react-bootstrap';
 function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
   const handleChangeQ = (id, q) => {
     const newState = state;
-    newState[id] = {
-      ...state[id],
-      q: q,
-    };
+    if (q >= 0) {
+      newState[id] = {
+        ...state[id],
+        q: q,
+      };
+    } else {
+      delete newState[id];
+    }
+
     setState((prevState) => ({
       ...prevState,
       [target]: newState,

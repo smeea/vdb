@@ -5,7 +5,6 @@
 * Inventory search in crypt/library to show X/Y
 * Same group vampires images
 * Compare mode wrong Missing calculation
-* Remove card from twd card search
 * Crypt/Library set/precon search dont remove multiform value on change to 'any'
 * Remove useless InventoryUsed code from TWD
 
