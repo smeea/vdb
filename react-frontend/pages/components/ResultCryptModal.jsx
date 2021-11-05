@@ -15,6 +15,7 @@ function ResultCryptModal(props) {
     useContext(AppContext);
 
   const [imageSet, setImageSet] = useState(null);
+  const [card, setCard] = useState(props.card);
 
   const handleKeyDown = (event) => {
     switch (event.key) {
@@ -32,6 +33,8 @@ function ResultCryptModal(props) {
   };
 
   useEffect(() => {
+    setCard(props.card);
+
     if (!isMobile) {
       window.addEventListener('keydown', handleKeyDown);
 
@@ -52,20 +55,18 @@ function ResultCryptModal(props) {
         ? 'set/' + imageSet + '/'
         : localizedCrypt &&
           localizedCrypt[lang] &&
-          localizedCrypt[lang][props.card['Id']]
+          localizedCrypt[lang][card['Id']]
         ? lang + '/'
         : 'en-EN/'
-    }${props.card['ASCII Name']
-      .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
-      props.card['Adv'][0] ? 'adv' : ''
+    }${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
+      card['Adv'][0] ? 'adv' : ''
     }.jpg`;
 
     return (
       <img
         className="card-popover full-width"
         src={imgSrc}
-        alt={props.card['Name']}
+        alt={card['Name']}
         onClick={props.handleClose}
       />
     );
@@ -110,7 +111,8 @@ function ResultCryptModal(props) {
             ) : (
               <div className="p-3">
                 <ResultCryptLayoutText
-                  card={props.card}
+                  card={card}
+                  setCard={setCard}
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
                   forceInventoryMode={props.forceInventoryMode}
@@ -138,7 +140,8 @@ function ResultCryptModal(props) {
             <Col className="p-4">
               <div className="pb-1">
                 <ResultCryptLayoutText
-                  card={props.card}
+                  card={card}
+                  setCard={setCard}
                   handleClose={props.handleClose}
                   setImageSet={setImageSet}
                   forceInventoryMode={props.forceInventoryMode}
@@ -147,7 +150,7 @@ function ResultCryptModal(props) {
               <div className="d-flex justify-content-between pt-4">
                 <div className="d-flex">
                   <div className="d-flex pe-1">
-                    <ButtonCardCopyUrl id={props.card.Id} />
+                    <ButtonCardCopyUrl id={card.Id} />
                   </div>
                   <div className="d-flex pe-1">
                     <ButtonToggleShowImage />

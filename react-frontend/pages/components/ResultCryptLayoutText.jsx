@@ -47,17 +47,14 @@ function ResultCryptLayoutText(props) {
             )}
             {props.card['Adv'][1] &&
               (isMobile ? (
-                !props.card['Adv'][0] && (
-                  <span className="adv ps-2">
-                    [has{' '}
-                    <img
-                      className="advanced-image-results"
-                      src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                      title="Advanced"
-                    />
-                    ]
-                  </span>
-                )
+                <span
+                  onClick={() =>
+                    props.setCard(cryptCardBase[props.card['Adv'][1]])
+                  }
+                  className="adv ps-2"
+                >
+                  [see {`${props.card['Adv'][0] ? 'Base' : 'Adv'}`}]
+                </span>
               ) : (
                 <OverlayTrigger
                   placement={props.placement ? props.placement : 'right'}
@@ -65,7 +62,12 @@ function ResultCryptLayoutText(props) {
                     <CardPopover card={cryptCardBase[props.card['Adv'][1]]} />
                   }
                 >
-                  <span className="adv ps-2">
+                  <span
+                    className="adv ps-2"
+                    onClick={() =>
+                      props.setCard(cryptCardBase[props.card['Adv'][1]])
+                    }
+                  >
                     [see {`${props.card['Adv'][0] ? 'Base' : 'Adv'}`}]
                   </span>
                 </OverlayTrigger>

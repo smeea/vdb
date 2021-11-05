@@ -15,7 +15,6 @@
 * Bookmarks/recent decks
 * Keywords search
 * Or Older set search
-* Clickable see Base/Adv
 
 # BIG FEATURES
 * Search for similar TWD decks
