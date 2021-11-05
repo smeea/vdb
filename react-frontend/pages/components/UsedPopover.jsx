@@ -7,7 +7,6 @@ import AppContext from '../../context/AppContext';
 
 const UsedPopover = React.forwardRef((props, ref) => {
   const {
-    isMobile,
     decks,
     usedCryptCards,
     usedLibraryCards,

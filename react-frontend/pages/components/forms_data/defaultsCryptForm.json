@@ -41,8 +41,18 @@
     "capacity": "any",
     "moreless": "le"
   },
-  "clan": ["any"],
-  "sect": ["any"],
+  "clan": {
+    "value": [
+      "any"
+    ],
+    "logic": "or"
+  },
+  "sect": {
+    "value": [
+      "any"
+    ],
+    "logic": "or"
+  },
   "votes": "any",
   "titles": {
     "primogen": false,
@@ -92,13 +102,17 @@
     "non-twd": false
   },
   "set": {
-    "set": ["any"],
+    "value": [
+      "any"
+    ],
     "only in": false,
     "first print": false,
     "or newer": false
   },
   "precon": {
-    "precon": ["any"],
+    "value": [
+      "any"
+    ],
     "only in": false,
     "first print": false
   },

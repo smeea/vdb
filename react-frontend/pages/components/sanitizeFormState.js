@@ -1,24 +1,16 @@
 const sanitizeFormState = (target, state) => {
   const input = JSON.parse(JSON.stringify(state));
-
-  let multiSelectForms = [];
+  let forms = [];
 
   switch (target) {
     case 'crypt':
-      multiSelectForms = [
-        'disciplines',
-        'titles',
-        'group',
-        'traits',
-        'set',
-        'precon',
-      ];
+      forms = ['disciplines', 'titles', 'group', 'traits'];
       break;
     case 'library':
-      multiSelectForms = ['traits', 'set', 'precon'];
+      forms = ['traits'];
       break;
     case 'twd':
-      multiSelectForms = [
+      forms = [
         'disciplines',
         'traits',
         'cardtypes',
@@ -30,62 +22,73 @@ const sanitizeFormState = (target, state) => {
       ];
       break;
   }
-
-  multiSelectForms.map((i) => {
-    Object.keys(input[i]).forEach(
-      (k) => (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k]
-    );
+  forms.map((i) => {
+    Object.keys(input[i]).forEach((k) => {
+      (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k];
+    });
   });
-
-  let multiSelectFormsWithMain = [];
 
   switch (target) {
     case 'crypt':
-      multiSelectFormsWithMain = ['capacity'];
+      forms = ['set', 'precon'];
       break;
     case 'library':
-      multiSelectFormsWithMain = ['blood', 'pool', 'capacity'];
+      forms = ['discipline', 'type', 'set', 'precon'];
+      break;
+    case 'twd':
+      forms = [];
       break;
   }
+  forms.map((i) => {
+    Object.keys(input[i]).forEach((k) => {
+      input[i][k] === false && delete input[i][k];
+      input[i].value.map((j) => {
+        j === 'any' && input[i].value.splice(j, 1);
+      });
+    });
+  });
 
-  multiSelectFormsWithMain.map((i) => {
+  switch (target) {
+    case 'crypt':
+      forms = ['capacity'];
+      break;
+    case 'library':
+      forms = ['blood', 'pool', 'capacity'];
+      break;
+    case 'twd':
+      forms = [];
+      break;
+  }
+  forms.map((i) => {
     if (input[i][i] == 'any') {
       delete input[i];
     }
   });
 
-  let multiSelectFormsWithOptions = [];
-
   switch (target) {
     case 'crypt':
-      multiSelectFormsWithOptions = ['set', 'precon'];
+      forms = ['clan', 'sect'];
+      forms.map((i) => {
+        input[i].value.map((j, idx) => {
+          if (j === 'any') {
+            input[i].value.splice(idx, 1);
+          }
+        });
+      });
       break;
     case 'library':
-      multiSelectFormsWithOptions = ['set', 'precon'];
-      break;
-  }
-
-  multiSelectFormsWithOptions.map((i) => {
-    if (!input[i][i]) {
-      delete input[i];
-    }
-  });
-
-  switch (target) {
-    case 'library':
-      const andOrForms = ['type', 'discipline'];
-      andOrForms.map((i) => {
-        if (Object.keys(input[i][i]).length === 1 && input[i][i][0] === 'any') {
-          delete input[i];
-        }
-        if (input[i] && input[i][i]) {
-          input[i][i] = input[i][i].filter((j) => j !== 'any');
-        }
+      forms = ['clan', 'sect', 'title'];
+      forms.map((i) => {
+        input[i].value.map((j, idx) => {
+          if (j === 'any') {
+            input[i].value.splice(idx, 1);
+          }
+        });
       });
       break;
     case 'twd':
-      const cardsForms = ['crypt', 'library'];
-      cardsForms.map((i) => {
+      forms = ['crypt', 'library'];
+      forms.map((i) => {
         Object.keys(input[i]).forEach((k) => {
           input[i][k] == -1 && delete input[i][k];
         });
@@ -93,11 +96,17 @@ const sanitizeFormState = (target, state) => {
       break;
   }
 
-  Object.keys(input).forEach(
-    (k) =>
-      (input[k] == 'any' || !input[k] || Object.keys(input[k]).length === 0) &&
-      delete input[k]
-  );
+  Object.keys(input).forEach((k) => {
+    if (
+      input[k] == 'any' ||
+      !input[k] ||
+      input[k].length === 0 ||
+      (input[k].value && input[k].value.length === 0) ||
+      Object.keys(input[k]).length === 0
+    ) {
+      delete input[k];
+    }
+  });
 
   return input;
 };

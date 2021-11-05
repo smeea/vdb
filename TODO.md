@@ -1,6 +1,15 @@
 # FIX
-* Check online and errors on wrong deckid/search
-* Check deck proxy errors
+* Move additional-filter-forms to components
+* Sort library by discipline (and check others)
+* Import long inventory
+* Inventory search in crypt/library to show X/Y
+* Library blood cost >= 0 to include 0
+* Library pool cost >= 0 to include 0
+* Same group vampires images
+* Compare mode wrong Missing calculation
+* Remove card from twd card search
+* Crypt/Library set/precon search dont remove multiform value on change to 'any'
+* Remove useless InventoryUsed code from TWD
 
 # FIX MOBILE
 
@@ -11,8 +20,9 @@
 * TWD new/random to respect url
 * Export all in xlsx and csv
 * Bookmarks/recent decks
-* Negative filters
 * Keywords search
+* Or Older set search
+* Clickable see Base/Adv
 
 # BIG FEATURES
 * Search for similar TWD decks

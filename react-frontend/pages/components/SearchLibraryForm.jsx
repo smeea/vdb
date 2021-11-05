@@ -64,29 +64,6 @@ function SearchLibraryForm(props) {
   const [showError, setShowError] = useState(false);
   const refError = useRef(null);
 
-  const toggleLogic = (form) => {
-    switch (form) {
-      case 'type':
-        setLibraryFormState((prevState) => ({
-          ...prevState,
-          type: {
-            ...prevState['type'],
-            logicAnd: !libraryFormState.type.logicAnd,
-          },
-        }));
-        break;
-      case 'discipline':
-        setLibraryFormState((prevState) => ({
-          ...prevState,
-          discipline: {
-            ...prevState['discipline'],
-            logicAnd: !libraryFormState.discipline.logicAnd,
-          },
-        }));
-        break;
-    }
-  };
-
   const handleTextChange = (event) => {
     const value = event.target.value;
     setLibraryFormState((prevState) => ({
@@ -106,41 +83,16 @@ function SearchLibraryForm(props) {
   const handleMultiSelectChange = (event, id) => {
     const i = id.name;
     const { name, value } = event;
-    if (name == 'set' || name == 'precon') {
-      setLibraryFormState((prevState) => {
-        const v = prevState[name][name];
-        v[i] = value;
-        return {
-          ...prevState,
-          [name]: {
-            ...prevState[name],
-            [name]: v,
-          },
-        };
-      });
-    } else {
-      setLibraryFormState((prevState) => {
-        const v = prevState[name];
-        v[i] = value;
-        return {
-          ...prevState,
-          [name]: v,
-        };
-      });
-    }
-  };
 
-  const handleLogicMultiSelectChange = (event, id) => {
-    const i = id.name;
-    const { name, value } = event;
     setLibraryFormState((prevState) => {
-      const v = prevState[name][name];
+      const v = prevState[name].value;
       v[i] = value;
+
       return {
         ...prevState,
         [name]: {
           ...prevState[name],
-          [name]: v,
+          value: v,
         },
       };
     });
@@ -302,29 +254,27 @@ function SearchLibraryForm(props) {
         </div>
       )}
       <SearchLibraryFormType
-        value={libraryFormState.type}
-        onChange={handleLogicMultiSelectChange}
+        value={{ name: 'type', ...libraryFormState.type }}
+        onChange={handleMultiSelectChange}
         setFormState={setLibraryFormState}
-        toggleLogic={toggleLogic}
       />
       <SearchLibraryFormDiscipline
-        value={libraryFormState.discipline}
-        onChange={handleLogicMultiSelectChange}
+        value={{ name: 'discipline', ...libraryFormState.discipline }}
+        onChange={handleMultiSelectChange}
         setFormState={setLibraryFormState}
-        toggleLogic={toggleLogic}
       />
       <SearchLibraryFormClan
-        value={libraryFormState.clan}
+        value={{ name: 'clan', ...libraryFormState.clan }}
         onChange={handleMultiSelectChange}
         setFormState={setLibraryFormState}
       />
       <SearchLibraryFormSect
-        value={libraryFormState.sect}
+        value={{ name: 'sect', ...libraryFormState.sect }}
         onChange={handleMultiSelectChange}
         setFormState={setLibraryFormState}
       />
       <SearchLibraryFormTitle
-        value={libraryFormState.title}
+        value={{ name: 'title', ...libraryFormState.title }}
         onChange={handleMultiSelectChange}
         setFormState={setLibraryFormState}
       />
@@ -348,13 +298,13 @@ function SearchLibraryForm(props) {
         onChange={handleMultiChange}
       />
       <SearchFormSet
-        value={libraryFormState.set}
+        value={{ name: 'set', ...libraryFormState.set }}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
         setFormState={setLibraryFormState}
       />
       <SearchFormPrecon
-        value={libraryFormState.precon}
+        value={{ name: 'precon', ...libraryFormState.precon }}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
         setFormState={setLibraryFormState}

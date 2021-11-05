@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -15,8 +15,7 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryLibraryTable(props) {
-  const { decks, usedLibraryCards, inventoryLibrary, nativeLibrary, isMobile } =
-    useContext(AppContext);
+  const { usedLibraryCards, nativeLibrary, isMobile } = useContext(AppContext);
 
   let resultTrClass;
 

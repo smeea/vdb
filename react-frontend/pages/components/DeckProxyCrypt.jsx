@@ -4,15 +4,7 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckProxyCrypt(props) {
-  const {
-    decks,
-    inventoryMode,
-    inventoryCrypt,
-    usedCryptCards,
-    cryptDeckSort,
-    changeTimer,
-    isMobile,
-  } = useContext(AppContext);
+  const { cryptDeckSort, changeTimer, isMobile } = useContext(AppContext);
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);

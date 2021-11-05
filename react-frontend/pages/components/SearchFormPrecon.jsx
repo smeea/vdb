@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { Form, Stack, Row, Col, Button } from 'react-bootstrap';
+import { Form, Stack, Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import Plus from '../../assets/images/icons/plus.svg';
-import Dash from '../../assets/images/icons/dash.svg';
 import GiftFill from '../../assets/images/icons/gift-fill.svg';
 import AdditionalForms from './SearchAdditionalForms.jsx';
+import SearchFormButtonAdd from './SearchFormButtonAdd.jsx';
+import SearchFormButtonDel from './SearchFormButtonDel.jsx';
 import AppContext from '../../context/AppContext.js';
 import setsAndPrecons from './forms_data/setsAndPrecons.json';
 
@@ -128,34 +128,6 @@ function SearchFormPrecon(props) {
     }
   };
 
-  const addForm = () => {
-    props.setFormState((prevState) => {
-      const v = prevState.precon.precon;
-      v.push('any');
-      return {
-        ...prevState,
-        precon: {
-          ...prevState.precon,
-          precon: v,
-        },
-      };
-    });
-  };
-
-  const delForm = (i) => {
-    props.setFormState((prevState) => {
-      const v = prevState.precon.precon;
-      v.splice(i, 1);
-      return {
-        ...prevState,
-        precon: {
-          ...prevState.precon,
-          precon: v,
-        },
-      };
-    });
-  };
-
   return (
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
@@ -164,24 +136,19 @@ function SearchFormPrecon(props) {
           className="d-flex justify-content-between align-items-center px-0"
         >
           <div className="bold blue">Precon:</div>
-          {props.value.precon[0] !== 'any' && (
+          {props.value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
-              {props.value.precon.length == 1 ? (
-                <Button
-                  className="add-form"
-                  variant="primary"
-                  onClick={() => addForm()}
-                >
-                  <Plus />
-                </Button>
+              {props.value.value.length == 1 ? (
+                <SearchFormButtonAdd
+                  setFormState={props.setFormState}
+                  value={props.value}
+                />
               ) : (
-                <Button
-                  className="add-form"
-                  variant="primary"
-                  onClick={() => delForm(0)}
-                >
-                  <Dash />
-                </Button>
+                <SearchFormButtonDel
+                  setFormState={props.setFormState}
+                  value={props.value}
+                  i={0}
+                />
               )}
             </div>
           )}
@@ -194,18 +161,17 @@ function SearchFormPrecon(props) {
             menuPlacement={isMobile ? 'top' : 'bottom'}
             filterOption={filterOption}
             name={0}
-            value={options.find((obj) => obj.value === props.value.precon[0])}
+            value={options.find((obj) => obj.value === props.value.value[0])}
             onChange={props.onChange}
           />
         </Col>
       </Row>
       <AdditionalForms
         menuPlacement={isMobile ? 'top' : 'bottom'}
-        value={props.value.precon}
-        addForm={addForm}
-        delForm={delForm}
+        value={props.value}
         options={options}
         onChange={props.onChange}
+        setFormState={props.setFormState}
       />
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">

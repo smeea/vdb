@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import InfoCircle from '../../assets/images/icons/info-circle.svg';
 import X from '../../assets/images/icons/x.svg';
@@ -14,14 +14,7 @@ import AppContext from '../../context/AppContext.js';
 import drawProbability from './drawProbability.js';
 
 function DeckLibrary(props) {
-  const {
-    decks,
-    inventoryMode,
-    inventoryLibrary,
-    usedLibraryCards,
-    nativeLibrary,
-    isMobile,
-  } = useContext(AppContext);
+  const { nativeLibrary, isMobile } = useContext(AppContext);
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
@@ -15,8 +15,7 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryCryptTable(props) {
-  const { decks, usedCryptCards, inventoryCrypt, isMobile, isWide } =
-    useContext(AppContext);
+  const { usedCryptCards, isMobile, isWide } = useContext(AppContext);
 
   let resultTrClass;
 

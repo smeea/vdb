@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
-import Shuffle from '../../assets/images/icons/shuffle.svg';
-import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import ArrowDown from '../../assets/images/icons/arrow-down.svg';
 import ArrowUp from '../../assets/images/icons/arrow-up.svg';
 import Dash from '../../assets/images/icons/dash.svg';
@@ -28,15 +26,10 @@ function DiffLibraryTable(props) {
     usedLibraryCards,
     nativeLibrary,
     isMobile,
-    deckUpdate,
     deckCardChange,
   } = useContext(AppContext);
 
   let resultTrClass;
-  let deckInvType = null;
-  if (inventoryMode && decks && props.deckid && decks[props.deckid]) {
-    deckInvType = decks[props.deckid].inventory_type;
-  }
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
@@ -61,14 +54,11 @@ function DiffLibraryTable(props) {
       );
     }
 
-    let cardInvType = null;
     let inInventory = 0;
     let softUsedMax = 0;
     let hardUsedTotal = 0;
 
     if (decks && inventoryMode) {
-      cardInvType = card.i;
-
       if (inventoryLibrary[card.c['Id']]) {
         inInventory = inventoryLibrary[card.c['Id']].q;
       }

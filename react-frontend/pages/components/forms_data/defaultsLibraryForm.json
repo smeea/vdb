@@ -1,12 +1,16 @@
 {
   "text": "",
   "type": {
-    "type": ["any"],
-    "logicAnd": true
+    "value": [
+      "any"
+    ],
+    "logic": "or"
   },
   "discipline": {
-    "discipline": ["any"],
-    "logicAnd": true
+    "value": [
+      "any"
+    ],
+    "logic": "or"
   },
   "blood": {
     "blood": "any",
@@ -20,9 +24,24 @@
     "capacity": "any",
     "moreless": "le"
   },
-  "clan": ["any"],
-  "sect": ["any"],
-  "title": ["any"],
+  "clan": {
+    "value": [
+      "any"
+    ],
+    "logic": "or"
+  },
+  "sect": {
+    "value": [
+      "any"
+    ],
+    "logic": "or"
+  },
+  "title": {
+    "value": [
+      "any"
+    ],
+    "logic": "or"
+  },
   "traits": {
     "intercept": false,
     "stealth": false,
@@ -48,13 +67,17 @@
     "no-requirements": false
   },
   "set": {
-    "set": ["any"],
+    "value": [
+      "any"
+    ],
     "only in": false,
     "first print": false,
     "or newer": false
   },
   "precon": {
-    "precon": ["any"],
+    "value": [
+      "any"
+    ],
     "only in": false,
     "first print": false
   },

@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
-import { Button, Dropdown } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import ShareFill from '../../assets/images/icons/share-fill.svg';
-import BlockButton from './BlockButton.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckCopyUrl(props) {

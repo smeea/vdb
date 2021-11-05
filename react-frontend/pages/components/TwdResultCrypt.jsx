@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
@@ -9,7 +9,7 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function TwdResultCrypt(props) {
-  const { decks, inventoryMode, inventoryCrypt, usedCryptCards, isMobile } =
+  const { inventoryMode, inventoryCrypt, usedCryptCards, isMobile } =
     useContext(AppContext);
 
   let resultTrClass = 'result-even';

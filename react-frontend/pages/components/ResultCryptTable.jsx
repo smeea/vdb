@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CardPopover from './CardPopover.jsx';
@@ -15,7 +15,6 @@ import AppContext from '../../context/AppContext';
 
 function ResultCryptTable(props) {
   const {
-    decks,
     activeDeck,
     inventoryCrypt,
     usedCryptCards,

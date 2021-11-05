@@ -1,14 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Stack } from 'react-bootstrap';
 import DiffCopyUrl from './DiffCopyUrl.jsx';
 import DiffBackButton from './DiffBackButton.jsx';
 import DeckProxy from './DeckProxy.jsx';
 import DeckMissing from './DeckMissing.jsx';
-import AppContext from '../../context/AppContext';
 
 function DiffButtons(props) {
-  const { inventoryMode, username, isMobile } = useContext(AppContext);
-
   return (
     <Stack gap={1}>
       {props.deck && <DiffBackButton deckid={props.deck.deckid} />}

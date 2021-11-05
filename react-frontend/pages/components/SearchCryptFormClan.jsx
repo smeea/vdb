@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import Plus from '../../assets/images/icons/plus.svg';
-import Dash from '../../assets/images/icons/dash.svg';
-import AppContext from '../../context/AppContext.js';
 import AdditionalForms from './SearchAdditionalForms.jsx';
+import SearchFormButtonGroupToggle from './SearchFormButtonGroupToggle.jsx';
+import SearchFormButtonAdd from './SearchFormButtonAdd.jsx';
+import SearchFormButtonDel from './SearchFormButtonDel.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function SearchCryptFormClan(props) {
   const { isMobile } = useContext(AppContext);
@@ -92,28 +93,6 @@ function SearchCryptFormClan(props) {
     }
   });
 
-  const addForm = () => {
-    props.setFormState((prevState) => {
-      const v = prevState.clan;
-      v.push('any');
-      return {
-        ...prevState,
-        clan: v,
-      };
-    });
-  };
-
-  const delForm = (i) => {
-    props.setFormState((prevState) => {
-      const v = prevState.clan;
-      v.splice(i, 1);
-      return {
-        ...prevState,
-        clan: v,
-      };
-    });
-  };
-
   return (
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
@@ -122,24 +101,25 @@ function SearchCryptFormClan(props) {
           className="d-flex justify-content-between align-items-center px-0"
         >
           <div className="bold blue">Clan:</div>
-          {props.value[0] !== 'any' && (
+          {props.value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
-              {props.value.length == 1 ? (
-                <Button
-                  className="add-form"
-                  variant="primary"
-                  onClick={() => addForm()}
-                >
-                  <Plus />
-                </Button>
+              <div className="pe-1">
+                <SearchFormButtonGroupToggle
+                  value={props.value}
+                  setFormState={props.setFormState}
+                />
+              </div>
+              {props.value.value.length == 1 ? (
+                <SearchFormButtonAdd
+                  setFormState={props.setFormState}
+                  value={props.value}
+                />
               ) : (
-                <Button
-                  className="add-form"
-                  variant="primary"
-                  onClick={() => delForm(0)}
-                >
-                  <Dash />
-                </Button>
+                <SearchFormButtonDel
+                  setFormState={props.setFormState}
+                  value={props.value}
+                  i={0}
+                />
               )}
             </div>
           )}
@@ -151,7 +131,7 @@ function SearchCryptFormClan(props) {
             isSearchable={!isMobile}
             name={0}
             value={options.find(
-              (obj) => obj.value === props.value[0].toLowerCase()
+              (obj) => obj.value === props.value.value[0].toLowerCase()
             )}
             onChange={props.onChange}
           />
@@ -159,10 +139,9 @@ function SearchCryptFormClan(props) {
       </Row>
       <AdditionalForms
         value={props.value}
-        addForm={addForm}
-        delForm={delForm}
         options={options}
         onChange={props.onChange}
+        setFormState={props.setFormState}
       />
     </>
   );

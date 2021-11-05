@@ -18,115 +18,168 @@ def get_library_by_text(text, library):
 
 
 def get_library_by_type(request, library):
-    types = request['type']
-    logicAnd = request['logicAnd']
+    types = request['value']
 
     match_cards = []
 
-    if logicAnd:
-        for card in library:
-            counter = len(types)
+    for card in library:
+        if request['logic'] == 'or':
             for type in types:
                 if type in card['Type'].lower().split('/'):
-                    counter -= 1
+                    match_cards.append(card)
 
-            if counter == 0 and card not in match_cards:
+        elif request['logic'] == 'and':
+            counter = 0
+            for type in types:
+                if type in card['Type'].lower().split('/'):
+                    counter += 1
+
+            if counter == len(types):
                 match_cards.append(card)
 
-    else:
-        for card in library:
+        elif request['logic'] == 'not':
+            counter = 0
             for type in types:
-                if type in card['Type'].lower().split('/'):
-                    if card not in match_cards:
-                        match_cards.append(card)
+                if type not in card['Type'].lower().split('/'):
+                    counter += 1
+
+            if counter == len(types):
+                match_cards.append(card)
+
 
     return match_cards
 
 
 def get_library_by_discipline(request, library):
-    disciplines = request['discipline']
-    logicAnd = request['logicAnd']
-
+    disciplines = request['value']
     match_cards = []
-    if logicAnd:
-        for card in library:
-            counter = len(disciplines)
-            for discipline in disciplines:
-                if (discipline in card['Discipline'].lower()) or (
-                        discipline == 'none'
-                        and not card['Discipline'].lower()):
-                    counter -= 1
 
-            if counter == 0 and card not in match_cards:
-                match_cards.append(card)
-    else:
-        for card in library:
+    for card in library:
+        if request['logic'] == 'or':
             for discipline in disciplines:
                 if (discipline in card['Discipline'].lower()) or (
-                        discipline == 'none'
+                        discipline == 'not required'
                         and not card['Discipline'].lower()):
                     if card not in match_cards:
                         match_cards.append(card)
 
+        elif request['logic'] == 'not':
+            counter = 0
+            for discipline in disciplines:
+                if discipline not in card['Discipline'].lower():
+                    counter += 1
+
+            if counter == len(disciplines) and card not in match_cards:
+                match_cards.append(card)
+
+        elif request['logic'] == 'and':
+            counter = 0
+            for discipline in disciplines:
+                if (discipline in card['Discipline'].lower()) or (
+                        discipline == 'not required'
+                        and not card['Discipline'].lower()):
+                    counter += 1
+
+            if counter == len(disciplines) and card not in match_cards:
+                match_cards.append(card)
+
     return match_cards
 
 
-def get_library_by_clan(clans, library):
+def get_library_by_clan(request, library):
+    clans = request['value']
     match_cards = []
+
     for card in library:
-        card_clans = [c.lower() for c in card['Clan'].split('/')]
-        for clan in clans:
-            if (clan in card_clans) or (clan == 'none'
-                                        and not card['Clan'].lower()):
-                if card not in match_cards:
+        if request['logic'] == 'or':
+            card_clans = [c.lower() for c in card['Clan'].split('/')]
+            for clan in clans:
+                if (clan in card_clans) or (clan == 'not required'
+                                            and not card['Clan'].lower()):
                     match_cards.append(card)
 
+        else:
+            card_clans = [c.lower() for c in card['Clan'].split('/')]
+            counter = 0
+            for card_clan in card_clans:
+                if card_clan not in clans:
+                    counter += 1
+
+            if counter == len(card_clans) and card not in match_cards:
+                match_cards.append(card)
+
     return match_cards
 
 
-def get_library_by_title(titles, library):
+def get_library_by_title(request, library):
     match_cards = []
+    titles = request['value']
+
     all_titles = [
         'primogen', 'prince', 'justicar', 'inner circle', 'baron', 'bishop',
         'archbishop', 'priscus', 'cardinal', 'regent', 'magaji'
     ]
-    for card in library:
-        for title in titles:
-            if title == 'none':
-                counter = len(all_titles)
-                for i in all_titles:
-                    if i not in card['Requirement'].lower():
-                        counter -= 1
-                if counter == 0 and card not in match_cards:
-                    match_cards.append(card)
 
-            elif title.lower() in card['Requirement'].lower(
-            ) and not 'non-' + title in card['Requirement'].lower():
-                if card not in match_cards:
-                    match_cards.append(card)
+    for card in library:
+        if request['logic'] == 'or':
+            for title in titles:
+                if title == 'not required':
+                    counter = 0
+                    for i in all_titles:
+                        if i not in card['Requirement'].lower():
+                            counter += 1
+                    if counter == len(all_titles) and card not in match_cards:
+                        match_cards.append(card)
+
+                elif title.lower() in card['Requirement'].lower(
+                ) and not 'non-' + title in card['Requirement'].lower():
+                    if card not in match_cards:
+                        match_cards.append(card)
+
+        else:
+            counter = 0
+            for title in titles:
+                if title.lower() not in card['Requirement'].lower():
+                    counter += 1
+
+            if counter == len(titles) and card not in match_cards:
+                match_cards.append(card)
+
 
     return match_cards
 
 
-def get_library_by_sect(sects, library):
+def get_library_by_sect(request, library):
+    sects = request['value']
     match_cards = []
     all_sects = [
         'camarilla', 'sabbat', 'laibon', 'independent', 'anarch', 'imbued'
     ]
-    for card in library:
-        for sect in sects:
-            if sect == 'none':
-                counter = len(all_sects)
-                for i in all_sects:
-                    if i not in card['Requirement']:
-                        counter -= 1
-                if counter == 0 and card not in match_cards:
-                    match_cards.append(card)
 
-            elif sect in card['Requirement'].lower(
-            ) and not 'non-' + sect in card['Requirement'].lower():
-                if card not in match_cards:
-                    match_cards.append(card)
+    for card in library:
+        if request['v']:
+            for sect in sects:
+                if sect == 'not required':
+                    counter = 0
+                    for i in all_sects:
+                        if i not in card['Requirement']:
+                            counter += 1
+                    if counter == len(all_sects) and card not in match_cards:
+                        match_cards.append(card)
+
+                elif sect in card['Requirement'].lower(
+                ) and not 'non-' + sect in card['Requirement'].lower():
+                    if card not in match_cards:
+                        match_cards.append(card)
+
+        else:
+            counter = 0
+            for sect in sects:
+                if sect.lower() not in card['Requirement'].lower():
+                    counter += 1
+
+            if counter == len(sects) and card not in match_cards:
+                match_cards.append(card)
 
     return match_cards
 
@@ -317,7 +370,7 @@ def get_library_by_set(request, library):
     ]
 
     match_cards = []
-    r_sets = request['set']
+    r_sets = request['value']
 
     for r_set in r_sets:
         if 'or newer' in request:
@@ -443,7 +496,7 @@ def get_library_by_precon(request, library):
     booster_subsets = ["V", "C", "U", "R"]
 
     match_cards = []
-    reqs = request['precon']
+    reqs = request['value']
 
     for req in reqs:
         if req == 'bcp':

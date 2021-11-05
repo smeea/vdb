@@ -1,18 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import DeckProxyLibraryTable from './DeckProxyLibraryTable.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function DeckProxyLibrary(props) {
-  const {
-    decks,
-    inventoryMode,
-    inventoryLibrary,
-    usedLibraryCards,
-    nativeLibrary,
-    isMobile,
-  } = useContext(AppContext);
+  const { nativeLibrary, isMobile } = useContext(AppContext);
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);

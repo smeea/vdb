@@ -6,19 +6,10 @@ import ResultCryptModal from './ResultCryptModal.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import DeckDrawCryptTable from './DeckDrawCryptTable.jsx';
 import DeckDrawLibraryTable from './DeckDrawLibraryTable.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckDrawModal(props) {
-  const {
-    decks,
-    isMobile,
-    inventoryMode,
-    inventoryCrypt,
-    inventoryLibrary,
-    usedCryptCards,
-    usedLibraryCards,
-  } = useContext(AppContext);
+  const { isMobile } = useContext(AppContext);
 
   const [modalCryptCardIdx, setModalCryptCardIdx] = useState(undefined);
   const [modalLibraryCardIdx, setModalLibraryCardIdx] = useState(undefined);

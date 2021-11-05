@@ -11,15 +11,7 @@ import deckCryptSort from './deckCryptSort.js';
 import AppContext from '../../context/AppContext';
 
 function DiffCrypt(props) {
-  const {
-    decks,
-    inventoryMode,
-    inventoryCrypt,
-    usedCryptCards,
-    cryptDeckSort,
-    changeTimer,
-    isMobile,
-  } = useContext(AppContext);
+  const { cryptDeckSort, changeTimer, isMobile } = useContext(AppContext);
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);

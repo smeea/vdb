@@ -1,9 +1,10 @@
 import React from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import Plus from '../../assets/images/icons/plus.svg';
-import Dash from '../../assets/images/icons/dash.svg';
 import AdditionalForms from './SearchAdditionalForms.jsx';
+import SearchFormButtonGroupToggle from './SearchFormButtonGroupToggle.jsx';
+import SearchFormButtonAdd from './SearchFormButtonAdd.jsx';
+import SearchFormButtonDel from './SearchFormButtonDel.jsx';
 
 function SearchCryptFormSect(props) {
   const sects = [
@@ -31,28 +32,6 @@ function SearchCryptFormSect(props) {
     });
   });
 
-  const addForm = () => {
-    props.setFormState((prevState) => {
-      const v = prevState.sect;
-      v.push('any');
-      return {
-        ...prevState,
-        sect: v,
-      };
-    });
-  };
-
-  const delForm = (i) => {
-    props.setFormState((prevState) => {
-      const v = prevState.sect;
-      v.splice(i, 1);
-      return {
-        ...prevState,
-        sect: v,
-      };
-    });
-  };
-
   return (
     <>
       <Row className="py-1 ps-1 mx-0 align-items-center">
@@ -61,24 +40,25 @@ function SearchCryptFormSect(props) {
           className="d-flex justify-content-between align-items-center px-0"
         >
           <div className="bold blue">Sect:</div>
-          {props.value[0] !== 'any' && (
+          {props.value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
-              {props.value.length == 1 ? (
-                <Button
-                  className="add-form"
-                  variant="primary"
-                  onClick={() => addForm()}
-                >
-                  <Plus />
-                </Button>
+              <div className="pe-1">
+                <SearchFormButtonGroupToggle
+                  value={props.value}
+                  setFormState={props.setFormState}
+                />
+              </div>
+              {props.value.value.length == 1 ? (
+                <SearchFormButtonAdd
+                  setFormState={props.setFormState}
+                  value={props.value}
+                />
               ) : (
-                <Button
-                  className="add-form"
-                  variant="primary"
-                  onClick={() => delForm(0)}
-                >
-                  <Dash />
-                </Button>
+                <SearchFormButtonDel
+                  setFormState={props.setFormState}
+                  value={props.value}
+                  i={0}
+                />
               )}
             </div>
           )}
@@ -90,7 +70,7 @@ function SearchCryptFormSect(props) {
             isSearchable={false}
             name={0}
             value={options.find(
-              (obj) => obj.value === props.value[0].toLowerCase()
+              (obj) => obj.value === props.value.value[0].toLowerCase()
             )}
             onChange={props.onChange}
           />
@@ -98,10 +78,10 @@ function SearchCryptFormSect(props) {
       </Row>
       <AdditionalForms
         value={props.value}
-        addForm={addForm}
-        delForm={delForm}
         options={options}
         onChange={props.onChange}
+        toggleForm={props.toggleForm}
+        setFormState={props.setFormState}
       />
     </>
   );

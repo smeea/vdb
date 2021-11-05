@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import InventoryCryptTable from './InventoryCryptTable.jsx';
-import resultCryptSort from './resultCryptSort.js';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryCrypt(props) {

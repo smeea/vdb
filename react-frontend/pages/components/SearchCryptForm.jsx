@@ -84,28 +84,17 @@ function SearchCryptForm(props) {
     const i = id.name;
     const { name, value } = event;
 
-    if (name == 'set' || name == 'precon') {
-      setCryptFormState((prevState) => {
-        const v = prevState[name][name];
-        v[i] = value;
-        return {
-          ...prevState,
-          [name]: {
-            ...prevState[name],
-            [name]: v,
-          },
-        };
-      });
-    } else {
-      setCryptFormState((prevState) => {
-        const v = prevState[name];
-        v[i] = value;
-        return {
-          ...prevState,
-          [name]: v,
-        };
-      });
-    }
+    setCryptFormState((prevState) => {
+      const v = prevState[name].value;
+      v[i] = value;
+      return {
+        ...prevState,
+        [name]: {
+          ...prevState[name],
+          value: v,
+        },
+      };
+    });
   };
 
   const handleMultiChange = (event) => {
@@ -292,12 +281,12 @@ function SearchCryptForm(props) {
         onMorelessChange={handleMorelessChange}
       />
       <SearchCryptFormClan
-        value={cryptFormState.clan}
+        value={{ name: 'clan', ...cryptFormState.clan }}
         onChange={handleMultiSelectChange}
         setFormState={setCryptFormState}
       />
       <SearchCryptFormSect
-        value={cryptFormState.sect}
+        value={{ name: 'sect', ...cryptFormState.sect }}
         onChange={handleMultiSelectChange}
         setFormState={setCryptFormState}
       />
@@ -318,13 +307,13 @@ function SearchCryptForm(props) {
         onChange={handleMultiChange}
       />
       <SearchFormSet
-        value={cryptFormState.set}
+        value={{ name: 'set', ...cryptFormState.set }}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
         setFormState={setCryptFormState}
       />
       <SearchFormPrecon
-        value={cryptFormState.precon}
+        value={{ name: 'precon', ...cryptFormState.precon }}
         onChange={handleMultiSelectChange}
         onChangeOptions={handleMultiChange}
         setFormState={setCryptFormState}

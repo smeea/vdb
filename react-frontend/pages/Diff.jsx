@@ -10,10 +10,6 @@ import {
   FormControl,
   InputGroup,
 } from 'react-bootstrap';
-import Shuffle from '../assets/images/icons/shuffle.svg';
-import At from '../assets/images/icons/at.svg';
-import PinAngleFill from '../assets/images/icons/pin-angle-fill.svg';
-import ChatLeftQuoteFill from '../assets/images/icons/chat-left-quote-fill.svg';
 import List from '../assets/images/icons/list.svg';
 import X from '../assets/images/icons/x.svg';
 import Check2 from '../assets/images/icons/check2.svg';
@@ -32,7 +28,6 @@ function Diff(props) {
     inventoryMode,
     activeDeck,
     setActiveDeck,
-    sharedDeck,
     setSharedDeck,
     decks,
     cryptCardBase,

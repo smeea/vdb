@@ -4,7 +4,6 @@ import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
 import EyeFill from '../../assets/images/icons/eye-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
-import UsedDescription from './UsedDescription.jsx';
 import DeckCardQuantity from './DeckCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';

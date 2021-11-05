@@ -14,7 +14,7 @@ import DeckBranchDelete from './DeckBranchDelete.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckButtons(props) {
-  const { inventoryMode, username, isMobile } = useContext(AppContext);
+  const { inventoryMode, username } = useContext(AppContext);
 
   return (
     <Stack gap={1}>
