@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
 
 function SearchCryptFormGroup(props) {
-  const groups = [1, 2, 3, 4, 5, 6];
+  const groups = [1, 2, 3, 4, 5, 6, 7];
 
   const GroupButtons = groups.map((i, index) => {
     return (
@@ -24,7 +24,7 @@ function SearchCryptFormGroup(props) {
       <Col xs={3} className="d-flex px-0">
         <div className="bold blue">Group:</div>
       </Col>
-      <Col xs={9} className="d-flex justify-content-end">
+      <Col xs={9} className="d-flex justify-content-end px-0">
         <ButtonGroup>{GroupButtons}</ButtonGroup>
       </Col>
     </Row>
