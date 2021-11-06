@@ -12,7 +12,7 @@ function SearchLibraryFormClan(props) {
 
   const clans = [
     'ANY',
-    'NONE',
+    'Not Required',
     'Abomination',
     'Ahrimane',
     'Akunanse',
@@ -64,7 +64,7 @@ function SearchLibraryFormClan(props) {
   const options = [];
 
   clans.map((i, index) => {
-    if (i == 'ANY' || i == 'NONE') {
+    if (i == 'ANY' || i == 'Not Required') {
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
