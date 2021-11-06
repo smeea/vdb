@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import FileDiffFill from '../../assets/images/icons/file-diff-fill.svg';
+import AppContext from '../../context/AppContext.js';
 
 const DeckDiffButton = (props) => {
+  const { isMobile } = useContext(AppContext);
   const history = useHistory();
 
   return (
