@@ -232,7 +232,10 @@ function DeckCrypt(props) {
               className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
             >
               <h5>Add Crypt Card</h5>
-              <Button variant="outline-secondary" onClick={props.handleClose}>
+              <Button
+                variant="outline-secondary"
+                onClick={() => setShowAdd(false)}
+              >
                 <X width="32" height="32" viewBox="0 0 16 16" />
               </Button>
             </Modal.Header>

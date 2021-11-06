@@ -4,6 +4,9 @@
 * Compare mode wrong Missing calculation
 * Change url to empty on last form changed to 'any'
 * Export/Import with new multigroup reissues (Lackey, JOL, Text)
+* Quick to work with see adv/base
+* G7 search
+* PR storyline/icons relocation
 
 # FIX MOBILE
 
@@ -16,6 +19,7 @@
 * Bookmarks/recent decks
 * Keywords search
 * Or Older set search
+* Disciplines in twd deck info
 
 # BIG FEATURES
 * Search for similar TWD decks
