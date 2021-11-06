@@ -101,6 +101,11 @@ function QuickSelect(props) {
                             />
                           </span>
                         )}
+                        {cryptCardBase[cardid]['New'] && (
+                          <div className="d-inline gray ps-1">
+                            [G{cryptCardBase[cardid]['Group']}]
+                          </div>
+                        )}
                       </>
                     )}
                   </span>

@@ -145,12 +145,14 @@ function Cards(props) {
                           {card && card.Id > 200000 && (
                             <ResultCryptLayoutText
                               card={card}
+                              setCard={setCard}
                               setImageSet={setImageSet}
                             />
                           )}
                           {card && card.Id < 200000 && (
                             <ResultLibraryLayoutText
                               card={card}
+                              setCard={setCard}
                               setImageSet={setImageSet}
                             />
                           )}
@@ -201,12 +203,14 @@ function Cards(props) {
                     {card && card.Id > 200000 && (
                       <ResultCryptLayoutText
                         card={card}
+                        setCard={setCard}
                         setImageSet={setImageSet}
                       />
                     )}
                     {card && card.Id < 200000 && (
                       <ResultLibraryLayoutText
                         card={card}
+                        setCard={setCard}
                         setImageSet={setImageSet}
                       />
                     )}

@@ -4,7 +4,6 @@
 * Compare mode wrong Missing calculation
 * Change url to empty on last form changed to 'any'
 * Export/Import with new multigroup reissues (Lackey, JOL, Text)
-* Quick to work with see adv/base
 * G7 search
 * PR storyline/icons relocation
 
