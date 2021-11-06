@@ -125,11 +125,16 @@ def deckExport(d, format):
                 q = i['q']
                 c = i['c']
                 deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
+                deck.append(f"{c['ASCII Name']}")
 
                 if c['Adv'] and c['Adv'][0]:
-                    deck.append(f"{c['ASCII Name']} (ADV)\n")
-                else:
-                    deck.append(f"{c['ASCII Name']}\n")
+                    deck.append(f" (ADV)")
+
+                # TODO when Lackey format established
+                # if c['New']:
+                #     deck.append(f" [G{c['Group']}]")
+
+                deck.append('\n')
 
         elif format == 'text' or format == 'twd':
             # Crypt export

@@ -19,6 +19,8 @@ def deckProxy(input):
                 name = card['Name']
                 if card['Adv'] and card['Adv'][0]:
                     name += 'adv'
+                if card['New']:
+                    name += f"g{card['Group']}"
             elif k < 200000 and v['q'] > 0:
                 name = get_library_by_id(k)['Name']
 

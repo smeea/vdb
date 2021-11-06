@@ -46,11 +46,21 @@ function TwdSearchFormCrypt(props) {
             >
               <div onClick={() => setModalCard(cryptCardBase[id])}>
                 <ResultCryptName card={cryptCardBase[id]} />
+                {cryptCardBase[id]['New'] && (
+                  <div className="d-inline gray ps-1">
+                    [G{cryptCardBase[id]['Group']}]
+                  </div>
+                )}
               </div>
             </OverlayTrigger>
           ) : (
             <div onClick={() => setModalCard(cryptCardBase[id])}>
               <ResultCryptName card={cryptCardBase[id]} />
+              {cryptCardBase[id]['New'] && (
+                <div className="d-inline gray ps-1">
+                  [G{cryptCardBase[id]['Group']}]
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -119,6 +129,11 @@ function TwdSearchFormCrypt(props) {
                             src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
                             title="Advanced"
                           />
+                        </div>
+                      )}
+                      {cryptCardBase[card]['New'] && (
+                        <div className="d-inline gray ps-1">
+                          [G{cryptCardBase[card]['Group']}]
                         </div>
                       )}
                     </>

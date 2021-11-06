@@ -688,6 +688,9 @@
             },
             "FB":{
                 "PTo":"3"
+            },
+            "Promo":{
+                "20211015":true
             }
         },
         "Requirement":"",
@@ -1750,7 +1753,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Maneuver, only usable to go to long range.\n[CHI] Strike: dodge, with an optional press, only usable to end combat.",
+        "Card Text":"[chi] Maneuver, only usable to get to long range.\n[CHI] Strike: dodge, with 1 optional press, only usable to end combat.",
         "Set":{
             "FN":{
                 "C":true,
@@ -1758,6 +1761,9 @@
             },
             "LotN":{
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -2790,7 +2796,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Do not replace until after combat.\n[chi] This vampire may prevent 1 damage each round this combat.\n[CHI] This vampire may prevent 2 damage each round this combat.",
+        "Card Text":"Do not replace until after combat.\n[chi] This vampire can prevent 1 damage each round this combat.\n[CHI] This vampire can prevent 2 damage each round this combat.",
         "Set":{
             "DS":{
                 "C":true
@@ -2800,6 +2806,9 @@
             },
             "LotN":{
                 "PR":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -3391,11 +3400,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Usable by a locked vampire.\n[chi] Only usable during a referendum. Gain 3 votes.\n[CHI] Only usable when an ally or younger vampire is taking a (D) action directed at a minion you control. This vampire burns 2 blood to cause the action to end (unsuccessfully).",
+        "Card Text":"Usable by a locked vampire.\n[chi] Only usable during the polling step of a political action. This vampire gets +3 votes.\n[CHI] Only usable if an ally or younger vampire is performing an action directed at a minion you control. Burn 2 blood to have the action fail.",
         "Set":{
             "LotN":{
                 "C":true,
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -6671,7 +6683,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[dem] Put this card on the acting vampire. If this vampire attempts to block, the acting vampire cannot play action modifiers requiring Dementation [dem], Chimerstry [chi], Dominate [dom] or Presence [pre]. Vampires opposing this vampire in combat cannot play cards that require those Disciplines.\n[DEM] As above, and actions requiring those Disciplines cannot be directed at this vampire.",
+        "Card Text":"+1 stealth action.\n[dem] Put this card on this vampire. In combat, opposing vampires cannot play cards requiring Dementation [dem], Chimerstry [chi], Dominate [dom] or Presence [pre]. If this vampire attempts to block, the acting vampire cannot play action modifier cards requiring any of those Disciplines until the end of the action.\n[DEM] As above, and minions cannot perform actions requiring any of those Disciplines directed at this vampire.",
         "Set":{
             "Sabbat":{
                 "R":true
@@ -6681,6 +6693,9 @@
             },
             "Third":{
                 "PM":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -6708,13 +6723,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Strike: steal equipment.\n[CHI] Strike: steal equipment with First Strike.",
+        "Card Text":"[chi] Strike: steal equipment.\n[CHI] As above, with first strike.",
         "Set":{
             "DS":{
                 "C":true
             },
             "FN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -9639,10 +9657,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth political action.\nChoose a political action card in another Methuselah's ash heap. Call the referendum given on that card (this Ravnos must meet the requirements of that political action, if any) and remove that card from the game. This vampire gains 3 additional votes in this referendum.",
+        "Card Text":"+1 stealth political action.\nChoose a political action card in another Methuselah's ash heap, and call the referendum listed on the chosen card (this Ravnos must meet the requirements of that political action, if any) and remove the chosen card from the game. This vampire gets +3 votes in this referendum.",
         "Set":{
             "KMW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -12594,7 +12615,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Chimerstry [chi]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Chimerstry [CHI].",
+        "Card Text":"Discipline.\nPut this card on a vampire. This vampire gets +1 level of Chimerstry [chi] and +1 capacity. Cannot be put on a vampire with superior Chimerstry [CHI].",
         "Set":{
             "DS":{
                 "C":true
@@ -12604,6 +12625,9 @@
             },
             "LotN":{
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -12909,7 +12933,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready unlocked Blood Brother of the same circle as another one who has just been blocked.\n[san] Cancel the combat and end the action. (Do not unlock the blocking minion.)\n[SAN] As above, and unlock the acting Blood Brother.",
+        "Card Text":"Requires a ready unlocked Blood Brother of the same circle as another one who has just been blocked, before block resolution.\n[san] Lock the blocking minion and end the action.\n[SAN] As above, and unlock the acting Blood Brother.",
         "Set":{
             "LoB":{
                 "C":true
@@ -14563,10 +14587,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Condemnation.\n[chi] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready vampire. The vampire with this card has -3 votes. Burn all other Condemnations on this minion.\n[DAI] As above, and this vampire burns 1 blood each time a referendum passes.",
+        "Card Text":"+1 stealth action. Condemnation.\n[chi] (D) Lock a younger vampire.\n[dai] Requires an infernal vampire. (D) Put this card on a ready vampire. The attached vampire gets -3 votes. Burn all other condemnation cards on this minion.\n[DAI] As [dai] above, and the attached vampire burns 1 blood each time a referendum passes.",
         "Set":{
             "KMW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -20891,10 +20918,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] +1 stealth action. (D) Put this card on a ready minion. You still control this card. Burn this card to reduce that minion's stealth to 0. The minion may still increase his or her stealth.\n[CHI] Reduce the acting minion's stealth to 0. The minion may still increase his or her stealth.",
+        "Card Text":"[chi] [ACTION] +1 stealth action. (D) Put this card on a ready minion; you still control this card. Burn this card to reduce the attached minion's stealth to 0. (The attached minion can still increase their stealth.)\n[CHI] [REACTION] Reduce the acting minion's stealth to 0. (The minion can still increase their stealth.)",
         "Set":{
             "FN":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -20948,6 +20978,9 @@
             },
             "HttBR":{
                 "B":"1"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -22346,13 +22379,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] (D) Lock a ready minion. This acting vampire inflicts 1 unpreventable damage on that minion.\n[CHI] (D) Choose a Methuselah. This acting vampire inflicts 1 unpreventable damage on each ready minion controlled by that Methuselah.",
+        "Card Text":"[chi] (D) Lock a ready minion and inflict 1 unpreventable damage on them.\n[CHI] (D) Choose any Methuselah. Inflict 1 unpreventable damage on each ready minion controlled by the chosen Methuselah.",
         "Set":{
             "KMW":{
                 "C":true
             },
             "LotN":{
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -22632,10 +22668,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a referendum.\n[ACTIONMODIFIER] Each ready Laibon Ravnos gets 2 additional votes.\n[REACTION] Each ready Ravnos gets 1 additional vote.",
+        "Card Text":"Only usable during the polling step of a political action.\n[ACTIONMODIFIER] Each Laibon Ravnos gets +2 votes.\n[REACTION] Each Ravnos gets +1 vote.",
         "Set":{
             "LoB":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -24631,10 +24670,13 @@
         "Pool Cost":"3",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nThe minion with this equipment gets +1 bleed and +1 strength. This minion may enter combat with any minion controlled by another Methuselah as a (D) action. If this minion is a vampire, he or she has superior Potence [POT] and superior Chimerstry [CHI], and combat cards cost this vampire 1 less blood. While the bearer is ready, this equipment cannot be transferred, moved or stolen. If this equipment is burned, this minion takes 5 unpreventable damage. During your unlock phase, burn 1 pool or burn this equipment.",
+        "Card Text":"Unique.\nThe bearer gets +1 bleed and +1 strength. The bearer can enter combat with a minion as a (D) action. This vampire gets superior Potence [POT] and superior Chimerstry [CHI], and combat cards cost this vampire 1 fewer blood. While the bearer is ready, this equipment cannot be moved or stolen. If this equipment is burned, it inflicts 5 unpreventable environmental damage on the bearer. During your unlock phase, burn 1 pool or burn this equipment.",
         "Set":{
             "Promo":{
                 "20021101":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -25329,10 +25371,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Cancel a reaction card that requires Auspex [aus] or Dementation [dem] as it is played (no cost is paid).\n[CHI] +1 stealth, and once this action, this vampire can burn 1 blood to use the [chi] effect above.",
+        "Card Text":"[chi] Cancel a reaction card requiring Auspex [aus] or Dementation [dem] as it is played, and its cost is not paid.\n[CHI] +1 stealth, and once this action, this vampire can burn 1 blood to use the [chi] effect above.",
         "Set":{
             "LotN":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -25488,10 +25533,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] (D) Put this card on a ready minion and lock that minion. This minion cannot play cards or cast votes or ballots. This minion does not unlock as normal. During this minion's unlock phase, he or she can burn 1 life or 1 blood to burn this card. Burn this card if this minion enters combat.\n[CHI] As above, but this is a +1 stealth action.",
+        "Card Text":"[chi] (D) Put this card on a ready minion and lock them. The attached minion cannot play cards or cast votes or ballots and does not unlock as normal. During their unlock phase, they can burn 1 life or 1 blood to burn this card. Burn this card if they enter combat.\n[CHI] As above, and this is a +1 stealth action.",
         "Set":{
             "LotN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -25701,13 +25749,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] [COMBAT] Strike: put this card on the opposing vampire; this cannot be dodged. The vampire with this card cannot play cards that require any superior Disciplines. He or she may burn this card during his or her unlock phase instead of unlocking.\n[CHI] [REACTION] As above, but put on the acting vampire after a successful (D) action directed at you (after resolving the action).",
+        "Card Text":"[chi] [COMBAT] Strike: put this card on the opposing vampire; this strike cannot be dodged. The attached vampire cannot play cards requiring any superior Disciplines. They can burn this card during their unlock phase instead of unlocking as normal.\n[CHI] [REACTION] As above, but put this card on the acting vampire after resolution of a successful action directed at you (or a card you control).",
         "Set":{
             "FN":{
                 "R":true
             },
             "LotN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -25745,6 +25796,9 @@
             },
             "LotN":{
                 "PR":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -25767,13 +25821,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[chi] Put this card on the acting vampire. During your unlock phase, add a counter to this card. The counters on this card may be used to pay some or all of this vampire's blood cost to play cards that require Chimerstry [chi].\n[CHI] As above, and put a counter on this card when it comes into play.",
+        "Card Text":"+1 stealth action.\n[chi] Put this card on this vampire. During your unlock phase, add 1 counter to this card. This vampire can use these counters to pay some or all of the blood cost of cards they play requiring Chimerstry [chi].\n[CHI] As above, and this card comes into play with 1 counter.",
         "Set":{
             "KMW":{
                 "C":true
             },
             "LotN":{
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -26186,7 +26243,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a Gangrel or Gangrel antitribu you control. This vampire is now Ahrimane (and Sabbat). This vampire gains one level of Spiritus [spi]. This vampire is now sterile.",
+        "Card Text":"Master.\nPut this card on a Gangrel or Gangrel antitribu you control. This vampire is now Ahrimane and Sabbat. This vampire gains one level of Spiritus [spi]. This vampire is now sterile.",
         "Set":{
             "BL":{
                 "C":true
@@ -27056,6 +27113,9 @@
         "Set":{
             "FN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -28297,7 +28357,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nLock to give a Ravnos +1 stealth for the current action.",
+        "Card Text":"Unique location.\nLock to give any Ravnos +1 stealth.",
         "Set":{
             "DS":{
                 "C":true
@@ -28307,6 +28367,9 @@
             },
             "LotN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -29353,13 +29416,16 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. Each Gangrel you control gets +1 strength. This card may be burned by any minion who is not Ravnos as a (D) action.",
+        "Card Text":"Unique.\nPut this card in play. Each Gangrel you control gets +1 strength. Any non-Ravnos minion can burn this card as a (D) action.",
         "Set":{
             "DS":{
                 "U":true
             },
             "Anarchs":{
                 "PG":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -32829,11 +32895,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a bleed action.\n[aus][chi] +1 bleed (limited). You cannot play another action modifier to increase this bleed. If an ally or younger vampire is currently attempting to block this action, that block fails and that minion cannot block this action.\n[AUS][CHI] As above, but with +2 bleed (limited).",
+        "Card Text":"Only usable during a bleed action.\n[aus][chi] +1 bleed (limited). If an ally or younger vampire is currently attempting to block this action, that attempt fails and the blocking minion cannot attempt to block this action again.\n[AUS][CHI] As above, but with +2 bleed (limited).",
         "Set":{
             "LotN":{
                 "C":true,
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -33862,13 +33931,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined in combat.\n[chi] Equip this minion with the first weapon you find in your library (working down from the top). This weapon does not contest any card in play. Do not pay the cost for this weapon. Shuffle afterward. At the end of the combat, burn the weapon if it is still in play.\n[CHI] As above, but return the equipment to your library at the end of combat if it is still in play. Shuffle afterward.",
+        "Card Text":"Only usable before range is determined.\n[chi] Equip this vampire with the first weapon you find in your library (working down from the top; shuffle afterward; if the requirements are not met, it is burned). This weapon does not contest any card in play. Do not pay the cost for this weapon. At the end of this combat, burn the weapon if it is still in play.\n[CHI] As above, but shuffle the equipment into your library at the end of combat if it is still in play.",
         "Set":{
             "DS":{
                 "U":true
             },
             "FN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -34285,7 +34357,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] The acting minion gets -1 stealth for the remainder of the turn.\n[CHI] Reduce a bleed against any Methuselah by 1.",
+        "Card Text":"[chi] The acting minion gets -1 stealth until the end of the turn.\n[CHI] Reduce a bleed against any Methuselah by 1.",
         "Set":{
             "DS":{
                 "C":true
@@ -34295,6 +34367,9 @@
             },
             "LotN":{
                 "PR":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -34486,13 +34561,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined.\n[chi] Combat ends. Move the bottom card of your crypt to your ready region. He or she does not contest any other minions or titles in play. The vampire has an amount of blood equal to half of his or her capacity (round down). Combat begins between the vampire and the opposing minion. Remove the crypt card from the game at the end of combat.\n[CHI] As above, but the vampire has an amount of blood equal to his or her capacity.",
+        "Card Text":"Only usable before range is determined.\n[chi] Combat ends. Move the bottom card from your crypt to your ready region. That minion does not contest any other minions or titles in play. That vampire gains blood equal to half their capacity rounded down. That vampire and the opposing minion enter combat. Remove that minion from the game at the end of combat (if they are still in play).\n[CHI] As above, but that vampire gains blood equal to their capacity.",
         "Set":{
             "AH":{
                 "V":true
             },
             "FN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -34826,10 +34904,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Only usable before range is chosen. This vampire gets +1 strength for the remainder of combat. When combat ends, if the opposing minion is ready, the opposing minion gains an amount of blood (or life) equal to the amount he or she lost due to damage this combat. A vampire can play only one Imposing Phantasm each combat.\n[CHI] As above, and this vampire gets an additional strike (limited) this round.",
+        "Card Text":"Only usable before range is determined. A vampire can play only one Imposing Phantasm each combat.\n[chi] This vampire gets +1 strength this combat. After combat ends, if the opposing minion is ready, the opposing minion gains blood or life equal to the amount they lost to damage this combat.\n[CHI] As above, with 1 additional strike (limited) this round.",
         "Set":{
             "FN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -36585,13 +36666,16 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nYou may lock this card to give a vampire you control +X strength for one strike, where X is the number of votes the vampire has (e.g., a prince gets +2 strength).",
+        "Card Text":"Unique location.\nLock to give a striking vampire you control +X strength for that strike (usable after both combatants have chosen their strike), where X is the number of votes the vampire has (e.g., a prince gets +2 strength).",
         "Set":{
             "AH":{
                 "R":true
             },
             "CE":{
                 "R":true
+            },
+            "Promo":{
+                "20211015":true
             }
         },
         "Requirement":"",
@@ -37147,19 +37231,23 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready prince or justicar. +1 stealth action.\nPut this card in play. Each Methuselah controlling a non-Camarilla vampire burns 1 pool during his or her unlock phase. Any Methuselah may burn this card by burning a non-Camarilla vampire he or she controls during his or her master phase.",
+        "Card Text":"+1 stealth action. Requires a prince or justicar.\nPut this card in play. Each Methuselah controlling a non-Camarilla vampire burns 1 pool during their unlock phase. Any Methuselah can burn a non-Camarilla vampire they control during their master phase to burn this card.",
         "Set":{
             "DS":{
                 "U":true
             },
             "CE":{
                 "R":true
+            },
+            "Promo":{
+                "20211015":true
             }
         },
         "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
-            "Richard Kane Ferguson"
+            "Richard Kane Ferguson",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Rulings":[
             {
@@ -37310,10 +37398,13 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nThe Ravnos with this equipment may move 2 blood from the blood bank to a younger Ravnos in your uncontrolled region as a +1 stealth action that costs 1 blood. Cards that require Chimerstry [chi] cost this Ravnos 1 less blood.",
+        "Card Text":"Unique.\nThis Ravnos can add 2 blood to a younger Ravnos in your uncontrolled region as a +1 stealth action that costs 1 blood. Cards requiring Chimerstry [chi] cost this Ravnos 1 fewer blood.",
         "Set":{
             "LotN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -38602,10 +38693,13 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. Lock to give +1 intercept to a Ravnos with capacity above 4 you control.",
+        "Card Text":"Unique.\nPut this card in play. Lock to give a Ravnos with capacity 5 or more you control +1 intercept.",
         "Set":{
             "LotN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -41823,13 +41917,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a referendum before votes and ballots are cast.\nIf the referendum passes, then the next referendum a vampire you control successfully calls passes automatically.",
+        "Card Text":"Only usable during the polling step of a political action before votes and ballots are cast.\nIf the referendum passes, the next referendum a vampire you control calls passes automatically (skip the polling step).",
         "Set":{
             "AH":{
                 "R":true
             },
             "CE":{
                 "R":true
+            },
+            "Promo":{
+                "20211015":true
             }
         },
         "Requirement":"",
@@ -42042,6 +42139,9 @@
         "Set":{
             "LotN":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -42900,13 +43000,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Put this card in play. Weapons possessed by minions you control inflict +1 damage each strike. Any minion may burn this card as a (D) action.\n[CHI] As above, but the weapons inflict +2 damage each strike.",
+        "Card Text":"[chi] Put this card in play. Strikes with weapons made by minions you control inflict +1 damage. Any minion can burn this card as a (D) action.\n[CHI] As above, but they inflict +2 damage.",
         "Set":{
             "AH":{
                 "C":true
             },
             "FN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -43001,13 +43104,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Damage the opposing minion's weapons inflict on this vampire is reduced to zero during this combat.\n[CHI] Strike: 1R unpreventable aggravated damage. Only usable at long range.",
+        "Card Text":"[chi] The opposing minion's weapons inflict no damage on this vampire this combat.\n[CHI] Only usable at long range. Strike: 1R unpreventable aggravated damage.",
         "Set":{
             "BH":{
                 "C":true
             },
             "LotN":{
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -44200,7 +44306,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] [ACTIONMODIFIER] +1 stealth.\n[CHI] [COMBAT] Strike: combat ends. If this vampire was blocked while performing an action other than bleeding, the action continues as if unblocked.",
+        "Card Text":"[chi] [ACTIONMODIFIER] +1 stealth.\n[CHI] [COMBAT] Strike: combat ends. If this vampire was blocked while performing a non-bleed action, the action continues as if unblocked.",
         "Set":{
             "FN":{
                 "C":true,
@@ -44208,6 +44314,9 @@
             },
             "LotN":{
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -44308,10 +44417,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Only usable when this acting vampire is blocked (play before combat, if any). Unlock this vampire and end the action. This vampire cannot act again this turn.\n[CHI]+2 stealth if this is an undirected action, otherwise +1 stealth.",
+        "Card Text":"[chi] Only usable if this vampire is blocked, before block resolution. Unlock this vampire, lock the blocking minion, and end the action. This vampire cannot perform actions again this turn.\n[CHI] +2 stealth if this is an undirected action, otherwise +1 stealth.",
         "Set":{
             "LotN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -46505,13 +46617,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] (D) Lock a ready minion and unlock this acting vampire.\n[aus][chi] (D) Put this card on a ready minion and lock him or her. This minion doesn't unlock as normal. During this minion's unlock phase, he or she may burn a pool to unlock. Burn this card when the acting vampire leaves play.\n[AUS][CHI] As [aus][chi] above, but without the option to burn a pool to unlock.",
+        "Card Text":"[chi] (D) Unlock this vampire and lock a ready minion.\n[aus][chi] (D) Put this card on a ready minion and lock them. The attached minion does not unlock as normal. During their unlock phase, they can burn 1 pool to unlock. Burn this card after this acting vampire leaves the ready region\n[AUS][CHI] As [aus][chi] above, but without the option to burn pool to unlock.",
         "Set":{
             "BL":{
                 "R":true
             },
             "LotN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -46955,13 +47070,16 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Unique.\nPut this card into play. This card represents a unique Nosferatu of the same sect as the acting Nosferatu with 2 capacity and basic Animalism [ani]. The Bestial cannot act except to hunt, cannot cast votes or ballots and cannot have equipment. During your unlock phase, this Bestial may employ a retainer from your hand that requires Animalism (requirements and cost apply as normal). This is not an action and cannot be blocked.",
+        "Card Text":"+1 stealth action. Unique.\nPut this card in play; it becomes a 2-capacity unique Nosferatu of the same sect as the acting Nosferatu with basic Animalism [ani]. Nosferatu Bestial cannot perform non-hunt actions, cast votes or ballots, or have or use equipment. During your unlock phase, Nosferatu Bestial can employ a retainer requiring Animalism from your hand (requirements and cost apply as normal; this is not an action and cannot be blocked).",
         "Set":{
             "Anarchs":{
                 "R":true
             },
             "KoT":{
                 "R":true
+            },
+            "Promo":{
+                "20211015":true
             }
         },
         "Requirement":"",
@@ -47529,6 +47647,9 @@
             },
             "LotN":{
                 "PR":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -48959,7 +49080,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location. Hunting ground.\nDuring your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one Hunting Ground card each turn.",
+        "Card Text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
         "Set":{
             "DS":{
                 "C":true
@@ -48969,6 +49090,9 @@
             },
             "LotN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -49301,13 +49425,16 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. Cards that require Chimerstry [chi] cost Ravnos 1 less blood. Any minion may burn this card as a (D) action; if that minion is a vampire, he or she takes 1 unpreventable damage when this card is burned.",
+        "Card Text":"Unique.\nPut this card in play. Cards requiring Chimerstry [chi] cost Ravnos 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
         "Set":{
             "FN":{
                 "R":true
             },
             "LotN":{
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -49575,11 +49702,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nEach ready unlocked Ravnos gains 1 blood from the blood bank.",
+        "Card Text":"+1 stealth action.\nEach ready unlocked Ravnos gains 1 blood.",
         "Set":{
             "FN":{
                 "C":true,
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -50089,10 +50219,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Only usable after this vampire plays an action modifier that requires Chimerstry [chi]. Move that action modifier card from your ash heap to your hand (discard down afterward). Not usable if the action modifier was canceled as it was played.\n[CHI] Only usable when an action card that requires Chimerstry is put in play. Put this card on the action card. If the action card is burned, return it to your hand instead (discard down afterward).",
+        "Card Text":"[chi] Only usable after this vampire plays an action modifier card requiring Chimerstry [chi] that is not canceled as it is played. Move that action modifier card from your ash heap to your hand (discard down afterward).\n[CHI] Only usable if an action card requiring Chimerstry is put in play. Put this card on the action card. If the attached card would be burned, instead return it to your hand (discard down afterward).",
         "Set":{
             "KMW":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -50319,10 +50452,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable when this acting vampire is blocked (before locking the blocker).\n[chi] Cancel combat and do not lock the blocking minion.\n[mel] The block fails and the action continues. The blocking minion cannot attempt to block this action again. Not usable if the blocking minion is an older vampire.\n[MEL] As [mel] above, and if this action is successful, lock that blocking minion.",
+        "Card Text":"Only usable if this vampire is blocked, before block resolution.\n[chi] Cancel the block resolution (the action is still blocked).\n[mel] Not usable if the blocking minion is an older vampire. The block fails, and the action continues. The blocking minion cannot attempt to block this action again.\n[MEL] As [mel] above, and if this action is successful, lock the blocking minion after action resolution.",
         "Set":{
             "LoB":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -53946,13 +54082,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Only usable by a vampire attempting to block. Cancel an action modifier that requires Chimerstry [chi] or Obfuscate [obf] as it is played.\n[CHI] As above, and if this vampire successfully blocks this action, the acting minion cannot use cards that require Chimerstry or Obfuscate during the resulting combat.",
+        "Card Text":"Only usable by a blocking vampire.\n[chi] Cancel an action modifier card requiring Chimerstry [chi] or Obfuscate [obf] as it is played.\n[CHI] As above, and the acting minion cannot use cards requiring Chimerstry or Obfuscate during the resulting combat if this vampire blocks.",
         "Set":{
             "FN":{
                 "C":true
             },
             "LotN":{
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -55618,13 +55757,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"If this referendum is successful, each Ravnos may choose to become Camarilla. Put this card into play. Whenever a Ravnos enters play, he or she may choose to become Camarilla. The Ravnos clan is a Camarilla clan.",
+        "Card Text":"Successful referendum means this card is put in play and each Ravnos can choose to become Camarilla. As any Ravnos enters play, they can choose to become Camarilla.",
         "Set":{
             "DS":{
                 "U":true
             },
             "Tenth":{
                 "A":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -55645,13 +55787,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nDuring your master phase, you may move 1 counter from your pool to this card and add 1 blood from the blood bank. When equipping a minion, you may lock this card to use the blood counters on it to pay some or all of the pool or blood cost of the equipment.",
+        "Card Text":"Unique location.\nDuring your master phase, you can move 1 counter from your pool to this card and add 1 counter (from the blood bank). A minion you control can lock this card to use these counters to pay some or all of the blood or pool cost of an equipment they equip.",
         "Set":{
             "DS":{
                 "U":true
             },
             "FN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -55679,7 +55824,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nPut X currency counters on this card when you play it, where X is the number of Ravnos you control. When a Ravnos you control performs an action, you may use these currency counters toward the cost in blood (but not pool) of the action card. Burn this card when the last counter is removed.",
+        "Card Text":"Unique location.\nThis card comes into play with 1 counter for each Ravnos you control. Ravnos you control can use these counters to pay some or all of the blood cost of action cards they play. Burn this card if it has no counters.",
         "Set":{
             "AH":{
                 "R":true
@@ -55689,6 +55834,9 @@
             },
             "LotN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -55968,10 +56116,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] (D) Put Reality on a younger vampire. The vampire with this card cannot be the target of (D) actions, cannot act (except to burn this card), cannot block and cannot cast votes or ballots. That vampire can burn Reality as a +1 stealth action.\n[CHI] (D) Move a locked younger vampire to the uncontrolled region(breaking any temporary control effects). The vampire's blood counters, master cards and minion cards stay with that vampire, with any counters they have on them (those cards are out of play as long as the vampire remains uncontrolled).",
+        "Card Text":"[chi] (D) Put this card on a younger vampire. This vampire cannot be the target of directed actions, cannot perform actions except to burn this card, cannot block and cannot cast votes or ballots. This vampire can burn this card as a +1 stealth action.\n[CHI] (D) Move a locked younger vampire to the uncontrolled region (breaking any temporary control effects); any cards and counters on the target vampire stay with them but are out of play as long as the target vampire remains uncontrolled.",
         "Set":{
             "FN":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -56398,11 +56549,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Only usable when this acting vampire is blocked. Unlock the acting vampire, do not lock the blocking minion, and cancel the current action and combat. Take the card played to perform the action (if any) back into your hand. Your vampires cannot attempt the same action again this turn. Discard down to your hand size.\n[CHI] As above, but lock the blocking minion.",
+        "Card Text":"Only usable if this vampire is blocked, before block resolution.\n[chi] Unlock this vampire, and the action ends (unsuccessfully). If an action card was used to perform the action, return it to its owner's hand (discard down afterward). Vampires you control cannot perform the same action again this turn.\n[CHI] As above, and lock the blocking minion.",
         "Set":{
             "FN":{
                 "C":true,
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -60960,13 +61114,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a (D) action against you.\n[tha] +1 intercept.\n[vis] As [tha] above, with an optional maneuver in the resulting combat if this vampire successfully blocks.\n[VIS] Cancel an action card or action modifier card that requires Chimerstry [chi] or Obfuscate [obf] as it is played (no cost is paid).",
+        "Card Text":"Only usable during an action directed at you (or a card you control).\n[tha] +1 intercept.\n[vis] As [tha] above, with 1 optional maneuver during the resulting combat if this vampire blocks.\n[VIS] Cancel an action card or action modifier card requiring Chimerstry [chi] or Obfuscate [obf] as it is played, and its cost is not paid.",
         "Set":{
             "LoB":{
                 "C":true
             },
             "HttB":{
                 "PGar":"4"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -61737,13 +61894,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] (D) Burn any retainer or put this card on any ally. The minion with this card does not unlock as normal during the unlock phase as long as the acting vampire remains in play.\n[CHI] As above, but put this card on any vampire in play.",
+        "Card Text":"[chi] (D) Burn a retainer or put this card on an ally. The attached minion does not unlock as normal. Burn this card after this acting vampire leaves the ready region.\n[CHI] As above, but put this card on a vampire in play.",
         "Set":{
             "DS":{
                 "U":true
             },
             "FN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -61784,10 +61944,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] (D) Put this card on a ready minion. You still control this card. The minion with this card may not act or block. Burn this card during the minion's controller's discard phase.\n[CHI] As above, but burn this card during your next unlock phase.",
+        "Card Text":"[chi] (D) Put this card on a ready minion; you still control this card. The attached minion cannot perform actions or block. Burn this card during their discard phase.\n[CHI] As above, but burn this card during your unlock phase.",
         "Set":{
             "FN":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -62919,7 +63082,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique contract. Trifle. Requires a Black Hand vampire.\nPut this card on a ready minion. Every Black Hand vampire is considered chosen for this contract. Any Black Hand vampire can enter combat with this minon as a +1 stealth (D) action. Burn this card if this minion is not ready.",
+        "Card Text":"Unique contract. Trifle. Requires a Black Hand vampire.\nPut this card on a ready minion. Every Black Hand vampire is considered chosen for this contract. Any Black Hand vampire can enter combat with this minion as a +1 stealth (D) action. Burn this card if this minion is not ready.",
         "Set":{
             "DM":{
                 "C":true
@@ -63105,10 +63268,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Choose one or two allies or younger vampires controlled by your predator and/or prey. The chosen minions cannot block or cast votes or ballots for the rest of the current minion phase.\n[CHI] As above, but choose three allies or younger vampires.",
+        "Card Text":"[chi] Choose one or two allies or younger vampires controlled by your predator and/or prey. The chosen minions cannot block or cast votes or ballots this turn.\n[CHI] As above, but choose three allies or younger vampires.",
         "Set":{
             "KMW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -63216,10 +63382,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch.\n[chi] +1 stealth action. (D) Look at another Methuselah's hand and discard a card from it.\n[dem] +2 stealth action. Burn an event (undirected, no matter who controls the event).\n[pro] (D) Inflict 2 unpreventable damage on a ready minion.",
+        "Card Text":"Requires an Anarch.\n[chi] +1 stealth action. (D) Look at another Methuselah's hand and discard one card of your choice from it.\n[dem] +2 stealth action. Burn an event. This action is undirected, no matter who controls the event.\n[pro] (D) Inflict 2 unpreventable damage on a ready minion.",
         "Set":{
             "TR":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"anarch",
@@ -63463,10 +63632,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Only usable when a minion you control successfully blocks (play before combat). Not usable if the blocking minion played any reaction cards that this vampire could not play. Do not lock the blocking minion; lock this reacting vampire instead. Now this vampire is the blocking vampire (and combat begins as normal).\n[CHI] As above, and this vampire gets an optional maneuver during the first round of the resulting combat.",
+        "Card Text":"Only usable if a minion you control blocks, before block resolution. Not usable if the blocking minion played any reaction cards that this vampire could not play.\n[chi] This action is blocked with this vampire as the blocking minion instead (and the block is resolved as normal).\n[CHI] As above, and this vampire gets 1 optional maneuver during the first round of the resulting combat.",
         "Set":{
             "FN":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -63487,10 +63659,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nMove the top two cards from your library to this equipment (face down). You may look at the cards on this equipment at any time. If this Ravnos is ready and you should draw a card from your library, you may draw one of these cards instead. During your unlock phase, you may move the top card from your library to this card.",
+        "Card Text":"Unique.\nMove the top 2 cards of your library to this equipment, face down and out of play (you can look at the cards at any time). While this Ravnos is ready, if you would draw a card from your library, you can draw one of these cards instead. During your unlock phase, you can move the top card of your library to this card.",
         "Set":{
             "KMW":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -64922,10 +65097,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] (D) Look at another Methuselah's hand. That Methuselah discards any equipment you find there. He or she draws back up to his or her hand size afterward.\n[CHI] As above, but this vampire may equip with one of the non-location equipment cards found at no cost, even if he or she doesn't meet the requirements of that card.",
+        "Card Text":"[chi] (D) Look at another Methuselah's hand and discard all equipment cards from it.\n[CHI] As above, and you can put one of the non-location equipment cards discarded on this vampire (ignore requirements and cost).",
         "Set":{
             "FN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -68877,13 +69055,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nMove 2 blood from the blood bank to a ready Ravnos.",
+        "Card Text":"Add 2 blood to a ready Ravnos.",
         "Set":{
             "KMW":{
                 "C":true
             },
             "LotN":{
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -69273,10 +69454,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi][for] For the remainder of combat, when any damage is successfully inflicted on this vampire in a round, the opposing minion becomes unable to use presses that round.\n[CHI][FOR] As above, and if any damage is successfully inflicted on this vampire in a round, the opposing minion becomes unable to use any additional strikes that round.",
+        "Card Text":"[chi][for] This combat, if any damage is successfully inflicted on this vampire in a round, the opposing minion cannot press that round.\n[CHI][FOR] As above, and if any damage is successfully inflicted on this vampire in a round, the opposing minion cannot use additional strikes that round.",
         "Set":{
             "LotN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -69632,11 +69816,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Melee weapon.\nStrength+1 damage each strike. A Ravnos may use this weapon to strike: destroy weapon with first strike instead.",
+        "Card Text":"Melee weapon.\nStrike: strength+1 damage. A Ravnos can use this weapon to strike: burn weapon with first strike.",
         "Set":{
             "LotN":{
                 "U":true,
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -72888,13 +73075,16 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nThe Ravnos with this equipment gets +1 bleed. Once each combat, this Ravnos may dodge as a strike.",
+        "Card Text":"Unique.\nThis Ravnos gets +1 bleed. Once each combat, this Ravnos can strike: dodge.",
         "Set":{
             "FN":{
                 "R":true
             },
             "LotN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -72971,13 +73161,16 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on a prince who has successfully bled you since your last turn. Each time this prince unlocks, he or she takes 1 point of damage (damage not preventable). This prince may burn this card as a (D) action.",
+        "Card Text":"Put this card on a prince who has successfully bled you since your last turn. Each time this prince unlocks, they take 1 unpreventable environmental damage. This prince can burn this card as a (D) action.",
         "Set":{
             "DS":{
                 "C":true
             },
             "Tenth":{
                 "A":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -73068,13 +73261,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. Tremere get +1 stealth when attempting actions that require Thaumaturgy [tha]. Vampires with basic Thaumaturgy may play combat cards requiring Thaumaturgy as if they had superior Thaumaturgy [THA]. Any minion may burn this card as a (D) action; Malkavians get -1 stealth when attempting that action.",
+        "Card Text":"Unique.\nPut this card in play. Tremere get +1 stealth during actions requiring Thaumaturgy [tha]. Vampires with basic Thaumaturgy can play combat cards requiring Thaumaturgy as if they had superior Thaumaturgy [THA]. Any minion can burn this card as a (D) action; Malkavians get -1 stealth during that action.",
         "Set":{
             "DS":{
                 "U":true
             },
             "CE":{
                 "R":true
+            },
+            "Promo":{
+                "20211015":true
             }
         },
         "Requirement":"",
@@ -73837,10 +74033,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready non-Sterile Ravnos with a capacity above 4. +1 stealth action.\nPut this card in play; it becomes a 2-capacity Ravnos with one level of Chimerstry [chi]. You may move a master: Discipline card from your hand to this vampire (pay cost as normal). This vampire is not considered unique, must hunt this turn and is the same sect as the acting Ravnos.",
+        "Card Text":"+1 stealth action. Requires a non-sterile Ravnos with capacity 5 or more.\nPut this card in play; it becomes a 2-capacity (non-unique) Ravnos of the same sect as the acting Ravnos with basic Chimerstry [chi], and must hunt this turn. You can put a master Discipline card from your hand on this new vampire.",
         "Set":{
             "KMW":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"non-sterile,capacity 5 or more",
@@ -74641,10 +74840,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a ready anarch. Choose a vampire in your uncontrolled region.\n[chi] (D) Move 1 blood from an uncontrolled minion in any uncontrolled region to the chosen vampire.\n[pre] (D) Bleed. If the bleed is successful, put 1 blood counter on the chosen vampire.\n[qui] Put 1 blood counter on the chosen vampire. If the number of counters equals or exceeds his or her capacity, move that vampire to your ready region.",
+        "Card Text":"+1 stealth action. Requires an Anarch. Choose a vampire in your uncontrolled region.\n[chi] (D) Move 1 blood from a crypt card in any uncontrolled region to the chosen vampire.\n[pre] (D) Bleed. If the bleed is successful, add 1 blood to the chosen vampire.\n[qui] Add 1 blood to the chosen vampire. If the amount of blood equals or exceeds their capacity, move them to your ready region.",
         "Set":{
             "KMW":{
                 "C":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"anarch",
@@ -75758,13 +75960,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable by a blocking minion.\n[chi] The acting minion's stealth is set to 0. (He or she gets -X stealth, where X is his or her current stealth.)\n[CHI] As above, and once during the resulting combat if this vampire successfully blocks, he or she may steal 1 blood as a strike.",
+        "Card Text":"Only usable by a blocking vampire.\n[chi] Reduce the acting minion's stealth to 0. (The minion can still increase their stealth.)\n[CHI] As above, and this blocking vampire can strike: steal 1 blood or life (becoming blood) during the resulting combat if they block.",
         "Set":{
             "DS":{
                 "C":true
             },
             "Tenth":{
                 "A":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -78261,13 +78466,16 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play with 10 nightmare counters. Ravnos get +1 bleed and +1 strength and do not hunt as normal. A Ravnos may steal a blood from another Ravnos as a +1 stealth hunt action. During each Methuselah's unlock phase, he or she may move a nightmare counter from this card to a Ravnos. If this card has no counters, each Ravnos burns a blood for each nightmare counter or is burned, then burn this card and the counters. Only one Week of Nightmares may be played in a game.",
+        "Card Text":"Only one Week of Nightmares can be played in a game.\nPut this card in play with 10 nightmare counters. Ravnos get +1 bleed and +1 strength and do not hunt as normal. Any Ravnos can steal 1 blood from another Ravnos as a +1 stealth hunt action. During each Methuselah's unlock phase, that Methuselah can move 1 nightmare counter from this card to any Ravnos. If this card has no counters, each Ravnos burns 1 blood for each nightmare counter on them or is burned, then burn this card and the nightmare counters.",
         "Set":{
             "FN":{
                 "R":true
             },
             "LotN":{
                 "PR":1
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -78839,10 +79047,13 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[chi] Allocate X+1 points among one or more minions. Each point represents -1 intercept for that minion this action.\n[CHI] Only usable as the action is announced. Choose X-1 allies or younger vampires. The chosen minions cannot block or play reaction cards this action.",
+        "Card Text":"[chi] Allocate X+1 points among one or more minions. Each minion gets -1 intercept for each point allocated.\n[CHI] Only usable as the action is announced. Choose X-1 allies or younger vampires. The chosen minions cannot block or play reaction cards this action.",
         "Set":{
             "LotN":{
                 "R":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
@@ -79605,11 +79816,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable by a ready unlocked Ravnos other than the acting minion.\nAllies and vampires younger than this modifying Ravnos get -1 intercept on this action.",
+        "Card Text":"Only usable by a ready unlocked Ravnos other than the acting minion.\nAllies and vampires younger than this modifying Ravnos get -1 intercept.",
         "Set":{
             "LotN":{
                 "C":true,
                 "PR":"2"
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",

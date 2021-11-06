@@ -56,11 +56,13 @@ function ResultCryptModal(props) {
         : localizedCrypt &&
           localizedCrypt[lang] &&
           localizedCrypt[lang][card['Id']]
-        ? lang + '/'
-        : 'en-EN/'
-    }${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
-      card['Adv'][0] ? 'adv' : ''
-    }.jpg`;
+        ? lang
+        : 'en-EN'
+    }/${props.card['ASCII Name']
+      .toLowerCase()
+      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
+      props.card['Adv'][0] ? 'adv' : ''
+    }${props.card['New'] ? `g${props.card['Group']}` : ''}.jpg`;
 
     return (
       <img

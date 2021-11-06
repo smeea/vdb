@@ -281,21 +281,23 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
         for i in twda:
             if card['Twd']:
                 continue
-            # deckid = i['id']
-            # date = int(i['date'][:4])
 
             for c in i['crypt']['cards']:
                 if c['id'] == card['Id']:
                     card['Twd'] = True
 
         # Add Advancement info
+        card['Advancement'] = ""
         for c in cards:
-            if c['Name'] == card['Name'] and c['Id'] != card['Id']:
+            if c['Name'] == card['Name'] and c['Id'] != card['Id'] and c['Group'] == card['Group']:
                 isAdv = True if card['Adv'] else False
                 card['Advancement'] = [isAdv, c['Id']]
 
-        if 'Advancement' not in card:
-            card['Advancement'] = ""
+        # Add new revision info
+        card['New'] = False
+        for c in cards:
+            if c['Name'] == card['Name'] and int(c['Id']) < card['Id'] and c['Group'] != card['Group']:
+                card['New'] = True
 
         # Prepare for export
         cards_frontend[card['Id']] = {
@@ -313,6 +315,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
             'ASCII Name': card['ASCII Name'],
             'Disciplines': card['Disciplines'],
             'Rulings': card['Rulings'],
+            'New': card['New']
         }
 
         card_backend = {
@@ -331,6 +334,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
             'ASCII Name': card['ASCII Name'],
             'Disciplines': card['Disciplines'],
             'Twd': card['Twd'],
+            'New': card['New']
         }
 
         cards_backend.append(card_backend)

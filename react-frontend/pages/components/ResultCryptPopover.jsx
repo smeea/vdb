@@ -20,8 +20,8 @@ function ResultCryptPopover(props) {
       : 'en-EN'
   }/${props.card['ASCII Name']
     .toLowerCase()
-    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
-    props.card['Adv'][0] ? 'adv' : ''
+    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'][0] ? 'adv' : ''}${
+    props.card['New'] ? `g${props.card['Group']}` : ''
   }.jpg`;
 
   const cardImage = (

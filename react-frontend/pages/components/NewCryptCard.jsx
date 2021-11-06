@@ -83,6 +83,11 @@ function NewCryptCard(props) {
                         />
                       </div>
                     )}
+                    {cryptCardBase[card]['New'] && (
+                      <div className="d-inline gray ps-1">
+                        [G{cryptCardBase[card]['Group']}]
+                      </div>
+                    )}
                   </>
                 )}
               </div>
