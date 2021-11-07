@@ -10,7 +10,7 @@ function Documentation(props) {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
-        <Col xs={12} md={6} className="px-0">
+        <Col xs={12} md={5} className="px-0">
           <Banner />
           <div className="px-2">
             <div className="pt-2">
@@ -20,7 +20,7 @@ function Documentation(props) {
                 <br />
                 If something is not clear or you need additional information,
                 please reach me by the contacts in the bottom of{' '}
-                <Link to="/about">About page</Link>.
+                <Link to="/about">About page</Link>
               </p>
             </div>
 
@@ -247,7 +247,7 @@ function Documentation(props) {
                   It is not the chance to draw additional cards to your hand,
                   but chance to draw cards in the hand in the first place
                   (imagine you return hand to the library, excluding already
-                  played cards, shuffle it and draw back to your hand size).
+                  played cards, shuffle it and draw back to your hand size)
                 </li>
                 <li>
                   Draw calculation code (requires a little programming literacy
@@ -255,7 +255,6 @@ function Documentation(props) {
                   <a href="https://github.com/smeea/vdb/blob/master/react-frontend/pages/components/drawProbability.js">
                     there
                   </a>
-                  .
                 </li>
               </ul>
             </div>
@@ -268,17 +267,17 @@ function Documentation(props) {
               </h5>
               Inventory management in VDB let you browse your card collection
               with existing crypt/library search and track how collection is
-              used in your existing decks.
+              used in your existing decks
               <h6>Add cards from you collection:</h6>
               <ul>
                 <li>
                   One by one using &#39;Add Card&#39; forms on top (last card
                   you add stays on top so you can change quantity without
-                  scrolling down);
+                  scrolling down)
                 </li>
                 <li>
                   Add full deck from your Deck collection (be careful you can
-                  add one deck multiple times doubling the quantity);
+                  add one deck multiple times doubling the quantity)
                 </li>
               </ul>
               <h6>Search cards from inventory:</h6>
@@ -287,15 +286,15 @@ function Documentation(props) {
                   Go to Crypt or Library search page (the one you use to search
                   all VTES cards)
                 </li>
-                <li>Activate Inventory Mode in the top-left corner;</li>
+                <li>Activate Inventory Mode in the top-left corner</li>
                 <li>
                   Now all searches you do will search in your inventory (and you
                   can swap to-from all VTES cards any time to repeat search with
-                  new &#39;source&#39;);
+                  new &#39;source&#39;)
                 </li>
                 <li>
                   Two columns left to capacity show: total cards you have in
-                  inventory & used cards in your decks (read below about it);
+                  inventory & used cards in your decks (read below about it)
                 </li>
               </ul>
               <h6>
@@ -309,7 +308,7 @@ function Documentation(props) {
                   </div>
                   Virtual (default). These decks are excluded from inventory
                   management tracking, like you want for virtual Lackey decks or
-                  your in-progress projects.
+                  your in-progress projects
                 </li>
                 <li>
                   <div className="d-inline px-2">
@@ -317,7 +316,7 @@ function Documentation(props) {
                   </div>
                   Flexible. These decks can share cards between them, like you
                   want for your temporary test decks or if your card pool is not
-                  big (yet).
+                  big (yet)
                 </li>
                 <li>
                   <div className="d-inline px-2">
@@ -325,41 +324,19 @@ function Documentation(props) {
                   </div>
                   Fixed. These decks each use unique cards like for your
                   permanent decks you dont want to disassembly between game
-                  sessions.
+                  sessions
                 </li>
               </ul>
               <p>
                 You can change status of the deck in Deck page by clicking
-                Status button next to deck select form.
+                Status button next to deck select form
               </p>
               <p>
                 Additionally you can set status per-card (i.e. if your deck is
                 fixed except few Masters you swap between decks) clicking on the
-                icon next to the card in the deck list. All other cards of the
-                deck will continue to be of the deck status.
+                icon to the left of the card in the deck list. All other cards
+                of the deck will continue to be of the deck status
               </p>
-              <h6>And more:</h6>
-              <ul>
-                <li>
-                  After you set status for your decks (and of course you can
-                  change it any time), you can turn on Inventory Mode and hover
-                  over card quantity in Deck and Search to see additional (
-                  {`'used'`}) information about the card in your Inventory and
-                  Decks - Fixed (total of all Fixed decks, as you dont reuse
-                  these cards) and maximum of Flexible in one deck (as you are
-                  ready to share them between decks). Same information is
-                  available as second column in Inventory.
-                </li>
-                <li>
-                  If you have less cards in inventory than you use (total fixed
-                  + maximum flexible), then card quantity highlighted in red
-                </li>
-                <li>
-                  Cards from the decks you {`'use'`} (Fixed or Flexible) are
-                  shown in Inventory even if you dont have them (with zero
-                  quantity), so you will see what you miss.
-                </li>
-              </ul>
             </div>
           </div>
         </Col>

@@ -18,9 +18,9 @@ function About(props) {
             <div className="pt-2">
               <h5>WHAT IS IT</h5>
               <p>
-                VDB is online card search, deck building and inventory
-                (collection) management tool for Vampire the Eternal Struggle
-                (VTES).
+                VDB is online card search, TWD (tournament winning decks)
+                browser, deck building and inventory (collection) management
+                tool for Vampire the Eternal Struggle (VTES)
               </p>
             </div>
 
@@ -37,42 +37,17 @@ function About(props) {
                   <Link to="/twd">Search tournament-winning decks</Link>
                 </li>
                 <li>
-                  <Link to="/decks">Create your decks</Link>
+                  <Link to="/decks">Create decks</Link>
                 </li>
                 <li>
-                  <Link to="/inventory">Manage your inventory</Link>
+                  <Link to="/inventory">Manage inventory</Link>
                 </li>
                 <li>
-                  <Link to="/cards">Quick view card by the name</Link>
+                  <Link to="/cards">Quick search card by name</Link>
                 </li>
                 <li>
                   <Link to="/documentation">Documentation / Help</Link>
                 </li>
-              </ul>
-            </div>
-
-            <div className="pt-2">
-              <h5>FEATURES</h5>
-              <ul>
-                <li>
-                  Combined deck building & search interface - browse & add cards
-                  to your decks on-the-fly
-                </li>
-                <li>
-                  Wide search options for cards and Tournament-Winning Decks
-                  (TWD)
-                </li>
-                <li>Mobile-friendly (best on screens &gt;6&quot;)</li>
-                <li>
-                  Import/export your decks to popular formats (Amaranth, Lackey,
-                  Excel)
-                </li>
-                <li>
-                  Manage your card collection (inventory) with full search power
-                </li>
-                <li>Create printable PDF with proxy cards</li>
-                <li>Open source, ad-free & privacy-respecting</li>
-                <li>Once familiar with, you will love it!</li>
               </ul>
             </div>
 
@@ -95,7 +70,7 @@ function About(props) {
                 </a>
                 <br />
                 Online card search and deck-building tool. I use *many* ideas
-                from Amaranth.
+                from Amaranth
               </p>
 
               <p>
@@ -103,7 +78,7 @@ function About(props) {
                   <b>Codex of the Damned</b>
                 </a>
                 <br />
-                Strategy portal.
+                Strategy portal
               </p>
 
               <p>
@@ -115,16 +90,8 @@ function About(props) {
                 <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs">
                   vekn forum
                 </a>{' '}
-                for more tools!
+                for more tools
                 <br />
-              </p>
-            </div>
-
-            <div className="pt-2">
-              <h5>PRIVACY</h5>
-              <p>
-                We respect privacy and promise not to use/share your data
-                (email, decks, etc), and not to track your activity.
               </p>
             </div>
 
@@ -133,15 +100,18 @@ function About(props) {
               <p>
                 Development happens in{' '}
                 <a href="https://github.com/smeea/vdb">
-                  this Github repository.
+                  this Github repository
                 </a>
                 <br />
                 Source code of the site is available under free{' '}
                 <a href="https://en.wikipedia.org/wiki/MIT_License">
-                  MIT license.
+                  MIT license
                 </a>
                 <br />
-                Card images & icons are copyrighted by Paradox Interactive AB.
+                Card images & icons are copyrighted by{' '}
+                <a href="https://www.paradoxinteractive.com/">
+                  Paradox Interactive AB
+                </a>
               </p>
             </div>
 
