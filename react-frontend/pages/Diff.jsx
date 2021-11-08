@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Modal,
   Button,
@@ -45,7 +45,7 @@ function Diff(props) {
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [deckErrorFrom, setDeckErrorFrom] = useState(false);
   const [deckErrorTo, setDeckErrorTo] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [selectFrom, setSelectFrom] = useState('from-my');
   const [selectTo, setSelectTo] = useState('to-my');
@@ -98,7 +98,7 @@ function Diff(props) {
           deckFromId = formFrom.replace(`${process.env.ROOT_URL}decks?id=`, '');
         }
         setActiveDeck({ src: null, deckid: null });
-        history.push(`/diff?from=${deckFromId}&to=${toQuery}`);
+        navigate(`/diff?from=${deckFromId}&to=${toQuery}`);
         break;
       case 'to':
         let deckToId = formTo;
@@ -106,7 +106,7 @@ function Diff(props) {
           deckToId = formTo.replace(`${process.env.ROOT_URL}decks?id=`, '');
         }
         setSecondaryDeck({ src: null, deckid: null });
-        history.push(`/diff?from=${fromQuery}&to=${deckToId}`);
+        navigate(`/diff?from=${fromQuery}&to=${deckToId}`);
         break;
     }
   };
@@ -122,7 +122,7 @@ function Diff(props) {
     }
     setActiveDeck({ src: null, deckid: null });
     setSecondaryDeck({ src: null, deckid: null });
-    history.push(`/diff?from=${deckToId}&to=${deckFromId}`);
+    navigate(`/diff?from=${deckToId}&to=${deckFromId}`);
   };
 
   const getDeck = (deckid, setDeck, setError) => {
@@ -181,7 +181,7 @@ function Diff(props) {
     }
 
     if (activeDeck.deckid && activeDeck.deckid != fromQuery) {
-      history.push(`/diff?from=${activeDeck.deckid}&to=${toQuery}`);
+      navigate(`/diff?from=${activeDeck.deckid}&to=${toQuery}`);
     }
   }, [fromQuery, activeDeck, cryptCardBase, libraryCardBase]);
 
@@ -213,7 +213,7 @@ function Diff(props) {
     }
 
     if (secondaryDeck.deckid && secondaryDeck.deckid != toQuery)
-      history.push(`/diff?from=${fromQuery}&to=${secondaryDeck.deckid}`);
+      navigate(`/diff?from=${fromQuery}&to=${secondaryDeck.deckid}`);
   }, [toQuery, secondaryDeck, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {

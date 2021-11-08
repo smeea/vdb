@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Form, Spinner } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
@@ -40,7 +40,7 @@ function SearchCryptForm(props) {
   const [preresults, setPreresults] = useState(undefined);
   const showLimit = 300;
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
@@ -144,7 +144,7 @@ function SearchCryptForm(props) {
   };
 
   const handleClearButton = () => {
-    if (!isMobile) history.push('/crypt');
+    if (!isMobile) navigate('/crypt');
     setCryptFormState(JSON.parse(JSON.stringify(defaults)));
     setCryptResults(undefined);
     setPreresults(undefined);
@@ -165,12 +165,7 @@ function SearchCryptForm(props) {
     const input = sanitizeFormState('crypt', cryptFormState);
 
     if (Object.keys(input).length !== 0) {
-      if (
-        history.location.search !=
-        `?q=${encodeURIComponent(JSON.stringify(input))}`
-      ) {
-        history.push(`/crypt?q=${encodeURIComponent(JSON.stringify(input))}`);
-      }
+      navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(input))}`);
 
       const options = {
         method: 'POST',
@@ -207,7 +202,7 @@ function SearchCryptForm(props) {
         })
         .catch((error) => {
           setSpinnerState(false);
-          if (isMobile) history.push('/crypt');
+          if (isMobile) navigate('/crypt');
           setCryptResults([]);
           setPreresults([]);
           setShowError(true);

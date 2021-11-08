@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Container, Row, Col, Stack, Button } from 'react-bootstrap';
 import ArrowRepeat from '../assets/images/icons/arrow-repeat.svg';
 import Dice3 from '../assets/images/icons/dice-3-fill.svg';
@@ -11,6 +11,7 @@ import ButtonAddCard from './components/ButtonAddCard.jsx';
 import AppContext from '../context/AppContext.js';
 
 function Cards(props) {
+  const params = useParams();
   const {
     decks,
     cryptCardBase,
@@ -26,7 +27,7 @@ function Cards(props) {
 
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const CardImage = () => {
     if (card) {
@@ -75,7 +76,7 @@ function Cards(props) {
         Math.random() * Math.floor(Object.keys(cryptCardBase).length)
       ) + 200000;
     setCard(cryptCardBase[id]);
-    history.push(`/cards/${id}`);
+    navigate(`/cards/${id}`);
   };
 
   const randomLibrary = () => {
@@ -84,7 +85,7 @@ function Cards(props) {
         Math.random() * Math.floor(Object.keys(libraryCardBase).length)
       ) + 100000;
     setCard(libraryCardBase[id]);
-    history.push(`/cards/${id}`);
+    navigate(`/cards/${id}`);
   };
 
   let inDeck = 0;
@@ -102,12 +103,12 @@ function Cards(props) {
   }
 
   useEffect(() => {
-    if (props.id > 200000 && cryptCardBase) {
-      setCard(cryptCardBase[props.id]);
-    } else if (props.id < 200000 && libraryCardBase) {
-      setCard(libraryCardBase[props.id]);
+    if (params.id > 200000 && cryptCardBase) {
+      setCard(cryptCardBase[params.id]);
+    } else if (params.id < 200000 && libraryCardBase) {
+      setCard(libraryCardBase[params.id]);
     }
-  }, [props.id, cryptCardBase, libraryCardBase]);
+  }, [params.id, cryptCardBase, libraryCardBase]);
 
   return (
     <Container className="cards-container p-0">

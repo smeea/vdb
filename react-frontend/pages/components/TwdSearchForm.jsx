@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Form, Row, Col, Spinner } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
@@ -38,7 +38,7 @@ function TwdSearchForm(props) {
 
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;
-  const history = useHistory();
+  const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
@@ -152,7 +152,7 @@ function TwdSearchForm(props) {
     setTwdFormState(JSON.parse(JSON.stringify(defaults)));
     setTwdResults(undefined);
     setShowError(false);
-    history.push('/twd');
+    navigate('/twd');
   };
 
   const handleSubmitButton = (event) => {
@@ -165,12 +165,7 @@ function TwdSearchForm(props) {
     const input = sanitizeFormState('twd', twdFormState);
 
     if (Object.keys(input).length !== 0) {
-      if (
-        history.location.search !=
-        `?q=${encodeURIComponent(JSON.stringify(input))}`
-      ) {
-        history.push(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`);
-      }
+      navigate(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`);
 
       const options = {
         method: 'POST',

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import ResultLibraryTable from './ResultLibraryTable.jsx';
@@ -22,7 +22,7 @@ function ResultLibrary(props) {
 
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleChange = (method) => {
     changeLibrarySearchSort(method);
@@ -30,7 +30,7 @@ function ResultLibrary(props) {
   };
 
   const handleClear = () => {
-    history.push('/library');
+    navigate('/library');
     setLibraryResults(undefined);
     setShowLibrarySearch(!showLibrarySearch);
   };

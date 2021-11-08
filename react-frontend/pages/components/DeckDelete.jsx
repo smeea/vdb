@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import TrashFill from '../../assets/images/icons/trash-fill.svg';
 import ModalConfirmation from './ModalConfirmation.jsx';
@@ -8,14 +8,14 @@ import AppContext from '../../context/AppContext.js';
 function DeckDelete(props) {
   const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
   const [showConfirmation, setShowConfirmation] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     deleteDeck();
     setShowConfirmation(false);
     setActiveDeck({ src: null, deckid: null });
-    history.push('/decks');
+    navigate('/decks');
     isMobile && props.setShowButtons(false);
   };
 

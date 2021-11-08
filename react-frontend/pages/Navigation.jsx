@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import LightningFill from '../assets/images/icons/lightning-fill.svg';
 import PersonFill from '../assets/images/icons/person-fill.svg';
@@ -142,4 +142,4 @@ function Navigation(props) {
   );
 }
 
-export default withRouter(Navigation);
+export default Navigation;

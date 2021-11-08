@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
 import TwdOpenDeckButton from './TwdOpenDeckButton.jsx';
 import DeckClone from './DeckClone.jsx';
@@ -8,12 +8,12 @@ import defaults from './forms_data/defaultsTwdForm.json';
 
 function TwdResultDescription(props) {
   const { setTwdFormState, username, isMobile } = useContext(AppContext);
-  const history = useHistory();
+  const navigate = useNavigate();
   const def = JSON.parse(JSON.stringify(defaults));
 
   const handlePlayerClick = (player) => {
     if (isMobile) {
-      history.push(
+      navigate(
         `/twd?q=${encodeURIComponent(JSON.stringify({ player: player }))}`
       );
     } else {
@@ -26,7 +26,7 @@ function TwdResultDescription(props) {
 
   const handleLocationClick = (location) => {
     if (isMobile) {
-      history.push(
+      navigate(
         `/twd?q=${encodeURIComponent(JSON.stringify({ location: location }))}`
       );
     } else {

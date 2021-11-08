@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Form, Spinner } from 'react-bootstrap';
 import Check2 from '../../assets/images/icons/check2.svg';
 import X from '../../assets/images/icons/x.svg';
@@ -40,7 +40,7 @@ function SearchLibraryForm(props) {
   const [preresults, setPreresults] = useState(undefined);
   const showLimit = 300;
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
@@ -129,7 +129,7 @@ function SearchLibraryForm(props) {
   };
 
   const handleClearButton = () => {
-    if (!isMobile) history.push('/library');
+    if (!isMobile) navigate('/library');
     setLibraryFormState(JSON.parse(JSON.stringify(defaults)));
     setLibraryResults(undefined);
     setPreresults(undefined);
@@ -150,12 +150,7 @@ function SearchLibraryForm(props) {
     const input = sanitizeFormState('library', libraryFormState);
 
     if (Object.keys(input).length !== 0) {
-      if (
-        history.location.search !=
-        `?q=${encodeURIComponent(JSON.stringify(input))}`
-      ) {
-        history.push(`/library?q=${encodeURIComponent(JSON.stringify(input))}`);
-      }
+      navigate(`/library?q=${encodeURIComponent(JSON.stringify(input))}`);
 
       const options = {
         method: 'POST',
@@ -191,7 +186,7 @@ function SearchLibraryForm(props) {
           }
         })
         .catch((error) => {
-          if (isMobile) history.push('/library');
+          if (isMobile) navigate('/library');
           setSpinnerState(false);
           setLibraryResults([]);
           setPreresults([]);

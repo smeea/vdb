@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import X from '../../assets/images/icons/x.svg';
 import Plus from '../../assets/images/icons/plus.svg';
 import ResultCryptTable from './ResultCryptTable.jsx';
@@ -23,7 +23,7 @@ function ResultCrypt(props) {
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const className = 'search-crypt-table';
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleChange = (method) => {
     changeCryptSearchSort(method);
@@ -31,7 +31,7 @@ function ResultCrypt(props) {
   };
 
   const handleClear = () => {
-    history.push('/crypt');
+    navigate('/crypt');
     setCryptResults(undefined);
     setShowCryptSearch(!showCryptSearch);
   };

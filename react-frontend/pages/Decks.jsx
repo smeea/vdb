@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from '../assets/images/icons/shuffle.svg';
 import At from '../assets/images/icons/at.svg';
@@ -52,7 +52,7 @@ function Decks(props) {
   const [showMenuButtons, setShowMenuButtons] = useState(false);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const { hash } = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
   const [selectFrom, setSelectFrom] = useState('precons');
   const [deckError, setDeckError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(
@@ -265,7 +265,7 @@ function Decks(props) {
       activeDeck.deckid != query.get('id') &&
       activeDeck.deckid != 'deckInUrl'
     )
-      history.push(`/decks?id=${activeDeck.deckid}`);
+      navigate(`/decks?id=${activeDeck.deckid}`);
 
     if (
       activeDeck.src == 'twd' &&

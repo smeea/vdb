@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button, Row, Col } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
 import TwdResultTotal from './TwdResultTotal.jsx';
@@ -20,14 +20,14 @@ function TwdResult(props) {
     isMobile,
   } = useContext(AppContext);
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const showCounterStep = 20;
   const [twdRows, setTwdRows] = useState([]);
   const [showCounter, setShowCounter] = useState(0);
   const [deckCounter, setDeckCounter] = useState(0);
 
   const handleClear = () => {
-    history.push('/twd');
+    navigate('/twd');
     setTwdResults(undefined);
     setShowTwdSearch(!props.showSearch);
   };

@@ -1,18 +1,18 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import FileDiffFill from '../../assets/images/icons/file-diff-fill.svg';
 import AppContext from '../../context/AppContext.js';
 
 const DeckDiffButton = (props) => {
   const { isMobile } = useContext(AppContext);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <Button
       onClick={() => {
         isMobile && props.setShowButtons(false);
-        history.push(`/diff?from=${props.deckid}&to=${props.deckid}`);
+        navigate(`/diff?from=${props.deckid}&to=${props.deckid}`);
       }}
       variant="secondary"
     >

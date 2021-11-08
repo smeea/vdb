@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext, Suspense } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
-  Redirect,
+  Navigate,
+  Routes,
 } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext.js';
 import AppContext from './context/AppContext';
@@ -564,25 +564,16 @@ function App(props) {
           <Navigation />
         </ThemeProvider>
 
-        <Switch>
-          <Suspense fallback={<></>}>
-            <Route path="/" exact component={() => <Redirect to="/about" />} />
-            <Route path="/about" exact component={() => <About />} />
-            <Route
-              path="/documentation"
-              exact
-              component={() => <Documentation />}
-            />
-            <Route path="/account">
-              <Account />
-            </Route>
-            <Route path="/diff">
-              <Diff />
-            </Route>
-            <Route path="/twd">
-              <Twd />
-            </Route>
-            <Route path="/inventory">
+        <Routes>
+          <Route path="*" element={<Navigate to="/about" />} />
+          <Route path="about" element={<About />} />
+          <Route path="documentation" element={<Documentation />} />
+          <Route path="account" element={<Account />} />
+          <Route path="diff" element={<Diff />} />
+          <Route path="twd" element={<Twd />} />
+          <Route
+            path="inventory"
+            element={
               <Inventory
                 inventoryDeckAdd={inventoryDeckAdd}
                 inventoryDeckDelete={inventoryDeckDelete}
@@ -590,11 +581,12 @@ function App(props) {
                 setInventoryCrypt={setInventoryCrypt}
                 setInventoryLibrary={setInventoryLibrary}
               />
-            </Route>
-            <Route path="/decks">
-              <Decks />
-            </Route>
-            <Route path="/crypt">
+            }
+          />
+          <Route path="decks" element={<Decks />} />
+          <Route
+            path="crypt"
+            element={
               <Crypt
                 activeDeck={
                   activeDeck.src == 'my'
@@ -602,8 +594,11 @@ function App(props) {
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
               />
-            </Route>
-            <Route path="/library">
+            }
+          />
+          <Route
+            path="library"
+            element={
               <Library
                 activeDeck={
                   activeDeck.src == 'my'
@@ -611,14 +606,11 @@ function App(props) {
                     : { src: 'my', deckid: lastDeck.deckid }
                 }
               />
-            </Route>
-            <Route path="/cards" exact component={(props) => <Cards />} />
-            <Route
-              path="/cards/:id"
-              component={(props) => <Cards id={props.match.params.id} />}
-            />
-          </Suspense>
-        </Switch>
+            }
+          />
+          <Route path="cards" element={<Cards />} />
+          <Route path="cards/:id" element={<Cards />} />
+        </Routes>
       </Router>
     </div>
   );

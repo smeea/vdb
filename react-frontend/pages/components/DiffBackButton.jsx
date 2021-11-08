@@ -1,16 +1,16 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import Folder2Open from '../../assets/images/icons/folder2-open.svg';
 
 function DeckCopyUrl(props) {
-  const history = useHistory();
+  const navigate = useNavigate();
   return (
     <>
       <Button
         variant="secondary"
         onClick={() =>
-          history.push(props.deckid ? `/decks?id=${props.deckid}` : '/decks')
+          navigate(props.deckid ? `/decks?id=${props.deckid}` : '/decks')
         }
       >
         <div className="d-flex justify-content-center align-items-center">
