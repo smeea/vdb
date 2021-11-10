@@ -52,6 +52,17 @@ function About(props) {
             </div>
 
             <div className="pt-2">
+              <h5>TROUBLESHOOTING</h5>
+              <p>
+                If you experience problems like page crashes or something start
+                to behave not as expected, try to reload page with browser cache
+                update (Ctrl+F5 on Windows/Linux or Command+Shift+R on MacOS)
+                <br />
+                If this does not help, please contact me using contacts below
+              </p>
+            </div>
+
+            <div className="pt-2">
               <h5>VERSION</h5>
               <p>
                 Card text based on{' '}

@@ -45,10 +45,7 @@ function ResultCryptTotal(props) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <ResultCryptSortForm
-        value={props.sortMethod}
-        onChange={props.handleChange}
-      />
+      <ResultCryptSortForm onChange={props.handleChange} />
     </>
   );
 

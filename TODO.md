@@ -4,7 +4,6 @@
 * Compare mode wrong Missing calculation
 * Change url to empty on last form changed to 'any'
 * Export/Import with new multigroup reissues (Lackey, JOL, Text)
-* Copy-URL on MacOS
 
 # FIX MOBILE
 
@@ -34,7 +33,7 @@
 # IMPROVE TECHNOLOGY - FRONTEND
 * Sync with websockets
 * Move autocompletion to frontend
-* Improve inventory render performance
+* Improve inventory render performance - react-window
 * Move search to frontend
 * Move export to frontend
 * Move import to frontend

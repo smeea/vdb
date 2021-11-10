@@ -32,10 +32,7 @@ function ResultLibraryTotal(props) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <ResultLibrarySortForm
-        value={props.sortMethod}
-        onChange={props.handleChange}
-      />
+      <ResultLibrarySortForm onChange={props.handleChange} />
     </>
   );
 
