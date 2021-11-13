@@ -18,9 +18,6 @@ import AppContext from '../../context/AppContext.js';
 
 function InventoryCryptTable(props) {
   const { usedCryptCards, isMobile, isWide } = useContext(AppContext);
-
-  let resultTrClass;
-
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
 
   const handleModalCardChange = (d) => {

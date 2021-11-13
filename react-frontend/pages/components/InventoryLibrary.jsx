@@ -47,8 +47,7 @@ function InventoryLibrary(props) {
 
   if (props.compact) {
     Object.keys(props.cards).map((card) => {
-      const i = props.cards[card].c['Type'];
-      libraryByType[i] = {
+      libraryByType['All'] = {
         card: props.cards[card],
       };
     });

@@ -4,6 +4,7 @@
 * Compare mode wrong Missing calculation
 * Change url to empty on last form changed to 'any'
 * Export/Import with new multigroup reissues (Lackey, JOL, Text)
+* Refactor ResultLibraryType
 
 # FIX MOBILE
 

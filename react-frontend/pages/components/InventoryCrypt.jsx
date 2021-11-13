@@ -73,8 +73,7 @@ function InventoryCrypt(props) {
 
   if (props.compact) {
     Object.keys(props.cards).map((card) => {
-      const i = props.cards[card].c['Clan'];
-      cryptByClan[i] = {
+      cryptByClan['All'] = {
         card: props.cards[card],
       };
     });

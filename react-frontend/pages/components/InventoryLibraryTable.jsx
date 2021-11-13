@@ -18,10 +18,8 @@ import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryLibraryTable(props) {
-  const { usedLibraryCards, nativeLibrary, isMobile } = useContext(AppContext);
-
-  let resultTrClass;
-
+  const { usedLibraryCards, nativeLibrary, isMobile, isWide } =
+    useContext(AppContext);
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
 
   const handleModalCardChange = (d) => {
@@ -170,7 +168,7 @@ function InventoryLibraryTable(props) {
             <ResultLibraryName card={card.c} />
           </div>
         )}
-        {isMobile ? (
+        {isMobile || !isWide ? (
           <div
             className="d-flex align-items-center justify-content-between cost-disciplines"
             onClick={() => handleClick()}
@@ -214,7 +212,7 @@ function InventoryLibraryTable(props) {
             </div>
           </>
         )}
-        {!isMobile && (
+        {isWide && !isMobile && (
           <div
             className="d-flex align-items-center justify-content-center burn"
             onClick={() => handleClick()}
