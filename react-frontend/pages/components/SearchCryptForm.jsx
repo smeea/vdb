@@ -220,15 +220,8 @@ function SearchCryptForm(props) {
   }, [cryptFormState]);
 
   useEffect(() => {
-    if (!isMobile) {
-      if (
-        JSON.stringify(cryptFormState) == JSON.stringify(defaults) &&
-        cryptResults
-      ) {
-        setCryptResults(undefined);
-      } else if (!cryptFormState.text || cryptFormState.text.length > 2) {
-        launchRequest();
-      }
+    if (!isMobile && (!cryptFormState.text || cryptFormState.text.length > 2)) {
+      launchRequest();
     }
   }, [cryptFormState, hideMissing]);
 

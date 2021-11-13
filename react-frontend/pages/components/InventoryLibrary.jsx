@@ -18,8 +18,6 @@ function InventoryLibrary(props) {
   const cardtypesSorted = [
     'All',
     'Master',
-    'Conviction',
-    'Power',
     'Action',
     'Action/Reaction',
     'Action/Combat',
@@ -37,6 +35,8 @@ function InventoryLibrary(props) {
     'Combat/Action Modifier',
     'Combat/Reaction',
     'Event',
+    'Conviction',
+    'Power',
   ];
 
   cardtypesSorted.map((type) => {

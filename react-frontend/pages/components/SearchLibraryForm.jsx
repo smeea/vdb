@@ -205,15 +205,11 @@ function SearchLibraryForm(props) {
   }, [libraryFormState]);
 
   useEffect(() => {
-    if (!isMobile) {
-      if (
-        JSON.stringify(libraryFormState) == JSON.stringify(defaults) &&
-        libraryResults
-      ) {
-        setLibraryResults(undefined);
-      } else if (!libraryFormState.text || libraryFormState.text.length > 2) {
-        launchRequest();
-      }
+    if (
+      !isMobile &&
+      (!libraryFormState.text || libraryFormState.text.length > 2)
+    ) {
+      launchRequest();
     }
   }, [libraryFormState, hideMissing]);
 
