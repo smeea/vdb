@@ -23,17 +23,16 @@ import AppContext from '../../context/AppContext.js';
 
 function SearchCryptForm(props) {
   const {
-    setShowCryptSearch,
-    cryptResults,
-    setCryptResults,
+    cryptCardBase,
     cryptFormState,
     setCryptFormState,
-    cryptCardBase,
-    inventoryMode,
+    setCryptResults,
     hideMissing,
     setHideMissing,
-    isMobile,
+    setShowCryptSearch,
     inventoryCrypt,
+    inventoryMode,
+    isMobile,
   } = useContext(AppContext);
 
   const [spinnerState, setSpinnerState] = useState(false);

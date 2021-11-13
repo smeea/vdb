@@ -25,13 +25,12 @@ import AppContext from '../../context/AppContext.js';
 
 function TwdSearchForm(props) {
   const {
-    setShowTwdSearch,
-    setTwdResults,
-    twdResults,
-    twdFormState,
-    setTwdFormState,
     cryptCardBase,
     libraryCardBase,
+    twdFormState,
+    setTwdFormState,
+    setTwdResults,
+    setShowTwdSearch,
     inventoryMode,
     isMobile,
   } = useContext(AppContext);

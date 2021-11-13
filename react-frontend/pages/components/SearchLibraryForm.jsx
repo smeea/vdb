@@ -23,17 +23,16 @@ import AppContext from '../../context/AppContext.js';
 
 function SearchLibraryForm(props) {
   const {
-    inventoryMode,
-    setShowLibrarySearch,
-    libraryResults,
-    setLibraryResults,
+    libraryCardBase,
     libraryFormState,
     setLibraryFormState,
-    libraryCardBase,
+    setLibraryResults,
     hideMissing,
     setHideMissing,
-    isMobile,
+    setShowLibrarySearch,
     inventoryLibrary,
+    inventoryMode,
+    isMobile,
   } = useContext(AppContext);
 
   const [spinnerState, setSpinnerState] = useState(false);
