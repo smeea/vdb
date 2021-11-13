@@ -4,20 +4,15 @@
 * Compare mode wrong Missing calculation
 * Change url to empty on last form changed to 'any'
 * Export/Import with new multigroup reissues (Lackey, JOL, Text)
-* Test useMemo in Inventory render
 
 # FIX MOBILE
 
 # FEATURES
 * Create revocable link to Inventory
 * Localized proxies
-* How can I help section - twd, rulings
-* TWD new/random to respect url
 * Export all in xlsx and csv
 * Bookmarks/recent decks
-* Keywords search
 * Or Older set search
-* Disciplines in twd deck info
 * Links to custom deck
 
 # BIG FEATURES

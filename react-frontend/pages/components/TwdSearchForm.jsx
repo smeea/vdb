@@ -199,6 +199,7 @@ function TwdSearchForm(props) {
     setSpinnerState(true);
     setShowError(false);
     setTwdFormState(JSON.parse(JSON.stringify(defaults)));
+    navigate('/twd');
 
     const url = `${process.env.API_URL}twd/new/${q}`;
     const options = {
@@ -223,8 +224,9 @@ function TwdSearchForm(props) {
 
   const getRandomTwd = (q) => {
     setSpinnerState(true);
-    setTwdFormState(JSON.parse(JSON.stringify(defaults)));
     setShowError(false);
+    setTwdFormState(JSON.parse(JSON.stringify(defaults)));
+    navigate('/twd');
 
     const url = `${process.env.API_URL}twd/random/${q}`;
     const options = {
@@ -247,15 +249,8 @@ function TwdSearchForm(props) {
   };
 
   useEffect(() => {
-    if (!isMobile) {
-      if (
-        JSON.stringify(twdFormState) == JSON.stringify(defaults) &&
-        twdResults
-      ) {
-        setTwdResults(undefined);
-      } else if (!twdFormState.event || twdFormState.event.length > 2) {
-        launchRequest();
-      }
+    if (!isMobile && (!twdFormState.event || twdFormState.event.length > 2)) {
+      launchRequest();
     }
   }, [twdFormState]);
 
