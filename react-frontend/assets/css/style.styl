@@ -465,24 +465,6 @@ td.prob
   td.burn
     width: 30px
 
-.inventory-crypt-table,
-.inventory-library-table
-  width: 100%
-  border: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
-  div.bordered
-    border-bottom: 1px solid var(--border-secondary)
-  div.quantity
-    width: 65px
-    font-size: 1.1em
-  div.used
-    width: 50px
-  div.name
-    width: 160px
-  &.compact
-    height: 45px
-
 .inventory-container
   height: calc(100vh - 165px)
   @media (max-width: 576px)
@@ -493,6 +475,24 @@ td.prob
   @media (max-width: 576px)
     height: calc(100vh - 181px)
 
+.inventory-crypt-table,
+.inventory-library-table
+  width: 100%
+  border: 1px solid var(--border-secondary)
+  @media (max-width: 576px)
+    border: 0px
+  div.bordered
+    border-bottom: 1px solid var(--border-secondary)
+  div.quantity
+    width: 75px
+    font-size: 1.1em
+  div.used
+    width: 45px
+  div.name
+    width: 165px
+  &.compact
+    height: 45px
+
 .inventory-crypt-table
   div.capacity
     width: 32px
@@ -501,7 +501,7 @@ td.prob
   div.title
     width: 25px
   div.clan
-    width: 40px
+    width: 30px
   div.group
     width: 25px
 

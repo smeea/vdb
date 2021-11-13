@@ -27,7 +27,7 @@ function InventoryCardQuantity(props) {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-between">
+    <div className="d-flex align-items-center justify-content-between w-100">
       {isMobile ? (
         <>
           <a className="quantity" onClick={() => handleQuantityChange(-1)}>

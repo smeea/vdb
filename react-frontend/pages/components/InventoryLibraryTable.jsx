@@ -70,7 +70,7 @@ function InventoryLibraryTable(props) {
 
     return (
       <>
-        <div className="d-flex align-items-center justify-content-center quantity">
+        <div className="d-flex align-items-center justify-content-center quantity px-1">
           {isMobile ? (
             <InventoryCardQuantity
               cardid={card.c['Id']}
