@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import LightningFill from '../assets/images/icons/lightning-fill.svg';
 import PersonFill from '../assets/images/icons/person-fill.svg';
@@ -29,6 +29,7 @@ function Navigation(props) {
     activeDeck,
   } = useContext(AppContext);
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  const location = useLocation();
 
   let twdUrl = '/twd';
   let cryptUrl = '/crypt';
