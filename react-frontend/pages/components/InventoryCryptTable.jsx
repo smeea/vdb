@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
+import { FixedSizeList } from 'react-window';
+import AutoSizer from 'react-virtualized-auto-sizer';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import CardPopover from './CardPopover.jsx';
@@ -39,12 +41,6 @@ function InventoryCryptTable(props) {
       isMobile && props.setShowFloatingButtons(false);
     };
 
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
-
     let softUsedMax = 0;
     let hardUsedTotal = 0;
 
@@ -63,36 +59,56 @@ function InventoryCryptTable(props) {
     }
 
     return (
-      <React.Fragment key={card.c['Id']}>
-        <tr className={resultTrClass}>
-          <td className="quantity">
-            {isMobile ? (
-              <div>
+      <>
+        <div className="d-flex align-items-center justify-content-center quantity">
+          {isMobile ? (
+            <InventoryCardQuantity
+              cardid={card.c['Id']}
+              q={card.q}
+              softUsedMax={softUsedMax}
+              hardUsedTotal={hardUsedTotal}
+            />
+          ) : (
+            <OverlayTrigger
+              placement={props.placement ? props.placement : 'right'}
+              overlay={<UsedPopover cardid={card.c.Id} />}
+            >
+              <>
                 <InventoryCardQuantity
                   cardid={card.c['Id']}
                   q={card.q}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
                 />
-              </div>
-            ) : (
-              <OverlayTrigger
-                placement={props.placement ? props.placement : 'right'}
-                overlay={<UsedPopover cardid={card.c.Id} />}
-              >
-                <div>
-                  <InventoryCardQuantity
-                    cardid={card.c['Id']}
-                    q={card.q}
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                  />
+              </>
+            </OverlayTrigger>
+          )}
+        </div>
+        <div className="d-flex align-items-center justify-content-center used">
+          {isMobile ? (
+            <>
+              {softUsedMax > 0 && (
+                <div className="d-flex align-items-center justify-content-center">
+                  <div className="d-inline opacity-035 pe-1">
+                    <Shuffle width="14" height="14" viewBox="0 0 16 16" />
+                  </div>
+                  {softUsedMax}
                 </div>
-              </OverlayTrigger>
-            )}
-          </td>
-          <td className="used">
-            {isMobile ? (
+              )}
+              {hardUsedTotal > 0 && (
+                <div className="d-flex align-items-center justify-content-center">
+                  <div className="d-inline opacity-035 pe-1">
+                    <PinAngleFill width="14" height="14" viewBox="0 0 16 16" />
+                  </div>
+                  {hardUsedTotal}
+                </div>
+              )}
+            </>
+          ) : (
+            <OverlayTrigger
+              placement={props.placement ? props.placement : 'right'}
+              overlay={<UsedPopover cardid={card.c.Id} />}
+            >
               <>
                 {softUsedMax > 0 && (
                   <div className="d-flex align-items-center justify-content-center">
@@ -115,111 +131,135 @@ function InventoryCryptTable(props) {
                   </div>
                 )}
               </>
-            ) : (
-              <OverlayTrigger
-                placement={props.placement ? props.placement : 'right'}
-                overlay={<UsedPopover cardid={card.c.Id} />}
-              >
-                <div>
-                  {softUsedMax > 0 && (
-                    <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pe-1">
-                        <Shuffle width="14" height="14" viewBox="0 0 16 16" />
-                      </div>
-                      {softUsedMax}
-                    </div>
-                  )}
-                  {hardUsedTotal > 0 && (
-                    <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pe-1">
-                        <PinAngleFill
-                          width="14"
-                          height="14"
-                          viewBox="0 0 16 16"
-                        />
-                      </div>
-                      {hardUsedTotal}
-                    </div>
-                  )}
-                </div>
-              </OverlayTrigger>
-            )}
-          </td>
-          <td className="capacity" onClick={() => handleClick()}>
-            <ResultCryptCapacity value={card.c['Capacity']} />
-          </td>
-          {!isMobile && (
-            <td className="disciplines px-1" onClick={() => handleClick()}>
-              <ResultCryptDisciplines value={card.c['Disciplines']} />
-            </td>
-          )}
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card.c} />}
-            >
-              <td className="name" onClick={() => handleClick()}>
-                <ResultCryptName card={card.c} />
-              </td>
             </OverlayTrigger>
-          ) : (
-            <td className="name" onClick={() => handleClick()}>
-              <ResultCryptName card={card.c} />
-            </td>
           )}
-          {isWide ? (
-            <>
-              <td className="title pe-2" onClick={() => handleClick()}>
-                <ResultCryptTitle value={card.c['Title']} />
-              </td>
-              <td className="clan" onClick={() => handleClick()}>
-                <ResultCryptClan value={card.c['Clan']} />
-              </td>
-              <td className="group" onClick={() => handleClick()}>
-                <ResultCryptGroup value={card.c['Group']} />
-              </td>
-            </>
-          ) : (
-            <>
-              {isMobile ? (
-                <td className="clan-group" onClick={() => handleClick()}>
+        </div>
+        <div
+          className="d-flex align-items-center justify-content-center capacity"
+          onClick={() => handleClick()}
+        >
+          <ResultCryptCapacity value={card.c['Capacity']} />
+        </div>
+        {!isMobile && (
+          <div
+            className="d-flex align-items-center justify-content-left disciplines"
+            onClick={() => handleClick()}
+          >
+            <ResultCryptDisciplines value={card.c['Disciplines']} />
+          </div>
+        )}
+        {!isMobile ? (
+          <OverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card.c} />}
+          >
+            <div
+              className="d-flex align-items-center justify-content-start name"
+              onClick={() => handleClick()}
+            >
+              <ResultCryptName card={card.c} />
+            </div>
+          </OverlayTrigger>
+        ) : (
+          <div
+            className="d-flex align-items-center justify-content-start name"
+            onClick={() => handleClick()}
+          >
+            <ResultCryptName card={card.c} />
+          </div>
+        )}
+        {isWide ? (
+          <>
+            <div
+              className="d-flex align-items-center justify-content-center title"
+              onClick={() => handleClick()}
+            >
+              <ResultCryptTitle value={card.c['Title']} />
+            </div>
+            <div
+              className="d-flex align-items-center justify-content-center clan"
+              onClick={() => handleClick()}
+            >
+              <ResultCryptClan value={card.c['Clan']} />
+            </div>
+            <div
+              className="d-flex align-items-center justify-content-center group"
+              onClick={() => handleClick()}
+            >
+              <ResultCryptGroup value={card.c['Group']} />
+            </div>
+          </>
+        ) : (
+          <>
+            {isMobile ? (
+              <div className="clan-group" onClick={() => handleClick()}>
+                <div>
+                  <ResultCryptClan value={card.c['Clan']} />
+                </div>
+                <div className="d-flex small justify-content-end">
+                  <b>
+                    <ResultCryptTitle value={card.c['Title']} />
+                  </b>
+                  <ResultCryptGroup value={card.c['Group']} />
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="title pe-2" onClick={() => handleClick()}>
+                  <ResultCryptTitle value={card.c['Title']} />
+                </div>
+                <div className="clan-group" onClick={() => handleClick()}>
                   <div>
                     <ResultCryptClan value={card.c['Clan']} />
                   </div>
                   <div className="d-flex small justify-content-end">
-                    <b>
-                      <ResultCryptTitle value={card.c['Title']} />
-                    </b>
                     <ResultCryptGroup value={card.c['Group']} />
                   </div>
-                </td>
-              ) : (
-                <>
-                  <td className="title pe-2" onClick={() => handleClick()}>
-                    <ResultCryptTitle value={card.c['Title']} />
-                  </td>
-                  <td className="clan-group" onClick={() => handleClick()}>
-                    <div>
-                      <ResultCryptClan value={card.c['Clan']} />
-                    </div>
-                    <div className="d-flex small justify-content-end">
-                      <ResultCryptGroup value={card.c['Group']} />
-                    </div>
-                  </td>
-                </>
-              )}
-            </>
-          )}
-        </tr>
-      </React.Fragment>
+                </div>
+              </>
+            )}
+          </>
+        )}
+      </>
     );
   });
 
+  const Rows = ({ index, style }) => (
+    <div
+      style={style}
+      className={`d-flex bordered ${index % 2 ? 'result-even' : 'result-odd'}`}
+    >
+      {cardRows[index]}
+    </div>
+  );
+
   return (
     <>
-      <table className="inventory-crypt-table">
-        <tbody>{cardRows}</tbody>
-      </table>
+      {props.compact ? (
+        <div className="d-flex inventory-crypt-table bordered result-odd compact">
+          {cardRows[0]}
+        </div>
+      ) : (
+        <div
+          className={`inventory-container${
+            props.withCompact ? '-with-compact' : ''
+          }`}
+        >
+          <AutoSizer>
+            {({ width, height }) => (
+              <FixedSizeList
+                className="inventory-crypt-table"
+                height={height}
+                width={width}
+                itemCount={cardRows.length}
+                itemSize={45}
+              >
+                {Rows}
+              </FixedSizeList>
+            )}
+          </AutoSizer>
+        </div>
+      )}
       {modalCardIdx !== undefined && (
         <ResultCryptModal
           card={props.cards[modalCardIdx].c}

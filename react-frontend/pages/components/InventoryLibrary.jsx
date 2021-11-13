@@ -1,24 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import InventoryLibraryTable from './InventoryLibraryTable.jsx';
+import InventoryLibraryTypeForm from './InventoryLibraryTypeForm.jsx';
 import ResultLibraryType from './ResultLibraryType.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function InventoryLibrary(props) {
   const { usedLibraryCards, libraryCardBase } = useContext(AppContext);
 
-  let haveTotal = 0;
-  let haveUnique = 0;
-  let missingTotal = 0;
-  let missingUnique = 0;
+  const [cardtype, setCardtype] = useState('All');
 
   const libraryByType = {};
   const libraryByTypeTotal = {};
   const libraryByTypeUnique = {};
   const missingLibraryByType = {};
   const missingLibraryByTypeTotal = {};
-  const LibraryDeckSortedByType = [];
 
   const cardtypesSorted = [
+    'All',
     'Master',
     'Conviction',
     'Power',
@@ -41,30 +39,30 @@ function InventoryLibrary(props) {
     'Event',
   ];
 
-  cardtypesSorted.map((cardtype) => {
-    libraryByType[cardtype] = {};
-    libraryByTypeTotal[cardtype] = 0;
-    libraryByTypeUnique[cardtype] = 0;
-    missingLibraryByType[cardtype] = {};
-    missingLibraryByTypeTotal[cardtype] = 0;
+  cardtypesSorted.map((type) => {
+    libraryByType[type] = {};
+    libraryByTypeTotal[type] = 0;
+    libraryByTypeUnique[type] = 0;
+    missingLibraryByType[type] = {};
+    missingLibraryByTypeTotal[type] = 0;
   });
 
   if (props.compact) {
     Object.keys(props.cards).map((card) => {
-      const cardtype = props.cards[card].c['Type'];
-      libraryByType[cardtype] = {
+      const type = props.cards[card].c['Type'];
+      libraryByType[type] = {
         card: props.cards[card],
       };
     });
   } else {
     Object.keys(props.cards).map((card) => {
-      const cardtype = props.cards[card].c['Type'];
+      const type = props.cards[card].c['Type'];
 
       if (props.cards[card].q > 0) {
-        haveUnique += 1;
-        haveTotal += props.cards[card].q;
-        libraryByTypeTotal[cardtype] += props.cards[card].q;
-        libraryByTypeUnique[cardtype] += 1;
+        libraryByTypeTotal[type] += props.cards[card].q;
+        libraryByTypeTotal['All'] += props.cards[card].q;
+        libraryByTypeUnique[type] += 1;
+        libraryByTypeUnique['All'] += 1;
       }
 
       let softUsedMax = 0;
@@ -86,7 +84,11 @@ function InventoryLibrary(props) {
       const miss = softUsedMax + hardUsedTotal - props.cards[card].q;
 
       if (miss > 0) {
-        missingLibraryByType[cardtype][card] = {
+        missingLibraryByType[type][card] = {
+          q: miss,
+          c: props.cards[card].c,
+        };
+        missingLibraryByType['All'][card] = {
           q: miss,
           c: props.cards[card].c,
         };
@@ -94,19 +96,22 @@ function InventoryLibrary(props) {
 
       if (props.category == 'nok') {
         if (miss > 0) {
-          libraryByType[cardtype][card] = props.cards[card];
+          libraryByType[type][card] = props.cards[card];
+          libraryByType['All'][card] = props.cards[card];
         }
       } else {
-        libraryByType[cardtype][card] = props.cards[card];
+        libraryByType[type][card] = props.cards[card];
+        libraryByType['All'][card] = props.cards[card];
       }
     });
 
     Object.keys(usedLibraryCards.soft).map((card) => {
       if (!props.cards[card]) {
-        const cardtype = libraryCardBase[card]['Type'];
+        const type = libraryCardBase[card]['Type'];
 
-        if (!props.compact && props.category != 'ok') {
-          libraryByType[cardtype][card] = { q: 0, c: libraryCardBase[card] };
+        if (props.category != 'ok') {
+          libraryByType[type][card] = { q: 0, c: libraryCardBase[card] };
+          libraryByType['All'][card] = { q: 0, c: libraryCardBase[card] };
         }
 
         let softUsedMax = 0;
@@ -116,7 +121,11 @@ function InventoryLibrary(props) {
           }
         });
 
-        missingLibraryByType[cardtype][card] = {
+        missingLibraryByType[type][card] = {
+          q: softUsedMax,
+          c: libraryCardBase[card],
+        };
+        missingLibraryByType['All'][card] = {
           q: softUsedMax,
           c: libraryCardBase[card],
         };
@@ -125,10 +134,11 @@ function InventoryLibrary(props) {
 
     Object.keys(usedLibraryCards.hard).map((card) => {
       if (!props.cards[card]) {
-        const cardtype = libraryCardBase[card]['Type'];
+        const type = libraryCardBase[card]['Type'];
 
-        if (!props.compact && props.category != 'ok') {
-          libraryByType[cardtype][card] = { q: 0, c: libraryCardBase[card] };
+        if (props.category != 'ok') {
+          libraryByType[type][card] = { q: 0, c: libraryCardBase[card] };
+          libraryByType['All'][card] = { q: 0, c: libraryCardBase[card] };
         }
 
         let hardUsedTotal = 0;
@@ -138,10 +148,15 @@ function InventoryLibrary(props) {
           });
         }
 
-        if (missingLibraryByType[cardtype][card]) {
-          missingLibraryByType[cardtype][card].q += hardUsedTotal;
+        if (missingLibraryByType[type][card]) {
+          missingLibraryByType[type][card].q += hardUsedTotal;
+          missingLibraryByType['All'][card].q += hardUsedTotal;
         } else {
-          missingLibraryByType[cardtype][card] = {
+          missingLibraryByType[type][card] = {
+            q: hardUsedTotal,
+            c: libraryCardBase[card],
+          };
+          missingLibraryByType['All'][card] = {
             q: hardUsedTotal,
             c: libraryCardBase[card],
           };
@@ -149,79 +164,48 @@ function InventoryLibrary(props) {
       }
     });
 
-    Object.keys(missingLibraryByType).map((cardtype) => {
-      Object.values(missingLibraryByType[cardtype]).map((card) => {
-        missingUnique += 1;
-        missingTotal += card.q;
-        missingLibraryByTypeTotal[cardtype] += card.q;
+    Object.keys(missingLibraryByType).map((type) => {
+      Object.values(missingLibraryByType[type]).map((card) => {
+        missingLibraryByTypeTotal[type] += card.q;
       });
     });
   }
 
-  cardtypesSorted.map((cardtype) => {
-    if (Object.keys(libraryByType[cardtype]).length) {
-      LibraryDeckSortedByType.push(
-        <div key={cardtype} className={props.compact ? null : 'pt-2'}>
-          {!props.compact && (
-            <div className="d-flex justify-content-between pe-1">
-              <div className="d-inline">
-                <ResultLibraryType cardtype={cardtype} total={0} />
-                {libraryByTypeTotal[cardtype] ? (
-                  <>
-                    {'- '}
-                    {libraryByTypeTotal[cardtype]} (
-                    {libraryByTypeUnique[cardtype]} uniq)
-                  </>
-                ) : null}
-              </div>
-              <div className="d-inline gray">
-                {missingLibraryByTypeTotal[cardtype] ? (
-                  <>
-                    {missingLibraryByTypeTotal[cardtype]} (
-                    {Object.values(missingLibraryByType[cardtype]).length} uniq)
-                    miss
-                  </>
-                ) : null}
-              </div>
-            </div>
-          )}
-          <InventoryLibraryTable
-            cards={Object.values(libraryByType[cardtype])}
-            showFloatingButtons={props.showFloatingButtons}
-            setShowFloatingButtons={props.setShowFloatingButtons}
-          />
-        </div>
-      );
-    }
-  });
-
   return (
     <>
       {!props.compact && (
-        <div className="d-flex align-items-center justify-content-between px-2 info-message">
-          <b>
-            Library
-            {haveTotal ? (
-              <>
-                {' '}
-                - {haveTotal} ({haveUnique} uniq)
-              </>
-            ) : (
-              <></>
-            )}
-          </b>
-          <div className="d-inline gray">
-            {missingTotal ? (
-              <b>
-                {missingTotal} ({missingUnique} uniq) miss
-              </b>
-            ) : (
-              <></>
-            )}
+        <div className="d-flex align-items-center justify-content-between px-1 inventory-info">
+          <div className="w-70 py-1">
+            <InventoryLibraryTypeForm
+              cardtype={cardtype}
+              setCardtype={setCardtype}
+              cardtypes={Object.keys(libraryByType).filter((type) => {
+                return Object.keys(libraryByType[type]).length;
+              })}
+              byTypeTotal={libraryByTypeTotal}
+              byTypeUnique={libraryByTypeUnique}
+            />
+          </div>
+          <div className="d-inline gray px-1">
+            <b>
+              {missingLibraryByTypeTotal[cardtype] ? (
+                <>
+                  {missingLibraryByTypeTotal[cardtype]} (
+                  {Object.values(missingLibraryByType[cardtype]).length} uniq)
+                  miss
+                </>
+              ) : null}
+            </b>
           </div>
         </div>
       )}
-      {LibraryDeckSortedByType}
+      <InventoryLibraryTable
+        compact={props.compact}
+        withCompact={props.withCompact}
+        cards={Object.values(libraryByType[cardtype])}
+        showFloatingButtons={props.showFloatingButtons}
+        setShowFloatingButtons={props.setShowFloatingButtons}
+      />
     </>
   );
 }

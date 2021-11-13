@@ -96,6 +96,10 @@ div.no-border
   background: var(--bg-secondary)
   height: 38px
 
+.inventory-info
+  background: var(--bg-secondary)
+  height: 45px
+
 .blue
   color: var(--fg-secondary)
 
@@ -411,49 +415,13 @@ td.prob
   text-align: right
   width: 36px
 
-.deck-crypt-table
-  width: 100%
-  border: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
-  td
-    height: 32px
-    border-top: 1px solid var(--border-secondary)
-    border-bottom: 1px solid var(--border-secondary)
-    border-collapse: collapse
-  td, th
-    text-align: center
-  td.proxy-selector
-    width: 1%
-  td.quantity
-    width: 65px
-    font-size: 1.1em
-  td.quantity-no-buttons
-    width: 28px
-    font-size: 1.1em
-    background: rgba(0, 0, 170, 0.05);
-    border-right: 1px solid var(--border-secondary)
-  td.used
-    width: 45px
-  td.capacity
-    width: 40px
-  td.name
-    text-align: left
-  td.proxy-set
-    width: 120px
-  td.disciplines td
-    min-width: 27px
-    @media (max-width: 576px)
-      min-width: 23px
-
+.deck-crypt-table,
 .deck-library-table
   width: 100%
   border: 1px solid var(--border-secondary)
   @media (max-width: 576px)
     border: 0px
   td
-    height: 38px
-    text-align: center
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
     border-collapse: collapse
@@ -469,6 +437,24 @@ td.prob
     border-right: 1px solid var(--border-secondary)
   td.name
     text-align: left
+  td.proxy-set
+    width: 120px
+
+.deck-crypt-table
+  td
+    height: 32px
+  td.used
+    width: 45px
+  td.capacity
+    width: 40px
+  td.disciplines td
+    min-width: 27px
+    @media (max-width: 576px)
+      min-width: 23px
+
+.deck-library-table
+  td
+    height: 38px
   td.cost
     width: 25px
   td.blood
@@ -478,96 +464,61 @@ td.prob
     width: 88px
   td.burn
     width: 30px
-  td.proxy-set
-    width: 120px
 
-.inventory-crypt-table
+.inventory-crypt-table,
+.inventory-library-table
   width: 100%
   border: 1px solid var(--border-secondary)
   @media (max-width: 576px)
     border: 0px
-  td
-    height: 32px
-    border-top: 1px solid var(--border-secondary)
+  div.bordered
     border-bottom: 1px solid var(--border-secondary)
-    border-collapse: collapse
-  td.quantity
+  div.quantity
     width: 65px
     font-size: 1.1em
-  td.used
+  div.used
     width: 50px
-  td.capacity
+  div.name
+    width: 160px
+  &.compact
+    height: 45px
+
+.inventory-container
+  height: calc(100vh - 165px)
+  @media (max-width: 576px)
+    height: calc(100vh - 136px)
+
+.inventory-container-with-compact
+  height: calc(100vh - 226px)
+  @media (max-width: 576px)
+    height: calc(100vh - 181px)
+
+.inventory-crypt-table
+  div.capacity
     width: 32px
-  td.disciplines
-    width: 231px
-  td.name
-    text-align: left
-  td.clan
-    width: 55px
-  td.group
-    width: 35px
+  div.disciplines
+    width: 180px
+  div.title
+    width: 25px
+  div.clan
+    width: 40px
+  div.group
+    width: 25px
 
 .inventory-library-table
-  width: 100%
-  border-left: 1px solid var(--border-secondary)
-  border-right: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
-  td
-    height: 37px
-    text-align: center
-    border-top: 1px solid var(--border-secondary)
-    border-bottom: 1px solid var(--border-secondary)
-    border-collapse: collapse
-  td.quantity
-    width: 65px
-    font-size: 1.1em
-  td.used
-    width: 50px
-  td.name
-    text-align: left
-  td.cost
-    width: 25px
-  td.blood
+  div.cost
+    width: 30px
+  div.blood
     padding-top: 0px
     padding-bottom: 4px
-  td.disciplines
-    width: 70px
-  td.burn
+  div.disciplines
+    width: 80px
+  div.burn
     width: 30px
-    border-right: 1px solid var(--border-secondary)
+  div.type
+    width: 40px
 
-.search-crypt-table
-  width: 100%
-  border-left: 1px solid var(--border-secondary)
-  border-right: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
-  td
-    height: 32px
-    border-top: 1px solid var(--border-secondary)
-    border-bottom: 1px solid var(--border-secondary)
-    border-collapse: collapse
-    text-align: center
-  td.quantity-add
-    width: 22px
-  td.quantity
-    width: 50px
-    font-size: 1.1em
-  td.used
-    width: 45px
-  td.quantity-no-buttons
-    width: 30px
-    font-size: 1.1em
-    background: rgba(0, 0, 170, 0.05);
-  td.disciplines td
-    min-width: 27px
-    @media (max-width: 576px)
-      min-width: 23px
-
-  td.name
-    text-align: left
-
+.search-crypt-table,
 .search-library-table
   width: 100%
   border-left: 1px solid var(--border-secondary)
@@ -575,7 +526,6 @@ td.prob
   @media (max-width: 576px)
     border: 0px
   td
-    height: 36px
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
     border-collapse: collapse
@@ -585,34 +535,44 @@ td.prob
   td.quantity
     width: 50px
     font-size: 1.1em
-  td.used
-    width: 45px
   td.quantity-no-buttons
     width: 30px
     font-size: 1.1em
     background: rgba(0, 0, 170, 0.05);
+  td.used
+    width: 45px
+  td.name
+    text-align: left
+
+.search-crypt-table
+  td
+    height: 32px
+  td.disciplines td
+    min-width: 27px
+    @media (max-width: 576px)
+      min-width: 23px
+
+.search-library-table
+  td
+    height: 36px
   td.cost
     width: 25px
   td.blood
     padding-top: 0px
     padding-bottom: 4px
-  td.name
-    text-align: left
-  div.sets
-    font-size: x-small
-    text-align: right
 
-.twd-crypt-table
+.twd-crypt-table,
+.twd-library-table,
+.twd-librarybytype-table
   width: 100%
   border-right: 1px solid var(--border-secondary)
   border-left: 1px solid var(--border-secondary)
   td
     height: 32px
+    text-align: center
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
     border-collapse: collapse
-  td, th
-    text-align: center
   td.quantity-no-buttons
     width: 28px
     font-size: 1.1em
@@ -620,41 +580,13 @@ td.prob
     border-right: 1px solid var(--border-secondary)
   td.name
     text-align: left
+
+.twd-crypt-table
   td.clan
     width: 30px
 
-.twd-library-table
-  width: 100%
-  border-right: 1px solid var(--border-secondary)
-  border-left: 1px solid var(--border-secondary)
-  td
-    height: 32px
-    text-align: center
-    border-top: 1px solid var(--border-secondary)
-    border-bottom: 1px solid var(--border-secondary)
-    border-collapse: collapse
-  td.quantity-no-buttons
-    width: 28px
-    font-size: 1.1em
-    background: rgba(0, 0, 170, 0.05);
-    border-right: 1px solid var(--border-secondary)
-  td.type
-    width: 50px
-  td.name
-    text-align: left
-
+.twd-library-table,
 .twd-librarybytype-table
-  width: 100%
-  border-left: 1px solid var(--border-secondary)
-  border-right: 1px solid var(--border-secondary)
-  td
-    height: 32px
-    text-align: center
-    border-top: 1px solid var(--border-secondary)
-    border-bottom: 1px solid var(--border-secondary)
-    border-collapse: collapse
-  td.name
-    text-align: left
   td.type
     width: 50px
 
@@ -689,19 +621,30 @@ td.prob
   th
     font-weight: normal
 
-.inv-import-decks-table
+.inv-import-decks-table,
+.inv-import-precons-table
   border: 1px solid var(--border-secondary)
   @media (max-width: 576px)
     border: 0px
   td
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
+  th
+    font-weight: normal
   .clan
     text-align: center
     min-width: 50px
+  .preview
+    min-width: 40px
   .name
     min-width: 250px
     max-width: 250px
+  .buttons
+    min-width: 92px
+    text-align: right
+
+.inv-import-decks-table
+  .name
     @media (max-width: 576px)
       max-width: 230px
       min-width: 230px
@@ -713,40 +656,15 @@ td.prob
     white-space: nowrap
   .tags
     width: 100%
-  .buttons
-    min-width: 92px
-    @media (max-width: 576px)
-      min-width: 100%
-    text-align: right
-  th
-    font-weight: normal
 
 .inv-import-precons-table
-  border: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
-  td
-    border-top: 1px solid var(--border-secondary)
-    border-bottom: 1px solid var(--border-secondary)
-  .clan
-    text-align: center
-    min-width: 90px
-  .preview
-    min-width: 40px
   .name
-    min-width: 250px
-    max-width: 250px
     @media (max-width: 576px)
       max-width: 135px
       min-width: 135px
   .set
     width: 100%
     color: var(--fg-button)
-  .buttons
-    min-width: 92px
-    text-align: right
-  th
-    font-weight: normal
 
 ul
   padding-left: 20px
@@ -1055,10 +973,9 @@ div.sticky-inv-result
   background-color: var(--bg-primary)
   position: sticky;
   top: 102
+  @media (max-width: 576px)
+    top: 46
   z-index: 1
-
-div.sticky-inv-result.mobile
-  top: 86
 
 div.sticky-modal
   position: sticky;
@@ -1079,6 +996,9 @@ label.group-form:hover
 img.full-width
   width: 100%
   height: auto
+
+.w-70
+  width: 70%
 
 .card-buttons
   height: 38px

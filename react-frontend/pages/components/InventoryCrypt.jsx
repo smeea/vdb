@@ -114,7 +114,7 @@ function InventoryCrypt(props) {
   return (
     <>
       {!props.compact && (
-        <div className="d-flex align-items-center justify-content-between px-2 info-message">
+        <div className="d-flex align-items-center justify-content-between px-2 inventory-info">
           <b>
             Crypt
             {haveTotal ? (
@@ -138,6 +138,8 @@ function InventoryCrypt(props) {
         </div>
       )}
       <InventoryCryptTable
+        compact={props.compact}
+        withCompact={props.withCompact}
         cards={sortedCards}
         showFloatingButtons={props.showFloatingButtons}
         setShowFloatingButtons={props.setShowFloatingButtons}

@@ -40,7 +40,7 @@ function Inventory(props) {
 
   return (
     <Container
-      className={isMobile ? 'main-container px-0' : 'main-container pt-0 pb-3'}
+      className={isMobile ? 'main-container p-0' : 'main-container py-0'}
     >
       {username ? (
         <>
@@ -56,7 +56,7 @@ function Inventory(props) {
                     />
                   </div>
                   {newCryptId && inventoryCrypt[newCryptId] && (
-                    <div className="sticky-inv-result mobile py-1">
+                    <div className="sticky-inv-result">
                       <InventoryCrypt
                         cards={{
                           [newCryptId]: inventoryCrypt[newCryptId],
@@ -71,6 +71,7 @@ function Inventory(props) {
                     (usedCryptCards.soft || usedCryptCards.hard) && (
                       <div className="pt-1">
                         <InventoryCrypt
+                          withCompact={newCryptId && inventoryCrypt[newCryptId]}
                           category={category}
                           cards={inventoryCrypt}
                           showFloatingButtons={showFloatingButtons}
@@ -89,7 +90,7 @@ function Inventory(props) {
                     />
                   </div>
                   {newLibraryId && inventoryLibrary[newLibraryId] && (
-                    <div className="sticky-inv-result mobile py1">
+                    <div className="sticky-inv-result">
                       <InventoryLibrary
                         cards={{
                           [newLibraryId]: inventoryLibrary[newLibraryId],
@@ -104,6 +105,7 @@ function Inventory(props) {
                     (usedLibraryCards.soft || usedLibraryCards.hard) && (
                       <div className="pt-1">
                         <InventoryLibrary
+                          withCompact={newCryptId && inventoryCrypt[newCryptId]}
                           category={category}
                           cards={inventoryLibrary}
                           showFloatingButtons={showFloatingButtons}
@@ -151,6 +153,7 @@ function Inventory(props) {
                   (usedCryptCards.soft || usedCryptCards.hard) && (
                     <div className="pt-2">
                       <InventoryCrypt
+                        withCompact={newCryptId && inventoryCrypt[newCryptId]}
                         category={category}
                         cards={inventoryCrypt}
                         showFloatingButtons={showFloatingButtons}
@@ -181,8 +184,11 @@ function Inventory(props) {
                 )}
                 {inventoryLibrary &&
                   (usedLibraryCards.soft || usedLibraryCards.hard) && (
-                    <div className="py-2">
+                    <div className="pt-2">
                       <InventoryLibrary
+                        withCompact={
+                          newLibraryId && inventoryLibrary[newLibraryId]
+                        }
                         category={category}
                         cards={inventoryLibrary}
                         showFloatingButtons={showFloatingButtons}

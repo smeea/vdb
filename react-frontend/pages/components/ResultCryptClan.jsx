@@ -6,11 +6,7 @@ function ResultCryptClan(props) {
     .toLowerCase()
     .replace(/[\s,:!?'.\-]/g, '')}.svg`;
 
-  return (
-    <div className="d-inline clan">
-      <img className={imgClass} src={imgSrc} title={props.value} />
-    </div>
-  );
+  return <img className={imgClass} src={imgSrc} title={props.value} />;
 }
 
 export default ResultCryptClan;

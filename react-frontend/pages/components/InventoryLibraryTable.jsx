@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
+import { FixedSizeList } from 'react-window';
+import AutoSizer from 'react-virtualized-auto-sizer';
 import Shuffle from '../../assets/images/icons/shuffle.svg';
 import PinAngleFill from '../../assets/images/icons/pin-angle-fill.svg';
 import CardPopover from './CardPopover.jsx';
@@ -8,6 +10,7 @@ import InventoryCardQuantity from './InventoryCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
+import ResultLibraryType from './ResultLibraryType.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
@@ -39,12 +42,6 @@ function InventoryLibraryTable(props) {
       isMobile && props.setShowFloatingButtons(false);
     };
 
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
-
     let DisciplineOrClan;
     if (card.c['Clan']) {
       DisciplineOrClan = <ResultLibraryClan value={card.c['Clan']} />;
@@ -72,36 +69,56 @@ function InventoryLibraryTable(props) {
     }
 
     return (
-      <React.Fragment key={card.c['Id']}>
-        <tr className={resultTrClass}>
-          <td className="quantity">
-            {isMobile ? (
-              <div>
+      <>
+        <div className="d-flex align-items-center justify-content-center quantity">
+          {isMobile ? (
+            <InventoryCardQuantity
+              cardid={card.c['Id']}
+              q={card.q}
+              softUsedMax={softUsedMax}
+              hardUsedTotal={hardUsedTotal}
+            />
+          ) : (
+            <OverlayTrigger
+              placement="right"
+              overlay={<UsedPopover cardid={card.c.Id} />}
+            >
+              <>
                 <InventoryCardQuantity
                   cardid={card.c['Id']}
                   q={card.q}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
                 />
-              </div>
-            ) : (
-              <OverlayTrigger
-                placement="right"
-                overlay={<UsedPopover cardid={card.c.Id} />}
-              >
-                <div>
-                  <InventoryCardQuantity
-                    cardid={card.c['Id']}
-                    q={card.q}
-                    softUsedMax={softUsedMax}
-                    hardUsedTotal={hardUsedTotal}
-                  />
+              </>
+            </OverlayTrigger>
+          )}
+        </div>
+        <div className="d-flex align-items-center justify-content-center used">
+          {isMobile ? (
+            <>
+              {softUsedMax > 0 && (
+                <div className="d-flex align-items-center justify-content-center">
+                  <div className="d-inline opacity-035 pe-1">
+                    <Shuffle width="14" height="14" viewBox="0 0 16 16" />
+                  </div>
+                  {softUsedMax}
                 </div>
-              </OverlayTrigger>
-            )}
-          </td>
-          <td className="used">
-            {isMobile ? (
+              )}
+              {hardUsedTotal > 0 && (
+                <div className="d-flex align-items-center justify-content-center">
+                  <div className="d-inline opacity-035 pe-1">
+                    <PinAngleFill width="14" height="14" viewBox="0 0 16 16" />
+                  </div>
+                  {hardUsedTotal}
+                </div>
+              )}
+            </>
+          ) : (
+            <OverlayTrigger
+              placement={props.placement ? props.placement : 'right'}
+              overlay={<UsedPopover cardid={card.c.Id} />}
+            >
               <>
                 {softUsedMax > 0 && (
                   <div className="d-flex align-items-center justify-content-center">
@@ -124,78 +141,99 @@ function InventoryLibraryTable(props) {
                   </div>
                 )}
               </>
-            ) : (
-              <OverlayTrigger
-                placement={props.placement ? props.placement : 'right'}
-                overlay={<UsedPopover cardid={card.c.Id} />}
-              >
-                <div>
-                  {softUsedMax > 0 && (
-                    <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pe-1">
-                        <Shuffle width="14" height="14" viewBox="0 0 16 16" />
-                      </div>
-                      {softUsedMax}
-                    </div>
-                  )}
-                  {hardUsedTotal > 0 && (
-                    <div className="d-flex align-items-center justify-content-center">
-                      <div className="d-inline opacity-035 pe-1">
-                        <PinAngleFill
-                          width="14"
-                          height="14"
-                          viewBox="0 0 16 16"
-                        />
-                      </div>
-                      {hardUsedTotal}
-                    </div>
-                  )}
-                </div>
-              </OverlayTrigger>
-            )}
-          </td>
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card.c} />}
-            >
-              <td className="name px-1" onClick={() => handleClick()}>
-                <ResultLibraryName card={card.c} />
-              </td>
             </OverlayTrigger>
-          ) : (
-            <td className="name px-1" onClick={() => handleClick()}>
-              <ResultLibraryName card={card.c} />
-            </td>
           )}
-          <td
-            className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
+        </div>
+        <div
+          className="d-flex align-items-center justify-content-center type"
+          onClick={() => handleClick()}
+        >
+          <ResultLibraryType cardtype={card.c['Type']} />
+        </div>
+        {!isMobile ? (
+          <OverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card.c} />}
+          >
+            <div
+              className="d-flex align-items-center justify-content-start name"
+              onClick={() => handleClick()}
+            >
+              <ResultLibraryName card={card.c} />
+            </div>
+          </OverlayTrigger>
+        ) : (
+          <div
+            className="d-flex align-items-center justify-content-start name"
             onClick={() => handleClick()}
           >
-            <ResultLibraryCost
-              valueBlood={card.c['Blood Cost']}
-              valuePool={card.c['Pool Cost']}
-            />
-          </td>
-          <td className="disciplines" onClick={() => handleClick()}>
-            {DisciplineOrClan}
-          </td>
-          <td className="burn" onClick={() => handleClick()}>
-            <ResultLibraryBurn value={card.c['Burn Option']} />
-            <ResultLibraryTrifle
-              value={nativeLibrary[card.c.Id]['Card Text']}
-            />
-          </td>
-        </tr>
-      </React.Fragment>
+            <ResultLibraryName card={card.c} />
+          </div>
+        )}
+        <div
+          className={`d-flex align-items-center justify-content-center ${
+            card.c['Blood Cost'] && 'blood'
+          } cost`}
+          onClick={() => handleClick()}
+        >
+          <ResultLibraryCost
+            valueBlood={card.c['Blood Cost']}
+            valuePool={card.c['Pool Cost']}
+          />
+        </div>
+        <div
+          className="d-flex align-items-center justify-content-center disciplines"
+          onClick={() => handleClick()}
+        >
+          {DisciplineOrClan}
+        </div>
+        <div
+          className="d-flex align-items-center justify-content-center burn"
+          onClick={() => handleClick()}
+        >
+          <ResultLibraryBurn value={card.c['Burn Option']} />
+          <ResultLibraryTrifle value={nativeLibrary[card.c.Id]['Card Text']} />
+        </div>
+      </>
     );
   });
 
+  const Rows = ({ index, style }) => (
+    <div
+      style={style}
+      className={`d-flex bordered ${index % 2 ? 'result-even' : 'result-odd'}`}
+    >
+      {cardRows[index]}
+    </div>
+  );
+
   return (
     <>
-      <table className="inventory-library-table">
-        <tbody>{cardRows}</tbody>
-      </table>
+      {props.compact ? (
+        <div className="d-flex inventory-library-table bordered result-odd compact">
+          {cardRows[0]}
+        </div>
+      ) : (
+        <div
+          className={`inventory-container${
+            props.withCompact ? '-with-compact' : ''
+          }`}
+        >
+          <AutoSizer>
+            {({ width, height }) => (
+              <FixedSizeList
+                className="inventory-library-table"
+                height={height}
+                width={width}
+                itemCount={cardRows.length}
+                itemSize={45}
+              >
+                {Rows}
+              </FixedSizeList>
+            )}
+          </AutoSizer>
+        </div>
+      )}
       {modalCardIdx !== undefined && (
         <ResultLibraryModal
           card={props.cards[modalCardIdx].c}
