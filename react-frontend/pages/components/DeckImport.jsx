@@ -154,6 +154,7 @@ function DeckImport(props) {
       const url = `${process.env.API_URL}${
         props.inInventory ? 'inventory' : 'decks'
       }/import`;
+
       const body = props.inInventory
         ? JSON.stringify(result)
         : JSON.stringify({
@@ -174,7 +175,9 @@ function DeckImport(props) {
       if (props.inInventory) {
         fetchPromise
           .then((response) => response.json())
-          .then((cards) => props.inventoryAddToState(cards))
+          .then((cards) => {
+            props.inventoryAddToState(cards);
+          })
           .catch((error) => setImportError(true));
       } else {
         fetchPromise

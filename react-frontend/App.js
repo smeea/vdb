@@ -218,30 +218,38 @@ function App(props) {
   };
 
   const inventoryAddToState = (cards) => {
-    Object.keys(cards).forEach((cardid) => {
-      if (cardid > 200000) {
-        setInventoryCrypt((prevState) => {
-          const oldState = { ...prevState };
+    setInventoryCrypt((prevState) => {
+      const oldState = { ...prevState };
+
+      Object.keys(cards)
+        .filter((cardid) => cardid > 200000)
+        .forEach((cardid) => {
           oldState[cardid] = {
             c: cryptCardBase[cardid],
             q: prevState[cardid]
               ? prevState[cardid].q + cards[cardid]
               : cards[cardid],
           };
-          return oldState;
         });
-      } else {
-        setInventoryLibrary((prevState) => {
-          const oldState = { ...prevState };
+
+      return oldState;
+    });
+
+    setInventoryLibrary((prevState) => {
+      const oldState = { ...prevState };
+
+      Object.keys(cards)
+        .filter((cardid) => cardid < 200000)
+        .forEach((cardid) => {
           oldState[cardid] = {
             c: libraryCardBase[cardid],
             q: prevState[cardid]
               ? prevState[cardid].q + cards[cardid]
               : cards[cardid],
           };
-          return oldState;
         });
-      }
+
+      return oldState;
     });
   };
 

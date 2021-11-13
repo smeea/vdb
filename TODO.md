@@ -5,6 +5,7 @@
 * Change url to empty on last form changed to 'any'
 * Export/Import with new multigroup reissues (Lackey, JOL, Text)
 * Refactor ResultLibraryType
+* Used Popover to Inventory
 
 # FIX MOBILE
 
