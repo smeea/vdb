@@ -455,12 +455,12 @@ def listDecks():
                 deck.cards = new_cards
                 db.session.commit()
 
-            # Fix branches
+            # Fix masters / branches
             if deck.master:
                 d = Deck.query.filter_by(author=current_user,
                                          deckid=deck.master).first()
                 if not d:
-                    print(deck.deckid, 'del branch without master')
+                    print(deck.deckid, 'delete branch without master')
                     db.session.delete(deck)
                     db.session.commit()
 
@@ -470,21 +470,29 @@ def listDecks():
                                              deckid=b).first()
 
                     if not d:
-                        print(b, 'fix not-existing branch')
+                        print(b, 'delete not-existing branch')
                         old_branches = deck.branches.copy()
                         old_branches.remove(b)
                         deck.branches = old_branches
                         db.session.commit()
 
-            if deck.branches:
                 for b in deck.branches:
                     d = Deck.query.filter_by(author=current_user,
                                              deckid=b).first()
 
-                    if d.master != deck.deckid:
-                        print(b, 'fix bad master')
+                    if not d.master:
+                        print(b, 'add master to branch without master')
                         d.master = deck.deckid
                         db.session.commit()
+
+                    if d.master and d.master != deck.deckid:
+                        print(b, 'delete branch with other master')
+                        old_branches = deck.branches.copy()
+                        old_branches.remove(b)
+                        deck.branches = old_branches
+                        db.session.commit()
+
+            # Return decks
 
             crypt = {}
             library = {}
