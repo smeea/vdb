@@ -170,30 +170,61 @@ function InventoryLibraryTable(props) {
             <ResultLibraryName card={card.c} />
           </div>
         )}
-        <div
-          className={`d-flex align-items-center justify-content-center ${
-            card.c['Blood Cost'] && 'blood'
-          } cost`}
-          onClick={() => handleClick()}
-        >
-          <ResultLibraryCost
-            valueBlood={card.c['Blood Cost']}
-            valuePool={card.c['Pool Cost']}
-          />
-        </div>
-        <div
-          className="d-flex align-items-center justify-content-center disciplines"
-          onClick={() => handleClick()}
-        >
-          {DisciplineOrClan}
-        </div>
-        <div
-          className="d-flex align-items-center justify-content-center burn"
-          onClick={() => handleClick()}
-        >
-          <ResultLibraryBurn value={card.c['Burn Option']} />
-          <ResultLibraryTrifle value={nativeLibrary[card.c.Id]['Card Text']} />
-        </div>
+        {isMobile ? (
+          <div
+            className="d-flex align-items-center justify-content-between cost-disciplines"
+            onClick={() => handleClick()}
+          >
+            <div
+              className={`d-flex align-items-center justify-content-center ${
+                card.c['Blood Cost'] && 'blood'
+              }`}
+              onClick={() => handleClick()}
+            >
+              <ResultLibraryCost
+                valueBlood={card.c['Blood Cost']}
+                valuePool={card.c['Pool Cost']}
+              />
+            </div>
+            <div
+              className="d-flex align-items-center justify-content-center px-1"
+              onClick={() => handleClick()}
+            >
+              {DisciplineOrClan}
+            </div>
+          </div>
+        ) : (
+          <>
+            <div
+              className={`d-flex align-items-center justify-content-center ${
+                card.c['Blood Cost'] && 'blood'
+              } cost`}
+              onClick={() => handleClick()}
+            >
+              <ResultLibraryCost
+                valueBlood={card.c['Blood Cost']}
+                valuePool={card.c['Pool Cost']}
+              />
+            </div>
+            <div
+              className="d-flex align-items-center justify-content-center disciplines"
+              onClick={() => handleClick()}
+            >
+              {DisciplineOrClan}
+            </div>
+          </>
+        )}
+        {!isMobile && (
+          <div
+            className="d-flex align-items-center justify-content-center burn"
+            onClick={() => handleClick()}
+          >
+            <ResultLibraryBurn value={card.c['Burn Option']} />
+            <ResultLibraryTrifle
+              value={nativeLibrary[card.c.Id]['Card Text']}
+            />
+          </div>
+        )}
       </>
     );
   });

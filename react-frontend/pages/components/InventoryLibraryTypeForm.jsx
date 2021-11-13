@@ -17,7 +17,9 @@ function InventoryLibraryTypeForm(props) {
           ) : (
             <ResultLibraryType cardtype={i} total={0} />
           )}
-          {props.byTypeTotal[i]} ({props.byTypeUnique[i]} uniq)
+          <div className="nobr">
+            {props.byTypeTotal[i]} ({props.byTypeUnique[i]} uniq)
+          </div>
         </div>
       ),
     });

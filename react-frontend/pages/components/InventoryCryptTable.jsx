@@ -190,35 +190,17 @@ function InventoryCryptTable(props) {
             </div>
           </>
         ) : (
-          <>
-            {isMobile ? (
-              <div className="clan-group" onClick={() => handleClick()}>
-                <div>
-                  <ResultCryptClan value={card.c['Clan']} />
-                </div>
-                <div className="d-flex small justify-content-end">
-                  <b>
-                    <ResultCryptTitle value={card.c['Title']} />
-                  </b>
-                  <ResultCryptGroup value={card.c['Group']} />
-                </div>
-              </div>
-            ) : (
-              <>
-                <div className="title pe-2" onClick={() => handleClick()}>
-                  <ResultCryptTitle value={card.c['Title']} />
-                </div>
-                <div className="clan-group" onClick={() => handleClick()}>
-                  <div>
-                    <ResultCryptClan value={card.c['Clan']} />
-                  </div>
-                  <div className="d-flex small justify-content-end">
-                    <ResultCryptGroup value={card.c['Group']} />
-                  </div>
-                </div>
-              </>
-            )}
-          </>
+          <div className="clan-group" onClick={() => handleClick()}>
+            <div className="d-flex justify-content-center">
+              <ResultCryptClan value={card.c['Clan']} />
+            </div>
+            <div className="d-flex small justify-content-end">
+              <b>
+                <ResultCryptTitle value={card.c['Title']} />
+              </b>
+              <ResultCryptGroup value={card.c['Group']} />
+            </div>
+          </div>
         )}
       </>
     );

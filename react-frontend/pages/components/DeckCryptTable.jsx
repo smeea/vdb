@@ -179,7 +179,7 @@ function DeckCryptTable(props) {
                             : null
                         }
                       >
-                        {card.q}
+                        {card.q || null}
                       </div>
                     </td>
                   ) : (
@@ -199,16 +199,14 @@ function DeckCryptTable(props) {
                               : null
                           }
                         >
-                          {card.q}
+                          {card.q || null}
                         </div>
                       </td>
                     </OverlayTrigger>
                   )}
                 </>
               ) : (
-                <td className="quantity-no-buttons px-1">
-                  {card.q ? card.q : null}
-                </td>
+                <td className="quantity-no-buttons px-1">{card.q || null}</td>
               )}
             </>
           )}

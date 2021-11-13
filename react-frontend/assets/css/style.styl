@@ -435,6 +435,7 @@ td.prob
     font-size: 1.1em
     background: rgba(0, 0, 170, 0.05);
     border-right: 1px solid var(--border-secondary)
+    text-align: center
   td.name
     text-align: left
   td.proxy-set
@@ -448,6 +449,7 @@ td.prob
   td.capacity
     width: 40px
   td.disciplines td
+    text-align: center
     min-width: 27px
     @media (max-width: 576px)
       min-width: 23px
@@ -468,12 +470,12 @@ td.prob
 .inventory-container
   height: calc(100vh - 165px)
   @media (max-width: 576px)
-    height: calc(100vh - 136px)
+    height: calc(100vh - 132px)
 
 .inventory-container-with-compact
   height: calc(100vh - 226px)
   @media (max-width: 576px)
-    height: calc(100vh - 181px)
+    height: calc(100vh - 177px)
 
 .inventory-crypt-table,
 .inventory-library-table
@@ -484,39 +486,47 @@ td.prob
   div.bordered
     border-bottom: 1px solid var(--border-secondary)
   div.quantity
-    width: 75px
+    min-width: 75px
     font-size: 1.1em
+    @media (max-width: 576px)
+      min-width: 70px
   div.used
-    width: 45px
+    min-width: 45px
   div.name
-    width: 165px
+    width: 100%
   &.compact
     height: 45px
 
 .inventory-crypt-table
   div.capacity
-    width: 32px
+    min-width: 32px
   div.disciplines
-    width: 180px
+    min-width: 180px
   div.title
-    width: 25px
+    min-width: 25px
   div.clan
-    width: 30px
+    min-width: 30px
   div.group
-    width: 25px
+    min-width: 30px
+  div.clan-group
+    min-width: 45px
+    .group
+      min-width: 0px
 
 .inventory-library-table
   div.cost
-    width: 30px
+    min-width: 30px
   div.blood
     padding-top: 0px
     padding-bottom: 4px
   div.disciplines
-    width: 80px
+    min-width: 82px
   div.burn
-    width: 30px
+    min-width: 30px
   div.type
-    width: 40px
+    min-width: 40px
+  div.cost-disciplines
+    min-width: 65px
 
 .search-crypt-table,
 .search-library-table
@@ -548,6 +558,7 @@ td.prob
   td
     height: 32px
   td.disciplines td
+    text-align: center
     min-width: 27px
     @media (max-width: 576px)
       min-width: 23px
