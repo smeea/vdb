@@ -129,7 +129,7 @@ function Inventory(props) {
           ) : (
             <Row className="mx-0">
               <Col xl={1} className="hide-narrow"></Col>
-              <Col md={6} xl={5} className="px-0 px-lg-1 px-xl-3">
+              <Col md={6} xl={5} className="px-0 px-lg-1 pe-xl-3">
                 <div className="sticky-insearch pt-3 pb-2">
                   <InventoryNewCryptCard
                     cards={inventoryCrypt}
