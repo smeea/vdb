@@ -1,5 +1,5 @@
-from flask import jsonify, request, abort
-from flask_login import current_user, login_user, logout_user
+from flask import jsonify, request, abort, Response
+from flask_login import current_user, login_user, logout_user, login_required
 from datetime import datetime
 import uuid
 import json
@@ -19,32 +19,32 @@ from deckProxy import deckProxy
 from inventoryExport import inventoryExport
 from inventoryImportParse import inventoryImportParse
 from api import app
+from api import login
 from api import db
 from models import User
 from models import Deck
 
+@login.unauthorized_handler
+def unauthorized_handler():
+    return Response(json.dumps({'Not logged in': True}), 401)
 
 @app.route('/api/inventory', methods=['GET'])
+@login_required
 def listInventory():
-    try:
-        if current_user.is_authenticated:
-            crypt = {}
-            library = {}
-            if current_user.inventory:
-                for k, v in current_user.inventory.items():
-                    k = int(k)
-                    if k > 200000:
-                        crypt[k] = {'q': v}
-                    elif k < 200000:
-                        library[k] = {'q': v}
+    crypt = {}
+    library = {}
+    if current_user.inventory:
+        for k, v in current_user.inventory.items():
+            k = int(k)
+            if k > 200000:
+                crypt[k] = {'q': v}
+            elif k < 200000:
+                library[k] = {'q': v}
 
-            return jsonify({
-                "crypt": crypt,
-                "library": library,
-            })
-
-    except AttributeError:
-        return jsonify({'error': 'not logged'})
+    return jsonify({
+        "crypt": crypt,
+        "library": library,
+    })
 
 
 @app.route('/api/inventory/export', methods=['POST'])
@@ -66,112 +66,96 @@ def inventoryExportRoute():
 
 
 @app.route('/api/inventory/import', methods=['POST'])
+@login_required
 def inventoryImportRoute():
-    if current_user.is_authenticated:
-        i = current_user.inventory
-        try:
-            new_cards = inventoryImportParse(request.json)
-            merged_cards = i.copy() if i else {}
-            for k, v in new_cards.items():
-                if k not in merged_cards:
-                    merged_cards[k] = v
-                else:
-                    merged_cards[k] = merged_cards[k] + v
+    i = current_user.inventory
+    try:
+        new_cards = inventoryImportParse(request.json)
+        merged_cards = i.copy() if i else {}
+        for k, v in new_cards.items():
+            if k not in merged_cards:
+                merged_cards[k] = v
+            else:
+                merged_cards[k] = merged_cards[k] + v
 
-            current_user.inventory = merged_cards.copy()
-            db.session.commit()
-            return jsonify(new_cards)
+        current_user.inventory = merged_cards.copy()
+        db.session.commit()
+        return jsonify(new_cards)
 
-        except Exception:
-            return jsonify("error")
-
-    else:
-        return jsonify({'Not logged in.'})
+    except Exception:
+        return jsonify("error")
 
 
 @app.route('/api/inventory/delete', methods=['GET'])
+@login_required
 def deleteInventory():
-    try:
-        if current_user.is_authenticated:
-            current_user.inventory = {}
-            db.session.commit()
-            return jsonify({'delete inventory': 'success'})
-
-    except AttributeError:
-        return jsonify({'error': 'not logged'})
+    current_user.inventory = {}
+    db.session.commit()
+    return jsonify({'delete inventory': 'success'})
 
 
 @app.route('/api/inventory/add', methods=['POST'])
+@login_required
 def inventoryAddCard():
-    if current_user.is_authenticated:
-        i = current_user.inventory
-        try:
-            new_cards = request.json
-            merged_cards = i.copy() if i else {}
-            for k, v in new_cards.items():
-                if k not in merged_cards:
-                    merged_cards[k] = v
-                else:
-                    merged_cards[k] = merged_cards[k] + v
+    i = current_user.inventory
+    try:
+        new_cards = request.json
+        merged_cards = i.copy() if i else {}
+        for k, v in new_cards.items():
+            if k not in merged_cards:
+                merged_cards[k] = v
+            else:
+                merged_cards[k] = merged_cards[k] + v
 
-            current_user.inventory = merged_cards.copy()
-            db.session.commit()
-            return jsonify({'inventory card added': 'success'})
+        current_user.inventory = merged_cards.copy()
+        db.session.commit()
+        return jsonify({'inventory card added': 'success'})
 
-        except Exception:
-            pass
-
-    else:
-        return jsonify({'Not logged in.'})
+    except Exception:
+        pass
 
 
 @app.route('/api/inventory/del', methods=['POST'])
+@login_required
 def inventoryDelCard():
-    if current_user.is_authenticated:
-        i = current_user.inventory
-        try:
-            new_cards = request.json
-            merged_cards = i.copy() if i else {}
-            for k, v in new_cards.items():
-                if k in merged_cards:
-                    if merged_cards[k] > v:
-                        merged_cards[k] = merged_cards[k] - v
-                    else:
-                        del merged_cards[k]
+    i = current_user.inventory
+    try:
+        new_cards = request.json
+        merged_cards = i.copy() if i else {}
+        for k, v in new_cards.items():
+            if k in merged_cards:
+                if merged_cards[k] > v:
+                    merged_cards[k] = merged_cards[k] - v
+                else:
+                    del merged_cards[k]
 
-            current_user.inventory = merged_cards.copy()
-            db.session.commit()
-            return jsonify({'inventory card deleted': 'success'})
+        current_user.inventory = merged_cards.copy()
+        db.session.commit()
+        return jsonify({'inventory card deleted': 'success'})
 
-        except Exception:
-            pass
-
-    else:
-        return jsonify({'Not logged in.'})
+    except Exception:
+        pass
 
 
 @app.route('/api/inventory/change', methods=['POST'])
+@login_required
 def inventoryChangeCard():
-    if current_user.is_authenticated:
-        i = current_user.inventory
-        try:
-            new_cards = request.json
-            merged_cards = i.copy() if i else {}
-            for k, v in new_cards.items():
-                if v < 0:
-                    del merged_cards[k]
-                else:
-                    merged_cards[k] = v
+    i = current_user.inventory
+    try:
+        new_cards = request.json
+        merged_cards = i.copy() if i else {}
+        for k, v in new_cards.items():
+            if v < 0:
+                del merged_cards[k]
+            else:
+                merged_cards[k] = v
 
-            current_user.inventory = merged_cards.copy()
-            db.session.commit()
-            return jsonify({'inventory card change': 'success'})
+        current_user.inventory = merged_cards.copy()
+        db.session.commit()
+        return jsonify({'inventory card change': 'success'})
 
-        except Exception:
-            pass
-
-    else:
-        return jsonify({'Not logged in.'})
+    except Exception:
+        pass
 
 
 @app.route('/api/deck/<string:deckid>', methods=['GET'])
@@ -241,168 +225,165 @@ def showDeck(deckid):
 
 
 @app.route('/api/deck/<string:deckid>', methods=['PUT'])
+@login_required
 def updateDeck(deckid):
-    if current_user.is_authenticated:
-        d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
-        d.timestamp = datetime.utcnow()
-        try:
-            if 'cardChange' in request.json:
-                new_cards = request.json['cardChange']
-                merged_cards = d.cards.copy()
-                for k, v in new_cards.items():
-                    if v < 0:
-                        del merged_cards[k]
-                    else:
-                        merged_cards[k] = v
-
-                d.cards = merged_cards.copy()
-        except Exception:
-            pass
-
-        try:
-            if 'cardAdd' in request.json:
-                new_cards = request.json['cardAdd']
-                merged_cards = d.cards.copy()
-                for k, v in new_cards.items():
-                    if k not in merged_cards:
-                        merged_cards[k] = v
-
-                d.cards = merged_cards.copy()
-        except Exception:
-            pass
-
-        try:
-            if 'name' in request.json:
-                d.name = request.json['name']
-
-                if d.master:
-                    master = Deck.query.filter_by(author=current_user,
-                                                  deckid=d.master).first()
-                    master.name = request.json['name']
-
-                    for i in master.branches:
-                        j = Deck.query.filter_by(author=current_user,
-                                                 deckid=i).first()
-                        j.name = request.json['name']
-
-                elif d.branches:
-                    for i in d.branches:
-                        j = Deck.query.filter_by(author=current_user,
-                                                 deckid=i).first()
-                        j.name = request.json['name']
-
-        except Exception:
-            pass
-
-        try:
-            if 'hidden' in request.json:
-                d.hidden = request.json['hidden']
-
-        except Exception:
-            pass
-
-
-        try:
-            if 'description' in request.json:
-                d.description = request.json['description']
-        except Exception:
-            pass
-
-        try:
-            if 'author' in request.json:
-                d.author_public_name = request.json['author'] or ''
-
-                if d.master:
-                    master = Deck.query.filter_by(author=current_user,
-                                                  deckid=d.master).first()
-                    master.author_public_name = request.json['author']
-
-                    for i in master.branches:
-                        j = Deck.query.filter_by(author=current_user,
-                                                 deckid=i).first()
-                        j.author_public_name = request.json['author']
-
-                elif d.branches:
-                    for i in d.branches:
-                        j = Deck.query.filter_by(author=current_user,
-                                                 deckid=i).first()
-                        j.author_public_name = request.json['author']
-
-        except Exception:
-            pass
-
-        try:
-            if 'branchName' in request.json:
-                d.branch_name = request.json['branchName'] or ''
-        except Exception:
-            pass
-
-        try:
-            if 'makeFlexible' in request.json:
-                if request.json['makeFlexible'] == 'all':
-                    d.used_in_inventory = {}
-                    d.inventory_type = 's'
+    d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
+    d.timestamp = datetime.utcnow()
+    try:
+        if 'cardChange' in request.json:
+            new_cards = request.json['cardChange']
+            merged_cards = d.cards.copy()
+            for k, v in new_cards.items():
+                if v < 0:
+                    del merged_cards[k]
                 else:
-                    r = str(request.json['makeFlexible'])
-                    used = d.used_in_inventory.copy()
-                    used[r] = 's'
-                    d.used_in_inventory = used
-        except Exception:
-            pass
+                    merged_cards[k] = v
 
-        try:
-            if 'makeFixed' in request.json:
-                if request.json['makeFixed'] == 'all':
-                    d.used_in_inventory = {}
-                    d.inventory_type = 'h'
-                else:
-                    r = str(request.json['makeFixed'])
-                    used = d.used_in_inventory.copy()
-                    used[r] = 'h'
-                    d.used_in_inventory = used
-        except Exception:
-            pass
+            d.cards = merged_cards.copy()
+    except Exception:
+        pass
 
-        try:
-            if 'makeClear' in request.json:
-                if request.json['makeClear'] == 'all':
-                    d.used_in_inventory = {}
-                    d.inventory_type = ''
-                else:
-                    r = str(request.json['makeClear'])
-                    used = d.used_in_inventory.copy()
-                    del (used[r])
-                    d.used_in_inventory = used
-        except Exception:
-            pass
+    try:
+        if 'cardAdd' in request.json:
+            new_cards = request.json['cardAdd']
+            merged_cards = d.cards.copy()
+            for k, v in new_cards.items():
+                if k not in merged_cards:
+                    merged_cards[k] = v
 
-        try:
-            if 'setTags' in request.json:
-                new_tags = request.json['setTags']
-                d.tags = new_tags
-        except Exception:
-            pass
+            d.cards = merged_cards.copy()
+    except Exception:
+        pass
 
-        if d.master:
-            old_master = Deck.query.filter_by(author=current_user,
-                                              deckid=d.master).first()
-            branches = old_master.branches.copy()
-            branches.remove(d.deckid)
-            branches.append(old_master.deckid)
-            d.branches = branches
-            d.master = None
-            old_master.branches = None
-            for b in branches:
-                branch_deck = Deck.query.filter_by(author=current_user,
-                                                   deckid=b).first()
-                branch_deck.master = d.deckid
+    try:
+        if 'name' in request.json:
+            d.name = request.json['name']
 
-        db.session.commit()
+            if d.master:
+                master = Deck.query.filter_by(author=current_user,
+                                                deckid=d.master).first()
+                master.name = request.json['name']
 
-        return jsonify({'updated deck': d.deckid})
+                for i in master.branches:
+                    j = Deck.query.filter_by(author=current_user,
+                                                deckid=i).first()
+                    j.name = request.json['name']
 
-    else:
-        return jsonify({'Not logged in.'})
+            elif d.branches:
+                for i in d.branches:
+                    j = Deck.query.filter_by(author=current_user,
+                                                deckid=i).first()
+                    j.name = request.json['name']
+
+    except Exception:
+        pass
+
+    try:
+        if 'hidden' in request.json:
+            d.hidden = request.json['hidden']
+
+    except Exception:
+        pass
+
+
+    try:
+        if 'description' in request.json:
+            d.description = request.json['description']
+    except Exception:
+        pass
+
+    try:
+        if 'author' in request.json:
+            d.author_public_name = request.json['author'] or ''
+
+            if d.master:
+                master = Deck.query.filter_by(author=current_user,
+                                                deckid=d.master).first()
+                master.author_public_name = request.json['author']
+
+                for i in master.branches:
+                    j = Deck.query.filter_by(author=current_user,
+                                                deckid=i).first()
+                    j.author_public_name = request.json['author']
+
+            elif d.branches:
+                for i in d.branches:
+                    j = Deck.query.filter_by(author=current_user,
+                                                deckid=i).first()
+                    j.author_public_name = request.json['author']
+
+    except Exception:
+        pass
+
+    try:
+        if 'branchName' in request.json:
+            d.branch_name = request.json['branchName'] or ''
+    except Exception:
+        pass
+
+    try:
+        if 'makeFlexible' in request.json:
+            if request.json['makeFlexible'] == 'all':
+                d.used_in_inventory = {}
+                d.inventory_type = 's'
+            else:
+                r = str(request.json['makeFlexible'])
+                used = d.used_in_inventory.copy()
+                used[r] = 's'
+                d.used_in_inventory = used
+    except Exception:
+        pass
+
+    try:
+        if 'makeFixed' in request.json:
+            if request.json['makeFixed'] == 'all':
+                d.used_in_inventory = {}
+                d.inventory_type = 'h'
+            else:
+                r = str(request.json['makeFixed'])
+                used = d.used_in_inventory.copy()
+                used[r] = 'h'
+                d.used_in_inventory = used
+    except Exception:
+        pass
+
+    try:
+        if 'makeClear' in request.json:
+            if request.json['makeClear'] == 'all':
+                d.used_in_inventory = {}
+                d.inventory_type = ''
+            else:
+                r = str(request.json['makeClear'])
+                used = d.used_in_inventory.copy()
+                del (used[r])
+                d.used_in_inventory = used
+    except Exception:
+        pass
+
+    try:
+        if 'setTags' in request.json:
+            new_tags = request.json['setTags']
+            d.tags = new_tags
+    except Exception:
+        pass
+
+    if d.master:
+        old_master = Deck.query.filter_by(author=current_user,
+                                            deckid=d.master).first()
+        branches = old_master.branches.copy()
+        branches.remove(d.deckid)
+        branches.append(old_master.deckid)
+        d.branches = branches
+        d.master = None
+        old_master.branches = None
+        for b in branches:
+            branch_deck = Deck.query.filter_by(author=current_user,
+                                                deckid=b).first()
+            branch_deck.master = d.deckid
+
+    db.session.commit()
+
+    return jsonify({'updated deck': d.deckid})
 
 
 @app.route('/api/deck/parse', methods=['POST'])
@@ -535,111 +516,105 @@ def listDecks():
 
 
 @app.route('/api/decks/create', methods=['POST'])
+@login_required
 def newDeck():
-    if current_user.is_authenticated:
-        try:
-            deckid = uuid.uuid4().hex
-            author = request.json[
-                'author'] if 'author' in request.json else current_user.public_name
-            description = request.json[
-                'description'] if 'description' in request.json else ''
-            cards = request.json['cards'] if 'cards' in request.json else {}
+    try:
+        deckid = uuid.uuid4().hex
+        author = request.json[
+            'author'] if 'author' in request.json else current_user.public_name
+        description = request.json[
+            'description'] if 'description' in request.json else ''
+        cards = request.json['cards'] if 'cards' in request.json else {}
 
-            d = Deck(deckid=deckid,
-                     name=request.json['deckname'],
-                     author_public_name=author,
-                     description=description,
-                     author=current_user,
-                     cards=cards)
+        d = Deck(deckid=deckid,
+                    name=request.json['deckname'],
+                    author_public_name=author,
+                    description=description,
+                    author=current_user,
+                    cards=cards)
 
-            db.session.add(d)
-            db.session.commit()
+        db.session.add(d)
+        db.session.commit()
 
-            return jsonify({
-                'new deck created': request.json['deckname'],
-                'deckid': deckid,
-            })
-        except Exception:
-            pass
-    else:
-        return jsonify({'Not logged in.'})
+        return jsonify({
+            'new deck created': request.json['deckname'],
+            'deckid': deckid,
+        })
+    except Exception:
+        pass
 
 
 @app.route('/api/branch/create', methods=['POST'])
+@login_required
 def createBranch():
-    if current_user.is_authenticated:
-        master = Deck.query.filter_by(author=current_user,
-                                      deckid=request.json['master']).first()
-        source = Deck.query.filter_by(author=current_user,
-                                      deckid=request.json['source']).first()
-        branch_name = f"#{len(master.branches) + 1}" if master.branches else "#1"
+    master = Deck.query.filter_by(author=current_user,
+                                    deckid=request.json['master']).first()
+    source = Deck.query.filter_by(author=current_user,
+                                    deckid=request.json['source']).first()
+    branch_name = f"#{len(master.branches) + 1}" if master.branches else "#1"
 
-        deckid = uuid.uuid4().hex
-        branch = Deck(deckid=deckid,
-                      name=master.name,
-                      branch_name=branch_name,
-                      author_public_name=source.author_public_name,
-                      description=source.description,
-                      author=current_user,
-                      tags=source.tags,
-                      master=master.deckid,
-                      cards=source.cards)
+    deckid = uuid.uuid4().hex
+    branch = Deck(deckid=deckid,
+                    name=master.name,
+                    branch_name=branch_name,
+                    author_public_name=source.author_public_name,
+                    description=source.description,
+                    author=current_user,
+                    tags=source.tags,
+                    master=master.deckid,
+                    cards=source.cards)
 
-        branches = master.branches.copy() if master.branches else []
-        branches.append(deckid)
-        master.branches = branches
+    branches = master.branches.copy() if master.branches else []
+    branches.append(deckid)
+    master.branches = branches
 
-        db.session.add(branch)
-        db.session.commit()
-        return jsonify({
-            'master': master.deckid,
-            'source': source.deckid,
-            'deckid': deckid,
-        })
-    else:
-        return jsonify({'Not logged in.'})
+    db.session.add(branch)
+    db.session.commit()
+    return jsonify({
+        'master': master.deckid,
+        'source': source.deckid,
+        'deckid': deckid,
+    })
 
 
 @app.route('/api/branch/remove', methods=['POST'])
+@login_required
 def removeBranch():
-    if current_user.is_authenticated:
-        try:
-            d = Deck.query.filter_by(author=current_user,
-                                     deckid=request.json['deckid']).first()
-            if d.master:
-                master = Deck.query.filter_by(author=current_user,
-                                              deckid=d.master).first()
+    try:
+        d = Deck.query.filter_by(author=current_user,
+                                    deckid=request.json['deckid']).first()
+        if d.master:
+            master = Deck.query.filter_by(author=current_user,
+                                            deckid=d.master).first()
 
-                branches = master.branches.copy()
-                branches.remove(d.deckid)
-                master.branches = branches
+            branches = master.branches.copy()
+            branches.remove(d.deckid)
+            master.branches = branches
 
-                db.session.delete(d)
-                db.session.commit()
-                return jsonify({'branch removed': request.json['deckid']})
+            db.session.delete(d)
+            db.session.commit()
+            return jsonify({'branch removed': request.json['deckid']})
 
-            else:
-                j = Deck.query.filter_by(author=current_user,
-                                         deckid=d.branches[-1]).first()
+        else:
+            j = Deck.query.filter_by(author=current_user,
+                                        deckid=d.branches[-1]).first()
 
-                branches = d.branches.copy()
-                branches.remove(j.deckid)
-                j.branches = branches
-                for i in branches:
-                    k = Deck.query.filter_by(author=current_user,
-                                             deckid=i).first()
-                    k.master = j.deckid
+            branches = d.branches.copy()
+            branches.remove(j.deckid)
+            j.branches = branches
+            for i in branches:
+                k = Deck.query.filter_by(author=current_user,
+                                            deckid=i).first()
+                k.master = j.deckid
 
-                j.master = ''
+            j.master = ''
 
-                db.session.delete(d)
-                db.session.commit()
-                return jsonify({'branch removed': request.json['deckid']})
+            db.session.delete(d)
+            db.session.commit()
+            return jsonify({'branch removed': request.json['deckid']})
 
-        except Exception:
-            return jsonify({'error': 'idk'})
-    else:
-        return jsonify({'Not logged in.'})
+    except Exception:
+        return jsonify({'error': 'idk'})
 
 
 @app.route('/api/decks/clone', methods=['POST'])
@@ -763,28 +738,26 @@ def urlCloneDeck():
 
 
 @app.route('/api/decks/import', methods=['POST'])
+@login_required
 def importDeck():
-    if current_user.is_authenticated:
-        try:
-            [name, author, description,
-             cards] = deckImport(request.json['deckText'])
-            if len(cards) > 0:
-                deckid = uuid.uuid4().hex
-                d = Deck(deckid=deckid,
-                         name=name,
-                         author_public_name=author,
-                         description=description,
-                         author=current_user,
-                         cards=cards)
-                db.session.add(d)
-                db.session.commit()
-                return jsonify({'deckid': deckid})
-            return jsonify({'Cannot import this deck.'})
+    try:
+        [name, author, description,
+            cards] = deckImport(request.json['deckText'])
+        if len(cards) > 0:
+            deckid = uuid.uuid4().hex
+            d = Deck(deckid=deckid,
+                        name=name,
+                        author_public_name=author,
+                        description=description,
+                        author=current_user,
+                        cards=cards)
+            db.session.add(d)
+            db.session.commit()
+            return jsonify({'deckid': deckid})
+        return jsonify({'Cannot import this deck.'})
 
-        except Exception:
-            pass
-    else:
-        return jsonify({'Not logged in.'})
+    except Exception:
+        pass
 
 
 @app.route('/api/decks/export', methods=['POST'])
@@ -864,29 +837,27 @@ def deckProxyRoute():
 
 
 @app.route('/api/decks/remove', methods=['POST'])
+@login_required
 def removeDeck():
-    if current_user.is_authenticated:
-        try:
-            d = Deck.query.filter_by(author=current_user,
-                                     deckid=request.json['deckid']).first()
-            if d.branches:
-                for i in d.branches:
-                    j = Deck.query.filter_by(author=current_user,
-                                             deckid=i).first()
-                    db.session.delete(j)
-
-            if d.master:
+    try:
+        d = Deck.query.filter_by(author=current_user,
+                                    deckid=request.json['deckid']).first()
+        if d.branches:
+            for i in d.branches:
                 j = Deck.query.filter_by(author=current_user,
-                                         deckid=d.master).first()
+                                            deckid=i).first()
                 db.session.delete(j)
 
-            db.session.delete(d)
-            db.session.commit()
-            return jsonify({'deck removed': request.json['deckid']})
-        except Exception:
-            return jsonify({'error': 'idk'})
-    else:
-        return jsonify({'Not logged in.'})
+        if d.master:
+            j = Deck.query.filter_by(author=current_user,
+                                        deckid=d.master).first()
+            db.session.delete(j)
+
+        db.session.delete(d)
+        db.session.commit()
+        return jsonify({'deck removed': request.json['deckid']})
+    except Exception:
+        return jsonify({'error': 'idk'})
 
 
 @app.route('/api/register', methods=['POST'])
@@ -937,39 +908,38 @@ def login():
 
 
 @app.route('/api/account', methods=['POST'])
+@login_required
 def account():
-    if current_user.is_authenticated:
-        try:
-            if (request.json['publicName']):
-                current_user.public_name = request.json['publicName']
-                db.session.commit()
-                return jsonify('public name changed')
-        except Exception:
-            pass
-        try:
+    try:
+        if (request.json['publicName']):
+            current_user.public_name = request.json['publicName']
+            db.session.commit()
+            return jsonify('public name changed')
+    except Exception:
+        pass
+    try:
 
-            if (request.json['email']) and current_user.check_password(
-                    request.json['password']):
-                current_user.email = request.json['email']
-                db.session.commit()
-                return jsonify('email changed')
-        except Exception:
-            pass
-        try:
-            if (request.json['newPassword']) and current_user.check_password(
-                    request.json['password']):
-                current_user.set_password(request.json['newPassword'])
-                db.session.commit()
-                return jsonify('password changed')
-        except Exception:
-            pass
-    else:
-        return jsonify({'error': 'Not logged in'})
+        if (request.json['email']) and current_user.check_password(
+                request.json['password']):
+            current_user.email = request.json['email']
+            db.session.commit()
+            return jsonify('email changed')
+    except Exception:
+        pass
+    try:
+        if (request.json['newPassword']) and current_user.check_password(
+                request.json['password']):
+            current_user.set_password(request.json['newPassword'])
+            db.session.commit()
+            return jsonify('password changed')
+    except Exception:
+        pass
 
 
 @app.route('/api/account/remove', methods=['POST'])
+@login_required
 def removeAccount():
-    if current_user.is_authenticated and current_user.check_password(
+    if current_user.check_password(
             request.json['password']):
         try:
             db.session.delete(current_user)
@@ -978,7 +948,7 @@ def removeAccount():
         except Exception:
             pass
     else:
-        return jsonify({'Not logged in or wrong password.'})
+        return jsonify({'Wrong password.'})
 
 
 @app.route('/api/logout')
@@ -987,6 +957,7 @@ def logout():
         user = current_user.username
         logout_user()
         return jsonify({'logged out from': user})
+
     except AttributeError:
         return jsonify({'error': 'not logged'})
 

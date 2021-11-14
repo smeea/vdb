@@ -1,5 +1,4 @@
 # FIX
-* Import long inventory
 * Inventory search in crypt/library to show X/Y
 * Compare mode wrong Missing calculation
 * Change url to empty on last form changed to 'any'
@@ -37,4 +36,3 @@
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardior codes to return)
-* Unify tests for current_user
