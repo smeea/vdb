@@ -29,7 +29,6 @@
 
 # IMPROVE TECHNOLOGY - FRONTEND
 * Sync with websockets
-* Move autocompletion to frontend
 * Move search to frontend
 * Move export to frontend
 * Move import to frontend

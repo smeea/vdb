@@ -43,7 +43,7 @@ class Deck(db.Model):
     branches = db.Column(db.PickleType, default=[])
     tags = db.Column(db.PickleType, default=[])
     used_in_inventory = db.Column(db.PickleType, default={})
-    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
