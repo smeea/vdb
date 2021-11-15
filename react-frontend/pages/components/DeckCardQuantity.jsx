@@ -10,7 +10,7 @@ function DeckCardQuantity(props) {
   const [miss, setMiss] = useState(false);
 
   const handleManualChange = (event) => {
-    setState(event.target.value);
+    setState(event.target.value ? event.target.value : 0);
   };
 
   const handleSubmitButton = (event) => {
