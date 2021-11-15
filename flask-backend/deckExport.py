@@ -69,7 +69,9 @@ def deckExport(d, format):
                 c = i['c']
                 name = c['ASCII Name'].replace('"', "'")
                 if c['Adv'] and c['Adv'][0]:
-                    name = name + " (ADV)"
+                    name = f"{name} (ADV)"
+                if c['New']:
+                    name = f"{name} (G{c['Group']})"
 
                 ws_crypt.append([q, name])
 
@@ -93,7 +95,10 @@ def deckExport(d, format):
                 c = i['c']
                 name = c['ASCII Name'].replace('"', "'")
                 if c['Adv'] and c['Adv'][0]:
-                    name = name + " (ADV)"
+                    name = f"{name} (ADV)"
+                if c['New']:
+                    name = f"{name} (G{c['Group']})"
+
                 deck.append(f"{q}x{name}\n")
 
             sorted_library = sorted(library.values(),
@@ -129,10 +134,8 @@ def deckExport(d, format):
 
                 if c['Adv'] and c['Adv'][0]:
                     deck.append(f" (ADV)")
-
-                # TODO when Lackey format established
-                # if c['New']:
-                #     deck.append(f" [G{c['Group']}]")
+                if c['New']:
+                    deck.append(f" (G{c['Group']})")
 
                 deck.append('\n')
 
@@ -247,9 +250,11 @@ def deckExport(d, format):
 
                 name = c['Name']
                 if c['Adv'] and c['Adv'][0]:
-                    name = name + ' (ADV)'
+                    name = f"{name} (ADV)"
 
-                cryptExport[name] = {
+
+                cryptExport[c['Id']] = {
+                    'Name': name,
                     'Quantity': q,
                     'Disciplines': disciplines,
                     'Title': c['Title'],
@@ -269,7 +274,7 @@ def deckExport(d, format):
 
             for k, v in cryptExport.items():
                 quantitySpaces = len(str(maxCrypt)) - len(str(v['Quantity']))
-                nameSpaces = longestName - len(k) + 3
+                nameSpaces = longestName - len(v['Name']) + 3
                 disSpaces = longestDisciplines - len(v['Disciplines']) + 3
                 capacitySpaces = longestCapacity - len(str(v['Capacity']))
                 titleSpaces = longestTitle - len(v['Title']) + 3
@@ -278,7 +283,7 @@ def deckExport(d, format):
                     deck.append(f"{' ' * quantitySpaces}{v['Quantity']}x ")
                 else:
                     deck.append(f"{v['Quantity']}x{' ' * quantitySpaces} ")
-                deck.append(k + ' ' * nameSpaces)
+                deck.append(v['Name'] + ' ' * nameSpaces)
                 deck.append(' ' * capacitySpaces + str(v['Capacity']) + '  ')
                 deck.append(v['Disciplines'] + ' ' * disSpaces)
                 deck.append(v['Title'] + ' ' * titleSpaces)

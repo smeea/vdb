@@ -21,6 +21,7 @@ def deckImport(deckText):
         cardname = ''
         quantity = 0
         adv = False
+        group = None
 
         if nameMatch := re.match(r'^Deck Name: (.+)', i):
             deck['name'] = nameMatch.group(1)
@@ -29,21 +30,28 @@ def deckImport(deckText):
         if nameMatch := re.match(r'^Description: (.+)', i):
             deck['description'] = nameMatch.group(1)
 
-        if '(ADV)' in i:
+        if ' (ADV)' in i:
             if cardMatch := re.match(
                     r'^ *([0-9]+)x?\s+(.*?)(\s\(ADV\))(\s+\d+.*)', i):
-                cardname = cardMatch.group(2)
                 quantity = int(cardMatch.group(1))
+                cardname = cardMatch.group(2)
                 adv = True
 
             elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*)(\s\(ADV\))', i):
-                cardname = cardMatch.group(2)
                 quantity = int(cardMatch.group(1))
+                cardname = cardMatch.group(2)
                 adv = True
 
-        elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*?)(\s+\d+.*)', i):
-            cardname = cardMatch.group(2)
+        elif ' (G' in i:
+            if cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*)\s\(G(.)\)', i):
+                quantity = int(cardMatch.group(1))
+                cardname = cardMatch.group(2)
+                group = cardMatch.group(3)
+
+        elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*?)(\s+\d+.*)(.)', i):
             quantity = int(cardMatch.group(1))
+            cardname = cardMatch.group(2)
+            group = cardMatch.group(4)
 
         elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*)', i):
             cardname = cardMatch.group(2)
@@ -59,15 +67,22 @@ def deckImport(deckText):
                 card_adv = True
 
             if (cardname == csv_cardname):
+                if group and card['Group'] != group:
+                    continue
+
                 if adv and card_adv:
                     deck['cards'][str(card['Id'])] = quantity
+                    continue
+
                 if not adv and not card_adv:
                     deck['cards'][str(card['Id'])] = quantity
+                    continue
 
         for card in library:
             csv_cardname = re.sub(r'\W', '', unidecode(card['Name'])).lower()
 
             if cardname == csv_cardname:
                 deck['cards'][str(card['Id'])] = quantity
+                continue
 
     return (deck['name'], deck['author'], deck['description'], deck['cards'])

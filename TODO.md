@@ -1,8 +1,8 @@
 # FIX
 * Inventory search in crypt/library to show X/Y
-* Compare mode wrong Missing calculation
 * Change url to empty on last form changed to 'any'
-* Export/Import with new multigroup reissues (Lackey, JOL, Text)
+* Export/Import multigroup - JOL
+* Import inventory multigroup - Lackey, Text
 * Refactor ResultLibraryType
 * Used Popover to Inventory
 

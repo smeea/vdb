@@ -70,7 +70,9 @@ def inventoryExport(d, format):
                 c = i['c']
                 name = c['ASCII Name'].replace('"', "'")
                 if c['Adv'] and c['Adv'][0]:
-                    name = name + " (ADV)"
+                    name = f"{name} (ADV)"
+                if c['New']:
+                    name = f"{name} (G{c['Group']})"
 
                 ws_crypt.append([q, name])
 
@@ -96,8 +98,7 @@ def inventoryExport(d, format):
                 q = i['q']
                 c = i['c']
                 deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
-
-                deck.append(c['ASCII Name'].replace('"', "'") + "\n")
+                deck.append(f"{c['ASCII Name']}\n")
 
             # Crypt export
             deck.append('Crypt:\n')
@@ -108,11 +109,14 @@ def inventoryExport(d, format):
                 q = i['q']
                 c = i['c']
                 deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
+                deck.append(f"{c['ASCII Name']}")
 
                 if c['Adv'] and c['Adv'][0]:
-                    deck.append(c['ASCII Name'].replace('"', "'") + ' (ADV)\n')
-                else:
-                    deck.append(c['ASCII Name'].replace('"', "'") + '\n')
+                    deck.append(f" (ADV)")
+                if c['New']:
+                    deck.append(f" (G{c['Group']})")
+
+                deck.append('\n')
 
         elif format == 'text':
             # Crypt export
@@ -193,9 +197,10 @@ def inventoryExport(d, format):
 
                 name = c['Name']
                 if c['Adv'] and c['Adv'][0]:
-                    name = name + ' (ADV)'
+                    name = f"{name} (ADV)"
 
-                cryptExport[name] = {
+                cryptExport[c['Id']] = {
+                    'Name': name,
                     'Quantity': q,
                     'Disciplines': disciplines,
                     'Title': c['Title'],
@@ -216,14 +221,14 @@ def inventoryExport(d, format):
             for k, v in cryptExport.items():
                 quantitySpaces = len(str(maxCrypt)) - len(str(v['Quantity']))
 
-                nameSpaces = longestName - len(k) + 3
+                nameSpaces = longestName - len(v['Name']) + 3
                 disSpaces = longestDisciplines - len(v['Disciplines']) + 3
 
                 capacitySpaces = longestCapacity - len(str(v['Capacity']))
                 titleSpaces = longestTitle - len(v['Title']) + 3
 
                 deck.append(f"{' ' * quantitySpaces}{v['Quantity']}x ")
-                deck.append(f"{k}{' ' * nameSpaces}")
+                deck.append(f"{v['Name']}{' ' * nameSpaces}")
                 deck.append(f"{' ' * capacitySpaces}{v['Capacity']}  ")
                 deck.append(f"{v['Disciplines']}{' ' * disSpaces}")
                 deck.append(f"{v['Title']}{' ' * titleSpaces}")
