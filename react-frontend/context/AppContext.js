@@ -364,6 +364,7 @@ export const AppProvider = (props) => {
         setHideMissing,
         inventoryMode,
         toggleInventoryMode,
+        setInventoryMode,
         addMode,
         toggleAddMode,
         showImage,

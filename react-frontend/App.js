@@ -48,6 +48,7 @@ function App(props) {
     setInventoryCrypt,
     inventoryLibrary,
     setInventoryLibrary,
+    setInventoryMode,
     decks,
     setDecks,
     activeDeck,
@@ -370,6 +371,9 @@ function App(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
+        if (!data.username) {
+          setInventoryMode(false);
+        }
         setUsername(data.username);
         setPublicName(data.public_name);
         setEmail(data.email);
