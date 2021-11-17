@@ -1,5 +1,4 @@
 # FIX
-* Inventory search in crypt/library to show X/Y
 * Change url to empty on last form changed to 'any'
 * Export/Import multigroup - JOL
 * Refactor ResultLibraryType

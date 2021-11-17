@@ -102,29 +102,30 @@ function ResultLibraryTable(props) {
               placement="left"
               overlay={<UsedPopover cardid={card['Id']} />}
             >
-              <td className="quantity">
-                <div
-                  className={
-                    inInventory < softUsedMax + hardUsedTotal
-                      ? 'd-flex align-items-center justify-content-center quantity px-1 ms-1 inv-miss-full'
-                      : 'd-flex align-items-center justify-content-center quantity px-1 ms-1'
-                  }
-                >
-                  {inInventory > 0 ? (
-                    <>
-                      <div className="pe-1 opacity-035">
-                        <ArchiveFill
-                          width="14"
-                          height="14"
-                          viewBox="0 0 16 16"
-                        />
-                      </div>
-                      {inInventory}
-                    </>
-                  ) : (
-                    <>&nbsp;&nbsp;</>
-                  )}
-                </div>
+              <td className="used">
+                {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
+                  <div
+                    className={`d-flex align-items-center justify-content-between used px-1 ms-1 ${
+                      inInventory < softUsedMax + hardUsedTotal
+                        ? 'inv-miss-full'
+                        : ''
+                    }
+                  `}
+                  >
+                    {inInventory}
+                    <div
+                      className={`small ${
+                        inInventory >= softUsedMax + hardUsedTotal
+                          ? 'gray'
+                          : 'white'
+                      } ps-1`}
+                    >
+                      {inInventory >= softUsedMax + hardUsedTotal
+                        ? `+${inInventory - softUsedMax - hardUsedTotal}`
+                        : inInventory - softUsedMax - hardUsedTotal}
+                    </div>
+                  </div>
+                )}
               </td>
             </OverlayTrigger>
           )}
