@@ -10,14 +10,9 @@ with open("vteslib.json", "r") as library_file:
     library = json.load(library_file)
 
 
-def deckImport(deckText):
+def inventoryImport(deckText):
     linesArray = deckText.splitlines()
-    deck = {
-        'name': 'New Imported Deck',
-        'author': '',
-        'description': '',
-        'cards': {}
-    }
+    cards = {}
     cardbase = {}
 
     for card in crypt:
@@ -41,18 +36,8 @@ def deckImport(deckText):
         }
 
     for i in linesArray:
-        if nameMatch := re.match(r'^Deck Name: (.+)', i):
-            deck['name'] = nameMatch.group(1)
-            continue
-        if nameMatch := re.match(r'^Author: (.+)', i):
-            deck['author'] = nameMatch.group(1)
-            continue
-        if nameMatch := re.match(r'^Description: (.+)', i):
-            deck['description'] = nameMatch.group(1)
-            continue
-
         id, quantity = importParseCard(i, cardbase)
         if id and quantity:
-            deck['cards'][id] = quantity
+            cards[id] = quantity
 
-    return (deck['name'], deck['author'], deck['description'], deck['cards'])
+    return (cards)

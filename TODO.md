@@ -2,7 +2,6 @@
 * Inventory search in crypt/library to show X/Y
 * Change url to empty on last form changed to 'any'
 * Export/Import multigroup - JOL
-* Import inventory multigroup - Lackey, Text
 * Refactor ResultLibraryType
 * Used Popover to Inventory
 

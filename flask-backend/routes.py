@@ -17,7 +17,7 @@ from deckExportAll import deckExportAll
 from deckImport import deckImport
 from deckProxy import deckProxy
 from inventoryExport import inventoryExport
-from inventoryImportParse import inventoryImportParse
+from inventoryImport import inventoryImport
 from api import app
 from api import login
 from api import db
@@ -70,7 +70,7 @@ def inventoryExportRoute():
 def inventoryImportRoute():
     i = current_user.inventory
     try:
-        new_cards = inventoryImportParse(request.json)
+        new_cards = inventoryImport(request.json)
         merged_cards = i.copy() if i else {}
         for k, v in new_cards.items():
             if k not in merged_cards:
