@@ -2,7 +2,6 @@
 * Change url to empty on last form changed to 'any'
 * Export/Import multigroup - JOL
 * Refactor ResultLibraryType
-* Used Popover to Inventory
 
 # FIX MOBILE
 

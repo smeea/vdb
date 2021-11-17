@@ -70,14 +70,14 @@ function InventoryCryptTable(props) {
               placement={props.placement ? props.placement : 'right'}
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
-              <>
+              <div className="w-100">
                 <InventoryCardQuantity
                   cardid={card.c['Id']}
                   q={card.q}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
                 />
-              </>
+              </div>
             </OverlayTrigger>
           )}
         </div>
@@ -106,28 +106,19 @@ function InventoryCryptTable(props) {
               placement={props.placement ? props.placement : 'right'}
               overlay={<UsedPopover cardid={card.c.Id} />}
             >
-              <>
-                {softUsedMax > 0 && (
-                  <div className="d-flex align-items-center justify-content-center">
-                    <div className="d-inline opacity-035 pe-1">
-                      <Shuffle width="14" height="14" viewBox="0 0 16 16" />
-                    </div>
-                    {softUsedMax}
-                  </div>
-                )}
-                {hardUsedTotal > 0 && (
-                  <div className="d-flex align-items-center justify-content-center">
-                    <div className="d-inline opacity-035 pe-1">
-                      <PinAngleFill
-                        width="14"
-                        height="14"
-                        viewBox="0 0 16 16"
-                      />
-                    </div>
-                    {hardUsedTotal}
-                  </div>
-                )}
-              </>
+              <div
+                className={`d-flex justify-content-center w-100 ps-1 ${
+                  card.q == softUsedMax + hardUsedTotal
+                    ? 'gray'
+                    : card.q >= softUsedMax + hardUsedTotal
+                    ? 'green'
+                    : 'red'
+                }`}
+              >
+                {card.q >= softUsedMax + hardUsedTotal
+                  ? `+${card.q - softUsedMax - hardUsedTotal}`
+                  : card.q - softUsedMax - hardUsedTotal}
+              </div>
             </OverlayTrigger>
           )}
         </div>
