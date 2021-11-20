@@ -2,6 +2,7 @@
 * Change url to empty on last form changed to 'any'
 * Export/Import multigroup - JOL
 * Refactor ResultLibraryType
+* Align items in Decks table
 
 # FIX MOBILE
 
