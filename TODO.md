@@ -2,7 +2,6 @@
 * Change url to empty on last form changed to 'any'
 * Export/Import multigroup - JOL
 * Refactor ResultLibraryType
-* NewCrypCard / NewLibraryCard autoFocus (was !inInventory)
 
 # FIX MOBILE
 

@@ -37,7 +37,7 @@ function NewCryptCard(props) {
     <AsyncSelect
       classNamePrefix="react-select"
       cacheOptions
-      autoFocus={props.autoFocus ? props.autoFocus : true}
+      autoFocus={props.autoFocus}
       value={props.selectedValue}
       placeholder="Add Crypt Card"
       loadOptions={loadOptions}

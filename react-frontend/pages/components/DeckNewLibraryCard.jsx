@@ -22,6 +22,7 @@ function DeckNewLibraryCard(props) {
     <NewLibraryCard
       selectedValue={selectedValue}
       onChange={(value) => setSelectedValue(value.value)}
+      autoFocus={true}
     />
   );
 }

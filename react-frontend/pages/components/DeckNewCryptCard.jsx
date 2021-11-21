@@ -22,6 +22,7 @@ function DeckNewCryptCard(props) {
     <NewCryptCard
       selectedValue={selectedValue}
       onChange={(value) => setSelectedValue(value.value)}
+      autoFocus={true}
     />
   );
 }

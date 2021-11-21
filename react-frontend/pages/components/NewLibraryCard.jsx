@@ -40,12 +40,12 @@ function NewLibraryCard(props) {
     <AsyncSelect
       classNamePrefix="react-select"
       cacheOptions
-      autoFocus={!props.inInventory}
+      autoFocus={props.autoFocus}
       value={props.selectedValue}
       placeholder="Add Library Card"
       loadOptions={loadOptions}
       getOptionLabel={getOptionLabel}
-      onChange={props.onChange ? props.onChange : handleChange}
+      onChange={props.onChange}
     />
   );
 }

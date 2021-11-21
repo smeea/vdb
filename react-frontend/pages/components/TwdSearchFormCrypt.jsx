@@ -65,7 +65,7 @@ function TwdSearchFormCrypt(props) {
 
   return (
     <>
-      <NewCryptCard onChange={handleAdd} selectedValue={null} />
+      <NewCryptCard onChange={handleAdd} selectedValue={null} autoFocus={false} />
       {cryptCardsList}
       {modalCard && (
         <ResultCryptModal
