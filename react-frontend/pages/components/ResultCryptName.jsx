@@ -3,7 +3,7 @@ import Hammer from '../../assets/images/icons/hammer.svg';
 
 function ResultCryptName(props) {
   return (
-    <>
+    <div className="d-inline name">
       {props.card['Banned'] ? (
         <>
           <strike>{props.card['Name']}</strike>
@@ -25,7 +25,7 @@ function ResultCryptName(props) {
           [{props.card['Banned']} <Hammer />]
         </span>
       )}
-    </>
+    </div>
   );
 }
 
