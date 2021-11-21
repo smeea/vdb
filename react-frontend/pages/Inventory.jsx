@@ -52,7 +52,6 @@ function Inventory(props) {
                     <InventoryNewCryptCard
                       cards={inventoryCrypt}
                       setNewId={setNewCryptId}
-                      inInventory={true}
                     />
                   </div>
                   {newCryptId && inventoryCrypt[newCryptId] && (
@@ -86,7 +85,6 @@ function Inventory(props) {
                     <InventoryNewLibraryCard
                       cards={inventoryLibrary}
                       setNewId={setNewLibraryId}
-                      inInventory={true}
                     />
                   </div>
                   {newLibraryId && inventoryLibrary[newLibraryId] && (
@@ -134,7 +132,6 @@ function Inventory(props) {
                   <InventoryNewCryptCard
                     cards={inventoryCrypt}
                     setNewId={setNewCryptId}
-                    inInventory={true}
                   />
                 </div>
                 {newCryptId && inventoryCrypt[newCryptId] && (
@@ -167,7 +164,6 @@ function Inventory(props) {
                   <InventoryNewLibraryCard
                     cards={inventoryLibrary}
                     setNewId={setNewLibraryId}
-                    inInventory={true}
                   />
                 </div>
                 {newLibraryId && inventoryLibrary[newLibraryId] && (

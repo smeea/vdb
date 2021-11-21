@@ -1,15 +1,9 @@
 import React, { useEffect, useState, useRef, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AsyncSelect from 'react-select/async';
-import Hammer from '../../assets/images/icons/hammer.svg';
-import ResultCryptClan from './ResultCryptClan.jsx';
-import ResultCryptCapacity from './ResultCryptCapacity.jsx';
-import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
-import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
-import ResultLibraryCost from './ResultLibraryCost.jsx';
-import ResultLibraryClan from './ResultLibraryClan.jsx';
 import AppContext from '../../context/AppContext.js';
+import SelectLabelCrypt from './SelectLabelCrypt.jsx';
+import SelectLabelLibrary from './SelectLabelLibrary.jsx';
 
 function QuickSelect(props) {
   const { cryptCardBase, libraryCardBase, isMobile } = useContext(AppContext);
@@ -17,10 +11,31 @@ function QuickSelect(props) {
   const params = useParams();
   const navigate = useNavigate();
   const [selectedValue, setSelectedValue] = useState(null);
-  const handleChange = (value) => setSelectedValue(value);
+  const handleChange = (option) => {
+    setSelectedValue(option.value);
+  };
   const ref = useRef(null);
 
-  const loadOptions = (inputValue) => {
+  const getOptionLabel = (option) => {
+    const cardid = option.value;
+    return (
+      <>
+        {cardid > 200000 ? (
+          <SelectLabelCrypt
+            cardid={option.value}
+            inInventory={props.inInventory}
+          />
+        ) : (
+          <SelectLabelLibrary
+            cardid={option.value}
+            inInventory={props.inInventory}
+          />
+        )}
+      </>
+    );
+  };
+
+  const loadOptions = async (inputValue) => {
     const url = `${process.env.API_URL}search/quick`;
     const input = { name: inputValue };
     const options = {
@@ -34,7 +49,11 @@ function QuickSelect(props) {
     };
 
     if (inputValue.length > 2) {
-      return fetch(url, options).then((response) => response.json());
+      const response = await fetch(url, options);
+      const json = await response.json();
+      return json.map((card) => ({
+        value: card,
+      }));
     } else {
       return null;
     }
@@ -54,123 +73,23 @@ function QuickSelect(props) {
     if (isMobile && !params['id']) ref.current.focus();
   }, []);
 
-  return (
-    <AsyncSelect
-      classNamePrefix="react-select"
-      cacheOptions
-      autoFocus={!isMobile}
-      value={selectedValue}
-      placeholder="Card Name"
-      loadOptions={loadOptions}
-      onChange={handleChange}
-      ref={ref}
-      getOptionLabel={(cardid) => (
-        <>
-          {cardid > 200000 ? (
-            <>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center">
-                  <ResultCryptCapacity
-                    value={cryptCardBase[cardid]['Capacity']}
-                  />
-                  <span className="px-2">
-                    {cryptCardBase[cardid]['Banned'] ? (
-                      <>
-                        <strike>{cryptCardBase[cardid]['Name']}</strike>
-                        {cryptCardBase[cardid]['Adv'][0] && (
-                          <span className="ps-1">
-                            <img
-                              className="advanced-image-results"
-                              src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                              title="Advanced"
-                            />
-                          </span>
-                        )}
-                        <span className="ps-1">
-                          <Hammer />
-                        </span>
-                      </>
-                    ) : (
-                      <>
-                        {cryptCardBase[cardid]['Name']}
-                        {cryptCardBase[cardid]['Adv'][0] && (
-                          <span className="ps-1">
-                            <img
-                              className="advanced-image-results"
-                              src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                              title="Advanced"
-                            />
-                          </span>
-                        )}
-                        {cryptCardBase[cardid]['New'] && (
-                          <div className="d-inline gray ps-1">
-                            [G{cryptCardBase[cardid]['Group']}]
-                          </div>
-                        )}
-                      </>
-                    )}
-                  </span>
-                  <ResultCryptClan value={cryptCardBase[cardid]['Clan']} />
-                </div>
-                <div className="d-flex flex-nowrap">
-                  <ResultCryptDisciplines
-                    value={cryptCardBase[cardid]['Disciplines']}
-                  />
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center">
-                  <ResultLibraryType
-                    cardtype={libraryCardBase[cardid]['Type']}
-                  />
-                  <span className="ps-1">
-                    {libraryCardBase[cardid]['Banned'] ? (
-                      <>
-                        <strike>{libraryCardBase[cardid]['Name']}</strike>
-                        <span className="ps-1">
-                          <Hammer />
-                        </span>
-                      </>
-                    ) : (
-                      <>{libraryCardBase[cardid]['Name']}</>
-                    )}
-                  </span>
-                </div>
-                <div>
-                  {libraryCardBase[cardid]['Discipline'] && (
-                    <span className="px-1">
-                      <ResultLibraryDisciplines
-                        value={libraryCardBase[cardid]['Discipline']}
-                      />
-                    </span>
-                  )}
-                  {libraryCardBase[cardid]['Clan'] && (
-                    <span className="px-1">
-                      <ResultLibraryClan
-                        value={libraryCardBase[cardid]['Clan']}
-                      />
-                    </span>
-                  )}
-                  {(libraryCardBase[cardid]['Blood Cost'] ||
-                    libraryCardBase[cardid]['Pool Cost']) && (
-                    <span className="px-1">
-                      <ResultLibraryCost
-                        valuePool={libraryCardBase[cardid]['Pool Cost']}
-                        valueBlood={libraryCardBase[cardid]['Blood Cost']}
-                      />
-                    </span>
-                  )}
-                </div>
-              </div>
-            </>
-          )}
-        </>
-      )}
-    />
-  );
+  const CardSelect = React.forwardRef((props, ref) => {
+    return (
+      <AsyncSelect
+        classNamePrefix="react-select"
+        cacheOptions
+        autoFocus={!isMobile}
+        value={selectedValue}
+        placeholder="Card Name"
+        loadOptions={loadOptions}
+        getOptionLabel={getOptionLabel}
+        onChange={handleChange}
+        ref={ref}
+      />
+    );
+  });
+
+  return <CardSelect ref={ref} />;
 }
 
 export default QuickSelect;

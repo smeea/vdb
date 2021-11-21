@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import AsyncSelect from 'react-select/async';
-import Hammer from '../../assets/images/icons/hammer.svg';
-import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
-import ResultLibraryCost from './ResultLibraryCost.jsx';
-import ResultLibraryClan from './ResultLibraryClan.jsx';
-import AppContext from '../../context/AppContext.js';
+import SelectLabelLibrary from './SelectLabelLibrary.jsx';
 
 function NewLibraryCard(props) {
-  const { inventoryLibrary, libraryCardBase } = useContext(AppContext);
+  const getOptionLabel = (option) => {
+    return (
+      <SelectLabelLibrary
+        cardid={option.value}
+        inInventory={props.inInventory}
+      />
+    );
+  };
 
-  const handleChange = (value) => props.setSelectedValue(value);
-
-  const loadOptions = (inputValue) => {
+  const loadOptions = async (inputValue) => {
     const url = `${process.env.API_URL}search/library`;
     const input = { name: inputValue };
     const options = {
@@ -26,7 +26,11 @@ function NewLibraryCard(props) {
     };
 
     if (inputValue.length > 2) {
-      return fetch(url, options).then((response) => response.json());
+      const response = await fetch(url, options);
+      const json = await response.json();
+      return json.map((card) => ({
+        value: card,
+      }));
     } else {
       return null;
     }
@@ -40,60 +44,8 @@ function NewLibraryCard(props) {
       value={props.selectedValue}
       placeholder="Add Library Card"
       loadOptions={loadOptions}
-      onChange={handleChange}
-      getOptionLabel={(card) => (
-        <>
-          <div className="d-flex align-items-center justify-content-between">
-            <div className="d-flex align-items-center">
-              {props.inInventory && (
-                <div
-                  className={`d-inline in-inventory me-2 ${
-                    inventoryLibrary[card] ? 'border-black' : null
-                  }`}
-                >
-                  {inventoryLibrary[card] && inventoryLibrary[card].q}
-                </div>
-              )}
-              <ResultLibraryType cardtype={libraryCardBase[card]['Type']} />
-              <div className="ps-1">
-                {libraryCardBase[card]['Banned'] ? (
-                  <>
-                    <strike>{libraryCardBase[card]['Name']}</strike>
-                    <div className="d-inline ps-1">
-                      <Hammer />
-                    </div>
-                  </>
-                ) : (
-                  <>{libraryCardBase[card]['Name']}</>
-                )}
-              </div>
-            </div>
-            <div>
-              {libraryCardBase[card]['Discipline'] && (
-                <div className="d-inline px-3">
-                  <ResultLibraryDisciplines
-                    value={libraryCardBase[card]['Discipline']}
-                  />
-                </div>
-              )}
-              {libraryCardBase[card]['Clan'] && (
-                <div className="d-inline px-3">
-                  <ResultLibraryClan value={libraryCardBase[card]['Clan']} />
-                </div>
-              )}
-              {(libraryCardBase[card]['Blood Cost'] ||
-                libraryCardBase[card]['Pool Cost']) && (
-                <div className="d-inline">
-                  <ResultLibraryCost
-                    valuePool={libraryCardBase[card]['Pool Cost']}
-                    valueBlood={libraryCardBase[card]['Blood Cost']}
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        </>
-      )}
+      getOptionLabel={getOptionLabel}
+      onChange={props.onChange ? props.onChange : handleChange}
     />
   );
 }

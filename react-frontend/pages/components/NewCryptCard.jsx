@@ -1,17 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import AsyncSelect from 'react-select/async';
-import Hammer from '../../assets/images/icons/hammer.svg';
-import ResultCryptClan from './ResultCryptClan.jsx';
-import ResultCryptCapacity from './ResultCryptCapacity.jsx';
-import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
-import AppContext from '../../context/AppContext.js';
+import SelectLabelCrypt from './SelectLabelCrypt.jsx';
 
 function NewCryptCard(props) {
-  const { inventoryCrypt, cryptCardBase } = useContext(AppContext);
+  const getOptionLabel = (option) => {
+    return (
+      <SelectLabelCrypt cardid={option.value} inInventory={props.inInventory} />
+    );
+  };
 
-  const handleChange = (value) => props.setSelectedValue(value);
-
-  const loadOptions = (inputValue) => {
+  const loadOptions = async (inputValue) => {
     const url = `${process.env.API_URL}search/crypt`;
     const input = { name: inputValue };
     const options = {
@@ -25,7 +23,11 @@ function NewCryptCard(props) {
     };
 
     if (inputValue.length > 2) {
-      return fetch(url, options).then((response) => response.json());
+      const response = await fetch(url, options);
+      const json = await response.json();
+      return json.map((card) => ({
+        value: card,
+      }));
     } else {
       return null;
     }
@@ -35,74 +37,12 @@ function NewCryptCard(props) {
     <AsyncSelect
       classNamePrefix="react-select"
       cacheOptions
-      autoFocus={!props.inInventory}
+      autoFocus={props.autoFocus ? props.autoFocus : true}
       value={props.selectedValue}
       placeholder="Add Crypt Card"
       loadOptions={loadOptions}
-      onChange={handleChange}
-      getOptionLabel={(card) => (
-        <>
-          <div className="d-flex align-items-center justify-content-between">
-            <div className="d-flex align-items-center">
-              {props.inInventory && (
-                <div
-                  className={`d-inline in-inventory me-2 ${
-                    inventoryCrypt[card] ? 'border-black' : null
-                  }`}
-                >
-                  {inventoryCrypt[card] && inventoryCrypt[card].q}
-                </div>
-              )}
-              <ResultCryptCapacity value={cryptCardBase[card]['Capacity']} />
-              <div className="px-2">
-                {cryptCardBase[card]['Banned'] ? (
-                  <>
-                    <strike>{cryptCardBase[card]['Name']}</strike>
-                    {cryptCardBase[card]['Adv'][0] && (
-                      <div className="d-inline ps-1">
-                        <img
-                          className="advanced-image-results"
-                          src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                          title="Advanced"
-                        />
-                      </div>
-                    )}
-                    <div className="d-inline ps-1">
-                      <Hammer />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    {cryptCardBase[card]['Name']}
-                    {cryptCardBase[card]['Adv'][0] && (
-                      <div className="d-inline ps-1">
-                        <img
-                          className="advanced-image-results"
-                          src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                          title="Advanced"
-                        />
-                      </div>
-                    )}
-                    {cryptCardBase[card]['New'] && (
-                      <div className="d-inline gray ps-1">
-                        [G{cryptCardBase[card]['Group']}]
-                      </div>
-                    )}
-                  </>
-                )}
-              </div>
-              <div className="pe-3">
-                <ResultCryptClan value={cryptCardBase[card]['Clan']} />
-              </div>
-            </div>
-            <div className="d-flex flex-nowrap">
-              <ResultCryptDisciplines
-                value={cryptCardBase[card]['Disciplines']}
-              />
-            </div>
-          </div>
-        </>
-      )}
+      getOptionLabel={getOptionLabel}
+      onChange={props.onChange}
     />
   );
 }

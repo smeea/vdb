@@ -22,7 +22,7 @@ function InventoryNewLibraryCard(props) {
   return (
     <NewLibraryCard
       selectedValue={selectedValue}
-      setSelectedValue={setSelectedValue}
+      onChange={(value) => setSelectedValue(value.value)}
       inInventory={true}
     />
   );

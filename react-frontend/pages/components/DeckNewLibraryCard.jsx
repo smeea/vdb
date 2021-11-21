@@ -21,7 +21,7 @@ function DeckNewLibraryCard(props) {
   return (
     <NewLibraryCard
       selectedValue={selectedValue}
-      setSelectedValue={setSelectedValue}
+      onChange={(value) => setSelectedValue(value.value)}
     />
   );
 }

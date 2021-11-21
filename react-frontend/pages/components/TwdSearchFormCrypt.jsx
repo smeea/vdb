@@ -1,14 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
-import AsyncSelect from 'react-select/async';
-import Hammer from '../../assets/images/icons/hammer.svg';
 import CardPopover from './CardPopover.jsx';
 import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons.jsx';
 import ResultCryptName from './ResultCryptName.jsx';
-import ResultCryptClan from './ResultCryptClan.jsx';
-import ResultCryptCapacity from './ResultCryptCapacity.jsx';
-import ResultCryptDisciplines from './ResultCryptDisciplines.jsx';
 import ResultCryptModal from './ResultCryptModal.jsx';
+import NewCryptCard from './NewCryptCard.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function TwdSearchFormCrypt(props) {
@@ -17,7 +13,7 @@ function TwdSearchFormCrypt(props) {
 
   const handleAdd = (event) => {
     const newState = props.state;
-    newState[event] = {
+    newState[event.value] = {
       q: 1,
       m: 'gt',
     };
@@ -67,91 +63,9 @@ function TwdSearchFormCrypt(props) {
       );
     });
 
-  const loadOptions = (inputValue) => {
-    const url = `${process.env.API_URL}search/crypt`;
-    const input = { name: inputValue };
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(input),
-    };
-
-    if (inputValue.length > 2) {
-      return fetch(url, options).then((response) => response.json());
-    } else {
-      return null;
-    }
-  };
-
   return (
     <>
-      <AsyncSelect
-        classNamePrefix="react-select"
-        cacheOptions
-        autoFocus={false}
-        value={null}
-        placeholder="Add Crypt Card"
-        loadOptions={loadOptions}
-        onChange={handleAdd}
-        getOptionLabel={(card) => (
-          <>
-            <div className="d-flex align-items-center justify-content-between">
-              <div className="d-flex align-items-center">
-                <ResultCryptCapacity value={cryptCardBase[card]['Capacity']} />
-                <div className="px-2">
-                  {cryptCardBase[card]['Banned'] ? (
-                    <>
-                      <strike>{cryptCardBase[card]['Name']}</strike>
-                      {cryptCardBase[card]['Adv'][0] && (
-                        <div className="d-inline ps-1">
-                          <img
-                            className="advanced-image-results"
-                            src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                            title="Advanced"
-                          />
-                        </div>
-                      )}
-                      <div className="d-inline ps-1">
-                        <Hammer />
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      {cryptCardBase[card]['Name']}
-                      {cryptCardBase[card]['Adv'][0] && (
-                        <div className="d-inline ps-1">
-                          <img
-                            className="advanced-image-results"
-                            src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                            title="Advanced"
-                          />
-                        </div>
-                      )}
-                      {cryptCardBase[card]['New'] && (
-                        <div className="d-inline gray ps-1">
-                          [G{cryptCardBase[card]['Group']}]
-                        </div>
-                      )}
-                    </>
-                  )}
-                </div>
-                <div className="pe-3">
-                  <ResultCryptClan value={cryptCardBase[card]['Clan']} />
-                </div>
-              </div>
-              <div className="d-flex flex-nowrap">
-                <ResultCryptDisciplines
-                  value={cryptCardBase[card]['Disciplines']}
-                />
-              </div>
-            </div>
-          </>
-        )}
-      />
+      <NewCryptCard onChange={handleAdd} selectedValue={null} />
       {cryptCardsList}
       {modalCard && (
         <ResultCryptModal
