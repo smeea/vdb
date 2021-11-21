@@ -10,7 +10,6 @@
 * Localized proxies
 * Export all in xlsx and csv
 * Bookmarks/recent decks
-* Or Older set search
 * Links to custom deck
 
 # BIG FEATURES

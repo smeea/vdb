@@ -59,6 +59,7 @@ function SearchFormSet(props) {
 
   const setOptions = [
     ['or newer', 'Or Newer'],
+    ['or older', 'Or Older'],
     ['only in', 'Only In'],
     ['first print', 'First Printed In'],
   ];
@@ -70,11 +71,16 @@ function SearchFormSet(props) {
         name="set"
         value={i[0]}
         type="checkbox"
+        className="set-precon-traits"
         id={`set-${i[0]}`}
         label={i[1]}
-        disabled={i[0] === 'or newer' && props.value.value.length > 1}
+        disabled={
+          (i[0] === 'or newer' || i[0] === 'or older') &&
+          props.value.value.length > 1
+        }
         checked={
-          i[0] === 'or newer' && props.value.value.length > 1
+          (i[0] === 'or newer' || i[0] === 'or older') &&
+          props.value.value.length > 1
             ? false
             : props.value[i[0]]
         }

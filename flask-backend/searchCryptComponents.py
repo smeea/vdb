@@ -361,6 +361,15 @@ def get_crypt_by_set(request, crypt):
                         if card not in match_cards:
                             match_cards.append(card)
 
+        elif 'or older' in request:
+            newestSetIndex = sets.index(r_set)
+
+            for card in crypt:
+                for k in card['Set'].keys():
+                    if sets.index(k) >= newestSetIndex:
+                        if card not in match_cards:
+                            match_cards.append(card)
+
         else:
             if r_set == 'bcp':
                 for card in crypt:

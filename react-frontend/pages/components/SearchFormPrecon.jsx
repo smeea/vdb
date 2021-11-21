@@ -105,6 +105,7 @@ function SearchFormPrecon(props) {
         key={index}
         name="precon"
         value={i[0]}
+        className="set-precon-traits"
         type="checkbox"
         id={`precon-${i[0]}`}
         label={i[1]}

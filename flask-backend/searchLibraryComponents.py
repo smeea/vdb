@@ -384,6 +384,15 @@ def get_library_by_set(request, library):
                         if card not in match_cards:
                             match_cards.append(card)
 
+        elif 'or older' in request:
+            newestSetIndex = sets.index(r_set)
+
+            for card in library:
+                for k in card['Set'].keys():
+                    if sets.index(k) >= newestSetIndex:
+                        if card not in match_cards:
+                            match_cards.append(card)
+
         else:
             if r_set == 'bcp':
                 for card in library:
