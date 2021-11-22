@@ -2,6 +2,8 @@
 * Change url to empty on last form changed to 'any'
 * Export/Import multigroup - JOL
 * Refactor ResultLibraryType
+* Or Newer/Older to disable each other
+* Card quantity manual entry not to change to 0 after delete in the form
 
 # FIX MOBILE
 

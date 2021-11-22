@@ -577,6 +577,37 @@ def createBranch():
     })
 
 
+@app.route('/api/branch/import', methods=['POST'])
+@login_required
+def importBranch():
+    master = Deck.query.filter_by(author=current_user,
+                                    deckid=request.json['master']).first()
+    new_branches = request.json['branches']
+    for b in new_branches:
+        deckid = uuid.uuid4().hex
+        description = f"{master.description}\n\n{b['comments']}" if b['comments'] else master.description
+        branch = Deck(deckid=deckid,
+                        name=master.name,
+                        branch_name=b['name'],
+                        author_public_name=master.author_public_name,
+                        description=description,
+                        author=current_user,
+                        tags=master.tags,
+                        master=master.deckid,
+                        cards=b['cards'])
+
+        branches = master.branches.copy() if master.branches else []
+        branches.append(deckid)
+        master.branches = branches
+
+        db.session.add(branch)
+
+    db.session.commit()
+    return jsonify({
+        'deckids': master.branches,
+    })
+
+
 @app.route('/api/branch/remove', methods=['POST'])
 @login_required
 def removeBranch():
