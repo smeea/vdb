@@ -55,7 +55,6 @@ function DeckImportAmaranth(props) {
           cards[idReference[i]] = revision.cards[i];
         });
         branches.push({
-          name: revision.title,
           cards: cards,
           comments: revision.comments,
         });

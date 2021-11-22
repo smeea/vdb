@@ -583,12 +583,19 @@ def importBranch():
     master = Deck.query.filter_by(author=current_user,
                                     deckid=request.json['master']).first()
     new_branches = request.json['branches']
-    for b in new_branches:
+    master.branch_name = f"#{len(new_branches)}"
+
+    for i, b in enumerate(new_branches):
         deckid = uuid.uuid4().hex
-        description = f"{master.description}\n\n{b['comments']}" if b['comments'] else master.description
+        description = master.description
+        if b['comments']:
+            if description:
+                description += '\n\n'
+            description += f"{b['comments']}"
+
         branch = Deck(deckid=deckid,
                         name=master.name,
-                        branch_name=b['name'],
+                        branch_name = f"#{len(new_branches) - 1 - i}",
                         author_public_name=master.author_public_name,
                         description=description,
                         author=current_user,
