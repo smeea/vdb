@@ -583,7 +583,7 @@ def importBranch():
     master = Deck.query.filter_by(author=current_user,
                                     deckid=request.json['master']).first()
     new_branches = request.json['branches']
-    master.branch_name = f"#{len(new_branches)}"
+    branches = []
 
     for i, b in enumerate(new_branches):
         deckid = uuid.uuid4().hex
@@ -603,13 +603,14 @@ def importBranch():
                         master=master.deckid,
                         cards=b['cards'])
 
-        branches = master.branches.copy() if master.branches else []
         branches.append(deckid)
-        master.branches = branches
 
         db.session.add(branch)
 
+    master.branch_name = f"#{len(new_branches)}"
+    master.branches = branches
     db.session.commit()
+
     return jsonify({
         'deckids': master.branches,
     })

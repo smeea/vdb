@@ -4,6 +4,7 @@
 * Refactor ResultLibraryType
 * Or Newer/Older to disable each other
 * Card quantity manual entry not to change to 0 after delete in the form
+* Spinner to same style as other icons in button
 
 # FIX MOBILE
 
