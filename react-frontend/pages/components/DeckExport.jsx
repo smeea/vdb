@@ -7,7 +7,7 @@ import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
 
 function DeckExport(props) {
-  const { username, isMobile } = useContext(AppContext);
+  const { username, decks, isMobile } = useContext(AppContext);
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -46,7 +46,7 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => copyDeck('jol')}>
         Copy to Clipboard - JOL
       </Dropdown.Item>
-      {username && (
+      {username && decks && Object.keys(decks).length > 1 && (
         <>
           <Dropdown.Divider />
           <Dropdown.Item href="" onClick={() => exportAll('text')}>
