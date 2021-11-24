@@ -12,12 +12,12 @@ function InventoryCardQuantity(props) {
   }, [props.q]);
 
   const handleManualChange = (event) => {
-    setState(event.target.value ? event.target.value : 0);
+    setState(event.target.value ? event.target.value : '');
   };
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    inventoryCardChange(props.cardid, parseInt(state));
+    inventoryCardChange(props.cardid, state ? parseInt(state) : 0);
     setManual(false);
   };
 

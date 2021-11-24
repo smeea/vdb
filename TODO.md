@@ -1,10 +1,10 @@
 # FIX
 * Change url to empty on last form changed to 'any'
-* Export/Import multigroup - JOL
 * Refactor ResultLibraryType
 * Or Newer/Older to disable each other
-* Card quantity manual entry not to change to 0 after delete in the form
 * Spinner to same style as other icons in button
+* Align and inline Adv icon in names
+* Update rulings
 
 # FIX MOBILE
 
@@ -14,6 +14,7 @@
 * Export all in xlsx and csv
 * Bookmarks/recent decks
 * Links to custom deck
+* Changelog
 
 # BIG FEATURES
 * Search for similar TWD decks
