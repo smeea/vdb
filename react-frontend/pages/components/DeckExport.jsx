@@ -258,7 +258,7 @@ function DeckExport(props) {
           </div>
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          {spinnerState && <Spinner as="span" animation="border" size="sm" />}
+          {spinnerState && <Spinner animation="border" size="sm" />}
           {ExportButtonOptions}
         </Dropdown.Menu>
       </Dropdown>

@@ -177,7 +177,7 @@ function AccountLogin(props) {
             </Button>
           ) : (
             <Button variant="primary">
-              <Spinner as="span" animation="border" size="sm" />
+              <Spinner animation="border" size="sm" />
             </Button>
           )}
         </InputGroup>

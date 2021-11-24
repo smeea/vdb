@@ -177,8 +177,8 @@ function DeckImportAmaranth(props) {
             </Button>
           ) : (
             <Button variant="primary" onClick={handleImportButton}>
-              <Spinner as="span" animation="border" size="sm" />
-              Import
+              <Spinner animation="border" size="sm" />
+              <span className="ps-2">Import</span>
             </Button>
           )}
         </div>
