@@ -5,7 +5,6 @@ import Download from '../../assets/images/icons/download.svg';
 import BlockButton from './BlockButton.jsx';
 import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext';
-import JSZip from 'jszip';
 
 function DeckExport(props) {
   const { username, isMobile } = useContext(AppContext);
@@ -222,26 +221,29 @@ function DeckExport(props) {
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          const zip = new JSZip();
-          const d = new Date();
-          const date = `${d.getFullYear()}-${d.getMonth() < 9 ? 0 : ''}${
-            d.getMonth() + 1
-          }-${d.getDate() < 10 ? 0 : ''}${d.getDate()}`;
-          data.map((d) => {
-            zip
-              .folder(`Decks ${date} [${format}]`)
-              .file(`${d.name} [${d.format}].txt`, d.deck);
-          });
-          zip
-            .generateAsync({ type: 'blob' })
-            .then((blob) =>
-              FileSaver.saveAs(blob, `Decks ${date} [${format}].zip`)
-            );
-          setSpinnerState(false);
-        })
-        .catch((error) => {
-          setError(true);
-          setSpinnerState(false);
+          import('jszip')
+            .then((jszip) => {
+              const zip = new jszip();
+              const d = new Date();
+              const date = `${d.getFullYear()}-${d.getMonth() < 9 ? 0 : ''}${
+                d.getMonth() + 1
+              }-${d.getDate() < 10 ? 0 : ''}${d.getDate()}`;
+              data.map((d) => {
+                zip
+                  .folder(`Decks ${date} [${format}]`)
+                  .file(`${d.name} [${d.format}].txt`, d.deck);
+              });
+              zip
+                .generateAsync({ type: 'blob' })
+                .then((blob) =>
+                  FileSaver.saveAs(blob, `Decks ${date} [${format}].zip`)
+                );
+              setSpinnerState(false);
+            })
+            .catch((error) => {
+              setError(true);
+              setSpinnerState(false);
+            });
         });
     }
   };

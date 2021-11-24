@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -22,6 +22,8 @@ import preconDecksData from './preconDecks.json';
 import setsAndPrecons from './pages/components/forms_data/setsAndPrecons.json';
 import './assets/css/bootstrap.min.css';
 import './assets/css/style.styl';
+
+const Changelog = React.lazy(() => import('./pages/Changelog.jsx'));
 
 function App(props) {
   const {
@@ -571,59 +573,62 @@ function App(props) {
 
   return (
     <div className="App">
-      <Router>
-        <ThemeProvider>
-          <Navigation />
-        </ThemeProvider>
+      <Suspense fallback={<div />}>
+        <Router>
+          <ThemeProvider>
+            <Navigation />
+          </ThemeProvider>
 
-        <Routes>
-          <Route path="*" element={<Navigate to="/about" />} />
-          <Route path="about" element={<About />} />
-          <Route path="documentation" element={<Documentation />} />
-          <Route path="account" element={<Account />} />
-          <Route path="diff" element={<Diff />} />
-          <Route path="twd" element={<Twd />} />
-          <Route
-            path="inventory"
-            element={
-              <Inventory
-                inventoryDeckAdd={inventoryDeckAdd}
-                inventoryDeckDelete={inventoryDeckDelete}
-                inventoryAddToState={inventoryAddToState}
-                setInventoryCrypt={setInventoryCrypt}
-                setInventoryLibrary={setInventoryLibrary}
-              />
-            }
-          />
-          <Route path="decks" element={<Decks />} />
-          <Route
-            path="crypt"
-            element={
-              <Crypt
-                activeDeck={
-                  activeDeck.src == 'my'
-                    ? activeDeck
-                    : { src: 'my', deckid: lastDeck.deckid }
-                }
-              />
-            }
-          />
-          <Route
-            path="library"
-            element={
-              <Library
-                activeDeck={
-                  activeDeck.src == 'my'
-                    ? activeDeck
-                    : { src: 'my', deckid: lastDeck.deckid }
-                }
-              />
-            }
-          />
-          <Route path="cards" element={<Cards />} />
-          <Route path="cards/:id" element={<Cards />} />
-        </Routes>
-      </Router>
+          <Routes>
+            <Route path="*" element={<Navigate to="/about" />} />
+            <Route path="about" element={<About />} />
+            <Route path="documentation" element={<Documentation />} />
+            <Route path="changelog" element={<Changelog />} />
+            <Route path="account" element={<Account />} />
+            <Route path="diff" element={<Diff />} />
+            <Route path="twd" element={<Twd />} />
+            <Route
+              path="inventory"
+              element={
+                <Inventory
+                  inventoryDeckAdd={inventoryDeckAdd}
+                  inventoryDeckDelete={inventoryDeckDelete}
+                  inventoryAddToState={inventoryAddToState}
+                  setInventoryCrypt={setInventoryCrypt}
+                  setInventoryLibrary={setInventoryLibrary}
+                />
+              }
+            />
+            <Route path="decks" element={<Decks />} />
+            <Route
+              path="crypt"
+              element={
+                <Crypt
+                  activeDeck={
+                    activeDeck.src == 'my'
+                      ? activeDeck
+                      : { src: 'my', deckid: lastDeck.deckid }
+                  }
+                />
+              }
+            />
+            <Route
+              path="library"
+              element={
+                <Library
+                  activeDeck={
+                    activeDeck.src == 'my'
+                      ? activeDeck
+                      : { src: 'my', deckid: lastDeck.deckid }
+                  }
+                />
+              }
+            />
+            <Route path="cards" element={<Cards />} />
+            <Route path="cards/:id" element={<Cards />} />
+          </Routes>
+        </Router>
+      </Suspense>
     </div>
   );
 }
