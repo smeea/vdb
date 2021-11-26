@@ -1,9 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import At from '../assets/images/icons/at.svg';
-import Shuffle from '../assets/images/icons/shuffle.svg';
-import PinAngleFill from '../assets/images/icons/pin-angle-fill.svg';
 import Banner from './components/Banner.jsx';
 
 function Changelog(props) {
@@ -17,11 +13,11 @@ function Changelog(props) {
 
             <h6>2021-11-23</h6>
             <ul>
-              <li>Added "Or Older" filter option for Set search</li>
+              <li>Added &quot;Or Older&quot; filter option for Set search</li>
               <li>
                 Fixed Import/Export for new multigroup vampires (Victoria Ash,
-                etc). Will append "(GX)" after name, confirmed to be implemented
-                same way in Lackey
+                etc). Will append &quot;(GX)&quot; after name, confirmed to be
+                implemented same way in Lackey
               </li>
               <li>Many other small fixes (mainly UI)</li>
             </ul>
@@ -40,17 +36,18 @@ function Changelog(props) {
             <ul>
               <li>
                 Update card base to 2021-10-27 (no new precons yet, just Promos
-                and Ravnos/Chimersty POD reprints). New crypt "revival" cards
-                with different groups are not yet working correctly with
-                import/export, it will be fixed later Add "negative" option to
-                some crypt/library filters (logic options are OR "//", AND "&"
-                and NOT "!" or just OR/NOT depending on filter). THIS IS
+                and Ravnos/Chimersty POD reprints). New crypt
+                &quot;revival&quot; cards with different groups are not yet
+                working correctly with import/export, it will be fixed later Add
+                &quot;negative&quot; option to some crypt/library filters (logic
+                options are OR &quot;//&quot;, AND &quot;&&quot; and NOT
+                &quot;!&quot; or just OR/NOT depending on filter). THIS IS
                 BREAKING CHANGE FOR OLD SEARCH URLs working with this filters,
                 please update them if you shared it publicly and expect to
                 continue to work. I dont like to break things, but sometimes
-                it's necessary
+                it&apos;s necessary
               </li>
-              <li>Make "See ADV/Base" clickable in card popup</li>
+              <li>Make &quot;See ADV/Base&quot; clickable in card popup</li>
               <li>Fix library search sort by discipline</li>
               <li>
                 Fix library search cards with &le;0 pool or blood cost not
@@ -66,9 +63,9 @@ function Changelog(props) {
             <ul>
               Add buttons to Deck Compare page: Show missing cards in popup
               window Proxy missing cards Back to Decks Copy URL to compare
-              (simple way to share your ideas of how to improve friend's deck:
-              clone his deck into your account, change it as you like, compare
-              both and share compare url with friend).
+              (simple way to share your ideas of how to improve friend&apos;s
+              deck: clone his deck into your account, change it as you like,
+              compare both and share compare url with friend).
               <li>
                 Added &le; (less-or-equal) and = (equal) options for TWD search
                 by Crypt and Library cards
@@ -89,10 +86,11 @@ function Changelog(props) {
             <h6>2021-10-20</h6>
             <ul>
               <li>
-                Added Hide deck option ("bulb" button in advanced deck
-                selection, the "binoculars" button) which hides the deck from
-                main deck selector. Can be useful to "archive" the decks and
-                simplify navigation between active decks.
+                Added Hide deck option (&quot;bulb&quot; button in advanced deck
+                selection, the &quot;binoculars&quot; button) which hides the
+                deck from main deck selector. Can be useful to
+                &quot;archive&quot; the decks and simplify navigation between
+                active decks.
               </li>
               <li>Added By-Group and By-Name sorting for crypt in Deck</li>
               <li>
@@ -142,22 +140,24 @@ function Changelog(props) {
             <h6>2021-10-05</h6>
             <ul>
               <li>
-                Nothing "new", just many tiny UI improvements (under the hood
-                they are not that small, so please report problems/glitches/etc
-                they are expected) and some bugfixes (also rulings update)
+                Nothing &quot;new&quot;, just many tiny UI improvements (under
+                the hood they are not that small, so please report
+                problems/glitches/etc they are expected) and some bugfixes (also
+                rulings update)
               </li>
             </ul>
 
             <h6>2021-09-23</h6>
             <ul>
               <li>
-                Add clan filter for Deck Selection window ("goggles" icon)
+                Add clan filter for Deck Selection window (&quot;goggles&quot;
+                icon)
               </li>
               <li>Add draw chances in open hand for card-types in library</li>
-              <li>Add "Missing Cards" window for Inventory</li>
+              <li>Add &quot;Missing Cards&quot; window for Inventory</li>
               <li>
-                Add import from Lackey .dek format (I don't use Lackey so cannot
-                extensively test it, please report bugs if you find it)
+                Add import from Lackey .dek format (I don&apos;t use Lackey so
+                cannot extensively test it, please report bugs if you find it)
               </li>
               <li>Moved Navigation bar to bottom on mobile</li>
               <li>
@@ -199,17 +199,18 @@ function Changelog(props) {
               </li>
               <li>Add deck/intentory export to Excel format (.xslx)</li>
               <li>
-                Export to CSV format changed into "Quantity,Card ID" (ID's
-                according to VEKN CSV cardbase) will be more convenient for any
-                kind of automation (Card ID is much more reliable than name),
-                and end-users with spreadsheets should be satisfied with Excel
+                Export to CSV format changed into &quot;Quantity,Card ID&quot;
+                (ID&apos;s according to VEKN CSV cardbase) will be more
+                convenient for any kind of automation (Card ID is much more
+                reliable than name), and end-users with spreadsheets should be
+                satisfied with Excel
               </li>
               <li>
                 Export All decks now returns zip-archive with all files to
-                simplify saving (also with timestamp, so your "MY BEST DECKS FOR
-                PROGENY" folder is now easier to manage). Now only for text
-                formats (lackey, twd, etc), but will also support CSV, Excel in
-                the future
+                simplify saving (also with timestamp, so your &quot;MY BEST
+                DECKS FOR PROGENY&quot; folder is now easier to manage). Now
+                only for text formats (lackey, twd, etc), but will also support
+                CSV, Excel in the future
               </li>
               <li>Small other fixes</li>
             </ul>
@@ -233,13 +234,13 @@ function Changelog(props) {
             <h6>2021-09-12</h6>
             <ul>
               <li>
-                Add Unleased Kickstarter as a Set/Precons (it's not an
-                "official" set, but should be more useful like this)
+                Add Unleased Kickstarter as a Set/Precons (it&apos;s not an
+                &quot;official&quot; set, but should be more useful like this)
               </li>
               <li>
                 Fix deck crypt discipline layout for decks with many different
-                disciplines in crypt (as in bundles or in some decks like "Girls
-                will find...")
+                disciplines in crypt (as in bundles or in some decks like
+                &quot;Girls will find...&quot;)
               </li>
               <li>Small other fixes</li>
             </ul>
@@ -263,23 +264,23 @@ function Changelog(props) {
             <h6>2021-09-08</h6>
             <ul>
               <li>
-                Add "Advancement" trait for Crypt search, showing all Advanced
-                vampires and their Base versions
+                Add &quot;Advancement&quot; trait for Crypt search, showing all
+                Advanced vampires and their Base versions
               </li>
               <li>
                 Add reference to/from Base/Adv vampires in detailed card view
                 (hover over to see another version)
               </li>
-              <li>Save "Add Mode" state to browser local storage</li>
+              <li>Save &quot;Add Mode&quot; state to browser local storage</li>
               <li>
-                Copy URL buttons grouped in menu and "Immutable URL" renamed to
-                "Snapshot URL"
+                Copy URL buttons grouped in menu and &quot;Immutable URL&quot;
+                renamed to &quot;Snapshot URL&quot;
               </li>
               <li>
-                Fix draw chances to exclude already "played" cards from
-                calculation
+                Fix draw chances to exclude already &quot;played&quot; cards
+                from calculation
               </li>
-              <li>Fix "None" Discipline search in Library</li>
+              <li>Fix &quot;None&quot; Discipline search in Library</li>
               <li>
                 Fix removing additional filters of Discipline/Type in Library.
                 Thanks to inm8
@@ -290,7 +291,7 @@ function Changelog(props) {
             <h6>2021-08-30</h6>
             <ul>
               <li>
-                Changed colors in light theme. I know theming it's very
+                Changed colors in light theme. I know theming it&apos;s very
                 subjective topic, but I hope you will soon get used to it and
                 like it
               </li>
@@ -303,23 +304,24 @@ function Changelog(props) {
                 Disciplines in crypt draw are now aligned same as in deck view.
               </li>
               <li>
-                Added 'Immutable URL' which will gives permanent URL for freezed
-                current deck state, which is good when you want to freeze the
-                deck and share it, while continue to edit in your deck archive
-                (e.g. blog posts, etc). Same purpose as Deck-in-URL, but instead
-                of storing everything about the deck in URL it just store
-                non-editable deck copy on the server (Deck-in-URL is longer, but
-                bulletproof can be "decoded" even if VDB is dead, and can be
-                "generated" with 3rd-party tools).
+                Added &apos;Immutable URL&apos; which will gives permanent URL
+                for freezed current deck state, which is good when you want to
+                freeze the deck and share it, while continue to edit in your
+                deck archive (e.g. blog posts, etc). Same purpose as
+                Deck-in-URL, but instead of storing everything about the deck in
+                URL it just store non-editable deck copy on the server
+                (Deck-in-URL is longer, but bulletproof can be
+                &quot;decoded&quot; even if VDB is dead, and can be
+                &quot;generated&quot; with 3rd-party tools).
               </li>
             </ul>
 
             <h6>2021-08-21</h6>
             <ul>
               <li>
-                Some elements will "stick" during scrolling (like crypt in
-                /Deck, library info line in /Deck, side buttons in /Crypt and
-                /Inventory, deck change menu in /Crypt and /Library)
+                Some elements will &quot;stick&quot; during scrolling (like
+                crypt in /Deck, library info line in /Deck, side buttons in
+                /Crypt and /Inventory, deck change menu in /Crypt and /Library)
               </li>
               <li>
                 Add inventory-mode highlight in pdf proxy selection it will show
@@ -328,11 +330,12 @@ function Changelog(props) {
                 dont have enough even for other decks).
               </li>
               <li>
-                Add button "Add missing in Inventory" to pdf proxy selection it
-                will check & set minumum quantity to resolve inventory problems
-                for this deck (opposite to color-highlight as said above which
-                shows problems for entire deck collection, this button will not
-                set quantity for more than required for this deck)
+                Add button &quot;Add missing in Inventory&quot; to pdf proxy
+                selection it will check & set minumum quantity to resolve
+                inventory problems for this deck (opposite to color-highlight as
+                said above which shows problems for entire deck collection, this
+                button will not set quantity for more than required for this
+                deck)
               </li>
               <li>Fixed blury capacity/blood/pool cost icons in Chrome</li>
               <li>Another small fixes and improvements</li>
@@ -353,7 +356,7 @@ function Changelog(props) {
               <li>Add deck crypt sort by capacity</li>
               <li>
                 Add button to add cards to active deck from quick card search
-                ("lightning" icon /cards),
+                (&quot;lightning&quot; icon /cards),
               </li>
               <li>Small other fixes</li>
             </ul>
@@ -378,26 +381,26 @@ function Changelog(props) {
               <li>
                 Added Capacity filter to Library search. It only refer to
                 requirement of who can play card (written in bold on top), not
-                restriction of target. Added "Or newer" checkbox for Set search
-                in Crypt/Library (will show all cards in this Set or Newer,
-                excluding Promo/Print-on-Demand)
+                restriction of target. Added &quot;Or newer&quot; checkbox for
+                Set search in Crypt/Library (will show all cards in this Set or
+                Newer, excluding Promo/Print-on-Demand)
               </li>
               <li>
-                Added "No requirements" trait to Library, which will show cards
-                with no requirements (sect / clan / title / capacity / black
-                hand / seraph etc). Please not that "require a vampire" is
-                requirement
+                Added &quot;No requirements&quot; trait to Library, which will
+                show cards with no requirements (sect / clan / title / capacity
+                / black hand / seraph etc). Please not that &quot;require a
+                vampire&quot; is requirement
               </li>
               <li>
                 Fixed inventory card quantity not in-sync between main list and
-                add-one-card "list"
+                add-one-card &quot;list&quot;
               </li>
               <li>
-                Fixed Crypt/Library "Search in Inventory" to correctly count
-                total for Inventory cards and not require to click "V FOUND XX"
-                if your Inventory results are smaller than standards results
-                threshold (300 pcs) regardless of overall results (from all
-                cards)
+                Fixed Crypt/Library &quot;Search in Inventory&quot; to correctly
+                count total for Inventory cards and not require to click &quot;V
+                FOUND XX&quot; if your Inventory results are smaller than
+                standards results threshold (300 pcs) regardless of overall
+                results (from all cards)
               </li>
               <li>
                 Limited width of card popup in text layout (were too wide
@@ -413,7 +416,7 @@ function Changelog(props) {
               </li>
               <li>
                 Fixed deck name taking too much width of advanced deck select
-                window ("binoculars" button)
+                window (&quot;binoculars&quot; button)
               </li>
               <li>
                 Fixed empty image when switching between cards with selected old
@@ -428,16 +431,17 @@ function Changelog(props) {
               <li>
                 Auto-open results on Mobile if you open url with search query
                 (previously it just sets filters and you need to manually click
-                "V" button)
+                &quot;V&quot; button)
               </li>
               <li>
                 Advanced deck select window Name filter will ignore accents
-                (will return decks with "á" if you type "a")
+                (will return decks with &quot;á&quot; if you type &quot;a&quot;)
               </li>
               <li>
                 Advanced deck select window Name filter now also looks for card
-                names in decks (e.g. "arika" will return both decks with "arika"
-                in name, and decks containing "arika" in card name)
+                names in decks (e.g. &quot;arika&quot; will return both decks
+                with &quot;arika&quot; in name, and decks containing
+                &quot;arika&quot; in card name)
               </li>
               <li>
                 Fix bug with some inventory-mode icons being almost invisible
@@ -456,7 +460,7 @@ function Changelog(props) {
               <li>Autoswitch to newly imported deck</li>
               <li>
                 After opening TWD deck deck selection category to be defaulted
-                as "my" instead of "precons"
+                as &quot;my&quot; instead of &quot;precons&quot;
               </li>
               <li>
                 Mobile burger menu (top-left corner) to hide after any option
@@ -468,11 +472,14 @@ function Changelog(props) {
             <ul>
               <li>
                 Add multiple selections for clan, sect, types, title filters in
-                Crypt and Library. Now work as "OR", maybe one day will be
-                OR/AND toggle
+                Crypt and Library. Now work as &quot;OR&quot;, maybe one day
+                will be OR/AND toggle
               </li>
               <li>Add not-in-twd filter for Crypt and Library</li>
-              <li>Add "show random card" buttons to Cards (quick card ⚡)</li>
+              <li>
+                Add &quot;show random card&quot; buttons to Cards (quick card
+                ⚡)
+              </li>
               <li>
                 Add titled and non-titled options for title filter in Library
               </li>
@@ -483,10 +490,10 @@ function Changelog(props) {
             <ul>
               <li>Added inventory import from preconstructed decks</li>
               <li>
-                Inventory import from deck/precon buttons now show if it's
-                already in inventory (and delete button disabled if you don't
-                have it). Keep in mind you can still add deck/precon two+ times,
-                which will double+ quantity.
+                Inventory import from deck/precon buttons now show if it&apos;s
+                already in inventory (and delete button disabled if you
+                don&apos;t have it). Keep in mind you can still add deck/precon
+                two+ times, which will double+ quantity.
               </li>
               <li>
                 Added twd search by exclusions of crypt/library cards (set
@@ -500,7 +507,7 @@ function Changelog(props) {
                 Fixed important bug with revisions which resulted in decks being
                 broken for some users. It should be fixed now with everything
                 restored, but if you lost something important let me know and
-                I'll try to help.
+                I&apos;ll try to help.
               </li>
               <li>Other small fixes</li>
             </ul>
@@ -509,8 +516,8 @@ function Changelog(props) {
             <ul>
               <li>
                 Restyled deck preview in advanced deck select window (popup deck
-                is downscaled, don't show buttons, triggered by hover on smaller
-                icon)
+                is downscaled, don&apos;t show buttons, triggered by hover on
+                smaller icon)
               </li>
               <li>
                 Default deck revision is updated to last edited revision
@@ -537,11 +544,11 @@ function Changelog(props) {
                 for decks in advanced deck select window
               </li>
               <li>
-                Add "non-titled" title checkbox to crypt search form (basically
-                works same as "votes: none" form, but should improve usability).
-                Keep in mind that title checkboxes are cummulative (different
-                from "traits" checkboxes it will match if any title from
-                checkbox matches)
+                Add &quot;non-titled&quot; title checkbox to crypt search form
+                (basically works same as &quot;votes: none&quot; form, but
+                should improve usability). Keep in mind that title checkboxes
+                are cummulative (different from &quot;traits&quot; checkboxes it
+                will match if any title from checkbox matches)
               </li>
               <li>Fix inventory mode for crypt/library search</li>
               <li>Some other interface fixes</li>
@@ -562,7 +569,8 @@ function Changelog(props) {
               <li>
                 Added traits to search: Wake/Unlock, Burn Improved proxy pdf
                 layout (smaller gap between cards, gap is filled with gray
-                please let me know if it's too dark and not visible on paper)
+                please let me know if it&apos;s too dark and not visible on
+                paper)
               </li>
               <li>Bug fixes</li>
             </ul>
@@ -605,16 +613,16 @@ function Changelog(props) {
               </li>
               <li>
                 Increased search result treshold to 300 cards to auto-show
-                (without click on "Found XXX" button)
+                (without click on &quot;Found XXX&quot; button)
               </li>
               <li>
                 Vampire title is shown on card line. Thanks to Beslin Igor for
                 suggestion
               </li>
               <li>
-                Removed 'used in...' column in Inventory Mode from crypt/library
-                results. Inventory quantity is still shown and you can hover on
-                it to see details (also available in card window)
+                Removed &apos;used in...&apos; column in Inventory Mode from
+                crypt/library results. Inventory quantity is still shown and you
+                can hover on it to see details (also available in card window)
               </li>
               <li>Slightly updated color theme</li>
               <li>
@@ -626,9 +634,9 @@ function Changelog(props) {
                 switching
               </li>
               <li>
-                "Played/Burned" cards in Deck Draw now clickable to open
-                standard card window (click action on cards in hand is still
-                replaced with "play" action)
+                &quot;Played/Burned&quot; cards in Deck Draw now clickable to
+                open standard card window (click action on cards in hand is
+                still replaced with &quot;play&quot; action)
               </li>
             </ul>
 
@@ -643,8 +651,8 @@ function Changelog(props) {
                 so until all cards are translated for a given localization).
               </li>
               <li>
-                Performance improvement for Inventory (it's still not perfect
-                with hundreds of unique though)
+                Performance improvement for Inventory (it&apos;s still not
+                perfect with hundreds of unique though)
               </li>
               <li>Other tiny changes</li>
             </ul>
@@ -657,8 +665,9 @@ function Changelog(props) {
                 set/precon info)
               </li>
               <li>
-                Improved Set/Precon search with 'First Print' and 'Only In'
-                options (previously was inaccurate with KoT/HttB Reprints)
+                Improved Set/Precon search with &apos;First Print&apos; and
+                &apos;Only In&apos; options (previously was inaccurate with
+                KoT/HttB Reprints)
               </li>
               <li>Fixed card quantity in several precons</li>
             </ul>
@@ -669,15 +678,15 @@ function Changelog(props) {
                 Added TWD search for decks matching your Inventory. Thanks to
                 Vincent Ripoll for proposal! Please note you must first turn on
                 inventory-mode then do the searches switch will not affect
-                already shown decks yet. The 'scale to 60 cards' checkbox will
-                add to result decks your inventory is enough for after trimming
-                library proportionally to 60 cards
+                already shown decks yet. The &apos;scale to 60 cards&apos;
+                checkbox will add to result decks your inventory is enough for
+                after trimming library proportionally to 60 cards
               </li>
               <li>Added Inventory import</li>
               <li>
                 Improved Inventory/Deck export performance and quanlity (also
                 some export bugs fixed) Added inventory-mode in TWD (highlight
-                cards you don't have, etc same as in Decks/Crypt/Library)
+                cards you don&apos;t have, etc same as in Decks/Crypt/Library)
               </li>
               <li>Fixed inventory-mode in Decks on Mobile</li>
               <li>
@@ -690,8 +699,8 @@ function Changelog(props) {
             <ul>
               <li>
                 Added buttons to next/previous cards in card preview window (now
-                it's only goes through crypt or library, will be improved later
-                for transition after last crypt card to library)
+                it&apos;s only goes through crypt or library, will be improved
+                later for transition after last crypt card to library)
               </li>
               <li>
                 Improved TWD discipline search to respect crypt disciplines (now
@@ -705,7 +714,8 @@ function Changelog(props) {
                 Added all cards draw chances for starting hand click on (i)
                 button on top of crypt/library Added exact word search option to
                 Crypt/Library search with double-quotes (e.g. search for
-                "controlled" will not match cards with uncontrolled in text)
+                &quot;controlled&quot; will not match cards with uncontrolled in
+                text)
               </li>
               <li>
                 Add-card-to-deck button in Crypt/Library search allows
@@ -734,14 +744,15 @@ function Changelog(props) {
             <ul>
               <li>
                 Deck-ID now attaches to url in url bar (same url as you got
-                after clicking 'Copy URL' button, so all old links must continue
-                to work and existing url in url bar is shareable now)
+                after clicking &apos;Copy URL&apos; button, so all old links
+                must continue to work and existing url in url bar is shareable
+                now)
               </li>
               <li>
                 Card scans from different sets done by vtes.pl team. Click on
-                the Set name in card detailed popup window (yeah, I know it's
-                barely discoverable, so consider it hidden feature for now,
-                later I'll improve it)
+                the Set name in card detailed popup window (yeah, I know
+                it&apos;s barely discoverable, so consider it hidden feature for
+                now, later I&apos;ll improve it)
               </li>
               <li>Added clan icons for Precon deck selector</li>
               <li>
@@ -762,17 +773,17 @@ function Changelog(props) {
             <h6>2021-03-14</h6>
             <ul>
               <li>
-                Deck draw now let 'play' cards by clicking on them (instead of
-                card view)
+                Deck draw now let &apos;play&apos; cards by clicking on them
+                (instead of card view)
               </li>
               <li>Much faster TWD clan search</li>
               <li>
                 Forms in Add New Card (/decks) and Quick card search (/cards)
                 now also search by initials i.e. new words can start from part
                 of given string. Thanks to Vincent Ripoll. Examples: Following
-                searches will match 'Govern the Unaligned': gtu gtuna theunal
-                Following searches will not match 'Govern the Unaligned': gtd
-                galigned thealigned
+                searches will match &apos;Govern the Unaligned&apos;: gtu gtuna
+                theunal Following searches will not match &apos;Govern the
+                Unaligned&apos;: gtd galigned thealigned
               </li>
               <li>
                 Add-Mode switch removed from Navbar, but instead Add-Mode follow
@@ -781,8 +792,8 @@ function Changelog(props) {
               </li>
               <li>Improvements in floating buttons on mobile</li>
               <li>
-                Fixed Lackey export bug for cards with '-' in name (AK-47,
-                Hell-for-Leather, etc)
+                Fixed Lackey export bug for cards with &apos;-&apos; in name
+                (AK-47, Hell-for-Leather, etc)
               </li>
               <li>Fixed exports for Deck-In-Url</li>
               <li>Other tiny fixes</li>
@@ -805,7 +816,7 @@ function Changelog(props) {
             <ul>
               <li>
                 Added quick card view page (vdb.smeea.casa/cards) where you can
-                quick check the card by it's name.
+                quick check the card by it&apos;s name.
               </li>
               <li>
                 Show all search results in Crypt/Library in Inventory-mode, but
@@ -821,7 +832,7 @@ function Changelog(props) {
                 for Groups). Anarch Convert is excluded from Capacity
                 calculation.
               </li>
-              <li>Fixed Inventory 'Show only problem cards' bug</li>
+              <li>Fixed Inventory &apos;Show only problem cards&apos; bug</li>
               <li>Fixed Lackey export</li>
               <li>Small other barely noticable fixes/improvements</li>
             </ul>
@@ -830,9 +841,9 @@ function Changelog(props) {
             <ul>
               <li>Added TWD search by library size</li>
               <li>
-                Updated TWD search by-card-type forms (added 'none', slightly
-                changed ranges) Greatly increased TWD by-card-type search speed
-                (finally, it is usable lol)
+                Updated TWD search by-card-type forms (added &apos;none&apos;,
+                slightly changed ranges) Greatly increased TWD by-card-type
+                search speed (finally, it is usable lol)
               </li>
               <li>Fix library cards clan search for double-clan</li>
             </ul>
@@ -850,16 +861,17 @@ function Changelog(props) {
               <li>
                 Inventory mode for not-your-decks opened in Deck page (i.e. for
                 TWD / shared by URL / Preconstructed): Highlights in red cards
-                you don't have enough in Inventory; Highlights in yellow cards
-                you have in total, but it will require to take it from one of
-                'fixed' decks; No highlight if you have it available
+                you don&apos;t have enough in Inventory; Highlights in yellow
+                cards you have in total, but it will require to take it from one
+                of &apos;fixed&apos; decks; No highlight if you have it
+                available
               </li>
               <li>
                 Button to show missing in inventory cards for the deck in Deck
                 page. It respects deck/card inventory status (Flexible or Fixed)
                 and for Virtual (@) decks and any not-yours (twd / precon /
-                shared by url) it calculate as it's Flexible (i.e. allowing to
-                re-use cards from other Flexible decks but NOT from Fixed)
+                shared by url) it calculate as it&apos;s Flexible (i.e. allowing
+                to re-use cards from other Flexible decks but NOT from Fixed)
               </li>
               <li>
                 Proxy button allow to print only missing cards (same with
@@ -873,24 +885,25 @@ function Changelog(props) {
                 Inventory page option to choose what to show: All (cards you
                 have + cards you need) Only owned cards Only cards you have
                 problem with (first column is still quantity you have, not
-                'required')
+                &apos;required&apos;)
               </li>
               <li>
-                Additional 'Copy Deck-In-URL' button which 'encode' the deck to
-                url. Why? Because standard Copy URL works as a 'pointer' to the
-                deck in the author's deck archive it follows the changes (and
-                deletion!) and even though it's OK most of the time (and maybe
-                even desired), you may want to 'freeze' it to be sure the one
-                following the link will ALWAYS see the deck in the state it was
-                during URL creation. Technical details: this link contain all
-                VDB need to render the deck (in the format
+                Additional &apos;Copy Deck-In-URL&apos; button which
+                &apos;encode&apos; the deck to url. Why? Because standard Copy
+                URL works as a &apos;pointer&apos; to the deck in the
+                author&apos;s deck archive it follows the changes (and
+                deletion!) and even though it&apos;s OK most of the time (and
+                maybe even desired), you may want to &apos;freeze&apos; it to be
+                sure the one following the link will ALWAYS see the deck in the
+                state it was during URL creation. Technical details: this link
+                contain all VDB need to render the deck (in the format
                 ...?name=NAME&author=AUTHOR&description=DESCRIPTION#ID=QUANTITY;ID2=...
                 where ID is card ID from official VEKN card list). So this
-                'deck-in-urls' does not exist (and does not require to ever be
-                created) on the VDB server and may be easily generated by anyone
-                (e.g. by third-party software as quick way to show the deck
-                using VDB rendering) as well as decoded even when VDB will stop
-                to work it will be easy to restore the deck from the url
+                &apos;deck-in-urls&apos; does not exist (and does not require to
+                ever be created) on the VDB server and may be easily generated
+                by anyone (e.g. by third-party software as quick way to show the
+                deck using VDB rendering) as well as decoded even when VDB will
+                stop to work it will be easy to restore the deck from the url
               </li>
               <li>
                 Crypt searches shows avg. capacity for each group in Total line

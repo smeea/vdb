@@ -88,6 +88,7 @@ function QuickSelect(props) {
       />
     );
   });
+  CardSelect.displayName = 'CardSelect';
 
   return <CardSelect ref={ref} />;
 }

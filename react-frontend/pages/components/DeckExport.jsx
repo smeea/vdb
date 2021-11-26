@@ -222,8 +222,8 @@ function DeckExport(props) {
         .then((response) => response.json())
         .then((data) => {
           import('jszip')
-            .then((jszip) => {
-              const zip = new jszip();
+            .then((Jszip) => {
+              const zip = new Jszip();
               const d = new Date();
               const date = `${d.getFullYear()}-${d.getMonth() < 9 ? 0 : ''}${
                 d.getMonth() + 1

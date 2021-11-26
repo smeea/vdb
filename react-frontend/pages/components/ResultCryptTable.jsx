@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
-import ArchiveFill from '../../assets/images/icons/archive-fill.svg';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';

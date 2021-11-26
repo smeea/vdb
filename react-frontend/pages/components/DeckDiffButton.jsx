@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import FileDiffFill from '../../assets/images/icons/file-diff-fill.svg';
+import PlusSlashMinus from '../../assets/images/icons/plus-slash-minus.svg';
 import AppContext from '../../context/AppContext.js';
 
 const DeckDiffButton = (props) => {
@@ -18,7 +18,7 @@ const DeckDiffButton = (props) => {
     >
       <div className="d-flex justify-content-center align-items-center">
         <div className="pe-2">
-          <FileDiffFill />
+          <PlusSlashMinus />
         </div>
         Compare Deck
       </div>

@@ -74,11 +74,13 @@ function About(props) {
               <h6>Last update [2021-11-21]</h6>
               <p>
                 <ul>
-                  <li>Added "Or Older" filter option for Set search</li>
+                  <li>
+                    Added &quot;Or Older&quot; filter option for Set search
+                  </li>
                   <li>
                     Fixed Import/Export for new multigroup vampires (Victoria
-                    Ash, etc). Will append "(GX)" after name, confirmed to be
-                    implemented same way in Lackey
+                    Ash, etc). Will append &quot;(GX)&quot; after name,
+                    confirmed to be implemented same way in Lackey
                   </li>
                   <li>Many other small fixes (mainly UI)</li>
                 </ul>
