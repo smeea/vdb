@@ -39,14 +39,14 @@ const SelectLabelLibrary = (props) => {
         </div>
         <div>
           {libraryCardBase[props.cardid]['Discipline'] && (
-            <div className="d-inline px-3">
+            <div className="d-inline px-2">
               <ResultLibraryDisciplines
                 value={libraryCardBase[props.cardid]['Discipline']}
               />
             </div>
           )}
           {libraryCardBase[props.cardid]['Clan'] && (
-            <div className="d-inline px-3">
+            <div className="d-inline px-2">
               <ResultLibraryClan
                 value={libraryCardBase[props.cardid]['Clan']}
               />
@@ -54,7 +54,7 @@ const SelectLabelLibrary = (props) => {
           )}
           {(libraryCardBase[props.cardid]['Blood Cost'] ||
             libraryCardBase[props.cardid]['Pool Cost']) && (
-            <div className="d-inline">
+            <div className="d-inline px-2">
               <ResultLibraryCost
                 valuePool={libraryCardBase[props.cardid]['Pool Cost']}
                 valueBlood={libraryCardBase[props.cardid]['Blood Cost']}

@@ -4,6 +4,8 @@
 * Or Newer/Older to disable each other
 * Align and inline Adv icon in names
 * Update rulings
+* Width of Filter in Adv Deck Select with no results 
+* Fix Deck Library Info % calculation without masters
 
 # FIX MOBILE
 
