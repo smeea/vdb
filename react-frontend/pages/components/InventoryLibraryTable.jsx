@@ -10,7 +10,7 @@ import InventoryCardQuantity from './InventoryCardQuantity.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
@@ -137,7 +137,7 @@ function InventoryLibraryTable(props) {
           className="d-flex align-items-center justify-content-center type"
           onClick={() => handleClick()}
         >
-          <ResultLibraryType cardtype={card.c['Type']} />
+          <ResultLibraryTypeImage value={card.c['Type']} />
         </div>
         {!isMobile ? (
           <OverlayTrigger

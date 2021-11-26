@@ -8,7 +8,7 @@ import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 import DeckDrawProbabilityText from './DeckDrawProbabilityText.jsx';
 import DeckDrawProbabilityModal from './DeckDrawProbabilityModal.jsx';
 import drawProbability from './drawProbability.js';
@@ -58,7 +58,7 @@ function DeckDrawLibraryTable(props) {
             />
           </td>
           <td className="type px-1" onClick={() => props.handleClick(index)}>
-            <ResultLibraryType cardtype={card['Type']} />
+            <ResultLibraryTypeImage value={card['Type']} />
           </td>
           <td
             className="disciplines px-1"

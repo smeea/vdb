@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 
@@ -10,7 +10,7 @@ function DeckLibraryTotalInfo(props) {
   const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
     return (
       <span key={idx} className="d-inline-block nobr ps-0 pe-3">
-        <ResultLibraryType cardtype={t} />
+        <ResultLibraryTypeImage value={t} />
         {props.byTypes[t]}{' '}
         <span className="gray">
           ({Math.round((props.byTypes[t] / total) * 100)}%)

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 
 function TwdSearchFormCardtypes(props) {
   const types = [
@@ -128,7 +128,7 @@ function TwdSearchFormCardtypes(props) {
         <Row className="py-1 mx-0 align-items-center" key={index}>
           <Col xs={2} className="d-flex ps-2 justify-content-center">
             <label className="h7 mb-0">
-              <ResultLibraryType cardtype={i[0]} />
+              <ResultLibraryTypeImage value={i[0]} />
             </label>
           </Col>
           <Col xs={10} className="d-inline px-0">
@@ -150,7 +150,7 @@ function TwdSearchFormCardtypes(props) {
         <Row className="py-1 mx-0 align-items-center" key={index}>
           <Col xs={2} className="d-flex ps-2 justify-content-center">
             <label className="h7 mb-0">
-              <ResultLibraryType cardtype={i[0]} />
+              <ResultLibraryTypeImage value={i[0]} />
             </label>
           </Col>
           <Col xs={10} className="d-inline px-0">

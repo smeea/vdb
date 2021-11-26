@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Hammer from '../../assets/images/icons/hammer.svg';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
@@ -41,7 +41,7 @@ function ResultLibraryPopover(props) {
           <div className="d-flex flex-nowrap justify-content-between align-items-center">
             <div className="d-flex flex-nowrap align-items-center">
               <div>
-                <ResultLibraryType cardtype={props.card['Type']} />
+                <ResultLibraryTypeImage value={props.card['Type']} />
               </div>
               <div className="name ps-2">
                 {props.card['Banned'] ? (

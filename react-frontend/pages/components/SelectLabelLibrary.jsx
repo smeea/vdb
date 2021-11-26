@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Hammer from '../../assets/images/icons/hammer.svg';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import AppContext from '../../context/AppContext.js';
@@ -23,7 +23,9 @@ const SelectLabelLibrary = (props) => {
                 inventoryLibrary[props.cardid].q}
             </div>
           )}
-          <ResultLibraryType cardtype={libraryCardBase[props.cardid]['Type']} />
+          <ResultLibraryTypeImage
+            value={libraryCardBase[props.cardid]['Type']}
+          />
           <div className="ps-1">
             {libraryCardBase[props.cardid]['Banned'] ? (
               <>

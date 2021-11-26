@@ -11,7 +11,7 @@ import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTrifle from './ResultLibraryTrifle.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ResultLibraryTable(props) {
@@ -139,7 +139,7 @@ function ResultLibraryTable(props) {
             />
           </td>
           <td className="type px-1" onClick={() => handleClick()}>
-            <ResultLibraryType cardtype={card['Type']} />
+            <ResultLibraryTypeImage value={card['Type']} />
           </td>
           <td className="disciplines px-1" onClick={() => handleClick()}>
             <ResultLibraryDisciplines value={card['Discipline']} />

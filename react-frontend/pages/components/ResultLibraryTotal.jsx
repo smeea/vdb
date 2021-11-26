@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 import ResultLibrarySortForm from './ResultLibrarySortForm.jsx';
 import AppContext from '../../context/AppContext.js';
 
@@ -20,7 +20,7 @@ function ResultLibraryTotal(props) {
   const totalOutput = Object.keys(byTypes).map((k, index) => {
     return (
       <span key={k} className="d-inline-block nobr pe-3">
-        <ResultLibraryType cardtype={k} />
+        <ResultLibraryTypeImage value={k} />
         {byTypes[k]}
       </span>
     );

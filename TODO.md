@@ -1,6 +1,5 @@
 # FIX
 * Change url to empty on last form changed to 'any'
-* Refactor ResultLibraryType
 * Or Newer/Older to disable each other
 * Align and inline Adv icon in names
 * Update rulings

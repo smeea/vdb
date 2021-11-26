@@ -3,7 +3,7 @@ import { OverlayTrigger } from 'react-bootstrap';
 import CardPopover from './CardPopover.jsx';
 import UsedPopover from './UsedPopover.jsx';
 import ResultLibraryName from './ResultLibraryName.jsx';
-import ResultLibraryType from './ResultLibraryType.jsx';
+import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 import ResultLibraryDisciplines from './ResultLibraryDisciplines.jsx';
 import ResultLibraryClan from './ResultLibraryClan.jsx';
 import ResultLibraryModal from './ResultLibraryModal.jsx';
@@ -158,7 +158,7 @@ function TwdResultLibraryKeyCards(props) {
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
         <td className="type" onClick={() => handleClick()}>
-          <ResultLibraryType cardtype={card.c['Type']} />
+          <ResultLibraryTypeImage value={card.c['Type']} />
         </td>
         {!isMobile ? (
           <OverlayTrigger
