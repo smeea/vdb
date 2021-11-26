@@ -100,7 +100,11 @@ function SearchLibraryForm(props) {
   const handleMultiChange = (event) => {
     const { name, value } = event.target;
     const newState = libraryFormState[name];
-    newState[value] = !newState[value];
+    if (value === 'newer' || value === 'older') {
+      newState['or age'] = newState['or age'] === value ? false : value;
+    } else {
+      newState[value] = !newState[value];
+    }
     setLibraryFormState((prevState) => ({
       ...prevState,
       [name]: newState,

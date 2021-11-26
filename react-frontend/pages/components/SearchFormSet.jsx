@@ -58,8 +58,8 @@ function SearchFormSet(props) {
   });
 
   const setOptions = [
-    ['or newer', 'Or Newer'],
-    ['or older', 'Or Older'],
+    ['newer', 'Or Newer'],
+    ['older', 'Or Older'],
     ['only in', 'Only In'],
     ['first print', 'First Printed In'],
   ];
@@ -75,14 +75,12 @@ function SearchFormSet(props) {
         id={`set-${i[0]}`}
         label={i[1]}
         disabled={
-          (i[0] === 'or newer' || i[0] === 'or older') &&
-          props.value.value.length > 1
+          (i[0] === 'newer' || i[0] === 'older') && props.value.value.length > 1
         }
         checked={
-          (i[0] === 'or newer' || i[0] === 'or older') &&
-          props.value.value.length > 1
-            ? false
-            : props.value[i[0]]
+          (i[0] === 'older' && props.value['or age'] === i[0]) ||
+          (i[0] === 'newer' && props.value['or age'] === i[0]) ||
+          props.value[i[0]]
         }
         onChange={(e) => props.onChangeOptions(e)}
       />

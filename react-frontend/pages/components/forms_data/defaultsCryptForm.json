@@ -107,8 +107,7 @@
     ],
     "only in": false,
     "first print": false,
-    "or newer": false,
-    "or older": false
+    "or age": false
   },
   "precon": {
     "value": [

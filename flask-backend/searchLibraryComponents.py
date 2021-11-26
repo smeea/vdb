@@ -375,23 +375,24 @@ def get_library_by_set(request, library):
     r_sets = request['value']
 
     for r_set in r_sets:
-        if 'or newer' in request:
-            oldestSetIndex = sets.index(r_set)
+        if 'or age' in request:
+            if request['or age'] == 'newer':
+                oldestSetIndex = sets.index(r_set)
 
-            for card in library:
-                for k in card['Set'].keys():
-                    if sets.index(k) <= oldestSetIndex and sets.index(k) > 1:
-                        if card not in match_cards:
-                            match_cards.append(card)
+                for card in library:
+                    for k in card['Set'].keys():
+                        if sets.index(k) <= oldestSetIndex and sets.index(k) > 1:
+                            if card not in match_cards:
+                                match_cards.append(card)
 
-        elif 'or older' in request:
-            newestSetIndex = sets.index(r_set)
+            if request['or age'] == 'older':
+                newestSetIndex = sets.index(r_set)
 
-            for card in library:
-                for k in card['Set'].keys():
-                    if sets.index(k) >= newestSetIndex:
-                        if card not in match_cards:
-                            match_cards.append(card)
+                for card in library:
+                    for k in card['Set'].keys():
+                        if sets.index(k) >= newestSetIndex:
+                            if card not in match_cards:
+                                match_cards.append(card)
 
         else:
             if r_set == 'bcp':
