@@ -10,7 +10,7 @@ function SearchFormTextAndButtons(props) {
   if (isMobile) {
     return (
       <FormControl
-        placeholder="Card Name / Text"
+        placeholder="Card Name / Text / RegEx"
         type="text"
         name="text"
         autoComplete="off"
@@ -23,7 +23,7 @@ function SearchFormTextAndButtons(props) {
     return (
       <InputGroup className="mb-2">
         <FormControl
-          placeholder="Card Name / Text"
+          placeholder="Card Name / Text / RegEx"
           type="text"
           name="text"
           autoComplete="off"
