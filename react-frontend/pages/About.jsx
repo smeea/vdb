@@ -71,8 +71,8 @@ function About(props) {
                 </a>
                 : 2021-10-27
               </p>
+              <h6>Last update [2021-11-21]</h6>
               <p>
-                <h6>Last update [2021-11-21]</h6>
                 <ul>
                   <li>Added "Or Older" filter option for Set search</li>
                   <li>

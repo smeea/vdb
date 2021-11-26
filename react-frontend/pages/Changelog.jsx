@@ -153,19 +153,16 @@ function Changelog(props) {
               <li>
                 Add clan filter for Deck Selection window ("goggles" icon)
               </li>
+              <li>Add draw chances in open hand for card-types in library</li>
+              <li>Add "Missing Cards" window for Inventory</li>
               <li>
-                Add draw chances in open hand for card-types in library
-                <li></li>
-                <li>Add "Missing Cards" window for Inventory</li>
-                <li>
-                  Add import from Lackey .dek format (I don't use Lackey so
-                  cannot extensively test it, please report bugs if you find it)
-                </li>
-                <li>Moved Navigation bar to bottom on mobile</li>
-                <li>
-                  Move inventory-mode switch to burger menu in Navigation bar on
-                  mobile
-                </li>
+                Add import from Lackey .dek format (I don't use Lackey so cannot
+                extensively test it, please report bugs if you find it)
+              </li>
+              <li>Moved Navigation bar to bottom on mobile</li>
+              <li>
+                Move inventory-mode switch to burger menu in Navigation bar on
+                mobile
               </li>
             </ul>
 
@@ -471,14 +468,13 @@ function Changelog(props) {
             <ul>
               <li>
                 Add multiple selections for clan, sect, types, title filters in
-                Crypt and Library (see Hobbesgoblin post above). Now work as
-                "OR", maybe one day will be OR/AND toggle.
+                Crypt and Library. Now work as "OR", maybe one day will be
+                OR/AND toggle
               </li>
               <li>Add not-in-twd filter for Crypt and Library</li>
               <li>Add "show random card" buttons to Cards (quick card ⚡)</li>
               <li>
                 Add titled and non-titled options for title filter in Library
-                (see Hobbesgoblin post above)
               </li>
               <li>Small fixes</li>
             </ul>
@@ -645,6 +641,8 @@ function Changelog(props) {
                 published since 2019) and some images are missing. Search for
                 card text/name is still looks for English name/text (it will be
                 so until all cards are translated for a given localization).
+              </li>
+              <li>
                 Performance improvement for Inventory (it's still not perfect
                 with hundreds of unique though)
               </li>
@@ -836,10 +834,7 @@ function Changelog(props) {
                 changed ranges) Greatly increased TWD by-card-type search speed
                 (finally, it is usable lol)
               </li>
-              <li>
-                Fix library cards clan search for double-clan (see Hobbesgoblin
-                report above)
-              </li>
+              <li>Fix library cards clan search for double-clan</li>
             </ul>
 
             <h6>2021-02-22</h6>
