@@ -5,7 +5,7 @@ import ResultLibraryClan from './ResultLibraryClan.jsx';
 
 function DeckLibraryTotalInfo(props) {
   const total = Object.values(props.byTypes).reduce((a, b) => a + b, 0);
-  const totalExMasters = total - props.byTypes['Master'];
+  const totalExMasters = total - (props.byTypes['Master'] || 0);
 
   const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
     return (
