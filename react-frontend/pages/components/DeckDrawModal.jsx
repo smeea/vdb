@@ -86,6 +86,7 @@ function DeckDrawModal(props) {
                     </div>
                     <div className="pe-1">
                       <Button
+                        title="Hand Size -1"
                         variant="primary"
                         onClick={() => props.handleCryptHandSize(-1)}
                         disabled={props.drawedCrypt.length < 1}
@@ -94,6 +95,7 @@ function DeckDrawModal(props) {
                       </Button>
                     </div>
                     <Button
+                      title="Re-Draw"
                       variant="primary"
                       onClick={props.handleReDrawCrypt}
                       disabled={props.cryptTotal < 4}
@@ -104,6 +106,7 @@ function DeckDrawModal(props) {
                     </Button>
                     <div className="ps-1">
                       <Button
+                        title="Hand Size +1"
                         variant="primary"
                         onClick={() => props.handleCryptHandSize(1)}
                         disabled={props.restCrypt.length < 1}
@@ -142,6 +145,7 @@ function DeckDrawModal(props) {
                 <div className="d-flex">
                   <div className="pe-1">
                     <Button
+                      title="Hand Size -1"
                       variant="primary"
                       onClick={() => props.handleLibraryHandSize(-1)}
                       disabled={props.drawedLibrary.length < 1}
@@ -150,6 +154,7 @@ function DeckDrawModal(props) {
                     </Button>
                   </div>
                   <Button
+                    title="Re-Draw"
                     variant="primary"
                     onClick={props.handleReDrawLibrary}
                     disabled={props.libraryTotal < 7}
@@ -158,6 +163,7 @@ function DeckDrawModal(props) {
                   </Button>
                   <div className="ps-1">
                     <Button
+                      title="Hand Size +1"
                       variant="primary"
                       onClick={() => props.handleLibraryHandSize(1)}
                       disabled={props.restLibrary.length < 1}

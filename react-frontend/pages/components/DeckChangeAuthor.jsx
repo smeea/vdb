@@ -40,7 +40,7 @@ function DeckChangeAuthor(props) {
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
-        <InputGroup.Text>
+        <InputGroup.Text title="Author">
           <PersonFill />
         </InputGroup.Text>
         <FormControl

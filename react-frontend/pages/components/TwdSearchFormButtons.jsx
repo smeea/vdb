@@ -32,7 +32,11 @@ function TwdSearchFormButtons(props) {
       </div>
       {!isMobile && (
         <div className="d-flex">
-          <Button variant="primary" onClick={props.handleClearButton}>
+          <Button
+            title="Clear Forms & Results"
+            variant="primary"
+            onClick={props.handleClearButton}
+          >
             <X />
           </Button>
         </div>

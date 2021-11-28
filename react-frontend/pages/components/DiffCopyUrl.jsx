@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import ShareFill from '../../assets/images/icons/share-fill.svg';
 import AppContext from '../../context/AppContext.js';
 
-function DeckCopyUrl(props) {
+function DiffCopyUrl(props) {
   const { isMobile } = useContext(AppContext);
   const [state, setState] = useState(false);
 
@@ -21,6 +21,7 @@ function DeckCopyUrl(props) {
   return (
     <>
       <Button
+        title="Copy Compare URL"
         variant={state ? 'success' : 'secondary'}
         onClick={handleStandardButton}
       >
@@ -35,4 +36,4 @@ function DeckCopyUrl(props) {
   );
 }
 
-export default DeckCopyUrl;
+export default DiffCopyUrl;

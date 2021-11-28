@@ -42,7 +42,7 @@ function DeckDescription(props) {
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
-        <InputGroup.Text>
+        <InputGroup.Text title="Description">
           <ChatLeftQuoteFill />
         </InputGroup.Text>
         <FormControl
@@ -57,6 +57,7 @@ function DeckDescription(props) {
         />
         {!isMobile && (
           <Button
+            title="Collapse/Uncollapse Description"
             variant="primary"
             onClick={() => props.setFolded(!props.folded)}
           >

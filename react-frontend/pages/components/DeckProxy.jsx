@@ -114,7 +114,7 @@ function DeckProxy(props) {
           </div>
         </Button>
       ) : (
-        <Dropdown className="d-inline">
+        <Dropdown title="Create PDF Proxy" className="d-inline">
           <Dropdown.Toggle
             as={props.noText ? Button : BlockButton}
             variant={props.noText ? 'primary' : 'secondary'}

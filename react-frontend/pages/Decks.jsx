@@ -331,6 +331,13 @@ function Decks(props) {
                       {inventoryMode && isAuthor && deckRouter(activeDeck) && (
                         <div className="d-flex ps-1">
                           <Button
+                            title={`Inventory Type: ${
+                              !deckRouter(activeDeck).inventory_type
+                                ? 'VIRTUAL\nDo not use Inventory'
+                                : deckRouter(activeDeck).inventory_type == 's'
+                                ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
+                                : 'FIXED\nUse unique copies of cards from Inventory'
+                            }`}
                             variant="primary"
                             onClick={() => toggleInventoryState()}
                           >
@@ -381,6 +388,7 @@ function Decks(props) {
                       {decks && (
                         <div className="py-1">
                           <Button
+                            title="Advanced Deck Select"
                             variant="primary"
                             onClick={() =>
                               setShowDeckSelectAdv(!showDeckSelectAdv)

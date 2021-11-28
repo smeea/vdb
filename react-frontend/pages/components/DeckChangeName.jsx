@@ -39,7 +39,7 @@ function DeckChangeName(props) {
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
-        <InputGroup.Text>
+        <InputGroup.Text title="Deck Name">
           <StarFill />
         </InputGroup.Text>
         <FormControl

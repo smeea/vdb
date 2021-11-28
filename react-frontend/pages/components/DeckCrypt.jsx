@@ -197,12 +197,20 @@ function DeckCrypt(props) {
             <div className="pe-1">
               <DeckCryptSortButton />
             </div>
-            <Button variant="primary" onClick={() => setShowInfo(!showInfo)}>
+            <Button
+              title="Additional Info"
+              variant="primary"
+              onClick={() => setShowInfo(!showInfo)}
+            >
               <InfoCircle />
             </Button>
             {props.isAuthor && !isMobile && (
               <div className="ps-1">
-                <Button variant="primary" onClick={() => setShowAdd(!showAdd)}>
+                <Button
+                  title="Add Card"
+                  variant="primary"
+                  onClick={() => setShowAdd(!showAdd)}
+                >
                   +
                 </Button>
               </div>

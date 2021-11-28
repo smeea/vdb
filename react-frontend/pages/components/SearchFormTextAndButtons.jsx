@@ -36,7 +36,11 @@ function SearchFormTextAndButtons(props) {
             <Check2 /> FOUND {props.preresults}
           </Button>
         )}
-        <Button variant="primary" onClick={props.handleClearButton}>
+        <Button
+          title="Clear Forms & Results"
+          variant="primary"
+          onClick={props.handleClearButton}
+        >
           <X />
         </Button>
       </InputGroup>

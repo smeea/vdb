@@ -115,7 +115,7 @@ function DeckCopyUrl(props) {
   return (
     <>
       {props.deck.deckid.length == 32 ? (
-        <Dropdown className="d-inline">
+        <Dropdown title="Copy Deck URL" className="d-inline">
           <Dropdown.Toggle
             as={props.noText ? Button : BlockButton}
             variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
@@ -133,7 +133,7 @@ function DeckCopyUrl(props) {
         <Button
           variant={state ? 'success' : 'secondary'}
           onClick={handleStandardButton}
-          title="Copy standard deck URL (will follow future deck changes)"
+          title="Copy Standard Deck URL (will follow future deck changes)"
         >
           <ShareFill /> {!props.noText && (state ? 'Copied' : 'Copy URL')}
         </Button>

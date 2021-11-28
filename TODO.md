@@ -2,11 +2,11 @@
 * Change url to empty on last form changed to 'any'
 * Align and inline Adv icon in names
 * Update rulings
+* Deck delete confirmation with text for decks with revisions
 
 # FIX MOBILE
 
 # FEATURES
-* Create revocable link to Inventory
 * Localized proxies
 * Export all in xlsx and csv
 * Bookmarks/recent decks

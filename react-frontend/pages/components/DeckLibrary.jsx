@@ -320,6 +320,7 @@ function DeckLibrary(props) {
             {!props.inAdvSelect && (
               <>
                 <Button
+                  title="Additional Info"
                   variant="primary"
                   onClick={() => setShowInfo(!showInfo)}
                 >
@@ -328,6 +329,7 @@ function DeckLibrary(props) {
                 {props.isAuthor && !isMobile && (
                   <div className="ps-1">
                     <Button
+                      title="Add Card"
                       variant="primary"
                       onClick={() => setShowAdd(!showAdd)}
                     >

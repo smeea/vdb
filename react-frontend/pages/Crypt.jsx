@@ -51,7 +51,11 @@ function Crypt(props) {
                   </>
                 )}
                 <div className="d-flex ps-1">
-                  <Button variant="primary" onClick={() => toggleAddMode()}>
+                  <Button
+                    title="Hide Deck Panel"
+                    variant="primary"
+                    onClick={() => toggleAddMode()}
+                  >
                     {addMode ? <EyeSlashFill /> : <EyeFill />}
                   </Button>
                 </div>

@@ -17,7 +17,7 @@ function DeckCryptSortButton(props) {
   });
 
   return (
-    <Dropdown className="d-inline">
+    <Dropdown title="Sort Crypt" className="d-inline">
       <Dropdown.Toggle as={Button} variant="primary">
         <div className="d-flex justify-content-center align-items-center">
           <div className="pe-1">
