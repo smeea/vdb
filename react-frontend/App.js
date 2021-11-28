@@ -53,7 +53,9 @@ function App(props) {
     setInventoryMode,
     decks,
     setDecks,
-    recentDecksIds,
+    recentDecks,
+    setRecentDecks,
+    deleteRecentDeck,
     activeDeck,
     setActiveDeck,
     getDecks,
@@ -540,10 +542,18 @@ function App(props) {
   }, [username, nativeCrypt, nativeLibrary]);
 
   useEffect(() => {
-    if (nativeCrypt && nativeLibrary) {
-      getRecentDecks();
+    if (decks && recentDecks) {
+      const len = Object.keys(recentDecks).length;
+      const state = { ...recentDecks };
+      Object.keys(state).map((deckid) => {
+        if (Object.keys(decks).includes(deckid)) {
+          deleteRecentDeck(deckid);
+          delete state[deckid];
+        }
+      });
+      if (Object.keys(state).length != len) setRecentDecks(state);
     }
-  }, [recentDecksIds, nativeCrypt, nativeLibrary]);
+  }, [decks, recentDecks]);
 
   useEffect(() => {
     if (lastDeck && lastDeck.deckid && !activeDeck.deckid) {

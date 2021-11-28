@@ -106,7 +106,7 @@ export const AppProvider = (props) => {
   const addRecentDeck = (deckid) => {
     if (!recentDecksIds.includes(deckid)) {
       const d = [deckid, ...recentDecksIds];
-      if (d.length > 10) d.splice(0, 10);
+      if (d.length > 5) d.splice(0, 5);
       setRecentDecksIds(d);
       window.localStorage.setItem('recentDecksIds', d);
     }
@@ -335,6 +335,16 @@ export const AppProvider = (props) => {
         case 'twd':
           return sharedDeck && sharedDeck[pointer['deckid']];
         case 'recent':
+          let rd = window.localStorage.getItem('recentDecksIds');
+          if (rd) {
+            rd = rd.split(',');
+            const idx = rd.indexOf(pointer['deckid']);
+            if (idx != -1) rd.splice(idx, 1);
+            window.localStorage.setItem('recentDecksIds', [
+              pointer['deckid'],
+              ...rd,
+            ]);
+          }
           return recentDecks && recentDecks[pointer['deckid']];
       }
     }
@@ -486,6 +496,7 @@ export const AppProvider = (props) => {
         sharedDeck,
         setSharedDeck,
         recentDecks,
+        setRecentDecks,
         recentDecksIds,
         getRecentDecks,
         addRecentDeck,
