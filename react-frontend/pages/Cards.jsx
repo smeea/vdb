@@ -187,7 +187,7 @@ function Cards(props) {
           </>
         ) : (
           <Row>
-            <Col md={{ span: 8, offset: 2 }}>
+            <Col md={{ span: 8, offset: 2 }} className="quick-cards">
               {cryptCardBase && libraryCardBase && (
                 <Row className="align-content-center justify-content-center py-3">
                   <Col className="px-0">

@@ -2,7 +2,6 @@
 * Change url to empty on last form changed to 'any'
 * Align and inline Adv icon in names
 * Update rulings
-* Deck delete confirmation with text for decks with revisions
 
 # FIX MOBILE
 

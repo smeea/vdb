@@ -48,6 +48,9 @@ function DeckDelete(props) {
         </div>
       </Button>
       <ModalConfirmation
+        withConfirmation={
+          props.deck.master || props.deck.branches.length ? true : false
+        }
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}

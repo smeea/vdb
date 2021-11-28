@@ -93,8 +93,8 @@ function AccountDeleteConfirmation(props) {
           via URL anymore.
         </Modal.Body>
         <Modal.Footer>
-          <Form className="my-0" onSubmit={handleSubmitButton}>
-            <InputGroup className="mb-2">
+          <Form className="my-2" onSubmit={handleSubmitButton}>
+            <InputGroup>
               <FormControl
                 placeholder="Enter password"
                 type={hidePassword ? 'password' : 'text'}

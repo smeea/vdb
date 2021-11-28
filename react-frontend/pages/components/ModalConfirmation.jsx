@@ -1,10 +1,26 @@
-import React, { useContext } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import React, { useContext, useState, useRef } from 'react';
+import { Modal, Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import X from '../../assets/images/icons/x.svg';
+import ErrorOverlay from './ErrorOverlay.jsx';
 import AppContext from '../../context/AppContext.js';
 
 function ModalConfirmation(props) {
   const { isMobile } = useContext(AppContext);
+  const [confirmation, setConfirmation] = useState('');
+  const [errorConfirmation, setErrorConfirmation] = useState(false);
+  const refConfirmation = useRef(null);
+
+  const handleConfirm = () => {
+    if (props.withConfirmation) {
+      if (confirmation === 'YES') {
+        setErrorConfirmation(false);
+      } else {
+        setErrorConfirmation(true);
+      }
+    } else {
+      props.handleConfirm();
+    }
+  };
 
   return (
     <>
@@ -33,7 +49,29 @@ function ModalConfirmation(props) {
           </Modal.Body>
         )}
         <Modal.Footer>
-          <Button variant="danger" onClick={props.handleConfirm}>
+          {props.withConfirmation && (
+            <Form onSubmit={handleConfirm}>
+              <InputGroup>
+                <FormControl
+                  placeholder="Type 'YES' to confirm"
+                  name="text"
+                  value={confirmation}
+                  onChange={(e) => setConfirmation(e.target.value)}
+                  autoFocus={true}
+                  ref={refConfirmation}
+                />
+              </InputGroup>
+              <ErrorOverlay
+                show={errorConfirmation}
+                target={refConfirmation.current}
+                placement="bottom"
+                modal={true}
+              >
+                Type 'YES' to confirm
+              </ErrorOverlay>
+            </Form>
+          )}
+          <Button variant="danger" onClick={handleConfirm}>
             {props.buttonText}
           </Button>
           <Button variant="primary" onClick={props.handleCancel}>

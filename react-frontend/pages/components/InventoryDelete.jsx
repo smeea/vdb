@@ -40,6 +40,7 @@ function InventoryDelete(props) {
         </div>
       </Button>
       <ModalConfirmation
+        withConfirmation={true}
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
