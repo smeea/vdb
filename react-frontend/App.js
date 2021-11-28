@@ -53,9 +53,11 @@ function App(props) {
     setInventoryMode,
     decks,
     setDecks,
+    recentDecksIds,
     activeDeck,
     setActiveDeck,
     getDecks,
+    getRecentDecks,
     setPreconDecks,
   } = useContext(AppContext);
 
@@ -532,7 +534,16 @@ function App(props) {
       setLastDeck({});
       setEmail(undefined);
     }
+    if (nativeCrypt && nativeLibrary) {
+      getRecentDecks();
+    }
   }, [username, nativeCrypt, nativeLibrary]);
+
+  useEffect(() => {
+    if (nativeCrypt && nativeLibrary) {
+      getRecentDecks();
+    }
+  }, [recentDecksIds, nativeCrypt, nativeLibrary]);
 
   useEffect(() => {
     if (lastDeck && lastDeck.deckid && !activeDeck.deckid) {

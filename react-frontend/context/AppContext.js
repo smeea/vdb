@@ -62,6 +62,8 @@ export const AppProvider = (props) => {
   const [decks, setDecks] = useState(undefined);
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [sharedDeck, setSharedDeck] = useState(undefined);
+  const [recentDecks, setRecentDecks] = useState({});
+  const [recentDecksIds, setRecentDecksIds] = useState([]);
 
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
@@ -99,6 +101,23 @@ export const AppProvider = (props) => {
   const toggleAddMode = () => {
     setAddMode(!addMode);
     window.localStorage.setItem('addMode', !addMode);
+  };
+
+  const addRecentDeck = (deckid) => {
+    if (!recentDecksIds.includes(deckid)) {
+      const d = [deckid, ...recentDecksIds];
+      if (d.length > 10) d.splice(0, 10);
+      setRecentDecksIds(d);
+      window.localStorage.setItem('recentDecksIds', d);
+    }
+  };
+
+  const deleteRecentDeck = (deckid) => {
+    if (recentDecksIds.includes(deckid)) {
+      const d = recentDecksIds.filter((v) => v !== deckid);
+      setRecentDecksIds(d);
+      window.localStorage.setItem('recentDecksIds', d);
+    }
   };
 
   useLayoutEffect(() => {
@@ -150,7 +169,42 @@ export const AppProvider = (props) => {
     } else {
       setShowImage(true);
     }
+
+    const rd = window.localStorage.getItem('recentDecksIds');
+    if (rd) {
+      setRecentDecksIds(rd.split(','));
+    }
   }, []);
+
+  const getRecentDecks = () => {
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    const tmpRecentDecks = {};
+
+    const promises = recentDecksIds.map((deckid) => {
+      const url = `${process.env.API_URL}deck/${deckid}`;
+      return fetch(url, options)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.error === undefined) {
+            Object.keys(data.crypt).map((i) => {
+              data.crypt[i].c = cryptCardBase[i];
+            });
+            Object.keys(data.library).map((i) => {
+              data.library[i].c = libraryCardBase[i];
+            });
+            tmpRecentDecks[deckid] = data;
+          }
+        })
+        .catch(() => deleteRecentDeck(deckid));
+    });
+
+    Promise.allSettled(promises).then(() => setRecentDecks(tmpRecentDecks));
+  };
 
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
@@ -280,6 +334,8 @@ export const AppProvider = (props) => {
         case 'shared':
         case 'twd':
           return sharedDeck && sharedDeck[pointer['deckid']];
+        case 'recent':
+          return recentDecks && recentDecks[pointer['deckid']];
       }
     }
   };
@@ -429,6 +485,11 @@ export const AppProvider = (props) => {
         setActiveDeck,
         sharedDeck,
         setSharedDeck,
+        recentDecks,
+        recentDecksIds,
+        getRecentDecks,
+        addRecentDeck,
+        deleteRecentDeck,
         getDecks,
         deckRouter,
         deckUpdate,

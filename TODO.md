@@ -2,13 +2,13 @@
 * Change url to empty on last form changed to 'any'
 * Align and inline Adv icon in names
 * Update rulings
+* Refactor sharedDeck and recentDecks
 
 # FIX MOBILE
 
 # FEATURES
 * Localized proxies
 * Export all in xlsx and csv
-* Bookmarks/recent decks
 * Links to custom deck
 
 # BIG FEATURES

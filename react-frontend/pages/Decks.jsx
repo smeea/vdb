@@ -11,6 +11,7 @@ import BinocularsFill from '../assets/images/icons/binoculars-fill.svg';
 import AccountLogin from './components/AccountLogin.jsx';
 import AccountRegister from './components/AccountRegister.jsx';
 import DeckSelectMy from './components/DeckSelectMy.jsx';
+import DeckSelectRecent from './components/DeckSelectRecent.jsx';
 import DeckSelectPrecon from './components/DeckSelectPrecon.jsx';
 import DeckSelectAdvModal from './components/DeckSelectAdvModal.jsx';
 import DeckTags from './components/DeckTags.jsx';
@@ -31,9 +32,12 @@ function Decks(props) {
     deckRouter,
     activeDeck,
     setActiveDeck,
-    sharedDeck,
-    setSharedDeck,
+    // sharedDeck,
+    // setSharedDeck,
     decks,
+    recentDecks,
+    recentDecksIds,
+    addRecentDeck,
     inventoryCrypt,
     inventoryLibrary,
     usedCryptCards,
@@ -157,6 +161,7 @@ function Decks(props) {
           Object.keys(data.library).map((i) => {
             data.library[i].c = libraryCardBase[i];
           });
+          addRecentDeck(data.deckid);
           setSharedDeck({ [data.deckid]: data });
         }
       })
@@ -249,7 +254,9 @@ function Decks(props) {
       cryptCardBase &&
       libraryCardBase
     ) {
-      if (query.get('id').length == 32) {
+      if (recentDecksIds.includes(query.get('id'))) {
+        setActiveDeck({ src: 'recent', deckid: query.get('id') });
+      } else if (query.get('id').length == 32) {
         setActiveDeck({ src: 'shared', deckid: query.get('id') });
         getDeck(query.get('id'));
       } else if (query.get('id').includes(':')) {
@@ -276,7 +283,11 @@ function Decks(props) {
   }, [query, activeDeck, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (activeDeck.src == 'my' || activeDeck.src == 'precons') {
+    if (
+      activeDeck.src == 'my' ||
+      activeDeck.src == 'precons' ||
+      activeDeck.src == 'recent'
+    ) {
       setSelectFrom(activeDeck.src);
     } else if (
       (activeDeck.src == 'twd' || activeDeck.src == 'shared') &&
@@ -291,7 +302,7 @@ function Decks(props) {
     }
 
     if (deckRouter(activeDeck)) setDeckError(false);
-  }, [activeDeck, decks]);
+  }, [activeDeck, decks, recentDecks]);
 
   return (
     <Container className={isMobile ? 'deck-container' : 'deck-container py-3'}>
@@ -318,6 +329,8 @@ function Decks(props) {
                     >
                       {selectFrom == 'my' && decks ? (
                         <DeckSelectMy activeDeck={activeDeck} />
+                      ) : selectFrom == 'recent' && recentDecks ? (
+                        <DeckSelectRecent activeDeck={activeDeck} />
                       ) : (
                         <DeckSelectPrecon activeDeck={activeDeck} />
                       )}
@@ -383,6 +396,20 @@ function Decks(props) {
                         }
                         inline
                       />
+                      {Object.keys(recentDecks).length > 0 && (
+                        <Form.Check
+                          checked={selectFrom == 'recent'}
+                          onChange={(e) => setSelectFrom(e.target.id)}
+                          type="radio"
+                          id="recent"
+                          label={
+                            <div className="blue">
+                              <b>Recent</b>
+                            </div>
+                          }
+                          inline
+                        />
+                      )}
                     </Form>
                     <div className="d-flex">
                       {decks && (
