@@ -15,7 +15,7 @@ function About(props) {
         <Col xs={12} md={5} className="px-0">
           <Banner />
           <div className="px-2">
-            <div className="pt-2">
+            <div className="pt-3">
               <h5>WHAT IS IT</h5>
               <p>
                 VDB is online card search, TWD (tournament winning decks)
@@ -24,7 +24,7 @@ function About(props) {
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3">
               <h5>QUICKSTART</h5>
               <ul>
                 <li>
@@ -51,7 +51,7 @@ function About(props) {
               </ul>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3">
               <h5>TROUBLESHOOTING</h5>
               <p>
                 If you experience problems like page crashes or something start
@@ -62,7 +62,7 @@ function About(props) {
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="py-3">
               <h5>VERSION</h5>
               <p>
                 Card text based on{' '}
@@ -72,23 +72,19 @@ function About(props) {
                 : 2021-10-27
               </p>
               <h6>Last update [2021-11-21]</h6>
-              <p>
-                <ul>
-                  <li>
-                    Added &quot;Or Older&quot; filter option for Set search
-                  </li>
-                  <li>
-                    Fixed Import/Export for new multigroup vampires (Victoria
-                    Ash, etc). Will append &quot;(GX)&quot; after name,
-                    confirmed to be implemented same way in Lackey
-                  </li>
-                  <li>Many other small fixes (mainly UI)</li>
-                </ul>
-                <Link to="/changelog">Full changes history</Link>
-              </p>
+              <ul>
+                <li>Added &quot;Or Older&quot; filter option for Set search</li>
+                <li>
+                  Fixed Import/Export for new multigroup vampires (Victoria Ash,
+                  etc). Will append &quot;(GX)&quot; after name, confirmed to be
+                  implemented same way in Lackey
+                </li>
+                <li>Many other small fixes (mainly UI)</li>
+              </ul>
+              <Link to="/changelog">Full changes history</Link>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3">
               <h5>RELATED PROJECTS</h5>
               <p>
                 <a href="https://amaranth.vtes.co.nz/">
@@ -121,7 +117,7 @@ function About(props) {
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3">
               <h5>FOR DEVELOPERS</h5>
               <p>
                 Development happens in{' '}
@@ -141,7 +137,7 @@ function About(props) {
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3">
               <h5>ACKNOWLEDGMENTS</h5>
               <p>
                 Card images by Fernando &quot;Syndelson&quot; Cesar from{' '}
@@ -158,14 +154,14 @@ function About(props) {
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3">
               <h5>DONATIONS</h5>
               <p>
                 Bitcoin (BTC): <code>3ALLfiv3AWcm7WzgWm9gHmLAAUMRcegBtP</code>
               </p>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-3">
               <h5>CONTACTS</h5>
               <ul className="no-bullets">
                 <li>

@@ -8,11 +8,11 @@ function Changelog(props) {
       <Row className="justify-content-center">
         <Col xs={12} md={5} className="px-0">
           <Banner />
-          <div className="px-2 pt-2">
-            <h5>CHANGELOG</h5>
+          <div className="px-2 pt-3">
+            <h5 className="pb-2">CHANGELOG</h5>
 
             <h6>2021-11-23</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Added &quot;Or Older&quot; filter option for Set search</li>
               <li>
                 Fixed Import/Export for new multigroup vampires (Victoria Ash,
@@ -23,7 +23,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-11-13</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Reworked Inventory page with significant performance improvement
                 (most noticeable on BIG inventories) for both rendering and
@@ -33,7 +33,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-11-06</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Update card base to 2021-10-27 (no new precons yet, just Promos
                 and Ravnos/Chimersty POD reprints). New crypt
@@ -60,7 +60,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-10-29</h6>
-            <ul>
+            <ul className="pb-2">
               Add buttons to Deck Compare page: Show missing cards in popup
               window Proxy missing cards Back to Decks Copy URL to compare
               (simple way to share your ideas of how to improve friend&apos;s
@@ -74,7 +74,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-10-26</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Add Deck Compare feature (can choose from your decks, precons or
                 any other shared or TWD deck by URL or ID)
@@ -84,7 +84,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-10-20</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Added Hide deck option (&quot;bulb&quot; button in advanced deck
                 selection, the &quot;binoculars&quot; button) which hides the
@@ -110,7 +110,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-10-12</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Updated TWDA</li>
               <li>
                 Fixed sorting of multi-types and multi-disciplines to alphabet
@@ -125,7 +125,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-10-09</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Add set selection for Proxy (with original scans)</li>
               <li>
                 Add card scans (Kickstarter Unleashed, KoT and HttB reprints)
@@ -138,7 +138,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-10-05</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Nothing &quot;new&quot;, just many tiny UI improvements (under
                 the hood they are not that small, so please report
@@ -148,7 +148,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-09-23</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Add clan filter for Deck Selection window (&quot;goggles&quot;
                 icon)
@@ -167,7 +167,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-09-21</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Improved Inventory quantity calculation (shows Total+Unique and
                 Missing+Unique) consistently regardless of chosen filter (All /
@@ -192,7 +192,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-09-16</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Add tags info into main deck window long-awaited necessary
                 feature, I apologize for delaying with it
@@ -216,7 +216,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-09-14</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Add chance calculation of drawing X unique crypt cards (click
                 (i) button). Was not easy to do it, but totally worth it.
@@ -232,7 +232,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-09-12</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Add Unleased Kickstarter as a Set/Precons (it&apos;s not an
                 &quot;official&quot; set, but should be more useful like this)
@@ -246,7 +246,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-09-10</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Add images of banned reprints (Ashlesha, etc)</li>
               <li>Add clan images to precon filter in crypt/library search</li>
               <li>Save crypt/library sorting to browser local storage</li>
@@ -262,7 +262,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-09-08</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Add &quot;Advancement&quot; trait for Crypt search, showing all
                 Advanced vampires and their Base versions
@@ -289,7 +289,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-08-30</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Changed colors in light theme. I know theming it&apos;s very
                 subjective topic, but I hope you will soon get used to it and
@@ -317,7 +317,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-08-21</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Some elements will &quot;stick&quot; during scrolling (like
                 crypt in /Deck, library info line in /Deck, side buttons in
@@ -342,7 +342,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-08-15</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Fix inventory used card calculation for fixed decks.</li>
               <li>
                 Add deck export to JOL format (deckserver.net/jol/) Add
@@ -362,7 +362,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-08-12</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Fix deck and inventory export</li>
               <li>
                 Fix library search sect filter Fix crash in deck draw after
@@ -372,7 +372,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-07-21</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Updated card base to 2020-07-19 (kickstarted update)</li>
               <li>
                 Updated TWD base to 2021-05-16 (last TWD in the archive at the
@@ -426,7 +426,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-07-17</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Add reduce hand size button to Deck Draw</li>
               <li>
                 Auto-open results on Mobile if you open url with search query
@@ -454,7 +454,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-07-09</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Show blood/pool cost of ash heap in draw</li>
               <li>Add1 hand size for crypt/library in draw</li>
               <li>Autoswitch to newly imported deck</li>
@@ -469,7 +469,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-07-05</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Add multiple selections for clan, sect, types, title filters in
                 Crypt and Library. Now work as &quot;OR&quot;, maybe one day
@@ -487,7 +487,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-06-20</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Added inventory import from preconstructed decks</li>
               <li>
                 Inventory import from deck/precon buttons now show if it&apos;s
@@ -513,7 +513,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-06-12</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Restyled deck preview in advanced deck select window (popup deck
                 is downscaled, don&apos;t show buttons, triggered by hover on
@@ -537,7 +537,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-06-06</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Added library pool/blood cost. Thanks to Karl Schaefer</li>
               <li>
                 Added inventory-type icons (clickable to change inventroy type)
@@ -555,7 +555,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-05-29</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Added advanced deck selection window (click binoculars icon near
                 deck select form)
@@ -576,7 +576,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-05-16</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 References to other cards in card text and rulings (see Lost in
                 Crowds, Mata Hari) now show card popup on mouse hover
@@ -606,7 +606,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-05-12</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Improved screen resolution responsiveness (should be much better
                 on smaller resolutions like tablets)
@@ -641,7 +641,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-04-23</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Added card localization (you can switch prefered card language
                 and it change card text/name if translation exists). Now it only
@@ -658,7 +658,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-04-16</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Dark theme, finally! (switch is in top-left corner)</li>
               <li>
                 Detailed Set/Precon information in Card window (hover mouse over
@@ -673,7 +673,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-04-09</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Added TWD search for decks matching your Inventory. Thanks to
                 Vincent Ripoll for proposal! Please note you must first turn on
@@ -696,7 +696,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-04-04</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Added buttons to next/previous cards in card preview window (now
                 it&apos;s only goes through crypt or library, will be improved
@@ -725,7 +725,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-03-28</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 URL now store search query for Crypt/Library/TWD searches and
                 you can easily share it
@@ -741,7 +741,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-03-20</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Deck-ID now attaches to url in url bar (same url as you got
                 after clicking &apos;Copy URL&apos; button, so all old links
@@ -771,7 +771,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-03-14</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Deck draw now let &apos;play&apos; cards by clicking on them
                 (instead of card view)
@@ -800,7 +800,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-03-06</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Added new feature deck revisions</li>
               <li>
                 Added rulings from krcg (many more rulings with links to
@@ -813,7 +813,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-02-28</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Added quick card view page (vdb.smeea.casa/cards) where you can
                 quick check the card by it&apos;s name.
@@ -838,7 +838,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-02-23</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Added TWD search by library size</li>
               <li>
                 Updated TWD search by-card-type forms (added &apos;none&apos;,
@@ -849,7 +849,7 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-02-22</h6>
-            <ul>
+            <ul className="pb-2">
               <li>
                 Updated Deck page layout (more vertical space for Crypt/Library)
               </li>
@@ -923,23 +923,23 @@ function Changelog(props) {
             </ul>
 
             <h6>2021-02-13</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Added Inventory Mode</li>
             </ul>
 
             <h6>2021-01-24</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Added card preview on card click</li>
               <li>Added probability calculations in Deck Draw</li>
             </ul>
 
             <h6>2020-12-25</h6>
-            <ul>
+            <ul className="pb-2">
               <li>Added TWD browser</li>
             </ul>
 
             <h6>2020-12-03</h6>
-            <ul>
+            <ul className="pb-2">
               <li>First release</li>
             </ul>
           </div>
