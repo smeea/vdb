@@ -38,6 +38,7 @@ function Decks(props) {
     recentDecks,
     recentDecksIds,
     addRecentDeck,
+    setRecentDecks,
     inventoryCrypt,
     inventoryLibrary,
     usedCryptCards,
@@ -163,6 +164,10 @@ function Decks(props) {
           });
           addRecentDeck(data.deckid);
           setSharedDeck({ [data.deckid]: data });
+          setRecentDecks((prevState) => ({
+            ...prevState,
+            [data.deckid]: data,
+          }));
         }
       })
       .catch((error) => setDeckError(true));
