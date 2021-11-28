@@ -358,22 +358,14 @@ function DeckSelectAdvModal(props) {
               </div>
               {!isMobile && (
                 <>
-                  {revFilter &&
+                  <div className="d-inline pe-1">
+                    {revFilter &&
                     (deck.master ||
-                      (deck.branches && deck.branches.length > 0)) && (
-                      <div className="d-inline pe-1">
-                        <DeckBranchDelete noText={true} deck={deck} />
-                      </div>
+                      (deck.branches && deck.branches.length > 0)) ? (
+                      <DeckBranchDelete noText={true} deck={deck} />
+                    ) : (
+                      <DeckDelete noText={true} deck={deck} />
                     )}
-                  <div className="d-inline pe-1">
-                    <DeckDelete noText={true} deck={deck} />
-                  </div>
-                  <div className="d-inline pe-1">
-                    <DeckClone
-                      activeDeck={{ src: 'my', deckid: deck.deckid }}
-                      noText={true}
-                      deck={deck}
-                    />
                   </div>
                   <div className="d-inline pe-1">
                     <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
