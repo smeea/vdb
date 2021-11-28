@@ -9,7 +9,7 @@ function TwdOpenDeckButton(props) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setActiveDeck({ src: 'twd', deckid: props.deckid });
+    setActiveDeck({ src: 'recent', deckid: props.deckid });
     navigate(`/decks?id=${props.deckid}`);
   };
 

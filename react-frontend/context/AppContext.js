@@ -61,7 +61,6 @@ export const AppProvider = (props) => {
   const [preconDecks, setPreconDecks] = useState({});
   const [decks, setDecks] = useState(undefined);
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
-  const [sharedDeck, setSharedDeck] = useState(undefined);
   const [recentDecks, setRecentDecks] = useState({});
   const [recentDecksIds, setRecentDecksIds] = useState([]);
 
@@ -105,8 +104,7 @@ export const AppProvider = (props) => {
 
   const addRecentDeck = (deckid) => {
     if (!recentDecksIds.includes(deckid)) {
-      const d = [deckid, ...recentDecksIds];
-      if (d.length > 5) d.splice(0, 5);
+      const d = [deckid, ...recentDecksIds].slice(0, 5);
       setRecentDecksIds(d);
       window.localStorage.setItem('recentDecksIds', d);
     }
@@ -331,9 +329,6 @@ export const AppProvider = (props) => {
           return decks && decks[pointer['deckid']];
         case 'precons':
           return preconDecks && preconDecks[pointer['deckid']];
-        case 'shared':
-        case 'twd':
-          return sharedDeck && sharedDeck[pointer['deckid']];
         case 'recent':
           let rd = window.localStorage.getItem('recentDecksIds');
           if (rd) {
@@ -493,8 +488,6 @@ export const AppProvider = (props) => {
         setDecks,
         activeDeck,
         setActiveDeck,
-        sharedDeck,
-        setSharedDeck,
         recentDecks,
         setRecentDecks,
         recentDecksIds,

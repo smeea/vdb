@@ -32,8 +32,6 @@ function Decks(props) {
     deckRouter,
     activeDeck,
     setActiveDeck,
-    sharedDeck,
-    setSharedDeck,
     decks,
     recentDecks,
     recentDecksIds,
@@ -163,7 +161,6 @@ function Decks(props) {
             data.library[i].c = libraryCardBase[i];
           });
           addRecentDeck(data.deckid);
-          setSharedDeck({ [data.deckid]: data });
           setRecentDecks((prevState) => ({
             ...prevState,
             [data.deckid]: data,
@@ -247,8 +244,11 @@ function Decks(props) {
         library: library,
       };
 
-      setSharedDeck({ deckInUrl: deck });
-      setActiveDeck({ src: 'shared', deckid: 'deckInUrl' });
+      setRecentDecks((prevState) => ({
+        ...prevState,
+        deckInUrl: deck,
+      }));
+      setActiveDeck({ src: 'recent', deckid: 'deckInUrl' });
     }
   }, [hash, cryptCardBase, libraryCardBase]);
 
@@ -261,13 +261,10 @@ function Decks(props) {
     ) {
       if (recentDecksIds.includes(query.get('id'))) {
         setActiveDeck({ src: 'recent', deckid: query.get('id') });
-      } else if (query.get('id').length == 32) {
-        setActiveDeck({ src: 'shared', deckid: query.get('id') });
-        getDeck(query.get('id'));
       } else if (query.get('id').includes(':')) {
         setActiveDeck({ src: 'precons', deckid: query.get('id') });
       } else {
-        setActiveDeck({ src: 'twd', deckid: query.get('id') });
+        setActiveDeck({ src: 'recent', deckid: query.get('id') });
         getDeck(query.get('id'));
       }
     }
@@ -280,10 +277,14 @@ function Decks(props) {
       navigate(`/decks?id=${activeDeck.deckid}`);
 
     if (
-      activeDeck.src == 'twd' &&
-      !(sharedDeck && sharedDeck[activeDeck.deckid])
+      cryptCardBase &&
+      libraryCardBase &&
+      activeDeck.src !== null &&
+      activeDeck.src !== 'precons' &&
+      activeDeck.src !== 'my' &&
+      !(recentDecks && recentDecks[activeDeck.deckid])
     ) {
-      cryptCardBase && libraryCardBase && getDeck(activeDeck.deckid);
+      getDeck(activeDeck.deckid);
     }
   }, [query, activeDeck, cryptCardBase, libraryCardBase]);
 
@@ -294,12 +295,6 @@ function Decks(props) {
       activeDeck.src == 'recent'
     ) {
       setSelectFrom(activeDeck.src);
-    } else if (
-      (activeDeck.src == 'twd' || activeDeck.src == 'shared') &&
-      decks &&
-      Object.keys(decks).length > 0
-    ) {
-      setSelectFrom('my');
     }
 
     if (decks && decks[activeDeck.deckid] && activeDeck.src != 'my') {

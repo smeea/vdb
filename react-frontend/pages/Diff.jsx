@@ -28,7 +28,6 @@ function Diff(props) {
     inventoryMode,
     activeDeck,
     setActiveDeck,
-    setSharedDeck,
     decks,
     cryptCardBase,
     libraryCardBase,
