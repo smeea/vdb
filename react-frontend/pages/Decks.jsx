@@ -32,8 +32,8 @@ function Decks(props) {
     deckRouter,
     activeDeck,
     setActiveDeck,
-    // sharedDeck,
-    // setSharedDeck,
+    sharedDeck,
+    setSharedDeck,
     decks,
     recentDecks,
     recentDecksIds,
@@ -369,7 +369,7 @@ function Decks(props) {
                     </div>
                   </div>
                   <div className="d-flex justify-content-between align-items-center pt-1">
-                    <Form className="py-1 my-0 px-2">
+                    <Form className="py-1 my-0 px-1">
                       {username && decks && Object.keys(decks).length > 0 && (
                         <Form.Check
                           checked={selectFrom == 'my'}
@@ -378,7 +378,7 @@ function Decks(props) {
                           id="my"
                           label={
                             <div className="blue">
-                              <b>My Decks</b>
+                              <b>{isMobile ? 'My' : 'My Decks'}</b>
                             </div>
                           }
                           inline

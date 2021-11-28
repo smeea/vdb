@@ -14,6 +14,7 @@ function ModalConfirmation(props) {
     if (props.withConfirmation) {
       if (confirmation === 'YES') {
         setErrorConfirmation(false);
+        props.handleConfirm();
       } else {
         setErrorConfirmation(true);
       }
@@ -22,11 +23,17 @@ function ModalConfirmation(props) {
     }
   };
 
+  const handleCancel = () => {
+    setErrorConfirmation(false);
+    setConfirmation('');
+    props.handleCancel();
+  };
+
   return (
     <>
       <Modal
         show={props.show}
-        onHide={props.handleCancel}
+        onHide={handleCancel}
         animation={false}
         centered={isMobile}
       >
@@ -34,7 +41,7 @@ function ModalConfirmation(props) {
           className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
         >
           <h5>{props.headerText}</h5>
-          <Button variant="outline-secondary" onClick={props.handleCancel}>
+          <Button variant="outline-secondary" onClick={handleCancel}>
             <X width="32" height="32" viewBox="0 0 16 16" />
           </Button>
         </Modal.Header>
@@ -71,7 +78,7 @@ function ModalConfirmation(props) {
           <Button variant="danger" onClick={handleConfirm}>
             {props.buttonText}
           </Button>
-          <Button variant="primary" onClick={props.handleCancel}>
+          <Button variant="primary" onClick={handleCancel}>
             Cancel
           </Button>
         </Modal.Footer>

@@ -50,7 +50,7 @@ function DeckDelete(props) {
       <ModalConfirmation
         withConfirmation={
           props.deck.master ||
-          (props.deck.brachnes && props.deck.branches.length)
+          (props.deck.branches && props.deck.branches.length)
             ? true
             : false
         }
