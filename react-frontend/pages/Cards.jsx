@@ -190,17 +190,17 @@ function Cards(props) {
             <Col md={{ span: 8, offset: 2 }}>
               {cryptCardBase && libraryCardBase && (
                 <Row className="align-content-center justify-content-center py-3">
-                  <Col>
+                  <Col className="px-0">
                     <QuickSelect setCard={setCard} />
                   </Col>
                 </Row>
               )}
               {card && (
-                <Row className="align-content-center justify-content-center py-3">
-                  <Col md={6}>
+                <Row className="align-content-center justify-content-center mt-3 bordered">
+                  <Col md={6} className="ps-0">
                     <CardImage />
                   </Col>
-                  <Col md={6}>
+                  <Col md={6} className="pt-3">
                     {card && card.Id > 200000 && (
                       <ResultCryptLayoutText
                         card={card}
@@ -215,7 +215,7 @@ function Cards(props) {
                         setImageSet={setImageSet}
                       />
                     )}
-                    <div className="pt-3">
+                    <div className="py-3">
                       <div className="d-inline pe-1">
                         <ButtonCardCopyUrl id={card.Id} />
                       </div>
@@ -236,10 +236,18 @@ function Cards(props) {
             {!isMobile && (
               <Col>
                 <Stack gap={1} className="py-3 px-2">
-                  <Button variant="secondary" onClick={() => randomCrypt()}>
+                  <Button
+                    title="Random Crypt Card"
+                    variant="secondary"
+                    onClick={() => randomCrypt()}
+                  >
                     <Dice3 /> Crypt
                   </Button>
-                  <Button variant="secondary" onClick={() => randomLibrary()}>
+                  <Button
+                    title="Random Library Card"
+                    variant="secondary"
+                    onClick={() => randomLibrary()}
+                  >
                     <Dice3 /> Library
                   </Button>
                 </Stack>
