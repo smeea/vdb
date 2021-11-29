@@ -1,9 +1,7 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Align and inline Adv icon in names
-* Update rulings
-* Fix Compare Deck with sharedDeck
-* Fix Export without src
+* Add recent to Compare
 * Proxy to have Crypt then Library
 
 # FIX MOBILE

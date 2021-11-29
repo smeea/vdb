@@ -196,7 +196,7 @@ function Cards(props) {
                 </Row>
               )}
               {card && (
-                <Row className="align-content-center justify-content-center mt-3 bordered">
+                <Row className="align-content-center justify-content-center my-3 bordered">
                   <Col md={6} className="ps-0">
                     <CardImage />
                   </Col>
