@@ -54,12 +54,10 @@ function App(props) {
     decks,
     setDecks,
     recentDecks,
-    setRecentDecks,
-    deleteRecentDeck,
+    updateRecentDecks,
     activeDeck,
     setActiveDeck,
     getDecks,
-    getRecentDecks,
     setPreconDecks,
   } = useContext(AppContext);
 
@@ -536,22 +534,14 @@ function App(props) {
       setLastDeck({});
       setEmail(undefined);
     }
-    if (nativeCrypt && nativeLibrary) {
-      getRecentDecks();
-    }
   }, [username, nativeCrypt, nativeLibrary]);
 
   useEffect(() => {
-    if (decks && recentDecks) {
-      const len = Object.keys(recentDecks).length;
-      const state = { ...recentDecks };
-      Object.keys(state).map((deckid) => {
-        if (Object.keys(decks).includes(deckid)) {
-          deleteRecentDeck(deckid);
-          delete state[deckid];
-        }
-      });
-      if (Object.keys(state).length != len) setRecentDecks(state);
+    if (decks) {
+      const d = recentDecks.filter((v) => !decks[v.deckid]);
+      if (d.length < recentDecks.length) {
+        updateRecentDecks(d);
+      }
     }
   }, [decks, recentDecks]);
 

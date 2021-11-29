@@ -9,13 +9,21 @@ function DeckSelectRecent(props) {
   const { inventoryMode, setActiveDeck, recentDecks, isMobile } =
     useContext(AppContext);
 
-  const options = Object.keys(recentDecks).map((i) => {
+  const options = recentDecks.map((i) => {
     return {
-      value: i,
+      value: i.deckid,
       name: 'deck',
-      label: recentDecks[i]['name'],
+      label: i.name,
     };
   });
+
+  const handleChange = (e) => {
+    if (e.value === 32) {
+      setActiveDeck({ src: 'shared', deckid: e.value });
+    } else {
+      setActiveDeck({ src: 'twd', deckid: e.value });
+    }
+  };
 
   return (
     <Select
@@ -25,7 +33,7 @@ function DeckSelectRecent(props) {
       name="decks"
       placeholder="Select Deck"
       value={options.find((obj) => obj.value === props.activeDeck.deckid)}
-      onChange={(e) => setActiveDeck({ src: 'recent', deckid: e.value })}
+      onChange={handleChange}
     />
   );
 }

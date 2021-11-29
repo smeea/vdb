@@ -33,10 +33,10 @@ function Decks(props) {
     activeDeck,
     setActiveDeck,
     decks,
+    sharedDeck,
+    setSharedDeck,
     recentDecks,
-    recentDecksIds,
     addRecentDeck,
-    setRecentDecks,
     inventoryCrypt,
     inventoryLibrary,
     usedCryptCards,
@@ -160,11 +160,8 @@ function Decks(props) {
           Object.keys(data.library).map((i) => {
             data.library[i].c = libraryCardBase[i];
           });
-          addRecentDeck(data.deckid);
-          setRecentDecks((prevState) => ({
-            ...prevState,
-            [data.deckid]: data,
-          }));
+          addRecentDeck(data);
+          setSharedDeck({ [data.deckid]: data });
         }
       })
       .catch((error) => setDeckError(true));
@@ -244,11 +241,8 @@ function Decks(props) {
         library: library,
       };
 
-      setRecentDecks((prevState) => ({
-        ...prevState,
-        deckInUrl: deck,
-      }));
-      setActiveDeck({ src: 'recent', deckid: 'deckInUrl' });
+      setSharedDeck({ deckInUrl: deck });
+      setActiveDeck({ src: 'shared', deckid: 'deckInUrl' });
     }
   }, [hash, cryptCardBase, libraryCardBase]);
 
@@ -259,12 +253,13 @@ function Decks(props) {
       cryptCardBase &&
       libraryCardBase
     ) {
-      if (recentDecksIds.includes(query.get('id'))) {
-        setActiveDeck({ src: 'recent', deckid: query.get('id') });
+      if (query.get('id').length === 32) {
+        setActiveDeck({ src: 'shared', deckid: query.get('id') });
+        getDeck(query.get('id'));
       } else if (query.get('id').includes(':')) {
         setActiveDeck({ src: 'precons', deckid: query.get('id') });
       } else {
-        setActiveDeck({ src: 'recent', deckid: query.get('id') });
+        setActiveDeck({ src: 'twd', deckid: query.get('id') });
         getDeck(query.get('id'));
       }
     }
@@ -279,22 +274,18 @@ function Decks(props) {
     if (
       cryptCardBase &&
       libraryCardBase &&
-      activeDeck.src !== null &&
-      activeDeck.src !== 'precons' &&
-      activeDeck.src !== 'my' &&
-      !(recentDecks && recentDecks[activeDeck.deckid])
+      activeDeck.src === 'twd' &&
+      !(sharedDeck && sharedDeck[activeDeck.deckid])
     ) {
       getDeck(activeDeck.deckid);
     }
   }, [query, activeDeck, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (
-      activeDeck.src == 'my' ||
-      activeDeck.src == 'precons' ||
-      activeDeck.src == 'recent'
-    ) {
+    if (activeDeck.src == 'my' || activeDeck.src == 'precons') {
       setSelectFrom(activeDeck.src);
+    } else {
+      setSelectFrom('recent');
     }
 
     if (decks && decks[activeDeck.deckid] && activeDeck.src != 'my') {
@@ -302,7 +293,7 @@ function Decks(props) {
     }
 
     if (deckRouter(activeDeck)) setDeckError(false);
-  }, [activeDeck, decks, recentDecks]);
+  }, [activeDeck, decks]);
 
   return (
     <Container className={isMobile ? 'deck-container' : 'deck-container py-3'}>
@@ -329,10 +320,12 @@ function Decks(props) {
                     >
                       {selectFrom == 'my' && decks ? (
                         <DeckSelectMy activeDeck={activeDeck} />
-                      ) : selectFrom == 'recent' && recentDecks ? (
+                      ) : selectFrom == 'recent' ? (
                         <DeckSelectRecent activeDeck={activeDeck} />
                       ) : (
-                        <DeckSelectPrecon activeDeck={activeDeck} />
+                        selectFrom == 'precons' && (
+                          <DeckSelectPrecon activeDeck={activeDeck} />
+                        )
                       )}
                     </div>
                     {selectFrom == 'my' && decks && isBranches && (
@@ -396,7 +389,7 @@ function Decks(props) {
                         }
                         inline
                       />
-                      {Object.keys(recentDecks).length > 0 && (
+                      {recentDecks.length > 0 && (
                         <Form.Check
                           checked={selectFrom == 'recent'}
                           onChange={(e) => setSelectFrom(e.target.id)}

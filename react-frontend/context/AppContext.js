@@ -61,8 +61,8 @@ export const AppProvider = (props) => {
   const [preconDecks, setPreconDecks] = useState({});
   const [decks, setDecks] = useState(undefined);
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
-  const [recentDecks, setRecentDecks] = useState({});
-  const [recentDecksIds, setRecentDecksIds] = useState([]);
+  const [sharedDeck, setSharedDeck] = useState({});
+  const [recentDecks, setRecentDecks] = useState([]);
 
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
@@ -102,20 +102,19 @@ export const AppProvider = (props) => {
     window.localStorage.setItem('addMode', !addMode);
   };
 
-  const addRecentDeck = (deckid) => {
-    if (!recentDecksIds.includes(deckid)) {
-      const d = [deckid, ...recentDecksIds].slice(0, 5);
-      setRecentDecksIds(d);
-      window.localStorage.setItem('recentDecksIds', d);
-    }
+  const addRecentDeck = (deck) => {
+    const d = [...recentDecks];
+    const idx = recentDecks.map((v) => v.deckid).indexOf(deck.deckid);
+    if (idx !== -1) d.splice(idx, 1);
+    d.unshift({ deckid: deck.deckid, name: deck.name });
+    if (d.length > 10) d.slice(0, 10);
+    setRecentDecks(d);
+    window.localStorage.setItem('recentDecks', JSON.stringify(d));
   };
 
-  const deleteRecentDeck = (deckid) => {
-    if (recentDecksIds.includes(deckid)) {
-      const d = recentDecksIds.filter((v) => v !== deckid);
-      setRecentDecksIds(d);
-      window.localStorage.setItem('recentDecksIds', d);
-    }
+  const updateRecentDecks = (decks) => {
+    setRecentDecks(decks);
+    window.localStorage.setItem('recentDecks', JSON.stringify(decks));
   };
 
   useLayoutEffect(() => {
@@ -168,41 +167,9 @@ export const AppProvider = (props) => {
       setShowImage(true);
     }
 
-    const rd = window.localStorage.getItem('recentDecksIds');
-    if (rd) {
-      setRecentDecksIds(rd.split(','));
-    }
+    const rd = window.localStorage.getItem('recentDecks');
+    if (rd) setRecentDecks(JSON.parse(rd));
   }, []);
-
-  const getRecentDecks = () => {
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    const tmpRecentDecks = {};
-
-    const promises = recentDecksIds.map((deckid) => {
-      const url = `${process.env.API_URL}deck/${deckid}`;
-      return fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.error === undefined) {
-            Object.keys(data.crypt).map((i) => {
-              data.crypt[i].c = cryptCardBase[i];
-            });
-            Object.keys(data.library).map((i) => {
-              data.library[i].c = libraryCardBase[i];
-            });
-            tmpRecentDecks[deckid] = data;
-          }
-        })
-        .catch(() => deleteRecentDeck(deckid));
-    });
-
-    Promise.allSettled(promises).then(() => setRecentDecks(tmpRecentDecks));
-  };
 
   const getDecks = () => {
     const url = `${process.env.API_URL}decks`;
@@ -329,18 +296,9 @@ export const AppProvider = (props) => {
           return decks && decks[pointer['deckid']];
         case 'precons':
           return preconDecks && preconDecks[pointer['deckid']];
-        case 'recent':
-          let rd = window.localStorage.getItem('recentDecksIds');
-          if (rd) {
-            rd = rd.split(',');
-            const idx = rd.indexOf(pointer['deckid']);
-            if (idx != -1) rd.splice(idx, 1);
-            window.localStorage.setItem('recentDecksIds', [
-              pointer['deckid'],
-              ...rd,
-            ]);
-          }
-          return recentDecks && recentDecks[pointer['deckid']];
+        case 'twd':
+        case 'shared':
+          return sharedDeck && sharedDeck[pointer['deckid']];
       }
     }
   };
@@ -488,12 +446,11 @@ export const AppProvider = (props) => {
         setDecks,
         activeDeck,
         setActiveDeck,
+        sharedDeck,
+        setSharedDeck,
         recentDecks,
-        setRecentDecks,
-        recentDecksIds,
-        getRecentDecks,
         addRecentDeck,
-        deleteRecentDeck,
+        updateRecentDecks,
         getDecks,
         deckRouter,
         deckUpdate,
