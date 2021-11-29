@@ -3,6 +3,8 @@
 * Align and inline Adv icon in names
 * Update rulings
 * Fix Compare Deck with sharedDeck
+* Fix Export without src
+* Proxy to have Crypt then Library
 
 # FIX MOBILE
 
