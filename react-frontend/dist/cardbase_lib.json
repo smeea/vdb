@@ -82,6 +82,31 @@
         "Rulings":[],
         "ASCII Name":"419 Operation"
     },
+    "102217":{
+        "Id":102217,
+        "Name":"47th Street Royals",
+        "Type":"Ally",
+        "Clan":"Brujah",
+        "Discipline":"",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Unique mortal with 2 life. 1 strength, 0 bleed.\nYou can burn 47th Street Royals to reduce a bleed against you by 3.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PB":"1"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Peter Bergting"
+        ],
+        "Rulings":[],
+        "ASCII Name":"47th Street Royals"
+    },
     "100003":{
         "Id":100003,
         "Name":"Aaron's Feeding Razor",
@@ -1425,9 +1450,10 @@
                 }
             },
             {
-                "text":"Requirements do not apply. ",
+                "text":"Requirements do not apply. If a discipline is required (eg. {Inscription}) and the Alastor vampire does not have it, the inferior version is used. ",
                 "refs":{
-                    "[ANK 20200901]":"http://www.vekn.net/forum/rules-questions/78830-alastor-and-ankara-citadel#100653"
+                    "[ANK 20200901]":"http://www.vekn.net/forum/rules-questions/78830-alastor-and-ankara-citadel#100653",
+                    "[LSJ 20040518-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
                 }
             }
         ],
@@ -1933,10 +1959,14 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master. Requires a ready anarch.\nPut this card into play. You may lock this card to give an anarch you control +1 intercept for the current action. You may lock this card when an anarch successfully hunts to give that anarch an extra blood from the blood bank.",
+        "Card Text":"Unique. Requires a ready Anarch.\nPut this card in play. Lock to give an Anarch you control +1 intercept. Lock after an Anarch successfully hunts to add 1 blood to that Anarch.",
         "Set":{
             "Anarchs":{
                 "C":true
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"1"
             }
         },
         "Requirement":"anarch",
@@ -1988,10 +2018,14 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nLock to give an anarch +1 stealth for the current action.",
+        "Card Text":"Unique location.\nLock to give an Anarch +1 stealth.",
         "Set":{
             "Anarchs":{
                 "R":true
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -2919,6 +2953,18 @@
                 "text":"[pre] Cards and effects that can be played \"as the action is announced\" (and only them) can be played before it. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"[PRE] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[PRE] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -4465,6 +4511,12 @@
                     "[PIB 20150105]":"http://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                     "[LSJ 19980107]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/aUUs4VCR_Ec/PLecvfrEqbgJ"
                 }
+            },
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
+                }
             }
         ],
         "ASCII Name":"Awe"
@@ -4693,6 +4745,10 @@
             },
             "25th":{
                 "":"1"
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -4700,10 +4756,36 @@
         "Artist":[
             "Nicola Leonard",
             "Chet Masters",
-            "Mike Chaney"
+            "Mike Chaney",
+            "Clint Langley"
         ],
         "Rulings":[],
         "ASCII Name":"Backways"
+    },
+    "102218":{
+        "Id":102218,
+        "Name":"Bait and Switch",
+        "Type":"Reaction",
+        "Clan":"",
+        "Discipline":"",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires a baron. Only usable if a minion is bleeding you, after blocks are declined.\nLock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PB":"2"
+            }
+        },
+        "Requirement":"baron",
+        "Banned":"",
+        "Artist":[
+            "Javier Santos"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Bait and Switch"
     },
     "100127":{
         "Id":100127,
@@ -5379,6 +5461,12 @@
                 }
             },
             {
+                "text":"Cannot be played if the blocker's crypt is empty. ",
+                "refs":{
+                    "[LSJ 20031107]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/NvxFMexSI7E/m/K57vIUVqMAQJ"
+                }
+            },
+            {
                 "text":"{Change of Target} can be played after Bear-Baiting (younger, older, or the same age). ",
                 "refs":{
                     "[LSJ 20040312]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/1mgJQkrFNlc/k87rUTTAWFYJ"
@@ -5412,6 +5500,10 @@
             },
             "KSU":{
                 "TUA":"4"
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"2"
             }
         },
         "Requirement":"",
@@ -6035,10 +6127,14 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[tha] This minion employs an animal retainer from your hand (ignore requirements; pay cost as normal).\n[THA] Put this card on a minion you control. The minion with this card gets an optional maneuver each combat and +1 strength.",
+        "Card Text":"+1 stealth action.\n[tha] Employ an animal retainer from your hand ignoring requirements (pay cost as normal).\n[THA] Put this card on a minion you control. The attached minion gets 1 optional maneuver each combat and +1 strength.",
         "Set":{
             "SoC":{
                 "C":true
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"1"
             }
         },
         "Requirement":"",
@@ -6632,6 +6728,18 @@
                     "[ANK 20180704]":"http://www.vekn.net/forum/rules-questions/76784-blessed-blade-blade-of-bellona#88556",
                     "[LSJ 20050304]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/X5JZBbSIj3U/CBdkcQ-rAesJ"
                 }
+            },
+            {
+                "text":"[val][REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[val][REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Blessed Blade"
@@ -6932,6 +7040,18 @@
                 "text":"[dom][pre] [COMBAT][REACTION] Can be played by a minion of a Methuselah not involved in the current combat. ",
                 "refs":{
                     "[ANK 20181101]":"http://www.vekn.net/forum/rules-questions/77132-save-face#91633"
+                }
+            },
+            {
+                "text":"[dom][pre] [COMBAT][REACTION] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[dom][pre] [COMBAT][REACTION] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -7326,6 +7446,11 @@
             "V5":{
                 "PM":"4",
                 "PV":"3"
+            },
+            "V5A":{
+                "PB":"4",
+                "PG":"4",
+                "PMin":"4"
             }
         },
         "Requirement":"",
@@ -7666,7 +7791,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable at close range.\n[tha] Strike: hand strike. This damage cannot be prevented by cards that require Fortitude [for]. If the opposing vampire attempts to strike with a weapon this round, he or she does no damage.\n[THA] As above, but for strength+1 damage.",
+        "Card Text":"Only usable at close range.\n[tha] Strike: hand strike. Damage from this strike cannot be prevented by cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage this round.\n[THA] As above, and this hand strike is at +1 damage.",
         "Set":{
             "Jyhad":{
                 "C":true
@@ -7679,12 +7804,18 @@
             },
             "Third":{
                 "PTr":"3"
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Chris Stevens"
+            "Scott Kirschner",
+            "Chris Stevens",
+            "Mark Kelly"
         ],
         "Rulings":[
             {
@@ -8475,6 +8606,18 @@
         ],
         "Rulings":[
             {
+                "text":"[pre] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[pre] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            },
+            {
                 "text":"[tha] Additional damage inherits all of the properties of the base damage. ",
                 "refs":{
                     "[TOM 19960225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0LLTOfvyVbM/ih72_C-LriwJ"
@@ -8881,7 +9024,14 @@
         "Artist":[
             "Steve Ellis"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
+                }
+            }
+        ],
         "ASCII Name":"Bounty"
     },
     "100243":{
@@ -10688,6 +10838,12 @@
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
                 }
+            },
+            {
+                "text":"The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                }
             }
         ],
         "ASCII Name":"Car Bomb"
@@ -10800,6 +10956,10 @@
             },
             "KSU":{
                 "AU":"1"
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"1"
             }
         },
         "Requirement":"anarch",
@@ -10952,6 +11112,9 @@
             },
             "V5":{
                 "PN":"2"
+            },
+            "V5A":{
+                "PG":"6"
             }
         },
         "Requirement":"",
@@ -11010,10 +11173,14 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master. unique location.\nWhen a vampire of capacity below 4 goes to torpor, put a hostage counter on him. Hostages cannot be moved to the ready region or be diablerized. During your master phase, you may lock this card to move X blood from the blood bank to a ready vampire you control where X is the number of hostages in torpor. Any ready vampire may burn 2 blood to burn any vampire's hostage counter during any unlock phase. Burn all hostage counters if this card leaves play.",
+        "Card Text":"Unique location.\nAfter a vampire with capacity 3 or less goes to torpor, put 1 hostage counter on them. Vampires with any hostage counters cannot be moved to the ready region or be diablerized. Lock during your master phase to add X blood to a ready vampire you control, where X is the number of vampires with any hostage counters. During any unlock phase, any ready vampire can burn 2 blood to burn any vampire's hostage counters. After this card leaves play, burn all the hostage counters.",
         "Set":{
             "Gehenna":{
                 "R":true
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"1"
             }
         },
         "Requirement":"",
@@ -11254,6 +11421,9 @@
             },
             "V5":{
                 "PN":"4"
+            },
+            "V5A":{
+                "PG":"4"
             }
         },
         "Requirement":"",
@@ -11560,6 +11730,12 @@
                 "refs":{
                     "[LSJ 20040616]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/jQkkiC3I8P8/m/uDZ--HnPtf0J"
                 }
+            },
+            {
+                "text":"If none of the vampires can bleed (eg. {Aabbt Kindred}), they all go to the bottom of the crypt. ",
+                "refs":{
+                    "[LSJ 20040518-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
+                }
             }
         ],
         "ASCII Name":"Chain of Command"
@@ -11788,6 +11964,12 @@
                 "text":"[REACTION] Modifiers and reactions that can be used at the end/after an action can still be used after combat. ",
                 "refs":{
                     "[LSJ 20041022]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/gqhND6kd2wE/LDmEotxa_4kJ"
+                }
+            },
+            {
+                "text":"[REACTION] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             }
         ],
@@ -12244,6 +12426,18 @@
             "Juan Antonio Serrano Garcia"
         ],
         "Rulings":[
+            {
+                "text":"[aus][pre] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[aus][pre] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            },
             {
                 "text":"[aus][pre] The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Adana de Sforza}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
@@ -12790,7 +12984,8 @@
             {
                 "text":"Can put counters on locations that use \"blood\" or \"pool\" counters. ",
                 "refs":{
-                    "[PIB 20110712-1]":"http://www.vekn.net/forum/rules-questions/6182-counters-question#6188"
+                    "[PIB 20110712-1]":"http://www.vekn.net/forum/rules-questions/6182-counters-question#6188",
+                    "[LSJ 20040518-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
                 }
             }
         ],
@@ -13089,7 +13284,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pro] For the remainder of this round, damage from this vampire's hand strikes is aggravated.\n[PRO] Maneuver.",
+        "Card Text":"[pro] Damage from this vampire's hand strikes is aggravated this round.\n[PRO] Maneuver.",
         "Set":{
             "Jyhad":{
                 "C":true
@@ -13109,12 +13304,15 @@
             },
             "KoT":{
                 "C":true
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"2"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Ron Spencer",
             "Ron Spencer"
         ],
         "Rulings":[
@@ -13463,10 +13661,14 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nWhen any Anarch vampire declares a bleed action, he or she can burn 1 blood to get +1 bleed on that action (only usable once each action).",
+        "Card Text":"Unique location.\nAn Anarch can burn 1 blood once as they announce a bleed action to get +1 bleed for that action.",
         "Set":{
             "TR":{
                 "R":true
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"1"
             }
         },
         "Requirement":"",
@@ -13683,10 +13885,14 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nThis minion gets -2 stealth when bleeding. This minion may bleed as a (D) action that costs 1 blood; this action gets +3 bleed if the target Methuselah doesn't control a ready unlocked minion.",
+        "Card Text":"Unique.\nThe bearer gets -2 stealth when bleeding. This vampire can bleed as a (D) action that costs 1 blood; this action gets +3 bleed if the target Methuselah does not control a ready unlocked minion.",
         "Set":{
             "Promo":{
                 "20090929":true
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"1"
             }
         },
         "Requirement":"",
@@ -15179,10 +15385,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an anarch. Unique.\nPut this card in play with 1 counter. During your unlock phase, put a counter on this card. During each other Methuselah's unlock phase, he or she must burn X pool and/or cards at random from his or her hand, where X is the number of counters on this card. Any vampire may burn this card as a (D) action that costs 1 pool.",
+        "Card Text":"+1 stealth action. Requires an Anarch. Unique.\nPut this card in play with 1 counter. During your unlock phase, add 1 counter to this card. During each other Methuselah's unlock phase, that Methuselah burns X pool and/or cards at random from their hand, where X is the number of counters on this card. Any vampire can burn this card as a (D) action that costs 1 pool.",
         "Set":{
             "TR":{
                 "R":true
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"2"
             }
         },
         "Requirement":"anarch",
@@ -15265,7 +15475,20 @@
         "Artist":[
             "Brian LeBlanc"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Contingency Planning"
     },
     "100420":{
@@ -16315,7 +16538,7 @@
             {
                 "text":"The canceled block isn't successful or unsuccessful. It is simply canceled. ",
                 "refs":{
-                    "[LSJ 20110419]":"https://www.boardgamegeek.com/thread/643948/article/6634732"
+                    "[LSJ 20110419]":"https://boardgamegeek.com/thread/643948/article/6634732"
                 }
             }
         ],
@@ -17690,6 +17913,18 @@
                 "refs":{
                     "[RTR 20001020]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GvxNYsYsWJ4/EY7NOjdsGCsJ"
                 }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Dark Influences"
@@ -18316,6 +18551,18 @@
                 "refs":{
                     "[ANK 20180910-2]":"http://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat?start=6#90521"
                 }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Death Seeker"
@@ -18472,6 +18719,31 @@
         ],
         "ASCII Name":"Deep Cover Agent"
     },
+    "102219":{
+        "Id":102219,
+        "Name":"Deep Ecology",
+        "Type":"Reaction",
+        "Clan":"",
+        "Discipline":"Animalism/Fortitude/Protean",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires an Anarch.\n[ani] Only usable during an action directed at you (or a card you control). +2 intercept.\n[for] Reduce a bleed against you by 2.\n[pro] Only usable by a locked vampire. This vampire burns 1 blood to unlock.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PG":"6"
+            }
+        },
+        "Requirement":"anarch",
+        "Banned":"",
+        "Artist":[
+            "Kim Aldau"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Deep Ecology"
+    },
     "100515":{
         "Id":100515,
         "Name":"Deep Song",
@@ -18501,6 +18773,9 @@
             },
             "V5":{
                 "PN":"6"
+            },
+            "V5A":{
+                "PG":"6"
             }
         },
         "Requirement":"",
@@ -18513,6 +18788,12 @@
                 "text":"[ANI] The lock and enter combat effects are simultaneous. Both are lost if the action ends before that (eg. {Obedience}). ",
                 "refs":{
                     "[ANK 20200702]":"http://www.vekn.net/forum/rules-questions/78711-deep-song-vs-obedience#100233"
+                }
+            },
+            {
+                "text":"[ANI] If another effect changes the acting minion in combat later on, it takes precedence (eg. {Nar-Sheptha}). ",
+                "refs":{
+                    "[ANK 20211022]":"https://www.vekn.net/forum/rules-questions/79422-nar-sheptha#103636"
                 }
             }
         ],
@@ -18670,6 +18951,12 @@
                 "refs":{
                     "[LSJ 19980105]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/PzVC-AeFuUQ/ncbtQyYNpFQJ"
                 }
+            },
+            {
+                "text":"Can be played when failing to block because of stealth: it is still declining to block. ",
+                "refs":{
+                    "[ANK 20211003]":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+                }
             }
         ],
         "ASCII Name":"Deflection"
@@ -18684,7 +18971,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during the polling step of a political action.\nCancel the referendum. Unlock the acting vampire. If a political action card was played to call this referendum, return it to its owner's hand (discard down afterward). Minions controlled by the acting Methuselah cannot take the same political action again this turn.",
+        "Card Text":"Only usable during the polling step of a political action.\nCancel the referendum. Unlock the acting vampire. If a political action card was played to call this referendum, return it to its owner's hand (discard down afterward). Minions controlled by the acting Methuselah cannot perform the same political action again this turn.",
         "Set":{
             "Jyhad":{
                 "U":true
@@ -18705,6 +18992,10 @@
             "SP":{
                 "LB":"2",
                 "PwN":"2"
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"2"
             }
         },
         "Requirement":"",
@@ -18865,7 +19156,20 @@
         "Artist":[
             "Brian LeBlanc"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Denial of Aphrodite's Favor"
     },
     "100524":{
@@ -19368,6 +19672,18 @@
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
                 }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Devil-Channel: Back"
@@ -19405,6 +19721,18 @@
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
                 }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Devil-Channel: Feet"
@@ -19437,6 +19765,18 @@
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
                 }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Devil-Channel: Hands"
@@ -19468,6 +19808,18 @@
                 "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion. ",
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -19568,13 +19920,15 @@
             {
                 "text":"The cost of the change of control effect is still paid. Any bids made are paid. Any counters burned are still burned. ",
                 "refs":{
-                    "[LSJ 20040518]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/4emymfUPwAM/B2SCC7L6kuMJ"
+                    "[LSJ 20040518]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/4emymfUPwAM/B2SCC7L6kuMJ",
+                    "[LSJ 20040518-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
                 }
             },
             {
                 "text":"Will not extend temporary change of control effects when they expire. ",
                 "refs":{
-                    "[LSJ 20040518]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/4emymfUPwAM/B2SCC7L6kuMJ"
+                    "[LSJ 20040518]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/4emymfUPwAM/B2SCC7L6kuMJ",
+                    "[LSJ 20040518-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
                 }
             }
         ],
@@ -19633,7 +19987,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: out-of-turn.\nCancel a minion card as it is played. No cost is paid. (If it was an action card, the acting minion doesn't lock. If it was a strike card, the minion chooses another strike.)",
+        "Card Text":"Out-of-turn.\nCancel a minion card as it is played, and its cost is not paid. (If it was an action card, the acting minion does not lock. If it was a strike card, the minion chooses another strike.)",
         "Set":{
             "Sabbat":{
                 "U":true
@@ -19643,12 +19997,16 @@
             },
             "Third":{
                 "U":true
+            },
+            "POD":{
+                "DTC":true
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Harold Arthur McNeill"
+            "Harold Arthur McNeill",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Rulings":[
             {
@@ -19681,6 +20039,18 @@
                 "text":"Can only cancel minion cards played from the hand in the normal fashion (eg. not weapons played via {Disguised Weapon} or allies from {Piper}). ",
                 "refs":{
                     "[RTR 20001020]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/GvxNYsYsWJ4/EY7NOjdsGCsJ"
+                }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -20004,6 +20374,18 @@
                 "text":" The burn blood effect is not reduced by effects that reduce the cost of the card (eg. {Dragos}). The card cannot be played if the minion cannot afford to burn the blood. ",
                 "refs":{
                     "[ANK 20210226]":"https://www.vekn.net/forum/rules-questions/79045-paths-and-burn-blood-requrement?start=18#101726"
+                }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -20874,6 +21256,10 @@
         "Set":{
             "Promo":{
                 "20210701":true
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -21373,6 +21759,9 @@
             },
             "V5":{
                 "PM":"1"
+            },
+            "V5A":{
+                "PMin":"1"
             }
         },
         "Requirement":"",
@@ -21748,6 +22137,10 @@
             },
             "KSU":{
                 "AU":"3"
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"4"
             }
         },
         "Requirement":"anarch",
@@ -21884,6 +22277,10 @@
             },
             "25th":{
                 "":"4"
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"4"
             }
         },
         "Requirement":"",
@@ -21918,6 +22315,10 @@
             },
             "25th":{
                 "":"6"
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"5"
             }
         },
         "Requirement":"",
@@ -22208,6 +22609,10 @@
             },
             "25th":{
                 "":"1"
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -23169,7 +23574,20 @@
         "Artist":[
             "David Day"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Emergency Preparations"
     },
     "100637":{
@@ -23312,6 +23730,10 @@
             "V5":{
                 "PTo":"6",
                 "PV":"8"
+            },
+            "V5A":{
+                "PB":"6",
+                "PMin":"7"
             }
         },
         "Requirement":"",
@@ -23366,6 +23788,31 @@
             }
         ],
         "ASCII Name":"Enchanted Marionette"
+    },
+    "102221":{
+        "Id":102221,
+        "Name":"Enchanting Gaze",
+        "Type":"Action Modifier",
+        "Clan":"",
+        "Discipline":"Presence & Protean",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"[pre][pro] +1 stealth.\n[PRE][PRO] As above, and once this action, you can burn 1 of your corruption counters from a blocking minion to have their block attempt fail, and they cannot attempt to block this action again.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PMin":"6"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Enchanting Gaze"
     },
     "100642":{
         "Id":100642,
@@ -23765,7 +24212,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pre] (D) Bleed with +1 bleed.\n[PRE] (D) +1 stealth action. Steal an ally controlled by another Methuselah.",
+        "Card Text":"[pre] (D) Bleed with +1 bleed.\n[PRE] +1 stealth action. (D) Steal an ally controlled by another Methuselah.",
         "Set":{
             "Jyhad":{
                 "R":true
@@ -23787,6 +24234,10 @@
             },
             "Promo":{
                 "20190629":true
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"2"
             }
         },
         "Requirement":"",
@@ -24372,6 +24823,18 @@
                     "[ANK 20200129]":"http://www.vekn.net/forum/rules-questions/78701-replace-during-unlock-and-other-unlock-effects#100210",
                     "[LSJ 20091208]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ptHbJM9MlVI/m/O61W2JkI_rIJ",
                     "[RTR 19951017]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/ouhNUbHYg50/rco157ZHyqEJ"
+                }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -24964,6 +25427,31 @@
         "Rulings":[],
         "ASCII Name":"Eyes of the Serpent"
     },
+    "102222":{
+        "Id":102222,
+        "Name":"Eyes of the Wild",
+        "Type":"Reaction",
+        "Clan":"Gangrel",
+        "Discipline":"",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable by a locked Gangrel.\nThis Gangrel unlocks and attempts to block. During this action, this Gangrel can burn 1 blood to get +1 intercept. Lock this Gangrel after action resolution if they did not block this action.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PG":"6"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Clint Langley"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Eyes of the Wild"
+    },
     "100687":{
         "Id":100687,
         "Name":"Faceless Night",
@@ -24998,6 +25486,9 @@
             },
             "V5":{
                 "PM":"4"
+            },
+            "V5A":{
+                "PMin":"4"
             }
         },
         "Requirement":"",
@@ -25079,7 +25570,20 @@
         "Artist":[
             "Brian LeBlanc"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[myt] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[myt] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Fae Contortion"
     },
     "100690":{
@@ -25391,6 +25895,18 @@
                 "refs":{
                     "[ANK 20180201]":"http://www.vekn.net/forum/rules-questions/76400-question-about-false-resonance#85191"
                 }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"False Resonance"
@@ -25448,6 +25964,10 @@
             },
             "V5":{
                 "PN":"1"
+            },
+            "V5A":{
+                "PB":"1",
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -25456,7 +25976,14 @@
             "Kaja Foglio",
             "Brian LeBlanc"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Paying a pool during the unlock phase can be ordered with other unlock effects by the acting Methuselah, but must be handled before another Methuselah has the opportunity to use an unlock effect. ",
+                "refs":{
+                    "[LSJ 20010121]":"https://boardgamegeek.com/thread/609699/article/6142361#6142361"
+                }
+            }
+        ],
         "ASCII Name":"Fame"
     },
     "100699":{
@@ -27008,7 +27535,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Maneuver or press.\n[CEL] Maneuver, with an optional press this round.",
+        "Card Text":"[cel] Maneuver or press.\n[CEL] Maneuver with 1 optional press.",
         "Set":{
             "Jyhad":{
                 "C":true
@@ -27036,6 +27563,10 @@
             },
             "Third":{
                 "PB":"5"
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"5"
             }
         },
         "Requirement":"",
@@ -27143,6 +27674,10 @@
             },
             "KoTR":{
                 "B":"2"
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"",
@@ -27533,7 +28068,7 @@
             {
                 "text":"If played on a vampire who successfully hunts with a {Perfectionist}, {Perfectionist} grants the blood before combat. ",
                 "refs":{
-                    "[LSJ 20110308]":"https://www.boardgamegeek.com/thread/628087/article/6401929"
+                    "[LSJ 20110308]":"https://boardgamegeek.com/thread/628087/article/6401929"
                 }
             },
             {
@@ -27616,7 +28151,15 @@
         ],
         "Rulings":[
             {
-                "text":"If the action does not reach resolution (eg. {The Kiss of Ra}), the damage is not done. If the action merely ends (eg. {Change of Target}) or has no effect (eg. because cost cannot be paid), the damage occurs as normal. ",
+                "text":"If the action does not reach resolution (eg. {The Kiss of Ra}), the damage is not done. ",
+                "refs":{
+                    "[RTR 20020501]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/M1snoR2msbQ/RFwCmX3anDkJ",
+                    "[LSJ 20020927]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wg3PH7vOs1s/gYFNbAwk84gJ",
+                    "[ANK 20210124]":"https://www.vekn.net/forum/rules-questions/79001-the-question-of-the-month-action-fizzles#101492"
+                }
+            },
+            {
+                "text":"If the action merely ends (eg. {Change of Target}) or has no effect (eg. because cost cannot be paid), the damage occurs as normal. ",
                 "refs":{
                     "[RTR 20020501]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/M1snoR2msbQ/RFwCmX3anDkJ",
                     "[LSJ 20020927]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wg3PH7vOs1s/gYFNbAwk84gJ",
@@ -27630,7 +28173,7 @@
                 }
             },
             {
-                "text":"Cards usable after action resolution (eg. {Freak Drive}) can be played before the damage is taken. ",
+                "text":"Cards usable after action resolution (eg. {Freak Drive}) can be played before or after the damage is taken. ",
                 "refs":{
                     "[LSJ 20010715]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/u91PfJOfOjE/m/BS264hmTIEgJ"
                 }
@@ -27914,9 +28457,9 @@
                 }
             },
             {
-                "text":"[DOM] When played against a target with 10 or more pool, it can be played alongside another bleed modifier that counts against the limit, and it would provide its +3 bonus in addition to that other bleed modifier if the target happens to have 9 or less. ",
+                "text":"[DOM] If the bleed bonus is lost during the action (eg. {Deflection} to another target), it does not count against the limit anymore and an additional bleed modifier can be used. ",
                 "refs":{
-                    "[PIB 20110817]":"http://www.vekn.net/forum/rules-questions/8405-foreshadowing-destruction-is-usable-at-dom-vs-10-pool#8414"
+                    "[ANK 20211019-2]":"https://www.vekn.net/forum/rules-questions/79390-sup-foreshadoing-destruction-when-the-target-has-10-or-more-pool?start=6#103593"
                 }
             }
         ],
@@ -28114,7 +28657,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pro] Strike: dodge.\n[PRO] Strike: combat ends. If this vampire is acting and the action was blocked, they can burn 1 blood after combat ends to continue the action at +1 stealth as if unblocked, even if stealth is not yet needed. A vampire can play only one Form of Mist at superior each action.",
+        "Card Text":"[pro] Strike: dodge.\n[PRO] Strike: combat ends. If this vampire is acting and the action was blocked, they can burn 1 blood after combat ends to continue the action with +1 stealth as if unblocked, even if stealth is not yet needed. A vampire can play only one Form of Mist at superior each action.",
         "Set":{
             "Jyhad":{
                 "U":true
@@ -28137,6 +28680,10 @@
             },
             "25th":{
                 "":"6"
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"4"
             }
         },
         "Requirement":"",
@@ -28183,6 +28730,56 @@
             }
         ],
         "ASCII Name":"Form of Mist"
+    },
+    "102223":{
+        "Id":102223,
+        "Name":"Form of the Bat",
+        "Type":"Action Modifier/Reaction",
+        "Clan":"",
+        "Discipline":"Protean",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"[pro] [ACTIONMODIFIER] Only usable if a minion attempts to block. The blocking minion gets -1 intercept. If this action is blocked, this vampire gets 1 optional maneuver and cannot use equipment during the resulting combat.\n[PRO] [REACTION] +1 intercept. If this vampire blocks, they get 1 optional maneuver and cannot use equipment during the resulting combat.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PG":"2"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Form of the Bat"
+    },
+    "102224":{
+        "Id":102224,
+        "Name":"Form of the Cobra",
+        "Type":"Action Modifier/Combat",
+        "Clan":"",
+        "Discipline":"Protean",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"[pro] [COMBAT] Strike: steal 1 blood or life (becoming blood).\n[PRO] [ACTIONMODIFIER] Only usable as the action is announced. +1 stealth, even if stealth is not yet needed.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PMin":"4"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Mart\u00edn de Diego S\u00e1bada"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Form of the Cobra"
     },
     "100772":{
         "Id":100772,
@@ -28244,6 +28841,31 @@
         ],
         "Rulings":[],
         "ASCII Name":"Form of the Serpent"
+    },
+    "102225":{
+        "Id":102225,
+        "Name":"Form of the Wolf",
+        "Type":"Combat",
+        "Clan":"",
+        "Discipline":"Protean",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable before range is determined. A vampire can play only one Form of the Wolf each combat.\n[pro] This vampire gets +1 strength this combat.\n[PRO] As above, and this vampire gains 1 optional press this combat.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PG":"2"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Marta Ruiz Anguera"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Form of the Wolf"
     },
     "100774":{
         "Id":100774,
@@ -28996,6 +29618,10 @@
             },
             "SP":{
                 "PwN":"2"
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"1"
             }
         },
         "Requirement":"",
@@ -29368,9 +29994,9 @@
         ],
         "Rulings":[
             {
-                "text":"May be played before, during, or after votes and ballots have been cast. ",
+                "text":"Can only be played if a Blood Hunt referendum succeeds, after votes and ballots have been cast. ",
                 "refs":{
-                    "[LSJ 19980130]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mtjOAd7aaYI/XZq9o1cUd-8J"
+                    "[LSJ 20081203-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/hlK89M1M9rk/m/qNtOFQfDK-oJ"
                 }
             }
         ],
@@ -29854,6 +30480,12 @@
                 "text":"Is not mortal, is a monster. ",
                 "refs":{
                     "[ANK 20200203-2]":"http://www.vekn.net/forum/rules-questions/78415-is-ghoul-mortal#98872"
+                }
+            },
+            {
+                "text":"Damage is not inflicted at long range. ",
+                "refs":{
+                    "[ANK 20210929]":"https://www.vekn.net/forum/generic-v-tes-discussion/75623-ghoul-retainer?start=12#103386"
                 }
             }
         ],
@@ -31426,12 +32058,6 @@
                 "refs":{
                     "[LSJ 20050221]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/ms3eqcaR37Y/0ABXbBPcfpcJ"
                 }
-            },
-            {
-                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
-                "refs":{
-                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
-                }
             }
         ],
         "ASCII Name":"Groundfighting"
@@ -31623,6 +32249,9 @@
             },
             "V5":{
                 "PN":"1"
+            },
+            "V5A":{
+                "PB":"1"
             }
         },
         "Requirement":"",
@@ -31998,6 +32627,18 @@
         ],
         "Rulings":[
             {
+                "text":"[tem] [ACTION MODIFIER][REACTION] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[tem] [ACTION MODIFIER][REACTION] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            },
+            {
                 "text":"Cannot be used during a referendum that is automatically passing. ",
                 "refs":{
                     "[PIB 20150105]":"http://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
@@ -32219,6 +32860,31 @@
         ],
         "Rulings":[],
         "ASCII Name":"Haqim's Law: Leadership"
+    },
+    "102226":{
+        "Id":102226,
+        "Name":"Haqim's Law: Retribution",
+        "Type":"Master",
+        "Clan":"Assamite",
+        "Discipline":"",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Put this card in play. During a bleed action, an Assamite you control can discard a combat card to get +1 bleed.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PBh":"4"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Clint Langley"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Haqim's Law: Retribution"
     },
     "100886":{
         "Id":100886,
@@ -32643,6 +33309,10 @@
             },
             "V5":{
                 "PN":"1"
+            },
+            "V5A":{
+                "PB":"1",
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -32848,6 +33518,10 @@
             },
             "SP":{
                 "DoF":"1"
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"1"
             }
         },
         "Requirement":"",
@@ -32868,13 +33542,17 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[pre] Put this card on the acting vampire. This vampire gets +1 bleed. A vampire can have only one Heart of the City.\n[PRE] As above, but this vampire gets +2 bleed.",
+        "Card Text":"+1 stealth action.\n[pre] Put this card on this vampire. This vampire gets +1 bleed. A vampire can have only one Heart of the City.\n[PRE] As above, but this vampire gets +2 bleed.",
         "Set":{
             "KMW":{
                 "R":true
             },
             "KoT":{
                 "R":true
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"1"
             }
         },
         "Requirement":"",
@@ -33205,6 +33883,10 @@
             },
             "KoTR":{
                 "A":"2"
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"2"
             }
         },
         "Requirement":"",
@@ -33378,6 +34060,9 @@
             },
             "V5":{
                 "PV":"4"
+            },
+            "V5A":{
+                "PG":"4"
             }
         },
         "Requirement":"",
@@ -33402,6 +34087,12 @@
                 "text":"[FOR] The press can only be used during the current round. ",
                 "refs":{
                     "[TOM 19960521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/poYD3n0TKGo/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
                 }
             }
         ],
@@ -33522,7 +34213,20 @@
         "Artist":[
             "Brian LeBlanc"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Hide the Mind"
     },
     "100922":{
@@ -34248,6 +34952,31 @@
         ],
         "ASCII Name":"Hunger Moon"
     },
+    "102227":{
+        "Id":102227,
+        "Name":"Hunger of Marduk",
+        "Type":"Combat",
+        "Clan":"Assamite",
+        "Discipline":"Thaumaturgy",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable before range is determined.\n[tha] This round, this vampire can strike, ranged: steal 1 blood or life (becoming blood).\n[THA] As above, but for 2 blood or life (becoming blood).",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PBh":"10"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Carmen Cornet"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Hunger of Marduk"
+    },
     "100945":{
         "Id":100945,
         "Name":"Hungry Coyote, The",
@@ -34313,6 +35042,31 @@
         "Rulings":[],
         "ASCII Name":"Hunt Club, The"
     },
+    "102228":{
+        "Id":102228,
+        "Name":"Hunter's Mark",
+        "Type":"Action",
+        "Clan":"",
+        "Discipline":"Celerity & Thaumaturgy",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"[cel][tha] (D) Enter combat with a minion. This acting vampire gets 1 optional press during that combat.\n[CEL][THA] As above, and the opposing minion cannot strike: combat ends during the first round of that combat.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PBh":"4"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Hunter's Mark"
+    },
     "100947":{
         "Id":100947,
         "Name":"I am Legion",
@@ -34342,6 +35096,18 @@
                 "text":"[DAI][OBF] Can be used to gain a pool after a successful action, without cancelling an [aus] card. ",
                 "refs":{
                     "[LSJ 20100902-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/mFpx91METxM/m/ETLGtyQfvksJ"
+                }
+            },
+            {
+                "text":"[dai][obf], [DAI][OBF] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[dai][obf], [DAI][OBF] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -34815,6 +35581,9 @@
             },
             "V5":{
                 "PN":"4"
+            },
+            "V5A":{
+                "PB":"6"
             }
         },
         "Requirement":"",
@@ -35971,6 +36740,12 @@
                 "refs":{
                     "[ANK 20200515]":"http://www.vekn.net/forum/rules-questions/78634-blanket-of-night#99838"
                 }
+            },
+            {
+                "text":"Effects, modifiers and reaction to modify stealth or intercept can be plated afterwards. ",
+                "refs":{
+                    "[ANK 20210926]":"https://www.vekn.net/forum/rules-questions/79337-eluding-the-arms-of-morpheus-after-block-declare?start=18#103333"
+                }
             }
         ],
         "ASCII Name":"Inspire Greatness"
@@ -36422,6 +37197,18 @@
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
                 }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Invoke Poison Glands"
@@ -36453,6 +37240,18 @@
                 "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion. ",
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -36565,7 +37364,20 @@
         "Artist":[
             "Leif Jones"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Iron Heart"
     },
     "101010":{
@@ -36723,6 +37535,10 @@
             },
             "FB":{
                 "PTr":"1"
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"1"
             }
         },
         "Requirement":"",
@@ -37101,6 +37917,18 @@
                 "text":"[ser] The press can only be used during the current round. ",
                 "refs":{
                     "[TOM 19960521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/poYD3n0TKGo/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"[SER] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[SER] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -38120,6 +38948,12 @@
                 "refs":{
                     "[ANK 20190724]":"http://www.vekn.net/forum/rules-questions/77810-a-monthly-doubts-for-rookie#95945"
                 }
+            },
+            {
+                "text":"Does not affect Imbued, they have a cost of zero. ",
+                "refs":{
+                    "[LSJ 20060409]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gsFQXsCGTG4/m/q5H8FvuKksIJ"
+                }
             }
         ],
         "ASCII Name":"Kindred Segregation"
@@ -39082,7 +39916,22 @@
         "Artist":[
             "Christopher Shy"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Firebrand}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}). ",
+                "refs":{
+                    "[ANK 20211009]":"https://www.vekn.net/forum/rules-questions/79388-political-struggle-and-victim-priscus#103481",
+                    "[LSJ 20040518-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
+                }
+            },
+            {
+                "text":"Priscus ballots are not taken into account. ",
+                "refs":{
+                    "[ANK 20211009]":"https://www.vekn.net/forum/rules-questions/79388-political-struggle-and-victim-priscus#103481",
+                    "[LSJ 20041025]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sbfkGmojYao/m/obMvk67O5PYJ"
+                }
+            }
+        ],
         "ASCII Name":"Leadership Vacuum"
     },
     "101079":{
@@ -40233,6 +41082,31 @@
         ],
         "ASCII Name":"Line, The"
     },
+    "102229":{
+        "Id":102229,
+        "Name":"Line Brawl",
+        "Type":"Action",
+        "Clan":"",
+        "Discipline":"Celerity/Potence/Presence",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires an Anarch.\n[cel] (D) Steal 1 pool from another Methuselah.\n[pot] (D) Enter combat with a minion.\n[pre] (D) Bleed with +1 bleed.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PB":"6"
+            }
+        },
+        "Requirement":"anarch",
+        "Banned":"",
+        "Artist":[
+            "Javier Santos"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Line Brawl"
+    },
     "101111":{
         "Id":101111,
         "Name":"Liquefy the Mortal Coil",
@@ -40387,6 +41261,12 @@
                 "text":"Once in play, can be equipped from the minion it's on (rulebook action) by another minion that does not meet the requirements. ",
                 "refs":{
                     "[ANK 20180719-3]":"http://www.vekn.net/forum/rules-questions/76834-moving-equipment-with-requirements#89044"
+                }
+            },
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
                 }
             }
         ],
@@ -40728,6 +41608,9 @@
             "V5":{
                 "PM":"4",
                 "PN":"4"
+            },
+            "V5A":{
+                "PMin":"4"
             }
         },
         "Requirement":"",
@@ -40767,6 +41650,12 @@
                 "text":"Must be played before action resolution, ie. before any modifier or reaction played \"as the action/bleed would be successful\" are played. It cannot be played after a {Spying Mission} on the vampire triggers. ",
                 "refs":{
                     "[LSJ 19980105]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/PzVC-AeFuUQ/ncbtQyYNpFQJ"
+                }
+            },
+            {
+                "text":"Can be played when failing to block because of stealth: it is still declining to block. ",
+                "refs":{
+                    "[ANK 20211003]":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
                 }
             }
         ],
@@ -42451,6 +43340,10 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"1"
             }
         },
         "Requirement":"",
@@ -42796,6 +43689,12 @@
                 "text":"Multiple copies can be played by different vampires on the same action. ",
                 "refs":{
                     "[ANK 20200515]":"http://www.vekn.net/forum/rules-questions/78634-blanket-of-night#99838"
+                }
+            },
+            {
+                "text":"[OBF] Cannot be used if no stealth is needed yet. ",
+                "refs":{
+                    "[LSJ 20060409]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gsFQXsCGTG4/m/q5H8FvuKksIJ"
                 }
             }
         ],
@@ -44970,10 +45869,14 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires an anarch. Only usable during a bleed action\n+X bleed (limited). X must be 1, 2 or 3.",
+        "Card Text":"Requires an Anarch. Only usable during a bleed action.\n+X bleed (limited). X must be 1, 2 or 3.",
         "Set":{
             "TR":{
                 "C":true
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"2"
             }
         },
         "Requirement":"anarch",
@@ -45330,7 +46233,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mortal with 1 life.\nThe minion with this retainer gets +1 intercept.",
+        "Card Text":"Unique mortal with 1 life.\nThe employer gets +1 intercept.",
         "Set":{
             "Jyhad":{
                 "R":true
@@ -45346,6 +46249,10 @@
             },
             "HttB":{
                 "PKia":1
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"1"
             }
         },
         "Requirement":"",
@@ -45494,7 +46401,20 @@
         "Artist":[
             "Michael Gaydos"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Mundane"
     },
     "101254":{
@@ -45520,6 +46440,9 @@
             },
             "V5":{
                 "PN":"2"
+            },
+            "V5A":{
+                "PG":"2"
             }
         },
         "Requirement":"",
@@ -45744,6 +46667,12 @@
                 "refs":{
                     "[LSJ 20060525]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0HqW_TzbJlM/WZecj55DSCkJ"
                 }
+            },
+            {
+                "text":"[AUS] Can be played when failing to block because of stealth: it is still declining to block. ",
+                "refs":{
+                    "[ANK 20211003]":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+                }
             }
         ],
         "ASCII Name":"My Enemy's Enemy"
@@ -45884,7 +46813,20 @@
         "Artist":[
             "Noora Hirvonen"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If burned in combat, her effect ceases immediately and the acting minion returns to normal for the rest of the combat. ",
+                "refs":{
+                    "[ANK 20211022]":"https://www.vekn.net/forum/rules-questions/79422-nar-sheptha#103636"
+                }
+            },
+            {
+                "text":"Supersedes previous effects that changed the acting minion for the combat (eg. {Deep Song}). ",
+                "refs":{
+                    "[ANK 20211022]":"https://www.vekn.net/forum/rules-questions/79422-nar-sheptha#103636"
+                }
+            }
+        ],
         "ASCII Name":"Nar-Sheptha"
     },
     "101265":{
@@ -47270,7 +48212,20 @@
         "Artist":[
             "Mark Poole"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Not to Be"
     },
     "101304":{
@@ -47930,12 +48885,19 @@
                 "PM":"5",
                 "PN":"5",
                 "PTr":"4"
+            },
+            "V5A":{
+                "PB":"2",
+                "PBh":"4",
+                "PG":"5",
+                "PMin":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "David Day"
+            "David Day",
+            "Christian Byrne"
         ],
         "Rulings":[
             {
@@ -48068,6 +49030,18 @@
                 "refs":{
                     "[ANK 20180909]":"http://www.vekn.net/forum/rules-questions/76987-ophidian-gaze-and-post-referendum-action-modifiers#90501"
                 }
+            },
+            {
+                "text":"[SER][PRE] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[SER][PRE] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Ophidian Gaze"
@@ -48082,7 +49056,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nLock to give a Follower of Set you control +1 stealth for the current action.",
+        "Card Text":"Unique location.\nLock to give a Follower of Set you control +1 stealth.",
         "Set":{
             "AH":{
                 "C":true
@@ -48092,6 +49066,10 @@
             },
             "LotN":{
                 "PS":1
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"1"
             }
         },
         "Requirement":"",
@@ -48187,6 +49165,31 @@
         ],
         "Rulings":[],
         "ASCII Name":"Order of Hermes Cabal"
+    },
+    "102230":{
+        "Id":102230,
+        "Name":"Organized Resistance",
+        "Type":"Reaction",
+        "Clan":"",
+        "Discipline":"",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires a baron. Usable by a locked baron.\nAn Anarch you control gets +1 intercept. Also usable to unlock a locked Anarch you control; that Anarch attempts to block with +1 intercept, even if intercept is not yet needed.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PB":"6"
+            }
+        },
+        "Requirement":"baron",
+        "Banned":"",
+        "Artist":[
+            "Mart\u00edn de Diego S\u00e1bada"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Organized Resistance"
     },
     "101330":{
         "Id":101330,
@@ -49034,6 +50037,9 @@
             "V5":{
                 "PTo":"4",
                 "PV":"5"
+            },
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"prince,justicar",
@@ -49136,6 +50142,31 @@
         ],
         "Rulings":[],
         "ASCII Name":"Parthenon, The"
+    },
+    "102231":{
+        "Id":102231,
+        "Name":"Party Out Of Bounds",
+        "Type":"Reaction",
+        "Clan":"",
+        "Discipline":"Obfuscate/Presence/Protean",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires an Anarch.\n[obf] Reduce a bleed against you by 2.\n[pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[pro] +1 intercept.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PMin":"5"
+            }
+        },
+        "Requirement":"anarch",
+        "Banned":"",
+        "Artist":[
+            "Peter Bergting"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Party Out Of Bounds"
     },
     "101356":{
         "Id":101356,
@@ -50654,6 +51685,31 @@
         "Rulings":[],
         "ASCII Name":"Plasmic Form"
     },
+    "102232":{
+        "Id":102232,
+        "Name":"Platinum Protocol, The",
+        "Type":"Action",
+        "Clan":"",
+        "Discipline":"Obfuscate/Presence/Protean",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[obf] This is a +1 stealth action.\n[pre] The bleed is with +1 bleed.\n[pro] Put 1 corruption counter on a minion controlled by the target Methuselah if the bleed is successful (for 1 or more).",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PMin":"7"
+            }
+        },
+        "Requirement":"anarch",
+        "Banned":"",
+        "Artist":[
+            "Kim Aldau"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Platinum Protocol, The"
+    },
     "101403":{
         "Id":101403,
         "Name":"Playing for Keeps",
@@ -50781,6 +51837,13 @@
                 "text":"Any decrease in pool (burning, paying, ...) is considered \"loosing pool\". ",
                 "refs":{
                     "[ANK 20180719-2]":"http://www.vekn.net/forum/rules-questions/76835-burn-lose-pay-pool-and-poison-pill-kindred-segregation#89046"
+                }
+            },
+            {
+                "text":"Gaining pool does not count as a negative loss. If a vote entails both a gain and a loss (eg. {Ancient Influence}), only the loss is counted, not the difference. ",
+                "refs":{
+                    "[ANK 20180813]":"http://www.vekn.net/forum/rules-questions/76917-poison-pill-ancient-influence#89940",
+                    "[LSJ 20041025]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sbfkGmojYao/m/obMvk67O5PYJ"
                 }
             },
             {
@@ -51198,6 +52261,20 @@
                 "refs":{
                     "[LSJ 20050707]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/S5UbigI9faM/7RcuPKon0R0J"
                 }
+            },
+            {
+                "text":"The votes include bonus votes from cards or ability (eg. {Eze, The Demon Prince}, {Firebrand}) but not conditional votes (eg. {Sundown}, {Aura of Invincibility}). ",
+                "refs":{
+                    "[ANK 20211009]":"https://www.vekn.net/forum/rules-questions/79388-political-struggle-and-victim-priscus#103481",
+                    "[LSJ 20040518-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/4emymfUPwAM/m/JF_o7OOoCbkJ"
+                }
+            },
+            {
+                "text":"Priscus ballots are not taken into account. ",
+                "refs":{
+                    "[ANK 20211009]":"https://www.vekn.net/forum/rules-questions/79388-political-struggle-and-victim-priscus#103481",
+                    "[LSJ 20041025]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/sbfkGmojYao/m/obMvk67O5PYJ"
+                }
             }
         ],
         "ASCII Name":"Political Struggle"
@@ -51571,15 +52648,21 @@
                 }
             },
             {
-                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "text":"Other reaction cards (eg. wake effects) cannot be used if there is no action. ",
                 "refs":{
-                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                    "[PIB 20120808]":"http://www.vekn.net/forum/rules-questions/34265-rules-tweak-suggestion-rewind-time-et-al?start=12#34448"
                 }
             },
             {
-                "text":"Other reaction cards (eg. wake effects) cannot be used as there is no action. ",
+                "text":"Cards are not replaced during the \"as played\" window. ",
                 "refs":{
-                    "[PIB 20120808]":"http://www.vekn.net/forum/rules-questions/34265-rules-tweak-suggestion-rewind-time-et-al?start=12#34448"
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -53088,6 +54171,18 @@
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
                 }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Predator's Communion"
@@ -53119,6 +54214,18 @@
                 "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion. ",
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -53156,6 +54263,18 @@
                 "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion. ",
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -53445,6 +54564,10 @@
             },
             "KSU":{
                 "TUA":"4"
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"4"
             }
         },
         "Requirement":"",
@@ -53921,6 +55044,10 @@
             },
             "KSU":{
                 "AU":"2"
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"4"
             }
         },
         "Requirement":"anarch",
@@ -54099,7 +55226,20 @@
         "Artist":[
             "Talon Dunning"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Pseudo-Blindness"
     },
     "101507":{
@@ -54398,7 +55538,7 @@
         "Requirement":"sabbat,titled",
         "Banned":"",
         "Artist":[
-            "Tom\u00e1\u0161 Zahradn\u00ed\u010dek",
+            "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek",
             "Samuel Araya"
         ],
         "Rulings":[],
@@ -54730,6 +55870,11 @@
             "KoT":{
                 "C":true,
                 "PT":"6"
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"2",
+                "PBh":"4"
             }
         },
         "Requirement":"",
@@ -55028,11 +56173,11 @@
         "Type":"Combat",
         "Clan":"",
         "Discipline":"Celerity",
-        "Blood Cost":"1",
+        "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[cel] Additional strike (limited).\n[CEL] Additional strike that does not count against the limit. A vampire may only play one Quickness each round.",
+        "Card Text":"A vampire can play only one Quickness each round.\n[cel] Additional strike (limited).\n[CEL] Additional strike that does not count against the limit.",
         "Set":{
             "Sabbat":{
                 "R":true
@@ -55045,12 +56190,18 @@
             },
             "Third":{
                 "R":true
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"5",
+                "PBh":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Craig Maher"
+            "Craig Maher",
+            "Clint Langley"
         ],
         "Rulings":[],
         "ASCII Name":"Quickness"
@@ -55158,7 +56309,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nAs this card is played or the controller of this card changes, the controller chooses a ready vampire they control. During the controller's unlock phase, the chosen vampire can gain 2 blood. A vampire controlled by another Methuselah can steal this location as a (D) action.",
+        "Card Text":"Unique location.\nAs this card is played or its controller changes, its controller chooses a ready vampire they control. During this card's controller's unlock phase, the chosen vampire can gain 2 blood. A vampire controlled by another Methuselah can steal this location as a (D) action.",
         "Set":{
             "Jyhad":{
                 "U":true
@@ -55178,6 +56329,10 @@
             },
             "SP":{
                 "DoF":"1"
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -55721,6 +56876,9 @@
             },
             "V5":{
                 "PN":"2"
+            },
+            "V5A":{
+                "PG":"2"
             }
         },
         "Requirement":"",
@@ -56027,6 +57185,12 @@
                 "refs":{
                     "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
+            },
+            {
+                "text":"Can be used to cancel all action cards, including employ retainer, recruit ally and political action. ",
+                "refs":{
+                    "[ANK 20200813-2]":"http://www.vekn.net/forum/rules-questions/78799-rewind-time-inf-and-action-cards#100526"
+                }
             }
         ],
         "ASCII Name":"React with Conviction"
@@ -56226,6 +57390,12 @@
                 "text":"If it uses its last life to play an action modifier, the action fails. If it uses its last life to play a strike, combat ends before strike resolution. ",
                 "refs":{
                     "[ANK 20180928-1]":"http://www.vekn.net/forum/rules-questions/77034-allies-and-vampire-disciplines-specifically-the-nocturn#90809"
+                }
+            },
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
                 }
             }
         ],
@@ -56763,6 +57933,12 @@
                 "refs":{
                     "[LSJ 19980105]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/PzVC-AeFuUQ/ncbtQyYNpFQJ"
                 }
+            },
+            {
+                "text":"Can be played when failing to block because of stealth: it is still declining to block. ",
+                "refs":{
+                    "[ANK 20211003]":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+                }
             }
         ],
         "ASCII Name":"Redirection"
@@ -57084,6 +58260,10 @@
             },
             "SP":{
                 "PwN":"3"
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"",
@@ -57840,6 +59020,9 @@
             },
             "V5":{
                 "PTo":"8"
+            },
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"",
@@ -58316,6 +59499,31 @@
         ],
         "ASCII Name":"Revelation of Ecstasy"
     },
+    "102233":{
+        "Id":102233,
+        "Name":"Revelation of the Serpent",
+        "Type":"Action Modifier",
+        "Clan":"",
+        "Discipline":"Presence & Protean",
+        "Blood Cost":"",
+        "Pool Cost":"",
+        "Conviction Cost":"",
+        "Burn Option":"",
+        "Card Text":"Only usable during a bleed action.\n[pre][pro] +1 bleed (limited), or +1 stealth and +1 bleed (limited).\n[PRE][PRO] As above, and if the bleed is successful, this vampire can burn 2 of your corruption counters from a minion controlled by the target Methuselah to unlock.",
+        "Set":{
+            "V5":{},
+            "V5A":{
+                "PMin":"6"
+            }
+        },
+        "Requirement":"",
+        "Banned":"",
+        "Artist":[
+            "Felipe Gaona"
+        ],
+        "Rulings":[],
+        "ASCII Name":"Revelation of the Serpent"
+    },
     "101625":{
         "Id":101625,
         "Name":"Revelation of the Sire",
@@ -58585,6 +59793,10 @@
             },
             "KSU":{
                 "TUA":"2"
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -58640,7 +59852,7 @@
                 }
             },
             {
-                "text":"[TEM] Other reaction cards (eg. wake effects) cannot be used as there is no action. ",
+                "text":"[TEM] Other reaction cards (eg. wake effects) cannot be used if there is no action. ",
                 "refs":{
                     "[PIB 20120808]":"http://www.vekn.net/forum/rules-questions/34265-rules-tweak-suggestion-rewind-time-et-al?start=12#34448"
                 }
@@ -58649,6 +59861,18 @@
                 "text":"[TEM] Cannot be played during combat. ",
                 "refs":{
                     "[LSJ 20080618]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9FAkwIsuYZc/m/gCoYa59TEGIJ"
+                }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -59478,6 +60702,9 @@
         "Set":{
             "V5":{
                 "PN":"8"
+            },
+            "V5A":{
+                "PB":"4"
             }
         },
         "Requirement":"",
@@ -59820,7 +61047,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[tha] Put this card on this vampire, and this vampire takes 1 unpreventable environmental aggravated damage. Beginning with your next turn, this vampire can unlock during your minion phase. A vampire can have only one Rutor's Hand.\n[THA] As above, and this vampire can burn 3 blood to be immune to this aggravated damage.",
+        "Card Text":"+1 stealth action.\n[tha] Put this card on this vampire, and this vampire takes 1 unpreventable environmental aggravated damage. Starting with your next turn, this vampire can unlock during your minion phase. A vampire can have only one Rutor's Hand.\n[THA] As above, and this vampire can burn 3 blood to be immune to this aggravated damage.",
         "Set":{
             "DS":{
                 "C":true
@@ -59836,6 +61063,10 @@
             },
             "25th":{
                 "":"1"
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"1"
             }
         },
         "Requirement":"",
@@ -61131,7 +62362,20 @@
         "Artist":[
             "Alexander Dunnigan"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[VIS] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[VIS] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Scry the Hearthstone"
     },
     "101702":{
@@ -61294,13 +62538,17 @@
             "V5":{
                 "PTo":"4",
                 "PV":"4"
+            },
+            "V5A":{
+                "PBh":"8"
             }
         },
         "Requirement":"prince,justicar",
         "Banned":"",
         "Artist":[
             "L. A. Williams",
-            "Durwin Talon"
+            "Durwin Talon",
+            "Cos Koniotis"
         ],
         "Rulings":[
             {
@@ -61378,6 +62626,12 @@
                 "text":"If put into play with no counters (X=0), it burns immediately. ",
                 "refs":{
                     "[LSJ 20070308]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/QlMNPzNtXh8/D-1FzDFnhhUJ"
+                }
+            },
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
                 }
             }
         ],
@@ -61458,7 +62712,14 @@
         "Artist":[
             "Alejandro Colucci"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"When burned to make an action fail, the action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                }
+            }
+        ],
         "ASCII Name":"Secret Passage"
     },
     "101711":{
@@ -62678,15 +63939,28 @@
                 }
             },
             {
-                "text":"Only plays the card \"as a vampire\" if it costs blood or require a discipline: he cannot play {Taste of Vitae}. ",
+                "text":"He can play any card \"as a vampire\" even if it does not require a discipline (eg. {Taste of Vitae}). REVERSAL of previous rulings. ",
                 "refs":{
-                    "[LSJ 20000128]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0VhG11O0s4M/fBQ_wsMkKtMJ"
+                    "[LSJ 20080717]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DMsE6V84GWI/m/af5Oggz9XlQJ"
                 }
             },
             {
-                "text":"If he ends up in torpor (eg. by using {Reform Body}), he cannot leave or be rescued. Going into torpor instead of being burned does not give him life back: if he has no life, he burns again immediately. ",
+                "text":"He cannot use a card to commit diablerie (eg. {Amaranth}) ",
                 "refs":{
-                    "[LSJ 20000128]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0VhG11O0s4M/fBQ_wsMkKtMJ"
+                    "[LSJ 20080717]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/DMsE6V84GWI/m/af5Oggz9XlQJ",
+                    "[RTR 19970630]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/KireUeOYY3c/t6ifm9lur1kJ"
+                }
+            },
+            {
+                "text":"If a card he plays as a vampire sends him to torpor (eg. by using {Reform Body}), he burns. REVERSAL of previous rulings. ",
+                "refs":{
+                    "[LSJ 20060409]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gsFQXsCGTG4/m/q5H8FvuKksIJ"
+                }
+            },
+            {
+                "text":"If he takes aggravated damage from a card he plays as a vampire (eg. {Burst of Sunlight}), he loses one life but does not go to torpor. ",
+                "refs":{
+                    "[LSJ 20060409]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/gsFQXsCGTG4/m/q5H8FvuKksIJ"
                 }
             },
             {
@@ -63255,7 +64529,20 @@
             "Chet Masters",
             "Mike Chaney"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Shape Mastery"
     },
     "101755":{
@@ -63716,7 +65003,14 @@
         "Artist":[
             "Mike Danza"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
+                }
+            }
+        ],
         "ASCII Name":"Shock Troops"
     },
     "101769":{
@@ -63845,12 +65139,16 @@
             },
             "KSU":{
                 "DM":"4"
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"2"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Tom\u00e1\u0161 Zahradn\u00ed\u010dek",
+            "Tom\u00e1\u0161 \"zelgaris\" Zahradn\u00ed\u010dek",
             "Mitch Mueller"
         ],
         "Rulings":[],
@@ -64813,7 +66111,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[pot] Strike: hand strike at +2 damage.\n[POT] As above, with an optional maneuver, only usable to maneuver to close range.",
+        "Card Text":"[pot] Strike: hand strike at +2 damage.\n[POT] As above, with 1 optional maneuver, only usable to get to close range.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -64825,6 +66123,10 @@
             },
             "HttB":{
                 "PGar":"4"
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"4"
             }
         },
         "Requirement":"",
@@ -65288,6 +66590,9 @@
             },
             "V5":{
                 "PN":"1"
+            },
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -65950,7 +67255,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[tha] Strike: 1R damage. This damage cannot be prevented by cards that require Fortitude [for]. If the opposing vampire attempts to strike with a weapon this round, he or she does no damage.\n[THA] As above, but for 2R damage.",
+        "Card Text":"[tha] Strike: 1R damage. This damage cannot be prevented by cards requiring Fortitude [for]. The opposing vampire's strikes with weapons inflict no damage this round.\n[THA] As above, but for 2R damage.",
         "Set":{
             "Sabbat":{
                 "C":true
@@ -65960,6 +67265,10 @@
             },
             "Third":{
                 "C":true
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"",
@@ -66148,6 +67457,12 @@
                 "text":"Only requires one clan or the other (Tremere or Tremere antitribu) to be played. ",
                 "refs":{
                     "[ANK 20190203]":"http://www.vekn.net/forum/rules-questions/77343-ennoia-s-theater-do-i-need-both-gangrel-and-gangrel#93265"
+                }
+            },
+            {
+                "text":"Reduction applies to allies or retainers recruited in a non-normal way (eg. {Piper}). ",
+                "refs":{
+                    "[ANK 20210928]":"https://www.vekn.net/forum/rules-questions/79364-combo-piper-x-soul-of-earth#103363"
                 }
             }
         ],
@@ -66536,6 +67851,12 @@
                 "refs":{
                     "[LSJ 20070928-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/duRrP46XygI/FrFYvbUYFf0J",
                     "[LSJ 20071001-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/XoMeEYJw1ZA/zVM8X9aZlgQJ"
+                }
+            },
+            {
+                "text":"The mummies do not contest non-unique vampires (eg. {Aabbt Kindred}), but two mummies made of the same non-unique vampire contest one another. ",
+                "refs":{
+                    "[LSJ 20070928-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/duRrP46XygI/FrFYvbUYFf0J"
                 }
             }
         ],
@@ -67026,13 +68347,17 @@
             },
             "V5":{
                 "PM":"4"
+            },
+            "V5A":{
+                "PMin":"4"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
             "Jeff Menges",
-            "Julie Collins"
+            "Julie Collins",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Rulings":[
             {
@@ -68454,6 +69779,12 @@
                 "refs":{
                     "[LSJ 20090722]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/r-N65rA52uo/OXW8xk1r1iMJ"
                 }
+            },
+            {
+                "text":"If the library is empty and the hand is not full, you draw the returned cards up to hand size before discarding at random. ",
+                "refs":{
+                    "[LSJ 20080612-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/dVIBPf6EX_8/m/km-qYBcG_qYJ"
+                }
             }
         ],
         "ASCII Name":"Sudario Refraction"
@@ -68529,6 +69860,18 @@
                     "[LSJ 20090126]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/3Cd-DNfT7yQ/m/-BfYOkP1OUUJ",
                     "[RBK 20200701-5]":"https://www.vekn.net/rulebook#trifle"
                 }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Sudden Reversal"
@@ -68568,6 +69911,12 @@
                 "text":"You must decide the value of X (blood cost) when playing the card. ",
                 "refs":{
                     "[LSJ 20100314]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/MeBSRw3OJC0/QZbO0FOx7roJ"
+                }
+            },
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
                 }
             }
         ],
@@ -68629,7 +69978,14 @@
         "Artist":[
             "Andrew Trabbold"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
+                }
+            }
+        ],
         "ASCII Name":"Summon Spirit Beast"
     },
     "101900":{
@@ -68858,6 +70214,12 @@
                 "text":"If used to cancel the opposing minion's strike, that minion must still choose a strike and could play the same one again. ",
                 "refs":{
                     "[LSJ 20090818]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/jkKBGVLmFHc/YXwYthjI7isJ"
+                }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
                 }
             },
             {
@@ -69115,6 +70477,9 @@
             },
             "V5":{
                 "PM":"4"
+            },
+            "V5A":{
+                "PBh":"6"
             }
         },
         "Requirement":"",
@@ -69671,6 +71036,18 @@
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
                 }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Taking the Skin: Minion"
@@ -69701,6 +71078,18 @@
                 "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion. ",
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -69909,6 +71298,18 @@
                 "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion. ",
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -70358,6 +71759,9 @@
             },
             "V5":{
                 "PN":"4"
+            },
+            "V5A":{
+                "PB":"4"
             }
         },
         "Requirement":"",
@@ -70582,6 +71986,12 @@
                 "refs":{
                     "[LSJ 19980105]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/PzVC-AeFuUQ/ncbtQyYNpFQJ"
                 }
+            },
+            {
+                "text":"[AUS] Can be played when failing to block because of stealth: it is still declining to block. ",
+                "refs":{
+                    "[ANK 20211003]":"https://www.vekn.net/forum/rules-questions/79372-fail-to-block-and-telepathic-misdirection#103416"
+                }
             }
         ],
         "ASCII Name":"Telepathic Misdirection"
@@ -70746,7 +72156,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location. Hunting ground.\nDuring your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one Hunting Ground card each turn.",
+        "Card Text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
         "Set":{
             "AH":{
                 "C":true
@@ -70756,6 +72166,10 @@
             },
             "LotN":{
                 "PS":1
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"1"
             }
         },
         "Requirement":"",
@@ -70982,7 +72396,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique master.\nPut this card in play. Whenever a ready minion is burned or sent to torpor, his or her controller burns 1 pool. Any Methuselah can burn this card by discarding two master cards as a master phase action.",
+        "Card Text":"Unique.\nPut this card in play. Any Methuselah burns 1 pool after a ready minion they control is burned or sent to torpor. Any Methuselah can use a master phase action and discard two master cards to burn this card.",
         "Set":{
             "CE":{
                 "R":true
@@ -70996,6 +72410,10 @@
             "KoT":{
                 "R":true,
                 "PB":1
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"1"
             }
         },
         "Requirement":"",
@@ -71027,7 +72445,20 @@
         "Artist":[
             "Durwin Talon"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            }
+        ],
         "ASCII Name":"Terra Incognita"
     },
     "101960":{
@@ -71492,6 +72923,10 @@
             },
             "KSU":{
                 "TUB":"4"
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"4"
             }
         },
         "Requirement":"",
@@ -71690,6 +73125,18 @@
                     "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ",
                     "[TOM 19951216]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/0G-jqB_fcyE/8jUhfCXRtPUJ",
                     "[PIB 20140324]":"https://www.vekn.net/forum/rules-questions/60259-carrion-crows-first-strike-strikes-not-anaesthetic-touch?start=0#60260"
+                }
+            },
+            {
+                "text":"[DOM] Cards that merely provide the ability to strike (eg. {.44 Magnum}), are allowed. ",
+                "refs":{
+                    "[ANK 20210928-2]":"https://www.vekn.net/forum/rules-questions/79330-thoughts-betrayed-and-hunger-of-marduk?start=12#103364"
+                }
+            },
+            {
+                "text":"[DOM] Strike cards that are played during the Determine Range step because they provide a maneuver (eg. {Aid from Bats}) are not allowed. ",
+                "refs":{
+                    "[ANK 20210928-2]":"https://www.vekn.net/forum/rules-questions/79330-thoughts-betrayed-and-hunger-of-marduk?start=12#103364"
                 }
             }
         ],
@@ -72306,7 +73753,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined.\n[pot] This vampire has a strength of 2 for the remainder of combat.\n[POT] This vampire has a strength of 3 for the remainder of combat.",
+        "Card Text":"Only usable before range is determined.\n[pot] This vampire gets a strength of 2 this combat.\n[POT] This vampire gets a strength of 3 this combat.",
         "Set":{
             "Jyhad":{
                 "U":true
@@ -72338,6 +73785,10 @@
             },
             "HttB":{
                 "PGar":"3"
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"5"
             }
         },
         "Requirement":"",
@@ -72545,6 +73996,18 @@
                 "refs":{
                     "[LSJ 20090425]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/oL7Jflmkx48/RzAzPMSq1XcJ",
                     "[LSJ 19990425]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Mmfn07ib6Yw/YfwpUlqEdrEJ"
+                }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -72823,6 +74286,18 @@
                 "text":"[DOM] The press can only be used during the current round. ",
                 "refs":{
                     "[TOM 19960521]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/poYD3n0TKGo/xvU5HW7lBxMJ"
+                }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -73125,27 +74600,27 @@
         ],
         "Rulings":[
             {
-                "text":"Cannot be played during combat. ",
+                "text":"[OBE] [REACTION] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[OBE] [REACTION] Cannot be played during combat. ",
                 "refs":{
                     "[LSJ 20080618]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9FAkwIsuYZc/m/gCoYa59TEGIJ"
                 }
             },
             {
-                "text":"Cannot be used to cancel an action card after using a reaction to \"unlock and attempt to block\". ",
+                "text":"[OBE] [REACTION] Cannot be used to cancel an action card after using a reaction to \"unlock and attempt to block\". ",
                 "refs":{
                     "[LSJ 20021011]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9WWIzxek9Nc/PlIwI11sNpkJ"
                 }
             },
             {
-                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "text":"[OBE] [REACTION] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
                 "refs":{
                     "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
-                }
-            },
-            {
-                "text":"Other reaction cards (eg. wake effects) cannot be used as there is no action. ",
-                "refs":{
-                    "[PIB 20120808]":"http://www.vekn.net/forum/rules-questions/34265-rules-tweak-suggestion-rewind-time-et-al?start=12#34448"
                 }
             }
         ],
@@ -73890,13 +75365,17 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"[obf][pre] Only usable during a bleed action. +1 bleed (limited).\n[OBF][PRE] Only usable when a minion attempts to block. That block fails (do not lock that minion). That minion cannot attempt to block this action again. That minion's controller may burn a pool to cancel this card as it is played.",
+        "Card Text":"[obf][pre] Only usable during a bleed action. +1 bleed (limited).\n[OBF][PRE] Only usable if a minion attempts to block. That attempt fails and the blocking minion cannot attempt to block this action again. The blocking minion's controller can burn 1 pool to cancel this card as it is played.",
         "Set":{
             "KMW":{
                 "C":true
             },
             "LotN":{
                 "PS":"4"
+            },
+            "V5":{},
+            "V5A":{
+                "PMin":"2"
             }
         },
         "Requirement":"",
@@ -74819,13 +76298,18 @@
             },
             "POD":{
                 "DTC":true
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"1"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
             "Scott Kirschner",
-            "Jeff Holt"
+            "Jeff Holt",
+            "Gin\u00e9s Qui\u00f1onero"
         ],
         "Rulings":[],
         "ASCII Name":"Underworld Hunting Ground"
@@ -75357,6 +76841,18 @@
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
                 }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Unseen Hibernation"
@@ -75552,6 +77048,12 @@
                 "text":"He can lock to use his ability the turn he is recruited. ",
                 "refs":{
                     "[ANK 20180517]":"http://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
+                }
+            },
+            {
+                "text":"His ability cannot be used in the middle of a single damage resolution step. ",
+                "refs":{
+                    "[LSJ 20001111]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/m23Hj3OW2A4/m/n23vvkXo6AkJ"
                 }
             }
         ],
@@ -76703,7 +78205,7 @@
         ],
         "Rulings":[
             {
-                "text":"[REACTION] [1 CONVICTION] Can be used only when reactions can be used (unlocked or with a wake effect). It does not count as playing a reaction card. ",
+                "text":"[REACTION] [1 CONVICTION] Can be used only when reactions can be used (during an action). It does not count as playing a reaction card. ",
                 "refs":{
                     "[LSJ 20070403]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/TJ2ktt_1tjk/fdH_x9tDmN8J",
                     "[LSJ 20070413]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/umdINigMKqs/lfUAxTnfttIJ"
@@ -76728,7 +78230,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ costs you 1 additional pool to play. Villein costs 1 additional pool to play on this vampire.",
+        "Card Text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ cost you 1 additional pool to play. Villein costs 1 additional pool to play on this vampire.",
         "Set":{
             "KoT":{
                 "U":true
@@ -76752,6 +78254,9 @@
             },
             "V5":{
                 "PTo":"6"
+            },
+            "V5A":{
+                "PBh":"4"
             }
         },
         "Requirement":"",
@@ -77507,6 +79012,10 @@
             },
             "FB":{
                 "PTr":"1"
+            },
+            "V5":{},
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"",
@@ -77905,7 +79414,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location. Hunting ground.\nDuring your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one hunting ground card each turn.",
+        "Card Text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
         "Set":{
             "Jyhad":{
                 "U":true
@@ -77922,13 +79431,17 @@
             },
             "KoT":{
                 "U":true
+            },
+            "V5":{},
+            "V5A":{
+                "PB":"1"
             }
         },
         "Requirement":"",
         "Banned":"",
         "Artist":[
-            "Fred Hooper",
-            "Dan Smith"
+            "Dan Smith",
+            "Fred Hooper"
         ],
         "Rulings":[],
         "ASCII Name":"Warzone Hunting Ground"
@@ -77986,17 +79499,23 @@
                 }
             },
             {
-                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
-                "refs":{
-                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
-                }
-            },
-            {
                 "text":"Is replaced before unlocking cards: other unlock effects cannot be ordered before. ",
                 "refs":{
                     "[ANK 20200129]":"http://www.vekn.net/forum/rules-questions/78701-replace-during-unlock-and-other-unlock-effects#100210",
                     "[LSJ 20091208]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/ptHbJM9MlVI/m/O61W2JkI_rIJ",
                     "[RTR 19951017]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/ouhNUbHYg50/rco157ZHyqEJ"
+                }
+            },
+            {
+                "text":"Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
                 }
             }
         ],
@@ -78864,6 +80383,18 @@
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
                 }
+            },
+            {
+                "text":"[abo] [REFLEX] Cards are not replaced during the \"as played\" window. ",
+                "refs":{
+                    "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
+                }
+            },
+            {
+                "text":"[abo] [REFLEX] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
+                "refs":{
+                    "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
             }
         ],
         "ASCII Name":"Whistling Up the Beast"
@@ -78966,6 +80497,9 @@
                 "PM":"1",
                 "PTr":"1",
                 "PV":"2"
+            },
+            "V5A":{
+                "PMin":"1"
             }
         },
         "Requirement":"",
@@ -79066,6 +80600,12 @@
                 "text":"[CHI] Cards and effects that can be played \"as the action is announced\" (and only them) can be played before it. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
+                }
+            },
+            {
+                "text":"X can be zero. ",
+                "refs":{
+                    "[LSJ 20030502]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/qBa9CvBwqNA/m/ZuBgMjNgb6EJ"
                 }
             }
         ],
@@ -80119,7 +81659,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location. Hunting ground.\nDuring your unlock phase, you may move 1 blood from the blood bank to a ready vampire you control. A vampire can gain blood from only one hunting ground card each turn.",
+        "Card Text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
         "Set":{
             "Jyhad":{
                 "U":true
@@ -80132,6 +81672,10 @@
             },
             "KoT":{
                 "U":true
+            },
+            "V5":{},
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",

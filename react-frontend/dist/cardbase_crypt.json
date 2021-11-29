@@ -1875,6 +1875,33 @@
         "Rulings":[],
         "New":false
     },
+    "201576":{
+        "Id":201576,
+        "Name":"Aline G\u00e4deke",
+        "Clan":"Brujah",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Anarch Baron of Mannheim: Once each turn, Aline can burn 1 blood to unlock after another Anarch you control performs a successful action.",
+        "Set":{
+            "V5A":{
+                "PB":"2"
+            }
+        },
+        "Title":"baron",
+        "Banned":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ASCII Name":"Aline Gadeke",
+        "Disciplines":{
+            "Celerity":1,
+            "Potence":2,
+            "Presence":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200055":{
         "Id":200055,
         "Name":"Allanyan Serata",
@@ -2111,6 +2138,34 @@
         "ASCII Name":"Alu",
         "Disciplines":{
             "Obfuscate":1
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201577":{
+        "Id":201577,
+        "Name":"Aluc Romas de Leon",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "ASCII Name":"Aluc Romas de Leon",
+        "Disciplines":{
+            "Auspex":1,
+            "Obfuscate":1,
+            "Protean":1,
+            "Presence":2
         },
         "Rulings":[],
         "New":false
@@ -4506,6 +4561,9 @@
             },
             "KSU":{
                 "AU":"2"
+            },
+            "V5A":{
+                "PB":"1"
             }
         },
         "Title":"",
@@ -5069,6 +5127,34 @@
         "Rulings":[],
         "New":false
     },
+    "201578":{
+        "Id":201578,
+        "Name":"Asmin Kobane",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5A":{
+                "PBh":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "ASCII Name":"Asmin Kobane",
+        "Disciplines":{
+            "Dominate":1,
+            "Obfuscate":1,
+            "Thaumaturgy":1,
+            "Celerity":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200147":{
         "Id":200147,
         "Name":"Assad Salhoum",
@@ -5148,6 +5234,34 @@
                 }
             }
         ],
+        "New":false
+    },
+    "201579":{
+        "Id":201579,
+        "Name":"Atiena",
+        "Clan":"Brujah",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Anarch Baron of Mombasa.",
+        "Set":{
+            "V5A":{
+                "PB":"2"
+            }
+        },
+        "Title":"baron",
+        "Banned":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "ASCII Name":"Atiena",
+        "Disciplines":{
+            "Potence":1,
+            "Presence":1,
+            "Obfuscate":1,
+            "Celerity":2
+        },
+        "Rulings":[],
         "New":false
     },
     "200149":{
@@ -6851,6 +6965,32 @@
         "Rulings":[],
         "New":false
     },
+    "201580":{
+        "Id":201580,
+        "Name":"Bijou",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5A":{
+                "PBh":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Heather Kreiter"
+        ],
+        "ASCII Name":"Bijou",
+        "Disciplines":{
+            "Celerity":1,
+            "Thaumaturgy":1
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200197":{
         "Id":200197,
         "Name":"Bill Butler",
@@ -7531,6 +7671,34 @@
             "Fortitude":1,
             "Celerity":2,
             "Presence":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201581":{
+        "Id":201581,
+        "Name":"Brandon Grime",
+        "Clan":"Brujah",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PB":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "ASCII Name":"Brandon Grime",
+        "Disciplines":{
+            "Potence":1,
+            "Presence":1,
+            "Thaumaturgy":1,
+            "Celerity":2
         },
         "Rulings":[],
         "New":false
@@ -10588,6 +10756,9 @@
             },
             "KSU":{
                 "AU":"2"
+            },
+            "V5A":{
+                "PG":"1"
             }
         },
         "Title":"",
@@ -10635,6 +10806,33 @@
             "Celerity":2,
             "Potence":2,
             "Presence":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201582":{
+        "Id":201582,
+        "Name":"Crystal Lynn",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "ASCII Name":"Crystal Lynn",
+        "Disciplines":{
+            "Obfuscate":2,
+            "Presence":2,
+            "Protean":2
         },
         "Rulings":[],
         "New":false
@@ -11113,6 +11311,34 @@
             "Fortitude":1,
             "Protean":1,
             "Sanguinus":1
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201583":{
+        "Id":201583,
+        "Name":"Dario Ziggler",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ASCII Name":"Dario Ziggler",
+        "Disciplines":{
+            "Animalism":1,
+            "Protean":1,
+            "Thaumaturgy":1,
+            "Fortitude":2
         },
         "Rulings":[],
         "New":false
@@ -12102,6 +12328,34 @@
             "Celerity":2,
             "Necromancy":2,
             "Quietus":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201584":{
+        "Id":201584,
+        "Name":"Doctor Morocco",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ASCII Name":"Doctor Morocco",
+        "Disciplines":{
+            "Celerity":1,
+            "Obfuscate":1,
+            "Presence":1,
+            "Protean":2
         },
         "Rulings":[],
         "New":false
@@ -14029,6 +14283,32 @@
         "Rulings":[],
         "New":false
     },
+    "201585":{
+        "Id":201585,
+        "Name":"Elen Kamjian",
+        "Clan":"Brujah",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Anarch: If you control a locked minion, Elen must bleed with +1 bleed as a (D) action unless she must hunt.",
+        "Set":{
+            "V5A":{
+                "PB":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "ASCII Name":"Elen Kamjian",
+        "Disciplines":{
+            "Celerity":2,
+            "Potence":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200407":{
         "Id":200407,
         "Name":"Elena Gutierrez",
@@ -14214,6 +14494,34 @@
             "Protean":1,
             "Quietus":1,
             "Thaumaturgy":1
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201586":{
+        "Id":201586,
+        "Name":"Elisha Tucker",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Anarch Baron of Pittsburgh.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"baron",
+        "Banned":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ASCII Name":"Elisha Tucker",
+        "Disciplines":{
+            "Celerity":1,
+            "Obfuscate":1,
+            "Protean":1,
+            "Presence":2
         },
         "Rulings":[],
         "New":false
@@ -15661,6 +15969,34 @@
         "Rulings":[],
         "New":false
     },
+    "201587":{
+        "Id":201587,
+        "Name":"Farah Sarroub",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Camarilla Prince of Detroit.",
+        "Set":{
+            "V5A":{
+                "PBh":"1"
+            }
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":[
+            "Krasen Maximov"
+        ],
+        "ASCII Name":"Farah Sarroub",
+        "Disciplines":{
+            "Auspex":1,
+            "Obfuscate":1,
+            "Celerity":2,
+            "Thaumaturgy":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200457":{
         "Id":200457,
         "Name":"Faruq",
@@ -15688,6 +16024,35 @@
             "Fortitude":1,
             "Potence":1,
             "Animalism":2,
+            "Protean":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201588":{
+        "Id":201588,
+        "Name":"Faruq Abd al-Qadir",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":8,
+        "Card Text":"Anarch: Minions with any of your corruption counters in combat with Faruq cannot strike: combat ends. +1 strength.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Francisco T\u00e9bar"
+        ],
+        "ASCII Name":"Faruq Abd al-Qadir",
+        "Disciplines":{
+            "Celerity":1,
+            "Obfuscate":1,
+            "Potence":2,
+            "Presence":2,
             "Protean":2
         },
         "Rulings":[],
@@ -18350,6 +18715,33 @@
         "Rulings":[],
         "New":false
     },
+    "201589":{
+        "Id":201589,
+        "Name":"Greg Mazouni",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5A":{
+                "PBh":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "ASCII Name":"Greg Mazouni",
+        "Disciplines":{
+            "Celerity":1,
+            "Obfuscate":1,
+            "Thaumaturgy":1
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200538":{
         "Id":200538,
         "Name":"Greger Anderssen",
@@ -19222,6 +19614,33 @@
             "Fortitude":1,
             "Potence":1,
             "Visceratika":1
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201590":{
+        "Id":201590,
+        "Name":"Hanna Nokelainen",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Kamilla Khaminskaya"
+        ],
+        "ASCII Name":"Hanna Nokelainen",
+        "Disciplines":{
+            "Animalism":1,
+            "Fortitude":1,
+            "Protean":1
         },
         "Rulings":[],
         "New":false
@@ -20244,6 +20663,35 @@
             }
         ],
         "New":false
+    },
+    "201591":{
+        "Id":201591,
+        "Name":"Hesha Ruhadze",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Anarch: Hesha gets +1 bleed for each unique equipment attached to him.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Carmen Cornet"
+        ],
+        "ASCII Name":"Hesha Ruhadze",
+        "Disciplines":{
+            "Animalism":1,
+            "Auspex":1,
+            "Obfuscate":1,
+            "Presence":2,
+            "Protean":2
+        },
+        "Rulings":[],
+        "New":true
     },
     "200595":{
         "Id":200595,
@@ -21466,6 +21914,31 @@
             "Vicissitude":1,
             "Auspex":2,
             "Dementation":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201592":{
+        "Id":201592,
+        "Name":"Indira",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "ASCII Name":"Indira",
+        "Disciplines":{
+            "Protean":2
         },
         "Rulings":[],
         "New":false
@@ -23400,6 +23873,33 @@
         "Rulings":[],
         "New":false
     },
+    "201593":{
+        "Id":201593,
+        "Name":"Jenny Silver",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Helena Garc\u00eda Huang"
+        ],
+        "ASCII Name":"Jenny Silver",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Presence":2,
+            "Protean":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200691":{
         "Id":200691,
         "Name":"Jephta Hester",
@@ -23976,6 +24476,32 @@
             "Quietus":1,
             "Auspex":2,
             "Celerity":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201595":{
+        "Id":201595,
+        "Name":"Joaqu\u00edn de C\u00e1diz",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Marta Ruiz Anguera"
+        ],
+        "ASCII Name":"Joaquin de Cadiz",
+        "Disciplines":{
+            "Fortitude":1,
+            "Protean":1
         },
         "Rulings":[],
         "New":false
@@ -25108,6 +25634,33 @@
         "Rulings":[],
         "New":false
     },
+    "201596":{
+        "Id":201596,
+        "Name":"Kalinda",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla primogen: During your turn, you can burn the Edge to unlock Kalinda.",
+        "Set":{
+            "V5A":{
+                "PBh":"1"
+            }
+        },
+        "Title":"primogen",
+        "Banned":"",
+        "Artist":[
+            "Mar\u00eda Lor\u00e9n"
+        ],
+        "ASCII Name":"Kalinda",
+        "Disciplines":{
+            "Thaumaturgy":1,
+            "Celerity":2,
+            "Obfuscate":2
+        },
+        "Rulings":[],
+        "New":true
+    },
     "200746":{
         "Id":200746,
         "Name":"Kallista, Master Sculptor",
@@ -25193,6 +25746,33 @@
         "Disciplines":{
             "Obfuscate":1,
             "Quietus":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201597":{
+        "Id":201597,
+        "Name":"Kamile Paukstys",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Anarch: +1 bleed.",
+        "Set":{
+            "V5A":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "ASCII Name":"Kamile Paukstys",
+        "Disciplines":{
+            "Animalism":1,
+            "Fortitude":1,
+            "Protean":2
         },
         "Rulings":[],
         "New":false
@@ -25610,6 +26190,62 @@
                 }
             }
         ],
+        "New":false
+    },
+    "201598":{
+        "Id":201598,
+        "Name":"Kasim Bayar",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":9,
+        "Card Text":"Camarilla Assamite Justicar: Once each combat, Kasim can discard a political action card before range is determined to get +2 strength that combat. +1 bleed.",
+        "Set":{
+            "V5A":{
+                "PBh":"1"
+            }
+        },
+        "Title":"justicar",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ASCII Name":"Kasim Bayar",
+        "Disciplines":{
+            "Auspex":1,
+            "Potence":1,
+            "Celerity":2,
+            "Obfuscate":2,
+            "Thaumaturgy":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201604":{
+        "Id":201604,
+        "Name":"Kassandra Tassaki",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla Prince of Thessaloniki.",
+        "Set":{
+            "V5A":{
+                "PBh":"2"
+            }
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ASCII Name":"Kassandra Tassaki",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Celerity":2,
+            "Thaumaturgy":2
+        },
+        "Rulings":[],
         "New":false
     },
     "200760":{
@@ -26203,6 +26839,33 @@
                 }
             }
         ],
+        "New":false
+    },
+    "201599":{
+        "Id":201599,
+        "Name":"Khadija Al-Kindi",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Camarilla primogen.",
+        "Set":{
+            "V5A":{
+                "PBh":"1"
+            }
+        },
+        "Title":"primogen",
+        "Banned":"",
+        "Artist":[
+            "Samuel Araya"
+        ],
+        "ASCII Name":"Khadija Al-Kindi",
+        "Disciplines":{
+            "Celerity":2,
+            "Obfuscate":2,
+            "Thaumaturgy":2
+        },
+        "Rulings":[],
         "New":false
     },
     "200776":{
@@ -28569,7 +29232,15 @@
             "Auspex":2,
             "Vicissitude":2
         },
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability works on allies recruited in a non-standard way (eg. {Piper}). ",
+                "refs":{
+                    "[ANK 20210913]":"https://www.vekn.net/forum/rules-questions/79322-piper-and-sebastien-goulet#103113",
+                    "[LSJ 20090116]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/e-o1t79x1gUJ"
+                }
+            }
+        ],
         "New":false
     },
     "200845":{
@@ -28836,6 +29507,12 @@
             "Presence":2
         },
         "Rulings":[
+            {
+                "text":"The methusalem playing the frenzy card chooses if the cost is paid in blood or pool. ",
+                "refs":{
+                    "[LSJ 20060831]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/wdVbwFZo8Jg/m/U8P1de7moZ0J"
+                }
+            },
             {
                 "text":"Black Hand is not a title, it is a trait unrelated to any sect. The trait is not lost if the vampire changes sect. ",
                 "refs":{
@@ -30794,6 +31471,33 @@
         ],
         "New":false
     },
+    "201600":{
+        "Id":201600,
+        "Name":"Marcel",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Peter Scholtz"
+        ],
+        "ASCII Name":"Marcel",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Presence":1,
+            "Protean":1
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200909":{
         "Id":200909,
         "Name":"Marcel de Breau",
@@ -31987,6 +32691,33 @@
         "Rulings":[],
         "New":false
     },
+    "201601":{
+        "Id":201601,
+        "Name":"Martina Srnankova",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Anarch: Martina gets +1 intercept during bleed actions.",
+        "Set":{
+            "V5A":{
+                "PG":"2"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "ASCII Name":"Martina Srnankova",
+        "Disciplines":{
+            "Animalism":1,
+            "Fortitude":2,
+            "Protean":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200944":{
         "Id":200944,
         "Name":"Martino della Passaglia",
@@ -32330,6 +33061,33 @@
             "Celerity":2,
             "Potence":2,
             "Quietus":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201602":{
+        "Id":201602,
+        "Name":"Massimiliano",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Anarch Baron of Belo Horizonte: +1 strength.",
+        "Set":{
+            "V5A":{
+                "PG":"2"
+            }
+        },
+        "Title":"baron",
+        "Banned":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ASCII Name":"Massimiliano",
+        "Disciplines":{
+            "Protean":1,
+            "Animalism":2,
+            "Fortitude":2
         },
         "Rulings":[],
         "New":false
@@ -32896,6 +33654,32 @@
             "Fortitude":1,
             "Obfuscate":2,
             "Potence":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201603":{
+        "Id":201603,
+        "Name":"Melech",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "ASCII Name":"Melech",
+        "Disciplines":{
+            "Protean":1,
+            "Obfuscate":2
         },
         "Rulings":[],
         "New":false
@@ -33642,6 +34426,32 @@
         "Disciplines":{
             "Auspex":1,
             "Obfuscate":1
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201605":{
+        "Id":201605,
+        "Name":"Milton Fox",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":3,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "ASCII Name":"Milton Fox",
+        "Disciplines":{
+            "Presence":1,
+            "Protean":1
         },
         "Rulings":[],
         "New":false
@@ -35269,6 +36079,32 @@
         "Rulings":[],
         "New":false
     },
+    "201606":{
+        "Id":201606,
+        "Name":"Nathan Turner",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Riccardo Fabiani"
+        ],
+        "ASCII Name":"Nathan Turner",
+        "Disciplines":{
+            "Animalism":1,
+            "Protean":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "201039":{
         "Id":201039,
         "Name":"Navar McClaren",
@@ -35296,6 +36132,32 @@
         "ASCII Name":"Navar McClaren",
         "Disciplines":{
             "Animalism":1
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201607":{
+        "Id":201607,
+        "Name":"Nayarana",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":4,
+        "Card Text":"Camarilla.",
+        "Set":{
+            "V5A":{
+                "PBh":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "ASCII Name":"Nayarana",
+        "Disciplines":{
+            "Celerity":1,
+            "Thaumaturgy":2
         },
         "Rulings":[],
         "New":false
@@ -36201,6 +37063,34 @@
         "Rulings":[],
         "New":false
     },
+    "201608":{
+        "Id":201608,
+        "Name":"Nonu Dis",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":8,
+        "Card Text":"Anarch: If Nonu Dis is ready during your master phase, you can add 1 blood to a ready Follower of Set you control after playing a master card. +1 bleed.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Riccardo Fabiani"
+        ],
+        "ASCII Name":"Nonu Dis",
+        "Disciplines":{
+            "Fortitude":1,
+            "Obfuscate":2,
+            "Presence":2,
+            "Protean":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "201065":{
         "Id":201065,
         "Name":"Normal",
@@ -36412,6 +37302,33 @@
             "Fortitude":1,
             "Potence":1,
             "Visceratika":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201609":{
+        "Id":201609,
+        "Name":"Octane",
+        "Clan":"Brujah",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PB":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Brian Graupner"
+        ],
+        "ASCII Name":"Octane",
+        "Disciplines":{
+            "Celerity":2,
+            "Potence":2,
+            "Presence":2
         },
         "Rulings":[],
         "New":false
@@ -39681,6 +40598,31 @@
         "Rulings":[],
         "New":false
     },
+    "201610":{
+        "Id":201610,
+        "Name":"Rayne",
+        "Clan":"Brujah",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":2,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PB":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "ASCII Name":"Rayne",
+        "Disciplines":{
+            "Potence":1
+        },
+        "Rulings":[],
+        "New":false
+    },
     "201169":{
         "Id":201169,
         "Name":"Raziya Samater",
@@ -41056,6 +41998,31 @@
             "Auspex":1,
             "Animalism":2,
             "Vicissitude":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201611":{
+        "Id":201611,
+        "Name":"Ruslan Fedorenko",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":2,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PG":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Noora Hirvonen"
+        ],
+        "ASCII Name":"Ruslan Fedorenko",
+        "Disciplines":{
+            "Protean":1
         },
         "Rulings":[],
         "New":false
@@ -42589,7 +43556,15 @@
             "Dominate":2,
             "Obfuscate":2
         },
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"His ability works on allies recruited in a non-standard way (eg. {Piper}). ",
+                "refs":{
+                    "[ANK 20210913]":"https://www.vekn.net/forum/rules-questions/79322-piper-and-sebastien-goulet#103113",
+                    "[LSJ 20090116]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/RQ3ARP9Kvfk/m/e-o1t79x1gUJ"
+                }
+            }
+        ],
         "New":false
     },
     "201258":{
@@ -42937,7 +43912,15 @@
             "Obfuscate":2,
             "Potence":2
         },
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"When using his ability, you do not get to see the card drawn as replacement. ",
+                "refs":{
+                    "[ANK 20211020]":"https://www.vekn.net/forum/rules-questions/79416-sergei-voshkov-the-eye#103610",
+                    "[PIB 20121031]":"http://www.vekn.net/forum/rules-questions/39816-ec-2012-can-you-answer-these?start=18#39908"
+                }
+            }
+        ],
         "New":false
     },
     "201268":{
@@ -43534,6 +44517,33 @@
             "Protean":1,
             "Presence":2,
             "Spiritus":2
+        },
+        "Rulings":[],
+        "New":false
+    },
+    "201612":{
+        "Id":201612,
+        "Name":"Siarhei Levchenko",
+        "Clan":"Brujah",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Anarch.",
+        "Set":{
+            "V5A":{
+                "PB":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Mark Kelly"
+        ],
+        "ASCII Name":"Siarhei Levchenko",
+        "Disciplines":{
+            "Potence":1,
+            "Celerity":2,
+            "Presence":2
         },
         "Rulings":[],
         "New":false
@@ -46254,6 +47264,35 @@
         ],
         "New":false
     },
+    "201613":{
+        "Id":201613,
+        "Name":"Theo Bell",
+        "Clan":"Brujah",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":8,
+        "Card Text":"Anarch: Theo can enter combat with a minion as a (D) action. +1 strength.",
+        "Set":{
+            "V5A":{
+                "PB":"1"
+            }
+        },
+        "Title":"",
+        "Banned":"",
+        "Artist":[
+            "Carmen Cornet"
+        ],
+        "ASCII Name":"Theo Bell",
+        "Disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Celerity":2,
+            "Potence":2,
+            "Presence":2
+        },
+        "Rulings":[],
+        "New":true
+    },
     "201364":{
         "Id":201364,
         "Name":"Theron",
@@ -48181,6 +49220,34 @@
         ],
         "New":false
     },
+    "201614":{
+        "Id":201614,
+        "Name":"Valeriya Zinovieva",
+        "Clan":"Brujah",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Anarch Baron of Moscow: +1 strength.",
+        "Set":{
+            "V5A":{
+                "PB":"1"
+            }
+        },
+        "Title":"baron",
+        "Banned":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "ASCII Name":"Valeriya Zinovieva",
+        "Disciplines":{
+            "Celerity":1,
+            "Presence":1,
+            "Protean":1,
+            "Potence":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "201423":{
         "Id":201423,
         "Name":"Valkyrie",
@@ -49023,6 +50090,12 @@
                 "refs":{
                     "[ANK 20210812]":"https://www.vekn.net/forum/rules-questions/79278-vidal-jarbeaux-cards-requiring-prince#102892"
                 }
+            },
+            {
+                "text":"He must choose a title when playing a card required a \"titled\" vampire (eg. {Rubicon}), but can only choose each title once. He can choose the non-descript \"X votes\" title, but only once. ",
+                "refs":{
+                    "[ANK 20211019]":"https://www.vekn.net/forum/rules-questions/79278-vidal-jarbeaux-cards-requiring-prince#103598"
+                }
             }
         ],
         "New":false
@@ -49307,6 +50380,34 @@
         "Rulings":[],
         "New":false
     },
+    "201615":{
+        "Id":201615,
+        "Name":"Vivian VI",
+        "Clan":"Follower of Set",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":7,
+        "Card Text":"Anarch Baron of Johannesburg.",
+        "Set":{
+            "V5A":{
+                "PMin":"1"
+            }
+        },
+        "Title":"baron",
+        "Banned":"",
+        "Artist":[
+            "Marta Ruiz Anguera"
+        ],
+        "ASCII Name":"Vivian VI",
+        "Disciplines":{
+            "Obfuscate":1,
+            "Thaumaturgy":1,
+            "Presence":2,
+            "Protean":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "201456":{
         "Id":201456,
         "Name":"Vlad Tepes",
@@ -49345,9 +50446,9 @@
                 }
             },
             {
-                "text":"He can use a card in play as if he had a title or a sect, but cannot use it if it would provide unrequired stealth or intercept (eg. he cannot use {No Secrets From the Magaji} to attempt to block a vampire acting with no stealth). ",
+                "text":"He can use {No Secrets From the Magaji} to attempt to block a vampire acting with no stealth. REVERSAL from previous rulings. ",
                 "refs":{
-                    "[ANK 20180403]":"http://www.vekn.net/forum/rules-questions/76491-no-secrets-from-vlad-tepes#86137"
+                    "[ANK 20210903]":"https://www.vekn.net/forum/rules-questions/76491-no-secrets-from-vlad-tepes?start=30#103038"
                 }
             },
             {
@@ -49646,6 +50747,33 @@
                 }
             }
         ],
+        "New":false
+    },
+    "201594":{
+        "Id":201594,
+        "Name":"Warmaksan",
+        "Clan":"Assamite",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":5,
+        "Card Text":"Camarilla Prince of Algiers.",
+        "Set":{
+            "V5A":{
+                "PBh":"2"
+            }
+        },
+        "Title":"prince",
+        "Banned":"",
+        "Artist":[
+            "Clint Langley"
+        ],
+        "ASCII Name":"Warmaksan",
+        "Disciplines":{
+            "Celerity":1,
+            "Obfuscate":1,
+            "Thaumaturgy":2
+        },
+        "Rulings":[],
         "New":false
     },
     "201464":{

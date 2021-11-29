@@ -7,6 +7,28 @@
     "name": "Print-on-Demand (DTC)",
     "year": ""
   },
+  "V5A": {
+    "name": "Fifth Edition (Anarchs)",
+    "year": "2021",
+    "precons": {
+      "PMin": {
+        "name": "Ministry",
+        "clan": "Ministry"
+      },
+      "PB": {
+        "name": "Brujah",
+        "clan": "Brujah"
+      },
+      "PBh": {
+        "name": "Banu Haqim",
+        "clan": "Banu Haqim"
+      },
+      "PG": {
+        "name": "Gangrel",
+        "clan": "Gangrel"
+      }
+    }
+  },
   "KSU": {
     "name": "Unleashed (Kickstarter)",
     "year": "2021",

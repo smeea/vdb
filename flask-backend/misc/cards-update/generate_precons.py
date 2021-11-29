@@ -1,6 +1,12 @@
 import json
 
 bundles = {
+    "V5A": {
+        "PBh": {},
+        "PMin": {},
+        "PB": {},
+        "PG": {},
+    },
     "KSU": {
         "AU": {},
         "DM": {},
