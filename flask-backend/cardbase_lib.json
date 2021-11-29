@@ -94,7 +94,6 @@
         "Burn Option":"",
         "Card Text":"Unique mortal with 2 life. 1 strength, 0 bleed.\nYou can burn 47th Street Royals to reduce a bleed against you by 3.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PB":"1"
             }
@@ -925,11 +924,11 @@
         "Burn Option":"",
         "Card Text":"Only usable by a vampire with capacity 4 or more.\nThe bearer can lock this card during the polling step of any referendum before votes and ballots are cast to get +1 vote. A vampire can have only one Agate Talisman.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "B":"1"
+            },
+            "KoT":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -1142,11 +1141,11 @@
         "Burn Option":"",
         "Card Text":"[dom] (D) Bleed with +1 bleed.\n[obe] (D) Bleed with +1 bleed. Vampires with Dementation [dem], mortals, and mages get -1 intercept against this action.\n[OBE] +1 stealth action. (D) Take control of any Malkavian, Malkavian antitribu, mortal, or mage until the end of the turn.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -1819,11 +1818,11 @@
         "Burn Option":"",
         "Card Text":"Unique.\nThis vampire can burn 1 blood to play a card requiring basic Temporis [tem] from your hand. This equipment can be used only once each turn.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -1964,7 +1963,6 @@
             "Anarchs":{
                 "C":true
             },
-            "V5":{},
             "V5A":{
                 "PB":"1"
             }
@@ -2023,7 +2021,6 @@
             "Anarchs":{
                 "R":true
             },
-            "V5":{},
             "V5A":{
                 "PG":"1"
             }
@@ -3009,11 +3006,11 @@
         "Burn Option":"",
         "Card Text":"Unique ghoul with 1 life. 0 strength, 1 bleed.\nArcane Appraiser can move an equipment from a vampire in torpor to a ready minion you control as a +1 stealth (D) action. If a second copy of a unique equipment you control would enter play, instead it is burned.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "B":"1"
+            },
+            "KoT":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -3844,11 +3841,11 @@
         "Burn Option":"",
         "Card Text":"Only usable after resolution of a successful action. A minion can play only one As the Crow each turn.\n[FLIGHT] Unlock this minion.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -4746,7 +4743,6 @@
             "25th":{
                 "":"1"
             },
-            "V5":{},
             "V5A":{
                 "PG":"1"
             }
@@ -4774,7 +4770,6 @@
         "Burn Option":"",
         "Card Text":"Requires a baron. Only usable if a minion is bleeding you, after blocks are declined.\nLock this reacting vampire. Change the target of the bleed to another Methuselah other than the acting minion's controller (that Methuselah can attempt to block).",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PB":"2"
             }
@@ -5501,7 +5496,6 @@
             "KSU":{
                 "TUA":"4"
             },
-            "V5":{},
             "V5A":{
                 "PG":"2"
             }
@@ -5561,11 +5555,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action. Requires a non-sterile vampire.\nPut this card in play; it becomes a 0-capacity non-unique vampire of the same clan and sect as the acting vampire and cannot act this turn; put up to 3 master discipline cards from your hand to this vampire; move up to 1 blood from the acting vampire to this new vampire. Burn this vampire if they have no capacity-increasing discipline cards.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "U":true
             }
         },
         "Requirement":"non-sterile",
@@ -5700,11 +5694,11 @@
         "Burn Option":"",
         "Card Text":"Successful referendum means you gain 1 pool for each ready Daughter of Cacophony you control, and each non-Daughter of Cacophony vampire who cast votes or ballots in favor gains 1 blood.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -6132,7 +6126,6 @@
             "SoC":{
                 "C":true
             },
-            "V5":{},
             "V5A":{
                 "PBh":"1"
             }
@@ -6181,11 +6174,11 @@
         "Burn Option":"Y",
         "Card Text":"Only usable before range is determined in combat with a Camarilla vampire.\nPut this card on this vampire. In combat with a Camarilla vampire, this vampire gets +1 strength and can burn this card to get 1 press, only usable to continue combat. A vampire can have only one Black Beast.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -6756,11 +6749,11 @@
         "Burn Option":"",
         "Card Text":"Move a vampire in your ash heap with superior Fortitude [FOR] and superior Necromancy [NEC] who was burned from play to your ready region (with no blood).",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             },
             "POD":{
                 "DTC":true
@@ -6870,11 +6863,11 @@
         "Burn Option":"Y",
         "Card Text":"Put this card on an Ahrimane you control with any cards requiring Spiritus [spi] from your hand (before replacing), face down and out of play (you can look at the cards at any time). This Ahrimane can play these cards as if from your hand. Burn this card if it has no cards on it. A vampire can have only one Blessing of the Beast.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -7443,14 +7436,14 @@
                 "PTr":"2",
                 "PV":"3"
             },
-            "V5":{
-                "PM":"4",
-                "PV":"3"
-            },
             "V5A":{
                 "PB":"4",
                 "PG":"4",
                 "PMin":"4"
+            },
+            "V5":{
+                "PM":"4",
+                "PV":"3"
             }
         },
         "Requirement":"",
@@ -7677,11 +7670,11 @@
         "Burn Option":"",
         "Card Text":"[tha] +1 stealth action. (D) Burn an ally.\n[THA] +6 stealth action. (D) Put this card on a ready locked younger vampire. Reaction cards the attached vampire plays while locked are canceled as they are played (their cost must be paid still). Burn this card if the attached vampire is in torpor.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "U":true
             }
         },
         "Requirement":"",
@@ -7805,7 +7798,6 @@
             "Third":{
                 "PTr":"3"
             },
-            "V5":{},
             "V5A":{
                 "PBh":"2"
             }
@@ -9373,11 +9365,11 @@
         "Burn Option":"",
         "Card Text":"[tha] Maneuver.\n[vis] Strike: 2R damage, with 1 optional maneuver.\n[VIS] Only usable before range is determined. This vampire sets the range for this round.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -10957,7 +10949,6 @@
             "KSU":{
                 "AU":"1"
             },
-            "V5":{},
             "V5A":{
                 "PB":"1"
             }
@@ -11110,11 +11101,11 @@
             "FB":{
                 "PN":"5"
             },
-            "V5":{
-                "PN":"2"
-            },
             "V5A":{
                 "PG":"6"
+            },
+            "V5":{
+                "PN":"2"
             }
         },
         "Requirement":"",
@@ -11178,7 +11169,6 @@
             "Gehenna":{
                 "R":true
             },
-            "V5":{},
             "V5A":{
                 "PB":"1"
             }
@@ -11419,11 +11409,11 @@
             "FB":{
                 "PN":"3"
             },
-            "V5":{
-                "PN":"4"
-            },
             "V5A":{
                 "PG":"4"
+            },
+            "V5":{
+                "PN":"4"
             }
         },
         "Requirement":"",
@@ -11501,11 +11491,11 @@
         "Burn Option":"",
         "Card Text":"Archetype.\nPut this card on a vampire you control. Once each turn, this vampire can burn 1 blood to unlock after performing a successful action costing blood. A vampire can have only one archetype.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -12307,11 +12297,11 @@
         "Burn Option":"",
         "Card Text":"[for] (D) Enter combat with a locked minion.\n[spi] (D) Enter combat with a minion. Set the range for the first round of that combat to close, and this acting vampire's initial strike during that round is strike: hand strike at +1 damage.\n[SPI] As [spi] above, but the strike is at +2 damage.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -12413,11 +12403,11 @@
         "Burn Option":"",
         "Card Text":"[aus][pre] Burn 1 blood to cancel the opposing minion's strike card (the minion chooses another strike) or grapple card as it is played, and its cost is not paid. A vampire can play only one Charismatic Aura at basic each round.\n[AUS][PRE] Strike: combat ends.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "U":true
             }
         },
         "Requirement":"",
@@ -12633,11 +12623,11 @@
         "Burn Option":"",
         "Card Text":"[pre] (D) Bleed with +2 bleed.\n[tem] (D) Bleed. Minions without Temporis [tem] cannot block, and this vampire cannot play other cards requiring any Discipline this action.\n[TEM] As [tem] above, and unlock this vampire.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -12692,11 +12682,11 @@
         "Burn Option":"",
         "Card Text":"Changeling with 1 life.\nThis Malkavian gets +1 bleed.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "A":"1"
+            },
+            "KoT":{
+                "U":true
             }
         },
         "Requirement":"",
@@ -13305,7 +13295,6 @@
             "KoT":{
                 "C":true
             },
-            "V5":{},
             "V5A":{
                 "PG":"2"
             }
@@ -13564,11 +13553,11 @@
         "Burn Option":"",
         "Card Text":"[san] Only usable before range is determined. Move an equipment from a ready Blood Brother of the same circle to this Blood Brother in combat.\n[SAN] As above, but usable any time during combat.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -13666,7 +13655,6 @@
             "TR":{
                 "R":true
             },
-            "V5":{},
             "V5A":{
                 "PMin":"1"
             }
@@ -13836,11 +13824,11 @@
         "Burn Option":"Y",
         "Card Text":"Unique.\nPut this card in play. During your unlock phase, a Salubri antitribu you control can gain 1 blood. If a Salubri antitribu burns a ready vampire or sends a vampire to torpor in combat or as a (D) action, that Salubri antitribu can unlock after the end of the minion phase.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -13890,7 +13878,6 @@
             "Promo":{
                 "20090929":true
             },
-            "V5":{},
             "V5A":{
                 "PMin":"1"
             }
@@ -14195,11 +14182,11 @@
         "Burn Option":"Y",
         "Card Text":"Unique.\nPut this card in play. Lock during your minion phase to unlock a ready Daughter of Cacophony. Any titled vampire can call a referendum to burn this card as a +1 stealth political action.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -15390,7 +15377,6 @@
             "TR":{
                 "R":true
             },
-            "V5":{},
             "V5A":{
                 "PG":"2"
             }
@@ -17555,11 +17541,11 @@
         "Burn Option":"",
         "Card Text":"Archetype. Trifle.\nPut this card on a vampire you control. Once each turn, this vampire can gain 1 blood or burn 1 blood to unlock after an action (successful or not) is performed during which they used 3 or more Disciplines to play cards. A vampire can have only one archetype.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -17630,11 +17616,11 @@
         "Burn Option":"",
         "Card Text":"Melee weapon.\nYou can put a second Dagger from your hand or ash heap on this minion after they equip this Dagger from your hand. Damage inflicted on a Kiasyd by this weapon is aggravated. Strike: strength+1 damage. Alternatively, ranged strike: strength damage and, after strike resolution, put this weapon out of play until the end of the action. Burn this weapon if any damage from it is prevented.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -17869,11 +17855,11 @@
         "Burn Option":"",
         "Card Text":"Out-of-turn.\nCancel a minion card as it is played, its cost is not paid, and put this card in play. That card cannot be played again this turn. The next card played that would cancel another Methuselah's minion card as it is played is canceled, its cost is not paid, and this card is burned instead.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "A":"1"
+            },
+            "KoT":{
+                "U":true
             }
         },
         "Requirement":"",
@@ -17941,11 +17927,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action. Requires a vampire with capacity 8 or more.\nGain 2 pool.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "U":true
             }
         },
         "Requirement":"capacity 8 or more",
@@ -18506,12 +18492,12 @@
         "Burn Option":"",
         "Card Text":"A vampire can play only one Death Seeker each round.\nCancel a combat card played by the opposing minion as it is played, and its cost is not paid.",
         "Set":{
+            "HttBR":{
+                "B":"2"
+            },
             "HttB":{
                 "C":true,
                 "PSal":"2"
-            },
-            "HttBR":{
-                "B":"2"
             }
         },
         "Requirement":"",
@@ -18622,11 +18608,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\n[thn] (D) Put this card on any minion. The attached minion gets -1 stealth on non-hunt actions and cannot use additional strikes. During their unlock phase, the attached minion can burn 2 blood or life to burn this card.\n[THN] As [thn] above, and presses cost the attached minion 1 additional blood or life to use.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -18731,7 +18717,6 @@
         "Burn Option":"",
         "Card Text":"Requires an Anarch.\n[ani] Only usable during an action directed at you (or a card you control). +2 intercept.\n[for] Reduce a bleed against you by 2.\n[pro] Only usable by a locked vampire. This vampire burns 1 blood to unlock.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PG":"6"
             }
@@ -18756,11 +18741,11 @@
         "Burn Option":"",
         "Card Text":"[ani] (D) Bleed with +1 bleed.\n[ANI] Frenzy. (D) Enter combat with and lock a vampire. The target vampire is considered the acting minion during that combat.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "C":true
             },
             "HttB":{
                 "PSam":"2"
@@ -18771,11 +18756,11 @@
             "SP":{
                 "DoF":"4"
             },
-            "V5":{
-                "PN":"6"
-            },
             "V5A":{
                 "PG":"6"
+            },
+            "V5":{
+                "PN":"6"
             }
         },
         "Requirement":"",
@@ -18993,7 +18978,6 @@
                 "LB":"2",
                 "PwN":"2"
             },
-            "V5":{},
             "V5A":{
                 "PB":"2"
             }
@@ -20660,11 +20644,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\n[FLIGHT] (D) Enter combat with a minion. This acting minion gets 1 optional maneuver during the first round of that combat. If this action is blocked, the blocking minion gets 1 optional press during the first round of the resulting combat.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -21257,7 +21241,6 @@
             "Promo":{
                 "20210701":true
             },
-            "V5":{},
             "V5A":{
                 "PG":"1"
             }
@@ -21359,11 +21342,11 @@
         "Burn Option":"Y",
         "Card Text":"Unique changeling with 1 life. 1 strength, 0 bleed.\nDraeven can lock to prevent 1 damage inflicted in combat on a Kiasyd. Cards requiring Chimerstry [chi] can neither be played while he is acting, blocking, or in combat, nor target him.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             },
             "POD":{
                 "DTC":true
@@ -22138,7 +22121,6 @@
             "KSU":{
                 "AU":"3"
             },
-            "V5":{},
             "V5A":{
                 "PB":"4"
             }
@@ -22231,11 +22213,11 @@
         "Burn Option":"",
         "Card Text":"[pro] Burn 1 blood to get +1 intercept.\n[spi] +1 intercept.\n[SPI] +2 intercept.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -22278,7 +22260,6 @@
             "25th":{
                 "":"4"
             },
-            "V5":{},
             "V5A":{
                 "PG":"4"
             }
@@ -22316,7 +22297,6 @@
             "25th":{
                 "":"6"
             },
-            "V5":{},
             "V5A":{
                 "PMin":"5"
             }
@@ -22610,7 +22590,6 @@
             "25th":{
                 "":"1"
             },
-            "V5":{},
             "V5A":{
                 "PG":"1"
             }
@@ -23727,13 +23706,13 @@
             "FB":{
                 "PTo":"6"
             },
-            "V5":{
-                "PTo":"6",
-                "PV":"8"
-            },
             "V5A":{
                 "PB":"6",
                 "PMin":"7"
+            },
+            "V5":{
+                "PTo":"6",
+                "PV":"8"
             }
         },
         "Requirement":"",
@@ -23801,7 +23780,6 @@
         "Burn Option":"",
         "Card Text":"[pre][pro] +1 stealth.\n[PRE][PRO] As above, and once this action, you can burn 1 of your corruption counters from a blocking minion to have their block attempt fail, and they cannot attempt to block this action again.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PMin":"6"
             }
@@ -24070,11 +24048,11 @@
         "Burn Option":"",
         "Card Text":"[vis] [ACTION] +1 stealth action. Put this card on a location and unlock this vampire. While this vampire is ready, their controller can burn this card during a (D) action against the attached location to have the action fail, and the acting minion and this vampire enter combat.\n[VIS] [REACTION] Only usable during a (D) action against any location. This vampire unlocks, the action fails, and the acting minion and this vampire enter combat.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -24235,7 +24213,6 @@
             "Promo":{
                 "20190629":true
             },
-            "V5":{},
             "V5A":{
                 "PMin":"2"
             }
@@ -24292,11 +24269,11 @@
         "Burn Option":"",
         "Card Text":"Unique.\nPut this card on a Ventrue with capacity 8 or more. This Ventrue gets +1 intercept and +1 vote. This Ventrue can force any vampire to yield a contested title as a +1 stealth (D) action.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "B":"1"
+            },
+            "KoT":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -25189,11 +25166,11 @@
         "Burn Option":"",
         "Card Text":"[aus] Only usable during an action directed at you (or a card you control). +2 intercept.\n[AUS] Only usable by a locked vampire. This vampire wakes (they ignore the requirement to be unlocked for playing reaction cards and attempting to block until the end of the action).",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "C":true
             },
             "HttB":{
                 "PSal":"3"
@@ -25320,11 +25297,11 @@
         "Burn Option":"",
         "Card Text":"[pro] +1 intercept, and put this card on this vampire. This vampire gets -1 stealth. Burn this card during your discard phase.\n[PRO] As above, with 1 optional maneuver during the first round of the resulting combat if this vampire blocks.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -25439,7 +25416,6 @@
         "Burn Option":"",
         "Card Text":"Only usable by a locked Gangrel.\nThis Gangrel unlocks and attempts to block. During this action, this Gangrel can burn 1 blood to get +1 intercept. Lock this Gangrel after action resolution if they did not block this action.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PG":"6"
             }
@@ -25598,11 +25574,11 @@
         "Burn Option":"",
         "Card Text":"Only usable if an ally or younger vampire is taking a (D) action against you (or a card you control).\n[aus] +2 intercept.\n[myt] The action fails. Lock this reacting vampire.\n[MYT] As [myt] above, and the acting minion does not unlock as normal during their next unlock phase.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -25962,12 +25938,12 @@
             "FB":{
                 "PN":"1"
             },
-            "V5":{
-                "PN":"1"
-            },
             "V5A":{
                 "PB":"1",
                 "PG":"1"
+            },
+            "V5":{
+                "PN":"1"
             }
         },
         "Requirement":"",
@@ -26035,11 +26011,11 @@
         "Burn Option":"",
         "Card Text":"[mel] Choose up to five older vampires. Successful referendum means each chosen vampire gains 1 blood.\n[MEL] As above, and successful referendum means this card is put in play. Unique. You can burn this card before range is determined to end any combat.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -27426,11 +27402,11 @@
         "Burn Option":"",
         "Card Text":"[tha] Only usable at long range. Burn 1 blood to strike: 1R aggravated damage.\n[dai] Strike: 1 aggravated damage.\n[DAI] Strike: 1R aggravated damage.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -27564,7 +27540,6 @@
             "Third":{
                 "PB":"5"
             },
-            "V5":{},
             "V5A":{
                 "PBh":"5"
             }
@@ -27669,13 +27644,12 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\n[cel] (D) Bleed.\n[CEL] (D) Enter combat with a locked minion. This acting vampire gets 1 optional maneuver during that combat.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "B":"2"
             },
-            "V5":{},
+            "KoT":{
+                "C":true
+            },
             "V5A":{
                 "PBh":"2"
             }
@@ -27940,11 +27914,11 @@
         "Burn Option":"",
         "Card Text":"Weapon: gun.\nStrike: 1R damage, with 1 optional maneuver each combat. This maneuver cannot be used during the first round. Once each round, if the bearer strikes with this gun, they get 1 optional additional strike (limited) this round, only usable to strike with this gun.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -28093,11 +28067,11 @@
         "Burn Option":"",
         "Card Text":"[pre] [COMBAT] Strike: combat ends.\n[PRE] [ACTIONMODIFIER] Only usable as the action is announced. Vampires must burn 1 blood to attempt to block this action. Non-zombie allies cannot block this action.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -28681,7 +28655,6 @@
             "25th":{
                 "":"6"
             },
-            "V5":{},
             "V5A":{
                 "PMin":"4"
             }
@@ -28743,7 +28716,6 @@
         "Burn Option":"",
         "Card Text":"[pro] [ACTIONMODIFIER] Only usable if a minion attempts to block. The blocking minion gets -1 intercept. If this action is blocked, this vampire gets 1 optional maneuver and cannot use equipment during the resulting combat.\n[PRO] [REACTION] +1 intercept. If this vampire blocks, they get 1 optional maneuver and cannot use equipment during the resulting combat.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PG":"2"
             }
@@ -28768,7 +28740,6 @@
         "Burn Option":"",
         "Card Text":"[pro] [COMBAT] Strike: steal 1 blood or life (becoming blood).\n[PRO] [ACTIONMODIFIER] Only usable as the action is announced. +1 stealth, even if stealth is not yet needed.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PMin":"4"
             }
@@ -28854,7 +28825,6 @@
         "Burn Option":"",
         "Card Text":"Only usable before range is determined. A vampire can play only one Form of the Wolf each combat.\n[pro] This vampire gets +1 strength this combat.\n[PRO] As above, and this vampire gains 1 optional press this combat.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PG":"2"
             }
@@ -29619,7 +29589,6 @@
             "SP":{
                 "PwN":"2"
             },
-            "V5":{},
             "V5A":{
                 "PB":"1"
             }
@@ -30819,11 +30788,11 @@
         "Burn Option":"",
         "Card Text":"[obf] [ACTIONMODIFIER] +1 stealth.\n[obe] [ACTIONMODIFIER][REACTION] Only usable if this vampire is about to enter combat with an ally. Lock that ally and end the action. (Do not lock this vampire if they are blocking.)\n[OBE] [ACTIONMODIFIER] +1 stealth.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -31731,11 +31700,11 @@
         "Burn Option":"",
         "Card Text":"Only one Great Symposium can be played in a game.\nSearch your crypt for a Kiasyd (shuffle afterward), reveal them, and move them to your uncontrolled region, then distribute 3 blood from the blood bank among one or more Kiasyd in your uncontrolled region.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -31835,11 +31804,11 @@
         "Burn Option":"",
         "Card Text":"[dom] (D) Bleed with +1 bleed.\n[myt] +1 stealth action. (D) Burn an equipment. Not usable on melee weapons.\n[MYT] +1 stealth action. (D) Bleed with +1 bleed.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -31946,11 +31915,11 @@
         "Burn Option":"",
         "Card Text":"Only usable before range is determined.\n[thn] X is the number of Groaning Corpses already played this combat. The opposing minion takes 1 environmental damage each round this combat during normal strike resolution at close range.\n[THN] As above, but for 2 environmental damage. A vampire can play only one Groaning Corpse at superior each combat.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -32247,11 +32216,11 @@
             "HttB":{
                 "PGar":1
             },
-            "V5":{
-                "PN":"1"
-            },
             "V5A":{
                 "PB":"1"
+            },
+            "V5":{
+                "PN":"1"
             }
         },
         "Requirement":"",
@@ -32873,7 +32842,6 @@
         "Burn Option":"",
         "Card Text":"Put this card in play. During a bleed action, an Assamite you control can discard a combat card to get +1 bleed.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PBh":"4"
             }
@@ -32985,11 +32953,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\n(D) Your prey burns 3 pool for each /Choir/ card you control. Burn all /Choir/ cards you control.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -33307,12 +33275,12 @@
             "KMW":{
                 "PAn":"3"
             },
-            "V5":{
-                "PN":"1"
-            },
             "V5A":{
                 "PB":"1",
                 "PG":"1"
+            },
+            "V5":{
+                "PN":"1"
             }
         },
         "Requirement":"",
@@ -33368,11 +33336,11 @@
         "Burn Option":"",
         "Card Text":"Only usable after action resolution (successful or not).\n[san] Choose a Blood Brother of the same circle as this Blood Brother. As your next action, the chosen Blood Brother can play the action card used for this action from your ash heap as if from your hand.\n[SAN] As above, but this card costs 1 fewer blood.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -33519,7 +33487,6 @@
             "SP":{
                 "DoF":"1"
             },
-            "V5":{},
             "V5A":{
                 "PMin":"1"
             }
@@ -33550,7 +33517,6 @@
             "KoT":{
                 "R":true
             },
-            "V5":{},
             "V5A":{
                 "PMin":"1"
             }
@@ -33878,13 +33844,12 @@
         "Burn Option":"",
         "Card Text":"+3 stealth action.\n[pot] Put this card on this vampire. This vampire gets +1 strength. This vampire can strike: burn equipment. Burn this card if this vampire is in torpor. A vampire can have only one Heroic Might.\n[POT] As above, with an additional +1 strength, and this vampire can strike: 2R damage.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "A":"2"
             },
-            "V5":{},
+            "KoT":{
+                "U":true
+            },
             "V5A":{
                 "PB":"2"
             }
@@ -34058,11 +34023,11 @@
             "LoB":{
                 "PI":"4"
             },
-            "V5":{
-                "PV":"4"
-            },
             "V5A":{
                 "PG":"4"
+            },
+            "V5":{
+                "PV":"4"
             }
         },
         "Requirement":"",
@@ -34154,12 +34119,12 @@
         "Burn Option":"",
         "Card Text":"[aus] Reduce a bleed against you by 1.\n[val] The action fails, unless the acting minion burns 1 blood. Only one Hide the Heart can be played at [val] each action.\n[VAL] Reduce a bleed against you by 2, or lock to reduce a bleed against any Methuselah by 2.",
         "Set":{
+            "HttBR":{
+                "B":"2"
+            },
             "HttB":{
                 "C":true,
                 "PSal":"2"
-            },
-            "HttBR":{
-                "B":"2"
             }
         },
         "Requirement":"",
@@ -34493,11 +34458,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\n[san] Unlock this Blood Brother and another ready Blood Brother of the same circle. Only one Hive Mind can be played at [san] each turn.\n[SAN] Add 3 blood to a Blood Brother of the same circle in your uncontrolled region.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"3"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -34719,11 +34684,11 @@
         "Burn Option":"",
         "Card Text":"[pot] (D) Inflict 1 unpreventable damage on a ready minion.\n[POT] (D) Inflict 2 unpreventable damage on a ready minion.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "C":true
             },
             "HttB":{
                 "PSam":"2"
@@ -34930,11 +34895,11 @@
         "Burn Option":"",
         "Card Text":"If a vampire successfully hunts, move 1 blood from that vampire to this card after resolution. Burn this card if it has 5 blood.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -34964,7 +34929,6 @@
         "Burn Option":"",
         "Card Text":"Only usable before range is determined.\n[tha] This round, this vampire can strike, ranged: steal 1 blood or life (becoming blood).\n[THA] As above, but for 2 blood or life (becoming blood).",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PBh":"10"
             }
@@ -35054,7 +35018,6 @@
         "Burn Option":"",
         "Card Text":"[cel][tha] (D) Enter combat with a minion. This acting vampire gets 1 optional press during that combat.\n[CEL][THA] As above, and the opposing minion cannot strike: combat ends during the first round of that combat.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PBh":"4"
             }
@@ -35079,11 +35042,11 @@
         "Burn Option":"",
         "Card Text":"[dai] +1 stealth.\n[dai][obf] Cancel a reaction card requiring Auspex [aus] as it is played (cost must be paid).\n[DAI][OBF] As [dai][obf] above, and/or gain 1 pool after action resolution if this action is successful.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -35579,11 +35542,11 @@
             "HttB":{
                 "PGar":"3"
             },
-            "V5":{
-                "PN":"4"
-            },
             "V5A":{
                 "PB":"6"
+            },
+            "V5":{
+                "PN":"4"
             }
         },
         "Requirement":"",
@@ -36365,11 +36328,11 @@
         "Burn Option":"",
         "Card Text":"Unique demon with 2 life. 1 strength, 3 bleed. Requires an infernal vampire.\n[dai] Infernal Servitor can act the turn it is recruited. Remove it from the game if you control no infernal vampires, or after it performs a successful action.\n[DAI] As above, and the Servitor can play cards requiring basic Daimoinon [dai] and/or Obfuscate [obf] as a vampire.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"infernal",
@@ -37536,7 +37499,6 @@
             "FB":{
                 "PTr":"1"
             },
-            "V5":{},
             "V5A":{
                 "PMin":"1"
             }
@@ -37970,11 +37932,11 @@
         "Burn Option":"",
         "Card Text":"Unique melee weapon.\nStrike: strength+1 damage. Damage inflicted on a Kiasyd by this weapon is aggravated. Once each combat, the bearer can cancel a grapple card played by the opposing minion as it is played, its cost is not paid, and the bearer's initial strike this round must be or have been with this weapon (not usable otherwise).",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -37997,11 +37959,11 @@
         "Burn Option":"Y",
         "Card Text":"Unique.\nAdd 1 counter on this card after this Salubri performs a successful action. Burn these counters if this card is moved. Except during an action, you can remove this ready Salubri from the game to move these counters to your pool.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -38430,11 +38392,11 @@
         "Burn Option":"",
         "Card Text":"Once each combat, the bearer can prevent 2 damage from gun strikes or 1 damage from any other source. A minion can have only one Kevlar Vest.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "U":true
             },
             "V5":{
                 "PTr":"1"
@@ -39869,12 +39831,12 @@
         "Burn Option":"",
         "Card Text":"[tha] Strike: hand strike at +1 damage.\n[vis] As [tha] above, and once this round this vampire can burn 1 blood to get 1 press, only usable to continue combat.\n[VIS] As [vis] above, but at +2 damage.",
         "Set":{
+            "HttBR":{
+                "A":"2"
+            },
             "HttB":{
                 "C":true,
                 "PGar":"2"
-            },
-            "HttBR":{
-                "A":"2"
             }
         },
         "Requirement":"",
@@ -40921,11 +40883,11 @@
         "Burn Option":"",
         "Card Text":"Electronic.\nThe bearer gets 1 optional maneuver during the first round of combat. You can move any aim card the bearer uses to this card, face up and out of play (even if it is canceled). The bearer can play an aim card on this equipment as if from your hand; it is then removed from the game.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "U":true
             }
         },
         "Requirement":"",
@@ -41011,11 +40973,11 @@
         "Burn Option":"",
         "Card Text":"[mel] Allocate 4 points among one or more Methuselahs. Successful referendum means each Methuselah burns 1 pool for each point allocated.\n[MEL] As above, and choose any Methuselah. Successful referendum means the chosen Methuselah gains 1 pool.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -41094,7 +41056,6 @@
         "Burn Option":"",
         "Card Text":"Requires an Anarch.\n[cel] (D) Steal 1 pool from another Methuselah.\n[pot] (D) Enter combat with a minion.\n[pre] (D) Bleed with +1 bleed.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PB":"6"
             }
@@ -41377,11 +41338,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth hunt action.\n[pro] Hunt, and put this card on this vampire. This vampire can burn this card and 1 blood to get +1 stealth. A vampire can have only one Loki's Gift.\n[PRO] (D) As above, and burn 1 blood from any vampire. This vampire can burn this card as above, or can burn it during the polling step of any referendum to get +2 votes.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -41509,11 +41470,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\n[for] Rescue up to two vampires from torpor. Ready vampires can ignore the normal prey, predator or target restrictions for blocking this action.\n[obe] Put this card on this vampire. During your unlock phase, this vampire can gain 1 blood. Any vampire can burn this card as a (D) action.\n[OBE] As [obe] above, but this vampire can gain 2 blood.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -41700,11 +41661,11 @@
         "Burn Option":"",
         "Card Text":"Only usable at close range.\n[ani] Strike: hand strike at +1 damage.\n[val] Strike: combat ends, and inflict 1 unpreventable damage on the opposing minion after combat ends.\n[VAL] As [val] above, and this vampire can burn 1 blood to unlock before combat ends.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -43341,7 +43302,6 @@
             "POD":{
                 "DTC":true
             },
-            "V5":{},
             "V5A":{
                 "PBh":"1"
             }
@@ -44314,11 +44274,11 @@
         "Burn Option":"",
         "Card Text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally cannot act. During a (D) action against you (or a card you control), this ally can burn 1 life to get +1 intercept. Burn this ally if he blocks a vampire, before block resolution.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -45667,11 +45627,11 @@
         "Burn Option":"",
         "Card Text":"[ani] Only usable if an ally or younger vampire attempts to block. Allies and younger vampires get -1 intercept.\n[spi] +1 stealth.\n[SPI] Burn 1 blood to get +2 stealth.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -45735,11 +45695,11 @@
         "Burn Option":"",
         "Card Text":"Requires a vampire with capacity 7 or more. Only usable after resolution of an action blocked by an ally or a vampire with capacity 5 or less. Not usable if, during this action, more than 1 round of combat has occurred or this vampire has lost 3 or more blood or ended combat before the press step.\nThe action continues as if unblocked.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"capacity 7 or more",
@@ -45874,7 +45834,6 @@
             "TR":{
                 "C":true
             },
-            "V5":{},
             "V5A":{
                 "PB":"2"
             }
@@ -46032,11 +45991,11 @@
         "Burn Option":"",
         "Card Text":"Only usable at close range.\n[cel] Strike: combat ends.\n[val] Strike: combat ends, and put this card on the opposing minion. The attached minion cannot act or block. Burn this card at the end of the turn.\n[VAL] As [val] above, and if this vampire was blocked while performing a non-bleed action, the action continues as if unblocked.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -46098,11 +46057,11 @@
         "Burn Option":"",
         "Card Text":"[dom] Only usable during a bleed action. +1 bleed (limited).\n[DOM] Only usable by a ready vampire other than the acting minion. The acting minion can play cards requiring basic Dominate [dom] as a vampire until the end of this action.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -46250,7 +46209,6 @@
             "HttB":{
                 "PKia":1
             },
-            "V5":{},
             "V5A":{
                 "PBh":"1"
             }
@@ -46438,11 +46396,11 @@
             "CE":{
                 "R":true
             },
-            "V5":{
-                "PN":"2"
-            },
             "V5A":{
                 "PG":"2"
+            },
+            "V5":{
+                "PN":"2"
             }
         },
         "Requirement":"",
@@ -47037,11 +46995,11 @@
         "Burn Option":"",
         "Card Text":"Choose one or more Methuselahs. Successful referendum means each chosen Methuselah burns 1 pool, plus 3 additional pool if they control a ready vampire with capacity 4 or less.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "C":true
             },
             "SP":{
                 "PoS":"1"
@@ -47299,11 +47257,11 @@
         "Burn Option":"",
         "Card Text":"Unique location.\nTitled Brujah get +1 bleed and +1 vote. Ventrue get -1 vote.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "A":"1"
+            },
+            "KoT":{
+                "R":true
             },
             "Anthology":{
                 "":"1"
@@ -47449,11 +47407,11 @@
         "Burn Option":"Y",
         "Card Text":"+1 stealth action.\n[spi] Put this card on a vampire you control. The attached vampire gets 1 optional maneuver each combat. A vampire can have only one New Moon Sigil.\n[SPI] As above, and during an action, the attached vampire can burn 2 blood to get +1 stealth.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -47844,11 +47802,11 @@
         "Burn Option":"",
         "Card Text":"[obf] Only usable at long range. Strike: combat ends.\n[OBF] Strike: combat ends.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "C":true
             },
             "FB":{
                 "PM":"2"
@@ -47918,11 +47876,11 @@
         "Burn Option":"",
         "Card Text":"Unique location.\nLock this card and a ready vampire you control during your unlock phase to lock a minion controlled by your prey. Any titled vampire can burn this card as a (D) action.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "A":"1"
+            },
+            "KoT":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -48695,12 +48653,12 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\nGain 1 pool. If you do not have the Edge, you get the Edge. Otherwise, you can burn the Edge to gain 1 additional pool.",
         "Set":{
+            "HttBR":{
+                "A":"2"
+            },
             "HttB":{
                 "C":true,
                 "PSam":"2"
-            },
-            "HttBR":{
-                "A":"2"
             }
         },
         "Requirement":"",
@@ -48754,11 +48712,11 @@
         "Burn Option":"",
         "Card Text":"Do not replace until your unlock phase.\n[obf] Only usable during a bleed action. +1 bleed (limited).\n[OBF] Only usable during the polling step of a political action. This vampire gets +2 votes.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "U":true
             }
         },
         "Requirement":"",
@@ -48881,16 +48839,16 @@
                 "PTr":"3",
                 "PV":"3"
             },
-            "V5":{
-                "PM":"5",
-                "PN":"5",
-                "PTr":"4"
-            },
             "V5A":{
                 "PB":"2",
                 "PBh":"4",
                 "PG":"5",
                 "PMin":"4"
+            },
+            "V5":{
+                "PM":"5",
+                "PN":"5",
+                "PTr":"4"
             }
         },
         "Requirement":"",
@@ -49067,7 +49025,6 @@
             "LotN":{
                 "PS":1
             },
-            "V5":{},
             "V5A":{
                 "PMin":"1"
             }
@@ -49092,11 +49049,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action. Only one Oppugnant Night can be played each turn.\nPut this card in play and unlock this Blood Brother. Each Blood Brother of this circle (including this one) can enter combat with a minion as a (D) action. Burn this card at the end of this minion phase.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -49178,7 +49135,6 @@
         "Burn Option":"",
         "Card Text":"Requires a baron. Usable by a locked baron.\nAn Anarch you control gets +1 intercept. Also usable to unlock a locked Anarch you control; that Anarch attempts to block with +1 intercept, even if intercept is not yet needed.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PB":"6"
             }
@@ -49510,11 +49466,11 @@
         "Burn Option":"",
         "Card Text":"[obf] Strike: dodge.\n[tem] Maneuver, or strike: dodge, with 1 optional maneuver.\n[TEM] Only usable before range is determined. Inflict 2 damage on the opposing minion. A vampire can play only one Outside the Hourglass at superior each round.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -49938,11 +49894,11 @@
         "Burn Option":"",
         "Card Text":"Unique location. Hunting ground. Requires a ready vampire with a city title.\nDuring your unlock phase, a ready titled vampire you control can gain 2 blood. A vampire can gain blood from only one hunting ground each turn.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "A":"1"
+            },
+            "KoT":{
+                "U":true
             },
             "SP":{
                 "PoS":"1"
@@ -50034,12 +49990,12 @@
             "Promo":{
                 "20200511":true
             },
+            "V5A":{
+                "PBh":"2"
+            },
             "V5":{
                 "PTo":"4",
                 "PV":"5"
-            },
-            "V5A":{
-                "PBh":"2"
             }
         },
         "Requirement":"prince,justicar",
@@ -50155,7 +50111,6 @@
         "Burn Option":"",
         "Card Text":"Requires an Anarch.\n[obf] Reduce a bleed against you by 2.\n[pre] Only usable during the polling step of a political action. This vampire gets +2 votes.\n[pro] +1 intercept.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PMin":"5"
             }
@@ -50350,11 +50305,11 @@
         "Burn Option":"",
         "Card Text":"Unique.\nPut this card in play. Cards requiring Spiritus [spi] cost Ahrimanes 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -50515,11 +50470,11 @@
         "Burn Option":"",
         "Card Text":"Unique.\nPut this card in play. Cards requiring Visceratika [vis] cost slave Gargoyles 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -50951,11 +50906,11 @@
         "Burn Option":"",
         "Card Text":"[for] [COMBAT] This round, this vampire treats aggravated damage as normal damage and /Flash/ /Grenade/s have no effect on this vampire.\n[for][obe] [COMBAT] As [for] above, but until the end of combat.\n[FOR][OBE] [ACTIONMODIFIER] Only usable as the action is announced. Choose any vampire. The chosen vampire cannot block this action.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -51158,11 +51113,11 @@
         "Burn Option":"",
         "Card Text":"[pre] Only usable during the polling step of a political action. This vampire gets +3 votes.\n[PRE] Allies and younger vampires get -1 intercept.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "U":true
             },
             "SP":{
                 "LB":"3"
@@ -51361,11 +51316,11 @@
         "Burn Option":"",
         "Card Text":"Requires a titled vampire.\nChoose a non-titled or an Anarch vampire. Successful referendum means this card is put on the chosen vampire. This vampire cannot gain a non-Anarch title and gets -1 stealth on (D) actions. A vampire can have only one Persona Non Grata.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "B":"1"
+            },
+            "KoT":{
+                "U":true
             }
         },
         "Requirement":"titled",
@@ -51697,7 +51652,6 @@
         "Burn Option":"",
         "Card Text":"Requires an Anarch. More than one Discipline can be used to play this card. (D) Bleed.\n[obf] This is a +1 stealth action.\n[pre] The bleed is with +1 bleed.\n[pro] Put 1 corruption counter on a minion controlled by the target Methuselah if the bleed is successful (for 1 or more).",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PMin":"7"
             }
@@ -51770,11 +51724,11 @@
         "Burn Option":"",
         "Card Text":"[obt] Burn 1 blood to get +1 stealth.\n[tem] +1 stealth.\n[TEM] Usable after combat. After any combat this action, this vampire can burn 1 blood to start a new combat with the opposing minion (if both combatants are still ready).",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             },
             "POD":{
                 "DTC":true
@@ -52291,11 +52245,11 @@
         "Burn Option":"",
         "Card Text":"Unique wraith with 1 life. 0 strength, 0 bleed.\nPonticulus gets +1 intercept during (D) actions against you. He can lock to give any Tremere +1 intercept. He is immune to non-aggravated damage. He cannot act and he cannot have or use equipment.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "B":"1"
+            },
+            "KoT":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -54340,11 +54294,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\n[thn] Move an ally in any ash heap who was burned from play to your ready region with this card and life equal to its starting life. This ally is a zombie instead of what it used to be, gets -1 bleed, cannot gain life, and can play cards requiring basic Fortitude [for] as a vampire.\n[THN] As above, but with 1 additional life.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -54565,7 +54519,6 @@
             "KSU":{
                 "TUA":"4"
             },
-            "V5":{},
             "V5A":{
                 "PBh":"4"
             }
@@ -55045,7 +54998,6 @@
             "KSU":{
                 "AU":"2"
             },
-            "V5":{},
             "V5A":{
                 "PG":"4"
             }
@@ -55871,7 +55823,6 @@
                 "C":true,
                 "PT":"6"
             },
-            "V5":{},
             "V5A":{
                 "PB":"2",
                 "PBh":"4"
@@ -56191,7 +56142,6 @@
             "Third":{
                 "R":true
             },
-            "V5":{},
             "V5A":{
                 "PB":"5",
                 "PBh":"4"
@@ -56330,7 +56280,6 @@
             "SP":{
                 "DoF":"1"
             },
-            "V5":{},
             "V5A":{
                 "PG":"1"
             }
@@ -56874,11 +56823,11 @@
             "FB":{
                 "PN":"2"
             },
-            "V5":{
-                "PN":"2"
-            },
             "V5A":{
                 "PG":"2"
+            },
+            "V5":{
+                "PN":"2"
             }
         },
         "Requirement":"",
@@ -57038,11 +56987,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action. Requires a slave.\n(D) Put this card in play and move a vampire in torpor to this card, face up and out of play. A vampire you control to whom this Gargoyle is enslaved can remove that vampire from the game as a +1 stealth action to turn this card into a Gargoyle with the same capacity, Fortitude [for], Potence [pot], Visceratika [vis] and flight [FLIGHT], enslaved to the acting vampire's clan and of the same sect as this Gargoyle.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"slave",
@@ -58252,16 +58201,15 @@
         "Burn Option":"",
         "Card Text":"A vampire can play only one Rego Motum each round.\n[tha] Prevent 2 damage from the opposing minion's strike.\n[THA] Prevent 4 damage from the opposing minion's strike.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "C":true
             },
             "SP":{
                 "PwN":"3"
             },
-            "V5":{},
             "V5A":{
                 "PBh":"2"
             }
@@ -59018,11 +58966,11 @@
             "SP":{
                 "LB":"3"
             },
-            "V5":{
-                "PTo":"8"
-            },
             "V5A":{
                 "PBh":"2"
+            },
+            "V5":{
+                "PTo":"8"
             }
         },
         "Requirement":"",
@@ -59511,7 +59459,6 @@
         "Burn Option":"",
         "Card Text":"Only usable during a bleed action.\n[pre][pro] +1 bleed (limited), or +1 stealth and +1 bleed (limited).\n[PRE][PRO] As above, and if the bleed is successful, this vampire can burn 2 of your corruption counters from a minion controlled by the target Methuselah to unlock.",
         "Set":{
-            "V5":{},
             "V5A":{
                 "PMin":"6"
             }
@@ -59794,7 +59741,6 @@
             "KSU":{
                 "TUA":"2"
             },
-            "V5":{},
             "V5A":{
                 "PG":"1"
             }
@@ -60056,7 +60002,6 @@
             "Promo":{
                 "20150221":true
             },
-            "TU":{},
             "KSU":{
                 "TUA":"1",
                 "TUB":"1"
@@ -60119,11 +60064,11 @@
         "Burn Option":"",
         "Card Text":"Gehenna. Requires at least 2 other Gehenna events in play. Do not replace until your prey is ousted.\nA Methuselah cannot gain pool during their own turn unless they have the Edge or at least 1 victory point (instead, any pool they would gain goes to the blood bank).",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"2 Gehenna",
@@ -60250,11 +60195,11 @@
         "Burn Option":"Y",
         "Card Text":"Unique.\nThis Nagaraja gets +1 hunt. This Nagaraja can inflict 1 unpreventable damage on a mortal (ally or retainer) to gain 2 blood as a (D) action.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -60700,11 +60645,11 @@
         "Burn Option":"",
         "Card Text":"[pot] Strike: hand strike at +2 damage.\n[POT] Strike: hand strike at +3 damage.",
         "Set":{
-            "V5":{
-                "PN":"8"
-            },
             "V5A":{
                 "PB":"4"
+            },
+            "V5":{
+                "PN":"8"
             }
         },
         "Requirement":"",
@@ -61064,7 +61009,6 @@
             "25th":{
                 "":"1"
             },
-            "V5":{},
             "V5A":{
                 "PBh":"1"
             }
@@ -61401,11 +61345,11 @@
         "Burn Option":"",
         "Card Text":"[for] Allies get -1 intercept.\n[obe] As [for] above, and reaction cards cost 1 additional blood or life this action.\n[OBE] As [obe] above, and put this card on this vampire. Actions against this vampire cost 1 additional blood or life. Burn this card during your unlock phase.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -61898,11 +61842,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\n[nec] Move a minion card from your ash heap to the top of your library.\n[myt] Search your library for a minion card (shuffle afterward), reveal it, and move it to the top of your library.\n[MYT] As [myt] above, with an additional +1 stealth.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "R":true
             },
             "POD":{
                 "DTC":true
@@ -62222,11 +62166,11 @@
         "Burn Option":"",
         "Card Text":"During your discard phase, you can burn a vampire with capacity 2 or less, and your predator takes control of this card (even if you do not burn a vampire).",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "B":"1"
+            },
+            "KoT":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -62535,12 +62479,12 @@
             "FB":{
                 "PV":"2"
             },
+            "V5A":{
+                "PBh":"8"
+            },
             "V5":{
                 "PTo":"4",
                 "PV":"4"
-            },
-            "V5A":{
-                "PBh":"8"
             }
         },
         "Requirement":"prince,justicar",
@@ -63589,11 +63533,11 @@
         "Burn Option":"Y",
         "Card Text":"Unique Nod fragment.\n+2 hand size. Any vampire can steal this equipment as a (D) action.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -64608,11 +64552,11 @@
         "Burn Option":"Y",
         "Card Text":"+1 stealth action. Requires an infernal Baali with capacity 9 or more.\nPut this card on this Baali. A vampire with capacity 6 or more can burn the Edge to burn this card as a (D) action. If this Baali has three Shatter the Gate, burn them all to give each other Methuselah 1 shattered counter. A Methuselah with any shattered counters burns 3 pool during their unlock phase.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"3"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"infernal,capacity 9 or more",
@@ -64736,11 +64680,11 @@
         "Burn Option":"",
         "Card Text":"[pro] (D) Inflict 1 unpreventable damage on an ally or retainer.\n[mel] (D) Discard a Shattering Crescendo to inflict 2 unpreventable damage on each of up to 2 minions controlled by a single Methuselah.\n[MEL] As [mel] above, but for 3 unpreventable damage each.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"4"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -65140,7 +65084,6 @@
             "KSU":{
                 "DM":"4"
             },
-            "V5":{},
             "V5A":{
                 "PB":"2"
             }
@@ -66054,11 +65997,11 @@
         "Burn Option":"",
         "Card Text":"Only usable after this Blood Brother gains blood.\n[san] [COMBAT] Choose another ready Blood Brother of the same circle. The chosen Blood Brother gains the same amount of blood.\n[SAN] [ACTIONMODIFIER] As above, but usable as an action modifier.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -66124,7 +66067,6 @@
             "HttB":{
                 "PGar":"4"
             },
-            "V5":{},
             "V5A":{
                 "PB":"4"
             }
@@ -66588,11 +66530,11 @@
             "SP":{
                 "DoF":"1"
             },
-            "V5":{
-                "PN":"1"
-            },
             "V5A":{
                 "PG":"1"
+            },
+            "V5":{
+                "PN":"1"
             }
         },
         "Requirement":"",
@@ -67266,7 +67208,6 @@
             "Third":{
                 "C":true
             },
-            "V5":{},
             "V5A":{
                 "PBh":"2"
             }
@@ -67504,11 +67445,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\n[aus] Search your crypt for a younger vampire without Obfuscate [obf], reveal them, and move them to your uncontrolled region (shuffle afterward).\n[AUS] As above, but you can search for a younger vampire with up to one level of Obfuscate.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -67905,11 +67846,11 @@
         "Burn Option":"",
         "Card Text":"[pro] [COMBAT] Damage from this vampire's hand strikes is aggravated this round.\n[pro][spi] [COMBAT] Maneuver and as [pro] above.\n[PRO][SPI] [ACTION] +1 stealth action. Unique. Put this card on this vampire. Damage from this vampire's hand strikes is aggravated.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -68614,11 +68555,11 @@
         "Burn Option":"",
         "Card Text":"[for] Only usable during a (D) action against you (or a card you control). +1 intercept.\n[FOR] Reduce a bleed against you by 1.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "C":true
             },
             "HttB":{
                 "PSam":"3"
@@ -70475,11 +70416,11 @@
             "LotN":{
                 "PA":"3"
             },
-            "V5":{
-                "PM":"4"
-            },
             "V5A":{
                 "PBh":"6"
+            },
+            "V5":{
+                "PM":"4"
             }
         },
         "Requirement":"",
@@ -70875,11 +70816,11 @@
         "Burn Option":"",
         "Card Text":"Only usable as an action to recruit or employ an animal is announced.\n[ani] If this action is successful, the animal gets +1 strength (for an ally) or inflicts +1 damage (for damage-dealing retainers).\n[ANI] As above, and the animal gets 1 additional starting life.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "A":"1"
+            },
+            "KoT":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -71550,11 +71491,11 @@
         "Burn Option":"",
         "Card Text":"Aim. Only usable as this minion chooses a strike. A minion can play only one aim each strike.\nYou can target a retainer on the opposing minion with this strike (instead of the opposing minion). Or you can target the opposing minion directly as usual, but if any damage from this strike is successfully inflicted, this strike inflicts +1 damage. The opposing minion can discard two combat cards to cancel this card as it is played.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "B":"1"
+            },
+            "KoT":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -71757,11 +71698,11 @@
                 "PB":"3",
                 "PT":"3"
             },
-            "V5":{
-                "PN":"4"
-            },
             "V5A":{
                 "PB":"4"
+            },
+            "V5":{
+                "PN":"4"
             }
         },
         "Requirement":"",
@@ -72167,7 +72108,6 @@
             "LotN":{
                 "PS":1
             },
-            "V5":{},
             "V5A":{
                 "PMin":"1"
             }
@@ -72320,11 +72260,11 @@
         "Burn Option":"",
         "Card Text":"Choose a ready unlocked infernal Baali you control. Add 3 blood to a younger infernal vampire in your uncontrolled region.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -72411,7 +72351,6 @@
                 "R":true,
                 "PB":1
             },
-            "V5":{},
             "V5A":{
                 "PBh":"1"
             }
@@ -72806,11 +72745,11 @@
         "Burn Option":"",
         "Card Text":"Choose a ready Blood Brother you control. Move a unique Blood Brother of the same circle from your uncontrolled region to your ready region. Not usable if they would contest a card in play.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"2"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -72924,7 +72863,6 @@
             "KSU":{
                 "TUB":"4"
             },
-            "V5":{},
             "V5A":{
                 "PG":"4"
             }
@@ -73443,12 +73381,12 @@
         "Burn Option":"",
         "Card Text":"Weapon. This weapon can be used to strike only once each round.\n[myt] Strike: 2R damage.\n[MYT] As above, or strike: 1R damage, with 1 optional maneuver each combat.",
         "Set":{
+            "HttBR":{
+                "B":"1"
+            },
             "HttB":{
                 "C":true,
                 "PKia":"2"
-            },
-            "HttBR":{
-                "B":"1"
             }
         },
         "Requirement":"",
@@ -73786,7 +73724,6 @@
             "HttB":{
                 "PGar":"3"
             },
-            "V5":{},
             "V5A":{
                 "PB":"5"
             }
@@ -73859,11 +73796,11 @@
         "Burn Option":"",
         "Card Text":"[cel] Additional strike (limited).\n[CEL] Strike: combat ends. If this vampire was blocked while performing an action, the action continues as if unblocked.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "B":"2"
+            },
+            "KoT":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -73978,11 +73915,11 @@
         "Burn Option":"",
         "Card Text":"Usable by an acting minion or any ready unlocked minion.\n[dem] Cancel a non-combat card requiring Dementation [dem], Dominate [dom] or Presence [pre] as it is played, and its cost is not paid. Lock this vampire.\n[DEM] As above, but do not lock this vampire.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "R":true
             }
         },
         "Requirement":"",
@@ -75373,7 +75310,6 @@
             "LotN":{
                 "PS":"4"
             },
-            "V5":{},
             "V5A":{
                 "PMin":"2"
             }
@@ -76116,12 +76052,12 @@
         "Burn Option":"",
         "Card Text":"[obf] +1 stealth.\n[thn] +1 stealth, and put this card on this vampire. During any action after this one, this vampire can burn this card to get +1 stealth.\n[THN] As [thn] above, but for +2 stealth this action.",
         "Set":{
+            "HttBR":{
+                "A":"2"
+            },
             "HttB":{
                 "C":true,
                 "PSam":"2"
-            },
-            "HttBR":{
-                "A":"2"
             }
         },
         "Requirement":"",
@@ -76299,7 +76235,6 @@
             "POD":{
                 "DTC":true
             },
-            "V5":{},
             "V5A":{
                 "PBh":"1"
             }
@@ -77298,11 +77233,11 @@
         "Burn Option":"Y",
         "Card Text":"+3 stealth action.\n(D) Look at each Methuselah's hand and discard 1 card from among all those hands (even from your own hand).",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -77627,11 +77562,11 @@
         "Burn Option":"Y",
         "Card Text":"Unique mage with 2 life. 1 strength, 2 bleed. Requires an infernal vampire.\nVeneficti has +1 stealth. He can steal a demon ally or burn a demon retainer as a (D) action. He cannot be the target of a (D) action by an ally or a vampire with capacity 6 or less.",
         "Set":{
-            "HttB":{
-                "R":true
-            },
             "HttBR":{
                 "A":"1"
+            },
+            "HttB":{
+                "R":true
             }
         },
         "Requirement":"infernal",
@@ -78232,12 +78167,12 @@
         "Burn Option":"",
         "Card Text":"Trifle.\nPut this card on a vampire you control who has any amount of blood and move 2 to 5 blood from that vampire to your pool. Cards named /Minion Tap/ cost you 1 additional pool to play. Villein costs 1 additional pool to play on this vampire.",
         "Set":{
-            "KoT":{
-                "U":true
-            },
             "KoTR":{
                 "A":"2",
                 "B":"2"
+            },
+            "KoT":{
+                "U":true
             },
             "HttB":{
                 "PGar":"2",
@@ -78252,11 +78187,11 @@
             "25th":{
                 "":"5"
             },
-            "V5":{
-                "PTo":"6"
-            },
             "V5A":{
                 "PBh":"4"
+            },
+            "V5":{
+                "PTo":"6"
             }
         },
         "Requirement":"",
@@ -78350,11 +78285,11 @@
         "Burn Option":"",
         "Card Text":"[pre] +1 stealth.\n[mel] Only usable during a bleed action. +1 stealth and +2 bleed (limited), or +2 bleed (limited).\n[MEL] Only usable as the action is announced. This action is unblockable.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"2"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -78384,11 +78319,11 @@
         "Burn Option":"",
         "Card Text":"+1 stealth action.\nPut this card on this Ahrimane. This Ahrimane gets +1 level of Spiritus [spi]. If this action is blocked, this Ahrimane does not unlock as normal during their next unlock phase.",
         "Set":{
-            "HttB":{
-                "C":true
-            },
             "HttBR":{
                 "B":"1"
+            },
+            "HttB":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -78562,12 +78497,12 @@
         "Burn Option":"",
         "Card Text":"[tha] Burn 1 blood to get +1 intercept.\n[vis] +1 intercept, or give +1 intercept to a vampire to whom this vampire is enslaved.\n[VIS] Reduce a bleed against you by 2.",
         "Set":{
+            "HttBR":{
+                "A":"2"
+            },
             "HttB":{
                 "C":true,
                 "PGar":"2"
-            },
-            "HttBR":{
-                "A":"2"
             }
         },
         "Requirement":"",
@@ -79013,7 +78948,6 @@
             "FB":{
                 "PTr":"1"
             },
-            "V5":{},
             "V5A":{
                 "PBh":"2"
             }
@@ -79363,11 +79297,11 @@
         "Burn Option":"",
         "Card Text":"Unique location.\nYou can lock this card as a Nosferatu announces an undirected action; after action resolution, if that action was successful, unlock the acting Nosferatu. You can burn this card (even if it is locked) to move a Nosferatu in torpor to the ready region.",
         "Set":{
-            "KoT":{
-                "R":true
-            },
             "KoTR":{
                 "A":"1"
+            },
+            "KoT":{
+                "R":true
             },
             "HttB":{
                 "PSam":1
@@ -79432,7 +79366,6 @@
             "KoT":{
                 "U":true
             },
-            "V5":{},
             "V5A":{
                 "PB":"1"
             }
@@ -80483,12 +80416,12 @@
         "Burn Option":"",
         "Card Text":"Trifle.\nPut this card in play. You can use 1 transfer to draw 1 card from your crypt and then remove a crypt card in your uncontrolled region from the game. You can use 4 transfers to burn this card and gain 2 pool.",
         "Set":{
+            "HttBR":{
+                "A":"2"
+            },
             "HttB":{
                 "C":true,
                 "PKia":"2"
-            },
-            "HttBR":{
-                "A":"2"
             },
             "SP":{
                 "PwN":"2"
@@ -81101,11 +81034,11 @@
         "Burn Option":"",
         "Card Text":"[dem] Reduce a bleed against you by 2.\n[DEM] Only usable during the polling step of a political action. This vampire gets +4 votes against the referendum.",
         "Set":{
-            "KoT":{
-                "C":true
-            },
             "KoTR":{
                 "A":"2"
+            },
+            "KoT":{
+                "C":true
             }
         },
         "Requirement":"",
@@ -81673,7 +81606,6 @@
             "KoT":{
                 "U":true
             },
-            "V5":{},
             "V5A":{
                 "PG":"1"
             }

@@ -126,17 +126,17 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
         # Convert sets to dict
         sets = card['Set'].split(', ')
         card['Set'] = {}
+
         for set in sets:
             if ':' in set:
                 set = set.split(':')
             elif '-' in set:
                 set = set.split('-')
 
-            card['Set'][set[0]] = {}
-
             precons = set[1].split('/')
 
-            # Fix for KoT & HttB Reprints (marked in CSV as KoT, but have only bundles named "A" or "B" not existing in original KoT)
+            # Fix for KoT, HttB Reprints (marked in CSV as KoT, but have only
+            # bundles named "A" or "B" not existing in original KoT)
             if set[0] in ["KoT", "HttB"]:
                 counter = 0
                 for precon in precons:
@@ -151,7 +151,7 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
             # Fix for V5 Anarch set (marked in CSV as V5)
             elif set[0] in ["V5"]:
                 for precon in precons:
-                    if re.match(r'(PB|PBh|PG|PMin)[0-9]?', precon):
+                    if re.match(r'(PB|PBh|PG|PMin)[0-9]+', precon):
                         card['Set'][f"{set[0]}A"] = {}
                     else:
                         card['Set'][set[0]] = {}

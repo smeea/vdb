@@ -146,10 +146,10 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
         card['Set'] = {}
 
         for set in sets:
-            if '-' in set:
-                set = set.split('-')
-            elif ':' in set:
+            if ':' in set:
                 set = set.split(':')
+            elif '-' in set:
+                set = set.split('-')
 
             precons = set[1].split('/')
 
@@ -169,7 +169,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
             # Fix for V5 Anarch set (marked in CSV as V5)
             elif set[0] in ["V5"]:
                 for precon in precons:
-                    if re.match(r'(PB|PBh|PG|PMin)[0-9]', precon):
+                    if re.match(r'(PB|PBh|PG|PMin)[0-9]+', precon):
                         card['Set'][f"{set[0]}A"] = {}
                     else:
                         card['Set'][set[0]] = {}
