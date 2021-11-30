@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import AppContext from '../../context/AppContext';
-import Hammer from '../../assets/images/icons/hammer.svg';
 import CardPopover from './CardPopover.jsx';
+import ResultCryptName from './ResultCryptName.jsx';
 import ResultCryptClan from './ResultCryptClan.jsx';
 import ResultCryptCapacity from './ResultCryptCapacity.jsx';
 import ResultCryptGroup from './ResultCryptGroup.jsx';
@@ -24,27 +24,9 @@ function ResultCryptLayoutText(props) {
             <ResultCryptClan value={props.card['Clan']} />
           </div>
           <div className="name ps-2">
-            {props.card['Banned'] ? (
-              <strike>
-                <b>{props.card['Name']}</b>
-              </strike>
-            ) : (
-              <b>{props.card['Name']}</b>
-            )}
-            {props.card['Adv'][0] && (
-              <span className="ps-1">
-                <img
-                  className="advanced-image-results"
-                  src={`${process.env.ROOT_URL}images/misc/advanced.svg`}
-                  title="Advanced"
-                />
-              </span>
-            )}
-            {props.card['Banned'] && (
-              <span className="ps-1">
-                [{props.card['Banned']} <Hammer />]
-              </span>
-            )}
+            <b>
+              <ResultCryptName card={props.card} />
+            </b>
             {props.card['Adv'][1] &&
               (isMobile ? (
                 <span

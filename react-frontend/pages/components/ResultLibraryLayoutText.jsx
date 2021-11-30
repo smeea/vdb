@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Hammer from '../../assets/images/icons/hammer.svg';
+import ResultLibraryName from './ResultLibraryName.jsx';
 import ResultLibraryTypeImage from './ResultLibraryTypeImage.jsx';
 import ResultLibraryCost from './ResultLibraryCost.jsx';
 import ResultLibraryBurn from './ResultLibraryBurn.jsx';
@@ -23,19 +23,8 @@ function ResultLibraryLayoutText(props) {
           <div>
             <ResultLibraryTypeImage value={props.card['Type']} />
           </div>
-          <div className="name ps-2">
-            {props.card['Banned'] ? (
-              <strike>
-                <b>{props.card['Name']}</b>
-              </strike>
-            ) : (
-              <b>{props.card['Name']}</b>
-            )}
-            {props.card['Banned'] && (
-              <span className="ps-1">
-                [{props.card['Banned']} <Hammer />]
-              </span>
-            )}
+          <div className="name bold ps-2">
+            <ResultLibraryName card={props.card} />
           </div>
         </div>
         <div className="ps-1">

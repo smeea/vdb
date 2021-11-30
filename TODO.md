@@ -1,10 +1,7 @@
 # FIX
 * Change url to empty on last form changed to 'any'
-* Align and inline Adv icon in names
 * Add recent to Compare
 * Proxy to have Crypt then Library
-* Card image border on light theme
-* Disciplines align on mobile in deck
 
 # FIX MOBILE
 

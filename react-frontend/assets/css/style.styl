@@ -60,6 +60,12 @@ div.h6
 .bold
   font-weight: bold
 
+.white-space-normal
+  white-space: normal
+
+.nowrap
+  white-space: nowrap
+
 code
   color: var(--fg-primary)
 
@@ -239,6 +245,7 @@ button.btn-danger:hover
 
 .modal-content
   background: var(--bg-primary)
+  border: none
 
 .popover
   border-color: var(--border-secondary)
@@ -455,7 +462,7 @@ td.prob
   td.disciplines td
     min-width: 27px
     @media (max-width: 576px)
-      min-width: 23px
+      min-width: 24px
 
 .deck-library-table
   td
@@ -554,6 +561,10 @@ td.prob
     width: 40px
   td.name
     text-align: left
+div.name-container
+  white-space: nowrap
+div.name
+  white-space: normal
 
 .search-crypt-table
   td
@@ -737,6 +748,7 @@ li.rulings
 .advanced-image-results
   height: 20px
   filter: brightness(var(--icons-brightness))
+  vertical-align: text-bottom
 .type-image-results
   height: 25px
   filter: brightness(var(--icons-brightness))
