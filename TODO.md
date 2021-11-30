@@ -1,7 +1,7 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Add recent to Compare
-* Proxy to have Crypt then Library
+* Proxy to sort library by type
 
 # FIX MOBILE
 
