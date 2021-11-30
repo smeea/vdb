@@ -11,6 +11,39 @@ function Changelog(props) {
           <div className="px-2 pt-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>Last update [2021-12-01]</h6>
+            <ul>
+              <li>Add new V5 (Anarchs) precons</li>
+              <li>
+                Add Recent decks to Deck selection, will store last 10 decks
+                (shared by url or twd) you have seen (to quickly come back to
+                deck-friend-shared-last-week) -- dont sync between devices
+                (stored locally in your browser)
+              </li>
+              <li>
+                Import Versions (called Revisions in VDB) when importing deck
+                from Amaranth
+              </li>
+              <li>Add Changelog page</li>
+              <li>
+                Add additional (type &quot;YES&quot;) confirmation to delete
+                Inventory and Decks with revisions (not to accidentally remove
+                full deck missclicking Delete Revision)
+              </li>
+              <li>Various small other fixes and improvements</li>
+            </ul>
+
+            <h6>2021-11-23</h6>
+            <ul className="pb-2">
+              <li>Added &quot;Or Older&quot; filter option for Set search</li>
+              <li>
+                Fixed Import/Export for new multigroup vampires (Victoria Ash,
+                etc). Will append &quot;(GX)&quot; after name, confirmed to be
+                implemented same way in Lackey
+              </li>
+              <li>Many other small fixes (mainly UI)</li>
+            </ul>
+
             <h6>2021-11-23</h6>
             <ul className="pb-2">
               <li>Added &quot;Or Older&quot; filter option for Set search</li>

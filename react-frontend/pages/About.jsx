@@ -69,17 +69,29 @@ function About(props) {
                 <a href="http://www.vekn.net/card-lists">
                   vekn.net official list
                 </a>
-                : 2021-10-27
+                : 2021-12-01
               </p>
-              <h6>Last update [2021-11-21]</h6>
+
+              <h6>Last update [2021-12-01]</h6>
               <ul>
-                <li>Added &quot;Or Older&quot; filter option for Set search</li>
+                <li>Add new V5 (Anarchs) precons</li>
                 <li>
-                  Fixed Import/Export for new multigroup vampires (Victoria Ash,
-                  etc). Will append &quot;(GX)&quot; after name, confirmed to be
-                  implemented same way in Lackey
+                  Add Recent decks to Deck selection, will store last 10 decks
+                  (shared by url or twd) you have seen (to quickly come back to
+                  deck-friend-shared-last-week) -- dont sync between devices
+                  (stored locally in your browser)
                 </li>
-                <li>Many other small fixes (mainly UI)</li>
+                <li>
+                  Import Versions (called Revisions in VDB) when importing deck
+                  from Amaranth
+                </li>
+                <li>Add Changelog page</li>
+                <li>
+                  Add additional (type &quot;YES&quot;) confirmation to delete
+                  Inventory and Decks with revisions (not to accidentally remove
+                  full deck missclicking Delete Revision)
+                </li>
+                <li>Various small other fixes and improvements</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
@@ -145,12 +157,14 @@ function About(props) {
                   FELD
                 </a>
                 <br />
-                TWD and rulings by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
+                Rulings by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
                 <a href="https://static.krcg.org/">KRCG</a>
                 <br />
                 Cards scans from different sets by{' '}
                 <a href="http://vtes.pl/">VTES.PL</a> and{' '}
                 <a href="https://ccggamez.com">CCGAMEZ.COM</a>
+                <br />
+                TWD by Vincent &quot;Ankha&quot; Ripoll
               </p>
             </div>
 
