@@ -14,15 +14,13 @@ function About(props) {
       <Row className="justify-content-center">
         <Col xs={12} md={5} className="px-0">
           <Banner />
-          <div className="px-2">
-            <div className="pt-3">
-              <h5>WHAT IS IT</h5>
-              <p>
-                VDB is online card search, TWD (tournament winning decks)
-                browser, deck building and inventory (collection) management
-                tool for Vampire the Eternal Struggle (VTES)
-              </p>
-            </div>
+          <div className="px-3 pt-0 pt-lg-3">
+            <h5>WHAT IS IT</h5>
+            <p>
+              VDB is online card search, TWD (tournament winning decks) browser,
+              deck building and inventory (collection) management tool for
+              Vampire the Eternal Struggle (VTES)
+            </p>
 
             <div className="pt-3">
               <h5>QUICKSTART</h5>
@@ -58,7 +56,7 @@ function About(props) {
                 to behave not as expected, try to reload page with browser cache
                 update (Ctrl+F5 on Windows/Linux or Command+Shift+R on MacOS)
                 <br />
-                If this does not help, please contact me using contacts below
+                If this does not help, please contact me (see below)
               </p>
             </div>
 
@@ -72,13 +70,13 @@ function About(props) {
                 : 2021-12-01
               </p>
 
-              <h6>Last update [2021-12-01]</h6>
+              <h6>Last update [2021-12-01]:</h6>
               <ul>
                 <li>Add new V5 (Anarchs) precons</li>
                 <li>
                   Add Recent decks to Deck selection, will store last 10 decks
                   (shared by url or twd) you have seen (to quickly come back to
-                  deck-friend-shared-last-week) -- dont sync between devices
+                  deck-friend-shared-last-week) - do not sync between devices
                   (stored locally in your browser)
                 </li>
                 <li>
@@ -151,21 +149,19 @@ function About(props) {
 
             <div className="pt-3">
               <h5>ACKNOWLEDGMENTS</h5>
-              <p>
-                Card images by Fernando &quot;Syndelson&quot; Cesar from{' '}
-                <a href="http://www.vekn.net/forum/v-tes-inventory-deckbuilding-programs/78088-feld-update-2-71-with-first-blood">
-                  FELD
-                </a>
-                <br />
-                Rulings by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
-                <a href="https://static.krcg.org/">KRCG</a>
-                <br />
-                Cards scans from different sets by{' '}
-                <a href="http://vtes.pl/">VTES.PL</a> and{' '}
-                <a href="https://ccggamez.com">CCGAMEZ.COM</a>
-                <br />
-                TWD by Vincent &quot;Ankha&quot; Ripoll
-              </p>
+              <ul>
+                <li>Card images by Fernando &quot;Syndelson&quot; Cesar</li>
+                <li>
+                  Rulings by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
+                  <a href="https://static.krcg.org/">KRCG</a>
+                </li>
+                <li>TWD by Vincent &quot;Ankha&quot; Ripoll</li>
+                <li>
+                  Cards scans from different sets by{' '}
+                  <a href="http://vtes.pl/">VTES.PL</a> and{' '}
+                  <a href="https://ccggamez.com">CCGAMEZ.COM</a>
+                </li>
+              </ul>
             </div>
 
             <div className="pt-3">

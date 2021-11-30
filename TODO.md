@@ -3,6 +3,9 @@
 * Align and inline Adv icon in names
 * Add recent to Compare
 * Proxy to have Crypt then Library
+* Card image border on light theme
+* Title color in deck on mobile
+* Disciplines align on mobile in deck
 
 # FIX MOBILE
 
