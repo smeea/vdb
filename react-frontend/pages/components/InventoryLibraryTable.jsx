@@ -126,7 +126,9 @@ function InventoryLibraryTable(props) {
                     : 'red'
                 }`}
               >
-                {card.q >= softUsedMax + hardUsedTotal
+                {card.q === softUsedMax + hardUsedTotal
+                  ? '='
+                  : card.q > softUsedMax + hardUsedTotal
                   ? `+${card.q - softUsedMax - hardUsedTotal}`
                   : card.q - softUsedMax - hardUsedTotal}
               </div>
