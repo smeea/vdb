@@ -274,7 +274,7 @@ function Decks(props) {
     if (
       cryptCardBase &&
       libraryCardBase &&
-      activeDeck.src === 'twd' &&
+      (activeDeck.src === 'twd' || activeDeck.src === 'shared') &&
       !(sharedDeck && sharedDeck[activeDeck.deckid])
     ) {
       getDeck(activeDeck.deckid);
