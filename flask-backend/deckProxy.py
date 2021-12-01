@@ -9,19 +9,22 @@ from searchLibraryComponents import get_library_by_id
 
 def deckProxy(input):
     try:
-        cards = {}
+        crypt = {}
+        library = {}
+
         for k, v in input.items():
             k = int(k)
             name = None
 
-            if k > 200000 and v['q'] > 0:
+            if k > 200000:
                 card = get_crypt_by_id(k)
                 name = card['Name']
                 if card['Adv'] and card['Adv'][0]:
                     name += 'adv'
                 if card['New']:
                     name += f"g{card['Group']}"
-            elif k < 200000 and v['q'] > 0:
+
+            elif k < 200000:
                 name = get_library_by_id(k)['Name']
 
             filename = unidecode(re.sub('[\\W]', '', name)).lower() + '.jpg'
@@ -32,16 +35,27 @@ def deckProxy(input):
             else:
                 file = f"./cards/{filename}"
 
-            cards[name] = {
-                'file': file,
-                'q': v['q'],
-            }
+            if k > 200000 and v['q'] > 0:
+                crypt[name] = {
+                    'file': file,
+                    'q': v['q'],
+                }
+
+            elif k < 200000 and v['q'] > 0:
+                library[name] = {
+                    'file': file,
+                    'q': v['q'],
+                }
 
         cardlist = []
 
-        for card in sorted(cards.keys()):
-            for i in range(cards[card]['q']):
-                cardlist.append(cards[card])
+        for card in sorted(crypt.keys()):
+            for i in range(crypt[card]['q']):
+                cardlist.append(crypt[card])
+
+        for card in sorted(library.keys()):
+            for i in range(library[card]['q']):
+                cardlist.append(library[card])
 
         pdf = FPDF('P', 'mm', 'A4')
 

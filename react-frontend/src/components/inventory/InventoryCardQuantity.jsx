@@ -85,7 +85,7 @@ function InventoryCardQuantity(props) {
                 />
               </Form>
             ) : (
-              <>{state == 0 ? <>&nbsp;&nbsp;</> : state}</>
+              <>{state == 0 ? <>&nbsp;</> : state}</>
             )}
           </div>
           {!manual && (

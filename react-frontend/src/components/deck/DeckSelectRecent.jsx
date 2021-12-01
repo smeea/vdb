@@ -1,24 +1,20 @@
 import React, { useContext } from 'react';
 import Select from 'react-select';
-import Shuffle from 'assets/images/icons/shuffle.svg';
-import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
-import At from 'assets/images/icons/at.svg';
 import AppContext from 'context/AppContext.js';
 
 function DeckSelectRecent(props) {
-  const { inventoryMode, setActiveDeck, recentDecks, isMobile } =
-    useContext(AppContext);
+  const { setActiveDeck, recentDecks, isMobile } = useContext(AppContext);
 
   const options = recentDecks.map((i) => {
     return {
       value: i.deckid,
       name: 'deck',
-      label: i.name,
+      label: `${i.name} ${i.deckid.length === 32 ? '' : '[TWD] '}`,
     };
   });
 
   const handleChange = (e) => {
-    if (e.value === 32) {
+    if (e.value.length === 32) {
       setActiveDeck({ src: 'shared', deckid: e.value });
     } else {
       setActiveDeck({ src: 'twd', deckid: e.value });

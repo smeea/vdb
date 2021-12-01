@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
-import Hammer from 'assets/images/icons/hammer.svg';
 import {
+  ResultLibraryName,
   ResultLibraryDisciplines,
   ResultLibraryTypeImage,
   ResultLibraryCost,
   ResultLibraryClan,
 } from 'components';
-
 import AppContext from 'context/AppContext.js';
 
 const SelectLabelLibrary = (props) => {
@@ -30,16 +29,7 @@ const SelectLabelLibrary = (props) => {
             value={libraryCardBase[props.cardid]['Type']}
           />
           <div className="ps-1">
-            {libraryCardBase[props.cardid]['Banned'] ? (
-              <>
-                <strike>{libraryCardBase[props.cardid]['Name']}</strike>
-                <div className="d-inline ps-1">
-                  <Hammer />
-                </div>
-              </>
-            ) : (
-              <>{libraryCardBase[props.cardid]['Name']}</>
-            )}
+            <ResultLibraryName card={libraryCardBase[props.cardid]} />
           </div>
         </div>
         <div>

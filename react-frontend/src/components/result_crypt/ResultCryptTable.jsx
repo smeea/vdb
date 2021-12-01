@@ -178,9 +178,9 @@ function ResultCryptTable(props) {
                   <ResultCryptClan value={card['Clan']} />
                 </div>
                 <div className="d-flex small justify-content-end">
-                  <b>
+                  <div className="bold blue">
                     <ResultCryptTitle value={card['Title']} />
-                  </b>
+                  </div>
                   <ResultCryptGroup value={card['Group']} />
                 </div>
               </td>

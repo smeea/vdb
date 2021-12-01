@@ -117,7 +117,9 @@ function InventoryCryptTable(props) {
                     : 'red'
                 }`}
               >
-                {card.q >= softUsedMax + hardUsedTotal
+                {card.q === softUsedMax + hardUsedTotal
+                  ? '='
+                  : card.q > softUsedMax + hardUsedTotal
                   ? `+${card.q - softUsedMax - hardUsedTotal}`
                   : card.q - softUsedMax - hardUsedTotal}
               </div>
@@ -185,9 +187,9 @@ function InventoryCryptTable(props) {
               <ResultCryptClan value={card.c['Clan']} />
             </div>
             <div className="d-flex small justify-content-end">
-              <b>
+              <div className="bold blue">
                 <ResultCryptTitle value={card.c['Title']} />
-              </b>
+              </div>
               <ResultCryptGroup value={card.c['Group']} />
             </div>
           </div>

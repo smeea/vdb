@@ -3,7 +3,7 @@ import Hammer from 'assets/images/icons/hammer.svg';
 
 function ResultLibraryName(props) {
   return (
-    <div className="d-inline name">
+    <div className="d-inline">
       {props.card['Banned'] ? (
         <strike>{props.card['Name']}</strike>
       ) : (

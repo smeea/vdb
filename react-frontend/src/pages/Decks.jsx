@@ -276,7 +276,7 @@ function Decks(props) {
     if (
       cryptCardBase &&
       libraryCardBase &&
-      activeDeck.src === 'twd' &&
+      (activeDeck.src === 'twd' || activeDeck.src === 'shared') &&
       !(sharedDeck && sharedDeck[activeDeck.deckid])
     ) {
       getDeck(activeDeck.deckid);
@@ -579,21 +579,25 @@ function Decks(props) {
         </Row>
       )}
 
-      {username && decks && Object.keys(decks).length == 0 && (
-        <Row className="h-50 align-items-center justify-content-center px-2">
-          <Col xs={12} md={5} className="justify-content-center px-0">
-            <div className="d-flex justify-content-center py-2">
-              <h6>You do not have any decks in your collection yet.</h6>
-            </div>
-            <div className="d-flex justify-content-center py-2">
-              <h6>Start by creating new one or import from Lackey/Amaranth.</h6>
-            </div>
-            <div className="d-flex justify-content-center py-2">
-              <h6>Or browse official preconstructed decks.</h6>
-            </div>
-          </Col>
-        </Row>
-      )}
+      {username &&
+        decks &&
+        Object.keys(decks).length == 0 &&
+        !activeDeck.deckid && (
+          <Row className="h-50 align-items-center justify-content-center px-2">
+            <Col xs={12} md={5}>
+              <div className="text-align-center blue bold py-2">
+                You do not have any decks in your collection yet
+              </div>
+              <div className="text-align-center blue bold py-2">
+                Start by creating new one or import from Lackey/Amaranth
+              </div>
+              <div className="text-align-center blue bold py-2">
+                Or browse official preconstructed decks or Tournament Winning
+                Decks (TWD)
+              </div>
+            </Col>
+          </Row>
+        )}
 
       {isMobile && showFloatingButtons && (
         <>
