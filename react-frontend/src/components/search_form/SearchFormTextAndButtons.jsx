@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function SearchFormTextAndButtons(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   if (isMobile) {
     return (

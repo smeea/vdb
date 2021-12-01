@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ButtonAddCard(props) {
-  const { decks, deckCardChange } = useContext(AppContext);
+  const { decks, deckCardChange } = useApp();
 
   const handleButton = () => {
     deckCardChange(props.deckid, props.card.Id, props.inDeck + 1);

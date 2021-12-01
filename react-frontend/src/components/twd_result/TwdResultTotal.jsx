@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import AppContext from 'context/AppContext.js';
+import React from 'react';
+import { useApp } from 'context';
 
 function TwdResultTotal(props) {
-  const { twdResults } = useContext(AppContext);
+  const { twdResults } = useApp();
 
   const byYear = {};
   let total = 0;

@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import PlusSlashMinus from 'assets/images/icons/plus-slash-minus.svg';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 const DeckDiffButton = (props) => {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
   const navigate = useNavigate();
 
   return (

@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 const DeckDrawButton = (props) => {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   return (
     <Button

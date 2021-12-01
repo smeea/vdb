@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { TwdResult, TwdSearchForm } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function Twd(props) {
-  const { showTwdSearch, twdResults, isMobile } = useContext(AppContext);
+  const { showTwdSearch, twdResults, isMobile } = useApp();
 
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 

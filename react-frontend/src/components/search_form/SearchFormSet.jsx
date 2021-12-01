@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Form, Stack, Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import {
@@ -6,11 +6,11 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 
 function SearchFormSet(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   const preOptions = [
     {

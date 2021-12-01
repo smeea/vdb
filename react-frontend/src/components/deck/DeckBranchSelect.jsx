@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Select from 'react-select';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckBranchSelect(props) {
-  const { setActiveDeck, decks } = useContext(AppContext);
+  const { setActiveDeck, decks } = useApp();
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);

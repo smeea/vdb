@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Container, Row, Col, Stack, Button } from 'react-bootstrap';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
@@ -10,7 +10,7 @@ import {
   ButtonCardCopyUrl,
   ButtonAddCard,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function Cards(props) {
   const params = useParams();
@@ -25,7 +25,7 @@ function Cards(props) {
     lang,
     isMobile,
     activeDeck,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext } from 'react';
+import React, { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Overlay, Popover } from 'react-bootstrap';
 import PersonFill from 'assets/images/icons/person-fill.svg';
@@ -9,13 +9,11 @@ import SunFill from 'assets/images/icons/sun-fill.svg';
 import MoonFill from 'assets/images/icons/moon-fill.svg';
 import List from 'assets/images/icons/list.svg';
 import { LanguageSelect } from 'components';
-import AppContext from 'context/AppContext.js';
-import ThemeContext from 'context/ThemeContext.js';
+import { useApp, useTheme } from 'context';
 
 const NavMobileMenu = (props) => {
-  const { inventoryMode, toggleInventoryMode, username } =
-    useContext(AppContext);
-  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  const { inventoryMode, toggleInventoryMode, username } = useApp();
+  const { isDarkTheme, toggleTheme } = useTheme();
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
 

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -12,7 +12,7 @@ import {
   ButtonAddCard,
   ResultCryptModal,
 } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function ResultCryptTable(props) {
   const {
@@ -23,7 +23,7 @@ function ResultCryptTable(props) {
     inventoryMode,
     isMobile,
     isWide,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
 

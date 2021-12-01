@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
 import Check2 from 'assets/images/icons/check2.svg';
 import PenFill from 'assets/images/icons/pen-fill.svg';
 import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function AccountChangeName(props) {
-  const { publicName, setPublicName, isMobile } = useContext(AppContext);
+  const { publicName, setPublicName, isMobile } = useApp();
 
   const [emptyName, setEmptyName] = useState(false);
   const [state, setState] = useState('');

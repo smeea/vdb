@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -16,10 +16,10 @@ import {
   ResultCryptTitle,
   ResultCryptModal,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function InventoryCryptTable(props) {
-  const { usedCryptCards, isMobile, isWide } = useContext(AppContext);
+  const { usedCryptCards, isMobile, isWide } = useApp();
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
 
   const handleModalCardChange = (d) => {

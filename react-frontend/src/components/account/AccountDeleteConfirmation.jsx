@@ -1,13 +1,12 @@
-import React, { useState, useRef, useContext } from 'react';
-import { Form, FormControl, InputGroup, Modal, Button } from 'react-bootstrap';
+import React, { useState, useRef } from 'react';
 import X from 'assets/images/icons/x.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import { ErrorOverlay } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function AccountDeleteConfirmation(props) {
-  const { username, setUsername, isMobile } = useContext(AppContext);
+  const { username, setUsername, isMobile } = useApp();
 
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);

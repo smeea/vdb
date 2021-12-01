@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { OverlayTooltip } from 'components';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 const ResultLayoutTextSets = (props) => {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   const byYear = (a, b) => {
     return setsAndPrecons[a].year - setsAndPrecons[b].year;

@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import { DeckLibraryTable } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function TwdResultLibraryByType(props) {
-  const { nativeLibrary } = useContext(AppContext);
+  const { nativeLibrary } = useApp();
 
   const cardtypeSorted = [
     'Master',

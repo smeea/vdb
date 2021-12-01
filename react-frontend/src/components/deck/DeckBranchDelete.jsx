@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import NodeMinusFill from 'assets/images/icons/node-minus-fill.svg';
 import { ModalConfirmation } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckBranchDelete(props) {
-  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);

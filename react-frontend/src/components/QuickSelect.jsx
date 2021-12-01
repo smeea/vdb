@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useRef, useContext } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import AsyncSelect from 'react-select/async';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 import { SelectLabelCrypt, SelectLabelLibrary } from 'components';
 
 function QuickSelect(props) {
-  const { cryptCardBase, libraryCardBase, isMobile } = useContext(AppContext);
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const params = useParams();
   const navigate = useNavigate();

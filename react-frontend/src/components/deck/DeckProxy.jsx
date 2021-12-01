@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 import { Button, Spinner, Dropdown } from 'react-bootstrap';
 import Printer from 'assets/images/icons/printer.svg';
 import { DeckProxySelectModal, BlockButton } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckProxy(props) {
-  const { inventoryMode, isMobile } = useContext(AppContext);
+  const { inventoryMode, isMobile } = useApp();
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState(undefined);

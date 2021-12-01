@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Stack, Button } from 'react-bootstrap';
 import InventoryExport from './InventoryExport.jsx';
 import { DeckImport, InventoryDelete, InventoryMissing } from 'components';
 import FolderPlus from 'assets/images/icons/folder-plus.svg';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function InventoryButtons(props) {
-  const { decks, preconDecks } = useContext(AppContext);
+  const { decks, preconDecks } = useApp();
 
   return (
     <Stack gap={1}>

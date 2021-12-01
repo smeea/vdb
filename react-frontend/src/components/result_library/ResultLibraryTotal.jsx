@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ResultLibraryTypeImage, ResultLibrarySortForm } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ResultLibraryTotal(props) {
-  const { libraryResults } = useContext(AppContext);
+  const { libraryResults } = useApp();
   const byTypes = {};
   let total = 0;
 

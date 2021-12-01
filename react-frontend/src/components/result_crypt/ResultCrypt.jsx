@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultCryptTable, ResultCryptTotal } from 'components';
 import resultCryptSort from 'components/resultCryptSort.js';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ResultCrypt(props) {
   const {
@@ -17,7 +17,7 @@ function ResultCrypt(props) {
     isMobile,
     cryptSearchSort,
     changeCryptSearchSort,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);

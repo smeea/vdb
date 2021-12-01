@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
@@ -10,7 +10,7 @@ import {
   DeckCrypt,
   DeckLibrary,
 } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function Crypt(props) {
   const {
@@ -21,7 +21,7 @@ function Crypt(props) {
     addMode,
     toggleAddMode,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   let isBranches;
   if (deckRouter(props.activeDeck)) {

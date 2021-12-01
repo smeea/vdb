@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Form, Row, Col, FormControl, Button } from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
@@ -22,7 +22,7 @@ import {
 } from 'components';
 
 import decksSort from 'components/decksSort.js';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckSelectAdvModal(props) {
   const {
@@ -32,7 +32,7 @@ function DeckSelectAdvModal(props) {
     setActiveDeck,
     inventoryMode,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [sortMethod, setSortMethod] = useState('byName');
   const [sortedDecks, setSortedDecks] = useState([]);

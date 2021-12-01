@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 const ResultLayoutTextInventory = (props) => {
   const {
@@ -13,7 +13,7 @@ const ResultLayoutTextInventory = (props) => {
     usedLibraryCards,
     inventoryCrypt,
     inventoryLibrary,
-  } = useContext(AppContext);
+  } = useApp();
 
   let softUsedMax = 0;
   let hardUsedTotal = 0;

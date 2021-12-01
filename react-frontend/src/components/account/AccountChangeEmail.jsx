@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
 import Check2 from 'assets/images/icons/check2.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function AccountChangeEmail(props) {
-  const { email, setEmail, isMobile } = useContext(AppContext);
+  const { email, setEmail, isMobile } = useApp();
 
   const [state, setState] = useState({
     password: '',

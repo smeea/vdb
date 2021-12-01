@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -15,10 +15,10 @@ import {
 } from 'components';
 
 import drawProbability from 'components/drawProbability.js';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckDrawLibraryTable(props) {
-  const { nativeLibrary, isMobile } = useContext(AppContext);
+  const { nativeLibrary, isMobile } = useApp();
   const [modalDraw, setModalDraw] = useState(undefined);
   let resultTrClass;
 

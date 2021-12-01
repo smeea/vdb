@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { InventoryCryptTable, InventoryFilterForm } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function InventoryCrypt(props) {
-  const { usedCryptCards, cryptCardBase } = useContext(AppContext);
+  const { usedCryptCards, cryptCardBase } = useApp();
   const [clan, setClan] = useState('All');
 
   const cryptByClan = {};

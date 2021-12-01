@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -7,10 +7,10 @@ import {
   ResultCryptModal,
   NewCryptCard,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function TwdSearchFormCrypt(props) {
-  const { cryptCardBase, isMobile } = useContext(AppContext);
+  const { cryptCardBase, isMobile } = useApp();
   const [modalCard, setModalCard] = useState(undefined);
 
   const handleAdd = (event) => {

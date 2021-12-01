@@ -1,12 +1,12 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef } from 'react';
 import FileSaver from 'file-saver';
 import { Spinner, Dropdown } from 'react-bootstrap';
 import Download from 'assets/images/icons/download.svg';
 import { BlockButton, ErrorOverlay } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckExport(props) {
-  const { username, decks, isMobile } = useContext(AppContext);
+  const { username, decks, isMobile } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);

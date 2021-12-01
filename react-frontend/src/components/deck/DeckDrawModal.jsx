@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
@@ -9,10 +9,10 @@ import {
   DeckDrawLibraryTable,
 } from 'components';
 
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckDrawModal(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   const [modalCryptCardIdx, setModalCryptCardIdx] = useState(undefined);
   const [modalLibraryCardIdx, setModalLibraryCardIdx] = useState(undefined);

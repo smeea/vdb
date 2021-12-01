@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Files from 'assets/images/icons/files.svg';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckClone(props) {
-  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useApp();
 
   const [state, setState] = useState(false);
 

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import {
@@ -7,10 +7,10 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function SearchLibraryFormClan(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   const clans = [
     'ANY',

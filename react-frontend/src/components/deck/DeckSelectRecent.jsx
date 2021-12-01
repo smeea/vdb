@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Select from 'react-select';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckSelectRecent(props) {
-  const { setActiveDeck, recentDecks, isMobile } = useContext(AppContext);
+  const { setActiveDeck, recentDecks, isMobile } = useApp();
 
   const options = recentDecks.map((i) => {
     return {

@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import reactStringReplace from 'react-string-replace';
 import icons from 'components/forms_data/disciplineIcons.json';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 import { CardPopover, ResultCryptName, ResultLibraryName } from 'components';
 
 const ResultLayoutTextRulings = (props) => {
@@ -12,7 +12,7 @@ const ResultLayoutTextRulings = (props) => {
     cryptCardBase,
     libraryCardBase,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const Rulings = Object(props.rulings).map((k, index) => {
     const Refs = Object.keys(k['refs']).map((j, idx) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Row, Col, FormControl, Button } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
@@ -12,12 +12,11 @@ import {
   OverlayTooltip,
 } from 'components';
 import decksSort from 'components/decksSort.js';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 
 function InventoryAddDeckModal(props) {
-  const { inventoryCrypt, inventoryLibrary, preconDecks, isMobile } =
-    useContext(AppContext);
+  const { inventoryCrypt, inventoryLibrary, preconDecks, isMobile } = useApp();
 
   const [sortMethod, setSortMethod] = useState('byDate');
   const [sortedDecks, setSortedDecks] = useState([]);

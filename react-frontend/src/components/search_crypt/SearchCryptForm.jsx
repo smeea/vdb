@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Form, Spinner } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
@@ -21,7 +21,7 @@ import {
 } from 'components';
 import defaults from 'components/forms_data/defaultsCryptForm.json';
 import sanitizeFormState from 'components/sanitizeFormState.js';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function SearchCryptForm(props) {
   const {
@@ -35,7 +35,7 @@ function SearchCryptForm(props) {
     inventoryCrypt,
     inventoryMode,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);

@@ -1,11 +1,18 @@
 import React, { useState, useLayoutEffect } from 'react';
-import defaultsTwdForm from '../components/forms_data/defaultsTwdForm.json';
-import defaultsCryptForm from '../components/forms_data/defaultsCryptForm.json';
-import defaultsLibraryForm from '../components/forms_data/defaultsLibraryForm.json';
+import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
+import defaultsCryptForm from 'components/forms_data/defaultsCryptForm.json';
+import defaultsLibraryForm from 'components/forms_data/defaultsLibraryForm.json';
 
 const AppContext = React.createContext();
 
 export default AppContext;
+
+export const useApp = () => {
+  const context = React.useContext(AppContext);
+  if (!context) throw new Error(`useApp must be used within a AppProvider`);
+
+  return context;
+};
 
 export const AppProvider = (props) => {
   const isMobile = window.matchMedia('(max-width: 540px)').matches;
@@ -369,33 +376,30 @@ export const AppProvider = (props) => {
   return (
     <AppContext.Provider
       value={{
+        // 1 - APP Context
         isMobile,
         isWide,
+        lang,
+        changeLang,
+        hideMissing,
+        setHideMissing,
+        inventoryMode, // move to listing??
+        toggleInventoryMode, // move to listing??
+        setInventoryMode, // move to listing??
+        addMode, // move to listing??
+        toggleAddMode, // move to listing??
+        showImage,
+        toggleShowImage,
+
+        // 2 - USER Context
         username,
         setUsername,
         publicName,
         setPublicName,
         email,
         setEmail,
-        lang,
-        changeLang,
-        hideMissing,
-        setHideMissing,
-        inventoryMode,
-        toggleInventoryMode,
-        setInventoryMode,
-        addMode,
-        toggleAddMode,
-        showImage,
-        toggleShowImage,
-        changeCryptSearchSort,
-        changeCryptDeckSort,
-        cryptSearchSort,
-        cryptDeckSort,
-        librarySearchSort,
-        changeCryptSearchSort,
-        changeLibrarySearchSort,
 
+        // 3 - CARDBASE Context
         cryptCardBase,
         setCryptCardBase,
         libraryCardBase,
@@ -409,37 +413,19 @@ export const AppProvider = (props) => {
         nativeLibrary,
         setNativeLibrary,
 
-        twdFormState,
-        setTwdFormState,
-        cryptFormState,
-        setCryptFormState,
-        libraryFormState,
-        setLibraryFormState,
-
-        twdResults,
-        setTwdResults,
-        cryptResults,
-        setCryptResults,
-        libraryResults,
-        setLibraryResults,
-
-        usedCryptCards,
-        setUsedCryptCards,
-        usedLibraryCards,
-        setUsedLibraryCards,
-
-        showTwdSearch,
-        setShowTwdSearch,
-        showCryptSearch,
-        setShowCryptSearch,
-        showLibrarySearch,
-        setShowLibrarySearch,
-
+        // 4 - INVENTORY Context
         inventoryCrypt,
         setInventoryCrypt,
         inventoryLibrary,
         setInventoryLibrary,
 
+        usedCryptCards,
+        setUsedCryptCards,
+        usedLibraryCards,
+        setUsedLibraryCards,
+        inventoryCardChange,
+
+        // 5 - DECK Context
         preconDecks,
         setPreconDecks,
         decks,
@@ -455,8 +441,38 @@ export const AppProvider = (props) => {
         deckRouter,
         deckUpdate,
         deckCardChange,
-        inventoryCardChange,
         changeTimer,
+
+        // 6 - LISTING Context (NEED REVIEW)
+
+        twdFormState,
+        setTwdFormState,
+        cryptFormState,
+        setCryptFormState,
+        libraryFormState,
+        setLibraryFormState,
+
+        twdResults,
+        setTwdResults,
+        cryptResults,
+        setCryptResults,
+        libraryResults,
+        setLibraryResults,
+
+        showTwdSearch,
+        setShowTwdSearch,
+        showCryptSearch,
+        setShowCryptSearch,
+        showLibrarySearch,
+        setShowLibrarySearch,
+
+        // SORTING Context (NEED REVIEW)
+        cryptSearchSort, // LOCAL ResultCrypt.jsx
+        changeCryptSearchSort, // LOCAL ResultCrypt.jsx
+        librarySearchSort, // LOCAL ResultLibrary.jsx
+        changeLibrarySearchSort, // LOCAL ResultLibrary.jsx
+        cryptDeckSort,
+        changeCryptDeckSort,
       }}
     >
       {props.children}

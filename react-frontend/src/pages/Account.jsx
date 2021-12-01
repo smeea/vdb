@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import {
   AccountLogin,
@@ -10,10 +10,10 @@ import {
   AccountDelete,
 } from 'components';
 import PersonFill from 'assets/images/icons/person-fill.svg';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function Account(props) {
-  const { username } = useContext(AppContext);
+  const { username } = useApp();
 
   return (
     <Container className="main-container">

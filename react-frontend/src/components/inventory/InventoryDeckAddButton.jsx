@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ModalConfirmation } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function InventoryDeckAddButton(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   ResultLibraryName,
   ResultLibraryDisciplines,
@@ -6,10 +6,10 @@ import {
   ResultLibraryCost,
   ResultLibraryClan,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 const SelectLabelLibrary = (props) => {
-  const { inventoryLibrary, libraryCardBase } = useContext(AppContext);
+  const { inventoryLibrary, libraryCardBase } = useApp();
 
   return (
     <>

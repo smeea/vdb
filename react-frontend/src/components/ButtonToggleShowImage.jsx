@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import ImageAlt from 'assets/images/icons/image-alt.svg';
 import FileTextFill from 'assets/images/icons/chat-quote-fill.svg';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ButtonToggleShowImage(props) {
-  const { showImage, toggleShowImage, isMobile } = useContext(AppContext);
+  const { showImage, toggleShowImage, isMobile } = useApp();
   const [state, setState] = useState(false);
 
   const handleButton = () => {

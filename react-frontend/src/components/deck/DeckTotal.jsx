@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import AppContext from 'context/AppContext.js';
+import React from 'react';
+import { useApp } from 'context';
 
 function DeckTotal(props) {
-  const { decks } = useContext(AppContext);
+  const { decks } = useApp();
   const byTags = {};
   let total = 0;
 

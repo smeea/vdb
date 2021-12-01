@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   ResultLibraryName,
   ResultLibraryTypeImage,
@@ -13,10 +13,10 @@ import {
   ResultLayoutTextArtist,
   ResultLayoutTextText,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ResultLibraryLayoutText(props) {
-  const { inventoryMode, nativeLibrary } = useContext(AppContext);
+  const { inventoryMode, nativeLibrary } = useApp();
 
   return (
     <>

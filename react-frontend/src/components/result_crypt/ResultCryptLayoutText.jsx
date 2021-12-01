@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 import {
   CardPopover,
   ResultCryptName,
@@ -16,7 +16,7 @@ import {
 } from 'components';
 
 function ResultCryptLayoutText(props) {
-  const { inventoryMode, isMobile, cryptCardBase } = useContext(AppContext);
+  const { inventoryMode, isMobile, cryptCardBase } = useApp();
 
   return (
     <>

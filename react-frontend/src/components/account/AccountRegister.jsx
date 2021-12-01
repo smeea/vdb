@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Form,
   FormControl,
@@ -11,14 +11,10 @@ import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import { ErrorOverlay } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function AccountRegister(props) {
-  const { setUsername } = useContext(AppContext);
-  const [state, setState] = useState({
-    username: '',
-    password: '',
-  });
+  const { setUsername } = useApp();
   const [spinnerState, setSpinnerState] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
   const [emptyUsername, setEmptyUsername] = useState(false);

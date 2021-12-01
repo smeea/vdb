@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ResultCryptSortForm } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ResultCryptTotal(props) {
-  const { cryptResults } = useContext(AppContext);
+  const { cryptResults } = useApp();
   const byGroups = {};
   const byGroupsCapacityTotal = {};
   let total = 0;

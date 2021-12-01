@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import cryptArtists from 'components/forms_data/artistsCrypt.json';
 import libraryArtists from 'components/forms_data/artistsLib.json';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function SearchFormArtist(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   let artists;
   props.target == 'crypt'

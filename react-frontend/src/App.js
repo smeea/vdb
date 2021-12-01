@@ -1,29 +1,28 @@
-import React, { useState, useEffect, useContext, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Route,
   Navigate,
   Routes,
 } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext.js';
-import AppContext from './context/AppContext.js';
-import About from './pages/About.jsx';
-import Account from './pages/Account.jsx';
-import Cards from './pages/Cards.jsx';
-import Crypt from './pages/Crypt.jsx';
-import Decks from './pages/Decks.jsx';
-import Diff from './pages/Diff.jsx';
-import Documentation from './pages/Documentation.jsx';
-import Inventory from './pages/Inventory.jsx';
-import Library from './pages/Library.jsx';
-import Navigation from './pages/Navigation.jsx';
-import Twd from './pages/Twd.jsx';
-import preconDecksData from './assets/data/preconDecks.json';
-import setsAndPrecons from './components/forms_data/setsAndPrecons.json';
-import './assets/css/bootstrap.min.css';
-import './assets/css/style.styl';
+import { useApp, ThemeProvider } from 'context';
+import About from 'pages/About.jsx';
+import Account from 'pages/Account.jsx';
+import Cards from 'pages/Cards.jsx';
+import Crypt from 'pages/Crypt.jsx';
+import Decks from 'pages/Decks.jsx';
+import Diff from 'pages/Diff.jsx';
+import Documentation from 'pages/Documentation.jsx';
+import Inventory from 'pages/Inventory.jsx';
+import Library from 'pages/Library.jsx';
+import Navigation from 'pages/Navigation.jsx';
+import Twd from 'pages/Twd.jsx';
+import preconDecksData from 'assets/data/preconDecks.json';
+import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import 'assets/css/bootstrap.min.css';
+import 'assets/css/style.styl';
 
-const Changelog = React.lazy(() => import('./pages/Changelog.jsx'));
+const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
 
 function App(props) {
   const {
@@ -59,7 +58,7 @@ function App(props) {
     setActiveDeck,
     getDecks,
     setPreconDecks,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [lastDeck, setLastDeck] = useState({});
 

@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PaletteFill from 'assets/images/icons/palette-fill.svg';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckChangeBranchName(props) {
-  const { deckUpdate, isMobile } = useContext(AppContext);
+  const { deckUpdate, isMobile } = useApp();
 
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);

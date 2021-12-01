@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { InventoryLibraryTable, InventoryFilterForm } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function InventoryLibrary(props) {
-  const { usedLibraryCards, libraryCardBase } = useContext(AppContext);
+  const { usedLibraryCards, libraryCardBase } = useApp();
   const [cardtype, setCardtype] = useState('All');
 
   const libraryByType = {};

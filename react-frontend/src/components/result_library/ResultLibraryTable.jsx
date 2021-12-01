@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -13,7 +13,7 @@ import {
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ResultLibraryTable(props) {
   const {
@@ -24,7 +24,7 @@ function ResultLibraryTable(props) {
     inventoryMode,
     nativeLibrary,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
 

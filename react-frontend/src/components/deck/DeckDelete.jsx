@@ -1,12 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ModalConfirmation } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckDelete(props) {
-  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 

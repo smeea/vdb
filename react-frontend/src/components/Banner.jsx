@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import AppContext from 'context/AppContext.js';
+import React from 'react';
+import { useApp } from 'context';
 
 function Banner(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   return (
     <div

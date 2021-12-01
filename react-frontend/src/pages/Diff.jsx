@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Modal,
@@ -22,7 +22,7 @@ import {
   DiffCrypt,
   DiffLibrary,
 } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function Diff(props) {
   const {
@@ -36,7 +36,7 @@ function Diff(props) {
     deckRouter,
     username,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const query = new URLSearchParams(useLocation().search);
   const fromQuery = query.get('from');

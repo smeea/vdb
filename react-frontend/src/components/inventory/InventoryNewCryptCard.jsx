@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NewCryptCard } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function InventoryNewCryptCard(props) {
-  const { inventoryCardChange } = useContext(AppContext);
+  const { inventoryCardChange } = useApp();
   const [selectedValue, setSelectedValue] = useState(null);
 
   const addNewCard = () => {

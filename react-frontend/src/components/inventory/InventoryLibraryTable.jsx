@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -17,11 +17,10 @@ import {
   ResultLibraryName,
   ResultLibraryTrifle,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function InventoryLibraryTable(props) {
-  const { usedLibraryCards, nativeLibrary, isMobile, isWide } =
-    useContext(AppContext);
+  const { usedLibraryCards, nativeLibrary, isMobile, isWide } = useApp();
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
 
   const handleModalCardChange = (d) => {

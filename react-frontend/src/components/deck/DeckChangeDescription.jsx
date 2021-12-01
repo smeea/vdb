@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import ChevronBarExpand from 'assets/images/icons/chevron-bar-expand.svg';
 import ChevronBarContract from 'assets/images/icons/chevron-bar-contract.svg';
 import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckDescription(props) {
-  const { deckUpdate, isMobile } = useContext(AppContext);
+  const { deckUpdate, isMobile } = useApp();
 
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);

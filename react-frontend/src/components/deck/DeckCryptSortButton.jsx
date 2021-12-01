@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button, Dropdown } from 'react-bootstrap';
 import SortDown from 'assets/images/icons/sort-down.svg';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckCryptSortButton(props) {
-  const { cryptDeckSort, changeCryptDeckSort } = useContext(AppContext);
+  const { cryptDeckSort, changeCryptDeckSort } = useApp();
 
   const sortMethods = ['Quantity', 'Capacity', 'Name', 'Group'];
 

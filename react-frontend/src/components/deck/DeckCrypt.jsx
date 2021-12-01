@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import X from 'assets/images/icons/x.svg';
@@ -11,10 +11,10 @@ import {
 } from 'components';
 
 import deckCryptSort from 'components/deckCryptSort.js';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckCrypt(props) {
-  const { cryptDeckSort, changeTimer, isMobile } = useContext(AppContext);
+  const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);

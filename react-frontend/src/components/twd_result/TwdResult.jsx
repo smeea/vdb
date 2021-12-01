@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
@@ -9,7 +9,7 @@ import {
   TwdResultLibraryByType,
   TwdResultLibraryKeyCards,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function TwdResult(props) {
   const {
@@ -20,7 +20,7 @@ function TwdResult(props) {
     libraryCardBase,
     showImage,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const navigate = useNavigate();
   const showCounterStep = 20;

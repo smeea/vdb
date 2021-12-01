@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
 import LightbulbOffFill from 'assets/images/icons/lightbulb-off-fill.svg';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckHide(props) {
-  const { decks, deckUpdate } = useContext(AppContext);
+  const { decks, deckUpdate } = useApp();
 
   const handleClick = () => {
     deckUpdate(props.deckid, 'hidden', !decks[props.deckid].hidden);

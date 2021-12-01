@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import ArrowDown from 'assets/images/icons/arrow-down.svg';
 import ArrowUp from 'assets/images/icons/arrow-up.svg';
@@ -20,7 +20,7 @@ import {
 } from 'components';
 
 import drawProbability from 'components/drawProbability.js';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DiffCryptTable(props) {
   const {
@@ -31,7 +31,7 @@ function DiffCryptTable(props) {
     isMobile,
     isWide,
     deckCardChange,
-  } = useContext(AppContext);
+  } = useApp();
 
   let resultTrClass;
 

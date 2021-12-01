@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 const UsedDescription = (props) => {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   return (
     <div className="d-flex align-items-center">

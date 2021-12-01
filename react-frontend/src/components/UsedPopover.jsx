@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Popover } from 'react-bootstrap';
 import ArchiveFill from 'assets/images/icons/archive-fill.svg';
 import CalculatorFill from 'assets/images/icons/calculator-fill.svg';
 import { UsedDescription } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 const UsedPopover = React.forwardRef((props, ref) => {
   const {
@@ -12,7 +12,7 @@ const UsedPopover = React.forwardRef((props, ref) => {
     usedLibraryCards,
     inventoryCrypt,
     inventoryLibrary,
-  } = useContext(AppContext);
+  } = useApp();
 
   const { cardid, ...rest } = props;
 

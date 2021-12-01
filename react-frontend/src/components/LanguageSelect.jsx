@@ -1,12 +1,12 @@
-import React, { useRef, useState, useContext } from 'react';
+import React, { useRef, useState } from 'react';
 import { Overlay, Popover } from 'react-bootstrap';
-import FlagEn from '../assets/images/flags/en.svg';
-import FlagEs from '../assets/images/flags/es.svg';
-import FlagFr from '../assets/images/flags/fr.svg';
-import AppContext from 'context/AppContext.js';
+import FlagEn from 'assets/images/flags/en.svg';
+import FlagEs from 'assets/images/flags/es.svg';
+import FlagFr from 'assets/images/flags/fr.svg';
+import { useApp } from 'context';
 
 const LanguageSelect = (props) => {
-  const { isMobile, lang, changeLang } = useContext(AppContext);
+  const { isMobile, lang, changeLang } = useApp();
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
 

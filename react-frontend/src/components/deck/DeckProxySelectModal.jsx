@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { DeckProxyCrypt, DeckProxyLibrary } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckProxySelectModal(props) {
   const {
@@ -12,7 +12,7 @@ function DeckProxySelectModal(props) {
     inventoryLibrary,
     isMobile,
     inventoryMode,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [proxySelected, setProxySelected] = useState({});
   const [toggleState, setToggleState] = useState(false);

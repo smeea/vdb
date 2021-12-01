@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NewLibraryCard } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckNewLibraryCard(props) {
-  const { deckCardChange } = useContext(AppContext);
+  const { deckCardChange } = useApp();
   const [selectedValue, setSelectedValue] = useState(null);
 
   const addNewCard = () => {

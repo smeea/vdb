@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   ResultLibraryName,
   ResultLibraryTypeImage,
@@ -11,11 +11,10 @@ import {
   ResultLayoutTextSets,
   ResultLayoutTextRulings,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ResultLibraryPopover(props) {
-  const { showImage, nativeLibrary, localizedLibrary, lang } =
-    useContext(AppContext);
+  const { showImage, nativeLibrary, localizedLibrary, lang } = useApp();
 
   const imgSrc = `${process.env.ROOT_URL}images/cards/${
     localizedLibrary &&

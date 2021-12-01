@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import AppContext from 'context/AppContext';
+import React from 'react';
+import { useApp } from 'context';
 
 function DeckCryptDisciplines(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   const emptyCols = [];
   let counter = 0;

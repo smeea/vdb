@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import reactStringReplace from 'react-string-replace';
 import icons from 'components/forms_data/disciplineIcons.json';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 import { CardPopover, ResultCryptName, ResultLibraryName } from 'components';
 
 const ResultLayoutTextText = (props) => {
-  const { cryptCardBase, libraryCardBase, isMobile } = useContext(AppContext);
+  const { cryptCardBase, libraryCardBase, isMobile } = useApp();
 
   const text = props.text.replace(/\(D\)/g, '\u24B9').split('\n');
 

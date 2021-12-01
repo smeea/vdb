@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import At from 'assets/images/icons/at.svg';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckSelectMy(props) {
-  const { inventoryMode, setActiveDeck, decks, isMobile } =
-    useContext(AppContext);
+  const { inventoryMode, setActiveDeck, decks, isMobile } = useApp();
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);

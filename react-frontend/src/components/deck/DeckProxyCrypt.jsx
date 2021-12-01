@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DeckProxyCryptTable, ResultCryptModal } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckProxyCrypt(props) {
-  const { cryptDeckSort, changeTimer, isMobile } = useContext(AppContext);
+  const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
   const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);

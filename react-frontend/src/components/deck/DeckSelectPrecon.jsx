@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckSelectPrecon(props) {
-  const { setActiveDeck, isMobile } = useContext(AppContext);
+  const { setActiveDeck, isMobile } = useApp();
 
   const preOptions = [];
 

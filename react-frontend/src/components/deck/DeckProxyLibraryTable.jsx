@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
@@ -14,7 +14,7 @@ import {
   ResultLibraryTrifle,
 } from 'components';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckProxyLibraryTable(props) {
   const {
@@ -26,7 +26,7 @@ function DeckProxyLibraryTable(props) {
     lang,
     localizedLibrary,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   let resultTrClass;
 

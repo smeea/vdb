@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   ResultCryptName,
   ResultCryptClan,
@@ -9,10 +9,10 @@ import {
   ResultLayoutTextSets,
   ResultLayoutTextRulings,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ResultCryptPopover(props) {
-  const { showImage, localizedCrypt, lang } = useContext(AppContext);
+  const { showImage, localizedCrypt, lang } = useApp();
 
   const imgSrc = `${process.env.ROOT_URL}images/cards/${
     localizedCrypt &&

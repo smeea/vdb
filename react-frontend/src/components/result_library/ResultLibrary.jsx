@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultLibraryTable, ResultLibraryTotal } from 'components';
 import resultLibrarySort from 'components/resultLibrarySort.js';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ResultLibrary(props) {
   const {
@@ -17,7 +17,7 @@ function ResultLibrary(props) {
     isMobile,
     librarySearchSort,
     changeLibrarySearchSort,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);

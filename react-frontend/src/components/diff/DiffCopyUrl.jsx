@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import ShareFill from 'assets/images/icons/share-fill.svg';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DiffCopyUrl(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {

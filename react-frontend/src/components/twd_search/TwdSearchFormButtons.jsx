@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import LightningFill from 'assets/images/icons/lightning-fill.svg';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
 import X from 'assets/images/icons/x.svg';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function TwdSearchFormButtons(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   return (
     <div className="d-flex pb-2 justify-content-between">

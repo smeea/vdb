@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
 import Upload from 'assets/images/icons/upload.svg';
@@ -8,10 +8,10 @@ import {
   DeckImportText,
   DeckImportAmaranth,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckImport(props) {
-  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useApp();
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');
   const [showTextModal, setShowTextModal] = useState(false);

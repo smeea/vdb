@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Cart4 from 'assets/images/icons/cart4.svg';
 import { DeckMissingModal } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckMissing(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
   const [showModal, setShowModal] = useState(undefined);
   const handleCloseModal = () => {
     setShowModal(false);

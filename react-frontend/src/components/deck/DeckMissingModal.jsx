@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Modal, Container, Row, Col, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { DeckCrypt, DeckLibrary } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckMissingModal(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   return (
     <Modal

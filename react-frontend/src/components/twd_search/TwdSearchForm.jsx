@@ -1,29 +1,29 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Form, Row, Col, Spinner } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import X from 'assets/images/icons/x.svg';
 import {
-  ErrorOverlaym,
-  TwdSearchFormButtonsm,
-  TwdSearchFormPlayerm,
-  TwdSearchFormPlayersm,
-  TwdSearchFormLocationm,
-  TwdSearchFormEventm,
-  TwdSearchFormDatem,
-  TwdSearchFormClanm,
-  TwdSearchFormCardtypesm,
-  TwdSearchFormCapacitym,
-  TwdSearchFormDisciplinesm,
-  TwdSearchFormCryptm,
-  TwdSearchFormLibrarym,
-  TwdSearchFormLibraryTotalm,
-  TwdSearchFormMatchInventorym,
-  TwdSearchFormMatchInventoryScalingm,
+  ErrorOverlay,
+  TwdSearchFormButtons,
+  TwdSearchFormPlayer,
+  TwdSearchFormPlayers,
+  TwdSearchFormLocation,
+  TwdSearchFormEvent,
+  TwdSearchFormDate,
+  TwdSearchFormClan,
+  TwdSearchFormCardtypes,
+  TwdSearchFormCapacity,
+  TwdSearchFormDisciplines,
+  TwdSearchFormCrypt,
+  TwdSearchFormLibrary,
+  TwdSearchFormLibraryTotal,
+  TwdSearchFormMatchInventory,
+  TwdSearchFormMatchInventoryScaling,
 } from 'components';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 import sanitizeFormState from 'components/sanitizeFormState.js';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function TwdSearchForm(props) {
   const {
@@ -35,7 +35,7 @@ function TwdSearchForm(props) {
     setShowTwdSearch,
     inventoryMode,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;

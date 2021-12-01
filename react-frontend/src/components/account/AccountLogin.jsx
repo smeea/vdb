@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   Form,
   FormControl,
@@ -12,11 +12,10 @@ import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function AccountLogin(props) {
-  const { setPublicName, setEmail, setUsername, isMobile } =
-    useContext(AppContext);
+  const { setPublicName, setEmail, setUsername, isMobile } = useApp();
 
   const [state, setState] = useState({
     username: '',

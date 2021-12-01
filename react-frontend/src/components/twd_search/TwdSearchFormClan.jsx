@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Select from 'react-select';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function TwdSearchFormClan(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   const clans = [
     'ANY',

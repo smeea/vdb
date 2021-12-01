@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
@@ -19,7 +19,7 @@ import {
 } from 'components';
 
 import drawProbability from 'components/drawProbability.js';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckCryptTable(props) {
   const {
@@ -31,7 +31,7 @@ function DeckCryptTable(props) {
     isWide,
     deckUpdate,
     deckCardChange,
-  } = useContext(AppContext);
+  } = useApp();
 
   let resultTrClass;
   let deckInvType = null;

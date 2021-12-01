@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import List from 'assets/images/icons/list.svg';
 import X from 'assets/images/icons/x.svg';
@@ -14,7 +14,7 @@ import {
   InventoryAddDeckModal,
   InventoryAddPreconModal,
 } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function Inventory(props) {
   const {
@@ -24,7 +24,7 @@ function Inventory(props) {
     usedLibraryCards,
     username,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [newCryptId, setNewCryptId] = useState(undefined);
   const [newLibraryId, setNewLibraryId] = useState(undefined);

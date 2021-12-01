@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -9,11 +9,11 @@ import {
   ResultLibraryClan,
   ResultLibraryModal,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function TwdResultLibraryKeyCards(props) {
   const { inventoryLibrary, usedLibraryCards, inventoryMode, isMobile } =
-    useContext(AppContext);
+    useApp();
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
 

@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckCardQuantity(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
 
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(props.q);

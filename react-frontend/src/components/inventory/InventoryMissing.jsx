@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Cart4 from 'assets/images/icons/cart4.svg';
 import { DeckMissingModal } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function InventoryMissing(props) {
   const {
@@ -13,7 +13,7 @@ function InventoryMissing(props) {
     cryptCardBase,
     libraryCardBase,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const [showModal, setShowModal] = useState(undefined);
   const [missingCrypt, setMissingCrypt] = useState(undefined);

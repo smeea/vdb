@@ -1,11 +1,11 @@
-import React, { useContext, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Modal, Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ModalConfirmation(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
   const [confirmation, setConfirmation] = useState('');
   const [errorConfirmation, setErrorConfirmation] = useState(false);
   const refConfirmation = useRef(null);

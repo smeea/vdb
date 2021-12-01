@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import CreatableSelect from 'react-select/creatable';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckTags(props) {
-  const { deckUpdate } = useContext(AppContext);
+  const { deckUpdate } = useApp();
   const [tags, setTags] = useState(undefined);
 
   const handleChange = (event) => {

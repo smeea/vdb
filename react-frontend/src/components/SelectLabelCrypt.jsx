@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   ResultCryptName,
   ResultCryptClan,
   ResultCryptCapacity,
   ResultCryptDisciplines,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 const SelectLabelCrypt = (props) => {
-  const { inventoryCrypt, cryptCardBase } = useContext(AppContext);
+  const { inventoryCrypt, cryptCardBase } = useApp();
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import { Form, OverlayTrigger, Popover } from 'react-bootstrap';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
@@ -15,7 +15,7 @@ import {
   ResultCryptTitle,
 } from 'components';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckProxyCryptTable(props) {
   const {
@@ -26,7 +26,7 @@ function DeckProxyCryptTable(props) {
     lang,
     localizedCrypt,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   let resultTrClass;
 

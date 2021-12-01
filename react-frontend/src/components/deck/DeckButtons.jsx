@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Stack } from 'react-bootstrap';
 import {
   DeckClone,
@@ -14,10 +14,10 @@ import {
   DeckBranchDelete,
 } from 'components';
 
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckButtons(props) {
-  const { inventoryMode, username } = useContext(AppContext);
+  const { inventoryMode, username } = useApp();
 
   return (
     <Stack gap={1}>

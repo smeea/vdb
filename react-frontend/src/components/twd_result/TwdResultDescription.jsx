@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
 import { TwdOpenDeckButton, DeckClone } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 
 function TwdResultDescription(props) {
-  const { setTwdFormState, username, isMobile } = useContext(AppContext);
+  const { setTwdFormState, username, isMobile } = useApp();
   const navigate = useNavigate();
   const def = JSON.parse(JSON.stringify(defaults));
 

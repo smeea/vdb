@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import NodePlusFill from 'assets/images/icons/node-plus-fill.svg';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function DeckBranchCreate(props) {
-  const { getDecks, setActiveDeck, isMobile } = useContext(AppContext);
+  const { getDecks, setActiveDeck, isMobile } = useApp();
 
   const branchCreate = () => {
     let newdeckid;

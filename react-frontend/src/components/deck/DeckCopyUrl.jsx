@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Button, Dropdown } from 'react-bootstrap';
 import ShareFill from 'assets/images/icons/share-fill.svg';
 import { BlockButton } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function DeckCopyUrl(props) {
-  const { isMobile } = useContext(AppContext);
+  const { isMobile } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {

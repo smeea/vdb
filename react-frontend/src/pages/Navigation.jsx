@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import LightningFill from 'assets/images/icons/lightning-fill.svg';
@@ -8,8 +8,7 @@ import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
 import SunFill from 'assets/images/icons/sun-fill.svg';
 import MoonFill from 'assets/images/icons/moon-fill.svg';
-import AppContext from 'context/AppContext.js';
-import ThemeContext from 'context/ThemeContext.js';
+import { useApp, useTheme } from 'context';
 import { NavMobileMenu, LanguageSelect } from 'components';
 import cryptDefaults from 'components/forms_data/defaultsCryptForm.json';
 import libraryDefaults from 'components/forms_data/defaultsLibraryForm.json';
@@ -26,8 +25,8 @@ function Navigation(props) {
     isMobile,
     username,
     activeDeck,
-  } = useContext(AppContext);
-  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  } = useApp();
+  const { isDarkTheme, toggleTheme } = useTheme();
   const location = useLocation();
 
   let twdUrl = '/twd';

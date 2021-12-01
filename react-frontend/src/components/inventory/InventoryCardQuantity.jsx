@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Button, Form, FormControl } from 'react-bootstrap';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function InventoryCardQuantity(props) {
-  const { inventoryCardChange, isMobile } = useContext(AppContext);
+  const { inventoryCardChange, isMobile } = useApp();
   const [manual, setManual] = useState(false);
   const [state, setState] = useState(props.q);
 

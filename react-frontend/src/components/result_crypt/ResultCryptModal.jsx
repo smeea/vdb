@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { Modal, Row, Col, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
@@ -10,11 +10,11 @@ import {
   ButtonCardCopyUrl,
   ButtonToggleShowImage,
 } from 'components';
-import AppContext from 'context/AppContext.js';
+import { useApp } from 'context';
 
 function ResultCryptModal(props) {
   const { showImage, toggleShowImage, localizedCrypt, lang, isMobile } =
-    useContext(AppContext);
+    useApp();
 
   const [imageSet, setImageSet] = useState(null);
   const [card, setCard] = useState(props.card);

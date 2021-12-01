@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Modal, Button, Container, Row, Col, Form } from 'react-bootstrap';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -26,7 +26,7 @@ import {
   DeckChangeAuthor,
   DeckChangeDescription,
 } from 'components';
-import AppContext from 'context/AppContext';
+import { useApp } from 'context';
 
 function Decks(props) {
   const {
@@ -48,7 +48,7 @@ function Decks(props) {
     inventoryMode,
     username,
     isMobile,
-  } = useContext(AppContext);
+  } = useApp();
 
   const query = new URLSearchParams(useLocation().search);
   const [showDraw, setShowDraw] = useState(false);
