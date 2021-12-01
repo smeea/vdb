@@ -1,10 +1,17 @@
 import React, { useState, useRef } from 'react';
-import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Button,
+  Spinner,
+} from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import LockFill from 'assets/images/icons/lock-fill.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import { ErrorOverlay } from 'components';
+import { userServices } from 'services';
 
 function AccountChangePassword(props) {
   const [state, setState] = useState({
@@ -17,9 +24,11 @@ function AccountChangePassword(props) {
   const [emptyNewPassword, setEmptyNewPassword] = useState(false);
   const [passwordConfirmError, setPasswordConfirmError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [connectionError, setConnectionError] = useState(false);
   const refOldPassword = useRef(null);
   const refNewPassword = useRef(null);
   const refConfirmPassword = useRef(null);
+  const [spinnerState, setSpinnerState] = useState(false);
 
   const [hidePassword, setHidePassword] = useState(true);
   const [buttonState, setButtonState] = useState(false);
@@ -32,66 +41,53 @@ function AccountChangePassword(props) {
     }));
   };
 
+  const onError = (e) => {
+    if (e.message == 401) {
+      setPasswordError(true);
+      setSpinnerState(false);
+      setState((prevState) => ({
+        ...prevState,
+        password: '',
+      }));
+    } else {
+      setSpinnerState(false);
+      setConnectionError(true);
+    }
+  };
+
+  const onSuccess = (data) => {
+    setButtonState(true);
+    setSpinnerState(false);
+    setTimeout(() => {
+      setButtonState(false);
+    }, 1000);
+    setState({
+      password: '',
+      newPassword: '',
+      confirmPassword: '',
+    });
+  };
+
   const changePassword = () => {
+    if (spinnerState) return;
+
     setPasswordError(false);
+    setConnectionError(false);
+    setEmptyPassword(!state.password);
+    setEmptyNewPassword(!state.newPassword);
+    setPasswordConfirmError(
+      state.confirmPassword != state.newPassword || !state.confirmPassword
+    );
 
     if (state.password && state.newPassword == state.confirmPassword) {
-      setEmptyPassword(false);
-      setEmptyNewPassword(false);
-      setPasswordConfirmError(false);
+      setSpinnerState(true);
 
-      const url = `${process.env.API_URL}account`;
-      const input = {
-        password: state.password,
-        newPassword: state.newPassword,
-      };
-
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
-      };
-
-      const fetchPromise = fetch(url, options);
-
-      fetchPromise
-        .then((response) => {
-          if (!response.ok) throw Error(response.status);
-          return response.json();
-        })
-        .then((data) => {
-          setButtonState(true);
-          setTimeout(() => {
-            setButtonState(false);
-          }, 1000);
-          setState({
-            password: '',
-            newPassword: '',
-            confirmPassword: '',
-          });
-        })
-        .catch((error) => {
-          setPasswordError(true);
-          setState((prevState) => ({
-            ...prevState,
-            password: '',
-          }));
-        });
-    } else {
-      setEmptyPassword(!state.password);
-      setEmptyNewPassword(!state.newPassword);
-      if (
-        state.confirmPassword != state.newPassword ||
-        !state.confirmPassword
-      ) {
-        setPasswordConfirmError(true);
-      } else {
-        setPasswordConfirmError(false);
-      }
+      userServices.changePassword(
+        state.password,
+        state.newPassword,
+        onSuccess,
+        onError
+      );
     }
   };
 
@@ -140,9 +136,15 @@ function AccountChangePassword(props) {
             {hidePassword ? <EyeFill /> : <EyeSlashFill />}
           </Button>
           {!buttonState ? (
-            <Button variant="primary" type="submit">
-              <Check2 />
-            </Button>
+            !spinnerState ? (
+              <Button variant="primary" type="submit">
+                <Check2 />
+              </Button>
+            ) : (
+              <Button variant="primary">
+                <Spinner animation="border" size="sm" />
+              </Button>
+            )
           ) : (
             <Button variant="success" type="submit">
               <Check2 />
@@ -177,6 +179,11 @@ function AccountChangePassword(props) {
         >
           NEW PASSWORDS DOES NOT MATCH
         </ErrorOverlay>
+        <ErrorOverlay
+          show={connectionError}
+          target={refOldPassword.current}
+          placement="bottom"
+        ></ErrorOverlay>
       </Form>
     </>
   );

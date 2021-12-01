@@ -13,89 +13,53 @@ import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
+import { userServices } from 'services';
 
 function AccountLogin(props) {
   const { setPublicName, setEmail, setUsername, isMobile } = useApp();
 
-  const [state, setState] = useState({
-    username: '',
-    password: '',
-  });
+  const [formUserName, setFormUserName] = useState('');
+  const [formPassword, setFormPassword] = useState('');
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const [passwordError, setPasswordError] = useState(false);
   const [connectionError, setConnectionError] = useState(false);
-  const [emptyUsername, setEmptyUsername] = useState(false);
+  const [emptyUserName, setEmptyUserName] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
   const refUsername = useRef(null);
   const refPassword = useRef(null);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+  const onError = (e) => {
+    setSpinnerState(false);
+    if (e.message == 401) {
+      setPasswordError(true);
+      setFormPassword('');
+    } else {
+      setConnectionError(true);
+    }
+  };
+
+  const onSuccess = (data) => {
+    setSpinnerState(false);
+    setUsername(data.username);
+    setPublicName(data.public_name);
+    setEmail(data.email);
   };
 
   const loginUser = () => {
+    if (spinnerState) return;
+
     setPasswordError(false);
     setConnectionError(false);
+    setEmptyUserName(!formUserName);
+    setEmptyPassword(!formPassword);
 
-    if (state.username && state.password) {
-      setEmptyUsername(false);
-      setEmptyPassword(false);
-
-      const url = `${process.env.API_URL}login`;
-      const input = {
-        username: state.username,
-        password: state.password,
-        remember: 'True',
-      };
-
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
-      };
-
+    if (formUserName && formPassword) {
       setSpinnerState(true);
-
-      const fetchPromise = fetch(url, options);
-
-      fetchPromise
-        .then((response) => {
-          if (!response.ok) throw Error(response.status);
-          return response.json();
-        })
-        .then((data) => {
-          setSpinnerState(false);
-          setUsername(data.username);
-          setPublicName(data.public_name);
-          setEmail(data.email);
-        })
-        .catch((e) => {
-          if (e.message == 401) {
-            setSpinnerState(false);
-            setPasswordError(true);
-            setState((prevState) => ({
-              ...prevState,
-              password: '',
-            }));
-          } else {
-            setConnectionError(true);
-          }
-        });
-    } else {
-      setEmptyUsername(!state.username);
-      setEmptyPassword(!state.password);
+      userServices.login(formUserName, formPassword, onSuccess, onError);
     }
   };
 
@@ -149,8 +113,8 @@ function AccountLogin(props) {
             placeholder="Username"
             type="text"
             name="username"
-            value={state.username}
-            onChange={handleChange}
+            value={formUserName}
+            onChange={(e) => setFormUserName(e.target.value)}
             autoFocus={true}
             ref={refUsername}
           />
@@ -158,8 +122,8 @@ function AccountLogin(props) {
             placeholder="Password"
             type={hidePassword ? 'password' : 'text'}
             name="password"
-            value={state.password}
-            onChange={handleChange}
+            value={formPassword}
+            onChange={(e) => setFormPassword(e.target.value)}
             ref={refPassword}
           />
           <Button
@@ -180,7 +144,7 @@ function AccountLogin(props) {
           )}
         </InputGroup>
         <ErrorOverlay
-          show={emptyUsername}
+          show={emptyUserName}
           target={refUsername.current}
           placement="bottom"
         >

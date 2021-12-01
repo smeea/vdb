@@ -12,72 +12,48 @@ import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
+import { userServices } from 'services';
 
 function AccountRegister(props) {
   const { setUsername } = useApp();
+
+  const [formUserName, setFormUserName] = useState('');
+  const [formPassword, setFormPassword] = useState('');
   const [spinnerState, setSpinnerState] = useState(false);
   const [usernameError, setUsernameError] = useState(false);
-  const [emptyUsername, setEmptyUsername] = useState(false);
+  const [connectionError, setConnectionError] = useState(false);
+  const [emptyUsername, setEmptyUserName] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
   const refUsername = useRef(null);
   const refPassword = useRef(null);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+  const onError = (e) => {
+    setSpinnerState(false);
+    if (e.message == 401) {
+      setUsernameError(true);
+      setFormPassword('');
+    } else {
+      setConnectionError(true);
+    }
+  };
+
+  const onSuccess = (data) => {
+    setSpinnerState(false);
+    setUsername(formUserName);
   };
 
   const registerUser = () => {
+    if (spinnerState) return;
+
     setUsernameError(false);
+    setConnectionError(false);
+    setEmptyUserName(!formUserName);
+    setEmptyPassword(!formPassword);
 
-    if (state.username && state.password) {
-      setEmptyUsername(false);
-      setEmptyPassword(false);
-
-      const url = `${process.env.API_URL}register`;
-      const input = {
-        username: state.username,
-        password: state.password,
-      };
-
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
-      };
-
+    if (formUserName && formPassword) {
       setSpinnerState(true);
-
-      const fetchPromise = fetch(url, options);
-
-      fetchPromise
-        .then((response) => {
-          if (!response.ok) throw Error(response.status);
-          return response.json();
-        })
-        .then((data) => {
-          setSpinnerState(false);
-          setUsername(state.username);
-        })
-        .catch((error) => {
-          setSpinnerState(false);
-          setUsernameError(true);
-          setState((prevState) => ({
-            ...prevState,
-            username: '',
-          }));
-        });
-    } else {
-      setEmptyUsername(!state.username);
-      setEmptyPassword(!state.password);
+      userServices.register(formUserName, formPassword, onSuccess, onError);
     }
   };
 
@@ -98,16 +74,16 @@ function AccountRegister(props) {
             placeholder="New Username"
             type="text"
             name="username"
-            value={state.username}
-            onChange={handleChange}
+            value={formUserName}
+            onChange={(e) => setFormUserName(e.target.value)}
             ref={refUsername}
           />
           <FormControl
             placeholder="Password"
             type={hidePassword ? 'password' : 'text'}
             name="password"
-            value={state.password}
-            onChange={handleChange}
+            value={formPassword}
+            onChange={(e) => setFormPassword(e.target.value)}
             ref={refPassword}
           />
           <Button
@@ -147,6 +123,13 @@ function AccountRegister(props) {
           placement="bottom"
         >
           ENTER PASSWORD
+        </ErrorOverlay>
+        <ErrorOverlay
+          show={connectionError}
+          target={refPassword.current}
+          placement="bottom"
+        >
+          CONNECTION PROBLEM
         </ErrorOverlay>
       </Form>
     </>

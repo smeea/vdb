@@ -1,8 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Button,
+  Spinner,
+} from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import PenFill from 'assets/images/icons/pen-fill.svg';
 import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
+import { userServices } from 'services';
 
 function AccountChangeName(props) {
   const { publicName, setPublicName, isMobile } = useApp();
@@ -13,48 +21,39 @@ function AccountChangeName(props) {
 
   const [showModal, setShowModal] = useState(false);
   const [buttonState, setButtonState] = useState(false);
+  const [connectionError, setConnectionError] = useState(false);
+  const [spinnerState, setSpinnerState] = useState(false);
 
   const handleChange = (event) => {
     setState(event.target.value);
   };
 
+  const onError = (e) => {
+    if (e.message != 401) {
+      setConnectionError(true);
+    }
+    setSpinnerState(false);
+  };
+
+  const onSuccess = (data) => {
+    setSpinnerState(false);
+    setButtonState(true);
+    setPublicName(state);
+    setTimeout(() => {
+      setButtonState(false);
+    }, 1000);
+  };
+
   const changeName = () => {
+    if (spinnerState) return;
+
+    setEmptyName(!state);
+    setConnectionError(false);
+
     if (state) {
-      setEmptyName(false);
+      setSpinnerState(true);
 
-      const url = `${process.env.API_URL}account`;
-      const input = {
-        publicName: state,
-      };
-
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
-      };
-
-      const fetchPromise = fetch(url, options);
-
-      fetchPromise
-        .then((response) => {
-          if (!response.ok) throw Error(response.status);
-          return response.json();
-        })
-        .then(() => {
-          setPublicName(state);
-          setEmptyName(false);
-          setButtonState(true);
-          setTimeout(() => {
-            setButtonState(false);
-          }, 1000);
-        })
-        .catch((error) => {});
-    } else {
-      setEmptyName(true);
+      userServices.changeName(state, onSuccess, onError);
     }
   };
 
@@ -112,9 +111,15 @@ function AccountChangeName(props) {
             ref={refName}
           />
           {!buttonState ? (
-            <Button variant="primary" type="submit">
-              <Check2 />
-            </Button>
+            !spinnerState ? (
+              <Button variant="primary" type="submit">
+                <Check2 />
+              </Button>
+            ) : (
+              <Button variant="primary">
+                <Spinner animation="border" size="sm" />
+              </Button>
+            )
           ) : (
             <Button variant="success" type="submit">
               <Check2 />
@@ -128,6 +133,11 @@ function AccountChangeName(props) {
         >
           ENTER PUBLIC NAME
         </ErrorOverlay>
+        <ErrorOverlay
+          show={connectionError}
+          target={refName.current}
+          placement="bottom"
+        ></ErrorOverlay>
       </Form>
       {showModal && (
         <ModalTooltip

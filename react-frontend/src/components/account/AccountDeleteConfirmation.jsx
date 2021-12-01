@@ -1,9 +1,18 @@
 import React, { useState, useRef } from 'react';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Modal,
+  Button,
+  Spinner,
+} from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import EyeSlashFill from 'assets/images/icons/eye-slash-fill.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
+import { userServices } from 'services';
 
 function AccountDeleteConfirmation(props) {
   const { username, setUsername, isMobile } = useApp();
@@ -12,44 +21,38 @@ function AccountDeleteConfirmation(props) {
   const [passwordError, setPasswordError] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
+  const [spinnerState, setSpinnerState] = useState(false);
+  const [connectionError, setConnectionError] = useState(false);
   const refPassword = useRef(null);
 
   const handleChange = (event) => setPassword(event.target.value);
 
+  const onError = (e) => {
+    setSpinnerState(false);
+    if (e.message == 401) {
+      setPasswordError(true);
+      setPassword('');
+    } else {
+      setConnectionError(true);
+    }
+  };
+
+  const onSuccess = (data) => {
+    setSpinnerState(false);
+    props.setShow(false);
+    setUsername(undefined);
+  };
+
   const deleteAccount = () => {
+    if (spinnerState) return;
+
     setPasswordError(false);
+    setEmptyPassword(!password);
+    setConnectionError(false);
 
     if (password) {
-      setEmptyPassword(false);
-
-      const url = `${process.env.API_URL}account/remove`;
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          password: password,
-        }),
-      };
-
-      fetch(url, options)
-        .then((response) => {
-          if (!response.ok) throw Error(response.status);
-          return response.json();
-        })
-        .then((data) => {
-          props.setShow(false);
-          setUsername(undefined);
-        })
-        .catch((error) => {
-          setPasswordError(true);
-          setPassword('');
-        });
-    } else {
-      setEmptyPassword(!password);
+      setSpinnerState(true);
+      userServices.deleteAccount(password, onSuccess, onError);
     }
   };
 
@@ -110,9 +113,15 @@ function AccountDeleteConfirmation(props) {
               >
                 {hidePassword ? <EyeFill /> : <EyeSlashFill />}
               </Button>
-              <Button variant="danger" type="submit">
-                Delete
-              </Button>
+              {!spinnerState ? (
+                <Button variant="danger" type="submit">
+                  Delete
+                </Button>
+              ) : (
+                <Button variant="primary">
+                  <Spinner animation="border" size="sm" />
+                </Button>
+              )}
               <Button variant="primary" onClick={() => props.setShow(false)}>
                 Cancel
               </Button>
@@ -133,6 +142,11 @@ function AccountDeleteConfirmation(props) {
             >
               WRONG PASSWORD
             </ErrorOverlay>
+            <ErrorOverlay
+              show={connectionError}
+              target={refPassword.current}
+              placement="bottom"
+            ></ErrorOverlay>
           </Form>
         </Modal.Footer>
       </Modal>

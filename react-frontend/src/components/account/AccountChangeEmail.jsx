@@ -1,8 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
+import {
+  Form,
+  FormControl,
+  InputGroup,
+  Button,
+  Spinner,
+} from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import { OverlayTooltip, ErrorOverlay, ModalTooltip } from 'components';
 import { useApp } from 'context';
+import { userServices } from 'services';
 
 function AccountChangeEmail(props) {
   const { email, setEmail, isMobile } = useApp();
@@ -18,6 +26,8 @@ function AccountChangeEmail(props) {
   const [emptyEmail, setEmptyEmail] = useState(false);
   const [emptyPassword, setEmptyPassword] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [connectionError, setConnectionError] = useState(false);
+  const [spinnerState, setSpinnerState] = useState(false);
   const refEmail = useRef(null);
   const refPassword = useRef(null);
 
@@ -29,57 +39,45 @@ function AccountChangeEmail(props) {
     }));
   };
 
+  const onError = (e) => {
+    setSpinnerState(false);
+    if (e.message == 401) {
+      setPasswordError(true);
+      setState((prevState) => ({
+        ...prevState,
+        password: '',
+      }));
+    } else {
+      setConnectionError(true);
+    }
+  };
+
+  const onSuccess = (data) => {
+    setSpinnerState(false);
+    setEmail(state.email);
+    setButtonState(true);
+    setTimeout(() => {
+      setButtonState(false);
+    }, 1000);
+    setState((prevState) => ({
+      ...prevState,
+      password: '',
+    }));
+  };
+
   const changeEmail = () => {
+    if (spinnerState) return;
+
     setPasswordError(false);
+    setConnectionError(false);
+    setEmptyEmail(!state.email);
+    setEmptyPassword(!state.password);
+    setSpinnerState(false);
 
     if (state.email && state.password) {
-      setEmptyEmail(false);
-      setEmptyPassword(false);
+      setSpinnerState(true);
 
-      const url = `${process.env.API_URL}account`;
-      const input = {
-        password: state.password,
-        email: state.email,
-      };
-
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
-      };
-
-      const fetchPromise = fetch(url, options);
-
-      fetchPromise
-        .then((response) => {
-          if (!response.ok) throw Error(response.status);
-          return response.json();
-        })
-        .then((data) => {
-          setEmail(state.email);
-          setButtonState(true);
-          setTimeout(() => {
-            setButtonState(false);
-          }, 1000);
-          setState((prevState) => ({
-            ...prevState,
-            password: '',
-          }));
-        })
-        .catch((error) => {
-          setPasswordError(true);
-          setState((prevState) => ({
-            ...prevState,
-            password: '',
-          }));
-        });
-    } else {
-      setEmptyEmail(!state.email);
-      setEmptyPassword(!state.password);
+      userServices.changeEmail(state.password, state.email, onSuccess, onError);
     }
   };
 
@@ -143,9 +141,15 @@ function AccountChangeEmail(props) {
             ref={refPassword}
           />
           {!buttonState ? (
-            <Button variant="primary" type="submit">
-              <Check2 />
-            </Button>
+            !spinnerState ? (
+              <Button variant="primary" type="submit">
+                <Check2 />
+              </Button>
+            ) : (
+              <Button variant="primary">
+                <Spinner animation="border" size="sm" />
+              </Button>
+            )
           ) : (
             <Button variant="success" type="submit">
               <Check2 />
@@ -173,6 +177,11 @@ function AccountChangeEmail(props) {
         >
           WRONG PASSWORD
         </ErrorOverlay>
+        <ErrorOverlay
+          show={connectionError}
+          target={refPassword.current}
+          placement="bottom"
+        ></ErrorOverlay>
       </Form>
       {showModal && (
         <ModalTooltip
