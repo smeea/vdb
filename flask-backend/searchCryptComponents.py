@@ -236,8 +236,8 @@ def get_crypt_by_clan(request, crypt):
     else:
         for card in crypt:
             if card['Clan'].lower() not in clans:
-                    if card not in match_cards:
-                        match_cards.append(card)
+                if card not in match_cards:
+                    match_cards.append(card)
     return match_cards
 
 
@@ -250,12 +250,13 @@ def get_crypt_by_sect(request, crypt):
             for sect in sects:
                 # Imbue 'sect' is defined by card['Type'], others are just 'vampire'
                 if sect == 'imbued':
-                    if  card['Type'].lower() == "imbued":
+                    if card['Type'].lower() == "imbued":
                         match_cards.append(card)
 
                 # For vampires sect is determined only by card['Text']
                 # It is another dirty hack (see trait above), but...
-                elif re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect), card['Card Text'], re.IGNORECASE):
+                elif re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect),
+                               card['Card Text'], re.IGNORECASE):
                     match_cards.append(card)
 
     else:
@@ -272,7 +273,8 @@ def get_crypt_by_sect(request, crypt):
                 # It is another dirty hack (see trait above), but...
                 counter = 0
                 for sect in sects:
-                    if not re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect), card['Card Text'], re.IGNORECASE):
+                    if not re.search(r'^(advanced\,\ )?{}[:. $]'.format(sect),
+                                     card['Card Text'], re.IGNORECASE):
                         counter += 1
 
                 if counter == len(sects):
@@ -296,6 +298,7 @@ def get_crypt_by_group(group_list, crypt):
 
 def get_crypt_by_set(request, crypt):
     bcp_sets = [
+        'V5A',
         'KSU',
         'V5',
         '25th',
@@ -310,6 +313,7 @@ def get_crypt_by_set(request, crypt):
     sets = [
         'Promo',
         'POD',
+        'V5A',
         'KSU',
         'V5',
         '25th',
@@ -358,7 +362,8 @@ def get_crypt_by_set(request, crypt):
 
                 for card in crypt:
                     for k in card['Set'].keys():
-                        if sets.index(k) <= oldestSetIndex and sets.index(k) > 1:
+                        if sets.index(k) <= oldestSetIndex and sets.index(
+                                k) > 1:
                             if card not in match_cards:
                                 match_cards.append(card)
 
@@ -430,6 +435,7 @@ def get_crypt_by_set(request, crypt):
 
 def get_crypt_by_precon(request, crypt):
     bcp_sets = [
+        'V5A',
         'KSU',
         'V5',
         '25th',
@@ -444,6 +450,7 @@ def get_crypt_by_precon(request, crypt):
     sets = [
         'Promo',
         'POD',
+        'V5A',
         'KSU',
         'V5',
         '25th',
