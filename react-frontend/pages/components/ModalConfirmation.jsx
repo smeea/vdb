@@ -71,7 +71,7 @@ function ModalConfirmation(props) {
                 placement="bottom"
                 modal={true}
               >
-                Type 'YES' to confirm
+                Type &apos;YES&apos; to confirm
               </ErrorOverlay>
             </Form>
           )}

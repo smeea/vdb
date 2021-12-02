@@ -13,7 +13,6 @@ import DeckTotal from './DeckTotal.jsx';
 import DeckDelete from './DeckDelete.jsx';
 import DeckHide from './DeckHide.jsx';
 import DeckBranchDelete from './DeckBranchDelete.jsx';
-import DeckClone from './DeckClone.jsx';
 import DeckProxy from './DeckProxy.jsx';
 import DeckCopyUrl from './DeckCopyUrl.jsx';
 import DeckSelectSortForm from './DeckSelectSortForm.jsx';
