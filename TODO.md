@@ -1,7 +1,8 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Add recent to Compare
-* Proxy to sort library by type
+* Inventory bug for precon (also test for twd and shared)
+* Missing Cards button - flex-shrink: 0
 
 # FIX MOBILE
 
@@ -29,3 +30,4 @@
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardior codes to return)
+* Log deck errors (import/export first)
