@@ -46,7 +46,7 @@ function SearchLibraryFormType(props) {
         name: 'type',
         label: (
           <>
-            <span className="margin-full justify-content-center">
+            <span className="margin-full">
               <img src={imgSrc} className="type-image-results" />
             </span>
             {i}

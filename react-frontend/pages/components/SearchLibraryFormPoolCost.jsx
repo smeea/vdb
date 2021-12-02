@@ -15,7 +15,7 @@ function SearchLibraryFormPoolCost(props) {
       name: 'pool',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="me-4" />
           {i}
         </>
       ),
@@ -35,7 +35,7 @@ function SearchLibraryFormPoolCost(props) {
       name: 'pool',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="me-4" />
           {i[1]}
         </>
       ),

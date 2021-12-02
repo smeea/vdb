@@ -15,7 +15,7 @@ function TwdSearchFormMatchInventory(props) {
       name: props.name,
       label: (
         <>
-          <span className="margin-half" />
+          <span className="me-4" />
           {i[1]}
         </>
       ),

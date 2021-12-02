@@ -28,7 +28,7 @@ function SearchCryptFormCapacity(props) {
       name: 'capacity',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="me-4" />
           {i}
         </>
       ),
@@ -48,7 +48,7 @@ function SearchCryptFormCapacity(props) {
       name: 'capacity',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="me-4" />
           {i[1]}
         </>
       ),
