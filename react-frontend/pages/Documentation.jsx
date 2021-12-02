@@ -10,7 +10,7 @@ function Documentation(props) {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
-        <Col xs={12} md={5} className="px-0">
+        <Col xs={12} md={6} xxl={5} className="px-0">
           <Banner />
           <div className="px-2">
             <div className="pt-2">
