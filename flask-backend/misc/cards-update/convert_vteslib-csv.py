@@ -122,7 +122,6 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
                     else:
                         card['Type'] += f"/{i}"
 
-
         # Convert sets to dict
         sets = card['Set'].split(', ')
         card['Set'] = {}
@@ -148,14 +147,6 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
                 if counter < len(precons):
                     card['Set'][set[0]] = {}
 
-            # Fix for V5 Anarch set (marked in CSV as V5)
-            elif set[0] in ["V5"]:
-                for precon in precons:
-                    if re.match(r'(PB|PBh|PG|PMin)[0-9]+', precon):
-                        card['Set'][f"{set[0]}A"] = {}
-                    else:
-                        card['Set'][set[0]] = {}
-
             elif set[0] not in ["AU", "DM", "TU"
                                 ] and set[0] not in card['Set']:
                 card['Set'][set[0]] = {}
@@ -180,14 +171,6 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
                     if set[0] in ["KoT", "HttB"] and (m := re.match(
                             r'^(A|B)([0-9]+)?', precon)):
                         s = f"{set[0]}R"
-                        if m.group(2):
-                            card['Set'][s][m.group(1)] = m.group(2)
-                        else:
-                            card['Set'][s][m.group(1)] = 1
-
-                    elif set[0] in ["V5"] and (m := re.match(
-                            r'^(PB|PBh|PG|PMin)([0-9]+)', precon)):
-                        s = f"{set[0]}A"
                         if m.group(2):
                             card['Set'][s][m.group(1)] = m.group(2)
                         else:

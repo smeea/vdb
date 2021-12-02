@@ -166,19 +166,12 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                 if counter < len(precons):
                     card['Set'][set[0]] = {}
 
-            # Fix for V5 Anarch set (marked in CSV as V5)
-            elif set[0] in ["V5"]:
-                for precon in precons:
-                    if re.match(r'(PB|PBh|PG|PMin)[0-9]+', precon):
-                        card['Set'][f"{set[0]}A"] = {}
-                    else:
-                        card['Set'][set[0]] = {}
-
             elif set[0] not in ["AU", "DM", "TU"
                                 ] and set[0] not in card['Set']:
                 card['Set'][set[0]] = {}
 
-            # Fix for DM, TU, AU Kickstarter Unleashed (merge into Kickstarter Unleashed set)
+            # Fix for DM, TU, AU Kickstarter Unleashed
+            # (merge into Kickstarter Unleashed set)
             if set[0] in ["DM", "TU", "AU"]:
                 for precon in precons:
                     if precon == 'C':
@@ -198,14 +191,6 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                     if set[0] in ["KoT", "HttB"] and (m := re.match(
                             r'^(A|B)([0-9]+)?', precon)):
                         s = f"{set[0]}R"
-                        if m.group(2):
-                            card['Set'][s][m.group(1)] = m.group(2)
-                        else:
-                            card['Set'][s][m.group(1)] = 1
-
-                    elif set[0] in ["V5"] and (m := re.match(
-                            r'^(PB|PBh|PG|PMin)([0-9]+)', precon)):
-                        s = f"{set[0]}A"
                         if m.group(2):
                             card['Set'][s][m.group(1)] = m.group(2)
                         else:
@@ -304,14 +289,16 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
         # Add Advancement info
         card['Advancement'] = ""
         for c in cards:
-            if c['Name'] == card['Name'] and c['Id'] != card['Id'] and c['Group'] == card['Group']:
+            if c['Name'] == card['Name'] and c['Id'] != card['Id'] and c[
+                    'Group'] == card['Group']:
                 isAdv = True if card['Adv'] else False
                 card['Advancement'] = [isAdv, c['Id']]
 
         # Add new revision info
         card['New'] = False
         for c in cards:
-            if c['Name'] == card['Name'] and int(c['Id']) < card['Id'] and c['Group'] != card['Group']:
+            if c['Name'] == card['Name'] and int(
+                    c['Id']) < card['Id'] and c['Group'] != card['Group']:
                 card['New'] = True
 
         # Prepare for export
