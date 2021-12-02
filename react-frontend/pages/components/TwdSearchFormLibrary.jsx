@@ -40,7 +40,10 @@ function TwdSearchFormLibrary(props) {
               placement="left"
               overlay={<CardPopover card={libraryCardBase[id]} />}
             >
-              <div onClick={() => setModalCard(libraryCardBase[id])}>
+              <div
+                className="name"
+                onClick={() => setModalCard(libraryCardBase[id])}
+              >
                 <ResultLibraryName card={libraryCardBase[id]} />
               </div>
             </OverlayTrigger>
