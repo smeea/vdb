@@ -1,8 +1,6 @@
 # FIX
 * Change url to empty on last form changed to 'any'
-* Add recent to Compare
 * Inventory bug for precon (also test for twd and shared)
-* Missing Cards button - flex-shrink: 0
 
 # FIX MOBILE
 

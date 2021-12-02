@@ -323,9 +323,7 @@ function Decks(props) {
                       ) : selectFrom == 'recent' ? (
                         <DeckSelectRecent activeDeck={activeDeck} />
                       ) : (
-                        selectFrom == 'precons' && (
-                          <DeckSelectPrecon activeDeck={activeDeck} />
-                        )
+                        <DeckSelectPrecon activeDeck={activeDeck} />
                       )}
                     </div>
                     {selectFrom == 'my' && decks && isBranches && (
