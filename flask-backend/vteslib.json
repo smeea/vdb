@@ -1108,7 +1108,7 @@
         "Id":100037,
         "Name":"Alamut",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -1243,7 +1243,7 @@
         "Id":100042,
         "Name":"Amam the Devourer",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -1878,7 +1878,7 @@
         "Id":100063,
         "Name":"Ancestor's Talisman, The",
         "Type":"Equipment",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -4873,7 +4873,7 @@
         "Id":100160,
         "Name":"Bima",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"1",
         "Pool Cost":"",
@@ -5197,7 +5197,7 @@
         "Id":100172,
         "Name":"Black Throne, The",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -5999,14 +5999,14 @@
                 "PTr":"2",
                 "PV":"3"
             },
+            "V5":{
+                "PM":"4",
+                "PV":"3"
+            },
             "V5A":{
                 "PB":"4",
                 "PG":"4",
                 "PMin":"4"
-            },
-            "V5":{
-                "PM":"4",
-                "PV":"3"
             }
         },
         "Requirement":"",
@@ -9024,11 +9024,11 @@
             "FB":{
                 "PN":"5"
             },
-            "V5A":{
-                "PG":"6"
-            },
             "V5":{
                 "PN":"2"
+            },
+            "V5A":{
+                "PG":"6"
             }
         },
         "Requirement":"",
@@ -9265,11 +9265,11 @@
             "FB":{
                 "PN":"3"
             },
-            "V5A":{
-                "PG":"4"
-            },
             "V5":{
                 "PN":"4"
+            },
+            "V5A":{
+                "PG":"4"
             }
         },
         "Requirement":"",
@@ -9346,7 +9346,7 @@
         "Id":100311,
         "Name":"Cave of Apples",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"3",
@@ -10629,7 +10629,7 @@
         "Id":100355,
         "Name":"Clandestine Contract",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -12849,7 +12849,7 @@
         "Id":100430,
         "Name":"Corruption",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -13384,7 +13384,7 @@
         "Id":100449,
         "Name":"Crocodile Temple, The",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -14670,7 +14670,7 @@
         "Id":102235,
         "Name":"Dark Web Procurer",
         "Type":"Ally",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -15302,11 +15302,11 @@
             "SP":{
                 "DoF":"4"
             },
-            "V5A":{
-                "PG":"6"
-            },
             "V5":{
                 "PN":"6"
+            },
+            "V5A":{
+                "PG":"6"
             }
         },
         "Requirement":"",
@@ -15942,7 +15942,7 @@
         "Id":100536,
         "Name":"Deviki Prasanta",
         "Type":"Ally",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -19159,13 +19159,13 @@
             "FB":{
                 "PTo":"6"
             },
-            "V5A":{
-                "PB":"6",
-                "PMin":"7"
-            },
             "V5":{
                 "PTo":"6",
                 "PV":"8"
+            },
+            "V5A":{
+                "PB":"6",
+                "PMin":"7"
             }
         },
         "Requirement":"",
@@ -20939,12 +20939,12 @@
             "FB":{
                 "PN":"1"
             },
+            "V5":{
+                "PN":"1"
+            },
             "V5A":{
                 "PB":"1",
                 "PG":"1"
-            },
-            "V5":{
-                "PN":"1"
             }
         },
         "Requirement":"",
@@ -21624,7 +21624,7 @@
         "Id":100722,
         "Name":"Ferraille",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -22547,7 +22547,7 @@
         "Id":100753,
         "Name":"Focus the Blood",
         "Type":"Combat",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -24708,7 +24708,7 @@
         "Id":100822,
         "Name":"Ghouls of Plaza Morer\u00eda, The",
         "Type":"Ally",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -25481,7 +25481,7 @@
         "Id":100848,
         "Name":"Grand Temple of Set",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -26028,11 +26028,11 @@
             "HttB":{
                 "PGar":1
             },
-            "V5A":{
-                "PB":"1"
-            },
             "V5":{
                 "PN":"1"
+            },
+            "V5A":{
+                "PB":"1"
             }
         },
         "Requirement":"",
@@ -26490,7 +26490,7 @@
         "Id":100884,
         "Name":"Haqim's Law: Judgment",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -26520,7 +26520,7 @@
         "Id":100885,
         "Name":"Haqim's Law: Leadership",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -26548,7 +26548,7 @@
         "Id":102226,
         "Name":"Haqim's Law: Retribution",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -26916,12 +26916,12 @@
             "KMW":{
                 "PAn":"3"
             },
+            "V5":{
+                "PN":"1"
+            },
             "V5A":{
                 "PB":"1",
                 "PG":"1"
-            },
-            "V5":{
-                "PN":"1"
             }
         },
         "Requirement":"",
@@ -27175,7 +27175,7 @@
         "Id":100906,
         "Name":"Heartblood of the Clan",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -27538,11 +27538,11 @@
             "LoB":{
                 "PI":"4"
             },
-            "V5A":{
-                "PG":"4"
-            },
             "V5":{
                 "PV":"4"
+            },
+            "V5A":{
+                "PG":"4"
             }
         },
         "Requirement":"",
@@ -27657,7 +27657,7 @@
         "Id":100923,
         "Name":"Hierophant",
         "Type":"Political Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -28273,7 +28273,7 @@
         "Id":102227,
         "Name":"Hunger of Marduk",
         "Type":"Combat",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"Thaumaturgy",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -28741,11 +28741,11 @@
             "HttB":{
                 "PGar":"3"
             },
-            "V5A":{
-                "PB":"6"
-            },
             "V5":{
                 "PN":"4"
+            },
+            "V5A":{
+                "PB":"6"
             }
         },
         "Requirement":"",
@@ -30832,7 +30832,7 @@
         "Id":101032,
         "Name":"Kali's Fang",
         "Type":"Equipment",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -31094,7 +31094,7 @@
         "Id":101042,
         "Name":"Khabar: Community, The",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -31124,7 +31124,7 @@
         "Id":101043,
         "Name":"Khabar: Glory",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -31154,7 +31154,7 @@
         "Id":101044,
         "Name":"Khabar: Honor, The",
         "Type":"Combat",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -31189,7 +31189,7 @@
         "Id":101045,
         "Name":"Khabar: Loyalty",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -31243,7 +31243,7 @@
         "Id":101047,
         "Name":"Kherebutu",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"5",
@@ -31267,7 +31267,7 @@
         "Id":101048,
         "Name":"Khobar Towers, Al-Khubar",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -34936,7 +34936,7 @@
         "Id":101171,
         "Name":"Market Square",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -35919,7 +35919,7 @@
         "Id":101206,
         "Name":"Mesu Bedshet",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"1",
         "Pool Cost":"",
@@ -36725,7 +36725,7 @@
         "Id":101232,
         "Name":"Mokol\u00e9 Blood",
         "Type":"Equipment",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -37304,7 +37304,7 @@
         "Id":101252,
         "Name":"Mummy's Tongue",
         "Type":"Equipment",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -37375,11 +37375,11 @@
             "CE":{
                 "R":true
             },
-            "V5A":{
-                "PG":"2"
-            },
             "V5":{
                 "PN":"2"
+            },
+            "V5A":{
+                "PG":"2"
             }
         },
         "Requirement":"",
@@ -37648,7 +37648,7 @@
         "Id":101264,
         "Name":"Nar-Sheptha",
         "Type":"Retainer",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -37901,7 +37901,7 @@
         "Id":101273,
         "Name":"Nephren-Ka",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"3",
@@ -37928,7 +37928,7 @@
         "Id":101274,
         "Name":"Nest of Eagles",
         "Type":"Reaction",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -39234,7 +39234,7 @@
         "Id":101320,
         "Name":"Omael Kuman",
         "Type":"Retainer",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -39301,16 +39301,16 @@
                 "PTr":"3",
                 "PV":"3"
             },
+            "V5":{
+                "PM":"5",
+                "PN":"5",
+                "PTr":"4"
+            },
             "V5A":{
                 "PB":"2",
                 "PBh":"4",
                 "PG":"5",
                 "PMin":"4"
-            },
-            "V5":{
-                "PM":"5",
-                "PN":"5",
-                "PTr":"4"
             }
         },
         "Requirement":"",
@@ -39431,7 +39431,7 @@
         "Id":101326,
         "Name":"Opium Den",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -40249,12 +40249,12 @@
             "Promo":{
                 "20200511":true
             },
-            "V5A":{
-                "PBh":"2"
-            },
             "V5":{
                 "PTo":"4",
                 "PV":"5"
+            },
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"prince,justicar",
@@ -40419,7 +40419,7 @@
         "Id":101358,
         "Name":"Path of Blood, The",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -40825,7 +40825,7 @@
         "Id":101373,
         "Name":"Path of Typhon, The",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -44049,7 +44049,7 @@
         "Id":101484,
         "Name":"Priestess of Sekhmet",
         "Type":"Retainer",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"1",
         "Pool Cost":"",
@@ -44132,7 +44132,7 @@
         "Id":101487,
         "Name":"Priority Contract",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -44616,7 +44616,7 @@
         "Id":101503,
         "Name":"Provision of the Silsila",
         "Type":"Action Modifier/Reaction",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -45376,7 +45376,7 @@
         "Id":101527,
         "Name":"Qetu the Evil Doer",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"3",
@@ -46118,11 +46118,11 @@
             "FB":{
                 "PN":"2"
             },
-            "V5A":{
-                "PG":"2"
-            },
             "V5":{
                 "PN":"2"
+            },
+            "V5A":{
+                "PG":"2"
             }
         },
         "Requirement":"",
@@ -46462,7 +46462,7 @@
         "Id":101562,
         "Name":"Realm of the Black Sun, The",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -47436,7 +47436,7 @@
         "Id":101598,
         "Name":"Reliquary: Shango Remains",
         "Type":"Equipment",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -47778,11 +47778,11 @@
             "SP":{
                 "LB":"3"
             },
-            "V5A":{
-                "PBh":"2"
-            },
             "V5":{
                 "PTo":"8"
+            },
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"",
@@ -49098,11 +49098,11 @@
         "Burn Option":"",
         "Card Text":"[pot] Strike: hand strike at +2 damage.\n[POT] Strike: hand strike at +3 damage.",
         "Set":{
-            "V5A":{
-                "PB":"4"
-            },
             "V5":{
                 "PN":"8"
+            },
+            "V5A":{
+                "PB":"4"
             }
         },
         "Requirement":"",
@@ -49419,7 +49419,7 @@
         "Id":101665,
         "Name":"Saatet-ta",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -50625,12 +50625,12 @@
             "FB":{
                 "PV":"2"
             },
-            "V5A":{
-                "PBh":"8"
-            },
             "V5":{
                 "PTo":"4",
                 "PV":"4"
+            },
+            "V5A":{
+                "PBh":"8"
             }
         },
         "Requirement":"prince,justicar",
@@ -53732,11 +53732,11 @@
             "SP":{
                 "DoF":"1"
             },
-            "V5A":{
-                "PG":"1"
-            },
             "V5":{
                 "PN":"1"
+            },
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -54749,7 +54749,7 @@
         "Id":101845,
         "Name":"Spell of Life",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -56413,7 +56413,7 @@
         "Id":101901,
         "Name":"Summon the Serpent",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"2",
         "Pool Cost":"",
@@ -56807,11 +56807,11 @@
             "LotN":{
                 "PA":"3"
             },
-            "V5A":{
-                "PBh":"6"
-            },
             "V5":{
                 "PM":"4"
+            },
+            "V5A":{
+                "PBh":"6"
             }
         },
         "Requirement":"",
@@ -57152,7 +57152,7 @@
         "Id":101926,
         "Name":"Tainted Vitae",
         "Type":"Reaction",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"2",
         "Pool Cost":"",
@@ -57182,7 +57182,7 @@
         "Id":101927,
         "Name":"Tajdid",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -57730,11 +57730,11 @@
                 "PB":"3",
                 "PT":"3"
             },
-            "V5A":{
-                "PB":"4"
-            },
             "V5":{
                 "PN":"4"
+            },
+            "V5A":{
+                "PB":"4"
             }
         },
         "Requirement":"",
@@ -58018,7 +58018,7 @@
         "Id":101953,
         "Name":"Temple Hunting Ground",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -58277,7 +58277,7 @@
         "Id":101961,
         "Name":"Terrorists",
         "Type":"Ally",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -60770,7 +60770,7 @@
         "Id":102048,
         "Name":"Tutu the Doubly Evil One",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"4",
@@ -61296,7 +61296,7 @@
         "Id":102066,
         "Name":"Underworld Hunting Ground",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -62934,11 +62934,11 @@
             "25th":{
                 "":"5"
             },
-            "V5A":{
-                "PBh":"4"
-            },
             "V5":{
                 "PTo":"6"
+            },
+            "V5A":{
+                "PBh":"4"
             }
         },
         "Requirement":"",
@@ -64098,7 +64098,7 @@
         "Id":102159,
         "Name":"Waters of Duat",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"1",
         "Pool Cost":"",
@@ -64264,7 +64264,7 @@
         "Id":102165,
         "Name":"Web of Knives Recruit",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -65288,7 +65288,7 @@
         "Id":102201,
         "Name":"Yoruba Shrine",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",

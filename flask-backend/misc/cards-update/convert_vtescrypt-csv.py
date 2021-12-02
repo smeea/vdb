@@ -301,6 +301,13 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                     c['Id']) < card['Id'] and c['Group'] != card['Group']:
                 card['New'] = True
 
+        # Rename Ministry and Follower of Set
+        if card['Clan'] == 'Assamite':
+            card['Clan'] = 'Banu Haqim'
+
+        if card['Clan'] == 'Follower of Set':
+            card['Clan'] = 'Ministry'
+
         # Prepare for export
         cards_frontend[card['Id']] = {
             'Id': card['Id'],

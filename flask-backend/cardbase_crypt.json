@@ -2,7 +2,7 @@
     "200001":{
         "Id":200001,
         "Name":"Aabbt Kindred",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -90,7 +90,7 @@
     "200004":{
         "Id":200004,
         "Name":"Abd al-Rashid",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -123,7 +123,7 @@
     "200005":{
         "Id":200005,
         "Name":"Abdelsobek",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":5,
@@ -185,7 +185,7 @@
     "200007":{
         "Id":200007,
         "Name":"Abid bin Haji, Scholar of Mirrors",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -733,7 +733,7 @@
     "200024":{
         "Id":200024,
         "Name":"Ahmose Chambers",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":3,
@@ -882,7 +882,7 @@
     "200029":{
         "Id":200029,
         "Name":"Aisha",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -1096,7 +1096,7 @@
     "200035":{
         "Id":200035,
         "Name":"Al-Ashrad, Amr of Alamut",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             false,
             "200036"
@@ -1134,7 +1134,7 @@
     "200036":{
         "Id":200036,
         "Name":"Al-Ashrad, Amr of Alamut",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             true,
             200035
@@ -1765,7 +1765,7 @@
     "200053":{
         "Id":200053,
         "Name":"Ali Kar",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"3",
         "Capacity":3,
@@ -2117,7 +2117,7 @@
     "200062":{
         "Id":200062,
         "Name":"Alu",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":2,
@@ -2145,7 +2145,7 @@
     "201577":{
         "Id":201577,
         "Name":"Aluc Romas de Leon",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -2254,7 +2254,7 @@
     "200065":{
         "Id":200065,
         "Name":"Amaravati",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":8,
@@ -2531,7 +2531,7 @@
     "200073":{
         "Id":200073,
         "Name":"Amenophobis",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -2588,7 +2588,7 @@
     "200074":{
         "Id":200074,
         "Name":"Amisa",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -3467,7 +3467,7 @@
     "200099":{
         "Id":200099,
         "Name":"Ankh-sen-Sutekh",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":6,
@@ -3766,7 +3766,7 @@
     "200108":{
         "Id":200108,
         "Name":"Antara",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":8,
@@ -4176,7 +4176,7 @@
     "200121":{
         "Id":200121,
         "Name":"Anwar",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -4831,7 +4831,7 @@
     "200140":{
         "Id":200140,
         "Name":"Arnulf Jormungandrsson",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":8,
@@ -5130,7 +5130,7 @@
     "201578":{
         "Id":201578,
         "Name":"Asmin Kobane",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -5514,7 +5514,7 @@
     "200155":{
         "Id":200155,
         "Name":"Aziz, Dammar of Istanbul",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":10,
@@ -5721,7 +5721,7 @@
     "200161":{
         "Id":200161,
         "Name":"Badr al-Budur",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -5778,7 +5778,7 @@
     "200162":{
         "Id":200162,
         "Name":"Bajazet al-Nasir",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -5810,7 +5810,7 @@
     "200163":{
         "Id":200163,
         "Name":"Bakr",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":8,
@@ -6215,7 +6215,7 @@
     "200175":{
         "Id":200175,
         "Name":"Basir",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":1,
@@ -6657,7 +6657,7 @@
     "200188":{
         "Id":200188,
         "Name":"Belle Equitone",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":2,
@@ -6818,7 +6818,7 @@
     "200192":{
         "Id":200192,
         "Name":"Bertrand d'Anjou",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":4,
@@ -6968,7 +6968,7 @@
     "201580":{
         "Id":201580,
         "Name":"Bijou",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":3,
@@ -7198,7 +7198,7 @@
     "200202":{
         "Id":200202,
         "Name":"Black Lotus",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
@@ -8115,7 +8115,7 @@
     "200228":{
         "Id":200228,
         "Name":"Bupe Kuila",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -8227,7 +8227,7 @@
     "200231":{
         "Id":200231,
         "Name":"Cagliostro, The Grand Copht",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":8,
@@ -8553,7 +8553,7 @@
     "200241":{
         "Id":200241,
         "Name":"Cao Nguyen",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":3,
@@ -9257,7 +9257,7 @@
     "200260":{
         "Id":200260,
         "Name":"Celine Chevalier",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":3,
@@ -10022,7 +10022,7 @@
     "200282":{
         "Id":200282,
         "Name":"Clea Auguste d'Holford",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":6,
@@ -10465,7 +10465,7 @@
     "200294":{
         "Id":200294,
         "Name":"Count Jocalo",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":10,
@@ -10497,7 +10497,7 @@
     "200295":{
         "Id":200295,
         "Name":"Count Ormonde",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -10815,7 +10815,7 @@
     "201582":{
         "Id":201582,
         "Name":"Crystal Lynn",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -11258,7 +11258,7 @@
     "200318":{
         "Id":200318,
         "Name":"Danny Larkshill",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":7,
@@ -11606,7 +11606,7 @@
     "200328":{
         "Id":200328,
         "Name":"Dedefra",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -12233,7 +12233,7 @@
     "200348":{
         "Id":200348,
         "Name":"Djuhah, The Bronze Bow",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":7,
@@ -12305,7 +12305,7 @@
     "200350":{
         "Id":200350,
         "Name":"Dmitri Borodin",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":10,
@@ -12337,7 +12337,7 @@
     "201584":{
         "Id":201584,
         "Name":"Doctor Morocco",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -14505,7 +14505,7 @@
     "201586":{
         "Id":201586,
         "Name":"Elisha Tucker",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -14560,7 +14560,7 @@
     "200414":{
         "Id":200414,
         "Name":"Elizabeth Dimitros",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"3",
         "Capacity":4,
@@ -14813,7 +14813,7 @@
     "200422":{
         "Id":200422,
         "Name":"Enam",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"3",
         "Capacity":6,
@@ -15596,7 +15596,7 @@
     "200445":{
         "Id":200445,
         "Name":"Evan Rogers",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":3,
@@ -15721,7 +15721,7 @@
     "200449":{
         "Id":200449,
         "Name":"Ezekiel, Lord of Montreal",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"3",
         "Capacity":6,
@@ -15976,7 +15976,7 @@
     "201587":{
         "Id":201587,
         "Name":"Farah Sarroub",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -16036,7 +16036,7 @@
     "201588":{
         "Id":201588,
         "Name":"Faruq Abd al-Qadir",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":8,
@@ -16094,7 +16094,7 @@
     "200459":{
         "Id":200459,
         "Name":"Fatima al-Faqadi",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -16312,7 +16312,7 @@
     "200466":{
         "Id":200466,
         "Name":"Fida'i",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":2,
@@ -16423,7 +16423,7 @@
     "200469":{
         "Id":200469,
         "Name":"Flavia, Avenging Angel",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -17854,7 +17854,7 @@
     "200512":{
         "Id":200512,
         "Name":"Ghede",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":10,
@@ -18314,7 +18314,7 @@
     "200526":{
         "Id":200526,
         "Name":"Glycon",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"3",
         "Capacity":8,
@@ -18722,7 +18722,7 @@
     "201589":{
         "Id":201589,
         "Name":"Greg Mazouni",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -19434,7 +19434,7 @@
     "200558":{
         "Id":200558,
         "Name":"Hadrian Garrick",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -19466,7 +19466,7 @@
     "200559":{
         "Id":200559,
         "Name":"Hafsa, The Watcher",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":6,
@@ -19538,7 +19538,7 @@
     "200561":{
         "Id":200561,
         "Name":"Halim Bey",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":6,
@@ -19809,7 +19809,7 @@
     "200569":{
         "Id":200569,
         "Name":"Harika Guljan",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":3,
@@ -20629,7 +20629,7 @@
     "200594":{
         "Id":200594,
         "Name":"Hesha Ruhadze",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -20671,7 +20671,7 @@
     "201591":{
         "Id":201591,
         "Name":"Hesha Ruhadze",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -21351,7 +21351,7 @@
     "200614":{
         "Id":200614,
         "Name":"Husamettin",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -21854,7 +21854,7 @@
     "200630":{
         "Id":200630,
         "Name":"Imanna",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -22146,7 +22146,7 @@
     "200637":{
         "Id":200637,
         "Name":"Intisar",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -22551,7 +22551,7 @@
     "200650":{
         "Id":200650,
         "Name":"Izhim abd Azrael",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -23056,7 +23056,7 @@
     "200666":{
         "Id":200666,
         "Name":"Jalal Sayad",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -23143,7 +23143,7 @@
     "200668":{
         "Id":200668,
         "Name":"Jamal",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":10,
@@ -23411,7 +23411,7 @@
     "200676":{
         "Id":200676,
         "Name":"Janni",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
@@ -23880,7 +23880,7 @@
     "201593":{
         "Id":201593,
         "Name":"Jenny Silver",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -24546,7 +24546,7 @@
     "200710":{
         "Id":200710,
         "Name":"Joe \"Boot\" Hill",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -25475,7 +25475,7 @@
     "200741":{
         "Id":200741,
         "Name":"Kabede Maru",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -25508,7 +25508,7 @@
     "200742":{
         "Id":200742,
         "Name":"Kahina the Sorceress",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"3",
         "Capacity":9,
@@ -25608,7 +25608,7 @@
     "200745":{
         "Id":200745,
         "Name":"Kalinda",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -25641,7 +25641,7 @@
     "201596":{
         "Id":201596,
         "Name":"Kalinda",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -25728,7 +25728,7 @@
     "200748":{
         "Id":200748,
         "Name":"Kamau Jafari",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":4,
@@ -25878,7 +25878,7 @@
     "200752":{
         "Id":200752,
         "Name":"Kanya Akhtar",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":2,
@@ -25947,7 +25947,7 @@
     "200754":{
         "Id":200754,
         "Name":"Karif al Numair",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":10,
@@ -26160,7 +26160,7 @@
     "200759":{
         "Id":200759,
         "Name":"Kashan",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -26199,7 +26199,7 @@
     "201598":{
         "Id":201598,
         "Name":"Kasim Bayar",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":9,
@@ -26228,7 +26228,7 @@
     "201604":{
         "Id":201604,
         "Name":"Kassandra Tassaki",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -26576,7 +26576,7 @@
     "200769":{
         "Id":200769,
         "Name":"Kemintiri",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             false,
             "200770"
@@ -26615,7 +26615,7 @@
     "200770":{
         "Id":200770,
         "Name":"Kemintiri",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             true,
             200769
@@ -26735,7 +26735,7 @@
     "200773":{
         "Id":200773,
         "Name":"Kephamos, High Priest of Marrakech",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -26848,7 +26848,7 @@
     "201599":{
         "Id":201599,
         "Name":"Khadija Al-Kindi",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -26908,7 +26908,7 @@
     "200777":{
         "Id":200777,
         "Name":"Khalil Anvari",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":3,
@@ -27000,7 +27000,7 @@
     "200780":{
         "Id":200780,
         "Name":"Khay'tall, Snake of Eden",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":9,
@@ -27947,7 +27947,7 @@
     "200809":{
         "Id":200809,
         "Name":"Lalitha",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":2,
@@ -28292,7 +28292,7 @@
     "200818":{
         "Id":200818,
         "Name":"Layla bint-Nadr",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
@@ -28635,7 +28635,7 @@
     "200828":{
         "Id":200828,
         "Name":"Legba",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":8,
@@ -31480,7 +31480,7 @@
     "201600":{
         "Id":201600,
         "Name":"Marcel",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -32507,7 +32507,7 @@
     "200938":{
         "Id":200938,
         "Name":"Marla Kenyon",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":4,
@@ -33296,7 +33296,7 @@
     "200959":{
         "Id":200959,
         "Name":"Mateusz Kazimirski, Biker of Blood",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -33667,7 +33667,7 @@
     "201603":{
         "Id":201603,
         "Name":"Melech",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -33693,7 +33693,7 @@
     "200969":{
         "Id":200969,
         "Name":"Melek",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":7,
@@ -34111,7 +34111,7 @@
     "200981":{
         "Id":200981,
         "Name":"Michael diCarlo",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
@@ -34439,7 +34439,7 @@
     "201605":{
         "Id":201605,
         "Name":"Milton Fox",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":3,
@@ -34677,7 +34677,7 @@
     "200997":{
         "Id":200997,
         "Name":"Missy Shillingford",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -35056,7 +35056,7 @@
     "201008":{
         "Id":201008,
         "Name":"Monty Coven",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":8,
@@ -35855,7 +35855,7 @@
     "201033":{
         "Id":201033,
         "Name":"Nakhthorheb",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":10,
@@ -36149,7 +36149,7 @@
     "201607":{
         "Id":201607,
         "Name":"Nayarana",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -36230,7 +36230,7 @@
     "201042":{
         "Id":201042,
         "Name":"Nefertiti",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             false,
             "201520"
@@ -36266,7 +36266,7 @@
     "201520":{
         "Id":201520,
         "Name":"Nefertiti",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             true,
             201042
@@ -36302,7 +36302,7 @@
     "201043":{
         "Id":201043,
         "Name":"Neferu",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":9,
@@ -36384,7 +36384,7 @@
     "201045":{
         "Id":201045,
         "Name":"Nehsi",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":10,
@@ -36454,7 +36454,7 @@
     "201047":{
         "Id":201047,
         "Name":"Nepata",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -36977,7 +36977,7 @@
     "201062":{
         "Id":201062,
         "Name":"Nizzam al-Latif",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -37076,7 +37076,7 @@
     "201608":{
         "Id":201608,
         "Name":"Nonu Dis",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":8,
@@ -37346,7 +37346,7 @@
     "201072":{
         "Id":201072,
         "Name":"Ogwon",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":7,
@@ -37553,7 +37553,7 @@
     "201078":{
         "Id":201078,
         "Name":"Olugbenga",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -37612,7 +37612,7 @@
     "201080":{
         "Id":201080,
         "Name":"Omer",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -38123,7 +38123,7 @@
     "201095":{
         "Id":201095,
         "Name":"Parmenides",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -38152,7 +38152,7 @@
     "201096":{
         "Id":201096,
         "Name":"Parnassus",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":7,
@@ -38579,7 +38579,7 @@
     "201109":{
         "Id":201109,
         "Name":"Pentweret",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -39310,7 +39310,7 @@
     "201129":{
         "Id":201129,
         "Name":"Porphyrion",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -39574,7 +39574,7 @@
     "201137":{
         "Id":201137,
         "Name":"Qadir ul-Ghani",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":9,
@@ -39777,7 +39777,7 @@
     "201143":{
         "Id":201143,
         "Name":"Qufur am-Heru",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":7,
@@ -40665,7 +40665,7 @@
     "201170":{
         "Id":201170,
         "Name":"Rebekah",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"3",
         "Capacity":9,
@@ -40958,7 +40958,7 @@
     "201179":{
         "Id":201179,
         "Name":"Renenet",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
@@ -41083,7 +41083,7 @@
     "201183":{
         "Id":201183,
         "Name":"Reverend Djoser Jones",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":3,
@@ -41149,7 +41149,7 @@
     "201185":{
         "Id":201185,
         "Name":"Reza Fatir, The Dark Angel",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":6,
@@ -42380,7 +42380,7 @@
     "201221":{
         "Id":201221,
         "Name":"Sahira Siraj",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":4,
@@ -42439,7 +42439,7 @@
     "201223":{
         "Id":201223,
         "Name":"Sajid al Misbah",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":4,
@@ -42631,7 +42631,7 @@
     "201229":{
         "Id":201229,
         "Name":"Samat Ramal-Ra, Archon",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -42847,7 +42847,7 @@
     "201236":{
         "Id":201236,
         "Name":"Saqqaf, Keeper of the Grand Temple of Set",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":9,
@@ -43036,7 +43036,7 @@
     "201242":{
         "Id":201242,
         "Name":"Sarrasine",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             false,
             "201243"
@@ -43071,7 +43071,7 @@
     "201243":{
         "Id":201243,
         "Name":"Sarrasine",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             true,
             201242
@@ -43822,7 +43822,7 @@
     "201265":{
         "Id":201265,
         "Name":"Seren Sukardi",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -43966,7 +43966,7 @@
     "201269":{
         "Id":201269,
         "Name":"Seterpenre",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":10,
@@ -44072,7 +44072,7 @@
     "201272":{
         "Id":201272,
         "Name":"Shahara al-Rashwa",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -44395,7 +44395,7 @@
     "201282":{
         "Id":201282,
         "Name":"Shemti",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -44687,7 +44687,7 @@
     "201290":{
         "Id":201290,
         "Name":"Sir Marriot D'Urban",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -44782,7 +44782,7 @@
     "201293":{
         "Id":201293,
         "Name":"Sisocharis",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":4,
@@ -45738,7 +45738,7 @@
     "201323":{
         "Id":201323,
         "Name":"Sukainah",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":3,
@@ -45794,7 +45794,7 @@
     "201324":{
         "Id":201324,
         "Name":"Sundervere, The Devil Brahmin",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":8,
@@ -45910,7 +45910,7 @@
     "201327":{
         "Id":201327,
         "Name":"Sutekh, The Dark God",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":11,
@@ -46425,7 +46425,7 @@
     "201340":{
         "Id":201340,
         "Name":"Tansu Bekir",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -46551,7 +46551,7 @@
     "201344":{
         "Id":201344,
         "Name":"Tariq, The Silent",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             false,
             "201345"
@@ -46593,7 +46593,7 @@
     "201345":{
         "Id":201345,
         "Name":"Tariq, The Silent",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             true,
             201344
@@ -46846,7 +46846,7 @@
     "201352":{
         "Id":201352,
         "Name":"Tegyrius, Vizier",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             false,
             "201353"
@@ -46895,7 +46895,7 @@
     "201353":{
         "Id":201353,
         "Name":"Tegyrius, Vizier",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             true,
             201352
@@ -47335,7 +47335,7 @@
     "201365":{
         "Id":201365,
         "Name":"Thetmes, Caliph of Alamut",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":10,
@@ -47501,7 +47501,7 @@
     "201370":{
         "Id":201370,
         "Name":"Thucimia",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":10,
@@ -48900,7 +48900,7 @@
     "201413":{
         "Id":201413,
         "Name":"Ur-Shulgi, The Shepherd",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":11,
@@ -49357,7 +49357,7 @@
     "201426":{
         "Id":201426,
         "Name":"Vardar Vardarian",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":6,
@@ -50393,7 +50393,7 @@
     "201615":{
         "Id":201615,
         "Name":"Vivian VI",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -50762,7 +50762,7 @@
     "201594":{
         "Id":201594,
         "Name":"Warmaksan",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -51091,7 +51091,7 @@
     "201472":{
         "Id":201472,
         "Name":"Wise Frog",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -51522,7 +51522,7 @@
     "201485":{
         "Id":201485,
         "Name":"Yazid Tamari",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             false,
             "201486"
@@ -51565,7 +51565,7 @@
     "201486":{
         "Id":201486,
         "Name":"Yazid Tamari",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             true,
             201485
@@ -51862,7 +51862,7 @@
     "201495":{
         "Id":201495,
         "Name":"Yusuf, Scribe of Alamut",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -52033,7 +52033,7 @@
     "201500":{
         "Id":201500,
         "Name":"Zahir, Hand of the Silsila",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -52232,7 +52232,7 @@
     "201506":{
         "Id":201506,
         "Name":"Zhenga",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":5,

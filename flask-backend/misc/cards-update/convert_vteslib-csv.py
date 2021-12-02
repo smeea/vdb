@@ -241,6 +241,13 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
                     if c['id'] == card['Id']:
                         card['Twd'] = True
 
+        # Rename Ministry and Follower of Set
+        if card['Clan'] == 'Assamite':
+            card['Clan'] = 'Banu Haqim'
+
+        if card['Clan'] == 'Follower of Set':
+            card['Clan'] = 'Ministry'
+
         # Prepare for export
         cards_frontend[card['Id']] = {
             'Id': card['Id'],

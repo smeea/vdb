@@ -5,60 +5,13 @@ import AdditionalForms from './SearchAdditionalForms.jsx';
 import SearchFormButtonGroupToggle from './SearchFormButtonGroupToggle.jsx';
 import SearchFormButtonAdd from './SearchFormButtonAdd.jsx';
 import SearchFormButtonDel from './SearchFormButtonDel.jsx';
+import clansList from './forms_data/clansList.json';
 import AppContext from '../../context/AppContext.js';
 
 function SearchCryptFormClan(props) {
   const { isMobile } = useContext(AppContext);
 
-  const clans = [
-    'ANY',
-    'Abomination',
-    'Ahrimane',
-    'Akunanse',
-    'Assamite',
-    'Baali',
-    'Blood Brother',
-    'Brujah',
-    'Brujah antitribu',
-    'Caitiff',
-    'Daughter of Cacophony',
-    'Follower of Set',
-    'Gangrel',
-    'Gangrel antitribu',
-    'Gargoyle',
-    'Giovanni',
-    'Guruhi',
-    'Harbinger of Skulls',
-    'Ishtarri',
-    'Kiasyd',
-    'Lasombra',
-    'Malkavian',
-    'Malkavian antitribu',
-    'Nagaraja',
-    'Nosferatu',
-    'Nosferatu antitribu',
-    'Osebo',
-    'Pander',
-    'Ravnos',
-    'Salubri',
-    'Salubri antitribu',
-    'Samedi',
-    'Toreador',
-    'Toreador antitribu',
-    'Tremere',
-    'Tremere antitribu',
-    'True Brujah',
-    'Tzimisce',
-    'Ventrue',
-    'Ventrue antitribu',
-    'Avenger',
-    'Defender',
-    'Innocent',
-    'Judge',
-    'Martyr',
-    'Redeemer',
-    'Visionary',
-  ];
+  const clans = ['ANY', ...clansList];
 
   const options = [];
 
