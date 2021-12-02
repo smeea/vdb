@@ -1,38 +1,8 @@
 import React from 'react';
+import disciplinesList from './forms_data/disciplinesList.json';
 
 function SearchCryptFormDisciplines(props) {
-  const disciplines = [
-    'Abombwe',
-    'Animalism',
-    'Auspex',
-    'Celerity',
-    'Chimerstry',
-    'Daimoinon',
-    'Dementation',
-    'Dominate',
-    'Fortitude',
-    'Melpominee',
-    'Mytherceria',
-    'Necromancy',
-    'Obeah',
-    'Obfuscate',
-    'Obtenebration',
-    'Potence',
-    'Presence',
-    'Protean',
-    'Quietus',
-    'Sanguinus',
-    'Serpentis',
-    'Spiritus',
-    'Temporis',
-    'Thanatosis',
-    'Thaumaturgy',
-    'Valeren',
-    'Vicissitude',
-    'Visceratika',
-  ];
-
-  const disciplinesforms = disciplines.map((i, index) => {
+  const disciplinesforms = disciplinesList.map((i, index) => {
     const disciplineState = `discipline-container state${props.value[i]}`;
     const imgSrcBase = `${
       process.env.ROOT_URL

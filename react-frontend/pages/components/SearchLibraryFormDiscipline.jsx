@@ -5,52 +5,25 @@ import AdditionalForms from './SearchAdditionalForms.jsx';
 import SearchFormButtonGroupToggle from './SearchFormButtonGroupToggle.jsx';
 import SearchFormButtonAdd from './SearchFormButtonAdd.jsx';
 import SearchFormButtonDel from './SearchFormButtonDel.jsx';
+import disciplinesList from './forms_data/disciplinesList.json';
+import virtuesList from './forms_data/virtuesList.json';
 import AppContext from '../../context/AppContext';
 
 function SearchLibraryFormDiscipline(props) {
   const { isMobile } = useContext(AppContext);
 
+  const disciplinesExtendedList = [
+    ...disciplinesList,
+    'Flight',
+    'Maleficia',
+    'Striga',
+  ].sort();
+
   const disciplines = [
     'ANY',
     'Not Required',
-    'Abombwe',
-    'Animalism',
-    'Auspex',
-    'Celerity',
-    'Chimerstry',
-    'Daimoinon',
-    'Dominate',
-    'Dementation',
-    'Flight',
-    'Fortitude',
-    'Maleficia',
-    'Melpominee',
-    'Mytherceria',
-    'Necromancy',
-    'Obeah',
-    'Obfuscate',
-    'Obtenebration',
-    'Potence',
-    'Presence',
-    'Protean',
-    'Quietus',
-    'Sanguinus',
-    'Serpentis',
-    'Spiritus',
-    'Striga',
-    'Temporis',
-    'Thanatosis',
-    'Thaumaturgy',
-    'Valeren',
-    'Vicissitude',
-    'Visceratika',
-    'Defense',
-    'Innocence',
-    'Judgment',
-    'Martyrdom',
-    'Redemption',
-    'Vengeance',
-    'Vision',
+    ...disciplinesExtendedList,
+    ...virtuesList,
   ];
 
   const options = [];

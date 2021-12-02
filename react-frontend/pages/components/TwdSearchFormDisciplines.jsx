@@ -1,48 +1,9 @@
 import React from 'react';
+import disciplinesList from './forms_data/disciplinesList.json';
+import virtuesList from './forms_data/virtuesList.json';
 
 function TwdSearchFormDisciplines(props) {
-  const disciplines = [
-    'Abombwe',
-    'Animalism',
-    'Auspex',
-    'Celerity',
-    'Chimerstry',
-    'Daimoinon',
-    'Dementation',
-    'Dominate',
-    'Fortitude',
-    'Melpominee',
-    'Mytherceria',
-    'Necromancy',
-    'Obeah',
-    'Obfuscate',
-    'Obtenebration',
-    'Potence',
-    'Presence',
-    'Protean',
-    'Quietus',
-    'Sanguinus',
-    'Serpentis',
-    'Spiritus',
-    'Temporis',
-    'Thanatosis',
-    'Thaumaturgy',
-    'Valeren',
-    'Vicissitude',
-    'Visceratika',
-  ];
-
-  const virtues = [
-    'Defense',
-    'Innocence',
-    'Judgment',
-    'Martyrdom',
-    'Redemption',
-    'Vengeance',
-    'Vision',
-  ];
-
-  const disciplinesForm = disciplines.map((i, index) => {
+  const disciplinesForm = disciplinesList.map((i, index) => {
     const imgSrc = `${
       process.env.ROOT_URL
     }images/disciplines/${i.toLowerCase()}.svg`;
@@ -68,7 +29,7 @@ function TwdSearchFormDisciplines(props) {
     );
   });
 
-  const virtuesForm = virtues.map((i, index) => {
+  const virtuesForm = virtuesList.map((i, index) => {
     const imgSrc = `${
       process.env.ROOT_URL
     }images/disciplines/${i.toLowerCase()}.svg`;
