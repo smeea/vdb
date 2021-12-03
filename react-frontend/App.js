@@ -64,8 +64,8 @@ function App(props) {
   const [lastDeck, setLastDeck] = useState({});
 
   const getCardBase = () => {
-    const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json`;
-    const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json`;
+    const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=2021-12-01`;
+    const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=2021-12-01`;
     const options = {
       method: 'GET',
       mode: 'cors',

@@ -301,12 +301,20 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                     c['Id']) < card['Id'] and c['Group'] != card['Group']:
                 card['New'] = True
 
-        # Rename Ministry and Follower of Set
+        # Rename Assamite and Follower of Set
         if card['Clan'] == 'Assamite':
             card['Clan'] = 'Banu Haqim'
 
         if card['Clan'] == 'Follower of Set':
             card['Clan'] = 'Ministry'
+
+        card['Card Text'] = card['Card Text'].replace(
+            'Assamites', 'Banu Haqim').replace('Assamite', 'Banu Haqim')
+
+        card['Card Text'] = card['Card Text'].replace('Followers of Set',
+                                                      'Ministers')
+        card['Card Text'] = card['Card Text'].replace('Follower of Set',
+                                                      'Minister')
 
         # Prepare for export
         cards_frontend[card['Id']] = {

@@ -248,6 +248,14 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
         if card['Clan'] == 'Follower of Set':
             card['Clan'] = 'Ministry'
 
+        card['Card Text'] = card['Card Text'].replace(
+            'Assamites', 'Banu Haqim').replace('Assamite', 'Banu Haqim')
+
+        card['Card Text'] = card['Card Text'].replace('Followers of Set',
+                                                      'Ministers')
+        card['Card Text'] = card['Card Text'].replace('Follower of Set',
+                                                      'Minister')
+
         # Prepare for export
         cards_frontend[card['Id']] = {
             'Id': card['Id'],

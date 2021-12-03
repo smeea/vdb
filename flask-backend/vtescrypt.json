@@ -437,7 +437,7 @@
         "Adv":"",
         "Group":"6",
         "Capacity":2,
-        "Card Text":"Independent: Adri gets +1 intercept against Followers of Set.",
+        "Card Text":"Independent: Adri gets +1 intercept against Ministers.",
         "Set":{
             "TU":{
                 "C":true
@@ -1087,7 +1087,7 @@
         ],
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Camarilla: During the first round of combat, Al-Ashrad can use strikes requiring Thaumaturgy [tha] that are not usable during the first round. Blood cursed.\n[MERGED] Assamite Inner Circle: +1 bleed.",
+        "Card Text":"Camarilla: During the first round of combat, Al-Ashrad can use strikes requiring Thaumaturgy [tha] that are not usable during the first round. Blood cursed.\n[MERGED] Banu Haqim Inner Circle: +1 bleed.",
         "Set":{
             "TU":{
                 "C":true
@@ -2188,7 +2188,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Independent: During the polling step of a political action, Amaravati can burn 2 blood to give each ready Assamite you control +1 vote. Blood cursed.",
+        "Card Text":"Independent: During the polling step of a political action, Amaravati can burn 2 blood to give each ready Banu Haqim you control +1 vote. Blood cursed.",
         "Set":{
             "KMW":{
                 "U":true
@@ -10684,7 +10684,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Camarilla: If Damaskenos becomes the Prince of Cairo, each ready Follower of Set burns 1 blood. If he becomes the Malkavian Justicar, each ready Follower of Set burns 2 blood.",
+        "Card Text":"Camarilla: If Damaskenos becomes the Prince of Cairo, each ready Minister burns 1 blood. If he becomes the Malkavian Justicar, each ready Minister burns 2 blood.",
         "Set":{
             "AH":{
                 "V":true
@@ -14111,7 +14111,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Camarilla primogen: Elisabetta gets +1 bleed when bleeding a Methuselah who controls a ready Follower of Set.",
+        "Card Text":"Camarilla primogen: Elisabetta gets +1 bleed when bleeding a Methuselah who controls a ready Minister.",
         "Set":{
             "AH":{
                 "V":true
@@ -14994,7 +14994,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":8,
-        "Card Text":"Independent: Actions directed at \u00c9tienne cost 1 additional blood. Damage from \u00c9tienne's hand strikes is aggravated in combat with a Baali or Follower of Set.",
+        "Card Text":"Independent: Actions directed at \u00c9tienne cost 1 additional blood. Damage from \u00c9tienne's hand strikes is aggravated in combat with a Baali or Minister.",
         "Set":{
             "Anarchs":{
                 "U":true
@@ -15579,7 +15579,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Camarilla: Faruq may enter combat with any Assamite controlled by another Methuselah as a (D) action. In that combat, Faruq gets +1 strength.",
+        "Card Text":"Camarilla: Faruq may enter combat with any Banu Haqim controlled by another Methuselah as a (D) action. In that combat, Faruq gets +1 strength.",
         "Set":{
             "AH":{
                 "V":true
@@ -15897,7 +15897,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":2,
-        "Card Text":"Independent: Fida'i do not unlock as normal. During your unlock phase, any ready Assamite you control with capacity 7 or more can burn 1 blood to unlock this Fida'i. Blood cursed. Non-unique.",
+        "Card Text":"Independent: Fida'i do not unlock as normal. During your unlock phase, any ready Banu Haqim you control with capacity 7 or more can burn 1 blood to unlock this Fida'i. Blood cursed. Non-unique.",
         "Set":{
             "FN":{
                 "U":true
@@ -17205,7 +17205,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Sabbat: Gentha gets +1 bleed when bleeding a Methuselah who controls a ready Follower of Set. Sterile.",
+        "Card Text":"Sabbat: Gentha gets +1 bleed when bleeding a Methuselah who controls a ready Minister. Sterile.",
         "Set":{
             "LoB":{
                 "U":true
@@ -19048,7 +19048,7 @@
         "Adv":"",
         "Group":"5",
         "Capacity":6,
-        "Card Text":"Camarilla: Camarilla vampires must burn 1 blood to attempt to block Hafsa. Assamites get +1 bleed against you. Blood cursed.",
+        "Card Text":"Camarilla: Camarilla vampires must burn 1 blood to attempt to block Hafsa. Banu Haqim get +1 bleed against you. Blood cursed.",
         "Set":{
             "LotN":{
                 "U":true
@@ -22899,7 +22899,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Independent: Janni inflicts +1 damage when striking with a weapon. She can enter combat with a Follower of Set as a (D) action. Blood cursed.",
+        "Card Text":"Independent: Janni inflicts +1 damage when striking with a weapon. She can enter combat with a Minister as a (D) action. Blood cursed.",
         "Set":{
             "KMW":{
                 "U":true
@@ -24675,7 +24675,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Laibon: Jubal gets +1 intercept when attempting to block a Follower of Set.",
+        "Card Text":"Laibon: Jubal gets +1 intercept when attempting to block a Minister.",
         "Set":{
             "LoB":{
                 "U":true
@@ -25677,7 +25677,7 @@
         "Adv":"",
         "Group":"6",
         "Capacity":9,
-        "Card Text":"Camarilla Assamite Justicar: Once each combat, Kasim can discard a political action card before range is determined to get +2 strength that combat. +1 bleed.",
+        "Card Text":"Camarilla Banu Haqim Justicar: Once each combat, Kasim can discard a political action card before range is determined to get +2 strength that combat. +1 bleed.",
         "Set":{
             "V5A":{
                 "PBh":"1"
@@ -28018,7 +28018,7 @@
         "Adv":"",
         "Group":"6",
         "Capacity":8,
-        "Card Text":"Sabbat Archbishop of Port-au-Prince: Followers of Set controlled by other Methuselahs cannot cast votes or ballots in referendums called by Legba.",
+        "Card Text":"Sabbat Archbishop of Port-au-Prince: Ministers controlled by other Methuselahs cannot cast votes or ballots in referendums called by Legba.",
         "Set":{
             "TU":{
                 "C":true
@@ -32575,7 +32575,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Independent: While Matthias is ready, Baali and Followers of Set get -1 bleed when bleeding you. +1 intercept. Scarce.",
+        "Card Text":"Independent: While Matthias is ready, Baali and Ministers get -1 bleed when bleeding you. +1 intercept. Scarce.",
         "Set":{
             "BL":{
                 "R":true
@@ -34581,7 +34581,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Camarilla Prince of Istanbul: Combat cards requiring Serpentis [ser] cost Followers of Set an additional blood when in combat with Murat.",
+        "Card Text":"Camarilla Prince of Istanbul: Combat cards requiring Serpentis [ser] cost Ministers an additional blood when in combat with Murat.",
         "Set":{
             "AH":{
                 "V":true
@@ -36098,7 +36098,7 @@
         "Adv":"",
         "Group":"6",
         "Capacity":8,
-        "Card Text":"Anarch: If Nonu Dis is ready during your master phase, you can add 1 blood to a ready Follower of Set you control after playing a master card. +1 bleed.",
+        "Card Text":"Anarch: If Nonu Dis is ready during your master phase, you can add 1 blood to a ready Minister you control after playing a master card. +1 bleed.",
         "Set":{
             "V5A":{
                 "PMin":"1"
@@ -38894,7 +38894,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Camarilla: As a (D) action, Radeyah can enter combat with any Follower of Set controlled by another Methuselah.",
+        "Card Text":"Camarilla: As a (D) action, Radeyah can enter combat with any Minister controlled by another Methuselah.",
         "Set":{
             "AH":{
                 "V":true
@@ -43524,7 +43524,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":6,
-        "Card Text":"Camarilla: Ralph gets +1 strength in combat with a younger Camarilla vampire. Followers of Set get +1 bleed when bleeding Ralph's controller.",
+        "Card Text":"Camarilla: Ralph gets +1 strength in combat with a younger Camarilla vampire. Ministers get +1 bleed when bleeding Ralph's controller.",
         "Set":{
             "CE":{
                 "V":true
@@ -44673,7 +44673,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":11,
-        "Card Text":"Independent. 2 votes (titled): You can gain 1 pool after resolution of any successful action to recruit a mummy ally. During your unlock phase, you can move 1 blood between Sutekh and another Follower of Set you control. +1 bleed.",
+        "Card Text":"Independent. 2 votes (titled): You can gain 1 pool after resolution of any successful action to recruit a mummy ally. During your unlock phase, you can move 1 blood between Sutekh and another Minister you control. +1 bleed.",
         "Set":{
             "FN":{
                 "R":true
@@ -45541,7 +45541,7 @@
         ],
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Camarilla: If Tegyrius is ready, any Assamite can put 1 allegiance counter on themselves as a +1 stealth action. Any Assamite with any allegiance counters is considered Camarilla. Blood cursed. +1 strength.",
+        "Card Text":"Camarilla: If Tegyrius is ready, any Banu Haqim can put 1 allegiance counter on themselves as a +1 stealth action. Any Banu Haqim with any allegiance counters is considered Camarilla. Blood cursed. +1 strength.",
         "Set":{
             "FN":{
                 "U":true
@@ -45577,7 +45577,7 @@
         ],
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Camarilla: While Tegyrius is ready, each Camarilla Assamite can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.\n[MERGED] Assamite Justicar.",
+        "Card Text":"Camarilla: While Tegyrius is ready, each Camarilla Banu Haqim can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.\n[MERGED] Banu Haqim Justicar.",
         "Set":{
             "Anarchs":{
                 "U":true
@@ -47993,7 +47993,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Independent: Followers of Set get -1 strength in combat with Vardar. Blood cursed.",
+        "Card Text":"Independent: Ministers get -1 strength in combat with Vardar. Blood cursed.",
         "Set":{
             "KMW":{
                 "U":true
@@ -48586,7 +48586,7 @@
         "Adv":"",
         "Group":"7",
         "Capacity":6,
-        "Card Text":"Camarilla: While Victoria is ready, you can discard 1 card during a bleed action to give an acting Assamite +1 bleed. +1 bleed.",
+        "Card Text":"Camarilla: While Victoria is ready, you can discard 1 card during a bleed action to give an acting Banu Haqim +1 bleed. +1 bleed.",
         "Set":{
             "Promo":{
                 "20211015":true
@@ -50298,7 +50298,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":5,
-        "Card Text":"Independent: If Yusuf performs a successful action to equip with an equipment requiring an Assamite, he can unlock during the discard phase. Blood cursed.",
+        "Card Text":"Independent: If Yusuf performs a successful action to equip with an equipment requiring an Banu Haqim, he can unlock during the discard phase. Blood cursed.",
         "Set":{
             "FN":{
                 "U":true

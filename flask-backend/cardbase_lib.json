@@ -1240,7 +1240,7 @@
         "Pool Cost":"4",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 3 life. 3 strength, 1 bleed.\nAkhenaten can play cards requiring basic Necromancy [nec] as a 3-capacity vampire. In combat with a Follower of Set, any damage he inflicts is aggravated. Akhenaten can burn himself to burn a Follower of Set controlled by your prey as a (D) action. If he is burned, shuffle him into his owner's library.",
+        "Card Text":"Unique mummy with 3 life. 3 strength, 1 bleed.\nAkhenaten can play cards requiring basic Necromancy [nec] as a 3-capacity vampire. In combat with a Minister, any damage he inflicts is aggravated. Akhenaten can burn himself to burn a Minister controlled by your prey as a (D) action. If he is burned, shuffle him into his owner's library.",
         "Set":{
             "AH":{
                 "R":true
@@ -1391,7 +1391,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nAfter an Assamite you control successfully bleeds a Methuselah, put the pool lost by that Methuselah on this card. Burn X counters from this card during the polling step of a political action to give a vampire you control +X votes.",
+        "Card Text":"Unique location.\nAfter an Banu Haqim you control successfully bleeds a Methuselah, put the pool lost by that Methuselah on this card. Burn X counters from this card during the polling step of a political action to give a vampire you control +X votes.",
         "Set":{
             "AH":{
                 "R":true
@@ -4136,7 +4136,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a vampire with capacity 5 or less.\nPut this card on this vampire. This vampire gets +1 intercept and does not lock for blocking a vampire the same age or younger. Any vampire can burn this card as a (D) action; Followers of Set get -1 stealth during that action.",
+        "Card Text":"+1 stealth action. Requires a vampire with capacity 5 or less.\nPut this card on this vampire. This vampire gets +1 intercept and does not lock for blocking a vampire the same age or younger. Any vampire can burn this card as a (D) action; Ministers get -1 stealth during that action.",
         "Set":{
             "AH":{
                 "C":true
@@ -6433,7 +6433,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock during the polling step of any referendum to get +2 votes. Lock after a minion with a contract for which an Assamite you control is chosen leaves the ready region to gain 1 pool.",
+        "Card Text":"Unique location.\nLock during the polling step of any referendum to get +2 votes. Lock after a minion with a contract for which an Banu Haqim you control is chosen leaves the ready region to gain 1 pool.",
         "Set":{
             "LotN":{
                 "R":true
@@ -11536,7 +11536,7 @@
         "Pool Cost":"3",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nAny Follower of Set you control can put 1 corruption counter on an ally or younger vampire controlled by your prey as a (D) action. If the action is successful and the number of your corruption counters on the minion equals or exceeds their capacity or cost, you can burn those counters to steal that minion.",
+        "Card Text":"Unique location.\nAny Minister you control can put 1 corruption counter on an ally or younger vampire controlled by your prey as a (D) action. If the action is successful and the number of your corruption counters on the minion equals or exceeds their capacity or cost, you can burn those counters to steal that minion.",
         "Set":{
             "LotN":{
                 "R":true
@@ -12707,7 +12707,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play. Followers of Set do not unlock as normal. Each Follower of Set may burn 1 blood to unlock during each of his or her controller's unlock phases. This card may be burned by any vampire as a (D) action; Followers of Set get -1 stealth when attempting that action.",
+        "Card Text":"Master.\nPut this card in play. Ministers do not unlock as normal. Each Minister may burn 1 blood to unlock during each of his or her controller's unlock phases. This card may be burned by any vampire as a (D) action; Ministers get -1 stealth when attempting that action.",
         "Set":{
             "AH":{
                 "R":true
@@ -13244,7 +13244,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Contract. Requires an Assamite with capacity 5 or more.\n(D) Enter combat with a minion and put this card on the target minion. This Assamite is chosen for this contract. This Assamite can enter combat with the attached minion as a +1 stealth (D) action.",
+        "Card Text":"+1 stealth action. Contract. Requires an Banu Haqim with capacity 5 or more.\n(D) Enter combat with a minion and put this card on the target minion. This Banu Haqim is chosen for this contract. This Banu Haqim can enter combat with the attached minion as a +1 stealth (D) action.",
         "Set":{
             "FN":{
                 "C":true
@@ -15487,7 +15487,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Contract.\nChoose an Assamite and put this card on a ready minion. The chosen Assamite can enter combat with the attached minion as a +1 stealth (D) action.",
+        "Card Text":"Contract.\nChoose an Banu Haqim and put this card on a ready minion. The chosen Banu Haqim can enter combat with the attached minion as a +1 stealth (D) action.",
         "Set":{
             "AH":{
                 "C":true
@@ -15843,7 +15843,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a prince, justicar, or Inner Circle member.\nIf this referendum is successful, each Follower of Set burns 2 blood. Each Follower of Set with zero blood then goes into torpor.",
+        "Card Text":"Requires a prince, justicar, or Inner Circle member.\nIf this referendum is successful, each Minister burns 2 blood. Each Minister with zero blood then goes into torpor.",
         "Set":{
             "AH":{
                 "V":true
@@ -19592,7 +19592,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique ghoul with 2 life. 1 strength, 0 bleed.\nIf Deviki is ready during your master phase, you can lock her to search your library (shuffle afterward) and/or ash heap for a master Discipline card and put it on a ready Assamite you control.",
+        "Card Text":"Unique ghoul with 2 life. 1 strength, 0 bleed.\nIf Deviki is ready during your master phase, you can lock her to search your library (shuffle afterward) and/or ash heap for a master Discipline card and put it on a ready Banu Haqim you control.",
         "Set":{
             "KMW":{
                 "R":true
@@ -24735,7 +24735,7 @@
         "Pool Cost":"4",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Gain 5 pool if you control a ready Follower of Set, or add 5 blood to a Follower of Set with capacity 9 or more in your uncontrolled region.",
+        "Card Text":"Gain 5 pool if you control a ready Minister, or add 5 blood to a Minister with capacity 9 or more in your uncontrolled region.",
         "Set":{
             "LotN":{
                 "U":true
@@ -27885,7 +27885,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined. A vampire can play only one Focus the Blood each combat.\nPut this card and 1 blood on this Assamite. This vampire can burn this card to reduce the cost of a combat card they play by 1 blood.",
+        "Card Text":"Only usable before range is determined. A vampire can play only one Focus the Blood each combat.\nPut this card and 1 blood on this Banu Haqim. This vampire can burn this card to reduce the cost of a combat card they play by 1 blood.",
         "Set":{
             "TU":{
                 "C":true
@@ -30560,7 +30560,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique ghoul with 2 life. 1 strength, 0 bleed.\nThe Ghouls of Plaza Morer\u00eda can strike: 1R damage. They get 1 optional maneuver each combat. They can burn 1 blood from a ready vampire and put 1 container counter on themselves as a +1 stealth (D) action. Any ready Assamite can burn X container counters from them to gain X blood as a +1 stealth action.",
+        "Card Text":"Unique ghoul with 2 life. 1 strength, 0 bleed.\nThe Ghouls of Plaza Morer\u00eda can strike: 1R damage. They get 1 optional maneuver each combat. They can burn 1 blood from a ready vampire and put 1 container counter on themselves as a +1 stealth (D) action. Any ready Banu Haqim can burn X container counters from them to gain X blood as a +1 stealth action.",
         "Set":{
             "FN":{
                 "R":true
@@ -32775,7 +32775,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Contract. Trifle.\nLock a ready Independent or Anarch Assamite you control to put this card on a younger vampire. Every Independent or Anarch Assamite is considered chosen for this contract. Any Independent or Anarch Assamite can enter combat with the attached vampire as a +1 stealth (D) action.",
+        "Card Text":"Contract. Trifle.\nLock a ready Independent or Anarch Banu Haqim you control to put this card on a younger vampire. Every Independent or Anarch Banu Haqim is considered chosen for this contract. Any Independent or Anarch Banu Haqim can enter combat with the attached vampire as a +1 stealth (D) action.",
         "Set":{
             "KMW":{
                 "R":true
@@ -32812,7 +32812,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nEach Methuselah who controls any of the oldest ready Assamites gains 2 pool.",
+        "Card Text":"+1 stealth action.\nEach Methuselah who controls any of the oldest ready Banu Haqim gains 2 pool.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -32840,7 +32840,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Put this card in play. During a bleed action, an Assamite you control can discard a combat card to get +1 bleed.",
+        "Card Text":"Put this card in play. During a bleed action, an Banu Haqim you control can discard a combat card to get +1 bleed.",
         "Set":{
             "V5A":{
                 "PBh":"4"
@@ -33567,7 +33567,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nAny Assamite can add 1 blood to this card as an action. During your influence phase, you can move any amount of blood from this card to an Assamite in your uncontrolled region.",
+        "Card Text":"Unique location.\nAny Banu Haqim can add 1 blood to this card as an action. During your influence phase, you can move any amount of blood from this card to an Banu Haqim in your uncontrolled region.",
         "Set":{
             "AH":{
                 "U":true
@@ -34228,7 +34228,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose any Follower of Set. Successful referendum means this card is put on the chosen vampire. This vampire gets +1 vote. If a vampire blocks this vampire, the blocking vampire burns 1 blood before block resolution.",
+        "Card Text":"Choose any Minister. Successful referendum means this card is put on the chosen vampire. This vampire gets +1 vote. If a vampire blocks this vampire, the blocking vampire burns 1 blood before block resolution.",
         "Set":{
             "KMW":{
                 "C":true
@@ -35796,7 +35796,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play with 1 counter for each Follower of Set and mummy you control. During an action, you can burn 1 counter from this card to give a mummy you control +1 bleed or +1 strength. Burn this card if it has no counters.",
+        "Card Text":"Unique.\nPut this card in play with 1 counter for each Minister and mummy you control. During an action, you can burn 1 counter from this card to give a mummy you control +1 bleed or +1 strength. Burn this card if it has no counters.",
         "Set":{
             "TU":{
                 "C":true
@@ -37107,7 +37107,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Successful referendum means this card is put in play and each Follower of Set can choose to become Camarilla. As any Follower of Set enters play, they can choose to become Camarilla.",
+        "Card Text":"Successful referendum means this card is put in play and each Minister can choose to become Camarilla. As any Minister enters play, they can choose to become Camarilla.",
         "Set":{
             "AH":{
                 "V":true
@@ -37609,7 +37609,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Animal with 1 life.\n[ani] If your prey controls a ready Follower of Set or Assamite, the minion with this retainer gets +1 stealth.\n[ANI] As above, but this minion gets +2 stealth.",
+        "Card Text":"Animal with 1 life.\n[ani] If your prey controls a ready Minister or Banu Haqim, the minion with this retainer gets +1 stealth.\n[ANI] As above, but this minion gets +2 stealth.",
         "Set":{
             "AH":{
                 "U":true
@@ -38460,7 +38460,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Each Assamite gets +1 stealth when bleeding. Any minion can burn this card as a (D) action; Tremere get +1 stealth during that action.",
+        "Card Text":"Unique.\nPut this card in play. Each Banu Haqim gets +1 stealth when bleeding. Any minion can burn this card as a (D) action; Tremere get +1 stealth during that action.",
         "Set":{
             "AH":{
                 "C":true
@@ -38490,7 +38490,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Unique. Not usable if any non-mandatory actions have been performed this turn.\nPut this card on this Assamite and unlock them. This Assamite gets +1 bleed. If your prey is ousted, you gain 4 additional pool. Burn this card during your unlock phase.",
+        "Card Text":"+1 stealth action. Unique. Not usable if any non-mandatory actions have been performed this turn.\nPut this card on this Banu Haqim and unlock them. This Banu Haqim gets +1 bleed. If your prey is ousted, you gain 4 additional pool. Burn this card during your unlock phase.",
         "Set":{
             "KMW":{
                 "C":true
@@ -38520,7 +38520,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable if this Assamite has been chosen for a contract on the opposing minion.\nStrike: hand strike at +3 damage.",
+        "Card Text":"Only usable if this Banu Haqim has been chosen for a contract on the opposing minion.\nStrike: hand strike at +3 damage.",
         "Set":{
             "AH":{
                 "V":true
@@ -38562,7 +38562,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nAdd 2 blood to a younger Assamite in your uncontrolled region.",
+        "Card Text":"+1 stealth action.\nAdd 2 blood to a younger Banu Haqim in your uncontrolled region.",
         "Set":{
             "FN":{
                 "R":true
@@ -43288,7 +43288,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock to give an Assamite you control +1 intercept.",
+        "Card Text":"Unique location.\nLock to give an Banu Haqim you control +1 intercept.",
         "Set":{
             "AH":{
                 "U":true
@@ -44406,7 +44406,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable if this vampire blocks an ally or younger vampire, before block resolution.\n[obf] Lock this vampire and end the action. This card costs Followers of Set 1 fewer blood.\n[OBF] As above, but do not lock this vampire.",
+        "Card Text":"Only usable if this vampire blocks an ally or younger vampire, before block resolution.\n[obf] Lock this vampire and end the action. This card costs Ministers 1 fewer blood.\n[OBF] As above, but do not lock this vampire.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -44567,7 +44567,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nReveal the top card of your crypt. If it is a Follower of Set, draw it and add 2 blood to it if it is younger. Otherwise, shuffle it back into your crypt.",
+        "Card Text":"+1 stealth action.\nReveal the top card of your crypt. If it is a Minister, draw it and add 2 blood to it if it is younger. Otherwise, shuffle it back into your crypt.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -45553,7 +45553,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nSearch your library (shuffle afterward) and/or ash heap for up to four cards requiring Serpentis [ser] and put them on this card, face down and out of play (you can look at the cards at any time). This Follower of Set can play cards from this equipment as if from your hand (requirements and cost apply as normal). Burn this equipment if it has no cards on it.",
+        "Card Text":"Unique.\nSearch your library (shuffle afterward) and/or ash heap for up to four cards requiring Serpentis [ser] and put them on this card, face down and out of play (you can look at the cards at any time). This Minister can play cards from this equipment as if from your hand (requirements and cost apply as normal). Burn this equipment if it has no cards on it.",
         "Set":{
             "LotN":{
                 "R":true
@@ -46165,7 +46165,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a Laibon or non-titled vampire.\nIf this vampire is Laibon, draw 1 card from your crypt. Otherwise, this vampire becomes Laibon, and they unlock if they are Akunanse, Guruhi, Ishtarri, Osebo, Assamite, Follower of Set, Ravnos, Lasombra, Tzimisce, Harbinger of Skulls, or Salubri antitribu.",
+        "Card Text":"+1 stealth action. Requires a Laibon or non-titled vampire.\nIf this vampire is Laibon, draw 1 card from your crypt. Otherwise, this vampire becomes Laibon, and they unlock if they are Akunanse, Guruhi, Ishtarri, Osebo, Banu Haqim, Minister, Ravnos, Lasombra, Tzimisce, Harbinger of Skulls, or Salubri antitribu.",
         "Set":{
             "LoB":{
                 "C":true
@@ -47151,7 +47151,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Not usable if the acting minion is an Assamite or wraith or has flight [FLIGHT].\nReduce a bleed against you by 1. If the acting minion is an ally or vampire with capacity 5 or less, reduce the bleed amount by 3 instead.",
+        "Card Text":"Not usable if the acting minion is an Banu Haqim or wraith or has flight [FLIGHT].\nReduce a bleed against you by 1. If the acting minion is an ally or vampire with capacity 5 or less, reduce the bleed amount by 3 instead.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -48321,7 +48321,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on an Assamite controlled by another Methuselah. That Assamite cannot attempt to bleed you. This card can be burned by another Assamite as a (D) action.",
+        "Card Text":"Master.\nPut this card on an Banu Haqim controlled by another Methuselah. That Banu Haqim cannot attempt to bleed you. This card can be burned by another Banu Haqim as a (D) action.",
         "Set":{
             "AH":{
                 "R":true
@@ -49014,7 +49014,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock to give a Follower of Set you control +1 stealth.",
+        "Card Text":"Unique location.\nLock to give a Minister you control +1 stealth.",
         "Set":{
             "AH":{
                 "C":true
@@ -50191,7 +50191,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Cards requiring Quietus [qui] cost Assamites 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
+        "Card Text":"Unique.\nPut this card in play. Cards requiring Quietus [qui] cost Banu Haqim 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
         "Set":{
             "AH":{
                 "C":true
@@ -50597,7 +50597,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Cards requiring Serpentis [ser] cost Followers of Set 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
+        "Card Text":"Unique.\nPut this card in play. Cards requiring Serpentis [ser] cost Ministers 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
         "Set":{
             "AH":{
                 "C":true
@@ -53659,7 +53659,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Title. Requires a Camarilla vampire.\nSuccessful referendum means this card is put on this vampire to represent the unique Camarilla title of Prince of Istanbul, and if this vampire is not an Assamite, lock all Assamites. In this referendum, each ready Assamite gets +1 vote.",
+        "Card Text":"Title. Requires a Camarilla vampire.\nSuccessful referendum means this card is put on this vampire to represent the unique Camarilla title of Prince of Istanbul, and if this vampire is not an Banu Haqim, lock all Banu Haqim. In this referendum, each ready Banu Haqim gets +1 vote.",
         "Set":{
             "AH":{
                 "R":true
@@ -54401,7 +54401,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Mortal with 1 life.\nThis Follower of Set gets +1 bleed against a Methuselah who controls a ready Camarilla vampire. While the employer is bleeding, Camarilla vampires get -1 intercept. A vampire can have only one Priestess of Sekhmet.",
+        "Card Text":"Mortal with 1 life.\nThis Minister gets +1 bleed against a Methuselah who controls a ready Camarilla vampire. While the employer is bleeding, Camarilla vampires get -1 intercept. A vampire can have only one Priestess of Sekhmet.",
         "Set":{
             "FN":{
                 "C":true
@@ -54511,7 +54511,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique contract. Trifle.\nChoose a ready Assamite you control and put this card on a minion controlled by your prey. The chosen Assamite can enter combat with the attached minion as a +1 stealth (D) action. If the attached minion is about to leave the ready region, you can burn this card to gain 3 pool.",
+        "Card Text":"Unique contract. Trifle.\nChoose a ready Banu Haqim you control and put this card on a minion controlled by your prey. The chosen Banu Haqim can enter combat with the attached minion as a +1 stealth (D) action. If the attached minion is about to leave the ready region, you can burn this card to gain 3 pool.",
         "Set":{
             "TU":{
                 "C":true
@@ -55057,7 +55057,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable after a combat involving this Assamite and a minion with a contract. Only usable if this Assamite has been chosen for that contract. Only usable if the opposing minion is not ready and this Assamite is ready. Usable by a locked vampire.\nThis Assamite gains enough blood to reach full capacity. Burn the contract if it is still in play.",
+        "Card Text":"Only usable after a combat involving this Banu Haqim and a minion with a contract. Only usable if this Banu Haqim has been chosen for that contract. Only usable if the opposing minion is not ready and this Banu Haqim is ready. Usable by a locked vampire.\nThis Banu Haqim gains enough blood to reach full capacity. Burn the contract if it is still in play.",
         "Set":{
             "FN":{
                 "R":true
@@ -58556,7 +58556,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose an Assamite in your ash heap or burn 1 pool to choose an Assamite in your uncontrolled region. Remove the chosen Assamite from the game or burn this equipment. Once each turn, except during combat, if the Assamite bearer is ready, they can burn 1 blood to give you +2 hand size until the end of the turn.",
+        "Card Text":"Choose an Banu Haqim in your ash heap or burn 1 pool to choose an Banu Haqim in your uncontrolled region. Remove the chosen Banu Haqim from the game or burn this equipment. Once each turn, except during combat, if the Banu Haqim bearer is ready, they can burn 1 blood to give you +2 hand size until the end of the turn.",
         "Set":{
             "Promo":{
                 "20080203":true
@@ -59672,7 +59672,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Successful referendum means this card is put in play and each Assamite can choose to become Camarilla. As any Assamite enters play, they can choose to become Camarilla.",
+        "Card Text":"Successful referendum means this card is put in play and each Banu Haqim can choose to become Camarilla. As any Banu Haqim enters play, they can choose to become Camarilla.",
         "Set":{
             "AH":{
                 "V":true
@@ -61038,7 +61038,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 2 life. 2 strength, 1 bleed.\nDuring an action, Saatet-ta can lock to give a Follower of Set you control +1 stealth, +1 intercept, or +1 bleed. If she is burned, shuffle her into her owner's library.",
+        "Card Text":"Unique mummy with 2 life. 2 strength, 1 bleed.\nDuring an action, Saatet-ta can lock to give a Minister you control +1 stealth, +1 intercept, or +1 bleed. If she is burned, shuffle her into her owner's library.",
         "Set":{
             "TU":{
                 "C":true
@@ -62817,7 +62817,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[tha] (D) Put this card on one of your prey's vampires. If the vampire is a Follower of Set, he or she burns 2 additional blood when attempting an action; otherwise, he or she burns 1 additional blood when attempting an action. The vampire's special abilities cannot be used. Any vampire(s) may burn this card with two +1 stealth actions.\n[THA] As above, but the vampire burns 2 additional blood when attempting an action; Followers of Set burn 3 additional blood.",
+        "Card Text":"+1 stealth action.\n[tha] (D) Put this card on one of your prey's vampires. If the vampire is a Minister, he or she burns 2 additional blood when attempting an action; otherwise, he or she burns 1 additional blood when attempting an action. The vampire's special abilities cannot be used. Any vampire(s) may burn this card with two +1 stealth actions.\n[THA] As above, but the vampire burns 2 additional blood when attempting an action; Ministers burn 3 additional blood.",
         "Set":{
             "AH":{
                 "U":true
@@ -70910,7 +70910,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only one Tajdid can be played in a game.\nUntil the end of the game, the Blood Curse no longer prevents Assamites from committing diablerie.",
+        "Card Text":"Only one Tajdid can be played in a game.\nUntil the end of the game, the Blood Curse no longer prevents Banu Haqim from committing diablerie.",
         "Set":{
             "FN":{
                 "R":true
@@ -74622,7 +74622,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique. Requires both Follower of Set and Tremere.\nPut this card in play. Each Follower of Set is considered to have a level of Thaumaturgy [tha] equal to their level of Serpentis [ser]. Each Tremere is considered to have a level of Serpentis equal to theirs level of Thaumaturgy.",
+        "Card Text":"Unique. Requires both Minister and Tremere.\nPut this card in play. Each Minister is considered to have a level of Thaumaturgy [tha] equal to their level of Serpentis [ser]. Each Tremere is considered to have a level of Serpentis equal to theirs level of Thaumaturgy.",
         "Set":{
             "Promo":{
                 "20080203":true
@@ -74649,7 +74649,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"If this referendum is successful, each Methuselah burns X+1 pool, where X is the number of Assamites he or she controls.",
+        "Card Text":"If this referendum is successful, each Methuselah burns X+1 pool, where X is the number of Banu Haqim he or she controls.",
         "Set":{
             "AH":{
                 "V":true
@@ -78998,7 +78998,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique werewolf with 4 life. 3 strength, 0 bleed.\nWalks-With-Might gets +1 intercept against Followers of Set. Master cards cost you 1 additional pool to play. Each strike or damaging effect made against him inflicts 1 less damage on him.",
+        "Card Text":"Unique werewolf with 4 life. 3 strength, 0 bleed.\nWalks-With-Might gets +1 intercept against Ministers. Master cards cost you 1 additional pool to play. Each strike or damaging effect made against him inflicts 1 less damage on him.",
         "Set":{
             "Promo":{
                 "20080203":true
@@ -79652,7 +79652,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a non-sterile Follower of Set with capacity 5 or more.\nPut this card in play. It becomes a 1-capacity (non-unique) Follower of Set of the same sect as the acting Follower of Set and must hunt this turn. You can search your library (shuffle afterward), hand, and/or ash heap for a master Discipline card and put it on this new vampire.",
+        "Card Text":"+1 stealth action. Requires a non-sterile Minister with capacity 5 or more.\nPut this card in play. It becomes a 1-capacity (non-unique) Minister of the same sect as the acting Minister and must hunt this turn. You can search your library (shuffle afterward), hand, and/or ash heap for a master Discipline card and put it on this new vampire.",
         "Set":{
             "KMW":{
                 "C":true
@@ -79881,7 +79881,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nPut this card in play in your uncontrolled region with 3 training counters. During your unlock phase, burn 1 training counter from this card. You can burn training counters from no more than two Web of Knives Recruit cards each unlock phase. After the last training counter is burned, move this card to your ready region; it becomes a 3-capacity (non-unique) Independent Assamite with Celerity [cel], Obfuscate [obf], Potence [pot], Quietus [qui] and 3 blood who is Blood cursed.",
+        "Card Text":"+1 stealth action.\nPut this card in play in your uncontrolled region with 3 training counters. During your unlock phase, burn 1 training counter from this card. You can burn training counters from no more than two Web of Knives Recruit cards each unlock phase. After the last training counter is burned, move this card to your ready region; it becomes a 3-capacity (non-unique) Independent Banu Haqim with Celerity [cel], Obfuscate [obf], Potence [pot], Quietus [qui] and 3 blood who is Blood cursed.",
         "Set":{
             "KMW":{
                 "C":true
@@ -79962,7 +79962,7 @@
         "Pool Cost":"3",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\n+1 hand size. During your unlock phase, a ready Black Hand vampire you control can gain 1 blood. Any Assamite can burn this card as a (D) action that costs 1 pool.",
+        "Card Text":"Unique location.\n+1 hand size. During your unlock phase, a ready Black Hand vampire you control can gain 1 blood. Any Banu Haqim can burn this card as a (D) action that costs 1 pool.",
         "Set":{
             "BH":{
                 "R":true
@@ -81187,7 +81187,7 @@
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nIf a ready Assamite you control is the target of a directed action or is chosen by the acting Methuselah in the terms of a referendum, you can lock this location to unlock the acting minion and have the action or referendum fail. Only usable as the directed action is announced or during the polling step of the referendum before votes and ballots are cast.",
+        "Card Text":"Unique location.\nIf a ready Banu Haqim you control is the target of a directed action or is chosen by the acting Methuselah in the terms of a referendum, you can lock this location to unlock the acting minion and have the action or referendum fail. Only usable as the directed action is announced or during the polling step of the referendum before votes and ballots are cast.",
         "Set":{
             "LoB":{
                 "R":true
