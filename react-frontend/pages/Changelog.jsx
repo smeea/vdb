@@ -11,6 +11,18 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2021-12-03:</h6>
+            <ul>
+              <li>Finalize transition to Banu Haqim/Ministry</li>
+              <li>
+                In pdf proxy sort library cards by card type (Master, Action,
+                etc)
+              </li>
+              <li>Add Recent Deck selection to Deck Compare</li>
+              <li>Increased height of some (opened) filters</li>
+              <li>Small other fixes</li>
+            </ul>
+
             <h6>2021-12-01:</h6>
             <ul>
               <li>Add new V5 (Anarchs) precons</li>

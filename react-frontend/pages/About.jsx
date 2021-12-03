@@ -70,26 +70,16 @@ function About(props) {
                 : 2021-12-01
               </p>
 
-              <h6>Last update [2021-12-01]:</h6>
+              <h6>Last update [2021-12-03]:</h6>
               <ul>
-                <li>Add new V5 (Anarchs) precons</li>
+                <li>Finalize transition to Banu Haqim/Ministry</li>
                 <li>
-                  Add Recent decks to Deck selection, will store last 10 decks
-                  (shared by url or twd) you have seen (to quickly come back to
-                  deck-friend-shared-last-week) - do not sync between devices
-                  (stored locally in your browser)
+                  In pdf proxy sort library cards by card type (Master, Action,
+                  etc)
                 </li>
-                <li>
-                  Import Versions (called Revisions in VDB) when importing deck
-                  from Amaranth
-                </li>
-                <li>Add Changelog page</li>
-                <li>
-                  Add additional (type &quot;YES&quot;) confirmation to delete
-                  Inventory and Decks with revisions (not to accidentally remove
-                  full deck missclicking Delete Revision)
-                </li>
-                <li>Various small other fixes and improvements</li>
+                <li>Add Recent Deck selection to Deck Compare</li>
+                <li>Increased height of some (opened) filters</li>
+                <li>Small other fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
