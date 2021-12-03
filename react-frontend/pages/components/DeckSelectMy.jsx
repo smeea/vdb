@@ -61,6 +61,7 @@ function DeckSelectMy(props) {
       isSearchable={!isMobile}
       filterOption={filterOption}
       name="decks"
+      maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
       value={options.find((obj) => {
         if (

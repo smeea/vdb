@@ -47,6 +47,7 @@ function TwdSearchFormClan(props) {
       options={options}
       isSearchable={!isMobile}
       name="clan"
+      maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
       value={options.find((obj) => obj.value === props.value.toLowerCase())}
       onChange={props.onChange}
     />

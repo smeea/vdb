@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
+import AppContext from '../../context/AppContext.js';
 
 function SearchCryptFormCapacity(props) {
+  const { isMobile } = useContext(AppContext);
+
   const capacity = [
     'ANY',
     '1',
@@ -78,6 +81,7 @@ function SearchCryptFormCapacity(props) {
           options={options}
           isSearchable={false}
           name="capacity"
+          maxMenuHeight={isMobile ? 330 : 550}
           value={options.find((obj) => obj.value === props.value.capacity)}
           onChange={props.onChange}
         />

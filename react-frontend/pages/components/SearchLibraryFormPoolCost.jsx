@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
+import AppContext from '../../context/AppContext.js';
 
 function SearchLibraryFormPoolCost(props) {
+  const { isMobile } = useContext(AppContext);
+
   const pool = ['ANY', '0', '1', '2', '3', '4', '5', '6'];
   const options = [];
 
@@ -66,6 +69,7 @@ function SearchLibraryFormPoolCost(props) {
             options={options}
             isSearchable={false}
             name="pool"
+            maxMenuHeight={isMobile ? 300 : 550}
             value={options.find((obj) => obj.value === props.value.pool)}
             onChange={props.onChange}
           />

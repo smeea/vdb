@@ -94,6 +94,13 @@ function SearchLibraryFormDiscipline(props) {
             options={options}
             isSearchable={!isMobile}
             name={0}
+            maxMenuHeight={
+              isMobile
+                ? window.innerHeight > 600
+                  ? window.innerHeight - 250
+                  : 300
+                : 550
+            }
             value={options.find(
               (obj) => obj.value === props.value.value[0].toLowerCase()
             )}

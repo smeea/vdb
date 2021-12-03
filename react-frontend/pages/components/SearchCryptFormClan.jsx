@@ -83,6 +83,7 @@ function SearchCryptFormClan(props) {
             options={options}
             isSearchable={!isMobile}
             name={0}
+            maxMenuHeight={isMobile ? 330 : 550}
             value={options.find(
               (obj) => obj.value === props.value.value[0].toLowerCase()
             )}

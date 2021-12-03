@@ -84,6 +84,7 @@ function DeckSelectPrecon(props) {
         options={options}
         isSearchable={!isMobile}
         name="decks"
+        maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
         filterOption={filterOption}
         placeholder="Select Deck"
         value={options.find((obj) => obj.value === props.activeDeck.deckid)}

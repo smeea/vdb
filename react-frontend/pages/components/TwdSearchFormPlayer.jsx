@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import AsyncSelect from 'react-select/async';
+import AppContext from '../../context/AppContext.js';
 
 function TwdSearchFormPlayer(props) {
+  const { isMobile } = useContext(AppContext);
+
   const handleChange = (v) => {
     props.setValue((prevState) => ({
       ...prevState,
@@ -35,6 +38,7 @@ function TwdSearchFormPlayer(props) {
       classNamePrefix="react-select"
       cacheOptions
       menuPlacement="top"
+      maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
       autoFocus={false}
       placeholder="Player"
       loadOptions={loadOptions}

@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
 import AdditionalForms from './SearchAdditionalForms.jsx';
 import SearchFormButtonGroupToggle from './SearchFormButtonGroupToggle.jsx';
 import SearchFormButtonAdd from './SearchFormButtonAdd.jsx';
 import SearchFormButtonDel from './SearchFormButtonDel.jsx';
+import AppContext from '../../context/AppContext.js';
 
 function SearchLibraryFormTitle(props) {
+  const { isMobile } = useContext(AppContext);
+
   const titles = [
     'ANY',
     'Not Required',
@@ -79,6 +82,7 @@ function SearchLibraryFormTitle(props) {
             options={options}
             isSearchable={false}
             name={0}
+            maxMenuHeight={isMobile ? 300 : 550}
             value={options.find(
               (obj) => obj.value === props.value.value[0].toLowerCase()
             )}
