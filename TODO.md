@@ -8,7 +8,6 @@
 * Localized proxies
 * Export all in xlsx and csv
 * Links to custom deck
-* Transition Thaumaturgy to Blood Sorcery
 
 # BIG FEATURES
 * Search for similar TWD decks
