@@ -27,7 +27,7 @@ function SearchLibraryFormTraits(props) {
     ['burn', 'Burn Option'],
     ['banned', 'Banned'],
     ['non-twd', 'Not in TWD'],
-    ['no-requirements', 'No Requirements'],
+    ['no-requirements', 'No Requirement'],
   ];
 
   const traitsLeftforms = traitsLeft.map((i, index) => {
@@ -68,10 +68,10 @@ function SearchLibraryFormTraits(props) {
         </Col>
       </Row>
       <Row className="mx-0">
-        <Col xs={6} className="d-inline pe-0">
+        <Col xs={7} className="d-inline pe-0">
           {traitsLeftforms}
         </Col>
-        <Col xs={6} className="d-inline pe-0">
+        <Col xs={5} className="d-inline px-0">
           {traitsRightforms}
         </Col>
       </Row>
