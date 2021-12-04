@@ -1,7 +1,6 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
-* Transition Thaumaturgy to Blood Sorcery
 
 # FIX MOBILE
 
@@ -9,7 +8,7 @@
 * Localized proxies
 * Export all in xlsx and csv
 * Links to custom deck
-* +Vote trait search
+* Transition Thaumaturgy to Blood Sorcery
 
 # BIG FEATURES
 * Search for similar TWD decks

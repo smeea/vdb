@@ -300,6 +300,18 @@ def get_library_by_traits(traits, library):
                 if card['Burn Option']:
                     counter += 1
 
+            elif trait == 'votes-title':
+                if re.search(
+                        r'{}'.format(
+                            '\+. vote|additional vote|represent the .* title'),
+                        card['Card Text'], re.IGNORECASE):
+                    counter += 1
+
+            elif trait == 'reduce bleed':
+                if re.search(r'{}'.format('reduce a bleed'), card['Card Text'],
+                             re.IGNORECASE):
+                    counter += 1
+
             elif trait == 'no-requirements':
                 if not card['Requirement'] and not card[
                         'Discipline'] and not card[

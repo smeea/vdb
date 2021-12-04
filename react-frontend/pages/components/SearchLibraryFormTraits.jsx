@@ -6,6 +6,7 @@ function SearchLibraryFormTraits(props) {
     ['intercept', '+Intercept / -Stealth'],
     ['stealth', '+Stealth / -Intercept'],
     ['bleed', '+Bleed'],
+    ['votes-title', '+Votes / Title'],
     ['strength', '+Strength'],
     ['dodge', 'Dodge'],
     ['maneuver', 'Maneuver'],
@@ -14,11 +15,12 @@ function SearchLibraryFormTraits(props) {
     ['prevent', 'Prevent'],
     ['press', 'Press'],
     ['combat ends', 'Combat Ends'],
-    ['enter combat', 'Enter Combat'],
   ];
 
   const traitsRight = [
+    ['enter combat', 'Enter Combat'],
     ['bounce bleed', 'Bounce Bleed'],
+    ['reduce bleed', 'Reduce Bleed'],
     ['unlock', 'Wake / Unlock'],
     ['black hand', 'Black Hand'],
     ['seraph', 'Seraph'],
