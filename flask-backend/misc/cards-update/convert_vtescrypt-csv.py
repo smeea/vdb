@@ -32,7 +32,7 @@ disciplines = {
     'san': ['Sanguinus', 1],
     'spi': ['Spiritus', 1],
     'tem': ['Temporis', 1],
-    'tha': ['Thaumaturgy', 1],
+    'tha': ['Blood Sorcery', 1],
     'thn': ['Thanatosis', 1],
     'qui': ['Quietus', 1],
     'val': ['Valeren', 1],
@@ -60,7 +60,7 @@ disciplines = {
     'SAN': ['Sanguinus', 2],
     'SPI': ['Spiritus', 2],
     'TEM': ['Temporis', 2],
-    'THA': ['Thaumaturgy', 2],
+    'THA': ['Blood Sorcery', 2],
     'THN': ['Thanatosis', 2],
     'QUI': ['Quietus', 2],
     'VAL': ['Valeren', 2],
@@ -265,6 +265,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                     if match := re.match(r'(.*?)\[... \S+\].*', rule):
                         text = match.group(1)
                         text = re.sub(r'{The (\w+)}', r'{\1, The}', text)
+                        text = text.replace('Thaumaturgy', 'Blood Sorcery')
                         card['Rulings'].append({
                             'text': text,
                             'refs': {},
@@ -315,6 +316,10 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                                                       'Ministers')
         card['Card Text'] = card['Card Text'].replace('Follower of Set',
                                                       'Minister')
+
+        # Rename Thaumaturgy
+        card['Card Text'] = card['Card Text'].replace('Thaumaturgy',
+                                                      'Blood Sorcery')
 
         # Prepare for export
         cards_frontend[card['Id']] = {

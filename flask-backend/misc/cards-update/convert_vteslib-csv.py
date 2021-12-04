@@ -219,6 +219,7 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
                     if match := re.match(r'(.*?)\[... \S+\].*', rule):
                         text = match.group(1)
                         text = re.sub(r'{The (\w+)}', r'{\1, The}', text)
+                        text = text.replace('Thaumaturgy', 'Blood Sorcery')
                         card['Rulings'].append({
                             'text': text,
                             'refs': {},
@@ -255,6 +256,13 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
                                                       'Ministers')
         card['Card Text'] = card['Card Text'].replace('Follower of Set',
                                                       'Minister')
+
+        # Rename Thaumaturgy
+        card['Discipline'] = card['Discipline'].replace(
+            'Thaumaturgy', 'Blood Sorcery')
+
+        card['Card Text'] = card['Card Text'].replace('Thaumaturgy',
+                                                      'Blood Sorcery')
 
         # Prepare for export
         cards_frontend[card['Id']] = {

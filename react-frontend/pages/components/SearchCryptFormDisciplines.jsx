@@ -1,37 +1,33 @@
 import React from 'react';
+import ResultDisciplineImage from './ResultDisciplineImage.jsx';
 import disciplinesList from './forms_data/disciplinesList.json';
 
 function SearchCryptFormDisciplines(props) {
-  const disciplinesforms = disciplinesList.map((i, index) => {
-    const disciplineState = `discipline-container state${props.value[i]}`;
-    const imgSrcBase = `${
-      process.env.ROOT_URL
-    }images/disciplines/${i.toLowerCase()}.svg`;
-    const imgSrcSup = `${
-      process.env.ROOT_URL
-    }images/disciplines/${i.toLowerCase()}sup.svg`;
+  const disciplinesforms = disciplinesList.map((d, index) => {
+    const disciplineState = `discipline-container state${props.value[d]}`;
+
     return (
       <div key={index} className={disciplineState}>
         <label
           className="discipline-container d-flex justify-content-center align-items-center"
-          htmlFor={i}
+          htmlFor={d}
         >
           <input
             className="d-none"
             type="button"
             name="disciplines"
-            id={i}
+            id={d}
             onClick={(e) => props.onChange(e)}
           />
-          <img
+          <ResultDisciplineImage
             className="discipline-base-image-forms"
-            title={i}
-            src={imgSrcBase}
+            value={d}
+            superior={false}
           />
-          <img
+          <ResultDisciplineImage
             className="discipline-superior-image-forms"
-            title={i}
-            src={imgSrcSup}
+            value={d}
+            superior={true}
           />
         </label>
       </div>

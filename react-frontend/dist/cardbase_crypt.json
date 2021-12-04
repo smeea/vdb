@@ -788,7 +788,7 @@
             "Dominate":1,
             "Auspex":2,
             "Chimerstry":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -974,7 +974,7 @@
         "Disciplines":{
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -1077,7 +1077,7 @@
         "ASCII Name":"Aksinya Daclau",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Fortitude":2,
             "Presence":2,
@@ -1126,7 +1126,7 @@
             "Obfuscate":1,
             "Celerity":2,
             "Quietus":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -1141,7 +1141,7 @@
         ],
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Camarilla: During the first round of combat, Al-Ashrad can use strikes requiring Thaumaturgy [tha] that are not usable during the first round. Blood cursed.\n[MERGED] Banu Haqim Inner Circle: +1 bleed.",
+        "Card Text":"Camarilla: During the first round of combat, Al-Ashrad can use strikes requiring Blood Sorcery [tha] that are not usable during the first round. Blood cursed.\n[MERGED] Banu Haqim Inner Circle: +1 bleed.",
         "Set":{
             "TU":{
                 "C":true
@@ -1161,7 +1161,7 @@
             "Celerity":2,
             "Obfuscate":2,
             "Quietus":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -1388,7 +1388,7 @@
             "Obfuscate":1,
             "Dementation":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -1422,7 +1422,7 @@
             "Animalism":1,
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[
             {
@@ -1726,7 +1726,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -1757,7 +1757,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -2074,7 +2074,7 @@
         "ASCII Name":"Alonso Petrodon",
         "Disciplines":{
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Dominate":2,
             "Obfuscate":2,
@@ -2372,7 +2372,7 @@
             "Dominate":2,
             "Necromancy":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -2414,7 +2414,7 @@
             "Dominate":2,
             "Necromancy":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -2758,7 +2758,7 @@
             "Celerity":1,
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -3056,7 +3056,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Camarilla: As Andrew plays a card requiring Thaumaturgy [tha] (before replacing the card), reveal the top card of your library. If it also requires Thaumaturgy, the card played is canceled and Andrew burns 1 blood.",
+        "Card Text":"Camarilla: As Andrew plays a card requiring Blood Sorcery [tha] (before replacing the card), reveal the top card of your library. If it also requires Blood Sorcery, the card played is canceled and Andrew burns 1 blood.",
         "Set":{
             "KoTR":{
                 "B":"2"
@@ -3075,7 +3075,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -3292,7 +3292,7 @@
             "Fortitude":2,
             "Necromancy":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -4036,7 +4036,7 @@
             "Dominate":1,
             "Fortitude":1,
             "Potence":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -4068,7 +4068,7 @@
         ],
         "ASCII Name":"Antonio Delgado",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Obtenebration":2,
             "Potence":2
@@ -4166,7 +4166,7 @@
         "Disciplines":{
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Potence":2
         },
@@ -4417,7 +4417,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":8,
-        "Card Text":"Camarilla primogen: When stealing blood with a strike that requires Thaumaturgy [tha], Ardan steals an additional blood.",
+        "Card Text":"Camarilla primogen: When stealing blood with a strike that requires Blood Sorcery [tha], Ardan steals an additional blood.",
         "Set":{
             "Anarchs":{
                 "U":true
@@ -4437,7 +4437,7 @@
             "Obfuscate":1,
             "Presence":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -5062,7 +5062,7 @@
             "Celerity":1,
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -5149,7 +5149,7 @@
         "Disciplines":{
             "Dominate":1,
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2
         },
         "Rulings":[],
@@ -5212,7 +5212,7 @@
             "Auspex":1,
             "Potence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -5419,7 +5419,7 @@
             "Auspex":2,
             "Dominate":2,
             "Obtenebration":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -5446,7 +5446,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -5472,7 +5472,7 @@
         "ASCII Name":"Ayo Igoli",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Celerity":2,
             "Fortitude":2,
@@ -5503,7 +5503,7 @@
         "ASCII Name":"Azaneal",
         "Disciplines":{
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Daimoinon":2,
             "Obfuscate":2,
             "Obtenebration":2
@@ -5605,7 +5605,7 @@
             "Fortitude":2,
             "Obfuscate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -5939,7 +5939,7 @@
             "Daimoinon":1,
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -6522,7 +6522,7 @@
         "ASCII Name":"Beckett",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Fortitude":2,
             "Protean":2
@@ -6986,7 +6986,7 @@
         "ASCII Name":"Bijou",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -7070,7 +7070,7 @@
         ],
         "ASCII Name":"Bindusara, Historian of the Kindred",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2,
             "Fortitude":2,
@@ -7116,7 +7116,7 @@
             "Animalism":1,
             "Celerity":1,
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -7253,7 +7253,7 @@
         "ASCII Name":"Black Wallace",
         "Disciplines":{
             "Obtenebration":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Potence":2
         },
@@ -7465,7 +7465,7 @@
         "ASCII Name":"Blythe Candeleria",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -7697,7 +7697,7 @@
         "Disciplines":{
             "Potence":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2
         },
         "Rulings":[],
@@ -7902,7 +7902,7 @@
         "ASCII Name":"Brooke",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -8036,7 +8036,7 @@
             "Auspex":1,
             "Presence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -8609,7 +8609,7 @@
             "Dominate":2,
             "Fortitude":2,
             "Necromancy":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Thanatosis":2
         },
         "Rulings":[
@@ -8659,7 +8659,7 @@
             "Celerity":1,
             "Dominate":2,
             "Fortitude":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -8758,7 +8758,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -8843,7 +8843,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -9048,7 +9048,7 @@
             "Presence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -9339,7 +9339,7 @@
             "Celerity":2,
             "Dominate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -9372,7 +9372,7 @@
             "Celerity":2,
             "Dominate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -9399,7 +9399,7 @@
         "Disciplines":{
             "Fortitude":2,
             "Potence":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Visceratika":2
         },
         "Rulings":[],
@@ -9790,7 +9790,7 @@
         "Disciplines":{
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -9911,7 +9911,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -9926,7 +9926,7 @@
         ],
         "Group":"5",
         "Capacity":9,
-        "Card Text":"Camarilla: If Claudio is ready, you can use a discard phase action to discard a card requiring Thaumaturgy [tha] to gain 1 pool.\n[MERGED] Claudio can burn 1 blood to get +1 stealth.",
+        "Card Text":"Camarilla: If Claudio is ready, you can use a discard phase action to discard a card requiring Blood Sorcery [tha] to gain 1 pool.\n[MERGED] Claudio can burn 1 blood to get +1 stealth.",
         "Set":{
             "Promo":{
                 "20150211":true
@@ -9947,7 +9947,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -9983,7 +9983,7 @@
         "Disciplines":{
             "Auspex":1,
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2
         },
         "Rulings":[],
@@ -10137,7 +10137,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -10489,7 +10489,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -10772,7 +10772,7 @@
         "Disciplines":{
             "Fortitude":1,
             "Protean":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2
         },
         "Rulings":[],
@@ -10865,7 +10865,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -11339,7 +11339,7 @@
         "Disciplines":{
             "Animalism":1,
             "Protean":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Fortitude":2
         },
         "Rulings":[],
@@ -11372,7 +11372,7 @@
         "ASCII Name":"Darius Styx",
         "Disciplines":{
             "Animalism":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Chimerstry":2,
             "Fortitude":2,
             "Protean":2
@@ -13279,7 +13279,7 @@
         "ASCII Name":"Dr. John Casey",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -13291,7 +13291,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":9,
-        "Card Text":"Camarilla Prince of London: Ventrue in combat with John cannot strike: combat ends. During the polling step of any referendum, he can discard a card requiring Thaumaturgy [tha] to get +2 votes.",
+        "Card Text":"Camarilla Prince of London: Ventrue in combat with John cannot strike: combat ends. During the polling step of any referendum, he can discard a card requiring Blood Sorcery [tha] to get +2 votes.",
         "Set":{
             "KoTR":{
                 "B":"2"
@@ -13311,7 +13311,7 @@
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -13610,7 +13610,7 @@
             "Animalism":2,
             "Auspex":2,
             "Potence":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Rulings":[],
@@ -13871,7 +13871,7 @@
             "Fortitude":1,
             "Chimerstry":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -14282,7 +14282,7 @@
         "ASCII Name":"Ehrich Weiss",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -14367,7 +14367,7 @@
             "Dominate":1,
             "Obtenebration":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -14497,7 +14497,7 @@
             "Dominate":1,
             "Protean":1,
             "Quietus":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -14948,7 +14948,7 @@
         "Disciplines":{
             "Animalism":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Necromancy":2
         },
@@ -14983,7 +14983,7 @@
         "Disciplines":{
             "Animalism":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Necromancy":2,
             "Potence":2
@@ -15091,7 +15091,7 @@
             "Auspex":2,
             "Dominate":2,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -15151,7 +15151,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -15374,7 +15374,7 @@
             "Celerity":1,
             "Potence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -15457,7 +15457,7 @@
             "Auspex":2,
             "Dominate":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -15522,7 +15522,7 @@
             "Dominate":1,
             "Fortitude":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -15706,7 +15706,7 @@
             "Necromancy":2,
             "Potence":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -15781,7 +15781,7 @@
         "ASCII Name":"Ezmerelda",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Chimerstry":2,
             "Fortitude":2,
@@ -15820,7 +15820,7 @@
         ],
         "ASCII Name":"Ezra Hawthorne",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -15939,7 +15939,7 @@
             "Fortitude":2,
             "Presence":2,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -15996,7 +15996,7 @@
             "Auspex":1,
             "Obfuscate":1,
             "Celerity":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -16085,7 +16085,7 @@
             "Auspex":1,
             "Celerity":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Presence":2
         },
         "Rulings":[],
@@ -16288,7 +16288,7 @@
         ],
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Advanced, Independent: Minions opposing Ferox in combat cannot play cards that require Necromancy [nec] or Thaumaturgy [tha]. He cannot commit diablerie. Flight [FLIGHT].\n[MERGED] Ferox gets +1 intercept when attempting to block (D) actions.",
+        "Card Text":"Advanced, Independent: Minions opposing Ferox in combat cannot play cards that require Necromancy [nec] or Blood Sorcery [tha]. He cannot commit diablerie. Flight [FLIGHT].\n[MERGED] Ferox gets +1 intercept when attempting to block (D) actions.",
         "Set":{
             "Gehenna":{
                 "U":true
@@ -16359,7 +16359,7 @@
         "ASCII Name":"Fidus, The Shrunken Beast",
         "Disciplines":{
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Visceratika":1
         },
         "Rulings":[],
@@ -16505,7 +16505,7 @@
         "ASCII Name":"Fleurdumal",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dementation":2,
             "Presence":2
@@ -16838,7 +16838,7 @@
         "Disciplines":{
             "Dominate":1,
             "Potence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -16923,7 +16923,7 @@
             "Auspex":1,
             "Fortitude":1,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -16952,7 +16952,7 @@
         "ASCII Name":"Frondator",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2
         },
         "Rulings":[
@@ -17097,7 +17097,7 @@
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -17705,7 +17705,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -17744,7 +17744,7 @@
             "Auspex":2,
             "Dominate":2,
             "Fortitude":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -18410,7 +18410,7 @@
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -18449,7 +18449,7 @@
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -18584,7 +18584,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2
         },
@@ -18741,7 +18741,7 @@
         "Disciplines":{
             "Celerity":1,
             "Obfuscate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -18865,7 +18865,7 @@
             "Auspex":2,
             "Dominate":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -18925,7 +18925,7 @@
         "Disciplines":{
             "Celerity":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Necromancy":2
         },
@@ -19331,7 +19331,7 @@
         "ASCII Name":"Gwendolyn",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Fortitude":2,
             "Potence":2,
@@ -19559,7 +19559,7 @@
         "ASCII Name":"Halim Bey",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Serpentis":2
         },
@@ -19670,7 +19670,7 @@
         "ASCII Name":"Hanna Redmonds",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -19768,7 +19768,7 @@
         "Disciplines":{
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -20228,7 +20228,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Independent: On the first round of combat, Hector can use strikes that require Thaumaturgy [tha] that are not usable on the first round. If Hector is sent to torpor or burned in combat, he is burned, and the controller of the opposing minion gains 4 pool.",
+        "Card Text":"Independent: On the first round of combat, Hector can use strikes that require Blood Sorcery [tha] that are not usable on the first round. If Hector is sent to torpor or burned in combat, he is burned, and the controller of the opposing minion gains 4 pool.",
         "Set":{
             "Gehenna":{
                 "U":true
@@ -20247,7 +20247,7 @@
             "Dominate":1,
             "Necromancy":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -20276,7 +20276,7 @@
         ],
         "ASCII Name":"Heinrick Schlempt",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -20383,7 +20383,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Celerity":2,
             "Dominate":2
@@ -20418,7 +20418,7 @@
             "Daimoinon":1,
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Celerity":2,
             "Dominate":2
@@ -21439,7 +21439,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -21652,7 +21652,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -21752,7 +21752,7 @@
         ],
         "ASCII Name":"Iliana",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2,
             "Protean":2
@@ -21970,7 +21970,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -22575,7 +22575,7 @@
             "Celerity":2,
             "Obfuscate":2,
             "Quietus":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -22743,7 +22743,7 @@
         "ASCII Name":"Jack Drake",
         "Disciplines":{
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Potence":2
         },
@@ -22909,7 +22909,7 @@
         ],
         "ASCII Name":"Jacob, The Glitch",
         "Disciplines":{
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -22964,7 +22964,7 @@
         "ASCII Name":"Jacob Fermor",
         "Disciplines":{
             "Animalism":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Protean":2
         },
         "Rulings":[],
@@ -23371,7 +23371,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -23573,7 +23573,7 @@
             "Celerity":1,
             "Presence":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -23608,7 +23608,7 @@
             "Celerity":1,
             "Auspex":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -23637,7 +23637,7 @@
         "ASCII Name":"Jayakumar",
         "Disciplines":{
             "Chimerstry":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Fortitude":2
         },
@@ -23754,7 +23754,7 @@
         "ASCII Name":"Jefferson Foster",
         "Disciplines":{
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2
         },
@@ -24414,7 +24414,7 @@
         "ASCII Name":"Jing Wei",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -24605,7 +24605,7 @@
         ],
         "ASCII Name":"Johan Wrede",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -24697,7 +24697,7 @@
         "Disciplines":{
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -25439,7 +25439,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -25631,7 +25631,7 @@
         ],
         "ASCII Name":"Kalinda",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2
         },
@@ -25658,7 +25658,7 @@
         ],
         "ASCII Name":"Kalinda",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2
         },
@@ -26049,7 +26049,7 @@
             "Dominate":2,
             "Fortitude":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -26220,7 +26220,7 @@
             "Potence":1,
             "Celerity":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -26247,7 +26247,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Celerity":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -26444,7 +26444,7 @@
         "Disciplines":{
             "Auspex":1,
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Presence":2
         },
         "Rulings":[],
@@ -26607,7 +26607,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -26643,7 +26643,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -26867,7 +26867,7 @@
         "Disciplines":{
             "Celerity":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -26896,7 +26896,7 @@
         ],
         "ASCII Name":"Khalid",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Auspex":2,
             "Obfuscate":2,
@@ -27083,7 +27083,7 @@
             "Obtenebration":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -27263,7 +27263,7 @@
         "Disciplines":{
             "Auspex":1,
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Presence":2
         },
@@ -27321,7 +27321,7 @@
         ],
         "ASCII Name":"Konrad Fleischer",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
@@ -27522,7 +27522,7 @@
         "ASCII Name":"Kurt Strauss",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2
         },
         "Rulings":[],
@@ -27761,7 +27761,7 @@
             "Fortitude":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -28254,7 +28254,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -28390,7 +28390,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -28422,7 +28422,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -28455,7 +28455,7 @@
         "ASCII Name":"Lazarus James",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dementation":2,
             "Presence":2
@@ -28627,7 +28627,7 @@
         "ASCII Name":"Lectora",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -28658,7 +28658,7 @@
             "Obfuscate":1,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -28860,7 +28860,7 @@
             "Auspex":2,
             "Celerity":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -28950,7 +28950,7 @@
             "Presence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -28991,7 +28991,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":4,
-        "Card Text":"Camarilla: If Jun is in torpor, vampires with Thaumaturgy [tha] controlled by your predator get +1 bleed.",
+        "Card Text":"Camarilla: If Jun is in torpor, vampires with Blood Sorcery [tha] controlled by your predator get +1 bleed.",
         "Set":{
             "TR":{
                 "U":true
@@ -29007,7 +29007,7 @@
             "Auspex":1,
             "Celerity":1,
             "Presence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -29355,7 +29355,7 @@
         "Disciplines":{
             "Auspex":1,
             "Potence":1,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Dominate":2
         },
         "Rulings":[],
@@ -29583,7 +29583,7 @@
             "Fortitude":1,
             "Presence":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -29659,7 +29659,7 @@
         "Adv":"",
         "Group":"5",
         "Capacity":11,
-        "Card Text":"Camarilla: Cards requiring Thaumaturgy [tha] cost Lord Tremere 1 fewer blood. During your minion phase, you can lock or unlock another ready Tremere or Tremere antitribu. +2 bleed. +1 intercept.",
+        "Card Text":"Camarilla: Cards requiring Blood Sorcery [tha] cost Lord Tremere 1 fewer blood. During your minion phase, you can lock or unlock another ready Tremere or Tremere antitribu. +2 bleed. +1 intercept.",
         "Set":{
             "Promo":{
                 "20150220":true,
@@ -29681,7 +29681,7 @@
             "Auspex":2,
             "Dominate":2,
             "Vicissitude":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -29723,7 +29723,7 @@
             "Dominate":2,
             "Obtenebration":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -29840,7 +29840,7 @@
             "Auspex":2,
             "Dementation":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -30080,7 +30080,7 @@
         ],
         "ASCII Name":"Luca Italicus",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2,
             "Necromancy":2,
@@ -30121,7 +30121,7 @@
             "Auspex":2,
             "Celerity":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -30193,7 +30193,7 @@
         "ASCII Name":"Lucian",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2,
             "Obfuscate":2
@@ -30318,7 +30318,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2,
             "Presence":2
@@ -30459,7 +30459,7 @@
             "Dominate":2,
             "Potence":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -30952,7 +30952,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -31013,7 +31013,7 @@
             "Dominate":1,
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -31151,7 +31151,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":2,
-        "Card Text":"Camarilla: Strike cards that require Thaumaturgy [tha] cost Magdalena an additional blood.",
+        "Card Text":"Camarilla: Strike cards that require Blood Sorcery [tha] cost Magdalena an additional blood.",
         "Set":{
             "DS":{
                 "V":true
@@ -31167,7 +31167,7 @@
         ],
         "ASCII Name":"Magdelena Schaefer",
         "Disciplines":{
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -31378,7 +31378,7 @@
             "Presence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Rulings":[],
@@ -31621,7 +31621,7 @@
             "Animalism":2,
             "Chimerstry":2,
             "Fortitude":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -32083,7 +32083,7 @@
             "Necromancy":1,
             "Dominate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -32144,7 +32144,7 @@
         "ASCII Name":"Marie Faucigny",
         "Disciplines":{
             "Dementation":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Obfuscate":2
         },
@@ -32233,7 +32233,7 @@
         "ASCII Name":"Mariel, Lady Thunder",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Obfuscate":2
         },
@@ -32308,7 +32308,7 @@
             "Auspex":2,
             "Dominate":2,
             "Necromancy":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -32588,7 +32588,7 @@
         "Disciplines":{
             "Dementation":1,
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2
         },
@@ -32691,7 +32691,7 @@
         ],
         "ASCII Name":"Martin Franckel",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2
         },
         "Rulings":[],
@@ -33008,7 +33008,7 @@
         ],
         "ASCII Name":"Masika St. John",
         "Disciplines":{
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -33824,7 +33824,7 @@
         ],
         "ASCII Name":"Melisande",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Celerity":2,
             "Dominate":2,
@@ -33933,7 +33933,7 @@
             "Celerity":2,
             "Potence":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -33967,7 +33967,7 @@
             "Celerity":2,
             "Potence":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -34060,7 +34060,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -34244,7 +34244,7 @@
             "Animalism":2,
             "Fortitude":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -34311,7 +34311,7 @@
             "Auspex":2,
             "Dominate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -34492,7 +34492,7 @@
             "Animalism":2,
             "Fortitude":2,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -34760,7 +34760,7 @@
             "Celerity":2,
             "Dominate":2,
             "Obfuscate":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Rulings":[],
@@ -34913,7 +34913,7 @@
         "ASCII Name":"Monica Chang",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -35242,7 +35242,7 @@
         "Disciplines":{
             "Celerity":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[
             {
@@ -35363,7 +35363,7 @@
             "Auspex":1,
             "Dominate":1,
             "Fortitude":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -35465,7 +35465,7 @@
             "Auspex":1,
             "Potence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -35761,7 +35761,7 @@
         ],
         "ASCII Name":"Nahir",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Dominate":2,
             "Obtenebration":2,
@@ -36015,7 +36015,7 @@
         "ASCII Name":"Nassir",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -36167,7 +36167,7 @@
         "ASCII Name":"Nayarana",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -36327,7 +36327,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -36513,7 +36513,7 @@
             "Fortitude":2,
             "Obfuscate":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -36554,7 +36554,7 @@
             "Fortitude":2,
             "Obfuscate":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -36769,7 +36769,7 @@
             "Dominate":1,
             "Potence":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Vicissitude":1
         },
         "Rulings":[],
@@ -37494,7 +37494,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":9,
-        "Card Text":"Camarilla: Vampires opposing Oliver in combat may not end combat as a strike. Once each action, he may burn a card that requires Thaumaturgy [tha] from your hand to get +1 bleed.",
+        "Card Text":"Camarilla: Vampires opposing Oliver in combat may not end combat as a strike. Once each action, he may burn a card that requires Blood Sorcery [tha] from your hand to get +1 bleed.",
         "Set":{
             "CE":{
                 "V":true
@@ -37515,7 +37515,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -37764,7 +37764,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -38042,7 +38042,7 @@
             "Protean":1,
             "Necromancy":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -38176,7 +38176,7 @@
         "ASCII Name":"Parnassus",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Quietus":2
         },
@@ -38231,7 +38231,7 @@
         "Disciplines":{
             "Dominate":1,
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2
         },
         "Rulings":[],
@@ -38265,7 +38265,7 @@
         "Disciplines":{
             "Necromancy":1,
             "Quietus":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[
             {
@@ -38331,7 +38331,7 @@
             "Presence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -38729,7 +38729,7 @@
             "Daimoinon":2,
             "Dementation":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -38770,7 +38770,7 @@
             "Daimoinon":2,
             "Dementation":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -38950,7 +38950,7 @@
         "ASCII Name":"Phaedyme",
         "Disciplines":{
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Chimerstry":2,
             "Dementation":2,
@@ -38983,7 +38983,7 @@
             "Fortitude":1,
             "Auspex":2,
             "Necromancy":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -39165,7 +39165,7 @@
         "ASCII Name":"Pieter",
         "Disciplines":{
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Obfuscate":2,
             "Protean":2
         },
@@ -39198,7 +39198,7 @@
         "Disciplines":{
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -39302,7 +39302,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -39466,7 +39466,7 @@
             "Necromancy":1,
             "Dominate":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -39595,7 +39595,7 @@
         "ASCII Name":"Qadir ul-Ghani",
         "Disciplines":{
             "Necromancy":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2,
             "Quietus":2
@@ -39798,7 +39798,7 @@
         "ASCII Name":"Qufur am-Heru",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2
@@ -39898,7 +39898,7 @@
         "ASCII Name":"Quira, The Bitch Queen",
         "Disciplines":{
             "Obtenebration":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Obfuscate":2
         },
@@ -40469,7 +40469,7 @@
         "Disciplines":{
             "Auspex":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Obfuscate":2,
             "Presence":2
         },
@@ -40720,7 +40720,7 @@
             "Potence":1,
             "Auspex":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -40921,7 +40921,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dementation":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -41057,7 +41057,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Sabbat bishop: Damaging strikes made by Reverend Blackwood that require Thaumaturgy [tha] inflict +1 damage.",
+        "Card Text":"Sabbat bishop: Damaging strikes made by Reverend Blackwood that require Blood Sorcery [tha] inflict +1 damage.",
         "Set":{
             "Sabbat":{
                 "V":true
@@ -41075,7 +41075,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -41208,7 +41208,7 @@
         ],
         "ASCII Name":"Richard Tauber, Ayelea's Puppet",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2
         },
         "Rulings":[],
@@ -41374,7 +41374,7 @@
         "Disciplines":{
             "Animalism":2,
             "Auspex":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Rulings":[],
@@ -41491,7 +41491,7 @@
         "Disciplines":{
             "Celerity":1,
             "Obtenebration":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Mytherceria":2
         },
@@ -41715,7 +41715,7 @@
         ],
         "ASCII Name":"Roreca Quaid",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -41799,7 +41799,7 @@
         ],
         "ASCII Name":"Rosalina Cortez",
         "Disciplines":{
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -42131,7 +42131,7 @@
             "Vicissitude":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -42286,7 +42286,7 @@
             "Auspex":1,
             "Dominate":1,
             "Potence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -42402,7 +42402,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Serpentis":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -42521,7 +42521,7 @@
         ],
         "ASCII Name":"Salinger",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Potence":2,
             "Presence":2
@@ -42620,7 +42620,7 @@
         "ASCII Name":"Samantha",
         "Disciplines":{
             "Animalism":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2,
             "Protean":2
@@ -42653,7 +42653,7 @@
         "Disciplines":{
             "Presence":1,
             "Serpentis":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Obfuscate":2
         },
         "Rulings":[],
@@ -42934,7 +42934,7 @@
         "ASCII Name":"Sarah Cobbler",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -43146,7 +43146,7 @@
             "Animalism":1,
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Rulings":[],
@@ -43178,7 +43178,7 @@
             "Animalism":1,
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Rulings":[
@@ -43285,7 +43285,7 @@
             "Auspex":2,
             "Fortitude":2,
             "Obeah":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Valeren":2
         },
         "Rulings":[],
@@ -43396,7 +43396,7 @@
         ],
         "ASCII Name":"Schuyler",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -43707,7 +43707,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -43848,7 +43848,7 @@
             "Presence":1,
             "Obfuscate":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -44023,7 +44023,7 @@
         "ASCII Name":"Sha-Ennu",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Auspex":2,
             "Chimerstry":2,
@@ -45351,7 +45351,7 @@
             "Potence":1,
             "Presence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -45517,7 +45517,7 @@
         "Disciplines":{
             "Animalism":1,
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Vicissitude":1
         },
         "Rulings":[],
@@ -45672,7 +45672,7 @@
             "Animalism":2,
             "Obfuscate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -45818,7 +45818,7 @@
             "Auspex":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -46003,7 +46003,7 @@
         "ASCII Name":"Sybren van Oosten",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Fortitude":2,
             "Presence":2
         },
@@ -46355,7 +46355,7 @@
         "ASCII Name":"Tammy Walenski",
         "Disciplines":{
             "Necromancy":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Obfuscate":2,
             "Potence":2
@@ -46506,7 +46506,7 @@
         "Disciplines":{
             "Auspex":1,
             "Necromancy":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -46673,7 +46673,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -47042,7 +47042,7 @@
             "Dominate":1,
             "Obfuscate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -47164,7 +47164,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -47463,7 +47463,7 @@
             "Animalism":1,
             "Auspex":1,
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2
         },
         "Rulings":[],
@@ -48063,7 +48063,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -48137,7 +48137,7 @@
             "Celerity":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -48638,7 +48638,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -48925,7 +48925,7 @@
             "Dominate":2,
             "Obfuscate":2,
             "Quietus":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -49071,7 +49071,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Sabbat: Uta can enter combat with a minion controlled by another Methuselah as a (D) action. Cards that require Thaumaturgy [tha] cost her 1 less blood.",
+        "Card Text":"Sabbat: Uta can enter combat with a minion controlled by another Methuselah as a (D) action. Cards that require Blood Sorcery [tha] cost her 1 less blood.",
         "Set":{
             "Third":{
                 "PTr":"2"
@@ -49087,7 +49087,7 @@
             "Serpentis":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -49165,7 +49165,7 @@
         ],
         "Group":"4",
         "Capacity":7,
-        "Card Text":"Camarilla. Red List: If Valerius strikes with a strike that requires Thaumaturgy [tha], he gains an optional additional strike (limited), only usable to strike with a strike that requires Thaumaturgy. Infernal.",
+        "Card Text":"Camarilla. Red List: If Valerius strikes with a strike that requires Blood Sorcery [tha], he gains an optional additional strike (limited), only usable to strike with a strike that requires Blood Sorcery. Infernal.",
         "Set":{
             "KMW":{
                 "U":true,
@@ -49184,7 +49184,7 @@
             "Auspex":2,
             "Daimoinon":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -49218,7 +49218,7 @@
             "Auspex":2,
             "Daimoinon":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -49316,7 +49316,7 @@
         "ASCII Name":"Valois Sang, The Watcher",
         "Disciplines":{
             "Necromancy":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2
         },
@@ -49725,7 +49725,7 @@
             "Chimerstry":2,
             "Fortitude":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -50008,7 +50008,7 @@
         ],
         "ASCII Name":"Victorine Lafourcade",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2,
             "Presence":2
@@ -50166,7 +50166,7 @@
             "Dominate":1,
             "Fortitude":1,
             "Potence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Rulings":[],
         "New":false
@@ -50196,7 +50196,7 @@
         "Disciplines":{
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Vicissitude":1
         },
         "Rulings":[],
@@ -50351,7 +50351,7 @@
             "Presence":1,
             "Vicissitude":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -50411,7 +50411,7 @@
         "ASCII Name":"Vivian VI",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Presence":2,
             "Protean":2
         },
@@ -50443,7 +50443,7 @@
             "Animalism":2,
             "Dominate":2,
             "Protean":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Rulings":[
@@ -50781,7 +50781,7 @@
         "Disciplines":{
             "Celerity":1,
             "Obfuscate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -50999,7 +50999,7 @@
             "Auspex":2,
             "Dementation":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -51031,7 +51031,7 @@
             "Dominate":2,
             "Presence":2,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -51478,7 +51478,7 @@
             "Dominate":1,
             "Presence":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[
             {
@@ -51636,7 +51636,7 @@
             "Presence":1,
             "Auspex":2,
             "Celerity":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -51671,7 +51671,7 @@
             "Animalism":2,
             "Obfuscate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -51704,7 +51704,7 @@
             "Animalism":2,
             "Obfuscate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -52054,7 +52054,7 @@
         "ASCII Name":"Zahir, Hand of the Silsila",
         "Disciplines":{
             "Quietus":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2
         },
@@ -52089,7 +52089,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Rulings":[],
         "New":false
@@ -52116,7 +52116,7 @@
         "Disciplines":{
             "Auspex":1,
             "Quietus":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Fortitude":2,
             "Protean":2

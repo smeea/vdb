@@ -1,12 +1,10 @@
 import React from 'react';
+import ResultDisciplineImage from './ResultDisciplineImage.jsx';
 import disciplinesList from './forms_data/disciplinesList.json';
 import virtuesList from './forms_data/virtuesList.json';
 
 function TwdSearchFormDisciplines(props) {
   const disciplinesForm = disciplinesList.map((i, index) => {
-    const imgSrc = `${
-      process.env.ROOT_URL
-    }images/disciplines/${i.toLowerCase()}.svg`;
     const disciplineState = `discipline-container mb-2 state${
       props.disciplines[i] ? 1 : 0
     }`;
@@ -23,16 +21,16 @@ function TwdSearchFormDisciplines(props) {
             id={i}
             onClick={(e) => props.onChange(e)}
           />
-          <img className="discipline-base-image-forms" title={i} src={imgSrc} />
+          <ResultDisciplineImage
+            className="discipline-base-image-forms"
+            value={i}
+          />
         </label>
       </div>
     );
   });
 
   const virtuesForm = virtuesList.map((i, index) => {
-    const imgSrc = `${
-      process.env.ROOT_URL
-    }images/disciplines/${i.toLowerCase()}.svg`;
     const virtueState = `virtue-container mb-2 state${
       props.disciplines[i] ? 1 : 0
     }`;
@@ -49,7 +47,7 @@ function TwdSearchFormDisciplines(props) {
             id={i}
             onClick={(e) => props.onChange(e)}
           />
-          <img className="virtue-image" title={i} src={imgSrc} />
+          <ResultDisciplineImage className="virtue-image" value={i} />
         </label>
       </div>
     );

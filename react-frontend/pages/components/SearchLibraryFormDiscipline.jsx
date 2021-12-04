@@ -5,6 +5,7 @@ import AdditionalForms from './SearchAdditionalForms.jsx';
 import SearchFormButtonGroupToggle from './SearchFormButtonGroupToggle.jsx';
 import SearchFormButtonAdd from './SearchFormButtonAdd.jsx';
 import SearchFormButtonDel from './SearchFormButtonDel.jsx';
+import ResultDisciplineImage from './ResultDisciplineImage.jsx';
 import disciplinesList from './forms_data/disciplinesList.json';
 import virtuesList from './forms_data/virtuesList.json';
 import AppContext from '../../context/AppContext';
@@ -41,16 +42,13 @@ function SearchLibraryFormDiscipline(props) {
         ),
       });
     } else {
-      const imgSrc = `${process.env.ROOT_URL}images/disciplines/${i
-        .toLowerCase()
-        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
       options.push({
         value: i.toLowerCase(),
         name: 'discipline',
         label: (
           <>
             <span className="margin-full">
-              <img src={imgSrc} className="discipline-base-image-results" />
+              <ResultDisciplineImage value={i} />
             </span>
             {i}
           </>

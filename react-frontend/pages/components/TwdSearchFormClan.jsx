@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import Select from 'react-select';
+import ResultDisciplineImage from './ResultDisciplineImage.jsx';
 import clansList from './forms_data/clansList.json';
 import AppContext from '../../context/AppContext.js';
 
@@ -23,16 +24,13 @@ function TwdSearchFormClan(props) {
         ),
       });
     } else {
-      const imgSrc = `${process.env.ROOT_URL}images/clans/${i
-        .toLowerCase()
-        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
         label: (
           <>
             <span className="margin-full">
-              <img src={imgSrc} className="discipline-base-image-results" />
+              <ResultDisciplineImage value={i} />
             </span>
             {i}
           </>
