@@ -48,3 +48,4 @@ export { default as DeckCopyUrl } from './DeckCopyUrl.jsx';
 export { default as DeckDrawLibraryTable } from './DeckDrawLibraryTable.jsx';
 export { default as DeckLibraryTotalInfo } from './DeckLibraryTotalInfo.jsx';
 export { default as DeckSelectAdvModal } from './DeckSelectAdvModal.jsx';
+export { default as ResultDisciplineImage } from './ResultDisciplineImage.jsx';

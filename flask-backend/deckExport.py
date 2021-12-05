@@ -145,6 +145,7 @@ def deckExport(d, format):
                 'Auspex': 'aus',
                 'Abombwe': 'abo',
                 'Animalism': 'ani',
+                'Blood Sorcery': 'tha',
                 'Celerity': 'cel',
                 'Chimerstry': 'chi',
                 'Daimoinon': 'dai',
@@ -165,7 +166,6 @@ def deckExport(d, format):
                 'Spiritus': 'spi',
                 'Temporis': 'tem',
                 'Thanatosis': 'thn',
-                'Thaumaturgy': 'tha',
                 'Quietus': 'qui',
                 'Valeren': 'val',
                 'Vicissitude': 'vic',
@@ -251,7 +251,6 @@ def deckExport(d, format):
                 name = c['Name']
                 if c['Adv'] and c['Adv'][0]:
                     name = f"{name} (ADV)"
-
 
                 cryptExport[c['Id']] = {
                     'Name': name,

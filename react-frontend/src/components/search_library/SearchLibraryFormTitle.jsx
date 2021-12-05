@@ -7,8 +7,11 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from 'components';
+import { useApp } from 'context';
 
 function SearchLibraryFormTitle(props) {
+  const { isMobile } = useApp();
+
   const titles = [
     'ANY',
     'Not Required',
@@ -81,6 +84,7 @@ function SearchLibraryFormTitle(props) {
             options={options}
             isSearchable={false}
             name={0}
+            maxMenuHeight={isMobile ? 300 : 550}
             value={options.find(
               (obj) => obj.value === props.value.value[0].toLowerCase()
             )}

@@ -1,67 +1,33 @@
 import React from 'react';
+import ResultDisciplineImage from './ResultDisciplineImage.jsx';
+import disciplinesList from './forms_data/disciplinesList.json';
 
 function SearchCryptFormDisciplines(props) {
-  const disciplines = [
-    'Abombwe',
-    'Animalism',
-    'Auspex',
-    'Celerity',
-    'Chimerstry',
-    'Daimoinon',
-    'Dementation',
-    'Dominate',
-    'Fortitude',
-    'Melpominee',
-    'Mytherceria',
-    'Necromancy',
-    'Obeah',
-    'Obfuscate',
-    'Obtenebration',
-    'Potence',
-    'Presence',
-    'Protean',
-    'Quietus',
-    'Sanguinus',
-    'Serpentis',
-    'Spiritus',
-    'Temporis',
-    'Thanatosis',
-    'Thaumaturgy',
-    'Valeren',
-    'Vicissitude',
-    'Visceratika',
-  ];
+  const disciplinesforms = disciplinesList.map((d, index) => {
+    const disciplineState = `discipline-container state${props.value[d]}`;
 
-  const disciplinesforms = disciplines.map((i, index) => {
-    const disciplineState = `discipline-container state${props.value[i]}`;
-    const imgSrcBase = `${
-      process.env.ROOT_URL
-    }images/disciplines/${i.toLowerCase()}.svg`;
-    const imgSrcSup = `${
-      process.env.ROOT_URL
-    }images/disciplines/${i.toLowerCase()}sup.svg`;
     return (
       <div key={index} className={disciplineState}>
         <label
           className="discipline-container d-flex justify-content-center align-items-center"
-          htmlFor={i}
+          htmlFor={d}
         >
           <input
             className="d-none"
             type="button"
             name="disciplines"
-            id={i}
+            id={d}
             onClick={(e) => props.onChange(e)}
           />
-          <img
+          <ResultDisciplineImage
             className="discipline-base-image-forms"
-            title={i}
-            src={imgSrcBase}
+            value={d}
+            superior={false}
           />
-          <img
+          <ResultDisciplineImage
             className="discipline-superior-image-forms"
-            title={i}
-            src={imgSrcSup}
+            value={d}
+            superior={true}
           />
         </label>
       </div>

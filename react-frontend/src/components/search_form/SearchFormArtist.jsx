@@ -42,7 +42,8 @@ function SearchFormArtist(props) {
           classNamePrefix="react-select"
           options={options}
           onChange={props.onChange}
-          menuPlacement={isMobile ? 'top' : 'bottom'}
+          menuPlacement="top"
+          maxMenuHeight={isMobile ? window.innerHeight - 200 : 550}
           name="artist"
           placeholder="Artist"
           value={options.find((obj) => obj.value === props.value)}

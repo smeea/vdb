@@ -1,59 +1,13 @@
 import React from 'react';
 import Select from 'react-select';
 import { useApp } from 'context';
+import ResultDisciplineImage from 'components';
+import clansList from './forms_data/clansList.json';
 
 function TwdSearchFormClan(props) {
   const { isMobile } = useApp();
 
-  const clans = [
-    'ANY',
-    'Abomination',
-    'Ahrimane',
-    'Akunanse',
-    'Assamite',
-    'Baali',
-    'Blood Brother',
-    'Brujah',
-    'Brujah antitribu',
-    'Caitiff',
-    'Daughter of Cacophony',
-    'Follower of Set',
-    'Gangrel',
-    'Gangrel antitribu',
-    'Gargoyle',
-    'Giovanni',
-    'Guruhi',
-    'Harbinger of Skulls',
-    'Ishtarri',
-    'Kiasyd',
-    'Lasombra',
-    'Malkavian',
-    'Malkavian antitribu',
-    'Nagaraja',
-    'Nosferatu',
-    'Nosferatu antitribu',
-    'Osebo',
-    'Pander',
-    'Ravnos',
-    'Salubri',
-    'Salubri antitribu',
-    'Samedi',
-    'Toreador',
-    'Toreador antitribu',
-    'Tremere',
-    'Tremere antitribu',
-    'True Brujah',
-    'Tzimisce',
-    'Ventrue',
-    'Ventrue antitribu',
-    'Avenger',
-    'Defender',
-    'Innocent',
-    'Judge',
-    'Martyr',
-    'Redeemer',
-    'Visionary',
-  ];
+  const clans = ['ANY', ...clansList];
 
   const options = [];
 
@@ -70,16 +24,13 @@ function TwdSearchFormClan(props) {
         ),
       });
     } else {
-      const imgSrc = `${process.env.ROOT_URL}images/clans/${i
-        .toLowerCase()
-        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
         label: (
           <>
             <span className="margin-full">
-              <img src={imgSrc} className="discipline-base-image-results" />
+              <ResultDisciplineImage value={i} />
             </span>
             {i}
           </>
@@ -94,6 +45,7 @@ function TwdSearchFormClan(props) {
       options={options}
       isSearchable={!isMobile}
       name="clan"
+      maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
       value={options.find((obj) => obj.value === props.value.toLowerCase())}
       onChange={props.onChange}
     />

@@ -6,53 +6,27 @@ import {
   SearchFormButtonGroupToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
+  ResultDisciplineImage,
 } from 'components';
+import disciplinesList from 'components/forms_data/disciplinesList.json';
+import virtuesList from 'components/forms_data/virtuesList.json';
 import { useApp } from 'context';
 
 function SearchLibraryFormDiscipline(props) {
   const { isMobile } = useApp();
 
+  const disciplinesExtendedList = [
+    ...disciplinesList,
+    'Flight',
+    'Maleficia',
+    'Striga',
+  ].sort();
+
   const disciplines = [
     'ANY',
     'Not Required',
-    'Abombwe',
-    'Animalism',
-    'Auspex',
-    'Celerity',
-    'Chimerstry',
-    'Daimoinon',
-    'Dominate',
-    'Dementation',
-    'Flight',
-    'Fortitude',
-    'Maleficia',
-    'Melpominee',
-    'Mytherceria',
-    'Necromancy',
-    'Obeah',
-    'Obfuscate',
-    'Obtenebration',
-    'Potence',
-    'Presence',
-    'Protean',
-    'Quietus',
-    'Sanguinus',
-    'Serpentis',
-    'Spiritus',
-    'Striga',
-    'Temporis',
-    'Thanatosis',
-    'Thaumaturgy',
-    'Valeren',
-    'Vicissitude',
-    'Visceratika',
-    'Defense',
-    'Innocence',
-    'Judgment',
-    'Martyrdom',
-    'Redemption',
-    'Vengeance',
-    'Vision',
+    ...disciplinesExtendedList,
+    ...virtuesList,
   ];
 
   const options = [];
@@ -70,16 +44,13 @@ function SearchLibraryFormDiscipline(props) {
         ),
       });
     } else {
-      const imgSrc = `${process.env.ROOT_URL}images/disciplines/${i
-        .toLowerCase()
-        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
       options.push({
         value: i.toLowerCase(),
         name: 'discipline',
         label: (
           <>
             <span className="margin-full">
-              <img src={imgSrc} className="discipline-base-image-results" />
+              <ResultDisciplineImage value={i} />
             </span>
             {i}
           </>
@@ -123,6 +94,13 @@ function SearchLibraryFormDiscipline(props) {
             options={options}
             isSearchable={!isMobile}
             name={0}
+            maxMenuHeight={
+              isMobile
+                ? window.innerHeight > 600
+                  ? window.innerHeight - 250
+                  : 300
+                : 550
+            }
             value={options.find(
               (obj) => obj.value === props.value.value[0].toLowerCase()
             )}

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Select from 'react-select';
 import { Row, Col } from 'react-bootstrap';
+import AppContext from '../../context/AppContext.js';
 
 function TwdSearchFormDate(props) {
+  const { isMobile } = useContext(AppContext);
+
   const years = [
     'ANY',
     '2021',
@@ -46,7 +49,7 @@ function TwdSearchFormDate(props) {
         name: 'from',
         label: (
           <>
-            <span className="margin-third" />
+            <span className="me-1" />
             {i}
           </>
         ),
@@ -63,7 +66,7 @@ function TwdSearchFormDate(props) {
         name: 'to',
         label: (
           <>
-            <span className="margin-third" />
+            <span className="me-1" />
             {i}
           </>
         ),
@@ -83,6 +86,7 @@ function TwdSearchFormDate(props) {
             options={dateFromOptions}
             isSearchable={false}
             name="date-from"
+            maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
             value={dateFromOptions.find((obj) => obj.value === props.date.from)}
             onChange={props.onChange}
           />
@@ -96,6 +100,7 @@ function TwdSearchFormDate(props) {
             options={dateToOptions}
             isSearchable={false}
             name="date-to"
+            maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
             value={dateToOptions.find((obj) => obj.value === props.date.to)}
             onChange={props.onChange}
           />

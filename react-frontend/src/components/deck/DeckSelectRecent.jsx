@@ -15,9 +15,13 @@ function DeckSelectRecent(props) {
 
   const handleChange = (e) => {
     if (e.value.length === 32) {
-      setActiveDeck({ src: 'shared', deckid: e.value });
+      props.setActiveDeck
+        ? props.setActiveDeck({ src: 'shared', deckid: e.value })
+        : setActiveDeck({ src: 'shared', deckid: e.value });
     } else {
-      setActiveDeck({ src: 'twd', deckid: e.value });
+      props.setActiveDeck
+        ? props.setActiveDeck({ src: 'twd', deckid: e.value })
+        : setActiveDeck({ src: 'twd', deckid: e.value });
     }
   };
 
@@ -27,6 +31,7 @@ function DeckSelectRecent(props) {
       options={options}
       isSearchable={!isMobile}
       name="decks"
+      maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
       value={options.find((obj) => obj.value === props.activeDeck.deckid)}
       onChange={handleChange}

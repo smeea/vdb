@@ -6,6 +6,29 @@ import os.path
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
 
+cardtypes_sorted = [
+    'Master',
+    'Conviction',
+    'Power',
+    'Action',
+    'Action/Reaction',
+    'Action/Combat',
+    'Political Action',
+    'Ally',
+    'Equipment',
+    'Retainer',
+    'Action Modifier',
+    'Action Modifier/Combat',
+    'Action Modifier/Reaction',
+    'Reaction',
+    'Reaction/Action Modifier',
+    'Reaction/Combat',
+    'Combat',
+    'Combat/Action Modifier',
+    'Combat/Reaction',
+    'Event',
+]
+
 
 def deckProxy(input):
     try:
@@ -14,20 +37,22 @@ def deckProxy(input):
 
         for k, v in input.items():
             k = int(k)
-            name = None
+            card = {}
 
             if k > 200000:
                 card = get_crypt_by_id(k)
-                name = card['Name']
+                # name = card['Name']
                 if card['Adv'] and card['Adv'][0]:
-                    name += 'adv'
+                    card['Name'] += 'adv'
                 if card['New']:
-                    name += f"g{card['Group']}"
+                    card['Name'] += f"g{card['Group']}"
 
             elif k < 200000:
-                name = get_library_by_id(k)['Name']
+                card = get_library_by_id(k)
+                # name = get_library_by_id(k)['Name']
 
-            filename = unidecode(re.sub('[\\W]', '', name)).lower() + '.jpg'
+            filename = unidecode(re.sub('[\\W]', '',
+                                        card['Name'])).lower() + '.jpg'
             file = None
             if 'set' in v and os.path.exists(
                     f"./cards/set/{v['set']}/{filename}"):
@@ -36,13 +61,16 @@ def deckProxy(input):
                 file = f"./cards/{filename}"
 
             if k > 200000 and v['q'] > 0:
-                crypt[name] = {
+                crypt[card['Name']] = {
                     'file': file,
                     'q': v['q'],
                 }
 
             elif k < 200000 and v['q'] > 0:
-                library[name] = {
+                if card['Type'] not in library:
+                    library[card['Type']] = {}
+
+                library[card['Type']][card['Name']] = {
                     'file': file,
                     'q': v['q'],
                 }
@@ -51,11 +79,13 @@ def deckProxy(input):
 
         for card in sorted(crypt.keys()):
             for i in range(crypt[card]['q']):
-                cardlist.append(crypt[card])
+                cardlist.append(crypt[card]['file'])
 
-        for card in sorted(library.keys()):
-            for i in range(library[card]['q']):
-                cardlist.append(library[card])
+        for cardtype in cardtypes_sorted:
+            if cardtype in library:
+                for card in sorted(library[cardtype].keys()):
+                    for i in range(library[cardtype][card]['q']):
+                        cardlist.append(library[cardtype][card]['file'])
 
         pdf = FPDF('P', 'mm', 'A4')
 
@@ -78,7 +108,7 @@ def deckProxy(input):
                      (top_margin + y_counter * (h + gap)), (w + gap),
                      (h + gap), 'F')
 
-            pdf.image(c['file'], (w + gap) * x_counter + left_margin,
+            pdf.image(c, (w + gap) * x_counter + left_margin,
                       (h + gap) * y_counter + top_margin, w, h)
 
             x_counter += 1

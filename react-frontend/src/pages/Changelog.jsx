@@ -6,10 +6,22 @@ function Changelog(props) {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
-        <Col xs={12} md={5} className="px-0">
+        <Col xs={12} md={6} xxl={5} className="px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
+
+            <h6>2021-12-03:</h6>
+            <ul>
+              <li>Finalize transition to Banu Haqim/Ministry</li>
+              <li>
+                In pdf proxy sort library cards by card type (Master, Action,
+                etc)
+              </li>
+              <li>Add Recent Deck selection to Deck Compare</li>
+              <li>Increased height of some (opened) filters</li>
+              <li>Small other fixes</li>
+            </ul>
 
             <h6>2021-12-01:</h6>
             <ul>

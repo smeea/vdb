@@ -7,8 +7,11 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from 'components';
+import { useApp } from 'context';
 
 function SearchLibraryFormType(props) {
+  const { isMobile } = useApp();
+
   const types = [
     'ANY',
     'Action',
@@ -48,7 +51,7 @@ function SearchLibraryFormType(props) {
         name: 'type',
         label: (
           <>
-            <span className="margin-full justify-content-center">
+            <span className="margin-full">
               <img src={imgSrc} className="type-image-results" />
             </span>
             {i}
@@ -96,6 +99,13 @@ function SearchLibraryFormType(props) {
             options={options}
             isSearchable={false}
             name={0}
+            maxMenuHeight={
+              isMobile
+                ? window.innerHeight > 600
+                  ? window.innerHeight - 200
+                  : 300
+                : 550
+            }
             value={options.find(
               (obj) => obj.value === props.value.value[0].toLowerCase()
             )}

@@ -46,7 +46,6 @@ def get_library_by_type(request, library):
             if counter == len(types):
                 match_cards.append(card)
 
-
     return match_cards
 
 
@@ -145,7 +144,6 @@ def get_library_by_title(request, library):
             if counter == len(titles) and card not in match_cards:
                 match_cards.append(card)
 
-
     return match_cards
 
 
@@ -196,7 +194,8 @@ def get_library_by_blood(request, library):
 
         elif moreless == 'ge':
             if card['Blood Cost'] and card['Blood Cost'] >= cost or card[
-                    'Blood Cost'] == 'X' or (cost == "0" and not card['Blood Cost']):
+                    'Blood Cost'] == 'X' or (cost == "0"
+                                             and not card['Blood Cost']):
                 match_cards.append(card)
 
         elif moreless == 'eq':
@@ -213,13 +212,14 @@ def get_library_by_pool(request, library):
     match_cards = []
     for card in library:
         if moreless == 'le':
-            if card['Pool Cost'] <= cost or card['Pool Cost'] == 'X' or not card['Pool Cost']:
+            if card['Pool Cost'] <= cost or card[
+                    'Pool Cost'] == 'X' or not card['Pool Cost']:
                 match_cards.append(card)
 
         elif moreless == 'ge':
             if card['Pool Cost'] and card['Pool Cost'] >= cost or card[
-                    'Pool Cost'] == 'X' or (
-                    cost == "0" and not card['Pool Cost']):
+                    'Pool Cost'] == 'X' or (cost == "0"
+                                            and not card['Pool Cost']):
                 match_cards.append(card)
 
         elif moreless == 'eq':
@@ -300,6 +300,18 @@ def get_library_by_traits(traits, library):
                 if card['Burn Option']:
                     counter += 1
 
+            elif trait == 'votes-title':
+                if re.search(
+                        r'{}'.format(
+                            '\+. vote|additional vote|represent the .* title'),
+                        card['Card Text'], re.IGNORECASE):
+                    counter += 1
+
+            elif trait == 'reduce bleed':
+                if re.search(r'{}'.format('reduce a bleed'), card['Card Text'],
+                             re.IGNORECASE):
+                    counter += 1
+
             elif trait == 'no-requirements':
                 if not card['Requirement'] and not card[
                         'Discipline'] and not card[
@@ -319,6 +331,7 @@ def get_library_by_traits(traits, library):
 
 def get_library_by_set(request, library):
     bcp_sets = [
+        'V5A',
         'KSU',
         'V5',
         '25th',
@@ -333,6 +346,7 @@ def get_library_by_set(request, library):
     sets = [
         'Promo',
         'POD',
+        'V5A',
         'KSU',
         'V5',
         '25th',
@@ -381,7 +395,8 @@ def get_library_by_set(request, library):
 
                 for card in library:
                     for k in card['Set'].keys():
-                        if sets.index(k) <= oldestSetIndex and sets.index(k) > 1:
+                        if sets.index(k) <= oldestSetIndex and sets.index(
+                                k) > 1:
                             if card not in match_cards:
                                 match_cards.append(card)
 
@@ -453,6 +468,7 @@ def get_library_by_set(request, library):
 
 def get_library_by_precon(request, library):
     bcp_sets = [
+        'V5A',
         'KSU',
         'V5',
         '25th',
@@ -467,6 +483,7 @@ def get_library_by_precon(request, library):
     sets = [
         'Promo',
         'POD',
+        'V5A',
         'KSU',
         'V5',
         '25th',

@@ -18,6 +18,7 @@ import {
   DeckSelectMy,
   DeckBranchSelect,
   DeckSelectPrecon,
+  DeckSelectRecent,
   DiffButtons,
   DiffCrypt,
   DiffLibrary,
@@ -26,14 +27,18 @@ import { useApp } from 'context';
 
 function Diff(props) {
   const {
-    preconDecks,
     inventoryMode,
+    deckRouter,
     activeDeck,
     setActiveDeck,
+    sharedDeck,
+    setSharedDeck,
     decks,
+    recentDecks,
+    addRecentDeck,
+    preconDecks,
     cryptCardBase,
     libraryCardBase,
-    deckRouter,
     username,
     isMobile,
   } = useApp();
@@ -101,6 +106,7 @@ function Diff(props) {
         setActiveDeck({ src: null, deckid: null });
         navigate(`/diff?from=${deckFromId}&to=${toQuery}`);
         break;
+
       case 'to':
         let deckToId = formTo;
         if (formTo.includes(`${process.env.ROOT_URL}decks?id=`)) {
@@ -143,6 +149,7 @@ function Diff(props) {
           Object.keys(data.library).map((i) => {
             data.library[i].c = libraryCardBase[i];
           });
+          addRecentDeck(data);
           setDeck({ [data.deckid]: data });
         }
       })
@@ -184,17 +191,28 @@ function Diff(props) {
     if (activeDeck.deckid && activeDeck.deckid != fromQuery) {
       navigate(`/diff?from=${activeDeck.deckid}&to=${toQuery}`);
     }
+
+    if (
+      cryptCardBase &&
+      libraryCardBase &&
+      (activeDeck.src === 'twd' || activeDeck.src === 'shared') &&
+      !(sharedDeck && sharedDeck[activeDeck.deckid])
+    ) {
+      getDeck(activeDeck.deckid, setSharedDeck, setDeckErrorFrom);
+    }
   }, [fromQuery, activeDeck, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (activeDeck.src == 'my' || activeDeck.src == 'precons') {
       setSelectFrom(`from-${activeDeck.src}`);
-    } else if (activeDeck.src == 'twd' || activeDeck.src == 'shared') {
-      setSelectFrom('from-url');
+    } else {
+      setSelectFrom('from-recent');
     }
+
     if (decks && decks[activeDeck.deckid] && activeDeck.src != 'my') {
       setActiveDeck({ src: 'my', deckid: activeDeck.deckid });
     }
+
     if (deckRouter(activeDeck)) setDeckErrorFrom(false);
   }, [activeDeck, decks]);
 
@@ -215,13 +233,22 @@ function Diff(props) {
 
     if (secondaryDeck.deckid && secondaryDeck.deckid != toQuery)
       navigate(`/diff?from=${fromQuery}&to=${secondaryDeck.deckid}`);
+
+    if (
+      cryptCardBase &&
+      libraryCardBase &&
+      (secondaryDeck.src === 'twd' || secondaryDeck.src === 'shared') &&
+      !(sharedDeckTo && sharedDeckTo[secondaryDeck.deckid])
+    ) {
+      getDeck(secondaryDeck.deckid, setSharedDeckTo, setDeckErrorTo);
+    }
   }, [toQuery, secondaryDeck, cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
     if (secondaryDeck.src == 'my' || secondaryDeck.src == 'precons') {
       setSelectTo(`to-${secondaryDeck.src}`);
-    } else if (secondaryDeck.src == 'twd' || secondaryDeck.src == 'shared') {
-      setSelectTo('to-url');
+    } else {
+      setSelectTo('to-recent');
     }
 
     if (decks && decks[secondaryDeck.deckid] && secondaryDeck.src != 'my') {
@@ -326,6 +353,8 @@ function Diff(props) {
                   >
                     {selectFrom == 'from-my' && decks ? (
                       <DeckSelectMy activeDeck={activeDeck} />
+                    ) : selectFrom == 'from-recent' ? (
+                      <DeckSelectRecent activeDeck={activeDeck} />
                     ) : (
                       <DeckSelectPrecon activeDeck={activeDeck} />
                     )}
@@ -356,7 +385,7 @@ function Diff(props) {
                       id="from-my"
                       label={
                         <div className="blue">
-                          <b>My Decks</b>
+                          <b>{isMobile ? 'My' : 'My Decks'}</b>
                         </div>
                       }
                       inline
@@ -374,6 +403,20 @@ function Diff(props) {
                     }
                     inline
                   />
+                  {recentDecks.length > 0 && (
+                    <Form.Check
+                      checked={selectFrom == 'from-recent'}
+                      onChange={(e) => setSelectFrom(e.target.id)}
+                      type="radio"
+                      id="from-recent"
+                      label={
+                        <div className="blue">
+                          <b>Recent</b>
+                        </div>
+                      }
+                      inline
+                    />
+                  )}
                   <Form.Check
                     checked={selectFrom == 'from-url'}
                     onChange={(e) => setSelectFrom(e.target.id)}
@@ -437,6 +480,11 @@ function Diff(props) {
                         activeDeck={secondaryDeck}
                         setActiveDeck={setSecondaryDeck}
                       />
+                    ) : selectTo == 'to-recent' ? (
+                      <DeckSelectRecent
+                        activeDeck={secondaryDeck}
+                        setActiveDeck={setSecondaryDeck}
+                      />
                     ) : (
                       <DeckSelectPrecon
                         activeDeck={secondaryDeck}
@@ -464,7 +512,7 @@ function Diff(props) {
                       id="to-my"
                       label={
                         <div className="blue">
-                          <b>My Decks</b>
+                          <b>{isMobile ? 'My' : 'My Decks'}</b>
                         </div>
                       }
                       inline
@@ -482,6 +530,20 @@ function Diff(props) {
                     }
                     inline
                   />
+                  {recentDecks.length > 0 && (
+                    <Form.Check
+                      checked={selectTo == 'to-recent'}
+                      onChange={(e) => setSelectTo(e.target.id)}
+                      type="radio"
+                      id="to-recent"
+                      label={
+                        <div className="blue">
+                          <b>Recent</b>
+                        </div>
+                      }
+                      inline
+                    />
+                  )}
                   <Form.Check
                     checked={selectTo == 'to-url'}
                     onChange={(e) => setSelectTo(e.target.id)}

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Select from 'react-select';
+import AppContext from '../../context/AppContext.js';
 
 function SearchFormCapacity(props) {
+  const { isMobile } = useContext(AppContext);
+
   const capacity = [
     'ANY',
     '1',
@@ -28,7 +31,7 @@ function SearchFormCapacity(props) {
       name: 'capacity',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="me-3" />
           {i}
         </>
       ),
@@ -47,7 +50,7 @@ function SearchFormCapacity(props) {
       name: 'capacity',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="me-3" />
           {i[1]}
         </>
       ),
@@ -77,6 +80,7 @@ function SearchFormCapacity(props) {
           options={options}
           isSearchable={false}
           name="capacity"
+          maxMenuHeight={isMobile ? 300 : 550}
           value={options.find((obj) => obj.value === props.value.capacity)}
           onChange={props.onChange}
         />

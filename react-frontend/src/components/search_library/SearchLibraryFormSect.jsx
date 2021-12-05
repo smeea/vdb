@@ -7,8 +7,11 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from 'components';
+import { useApp } from 'context';
 
 function SearchLibraryFormSect(props) {
+  const { isMobile } = useApp();
+
   const sects = [
     'ANY',
     'Not Required',
@@ -72,6 +75,7 @@ function SearchLibraryFormSect(props) {
             options={options}
             isSearchable={false}
             name={0}
+            maxMenuHeight={isMobile ? 300 : 550}
             value={options.find(
               (obj) => obj.value === props.value.value[0].toLowerCase()
             )}

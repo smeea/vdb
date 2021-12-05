@@ -990,7 +990,7 @@
         "Pool Cost":"4",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 3 life. 3 strength, 1 bleed.\nAkhenaten can play cards requiring basic Necromancy [nec] as a 3-capacity vampire. In combat with a Follower of Set, any damage he inflicts is aggravated. Akhenaten can burn himself to burn a Follower of Set controlled by your prey as a (D) action. If he is burned, shuffle him into his owner's library.",
+        "Card Text":"Unique mummy with 3 life. 3 strength, 1 bleed.\nAkhenaten can play cards requiring basic Necromancy [nec] as a 3-capacity vampire. In combat with a Minister, any damage he inflicts is aggravated. Akhenaten can burn himself to burn a Minister controlled by your prey as a (D) action. If he is burned, shuffle him into his owner's library.",
         "Set":{
             "AH":{
                 "R":true
@@ -1108,13 +1108,13 @@
         "Id":100037,
         "Name":"Alamut",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nAfter an Assamite you control successfully bleeds a Methuselah, put the pool lost by that Methuselah on this card. Burn X counters from this card during the polling step of a political action to give a vampire you control +X votes.",
+        "Card Text":"Unique location.\nAfter an Banu Haqim you control successfully bleeds a Methuselah, put the pool lost by that Methuselah on this card. Burn X counters from this card during the polling step of a political action to give a vampire you control +X votes.",
         "Set":{
             "AH":{
                 "R":true
@@ -1243,7 +1243,7 @@
         "Id":100042,
         "Name":"Amam the Devourer",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -1878,7 +1878,7 @@
         "Id":100063,
         "Name":"Ancestor's Talisman, The",
         "Type":"Equipment",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -2315,7 +2315,7 @@
         "Name":"Apportation",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -2659,7 +2659,7 @@
         "Name":"Armor of Terra",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -3331,7 +3331,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a vampire with capacity 5 or less.\nPut this card on this vampire. This vampire gets +1 intercept and does not lock for blocking a vampire the same age or younger. Any vampire can burn this card as a (D) action; Followers of Set get -1 stealth during that action.",
+        "Card Text":"+1 stealth action. Requires a vampire with capacity 5 or less.\nPut this card on this vampire. This vampire gets +1 intercept and does not lock for blocking a vampire the same age or younger. Any vampire can burn this card as a (D) action; Ministers get -1 stealth during that action.",
         "Set":{
             "AH":{
                 "C":true
@@ -4873,7 +4873,7 @@
         "Id":100160,
         "Name":"Bima",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"1",
         "Pool Cost":"",
@@ -4925,7 +4925,7 @@
         "Name":"Biothaumaturgic Experiment",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
@@ -5197,13 +5197,13 @@
         "Id":100172,
         "Name":"Black Throne, The",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock during the polling step of any referendum to get +2 votes. Lock after a minion with a contract for which an Assamite you control is chosen leaves the ready region to gain 1 pool.",
+        "Card Text":"Unique location.\nLock during the polling step of any referendum to get +2 votes. Lock after a minion with a contract for which an Banu Haqim you control is chosen leaves the ready region to gain 1 pool.",
         "Set":{
             "LotN":{
                 "R":true
@@ -5999,14 +5999,14 @@
                 "PTr":"2",
                 "PV":"3"
             },
+            "V5":{
+                "PM":"4",
+                "PV":"3"
+            },
             "V5A":{
                 "PB":"4",
                 "PG":"4",
                 "PMin":"4"
-            },
-            "V5":{
-                "PM":"4",
-                "PV":"3"
             }
         },
         "Requirement":"",
@@ -6057,7 +6057,7 @@
         "Name":"Blood Fury",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -6155,7 +6155,7 @@
         "Name":"Blood of Sandman",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"2",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -6264,7 +6264,7 @@
         "Name":"Blood Rage",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -6437,7 +6437,7 @@
         "Name":"Blood to Water",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"2",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -6929,7 +6929,7 @@
         "Name":"Bollix",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Celerity/Presence/Thaumaturgy",
+        "Discipline":"Celerity/Presence/Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -7018,7 +7018,7 @@
         "Name":"Bond with the Mountain",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -7567,7 +7567,7 @@
         "Name":"Brick by Brick",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -8079,7 +8079,7 @@
         "Name":"Burning Touch",
         "Type":"Action Modifier/Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Valeren",
+        "Discipline":"Blood Sorcery/Valeren",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -8170,7 +8170,7 @@
         "Name":"Burst of Sunlight",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -9024,11 +9024,11 @@
             "FB":{
                 "PN":"5"
             },
-            "V5A":{
-                "PG":"6"
-            },
             "V5":{
                 "PN":"2"
+            },
+            "V5A":{
+                "PG":"6"
             }
         },
         "Requirement":"",
@@ -9265,11 +9265,11 @@
             "FB":{
                 "PN":"3"
             },
-            "V5A":{
-                "PG":"4"
-            },
             "V5":{
                 "PN":"4"
+            },
+            "V5A":{
+                "PG":"4"
             }
         },
         "Requirement":"",
@@ -9286,7 +9286,7 @@
         "Name":"Cauldron of Blood",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -9346,13 +9346,13 @@
         "Id":100311,
         "Name":"Cave of Apples",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"3",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nAny Follower of Set you control can put 1 corruption counter on an ally or younger vampire controlled by your prey as a (D) action. If the action is successful and the number of your corruption counters on the minion equals or exceeds their capacity or cost, you can burn those counters to steal that minion.",
+        "Card Text":"Unique location.\nAny Minister you control can put 1 corruption counter on an ally or younger vampire controlled by your prey as a (D) action. If the action is successful and the number of your corruption counters on the minion equals or exceeds their capacity or cost, you can burn those counters to steal that minion.",
         "Set":{
             "LotN":{
                 "R":true
@@ -10188,7 +10188,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card in play. Followers of Set do not unlock as normal. Each Follower of Set may burn 1 blood to unlock during each of his or her controller's unlock phases. This card may be burned by any vampire as a (D) action; Followers of Set get -1 stealth when attempting that action.",
+        "Card Text":"Master.\nPut this card in play. Ministers do not unlock as normal. Each Minister may burn 1 blood to unlock during each of his or her controller's unlock phases. This card may be burned by any vampire as a (D) action; Ministers get -1 stealth when attempting that action.",
         "Set":{
             "AH":{
                 "R":true
@@ -10207,7 +10207,7 @@
         "Name":"Children of Stone",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -10629,13 +10629,13 @@
         "Id":100355,
         "Name":"Clandestine Contract",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Contract. Requires an Assamite with capacity 5 or more.\n(D) Enter combat with a minion and put this card on the target minion. This Assamite is chosen for this contract. This Assamite can enter combat with the attached minion as a +1 stealth (D) action.",
+        "Card Text":"+1 stealth action. Contract. Requires an Banu Haqim with capacity 5 or more.\n(D) Enter combat with a minion and put this card on the target minion. This Banu Haqim is chosen for this contract. This Banu Haqim can enter combat with the attached minion as a +1 stealth (D) action.",
         "Set":{
             "FN":{
                 "C":true
@@ -11171,7 +11171,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nWhile the bearer has Thaumaturgy [tha], he or she is considered to have superior Thaumaturgy [THA]. Each time the bearer with Thaumaturgy commits diablerie, each other ready vampire you control gains 1 blood, and each one younger than the victim may receive a master: Discipline card from your ash heap, hand, or library (shuffle afterward).",
+        "Card Text":"Unique equipment.\nWhile the bearer has Blood Sorcery [tha], he or she is considered to have superior Blood Sorcery [THA]. Each time the bearer with Blood Sorcery commits diablerie, each other ready vampire you control gains 1 blood, and each one younger than the victim may receive a master: Discipline card from your ash heap, hand, or library (shuffle afterward).",
         "Set":{
             "Third":{
                 "R":true
@@ -11271,7 +11271,7 @@
         "Name":"Collapse the Arches",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -12585,7 +12585,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Contract.\nChoose an Assamite and put this card on a ready minion. The chosen Assamite can enter combat with the attached minion as a +1 stealth (D) action.",
+        "Card Text":"Contract.\nChoose an Banu Haqim and put this card on a ready minion. The chosen Banu Haqim can enter combat with the attached minion as a +1 stealth (D) action.",
         "Set":{
             "AH":{
                 "C":true
@@ -12849,7 +12849,7 @@
         "Id":100430,
         "Name":"Corruption",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -12885,7 +12885,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a prince, justicar, or Inner Circle member.\nIf this referendum is successful, each Follower of Set burns 2 blood. Each Follower of Set with zero blood then goes into torpor.",
+        "Card Text":"Requires a prince, justicar, or Inner Circle member.\nIf this referendum is successful, each Minister burns 2 blood. Each Minister with zero blood then goes into torpor.",
         "Set":{
             "AH":{
                 "V":true
@@ -13093,7 +13093,7 @@
         "Name":"Crawling Chamber",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -13307,7 +13307,7 @@
         "Name":"CrimethInc.",
         "Type":"Action Modifier",
         "Clan":"",
-        "Discipline":"Protean/Quietus/Thaumaturgy",
+        "Discipline":"Protean/Quietus/Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -13384,7 +13384,7 @@
         "Id":100449,
         "Name":"Crocodile Temple, The",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -14118,7 +14118,7 @@
         "Name":"Cryptic Mission",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -14670,7 +14670,7 @@
         "Id":102235,
         "Name":"Dark Web Procurer",
         "Type":"Ally",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -15302,11 +15302,11 @@
             "SP":{
                 "DoF":"4"
             },
-            "V5A":{
-                "PG":"6"
-            },
             "V5":{
                 "PN":"6"
+            },
+            "V5A":{
+                "PG":"6"
             }
         },
         "Requirement":"",
@@ -15840,7 +15840,7 @@
         "Name":"Detect Authority",
         "Type":"Reaction",
         "Clan":"",
-        "Discipline":"Animalism/Serpentis/Thaumaturgy",
+        "Discipline":"Animalism/Serpentis/Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -15942,13 +15942,13 @@
         "Id":100536,
         "Name":"Deviki Prasanta",
         "Type":"Ally",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique ghoul with 2 life. 1 strength, 0 bleed.\nIf Deviki is ready during your master phase, you can lock her to search your library (shuffle afterward) and/or ash heap for a master Discipline card and put it on a ready Assamite you control.",
+        "Card Text":"Unique ghoul with 2 life. 1 strength, 0 bleed.\nIf Deviki is ready during your master phase, you can lock her to search your library (shuffle afterward) and/or ash heap for a master Discipline card and put it on a ready Banu Haqim you control.",
         "Set":{
             "KMW":{
                 "R":true
@@ -16723,7 +16723,7 @@
         "Name":"Diversion",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Celerity/Fortitude/Thaumaturgy",
+        "Discipline":"Celerity/Fortitude/Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -17346,7 +17346,7 @@
         "Name":"Drain Essence",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -18673,7 +18673,7 @@
         "Name":"Eldritch Glimmer",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -19159,13 +19159,13 @@
             "FB":{
                 "PTo":"6"
             },
-            "V5A":{
-                "PB":"6",
-                "PMin":"7"
-            },
             "V5":{
                 "PTo":"6",
                 "PV":"8"
+            },
+            "V5A":{
+                "PB":"6",
+                "PMin":"7"
             }
         },
         "Requirement":"",
@@ -20000,7 +20000,7 @@
         "Pool Cost":"4",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Gain 5 pool if you control a ready Follower of Set, or add 5 blood to a Follower of Set with capacity 9 or more in your uncontrolled region.",
+        "Card Text":"Gain 5 pool if you control a ready Minister, or add 5 blood to a Minister with capacity 9 or more in your uncontrolled region.",
         "Set":{
             "LotN":{
                 "U":true
@@ -20939,12 +20939,12 @@
             "FB":{
                 "PN":"1"
             },
+            "V5":{
+                "PN":"1"
+            },
             "V5A":{
                 "PB":"1",
                 "PG":"1"
-            },
-            "V5":{
-                "PN":"1"
             }
         },
         "Requirement":"",
@@ -21624,7 +21624,7 @@
         "Id":100722,
         "Name":"Ferraille",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -22172,7 +22172,7 @@
         "Name":"Flames of the Netherworld",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Daimoinon/Thaumaturgy",
+        "Discipline":"Daimoinon/Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -22485,7 +22485,7 @@
         "Name":"Flow Within the Mountain",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -22547,13 +22547,13 @@
         "Id":100753,
         "Name":"Focus the Blood",
         "Type":"Combat",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined. A vampire can play only one Focus the Blood each combat.\nPut this card and 1 blood on this Assamite. This vampire can burn this card to reduce the cost of a combat card they play by 1 blood.",
+        "Card Text":"Only usable before range is determined. A vampire can play only one Focus the Blood each combat.\nPut this card and 1 blood on this Banu Haqim. This vampire can burn this card to reduce the cost of a combat card they play by 1 blood.",
         "Set":{
             "TU":{
                 "C":true
@@ -24708,13 +24708,13 @@
         "Id":100822,
         "Name":"Ghouls of Plaza Morer\u00eda, The",
         "Type":"Ally",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique ghoul with 2 life. 1 strength, 0 bleed.\nThe Ghouls of Plaza Morer\u00eda can strike: 1R damage. They get 1 optional maneuver each combat. They can burn 1 blood from a ready vampire and put 1 container counter on themselves as a +1 stealth (D) action. Any ready Assamite can burn X container counters from them to gain X blood as a +1 stealth action.",
+        "Card Text":"Unique ghoul with 2 life. 1 strength, 0 bleed.\nThe Ghouls of Plaza Morer\u00eda can strike: 1R damage. They get 1 optional maneuver each combat. They can burn 1 blood from a ready vampire and put 1 container counter on themselves as a +1 stealth (D) action. Any ready Banu Haqim can burn X container counters from them to gain X blood as a +1 stealth action.",
         "Set":{
             "FN":{
                 "R":true
@@ -25481,7 +25481,7 @@
         "Id":100848,
         "Name":"Grand Temple of Set",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -26028,11 +26028,11 @@
             "HttB":{
                 "PGar":1
             },
-            "V5A":{
-                "PB":"1"
-            },
             "V5":{
                 "PN":"1"
+            },
+            "V5A":{
+                "PB":"1"
             }
         },
         "Requirement":"",
@@ -26490,13 +26490,13 @@
         "Id":100884,
         "Name":"Haqim's Law: Judgment",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Contract. Trifle.\nLock a ready Independent or Anarch Assamite you control to put this card on a younger vampire. Every Independent or Anarch Assamite is considered chosen for this contract. Any Independent or Anarch Assamite can enter combat with the attached vampire as a +1 stealth (D) action.",
+        "Card Text":"Contract. Trifle.\nLock a ready Independent or Anarch Banu Haqim you control to put this card on a younger vampire. Every Independent or Anarch Banu Haqim is considered chosen for this contract. Any Independent or Anarch Banu Haqim can enter combat with the attached vampire as a +1 stealth (D) action.",
         "Set":{
             "KMW":{
                 "R":true
@@ -26520,13 +26520,13 @@
         "Id":100885,
         "Name":"Haqim's Law: Leadership",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nEach Methuselah who controls any of the oldest ready Assamites gains 2 pool.",
+        "Card Text":"+1 stealth action.\nEach Methuselah who controls any of the oldest ready Banu Haqim gains 2 pool.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -26548,13 +26548,13 @@
         "Id":102226,
         "Name":"Haqim's Law: Retribution",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Put this card in play. During a bleed action, an Assamite you control can discard a combat card to get +1 bleed.",
+        "Card Text":"Put this card in play. During a bleed action, an Banu Haqim you control can discard a combat card to get +1 bleed.",
         "Set":{
             "V5A":{
                 "PBh":"4"
@@ -26916,12 +26916,12 @@
             "KMW":{
                 "PAn":"3"
             },
+            "V5":{
+                "PN":"1"
+            },
             "V5A":{
                 "PB":"1",
                 "PG":"1"
-            },
-            "V5":{
-                "PN":"1"
             }
         },
         "Requirement":"",
@@ -27175,13 +27175,13 @@
         "Id":100906,
         "Name":"Heartblood of the Clan",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nAny Assamite can add 1 blood to this card as an action. During your influence phase, you can move any amount of blood from this card to an Assamite in your uncontrolled region.",
+        "Card Text":"Unique location.\nAny Banu Haqim can add 1 blood to this card as an action. During your influence phase, you can move any amount of blood from this card to an Banu Haqim in your uncontrolled region.",
         "Set":{
             "AH":{
                 "U":true
@@ -27538,11 +27538,11 @@
             "LoB":{
                 "PI":"4"
             },
-            "V5A":{
-                "PG":"4"
-            },
             "V5":{
                 "PV":"4"
+            },
+            "V5A":{
+                "PG":"4"
             }
         },
         "Requirement":"",
@@ -27657,13 +27657,13 @@
         "Id":100923,
         "Name":"Hierophant",
         "Type":"Political Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose any Follower of Set. Successful referendum means this card is put on the chosen vampire. This vampire gets +1 vote. If a vampire blocks this vampire, the blocking vampire burns 1 blood before block resolution.",
+        "Card Text":"Choose any Minister. Successful referendum means this card is put on the chosen vampire. This vampire gets +1 vote. If a vampire blocks this vampire, the blocking vampire burns 1 blood before block resolution.",
         "Set":{
             "KMW":{
                 "C":true
@@ -28273,8 +28273,8 @@
         "Id":102227,
         "Name":"Hunger of Marduk",
         "Type":"Combat",
-        "Clan":"Assamite",
-        "Discipline":"Thaumaturgy",
+        "Clan":"Banu Haqim",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -28355,7 +28355,7 @@
         "Name":"Hunter's Mark",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Celerity & Thaumaturgy",
+        "Discipline":"Celerity & Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -28741,11 +28741,11 @@
             "HttB":{
                 "PGar":"3"
             },
-            "V5A":{
-                "PB":"6"
-            },
             "V5":{
                 "PN":"4"
+            },
+            "V5A":{
+                "PB":"6"
             }
         },
         "Requirement":"",
@@ -28949,7 +28949,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play with 1 counter for each Follower of Set and mummy you control. During an action, you can burn 1 counter from this card to give a mummy you control +1 bleed or +1 strength. Burn this card if it has no counters.",
+        "Card Text":"Unique.\nPut this card in play with 1 counter for each Minister and mummy you control. During an action, you can burn 1 counter from this card to give a mummy you control +1 bleed or +1 strength. Burn this card if it has no counters.",
         "Set":{
             "TU":{
                 "C":true
@@ -29259,7 +29259,7 @@
         "Name":"Infernal Familiar",
         "Type":"Retainer",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"2",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -29594,12 +29594,12 @@
         "Name":"Inscription",
         "Type":"Equipment",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Equipment.\n[tha] Put this equipment on a ready vampire and put a card that requires Thaumaturgy [tha] from your hand on it (face up, out of play; this acting vampire pays the cost of that card). The vampire with this equipment can burn this equipment to use the basic Thaumaturgy ability of that card.\n[THA] As above, but the vampire can use the superior Thaumaturgy [THA] ability of the card.",
+        "Card Text":"Equipment.\n[tha] Put this equipment on a ready vampire and put a card that requires Blood Sorcery [tha] from your hand on it (face up, out of play; this acting vampire pays the cost of that card). The vampire with this equipment can burn this equipment to use the basic Blood Sorcery ability of that card.\n[THA] As above, but the vampire can use the superior Blood Sorcery [THA] ability of the card.",
         "Set":{
             "BH":{
                 "U":true
@@ -30029,7 +30029,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Successful referendum means this card is put in play and each Follower of Set can choose to become Camarilla. As any Follower of Set enters play, they can choose to become Camarilla.",
+        "Card Text":"Successful referendum means this card is put in play and each Minister can choose to become Camarilla. As any Minister enters play, they can choose to become Camarilla.",
         "Set":{
             "AH":{
                 "V":true
@@ -30429,7 +30429,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Animal with 1 life.\n[ani] If your prey controls a ready Follower of Set or Assamite, the minion with this retainer gets +1 stealth.\n[ANI] As above, but this minion gets +2 stealth.",
+        "Card Text":"Animal with 1 life.\n[ani] If your prey controls a ready Minister or Banu Haqim, the minion with this retainer gets +1 stealth.\n[ANI] As above, but this minion gets +2 stealth.",
         "Set":{
             "AH":{
                 "U":true
@@ -30832,7 +30832,7 @@
         "Id":101032,
         "Name":"Kali's Fang",
         "Type":"Equipment",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -31094,13 +31094,13 @@
         "Id":101042,
         "Name":"Khabar: Community, The",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Each Assamite gets +1 stealth when bleeding. Any minion can burn this card as a (D) action; Tremere get +1 stealth during that action.",
+        "Card Text":"Unique.\nPut this card in play. Each Banu Haqim gets +1 stealth when bleeding. Any minion can burn this card as a (D) action; Tremere get +1 stealth during that action.",
         "Set":{
             "AH":{
                 "C":true
@@ -31124,13 +31124,13 @@
         "Id":101043,
         "Name":"Khabar: Glory",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Unique. Not usable if any non-mandatory actions have been performed this turn.\nPut this card on this Assamite and unlock them. This Assamite gets +1 bleed. If your prey is ousted, you gain 4 additional pool. Burn this card during your unlock phase.",
+        "Card Text":"+1 stealth action. Unique. Not usable if any non-mandatory actions have been performed this turn.\nPut this card on this Banu Haqim and unlock them. This Banu Haqim gets +1 bleed. If your prey is ousted, you gain 4 additional pool. Burn this card during your unlock phase.",
         "Set":{
             "KMW":{
                 "C":true
@@ -31154,13 +31154,13 @@
         "Id":101044,
         "Name":"Khabar: Honor, The",
         "Type":"Combat",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable if this Assamite has been chosen for a contract on the opposing minion.\nStrike: hand strike at +3 damage.",
+        "Card Text":"Only usable if this Banu Haqim has been chosen for a contract on the opposing minion.\nStrike: hand strike at +3 damage.",
         "Set":{
             "AH":{
                 "V":true
@@ -31189,13 +31189,13 @@
         "Id":101045,
         "Name":"Khabar: Loyalty",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nAdd 2 blood to a younger Assamite in your uncontrolled region.",
+        "Card Text":"+1 stealth action.\nAdd 2 blood to a younger Banu Haqim in your uncontrolled region.",
         "Set":{
             "FN":{
                 "R":true
@@ -31243,7 +31243,7 @@
         "Id":101047,
         "Name":"Kherebutu",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"5",
@@ -31267,7 +31267,7 @@
         "Id":101048,
         "Name":"Khobar Towers, Al-Khubar",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -32186,7 +32186,7 @@
         "Name":"Lead Fist",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -33490,7 +33490,7 @@
         "Name":"Loose Cannon",
         "Type":"Action Modifier",
         "Clan":"",
-        "Discipline":"Dementation/Thaumaturgy/Vicissitude",
+        "Discipline":"Dementation/Blood Sorcery/Vicissitude",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -33938,7 +33938,7 @@
         "Name":"Machine Blitz",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -34098,7 +34098,7 @@
         "Name":"Magic of the Smith",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -34936,13 +34936,13 @@
         "Id":101171,
         "Name":"Market Square",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock to give an Assamite you control +1 intercept.",
+        "Card Text":"Unique location.\nLock to give an Banu Haqim you control +1 intercept.",
         "Set":{
             "AH":{
                 "U":true
@@ -35798,7 +35798,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable if this vampire blocks an ally or younger vampire, before block resolution.\n[obf] Lock this vampire and end the action. This card costs Followers of Set 1 fewer blood.\n[OBF] As above, but do not lock this vampire.",
+        "Card Text":"Only usable if this vampire blocks an ally or younger vampire, before block resolution.\n[obf] Lock this vampire and end the action. This card costs Ministers 1 fewer blood.\n[OBF] As above, but do not lock this vampire.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -35919,13 +35919,13 @@
         "Id":101206,
         "Name":"Mesu Bedshet",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nReveal the top card of your crypt. If it is a Follower of Set, draw it and add 2 blood to it if it is younger. Otherwise, shuffle it back into your crypt.",
+        "Card Text":"+1 stealth action.\nReveal the top card of your crypt. If it is a Minister, draw it and add 2 blood to it if it is younger. Otherwise, shuffle it back into your crypt.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -36445,7 +36445,7 @@
         "Name":"Mirror Walk",
         "Type":"Action Modifier",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -36725,13 +36725,13 @@
         "Id":101232,
         "Name":"Mokol\u00e9 Blood",
         "Type":"Equipment",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nSearch your library (shuffle afterward) and/or ash heap for up to four cards requiring Serpentis [ser] and put them on this card, face down and out of play (you can look at the cards at any time). This Follower of Set can play cards from this equipment as if from your hand (requirements and cost apply as normal). Burn this equipment if it has no cards on it.",
+        "Card Text":"Unique.\nSearch your library (shuffle afterward) and/or ash heap for up to four cards requiring Serpentis [ser] and put them on this card, face down and out of play (you can look at the cards at any time). This Minister can play cards from this equipment as if from your hand (requirements and cost apply as normal). Burn this equipment if it has no cards on it.",
         "Set":{
             "LotN":{
                 "R":true
@@ -37121,7 +37121,7 @@
         "Name":"Movement of the Mind",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -37184,7 +37184,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a Laibon or non-titled vampire.\nIf this vampire is Laibon, draw 1 card from your crypt. Otherwise, this vampire becomes Laibon, and they unlock if they are Akunanse, Guruhi, Ishtarri, Osebo, Assamite, Follower of Set, Ravnos, Lasombra, Tzimisce, Harbinger of Skulls, or Salubri antitribu.",
+        "Card Text":"+1 stealth action. Requires a Laibon or non-titled vampire.\nIf this vampire is Laibon, draw 1 card from your crypt. Otherwise, this vampire becomes Laibon, and they unlock if they are Akunanse, Guruhi, Ishtarri, Osebo, Banu Haqim, Minister, Ravnos, Lasombra, Tzimisce, Harbinger of Skulls, or Salubri antitribu.",
         "Set":{
             "LoB":{
                 "C":true
@@ -37304,7 +37304,7 @@
         "Id":101252,
         "Name":"Mummy's Tongue",
         "Type":"Equipment",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -37375,11 +37375,11 @@
             "CE":{
                 "R":true
             },
-            "V5A":{
-                "PG":"2"
-            },
             "V5":{
                 "PN":"2"
+            },
+            "V5A":{
+                "PG":"2"
             }
         },
         "Requirement":"",
@@ -37625,7 +37625,7 @@
         "Name":"Name Forgotten, The",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -37648,7 +37648,7 @@
         "Id":101264,
         "Name":"Nar-Sheptha",
         "Type":"Retainer",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -37901,7 +37901,7 @@
         "Id":101273,
         "Name":"Nephren-Ka",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"3",
@@ -37928,13 +37928,13 @@
         "Id":101274,
         "Name":"Nest of Eagles",
         "Type":"Reaction",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Not usable if the acting minion is an Assamite or wraith or has flight [FLIGHT].\nReduce a bleed against you by 1. If the acting minion is an ally or vampire with capacity 5 or less, reduce the bleed amount by 3 instead.",
+        "Card Text":"Not usable if the acting minion is an Banu Haqim or wraith or has flight [FLIGHT].\nReduce a bleed against you by 1. If the acting minion is an ally or vampire with capacity 5 or less, reduce the bleed amount by 3 instead.",
         "Set":{
             "LotN":{
                 "C":true,
@@ -38871,7 +38871,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master.\nPut this card on an Assamite controlled by another Methuselah. That Assamite cannot attempt to bleed you. This card can be burned by another Assamite as a (D) action.",
+        "Card Text":"Master.\nPut this card on an Banu Haqim controlled by another Methuselah. That Banu Haqim cannot attempt to bleed you. This card can be burned by another Banu Haqim as a (D) action.",
         "Set":{
             "AH":{
                 "R":true
@@ -39234,7 +39234,7 @@
         "Id":101320,
         "Name":"Omael Kuman",
         "Type":"Retainer",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
@@ -39301,16 +39301,16 @@
                 "PTr":"3",
                 "PV":"3"
             },
+            "V5":{
+                "PM":"5",
+                "PN":"5",
+                "PTr":"4"
+            },
             "V5A":{
                 "PB":"2",
                 "PBh":"4",
                 "PG":"5",
                 "PMin":"4"
-            },
-            "V5":{
-                "PM":"5",
-                "PN":"5",
-                "PTr":"4"
             }
         },
         "Requirement":"",
@@ -39431,13 +39431,13 @@
         "Id":101326,
         "Name":"Opium Den",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nLock to give a Follower of Set you control +1 stealth.",
+        "Card Text":"Unique location.\nLock to give a Minister you control +1 stealth.",
         "Set":{
             "AH":{
                 "C":true
@@ -40249,12 +40249,12 @@
             "Promo":{
                 "20200511":true
             },
-            "V5A":{
-                "PBh":"2"
-            },
             "V5":{
                 "PTo":"4",
                 "PV":"5"
+            },
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"prince,justicar",
@@ -40419,13 +40419,13 @@
         "Id":101358,
         "Name":"Path of Blood, The",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Cards requiring Quietus [qui] cost Assamites 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
+        "Card Text":"Unique.\nPut this card in play. Cards requiring Quietus [qui] cost Banu Haqim 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
         "Set":{
             "AH":{
                 "C":true
@@ -40825,13 +40825,13 @@
         "Id":101373,
         "Name":"Path of Typhon, The",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Cards requiring Serpentis [ser] cost Followers of Set 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
+        "Card Text":"Unique.\nPut this card in play. Cards requiring Serpentis [ser] cost Ministers 1 fewer blood. Any minion can burn this card as a (D) action that inflicts 1 unpreventable environmental damage on acting vampires.",
         "Set":{
             "AH":{
                 "C":true
@@ -41216,7 +41216,7 @@
         "Name":"Perfect Clarity",
         "Type":"Action Modifier",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"2",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -43439,7 +43439,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Title. Requires a Camarilla vampire.\nSuccessful referendum means this card is put on this vampire to represent the unique Camarilla title of Prince of Istanbul, and if this vampire is not an Assamite, lock all Assamites. In this referendum, each ready Assamite gets +1 vote.",
+        "Card Text":"Title. Requires a Camarilla vampire.\nSuccessful referendum means this card is put on this vampire to represent the unique Camarilla title of Prince of Istanbul, and if this vampire is not an Banu Haqim, lock all Banu Haqim. In this referendum, each ready Banu Haqim gets +1 vote.",
         "Set":{
             "AH":{
                 "R":true
@@ -44049,13 +44049,13 @@
         "Id":101484,
         "Name":"Priestess of Sekhmet",
         "Type":"Retainer",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Mortal with 1 life.\nThis Follower of Set gets +1 bleed against a Methuselah who controls a ready Camarilla vampire. While the employer is bleeding, Camarilla vampires get -1 intercept. A vampire can have only one Priestess of Sekhmet.",
+        "Card Text":"Mortal with 1 life.\nThis Minister gets +1 bleed against a Methuselah who controls a ready Camarilla vampire. While the employer is bleeding, Camarilla vampires get -1 intercept. A vampire can have only one Priestess of Sekhmet.",
         "Set":{
             "FN":{
                 "C":true
@@ -44132,13 +44132,13 @@
         "Id":101487,
         "Name":"Priority Contract",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique contract. Trifle.\nChoose a ready Assamite you control and put this card on a minion controlled by your prey. The chosen Assamite can enter combat with the attached minion as a +1 stealth (D) action. If the attached minion is about to leave the ready region, you can burn this card to gain 3 pool.",
+        "Card Text":"Unique contract. Trifle.\nChoose a ready Banu Haqim you control and put this card on a minion controlled by your prey. The chosen Banu Haqim can enter combat with the attached minion as a +1 stealth (D) action. If the attached minion is about to leave the ready region, you can burn this card to gain 3 pool.",
         "Set":{
             "TU":{
                 "C":true
@@ -44616,13 +44616,13 @@
         "Id":101503,
         "Name":"Provision of the Silsila",
         "Type":"Action Modifier/Reaction",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable after a combat involving this Assamite and a minion with a contract. Only usable if this Assamite has been chosen for that contract. Only usable if the opposing minion is not ready and this Assamite is ready. Usable by a locked vampire.\nThis Assamite gains enough blood to reach full capacity. Burn the contract if it is still in play.",
+        "Card Text":"Only usable after a combat involving this Banu Haqim and a minion with a contract. Only usable if this Banu Haqim has been chosen for that contract. Only usable if the opposing minion is not ready and this Banu Haqim is ready. Usable by a locked vampire.\nThis Banu Haqim gains enough blood to reach full capacity. Burn the contract if it is still in play.",
         "Set":{
             "FN":{
                 "R":true
@@ -45376,7 +45376,7 @@
         "Id":101527,
         "Name":"Qetu the Evil Doer",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"3",
@@ -45692,7 +45692,7 @@
         "Pool Cost":"3",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Ghoul with 2 life. 1 bleed, 1 strength.\nRafastio Ghoul can play cards requiring basic Thaumaturgy [tha] as a vampire with a capacity of 3.",
+        "Card Text":"Ghoul with 2 life. 1 bleed, 1 strength.\nRafastio Ghoul can play cards requiring basic Blood Sorcery [tha] as a vampire with a capacity of 3.",
         "Set":{
             "FN":{
                 "C":true
@@ -46118,11 +46118,11 @@
             "FB":{
                 "PN":"2"
             },
-            "V5A":{
-                "PG":"2"
-            },
             "V5":{
                 "PN":"2"
+            },
+            "V5A":{
+                "PG":"2"
             }
         },
         "Requirement":"",
@@ -46462,7 +46462,7 @@
         "Id":101562,
         "Name":"Realm of the Black Sun, The",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -47166,7 +47166,7 @@
         "Name":"Rego Motum",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -47436,13 +47436,13 @@
         "Id":101598,
         "Name":"Reliquary: Shango Remains",
         "Type":"Equipment",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Choose an Assamite in your ash heap or burn 1 pool to choose an Assamite in your uncontrolled region. Remove the chosen Assamite from the game or burn this equipment. Once each turn, except during combat, if the Assamite bearer is ready, they can burn 1 blood to give you +2 hand size until the end of the turn.",
+        "Card Text":"Choose an Banu Haqim in your ash heap or burn 1 pool to choose an Banu Haqim in your uncontrolled region. Remove the chosen Banu Haqim from the game or burn this equipment. Once each turn, except during combat, if the Banu Haqim bearer is ready, they can burn 1 blood to give you +2 hand size until the end of the turn.",
         "Set":{
             "Promo":{
                 "20080203":true
@@ -47778,11 +47778,11 @@
             "SP":{
                 "LB":"3"
             },
-            "V5A":{
-                "PBh":"2"
-            },
             "V5":{
                 "PTo":"8"
+            },
+            "V5A":{
+                "PBh":"2"
             }
         },
         "Requirement":"",
@@ -48384,7 +48384,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Successful referendum means this card is put in play and each Assamite can choose to become Camarilla. As any Assamite enters play, they can choose to become Camarilla.",
+        "Card Text":"Successful referendum means this card is put in play and each Banu Haqim can choose to become Camarilla. As any Banu Haqim enters play, they can choose to become Camarilla.",
         "Set":{
             "AH":{
                 "V":true
@@ -48823,7 +48823,7 @@
         "Name":"Rockheart",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -49098,11 +49098,11 @@
         "Burn Option":"",
         "Card Text":"[pot] Strike: hand strike at +2 damage.\n[POT] Strike: hand strike at +3 damage.",
         "Set":{
-            "V5A":{
-                "PB":"4"
-            },
             "V5":{
                 "PN":"8"
+            },
+            "V5A":{
+                "PB":"4"
             }
         },
         "Requirement":"",
@@ -49381,7 +49381,7 @@
         "Name":"Rutor's Hand",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -49419,13 +49419,13 @@
         "Id":101665,
         "Name":"Saatet-ta",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mummy with 2 life. 2 strength, 1 bleed.\nDuring an action, Saatet-ta can lock to give a Follower of Set you control +1 stealth, +1 intercept, or +1 bleed. If she is burned, shuffle her into her owner's library.",
+        "Card Text":"Unique mummy with 2 life. 2 strength, 1 bleed.\nDuring an action, Saatet-ta can lock to give a Minister you control +1 stealth, +1 intercept, or +1 bleed. If she is burned, shuffle her into her owner's library.",
         "Set":{
             "TU":{
                 "C":true
@@ -49452,7 +49452,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Requires a ready archbishop, cardinal or regent.\nChoose a Sabbat vampire who is not an Inquisitor. If this referendum is successful, put this card on the chosen vampire. This vampire is an Inquisitor and gets +1 bleed. He or she may look at the top card of any Methuselah's crypt as a (D) action; if it is a vampire with Thaumaturgy [tha], burn that card. Any Sabbat vampire may call a referendum to burn this card as a +1 stealth political action.",
+        "Card Text":"Requires a ready archbishop, cardinal or regent.\nChoose a Sabbat vampire who is not an Inquisitor. If this referendum is successful, put this card on the chosen vampire. This vampire is an Inquisitor and gets +1 bleed. He or she may look at the top card of any Methuselah's crypt as a (D) action; if it is a vampire with Blood Sorcery [tha], burn that card. Any Sabbat vampire may call a referendum to burn this card as a +1 stealth political action.",
         "Set":{
             "Sabbat":{
                 "U":true
@@ -49716,7 +49716,7 @@
         "Pool Cost":"5",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique werewolf with 4 life. 3 strength, 0 bleed.\nOnce each action, Samuel may burn a life to get +1 bleed. He may steal equipment as a strike. He may play cards requiring basic Celerity [cel] or basic Thaumaturgy [tha] as a vampire. Any vampire may call a referendum to make Samuel become Red List as a +1 stealth political action. If Samuel has less than 4 life during your unlock phase, he gains 1 life from the blood bank.",
+        "Card Text":"Unique werewolf with 4 life. 3 strength, 0 bleed.\nOnce each action, Samuel may burn a life to get +1 bleed. He may steal equipment as a strike. He may play cards requiring basic Celerity [cel] or basic Blood Sorcery [tha] as a vampire. Any vampire may call a referendum to make Samuel become Red List as a +1 stealth political action. If Samuel has less than 4 life during your unlock phase, he gains 1 life from the blood bank.",
         "Set":{
             "KMW":{
                 "R":true
@@ -50459,7 +50459,7 @@
         "Name":"Scry the Hearthstone",
         "Type":"Reaction",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -50625,12 +50625,12 @@
             "FB":{
                 "PV":"2"
             },
-            "V5A":{
-                "PBh":"8"
-            },
             "V5":{
                 "PTo":"4",
                 "PV":"4"
+            },
+            "V5A":{
+                "PBh":"8"
             }
         },
         "Requirement":"prince,justicar",
@@ -50854,12 +50854,12 @@
         "Name":"Seeds of Corruption",
         "Type":"Action",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"2",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\n[tha] (D) Put this card on one of your prey's vampires. If the vampire is a Follower of Set, he or she burns 2 additional blood when attempting an action; otherwise, he or she burns 1 additional blood when attempting an action. The vampire's special abilities cannot be used. Any vampire(s) may burn this card with two +1 stealth actions.\n[THA] As above, but the vampire burns 2 additional blood when attempting an action; Followers of Set burn 3 additional blood.",
+        "Card Text":"+1 stealth action.\n[tha] (D) Put this card on one of your prey's vampires. If the vampire is a Minister, he or she burns 2 additional blood when attempting an action; otherwise, he or she burns 1 additional blood when attempting an action. The vampire's special abilities cannot be used. Any vampire(s) may burn this card with two +1 stealth actions.\n[THA] As above, but the vampire burns 2 additional blood when attempting an action; Ministers burn 3 additional blood.",
         "Set":{
             "AH":{
                 "U":true
@@ -51186,7 +51186,7 @@
         "Name":"Serenading the Kami",
         "Type":"Action Modifier",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -52464,12 +52464,12 @@
         "Name":"Shotgun Ritual",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"2",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable before range is determined on the first round.\n[tha] Any strike requiring Thaumaturgy [tha] that is not usable during the first round of combat can be played by this vampire during the first round.\n[THA] As above, with an optional press to continue.",
+        "Card Text":"Only usable before range is determined on the first round.\n[tha] Any strike requiring Blood Sorcery [tha] that is not usable during the first round of combat can be played by this vampire during the first round.\n[THA] As above, with an optional press to continue.",
         "Set":{
             "Sabbat":{
                 "R":true
@@ -53210,7 +53210,7 @@
         "Name":"Skin of the Chameleon",
         "Type":"Action Modifier",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -53732,11 +53732,11 @@
             "SP":{
                 "DoF":"1"
             },
-            "V5A":{
-                "PG":"1"
-            },
             "V5":{
                 "PN":"1"
+            },
+            "V5A":{
+                "PG":"1"
             }
         },
         "Requirement":"",
@@ -54288,7 +54288,7 @@
         "Name":"Soul Burn",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -54749,7 +54749,7 @@
         "Id":101845,
         "Name":"Spell of Life",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
@@ -54860,7 +54860,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: unique location.\nLock this card and burn 1 blood from a ready Tremere antitribu you control to search your library for a minion card that requires Thaumaturgy [tha]. Show that card to all players and put it in your hand. Discard down and shuffle afterward.",
+        "Card Text":"Master: unique location.\nLock this card and burn 1 blood from a ready Tremere antitribu you control to search your library for a minion card that requires Blood Sorcery [tha]. Show that card to all players and put it in your hand. Discard down and shuffle afterward.",
         "Set":{
             "Sabbat":{
                 "U":true
@@ -55624,7 +55624,7 @@
         "Name":"Stone Quills",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -55684,7 +55684,7 @@
         "Name":"Stonestrength",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -56413,7 +56413,7 @@
         "Id":101901,
         "Name":"Summon the Serpent",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"2",
         "Pool Cost":"",
@@ -56807,11 +56807,11 @@
             "LotN":{
                 "PA":"3"
             },
-            "V5A":{
-                "PBh":"6"
-            },
             "V5":{
                 "PM":"4"
+            },
+            "V5A":{
+                "PBh":"6"
             }
         },
         "Requirement":"",
@@ -57152,7 +57152,7 @@
         "Id":101926,
         "Name":"Tainted Vitae",
         "Type":"Reaction",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"2",
         "Pool Cost":"",
@@ -57182,13 +57182,13 @@
         "Id":101927,
         "Name":"Tajdid",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Only one Tajdid can be played in a game.\nUntil the end of the game, the Blood Curse no longer prevents Assamites from committing diablerie.",
+        "Card Text":"Only one Tajdid can be played in a game.\nUntil the end of the game, the Blood Curse no longer prevents Banu Haqim from committing diablerie.",
         "Set":{
             "FN":{
                 "R":true
@@ -57266,7 +57266,7 @@
         "Pool Cost":"3",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique mage with 3 life. 0 strength, 0 bleed.\nTalaq may strike for 1R damage. Talaq may play cards that require basic Quietus [qui] or basic Thaumaturgy [tha] as a vampire with a capacity of 3. Talaq gets an optional maneuver each combat.",
+        "Card Text":"Unique mage with 3 life. 0 strength, 0 bleed.\nTalaq may strike for 1R damage. Talaq may play cards that require basic Quietus [qui] or basic Blood Sorcery [tha] as a vampire with a capacity of 3. Talaq gets an optional maneuver each combat.",
         "Set":{
             "AH":{
                 "R":true
@@ -57541,7 +57541,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Aim. Play when choosing a strike.\nThe opposing minion may discard two combat cards [COMBAT] to cancel this card. If any damage from this strike is successfully inflicted on the opposing minion, he or she may use maneuvers or presses only if they require Obfuscate [obf] , Thaumaturgy [tha] or Flight [FLIGHT] this action. A minion may play only one aim each strike.",
+        "Card Text":"Aim. Play when choosing a strike.\nThe opposing minion may discard two combat cards [COMBAT] to cancel this card. If any damage from this strike is successfully inflicted on the opposing minion, he or she may use maneuvers or presses only if they require Obfuscate [obf] , Blood Sorcery [tha] or Flight [FLIGHT] this action. A minion may play only one aim each strike.",
         "Set":{
             "LotN":{
                 "R":true
@@ -57730,11 +57730,11 @@
                 "PB":"3",
                 "PT":"3"
             },
-            "V5A":{
-                "PB":"4"
-            },
             "V5":{
                 "PN":"4"
+            },
+            "V5A":{
+                "PB":"4"
             }
         },
         "Requirement":"",
@@ -58018,7 +58018,7 @@
         "Id":101953,
         "Name":"Temple Hunting Ground",
         "Type":"Master",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -58277,7 +58277,7 @@
         "Id":101961,
         "Name":"Terrorists",
         "Type":"Ally",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -58392,7 +58392,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Thaumaturgy [tha]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Thaumaturgy [THA].",
+        "Card Text":"Master: Discipline.\nPut this card on a vampire. This vampire gains 1 level of Blood Sorcery [tha]. Capacity increases by 1: the vampire is one generation older. Cannot be placed on a vampire with superior Blood Sorcery [THA].",
         "Set":{
             "Jyhad":{
                 "C":true
@@ -58428,7 +58428,7 @@
         "Name":"Theft of Vitae",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -60001,7 +60001,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique. Requires both Follower of Set and Tremere.\nPut this card in play. Each Follower of Set is considered to have a level of Thaumaturgy [tha] equal to their level of Serpentis [ser]. Each Tremere is considered to have a level of Serpentis equal to theirs level of Thaumaturgy.",
+        "Card Text":"Unique. Requires both Minister and Tremere.\nPut this card in play. Each Minister is considered to have a level of Blood Sorcery [tha] equal to their level of Serpentis [ser]. Each Tremere is considered to have a level of Serpentis equal to theirs level of Blood Sorcery.",
         "Set":{
             "Promo":{
                 "20080203":true
@@ -60028,7 +60028,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"If this referendum is successful, each Methuselah burns X+1 pool, where X is the number of Assamites he or she controls.",
+        "Card Text":"If this referendum is successful, each Methuselah burns X+1 pool, where X is the number of Banu Haqim he or she controls.",
         "Set":{
             "AH":{
                 "V":true
@@ -60052,7 +60052,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique.\nPut this card in play. Tremere get +1 stealth during actions requiring Thaumaturgy [tha]. Vampires with basic Thaumaturgy can play combat cards requiring Thaumaturgy as if they had superior Thaumaturgy [THA]. Any minion can burn this card as a (D) action; Malkavians get -1 stealth during that action.",
+        "Card Text":"Unique.\nPut this card in play. Tremere get +1 stealth during actions requiring Blood Sorcery [tha]. Vampires with basic Blood Sorcery can play combat cards requiring Blood Sorcery as if they had superior Blood Sorcery [THA]. Any minion can burn this card as a (D) action; Malkavians get -1 stealth during that action.",
         "Set":{
             "DS":{
                 "U":true
@@ -60770,7 +60770,7 @@
         "Id":102048,
         "Name":"Tutu the Doubly Evil One",
         "Type":"Ally",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"4",
@@ -61296,7 +61296,7 @@
         "Id":102066,
         "Name":"Underworld Hunting Ground",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"2",
@@ -62352,7 +62352,7 @@
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique equipment.\nThe vampire with this equipment has superior Thaumaturgy [THA]. Any Tremere or Tremere antitribu may enter combat with the minion with this equipment as a (D) action.",
+        "Card Text":"Unique equipment.\nThe vampire with this equipment has superior Blood Sorcery [THA]. Any Tremere or Tremere antitribu may enter combat with the minion with this equipment as a (D) action.",
         "Set":{
             "FN":{
                 "R":true
@@ -62934,11 +62934,11 @@
             "25th":{
                 "":"5"
             },
-            "V5A":{
-                "PBh":"4"
-            },
             "V5":{
                 "PTo":"6"
+            },
+            "V5A":{
+                "PBh":"4"
             }
         },
         "Requirement":"",
@@ -63177,7 +63177,7 @@
         "Name":"Voices of the Castle",
         "Type":"Reaction",
         "Clan":"",
-        "Discipline":"Thaumaturgy/Visceratika",
+        "Discipline":"Blood Sorcery/Visceratika",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -63496,7 +63496,7 @@
         "Name":"Walk of Flame",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -63579,7 +63579,7 @@
         "Pool Cost":"2",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique werewolf with 4 life. 3 strength, 0 bleed.\nWalks-With-Might gets +1 intercept against Followers of Set. Master cards cost you 1 additional pool to play. Each strike or damaging effect made against him inflicts 1 less damage on him.",
+        "Card Text":"Unique werewolf with 4 life. 3 strength, 0 bleed.\nWalks-With-Might gets +1 intercept against Ministers. Master cards cost you 1 additional pool to play. Each strike or damaging effect made against him inflicts 1 less damage on him.",
         "Set":{
             "Promo":{
                 "20080203":true
@@ -64098,13 +64098,13 @@
         "Id":102159,
         "Name":"Waters of Duat",
         "Type":"Action",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Discipline":"",
         "Blood Cost":"1",
         "Pool Cost":"",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires a non-sterile Follower of Set with capacity 5 or more.\nPut this card in play. It becomes a 1-capacity (non-unique) Follower of Set of the same sect as the acting Follower of Set and must hunt this turn. You can search your library (shuffle afterward), hand, and/or ash heap for a master Discipline card and put it on this new vampire.",
+        "Card Text":"+1 stealth action. Requires a non-sterile Minister with capacity 5 or more.\nPut this card in play. It becomes a 1-capacity (non-unique) Minister of the same sect as the acting Minister and must hunt this turn. You can search your library (shuffle afterward), hand, and/or ash heap for a master Discipline card and put it on this new vampire.",
         "Set":{
             "KMW":{
                 "C":true
@@ -64225,7 +64225,7 @@
         "Name":"Weather Control",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -64264,13 +64264,13 @@
         "Id":102165,
         "Name":"Web of Knives Recruit",
         "Type":"Action",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"+1 stealth action.\nPut this card in play in your uncontrolled region with 3 training counters. During your unlock phase, burn 1 training counter from this card. You can burn training counters from no more than two Web of Knives Recruit cards each unlock phase. After the last training counter is burned, move this card to your ready region; it becomes a 3-capacity (non-unique) Independent Assamite with Celerity [cel], Obfuscate [obf], Potence [pot], Quietus [qui] and 3 blood who is Blood cursed.",
+        "Card Text":"+1 stealth action.\nPut this card in play in your uncontrolled region with 3 training counters. During your unlock phase, burn 1 training counter from this card. You can burn training counters from no more than two Web of Knives Recruit cards each unlock phase. After the last training counter is burned, move this card to your ready region; it becomes a 3-capacity (non-unique) Independent Banu Haqim with Celerity [cel], Obfuscate [obf], Potence [pot], Quietus [qui] and 3 blood who is Blood cursed.",
         "Set":{
             "KMW":{
                 "C":true
@@ -64330,7 +64330,7 @@
         "Pool Cost":"3",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\n+1 hand size. During your unlock phase, a ready Black Hand vampire you control can gain 1 blood. Any Assamite can burn this card as a (D) action that costs 1 pool.",
+        "Card Text":"Unique location.\n+1 hand size. During your unlock phase, a ready Black Hand vampire you control can gain 1 blood. Any Banu Haqim can burn this card as a (D) action that costs 1 pool.",
         "Set":{
             "BH":{
                 "R":true
@@ -64830,7 +64830,7 @@
         "Name":"Wind Dance",
         "Type":"Combat",
         "Clan":"",
-        "Discipline":"Thaumaturgy",
+        "Discipline":"Blood Sorcery",
         "Blood Cost":"",
         "Pool Cost":"",
         "Conviction Cost":"",
@@ -65288,13 +65288,13 @@
         "Id":102201,
         "Name":"Yoruba Shrine",
         "Type":"Master",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Discipline":"",
         "Blood Cost":"",
         "Pool Cost":"1",
         "Conviction Cost":"",
         "Burn Option":"",
-        "Card Text":"Unique location.\nIf a ready Assamite you control is the target of a directed action or is chosen by the acting Methuselah in the terms of a referendum, you can lock this location to unlock the acting minion and have the action or referendum fail. Only usable as the directed action is announced or during the polling step of the referendum before votes and ballots are cast.",
+        "Card Text":"Unique location.\nIf a ready Banu Haqim you control is the target of a directed action or is chosen by the acting Methuselah in the terms of a referendum, you can lock this location to unlock the acting minion and have the action or referendum fail. Only usable as the directed action is announced or during the polling step of the referendum before votes and ballots are cast.",
         "Set":{
             "LoB":{
                 "R":true

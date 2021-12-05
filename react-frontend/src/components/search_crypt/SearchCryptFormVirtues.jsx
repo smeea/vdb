@@ -1,17 +1,8 @@
 import React from 'react';
+import virtuesList from './forms_data/virtuesList.json';
 
 function SearchCryptFormVirtues(props) {
-  const virtues = [
-    'Defense',
-    'Innocence',
-    'Judgment',
-    'Martyrdom',
-    'Redemption',
-    'Vengeance',
-    'Vision',
-  ];
-
-  const virtuesforms = virtues.map((i, index) => {
+  const virtuesforms = virtuesList.map((i, index) => {
     const imgSrc = `${
       process.env.ROOT_URL
     }images/disciplines/${i.toLowerCase()}.svg`;

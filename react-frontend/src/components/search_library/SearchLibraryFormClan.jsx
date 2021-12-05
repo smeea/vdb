@@ -7,61 +7,13 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from 'components';
+import clansList from 'components/forms_data/clansList.json';
 import { useApp } from 'context';
 
 function SearchLibraryFormClan(props) {
   const { isMobile } = useApp();
 
-  const clans = [
-    'ANY',
-    'Not Required',
-    'Abomination',
-    'Ahrimane',
-    'Akunanse',
-    'Assamite',
-    'Baali',
-    'Blood Brother',
-    'Brujah',
-    'Brujah antitribu',
-    'Caitiff',
-    'Daughter of Cacophony',
-    'Follower of Set',
-    'Gangrel',
-    'Gangrel antitribu',
-    'Gargoyle',
-    'Giovanni',
-    'Guruhi',
-    'Harbinger of Skulls',
-    'Ishtarri',
-    'Kiasyd',
-    'Lasombra',
-    'Malkavian',
-    'Malkavian antitribu',
-    'Nagaraja',
-    'Nosferatu',
-    'Nosferatu antitribu',
-    'Osebo',
-    'Pander',
-    'Ravnos',
-    'Salubri',
-    'Salubri antitribu',
-    'Samedi',
-    'Toreador',
-    'Toreador antitribu',
-    'Tremere',
-    'Tremere antitribu',
-    'True Brujah',
-    'Tzimisce',
-    'Ventrue',
-    'Ventrue antitribu',
-    'Avenger',
-    'Defender',
-    'Innocent',
-    'Judge',
-    'Martyr',
-    'Redeemer',
-    'Visionary',
-  ];
+  const clans = ['ANY', 'Not Required', ...clansList];
 
   const options = [];
 
@@ -133,6 +85,13 @@ function SearchLibraryFormClan(props) {
             options={options}
             isSearchable={!isMobile}
             name={0}
+            maxMenuHeight={
+              isMobile
+                ? window.innerHeight > 600
+                  ? window.innerHeight - 300
+                  : 300
+                : 550
+            }
             value={options.find(
               (obj) => obj.value === props.value.value[0].toLowerCase()
             )}

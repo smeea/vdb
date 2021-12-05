@@ -3,7 +3,7 @@
         "Id":200001,
         "Name":"Aabbt Kindred",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -94,7 +94,7 @@
         "Id":200004,
         "Name":"Abd al-Rashid",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -128,7 +128,7 @@
         "Id":200005,
         "Name":"Abdelsobek",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":5,
@@ -192,7 +192,7 @@
         "Id":200007,
         "Name":"Abid bin Haji, Scholar of Mirrors",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -437,7 +437,7 @@
         "Adv":"",
         "Group":"6",
         "Capacity":2,
-        "Card Text":"Independent: Adri gets +1 intercept against Followers of Set.",
+        "Card Text":"Independent: Adri gets +1 intercept against Ministers.",
         "Set":{
             "TU":{
                 "C":true
@@ -701,7 +701,7 @@
         "Id":200024,
         "Name":"Ahmose Chambers",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":3,
@@ -757,7 +757,7 @@
             "Dominate":1,
             "Auspex":2,
             "Chimerstry":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -855,7 +855,7 @@
         "Id":200029,
         "Name":"Aisha",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -942,7 +942,7 @@
         "Disciplines":{
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -1028,7 +1028,7 @@
         "ASCII Name":"Aksinya Daclau",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Fortitude":2,
             "Presence":2,
@@ -1041,7 +1041,7 @@
         "Id":200035,
         "Name":"Al-Ashrad, Amr of Alamut",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             false,
             "200036"
@@ -1071,7 +1071,7 @@
             "Obfuscate":1,
             "Celerity":2,
             "Quietus":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -1080,14 +1080,14 @@
         "Id":200036,
         "Name":"Al-Ashrad, Amr of Alamut",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             true,
             200035
         ],
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Camarilla: During the first round of combat, Al-Ashrad can use strikes requiring Thaumaturgy [tha] that are not usable during the first round. Blood cursed.\n[MERGED] Assamite Inner Circle: +1 bleed.",
+        "Card Text":"Camarilla: During the first round of combat, Al-Ashrad can use strikes requiring Blood Sorcery [tha] that are not usable during the first round. Blood cursed.\n[MERGED] Banu Haqim Inner Circle: +1 bleed.",
         "Set":{
             "TU":{
                 "C":true
@@ -1107,7 +1107,7 @@
             "Celerity":2,
             "Obfuscate":2,
             "Quietus":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -1333,7 +1333,7 @@
             "Obfuscate":1,
             "Dementation":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -1368,7 +1368,7 @@
             "Animalism":1,
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -1653,7 +1653,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -1685,7 +1685,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -1694,7 +1694,7 @@
         "Id":200053,
         "Name":"Ali Kar",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"3",
         "Capacity":3,
@@ -2013,7 +2013,7 @@
         "ASCII Name":"Alonso Petrodon",
         "Disciplines":{
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Dominate":2,
             "Obfuscate":2,
@@ -2058,7 +2058,7 @@
         "Id":200062,
         "Name":"Alu",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":2,
@@ -2087,7 +2087,7 @@
         "Id":201577,
         "Name":"Aluc Romas de Leon",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -2184,11 +2184,11 @@
         "Id":200065,
         "Name":"Amaravati",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Independent: During the polling step of a political action, Amaravati can burn 2 blood to give each ready Assamite you control +1 vote. Blood cursed.",
+        "Card Text":"Independent: During the polling step of a political action, Amaravati can burn 2 blood to give each ready Banu Haqim you control +1 vote. Blood cursed.",
         "Set":{
             "KMW":{
                 "U":true
@@ -2305,7 +2305,7 @@
             "Dominate":2,
             "Necromancy":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -2341,7 +2341,7 @@
             "Dominate":2,
             "Necromancy":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -2443,7 +2443,7 @@
         "Id":200073,
         "Name":"Amenophobis",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -2502,7 +2502,7 @@
         "Id":200074,
         "Name":"Amisa",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -2656,7 +2656,7 @@
             "Celerity":1,
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -2925,7 +2925,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Camarilla: As Andrew plays a card requiring Thaumaturgy [tha] (before replacing the card), reveal the top card of your library. If it also requires Thaumaturgy, the card played is canceled and Andrew burns 1 blood.",
+        "Card Text":"Camarilla: As Andrew plays a card requiring Blood Sorcery [tha] (before replacing the card), reveal the top card of your library. If it also requires Blood Sorcery, the card played is canceled and Andrew burns 1 blood.",
         "Set":{
             "KoTR":{
                 "B":"2"
@@ -2944,7 +2944,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -3154,7 +3154,7 @@
             "Fortitude":2,
             "Necromancy":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -3321,7 +3321,7 @@
         "Id":200099,
         "Name":"Ankh-sen-Sutekh",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":6,
@@ -3607,7 +3607,7 @@
         "Id":200108,
         "Name":"Antara",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":8,
@@ -3885,7 +3885,7 @@
             "Dominate":1,
             "Fortitude":1,
             "Potence":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -3918,7 +3918,7 @@
         ],
         "ASCII Name":"Antonio Delgado",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Obtenebration":2,
             "Potence":2
@@ -4019,7 +4019,7 @@
         "Disciplines":{
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Potence":2
         },
@@ -4030,7 +4030,7 @@
         "Id":200121,
         "Name":"Anwar",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -4270,7 +4270,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":8,
-        "Card Text":"Camarilla primogen: When stealing blood with a strike that requires Thaumaturgy [tha], Ardan steals an additional blood.",
+        "Card Text":"Camarilla primogen: When stealing blood with a strike that requires Blood Sorcery [tha], Ardan steals an additional blood.",
         "Set":{
             "Anarchs":{
                 "U":true
@@ -4290,7 +4290,7 @@
             "Obfuscate":1,
             "Presence":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -4641,7 +4641,7 @@
         "Id":200140,
         "Name":"Arnulf Jormungandrsson",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":8,
@@ -4851,7 +4851,7 @@
             "Celerity":1,
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -4914,7 +4914,7 @@
         "Id":201578,
         "Name":"Asmin Kobane",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -4933,7 +4933,7 @@
         "Disciplines":{
             "Dominate":1,
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2
         },
         "Twd":false,
@@ -4998,7 +4998,7 @@
             "Auspex":1,
             "Potence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -5185,7 +5185,7 @@
             "Auspex":2,
             "Dominate":2,
             "Obtenebration":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -5213,7 +5213,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -5240,7 +5240,7 @@
         "ASCII Name":"Ayo Igoli",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Celerity":2,
             "Fortitude":2,
@@ -5272,7 +5272,7 @@
         "ASCII Name":"Azaneal",
         "Disciplines":{
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Daimoinon":2,
             "Obfuscate":2,
             "Obtenebration":2
@@ -5284,7 +5284,7 @@
         "Id":200155,
         "Name":"Aziz, Dammar of Istanbul",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":10,
@@ -5370,7 +5370,7 @@
             "Fortitude":2,
             "Obfuscate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -5477,7 +5477,7 @@
         "Id":200161,
         "Name":"Badr al-Budur",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -5536,7 +5536,7 @@
         "Id":200162,
         "Name":"Bajazet al-Nasir",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -5569,7 +5569,7 @@
         "Id":200163,
         "Name":"Bakr",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":8,
@@ -5686,7 +5686,7 @@
             "Daimoinon":1,
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":false,
         "New":false
@@ -5951,7 +5951,7 @@
         "Id":200175,
         "Name":"Basir",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":1,
@@ -6251,7 +6251,7 @@
         "ASCII Name":"Beckett",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Fortitude":2,
             "Protean":2
@@ -6391,7 +6391,7 @@
         "Id":200188,
         "Name":"Belle Equitone",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":2,
@@ -6550,7 +6550,7 @@
         "Id":200192,
         "Name":"Bertrand d'Anjou",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":4,
@@ -6705,7 +6705,7 @@
         "Id":201580,
         "Name":"Bijou",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":3,
@@ -6723,7 +6723,7 @@
         "ASCII Name":"Bijou",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":false,
         "New":false
@@ -6810,7 +6810,7 @@
         ],
         "ASCII Name":"Bindusara, Historian of the Kindred",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2,
             "Fortitude":2,
@@ -6844,7 +6844,7 @@
             "Animalism":1,
             "Celerity":1,
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -6916,7 +6916,7 @@
         "Id":200202,
         "Name":"Black Lotus",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
@@ -6972,7 +6972,7 @@
         "ASCII Name":"Black Wallace",
         "Disciplines":{
             "Obtenebration":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Potence":2
         },
@@ -7177,7 +7177,7 @@
         "ASCII Name":"Blythe Candeleria",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -7417,7 +7417,7 @@
         "Disciplines":{
             "Potence":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2
         },
         "Twd":false,
@@ -7629,7 +7629,7 @@
         "ASCII Name":"Brooke",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -7760,7 +7760,7 @@
             "Auspex":1,
             "Presence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -7842,7 +7842,7 @@
         "Id":200228,
         "Name":"Bupe Kuila",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -7938,7 +7938,7 @@
         "Id":200231,
         "Name":"Cagliostro, The Grand Copht",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":8,
@@ -8259,7 +8259,7 @@
         "Id":200241,
         "Name":"Cao Nguyen",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":3,
@@ -8316,7 +8316,7 @@
             "Dominate":2,
             "Fortitude":2,
             "Necromancy":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Thanatosis":2
         },
         "Twd":true,
@@ -8354,7 +8354,7 @@
             "Celerity":1,
             "Dominate":2,
             "Fortitude":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -8449,7 +8449,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -8514,7 +8514,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -8710,7 +8710,7 @@
             "Presence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -8927,7 +8927,7 @@
         "Id":200260,
         "Name":"Celine Chevalier",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":3,
@@ -9011,7 +9011,7 @@
             "Celerity":2,
             "Dominate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -9045,7 +9045,7 @@
             "Celerity":2,
             "Dominate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -9073,7 +9073,7 @@
         "Disciplines":{
             "Fortitude":2,
             "Potence":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Visceratika":2
         },
         "Twd":false,
@@ -9470,7 +9470,7 @@
         "Disciplines":{
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -9587,7 +9587,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -9603,7 +9603,7 @@
         ],
         "Group":"5",
         "Capacity":9,
-        "Card Text":"Camarilla: If Claudio is ready, you can use a discard phase action to discard a card requiring Thaumaturgy [tha] to gain 1 pool.\n[MERGED] Claudio can burn 1 blood to get +1 stealth.",
+        "Card Text":"Camarilla: If Claudio is ready, you can use a discard phase action to discard a card requiring Blood Sorcery [tha] to gain 1 pool.\n[MERGED] Claudio can burn 1 blood to get +1 stealth.",
         "Set":{
             "Promo":{
                 "20150211":true
@@ -9624,7 +9624,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -9661,7 +9661,7 @@
         "Disciplines":{
             "Auspex":1,
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2
         },
         "Twd":true,
@@ -9702,7 +9702,7 @@
         "Id":200282,
         "Name":"Clea Auguste d'Holford",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":6,
@@ -9820,7 +9820,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -10144,7 +10144,7 @@
         "Id":200294,
         "Name":"Count Jocalo",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":10,
@@ -10168,7 +10168,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -10177,7 +10177,7 @@
         "Id":200295,
         "Name":"Count Ormonde",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -10453,7 +10453,7 @@
         "Disciplines":{
             "Fortitude":1,
             "Protean":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2
         },
         "Twd":true,
@@ -10498,7 +10498,7 @@
         "Id":201582,
         "Name":"Crystal Lynn",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -10549,7 +10549,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -10684,7 +10684,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Camarilla: If Damaskenos becomes the Prince of Cairo, each ready Follower of Set burns 1 blood. If he becomes the Malkavian Justicar, each ready Follower of Set burns 2 blood.",
+        "Card Text":"Camarilla: If Damaskenos becomes the Prince of Cairo, each ready Minister burns 1 blood. If he becomes the Malkavian Justicar, each ready Minister burns 2 blood.",
         "Set":{
             "AH":{
                 "V":true
@@ -10941,7 +10941,7 @@
         "Id":200318,
         "Name":"Danny Larkshill",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":7,
@@ -11024,7 +11024,7 @@
         "Disciplines":{
             "Animalism":1,
             "Protean":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Fortitude":2
         },
         "Twd":false,
@@ -11058,7 +11058,7 @@
         "ASCII Name":"Darius Styx",
         "Disciplines":{
             "Animalism":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Chimerstry":2,
             "Fortitude":2,
             "Protean":2
@@ -11292,7 +11292,7 @@
         "Id":200328,
         "Name":"Dedefra",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -11925,7 +11925,7 @@
         "Id":200348,
         "Name":"Djuhah, The Bronze Bow",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":7,
@@ -11991,7 +11991,7 @@
         "Id":200350,
         "Name":"Dmitri Borodin",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":10,
@@ -12024,7 +12024,7 @@
         "Id":201584,
         "Name":"Doctor Morocco",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -12931,7 +12931,7 @@
         "ASCII Name":"Dr. John Casey",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -12944,7 +12944,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":9,
-        "Card Text":"Camarilla Prince of London: Ventrue in combat with John cannot strike: combat ends. During the polling step of any referendum, he can discard a card requiring Thaumaturgy [tha] to get +2 votes.",
+        "Card Text":"Camarilla Prince of London: Ventrue in combat with John cannot strike: combat ends. During the polling step of any referendum, he can discard a card requiring Blood Sorcery [tha] to get +2 votes.",
         "Set":{
             "KoTR":{
                 "B":"2"
@@ -12964,7 +12964,7 @@
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -13251,7 +13251,7 @@
             "Animalism":2,
             "Auspex":2,
             "Potence":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Twd":true,
@@ -13506,7 +13506,7 @@
             "Fortitude":1,
             "Chimerstry":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -13916,7 +13916,7 @@
         "ASCII Name":"Ehrich Weiss",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -14004,7 +14004,7 @@
             "Dominate":1,
             "Obtenebration":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -14111,7 +14111,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Camarilla primogen: Elisabetta gets +1 bleed when bleeding a Methuselah who controls a ready Follower of Set.",
+        "Card Text":"Camarilla primogen: Elisabetta gets +1 bleed when bleeding a Methuselah who controls a ready Minister.",
         "Set":{
             "AH":{
                 "V":true
@@ -14130,7 +14130,7 @@
             "Dominate":1,
             "Protean":1,
             "Quietus":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -14139,7 +14139,7 @@
         "Id":201586,
         "Name":"Elisha Tucker",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -14196,7 +14196,7 @@
         "Id":200414,
         "Name":"Elizabeth Dimitros",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"3",
         "Capacity":4,
@@ -14449,7 +14449,7 @@
         "Id":200422,
         "Name":"Enam",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"3",
         "Capacity":6,
@@ -14573,7 +14573,7 @@
         "Disciplines":{
             "Animalism":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Necromancy":2
         },
@@ -14609,7 +14609,7 @@
         "Disciplines":{
             "Animalism":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Necromancy":2,
             "Potence":2
@@ -14706,7 +14706,7 @@
             "Auspex":2,
             "Dominate":2,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -14768,7 +14768,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -14981,7 +14981,7 @@
             "Celerity":1,
             "Potence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -14994,7 +14994,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":8,
-        "Card Text":"Independent: Actions directed at \u00c9tienne cost 1 additional blood. Damage from \u00c9tienne's hand strikes is aggravated in combat with a Baali or Follower of Set.",
+        "Card Text":"Independent: Actions directed at \u00c9tienne cost 1 additional blood. Damage from \u00c9tienne's hand strikes is aggravated in combat with a Baali or Minister.",
         "Set":{
             "Anarchs":{
                 "U":true
@@ -15046,7 +15046,7 @@
             "Auspex":2,
             "Dominate":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -15113,7 +15113,7 @@
             "Dominate":1,
             "Fortitude":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -15183,7 +15183,7 @@
         "Id":200445,
         "Name":"Evan Rogers",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":3,
@@ -15296,7 +15296,7 @@
             "Necromancy":2,
             "Potence":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -15305,7 +15305,7 @@
         "Id":200449,
         "Name":"Ezekiel, Lord of Montreal",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"3",
         "Capacity":6,
@@ -15358,7 +15358,7 @@
         "ASCII Name":"Ezmerelda",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Chimerstry":2,
             "Fortitude":2,
@@ -15391,7 +15391,7 @@
         ],
         "ASCII Name":"Ezra Hawthorne",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -15507,7 +15507,7 @@
             "Fortitude":2,
             "Presence":2,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -15546,7 +15546,7 @@
         "Id":201587,
         "Name":"Farah Sarroub",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -15566,7 +15566,7 @@
             "Auspex":1,
             "Obfuscate":1,
             "Celerity":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -15579,7 +15579,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":8,
-        "Card Text":"Camarilla: Faruq may enter combat with any Assamite controlled by another Methuselah as a (D) action. In that combat, Faruq gets +1 strength.",
+        "Card Text":"Camarilla: Faruq may enter combat with any Banu Haqim controlled by another Methuselah as a (D) action. In that combat, Faruq gets +1 strength.",
         "Set":{
             "AH":{
                 "V":true
@@ -15608,7 +15608,7 @@
         "Id":201588,
         "Name":"Faruq Abd al-Qadir",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":8,
@@ -15658,7 +15658,7 @@
             "Auspex":1,
             "Celerity":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Presence":2
         },
         "Twd":true,
@@ -15668,7 +15668,7 @@
         "Id":200459,
         "Name":"Fatima al-Faqadi",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -15868,7 +15868,7 @@
         ],
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Advanced, Independent: Minions opposing Ferox in combat cannot play cards that require Necromancy [nec] or Thaumaturgy [tha]. He cannot commit diablerie. Flight [FLIGHT].\n[MERGED] Ferox gets +1 intercept when attempting to block (D) actions.",
+        "Card Text":"Advanced, Independent: Minions opposing Ferox in combat cannot play cards that require Necromancy [nec] or Blood Sorcery [tha]. He cannot commit diablerie. Flight [FLIGHT].\n[MERGED] Ferox gets +1 intercept when attempting to block (D) actions.",
         "Set":{
             "Gehenna":{
                 "U":true
@@ -15893,11 +15893,11 @@
         "Id":200466,
         "Name":"Fida'i",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":2,
-        "Card Text":"Independent: Fida'i do not unlock as normal. During your unlock phase, any ready Assamite you control with capacity 7 or more can burn 1 blood to unlock this Fida'i. Blood cursed. Non-unique.",
+        "Card Text":"Independent: Fida'i do not unlock as normal. During your unlock phase, any ready Banu Haqim you control with capacity 7 or more can burn 1 blood to unlock this Fida'i. Blood cursed. Non-unique.",
         "Set":{
             "FN":{
                 "U":true
@@ -15941,7 +15941,7 @@
         "ASCII Name":"Fidus, The Shrunken Beast",
         "Disciplines":{
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Visceratika":1
         },
         "Twd":true,
@@ -16008,7 +16008,7 @@
         "Id":200469,
         "Name":"Flavia, Avenging Angel",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -16092,7 +16092,7 @@
         "ASCII Name":"Fleurdumal",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dementation":2,
             "Presence":2
@@ -16436,7 +16436,7 @@
         "Disciplines":{
             "Dominate":1,
             "Potence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -16524,7 +16524,7 @@
             "Auspex":1,
             "Fortitude":1,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -16554,7 +16554,7 @@
         "ASCII Name":"Frondator",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2
         },
         "Twd":true,
@@ -16679,7 +16679,7 @@
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -17205,7 +17205,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Sabbat: Gentha gets +1 bleed when bleeding a Methuselah who controls a ready Follower of Set. Sterile.",
+        "Card Text":"Sabbat: Gentha gets +1 bleed when bleeding a Methuselah who controls a ready Minister. Sterile.",
         "Set":{
             "LoB":{
                 "U":true
@@ -17284,7 +17284,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -17316,7 +17316,7 @@
             "Auspex":2,
             "Dominate":2,
             "Fortitude":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -17423,7 +17423,7 @@
         "Id":200512,
         "Name":"Ghede",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":10,
@@ -17898,7 +17898,7 @@
         "Id":200526,
         "Name":"Glycon",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"3",
         "Capacity":8,
@@ -17989,7 +17989,7 @@
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -18022,7 +18022,7 @@
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -18154,7 +18154,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2
         },
@@ -18290,7 +18290,7 @@
         "Id":201589,
         "Name":"Greg Mazouni",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -18309,7 +18309,7 @@
         "Disciplines":{
             "Celerity":1,
             "Obfuscate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":false,
         "New":false
@@ -18437,7 +18437,7 @@
             "Auspex":2,
             "Dominate":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -18499,7 +18499,7 @@
         "Disciplines":{
             "Celerity":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Necromancy":2
         },
@@ -18904,7 +18904,7 @@
         "ASCII Name":"Gwendolyn",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Fortitude":2,
             "Potence":2,
@@ -19011,7 +19011,7 @@
         "Id":200558,
         "Name":"Hadrian Garrick",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -19044,11 +19044,11 @@
         "Id":200559,
         "Name":"Hafsa, The Watcher",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":6,
-        "Card Text":"Camarilla: Camarilla vampires must burn 1 blood to attempt to block Hafsa. Assamites get +1 bleed against you. Blood cursed.",
+        "Card Text":"Camarilla: Camarilla vampires must burn 1 blood to attempt to block Hafsa. Banu Haqim get +1 bleed against you. Blood cursed.",
         "Set":{
             "LotN":{
                 "U":true
@@ -19104,7 +19104,7 @@
         "Id":200561,
         "Name":"Halim Bey",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":6,
@@ -19125,7 +19125,7 @@
         "ASCII Name":"Halim Bey",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Serpentis":2
         },
@@ -19240,7 +19240,7 @@
         "ASCII Name":"Hanna Redmonds",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -19341,7 +19341,7 @@
         "Disciplines":{
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -19384,7 +19384,7 @@
         "Id":200569,
         "Name":"Harika Guljan",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":3,
@@ -19809,7 +19809,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Independent: On the first round of combat, Hector can use strikes that require Thaumaturgy [tha] that are not usable on the first round. If Hector is sent to torpor or burned in combat, he is burned, and the controller of the opposing minion gains 4 pool.",
+        "Card Text":"Independent: On the first round of combat, Hector can use strikes that require Blood Sorcery [tha] that are not usable on the first round. If Hector is sent to torpor or burned in combat, he is burned, and the controller of the opposing minion gains 4 pool.",
         "Set":{
             "Gehenna":{
                 "U":true
@@ -19828,7 +19828,7 @@
             "Dominate":1,
             "Necromancy":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -19858,7 +19858,7 @@
         ],
         "ASCII Name":"Heinrick Schlempt",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -19954,7 +19954,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Celerity":2,
             "Dominate":2
@@ -19990,7 +19990,7 @@
             "Daimoinon":1,
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Celerity":2,
             "Dominate":2
@@ -20185,7 +20185,7 @@
         "Id":200594,
         "Name":"Hesha Ruhadze",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -20220,7 +20220,7 @@
         "Id":201591,
         "Name":"Hesha Ruhadze",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -20878,7 +20878,7 @@
         "Id":200614,
         "Name":"Husamettin",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -20968,7 +20968,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -21181,7 +21181,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -21277,7 +21277,7 @@
         ],
         "ASCII Name":"Iliana",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2,
             "Protean":2
@@ -21383,7 +21383,7 @@
         "Id":200630,
         "Name":"Imanna",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -21495,7 +21495,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -21655,7 +21655,7 @@
         "Id":200637,
         "Name":"Intisar",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -22073,7 +22073,7 @@
         "Id":200650,
         "Name":"Izhim abd Azrael",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -22097,7 +22097,7 @@
             "Celerity":2,
             "Obfuscate":2,
             "Quietus":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -22254,7 +22254,7 @@
         "ASCII Name":"Jack Drake",
         "Disciplines":{
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Potence":2
         },
@@ -22426,7 +22426,7 @@
         ],
         "ASCII Name":"Jacob, The Glitch",
         "Disciplines":{
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -22483,7 +22483,7 @@
         "ASCII Name":"Jacob Fermor",
         "Disciplines":{
             "Animalism":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Protean":2
         },
         "Twd":true,
@@ -22579,7 +22579,7 @@
         "Id":200666,
         "Name":"Jalal Sayad",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -22640,7 +22640,7 @@
         "Id":200668,
         "Name":"Jamal",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":10,
@@ -22853,7 +22853,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -22895,11 +22895,11 @@
         "Id":200676,
         "Name":"Janni",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
-        "Card Text":"Independent: Janni inflicts +1 damage when striking with a weapon. She can enter combat with a Follower of Set as a (D) action. Blood cursed.",
+        "Card Text":"Independent: Janni inflicts +1 damage when striking with a weapon. She can enter combat with a Minister as a (D) action. Blood cursed.",
         "Set":{
             "KMW":{
                 "U":true
@@ -23054,7 +23054,7 @@
             "Celerity":1,
             "Presence":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -23090,7 +23090,7 @@
             "Celerity":1,
             "Auspex":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -23120,7 +23120,7 @@
         "ASCII Name":"Jayakumar",
         "Disciplines":{
             "Chimerstry":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Fortitude":2
         },
@@ -23241,7 +23241,7 @@
         "ASCII Name":"Jefferson Foster",
         "Disciplines":{
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2
         },
@@ -23365,7 +23365,7 @@
         "Id":201593,
         "Name":"Jenny Silver",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -23894,7 +23894,7 @@
         "ASCII Name":"Jing Wei",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -24031,7 +24031,7 @@
         "Id":200710,
         "Name":"Joe \"Boot\" Hill",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -24083,7 +24083,7 @@
         ],
         "ASCII Name":"Johan Wrede",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -24178,7 +24178,7 @@
         "Disciplines":{
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -24675,7 +24675,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Laibon: Jubal gets +1 intercept when attempting to block a Follower of Set.",
+        "Card Text":"Laibon: Jubal gets +1 intercept when attempting to block a Minister.",
         "Set":{
             "LoB":{
                 "U":true
@@ -24938,7 +24938,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -24976,7 +24976,7 @@
         "Id":200741,
         "Name":"Kabede Maru",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -25010,7 +25010,7 @@
         "Id":200742,
         "Name":"Kahina the Sorceress",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"3",
         "Capacity":9,
@@ -25100,7 +25100,7 @@
         "Id":200745,
         "Name":"Kalinda",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -25123,7 +25123,7 @@
         ],
         "ASCII Name":"Kalinda",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2
         },
@@ -25134,7 +25134,7 @@
         "Id":201596,
         "Name":"Kalinda",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -25151,7 +25151,7 @@
         ],
         "ASCII Name":"Kalinda",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2
         },
@@ -25224,7 +25224,7 @@
         "Id":200748,
         "Name":"Kamau Jafari",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":4,
@@ -25379,7 +25379,7 @@
         "Id":200752,
         "Name":"Kanya Akhtar",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":2,
@@ -25443,7 +25443,7 @@
         "Id":200754,
         "Name":"Karif al Numair",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":10,
@@ -25532,7 +25532,7 @@
             "Dominate":2,
             "Fortitude":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -25640,7 +25640,7 @@
         "Id":200759,
         "Name":"Kashan",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -25673,11 +25673,11 @@
         "Id":201598,
         "Name":"Kasim Bayar",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":9,
-        "Card Text":"Camarilla Assamite Justicar: Once each combat, Kasim can discard a political action card before range is determined to get +2 strength that combat. +1 bleed.",
+        "Card Text":"Camarilla Banu Haqim Justicar: Once each combat, Kasim can discard a political action card before range is determined to get +2 strength that combat. +1 bleed.",
         "Set":{
             "V5A":{
                 "PBh":"1"
@@ -25694,7 +25694,7 @@
             "Potence":1,
             "Celerity":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -25703,7 +25703,7 @@
         "Id":201604,
         "Name":"Kassandra Tassaki",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -25722,7 +25722,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Celerity":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -25904,7 +25904,7 @@
         "Disciplines":{
             "Auspex":1,
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Presence":2
         },
         "Twd":false,
@@ -26033,7 +26033,7 @@
         "Id":200769,
         "Name":"Kemintiri",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             false,
             "200770"
@@ -26064,7 +26064,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -26073,7 +26073,7 @@
         "Id":200770,
         "Name":"Kemintiri",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             true,
             200769
@@ -26101,7 +26101,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -26170,7 +26170,7 @@
         "Id":200773,
         "Name":"Kephamos, High Priest of Marrakech",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":8,
@@ -26264,7 +26264,7 @@
         "Id":201599,
         "Name":"Khadija Al-Kindi",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":6,
@@ -26283,7 +26283,7 @@
         "Disciplines":{
             "Celerity":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -26313,7 +26313,7 @@
         ],
         "ASCII Name":"Khalid",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Auspex":2,
             "Obfuscate":2,
@@ -26326,7 +26326,7 @@
         "Id":200777,
         "Name":"Khalil Anvari",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":3,
@@ -26421,7 +26421,7 @@
         "Id":200780,
         "Name":"Khay'tall, Snake of Eden",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":9,
@@ -26506,7 +26506,7 @@
             "Obtenebration":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -26692,7 +26692,7 @@
         "Disciplines":{
             "Auspex":1,
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Presence":2
         },
@@ -26752,7 +26752,7 @@
         ],
         "ASCII Name":"Konrad Fleischer",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Auspex":2,
             "Dominate":2,
@@ -26952,7 +26952,7 @@
         "ASCII Name":"Kurt Strauss",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2
         },
         "Twd":true,
@@ -27172,7 +27172,7 @@
             "Fortitude":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -27358,7 +27358,7 @@
         "Id":200809,
         "Name":"Lalitha",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":2,
@@ -27655,7 +27655,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":false,
         "New":false
@@ -27695,7 +27695,7 @@
         "Id":200818,
         "Name":"Layla bint-Nadr",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
@@ -27788,7 +27788,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -27821,7 +27821,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -27848,7 +27848,7 @@
         "ASCII Name":"Lazarus James",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dementation":2,
             "Presence":2
@@ -28005,7 +28005,7 @@
         "ASCII Name":"Lectora",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -28014,11 +28014,11 @@
         "Id":200828,
         "Name":"Legba",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":8,
-        "Card Text":"Sabbat Archbishop of Port-au-Prince: Followers of Set controlled by other Methuselahs cannot cast votes or ballots in referendums called by Legba.",
+        "Card Text":"Sabbat Archbishop of Port-au-Prince: Ministers controlled by other Methuselahs cannot cast votes or ballots in referendums called by Legba.",
         "Set":{
             "TU":{
                 "C":true
@@ -28037,7 +28037,7 @@
             "Obfuscate":1,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -28246,7 +28246,7 @@
             "Auspex":2,
             "Celerity":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -28339,7 +28339,7 @@
             "Presence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -28382,7 +28382,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":4,
-        "Card Text":"Camarilla: If Jun is in torpor, vampires with Thaumaturgy [tha] controlled by your predator get +1 bleed.",
+        "Card Text":"Camarilla: If Jun is in torpor, vampires with Blood Sorcery [tha] controlled by your predator get +1 bleed.",
         "Set":{
             "TR":{
                 "U":true
@@ -28398,7 +28398,7 @@
             "Auspex":1,
             "Celerity":1,
             "Presence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -28729,7 +28729,7 @@
         "Disciplines":{
             "Auspex":1,
             "Potence":1,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Dominate":2
         },
         "Twd":true,
@@ -28950,7 +28950,7 @@
             "Fortitude":1,
             "Presence":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -29029,7 +29029,7 @@
         "Adv":"",
         "Group":"5",
         "Capacity":11,
-        "Card Text":"Camarilla: Cards requiring Thaumaturgy [tha] cost Lord Tremere 1 fewer blood. During your minion phase, you can lock or unlock another ready Tremere or Tremere antitribu. +2 bleed. +1 intercept.",
+        "Card Text":"Camarilla: Cards requiring Blood Sorcery [tha] cost Lord Tremere 1 fewer blood. During your minion phase, you can lock or unlock another ready Tremere or Tremere antitribu. +2 bleed. +1 intercept.",
         "Set":{
             "Promo":{
                 "20150220":true,
@@ -29051,7 +29051,7 @@
             "Auspex":2,
             "Dominate":2,
             "Vicissitude":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -29086,7 +29086,7 @@
             "Dominate":2,
             "Obtenebration":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -29178,7 +29178,7 @@
             "Auspex":2,
             "Dementation":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -29397,7 +29397,7 @@
         ],
         "ASCII Name":"Luca Italicus",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2,
             "Necromancy":2,
@@ -29439,7 +29439,7 @@
             "Auspex":2,
             "Celerity":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -29506,7 +29506,7 @@
         "ASCII Name":"Lucian",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2,
             "Obfuscate":2
@@ -29606,7 +29606,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2,
             "Presence":2
@@ -29751,7 +29751,7 @@
             "Dominate":2,
             "Potence":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -30219,7 +30219,7 @@
             "Auspex":1,
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -30282,7 +30282,7 @@
             "Dominate":1,
             "Obfuscate":1,
             "Presence":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -30425,7 +30425,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":2,
-        "Card Text":"Camarilla: Strike cards that require Thaumaturgy [tha] cost Magdalena an additional blood.",
+        "Card Text":"Camarilla: Strike cards that require Blood Sorcery [tha] cost Magdalena an additional blood.",
         "Set":{
             "DS":{
                 "V":true
@@ -30441,7 +30441,7 @@
         ],
         "ASCII Name":"Magdelena Schaefer",
         "Disciplines":{
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -30659,7 +30659,7 @@
             "Presence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Twd":true,
@@ -30755,7 +30755,7 @@
         "Id":201600,
         "Name":"Marcel",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -30900,7 +30900,7 @@
             "Animalism":2,
             "Chimerstry":2,
             "Fortitude":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -31326,7 +31326,7 @@
             "Necromancy":1,
             "Dominate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -31381,7 +31381,7 @@
         "ASCII Name":"Marie Faucigny",
         "Disciplines":{
             "Dementation":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Obfuscate":2
         },
@@ -31444,7 +31444,7 @@
         "ASCII Name":"Mariel, Lady Thunder",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Obfuscate":2
         },
@@ -31508,7 +31508,7 @@
             "Auspex":2,
             "Dominate":2,
             "Necromancy":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -31706,7 +31706,7 @@
         "Id":200938,
         "Name":"Marla Kenyon",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":4,
@@ -31789,7 +31789,7 @@
         "Disciplines":{
             "Dementation":1,
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2
         },
@@ -31874,7 +31874,7 @@
         ],
         "ASCII Name":"Martin Franckel",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2
         },
         "Twd":true,
@@ -32194,7 +32194,7 @@
         ],
         "ASCII Name":"Masika St. John",
         "Disciplines":{
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -32448,7 +32448,7 @@
         "Id":200959,
         "Name":"Mateusz Kazimirski, Biker of Blood",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -32575,7 +32575,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Independent: While Matthias is ready, Baali and Followers of Set get -1 bleed when bleeding you. +1 intercept. Scarce.",
+        "Card Text":"Independent: While Matthias is ready, Baali and Ministers get -1 bleed when bleeding you. +1 intercept. Scarce.",
         "Set":{
             "BL":{
                 "R":true
@@ -32781,7 +32781,7 @@
         "Id":201603,
         "Name":"Melech",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -32808,7 +32808,7 @@
         "Id":200969,
         "Name":"Melek",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":7,
@@ -32934,7 +32934,7 @@
         ],
         "ASCII Name":"Melisande",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Celerity":2,
             "Dominate":2,
@@ -33046,7 +33046,7 @@
             "Celerity":2,
             "Potence":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -33081,7 +33081,7 @@
             "Celerity":2,
             "Potence":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -33170,7 +33170,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -33210,7 +33210,7 @@
         "Id":200981,
         "Name":"Michael diCarlo",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
@@ -33324,7 +33324,7 @@
             "Animalism":2,
             "Fortitude":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -33384,7 +33384,7 @@
             "Auspex":2,
             "Dominate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -33517,7 +33517,7 @@
         "Id":201605,
         "Name":"Milton Fox",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":3,
@@ -33571,7 +33571,7 @@
             "Animalism":2,
             "Fortitude":2,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -33756,7 +33756,7 @@
         "Id":200997,
         "Name":"Missy Shillingford",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -33841,7 +33841,7 @@
             "Celerity":2,
             "Dominate":2,
             "Obfuscate":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Twd":true,
@@ -33999,7 +33999,7 @@
         "ASCII Name":"Monica Chang",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -34140,7 +34140,7 @@
         "Id":201008,
         "Name":"Monty Coven",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":8,
@@ -34323,7 +34323,7 @@
         "Disciplines":{
             "Celerity":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -34440,7 +34440,7 @@
             "Auspex":1,
             "Dominate":1,
             "Fortitude":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -34538,7 +34538,7 @@
             "Auspex":1,
             "Potence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -34581,7 +34581,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":7,
-        "Card Text":"Camarilla Prince of Istanbul: Combat cards requiring Serpentis [ser] cost Followers of Set an additional blood when in combat with Murat.",
+        "Card Text":"Camarilla Prince of Istanbul: Combat cards requiring Serpentis [ser] cost Ministers an additional blood when in combat with Murat.",
         "Set":{
             "AH":{
                 "V":true
@@ -34837,7 +34837,7 @@
         ],
         "ASCII Name":"Nahir",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Dominate":2,
             "Obtenebration":2,
@@ -34913,7 +34913,7 @@
         "Id":201033,
         "Name":"Nakhthorheb",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":10,
@@ -35078,7 +35078,7 @@
         "ASCII Name":"Nassir",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -35217,7 +35217,7 @@
         "Id":201607,
         "Name":"Nayarana",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":4,
@@ -35235,7 +35235,7 @@
         "ASCII Name":"Nayarana",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -35301,7 +35301,7 @@
         "Id":201042,
         "Name":"Nefertiti",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             false,
             "201520"
@@ -35338,7 +35338,7 @@
         "Id":201520,
         "Name":"Nefertiti",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             true,
             201042
@@ -35375,7 +35375,7 @@
         "Id":201043,
         "Name":"Neferu",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":9,
@@ -35400,7 +35400,7 @@
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -35439,7 +35439,7 @@
         "Id":201045,
         "Name":"Nehsi",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":10,
@@ -35504,7 +35504,7 @@
         "Id":201047,
         "Name":"Nepata",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -35564,7 +35564,7 @@
             "Fortitude":2,
             "Obfuscate":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -35599,7 +35599,7 @@
             "Fortitude":2,
             "Obfuscate":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -35801,7 +35801,7 @@
             "Dominate":1,
             "Potence":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Vicissitude":1
         },
         "Twd":true,
@@ -36000,7 +36000,7 @@
         "Id":201062,
         "Name":"Nizzam al-Latif",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -36094,11 +36094,11 @@
         "Id":201608,
         "Name":"Nonu Dis",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":8,
-        "Card Text":"Anarch: If Nonu Dis is ready during your master phase, you can add 1 blood to a ready Follower of Set you control after playing a master card. +1 bleed.",
+        "Card Text":"Anarch: If Nonu Dis is ready during your master phase, you can add 1 blood to a ready Minister you control after playing a master card. +1 bleed.",
         "Set":{
             "V5A":{
                 "PMin":"1"
@@ -36365,7 +36365,7 @@
         "Id":201072,
         "Name":"Ogwon",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":7,
@@ -36510,7 +36510,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":9,
-        "Card Text":"Camarilla: Vampires opposing Oliver in combat may not end combat as a strike. Once each action, he may burn a card that requires Thaumaturgy [tha] from your hand to get +1 bleed.",
+        "Card Text":"Camarilla: Vampires opposing Oliver in combat may not end combat as a strike. Once each action, he may burn a card that requires Blood Sorcery [tha] from your hand to get +1 bleed.",
         "Set":{
             "CE":{
                 "V":true
@@ -36531,7 +36531,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -36571,7 +36571,7 @@
         "Id":201078,
         "Name":"Olugbenga",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -36632,7 +36632,7 @@
         "Id":201080,
         "Name":"Omer",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -36780,7 +36780,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -37054,7 +37054,7 @@
             "Protean":1,
             "Necromancy":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -37124,7 +37124,7 @@
         "Id":201095,
         "Name":"Parmenides",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -37154,7 +37154,7 @@
         "Id":201096,
         "Name":"Parnassus",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":7,
@@ -37178,7 +37178,7 @@
         "ASCII Name":"Parnassus",
         "Disciplines":{
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Quietus":2
         },
@@ -37235,7 +37235,7 @@
         "Disciplines":{
             "Dominate":1,
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2
         },
         "Twd":false,
@@ -37270,7 +37270,7 @@
         "Disciplines":{
             "Necromancy":1,
             "Quietus":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -37331,7 +37331,7 @@
             "Presence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -37581,7 +37581,7 @@
         "Id":201109,
         "Name":"Pentweret",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -37735,7 +37735,7 @@
             "Daimoinon":2,
             "Dementation":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -37770,7 +37770,7 @@
             "Daimoinon":2,
             "Dementation":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -37924,7 +37924,7 @@
         "ASCII Name":"Phaedyme",
         "Disciplines":{
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Chimerstry":2,
             "Dementation":2,
@@ -37958,7 +37958,7 @@
             "Fortitude":1,
             "Auspex":2,
             "Necromancy":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -38118,7 +38118,7 @@
         "ASCII Name":"Pieter",
         "Disciplines":{
             "Fortitude":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Obfuscate":2,
             "Protean":2
         },
@@ -38152,7 +38152,7 @@
         "Disciplines":{
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -38244,7 +38244,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -38253,7 +38253,7 @@
         "Id":201129,
         "Name":"Porphyrion",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -38393,7 +38393,7 @@
             "Necromancy":1,
             "Dominate":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -38498,7 +38498,7 @@
         "Id":201137,
         "Name":"Qadir ul-Ghani",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":9,
@@ -38519,7 +38519,7 @@
         "ASCII Name":"Qadir ul-Ghani",
         "Disciplines":{
             "Necromancy":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2,
             "Quietus":2
@@ -38699,7 +38699,7 @@
         "Id":201143,
         "Name":"Qufur am-Heru",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":7,
@@ -38720,7 +38720,7 @@
         "ASCII Name":"Qufur am-Heru",
         "Disciplines":{
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Obfuscate":2,
             "Presence":2,
             "Serpentis":2
@@ -38816,7 +38816,7 @@
         "ASCII Name":"Quira, The Bitch Queen",
         "Disciplines":{
             "Obtenebration":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Obfuscate":2
         },
@@ -38894,7 +38894,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Camarilla: As a (D) action, Radeyah can enter combat with any Follower of Set controlled by another Methuselah.",
+        "Card Text":"Camarilla: As a (D) action, Radeyah can enter combat with any Minister controlled by another Methuselah.",
         "Set":{
             "AH":{
                 "V":true
@@ -39384,7 +39384,7 @@
         "Disciplines":{
             "Auspex":1,
             "Potence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Obfuscate":2,
             "Presence":2
         },
@@ -39572,7 +39572,7 @@
         "Id":201170,
         "Name":"Rebekah",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"3",
         "Capacity":9,
@@ -39628,7 +39628,7 @@
             "Potence":1,
             "Auspex":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -39814,7 +39814,7 @@
             "Obfuscate":1,
             "Auspex":2,
             "Dementation":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -39853,7 +39853,7 @@
         "Id":201179,
         "Name":"Renenet",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":5,
@@ -39948,7 +39948,7 @@
         "Adv":"",
         "Group":"2",
         "Capacity":6,
-        "Card Text":"Sabbat bishop: Damaging strikes made by Reverend Blackwood that require Thaumaturgy [tha] inflict +1 damage.",
+        "Card Text":"Sabbat bishop: Damaging strikes made by Reverend Blackwood that require Blood Sorcery [tha] inflict +1 damage.",
         "Set":{
             "Sabbat":{
                 "V":true
@@ -39966,7 +39966,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -39975,7 +39975,7 @@
         "Id":201183,
         "Name":"Reverend Djoser Jones",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":3,
@@ -40036,7 +40036,7 @@
         "Id":201185,
         "Name":"Reza Fatir, The Dark Angel",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":6,
@@ -40088,7 +40088,7 @@
         ],
         "ASCII Name":"Richard Tauber, Ayelea's Puppet",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2
         },
         "Twd":true,
@@ -40245,7 +40245,7 @@
         "Disciplines":{
             "Animalism":2,
             "Auspex":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Twd":true,
@@ -40366,7 +40366,7 @@
         "Disciplines":{
             "Celerity":1,
             "Obtenebration":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Mytherceria":2
         },
@@ -40589,7 +40589,7 @@
         ],
         "ASCII Name":"Roreca Quaid",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -40676,7 +40676,7 @@
         ],
         "ASCII Name":"Rosalina Cortez",
         "Disciplines":{
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -41019,7 +41019,7 @@
             "Vicissitude":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -41171,7 +41171,7 @@
             "Auspex":1,
             "Dominate":1,
             "Potence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -41269,7 +41269,7 @@
         "Id":201221,
         "Name":"Sahira Siraj",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":4,
@@ -41291,7 +41291,7 @@
         "Disciplines":{
             "Obfuscate":1,
             "Serpentis":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -41330,7 +41330,7 @@
         "Id":201223,
         "Name":"Sajid al Misbah",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":4,
@@ -41414,7 +41414,7 @@
         ],
         "ASCII Name":"Salinger",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Potence":2,
             "Presence":2
@@ -41516,7 +41516,7 @@
         "ASCII Name":"Samantha",
         "Disciplines":{
             "Animalism":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2,
             "Protean":2
@@ -41528,7 +41528,7 @@
         "Id":201229,
         "Name":"Samat Ramal-Ra, Archon",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -41550,7 +41550,7 @@
         "Disciplines":{
             "Presence":1,
             "Serpentis":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Obfuscate":2
         },
         "Twd":true,
@@ -41738,7 +41738,7 @@
         "Id":201236,
         "Name":"Saqqaf, Keeper of the Grand Temple of Set",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":9,
@@ -41827,7 +41827,7 @@
         "ASCII Name":"Sarah Cobbler",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -41926,7 +41926,7 @@
         "Id":201242,
         "Name":"Sarrasine",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             false,
             "201243"
@@ -41962,7 +41962,7 @@
         "Id":201243,
         "Name":"Sarrasine",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":[
             true,
             201242
@@ -42031,7 +42031,7 @@
             "Animalism":1,
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Twd":true,
@@ -42064,7 +42064,7 @@
             "Animalism":1,
             "Dominate":1,
             "Auspex":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Twd":true,
@@ -42159,7 +42159,7 @@
             "Auspex":2,
             "Fortitude":2,
             "Obeah":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Valeren":2
         },
         "Twd":true,
@@ -42274,7 +42274,7 @@
         ],
         "ASCII Name":"Schuyler",
         "Disciplines":{
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -42566,7 +42566,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -42669,7 +42669,7 @@
         "Id":201265,
         "Name":"Seren Sukardi",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":7,
@@ -42695,7 +42695,7 @@
             "Presence":1,
             "Obfuscate":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -42802,7 +42802,7 @@
         "Id":201269,
         "Name":"Seterpenre",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":10,
@@ -42853,7 +42853,7 @@
         "ASCII Name":"Sha-Ennu",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Auspex":2,
             "Chimerstry":2,
@@ -42896,7 +42896,7 @@
         "Id":201272,
         "Name":"Shahara al-Rashwa",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -43206,7 +43206,7 @@
         "Id":201282,
         "Name":"Shemti",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":9,
@@ -43488,7 +43488,7 @@
         "Id":201290,
         "Name":"Sir Marriot D'Urban",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
@@ -43524,7 +43524,7 @@
         "Adv":"",
         "Group":"3",
         "Capacity":6,
-        "Card Text":"Camarilla: Ralph gets +1 strength in combat with a younger Camarilla vampire. Followers of Set get +1 bleed when bleeding Ralph's controller.",
+        "Card Text":"Camarilla: Ralph gets +1 strength in combat with a younger Camarilla vampire. Ministers get +1 bleed when bleeding Ralph's controller.",
         "Set":{
             "CE":{
                 "V":true
@@ -43586,7 +43586,7 @@
         "Id":201293,
         "Name":"Sisocharis",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"5",
         "Capacity":4,
@@ -44124,7 +44124,7 @@
             "Potence":1,
             "Presence":1,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -44282,7 +44282,7 @@
         "Disciplines":{
             "Animalism":1,
             "Auspex":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Vicissitude":1
         },
         "Twd":true,
@@ -44442,7 +44442,7 @@
             "Animalism":2,
             "Obfuscate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -44511,7 +44511,7 @@
         "Id":201323,
         "Name":"Sukainah",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"5",
         "Capacity":3,
@@ -44569,7 +44569,7 @@
         "Id":201324,
         "Name":"Sundervere, The Devil Brahmin",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":8,
@@ -44593,7 +44593,7 @@
             "Auspex":2,
             "Presence":2,
             "Serpentis":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -44669,11 +44669,11 @@
         "Id":201327,
         "Name":"Sutekh, The Dark God",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"2",
         "Capacity":11,
-        "Card Text":"Independent. 2 votes (titled): You can gain 1 pool after resolution of any successful action to recruit a mummy ally. During your unlock phase, you can move 1 blood between Sutekh and another Follower of Set you control. +1 bleed.",
+        "Card Text":"Independent. 2 votes (titled): You can gain 1 pool after resolution of any successful action to recruit a mummy ally. During your unlock phase, you can move 1 blood between Sutekh and another Minister you control. +1 bleed.",
         "Set":{
             "FN":{
                 "R":true
@@ -44757,7 +44757,7 @@
         "ASCII Name":"Sybren van Oosten",
         "Disciplines":{
             "Dominate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Fortitude":2,
             "Presence":2
         },
@@ -45076,7 +45076,7 @@
         "ASCII Name":"Tammy Walenski",
         "Disciplines":{
             "Necromancy":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Obfuscate":2,
             "Potence":2
@@ -45149,7 +45149,7 @@
         "Id":201340,
         "Name":"Tansu Bekir",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":4,
@@ -45232,7 +45232,7 @@
         "Disciplines":{
             "Auspex":1,
             "Necromancy":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":false,
         "New":false
@@ -45271,7 +45271,7 @@
         "Id":201344,
         "Name":"Tariq, The Silent",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             false,
             "201345"
@@ -45307,7 +45307,7 @@
         "Id":201345,
         "Name":"Tariq, The Silent",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             true,
             201344
@@ -45368,7 +45368,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -45534,14 +45534,14 @@
         "Id":201352,
         "Name":"Tegyrius, Vizier",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             false,
             "201353"
         ],
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Camarilla: If Tegyrius is ready, any Assamite can put 1 allegiance counter on themselves as a +1 stealth action. Any Assamite with any allegiance counters is considered Camarilla. Blood cursed. +1 strength.",
+        "Card Text":"Camarilla: If Tegyrius is ready, any Banu Haqim can put 1 allegiance counter on themselves as a +1 stealth action. Any Banu Haqim with any allegiance counters is considered Camarilla. Blood cursed. +1 strength.",
         "Set":{
             "FN":{
                 "U":true
@@ -45570,14 +45570,14 @@
         "Id":201353,
         "Name":"Tegyrius, Vizier",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             true,
             201352
         ],
         "Group":"2",
         "Capacity":9,
-        "Card Text":"Camarilla: While Tegyrius is ready, each Camarilla Assamite can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.\n[MERGED] Assamite Justicar.",
+        "Card Text":"Camarilla: While Tegyrius is ready, each Camarilla Banu Haqim can burn 1 blood to get +1 vote during the polling step of any referendum. Blood cursed.\n[MERGED] Banu Haqim Justicar.",
         "Set":{
             "Anarchs":{
                 "U":true
@@ -45693,7 +45693,7 @@
             "Dominate":1,
             "Obfuscate":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -45812,7 +45812,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -45982,7 +45982,7 @@
         "Id":201365,
         "Name":"Thetmes, Caliph of Alamut",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":10,
@@ -46106,7 +46106,7 @@
             "Animalism":1,
             "Auspex":1,
             "Celerity":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2
         },
         "Twd":true,
@@ -46146,7 +46146,7 @@
         "Id":201370,
         "Name":"Thucimia",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":10,
@@ -46696,7 +46696,7 @@
         "Disciplines":{
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -46765,7 +46765,7 @@
             "Celerity":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -47268,7 +47268,7 @@
             "Potence":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -47539,7 +47539,7 @@
         "Id":201413,
         "Name":"Ur-Shulgi, The Shepherd",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":11,
@@ -47564,7 +47564,7 @@
             "Dominate":2,
             "Obfuscate":2,
             "Quietus":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -47701,7 +47701,7 @@
         "Adv":"",
         "Group":"4",
         "Capacity":8,
-        "Card Text":"Sabbat: Uta can enter combat with a minion controlled by another Methuselah as a (D) action. Cards that require Thaumaturgy [tha] cost her 1 less blood.",
+        "Card Text":"Sabbat: Uta can enter combat with a minion controlled by another Methuselah as a (D) action. Cards that require Blood Sorcery [tha] cost her 1 less blood.",
         "Set":{
             "Third":{
                 "PTr":"2"
@@ -47717,7 +47717,7 @@
             "Serpentis":1,
             "Auspex":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -47798,7 +47798,7 @@
         ],
         "Group":"4",
         "Capacity":7,
-        "Card Text":"Camarilla. Red List: If Valerius strikes with a strike that requires Thaumaturgy [tha], he gains an optional additional strike (limited), only usable to strike with a strike that requires Thaumaturgy. Infernal.",
+        "Card Text":"Camarilla. Red List: If Valerius strikes with a strike that requires Blood Sorcery [tha], he gains an optional additional strike (limited), only usable to strike with a strike that requires Blood Sorcery. Infernal.",
         "Set":{
             "KMW":{
                 "U":true,
@@ -47817,7 +47817,7 @@
             "Auspex":2,
             "Daimoinon":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -47852,7 +47852,7 @@
             "Auspex":2,
             "Daimoinon":2,
             "Dominate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -47946,7 +47946,7 @@
         "ASCII Name":"Valois Sang, The Watcher",
         "Disciplines":{
             "Necromancy":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Auspex":2,
             "Dominate":2
         },
@@ -47989,11 +47989,11 @@
         "Id":201426,
         "Name":"Vardar Vardarian",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"4",
         "Capacity":6,
-        "Card Text":"Independent: Followers of Set get -1 strength in combat with Vardar. Blood cursed.",
+        "Card Text":"Independent: Ministers get -1 strength in combat with Vardar. Blood cursed.",
         "Set":{
             "KMW":{
                 "U":true
@@ -48354,7 +48354,7 @@
             "Chimerstry":2,
             "Fortitude":2,
             "Presence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -48586,7 +48586,7 @@
         "Adv":"",
         "Group":"7",
         "Capacity":6,
-        "Card Text":"Camarilla: While Victoria is ready, you can discard 1 card during a bleed action to give an acting Assamite +1 bleed. +1 bleed.",
+        "Card Text":"Camarilla: While Victoria is ready, you can discard 1 card during a bleed action to give an acting Banu Haqim +1 bleed. +1 bleed.",
         "Set":{
             "Promo":{
                 "20211015":true
@@ -48631,7 +48631,7 @@
         ],
         "ASCII Name":"Victorine Lafourcade",
         "Disciplines":{
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Dominate":2,
             "Fortitude":2,
             "Presence":2
@@ -48727,7 +48727,7 @@
             "Dominate":1,
             "Fortitude":1,
             "Potence":1,
-            "Thaumaturgy":1
+            "Blood Sorcery":1
         },
         "Twd":true,
         "New":false
@@ -48758,7 +48758,7 @@
         "Disciplines":{
             "Dominate":1,
             "Presence":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Vicissitude":1
         },
         "Twd":true,
@@ -48918,7 +48918,7 @@
             "Presence":1,
             "Vicissitude":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -48962,7 +48962,7 @@
         "Id":201615,
         "Name":"Vivian VI",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"6",
         "Capacity":7,
@@ -48980,7 +48980,7 @@
         "ASCII Name":"Vivian VI",
         "Disciplines":{
             "Obfuscate":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Presence":2,
             "Protean":2
         },
@@ -49013,7 +49013,7 @@
             "Animalism":2,
             "Dominate":2,
             "Protean":2,
-            "Thaumaturgy":2,
+            "Blood Sorcery":2,
             "Vicissitude":2
         },
         "Twd":true,
@@ -49240,7 +49240,7 @@
         "Id":201594,
         "Name":"Warmaksan",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -49259,7 +49259,7 @@
         "Disciplines":{
             "Celerity":1,
             "Obfuscate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -49476,7 +49476,7 @@
             "Auspex":2,
             "Dementation":2,
             "Obfuscate":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -49509,7 +49509,7 @@
             "Dominate":2,
             "Presence":2,
             "Protean":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -49552,7 +49552,7 @@
         "Id":201472,
         "Name":"Wise Frog",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"6",
         "Capacity":5,
@@ -49929,7 +49929,7 @@
             "Dominate":1,
             "Presence":1,
             "Auspex":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -49967,7 +49967,7 @@
         "Id":201485,
         "Name":"Yazid Tamari",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             false,
             "201486"
@@ -50003,7 +50003,7 @@
         "Id":201486,
         "Name":"Yazid Tamari",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":[
             true,
             201485
@@ -50060,7 +50060,7 @@
             "Presence":1,
             "Auspex":2,
             "Celerity":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -50096,7 +50096,7 @@
             "Animalism":2,
             "Obfuscate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -50130,7 +50130,7 @@
             "Animalism":2,
             "Obfuscate":2,
             "Potence":2,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":false,
         "New":false
@@ -50294,11 +50294,11 @@
         "Id":201495,
         "Name":"Yusuf, Scribe of Alamut",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":5,
-        "Card Text":"Independent: If Yusuf performs a successful action to equip with an equipment requiring an Assamite, he can unlock during the discard phase. Blood cursed.",
+        "Card Text":"Independent: If Yusuf performs a successful action to equip with an equipment requiring an Banu Haqim, he can unlock during the discard phase. Blood cursed.",
         "Set":{
             "FN":{
                 "U":true
@@ -50463,7 +50463,7 @@
         "Id":201500,
         "Name":"Zahir, Hand of the Silsila",
         "Type":"Vampire",
-        "Clan":"Assamite",
+        "Clan":"Banu Haqim",
         "Adv":"",
         "Group":"2",
         "Capacity":6,
@@ -50484,7 +50484,7 @@
         "ASCII Name":"Zahir, Hand of the Silsila",
         "Disciplines":{
             "Quietus":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Celerity":2,
             "Obfuscate":2
         },
@@ -50520,7 +50520,7 @@
         "Disciplines":{
             "Auspex":1,
             "Dominate":1,
-            "Thaumaturgy":2
+            "Blood Sorcery":2
         },
         "Twd":true,
         "New":false
@@ -50548,7 +50548,7 @@
         "Disciplines":{
             "Auspex":1,
             "Quietus":1,
-            "Thaumaturgy":1,
+            "Blood Sorcery":1,
             "Animalism":2,
             "Fortitude":2,
             "Protean":2
@@ -50655,7 +50655,7 @@
         "Id":201506,
         "Name":"Zhenga",
         "Type":"Vampire",
-        "Clan":"Follower of Set",
+        "Clan":"Ministry",
         "Adv":"",
         "Group":"4",
         "Capacity":5,

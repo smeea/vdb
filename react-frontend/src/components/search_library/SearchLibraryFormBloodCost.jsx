@@ -15,7 +15,7 @@ function SearchLibraryFormBloodCost(props) {
       name: 'blood',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="me-3" />
           {i}
         </>
       ),
@@ -35,7 +35,7 @@ function SearchLibraryFormBloodCost(props) {
       name: 'blood',
       label: (
         <>
-          <span className="margin-half" />
+          <span className="me-3" />
           {i[1]}
         </>
       ),

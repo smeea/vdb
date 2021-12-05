@@ -6,6 +6,7 @@ function SearchLibraryFormTraits(props) {
     ['intercept', '+Intercept / -Stealth'],
     ['stealth', '+Stealth / -Intercept'],
     ['bleed', '+Bleed'],
+    ['votes-title', '+Votes / Title'],
     ['strength', '+Strength'],
     ['dodge', 'Dodge'],
     ['maneuver', 'Maneuver'],
@@ -14,11 +15,12 @@ function SearchLibraryFormTraits(props) {
     ['prevent', 'Prevent'],
     ['press', 'Press'],
     ['combat ends', 'Combat Ends'],
-    ['enter combat', 'Enter Combat'],
   ];
 
   const traitsRight = [
+    ['enter combat', 'Enter Combat'],
     ['bounce bleed', 'Bounce Bleed'],
+    ['reduce bleed', 'Reduce Bleed'],
     ['unlock', 'Wake / Unlock'],
     ['black hand', 'Black Hand'],
     ['seraph', 'Seraph'],
@@ -27,7 +29,7 @@ function SearchLibraryFormTraits(props) {
     ['burn', 'Burn Option'],
     ['banned', 'Banned'],
     ['non-twd', 'Not in TWD'],
-    ['no-requirements', 'No Requirements'],
+    ['no-requirements', 'No Requirement'],
   ];
 
   const traitsLeftforms = traitsLeft.map((i, index) => {
@@ -68,10 +70,10 @@ function SearchLibraryFormTraits(props) {
         </Col>
       </Row>
       <Row className="mx-0">
-        <Col xs={6} className="d-inline pe-0">
+        <Col xs={7} className="d-inline pe-0">
           {traitsLeftforms}
         </Col>
-        <Col xs={6} className="d-inline pe-0">
+        <Col xs={5} className="d-inline px-0">
           {traitsRightforms}
         </Col>
       </Row>

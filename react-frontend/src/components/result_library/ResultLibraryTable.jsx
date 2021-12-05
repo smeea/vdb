@@ -144,6 +144,7 @@ function ResultLibraryTable(props) {
           </td>
           <td className="disciplines px-1" onClick={() => handleClick()}>
             <ResultLibraryDisciplines value={card['Discipline']} />
+            {card['Discipline'] && card['Clan'] && '+'}
             <ResultLibraryClan value={card['Clan']} />
           </td>
           {!isMobile ? (
