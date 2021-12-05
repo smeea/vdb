@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultDisciplineImage from 'components';
+import { ResultDisciplineImage } from 'components';
 import { useApp } from 'context';
 
 function DeckCryptDisciplines(props) {

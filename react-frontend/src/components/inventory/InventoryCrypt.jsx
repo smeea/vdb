@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { InventoryCryptTable, InventoryFilterForm } from 'components';
-import clansList from 'components/forms_data/clansList.json';
+import clansList from 'components/deck/forms_data/clansList.json';
 import { useApp } from 'context';
 
 function InventoryCrypt(props) {

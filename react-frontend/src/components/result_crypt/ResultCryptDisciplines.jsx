@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultDisciplineImage from './ResultDisciplineImage.jsx';
+import { ResultDisciplineImage } from 'components';
 
 function ResultCryptDisciplines(props) {
   const emptyCols = [];

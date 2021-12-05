@@ -1,8 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
 import { useApp } from 'context';
-import ResultDisciplineImage from 'components';
-import clansList from './forms_data/clansList.json';
+import { ResultDisciplineImage } from 'components';
+import clansList from 'components/deck/forms_data/clansList.json';
 
 function TwdSearchFormClan(props) {
   const { isMobile } = useApp();

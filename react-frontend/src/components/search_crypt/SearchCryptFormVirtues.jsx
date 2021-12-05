@@ -1,5 +1,5 @@
 import React from 'react';
-import virtuesList from './forms_data/virtuesList.json';
+import virtuesList from 'components/deck/forms_data/virtuesList.json';
 
 function SearchCryptFormVirtues(props) {
   const virtuesforms = virtuesList.map((i, index) => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import ResultDisciplineImage from './ResultDisciplineImage.jsx';
-import disciplinesList from './forms_data/disciplinesList.json';
+import { ResultDisciplineImage } from 'components';
+import disciplinesList from 'components/deck/forms_data/disciplinesList.json';
 
 function SearchCryptFormDisciplines(props) {
   const disciplinesforms = disciplinesList.map((d, index) => {
