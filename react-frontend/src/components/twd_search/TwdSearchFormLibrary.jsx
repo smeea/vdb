@@ -50,7 +50,10 @@ function TwdSearchFormLibrary(props) {
               </div>
             </OverlayTrigger>
           ) : (
-            <div onClick={() => setModalCard(libraryCardBase[id])}>
+            <div
+              className="name"
+              onClick={() => setModalCard(libraryCardBase[id])}
+            >
               <ResultLibraryName card={libraryCardBase[id]} />
             </div>
           )}
