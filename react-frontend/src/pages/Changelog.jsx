@@ -11,6 +11,19 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2021-12-05:</h6>
+            <ul>
+              <li>
+                Fix critical bug with promo cards from HB2 (Dracon, Capucin,
+                etc)
+              </li>
+              <li>Rename Thaumaturgy to Blood Sorcery</li>
+              <li>
+                Add library search traits &quot;reduce bleed&quot; and
+                &quot;+votes / title&quot;
+              </li>
+            </ul>
+
             <h6>2021-12-03:</h6>
             <ul>
               <li>Finalize transition to Banu Haqim/Ministry</li>

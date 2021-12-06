@@ -127,10 +127,10 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
         card['Set'] = {}
 
         for set in sets:
-            if ':' in set:
-                set = set.split(':')
-            elif '-' in set:
+            if '-' in set:
                 set = set.split('-')
+            elif ':' in set:
+                set = set.split(':')
 
             precons = set[1].split('/')
 

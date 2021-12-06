@@ -24,9 +24,11 @@ from api import db
 from models import User
 from models import Deck
 
+
 @login.unauthorized_handler
 def unauthorized_handler():
     return Response(json.dumps({'Not logged in': True}), 401)
+
 
 @app.route('/api/inventory', methods=['GET'])
 @login_required
@@ -73,6 +75,7 @@ def inventoryImportRoute():
         new_cards = inventoryImport(request.json)
         merged_cards = i.copy() if i else {}
         for k, v in new_cards.items():
+            k = int(k)
             if k not in merged_cards:
                 merged_cards[k] = v
             else:
@@ -102,6 +105,7 @@ def inventoryAddCard():
         new_cards = request.json
         merged_cards = i.copy() if i else {}
         for k, v in new_cards.items():
+            k = int(k)
             if k not in merged_cards:
                 merged_cards[k] = v
             else:
@@ -123,6 +127,7 @@ def inventoryDelCard():
         new_cards = request.json
         merged_cards = i.copy() if i else {}
         for k, v in new_cards.items():
+            k = int(k)
             if k in merged_cards:
                 if merged_cards[k] > v:
                     merged_cards[k] = merged_cards[k] - v
@@ -145,6 +150,7 @@ def inventoryChangeCard():
         new_cards = request.json
         merged_cards = i.copy() if i else {}
         for k, v in new_cards.items():
+            k = int(k)
             if v < 0:
                 del merged_cards[k]
             else:
@@ -161,8 +167,6 @@ def inventoryChangeCard():
 @app.route('/api/deck/<string:deckid>', methods=['GET'])
 def showDeck(deckid):
     if len(deckid) == 32:
-        decks = {}
-
         deck = Deck.query.filter_by(deckid=deckid).first()
         if not deck:
             abort(400)
@@ -233,7 +237,9 @@ def updateDeck(deckid):
         if 'cardChange' in request.json:
             new_cards = request.json['cardChange']
             merged_cards = d.cards.copy()
+
             for k, v in new_cards.items():
+                k = int(k)
                 if v < 0:
                     del merged_cards[k]
                 else:
@@ -248,6 +254,7 @@ def updateDeck(deckid):
             new_cards = request.json['cardAdd']
             merged_cards = d.cards.copy()
             for k, v in new_cards.items():
+                k = int(k)
                 if k not in merged_cards:
                     merged_cards[k] = v
 
@@ -261,18 +268,18 @@ def updateDeck(deckid):
 
             if d.master:
                 master = Deck.query.filter_by(author=current_user,
-                                                deckid=d.master).first()
+                                              deckid=d.master).first()
                 master.name = request.json['name']
 
                 for i in master.branches:
                     j = Deck.query.filter_by(author=current_user,
-                                                deckid=i).first()
+                                             deckid=i).first()
                     j.name = request.json['name']
 
             elif d.branches:
                 for i in d.branches:
                     j = Deck.query.filter_by(author=current_user,
-                                                deckid=i).first()
+                                             deckid=i).first()
                     j.name = request.json['name']
 
     except Exception:
@@ -284,7 +291,6 @@ def updateDeck(deckid):
 
     except Exception:
         pass
-
 
     try:
         if 'description' in request.json:
@@ -298,18 +304,18 @@ def updateDeck(deckid):
 
             if d.master:
                 master = Deck.query.filter_by(author=current_user,
-                                                deckid=d.master).first()
+                                              deckid=d.master).first()
                 master.author_public_name = request.json['author']
 
                 for i in master.branches:
                     j = Deck.query.filter_by(author=current_user,
-                                                deckid=i).first()
+                                             deckid=i).first()
                     j.author_public_name = request.json['author']
 
             elif d.branches:
                 for i in d.branches:
                     j = Deck.query.filter_by(author=current_user,
-                                                deckid=i).first()
+                                             deckid=i).first()
                     j.author_public_name = request.json['author']
 
     except Exception:
@@ -369,7 +375,7 @@ def updateDeck(deckid):
 
     if d.master:
         old_master = Deck.query.filter_by(author=current_user,
-                                            deckid=d.master).first()
+                                          deckid=d.master).first()
         branches = old_master.branches.copy()
         branches.remove(d.deckid)
         branches.append(old_master.deckid)
@@ -378,7 +384,7 @@ def updateDeck(deckid):
         old_master.branches = None
         for b in branches:
             branch_deck = Deck.query.filter_by(author=current_user,
-                                                deckid=b).first()
+                                               deckid=b).first()
             branch_deck.master = d.deckid
 
     db.session.commit()
@@ -474,23 +480,20 @@ def listDecks():
                         db.session.commit()
 
             # Return decks
-
             crypt = {}
             library = {}
 
             for k, v in deck.cards.items():
-
-                int_k = int(k)
-
-                if int_k > 200000:
-                    crypt[int_k] = {'q': v}
+                k = int(k)
+                if k > 200000:
+                    crypt[k] = {'q': v}
                     if k in deck.used_in_inventory:
-                        crypt[int_k]['i'] = deck.used_in_inventory[k]
+                        crypt[k]['i'] = deck.used_in_inventory[k]
 
-                elif int_k < 200000:
-                    library[int_k] = {'q': v}
+                elif k < 200000:
+                    library[k] = {'q': v}
                     if k in deck.used_in_inventory:
-                        library[int_k]['i'] = deck.used_in_inventory[k]
+                        library[k]['i'] = deck.used_in_inventory[k]
 
             decks[deck.deckid] = {
                 'name': deck.name,
@@ -527,11 +530,11 @@ def newDeck():
         cards = request.json['cards'] if 'cards' in request.json else {}
 
         d = Deck(deckid=deckid,
-                    name=request.json['deckname'],
-                    author_public_name=author,
-                    description=description,
-                    author=current_user,
-                    cards=cards)
+                 name=request.json['deckname'],
+                 author_public_name=author,
+                 description=description,
+                 author=current_user,
+                 cards=cards)
 
         db.session.add(d)
         db.session.commit()
@@ -548,21 +551,21 @@ def newDeck():
 @login_required
 def createBranch():
     master = Deck.query.filter_by(author=current_user,
-                                    deckid=request.json['master']).first()
+                                  deckid=request.json['master']).first()
     source = Deck.query.filter_by(author=current_user,
-                                    deckid=request.json['source']).first()
+                                  deckid=request.json['source']).first()
     branch_name = f"#{len(master.branches) + 1}" if master.branches else "#1"
 
     deckid = uuid.uuid4().hex
     branch = Deck(deckid=deckid,
-                    name=master.name,
-                    branch_name=branch_name,
-                    author_public_name=source.author_public_name,
-                    description=source.description,
-                    author=current_user,
-                    tags=source.tags,
-                    master=master.deckid,
-                    cards=source.cards)
+                  name=master.name,
+                  branch_name=branch_name,
+                  author_public_name=source.author_public_name,
+                  description=source.description,
+                  author=current_user,
+                  tags=source.tags,
+                  master=master.deckid,
+                  cards=source.cards)
 
     branches = master.branches.copy() if master.branches else []
     branches.append(deckid)
@@ -581,7 +584,7 @@ def createBranch():
 @login_required
 def importBranch():
     master = Deck.query.filter_by(author=current_user,
-                                    deckid=request.json['master']).first()
+                                  deckid=request.json['master']).first()
     new_branches = request.json['branches']
     branches = []
 
@@ -594,14 +597,14 @@ def importBranch():
             description += f"{b['comments']}"
 
         branch = Deck(deckid=deckid,
-                        name=master.name,
-                        branch_name = f"#{len(new_branches) - 1 - i}",
-                        author_public_name=master.author_public_name,
-                        description=description,
-                        author=current_user,
-                        tags=master.tags,
-                        master=master.deckid,
-                        cards=b['cards'])
+                      name=master.name,
+                      branch_name=f"#{len(new_branches) - 1 - i}",
+                      author_public_name=master.author_public_name,
+                      description=description,
+                      author=current_user,
+                      tags=master.tags,
+                      master=master.deckid,
+                      cards=b['cards'])
 
         branches.append(deckid)
 
@@ -621,10 +624,10 @@ def importBranch():
 def removeBranch():
     try:
         d = Deck.query.filter_by(author=current_user,
-                                    deckid=request.json['deckid']).first()
+                                 deckid=request.json['deckid']).first()
         if d.master:
             master = Deck.query.filter_by(author=current_user,
-                                            deckid=d.master).first()
+                                          deckid=d.master).first()
 
             branches = master.branches.copy()
             branches.remove(d.deckid)
@@ -636,14 +639,13 @@ def removeBranch():
 
         else:
             j = Deck.query.filter_by(author=current_user,
-                                        deckid=d.branches[-1]).first()
+                                     deckid=d.branches[-1]).first()
 
             branches = d.branches.copy()
             branches.remove(j.deckid)
             j.branches = branches
             for i in branches:
-                k = Deck.query.filter_by(author=current_user,
-                                            deckid=i).first()
+                k = Deck.query.filter_by(author=current_user, deckid=i).first()
                 k.master = j.deckid
 
             j.master = ''
@@ -781,15 +783,16 @@ def urlCloneDeck():
 def importDeck():
     try:
         [name, author, description,
-            cards] = deckImport(request.json['deckText'])
+         cards] = deckImport(request.json['deckText'])
+
         if len(cards) > 0:
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
-                        name=name,
-                        author_public_name=author,
-                        description=description,
-                        author=current_user,
-                        cards=cards)
+                     name=name,
+                     author_public_name=author,
+                     description=description,
+                     author=current_user,
+                     cards=cards)
             db.session.add(d)
             db.session.commit()
             return jsonify({'deckid': deckid})
@@ -880,16 +883,15 @@ def deckProxyRoute():
 def removeDeck():
     try:
         d = Deck.query.filter_by(author=current_user,
-                                    deckid=request.json['deckid']).first()
+                                 deckid=request.json['deckid']).first()
         if d.branches:
             for i in d.branches:
-                j = Deck.query.filter_by(author=current_user,
-                                            deckid=i).first()
+                j = Deck.query.filter_by(author=current_user, deckid=i).first()
                 db.session.delete(j)
 
         if d.master:
             j = Deck.query.filter_by(author=current_user,
-                                        deckid=d.master).first()
+                                     deckid=d.master).first()
             db.session.delete(j)
 
         db.session.delete(d)
@@ -978,8 +980,7 @@ def account():
 @app.route('/api/account/remove', methods=['POST'])
 @login_required
 def removeAccount():
-    if current_user.check_password(
-            request.json['password']):
+    if current_user.check_password(request.json['password']):
         try:
             db.session.delete(current_user)
             db.session.commit()
