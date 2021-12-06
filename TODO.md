@@ -2,7 +2,6 @@
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
 * Coloring: title blue in draw, card name in twd in gold on mobile, referecen card in gold
-* Icon size in Library Discipline filter - try bigger?
 * Set/Precon filters to respect Promo dates, reformat promo id to look like dates in TextLayout/Set output
 
 # FEATURES
