@@ -100,9 +100,6 @@ function App(props) {
             };
           });
           setNativeLibrary(en);
-
-          console.log('en:', en);
-          console.log('data:', data);
         }
       });
   };

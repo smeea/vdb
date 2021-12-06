@@ -81,7 +81,16 @@ function TwdResultLibraryKeyCards(props) {
 
   let resultTrClass = 'result-even';
 
-  const cardLines = keyCards.map((card, index) => {
+  keyCards.sort((a, b) => {
+    if (a.c['ASCII Name'] < b.c['ASCII Name']) {
+      return -1;
+    }
+    if (a.c['ASCII Name'] > b.c['ASCII Name']) {
+      return 1;
+    }
+  });
+
+  const cardRows = keyCards.map((card, index) => {
     const handleClick = () => {
       setModalCardIdx(index);
       isMobile && props.setShowFloatingButtons(false);
@@ -193,7 +202,7 @@ function TwdResultLibraryKeyCards(props) {
       </div>
       <div className="props.library">
         <table className="twd-library-table">
-          <tbody>{cardLines}</tbody>
+          <tbody>{cardRows}</tbody>
         </table>
       </div>
       {modalCardIdx !== undefined && (
