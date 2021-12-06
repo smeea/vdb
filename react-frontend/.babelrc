@@ -1,8 +1,15 @@
 {
-  "presets": [
-    "@parcel/babel-preset-env",
-  ],
   "plugins": [
-    "@babel/plugin-transform-runtime"
+    "@babel/plugin-transform-runtime",
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "test": "./test",
+          "underscore": "lodash"
+        }
+      }
+    ]
   ]
 }

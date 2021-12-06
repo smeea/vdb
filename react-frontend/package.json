@@ -17,6 +17,7 @@
     "@parcel/transformer-svg-react": "^2.0.1",
     "@parcel/transformer-webmanifest": "^2.0.1",
     "@svgr/parcel-plugin-svgr": "^5.5.0",
+    "babel-plugin-module-resolver": "^4.1.0",
     "dotenv": "^10.0.0",
     "eslint": "^8.3.0",
     "eslint-config-google": "^0.14.0",

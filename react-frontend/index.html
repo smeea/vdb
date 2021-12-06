@@ -1,35 +1,50 @@
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="VTES Deck Building & Card Search">
-        <title>VDB - Card Search & Deck Building</title>
-        <link rel="manifest" href="./manifest.webmanifest">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="application-name" content="VDB">
-        <meta name="apple-mobile-web-app-title" content="VDB">
-        <meta name="msapplication-starturl" content="/crypt">
-        <link rel="icon" href="./assets/images/apple-touch-icon.png">
-        <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
-    </head>
-    <body>
-        <div id="root"></div>
-        <script type="module" src="./index.js"></script>
-        <script type="module">
-         if ('serviceWorker' in navigator) {
-             window.addEventListener('load', function() {
-                 navigator.serviceWorker.register(new URL('service-worker.js', import.meta.url)).then(function(registration) {
-                     console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                 }, function(err) {
-                     console.log('ServiceWorker registration failed: ', err);
-                 }).catch(function(err) {
-                     console.log(err)
-                 });
-             });
-         } else {
-             console.log('service worker is not supported');
-         }
-        </script>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="VTES Deck Building & Card Search" />
+    <title>VDB - Card Search & Deck Building</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="VDB" />
+    <meta name="apple-mobile-web-app-title" content="VDB" />
+    <meta name="msapplication-starturl" content="/crypt" />
+    <link rel="icon" href="src/assets/images/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      href="src/assets/images/apple-touch-icon.png"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.js"></script>
+    <script type="module">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker
+            .register(new URL('service-worker.js', import.meta.url))
+            .then(
+              function (registration) {
+                console.log(
+                  'ServiceWorker registration successful with scope: ',
+                  registration.scope
+                );
+              },
+              function (err) {
+                console.log('ServiceWorker registration failed: ', err);
+              }
+            )
+            .catch(function (err) {
+              console.log(err);
+            });
+        });
+      } else {
+        console.log('service worker is not supported');
+      }
+    </script>
+  </body>
 </html>
