@@ -71,10 +71,12 @@ function ResultLibraryPopover(props) {
           </div>
           <hr />
           <div className="d-flex align-items-center justify-content-between">
-            <ResultLibraryCost
-              valuePool={props.card['Pool Cost']}
-              valueBlood={props.card['Blood Cost']}
-            />
+            <div>
+              <ResultLibraryCost
+                valuePool={props.card['Pool Cost']}
+                valueBlood={props.card['Blood Cost']}
+              />
+            </div>
             <div className="popover-sets">
               <ResultLayoutTextSets
                 setImageSet={props.setImageSet}

@@ -6,6 +6,7 @@
 * Localized proxies
 * Export all in xlsx and csv
 * Links to custom deck
+* Crypt discipline distribution
 
 # BIG FEATURES
 * Search for similar TWD decks

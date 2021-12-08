@@ -194,12 +194,12 @@ function InventoryAddDeckModal(props) {
               <>
                 <div>{setsAndPrecons[set].name}</div>
                 <div className="d-flex justify-content-end small">
-                  {setsAndPrecons[set].year}
+                  {setsAndPrecons[set].date.slice(0, 4)}
                 </div>
               </>
             ) : (
               <>
-                {setsAndPrecons[set].year}
+                {setsAndPrecons[set].date.slice(0, 4)}
                 <span className="px-3">–</span>
                 {setsAndPrecons[set].name}
               </>
