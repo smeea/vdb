@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   ResultCryptName,
-  ResultCryptClan,
   ResultCryptCapacity,
   ResultCryptDisciplines,
+  ResultClanImage,
 } from 'components';
 import { useApp } from 'context';
 
@@ -30,7 +30,7 @@ const SelectLabelCrypt = (props) => {
             <ResultCryptName card={cryptCardBase[props.cardid]} />
           </div>
           <div className="pe-3">
-            <ResultCryptClan value={cryptCardBase[props.cardid]['Clan']} />
+            <ResultClanImage value={cryptCardBase[props.cardid]['Clan']} />
           </div>
         </div>
         <div className="d-flex flex-nowrap">

@@ -10,7 +10,7 @@ import {
   ResultCryptDisciplines,
   ResultCryptCapacity,
   ResultCryptName,
-  ResultCryptClan,
+  ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
 } from 'components';
@@ -221,7 +221,7 @@ function DeckProxyCryptTable(props) {
           )}
           <td className="clan-group" onClick={() => handleClick()}>
             <div>
-              <ResultCryptClan value={card.c['Clan']} />
+              <ResultClanImage value={card.c['Clan']} />
             </div>
             <div className="d-flex small justify-content-end">
               <b>

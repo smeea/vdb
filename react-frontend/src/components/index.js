@@ -7,6 +7,7 @@ export * from 'components/inventory';
 export * from 'components/result_crypt';
 export * from 'components/result_layout';
 export * from 'components/result_library';
+export * from 'components/result_common';
 export * from 'components/search_crypt';
 export * from 'components/search_form';
 export * from 'components/search_library';

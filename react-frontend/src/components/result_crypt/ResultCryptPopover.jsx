@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   ResultCryptName,
-  ResultCryptClan,
+  ResultClanImage,
   ResultCryptCapacity,
   ResultCryptGroup,
   ResultCryptDisciplines,
@@ -42,7 +42,7 @@ function ResultCryptPopover(props) {
           <div className="d-flex flex-nowrap justify-content-between align-items-center">
             <div className="d-flex flex-nowrap align-items-center">
               <div>
-                <ResultCryptClan value={props.card['Clan']} />
+                <ResultClanImage value={props.card['Clan']} />
               </div>
               <div className="name bold ps-2">
                 <ResultCryptName card={props.card} />

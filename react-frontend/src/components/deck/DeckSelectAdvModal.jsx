@@ -17,7 +17,7 @@ import {
   DeckProxy,
   DeckCopyUrl,
   DeckSelectSortForm,
-  ResultCryptClan,
+  ResultClanImage,
   OverlayTooltip,
 } from 'components';
 
@@ -129,7 +129,7 @@ function DeckSelectAdvModal(props) {
     clanOptions.push({
       value: i.toLowerCase(),
       name: 'clan',
-      label: <ResultCryptClan value={i} />,
+      label: <ResultClanImage value={i} />,
     });
   });
 
@@ -272,7 +272,7 @@ function DeckSelectAdvModal(props) {
             )}
             {!isMobile && (
               <td className="clan" onClick={() => handleOpen(deck.deckid)}>
-                {clan && <ResultCryptClan value={clan} />}
+                {clan && <ResultClanImage value={clan} />}
               </td>
             )}
             <td className="name px-1" onClick={() => handleOpen(deck.deckid)}>

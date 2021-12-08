@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResultCryptClan, ResultLibraryType } from 'components';
+import { ResultClanImage, ResultLibraryType } from 'components';
 import Select from 'react-select';
 
 function InventoryFilterForm(props) {
@@ -13,7 +13,7 @@ function InventoryFilterForm(props) {
           {props.target === 'crypt' && (
             <div className="pe-1">
               <span className="margin-full">
-                {i !== 'All' && <ResultCryptClan value={i} />}
+                {i !== 'All' && <ResultClanImage value={i} />}
               </span>
               <div className="d-inline ps-2">{i}</div>
             </div>

@@ -13,7 +13,7 @@ import {
   ResultCryptDisciplines,
   ResultCryptCapacity,
   ResultCryptName,
-  ResultCryptClan,
+  ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
   OverlayTooltip,
@@ -189,7 +189,7 @@ function DiffCryptTable(props) {
                 <ResultCryptTitle value={card.c['Title']} />
               </td>
               <td className="clan" onClick={() => handleClick()}>
-                <ResultCryptClan value={card.c['Clan']} />
+                <ResultClanImage value={card.c['Clan']} />
               </td>
               <td className="group" onClick={() => handleClick()}>
                 <ResultCryptGroup value={card.c['Group']} />
@@ -199,7 +199,7 @@ function DiffCryptTable(props) {
             <>
               <td className="clan-group" onClick={() => handleClick()}>
                 <div>
-                  <ResultCryptClan value={card.c['Clan']} />
+                  <ResultClanImage value={card.c['Clan']} />
                 </div>
                 <div className="d-flex small justify-content-end">
                   <b>

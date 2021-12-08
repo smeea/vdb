@@ -5,7 +5,7 @@ import {
   UsedPopover,
   ResultCryptName,
   ResultCryptCapacity,
-  ResultCryptClan,
+  ResultClanImage,
   ResultCryptModal,
 } from 'components';
 import { useApp } from 'context';
@@ -179,7 +179,7 @@ function TwdResultCrypt(props) {
           </td>
         )}
         <td className="clan px-1" onClick={() => handleClick()}>
-          <ResultCryptClan value={card.c['Clan']} />
+          <ResultClanImage value={card.c['Clan']} />
         </td>
       </tr>
     );
