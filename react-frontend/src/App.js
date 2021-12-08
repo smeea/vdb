@@ -341,7 +341,9 @@ function App(props) {
           name: `${name}`,
           deckid: deckid,
           author: 'VTES Team',
-          description: `Preconstructed from "${setsAndPrecons[set]['name']}" [${setsAndPrecons[set]['year']}]`,
+          description: `Preconstructed from "${
+            setsAndPrecons[set]['name']
+          }" [${setsAndPrecons[set]['date'].slice(4)}]`,
           crypt: {},
           library: {},
         };

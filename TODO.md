@@ -1,7 +1,6 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
-* Remove "year" from setAndPrecons
 * Update release dates: Anthology, HttBR, SP, FB, 25th, KSU
 
 # FEATURES
