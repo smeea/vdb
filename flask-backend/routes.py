@@ -527,7 +527,11 @@ def newDeck():
             'author'] if 'author' in request.json else current_user.public_name
         description = request.json[
             'description'] if 'description' in request.json else ''
-        cards = request.json['cards'] if 'cards' in request.json else {}
+        input_cards = request.json['cards'] if 'cards' in request.json else {}
+        cards = {}
+
+        for k, v in input_cards.items():
+            cards[int(k)] = v
 
         d = Deck(deckid=deckid,
                  name=request.json['deckname'],
@@ -665,9 +669,9 @@ def cloneDeck():
         cards = {}
 
         for i in deck['crypt']:
-            cards[i] = deck['crypt'][i]['q']
+            cards[int(i)] = deck['crypt'][i]['q']
         for i in deck['library']:
-            cards[i] = deck['library'][i]['q']
+            cards[int(i)] = deck['library'][i]['q']
 
         deckid = uuid.uuid4().hex
         d = Deck(deckid=deckid,
@@ -690,9 +694,9 @@ def cloneDeck():
             deck = twdDecks[request.json['target']]
             cards = {}
             for i in deck['crypt']:
-                cards[i] = deck['crypt'][i]['q']
+                cards[int(i)] = deck['crypt'][i]['q']
             for i in deck['library']:
-                cards[i] = deck['library'][i]['q']
+                cards[int(i)] = deck['library'][i]['q']
 
             description = 'Date: ' + deck['date'] + '\n'
             description += 'Players: ' + str(deck['players']) + '\n'
@@ -725,7 +729,7 @@ def cloneDeck():
 
             cards = {}
             for i in deck:
-                cards[i] = deck[i]
+                cards[int(i)] = deck[i]
 
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,

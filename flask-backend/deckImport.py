@@ -33,11 +33,9 @@ def deckImport(deckText):
 
     for card in library:
         name = re.sub(r'\W', '', unidecode(card['Name'])).lower()
-        cardbase[name] = {'base': str(card['Id'])}
+        cardbase[name] = {'base': card['Id']}
 
     for i in linesArray:
-        print(i)
-
         if nameMatch := re.match(r'^Deck Name: (.+)', i):
             deck['name'] = nameMatch.group(1)
             continue
