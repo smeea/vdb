@@ -1,7 +1,8 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
-* Set/Precon filters to respect Promo dates, reformat promo id to look like dates in TextLayout/Set output
+* Reformat promo id to look like dates, remove "year" from setAndPrecons
+* Update release dates: Anthology, HttBR, SP, FB, 25th, KSU
 
 # FEATURES
 * Localized proxies
