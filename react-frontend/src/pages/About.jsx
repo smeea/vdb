@@ -70,17 +70,20 @@ function About(props) {
                 : 2021-12-01
               </p>
 
-              <h6>Last update [2021-12-05]:</h6>
+              <h6>Last update [2021-12-09]:</h6>
               <ul>
+                <li>Updated card images from KRCG</li>
                 <li>
-                  Fix critical bug with promo cards from HB2 (Dracon, Capucin,
-                  etc)
+                  Fixed deck bug causing to sometimes restore deck to much older
+                  state after deleting card
                 </li>
-                <li>Rename Thaumaturgy to Blood Sorcery</li>
+                <li>Fix card sorting in Deck-Library (thanks emime)</li>
                 <li>
-                  Add library search traits &quot;reduce bleed&quot; and
-                  &quot;+votes / title&quot;
+                  Fixed set/precon search to respect Promo card release dates
+                  (thanks emime)
                 </li>
+                <li>Fixed deck delete to sometimes not delete all revisions</li>
+                <li>Other small UI fixes/improvements</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
