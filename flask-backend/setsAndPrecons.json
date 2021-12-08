@@ -2,17 +2,14 @@
 
   "Promo": {
     "name": "Promo",
-    "year": "",
     "date": ""
   },
   "POD": {
     "name": "Print-on-Demand (DTC)",
-    "year": "",
     "date": ""
   },
   "V5A": {
     "name": "Fifth Edition (Anarchs)",
-    "year": "2021",
     "date": "2021-10-01",
     "precons": {
       "PMin": {
@@ -35,7 +32,6 @@
   },
   "KSU": {
     "name": "Unleashed (Kickstarter)",
-    "year": "2021",
     "date": "2021-01-01",
     "precons": {
       "AU": {
@@ -58,7 +54,6 @@
   },
   "V5": {
     "name": "Fifth Edition",
-    "year": "2020",
     "date": "2020-11-30",
     "precons": {
       "PM": {
@@ -85,7 +80,6 @@
   },
   "25th": {
     "name": "25th Anniversary",
-    "year": "2019",
     "date": "2019-01-01",
     "precons": {
       "": {
@@ -96,7 +90,6 @@
   },
   "FB": {
     "name": "First Blood",
-    "year": "2019",
     "date": "2019-01-01",
     "precons": {
       "PM": {
@@ -123,7 +116,6 @@
   },
   "SP": {
     "name": "Sabbat Preconstructed",
-    "year": "2019",
     "date": "2019-01-01",
     "precons": {
       "LB": {
@@ -146,7 +138,6 @@
   },
   "KoTR": {
     "name": "Keepers of Tradition Reprint",
-    "year": "2018",
     "date": "2018-01-01",
     "precons": {
       "A": {
@@ -161,7 +152,6 @@
   },
   "HttBR": {
     "name": "Heirs to the Blood Reprint",
-    "year": "2018",
     "date": "2018-01-01",
     "precons": {
       "A": {
@@ -176,7 +166,6 @@
   },
   "Anthology": {
     "name": "Anthology",
-    "year": "2018",
     "date": "2018-01-01",
     "precons": {
       "": {
@@ -187,7 +176,6 @@
   },
   "LK": {
     "name": "Lost Kindred",
-    "year": "2018",
     "date": "2018-06-10",
     "precons": {
       "": {
@@ -198,22 +186,18 @@
   },
   "AU": {
     "name": "Anarchs Unbound (PDF)",
-    "year": "2016",
     "date": "2016-01-17"
   },
   "TU": {
     "name": "The Unaligned (PDF)",
-    "year": "2014",
     "date": "2014-10-04"
   },
   "DM": {
     "name": "Danse Macabre (PDF)",
-    "year": "2013",
     "date": "2013-10-05"
   },
   "HttB": {
     "name": "Heirs to the Blood",
-    "year": "2010",
     "date": "2010-02-03",
     "precons": {
       "PKia": {
@@ -236,12 +220,10 @@
   },
   "EK": {
     "name": "Ebony Kingdom",
-    "year": "2009",
     "date": "2009-05-27"
   },
   "KoT": {
     "name": "Keepers of Tradition",
-    "year": "2008",
     "date": "2008-11-19",
     "precons": {
       "PB": {
@@ -264,12 +246,10 @@
   },
   "TR": {
     "name": "Twilight Rebellion",
-    "year": "2008",
     "date": "2008-05-28"
   },
   "BSC": {
     "name": "Blood Shadowed Court",
-    "year": "2008",
     "date": "2008-04-16",
     "precons": {
       "X": {
@@ -280,16 +260,15 @@
   },
   "LotN": {
     "name": "Lords of the Night",
-    "year": "2007",
     "date": "2007-09-26",
     "precons": {
       "PA": {
         "name": "Assamite",
-        "clan": "Banu Haqim"
+        "clan": "Assamite"
       },
       "PS": {
         "name": "Follower of Set",
-        "clan": "Ministry"
+        "clan": "Follower of Set"
       },
       "PG": {
         "name": "Giovanni",
@@ -303,12 +282,10 @@
   },
   "SoC": {
     "name": "Sword of Caine",
-    "year": "2007",
     "date": "2007-04-19"
   },
   "Third": {
     "name": "Third Edition",
-    "year": "2006",
     "date": "2006-09-04",
     "precons": {
       "PB": {
@@ -331,12 +308,10 @@
   },
   "NoR": {
     "name": "Nights of Reckoning",
-    "year": "2006",
     "date": "2006-04-10"
   },
   "LoB": {
     "name": "Legacies of Blood",
-    "year": "2005",
     "date": "2005-11-14",
     "precons": {
       "PA": {
@@ -359,7 +334,6 @@
   },
   "KMW": {
     "name": "Kindred Most Wanted",
-    "year": "2005",
     "date": "2005-02-21",
     "precons": {
       "PAl": {
@@ -382,7 +356,6 @@
   },
   "Tenth": {
     "name": "10th Anniversary",
-    "year": "2004",
     "date": "2004-12-13",
     "precons": {
       "A": {
@@ -397,12 +370,10 @@
   },
   "Gehenna": {
     "name": "Gehenna",
-    "year": "2004",
     "date": "2004-05-17"
   },
   "BH": {
     "name": "Black Hand",
-    "year": "2003",
     "date": "2003-11-17",
     "precons": {
       "PM": {
@@ -425,7 +396,6 @@
   },
   "Anarchs": {
     "name": "Anarchs",
-    "year": "2003",
     "date": "2003-05-19",
     "precons": {
       "PAB": {
@@ -444,7 +414,6 @@
   },
   "CE": {
     "name": "Camarilla Edition",
-    "year": "2002",
     "date": "2002-08-19",
     "precons": {
       "PB": {
@@ -475,12 +444,10 @@
   },
   "BL": {
     "name": "Bloodlines",
-    "year": "2001",
     "date": "2001-12-03"
   },
   "FN": {
     "name": "Final Nights",
-    "year": "2001",
     "date": "2001-06-11",
     "precons": {
       "PA": {
@@ -503,7 +470,6 @@
   },
   "SW": {
     "name": "Sabbat War",
-    "year": "2000",
     "date": "2000-10-31",
     "precons": {
       "PB": {
@@ -526,27 +492,22 @@
   },
   "Sabbat": {
     "name": "Sabbat",
-    "year": "1996",
     "date": "1996-10-28"
   },
   "AH": {
     "name": "Ancient Hearts",
-    "year": "1996",
     "date": "1996-05-29"
   },
   "DS": {
     "name": "Dark Sovereigns",
-    "year": "1995",
     "date": "1995-12-15"
   },
   "VTES": {
     "name": "V:TES",
-    "year": "1995",
     "date": "1995-09-15"
   },
   "Jyhad": {
     "name": "Jyhad",
-    "year": "1994",
     "date": "1994-08-16"
   }
 }
