@@ -10,7 +10,7 @@
   },
   "V5A": {
     "name": "Fifth Edition (Anarchs)",
-    "date": "2021-10-01",
+    "date": "2021-12-01",
     "precons": {
       "PMin": {
         "name": "Ministry",
@@ -32,7 +32,7 @@
   },
   "KSU": {
     "name": "Unleashed (Kickstarter)",
-    "date": "2021-01-01",
+    "date": "2021-07-09",
     "precons": {
       "AU": {
         "name": "Anarchs Unbound",
@@ -78,19 +78,9 @@
       }
     }
   },
-  "25th": {
-    "name": "25th Anniversary",
-    "date": "2019-01-01",
-    "precons": {
-      "": {
-        "name": "25th Anniversary (Stanislava)",
-        "clan": "Gangrel"
-      }
-    }
-  },
   "FB": {
     "name": "First Blood",
-    "date": "2019-01-01",
+    "date": "2019-10-01",
     "precons": {
       "PM": {
         "name": "Malkavian",
@@ -114,9 +104,19 @@
       }
     }
   },
+  "25th": {
+    "name": "25th Anniversary",
+    "date": "2019-08-16",
+    "precons": {
+      "": {
+        "name": "25th Anniversary (Stanislava)",
+        "clan": "Gangrel"
+      }
+    }
+  },
   "SP": {
     "name": "Sabbat Preconstructed",
-    "date": "2019-01-01",
+    "date": "2019-02-16",
     "precons": {
       "LB": {
         "name": "Libertine Ball",
@@ -136,23 +136,9 @@
       }
     }
   },
-  "KoTR": {
-    "name": "Keepers of Tradition Reprint",
-    "date": "2018-01-01",
-    "precons": {
-      "A": {
-        "name": "Bundle 1",
-        "clan": "Bundle"
-      },
-      "B": {
-        "name": "Bundle 2",
-        "clan": "Bundle"
-      }
-    }
-  },
   "HttBR": {
     "name": "Heirs to the Blood Reprint",
-    "date": "2018-01-01",
+    "date": "2018-07-14",
     "precons": {
       "A": {
         "name": "Bundle 1",
@@ -164,9 +150,23 @@
       }
     }
   },
-  "Anthology": {
-    "name": "Anthology",
-    "date": "2018-01-01",
+  "KoTR": {
+    "name": "Keepers of Tradition Reprint",
+    "date": "2018-05-05",
+    "precons": {
+      "A": {
+        "name": "Bundle 1",
+        "clan": "Bundle"
+      },
+      "B": {
+        "name": "Bundle 2",
+        "clan": "Bundle"
+      }
+    }
+  },
+  "LK": {
+    "name": "Lost Kindred",
+    "date": "2018-06-09",
     "precons": {
       "": {
         "name": "Bundle",
@@ -174,9 +174,9 @@
       }
     }
   },
-  "LK": {
-    "name": "Lost Kindred",
-    "date": "2018-06-10",
+  "Anthology": {
+    "name": "Anthology",
+    "date": "2017-05-11",
     "precons": {
       "": {
         "name": "Bundle",
@@ -250,7 +250,7 @@
   },
   "BSC": {
     "name": "Blood Shadowed Court",
-    "date": "2008-04-16",
+    "date": "2008-04-14",
     "precons": {
       "X": {
         "name": "Bundle",
@@ -282,7 +282,7 @@
   },
   "SoC": {
     "name": "Sword of Caine",
-    "date": "2007-04-19"
+    "date": "2007-03-19"
   },
   "Third": {
     "name": "Third Edition",
