@@ -888,18 +888,26 @@ def removeDeck():
     try:
         d = Deck.query.filter_by(author=current_user,
                                  deckid=request.json['deckid']).first()
-        if d.branches:
-            for i in d.branches:
+        if d.master:
+            m = Deck.query.filter_by(author=current_user,
+                                     deckid=d.master).first()
+            for i in m.branches:
                 j = Deck.query.filter_by(author=current_user, deckid=i).first()
                 db.session.delete(j)
 
-        if d.master:
-            j = Deck.query.filter_by(author=current_user,
-                                     deckid=d.master).first()
-            db.session.delete(j)
+            db.session.delete(m)
 
-        db.session.delete(d)
+        else:
+            if d.branches:
+                for i in d.branches:
+                    j = Deck.query.filter_by(author=current_user,
+                                             deckid=i).first()
+                    db.session.delete(j)
+
+            db.session.delete(d)
+
         db.session.commit()
+
         return jsonify({'deck removed': request.json['deckid']})
     except Exception:
         return jsonify({'error': 'idk'})
