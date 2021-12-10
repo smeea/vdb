@@ -392,43 +392,6 @@ def updateDeck(deckid):
     return jsonify({'updated deck': d.deckid})
 
 
-@app.route('/api/deck/parse', methods=['POST'])
-def parseDeck():
-    try:
-        crypt = {}
-        library = {}
-        cards = request.json['cards']
-        for k, v in cards.items():
-            k = int(k)
-            if k > 200000:
-                crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
-            elif k < 200000:
-                library[k] = {'c': get_library_by_id(k), 'q': v}
-
-        decks = {}
-        decks['deckInUrl'] = {
-            'name': '',
-            'owner': '',
-            'author': '',
-            'description': '',
-            'deckid': '',
-            'crypt': crypt,
-            'library': library,
-            'timestamp': datetime.utcnow()
-        }
-        if 'name' in request.json:
-            decks['deckInUrl']['name'] = request.json['name']
-        if 'author' in request.json:
-            decks['deckInUrl']['author'] = request.json['author']
-        if 'description' in request.json:
-            decks['deckInUrl']['description'] = request.json['description']
-
-        return jsonify(decks)
-
-    except AttributeError:
-        return jsonify({'error': 'not logged'})
-
-
 @app.route('/api/decks', methods=['GET'])
 def listDecks():
     try:
