@@ -262,7 +262,11 @@ def getRecommendation(deckid):
 @login_required
 def updateDeck(deckid):
     d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
+    if not d:
+        print('bad deck request\n', request)
+
     d.timestamp = datetime.utcnow()
+
     try:
         if 'cardChange' in request.json:
             new_cards = request.json['cardChange']
@@ -793,10 +797,11 @@ def importDeck():
             db.session.add(d)
             db.session.commit()
             return jsonify({'deckid': deckid})
+
         return jsonify({'Cannot import this deck.'})
 
-    except Exception:
-        pass
+    except:
+        print(request.json['deckText'])
 
 
 @app.route('/api/decks/export', methods=['POST'])
@@ -862,9 +867,8 @@ def deckExportRoute():
         else:
             return jsonify(result)
 
-    except Exception:
-        pass
-
+    except:
+        print(request.json)
 
 @app.route('/api/decks/proxy', methods=['POST'])
 def deckProxyRoute():
@@ -962,16 +966,19 @@ def account():
             db.session.commit()
             return jsonify('public name changed')
     except Exception:
+        print('new name', request.json)
         pass
-    try:
 
+    try:
         if (request.json['email']) and current_user.check_password(
                 request.json['password']):
             current_user.email = request.json['email']
             db.session.commit()
             return jsonify('email changed')
     except Exception:
+        print('new email', request.json)
         pass
+
     try:
         if (request.json['newPassword']) and current_user.check_password(
                 request.json['password']):
@@ -979,6 +986,7 @@ def account():
             db.session.commit()
             return jsonify('password changed')
     except Exception:
+        print('new password', request.json)
         pass
 
 
