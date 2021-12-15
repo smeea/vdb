@@ -70,20 +70,12 @@ function About(props) {
                 : 2021-12-01
               </p>
 
-              <h6>Last update [2021-12-09]:</h6>
+              <h6>Last update [2021-12-15]:</h6>
               <ul>
-                <li>Updated card images from KRCG</li>
                 <li>
-                  Fixed deck bug causing to sometimes restore deck to much older
-                  state after deleting card
+                  Add Card Ideas (&quot;recommendation&quot;) feature to Deck,
+                  based on card compatibility in TWDA
                 </li>
-                <li>Fix card sorting in Deck-Library (thanks emime)</li>
-                <li>
-                  Fixed set/precon search to respect Promo card release dates
-                  (thanks emime)
-                </li>
-                <li>Fixed deck delete to sometimes not delete all revisions</li>
-                <li>Other small UI fixes/improvements</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
