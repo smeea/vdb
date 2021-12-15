@@ -11,7 +11,6 @@
 # BIG FEATURES
 * Search for similar TWD decks
 * Public deck archive
-* Card recommendation
 
 # MOBILE FEATURES
 

@@ -61,10 +61,11 @@ function App(props) {
   } = useApp();
 
   const [lastDeck, setLastDeck] = useState({});
+  const VERSION = '2021-12-09';
 
   const getCardBase = () => {
-    const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=2021-12-09`;
-    const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=2021-12-09`;
+    const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
+    const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=${VERSION}`;
     const options = {
       method: 'GET',
       mode: 'cors',

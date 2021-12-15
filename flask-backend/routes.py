@@ -10,12 +10,11 @@ from searchTwdComponents import sanitizeTwd
 from searchTwdComponents import matchInventory
 from searchCrypt import searchCrypt
 from searchLibrary import searchLibrary
-from searchCryptComponents import get_crypt_by_id
-from searchLibraryComponents import get_library_by_id
 from deckExport import deckExport
 from deckExportAll import deckExportAll
 from deckImport import deckImport
 from deckProxy import deckProxy
+from deckRecommendation import deckRecommendation
 from inventoryExport import inventoryExport
 from inventoryImport import inventoryImport
 from api import app
@@ -226,6 +225,37 @@ def showDeck(deckid):
 
             except KeyError:
                 abort(400)
+
+
+@app.route('/api/deck/<string:deckid>/recommendation', methods=['GET'])
+def getRecommendation(deckid):
+    cards = {}
+
+    if len(deckid) == 32:
+        deck = Deck.query.filter_by(deckid=deckid).first()
+        cards = deck.cards
+
+    elif ':' in deckid:
+        set, precon = deckid.split(':')
+
+        with open("preconDecks.json", "r") as precons_file:
+            precon_decks = json.load(precons_file)
+            deck = precon_decks[set][precon]
+            for i in deck:
+                cards[int(i)] = deck[i]
+
+    else:
+        with open("twdDecksById.json", "r") as twdDecks_file:
+            twdDecks = json.load(twdDecks_file)
+            deck = twdDecks[deckid]
+            for i in deck['crypt']:
+                cards[int(i)] = deck['crypt'][i]['q']
+            for i in deck['library']:
+                cards[int(i)] = deck['library'][i]['q']
+
+    recommends = deckRecommendation(cards)
+
+    return ({'crypt': recommends['crypt'], 'library': recommends['library']})
 
 
 @app.route('/api/deck/<string:deckid>', methods=['PUT'])

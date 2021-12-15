@@ -48,3 +48,8 @@ export { default as DeckCopyUrl } from './DeckCopyUrl.jsx';
 export { default as DeckDrawLibraryTable } from './DeckDrawLibraryTable.jsx';
 export { default as DeckLibraryTotalInfo } from './DeckLibraryTotalInfo.jsx';
 export { default as DeckSelectAdvModal } from './DeckSelectAdvModal.jsx';
+export { default as DeckRecommendationButton } from './DeckRecommendationButton.jsx';
+export { default as DeckRecommendation } from './DeckRecommendation.jsx';
+export { default as DeckRecommendationLibrary } from './DeckRecommendationLibrary.jsx';
+export { default as DeckRecommendationLibraryTable } from './DeckRecommendationLibraryTable.jsx';
+export { default as DeckRecommendationModal } from './DeckRecommendationModal.jsx';

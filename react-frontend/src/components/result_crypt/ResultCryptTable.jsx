@@ -91,7 +91,7 @@ function ResultCryptTable(props) {
     return (
       <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
-          {activeDeck.deckid && addMode && (
+          {!props.notAuthor && activeDeck.deckid && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card['Id']}
