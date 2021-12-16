@@ -8,32 +8,12 @@ import {
   ResultLayoutTextText,
   ResultLayoutTextSets,
   ResultLayoutTextRulings,
+  CardImage,
 } from 'components';
 import { useApp } from 'context';
 
 function ResultCryptPopover(props) {
-  const { showImage, localizedCrypt, lang } = useApp();
-
-  const imgSrc = `${process.env.ROOT_URL}images/cards/${
-    localizedCrypt &&
-    localizedCrypt[lang] &&
-    localizedCrypt[lang][props.card['Id']]
-      ? lang
-      : 'en-EN'
-  }/${props.card['ASCII Name']
-    .toLowerCase()
-    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${props.card['Adv'][0] ? 'adv' : ''}${
-    props.card['New'] ? `g${props.card['Group']}` : ''
-  }.jpg`;
-
-  const cardImage = (
-    <img
-      className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
-      src={imgSrc}
-      alt={props.card['Name']}
-      onClick={props.handleClose}
-    />
-  );
+  const { showImage } = useApp();
 
   return (
     <>
@@ -79,7 +59,7 @@ function ResultCryptPopover(props) {
           )}
         </div>
       ) : (
-        cardImage
+        <CardImage card={props.card} />
       )}
     </>
   );

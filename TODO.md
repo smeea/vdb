@@ -27,4 +27,3 @@
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardior codes to return)
-* Log deck errors (import/export first)

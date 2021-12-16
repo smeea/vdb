@@ -9,6 +9,7 @@ import {
   ResultLibraryLayoutText,
   ButtonCardCopyUrl,
   ButtonAddCard,
+  CardImage,
 } from 'components';
 import { useApp } from 'context';
 
@@ -20,9 +21,6 @@ function Cards(props) {
     libraryCardBase,
     showImage,
     toggleShowImage,
-    localizedCrypt,
-    localizedLibrary,
-    lang,
     isMobile,
     activeDeck,
   } = useApp();
@@ -30,47 +28,6 @@ function Cards(props) {
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
-
-  const CardImage = () => {
-    if (card) {
-      const imgSrc =
-        card['Id'] > 200000
-          ? `${process.env.ROOT_URL}images/cards/${
-              imageSet
-                ? 'set/' + imageSet + '/'
-                : localizedCrypt &&
-                  localizedCrypt[lang] &&
-                  localizedCrypt[lang][card['Id']]
-                ? lang + '/'
-                : 'en-EN/'
-            }${card['ASCII Name']
-              .toLowerCase()
-              .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
-              card['Adv'][0] ? 'adv' : ''
-            }.jpg`
-          : `${process.env.ROOT_URL}images/cards/${
-              imageSet
-                ? 'set/' + imageSet + '/'
-                : localizedLibrary &&
-                  localizedLibrary[lang] &&
-                  localizedLibrary[lang][card['Id']]
-                ? lang + '/'
-                : 'en-EN/'
-            }${card['ASCII Name']
-              .toLowerCase()
-              .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-
-      return (
-        <img
-          className="card-popover full-width"
-          src={imgSrc}
-          alt={card['Name']}
-        />
-      );
-    } else {
-      return null;
-    }
-  };
 
   const randomCrypt = () => {
     const id =
@@ -141,7 +98,11 @@ function Cards(props) {
                 <Row className="m-0 p-0">
                   <Col className="m-0 p-0">
                     {showImage ? (
-                      <CardImage />
+                      <CardImage
+                        className="card-popover full-width"
+                        card={card}
+                        set={imageSet}
+                      />
                     ) : (
                       <>
                         <div className="p-3">
@@ -200,7 +161,11 @@ function Cards(props) {
               {card && (
                 <Row className="align-content-center justify-content-center my-3 bordered">
                   <Col md={6} className="ps-0">
-                    <CardImage />
+                    <CardImage
+                      className="card-popover full-width"
+                      card={card}
+                      set={imageSet}
+                    />
                   </Col>
                   <Col md={6} className="pt-3">
                     {card && card.Id > 200000 && (

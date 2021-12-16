@@ -9,12 +9,12 @@ import {
   ResultCryptLayoutText,
   ButtonCardCopyUrl,
   ButtonToggleShowImage,
+  CardImage,
 } from 'components';
 import { useApp } from 'context';
 
 function ResultCryptModal(props) {
-  const { showImage, toggleShowImage, localizedCrypt, lang, isMobile } =
-    useApp();
+  const { showImage, toggleShowImage, isMobile } = useApp();
 
   const [imageSet, setImageSet] = useState(null);
   const [card, setCard] = useState(props.card);
@@ -51,29 +51,6 @@ function ResultCryptModal(props) {
     onSwipedLeft: (eventData) => props.handleModalCardChange(1),
   });
 
-  const CardImage = () => {
-    const imgSrc = `${process.env.ROOT_URL}images/cards/${
-      imageSet
-        ? 'set/' + imageSet + '/'
-        : localizedCrypt &&
-          localizedCrypt[lang] &&
-          localizedCrypt[lang][card['Id']]
-        ? lang
-        : 'en-EN'
-    }/${card['ASCII Name'].toLowerCase().replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
-      card['Adv'][0] ? 'adv' : ''
-    }${card['New'] ? `g${card['Group']}` : ''}.jpg`;
-
-    return (
-      <img
-        className="card-popover full-width"
-        src={imgSrc}
-        alt={card['Name']}
-        onClick={props.handleClose}
-      />
-    );
-  };
-
   return (
     <Modal
       size="lg"
@@ -88,7 +65,12 @@ function ResultCryptModal(props) {
           <div {...swipeHandlers}>
             {showImage ? (
               <>
-                <CardImage />
+                <CardImage
+                  className="card-popover full-width"
+                  card={card}
+                  set={imageSet}
+                  onClick={props.handleClose}
+                />
                 <div
                   onClick={() => props.handleModalCardChange(-1)}
                   className="prev-card-mobile"
@@ -137,7 +119,12 @@ function ResultCryptModal(props) {
         ) : (
           <Row className="mx-0">
             <Col md={5} className="bg-black px-0">
-              <CardImage />
+              <CardImage
+                className="card-popover full-width"
+                card={card}
+                set={imageSet}
+                onClick={props.handleClose}
+              />
             </Col>
             <Col className="p-4">
               <div className="pb-1">
