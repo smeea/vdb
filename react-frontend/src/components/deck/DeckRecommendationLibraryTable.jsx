@@ -66,7 +66,7 @@ function ResultRecommendationLibraryTable(props) {
               </td>
             </OverlayTrigger>
           ) : (
-            <td className="name ps-3 pe-2" onClick={() => handleClick()}>
+            <td className="name px-2" onClick={() => handleClick()}>
               <ResultLibraryName card={card} />
             </td>
           )}

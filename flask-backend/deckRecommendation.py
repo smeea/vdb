@@ -1,6 +1,4 @@
 import json
-from searchCryptComponents import get_crypt_by_id
-from searchLibraryComponents import get_library_by_id
 
 with open("cardsCompatibility.json", "r") as compatibility_file, open(
         "cardbase_crypt.json",
@@ -9,8 +7,8 @@ with open("cardsCompatibility.json", "r") as compatibility_file, open(
     vteslib = json.load(library_file)
     compatibility = json.load(compatibility_file)
 
-CRYPT_MULTIPLIER = 10
-AVG_MULTIPLIER = 1
+CRYPT_MULTIPLIER_FOR_LIBRARY = 10
+CRYPT_MULTIPLIER_FOR_CRYPT = 25
 
 
 def deckRecommendation(cards):
@@ -34,6 +32,14 @@ def deckRecommendation(cards):
             else:
                 discipline_multiplier[k] += i['q'] * v / crypt_total
 
+    group_multiplier = {}
+    for i in crypt.values():
+        g = i['c']['Group']
+        if g not in group_multiplier:
+            group_multiplier[g] = i['q'] / crypt_total
+        else:
+            group_multiplier[g] += i['q'] / crypt_total
+
     recommended_crypt = {}
     recommended_library = {}
 
@@ -47,15 +53,25 @@ def deckRecommendation(cards):
             for i in compatibility[str(r)].values():
                 sum += i
 
-            avg_score = sum / len(compatibility[str(r)])
             score = compatibility[str(c)][str(r)]
 
-            if AVG_MULTIPLIER and score < avg_score * AVG_MULTIPLIER:
-                continue
-
             if c > 200000:
-                score = score * CRYPT_MULTIPLIER
+                if r > 200000:
+                    score = score * CRYPT_MULTIPLIER_FOR_CRYPT
+                else:
+                    score = score * CRYPT_MULTIPLIER_FOR_LIBRARY
+
             if r > 200000:
+                g = vtescrypt[str(r)]['Group']
+
+                for k in group_multiplier.keys():
+                    if g == 'ANY' or k == 'ANY':
+                        pass
+                    elif abs(int(k) - int(g)) <= 1:
+                        score = score * (1 + group_multiplier[k])
+                    else:
+                        score = score * (1 - group_multiplier[k])
+
                 if r not in recommended_crypt:
                     recommended_crypt[r] = score
                 else:
