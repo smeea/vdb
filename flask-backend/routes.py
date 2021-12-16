@@ -544,8 +544,9 @@ def newDeck():
             'new deck created': request.json['deckname'],
             'deckid': deckid,
         })
+
     except Exception:
-        pass
+        print(request.json)
 
 
 @app.route('/api/branch/create', methods=['POST'])
@@ -800,7 +801,7 @@ def importDeck():
 
         return jsonify({'Cannot import this deck.'})
 
-    except:
+    except TypeError:
         print(request.json['deckText'])
 
 
@@ -867,8 +868,9 @@ def deckExportRoute():
         else:
             return jsonify(result)
 
-    except:
+    except Exception:
         print(request.json)
+
 
 @app.route('/api/decks/proxy', methods=['POST'])
 def deckProxyRoute():
@@ -876,7 +878,7 @@ def deckProxyRoute():
         return deckProxy(request.json['cards'])
 
     except Exception:
-        pass
+        print(request.json)
 
 
 @app.route('/api/decks/remove', methods=['POST'])
@@ -967,7 +969,6 @@ def account():
             return jsonify('public name changed')
     except Exception:
         print('new name', request.json)
-        pass
 
     try:
         if (request.json['email']) and current_user.check_password(
@@ -977,7 +978,6 @@ def account():
             return jsonify('email changed')
     except Exception:
         print('new email', request.json)
-        pass
 
     try:
         if (request.json['newPassword']) and current_user.check_password(
@@ -987,7 +987,6 @@ def account():
             return jsonify('password changed')
     except Exception:
         print('new password', request.json)
-        pass
 
 
 @app.route('/api/account/remove', methods=['POST'])
