@@ -1,6 +1,7 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
+* Update images
 
 # FEATURES
 * Localized proxies

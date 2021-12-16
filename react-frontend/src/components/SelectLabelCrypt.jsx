@@ -28,6 +28,11 @@ const SelectLabelCrypt = (props) => {
           />
           <div className="px-2">
             <ResultCryptName card={cryptCardBase[props.cardid]} />
+            {cryptCardBase[props.cardid]['New'] && (
+              <div className="d-inline gray ps-2">
+                [G{cryptCardBase[props.cardid]['Group']}]
+              </div>
+            )}
           </div>
           <div className="pe-3">
             <ResultClanImage value={cryptCardBase[props.cardid]['Clan']} />
