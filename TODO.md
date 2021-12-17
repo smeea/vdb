@@ -3,6 +3,7 @@
 * Inventory bug for precon (also test for twd and shared)
 * Transition to Name+Group in crypt images
 * Refactor images to components
+* Return/show account error (check if 400 code is OK) with wrong password
 
 # FEATURES
 * Localized proxies
