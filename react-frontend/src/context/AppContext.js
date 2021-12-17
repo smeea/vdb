@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect } from 'react';
 import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from 'components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from 'components/forms_data/defaultsLibraryForm.json';
+import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 
 const AppContext = React.createContext();
 
@@ -76,37 +77,37 @@ export const AppProvider = (props) => {
 
   const changeLang = (lang) => {
     setLang(lang);
-    window.localStorage.setItem('lang', lang);
+    setLocalStorage('lang', lang);
   };
 
   const toggleShowImage = () => {
     setShowImage(!showImage);
-    window.localStorage.setItem('showImage', !showImage);
+    setLocalStorage('showImage', !showImage);
   };
 
   const toggleInventoryMode = () => {
     setInventoryMode(!inventoryMode);
-    window.localStorage.setItem('inventoryMode', !inventoryMode);
+    setLocalStorage('inventoryMode', !inventoryMode);
   };
 
   const changeCryptDeckSort = (method) => {
     setCryptDeckSort(method);
-    window.localStorage.setItem('cryptDeckSort', method);
+    setLocalStorage('cryptDeckSort', method);
   };
 
   const changeCryptSearchSort = (method) => {
     setCryptSearchSort(method);
-    window.localStorage.setItem('cryptSearchSort', method);
+    setLocalStorage('cryptSearchSort', method);
   };
 
   const changeLibrarySearchSort = (method) => {
     setLibrarySearchSort(method);
-    window.localStorage.setItem('librarySearchSort', method);
+    setLocalStorage('librarySearchSort', method);
   };
 
   const toggleAddMode = () => {
     setAddMode(!addMode);
-    window.localStorage.setItem('addMode', !addMode);
+    setLocalStorage('addMode', !addMode);
   };
 
   const addRecentDeck = (deck) => {
@@ -116,66 +117,27 @@ export const AppProvider = (props) => {
     d.unshift({ deckid: deck.deckid, name: deck.name });
     if (d.length > 10) d.slice(0, 10);
     setRecentDecks(d);
-    window.localStorage.setItem('recentDecks', JSON.stringify(d));
+    setLocalStorage('recentDecks', d);
   };
 
   const updateRecentDecks = (decks) => {
     setRecentDecks(decks);
-    window.localStorage.setItem('recentDecks', JSON.stringify(decks));
+    setLocalStorage('recentDecks', decks);
   };
 
   useLayoutEffect(() => {
-    const css = window.localStorage.getItem('cryptSearchSort');
-    if (css) {
-      setCryptSearchSort(css);
-    } else {
-      setCryptSearchSort('Capacity - Min to Max');
-    }
-
-    const cds = window.localStorage.getItem('cryptDeckSort');
-    if (cds) {
-      setCryptDeckSort(cds);
-    } else {
-      setCryptDeckSort('Quantity');
-    }
-
-    const ls = window.localStorage.getItem('librarySearchSort');
-    if (ls) {
-      setLibrarySearchSort(ls);
-    } else {
-      setLibrarySearchSort('Type');
-    }
-
-    const lg = window.localStorage.getItem('lang');
-    if (lg) {
-      setLang(lg);
-    } else {
-      setLang('en-EN');
-    }
-
-    const am = window.localStorage.getItem('addMode');
-    if (am === 'false') {
-      setAddMode(false);
-    } else {
-      setAddMode(true);
-    }
-
-    const im = window.localStorage.getItem('inventoryMode');
-    if (im === 'true') {
-      setInventoryMode(true);
-    } else {
-      setInventoryMode(false);
-    }
-
-    const si = window.localStorage.getItem('showImage');
-    if (si === 'false') {
-      setShowImage(false);
-    } else {
-      setShowImage(true);
-    }
-
-    const rd = window.localStorage.getItem('recentDecks');
-    if (rd) setRecentDecks(JSON.parse(rd));
+    initFromStorage(
+      'cryptSearchSort',
+      'Capacity - Min to Max',
+      setCryptSearchSort
+    );
+    initFromStorage('cryptDeckSort', 'Quantity', setCryptDeckSort);
+    initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
+    initFromStorage('lang', 'en-EN', setLang);
+    initFromStorage('addMode', true, setAddMode);
+    initFromStorage('inventoryMode', false, setInventoryMode);
+    initFromStorage('showImage', true, setShowImage);
+    initFromStorage('recentDecks', [], setRecentDecks);
   }, []);
 
   const getDecks = () => {

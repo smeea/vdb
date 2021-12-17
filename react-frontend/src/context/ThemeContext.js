@@ -1,9 +1,16 @@
 import React, { useState, useLayoutEffect } from 'react';
+import {
+  initFromStorage,
+  setLocalStorage,
+  getLocalStorage,
+} from 'services/storageServices.js';
 
 const ThemeContext = React.createContext({
   isDarkTheme: false,
   toggleTheme: () => {},
 });
+
+const DARK_THEME = 'darkTheme';
 
 export default ThemeContext;
 
@@ -15,20 +22,11 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = (props) => {
-  const [isDarkTheme, setDarkTheme] = useState(
-    window.localStorage.getItem('darkTheme')
-  );
+  const [isDarkTheme, setDarkTheme] = useState(getLocalStorage(DARK_THEME));
 
   useLayoutEffect(() => {
-    const lastTheme = window.localStorage.getItem('darkTheme');
-
-    if (lastTheme === 'true') {
-      setDarkTheme(true);
-      applyTheme(darkTheme);
-    } else {
-      setDarkTheme(false);
-      applyTheme(lightTheme);
-    }
+    initFromStorage(DARK_THEME, false, setDarkTheme);
+    applyTheme(isDarkTheme ? darkTheme : lightTheme);
   }, [isDarkTheme]);
 
   const applyTheme = (theme) => {
@@ -38,7 +36,7 @@ export const ThemeProvider = (props) => {
 
   const toggleTheme = () => {
     setDarkTheme(!isDarkTheme);
-    window.localStorage.setItem('darkTheme', !isDarkTheme);
+    setLocalStorage(DARK_THEME, !isDarkTheme);
   };
 
   return (
