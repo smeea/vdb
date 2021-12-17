@@ -25,10 +25,7 @@ def deckImport(deckText):
         name = re.sub(r'\W', '', unidecode(card['Name'])).lower()
 
         if name not in cardbase:
-            cardbase[name] = {
-                'base': card['Id'],
-                card['Group']: card['Id']
-            }
+            cardbase[name] = {'base': card['Id'], card['Group']: card['Id']}
         elif adv:
             cardbase[name]['adv'] = card['Id']
         else:
@@ -36,9 +33,7 @@ def deckImport(deckText):
 
     for card in library:
         name = re.sub(r'\W', '', unidecode(card['Name'])).lower()
-        cardbase[name] = {
-            'base': str(card['Id'])
-        }
+        cardbase[name] = {'base': card['Id']}
 
     for i in linesArray:
         if nameMatch := re.match(r'^Deck Name: (.+)', i):

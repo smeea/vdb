@@ -10,30 +10,12 @@ import {
   ResultLayoutTextText,
   ResultLayoutTextSets,
   ResultLayoutTextRulings,
+  CardImage,
 } from 'components';
 import { useApp } from 'context';
 
 function ResultLibraryPopover(props) {
-  const { showImage, nativeLibrary, localizedLibrary, lang } = useApp();
-
-  const imgSrc = `${process.env.ROOT_URL}images/cards/${
-    localizedLibrary &&
-    localizedLibrary[lang] &&
-    localizedLibrary[lang][props.card['Id']]
-      ? lang
-      : 'en-EN'
-  }/${props.card['ASCII Name']
-    .toLowerCase()
-    .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-
-  const cardImage = (
-    <img
-      className={props.fullWidth ? 'card-popover full-width' : 'card-popover'}
-      src={imgSrc}
-      alt={props.card['Name']}
-      onClick={props.handleClose}
-    />
-  );
+  const { showImage, nativeLibrary } = useApp();
 
   return (
     <>
@@ -71,10 +53,12 @@ function ResultLibraryPopover(props) {
           </div>
           <hr />
           <div className="d-flex align-items-center justify-content-between">
-            <ResultLibraryCost
-              valuePool={props.card['Pool Cost']}
-              valueBlood={props.card['Blood Cost']}
-            />
+            <div>
+              <ResultLibraryCost
+                valuePool={props.card['Pool Cost']}
+                valueBlood={props.card['Blood Cost']}
+              />
+            </div>
             <div className="popover-sets">
               <ResultLayoutTextSets
                 setImageSet={props.setImageSet}
@@ -94,7 +78,9 @@ function ResultLibraryPopover(props) {
           )}
         </div>
       ) : (
-        cardImage
+        <>
+          <CardImage card={props.card} />
+        </>
       )}
     </>
   );

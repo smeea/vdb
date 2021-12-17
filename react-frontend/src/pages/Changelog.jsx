@@ -11,6 +11,30 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2021-12-15:</h6>
+            <ul>
+              <li>
+                Add Card Ideas (&quot;recommendation&quot;) feature to Deck,
+                based on card compatibility in TWDA
+              </li>
+            </ul>
+
+            <h6>2021-12-09:</h6>
+            <ul>
+              <li>Updated card images from KRCG</li>
+              <li>
+                Fixed deck bug causing to sometimes restore deck to much older
+                state after deleting card
+              </li>
+              <li>Fix card sorting in Deck-Library (thanks emime)</li>
+              <li>
+                Fixed set/precon search to respect Promo card release dates
+                (thanks emime)
+              </li>
+              <li>Fixed deck delete to sometimes not delete all revisions</li>
+              <li>Other small UI fixes/improvements</li>
+            </ul>
+
             <h6>2021-12-05:</h6>
             <ul>
               <li>

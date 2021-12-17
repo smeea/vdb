@@ -4,7 +4,7 @@ import { useApp } from 'context';
 import {
   CardPopover,
   ResultCryptName,
-  ResultCryptClan,
+  ResultClanImage,
   ResultCryptCapacity,
   ResultCryptGroup,
   ResultCryptDisciplines,
@@ -23,7 +23,7 @@ function ResultCryptLayoutText(props) {
       <div className="d-flex flex-nowrap justify-content-between align-items-center">
         <div className="d-flex flex-nowrap align-items-center pb-1">
           <div>
-            <ResultCryptClan value={props.card['Clan']} />
+            <ResultClanImage value={props.card['Clan']} />
           </div>
           <div className="name ps-2">
             <b>

@@ -55,7 +55,10 @@ function TwdSearchFormCrypt(props) {
               </div>
             </OverlayTrigger>
           ) : (
-            <div onClick={() => setModalCard(cryptCardBase[id])}>
+            <div
+              className="name"
+              onClick={() => setModalCard(cryptCardBase[id])}
+            >
               <ResultCryptName card={cryptCardBase[id]} />
               {cryptCardBase[id]['New'] && (
                 <div className="d-inline gray ps-1">

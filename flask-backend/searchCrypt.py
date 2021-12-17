@@ -10,6 +10,8 @@ def searchCrypt(request, crypt=vtescrypt):
     matches = []
 
     for k, v in queries.items():
+        if k == 0 or k =='0':
+            print(queries)
         function_to_call = getattr(searchCryptComponents, 'get_crypt_by_' + k)
         if not matches:
             matches = function_to_call(v, crypt)

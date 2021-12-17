@@ -1312,7 +1312,7 @@
         "Card Text":"Advanced, Camarilla: While Alan is ready, you may pay some or all of the pool cost of equipping from any investment cards you control.\n[MERGED] During your master phase, if Alan is ready, you may move a counter from any investment card to your pool.",
         "Set":{
             "Promo":{
-                "20051001":true
+                "2005-10-01":true
             }
         },
         "Title":"",
@@ -1858,7 +1858,7 @@
         "Card Text":"Camarilla Prince of Tampa: After Alicia performs a successful directed action, she can discard a political action card to lock a younger vampire controlled by (one of) the target Methuselah(s).",
         "Set":{
             "Promo":{
-                "20210331":true
+                "2021-03-31":true
             }
         },
         "Title":"prince",
@@ -2670,7 +2670,7 @@
                 "":"2"
             },
             "Promo":{
-                "20210310":true
+                "2021-03-10":true
             }
         },
         "Title":"",
@@ -3307,7 +3307,7 @@
         "Card Text":"Independent. Red List: All Blood Brothers may play cards that require Sanguinus [san] as if Angelo were a member of any circle. Angelo can burn a location as a (D) action. He cannot have or use retainers. Sterile.",
         "Set":{
             "Promo":{
-                "20051026":true
+                "2005-10-26":true
             }
         },
         "Title":"",
@@ -5085,7 +5085,7 @@
         "Card Text":"Independent.",
         "Set":{
             "Promo":{
-                "20210701":true
+                "2021-07-01":true
             }
         },
         "Title":"",
@@ -5590,7 +5590,7 @@
         "Card Text":"Independent: Once each turn, Baba Yaga can unlock when she successfully recruits an ally or employs a retainer. Once each round, she can burn 1 blood to make the damage from her hand strikes aggravated that round. +1 strength. +1 bleed.",
         "Set":{
             "Promo":{
-                "20150221":true
+                "2015-02-21":true
             }
         },
         "Title":"",
@@ -5926,7 +5926,7 @@
         "Card Text":"Independent: Barbaro may place a taint counter on a minion as a +1 stealth (D) action. If a minion has 2 taint counters, burn those counters to make the minion infernal. Barbaro may change his clan to Tremere antitribu as +1 stealth action. Infernal.",
         "Set":{
             "Promo":{
-                "20041015":true
+                "2004-10-15":true
             }
         },
         "Title":"",
@@ -5954,7 +5954,7 @@
         "Card Text":"Independent: The Baron has 2 votes (titled). During your unlock phase, if The Baron is ready, you may look at the hand of each Methuselah who controls a ready Giovanni. +1 bleed.",
         "Set":{
             "Promo":{
-                "20011201":true
+                "2001-12-01":true
             },
             "BL":{
                 "U":true
@@ -6724,8 +6724,8 @@
         "Card Text":"Anarch Baron of Fortaleza.",
         "Set":{
             "Promo":{
-                "20190601":true,
-                "20200511":true
+                "2019-06-01":true,
+                "2020-05-11":true
             }
         },
         "Title":"baron",
@@ -7102,8 +7102,8 @@
         "Card Text":"Anarch Baron of Manila.",
         "Set":{
             "Promo":{
-                "20191027":true,
-                "20200511":true
+                "2019-10-27":true,
+                "2020-05-11":true
             }
         },
         "Title":"baron",
@@ -7506,7 +7506,7 @@
         "Card Text":"Anarch: During an action he performs, Boles\u0142aw can burn 1 blood to reveal the top card of your crypt and then shuffle your crypt. If the revealed card is a copy of Boles\u0142aw, Boles\u0142aw gets +1 stealth for this action; otherwise, he gets +1 strength for this action.",
         "Set":{
             "Promo":{
-                "20201030":true
+                "2020-10-30":true
             }
         },
         "Title":"",
@@ -8089,7 +8089,7 @@
         "Card Text":"Camarilla: Bulscu gets +1 stealth during actions directed at a location or an equipment. +1 strength.\n[MERGED] Prince of Budapest.",
         "Set":{
             "Promo":{
-                "20150214":true
+                "2015-02-14":true
             },
             "KSU":{
                 "TUA":"1",
@@ -8591,9 +8591,9 @@
         "Card Text":"Independent: If The Capuchin is burned, move him to his owner's uncontrolled region and you get +3 transfers at the start of your next influence phase. +1 bleed. +2 hand size. +1 intercept.",
         "Set":{
             "Promo":{
-                "20150219":true,
-                "20181004:HB2":true,
-                "20190408":true
+                "2015-02-19":true,
+                "2018-10-04":true,
+                "2019-04-08":true
             }
         },
         "Title":"",
@@ -8965,8 +8965,8 @@
         "Card Text":"Anarch Baron of Columbus.",
         "Set":{
             "Promo":{
-                "20190615":true,
-                "20200511":true
+                "2019-06-15":true,
+                "2020-05-11":true
             }
         },
         "Title":"baron",
@@ -9895,7 +9895,7 @@
         "Card Text":"Camarilla: Combat cards cost an opposing vampire an additional blood. During your unlock phase, burn 1 pool if there are no Gehenna cards in play.",
         "Set":{
             "Promo":{
-                "20100510":true
+                "2010-05-10":true
             }
         },
         "Title":"",
@@ -9927,7 +9927,7 @@
         "Card Text":"Camarilla: If Claudio is ready, you can use a discard phase action to discard a card requiring Blood Sorcery [tha] to gain 1 pool.\n[MERGED] Claudio can burn 1 blood to get +1 stealth.",
         "Set":{
             "Promo":{
-                "20150211":true
+                "2015-02-11":true
             },
             "KSU":{
                 "TUA":"1",
@@ -11057,7 +11057,7 @@
         "Card Text":"Camarilla: Dan may take an action to allow you to go though your library, find /Giant's Blood/, and take it into your hand (reshuffle afterwards and discard to your maximum hand size).",
         "Set":{
             "Promo":{
-                "19960101":true
+                "1996-01-01":true
             }
         },
         "Title":"",
@@ -13591,9 +13591,9 @@
         "Card Text":"Independent: Cards requiring Vicissitude [vic] cost The Dracon 1 fewer blood. He inflicts +1 damage or steals 1 additional blood or life with ranged strikes (even at close range). Flight [FLIGHT]. +1 bleed. +2 strength.",
         "Set":{
             "Promo":{
-                "20150216":true,
-                "20181004:HB2":true,
-                "20190408":true
+                "2015-02-16":true,
+                "2018-10-04":true,
+                "2019-04-08":true
             }
         },
         "Title":"",
@@ -13783,7 +13783,7 @@
         "Card Text":"Sabbat: You can draw 1 additional card after replacing a card requiring Vicissitude [vic] Duality played.",
         "Set":{
             "Promo":{
-                "20060710":true
+                "2006-07-10":true
             },
             "Third":{
                 "PTz":1
@@ -14044,7 +14044,7 @@
         "Card Text":"Camarilla: Echo gets +1 strength in combat with a Red List minion.",
         "Set":{
             "Promo":{
-                "20050115":true
+                "2005-01-15":true
             },
             "KMW":{
                 "PAl":1
@@ -16097,7 +16097,7 @@
         "Card Text":"Independent: Once each combat, before range is determined, Fatima can equip with a weapon from your hand (requirements and cost apply as normal). Blood cursed.",
         "Set":{
             "Promo":{
-                "20010428":true
+                "2001-04-28":true
             },
             "FN":{
                 "PA":1
@@ -16371,7 +16371,7 @@
         "Card Text":"Camarilla: If you burn the Edge for a vote, you get +1 vote. If you burn a political action card for a vote, you get +1 vote.",
         "Set":{
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Title":"",
@@ -17597,7 +17597,7 @@
         "Card Text":"Independent. Red List: If a blood hunt is successfully called on Genina, she goes to torpor instead of being burned. Genina gets +1 stealth on diablerie actions and on undirected actions.",
         "Set":{
             "Promo":{
-                "20050914":true
+                "2005-09-14":true
             }
         },
         "Title":"",
@@ -18046,7 +18046,7 @@
         "Card Text":"Anarch Baron of Miami: During your influence phase, Gilbert can burn 1 blood to reveal and remove the top card of your crypt from the game. If it is a Malkavian, a non-titled vampire you control becomes Anarch.",
         "Set":{
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Title":"baron",
@@ -19723,7 +19723,7 @@
         "Card Text":"Advanced, Sabbat cardinal: Once during each Methuselah's minion phase, Hannibal may burn 2 blood to unlock.",
         "Set":{
             "Promo":{
-                "20040409":true
+                "2004-04-09":true
             }
         },
         "Title":"cardinal",
@@ -20400,8 +20400,8 @@
         "Card Text":"Independent: Helena pays no blood costs for reaction cards requiring Auspex [aus] or Dominate [dom]. Infernal.\n[MERGED] Helena is immune to damage from demons and gets +1 level of Daimoinon [dai] and Obtenebration [obt].",
         "Set":{
             "Promo":{
-                "20051001":true,
-                "20190408":true
+                "2005-10-01":true,
+                "2019-04-08":true
             }
         },
         "Title":"",
@@ -20632,7 +20632,7 @@
         "Card Text":"Independent: Hesha gets +1 stealth when hunting. +1 hunt.",
         "Set":{
             "Promo":{
-                "20010302":true
+                "2001-03-02":true
             },
             "FN":{
                 "PS":1
@@ -23005,8 +23005,8 @@
         "Card Text":"Anarch Baron of Versailles.",
         "Set":{
             "Promo":{
-                "20190818":true,
-                "20200511":true
+                "2019-08-18":true,
+                "2020-05-11":true
             }
         },
         "Title":"baron",
@@ -24195,7 +24195,7 @@
                 "PTo":1
             },
             "Promo":{
-                "20040409":true
+                "2004-04-09":true
             }
         },
         "Title":"bishop",
@@ -26031,7 +26031,7 @@
         "Card Text":"Camarilla. 2 votes (titled): Karl can play cards requiring a justicar as if he were a justicar. +1 intercept.",
         "Set":{
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Title":"2 votes",
@@ -26126,8 +26126,8 @@
         "Card Text":"Camarilla: Karsh can play cards named /Blood Hunt/ from your hand or ash heap as a prince. He gets +3 votes in blood hunt referendums. He cannot block infernal vampires.\n[MERGED] Imperator (3 votes): +1 intercept.",
         "Set":{
             "Promo":{
-                "20100510":true,
-                "20190408":true
+                "2010-05-10":true,
+                "2019-04-08":true
             }
         },
         "Title":"",
@@ -26805,7 +26805,7 @@
         "Card Text":"Sabbat. Black Hand: Kestrelle gets +1 stealth on (D) actions directed at a Methuselah who doesn't control a ready Sabbat vampire.",
         "Set":{
             "Promo":{
-                "20070101":true
+                "2007-01-01":true
             },
             "SoC":{
                 "V":true
@@ -27153,7 +27153,7 @@
         "Card Text":"Laibon magaji: Kisha gets -1 stealth on non-hunt actions.",
         "Set":{
             "Promo":{
-                "20061026":true
+                "2006-10-26":true
             }
         },
         "Title":"magaji",
@@ -28021,7 +28021,7 @@
         "Card Text":"Advanced, Independent: Lambach has 2 votes (titled). He can equip with an Eye of /Hazimel/ at no cost from your library as a +1 stealth action (shuffle afterward).\n[MERGED] He unlocks when he successfully performs an action to put a vampire in play.",
         "Set":{
             "Promo":{
-                "20030901":true
+                "2003-09-01":true
             }
         },
         "Title":"2 votes",
@@ -28699,7 +28699,7 @@
         "Card Text":"Sabbat: If Len is ready at the start of your influence phase, you get +1 transfer. Black Hand.",
         "Set":{
             "Promo":{
-                "20210701":true
+                "2021-07-01":true
             }
         },
         "Title":"",
@@ -28871,8 +28871,8 @@
         "Card Text":"Anarch Baron of Canberra.",
         "Set":{
             "Promo":{
-                "20191005":true,
-                "20200511":true
+                "2019-10-05":true,
+                "2020-05-11":true
             }
         },
         "Title":"baron",
@@ -29658,9 +29658,9 @@
         "Card Text":"Camarilla: Cards requiring Blood Sorcery [tha] cost Lord Tremere 1 fewer blood. During your minion phase, you can lock or unlock another ready Tremere or Tremere antitribu. +2 bleed. +1 intercept.",
         "Set":{
             "Promo":{
-                "20150220":true,
-                "20181004:HB2":true,
-                "20190408":true
+                "2015-02-20":true,
+                "2018-10-04":true,
+                "2019-04-08":true
             }
         },
         "Title":"",
@@ -30333,7 +30333,7 @@
         "Card Text":"Independent: Younger Sabbat vampires get -1 intercept against Lucita.",
         "Set":{
             "Promo":{
-                "20020811":true
+                "2002-08-11":true
             },
             "SW":{
                 "PL":1
@@ -31716,7 +31716,7 @@
         "Card Text":"Camarilla Prince of Washington, D.C.: Marcus can burn a retainer as a +1 stealth (D) action. While Marcus is ready and a prince, Sabbat vampires you control get +1 bleed when bleeding a Methuselah who controls a ready Camarilla vampire.",
         "Set":{
             "Promo":{
-                "20020704":true
+                "2002-07-04":true
             },
             "CE":{
                 "V":true
@@ -32034,7 +32034,7 @@
         "Card Text":"Camarilla.",
         "Set":{
             "Promo":{
-                "19960101":true
+                "1996-01-01":true
             }
         },
         "Title":"",
@@ -32959,7 +32959,7 @@
         "Card Text":"Camarilla primogen: Once each action, Masika can discard a political action card to give a minion you control +1 intercept.\n[MERGED] Prince of Lisbon.",
         "Set":{
             "Promo":{
-                "20150221":true
+                "2015-02-21":true
             },
             "Anthology":{
                 "":"1"
@@ -33945,8 +33945,8 @@
         "Card Text":"Independent: While /Helena/ is ready, minion cards cost Menele 1 fewer blood.\n[MERGED] Menele can strike: steal 2 blood or life (becoming blood).",
         "Set":{
             "Promo":{
-                "20090929":true,
-                "20190408":true
+                "2009-09-29":true,
+                "2019-04-08":true
             }
         },
         "Title":"",
@@ -34799,9 +34799,9 @@
         "Card Text":"Camarilla: Mithras gets +2 votes. Once each action he performs, he can burn 2 blood to cancel a reaction card as it is played by a younger vampire, and its cost is not paid. +2 bleed. +1 strength.",
         "Set":{
             "Promo":{
-                "20150218":true,
-                "20181004:HB2":true,
-                "20190408":true
+                "2015-02-18":true,
+                "2018-10-04":true,
+                "2019-04-08":true
             }
         },
         "Title":"",
@@ -34980,9 +34980,9 @@
         "Card Text":"Independent. 2 votes (titled): Cards requiring Obtenebration [obt] cost Montano 1 fewer blood. During an action, he can burn 1 blood to give a minion you control +1 stealth. +1 bleed.",
         "Set":{
             "Promo":{
-                "20150217":true,
-                "20181004:HB2":true,
-                "20190408":true
+                "2015-02-17":true,
+                "2018-10-04":true,
+                "2019-04-08":true
             },
             "POD":{
                 "DTC":true
@@ -36266,7 +36266,7 @@
         "Card Text":"Independent: Nefertiti can search your crypt for a card named /Aabbt Kindred/ (shuffle afterward), reveal it and move it to your uncontrolled region as a +1 stealth action.\n[MERGED] During your minion phase, Nefertiti can unlock.",
         "Set":{
             "Promo":{
-                "20190816":true
+                "2019-08-16":true
             },
             "POD":{
                 "DTC":true
@@ -36487,8 +36487,8 @@
         "Card Text":"Independent: Once each turn, Nergal can reduce the cost of a card he plays by 1 blood. Infernal. +2 bleed.",
         "Set":{
             "Promo":{
-                "20051001":true,
-                "20190408":true
+                "2005-10-01":true,
+                "2019-04-08":true
             }
         },
         "Title":"",
@@ -36528,8 +36528,8 @@
         "Card Text":"Independent: While Nergal is acting, reaction cards cost 1 additional blood. Once each action, he can burn 1 blood to get +1 stealth. Infernal.",
         "Set":{
             "Promo":{
-                "20080203":true,
-                "20190408":true
+                "2008-02-03":true,
+                "2019-04-08":true
             }
         },
         "Title":"",
@@ -36622,7 +36622,7 @@
         "Card Text":"Sabbat: As New Blood enters play during your influence phase, choose any circle and draw 1 card from your crypt. New Blood belongs to the chosen circle. Sterile.",
         "Set":{
             "Promo":{
-                "20150213":true
+                "2015-02-13":true
             },
             "Anthology":{
                 "":"2"
@@ -37402,7 +37402,7 @@
         "Card Text":"Independent: Once each turn, Okulos can burn 1 blood to draw 1 card (discard down afterward).",
         "Set":{
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Title":"",
@@ -40988,7 +40988,7 @@
         "Card Text":"Independent: Reverend Adams gets -1 stealth on political actions. Older vampires do not lock for successfully blocking Reverend Adams.",
         "Set":{
             "Promo":{
-                "20061101":true
+                "2006-11-01":true
             }
         },
         "Title":"",
@@ -43120,7 +43120,7 @@
         "Card Text":"Sabbat priscus: When a vampire opposing Sascha in combat goes to torpor, you may choose to increase your hand size by 2 for the remainder of the turn. This ability can be used only once per turn.",
         "Set":{
             "Promo":{
-                "20010302":true
+                "2001-03-02":true
             },
             "SW":{
                 "PT":1
@@ -43681,7 +43681,7 @@
         "Card Text":"Sabbat. Black Hand: Damage inflicted on Selena by a werewolf is aggravated.",
         "Set":{
             "Promo":{
-                "20031105":true
+                "2003-11-05":true
             },
             "BH":{
                 "U":true,
@@ -48710,7 +48710,7 @@
                 "":"1"
             },
             "Promo":{
-                "20200511":true
+                "2020-05-11":true
             }
         },
         "Title":"archbishop",
@@ -49803,7 +49803,7 @@
         "Card Text":"Camarilla: When Victor enters play, you may pay 1 pool to make him a primogen, 2 pool to make him Prince of Paris, or 3 pool to make him Ventrue Justicar. If Victor's title would be contested, he immediately yields instead of contesting.",
         "Set":{
             "Promo":{
-                "20060417":true
+                "2006-04-17":true
             }
         },
         "Title":"",
@@ -49957,7 +49957,7 @@
         "Card Text":"Camarilla: While Victoria is ready, you can discard 1 card during a bleed action to give an acting Banu Haqim +1 bleed. +1 bleed.",
         "Set":{
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Title":"",
@@ -50418,8 +50418,8 @@
         "Card Text":"Independent: Vlad uses and can play cards requiring a title or a sect as if he had that required title or were of that required sect. +1 bleed.",
         "Set":{
             "Promo":{
-                "20150215":true,
-                "20210701":true
+                "2015-02-15":true,
+                "2021-07-01":true
             }
         },
         "Title":"",
@@ -50899,7 +50899,7 @@
         "Card Text":"Sabbat. Black Hand: Once per combat, before range is determined, White Lily may equip with a weapon from your hand. (Pay cost as normal.)",
         "Set":{
             "Promo":{
-                "20060710":true
+                "2006-07-10":true
             },
             "Third":{
                 "PM":1
@@ -51036,7 +51036,7 @@
         "Card Text":"Sabbat: Winterlich can recruit a changeling ally as if he met the requirements of playing that card. While he is ready, changelings cost you 1 fewer pool.",
         "Set":{
             "Promo":{
-                "20150212":true
+                "2015-02-12":true
             },
             "KSU":{
                 "TUA":"1",
@@ -51243,7 +51243,7 @@
         "Card Text":"Independent: Xaviar has 2 votes (titled). He can prevent 1 damage each combat. Once each combat, before range is determined, he may burn 2 blood to get +2 strength for the remainder of combat.",
         "Set":{
             "Promo":{
-                "20030307":true
+                "2003-03-07":true
             },
             "Anarchs":{
                 "U":true,
@@ -51565,8 +51565,8 @@
         "Card Text":"Sabbat: Yazid gets +1 stealth during directed actions. Black Hand.\n[MERGED] Anarch.",
         "Set":{
             "Promo":{
-                "20090929":true,
-                "20190408":true
+                "2009-09-29":true,
+                "2019-04-08":true
             },
             "POD":{
                 "DTC":true
@@ -51647,7 +51647,7 @@
                 "V":true
             },
             "Promo":{
-                "20040409":true
+                "2004-04-09":true
             }
         },
         "Title":"cardinal",

@@ -12,7 +12,7 @@ function DeckSelectPrecon(props) {
   Object.keys(setsAndPrecons).map((i) => {
     if (setsAndPrecons[i].hasOwnProperty('precons')) {
       const set = i;
-      const year = setsAndPrecons[i].year.slice(2, 4);
+      const year = setsAndPrecons[i].date.slice(2, 4);
       Object.keys(setsAndPrecons[i].precons).map((j) => {
         const precon = j;
         const name = setsAndPrecons[i].precons[j].name;

@@ -11,7 +11,7 @@ import {
   ResultCryptCapacity,
   ResultCryptDisciplines,
   ResultCryptName,
-  ResultCryptClan,
+  ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
   ResultCryptModal,
@@ -33,6 +33,15 @@ function InventoryCryptTable(props) {
       setModalCardIdx(modalCardIdx + d);
     }
   };
+
+  props.cards.sort((a, b) => {
+    if (a.c['ASCII Name'] < b.c['ASCII Name']) {
+      return -1;
+    }
+    if (a.c['ASCII Name'] > b.c['ASCII Name']) {
+      return 1;
+    }
+  });
 
   const cardRows = props.cards.map((card, index) => {
     const handleClick = () => {
@@ -172,7 +181,7 @@ function InventoryCryptTable(props) {
               className="d-flex align-items-center justify-content-center clan"
               onClick={() => handleClick()}
             >
-              <ResultCryptClan value={card.c['Clan']} />
+              <ResultClanImage value={card.c['Clan']} />
             </div>
             <div
               className="d-flex align-items-center justify-content-center group"
@@ -184,7 +193,7 @@ function InventoryCryptTable(props) {
         ) : (
           <div className="clan-group" onClick={() => handleClick()}>
             <div className="d-flex justify-content-center">
-              <ResultCryptClan value={card.c['Clan']} />
+              <ResultClanImage value={card.c['Clan']} />
             </div>
             <div className="d-flex small justify-content-end">
               <div className="bold blue">

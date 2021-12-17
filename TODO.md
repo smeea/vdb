@@ -1,18 +1,18 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
-
-# FIX MOBILE
+* Transition to Name+Group in crypt images
+* Refactor images to components
 
 # FEATURES
 * Localized proxies
 * Export all in xlsx and csv
 * Links to custom deck
+* Crypt discipline distribution
 
 # BIG FEATURES
 * Search for similar TWD decks
 * Public deck archive
-* Card recommendation
 
 # MOBILE FEATURES
 
@@ -28,4 +28,3 @@
 
 # IMPROVE TECHNOLOGY - BACKEND
 * Check frontend input (quantity/cardior codes to return)
-* Log deck errors (import/export first)

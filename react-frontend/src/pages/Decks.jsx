@@ -22,6 +22,7 @@ import {
   DeckCrypt,
   DeckLibrary,
   DeckChangeName,
+  DeckRecommendation,
   DeckChangeBranchName,
   DeckChangeAuthor,
   DeckChangeDescription,
@@ -52,6 +53,7 @@ function Decks(props) {
 
   const query = new URLSearchParams(useLocation().search);
   const [showDraw, setShowDraw] = useState(false);
+  const [showRecommendation, setShowRecommendation] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
   const [showMenuButtons, setShowMenuButtons] = useState(false);
@@ -548,6 +550,7 @@ function Decks(props) {
                 activeDeck={activeDeck}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
+                setShowRecommendation={setShowRecommendation}
                 setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
@@ -639,6 +642,7 @@ function Decks(props) {
                 activeDeck={activeDeck}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
+                setShowRecommendation={setShowRecommendation}
                 setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
@@ -658,6 +662,14 @@ function Decks(props) {
         <DeckDraw
           setShow={setShowDraw}
           deck={deckRouter(activeDeck)}
+          setShowFloatingButtons={setShowFloatingButtons}
+        />
+      )}
+      {showRecommendation && (
+        <DeckRecommendation
+          isAuthor={isAuthor}
+          deck={deckRouter(activeDeck)}
+          setShow={setShowRecommendation}
           setShowFloatingButtons={setShowFloatingButtons}
         />
       )}

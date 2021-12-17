@@ -6,7 +6,7 @@ import {
   ResultCryptCapacity,
   DeckCryptDisciplines,
   ResultCryptName,
-  ResultCryptClan,
+  ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
   DeckDrawProbabilityText,
@@ -90,7 +90,7 @@ function DeckDrawCryptTable(props) {
                 <ResultCryptTitle value={card['Title']} />
               </td>
               <td className="clan" onClick={() => props.handleClick(index)}>
-                <ResultCryptClan value={card['Clan']} />
+                <ResultClanImage value={card['Clan']} />
               </td>
               <td className="group" onClick={() => props.handleClick(index)}>
                 <ResultCryptGroup value={card['Group']} />
@@ -104,12 +104,12 @@ function DeckDrawCryptTable(props) {
                   onClick={() => props.handleClick(index)}
                 >
                   <div>
-                    <ResultCryptClan value={card['Clan']} />
+                    <ResultClanImage value={card['Clan']} />
                   </div>
                   <div className="d-flex small justify-content-end">
-                    <b>
+                    <div className="bold blue">
                       <ResultCryptTitle value={card['Title']} />
-                    </b>
+                    </div>
                     <ResultCryptGroup value={card['Group']} />
                   </div>
                 </td>
@@ -126,7 +126,7 @@ function DeckDrawCryptTable(props) {
                     onClick={() => props.handleClick(index)}
                   >
                     <div>
-                      <ResultCryptClan value={card['Clan']} />
+                      <ResultClanImage value={card['Clan']} />
                     </div>
                     <div className="d-flex small justify-content-end">
                       <ResultCryptGroup value={card['Group']} />

@@ -7,6 +7,7 @@ export * from 'components/inventory';
 export * from 'components/result_crypt';
 export * from 'components/result_layout';
 export * from 'components/result_library';
+export * from 'components/result_common';
 export * from 'components/search_crypt';
 export * from 'components/search_form';
 export * from 'components/search_library';
@@ -31,5 +32,6 @@ export { default as ButtonToggleShowImage } from 'components/ButtonToggleShowIma
 export { default as NavMobileMenu } from 'components/NavMobileMenu.jsx';
 export { default as SelectLabelLibrary } from 'components/SelectLabelLibrary.jsx';
 export { default as CardPopover } from 'components/CardPopover.jsx';
+export { default as CardImage } from 'components/CardImage.jsx';
 export { default as NewCryptCard } from 'components/NewCryptCard.jsx';
 export { default as UsedDescription } from 'components/UsedDescription.jsx';

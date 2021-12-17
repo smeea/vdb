@@ -198,9 +198,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
 
                     else:
                         if m := re.match(r'^(\D+)([0-9]+)?', precon):
-                            if m.group(1) in [
-                                    "C", "U", "R", "V", "DTC", "Promo"
-                            ]:
+                            if m.group(1) in ["C", "U", "R", "V", "DTC"]:
                                 card['Set'][set[0]][m.group(1)] = True
                             elif m.group(2):
                                 card['Set'][set[0]][m.group(1)] = m.group(2)
@@ -209,10 +207,10 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                         elif m := re.match(r'^[0-9]$', precon):
                             card['Set'][set[0]][""] = precon
                         else:
-                            card['Set'][set[0]][precon] = True
+                            date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
+                            card['Set'][set[0]][date] = True
 
         # ASCII-fication of name
-
         if card['Id'] == 201528:
             card['ASCII Name'] = "Boleslaw Gutowski"
         else:

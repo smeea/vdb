@@ -70,16 +70,11 @@ function About(props) {
                 : 2021-12-01
               </p>
 
-              <h6>Last update [2021-12-05]:</h6>
+              <h6>Last update [2021-12-15]:</h6>
               <ul>
                 <li>
-                  Fix critical bug with promo cards from HB2 (Dracon, Capucin,
-                  etc)
-                </li>
-                <li>Rename Thaumaturgy to Blood Sorcery</li>
-                <li>
-                  Add library search traits &quot;reduce bleed&quot; and
-                  &quot;+votes / title&quot;
+                  Add Card Ideas (&quot;recommendation&quot;) feature to Deck,
+                  based on card compatibility in TWDA
                 </li>
               </ul>
               <Link to="/changelog">Full changes history</Link>

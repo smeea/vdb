@@ -61,10 +61,11 @@ function App(props) {
   } = useApp();
 
   const [lastDeck, setLastDeck] = useState({});
+  const VERSION = '2021-12-09';
 
   const getCardBase = () => {
-    const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=2021-12-05`;
-    const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=2021-12-05`;
+    const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
+    const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=${VERSION}`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -100,9 +101,6 @@ function App(props) {
             };
           });
           setNativeLibrary(en);
-
-          console.log('en:', en);
-          console.log('data:', data);
         }
       });
   };
@@ -344,7 +342,9 @@ function App(props) {
           name: `${name}`,
           deckid: deckid,
           author: 'VTES Team',
-          description: `Preconstructed from "${setsAndPrecons[set]['name']}" [${setsAndPrecons[set]['year']}]`,
+          description: `Preconstructed from "${
+            setsAndPrecons[set]['name']
+          }" [${setsAndPrecons[set]['date'].slice(4)}]`,
           crypt: {},
           library: {},
         };

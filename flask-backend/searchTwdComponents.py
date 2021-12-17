@@ -11,24 +11,28 @@ def get_twd_by_crypt(crypt, twda=twda):
         counter = 0
         for card, v in crypt.items():
             q, m = v['q'], v['m']
-            if q:
-                if m == 'gt':
-                    if card in deck['crypt'].keys(
-                    ) and deck['crypt'][card]['q'] >= q:
+            if m == 'gt':
+                if q:
+                    if card in deck['crypt'] and deck['crypt'][card]['q'] >= q:
                         counter += 1
-
-                if m == 'lt':
-                    if card not in deck['crypt'].keys(
-                    ) or deck['crypt'][card]['q'] <= q:
-                        counter += 1
-
-                if m == 'eq':
-                    if card in deck['crypt'].keys(
-                    ) and deck['crypt'][card]['q'] == q:
-                        counter += 1
-            else:
-                if card not in deck['crypt'].keys():
+                else:
                     counter += 1
+
+            elif m == 'eq':
+                if q:
+                    if card in deck['crypt'] and deck['crypt'][card]['q'] == q:
+                        counter += 1
+                else:
+                    if card not in deck['crypt']:
+                        counter += 1
+
+            elif m == 'lt':
+                if q:
+                    if card in deck['crypt'] and deck['crypt'][card]['q'] <= q:
+                        counter += 1
+                else:
+                    if card not in deck['crypt']:
+                        counter += 1
 
         if counter == cards_counter:
             match_decks.append(deck)
@@ -43,24 +47,31 @@ def get_twd_by_library(library, twda=twda):
         counter = 0
         for card, v in library.items():
             q, m = v['q'], v['m']
-            if q:
-                if m == 'gt':
-                    if card in deck['library'].keys(
-                    ) and deck['library'][card]['q'] >= q:
+            if m == 'gt':
+                if q:
+                    if card in deck[
+                            'library'] and deck['library'][card]['q'] >= q:
                         counter += 1
-
-                if m == 'lt':
-                    if card not in deck['library'].keys(
-                    ) or deck['library'][card]['q'] <= q:
-                        counter += 1
-
-                if m == 'eq':
-                    if card in deck['library'].keys(
-                    ) and deck['library'][card]['q'] == q:
-                        counter += 1
-            else:
-                if card not in deck['library'].keys():
+                else:
                     counter += 1
+
+            elif m == 'eq':
+                if q:
+                    if card in deck['library'] and deck['library'][card][
+                            'q'] == q:
+                        counter += 1
+                else:
+                    if card not in deck['library']:
+                        counter += 1
+
+            elif m == 'lt':
+                if q:
+                    if card in deck[
+                            'library'] and deck['library'][card]['q'] <= q:
+                        counter += 1
+                else:
+                    if card not in deck['library']:
+                        counter += 1
 
         if counter == cards_counter:
             match_decks.append(deck)

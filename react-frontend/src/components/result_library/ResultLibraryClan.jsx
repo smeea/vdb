@@ -1,40 +1,31 @@
 import React from 'react';
+import { ResultClanImage } from 'components';
 
 function ResultLibraryClan(props) {
-  const imgClass = 'clan-image-results';
   let clanImages = null;
 
   if (props.value.indexOf('/') != -1) {
     const clans = props.value.split('/');
     let items = clans.length;
     clanImages = clans.map((clan, index) => {
-      const imgSrc = `${
-        process.env.ROOT_URL
-      }images/clans/${clan.toLowerCase().replace(/[\s,:!?'.\-]/g, '')}.svg`;
-
       if (items > 1) {
         items -= 1;
         return (
           <span key={index}>
-            <img className={imgClass} src={imgSrc} />
+            <ResultClanImage value={clan} />
             {' / '}
           </span>
         );
       } else {
         return (
           <span key={index}>
-            <img className={imgClass} src={imgSrc} title={props.value} />
+            <ResultClanImage value={clan} />
           </span>
         );
       }
     });
   } else if (props.value) {
-    const imgSrc = `${
-      process.env.ROOT_URL
-    }images/clans/${props.value
-      .toLowerCase()
-      .replace(/[\s,:!?'.\-]/g, '')}.svg`;
-    clanImages = <img className={imgClass} src={imgSrc} title={props.value} />;
+    clanImages = <ResultClanImage value={props.value} />;
   }
 
   return <span className="clan">{clanImages}</span>;

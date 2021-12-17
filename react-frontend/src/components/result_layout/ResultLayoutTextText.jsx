@@ -39,7 +39,7 @@ const ResultLayoutTextText = (props) => {
           return (
             <span key={`${cardid}-${idx}`}>
               {isMobile ? (
-                <div className="d-inline">
+                <div className="d-inline name">
                   {cardid > 200000 ? (
                     <ResultCryptName card={cryptCardBase[cardid]} />
                   ) : (
@@ -59,7 +59,7 @@ const ResultLayoutTextText = (props) => {
                     />
                   }
                 >
-                  <div className="d-inline">
+                  <div className="d-inline name">
                     {cardid > 200000 ? (
                       <ResultCryptName card={cryptCardBase[cardid]} />
                     ) : (

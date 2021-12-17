@@ -140,7 +140,7 @@
         "Card Text":"+1 stealth action.\nHunt at +4 hunt. After successful resolution, a referendum is called to call a blood hunt on this vampire (independent of the action, just as if they had committed diablerie).",
         "Set":{
             "Promo":{
-                "20090401":true
+                "2009-04-01":true
             }
         },
         "Requirement":"",
@@ -539,7 +539,7 @@
                 "PTo":"3"
             },
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Requirement":"",
@@ -2161,7 +2161,7 @@
                 "":"1"
             },
             "Promo":{
-                "20200511":true
+                "2020-05-11":true
             }
         },
         "Requirement":"",
@@ -2241,7 +2241,7 @@
         "Card Text":"Gehenna.\nOnce each master phase, a Methuselah can use a master phase action to exchange a master card in his or her hand for one in his or her ash heap.",
         "Set":{
             "Promo":{
-                "20040411":true
+                "2004-04-11":true
             }
         },
         "Requirement":"",
@@ -2619,7 +2619,7 @@
         "Card Text":"Unique melee weapon.\nStrike: strength+1 damage. If the opposing minion is a werewolf, the bearer can make a ranged strike to burn 4 life from that werewolf.",
         "Set":{
             "Promo":{
-                "20070601":true
+                "2007-06-01":true
             }
         },
         "Requirement":"",
@@ -5119,7 +5119,7 @@
                 "":"1"
             },
             "Promo":{
-                "20200511":true
+                "2020-05-11":true
             },
             "POD":{
                 "DTC":true
@@ -7219,7 +7219,7 @@
         "Card Text":"Only usable as the opposing minion plays a card that requires a Discipline.\nThe opposing minion's controller reveals the top two cards of his or her library (before drawing to replace). If another copy of the same combat card is revealed, the played card is canceled (cost is still paid), the opposing minion takes 1 unpreventable damage, and all revealed copies are burned. A minion may play only one Botched Move each combat.",
         "Set":{
             "Promo":{
-                "20061026":true
+                "2006-10-26":true
             }
         },
         "Requirement":"",
@@ -8435,7 +8435,7 @@
         "Card Text":"Only usable before range is determined.\n[ani][pro] For the remainder of combat, this vampire is immune to frenzy cards. A vampire may play only one Call the Wild Hunt each combat.\n[ANI][PRO] As above, and during the initial strike resolution phase of this round, you may burn X animals from your hand to inflict X ranged damage on the opposing minion.",
         "Set":{
             "Promo":{
-                "20060213":true
+                "2006-02-13":true
             }
         },
         "Requirement":"",
@@ -9985,7 +9985,7 @@
                 "R":true
             },
             "Promo":{
-                "20191123":true
+                "2019-11-23":true
             }
         },
         "Requirement":"",
@@ -10536,7 +10536,7 @@
         "Card Text":"Mortal with 2 life. 0 strength, 0 bleed.\nThis ally can strike: 1R damage. This ally gets one optional maneuver each combat. This ally can lock to give a Ravnos you control +1 stealth.",
         "Set":{
             "Promo":{
-                "20210701":true
+                "2021-07-01":true
             }
         },
         "Requirement":"",
@@ -10810,7 +10810,7 @@
         "Card Text":"Unique equipment.\nToreador and Toreador antitribu cannot block this minion.",
         "Set":{
             "Promo":{
-                "20080203":true
+                "2008-02-03":true
             }
         },
         "Requirement":"",
@@ -11198,7 +11198,7 @@
         "Card Text":"Unique.\nThe bearer gets -2 stealth when bleeding. This vampire can bleed as a (D) action that costs 1 blood; this action gets +3 bleed if the target Methuselah does not control a ready unlocked minion.",
         "Set":{
             "Promo":{
-                "20090929":true
+                "2009-09-29":true
             },
             "V5A":{
                 "PMin":"1"
@@ -12618,7 +12618,7 @@
         "Card Text":"Master.\nMove 1 blood from each ready Pander you control to a Pander in your uncontrolled region.",
         "Set":{
             "Promo":{
-                "20080203":true
+                "2008-02-03":true
             }
         },
         "Requirement":"",
@@ -13291,7 +13291,7 @@
         "Card Text":"Master: unique location.\nLock during your unlock phase to burn a vampire in torpor with no blood.",
         "Set":{
             "Promo":{
-                "20061026":true
+                "2006-10-26":true
             }
         },
         "Requirement":"",
@@ -13481,7 +13481,7 @@
         "Card Text":"Requires a Sabbat vampire. Title.\nIf this referendum passes, put this card on the acting vampire to represent the unique Sabbat title of Archbishop of Aragon. If Lucita is in play and is Sabbat, put this card on her instead.",
         "Set":{
             "Promo":{
-                "20090929":true
+                "2009-09-29":true
             }
         },
         "Requirement":"sabbat",
@@ -14679,7 +14679,7 @@
         "Card Text":"Mortal with 1 life. 1 strength, 1 bleed.\nDark Web Procurer can search your library (shuffle afterward) for a non-unique equipment card costing 1 or fewer pool and equip with it as a +1 stealth action (requirements and cost apply as normal).",
         "Set":{
             "Promo":{
-                "20210701":true
+                "2021-07-01":true
             }
         },
         "Requirement":"",
@@ -17175,7 +17175,7 @@
         "Card Text":"Unique werewolf with 3 life. 1 strength, 1 bleed.\nDouble Deuce has +1 stealth. If Double Deuce has 2 or fewer life during your unlock phase, he gains 1 life.",
         "Set":{
             "Promo":{
-                "20210701":true
+                "2021-07-01":true
             },
             "V5A":{
                 "PG":"1"
@@ -19480,7 +19480,7 @@
         "Card Text":"Only usable during a bleed action.\n+X bleed (limited), where X is the number of ready unlocked Daughters of Cacophony you control. Lock all ready Daughters of Cacophony you control.",
         "Set":{
             "Promo":{
-                "20061026":true
+                "2006-10-26":true
             }
         },
         "Requirement":"",
@@ -19589,7 +19589,7 @@
                 "LB":"3"
             },
             "Promo":{
-                "20190629":true
+                "2019-06-29":true
             },
             "V5A":{
                 "PMin":"2"
@@ -19699,7 +19699,7 @@
         "Card Text":"Unique master.\nPut this card in play. Lock this card to move a library card from your prey's ash heap to this card, face down. You may look at that card at any time. You may play the card from the Fragments as if playing it from your hand (requirements and cost, if any, apply as normal). When that card is burned, remove it from the game instead. Only 1 card can be on this card at a time. Any vampire with a capacity above 4 can steal the Fragments (and any card on it) for his or her controller as a (D) action.",
         "Set":{
             "Promo":{
-                "20040301":true
+                "2004-03-01":true
             }
         },
         "Requirement":"",
@@ -20288,7 +20288,7 @@
         "Card Text":"Unique.\nThe bearer gets +1 bleed and +1 strength. The bearer can enter combat with a minion as a (D) action. This vampire gets superior Potence [POT] and superior Chimerstry [CHI], and combat cards cost this vampire 1 fewer blood. While the bearer is ready, this equipment cannot be moved or stolen. If this equipment is burned, it inflicts 5 unpreventable environmental damage on the bearer. During your unlock phase, burn 1 pool or burn this equipment.",
         "Set":{
             "Promo":{
-                "20021101":true
+                "2002-11-01":true
             },
             "POD":{
                 "DTC":true
@@ -22156,7 +22156,7 @@
         "Card Text":"Unique master. Requires a ready anarch.\nPut this card in play. When a minion opposing an anarch in combat leaves the ready region, the controller of that anarch may move a counter from the bank to a vampire in his or her uncontrolled region. Any vampire may call a referendum to burn this card as a +1 stealth political action.",
         "Set":{
             "Promo":{
-                "20080810":true
+                "2008-08-10":true
             }
         },
         "Requirement":"anarch",
@@ -23523,7 +23523,7 @@
         "Card Text":"Event.\nRequires at least two Gehenna cards in play. When this card is played, burn all Gehenna cards and conviction [1CONVICTION] cards, then send all vampires with capacity 3 or less to torpor. No Gehenna cards may be played while this card remains in play.",
         "Set":{
             "Promo":{
-                "20090401":true
+                "2009-04-01":true
             }
         },
         "Requirement":"2 Gehenna",
@@ -25466,7 +25466,7 @@
         "Card Text":"In play, this is a unique location and does not count as equipment.\nWhen your predator or prey puts a minion in play in any phase except the unlock phase, that minion is locked. If that minion is a younger vampire, he or she burns 1 blood.",
         "Set":{
             "Promo":{
-                "20061126":true
+                "2006-11-26":true
             }
         },
         "Requirement":"",
@@ -26111,7 +26111,7 @@
         "Card Text":"Master.\nPut this card in play. A vampire you control may search your library for a master: archetype and move 1 blood from the bank and that card to himself or herself as a +1 stealth action that costs X pool where X is the number of copies of that card on minions you control (requirements and cost apply as normal).",
         "Set":{
             "Promo":{
-                "20100510":true
+                "2010-05-10":true
             }
         },
         "Requirement":"",
@@ -28204,7 +28204,7 @@
         "Card Text":"Master: unique location.\nLock to unlock any card you control that is not a minion. If you do so, neither that card nor this location unlock as normal on your next unlock phase.",
         "Set":{
             "Promo":{
-                "20081119":true
+                "2008-11-19":true
             }
         },
         "Requirement":"",
@@ -28771,7 +28771,7 @@
         "Card Text":"Title.\nChoose a Camarilla vampire with capacity 8 or more. If this referendum is successful, put this card on the chosen vampire to represent the unique Camarilla title of Imperator (worth 3 votes). This vampire may play a Blood Hunt card from your hand or ash heap as a prince. This vampire gets 3 additional votes in blood hunt referendums.",
         "Set":{
             "Promo":{
-                "20090401":true
+                "2009-04-01":true
             }
         },
         "Requirement":"",
@@ -29006,7 +29006,7 @@
         "Card Text":"Unique master.\nPut this card on a vampire of capacity 1, and put three cards from your hand, ash heap or library on this card, face up but out of play. This vampire may play other copies of these cards as if he or she had the Discipline required (if any) at superior.",
         "Set":{
             "Promo":{
-                "20090401":true
+                "2009-04-01":true
             }
         },
         "Requirement":"",
@@ -29192,7 +29192,7 @@
         "Card Text":"Unique master.\nPut this card on a Red List Anarch vampire. This vampire is infernal, Bahari, and gets 2 additional votes. During this vampire's minion phase, his or her controller may unlock a ready anarch he or she controls.",
         "Set":{
             "Promo":{
-                "20100510":true
+                "2010-05-10":true
             }
         },
         "Requirement":"",
@@ -30291,7 +30291,7 @@
                 "R":true
             },
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Requirement":"",
@@ -30737,7 +30737,7 @@
                 "R":true
             },
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Requirement":"prince,justicar",
@@ -30922,7 +30922,7 @@
         "Card Text":"Unique equipment.\nThis Sabbat vampire may allow you to draw 5 cards from your library as an action (discard afterward). This infernal minion may move 3 blood from the bank to a vampire in your uncontrolled region as a +1 stealth action. Any minion may steal this equipment as a strike.",
         "Set":{
             "Promo":{
-                "20081023":true
+                "2008-10-23":true
             }
         },
         "Requirement":"",
@@ -32143,7 +32143,7 @@
         "Card Text":"Requires an anarch.\nOnly usable when a blood hunt referendum passes and would burn this anarch. Move this anarch to the uncontrolled region (breaking any temporary control effects). Any cards and counters on this vampire remain with him or her (but are out of play as long as the vampire remains uncontrolled).",
         "Set":{
             "Promo":{
-                "20081119":true
+                "2008-11-19":true
             }
         },
         "Requirement":"anarch",
@@ -32642,7 +32642,7 @@
         "Card Text":"Requires a ready vampire with capacity above 7. +1 stealth action.\nPut this card on this acting vampire. This non-Sterile vampire can put a Master Discipline card from your hand or ash heap in play to represent a fledgling with 1 level of that Discipline and discard the rest of your hand as a +2 stealth action. The fledgling is a 1-capacity, non-unique vampire of the same clan as this vampire. The fledgling cannot act or block or play cards if this vampire is not ready.",
         "Set":{
             "Promo":{
-                "20030901":true
+                "2003-09-01":true
             }
         },
         "Requirement":"capacity 8 or more",
@@ -33101,7 +33101,7 @@
         "Card Text":"Master.\nPut this card in play. As a master phase action, you may lock this card to search your library for a master: Discipline card and choose a ready non-Bahari vampire you control who has no blood. That vampire gains the Discipline card (if any) and 3 blood and becomes Bahari.",
         "Set":{
             "Promo":{
-                "20100510":true
+                "2010-05-10":true
             }
         },
         "Requirement":"",
@@ -34526,7 +34526,7 @@
                 "R":true
             },
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Requirement":"",
@@ -34982,7 +34982,7 @@
         "Card Text":"Unique master.\nPut this card in play. Lock to look at and reorder the top 4 cards of your library. Any vampire may steal this card for his or her controller as a (D) action.",
         "Set":{
             "Promo":{
-                "20090401":true
+                "2009-04-01":true
             }
         },
         "Requirement":"",
@@ -35550,7 +35550,7 @@
         "Card Text":"Choose another Methuselah. If this referendum is successful, put this card in play. Your hand size is one card smaller. The chosen Methuselah doesn't draw to replace cards during any Methuselah's minion phase. After each minion phase, he or she draws back up to his or her hand size. Any vampire may call a referendum to burn this card as a +1 stealth political action.",
         "Set":{
             "Promo":{
-                "20020201":true
+                "2002-02-01":true
             }
         },
         "Requirement":"",
@@ -37444,7 +37444,7 @@
                 "":"2"
             },
             "Promo":{
-                "20200511":true
+                "2020-05-11":true
             }
         },
         "Requirement":"",
@@ -38581,7 +38581,7 @@
                 "R":true
             },
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Requirement":"",
@@ -40247,7 +40247,7 @@
                 "":"5"
             },
             "Promo":{
-                "20200511":true
+                "2020-05-11":true
             },
             "V5":{
                 "PTo":"4",
@@ -40810,7 +40810,7 @@
         "Card Text":"Unique master. Path.\nPut this card on a vampire you control. This vampire gets +1 stealth, -1 bleed, and can inflict 1 damage on any minion as a (D) action. During this vampire's unlock phase, his or her controller must discard a master card or lock this vampire. Burn this card if this vampire commits diablerie. A vampire can have only one path.",
         "Set":{
             "Promo":{
-                "20080203":true
+                "2008-02-03":true
             }
         },
         "Requirement":"",
@@ -41172,7 +41172,7 @@
                 "":"1"
             },
             "Promo":{
-                "20200511":true
+                "2020-05-11":true
             },
             "V5":{
                 "PTr":"1"
@@ -42231,7 +42231,7 @@
         "Card Text":"Government.\nWhen a Methuselah uses a discard phase action to discard a card, he or she doesn't draw to replace that card until his or her next unlock phase.",
         "Set":{
             "Promo":{
-                "20041015":true
+                "2004-10-15":true
             }
         },
         "Requirement":"",
@@ -44416,7 +44416,7 @@
         "Card Text":"Unique master.\nPut this card in play. During your master phase, you may lock this card to look at your prey's hand. If you do so, your prey takes control of the Prophecies of Gehenna. Any Methuselah may burn this card during his or her unlock phase by revealing his or her hand to all players.",
         "Set":{
             "Promo":{
-                "20040301":true
+                "2004-03-01":true
             }
         },
         "Requirement":"",
@@ -44905,7 +44905,7 @@
         "Card Text":"+1 stealth action. Requires a non-Red List, non-Anarch vampire.\n(D) Choose a non-titled, non-Red List minion who either has successfully bled for 3 or more pool since your last turn or is infernal or anarch. The chosen minion becomes Red List.",
         "Set":{
             "Promo":{
-                "20080810":true
+                "2008-08-10":true
             }
         },
         "Requirement":"non-anarch,non-red list",
@@ -47445,7 +47445,7 @@
         "Card Text":"Choose an Banu Haqim in your ash heap or burn 1 pool to choose an Banu Haqim in your uncontrolled region. Remove the chosen Banu Haqim from the game or burn this equipment. Once each turn, except during combat, if the Banu Haqim bearer is ready, they can burn 1 blood to give you +2 hand size until the end of the turn.",
         "Set":{
             "Promo":{
-                "20080203":true
+                "2008-02-03":true
             },
             "POD":{
                 "DTC":true
@@ -48045,7 +48045,7 @@
         "Card Text":"Master.\nChoose a minion who successfully bled you for more than 1 pool since your last turn. The chosen minion takes 3 unpreventable damage. A Methuselah can play only 1 Retribution in a game.",
         "Set":{
             "Promo":{
-                "20050122":true
+                "2005-01-22":true
             }
         },
         "Requirement":"",
@@ -48608,7 +48608,7 @@
         "Card Text":"+1 stealth action. Requires an infernal minion. Unique.\nPut this card in play. Your prey burns 1 pool after resolution of each action during which you have burned corruption counters. Any Methuselah can burn a vampire they control with any corruption counters during their unlock phase to burn this card.",
         "Set":{
             "Promo":{
-                "20150221":true
+                "2015-02-21":true
             },
             "KSU":{
                 "TUA":"1",
@@ -48858,7 +48858,7 @@
         "Card Text":"Master: trifle.\nPlay on a vampire who has committed diablerie since your last turn. Any vampire can enter combat with this vampire as a (D) action. Vampires with Auspex [aus] get +1 stealth on that action.",
         "Set":{
             "Promo":{
-                "20090401":true
+                "2009-04-01":true
             }
         },
         "Requirement":"",
@@ -49187,7 +49187,7 @@
         "Card Text":"+1 stealth action. Requires a titled vampire.\n(D) Burn a younger non-titled vampire who has burned one of your non-Red List vampires since your last turn.",
         "Set":{
             "Promo":{
-                "20090401":true
+                "2009-04-01":true
             }
         },
         "Requirement":"titled",
@@ -49695,7 +49695,7 @@
         "Card Text":"Usable by a locked Tremere. Cause a (D) action targeting a location you control to fail and put this card on that location. You may burn this card to cause a (D) action targeting this location to fail.",
         "Set":{
             "Promo":{
-                "20090401":true
+                "2009-04-01":true
             }
         },
         "Requirement":"",
@@ -50149,7 +50149,7 @@
         "Card Text":"+1 stealth action. Unique.\nIf this Nosferatu's capacity is 6 or more, he or she unlocks. Put this card in play. Whenever a referendum succeeds, you may lock this card to look at any Methuselah's hand.",
         "Set":{
             "Promo":{
-                "20090401":true
+                "2009-04-01":true
             }
         },
         "Requirement":"",
@@ -54529,7 +54529,7 @@
         "Card Text":"[aus][dom] [ACTION] +1 stealth action. Put this card on a minion you control. If an action to steal the minion with this card is successful, this minion is burned instead and the acting minion takes 1 unpreventable damage.\n[AUS][DOM] [REACTION] As above, but play when an action to steal a minion you control is successful.",
         "Set":{
             "Promo":{
-                "20080203":true
+                "2008-02-03":true
             }
         },
         "Requirement":"",
@@ -55075,7 +55075,7 @@
         "Card Text":"Unique master.\nPut this card on a vampire and choose a Discipline. This vampire gains 1 level of the chosen Discipline. While in play, this card counts as a master: Discipline card.",
         "Set":{
             "Promo":{
-                "20050611":true
+                "2005-06-11":true
             }
         },
         "Requirement":"",
@@ -56077,7 +56077,7 @@
         "Card Text":"Master: out-of-turn. Trifle.\nPlay when a vampire diablerizes a vampire of more than twice his or her capacity (before the blood hunt referendum, if any). Usable on your own turn. Move the victim from the ash heap to his or her owner's ready region, and move all blood from the diablerist to him or her. Remove the diablerist from the game.",
         "Set":{
             "Promo":{
-                "20081119":true
+                "2008-11-19":true
             }
         },
         "Requirement":"",
@@ -57421,7 +57421,7 @@
                 "R":true
             },
             "Promo":{
-                "20190614":true
+                "2019-06-14":true
             }
         },
         "Requirement":"",
@@ -60004,7 +60004,7 @@
         "Card Text":"Unique. Requires both Minister and Tremere.\nPut this card in play. Each Minister is considered to have a level of Blood Sorcery [tha] equal to their level of Serpentis [ser]. Each Tremere is considered to have a level of Serpentis equal to theirs level of Blood Sorcery.",
         "Set":{
             "Promo":{
-                "20080203":true
+                "2008-02-03":true
             },
             "POD":{
                 "DTC":true
@@ -60061,7 +60061,7 @@
                 "R":true
             },
             "Promo":{
-                "20211015":true
+                "2021-10-15":true
             }
         },
         "Requirement":"",
@@ -60887,7 +60887,7 @@
         "Card Text":"Master: out-of-turn. Trifle.\nPlay when a minion controlled by a Methuselah other than your predator is bleeding you after blocks are declined. That minion is now bleeding his or her prey. The next card that would change the target of this bleed is canceled as it is played.",
         "Set":{
             "Promo":{
-                "20081119":true
+                "2008-11-19":true
             }
         },
         "Requirement":"",
@@ -63127,7 +63127,7 @@
                 "LARP":"1"
             },
             "Promo":{
-                "20210709":true
+                "2021-07-09":true
             }
         },
         "Requirement":"anarch",
@@ -63582,7 +63582,7 @@
         "Card Text":"Unique werewolf with 4 life. 3 strength, 0 bleed.\nWalks-With-Might gets +1 intercept against Ministers. Master cards cost you 1 additional pool to play. Each strike or damaging effect made against him inflicts 1 less damage on him.",
         "Set":{
             "Promo":{
-                "20080203":true
+                "2008-02-03":true
             },
             "POD":{
                 "DTC":true
@@ -63609,7 +63609,7 @@
         "Card Text":"Master: unique location.\nLock during an undirected action to give a minion you control +1 intercept for the current action. Lock to select a minion you control. Once this turn, the chosen minion may move a counter from an investment card controlled by any Methuselah to your pool as a +1 stealth (D) action.",
         "Set":{
             "Promo":{
-                "20060123":true
+                "2006-01-23":true
             }
         },
         "Requirement":"",
@@ -64185,7 +64185,7 @@
         "Card Text":"Unique weapon.\nStrike: 2R aggravated damage. Not usable against a vampire with Celerity [cel], an ally, or a retainer. Burn after use.",
         "Set":{
             "Promo":{
-                "20060902":true
+                "2006-09-02":true
             }
         },
         "Requirement":"",
@@ -64838,7 +64838,7 @@
         "Card Text":"[tha] Strike: dodge.\n[THA] Strike: dodge with an additional strike: dodge this round.",
         "Set":{
             "Promo":{
-                "20021201":true
+                "2002-12-01":true
             }
         },
         "Requirement":"",

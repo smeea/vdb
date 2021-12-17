@@ -8,6 +8,7 @@ import {
   DeckExport,
   DeckProxy,
   DeckMissing,
+  DeckRecommendationButton,
   DeckDrawButton,
   DeckDiffButton,
   DeckBranchCreate,
@@ -86,6 +87,12 @@ function DeckButtons(props) {
       {props.deck && (
         <DeckDrawButton
           setShowDraw={props.setShowDraw}
+          setShowButtons={props.setShowButtons}
+        />
+      )}
+      {props.deck && (
+        <DeckRecommendationButton
+          setShowRecommendation={props.setShowRecommendation}
           setShowButtons={props.setShowButtons}
         />
       )}

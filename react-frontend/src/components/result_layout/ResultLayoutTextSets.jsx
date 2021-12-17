@@ -6,12 +6,12 @@ import { useApp } from 'context';
 const ResultLayoutTextSets = (props) => {
   const { isMobile } = useApp();
 
-  const byYear = (a, b) => {
-    return setsAndPrecons[a].year - setsAndPrecons[b].year;
+  const byDate = (a, b) => {
+    return setsAndPrecons[a].date - setsAndPrecons[b].date;
   };
 
   const Sets = Object.keys(props.sets)
-    .sort(byYear)
+    .sort(byDate)
     .map((k, index) => {
       const preconsShort = Object.keys(props.sets[k]).join('/');
 
@@ -49,7 +49,9 @@ const ResultLayoutTextSets = (props) => {
       const popoverText = (
         <>
           <b>{setsAndPrecons[k].name}</b>
-          {k !== 'POD' && k !== 'Promo' && ' - ' + setsAndPrecons[k].year}
+          {k !== 'POD' &&
+            k !== 'Promo' &&
+            ' - ' + setsAndPrecons[k].date.slice(0, 4)}
           <br />
           <ul className="rulings">{preconsDetailed}</ul>
         </>

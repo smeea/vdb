@@ -40,6 +40,15 @@ function DeckLibraryTable(props) {
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
+  props.cards.sort((a, b) => {
+    if (a.c['ASCII Name'] < b.c['ASCII Name']) {
+      return -1;
+    }
+    if (a.c['ASCII Name'] > b.c['ASCII Name']) {
+      return 1;
+    }
+  });
+
   const cardRows = props.cards.map((card) => {
     const handleClick = () => {
       props.handleModalCardOpen(card.c);

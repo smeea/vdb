@@ -13,7 +13,7 @@ import {
   DeckSelectSortForm,
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
-  ResultCryptClan,
+  ResultClanImage,
   OverlayTooltip,
 } from 'components';
 import decksSort from 'components/decksSort.js';
@@ -186,7 +186,7 @@ function InventoryAddDeckModal(props) {
             </td>
           )}
           {!isMobile && (
-            <td className="clan">{clan && <ResultCryptClan value={clan} />}</td>
+            <td className="clan">{clan && <ResultClanImage value={clan} />}</td>
           )}
           <td className="name px-1">
             <div

@@ -10,12 +10,11 @@ from searchTwdComponents import sanitizeTwd
 from searchTwdComponents import matchInventory
 from searchCrypt import searchCrypt
 from searchLibrary import searchLibrary
-from searchCryptComponents import get_crypt_by_id
-from searchLibraryComponents import get_library_by_id
 from deckExport import deckExport
 from deckExportAll import deckExportAll
 from deckImport import deckImport
 from deckProxy import deckProxy
+from deckRecommendation import deckRecommendation
 from inventoryExport import inventoryExport
 from inventoryImport import inventoryImport
 from api import app
@@ -228,11 +227,46 @@ def showDeck(deckid):
                 abort(400)
 
 
+@app.route('/api/deck/<string:deckid>/recommendation', methods=['GET'])
+def getRecommendation(deckid):
+    cards = {}
+
+    if len(deckid) == 32:
+        deck = Deck.query.filter_by(deckid=deckid).first()
+        cards = deck.cards
+
+    elif ':' in deckid:
+        set, precon = deckid.split(':')
+
+        with open("preconDecks.json", "r") as precons_file:
+            precon_decks = json.load(precons_file)
+            deck = precon_decks[set][precon]
+            for i in deck:
+                cards[int(i)] = deck[i]
+
+    else:
+        with open("twdDecksById.json", "r") as twdDecks_file:
+            twdDecks = json.load(twdDecks_file)
+            deck = twdDecks[deckid]
+            for i in deck['crypt']:
+                cards[int(i)] = deck['crypt'][i]['q']
+            for i in deck['library']:
+                cards[int(i)] = deck['library'][i]['q']
+
+    recommends = deckRecommendation(cards)
+
+    return ({'crypt': recommends['crypt'], 'library': recommends['library']})
+
+
 @app.route('/api/deck/<string:deckid>', methods=['PUT'])
 @login_required
 def updateDeck(deckid):
     d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
+    if not d:
+        print('bad deck request\n', request)
+
     d.timestamp = datetime.utcnow()
+
     try:
         if 'cardChange' in request.json:
             new_cards = request.json['cardChange']
@@ -392,43 +426,6 @@ def updateDeck(deckid):
     return jsonify({'updated deck': d.deckid})
 
 
-@app.route('/api/deck/parse', methods=['POST'])
-def parseDeck():
-    try:
-        crypt = {}
-        library = {}
-        cards = request.json['cards']
-        for k, v in cards.items():
-            k = int(k)
-            if k > 200000:
-                crypt[k] = {'c': get_crypt_by_id(k), 'q': v}
-            elif k < 200000:
-                library[k] = {'c': get_library_by_id(k), 'q': v}
-
-        decks = {}
-        decks['deckInUrl'] = {
-            'name': '',
-            'owner': '',
-            'author': '',
-            'description': '',
-            'deckid': '',
-            'crypt': crypt,
-            'library': library,
-            'timestamp': datetime.utcnow()
-        }
-        if 'name' in request.json:
-            decks['deckInUrl']['name'] = request.json['name']
-        if 'author' in request.json:
-            decks['deckInUrl']['author'] = request.json['author']
-        if 'description' in request.json:
-            decks['deckInUrl']['description'] = request.json['description']
-
-        return jsonify(decks)
-
-    except AttributeError:
-        return jsonify({'error': 'not logged'})
-
-
 @app.route('/api/decks', methods=['GET'])
 def listDecks():
     try:
@@ -527,7 +524,11 @@ def newDeck():
             'author'] if 'author' in request.json else current_user.public_name
         description = request.json[
             'description'] if 'description' in request.json else ''
-        cards = request.json['cards'] if 'cards' in request.json else {}
+        input_cards = request.json['cards'] if 'cards' in request.json else {}
+        cards = {}
+
+        for k, v in input_cards.items():
+            cards[int(k)] = v
 
         d = Deck(deckid=deckid,
                  name=request.json['deckname'],
@@ -543,8 +544,9 @@ def newDeck():
             'new deck created': request.json['deckname'],
             'deckid': deckid,
         })
+
     except Exception:
-        pass
+        print(request.json)
 
 
 @app.route('/api/branch/create', methods=['POST'])
@@ -665,9 +667,9 @@ def cloneDeck():
         cards = {}
 
         for i in deck['crypt']:
-            cards[i] = deck['crypt'][i]['q']
+            cards[int(i)] = deck['crypt'][i]['q']
         for i in deck['library']:
-            cards[i] = deck['library'][i]['q']
+            cards[int(i)] = deck['library'][i]['q']
 
         deckid = uuid.uuid4().hex
         d = Deck(deckid=deckid,
@@ -690,9 +692,9 @@ def cloneDeck():
             deck = twdDecks[request.json['target']]
             cards = {}
             for i in deck['crypt']:
-                cards[i] = deck['crypt'][i]['q']
+                cards[int(i)] = deck['crypt'][i]['q']
             for i in deck['library']:
-                cards[i] = deck['library'][i]['q']
+                cards[int(i)] = deck['library'][i]['q']
 
             description = 'Date: ' + deck['date'] + '\n'
             description += 'Players: ' + str(deck['players']) + '\n'
@@ -725,7 +727,7 @@ def cloneDeck():
 
             cards = {}
             for i in deck:
-                cards[i] = deck[i]
+                cards[int(i)] = deck[i]
 
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
@@ -796,10 +798,11 @@ def importDeck():
             db.session.add(d)
             db.session.commit()
             return jsonify({'deckid': deckid})
+
         return jsonify({'Cannot import this deck.'})
 
-    except Exception:
-        pass
+    except TypeError:
+        print(request.json['deckText'])
 
 
 @app.route('/api/decks/export', methods=['POST'])
@@ -866,7 +869,7 @@ def deckExportRoute():
             return jsonify(result)
 
     except Exception:
-        pass
+        print(request.json)
 
 
 @app.route('/api/decks/proxy', methods=['POST'])
@@ -875,7 +878,7 @@ def deckProxyRoute():
         return deckProxy(request.json['cards'])
 
     except Exception:
-        pass
+        print(request.json)
 
 
 @app.route('/api/decks/remove', methods=['POST'])
@@ -884,18 +887,26 @@ def removeDeck():
     try:
         d = Deck.query.filter_by(author=current_user,
                                  deckid=request.json['deckid']).first()
-        if d.branches:
-            for i in d.branches:
+        if d.master:
+            m = Deck.query.filter_by(author=current_user,
+                                     deckid=d.master).first()
+            for i in m.branches:
                 j = Deck.query.filter_by(author=current_user, deckid=i).first()
                 db.session.delete(j)
 
-        if d.master:
-            j = Deck.query.filter_by(author=current_user,
-                                     deckid=d.master).first()
-            db.session.delete(j)
+            db.session.delete(m)
 
-        db.session.delete(d)
+        else:
+            if d.branches:
+                for i in d.branches:
+                    j = Deck.query.filter_by(author=current_user,
+                                             deckid=i).first()
+                    db.session.delete(j)
+
+            db.session.delete(d)
+
         db.session.commit()
+
         return jsonify({'deck removed': request.json['deckid']})
     except Exception:
         return jsonify({'error': 'idk'})
@@ -957,16 +968,17 @@ def account():
             db.session.commit()
             return jsonify('public name changed')
     except Exception:
-        pass
-    try:
+        print('new name', request.json)
 
+    try:
         if (request.json['email']) and current_user.check_password(
                 request.json['password']):
             current_user.email = request.json['email']
             db.session.commit()
             return jsonify('email changed')
     except Exception:
-        pass
+        print('new email', request.json)
+
     try:
         if (request.json['newPassword']) and current_user.check_password(
                 request.json['password']):
@@ -974,7 +986,7 @@ def account():
             db.session.commit()
             return jsonify('password changed')
     except Exception:
-        pass
+        print('new password', request.json)
 
 
 @app.route('/api/account/remove', methods=['POST'])

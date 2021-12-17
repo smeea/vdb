@@ -6,7 +6,7 @@ import {
   ResultCryptCapacity,
   ResultCryptDisciplines,
   ResultCryptName,
-  ResultCryptClan,
+  ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
   ButtonAddCard,
@@ -91,7 +91,7 @@ function ResultCryptTable(props) {
     return (
       <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
-          {activeDeck.deckid && addMode && (
+          {!props.notAuthor && activeDeck.deckid && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card['Id']}
@@ -165,7 +165,7 @@ function ResultCryptTable(props) {
                 <ResultCryptTitle value={card['Title']} />
               </td>
               <td className="clan" onClick={() => handleClick()}>
-                <ResultCryptClan value={card['Clan']} />
+                <ResultClanImage value={card['Clan']} />
               </td>
               <td className="group" onClick={() => handleClick()}>
                 <ResultCryptGroup value={card['Group']} />
@@ -175,7 +175,7 @@ function ResultCryptTable(props) {
             <>
               <td className="clan-group" onClick={() => handleClick()}>
                 <div>
-                  <ResultCryptClan value={card['Clan']} />
+                  <ResultClanImage value={card['Clan']} />
                 </div>
                 <div className="d-flex small justify-content-end">
                   <div className="bold blue">

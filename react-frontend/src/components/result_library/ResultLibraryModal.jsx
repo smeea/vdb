@@ -9,12 +9,12 @@ import {
   ResultLibraryLayoutText,
   ButtonCardCopyUrl,
   ButtonToggleShowImage,
+  CardImage,
 } from 'components';
 import { useApp } from 'context';
 
 function ResultLibraryModal(props) {
-  const { showImage, toggleShowImage, localizedLibrary, lang, isMobile } =
-    useApp();
+  const { showImage, toggleShowImage, isMobile } = useApp();
 
   const [imageSet, setImageSet] = useState(null);
 
@@ -48,29 +48,6 @@ function ResultLibraryModal(props) {
     onSwipedLeft: (eventData) => props.handleModalCardChange(1),
   });
 
-  const CardImage = () => {
-    const imgSrc = `${process.env.ROOT_URL}images/cards/${
-      imageSet
-        ? 'set/' + imageSet + '/'
-        : localizedLibrary &&
-          localizedLibrary[lang] &&
-          localizedLibrary[lang][props.card['Id']]
-        ? lang + '/'
-        : 'en-EN/'
-    }${props.card['ASCII Name']
-      .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-
-    return (
-      <img
-        className="card-popover full-width"
-        src={imgSrc}
-        alt={props.card['Name']}
-        onClick={props.handleClose}
-      />
-    );
-  };
-
   return (
     <Modal
       size="lg"
@@ -85,7 +62,12 @@ function ResultLibraryModal(props) {
           <div {...swipeHandlers}>
             {showImage ? (
               <>
-                <CardImage />
+                <CardImage
+                  className="card-popover full-width"
+                  card={props.card}
+                  set={imageSet}
+                  onClick={props.handleClose}
+                />
                 <div
                   onClick={() => props.handleModalCardChange(-1)}
                   className="prev-card-mobile"
@@ -133,7 +115,12 @@ function ResultLibraryModal(props) {
         ) : (
           <Row className="mx-0">
             <Col md={5} className="bg-black px-0">
-              <CardImage />
+              <CardImage
+                className="card-popover full-width"
+                card={props.card}
+                set={imageSet}
+                onClick={props.handleClose}
+              />
             </Col>
             <Col className="p-4">
               <div className="pb-1">

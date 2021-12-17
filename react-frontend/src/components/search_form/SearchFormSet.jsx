@@ -27,7 +27,7 @@ function SearchFormSet(props) {
     preOptions.push({
       set: i,
       name: setsAndPrecons[i].name,
-      year: setsAndPrecons[i].year,
+      year: setsAndPrecons[i].date.slice(2, 4),
     });
   });
 
@@ -52,7 +52,7 @@ function SearchFormSet(props) {
         label: (
           <div className="d-flex justify-content-between align-items-center">
             <div className="pe-2">{i.name}</div>
-            <div className="ps-2 small">{i.year}</div>
+            {i.year && <div className="ps-2 small">{`'${i.year}`}</div>}
           </div>
         ),
       });
