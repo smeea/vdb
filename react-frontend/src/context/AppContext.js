@@ -1,8 +1,9 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
 import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from 'components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from 'components/forms_data/defaultsLibraryForm.json';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
+import { cardServices, inventoryServices } from 'services';
 
 const AppContext = React.createContext();
 
@@ -31,12 +32,17 @@ export const AppProvider = (props) => {
   const [cryptSearchSort, setCryptSearchSort] = useState(undefined);
   const [librarySearchSort, setLibrarySearchSort] = useState(undefined);
 
-  const [cryptCardBase, setCryptCardBase] = useState(undefined);
-  const [libraryCardBase, setLibraryCardBase] = useState(undefined);
-  const [localizedCrypt, setLocalizedCrypt] = useState(undefined);
-  const [localizedLibrary, setLocalizedLibrary] = useState(undefined);
-  const [nativeCrypt, setNativeCrypt] = useState(undefined);
-  const [nativeLibrary, setNativeLibrary] = useState(undefined);
+  const [cryptCardBase, setCryptCardBase] = useState(
+    cardServices.getCryptBase()
+  );
+  const [libraryCardBase, setLibraryCardBase] = useState(
+    cardServices.getLibraryBase()
+  );
+  const localizedCrypt = cardServices.cryptBases;
+  const localizedLibrary = cardServices.libraryBases;
+  const nativeCrypt = cardServices.getNativeCrypt();
+  const nativeLibrary = cardServices.getNativeLibrary();
+  const preconDecks = cardServices.getPreconDecks();
 
   const [twdFormState, setTwdFormState] = useState(
     JSON.parse(JSON.stringify(defaultsTwdForm))
@@ -66,7 +72,6 @@ export const AppProvider = (props) => {
     hard: {},
   });
 
-  const [preconDecks, setPreconDecks] = useState({});
   const [decks, setDecks] = useState(undefined);
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [sharedDeck, setSharedDeck] = useState({});
@@ -75,10 +80,59 @@ export const AppProvider = (props) => {
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
 
+  const whoAmI = () => {
+    const url = `${process.env.API_URL}login`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data.username) {
+          setInventoryMode(false);
+        }
+        setUsername(data.username);
+        setPublicName(data.public_name);
+        setEmail(data.email);
+      });
+  };
+
+  useEffect(() => {
+    if (username) {
+      initializeUserData();
+    } else {
+      initializeUnauthenticatedUser();
+    }
+  }, [username]);
+
   const changeLang = (lang) => {
     setLang(lang);
     setLocalStorage('lang', lang);
+    console.log(lang);
   };
+
+  useEffect(() => {
+    setCryptCardBase((prevState) => {
+      const state = { ...prevState };
+      Object.keys(localizedCrypt[lang]).map((k) => {
+        state[k]['Name'] = localizedCrypt[lang][k]['Name'];
+        state[k]['Card Text'] = localizedCrypt[lang][k]['Card Text'];
+      });
+      return state;
+    });
+
+    setLibraryCardBase((prevState) => {
+      const state = { ...prevState };
+      Object.keys(localizedLibrary[lang]).map((k) => {
+        state[k]['Name'] = localizedLibrary[lang][k]['Name'];
+        state[k]['Card Text'] = localizedLibrary[lang][k]['Card Text'];
+      });
+      return state;
+    });
+  }, [lang]);
 
   const toggleShowImage = () => {
     setShowImage(!showImage);
@@ -140,46 +194,36 @@ export const AppProvider = (props) => {
     initFromStorage('recentDecks', [], setRecentDecks);
   }, []);
 
-  const getDecks = () => {
-    const url = `${process.env.API_URL}decks`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
-
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.error === undefined) {
-          Object.keys(data).map((i) => {
-            Object.keys(data[i].crypt).map((j) => {
-              data[i].crypt[j].c = cryptCardBase[j];
-            });
-            Object.keys(data[i].library).map((j) => {
-              data[i].library[j].c = libraryCardBase[j];
-            });
-          });
-          setDecks(data);
-        } else {
-          setDecks({});
-        }
+  const getInventory = async () => {
+    const inventoryData = await inventoryServices.getInventory();
+    if (inventoryData) {
+      Object.keys(inventoryData.crypt).map((i) => {
+        inventoryData.crypt[i].c = cryptCardBase[i];
       });
+      Object.keys(inventoryData.library).map((i) => {
+        inventoryData.library[i].c = libraryCardBase[i];
+      });
+      setInventoryCrypt(inventoryData.crypt);
+      setInventoryLibrary(inventoryData.library);
+    }
+  };
+
+  const getDecks = async () => {
+    const decksData = await inventoryServices.getDecks();
+
+    Object.keys(decksData).map((i) => {
+      Object.keys(decksData[i].crypt).map((j) => {
+        decksData[i].crypt[j].c = cryptCardBase[j];
+      });
+      Object.keys(decksData[i].library).map((j) => {
+        decksData[i].library[j].c = libraryCardBase[j];
+      });
+    });
+    setDecks(decksData);
   };
 
   const deckUpdate = (deckid, field, value) => {
-    const url = `${process.env.API_URL}deck/${deckid}`;
-    const options = {
-      method: 'PUT',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ [field]: value }),
-    };
-
-    fetch(url, options).then(() => getDecks());
+    inventoryServices.deckUpdate(deckid, field, value).then(() => getDecks());
   };
 
   const deckCardChange = (deckid, cardid, count) => {
@@ -200,40 +244,29 @@ export const AppProvider = (props) => {
       setDecks(oldState);
     });
 
-    if (count >= 0) {
-      if (cardid > 200000) {
-        setDecks((prevState) => {
-          const oldState = { ...prevState };
-          oldState[deckid]['crypt'][cardid] = {
-            c: cryptCardBase[cardid],
-            q: count,
-          };
-          return oldState;
-        });
-      } else {
-        setDecks((prevState) => {
-          const oldState = { ...prevState };
-          oldState[deckid]['library'][cardid] = {
-            c: libraryCardBase[cardid],
-            q: count,
-          };
-          return oldState;
-        });
-      }
+    if (cardid > 200000) {
+      cardType = 'crypt';
+      cardBase = cryptCardBase;
     } else {
-      if (cardid > 200000) {
-        setDecks((prevState) => {
-          const oldState = { ...prevState };
-          delete oldState[deckid]['crypt'][cardid];
-          return oldState;
-        });
-      } else {
-        setDecks((prevState) => {
-          const oldState = { ...prevState };
-          delete oldState[deckid]['library'][cardid];
-          return oldState;
-        });
-      }
+      cardType = 'library';
+      cardBase = libraryCardBase;
+    }
+
+    if (count >= 0) {
+      setDecks((prevState) => {
+        const oldState = { ...prevState };
+        oldState[deckid][cardType][cardid] = {
+          c: cardBase[cardid],
+          q: count,
+        };
+        return oldState;
+      });
+    } else {
+      setDecks((prevState) => {
+        const oldState = { ...prevState };
+        delete oldState[deckid][cardType][cardid];
+        return oldState;
+      });
     }
 
     const startTimer = () => {
@@ -272,6 +305,181 @@ export const AppProvider = (props) => {
     }
   };
 
+  const initializeUserData = () => {
+    // Initizalize User Inventory
+    getInventory();
+    getDecks();
+  };
+
+  const initializeUnauthenticatedUser = () => {
+    setInventoryCrypt({});
+    setInventoryLibrary({});
+    setDecks(undefined);
+    setActiveDeck({ src: null, deckid: null });
+    setEmail(undefined);
+  };
+
+  useEffect(() => {
+    if (decks) {
+      const softCrypt = {};
+      const softLibrary = {};
+      const hardCrypt = {};
+      const hardLibrary = {};
+
+      Object.keys(decks).forEach((deckid) => {
+        // lsit soft decks
+        if (decks[deckid].inventory_type == 's') {
+          Object.keys(decks[deckid].crypt).forEach((id) => {
+            inventoryServices.setSoftOrHardInventory(
+              decks[deckid].crypt[id].i == 'h' ? hardCrypt : softCrypt,
+              deckid,
+              id,
+              decks[deckid].crypt[id].q
+            );
+          });
+          Object.keys(decks[deckid].library).forEach((id) => {
+            inventoryServices.setSoftOrHardInventory(
+              decks[deckid].library[id].i == 'h' ? hardLibrary : softLibrary,
+              deckid,
+              id,
+              decks[deckid].library[id].q
+            );
+          });
+          // list hard decks
+        } else if (decks[deckid].inventory_type == 'h') {
+          Object.keys(decks[deckid].crypt).forEach((id) => {
+            inventoryServices.setSoftOrHardInventory(
+              decks[deckid].crypt[id].i == 's' ? softCrypt : hardCrypt,
+              deckid,
+              id,
+              decks[deckid].crypt[id].q
+            );
+          });
+          Object.keys(decks[deckid].library).forEach((id) => {
+            inventoryServices.setSoftOrHardInventory(
+              decks[deckid].library[id].i == 's' ? softLibrary : hardLibrary,
+              deckid,
+              id,
+              decks[deckid].library[id].q
+            );
+          });
+        }
+      });
+      setUsedCryptCards({
+        soft: softCrypt,
+        hard: hardCrypt,
+      });
+      setUsedLibraryCards({
+        soft: softLibrary,
+        hard: hardLibrary,
+      });
+    }
+  }, [decks]);
+
+  const inventoryDeckAdd = (deck) => {
+    const cards = {};
+
+    Object.keys(deck.crypt).forEach((card) => {
+      if (deck.crypt[card].q) {
+        cards[card] = deck.crypt[card].q;
+      }
+    });
+
+    Object.keys(deck.library).forEach((card) => {
+      if (deck.library[card].q) {
+        cards[card] = deck.library[card].q;
+      }
+    });
+
+    const url = `${process.env.API_URL}inventory/add`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cards),
+    };
+
+    const oldCryptState = { ...inventoryCrypt };
+    const oldLibraryState = { ...inventoryLibrary };
+    fetch(url, options).catch((error) => {
+      setInventoryCrypt(oldCryptState);
+      setInventoryLibrary(oldLibraryState);
+    });
+
+    inventoryAddToState(cards);
+  };
+
+  const inventoryDeckDelete = (deck) => {
+    const cards = {};
+
+    Object.keys(deck.crypt).forEach((card) => {
+      if (deck.crypt[card].q) {
+        cards[card] = deck.crypt[card].q;
+      }
+    });
+
+    Object.keys(deck.library).forEach((card) => {
+      if (deck.library[card].q) {
+        cards[card] = deck.library[card].q;
+      }
+    });
+
+    const url = `${process.env.API_URL}inventory/del`;
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cards),
+    };
+
+    const oldCryptState = { ...inventoryCrypt };
+    const oldLibraryState = { ...inventoryLibrary };
+    fetch(url, options).catch((error) => {
+      setInventoryCrypt(oldCryptState);
+      setInventoryLibrary(oldLibraryState);
+    });
+
+    inventoryDeleteFromState(cards);
+  };
+
+  const inventoryAddToState = (cards) => {
+    inventoryServices.addtoStateByType(
+      setInventoryCrypt,
+      cryptCardBase,
+      Object.keys(cards).filter((cardid) => cardid > 200000),
+      cards
+    );
+
+    inventoryServices.addtoStateByType(
+      setInventoryLibrary,
+      libraryCardBase,
+      Object.keys(cards).filter((cardid) => cardid < 200000),
+      cards
+    );
+  };
+
+  const inventoryDeleteFromState = (cards) => {
+    inventoryServices.deleteFromStateByType(
+      setInventoryCrypt,
+      cryptCardBase,
+      Object.keys(cards).filter((cardid) => cardid > 200000),
+      cards
+    );
+
+    inventoryServices.deleteFromStateByType(
+      setInventoryLibrary,
+      libraryCardBase,
+      Object.keys(cards).filter((cardid) => cardid < 200000),
+      cards
+    );
+  };
+
   const inventoryCardChange = (cardid, count) => {
     const url = `${process.env.API_URL}inventory/change`;
     const options = {
@@ -284,53 +492,40 @@ export const AppProvider = (props) => {
       body: JSON.stringify({ [cardid]: count }),
     };
 
+    let setInventory;
+    let inventory;
+    let cardBase;
     if (cardid > 200000) {
-      if (count >= 0 || (count < 0 && inventoryCrypt[cardid])) {
-        const oldState = { ...inventoryCrypt };
-
-        fetch(url, options).catch((error) => {
-          setInventoryCrypt(oldState);
-        });
-
-        if (count >= 0) {
-          setInventoryCrypt((prevState) => ({
-            ...prevState,
-            [cardid]: {
-              c: cryptCardBase[cardid],
-              q: count,
-            },
-          }));
-        } else {
-          setInventoryCrypt((prevState) => {
-            const state = { ...prevState };
-            delete state[cardid];
-            return state;
-          });
-        }
-      }
+      setInventory = setInventoryCrypt;
+      inventory = inventoryCrypt;
+      cardBase = cryptCardBase;
     } else {
-      if (count >= 0 || (count < 0 && inventoryLibrary[cardid])) {
-        const oldState = { ...inventoryLibrary };
+      setInventory = setInventoryLibrary;
+      inventory = inventoryLibrary;
+      cardBase = libraryCardBase;
+    }
 
-        fetch(url, options).catch((error) => {
-          setInventoryLibrary(oldState);
+    if (count >= 0 || (count < 0 && inventory[cardid])) {
+      const oldState = { ...inventory };
+
+      fetch(url, options).catch((error) => {
+        setInventory(oldState);
+      });
+
+      if (count >= 0) {
+        setInventory((prevState) => ({
+          ...prevState,
+          [cardid]: {
+            c: cardBase[cardid],
+            q: count,
+          },
+        }));
+      } else {
+        setInventory((prevState) => {
+          const state = { ...prevState };
+          delete state[cardid];
+          return state;
         });
-
-        if (count >= 0) {
-          setInventoryLibrary((prevState) => ({
-            ...prevState,
-            [cardid]: {
-              c: libraryCardBase[cardid],
-              q: count,
-            },
-          }));
-        } else {
-          setInventoryLibrary((prevState) => {
-            const state = { ...prevState };
-            delete state[cardid];
-            return state;
-          });
-        }
       }
     }
   };
@@ -354,6 +549,7 @@ export const AppProvider = (props) => {
         toggleShowImage,
 
         // 2 - USER Context
+        whoAmI,
         username,
         setUsername,
         publicName,
@@ -363,35 +559,29 @@ export const AppProvider = (props) => {
 
         // 3 - CARDBASE Context
         cryptCardBase,
-        setCryptCardBase,
         libraryCardBase,
-        setLibraryCardBase,
         localizedCrypt,
-        setLocalizedCrypt,
         localizedLibrary,
-        setLocalizedLibrary,
         nativeCrypt,
-        setNativeCrypt,
         nativeLibrary,
-        setNativeLibrary,
 
         // 4 - INVENTORY Context
         inventoryCrypt,
         setInventoryCrypt,
         inventoryLibrary,
         setInventoryLibrary,
+        inventoryDeckAdd,
+        inventoryDeckDelete,
+        inventoryAddToState,
+        inventoryDeleteFromState,
 
         usedCryptCards,
-        setUsedCryptCards,
         usedLibraryCards,
-        setUsedLibraryCards,
         inventoryCardChange,
 
         // 5 - DECK Context
         preconDecks,
-        setPreconDecks,
         decks,
-        setDecks,
         activeDeck,
         setActiveDeck,
         sharedDeck,
