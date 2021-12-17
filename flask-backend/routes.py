@@ -962,31 +962,26 @@ def login():
 @app.route('/api/account', methods=['POST'])
 @login_required
 def account():
-    try:
-        if (request.json['publicName']):
-            current_user.public_name = request.json['publicName']
-            db.session.commit()
-            return jsonify('public name changed')
-    except Exception:
-        print('new name', request.json)
+    if 'publicName' in request.json:
+        current_user.public_name = request.json['publicName']
+        db.session.commit()
+        return jsonify('public name changed')
 
-    try:
-        if (request.json['email']) and current_user.check_password(
-                request.json['password']):
+    elif 'email' in request.json:
+        if current_user.check_password(request.json['password']):
             current_user.email = request.json['email']
             db.session.commit()
             return jsonify('email changed')
-    except Exception:
-        print('new email', request.json)
+        else:
+            abort(400)
 
-    try:
-        if (request.json['newPassword']) and current_user.check_password(
-                request.json['password']):
+    elif 'newPassword' in request.json:
+        if current_user.check_password(request.json['password']):
             current_user.set_password(request.json['newPassword'])
             db.session.commit()
             return jsonify('password changed')
-    except Exception:
-        print('new password', request.json)
+        else:
+            abort(400)
 
 
 @app.route('/api/account/remove', methods=['POST'])

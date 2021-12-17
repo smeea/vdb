@@ -7,8 +7,8 @@ with open("cardsCompatibility.json", "r") as compatibility_file, open(
     vteslib = json.load(library_file)
     compatibility = json.load(compatibility_file)
 
-CRYPT_MULTIPLIER_FOR_LIBRARY = 10
-CRYPT_MULTIPLIER_FOR_CRYPT = 25
+CRYPT_MULTIPLIER_FOR_LIBRARY = 20
+CRYPT_MULTIPLIER_FOR_CRYPT = 20
 
 
 def deckRecommendation(cards):
@@ -48,6 +48,13 @@ def deckRecommendation(cards):
             r = int(r)
             if r in cards:
                 continue
+
+            if r > 200000:
+                if vtescrypt[str(r)]['Banned']:
+                    continue
+            else:
+                if vteslib[str(r)]['Banned']:
+                    continue
 
             sum = 0
             for i in compatibility[str(r)].values():
