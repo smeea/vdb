@@ -9,7 +9,7 @@ const CardImage = (props) => {
   if (props.card['Id'] > 200000) {
     imgSrc = `${process.env.ROOT_URL}images/cards/${
       props.set
-        ? 'set/' + props.set + '/'
+        ? `set/${props.set}`
         : localizedCrypt &&
           localizedCrypt[lang] &&
           localizedCrypt[lang][props.card['Id']]
@@ -17,9 +17,11 @@ const CardImage = (props) => {
         : 'en-EN'
     }/${props.card['ASCII Name']
       .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}${
-      props.card['Adv'][0] ? 'adv' : ''
-    }${props.card['New'] ? `g${props.card['Group']}` : ''}.jpg`;
+      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}
+g${props.card['Group'].toLowerCase()}
+${props.card['Adv'][0] ? 'adv' : ''}${
+      props.card['New'] ? `g${props.card['Group']}` : ''
+    }.jpg`;
   } else {
     imgSrc = `${process.env.ROOT_URL}images/cards/${
       props.set
