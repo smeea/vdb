@@ -18,6 +18,7 @@ fpdf==1.7.2
 greenlet==1.1.2
 gunicorn==20.1.0
 idna==3.2
+importlib-metadata==4.9.0
 importlib-resources==5.2.2
 itsdangerous==2.0.1
 Jinja2==3.0.1
@@ -26,6 +27,7 @@ Mako==1.1.5
 MarkupSafe==2.0.1
 openpyxl==3.0.9
 pathspec==0.9.0
+pip-autoremove==0.10.0
 python-dateutil==2.8.2
 python-dotenv==0.19.0
 python-editor==1.0.4
