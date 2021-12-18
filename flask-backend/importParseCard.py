@@ -41,7 +41,7 @@ def importParseCard(i, cardbase):
             if group in cardbase[cardname]:
                 id = cardbase[cardname][group]
 
-    elif cardMatch := re.match(r'^ *([0-9]+)x?\s+(.*)', i):
+    elif cardMatch := re.match(r'^ *([0-9]+)x?(.*)', i):
         quantity = int(cardMatch.group(1))
         cardname = cardMatch.group(2)
         cardname = re.sub(r'\W', '', unidecode(cardname)).lower()

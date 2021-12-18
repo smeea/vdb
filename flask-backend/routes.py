@@ -799,10 +799,10 @@ def importDeck():
             db.session.commit()
             return jsonify({'deckid': deckid})
 
-        return jsonify({'Cannot import this deck.'})
+        return jsonify({'error': 'cannot import this deck.'})
 
-    except TypeError:
-        print(request.json['deckText'])
+    except Exception:
+        print('deck import: ', request.json['deckText'])
 
 
 @app.route('/api/decks/export', methods=['POST'])
