@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Stack } from 'react-bootstrap';
 import {
   AccountLogin,
   AccountLogout,
@@ -21,37 +21,35 @@ function Account(props) {
         <Col xs={12} md={5}>
           {username ? (
             <>
-              <div className="d-flex align-items-center justify-content-between">
-                <h6 className="d-flex align-items-center px-1">
-                  <PersonFill />
-                  <span className="ms-2">Logged as: {username}</span>
-                </h6>
-                <div>
-                  <AccountLogout />
+              <Stack gap={4}>
+                <div className="d-flex align-items-center justify-content-between">
+                  <h6 className="d-flex align-items-center px-1">
+                    <PersonFill />
+                    <span className="ms-2">Logged as: {username}</span>
+                  </h6>
                 </div>
-              </div>
-              <div className="py-2">
-                <AccountChangeName />
-              </div>
-              <div className="py-2">
-                <AccountChangePassword />
-              </div>
-              <div className="py-2">
-                <AccountChangeEmail />
-              </div>
-              <div className="py-2">
+                <div>
+                  <AccountChangeName />
+                </div>
+                <div>
+                  <AccountChangePassword />
+                </div>
+                <div>
+                  <AccountChangeEmail />
+                </div>
+                <AccountLogout />
                 <AccountDelete />
-              </div>
+              </Stack>
             </>
           ) : (
-            <>
-              <div className="py-2">
+            <Stack gap={4}>
+              <div>
                 <AccountLogin />
               </div>
-              <div className="py-2">
+              <div>
                 <AccountRegister />
               </div>
-            </>
+            </Stack>
           )}
         </Col>
       </Row>

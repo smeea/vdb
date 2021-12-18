@@ -968,20 +968,20 @@ def account():
         return jsonify('public name changed')
 
     elif 'email' in request.json:
-        if current_user.check_password(request.json['password']):
-            current_user.email = request.json['email']
-            db.session.commit()
-            return jsonify('email changed')
-        else:
-            abort(400)
+        if not current_user.check_password(request.json['password']):
+            abort(401)
+
+        current_user.email = request.json['email']
+        db.session.commit()
+        return jsonify('email changed')
 
     elif 'newPassword' in request.json:
-        if current_user.check_password(request.json['password']):
-            current_user.set_password(request.json['newPassword'])
-            db.session.commit()
-            return jsonify('password changed')
-        else:
-            abort(400)
+        if not current_user.check_password(request.json['password']):
+            abort(401)
+
+        current_user.set_password(request.json['newPassword'])
+        db.session.commit()
+        return jsonify('password changed')
 
 
 @app.route('/api/account/remove', methods=['POST'])
@@ -995,7 +995,8 @@ def removeAccount():
         except Exception:
             pass
     else:
-        return jsonify({'Wrong password.'})
+        abort(401)
+        # return jsonify({'Wrong password.'})
 
 
 @app.route('/api/logout')

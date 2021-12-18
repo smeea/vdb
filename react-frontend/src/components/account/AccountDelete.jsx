@@ -9,8 +9,12 @@ function AccountDelete(props) {
   return (
     <>
       <Button variant="danger" onClick={() => setShowConfirmation(true)}>
-        <TrashFill />
-        <span className="ms-1">Delete account</span>
+        <div className="d-flex justify-content-center align-items-center">
+          <div className="pe-2">
+            <TrashFill />
+          </div>
+          Delete account
+        </div>
       </Button>
       <AccountDeleteConfirmation
         show={showConfirmation}
