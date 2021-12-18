@@ -19,9 +19,7 @@ const CardImage = (props) => {
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}
 g${props.card['Group'].toLowerCase()}
-${props.card['Adv'][0] ? 'adv' : ''}${
-      props.card['New'] ? `g${props.card['Group']}` : ''
-    }.jpg`;
+${props.card['Adv'][0] ? 'adv' : ''}.jpg`;
   } else {
     imgSrc = `${process.env.ROOT_URL}images/cards/${
       props.set
