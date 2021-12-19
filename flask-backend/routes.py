@@ -874,11 +874,12 @@ def deckExportRoute():
 
 @app.route('/api/decks/proxy', methods=['POST'])
 def deckProxyRoute():
-    try:
-        return deckProxy(request.json['cards'])
-
-    except Exception:
-        print(request.json)
+    pdf = deckProxy(request.json['cards'])
+    if pdf:
+        return pdf
+    else:
+        print('bad proxy: ', request.json)
+        abort(400)
 
 
 @app.route('/api/decks/remove', methods=['POST'])
@@ -996,7 +997,6 @@ def removeAccount():
             pass
     else:
         abort(401)
-        # return jsonify({'Wrong password.'})
 
 
 @app.route('/api/logout')

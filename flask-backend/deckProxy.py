@@ -42,14 +42,12 @@ def deckProxy(input):
 
             if k > 200000:
                 card = get_crypt_by_id(k)
+                card['Name'] += f"g{card['Group'].lower()}"
                 if card['Adv'] and card['Adv'][0]:
                     card['Name'] += 'adv'
-                if card['New']:
-                    card['Name'] += f"g{card['Group']}"
 
-                filename = unidecode(
-                    re.sub('[\\W]', '',
-                           card['Name'])).lower() + f"g{card['Group']}.jpg"
+                filename = unidecode(re.sub('[\\W]', '',
+                                            card['Name'])).lower() + '.jpg'
 
             elif k < 200000:
                 card = get_library_by_id(k)
