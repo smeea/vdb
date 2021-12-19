@@ -6,6 +6,7 @@ import {
   SearchAdditionalForms,
   SearchFormButtonAdd,
   SearchFormButtonDel,
+  ResultLibraryClan,
 } from 'components';
 import { useApp } from 'context';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
@@ -48,10 +49,6 @@ function SearchFormPrecon(props) {
   preOptions.map((i, index) => {
     if (i.set != 'any' && i.set != 'bcp') {
       const clanImages = i.clans.map((clan, index) => {
-        const imgSrc = `${process.env.ROOT_URL}images/clans/${clan
-          .toLowerCase()
-          .replace(/[\s,:!?'.\-]/g, '')}.svg`;
-
         return (
           <div className="d-inline" key={index}>
             {clan === 'Bundle' ? (
@@ -59,7 +56,7 @@ function SearchFormPrecon(props) {
                 <GiftFill />
               </div>
             ) : clan === 'Mix' ? null : (
-              <img src={imgSrc} className="clan-image-results" />
+              <ResultLibraryClan value={clan} />
             )}
           </div>
         );

@@ -1,8 +1,6 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
-* Transition to Name+Group in crypt images
-* Refactor images to components
 * Fix ksu scans
 
 # FEATURES

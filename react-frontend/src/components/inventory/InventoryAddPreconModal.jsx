@@ -10,6 +10,7 @@ import {
   InventoryDeckAddButton,
   InventoryDeckDeleteButton,
   OverlayTooltip,
+  ResultLibraryClan,
 } from 'components';
 import decksSort from 'components/decksSort.js';
 import { useApp } from 'context';
@@ -99,10 +100,6 @@ function InventoryAddDeckModal(props) {
     const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
     const clanImages = clans.map((clan, index) => {
-      const imgSrc = `${process.env.ROOT_URL}images/clans/${clan
-        .toLowerCase()
-        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
-
       return (
         <div className="d-inline px-1" key={index}>
           {clan === 'Bundle' ? (
@@ -110,7 +107,7 @@ function InventoryAddDeckModal(props) {
               <GiftFill />
             </div>
           ) : clan === 'Mix' ? null : (
-            <img src={imgSrc} className="clan-image-results" />
+            <ResultLibraryClan value={clan} />
           )}
         </div>
       );

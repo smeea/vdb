@@ -6,6 +6,7 @@ import {
   SearchFormButtonGroupToggle,
   SearchFormButtonAdd,
   SearchFormButtonDel,
+  ResultLibraryClan,
 } from 'components';
 import clansList from 'components/deck/forms_data/clansList.json';
 import { useApp } from 'context';
@@ -30,16 +31,13 @@ function SearchLibraryFormClan(props) {
         ),
       });
     } else {
-      const imgSrc = `${process.env.ROOT_URL}images/clans/${i
-        .toLowerCase()
-        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
       options.push({
         value: i.toLowerCase(),
         name: 'clan',
         label: (
           <>
             <span className="margin-full">
-              <img src={imgSrc} className="clan-image-results" />
+              <ResultLibraryClan value={i} />
             </span>
             {i}
           </>

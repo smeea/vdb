@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import { ResultLibraryClan } from 'components';
 import { useApp } from 'context';
 
 function DeckSelectPrecon(props) {
@@ -32,10 +33,6 @@ function DeckSelectPrecon(props) {
 
   preOptions.map((i, index) => {
     const clanImages = i.clans.map((clan, index) => {
-      const imgSrc = `${process.env.ROOT_URL}images/clans/${clan
-        .toLowerCase()
-        .replace(/[\s,:!?'.\-]/g, '')}.svg`;
-
       return (
         <div className="d-inline px-1" key={index}>
           {clan === 'Bundle' ? (
@@ -43,7 +40,7 @@ function DeckSelectPrecon(props) {
               <GiftFill />
             </div>
           ) : clan === 'Mix' ? null : (
-            <img src={imgSrc} className="clan-image-results" />
+            <ResultLibraryClan value={clan} />
           )}
         </div>
       );
