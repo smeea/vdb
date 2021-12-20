@@ -135,7 +135,12 @@ function DeckCopyUrl(props) {
           onClick={handleStandardButton}
           title="Copy Standard Deck URL (will follow future deck changes)"
         >
-          <ShareFill /> {!props.noText && (state ? 'Copied' : 'Copy URL')}
+          <div className="d-flex justify-content-center align-items-center">
+            <div className={props.noText ? null : 'pe-2'}>
+              <ShareFill />
+            </div>
+            {!props.noText && (state ? 'Copied' : 'Copy URL')}
+          </div>
         </Button>
       )}
     </>
