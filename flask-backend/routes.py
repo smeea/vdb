@@ -847,11 +847,11 @@ def deckExportRoute():
                 }
                 result = deckExport(deck, request.json['format'])
 
-        elif request.json['src'] == 'shared':
+        elif request.json['deckid'] == 'deckInUrl':
             deck = request.json['deck']
             result = deckExport(deck, request.json['format'])
 
-        elif request.json['src'] == 'my':
+        elif request.json['src'] == 'shared' or request.json['src'] == 'my':
             d = Deck.query.filter_by(deckid=request.json['deckid']).first()
             deck = {
                 'cards': d.cards,
