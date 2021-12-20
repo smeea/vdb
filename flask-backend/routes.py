@@ -263,7 +263,8 @@ def getRecommendation(deckid):
 def updateDeck(deckid):
     d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
     if not d:
-        print('bad deck request\n', request)
+        print('bad deck request\n', request.json)
+        return jsonify({'error': 'no deck'})
 
     d.timestamp = datetime.utcnow()
 
