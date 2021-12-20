@@ -631,7 +631,10 @@ function Decks(props) {
               <div className="d-flex justify-content-end">
                 <Button
                   variant="outline-secondary"
-                  onClick={props.handleCancel}
+                  onClick={() => {
+                    setShowMenuButtons(false);
+                    setShowFloatingButtons(true);
+                  }}
                 >
                   <X width="32" height="32" viewBox="0 0 16 16" />
                 </Button>
