@@ -38,10 +38,16 @@ export const AppProvider = (props) => {
   const [libraryCardBase, setLibraryCardBase] = useState(
     cardServices.getLibraryBase()
   );
-  const localizedCrypt = cardServices.cryptBases;
-  const localizedLibrary = cardServices.libraryBases;
-  const nativeCrypt = cardServices.getNativeCrypt();
-  const nativeLibrary = cardServices.getNativeLibrary();
+  const nativeCrypt = cardServices.getNativeText(cryptCardBase);
+  const nativeLibrary = cardServices.getNativeText(libraryCardBase);
+
+  const [localizedCrypt, setLocalizedCrypt] = useState({
+    'en-EN': nativeCrypt,
+  });
+  const [localizedLibrary, setLocalizedLibrary] = useState({
+    'en-EN': nativeLibrary,
+  });
+
   const preconDecks = cardServices.getPreconDecks();
 
   const [twdFormState, setTwdFormState] = useState(
@@ -80,6 +86,9 @@ export const AppProvider = (props) => {
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
 
+  // ---------------------------------------------------------------------------
+  //                            USER FUNCTIONS
+  // ---------------------------------------------------------------------------
   const whoAmI = () => {
     const url = `${process.env.API_URL}login`;
     const options = {
@@ -100,6 +109,7 @@ export const AppProvider = (props) => {
       });
   };
 
+  // Trigger the Load user info
   useEffect(() => {
     if (username) {
       initializeUserData();
@@ -108,31 +118,73 @@ export const AppProvider = (props) => {
     }
   }, [username]);
 
+  const initializeUserData = () => {
+    // Initizalize User Inventory
+    getInventory();
+    getDecks();
+  };
+
+  const initializeUnauthenticatedUser = () => {
+    setInventoryCrypt({});
+    setInventoryLibrary({});
+    setDecks(undefined);
+    setActiveDeck({ src: null, deckid: null });
+    setEmail(undefined);
+  };
+
+  // ---------------------------------------------------------------------------
+  //                          LANGUAGE FUNCTIONS
+  // ---------------------------------------------------------------------------
+
   const changeLang = (lang) => {
     setLang(lang);
     setLocalStorage('lang', lang);
-    console.log(lang);
   };
 
-  useEffect(() => {
-    setCryptCardBase((prevState) => {
+  // Replace the current base text with the localized one
+  const changeBaseTextToLocalizedText = (setFunction, localizedInfo) => {
+    setFunction((prevState) => {
       const state = { ...prevState };
-      Object.keys(localizedCrypt[lang]).map((k) => {
-        state[k]['Name'] = localizedCrypt[lang][k]['Name'];
-        state[k]['Card Text'] = localizedCrypt[lang][k]['Card Text'];
+      Object.keys(localizedInfo).map((k) => {
+        state[k]['Name'] = localizedInfo[k]['Name'];
+        state[k]['Card Text'] = localizedInfo[k]['Card Text'];
       });
       return state;
     });
+  };
 
-    setLibraryCardBase((prevState) => {
-      const state = { ...prevState };
-      Object.keys(localizedLibrary[lang]).map((k) => {
-        state[k]['Name'] = localizedLibrary[lang][k]['Name'];
-        state[k]['Card Text'] = localizedLibrary[lang][k]['Card Text'];
-      });
-      return state;
-    });
+  // Load the localized info for the first time
+  const initializeLocalizedInfo = async (lang) => {
+    const localizedCrypt = await cardServices.getLocalizedCrypt(lang);
+    const localizedLibrary = await cardServices.getLocalizedLibrary(lang);
+
+    setLocalizedCrypt((prevState) => ({
+      ...prevState,
+      [lang]: localizedCrypt,
+    }));
+
+    setLocalizedLibrary((prevState) => ({
+      ...prevState,
+      [lang]: localizedLibrary,
+    }));
+
+    changeBaseTextToLocalizedText(setCryptCardBase, localizedCrypt);
+    changeBaseTextToLocalizedText(setLibraryCardBase, localizedLibrary);
+  };
+
+  // Trigger the language change
+  useEffect(async () => {
+    if (!localizedCrypt[lang] || !localizedLibrary[lang])
+      await initializeLocalizedInfo(lang);
+    else {
+      changeBaseTextToLocalizedText(setCryptCardBase, localizedCrypt[lang]);
+      changeBaseTextToLocalizedText(setLibraryCardBase, localizedLibrary[lang]);
+    }
   }, [lang]);
+
+  // ---------------------------------------------------------------------------
+  //                          APP DATA FUNCTIONS
+  // ---------------------------------------------------------------------------
 
   const toggleShowImage = () => {
     setShowImage(!showImage);
@@ -194,19 +246,9 @@ export const AppProvider = (props) => {
     initFromStorage('recentDecks', [], setRecentDecks);
   }, []);
 
-  const getInventory = async () => {
-    const inventoryData = await inventoryServices.getInventory();
-    if (inventoryData) {
-      Object.keys(inventoryData.crypt).map((i) => {
-        inventoryData.crypt[i].c = cryptCardBase[i];
-      });
-      Object.keys(inventoryData.library).map((i) => {
-        inventoryData.library[i].c = libraryCardBase[i];
-      });
-      setInventoryCrypt(inventoryData.crypt);
-      setInventoryLibrary(inventoryData.library);
-    }
-  };
+  // ---------------------------------------------------------------------------
+  //                          DECK FUNCTIONS
+  // ---------------------------------------------------------------------------
 
   const getDecks = async () => {
     const decksData = await inventoryServices.getDecks();
@@ -305,76 +347,85 @@ export const AppProvider = (props) => {
     }
   };
 
-  const initializeUserData = () => {
-    // Initizalize User Inventory
-    getInventory();
-    getDecks();
+  // ---------------------------------------------------------------------------
+  //                          INVENTORY FUNCTIONS
+  // ---------------------------------------------------------------------------
+
+  const getInventory = async () => {
+    const inventoryData = await inventoryServices.getInventory();
+    if (inventoryData) {
+      Object.keys(inventoryData.crypt).map((i) => {
+        inventoryData.crypt[i].c = cryptCardBase[i];
+      });
+      Object.keys(inventoryData.library).map((i) => {
+        inventoryData.library[i].c = libraryCardBase[i];
+      });
+      setInventoryCrypt(inventoryData.crypt);
+      setInventoryLibrary(inventoryData.library);
+    }
   };
 
-  const initializeUnauthenticatedUser = () => {
-    setInventoryCrypt({});
-    setInventoryLibrary({});
-    setDecks(undefined);
-    setActiveDeck({ src: null, deckid: null });
-    setEmail(undefined);
-  };
-
+  // Trigger  Hard and Soft count function on changing decks
   useEffect(() => {
     if (decks) {
-      const softCrypt = {};
-      const softLibrary = {};
-      const hardCrypt = {};
-      const hardLibrary = {};
-
-      Object.keys(decks).forEach((deckid) => {
-        // lsit soft decks
-        if (decks[deckid].inventory_type == 's') {
-          Object.keys(decks[deckid].crypt).forEach((id) => {
-            inventoryServices.setSoftOrHardInventory(
-              decks[deckid].crypt[id].i == 'h' ? hardCrypt : softCrypt,
-              deckid,
-              id,
-              decks[deckid].crypt[id].q
-            );
-          });
-          Object.keys(decks[deckid].library).forEach((id) => {
-            inventoryServices.setSoftOrHardInventory(
-              decks[deckid].library[id].i == 'h' ? hardLibrary : softLibrary,
-              deckid,
-              id,
-              decks[deckid].library[id].q
-            );
-          });
-          // list hard decks
-        } else if (decks[deckid].inventory_type == 'h') {
-          Object.keys(decks[deckid].crypt).forEach((id) => {
-            inventoryServices.setSoftOrHardInventory(
-              decks[deckid].crypt[id].i == 's' ? softCrypt : hardCrypt,
-              deckid,
-              id,
-              decks[deckid].crypt[id].q
-            );
-          });
-          Object.keys(decks[deckid].library).forEach((id) => {
-            inventoryServices.setSoftOrHardInventory(
-              decks[deckid].library[id].i == 's' ? softLibrary : hardLibrary,
-              deckid,
-              id,
-              decks[deckid].library[id].q
-            );
-          });
-        }
-      });
-      setUsedCryptCards({
-        soft: softCrypt,
-        hard: hardCrypt,
-      });
-      setUsedLibraryCards({
-        soft: softLibrary,
-        hard: hardLibrary,
-      });
+      setupHardAndSoftInventory;
     }
   }, [decks]);
+
+  const setupHardAndSoftInventory = () => {
+    const softCrypt = {};
+    const softLibrary = {};
+    const hardCrypt = {};
+    const hardLibrary = {};
+
+    Object.keys(decks).forEach((deckid) => {
+      // list soft decks
+      if (decks[deckid].inventory_type == 's') {
+        Object.keys(decks[deckid].crypt).forEach((id) => {
+          inventoryServices.setSoftOrHardInventory(
+            decks[deckid].crypt[id].i == 'h' ? hardCrypt : softCrypt,
+            deckid,
+            id,
+            decks[deckid].crypt[id].q
+          );
+        });
+        Object.keys(decks[deckid].library).forEach((id) => {
+          inventoryServices.setSoftOrHardInventory(
+            decks[deckid].library[id].i == 'h' ? hardLibrary : softLibrary,
+            deckid,
+            id,
+            decks[deckid].library[id].q
+          );
+        });
+        // list hard decks
+      } else if (decks[deckid].inventory_type == 'h') {
+        Object.keys(decks[deckid].crypt).forEach((id) => {
+          inventoryServices.setSoftOrHardInventory(
+            decks[deckid].crypt[id].i == 's' ? softCrypt : hardCrypt,
+            deckid,
+            id,
+            decks[deckid].crypt[id].q
+          );
+        });
+        Object.keys(decks[deckid].library).forEach((id) => {
+          inventoryServices.setSoftOrHardInventory(
+            decks[deckid].library[id].i == 's' ? softLibrary : hardLibrary,
+            deckid,
+            id,
+            decks[deckid].library[id].q
+          );
+        });
+      }
+    });
+    setUsedCryptCards({
+      soft: softCrypt,
+      hard: hardCrypt,
+    });
+    setUsedLibraryCards({
+      soft: softLibrary,
+      hard: hardLibrary,
+    });
+  };
 
   const inventoryDeckAdd = (deck) => {
     const cards = {};
