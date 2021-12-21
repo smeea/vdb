@@ -1,12 +1,11 @@
 import React from 'react';
+import { ResultDisciplineImage } from 'components';
 import virtuesList from 'components/deck/forms_data/virtuesList.json';
 
 function SearchCryptFormVirtues(props) {
   const virtuesforms = virtuesList.map((i, index) => {
-    const imgSrc = `${
-      process.env.ROOT_URL
-    }images/disciplines/${i.toLowerCase()}.svg`;
     const virtueState = 'virtue-container mb-2 state' + props.value[i];
+
     return (
       <div key={index} className={virtueState}>
         <label
@@ -20,7 +19,7 @@ function SearchCryptFormVirtues(props) {
             id={i}
             onClick={(e) => props.onChange(e)}
           />
-          <img className="virtue-image" title={i} src={imgSrc} />
+          <ResultDisciplineImage className="virtue-image" value={i} />
         </label>
       </div>
     );

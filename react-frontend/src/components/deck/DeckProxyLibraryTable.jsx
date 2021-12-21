@@ -12,6 +12,7 @@ import {
   ResultLibraryDisciplines,
   ResultLibraryName,
   ResultLibraryTrifle,
+  CardImage,
 } from 'components';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 import { useApp } from 'context';
@@ -23,8 +24,6 @@ function DeckProxyLibraryTable(props) {
     inventoryLibrary,
     usedLibraryCards,
     nativeLibrary,
-    lang,
-    localizedLibrary,
     isMobile,
   } = useApp();
 
@@ -92,38 +91,12 @@ function DeckProxyLibraryTable(props) {
             <div className="small">
               {setsAndPrecons[i].name}
               {" '"}
-              {setsAndPrecons[i].year.slice(2, 4)}
+              {setsAndPrecons[i].date.slice(2, 4)}
             </div>
           ),
         });
       }
     });
-
-    const imgPath =
-      props.proxySelected[card.c['Id']] && props.proxySelected[card.c['Id']].set
-        ? `${process.env.ROOT_URL}images/cards/set/${
-            props.proxySelected[card.c['Id']].set
-          }`
-        : `${process.env.ROOT_URL}images/cards/${
-            localizedLibrary &&
-            localizedLibrary[lang] &&
-            localizedLibrary[lang][card.c['Id']]
-              ? lang
-              : 'en-EN'
-          }`;
-
-    const imgFile = `${card.c['ASCII Name']
-      .toLowerCase()
-      .replace(/[\s,:!?'".\-\(\)\/]/g, '')}.jpg`;
-
-    const CardImage = (
-      <img
-        className="card-popover"
-        src={`${imgPath}/${imgFile}`}
-        alt={card.c['Name']}
-        onClick={props.handleClose}
-      />
-    );
 
     return (
       <React.Fragment key={card.c['Id']}>
@@ -236,7 +209,15 @@ function DeckProxyLibraryTable(props) {
                 placement="left"
                 overlay={
                   <Popover>
-                    <Popover.Body>{CardImage}</Popover.Body>
+                    <Popover.Body>
+                      <CardImage
+                        card={card.c}
+                        set={
+                          props.proxySelected[card.c['Id']] &&
+                          props.proxySelected[card.c['Id']].set
+                        }
+                      />
+                    </Popover.Body>
                   </Popover>
                 }
               >

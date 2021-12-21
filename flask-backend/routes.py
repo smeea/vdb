@@ -799,10 +799,10 @@ def importDeck():
             db.session.commit()
             return jsonify({'deckid': deckid})
 
-        return jsonify({'Cannot import this deck.'})
+        return jsonify({'error': 'cannot import this deck.'})
 
-    except TypeError:
-        print(request.json['deckText'])
+    except Exception:
+        print('deck import: ', request.json['deckText'])
 
 
 @app.route('/api/decks/export', methods=['POST'])
@@ -847,11 +847,11 @@ def deckExportRoute():
                 }
                 result = deckExport(deck, request.json['format'])
 
-        elif request.json['src'] == 'shared':
+        elif request.json['deckid'] == 'deckInUrl':
             deck = request.json['deck']
             result = deckExport(deck, request.json['format'])
 
-        elif request.json['src'] == 'my':
+        elif request.json['src'] == 'shared' or request.json['src'] == 'my':
             d = Deck.query.filter_by(deckid=request.json['deckid']).first()
             deck = {
                 'cards': d.cards,
@@ -874,11 +874,12 @@ def deckExportRoute():
 
 @app.route('/api/decks/proxy', methods=['POST'])
 def deckProxyRoute():
-    try:
-        return deckProxy(request.json['cards'])
-
-    except Exception:
-        print(request.json)
+    pdf = deckProxy(request.json['cards'])
+    if pdf:
+        return pdf
+    else:
+        print('bad proxy: ', request.json)
+        abort(400)
 
 
 @app.route('/api/decks/remove', methods=['POST'])
@@ -968,20 +969,20 @@ def account():
         return jsonify('public name changed')
 
     elif 'email' in request.json:
-        if current_user.check_password(request.json['password']):
-            current_user.email = request.json['email']
-            db.session.commit()
-            return jsonify('email changed')
-        else:
-            abort(400)
+        if not current_user.check_password(request.json['password']):
+            abort(401)
+
+        current_user.email = request.json['email']
+        db.session.commit()
+        return jsonify('email changed')
 
     elif 'newPassword' in request.json:
-        if current_user.check_password(request.json['password']):
-            current_user.set_password(request.json['newPassword'])
-            db.session.commit()
-            return jsonify('password changed')
-        else:
-            abort(400)
+        if not current_user.check_password(request.json['password']):
+            abort(401)
+
+        current_user.set_password(request.json['newPassword'])
+        db.session.commit()
+        return jsonify('password changed')
 
 
 @app.route('/api/account/remove', methods=['POST'])
@@ -995,7 +996,7 @@ def removeAccount():
         except Exception:
             pass
     else:
-        return jsonify({'Wrong password.'})
+        abort(401)
 
 
 @app.route('/api/logout')

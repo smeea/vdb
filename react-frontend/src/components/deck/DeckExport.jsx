@@ -76,6 +76,29 @@ function DeckExport(props) {
     if (props.activeDeck) {
       setSpinnerState(true);
 
+      const input = {
+        deckid: props.activeDeck.deckid,
+        format: format,
+        src: props.activeDeck.src,
+      };
+
+      if (input.deckid == 'deckInUrl') {
+        const cards = {};
+        Object.keys(props.deck.crypt).map((key) => {
+          cards[key] = props.deck.crypt[key].q;
+        });
+        Object.keys(props.deck.library).map((key) => {
+          cards[key] = props.deck.library[key].q;
+        });
+
+        input.deck = {
+          cards: cards,
+          name: props.deck.name,
+          description: props.deck.description,
+          author: props.deck.author,
+        };
+      }
+
       const url = `${process.env.API_URL}decks/export`;
       const options = {
         method: 'POST',
@@ -84,11 +107,7 @@ function DeckExport(props) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          deckid: props.activeDeck.deckid,
-          format: format,
-          src: props.activeDeck.src,
-        }),
+        body: JSON.stringify(input),
       };
 
       const fetchPromise = fetch(url, options);
@@ -120,7 +139,7 @@ function DeckExport(props) {
         src: props.activeDeck.src,
       };
 
-      if (input.src == 'shared') {
+      if (input.deckid == 'deckInUrl') {
         const cards = {};
         Object.keys(props.deck.crypt).map((key) => {
           cards[key] = props.deck.crypt[key].q;

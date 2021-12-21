@@ -221,7 +221,6 @@ function DeckProxySelectModal(props) {
                 <>
                   <DeckProxyLibrary
                     cards={props.deck.library}
-                    deckid={props.deck.deckid}
                     handleProxySelector={handleProxySelector}
                     handleSetSelector={handleSetSelector}
                     handleProxyCounter={handleProxyCounter}

@@ -38,27 +38,28 @@ def deckProxy(input):
         for k, v in input.items():
             k = int(k)
             card = {}
+            filename = None
 
             if k > 200000:
                 card = get_crypt_by_id(k)
-                # name = card['Name']
+                card['Name'] += f"g{card['Group'].lower()}"
                 if card['Adv'] and card['Adv'][0]:
                     card['Name'] += 'adv'
-                if card['New']:
-                    card['Name'] += f"g{card['Group']}"
+
+                filename = unidecode(re.sub('[\\W]', '',
+                                            card['Name'])).lower() + '.jpg'
 
             elif k < 200000:
                 card = get_library_by_id(k)
-                # name = get_library_by_id(k)['Name']
+                filename = unidecode(re.sub('[\\W]', '',
+                                            card['Name'])).lower() + '.jpg'
 
-            filename = unidecode(re.sub('[\\W]', '',
-                                        card['Name'])).lower() + '.jpg'
             file = None
             if 'set' in v and os.path.exists(
                     f"./cards/set/{v['set']}/{filename}"):
                 file = f"./cards/set/{v['set']}/{filename}"
             else:
-                file = f"./cards/{filename}"
+                file = f"./cards/en-EN/{filename}"
 
             if k > 200000 and v['q'] > 0:
                 crypt[card['Name']] = {

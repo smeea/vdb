@@ -14,7 +14,12 @@ function AccountLogout(props) {
 
   return (
     <Button variant="primary" onClick={logoutUser}>
-      <DoorClosedFill /> Logout
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="pe-2">
+          <DoorClosedFill />
+        </div>
+        Logout
+      </div>
     </Button>
   );
 }

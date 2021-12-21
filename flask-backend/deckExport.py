@@ -119,7 +119,7 @@ def deckExport(d, format):
                 q = library[id]['q']
                 c = library[id]['c']
                 deck.append(f"{str(q)}{' ' * (8 - len(str(q)))}")
-                deck.append(f"{c['ASCII Name']}\n")
+                deck.append(f"{c['ASCII Name'].replace('/', '')}\n")
 
             # Crypt export
             deck.append('Crypt:\n')
