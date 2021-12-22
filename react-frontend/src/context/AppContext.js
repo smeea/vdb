@@ -390,7 +390,7 @@ export const AppProvider = (props) => {
     Object.keys(decks).forEach((deckid) => {
       if (decks[deckid].inventory_type) {
         for (const [id, card] of Object.entries(decks[deckid].crypt)) {
-          const target = crypts[invetType || decks[deckid].inventory_type];
+          const target = crypts[card.i || decks[deckid].inventory_type];
           addToTarget(target, deckid, id, card.q);
         }
         for (const [id, card] of Object.entries(decks[deckid].library)) {
