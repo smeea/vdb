@@ -388,16 +388,8 @@ export const AppProvider = (props) => {
     };
 
     Object.keys(decks).forEach((deckid) => {
-      // list soft decks
       if (decks[deckid].inventory_type) {
         for (const [id, card] of Object.entries(decks[deckid].crypt)) {
-          let invetType = card.i;
-          console.log(id === '200956');
-          if (id === '200956') {
-            console.log('test');
-            invetType = 'h';
-          }
-
           const target = crypts[invetType || decks[deckid].inventory_type];
           addToTarget(target, deckid, id, card.q);
         }
@@ -408,29 +400,6 @@ export const AppProvider = (props) => {
       }
     });
 
-    // Object.keys(decks).forEach((deckid) => {
-    //   // list soft decks
-    //   if (decks[deckid].inventory_type == 's') {
-    //     for (const [id, card] of Object.entries(decks[deckid].crypt)) {
-    //       const target = card.i == 'h' ? hardCrypt : softCrypt;
-    //       addToTarget(target, deckid, id, card.q);
-    //     }
-    //     for (const [id, card] of Object.entries(decks[deckid].library)) {
-    //       const target = card.i == 'h' ? hardLibrary : softLibrary;
-    //       addToTarget(target, deckid, id, card.q);
-    //     }
-    //     // list hard decks
-    //   } else if (decks[deckid].inventory_type == 'h') {
-    //     for (const [id, card] of Object.entries(decks[deckid].crypt)) {
-    //       const target = card.i == 's' ? softCrypt : hardCrypt;
-    //       addToTarget(target, deckid, id, card.q);
-    //     }
-    //     for (const [id, card] of Object.entries(decks[deckid].library)) {
-    //       const target = card.i == 's' ? softLibrary : hardLibrary;
-    //       addToTarget(target, deckid, id, card.q);
-    //     }
-    //   }
-    // });
     setUsedCryptCards({
       soft: softCrypt,
       hard: hardCrypt,
