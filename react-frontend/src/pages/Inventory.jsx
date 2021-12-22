@@ -41,9 +41,7 @@ function Inventory(props) {
   };
 
   return (
-    <Container
-      className={isMobile ? 'main-container p-0' : 'main-container py-0'}
-    >
+    <Container className="main-container p-0 px-sm-1">
       {username ? (
         <>
           {isMobile ? (
@@ -129,7 +127,7 @@ function Inventory(props) {
           ) : (
             <Row className="mx-0">
               <Col xl={1} className="hide-narrow"></Col>
-              <Col md={6} xl={5} className="px-0 px-lg-1 pe-xl-3">
+              <Col md={6} lg={6} xl={5} className="px-0 px-md-2 pe-xl-3">
                 <div className="sticky-insearch pt-3 pb-2">
                   <InventoryNewCryptCard
                     cards={inventoryCrypt}
@@ -161,7 +159,7 @@ function Inventory(props) {
                     </div>
                   )}
               </Col>
-              <Col md={4} xl={4} className="px-0 px-lg-3">
+              <Col md={6} lg={6} xl={4} className="px-0 px-md-2 px-xl-3">
                 <div className="sticky-insearch pt-3 pb-2">
                   <InventoryNewLibraryCard
                     cards={inventoryLibrary}
@@ -195,7 +193,7 @@ function Inventory(props) {
                     </div>
                   )}
               </Col>
-              <Col md={2} className="px-0 px-md-1 px-xl-3">
+              <Col lg={2} className="inventory-buttons px-0 px-lg-2 px-xl-3">
                 <div className="sticky">
                   <InventoryButtons
                     setShowAddDeck={setShowAddDeck}
@@ -231,18 +229,16 @@ function Inventory(props) {
           </Col>
         </Row>
       )}
-      {isMobile && showFloatingButtons && (
-        <>
-          <div
-            onClick={() => {
-              setShowMenuButtons(true);
-              setShowFloatingButtons(false);
-            }}
-            className="d-flex float-right-bottom float-menu align-items-center justify-content-center"
-          >
-            <List viewBox="0 0 16 16" />
-          </div>
-        </>
+      {showFloatingButtons && (
+        <div
+          onClick={() => {
+            setShowMenuButtons(true);
+            setShowFloatingButtons(false);
+          }}
+          className="hide-on-gt1200px d-flex float-right-bottom float-menu align-items-center justify-content-center"
+        >
+          <List viewBox="0 0 16 16" />
+        </div>
       )}
       {showMenuButtons && (
         <Modal
@@ -253,23 +249,21 @@ function Inventory(props) {
           }}
           animation={false}
           centered={true}
+          size="sm"
         >
-          <Modal.Header
-            className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-          >
-            <h5></h5>
-            <Button
-              variant="outline-secondary"
-              onClick={() => {
-                setShowMenuButtons(false);
-                setShowFloatingButtons(true);
-              }}
-            >
-              <X width="32" height="32" viewBox="0 0 16 16" />
-            </Button>
-          </Modal.Header>
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
+              <div className="d-flex justify-content-end">
+                <Button
+                  variant="outline-secondary"
+                  onClick={() => {
+                    setShowMenuButtons(false);
+                    setShowFloatingButtons(true);
+                  }}
+                >
+                  <X width="32" height="32" viewBox="0 0 16 16" />
+                </Button>
+              </div>
               <InventoryButtons
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}

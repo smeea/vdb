@@ -1,20 +1,23 @@
 import React from 'react';
 import { Row, Col, ButtonGroup, Button } from 'react-bootstrap';
+import { useApp } from 'context';
 
 function SearchCryptFormGroup(props) {
+  const { isWide } = useApp();
+
   const groups = [1, 2, 3, 4, 5, 6, 7];
 
   const GroupButtons = groups.map((i, index) => {
     return (
       <Button
-        className="group-form px-3"
+        className={isWide ? 'group-form px-3' : 'group-form px-3 px-sm-2'}
         key={index}
         value={i}
         name="group"
         variant={props.value[i] ? 'third' : 'outline-primary'}
         onClick={(e) => props.onChange(e)}
       >
-        {i}
+        <div className={isWide ? '' : 'px-1'}>{i}</div>
       </Button>
     );
   });

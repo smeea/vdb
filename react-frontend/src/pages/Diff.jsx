@@ -299,11 +299,11 @@ function Diff(props) {
   }, [decks, activeDeck, secondaryDeck]);
 
   return (
-    <Container className={isMobile ? 'deck-container' : 'deck-container py-3'}>
+    <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
       <Row className="mx-0">
-        <Col xl={1} className="hide-narrow"></Col>
-        <Col md={10} xl={9} className="px-0 px-lg-1 px-xl-3">
-          <Row className="px-1 pt-1 pb-0 pb-lg-2 px-lg-0 pt-lg-0">
+        <Col xl={1}></Col>
+        <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
+          <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0 pb-xl-4">
             <Col className="px-0 ps-lg-3">
               <Row className="bold blue mx-0 pb-1">Source Deck:</Row>
               {selectFrom === 'from-url' ? (
@@ -580,8 +580,8 @@ function Diff(props) {
             </Row>
           )}
           {deckRouter(activeDeck) && deckToRouter(secondaryDeck) && (
-            <Row>
-              <Col md={7} className="px-0 ps-md-3 pe-md-2 px-xl-3 pt-lg-4">
+            <Row className="pt-md-2">
+              <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
                 <div className={isMobile ? null : 'sticky'}>
                   <DiffCrypt
                     deckid={activeDeck.deckid}
@@ -593,7 +593,7 @@ function Diff(props) {
                   />
                 </div>
               </Col>
-              <Col md={5} className="pt-4 pt-lg-0 px-0 ps-md-2 pe-md-3 px-xl-3">
+              <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
                 <DiffLibrary
                   deckid={activeDeck.deckid}
                   isAuthor={isAuthor}
@@ -607,7 +607,7 @@ function Diff(props) {
           )}
         </Col>
         {!isMobile && (
-          <Col md={2} className="px-0 px-lg-2 px-xl-3">
+          <Col lg={2} className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
             <div className="sticky">
               <DiffButtons
                 isAuthor={isAuthor}
@@ -623,18 +623,16 @@ function Diff(props) {
           </Col>
         )}
       </Row>
-      {isMobile && showFloatingButtons && (
-        <>
-          <div
-            onClick={() => {
-              setShowMenuButtons(true);
-              setShowFloatingButtons(false);
-            }}
-            className="d-flex float-right-bottom float-menu align-items-center justify-content-center"
-          >
-            <List viewBox="0 0 16 16" />
-          </div>
-        </>
+      {showFloatingButtons && (
+        <div
+          onClick={() => {
+            setShowMenuButtons(true);
+            setShowFloatingButtons(false);
+          }}
+          className="hide-on-gt992px d-flex float-right-bottom float-menu align-items-center justify-content-center"
+        >
+          <List viewBox="0 0 16 16" />
+        </div>
       )}
       {showMenuButtons && (
         <Modal
@@ -645,10 +643,8 @@ function Diff(props) {
           }}
           animation={false}
           centered={true}
+          size="sm"
         >
-          <Modal.Header
-            className={isMobile ? 'py-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-          ></Modal.Header>
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
               <div className="d-flex justify-content-end">

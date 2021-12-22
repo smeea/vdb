@@ -18,7 +18,7 @@ function Account(props) {
   return (
     <Container className="main-container">
       <Row className="h-75 align-items-center justify-content-center">
-        <Col xs={12} md={5}>
+        <Col xs={12} md={7} lg={6} xl={5}>
           {username ? (
             <>
               <Stack gap={4}>

@@ -17,7 +17,8 @@ export const useApp = () => {
 };
 
 export const AppProvider = (props) => {
-  const isMobile = window.matchMedia('(max-width: 540px)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+  const isNarrow = window.matchMedia('(max-width: 992px)').matches;
   const isWide = window.matchMedia('(min-width: 1600px)').matches;
 
   const [username, setUsername] = useState(undefined);
@@ -240,7 +241,11 @@ export const AppProvider = (props) => {
     initFromStorage('cryptDeckSort', 'Quantity', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
     initFromStorage('lang', 'en-EN', setLang);
-    initFromStorage('addMode', true, setAddMode);
+    initFromStorage(
+      'addMode',
+      window.matchMedia('(min-width: 1200px)').matches ? true : false,
+      setAddMode
+    );
     initFromStorage('inventoryMode', false, setInventoryMode);
     initFromStorage('showImage', true, setShowImage);
     initFromStorage('recentDecks', [], setRecentDecks);
@@ -569,6 +574,7 @@ export const AppProvider = (props) => {
       value={{
         // 1 - APP Context
         isMobile,
+        isNarrow,
         isWide,
         lang,
         changeLang,

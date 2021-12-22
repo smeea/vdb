@@ -278,7 +278,7 @@ function DeckLibrary(props) {
     <>
       <div
         className={
-          props.inDeckTab && !isMobile ? 'sticky-lib-indeck pt-4' : null
+          props.inDeckTab && !isMobile ? 'sticky-lib-indeck pt-4 pt-md-0' : null
         }
       >
         <div

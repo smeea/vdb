@@ -28,6 +28,7 @@ function DeckLibraryTable(props) {
     usedLibraryCards,
     nativeLibrary,
     isMobile,
+    isNarrow,
     deckUpdate,
     deckCardChange,
   } = useApp();
@@ -236,24 +237,28 @@ function DeckLibraryTable(props) {
               <ResultLibraryName card={card.c} />
             </td>
           )}
-          <td
-            className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
-            onClick={() => handleClick()}
-          >
-            <ResultLibraryCost
-              valueBlood={card.c['Blood Cost']}
-              valuePool={card.c['Pool Cost']}
-            />
-          </td>
+          {!isNarrow && !props.inSearch && (
+            <td
+              className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
+              onClick={() => handleClick()}
+            >
+              <ResultLibraryCost
+                valueBlood={card.c['Blood Cost']}
+                valuePool={card.c['Pool Cost']}
+              />
+            </td>
+          )}
           <td className="disciplines px-1" onClick={() => handleClick()}>
             {DisciplineOrClan}
           </td>
-          <td className="burn" onClick={() => handleClick()}>
-            <ResultLibraryBurn value={card.c['Burn Option']} />
-            <ResultLibraryTrifle
-              value={nativeLibrary[card.c.Id]['Card Text']}
-            />
-          </td>
+          {!isNarrow && !props.inSearch && (
+            <td className="burn" onClick={() => handleClick()}>
+              <ResultLibraryBurn value={card.c['Burn Option']} />
+              <ResultLibraryTrifle
+                value={nativeLibrary[card.c.Id]['Card Text']}
+              />
+            </td>
+          )}
           {props.showInfo && (
             <td className="prob px-1">
               {isMobile ? (
