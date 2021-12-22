@@ -82,19 +82,3 @@ export const deleteFromStateByType = (
     return oldState;
   });
 };
-
-export const setSoftOrHardInventory = (
-  selectedInventory,
-  deckid,
-  id,
-  quantity
-) => {
-  if (quantity) {
-    if (selectedInventory[id]) {
-      selectedInventory[id][deckid] = quantity;
-    } else {
-      selectedInventory[id] = {};
-      selectedInventory[id][deckid] = quantity;
-    }
-  }
-};
