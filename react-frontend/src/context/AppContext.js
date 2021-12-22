@@ -1,9 +1,10 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from 'components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from 'components/forms_data/defaultsLibraryForm.json';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { cardServices, inventoryServices } from 'services';
+import { useWindowSize } from 'hooks';
 
 const AppContext = React.createContext();
 
@@ -17,9 +18,11 @@ export const useApp = () => {
 };
 
 export const AppProvider = (props) => {
-  const isMobile = window.matchMedia('(max-width: 767px)').matches;
-  const isNarrow = window.matchMedia('(max-width: 992px)').matches;
-  const isWide = window.matchMedia('(min-width: 1600px)').matches;
+  const screenSize = useWindowSize();
+  const isMobile = useMemo(() => screenSize.width <= 767, [screenSize.width]);
+  const isNarrow = useMemo(() => screenSize.width <= 992, [screenSize.width]);
+  const isDesktop = useMemo(() => screenSize.width >= 1200, [screenSize.width]);
+  const isWide = useMemo(() => screenSize.width >= 1600, [screenSize.width]);
 
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);
@@ -241,11 +244,7 @@ export const AppProvider = (props) => {
     initFromStorage('cryptDeckSort', 'Quantity', setCryptDeckSort);
     initFromStorage('librarySearchSort', 'Type', setLibrarySearchSort);
     initFromStorage('lang', 'en-EN', setLang);
-    initFromStorage(
-      'addMode',
-      window.matchMedia('(min-width: 1200px)').matches ? true : false,
-      setAddMode
-    );
+    initFromStorage('addMode', isDesktop ? true : false, setAddMode);
     initFromStorage('inventoryMode', false, setInventoryMode);
     initFromStorage('showImage', true, setShowImage);
     initFromStorage('recentDecks', [], setRecentDecks);
@@ -576,6 +575,7 @@ export const AppProvider = (props) => {
         isMobile,
         isNarrow,
         isWide,
+        isDesktop,
         lang,
         changeLang,
         hideMissing,
