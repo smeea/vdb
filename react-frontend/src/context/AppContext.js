@@ -368,7 +368,7 @@ export const AppProvider = (props) => {
   // Trigger  Hard and Soft count function on changing decks
   useEffect(() => {
     if (decks) {
-      setupHardAndSoftInventory;
+      setupHardAndSoftInventory();
     }
   }, [decks]);
 
@@ -377,44 +377,29 @@ export const AppProvider = (props) => {
     const softLibrary = {};
     const hardCrypt = {};
     const hardLibrary = {};
+    const { setSoftOrHardInventory } = inventoryServices;
 
     Object.keys(decks).forEach((deckid) => {
       // list soft decks
       if (decks[deckid].inventory_type == 's') {
-        Object.keys(decks[deckid].crypt).forEach((id) => {
-          inventoryServices.setSoftOrHardInventory(
-            decks[deckid].crypt[id].i == 'h' ? hardCrypt : softCrypt,
-            deckid,
-            id,
-            decks[deckid].crypt[id].q
-          );
-        });
-        Object.keys(decks[deckid].library).forEach((id) => {
-          inventoryServices.setSoftOrHardInventory(
-            decks[deckid].library[id].i == 'h' ? hardLibrary : softLibrary,
-            deckid,
-            id,
-            decks[deckid].library[id].q
-          );
-        });
+        for (const [id, card] of Object.entries(decks[deckid].crypt)) {
+          const targetCrypt = card.i == 'h' ? hardCrypt : softCrypt;
+          setSoftOrHardInventory(targetCrypt, deckid, id, card.q);
+        }
+        for (const [id, card] of Object.entries(decks[deckid].library)) {
+          const targetLibrary = card.i == 'h' ? hardLibrary : softLibrary;
+          setSoftOrHardInventory(targetLibrary, deckid, id, card.q);
+        }
         // list hard decks
       } else if (decks[deckid].inventory_type == 'h') {
-        Object.keys(decks[deckid].crypt).forEach((id) => {
-          inventoryServices.setSoftOrHardInventory(
-            decks[deckid].crypt[id].i == 's' ? softCrypt : hardCrypt,
-            deckid,
-            id,
-            decks[deckid].crypt[id].q
-          );
-        });
-        Object.keys(decks[deckid].library).forEach((id) => {
-          inventoryServices.setSoftOrHardInventory(
-            decks[deckid].library[id].i == 's' ? softLibrary : hardLibrary,
-            deckid,
-            id,
-            decks[deckid].library[id].q
-          );
-        });
+        for (const [id, card] of Object.entries(decks[deckid].crypt)) {
+          const targetCrypt = card.i == 's' ? softCrypt : hardCrypt;
+          setSoftOrHardInventory(targetCrypt, deckid, id, card.q);
+        }
+        for (const [id, card] of Object.entries(decks[deckid].library)) {
+          const targetLibrary = card.i == 's' ? softLibrary : hardLibrary;
+          setSoftOrHardInventory(targetLibrary, deckid, id, card.q);
+        }
       }
     });
     setUsedCryptCards({
