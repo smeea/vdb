@@ -127,7 +127,7 @@ function Library(props) {
           <SearchLibraryForm />
         </Col>
       </Row>
-      {props.activeDeck.deckid && (libraryResults || addMode) && (
+      {!isMobile && props.activeDeck.deckid && (libraryResults || addMode) && (
         <div
           onClick={() => toggleAddMode()}
           className={`hide-on-gt1200px d-flex float-right-bottom float-add-${

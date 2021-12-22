@@ -127,7 +127,7 @@ function Crypt(props) {
           <SearchCryptForm />
         </Col>
       </Row>
-      {props.activeDeck.deckid && (cryptResults || addMode) && (
+      {!isMobile && props.activeDeck.deckid && (cryptResults || addMode) && (
         <div
           onClick={() => toggleAddMode()}
           className={`hide-on-gt1200px d-flex float-right-bottom float-add-${
