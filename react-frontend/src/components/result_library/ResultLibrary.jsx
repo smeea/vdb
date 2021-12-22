@@ -60,26 +60,22 @@ function ResultLibrary(props) {
         </>
       )}
       {isMobile && showFloatingButtons && (
-        <>
-          <div
-            onClick={handleClear}
-            className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
-          >
-            <X viewBox="0 0 16 16" />
-          </div>
-          {props.activeDeck.deckid && (
-            <div
-              onClick={() => toggleAddMode()}
-              className={
-                addMode
-                  ? 'd-flex float-right-middle float-add-on align-items-center justify-content-center'
-                  : 'd-flex float-right-middle float-add-off align-items-center justify-content-center'
-              }
-            >
-              <Plus viewBox="0 0 16 16" />
-            </div>
-          )}
-        </>
+        <div
+          onClick={handleClear}
+          className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
+        >
+          <X viewBox="0 0 16 16" />
+        </div>
+      )}
+      {isMobile && showFloatingButtons && props.activeDeck.deckid && (
+        <div
+          onClick={() => toggleAddMode()}
+          className={`d-flex float-right-middle float-add-${
+            addMode ? 'on' : 'off'
+          } align-items-center justify-content-center`}
+        >
+          <Plus viewBox="0 0 16 16" />
+        </div>
       )}
     </>
   );

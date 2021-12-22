@@ -28,6 +28,7 @@ function DeckCryptTable(props) {
     inventoryCrypt,
     usedCryptCards,
     isMobile,
+    isNarrow,
     isWide,
     deckUpdate,
     deckCardChange,
@@ -219,21 +220,23 @@ function DeckCryptTable(props) {
           >
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
-          <td className="disciplines" onClick={() => handleClick()}>
-            {props.disciplinesSet.length < 13 ? (
-              <DeckCryptDisciplines
-                value={card.c['Disciplines']}
-                disciplinesSet={props.disciplinesSet}
-                keyDisciplines={props.keyDisciplines}
-                nonKeyDisciplines={props.nonKeyDisciplines}
-              />
-            ) : (
-              <ResultCryptDisciplines
-                value={card.c['Disciplines']}
-                maxDisciplines={maxDisciplines}
-              />
-            )}
-          </td>
+          {!isNarrow && !props.inSearch && (
+            <td className="disciplines" onClick={() => handleClick()}>
+              {props.disciplinesSet.length < 13 ? (
+                <DeckCryptDisciplines
+                  value={card.c['Disciplines']}
+                  disciplinesSet={props.disciplinesSet}
+                  keyDisciplines={props.keyDisciplines}
+                  nonKeyDisciplines={props.nonKeyDisciplines}
+                />
+              ) : (
+                <ResultCryptDisciplines
+                  value={card.c['Disciplines']}
+                  maxDisciplines={maxDisciplines}
+                />
+              )}
+            </td>
+          )}
           {!isMobile ? (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}

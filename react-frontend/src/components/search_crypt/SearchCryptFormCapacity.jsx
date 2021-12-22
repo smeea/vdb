@@ -31,7 +31,7 @@ function SearchCryptFormCapacity(props) {
       name: 'capacity',
       label: (
         <>
-          <span className="me-3" />
+          <span className="me-3 me-sm-1 me-lg-3" />
           {i}
         </>
       ),
@@ -51,7 +51,7 @@ function SearchCryptFormCapacity(props) {
       name: 'capacity',
       label: (
         <>
-          <span className="me-3" />
+          <span className="me-3 me-sm-0 me-lg-3" />
           {i[1]}
         </>
       ),

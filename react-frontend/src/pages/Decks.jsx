@@ -300,12 +300,12 @@ function Decks(props) {
   }, [activeDeck, decks]);
 
   return (
-    <Container className={isMobile ? 'deck-container' : 'deck-container py-3'}>
+    <Container className="deck-container px-0 px-md-2 px-xl-4 py-md-3">
       <Row className="mx-0">
-        <Col xl={1} className="hide-narrow"></Col>
-        <Col md={10} xl={9} className="px-0 px-lg-1 px-xl-3">
-          <Row className="px-1 pt-1 pb-0 pb-lg-2 px-lg-0 pt-lg-0">
-            <Col md={5} className="px-0 px-lg-3">
+        <Col xl={1}></Col>
+        <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
+          <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0 pb-xl-4">
+            <Col md={5} className="px-0 px-md-2">
               <Row className="align-items-center justify-content-end mx-0">
                 <Col className="px-0">
                   <div
@@ -363,8 +363,8 @@ function Decks(props) {
                       )}
                     </div>
                   </div>
-                  <div className="d-flex justify-content-between align-items-center pt-1">
-                    <Form className="py-1 my-0 px-1">
+                  <div className="d-flex justify-content-between align-items-top pt-1">
+                    <Form className="pt-1 my-0 ps-1">
                       {username && decks && Object.keys(decks).length > 0 && (
                         <Form.Check
                           checked={selectFrom == 'my'}
@@ -421,7 +421,7 @@ function Decks(props) {
                         </div>
                       )}
                       {isMobile && deckRouter(activeDeck) && (
-                        <div className="d-flex ps-1 py-1">
+                        <div className="ps-1 py-1">
                           <Button
                             variant="primary"
                             onClick={() => setShowInfo(!showInfo)}
@@ -435,14 +435,14 @@ function Decks(props) {
                 </Col>
               </Row>
             </Col>
-            <Col md={7} className="px-0 px-lg-3">
+            <Col md={7} className="px-0 px-md-2">
               {((showInfo && deckRouter(activeDeck)) ||
                 (!isMobile && deckRouter(activeDeck))) && (
                 <>
-                  <Row className={isMobile ? 'mx-0' : 'mx-0 pb-2'}>
+                  <Row className="mx-0 pb-sm-2">
                     <Col
                       md={isBranches ? 6 : 8}
-                      className={isMobile ? 'px-0' : 'ps-0 pe-1'}
+                      className="px-0 ps-md-0 pe-md-1"
                     >
                       <DeckChangeName
                         name={deckRouter(activeDeck).name}
@@ -461,7 +461,11 @@ function Decks(props) {
                     )}
                     <Col
                       md={4}
-                      className={isMobile ? 'px-0 pt-05' : 'ps-1 pe-0'}
+                      className={
+                        isMobile
+                          ? 'px-0 pt-05'
+                          : 'px-0 ps-md-1 pe-md-0 pt-2 pt-md-0'
+                      }
                     >
                       <DeckChangeAuthor
                         author={deckRouter(activeDeck).author}
@@ -516,8 +520,8 @@ function Decks(props) {
             </Row>
           )}
           {deckRouter(activeDeck) && (
-            <Row>
-              <Col md={7} className="px-0 ps-md-3 pe-md-2 px-lg-3 pt-lg-4">
+            <Row className="pt-md-2">
+              <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
                 <div className={isMobile ? null : 'sticky'}>
                   <DeckCrypt
                     deckid={activeDeck.deckid}
@@ -528,7 +532,7 @@ function Decks(props) {
                   />
                 </div>
               </Col>
-              <Col md={5} className="pt-4 pt-lg-0 px-0 ps-md-2 pe-md-3 px-lg-3">
+              <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
                 <DeckLibrary
                   inDeckTab={true}
                   deckid={activeDeck.deckid}
@@ -542,7 +546,7 @@ function Decks(props) {
           )}
         </Col>
         {!isMobile && (
-          <Col md={2} className="px-0 px-lg-2 px-xl-3">
+          <Col lg={2} className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
             <div className="sticky">
               <DeckButtons
                 isAuthor={isAuthor}
@@ -600,18 +604,16 @@ function Decks(props) {
           </Row>
         )}
 
-      {isMobile && showFloatingButtons && (
-        <>
-          <div
-            onClick={() => {
-              setShowMenuButtons(true);
-              setShowFloatingButtons(false);
-            }}
-            className="d-flex float-right-bottom float-menu align-items-center justify-content-center"
-          >
-            <List viewBox="0 0 16 16" />
-          </div>
-        </>
+      {showFloatingButtons && (
+        <div
+          onClick={() => {
+            setShowMenuButtons(true);
+            setShowFloatingButtons(false);
+          }}
+          className="hide-on-gt992px d-flex float-right-bottom float-menu align-items-center justify-content-center"
+        >
+          <List viewBox="0 0 16 16" />
+        </div>
       )}
       {showMenuButtons && (
         <Modal
@@ -622,10 +624,8 @@ function Decks(props) {
           }}
           animation={false}
           centered={true}
+          size="sm"
         >
-          <Modal.Header
-            className={isMobile ? 'py-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
-          ></Modal.Header>
           <Modal.Body className="p-1">
             <Container className="px-0" fluid>
               <div className="d-flex justify-content-end">

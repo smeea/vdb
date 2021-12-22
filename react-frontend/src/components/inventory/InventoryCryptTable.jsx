@@ -19,7 +19,7 @@ import {
 import { useApp } from 'context';
 
 function InventoryCryptTable(props) {
-  const { usedCryptCards, isMobile, isWide } = useApp();
+  const { usedCryptCards, isMobile, isNarrow, isWide } = useApp();
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
 
   const handleModalCardChange = (d) => {
@@ -141,7 +141,7 @@ function InventoryCryptTable(props) {
         >
           <ResultCryptCapacity value={card.c['Capacity']} />
         </div>
-        {!isMobile && (
+        {!isMobile && !isNarrow && (
           <div
             className="d-flex align-items-center justify-content-left disciplines"
             onClick={() => handleClick()}

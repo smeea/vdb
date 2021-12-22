@@ -183,11 +183,9 @@ function DeckCrypt(props) {
   return (
     <>
       <div
-        className={
-          isMobile
-            ? 'd-flex align-items-center justify-content-between ps-2 pe-1 info-message'
-            : 'd-flex align-items-center justify-content-between ps-2 info-message'
-        }
+        className={`d-flex align-items-center justify-content-between ps-2 ${
+          isMobile ? 'pe-1' : ''
+        } info-message`}
       >
         <b>
           Crypt [{cryptTotal}

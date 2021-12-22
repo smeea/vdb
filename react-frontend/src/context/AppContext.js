@@ -15,7 +15,8 @@ export const useApp = () => {
 };
 
 export const AppProvider = (props) => {
-  const isMobile = window.matchMedia('(max-width: 540px)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+  const isNarrow = window.matchMedia('(max-width: 992px)').matches;
   const isWide = window.matchMedia('(min-width: 1600px)').matches;
 
   const [username, setUsername] = useState(undefined);
@@ -157,7 +158,9 @@ export const AppProvider = (props) => {
     if (am === 'false') {
       setAddMode(false);
     } else {
-      setAddMode(true);
+      if (window.matchMedia('(min-width: 1200px)').matches) {
+        setAddMode(true);
+      }
     }
 
     const im = window.localStorage.getItem('inventoryMode');
@@ -378,6 +381,7 @@ export const AppProvider = (props) => {
       value={{
         // 1 - APP Context
         isMobile,
+        isNarrow,
         isWide,
         lang,
         changeLang,
