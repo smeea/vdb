@@ -1,5 +1,4 @@
 import React from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   ButtonAddCard,
@@ -9,6 +8,7 @@ import {
   ResultLibraryDisciplines,
   ResultLibraryName,
   ResultLibraryTrifle,
+  ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
 
@@ -56,20 +56,16 @@ function ResultRecommendationLibraryTable(props) {
               />
             </td>
           )}
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card} />}
-            >
-              <td className="name px-2" onClick={() => handleClick()}>
-                <ResultLibraryName card={card} />
-              </td>
-            </OverlayTrigger>
-          ) : (
+          <ConditionalOverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card} />}
+            disabled={isMobile}
+          >
             <td className="name px-2" onClick={() => handleClick()}>
               <ResultLibraryName card={card} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
+
           <td
             className={card['Blood Cost'] ? 'cost blood' : 'cost'}
             onClick={() => handleClick()}

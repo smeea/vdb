@@ -13,6 +13,7 @@ import {
   ResultLibraryName,
   ResultLibraryTrifle,
   CardImage,
+  ConditionalOverlayTrigger,
 } from 'components';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 import { useApp } from 'context';
@@ -155,20 +156,16 @@ function DeckProxyLibraryTable(props) {
               />
             </td>
           )}
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card.c} />}
-            >
-              <td className="name ps-3 pe-2" onClick={() => handleClick()}>
-                <ResultLibraryName card={card.c} />
-              </td>
-            </OverlayTrigger>
-          ) : (
+          <ConditionalOverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card.c} />}
+            disabled={isMobile}
+          >
             <td className="name ps-3 pe-2" onClick={() => handleClick()}>
               <ResultLibraryName card={card.c} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
+
           <td className="cost" onClick={() => handleClick()}>
             <ResultLibraryCost
               valueBlood={card.c['Blood Cost']}

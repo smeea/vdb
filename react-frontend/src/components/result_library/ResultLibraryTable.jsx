@@ -12,6 +12,7 @@ import {
   ResultLibraryName,
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
+  ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
 
@@ -147,20 +148,15 @@ function ResultLibraryTable(props) {
             {card['Discipline'] && card['Clan'] && '+'}
             <ResultLibraryClan value={card['Clan']} />
           </td>
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card} />}
-            >
-              <td className="name px-1" onClick={() => handleClick()}>
-                <ResultLibraryName card={card} />
-              </td>
-            </OverlayTrigger>
-          ) : (
+          <ConditionalOverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card} />}
+            disabled={isMobile}
+          >
             <td className="name px-1" onClick={() => handleClick()}>
               <ResultLibraryName card={card} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
           <td className="burn px-1" onClick={() => handleClick()}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />

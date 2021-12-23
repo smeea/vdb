@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
+import React, { useState, useMemo } from 'react';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import {
@@ -16,18 +15,20 @@ import {
   ResultCryptTitle,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
+  ConditionalOverlayTrigger,
 } from 'components';
 
 import drawProbability from 'components/drawProbability.js';
 import { useApp } from 'context';
 
-function DeckCryptTable(props) {
+const DeckCryptTable = (props) => {
   const {
     decks,
     inventoryMode,
     inventoryCrypt,
     usedCryptCards,
     isMobile,
+    isDesktop,
     isNarrow,
     isWide,
     deckUpdate,
@@ -39,6 +40,11 @@ function DeckCryptTable(props) {
   if (inventoryMode && decks && props.deckid && decks[props.deckid]) {
     deckInvType = decks[props.deckid].inventory_type;
   }
+
+  const disableOverlay = useMemo(
+    () => isMobile || (!isDesktop && props.isModalOpen),
+    [isMobile, isDesktop, props.isModalOpen]
+  );
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
@@ -122,7 +128,12 @@ function DeckCryptTable(props) {
                       </div>
                     </td>
                   ) : null}
-                  {isMobile ? (
+
+                  <ConditionalOverlayTrigger
+                    placement="right"
+                    overlay={<UsedPopover cardid={card.c['Id']} />}
+                    disabled={disableOverlay}
+                  >
                     <td className="quantity">
                       <DeckCardQuantity
                         cardid={card.c['Id']}
@@ -135,25 +146,7 @@ function DeckCryptTable(props) {
                         inventoryType={decks[props.deckid].inventory_type}
                       />
                     </td>
-                  ) : (
-                    <OverlayTrigger
-                      placement="right"
-                      overlay={<UsedPopover cardid={card.c['Id']} />}
-                    >
-                      <td className="quantity">
-                        <DeckCardQuantity
-                          cardid={card.c['Id']}
-                          q={card.q}
-                          deckid={props.deckid}
-                          cardChange={deckCardChange}
-                          inInventory={inInventory}
-                          softUsedMax={softUsedMax}
-                          hardUsedTotal={hardUsedTotal}
-                          inventoryType={decks[props.deckid].inventory_type}
-                        />
-                      </td>
-                    </OverlayTrigger>
-                  )}
+                  </ConditionalOverlayTrigger>
                 </>
               ) : (
                 <td className="quantity">
@@ -169,46 +162,27 @@ function DeckCryptTable(props) {
           ) : (
             <>
               {inventoryMode && decks ? (
-                <>
-                  {isMobile ? (
-                    <td className="quantity-no-buttons px-1">
-                      <div
-                        className={
-                          props.inMissing
-                            ? null
-                            : inInventory < card.q
-                            ? 'inv-miss-part'
-                            : inInventory < hardUsedTotal
-                            ? 'inv-miss-full'
-                            : null
-                        }
-                      >
-                        {card.q || null}
-                      </div>
-                    </td>
-                  ) : (
-                    <OverlayTrigger
-                      placement="right"
-                      overlay={<UsedPopover cardid={card.c['Id']} />}
+                <ConditionalOverlayTrigger
+                  placement="right"
+                  overlay={<UsedPopover cardid={card.c['Id']} />}
+                  disabled={disableOverlay}
+                >
+                  <td className="quantity-no-buttons px-1">
+                    <div
+                      className={
+                        props.inMissing
+                          ? null
+                          : inInventory < card.q
+                          ? 'inv-miss-part'
+                          : inInventory < hardUsedTotal
+                          ? 'inv-miss-full'
+                          : null
+                      }
                     >
-                      <td className="quantity-no-buttons px-1">
-                        <div
-                          className={
-                            props.inMissing
-                              ? null
-                              : inInventory < card.q
-                              ? 'inv-miss-part'
-                              : inInventory < hardUsedTotal
-                              ? 'inv-miss-full'
-                              : null
-                          }
-                        >
-                          {card.q || null}
-                        </div>
-                      </td>
-                    </OverlayTrigger>
-                  )}
-                </>
+                      {card.q || null}
+                    </div>
+                  </td>
+                </ConditionalOverlayTrigger>
               ) : (
                 <td className="quantity-no-buttons px-1">{card.q || null}</td>
               )}
@@ -237,20 +211,17 @@ function DeckCryptTable(props) {
               )}
             </td>
           )}
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card.c} />}
-            >
-              <td className="name px-2" onClick={() => handleClick()}>
-                <ResultCryptName card={card.c} />
-              </td>
-            </OverlayTrigger>
-          ) : (
-            <td className="name" onClick={() => handleClick()}>
+
+          <ConditionalOverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card.c} />}
+            disabled={disableOverlay}
+          >
+            <td className="name px-2" onClick={() => handleClick()}>
               <ResultCryptName card={card.c} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
+
           {isWide ? (
             <>
               <td className="title pe-2" onClick={() => handleClick()}>
@@ -341,6 +312,6 @@ function DeckCryptTable(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckCryptTable;

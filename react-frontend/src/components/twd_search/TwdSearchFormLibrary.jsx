@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   TwdSearchFormQuantityButtons,
   ResultLibraryName,
   ResultLibraryModal,
   NewLibraryCard,
+  ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
 
@@ -37,26 +37,18 @@ function TwdSearchFormLibrary(props) {
             q={props.state[id].q}
             target="library"
           />
-          {!isMobile ? (
-            <OverlayTrigger
-              placement="left"
-              overlay={<CardPopover card={libraryCardBase[id]} />}
-            >
-              <div
-                className="name"
-                onClick={() => setModalCard(libraryCardBase[id])}
-              >
-                <ResultLibraryName card={libraryCardBase[id]} />
-              </div>
-            </OverlayTrigger>
-          ) : (
+          <ConditionalOverlayTrigger
+            placement="left"
+            overlay={<CardPopover card={libraryCardBase[id]} />}
+            disabled={isMobile}
+          >
             <div
               className="name"
               onClick={() => setModalCard(libraryCardBase[id])}
             >
               <ResultLibraryName card={libraryCardBase[id]} />
             </div>
-          )}
+          </ConditionalOverlayTrigger>
         </div>
       );
     });

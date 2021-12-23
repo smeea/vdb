@@ -14,6 +14,7 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
   CardImage,
+  ConditionalOverlayTrigger,
 } from 'components';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 import { useApp } from 'context';
@@ -171,20 +172,17 @@ function DeckProxyCryptTable(props) {
               />
             )}
           </td>
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card.c} />}
-            >
-              <td className="name px-2" onClick={() => handleClick()}>
-                <ResultCryptName card={card.c} />
-              </td>
-            </OverlayTrigger>
-          ) : (
-            <td className="name" onClick={() => handleClick()}>
+
+          <ConditionalOverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card.c} />}
+            disabled={isMobile}
+          >
+            <td className="name px-2" onClick={() => handleClick()}>
               <ResultCryptName card={card.c} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
+
           <td className="clan-group" onClick={() => handleClick()}>
             <div>
               <ResultClanImage value={card.c['Clan']} />

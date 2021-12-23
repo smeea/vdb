@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   UsedPopover,
@@ -8,6 +7,7 @@ import {
   ResultLibraryDisciplines,
   ResultLibraryClan,
   ResultLibraryModal,
+  ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
 
@@ -129,62 +129,42 @@ function TwdResultLibraryKeyCards(props) {
     return (
       <tr key={card.c['Id']} className={resultTrClass}>
         {inventoryMode ? (
-          <>
-            {isMobile ? (
-              <td className="quantity-no-buttons px-1">
-                <div
-                  className={
-                    inInventory < card.q
-                      ? 'inv-miss-full'
-                      : inInventory - hardUsedTotal < card.q
-                      ? 'inv-miss-part'
-                      : null
-                  }
-                >
-                  {card.q}
-                </div>
-              </td>
-            ) : (
-              <OverlayTrigger
-                placement="right"
-                overlay={<UsedPopover cardid={card.c['Id']} />}
+          <ConditionalOverlayTrigger
+            placement="right"
+            overlay={<UsedPopover cardid={card.c['Id']} />}
+            disabled={isMobile}
+          >
+            <td className="quantity-no-buttons px-1">
+              <div
+                className={
+                  inInventory < card.q
+                    ? 'inv-miss-full'
+                    : inInventory - hardUsedTotal < card.q
+                    ? 'inv-miss-part'
+                    : null
+                }
               >
-                <td className="quantity-no-buttons px-1">
-                  <div
-                    className={
-                      inInventory < card.q
-                        ? 'inv-miss-full'
-                        : inInventory - hardUsedTotal < card.q
-                        ? 'inv-miss-part'
-                        : null
-                    }
-                  >
-                    {card.q}
-                  </div>
-                </td>
-              </OverlayTrigger>
-            )}
-          </>
+                {card.q}
+              </div>
+            </td>
+          </ConditionalOverlayTrigger>
         ) : (
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
         <td className="type" onClick={() => handleClick()}>
           <ResultLibraryTypeImage value={card.c['Type']} />
         </td>
-        {!isMobile ? (
-          <OverlayTrigger
-            placement={props.placement ? props.placement : 'right'}
-            overlay={<CardPopover card={card.c} />}
-          >
-            <td className="name px-1" onClick={() => handleClick()}>
-              <ResultLibraryName card={card.c} />
-            </td>
-          </OverlayTrigger>
-        ) : (
+
+        <ConditionalOverlayTrigger
+          placement={props.placement ? props.placement : 'right'}
+          overlay={<CardPopover card={card.c} />}
+          disabled={isMobile}
+        >
           <td className="name px-1" onClick={() => handleClick()}>
             <ResultLibraryName card={card.c} />
           </td>
-        )}
+        </ConditionalOverlayTrigger>
+
         {!isMobile && (
           <td className="disciplines" onClick={() => handleClick()}>
             <ResultLibraryDisciplines value={card.c['Discipline']} />

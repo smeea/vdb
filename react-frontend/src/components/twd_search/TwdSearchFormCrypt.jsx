@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   TwdSearchFormQuantityButtons,
   ResultCryptName,
   ResultCryptModal,
   NewCryptCard,
+  ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
 
@@ -37,24 +37,11 @@ function TwdSearchFormCrypt(props) {
             q={props.state[id].q}
             target="crypt"
           />
-          {!isMobile ? (
-            <OverlayTrigger
-              placement="left"
-              overlay={<CardPopover card={cryptCardBase[id]} />}
-            >
-              <div
-                className="name"
-                onClick={() => setModalCard(cryptCardBase[id])}
-              >
-                <ResultCryptName card={cryptCardBase[id]} />
-                {cryptCardBase[id]['New'] && (
-                  <div className="d-inline gray ps-1">
-                    [G{cryptCardBase[id]['Group']}]
-                  </div>
-                )}
-              </div>
-            </OverlayTrigger>
-          ) : (
+          <ConditionalOverlayTrigger
+            placement="left"
+            overlay={<CardPopover card={cryptCardBase[id]} />}
+            disabled={isMobile}
+          >
             <div
               className="name"
               onClick={() => setModalCard(cryptCardBase[id])}
@@ -66,7 +53,7 @@ function TwdSearchFormCrypt(props) {
                 </div>
               )}
             </div>
-          )}
+          </ConditionalOverlayTrigger>
         </div>
       );
     });

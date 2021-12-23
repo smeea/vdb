@@ -13,6 +13,7 @@ import {
   ResultLayoutTextRulings,
   ResultLayoutTextArtist,
   ResultLayoutTextText,
+  ConditionalOverlayTrigger,
 } from 'components';
 
 function ResultCryptLayoutText(props) {
@@ -29,33 +30,24 @@ function ResultCryptLayoutText(props) {
             <b>
               <ResultCryptName card={props.card} />
             </b>
-            {props.card['Adv'][1] &&
-              (isMobile ? (
+            {props.card['Adv'][1] && (
+              <ConditionalOverlayTrigger
+                placement={props.placement ? props.placement : 'right'}
+                overlay={
+                  <CardPopover card={cryptCardBase[props.card['Adv'][1]]} />
+                }
+                disabled={isMobile}
+              >
                 <span
+                  className="adv ps-2"
                   onClick={() =>
                     props.setCard(cryptCardBase[props.card['Adv'][1]])
                   }
-                  className="adv ps-2"
                 >
                   [see {`${props.card['Adv'][0] ? 'Base' : 'Adv'}`}]
                 </span>
-              ) : (
-                <OverlayTrigger
-                  placement={props.placement ? props.placement : 'right'}
-                  overlay={
-                    <CardPopover card={cryptCardBase[props.card['Adv'][1]]} />
-                  }
-                >
-                  <span
-                    className="adv ps-2"
-                    onClick={() =>
-                      props.setCard(cryptCardBase[props.card['Adv'][1]])
-                    }
-                  >
-                    [see {`${props.card['Adv'][0] ? 'Base' : 'Adv'}`}]
-                  </span>
-                </OverlayTrigger>
-              ))}
+              </ConditionalOverlayTrigger>
+            )}
           </div>
         </div>
         <div className="ps-2">

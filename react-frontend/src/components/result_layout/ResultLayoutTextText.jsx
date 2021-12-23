@@ -1,9 +1,13 @@
 import React from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
 import reactStringReplace from 'react-string-replace';
 import icons from 'components/forms_data/disciplineIcons.json';
 import { useApp } from 'context';
-import { CardPopover, ResultCryptName, ResultLibraryName } from 'components';
+import {
+  CardPopover,
+  ResultCryptName,
+  ResultLibraryName,
+  ConditionalOverlayTrigger,
+} from 'components';
 
 const ResultLayoutTextText = (props) => {
   const { cryptCardBase, libraryCardBase, isMobile } = useApp();
@@ -38,7 +42,19 @@ const ResultLayoutTextText = (props) => {
         if (cardid) {
           return (
             <span key={`${cardid}-${idx}`}>
-              {isMobile ? (
+              <ConditionalOverlayTrigger
+                placement={props.placement ? props.placement : 'right'}
+                overlay={
+                  <CardPopover
+                    card={
+                      cardid > 200000
+                        ? cryptCardBase[cardid]
+                        : libraryCardBase[cardid]
+                    }
+                  />
+                }
+                disabled={isMobile}
+              >
                 <div className="d-inline name">
                   {cardid > 200000 ? (
                     <ResultCryptName card={cryptCardBase[cardid]} />
@@ -46,28 +62,7 @@ const ResultLayoutTextText = (props) => {
                     <ResultLibraryName card={libraryCardBase[cardid]} />
                   )}
                 </div>
-              ) : (
-                <OverlayTrigger
-                  placement={props.placement ? props.placement : 'right'}
-                  overlay={
-                    <CardPopover
-                      card={
-                        cardid > 200000
-                          ? cryptCardBase[cardid]
-                          : libraryCardBase[cardid]
-                      }
-                    />
-                  }
-                >
-                  <div className="d-inline name">
-                    {cardid > 200000 ? (
-                      <ResultCryptName card={cryptCardBase[cardid]} />
-                    ) : (
-                      <ResultLibraryName card={libraryCardBase[cardid]} />
-                    )}
-                  </div>
-                </OverlayTrigger>
-              )}
+              </ConditionalOverlayTrigger>
             </span>
           );
         } else {

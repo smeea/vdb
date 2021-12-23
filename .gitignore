@@ -13,3 +13,4 @@ react-frontend/dist/*
 !react-frontend/dist/artistsCrypt.json
 !react-frontend/dist/artistsLibrary.json
 react-frontend/.cache/
+react-frontend/.nvmrc

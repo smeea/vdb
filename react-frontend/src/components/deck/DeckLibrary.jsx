@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import X from 'assets/images/icons/x.svg';
@@ -159,6 +159,17 @@ function DeckLibrary(props) {
   const LibraryDeck = [];
   const LibrarySideDeck = [];
 
+  const handleCloseModal = () => {
+    setModalCardIdx(undefined);
+    setModalSideCardIdx(undefined);
+    isMobile && props.setShowFloatingButtons(true);
+  };
+
+  const shouldShowModal = useMemo(
+    () => modalCardIdx !== undefined || modalSideCardIdx !== undefined,
+    [modalCardIdx, modalSideCardIdx]
+  );
+
   cardtypeSorted.map((cardtype) => {
     if (libraryByType[cardtype] !== undefined) {
       libraryByTypeTotal[cardtype] = 0;
@@ -242,6 +253,7 @@ function DeckLibrary(props) {
             inMissing={props.inMissing}
             inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}
+            isModalOpen={shouldShowModal}
           />
         </div>
       );
@@ -268,6 +280,7 @@ function DeckLibrary(props) {
             inMissing={props.inMissing}
             inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}
+            isModalOpen={shouldShowModal}
           />
         </div>
       );
@@ -407,7 +420,7 @@ function DeckLibrary(props) {
           </div>
         </div>
       )}
-      {(modalCardIdx !== undefined || modalSideCardIdx !== undefined) && (
+      {shouldShowModal && (
         <ResultLibraryModal
           card={
             modalCardIdx !== undefined
@@ -415,11 +428,7 @@ function DeckLibrary(props) {
               : librarySideCards[modalSideCardIdx]
           }
           handleModalCardChange={handleModalCardChange}
-          handleClose={() => {
-            setModalCardIdx(undefined);
-            setModalSideCardIdx(undefined);
-            isMobile && props.setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseModal}
         />
       )}
       {modalDraw && (

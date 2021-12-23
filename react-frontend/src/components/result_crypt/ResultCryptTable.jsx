@@ -11,6 +11,7 @@ import {
   ResultCryptTitle,
   ButtonAddCard,
   ResultCryptModal,
+  ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
 
@@ -145,20 +146,15 @@ function ResultCryptTable(props) {
               value={card['Disciplines']}
             />
           </td>
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card} />}
-            >
-              <td className="name px-2" onClick={() => handleClick()}>
-                <ResultCryptName card={card} />
-              </td>
-            </OverlayTrigger>
-          ) : (
-            <td className="name" onClick={() => handleClick()}>
+          <ConditionalOverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card} />}
+            disabled={isMobile}
+          >
+            <td className="name px-2" onClick={() => handleClick()}>
               <ResultCryptName card={card} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
           {isWide ? (
             <>
               <td className="title pe-2" onClick={() => handleClick()}>

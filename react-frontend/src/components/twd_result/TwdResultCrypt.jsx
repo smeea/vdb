@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   UsedPopover,
@@ -7,6 +6,7 @@ import {
   ResultCryptCapacity,
   ResultClanImage,
   ResultCryptModal,
+  ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
 
@@ -122,62 +122,42 @@ function TwdResultCrypt(props) {
     return (
       <tr key={card.c['Id']} className={resultTrClass}>
         {inventoryMode ? (
-          <>
-            {isMobile ? (
-              <td className="quantity-no-buttons px-1">
-                <div
-                  className={
-                    inInventory < card.q
-                      ? 'inv-miss-full'
-                      : inInventory - hardUsedTotal < card.q
-                      ? 'inv-miss-part'
-                      : null
-                  }
-                >
-                  {card.q}
-                </div>
-              </td>
-            ) : (
-              <OverlayTrigger
-                placement="right"
-                overlay={<UsedPopover cardid={card.c['Id']} />}
+          <ConditionalOverlayTrigger
+            placement="right"
+            overlay={<UsedPopover cardid={card.c['Id']} />}
+            disabled={isMobile}
+          >
+            <td className="quantity-no-buttons px-1">
+              <div
+                className={
+                  inInventory < card.q
+                    ? 'inv-miss-full'
+                    : inInventory - hardUsedTotal < card.q
+                    ? 'inv-miss-part'
+                    : null
+                }
               >
-                <td className="quantity-no-buttons px-1">
-                  <div
-                    className={
-                      inInventory < card.q
-                        ? 'inv-miss-full'
-                        : inInventory - hardUsedTotal < card.q
-                        ? 'inv-miss-part'
-                        : null
-                    }
-                  >
-                    {card.q}
-                  </div>
-                </td>
-              </OverlayTrigger>
-            )}
-          </>
+                {card.q}
+              </div>
+            </td>
+          </ConditionalOverlayTrigger>
         ) : (
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
         <td className="capacity px-1" onClick={() => handleClick()}>
           <ResultCryptCapacity value={card.c['Capacity']} />
         </td>
-        {!isMobile ? (
-          <OverlayTrigger
-            placement={props.placement ? props.placement : 'right'}
-            overlay={<CardPopover card={card.c} />}
-          >
-            <td className="name px-1" onClick={() => handleClick()}>
-              <ResultCryptName card={card.c} />
-            </td>
-          </OverlayTrigger>
-        ) : (
+
+        <ConditionalOverlayTrigger
+          placement={props.placement ? props.placement : 'right'}
+          overlay={<CardPopover card={card.c} />}
+          disabled={isMobile}
+        >
           <td className="name px-1" onClick={() => handleClick()}>
             <ResultCryptName card={card.c} />
           </td>
-        )}
+        </ConditionalOverlayTrigger>
+
         <td className="clan px-1" onClick={() => handleClick()}>
           <ResultClanImage value={card.c['Clan']} />
         </td>

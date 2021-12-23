@@ -16,6 +16,7 @@ import {
   ResultLibraryTrifle,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
+  ConditionalOverlayTrigger,
 } from 'components';
 
 import drawProbability from 'components/drawProbability.js';
@@ -148,20 +149,17 @@ function DiffLibraryTable(props) {
           <td className={`diff-status ${!isMobile && 'ps-1'}`}>
             <DiffStatus />
           </td>
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card.c} />}
-            >
-              <td className="name px-2" onClick={() => handleClick()}>
-                <ResultLibraryName card={card.c} />
-              </td>
-            </OverlayTrigger>
-          ) : (
-            <td className="name pe-2" onClick={() => handleClick()}>
+
+          <ConditionalOverlayTrigger
+            placement={props.placement ? props.placement : 'right'}
+            overlay={<CardPopover card={card.c} />}
+            disabled={isMobile}
+          >
+            <td className="name px-2" onClick={() => handleClick()}>
               <ResultLibraryName card={card.c} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
+
           <td
             className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
             onClick={() => handleClick()}
