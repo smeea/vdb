@@ -146,12 +146,17 @@ export const AppProvider = (props) => {
   };
 
   // Replace the current base text with the localized one
-  const changeBaseTextToLocalizedText = (setFunction, localizedInfo) => {
+  const changeBaseTextToLocalizedText = (
+    setFunction,
+    localizedInfo,
+    nativeInfo
+  ) => {
     setFunction((prevState) => {
       const state = { ...prevState };
-      Object.keys(localizedInfo).map((k) => {
-        state[k]['Name'] = localizedInfo[k]['Name'];
-        state[k]['Card Text'] = localizedInfo[k]['Card Text'];
+      Object.keys(prevState).map((k) => {
+        const newInfo = localizedInfo[k] ? localizedInfo[k] : nativeInfo[k];
+        state[k]['Name'] = newInfo['Name'];
+        state[k]['Card Text'] = newInfo['Card Text'];
       });
       return state;
     });
@@ -172,8 +177,16 @@ export const AppProvider = (props) => {
       [lang]: localizedLibrary,
     }));
 
-    changeBaseTextToLocalizedText(setCryptCardBase, localizedCrypt);
-    changeBaseTextToLocalizedText(setLibraryCardBase, localizedLibrary);
+    changeBaseTextToLocalizedText(
+      setCryptCardBase,
+      localizedCrypt,
+      nativeCrypt
+    );
+    changeBaseTextToLocalizedText(
+      setLibraryCardBase,
+      localizedLibrary,
+      nativeLibrary
+    );
   };
 
   // Trigger the language change
@@ -181,8 +194,16 @@ export const AppProvider = (props) => {
     if (!localizedCrypt[lang] || !localizedLibrary[lang])
       await initializeLocalizedInfo(lang);
     else {
-      changeBaseTextToLocalizedText(setCryptCardBase, localizedCrypt[lang]);
-      changeBaseTextToLocalizedText(setLibraryCardBase, localizedLibrary[lang]);
+      changeBaseTextToLocalizedText(
+        setCryptCardBase,
+        localizedCrypt[lang],
+        nativeCrypt
+      );
+      changeBaseTextToLocalizedText(
+        setLibraryCardBase,
+        localizedLibrary[lang],
+        nativeLibrary
+      );
     }
   }, [lang]);
 
