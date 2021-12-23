@@ -310,7 +310,8 @@ export const AppProvider = (props) => {
     fetch(url, options).catch((error) => {
       setDecks(oldState);
     });
-
+    let cardType;
+    let cardBase;
     if (cardid > 200000) {
       cardType = 'crypt';
       cardBase = cryptCardBase;
