@@ -130,7 +130,6 @@ function TwdResultLibraryKeyCards(props) {
       <tr key={card.c['Id']} className={resultTrClass}>
         {inventoryMode ? (
           <ConditionalOverlayTrigger
-            placement="right"
             overlay={<UsedPopover cardid={card.c['Id']} />}
             disabled={isMobile}
           >
@@ -156,7 +155,7 @@ function TwdResultLibraryKeyCards(props) {
         </td>
 
         <ConditionalOverlayTrigger
-          placement={props.placement ? props.placement : 'right'}
+          placement={props.placement}
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
         >

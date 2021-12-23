@@ -43,7 +43,7 @@ const ResultLayoutTextText = (props) => {
           return (
             <span key={`${cardid}-${idx}`}>
               <ConditionalOverlayTrigger
-                placement={props.placement ? props.placement : 'right'}
+                placement={props.placement}
                 overlay={
                   <CardPopover
                     card={

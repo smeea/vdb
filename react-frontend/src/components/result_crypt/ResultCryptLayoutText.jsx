@@ -32,7 +32,7 @@ function ResultCryptLayoutText(props) {
             </b>
             {props.card['Adv'][1] && (
               <ConditionalOverlayTrigger
-                placement={props.placement ? props.placement : 'right'}
+                placement={props.placement}
                 overlay={
                   <CardPopover card={cryptCardBase[props.card['Adv'][1]]} />
                 }

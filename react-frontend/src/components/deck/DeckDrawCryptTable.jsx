@@ -66,7 +66,7 @@ function DeckDrawCryptTable(props) {
           </td>
 
           <ConditionalOverlayTrigger
-            placement={props.placement ? props.placement : 'right'}
+            placement={props.placement}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >

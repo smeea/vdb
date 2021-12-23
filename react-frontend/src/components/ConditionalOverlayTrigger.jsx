@@ -10,7 +10,10 @@ const ConditionalOverlayTrigger = ({
   return (
     <>
       {!disabled ? (
-        <OverlayTrigger placement={placement} overlay={overlay}>
+        <OverlayTrigger
+          placement={placement ? placement : 'right'}
+          overlay={overlay}
+        >
           {children}
         </OverlayTrigger>
       ) : (

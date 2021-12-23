@@ -25,6 +25,7 @@ function ResultLibraryTable(props) {
     inventoryMode,
     nativeLibrary,
     isMobile,
+    isDesktop,
   } = useApp();
 
   const [modalCardIdx, setModalCardIdx] = useState(undefined);
@@ -101,7 +102,7 @@ function ResultLibraryTable(props) {
           )}
           {inventoryMode && (
             <OverlayTrigger
-              placement="left"
+              placement={isDesktop ? 'left' : 'right'}
               overlay={<UsedPopover cardid={card['Id']} />}
             >
               <td className="used">
@@ -149,7 +150,7 @@ function ResultLibraryTable(props) {
             <ResultLibraryClan value={card['Clan']} />
           </td>
           <ConditionalOverlayTrigger
-            placement={props.placement ? props.placement : 'right'}
+            placement={props.placement}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >

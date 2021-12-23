@@ -154,7 +154,7 @@ function InventoryLibraryTable(props) {
         </div>
 
         <ConditionalOverlayTrigger
-          placement={props.placement ? props.placement : 'right'}
+          placement={props.placement}
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
         >

@@ -139,7 +139,6 @@ function DeckLibraryTable(props) {
                   ) : null}
 
                   <ConditionalOverlayTrigger
-                    placement="right"
                     overlay={<UsedPopover cardid={card.c['Id']} />}
                     disabled={disableOverlay}
                   >
@@ -172,7 +171,6 @@ function DeckLibraryTable(props) {
             <>
               {inventoryMode && decks ? (
                 <ConditionalOverlayTrigger
-                  placement="right"
                   overlay={<UsedPopover cardid={card.c['Id']} />}
                   disabled={disableOverlay}
                 >
@@ -199,7 +197,7 @@ function DeckLibraryTable(props) {
           )}
           {!isMobile ? (
             <ConditionalOverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
+              placement={props.placement}
               overlay={<CardPopover card={card.c} />}
               disabled={disableOverlay}
             >
