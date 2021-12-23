@@ -27,7 +27,7 @@ export const getLocalizedLibrary = async (lang) => {
 };
 
 export const getNativeText = (base = []) => {
-  en = {};
+  const en = {};
   Object.keys(base).map((id) => {
     en[id] = {
       Name: base[id]['Name'],
