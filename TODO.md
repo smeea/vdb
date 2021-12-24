@@ -2,8 +2,6 @@
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
 * Pointer cursor for adv deck selector
-* Move KSU images from DM, TU, AU
-* Add DM, TU, AU images from PDFs
 * Hunger of Marduk dis+clan image in Deck
 * Discipline border in dark theme
 * Switching to crypt/library from deck with deleted all decks
