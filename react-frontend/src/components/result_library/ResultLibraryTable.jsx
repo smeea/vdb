@@ -143,9 +143,9 @@ function ResultLibraryTable(props) {
             <ResultLibraryTypeImage value={card['Type']} />
           </td>
           <td className="disciplines px-1" onClick={() => handleClick()}>
-            <ResultLibraryDisciplines value={card['Discipline']} />
-            {card['Discipline'] && card['Clan'] && '+'}
             <ResultLibraryClan value={card['Clan']} />
+            {card['Discipline'] && card['Clan'] && '+'}
+            <ResultLibraryDisciplines value={card['Discipline']} />
           </td>
           {!isMobile ? (
             <OverlayTrigger

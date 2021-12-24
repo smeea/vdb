@@ -62,15 +62,6 @@ function DeckLibraryTable(props) {
       resultTrClass = 'result-odd';
     }
 
-    let DisciplineOrClan;
-    if (card.c['Clan']) {
-      DisciplineOrClan = <ResultLibraryClan value={card.c['Clan']} />;
-    } else {
-      DisciplineOrClan = (
-        <ResultLibraryDisciplines value={card.c['Discipline']} />
-      );
-    }
-
     let cardInvType = null;
     let inInventory = 0;
     let softUsedMax = 0;
@@ -249,7 +240,9 @@ function DeckLibraryTable(props) {
             </td>
           )}
           <td className="disciplines px-1" onClick={() => handleClick()}>
-            {DisciplineOrClan}
+            <ResultLibraryClan value={card.c['Clan']} />
+            {card.c['Discipline'] && card.c['Clan'] && '+'}
+            <ResultLibraryDisciplines value={card.c['Discipline']} />
           </td>
           {!isNarrow && !props.inSearch && (
             <td className="burn" onClick={() => handleClick()}>
