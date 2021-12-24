@@ -1,7 +1,6 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
-* Pointer cursor for adv deck selector
 * Button block in Inventory
 
 # FEATURES
