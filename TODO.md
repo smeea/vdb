@@ -3,7 +3,6 @@
 * Inventory bug for precon (also test for twd and shared)
 * Pointer cursor for adv deck selector
 * Hunger of Marduk dis+clan image in Deck
-* Discipline border in dark theme
 * Switching to crypt/library from deck with deleted all decks
 * Button block in Inventory
 
