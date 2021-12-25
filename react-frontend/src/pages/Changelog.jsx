@@ -11,6 +11,24 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2021-12-25:</h6>
+            <ul>
+              <li>
+                Many improvements on page layouts and adaptiveness for
+                tablet-size screens. Those who were dissapointed by VDB being
+                unusable on their tablets should give it another try now!
+              </li>
+              <li>
+                Fix AU/DM/TU set images to show original PDF-release images, and
+                move newer Kickstarter images to KSU set
+              </li>
+              <li>Fix import decks with new V5A cards from Amaranth</li>
+              <li>
+                Fixes for bugs introduced by new multigroup vampires (deck
+                export, proxy generation, etc)
+              </li>
+            </ul>
+
             <h6>2021-12-15:</h6>
             <ul>
               <li>
