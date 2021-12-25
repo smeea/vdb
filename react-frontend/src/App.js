@@ -45,7 +45,7 @@ function App(props) {
       return new Date(b[1]) - new Date(a[1]);
     };
 
-    if (decks && decks.length) {
+    if (decks) {
       const decksForSort = [];
 
       Object.keys(decks).map((key) => {
