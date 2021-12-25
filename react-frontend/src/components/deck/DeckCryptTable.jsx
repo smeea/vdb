@@ -192,7 +192,7 @@ const DeckCryptTable = (props) => {
           >
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
-          {!isNarrow && !props.inSearch && (
+          {(!props.inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td className="disciplines" onClick={() => handleClick()}>
               {props.disciplinesSet.length < 13 ? (
                 <DeckCryptDisciplines
