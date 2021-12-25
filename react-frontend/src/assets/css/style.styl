@@ -468,6 +468,8 @@ td.prob
     min-width: 27px
     @media (max-width: 576px)
       min-width: 24px
+  td.clan-group
+    width: 50px
 
 .deck-library-table
   td
@@ -625,15 +627,18 @@ div.name
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
   .clan
+    cursor: pointer
     text-align: center
     min-width: 93px
   .name
+    cursor: pointer
     min-width: 250px
     @media (max-width: 576px)
       min-width: 200px
   .revision
     color: var(--fg-button)
   .date
+    cursor: pointer
     text-align: center
     min-width: 100px
     white-space: nowrap
@@ -739,7 +744,8 @@ li.rulings
 .discipline-base-image-forms,
 .discipline-superior-image-results,
 .discipline-superior-image-forms
-  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0px 0.75px var(--disciplines-shadow))
+  filter: brightness(var(--icons-brightness)) drop-shadow(0px 0px 0.5px var(--disciplines-shadow))
+
 .clan-image-results
   height: 24px
   filter: brightness(var(--clan-icon-brightness))

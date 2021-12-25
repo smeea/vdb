@@ -22,7 +22,7 @@ export const AppProvider = (props) => {
   const isMobile = useMemo(() => screenSize.width <= 767, [screenSize.width]);
   const isNarrow = useMemo(() => screenSize.width <= 992, [screenSize.width]);
   const isDesktop = useMemo(() => screenSize.width >= 1200, [screenSize.width]);
-  const isWide = useMemo(() => screenSize.width >= 1600, [screenSize.width]);
+  const isWide = useMemo(() => screenSize.width >= 1440, [screenSize.width]);
 
   const [username, setUsername] = useState(undefined);
   const [publicName, setPublicName] = useState(undefined);

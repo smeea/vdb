@@ -193,7 +193,7 @@ function Inventory(props) {
                     </div>
                   )}
               </Col>
-              <Col lg={2} className="inventory-buttons px-0 px-lg-2 px-xl-3">
+              <Col lg={2} className="hide-on-lt1200px px-0 px-lg-2 px-xl-3">
                 <div className="sticky">
                   <InventoryButtons
                     setShowAddDeck={setShowAddDeck}

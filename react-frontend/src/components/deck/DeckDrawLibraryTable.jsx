@@ -68,8 +68,9 @@ function DeckDrawLibraryTable(props) {
             className="disciplines px-1"
             onClick={() => props.handleClick(index)}
           >
-            <ResultLibraryDisciplines value={card['Discipline']} />
             <ResultLibraryClan value={card['Clan']} />
+            {card['Discipline'] && card['Clan'] && '+'}
+            <ResultLibraryDisciplines value={card['Discipline']} />
           </td>
 
           <ConditionalOverlayTrigger

@@ -74,7 +74,6 @@ function DeckDrawCryptTable(props) {
               <ResultCryptName card={card} />
             </td>
           </ConditionalOverlayTrigger>
-
           {isWide ? (
             <>
               <td
@@ -91,44 +90,17 @@ function DeckDrawCryptTable(props) {
               </td>
             </>
           ) : (
-            <>
-              {isMobile ? (
-                <td
-                  className="clan-group"
-                  onClick={() => props.handleClick(index)}
-                >
-                  <div>
-                    <ResultClanImage value={card['Clan']} />
-                  </div>
-                  <div className="d-flex small justify-content-end">
-                    <div className="bold blue">
-                      <ResultCryptTitle value={card['Title']} />
-                    </div>
-                    <ResultCryptGroup value={card['Group']} />
-                  </div>
-                </td>
-              ) : (
-                <>
-                  <td
-                    className="title pe-2"
-                    onClick={() => props.handleClick(index)}
-                  >
-                    <ResultCryptTitle value={card['Title']} />
-                  </td>
-                  <td
-                    className="clan-group"
-                    onClick={() => props.handleClick(index)}
-                  >
-                    <div>
-                      <ResultClanImage value={card['Clan']} />
-                    </div>
-                    <div className="d-flex small justify-content-end">
-                      <ResultCryptGroup value={card['Group']} />
-                    </div>
-                  </td>
-                </>
-              )}
-            </>
+            <td className="clan-group" onClick={() => props.handleClick(index)}>
+              <div>
+                <ResultClanImage value={card['Clan']} />
+              </div>
+              <div className="d-flex small justify-content-end">
+                <div className="bold blue">
+                  <ResultCryptTitle value={card['Title']} />
+                </div>
+                <ResultCryptGroup value={card['Group']} />
+              </div>
+            </td>
           )}
           <td className="prob px-1">
             {!props.ashHeap && (

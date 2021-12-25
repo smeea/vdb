@@ -14,7 +14,8 @@ function DeckImportAmaranth(props) {
   const [spinnerState, setSpinnerState] = useState(false);
 
   const getIdReference = () => {
-    const url = `${process.env.ROOT_URL}amaranth_ids.json`;
+    const VERSION = '2021-12-25';
+    const url = `${process.env.ROOT_URL}amaranth_ids.json?v=${VERSION}`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => data.error === undefined && setIdReference(data));

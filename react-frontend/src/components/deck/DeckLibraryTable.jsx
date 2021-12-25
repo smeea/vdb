@@ -30,6 +30,7 @@ function DeckLibraryTable(props) {
     isMobile,
     isDesktop,
     isNarrow,
+    isWide,
     deckUpdate,
     deckCardChange,
   } = useApp();
@@ -66,15 +67,6 @@ function DeckLibraryTable(props) {
       resultTrClass = 'result-even';
     } else {
       resultTrClass = 'result-odd';
-    }
-
-    let DisciplineOrClan;
-    if (card.c['Clan']) {
-      DisciplineOrClan = <ResultLibraryClan value={card.c['Clan']} />;
-    } else {
-      DisciplineOrClan = (
-        <ResultLibraryDisciplines value={card.c['Discipline']} />
-      );
     }
 
     let cardInvType = null;
@@ -210,7 +202,7 @@ function DeckLibraryTable(props) {
               <ResultLibraryName card={card.c} />
             </td>
           )}
-          {!isNarrow && !props.inSearch && (
+          {(!props.inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td
               className={card.c['Blood Cost'] ? 'cost blood' : 'cost'}
               onClick={() => handleClick()}
@@ -222,9 +214,11 @@ function DeckLibraryTable(props) {
             </td>
           )}
           <td className="disciplines px-1" onClick={() => handleClick()}>
-            {DisciplineOrClan}
+            <ResultLibraryClan value={card.c['Clan']} />
+            {card.c['Discipline'] && card.c['Clan'] && '+'}
+            <ResultLibraryDisciplines value={card.c['Discipline']} />
           </td>
-          {!isNarrow && !props.inSearch && (
+          {(!props.inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td className="burn" onClick={() => handleClick()}>
               <ResultLibraryBurn value={card.c['Burn Option']} />
               <ResultLibraryTrifle
