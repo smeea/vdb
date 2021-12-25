@@ -12,6 +12,7 @@ import {
   ResultLibraryTypeImage,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
+  ConditionalOverlayTrigger,
 } from 'components';
 
 import drawProbability from 'components/drawProbability.js';
@@ -71,23 +72,17 @@ function DeckDrawLibraryTable(props) {
             {card['Discipline'] && card['Clan'] && '+'}
             <ResultLibraryDisciplines value={card['Discipline']} />
           </td>
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card} />}
-            >
-              <td
-                className="name px-1"
-                onClick={() => props.handleClick(index)}
-              >
-                <ResultLibraryName card={card} />
-              </td>
-            </OverlayTrigger>
-          ) : (
+
+          <ConditionalOverlayTrigger
+            placement={props.placement}
+            overlay={<CardPopover card={card} />}
+            disabled={isMobile}
+          >
             <td className="name px-1" onClick={() => props.handleClick(index)}>
               <ResultLibraryName card={card} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
+
           <td className="burn px-1" onClick={() => props.handleClick(index)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />

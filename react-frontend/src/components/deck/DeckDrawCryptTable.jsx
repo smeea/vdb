@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
   OverlayTooltip,
@@ -11,6 +10,7 @@ import {
   ResultCryptTitle,
   DeckDrawProbabilityText,
   DeckDrawProbabilityModal,
+  ConditionalOverlayTrigger,
 } from 'components';
 
 import drawProbability from 'components/drawProbability.js';
@@ -64,23 +64,17 @@ function DeckDrawCryptTable(props) {
               nonKeyDisciplines={props.nonKeyDisciplines}
             />
           </td>
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card} />}
-            >
-              <td
-                className="name px-1"
-                onClick={() => props.handleClick(index)}
-              >
-                <ResultCryptName card={card} />
-              </td>
-            </OverlayTrigger>
-          ) : (
+
+          <ConditionalOverlayTrigger
+            placement={props.placement}
+            overlay={<CardPopover card={card} />}
+            disabled={isMobile}
+          >
             <td className="name px-1" onClick={() => props.handleClick(index)}>
               <ResultCryptName card={card} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
+
           {isWide ? (
             <>
               <td

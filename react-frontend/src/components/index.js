@@ -36,3 +36,4 @@ export { default as CardImage } from 'components/CardImage.jsx';
 export { default as NewCryptCard } from 'components/NewCryptCard.jsx';
 export { default as UsedDescription } from 'components/UsedDescription.jsx';
 export { default as ToogleSearchAddButton } from 'components/ToogleSearchAddButton.jsx';
+export { default as ConditionalOverlayTrigger } from 'components/ConditionalOverlayTrigger.jsx';

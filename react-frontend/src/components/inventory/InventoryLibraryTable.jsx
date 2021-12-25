@@ -16,6 +16,7 @@ import {
   ResultLibraryModal,
   ResultLibraryName,
   ResultLibraryTrifle,
+  ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
 
@@ -151,26 +152,20 @@ function InventoryLibraryTable(props) {
         >
           <ResultLibraryTypeImage value={card.c['Type']} />
         </div>
-        {!isMobile ? (
-          <OverlayTrigger
-            placement={props.placement ? props.placement : 'right'}
-            overlay={<CardPopover card={card.c} />}
-          >
-            <div
-              className="d-flex align-items-center justify-content-start name"
-              onClick={() => handleClick()}
-            >
-              <ResultLibraryName card={card.c} />
-            </div>
-          </OverlayTrigger>
-        ) : (
+
+        <ConditionalOverlayTrigger
+          placement={props.placement}
+          overlay={<CardPopover card={card.c} />}
+          disabled={isMobile}
+        >
           <div
             className="d-flex align-items-center justify-content-start name"
             onClick={() => handleClick()}
           >
             <ResultLibraryName card={card.c} />
           </div>
-        )}
+        </ConditionalOverlayTrigger>
+
         {isMobile || !isWide ? (
           <div
             className="d-flex align-items-center justify-content-between cost-disciplines"

@@ -17,6 +17,7 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
   OverlayTooltip,
+  ConditionalOverlayTrigger,
 } from 'components';
 
 import drawProbability from 'components/drawProbability.js';
@@ -169,20 +170,16 @@ function DiffCryptTable(props) {
               />
             )}
           </td>
-          {!isMobile ? (
-            <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<CardPopover card={card.c} />}
-            >
-              <td className="name px-2" onClick={() => handleClick()}>
-                <ResultCryptName card={card.c} />
-              </td>
-            </OverlayTrigger>
-          ) : (
-            <td className="name" onClick={() => handleClick()}>
+
+          <ConditionalOverlayTrigger
+            placement={props.placement}
+            overlay={<CardPopover card={card.c} />}
+            disabled={isMobile}
+          >
+            <td className="name px-2" onClick={() => handleClick()}>
               <ResultCryptName card={card.c} />
             </td>
-          )}
+          </ConditionalOverlayTrigger>
           {isWide ? (
             <>
               <td className="title pe-2" onClick={() => handleClick()}>

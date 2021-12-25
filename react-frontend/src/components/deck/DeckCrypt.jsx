@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import X from 'assets/images/icons/x.svg';
@@ -180,6 +180,17 @@ function DeckCrypt(props) {
     }
   }, [changeTimer, props.deckid, cryptDeckSort]);
 
+  const handleCloseModal = () => {
+    setModalCardIdx(undefined);
+    setModalSideCardIdx(undefined);
+    isMobile && props.setShowFloatingButtons(true);
+  };
+
+  const shouldShowModal = useMemo(
+    () => modalCardIdx !== undefined || modalSideCardIdx !== undefined,
+    [modalCardIdx, modalSideCardIdx]
+  );
+
   return (
     <>
       <div
@@ -271,6 +282,7 @@ function DeckCrypt(props) {
         inMissing={props.inMissing}
         inAdvSelect={props.inAdvSelect}
         setShowFloatingButtons={props.setShowFloatingButtons}
+        isModalOpen={shouldShowModal}
       />
       {Object.keys(cryptSide).length > 0 && !props.inAdvSelect && (
         <div className="deck-sidecrypt pt-2">
@@ -289,6 +301,7 @@ function DeckCrypt(props) {
             inMissing={props.inMissing}
             inAdvSelect={props.inAdvSelect}
             setShowFloatingButtons={props.setShowFloatingButtons}
+            isModalOpen={shouldShowModal}
           />
         </div>
       )}
@@ -305,7 +318,7 @@ function DeckCrypt(props) {
           </div>
         </div>
       )}
-      {(modalCardIdx !== undefined || modalSideCardIdx !== undefined) && (
+      {shouldShowModal && (
         <ResultCryptModal
           card={
             modalCardIdx !== undefined
@@ -313,11 +326,7 @@ function DeckCrypt(props) {
               : cryptSideCards[modalSideCardIdx]
           }
           handleModalCardChange={handleModalCardChange}
-          handleClose={() => {
-            setModalCardIdx(undefined);
-            setModalSideCardIdx(undefined);
-            isMobile && props.setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseModal}
         />
       )}
     </>

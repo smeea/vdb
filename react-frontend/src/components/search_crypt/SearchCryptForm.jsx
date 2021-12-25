@@ -99,7 +99,7 @@ function SearchCryptForm(props) {
   };
 
   const handleMultiChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.currentTarget;
     const newState = cryptFormState[name];
     if (value === 'newer' || value === 'older') {
       newState['or age'] = newState['or age'] === value ? false : value;

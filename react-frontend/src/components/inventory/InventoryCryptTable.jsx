@@ -15,6 +15,7 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
   ResultCryptModal,
+  ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
 
@@ -149,26 +150,19 @@ function InventoryCryptTable(props) {
             <ResultCryptDisciplines value={card.c['Disciplines']} />
           </div>
         )}
-        {!isMobile ? (
-          <OverlayTrigger
-            placement={props.placement ? props.placement : 'right'}
-            overlay={<CardPopover card={card.c} />}
-          >
-            <div
-              className="d-flex align-items-center justify-content-start name"
-              onClick={() => handleClick()}
-            >
-              <ResultCryptName card={card.c} />
-            </div>
-          </OverlayTrigger>
-        ) : (
+        <ConditionalOverlayTrigger
+          placement={props.placement}
+          overlay={<CardPopover card={card.c} />}
+          disabled={isMobile}
+        >
           <div
             className="d-flex align-items-center justify-content-start name"
             onClick={() => handleClick()}
           >
             <ResultCryptName card={card.c} />
           </div>
-        )}
+        </ConditionalOverlayTrigger>
+
         {isWide ? (
           <>
             <div
