@@ -41,7 +41,7 @@ function Inventory(props) {
   };
 
   return (
-    <Container className="main-container p-0 px-sm-1">
+    <Container className="main-container p-0 px-md-1">
       {username ? (
         <>
           {isMobile ? (

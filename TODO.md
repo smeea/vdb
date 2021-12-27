@@ -1,9 +1,7 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
-* Bottom margin on mobile in deck/crypt/library
 * Deck viewer on tablet
-* Inv filter on tablet
 
 # FEATURES
 * Localized proxies
