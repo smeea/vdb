@@ -633,7 +633,7 @@ div.name
   .name
     cursor: pointer
     min-width: 250px
-    @media (max-width: 576px)
+    @media (max-width: 767px)
       min-width: 200px
   .revision
     color: var(--fg-button)
@@ -646,6 +646,8 @@ div.name
     width: 100%
   .buttons
     min-width: 190px
+    @media (max-width: 1199px)
+      min-width: 110px
     text-align: right
   @media (max-width: 767px)
     .buttons
@@ -1142,6 +1144,8 @@ tr:hover div.not-selected.inventory-card-custom
     padding-bottom: 40px
   .hide-on-lt992px
     display: none
+  .modal-x-wide
+    min-width: 100%
 
 @media (min-width: 768px) and (max-width: 991px)
   .main-container,
@@ -1154,12 +1158,10 @@ tr:hover div.not-selected.inventory-card-custom
   .inventory-buttons,
   .hide-narrow
     display: none
-  .modal-wide
-    min-width: 80%
-  .modal-x-wide
-    min-width: 95%
   .modal-dialog
     min-width: 85%
+  .modal-x-wide
+    min-width: 95%
   .modal-sm
     min-width: 25%
   .hide-on-lt992px,
