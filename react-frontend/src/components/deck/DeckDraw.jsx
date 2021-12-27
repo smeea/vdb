@@ -7,7 +7,9 @@ function getRandomInt(max) {
 
 function DeckDraw(props) {
   const cryptArr = [];
+  let cryptTotal = 0;
   Object.keys(props.deck.crypt).map((card) => {
+    cryptTotal += props.deck.crypt[card].q;
     for (let i = 0; i < props.deck.crypt[card].q; i++) {
       cryptArr.push(props.deck.crypt[card].c);
     }
@@ -68,10 +70,11 @@ function DeckDraw(props) {
     });
 
   let keyDisciplines = 0;
+  const REQUIRED_FRACTION = 0.5;
   disciplinesForSort
     .sort((a, b) => b[1] - a[1])
     .map((i) => {
-      if (i[1] >= 5) {
+      if (i[1] >= cryptTotal * REQUIRED_FRACTION) {
         keyDisciplines += 1;
       }
     });
@@ -225,7 +228,7 @@ function DeckDraw(props) {
         <DeckDrawModal
           crypt={props.deck.crypt}
           library={props.deck.library}
-          cryptTotal={cryptArr.length}
+          cryptTotal={cryptTotal}
           libraryTotal={libraryArr.length}
           initialTransfers={initialTransfers}
           drawedCrypt={drawedCrypt}

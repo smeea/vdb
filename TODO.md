@@ -1,12 +1,16 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
+* Bottom margin on mobile in deck/crypt/library
+* Deck viewer on tablet
+* Inv filter on tablet
 
 # FEATURES
 * Localized proxies
 * Export all in xlsx and csv
 * Links to custom deck
 * Crypt discipline distribution
+* Disciplines filter to Inventory-Library
 
 # BIG FEATURES
 * Search for similar TWD decks

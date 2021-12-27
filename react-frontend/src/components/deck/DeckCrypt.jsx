@@ -113,10 +113,11 @@ function DeckCrypt(props) {
     });
 
   let keyDisciplines = 0;
+  const REQUIRED_FRACTION = 0.5;
   disciplinesForSort
     .sort((a, b) => b[1] - a[1])
     .map((i) => {
-      if (i[1] > cryptTotal * 0.4) {
+      if (i[1] >= cryptTotal * REQUIRED_FRACTION) {
         keyDisciplines += 1;
       }
     });
