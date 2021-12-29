@@ -19,7 +19,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 
-import drawProbability from 'components/drawProbability.js';
+import { drawProbability } from 'utils';
 import { useApp } from 'context';
 
 function DiffLibraryTable(props) {

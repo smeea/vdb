@@ -17,7 +17,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 
-import drawProbability from 'components/drawProbability.js';
+import { drawProbability } from 'utils';
 import { useApp } from 'context';
 
 function DeckLibraryTable(props) {
@@ -54,7 +54,7 @@ function DeckLibraryTable(props) {
 
   const disableOverlay = useMemo(
     () => isMobile || (!isDesktop && props.isModalOpen),
-    [isMobile, isDesktop]
+    [isMobile, isDesktop, props.isModalOpen]
   );
 
   const cardRows = props.cards.map((card) => {

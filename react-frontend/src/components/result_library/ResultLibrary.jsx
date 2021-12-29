@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultLibraryTable, ResultLibraryTotal } from 'components';
-import resultLibrarySort from 'components/resultLibrarySort.js';
+import { resultLibrarySort } from 'utils';
 import { useApp } from 'context';
 
 function ResultLibrary(props) {

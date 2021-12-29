@@ -1,5 +1,5 @@
 import React from 'react';
-import drawUniqueProbability from 'components/drawUniqueProbability.js';
+import { drawUniqueProbability } from 'utils';
 
 function DeckCryptTotalByCapacity(props) {
   let cryptTotalCap = 0;

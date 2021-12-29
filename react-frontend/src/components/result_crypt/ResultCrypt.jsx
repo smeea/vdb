@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultCryptTable, ResultCryptTotal } from 'components';
-import resultCryptSort from 'components/resultCryptSort.js';
+import { resultCryptSort } from 'utils';
 import { useApp } from 'context';
 
 function ResultCrypt(props) {

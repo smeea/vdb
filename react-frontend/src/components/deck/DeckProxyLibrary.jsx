@@ -4,6 +4,7 @@ import {
   ResultLibraryType,
   ResultLibraryModal,
 } from 'components';
+import { cardtypeSorted } from 'utils/constants';
 import { useApp } from 'context';
 
 function DeckProxyLibrary(props) {
@@ -64,29 +65,6 @@ function DeckProxyLibrary(props) {
       libraryTotalSelected += props.proxySelected[card].q;
     }
   });
-
-  const cardtypeSorted = [
-    'Master',
-    'Conviction',
-    'Power',
-    'Action',
-    'Action/Reaction',
-    'Action/Combat',
-    'Political Action',
-    'Ally',
-    'Equipment',
-    'Retainer',
-    'Action Modifier',
-    'Action Modifier/Combat',
-    'Action Modifier/Reaction',
-    'Reaction',
-    'Reaction/Action Modifier',
-    'Reaction/Combat',
-    'Combat',
-    'Combat/Action Modifier',
-    'Combat/Reaction',
-    'Event',
-  ];
 
   const libraryByType = {};
   const librarySideByType = {};

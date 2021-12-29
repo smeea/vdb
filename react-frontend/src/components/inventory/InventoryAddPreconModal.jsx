@@ -12,7 +12,7 @@ import {
   OverlayTooltip,
   ResultLibraryClan,
 } from 'components';
-import decksSort from 'components/decksSort.js';
+import { decksSort } from 'utils';
 import { useApp } from 'context';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 

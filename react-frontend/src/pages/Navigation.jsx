@@ -13,7 +13,7 @@ import { NavMobileMenu, LanguageSelect } from 'components';
 import cryptDefaults from 'components/forms_data/defaultsCryptForm.json';
 import libraryDefaults from 'components/forms_data/defaultsLibraryForm.json';
 import twdDefaults from 'components/forms_data/defaultsTwdForm.json';
-import sanitizeFormState from 'components/sanitizeFormState.js';
+import { sanitizeFormState } from 'utils';
 
 function Navigation(props) {
   const {
