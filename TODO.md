@@ -7,6 +7,7 @@
 * Export all in xlsx and csv
 * Links to custom deck
 * Crypt discipline distribution
+* Disciplines filter to Inventory-Library
 
 # BIG FEATURES
 * Search for similar TWD decks

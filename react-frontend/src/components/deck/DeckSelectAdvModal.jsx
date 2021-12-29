@@ -32,6 +32,7 @@ function DeckSelectAdvModal(props) {
     setActiveDeck,
     inventoryMode,
     isMobile,
+    isDesktop,
   } = useApp();
 
   const [sortMethod, setSortMethod] = useState('byName');
@@ -293,7 +294,7 @@ function DeckSelectAdvModal(props) {
                   )}
               </div>
             </td>
-            {!isMobile && (
+            {isDesktop && (
               <td className="preview">
                 <div
                   className="m-2"
@@ -358,7 +359,7 @@ function DeckSelectAdvModal(props) {
               <div className="d-inline pe-1">
                 <DeckHide deckid={deck.deckid} />
               </div>
-              {!isMobile && (
+              {isDesktop && (
                 <>
                   <div className="d-inline pe-1">
                     {revFilter &&
@@ -390,7 +391,7 @@ function DeckSelectAdvModal(props) {
       onHide={props.handleClose}
       animation={false}
       size="xl"
-      dialogClassName={isMobile ? 'm-0' : null}
+      dialogClassName={`modal-x-wide ${isMobile ? 'm-0' : null}`}
     >
       <Modal.Header
         className={
@@ -434,7 +435,7 @@ function DeckSelectAdvModal(props) {
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              {!isMobile && <th className="preview"></th>}
+              {isDesktop && <th className="preview"></th>}
               {!isMobile && <th className="date"></th>}
               <th className="tags">
                 <Select
@@ -459,7 +460,7 @@ function DeckSelectAdvModal(props) {
                     className={isMobile ? null : 'pt-05 pe-3'}
                     type="checkbox"
                     id="revFilter"
-                    label={isMobile ? 'Rv' : 'Revisions'}
+                    label={isDesktop ? 'Revisions' : 'Rv'}
                     checked={revFilter}
                     onChange={() => setRevFilter(!revFilter)}
                   />

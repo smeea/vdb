@@ -433,8 +433,8 @@ td.prob
 .deck-library-table
   width: 100%
   border: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
+  @media (max-width: 767px)
+    border: none
   td
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
@@ -466,7 +466,7 @@ td.prob
     width: 40px
   td.disciplines td
     min-width: 27px
-    @media (max-width: 576px)
+    @media (max-width: 767px)
       min-width: 24px
   td.clan-group
     width: 50px
@@ -486,20 +486,20 @@ td.prob
 
 .inventory-container
   height: calc(100vh - 165px)
-  @media (max-width: 576px)
+  @media (max-width: 767px)
     height: calc(100vh - 132px)
 
 .inventory-container-with-compact
   height: calc(100vh - 226px)
-  @media (max-width: 576px)
+  @media (max-width: 767px)
     height: calc(100vh - 177px)
 
 .inventory-crypt-table,
 .inventory-library-table
   width: 100%
   border: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
+  @media (max-width: 767px)
+    border: none
   div.bordered
     border-bottom: 1px solid var(--border-secondary)
   div.quantity
@@ -554,8 +554,8 @@ td.prob
   width: 100%
   border-left: 1px solid var(--border-secondary)
   border-right: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
+  @media (max-width: 767px)
+    border: none
   td
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
@@ -621,8 +621,8 @@ div.name
 
 .decks-table
   border: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
+  @media (max-width: 767px)
+    border: none
   td
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
@@ -633,7 +633,7 @@ div.name
   .name
     cursor: pointer
     min-width: 250px
-    @media (max-width: 576px)
+    @media (max-width: 767px)
       min-width: 200px
   .revision
     color: var(--fg-button)
@@ -646,8 +646,10 @@ div.name
     width: 100%
   .buttons
     min-width: 190px
+    @media (max-width: 1199px)
+      min-width: 110px
     text-align: right
-  @media (max-width: 576px)
+  @media (max-width: 767px)
     .buttons
       min-width: 0px
   th
@@ -656,8 +658,8 @@ div.name
 .inv-import-decks-table,
 .inv-import-precons-table
   border: 1px solid var(--border-secondary)
-  @media (max-width: 576px)
-    border: 0px
+  @media (max-width: 767px)
+    border: none
   td
     border-top: 1px solid var(--border-secondary)
     border-bottom: 1px solid var(--border-secondary)
@@ -943,7 +945,7 @@ div.sticky-insearch
   background-color: var(--bg-primary)
   position: sticky;
   top: 40
-  @media (max-width: 576px)
+  @media (max-width: 767px)
     top: 0
   z-index: 2
 
@@ -951,7 +953,7 @@ div.sticky-inv-result
   background-color: var(--bg-primary)
   position: sticky;
   top: 102
-  @media (max-width: 576px)
+  @media (max-width: 767px)
     top: 46
   z-index: 1
 
@@ -1015,8 +1017,6 @@ a.nav-link:hover, a:hover.dropdown-item
 .margin-full
   display: inline-block
   width: 35px
-  @media (max-width: 576px)
-    width: 33px
 
 div.float-right-top,
 div.float-right-middle,
@@ -1137,13 +1137,15 @@ tr:hover div.not-selected.inventory-card-custom
 .set-precon-traits
   font-size: small
 
-@media (min-width: 575px) and (max-width: 767px)
+@media (max-width: 767px)
   .main-container,
   .deck-container
     max-width: 100%
     padding-bottom: 40px
   .hide-on-lt992px
     display: none
+  .modal-x-wide
+    min-width: 100%
 
 @media (min-width: 768px) and (max-width: 991px)
   .main-container,
@@ -1156,12 +1158,10 @@ tr:hover div.not-selected.inventory-card-custom
   .inventory-buttons,
   .hide-narrow
     display: none
-  .modal-wide
-    min-width: 80%
-  .modal-x-wide
-    min-width: 95%
   .modal-dialog
     min-width: 85%
+  .modal-x-wide
+    min-width: 95%
   .modal-sm
     min-width: 25%
   .hide-on-lt992px,
