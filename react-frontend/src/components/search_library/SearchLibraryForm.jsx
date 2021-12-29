@@ -245,6 +245,7 @@ function SearchLibraryForm(props) {
             type="checkbox"
             id="hideMissing"
             label="Search in Inventory"
+            defaultChecked={hideMissing}
             onChange={() => setHideMissing(!hideMissing)}
           />
         </div>
