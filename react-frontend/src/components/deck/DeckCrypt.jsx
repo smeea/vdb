@@ -10,8 +10,9 @@ import {
   ResultCryptModal,
 } from 'components';
 
-import { deckCryptSort } from 'utils';
+import { deckCryptSort, initialize } from 'utils';
 import { useApp } from 'context';
+import { useModalCardController } from 'hooks';
 
 function DeckCrypt(props) {
   const { cryptDeckSort, changeTimer, isMobile } = useApp();
@@ -19,61 +20,22 @@ function DeckCrypt(props) {
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
-  const [modalCardIdx, setModalCardIdx] = useState(undefined);
-  const [modalSideCardIdx, setModalSideCardIdx] = useState(undefined);
-
-  const handleModalCardOpen = (i) => {
-    setModalCardIdx(cryptCards.indexOf(i));
-  };
-
-  const handleModalSideCardOpen = (i) => {
-    setModalSideCardIdx(cryptSideCards.indexOf(i));
-  };
-
-  const handleModalCardChange = (d) => {
-    if (modalCardIdx !== undefined) {
-      const maxIdx = cryptCards.length - 1;
-      if (modalCardIdx + d < 0) {
-        setModalCardIdx(maxIdx);
-      } else if (modalCardIdx + d > maxIdx) {
-        setModalCardIdx(0);
-      } else {
-        setModalCardIdx(modalCardIdx + d);
-      }
-    } else {
-      const maxIdx = cryptSideCards.length - 1;
-
-      if (modalSideCardIdx + d < 0) {
-        setModalSideCardIdx(maxIdx);
-      } else if (modalSideCardIdx + d > maxIdx) {
-        setModalSideCardIdx(0);
-      } else {
-        setModalSideCardIdx(modalSideCardIdx + d);
-      }
-    }
-  };
-
   const disciplinesDict = {};
   for (const card of Object.keys(props.cards)) {
     for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
-      if (disciplinesDict[d] === undefined) {
-        disciplinesDict[d] = 0;
-        disciplinesDict[d] += props.cards[card].q;
-      } else {
-        disciplinesDict[d] += props.cards[card].q;
-      }
+      initialize(disciplinesDict, d, 0);
+      disciplinesDict[d] += props.cards[card].q;
     }
   }
 
   const crypt = {};
   const cryptSide = {};
-  const cryptCards = [];
-  const cryptSideCards = [];
   let cryptTotal = 0;
   let hasBanned = false;
   let cryptGroupMin;
   let cryptGroupMax;
 
+  // Divide card in crypt or side and chech for Groups/Banned
   Object.keys(props.cards).map((card) => {
     if (props.cards[card].q > 0) {
       cryptTotal += props.cards[card].q;
@@ -101,6 +63,16 @@ function DeckCrypt(props) {
     }
   });
 
+  let cryptGroups;
+  if (cryptGroupMax - cryptGroupMin == 1) {
+    cryptGroups = 'G' + cryptGroupMin + '-' + cryptGroupMax;
+  } else if (cryptGroupMax - cryptGroupMin == 0) {
+    cryptGroups = 'G' + cryptGroupMax;
+  } else {
+    cryptGroups = 'ERROR IN GROUPS';
+  }
+
+  // Disciplines Sort and Key non-Key selection
   const disciplinesForSort = [];
   Object.keys(disciplinesDict).map((key) => {
     disciplinesForSort.push([key, disciplinesDict[key]]);
@@ -138,59 +110,36 @@ function DeckCrypt(props) {
     if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
   });
 
-  let cryptGroups;
-  if (cryptGroupMax - cryptGroupMin == 1) {
-    cryptGroups = 'G' + cryptGroupMin + '-' + cryptGroupMax;
-  } else if (cryptGroupMax - cryptGroupMin == 0) {
-    cryptGroups = 'G' + cryptGroupMax;
-  } else {
-    cryptGroups = 'ERROR IN GROUPS';
-  }
-
-  const [sortedState, setSortedState] = useState([]);
-  const [sortedSideState, setSortedSideState] = useState([]);
-
-  const sortedCards = sortedState
-    .filter((card) => crypt[card])
-    .map((card) => {
-      cryptCards.push(crypt[card].c);
-      return crypt[card];
-    });
-
-  const sortedCardsSide = sortedSideState
-    .filter((card) => cryptSide[card])
-    .map((card) => {
-      cryptSideCards.push(cryptSide[card].c);
-      return cryptSide[card];
-    });
+  // Sort cards
+  const [sortedCards, setSortedCards] = useState([]);
+  const [sortedCardsSide, setSortedCardsSide] = useState([]);
 
   useEffect(() => {
     if (cryptDeckSort) {
-      const sorted = deckCryptSort(Object.values(crypt), cryptDeckSort);
-      const sortedSide = deckCryptSort(Object.values(cryptSide), cryptDeckSort);
-      setSortedState(
-        sorted.map((i) => {
-          return i['c']['Id'];
-        })
-      );
-      setSortedSideState(
-        sortedSide.map((i) => {
-          return i['c']['Id'];
-        })
+      setSortedCards(deckCryptSort(Object.values(crypt), cryptDeckSort));
+      setSortedCardsSide(
+        deckCryptSort(Object.values(cryptSide), cryptDeckSort)
       );
     }
   }, [changeTimer, props.deckid, cryptDeckSort]);
 
+  // Modal Card Controller
+  const cryptCards = useMemo(() => sortedCards.map((card) => card.c));
+  const cryptSideCards = useMemo(() => sortedCardsSide.map((card) => card.c));
+
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalSideCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(cryptCards, cryptSideCards);
+
   const handleCloseModal = () => {
-    setModalCardIdx(undefined);
-    setModalSideCardIdx(undefined);
+    handleModalCardClose();
     isMobile && props.setShowFloatingButtons(true);
   };
-
-  const shouldShowModal = useMemo(
-    () => modalCardIdx !== undefined || modalSideCardIdx !== undefined,
-    [modalCardIdx, modalSideCardIdx]
-  );
 
   return (
     <>
@@ -321,11 +270,7 @@ function DeckCrypt(props) {
       )}
       {shouldShowModal && (
         <ResultCryptModal
-          card={
-            modalCardIdx !== undefined
-              ? cryptCards[modalCardIdx]
-              : cryptSideCards[modalSideCardIdx]
-          }
+          card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}
         />

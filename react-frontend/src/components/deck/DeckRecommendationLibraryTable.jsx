@@ -12,7 +12,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-function ResultRecommendationLibraryTable(props) {
+function DeckRecommendationLibraryTable(props) {
   const { nativeLibrary, isMobile } = useApp();
   let resultTrClass;
 
@@ -96,4 +96,4 @@ function ResultRecommendationLibraryTable(props) {
   );
 }
 
-export default ResultRecommendationLibraryTable;
+export default DeckRecommendationLibraryTable;
