@@ -25,7 +25,6 @@ import {
   GROUPED_TYPE,
   POOL_COST,
   BLOOD_COST,
-  BANNED,
   TYPE,
   DISCIPLINE,
   ANY,
@@ -38,9 +37,9 @@ const DeckLibrary = (props) => {
   const { cards, deckid, isAuthor, inDeckTab, inMissing, inSearch } = props;
   const { inAdvSelect, showFloatingButtons, setShowFloatingButtons } = props;
 
-  const sortedLibrary = resultLibrarySort(Object.values(cards), GROUPED_TYPE);
-
   const { nativeLibrary, isMobile } = useApp();
+
+  const sortedLibrary = resultLibrarySort(Object.values(cards), GROUPED_TYPE);
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -54,7 +53,7 @@ const DeckLibrary = (props) => {
   const libraryByType = getCardsGroupedBy(library, TYPE);
   const librarySideByType = getCardsGroupedBy(librarySide, TYPE);
 
-  const hasBanned = sortedLibrary.filter((card) => card.c[BANNED]).length > 0;
+  const hasBanned = sortedLibrary.filter((card) => card.c.Banned).length > 0;
   const trifleTotal = countCards(
     library.filter((card) => isTriffle(card.c, nativeLibrary))
   );
@@ -63,16 +62,16 @@ const DeckLibrary = (props) => {
   const bloodTotal = countTotalCost(library, BLOOD_COST);
   const libraryByTypeTotal = getTotalCardsGroupedBy(library, TYPE);
   const libraryByDisciplinesTotal = getTotalCardsGroupedBy(
-    library.filter((card) => card.c[DISCIPLINE]),
+    library.filter((card) => card.c.Dicipline),
     DISCIPLINE
   );
   const libraryByClansTotal = getTotalCardsGroupedBy(
-    library.filter((card) => card.c[CLAN] && card.c[TYPE] !== MASTER),
+    library.filter((card) => card.c.Clan && card.c.Type !== MASTER),
     CLAN
   );
   libraryByDisciplinesTotal[ANY] = countCards(
     library.filter(
-      (card) => !card.c[CLAN] && !card.c[DISCIPLINE] && card.c[TYPE] !== MASTER
+      (card) => !card.c.Clan && !card.c.Dicipline && card.c.Type !== MASTER
     )
   );
 
@@ -91,7 +90,7 @@ const DeckLibrary = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && props.setShowFloatingButtons(true);
+    isMobile && setShowFloatingButtons(true);
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (

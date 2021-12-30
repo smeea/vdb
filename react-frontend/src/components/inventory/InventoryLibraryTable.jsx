@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -18,63 +18,55 @@ import {
   ResultLibraryTrifle,
   ConditionalOverlayTrigger,
 } from 'components';
+import {
+  POOL_COST,
+  BLOOD_COST,
+  CARD_TEXT,
+  BURN_OPTION,
+  ASCII_NAME,
+} from 'utils/constants';
+import { getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
+import { useModalCardController } from 'hooks';
 
-function InventoryLibraryTable(props) {
+const InventoryLibraryTable = (props) => {
+  const { cards, setShowFloatingButtons } = props;
   const { usedLibraryCards, nativeLibrary, isMobile, isWide } = useApp();
-  const [modalCardIdx, setModalCardIdx] = useState(undefined);
 
-  const handleModalCardChange = (d) => {
-    const maxIdx = props.cards.length - 1;
+  // Modal Card Controller
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(cards);
 
-    if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx);
-    } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0);
-    } else {
-      setModalCardIdx(modalCardIdx + d);
-    }
+  const handleCloseModal = () => {
+    handleModalCardClose();
+    isMobile && setShowFloatingButtons(true);
   };
 
-  props.cards.sort((a, b) => {
-    if (a.c['ASCII Name'] < b.c['ASCII Name']) {
-      return -1;
-    }
-    if (a.c['ASCII Name'] > b.c['ASCII Name']) {
-      return 1;
-    }
-  });
+  cards.sort((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
 
-  const cardRows = props.cards.map((card, index) => {
+  const cardRows = cards.map((cardInfo, index) => {
     const handleClick = () => {
-      setModalCardIdx(index);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(index);
+      isMobile && setShowFloatingButtons(false);
     };
+    const { c: card, q: qty } = cardInfo;
 
-    let DisciplineOrClan;
-    if (card.c['Clan']) {
-      DisciplineOrClan = <ResultLibraryClan value={card.c['Clan']} />;
-    } else {
-      DisciplineOrClan = (
-        <ResultLibraryDisciplines value={card.c['Discipline']} />
-      );
-    }
-
+    const DisciplineOrClan = card.Clan ? (
+      <ResultLibraryClan value={card.Clan} />
+    ) : (
+      <ResultLibraryDisciplines value={card.Discipline} />
+    );
     let softUsedMax = 0;
     let hardUsedTotal = 0;
 
-    if (usedLibraryCards && usedLibraryCards.soft[card.c['Id']]) {
-      Object.keys(usedLibraryCards.soft[card.c['Id']]).map((id) => {
-        if (softUsedMax < usedLibraryCards.soft[card.c['Id']][id]) {
-          softUsedMax = usedLibraryCards.soft[card.c['Id']][id];
-        }
-      });
-    }
-
-    if (usedLibraryCards && usedLibraryCards.hard[card.c['Id']]) {
-      Object.keys(usedLibraryCards.hard[card.c['Id']]).map((id) => {
-        hardUsedTotal += usedLibraryCards.hard[card.c['Id']][id];
-      });
+    if (usedLibraryCards) {
+      softUsedMax = getSoftMax(usedLibraryCards.soft[card.Id]);
+      hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.Id]);
     }
 
     return (
@@ -82,20 +74,20 @@ function InventoryLibraryTable(props) {
         <div className="d-flex align-items-center justify-content-center quantity px-1">
           {isMobile ? (
             <InventoryCardQuantity
-              cardid={card.c['Id']}
-              q={card.q}
+              cardid={card.Id}
+              q={qty}
               softUsedMax={softUsedMax}
               hardUsedTotal={hardUsedTotal}
             />
           ) : (
             <OverlayTrigger
               placement="right"
-              overlay={<UsedPopover cardid={card.c.Id} />}
+              overlay={<UsedPopover cardid={card.Id} />}
             >
               <div className="w-100">
                 <InventoryCardQuantity
-                  cardid={card.c['Id']}
-                  q={card.q}
+                  cardid={card.Id}
+                  q={qty}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
                 />
@@ -126,22 +118,22 @@ function InventoryLibraryTable(props) {
           ) : (
             <OverlayTrigger
               placement={props.placement ? props.placement : 'right'}
-              overlay={<UsedPopover cardid={card.c.Id} />}
+              overlay={<UsedPopover cardid={card.Id} />}
             >
               <div
                 className={`d-flex justify-content-center w-100 ps-1 ${
-                  card.q == softUsedMax + hardUsedTotal
+                  qty == softUsedMax + hardUsedTotal
                     ? 'gray'
-                    : card.q >= softUsedMax + hardUsedTotal
+                    : qty >= softUsedMax + hardUsedTotal
                     ? 'green'
                     : 'red'
                 }`}
               >
-                {card.q === softUsedMax + hardUsedTotal
+                {qty === softUsedMax + hardUsedTotal
                   ? '='
-                  : card.q > softUsedMax + hardUsedTotal
-                  ? `+${card.q - softUsedMax - hardUsedTotal}`
-                  : card.q - softUsedMax - hardUsedTotal}
+                  : qty > softUsedMax + hardUsedTotal
+                  ? `+${qty - softUsedMax - hardUsedTotal}`
+                  : qty - softUsedMax - hardUsedTotal}
               </div>
             </OverlayTrigger>
           )}
@@ -150,19 +142,19 @@ function InventoryLibraryTable(props) {
           className="d-flex align-items-center justify-content-center type"
           onClick={() => handleClick()}
         >
-          <ResultLibraryTypeImage value={card.c['Type']} />
+          <ResultLibraryTypeImage value={card.Type} />
         </div>
 
         <ConditionalOverlayTrigger
           placement={props.placement}
-          overlay={<CardPopover card={card.c} />}
+          overlay={<CardPopover card={card} />}
           disabled={isMobile}
         >
           <div
             className="d-flex align-items-center justify-content-start name"
             onClick={() => handleClick()}
           >
-            <ResultLibraryName card={card.c} />
+            <ResultLibraryName card={card} />
           </div>
         </ConditionalOverlayTrigger>
 
@@ -173,13 +165,13 @@ function InventoryLibraryTable(props) {
           >
             <div
               className={`d-flex align-items-center justify-content-center ${
-                card.c['Blood Cost'] && 'blood'
+                card[BLOOD_COST] && 'blood'
               }`}
               onClick={() => handleClick()}
             >
               <ResultLibraryCost
-                valueBlood={card.c['Blood Cost']}
-                valuePool={card.c['Pool Cost']}
+                valueBlood={card[BLOOD_COST]}
+                valuePool={card[POOL_COST]}
               />
             </div>
             <div
@@ -193,13 +185,13 @@ function InventoryLibraryTable(props) {
           <>
             <div
               className={`d-flex align-items-center justify-content-center ${
-                card.c['Blood Cost'] && 'blood'
+                card[BLOOD_COST] && 'blood'
               } cost`}
               onClick={() => handleClick()}
             >
               <ResultLibraryCost
-                valueBlood={card.c['Blood Cost']}
-                valuePool={card.c['Pool Cost']}
+                valueBlood={card[BLOOD_COST]}
+                valuePool={card[POOL_COST]}
               />
             </div>
             <div
@@ -215,10 +207,8 @@ function InventoryLibraryTable(props) {
             className="d-flex align-items-center justify-content-center burn"
             onClick={() => handleClick()}
           >
-            <ResultLibraryBurn value={card.c['Burn Option']} />
-            <ResultLibraryTrifle
-              value={nativeLibrary[card.c.Id]['Card Text']}
-            />
+            <ResultLibraryBurn value={card[BURN_OPTION]} />
+            <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} />
           </div>
         )}
       </>
@@ -261,19 +251,16 @@ function InventoryLibraryTable(props) {
           </AutoSizer>
         </div>
       )}
-      {modalCardIdx !== undefined && (
+      {shouldShowModal && (
         <ResultLibraryModal
-          card={props.cards[modalCardIdx].c}
+          card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={() => {
-            setModalCardIdx(undefined);
-            isMobile && props.setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseModal}
           forceInventoryMode={true}
         />
       )}
     </>
   );
-}
+};
 
 export default InventoryLibraryTable;

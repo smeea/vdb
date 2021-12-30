@@ -1,4 +1,4 @@
-import { CARD_TEXT, MASTER } from 'utils/constants';
+import { CARD_TEXT, MASTER, ID } from 'utils/constants';
 
 export const getCardProperty = (card, property) => {
   return card.c ? card.c[property] : card[property];
@@ -61,6 +61,20 @@ export const getCardsGroupedBy = (cards, property) => {
 
 export const containCard = (cards, card) => {
   return cards
-    .map((c) => getCardProperty(c, 'Id'))
-    .includes(getCardProperty(card, 'Id'));
+    .map((c) => getCardProperty(c, ID))
+    .includes(getCardProperty(card, ID));
+};
+
+export const getHardTotal = (hardList) => {
+  console.log('hardList', hardList);
+  if (!hardList) return 0;
+
+  return Object.values(hardList).reduce((acc, q) => (acc += q), 0);
+};
+
+export const getSoftMax = (softList) => {
+  console.log('softList', softList);
+  if (!softList) return 0;
+
+  return Object.values(softList).reduce((acc, q) => (acc = q > acc ? q : acc));
 };

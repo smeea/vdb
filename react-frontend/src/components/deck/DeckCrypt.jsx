@@ -10,58 +10,31 @@ import {
   ResultCryptModal,
 } from 'components';
 
-import { deckCryptSort, initialize } from 'utils';
+import { ANY } from 'utils/constants';
+import { deckCryptSort, countCards } from 'utils';
 import { useApp } from 'context';
-import { useModalCardController } from 'hooks';
+import { useModalCardController, useKeyDisciplines } from 'hooks';
 
 function DeckCrypt(props) {
+  const { cards, inAdvSelect, setShowFloatingButtons } = props;
+  const { inMissing, deckid, isAuthor, inSearch } = props;
   const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
-  const disciplinesDict = {};
-  for (const card of Object.keys(props.cards)) {
-    for (const d of Object.keys(props.cards[card].c['Disciplines'])) {
-      initialize(disciplinesDict, d, 0);
-      disciplinesDict[d] += props.cards[card].q;
-    }
-  }
+  const crypt = Object.values(cards).filter((card) => card.q > 0);
+  const cryptSide = Object.values(cards).filter((card) => card.q <= 0);
+  const cryptTotal = countCards(crypt);
+  const hasBanned = crypt.filter((card) => card.c.Banned).length > 0;
 
-  const crypt = {};
-  const cryptSide = {};
-  let cryptTotal = 0;
-  let hasBanned = false;
-  let cryptGroupMin;
-  let cryptGroupMax;
+  const cryptGroupMin = crypt
+    .filter((card) => card.c.Group !== ANY)
+    .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc));
 
-  // Divide card in crypt or side and chech for Groups/Banned
-  Object.keys(props.cards).map((card) => {
-    if (props.cards[card].q > 0) {
-      cryptTotal += props.cards[card].q;
-      crypt[card] = props.cards[card];
-      if (props.cards[card].c['Group'] == 'ANY') {
-        return;
-      }
-      if (props.cards[card].c['Banned']) {
-        hasBanned = true;
-      }
-      if (
-        props.cards[card].c['Group'] < cryptGroupMin ||
-        cryptGroupMin == undefined
-      ) {
-        cryptGroupMin = props.cards[card].c['Group'];
-      }
-      if (
-        props.cards[card].c['Group'] > cryptGroupMax ||
-        cryptGroupMax == undefined
-      ) {
-        cryptGroupMax = props.cards[card].c['Group'];
-      }
-    } else {
-      cryptSide[card] = props.cards[card];
-    }
-  });
+  const cryptGroupMax = crypt
+    .filter((card) => card.c.Group !== ANY)
+    .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
 
   let cryptGroups;
   if (cryptGroupMax - cryptGroupMin == 1) {
@@ -73,42 +46,8 @@ function DeckCrypt(props) {
   }
 
   // Disciplines Sort and Key non-Key selection
-  const disciplinesForSort = [];
-  Object.keys(disciplinesDict).map((key) => {
-    disciplinesForSort.push([key, disciplinesDict[key]]);
-  });
-
-  const disciplinesSet = disciplinesForSort
-    .sort((a, b) => b[1] - a[1])
-    .map((i) => {
-      return i[0];
-    });
-
-  let keyDisciplines = 0;
-  const REQUIRED_FRACTION = 0.5;
-  disciplinesForSort
-    .sort((a, b) => b[1] - a[1])
-    .map((i) => {
-      if (i[1] >= cryptTotal * REQUIRED_FRACTION) {
-        keyDisciplines += 1;
-      }
-    });
-
-  const nonKeyDisciplinesList = [];
-  for (let i = keyDisciplines; i < disciplinesSet.length; i++) {
-    nonKeyDisciplinesList.push(disciplinesSet[i]);
-  }
-
-  let nonKeyDisciplines = 0;
-  Object.keys(props.cards).map((card) => {
-    let counter = 0;
-    Object.keys(props.cards[card].c['Disciplines']).map((d) => {
-      if (nonKeyDisciplinesList.includes(d)) {
-        counter += 1;
-      }
-    });
-    if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
-  });
+  const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
+    useKeyDisciplines(cards, cryptTotal);
 
   // Sort cards
   const [sortedCards, setSortedCards] = useState([]);
@@ -121,7 +60,7 @@ function DeckCrypt(props) {
         deckCryptSort(Object.values(cryptSide), cryptDeckSort)
       );
     }
-  }, [changeTimer, props.deckid, cryptDeckSort]);
+  }, [changeTimer, deckid, cryptDeckSort]);
 
   // Modal Card Controller
   const cryptCards = useMemo(() => sortedCards.map((card) => card.c));
@@ -138,7 +77,7 @@ function DeckCrypt(props) {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && props.setShowFloatingButtons(true);
+    isMobile && setShowFloatingButtons(true);
   };
 
   return (
@@ -150,11 +89,11 @@ function DeckCrypt(props) {
       >
         <b>
           Crypt [{cryptTotal}
-          {!props.inMissing && cryptTotal < 12 && ' of 12+'}]
-          {!props.inMissing && ` - ${cryptGroups}`}
-          {!props.inMissing && hasBanned && ' - WITH BANNED'}
+          {!inMissing && cryptTotal < 12 && ' of 12+'}]
+          {!inMissing && ` - ${cryptGroups}`}
+          {!inMissing && hasBanned && ' - WITH BANNED'}
         </b>
-        {!props.inAdvSelect && (
+        {!inAdvSelect && (
           <div className="d-flex">
             <div className="pe-1">
               <DeckCryptSortButton />
@@ -166,7 +105,7 @@ function DeckCrypt(props) {
             >
               <InfoCircle />
             </Button>
-            {props.isAuthor && !isMobile && (
+            {isAuthor && !isMobile && (
               <div className="ps-1">
                 <Button
                   title="Add Card"
@@ -189,8 +128,8 @@ function DeckCrypt(props) {
         (!isMobile ? (
           <DeckNewCryptCard
             setShowAdd={setShowAdd}
-            cards={props.cards}
-            deckid={props.deckid}
+            cards={cards}
+            deckid={deckid}
           />
         ) : (
           <Modal
@@ -212,50 +151,50 @@ function DeckCrypt(props) {
             <Modal.Body className="p-0">
               <DeckNewCryptCard
                 setShowAdd={setShowAdd}
-                cards={props.cards}
-                deckid={props.deckid}
+                cards={cards}
+                deckid={deckid}
               />
             </Modal.Body>
           </Modal>
         ))}
       <DeckCryptTable
         handleModalCardOpen={handleModalCardOpen}
-        deckid={props.deckid}
+        deckid={deckid}
         cards={sortedCards}
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}
-        isAuthor={props.isAuthor}
+        isAuthor={isAuthor}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
-        inSearch={props.inSearch}
-        inMissing={props.inMissing}
-        inAdvSelect={props.inAdvSelect}
-        setShowFloatingButtons={props.setShowFloatingButtons}
+        inSearch={inSearch}
+        inMissing={inMissing}
+        inAdvSelect={inAdvSelect}
+        setShowFloatingButtons={setShowFloatingButtons}
         isModalOpen={shouldShowModal}
       />
-      {Object.keys(cryptSide).length > 0 && !props.inAdvSelect && (
+      {Object.keys(cryptSide).length > 0 && !inAdvSelect && (
         <div className="deck-sidecrypt pt-2">
           <div className="d-flex align-items-center justify-content-between ps-2">
             <b>Side Crypt</b>
           </div>
           <DeckCryptTable
             handleModalCardOpen={handleModalSideCardOpen}
-            deckid={props.deckid}
+            deckid={deckid}
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
-            isAuthor={props.isAuthor}
+            isAuthor={isAuthor}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
-            inSearch={props.inSearch}
-            inMissing={props.inMissing}
-            inAdvSelect={props.inAdvSelect}
-            setShowFloatingButtons={props.setShowFloatingButtons}
+            inSearch={inSearch}
+            inMissing={inMissing}
+            inAdvSelect={inAdvSelect}
+            setShowFloatingButtons={setShowFloatingButtons}
             isModalOpen={shouldShowModal}
           />
         </div>
       )}
-      {isMobile && props.isAuthor && props.showFloatingButtons && (
+      {isMobile && isAuthor && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-top float-add-on align-items-center justify-content-center"
