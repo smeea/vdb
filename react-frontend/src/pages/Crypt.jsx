@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import {
   ResultCrypt,
-  SearchCryptForm,
+  CryptSearchForm,
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
 } from 'components';
@@ -65,7 +65,7 @@ function Crypt(props) {
         )}
         {showSearchForm && (
           <Col md={4} lg={4} xl={3} className={'p-1 px-md-2 pe-xl-0 py-md-3'}>
-            <SearchCryptForm />
+            <CryptSearchForm />
           </Col>
         )}
       </Row>

@@ -10,6 +10,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { useApp } from 'context';
+import { cardtypeSorted } from 'utils/constants';
 
 function TwdResultLibraryKeyCards(props) {
   const { inventoryLibrary, usedLibraryCards, inventoryMode, isMobile } =
@@ -28,29 +29,6 @@ function TwdResultLibraryKeyCards(props) {
       setModalCardIdx(modalCardIdx + d);
     }
   };
-
-  const cardtypeSorted = [
-    'Master',
-    'Conviction',
-    'Power',
-    'Action',
-    'Action/Reaction',
-    'Action/Combat',
-    'Political Action',
-    'Ally',
-    'Equipment',
-    'Retainer',
-    'Action Modifier',
-    'Action Modifier/Combat',
-    'Action Modifier/Reaction',
-    'Reaction',
-    'Reaction/Action Modifier',
-    'Reaction/Combat',
-    'Combat',
-    'Combat/Action Modifier',
-    'Combat/Reaction',
-    'Event',
-  ];
 
   let libraryTotal = 0;
   const libraryByType = {};

@@ -1,5 +1,5 @@
 import React from 'react';
-import drawProbability from 'components/drawProbability.js';
+import { drawProbability } from 'utils';
 
 const DeckDrawProbabilityText = ({ N, n, k }) => {
   return (

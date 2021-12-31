@@ -14,7 +14,8 @@ import {
 } from 'components';
 
 import { useApp } from 'context';
-import drawProbability from 'components/drawProbability.js';
+import { drawProbability } from 'utils';
+import { cardtypeSorted } from 'utils/constants';
 
 function DeckLibrary(props) {
   const { nativeLibrary, isMobile } = useApp();
@@ -74,29 +75,6 @@ function DeckLibrary(props) {
       librarySide[card] = props.cards[card];
     }
   });
-
-  const cardtypeSorted = [
-    'Master',
-    'Conviction',
-    'Power',
-    'Action',
-    'Action/Reaction',
-    'Action/Combat',
-    'Political Action',
-    'Ally',
-    'Equipment',
-    'Retainer',
-    'Action Modifier',
-    'Action Modifier/Combat',
-    'Action Modifier/Reaction',
-    'Reaction',
-    'Reaction/Action Modifier',
-    'Reaction/Combat',
-    'Combat',
-    'Combat/Action Modifier',
-    'Combat/Reaction',
-    'Event',
-  ];
 
   let libraryTotal = 0;
   let poolTotal = 0;

@@ -16,7 +16,7 @@ import {
   ResultClanImage,
   OverlayTooltip,
 } from 'components';
-import decksSort from 'components/decksSort.js';
+import { decksSort } from 'utils';
 import { useApp } from 'context';
 
 function InventoryAddDeckModal(props) {

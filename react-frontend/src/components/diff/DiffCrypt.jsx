@@ -9,7 +9,7 @@ import {
   DeckCryptSortButton,
   ResultCryptModal,
 } from 'components';
-import deckCryptSort from 'components/deckCryptSort.js';
+import { deckCryptSort } from 'utils';
 import { useApp } from 'context';
 
 function DiffCrypt(props) {

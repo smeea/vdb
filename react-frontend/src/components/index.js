@@ -8,11 +8,12 @@ export * from 'components/result_crypt';
 export * from 'components/result_layout';
 export * from 'components/result_library';
 export * from 'components/result_common';
-export * from 'components/search_crypt';
-export * from 'components/search_form';
-export * from 'components/search_library';
 export * from 'components/twd_result';
-export * from 'components/twd_search';
+
+// Search Forms
+export { default as LibrarySearchForm } from 'components/search_forms/LibrarySearchForm.jsx';
+export { default as CryptSearchForm } from 'components/search_forms/CryptSearchForm.jsx';
+export { default as TwdSearchForm } from 'components/search_forms/TwdSearchForm.jsx';
 
 // OTHERS
 export { default as Banner } from 'components/Banner.jsx';

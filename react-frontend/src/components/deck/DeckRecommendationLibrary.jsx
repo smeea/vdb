@@ -5,6 +5,7 @@ import {
   ResultLibraryModal,
 } from 'components';
 import { useApp } from 'context';
+import { cardtypeSorted } from 'utils/constants';
 
 function DeckRecommendationLibrary(props) {
   const { isMobile } = useApp();
@@ -45,29 +46,6 @@ function DeckRecommendationLibrary(props) {
   props.cards.map((card) => {
     library[card.Id] = card;
   });
-
-  const cardtypeSorted = [
-    'Master',
-    'Conviction',
-    'Power',
-    'Action',
-    'Action/Reaction',
-    'Action/Combat',
-    'Political Action',
-    'Ally',
-    'Equipment',
-    'Retainer',
-    'Action Modifier',
-    'Action Modifier/Combat',
-    'Action Modifier/Reaction',
-    'Reaction',
-    'Reaction/Action Modifier',
-    'Reaction/Combat',
-    'Combat',
-    'Combat/Action Modifier',
-    'Combat/Reaction',
-    'Event',
-  ];
 
   const libraryByType = {};
 

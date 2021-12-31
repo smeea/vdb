@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import {
   ResultLibrary,
-  SearchLibraryForm,
+  LibrarySearchForm,
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
 } from 'components';
@@ -64,7 +64,7 @@ function Library(props) {
         )}
         {showSearchForm && (
           <Col md={4} lg={4} xl={3} className={'p-1 px-md-2 pe-xl-0 py-md-3'}>
-            <SearchLibraryForm />
+            <LibrarySearchForm />
           </Col>
         )}
       </Row>

@@ -2,32 +2,10 @@ import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import { DeckLibraryTable } from 'components';
 import { useApp } from 'context';
+import { cardtypeSorted } from 'utils/constants';
 
 function TwdResultLibraryByType(props) {
   const { nativeLibrary } = useApp();
-
-  const cardtypeSorted = [
-    'Master',
-    'Conviction',
-    'Power',
-    'Action',
-    'Action/Reaction',
-    'Action/Combat',
-    'Political Action',
-    'Ally',
-    'Equipment',
-    'Retainer',
-    'Action Modifier',
-    'Action Modifier/Combat',
-    'Action Modifier/Reaction',
-    'Reaction',
-    'Reaction/Action Modifier',
-    'Reaction/Combat',
-    'Combat',
-    'Combat/Action Modifier',
-    'Combat/Reaction',
-    'Event',
-  ];
 
   let hasBanned = false;
   let libraryTotal = 0;
