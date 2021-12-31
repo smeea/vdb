@@ -21,16 +21,10 @@ function DeckProxyCrypt(props) {
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
     useKeyDisciplines(cards, cryptTotal);
 
-  const SortByQuantity = (a, b) => {
-    return b.q - a.q;
-  };
-
-  const SortByCapacity = (a, b) => {
-    return b.c.Capacity - a.c.Capacity;
-  };
-
   // Sort cards
   const [sortedCards, setSortedCards] = useState([]);
+  const SortByQuantity = (a, b) => b.q - a.q;
+  const SortByCapacity = (a, b) => b.c.Capacity - a.c.Capacity;
   const sortedCardsSide = cryptSide.sort(SortByCapacity);
 
   useEffect(() => {
@@ -41,12 +35,13 @@ function DeckProxyCrypt(props) {
     }
   }, [changeTimer, cryptDeckSort]);
 
-  // Modal Card Controller
   const cryptCards = useMemo(
     () => sortedCards.map((card) => card.c),
     [sortedCards]
   );
   const cryptSideCards = sortedCardsSide.map((card) => card.c);
+
+  // Modal Card Controller
   const {
     currentModalCard,
     shouldShowModal,
