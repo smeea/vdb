@@ -218,7 +218,7 @@ function InventoryCryptTable(props) {
         </div>
       ) : (
         <div
-          className={`inventory-container${
+          className={`inventory-container-crypt${
             props.withCompact ? '-with-compact' : ''
           }`}
         >

@@ -6,10 +6,19 @@ function Changelog(props) {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
-        <Col xs={12} md={6} xxl={5} className="px-0">
+        <Col xs={12} md={7} lg={6} xl={5} className="px-0">
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
+
+            <h6>2021-12-31:</h6>
+            <ul>
+              <li>Add Discipline filter to library in Inventory</li>
+              <li>
+                Fix Advanced Deck Selection window on tablet-size resolutions
+              </li>
+              <li>Fix &quot;Search in Inventory&quot; in Crypt/Library</li>
+            </ul>
 
             <h6>2021-12-25:</h6>
             <ul>

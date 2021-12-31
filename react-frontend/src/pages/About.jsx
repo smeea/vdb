@@ -70,22 +70,13 @@ function About(props) {
                 : 2021-12-01
               </p>
 
-              <h6>Last update [2021-12-25]:</h6>
+              <h6>Last update [2021-12-31]:</h6>
               <ul>
+                <li>Add Discipline filter to library in Inventory</li>
                 <li>
-                  Many improvements on page layouts and adaptiveness for
-                  tablet-size screens. Those who were dissapointed by VDB being
-                  unusable on their tablets should give it another try now!
+                  Fix Advanced Deck Selection window on tablet-size resolutions
                 </li>
-                <li>
-                  Fix AU/DM/TU set images to show original PDF-release images,
-                  and move newer Kickstarter images to KSU set
-                </li>
-                <li>Fix import decks with new V5A cards from Amaranth</li>
-                <li>
-                  Fixes for bugs introduced by new multigroup vampires (deck
-                  export, proxy generation, etc)
-                </li>
+                <li>Fix &quot;Search in Inventory&quot; in Crypt/Library</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>

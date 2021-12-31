@@ -111,7 +111,6 @@ div.no-border
 
 .inventory-info
   background: var(--bg-secondary)
-  height: 45px
 
 .blue
   color: var(--fg-secondary)
@@ -484,12 +483,18 @@ td.prob
   td.burn
     width: 30px
 
-.inventory-container
+.inventory-container-crypt
   height: calc(100vh - 165px)
   @media (max-width: 767px)
     height: calc(100vh - 132px)
 
-.inventory-container-with-compact
+.inventory-container-library
+  height: calc(100vh - 205px)
+  @media (max-width: 767px)
+    height: calc(100vh - 172px)
+
+.inventory-container-crypt-with-compact,
+.inventory-container-library-with-compact
   height: calc(100vh - 226px)
   @media (max-width: 767px)
     height: calc(100vh - 177px)
