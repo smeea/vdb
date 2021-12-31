@@ -1,13 +1,13 @@
 # FIX
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
+* Inventory missing to respect discipline filter
 
 # FEATURES
 * Localized proxies
 * Export all in xlsx and csv
 * Links to custom deck
 * Crypt discipline distribution
-* Disciplines filter to Inventory-Library
 
 # BIG FEATURES
 * Search for similar TWD decks

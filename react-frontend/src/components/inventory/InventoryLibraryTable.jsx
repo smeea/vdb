@@ -242,7 +242,7 @@ function InventoryLibraryTable(props) {
         </div>
       ) : (
         <div
-          className={`inventory-container${
+          className={`inventory-container-library${
             props.withCompact ? '-with-compact' : ''
           }`}
         >
