@@ -72,10 +72,10 @@ function InventoryLibrary(props) {
   if (props.compact) {
     Object.keys(props.cards).map((card) => {
       libraryByType['All'] = {
-        card: props.cards[card],
+        [card]: props.cards[card],
       };
       libraryByDiscipline['All'] = {
-        card: props.cards[card],
+        [card]: props.cards[card],
       };
     });
   } else {
