@@ -6,7 +6,7 @@ import {
   NewCryptCard,
   ConditionalOverlayTrigger,
 } from 'components';
-import { TwdSearchFormQuantityButtons } from './TwdSearchFormQuantityButtons';
+import TwdSearchFormQuantityButtons from './TwdSearchFormQuantityButtons';
 import { useApp } from 'context';
 
 function TwdSearchFormCrypt(props) {
