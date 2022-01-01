@@ -34,6 +34,7 @@ function DiffCryptTable(props) {
     deckCardChange,
   } = useApp();
 
+  const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
   let resultTrClass;
 
   const [modalDraw, setModalDraw] = useState(undefined);
@@ -156,7 +157,7 @@ function DiffCryptTable(props) {
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
-            {props.disciplinesSet.length < 13 ? (
+            {props.disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
               <DeckCryptDisciplines
                 value={card.c['Disciplines']}
                 disciplinesSet={props.disciplinesSet}

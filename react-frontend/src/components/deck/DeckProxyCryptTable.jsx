@@ -23,6 +23,7 @@ function DeckProxyCryptTable(props) {
   const { decks, inventoryMode, inventoryCrypt, usedCryptCards, isMobile } =
     useApp();
 
+  const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
   let resultTrClass;
 
   let maxDisciplines = 0;
@@ -158,7 +159,7 @@ function DeckProxyCryptTable(props) {
             <ResultCryptCapacity value={card.c['Capacity']} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
-            {props.disciplinesSet.length < 13 ? (
+            {props.disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
               <DeckCryptDisciplines
                 value={card.c['Disciplines']}
                 disciplinesSet={props.disciplinesSet}
