@@ -2,7 +2,6 @@
 * Change url to empty on last form changed to 'any'
 * Inventory bug for precon (also test for twd and shared)
 * Inventory missing to respect discipline filter
-* Test with increased threshold for keyDisciplines
 
 # FEATURES
 * Localized proxies
