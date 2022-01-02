@@ -15,7 +15,7 @@ import {
 import { GROUPED_TYPE, TYPE, MASTER } from 'utils/constants';
 import { useModalCardController } from 'hooks';
 
-function DeckProxyLibrary(props) {
+const DeckProxyLibrary = (props) => {
   const { cards, proxySelected, inAdvSelect, inDeckTab } = props;
   const { handleSetSelector, handleProxyCounter, handleProxySelector } = props;
   const { setShowFloatingButtons } = props;
@@ -48,10 +48,7 @@ function DeckProxyLibrary(props) {
     handleModalSideCardOpen,
     handleModalCardChange,
     handleModalCardClose,
-  } = useModalCardController(
-    library.map((c) => c.c),
-    librarySide.map((c) => c.c)
-  );
+  } = useModalCardController(library, librarySide);
 
   const handleCloseModal = () => {
     handleModalCardClose();
@@ -128,6 +125,6 @@ function DeckProxyLibrary(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckProxyLibrary;

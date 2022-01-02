@@ -54,6 +54,7 @@ const InventoryLibraryTable = (props) => {
       handleModalCardOpen(index);
       isMobile && setShowFloatingButtons(false);
     };
+
     const { c: card, q: qty } = cardInfo;
 
     const DisciplineOrClan = card.Clan ? (

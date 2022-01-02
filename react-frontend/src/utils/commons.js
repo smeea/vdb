@@ -66,15 +66,23 @@ export const containCard = (cards, card) => {
 };
 
 export const getHardTotal = (hardList) => {
-  console.log('hardList', hardList);
   if (!hardList) return 0;
 
   return Object.values(hardList).reduce((acc, q) => (acc += q), 0);
 };
 
 export const getSoftMax = (softList) => {
-  console.log('softList', softList);
   if (!softList) return 0;
 
   return Object.values(softList).reduce((acc, q) => (acc = q > acc ? q : acc));
+};
+
+export const getCardsArray = (cardsList) => {
+  const cryptArr = [];
+  Object.keys(cardsList).map((card) => {
+    for (let i = 0; i < cardsList[card].q; i++) {
+      cryptArr.push(cardsList[card].c);
+    }
+  });
+  return cryptArr;
 };

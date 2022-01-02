@@ -11,10 +11,10 @@ import {
 } from 'components';
 import { GROUPED_TYPE, ASCII_NAME } from 'utils/constants';
 import { useApp } from 'context';
-import { countCards, resultLibrarySort } from 'utils';
+import { countCards, resultLibrarySort, getHardTotal } from 'utils';
 import { useModalCardController } from 'hooks';
 
-function TwdResultLibraryKeyCards(props) {
+const TwdResultLibraryKeyCards = (props) => {
   const { library } = props;
   const { inventoryLibrary, usedLibraryCards, inventoryMode, isMobile } =
     useApp();
@@ -136,6 +136,6 @@ function TwdResultLibraryKeyCards(props) {
       )}
     </>
   );
-}
+};
 
 export default TwdResultLibraryKeyCards;

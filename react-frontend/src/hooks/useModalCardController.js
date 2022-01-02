@@ -7,18 +7,21 @@ const useModalCardController = (mainCards = [], sideCards = []) => {
   const [cardId, setCardId] = useState(null);
   const [mode, setMode] = useState();
 
+  const mainList = mainCards.map((c) => (c.c ? c.c : c));
+  const sideList = sideCards.map((c) => (c.c ? c.c : c));
+
   const handleModalCardOpen = (i) => {
     setMode(MAIN_CARD_MODE);
-    setCardId(mainCards.indexOf(i));
+    setCardId(isNaN(i) ? mainList.indexOf(i) : i);
   };
 
   const handleModalSideCardOpen = (i) => {
     setMode(SIDE_CARD_MODE);
-    setCardId(sideCards.indexOf(i));
+    setCardId(isNaN(i) ? sideList.indexOf(i) : i);
   };
 
   const handleModalCardChange = (d) => {
-    const maxIdx = (mode === MAIN_CARD_MODE ? mainCards : sideCards).length - 1;
+    const maxIdx = (mode === MAIN_CARD_MODE ? mainList : sideList).length - 1;
     if (cardId + d < 0) {
       setCardId(maxIdx);
     } else if (cardId + d > maxIdx) {
@@ -34,10 +37,13 @@ const useModalCardController = (mainCards = [], sideCards = []) => {
 
   const shouldShowModal = useMemo(() => cardId !== null, [cardId]);
 
+  const isSideMode = useMemo(() => mode === SIDE_CARD_MODE, [mode]);
+
   const currentModalCard = useMemo(() => {
-    if (cardId !== null)
-      return (mode === MAIN_CARD_MODE ? mainCards : sideCards)[cardId];
-  }, [mainCards, sideCards, mode, cardId]);
+    if (cardId === null) return null;
+
+    return (isSideMode ? sideList : mainList)[cardId];
+  }, [mainList, sideList, mode, cardId]);
 
   return {
     handleModalCardOpen,
@@ -46,6 +52,7 @@ const useModalCardController = (mainCards = [], sideCards = []) => {
     handleModalCardClose,
     shouldShowModal,
     currentModalCard,
+    isSideMode,
   };
 };
 

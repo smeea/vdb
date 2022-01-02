@@ -19,7 +19,7 @@ import { getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-function ResultLibraryTable(props) {
+const ResultLibraryTable = (props) => {
   const { resultCards, library, placement, setShowFloatingButtons } = props;
 
   const {
@@ -169,6 +169,6 @@ function ResultLibraryTable(props) {
       )}
     </>
   );
-}
+};
 
 export default ResultLibraryTable;

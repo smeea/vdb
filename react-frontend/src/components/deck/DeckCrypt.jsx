@@ -15,7 +15,7 @@ import { deckCryptSort, countCards } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines } from 'hooks';
 
-function DeckCrypt(props) {
+const DeckCrypt = (props) => {
   const { cards, inAdvSelect, setShowFloatingButtons } = props;
   const { inMissing, deckid, isAuthor, inSearch } = props;
   const { cryptDeckSort, changeTimer, isMobile } = useApp();
@@ -216,6 +216,6 @@ function DeckCrypt(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckCrypt;

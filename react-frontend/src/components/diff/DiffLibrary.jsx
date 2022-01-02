@@ -34,7 +34,11 @@ import {
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-function DiffLibrary(props) {
+const DiffLibrary = (props) => {
+  const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
+  const { cardsFrom, cardsTo, deckid, isAuthor, inMissing, inAdvSelect } =
+    props;
+
   const { nativeLibrary, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
@@ -43,34 +47,32 @@ function DiffLibrary(props) {
   const toogleShowAdd = () => setShowAdd(!showAdd);
   const [modalDraw, setModalDraw] = useState(undefined);
 
-  const libraryFrom = Object.values(props.cardsFrom).filter(
-    (card) => card.q > 0
-  );
-  const libraryTo = Object.values(props.cardsTo).filter(
+  const libraryFrom = Object.values(cardsFrom).filter((card) => card.q > 0);
+  const libraryTo = Object.values(cardsTo).filter(
     (card) => card.q > 0 && !containCard(libraryFrom, card)
   );
-  const libraryFromSide = Object.values(props.cardsFrom).filter(
-    (card) => card.q <= 0
+  const libraryFromSide = Object.values(cardsFrom).filter(
+    (card) => card.q <= 0 && !containCard(libraryTo, card)
   );
-  const libraryToSide = Object.values(props.cardsTo).filter(
+  const libraryToSide = Object.values(cardsTo).filter(
     (card) =>
       card.q <= 0 &&
       !containCard(libraryFrom, card) &&
       !containCard(libraryFromSide, card)
   );
 
-  const joinedLibrary = resultLibrarySort(
+  const library = resultLibrarySort(
     [...libraryFrom, ...libraryTo.map((card) => ({ q: 0, c: card.c }))],
     GROUPED_TYPE
   );
 
-  const joinedSideLibrary = resultLibrarySort(
+  const librarySide = resultLibrarySort(
     [...libraryFromSide, ...libraryToSide.map((card) => ({ q: 0, c: card.c }))],
     GROUPED_TYPE
   );
 
-  const libraryByType = getCardsGroupedBy(joinedLibrary, TYPE);
-  const librarySideByType = getCardsGroupedBy(joinedSideLibrary, TYPE);
+  const libraryByType = getCardsGroupedBy(library, TYPE);
+  const librarySideByType = getCardsGroupedBy(librarySide, TYPE);
 
   const hasBanned = libraryFrom.filter((card) => card.c[BANNED]).length > 0;
   const trifleTotal = countCards(
@@ -102,14 +104,11 @@ function DiffLibrary(props) {
     handleModalSideCardOpen,
     handleModalCardChange,
     handleModalCardClose,
-  } = useModalCardController(
-    joinedLibrary.map((c) => c.c),
-    joinedSideLibrary.map((c) => c.c)
-  );
+  } = useModalCardController(library, librarySide);
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && props.setShowFloatingButtons(true);
+    isMobile && setShowFloatingButtons(true);
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
@@ -134,12 +133,12 @@ function DiffLibrary(props) {
         handleModalCardOpen={handleModalCardOpen}
         libraryTotal={libraryTotal}
         showInfo={showInfo}
-        deckid={props.deckid}
+        deckid={deckid}
         cards={libraryByType[cardtype]}
-        cardsFrom={props.cardsFrom}
-        cardsTo={props.cardsTo}
-        isAuthor={props.isAuthor}
-        setShowFloatingButtons={props.setShowFloatingButtons}
+        cardsFrom={cardsFrom}
+        cardsTo={cardsTo}
+        isAuthor={isAuthor}
+        setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
   ));
@@ -153,12 +152,12 @@ function DiffLibrary(props) {
       />
       <DiffLibraryTable
         handleModalCardOpen={handleModalSideCardOpen}
-        deckid={props.deckid}
+        deckid={deckid}
         cards={librarySideByType[cardtype]}
-        cardsFrom={props.cardsFrom}
-        cardsTo={props.cardsTo}
-        isAuthor={props.isAuthor}
-        setShowFloatingButtons={props.setShowFloatingButtons}
+        cardsFrom={cardsFrom}
+        cardsTo={cardsTo}
+        isAuthor={isAuthor}
+        setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
   ));
@@ -169,14 +168,14 @@ function DiffLibrary(props) {
         <DeckLibraryHeader
           isMobile={isMobile}
           libraryTotal={libraryTotal}
-          inMissing={props.inMissing}
+          inMissing={inMissing}
           bloodTotal={bloodTotal}
           poolTotal={poolTotal}
           toogleShowInfo={toogleShowInfo}
           toogleShowAdd={toogleShowAdd}
           hasBanned={hasBanned}
-          inAdvSelect={props.inAdvSelect}
-          isAuthor={props.isAuthor}
+          inAdvSelect={inAdvSelect}
+          isAuthor={isAuthor}
         />
         {showInfo && (
           <div className="info-message ps-2">
@@ -191,8 +190,8 @@ function DiffLibrary(props) {
           (!isMobile ? (
             <DeckNewLibraryCard
               setShowAdd={setShowAdd}
-              cards={props.cardsFrom}
-              deckid={props.deckid}
+              cards={cardsFrom}
+              deckid={deckid}
             />
           ) : (
             <Modal
@@ -204,28 +203,28 @@ function DiffLibrary(props) {
                 className={isMobile ? 'pt-3 pb-1 ps-3 pe-2' : 'pt-3 pb-1 px-4'}
               >
                 <h5>Add Library Card</h5>
-                <Button variant="outline-secondary" onClick={props.handleClose}>
+                <Button variant="outline-secondary" onClick={handleClose}>
                   <X width="32" height="32" viewBox="0 0 16 16" />
                 </Button>
               </Modal.Header>
               <Modal.Body className="p-0">
                 <DeckNewLibraryCard
                   setShowAdd={setShowAdd}
-                  cards={props.cardsFrom}
-                  deckid={props.deckid}
+                  cards={cardsFrom}
+                  deckid={deckid}
                 />
               </Modal.Body>
             </Modal>
           ))}
       </div>
       {LibraryDeck}
-      {Object.keys(libraryFromSide).length > 0 && (
+      {Object.keys(librarySide).length > 0 && (
         <div className="deck-sidelibrary pt-2">
           <b>Side Library</b>
           {LibrarySideDeck}
         </div>
       )}
-      {isMobile && props.isAuthor && props.showFloatingButtons && (
+      {isMobile && isAuthor && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"
@@ -253,6 +252,6 @@ function DiffLibrary(props) {
       )}
     </>
   );
-}
+};
 
 export default DiffLibrary;

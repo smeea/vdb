@@ -83,10 +83,7 @@ const DeckLibrary = (props) => {
     handleModalSideCardOpen,
     handleModalCardChange,
     handleModalCardClose,
-  } = useModalCardController(
-    library.map((c) => c.c),
-    librarySide.map((c) => c.c)
-  );
+  } = useModalCardController(library, librarySide);
 
   const handleCloseModal = () => {
     handleModalCardClose();

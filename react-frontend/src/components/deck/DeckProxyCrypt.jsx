@@ -4,7 +4,7 @@ import { useApp } from 'context';
 import { countCards } from 'utils';
 import { useModalCardController, useKeyDisciplines } from 'hooks';
 
-function DeckProxyCrypt(props) {
+const DeckProxyCrypt = (props) => {
   const { cards, proxySelected, inAdvSelect, setShowFloatingButtons } = props;
   const { handleProxySelector, handleSetSelector, handleProxyCounter } = props;
   const { cryptDeckSort, changeTimer, isMobile } = useApp();
@@ -107,6 +107,6 @@ function DeckProxyCrypt(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckProxyCrypt;
