@@ -3,6 +3,7 @@
 - Change url to empty on last form changed to 'any'
 - Inventory bug for precon (also test for twd and shared)
 - Inventory missing to respect discipline filter
+- Test with increased threshold for keyDisciplines
 
 # FEATURES
 
@@ -41,5 +42,4 @@
 - remove Item UI from table into respective Item component.
 - move subComponents to subfolders and remove from main export.
 - refactor resultTrClass toggle
-- LOOK for 'CardIdx] = useS' for places that will use the useModalCardController
-- LOOK for places that will use the useKeyDisciplines
+- check InventoryLibrary to refactor

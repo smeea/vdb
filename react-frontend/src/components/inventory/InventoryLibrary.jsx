@@ -54,7 +54,14 @@ function InventoryLibrary(props) {
   const missingLibraryByDiscipline = {};
   const missingLibraryByDisciplineTotal = {};
 
-  ['All', 'None', ...disciplinesList, ...virtuesList].map((i) => {
+  const disciplinesExtendedList = [
+    ...disciplinesList,
+    'Flight',
+    'Maleficia',
+    'Striga',
+  ].sort();
+
+  ['All', 'None', ...disciplinesExtendedList, ...virtuesList].map((i) => {
     libraryByDiscipline[i] = {};
     libraryByDisciplineTotal[i] = 0;
     libraryByDisciplineUnique[i] = 0;
@@ -65,10 +72,10 @@ function InventoryLibrary(props) {
   if (props.compact) {
     Object.keys(props.cards).map((card) => {
       libraryByType['All'] = {
-        card: props.cards[card],
+        [card]: props.cards[card],
       };
       libraryByDiscipline['All'] = {
-        card: props.cards[card],
+        [card]: props.cards[card],
       };
     });
   } else {

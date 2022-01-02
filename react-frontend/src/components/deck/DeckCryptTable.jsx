@@ -35,6 +35,7 @@ const DeckCryptTable = (props) => {
     deckCardChange,
   } = useApp();
 
+  const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
   let resultTrClass;
   let deckInvType = null;
   if (inventoryMode && decks && props.deckid && decks[props.deckid]) {
@@ -194,7 +195,7 @@ const DeckCryptTable = (props) => {
           </td>
           {(!props.inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td className="disciplines" onClick={() => handleClick()}>
-              {props.disciplinesSet.length < 13 ? (
+              {props.disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
                 <DeckCryptDisciplines
                   value={card.c['Disciplines']}
                   disciplinesSet={props.disciplinesSet}
