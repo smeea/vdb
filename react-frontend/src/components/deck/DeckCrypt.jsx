@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import X from 'assets/images/icons/x.svg';
@@ -63,9 +63,6 @@ const DeckCrypt = (props) => {
   }, [changeTimer, deckid, cryptDeckSort]);
 
   // Modal Card Controller
-  const cryptCards = useMemo(() => sortedCards.map((card) => card.c));
-  const cryptSideCards = useMemo(() => sortedCardsSide.map((card) => card.c));
-
   const {
     currentModalCard,
     shouldShowModal,
@@ -73,7 +70,7 @@ const DeckCrypt = (props) => {
     handleModalSideCardOpen,
     handleModalCardChange,
     handleModalCardClose,
-  } = useModalCardController(cryptCards, cryptSideCards);
+  } = useModalCardController(sortedCards, sortedCardsSide);
 
   const handleCloseModal = () => {
     handleModalCardClose();
