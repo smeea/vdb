@@ -54,3 +54,5 @@ export { default as DeckRecommendationLibrary } from './DeckRecommendationLibrar
 export { default as DeckRecommendationLibraryTable } from './DeckRecommendationLibraryTable.jsx';
 export { default as DeckRecommendationModal } from './DeckRecommendationModal.jsx';
 export { default as DeckSelectorAndDisplay } from './DeckSelectorAndDisplay.jsx';
+export { default as DeckLibraryHeader } from './DeckLibraryHeader.jsx';
+export { default as DeckLibraryTypeDrawInfo } from './DeckLibraryTypeDrawInfo.jsx';

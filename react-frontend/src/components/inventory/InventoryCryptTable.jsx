@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import { FixedSizeList } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -17,54 +17,46 @@ import {
   ResultCryptModal,
   ConditionalOverlayTrigger,
 } from 'components';
+import { ASCII_NAME } from 'utils/constants';
+import { getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
+import { useModalCardController } from 'hooks';
 
-function InventoryCryptTable(props) {
+const InventoryCryptTable = (props) => {
+  const { cards, setShowFloatingButtons, placement, compact, withCompact } =
+    props;
   const { usedCryptCards, isMobile, isNarrow, isWide } = useApp();
-  const [modalCardIdx, setModalCardIdx] = useState(undefined);
 
-  const handleModalCardChange = (d) => {
-    const maxIdx = props.cards.length - 1;
+  // Modal Card Controller
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(cards);
 
-    if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx);
-    } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0);
-    } else {
-      setModalCardIdx(modalCardIdx + d);
-    }
+  const handleCloseModal = () => {
+    handleModalCardClose();
+    isMobile && setShowFloatingButtons(true);
   };
 
-  props.cards.sort((a, b) => {
-    if (a.c['ASCII Name'] < b.c['ASCII Name']) {
-      return -1;
-    }
-    if (a.c['ASCII Name'] > b.c['ASCII Name']) {
-      return 1;
-    }
-  });
+  cards.sort((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
 
-  const cardRows = props.cards.map((card, index) => {
+  const cardRows = cards.map((cardInfo, index) => {
     const handleClick = () => {
-      setModalCardIdx(index);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(index);
+      isMobile && setShowFloatingButtons(false);
     };
+
+    const { c: card, q: qty } = cardInfo;
 
     let softUsedMax = 0;
     let hardUsedTotal = 0;
 
-    if (usedCryptCards && usedCryptCards.soft[card.c['Id']]) {
-      Object.keys(usedCryptCards.soft[card.c['Id']]).map((id) => {
-        if (softUsedMax < usedCryptCards.soft[card.c['Id']][id]) {
-          softUsedMax = usedCryptCards.soft[card.c['Id']][id];
-        }
-      });
-    }
-
-    if (usedCryptCards && usedCryptCards.hard[card.c['Id']]) {
-      Object.keys(usedCryptCards.hard[card.c['Id']]).map((id) => {
-        hardUsedTotal += usedCryptCards.hard[card.c['Id']][id];
-      });
+    if (usedCryptCards) {
+      softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
+      hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
     }
 
     return (
@@ -72,20 +64,20 @@ function InventoryCryptTable(props) {
         <div className="d-flex align-items-center justify-content-center quantity px-1">
           {isMobile ? (
             <InventoryCardQuantity
-              cardid={card.c['Id']}
-              q={card.q}
+              cardid={card.Id}
+              q={qty}
               softUsedMax={softUsedMax}
               hardUsedTotal={hardUsedTotal}
             />
           ) : (
             <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<UsedPopover cardid={card.c.Id} />}
+              placement={placement ? placement : 'right'}
+              overlay={<UsedPopover cardid={card.Id} />}
             >
               <div className="w-100">
                 <InventoryCardQuantity
-                  cardid={card.c['Id']}
-                  q={card.q}
+                  cardid={card.Id}
+                  q={qty}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
                 />
@@ -115,23 +107,23 @@ function InventoryCryptTable(props) {
             </>
           ) : (
             <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
-              overlay={<UsedPopover cardid={card.c.Id} />}
+              placement={placement ? placement : 'right'}
+              overlay={<UsedPopover cardid={card.Id} />}
             >
               <div
                 className={`d-flex justify-content-center w-100 ps-1 ${
-                  card.q == softUsedMax + hardUsedTotal
+                  qty == softUsedMax + hardUsedTotal
                     ? 'gray'
-                    : card.q >= softUsedMax + hardUsedTotal
+                    : qty >= softUsedMax + hardUsedTotal
                     ? 'green'
                     : 'red'
                 }`}
               >
-                {card.q === softUsedMax + hardUsedTotal
+                {qty === softUsedMax + hardUsedTotal
                   ? '='
-                  : card.q > softUsedMax + hardUsedTotal
-                  ? `+${card.q - softUsedMax - hardUsedTotal}`
-                  : card.q - softUsedMax - hardUsedTotal}
+                  : qty > softUsedMax + hardUsedTotal
+                  ? `+${qty - softUsedMax - hardUsedTotal}`
+                  : qty - softUsedMax - hardUsedTotal}
               </div>
             </OverlayTrigger>
           )}
@@ -140,26 +132,26 @@ function InventoryCryptTable(props) {
           className="d-flex align-items-center justify-content-center capacity"
           onClick={() => handleClick()}
         >
-          <ResultCryptCapacity value={card.c['Capacity']} />
+          <ResultCryptCapacity value={card.Capacity} />
         </div>
         {!isMobile && !isNarrow && (
           <div
             className="d-flex align-items-center justify-content-left disciplines"
             onClick={() => handleClick()}
           >
-            <ResultCryptDisciplines value={card.c['Disciplines']} />
+            <ResultCryptDisciplines value={card.Disciplines} />
           </div>
         )}
         <ConditionalOverlayTrigger
-          placement={props.placement}
-          overlay={<CardPopover card={card.c} />}
+          placement={placement}
+          overlay={<CardPopover card={card} />}
           disabled={isMobile}
         >
           <div
             className="d-flex align-items-center justify-content-start name"
             onClick={() => handleClick()}
           >
-            <ResultCryptName card={card.c} />
+            <ResultCryptName card={card} />
           </div>
         </ConditionalOverlayTrigger>
 
@@ -169,31 +161,31 @@ function InventoryCryptTable(props) {
               className="d-flex align-items-center justify-content-center title"
               onClick={() => handleClick()}
             >
-              <ResultCryptTitle value={card.c['Title']} />
+              <ResultCryptTitle value={card.Title} />
             </div>
             <div
               className="d-flex align-items-center justify-content-center clan"
               onClick={() => handleClick()}
             >
-              <ResultClanImage value={card.c['Clan']} />
+              <ResultClanImage value={card.Clan} />
             </div>
             <div
               className="d-flex align-items-center justify-content-center group"
               onClick={() => handleClick()}
             >
-              <ResultCryptGroup value={card.c['Group']} />
+              <ResultCryptGroup value={card.Group} />
             </div>
           </>
         ) : (
           <div className="clan-group" onClick={() => handleClick()}>
             <div className="d-flex justify-content-center">
-              <ResultClanImage value={card.c['Clan']} />
+              <ResultClanImage value={card.Clan} />
             </div>
             <div className="d-flex small justify-content-end">
               <div className="bold blue">
-                <ResultCryptTitle value={card.c['Title']} />
+                <ResultCryptTitle value={card.Title} />
               </div>
-              <ResultCryptGroup value={card.c['Group']} />
+              <ResultCryptGroup value={card.Group} />
             </div>
           </div>
         )}
@@ -212,14 +204,14 @@ function InventoryCryptTable(props) {
 
   return (
     <>
-      {props.compact ? (
+      {compact ? (
         <div className="d-flex inventory-crypt-table bordered result-odd compact">
           {cardRows[0]}
         </div>
       ) : (
         <div
-          className={`inventory-container${
-            props.withCompact ? '-with-compact' : ''
+          className={`inventory-container-crypt${
+            withCompact ? '-with-compact' : ''
           }`}
         >
           <AutoSizer>
@@ -237,19 +229,16 @@ function InventoryCryptTable(props) {
           </AutoSizer>
         </div>
       )}
-      {modalCardIdx !== undefined && (
+      {shouldShowModal && (
         <ResultCryptModal
-          card={props.cards[modalCardIdx].c}
+          card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={() => {
-            setModalCardIdx(undefined);
-            isMobile && props.setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseModal}
           forceInventoryMode={true}
         />
       )}
     </>
   );
-}
+};
 
 export default InventoryCryptTable;

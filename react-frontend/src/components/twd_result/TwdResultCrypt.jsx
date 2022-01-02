@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   CardPopover,
   UsedPopover,
@@ -8,58 +8,36 @@ import {
   ResultCryptModal,
   ConditionalOverlayTrigger,
 } from 'components';
+import { ANY } from 'utils/constants';
+import { countCards, getHardTotal } from 'utils';
 import { useApp } from 'context';
 
+import { useModalCardController } from 'hooks';
+
 function TwdResultCrypt(props) {
+  const { crypt, setShowFloatingButtons, placement } = props;
   const { inventoryMode, inventoryCrypt, usedCryptCards, isMobile } = useApp();
 
   let resultTrClass = 'result-even';
-  const [modalCardIdx, setModalCardIdx] = useState(undefined);
 
-  const handleModalCardChange = (d) => {
-    const maxIdx = sortedCards.length - 1;
+  // Sort cards
+  const SortByQuantity = (a, b) => b.q - a.q;
+  const SortByCapacity = (a, b) => b.c.Capacity - a.c.Capacity;
 
-    if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx);
-    } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0);
-    } else {
-      setModalCardIdx(modalCardIdx + d);
-    }
-  };
+  const sortedCards = Object.values(crypt)
+    .sort(SortByQuantity)
+    .sort(SortByCapacity);
 
-  let cryptGroupMin;
-  let cryptGroupMax;
-  let hasBanned = false;
+  const cryptTotal = countCards(sortedCards);
+  const hasBanned = sortedCards.filter((card) => card.c.Banned).length > 0;
 
-  Object.keys(props.crypt).map((card) => {
-    if (props.crypt[card].c['Banned']) {
-      hasBanned = true;
-    }
-    if (props.crypt[card].c['Group'] == 'ANY') {
-      return;
-    }
-    if (
-      props.crypt[card].c['Group'] < cryptGroupMin ||
-      cryptGroupMin == undefined
-    ) {
-      cryptGroupMin = props.crypt[card].c['Group'];
-    }
+  const cryptGroupMin = sortedCards
+    .filter((card) => card.c.Group !== ANY)
+    .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc));
 
-    if (
-      props.crypt[card].c['Group'] > cryptGroupMax ||
-      cryptGroupMax == undefined
-    ) {
-      cryptGroupMax = props.crypt[card].c['Group'];
-    }
-  });
-
-  let cryptTotal = 0;
-  for (const card in props.crypt) {
-    if (card) {
-      cryptTotal += props.crypt[card].q;
-    }
-  }
+  const cryptGroupMax = sortedCards
+    .filter((card) => card.c.Group !== ANY)
+    .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
 
   let cryptGroups;
   if (cryptGroupMax - cryptGroupMin == 1) {
@@ -70,23 +48,24 @@ function TwdResultCrypt(props) {
     cryptGroups = 'ERROR IN GROUPS';
   }
 
-  const SortByQuantityCapacity = (a, b) => {
-    if (a.q > b.q) {
-      return -1;
-    } else if (a.q == b.q) {
-      if (a.c['Capacity'] > b.c['Capacity']) return -1;
-      else return 1;
-    } else {
-      return 1;
-    }
-  };
+  // Modal Card Controller
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(sortedCards);
 
-  const sortedCards = Object.values(props.crypt).sort(SortByQuantityCapacity);
+  const handleCloseModal = () => {
+    handleModalCardClose();
+    isMobile && setShowFloatingButtons(true);
+  };
 
   const cardLines = sortedCards.map((card, index) => {
     const handleClick = () => {
-      setModalCardIdx(index);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(index);
+      isMobile && setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-even') {
@@ -96,27 +75,16 @@ function TwdResultCrypt(props) {
     }
 
     let inInventory = 0;
-    let softUsedMax = 0;
+    // let softUsedMax = 0;
     let hardUsedTotal = 0;
 
     if (inventoryMode) {
-      if (inventoryCrypt[card.c['Id']]) {
-        inInventory = inventoryCrypt[card.c['Id']].q;
+      if (inventoryCrypt[card.Id]) {
+        inInventory = inventoryCrypt[card.Id].q;
       }
 
-      if (usedCryptCards && usedCryptCards.soft[card.c['Id']]) {
-        Object.keys(usedCryptCards.soft[card.c['Id']]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[card.c['Id']][id]) {
-            softUsedMax = usedCryptCards.soft[card.c['Id']][id];
-          }
-        });
-      }
-
-      if (usedCryptCards && usedCryptCards.hard[card.c['Id']]) {
-        Object.keys(usedCryptCards.hard[card.c['Id']]).map((id) => {
-          hardUsedTotal += usedCryptCards.hard[card.c['Id']][id];
-        });
-      }
+      // softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
+      hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
     }
 
     return (
@@ -148,7 +116,7 @@ function TwdResultCrypt(props) {
         </td>
 
         <ConditionalOverlayTrigger
-          placement={props.placement}
+          placement={placement}
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
         >
@@ -175,14 +143,11 @@ function TwdResultCrypt(props) {
       <table className="twd-crypt-table">
         <tbody>{cardLines}</tbody>
       </table>
-      {modalCardIdx !== undefined && (
+      {shouldShowModal && (
         <ResultCryptModal
-          card={sortedCards[modalCardIdx].c}
+          card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={() => {
-            setModalCardIdx(undefined);
-            isMobile && props.setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseModal}
         />
       )}
     </>

@@ -1,5 +1,9 @@
 import React from 'react';
-import { ResultClanImage, ResultLibraryType } from 'components';
+import {
+  ResultDisciplineImage,
+  ResultClanImage,
+  ResultLibraryType,
+} from 'components';
 import Select from 'react-select';
 
 function InventoryFilterForm(props) {
@@ -15,15 +19,36 @@ function InventoryFilterForm(props) {
               <span className="margin-full">
                 {i !== 'All' && <ResultClanImage value={i} />}
               </span>
-              <div className="d-inline ps-2">{i}</div>
+              <div className="d-inline ps-2">
+                {i === 'All' ? 'All Clans' : i}
+              </div>
             </div>
           )}
-          {props.target === 'library' && (
+          {props.target === 'type' && (
             <div className="pe-1">
               {i === 'All' ? (
-                <div className="px-1">All</div>
+                <div className="px-1">All Types</div>
               ) : (
                 <ResultLibraryType cardtype={i} total={0} />
+              )}
+            </div>
+          )}
+          {props.target === 'discipline' && (
+            <div className="pe-1">
+              {i === 'All' ? (
+                <div className="px-1">All Disciplines</div>
+              ) : (
+                <>
+                  <span className="margin-full">
+                    {i !== 'None' && (
+                      <ResultDisciplineImage
+                        className="type-image-results"
+                        value={i}
+                      />
+                    )}
+                  </span>
+                  {i}
+                </>
               )}
             </div>
           )}

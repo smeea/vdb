@@ -1,26 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { DeckDrawModal } from 'components';
+import { POOL_COST, BLOOD_COST } from 'utils/constants';
+import { countCards, getCardsArray } from 'utils';
+import { useKeyDisciplines } from 'hooks';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function DeckDraw(props) {
-  const cryptArr = [];
-  let cryptTotal = 0;
-  Object.keys(props.deck.crypt).map((card) => {
-    cryptTotal += props.deck.crypt[card].q;
-    for (let i = 0; i < props.deck.crypt[card].q; i++) {
-      cryptArr.push(props.deck.crypt[card].c);
-    }
-  });
-
-  const libraryArr = [];
-  Object.keys(props.deck.library).map((card) => {
-    for (let i = 0; i < props.deck.library[card].q; i++) {
-      libraryArr.push(props.deck.library[card].c);
-    }
-  });
+const DeckDraw = (props) => {
+  const cryptTotal = countCards(Object.values(props.deck.crypt));
+  const cryptArr = getCardsArray(props.deck.crypt);
+  const libraryArr = getCardsArray(props.deck.library);
 
   const drawCards = (cards, quantity) => {
     const restArray = [...cards];
@@ -46,54 +37,8 @@ function DeckDraw(props) {
   const [burnedLibrary, setBurnedLibrary] = useState([]);
   const [initialTransfers, setInitialTransfers] = useState(undefined);
 
-  const disciplinesDict = {};
-  for (const card of Object.keys(props.deck.crypt)) {
-    for (const d of Object.keys(props.deck.crypt[card].c['Disciplines'])) {
-      if (disciplinesDict[d] === undefined) {
-        disciplinesDict[d] = 0;
-        disciplinesDict[d] += props.deck.crypt[card].q;
-      } else {
-        disciplinesDict[d] += props.deck.crypt[card].q;
-      }
-    }
-  }
-
-  const disciplinesForSort = [];
-  Object.keys(disciplinesDict).map((key) => {
-    disciplinesForSort.push([key, disciplinesDict[key]]);
-  });
-
-  const disciplinesSet = disciplinesForSort
-    .sort((a, b) => b[1] - a[1])
-    .map((i) => {
-      return i[0];
-    });
-
-  let keyDisciplines = 0;
-  const REQUIRED_FRACTION = 0.5;
-  disciplinesForSort
-    .sort((a, b) => b[1] - a[1])
-    .map((i) => {
-      if (i[1] >= cryptTotal * REQUIRED_FRACTION) {
-        keyDisciplines += 1;
-      }
-    });
-
-  const nonKeyDisciplinesList = [];
-  for (let i = keyDisciplines; i < disciplinesSet.length; i++) {
-    nonKeyDisciplinesList.push(disciplinesSet[i]);
-  }
-
-  let nonKeyDisciplines = 0;
-  Object.keys(props.deck.crypt).map((card) => {
-    let counter = 0;
-    Object.keys(props.deck.crypt[card].c['Disciplines']).map((d) => {
-      if (nonKeyDisciplinesList.includes(d)) {
-        counter += 1;
-      }
-    });
-    if (nonKeyDisciplines < counter) nonKeyDisciplines = counter;
-  });
+  const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
+    useKeyDisciplines(props.deck.crypt, cryptTotal);
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
@@ -169,18 +114,18 @@ function DeckDraw(props) {
 
   let burnedCapacityTotal = 0;
   burnedCrypt.map((card) => {
-    burnedCapacityTotal += parseInt(card['Capacity']);
+    burnedCapacityTotal += parseInt(card.Capacity);
   });
 
   let burnedPoolTotal = 0;
   let burnedBloodTotal = 0;
 
   burnedLibrary.map((card) => {
-    if (card['Blood Cost'] && !isNaN(card['Blood Cost'])) {
-      burnedBloodTotal += parseInt(card['Blood Cost']);
+    if (card[POOL_COST] && !isNaN(card[POOL_COST])) {
+      burnedBloodTotal += parseInt(card[POOL_COST]);
     }
-    if (card['Pool Cost'] && !isNaN(card['Pool Cost'])) {
-      burnedPoolTotal += parseInt(card['Pool Cost']);
+    if (card[BLOOD_COST] && !isNaN(card[BLOOD_COST])) {
+      burnedPoolTotal += parseInt(card[BLOOD_COST]);
     }
   });
 
@@ -255,6 +200,6 @@ function DeckDraw(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckDraw;

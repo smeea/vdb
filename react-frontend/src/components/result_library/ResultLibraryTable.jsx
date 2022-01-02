@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -14,9 +14,14 @@ import {
   ResultLibraryTypeImage,
   ConditionalOverlayTrigger,
 } from 'components';
+import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
+import { getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
+import { useModalCardController } from 'hooks';
 
-function ResultLibraryTable(props) {
+const ResultLibraryTable = (props) => {
+  const { resultCards, library, placement, setShowFloatingButtons } = props;
+
   const {
     activeDeck,
     inventoryLibrary,
@@ -28,26 +33,25 @@ function ResultLibraryTable(props) {
     isDesktop,
   } = useApp();
 
-  const [modalCardIdx, setModalCardIdx] = useState(undefined);
-
   let resultTrClass;
 
-  const handleModalCardChange = (d) => {
-    const maxIdx = props.resultCards.length - 1;
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(resultCards);
 
-    if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx);
-    } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0);
-    } else {
-      setModalCardIdx(modalCardIdx + d);
-    }
+  const handleCloseModal = () => {
+    handleModalCardClose();
+    isMobile && setShowFloatingButtons(true);
   };
 
-  const cardRows = props.resultCards.map((card, index) => {
+  const cardRows = resultCards.map((card, index) => {
     const handleClick = () => {
-      setModalCardIdx(index);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(index);
+      isMobile && setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-odd') {
@@ -56,45 +60,29 @@ function ResultLibraryTable(props) {
       resultTrClass = 'result-odd';
     }
 
-    const inDeck =
-      (props.library &&
-        props.library[card['Id']] &&
-        props.library[card['Id']].q) ||
-      0;
+    const inDeck = (library && library[card.Id] && library[card.Id].q) || 0;
 
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-
     let inInventory = 0;
 
     if (inventoryMode) {
-      if (inventoryLibrary[card['Id']]) {
-        inInventory = inventoryLibrary[card['Id']].q;
+      if (inventoryLibrary[card.Id]) {
+        inInventory = inventoryLibrary[card.Id].q;
       }
 
-      if (usedLibraryCards.soft[card['Id']]) {
-        Object.keys(usedLibraryCards.soft[card['Id']]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card['Id']][id]) {
-            softUsedMax = usedLibraryCards.soft[card['Id']][id];
-          }
-        });
-      }
-
-      if (usedLibraryCards.hard[card['Id']]) {
-        Object.keys(usedLibraryCards.hard[card['Id']]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card['Id']][id];
-        });
-      }
+      softUsedMax = getSoftMax(usedLibraryCards.soft[card.Id]);
+      hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.Id]);
     }
 
     return (
-      <React.Fragment key={card['Id']}>
+      <React.Fragment key={card.Id}>
         <tr className={resultTrClass}>
           {activeDeck.deckid && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
-                cardid={card['Id']}
-                deckid={props.activeDeck.deckid}
+                cardid={card.Id}
+                deckid={activeDeck.deckid}
                 card={card}
                 inDeck={inDeck}
               />
@@ -103,7 +91,7 @@ function ResultLibraryTable(props) {
           {inventoryMode && (
             <OverlayTrigger
               placement={isDesktop ? 'left' : 'right'}
-              overlay={<UsedPopover cardid={card['Id']} />}
+              overlay={<UsedPopover cardid={card.Id} />}
             >
               <td className="used">
                 {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
@@ -133,24 +121,24 @@ function ResultLibraryTable(props) {
             </OverlayTrigger>
           )}
           <td
-            className={card['Blood Cost'] ? 'cost blood px-1' : 'cost px-1'}
+            className={card[BLOOD_COST] ? 'cost blood px-1' : 'cost px-1'}
             onClick={() => handleClick()}
           >
             <ResultLibraryCost
-              valueBlood={card['Blood Cost']}
-              valuePool={card['Pool Cost']}
+              valueBlood={card[BLOOD_COST]}
+              valuePool={card[POOL_COST]}
             />
           </td>
           <td className="type px-1" onClick={() => handleClick()}>
-            <ResultLibraryTypeImage value={card['Type']} />
+            <ResultLibraryTypeImage value={card.Type} />
           </td>
           <td className="disciplines px-1" onClick={() => handleClick()}>
-            <ResultLibraryClan value={card['Clan']} />
-            {card['Discipline'] && card['Clan'] && '+'}
-            <ResultLibraryDisciplines value={card['Discipline']} />
+            <ResultLibraryClan value={card.Clan} />
+            {card.Discipline && card.Clan && '+'}
+            <ResultLibraryDisciplines value={card.Discipline} />
           </td>
           <ConditionalOverlayTrigger
-            placement={props.placement}
+            placement={placement}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >
@@ -159,8 +147,8 @@ function ResultLibraryTable(props) {
             </td>
           </ConditionalOverlayTrigger>
           <td className="burn px-1" onClick={() => handleClick()}>
-            <ResultLibraryBurn value={card['Burn Option']} />
-            <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />
+            <ResultLibraryBurn value={card[BURN_OPTION]} />
+            <ResultLibraryTrifle value={nativeLibrary[card.Id][CARD_TEXT]} />
           </td>
         </tr>
       </React.Fragment>
@@ -172,18 +160,15 @@ function ResultLibraryTable(props) {
       <table className="search-library-table">
         <tbody>{cardRows}</tbody>
       </table>
-      {modalCardIdx !== undefined && (
+      {shouldShowModal && (
         <ResultLibraryModal
-          card={props.resultCards[modalCardIdx]}
+          card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={() => {
-            setModalCardIdx(undefined);
-            isMobile && props.setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseModal}
         />
       )}
     </>
   );
-}
+};
 
 export default ResultLibraryTable;

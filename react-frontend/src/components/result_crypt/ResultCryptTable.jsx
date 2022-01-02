@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { OverlayTrigger } from 'react-bootstrap';
 import {
   CardPopover,
@@ -13,9 +13,14 @@ import {
   ResultCryptModal,
   ConditionalOverlayTrigger,
 } from 'components';
+import { getSoftMax, getHardTotal } from 'utils';
 import { useApp } from 'context';
+import { useModalCardController } from 'hooks';
 
-function ResultCryptTable(props) {
+const ResultCryptTable = (props) => {
+  const { resultCards, notAuthor, placement, className, crypt } = props;
+  const { setShowFloatingButtons } = props;
+
   const {
     activeDeck,
     inventoryCrypt,
@@ -27,33 +32,33 @@ function ResultCryptTable(props) {
     isWide,
   } = useApp();
 
-  const [modalCardIdx, setModalCardIdx] = useState(undefined);
-
   let resultTrClass;
   let maxDisciplines = 0;
-  props.resultCards.map((card) => {
+  resultCards.map((card) => {
     const n = Object.keys(card['Disciplines']).length;
     if (maxDisciplines < n) {
       maxDisciplines = n;
     }
   });
 
-  const handleModalCardChange = (d) => {
-    const maxIdx = props.resultCards.length - 1;
+  // Modal Card Controller
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(resultCards);
 
-    if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx);
-    } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0);
-    } else {
-      setModalCardIdx(modalCardIdx + d);
-    }
+  const handleCloseModal = () => {
+    handleModalCardClose();
+    isMobile && setShowFloatingButtons(true);
   };
 
-  const cardRows = props.resultCards.map((card, index) => {
+  const cardRows = resultCards.map((card, index) => {
     const handleClick = () => {
-      setModalCardIdx(index);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(index);
+      isMobile && setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-odd') {
@@ -62,42 +67,30 @@ function ResultCryptTable(props) {
       resultTrClass = 'result-odd';
     }
 
-    const inDeck =
-      (props.crypt && props.crypt[card['Id']] && props.crypt[card['Id']].q) ||
-      0;
+    const inDeck = (crypt && crypt[card.Id] && crypt[card.Id].q) || 0;
 
     let softUsedMax = 0;
     let hardUsedTotal = 0;
 
     let inInventory = 0;
+
     if (inventoryMode) {
-      if (inventoryCrypt[card['Id']]) {
-        inInventory = inventoryCrypt[card['Id']].q;
+      if (inventoryCrypt[card.Id]) {
+        inInventory = inventoryCrypt[card.Id].q;
       }
 
-      if (usedCryptCards.soft[card['Id']]) {
-        Object.keys(usedCryptCards.soft[card['Id']]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[card['Id']][id]) {
-            softUsedMax = usedCryptCards.soft[card['Id']][id];
-          }
-        });
-      }
-
-      if (usedCryptCards.hard[card['Id']]) {
-        Object.keys(usedCryptCards.hard[card['Id']]).map((id) => {
-          hardUsedTotal += usedCryptCards.hard[card['Id']][id];
-        });
-      }
+      softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
+      hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
     }
 
     return (
       <React.Fragment key={card['Id']}>
         <tr className={resultTrClass}>
-          {!props.notAuthor && activeDeck.deckid && addMode && (
+          {!notAuthor && activeDeck.deckid && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card['Id']}
-                deckid={props.activeDeck.deckid}
+                deckid={activeDeck.deckid}
                 card={card}
                 inDeck={inDeck}
               />
@@ -148,7 +141,7 @@ function ResultCryptTable(props) {
             />
           </td>
           <ConditionalOverlayTrigger
-            placement={props.placement}
+            placement={placement}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >
@@ -190,21 +183,18 @@ function ResultCryptTable(props) {
 
   return (
     <>
-      <table className={props.className}>
+      <table className={className}>
         <tbody>{cardRows}</tbody>
       </table>
-      {modalCardIdx !== undefined && (
+      {shouldShowModal && (
         <ResultCryptModal
-          card={props.resultCards[modalCardIdx]}
+          card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={() => {
-            setModalCardIdx(undefined);
-            isMobile && props.setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseModal}
         />
       )}
     </>
   );
-}
+};
 
 export default ResultCryptTable;
