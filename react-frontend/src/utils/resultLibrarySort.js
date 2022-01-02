@@ -1,3 +1,6 @@
+import { cardtypeSorted } from 'utils/constants';
+import { getCardProperty } from 'utils';
+
 function resultLibrarySort(cards, sortMethod) {
   const byName = (a, b) => {
     if (a['ASCII Name'] < b['ASCII Name']) {
@@ -17,6 +20,13 @@ function resultLibrarySort(cards, sortMethod) {
       return 1;
     }
     return 0;
+  };
+
+  const byGroupedType = (a, b) => {
+    return (
+      cardtypeSorted.indexOf(getCardProperty(a, 'Type')) -
+      cardtypeSorted.indexOf(getCardProperty(b, 'Type'))
+    );
   };
 
   const byBloodCost = (a, b) => {
@@ -73,6 +83,8 @@ function resultLibrarySort(cards, sortMethod) {
         return cards.sort(byName).sort(byType).sort(byDiscipline).sort(byClan);
       case 'Type':
         return cards.sort(byName).sort(byDiscipline).sort(byClan).sort(byType);
+      case 'GroupedType':
+        return cards.sort(byName).sort(byGroupedType);
       case 'Cost - Min to Max':
         return cards
           .sort(byName)
