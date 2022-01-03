@@ -8,10 +8,10 @@ function ResultLibraryTotal(props) {
   let total = 0;
 
   libraryResults.map((card, index) => {
-    if (byTypes[card['Type']]) {
-      byTypes[card['Type']] += 1;
+    if (byTypes[card.Type]) {
+      byTypes[card.Type] += 1;
     } else {
-      byTypes[card['Type']] = 1;
+      byTypes[card.Type] = 1;
     }
     total += 1;
   });

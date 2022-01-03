@@ -11,28 +11,9 @@ import {
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
 } from 'components';
-import {
-  countCards,
-  countTotalCost,
-  isTriffle,
-  resultLibrarySort,
-  getTotalCardsGroupedBy,
-  getCardsGroupedBy,
-  containCard,
-} from 'utils';
-import {
-  GROUPED_TYPE,
-  POOL_COST,
-  BLOOD_COST,
-  BANNED,
-  TYPE,
-  DISCIPLINE,
-  ANY,
-  MASTER,
-  CLAN,
-} from 'utils/constants';
+import { MASTER } from 'utils/constants';
 import { useApp } from 'context';
-import { useModalCardController } from 'hooks';
+import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DiffLibrary = (props) => {
   const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
@@ -47,54 +28,19 @@ const DiffLibrary = (props) => {
   const toogleShowAdd = () => setShowAdd(!showAdd);
   const [modalDraw, setModalDraw] = useState(undefined);
 
-  const libraryFrom = Object.values(cardsFrom).filter((card) => card.q > 0);
-  const libraryTo = Object.values(cardsTo).filter(
-    (card) => card.q > 0 && !containCard(libraryFrom, card)
-  );
-  const libraryFromSide = Object.values(cardsFrom).filter(
-    (card) => card.q <= 0 && !containCard(libraryTo, card)
-  );
-  const libraryToSide = Object.values(cardsTo).filter(
-    (card) =>
-      card.q <= 0 &&
-      !containCard(libraryFrom, card) &&
-      !containCard(libraryFromSide, card)
-  );
-
-  const library = resultLibrarySort(
-    [...libraryFrom, ...libraryTo.map((card) => ({ q: 0, c: card.c }))],
-    GROUPED_TYPE
-  );
-
-  const librarySide = resultLibrarySort(
-    [...libraryFromSide, ...libraryToSide.map((card) => ({ q: 0, c: card.c }))],
-    GROUPED_TYPE
-  );
-
-  const libraryByType = getCardsGroupedBy(library, TYPE);
-  const librarySideByType = getCardsGroupedBy(librarySide, TYPE);
-
-  const hasBanned = libraryFrom.filter((card) => card.c[BANNED]).length > 0;
-  const trifleTotal = countCards(
-    libraryFrom.filter((card) => isTriffle(card.c, nativeLibrary))
-  );
-  const libraryTotal = countCards(libraryFrom);
-  const poolTotal = countTotalCost(libraryFrom, POOL_COST);
-  const bloodTotal = countTotalCost(libraryFrom, BLOOD_COST);
-  const libraryByTypeTotal = getTotalCardsGroupedBy(libraryFrom, TYPE);
-  const libraryByDisciplinesTotal = getTotalCardsGroupedBy(
-    libraryFrom.filter((card) => card.c[DISCIPLINE]),
-    DISCIPLINE
-  );
-  const libraryByClansTotal = getTotalCardsGroupedBy(
-    libraryFrom.filter((card) => card.c[CLAN] && card.c[TYPE] !== MASTER),
-    CLAN
-  );
-  libraryByDisciplinesTotal[ANY] = countCards(
-    libraryFrom.filter(
-      (card) => !card.c[CLAN] && !card.c[DISCIPLINE] && card.c[TYPE] !== MASTER
-    )
-  );
+  const {
+    library,
+    librarySide,
+    libraryByType,
+    librarySideByType,
+    hasBanned,
+    trifleTotal,
+    libraryTotal,
+    poolTotal,
+    bloodTotal,
+    libraryByTypeTotal,
+    libraryByClansTotal,
+  } = useDeckLibrary(cardsFrom, nativeLibrary, cardsTo);
 
   // Modal Card Controller
   const {

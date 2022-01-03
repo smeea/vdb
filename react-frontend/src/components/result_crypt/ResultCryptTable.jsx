@@ -35,7 +35,7 @@ const ResultCryptTable = (props) => {
   let resultTrClass;
   let maxDisciplines = 0;
   resultCards.map((card) => {
-    const n = Object.keys(card['Disciplines']).length;
+    const n = Object.keys(card.Disciplines).length;
     if (maxDisciplines < n) {
       maxDisciplines = n;
     }
@@ -84,12 +84,12 @@ const ResultCryptTable = (props) => {
     }
 
     return (
-      <React.Fragment key={card['Id']}>
+      <React.Fragment key={card.Id}>
         <tr className={resultTrClass}>
           {!notAuthor && activeDeck.deckid && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
-                cardid={card['Id']}
+                cardid={card.Id}
                 deckid={activeDeck.deckid}
                 card={card}
                 inDeck={inDeck}
@@ -99,7 +99,7 @@ const ResultCryptTable = (props) => {
           {inventoryMode && (
             <OverlayTrigger
               placement={isDesktop ? 'left' : 'right'}
-              overlay={<UsedPopover cardid={card['Id']} />}
+              overlay={<UsedPopover cardid={card.Id} />}
             >
               <td className="used">
                 {(inInventory > 0 || softUsedMax + hardUsedTotal > 0) && (
@@ -132,12 +132,12 @@ const ResultCryptTable = (props) => {
             className={isMobile ? 'capacity px-1' : 'capacity px-2'}
             onClick={() => handleClick()}
           >
-            <ResultCryptCapacity value={card['Capacity']} />
+            <ResultCryptCapacity value={card.Capacity} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
             <ResultCryptDisciplines
               maxDisciplines={maxDisciplines}
-              value={card['Disciplines']}
+              value={card.Disciplines}
             />
           </td>
           <ConditionalOverlayTrigger
@@ -152,26 +152,26 @@ const ResultCryptTable = (props) => {
           {isWide ? (
             <>
               <td className="title pe-2" onClick={() => handleClick()}>
-                <ResultCryptTitle value={card['Title']} />
+                <ResultCryptTitle value={card.Title} />
               </td>
               <td className="clan" onClick={() => handleClick()}>
-                <ResultClanImage value={card['Clan']} />
+                <ResultClanImage value={card.Clan} />
               </td>
               <td className="group" onClick={() => handleClick()}>
-                <ResultCryptGroup value={card['Group']} />
+                <ResultCryptGroup value={card.Group} />
               </td>
             </>
           ) : (
             <>
               <td className="clan-group" onClick={() => handleClick()}>
                 <div>
-                  <ResultClanImage value={card['Clan']} />
+                  <ResultClanImage value={card.Clan} />
                 </div>
                 <div className="d-flex small justify-content-end">
                   <div className="bold blue">
-                    <ResultCryptTitle value={card['Title']} />
+                    <ResultCryptTitle value={card.Title} />
                   </div>
-                  <ResultCryptGroup value={card['Group']} />
+                  <ResultCryptGroup value={card.Group} />
                 </div>
               </td>
             </>

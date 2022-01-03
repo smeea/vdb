@@ -18,7 +18,7 @@ import { useModalCardController, useKeyDisciplines } from 'hooks';
 const DeckCrypt = (props) => {
   const { cards, inAdvSelect, setShowFloatingButtons } = props;
   const { inMissing, deckid, isAuthor, inSearch } = props;
-  const { cryptDeckSort, changeTimer, isMobile } = useApp();
+  const { cryptDeckSort, forcedUpdate, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -60,7 +60,7 @@ const DeckCrypt = (props) => {
         deckCryptSort(Object.values(cryptSide), cryptDeckSort)
       );
     }
-  }, [changeTimer, deckid, cryptDeckSort]);
+  }, [forcedUpdate, deckid, cryptDeckSort]);
 
   // Modal Card Controller
   const {

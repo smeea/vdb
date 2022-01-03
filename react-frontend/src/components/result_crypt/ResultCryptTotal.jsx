@@ -9,15 +9,15 @@ function ResultCryptTotal(props) {
   let total = 0;
 
   cryptResults.map((card) => {
-    if (byGroups[card['Group']]) {
-      byGroups[card['Group']] += 1;
+    if (byGroups[card.Group]) {
+      byGroups[card.Group] += 1;
     } else {
-      byGroups[card['Group']] = 1;
+      byGroups[card.Group] = 1;
     }
-    if (byGroupsCapacityTotal[card['Group']]) {
-      byGroupsCapacityTotal[card['Group']] += card['Capacity'];
+    if (byGroupsCapacityTotal[card.Group]) {
+      byGroupsCapacityTotal[card.Group] += card.Capacity;
     } else {
-      byGroupsCapacityTotal[card['Group']] = card['Capacity'];
+      byGroupsCapacityTotal[card.Group] = card.Capacity;
     }
     total += 1;
   });

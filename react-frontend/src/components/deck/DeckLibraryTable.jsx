@@ -77,27 +77,27 @@ function DeckLibraryTable(props) {
     if (decks && inventoryMode) {
       cardInvType = card.i;
 
-      if (inventoryLibrary[card.c['Id']]) {
-        inInventory = inventoryLibrary[card.c['Id']].q;
+      if (inventoryLibrary[card.c.Id]) {
+        inInventory = inventoryLibrary[card.c.Id].q;
       }
 
-      if (usedLibraryCards && usedLibraryCards.soft[card.c['Id']]) {
-        Object.keys(usedLibraryCards.soft[card.c['Id']]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card.c['Id']][id]) {
-            softUsedMax = usedLibraryCards.soft[card.c['Id']][id];
+      if (usedLibraryCards && usedLibraryCards.soft[card.c.Id]) {
+        Object.keys(usedLibraryCards.soft[card.c.Id]).map((id) => {
+          if (softUsedMax < usedLibraryCards.soft[card.c.Id][id]) {
+            softUsedMax = usedLibraryCards.soft[card.c.Id][id];
           }
         });
       }
 
-      if (usedLibraryCards && usedLibraryCards.hard[card.c['Id']]) {
-        Object.keys(usedLibraryCards.hard[card.c['Id']]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card.c['Id']][id];
+      if (usedLibraryCards && usedLibraryCards.hard[card.c.Id]) {
+        Object.keys(usedLibraryCards.hard[card.c.Id]).map((id) => {
+          hardUsedTotal += usedLibraryCards.hard[card.c.Id][id];
         });
       }
     }
 
     return (
-      <React.Fragment key={card.c['Id']}>
+      <React.Fragment key={card.c.Id}>
         <tr className={resultTrClass}>
           {props.isAuthor ? (
             <>
@@ -120,7 +120,7 @@ function DeckLibraryTable(props) {
                                 : deckInvType == 's'
                                 ? 'makeFixed'
                                 : 'makeFlexible',
-                              card.c['Id']
+                              card.c.Id
                             )
                           }
                         >
@@ -131,12 +131,12 @@ function DeckLibraryTable(props) {
                   ) : null}
 
                   <ConditionalOverlayTrigger
-                    overlay={<UsedPopover cardid={card.c['Id']} />}
+                    overlay={<UsedPopover cardid={card.c.Id} />}
                     disabled={disableOverlay}
                   >
                     <td className="quantity">
                       <DeckCardQuantity
-                        cardid={card.c['Id']}
+                        cardid={card.c.Id}
                         q={card.q}
                         deckid={props.deckid}
                         cardChange={deckCardChange}
@@ -151,7 +151,7 @@ function DeckLibraryTable(props) {
               ) : (
                 <td className="quantity">
                   <DeckCardQuantity
-                    cardid={card.c['Id']}
+                    cardid={card.c.Id}
                     q={card.q}
                     deckid={props.deckid}
                     cardChange={deckCardChange}
@@ -163,7 +163,7 @@ function DeckLibraryTable(props) {
             <>
               {inventoryMode && decks ? (
                 <ConditionalOverlayTrigger
-                  overlay={<UsedPopover cardid={card.c['Id']} />}
+                  overlay={<UsedPopover cardid={card.c.Id} />}
                   disabled={disableOverlay}
                 >
                   <td className="quantity-no-buttons px-1">
@@ -214,9 +214,9 @@ function DeckLibraryTable(props) {
             </td>
           )}
           <td className="disciplines px-1" onClick={() => handleClick()}>
-            <ResultLibraryClan value={card.c['Clan']} />
-            {card.c['Discipline'] && card.c['Clan'] && '+'}
-            <ResultLibraryDisciplines value={card.c['Discipline']} />
+            <ResultLibraryClan value={card.c.Clan} />
+            {card.c.Discipline && card.c.Clan && '+'}
+            <ResultLibraryDisciplines value={card.c.Discipline} />
           </td>
           {(!props.inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td className="burn" onClick={() => handleClick()}>

@@ -18,7 +18,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 
-import { drawProbability } from 'utils';
+import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 import { useApp } from 'context';
 
 const DeckCryptTable = (props) => {
@@ -51,7 +51,7 @@ const DeckCryptTable = (props) => {
 
   let maxDisciplines = 0;
   props.cards.map((card) => {
-    const n = Object.keys(card.c['Disciplines']).length;
+    const n = Object.keys(card.c.Disciplines).length;
     if (maxDisciplines < n) {
       maxDisciplines = n;
     }
@@ -77,27 +77,18 @@ const DeckCryptTable = (props) => {
     if (decks && inventoryMode) {
       cardInvType = card.i;
 
-      if (inventoryCrypt[card.c['Id']]) {
-        inInventory = inventoryCrypt[card.c['Id']].q;
+      if (inventoryCrypt[card.c.Id]) {
+        inInventory = inventoryCrypt[card.c.Id].q;
       }
 
-      if (usedCryptCards && usedCryptCards.soft[card.c['Id']]) {
-        Object.keys(usedCryptCards.soft[card.c['Id']]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[card.c['Id']][id]) {
-            softUsedMax = usedCryptCards.soft[card.c['Id']][id];
-          }
-        });
-      }
-
-      if (usedCryptCards && usedCryptCards.hard[card.c['Id']]) {
-        Object.keys(usedCryptCards.hard[card.c['Id']]).map((id) => {
-          hardUsedTotal += usedCryptCards.hard[card.c['Id']][id];
-        });
+      if (usedCryptCards) {
+        softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
+        hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
       }
     }
 
     return (
-      <React.Fragment key={card.c['Id']}>
+      <React.Fragment key={card.c.Id}>
         <tr className={resultTrClass}>
           {props.isAuthor ? (
             <>
@@ -120,7 +111,7 @@ const DeckCryptTable = (props) => {
                                 : deckInvType == 's'
                                 ? 'makeFixed'
                                 : 'makeFlexible',
-                              card.c['Id']
+                              card.c.Id
                             )
                           }
                         >
@@ -131,12 +122,12 @@ const DeckCryptTable = (props) => {
                   ) : null}
 
                   <ConditionalOverlayTrigger
-                    overlay={<UsedPopover cardid={card.c['Id']} />}
+                    overlay={<UsedPopover cardid={card.c.Id} />}
                     disabled={disableOverlay}
                   >
                     <td className="quantity">
                       <DeckCardQuantity
-                        cardid={card.c['Id']}
+                        cardid={card.c.Id}
                         q={card.q}
                         deckid={props.deckid}
                         cardChange={deckCardChange}
@@ -151,7 +142,7 @@ const DeckCryptTable = (props) => {
               ) : (
                 <td className="quantity">
                   <DeckCardQuantity
-                    cardid={card.c['Id']}
+                    cardid={card.c.Id}
                     q={card.q}
                     deckid={props.deckid}
                     cardChange={deckCardChange}
@@ -163,7 +154,7 @@ const DeckCryptTable = (props) => {
             <>
               {inventoryMode && decks ? (
                 <ConditionalOverlayTrigger
-                  overlay={<UsedPopover cardid={card.c['Id']} />}
+                  overlay={<UsedPopover cardid={card.c.Id} />}
                   disabled={disableOverlay}
                 >
                   <td className="quantity-no-buttons px-1">
@@ -191,20 +182,20 @@ const DeckCryptTable = (props) => {
             className={isMobile ? 'capacity' : 'capacity px-1'}
             onClick={() => handleClick()}
           >
-            <ResultCryptCapacity value={card.c['Capacity']} />
+            <ResultCryptCapacity value={card.c.Capacity} />
           </td>
           {(!props.inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td className="disciplines" onClick={() => handleClick()}>
               {props.disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
                 <DeckCryptDisciplines
-                  value={card.c['Disciplines']}
+                  value={card.c.Disciplines}
                   disciplinesSet={props.disciplinesSet}
                   keyDisciplines={props.keyDisciplines}
                   nonKeyDisciplines={props.nonKeyDisciplines}
                 />
               ) : (
                 <ResultCryptDisciplines
-                  value={card.c['Disciplines']}
+                  value={card.c.Disciplines}
                   maxDisciplines={maxDisciplines}
                 />
               )}
@@ -224,26 +215,26 @@ const DeckCryptTable = (props) => {
           {isWide ? (
             <>
               <td className="title pe-2" onClick={() => handleClick()}>
-                <ResultCryptTitle value={card.c['Title']} />
+                <ResultCryptTitle value={card.c.Title} />
               </td>
               <td className="clan" onClick={() => handleClick()}>
-                <ResultClanImage value={card.c['Clan']} />
+                <ResultClanImage value={card.c.Clan} />
               </td>
               <td className="group" onClick={() => handleClick()}>
-                <ResultCryptGroup value={card.c['Group']} />
+                <ResultCryptGroup value={card.c.Group} />
               </td>
             </>
           ) : (
             <>
               <td className="clan-group" onClick={() => handleClick()}>
                 <div>
-                  <ResultClanImage value={card.c['Clan']} />
+                  <ResultClanImage value={card.c.Clan} />
                 </div>
                 <div className="d-flex small justify-content-end">
                   <div className="bold blue">
-                    <ResultCryptTitle value={card.c['Title']} />
+                    <ResultCryptTitle value={card.c.Title} />
                   </div>
-                  <ResultCryptGroup value={card.c['Group']} />
+                  <ResultCryptGroup value={card.c.Group} />
                 </div>
               </td>
             </>

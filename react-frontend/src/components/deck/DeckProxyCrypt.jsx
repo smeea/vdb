@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DeckProxyCryptTable, ResultCryptModal } from 'components';
 import { useApp } from 'context';
 import { countCards } from 'utils';
@@ -7,7 +7,7 @@ import { useModalCardController, useKeyDisciplines } from 'hooks';
 const DeckProxyCrypt = (props) => {
   const { cards, proxySelected, inAdvSelect, setShowFloatingButtons } = props;
   const { handleProxySelector, handleSetSelector, handleProxyCounter } = props;
-  const { cryptDeckSort, changeTimer, isMobile } = useApp();
+  const { cryptDeckSort, forcedUpdate, isMobile } = useApp();
 
   const crypt = Object.values(cards).filter((card) => card.q > 0);
   const cryptSide = Object.values(cards).filter((card) => card.q <= 0);
@@ -33,13 +33,7 @@ const DeckProxyCrypt = (props) => {
     } else {
       setSortedCards(crypt.sort(SortByCapacity).sort(SortByQuantity));
     }
-  }, [changeTimer, cryptDeckSort]);
-
-  const cryptCards = useMemo(
-    () => sortedCards.map((card) => card.c),
-    [sortedCards]
-  );
-  const cryptSideCards = sortedCardsSide.map((card) => card.c);
+  }, [forcedUpdate, cryptDeckSort]);
 
   // Modal Card Controller
   const {
@@ -49,7 +43,7 @@ const DeckProxyCrypt = (props) => {
     handleModalSideCardOpen,
     handleModalCardChange,
     handleModalCardClose,
-  } = useModalCardController(cryptCards, cryptSideCards);
+  } = useModalCardController(sortedCards, sortedCardsSide);
 
   const handleCloseModal = () => {
     handleModalCardClose();

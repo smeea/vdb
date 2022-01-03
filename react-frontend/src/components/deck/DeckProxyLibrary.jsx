@@ -5,15 +5,9 @@ import {
   ResultLibraryModal,
 } from 'components';
 import { useApp } from 'context';
-import {
-  countCards,
-  isTriffle,
-  resultLibrarySort,
-  getTotalCardsGroupedBy,
-  getCardsGroupedBy,
-} from 'utils';
-import { GROUPED_TYPE, TYPE, MASTER } from 'utils/constants';
-import { useModalCardController } from 'hooks';
+import { countCards } from 'utils';
+import { MASTER } from 'utils/constants';
+import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DeckProxyLibrary = (props) => {
   const { cards, proxySelected, inAdvSelect, inDeckTab } = props;
@@ -22,23 +16,19 @@ const DeckProxyLibrary = (props) => {
 
   const { nativeLibrary, isMobile } = useApp();
 
-  const sortedLibrary = resultLibrarySort(Object.values(cards), GROUPED_TYPE);
-
-  const library = sortedLibrary.filter((card) => card.q > 0);
-  const librarySide = sortedLibrary.filter((card) => card.q <= 0);
-
-  const libraryByType = getCardsGroupedBy(library, TYPE);
-  const librarySideByType = getCardsGroupedBy(librarySide, TYPE);
+  const {
+    library,
+    librarySide,
+    libraryByType,
+    librarySideByType,
+    trifleTotal,
+    libraryByTypeTotal,
+  } = useDeckLibrary(cards, nativeLibrary);
 
   const proxiesToPrint = Object.values(proxySelected).filter(
     (card) => card.print && card.q > 0
   );
   const libraryTotalSelected = countCards(proxiesToPrint);
-  const libraryByTypeTotal = getTotalCardsGroupedBy(proxiesToPrint, TYPE);
-
-  const trifleTotal = countCards(
-    library.filter((card) => isTriffle(card.c, nativeLibrary))
-  );
 
   // Modal Card Controller
   const {

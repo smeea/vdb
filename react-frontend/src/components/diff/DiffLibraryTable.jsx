@@ -50,12 +50,10 @@ function DiffLibraryTable(props) {
     }
 
     let DisciplineOrClan;
-    if (card.c['Clan']) {
-      DisciplineOrClan = <ResultLibraryClan value={card.c['Clan']} />;
+    if (card.c.Clan) {
+      DisciplineOrClan = <ResultLibraryClan value={card.c.Clan} />;
     } else {
-      DisciplineOrClan = (
-        <ResultLibraryDisciplines value={card.c['Discipline']} />
-      );
+      DisciplineOrClan = <ResultLibraryDisciplines value={card.c.Discipline} />;
     }
 
     let inInventory = 0;
@@ -63,21 +61,21 @@ function DiffLibraryTable(props) {
     let hardUsedTotal = 0;
 
     if (decks && inventoryMode) {
-      if (inventoryLibrary[card.c['Id']]) {
-        inInventory = inventoryLibrary[card.c['Id']].q;
+      if (inventoryLibrary[card.c.Id]) {
+        inInventory = inventoryLibrary[card.c.Id].q;
       }
 
-      if (usedLibraryCards && usedLibraryCards.soft[card.c['Id']]) {
-        Object.keys(usedLibraryCards.soft[card.c['Id']]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card.c['Id']][id]) {
-            softUsedMax = usedLibraryCards.soft[card.c['Id']][id];
+      if (usedLibraryCards && usedLibraryCards.soft[card.c.Id]) {
+        Object.keys(usedLibraryCards.soft[card.c.Id]).map((id) => {
+          if (softUsedMax < usedLibraryCards.soft[card.c.Id][id]) {
+            softUsedMax = usedLibraryCards.soft[card.c.Id][id];
           }
         });
       }
 
-      if (usedLibraryCards && usedLibraryCards.hard[card.c['Id']]) {
-        Object.keys(usedLibraryCards.hard[card.c['Id']]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card.c['Id']][id];
+      if (usedLibraryCards && usedLibraryCards.hard[card.c.Id]) {
+        Object.keys(usedLibraryCards.hard[card.c.Id]).map((id) => {
+          hardUsedTotal += usedLibraryCards.hard[card.c.Id][id];
         });
       }
     }
@@ -110,18 +108,18 @@ function DiffLibraryTable(props) {
     };
 
     return (
-      <React.Fragment key={card.c['Id']}>
+      <React.Fragment key={card.c.Id}>
         <tr className={resultTrClass}>
           {props.isAuthor ? (
             <>
               {inventoryMode && decks ? (
                 <OverlayTrigger
                   placement="right"
-                  overlay={<UsedPopover cardid={card.c['Id']} />}
+                  overlay={<UsedPopover cardid={card.c.Id} />}
                 >
                   <td className="quantity">
                     <DeckCardQuantity
-                      cardid={card.c['Id']}
+                      cardid={card.c.Id}
                       q={qFrom}
                       deckid={props.deckid}
                       cardChange={deckCardChange}
@@ -135,7 +133,7 @@ function DiffLibraryTable(props) {
               ) : (
                 <td className="quantity">
                   <DeckCardQuantity
-                    cardid={card.c['Id']}
+                    cardid={card.c.Id}
                     q={qFrom}
                     deckid={props.deckid}
                     cardChange={deckCardChange}

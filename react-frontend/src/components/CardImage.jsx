@@ -6,27 +6,27 @@ const CardImage = (props) => {
 
   let imgSrc = null;
 
-  if (props.card['Id'] > 200000) {
+  if (props.card.Id > 200000) {
     imgSrc = `${process.env.ROOT_URL}images/cards/${
       props.set
         ? `set/${props.set}`
         : localizedCrypt &&
           localizedCrypt[lang] &&
-          localizedCrypt[lang][props.card['Id']]
+          localizedCrypt[lang][props.card.Id]
         ? lang
         : 'en-EN'
     }/${props.card['ASCII Name']
       .toLowerCase()
       .replace(/[\s,:!?'".\-\(\)\/]/g, '')}
-g${props.card['Group'].toLowerCase()}
-${props.card['Adv'][0] ? 'adv' : ''}.jpg`;
+g${props.card.Group.toLowerCase()}
+${props.card.Adv[0] ? 'adv' : ''}.jpg`;
   } else {
     imgSrc = `${process.env.ROOT_URL}images/cards/${
       props.set
         ? 'set/' + props.set + '/'
         : localizedLibrary &&
           localizedLibrary[lang] &&
-          localizedLibrary[lang][props.card['Id']]
+          localizedLibrary[lang][props.card.Id]
         ? lang + '/'
         : 'en-EN/'
     }${props.card['ASCII Name']

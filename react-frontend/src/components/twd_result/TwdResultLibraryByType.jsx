@@ -18,7 +18,7 @@ function TwdResultLibraryByType(props) {
       hasBanned = true;
     }
     libraryTotal += props.library[card].q;
-    const cardtype = props.library[card].c['Type'];
+    const cardtype = props.library[card].c.Type;
     if (libraryByType[cardtype] === undefined) {
       libraryByType[cardtype] = [];
       libraryByTypeTotal[cardtype] = 0;

@@ -80,8 +80,8 @@ function InventoryLibrary(props) {
     });
   } else {
     Object.keys(props.cards).map((card) => {
-      const t = props.cards[card].c['Type'];
-      const d = libraryCardBase[card]['Discipline'];
+      const t = props.cards[card].c.Type;
+      const d = libraryCardBase[card].Discipline;
       let disciplines = null;
       if (d.includes('/')) {
         disciplines = d.split('/');
@@ -183,8 +183,8 @@ function InventoryLibrary(props) {
 
     Object.keys(usedLibraryCards.soft).map((card) => {
       if (!props.cards[card]) {
-        const t = libraryCardBase[card]['Type'];
-        const d = libraryCardBase[card]['Discipline'];
+        const t = libraryCardBase[card].Type;
+        const d = libraryCardBase[card].Discipline;
         let disciplines = null;
         if (d.includes('/')) {
           disciplines = d.split('/');
@@ -247,8 +247,8 @@ function InventoryLibrary(props) {
 
     Object.keys(usedLibraryCards.hard).map((card) => {
       if (!props.cards[card]) {
-        const t = libraryCardBase[card]['Type'];
-        const d = libraryCardBase[card]['Discipline'];
+        const t = libraryCardBase[card].Type;
+        const d = libraryCardBase[card].Discipline;
         let disciplines = null;
         if (d.includes('/')) {
           disciplines = d.split('/');

@@ -48,17 +48,17 @@ function DeckDrawCryptTable(props) {
     const k = nonPlayed[card.Id];
 
     return (
-      <React.Fragment key={`${index}-${card['Id']}`}>
+      <React.Fragment key={`${index}-${card.Id}`}>
         <tr className={resultTrClass}>
           <td
             className={isMobile ? 'capacity px-1' : 'capacity px-2'}
             onClick={() => props.handleClick(index)}
           >
-            <ResultCryptCapacity value={card['Capacity']} />
+            <ResultCryptCapacity value={card.Capacity} />
           </td>
           <td className="disciplines" onClick={() => props.handleClick(index)}>
             <DeckCryptDisciplines
-              value={card['Disciplines']}
+              value={card.Disciplines}
               disciplinesSet={props.disciplinesSet}
               keyDisciplines={props.keyDisciplines}
               nonKeyDisciplines={props.nonKeyDisciplines}
@@ -80,25 +80,25 @@ function DeckDrawCryptTable(props) {
                 className="title pe-2"
                 onClick={() => props.handleClick(index)}
               >
-                <ResultCryptTitle value={card['Title']} />
+                <ResultCryptTitle value={card.Title} />
               </td>
               <td className="clan" onClick={() => props.handleClick(index)}>
-                <ResultClanImage value={card['Clan']} />
+                <ResultClanImage value={card.Clan} />
               </td>
               <td className="group" onClick={() => props.handleClick(index)}>
-                <ResultCryptGroup value={card['Group']} />
+                <ResultCryptGroup value={card.Group} />
               </td>
             </>
           ) : (
             <td className="clan-group" onClick={() => props.handleClick(index)}>
               <div>
-                <ResultClanImage value={card['Clan']} />
+                <ResultClanImage value={card.Clan} />
               </div>
               <div className="d-flex small justify-content-end">
                 <div className="bold blue">
-                  <ResultCryptTitle value={card['Title']} />
+                  <ResultCryptTitle value={card.Title} />
                 </div>
-                <ResultCryptGroup value={card['Group']} />
+                <ResultCryptGroup value={card.Group} />
               </div>
             </td>
           )}

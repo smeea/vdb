@@ -13,25 +13,8 @@ import {
 } from 'components';
 
 import { useApp } from 'context';
-import {
-  countCards,
-  countTotalCost,
-  isTriffle,
-  resultLibrarySort,
-  getTotalCardsGroupedBy,
-  getCardsGroupedBy,
-} from 'utils';
-import {
-  GROUPED_TYPE,
-  POOL_COST,
-  BLOOD_COST,
-  TYPE,
-  DISCIPLINE,
-  ANY,
-  MASTER,
-  CLAN,
-} from 'utils/constants';
-import { useModalCardController } from 'hooks';
+import { MASTER } from 'utils/constants';
+import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DeckLibrary = (props) => {
   const { cards, deckid, isAuthor, inDeckTab, inMissing, inSearch } = props;
@@ -39,41 +22,25 @@ const DeckLibrary = (props) => {
 
   const { nativeLibrary, isMobile } = useApp();
 
-  const sortedLibrary = resultLibrarySort(Object.values(cards), GROUPED_TYPE);
-
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const toogleShowInfo = () => setShowInfo(!showInfo);
   const toogleShowAdd = () => setShowAdd(!showAdd);
   const [modalDraw, setModalDraw] = useState(undefined);
 
-  const library = sortedLibrary.filter((card) => card.q > 0);
-  const librarySide = sortedLibrary.filter((card) => card.q <= 0);
-
-  const libraryByType = getCardsGroupedBy(library, TYPE);
-  const librarySideByType = getCardsGroupedBy(librarySide, TYPE);
-
-  const hasBanned = sortedLibrary.filter((card) => card.c.Banned).length > 0;
-  const trifleTotal = countCards(
-    library.filter((card) => isTriffle(card.c, nativeLibrary))
-  );
-  const libraryTotal = countCards(library);
-  const poolTotal = countTotalCost(library, POOL_COST);
-  const bloodTotal = countTotalCost(library, BLOOD_COST);
-  const libraryByTypeTotal = getTotalCardsGroupedBy(library, TYPE);
-  const libraryByDisciplinesTotal = getTotalCardsGroupedBy(
-    library.filter((card) => card.c.Dicipline),
-    DISCIPLINE
-  );
-  const libraryByClansTotal = getTotalCardsGroupedBy(
-    library.filter((card) => card.c.Clan && card.c.Type !== MASTER),
-    CLAN
-  );
-  libraryByDisciplinesTotal[ANY] = countCards(
-    library.filter(
-      (card) => !card.c.Clan && !card.c.Dicipline && card.c.Type !== MASTER
-    )
-  );
+  const {
+    library,
+    librarySide,
+    libraryByType,
+    librarySideByType,
+    hasBanned,
+    trifleTotal,
+    libraryTotal,
+    poolTotal,
+    bloodTotal,
+    libraryByTypeTotal,
+    libraryByClansTotal,
+  } = useDeckLibrary(cards, nativeLibrary);
 
   // Modal Card Controller
   const {

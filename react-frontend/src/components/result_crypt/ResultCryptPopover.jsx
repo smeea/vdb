@@ -22,14 +22,14 @@ function ResultCryptPopover(props) {
           <div className="d-flex flex-nowrap justify-content-between align-items-center">
             <div className="d-flex flex-nowrap align-items-center">
               <div>
-                <ResultClanImage value={props.card['Clan']} />
+                <ResultClanImage value={props.card.Clan} />
               </div>
               <div className="name bold ps-2">
                 <ResultCryptName card={props.card} />
               </div>
             </div>
             <div className="ps-2">
-              <ResultCryptGroup value={props.card['Group']} />
+              <ResultCryptGroup value={props.card.Group} />
             </div>
           </div>
           <hr />
@@ -38,14 +38,14 @@ function ResultCryptPopover(props) {
           </div>
           <hr />
           <div className="d-flex align-items-center justify-content-between">
-            <ResultCryptDisciplines value={props.card['Disciplines']} />
+            <ResultCryptDisciplines value={props.card.Disciplines} />
             <div className="popover-sets px-1">
               <ResultLayoutTextSets
                 setImageSet={props.setImageSet}
                 sets={props.card['Set']}
               />
             </div>
-            <ResultCryptCapacity value={props.card['Capacity']} />
+            <ResultCryptCapacity value={props.card.Capacity} />
           </div>
           {Object.keys(props.card['Rulings']).length > 0 && (
             <>
