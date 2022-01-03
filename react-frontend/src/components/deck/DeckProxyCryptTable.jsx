@@ -215,7 +215,11 @@ function DeckProxyCryptTable(props) {
                     <Popover.Body>
                       <CardImage
                         card={card.c}
-                        set={props.proxySelected[card.c.Id].set}
+                        set={
+                          props.proxySelected[card.c.Id]
+                            ? props.proxySelected[card.c.Id].set
+                            : null
+                        }
                       />
                     </Popover.Body>
                   </Popover>

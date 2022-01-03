@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import X from 'assets/images/icons/x.svg';
@@ -9,58 +9,30 @@ import {
   DeckCryptSortButton,
   ResultCryptModal,
 } from 'components';
-
-import { ANY } from 'utils/constants';
-import { deckCryptSort, countCards } from 'utils';
 import { useApp } from 'context';
-import { useModalCardController, useKeyDisciplines } from 'hooks';
+import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
 const DeckCrypt = (props) => {
   const { cards, inAdvSelect, setShowFloatingButtons } = props;
-  const { inMissing, deckid, isAuthor, inSearch } = props;
-  const { cryptDeckSort, forcedUpdate, isMobile } = useApp();
+  const { showFloatingButtons, inMissing, deckid, isAuthor, inSearch } = props;
+  const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
 
-  const crypt = Object.values(cards).filter((card) => card.q > 0);
-  const cryptSide = Object.values(cards).filter((card) => card.q <= 0);
-  const cryptTotal = countCards(crypt);
-  const hasBanned = crypt.filter((card) => card.c.Banned).length > 0;
-
-  const cryptGroupMin = crypt
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc));
-
-  const cryptGroupMax = crypt
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
-
-  let cryptGroups;
-  if (cryptGroupMax - cryptGroupMin == 1) {
-    cryptGroups = 'G' + cryptGroupMin + '-' + cryptGroupMax;
-  } else if (cryptGroupMax - cryptGroupMin == 0) {
-    cryptGroups = 'G' + cryptGroupMax;
-  } else {
-    cryptGroups = 'ERROR IN GROUPS';
-  }
+  const {
+    crypt,
+    cryptSide,
+    hasBanned,
+    cryptTotal,
+    cryptGroups,
+    sortedCards,
+    sortedCardsSide,
+  } = useDeckCrypt(cards, cryptDeckSort, changeTimer, deckid);
 
   // Disciplines Sort and Key non-Key selection
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
     useKeyDisciplines(cards, cryptTotal);
-
-  // Sort cards
-  const [sortedCards, setSortedCards] = useState([]);
-  const [sortedCardsSide, setSortedCardsSide] = useState([]);
-
-  useEffect(() => {
-    if (cryptDeckSort) {
-      setSortedCards(deckCryptSort(Object.values(crypt), cryptDeckSort));
-      setSortedCardsSide(
-        deckCryptSort(Object.values(cryptSide), cryptDeckSort)
-      );
-    }
-  }, [forcedUpdate, deckid, cryptDeckSort]);
 
   // Modal Card Controller
   const {

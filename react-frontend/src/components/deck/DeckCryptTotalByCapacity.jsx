@@ -1,16 +1,11 @@
 import React from 'react';
-import { drawUniqueProbability } from 'utils';
+import { drawUniqueProbability, countCards, countTotalCost } from 'utils';
+import { CAPACITY } from 'utils/constants';
 
-function DeckCryptTotalByCapacity(props) {
-  let cryptTotalCap = 0;
-  let cryptTotalQ = 0;
-  const quantityList = [];
-
-  Object.keys(props.cards).map((id, index) => {
-    cryptTotalCap += props.cards[id]['c'].Capacity * props.cards[id]['q'];
-    cryptTotalQ += props.cards[id].q;
-    quantityList.push(props.cards[id].q);
-  });
+const DeckCryptTotalByCapacity = ({ cards }) => {
+  const cryptTotalQ = countCards(cards);
+  const cryptTotalCap = countTotalCost(cards, CAPACITY);
+  const quantityList = cards.map((card) => card.q);
 
   const uniqueDraw = drawUniqueProbability(quantityList, 4).map((i, idx) => {
     if (i > 0 && i < 0.01) i = 0.01;
@@ -42,6 +37,6 @@ function DeckCryptTotalByCapacity(props) {
       <div className="d-inline">{uniqueDraw}</div>
     </div>
   );
-}
+};
 
 export default DeckCryptTotalByCapacity;
