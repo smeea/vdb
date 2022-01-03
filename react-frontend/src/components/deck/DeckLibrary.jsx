@@ -40,6 +40,7 @@ const DeckLibrary = (props) => {
     bloodTotal,
     libraryByTypeTotal,
     libraryByClansTotal,
+    libraryByDisciplinesTotal,
   } = useDeckLibrary(cards, nativeLibrary);
 
   // Modal Card Controller
