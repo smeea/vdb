@@ -6,11 +6,9 @@ function Banner(props) {
 
   return (
     <div
-      className={
-        isMobile
-          ? 'd-flex justify-content-between align-items-center mb-3 logo-box'
-          : 'd-flex justify-content-between align-items-center my-3 logo-box'
-      }
+      className={`d-flex justify-content-between align-items-center logo-box ${
+        isMobile ? 'mb-3' : 'my-3'
+      }`}
     >
       <div className="d-flex align-items-center">
         <img
@@ -18,12 +16,7 @@ function Banner(props) {
           src={`${process.env.ROOT_URL}images/misc/logo.svg`}
           title="logo"
         />
-        <div className="d-inline logo-text px-2">VDB</div>
-        {!isMobile && (
-          <div className="d-inline logo-subtext ps-2">
-            <i>&mdash; your digital retainer</i>
-          </div>
-        )}
+        <div className="d-inline logo-text ps-2">VDB</div>
       </div>
       <div className="d-inline px-2">
         <div className="d-flex justify-content-end small">
