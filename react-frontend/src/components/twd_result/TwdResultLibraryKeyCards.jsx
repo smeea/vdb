@@ -64,8 +64,8 @@ const TwdResultLibraryKeyCards = (props) => {
       }
 
       if (usedLibraryCards) {
-        // softUsedMax = getSoftMax(usedLibraryCards.soft[card.Id]);
-        hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.Id]);
+        // softUsedMax = getSoftMax(usedLibraryCards.soft[card.c.Id]);
+        hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.c.Id]);
       }
     }
 

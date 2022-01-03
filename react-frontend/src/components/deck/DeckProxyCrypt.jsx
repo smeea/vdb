@@ -1,39 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { DeckProxyCryptTable, ResultCryptModal } from 'components';
 import { useApp } from 'context';
 import { countCards } from 'utils';
-import { useModalCardController, useKeyDisciplines } from 'hooks';
+import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
 const DeckProxyCrypt = (props) => {
   const { cards, proxySelected, inAdvSelect, setShowFloatingButtons } = props;
   const { handleProxySelector, handleSetSelector, handleProxyCounter } = props;
-  const { cryptDeckSort, forcedUpdate, isMobile } = useApp();
+  const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
-  const crypt = Object.values(cards).filter((card) => card.q > 0);
-  const cryptSide = Object.values(cards).filter((card) => card.q <= 0);
-  const cryptTotal = countCards(crypt);
-
-  const proxiesToPrint = Object.values(proxySelected).filter(
-    (card) => card.print && card.q > 0
+  const { cryptSide, cryptTotal, sortedCards, sortedCardsSide } = useDeckCrypt(
+    cards,
+    cryptDeckSort,
+    changeTimer
   );
+
+  const proxiesToPrint = Object.keys(proxySelected)
+    .filter(
+      (cardid) =>
+        cardid > 200000 &&
+        proxySelected[cardid].print &&
+        proxySelected[cardid].q > 0
+    )
+    .map((cardid) => proxySelected[cardid]);
+
   const cryptTotalSelected = countCards(proxiesToPrint);
 
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
     useKeyDisciplines(cards, cryptTotal);
-
-  // Sort cards
-  const [sortedCards, setSortedCards] = useState([]);
-  const SortByQuantity = (a, b) => b.q - a.q;
-  const SortByCapacity = (a, b) => b.c.Capacity - a.c.Capacity;
-  const sortedCardsSide = cryptSide.sort(SortByCapacity);
-
-  useEffect(() => {
-    if (cryptDeckSort) {
-      setSortedCards(crypt.sort(SortByQuantity).sort(SortByCapacity));
-    } else {
-      setSortedCards(crypt.sort(SortByCapacity).sort(SortByQuantity));
-    }
-  }, [forcedUpdate, cryptDeckSort]);
 
   // Modal Card Controller
   const {

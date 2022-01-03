@@ -40,6 +40,7 @@ const DiffLibrary = (props) => {
     bloodTotal,
     libraryByTypeTotal,
     libraryByClansTotal,
+    libraryByDisciplinesTotal,
   } = useDeckLibrary(cardsFrom, nativeLibrary, cardsTo);
 
   // Modal Card Controller

@@ -64,7 +64,7 @@ const useDeckLibrary = (cardsList, nativeLibrary, cardsToList = {}) => {
   const libraryByTypeTotal = getTotalCardsGroupedBy(library, TYPE);
 
   const libraryByDisciplinesTotal = getTotalCardsGroupedBy(
-    library.filter((card) => card.c.Dicipline),
+    library.filter((card) => card.c.Discipline),
     DISCIPLINE
   );
 
@@ -91,6 +91,7 @@ const useDeckLibrary = (cardsList, nativeLibrary, cardsToList = {}) => {
     bloodTotal,
     libraryByTypeTotal,
     libraryByClansTotal,
+    libraryByDisciplinesTotal,
   };
 };
 

@@ -79,12 +79,12 @@ function TwdResultCrypt(props) {
     let hardUsedTotal = 0;
 
     if (inventoryMode) {
-      if (inventoryCrypt[card.Id]) {
-        inInventory = inventoryCrypt[card.Id].q;
+      if (inventoryCrypt[card.c.Id]) {
+        inInventory = inventoryCrypt[card.c.Id].q;
       }
 
-      // softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
-      hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
+      // softUsedMax = getSoftMax(usedCryptCards.soft[card.c.Id]);
+      hardUsedTotal = getHardTotal(usedCryptCards.hard[card.c.Id]);
     }
 
     return (

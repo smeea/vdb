@@ -25,9 +25,15 @@ const DeckProxyLibrary = (props) => {
     libraryByTypeTotal,
   } = useDeckLibrary(cards, nativeLibrary);
 
-  const proxiesToPrint = Object.values(proxySelected).filter(
-    (card) => card.print && card.q > 0
-  );
+  const proxiesToPrint = Object.keys(proxySelected)
+    .filter(
+      (cardid) =>
+        cardid < 200000 &&
+        proxySelected[cardid].print &&
+        proxySelected[cardid].q > 0
+    )
+    .map((cardid) => proxySelected[cardid]);
+
   const libraryTotalSelected = countCards(proxiesToPrint);
 
   // Modal Card Controller
