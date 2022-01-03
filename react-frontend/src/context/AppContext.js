@@ -86,7 +86,6 @@ export const AppProvider = (props) => {
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [sharedDeck, setSharedDeck] = useState({});
   const [recentDecks, setRecentDecks] = useState([]);
-
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
 
@@ -321,14 +320,12 @@ export const AppProvider = (props) => {
     }
 
     if (count >= 0) {
-      setDecks((prevState) => {
-        const oldState = { ...prevState };
-        oldState[deckid][cardType][cardid] = {
-          c: cardBase[cardid],
-          q: count,
-        };
-        return oldState;
-      });
+      const oldState = { ...decks };
+      oldState[deckid][cardType][cardid] = {
+        c: cardBase[cardid],
+        q: count,
+      };
+      setDecks(oldState);
     } else {
       setDecks((prevState) => {
         const oldState = { ...prevState };

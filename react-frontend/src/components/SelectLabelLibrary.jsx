@@ -25,26 +25,22 @@ const SelectLabelLibrary = (props) => {
                 inventoryLibrary[props.cardid].q}
             </div>
           )}
-          <ResultLibraryTypeImage
-            value={libraryCardBase[props.cardid]['Type']}
-          />
+          <ResultLibraryTypeImage value={libraryCardBase[props.cardid].Type} />
           <div className="ps-1">
             <ResultLibraryName card={libraryCardBase[props.cardid]} />
           </div>
         </div>
         <div>
-          {libraryCardBase[props.cardid]['Discipline'] && (
+          {libraryCardBase[props.cardid].Discipline && (
             <div className="d-inline px-2">
               <ResultLibraryDisciplines
-                value={libraryCardBase[props.cardid]['Discipline']}
+                value={libraryCardBase[props.cardid].Discipline}
               />
             </div>
           )}
-          {libraryCardBase[props.cardid]['Clan'] && (
+          {libraryCardBase[props.cardid].Clan && (
             <div className="d-inline px-2">
-              <ResultLibraryClan
-                value={libraryCardBase[props.cardid]['Clan']}
-              />
+              <ResultLibraryClan value={libraryCardBase[props.cardid].Clan} />
             </div>
           )}
           {(libraryCardBase[props.cardid]['Blood Cost'] ||

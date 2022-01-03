@@ -23,24 +23,22 @@ const SelectLabelCrypt = (props) => {
               {inventoryCrypt[props.cardid] && inventoryCrypt[props.cardid].q}
             </div>
           )}
-          <ResultCryptCapacity
-            value={cryptCardBase[props.cardid]['Capacity']}
-          />
+          <ResultCryptCapacity value={cryptCardBase[props.cardid].Capacity} />
           <div className="px-2">
             <ResultCryptName card={cryptCardBase[props.cardid]} />
             {cryptCardBase[props.cardid]['New'] && (
               <div className="d-inline gray ps-2">
-                [G{cryptCardBase[props.cardid]['Group']}]
+                [G{cryptCardBase[props.cardid].Group}]
               </div>
             )}
           </div>
           <div className="pe-3">
-            <ResultClanImage value={cryptCardBase[props.cardid]['Clan']} />
+            <ResultClanImage value={cryptCardBase[props.cardid].Clan} />
           </div>
         </div>
         <div className="d-flex flex-nowrap">
           <ResultCryptDisciplines
-            value={cryptCardBase[props.cardid]['Disciplines']}
+            value={cryptCardBase[props.cardid].Disciplines}
           />
         </div>
       </div>

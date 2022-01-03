@@ -31,7 +31,7 @@ function InventoryCrypt(props) {
     });
   } else {
     Object.keys(props.cards).map((card) => {
-      const i = props.cards[card].c['Clan'];
+      const i = props.cards[card].c.Clan;
 
       if (props.cards[card].q > 0) {
         cryptByClanTotal[i] += props.cards[card].q;
@@ -79,7 +79,7 @@ function InventoryCrypt(props) {
 
     Object.keys(usedCryptCards.soft).map((card) => {
       if (!props.cards[card]) {
-        const i = cryptCardBase[card]['Clan'];
+        const i = cryptCardBase[card].Clan;
 
         if (props.category != 'ok') {
           cryptByClan[i][card] = { q: 0, c: cryptCardBase[card] };
@@ -106,7 +106,7 @@ function InventoryCrypt(props) {
 
     Object.keys(usedCryptCards.hard).map((card) => {
       if (!props.cards[card]) {
-        const i = cryptCardBase[card]['Clan'];
+        const i = cryptCardBase[card].Clan;
 
         if (props.category != 'ok') {
           cryptByClan[i][card] = { q: 0, c: cryptCardBase[card] };

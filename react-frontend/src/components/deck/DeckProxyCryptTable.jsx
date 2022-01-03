@@ -16,6 +16,7 @@ import {
   CardImage,
   ConditionalOverlayTrigger,
 } from 'components';
+import { getSoftMax, getHardTotal } from 'utils';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 import { useApp } from 'context';
 
@@ -28,7 +29,7 @@ function DeckProxyCryptTable(props) {
 
   let maxDisciplines = 0;
   props.cards.map((card) => {
-    const n = Object.keys(card.c['Disciplines']).length;
+    const n = Object.keys(card.c.Disciplines).length;
     if (maxDisciplines < n) {
       maxDisciplines = n;
     }
@@ -51,29 +52,20 @@ function DeckProxyCryptTable(props) {
     let hardUsedTotal = 0;
 
     if (decks && inventoryMode) {
-      if (inventoryCrypt[card.c['Id']]) {
-        inInventory = inventoryCrypt[card.c['Id']].q;
+      if (inventoryCrypt[card.c.Id]) {
+        inInventory = inventoryCrypt[card.c.Id].q;
       }
 
-      if (usedCryptCards && usedCryptCards.soft[card.c['Id']]) {
-        Object.keys(usedCryptCards.soft[card.c['Id']]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[card.c['Id']][id]) {
-            softUsedMax = usedCryptCards.soft[card.c['Id']][id];
-          }
-        });
-      }
-
-      if (usedCryptCards && usedCryptCards.hard[card.c['Id']]) {
-        Object.keys(usedCryptCards.hard[card.c['Id']]).map((id) => {
-          hardUsedTotal += usedCryptCards.hard[card.c['Id']][id];
-        });
+      if (usedCryptCards) {
+        softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
+        hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
       }
     }
 
     const setOptions = [
       {
         value: '',
-        id: card.c['Id'],
+        id: card.c.Id,
         label: <div className="small">Newest (default)</div>,
       },
     ];
@@ -82,7 +74,7 @@ function DeckProxyCryptTable(props) {
       if (card.c['Set'][i] && i !== 'POD') {
         setOptions.push({
           value: i.toLowerCase(),
-          id: card.c['Id'],
+          id: card.c.Id,
           label: (
             <div className="small">
               {setsAndPrecons[i].name}
@@ -96,17 +88,17 @@ function DeckProxyCryptTable(props) {
     });
 
     return (
-      <React.Fragment key={card.c['Id']}>
+      <React.Fragment key={card.c.Id}>
         <tr className={resultTrClass}>
           <td className="proxy-selector">
             <Form.Check
               className="px-1"
               type="checkbox"
-              id={card.c['Id']}
+              id={card.c.Id}
               name="print"
               checked={
-                props.proxySelected[card.c['Id']]
-                  ? props.proxySelected[card.c['Id']].print
+                props.proxySelected[card.c.Id]
+                  ? props.proxySelected[card.c.Id].print
                   : false
               }
               onChange={(e) => props.handleProxySelector(e)}
@@ -115,15 +107,15 @@ function DeckProxyCryptTable(props) {
           {inventoryMode && decks ? (
             <OverlayTrigger
               placement="right"
-              overlay={<UsedPopover cardid={card.c['Id']} />}
+              overlay={<UsedPopover cardid={card.c.Id} />}
             >
               <td className="quantity">
                 <DeckCardQuantity
-                  cardid={card.c['Id']}
+                  cardid={card.c.Id}
                   deckid={null}
                   q={
-                    props.proxySelected[card.c['Id']]
-                      ? props.proxySelected[card.c['Id']].q
+                    props.proxySelected[card.c.Id]
+                      ? props.proxySelected[card.c.Id].q
                       : 0
                   }
                   inProxy={true}
@@ -132,8 +124,8 @@ function DeckProxyCryptTable(props) {
                   hardUsedTotal={hardUsedTotal}
                   cardChange={props.handleProxyCounter}
                   isSelected={
-                    props.proxySelected[card.c['Id']] &&
-                    props.proxySelected[card.c['Id']].print
+                    props.proxySelected[card.c.Id] &&
+                    props.proxySelected[card.c.Id].print
                   }
                 />
               </td>
@@ -141,11 +133,11 @@ function DeckProxyCryptTable(props) {
           ) : (
             <td className="quantity">
               <DeckCardQuantity
-                cardid={card.c['Id']}
+                cardid={card.c.Id}
                 deckid={null}
                 q={
-                  props.proxySelected[card.c['Id']]
-                    ? props.proxySelected[card.c['Id']].q
+                  props.proxySelected[card.c.Id]
+                    ? props.proxySelected[card.c.Id].q
                     : 0
                 }
                 cardChange={props.handleProxyCounter}
@@ -156,19 +148,19 @@ function DeckProxyCryptTable(props) {
             className={isMobile ? 'capacity' : 'capacity px-1'}
             onClick={() => handleClick()}
           >
-            <ResultCryptCapacity value={card.c['Capacity']} />
+            <ResultCryptCapacity value={card.c.Capacity} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
             {props.disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
               <DeckCryptDisciplines
-                value={card.c['Disciplines']}
+                value={card.c.Disciplines}
                 disciplinesSet={props.disciplinesSet}
                 keyDisciplines={props.keyDisciplines}
                 nonKeyDisciplines={props.nonKeyDisciplines}
               />
             ) : (
               <ResultCryptDisciplines
-                value={card.c['Disciplines']}
+                value={card.c.Disciplines}
                 maxDisciplines={maxDisciplines}
               />
             )}
@@ -186,13 +178,13 @@ function DeckProxyCryptTable(props) {
 
           <td className="clan-group" onClick={() => handleClick()}>
             <div>
-              <ResultClanImage value={card.c['Clan']} />
+              <ResultClanImage value={card.c.Clan} />
             </div>
             <div className="d-flex small justify-content-end">
               <b>
-                <ResultCryptTitle value={card.c['Title']} />
+                <ResultCryptTitle value={card.c.Title} />
               </b>
-              <ResultCryptGroup value={card.c['Group']} />
+              <ResultCryptGroup value={card.c.Group} />
             </div>
           </td>
           {!isMobile && (
@@ -206,11 +198,11 @@ function DeckProxyCryptTable(props) {
                   placeholder="Set"
                   value={setOptions.find((obj) => {
                     if (
-                      props.proxySelected[card.c['Id']] &&
-                      props.proxySelected[card.c['Id']].set
+                      props.proxySelected[card.c.Id] &&
+                      props.proxySelected[card.c.Id].set
                     ) {
                       obj.value ===
-                        props.proxySelected[card.c['Id']].set.toLowerCase();
+                        props.proxySelected[card.c.Id].set.toLowerCase();
                     }
                   })}
                   onChange={props.handleSetSelector}
@@ -223,7 +215,11 @@ function DeckProxyCryptTable(props) {
                     <Popover.Body>
                       <CardImage
                         card={card.c}
-                        set={props.proxySelected[card.c['Id']].set}
+                        set={
+                          props.proxySelected[card.c.Id]
+                            ? props.proxySelected[card.c.Id].set
+                            : null
+                        }
                       />
                     </Popover.Body>
                   </Popover>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
@@ -10,50 +10,34 @@ import {
 } from 'components';
 
 import { useApp } from 'context';
+import { useModalCardController } from 'hooks';
 
 function DeckDrawModal(props) {
+  const { burnedCrypt, burnedLibrary, restCrypt, restLibrary } = props;
+  const { drawedCrypt, libraryTotal, burnLibrary, burnCrypt } = props;
+  const { show, keyDisciplines, disciplinesSet, nonKeyDisciplines } = props;
+  const { burnedCapacityTotal, burnedBloodTotal, burnedPoolTotal } = props;
+  const { handleClose, handleCryptHandSize, handleReDrawCrypt } = props;
+  const { drawedLibrary, handleLibraryHandSize, handleReDrawLibrary } = props;
+  const { initialTransfers, cryptTotal } = props;
+
   const { isMobile } = useApp();
 
-  const [modalCryptCardIdx, setModalCryptCardIdx] = useState(undefined);
-  const [modalLibraryCardIdx, setModalLibraryCardIdx] = useState(undefined);
-
-  const handleModalCryptCardOpen = (i) => {
-    setModalCryptCardIdx(i);
-  };
-
-  const handleModalLibraryCardOpen = (i) => {
-    setModalLibraryCardIdx(i);
-  };
-
-  const handleModalCryptCardChange = (d) => {
-    if (modalCryptCardIdx !== undefined) {
-      const maxIdx = props.burnedCrypt.length - 1;
-      if (modalCryptCardIdx + d < 0) {
-        setModalCryptCardIdx(maxIdx);
-      } else if (modalCryptCardIdx + d > maxIdx) {
-        setModalCryptCardIdx(0);
-      } else {
-        setModalCryptCardIdx(modalCryptCardIdx + d);
-      }
-    }
-  };
-  const handleModalLibraryCardChange = (d) => {
-    if (modalLibraryCardIdx !== undefined) {
-      const maxIdx = props.burnedLibrary.length - 1;
-      if (modalLibraryCardIdx + d < 0) {
-        setModalLibraryCardIdx(maxIdx);
-      } else if (modalLibraryCardIdx + d > maxIdx) {
-        setModalLibraryCardIdx(0);
-      } else {
-        setModalLibraryCardIdx(modalLibraryCardIdx + d);
-      }
-    }
-  };
+  // Modal Card Controller
+  const {
+    currentModalCard,
+    shouldShowModal,
+    isSideMode,
+    handleModalCardOpen,
+    handleModalSideCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(burnedCrypt, burnedLibrary);
 
   return (
     <Modal
-      show={props.show}
-      onHide={props.handleClose}
+      show={show}
+      onHide={handleClose}
       animation={false}
       dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
@@ -65,7 +49,7 @@ function DeckDrawModal(props) {
         }
       >
         <h5>Deck Draw</h5>
-        <Button variant="outline-secondary" onClick={props.handleClose}>
+        <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -80,19 +64,19 @@ function DeckDrawModal(props) {
                   </div>
                   <div className="d-flex align-items-center">
                     <b>
-                      {props.drawedCrypt.length} + {props.restCrypt.length}
+                      {drawedCrypt.length} + {restCrypt.length}
                     </b>
                   </div>
                   <div className="d-flex">
                     <div className="d-flex align-items-center pe-2">
-                      <b>{props.initialTransfers}t</b>
+                      <b>{initialTransfers}t</b>
                     </div>
                     <div className="pe-1">
                       <Button
                         title="Hand Size -1"
                         variant="primary"
-                        onClick={() => props.handleCryptHandSize(-1)}
-                        disabled={props.drawedCrypt.length < 1}
+                        onClick={() => handleCryptHandSize(-1)}
+                        disabled={drawedCrypt.length < 1}
                       >
                         -1
                       </Button>
@@ -100,8 +84,8 @@ function DeckDrawModal(props) {
                     <Button
                       title="Re-Draw"
                       variant="primary"
-                      onClick={props.handleReDrawCrypt}
-                      disabled={props.cryptTotal < 4}
+                      onClick={handleReDrawCrypt}
+                      disabled={cryptTotal < 4}
                     >
                       <span className="align-items-center">
                         <ArrowRepeat />
@@ -111,27 +95,27 @@ function DeckDrawModal(props) {
                       <Button
                         title="Hand Size +1"
                         variant="primary"
-                        onClick={() => props.handleCryptHandSize(1)}
-                        disabled={props.restCrypt.length < 1}
+                        onClick={() => handleCryptHandSize(1)}
+                        disabled={restCrypt.length < 1}
                       >
                         +1
                       </Button>
                     </div>
                   </div>
                 </div>
-                {props.cryptTotal < 4 && (
+                {cryptTotal < 4 && (
                   <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
                     <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
                   </div>
                 )}
                 <DeckDrawCryptTable
-                  handleClick={props.burnCrypt}
-                  restCards={props.restCrypt}
-                  resultCards={props.drawedCrypt}
+                  handleClick={burnCrypt}
+                  restCards={restCrypt}
+                  resultCards={drawedCrypt}
                   className="deck-crypt-table"
-                  disciplinesSet={props.disciplinesSet}
-                  keyDisciplines={props.keyDisciplines}
-                  nonKeyDisciplines={props.nonKeyDisciplines}
+                  disciplinesSet={disciplinesSet}
+                  keyDisciplines={keyDisciplines}
+                  nonKeyDisciplines={nonKeyDisciplines}
                 />
               </div>
             </Col>
@@ -142,7 +126,7 @@ function DeckDrawModal(props) {
                 </div>
                 <div className="d-flex align-items-center">
                   <b>
-                    {props.drawedLibrary.length} + {props.restLibrary.length}
+                    {drawedLibrary.length} + {restLibrary.length}
                   </b>
                 </div>
                 <div className="d-flex">
@@ -150,8 +134,8 @@ function DeckDrawModal(props) {
                     <Button
                       title="Hand Size -1"
                       variant="primary"
-                      onClick={() => props.handleLibraryHandSize(-1)}
-                      disabled={props.drawedLibrary.length < 1}
+                      onClick={() => handleLibraryHandSize(-1)}
+                      disabled={drawedLibrary.length < 1}
                     >
                       -1
                     </Button>
@@ -159,8 +143,8 @@ function DeckDrawModal(props) {
                   <Button
                     title="Re-Draw"
                     variant="primary"
-                    onClick={props.handleReDrawLibrary}
-                    disabled={props.libraryTotal < 7}
+                    onClick={handleReDrawLibrary}
+                    disabled={libraryTotal < 7}
                   >
                     <ArrowRepeat />
                   </Button>
@@ -168,38 +152,38 @@ function DeckDrawModal(props) {
                     <Button
                       title="Hand Size +1"
                       variant="primary"
-                      onClick={() => props.handleLibraryHandSize(1)}
-                      disabled={props.restLibrary.length < 1}
+                      onClick={() => handleLibraryHandSize(1)}
+                      disabled={restLibrary.length < 1}
                     >
                       +1
                     </Button>
                   </div>
                 </div>
               </div>
-              {props.libraryTotal < 7 && (
+              {libraryTotal < 7 && (
                 <div className="d-flex align-items-center justify-content-center error-message p-2 my-2">
                   <b>NOT ENOUGH CARDS FOR INITIAL DRAW</b>
                 </div>
               )}
               <DeckDrawLibraryTable
-                handleClick={props.burnLibrary}
-                restCards={props.restLibrary}
-                resultCards={props.drawedLibrary}
+                handleClick={burnLibrary}
+                restCards={restLibrary}
+                resultCards={drawedLibrary}
                 className="search-library-table"
               />
             </Col>
           </Row>
-          {(props.burnedCrypt.length > 0 || props.burnedLibrary.length > 0) && (
+          {(burnedCrypt.length > 0 || burnedLibrary.length > 0) && (
             <Row className={isMobile ? 'px-0' : 'px-0 pb-4'}>
               <Col xs={12} md={7} className="px-0 ps-lg-4 pe-lg-3">
-                {props.burnedCrypt.length > 0 && (
+                {burnedCrypt.length > 0 && (
                   <div className="pt-4 pt-md-0">
                     <div className="d-flex justify-content-between title-line">
                       <div className="d-flex align-items-center px-2">
                         <b>Controlled</b>
                       </div>
                       <div className="d-flex align-items-center">
-                        <b>{props.burnedCrypt.length}</b>
+                        <b>{burnedCrypt.length}</b>
                       </div>
                       <div
                         className="d-flex align-items-center pe-3"
@@ -209,30 +193,30 @@ function DeckDrawModal(props) {
                           className="capacity-image-results pe-1"
                           src={process.env.ROOT_URL + 'images/misc/capX.png'}
                         />
-                        <b>{props.burnedCapacityTotal}</b>
+                        <b>{burnedCapacityTotal}</b>
                       </div>
                     </div>
                     <DeckDrawCryptTable
-                      handleClick={handleModalCryptCardOpen}
-                      resultCards={props.burnedCrypt}
+                      handleClick={handleModalCardOpen}
+                      resultCards={burnedCrypt}
                       className="search-crypt-table"
                       ashHeap={true}
-                      disciplinesSet={props.disciplinesSet}
-                      keyDisciplines={props.keyDisciplines}
-                      nonKeyDisciplines={props.nonKeyDisciplines}
+                      disciplinesSet={disciplinesSet}
+                      keyDisciplines={keyDisciplines}
+                      nonKeyDisciplines={nonKeyDisciplines}
                     />
                   </div>
                 )}
               </Col>
               <Col xs={12} md={5} className="px-0 ps-lg-3 pe-lg-4">
-                {props.burnedLibrary.length > 0 && (
+                {burnedLibrary.length > 0 && (
                   <div className="pt-4 pt-md-0">
                     <div className="d-flex justify-content-between title-line">
                       <div className="d-flex align-items-center px-2">
                         <b>Ash Heap</b>
                       </div>
                       <div className="d-flex align-items-center">
-                        <b>{props.burnedLibrary.length}</b>
+                        <b>{burnedLibrary.length}</b>
                       </div>
                       <div className="d-flex">
                         <div
@@ -245,7 +229,7 @@ function DeckDrawModal(props) {
                               process.env.ROOT_URL + 'images/misc/bloodX.png'
                             }
                           />
-                          <b>{props.burnedBloodTotal}</b>
+                          <b>{burnedBloodTotal}</b>
                         </div>
                         <div
                           className="d-flex align-items-center pe-3"
@@ -255,13 +239,13 @@ function DeckDrawModal(props) {
                             className="cost-pool-image-results py-1 pe-1"
                             src={process.env.ROOT_URL + 'images/misc/poolX.png'}
                           />
-                          <b>{props.burnedPoolTotal}</b>
+                          <b>{burnedPoolTotal}</b>
                         </div>
                       </div>
                     </div>
                     <DeckDrawLibraryTable
-                      handleClick={handleModalLibraryCardOpen}
-                      resultCards={props.burnedLibrary}
+                      handleClick={handleModalSideCardOpen}
+                      resultCards={burnedLibrary}
                       className="search-library-table"
                       ashHeap={true}
                     />
@@ -270,23 +254,19 @@ function DeckDrawModal(props) {
               </Col>
             </Row>
           )}
-          {modalCryptCardIdx !== undefined && (
+          {shouldShowModal && !isSideMode && (
             <ResultCryptModal
-              card={props.burnedCrypt[modalCryptCardIdx]}
-              handleModalCardChange={handleModalCryptCardChange}
-              handleClose={() => {
-                setModalCryptCardIdx(undefined);
-              }}
+              card={currentModalCard}
+              handleModalCardChange={handleModalCardChange}
+              handleClose={handleModalCardClose}
               inDraw={true}
             />
           )}
-          {modalLibraryCardIdx !== undefined && (
+          {shouldShowModal && isSideMode && (
             <ResultLibraryModal
-              card={props.burnedLibrary[modalLibraryCardIdx]}
-              handleModalCardChange={handleModalLibraryCardChange}
-              handleClose={() => {
-                setModalLibraryCardIdx(undefined);
-              }}
+              card={currentModalCard}
+              handleModalCardChange={handleModalCardChange}
+              handleClose={handleModalCardClose}
               inDraw={true}
             />
           )}

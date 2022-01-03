@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   CardPopover,
   UsedPopover,
@@ -9,68 +9,42 @@ import {
   ResultLibraryModal,
   ConditionalOverlayTrigger,
 } from 'components';
+import { GROUPED_TYPE, ASCII_NAME } from 'utils/constants';
 import { useApp } from 'context';
-import { cardtypeSorted } from 'utils/constants';
+import { countCards, resultLibrarySort, getHardTotal } from 'utils';
+import { useModalCardController } from 'hooks';
 
-function TwdResultLibraryKeyCards(props) {
+const TwdResultLibraryKeyCards = (props) => {
+  const { library } = props;
   const { inventoryLibrary, usedLibraryCards, inventoryMode, isMobile } =
     useApp();
 
-  const [modalCardIdx, setModalCardIdx] = useState(undefined);
+  const sortedLibrary = resultLibrarySort(Object.values(library), GROUPED_TYPE);
+  const libraryTotal = countCards(sortedLibrary);
 
-  const handleModalCardChange = (d) => {
-    const maxIdx = keyCards.length - 1;
-
-    if (modalCardIdx + d < 0) {
-      setModalCardIdx(maxIdx);
-    } else if (modalCardIdx + d > maxIdx) {
-      setModalCardIdx(0);
-    } else {
-      setModalCardIdx(modalCardIdx + d);
-    }
-  };
-
-  let libraryTotal = 0;
-  const libraryByType = {};
-
-  Object.keys(props.library).map((card) => {
-    libraryTotal += props.library[card].q;
-    const cardtype = props.library[card].c['Type'];
-    if (libraryByType[cardtype] === undefined) {
-      libraryByType[cardtype] = [];
-    }
-
-    libraryByType[cardtype].push(props.library[card]);
-  });
-
-  const keyCards = [];
-
-  for (const cardtype of cardtypeSorted) {
-    if (libraryByType[cardtype] !== undefined) {
-      libraryByType[cardtype]
-        .filter((card) => {
-          return card.q >= 4;
-        })
-        .map((card) => {
-          keyCards.push(card);
-        });
-    }
-  }
+  const keyCards = sortedLibrary.filter((card) => card.q >= 4);
 
   let resultTrClass = 'result-even';
 
-  keyCards.sort((a, b) => {
-    if (a.c['ASCII Name'] < b.c['ASCII Name']) {
-      return -1;
-    }
-    if (a.c['ASCII Name'] > b.c['ASCII Name']) {
-      return 1;
-    }
-  });
+  keyCards.sort((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
+
+  // Modal Card Controller
+  const {
+    currentModalCard,
+    shouldShowModal,
+    handleModalCardOpen,
+    handleModalCardChange,
+    handleModalCardClose,
+  } = useModalCardController(keyCards);
+
+  const handleCloseModal = () => {
+    handleModalCardClose();
+    isMobile && setShowFloatingButtons(true);
+  };
 
   const cardRows = keyCards.map((card, index) => {
     const handleClick = () => {
-      setModalCardIdx(index);
+      handleModalCardOpen(index);
       isMobile && props.setShowFloatingButtons(false);
     };
 
@@ -81,34 +55,25 @@ function TwdResultLibraryKeyCards(props) {
     }
 
     let inInventory = 0;
-    let softUsedMax = 0;
+    // let softUsedMax = 0;
     let hardUsedTotal = 0;
 
     if (inventoryMode) {
-      if (inventoryLibrary[card.c['Id']]) {
-        inInventory = inventoryLibrary[card.c['Id']].q;
+      if (inventoryLibrary[card.c.Id]) {
+        inInventory = inventoryLibrary[card.c.Id].q;
       }
 
-      if (usedLibraryCards && usedLibraryCards.soft[card.c['Id']]) {
-        Object.keys(usedLibraryCards.soft[card.c['Id']]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card.c['Id']][id]) {
-            softUsedMax = usedLibraryCards.soft[card.c['Id']][id];
-          }
-        });
-      }
-
-      if (usedLibraryCards && usedLibraryCards.hard[card.c['Id']]) {
-        Object.keys(usedLibraryCards.hard[card.c['Id']]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card.c['Id']][id];
-        });
+      if (usedLibraryCards) {
+        // softUsedMax = getSoftMax(usedLibraryCards.soft[card.c.Id]);
+        hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.c.Id]);
       }
     }
 
     return (
-      <tr key={card.c['Id']} className={resultTrClass}>
+      <tr key={card.c.Id} className={resultTrClass}>
         {inventoryMode ? (
           <ConditionalOverlayTrigger
-            overlay={<UsedPopover cardid={card.c['Id']} />}
+            overlay={<UsedPopover cardid={card.c.Id} />}
             disabled={isMobile}
           >
             <td className="quantity-no-buttons px-1">
@@ -129,7 +94,7 @@ function TwdResultLibraryKeyCards(props) {
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
         <td className="type" onClick={() => handleClick()}>
-          <ResultLibraryTypeImage value={card.c['Type']} />
+          <ResultLibraryTypeImage value={card.c.Type} />
         </td>
 
         <ConditionalOverlayTrigger
@@ -144,8 +109,8 @@ function TwdResultLibraryKeyCards(props) {
 
         {!isMobile && (
           <td className="disciplines" onClick={() => handleClick()}>
-            <ResultLibraryDisciplines value={card.c['Discipline']} />
-            <ResultLibraryClan value={card.c['Clan']} />
+            <ResultLibraryDisciplines value={card.c.Discipline} />
+            <ResultLibraryClan value={card.c.Clan} />
           </td>
         )}
       </tr>
@@ -162,18 +127,15 @@ function TwdResultLibraryKeyCards(props) {
           <tbody>{cardRows}</tbody>
         </table>
       </div>
-      {modalCardIdx !== undefined && (
+      {shouldShowModal && (
         <ResultLibraryModal
-          card={keyCards[modalCardIdx].c}
+          card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
-          handleClose={() => {
-            setModalCardIdx(undefined);
-            isMobile && props.setShowFloatingButtons(true);
-          }}
+          handleClose={handleCloseModal}
         />
       )}
     </>
   );
-}
+};
 
 export default TwdResultLibraryKeyCards;

@@ -11,7 +11,7 @@ function ResultCryptName(props) {
       ) : (
         <div className="d-inline white-space-normal">{props.card['Name']}</div>
       )}
-      {props.card['Adv'][0] && (
+      {props.card.Adv[0] && (
         <span className="ps-1">
           <img
             className="advanced-image-results"

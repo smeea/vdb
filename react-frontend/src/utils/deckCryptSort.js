@@ -10,7 +10,7 @@ function deckCryptSort(cards, sortMethod) {
   };
 
   const byCapacity = (a, b) => {
-    return b.c['Capacity'] - a.c['Capacity'];
+    return b.c.Capacity - a.c.Capacity;
   };
 
   const byQuantity = (a, b) => {
@@ -18,7 +18,7 @@ function deckCryptSort(cards, sortMethod) {
   };
 
   const byGroup = (a, b) => {
-    return a.c['Group'] - b.c['Group'];
+    return a.c.Group - b.c.Group;
   };
 
   if (cards) {

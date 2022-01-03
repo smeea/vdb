@@ -49,7 +49,7 @@ function TwdSearchFormCrypt(props) {
               <ResultCryptName card={cryptCardBase[id]} />
               {cryptCardBase[id]['New'] && (
                 <div className="d-inline gray ps-1">
-                  [G{cryptCardBase[id]['Group']}]
+                  [G{cryptCardBase[id].Group}]
                 </div>
               )}
             </div>

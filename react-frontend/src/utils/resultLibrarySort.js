@@ -1,3 +1,6 @@
+import { cardtypeSorted } from 'utils/constants';
+import { getCardProperty } from 'utils';
+
 function resultLibrarySort(cards, sortMethod) {
   const byName = (a, b) => {
     if (a['ASCII Name'] < b['ASCII Name']) {
@@ -10,13 +13,20 @@ function resultLibrarySort(cards, sortMethod) {
   };
 
   const byType = (a, b) => {
-    if (a['Type'] < b['Type']) {
+    if (a.Type < b.Type) {
       return -1;
     }
-    if (a['Type'] > b['Type']) {
+    if (a.Type > b.Type) {
       return 1;
     }
     return 0;
+  };
+
+  const byGroupedType = (a, b) => {
+    return (
+      cardtypeSorted.indexOf(getCardProperty(a, 'Type')) -
+      cardtypeSorted.indexOf(getCardProperty(b, 'Type'))
+    );
   };
 
   const byBloodCost = (a, b) => {
@@ -34,32 +44,32 @@ function resultLibrarySort(cards, sortMethod) {
   };
 
   const byClan = (a, b) => {
-    if (a['Clan'] && !b['Clan']) {
+    if (a.Clan && !b.Clan) {
       return -1;
     }
-    if (!a['Clan'] && b['Clan']) {
+    if (!a.Clan && b.Clan) {
       return 1;
     }
-    if (a['Clan'] < b['Clan']) {
+    if (a.Clan < b.Clan) {
       return -1;
     }
-    if (a['Clan'] > b['Clan']) {
+    if (a.Clan > b.Clan) {
       return 1;
     }
     return 0;
   };
 
   const byDiscipline = (a, b) => {
-    if (a['Discipline'] && !b['Discipline']) {
+    if (a.Discipline && !b.Discipline) {
       return -1;
     }
-    if (!a['Discipline'] && b['Discipline']) {
+    if (!a.Discipline && b.Discipline) {
       return 1;
     }
-    if (a['Discipline'] < b['Discipline']) {
+    if (a.Discipline < b.Discipline) {
       return -1;
     }
-    if (a['Discipline'] > b['Discipline']) {
+    if (a.Discipline > b.Discipline) {
       return 1;
     }
     return 0;
@@ -73,6 +83,8 @@ function resultLibrarySort(cards, sortMethod) {
         return cards.sort(byName).sort(byType).sort(byDiscipline).sort(byClan);
       case 'Type':
         return cards.sort(byName).sort(byDiscipline).sort(byClan).sort(byType);
+      case 'GroupedType':
+        return cards.sort(byName).sort(byGroupedType);
       case 'Cost - Min to Max':
         return cards
           .sort(byName)
