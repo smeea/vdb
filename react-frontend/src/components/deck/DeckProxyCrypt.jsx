@@ -13,9 +13,15 @@ const DeckProxyCrypt = (props) => {
   const cryptSide = Object.values(cards).filter((card) => card.q <= 0);
   const cryptTotal = countCards(crypt);
 
-  const proxiesToPrint = Object.values(proxySelected).filter(
-    (card) => card.print && card.q > 0
-  );
+  const proxiesToPrint = Object.keys(proxySelected)
+    .filter(
+      (cardid) =>
+        cardid > 200000 &&
+        proxySelected[cardid].print &&
+        proxySelected[cardid].q > 0
+    )
+    .map((cardid) => proxySelected[cardid]);
+
   const cryptTotalSelected = countCards(proxiesToPrint);
 
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
