@@ -7,7 +7,7 @@ function DeckCryptTotalByCapacity(props) {
   const quantityList = [];
 
   Object.keys(props.cards).map((id, index) => {
-    cryptTotalCap += props.cards[id]['c']['Capacity'] * props.cards[id]['q'];
+    cryptTotalCap += props.cards[id]['c'].Capacity * props.cards[id]['q'];
     cryptTotalQ += props.cards[id].q;
     quantityList.push(props.cards[id].q);
   });

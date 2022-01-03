@@ -49,7 +49,7 @@ function DeckDrawLibraryTable(props) {
     const k = nonPlayed[card.Id];
 
     return (
-      <React.Fragment key={`${index}-${card['Id']}`}>
+      <React.Fragment key={`${index}-${card.Id}`}>
         <tr className={resultTrClass}>
           <td
             className={card['Blood Cost'] ? 'cost blood px-1' : 'cost px-1'}
@@ -61,15 +61,15 @@ function DeckDrawLibraryTable(props) {
             />
           </td>
           <td className="type px-1" onClick={() => props.handleClick(index)}>
-            <ResultLibraryTypeImage value={card['Type']} />
+            <ResultLibraryTypeImage value={card.Type} />
           </td>
           <td
             className="disciplines px-1"
             onClick={() => props.handleClick(index)}
           >
-            <ResultLibraryClan value={card['Clan']} />
-            {card['Discipline'] && card['Clan'] && '+'}
-            <ResultLibraryDisciplines value={card['Discipline']} />
+            <ResultLibraryClan value={card.Clan} />
+            {card.Discipline && card.Clan && '+'}
+            <ResultLibraryDisciplines value={card.Discipline} />
           </td>
 
           <ConditionalOverlayTrigger

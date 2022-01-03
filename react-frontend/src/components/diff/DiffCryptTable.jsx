@@ -20,7 +20,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 
-import { drawProbability } from 'utils';
+import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 import { useApp } from 'context';
 
 function DiffCryptTable(props) {
@@ -41,7 +41,7 @@ function DiffCryptTable(props) {
 
   let maxDisciplines = 0;
   props.cards.map((card) => {
-    const n = Object.keys(card.c['Disciplines']).length;
+    const n = Object.keys(card.c.Disciplines).length;
     if (maxDisciplines < n) {
       maxDisciplines = n;
     }
@@ -64,22 +64,13 @@ function DiffCryptTable(props) {
     let hardUsedTotal = 0;
 
     if (decks && inventoryMode) {
-      if (inventoryCrypt[card.c['Id']]) {
-        inInventory = inventoryCrypt[card.c['Id']].q;
+      if (inventoryCrypt[card.c.Id]) {
+        inInventory = inventoryCrypt[card.c.Id].q;
       }
 
-      if (usedCryptCards && usedCryptCards.soft[card.c['Id']]) {
-        Object.keys(usedCryptCards.soft[card.c['Id']]).map((id) => {
-          if (softUsedMax < usedCryptCards.soft[card.c['Id']][id]) {
-            softUsedMax = usedCryptCards.soft[card.c['Id']][id];
-          }
-        });
-      }
-
-      if (usedCryptCards && usedCryptCards.hard[card.c['Id']]) {
-        Object.keys(usedCryptCards.hard[card.c['Id']]).map((id) => {
-          hardUsedTotal += usedCryptCards.hard[card.c['Id']][id];
-        });
+      if (usedCryptCards) {
+        softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
+        hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
       }
     }
 
@@ -111,18 +102,18 @@ function DiffCryptTable(props) {
     };
 
     return (
-      <React.Fragment key={card.c['Id']}>
+      <React.Fragment key={card.c.Id}>
         <tr className={resultTrClass}>
           {props.isAuthor ? (
             <>
               {inventoryMode && decks ? (
                 <OverlayTrigger
                   placement="right"
-                  overlay={<UsedPopover cardid={card.c['Id']} />}
+                  overlay={<UsedPopover cardid={card.c.Id} />}
                 >
                   <td className="quantity">
                     <DeckCardQuantity
-                      cardid={card.c['Id']}
+                      cardid={card.c.Id}
                       q={qFrom}
                       deckid={props.deckid}
                       cardChange={deckCardChange}
@@ -136,7 +127,7 @@ function DiffCryptTable(props) {
               ) : (
                 <td className="quantity">
                   <DeckCardQuantity
-                    cardid={card.c['Id']}
+                    cardid={card.c.Id}
                     q={qFrom}
                     deckid={props.deckid}
                     cardChange={deckCardChange}
@@ -154,19 +145,19 @@ function DiffCryptTable(props) {
             className={isMobile ? 'capacity' : 'capacity pe-1'}
             onClick={() => handleClick()}
           >
-            <ResultCryptCapacity value={card.c['Capacity']} />
+            <ResultCryptCapacity value={card.c.Capacity} />
           </td>
           <td className="disciplines" onClick={() => handleClick()}>
             {props.disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
               <DeckCryptDisciplines
-                value={card.c['Disciplines']}
+                value={card.c.Disciplines}
                 disciplinesSet={props.disciplinesSet}
                 keyDisciplines={props.keyDisciplines}
                 nonKeyDisciplines={props.nonKeyDisciplines}
               />
             ) : (
               <ResultCryptDisciplines
-                value={card.c['Disciplines']}
+                value={card.c.Disciplines}
                 maxDisciplines={maxDisciplines}
               />
             )}
@@ -184,26 +175,26 @@ function DiffCryptTable(props) {
           {isWide ? (
             <>
               <td className="title pe-2" onClick={() => handleClick()}>
-                <ResultCryptTitle value={card.c['Title']} />
+                <ResultCryptTitle value={card.c.Title} />
               </td>
               <td className="clan" onClick={() => handleClick()}>
-                <ResultClanImage value={card.c['Clan']} />
+                <ResultClanImage value={card.c.Clan} />
               </td>
               <td className="group" onClick={() => handleClick()}>
-                <ResultCryptGroup value={card.c['Group']} />
+                <ResultCryptGroup value={card.c.Group} />
               </td>
             </>
           ) : (
             <>
               <td className="clan-group" onClick={() => handleClick()}>
                 <div>
-                  <ResultClanImage value={card.c['Clan']} />
+                  <ResultClanImage value={card.c.Clan} />
                 </div>
                 <div className="d-flex small justify-content-end">
                   <b>
-                    <ResultCryptTitle value={card.c['Title']} />
+                    <ResultCryptTitle value={card.c.Title} />
                   </b>
-                  <ResultCryptGroup value={card.c['Group']} />
+                  <ResultCryptGroup value={card.c.Group} />
                 </div>
               </td>
             </>

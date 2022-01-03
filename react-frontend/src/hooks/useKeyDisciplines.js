@@ -1,7 +1,7 @@
 const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
   const disciplinesDict = {};
   for (const card of Object.keys(cards)) {
-    for (const d of Object.keys(cards[card].c['Disciplines'])) {
+    for (const d of Object.keys(cards[card].c.Disciplines)) {
       if (disciplinesDict[d] === undefined) {
         disciplinesDict[d] = 0;
         disciplinesDict[d] += cards[card].q;
@@ -40,7 +40,7 @@ const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
   let nonKeyDisciplines = 0;
   Object.keys(cards).map((card) => {
     let counter = 0;
-    Object.keys(cards[card].c['Disciplines']).map((d) => {
+    Object.keys(cards[card].c.Disciplines).map((d) => {
       if (nonKeyDisciplinesList.includes(d)) {
         counter += 1;
       }

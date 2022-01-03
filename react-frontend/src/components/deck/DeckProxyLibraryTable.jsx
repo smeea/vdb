@@ -47,21 +47,21 @@ function DeckProxyLibraryTable(props) {
     let hardUsedTotal = 0;
 
     if (decks && inventoryMode) {
-      if (inventoryLibrary[card.c['Id']]) {
-        inInventory = inventoryLibrary[card.c['Id']].q;
+      if (inventoryLibrary[card.c.Id]) {
+        inInventory = inventoryLibrary[card.c.Id].q;
       }
 
-      if (usedLibraryCards && usedLibraryCards.soft[card.c['Id']]) {
-        Object.keys(usedLibraryCards.soft[card.c['Id']]).map((id) => {
-          if (softUsedMax < usedLibraryCards.soft[card.c['Id']][id]) {
-            softUsedMax = usedLibraryCards.soft[card.c['Id']][id];
+      if (usedLibraryCards && usedLibraryCards.soft[card.c.Id]) {
+        Object.keys(usedLibraryCards.soft[card.c.Id]).map((id) => {
+          if (softUsedMax < usedLibraryCards.soft[card.c.Id][id]) {
+            softUsedMax = usedLibraryCards.soft[card.c.Id][id];
           }
         });
       }
 
-      if (usedLibraryCards && usedLibraryCards.hard[card.c['Id']]) {
-        Object.keys(usedLibraryCards.hard[card.c['Id']]).map((id) => {
-          hardUsedTotal += usedLibraryCards.hard[card.c['Id']][id];
+      if (usedLibraryCards && usedLibraryCards.hard[card.c.Id]) {
+        Object.keys(usedLibraryCards.hard[card.c.Id]).map((id) => {
+          hardUsedTotal += usedLibraryCards.hard[card.c.Id][id];
         });
       }
     }
@@ -69,7 +69,7 @@ function DeckProxyLibraryTable(props) {
     const setOptions = [
       {
         value: '',
-        id: card.c['Id'],
+        id: card.c.Id,
         label: <div className="small">Newest (default)</div>,
       },
     ];
@@ -78,7 +78,7 @@ function DeckProxyLibraryTable(props) {
       if (card.c['Set'][i] && i !== 'POD') {
         setOptions.push({
           value: i.toLowerCase(),
-          id: card.c['Id'],
+          id: card.c.Id,
           label: (
             <div className="small">
               {setsAndPrecons[i].name}
@@ -91,17 +91,17 @@ function DeckProxyLibraryTable(props) {
     });
 
     return (
-      <React.Fragment key={card.c['Id']}>
+      <React.Fragment key={card.c.Id}>
         <tr className={resultTrClass}>
           <td className="proxy-selector">
             <Form.Check
               className="px-1"
               type="checkbox"
-              id={card.c['Id']}
+              id={card.c.Id}
               name="print"
               checked={
-                props.proxySelected[card.c['Id']]
-                  ? props.proxySelected[card.c['Id']].print
+                props.proxySelected[card.c.Id]
+                  ? props.proxySelected[card.c.Id].print
                   : false
               }
               onChange={(e) => props.handleProxySelector(e)}
@@ -110,15 +110,15 @@ function DeckProxyLibraryTable(props) {
           {inventoryMode && decks ? (
             <OverlayTrigger
               placement="right"
-              overlay={<UsedPopover cardid={card.c['Id']} />}
+              overlay={<UsedPopover cardid={card.c.Id} />}
             >
               <td className="quantity">
                 <DeckCardQuantity
-                  cardid={card.c['Id']}
+                  cardid={card.c.Id}
                   deckid={null}
                   q={
-                    props.proxySelected[card.c['Id']]
-                      ? props.proxySelected[card.c['Id']].q
+                    props.proxySelected[card.c.Id]
+                      ? props.proxySelected[card.c.Id].q
                       : 0
                   }
                   inProxy={true}
@@ -127,8 +127,8 @@ function DeckProxyLibraryTable(props) {
                   hardUsedTotal={hardUsedTotal}
                   cardChange={props.handleProxyCounter}
                   isSelected={
-                    props.proxySelected[card.c['Id']] &&
-                    props.proxySelected[card.c['Id']].print
+                    props.proxySelected[card.c.Id] &&
+                    props.proxySelected[card.c.Id].print
                   }
                 />
               </td>
@@ -136,11 +136,11 @@ function DeckProxyLibraryTable(props) {
           ) : (
             <td className="quantity">
               <DeckCardQuantity
-                cardid={card.c['Id']}
+                cardid={card.c.Id}
                 deckid={null}
                 q={
-                  props.proxySelected[card.c['Id']]
-                    ? props.proxySelected[card.c['Id']].q
+                  props.proxySelected[card.c.Id]
+                    ? props.proxySelected[card.c.Id].q
                     : 0
                 }
                 cardChange={props.handleProxyCounter}
@@ -164,9 +164,9 @@ function DeckProxyLibraryTable(props) {
             />
           </td>
           <td className="disciplines px-1" onClick={() => handleClick()}>
-            <ResultLibraryClan value={card.c['Clan']} />
-            {card.c['Discipline'] && card.c['Clan'] && '+'}
-            <ResultLibraryDisciplines value={card.c['Discipline']} />
+            <ResultLibraryClan value={card.c.Clan} />
+            {card.c.Discipline && card.c.Clan && '+'}
+            <ResultLibraryDisciplines value={card.c.Discipline} />
           </td>
           <td className="burn" onClick={() => handleClick()}>
             <ResultLibraryBurn value={card.c['Burn Option']} />
@@ -185,11 +185,11 @@ function DeckProxyLibraryTable(props) {
                   placeholder="Set"
                   value={setOptions.find((obj) => {
                     if (
-                      props.proxySelected[card.c['Id']] &&
-                      props.proxySelected[card.c['Id']].set
+                      props.proxySelected[card.c.Id] &&
+                      props.proxySelected[card.c.Id].set
                     ) {
                       obj.value ===
-                        props.proxySelected[card.c['Id']].set.toLowerCase();
+                        props.proxySelected[card.c.Id].set.toLowerCase();
                     }
                   })}
                   onChange={props.handleSetSelector}
@@ -203,8 +203,8 @@ function DeckProxyLibraryTable(props) {
                       <CardImage
                         card={card.c}
                         set={
-                          props.proxySelected[card.c['Id']] &&
-                          props.proxySelected[card.c['Id']].set
+                          props.proxySelected[card.c.Id] &&
+                          props.proxySelected[card.c.Id].set
                         }
                       />
                     </Popover.Body>

@@ -18,7 +18,7 @@ const DiffCrypt = (props) => {
   const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
   const { cardsFrom, cardsTo, deckid, isAuthor, inMissing, inAdvSelect } =
     props;
-  const { cryptDeckSort, changeTimer, isMobile } = useApp();
+  const { cryptDeckSort, forcedUpdate, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -78,7 +78,7 @@ const DiffCrypt = (props) => {
       setSortedCards(deckCryptSort(crypt, cryptDeckSort));
       setSortedCardsSide(deckCryptSort(cryptSide, cryptDeckSort));
     }
-  }, [changeTimer, cardsTo, cardsFrom, cryptDeckSort]);
+  }, [forcedUpdate, cardsTo, cardsFrom, cryptDeckSort]);
 
   // Modal Card Controller
   const {

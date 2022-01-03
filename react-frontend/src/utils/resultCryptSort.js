@@ -10,21 +10,21 @@ function resultCryptSort(cards, sortMethod) {
   };
 
   const byClan = (a, b) => {
-    if (a['Clan'] < b['Clan']) {
+    if (a.Clan < b.Clan) {
       return -1;
     }
-    if (a['Clan'] > b['Clan']) {
+    if (a.Clan > b.Clan) {
       return 1;
     }
     return 0;
   };
 
   const byCapacity = (a, b) => {
-    return a['Capacity'] - b['Capacity'];
+    return a.Capacity - b.Capacity;
   };
 
   const byGroup = (a, b) => {
-    return a['Group'] - b['Group'];
+    return a.Group - b.Group;
   };
 
   if (cards) {

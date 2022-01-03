@@ -88,10 +88,10 @@ function TwdResultCrypt(props) {
     }
 
     return (
-      <tr key={card.c['Id']} className={resultTrClass}>
+      <tr key={card.c.Id} className={resultTrClass}>
         {inventoryMode ? (
           <ConditionalOverlayTrigger
-            overlay={<UsedPopover cardid={card.c['Id']} />}
+            overlay={<UsedPopover cardid={card.c.Id} />}
             disabled={isMobile}
           >
             <td className="quantity-no-buttons px-1">
@@ -112,7 +112,7 @@ function TwdResultCrypt(props) {
           <td className="quantity-no-buttons px-1">{card.q}</td>
         )}
         <td className="capacity px-1" onClick={() => handleClick()}>
-          <ResultCryptCapacity value={card.c['Capacity']} />
+          <ResultCryptCapacity value={card.c.Capacity} />
         </td>
 
         <ConditionalOverlayTrigger
@@ -126,7 +126,7 @@ function TwdResultCrypt(props) {
         </ConditionalOverlayTrigger>
 
         <td className="clan px-1" onClick={() => handleClick()}>
-          <ResultClanImage value={card.c['Clan']} />
+          <ResultClanImage value={card.c.Clan} />
         </td>
       </tr>
     );

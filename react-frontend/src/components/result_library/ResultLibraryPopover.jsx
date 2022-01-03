@@ -24,15 +24,15 @@ function ResultLibraryPopover(props) {
           <div className="d-flex flex-nowrap justify-content-between align-items-center">
             <div className="d-flex flex-nowrap align-items-center">
               <div>
-                <ResultLibraryTypeImage value={props.card['Type']} />
+                <ResultLibraryTypeImage value={props.card.Type} />
               </div>
               <div className="name bold ps-2">
                 <ResultLibraryName card={props.card} />
               </div>
             </div>
             <div className="ps-1">
-              <ResultLibraryDisciplines value={props.card['Discipline']} />
-              <ResultLibraryClan value={props.card['Clan']} />
+              <ResultLibraryDisciplines value={props.card.Discipline} />
+              <ResultLibraryClan value={props.card.Clan} />
             </div>
             {props.card['Burn Option'] && (
               <div className="ps-1">
