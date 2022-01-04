@@ -121,11 +121,11 @@ const DeckDraw = (props) => {
   let burnedBloodTotal = 0;
 
   burnedLibrary.map((card) => {
-    if (card[POOL_COST] && !isNaN(card[POOL_COST])) {
-      burnedBloodTotal += parseInt(card[POOL_COST]);
-    }
     if (card[BLOOD_COST] && !isNaN(card[BLOOD_COST])) {
-      burnedPoolTotal += parseInt(card[BLOOD_COST]);
+      burnedBloodTotal += parseInt(card[BLOOD_COST]);
+    }
+    if (card[POOL_COST] && !isNaN(card[POOL_COST])) {
+      burnedPoolTotal += parseInt(card[POOL_COST]);
     }
   });
 
