@@ -368,8 +368,8 @@ def updateDeck(deckid):
                 d.used_in_inventory = {}
                 d.inventory_type = 's'
             else:
-                r = str(request.json['makeFlexible'])
                 used = d.used_in_inventory.copy()
+                r = int(request.json['makeFlexible'])
                 used[r] = 's'
                 d.used_in_inventory = used
     except Exception:
@@ -381,8 +381,8 @@ def updateDeck(deckid):
                 d.used_in_inventory = {}
                 d.inventory_type = 'h'
             else:
-                r = str(request.json['makeFixed'])
                 used = d.used_in_inventory.copy()
+                r = int(request.json['makeFixed'])
                 used[r] = 'h'
                 d.used_in_inventory = used
     except Exception:
@@ -394,8 +394,8 @@ def updateDeck(deckid):
                 d.used_in_inventory = {}
                 d.inventory_type = ''
             else:
-                r = str(request.json['makeClear'])
                 used = d.used_in_inventory.copy()
+                r = int(request.json['makeClear'])
                 del (used[r])
                 d.used_in_inventory = used
     except Exception:
@@ -482,7 +482,6 @@ def listDecks():
             library = {}
 
             for k, v in deck.cards.items():
-                k = int(k)
                 if k > 200000:
                     crypt[k] = {'q': v}
                     if k in deck.used_in_inventory:
