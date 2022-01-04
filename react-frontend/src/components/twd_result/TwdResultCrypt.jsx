@@ -29,15 +29,26 @@ function TwdResultCrypt(props) {
     .sort(SortByCapacity);
 
   const cryptTotal = countCards(sortedCards);
+
   const hasBanned = sortedCards.filter((card) => card.c.Banned).length > 0;
 
-  const cryptGroupMin = sortedCards
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc));
+  let cryptGroupMin = undefined;
+  let cryptGroupMax = undefined;
+  if (sortedCards.length) {
+    cryptGroupMin = sortedCards
+      .filter((card) => card.c.Group !== 'ANY')
+      .reduce(
+        (acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc),
+        10
+      );
 
-  const cryptGroupMax = sortedCards
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
+    cryptGroupMax = sortedCards
+      .filter((card) => card.c.Group !== 'ANY')
+      .reduce(
+        (acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc),
+        0
+      );
+  }
 
   let cryptGroups;
   if (cryptGroupMax - cryptGroupMin == 1) {
