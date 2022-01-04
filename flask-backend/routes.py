@@ -263,7 +263,8 @@ def getRecommendation(deckid):
 def updateDeck(deckid):
     d = Deck.query.filter_by(author=current_user, deckid=deckid).first()
     if not d:
-        print('bad deck request\n', request.json)
+        print('bad deck request\n', deckid, current_user.username,
+              request.json)
         return jsonify({'error': 'no deck'})
 
     d.timestamp = datetime.utcnow()
@@ -482,12 +483,12 @@ def listDecks():
             library = {}
 
             for k, v in deck.cards.items():
-                if k > 200000:
+                if int(k) > 200000:
                     crypt[k] = {'q': v}
                     if k in deck.used_in_inventory:
                         crypt[k]['i'] = deck.used_in_inventory[k]
 
-                elif k < 200000:
+                elif int(k) < 200000:
                     library[k] = {'q': v}
                     if k in deck.used_in_inventory:
                         library[k]['i'] = deck.used_in_inventory[k]
