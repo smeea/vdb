@@ -200,7 +200,7 @@ function DeckProxySelectModal(props) {
       <Modal.Body className="p-0">
         <Container fluid>
           <Row className="px-0 pe-lg-4">
-            <Col xs={12} md={7} className="px-0 px-lg-4">
+            <Col xs={12} md={7} className="px-0 px-lg-4 pb-4 pb-md-0">
               {props.deck.crypt && (
                 <>
                   <div className={isMobile ? null : 'sticky-modal'}>

@@ -52,7 +52,7 @@ const DeckProxyLibrary = (props) => {
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
-    <div key={cardtype} className="pt-2">
+    <div key={cardtype}>
       <div className="d-flex justify-content-between pe-2">
         <ResultLibraryType
           cardtype={cardtype}
@@ -94,16 +94,12 @@ const DeckProxyLibrary = (props) => {
 
   return (
     <>
-      <div className={inDeckTab && !isMobile ? 'sticky-lib-indeck pt-4' : null}>
-        <div
-          className={
-            isMobile
-              ? 'd-flex align-items-center justify-content-between ps-2 pe-1 info-message'
-              : 'd-flex align-items-center justify-content-between ps-2 info-message'
-          }
-        >
-          <b>Library [{libraryTotalSelected}]</b>
-        </div>
+      <div
+        className={`d-flex align-items-center justify-content-between info-message pb-2 ps-2 ${
+          isMobile ? 'pe-1' : 'py-2'
+        }`}
+      >
+        <b>Library [{libraryTotalSelected}]</b>
       </div>
       {LibraryDeck}
       {librarySide.length > 0 && !inAdvSelect && (

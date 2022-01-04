@@ -43,15 +43,12 @@ const DeckProxyCrypt = (props) => {
     handleModalCardClose();
     isMobile && setShowFloatingButtons(true);
   };
-
   return (
     <>
       <div
-        className={
-          isMobile
-            ? 'd-flex align-items-center justify-content-between ps-2 pe-1 info-message'
-            : 'd-flex align-items-center justify-content-between ps-2 info-message'
-        }
+        className={`d-flex align-items-center justify-content-between pb-2 ps-2 info-message ${
+          isMobile ? 'pe-1' : 'py-2'
+        }`}
       >
         <b>Crypt [{cryptTotalSelected}]</b>
       </div>
