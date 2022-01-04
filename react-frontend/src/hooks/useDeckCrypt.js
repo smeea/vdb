@@ -31,13 +31,23 @@ const useDeckCrypt = (cardsList, deckSort, timer, deckid, cardsToList) => {
 
   const cryptTotal = countCards(cryptFrom);
 
-  const cryptGroupMin = cryptFrom
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc));
+  let cryptGroupMin = undefined;
+  let cryptGroupMax = undefined;
+  if (cryptFrom.length) {
+    cryptGroupMin = cryptFrom
+      .filter((card) => card.c.Group !== ANY)
+      .reduce(
+        (acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc),
+        10
+      );
 
-  const cryptGroupMax = cryptFrom
-    .filter((card) => card.c.Group !== ANY)
-    .reduce((acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc), 0);
+    cryptGroupMax = cryptFrom
+      .filter((card) => card.c.Group !== ANY)
+      .reduce(
+        (acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc),
+        0
+      );
+  }
 
   let cryptGroups;
   if (cryptGroupMax - cryptGroupMin == 1) {
