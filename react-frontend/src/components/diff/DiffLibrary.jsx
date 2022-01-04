@@ -111,7 +111,7 @@ const DiffLibrary = (props) => {
 
   return (
     <>
-      <div className={isMobile ? null : 'sticky-lib-indeck pt-4 pt-md-0'}>
+      <div className={!isMobile ? 'sticky-deck-library pt-4 pt-md-4' : null}>
         <DeckLibraryHeader
           isMobile={isMobile}
           libraryTotal={libraryTotal}

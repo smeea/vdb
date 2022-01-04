@@ -118,7 +118,7 @@ const DeckLibrary = (props) => {
     <>
       <div
         className={
-          inDeckTab && !isMobile ? 'sticky-lib-indeck pt-4 pt-md-0' : null
+          inDeckTab && !isMobile ? 'sticky-deck-library pt-4 pt-md-4' : null
         }
       >
         <DeckLibraryHeader

@@ -582,16 +582,14 @@ function Diff(props) {
           {deckRouter(activeDeck) && deckToRouter(secondaryDeck) && (
             <Row className="pt-md-2">
               <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
-                <div className={isMobile ? null : 'sticky'}>
-                  <DiffCrypt
-                    deckid={activeDeck.deckid}
-                    isAuthor={isAuthor}
-                    cardsFrom={deckRouter(activeDeck).crypt}
-                    cardsTo={deckToRouter(secondaryDeck).crypt}
-                    showFloatingButtons={showFloatingButtons}
-                    setShowFloatingButtons={setShowFloatingButtons}
-                  />
-                </div>
+                <DiffCrypt
+                  deckid={activeDeck.deckid}
+                  isAuthor={isAuthor}
+                  cardsFrom={deckRouter(activeDeck).crypt}
+                  cardsTo={deckToRouter(secondaryDeck).crypt}
+                  showFloatingButtons={showFloatingButtons}
+                  setShowFloatingButtons={setShowFloatingButtons}
+                />
               </Col>
               <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
                 <DiffLibrary
@@ -608,7 +606,7 @@ function Diff(props) {
         </Col>
         {!isMobile && (
           <Col lg={2} className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
-            <div className="sticky">
+            <div className="sticky-buttons">
               <DiffButtons
                 isAuthor={isAuthor}
                 deck={deckRouter(activeDeck)}

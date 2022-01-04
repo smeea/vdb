@@ -48,7 +48,7 @@ function Inventory(props) {
             <>
               {showCrypt ? (
                 <>
-                  <div className="sticky-insearch py-1 px-1">
+                  <div className="sticky-selector py-1 px-1">
                     <InventoryNewCryptCard
                       cards={inventoryCrypt}
                       setNewId={setNewCryptId}
@@ -81,7 +81,7 @@ function Inventory(props) {
                 </>
               ) : (
                 <>
-                  <div className="sticky-insearch py-1 px-1">
+                  <div className="sticky-selector py-1 px-1">
                     <InventoryNewLibraryCard
                       cards={inventoryLibrary}
                       setNewId={setNewLibraryId}
@@ -128,7 +128,7 @@ function Inventory(props) {
             <Row className="mx-0">
               <Col xl={1} className="hide-narrow"></Col>
               <Col md={6} lg={6} xl={5} className="px-0 px-md-2 pe-xl-3">
-                <div className="sticky-insearch pt-3 pb-2">
+                <div className="sticky-selector pt-3 pb-2">
                   <InventoryNewCryptCard
                     cards={inventoryCrypt}
                     setNewId={setNewCryptId}
@@ -160,7 +160,7 @@ function Inventory(props) {
                   )}
               </Col>
               <Col md={6} lg={6} xl={4} className="px-0 px-md-2 px-xl-3">
-                <div className="sticky-insearch pt-3 pb-2">
+                <div className="sticky-selector pt-3 pb-2">
                   <InventoryNewLibraryCard
                     cards={inventoryLibrary}
                     setNewId={setNewLibraryId}

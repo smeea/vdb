@@ -52,13 +52,10 @@ const DiffCrypt = (props) => {
   };
 
   return (
-    <>
+    <div className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}>
       <div
-        className={
-          isMobile
-            ? 'd-flex align-items-center justify-content-between ps-2 pe-1 info-message'
-            : 'd-flex align-items-center justify-content-between ps-2 info-message'
-        }
+        className={`d-flex align-items-center justify-content-between ps-2 info-message
+    ${isMobile ? 'pe-1' : ''}`}
       >
         <b>
           Crypt [{cryptTotal}
@@ -172,7 +169,7 @@ const DiffCrypt = (props) => {
           handleClose={handleCloseModal}
         />
       )}
-    </>
+    </div>
   );
 };
 

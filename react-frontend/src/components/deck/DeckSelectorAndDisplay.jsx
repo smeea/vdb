@@ -23,7 +23,7 @@ const DeckSelectorAndDisplay = ({ deckData, activeDeck }) => {
     <>
       {decks && Object.keys(decks).length > 0 && (
         <>
-          <div className="d-flex justify-content-end sticky-insearch pb-2">
+          <div className="d-flex justify-content-end sticky-selector pt-3 pb-2">
             {deckId && addMode && (
               <>
                 <div className={isBranches ? 'w-75' : 'w-100'}>

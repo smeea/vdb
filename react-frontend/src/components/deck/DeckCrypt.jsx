@@ -50,12 +50,12 @@ const DeckCrypt = (props) => {
   };
 
   return (
-    <>
-      <div
-        className={`d-flex align-items-center justify-content-between ps-2 ${
-          isMobile ? 'pe-1' : ''
-        } info-message`}
-      >
+    <div
+      className={`${!inSearch && !inMissing ? 'pt-md-4' : ''} ${
+        !isMobile ? 'sticky-deck-crypt' : ''
+      }`}
+    >
+      <div className="d-flex align-items-center justify-content-between ps-2 pe-1 pe-md-0 info-message">
         <b>
           Crypt [{cryptTotal}
           {!inMissing && cryptTotal < 12 && ' of 12+'}]
@@ -183,7 +183,7 @@ const DeckCrypt = (props) => {
           handleClose={handleCloseModal}
         />
       )}
-    </>
+    </div>
   );
 };
 

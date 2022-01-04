@@ -304,7 +304,7 @@ function Decks(props) {
       <Row className="mx-0">
         <Col xl={1}></Col>
         <Col sm={12} lg={10} xl={9} className="px-md-2 px-xl-3">
-          <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0 pb-xl-4">
+          <Row className="px-1 px-md-0 py-1 pb-0 pt-md-0">
             <Col md={5} className="px-0 px-md-2">
               <Row className="align-items-center justify-content-end mx-0">
                 <Col className="px-0">
@@ -522,15 +522,13 @@ function Decks(props) {
           {deckRouter(activeDeck) && (
             <Row className="pt-md-2">
               <Col md={7} className="px-0 px-md-2 ps-xl-2 pe-xl-3 pt-3 pt-md-0">
-                <div className={isMobile ? null : 'sticky'}>
-                  <DeckCrypt
-                    deckid={activeDeck.deckid}
-                    cards={deckRouter(activeDeck).crypt}
-                    isAuthor={isAuthor}
-                    showFloatingButtons={showFloatingButtons}
-                    setShowFloatingButtons={setShowFloatingButtons}
-                  />
-                </div>
+                <DeckCrypt
+                  deckid={activeDeck.deckid}
+                  cards={deckRouter(activeDeck).crypt}
+                  isAuthor={isAuthor}
+                  showFloatingButtons={showFloatingButtons}
+                  setShowFloatingButtons={setShowFloatingButtons}
+                />
               </Col>
               <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
                 <DeckLibrary
@@ -547,7 +545,7 @@ function Decks(props) {
         </Col>
         {!isMobile && (
           <Col lg={2} className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
-            <div className="sticky">
+            <div className="sticky-buttons">
               <DeckButtons
                 isAuthor={isAuthor}
                 deck={deckRouter(activeDeck)}

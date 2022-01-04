@@ -941,12 +941,19 @@ textarea.deck-import:focus
 .add-new-card
   max-width: 100%
 
-div.sticky
+div.sticky-buttons
   position: sticky;
   top: 56
   z-index: 2
 
-div.sticky-insearch
+div.sticky-deck-crypt
+div.sticky-deck-library
+  background-color: var(--bg-primary)
+  position: sticky;
+  top: 32
+  z-index: 1
+
+div.sticky-selector
   background-color: var(--bg-primary)
   position: sticky;
   top: 40
@@ -965,12 +972,6 @@ div.sticky-inv-result
 div.sticky-modal
   position: sticky;
   top: 16
-
-div.sticky-lib-indeck
-  background-color: var(--bg-primary)
-  position: sticky;
-  top: 32
-  z-index: 1
 
 .dropdown-toggle::after
   content: none
