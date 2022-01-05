@@ -1,7 +1,9 @@
 from api import db
 from models import User, Deck
 
-for deck in Deck.query.all():
+total_decks = len(Deck.query.all())
+for i, deck in enumerate(Deck.query.all()):
+    print(f"{i} of {total_decks} decks")
     old_cards = deck.cards.copy()
     new_cards = {}
 
@@ -11,7 +13,9 @@ for deck in Deck.query.all():
     deck.cards = new_cards
     db.session.commit()
 
-for user in User.query.all():
+total_users = len(User.query.all())
+for i, user in enumerate(User.query.all()):
+    print(f"{i} of {total_users} users")
     old_inventory = user.inventory.copy()
     new_inventory = {}
 

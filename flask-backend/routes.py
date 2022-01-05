@@ -483,12 +483,12 @@ def listDecks():
             library = {}
 
             for k, v in deck.cards.items():
-                if int(k) > 200000:
+                if k > 200000:
                     crypt[k] = {'q': v}
                     if k in deck.used_in_inventory:
                         crypt[k]['i'] = deck.used_in_inventory[k]
 
-                elif int(k) < 200000:
+                elif k < 200000:
                     library[k] = {'q': v}
                     if k in deck.used_in_inventory:
                         library[k]['i'] = deck.used_in_inventory[k]
@@ -599,6 +599,12 @@ def importBranch():
                 description += '\n\n'
             description += f"{b['comments']}"
 
+        input_cards = b['cards'] if 'cards' in b else {}
+        cards = {}
+
+        for k, v in input_cards.items():
+            cards[int(k)] = v
+
         branch = Deck(deckid=deckid,
                       name=master.name,
                       branch_name=f"#{len(new_branches) - 1 - i}",
@@ -607,7 +613,7 @@ def importBranch():
                       author=current_user,
                       tags=master.tags,
                       master=master.deckid,
-                      cards=b['cards'])
+                      cards=cards)
 
         branches.append(deckid)
 

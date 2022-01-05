@@ -9,6 +9,7 @@
 - Export all in xlsx and csv
 - Links to custom deck
 - Crypt discipline distribution
+- Checkbox to search only in card text
 
 # BIG FEATURES
 - Search for similar TWD decks
