@@ -71,7 +71,10 @@ function CryptSearchForm(props) {
     const value = event.target.value;
     setCryptFormState((prevState) => ({
       ...prevState,
-      text: value,
+      text: {
+        ...prevState.text,
+        value: value,
+      },
     }));
   };
 
@@ -227,7 +230,10 @@ function CryptSearchForm(props) {
   }, [cryptFormState]);
 
   useEffect(() => {
-    if (!isMobile && (!cryptFormState.text || cryptFormState.text.length > 2)) {
+    if (
+      !isMobile &&
+      (!cryptFormState.text.value || cryptFormState.text.value.length > 2)
+    ) {
       launchRequest();
     }
   }, [cryptFormState, hideMissing, inventoryMode]);
@@ -247,6 +253,7 @@ function CryptSearchForm(props) {
       <SearchFormTextAndButtons
         value={cryptFormState.text}
         onChange={handleTextChange}
+        onChangeOptions={handleMultiChange}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
         preresults={preresults ? preresults.length : null}

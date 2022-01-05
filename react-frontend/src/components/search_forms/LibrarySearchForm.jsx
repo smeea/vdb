@@ -71,7 +71,10 @@ function LibrarySearchForm(props) {
     const value = event.target.value;
     setLibraryFormState((prevState) => ({
       ...prevState,
-      text: value,
+      text: {
+        ...prevState.text,
+        value: value,
+      },
     }));
   };
 
@@ -90,7 +93,6 @@ function LibrarySearchForm(props) {
     setLibraryFormState((prevState) => {
       const v = prevState[name].value;
       v[i] = value;
-
       return {
         ...prevState,
         [name]: {
@@ -214,7 +216,7 @@ function LibrarySearchForm(props) {
   useEffect(() => {
     if (
       !isMobile &&
-      (!libraryFormState.text || libraryFormState.text.length > 2)
+      (!libraryFormState.text.value || libraryFormState.text.value.length > 2)
     ) {
       launchRequest();
     }
@@ -235,6 +237,7 @@ function LibrarySearchForm(props) {
       <SearchFormTextAndButtons
         value={libraryFormState.text}
         onChange={handleTextChange}
+        onChangeOptions={handleMultiChange}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
         preresults={preresults ? preresults.length : null}

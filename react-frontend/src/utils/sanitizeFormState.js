@@ -4,6 +4,21 @@ const sanitizeFormState = (target, state) => {
 
   switch (target) {
     case 'crypt':
+    case 'library':
+      forms = ['text'];
+      break;
+  }
+  forms.map((i) => {
+    Object.keys(input[i]).forEach((k) => {
+      input[i][k] === false && delete input[i][k];
+    });
+    if (!input[i]['value']) {
+      delete input[i];
+    }
+  });
+
+  switch (target) {
+    case 'crypt':
       forms = ['disciplines', 'titles', 'group', 'traits'];
       break;
     case 'library':

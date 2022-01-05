@@ -73,7 +73,7 @@ function SearchFormSet(props) {
         name="set"
         value={i[0]}
         type="checkbox"
-        className="set-precon-traits"
+        className="small"
         id={`set-${i[0]}`}
         label={i[1]}
         disabled={

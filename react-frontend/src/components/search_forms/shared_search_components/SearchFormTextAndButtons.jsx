@@ -1,5 +1,13 @@
 import React from 'react';
-import { FormControl, InputGroup, Button } from 'react-bootstrap';
+import {
+  Row,
+  Col,
+  Stack,
+  Form,
+  FormControl,
+  InputGroup,
+  Button,
+} from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import { useApp } from 'context';
@@ -7,43 +15,83 @@ import { useApp } from 'context';
 function SearchFormTextAndButtons(props) {
   const { isMobile } = useApp();
 
-  if (isMobile) {
+  const options = [
+    ['inText', 'Only in Card Text'],
+    ['regex', 'With Regex'],
+  ];
+
+  const OptionsForm = options.map((i, index) => {
     return (
-      <FormControl
-        placeholder="Card Name / Text / RegEx"
-        type="text"
+      <Form.Check
+        key={index}
         name="text"
-        autoComplete="off"
-        spellCheck="false"
-        value={props.value}
-        onChange={props.onChange}
+        value={i[0]}
+        type="checkbox"
+        className="small"
+        id={`text-${i[0]}`}
+        label={i[1]}
+        checked={props.value[i[0]]}
+        onChange={(e) => props.onChangeOptions(e)}
       />
     );
-  } else {
+  });
+
+  if (isMobile) {
     return (
-      <InputGroup className="mb-2">
+      <>
         <FormControl
           placeholder="Card Name / Text / RegEx"
           type="text"
           name="text"
           autoComplete="off"
           spellCheck="false"
-          value={props.value}
+          value={props.value.value}
           onChange={props.onChange}
         />
-        {props.preresults > props.showLimit && (
-          <Button variant="primary" onClick={props.handleShowResults}>
-            <Check2 /> FOUND {props.preresults}
+        <Row className="pb-1 ps-1 mx-0 align-items-center">
+          <Col className="d-flex justify-content-end px-0">
+            <Stack direction="horizontal" gap={3}>
+              {OptionsForm}
+            </Stack>
+          </Col>
+        </Row>
+        ;
+      </>
+    );
+  } else {
+    return (
+      <>
+        <InputGroup className="mb-2">
+          <FormControl
+            placeholder="Card Name / Text / RegEx"
+            type="text"
+            name="text"
+            autoComplete="off"
+            spellCheck="false"
+            value={props.value.value}
+            onChange={props.onChange}
+          />
+          {props.preresults > props.showLimit && (
+            <Button variant="primary" onClick={props.handleShowResults}>
+              <Check2 /> FOUND {props.preresults}
+            </Button>
+          )}
+          <Button
+            title="Clear Forms & Results"
+            variant="primary"
+            onClick={props.handleClearButton}
+          >
+            <X />
           </Button>
-        )}
-        <Button
-          title="Clear Forms & Results"
-          variant="primary"
-          onClick={props.handleClearButton}
-        >
-          <X />
-        </Button>
-      </InputGroup>
+        </InputGroup>
+        <Row className="pb-1 ps-1 mx-0 align-items-center">
+          <Col className="d-flex justify-content-end px-0">
+            <Stack direction="horizontal" gap={3}>
+              {OptionsForm}
+            </Stack>
+          </Col>
+        </Row>
+      </>
     );
   }
 }

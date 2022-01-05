@@ -1,5 +1,9 @@
 {
-  "text": "",
+  "text": {
+    "value": "",
+    "regex": false,
+    "inText": false
+  },
   "type": {
     "value": [
       "any"

@@ -2,17 +2,38 @@ import json
 import re
 
 
-def get_crypt_by_text(text, crypt):
+def get_crypt_by_text(request, crypt):
+    value = request['value'].lower()
+    regex = request['regex'] if 'regex' in request else None
+    in_text = request['inText'] if 'inText' in request else None
     match_cards = []
-    text = text.replace(' "', '"').replace('" ', '"').replace('"', '(\W|^|$)')
+
     for card in crypt:
-        try:
-            if re.search(text, card['Card Text'], re.IGNORECASE) or re.search(
-                    text, card['Name'], re.IGNORECASE) or re.search(
-                        text, card['ASCII Name'], re.IGNORECASE):
-                match_cards.append(card)
-        except Exception:
-            pass
+        if regex:
+            if in_text:
+                if re.search(value, card['Card Text'], re.IGNORECASE):
+                    match_cards.append(card)
+
+            else:
+                if re.search(
+                        value, card['Card Text'], re.IGNORECASE) or re.search(
+                            value, card['Name'], re.IGNORECASE) or re.search(
+                                value, card['ASCII Name'], re.IGNORECASE):
+                    match_cards.append(card)
+
+        else:
+            card_text = card['Card Text'].lower()
+            card_name = card['Name'].lower()
+            card_name_ascii = card['ASCII Name'].lower()
+
+            if in_text:
+                if card_text.find(value) != -1:
+                    match_cards.append(card)
+
+            else:
+                if card_text.find(value) != -1 or card_name.find(
+                        value) != -1 or card_name_ascii.find(value) != -1:
+                    match_cards.append(card)
 
     return match_cards
 
