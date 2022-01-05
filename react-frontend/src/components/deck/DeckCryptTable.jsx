@@ -82,8 +82,8 @@ const DeckCryptTable = (props) => {
       }
 
       if (usedCryptCards) {
-        softUsedMax = getSoftMax(usedCryptCards.soft[card.Id]);
-        hardUsedTotal = getHardTotal(usedCryptCards.hard[card.Id]);
+        softUsedMax = getSoftMax(usedCryptCards.soft[card.c.Id]);
+        hardUsedTotal = getHardTotal(usedCryptCards.hard[card.c.Id]);
       }
     }
 
