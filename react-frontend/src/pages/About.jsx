@@ -70,13 +70,14 @@ function About(props) {
                 : 2021-12-01
               </p>
 
-              <h6>Last update [2021-12-31]:</h6>
+              <h6>Last update [2022-01-05]:</h6>
               <ul>
-                <li>Add Discipline filter to library in Inventory</li>
                 <li>
-                  Fix Advanced Deck Selection window on tablet-size resolutions
+                  Add checkboxes for text search in Crypt/Library to search only
+                  in card text and to search using regex (default is name+text
+                  without regex)
                 </li>
-                <li>Fix &quot;Search in Inventory&quot; in Crypt/Library</li>
+                <li>Many fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>

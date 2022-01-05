@@ -11,6 +11,16 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-01-05:</h6>
+            <ul>
+              <li>
+                Add checkboxes for text search in Crypt/Library to search only
+                in card text and to search using regex (default is name+text
+                without regex)
+              </li>
+              <li>Many fixes</li>
+            </ul>
+
             <h6>2021-12-31:</h6>
             <ul>
               <li>Add Discipline filter to library in Inventory</li>
