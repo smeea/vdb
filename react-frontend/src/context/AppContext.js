@@ -31,7 +31,7 @@ export const AppProvider = (props) => {
   const [showImage, setShowImage] = useState(undefined);
   const [addMode, setAddMode] = useState(undefined);
   const [inventoryMode, setInventoryMode] = useState(undefined);
-  const [hideMissing, setHideMissing] = useState(undefined);
+  const [hideMissing, setHideMissing] = useState(false);
   const [cryptDeckSort, setCryptDeckSort] = useState(undefined);
   const [cryptSearchSort, setCryptSearchSort] = useState(undefined);
   const [librarySearchSort, setLibrarySearchSort] = useState(undefined);
