@@ -258,18 +258,9 @@ function CryptSearchForm(props) {
         handleClearButton={handleClearButton}
         preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
+        hideMissing={hideMissing}
+        setHideMissing={setHideMissing}
       />
-      {inventoryMode && (
-        <div className={isMobile ? 'pt-1 ps-1' : 'ps-2'}>
-          <Form.Check
-            type="checkbox"
-            id="hideMissing"
-            label="Search in Inventory"
-            defaultChecked={hideMissing}
-            onChange={() => setHideMissing(!hideMissing)}
-          />
-        </div>
-      )}
       <CryptSearchFormDisciplines
         value={cryptFormState.disciplines}
         onChange={handleDisciplinesChange}

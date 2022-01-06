@@ -242,19 +242,9 @@ function LibrarySearchForm(props) {
         handleClearButton={handleClearButton}
         preresults={preresults ? preresults.length : null}
         showLimit={showLimit}
-        spinner={spinnerState}
+        hideMissing={hideMissing}
+        setHideMissing={setHideMissing}
       />
-      {inventoryMode && (
-        <div className={isMobile ? 'pt-1 ps-1' : 'ps-2'}>
-          <Form.Check
-            type="checkbox"
-            id="hideMissing"
-            label="Search in Inventory"
-            defaultChecked={hideMissing}
-            onChange={() => setHideMissing(!hideMissing)}
-          />
-        </div>
-      )}
       <LibrarySearchFormType
         value={{ name: 'type', ...libraryFormState.type }}
         onChange={handleMultiSelectChange}
