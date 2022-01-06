@@ -1,7 +1,10 @@
 import React from 'react';
 import { Row, Col, Stack } from 'react-bootstrap';
 import Select from 'react-select';
-import { SearchFormButtonAdd, SearchFormButtonDel } from 'components';
+import {
+  SearchFormButtonAdd,
+  SearchFormButtonDel,
+} from '../shared_search_components';
 import { useApp } from 'context';
 
 const SearchAdditionalForms = (props) => {
