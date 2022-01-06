@@ -63,13 +63,10 @@ function DeckSelectMy(props) {
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
       value={options.find((obj) => {
-        if (
-          decks[props.activeDeck.deckid] &&
-          decks[props.activeDeck.deckid].master
-        ) {
-          return obj.value === decks[props.activeDeck.deckid].master;
+        if (decks[props.deckId] && decks[props.deckId].master) {
+          return obj.value === decks[props.deckId].master;
         } else {
-          return obj.value === props.activeDeck.deckid;
+          return obj.value === props.deckId;
         }
       })}
       onChange={(e) => {

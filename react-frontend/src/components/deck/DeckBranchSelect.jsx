@@ -2,14 +2,14 @@ import React from 'react';
 import Select from 'react-select';
 import { useApp } from 'context';
 
-function DeckBranchSelect(props) {
+function DeckBranchSelect({ deckId }) {
   const { setActiveDeck, decks } = useApp();
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
   };
 
-  const deck = decks[props.activeDeck.deckid];
+  const deck = decks[props.deckId];
   const master = decks[deck.master];
 
   let branches;
@@ -49,7 +49,7 @@ function DeckBranchSelect(props) {
       isSearchable={false}
       name="decks"
       placeholder="Select Deck"
-      value={options.find((obj) => obj.value === props.activeDeck.deckid)}
+      value={options.find((obj) => obj.value === props.deckId)}
       onChange={(e) => {
         props.setActiveDeck
           ? props.setActiveDeck({ src: 'my', deckid: e.value })

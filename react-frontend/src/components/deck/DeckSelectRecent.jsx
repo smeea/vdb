@@ -33,7 +33,7 @@ function DeckSelectRecent(props) {
       name="decks"
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
-      value={options.find((obj) => obj.value === props.activeDeck.deckid)}
+      value={options.find((obj) => obj.value === props.deckId)}
       onChange={handleChange}
     />
   );

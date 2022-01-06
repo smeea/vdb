@@ -26,16 +26,11 @@ const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
 function App(props) {
   const {
     whoAmI,
-    setInventoryCrypt,
-    setInventoryLibrary,
     decks,
     recentDecks,
     updateRecentDecks,
     activeDeck,
     setActiveDeck,
-    inventoryDeckAdd,
-    inventoryDeckDelete,
-    inventoryAddToState,
   } = useApp();
 
   const [lastDeck, setLastDeck] = useState({});
@@ -93,42 +88,15 @@ function App(props) {
           <Route path="account" element={<Account />} />
           <Route path="diff" element={<Diff />} />
           <Route path="twd" element={<Twd />} />
-          <Route
-            path="inventory"
-            element={
-              <Inventory
-                inventoryDeckAdd={inventoryDeckAdd}
-                inventoryDeckDelete={inventoryDeckDelete}
-                inventoryAddToState={inventoryAddToState}
-                setInventoryCrypt={setInventoryCrypt}
-                setInventoryLibrary={setInventoryLibrary}
-              />
-            }
-          />
+          <Route path="inventory" element={<Inventory />} />
           <Route path="decks" element={<Decks />} />
           <Route
             path="crypt"
-            element={
-              <Crypt
-                activeDeck={
-                  activeDeck.src == 'my'
-                    ? activeDeck
-                    : { src: 'my', deckid: lastDeck.deckid }
-                }
-              />
-            }
+            element={<Crypt lastDeckId={lastDeck.deckid} />}
           />
           <Route
             path="library"
-            element={
-              <Library
-                activeDeck={
-                  activeDeck.src == 'my'
-                    ? activeDeck
-                    : { src: 'my', deckid: lastDeck.deckid }
-                }
-              />
-            }
+            element={<Library lastDeckId={lastDeck.deckid} />}
           />
           <Route path="cards" element={<Cards />} />
           <Route path="cards/:id" element={<Cards />} />

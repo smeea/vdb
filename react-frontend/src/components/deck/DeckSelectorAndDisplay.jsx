@@ -10,10 +10,10 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const DeckSelectorAndDisplay = ({ deckData, activeDeck }) => {
+const DeckSelectorAndDisplay = ({ deckData }) => {
   const { decks, isDesktop, addMode, toggleAddMode } = useApp();
 
-  const deckId = activeDeck.deckid;
+  const deckId = deckData.deckid;
 
   const isBranches =
     deckData &&
@@ -27,11 +27,11 @@ const DeckSelectorAndDisplay = ({ deckData, activeDeck }) => {
             {deckId && addMode && (
               <>
                 <div className={isBranches ? 'w-75' : 'w-100'}>
-                  <DeckSelectMy activeDeck={activeDeck} />
+                  <DeckSelectMy deckId={deckId} />
                 </div>
                 {isBranches && (
                   <div className="ps-1 w-25">
-                    <DeckBranchSelect activeDeck={activeDeck} />
+                    <DeckBranchSelect deckId={deckId} />
                   </div>
                 )}
               </>

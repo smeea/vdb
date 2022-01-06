@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-function Library(props) {
+function Library({ lastDeckId }) {
   const {
     deckRouter,
     showLibrarySearch,
@@ -17,11 +17,17 @@ function Library(props) {
     toggleAddMode,
     isMobile,
     isDesktop,
+    activeDeck,
   } = useApp();
 
-  const deckData = deckRouter(props.activeDeck);
+  const myActiveDeck = {
+    src: 'my',
+    deckid: activeDeck.src == 'my' ? activeDeck.deckid : lastDeckId,
+  };
 
-  const deckId = props.activeDeck.deckid;
+  const deckData = deckRouter(myActiveDeck);
+
+  const deckId = myActiveDeck.deckid;
 
   const showSearchForm = useMemo(() => {
     return (
@@ -31,24 +37,21 @@ function Library(props) {
 
   const showToggleAddMode = useMemo(() => {
     return deckId && (libraryResults || addMode) && !isMobile && !isDesktop;
-  }, [isMobile, isDesktop, addMode, libraryResults]);
+  }, [deckId, isDesktop, addMode, libraryResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showLibrarySearch));
 
   return (
     <Container className="main-container px-md-2 px-xl-4">
       <Row>
-        {!isMobile && (
+        {!isMobile && deckData && (
           <Col
             md={addMode ? 5 : 1}
             lg={addMode ? 6 : 1}
             xl={deckId && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
-            <DeckSelectorAndDisplay
-              deckData={deckData}
-              activeDeck={props.activeDeck}
-            />
+            <DeckSelectorAndDisplay deckData={deckData} />
           </Col>
         )}
         {showResultCol && (
@@ -56,7 +59,7 @@ function Library(props) {
             {libraryResults && (
               <ResultLibrary
                 library={deckData && deckData.library}
-                activeDeck={props.activeDeck}
+                activeDeck={myActiveDeck}
               />
             )}
           </Col>

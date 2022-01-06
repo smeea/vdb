@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-function Crypt(props) {
+function Crypt({ lastDeckId }) {
   const {
     deckRouter,
     showCryptSearch,
@@ -17,11 +17,17 @@ function Crypt(props) {
     toggleAddMode,
     isMobile,
     isDesktop,
+    activeDeck,
   } = useApp();
 
-  const deckData = deckRouter(props.activeDeck);
+  const myActiveDeck = {
+    src: 'my',
+    deckid: activeDeck.src == 'my' ? activeDeck.deckid : lastDeckId,
+  };
 
-  const deckId = props.activeDeck.deckid;
+  const deckData = deckRouter(myActiveDeck);
+
+  const deckId = myActiveDeck.deckid;
 
   const showSearchForm = useMemo(() => {
     return (
@@ -31,24 +37,21 @@ function Crypt(props) {
 
   const showToggleAddMode = useMemo(() => {
     return deckId && (cryptResults || addMode) && !isMobile && !isDesktop;
-  }, [isMobile, isDesktop, addMode, cryptResults]);
+  }, [deckId, isMobile, isDesktop, addMode, cryptResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showCryptSearch));
 
   return (
     <Container className="main-container px-md-2 px-xl-4">
       <Row>
-        {!isMobile && (
+        {!isMobile && deckData && (
           <Col
             md={addMode ? 5 : 1}
             lg={addMode ? 6 : 1}
             xl={deckId && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
-            <DeckSelectorAndDisplay
-              deckData={deckData}
-              activeDeck={props.activeDeck}
-            />
+            <DeckSelectorAndDisplay deckData={deckData} />
           </Col>
         )}
         {showResultCol && (
@@ -56,7 +59,7 @@ function Crypt(props) {
             {cryptResults && (
               <ResultCrypt
                 crypt={deckData && deckData.crypt}
-                activeDeck={props.activeDeck}
+                activeDeck={myActiveDeck}
               />
             )}
           </Col>

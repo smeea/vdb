@@ -323,16 +323,16 @@ function Decks(props) {
                       }
                     >
                       {selectFrom == 'my' && decks ? (
-                        <DeckSelectMy activeDeck={activeDeck} />
+                        <DeckSelectMy deckId={activeDeck.deckid} />
                       ) : selectFrom == 'recent' ? (
-                        <DeckSelectRecent activeDeck={activeDeck} />
+                        <DeckSelectRecent deckId={activeDeck.deckid} />
                       ) : (
-                        <DeckSelectPrecon activeDeck={activeDeck} />
+                        <DeckSelectPrecon deckId={activeDeck.deckid} />
                       )}
                     </div>
                     {selectFrom == 'my' && decks && isBranches && (
                       <div className="ps-1 w-25">
-                        <DeckBranchSelect activeDeck={activeDeck} />
+                        <DeckBranchSelect deckId={activeDeck.deckid} />
                       </div>
                     )}
                     <div className="d-flex">

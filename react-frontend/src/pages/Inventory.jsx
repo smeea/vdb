@@ -24,6 +24,11 @@ function Inventory(props) {
     usedLibraryCards,
     username,
     isMobile,
+    inventoryDeckAdd,
+    inventoryDeckDelete,
+    inventoryAddToState,
+    setInventoryCrypt,
+    setInventoryLibrary,
   } = useApp();
 
   const [newCryptId, setNewCryptId] = useState(undefined);
@@ -198,9 +203,9 @@ function Inventory(props) {
                   <InventoryButtons
                     setShowAddDeck={setShowAddDeck}
                     setShowAddPrecon={setShowAddPrecon}
-                    inventoryAddToState={props.inventoryAddToState}
-                    setInventoryCrypt={props.setInventoryCrypt}
-                    setInventoryLibrary={props.setInventoryLibrary}
+                    inventoryAddToState={inventoryAddToState}
+                    setInventoryCrypt={setInventoryCrypt}
+                    setInventoryLibrary={setInventoryLibrary}
                     setShowButtons={handleShowButtons}
                   />
                   <div className="px-4 py-2">
@@ -267,9 +272,9 @@ function Inventory(props) {
               <InventoryButtons
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}
-                inventoryAddToState={props.inventoryAddToState}
-                setInventoryCrypt={props.setInventoryCrypt}
-                setInventoryLibrary={props.setInventoryLibrary}
+                inventoryAddToState={inventoryAddToState}
+                setInventoryCrypt={setInventoryCrypt}
+                setInventoryLibrary={setInventoryLibrary}
                 setShowButtons={handleShowButtons}
               />
               <div className="px-4 py-2">
@@ -286,16 +291,16 @@ function Inventory(props) {
         <InventoryAddDeckModal
           show={showAddDeck}
           handleClose={() => setShowAddDeck(false)}
-          inventoryDeckAdd={props.inventoryDeckAdd}
-          inventoryDeckDelete={props.inventoryDeckDelete}
+          inventoryDeckAdd={inventoryDeckAdd}
+          inventoryDeckDelete={inventoryDeckDelete}
         />
       )}
       {showAddPrecon && (
         <InventoryAddPreconModal
           show={showAddPrecon}
           handleClose={() => setShowAddPrecon(false)}
-          inventoryDeckAdd={props.inventoryDeckAdd}
-          inventoryDeckDelete={props.inventoryDeckDelete}
+          inventoryDeckAdd={inventoryDeckAdd}
+          inventoryDeckDelete={inventoryDeckDelete}
         />
       )}
     </Container>
