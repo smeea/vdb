@@ -92,7 +92,7 @@ def deckProxy(input):
 
         w = 63
         h = 88
-        gap = 0.2
+        gap = 0.25
         left_margin = 10
         top_margin = 10
 
@@ -100,7 +100,7 @@ def deckProxy(input):
         y_counter = 0
 
         pdf.add_page()
-        pdf.set_fill_color(40, 40, 40)
+        pdf.set_fill_color(60, 60, 60)
 
         page = 1
 
