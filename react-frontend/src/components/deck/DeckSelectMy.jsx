@@ -47,7 +47,7 @@ function DeckSelectMy(props) {
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children;
     if (name) {
-      return name.toLowerCase().includes(string);
+      return name.toLowerCase().includes(string.toLowerCase());
     } else {
       return true;
     }

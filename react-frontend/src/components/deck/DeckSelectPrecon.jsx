@@ -68,7 +68,7 @@ function DeckSelectPrecon(props) {
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children[1];
     if (name) {
-      return name.toLowerCase().includes(string);
+      return name.toLowerCase().includes(string.toLowerCase());
     } else {
       return true;
     }
