@@ -98,7 +98,7 @@ function DeckButtons(props) {
       )}
       {props.deck && inventoryMode && (
         <DeckMissing
-          name={props.deck.name}
+          deck={props.deck}
           missingCrypt={props.missingCrypt}
           missingLibrary={props.missingLibrary}
           setShowButtons={props.setShowButtons}

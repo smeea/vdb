@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import FileSaver from 'file-saver';
+import { saveAs } from 'file-saver';
 import { Spinner, Dropdown } from 'react-bootstrap';
 import Download from 'assets/images/icons/download.svg';
 import { BlockButton, ErrorOverlay } from 'components';
@@ -20,18 +20,24 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => saveDeck('twd')}>
         Save as file - TWD
       </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
-        Save as file - Lackey
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => saveDeck('jol')}>
-        Save as file - JOL
-      </Dropdown.Item>
+      {!props.inMissing && (
+        <>
+          <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
+            Save as file - Lackey
+          </Dropdown.Item>
+          <Dropdown.Item href="" onClick={() => saveDeck('jol')}>
+            Save as file - JOL
+          </Dropdown.Item>
+        </>
+      )}
       <Dropdown.Item href="" onClick={() => saveDeck('xlsx')}>
         Save as file - Excel
       </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
-        Save as file - CSV
-      </Dropdown.Item>
+      {!props.inMissing && (
+        <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
+          Save as file - CSV
+        </Dropdown.Item>
+      )}
       <Dropdown.Divider />
       <Dropdown.Item href="" onClick={() => copyDeck('text')}>
         Copy to Clipboard - Text
@@ -39,13 +45,17 @@ function DeckExport(props) {
       <Dropdown.Item href="" onClick={() => copyDeck('twd')}>
         Copy to Clipboard - TWD
       </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
-        Copy to Clipboard - Lackey
-      </Dropdown.Item>
-      <Dropdown.Item href="" onClick={() => copyDeck('jol')}>
-        Copy to Clipboard - JOL
-      </Dropdown.Item>
-      {username && decks && Object.keys(decks).length > 1 && (
+      {!props.inMissing && (
+        <>
+          <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
+            Copy to Clipboard - Lackey
+          </Dropdown.Item>
+          <Dropdown.Item href="" onClick={() => copyDeck('jol')}>
+            Copy to Clipboard - JOL
+          </Dropdown.Item>
+        </>
+      )}
+      {!props.inMissing && username && decks && Object.keys(decks).length > 1 && (
         <>
           <Dropdown.Divider />
           <Dropdown.Item href="" onClick={() => exportAll('text')}>
@@ -198,7 +208,7 @@ function DeckExport(props) {
               `${data.name} [${data.format}].txt`,
               { type: 'text/plain;charset=utf-8' }
             );
-            FileSaver.saveAs(file);
+            saveAs(file);
             setSpinnerState(false);
             isMobile && props.setShowButtons(false);
           })
@@ -253,9 +263,7 @@ function DeckExport(props) {
               });
               zip
                 .generateAsync({ type: 'blob' })
-                .then((blob) =>
-                  FileSaver.saveAs(blob, `Decks ${date} [${format}].zip`)
-                );
+                .then((blob) => saveAs(blob, `Decks ${date} [${format}].zip`));
               setSpinnerState(false);
             })
             .catch((error) => {

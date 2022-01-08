@@ -9,7 +9,7 @@
 - Export all in xlsx and csv
 - Links to custom deck
 - Crypt discipline distribution
-- Export missing in Deck and Inventory
+- Export missing in Inventory
 
 # BIG FEATURES
 - Search for similar TWD decks

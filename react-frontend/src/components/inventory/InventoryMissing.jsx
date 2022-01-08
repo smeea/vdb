@@ -158,9 +158,11 @@ function InventoryMissing(props) {
       </Button>
       {showModal && (
         <DeckMissingModal
-          crypt={missingCrypt}
-          library={missingLibrary}
-          name="Inventory"
+          deck={{
+            name: 'Missing card for Inventory',
+            crypt: missingCrypt,
+            library: missingLibrary,
+          }}
           show={showModal}
           setShow={setShowModal}
           handleClose={handleCloseModal}

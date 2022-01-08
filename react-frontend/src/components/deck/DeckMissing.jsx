@@ -24,9 +24,12 @@ function DeckMissing(props) {
       </Button>
       {showModal && (
         <DeckMissingModal
-          crypt={props.missingCrypt}
-          library={props.missingLibrary}
-          name={props.name}
+          deck={{
+            ...props.deck,
+            name: `Missing card for ${props.deck.name}`,
+            crypt: props.missingCrypt,
+            library: props.missingLibrary,
+          }}
           show={showModal}
           setShow={setShowModal}
           handleClose={handleCloseModal}
