@@ -3,7 +3,6 @@
 - Inventory bug for precon (also test for twd and shared)
 - Inventory missing to respect discipline filter
 - Recreate cardbase with 'any' Group and change 'ANY' to variable in crypt group calculation
-- Fix search with cards in TWD for <= to include 0
 
 # FEATURES
 - Localized proxies

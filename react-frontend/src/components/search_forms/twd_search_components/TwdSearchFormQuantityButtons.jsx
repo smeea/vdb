@@ -25,6 +25,8 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
         case 'gt':
           return 'lt';
         case 'lt':
+          return 'lt0';
+        case 'lt0':
           return 'eq';
         default:
           return 'gt';
@@ -42,14 +44,16 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
     }));
   };
 
-  const getIcon = (s) => {
+  const getIconAndText = (s) => {
     switch (s) {
       case 'gt':
-        return '≥';
+        return ['≥', 'More Than'];
+      case 'lt0':
+        return ['0≤', 'Less Than, and can be 0'];
       case 'lt':
-        return '≤';
+        return ['1≤', 'Less Than, but not less than 1'];
       default:
-        return '=';
+        return ['==', 'Equal'];
     }
   };
 
@@ -57,11 +61,12 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
     <div className="d-flex align-items-center justify-content-between pe-2">
       <div className="pe-1">
         <Button
-          className="quantity"
+          className="quantity-wide"
           variant="primary"
           onClick={handleToggleMoreLess}
+          title={getIconAndText(state[id].m)[1]}
         >
-          {getIcon(state[id].m)}
+          {getIconAndText(state[id].m)[0]}
         </Button>
       </div>
       <Button

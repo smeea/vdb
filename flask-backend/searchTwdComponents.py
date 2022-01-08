@@ -22,17 +22,18 @@ def get_twd_by_crypt(crypt, twda=twda):
                 if q:
                     if card in deck['crypt'] and deck['crypt'][card]['q'] == q:
                         counter += 1
-                else:
-                    if card not in deck['crypt']:
-                        counter += 1
+                elif card not in deck['crypt']:
+                    counter += 1
 
             elif m == 'lt':
                 if q:
                     if card in deck['crypt'] and deck['crypt'][card]['q'] <= q:
                         counter += 1
-                else:
-                    if card not in deck['crypt']:
-                        counter += 1
+
+            elif m == 'lt0':
+                if card in deck['crypt'] and deck['crypt'][card][
+                        'q'] <= q or card not in deck['crypt']:
+                    counter += 1
 
         if counter == cards_counter:
             match_decks.append(deck)
