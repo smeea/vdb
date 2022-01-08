@@ -18,14 +18,8 @@ import {
   ResultLibraryTrifle,
   ConditionalOverlayTrigger,
 } from 'components';
-import {
-  POOL_COST,
-  BLOOD_COST,
-  CARD_TEXT,
-  BURN_OPTION,
-  ASCII_NAME,
-} from 'utils/constants';
-import { getHardTotal, getSoftMax } from 'utils';
+import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
+import { deckCryptSort, getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
@@ -47,9 +41,9 @@ const InventoryLibraryTable = (props) => {
     isMobile && setShowFloatingButtons(true);
   };
 
-  cards.sort((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
+  const sortedCards = deckCryptSort(cards, 'Name');
 
-  const cardRows = cards.map((cardInfo, index) => {
+  const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
       isMobile && setShowFloatingButtons(false);
