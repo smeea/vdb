@@ -35,7 +35,7 @@ class Deck(db.Model):
     name = db.Column(db.String(64), default='New Deck')
     branch_name = db.Column(db.String(32), default='#0')
     author_public_name = db.Column(db.String(64))
-    description = db.Column(db.String(8192), default='')
+    description = db.Column(db.String(32768), default='')
     cards = db.Column(db.PickleType, default={})
     inventory_type = db.Column(db.String(1), default='')
     master = db.Column(db.String(32))
