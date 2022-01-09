@@ -47,7 +47,7 @@ function DeckDescription(props) {
         </InputGroup.Text>
         <FormControl
           as={props.folded ? 'input' : 'textarea'}
-          rows={8}
+          rows={12}
           type="text"
           className="form-control"
           value={state}
