@@ -10,7 +10,7 @@ function ButtonAddCard(props) {
   };
 
   let title = 'Add to Deck';
-  if (props.inZap && decks && decks[props.deckid]) {
+  if (props.inQuick && decks && decks[props.deckid]) {
     title = props.inDeck
       ? `In deck "${decks[props.deckid].name}"`
       : `Add to Deck "${decks[props.deckid].name}"`;

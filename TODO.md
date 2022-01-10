@@ -4,7 +4,6 @@
 - Inventory missing to respect discipline filter
 - Recreate cardbase with 'any' Group and change 'ANY' to variable in crypt group calculation
 - Fix dropdown button (name and drop direction) for Export
-- Fix quickselect for first open on mobile (keyboard immediately hidden)
 
 # FEATURES
 - Localized proxies
