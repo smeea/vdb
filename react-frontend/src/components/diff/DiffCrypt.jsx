@@ -4,7 +4,7 @@ import InfoCircle from 'assets/images/icons/info-circle.svg';
 import X from 'assets/images/icons/x.svg';
 import {
   DiffCryptTable,
-  DeckCryptTotalByCapacity,
+  DeckCryptTotalInfo,
   DeckNewCryptCard,
   DeckCryptSortButton,
   ResultCryptModal,
@@ -33,8 +33,12 @@ const DiffCrypt = (props) => {
   } = useDeckCrypt(cardsFrom, cryptDeckSort, changeTimer, deckid, cardsTo);
 
   // Disciplines Sort and Key non-Key selection
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
-    useKeyDisciplines(crypt, cryptTotal);
+  const {
+    disciplinesSet,
+    keyDisciplines,
+    nonKeyDisciplines,
+    disciplinesDetailed,
+  } = useKeyDisciplines(crypt, cryptTotal);
 
   // Modal Card Controller
   const {
@@ -83,7 +87,10 @@ const DiffCrypt = (props) => {
       </div>
       {showInfo && (
         <div className="info-message px-2">
-          <DeckCryptTotalByCapacity cards={crypt} />
+          <DeckCryptTotalInfo
+            disciplinesDetailed={disciplinesDetailed}
+            cards={crypt}
+          />
         </div>
       )}
       {showAdd &&

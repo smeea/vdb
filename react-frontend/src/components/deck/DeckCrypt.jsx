@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import X from 'assets/images/icons/x.svg';
 import {
-  DeckCryptTotalByCapacity,
+  DeckCryptTotalInfo,
   DeckCryptTable,
   DeckNewCryptCard,
   DeckCryptSortButton,
@@ -31,8 +31,12 @@ const DeckCrypt = (props) => {
   } = useDeckCrypt(cards, cryptDeckSort, changeTimer, deckid);
 
   // Disciplines Sort and Key non-Key selection
-  const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
-    useKeyDisciplines(cards, cryptTotal);
+  const {
+    disciplinesSet,
+    keyDisciplines,
+    nonKeyDisciplines,
+    disciplinesDetailed,
+  } = useKeyDisciplines(cards, cryptTotal);
 
   // Modal Card Controller
   const {
@@ -90,7 +94,10 @@ const DeckCrypt = (props) => {
       </div>
       {showInfo && (
         <div className="info-message px-2">
-          <DeckCryptTotalByCapacity cards={crypt} />
+          <DeckCryptTotalInfo
+            disciplinesDetailed={disciplinesDetailed}
+            cards={crypt}
+          />
         </div>
       )}
       {showAdd &&

@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   ResultLibraryTypeImage,
-  ResultLibraryDisciplines,
+  ResultDisciplineImage,
   ResultLibraryClan,
 } from 'components';
 
@@ -12,11 +12,13 @@ function DeckLibraryTotalInfo(props) {
   const TypesInfo = Object.keys(props.byTypes).map((t, idx) => {
     return (
       <span key={idx} className="d-inline-block nobr ps-0 pe-3">
-        <ResultLibraryTypeImage value={t} />
-        {props.byTypes[t]}{' '}
-        <span className="gray">
-          ({Math.round((props.byTypes[t] / total) * 100)}%)
-        </span>
+        <div className="d-flex align-items-center">
+          <ResultLibraryTypeImage value={t} />
+          {props.byTypes[t]}{' '}
+          <span className="gray">
+            ({Math.round((props.byTypes[t] / total) * 100)}%)
+          </span>
+        </div>
       </span>
     );
   });
@@ -41,7 +43,7 @@ function DeckLibraryTotalInfo(props) {
           </>
         ) : (
           <>
-            <ResultLibraryDisciplines value={d} />
+            <ResultDisciplineImage value={d} />
             {props.byDisciplines[d]}{' '}
           </>
         )}
@@ -55,19 +57,20 @@ function DeckLibraryTotalInfo(props) {
   const ClansInfo = byClansSorted.map((d, idx) => {
     return (
       <span key={idx} className="d-inline-block nobr ps-0 pe-3">
-        <ResultLibraryClan value={d} />
-        {props.byClans[d]}{' '}
-        <span className="gray">
-          ({Math.round((props.byClans[d] / total) * 100)}%)
-        </span>
+        <div className="d-flex align-items-center">
+          <ResultLibraryClan value={d} /> {props.byClans[d]}{' '}
+          <span className="gray">
+            ({Math.round((props.byClans[d] / total) * 100)}%)
+          </span>
+        </div>
       </span>
     );
   });
 
   return (
     <>
-      <div className="py-2">{TypesInfo}</div>
-      <div className="pt-2">Excluding Masters:</div>
+      <div className="py-1">{TypesInfo}</div>
+      <div className="pt-1">Excluding Masters:</div>
       <div className="py-1">{DisciplinesInfo}</div>
       <div className="pb-2">{ClansInfo}</div>
     </>

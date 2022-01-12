@@ -1,12 +1,18 @@
 const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
+  const disciplinesDetailed = {};
   const disciplinesDict = {};
   for (const card of Object.keys(cards)) {
     for (const d of Object.keys(cards[card].c.Disciplines)) {
       if (disciplinesDict[d] === undefined) {
         disciplinesDict[d] = 0;
         disciplinesDict[d] += cards[card].q;
+        disciplinesDetailed[d] = { 0: 0, 1: 0, 2: 0 };
+        disciplinesDetailed[d][cards[card].c.Disciplines[d]] += cards[card].q;
+        disciplinesDetailed[d][0] += cards[card].q;
       } else {
         disciplinesDict[d] += cards[card].q;
+        disciplinesDetailed[d][cards[card].c.Disciplines[d]] += cards[card].q;
+        disciplinesDetailed[d][0] += cards[card].q;
       }
     }
   }
@@ -52,6 +58,7 @@ const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
     disciplinesSet,
     keyDisciplines,
     nonKeyDisciplines,
+    disciplinesDetailed,
   };
 };
 

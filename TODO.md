@@ -8,9 +8,9 @@
 - Localized proxies
 - Export all in xlsx and csv
 - Links to custom deck
-- Crypt discipline distribution
 - Export missing in Inventory
 - Add prefers-color-scheme
+- Add V5A translations
 
 # BIG FEATURES
 - Search for similar TWD decks

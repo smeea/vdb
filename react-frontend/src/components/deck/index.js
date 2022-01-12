@@ -19,7 +19,7 @@ export { default as DeckExport } from './DeckExport.jsx';
 export { default as DeckNewLibraryCard } from './DeckNewLibraryCard.jsx';
 export { default as DeckSelectSortForm } from './DeckSelectSortForm.jsx';
 export { default as DeckCardQuantity } from './DeckCardQuantity.jsx';
-export { default as DeckCryptTotalByCapacity } from './DeckCryptTotalByCapacity.jsx';
+export { default as DeckCryptTotalInfo } from './DeckCryptTotalInfo.jsx';
 export { default as DeckHide } from './DeckHide.jsx';
 export { default as DeckProxy } from './DeckProxy.jsx';
 export { default as DeckTags } from './DeckTags.jsx';
