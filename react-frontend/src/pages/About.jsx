@@ -67,17 +67,29 @@ function About(props) {
                 <a href="http://www.vekn.net/card-lists">
                   vekn.net official list
                 </a>
-                : 2021-12-01
+                : 2022-01-12
               </p>
 
-              <h6>Last update [2022-01-05]:</h6>
+              <h6>Last update [2022-01-12]:</h6>
               <ul>
+                <li>Add ES/FR translation for V5 Anarch sets</li>
+                <li>Add Kyuen promo</li>
                 <li>
-                  Add checkboxes for text search in Crypt/Library to search only
-                  in card text and to search using regex (default is name+text
-                  without regex)
+                  Add deck crypt discipline distribution under info (i) button
                 </li>
-                <li>Many fixes</li>
+                <li>
+                  Add to TWD search by card quantity &quot;less than and may not
+                  include (0&le;)&quot; optional logic (previously
+                  &quot;&le;&quot; only search for deck including card which is
+                  now available under &quot;1&le;&quot; option).
+                </li>
+                <li>
+                  Increased deck description size to 32768 symbols and default
+                  unfolded description length to 12 rows
+                </li>
+                <li>Make pdf proxy delimiters slightly bigger and brighter</li>
+                <li>Fixed crypt/library pages layout for unlogged users</li>
+                <li>Many small other fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>

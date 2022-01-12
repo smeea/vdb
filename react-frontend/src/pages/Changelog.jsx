@@ -11,6 +11,28 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-01-12:</h6>
+            <ul>
+              <li>Add ES/FR translation for V5 Anarch sets</li>
+              <li>Add Kyuen promo</li>
+              <li>
+                Add deck crypt discipline distribution under info (i) button
+              </li>
+              <li>
+                Add to TWD search by card quantity &quot;less than and may not
+                include (0&le;)&quot; optional logic (previously
+                &quot;&le;&quot; only search for deck including card which is
+                now available under &quot;1&le;&quot; option).
+              </li>
+              <li>
+                Increased deck description size to 32768 symbols and default
+                unfolded description length to 12 rows
+              </li>
+              <li>Make pdf proxy delimiters slightly bigger and brighter</li>
+              <li>Fixed crypt/library pages layout for unlogged users</li>
+              <li>Many small other fixes</li>
+            </ul>
+
             <h6>2022-01-05:</h6>
             <ul>
               <li>
