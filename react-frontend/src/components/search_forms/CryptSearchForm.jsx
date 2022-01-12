@@ -227,7 +227,9 @@ function CryptSearchForm(props) {
       const input = sanitizeFormState('crypt', cryptFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
-          handleClearButton();
+          navigate('/crypt');
+          setCryptResults(undefined);
+          setPreresults(undefined);
         }
       } else if (
         !cryptFormState.text.value ||

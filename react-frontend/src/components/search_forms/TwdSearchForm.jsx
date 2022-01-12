@@ -252,7 +252,8 @@ function TwdSearchForm(props) {
       const input = sanitizeFormState('twd', twdFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
-          handleClearButton();
+          navigate('/twd');
+          setTwdResults(undefined);
         }
       } else if (!twdFormState.event || twdFormState.event.length > 2) {
         launchRequest();

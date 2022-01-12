@@ -213,7 +213,9 @@ function LibrarySearchForm(props) {
       const input = sanitizeFormState('library', libraryFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
-          handleClearButton();
+          navigate('/library');
+          setLibraryResults(undefined);
+          setPreresults(undefined);
         }
       } else if (
         !libraryFormState.text.value ||
