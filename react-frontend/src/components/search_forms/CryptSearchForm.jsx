@@ -174,53 +174,46 @@ function CryptSearchForm(props) {
     const url = `${process.env.API_URL}search/crypt`;
     const input = sanitizeFormState('crypt', cryptFormState);
 
-    if (Object.keys(input).length !== 0) {
-      navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(input))}`);
+    navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(input))}`);
 
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
-      };
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(input),
+    };
 
-      setShowError(false);
-      setSpinnerState(true);
+    setShowError(false);
+    setSpinnerState(true);
 
-      fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-          setShowCryptSearch(false);
-          setSpinnerState(false);
-          const res = data.map((i) => {
-            return cryptCardBase[i];
-          });
-          if (!isMobile) {
-            if (hideMissing && inventoryMode) {
-              setPreresults(() =>
-                res.filter((card) => inventoryCrypt[card.Id])
-              );
-            } else {
-              setPreresults(res);
-            }
-          } else {
-            setCryptResults(res);
-          }
-        })
-        .catch((error) => {
-          setSpinnerState(false);
-          if (isMobile) navigate('/crypt');
-          setCryptResults([]);
-          setPreresults([]);
-          setShowError(true);
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setShowCryptSearch(false);
+        setSpinnerState(false);
+        const res = data.map((i) => {
+          return cryptCardBase[i];
         });
-    } else {
-      setCryptResults(undefined);
-      setPreresults(undefined);
-    }
+        if (!isMobile) {
+          if (hideMissing && inventoryMode) {
+            setPreresults(() => res.filter((card) => inventoryCrypt[card.Id]));
+          } else {
+            setPreresults(res);
+          }
+        } else {
+          setCryptResults(res);
+        }
+      })
+      .catch((error) => {
+        setSpinnerState(false);
+        if (isMobile) navigate('/crypt');
+        setCryptResults([]);
+        setPreresults([]);
+        setShowError(true);
+      });
   };
 
   useEffect(() => {
@@ -230,11 +223,18 @@ function CryptSearchForm(props) {
   }, [cryptFormState]);
 
   useEffect(() => {
-    if (
-      !isMobile &&
-      (!cryptFormState.text.value || cryptFormState.text.value.length > 2)
-    ) {
-      launchRequest();
+    if (!isMobile) {
+      const input = sanitizeFormState('crypt', cryptFormState);
+      if (Object.keys(input).length === 0) {
+        if (query) {
+          handleClearButton();
+        }
+      } else if (
+        !cryptFormState.text.value ||
+        cryptFormState.text.value.length > 2
+      ) {
+        launchRequest();
+      }
     }
   }, [cryptFormState, hideMissing, inventoryMode]);
 

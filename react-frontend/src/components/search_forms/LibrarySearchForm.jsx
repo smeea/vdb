@@ -158,53 +158,48 @@ function LibrarySearchForm(props) {
     const url = `${process.env.API_URL}search/library`;
     const input = sanitizeFormState('library', libraryFormState);
 
-    if (Object.keys(input).length !== 0) {
-      navigate(`/library?q=${encodeURIComponent(JSON.stringify(input))}`);
+    navigate(`/library?q=${encodeURIComponent(JSON.stringify(input))}`);
 
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
-      };
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(input),
+    };
 
-      setShowError(false);
-      setSpinnerState(true);
+    setShowError(false);
+    setSpinnerState(true);
 
-      fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-          setSpinnerState(false);
-          setShowLibrarySearch(false);
-          const res = data.map((i) => {
-            return libraryCardBase[i];
-          });
-          if (!isMobile) {
-            if (hideMissing && inventoryMode) {
-              setPreresults(() =>
-                res.filter((card) => inventoryLibrary[card.Id])
-              );
-            } else {
-              setPreresults(res);
-            }
-          } else {
-            setLibraryResults(res);
-          }
-        })
-        .catch((error) => {
-          if (isMobile) navigate('/library');
-          setSpinnerState(false);
-          setLibraryResults([]);
-          setPreresults([]);
-          setShowError(true);
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setSpinnerState(false);
+        setShowLibrarySearch(false);
+        const res = data.map((i) => {
+          return libraryCardBase[i];
         });
-    } else {
-      setLibraryResults(undefined);
-      setPreresults(undefined);
-    }
+        if (!isMobile) {
+          if (hideMissing && inventoryMode) {
+            setPreresults(() =>
+              res.filter((card) => inventoryLibrary[card.Id])
+            );
+          } else {
+            setPreresults(res);
+          }
+        } else {
+          setLibraryResults(res);
+        }
+      })
+      .catch((error) => {
+        if (isMobile) navigate('/library');
+        setSpinnerState(false);
+        setLibraryResults([]);
+        setPreresults([]);
+        setShowError(true);
+      });
   };
 
   useEffect(() => {
@@ -214,11 +209,18 @@ function LibrarySearchForm(props) {
   }, [libraryFormState]);
 
   useEffect(() => {
-    if (
-      !isMobile &&
-      (!libraryFormState.text.value || libraryFormState.text.value.length > 2)
-    ) {
-      launchRequest();
+    if (!isMobile) {
+      const input = sanitizeFormState('library', libraryFormState);
+      if (Object.keys(input).length === 0) {
+        if (query) {
+          handleClearButton();
+        }
+      } else if (
+        !libraryFormState.text.value ||
+        libraryFormState.text.value.length > 2
+      ) {
+        launchRequest();
+      }
     }
   }, [libraryFormState, hideMissing, inventoryMode]);
 

@@ -1,5 +1,4 @@
 # FIX
-- Change url to empty on last form changed to 'any'
 - Inventory bug for precon (also test for twd and shared)
 - Inventory missing to respect discipline filter
 - Recreate cardbase with 'any' Group and change 'ANY' to variable in crypt group calculation

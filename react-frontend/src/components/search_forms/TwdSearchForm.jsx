@@ -165,35 +165,33 @@ function TwdSearchForm(props) {
     const url = `${process.env.API_URL}search/twd`;
     const input = sanitizeFormState('twd', twdFormState);
 
-    if (Object.keys(input).length !== 0) {
-      navigate(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`);
+    navigate(`/twd?q=${encodeURIComponent(JSON.stringify(input))}`);
 
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(input),
-      };
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(input),
+    };
 
-      setShowError(false);
-      setSpinnerState(true);
+    setShowError(false);
+    setSpinnerState(true);
 
-      fetch(url, options)
-        .then((response) => response.json())
-        .then((data) => {
-          setSpinnerState(false);
-          setShowTwdSearch(false);
-          setTwdResults(data);
-        })
-        .catch((error) => {
-          setSpinnerState(false);
-          setTwdResults([]);
-          setShowError(true);
-        });
-    }
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setSpinnerState(false);
+        setShowTwdSearch(false);
+        setTwdResults(data);
+      })
+      .catch((error) => {
+        setSpinnerState(false);
+        setTwdResults([]);
+        setShowError(true);
+      });
   };
 
   const getNewTwd = (q) => {
@@ -250,8 +248,15 @@ function TwdSearchForm(props) {
   };
 
   useEffect(() => {
-    if (!isMobile && (!twdFormState.event || twdFormState.event.length > 2)) {
-      launchRequest();
+    if (!isMobile) {
+      const input = sanitizeFormState('twd', twdFormState);
+      if (Object.keys(input).length === 0) {
+        if (query) {
+          handleClearButton();
+        }
+      } else if (!twdFormState.event || twdFormState.event.length > 2) {
+        launchRequest();
+      }
     }
   }, [twdFormState]);
 
