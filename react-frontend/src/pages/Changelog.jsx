@@ -18,6 +18,7 @@ function Changelog(props) {
               <li>
                 Add deck crypt discipline distribution under info (i) button
               </li>
+              <li>Add export for missing cards in deck (inventory-mode)</li>
               <li>
                 Add to TWD search by card quantity &quot;less than and may not
                 include (0&le;)&quot; optional logic (previously
