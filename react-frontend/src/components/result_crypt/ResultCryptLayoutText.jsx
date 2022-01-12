@@ -40,9 +40,11 @@ function ResultCryptLayoutText(props) {
               >
                 <span
                   className="adv ps-2"
-                  onClick={() =>
-                    props.setCard(cryptCardBase[props.card.Adv[1]])
-                  }
+                  onClick={() => {
+                    props.setCardId && props.setCardId(props.card.Adv[1]);
+                    props.setCard &&
+                      props.setCard(cryptCardBase[props.card.Adv[1]]);
+                  }}
                 >
                   [see {`${props.card.Adv[0] ? 'Base' : 'Adv'}`}]
                 </span>

@@ -49,9 +49,7 @@ export const getPreconDecks = () => {
         name: `${name}`,
         deckid: deckid,
         author: 'VTES Team',
-        description: `Preconstructed from "${
-          setsAndPrecons[set]['name']
-        }" [${setsAndPrecons[set]['date'].slice(4)}]`,
+        description: `Preconstructed from "${setsAndPrecons[set]['name']}" [${setsAndPrecons[set]['date']}]`,
         crypt: {},
         library: {},
       };

@@ -25,6 +25,7 @@ function Cards(props) {
     activeDeck,
   } = useApp();
 
+  const [cardId, setCardId] = useState(undefined);
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
@@ -34,8 +35,7 @@ function Cards(props) {
       Math.floor(
         Math.random() * Math.floor(Object.keys(cryptCardBase).length)
       ) + 200000;
-    setCard(cryptCardBase[id]);
-    navigate(`/cards/${id}`);
+    setCardId(id);
   };
 
   const randomLibrary = () => {
@@ -43,56 +43,58 @@ function Cards(props) {
       Math.floor(
         Math.random() * Math.floor(Object.keys(libraryCardBase).length)
       ) + 100000;
-    setCard(libraryCardBase[id]);
-    navigate(`/cards/${id}`);
+    setCardId(id);
   };
 
   let inDeck = 0;
   if (
-    card &&
+    cardId &&
     decks &&
     decks[activeDeck.deckid] &&
-    (decks[activeDeck.deckid].crypt[card.Id] ||
-      decks[activeDeck.deckid].library[card.Id])
+    (decks[activeDeck.deckid].crypt[cardId] ||
+      decks[activeDeck.deckid].library[cardId])
   ) {
     inDeck =
-      card.Id > 200000
-        ? decks[activeDeck.deckid].crypt[card.Id].q
-        : decks[activeDeck.deckid].library[card.Id].q;
+      cardId > 200000
+        ? decks[activeDeck.deckid].crypt[cardId].q
+        : decks[activeDeck.deckid].library[cardId].q;
   }
 
   useEffect(() => {
-    if (params.id > 200000 && cryptCardBase) {
-      setCard(cryptCardBase[params.id]);
-    } else if (params.id < 200000 && libraryCardBase) {
-      setCard(libraryCardBase[params.id]);
+    if (!cardId) setCardId(params.id);
+  }, [params.id]);
+
+  useEffect(() => {
+    if (cardId) {
+      if (params.id !== cardId) navigate(`/cards/${cardId}`);
+      cardId > 200000
+        ? setCard(cryptCardBase[cardId])
+        : setCard(libraryCardBase[cardId]);
     }
-  }, [params.id, cryptCardBase, libraryCardBase]);
+  }, [cardId]);
 
   return (
     <Container className="cards-container p-0">
       <>
         {isMobile ? (
           <>
-            {cryptCardBase && libraryCardBase && (
-              <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
-                <Col md={8} className="px-0">
-                  <QuickSelect setCard={setCard} />
-                  <div
-                    onClick={() => randomCrypt()}
-                    className="d-flex float-right-top float-random align-items-center justify-content-center"
-                  >
-                    <Dice3 viewBox="0 0 16 16" className="pe-1" /> C
-                  </div>
-                  <div
-                    onClick={() => randomLibrary()}
-                    className="d-flex float-right-middle float-random align-items-center justify-content-center"
-                  >
-                    <Dice3 viewBox="0 0 16 16" className="pe-1" /> L
-                  </div>
-                </Col>
-              </Row>
-            )}
+            <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
+              <Col md={8} className="px-0">
+                <QuickSelect setCardId={setCardId} />
+                <div
+                  onClick={() => randomCrypt()}
+                  className="d-flex float-right-top float-random align-items-center justify-content-center"
+                >
+                  <Dice3 viewBox="0 0 16 16" className="pe-1" /> C
+                </div>
+                <div
+                  onClick={() => randomLibrary()}
+                  className="d-flex float-right-middle float-random align-items-center justify-content-center"
+                >
+                  <Dice3 viewBox="0 0 16 16" className="pe-1" /> L
+                </div>
+              </Col>
+            </Row>
             {card && (
               <>
                 <Row className="m-0 p-0">
@@ -109,29 +111,28 @@ function Cards(props) {
                           {card && card.Id > 200000 && (
                             <ResultCryptLayoutText
                               card={card}
-                              setCard={setCard}
+                              setCardId={setCardId}
                               setImageSet={setImageSet}
                             />
                           )}
                           {card && card.Id < 200000 && (
                             <ResultLibraryLayoutText
                               card={card}
-                              setCard={setCard}
+                              setCardId={setCardId}
                               setImageSet={setImageSet}
                             />
                           )}
                         </div>
                         <div className="px-3 pt-3">
                           <div className="d-inline pe-2">
-                            <ButtonCardCopyUrl id={card.Id} />
+                            <ButtonCardCopyUrl id={cardId} />
                           </div>
                           <div className="d-inline pe-2">
                             <ButtonAddCard
-                              cardid={card.Id}
+                              cardid={cardId}
                               deckid={activeDeck.deckid}
-                              card={card}
                               inDeck={inDeck}
-                              inZap={true}
+                              inQuick={true}
                             />
                           </div>
                         </div>
@@ -154,7 +155,7 @@ function Cards(props) {
               {cryptCardBase && libraryCardBase && (
                 <Row className="align-content-center justify-content-center py-3">
                   <Col className="px-0">
-                    <QuickSelect setCard={setCard} />
+                    <QuickSelect setCardId={setCardId} />
                   </Col>
                 </Row>
               )}
@@ -168,17 +169,17 @@ function Cards(props) {
                     />
                   </Col>
                   <Col md={6} className="pt-3">
-                    {card && card.Id > 200000 && (
+                    {card.Id > 200000 && (
                       <ResultCryptLayoutText
                         card={card}
-                        setCard={setCard}
+                        setCardId={setCardId}
                         setImageSet={setImageSet}
                       />
                     )}
-                    {card && card.Id < 200000 && (
+                    {card.Id < 200000 && (
                       <ResultLibraryLayoutText
                         card={card}
-                        setCard={setCard}
+                        setCardId={setCardId}
                         setImageSet={setImageSet}
                       />
                     )}
@@ -188,11 +189,10 @@ function Cards(props) {
                       </div>
                       <div className="d-inline pe-1">
                         <ButtonAddCard
-                          cardid={card.Id}
                           deckid={activeDeck.deckid}
                           card={card}
                           inDeck={inDeck}
-                          inZap={true}
+                          inQuick={true}
                         />
                       </div>
                     </div>

@@ -10,6 +10,7 @@
 - Links to custom deck
 - Crypt discipline distribution
 - Export missing in Inventory
+- Add prefers-color-scheme
 
 # BIG FEATURES
 - Search for similar TWD decks
