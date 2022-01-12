@@ -31,27 +31,31 @@ function Library({ lastDeckId }) {
 
   const showSearchForm = useMemo(() => {
     return (
-      isDesktop || (!isMobile && !addMode) || (showLibrarySearch && isMobile)
+      isDesktop ||
+      (!isMobile && (!addMode || !libraryResults)) ||
+      (showLibrarySearch && isMobile)
     );
   }, [isMobile, isDesktop, addMode, showLibrarySearch]);
 
   const showToggleAddMode = useMemo(() => {
-    return deckId && (libraryResults || addMode) && !isMobile && !isDesktop;
-  }, [deckId, isDesktop, addMode, libraryResults]);
+    return deckId && libraryResults && !isMobile && !isDesktop;
+  }, [deckId, isMobile, isDesktop, libraryResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showLibrarySearch));
 
   return (
     <Container className="main-container px-md-2 px-xl-4">
       <Row>
-        {!isMobile && deckData && (
+        {!isMobile && (
           <Col
-            md={addMode ? 5 : 1}
+            md={!showSearchForm ? 5 : 1}
             lg={addMode ? 6 : 1}
             xl={deckId && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
-            <DeckSelectorAndDisplay deckData={deckData} />
+            {deckData && (isDesktop || (!isDesktop && !showSearchForm)) && (
+              <DeckSelectorAndDisplay deckData={deckData} />
+            )}
           </Col>
         )}
         {showResultCol && (

@@ -95,7 +95,7 @@ function SearchFormTextAndButtons(props) {
             <X />
           </Button>
         </InputGroup>
-        <Row className="pb-1 ps-1 mx-0 align-items-center">
+        <Row className="ps-1 mx-0 align-items-center">
           <Col className="d-flex justify-content-end px-0">
             <Stack direction="horizontal" gap={3}>
               {OptionsForm}
