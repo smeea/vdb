@@ -3,6 +3,10 @@
         "Name":"Magnum .44",
         "Card Text":"Arme \u00e0 feu.\nFrapper \u00e0 toute port\u00e9e : 2 points de d\u00e9g\u00e2ts, avec 1 man\u0153uvre optionnelle durant chaque combat."
     },
+    "102217":{
+        "Name":"Les Royaux de la 47e rue",
+        "Card Text":"Mortel unique avec 2 points de vie. 1 en force, 0 en morsure.\nVous pouvez br\u00fbler ce serviteur pour r\u00e9duire de 3 une morsure contre vous."
+    },
     "100015":{
         "Name":"\u00c9cole, terrain de chasse",
         "Card Text":"Lieu unique. Terrain de chasse.\nDurant votre phase de redressement, un vampire disponible que vous contr\u00f4lez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse \u00e0 chaque tour."
@@ -26,6 +30,14 @@
     "100046":{
         "Name":"Embuscade",
         "Card Text":"(D) Entrer en combat contre un serviteur inclin\u00e9. Le serviteur qui agit re\u00e7oit 1 man\u0153uvre optionnelle durant ce combat."
+    },
+    "100052":{
+        "Name":"Presse libre Anarch",
+        "Card Text":"Unique. Requiert un Anarch disponible.\nMettez cette carte en jeu. Vous pouvez l'incliner pour donner +1 en interception \u00e0 un Anarch que vous contr\u00f4lez. Vous pouvez l'incliner apr\u00e8s qu'un Anarch chasse avec succ\u00e8s pour ajouter 1 point de sang \u00e0 cet Anarch."
+    },
+    "100054":{
+        "Name":"Chemin de fer Anarch",
+        "Card Text":"Lieu unique.\nVous pouvez l'incliner pour donner +1 en discr\u00e9tion \u00e0 un Anarch."
     },
     "100058":{
         "Name":"Anarch fauteur de trouble",
@@ -61,7 +73,7 @@
     },
     "100093":{
         "Name":"Arm\u00e9e de rats",
-        "Card Text":"Action \u00e0 +1 en discr\u00e9tion.\n[ani] Mettez cette carte en jeu. Durant votre phase de redressement, votre proie br\u00fble 1 point de r\u00e9serve. Vous ne pouvez br\u00fbler qu'1 seul point de r\u00e9serve chaque tour avec des cartes /Arm\u00e9e de rats/. N'importe quel serviteur peut br\u00fbler cette carte en action (D)."
+        "Card Text":"Action \u00e0 +1 en discr\u00e9tion.\n[ani] Mettre cette carte en jeu. Durant votre phase de redressement, votre proie br\u00fble 1 point de r\u00e9serve. Vous ne pouvez br\u00fbler qu'1 seul point de r\u00e9serve chaque tour avec des cartes /Arm\u00e9e de rats/. N'importe quel serviteur peut br\u00fbler cette carte en action (D)."
     },
     "100095":{
         "Name":"Mus\u00e9e d'art",
@@ -79,6 +91,10 @@
         "Name":"Voies d\u00e9tourn\u00e9es",
         "Card Text":"Lieu unique.\nVous pouvez l'incliner pour donner +1 en discr\u00e9tion \u00e0 un Gangrel que vous contr\u00f4lez."
     },
+    "102218":{
+        "Name":"Leurre",
+        "Card Text":"Requiert un baron. Seulement utilisable si un serviteur est en train de vous mordre, apr\u00e8s avoir renonc\u00e9 \u00e0 bloquer.\nInclinez ce vampire qui r\u00e9agit. Redirigez la morsure vers un autre Mathusalem autre que le contr\u00f4leur du serviteur qui agit (ce Mathusalem peut tenter de bloquer)."
+    },
     "100131":{
         "Name":"Bannissement",
         "Card Text":"Choisissez un vampire plus jeune et disponible. Si le r\u00e9f\u00e9rendum passe, le vampire choisi est d\u00e9plac\u00e9 vers la r\u00e9gion incontr\u00f4l\u00e9e (rompant tous les effets de contr\u00f4le temporaire) ; toutes cartes et compteurs sur le vampire choisi restent avec lui mais sont hors du jeu tant que le vampire choisi reste incontr\u00f4l\u00e9."
@@ -87,6 +103,10 @@
         "Name":"La zone",
         "Card Text":"Lieu unique.\nVous pouvez l'incliner pour d\u00e9fausser une carte (et repiocher)."
     },
+    "100145":{
+        "Name":"Peau de l'ours",
+        "Card Text":"Seulement utilisable avant l'\u00e9tape de man\u0153uvre. Un vampire ne peut en jouer qu'un seul exemplaire par combat.\n[ani][pro] Ce round-ci, ce vampire re\u00e7oit +1 en force et peut pr\u00e9venir 1 point de d\u00e9g\u00e2ts.\n[ANI][PRO] Ce combat, ce vampire re\u00e7oit +1 en force et peut pr\u00e9venir 1 point de d\u00e9g\u00e2ts durant chaque round."
+    },
     "100146":{
         "Name":"Fusion avec la b\u00eate",
         "Card Text":"[ani][pro] +1 en discr\u00e9tion. Si ce vampire est bloqu\u00e9, il peut pr\u00e9venir 1 point de d\u00e9g\u00e2ts durant le combat r\u00e9sultant.\n[ANI][PRO] Seulement utilisable lors de l'annonce d'une action qui n'est pas une morsure. Les vampires ne peuvent pas bloquer cette action."
@@ -94,6 +114,10 @@
     "100157":{
         "Name":"Discours ensorcelant",
         "Card Text":"Seulement utilisable durant l'\u00e9tape de vote d'une action politique.\n[pre] Ce vampire re\u00e7oit +2 voix.\n[PRE] Ce vampire re\u00e7oit +4 voix."
+    },
+    "100162":{
+        "Name":"Exp\u00e9rience biothaumaturgique",
+        "Card Text":"Action \u00e0 +1 en discr\u00e9tion.\n[tha] Employer un compagnon animal de votre main en ignorant ses pr\u00e9requis (payez le co\u00fbt normalement).\n[THA] Mettre cette carte sur un serviteur que vous contr\u00f4lez. Le serviteur attach\u00e9 re\u00e7oit 1 man\u0153uvre optionnelle durant chaque combat et +1 en force."
     },
     "100169":{
         "Name":"Sombre m\u00e9tamorphose",
@@ -106,6 +130,10 @@
     "100199":{
         "Name":"Poup\u00e9e de sang",
         "Card Text":"Mettez cette carte sur un vampire que vous contr\u00f4lez. Durant sa phase de ma\u00eetre, le contr\u00f4leur de ce vampire peut d\u00e9placer 1 point de sang de ce vampire vers sa r\u00e9serve ou de sa r\u00e9serve vers ce vampire."
+    },
+    "100208":{
+        "Name":"Rage sanguinaire",
+        "Card Text":"Seulement utilisable au contact.\n[tha] Frapper : frappe \u00e0 mains nues. Les d\u00e9g\u00e2ts inflig\u00e9s par cette frappe ne peuvent pas \u00eatre pr\u00e9venus par les cartes qui requi\u00e8rent Force d'\u00e2me [for]. Les frappes avec des armes du vampire oppos\u00e9 n'infligent pas de d\u00e9g\u00e2ts ce round-ci.\n[THA] Comme ci-dessus et cette frappe \u00e0 mains nues est \u00e0 +1 point de d\u00e9g\u00e2ts."
     },
     "100236":{
         "Name":"Sociabilisation",
@@ -123,6 +151,10 @@
         "Name":"Esclave de sang de la Camarilla",
         "Card Text":"Compagnon avec 1 point de vie.\nCe vampire re\u00e7oit +1 capacit\u00e9. Durant sa phase de ma\u00eetre, il peut choisir une Discipline qu'il a au niveau inf\u00e9rieur et recevoir +1 niveau de la Discipline choisie jusqu'\u00e0 sa prochaine phase de ma\u00eetre."
     },
+    "100297":{
+        "Name":"Abbaye de Carfax",
+        "Card Text":"Requiert un Anarch disponible. Lieu unique. Terrain de chasse.\nDurant votre phase de redressement, un Anarch disponible que vous contr\u00f4lez peut gagner 1 point de sang et, si vous contr\u00f4lez un baron disponible, un autre Anarch disponible que vous contr\u00f4lez peut gagner 1 point de sang \u00e9galement. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse \u00e0 chaque tour."
+    },
     "100298":{
         "Name":"Carlton Van Wyk",
         "Card Text":"Mortel unique avec 2 points de vie. 0 en force, 0 en morsure.\nCarlton peut frapper \u00e0 toute port\u00e9e : 1 point de d\u00e9g\u00e2ts. Une fois par combat, il peut frapper : esquiver. Carlton re\u00e7oit +1 en interception contre les vampires. Durant votre phase de d\u00e9fausse, vous pouvez br\u00fbler Carlton pour br\u00fbler un vampire qui a commis une diablerie depuis votre dernier tour."
@@ -131,13 +163,17 @@
         "Name":"Corneilles noires",
         "Card Text":"Seulement utilisable avant l'\u00e9tape de man\u0153uvre. Un vampire ne peut en jouer qu'un seul exemplaire par combat.\n[ani] Le serviteur oppos\u00e9 subit 1 point de d\u00e9g\u00e2ts environnementaux \u00e0 toute port\u00e9e chaque round de ce combat durant la r\u00e9solution des frappes normales.\n[ANI] Comme ci-dessus, mais pour 2 points de d\u00e9g\u00e2ts environnementaux \u00e0 toute port\u00e9e."
     },
+    "100303":{
+        "Name":"Entrep\u00f4t de viande de Carver",
+        "Card Text":"Lieu unique.\nApr\u00e8s qu'un vampire de capacit\u00e9 3 ou moins va en torpeur, mettez 1 compteur otage sur lui. Les vampires avec au moins un compteur otage ne peuvent pas \u00eatre d\u00e9plac\u00e9s vers la r\u00e9gion disponible ou \u00eatre diabl\u00e9s. Vous pouvez incliner ce lieu durant votre phase de ma\u00eetre pour ajouter X points de sang \u00e0 un vampire disponible que vous contr\u00f4lez, o\u00f9 X est le nombre de vampires avec au moins un compteur otage. Durant n'importe quelle phase de redressement, n'importe quel vampire disponible peut br\u00fbler 2 points de sang pour br\u00fbler les compteurs otage de n'importe quel vampire. Apr\u00e8s que cette carte quitte le jeu, br\u00fblez tous les compteurs otage."
+    },
     "100308":{
         "Name":"Conseil des chats",
         "Card Text":"[ani] Seulement utilisable par un vampire inclin\u00e9 qui a bloqu\u00e9, apr\u00e8s la r\u00e9solution du blocage. Redressez ce vampire.\n[ANI] +1 en interception."
     },
     "100323":{
         "Name":"Changement de cible",
-        "Card Text":"Seulement utilisable si ce serviteur est bloqu\u00e9, avant la r\u00e9solution du blocage.\nRedressez ce serviteur et l'action se termine (sans succ\u00e8s). Ce serviteur ne peut pas effectuer la m\u00eame action \u00e0 nouveau ce tour-ci."
+        "Card Text":"Seulement utilisable si ce serviteur est bloqu\u00e9, avant la r\u00e9solution du blocage.\nRedressez ce serviteur et l'action prend fin (sans succ\u00e8s). Ce serviteur ne peut pas effectuer la m\u00eame action \u00e0 nouveau ce tour-ci."
     },
     "100324":{
         "Name":"Changelin",
@@ -159,9 +195,21 @@
         "Name":"Maraudeur chiropt\u00e8re",
         "Card Text":"[vic] Man\u0153uvrer.\n[VIC] Br\u00fbler 1 point de sang pour aggraver les d\u00e9g\u00e2ts des frappes \u00e0 mains nues de ce vampire ce round-ci."
     },
+    "100356":{
+        "Name":"Griffes des morts",
+        "Card Text":"[pro] Les d\u00e9g\u00e2ts des frappes \u00e0 mains nues de ce vampire sont aggrav\u00e9s ce round-ci.\n[PRO] Man\u0153uvrer."
+    },
     "100362":{
         "Name":"Masquer l'assembl\u00e9e",
         "Card Text":"[obf] +1 en discr\u00e9tion.\n[OBF] Seulement utilisable par un vampire disponible autre que le serviteur qui agit. Le serviteur qui agit re\u00e7oit +1 en discr\u00e9tion."
+    },
+    "100366":{
+        "Name":"Club Illusion",
+        "Card Text":"Lieu unique.\nUn Anarch peut br\u00fbler 1 point de sang une fois lorsqu'il annonce une action de morsure pour recevoir +1 en morsure pour cette action."
+    },
+    "100374":{
+        "Name":"Codex des Jardiniers \u00e9deniens",
+        "Card Text":"Unique.\nSon possesseur re\u00e7oit -2 en discr\u00e9tion quand il mord. Ce vampire peut mordre en action (D) qui co\u00fbte 1 point de sang ; cette action re\u00e7oit +3 en morsure si le Mathusalem cibl\u00e9 ne contr\u00f4le pas de serviteur redress\u00e9 et disponible."
     },
     "100378":{
         "Name":"Coma",
@@ -183,6 +231,10 @@
         "Name":"Faveur consanguine",
         "Card Text":"Faveur.\nChoisissez un clan. Si le r\u00e9f\u00e9rendum passe, chaque Mathusalem gagne 1 point de r\u00e9serve pour chaque vampire du clan choisi sous son contr\u00f4le."
     },
+    "100416":{
+        "Name":"R\u00e9volution permanente",
+        "Card Text":"Action \u00e0 +1 en discr\u00e9tion. Requiert un Anarch. Unique.\nMettre cette carte en jeu avec 1 compteur. Durant votre phase de redressement, ajoutez 1 compteur \u00e0 cette carte. Durant la phase de redressement de chaque autre Mathusalem, ce Mathusalem br\u00fble X points de r\u00e9serve et/ou cartes au hasard de sa main, o\u00f9 X est le nombre de compteurs sur cette carte. N'importe quel vampire peut br\u00fbler cette carte en action (D) qui co\u00fbte 1 point de r\u00e9serve."
+    },
     "100435":{
         "Name":"La cabale",
         "Card Text":"Unique. Triviale.\nMettez cette carte en jeu. Vous pouvez l'incliner pour ajouter 2 points de sang \u00e0 un vampire disponible que vous contr\u00f4lez. Durant votre phase de d\u00e9fausse, votre pr\u00e9dateur prend le contr\u00f4le de cette carte."
@@ -203,6 +255,10 @@
         "Name":"Braver l'aube",
         "Card Text":"[for] Les vampires ne peuvent pas bloquer cette action. Ce vampire subit 2 points de d\u00e9g\u00e2ts aggrav\u00e9s environnementaux qui ne peuvent \u00eatre pr\u00e9venus apr\u00e8s r\u00e9solution de l'action.\n[FOR] Comme ci-dessus, mais ce vampire subit 1 point de d\u00e9g\u00e2ts aggrav\u00e9s environnementaux qui ne peuvent \u00eatre pr\u00e9venus."
     },
+    "102219":{
+        "Name":"\u00c9cologie profonde",
+        "Card Text":"Requiert un Anarch.\n[ani] Seulement utilisable durant une action dirig\u00e9e contre vous (ou une carte que vous contr\u00f4lez). +2 en interception.\n[for] R\u00e9duisez de 2 une morsure contre vous.\n[pro] Seulement utilisable par un vampire inclin\u00e9. Ce vampire br\u00fble 1 point de sang pour se redresser."
+    },
     "100515":{
         "Name":"Chant profond",
         "Card Text":"[ani] (D) Mordre \u00e0 +1 en morsure.\n[ANI] Fr\u00e9n\u00e9sie. (D) Incliner et entrer en combat contre un vampire. Le vampire cibl\u00e9 est consid\u00e9r\u00e9 comme \u00e9tant le serviteur qui agit durant ce combat."
@@ -221,7 +277,11 @@
     },
     "100573":{
         "Name":"Dominer le b\u00e9tail",
-        "Card Text":"[dom] Action \u00e0 +1 en discr\u00e9tion. (D) Mordre \u00e0 +1 en morsure.\n[DOM] (D) Voler un lieu contr\u00f4l\u00e9 par un autre Mathusalem."
+        "Card Text":"[dom] Action \u00e0 +1 en discr\u00e9tion. (D) Mordre \u00e0 +1 en morsure.\n[DOM] (D) Voler un lieu."
+    },
+    "102220":{
+        "Name":"Deux-doigts",
+        "Card Text":"Loup-garou unique avec 3 points de vie. 1 en force, 1 en morsure.\nDeux-doigts a +1 en discr\u00e9tion. Si Deux-doigts a 2 points de vie ou moins durant votre phase de redressement, il gagne 1 point de vie."
     },
     "100581":{
         "Name":"Li\u00e9 par le Dragon",
@@ -230,6 +290,10 @@
     "100588":{
         "Name":"R\u00eaves du sphinx",
         "Card Text":"Unique.\nMettez cette carte en jeu. Vous pouvez l'incliner et lui ajouter 1 compteur pour, au choix : recevoir +2 en taille de main jusqu'\u00e0 la fin du tour ; ou gagner 1 point de r\u00e9serve durant votre phase de redressement si vous avez l'Avantage ; ou ajouter 1 point de sang \u00e0 un vampire dans votre r\u00e9gion incontr\u00f4l\u00e9e. Br\u00fblez cette carte si elle a 3 compteurs."
+    },
+    "100597":{
+        "Name":"L\u00e9ger diff\u00e9rend",
+        "Card Text":"Requiert un Anarch.\n[ani] Frapper : frappe \u00e0 mains nues \u00e0 +1 point de d\u00e9g\u00e2ts. Cette frappe ne peut pas \u00eatre esquiv\u00e9e.\n[cel] Frapper : esquiver, avec 1 frappe additionnelle (limit\u00e9).\n[pot] Frapper : frappe \u00e0 mains nues \u00e0 +2 points de d\u00e9g\u00e2ts."
     },
     "100598":{
         "Name":"Vision d'aigle",
@@ -267,6 +331,10 @@
         "Name":"Enchanter la descendance",
         "Card Text":"[pre] (D) Mordre \u00e0 +1 en morsure.\n[PRE] Action \u00e0 +1 en discr\u00e9tion. Ajouter 2 points de sang \u00e0 un vampire plus jeune dans votre r\u00e9gion incontr\u00f4l\u00e9e."
     },
+    "102221":{
+        "Name":"Regard enchanteur",
+        "Card Text":"[pre][pro] +1 en discr\u00e9tion.\n[PRE][PRO] Comme ci-dessus et une fois durant cette action, vous pouvez br\u00fbler 1 de vos compteurs corruption d'un serviteur qui bloque pour faire \u00e9chouer sa tentative de blocage et il ne peut pas tenter de bloquer cette action \u00e0 nouveau."
+    },
     "100644":{
         "Name":"Sens surd\u00e9velopp\u00e9s",
         "Card Text":"[aus] +1 en interception.\n[AUS] +2 en interception."
@@ -285,7 +353,7 @@
     },
     "100652":{
         "Name":"Envo\u00fbtement",
-        "Card Text":"[pre] (D) Mordre \u00e0 +1 en morsure.\n[PRE] (D) Action \u00e0 +1 en discr\u00e9tion. Voler un alli\u00e9 contr\u00f4l\u00e9 par un autre Mathusalem."
+        "Card Text":"[pre] (D) Mordre \u00e0 +1 en morsure.\n[PRE] Action \u00e0 +1 en discr\u00e9tion. (D) Voler un alli\u00e9 contr\u00f4l\u00e9 par un autre Mathusalem."
     },
     "100680":{
         "Name":"Yeux d'Argus",
@@ -294,6 +362,10 @@
     "100682":{
         "Name":"Vision du chaos",
         "Card Text":"Seulement utilisable durant une action de morsure.\n[dem] +1 en morsure (limit\u00e9).\n[DEM] +2 en morsure (limit\u00e9)."
+    },
+    "102222":{
+        "Name":"Yeux de la nature",
+        "Card Text":"Seulement utilisable par un Gangrel inclin\u00e9.\nCe Gangrel se redresse et tente de bloquer. Durant cette action, ce Gangrel peut br\u00fbler 1 point de sang pour recevoir +1 en interception. Inclinez ce Gangrel apr\u00e8s r\u00e9solution de l'action s'il n'a pas bloqu\u00e9 cette action."
     },
     "100687":{
         "Name":"Nuit sans visage",
@@ -310,6 +382,14 @@
     "100720":{
         "Name":"F\u00e9mur de Toomler",
         "Card Text":"Arme de m\u00eal\u00e9e unique.\nFrapper : force+1 points de d\u00e9g\u00e2ts aggrav\u00e9s."
+    },
+    "100744":{
+        "Name":"Flash",
+        "Card Text":"[cel] Man\u0153uvrer ou poursuivre.\n[CEL] Man\u0153uvrer avec 1 poursuite optionnelle."
+    },
+    "100747":{
+        "Name":"L\u00e9g\u00e8ret\u00e9",
+        "Card Text":"Action \u00e0 +1 en discr\u00e9tion.\n[cel] (D) Mordre.\n[CEL] (D) Entrer en combat contre un serviteur inclin\u00e9. Ce vampire qui agit re\u00e7oit 1 man\u0153uvre optionnelle durant ce combat."
     },
     "100760":{
         "Name":"R\u00e9veil forc\u00e9",
@@ -330,6 +410,18 @@
     "100771":{
         "Name":"Forme de brume",
         "Card Text":"[pro] Frapper : esquiver.\n[PRO] Frapper : fin de combat. Si ce vampire agit et que l'action a \u00e9t\u00e9 bloqu\u00e9e, il peut br\u00fbler 1 point de sang apr\u00e8s la fin du combat pour continuer l'action avec +1 en discr\u00e9tion comme si elle n'avait pas \u00e9t\u00e9 bloqu\u00e9e, m\u00eame si de la discr\u00e9tion n'est pas encore n\u00e9cessaire. Un vampire ne peut en jouer qu'un seul exemplaire au niveau sup\u00e9rieur par action."
+    },
+    "102223":{
+        "Name":"Forme de la chauve-souris",
+        "Card Text":"[pro] [ACTIONMODIFIER] Seulement utilisable si un serviteur tente de bloquer. Le serviteur qui bloque re\u00e7oit -1 en interception. Si cette action est bloqu\u00e9e, ce vampire re\u00e7oit 1 man\u0153uvre optionnelle et ne peut pas utiliser d'\u00e9quipement durant le combat r\u00e9sultant.\n[PRO] [REACTION] +1 en interception. Si ce vampire bloque, il re\u00e7oit 1 man\u0153uvre optionnelle et ne peut pas utiliser d'\u00e9quipement durant le combat r\u00e9sultant."
+    },
+    "102224":{
+        "Name":"Forme du cobra",
+        "Card Text":"[pro] [COMBAT] Frapper : voler 1 point de sang ou de vie (convertie en sang).\n[PRO] [ACTIONMODIFIER] Seulement utilisable lors de l'annonce de l'action. +1 en discr\u00e9tion, m\u00eame si de la discr\u00e9tion n'est pas encore n\u00e9cessaire."
+    },
+    "102225":{
+        "Name":"Forme du loup",
+        "Card Text":"Seulement utilisable avant l'\u00e9tape de man\u0153uvre. Un vampire ne peut en jouer qu'un seul exemplaire par combat.\n[pro] Ce vampire re\u00e7oit +1 en force ce combat.\n[PRO] Comme ci-dessus et ce vampire gagne 1 poursuite optionnelle ce combat."
     },
     "100779":{
         "Name":"Exposition de la fondation",
@@ -365,7 +457,7 @@
     },
     "100863":{
         "Name":"Chiens de garde",
-        "Card Text":"Seulement utilisable par un vampire inclin\u00e9 durant une action de morsure contre vous.\n[ani] Redressez ce vampire.\n[ANI] Comme ci-dessus, avec 1 man\u0153uvre optionnelle durant le combat r\u00e9sultant si ce vampire bloque."
+        "Card Text":"Seulement utilisable par un vampire inclin\u00e9 durant une action de morsure contre vous.\n[ani] Redresser ce vampire.\n[ANI] Comme ci-dessus, avec 1 man\u0153uvre optionnelle durant le combat r\u00e9sultant si ce vampire bloque."
     },
     "100866":{
         "Name":"Ange gardien",
@@ -374,6 +466,10 @@
     "100882":{
         "Name":"Main de Conrad",
         "Card Text":"Unique.\nCe vampire re\u00e7oit le niveau sup\u00e9rieur de Puissance [POT]. Ce vampire peut d\u00e9placer un vampire de votre tas de cendres vers votre r\u00e9gion incontr\u00f4l\u00e9e en action."
+    },
+    "102226":{
+        "Name":"Loi d'Haqim : Ch\u00e2timent",
+        "Card Text":"Mettez cette carte en jeu. Durant une action de morsure, un Assamite que vous contr\u00f4lez peut d\u00e9fausser une carte de combat pour recevoir +1 en morsure."
     },
     "100886":{
         "Name":"Harceler",
@@ -387,9 +483,17 @@
         "Name":"C\u0153ur de Nizchetus",
         "Card Text":"Unique.\nSi son possesseur est disponible durant votre phase de redressement, vous pouvez piocher jusqu'\u00e0 3 cartes sans d\u00e9fausser et d\u00e9placer ensuite le m\u00eame nombre de cartes de votre main vers le dessous de votre biblioth\u00e8que."
     },
+    "100904":{
+        "Name":"C\u0153ur de la ville",
+        "Card Text":"Action \u00e0 +1 en discr\u00e9tion.\n[pre] Mettre cette carte sur ce vampire. Ce vampire re\u00e7oit +1 en morsure. Un vampire ne peut en avoir qu'un seul exemplaire.\n[PRE] Comme ci-dessus, mais ce vampire re\u00e7oit +2 en morsure."
+    },
     "100908":{
         "Name":"Ch\u00e2teau de Heidelberg, Allemagne",
         "Card Text":"Lieu unique.\nVous pouvez l'incliner pour d\u00e9placer des points de sang, des \u00e9quipements et/ou des compagnons entre deux vampires disponibles que vous contr\u00f4lez. Non utilisable durant une action."
+    },
+    "100913":{
+        "Name":"Puissance h\u00e9ro\u00efque",
+        "Card Text":"Action \u00e0 +3 en discr\u00e9tion.\n[pot] Mettre cette carte sur ce vampire. Ce vampire re\u00e7oit +1 en force. Ce vampire peut frapper : br\u00fbler un \u00e9quipement. Br\u00fblez cette carte si ce vampire est en torpeur. Un vampire ne peut en avoir qu'un seul exemplaire.\n[POT] Comme ci-dessus, avec +1 en force suppl\u00e9mentaire et ce vampire peut frapper \u00e0 toute port\u00e9e : 2 points de d\u00e9g\u00e2ts."
     },
     "100918":{
         "Name":"Force cach\u00e9e",
@@ -403,9 +507,17 @@
         "Name":"Forme monstrueuse",
         "Card Text":"Seulement utilisable avant l'\u00e9tape de man\u0153uvre.\n[vic] Ce vampire re\u00e7oit +1 en force ce combat.\n[VIC] Comme ci-dessus et ce vampire peut pr\u00e9venir 1 point de d\u00e9g\u00e2ts durant chaque round."
     },
+    "102227":{
+        "Name":"App\u00e9tit de Marduk",
+        "Card Text":"Seulement utilisable avant l'\u00e9tape de man\u0153uvre.\n[tha] Ce round-ci, ce vampire peut frapper \u00e0 toute port\u00e9e : voler 1 point de sang ou de vie (convertie en sang).\n[THA] Comme ci-dessus, mais pour 2 points de sang ou de vie (convertie en sang)."
+    },
     "100945":{
         "Name":"Le Coyote affam\u00e9",
         "Card Text":"Lieu unique.\nLes vampires du Sabbat que vous contr\u00f4lez re\u00e7oivent +1 en chasse."
+    },
+    "102228":{
+        "Name":"Marque du chasseur",
+        "Card Text":"[cel][tha] (D) Entrer en combat contre un serviteur. Ce vampire qui agit re\u00e7oit 1 poursuite optionnelle durant ce combat.\n[CEL][THA] Comme ci-dessus et le serviteur oppos\u00e9 ne peut pas frapper : fin de combat durant le premier round de ce combat."
     },
     "100959":{
         "Name":"Prise immortelle",
@@ -495,13 +607,17 @@
         "Name":"Vivre en ville",
         "Card Text":"Triviale.\nAjoutez 1 point de sang \u00e0 un vampire disponible."
     },
+    "102229":{
+        "Name":"Bagarre rang\u00e9e",
+        "Card Text":"Requiert un Anarch.\n[cel] (D) Voler 1 point de r\u00e9serve d'un autre Mathusalem.\n[pot] (D) Entrer en combat contre un serviteur.\n[pre] (D) Mordre \u00e0 +1 en morsure."
+    },
     "101114":{
         "Name":"Manoir vivant",
         "Card Text":"Tant qu'elle est en jeu, cette carte d'\u00e9quipement repr\u00e9sente un lieu et ne compte pas comme \u00e9quipement.\nCe vampire re\u00e7oit +1 en morsure. Il peut br\u00fbler cette carte avant l'\u00e9tape de man\u0153uvre pour arr\u00eater le combat. Un vampire ne peut en avoir qu'un seul exemplaire."
     },
     "101125":{
         "Name":"Perdu dans la foule",
-        "Card Text":"[obf] +1 en discr\u00e9tion. /Volatilis\u00e9/ et Perdu dans la foule ne peuvent \u00eatre jou\u00e9s durant la m\u00eame action.\n[OBF] Comme ci-dessus, mais pour +2 en discr\u00e9tion."
+        "Card Text":"[obf] +1 en discr\u00e9tion. Perdu dans la foule et les cartes nomm\u00e9es /Volatilis\u00e9/ ne peuvent \u00eatre jou\u00e9s durant la m\u00eame action.\n[OBF] Comme ci-dessus, mais pour +2 en discr\u00e9tion."
     },
     "101143":{
         "Name":"Magie du forgeron",
@@ -510,6 +626,10 @@
     "101144":{
         "Name":"Majest\u00e9",
         "Card Text":"[pre] Frapper : fin de combat.\n[PRE] Comme ci-dessus et redresser ce vampire avant la fin du combat."
+    },
+    "101171":{
+        "Name":"Place du march\u00e9",
+        "Card Text":"Lieu unique.\nVous pouvez l'incliner pour donner +1 en interception \u00e0 un Assamite que vous contr\u00f4lez."
     },
     "101216":{
         "Name":"Arnaques mentales",
@@ -530,6 +650,14 @@
     "101238":{
         "Name":"Monast\u00e8re des ombres",
         "Card Text":"Lieu unique.\n+1 en taille de main. Vous pouvez l'incliner pour donner +1 en discr\u00e9tion \u00e0 un vampire de capacit\u00e9 8 ou plus."
+    },
+    "101239":{
+        "Name":"Semer la pagaille",
+        "Card Text":"Requiert un Anarch. Seulement utilisable durant une action de morsure.\n+X en morsure (limit\u00e9). X doit \u00eatre 1, 2 ou 3."
+    },
+    "101249":{
+        "Name":"M. Winthrop",
+        "Card Text":"Mortel unique avec 1 point de vie.\nSon employeur re\u00e7oit +1 en interception."
     },
     "101254":{
         "Name":"Nu\u00e9e de corbeaux",
@@ -563,6 +691,14 @@
         "Name":"Sur le qui-vive",
         "Card Text":"Seulement utilisable par un serviteur inclin\u00e9. Un serviteur ne peut en jouer qu'un seul exemplaire entre chacune de ses phases de redressement.\nCe serviteur se r\u00e9veille (il n'a pas besoin d'\u00eatre redress\u00e9 pour jouer des cartes de r\u00e9action et tenter de bloquer jusqu'\u00e0 la fin de l'action). Si ce serviteur est un alli\u00e9, il ne se redresse pas normalement durant sa prochaine phase de redressement."
     },
+    "101326":{
+        "Name":"Fumerie d'opium",
+        "Card Text":"Lieu unique.\nVous pouvez l'incliner pour donner +1 en discr\u00e9tion \u00e0 un Disciple de Seth que vous contr\u00f4lez."
+    },
+    "102230":{
+        "Name":"R\u00e9sistance organis\u00e9e",
+        "Card Text":"Requiert un baron. Utilisable par un baron inclin\u00e9.\nUn Anarch que vous contr\u00f4lez re\u00e7oit +1 en interception. Utilisable \u00e9galement pour redresser un Anarch inclin\u00e9 que vous contr\u00f4lez ; cet Anarch tente de bloquer avec +1 en interception, m\u00eame si de l'interception n'est pas encore n\u00e9cessaire."
+    },
     "101334":{
         "Name":"Oubliettes",
         "Card Text":"[obt] Frapper : fin de combat.\n[OBT] Comme ci-dessus et le serviteur oppos\u00e9 br\u00fble 1 point de sang ou de vie apr\u00e8s la fin du combat (m\u00eame \u00e0 distance)."
@@ -579,6 +715,10 @@
         "Name":"Changement de parit\u00e9",
         "Card Text":"Requiert un prince ou justicar.\nChoisissez un Mathusalem qui a plus de points de r\u00e9serve que vous et allouez 3 points de sa r\u00e9serve entre 1 et plus parmi les autres Mathusalems (vous compris). Si le r\u00e9f\u00e9rendum passe, le Mathusalem choisi perd ces points de r\u00e9serve et ceux-ci sont allou\u00e9s comme choisi."
     },
+    "102231":{
+        "Name":"Fin de soir\u00e9e difficile",
+        "Card Text":"Requiert un Anarch.\n[obf] R\u00e9duisez de 2 une morsure contre vous.\n[pre] Seulement utilisable durant l'\u00e9tape de vote d'une action politique. Ce vampire re\u00e7oit +2 voix.\n[pro] +1 en interception."
+    },
     "101384":{
         "Name":"Subversion de la Pentex(TM)",
         "Card Text":"Unique.\nMettez cette carte sur un serviteur disponible. Ce serviteur ne peut pas bloquer. N'importe quel autre serviteur peut br\u00fbler cette carte en action (D)."
@@ -594,6 +734,10 @@
     "101390":{
         "Name":"Vacances permanentes",
         "Card Text":"Choisissez un alli\u00e9 disponible. Si le r\u00e9f\u00e9rendum passe, l'alli\u00e9 choisi est retir\u00e9 de la partie."
+    },
+    "102232":{
+        "Name":"Carte de membre platinum",
+        "Card Text":"Requiert un Anarch. Plus d'une Discipline peut \u00eatre utilis\u00e9e pour jouer cette carte. (D) Mordre.\n[obf] Ceci est une action \u00e0 +1 en discr\u00e9tion.\n[pre] La morsure est \u00e0 +1 en morsure.\n[pro] Mettre 1 compteur corruption sur un serviteur contr\u00f4l\u00e9 par le Mathusalem cibl\u00e9 si la morsure est r\u00e9ussie (pour 1 ou plus)."
     },
     "101415":{
         "Name":"Sph\u00e8re politique, terrain de chasse",
@@ -623,9 +767,25 @@
         "Name":"Force surnaturelle",
         "Card Text":"Action \u00e0 +2 en discr\u00e9tion.\n[pot] Mettez cette carte sur ce vampire. Ce vampire re\u00e7oit +1 en force. Il ne peut pas jouer /Panneau arrach\u00e9/. Un vampire ne peut en avoir qu'un seul exemplaire.\n[POT] Comme ci-dessus, mais ce vampire re\u00e7oit +2 en force."
     },
+    "101487":{
+        "Name":"Contrat prioritaire",
+        "Card Text":"Contrat unique. Triviale.\nChoisissez un Assamite disponible que vous contr\u00f4lez et mettez cette carte sur un serviteur contr\u00f4l\u00e9 par votre proie. L'Assamite choisi peut entrer en combat contre le serviteur attach\u00e9 en action (D) \u00e0 +1 en discr\u00e9tion. Si le serviteur attach\u00e9 est sur le point de quitter la r\u00e9gion disponible, vous pouvez br\u00fbler cette carte pour gagner 3 points de r\u00e9serve."
+    },
     "102214":{
         "Name":"District prot\u00e9g\u00e9",
         "Card Text":"Requiert un primog\u00e8ne. Seulement utilisable durant une action de morsure contre vous ou durant l'\u00e9tape de vote d'une action politique.\nR\u00e9duisez la valeur de morsure de 3 ou ce vampire gagne +3 voix contre le r\u00e9f\u00e9rendum."
+    },
+    "101501":{
+        "Name":"Racket de protection",
+        "Card Text":"Requiert un Anarch.\n+1 en interception, avec +1 en interception suppl\u00e9mentaire si le vampire qui agit est titr\u00e9."
+    },
+    "101523":{
+        "Name":"Course-poursuite",
+        "Card Text":"[cel] Man\u0153uvrer.\n[CEL] Frappe additionnelle (limit\u00e9)."
+    },
+    "101532":{
+        "Name":"Rapidit\u00e9",
+        "Card Text":"Un vampire ne peut en jouer qu'un seul exemplaire par round.\n[cel] Frappe additionnelle (limit\u00e9).\n[CEL] Frappe additionnelle qui ne compte pas dans la limite."
     },
     "101536":{
         "Name":"Le r\u00e2telier",
@@ -648,7 +808,7 @@
         "Card Text":"Arch\u00e9type. Triviale.\nMettez cette carte sur un vampire que vous contr\u00f4lez. Une fois par tour, s'il bloque un vampire titr\u00e9 ou une action politique, ce vampire gagne 1 point de sang avant la r\u00e9solution du blocage. Un vampire ne peut avoir qu'un seul arch\u00e9type."
     },
     "101588":{
-        "Name":"Rego Motum",
+        "Name":"Rego motum",
         "Card Text":"Un vampire ne peut en jouer qu'un seul exemplaire par round.\n[tha] Pr\u00e9venir 2 points de d\u00e9g\u00e2ts de la frappe du serviteur oppos\u00e9.\n[THA] Pr\u00e9venir 4 points de d\u00e9g\u00e2ts de la frappe du serviteur oppos\u00e9."
     },
     "101591":{
@@ -659,9 +819,17 @@
         "Name":"D\u00e9fier la gravit\u00e9",
         "Card Text":"[cel] [COMBAT] Poursuivre, ou man\u0153uvrer avec 1 poursuite optionnelle.\n[CEL] [ACTIONMODIFIER] +1 en discr\u00e9tion."
     },
+    "102233":{
+        "Name":"R\u00e9v\u00e9lation du serpent",
+        "Card Text":"Seulement utilisable durant une action de morsure.\n[pre][pro] +1 en morsure (limit\u00e9), ou +1 en discr\u00e9tion et +1 en morsure (limit\u00e9).\n[PRE][PRO] Comme ci-dessus et si la morsure est r\u00e9ussie, ce vampire peut br\u00fbler 2 de vos compteurs corruption d'un serviteur contr\u00f4l\u00e9 par le Mathusalem cibl\u00e9 pour se redresser."
+    },
     "101627":{
         "Name":"R\u00e9v\u00e9lations",
         "Card Text":"Action \u00e0 +1 en discr\u00e9tion.\n[aus] (D) Regardez la main de votre proie et d\u00e9faussez-en une carte de votre choix.\n[AUS] Mettez cette carte en jeu. Votre proie joue avec sa main r\u00e9v\u00e9l\u00e9e. N'importe quel serviteur peut br\u00fbler cette carte en action (D)."
+    },
+    "101632":{
+        "Name":"R\u00e9ensauvagement",
+        "Card Text":"(D) Br\u00fbler un lieu et br\u00fbler 2 points de r\u00e9serve de son contr\u00f4leur."
     },
     "101649":{
         "Name":"Encaisser les coups",
@@ -673,7 +841,7 @@
     },
     "101664":{
         "Name":"Main de Rutor",
-        "Card Text":"Action \u00e0 +1 en discr\u00e9tion.\n[tha] Mettez cette carte sur ce vampire et ce vampire subit 1 point de d\u00e9g\u00e2ts aggrav\u00e9s environnementaux qui ne peuvent \u00eatre pr\u00e9venus. \u00c0 partir de votre prochain tour, ce vampire peut se redresser durant votre phase de serviteur. Un vampire ne peut en avoir qu'un seul exemplaire.\n[THA] Comme ci-dessus et ce vampire peut br\u00fbler 3 points de sang pour \u00eatre immunis\u00e9 \u00e0 ces d\u00e9g\u00e2ts aggrav\u00e9s."
+        "Card Text":"Action \u00e0 +1 en discr\u00e9tion.\n[tha] Mettre cette carte sur ce vampire et ce vampire subit 1 point de d\u00e9g\u00e2ts aggrav\u00e9s environnementaux qui ne peuvent \u00eatre pr\u00e9venus. \u00c0 partir de votre prochain tour, ce vampire peut se redresser durant votre phase de serviteur. Un vampire ne peut en avoir qu'un seul exemplaire.\n[THA] Comme ci-dessus et ce vampire peut br\u00fbler 3 points de sang pour \u00eatre immunis\u00e9 \u00e0 ces d\u00e9g\u00e2ts aggrav\u00e9s."
     },
     "101681":{
         "Name":"Le fragment de Sargon",
@@ -703,6 +871,10 @@
         "Name":"Jeu d'ombres",
         "Card Text":"[obt] +1 en discr\u00e9tion.\n[OBT] +2 en discr\u00e9tion."
     },
+    "101772":{
+        "Name":"D\u00e9monstration de force",
+        "Card Text":"[pot][pre] (D) Mordre \u00e0 +1 en morsure. Si cette action est bloqu\u00e9e, avant l'\u00e9tape de man\u0153uvre durant le premier round du combat r\u00e9sultant, ce vampire peut gagner +1 en force ce combat.\n[POT][PRE] Comme ci-dessus, mais \u00e0 +2 en morsure et ce vampire peut gagner +2 en force."
+    },
     "101774":{
         "Name":"Linceul d'absence",
         "Card Text":"[dom][obt] +1 en discr\u00e9tion.\n[DOM][OBT] Comme ci-dessus et ce vampire peut frapper : fin de combat durant le premier round du combat r\u00e9sultant s'il est bloqu\u00e9."
@@ -714,6 +886,10 @@
     "101781":{
         "Name":"Le sceau du roi Sa\u00fcl",
         "Card Text":"Unique.\nLes vampires de capacit\u00e9 8 ou plus ne peuvent pas bloquer son possesseur."
+    },
+    "101798":{
+        "Name":"Plaquage",
+        "Card Text":"[pot] Frapper : frappe \u00e0 mains nues \u00e0 +2 points de d\u00e9g\u00e2ts.\n[POT] Comme ci-dessus, avec 1 man\u0153uvre optionnelle, seulement utilisable pour aller au contact."
     },
     "101808":{
         "Name":"Bidonville, terrain de chasse",
@@ -730,6 +906,10 @@
     "101821":{
         "Name":"Haute soci\u00e9t\u00e9, terrain de chasse",
         "Card Text":"Lieu unique. Terrain de chasse.\nDurant votre phase de redressement, un vampire disponible que vous contr\u00f4lez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse \u00e0 chaque tour."
+    },
+    "101829":{
+        "Name":"Br\u00fblure de l'\u00e2me",
+        "Card Text":"[tha] Frapper \u00e0 toute port\u00e9e : 1 point de d\u00e9g\u00e2ts. Ces d\u00e9g\u00e2ts ne peuvent pas \u00eatre pr\u00e9venus par les cartes qui requi\u00e8rent Force d'\u00e2me [for]. Les frappes avec des armes du vampire oppos\u00e9 n'infligent pas de d\u00e9g\u00e2ts ce round-ci.\n[THA] Comme ci-dessus, mais pour 2 points de d\u00e9g\u00e2ts \u00e0 toute port\u00e9e."
     },
     "101850":{
         "Name":"Psychom\u00e9trie",
@@ -771,9 +951,17 @@
         "Name":"Pistage t\u00e9l\u00e9pathique",
         "Card Text":"[aus] Poursuivre, seulement utilisable pour continuer le combat. Si un autre round de combat a lieu, ce vampire re\u00e7oit 1 man\u0153uvre optionnelle ce round-l\u00e0.\n[AUS] Seulement utilisable si les deux combattants sont toujours disponibles et que le combat doit prendre fin. \u00c0 la place, d\u00e9marrez un nouveau round."
     },
+    "101953":{
+        "Name":"Temple, terrain de chasse",
+        "Card Text":"Lieu unique. Terrain de chasse.\nDurant votre phase de redressement, un vampire disponible que vous contr\u00f4lez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse \u00e0 chaque tour."
+    },
     "101957":{
         "Name":"Forme t\u00e9n\u00e9breuse",
         "Card Text":"[obt] +1 en discr\u00e9tion.\n[OBT] Comme ci-dessus et les serviteurs sans Obt\u00e9n\u00e9bration [obt] doivent br\u00fbler 1 point de sang pour tenter de bloquer (les alli\u00e9s ne peuvent pas br\u00fbler de points de sang)."
+    },
+    "101958":{
+        "Name":"Tension dans les rangs",
+        "Card Text":"Unique.\nMettez cette carte en jeu. Tout Mathusalem br\u00fble 1 point de r\u00e9serve apr\u00e8s qu'un serviteur disponible sous son contr\u00f4le est br\u00fbl\u00e9 ou envoy\u00e9 en torpeur. N'importe quel Mathusalem peut utiliser une action de phase de ma\u00eetre et d\u00e9fausser deux cartes de ma\u00eetre pour br\u00fbler cette carte."
     },
     "101963":{
         "Name":"Thadius Zho",
@@ -783,6 +971,10 @@
         "Name":"Vol de vit\u00e6",
         "Card Text":"[tha] Frapper \u00e0 toute port\u00e9e : voler 1 point de sang ou de vie (convertie en sang).\n[THA] Frapper \u00e0 toute port\u00e9e : voler 2 points de sang ou de vie (convertie en sang)."
     },
+    "101972":{
+        "Name":"Thing",
+        "Card Text":"Action \u00e0 +1 en discr\u00e9tion.\nAjoutez 2 points de sang \u00e0 un Gangrel dans votre r\u00e9gion incontr\u00f4l\u00e9e."
+    },
     "101989":{
         "Name":"Grand bal Tor\u00e9ador",
         "Card Text":"Choisissez deux Tor\u00e9adors disponibles que vous contr\u00f4lez, mettez cette carte en jeu et inclinez un des deux. Le Tor\u00e9ador inclin\u00e9 ne se redresse pas normalement. Les actions qui ne sont pas des morsures de l'autre Tor\u00e9ador ne peuvent pas \u00eatre bloqu\u00e9es. N'importe quel serviteur peut br\u00fbler cette carte en action (D) ; les Nosferatus re\u00e7oivent -1 en discr\u00e9tion durant cette action."
@@ -791,9 +983,17 @@
         "Name":"Justicar Tor\u00e9ador",
         "Card Text":"Titre.\nChoisissez un Tor\u00e9ador disponible. Si le r\u00e9f\u00e9rendum passe, cette carte est mise sur le Tor\u00e9ador choisi pour repr\u00e9senter le titre unique de la Camarilla de Justicar Tor\u00e9ador. Durant ce r\u00e9f\u00e9rendum, chaque Tor\u00e9ador disponible re\u00e7oit +1 voix."
     },
+    "101993":{
+        "Name":"Panneau arrach\u00e9",
+        "Card Text":"Seulement utilisable avant l'\u00e9tape de man\u0153uvre.\n[pot] Ce vampire re\u00e7oit une force de 2 ce combat.\n[POT] Ce vampire re\u00e7oit une force de 3 ce combat."
+    },
     "102012":{
         "Name":"Pi\u00e8ge",
         "Card Text":"Seulement utilisable avant l'\u00e9tape de man\u0153uvre durant le premier round de combat.\nMettez cette carte en jeu avec 3 compteurs. Chaque fois qu'une carte est jou\u00e9e durant ce combat, r\u00e9initialisez le nombre de compteurs sur cette carte \u00e0 3. Durant l'\u00e9tape de poursuite de chaque round de ce combat, ce Pi\u00e8ge br\u00fble automatiquement 1 compteur sur lui pour fournir 1 poursuite pour continuer le combat (l'un ou l'autre des combattants peut poursuivre pour arr\u00eater le combat). Br\u00fblez cette carte \u00e0 la fin du combat."
+    },
+    "102041":{
+        "Name":"Visage de l'amour v\u00e9ritable",
+        "Card Text":"[obf][pre] Seulement utilisable durant une action de morsure. +1 en morsure (limit\u00e9).\n[OBF][PRE] Seulement utilisable si un serviteur tente de bloquer. Cette tentative \u00e9choue et le serviteur qui bloque ne peut pas tenter de bloquer cette action \u00e0 nouveau. Le contr\u00f4leur du serviteur qui bloque peut br\u00fbler 1 point de r\u00e9serve pour annuler cette carte lorsqu'elle est jou\u00e9e."
     },
     "102063":{
         "Name":"\u00c9tat de si\u00e8ge",
@@ -802,6 +1002,10 @@
     "102065":{
         "Name":"Chien errant",
         "Card Text":"Animal avec 1 point de vie. 0 en force, 0 en morsure.\n[ani] Cet alli\u00e9 peut br\u00fbler 1 point de vie pour donner 1 poursuite \u00e0 un serviteur que vous contr\u00f4lez. Durant une action dirig\u00e9e contre vous (ou une carte que vous contr\u00f4lez), vous pouvez br\u00fbler cet alli\u00e9 s'il n'est pas en train de bloquer pour redresser un serviteur disponible que vous contr\u00f4lez.\n[ANI] Comme ci-dessus, mais cet alli\u00e9 a 2 points de vie et 1 en force."
+    },
+    "102066":{
+        "Name":"P\u00e8gre, terrain de chasse",
+        "Card Text":"Lieu unique. Terrain de chasse.\nDurant votre phase de redressement, un vampire disponible que vous contr\u00f4lez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse \u00e0 chaque tour."
     },
     "102071":{
         "Name":"Persistance sto\u00efque",
@@ -825,7 +1029,7 @@
     },
     "102097":{
         "Name":"Voiler les l\u00e9gions",
-        "Card Text":"Seulement utilisable par un vampire redress\u00e9 et disponible autre que le serviteur qui agit. Pas plus d'un seul exemplaire ne peut \u00eatre jou\u00e9 chaque action.\n[obf] Le serviteur qui agit re\u00e7oit +1 en discr\u00e9tion.\n[OBF] Comme ci-dessus et ce vampire peut br\u00fbler X points de sang pour donner +1 en discr\u00e9tion aux X prochaines actions effectu\u00e9es par vos serviteurs ce tour-ci. Pas plus d'un seul exemplaire ne peut \u00eatre jou\u00e9 au niveau sup\u00e9rieur chaque tour."
+        "Card Text":"Seulement utilisable par un vampire redress\u00e9 et disponible autre que le serviteur qui agit. Pas plus d'un seul exemplaire ne peut \u00eatre jou\u00e9 par action.\n[obf] Le serviteur qui agit re\u00e7oit +1 en discr\u00e9tion.\n[OBF] Comme ci-dessus et ce vampire peut br\u00fbler X points de sang pour donner +1 en discr\u00e9tion aux X prochaines actions effectu\u00e9es ce tour-ci par les serviteurs que vous contr\u00f4lez. Pas plus d'un seul exemplaire au niveau sup\u00e9rieur ne peut \u00eatre jou\u00e9 par tour."
     },
     "102109":{
         "Name":"Quartier g\u00e9n\u00e9ral Ventrue",
@@ -863,6 +1067,10 @@
         "Name":"Gare de Varsovie",
         "Card Text":"Lieu unique.\nVous pouvez incliner cette carte lorsqu'un Nosferatu annonce une action non dirig\u00e9e ; apr\u00e8s r\u00e9solution de l'action, si cette action a \u00e9t\u00e9 r\u00e9ussie, redressez le Nosferatu qui agit. Vous pouvez br\u00fbler cette carte (m\u00eame si elle est inclin\u00e9e) pour d\u00e9placer un Nosferatu en torpeur vers la r\u00e9gion disponible."
     },
+    "102150":{
+        "Name":"Zone de guerre, terrain de chasse",
+        "Card Text":"Lieu unique. Terrain de chasse.\nDurant votre phase de redressement, un vampire disponible que vous contr\u00f4lez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse \u00e0 chaque tour."
+    },
     "102151":{
         "Name":"Rejet",
         "Card Text":"Hors-tour. Triviale. \u00c0 ne pas remplacer jusqu'\u00e0 votre phase de redressement.\nAnnulez une carte de ma\u00eetre lorsqu'elle est jou\u00e9e par votre pr\u00e9dateur ou votre proie et son co\u00fbt n'est pas \u00e0 payer. Ce Mathusalem re\u00e7oit +1 action de phase de ma\u00eetre imm\u00e9diatement, ou au d\u00e9but de sa prochaine phase de ma\u00eetre si la carte annul\u00e9e est une carte de ma\u00eetre hors-tour."
@@ -882,5 +1090,9 @@
     "102207":{
         "Name":"Vall\u00e9e de Zillah",
         "Card Text":"Ajoutez 4 points de sang \u00e0 un vampire de capacit\u00e9 8 ou plus dans votre r\u00e9gion incontr\u00f4l\u00e9e."
+    },
+    "102212":{
+        "Name":"Zoo, terrain de chasse",
+        "Card Text":"Lieu unique. Terrain de chasse.\nDurant votre phase de redressement, un vampire disponible que vous contr\u00f4lez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse \u00e0 chaque tour."
     }
 }

@@ -10,7 +10,6 @@
 - Links to custom deck
 - Export missing in Inventory
 - Add prefers-color-scheme
-- Add V5A translations
 
 # BIG FEATURES
 - Search for similar TWD decks

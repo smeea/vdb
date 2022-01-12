@@ -1,6 +1,9 @@
 "Id","Name","Name fr-FR","Card Text","Flavor Text"
 "100001",".44 Magnum","Magnum .44","Arme à feu.
 Frapper à toute portée : 2 points de dégâts, avec 1 manœuvre optionnelle durant chaque combat.",""
+"102217","47th Street Royals","Les Royaux de la 47e rue","Mortel unique avec 2 points de vie. 1 en force, 0 en morsure.
+Vous pouvez brûler ce serviteur pour réduire de 3 une morsure contre vous.","Quelles rues ? Nos rues.
+Bill Schlass, chef des Royaux de la 47e rue"
 "100015","Academic Hunting Ground","École, terrain de chasse","Lieu unique. Terrain de chasse.
 Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "100018","Aching Beauty","Beauté douloureuse","Mettez cette carte sur un Toréador. Si ce Toréador est bloqué, le contrôleur du serviteur qui bloque brûle 1 point de réserve avant la résolution du blocage.","Viens-tu du ciel profond ou sors-tu de l'abîme,
@@ -18,6 +21,11 @@ D.H. Lawrence, ""La Chauve-souris"""
 Après qu'un Assamite que vous contrôlez mord avec succès un Mathusalem, mettez les points de réserve perdus par ce Mathusalem sur cette carte. Brûlez X compteurs de cette carte durant l'étape de vote d'une action politique pour donner +X voix à un vampire que vous contrôlez.",""
 "100046","Ambush","Embuscade","(D) Entrer en combat contre un serviteur incliné. Le serviteur qui agit reçoit 1 manœuvre optionnelle durant ce combat.","Nous frapperons depuis les ombres quand le moment sera venu, et ils tomberont tous devant nous.
 Cameron, Lasombra"
+"100052","Anarch Free Press, The","Presse libre Anarch","Unique. Requiert un Anarch disponible.
+Mettez cette carte en jeu. Vous pouvez l'incliner pour donner +1 en interception à un Anarch que vous contrôlez. Vous pouvez l'incliner après qu'un Anarch chasse avec succès pour ajouter 1 point de sang à cet Anarch.",""
+"100054","Anarch Railroad","Chemin de fer Anarch","Lieu unique.
+Vous pouvez l'incliner pour donner +1 en discrétion à un Anarch.","Le Train de la Liberté te ramènera à l'est, au moins jusqu'à Staten Island. Une fois arrivé, tu devras probablement te débrouiller tout seul si tu veux traverser le pont.
+Almiro Suarez, Anarch Tremere"
 "100058","Anarch Troublemaker","Anarch fauteur de trouble","Unique.
 Mettez cette carte en jeu. Durant votre phase de redressement, vous pouvez donner le contrôle de l'Anarch fauteur de trouble à votre proie et soit incliner jusqu'à deux vampires sous son contrôle, soit brûler un équipement sur l'un de ses serviteurs.","Je suis l'accusateur et le vengeur du sang...
 William Blake, ""Le Fantôme d'Abel"""
@@ -32,12 +40,12 @@ Mettez cette carte sur un vampire. Ce vampire reçoit +1 niveau d'Animalisme [an
 Les cartes qui ne sont pas des modificateurs d'action coûtent moitié moins de points de sang à jouer, arrondie à l'inférieur (les multiplications et divisions s'appliquent en premier, suivies par les additions et soustractions).",""
 "100077","Apportation","Télétransport","[tha] Poursuivre, seulement utilisable pour continuer le combat.
 [THA] Manœuvrer.","Le flingue s'envola de mes mains comme si Dieu Lui-même avait choisi d'intervenir.
-Jacob Bragg, Brujah antitribu"
+Jacob Bragg"
 "100081","Arcane Library","Bibliothèque des arcanes","Lieu unique.
 Vous pouvez l'incliner durant votre phase d'influence pour ajouter 1 point de sang à un Tremere dans votre région incontrôlée.",""
 "100093","Army of Rats","Armée de rats","Action à +1 en discrétion.
-[ani] Mettez cette carte en jeu. Durant votre phase de redressement, votre proie brûle 1 point de réserve. Vous ne pouvez brûler qu'1 seul point de réserve chaque tour avec des cartes /Armée de rats/. N'importe quel serviteur peut brûler cette carte en action (D).","Nous ne pouvions résister à leur opposition constante très longtemps. Les rats furent la goutte d'eau qui fit déborder le vase.
-Ventrue antitribu, intrigue de l'hiver 2002 à Dublin"
+[ani] Mettre cette carte en jeu. Durant votre phase de redressement, votre proie brûle 1 point de réserve. Vous ne pouvez brûler qu'1 seul point de réserve chaque tour avec des cartes /Armée de rats/. N'importe quel serviteur peut brûler cette carte en action (D).","Puis comme le porcher s'assoupissait à la tâche, une énorme ruée de rats déferla sur l'abîme puant et s'abattit pour dévorer bêtes et hommes.
+H.P. Lovecraft, ""Les Rats dans les murs"""
 "100095","Art Museum","Musée d'art","Lieu unique.
 Vous pouvez l'incliner durant votre phase d'influence pour ajouter 1 point de sang à un Toréador dans votre région incontrôlée.",""
 "100099","Art Scam","Arnaque artistique","Action à +1 en discrétion.
@@ -47,9 +55,14 @@ Kipling, ""Le Quolibet des ateliers"""
 Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "100126","Backways","Voies détournées","Lieu unique.
 Vous pouvez l'incliner pour donner +1 en discrétion à un Gangrel que vous contrôlez.",""
+"102218","Bait and Switch","Leurre","Requiert un baron. Seulement utilisable si un serviteur est en train de vous mordre, après avoir renoncé à bloquer.
+Inclinez ce vampire qui réagit. Redirigez la morsure vers un autre Mathusalem autre que le contrôleur du serviteur qui agit (ce Mathusalem peut tenter de bloquer).",""
 "100131","Banishment","Bannissement","Choisissez un vampire plus jeune et disponible. Si le référendum passe, le vampire choisi est déplacé vers la région incontrôlée (rompant tous les effets de contrôle temporaire) ; toutes cartes et compteurs sur le vampire choisi restent avec lui mais sont hors du jeu tant que le vampire choisi reste incontrôlé.",""
 "100135","Barrens, The","La zone","Lieu unique.
 Vous pouvez l'incliner pour défausser une carte (et repiocher).",""
+"100145","Bear's Skin","Peau de l'ours","Seulement utilisable avant l'étape de manœuvre. Un vampire ne peut en jouer qu'un seul exemplaire par combat.
+[ani][pro] Ce round-ci, ce vampire reçoit +1 en force et peut prévenir 1 point de dégâts.
+[ANI][PRO] Ce combat, ce vampire reçoit +1 en force et peut prévenir 1 point de dégâts durant chaque round.",""
 "100146","Beast Meld","Fusion avec la bête","[ani][pro] +1 en discrétion. Si ce vampire est bloqué, il peut prévenir 1 point de dégâts durant le combat résultant.
 [ANI][PRO] Seulement utilisable lors de l'annonce d'une action qui n'est pas une morsure. Les vampires ne peuvent pas bloquer cette action.",""
 "100157","Bewitching Oration","Discours ensorcelant","Seulement utilisable durant l'étape de vote d'une action politique.
@@ -58,12 +71,18 @@ Vous pouvez l'incliner pour défausser une carte (et repiocher).",""
 Et pour plus en ce dueil manoir
 Jamais ne vestiray que noir
 Christine de Pisan, ""Jamais ne vestiray que noir"""
+"100162","Biothaumaturgic Experiment","Expérience biothaumaturgique","Action à +1 en discrétion.
+[tha] Employer un compagnon animal de votre main en ignorant ses prérequis (payez le coût normalement).
+[THA] Mettre cette carte sur un serviteur que vous contrôlez. Le serviteur attaché reçoit 1 manœuvre optionnelle durant chaque combat et +1 en force.",""
 "100169","Black Metamorphosis","Sombre métamorphose","Action à +1 en discrétion.
 [obt] Mettez cette carte sur ce vampire. Ce vampire reçoit 1 frappe additionnelle optionnelle (limité) durant chaque round. Un vampire ne peut en avoir qu'un seul exemplaire.
 [OBT] Comme ci-dessus et ce vampire reçoit 1 poursuite optionnelle durant chaque combat.",""
 "100177","Blanket of Night","Couvert de la nuit","[obt] +1 en discrétion.
 [OBT] Seulement utilisable par un vampire disponible autre que le serviteur qui agit si un serviteur tente de bloquer. Inclinez le vampire qui joue cette carte pour faire échouer cette tentative ; le serviteur qui bloque ne peut pas tenter de bloquer cette action à nouveau.",""
 "100199","Blood Doll","Poupée de sang","Mettez cette carte sur un vampire que vous contrôlez. Durant sa phase de maître, le contrôleur de ce vampire peut déplacer 1 point de sang de ce vampire vers sa réserve ou de sa réserve vers ce vampire.",""
+"100208","Blood Rage","Rage sanguinaire","Seulement utilisable au contact.
+[tha] Frapper : frappe à mains nues. Les dégâts infligés par cette frappe ne peuvent pas être prévenus par les cartes qui requièrent Force d'âme [for]. Les frappes avec des armes du vampire opposé n'infligent pas de dégâts ce round-ci.
+[THA] Comme ci-dessus et cette frappe à mains nues est à +1 point de dégâts.",""
 "100236","Bonding","Sociabilisation","Seulement utilisable durant une action de morsure.
 [dom] +1 en morsure (limité).
 [DOM] +1 en discrétion et +1 en morsure (limité).","Dans chaque voix, dans chaque interdiction,
@@ -76,11 +95,15 @@ Son possesseur avec Auspex [aus] reçoit +1 en interception. Son possesseur avec
 Dragos, Tzimisce"
 "100286","Camarilla Vitae Slave","Esclave de sang de la Camarilla","Compagnon avec 1 point de vie.
 Ce vampire reçoit +1 capacité. Durant sa phase de maître, il peut choisir une Discipline qu'il a au niveau inférieur et recevoir +1 niveau de la Discipline choisie jusqu'à sa prochaine phase de maître.",""
+"100297","Carfax Abbey","Abbaye de Carfax","Requiert un Anarch disponible. Lieu unique. Terrain de chasse.
+Durant votre phase de redressement, un Anarch disponible que vous contrôlez peut gagner 1 point de sang et, si vous contrôlez un baron disponible, un autre Anarch disponible que vous contrôlez peut gagner 1 point de sang également. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "100298","Carlton Van Wyk","","Mortel unique avec 2 points de vie. 0 en force, 0 en morsure.
 Carlton peut frapper à toute portée : 1 point de dégâts. Une fois par combat, il peut frapper : esquiver. Carlton reçoit +1 en interception contre les vampires. Durant votre phase de défausse, vous pouvez brûler Carlton pour brûler un vampire qui a commis une diablerie depuis votre dernier tour.",""
 "100301","Carrion Crows","Corneilles noires","Seulement utilisable avant l'étape de manœuvre. Un vampire ne peut en jouer qu'un seul exemplaire par combat.
 [ani] Le serviteur opposé subit 1 point de dégâts environnementaux à toute portée chaque round de ce combat durant la résolution des frappes normales.
 [ANI] Comme ci-dessus, mais pour 2 points de dégâts environnementaux à toute portée.",""
+"100303","Carver's Meat Packing and Storage","Entrepôt de viande de Carver","Lieu unique.
+Après qu'un vampire de capacité 3 ou moins va en torpeur, mettez 1 compteur otage sur lui. Les vampires avec au moins un compteur otage ne peuvent pas être déplacés vers la région disponible ou être diablés. Vous pouvez incliner ce lieu durant votre phase de maître pour ajouter X points de sang à un vampire disponible que vous contrôlez, où X est le nombre de vampires avec au moins un compteur otage. Durant n'importe quelle phase de redressement, n'importe quel vampire disponible peut brûler 2 points de sang pour brûler les compteurs otage de n'importe quel vampire. Après que cette carte quitte le jeu, brûlez tous les compteurs otage.",""
 "100308","Cats' Guidance","Conseil des chats","[ani] Seulement utilisable par un vampire incliné qui a bloqué, après la résolution du blocage. Redressez ce vampire.
 [ANI] +1 en interception.","Amis de la science et de la volupté
 Ils cherchent le silence et l'horreur des ténèbres ;
@@ -88,7 +111,7 @@ L'Érèbe les eût pris pour ses coursiers funèbres,
 S'ils pouvaient au servage incliner leur fierté.
 Charles Baudelaire, ""Les Chats"""
 "100323","Change of Target","Changement de cible","Seulement utilisable si ce serviteur est bloqué, avant la résolution du blocage.
-Redressez ce serviteur et l'action se termine (sans succès). Ce serviteur ne peut pas effectuer la même action à nouveau ce tour-ci.",""
+Redressez ce serviteur et l'action prend fin (sans succès). Ce serviteur ne peut pas effectuer la même action à nouveau ce tour-ci.",""
 "100324","Changeling","Changelin","[vic] Seulement utilisable durant une action de morsure. +1 en morsure (limité).
 [VIC] +1 en discrétion.",""
 "100327","Channel 10","Canal 10","Lieu unique.
@@ -102,9 +125,17 @@ Edwin Arlington Robinson, ""George Crabbe"""
 Mettez Charnas sur n'importe quel serviteur (ceci est une action (D) à +1 en discrétion si le serviteur ciblé est contrôlé par un autre Mathusalem). Charnas inflige 1 point de dégâts à son employeur durant sa phase de redressement. Charnas est immunisé aux dégâts de son employeur. Si son employeur est sur le point d'être brûlé, son contrôleur peut mettre Charnas sur n'importe quel autre serviteur.",""
 "100344","Chiropteran Marauder","Maraudeur chiroptère","[vic] Manœuvrer.
 [VIC] Brûler 1 point de sang pour aggraver les dégâts des frappes à mains nues de ce vampire ce round-ci.",""
+"100356","Claws of the Dead","Griffes des morts","[pro] Les dégâts des frappes à mains nues de ce vampire sont aggravés ce round-ci.
+[PRO] Manœuvrer.","De la gueule qui happe, aux griffes qui attrapent !
+Lewis Carroll, ""Jabberwocky"""
 "100362","Cloak the Gathering","Masquer l'assemblée","[obf] +1 en discrétion.
 [OBF] Seulement utilisable par un vampire disponible autre que le serviteur qui agit. Le serviteur qui agit reçoit +1 en discrétion.","Qui sous un noir manteau couvre sa pâle tête...
 Lord Tennyson, ""In Memoriam"""
+"100366","Club Illusion","","Lieu unique.
+Un Anarch peut brûler 1 point de sang une fois lorsqu'il annonce une action de morsure pour recevoir +1 en morsure pour cette action.","Regardez-moi ces crâneurs. Se pointant là-bas comme si l'endroit leur appartenait, défiant ouvertement l'édit du Prince.
+Lucas, Ventrue"
+"100374","Codex of the Edenic Groundskeepers","Codex des Jardiniers édeniens","Unique.
+Son possesseur reçoit -2 en discrétion quand il mord. Ce vampire peut mordre en action (D) qui coûte 1 point de sang ; cette action reçoit +3 en morsure si le Mathusalem ciblé ne contrôle pas de serviteur redressé et disponible.",""
 "100378","Coma","","[dem] Frapper : envoyer le vampire opposé en torpeur.
 [DEM] Comme ci-dessus et le vampire opposé ne se redresse pas normalement durant sa prochaine phase de redressement.","On s'endort et tout meurt. Mais un affreux réveil
 Doit succéder peut-être aux douceurs du sommeil.
@@ -121,6 +152,8 @@ Henry Miller"
 "100410","Consanguineous Boon","Faveur consanguine","Faveur.
 Choisissez un clan. Si le référendum passe, chaque Mathusalem gagne 1 point de réserve pour chaque vampire du clan choisi sous son contrôle.","Même en jouant avec ton frère, aie un témoin.
 Hésiode, ""Les Travaux et les Jours"""
+"100416","Constant Revolution","Révolution permanente","Action à +1 en discrétion. Requiert un Anarch. Unique.
+Mettre cette carte en jeu avec 1 compteur. Durant votre phase de redressement, ajoutez 1 compteur à cette carte. Durant la phase de redressement de chaque autre Mathusalem, ce Mathusalem brûle X points de réserve et/ou cartes au hasard de sa main, où X est le nombre de compteurs sur cette carte. N'importe quel vampire peut brûler cette carte en action (D) qui coûte 1 point de réserve.",""
 "100435","Coven, The","La cabale","Unique. Triviale.
 Mettez cette carte en jeu. Vous pouvez l'incliner pour ajouter 2 points de sang à un vampire disponible que vous contrôlez. Durant votre phase de défausse, votre prédateur prend le contrôle de cette carte.",""
 "102213","Creeping Sabotage","Sabotage insidieux","Action à +1 en discrétion.
@@ -132,6 +165,10 @@ Vous pouvez l'incliner lorsqu'un vampire que vous contrôlez annonce une action 
 [AUS] Comme ci-dessus, mais annuler cette carte requiert 1 point de sang ou de vie supplémentaire.",""
 "100492","Daring the Dawn","Braver l'aube","[for] Les vampires ne peuvent pas bloquer cette action. Ce vampire subit 2 points de dégâts aggravés environnementaux qui ne peuvent être prévenus après résolution de l'action.
 [FOR] Comme ci-dessus, mais ce vampire subit 1 point de dégâts aggravés environnementaux qui ne peuvent être prévenus.",""
+"102219","Deep Ecology","Écologie profonde","Requiert un Anarch.
+[ani] Seulement utilisable durant une action dirigée contre vous (ou une carte que vous contrôlez). +2 en interception.
+[for] Réduisez de 2 une morsure contre vous.
+[pro] Seulement utilisable par un vampire incliné. Ce vampire brûle 1 point de sang pour se redresser.",""
 "100515","Deep Song","Chant profond","[ani] (D) Mordre à +1 en morsure.
 [ANI] Frénésie. (D) Incliner et entrer en combat contre un vampire. Le vampire ciblé est considéré comme étant le serviteur qui agit durant ce combat.",""
 "100518","Deflection","Déflexion","Seulement utilisable si un serviteur est en train de vous mordre, après avoir renoncé à bloquer.
@@ -143,13 +180,19 @@ Annulez le référendum. Redressez le vampire qui agit. Si une carte d'action po
 Le premier référendum qu'un vampire du Sabbat que vous contrôlez appelle durant ce tour passe automatiquement (sautez l'étape de vote).","Nous jouons à des jeux très dangereux avec la vie et personne ne connaît nos règles.
 Parke Godwin"
 "100573","Dominate Kine","Dominer le bétail","[dom] Action à +1 en discrétion. (D) Mordre à +1 en morsure.
-[DOM] (D) Voler un lieu contrôlé par un autre Mathusalem.","Je n'ai jamais voulu d'un zoo comme terrain de chasse, mais le soustraire à un Gangrel était une juste revanche.
-Ventrue, intrigue d'Adélaïde 2002"
+[DOM] (D) Voler un lieu.","Qui ne vole pas dans le monde, n'y vit pas.
+Francisco de Quevedo, ""El Buscón"""
+"102220","Double Deuce","Deux-doigts","Loup-garou unique avec 3 points de vie. 1 en force, 1 en morsure.
+Deux-doigts a +1 en discrétion. Si Deux-doigts a 2 points de vie ou moins durant votre phase de redressement, il gagne 1 point de vie.",""
 "100581","Dragonbound","Lié par le Dragon","Géhenne. À ne pas remplacer tant que cette carte est en jeu.
 Durant la phase de défausse de chaque Mathusalem, ce Mathusalem brûle 1 point de réserve pour chaque vampire en torpeur sous son contrôle.","Est-ce comme ça que cela se termine ? Finalement, je vais peut-être rester.
 Ramona, Gangrel"
 "100588","Dreams of the Sphinx","Rêves du sphinx","Unique.
 Mettez cette carte en jeu. Vous pouvez l'incliner et lui ajouter 1 compteur pour, au choix : recevoir +2 en taille de main jusqu'à la fin du tour ; ou gagner 1 point de réserve durant votre phase de redressement si vous avez l'Avantage ; ou ajouter 1 point de sang à un vampire dans votre région incontrôlée. Brûlez cette carte si elle a 3 compteurs.",""
+"100597","Dust Up","Léger différend","Requiert un Anarch.
+[ani] Frapper : frappe à mains nues à +1 point de dégâts. Cette frappe ne peut pas être esquivée.
+[cel] Frapper : esquiver, avec 1 frappe additionnelle (limité).
+[pot] Frapper : frappe à mains nues à +2 points de dégâts.",""
 "100598","Eagle's Sight","Vision d'aigle","[aus] +1 en interception.
 [AUS] Ce vampire tente de bloquer l'action en cours, en ignorant les restrictions normales liées à la proie, au prédateur ou à la cible qui s'appliquent au blocage.",""
 "100600","Earth Control","Maîtrise de la terre","[pro] +1 en discrétion.
@@ -177,6 +220,8 @@ Des guerriers pâles, tous pâles comme la mort ;
 — Ils me criaient : ""La Belle Dame sans merci
 T'a pris dans ses rets.""
 John Keats, ""La Belle Dame Sans Merci"""
+"102221","Enchanting Gaze","Regard enchanteur","[pre][pro] +1 en discrétion.
+[PRE][PRO] Comme ci-dessus et une fois durant cette action, vous pouvez brûler 1 de vos compteurs corruption d'un serviteur qui bloque pour faire échouer sa tentative de blocage et il ne peut pas tenter de bloquer cette action à nouveau.",""
 "100644","Enhanced Senses","Sens surdéveloppés","[aus] +1 en interception.
 [AUS] +2 en interception.","Les choses ne donnent à nos sens que ce qu'elles rejettent. Nous les connaissons par leurs rebuts. La fleur abandonne son odeur.
 Paul Valéry"
@@ -189,7 +234,7 @@ Vous pouvez l'incliner pour recevoir +1 en taille de main ce tour-ci. Vous pouve
 Depuis l'éternité je parcours et j'habite.
 Charles Baudelaire, ""Le Mauvais Moine"""
 "100652","Entrancement","Envoûtement","[pre] (D) Mordre à +1 en morsure.
-[PRE] (D) Action à +1 en discrétion. Voler un allié contrôlé par un autre Mathusalem.","Ton frais parfum me déconcerte.
+[PRE] Action à +1 en discrétion. (D) Voler un allié contrôlé par un autre Mathusalem.","Ton frais parfum me déconcerte.
 Et dans ton opale je vois
 Des cieux habités autrefois,
 Comme par une porte ouverte.
@@ -200,6 +245,8 @@ Raoul Ponchon, ""L'Absinthe"""
 [dem] +1 en morsure (limité).
 [DEM] +2 en morsure (limité).","Nous vivons dans un arc-en-ciel de chaos.
 Paul Cézanne"
+"102222","Eyes of the Wild","Yeux de la nature","Seulement utilisable par un Gangrel incliné.
+Ce Gangrel se redresse et tente de bloquer. Durant cette action, ce Gangrel peut brûler 1 point de sang pour recevoir +1 en interception. Inclinez ce Gangrel après résolution de l'action s'il n'a pas bloqué cette action.",""
 "100687","Faceless Night","Nuit sans visage","[obf] +1 en discrétion.
 [OBF] Comme ci-dessus et tout serviteur qui tente de bloquer cette action et échoue est incliné avant résolution de l'action.","Tu es l'otage de l'éternité, un captif du temps.
 Boris Pasternak, ""Nuit"""
@@ -209,6 +256,11 @@ Mettez cette carte sur un vampire disponible. Le contrôleur de ce vampire brûl
 "100720","Femur of Toomler","Fémur de Toomler","Arme de mêlée unique.
 Frapper : force+1 points de dégâts aggravés.","C'est avec cet os que nous avons détruit l'un des fondateurs Tremeres, je vous invite donc à le traiter avec un peu plus de respect.
 Meshenka, Tzimisce"
+"100744","Flash","","[cel] Manœuvrer ou poursuivre.
+[CEL] Manœuvrer avec 1 poursuite optionnelle.",""
+"100747","Fleetness","Légèreté","Action à +1 en discrétion.
+[cel] (D) Mordre.
+[CEL] (D) Entrer en combat contre un serviteur incliné. Ce vampire qui agit reçoit 1 manœuvre optionnelle durant ce combat.",""
 "100760","Forced Awakening","Réveil forcé","Seulement utilisable par un vampire incliné.
 Ce vampire se réveille (il n'a pas besoin d'être redressé pour jouer des cartes de réaction et tenter de bloquer jusqu'à la fin de l'action). S'il ne bloque pas cette action, il brûle 1 point de sang avant résolution de l'action.",""
 "100761","Forced March","Marche forcée","Un vampire ne peut en jouer qu'un seul exemplaire par tour.
@@ -222,6 +274,13 @@ Ce vampire se réveille (il n'a pas besoin d'être redressé pour jouer des cart
 "100771","Form of Mist","Forme de brume","[pro] Frapper : esquiver.
 [PRO] Frapper : fin de combat. Si ce vampire agit et que l'action a été bloquée, il peut brûler 1 point de sang après la fin du combat pour continuer l'action avec +1 en discrétion comme si elle n'avait pas été bloquée, même si de la discrétion n'est pas encore nécessaire. Un vampire ne peut en jouer qu'un seul exemplaire au niveau supérieur par action.","Et pourtant je suis et je vis — ballotté, vaporeux.
 John Clare, ""Je suis"""
+"102223","Form of the Bat","Forme de la chauve-souris","[pro] [ACTION MODIFIER] Seulement utilisable si un serviteur tente de bloquer. Le serviteur qui bloque reçoit -1 en interception. Si cette action est bloquée, ce vampire reçoit 1 manœuvre optionnelle et ne peut pas utiliser d'équipement durant le combat résultant.
+[PRO] [REACTION] +1 en interception. Si ce vampire bloque, il reçoit 1 manœuvre optionnelle et ne peut pas utiliser d'équipement durant le combat résultant.",""
+"102224","Form of the Cobra","Forme du cobra","[pro] [COMBAT] Frapper : voler 1 point de sang ou de vie (convertie en sang).
+[PRO] [ACTION MODIFIER] Seulement utilisable lors de l'annonce de l'action. +1 en discrétion, même si de la discrétion n'est pas encore nécessaire.",""
+"102225","Form of the Wolf","Forme du loup","Seulement utilisable avant l'étape de manœuvre. Un vampire ne peut en jouer qu'un seul exemplaire par combat.
+[pro] Ce vampire reçoit +1 en force ce combat.
+[PRO] Comme ci-dessus et ce vampire gagne 1 poursuite optionnelle ce combat.",""
 "100779","Foundation Exhibit","Exposition de la fondation","Lieu unique.
 Chaque Toréador antitribu non titré que vous contrôlez reçoit +1 voix. N'importe quel vampire peut brûler cette carte en action (D) qui coûte 1 point de sang.","C'est une sorte de torture que de regarder ce spectacle.
 Waldorf, Toreador antitribu"
@@ -239,22 +298,30 @@ Prévenir 1 point de dégâts de la frappe du serviteur opposé.",""
 "100855","Gregory Winter","","Goule unique avec 4 points de vie. 1 en force, 1 en morsure.
 Gregory peut voler 1 point de sang (converti en vie) d'un vampire contrôlé par un autre Mathusalem en action (D) à +1 en discrétion. Il peut brûler un vampire en torpeur pour gagner 2 points de vie en action (D). Durant votre phase de redressement, Gregory brûle 1 point de vie.",""
 "100863","Guard Dogs","Chiens de garde","Seulement utilisable par un vampire incliné durant une action de morsure contre vous.
-[ani] Redressez ce vampire.
+[ani] Redresser ce vampire.
 [ANI] Comme ci-dessus, avec 1 manœuvre optionnelle durant le combat résultant si ce vampire bloque.",""
 "100866","Guardian Angel","Ange gardien","Mettez cette carte sur un vampire disponible que vous contrôlez. Ce vampire reçoit +1 en interception durant les actions de morsure contre vous. Ce vampire peut prévenir 1 point de dégâts durant chaque combat. Brûlez cette carte si ce vampire est en torpeur.",""
 "100882","Hand of Conrad","Main de Conrad","Unique.
 Ce vampire reçoit le niveau supérieur de Puissance [POT]. Ce vampire peut déplacer un vampire de votre tas de cendres vers votre région incontrôlée en action.",""
+"102226","Haqim's Law: Retribution","Loi d'Haqim : Châtiment","Mettez cette carte en jeu. Durant une action de morsure, un Assamite que vous contrôlez peut défausser une carte de combat pour recevoir +1 en morsure.",""
 "100886","Harass","Harceler","(D) Entrer en combat contre un vampire qui a 3 points de sang ou moins ou avec un serviteur incliné. Le serviteur qui agit reçoit 1 poursuite optionnelle, seulement utilisable pour continuer le combat, durant ce combat.",""
 "100897","Haven Uncovered","Refuge exposé","Mettez cette carte sur un vampire disponible. N'importe quel serviteur peut entrer en combat contre ce vampire en action (D) à +1 en discrétion. Ce vampire peut brûler cette carte en action (D) à +1 en discrétion.","À travers ma ruine allez donc sans remords.
 Charles Baudelaire, ""Le Mort joyeux"""
 "100903","Heart of Nizchetus","Cœur de Nizchetus","Unique.
 Si son possesseur est disponible durant votre phase de redressement, vous pouvez piocher jusqu'à 3 cartes sans défausser et déplacer ensuite le même nombre de cartes de votre main vers le dessous de votre bibliothèque.","De temps en temps, je pense le voir battre. Ce ne sont peut-être que des ombres dansantes, mais la fortune sourit.
 Radu Bistri, Tzimisce"
+"100904","Heart of the City","Cœur de la ville","Action à +1 en discrétion.
+[pre] Mettre cette carte sur ce vampire. Ce vampire reçoit +1 en morsure. Un vampire ne peut en avoir qu'un seul exemplaire.
+[PRE] Comme ci-dessus, mais ce vampire reçoit +2 en morsure.","Nous sommes chacun notre propre démon et nous faisons de ce monde notre enfer.
+Oscar Wilde"
 "100908","Heidelberg Castle, Germany","Château de Heidelberg, Allemagne","Lieu unique.
 Vous pouvez l'incliner pour déplacer des points de sang, des équipements et/ou des compagnons entre deux vampires disponibles que vous contrôlez. Non utilisable durant une action.","La nuit. La pluie. Un ciel blafard que déchiquette
 De flèches et de tours à jour la silhouette
 D'une ville gothique éteinte au lointain gris.
 Paul Verlaine, ""Effet de nuit"""
+"100913","Heroic Might","Puissance héroïque","Action à +3 en discrétion.
+[pot] Mettre cette carte sur ce vampire. Ce vampire reçoit +1 en force. Ce vampire peut frapper : brûler un équipement. Brûlez cette carte si ce vampire est en torpeur. Un vampire ne peut en avoir qu'un seul exemplaire.
+[POT] Comme ci-dessus, avec +1 en force supplémentaire et ce vampire peut frapper à toute portée : 2 points de dégâts.",""
 "100918","Hidden Strength","Force cachée","[for] Prévenir X+1 points de dégâts.
 [FOR] Comme ci-dessus, avec 1 poursuite optionnelle.",""
 "100932","Homunculus","Homoncule","Compagnon avec 1 point de vie.
@@ -265,8 +332,13 @@ Ronald Chetwynd-Hayes, ""En quête de quelque chose à sucer"""
 [vic] Ce vampire reçoit +1 en force ce combat.
 [VIC] Comme ci-dessus et ce vampire peut prévenir 1 point de dégâts durant chaque round.","D'où viens-tu, et qui es-tu, forme exécrable...
 John Milton, ""Le Paradis perdu"""
+"102227","Hunger of Marduk","Appétit de Marduk","Seulement utilisable avant l'étape de manœuvre.
+[tha] Ce round-ci, ce vampire peut frapper à toute portée : voler 1 point de sang ou de vie (convertie en sang).
+[THA] Comme ci-dessus, mais pour 2 points de sang ou de vie (convertie en sang).",""
 "100945","Hungry Coyote, The","Le Coyote affamé","Lieu unique.
 Les vampires du Sabbat que vous contrôlez reçoivent +1 en chasse.",""
+"102228","Hunter's Mark","Marque du chasseur","[cel][tha] (D) Entrer en combat contre un serviteur. Ce vampire qui agit reçoit 1 poursuite optionnelle durant ce combat.
+[CEL][THA] Comme ci-dessus et le serviteur opposé ne peut pas frapper : fin de combat durant le premier round de ce combat.",""
 "100959","Immortal Grapple","Prise immortelle","Prise. Seulement utilisable au contact avant que les frappes ne soient choisies. Un vampire ne peut en jouer qu'un seul exemplaire par round.
 [pot] Les frappes qui ne sont pas des frappes à mains nues ne peuvent pas être utilisées ce round-ci (par aucun des combattants).
 [POT] Comme ci-dessus, avec 1 poursuite optionnelle. Si un autre round de combat a lieu, ce round-là est au contact (sautez l'étape de manœuvre pour ce round-là).",""
@@ -301,9 +373,7 @@ William Cowper, ""L'Horloge"""
 "101067","KRCG News Radio","Radio d'informations KRCG","Lieu unique.
 Vous pouvez l'incliner pour donner +1 en interception à un serviteur que vous contrôlez. Vous pouvez l'incliner et brûler 1 point de réserve pour donner +1 en interception à un serviteur contrôlé par un autre Mathusalem.",""
 "101070","Labyrinth, The","Le labyrinthe","Lieu unique.
-Vous pouvez l'incliner pour donner +1 en discrétion à un Nosferatu que vous contrôlez.","Mais de manière confuse, j'aspire horriblement
-À rencontrer une chose maigre, naine, fétide et poilue
-Avec une peau répugnante et des yeux chassieux...
+Vous pouvez l'incliner pour donner +1 en discrétion à un Nosferatu que vous contrôlez.","Mais de manière confuse, j'aspire horriblement / À rencontrer une chose maigre, naine, fétide et poilue / Avec une peau répugnante et des yeux chassieux...
 Francis Saltus, ""La Passade d'une courtisane"""
 "101073","Laptop Computer","Ordinateur portable","Électronique.
 Son possesseur reçoit +1 en morsure. Un serviteur ne peut en avoir qu'un seul exemplaire.",""
@@ -319,9 +389,13 @@ Donnez des points de réserve à un Mathusalem qui n'a plus de points de réserv
 "101104","Life in the City","Vivre en ville","Triviale.
 Ajoutez 1 point de sang à un vampire disponible.","Je ne touche pas aux clients qui pourraient leur manquer, mais les solitaires font des proies idéales. Les trafiquants pensent que je pratique l'esclavage en dilettante.
 Ingrid Galt, Anarch"
+"102229","Line Brawl","Bagarre rangée","Requiert un Anarch.
+[cel] (D) Voler 1 point de réserve d'un autre Mathusalem.
+[pot] (D) Entrer en combat contre un serviteur.
+[pre] (D) Mordre à +1 en morsure.",""
 "101114","Living Manse","Manoir vivant","Tant qu'elle est en jeu, cette carte d'équipement représente un lieu et ne compte pas comme équipement.
 Ce vampire reçoit +1 en morsure. Il peut brûler cette carte avant l'étape de manœuvre pour arrêter le combat. Un vampire ne peut en avoir qu'un seul exemplaire.",""
-"101125","Lost in Crowds","Perdu dans la foule","[obf] +1 en discrétion. /Volatilisé/ et Perdu dans la foule ne peuvent être joués durant la même action.
+"101125","Lost in Crowds","Perdu dans la foule","[obf] +1 en discrétion. Perdu dans la foule et les cartes nommées /Volatilisé/ ne peuvent être joués durant la même action.
 [OBF] Comme ci-dessus, mais pour +2 en discrétion.","... parce qu'elle croit qu'un être terrible
 Lui ferme la route par-derrière.
 Samuel Taylor Coleridge, ""La Complainte du vieux marin"""
@@ -331,6 +405,8 @@ Samuel Taylor Coleridge, ""La Complainte du vieux marin"""
 "101144","Majesty","Majesté","[pre] Frapper : fin de combat.
 [PRE] Comme ci-dessus et redresser ce vampire avant la fin du combat.","Je te donnerai tout cela, si tu te prosternes pour m'adorer.
 (Mt. 4, 9)"
+"101171","Market Square","Place du marché","Lieu unique.
+Vous pouvez l'incliner pour donner +1 en interception à un Assamite que vous contrôlez.",""
 "101216","Mind Tricks","Arnaques mentales","[dem] +1 en discrétion.
 [DEM] Comme ci-dessus, avec 1 manœuvre ou poursuite optionnelle durant le combat résultant si ce vampire est bloqué.","Ta puissance, ô pensée, et ton art, ô génie !
 Lord Byron, ""Le Corsaire"""
@@ -343,6 +419,11 @@ Lewis Carroll, ""De l'autre côté du miroir"""
 Victor Hugo, ""L'Homme qui rit"""
 "101238","Monastery of Shadows","Monastère des ombres","Lieu unique.
 +1 en taille de main. Vous pouvez l'incliner pour donner +1 en discrétion à un vampire de capacité 8 ou plus.",""
+"101239","Monkey Wrench","Semer la pagaille","Requiert un Anarch. Seulement utilisable durant une action de morsure.
++X en morsure (limité). X doit être 1, 2 ou 3.","La meilleure arme des pirates, cependant, était leur capacité à surprendre. Personne ne pouvait croire, avant qu'il ne fût bien trop tard, à quel point ils étaient cruels et avides.
+Kurt Vonnegut, ""Le Petit Déjeuner des champions"""
+"101249","Mr. Winthrop","M. Winthrop","Mortel unique avec 1 point de vie.
+Son employeur reçoit +1 en interception.",""
 "101254","Murder of Crows","Nuée de corbeaux","Animal avec 1 point de vie.
 [ani] Ce compagnon inflige 1 point de dégâts à toute portée au serviteur opposé durant chaque round de combat durant la résolution des frappes normales.
 [ANI] Comme ci-dessus, mais ce compagnon a 2 points de vie.","Armée étrange aux cris sévères, [...]
@@ -362,6 +443,15 @@ Le Nephandus peut frapper à toute portée : 1 point de dégâts. Le Nephandus r
 [DOM] Comme ci-dessus, mais ne redressez pas le vampire qui agit.",""
 "101321","On the Qui Vive","Sur le qui-vive","Seulement utilisable par un serviteur incliné. Un serviteur ne peut en jouer qu'un seul exemplaire entre chacune de ses phases de redressement.
 Ce serviteur se réveille (il n'a pas besoin d'être redressé pour jouer des cartes de réaction et tenter de bloquer jusqu'à la fin de l'action). Si ce serviteur est un allié, il ne se redresse pas normalement durant sa prochaine phase de redressement.",""
+"101326","Opium Den","Fumerie d'opium","Lieu unique.
+Vous pouvez l'incliner pour donner +1 en discrétion à un Disciple de Seth que vous contrôlez.","L'opium agrandit ce qui n'a pas de bornes,
+Allonge l'illimité,
+Approfondit le temps, creuse la volupté,
+Et de plaisirs noirs et mornes
+Remplit l'âme au delà de sa capacité.
+Charles Baudelaire, ""Le Poison"""
+"102230","Organized Resistance","Résistance organisée","Requiert un baron. Utilisable par un baron incliné.
+Un Anarch que vous contrôlez reçoit +1 en interception. Utilisable également pour redresser un Anarch incliné que vous contrôlez ; cet Anarch tente de bloquer avec +1 en interception, même si de l'interception n'est pas encore nécessaire.",""
 "101334","Oubliette","Oubliettes","[obt] Frapper : fin de combat.
 [OBT] Comme ci-dessus et le serviteur opposé brûle 1 point de sang ou de vie après la fin du combat (même à distance).",""
 "101346","Palla Grande","","Unique.
@@ -370,6 +460,10 @@ Mettez cette carte en jeu avec 3 compteurs. Les Toréadors antitribu reçoivent 
 Durant votre phase de redressement, un vampire titré disponible que vous contrôlez peut gagner 2 points de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "101353","Parity Shift","Changement de parité","Requiert un prince ou justicar.
 Choisissez un Mathusalem qui a plus de points de réserve que vous et allouez 3 points de sa réserve entre 1 et plus parmi les autres Mathusalems (vous compris). Si le référendum passe, le Mathusalem choisi perd ces points de réserve et ceux-ci sont alloués comme choisi.",""
+"102231","Party Out Of Bounds","Fin de soirée difficile","Requiert un Anarch.
+[obf] Réduisez de 2 une morsure contre vous.
+[pre] Seulement utilisable durant l'étape de vote d'une action politique. Ce vampire reçoit +2 voix.
+[pro] +1 en interception.",""
 "101384","Pentex(TM) Subversion","Subversion de la Pentex(TM)","Unique.
 Mettez cette carte sur un serviteur disponible. Ce serviteur ne peut pas bloquer. N'importe quel autre serviteur peut brûler cette carte en action (D).",""
 "101387","Perfect Paragon","Parangon de perfection","[pre] Seulement utilisable durant l'étape de vote d'une action politique. Ce vampire reçoit +3 voix.
@@ -379,6 +473,10 @@ Mettez cette carte sur un vampire que vous contrôlez. Une fois par tour, ce vam
 Johann Wolfgang von Goethe"
 "101390","Permanent Vacation","Vacances permanentes","Choisissez un allié disponible. Si le référendum passe, l'allié choisi est retiré de la partie.","En un mot, il disparut et on ne le revit jamais.
 C. M. Wieland, ""Musarion"""
+"102232","Platinum Protocol, The","Carte de membre platinum","Requiert un Anarch. Plus d'une Discipline peut être utilisée pour jouer cette carte. (D) Mordre.
+[obf] Ceci est une action à +1 en discrétion.
+[pre] La morsure est à +1 en morsure.
+[pro] Mettre 1 compteur corruption sur un serviteur contrôlé par le Mathusalem ciblé si la morsure est réussie (pour 1 ou plus).",""
 "101415","Political Hunting Ground","Sphère politique, terrain de chasse","Lieu unique. Terrain de chasse.
 Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "101417","Political Stranglehold","Mainmise politique","Pas plus d'un seul exemplaire ne peut être joué ou appelé par partie.
@@ -396,8 +494,19 @@ Lewis Carroll, ""De l'autre côté du miroir"""
 "101483","Preternatural Strength","Force surnaturelle","Action à +2 en discrétion.
 [pot] Mettez cette carte sur ce vampire. Ce vampire reçoit +1 en force. Il ne peut pas jouer /Panneau arraché/. Un vampire ne peut en avoir qu'un seul exemplaire.
 [POT] Comme ci-dessus, mais ce vampire reçoit +2 en force.",""
+"101487","Priority Contract","Contrat prioritaire","Contrat unique. Triviale.
+Choisissez un Assamite disponible que vous contrôlez et mettez cette carte sur un serviteur contrôlé par votre proie. L'Assamite choisi peut entrer en combat contre le serviteur attaché en action (D) à +1 en discrétion. Si le serviteur attaché est sur le point de quitter la région disponible, vous pouvez brûler cette carte pour gagner 3 points de réserve.",""
 "102214","Protected District","District protégé","Requiert un primogène. Seulement utilisable durant une action de morsure contre vous ou durant l'étape de vote d'une action politique.
 Réduisez la valeur de morsure de 3 ou ce vampire gagne +3 voix contre le référendum.",""
+"101501","Protection Racket","Racket de protection","Requiert un Anarch.
++1 en interception, avec +1 en interception supplémentaire si le vampire qui agit est titré.",""
+"101523","Pursuit","Course-poursuite","[cel] Manœuvrer.
+[CEL] Frappe additionnelle (limité).","Et cette folle poursuite ? Qui se débat pour s'échapper ?
+John Keats, ""Ode sur une urne grecque"""
+"101532","Quickness","Rapidité","Un vampire ne peut en jouer qu'un seul exemplaire par round.
+[cel] Frappe additionnelle (limité).
+[CEL] Frappe additionnelle qui ne compte pas dans la limite.","Le meilleur secret est la promptitude.
+Francis Bacon, ""Des retardements"""
 "101536","Rack, The","Le râtelier","Lieu unique.
 Lorsque cette carte est jouée ou quand son contrôleur change, son contrôleur choisit un vampire disponible sous son contrôle. Durant la phase de redressement du contrôleur de cette carte, le vampire choisi peut gagner 2 points de sang. Un vampire contrôlé par un autre Mathusalem peut voler ce lieu en action (D).",""
 "101542","Rapid Change","Changement rapide","[pro] [ACTION MODIFIER] +1 en discrétion.
@@ -413,23 +522,31 @@ Stravinsky, Archevêque Tzimisce de Mexico"
 "101564","Rebel","Rebelle","Archétype. Triviale.
 Mettez cette carte sur un vampire que vous contrôlez. Une fois par tour, s'il bloque un vampire titré ou une action politique, ce vampire gagne 1 point de sang avant la résolution du blocage. Un vampire ne peut avoir qu'un seul archétype.","Elle sait que je combats les Camabrutis depuis longtemps et que je gère.
 Jack Drake, Anarch Brujah"
-"101588","Rego Motum","","Un vampire ne peut en jouer qu'un seul exemplaire par round.
+"101588","Rego Motum","Rego motum","Un vampire ne peut en jouer qu'un seul exemplaire par round.
 [tha] Prévenir 2 points de dégâts de la frappe du serviteur opposé.
 [THA] Prévenir 4 points de dégâts de la frappe du serviteur opposé.",""
 "101591","Reins of Power","Rênes du pouvoir","Pas plus d'un seul exemplaire ne peut être joué ou appelé par partie.
 Si le référendum passe, chaque Mathusalem peut choisir un vampire disponible sous son contrôle. Chaque Mathusalem gagne 6 points de réserve, puis brûle autant de points de réserve que la capacité du vampire choisi par son prédateur.",""
 "101610","Resist Earth's Grasp","Défier la gravité","[cel] [COMBAT] Poursuivre, ou manœuvrer avec 1 poursuite optionnelle.
 [CEL] [ACTION MODIFIER] +1 en discrétion.",""
+"102233","Revelation of the Serpent","Révélation du serpent","Seulement utilisable durant une action de morsure.
+[pre][pro] +1 en morsure (limité), ou +1 en discrétion et +1 en morsure (limité).
+[PRE][PRO] Comme ci-dessus et si la morsure est réussie, ce vampire peut brûler 2 de vos compteurs corruption d'un serviteur contrôlé par le Mathusalem ciblé pour se redresser.",""
 "101627","Revelations","Révélations","Action à +1 en discrétion.
 [aus] (D) Regardez la main de votre proie et défaussez-en une carte de votre choix.
 [AUS] Mettez cette carte en jeu. Votre proie joue avec sa main révélée. N'importe quel serviteur peut brûler cette carte en action (D).",""
+"101632","Rewilding","Réensauvagement","(D) Brûler un lieu et brûler 2 points de réserve de son contrôleur.","Villes et trônes et empereurs
+Se tiennent dans l'œil du Temps
+Presqu'aussi longtemps que les fleurs
+Qui meurent quotidiennement
+Rudyard Kipling, ""Puck, lutin de la colline"""
 "101649","Rolling with the Punches","Encaisser les coups","[for] Prévenir 1 point de dégâts.
 [FOR] Brûler 1 point de sang pour prévenir tous les dégâts des frappes du serviteur opposé ce round-ci.",""
 "102215","Roundhouse","Crochet","[pot] Frapper : frappe à mains nues à +2 points de dégâts.
 [POT] Frapper : frappe à mains nues à +3 points de dégâts.","Il suffit d'entasser suffisamment d'Anarchs dans une pièce pour qu'ils se croient capables de tomber n'importe qui.
 Tyrus, Archonte Gangrel"
 "101664","Rutor's Hand","Main de Rutor","Action à +1 en discrétion.
-[tha] Mettez cette carte sur ce vampire et ce vampire subit 1 point de dégâts aggravés environnementaux qui ne peuvent être prévenus. À partir de votre prochain tour, ce vampire peut se redresser durant votre phase de serviteur. Un vampire ne peut en avoir qu'un seul exemplaire.
+[tha] Mettre cette carte sur ce vampire et ce vampire subit 1 point de dégâts aggravés environnementaux qui ne peuvent être prévenus. À partir de votre prochain tour, ce vampire peut se redresser durant votre phase de serviteur. Un vampire ne peut en avoir qu'un seul exemplaire.
 [THA] Comme ci-dessus et ce vampire peut brûler 3 points de sang pour être immunisé à ces dégâts aggravés.",""
 "101681","Sargon Fragment, The","Le fragment de Sargon","Unique.
 Ce vampire reçoit le niveau supérieur de Nécromancie [NEC]. Ce vampire peut déplacer une carte de bibliothèque de votre tas de cendres vers votre main en action qui coûte 1 point de sang (ajuster la main).",""
@@ -452,6 +569,8 @@ Percy Bysshe Shelley, ""Hymne à la beauté intellectuelle"""
 [OBT] +2 en discrétion.","Tu fermeras l'œil, pour ne point voir, par la glace,
 Grimacer les ombres des soirs
 Arthur Rimbaud, ""Rêvé pour l'hiver"""
+"101772","Show of Force","Démonstration de force","[pot][pre] (D) Mordre à +1 en morsure. Si cette action est bloquée, avant l'étape de manœuvre durant le premier round du combat résultant, ce vampire peut gagner +1 en force ce combat.
+[POT][PRE] Comme ci-dessus, mais à +2 en morsure et ce vampire peut gagner +2 en force.",""
 "101774","Shroud of Absence","Linceul d'absence","[dom][obt] +1 en discrétion.
 [DOM][OBT] Comme ci-dessus et ce vampire peut frapper : fin de combat durant le premier round du combat résultant s'il est bloqué.","Oh ! Je ne m'étais pas aperçu que tu étais entré, Marconius. Tu surprends la ville dans son sommeil, contre sa nature.
 Andrea Giovanni"
@@ -460,6 +579,8 @@ Andrea Giovanni"
 William Shakespeare, ""Troïlus et Cressida"""
 "101781","Signet of King Saul, The","Le sceau du roi Saül","Unique.
 Les vampires de capacité 8 ou plus ne peuvent pas bloquer son possesseur.",""
+"101798","Slam","Plaquage","[pot] Frapper : frappe à mains nues à +2 points de dégâts.
+[POT] Comme ci-dessus, avec 1 manœuvre optionnelle, seulement utilisable pour aller au contact.",""
 "101808","Slum Hunting Ground","Bidonville, terrain de chasse","Lieu unique. Terrain de chasse.
 Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "101811","Smiling Jack, The Anarch","Smiling Jack, l'Anarch","Unique.
@@ -469,6 +590,8 @@ Mettez cette carte en jeu. Durant votre phase de redressement, déplacez 1 compt
 [FOR] Prévenir 4 points de dégâts non aggravés.","Les blessures qu'il avait subies auraient à coup sûr tué un mortel et auraient été fatales à de nombreux vampires. Jan ne pouvait que remercier le sang de Hardestadt et des anciens du clan Ventrue pour avoir survécu tout ce temps."
 "101821","Society Hunting Ground","Haute société, terrain de chasse","Lieu unique. Terrain de chasse.
 Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.","Les Toréadors sont prisonniers de leur soif de vie nocturne. Telle une sirène, elle les attire avec des promesses de plaisirs interdits."
+"101829","Soul Burn","Brûlure de l'âme","[tha] Frapper à toute portée : 1 point de dégâts. Ces dégâts ne peuvent pas être prévenus par les cartes qui requièrent Force d'âme [for]. Les frappes avec des armes du vampire opposé n'infligent pas de dégâts ce round-ci.
+[THA] Comme ci-dessus, mais pour 2 points de dégâts à toute portée.",""
 "101850","Spirit's Touch","Psychométrie","[aus] +1 en interception.
 [AUS] Comme ci-dessus, avec 1 manœuvre optionnelle durant le combat résultant si ce vampire bloque.","Nous sommes éternels, le passé nous est présent aussi bien que l'avenir.
 Lord Byron, ""Manfred"", acte I, scène 1"
@@ -493,25 +616,38 @@ Ce vampire gagne autant de points de sang que de points de sang perdus par le va
 [AUS] Seulement utilisable si un serviteur est en train de vous mordre, après avoir renoncé à bloquer. Inclinez ce vampire qui réagit. Redirigez la morsure vers un autre Mathusalem autre que le contrôleur du serviteur qui agit (ce Mathusalem peut tenter de bloquer).",""
 "101950","Telepathic Tracking","Pistage télépathique","[aus] Poursuivre, seulement utilisable pour continuer le combat. Si un autre round de combat a lieu, ce vampire reçoit 1 manœuvre optionnelle ce round-là.
 [AUS] Seulement utilisable si les deux combattants sont toujours disponibles et que le combat doit prendre fin. À la place, démarrez un nouveau round.",""
+"101953","Temple Hunting Ground","Temple, terrain de chasse","Lieu unique. Terrain de chasse.
+Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "101957","Tenebrous Form","Forme ténébreuse","[obt] +1 en discrétion.
 [OBT] Comme ci-dessus et les serviteurs sans Obténébration [obt] doivent brûler 1 point de sang pour tenter de bloquer (les alliés ne peuvent pas brûler de points de sang).","Soyez comme une ombre dans la nuit noire ; invisible, inaudible, qu'il n'y ait aucune trace de vos entrées et sorties.
 Les Admonestations."
+"101958","Tension in the Ranks","Tension dans les rangs","Unique.
+Mettez cette carte en jeu. Tout Mathusalem brûle 1 point de réserve après qu'un serviteur disponible sous son contrôle est brûlé ou envoyé en torpeur. N'importe quel Mathusalem peut utiliser une action de phase de maître et défausser deux cartes de maître pour brûler cette carte.","Même les goules de guerre ont l'air nerveuses..."
 "101963","Thadius Zho","","Mage unique avec 2 points de vie. 0 en force, 2 en morsure.
 Thadius Zho peut frapper à toute portée : 2 points de dégâts. Il reçoit 1 manœuvre optionnelle durant chaque combat. Il peut brûler 1 point de sang de n'importe quel vampire en action (D) à +1 en discrétion.",""
 "101966","Theft of Vitae","Vol de vitæ","[tha] Frapper à toute portée : voler 1 point de sang ou de vie (convertie en sang).
 [THA] Frapper à toute portée : voler 2 points de sang ou de vie (convertie en sang).","Le sang, c'est la vie !
 Le sang, c'est la vie !
 Bram Stoker, ""Dracula"""
+"101972","Thing","","Action à +1 en discrétion.
+Ajoutez 2 points de sang à un Gangrel dans votre région incontrôlée.",""
 "101989","Toreador Grand Ball","Grand bal Toréador","Choisissez deux Toréadors disponibles que vous contrôlez, mettez cette carte en jeu et inclinez un des deux. Le Toréador incliné ne se redresse pas normalement. Les actions qui ne sont pas des morsures de l'autre Toréador ne peuvent pas être bloquées. N'importe quel serviteur peut brûler cette carte en action (D) ; les Nosferatus reçoivent -1 en discrétion durant cette action.",""
 "101990","Toreador Justicar","Justicar Toréador","Titre.
 Choisissez un Toréador disponible. Si le référendum passe, cette carte est mise sur le Toréador choisi pour représenter le titre unique de la Camarilla de Justicar Toréador. Durant ce référendum, chaque Toréador disponible reçoit +1 voix.",""
+"101993","Torn Signpost","Panneau arraché","Seulement utilisable avant l'étape de manœuvre.
+[pot] Ce vampire reçoit une force de 2 ce combat.
+[POT] Ce vampire reçoit une force de 3 ce combat.",""
 "102012","Trap","Piège","Seulement utilisable avant l'étape de manœuvre durant le premier round de combat.
 Mettez cette carte en jeu avec 3 compteurs. Chaque fois qu'une carte est jouée durant ce combat, réinitialisez le nombre de compteurs sur cette carte à 3. Durant l'étape de poursuite de chaque round de ce combat, ce Piège brûle automatiquement 1 compteur sur lui pour fournir 1 poursuite pour continuer le combat (l'un ou l'autre des combattants peut poursuivre pour arrêter le combat). Brûlez cette carte à la fin du combat.",""
+"102041","True Love's Face","Visage de l'amour véritable","[obf][pre] Seulement utilisable durant une action de morsure. +1 en morsure (limité).
+[OBF][PRE] Seulement utilisable si un serviteur tente de bloquer. Cette tentative échoue et le serviteur qui bloque ne peut pas tenter de bloquer cette action à nouveau. Le contrôleur du serviteur qui bloque peut brûler 1 point de réserve pour annuler cette carte lorsqu'elle est jouée.",""
 "102063","Under Siege","État de siège","Action à +1 en discrétion. Requiert un vampire du Sabbat titré. Unique.
 Mettez cette carte en jeu avec 3 compteurs. Une fois par action, un vampire du Sabbat que vous contrôlez peut brûler 1 compteur de cette carte pour se redresser et tenter de bloquer avec +1 en interception, même si de l'interception n'est pas encore nécessaire. Brûlez cette carte si elle n'a plus de compteurs.",""
 "102065","Underbridge Stray","Chien errant","Animal avec 1 point de vie. 0 en force, 0 en morsure.
 [ani] Cet allié peut brûler 1 point de vie pour donner 1 poursuite à un serviteur que vous contrôlez. Durant une action dirigée contre vous (ou une carte que vous contrôlez), vous pouvez brûler cet allié s'il n'est pas en train de bloquer pour redresser un serviteur disponible que vous contrôlez.
 [ANI] Comme ci-dessus, mais cet allié a 2 points de vie et 1 en force.",""
+"102066","Underworld Hunting Ground","Pègre, terrain de chasse","Lieu unique. Terrain de chasse.
+Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "102071","Unflinching Persistence","Persistance stoïque","[for] Prévenir 1 point de dégâts.
 [FOR] Manœuvrer et ce vampire peut prévenir 1 point de dégâts plus tard durant ce round.",""
 "102075","University Hunting Ground","Université, terrain de chasse","Lieu unique. Terrain de chasse.
@@ -522,9 +658,9 @@ Hardestadt, Ventrue"
 "102084","Uptown Hunting Ground","Quartier résidentiel, terrain de chasse","Lieu unique. Terrain de chasse.
 Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "102092","Vast Wealth","Grande fortune","Mettez cette carte sur un serviteur disponible que vous contrôlez. Si vous contrôlez ce serviteur, il peut s'équiper du premier équipement que vous trouvez dans votre bibliothèque en action à +1 en discrétion (en partant du dessus ; les prérequis et coûts s'appliquent normalement ; mélanger ensuite).",""
-"102097","Veil the Legions","Voiler les légions","Seulement utilisable par un vampire redressé et disponible autre que le serviteur qui agit. Pas plus d'un seul exemplaire ne peut être joué chaque action.
+"102097","Veil the Legions","Voiler les légions","Seulement utilisable par un vampire redressé et disponible autre que le serviteur qui agit. Pas plus d'un seul exemplaire ne peut être joué par action.
 [obf] Le serviteur qui agit reçoit +1 en discrétion.
-[OBF] Comme ci-dessus et ce vampire peut brûler X points de sang pour donner +1 en discrétion aux X prochaines actions effectuées par vos serviteurs ce tour-ci. Pas plus d'un seul exemplaire ne peut être joué au niveau supérieur chaque tour.",""
+[OBF] Comme ci-dessus et ce vampire peut brûler X points de sang pour donner +1 en discrétion aux X prochaines actions effectuées ce tour-ci par les serviteurs que vous contrôlez. Pas plus d'un seul exemplaire au niveau supérieur ne peut être joué par tour.",""
 "102109","Ventrue Headquarters","Quartier général Ventrue","Lieu unique.
 Vous pouvez l'incliner durant l'étape de vote de n'importe quel référendum pour recevoir +3 voix.","Le clan Ventrue est assez proche d'une multinationale. Chaque ville importante a son point de rendez-vous où les Ventrues peuvent chercher des allégeances et obtenir des informations."
 "102113","Vessel","Calice","Triviale.
@@ -547,6 +683,8 @@ John Keats, ""Hypérion"""
 +2 en interception, avec +1 en interception supplémentaire si ce Nosferatu est titré.",""
 "102149","Warsaw Station","Gare de Varsovie","Lieu unique.
 Vous pouvez incliner cette carte lorsqu'un Nosferatu annonce une action non dirigée ; après résolution de l'action, si cette action a été réussie, redressez le Nosferatu qui agit. Vous pouvez brûler cette carte (même si elle est inclinée) pour déplacer un Nosferatu en torpeur vers la région disponible.",""
+"102150","Warzone Hunting Ground","Zone de guerre, terrain de chasse","Lieu unique. Terrain de chasse.
+Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""
 "102151","Wash","Rejet","Hors-tour. Triviale. À ne pas remplacer jusqu'à votre phase de redressement.
 Annulez une carte de maître lorsqu'elle est jouée par votre prédateur ou votre proie et son coût n'est pas à payer. Ce Mathusalem reçoit +1 action de phase de maître immédiatement, ou au début de sa prochaine phase de maître si la carte annulée est une carte de maître hors-tour.",""
 "102152","Wasserschloss Anif, Austria","Wasserschloss Anif, Autriche","Lieu unique.
@@ -557,3 +695,5 @@ Mettez cette carte avec 5 compteurs dessus sur ce serviteur ; elle devient un é
 Mettez cette carte en jeu. Vous pouvez utiliser 1 transfert pour piocher 1 carte de votre crypte et retirer ensuite une carte de crypte dans votre région incontrôlée de la partie. Vous pouvez utiliser 4 transferts pour brûler cette carte et gagner 2 points de réserve.",""
 "102207","Zillah's Valley","Vallée de Zillah","Ajoutez 4 points de sang à un vampire de capacité 8 ou plus dans votre région incontrôlée.","Et chaque nuit, trois nuits durant, Zillah s'abreuva du sang de son Sire, bien qu'elle l'ignorât. La troisième nuit, Caïn annonça qu'il allait épouser Zillah, la plus douce de ses Infantes, et elle accepta.
 Le Livre de Nod"
+"102212","Zoo Hunting Ground","Zoo, terrain de chasse","Lieu unique. Terrain de chasse.
+Durant votre phase de redressement, un vampire disponible que vous contrôlez peut gagner 1 point de sang. Un vampire ne peut gagner de points de sang que d'un seul terrain de chasse à chaque tour.",""

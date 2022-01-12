@@ -15,6 +15,14 @@
         "Name":"Alice Chen",
         "Card Text":"Camarilla. Prince de Nairobi."
     },
+    "201576":{
+        "Name":"Aline G\u00e4deke",
+        "Card Text":"Anarch. Baron de Mannheim : Une fois par tour, Aline peut br\u00fbler 1 point de sang pour se redresser apr\u00e8s qu'un autre Anarch que vous contr\u00f4lez effectue une action r\u00e9ussie."
+    },
+    "201577":{
+        "Name":"Aluc Romas de Leon",
+        "Card Text":"Anarch."
+    },
     "201512":{
         "Name":"America Johnson",
         "Card Text":"Sabbat."
@@ -35,6 +43,10 @@
         "Name":"Apolonia Czarnecki",
         "Card Text":"Camarilla : Apolonia peut voler 1 point de sang d'un vampire plus jeune en action (D)."
     },
+    "200132":{
+        "Name":"Ariane",
+        "Card Text":"Anarch : Ariane re\u00e7oit -1 en discr\u00e9tion durant les actions non dirig\u00e9es."
+    },
     "200144":{
         "Name":"Arthur Denholm",
         "Card Text":"Camarilla."
@@ -42,6 +54,14 @@
     "201533":{
         "Name":"Ashley",
         "Card Text":"Camarilla."
+    },
+    "201578":{
+        "Name":"Asmin Kobane",
+        "Card Text":"Camarilla."
+    },
+    "201579":{
+        "Name":"Atiena",
+        "Card Text":"Anarch. Baron de Mombasa."
     },
     "201534":{
         "Name":"Tante Linda",
@@ -70,6 +90,14 @@
     "200190":{
         "Name":"Benjamin Rose",
         "Card Text":"Camarilla. Prince de Washington, D.C. : Benjamin peut appeler un r\u00e9f\u00e9rendum pour vous donner +1 en taille de main jusqu'\u00e0 la fin de la partie en action politique \u00e0 +1 en discr\u00e9tion."
+    },
+    "201580":{
+        "Name":"Bijou",
+        "Card Text":"Camarilla."
+    },
+    "201581":{
+        "Name":"Brandon Grime",
+        "Card Text":"Anarch."
     },
     "201538":{
         "Name":"Bret Stryker",
@@ -111,6 +139,22 @@
         "Name":"Conchita Morales",
         "Card Text":"Sabbat."
     },
+    "200303":{
+        "Name":"Crow",
+        "Card Text":"Anarch."
+    },
+    "201582":{
+        "Name":"Crystal Lynn",
+        "Card Text":"Anarch."
+    },
+    "201583":{
+        "Name":"Dario Ziggler",
+        "Card Text":"Anarch."
+    },
+    "201584":{
+        "Name":"Docteur Morocco",
+        "Card Text":"Anarch."
+    },
     "201544":{
         "Name":"Donny Kowalczyk",
         "Card Text":"Camarilla. Prince de Pittsburgh."
@@ -131,6 +175,14 @@
         "Name":"Dualit\u00e9",
         "Card Text":"Sabbat : Vous pouvez piocher 1 carte suppl\u00e9mentaire apr\u00e8s avoir remplac\u00e9 une carte qui requiert Vicissitude [vic] jou\u00e9e par Dualit\u00e9."
     },
+    "201585":{
+        "Name":"Elen Kamjian",
+        "Card Text":"Anarch : Si vous contr\u00f4lez un serviteur inclin\u00e9, Elen doit mordre \u00e0 +1 en morsure en action (D) sauf si elle doit chasser."
+    },
+    "201586":{
+        "Name":"Elisha Tucker",
+        "Card Text":"Anarch. Baron de Pittsburgh."
+    },
     "200418":{
         "Name":"Ember Wright",
         "Card Text":"Sabbat."
@@ -142,6 +194,14 @@
     "200427":{
         "Name":"Epikasta Rigatos",
         "Card Text":"Camarilla. Prince de New York : Vous pouvez d\u00e9placer une carte d'action jou\u00e9e par Epikasta de votre tas de cendres vers votre biblioth\u00e8que apr\u00e8s r\u00e9solution (m\u00e9langer ensuite)."
+    },
+    "201587":{
+        "Name":"Farah Sarroub",
+        "Card Text":"Camarilla. Prince de D\u00e9troit."
+    },
+    "201588":{
+        "Name":"Faruq Abd al-Qadir",
+        "Card Text":"Anarch : Les serviteurs avec au moins un de vos compteurs corruption en combat contre Faruq ne peuvent pas frapper : fin de combat. +1 en force."
     },
     "201547":{
         "Name":"Fl\u00e1vio Gon\u00e7alves",
@@ -163,6 +223,10 @@
         "Name":"Graham Gottesman",
         "Card Text":"Camarilla. Prince de Miami."
     },
+    "201589":{
+        "Name":"Greg Mazouni",
+        "Card Text":"Camarilla."
+    },
     "201522":{
         "Name":"Grimgroth",
         "Card Text":"Camarilla : Tant que Grimgroth est disponible, les alli\u00e9s mage co\u00fbtent 2 points de r\u00e9serve de moins \u00e0 recruter aux Tremeres que vous contr\u00f4lez. +2 en morsure."
@@ -179,13 +243,21 @@
         "Name":"Gwendolyn Fleming",
         "Card Text":"Camarilla."
     },
+    "201590":{
+        "Name":"Hanna Nokelainen",
+        "Card Text":"Anarch."
+    },
     "200571":{
         "Name":"Harold Tanner",
-        "Card Text":"Camarilla : En combat, le contr\u00f4leur du serviteur oppos\u00e9 \u00e0 Harold joue avec sa main r\u00e9v\u00e9l\u00e9e."
+        "Card Text":"Camarilla : Le contr\u00f4leur du serviteur en combat contre Harold joue avec sa main r\u00e9v\u00e9l\u00e9e."
     },
     "200575":{
         "Name":"Hartmut Stover",
         "Card Text":"Sabbat. Archev\u00eaque de Berlin : Tout vampire exprimant des voix ou bulletins contre un r\u00e9f\u00e9rendum que Hartmut appelle br\u00fble 1 point de sang apr\u00e8s d\u00e9pouillement. Durant votre phase de d\u00e9fausse, vous pouvez br\u00fbler l'Avantage pour gagner 1 point de r\u00e9serve."
+    },
+    "201591":{
+        "Name":"Hesha Ruhadze",
+        "Card Text":"Anarch : Hesha re\u00e7oit +1 en morsure pour chaque \u00e9quipement unique qui lui est attach\u00e9."
     },
     "201549":{
         "Name":"Horace Radcliffe",
@@ -199,6 +271,10 @@
         "Name":"Ilias cel Frumos",
         "Card Text":"Sabbat."
     },
+    "201592":{
+        "Name":"Indira",
+        "Card Text":"Anarch."
+    },
     "201551":{
         "Name":"In\u00eas Trist\u00e3o",
         "Card Text":"Camarilla. Prince de Rio de Janeiro."
@@ -211,6 +287,10 @@
         "Name":"Janine",
         "Card Text":"Sabbat."
     },
+    "201593":{
+        "Name":"Jenny Silver",
+        "Card Text":"Anarch."
+    },
     "200696":{
         "Name":"Jeremy \"Wix\" Wyzchovsky",
         "Card Text":"Camarilla : Jeremy peut mordre \u00e0 +1 en morsure en action (D)."
@@ -219,6 +299,10 @@
         "Name":"Jo\u00e3o Bil\u00e9",
         "Card Text":"Camarilla : Tant que Jo\u00e3o n'a pas de titre, il ne peut pas bloquer les vampires titr\u00e9s. Il re\u00e7oit +1 en discr\u00e9tion durant les actions pour mettre des vampires en jeu."
     },
+    "201595":{
+        "Name":"Joaqu\u00edn de C\u00e1diz",
+        "Card Text":"Anarch."
+    },
     "200717":{
         "Name":"Jonathan Gursel",
         "Card Text":"Sabbat."
@@ -226,6 +310,22 @@
     "200740":{
         "Name":"Justine Chen, l'innocente",
         "Card Text":"Sabbat."
+    },
+    "201596":{
+        "Name":"Kalinda",
+        "Card Text":"Camarilla. Primog\u00e8ne : Durant votre tour, vous pouvez br\u00fbler l'Avantage pour redresser Kalinda."
+    },
+    "201597":{
+        "Name":"Kamile Paukstys",
+        "Card Text":"Anarch : +1 en morsure."
+    },
+    "201598":{
+        "Name":"Kasim Bayar",
+        "Card Text":"Camarilla. Justicar Assamite : Une fois par combat, Kasim peut d\u00e9fausser une carte d'action politique avant l'\u00e9tape de man\u0153uvre pour recevoir +2 en force ce combat. +1 en morsure."
+    },
+    "201604":{
+        "Name":"Kassandra Tassaki",
+        "Card Text":"Camarilla. Prince de Thessaloniki."
     },
     "200763":{
         "Name":"Kateline Nadasdy",
@@ -239,13 +339,13 @@
         "Name":"Keith Moody",
         "Card Text":"Sabbat : Durant votre phase de redressement, votre proie peut br\u00fbler l'Avantage pour br\u00fbler 1 point de sang de Keith."
     },
+    "201599":{
+        "Name":"Khadija Al-Kindi",
+        "Card Text":"Camarilla. Primog\u00e8ne."
+    },
     "200787":{
         "Name":"Klaus Konrecht",
         "Card Text":"Sabbat. Cardinal."
-    },
-    "200800":{
-        "Name":"L'\u00c9puisette",
-        "Card Text":"Sabbat : L'\u00c9puisette re\u00e7oit +1 en morsure contre un Mathusalem qui contr\u00f4le un Tor\u00e9ador disponible."
     },
     "201516":{
         "Name":"Lady Vadislava",
@@ -266,6 +366,10 @@
     "201555":{
         "Name":"Lenny Burkhead",
         "Card Text":"Camarilla. Primog\u00e8ne : +1 en morsure."
+    },
+    "200800":{
+        "Name":"L'\u00c9puisette",
+        "Card Text":"Sabbat : L'\u00c9puisette re\u00e7oit +1 en morsure contre un Mathusalem qui contr\u00f4le un Tor\u00e9ador disponible."
     },
     "201556":{
         "Name":"Lloyd Brooks",
@@ -295,9 +399,21 @@
         "Name":"Madison",
         "Card Text":"Camarilla."
     },
+    "201600":{
+        "Name":"Marcel",
+        "Card Text":"Anarch."
+    },
     "200937":{
         "Name":"Mark Decker",
         "Card Text":"Camarilla. Prince de Milwaukee : Mark re\u00e7oit +1 en force suppl\u00e9mentaire en combat contre un loup-garou. +1 en force."
+    },
+    "201601":{
+        "Name":"Martina Srnankova",
+        "Card Text":"Anarch : Martina re\u00e7oit +1 en interception durant les actions de morsure."
+    },
+    "201602":{
+        "Name":"Massimiliano",
+        "Card Text":"Anarch. Baron de Belo Horizonte : +1 en force."
     },
     "201558":{
         "Name":"Massimo Falconi",
@@ -306,6 +422,14 @@
     "201559":{
         "Name":"Meaghan",
         "Card Text":"Camarilla."
+    },
+    "201603":{
+        "Name":"Melech",
+        "Card Text":"Anarch."
+    },
+    "201605":{
+        "Name":"Milton Fox",
+        "Card Text":"Anarch."
     },
     "201560":{
         "Name":"Min-seo",
@@ -343,9 +467,25 @@
         "Name":"Nassir",
         "Card Text":"Camarilla."
     },
+    "201606":{
+        "Name":"Nathan Turner",
+        "Card Text":"Anarch."
+    },
+    "201607":{
+        "Name":"Nayarana",
+        "Card Text":"Camarilla."
+    },
     "201564":{
         "Name":"Nik Sikko",
         "Card Text":"Camarilla."
+    },
+    "201608":{
+        "Name":"Nonu Dis",
+        "Card Text":"Anarch : Si Nonu Dis est disponible durant votre phase de ma\u00eetre, vous pouvez ajouter 1 point de sang \u00e0 un Disciple de Seth disponible que vous contr\u00f4lez apr\u00e8s avoir jou\u00e9 une carte de ma\u00eetre. +1 en morsure."
+    },
+    "201609":{
+        "Name":"Octane",
+        "Card Text":"Anarch."
     },
     "201565":{
         "Name":"Oshri Dahan",
@@ -367,6 +507,10 @@
         "Name":"Petra",
         "Card Text":"Camarilla : Les d\u00e9g\u00e2ts qu'inflige Petra aux Baalis sont aggrav\u00e9s. Un vampire br\u00fble 1 point de sang apr\u00e8s avoir utilis\u00e9 une poursuite pour continuer le combat contre elle."
     },
+    "201610":{
+        "Name":"Rayne",
+        "Card Text":"Anarch."
+    },
     "201567":{
         "Name":"Rosalina Cortez",
         "Card Text":"Camarilla."
@@ -374,6 +518,10 @@
     "201519":{
         "Name":"Rurik Rakoczy",
         "Card Text":"Sabbat : Rurik re\u00e7oit 1 poursuite optionnelle durant chaque combat. Tant que /Ludmijla Rakoczy/ est disponible, Rurik re\u00e7oit +1 en morsure."
+    },
+    "201611":{
+        "Name":"Ruslan Fedorenko",
+        "Card Text":"Anarch."
     },
     "201213":{
         "Name":"Rutor",
@@ -386,6 +534,10 @@
     "201222":{
         "Name":"Saiz",
         "Card Text":"Sabbat."
+    },
+    "201612":{
+        "Name":"Siarhei Levchenko",
+        "Card Text":"Anarch."
     },
     "201312":{
         "Name":"Stanislava",
@@ -402,6 +554,10 @@
     "201571":{
         "Name":"Tamoszius",
         "Card Text":"Camarilla."
+    },
+    "201613":{
+        "Name":"Theo Bell",
+        "Card Text":"Anarch : Theo peut entrer en combat contre un serviteur en action (D). +1 en force."
     },
     "201366":{
         "Name":"Thomas De Lutrius",
@@ -423,13 +579,25 @@
         "Name":"Una",
         "Card Text":"Sabbat. Archev\u00eaque de Dublin : Les cartes de combat qui requi\u00e8rent Force d'\u00e2me [for] co\u00fbtent 1 point de sang de moins \u00e0 Una."
     },
+    "201614":{
+        "Name":"Valeriya Zinovieva",
+        "Card Text":"Anarch. Baron de Moscou : +1 en force."
+    },
     "201430":{
         "Name":"Vasily",
         "Card Text":"Camarilla. Prince de Prague : Disputer un titre co\u00fbte 1 point de sang de plus \u00e0 Vasily sauf si vous avez l'Avantage."
     },
     "201438":{
         "Name":"Victor Donaldson",
-        "Card Text":"Camarilla. Prince d'Atlanta : Si un /Golconda : paix int\u00e9rieure/ que vous jouez est annul\u00e9, vous pouvez d\u00e9placer cette carte de votre tas de cendres vers votre biblioth\u00e8que (m\u00e9langer ensuite)."
+        "Card Text":"Camarilla. Prince d'Atlanta : Si une carte nomm\u00e9e /Golconda : paix int\u00e9rieure/ que vous jouez est annul\u00e9, vous pouvez d\u00e9placer cette carte de votre tas de cendres vers votre biblioth\u00e8que (m\u00e9langer ensuite)."
+    },
+    "201615":{
+        "Name":"Vivian VI",
+        "Card Text":"Anarch. Baron de Johannesbourg."
+    },
+    "201594":{
+        "Name":"Warmaksan",
+        "Card Text":"Camarilla. Prince d'Alger."
     },
     "201573":{
         "Name":"Wauneka",
