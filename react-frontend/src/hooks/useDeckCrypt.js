@@ -35,14 +35,14 @@ const useDeckCrypt = (cardsList, deckSort, timer, deckid, cardsToList) => {
   let cryptGroupMax = undefined;
   if (cryptFrom.length) {
     cryptGroupMin = cryptFrom
-      .filter((card) => card.c.Group !== 'ANY')
+      .filter((card) => card.c.Group !== ANY)
       .reduce(
         (acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc),
         10
       );
 
     cryptGroupMax = cryptFrom
-      .filter((card) => card.c.Group !== 'ANY')
+      .filter((card) => card.c.Group !== ANY)
       .reduce(
         (acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc),
         0

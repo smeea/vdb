@@ -1,7 +1,6 @@
 # FIX
 - Inventory bug for precon (also test for twd and shared)
 - Inventory missing to respect discipline filter
-- Recreate cardbase with 'any' Group and change 'ANY' to variable in crypt group calculation
 - Fix dropdown button (name and drop direction) for Export
 
 # FEATURES

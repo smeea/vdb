@@ -2659,7 +2659,7 @@
         "Name":"Anarch Convert",
         "Clan":"Caitiff",
         "Adv":"",
-        "Group":"ANY",
+        "Group":"any",
         "Capacity":1,
         "Card Text":"Anarch: As the convert enters play, you can remove him from the game to make a non-titled vampire you control Anarch and either gain 1 pool or draw 1 card from your crypt.",
         "Set":{
@@ -27524,6 +27524,32 @@
         "Rulings":[],
         "New":false
     },
+    "201574":{
+        "Id":201574,
+        "Name":"Kuy\u00e9n",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Anarch Baron of Santiago: Animals (allies and retainers) cost Kuy\u00e9n 1 fewer blood or pool.",
+        "Set":{
+            "Promo":{
+                "2021-11-13":true
+            }
+        },
+        "Title":"baron",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ASCII Name":"Kuyen",
+        "Disciplines":{
+            "Animalism":2,
+            "Protean":2
+        },
+        "Rulings":[],
+        "New":false
+    },
     "200797":{
         "Id":200797,
         "Name":"Kyle Strathcona, Cardinal of Canada",
@@ -36617,7 +36643,7 @@
         "Name":"New Blood",
         "Clan":"Blood Brother",
         "Adv":"",
-        "Group":"ANY",
+        "Group":"any",
         "Capacity":2,
         "Card Text":"Sabbat: As New Blood enters play during your influence phase, choose any circle and draw 1 card from your crypt. New Blood belongs to the chosen circle. Sterile.",
         "Set":{

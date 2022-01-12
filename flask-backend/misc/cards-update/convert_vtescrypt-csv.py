@@ -325,7 +325,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
             'Name': card['Name'],
             'Clan': card['Clan'],
             'Adv': card['Advancement'],
-            'Group': card['Group'],
+            'Group': card['Group'] if card['Group'] != 'ANY' else 'any',
             'Capacity': card['Capacity'],
             'Card Text': card['Card Text'],
             'Set': card['Set'],

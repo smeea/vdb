@@ -26955,6 +26955,33 @@
         "New":false
     },
     {
+        "Id":201574,
+        "Name":"Kuy\u00e9n",
+        "Type":"Vampire",
+        "Clan":"Gangrel",
+        "Adv":"",
+        "Group":"6",
+        "Capacity":6,
+        "Card Text":"Anarch Baron of Santiago: Animals (allies and retainers) cost Kuy\u00e9n 1 fewer blood or pool.",
+        "Set":{
+            "Promo":{
+                "2021-11-13":true
+            }
+        },
+        "Title":"baron",
+        "Banned":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "ASCII Name":"Kuyen",
+        "Disciplines":{
+            "Animalism":2,
+            "Protean":2
+        },
+        "Twd":false,
+        "New":false
+    },
+    {
         "Id":200797,
         "Name":"Kyle Strathcona, Cardinal of Canada",
         "Type":"Vampire",
