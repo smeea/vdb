@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import { useApp } from 'context';
 
-function DeckBranchSelect({ deckId }) {
+function DeckBranchSelect(props) {
   const { setActiveDeck, decks } = useApp();
 
   const byTimestamp = (a, b) => {
