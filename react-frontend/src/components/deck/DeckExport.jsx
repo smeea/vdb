@@ -282,7 +282,7 @@ function DeckExport(props) {
             <div className="pe-2">
               <Download />
             </div>
-            Export Deck
+            Export {props.inMissing ? 'Missing' : 'Deck'}
           </div>
         </Dropdown.Toggle>
         <Dropdown.Menu>

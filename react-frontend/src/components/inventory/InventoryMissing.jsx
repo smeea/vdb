@@ -13,6 +13,7 @@ function InventoryMissing(props) {
     cryptCardBase,
     libraryCardBase,
     isMobile,
+    username,
   } = useApp();
 
   const [showModal, setShowModal] = useState(undefined);
@@ -160,6 +161,8 @@ function InventoryMissing(props) {
         <DeckMissingModal
           deck={{
             name: 'Missing card for Inventory',
+            author: username,
+            description: '',
             crypt: missingCrypt,
             library: missingLibrary,
           }}

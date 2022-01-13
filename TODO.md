@@ -4,13 +4,11 @@
 - Fix dropdown button (name and drop direction) for Export
 - Inventory bad clans in crypt for problem cards
 - Inventory problem cards (in discord Hobbesgoblin)
-- Inventory mode export for missing cards
 
 # FEATURES
 - Localized proxies
 - Export all in xlsx and csv
 - Links to custom deck
-- Export missing in Inventory
 - Add prefers-color-scheme
 
 # BIG FEATURES
