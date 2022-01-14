@@ -8,7 +8,6 @@
 # FEATURES
 - Localized proxies
 - Export all in xlsx and csv
-- Links to custom deck
 - Add prefers-color-scheme
 
 # BIG FEATURES

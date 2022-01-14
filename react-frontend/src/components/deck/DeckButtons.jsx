@@ -5,6 +5,7 @@ import {
   DeckDelete,
   DeckCopyUrl,
   DeckImport,
+  DeckImportAnonymous,
   DeckExport,
   DeckProxy,
   DeckMissing,
@@ -28,6 +29,10 @@ function DeckButtons(props) {
           setShowButtons={props.setShowButtons}
         />
       )}
+      <DeckImportAnonymous
+        setShowInfo={props.setShowInfo}
+        setShowButtons={props.setShowButtons}
+      />
       {username && props.deck && (
         <DeckClone
           deck={props.deck}

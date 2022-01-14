@@ -26,7 +26,9 @@ function DeckImportText(props) {
       setSpinnerState(true);
 
       let newDeckId;
-      const url = `${process.env.API_URL}decks/import`;
+      const url = `${process.env.API_URL}decks/${
+        props.anonymous ? 'anonymous_' : ''
+      }import`;
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -46,9 +48,12 @@ function DeckImportText(props) {
         .then((data) => {
           newDeckId = data.deckid;
         })
-        .then(() => getDecks())
+        .then(() => !props.anonymous && getDecks())
         .then(() => {
-          setActiveDeck({ src: 'my', deckid: newDeckId });
+          setActiveDeck({
+            src: props.anonymous ? 'shared' : 'my',
+            deckid: newDeckId,
+          });
           setDeckText('');
           setSpinnerState(false);
           props.handleClose();

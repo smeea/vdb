@@ -1,28 +1,20 @@
 import React, { useState, useRef } from 'react';
 import { Dropdown } from 'react-bootstrap';
-import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
-import Upload from 'assets/images/icons/upload.svg';
-import {
-  BlockButton,
-  ErrorOverlay,
-  DeckImportText,
-  DeckImportAmaranth,
-} from 'components';
+import CloudArrowUpFill from 'assets/images/icons/cloud-plus-fill.svg';
+import { BlockButton, ErrorOverlay, DeckImportText } from 'components';
 import { useApp } from 'context';
 
-function DeckImport(props) {
+function DeckImportAnonymous(props) {
   const { getDecks, setActiveDeck, isMobile } = useApp();
   const [importError, setImportError] = useState(false);
-  const [createError, setCreateError] = useState('');
   const [showTextModal, setShowTextModal] = useState(false);
-  const [showAmaranthModal, setShowAmaranthModal] = useState(false);
   const ref = useRef(null);
 
   const fileInputTxt = React.createRef();
   const fileInputDek = React.createRef();
   const fileInputEld = React.createRef();
 
-  const handleFileChange = (format) => importDeckFromFile(format);
+  const handleFileChange = (format) => anonymousImportDeckFromFile(format);
   const handleFileInputClick = (format) => {
     switch (format) {
       case 'txt':
@@ -39,38 +31,11 @@ function DeckImport(props) {
 
   const handleCloseImportModal = () => {
     setShowTextModal(false);
-    setShowAmaranthModal(false);
     isMobile && props.setShowButtons(false);
   };
   const handleOpenTextModal = () => setShowTextModal(true);
-  const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 
-  const createNewDeck = () => {
-    setCreateError(false);
-
-    let newdeckid;
-    const url = `${process.env.API_URL}decks/create`;
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ deckname: 'New deck' }),
-    };
-
-    const fetchPromise = fetch(url, options);
-
-    fetchPromise
-      .then((response) => response.json())
-      .then((data) => (newdeckid = data.deckid))
-      .then(() => getDecks())
-      .then(() => setActiveDeck({ src: 'my', deckid: newdeckid }))
-      .catch((error) => setCreateError(true));
-  };
-
-  const importDeckFromFile = (format) => {
+  const anonymousImportDeckFromFile = (format) => {
     setImportError(false);
 
     let fileInput;
@@ -153,15 +118,11 @@ function DeckImport(props) {
           break;
       }
 
-      const url = `${process.env.API_URL}${
-        props.inInventory ? 'inventory' : 'decks'
-      }/import`;
+      const url = `${process.env.API_URL}decks/anonymous_import`;
 
-      const body = props.inInventory
-        ? JSON.stringify(result)
-        : JSON.stringify({
-            deckText: result,
-          });
+      const body = JSON.stringify({
+        deckText: result,
+      });
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -174,65 +135,28 @@ function DeckImport(props) {
 
       const fetchPromise = fetch(url, options);
 
-      if (props.inInventory) {
-        fetchPromise
-          .then((response) => response.json())
-          .then((cards) => {
-            props.inventoryAddToState(cards);
-          })
-          .catch((error) => setImportError(true));
-      } else {
-        fetchPromise
-          .then((response) => response.json())
-          .then((data) => (newDeckId = data.deckid))
-          .then(() => getDecks())
-          .then(() => {
-            setActiveDeck({ src: 'my', deckid: newDeckId });
-            isMobile && props.setShowButtons(false);
-          })
-          .catch((error) => setImportError(true));
-      }
+      fetchPromise
+        .then((response) => response.json())
+        .then((data) => (newDeckId = data.deckid))
+        .then(() => {
+          setActiveDeck({ src: 'shared', deckid: newDeckId });
+          isMobile && props.setShowButtons(false);
+        })
+        .catch((error) => setImportError(true));
     };
-  };
-
-  const handleCreateButton = () => {
-    createNewDeck();
-    isMobile && props.setShowButtons(false);
   };
 
   const ImportButtonOptions = (
     <>
-      {!props.inInventory && (
-        <>
-          <Dropdown.Item onClick={handleCreateButton}>
-            Create New Deck
-          </Dropdown.Item>
-          <Dropdown.Divider />
-        </>
-      )}
       <Dropdown.Item onClick={() => handleFileInputClick('txt')}>
         Import from File - Amaranth, Lackey.TXT, TWD
       </Dropdown.Item>
-      {!props.inInventory && (
-        <Dropdown.Item onClick={() => handleFileInputClick('dek')}>
-          Import from File - Lackey.DEK
-        </Dropdown.Item>
-      )}
-      {props.inInventory && (
-        <Dropdown.Item onClick={() => handleFileInputClick('eld')}>
-          Import from File - FELDB.CSV
-        </Dropdown.Item>
-      )}
-      {!props.inInventory && (
-        <Dropdown.Item onClick={handleOpenTextModal}>
-          Import from Text - Amaranth, Lackey.TXT, TWD
-        </Dropdown.Item>
-      )}
-      {!props.inInventory && (
-        <Dropdown.Item onClick={handleOpenAmaranthModal}>
-          Import from Amaranth Deck URL
-        </Dropdown.Item>
-      )}
+      <Dropdown.Item onClick={() => handleFileInputClick('dek')}>
+        Import from File - Lackey.DEK
+      </Dropdown.Item>
+      <Dropdown.Item onClick={handleOpenTextModal}>
+        Import from Text - Amaranth, Lackey.TXT, TWD
+      </Dropdown.Item>
     </>
   );
 
@@ -240,35 +164,23 @@ function DeckImport(props) {
     <>
       <Dropdown>
         <Dropdown.Toggle as={BlockButton} variant="secondary">
-          <div className="d-flex justify-content-center align-items-center">
-            {props.inInventory ? (
-              <>
-                <div className="pe-2">
-                  <Upload />
-                </div>
-                Import from File
-              </>
-            ) : (
-              <>
-                <div className="pe-2">
-                  <ClipboardPlus size={24} />
-                </div>
-                New / Import
-              </>
-            )}
+          <div
+            title="Import deck without attaching to account (you will not be able to delete/edit it)"
+            className="d-flex justify-content-center align-items-center"
+          >
+            <div className="pe-2">
+              <CloudArrowUpFill size={24} />
+            </div>
+            Import w/o Account
           </div>
         </Dropdown.Toggle>
         <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
       </Dropdown>
       <DeckImportText
+        anonymous={true}
         handleClose={handleCloseImportModal}
         getDecks={getDecks}
         show={showTextModal}
-      />
-      <DeckImportAmaranth
-        handleClose={handleCloseImportModal}
-        getDecks={getDecks}
-        show={showAmaranthModal}
       />
       <input
         ref={fileInputTxt}
@@ -292,16 +204,15 @@ function DeckImport(props) {
         style={{ display: 'none' }}
       />
       <ErrorOverlay
-        show={createError || importError}
+        show={importError}
         target={ref.current}
         placement="left"
         modal={true}
       >
-        {createError && <b>ERROR</b>}
         {importError && <b>CANNOT IMPORT THIS DECK</b>}
       </ErrorOverlay>
     </>
   );
 }
 
-export default DeckImport;
+export default DeckImportAnonymous;
