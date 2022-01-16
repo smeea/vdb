@@ -1,6 +1,7 @@
 from api import db
 from models import User, Deck
 
+## NOT REQUIRED TO RUN ANYMORE, USE ONLY AS TEMPLATE IF NEED TO CHANGE DB
 
 def find_double_case():
     users = User.query.all()

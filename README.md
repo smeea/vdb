@@ -70,6 +70,13 @@ For production, in addition to the steps above, you should at least:
 For reference:
 Public instance at https://vdb.smeea.casa runs from master branch without any changes (except database, which is excluded from this repo) using `gunicorn` and `nginx`.
 
+### UPDATE CARDS, TWD
+```
+    cd misc/cards-update
+    ./download_resources.sh
+    ./update_resources.sh
+```
+
 ## SUPPORT / HELP
 If you need support/help don't hesitate to fill Issue or send me an email to smeea@riseup.net.
 

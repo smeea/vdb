@@ -15,8 +15,7 @@
 # MOBILE FEATURES
 
 # MAYBE LATER FEATURES
-- Documentation on updates
-- Script to update images/rulings/twd from static.krcg.org
+- Script to update images from static.krcg.org
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Sync with websockets
