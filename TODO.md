@@ -2,8 +2,6 @@
 - Inventory bug for precon (also test for twd and shared)
 - Inventory missing to respect discipline filter
 - Fix dropdown button (name and drop direction) for Export
-- Inventory bad clans in crypt for problem cards
-- Inventory problem cards (in discord Hobbesgoblin)
 
 # FEATURES
 - Localized proxies

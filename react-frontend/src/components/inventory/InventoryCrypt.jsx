@@ -66,9 +66,9 @@ function InventoryCrypt(props) {
         };
       }
 
-      if (props.category == 'nok') {
+      if (props.category === 'nok') {
         if (miss > 0) {
-          cryptByClan[card] = props.cards[card];
+          cryptByClan[i][card] = props.cards[card];
           cryptByClan['All'][card] = props.cards[card];
         }
       } else {
@@ -80,10 +80,17 @@ function InventoryCrypt(props) {
     Object.keys(usedCryptCards.soft).map((card) => {
       if (!props.cards[card]) {
         const i = cryptCardBase[card].Clan;
+        // console.log(card, i);
 
-        if (props.category != 'ok') {
-          cryptByClan[i][card] = { q: 0, c: cryptCardBase[card] };
-          cryptByClan['All'][card] = { q: 0, c: cryptCardBase[card] };
+        if (props.category !== 'ok') {
+          cryptByClan[i][card] = {
+            q: props.cards[card] ? props.cards[card].q : 0,
+            c: cryptCardBase[card],
+          };
+          cryptByClan['All'][card] = {
+            q: props.cards[card] ? props.cards[card].q : 0,
+            c: cryptCardBase[card],
+          };
         }
 
         let softUsedMax = 0;
@@ -107,10 +114,17 @@ function InventoryCrypt(props) {
     Object.keys(usedCryptCards.hard).map((card) => {
       if (!props.cards[card]) {
         const i = cryptCardBase[card].Clan;
+        // console.log(card, i);
 
-        if (props.category != 'ok') {
-          cryptByClan[i][card] = { q: 0, c: cryptCardBase[card] };
-          cryptByClan['All'][card] = { q: 0, c: cryptCardBase[card] };
+        if (props.category !== 'ok') {
+          cryptByClan[i][card] = {
+            q: props.cards[card] ? props.cards[card].q : 0,
+            c: cryptCardBase[card],
+          };
+          cryptByClan['All'][card] = {
+            q: props.cards[card] ? props.cards[card].q : 0,
+            c: cryptCardBase[card],
+          };
         }
 
         let hardUsedTotal = 0;
