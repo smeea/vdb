@@ -2682,9 +2682,11 @@
         "Disciplines":{},
         "Rulings":[
             {
-                "text":"His \"as he enters play\" ability can be used before he enters contest if there is another one in play. ",
+                "text":"His \"as he enters play\" ability can be used before he enters contest if there is another one in play. This is not self-contesting. ",
                 "refs":{
-                    "[LSJ 20080526]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/zO3l3b76rjQ/da5R20AzyO4J"
+                    "[LSJ 20080526]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/zO3l3b76rjQ/da5R20AzyO4J",
+                    "[RTR 20180303]":"http://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018#85536",
+                    "[ANK 20211214]":"https://www.vekn.net/forum/rules-questions/79542-anarch-convert?start=6#104185"
                 }
             },
             {
@@ -3325,9 +3327,16 @@
         },
         "Rulings":[
             {
-                "text":"A vampire with no circle designation is in his own unique circle of one. Angelo cannot be seen as a member of such a circle. ",
+                "text":"A vampire with no circle designation is in his own unique circle of one. ",
                 "refs":{
-                    "[LSJ 20020609]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Q_Lk0DPHqC8/nAfGfCvsISgJ"
+                    "[LSJ 20020609]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Q_Lk0DPHqC8/nAfGfCvsISgJ",
+                    "[ANK 20211113]":"https://www.vekn.net/forum/rules-questions/79465-unwholesome-bond-angelo-circle-of-one-new-blood-and-circle#103879"
+                }
+            },
+            {
+                "text":"Angelo can be in the \"unique circle of one\" of any vampire, including another copy of himself. Two uncontrolled Angelo are in different circles, an active Angelo has to choose (eg. for {Unwholesome Bond}). ",
+                "refs":{
+                    "[ANK 20211113]":"https://www.vekn.net/forum/rules-questions/79465-unwholesome-bond-angelo-circle-of-one-new-blood-and-circle#103879"
                 }
             },
             {
@@ -14306,7 +14315,27 @@
             "Celerity":2,
             "Potence":2
         },
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If she unlocks after having performed her mandatory bleed, she is free to take any action. ",
+                "refs":{
+                    "[LSJ 20090226]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f7pLAO9n--U/m/u6Q1HaHK2rUJ",
+                    "[ANK 20211009-2]":"https://www.vekn.net/forum/rules-questions/79335-elen-camjian-second-action?start=6#103483"
+                }
+            },
+            {
+                "text":"Another bleed action (eg. {Flurry of Action}) does not count as the bleed action her ability forces her to take. ",
+                "refs":{
+                    "[ANK 20211009-2]":"https://www.vekn.net/forum/rules-questions/79335-elen-camjian-second-action?start=6#103483"
+                }
+            },
+            {
+                "text":"If her ability makes a bleed mandatory but she has performed a bleed already this turn, she is stuck and cannot act. ",
+                "refs":{
+                    "[ANK 20211009-2]":"https://www.vekn.net/forum/rules-questions/79335-elen-camjian-second-action?start=6#103483"
+                }
+            }
+        ],
         "New":false
     },
     "200407":{
@@ -23046,7 +23075,14 @@
         "Disciplines":{
             "Potence":1
         },
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If he goes to torpor and their controller cannot discard two cards, they discard as many as they can. ",
+                "refs":{
+                    "[ANK 20211010]":"https://www.vekn.net/forum/rules-questions/79335-elen-camjian-second-action?start=6#103500"
+                }
+            }
+        ],
         "New":false
     },
     "200666":{
@@ -24360,6 +24396,12 @@
             "Potence":2
         },
         "Rulings":[
+            {
+                "text":"Can be influenced out if you already control one. ",
+                "refs":{
+                    "[RTR 20180303]":"http://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018#85536"
+                }
+            },
             {
                 "text":"If a second Jimmy Dunn is brought out during an action, and the first Jimmy (if he has Vicissitude) plays {Reform Body}, the first Jimmy will go to torpor (from Reform Body), but will then be burned anyhow, since he cannot be contested. ",
                 "refs":{
@@ -27022,7 +27064,14 @@
             "Presence":2,
             "Serpentis":2
         },
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If a minion gains a corruption counter after they cast their votes (eg. [ser] {Velvet Tongue}), their votes are cancelled and they're forced to abstain instead. ",
+                "refs":{
+                    "[PIB 20141226]":"http://www.vekn.net/forum/6-rules-questions/66453-double-velvet-tongue-qcannot-cast-votes-or-ballotsq?limit=10&start=20#66964"
+                }
+            }
+        ],
         "New":false
     },
     "200781":{
@@ -27609,10 +27658,16 @@
         },
         "Rulings":[
             {
-                "text":"The action provided is a hunt action and benefit from hunt bonuses. ",
+                "text":"The action provided by her ability is a hunt action and benefit from hunt bonuses. ",
                 "refs":{
                     "[LSJ 20030311]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/MEiIvNrW1tE/ByXcnD9kP04J",
                     "[LSJ 20090113-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/e48eViCqYSk/X7ZEE3k3MvEJ"
+                }
+            },
+            {
+                "text":"She can only perform the action provided by her ability once per turn. ",
+                "refs":{
+                    "[PIB 20121112]":"https://www.vekn.net/forum/rules-questions/40755-kyoko-s-hunt-action#40831"
                 }
             },
             {
@@ -36665,9 +36720,16 @@
         },
         "Rulings":[
             {
-                "text":"A vampire with no circle designation is in his own unique circle of one. New blood cannot choose to be part of such a circle. ",
+                "text":"A vampire with no circle designation is in his own \"unique circle of one\". ",
                 "refs":{
-                    "[LSJ 20020609]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Q_Lk0DPHqC8/nAfGfCvsISgJ"
+                    "[LSJ 20020609]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Q_Lk0DPHqC8/nAfGfCvsISgJ",
+                    "[ANK 20211113]":"https://www.vekn.net/forum/rules-questions/79465-unwholesome-bond-angelo-circle-of-one-new-blood-and-circle#103879"
+                }
+            },
+            {
+                "text":"New Blood can be in the \"unique circle of one\" of any vampire, including another copy of himself. Two uncontrolled New Bloods are in different circles (eg. for {Unwholesome Bond}). ",
+                "refs":{
+                    "[ANK 20211113]":"https://www.vekn.net/forum/rules-questions/79465-unwholesome-bond-angelo-circle-of-one-new-blood-and-circle#103879"
                 }
             },
             {
@@ -39145,6 +39207,12 @@
                 "text":"If he cannot commit diablerie, then his card text does not force him to: he is not \"stuck\", he is free to take any other legal action. ",
                 "refs":{
                     "[LSJ 20050514]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9803Eu3PvDs/4xj8UAK_LZAJ"
+                }
+            },
+            {
+                "text":"As long as there is an opportunity for diablerie, he must attempt it, even if he did so already and unlocked. ",
+                "refs":{
+                    "[ANK 20211010]":"https://www.vekn.net/forum/rules-questions/79335-elen-camjian-second-action?start=6#103500"
                 }
             },
             {
@@ -43128,6 +43196,13 @@
                 "text":"[MERGED] Is Camarilla. If the base version was the one in play, it changes sect as it is merged. If it had an anarch token, it is burned. ",
                 "refs":{
                     "[ANK 20180524]":"http://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=60#87433"
+                }
+            },
+            {
+                "text":"[MERGED] Putting a corruption counter on a minion does not give you an opportunity to steal it. ",
+                "refs":{
+                    "[ANK 20200925]":"http://www.vekn.net/forum/rules-questions/78861-revelation-of-wrath#100820",
+                    "[ANK 20211105]":"https://www.vekn.net/forum/rules-questions/79460-sarrasin-corruption-and-effect-triggers#103791"
                 }
             }
         ],

@@ -1,7 +1,5 @@
 #!/bin/sh
 # Update Card List
-unzip -q -o vtescsv_utf8.zip
-rm vtescsv_utf8.zip vtessets.csv
 python generate_crypt.py
 python generate_library.py
 python fix_crossrefs.py
@@ -12,9 +10,6 @@ cp artistsCrypt.json artistsLib.json ../../react-frontend/src/components/forms_d
 cp preconDecks.json ../../react-frontend/src/assets/data/
 
 # Update Localizations
-unzip -q -o vtescsv_utf8.fr-FR.zip
-unzip -q -o vtescsv_utf8.es-ES.zip
-rm vtescsv_utf8.fr-FR.zip vtescsv_utf8.es-ES.zip vtessets.fr-FR.csv vtessets.es-ES.csv
 python generate_localizations.py
 cp cardbase_crypt.fr-FR.json cardbase_lib.fr-FR.json cardbase_crypt.es-ES.json cardbase_lib.es-ES.json  ../../react-frontend/dist/
 

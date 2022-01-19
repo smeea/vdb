@@ -2265,15 +2265,22 @@
                 }
             },
             {
-                "text":"Multiple Anathemas don't multiply the pool gain. Once one Anathema resolves it burns the vampire and the others are burned before they get to resolve. ",
+                "text":"Diablerie does not trigger Anathema. ",
                 "refs":{
-                    "[LSJ 20021117]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/4TgUatcTtdk/HfuRL6wM8IcJ"
+                    "[LSJ 20021122-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/1hL0-URtroc/m/iF5fPuJC39IJ",
+                    "[ANK 20211112]":"https://www.vekn.net/forum/rules-questions/79475-amaranth-anathema#103872"
                 }
             },
             {
                 "text":"Damage done by combat effects after combat ends do not trigger Anathema. ",
                 "refs":{
                     "[LSJ 19980225]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/62y-5miA8MQ/EhtcS-ia9b8J"
+                }
+            },
+            {
+                "text":"Multiple Anathemas don't multiply the pool gain. Once one Anathema resolves it burns the vampire and the others are burned before they get to resolve. ",
+                "refs":{
+                    "[LSJ 20021117]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/4TgUatcTtdk/HfuRL6wM8IcJ"
                 }
             }
         ],
@@ -2953,7 +2960,7 @@
                 }
             },
             {
-                "text":"[PRE] Cards are not replaced during the \"as played\" window. ",
+                "text":"[PRE] Cards are not replaced until all effects played \"as a card is played\" are resolved. ",
                 "refs":{
                     "[LSJ 20061013]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/6w8K3yDtBH0/m/M_SZH9Id8n8J"
                 }
@@ -2962,6 +2969,19 @@
                 "text":"[PRE] If the canceled card had a \"Do Not Replace Until\" clause on it, that clause is canceled as well and the card is replaced normally. ",
                 "refs":{
                     "[LSJ 20011023]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/2GOLIrXAF8M/P4T3Dj6UNL0J"
+                }
+            },
+            {
+                "text":"[PRE] The card is still considered played. The same reaction cannot be played again by the same minion. ",
+                "refs":{
+                    "[LSJ 19980212]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/fLFLlXZXHqA/ggjw8aGjdRoJ",
+                    "[LSJ 20061207]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ"
+                }
+            },
+            {
+                "text":"[PRE] Must be played right after the reaction card to cancel is played. Another modifier cannot be played in between. ",
+                "refs":{
+                    "[LSJ 20061207]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/nqcrJlhg4Ng/m/qQu7p-LLhfAJ"
                 }
             }
         ],
@@ -4581,6 +4601,12 @@
         ],
         "Rulings":[
             {
+                "text":"The weapon does not burn if it is temporarily out of play (eg. {Kerrie}, {Dagger}). ",
+                "refs":{
+                    "[LSJ 20100211-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/pL63VXEPGME/m/n2dEkxwYyjcJ"
+                }
+            },
+            {
                 "text":"\"Before resolution\" means after strikes have been declared but before they resolve. ",
                 "refs":{
                     "[RTR 19990105]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/2LT2jSX4Nlk/m/vNjIMCxSYTIJ"
@@ -5071,6 +5097,12 @@
                 "refs":{
                     "[LSJ 19971215]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/mfBmRrUKZQ0/5Py-ENuzoGwJ"
                 }
+            },
+            {
+                "text":"If a block is successful, the blood is burned before any other effect can be used (eg. {Promise of 1528}). REVERSAL of earlier rulings. ",
+                "refs":{
+                    "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
+                }
             }
         ],
         "ASCII Name":"Banshee Ironwail"
@@ -5535,6 +5567,19 @@
         ],
         "Rulings":[
             {
+                "text":"[ani][pro] The damage prevention can only be used if the block is successful, and only in the resulting (block-induced) combat. It does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). ",
+                "refs":{
+                    "[LSJ 20010813]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8MR4bq0Cxj4/f_rAOuj3CboJ",
+                    "[LSJ 20010819-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/YgNsk8nGcREJ"
+                }
+            },
+            {
+                "text":"[ani][pro] The damage prevention is provided again if a second block happens on the same action (eg. after [PRO] {Form of Mist}). ",
+                "refs":{
+                    "[LSJ 20010814-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J"
+                }
+            },
+            {
                 "text":"[ANI][PRO] Cards and effects that can be played \"as the action is announced\" (and only them) can be played before it. ",
                 "refs":{
                     "[ANK 20190425]":"http://www.vekn.net/forum/rules-questions/77581-action-modifiers-played-at-beginning-and-end-of-an-action#94652"
@@ -5569,15 +5614,16 @@
         ],
         "Rulings":[
             {
-                "text":"Is not a vampire in the ash heap (eg. {Possession} cannot be played on it). ",
+                "text":"If moved to the uncontrolled region (eg. by {Banishment}), it continues to be a vampire and can be influenced as a 1 capacity vampire. ",
                 "refs":{
-                    "[LSJ 20020115]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wG_tDLgfZso/6mKkp7Rw3OcJ"
+                    "[RTR 19990712]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/x5k5Vw_hkI0/lCqkvlUz5yIJ",
+                    "[LSJ 20090625]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/C3daj-vYqu4/m/2V2yTyLebHEJ"
                 }
             },
             {
-                "text":"If moved to the uncontrolled region (eg. by {Banishment}), it continues to be a vampire and can be influenced. ",
+                "text":"Is not a vampire in the ash heap (eg. {Possession} cannot be played on it). ",
                 "refs":{
-                    "[RTR 19990712]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/x5k5Vw_hkI0/lCqkvlUz5yIJ"
+                    "[LSJ 20020115]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/wG_tDLgfZso/6mKkp7Rw3OcJ"
                 }
             }
         ],
@@ -6106,6 +6152,12 @@
                 "text":"The action ends immediately, no other action modifier or reaction can be played afterwards. ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                }
+            },
+            {
+                "text":"The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
                 }
             }
         ],
@@ -9726,7 +9778,14 @@
             "Heather Hudson",
             "Steve Prescott"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Only a Camarilla vampire can be chosen, it cannot be played without a valid target. ",
+                "refs":{
+                    "[LSJ 20041026]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
+                }
+            }
+        ],
         "ASCII Name":"Brujah Justicar"
     },
     "100263":{
@@ -10826,9 +10885,10 @@
                 }
             },
             {
-                "text":"If the action ends, no other action modifier or reaction can be played afterwards. ",
+                "text":"The action fails. Action modifiers and reactions can be played afterwards (eg. {Zephyr}). ",
                 "refs":{
-                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
+                    "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
+                    "[ANK 20220118]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#104506"
                 }
             },
             {
@@ -13371,6 +13431,12 @@
                 "refs":{
                     "[LSJ 20060412]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/DuZXjDEQ9cE/Q4MdfMG2eFUJ"
                 }
+            },
+            {
+                "text":"The weapon does not burn if it is temporarily out of play (eg. {Kerrie}, {Dagger}). The active Methuselah order the effects at the end of the action as they wish. ",
+                "refs":{
+                    "[LSJ 20100211-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/pL63VXEPGME/m/n2dEkxwYyjcJ"
+                }
             }
         ],
         "ASCII Name":"Cleave"
@@ -14139,7 +14205,15 @@
         "Artist":[
             "Lee Carter"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[DOM] A limited bleed modifier can be played before or after. ",
+                "refs":{
+                    "[LSJ 20100218]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x-uJChHi76Y/m/F92fWI7WwaEJ",
+                    "[RTR 20180511-2]":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=30#86840"
+                }
+            }
+        ],
         "ASCII Name":"Command of the Beast"
     },
     "100382":{
@@ -14551,8 +14625,9 @@
                 }
             },
             {
-                "text":"Cost reductions that are not limited to cards \"played\" apply before checking for card cost (eg. {Black Cat} can use Concealed Weapon to equip with a {Combat Shotgun}). ",
+                "text":"Cost modifications that are not limited to cards \"played\" apply before checking for card cost (eg. {Black Cat} can equip with a {Combat Shotgun}, {Centralized Background Check} makes {.44 Magnum} too costly). ",
                 "refs":{
+                    "[LSJ 20040701]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/O7cT51Yl2Uk/m/RvMWaiqAFS8J",
                     "[LSJ 20080125]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HcCobkGPcFI/GlBdNwMvAjwJ",
                     "[ANK 20181216]":"http://www.vekn.net/forum/rules-questions/77213-discussion-card-costs-and-presentation?start=36#92386"
                 }
@@ -17185,6 +17260,12 @@
                 "refs":{
                     "[LSJ 20100212]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/NIIFHQg_x1c/e5cReQuEqxYJ"
                 }
+            },
+            {
+                "text":"If he unlocks after having performed his mandatory action, he's free to take any action. ",
+                "refs":{
+                    "[LSJ 20090226]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f7pLAO9n--U/m/u6Q1HaHK2rUJ"
+                }
             }
         ],
         "ASCII Name":"Cry Wolf"
@@ -18533,9 +18614,10 @@
                 }
             },
             {
-                "text":"When used to cancel a card play at the end of a round or when combat would end, counts as having been played during that ending round. ",
+                "text":"Can be used to cancel a card play at the end of a round (eg. {Disarm}) or \"when combat would end\" (eg. {Psyche!}): it then counts as having been played during that ending round. ",
                 "refs":{
-                    "[ANK 20180910-2]":"http://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat?start=6#90521"
+                    "[ANK 20180910-2]":"http://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat?start=6#90521",
+                    "[ANK 20191221]":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90516"
                 }
             },
             {
@@ -20182,7 +20264,7 @@
                 }
             },
             {
-                "text":"Can be played before or after effects that are played at the end of the round or \"when the combat would end\" (eg. [AUS] {Telepathic Tracking}). Can be played after [CEL] {Psyche!} ",
+                "text":"Can be played before or after effects that are played at the end of the round or \"when the combat would end\" (eg. [AUS] {Telepathic Tracking}). Can be played after [CEL] {Psyche!}. ",
                 "refs":{
                     "[LSJ 20021113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/df2P8YHZex8/mGCmsxDjI_YJ",
                     "[ANK 20191219]":"http://www.vekn.net/forum/rules-questions/78241-relentless-reaper-vs-blissful-agony-and-scheduled-combat-rulings-ambiguity#98308",
@@ -20780,6 +20862,13 @@
             "Jim Di Bartolo"
         ],
         "Rulings":[
+            {
+                "text":"[SER] A limited bleed modifier can be played before or after. ",
+                "refs":{
+                    "[LSJ 20100218]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x-uJChHi76Y/m/F92fWI7WwaEJ",
+                    "[RTR 20180511-2]":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=30#86840"
+                }
+            },
             {
                 "text":"Cards and effects that can be played \"as the action is announced\" can be played before it. ",
                 "refs":{
@@ -21911,6 +22000,12 @@
                 }
             },
             {
+                "text":"[PRO] The reudction in capacity happens first: the copy also has a reduced capacity. ",
+                "refs":{
+                    "[LSJ 20050116]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/yX5rqVaarvs/m/w6JXnFytdq4J"
+                }
+            },
+            {
                 "text":"[PRO] If one of the pair leaves the ready region, the other is burned. That burning of the other won't cause the first to burn. ",
                 "refs":{
                     "[LSJ 20050117]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/yX5rqVaarvs/Ih0zSqVPCpgJ"
@@ -21960,9 +22055,10 @@
         ],
         "Rulings":[
             {
-                "text":"The damage is neither environmental nor considered done by the minion it is on: it is damage done by the retainer. ",
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
                 "refs":{
-                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
                 }
             },
             {
@@ -23189,6 +23285,13 @@
             "Brian LeBlanc"
         ],
         "Rulings":[
+            {
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
+                "refs":{
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
+                }
+            },
             {
                 "text":"Damage is inflicted even against a dodge. A \"strike: combat ends\" ends combat before damage is applied, as will a combattant going to torpor during first strike. ",
                 "refs":{
@@ -27731,7 +27834,14 @@
         ],
         "Rulings":[
             {
-                "text":"The vampire preventing the damage can choose which one of the damage he does not prevent, normal or aggravated. ",
+                "text":"[pro] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}). ",
+                "refs":{
+                    "[LSJ 20040812-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "[PIB 20130327]":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+                }
+            },
+            {
+                "text":"[PRO] The vampire preventing the damage can choose which one of the damage he does not prevent, normal or aggravated. ",
                 "refs":{
                     "[LSJ 20021001]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/FW-bmZpIM68/gLoYcvpUB7UJ"
                 }
@@ -30616,6 +30726,12 @@
                 }
             },
             {
+                "text":"She cannot use her ability to inflict damage if a \"Strike: combat ends\" was used, or if combat ends due to first strike aggravated damage. ",
+                "refs":{
+                    "[ANK 20211130]":"https://www.vekn.net/forum/rules-questions/66960-re-gianna-di-canneto?start=6#104061"
+                }
+            },
+            {
                 "text":"She can lock to use her ability the turn she is recruited. ",
                 "refs":{
                     "[ANK 20180517]":"http://www.vekn.net/forum/rules-questions/76447-rules-team-rulings-rtr-03-03-2018?start=30#87041"
@@ -32112,7 +32228,21 @@
         "Artist":[
             "Michael Dixon"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[ANI] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). ",
+                "refs":{
+                    "[LSJ 20010813]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8MR4bq0Cxj4/f_rAOuj3CboJ",
+                    "[LSJ 20010819-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/YgNsk8nGcREJ"
+                }
+            },
+            {
+                "text":"[ANI] The maneuver is provided again if a second block happens on the same action (eg. after [PRO] {Form of Mist}). ",
+                "refs":{
+                    "[LSJ 20010814-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J"
+                }
+            }
+        ],
         "ASCII Name":"Guard Dogs"
     },
     "100864":{
@@ -32299,8 +32429,9 @@
                 }
             },
             {
-                "text":"All effects apply for the duration of the action. They still apply if the action \"continues as if unblocked\". ",
+                "text":"All effects apply for the duration of the action. They still apply if the action \"continues as if unblocked\" (eg. [PRO] {Form of Mist}) and, if [aus] was used, the maneuver is provided again. ",
                 "refs":{
+                    "[LSJ 20010814-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J",
                     "[ANK 20181127]":"http://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil?start=6#92037"
                 }
             },
@@ -32308,6 +32439,13 @@
                 "text":"Can be used by a vampire who is already attempting to block. ",
                 "refs":{
                     "[ANK 20181122-2]":"http://www.vekn.net/forum/rules-questions/77176-eagle-s-sight-and-guardian-vigil#91965"
+                }
+            },
+            {
+                "text":"[aus] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). ",
+                "refs":{
+                    "[LSJ 20010813]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8MR4bq0Cxj4/f_rAOuj3CboJ",
+                    "[LSJ 20010819-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/YgNsk8nGcREJ"
                 }
             }
         ],
@@ -33050,9 +33188,10 @@
         ],
         "Rulings":[
             {
-                "text":"The damage is neither environmental nor considered done by the minion it is on: it is damage done by the retainer. ",
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
                 "refs":{
-                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
                 }
             },
             {
@@ -33748,7 +33887,15 @@
         "Artist":[
             "Peter Bergting"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[cel] A limited additional strike can be played before or after. ",
+                "refs":{
+                    "[LSJ 20001206]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kFIO74LxqFQ/m/U1Dtf3f4CPgJ",
+                    "[ANK 20211124]":"https://www.vekn.net/forum/rules-questions/79501-addition-strikes#103982"
+                }
+            }
+        ],
         "ASCII Name":"Hell-for-Leather"
     },
     "100911":{
@@ -35357,6 +35504,12 @@
                 }
             },
             {
+                "text":"If the illusionary vampire has a title, he can use the votes (eg. in a Blood Hunt referendum) even if there is another instance of the title in play. ",
+                "refs":{
+                    "[LSJ 20030419]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/A0mvllC-tgs/m/GqjZTFN9SvMJ"
+                }
+            },
+            {
                 "text":"If the card drawn is an imbued, the imbued would briefly come into play, become incapacitated, and then be removed from the game. ",
                 "refs":{
                     "[LSJ 20060323]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/taLKfNyQ3Kc/Av7TF4lHvpUJ"
@@ -36827,7 +36980,21 @@
         "Artist":[
             "Leif Jones"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[ANI] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). ",
+                "refs":{
+                    "[LSJ 20010813]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8MR4bq0Cxj4/f_rAOuj3CboJ",
+                    "[LSJ 20010819-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/YgNsk8nGcREJ"
+                }
+            },
+            {
+                "text":"[ANI] The maneuver is provided again if a second block happens on the same action (eg. after [PRO] {Form of Mist}). ",
+                "refs":{
+                    "[LSJ 20010814-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J"
+                }
+            }
+        ],
         "ASCII Name":"Instinctive Reaction"
     },
     "100996":{
@@ -40030,7 +40197,15 @@
         "Artist":[
             "Richard Thomas"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}). ",
+                "refs":{
+                    "[LSJ 20040812-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "[PIB 20130327]":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+                }
+            }
+        ],
         "ASCII Name":"Leathery Hide"
     },
     "101083":{
@@ -40600,7 +40775,15 @@
         "Artist":[
             "Jim Di Bartolo"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"A limited bleed modifier can be played before or after. ",
+                "refs":{
+                    "[LSJ 20100218]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x-uJChHi76Y/m/F92fWI7WwaEJ",
+                    "[RTR 20180511-2]":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=30#86840"
+                }
+            }
+        ],
         "ASCII Name":"Leverage"
     },
     "101099":{
@@ -41030,7 +41213,7 @@
                 }
             },
             {
-                "text":"Can be used to reduce the cost in blood of a recruit ally (eg. {Shambling Hordes}) or employ retainer action. ",
+                "text":"Can reduce the cost in blood (not in pool) of any action (ally, retainer, equipment, political). ",
                 "refs":{
                     "[ANK 20181007]":"http://www.vekn.net/forum/rules-questions/77057-quick-question-on-the-line#91020"
                 }
@@ -41877,7 +42060,20 @@
             {
                 "text":"If the minion it is on has entered combat and unlocks, he is free to take any other action. ",
                 "refs":{
+                    "[LSJ 20090226]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/f7pLAO9n--U/m/u6Q1HaHK2rUJ",
                     "[ANK 20200227]":"http://www.vekn.net/forum/rules-questions/78474-lunatic-eruption-rule#99083"
+                }
+            },
+            {
+                "text":"If a minion has two of those, he is stuck and cannot act. ",
+                "refs":{
+                    "[LSJ 20041103]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/MiPHVp-NmCA/m/P323pUaD4DwJ"
+                }
+            },
+            {
+                "text":"The action to burn it is directed at the Methuselah who controls the minion it is on. It is undirected if it is yourself. ",
+                "refs":{
+                    "[LSJ 20010328]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/VMAMljUO4NE/m/BHgmaN_3HRkJ"
                 }
             }
         ],
@@ -42720,7 +42916,14 @@
             "Andrew Trabbold",
             "Ken Meyer, Jr."
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Only a Camarilla vampire can be chosen, it cannot be played without a valid target. ",
+                "refs":{
+                    "[LSJ 20041026]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
+                }
+            }
+        ],
         "ASCII Name":"Malkavian Justicar"
     },
     "101155":{
@@ -44101,7 +44304,13 @@
         ],
         "Rulings":[
             {
-                "text":"Will stay in play (uselessly) when the target is burned. ",
+                "text":"Stays in play and still reduces your handsize when the target is ousted. ",
+                "refs":{
+                    "[LSJ 20021008]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Mc3xfym_uw8/zY9ipcHSXF8J"
+                }
+            },
+            {
+                "text":"Is removed from play and its effect cancelled if the Methuselah who played it is ousted. ",
                 "refs":{
                     "[LSJ 20021008]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Mc3xfym_uw8/zY9ipcHSXF8J"
                 }
@@ -44733,7 +44942,16 @@
             "Heather Hudson",
             "Steve Ellis"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If an action is blocked, no other effect can be used (eg. {Crypt's Son}) before resolving Millicent's delayed effect. However, effects that trigger at the same moment (eg. {Unleash Hell's Fury}) are still applied and ordered by the acting Methuselah. ",
+                "refs":{
+                    "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
+                    "[ANK 20211207]":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "[ANK 20220116]":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488"
+                }
+            }
+        ],
         "ASCII Name":"Millicent Smith, Puritan Vampire Hunter"
     },
     "101211":{
@@ -45257,10 +45475,19 @@
                 }
             },
             {
-                "text":"[THA] If the action is blocked, it ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards. ",
+                "text":"[THA] If the action is blocked, it ends unsuccessfuly immediately, no other action modifier or reaction can be played afterwards (eg. {Freak Drive}, slave rule, {Sowing Dissension}). ",
                 "refs":{
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/",
-                    "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906"
+                    "[ANK 20200207]":"http://www.vekn.net/forum/rules-questions/78423-mental-maze-and-obedience#98906",
+                    "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578"
+                }
+            },
+            {
+                "text":"[THA] If the action is blocked, no other effect can be used (eg. {Crypt's Son}, {Promise of 1528}) before resolving Mirror Walk delayed effect. However, effects that trigger at the same moment (eg. {Banshee Ironwall}) are still applied and ordered by the acting Methuselah. ",
+                "refs":{
+                    "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
+                    "[ANK 20211207]":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "[ANK 20220116]":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488"
                 }
             }
         ],
@@ -46423,9 +46650,10 @@
                 }
             },
             {
-                "text":"The damage is neither environmental nor considered done by the minion it is on: it is damage done by the retainer. ",
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
                 "refs":{
-                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
                 }
             },
             {
@@ -48051,7 +48279,14 @@
             "Mark Tedin",
             "Fred Hooper"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Only a Camarilla vampire can be chosen, it cannot be played without a valid target. ",
+                "refs":{
+                    "[LSJ 20041026]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
+                }
+            }
+        ],
         "ASCII Name":"Nosferatu Justicar"
     },
     "101300":{
@@ -51667,7 +51902,15 @@
         "Artist":[
             "Kim Aldau"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Putting a corruption counter on a minion does not give you an opportunity to steal it. ",
+                "refs":{
+                    "[ANK 20200925]":"http://www.vekn.net/forum/rules-questions/78861-revelation-of-wrath#100820",
+                    "[ANK 20211105]":"https://www.vekn.net/forum/rules-questions/79460-sarrasin-corruption-and-effect-triggers#103791"
+                }
+            }
+        ],
         "ASCII Name":"Platinum Protocol, The"
     },
     "101403":{
@@ -52658,6 +52901,13 @@
                 "refs":{
                     "[ANK 20171023]":"http://www.vekn.net/forum/rules-questions/76252-power-of-one#83985",
                     "[RTR 19941109]":"https://groups.google.com/d/msg/rec.games.deckmaster/_6CXoKTSLnw/FdG67-3HEAQJ"
+                }
+            },
+            {
+                "text":"[pot] A limited bleed modifier can be played before or after. ",
+                "refs":{
+                    "[LSJ 20100218]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x-uJChHi76Y/m/F92fWI7WwaEJ",
+                    "[RTR 20180511-2]":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=30#86840"
                 }
             }
         ],
@@ -54068,9 +54318,21 @@
         ],
         "Rulings":[
             {
-                "text":"The damage prevention can only be used if the block is successful, and only in the resulting (block-induced) combat. ",
+                "text":"[AUS] The damage prevention can only be used if the block is successful, and only in the resulting (block-induced) combat. ",
                 "refs":{
                     "[LSJ 20010813]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8MR4bq0Cxj4/f_rAOuj3CboJ"
+                }
+            },
+            {
+                "text":"[AUS] The prevention does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). ",
+                "refs":{
+                    "[LSJ 20010819-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/YgNsk8nGcREJ"
+                }
+            },
+            {
+                "text":"[AUS] The prevention is provided again if a second block happens on the same action (eg. after [PRO] {Form of Mist}). ",
+                "refs":{
+                    "[LSJ 20010814-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J"
                 }
             }
         ],
@@ -54325,6 +54587,12 @@
                 "refs":{
                     "[LSJ 20071015]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Bom6ae7qjbI/1ov2qqChTdMJ",
                     "[LSJ 20100302-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/jmmm0WRUPvs/ny5F1OnSUsEJ"
+                }
+            },
+            {
+                "text":"Can be used on an Imbued, it comes back as a zombie ally and is not an Imbued anymore. It has no Creed and cannot use Virtues, nor does it get Convictions. ",
+                "refs":{
+                    "[LSJ 20100211]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/pL63VXEPGME/m/gBjYSBLMwlYJ"
                 }
             }
         ],
@@ -56159,7 +56427,15 @@
             "Craig Maher",
             "Clint Langley"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[CEL] A limited additional strike can be played before or after. ",
+                "refs":{
+                    "[LSJ 20001206]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/kFIO74LxqFQ/m/U1Dtf3f4CPgJ",
+                    "[ANK 20211124]":"https://www.vekn.net/forum/rules-questions/79501-addition-strikes#103982"
+                }
+            }
+        ],
         "ASCII Name":"Quickness"
     },
     "101533":{
@@ -56189,6 +56465,13 @@
                 "refs":{
                     "[PIB 20150105]":"http://www.vekn.net/forum/rules-questions/68465-voting-is-complicated#68493",
                     "[LSJ 19980107]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/aUUs4VCR_Ec/PLecvfrEqbgJ"
+                }
+            },
+            {
+                "text":"[AUS][TEM] A limited bleed modifier can be played before or after. ",
+                "refs":{
+                    "[LSJ 20100218]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/x-uJChHi76Y/m/F92fWI7WwaEJ",
+                    "[RTR 20180511-2]":"https://www.vekn.net/forum/rules-questions/76595-rules-team-rulings-rtr-11-05-2018?start=30#86840"
                 }
             }
         ],
@@ -57090,9 +57373,10 @@
         ],
         "Rulings":[
             {
-                "text":"The damage is neither environmental nor considered done by the minion it is on: it is damage done by the retainer. ",
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
                 "refs":{
-                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
                 }
             },
             {
@@ -58911,6 +59195,13 @@
                 "refs":{
                     "[LSJ 20001114]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/qXSlM7Grq1c/cSDoQ9mw0z4J"
                 }
+            },
+            {
+                "text":"[FOR] Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}). ",
+                "refs":{
+                    "[LSJ 20040812-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "[PIB 20130327]":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+                }
             }
         ],
         "ASCII Name":"Resilience"
@@ -59554,7 +59845,8 @@
             {
                 "text":"Does not allow to take control of the opponent. ",
                 "refs":{
-                    "[ANK 20200925]":"http://www.vekn.net/forum/rules-questions/78861-revelation-of-wrath#100820"
+                    "[ANK 20200925]":"http://www.vekn.net/forum/rules-questions/78861-revelation-of-wrath#100820",
+                    "[ANK 20211105]":"https://www.vekn.net/forum/rules-questions/79460-sarrasin-corruption-and-effect-triggers#103791"
                 }
             }
         ],
@@ -60588,12 +60880,41 @@
         ],
         "Rulings":[
             {
-                "text":"Can only be played during the strike announcement phase, on the opponent, when a minion attempts to make a strike that is effective at the current range and would inflict aggravated damage to this opponent, even if the opponent treats aggravated damage as normal. ",
+                "text":"Is played on the vampire that would receive the aggravated damage. ",
                 "refs":{
-                    "[RTR 19961113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/VbMEQmJjI_w/hkDh73Y1IukJ",
-                    "[RTR 19980623]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/tSpd9dtTElc/-CuHJF54_n0J",
+                    "[RTR 19980623]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/tSpd9dtTElc/-CuHJF54_n0J"
+                }
+            },
+            {
+                "text":"Can only be played after declaration of a strike, before resolution. It can be played before or after the opponent's strike is announced. ",
+                "refs":{
+                    "[LSJ 19990217]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9Bsf2LC1274/pHWAxcO_7pgJ",
+                    "[RTR 20041202]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WUWh7AdooDU/vojisZMCSnsJ"
+                }
+            },
+            {
+                "text":"Cannot be played if a non-strike effect would inflict aggravated damage (eg. {Outside the Hourglass} with {Domain of Evernnight}). REVERSAL of a 2011 ruling. ",
+                "refs":{
+                    "[ANK 20220114]":"https://www.vekn.net/forum/rules-questions/79432-rotschreck-and-non-strike-agravated-damage?start=12#104475"
+                }
+            },
+            {
+                "text":"Cannot be played if the damage is not effective at the current range ",
+                "refs":{
                     "[RTR 19980928]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/Xva4_IRavxM/F-_fjzTmo88J",
-                    "[RTR 20041202]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/WUWh7AdooDU/vojisZMCSnsJ",
+                    "[ANK 20211102]":"https://www.vekn.net/forum/rules-questions/79447-rotschreck-and-dodge#103743"
+                }
+            },
+            {
+                "text":"Can be played and is effective even if the opponent has announced a Strike: Dodge or Strike: Combat Ends. ",
+                "refs":{
+                    "[ANK 20211102]":"https://www.vekn.net/forum/rules-questions/79447-rotschreck-and-dodge#103743",
+                    "[LSJ 20011005]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/9fyH2X1YGAQ/m/r8ZViiGnRzoJ"
+                }
+            },
+            {
+                "text":"Can be played and is effective even if the opponent treats aggravated damage as normal. ",
+                "refs":{
                     "[ANK 20200130-1]":"http://www.vekn.net/forum/rules-questions/78400-rotshreck#98821"
                 }
             },
@@ -60603,12 +60924,6 @@
                     "[LSJ 19990217]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9Bsf2LC1274/pHWAxcO_7pgJ",
                     "[LSJ 20020715]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/-FBxPz-oms0/OV6b9Cc6nl4J",
                     "[LSJ 20060803]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/z8Nd8EFQsKc/sP8_LxnEpEIJ"
-                }
-            },
-            {
-                "text":"Can be played before or after the opponent's strike is announced. ",
-                "refs":{
-                    "[LSJ 19990217]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/9Bsf2LC1274/pHWAxcO_7pgJ"
                 }
             },
             {
@@ -61966,6 +62281,12 @@
                 }
             },
             {
+                "text":"[STR] If the action ends, it has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                }
+            },
+            {
                 "text":"If another Methuselah is the target, he must declare whether he attempts or declines to block before Scobax can be played. ",
                 "refs":{
                     "[PIB 20150820]":"http://www.vekn.net/forum/rules-questions/72462-hide-the-heart-timing-questions#72626",
@@ -62313,6 +62634,19 @@
             "Alexander Dunnigan"
         ],
         "Rulings":[
+            {
+                "text":"[vis] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). ",
+                "refs":{
+                    "[LSJ 20010813]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8MR4bq0Cxj4/f_rAOuj3CboJ",
+                    "[LSJ 20010819-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/YgNsk8nGcREJ"
+                }
+            },
+            {
+                "text":"[vis] The maneuver is provided again if a second block happens on the same action (eg. after [PRO] {Form of Mist}). ",
+                "refs":{
+                    "[LSJ 20010814-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J"
+                }
+            },
             {
                 "text":"[VIS] Cards are not replaced during the \"as played\" window. ",
                 "refs":{
@@ -63663,9 +63997,10 @@
         ],
         "Rulings":[
             {
-                "text":"The damage is neither environmental nor considered done by the minion it is on: it is damage done by the retainer. ",
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
                 "refs":{
-                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
                 }
             },
             {
@@ -66613,7 +66948,21 @@
         "Artist":[
             "Andrew Trabbold"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[chi] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). ",
+                "refs":{
+                    "[LSJ 20010813]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8MR4bq0Cxj4/f_rAOuj3CboJ",
+                    "[LSJ 20010819-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/YgNsk8nGcREJ"
+                }
+            },
+            {
+                "text":"[chi] The maneuver is provided again if a second block happens on the same action (eg. after [PRO] {Form of Mist}). ",
+                "refs":{
+                    "[LSJ 20010814-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J"
+                }
+            }
+        ],
         "ASCII Name":"Smoke and Mirrors"
     },
     "101814":{
@@ -66805,6 +67154,13 @@
                 "text":"Unused prevention does not carry over. ",
                 "refs":{
                     "[LSJ 20001114]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/qXSlM7Grq1c/cSDoQ9mw0z4J"
+                }
+            },
+            {
+                "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}). ",
+                "refs":{
+                    "[LSJ 20040812-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "[PIB 20130327]":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
                 }
             }
         ],
@@ -68034,7 +68390,21 @@
             "Hannibal King",
             "Brian LeBlanc"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"[AUS] The maneuver can only be used if the block is successful, and only in the resulting (block-induced) combat. It does not carry over to a follow-up combat (eg. [CEL] {Psyche!}). ",
+                "refs":{
+                    "[LSJ 20010813]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/8MR4bq0Cxj4/f_rAOuj3CboJ",
+                    "[LSJ 20010819-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/YgNsk8nGcREJ"
+                }
+            },
+            {
+                "text":"[AUS] The maneuver is provided again if a second block happens on the same action (eg. after [PRO] {Form of Mist}). ",
+                "refs":{
+                    "[LSJ 20010814-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/8MR4bq0Cxj4/m/SH4dKuz8qO0J"
+                }
+            }
+        ],
         "ASCII Name":"Spirit's Touch"
     },
     "101851":{
@@ -68881,9 +69251,10 @@
         ],
         "Rulings":[
             {
-                "text":"The damage is neither environmental nor considered done by the minion it is on: it is damage done by the retainer. ",
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
                 "refs":{
-                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
                 }
             },
             {
@@ -72445,6 +72816,12 @@
                 "refs":{
                     "[LSJ 20070829-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/sVXZw1J43ik/OByFPgQsynwJ"
                 }
+            },
+            {
+                "text":"[ANI] Also affects the cost of combat cards played at then of a round or combat (eg. {Disarm}, {Telepathic Tracking}, {Psyche!}, {Taste of Vitae}). ",
+                "refs":{
+                    "[ANK 20191221]":"https://www.vekn.net/forum/rules-questions/76990-correct-order-impulse-for-combat-cards-after-combat#90516"
+                }
             }
         ],
         "ASCII Name":"Terror Frenzy"
@@ -72920,9 +73297,9 @@
                 }
             },
             {
-                "text":"The Progeny gets the default Sect of the clan of its progenitor, even if the progenitor himself is not a member of that sect. ",
+                "text":"The Progeny is Camarilla Sect. ",
                 "refs":{
-                    "[ANK 20200117]":"http://www.vekn.net/forum/rules-questions/77058-progeny-sect-change#98629"
+                    "[RTR 20201130]":"https://www.blackchantry.com/2020/12/25/rtr-30-11-2020/"
                 }
             },
             {
@@ -73594,7 +73971,14 @@
             "Heather Hudson",
             "William O'Connor"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Only a Camarilla vampire can be chosen, it cannot be played without a valid target. ",
+                "refs":{
+                    "[LSJ 20041026]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
+                }
+            }
+        ],
         "ASCII Name":"Toreador Justicar"
     },
     "101991":{
@@ -74730,7 +75114,14 @@
             "Steve Casper",
             "Becky Jollensten"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Only a Camarilla vampire can be chosen, it cannot be played without a valid target. ",
+                "refs":{
+                    "[LSJ 20041026]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
+                }
+            }
+        ],
         "ASCII Name":"Tremere Justicar"
     },
     "102022":{
@@ -76595,21 +76986,36 @@
         ],
         "Rulings":[
             {
-                "text":"If the block is successful, the aggravated damage is inflicted and the card burned even if the action is ended before block resolution. ",
+                "text":"If the action is blocked, no other effect can be used (eg. {Crypt's Son}, {Change of Target}) before burning Unleash Hell's Fury and inflicting aggravated damage. However, effects that trigger at the same moment (eg. {Banshee Ironwall}) are still applied and ordered by the acting Methuselah. ",
                 "refs":{
+                    "[ANK 20210627]":"https://www.vekn.net/forum/rules-questions/79192-mirror-walk-and-slave?start=12#102578",
+                    "[ANK 20211207]":"https://www.vekn.net/forum/rules-questions/79528-crypt-s-sons-versus-unleash-hell-s-fury?start=6#104139",
+                    "[ANK 20220116]":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488"
+                }
+            },
+            {
+                "text":"If the block is successful, the aggravated damage is inflicted and the card burned even if the action is ended (eg. {Mirror Walk}) before block resolution. ",
+                "refs":{
+                    "[ANK 20220116]":"https://www.vekn.net/forum/rules-questions/79600-unleash-hell-s-fury-and-other-delayed-triggered-effects#104488",
                     "[LSJ 20100301]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/TcUDpHnvW8M/YznjkbV3JLoJ"
                 }
             },
             {
-                "text":"If {The Kiss of Ra} or {Elder Impersonation} are used, the block does not happen. It is not locked if {Faceless Night} was played. ",
+                "text":"If {The Kiss of Ra} or {Elder Impersonation} are used, the block does not happen. ",
                 "refs":{
                     "[LSJ 20100210]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HHJfsSbIEf0/6UxQ3UJT9aEJ"
                 }
             },
             {
-                "text":"Can attempt to block even if locked. ",
+                "text":"Unleash Hell's Fury is not locked if {Faceless Night} was played. Also, it can attempt to block even if locked. ",
                 "refs":{
                     "[LSJ 20100210]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/HHJfsSbIEf0/6UxQ3UJT9aEJ"
+                }
+            },
+            {
+                "text":"Once it's attempting to block, its intercept can be affected by other cards normally (eg. {KRCG News Radio}). ",
+                "refs":{
+                    "[ANK 20211112-2]":"https://www.vekn.net/forum/rules-questions/79478-unleash-hell-s-fury-and-extra-intercept#103870"
                 }
             },
             {
@@ -76778,6 +77184,12 @@
                 }
             },
             {
+                "text":"[abo] The action has reached resolution, so is subject to NRA (Non Repeatable Action) rules. ",
+                "refs":{
+                    "[ANK 20211015]":"https://www.vekn.net/forum/rules-questions/79389-when-does-nra-apply-not-apply?start=6#103563"
+                }
+            },
+            {
                 "text":"[abo] [REFLEX] Any frenzy card that targets/selects/chooses/affects the minion when played, is considered being played on the minion. ",
                 "refs":{
                     "[LSJ 20051113]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/L-ctaLucuKU/dG0EKdSd4g0J"
@@ -76824,9 +77236,10 @@
         ],
         "Rulings":[
             {
-                "text":"Cannot be used by {Angelo} or {New Blood} on a uncontrolled vampire with no circle designation, even another {Angelo} or {New Blood}. ",
+                "text":"Can be used by {Angelo} or {New Blood} on a uncontrolled vampire with no circle designation, even another {Angelo} or {New Blood}. Multiple uncontrolled Angelos or New Bloods are in distinct \"circle of one\" though, so you have to choose one. ",
                 "refs":{
-                    "[LSJ 20050927]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/oLMw6SSSgmA/-iwdHzdBMF8J"
+                    "[LSJ 20050927]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/oLMw6SSSgmA/-iwdHzdBMF8J",
+                    "[ANK 20211113]":"https://www.vekn.net/forum/rules-questions/79465-unwholesome-bond-angelo-circle-of-one-new-blood-and-circle#103879"
                 }
             },
             {
@@ -77493,9 +77906,10 @@
         ],
         "Rulings":[
             {
-                "text":"If an effect causes a minion to be unable to cast votes or ballots during a referendum, that minion is forced to abstain, whether he or she had already cast votes or ballots or not. ",
+                "text":"[ser] Putting a corruption counter on a minion does not give you an opportunity to steal it. ",
                 "refs":{
-                    "[PIB 20141226]":"http://www.vekn.net/forum/6-rules-questions/66453-double-velvet-tongue-qcannot-cast-votes-or-ballotsq?limit=10&start=20#66964"
+                    "[ANK 20200925]":"http://www.vekn.net/forum/rules-questions/78861-revelation-of-wrath#100820",
+                    "[ANK 20211105]":"https://www.vekn.net/forum/rules-questions/79460-sarrasin-corruption-and-effect-triggers#103791"
                 }
             }
         ],
@@ -77720,9 +78134,10 @@
         ],
         "Rulings":[
             {
-                "text":"The damage is neither environmental nor considered done by the minion it is on: it is damage done by the retainer. ",
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
                 "refs":{
-                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
                 }
             },
             {
@@ -77875,7 +78290,14 @@
             "Heather Hudson",
             "Leif Jones"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Only a Camarilla vampire can be chosen, it cannot be played without a valid target. ",
+                "refs":{
+                    "[LSJ 20041026]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/54Zr4RUuVx8/m/fJCT8qW_90EJ"
+                }
+            }
+        ],
         "ASCII Name":"Ventrue Justicar"
     },
     "102112":{
@@ -79525,7 +79947,14 @@
         "Artist":[
             "Brian LeBlanc"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"If the library is empty and the hand not full, you draw immediately after using it. ",
+                "refs":{
+                    "[ANK 20211201]":"https://www.vekn.net/forum/rules-questions/79519-waste-management-operations-no-cards-in-the-library-and-in-the-hand#104074"
+                }
+            }
+        ],
         "ASCII Name":"Waste Management Operation"
     },
     "102154":{
@@ -80161,7 +80590,15 @@
         "Artist":[
             "Pat Loboyko"
         ],
-        "Rulings":[],
+        "Rulings":[
+            {
+                "text":"Cannot be used to prevent aggravated damage, even if the minion treats them as normal damage (eg. {Skin of Night}). ",
+                "refs":{
+                    "[LSJ 20040812-2]":"https://groups.google.com/g/rec.games.trading-cards.jyhad/c/E7D1cVmAdqQ/m/MvPApbrT14gJ",
+                    "[PIB 20130327]":"https://www.vekn.net/forum/rules-questions/46279-soak-vs-treat-agg-damage-as-normal-damage#46285"
+                }
+            }
+        ],
         "ASCII Name":"Well-Marked"
     },
     "102173":{
@@ -80790,9 +81227,10 @@
         ],
         "Rulings":[
             {
-                "text":"The damage is neither environmental nor considered done by the minion it is on: it is damage done by the retainer. ",
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
                 "refs":{
-                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
                 }
             },
             {
@@ -81538,9 +81976,10 @@
         ],
         "Rulings":[
             {
-                "text":"The damage is neither environmental nor considered done by the minion it is on: it is damage done by the retainer. ",
+                "text":"The damage is environmental, the retainer is the damage source. Immunity to retainer or retainer type works against it. ",
                 "refs":{
-                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129"
+                    "[ANK 20180612]":"http://www.vekn.net/forum/rules-questions/76717-retainers-damage-and-disciplines#88129",
+                    "[ANK 20211127]":"https://www.vekn.net/forum/rules-questions/76687-retainers-inflicting-damage-environmental?start=6#104017"
                 }
             },
             {

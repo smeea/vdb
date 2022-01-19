@@ -2,7 +2,7 @@ import { loadUsingSWR, loadAndWait } from './utils';
 import preconDecksData from 'assets/data/preconDecks.json';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 
-const VERSION = '2021-12-09';
+const VERSION = '2022-01-19';
 const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;
 const urlLibrary = `${process.env.ROOT_URL}cardbase_lib.json?v=${VERSION}`;
 const urlLocalizedCrypt = (lang) =>
