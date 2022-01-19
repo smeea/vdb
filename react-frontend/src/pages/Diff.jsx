@@ -361,7 +361,7 @@ function Diff(props) {
                   </div>
                   {selectFrom == 'from-my' && decks && isBranchesFrom && (
                     <div className="ps-1 w-25">
-                      <DeckBranchSelect deckId={activeDeck.deckId} />
+                      <DeckBranchSelect deckId={activeDeck.deckid} />
                     </div>
                   )}
                   {isMobile && (
