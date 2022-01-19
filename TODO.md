@@ -5,7 +5,6 @@
 - Cards with mixed types to have them sorted
 - Update rulings
 - Library preview multi-discipline icons
-- Any group for TWD
 
 # FEATURES
 - Localized proxies

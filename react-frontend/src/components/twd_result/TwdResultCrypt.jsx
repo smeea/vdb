@@ -36,14 +36,14 @@ function TwdResultCrypt(props) {
   let cryptGroupMax = undefined;
   if (sortedCards.length) {
     cryptGroupMin = sortedCards
-      .filter((card) => card.c.Group !== 'ANY')
+      .filter((card) => card.c.Group !== ANY)
       .reduce(
         (acc, card) => (acc = card.c.Group < acc ? card.c.Group : acc),
         10
       );
 
     cryptGroupMax = sortedCards
-      .filter((card) => card.c.Group !== 'ANY')
+      .filter((card) => card.c.Group !== ANY)
       .reduce(
         (acc, card) => (acc = card.c.Group > acc ? card.c.Group : acc),
         0
