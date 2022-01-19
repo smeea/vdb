@@ -3,8 +3,6 @@
 - Inventory missing to respect discipline filter
 - Fix dropdown button (name and drop direction) for Export
 - Cards with mixed types to have them sorted
-- Update rulings
-- Library preview multi-discipline icons
 
 # FEATURES
 - Localized proxies
@@ -12,7 +10,6 @@
 - Add prefers-color-scheme
 - Multi text filters
 - Popover for Sets in card preview on mobile
-- Check cardbase date
 
 # BIG FEATURES
 - Search for similar TWD decks

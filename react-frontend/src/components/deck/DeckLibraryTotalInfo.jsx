@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   ResultLibraryTypeImage,
-  ResultDisciplineImage,
+  ResultLibraryDisciplines,
   ResultLibraryClan,
 } from 'components';
 
@@ -32,6 +32,7 @@ function DeckLibraryTotalInfo(props) {
   });
 
   const DisciplinesInfo = byDisciplinesSorted.map((d, idx) => {
+    console.log(d);
     return (
       <span key={idx} className="d-inline-block nobr ps-0 pe-3">
         {d === 'any' ? (
@@ -43,7 +44,8 @@ function DeckLibraryTotalInfo(props) {
           </>
         ) : (
           <>
-            <ResultDisciplineImage value={d} />
+            {/* <ResultDisciplineImage value={d} /> */}
+            <ResultLibraryDisciplines value={d} />
             {props.byDisciplines[d]}{' '}
           </>
         )}
