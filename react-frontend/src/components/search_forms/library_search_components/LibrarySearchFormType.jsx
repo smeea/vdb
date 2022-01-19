@@ -52,7 +52,7 @@ function LibrarySearchFormType(props) {
         label: (
           <>
             <span className="margin-full">
-              <img src={imgSrc} className="type-image-results" />
+              <img src={imgSrc} className="type-discipline-image-forms" />
             </span>
             {i}
           </>

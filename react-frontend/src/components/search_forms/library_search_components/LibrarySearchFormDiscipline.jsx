@@ -50,7 +50,10 @@ function LibrarySearchFormDiscipline(props) {
         label: (
           <>
             <span className="margin-full">
-              <ResultDisciplineImage className="type-image-results" value={i} />
+              <ResultDisciplineImage
+                className="type-discipline-image-forms"
+                value={i}
+              />
             </span>
             {i}
           </>
