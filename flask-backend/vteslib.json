@@ -154,7 +154,7 @@
     {
         "Id":100005,
         "Name":"Abandoning the Flesh",
-        "Type":"Reaction/Combat",
+        "Type":"Combat/Reaction",
         "Clan":"",
         "Discipline":"Dementation",
         "Blood Cost":"",
@@ -13332,7 +13332,7 @@
     {
         "Id":100447,
         "Name":"Crimson Fury",
-        "Type":"Reaction/Combat",
+        "Type":"Combat/Reaction",
         "Clan":"",
         "Discipline":"Animalism",
         "Blood Cost":"1",

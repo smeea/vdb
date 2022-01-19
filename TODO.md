@@ -2,7 +2,6 @@
 - Inventory bug for precon (also test for twd and shared)
 - Inventory missing to respect discipline filter
 - Fix dropdown button (name and drop direction) for Export
-- Cards with mixed types to have them sorted
 
 # FEATURES
 - Localized proxies

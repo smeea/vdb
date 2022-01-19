@@ -113,7 +113,7 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
 
         # Multi-types to alphabetic order
         if card['Type']:
-            if '/' in card['Discipline']:
+            if '/' in card['Type']:
                 types = card['Type'].split('/')
                 types = sorted(types)
                 for idx, i in enumerate(types):
