@@ -11,6 +11,22 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-01-20:</h6>
+            <ul>
+              <li>
+                Add import deck without account. This will allow to upload the
+                deck without adding it to your account (possible without having
+                account at all). One of the use case is to upload decks for TWD
+                reports to put the links without messing your account.
+              </li>
+              <li>Updated Rulings</li>
+              <li>
+                Added bright halos to some icons in dark theme (like in
+                disciplines icons) to slightly improve visibility.
+              </li>
+              <li>Other fixes</li>
+            </ul>
+
             <h6>2022-01-12:</h6>
             <ul>
               <li>Add ES/FR translation for V5 Anarch sets</li>

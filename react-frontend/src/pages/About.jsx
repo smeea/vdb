@@ -70,27 +70,20 @@ function About(props) {
                 : 2022-01-12
               </p>
 
-              <h6>Last update [2022-01-12]:</h6>
+              <h6>Last update [2022-01-20]:</h6>
               <ul>
-                <li>Add ES/FR translation for V5 Anarch sets</li>
-                <li>Add Kyuen promo</li>
                 <li>
-                  Add deck crypt discipline distribution under info (i) button
+                  Add import deck without account. This will allow to upload the
+                  deck without adding it to your account (possible without
+                  having account at all). One of the use case is to upload decks
+                  for TWD reports to put the links without messing your account
                 </li>
-                <li>Add export for missing cards in deck (inventory-mode)</li>
+                <li>Updated Rulings</li>
                 <li>
-                  Add to TWD search by card quantity &quot;less than and may not
-                  include (0&le;)&quot; optional logic (previously
-                  &quot;&le;&quot; only search for deck including card which is
-                  now available under &quot;1&le;&quot; option).
+                  Added bright halos to some icons in dark theme (like in
+                  disciplines icons) to slightly improve visibility
                 </li>
-                <li>
-                  Increased deck description size to 32768 symbols and default
-                  unfolded description length to 12 rows
-                </li>
-                <li>Make pdf proxy delimiters slightly bigger and brighter</li>
-                <li>Fixed crypt/library pages layout for unlogged users</li>
-                <li>Many small other fixes</li>
+                <li>Other fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
