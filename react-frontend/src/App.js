@@ -98,8 +98,14 @@ function App(props) {
             path="library"
             element={<Library lastDeckId={lastDeck.deckid} />}
           />
-          <Route path="cards" element={<Cards />} />
-          <Route path="cards/:id" element={<Cards />} />
+          <Route
+            path="cards"
+            element={<Cards lastDeckId={lastDeck.deckid} />}
+          />
+          <Route
+            path="cards/:id"
+            element={<Cards lastDeckId={lastDeck.deckid} />}
+          />
         </Routes>
       </Router>
     </div>

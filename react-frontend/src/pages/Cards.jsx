@@ -13,7 +13,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-function Cards(props) {
+function Cards({ lastDeckId }) {
   const params = useParams();
   const {
     decks,
@@ -23,6 +23,7 @@ function Cards(props) {
     toggleShowImage,
     isMobile,
     activeDeck,
+    deckRouter,
   } = useApp();
 
   const [cardId, setCardId] = useState(undefined);
@@ -46,18 +47,19 @@ function Cards(props) {
     setCardId(id);
   };
 
+  const deckId = activeDeck.src == 'my' ? activeDeck.deckid : lastDeckId;
+
   let inDeck = 0;
   if (
     cardId &&
     decks &&
-    decks[activeDeck.deckid] &&
-    (decks[activeDeck.deckid].crypt[cardId] ||
-      decks[activeDeck.deckid].library[cardId])
+    decks[deckId] &&
+    (decks[deckId].crypt[cardId] || decks[deckId].library[cardId])
   ) {
     inDeck =
       cardId > 200000
-        ? decks[activeDeck.deckid].crypt[cardId].q
-        : decks[activeDeck.deckid].library[cardId].q;
+        ? decks[deckId].crypt[cardId].q
+        : decks[deckId].library[cardId].q;
   }
 
   useEffect(() => {
@@ -127,14 +129,16 @@ function Cards(props) {
                           <div className="d-inline pe-2">
                             <ButtonCardCopyUrl id={cardId} />
                           </div>
-                          <div className="d-inline pe-2">
-                            <ButtonAddCard
-                              cardid={cardId}
-                              deckid={activeDeck.deckid}
-                              inDeck={inDeck}
-                              inQuick={true}
-                            />
-                          </div>
+                          {deckId && (
+                            <div className="d-inline pe-2">
+                              <ButtonAddCard
+                                cardid={cardId}
+                                deckid={deckId}
+                                inDeck={inDeck}
+                                inQuick={true}
+                              />
+                            </div>
+                          )}
                         </div>
                       </>
                     )}
@@ -187,14 +191,18 @@ function Cards(props) {
                       <div className="d-inline pe-1">
                         <ButtonCardCopyUrl id={card.Id} />
                       </div>
-                      <div className="d-inline pe-1">
-                        <ButtonAddCard
-                          deckid={activeDeck.deckid}
-                          card={card}
-                          inDeck={inDeck}
-                          inQuick={true}
-                        />
-                      </div>
+                      {deckId && (
+                        <>
+                          <div className="d-inline pe-1">
+                            <ButtonAddCard
+                              deckid={deckId}
+                              card={card}
+                              inDeck={inDeck}
+                              inQuick={true}
+                            />
+                          </div>
+                        </>
+                      )}
                     </div>
                   </Col>
                 </Row>
