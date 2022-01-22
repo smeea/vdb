@@ -36,7 +36,8 @@ function DeckRecommendationModal(props) {
               </div>
               {props.crypt && (
                 <ResultCryptTable
-                  notAuthor={!props.isAuthor}
+                  isAuthor={props.isAuthor}
+                  inRecommendation={true}
                   activeDeck={props.activeDeck}
                   resultCards={props.crypt}
                   className="search-crypt-table"

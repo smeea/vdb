@@ -18,7 +18,14 @@ import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
 const ResultCryptTable = (props) => {
-  const { resultCards, notAuthor, placement, className, crypt } = props;
+  const {
+    resultCards,
+    inRecommendation,
+    isAuthor,
+    placement,
+    className,
+    crypt,
+  } = props;
   const { setShowFloatingButtons } = props;
 
   const {
@@ -86,7 +93,7 @@ const ResultCryptTable = (props) => {
     return (
       <React.Fragment key={card.Id}>
         <tr className={resultTrClass}>
-          {!notAuthor && activeDeck.deckid && addMode && (
+          {(inRecommendation ? isAuthor : activeDeck.deckid && addMode) && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}
