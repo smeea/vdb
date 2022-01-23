@@ -50,29 +50,27 @@ def get_twd_by_library(library, twda=twda):
             q, m = v['q'], v['m']
             if m == 'gt':
                 if q:
-                    if card in deck[
-                            'library'] and deck['library'][card]['q'] >= q:
+                    if card in deck['library'] and deck['library'][card]['q'] >= q:
                         counter += 1
                 else:
                     counter += 1
 
             elif m == 'eq':
                 if q:
-                    if card in deck['library'] and deck['library'][card][
-                            'q'] == q:
+                    if card in deck['library'] and deck['library'][card]['q'] == q:
                         counter += 1
-                else:
-                    if card not in deck['library']:
-                        counter += 1
+                elif card not in deck['library']:
+                    counter += 1
 
             elif m == 'lt':
                 if q:
-                    if card in deck[
-                            'library'] and deck['library'][card]['q'] <= q:
+                    if card in deck['library'] and deck['library'][card]['q'] <= q:
                         counter += 1
-                else:
-                    if card not in deck['library']:
-                        counter += 1
+
+            elif m == 'lt0':
+                if card in deck['library'] and deck['library'][card][
+                        'q'] <= q or card not in deck['library']:
+                    counter += 1
 
         if counter == cards_counter:
             match_decks.append(deck)
