@@ -8,7 +8,6 @@
 - Export all in xlsx and csv
 - Add prefers-color-scheme
 - Multi text filters
-- Popover for Sets in card preview on mobile
 
 # BIG FEATURES
 - Search for similar TWD decks
