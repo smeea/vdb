@@ -11,4 +11,5 @@ if len(argv) == 3:
 else:
     print('name:', user.username)
     print('email:', user.email)
-    print(user.decks.all())
+    print('decks: ', user.decks.all())
+    print('inventory: ', len(user.inventory))
