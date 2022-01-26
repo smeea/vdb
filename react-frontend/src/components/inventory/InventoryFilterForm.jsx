@@ -1,15 +1,15 @@
 import React from 'react';
-import {
-  ResultDisciplineImage,
-  ResultClanImage,
-  ResultLibraryType,
-} from 'components';
+import { ResultDisciplineImage, ResultClanImage } from 'components';
 import Select from 'react-select';
 
 function InventoryFilterForm(props) {
   const options = [];
 
   props.values.map((i, index) => {
+    const imgSrc = `${process.env.ROOT_URL}images/types/${i
+      .toLowerCase()
+      .replace(/[\s,:!?'.\-]/g, '')}.svg`;
+
     options.push({
       value: i,
       label: (
@@ -24,12 +24,18 @@ function InventoryFilterForm(props) {
               </div>
             </div>
           )}
+
           {props.target === 'type' && (
             <div className="pe-1">
               {i === 'All' ? (
                 <div className="px-1">All Types</div>
               ) : (
-                <ResultLibraryType cardtype={i} total={0} />
+                <>
+                  <span className="margin-full">
+                    <img src={imgSrc} className="type-discipline-image-forms" />
+                  </span>
+                  {i}
+                </>
               )}
             </div>
           )}
@@ -42,7 +48,7 @@ function InventoryFilterForm(props) {
                   <span className="margin-full">
                     {i !== 'None' && (
                       <ResultDisciplineImage
-                        className="type-image-results"
+                        className="type-discipline-image-forms"
                         value={i}
                       />
                     )}
