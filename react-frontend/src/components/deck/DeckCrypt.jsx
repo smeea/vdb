@@ -136,7 +136,9 @@ const DeckCrypt = (props) => {
       <DeckCryptTable
         handleModalCardOpen={handleModalCardOpen}
         deckid={deckid}
-        cards={sortedCards}
+        cards={
+          inMissing ? useDeckCrypt(cards, 'Name')['sortedCards'] : sortedCards
+        }
         cryptTotal={cryptTotal}
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}

@@ -7,30 +7,17 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
+import { cardtypeSorted } from 'utils/constants';
 import { useApp } from 'context';
 
 function LibrarySearchFormType(props) {
   const { isMobile } = useApp();
 
-  const types = [
-    'ANY',
-    'Action',
-    'Action Modifier',
-    'Ally',
-    'Combat',
-    'Conviction',
-    'Equipment',
-    'Event',
-    'Master',
-    'Political Action',
-    'Power',
-    'Reaction',
-    'Retainer',
-  ];
+  const typesSorted = ['ANY', ...cardtypeSorted];
 
   const options = [];
 
-  types.map((i, index) => {
+  typesSorted.map((i, index) => {
     if (i == 'ANY') {
       options.push({
         value: i.toLowerCase(),

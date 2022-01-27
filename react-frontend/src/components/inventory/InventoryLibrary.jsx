@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Stack } from 'react-bootstrap';
 import { InventoryLibraryTable, InventoryFilterForm } from 'components';
 import { useApp } from 'context';
+import { cardtypeSorted } from 'utils/constants';
 import disciplinesList from 'components/deck/forms_data/disciplinesList.json';
 import virtuesList from 'components/deck/forms_data/virtuesList.json';
 
-function InventoryLibrary(props) {
+function InventoryLibrary({
+  compact,
+  withCompact,
+  category,
+  cards,
+  showFloatingButtons,
+  setShowFloatingButtons,
+  type,
+  setType,
+  discipline,
+  setDiscipline,
+}) {
   const { usedLibraryCards, libraryCardBase } = useApp();
-  const [cardType, setCardType] = useState('All');
-  const [cardDiscipline, setCardDiscipline] = useState('All');
 
   const libraryByType = {};
   const libraryByTypeTotal = {};
@@ -16,31 +26,9 @@ function InventoryLibrary(props) {
   const missingLibraryByType = {};
   const missingLibraryByTypeTotal = {};
 
-  const cardtypesSorted = [
-    'All',
-    'Master',
-    'Action',
-    'Action/Reaction',
-    'Action/Combat',
-    'Political Action',
-    'Ally',
-    'Equipment',
-    'Retainer',
-    'Action Modifier',
-    'Action Modifier/Combat',
-    'Action Modifier/Reaction',
-    'Reaction',
-    'Reaction/Action Modifier',
-    'Reaction/Combat',
-    'Combat',
-    'Combat/Action Modifier',
-    'Combat/Reaction',
-    'Event',
-    'Conviction',
-    'Power',
-  ];
+  const typesSorted = ['All', ...cardtypeSorted];
 
-  cardtypesSorted.map((i) => {
+  typesSorted.map((i) => {
     libraryByType[i] = {};
     libraryByTypeTotal[i] = 0;
     libraryByTypeUnique[i] = 0;
@@ -69,18 +57,18 @@ function InventoryLibrary(props) {
     missingLibraryByDisciplineTotal[i] = 0;
   });
 
-  if (props.compact) {
-    Object.keys(props.cards).map((card) => {
+  if (compact) {
+    Object.keys(cards).map((card) => {
       libraryByType['All'] = {
-        [card]: props.cards[card],
+        [card]: cards[card],
       };
       libraryByDiscipline['All'] = {
-        [card]: props.cards[card],
+        [card]: cards[card],
       };
     });
   } else {
-    Object.keys(props.cards).map((card) => {
-      const t = props.cards[card].c.Type;
+    Object.keys(cards).map((card) => {
+      const types = cards[card].c.Type.split('/');
       const d = libraryCardBase[card].Discipline;
       let disciplines = null;
       if (d.includes('/')) {
@@ -91,21 +79,23 @@ function InventoryLibrary(props) {
         disciplines = [d];
       }
 
-      if (props.cards[card].q > 0) {
-        libraryByTypeTotal[t] += props.cards[card].q;
-        libraryByTypeTotal['All'] += props.cards[card].q;
-        libraryByTypeUnique[t] += 1;
+      if (cards[card].q > 0) {
+        types.map((t) => {
+          libraryByTypeTotal[t] += cards[card].q;
+          libraryByTypeUnique[t] += 1;
+        });
+        libraryByTypeTotal['All'] += cards[card].q;
         libraryByTypeUnique['All'] += 1;
-        libraryByDisciplineTotal['All'] += props.cards[card].q;
+        libraryByDisciplineTotal['All'] += cards[card].q;
         libraryByDisciplineUnique['All'] += 1;
 
         if (disciplines) {
           disciplines.map((i) => {
-            libraryByDisciplineTotal[i] += props.cards[card].q;
+            libraryByDisciplineTotal[i] += cards[card].q;
             libraryByDisciplineUnique[i] += 1;
           });
         } else {
-          libraryByDisciplineTotal['None'] += props.cards[card].q;
+          libraryByDisciplineTotal['None'] += cards[card].q;
           libraryByDisciplineUnique['None'] += 1;
         }
       }
@@ -126,64 +116,70 @@ function InventoryLibrary(props) {
         });
       }
 
-      const miss = softUsedMax + hardUsedTotal - props.cards[card].q;
+      const miss = softUsedMax + hardUsedTotal - cards[card].q;
 
       if (miss > 0) {
-        missingLibraryByType[t][card] = {
-          q: miss,
-          c: props.cards[card].c,
-        };
+        types.map((t) => {
+          missingLibraryByType[t][card] = {
+            q: miss,
+            c: cards[card].c,
+          };
+        });
         missingLibraryByType['All'][card] = {
           q: miss,
-          c: props.cards[card].c,
+          c: cards[card].c,
         };
 
         if (disciplines) {
           disciplines.map((i) => {
             missingLibraryByDiscipline[i][card] = {
               q: miss,
-              c: props.cards[card].c,
+              c: cards[card].c,
             };
             missingLibraryByDiscipline['All'][card] = {
               q: miss,
-              c: props.cards[card].c,
+              c: cards[card].c,
             };
           });
         }
       }
 
-      if (props.category == 'nok') {
+      if (category == 'nok') {
         if (miss > 0) {
-          libraryByType[t][card] = props.cards[card];
-          libraryByType['All'][card] = props.cards[card];
-          libraryByDiscipline['All'][card] = props.cards[card];
+          types.map((t) => {
+            libraryByType[t][card] = cards[card];
+          });
+          libraryByType['All'][card] = cards[card];
+          libraryByDiscipline['All'][card] = cards[card];
 
           if (disciplines) {
             disciplines.map((i) => {
-              libraryByDiscipline[i][card] = props.cards[card];
+              libraryByDiscipline[i][card] = cards[card];
             });
           } else {
-            libraryByDiscipline['None'][card] = props.cards[card];
+            libraryByDiscipline['None'][card] = cards[card];
           }
         }
       } else {
-        libraryByType[t][card] = props.cards[card];
-        libraryByType['All'][card] = props.cards[card];
-        libraryByDiscipline['All'][card] = props.cards[card];
+        types.map((t) => {
+          libraryByType[t][card] = cards[card];
+        });
+        libraryByType['All'][card] = cards[card];
+        libraryByDiscipline['All'][card] = cards[card];
 
         if (disciplines) {
           disciplines.map((i) => {
-            libraryByDiscipline[i][card] = props.cards[card];
+            libraryByDiscipline[i][card] = cards[card];
           });
         } else {
-          libraryByDiscipline['None'][card] = props.cards[card];
+          libraryByDiscipline['None'][card] = cards[card];
         }
       }
     });
 
     Object.keys(usedLibraryCards.soft).map((card) => {
-      if (!props.cards[card]) {
-        const t = libraryCardBase[card].Type;
+      if (!cards[card]) {
+        const types = libraryCardBase[card].Type.split('/');
         const d = libraryCardBase[card].Discipline;
         let disciplines = null;
         if (d.includes('/')) {
@@ -194,8 +190,10 @@ function InventoryLibrary(props) {
           disciplines = [d];
         }
 
-        if (props.category != 'ok') {
-          libraryByType[t][card] = { q: 0, c: libraryCardBase[card] };
+        if (category != 'ok') {
+          types.map((t) => {
+            libraryByType[t][card] = { q: 0, c: libraryCardBase[card] };
+          });
           libraryByType['All'][card] = { q: 0, c: libraryCardBase[card] };
           libraryByDiscipline['All'][card] = {
             q: 0,
@@ -221,10 +219,12 @@ function InventoryLibrary(props) {
           }
         });
 
-        missingLibraryByType[t][card] = {
-          q: softUsedMax,
-          c: libraryCardBase[card],
-        };
+        types.map((t) => {
+          missingLibraryByType[t][card] = {
+            q: softUsedMax,
+            c: libraryCardBase[card],
+          };
+        });
         missingLibraryByType['All'][card] = {
           q: softUsedMax,
           c: libraryCardBase[card],
@@ -246,8 +246,8 @@ function InventoryLibrary(props) {
     });
 
     Object.keys(usedLibraryCards.hard).map((card) => {
-      if (!props.cards[card]) {
-        const t = libraryCardBase[card].Type;
+      if (!cards[card]) {
+        const types = libraryCardBase[card].Type.split('/');
         const d = libraryCardBase[card].Discipline;
         let disciplines = null;
         if (d.includes('/')) {
@@ -258,8 +258,10 @@ function InventoryLibrary(props) {
           disciplines = [d];
         }
 
-        if (props.category != 'ok') {
-          libraryByType[t][card] = { q: 0, c: libraryCardBase[card] };
+        if (category != 'ok') {
+          types.map((t) => {
+            libraryByType[t][card] = { q: 0, c: libraryCardBase[card] };
+          });
           libraryByType['All'][card] = { q: 0, c: libraryCardBase[card] };
           libraryByDiscipline['All'][card] = {
             q: 0,
@@ -285,37 +287,37 @@ function InventoryLibrary(props) {
           });
         }
 
-        if (missingLibraryByType[t][card]) {
-          missingLibraryByType[t][card].q += hardUsedTotal;
-          missingLibraryByType['All'][card].q += hardUsedTotal;
-        } else {
-          missingLibraryByType[t][card] = {
-            q: hardUsedTotal,
-            c: libraryCardBase[card],
-          };
-          missingLibraryByType['All'][card] = {
-            q: hardUsedTotal,
-            c: libraryCardBase[card],
-          };
-        }
+        types.map((t) => {
+          if (missingLibraryByType[t][card]) {
+            missingLibraryByType[t][card].q += hardUsedTotal;
+          } else {
+            missingLibraryByType[t][card] = {
+              q: hardUsedTotal,
+              c: libraryCardBase[card],
+            };
+          }
+        });
+        missingLibraryByType['All'][card] = {
+          q: hardUsedTotal,
+          c: libraryCardBase[card],
+        };
 
         if (disciplines) {
           disciplines.map((i) => {
             if (missingLibraryByDiscipline[i][card]) {
               missingLibraryByDiscipline[i][card].q += hardUsedTotal;
-              missingLibraryByDiscipline['All'][card].q += hardUsedTotal;
             } else {
               missingLibraryByDiscipline[i][card] = {
-                q: hardUsedTotal,
-                c: libraryCardBase[card],
-              };
-              missingLibraryByDiscipline['All'][card] = {
                 q: hardUsedTotal,
                 c: libraryCardBase[card],
               };
             }
           });
         }
+        missingLibraryByDiscipline['All'][card] = {
+          q: hardUsedTotal,
+          c: libraryCardBase[card],
+        };
       }
     });
 
@@ -334,14 +336,14 @@ function InventoryLibrary(props) {
 
   return (
     <>
-      {!props.compact && (
+      {!compact && (
         <>
           <div className="d-flex align-items-center justify-content-between px-1 inventory-info">
             <div className="w-70 py-1">
               <Stack gap={1}>
                 <InventoryFilterForm
-                  value={cardType}
-                  setValue={setCardType}
+                  value={type}
+                  setValue={setType}
                   values={Object.keys(libraryByType).filter((i) => {
                     return Object.keys(libraryByType[i]).length;
                   })}
@@ -350,8 +352,8 @@ function InventoryLibrary(props) {
                   target="type"
                 />
                 <InventoryFilterForm
-                  value={cardDiscipline}
-                  setValue={setCardDiscipline}
+                  value={discipline}
+                  setValue={setDiscipline}
                   values={Object.keys(libraryByDiscipline).filter((i) => {
                     return Object.keys(libraryByDiscipline[i]).length;
                   })}
@@ -363,10 +365,10 @@ function InventoryLibrary(props) {
             </div>
             <div className="gray px-1">
               <b>
-                {missingLibraryByTypeTotal[cardType] ? (
+                {missingLibraryByTypeTotal[type] ? (
                   <>
-                    {missingLibraryByTypeTotal[cardType]} (
-                    {Object.values(missingLibraryByType[cardType]).length} uniq)
+                    {missingLibraryByTypeTotal[type]} (
+                    {Object.values(missingLibraryByType[type]).length} uniq)
                     miss
                   </>
                 ) : null}
@@ -376,13 +378,13 @@ function InventoryLibrary(props) {
         </>
       )}
       <InventoryLibraryTable
-        compact={props.compact}
-        withCompact={props.withCompact}
-        cards={Object.values(libraryByType[cardType]).filter((i) => {
-          return libraryByDiscipline[cardDiscipline][i.c.Id];
+        compact={compact}
+        withCompact={withCompact}
+        cards={Object.values(libraryByType[type]).filter((i) => {
+          return libraryByDiscipline[discipline][i.c.Id];
         })}
-        showFloatingButtons={props.showFloatingButtons}
-        setShowFloatingButtons={props.setShowFloatingButtons}
+        showFloatingButtons={showFloatingButtons}
+        setShowFloatingButtons={setShowFloatingButtons}
       />
     </>
   );

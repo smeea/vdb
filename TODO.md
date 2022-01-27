@@ -1,6 +1,5 @@
 # FIX
 - Inventory bug for precon (also test for twd and shared)
-- Inventory missing to respect discipline/type filter
 - Fix dropdown button (name and drop direction) for Export
 
 # FEATURES
