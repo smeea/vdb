@@ -3,8 +3,13 @@ import re
 
 
 def get_crypt_by_text(request, crypt):
-    value = request['value'].lower() if 'value' in request else request
-    regex = request['regex'] if 'regex' in request else None
+    value = request['value'] if 'value' in request else request
+    regex = False
+    if 'regex' in request:
+        regex = True
+    else:
+        value = value.lower()
+
     in_text = request['inText'] if 'inText' in request else None
     match_cards = []
 
