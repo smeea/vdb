@@ -1,5 +1,4 @@
 # FIX
-- Inventory bug for precon (also test for twd and shared)
 - Fix dropdown button (name and drop direction) for Export
 
 # FEATURES

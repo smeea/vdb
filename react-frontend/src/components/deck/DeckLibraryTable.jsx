@@ -172,9 +172,9 @@ function DeckLibraryTable(props) {
                         props.inMissing
                           ? null
                           : inInventory < card.q
-                          ? 'inv-miss-part'
-                          : inInventory < hardUsedTotal
                           ? 'inv-miss-full'
+                          : inInventory < hardUsedTotal + card.q
+                          ? 'inv-miss-part'
                           : null
                       }
                     >
