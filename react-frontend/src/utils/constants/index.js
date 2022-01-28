@@ -1,4 +1,4 @@
-export const cardtypeSorted = [
+export const cardtypeSortedFull = [
   'Master',
   'Conviction',
   'Power',
@@ -19,6 +19,21 @@ export const cardtypeSorted = [
   'Combat/Action Modifier',
   'Combat/Reaction',
   'Event',
+];
+
+export const cardtypeSorted = [
+  'Master',
+  'Action',
+  'Political Action',
+  'Ally',
+  'Equipment',
+  'Retainer',
+  'Action Modifier',
+  'Reaction',
+  'Combat',
+  'Event',
+  'Conviction',
+  'Power',
 ];
 
 export const GROUPED_TYPE = 'GroupedType';

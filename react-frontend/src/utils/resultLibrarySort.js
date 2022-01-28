@@ -1,4 +1,4 @@
-import { cardtypeSorted } from 'utils/constants';
+import { cardtypeSortedFull } from 'utils/constants';
 import { getCardProperty } from 'utils';
 
 function resultLibrarySort(cards, sortMethod) {
@@ -24,8 +24,8 @@ function resultLibrarySort(cards, sortMethod) {
 
   const byGroupedType = (a, b) => {
     return (
-      cardtypeSorted.indexOf(getCardProperty(a, 'Type')) -
-      cardtypeSorted.indexOf(getCardProperty(b, 'Type'))
+      cardtypeSortedFull.indexOf(getCardProperty(a, 'Type')) -
+      cardtypeSortedFull.indexOf(getCardProperty(b, 'Type'))
     );
   };
 

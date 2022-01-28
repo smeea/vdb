@@ -2,7 +2,7 @@ import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 import { DeckLibraryTable } from 'components';
 import { useApp } from 'context';
-import { cardtypeSorted } from 'utils/constants';
+import { cardtypeSortedFull } from 'utils/constants';
 
 function TwdResultLibraryByType(props) {
   const { nativeLibrary } = useApp();
@@ -36,7 +36,7 @@ function TwdResultLibraryByType(props) {
   const LibraryTypes = [];
   let resultTrClass = 'result-even';
 
-  for (const cardtype of cardtypeSorted) {
+  for (const cardtype of cardtypeSortedFull) {
     if (libraryByType[cardtype] !== undefined) {
       const TypePopover = React.forwardRef(({ children, ...props }, ref) => {
         return (

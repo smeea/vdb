@@ -350,11 +350,11 @@ def deckExport(d, format):
                     sorted_library_keys = sorted(byType[i].keys())
                     for k in sorted_library_keys:
                         q = byType[i][k]
-                        quantitySpaces = len(str(maxLibrary)) - len(str(q))
                         if format == 'text':
+                            quantitySpaces = len(str(maxLibrary)) - len(str(q))
                             deck.append(f"{' ' * quantitySpaces}{q}x {k}\n")
                         else:
-                            deck.append(f"{q}x{' ' * quantitySpaces} {k}\n")
+                            deck.append(f"{q}x {k}\n")
 
                     deck.append('\n')
 

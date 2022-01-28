@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { InventoryCryptTable, InventoryFilterForm } from 'components';
 import clansList from 'components/deck/forms_data/clansList.json';
 import { useApp } from 'context';
 
-function InventoryCrypt(props) {
+function InventoryCrypt({
+  compact,
+  withCompact,
+  category,
+  cards,
+  showFloatingButtons,
+  setShowFloatingButtons,
+  clan,
+  setClan,
+}) {
   const { usedCryptCards, cryptCardBase } = useApp();
-  const [clan, setClan] = useState('All');
 
   const cryptByClan = {};
   const cryptByClanTotal = {};
@@ -23,19 +31,19 @@ function InventoryCrypt(props) {
     missingCryptByClanTotal[i] = 0;
   });
 
-  if (props.compact) {
-    Object.keys(props.cards).map((card) => {
+  if (compact) {
+    Object.keys(cards).map((card) => {
       cryptByClan['All'] = {
-        card: props.cards[card],
+        card: cards[card],
       };
     });
   } else {
-    Object.keys(props.cards).map((card) => {
-      const i = props.cards[card].c.Clan;
+    Object.keys(cards).map((card) => {
+      const i = cards[card].c.Clan;
 
-      if (props.cards[card].q > 0) {
-        cryptByClanTotal[i] += props.cards[card].q;
-        cryptByClanTotal['All'] += props.cards[card].q;
+      if (cards[card].q > 0) {
+        cryptByClanTotal[i] += cards[card].q;
+        cryptByClanTotal['All'] += cards[card].q;
         cryptByClanUnique[i] += 1;
         cryptByClanUnique['All'] += 1;
       }
@@ -56,39 +64,38 @@ function InventoryCrypt(props) {
         });
       }
 
-      const miss = softUsedMax + hardUsedTotal - props.cards[card].q;
+      const miss = softUsedMax + hardUsedTotal - cards[card].q;
 
       if (miss > 0) {
-        missingCryptByClan[i][card] = { q: miss, c: props.cards[card].c };
+        missingCryptByClan[i][card] = { q: miss, c: cards[card].c };
         missingCryptByClan['All'][card] = {
           q: miss,
-          c: props.cards[card].c,
+          c: cards[card].c,
         };
       }
 
-      if (props.category === 'nok') {
+      if (category === 'nok') {
         if (miss > 0) {
-          cryptByClan[i][card] = props.cards[card];
-          cryptByClan['All'][card] = props.cards[card];
+          cryptByClan[i][card] = cards[card];
+          cryptByClan['All'][card] = cards[card];
         }
       } else {
-        cryptByClan[i][card] = props.cards[card];
-        cryptByClan['All'][card] = props.cards[card];
+        cryptByClan[i][card] = cards[card];
+        cryptByClan['All'][card] = cards[card];
       }
     });
 
     Object.keys(usedCryptCards.soft).map((card) => {
-      if (!props.cards[card]) {
+      if (!cards[card]) {
         const i = cryptCardBase[card].Clan;
-        // console.log(card, i);
 
-        if (props.category !== 'ok') {
+        if (category !== 'ok') {
           cryptByClan[i][card] = {
-            q: props.cards[card] ? props.cards[card].q : 0,
+            q: cards[card] ? cards[card].q : 0,
             c: cryptCardBase[card],
           };
           cryptByClan['All'][card] = {
-            q: props.cards[card] ? props.cards[card].q : 0,
+            q: cards[card] ? cards[card].q : 0,
             c: cryptCardBase[card],
           };
         }
@@ -112,17 +119,16 @@ function InventoryCrypt(props) {
     });
 
     Object.keys(usedCryptCards.hard).map((card) => {
-      if (!props.cards[card]) {
+      if (!cards[card]) {
         const i = cryptCardBase[card].Clan;
-        // console.log(card, i);
 
-        if (props.category !== 'ok') {
+        if (category !== 'ok') {
           cryptByClan[i][card] = {
-            q: props.cards[card] ? props.cards[card].q : 0,
+            q: cards[card] ? cards[card].q : 0,
             c: cryptCardBase[card],
           };
           cryptByClan['All'][card] = {
-            q: props.cards[card] ? props.cards[card].q : 0,
+            q: cards[card] ? cards[card].q : 0,
             c: cryptCardBase[card],
           };
         }
@@ -159,7 +165,7 @@ function InventoryCrypt(props) {
 
   return (
     <>
-      {!props.compact && (
+      {!compact && (
         <div className="d-flex align-items-center justify-content-between px-1 inventory-info">
           <div className="w-70 py-1">
             <InventoryFilterForm
@@ -186,11 +192,11 @@ function InventoryCrypt(props) {
         </div>
       )}
       <InventoryCryptTable
-        compact={props.compact}
-        withCompact={props.withCompact}
+        compact={compact}
+        withCompact={withCompact}
         cards={Object.values(cryptByClan[clan])}
-        showFloatingButtons={props.showFloatingButtons}
-        setShowFloatingButtons={props.setShowFloatingButtons}
+        showFloatingButtons={showFloatingButtons}
+        setShowFloatingButtons={setShowFloatingButtons}
       />
     </>
   );

@@ -1,10 +1,11 @@
-import React from 'react';
-import { OverlayTooltip } from 'components';
+import React, { useState } from 'react';
+import { ResultLayoutTextSetsModal, OverlayTooltip } from 'components';
 import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 import { useApp } from 'context';
 
 const ResultLayoutTextSets = (props) => {
   const { isMobile } = useApp();
+  const [modal, setModal] = useState(undefined);
 
   const byDate = (a, b) => {
     return setsAndPrecons[a].date - setsAndPrecons[b].date;
@@ -66,7 +67,7 @@ const ResultLayoutTextSets = (props) => {
           key={index}
         >
           {isMobile ? (
-            <div className="d-inline">
+            <div className="d-inline" onClick={() => setModal(popoverText)}>
               {k}
               <div className="d-inline gray">
                 {preconsShort ? `:${preconsShort}` : null}
@@ -86,7 +87,12 @@ const ResultLayoutTextSets = (props) => {
       );
     });
 
-  return <div className="d-inline ps-2">{Sets}</div>;
+  return (
+    <>
+      <div className="d-inline ps-2">{Sets}</div>
+      {modal && <ResultLayoutTextSetsModal modal={modal} setModal={setModal} />}
+    </>
+  );
 };
 
 export default ResultLayoutTextSets;

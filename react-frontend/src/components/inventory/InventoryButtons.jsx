@@ -45,9 +45,10 @@ function InventoryButtons(props) {
         </Button>
       )}
       <InventoryMissing
-        missingCrypt={props.missingCrypt}
-        missingLibrary={props.missingLibrary}
         setShowButtons={props.setShowButtons}
+        clan={props.clan}
+        type={props.type}
+        discipline={props.discipline}
       />
     </Stack>
   );

@@ -1,6 +1,5 @@
 # FIX
 - Inventory bug for precon (also test for twd and shared)
-- Inventory missing to respect discipline filter
 - Fix dropdown button (name and drop direction) for Export
 
 # FEATURES
@@ -8,7 +7,6 @@
 - Export all in xlsx and csv
 - Add prefers-color-scheme
 - Multi text filters
-- Popover for Sets in card preview on mobile
 
 # BIG FEATURES
 - Search for similar TWD decks
