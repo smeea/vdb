@@ -380,9 +380,13 @@ function InventoryLibrary({
       <InventoryLibraryTable
         compact={compact}
         withCompact={withCompact}
-        cards={Object.values(libraryByType[type]).filter((i) => {
-          return libraryByDiscipline[discipline][i.c.Id];
-        })}
+        cards={
+          compact
+            ? Object.values(libraryByType['All'])
+            : Object.values(libraryByType[type]).filter((i) => {
+                return libraryByDiscipline[discipline][i.c.Id];
+              })
+        }
         showFloatingButtons={showFloatingButtons}
         setShowFloatingButtons={setShowFloatingButtons}
       />

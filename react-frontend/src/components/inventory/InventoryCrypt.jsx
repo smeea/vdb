@@ -194,7 +194,11 @@ function InventoryCrypt({
       <InventoryCryptTable
         compact={compact}
         withCompact={withCompact}
-        cards={Object.values(cryptByClan[clan])}
+        cards={
+          compact
+            ? Object.values(cryptByClan['All'])
+            : Object.values(cryptByClan[clan])
+        }
         showFloatingButtons={showFloatingButtons}
         setShowFloatingButtons={setShowFloatingButtons}
       />
