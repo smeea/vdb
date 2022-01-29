@@ -16,12 +16,16 @@ function InventoryFilterForm(props) {
         <div className="d-flex justify-content-between">
           {props.target === 'crypt' && (
             <div className="pe-1">
-              <span className="margin-full">
-                {i !== 'All' && <ResultClanImage value={i} />}
-              </span>
-              <div className="d-inline ps-2">
-                {i === 'All' ? 'All Clans' : i}
-              </div>
+              {i === 'All' ? (
+                <div className="px-1">All Clans</div>
+              ) : (
+                <>
+                  <span className="margin-full">
+                    <ResultClanImage value={i} />
+                  </span>
+                  {i}
+                </>
+              )}
             </div>
           )}
 
