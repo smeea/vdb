@@ -4,20 +4,20 @@ import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultLibraryTable, ResultLibraryTotal } from 'components';
 import { resultLibrarySort } from 'utils';
-import { useApp } from 'context';
+import { useApp, useSearchResults } from 'context';
 
 function ResultLibrary(props) {
   const {
     showLibrarySearch,
     setShowLibrarySearch,
-    libraryResults,
-    setLibraryResults,
     addMode,
     toggleAddMode,
     isMobile,
     librarySearchSort,
     changeLibrarySearchSort,
   } = useApp();
+
+  const { libraryResults, setLibraryResults } = useSearchResults();
 
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
@@ -48,7 +48,7 @@ function ResultLibrary(props) {
       {libraryResults.length > 0 && (
         <>
           <ResultLibraryTotal
-            value={librarySearchSort}
+            cards={libraryResults}
             handleChange={handleChange}
           />
           <ResultLibraryTable

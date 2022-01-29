@@ -5,7 +5,12 @@ import {
   Navigate,
   Routes,
 } from 'react-router-dom';
-import { useApp, ThemeProvider } from 'context';
+import {
+  useApp,
+  ThemeProvider,
+  SearchFormsProvider,
+  SearchResultsProvider,
+} from 'context';
 import About from 'pages/About.jsx';
 import Account from 'pages/Account.jsx';
 import Cards from 'pages/Cards.jsx';
@@ -76,37 +81,41 @@ function App(props) {
   return (
     <div className="App">
       <Router>
-        <ThemeProvider>
-          <Navigation />
-        </ThemeProvider>
+        <SearchFormsProvider>
+          <ThemeProvider>
+            <Navigation />
+          </ThemeProvider>
 
-        <Routes>
-          <Route path="*" element={<Navigate to="/about" />} />
-          <Route path="about" element={<About />} />
-          <Route path="documentation" element={<Documentation />} />
-          <Route path="changelog" element={<Changelog />} />
-          <Route path="account" element={<Account />} />
-          <Route path="diff" element={<Diff />} />
-          <Route path="twd" element={<Twd />} />
-          <Route path="inventory" element={<Inventory />} />
-          <Route path="decks" element={<Decks />} />
-          <Route
-            path="crypt"
-            element={<Crypt lastDeckId={lastDeck.deckid} />}
-          />
-          <Route
-            path="library"
-            element={<Library lastDeckId={lastDeck.deckid} />}
-          />
-          <Route
-            path="cards"
-            element={<Cards lastDeckId={lastDeck.deckid} />}
-          />
-          <Route
-            path="cards/:id"
-            element={<Cards lastDeckId={lastDeck.deckid} />}
-          />
-        </Routes>
+          <SearchResultsProvider>
+            <Routes>
+              <Route path="*" element={<Navigate to="/about" />} />
+              <Route path="about" element={<About />} />
+              <Route path="documentation" element={<Documentation />} />
+              <Route path="changelog" element={<Changelog />} />
+              <Route path="account" element={<Account />} />
+              <Route path="diff" element={<Diff />} />
+              <Route path="inventory" element={<Inventory />} />
+              <Route path="decks" element={<Decks />} />
+              <Route path="twd" element={<Twd />} />
+              <Route
+                path="crypt"
+                element={<Crypt lastDeckId={lastDeck.deckid} />}
+              />
+              <Route
+                path="library"
+                element={<Library lastDeckId={lastDeck.deckid} />}
+              />
+              <Route
+                path="cards"
+                element={<Cards lastDeckId={lastDeck.deckid} />}
+              />
+              <Route
+                path="cards/:id"
+                element={<Cards lastDeckId={lastDeck.deckid} />}
+              />
+            </Routes>
+          </SearchResultsProvider>
+        </SearchFormsProvider>
       </Router>
     </div>
   );

@@ -9,18 +9,18 @@ import {
   TwdResultLibraryByType,
   TwdResultLibraryKeyCards,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, useSearchResults } from 'context';
 
 function TwdResult(props) {
   const {
     setShowTwdSearch,
-    twdResults,
-    setTwdResults,
     cryptCardBase,
     libraryCardBase,
     showImage,
     isMobile,
   } = useApp();
+
+  const { twdResults, setTwdResults } = useSearchResults();
 
   const navigate = useNavigate();
   const showCounterStep = 20;
@@ -115,7 +115,7 @@ function TwdResult(props) {
       )}
       {twdResults.length > 0 && (
         <>
-          <TwdResultTotal />
+          <TwdResultTotal decks={twdResults} />
           {twdRows}
           {deckCounter > showCounter && (
             <div className="d-flex justify-content-center pb-4 pt-2">

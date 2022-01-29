@@ -8,7 +8,7 @@ import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
 import SunFill from 'assets/images/icons/sun-fill.svg';
 import MoonFill from 'assets/images/icons/moon-fill.svg';
-import { useApp, useTheme } from 'context';
+import { useApp, useTheme, useSearchForms } from 'context';
 import { NavMobileMenu, LanguageSelect } from 'components';
 import cryptDefaults from 'components/forms_data/defaultsCryptForm.json';
 import libraryDefaults from 'components/forms_data/defaultsLibraryForm.json';
@@ -17,15 +17,19 @@ import { sanitizeFormState } from 'utils';
 
 function Navigation(props) {
   const {
-    cryptFormState,
-    libraryFormState,
-    twdFormState,
+    // cryptFormState,
+    // libraryFormState,
+    // twdFormState,
     inventoryMode,
     toggleInventoryMode,
     isMobile,
     username,
     activeDeck,
   } = useApp();
+
+  const { setCryptFormState, twdFormState, cryptFormState, libraryFormState } =
+    useSearchForms();
+
   const { isDarkTheme, toggleTheme } = useTheme();
   const location = useLocation();
 
@@ -34,23 +38,23 @@ function Navigation(props) {
   let libraryUrl = '/library';
   let decksUrl = '/decks';
 
-  if (!isMobile) {
-    if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
-      const input = sanitizeFormState('crypt', cryptFormState);
-      cryptUrl = `/crypt?q=${encodeURIComponent(JSON.stringify(input))}`;
-    }
-    if (JSON.stringify(libraryFormState) != JSON.stringify(libraryDefaults)) {
-      const input = sanitizeFormState('library', libraryFormState);
-      libraryUrl = `/library?q=${encodeURIComponent(JSON.stringify(input))}`;
-    }
-    if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
-      const input = sanitizeFormState('twd', twdFormState);
-      twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
-    }
-  }
-  if (activeDeck.deckid) {
-    decksUrl = `/decks?id=${activeDeck.deckid}`;
-  }
+  // if (!isMobile) {
+  //   if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
+  //     const input = sanitizeFormState('crypt', cryptFormState);
+  //     cryptUrl = `/crypt?q=${encodeURIComponent(JSON.stringify(input))}`;
+  //   }
+  //   if (JSON.stringify(libraryFormState) != JSON.stringify(libraryDefaults)) {
+  //     const input = sanitizeFormState('library', libraryFormState);
+  //     libraryUrl = `/library?q=${encodeURIComponent(JSON.stringify(input))}`;
+  //   }
+  //   if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
+  //     const input = sanitizeFormState('twd', twdFormState);
+  //     twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
+  //   }
+  // }
+  // if (activeDeck.deckid) {
+  //   decksUrl = `/decks?id=${activeDeck.deckid}`;
+  // }
 
   return (
     <Navbar
@@ -79,7 +83,16 @@ function Navigation(props) {
               location.pathname == '/twd') && (
               <div
                 className="d-flex align-items-center px-3"
-                onClick={() => toggleInventoryMode()}
+                onClick={() => {
+                  toggleInventoryMode();
+                  setCryptFormState((prevState) => ({
+                    ...prevState,
+                    text: {
+                      ...prevState['text'],
+                      value: 'kek',
+                    },
+                  }));
+                }}
               >
                 <div
                   className={

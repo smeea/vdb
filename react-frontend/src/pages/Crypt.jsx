@@ -6,19 +6,20 @@ import {
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, useSearchResults } from 'context';
 
 function Crypt({ lastDeckId }) {
   const {
     deckRouter,
     showCryptSearch,
-    cryptResults,
     addMode,
     toggleAddMode,
     isMobile,
     isDesktop,
     activeDeck,
   } = useApp();
+
+  const { cryptResults } = useSearchResults();
 
   const myActiveDeck = {
     src: 'my',

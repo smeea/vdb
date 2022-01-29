@@ -1,14 +1,12 @@
 import React from 'react';
 import { ResultCryptSortForm } from 'components';
-import { useApp } from 'context';
 
-function ResultCryptTotal(props) {
-  const { cryptResults } = useApp();
+function ResultCryptTotal({ cards, handleChange }) {
   const byGroups = {};
   const byGroupsCapacityTotal = {};
   let total = 0;
 
-  cryptResults.map((card) => {
+  cards.map((card) => {
     if (byGroups[card.Group]) {
       byGroups[card.Group] += 1;
     } else {
@@ -45,7 +43,7 @@ function ResultCryptTotal(props) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <ResultCryptSortForm onChange={props.handleChange} />
+      <ResultCryptSortForm onChange={handleChange} />
     </>
   );
 

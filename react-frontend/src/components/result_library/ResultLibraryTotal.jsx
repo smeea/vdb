@@ -2,12 +2,11 @@ import React from 'react';
 import { ResultLibraryTypeImage, ResultLibrarySortForm } from 'components';
 import { useApp } from 'context';
 
-function ResultLibraryTotal(props) {
-  const { libraryResults } = useApp();
+function ResultLibraryTotal({ cards, handleChange }) {
   const byTypes = {};
   let total = 0;
 
-  libraryResults.map((card, index) => {
+  cards.map((card, index) => {
     if (byTypes[card.Type]) {
       byTypes[card.Type] += 1;
     } else {
@@ -31,7 +30,7 @@ function ResultLibraryTotal(props) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <ResultLibrarySortForm onChange={props.handleChange} />
+      <ResultLibrarySortForm onChange={handleChange} />
     </>
   );
 

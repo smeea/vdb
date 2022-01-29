@@ -23,14 +23,11 @@ import {
 } from './library_search_components';
 import defaults from 'components/forms_data/defaultsLibraryForm.json';
 import { sanitizeFormState } from 'utils';
-import { useApp } from 'context';
+import { useApp, useSearchForms, useSearchResults } from 'context';
 
 function LibrarySearchForm(props) {
   const {
     libraryCardBase,
-    libraryFormState,
-    setLibraryFormState,
-    setLibraryResults,
     hideMissing,
     setHideMissing,
     setShowLibrarySearch,
@@ -38,6 +35,9 @@ function LibrarySearchForm(props) {
     inventoryMode,
     isMobile,
   } = useApp();
+
+  const { libraryFormState, setLibraryFormState } = useSearchForms();
+  const { libraryResults, setLibraryResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
@@ -196,8 +196,10 @@ function LibrarySearchForm(props) {
       .catch((error) => {
         if (isMobile) navigate('/library');
         setSpinnerState(false);
-        setLibraryResults([]);
-        setPreresults([]);
+        if (libraryResults) {
+          setLibraryResults([]);
+          setPreresults([]);
+        }
         setShowError(true);
       });
   };

@@ -1,7 +1,4 @@
 import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
-import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
-import defaultsCryptForm from 'components/forms_data/defaultsCryptForm.json';
-import defaultsLibraryForm from 'components/forms_data/defaultsLibraryForm.json';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
 import { cardServices, inventoryServices } from 'services';
 import { useWindowSize } from 'hooks';
@@ -54,22 +51,9 @@ export const AppProvider = (props) => {
 
   const preconDecks = cardServices.getPreconDecks();
 
-  const [twdFormState, setTwdFormState] = useState(
-    JSON.parse(JSON.stringify(defaultsTwdForm))
-  );
-  const [cryptFormState, setCryptFormState] = useState(
-    JSON.parse(JSON.stringify(defaultsCryptForm))
-  );
-  const [libraryFormState, setLibraryFormState] = useState(
-    JSON.parse(JSON.stringify(defaultsLibraryForm))
-  );
   const [showTwdSearch, setShowTwdSearch] = useState(true);
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
-
-  const [twdResults, setTwdResults] = useState(undefined);
-  const [cryptResults, setCryptResults] = useState(undefined);
-  const [libraryResults, setLibraryResults] = useState(undefined);
 
   const [inventoryCrypt, setInventoryCrypt] = useState({});
   const [inventoryLibrary, setInventoryLibrary] = useState({});
@@ -655,20 +639,6 @@ export const AppProvider = (props) => {
         changeTimer,
 
         // 6 - LISTING Context (NEED REVIEW)
-
-        twdFormState,
-        setTwdFormState,
-        cryptFormState,
-        setCryptFormState,
-        libraryFormState,
-        setLibraryFormState,
-
-        twdResults,
-        setTwdResults,
-        cryptResults,
-        setCryptResults,
-        libraryResults,
-        setLibraryResults,
 
         showTwdSearch,
         setShowTwdSearch,

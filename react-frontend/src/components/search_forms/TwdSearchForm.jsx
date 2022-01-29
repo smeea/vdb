@@ -23,19 +23,19 @@ import {
 } from './twd_search_components';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 import { sanitizeFormState } from 'utils';
-import { useApp } from 'context';
+import { useApp, useSearchForms, useSearchResults } from 'context';
 
 function TwdSearchForm(props) {
   const {
     cryptCardBase,
     libraryCardBase,
-    twdFormState,
-    setTwdFormState,
-    setTwdResults,
     setShowTwdSearch,
     inventoryMode,
     isMobile,
   } = useApp();
+
+  const { twdFormState, setTwdFormState } = useSearchForms();
+  const { twdResults, setTwdResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;
@@ -243,7 +243,9 @@ function TwdSearchForm(props) {
       })
       .catch((error) => {
         setSpinnerState(false);
-        setTwdResults([]);
+        if (twdResults) {
+          setTwdResults([]);
+        }
       });
   };
 

@@ -4,20 +4,22 @@ import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultCryptTable, ResultCryptTotal } from 'components';
 import { resultCryptSort } from 'utils';
-import { useApp } from 'context';
+import { useApp, useSearchResults } from 'context';
 
 function ResultCrypt(props) {
   const {
     showCryptSearch,
     setShowCryptSearch,
-    cryptResults,
-    setCryptResults,
+    // cryptResults,
+    // setCryptResults,
     addMode,
     toggleAddMode,
     isMobile,
     cryptSearchSort,
     changeCryptSearchSort,
   } = useApp();
+
+  const { cryptResults, setCryptResults } = useSearchResults();
 
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
@@ -48,10 +50,7 @@ function ResultCrypt(props) {
       )}
       {cryptResults.length > 0 && (
         <>
-          <ResultCryptTotal
-            value={cryptSearchSort}
-            handleChange={handleChange}
-          />
+          <ResultCryptTotal cards={cryptResults} handleChange={handleChange} />
           <ResultCryptTable
             className={className}
             crypt={props.crypt}

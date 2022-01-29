@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { TwdResult, TwdSearchForm } from 'components';
-import { useApp } from 'context';
+import { useApp, useSearchResults } from 'context';
 
 function Twd(props) {
-  const { showTwdSearch, twdResults, isMobile } = useApp();
+  const { showTwdSearch, isMobile } = useApp();
+  const { twdResults } = useSearchResults();
 
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 

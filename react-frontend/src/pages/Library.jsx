@@ -6,19 +6,20 @@ import {
   DeckSelectorAndDisplay,
   ToogleSearchAddButton,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, useSearchResults } from 'context';
 
 function Library({ lastDeckId }) {
   const {
     deckRouter,
     showLibrarySearch,
-    libraryResults,
     addMode,
     toggleAddMode,
     isMobile,
     isDesktop,
     activeDeck,
   } = useApp();
+
+  const { libraryResults } = useSearchResults();
 
   const myActiveDeck = {
     src: 'my',

@@ -1,13 +1,10 @@
 import React from 'react';
-import { useApp } from 'context';
 
-function TwdResultTotal(props) {
-  const { twdResults } = useApp();
-
+function TwdResultTotal({ decks }) {
   const byYear = {};
   let total = 0;
 
-  twdResults.map((deck, index) => {
+  decks.map((deck, index) => {
     const year = `'${deck['date'].slice(2, 4)}`;
     if (byYear[year]) {
       byYear[year] += 1;

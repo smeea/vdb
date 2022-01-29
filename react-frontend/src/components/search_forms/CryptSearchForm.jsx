@@ -23,14 +23,11 @@ import {
 } from './crypt_search_components';
 import defaults from 'components/forms_data/defaultsCryptForm.json';
 import { sanitizeFormState } from 'utils';
-import { useApp } from 'context';
+import { useApp, useSearchForms, useSearchResults } from 'context';
 
 function CryptSearchForm(props) {
   const {
     cryptCardBase,
-    cryptFormState,
-    setCryptFormState,
-    setCryptResults,
     hideMissing,
     setHideMissing,
     setShowCryptSearch,
@@ -38,6 +35,9 @@ function CryptSearchForm(props) {
     inventoryMode,
     isMobile,
   } = useApp();
+
+  const { cryptFormState, setCryptFormState } = useSearchForms();
+  const { cryptResults, setCryptResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
@@ -205,13 +205,16 @@ function CryptSearchForm(props) {
           }
         } else {
           setCryptResults(res);
+          console.log('set');
         }
       })
       .catch((error) => {
         setSpinnerState(false);
         if (isMobile) navigate('/crypt');
-        setCryptResults([]);
-        setPreresults([]);
+        if (cryptResults) {
+          setCryptResults([]);
+          setPreresults([]);
+        }
         setShowError(true);
       });
   };
@@ -255,6 +258,8 @@ function CryptSearchForm(props) {
       <SearchFormTextAndButtons
         value={cryptFormState.text}
         onChange={handleTextChange}
+        /* value={text} */
+        /* onChange={(e) => setText(e)} */
         onChangeOptions={handleMultiChange}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
