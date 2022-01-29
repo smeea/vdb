@@ -11,18 +11,45 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-01-29:</h6>
+            <ul>
+              <li>
+                Missing cards in Inventory now respect applied filters
+                (clan/discipline/card type), including export from Missing card
+                window
+              </li>
+              <li>
+                Add popup with detailed Set info on click in card view on mobile
+                (same as on mouse hover on desktop)
+              </li>
+              <li>
+                Fixed Inventory Mode not properly coloring quantity of cards in
+                not-your (precons, twd, other urls) decks. Now should paint in
+                yellow cards you have enough in total, but need to use cards
+                from Fixed decks, red where you dont have enough cards at all,
+                and no coloring where everything is OK (cards are free or in
+                Flexible decks)
+              </li>
+              <li>Fix twd search by cards (was problem with 0&lt; logic)</li>
+              <li>
+                Fix add crypt card button from recommended cards not visible
+                sometimes
+              </li>
+              <li>Small other fixes</li>
+            </ul>
+
             <h6>2022-01-20:</h6>
             <ul>
               <li>
                 Add import deck without account. This will allow to upload the
                 deck without adding it to your account (possible without having
                 account at all). One of the use case is to upload decks for TWD
-                reports to put the links without messing your account.
+                reports to put the links without messing your account
               </li>
               <li>Updated Rulings</li>
               <li>
                 Added bright halos to some icons in dark theme (like in
-                disciplines icons) to slightly improve visibility.
+                disciplines icons) to slightly improve visibility
               </li>
               <li>Other fixes</li>
             </ul>
