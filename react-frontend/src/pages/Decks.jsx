@@ -562,15 +562,17 @@ function Decks(props) {
         )}
       </Row>
       {username === '' && !activeDeck.deckid && (
-        <Row className="h-50 align-items-center justify-content-center px-2">
-          <Col xs={12} md={5} className="px-0">
-            <div className="d-flex justify-content-center pt-4 pb-2">
+        <Row
+          className={`h-${
+            isMobile ? 75 : 50
+          } align-items-center justify-content-center px-2`}
+        >
+          <Col xs={12} md={5}>
+            <div className="d-flex justify-content-center pb-0">
               <h6>Login required to create your decks.</h6>
             </div>
             <div className="d-flex justify-content-center pb-3">
-              <h6>
-                (you can browse official preconstructed decks without login)
-              </h6>
+              <h6>(you can browse preconstructed decks without login)</h6>
             </div>
             <div className="py-2">
               <AccountLogin />
