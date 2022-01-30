@@ -2,10 +2,9 @@
 - Fix dropdown button (name and drop direction) for Export
 
 # FEATURES
-- Localized proxies
 - Export all in xlsx and csv
 - Add prefers-color-scheme
-- Multi text filters
+- Merge accountless import button with main import button
 
 # BIG FEATURES
 - Search for similar TWD decks
@@ -17,13 +16,11 @@
 - Script to update images from static.krcg.org
 
 # IMPROVE TECHNOLOGY - FRONTEND
-- Sync with websockets
 - Move search to frontend
 - Move export to frontend
 - Move import to frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
-- Check frontend input (quantity/cardior codes to return)
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)

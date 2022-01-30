@@ -6,7 +6,7 @@ import { DeckProxySelectModal, BlockButton } from 'components';
 import { useApp } from 'context';
 
 function DeckProxy(props) {
-  const { inventoryMode, isMobile } = useApp();
+  const { lang, inventoryMode, isMobile } = useApp();
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState(undefined);
@@ -80,6 +80,7 @@ function DeckProxy(props) {
         },
         body: JSON.stringify({
           cards: cards,
+          lang: lang,
         }),
       };
 

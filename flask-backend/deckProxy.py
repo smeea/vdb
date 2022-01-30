@@ -30,12 +30,12 @@ cardtypes_sorted = [
 ]
 
 
-def deckProxy(input):
+def deckProxy(cards, lang):
     try:
         crypt = {}
         library = {}
 
-        for k, v in input.items():
+        for k, v in cards.items():
             k = int(k)
             card = {}
             filename = None
@@ -59,7 +59,10 @@ def deckProxy(input):
                     f"./cards/set/{v['set']}/{filename}"):
                 file = f"./cards/set/{v['set']}/{filename}"
             else:
-                file = f"./cards/en-EN/{filename}"
+                if os.path.exists(f"./cards/{lang}/{filename}"):
+                    file = f"./cards/{lang}/{filename}"
+                else:
+                    file = f"./cards/en-EN/{filename}"
 
             if k > 200000 and v['q'] > 0:
                 crypt[card['Name']] = {

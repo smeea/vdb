@@ -834,6 +834,7 @@ def anonymousImportDeck():
     except Exception:
         print('deck import: ', request.json['deckText'])
 
+
 @app.route('/api/decks/export', methods=['POST'])
 def deckExportRoute():
     try:
@@ -903,7 +904,9 @@ def deckExportRoute():
 
 @app.route('/api/decks/proxy', methods=['POST'])
 def deckProxyRoute():
-    pdf = deckProxy(request.json['cards'])
+    cards = request.json['cards']
+    lang = request.json['lang'] if 'lang' in request.json else 'en-EN'
+    pdf = deckProxy(cards, lang)
     if pdf:
         return pdf
     else:
