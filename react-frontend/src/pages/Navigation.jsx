@@ -16,16 +16,8 @@ import twdDefaults from 'components/forms_data/defaultsTwdForm.json';
 import { sanitizeFormState } from 'utils';
 
 function Navigation(props) {
-  const {
-    // cryptFormState,
-    // libraryFormState,
-    // twdFormState,
-    inventoryMode,
-    toggleInventoryMode,
-    isMobile,
-    username,
-    activeDeck,
-  } = useApp();
+  const { inventoryMode, toggleInventoryMode, isMobile, username, activeDeck } =
+    useApp();
 
   const { setCryptFormState, twdFormState, cryptFormState, libraryFormState } =
     useSearchForms();
@@ -38,23 +30,23 @@ function Navigation(props) {
   let libraryUrl = '/library';
   let decksUrl = '/decks';
 
-  // if (!isMobile) {
-  //   if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
-  //     const input = sanitizeFormState('crypt', cryptFormState);
-  //     cryptUrl = `/crypt?q=${encodeURIComponent(JSON.stringify(input))}`;
-  //   }
-  //   if (JSON.stringify(libraryFormState) != JSON.stringify(libraryDefaults)) {
-  //     const input = sanitizeFormState('library', libraryFormState);
-  //     libraryUrl = `/library?q=${encodeURIComponent(JSON.stringify(input))}`;
-  //   }
-  //   if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
-  //     const input = sanitizeFormState('twd', twdFormState);
-  //     twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
-  //   }
-  // }
-  // if (activeDeck.deckid) {
-  //   decksUrl = `/decks?id=${activeDeck.deckid}`;
-  // }
+  if (!isMobile) {
+    if (JSON.stringify(cryptFormState) != JSON.stringify(cryptDefaults)) {
+      const input = sanitizeFormState('crypt', cryptFormState);
+      cryptUrl = `/crypt?q=${encodeURIComponent(JSON.stringify(input))}`;
+    }
+    if (JSON.stringify(libraryFormState) != JSON.stringify(libraryDefaults)) {
+      const input = sanitizeFormState('library', libraryFormState);
+      libraryUrl = `/library?q=${encodeURIComponent(JSON.stringify(input))}`;
+    }
+    if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
+      const input = sanitizeFormState('twd', twdFormState);
+      twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
+    }
+  }
+  if (activeDeck.deckid) {
+    decksUrl = `/decks?id=${activeDeck.deckid}`;
+  }
 
   return (
     <Navbar
