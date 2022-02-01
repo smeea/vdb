@@ -3,7 +3,6 @@
 # FEATURES
 - Export all in xlsx and csv
 - Add prefers-color-scheme
-- Merge accountless import button with main import button
 
 # BIG FEATURES
 - Search for similar TWD decks

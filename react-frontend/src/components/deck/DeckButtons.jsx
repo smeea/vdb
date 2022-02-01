@@ -5,7 +5,6 @@ import {
   DeckDelete,
   DeckCopyUrl,
   DeckImport,
-  DeckImportAnonymous,
   DeckExport,
   DeckProxy,
   DeckMissing,
@@ -23,13 +22,7 @@ function DeckButtons(props) {
 
   return (
     <Stack gap={1}>
-      {username && (
-        <DeckImport
-          setShowInfo={props.setShowInfo}
-          setShowButtons={props.setShowButtons}
-        />
-      )}
-      <DeckImportAnonymous
+      <DeckImport
         setShowInfo={props.setShowInfo}
         setShowButtons={props.setShowButtons}
       />

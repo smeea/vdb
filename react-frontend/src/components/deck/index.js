@@ -26,7 +26,6 @@ export { default as DeckTags } from './DeckTags.jsx';
 export { default as DeckChangeAuthor } from './DeckChangeAuthor.jsx';
 export { default as DeckDelete } from './DeckDelete.jsx';
 export { default as DeckImport } from './DeckImport.jsx';
-export { default as DeckImportAnonymous } from './DeckImportAnonymous.jsx';
 export { default as DeckProxyCrypt } from './DeckProxyCrypt.jsx';
 export { default as DeckTotal } from './DeckTotal.jsx';
 export { default as DeckChangeBranchName } from './DeckChangeBranchName.jsx';
