@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
-import { Button, Spinner, Dropdown } from 'react-bootstrap';
+import {
+  Button,
+  Spinner,
+  ButtonGroup,
+  Dropdown,
+  DropdownButton,
+} from 'react-bootstrap';
 import Printer from 'assets/images/icons/printer.svg';
 import { DeckProxySelectModal, BlockButton } from 'components';
 import { useApp } from 'context';
@@ -11,7 +17,7 @@ function DeckProxy(props) {
   const [deckError, setDeckError] = useState(false);
   const [showSelectModal, setShowSelectModal] = useState(undefined);
 
-  const ProxyButtonOptions = (
+  const ButtonOptions = (
     <>
       <Dropdown.Item href="" onClick={() => proxyDeck()}>
         Full Deck
@@ -114,23 +120,24 @@ function DeckProxy(props) {
           </div>
         </Button>
       ) : (
-        <Dropdown title="Create PDF Proxy" className="d-inline">
-          <Dropdown.Toggle
-            as={props.noText ? Button : BlockButton}
-            variant={props.noText ? 'primary' : 'secondary'}
-          >
+        <DropdownButton
+          as={ButtonGroup}
+          variant={props.noText ? 'primary' : 'secondary'}
+          title={
             <div className="d-flex justify-content-center align-items-center">
               <div className={props.noText ? null : 'pe-2'}>
-                <Printer />
+                {spinnerState ? (
+                  <Spinner animation="border" size="sm" />
+                ) : (
+                  <Printer />
+                )}
               </div>
               {!props.noText && 'PDF Proxy'}
             </div>
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            {spinnerState && <Spinner animation="border" size="sm" />}
-            {ProxyButtonOptions}
-          </Dropdown.Menu>
-        </Dropdown>
+          }
+        >
+          {ButtonOptions}
+        </DropdownButton>
       )}
       {deckError && (
         <div className="d-flex justify-content-start">

@@ -1,6 +1,11 @@
 import React, { useState, useRef } from 'react';
 import FileSaver from 'file-saver';
-import { Spinner, Dropdown } from 'react-bootstrap';
+import {
+  Spinner,
+  Dropdown,
+  DropdownButton,
+  ButtonGroup,
+} from 'react-bootstrap';
 import Download from 'assets/images/icons/download.svg';
 import { BlockButton, ErrorOverlay } from 'components';
 import { useApp } from 'context';
@@ -12,7 +17,7 @@ function InventoryExport(props) {
   const [error, setError] = useState(false);
   const ref = useRef(null);
 
-  const ExportButtonOptions = (
+  const ButtonOptions = (
     <>
       <Dropdown.Item href="" onClick={() => saveDeck('text')}>
         Save as file - Text
@@ -134,20 +139,24 @@ function InventoryExport(props) {
 
   return (
     <>
-      <Dropdown>
-        <Dropdown.Toggle as={BlockButton} variant="secondary">
+      <DropdownButton
+        as={ButtonGroup}
+        variant="secondary"
+        title={
           <div className="d-flex justify-content-center align-items-center">
             <div className="pe-2">
-              <Download />
+              {spinnerState ? (
+                <Spinner animation="border" size="sm" />
+              ) : (
+                <Download />
+              )}
             </div>
             Save Inventory
           </div>
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          {spinnerState && <Spinner animation="border" size="sm" />}
-          {ExportButtonOptions}
-        </Dropdown.Menu>
-      </Dropdown>
+        }
+      >
+        {ButtonOptions}
+      </DropdownButton>
       <ErrorOverlay show={error} target={ref.current} placement="left">
         ERROR
       </ErrorOverlay>

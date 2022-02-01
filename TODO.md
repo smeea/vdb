@@ -1,5 +1,4 @@
 # FIX
-- Fix dropdown button (name and drop direction) for Export
 
 # FEATURES
 - Export all in xlsx and csv

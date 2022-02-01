@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Dropdown } from 'react-bootstrap';
+import { Button, ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import ShareFill from 'assets/images/icons/share-fill.svg';
 import { BlockButton } from 'components';
 import { useApp } from 'context';
@@ -87,7 +87,7 @@ function DeckCopyUrl(props) {
       });
   };
 
-  const Options = (
+  const ButtonOptions = (
     <>
       <Dropdown.Item
         onClick={handleStandardButton}
@@ -115,20 +115,20 @@ function DeckCopyUrl(props) {
   return (
     <>
       {props.deck.deckid.length == 32 ? (
-        <Dropdown title="Copy Deck URL" className="d-inline">
-          <Dropdown.Toggle
-            as={props.noText ? Button : BlockButton}
-            variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
-          >
+        <DropdownButton
+          as={ButtonGroup}
+          variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
+          title={
             <div className="d-flex justify-content-center align-items-center">
               <div className={props.noText ? null : 'pe-2'}>
                 <ShareFill />
               </div>
               {!props.noText && (state ? 'Copied' : 'Copy URL')}
             </div>
-          </Dropdown.Toggle>
-          <Dropdown.Menu>{Options}</Dropdown.Menu>
-        </Dropdown>
+          }
+        >
+          {ButtonOptions}
+        </DropdownButton>
       ) : (
         <Button
           variant={state ? 'success' : 'secondary'}

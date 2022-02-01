@@ -1,13 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { Dropdown } from 'react-bootstrap';
+import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
 import Upload from 'assets/images/icons/upload.svg';
-import {
-  BlockButton,
-  ErrorOverlay,
-  DeckImportText,
-  DeckImportAmaranth,
-} from 'components';
+import { ErrorOverlay, DeckImportText, DeckImportAmaranth } from 'components';
 import { useApp } from 'context';
 
 function DeckImport(props) {
@@ -200,7 +195,7 @@ function DeckImport(props) {
     isMobile && props.setShowButtons(false);
   };
 
-  const ImportButtonOptions = (
+  const ButtonOptions = (
     <>
       {!props.inInventory && (
         <>
@@ -238,8 +233,10 @@ function DeckImport(props) {
 
   return (
     <>
-      <Dropdown>
-        <Dropdown.Toggle as={BlockButton} variant="secondary">
+      <DropdownButton
+        as={ButtonGroup}
+        variant="secondary"
+        title={
           <div className="d-flex justify-content-center align-items-center">
             {props.inInventory ? (
               <>
@@ -257,9 +254,10 @@ function DeckImport(props) {
               </>
             )}
           </div>
-        </Dropdown.Toggle>
-        <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
-      </Dropdown>
+        }
+      >
+        {ButtonOptions}
+      </DropdownButton>
       <DeckImportText
         handleClose={handleCloseImportModal}
         getDecks={getDecks}

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Dropdown } from 'react-bootstrap';
+import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import CloudArrowUpFill from 'assets/images/icons/cloud-plus-fill.svg';
 import { BlockButton, ErrorOverlay, DeckImportText } from 'components';
 import { useApp } from 'context';
@@ -146,7 +146,7 @@ function DeckImportAnonymous(props) {
     };
   };
 
-  const ImportButtonOptions = (
+  const ButtonOptions = (
     <>
       <Dropdown.Item onClick={() => handleFileInputClick('txt')}>
         Import from File - Amaranth, Lackey.TXT, TWD
@@ -162,8 +162,10 @@ function DeckImportAnonymous(props) {
 
   return (
     <>
-      <Dropdown>
-        <Dropdown.Toggle as={BlockButton} variant="secondary">
+      <DropdownButton
+        as={ButtonGroup}
+        variant="secondary"
+        title={
           <div
             title="Import deck without attaching to account (you will not be able to delete/edit it)"
             className="d-flex justify-content-center align-items-center"
@@ -173,9 +175,10 @@ function DeckImportAnonymous(props) {
             </div>
             Import w/o Account
           </div>
-        </Dropdown.Toggle>
-        <Dropdown.Menu>{ImportButtonOptions}</Dropdown.Menu>
-      </Dropdown>
+        }
+      >
+        {ButtonOptions}
+      </DropdownButton>
       <DeckImportText
         anonymous={true}
         handleClose={handleCloseImportModal}
