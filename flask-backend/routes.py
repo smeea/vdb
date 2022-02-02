@@ -6,8 +6,7 @@ import json
 from random import random
 
 from searchTwd import searchTwd
-from searchTwdComponents import sanitizeTwd
-from searchTwdComponents import matchInventory
+from searchTwdComponents import sanitizeTwd, matchInventory
 from searchCrypt import searchCrypt
 from searchLibrary import searchLibrary
 from deckExport import deckExport
@@ -17,11 +16,8 @@ from deckProxy import deckProxy
 from deckRecommendation import deckRecommendation
 from inventoryExport import inventoryExport
 from inventoryImport import inventoryImport
-from api import app
-from api import login
-from api import db
-from models import User
-from models import Deck
+from api import app, db, login
+from models import User, Deck
 
 
 @login.unauthorized_handler
