@@ -375,7 +375,7 @@ function DeckImport(props) {
                 <div className="pe-2">
                   <Upload />
                 </div>
-                Import from File
+                Import Inventory
               </>
             ) : (
               <>

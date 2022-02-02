@@ -1,4 +1,5 @@
 # FIX
+- Reference to Los Angeles in card text (Jeremy)
 
 # FEATURES
 - Export all in xlsx and csv

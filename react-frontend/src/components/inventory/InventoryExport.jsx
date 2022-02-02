@@ -151,7 +151,7 @@ function InventoryExport(props) {
                 <Download />
               )}
             </div>
-            Save Inventory
+            Export Inventory
           </div>
         }
       >

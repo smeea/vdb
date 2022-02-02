@@ -19,7 +19,7 @@ function DeckMissing(props) {
           <div className="pe-2">
             <Cart4 />
           </div>
-          {props.inDiff ? 'Missing in Source' : 'Missing in Inventory'}
+          {props.inDiff ? 'Differences' : 'Missing Cards'}
         </div>
       </Button>
       {showModal && (

@@ -30,7 +30,7 @@ function DiffButtons(props) {
       )}
       {props.deck && (
         <DeckMissing
-          name={props.deck.name}
+          deck={props.deck}
           missingCrypt={props.missingCrypt}
           missingLibrary={props.missingLibrary}
           setShowButtons={props.setShowButtons}
