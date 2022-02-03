@@ -2,7 +2,6 @@
 
 # FEATURES
 - Export all in xlsx and csv
-- Add prefers-color-scheme
 
 # BIG FEATURES
 - Search for similar TWD decks

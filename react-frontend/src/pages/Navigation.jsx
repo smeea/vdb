@@ -6,6 +6,7 @@ import PersonFill from 'assets/images/icons/person-fill.svg';
 import InfoCircleFill from 'assets/images/icons/info-circle-fill.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
+import CloudSunFill from 'assets/images/icons/cloud-sun-fill.svg';
 import SunFill from 'assets/images/icons/sun-fill.svg';
 import MoonFill from 'assets/images/icons/moon-fill.svg';
 import { useApp, useTheme, useSearchForms } from 'context';
@@ -22,7 +23,7 @@ function Navigation(props) {
   const { setCryptFormState, twdFormState, cryptFormState, libraryFormState } =
     useSearchForms();
 
-  const { isDarkTheme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
 
   let twdUrl = '/twd';
@@ -61,8 +62,17 @@ function Navigation(props) {
           ) : (
             <>
               <LanguageSelect />
-              <div className="white-font px-3" onClick={() => toggleTheme()}>
-                {isDarkTheme ? <MoonFill /> : <SunFill />}
+              <div
+                className="d-flex small white-font px-3"
+                onClick={() => toggleTheme()}
+              >
+                {theme === 'dark' && <MoonFill />}
+                {theme === 'light' && <SunFill />}
+                {theme !== 'dark' && theme !== 'light' && (
+                  <>
+                    <CloudSunFill />A
+                  </>
+                )}
               </div>
             </>
           )}

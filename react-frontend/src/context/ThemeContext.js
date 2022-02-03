@@ -6,11 +6,11 @@ import {
 } from 'services/storageServices.js';
 
 const ThemeContext = React.createContext({
-  isDarkTheme: false,
+  theme: 'auto',
   toggleTheme: () => {},
 });
 
-const DARK_THEME = 'darkTheme';
+const THEME = 'theme';
 
 export default ThemeContext;
 
@@ -22,27 +22,49 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = (props) => {
-  const [isDarkTheme, setDarkTheme] = useState(getLocalStorage(DARK_THEME));
+  const [theme, setTheme] = useState(getLocalStorage(THEME));
 
   useLayoutEffect(() => {
-    initFromStorage(DARK_THEME, false, setDarkTheme);
-    applyTheme(isDarkTheme ? darkTheme : lightTheme);
-  }, [isDarkTheme]);
+    initFromStorage(THEME, 'auto', setTheme);
+    const getTheme = () => {
+      switch (theme) {
+        case 'light':
+          return light;
+        case 'dark':
+          return dark;
+        default:
+          return [];
+      }
+    };
+    const t = getTheme();
+    applyTheme(t);
+  }, [theme]);
 
-  const applyTheme = (theme) => {
+  const applyTheme = (t) => {
     const root = document.getElementsByTagName('html')[0];
-    root.style.cssText = theme.join(';');
+    root.style.cssText = t.join(';');
   };
 
   const toggleTheme = () => {
-    setDarkTheme(!isDarkTheme);
-    setLocalStorage(DARK_THEME, !isDarkTheme);
+    const getNextTheme = () => {
+      switch (theme) {
+        case 'dark':
+          return ['light', light];
+        case 'light':
+          return ['auto', []];
+        default:
+          return ['dark', dark];
+      }
+    };
+    const nextTheme = getNextTheme();
+    setTheme(() => nextTheme[1]);
+    setLocalStorage(THEME, nextTheme[0]);
   };
 
   return (
     <ThemeContext.Provider
       value={{
-        isDarkTheme,
+        theme,
         toggleTheme,
       }}
     >
@@ -51,7 +73,7 @@ export const ThemeProvider = (props) => {
   );
 };
 
-const lightTheme = [
+const light = [
   '--fg-primary: #202530',
   '--fg-secondary: #6060cc',
   '--fg-button: #6060b0',
@@ -85,7 +107,7 @@ const lightTheme = [
   '--logo-brightness: 100%',
 ];
 
-const darkTheme = [
+const dark = [
   '--fg-primary: #e0e0e0',
   '--fg-secondary: #80b0ff',
   '--fg-button: #c0c0e0',

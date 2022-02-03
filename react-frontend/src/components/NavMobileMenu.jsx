@@ -5,6 +5,7 @@ import PersonFill from 'assets/images/icons/person-fill.svg';
 import InfoCircleFill from 'assets/images/icons/info-circle-fill.svg';
 import ToggleOn from 'assets/images/icons/toggle-on.svg';
 import ToggleOff from 'assets/images/icons/toggle-off.svg';
+import CloudSunFill from 'assets/images/icons/cloud-sun-fill.svg';
 import SunFill from 'assets/images/icons/sun-fill.svg';
 import MoonFill from 'assets/images/icons/moon-fill.svg';
 import List from 'assets/images/icons/list.svg';
@@ -13,7 +14,7 @@ import { useApp, useTheme } from 'context';
 
 const NavMobileMenu = (props) => {
   const { inventoryMode, toggleInventoryMode, username } = useApp();
-  const { isDarkTheme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
 
@@ -72,8 +73,19 @@ const NavMobileMenu = (props) => {
                     setShowMenu(false);
                   }}
                 >
-                  {isDarkTheme ? <MoonFill /> : <SunFill />}
-                  <div className="ps-2">Switch Theme</div>
+                  <div
+                    className="d-flex align-items-center"
+                    onClick={() => toggleTheme()}
+                  >
+                    {theme === 'dark' && <MoonFill />}
+                    {theme === 'light' && <SunFill />}
+                    {theme !== 'dark' && theme !== 'light' && <CloudSunFill />}
+                    <div className="ps-2">
+                      {theme === 'dark' && 'Dark Theme'}
+                      {theme === 'light' && 'Light Theme'}
+                      {theme !== 'dark' && theme !== 'light' && 'System Theme'}
+                    </div>
+                  </div>
                 </div>
                 <div
                   className="d-flex align-items-center px-2 py-1"
