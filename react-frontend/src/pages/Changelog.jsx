@@ -11,6 +11,25 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-02-04:</h6>
+            <ul>
+              <li>
+                Add localized proxy (only for cards with translated images)
+              </li>
+              <li>
+                Add 'auto' color theme option which will follow system
+                preferences
+              </li>
+              <li>
+                Merged 'import without account' options into main import/new
+                button.
+              </li>
+              <li>
+                Fix buttons with dropdown menu not to go partially off screen
+              </li>
+              <li>Small other fixes</li>
+            </ul>
+
             <h6>2022-01-29:</h6>
             <ul>
               <li>

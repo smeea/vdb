@@ -70,29 +70,21 @@ function About(props) {
                 : 2022-01-12
               </p>
 
-              <h6>Last update [2022-01-29]:</h6>
+              <h6>Last update [2022-02-04]:</h6>
               <ul>
                 <li>
-                  Missing cards in Inventory now respect applied filters
-                  (clan/discipline/card type), including export from Missing
-                  card window
+                  Add localized proxy (only for cards with translated images)
                 </li>
                 <li>
-                  Add popup with detailed Set info on click in card view on
-                  mobile (same as on mouse hover on desktop)
+                  Add 'auto' color theme option which will follow system
+                  preferences
                 </li>
                 <li>
-                  Fixed Inventory Mode not properly coloring quantity of cards
-                  in not-your (precons, twd, other urls) decks. Now should paint
-                  in yellow cards you have enough in total, but need to use
-                  cards from Fixed decks, red where you dont have enough cards
-                  at all, and no coloring where everything is OK (cards are free
-                  or in Flexible decks)
+                  Merged 'import without account' options into main import/new
+                  button
                 </li>
-                <li>Fix twd search by cards (was problem with 0&lt; logic)</li>
                 <li>
-                  Fix add crypt card button from recommended cards not visible
-                  sometimes
+                  Fix buttons with dropdown menu not to go partially off screen
                 </li>
                 <li>Small other fixes</li>
               </ul>
