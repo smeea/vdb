@@ -4,7 +4,7 @@ import virtuesList from 'components/deck/forms_data/virtuesList.json';
 
 function CryptSearchFormVirtues(props) {
   const virtuesforms = virtuesList.map((i, index) => {
-    const virtueState = 'virtue-container mb-2 state' + props.value[i];
+    const virtueState = 'virtue-container state' + props.value[i];
 
     return (
       <div key={index} className={virtueState}>
@@ -25,7 +25,7 @@ function CryptSearchFormVirtues(props) {
     );
   });
 
-  return <div className="input-group">{virtuesforms}</div>;
+  return <div className="input-group pb-2">{virtuesforms}</div>;
 }
 
 export default CryptSearchFormVirtues;

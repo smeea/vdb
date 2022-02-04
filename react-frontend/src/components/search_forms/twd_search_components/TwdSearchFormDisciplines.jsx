@@ -5,7 +5,7 @@ import virtuesList from 'components/deck/forms_data/virtuesList.json';
 
 function TwdSearchFormDisciplines(props) {
   const disciplinesForm = disciplinesList.map((i, index) => {
-    const disciplineState = `discipline-container mb-2 state${
+    const disciplineState = `discipline-container state${
       props.disciplines[i] ? 1 : 0
     }`;
     return (
@@ -31,9 +31,7 @@ function TwdSearchFormDisciplines(props) {
   });
 
   const virtuesForm = virtuesList.map((i, index) => {
-    const virtueState = `virtue-container mb-2 state${
-      props.disciplines[i] ? 1 : 0
-    }`;
+    const virtueState = `virtue-container state${props.disciplines[i] ? 1 : 0}`;
     return (
       <div key={index} className={virtueState}>
         <label
@@ -58,7 +56,7 @@ function TwdSearchFormDisciplines(props) {
       <div className="input-group justify-content-start py-1">
         {disciplinesForm}
       </div>
-      <div className="input-group">{virtuesForm}</div>
+      <div className="input-group pb-2">{virtuesForm}</div>
     </>
   );
 }
