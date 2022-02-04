@@ -347,18 +347,18 @@ function TwdSearchForm(props) {
           />
         </Col>
       </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
+      <Row className="pb-1 px-1">
+        <div className="d-flex justify-content-end">
           <Form.Check
             name="traits"
             value="star"
             type="checkbox"
             id="traits-star"
-            label="With Star Vampire"
+            label="With Star"
             checked={twdFormState.traits.star}
             onChange={(e) => handleMultiChange(e)}
           />
-        </Col>
+        </div>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <div className="bold blue px-0">Library Cards:</div>
@@ -394,18 +394,18 @@ function TwdSearchForm(props) {
           />
         </Col>
       </Row>
-      <Row className="py-1 ps-1 mx-0 align-items-center">
-        <Col xs={{ span: 9, offset: 3 }} className="d-inline px-0">
+      <Row className="pb-1 px-1">
+        <div className="d-flex justify-content-end">
           <Form.Check
             name="traits"
             value="monoclan"
             type="checkbox"
             id="traits-monoclan"
-            label="Mono Clan (any if not selected)"
+            label="Mono Clan"
             checked={twdFormState.traits.monoclan}
             onChange={(e) => handleMultiChange(e)}
           />
-        </Col>
+        </div>
       </Row>
       <Row className="py-1 ps-1 mx-0 align-items-center">
         <Col xs={5} className="d-flex px-0">
