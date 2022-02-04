@@ -7,7 +7,7 @@ function TwdSearchFormCapacity(props) {
   const CryptCapacityButtons = capacityBrackets.map((i, index) => {
     return (
       <Button
-        className="group-form px-3"
+        className="group-form nowrap px-3"
         key={index}
         value={i}
         name="capacity"

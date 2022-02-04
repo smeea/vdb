@@ -7,7 +7,7 @@ function TwdSearchFormLibraryTotal(props) {
   const LibraryTotalButtons = totalBrackets.map((i, index) => {
     return (
       <Button
-        className="group-form"
+        className="group-form nowrap"
         key={index}
         value={i}
         name="libraryTotal"
