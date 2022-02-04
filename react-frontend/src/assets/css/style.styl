@@ -1,7 +1,6 @@
 :root
   @media (prefers-color-scheme: light)
     --fg-primary: #202530
-    --fg-primary: #202530
     --fg-secondary: #6060cc
     --fg-button: #6060b0
     --fg-name: #3060b0
@@ -18,15 +17,14 @@
     --bg-button-error: #f06060
     --bg-button-error-hover: #ff8080
     --bg-button-secondary: #ffffff
-    --bg-menu-focused: #c0c0ff
-    --bg-menu-selected: #7070ff
+    --bg-menu-focused: #8085ff
+    --bg-menu-selected: #c0c5ff
     --bg-checkbox: #ffffff
     --bg-checkbox-selected: #7070ff
-    --border-primary: #757590
+    --border-primary: #80b0ff
     --border-secondary: #e0e5ff
     --border-third: #a0b0ff
-    --border-button: #8090ff
-    --border-forms: #a0b0ff
+    --border-button: #a0b0ff
     --border-nest-modal: #707085
     --disciplines-shadow: #ffffff
     --clan-icon-brightness: 100%
@@ -51,15 +49,14 @@
     --bg-button-error: #901000
     --bg-button-error-hover: #b03525
     --bg-button-secondary: #303040
-    --bg-menu-focused: #353545
-    --bg-menu-selected: #505060
+    --bg-menu-focused: #505060
+    --bg-menu-selected: #353545
     --bg-checkbox: #e0e0e0
     --bg-checkbox-selected: #6060a0
     --border-primary: #606070
     --border-secondary: #353540
     --border-third: #303040
     --border-button: #404050
-    --border-forms: #404050
     --border-nest-modal: #404050
     --disciplines-shadow: #b0b0b0
     --clan-icon-brightness: 65%
@@ -313,7 +310,7 @@ button.btn-danger:hover
     color: var(--fg-primary) !important
   &__control
     background: var(--bg-primary) !important
-    border-color: var(--border-forms) !important
+    border-color: var(--border-button) !important
   &__value-container
     background: var(--bg-primary)
   &__dropdown-indicator
@@ -326,9 +323,9 @@ button.btn-danger:hover
   &__indicators
     background: var(--bg-primary)
   &__indicator-separator
-    background-color: var(--border-forms) !important
+    background-color: var(--border-button) !important
   &__dropdown-indicator
-    color: var(--border-forms) !important
+    color: var(--border-button) !important
   &__option--is-focused
     background: var(--bg-menu-focused) !important
   &__option--is-selected
@@ -360,15 +357,15 @@ button.btn-danger:hover
   &__multi-value__label
     color: var(--fg-primary) !important
     border-radius: 4px 0px 0px 4px !important
-    border-top: 1px solid var(--border-forms)
-    border-bottom: 1px solid var(--border-forms)
-    border-left: 1px solid var(--border-forms)
+    border-top: 1px solid var(--border-button)
+    border-bottom: 1px solid var(--border-button)
+    border-left: 1px solid var(--border-button)
   &__multi-value__remove
     background: var(--bg-button) !important
     border-radius: 0px 4px 4px 0px !important
-    border-top: 1px solid var(--border-forms)
-    border-bottom: 1px solid var(--border-forms)
-    border-right: 1px solid var(--border-forms)
+    border-top: 1px solid var(--border-button)
+    border-bottom: 1px solid var(--border-button)
+    border-right: 1px solid var(--border-button)
   &__multi-value__remove:hover
     color: var(--fg-button) !important
     background: var(--bg-button-hover) !important
@@ -392,7 +389,6 @@ button.btn-danger:hover
 .form-placeholder
   padding-left: 6px
   font-size: small
-  color: var(--border-primary)
 
 .dropdown-menu
   background: var(--bg-button)
@@ -928,8 +924,9 @@ button.quantity-wide
   height: 33px
   padding: 0px
 
-.quantity-add button.in
-  background: gray
+.quantity-add button.in,
+button.inventory-in
+  background: var(--border-primary)
   color: white
 
 button.add-form
@@ -944,10 +941,6 @@ button.logic-form
   height: 18px
   padding: 0px
   font-size: x-small
-
-button.inventory-in
-  background: gray
-  color: white
 
 div.in-inventory
   width: 28px

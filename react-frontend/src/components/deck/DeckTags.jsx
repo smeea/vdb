@@ -24,7 +24,9 @@ function DeckTags(props) {
     }
   }, [props.deck]);
 
-  const placeholder = <div className="form-placeholder">Click to add tags</div>;
+  const placeholder = (
+    <div className="form-placeholder gray">Click to add tags</div>
+  );
   const noOptionsMessage = () => 'Enter new tag';
 
   let classNamePrefix = 'react-select-tags';
