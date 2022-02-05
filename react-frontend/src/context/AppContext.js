@@ -88,30 +88,23 @@ export const AppProvider = (props) => {
       .then((response) => response.json())
       .then((data) => {
         if (!data.username) {
-          setInventoryMode(false);
+          initializeUnauthenticatedUser();
+        } else {
+          initializeUserData(data);
         }
-        setUsername(data.username);
-        setPublicName(data.public_name);
-        setEmail(data.email);
       });
   };
 
-  // Trigger the Load user info
-  useEffect(() => {
-    if (username) {
-      initializeUserData();
-    } else {
-      initializeUnauthenticatedUser();
-    }
-  }, [username]);
-
-  const initializeUserData = () => {
-    // Initizalize User Inventory
+  const initializeUserData = (data) => {
+    setUsername(data.username);
+    setPublicName(data.public_name);
+    setEmail(data.email);
     getInventory();
     getDecks();
   };
 
   const initializeUnauthenticatedUser = () => {
+    setInventoryMode(false);
     setInventoryCrypt({});
     setInventoryLibrary({});
     setDecks(undefined);
