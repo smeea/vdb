@@ -1,6 +1,5 @@
 import React from 'react';
 import { ResultLibraryTypeImage, ResultLibrarySortForm } from 'components';
-import { useApp } from 'context';
 
 function ResultLibraryTotal({ cards, handleChange }) {
   const byTypes = {};

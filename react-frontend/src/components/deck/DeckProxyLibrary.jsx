@@ -10,7 +10,7 @@ import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DeckProxyLibrary = (props) => {
-  const { cards, proxySelected, inAdvSelect, inDeckTab } = props;
+  const { cards, proxySelected, inAdvSelect } = props;
   const { handleSetSelector, handleProxyCounter, handleProxySelector } = props;
   const { setShowFloatingButtons } = props;
 

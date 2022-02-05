@@ -23,7 +23,6 @@ function Cards({ lastDeckId }) {
     toggleShowImage,
     isMobile,
     activeDeck,
-    deckRouter,
   } = useApp();
 
   const [cardId, setCardId] = useState(undefined);

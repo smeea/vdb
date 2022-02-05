@@ -7,7 +7,7 @@ import {
   ButtonGroup,
 } from 'react-bootstrap';
 import Download from 'assets/images/icons/download.svg';
-import { BlockButton, ErrorOverlay } from 'components';
+import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
 function InventoryExport(props) {

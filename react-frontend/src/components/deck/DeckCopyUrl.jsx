@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import ShareFill from 'assets/images/icons/share-fill.svg';
-import { BlockButton } from 'components';
 import { useApp } from 'context';
 
 function DeckCopyUrl(props) {

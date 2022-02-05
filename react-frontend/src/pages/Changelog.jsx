@@ -17,12 +17,12 @@ function Changelog(props) {
                 Add localized proxy (only for cards with translated images)
               </li>
               <li>
-                Add 'auto' color theme option which will follow system
+                Add &apos;auto&apos; color theme option which will follow system
                 preferences
               </li>
               <li>
-                Merged 'import without account' options into main import/new
-                button.
+                Merged &apos;import without account&apos; options into main
+                import/new button
               </li>
               <li>
                 Fix buttons with dropdown menu not to go partially off screen

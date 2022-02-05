@@ -8,7 +8,7 @@ import {
   DropdownButton,
 } from 'react-bootstrap';
 import Printer from 'assets/images/icons/printer.svg';
-import { DeckProxySelectModal, BlockButton } from 'components';
+import { DeckProxySelectModal } from 'components';
 import { useApp } from 'context';
 
 function DeckProxy(props) {
