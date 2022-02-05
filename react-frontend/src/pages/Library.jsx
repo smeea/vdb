@@ -33,10 +33,10 @@ function Library({ lastDeckId }) {
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
-      (!isMobile && (!addMode || !libraryResults)) ||
-      (showLibrarySearch && isMobile)
+      (!isDesktop && !isMobile && !(addMode && libraryResults)) ||
+      (isMobile && showLibrarySearch)
     );
-  }, [isMobile, isDesktop, addMode, showLibrarySearch]);
+  }, [isMobile, isDesktop, addMode, showLibrarySearch, libraryResults]);
 
   const showToggleAddMode = useMemo(() => {
     return deckId && libraryResults && !isMobile && !isDesktop;
@@ -50,7 +50,7 @@ function Library({ lastDeckId }) {
         {!isMobile && (
           <Col
             md={!showSearchForm ? 5 : 1}
-            lg={addMode ? 6 : 1}
+            lg={!showSearchForm ? 6 : 1}
             xl={deckId && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >

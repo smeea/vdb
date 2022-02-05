@@ -33,10 +33,10 @@ function Crypt({ lastDeckId }) {
   const showSearchForm = useMemo(() => {
     return (
       isDesktop ||
-      (!isMobile && (!addMode || !cryptResults)) ||
-      (showCryptSearch && isMobile)
+      (!isDesktop && !isMobile && !(addMode && cryptResults)) ||
+      (isMobile && showCryptSearch)
     );
-  }, [isMobile, isDesktop, addMode, showCryptSearch]);
+  }, [isMobile, isDesktop, addMode, showCryptSearch, cryptResults]);
 
   const showToggleAddMode = useMemo(() => {
     return deckId && cryptResults && !isMobile && !isDesktop;
@@ -50,7 +50,7 @@ function Crypt({ lastDeckId }) {
         {!isMobile && (
           <Col
             md={!showSearchForm ? 5 : 1}
-            lg={addMode ? 6 : 1}
+            lg={!showSearchForm ? 6 : 1}
             xl={deckId && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
