@@ -37,10 +37,12 @@ function DeckImport(props) {
 
   const handleCloseImportModal = () => {
     setShowTextModal(false);
+    setShowAnonymousTextModal(false);
     setShowAmaranthModal(false);
     isMobile && props.setShowButtons(false);
   };
   const handleOpenTextModal = () => setShowTextModal(true);
+  const handleOpenAnonymousTextModal = () => setShowAnonymousTextModal(true);
   const handleOpenAmaranthModal = () => setShowAmaranthModal(true);
 
   const createNewDeck = () => {
@@ -355,7 +357,7 @@ function DeckImport(props) {
           <Dropdown.Item onClick={() => handleFileInputClick('dek')}>
             Import w/o Account from File - Lackey.DEK
           </Dropdown.Item>
-          <Dropdown.Item onClick={handleOpenTextModal}>
+          <Dropdown.Item onClick={handleOpenAnonymousTextModal}>
             Import w/o Account from Text - Amaranth, Lackey.TXT, TWD
           </Dropdown.Item>
         </>
@@ -395,16 +397,16 @@ function DeckImport(props) {
         getDecks={getDecks}
         show={showTextModal}
       />
-      <DeckImportAmaranth
-        handleClose={handleCloseImportModal}
-        getDecks={getDecks}
-        show={showAmaranthModal}
-      />
       <DeckImportText
         anonymous={true}
         handleClose={handleCloseImportModal}
         getDecks={getDecks}
-        show={showTextModal}
+        show={showAnonymousTextModal}
+      />
+      <DeckImportAmaranth
+        handleClose={handleCloseImportModal}
+        getDecks={getDecks}
+        show={showAmaranthModal}
       />
       <input
         ref={fileInputTxt}
