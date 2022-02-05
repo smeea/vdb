@@ -288,8 +288,10 @@ function Decks(props) {
   useEffect(() => {
     if (activeDeck.src == 'my' || activeDeck.src == 'precons') {
       setSelectFrom(activeDeck.src);
-    } else {
+    } else if (recentDecks.length) {
       setSelectFrom('recent');
+    } else {
+      setSelectFrom('precons');
     }
 
     if (decks && decks[activeDeck.deckid] && activeDeck.src != 'my') {
