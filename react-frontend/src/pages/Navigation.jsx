@@ -87,13 +87,6 @@ function Navigation(props) {
                 className="d-flex align-items-center px-3"
                 onClick={() => {
                   toggleInventoryMode();
-                  setCryptFormState((prevState) => ({
-                    ...prevState,
-                    text: {
-                      ...prevState['text'],
-                      value: 'kek',
-                    },
-                  }));
                 }}
               >
                 <div
