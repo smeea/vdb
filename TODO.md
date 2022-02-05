@@ -1,5 +1,4 @@
 # FIX
-- Fix anonymous import from file
 
 # FEATURES
 - Export all in xlsx and csv
