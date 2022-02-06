@@ -1,4 +1,4 @@
-flask-backend/__pycache__/
+flask-backend/**/__pycache__/
 flask-backend/migrations/
 flask-backend/venv/
 flask-backend/app.db

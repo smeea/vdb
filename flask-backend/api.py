@@ -11,12 +11,12 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
-import routes
+from routes import account, decks, inventory, search, twd, pda
 
 # Everything below only required for `flask shell` to play with database
-# from models import User, Deck
-# from api import db
+from models import User, Deck, PublicDeck
+from api import db
 
-# @app.shell_context_processor
-# def make_shell_context():
-#     return {'db': db, 'User': User, 'Deck': Deck}
+@app.shell_context_processor
+def make_shell_context():
+    return {'db': db, 'User': User, 'Deck': Deck}
