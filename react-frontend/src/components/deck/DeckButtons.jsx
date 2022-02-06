@@ -13,6 +13,7 @@ import {
   DeckDiffButton,
   DeckBranchCreate,
   DeckBranchDelete,
+  DeckTogglePublic,
 } from 'components';
 
 import { useApp } from 'context';
@@ -59,6 +60,12 @@ function DeckButtons(props) {
             setShowButtons={props.setShowButtons}
           />
         )}
+      {props.isAuthor && props.deck && (
+        <DeckTogglePublic
+          deck={props.deck}
+          setShowButtons={props.setShowButtons}
+        />
+      )}
       {props.deck && (
         <DeckDiffButton
           deckid={props.deck.deckid}

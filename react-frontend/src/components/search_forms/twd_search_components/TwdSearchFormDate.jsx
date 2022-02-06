@@ -8,6 +8,7 @@ function TwdSearchFormDate(props) {
 
   const years = [
     'ANY',
+    '2022',
     '2021',
     '2020',
     '2019',

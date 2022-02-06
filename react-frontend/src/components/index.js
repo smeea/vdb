@@ -2,18 +2,19 @@
 export * from 'components/account';
 export * from 'components/deck';
 export * from 'components/diff';
-// export * from 'components/form_data'
 export * from 'components/inventory';
 export * from 'components/result_crypt';
 export * from 'components/result_layout';
 export * from 'components/result_library';
 export * from 'components/result_common';
 export * from 'components/twd_result';
+export * from 'components/pda_result';
 
 // Search Forms
 export { default as LibrarySearchForm } from 'components/search_forms/LibrarySearchForm.jsx';
 export { default as CryptSearchForm } from 'components/search_forms/CryptSearchForm.jsx';
 export { default as TwdSearchForm } from 'components/search_forms/TwdSearchForm.jsx';
+export { default as PdaSearchForm } from 'components/search_forms/PdaSearchForm.jsx';
 
 // OTHERS
 export { default as Banner } from 'components/Banner.jsx';

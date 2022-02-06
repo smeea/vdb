@@ -13,7 +13,7 @@ function TwdSearchFormPlayer(props) {
   };
 
   const loadOptions = (inputValue) => {
-    const url = `${process.env.API_URL}twd/players`;
+    const url = `${process.env.API_URL}${props.inPda ? 'pda' : 'twd'}/players`;
     const options = {
       method: 'GET',
       mode: 'cors',
@@ -40,7 +40,7 @@ function TwdSearchFormPlayer(props) {
       menuPlacement="top"
       maxMenuHeight={isMobile ? window.screen.height - 250 : 500}
       autoFocus={false}
-      placeholder="Player"
+      placeholder="Name"
       loadOptions={loadOptions}
       isClearable={true}
       value={

@@ -1,10 +1,6 @@
-import json
+def get_twd_by_crypt(crypt, twda):
+    print(crypt)
 
-with open("twdDecks.json", "r") as twd_file:
-    twda = json.load(twd_file)
-
-
-def get_twd_by_crypt(crypt, twda=twda):
     cards_counter = len(crypt)
     match_decks = []
     for deck in twda:
@@ -41,7 +37,7 @@ def get_twd_by_crypt(crypt, twda=twda):
     return match_decks
 
 
-def get_twd_by_library(library, twda=twda):
+def get_twd_by_library(library, twda):
     cards_counter = len(library)
     match_decks = []
     for deck in twda:
@@ -78,7 +74,7 @@ def get_twd_by_library(library, twda=twda):
     return match_decks
 
 
-def get_twd_by_player(player, twda=twda):
+def get_twd_by_player(player, twda):
     match_decks = []
     for deck in twda:
         if player in deck['player']:
@@ -87,7 +83,7 @@ def get_twd_by_player(player, twda=twda):
     return match_decks
 
 
-def get_twd_by_location(location, twda=twda):
+def get_twd_by_location(location, twda):
     match_decks = []
     for deck in twda:
         if location in deck['location']:
@@ -96,7 +92,7 @@ def get_twd_by_location(location, twda=twda):
     return match_decks
 
 
-def get_twd_by_event(event, twda=twda):
+def get_twd_by_event(event, twda):
     match_decks = []
     for deck in twda:
         if event.lower() in deck['event'].lower():
@@ -105,7 +101,7 @@ def get_twd_by_event(event, twda=twda):
     return match_decks
 
 
-def get_twd_by_date(request, twda=twda):
+def get_twd_by_date(request, twda):
     date_from = int(request['from']) if 'from' in request else 1997
     date_to = int(request['to']) if 'to' in request else 2077
     match_decks = []
@@ -118,7 +114,7 @@ def get_twd_by_date(request, twda=twda):
     return match_decks
 
 
-def get_twd_by_players(request, twda=twda):
+def get_twd_by_players(request, twda):
     players_from = int(request['from']) if 'from' in request else 1
     players_to = int(request['to']) if 'to' in request else 1000
     match_decks = []
@@ -131,7 +127,7 @@ def get_twd_by_players(request, twda=twda):
     return match_decks
 
 
-def get_twd_by_clan(clan, twda=twda):
+def get_twd_by_clan(clan, twda):
     match_decks = []
     for deck in twda:
         if deck['clan'].lower() == clan:
@@ -140,7 +136,7 @@ def get_twd_by_clan(clan, twda=twda):
     return match_decks
 
 
-def get_twd_by_disciplines(disciplines, twda=twda):
+def get_twd_by_disciplines(disciplines, twda):
     disciplines_counter = len(disciplines)
     match_decks = []
 
@@ -156,7 +152,7 @@ def get_twd_by_disciplines(disciplines, twda=twda):
     return match_decks
 
 
-def get_twd_by_cardtypes(cardtype_input, twda=twda):
+def get_twd_by_cardtypes(cardtype_input, twda):
     cardtypes_counter = len(cardtype_input)
     cardtypes = {}
 
@@ -183,7 +179,7 @@ def get_twd_by_cardtypes(cardtype_input, twda=twda):
     return match_decks
 
 
-def get_twd_by_capacity(capacity_input, twda=twda):
+def get_twd_by_capacity(capacity_input, twda):
     capacity_brackets = []
     for k in capacity_input.keys():
         capacity_brackets.append([int(i) for i in k.split('-')])
@@ -198,7 +194,7 @@ def get_twd_by_capacity(capacity_input, twda=twda):
     return match_cards
 
 
-def get_twd_by_traits(traits, twda=twda):
+def get_twd_by_traits(traits, twda):
     trait_counter = len(traits)
     match_decks = []
     for deck in twda:
@@ -213,7 +209,7 @@ def get_twd_by_traits(traits, twda=twda):
     return match_decks
 
 
-def get_twd_by_libraryTotal(total_input, twda=twda):
+def get_twd_by_libraryTotal(total_input, twda):
     total_brackets = []
     for k in total_input.keys():
         total_brackets.append([int(i) for i in k.split('-')])
@@ -228,7 +224,7 @@ def get_twd_by_libraryTotal(total_input, twda=twda):
     return match_cards
 
 
-def matchInventory(request, inventory, twda=twda):
+def matchInventory(request, inventory, twda):
     crypt_ratio = float(request['crypt']) if 'crypt' in request else None
     library_ratio = float(request['library']) if 'library' in request else None
     scaling = int(request['scaling']) if 'scaling' in request else False
@@ -286,6 +282,7 @@ def sanitizeTwd(deck):
         del (deck['libraryTotal'])
         del (deck['cryptTotal'])
         del (deck['clan'])
+        del (deck['capacity'])
         del (deck['traits'])
     except KeyError:
         pass

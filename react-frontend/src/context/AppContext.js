@@ -51,6 +51,7 @@ export const AppProvider = (props) => {
 
   const preconDecks = cardServices.getPreconDecks();
 
+  const [showPdaSearch, setShowPdaSearch] = useState(true);
   const [showTwdSearch, setShowTwdSearch] = useState(true);
   const [showCryptSearch, setShowCryptSearch] = useState(true);
   const [showLibrarySearch, setShowLibrarySearch] = useState(true);
@@ -633,6 +634,8 @@ export const AppProvider = (props) => {
 
         // 6 - LISTING Context (NEED REVIEW)
 
+        showPdaSearch,
+        setShowPdaSearch,
         showTwdSearch,
         setShowTwdSearch,
         showCryptSearch,

@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
 import { TwdOpenDeckButton, DeckClone } from 'components';
 import { useApp, useSearchForms } from 'context';
-import defaults from 'components/forms_data/defaultsTwdForm.json';
+import defaults from 'components/forms_data/defaultsPdaForm.json';
 
-function TwdResultDescription(props) {
+function PdaResultDescription(props) {
   const { username, isMobile } = useApp();
-  const { setTwdFormState } = useSearchForms();
+  const { setPdaFormState } = useSearchForms();
 
   const navigate = useNavigate();
   const def = JSON.parse(JSON.stringify(defaults));
@@ -15,25 +15,12 @@ function TwdResultDescription(props) {
   const handlePlayerClick = (player) => {
     if (isMobile) {
       navigate(
-        `/twd?q=${encodeURIComponent(JSON.stringify({ player: player }))}`
+        `/pda?q=${encodeURIComponent(JSON.stringify({ player: player }))}`
       );
     } else {
-      setTwdFormState((prevState) => ({
+      setPdaFormState((prevState) => ({
         ...def,
         player: player,
-      }));
-    }
-  };
-
-  const handleLocationClick = (location) => {
-    if (isMobile) {
-      navigate(
-        `/twd?q=${encodeURIComponent(JSON.stringify({ location: location }))}`
-      );
-    } else {
-      setTwdFormState((prevState) => ({
-        ...def,
-        location: location,
       }));
     }
   };
@@ -54,28 +41,7 @@ function TwdResultDescription(props) {
                   </tr>
                   <tr>
                     <td className="d-inline">
-                      <b>Players</b>:
-                    </td>
-                    <td className="ps-2">{props.deck['players']}</td>
-                  </tr>
-                  <tr>
-                    <td className="d-inline">
-                      <b>Location</b>:
-                    </td>
-                    <td className="ps-2">
-                      <div
-                        className="link-like"
-                        onClick={() =>
-                          handleLocationClick(props.deck['location'])
-                        }
-                      >
-                        {props.deck['location']}
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="d-inline">
-                      <b>Player</b>:
+                      <b>Author</b>:
                     </td>
                     <td className="ps-2">
                       <div
@@ -95,7 +61,7 @@ function TwdResultDescription(props) {
                 {username && (
                   <DeckClone
                     deck={props.deck}
-                    activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
+                    activeDeck={{ src: 'shared', deckid: props.deck.deckid }}
                     setShowButtons={() => {}}
                   />
                 )}
@@ -115,34 +81,7 @@ function TwdResultDescription(props) {
               </tr>
               <tr>
                 <td className="d-inline">
-                  <b>Players</b>:
-                </td>
-                <td className="ps-2">{props.deck['players']}</td>
-              </tr>
-              <tr>
-                <td className="d-inline">
-                  <b>Event</b>:
-                </td>
-                <td className="ps-2">
-                  <a href={props.deck['link']}>{props.deck['event']}</a>
-                </td>
-              </tr>
-              <tr>
-                <td className="d-inline">
-                  <b>Location</b>:
-                </td>
-                <td className="ps-2">
-                  <div
-                    className="link-like"
-                    onClick={() => handleLocationClick(props.deck['location'])}
-                  >
-                    {props.deck['location']}
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="d-inline">
-                  <b>Player</b>:
+                  <b>Author</b>:
                 </td>
                 <td className="ps-2">
                   <div
@@ -168,7 +107,7 @@ function TwdResultDescription(props) {
             {username && (
               <DeckClone
                 deck={props.deck}
-                activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
+                activeDeck={{ src: 'shared', deckid: props.deck.deckid }}
               />
             )}
           </Stack>
@@ -178,4 +117,4 @@ function TwdResultDescription(props) {
   );
 }
 
-export default TwdResultDescription;
+export default PdaResultDescription;

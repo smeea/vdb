@@ -24,6 +24,17 @@ const sanitizeFormState = (target, state) => {
     case 'library':
       forms = ['traits'];
       break;
+    case 'pda':
+      forms = [
+        'disciplines',
+        'traits',
+        'cardtypes',
+        'date',
+        'capacity',
+        'libraryTotal',
+        'matchInventory',
+      ];
+      break;
     case 'twd':
       forms = [
         'disciplines',
@@ -50,6 +61,7 @@ const sanitizeFormState = (target, state) => {
     case 'library':
       forms = ['discipline', 'type', 'set', 'precon'];
       break;
+    case 'pda':
     case 'twd':
       forms = [];
       break;
@@ -70,6 +82,7 @@ const sanitizeFormState = (target, state) => {
     case 'library':
       forms = ['blood', 'pool', 'capacity'];
       break;
+    case 'pda':
     case 'twd':
       forms = [];
       break;
@@ -101,6 +114,7 @@ const sanitizeFormState = (target, state) => {
         });
       });
       break;
+    case 'pda':
     case 'twd':
       forms = ['crypt', 'library'];
       forms.map((i) => {

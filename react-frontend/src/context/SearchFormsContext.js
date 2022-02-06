@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import defaultsPdaForm from 'components/forms_data/defaultsPdaForm.json';
 import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
 import defaultsCryptForm from 'components/forms_data/defaultsCryptForm.json';
 import defaultsLibraryForm from 'components/forms_data/defaultsLibraryForm.json';
@@ -16,6 +17,9 @@ export const useSearchForms = () => {
 };
 
 export const SearchFormsProvider = (props) => {
+  const [pdaFormState, setPdaFormState] = useState(
+    JSON.parse(JSON.stringify(defaultsPdaForm))
+  );
   const [twdFormState, setTwdFormState] = useState(
     JSON.parse(JSON.stringify(defaultsTwdForm))
   );
@@ -29,6 +33,8 @@ export const SearchFormsProvider = (props) => {
   return (
     <SearchFormsContext.Provider
       value={{
+        pdaFormState,
+        setPdaFormState,
         twdFormState,
         setTwdFormState,
         cryptFormState,

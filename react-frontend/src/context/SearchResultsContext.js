@@ -15,6 +15,7 @@ export const useSearchResults = () => {
 };
 
 export const SearchResultsProvider = (props) => {
+  const [pdaResults, setPdaResults] = useState(undefined);
   const [twdResults, setTwdResults] = useState(undefined);
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
@@ -22,6 +23,8 @@ export const SearchResultsProvider = (props) => {
   return (
     <SearchResultsContext.Provider
       value={{
+        pdaResults,
+        setPdaResults,
         twdResults,
         setTwdResults,
         cryptResults,

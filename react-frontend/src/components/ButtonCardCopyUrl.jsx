@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import ShareFill from 'assets/images/icons/share-fill.svg';
+import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 
 function ButtonCardCopyUrl(props) {
@@ -28,7 +28,7 @@ function ButtonCardCopyUrl(props) {
           onClick={handleButton}
           title="Copy URL"
         >
-          <ShareFill />
+          <Link45Deg />
         </Button>
       ) : (
         <Button variant="success" onClick={handleButton}>

@@ -1,6 +1,11 @@
 import searchTwdComponents
+import json
+
 
 def searchTwd(request):
+    with open("twdDecks.json", "r") as twd_file:
+        twda = json.load(twd_file)
+
     queries = request.json
 
     matches = []
@@ -24,7 +29,7 @@ def searchTwd(request):
         if q in queries:
             function_to_call = getattr(searchTwdComponents, 'get_twd_by_' + q)
             if not matches:
-                matches = function_to_call(queries[q])
+                matches = function_to_call(queries[q], twda)
             else:
                 matches = function_to_call(queries[q], matches)
 

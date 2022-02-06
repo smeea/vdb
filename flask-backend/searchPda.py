@@ -1,7 +1,15 @@
 import searchTwdComponents
+from models import PublicDeck
+from searchPdaComponents import generate_deck_from_db, sanitize_deck
 
 
 def searchPda(request):
+    decks = []
+    for d in PublicDeck.query.all():
+        deck = d.__dict__
+        deck['date'] = d.timestamp.strftime('%Y-%m-%d')
+        decks.append(deck)
+
     queries = request.json
 
     matches = []
@@ -22,7 +30,7 @@ def searchPda(request):
         if q in queries:
             function_to_call = getattr(searchTwdComponents, 'get_twd_by_' + q)
             if not matches:
-                matches = function_to_call(queries[q])
+                matches = function_to_call(queries[q], decks)
             else:
                 matches = function_to_call(queries[q], matches)
 
@@ -30,6 +38,6 @@ def searchPda(request):
                 break
 
     if matches:
-        return matches
+        return [sanitize_deck(d) for d in matches]
     else:
         return 400

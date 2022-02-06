@@ -19,6 +19,9 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
     inventory = db.Column(db.PickleType, default={})
     decks = db.relationship('Deck', backref='author', lazy='dynamic')
+    public_decks = db.relationship('PublicDeck',
+                                   backref='author',
+                                   lazy='dynamic')
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -48,3 +51,25 @@ class Deck(db.Model):
 
     def __repr__(self):
         return '<Deck {}>'.format(self.name)
+
+
+class PublicDeck(db.Model):
+    deckid = db.Column(db.String(32), primary_key=True)
+    name = db.Column(db.String(64), default='New Deck')
+    author_public_name = db.Column(db.String(64))
+    description = db.Column(db.String(32768), default='')
+    crypt = db.Column(db.PickleType, default={})
+    library = db.Column(db.PickleType, default={})
+    crypt_total = db.Column(db.Integer)
+    library_total = db.Column(db.Integer)
+    tags = db.Column(db.PickleType, default=[])
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    capacity = db.Column(db.Integer)
+    cardtypes_ratio = db.Column(db.PickleType, default={})
+    clan = db.Column(db.String(32))
+    disciplines = db.Column(db.PickleType, default=[])
+    traits = db.Column(db.PickleType, default=[])
+
+    def __repr__(self):
+        return '<PublicDeck {}>'.format(self.name)

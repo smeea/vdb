@@ -21,6 +21,7 @@ import Documentation from 'pages/Documentation.jsx';
 import Inventory from 'pages/Inventory.jsx';
 import Library from 'pages/Library.jsx';
 import Navigation from 'pages/Navigation.jsx';
+import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
 
 import 'assets/css/bootstrap.min.css';
@@ -96,6 +97,7 @@ function App(props) {
               <Route path="diff" element={<Diff />} />
               <Route path="inventory" element={<Inventory />} />
               <Route path="decks" element={<Decks />} />
+              <Route path="pda" element={<Pda />} />
               <Route path="twd" element={<Twd />} />
               <Route
                 path="crypt"

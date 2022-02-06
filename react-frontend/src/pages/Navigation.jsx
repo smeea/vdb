@@ -14,18 +14,20 @@ import { NavMobileMenu, LanguageSelect } from 'components';
 import cryptDefaults from 'components/forms_data/defaultsCryptForm.json';
 import libraryDefaults from 'components/forms_data/defaultsLibraryForm.json';
 import twdDefaults from 'components/forms_data/defaultsTwdForm.json';
+import pdaDefaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 
 function Navigation(props) {
   const { inventoryMode, toggleInventoryMode, isMobile, username, activeDeck } =
     useApp();
 
-  const { setCryptFormState, twdFormState, cryptFormState, libraryFormState } =
+  const { pdaFormState, twdFormState, cryptFormState, libraryFormState } =
     useSearchForms();
 
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
 
+  let pdaUrl = '/pda';
   let twdUrl = '/twd';
   let cryptUrl = '/crypt';
   let libraryUrl = '/library';
@@ -43,6 +45,10 @@ function Navigation(props) {
     if (JSON.stringify(twdFormState) != JSON.stringify(twdDefaults)) {
       const input = sanitizeFormState('twd', twdFormState);
       twdUrl = `/twd?q=${encodeURIComponent(JSON.stringify(input))}`;
+    }
+    if (JSON.stringify(pdaFormState) != JSON.stringify(pdaDefaults)) {
+      const input = sanitizeFormState('pda', pdaFormState);
+      pdaUrl = `/pda?q=${encodeURIComponent(JSON.stringify(input))}`;
     }
   }
   if (activeDeck.deckid) {
@@ -82,6 +88,7 @@ function Navigation(props) {
               location.pathname == '/crypt' ||
               location.pathname == '/diff' ||
               location.pathname == '/library' ||
+              location.pathname == '/pda' ||
               location.pathname == '/twd') && (
               <div
                 className="d-flex align-items-center px-3"
@@ -125,6 +132,9 @@ function Navigation(props) {
               </NavLink>
             </>
           )}
+          <NavLink to={pdaUrl} className="nav-link pe-2 ps-1">
+            PDA
+          </NavLink>
           <NavLink to={twdUrl} className="nav-link pe-2 ps-1">
             TWD
           </NavLink>

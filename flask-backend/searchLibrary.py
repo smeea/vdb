@@ -4,6 +4,7 @@ import searchLibraryComponents
 with open("vteslib.json", "r") as library_file:
     vteslib = json.load(library_file)
 
+
 def searchLibrary(request, library=vteslib):
     queries = request.json
 
