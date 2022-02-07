@@ -117,12 +117,15 @@ def getRecommendation(deckid):
 @login_required
 def updateDeck(deckid):
     d = Deck.query.get(deckid)
-    if not d or not d.author == current_user:
+    if not d:
         print('bad deck request\n', deckid, current_user.username,
               request.json)
         return jsonify({'error': 'no deck'})
+    elif d.author != current_user:
+        abort(401)
 
-    d.timestamp = datetime.utcnow()
+    if request.json != {'hidden': False} and request.json != {'hidden': True}:
+        d.timestamp = datetime.utcnow()
 
     try:
         if 'cardChange' in request.json:
