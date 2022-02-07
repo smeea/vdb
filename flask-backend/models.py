@@ -63,6 +63,7 @@ class PublicDeck(db.Model):
     crypt_total = db.Column(db.Integer)
     library_total = db.Column(db.Integer)
     tags = db.Column(db.PickleType, default=[])
+    date = db.Column(db.String(10))
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     capacity = db.Column(db.Integer)

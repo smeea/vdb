@@ -57,7 +57,7 @@ function PdaResultDescription(props) {
             </Col>
             <Col xs={5} className="px-0 mx-0">
               <Stack gap={1} className="py-2">
-                <TwdOpenDeckButton deckid={props.deck['deckid']} />
+                <TwdOpenDeckButton deckid={props.deck['deckid']} inPda />
                 {username && (
                   <DeckClone
                     deck={props.deck}
@@ -103,7 +103,7 @@ function PdaResultDescription(props) {
             </tbody>
           </table>
           <Stack gap={1} className="py-2">
-            <TwdOpenDeckButton deckid={props.deck['deckid']} />
+            <TwdOpenDeckButton deckid={props.deck['deckid']} inPda />
             {username && (
               <DeckClone
                 deck={props.deck}

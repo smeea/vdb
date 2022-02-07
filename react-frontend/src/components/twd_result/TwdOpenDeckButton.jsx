@@ -9,7 +9,10 @@ function TwdOpenDeckButton(props) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setActiveDeck({ src: 'twd', deckid: props.deckid });
+    setActiveDeck({
+      src: props.inPda ? 'shared' : 'twd',
+      deckid: props.deckid,
+    });
     navigate(`/decks?id=${props.deckid}`);
   };
 

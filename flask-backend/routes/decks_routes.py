@@ -10,7 +10,7 @@ from deckImport import deckImport
 from deckProxy import deckProxy
 from deckRecommendation import deckRecommendation
 from api import app, db, login
-from models import Deck
+from models import Deck, PublicDeck
 
 
 @login.unauthorized_handler
@@ -355,6 +355,7 @@ def listDecks():
                 'master': deck.master,
                 'branches': deck.branches,
                 'tags': deck.tags,
+                'public': True if PublicDeck.query.get(deck.deckid) else False,
             }
 
         return jsonify(decks)

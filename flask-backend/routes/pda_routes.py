@@ -4,7 +4,7 @@ import json
 from random import random
 
 from searchPda import searchPda
-from searchPdaComponents import sanitize_deck, generate_deck_for_db
+from searchPdaComponents import get_deck_for_frontend, get_missing_fields
 from searchTwdComponents import matchInventory
 from api import app, db, login
 from models import Deck, PublicDeck
@@ -13,6 +13,19 @@ from models import Deck, PublicDeck
 @login.unauthorized_handler
 def unauthorized_handler():
     return Response(json.dumps({'Not logged in': True}), 401)
+
+
+@app.route('/api/pda/authors', methods=['GET'])
+def getAuthors():
+    authors = []
+    for d in PublicDeck.query.all():
+        if d.author_public_name not in authors:
+            authors.append(d.author_public_name)
+
+    def get_entry(author):
+        return {'label': author, 'value': author}
+
+    return jsonify([get_entry(a) for a in authors])
 
 
 @app.route('/api/search/pda', methods=['POST'])
@@ -35,44 +48,66 @@ def searchPdaRoute():
 
 @app.route('/api/pda/<string:deckid>', methods=['GET'])
 def showPublicDeck(deckid):
-    d = PublicDeck.query.get(deckid)
-    if not d:
+    deck = get_deck_for_frontend(deckid)
+    if not deck:
         abort(400)
 
-    deck = sanitize_deck(d.__dict__)
     return jsonify(deck)
 
 
-@app.route('/api/pda/create', methods=['POST'])
+@app.route('/api/pda/<string:deckid>', methods=['POST'])
 @login_required
-def newPublicDeck():
+def newPublicDeck(deckid):
     try:
-        source = Deck.query.get(request.json['deckid'])
-        deck = generate_deck_for_db(source)
+        source = Deck.query.get(deckid)
+        if (source.author != current_user):
+            abort(401)
 
-        d = PublicDeck(deckid=deck['deckid'],
-                       name=deck['name'],
-                       author_public_name=deck['author_public_name'],
-                       description=deck['description'],
-                       author=deck['author'],
-                       tags=deck['tags'],
-                       crypt=deck['crypt'],
-                       library=deck['library'],
-                       crypt_total=deck['crypt_total'],
-                       library_total=deck['library_total'],
-                       capacity=deck['capacity'],
-                       cardtypes_ratio=deck['cardtypes_ratio'],
-                       clan=deck['clan'],
-                       disciplines=deck['disciplines'],
-                       traits=deck['traits']
+        m = get_missing_fields(source)
+
+        d = PublicDeck(deckid=source.deckid,
+                       name=source.name,
+                       author=source.author,
+                       author_public_name=source.author_public_name,
+                       description=source.description,
+                       date=source.timestamp.strftime('%Y-%m-%d'),
+                       tags=source.tags,
+                       crypt=m['crypt'],
+                       library=m['library'],
+                       crypt_total=m['crypt_total'],
+                       library_total=m['library_total'],
+                       capacity=m['capacity'],
+                       cardtypes_ratio=m['cardtypes_ratio'],
+                       clan=m['clan'],
+                       disciplines=m['disciplines'],
+                       traits=m['traits']
                        )
+
         db.session.add(d)
         db.session.commit()
 
-        return jsonify({'new public deck': request.json['deckid']})
+        return jsonify({'new public deck': deckid})
 
     except Exception:
-        print('Bad request (new PDA):', request.json)
+        print('Error new PDA', current_user.username, deckid)
+
+
+@app.route('/api/pda/<string:deckid>', methods=['DELETE'])
+@login_required
+def deletePublicDeck(deckid):
+    try:
+        d = PublicDeck.query.get(deckid)
+        if (d.author != current_user):
+            abort(401)
+
+        db.session.delete(d)
+        db.session.commit()
+
+        return jsonify({'delete public deck': deckid})
+
+    except Exception:
+        print('Error delete PDA', current_user.username, deckid)
+
 
 
 @app.route('/api/pda/new/<int:quantity>', methods=['GET'])
@@ -80,13 +115,12 @@ def getNewPda(quantity):
     decks = []
 
     counter = 0
-    for d in PublicDeck.query.order_by(PublicDeck.timestamp).all():
+    for d in PublicDeck.query.order_by(PublicDeck.date).all():
         if counter == quantity:
             break
 
         counter += 1
-        deck = d.__dict__
-        decks.append(sanitize_deck(deck))
+        decks.append(get_deck_for_frontend(d.deckid))
 
     return (jsonify(decks))
 
@@ -104,7 +138,15 @@ def getRandomPda(quantity):
         if id not in decks_ids:
             counter += 1
             decks_ids.append(id)
-            deck = all_decks[id].__dict__
-            decks.append(sanitize_deck(deck))
+            decks.append(get_deck_for_frontend(all_decks[id].deckid))
+
+    return jsonify(decks)
+
+
+@app.route('/api/pda', methods=['GET'])
+def showAll():
+    decks = []
+    for d in PublicDeck.query.all():
+        decks.append(d.name)
 
     return jsonify(decks)

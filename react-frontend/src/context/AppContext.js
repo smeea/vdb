@@ -626,6 +626,7 @@ export const AppProvider = (props) => {
         recentDecks,
         addRecentDeck,
         updateRecentDecks,
+        setDecks,
         getDecks,
         deckRouter,
         deckUpdate,

@@ -298,6 +298,7 @@ function PdaSearchForm(props) {
           <TwdSearchFormDate
             date={pdaFormState.date}
             onChange={handleDateChange}
+            inPda
           />
         </Col>
       </Row>
@@ -407,7 +408,7 @@ function PdaSearchForm(props) {
           <TwdSearchFormPlayer
             value={pdaFormState.author}
             setValue={setPdaFormState}
-            inPda={true}
+            inPda
           />
         </Col>
       </Row>

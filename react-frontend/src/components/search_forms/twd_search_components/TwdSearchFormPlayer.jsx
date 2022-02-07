@@ -13,7 +13,9 @@ function TwdSearchFormPlayer(props) {
   };
 
   const loadOptions = (inputValue) => {
-    const url = `${process.env.API_URL}${props.inPda ? 'pda' : 'twd'}/players`;
+    const url = `${process.env.API_URL}${
+      props.inPda ? 'pda/authors' : 'twd/players'
+    }`;
     const options = {
       method: 'GET',
       mode: 'cors',

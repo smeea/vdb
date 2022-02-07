@@ -1,5 +1,4 @@
 # FIX
-- Change .first() to .get() in backend sql queries
 
 # FEATURES
 - Export all in xlsx and csv

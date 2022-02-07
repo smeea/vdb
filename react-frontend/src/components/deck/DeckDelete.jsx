@@ -36,7 +36,6 @@ function DeckDelete(props) {
   return (
     <>
       <Button
-        title="Delete Deck"
         variant={props.noText ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
       >

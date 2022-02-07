@@ -5,7 +5,7 @@ import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
 function DeckTogglePublic(props) {
-  const { isMobile } = useApp();
+  const { setDecks, isMobile } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
@@ -16,19 +16,25 @@ function DeckTogglePublic(props) {
   };
 
   const togglePublic = () => {
-    const url = `${process.env.API_URL}pda/${
-      props.isPublic ? 'delete' : 'create'
-    }`;
+    const url = `${process.env.API_URL}pda/${props.deck.deckid}`;
     const options = {
-      method: 'POST',
+      method: props.deck.public ? 'DELETE' : 'POST',
       mode: 'cors',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ deckid: props.deck.deckid }),
     };
-    fetch(url, options).then(() => isMobile && props.setShowInfo(true));
+    fetch(url, options).then(() => {
+      setDecks((prevState) => ({
+        ...prevState,
+        [props.deck.deckid]: {
+          ...prevState[props.deck.deckid],
+          public: props.deck.public ? false : true,
+        },
+      }));
+      isMobile && props.setShowInfo(true);
+    });
   };
 
   return (
@@ -41,7 +47,7 @@ function DeckTogglePublic(props) {
           <div className={props.noText ? null : 'pe-2'}>
             <ShareFill />
           </div>
-          {!props.noText && props.isPublic ? 'Unpublic' : 'Make Public'}
+          {!props.noText && props.deck.public ? 'Unpublish' : 'Make Public'}
         </div>
       </Button>
       <ModalConfirmation
@@ -49,11 +55,11 @@ function DeckTogglePublic(props) {
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
         headerText={
-          props.isPublic
+          props.deck.public
             ? `Remove "${props.deck.name}" from Public Deck Archive?`
             : `Add "${props.deck.name}" to Public Deck Archive?`
         }
-        mainText={props.isPublic ? '' : ''} // TODO
+        mainText={props.deck.public ? '' : ''} // TODO
         buttonText="Make Public"
       />
     </>

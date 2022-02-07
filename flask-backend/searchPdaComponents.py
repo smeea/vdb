@@ -1,34 +1,31 @@
 from searchCryptComponents import get_crypt_by_id
 from searchLibraryComponents import get_library_by_id
+from models import PublicDeck
 
 
-def sanitize_deck(d):
+def get_deck_for_frontend(deckid):
+    d = PublicDeck.query.get(deckid)
     deck = {
-        'deckid': d['deckid'],
-        'name': d['name'],
-        'player': d['author_public_name'],
-        'description': d['description'],
-        'date': d['timestamp'].strftime('%Y-%m-%d'),
+        'deckid': d.deckid,
+        'name': d.name,
+        'player': d.author_public_name,
+        'owner': d.author.username,
+        'description': d.description,
+        'date': d.date,
         'crypt': {},
         'library': {},
     }
 
-    for id, q in d['crypt'].items():
+    for id, q in d.crypt.items():
         deck['crypt'][id] = {'q': q}
-    for id, q in d['library'].items():
+    for id, q in d.library.items():
         deck['library'][id] = {'q': q}
 
     return(deck)
 
 
-def generate_deck_for_db(source):
+def get_missing_fields(source):
     deck = {
-        'deckid': source.deckid,
-        'name': source.name,
-        'description': source.description,
-        'author': source.author,
-        'author_public_name': source.author_public_name,
-        'tags': source.tags,
         'crypt_total': 0,
         'library_total': 0,
         'capacity': None,
@@ -118,30 +115,3 @@ def generate_deck_for_db(source):
     deck['disciplines'] = sorted(list(disciplines))
 
     return (deck)
-
-# TODO deck for search
-def generate_deck_from_db(d):
-    # deck = {
-    #     'deckid': d.deckid,
-    #     'name': d.name,
-    #     'player': d.author_public_name,
-    #     'description': d.description,
-    #     'date': d.timestamp.strftime('%Y-%m-%d'),
-    #     'crypt': crypt,
-    #     'library': library,
-    #                    author_public_name=deck['author_public_name'],
-    #                    description=deck['description'],
-    #                    author=deck['author'],
-    #                    tags=deck['tags'],
-    #                    crypt=deck['crypt'],
-    #                    library=deck['library'],
-    #                    crypt_total=deck['crypt_total'],
-    #                    library_total=deck['library_total'],
-    #                    capacity=deck['capacity'],
-    #                    cardtypes_ratio=deck['cardtypes_ratio'],
-    #                    clan=deck['clan'],
-    #                    disciplines=deck['disciplines'],
-    #                    traits=deck['traits']
-    # }
-
-    return(d)

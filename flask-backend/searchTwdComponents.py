@@ -1,6 +1,4 @@
 def get_twd_by_crypt(crypt, twda):
-    print(crypt)
-
     cards_counter = len(crypt)
     match_decks = []
     for deck in twda:

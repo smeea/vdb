@@ -6,9 +6,7 @@ import { useApp } from 'context';
 function TwdSearchFormDate(props) {
   const { isMobile } = useApp();
 
-  const years = [
-    'ANY',
-    '2022',
+  const noPdaYears = [
     '2021',
     '2020',
     '2019',
@@ -35,6 +33,8 @@ function TwdSearchFormDate(props) {
     '1998',
     '1997',
   ];
+  const years = ['ANY', '2022'];
+  if (!props.inPda) years.push(...noPdaYears);
 
   const dateFromOptions = [];
   const dateToOptions = [];
