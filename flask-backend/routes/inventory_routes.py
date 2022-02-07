@@ -12,7 +12,6 @@ def unauthorized_handler():
     return Response(json.dumps({'Not logged in': True}), 401)
 
 
-
 @app.route('/api/inventory', methods=['GET'])
 @login_required
 def listInventory():

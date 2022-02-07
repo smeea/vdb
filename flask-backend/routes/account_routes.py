@@ -43,8 +43,7 @@ def login():
             return jsonify({'username': ''})
     elif request.method == 'POST':
         try:
-            user = User.query.filter_by(
-                username=request.json['username'].lower()).first()
+            user = User.query.get(request.json['username'].lower())
             if user is None or not user.check_password(
                     request.json['password']):
                 return jsonify({'error': 'invalid username or password'}), 401
