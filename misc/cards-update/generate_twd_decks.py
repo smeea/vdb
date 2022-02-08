@@ -8,27 +8,25 @@ from searchLibraryComponents import get_library_by_id
 
 def generate_twd(i):
     deck = {
-        'deckid': i['id'],
-        'name': i['name'] if 'name' in i else 'Unknown',
-        'event': i['event'],
-        'date': i['date'],
-        'location': i['place'],
-        'score': i['score'] if 'score' in i else 'Unknown',
-        'format':
-        i['tournament_format'] if 'tournament_format' in i else 'Unknown',
-        'players': i['players_count'] if 'players_count' in i else 'Unknown',
-        'player': i['player'] if 'player' in i else 'Unknown',
-        'crypt': {},
-        'cryptTotal': i['crypt']['count'],
+        'cards': {},
+        'cardtypes_ratio': {},
         'clan': '',
-        'traits': [],
+        'cryptTotal': i['crypt']['count'],
+        'date': i['date'],
+        'deckid': i['id'],
         'description': i['comments'] if 'comments' in i else 'x',
-        'library': {},
+        'disciplines': [],
+        'event': i['event'],
+        'format': i['tournament_format'] if 'tournament_format' in i else 'Unknown',
         'libraryTotal': i['library']['count'],
         'link': i['event_link'] if 'event_link' in i else '',
-        'disciplines': [],
-        'cardtypes_ratio': {},
+        'location': i['place'],
+        'name': i['name'] if 'name' in i else 'Unknown',
+        'player': i['player'] if 'player' in i else 'Unknown',
+        'players': i['players_count'] if 'players_count' in i else 'Unknown',
+        'score': i['score'] if 'score' in i else 'Unknown',
         'timestamp': i['date'],
+        'traits': [],
     }
 
     totalCapacity = 0
@@ -64,7 +62,7 @@ def generate_twd(i):
                 if q / totalCryptExAC > 0.38:
                     deck['traits'].append('star')
 
-        deck['crypt'][id] = {'q': q}
+        deck['cards'][id] = q
 
         for discipline in get_crypt_by_id(id)['Disciplines'].keys():
             cryptDisciplines.add(discipline)
@@ -84,7 +82,7 @@ def generate_twd(i):
 
         for card in type['cards']:
 
-            deck['library'][card['id']] = {'q': card['count']}
+            deck['cards'][card['id']] = card['count']
 
             card_discipline_entry = get_library_by_id(card['id'])['Discipline']
             if '&' in card_discipline_entry:

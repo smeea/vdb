@@ -41,17 +41,27 @@ function TwdResult(props) {
 
   useEffect(() => {
     let newCounter = showCounter;
-
     setTwdRows(
       twdResults.map((deck, index) => {
         while (newCounter > 0) {
+          const crypt = {};
+          const library = {};
+
           newCounter -= 1;
-          Object.keys(deck['crypt']).map((i) => {
-            deck['crypt'][i].c = cryptCardBase[i];
+          Object.keys(deck['cards']).map((i) => {
+            if (i > 200000) {
+              crypt[i] = {
+                q: deck['cards'][i],
+                c: cryptCardBase[i],
+              };
+            } else {
+              library[i] = {
+                q: deck['cards'][i],
+                c: libraryCardBase[i],
+              };
+            }
           });
-          Object.keys(deck['library']).map((i) => {
-            deck['library'][i].c = libraryCardBase[i];
-          });
+
           return (
             <React.Fragment key={deck['deckid']}>
               <Row className="py-2 px-0 mx-0">
@@ -67,13 +77,13 @@ function TwdResult(props) {
                   <>
                     <Col xs={6} className="ps-0 pe-1">
                       <TwdResultCrypt
-                        crypt={deck['crypt']}
+                        crypt={crypt}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                       />
                     </Col>
                     <Col xs={6} className="ps-1 pe-0">
                       <TwdResultLibraryKeyCards
-                        library={deck['library']}
+                        library={library}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                       />
                     </Col>
@@ -82,16 +92,16 @@ function TwdResult(props) {
                   <>
                     <Col xs={12} md={4} xl={3} className="px-2">
                       <TwdResultCrypt
-                        crypt={deck['crypt']}
+                        crypt={crypt}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                       />
                     </Col>
                     <Col xs={12} md={4} xl={3} className="px-2">
-                      <TwdResultLibraryByType library={deck['library']} />
+                      <TwdResultLibraryByType library={library} />
                     </Col>
                     <Col xs={12} md={4} xl={3} className="pe-0 ps-2">
                       <TwdResultLibraryKeyCards
-                        library={deck['library']}
+                        library={library}
                         setShowFloatingButtons={props.setShowFloatingButtons}
                       />
                     </Col>
