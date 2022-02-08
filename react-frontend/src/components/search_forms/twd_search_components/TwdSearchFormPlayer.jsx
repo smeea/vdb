@@ -8,14 +8,12 @@ function TwdSearchFormPlayer(props) {
   const handleChange = (v) => {
     props.setValue((prevState) => ({
       ...prevState,
-      player: v ? v.value : '',
+      author: v ? v.value : '',
     }));
   };
 
   const loadOptions = (inputValue) => {
-    const url = `${process.env.API_URL}${
-      props.inPda ? 'pda/authors' : 'twd/players'
-    }`;
+    const url = `${process.env.API_URL}${props.inPda ? 'pda' : 'twd'}/authors`;
     const options = {
       method: 'GET',
       mode: 'cors',

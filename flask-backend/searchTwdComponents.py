@@ -1,32 +1,32 @@
-def get_twd_by_crypt(crypt, twda):
-    cards_counter = len(crypt)
+def get_twd_by_crypt(crypt_request, twda):
+    cards_counter = len(crypt_request)
     match_decks = []
     for deck in twda:
         counter = 0
-        for card, v in crypt.items():
+        for card, v in crypt_request.items():
+            card = int(card)
             q, m = v['q'], v['m']
             if m == 'gt':
                 if q:
-                    if card in deck['crypt'] and deck['crypt'][card]['q'] >= q:
+                    if card in deck['crypt'] and deck['crypt'][card] >= q:
                         counter += 1
                 else:
                     counter += 1
 
             elif m == 'eq':
                 if q:
-                    if card in deck['crypt'] and deck['crypt'][card]['q'] == q:
+                    if card in deck['crypt'] and deck['crypt'][card] == q:
                         counter += 1
                 elif card not in deck['crypt']:
                     counter += 1
 
             elif m == 'lt':
                 if q:
-                    if card in deck['crypt'] and deck['crypt'][card]['q'] <= q:
+                    if card in deck['crypt'] and deck['crypt'][card] <= q:
                         counter += 1
 
             elif m == 'lt0':
-                if card in deck['crypt'] and deck['crypt'][card][
-                        'q'] <= q or card not in deck['crypt']:
+                if card in deck['crypt'] and deck['crypt'][card] <= q or card not in deck['crypt']:
                     counter += 1
 
         if counter == cards_counter:
@@ -35,35 +35,35 @@ def get_twd_by_crypt(crypt, twda):
     return match_decks
 
 
-def get_twd_by_library(library, twda):
-    cards_counter = len(library)
+def get_twd_by_library(library_request, twda):
+    cards_counter = len(library_request)
     match_decks = []
     for deck in twda:
         counter = 0
-        for card, v in library.items():
+        for card, v in library_request.items():
+            card = int(card)
             q, m = v['q'], v['m']
             if m == 'gt':
                 if q:
-                    if card in deck['library'] and deck['library'][card]['q'] >= q:
+                    if card in deck['library'] and deck['library'][card] >= q:
                         counter += 1
                 else:
                     counter += 1
 
             elif m == 'eq':
                 if q:
-                    if card in deck['library'] and deck['library'][card]['q'] == q:
+                    if card in deck['library'] and deck['library'][card] == q:
                         counter += 1
                 elif card not in deck['library']:
                     counter += 1
 
             elif m == 'lt':
                 if q:
-                    if card in deck['library'] and deck['library'][card]['q'] <= q:
+                    if card in deck['library'] and deck['library'][card] <= q:
                         counter += 1
 
             elif m == 'lt0':
-                if card in deck['library'] and deck['library'][card][
-                        'q'] <= q or card not in deck['library']:
+                if card in deck['library'] and deck['library'][card] <= q or card not in deck['library']:
                     counter += 1
 
         if counter == cards_counter:
@@ -72,10 +72,10 @@ def get_twd_by_library(library, twda):
     return match_decks
 
 
-def get_twd_by_player(player, twda):
+def get_twd_by_author(author, twda):
     match_decks = []
     for deck in twda:
-        if player in deck['player']:
+        if author in deck['author']:
             match_decks.append(deck)
 
     return match_decks
@@ -215,14 +215,14 @@ def get_twd_by_libraryTotal(total_input, twda):
     match_cards = []
     for deck in twda:
         for b in total_brackets:
-            if b[0] <= deck['libraryTotal'] <= b[1]:
+            if b[0] <= deck['library_total'] <= b[1]:
                 match_cards.append(deck)
                 break
 
     return match_cards
 
 
-def matchInventory(request, inventory, twda):
+def match_inventory(request, inventory, twda):
     crypt_ratio = float(request['crypt']) if 'crypt' in request else None
     library_ratio = float(request['library']) if 'library' in request else None
     scaling = int(request['scaling']) if 'scaling' in request else False
@@ -231,12 +231,11 @@ def matchInventory(request, inventory, twda):
 
     for deck in twda:
         if crypt_ratio:
-            min_counter = round(deck['cryptTotal'] * crypt_ratio)
+            min_counter = round(deck['crypt_total'] * crypt_ratio)
             counter = 0
 
-            for card, v in deck['crypt'].items():
+            for card, q in deck['crypt'].items():
                 if card in inventory:
-                    q = v['q']
                     if q > inventory[card]:
                         counter += inventory[card]
                     else:
@@ -247,13 +246,13 @@ def matchInventory(request, inventory, twda):
 
         if library_ratio:
             counter = 0
-            scaling_factor = deck['libraryTotal'] / scaling if scaling else None
+            scaling_factor = deck['library_total'] / scaling if scaling else None
             min_counter = scaling * library_ratio if scaling else deck[
-                'libraryTotal'] * library_ratio
+                'library_total'] * library_ratio
 
-            for card, v in deck['library'].items():
+            for card, q in deck['library'].items():
                 if card in inventory:
-                    q = v['q'] / scaling_factor if scaling else v['q']
+                    q = q / scaling_factor if scaling else q
 
                     if q > inventory[card]:
                         counter += inventory[card]
@@ -268,7 +267,7 @@ def matchInventory(request, inventory, twda):
     return match_decks
 
 
-def sanitizeTwd(deck):
+def sanitize_twd(deck):
     try:
         del (deck['description'])
         del (deck['disciplines'])
@@ -277,8 +276,8 @@ def sanitizeTwd(deck):
         del (deck['timestamp'])
         del (deck['score'])
         del (deck['cardtypes_ratio'])
-        del (deck['libraryTotal'])
-        del (deck['cryptTotal'])
+        del (deck['crypt_total'])
+        del (deck['library_total'])
         del (deck['clan'])
         del (deck['capacity'])
         del (deck['traits'])

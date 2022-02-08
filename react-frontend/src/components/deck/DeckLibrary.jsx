@@ -17,7 +17,8 @@ import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DeckLibrary = (props) => {
-  const { cards, deckid, isAuthor, inDeckTab, inMissing, inSearch } = props;
+  const { cards, deckid, isAuthor, isPublic, inDeckTab, inMissing, inSearch } =
+    props;
   const { inAdvSelect, showFloatingButtons, setShowFloatingButtons } = props;
 
   const { nativeLibrary, isMobile } = useApp();
@@ -84,6 +85,7 @@ const DeckLibrary = (props) => {
         deckid={deckid}
         cards={libraryByType[cardtype]}
         isAuthor={isAuthor}
+        isPublic={isPublic}
         inSearch={inSearch}
         inMissing={inMissing}
         inAdvSelect={inAdvSelect}
@@ -105,6 +107,7 @@ const DeckLibrary = (props) => {
         deckid={deckid}
         cards={librarySideByType[cardtype]}
         isAuthor={isAuthor}
+        isPublic={isPublic}
         inSearch={inSearch}
         inMissing={inMissing}
         inAdvSelect={inAdvSelect}

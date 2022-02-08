@@ -205,7 +205,6 @@ function CryptSearchForm(props) {
           }
         } else {
           setCryptResults(res);
-          console.log('set');
         }
       })
       .catch((error) => {

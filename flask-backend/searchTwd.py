@@ -1,16 +1,12 @@
 import searchTwdComponents
-import json
 
 
-def searchTwd(request):
-    with open("twdDecks.json", "r") as twd_file:
-        twda = json.load(twd_file)
-
+def searchTwd(request, target):
     queries = request.json
 
     matches = []
     query_priority = [
-        'player',
+        'author',
         'location',
         'event',
         'date',
@@ -29,7 +25,7 @@ def searchTwd(request):
         if q in queries:
             function_to_call = getattr(searchTwdComponents, 'get_twd_by_' + q)
             if not matches:
-                matches = function_to_call(queries[q], twda)
+                matches = function_to_call(queries[q], target)
             else:
                 matches = function_to_call(queries[q], matches)
 

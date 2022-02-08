@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import ShareFill from 'assets/images/icons/share-fill.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
 function DeckTogglePublic(props) {
-  const { setDecks, isMobile } = useApp();
+  const { setActiveDeck, setDecks, isMobile } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [spinnerState, setSpinnerState] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
@@ -15,26 +16,46 @@ function DeckTogglePublic(props) {
     isMobile && props.setShowButtons(false);
   };
 
+  const isPublished =
+    props.deck.public_parent || props.deck.public_child ? true : false;
+  const isChild = props.deck.public_parent ? true : false;
+  const parent = isChild ? props.deck.public_parent : props.deck.deckid;
+
   const togglePublic = () => {
+    // Accept deckid of main (parent) deck and public (child), handled on backend
     const url = `${process.env.API_URL}pda/${props.deck.deckid}`;
     const options = {
-      method: props.deck.public ? 'DELETE' : 'POST',
+      method: isPublished ? 'DELETE' : 'POST',
       mode: 'cors',
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
     };
-    fetch(url, options).then(() => {
-      setDecks((prevState) => ({
-        ...prevState,
-        [props.deck.deckid]: {
-          ...prevState[props.deck.deckid],
-          public: props.deck.public ? false : true,
-        },
-      }));
-      isMobile && props.setShowInfo(true);
-    });
+
+    setSpinnerState(true);
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setSpinnerState(false);
+        setDecks((prevState) => {
+          return {
+            ...prevState,
+            [parent]: {
+              ...prevState[parent],
+              public_child: isPublished ? null : data.child,
+            },
+          };
+        });
+        if (isPublished && isChild)
+          setActiveDeck({ src: 'shared', deckid: parent });
+      })
+      .catch((error) => {
+        setSpinnerState(false);
+      });
+
+    isMobile && props.setShowInfo(true);
   };
 
   return (
@@ -45,9 +66,13 @@ function DeckTogglePublic(props) {
       >
         <div className="d-flex justify-content-center align-items-center">
           <div className={props.noText ? null : 'pe-2'}>
-            <ShareFill />
+            {!spinnerState ? (
+              <ShareFill />
+            ) : (
+              <Spinner animation="border" size="sm" />
+            )}
           </div>
-          {!props.noText && props.deck.public ? 'Unpublish' : 'Make Public'}
+          {!props.noText && isPublished ? 'Unpublish' : 'Make Public'}
         </div>
       </Button>
       <ModalConfirmation
@@ -55,12 +80,12 @@ function DeckTogglePublic(props) {
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
         headerText={
-          props.deck.public
+          isPublished
             ? `Remove "${props.deck.name}" from Public Deck Archive?`
             : `Add "${props.deck.name}" to Public Deck Archive?`
         }
-        mainText={props.deck.public ? '' : ''} // TODO
-        buttonText="Make Public"
+        mainText={props.deck.public_child ? '' : ''} // TODO
+        buttonText={`${isPublished ? 'Remove' : 'Make'} Public`}
       />
     </>
   );

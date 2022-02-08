@@ -12,15 +12,15 @@ function TwdResultDescription(props) {
   const navigate = useNavigate();
   const def = JSON.parse(JSON.stringify(defaults));
 
-  const handlePlayerClick = (player) => {
+  const handleAuthorClick = (author) => {
     if (isMobile) {
       navigate(
-        `/twd?q=${encodeURIComponent(JSON.stringify({ player: player }))}`
+        `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
       );
     } else {
       setTwdFormState((prevState) => ({
         ...def,
-        player: player,
+        author: author,
       }));
     }
   };
@@ -80,9 +80,9 @@ function TwdResultDescription(props) {
                     <td className="ps-2">
                       <div
                         className="link-like"
-                        onClick={() => handlePlayerClick(props.deck['player'])}
+                        onClick={() => handleAuthorClick(props.deck['author'])}
                       >
-                        {props.deck['player']} <br />
+                        {props.deck['author']} <br />
                       </div>
                     </td>
                   </tr>
@@ -147,9 +147,9 @@ function TwdResultDescription(props) {
                 <td className="ps-2">
                   <div
                     className="link-like"
-                    onClick={() => handlePlayerClick(props.deck['player'])}
+                    onClick={() => handleAuthorClick(props.deck['author'])}
                   >
-                    {props.deck['player']} <br />
+                    {props.deck['author']} <br />
                   </div>
                 </td>
               </tr>

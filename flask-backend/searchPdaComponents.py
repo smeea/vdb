@@ -1,25 +1,25 @@
-from searchCryptComponents import get_crypt_by_id
-from searchLibraryComponents import get_library_by_id
-from models import PublicDeck
+import json
+from models import Deck
+
+
+with open("cardbase_crypt.json", "r") as crypt_file:
+    crypt_db = json.load(crypt_file)
+
+with open("cardbase_lib.json", "r") as library_file:
+    library_db = json.load(library_file)
 
 
 def get_deck_for_frontend(deckid):
-    d = PublicDeck.query.get(deckid)
+    d = Deck.query.get(deckid)
     deck = {
         'deckid': d.deckid,
         'name': d.name,
-        'player': d.author_public_name,
+        'author': d.author_public_name,
         'owner': d.author.username,
         'description': d.description,
-        'date': d.date,
-        'crypt': {},
-        'library': {},
+        'date': d.creation_date,
+        'cards': d.cards,
     }
-
-    for id, q in d.crypt.items():
-        deck['crypt'][id] = {'q': q}
-    for id, q in d.library.items():
-        deck['library'][id] = {'q': q}
 
     return(deck)
 
@@ -33,49 +33,50 @@ def get_missing_fields(source):
         'cardtypes_ratio': {},
         'clan': None,
         'traits': [],
-        'crypt': {},
-        'library': {},
     }
 
-    totalCapacity = 0
-    totalCryptExAC = 0
-
+    crypt = {}
+    library = {}
     clans = {}
     disciplines = set()
-    cryptDisciplines = set()
+    crypt_disciplines = set()
+    total_capacity = 0
+    total_crypt_ex_ac = 0
 
     for id, q in source.cards.items():
         if id > 200000:
-            deck['crypt'][id] = q
+            crypt[id] = crypt_db[str(id)]
+            crypt[id]['q'] = q
             deck['crypt_total'] += q
             if id != 200076:
-                totalCryptExAC += q
+                total_crypt_ex_ac += q
 
         else:
-            deck['library'][id] = q
+            library[id] = library_db[str(id)]
+            library[id]['q'] = q
             deck['library_total'] += q
 
-    for id, q in deck['crypt'].items():
+    for id, c in crypt.items():
         # Skip Anarch Convert
         if id != 200076:
-            totalCapacity += q * get_crypt_by_id(id)['Capacity']
+            total_capacity += c['q'] * c['Capacity']
 
-            if (clan := get_crypt_by_id(id)['Clan']) in clans:
-                clans[clan] += q
+            if (clan := c['Clan']) in clans:
+                clans[clan] += c['q']
             else:
-                clans[clan] = q
+                clans[clan] = c['q']
 
         if 'star' not in deck['traits'] and id != 200076:
-            adv = get_crypt_by_id(id)['Adv']
-            if adv and adv[1] in deck['crypt']:
-                if (q + deck['crypt'][adv[1]]) / totalCryptExAC > 0.38:
+            adv = c['Adv']
+            if adv and adv[1] in crypt:
+                if (c['q'] + crypt[adv[1]]['q']) / total_crypt_ex_ac > 0.38:
                     deck['traits'].append('star')
             else:
-                if q / totalCryptExAC > 0.38:
+                if c['q'] / total_crypt_ex_ac > 0.38:
                     deck['traits'].append('star')
 
-        for discipline in get_crypt_by_id(id)['Disciplines'].keys():
-            cryptDisciplines.add(discipline)
+        for d in c['Disciplines'].keys():
+            crypt_disciplines.add(d)
 
     for clan, q in clans.items():
         if q / deck['crypt_total'] > 0.5:
@@ -84,30 +85,28 @@ def get_missing_fields(source):
     if len(clans) <= 1 and 'monoclan' not in deck['traits']:
         deck['traits'].append('monoclan')
 
-    deck['capacity'] = totalCapacity / totalCryptExAC
+    deck['capacity'] = total_capacity / total_crypt_ex_ac
 
     card_types = {}
 
-    for id, q in deck['library'].items():
-        ct = get_library_by_id(id)['Type']
-        if ct in card_types:
-            card_types[ct] += q
+    for id, c in library.items():
+        if c['Type'] in card_types:
+            card_types[c['Type']] += c['q']
         else:
-            card_types[ct] = q
+            card_types[c['Type']] = c['q']
 
-        card_discipline_entry = get_library_by_id(id)['Discipline']
-        if '&' in card_discipline_entry:
-            for discipline in card_discipline_entry.split(' & '):
-                if discipline in cryptDisciplines:
-                    disciplines.add(discipline)
+        if '&' in c['Discipline']:
+            for d in c['Discipline'].split(' & '):
+                if d in crypt_disciplines:
+                    disciplines.add(d)
 
-        elif '/' in card_discipline_entry:
-            for discipline in card_discipline_entry.split('/'):
-                if discipline in cryptDisciplines:
-                    disciplines.add(discipline)
+        elif '/' in c['Discipline']:
+            for d in c['Discipline'].split('/'):
+                if d in crypt_disciplines:
+                    disciplines.add(d)
 
-        elif card_discipline_entry in cryptDisciplines:
-            disciplines.add(card_discipline_entry)
+        elif c['Discipline'] in crypt_disciplines:
+            disciplines.add(c['Discipline'])
 
     for ct, q in card_types.items():
         deck['cardtypes_ratio'][ct.lower()] = q / deck['library_total']

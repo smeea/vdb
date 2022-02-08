@@ -4,61 +4,73 @@ import json
 from random import random
 
 from searchTwd import searchTwd
-from searchTwdComponents import sanitizeTwd, matchInventory
+from searchTwdComponents import sanitize_twd, match_inventory
 from api import app
+
+
+with open("twdLocations.json", "r") as twd_locations_file:
+    twd_locations = json.load(twd_locations_file)
+
+with open("twdPlayers.json", "r") as twd_players_file:
+    twd_players = json.load(twd_players_file)
+
+with open("twdDecks.json", "r") as twd_file:
+    twd_decks = json.load(twd_file)
+    for deck in twd_decks:
+        deck['crypt'] = {}
+        deck['library'] = {}
+        for id, q in deck['cards'].items():
+            id = int(id)
+            if id > 200000:
+                deck['crypt'][id] = q
+            else:
+                deck['library'][id] = q
 
 
 @app.route('/api/twd/locations', methods=['GET'])
 def getLocations():
-    with open("twdLocations.json", "r") as twdLocations_file:
-        return jsonify(json.load(twdLocations_file))
+    return jsonify(twd_locations)
 
 
-@app.route('/api/twd/players', methods=['GET'])
-def getPlayers():
-    with open("twdPlayers.json", "r") as twdPlayers_file:
-        return jsonify(json.load(twdPlayers_file))
+@app.route('/api/twd/authors', methods=['GET'])
+def getTwdAuthors():
+    return jsonify(twd_players)
 
 
 @app.route('/api/twd/new/<int:quantity>', methods=['GET'])
 def getNewTwd(quantity):
-    with open("twdDecks.json", "r") as twd_file:
-        twda = json.load(twd_file)
-        decks = []
-        for i in range(quantity):
-            deck = sanitizeTwd(twda[i])
+    decks = []
+    for i in range(quantity):
+        deck = twd_decks[i]
+        decks.append(sanitize_twd(deck))
 
-            decks.append(deck)
-
-        return jsonify(decks)
+    return jsonify(decks)
 
 
 @app.route('/api/twd/random/<int:quantity>', methods=['GET'])
 def getRandomTwd(quantity):
-    with open("twdDecks.json", "r") as twd_file:
-        twda = json.load(twd_file)
-        decks = []
-        max_id = len(twda) - 1
-        counter = 0
-        while counter < quantity:
-            counter += 1
-            deck = twda[round(random() * max_id)]
+    decks = []
+    max_id = len(twd_decks) - 1
+    counter = 0
+    while counter < quantity:
+        counter += 1
+        deck = twd_decks[round(random() * max_id)]
+        decks.append(sanitize_twd(deck))
 
-            decks.append(sanitizeTwd(deck))
+    return jsonify(decks)
 
-        return jsonify(decks)
 
 @app.route('/api/search/twd', methods=['POST'])
 def searchTwdRoute():
-    result = searchTwd(request)
+    result = searchTwd(request, twd_decks)
 
     if 'matchInventory' in request.json:
         if result != 400:
-            result = matchInventory(request.json['matchInventory'],
+            result = match_inventory(request.json['matchInventory'],
                                     current_user.inventory, result)
         else:
-            result = matchInventory(request.json['matchInventory'],
-                                    current_user.inventory)
+            result = match_inventory(request.json['matchInventory'],
+                                     current_user.inventory, twd_decks)
 
     if result != 400:
         return jsonify(result)

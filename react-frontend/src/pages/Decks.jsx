@@ -158,12 +158,23 @@ function Decks(props) {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          Object.keys(data.crypt).map((i) => {
-            data.crypt[i].c = cryptCardBase[i];
+          data.crypt = {};
+          data.library = {};
+
+          Object.keys(data.cards).map((i) => {
+            if (i > 200000) {
+              data.crypt[i] = {
+                q: data.cards[i],
+                c: cryptCardBase[i],
+              };
+            } else {
+              data.library[i] = {
+                q: data.cards[i],
+                c: libraryCardBase[i],
+              };
+            }
           });
-          Object.keys(data.library).map((i) => {
-            data.library[i].c = libraryCardBase[i];
-          });
+
           addRecentDeck(data);
           setSharedDeck({ [data.deckid]: data });
         }
@@ -182,10 +193,12 @@ function Decks(props) {
     }
   };
 
+  let isPublic;
   let isAuthor;
   let isBranches;
   if (deckRouter(activeDeck)) {
-    isAuthor = username == deckRouter(activeDeck).owner && username;
+    isPublic = deckRouter(activeDeck).public_parent ? true : false;
+    isAuthor = username && username === deckRouter(activeDeck).owner;
     isBranches =
       deckRouter(activeDeck).master ||
       (deckRouter(activeDeck).branches &&
@@ -528,6 +541,7 @@ function Decks(props) {
                   deckid={activeDeck.deckid}
                   cards={deckRouter(activeDeck).crypt}
                   isAuthor={isAuthor}
+                  isPublic={isPublic}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}
                 />
@@ -538,6 +552,7 @@ function Decks(props) {
                   deckid={activeDeck.deckid}
                   cards={deckRouter(activeDeck).library}
                   isAuthor={isAuthor}
+                  isPublic={isPublic}
                   showFloatingButtons={showFloatingButtons}
                   setShowFloatingButtons={setShowFloatingButtons}
                 />
@@ -550,6 +565,7 @@ function Decks(props) {
             <div className="sticky-buttons">
               <DeckButtons
                 isAuthor={isAuthor}
+                isPublic={isPublic}
                 deck={deckRouter(activeDeck)}
                 activeDeck={activeDeck}
                 setShowInfo={setShowInfo}

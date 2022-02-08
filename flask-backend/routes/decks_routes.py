@@ -10,7 +10,7 @@ from deckImport import deckImport
 from deckProxy import deckProxy
 from deckRecommendation import deckRecommendation
 from api import app, db, login
-from models import Deck, PublicDeck
+from models import Deck
 
 
 @login.unauthorized_handler
@@ -25,25 +25,26 @@ def showDeck(deckid):
         if not deck:
             abort(400)
 
-        crypt = {}
-        library = {}
-        for k, v in deck.cards.items():
-            k = int(k)
-            if k > 200000:
-                crypt[k] = {'q': v}
-            elif k < 200000:
-                library[k] = {'q': v}
+        # crypt = {}
+        # library = {}
+        # for k, v in deck.cards.items():
+        #     k = int(k)
+        #     if k > 200000:
+        #         crypt[k] = {'q': v}
+        #     elif k < 200000:
+        #         library[k] = {'q': v}
 
         deck = {
             'name': deck.name,
             'owner': deck.author.username if deck.author else None,
             'author': deck.author_public_name,
             'description': deck.description,
-            'crypt': crypt,
-            'library': library,
+            'cards': deck.cards,
             'deckid': deck.deckid,
             'timestamp': deck.timestamp,
             'tags': deck.tags,
+            'public_child': deck.public_child,
+            'public_parent': deck.public_parent,
         }
 
         return jsonify(deck)
@@ -63,8 +64,15 @@ def showDeck(deckid):
                 if comments:
                     deck['description'] += '\n' + comments
 
-                deck['author'] = deck['player']
-                del (deck['player'])
+                # deck['crypt'] = {}
+                # deck['library'] = {}
+                # for k, v in deck['cards'].items():
+                #     k = int(k)
+                #     if k > 200000:
+                #         deck['crypt'][k] = {'q': v}
+                #     elif k < 200000:
+                #         deck['library'][k] = {'q': v}
+
                 del (deck['disciplines'])
                 del (deck['format'])
                 del (deck['event'])
@@ -73,8 +81,13 @@ def showDeck(deckid):
                 del (deck['players'])
                 del (deck['timestamp'])
                 del (deck['score'])
+                del (deck['traits'])
+                del (deck['clan'])
+                del (deck['capacity'])
+                # del (deck['cards'])
                 del (deck['cardtypes_ratio'])
-                del (deck['libraryTotal'])
+                del (deck['library_total'])
+                del (deck['crypt_total'])
 
                 return jsonify(deck)
 
@@ -283,6 +296,9 @@ def listDecks():
     try:
         decks = {}
         for deck in current_user.decks.all():
+            if deck.public_parent:
+                continue
+
             # Fix bad imports
             if 'undefined' in deck.cards:
                 print(deck.deckid, 'del undefined cards')
@@ -355,7 +371,7 @@ def listDecks():
                 'master': deck.master,
                 'branches': deck.branches,
                 'tags': deck.tags,
-                'public': True if PublicDeck.query.get(deck.deckid) else False,
+                'public_child': deck.public_child,
             }
 
         return jsonify(decks)
@@ -549,10 +565,8 @@ def cloneDeck():
 
             deck = twdDecks[request.json['target']]
             cards = {}
-            for i in deck['crypt']:
-                cards[int(i)] = deck['crypt'][i]['q']
-            for i in deck['library']:
-                cards[int(i)] = deck['library'][i]['q']
+            for i, q in deck['cards'].items():
+                cards[int(i)] = q
 
             description = 'Date: ' + deck['date'] + '\n'
             description += 'Players: ' + str(deck['players']) + '\n'
@@ -563,8 +577,8 @@ def cloneDeck():
 
             deckid = uuid.uuid4().hex
             d = Deck(deckid=deckid,
-                     name=f"{deck['name']} [by {deck['player']}]",
-                     author_public_name=deck['player'],
+                     name=f"{deck['name']} [by {deck['author']}]",
+                     author_public_name=deck['author'],
                      description=description,
                      author=current_user,
                      tags=['twd'],
@@ -711,7 +725,6 @@ def deckExportRoute():
                     deck['cards'][i] = deck['library'][i]['q']
                 if comments:
                     deck['description'] += '\n' + comments
-                deck['author'] = deck['player']
                 result = deckExport(deck, request.json['format'])
 
         elif request.json['src'] == 'precons':

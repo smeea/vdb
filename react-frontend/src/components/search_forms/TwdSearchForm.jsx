@@ -461,7 +461,7 @@ function TwdSearchForm(props) {
         </Col>
         <Col xs={9} className="d-inline px-0">
           <TwdSearchFormPlayer
-            value={twdFormState.player}
+            value={twdFormState.author}
             setValue={setTwdFormState}
           />
         </Col>

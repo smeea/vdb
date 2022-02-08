@@ -12,15 +12,15 @@ function PdaResultDescription(props) {
   const navigate = useNavigate();
   const def = JSON.parse(JSON.stringify(defaults));
 
-  const handlePlayerClick = (player) => {
+  const handleAuthorClick = (author) => {
     if (isMobile) {
       navigate(
-        `/pda?q=${encodeURIComponent(JSON.stringify({ player: player }))}`
+        `/pda?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
       );
     } else {
       setPdaFormState((prevState) => ({
         ...def,
-        player: player,
+        author: author,
       }));
     }
   };
@@ -46,9 +46,9 @@ function PdaResultDescription(props) {
                     <td className="ps-2">
                       <div
                         className="link-like"
-                        onClick={() => handlePlayerClick(props.deck['player'])}
+                        onClick={() => handleAuthorClick(props.deck['author'])}
                       >
-                        {props.deck['player']} <br />
+                        {props.deck['author']} <br />
                       </div>
                     </td>
                   </tr>
@@ -86,9 +86,9 @@ function PdaResultDescription(props) {
                 <td className="ps-2">
                   <div
                     className="link-like"
-                    onClick={() => handlePlayerClick(props.deck['player'])}
+                    onClick={() => handleAuthorClick(props.deck['author'])}
                   >
-                    {props.deck['player']} <br />
+                    {props.deck['author']} <br />
                   </div>
                 </td>
               </tr>

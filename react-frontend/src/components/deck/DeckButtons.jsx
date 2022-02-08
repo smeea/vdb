@@ -18,95 +18,89 @@ import {
 
 import { useApp } from 'context';
 
-function DeckButtons(props) {
+function DeckButtons({
+  deck,
+  activeDeck,
+  isPublic,
+  isAuthor,
+  missingCrypt,
+  missingLibrary,
+  setShowInfo,
+  setShowButtons,
+  setShowProxySelect,
+  setShowDraw,
+  setShowRecommendation,
+}) {
   const { inventoryMode, username } = useApp();
 
   return (
     <Stack gap={1}>
-      <DeckImport
-        setShowInfo={props.setShowInfo}
-        setShowButtons={props.setShowButtons}
-      />
-      {username && props.deck && (
+      <DeckImport setShowInfo={setShowInfo} setShowButtons={setShowButtons} />
+      {username && deck && (
         <DeckClone
-          deck={props.deck}
-          activeDeck={props.activeDeck}
-          setShowButtons={props.setShowButtons}
+          deck={deck}
+          activeDeck={activeDeck}
+          setShowButtons={setShowButtons}
         />
       )}
-      {props.deck && (
+      {deck && (
         <DeckExport
-          deck={props.deck}
-          activeDeck={props.activeDeck}
-          setShowButtons={props.setShowButtons}
+          deck={deck}
+          activeDeck={activeDeck}
+          setShowButtons={setShowButtons}
         />
       )}
-      {props.isAuthor && props.deck && (
-        <DeckDelete deck={props.deck} setShowButtons={props.setShowButtons} />
+      {isAuthor && !isPublic && deck && (
+        <DeckDelete deck={deck} setShowButtons={setShowButtons} />
       )}
-      {props.isAuthor && props.deck && (
+      {isAuthor && !isPublic && deck && (
         <DeckBranchCreate
-          deck={props.deck}
-          activeDeck={props.activeDeck}
-          setShowButtons={props.setShowButtons}
+          deck={deck}
+          activeDeck={activeDeck}
+          setShowButtons={setShowButtons}
         />
       )}
-      {props.isAuthor &&
-        props.deck &&
-        (props.deck.master ||
-          (props.deck.branches && props.deck.branches.length > 0)) && (
-          <DeckBranchDelete
-            deck={props.deck}
-            setShowButtons={props.setShowButtons}
-          />
+      {isAuthor &&
+        !isPublic &&
+        deck &&
+        (deck.master || (deck.branches && deck.branches.length > 0)) && (
+          <DeckBranchDelete deck={deck} setShowButtons={setShowButtons} />
         )}
-      {props.isAuthor && props.deck && (
-        <DeckTogglePublic
-          deck={props.deck}
-          setShowButtons={props.setShowButtons}
-        />
+      {isAuthor && deck && (
+        <DeckTogglePublic deck={deck} setShowButtons={setShowButtons} />
       )}
-      {props.deck && (
-        <DeckDiffButton
-          deckid={props.deck.deckid}
-          setShowButtons={props.setShowButtons}
-        />
+      {deck && (
+        <DeckDiffButton deckid={deck.deckid} setShowButtons={setShowButtons} />
       )}
-      {props.deck && (
-        <DeckCopyUrl
-          isAuthor={props.isAuthor}
-          deck={props.deck}
-          setShowButtons={props.setShowButtons}
-        />
-      )}
-      {props.deck && (
+      {deck && <DeckCopyUrl deck={deck} setShowButtons={setShowButtons} />}
+      {deck && (
         <DeckProxy
-          deck={props.deck}
-          missingCrypt={props.missingCrypt}
-          missingLibrary={props.missingLibrary}
-          setShowInfo={props.setShowInfo}
-          setShowButtons={props.setShowButtons}
-          setShowProxySelect={props.setShowProxySelect}
+          deck={deck}
+          missingCrypt={missingCrypt}
+          missingLibrary={missingLibrary}
+          setShowInfo={setShowInfo}
+          setShowButtons={setShowButtons}
+          setShowProxySelect={setShowProxySelect}
         />
       )}
-      {props.deck && (
+      {deck && (
         <DeckDrawButton
-          setShowDraw={props.setShowDraw}
-          setShowButtons={props.setShowButtons}
+          setShowDraw={setShowDraw}
+          setShowButtons={setShowButtons}
         />
       )}
-      {props.deck && (
+      {deck && (
         <DeckRecommendationButton
-          setShowRecommendation={props.setShowRecommendation}
-          setShowButtons={props.setShowButtons}
+          setShowRecommendation={setShowRecommendation}
+          setShowButtons={setShowButtons}
         />
       )}
-      {props.deck && inventoryMode && (
+      {deck && inventoryMode && (
         <DeckMissing
-          deck={props.deck}
-          missingCrypt={props.missingCrypt}
-          missingLibrary={props.missingLibrary}
-          setShowButtons={props.setShowButtons}
+          deck={deck}
+          missingCrypt={missingCrypt}
+          missingLibrary={missingLibrary}
+          setShowButtons={setShowButtons}
         />
       )}
     </Stack>

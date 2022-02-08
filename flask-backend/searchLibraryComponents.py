@@ -546,9 +546,3 @@ def get_library_by_name(pattern, library):
             match_cards_by_initials.append(card)
 
     return match_cards + match_cards_by_initials
-
-
-def get_library_by_id(id):
-    with open("cardbase_lib.json", "r") as library_file:
-        library = json.load(library_file)
-        return library[str(id)]

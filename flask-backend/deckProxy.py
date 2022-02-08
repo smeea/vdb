@@ -3,8 +3,13 @@ from unidecode import unidecode
 import re
 import base64
 import os.path
-from searchCryptComponents import get_crypt_by_id
-from searchLibraryComponents import get_library_by_id
+import json
+
+with open("cardbase_crypt.json", "r") as crypt_file:
+    crypt_db = json.load(crypt_file)
+
+with open("cardbase_lib.json", "r") as library_file:
+    library_db = json.load(library_file)
 
 cardtypes_sorted = [
     'Master',
@@ -41,7 +46,7 @@ def deckProxy(cards, lang):
             filename = None
 
             if k > 200000:
-                card = get_crypt_by_id(k)
+                card = crypt_db[str(k)]
                 card['Name'] += f"g{card['Group'].lower()}"
                 if card['Adv'] and card['Adv'][0]:
                     card['Name'] += 'adv'
@@ -50,7 +55,7 @@ def deckProxy(cards, lang):
                                             card['Name'])).lower() + '.jpg'
 
             elif k < 200000:
-                card = get_library_by_id(k)
+                card = library_db[str(k)]
                 filename = unidecode(re.sub('[\\W]', '',
                                             card['Name'])).lower() + '.jpg'
 

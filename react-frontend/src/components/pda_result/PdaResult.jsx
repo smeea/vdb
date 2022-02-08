@@ -46,12 +46,25 @@ function PdaResult(props) {
       pdaResults.map((deck, index) => {
         while (newCounter > 0) {
           newCounter -= 1;
-          Object.keys(deck['crypt']).map((i) => {
-            deck['crypt'][i].c = cryptCardBase[i];
+
+          deck.crypt = {};
+          deck.library = {};
+          Object.keys(deck.cards).map((i) => {
+            if (deck.cards[i] > 0) {
+              if (i > 200000) {
+                deck.crypt[i] = {
+                  q: deck.cards[i],
+                  c: cryptCardBase[i],
+                };
+              } else {
+                deck.library[i] = {
+                  q: deck.cards[i],
+                  c: libraryCardBase[i],
+                };
+              }
+            }
           });
-          Object.keys(deck['library']).map((i) => {
-            deck['library'][i].c = libraryCardBase[i];
-          });
+
           return (
             <React.Fragment key={deck['deckid']}>
               <Row className="py-2 px-0 mx-0">

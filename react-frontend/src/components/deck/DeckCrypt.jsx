@@ -14,7 +14,14 @@ import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
 const DeckCrypt = (props) => {
   const { cards, inAdvSelect, setShowFloatingButtons } = props;
-  const { showFloatingButtons, inMissing, deckid, isAuthor, inSearch } = props;
+  const {
+    showFloatingButtons,
+    inMissing,
+    deckid,
+    isPublic,
+    isAuthor,
+    inSearch,
+  } = props;
   const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
@@ -143,6 +150,7 @@ const DeckCrypt = (props) => {
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}
         isAuthor={isAuthor}
+        isPublic={isPublic}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
         inSearch={inSearch}
@@ -162,6 +170,7 @@ const DeckCrypt = (props) => {
             cards={sortedCardsSide}
             disciplinesSet={disciplinesSet}
             isAuthor={isAuthor}
+            isPublic={isPublic}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
             inSearch={inSearch}

@@ -484,9 +484,3 @@ def get_crypt_by_name(pattern, crypt):
             match_cards_by_initials.append(card)
 
     return match_cards + match_cards_by_initials
-
-
-def get_crypt_by_id(id):
-    with open("cardbase_crypt.json", "r") as crypt_file:
-        crypt = json.load(crypt_file)
-        return crypt[str(id)]
