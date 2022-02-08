@@ -3,8 +3,8 @@ from flask_login import current_user
 import json
 from random import random
 
-from searchTwd import searchTwd
-from searchTwdComponents import sanitize_twd, match_inventory
+from search_decks import search_decks
+from search_decks_components import sanitize_twd, match_inventory
 from api import app
 
 
@@ -17,27 +17,27 @@ with open("twdPlayers.json", "r") as twd_players_file:
 with open("twdDecks.json", "r") as twd_file:
     twd_decks = json.load(twd_file)
     for deck in twd_decks:
-        deck['crypt'] = {}
-        deck['library'] = {}
-        for id, q in deck['cards'].items():
+        deck["crypt"] = {}
+        deck["library"] = {}
+        for id, q in deck["cards"].items():
             id = int(id)
             if id > 200000:
-                deck['crypt'][id] = q
+                deck["crypt"][id] = q
             else:
-                deck['library'][id] = q
+                deck["library"][id] = q
 
 
-@app.route('/api/twd/locations', methods=['GET'])
+@app.route("/api/twd/locations", methods=["GET"])
 def getLocations():
     return jsonify(twd_locations)
 
 
-@app.route('/api/twd/authors', methods=['GET'])
+@app.route("/api/twd/authors", methods=["GET"])
 def getTwdAuthors():
     return jsonify(twd_players)
 
 
-@app.route('/api/twd/new/<int:quantity>', methods=['GET'])
+@app.route("/api/twd/new/<int:quantity>", methods=["GET"])
 def getNewTwd(quantity):
     decks = []
     for i in range(quantity):
@@ -47,7 +47,7 @@ def getNewTwd(quantity):
     return jsonify(decks)
 
 
-@app.route('/api/twd/random/<int:quantity>', methods=['GET'])
+@app.route("/api/twd/random/<int:quantity>", methods=["GET"])
 def getRandomTwd(quantity):
     decks = []
     max_id = len(twd_decks) - 1
@@ -60,17 +60,39 @@ def getRandomTwd(quantity):
     return jsonify(decks)
 
 
-@app.route('/api/search/twd', methods=['POST'])
+@app.route("/api/search/twd", methods=["POST"])
 def searchTwdRoute():
-    result = searchTwd(request, twd_decks)
+    query_priority = [
+        "author",
+        "location",
+        "event",
+        "date",
+        "players",
+        "libraryTotal",
+        "crypt",
+        "library",
+        "clan",
+        "traits",
+        "capacity",
+        "disciplines",
+        "cardtypes",
+    ]
+    queries = [
+        {"option": q, "value": request.json[q]}
+        for q in query_priority
+        if q in request.json
+    ]
+    result = search_decks(queries, twd_decks)
 
-    if 'matchInventory' in request.json:
+    if "matchInventory" in request.json:
         if result != 400:
-            result = match_inventory(request.json['matchInventory'],
-                                    current_user.inventory, result)
+            result = match_inventory(
+                request.json["matchInventory"], current_user.inventory, result
+            )
         else:
-            result = match_inventory(request.json['matchInventory'],
-                                     current_user.inventory, twd_decks)
+            result = match_inventory(
+                request.json["matchInventory"], current_user.inventory, twd_decks
+            )
 
     if result != 400:
         return jsonify(result)

@@ -2,8 +2,8 @@ from flask import jsonify, request, Response
 from flask_login import current_user, login_required
 import json
 
-from inventoryExport import inventoryExport
-from inventoryImport import inventoryImport
+from inventory_export import inventory_export
+from inventory_import import inventory_import
 from api import app, db, login
 
 
@@ -38,7 +38,7 @@ def inventoryExportRoute():
             'cards': current_user.inventory,
             'author': current_user.public_name,
         }
-        result = inventoryExport(inventory, request.json['format'])
+        result = inventory_export(inventory, request.json['format'])
 
         if request.json['format'] == 'xlsx' or request.json['format'] == 'csv':
             return result
@@ -54,7 +54,7 @@ def inventoryExportRoute():
 def inventoryImportRoute():
     i = current_user.inventory
     try:
-        new_cards = inventoryImport(request.json)
+        new_cards = inventory_import(request.json)
         merged_cards = i.copy() if i else {}
         for k, v in new_cards.items():
             k = int(k)

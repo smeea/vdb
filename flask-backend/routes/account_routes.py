@@ -8,100 +8,103 @@ from models import User
 
 @login.unauthorized_handler
 def unauthorized_handler():
-    return Response(json.dumps({'Not logged in': True}), 401)
+    return Response(json.dumps({"Not logged in": True}), 401)
 
 
-@app.route('/api/register', methods=['POST'])
+@app.route("/api/register", methods=["POST"])
 def register():
     if current_user.is_authenticated:
-        return jsonify({'already logged as:': current_user.username})
+        return jsonify({"already logged as:": current_user.username})
 
     try:
         user = User(
-            username=request.json['username'].lower(),
-            public_name=request.json['username'],
+            username=request.json["username"].lower(),
+            public_name=request.json["username"],
         )
-        user.set_password(request.json['password'])
+        user.set_password(request.json["password"])
         db.session.add(user)
         db.session.commit()
         login_user(user)
-        return jsonify({'registered as': user.username})
+        return jsonify({"registered as": user.username})
     except Exception:
         abort(400)
 
 
-@app.route('/api/login', methods=['GET', 'POST'])
+@app.route("/api/login", methods=["GET", "POST"])
 def login():
-    if request.method == 'GET':
+    if request.method == "GET":
         if current_user.is_authenticated:
-            return jsonify({
-                'username': current_user.username,
-                'email': current_user.email,
-                'public_name': current_user.public_name,
-            })
+            return jsonify(
+                {
+                    "username": current_user.username,
+                    "email": current_user.email,
+                    "public_name": current_user.public_name,
+                }
+            )
         else:
-            return jsonify({'username': ''})
-    elif request.method == 'POST':
+            return jsonify({"username": ""})
+    elif request.method == "POST":
         try:
-            user = User.query.get(request.json['username'].lower())
-            if user is None or not user.check_password(
-                    request.json['password']):
-                return jsonify({'error': 'invalid username or password'}), 401
-            login_user(user, remember=request.json['remember'])
-            return jsonify({
-                'username': current_user.username,
-                'email': current_user.email,
-                'public_name': current_user.public_name,
-            })
+            user = User.query.get(request.json["username"].lower())
+            if user is None or not user.check_password(request.json["password"]):
+                return jsonify({"error": "invalid username or password"}), 401
+            login_user(user, remember=request.json["remember"])
+            return jsonify(
+                {
+                    "username": current_user.username,
+                    "email": current_user.email,
+                    "public_name": current_user.public_name,
+                }
+            )
         except KeyError:
             pass
 
 
-@app.route('/api/account', methods=['POST'])
+@app.route("/api/account", methods=["POST"])
 @login_required
 def account():
-    if 'publicName' in request.json:
-        current_user.public_name = request.json['publicName']
+    if "publicName" in request.json:
+        current_user.public_name = request.json["publicName"]
         db.session.commit()
-        return jsonify('public name changed')
+        return jsonify("public name changed")
 
-    elif 'email' in request.json:
-        if not current_user.check_password(request.json['password']):
+    elif "email" in request.json:
+        if not current_user.check_password(request.json["password"]):
             abort(401)
 
-        current_user.email = request.json['email']
+        current_user.email = request.json["email"]
         db.session.commit()
-        return jsonify('email changed')
+        return jsonify("email changed")
 
-    elif 'newPassword' in request.json:
-        if not current_user.check_password(request.json['password']):
+    elif "newPassword" in request.json:
+        if not current_user.check_password(request.json["password"]):
             abort(401)
 
-        current_user.set_password(request.json['newPassword'])
+        current_user.set_password(request.json["newPassword"])
         db.session.commit()
-        return jsonify('password changed')
+        return jsonify("password changed")
 
 
-@app.route('/api/account/remove', methods=['POST'])
+@app.route("/api/account/remove", methods=["POST"])
 @login_required
 def removeAccount():
-    if current_user.check_password(request.json['password']):
+    if current_user.check_password(request.json["password"]):
         try:
             db.session.delete(current_user)
             db.session.commit()
-            return jsonify({'account removed': current_user.username})
+            return jsonify({"account removed": current_user.username})
         except Exception:
             pass
     else:
         abort(401)
 
 
-@app.route('/api/logout')
+@app.route("/api/logout")
 def logout():
     try:
         user = current_user.username
         logout_user()
-        return jsonify({'logged out from': user})
+        return jsonify({"logged out from": user})
 
     except AttributeError:
-        return jsonify({'error': 'not logged'})
+        return jsonify({"error": "not logged"})

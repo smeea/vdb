@@ -11,7 +11,14 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
-from routes import account_routes, decks_routes, inventory_routes, search_routes, twd_routes, pda_routes
+from routes import (
+    account_routes,
+    decks_routes,
+    inventory_routes,
+    search_routes,
+    twd_routes,
+    pda_routes,
+)
 
 # Everything below only required for `flask shell` to play with database
 # from models import User, Deck, PublicDeck

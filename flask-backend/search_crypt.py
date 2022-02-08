@@ -1,17 +1,17 @@
 import json
-import searchCryptComponents
+import search_crypt_components
 
 with open("vtescrypt.json", "r") as crypt_file:
     vtescrypt = json.load(crypt_file)
 
 
-def searchCrypt(request, crypt=vtescrypt):
+def search_crypt(request, crypt=vtescrypt):
     queries = request.json
 
     matches = []
 
     for k, v in queries.items():
-        function_to_call = getattr(searchCryptComponents, 'get_crypt_by_' + k)
+        function_to_call = getattr(search_crypt_components, "get_crypt_by_" + k)
         if not matches:
             matches = function_to_call(v, crypt)
         else:
@@ -21,7 +21,7 @@ def searchCrypt(request, crypt=vtescrypt):
             break
 
     if matches:
-        results = [i['Id'] for i in matches]
+        results = [i["Id"] for i in matches]
         return results
     else:
         return 400

@@ -1,37 +1,37 @@
 from flask import jsonify, request, abort
 
-from searchCrypt import searchCrypt
-from searchLibrary import searchLibrary
+from search_crypt import search_crypt
+from search_library import search_library
 from api import app
 
 
-@app.route('/api/search/crypt', methods=['POST'])
+@app.route("/api/search/crypt", methods=["POST"])
 def searchCryptRoute():
-    result = searchCrypt(request)
+    result = search_crypt(request)
     if result != 400:
         return jsonify(result)
     else:
         abort(400)
 
 
-@app.route('/api/search/library', methods=['POST'])
+@app.route("/api/search/library", methods=["POST"])
 def searchLibraryRoute():
-    result = searchLibrary(request)
+    result = search_library(request)
     if result != 400:
         return jsonify(result)
     else:
         abort(400)
 
 
-@app.route('/api/search/quick', methods=['POST'])
+@app.route("/api/search/quick", methods=["POST"])
 def searchQuickRoute():
     result = []
 
-    crypt = searchCrypt(request)
+    crypt = search_crypt(request)
     if crypt != 400:
         result += crypt
 
-    library = searchLibrary(request)
+    library = search_library(request)
     if library != 400:
         result += library
 

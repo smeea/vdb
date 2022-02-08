@@ -3,6 +3,7 @@ from models import User, Deck
 
 ## NOT REQUIRED TO RUN ANYMORE, USE ONLY AS TEMPLATE IF NEED TO CHANGE DB
 
+
 def find_double_case():
     users = User.query.all()
     users_lower = set()
@@ -46,7 +47,7 @@ def fix_decks():
     decks = Deck.query.all()
     for d in decks:
         if d.inventory_type is None:
-            d.inventory_type = ''
+            d.inventory_type = ""
             db.session.commit()
             print(d.deckid)
         if d.tags is None:
@@ -66,16 +67,16 @@ def fix_decks():
             db.session.commit()
             print(d.deckid)
         if d.description is None:
-            d.description = ''
+            d.description = ""
             db.session.commit()
             print(d.deckid)
         if d.branch_name is None:
-            d.branch_name = 'Original'
+            d.branch_name = "Original"
             db.session.commit()
             print(d.deckid)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     remove_double_case()
     change_to_lowercase()
     fix_users()
