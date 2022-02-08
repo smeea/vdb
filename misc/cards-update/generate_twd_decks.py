@@ -1,9 +1,11 @@
 import json
 import multiprocessing
-import sys
-sys.path.insert(0, "../../flask-backend")
-from searchCryptComponents import get_crypt_by_id
-from searchLibraryComponents import get_library_by_id
+
+with open("cardbase_crypt.json", "r") as crypt_file:
+    crypt_db = json.load(crypt_file)
+
+with open("cardbase_lib.json", "r") as library_file:
+    library_db = json.load(library_file)
 
 
 def generate_twd(i):
@@ -11,92 +13,90 @@ def generate_twd(i):
         'cards': {},
         'cardtypes_ratio': {},
         'clan': '',
-        'cryptTotal': i['crypt']['count'],
         'date': i['date'],
         'deckid': i['id'],
         'description': i['comments'] if 'comments' in i else 'x',
         'disciplines': [],
         'event': i['event'],
         'format': i['tournament_format'] if 'tournament_format' in i else 'Unknown',
-        'libraryTotal': i['library']['count'],
+        'crypt_total': i['crypt']['count'],
+        'library_total': i['library']['count'],
         'link': i['event_link'] if 'event_link' in i else '',
         'location': i['place'],
         'name': i['name'] if 'name' in i else 'Unknown',
-        'player': i['player'] if 'player' in i else 'Unknown',
+        'author': i['player'] if 'player' in i else 'Unknown',
         'players': i['players_count'] if 'players_count' in i else 'Unknown',
         'score': i['score'] if 'score' in i else 'Unknown',
         'timestamp': i['date'],
         'traits': [],
     }
 
-    totalCapacity = 0
-    totalCryptExAC = 0
-
-    clans = {}
-
-    disciplines = set()
-    cryptDisciplines = set()
-
     crypt = {}
-    for card in i['crypt']['cards']:
-        crypt[card['id']] = card['count']
-        if card['id'] != 200076:
-            totalCryptExAC += card['count']
+    clans = {}
+    disciplines = set()
+    crypt_disciplines = set()
+    total_capacity = 0
+    total_crypt_ex_ac = 0
 
-    for id, q in crypt.items():
+    for card in i['crypt']['cards']:
+        crypt[card['id']] = crypt_db[str(card['id'])]
+        crypt[card['id']]['q'] = card['count']
+        if card['id'] != 200076:
+            total_crypt_ex_ac += card['count']
+
+    for id, c in crypt.items():
+        deck['cards'][id] = c['q']
+
         # Skip Anarch Convert
         if id != 200076:
-            totalCapacity += q * get_crypt_by_id(id)['Capacity']
+            total_capacity += c['q'] * c['Capacity']
 
-            if (clan := get_crypt_by_id(id)['Clan']) in clans:
-                clans[clan] += q
+            if (clan := c['Clan']) in clans:
+                clans[clan] += c['q']
             else:
-                clans[clan] = q
+                clans[clan] = c['q']
 
         if 'star' not in deck['traits'] and id != 200076:
-            adv = get_crypt_by_id(id)['Adv']
+            adv = c['Adv']
             if adv and adv[1] in crypt:
-                if (q + crypt[adv[1]]) / totalCryptExAC > 0.38:
+                if (c['q'] + crypt[adv[1]]['q']) / total_crypt_ex_ac > 0.38:
                     deck['traits'].append('star')
             else:
-                if q / totalCryptExAC > 0.38:
+                if c['q'] / total_crypt_ex_ac > 0.38:
                     deck['traits'].append('star')
 
-        deck['cards'][id] = q
-
-        for discipline in get_crypt_by_id(id)['Disciplines'].keys():
-            cryptDisciplines.add(discipline)
+        for d in c['Disciplines'].keys():
+            crypt_disciplines.add(d)
 
     for clan, q in clans.items():
-        if q / deck['cryptTotal'] > 0.5:
+        if q / deck['crypt_total'] > 0.5:
             deck['clan'] = clan
 
     if len(clans) <= 1 and 'monoclan' not in deck['traits']:
         deck['traits'].append('monoclan')
 
-    deck['capacity'] = totalCapacity / totalCryptExAC
+    deck['capacity'] = total_capacity / total_crypt_ex_ac
 
-    for type in i['library']['cards']:
+    for ct in i['library']['cards']:
         deck['cardtypes_ratio'][
-            type['type'].lower()] = type['count'] / deck['libraryTotal']
+            ct['type'].lower()] = ct['count'] / deck['library_total']
 
-        for card in type['cards']:
-
+        for card in ct['cards']:
             deck['cards'][card['id']] = card['count']
 
-            card_discipline_entry = get_library_by_id(card['id'])['Discipline']
-            if '&' in card_discipline_entry:
-                for discipline in card_discipline_entry.split(' & '):
-                    if discipline in cryptDisciplines:
-                        disciplines.add(discipline)
+            discipline_entry = library_db[str(card['id'])]['Discipline']
+            if '&' in discipline_entry:
+                for d in discipline_entry.split(' & '):
+                    if d in crypt_disciplines:
+                        disciplines.add(d)
 
-            elif '/' in card_discipline_entry:
-                for discipline in card_discipline_entry.split('/'):
-                    if discipline in cryptDisciplines:
-                        disciplines.add(discipline)
+            elif '/' in discipline_entry:
+                for d in discipline_entry.split('/'):
+                    if d in crypt_disciplines:
+                        disciplines.add(d)
 
-            elif card_discipline_entry in cryptDisciplines:
-                disciplines.add(card_discipline_entry)
+            elif discipline_entry in crypt_disciplines:
+                disciplines.add(discipline_entry)
 
     deck['disciplines'] = sorted(list(disciplines))
     return (deck)
