@@ -259,7 +259,7 @@ function DeckDrawModal(props) {
               card={currentModalCard}
               handleModalCardChange={handleModalCardChange}
               handleClose={handleModalCardClose}
-              inDraw={true}
+              nested={true}
             />
           )}
           {shouldShowModal && isSideMode && (
@@ -267,7 +267,7 @@ function DeckDrawModal(props) {
               card={currentModalCard}
               handleModalCardChange={handleModalCardChange}
               handleClose={handleModalCardClose}
-              inDraw={true}
+              nested={true}
             />
           )}
         </Container>

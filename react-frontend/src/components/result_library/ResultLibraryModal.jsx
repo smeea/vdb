@@ -55,7 +55,7 @@ function ResultLibraryModal(props) {
       onHide={props.handleClose}
       animation={false}
       centered={true}
-      dialogClassName={props.inDraw ? 'nested-modal' : 'no-border'}
+      dialogClassName={props.nested ? 'nested-modal' : 'no-border'}
     >
       <Modal.Body className="p-0">
         {isMobile ? (
