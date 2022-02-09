@@ -17,13 +17,14 @@ from routes import (
     inventory_routes,
     search_routes,
     twd_routes,
-    pda_routes,
+    pda_routes,  # Comment it out when initializing empty db
 )
 
 # Everything below only required for `flask shell` to play with database
-# from models import User, Deck, PublicDeck
+# from models import User, Deck
 # from api import db
+
 
 # @app.shell_context_processor
 # def make_shell_context():
-#     return {'db': db, 'User': User, 'Deck': Deck}
+#     return {"db": db, "User": User, "Deck": Deck}

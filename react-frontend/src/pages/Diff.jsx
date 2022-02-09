@@ -142,16 +142,24 @@ function Diff(props) {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        if (data.error === undefined) {
-          Object.keys(data.crypt).map((i) => {
-            data.crypt[i].c = cryptCardBase[i];
-          });
-          Object.keys(data.library).map((i) => {
-            data.library[i].c = libraryCardBase[i];
-          });
-          addRecentDeck(data);
-          setDeck({ [data.deckid]: data });
-        }
+        data.crypt = {};
+        data.library = {};
+
+        Object.keys(data.cards).map((i) => {
+          if (i > 200000) {
+            data.crypt[i] = {
+              q: data.cards[i],
+              c: cryptCardBase[i],
+            };
+          } else {
+            data.library[i] = {
+              q: data.cards[i],
+              c: libraryCardBase[i],
+            };
+          }
+        });
+        addRecentDeck(data);
+        setDeck({ [data.deckid]: data });
       })
       .catch((error) => setError(true));
   };
