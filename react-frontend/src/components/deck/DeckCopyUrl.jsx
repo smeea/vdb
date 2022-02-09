@@ -116,7 +116,10 @@ function DeckCopyUrl(props) {
           as={ButtonGroup}
           variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
           title={
-            <div className="d-flex justify-content-center align-items-center">
+            <div
+              title="Copy URL"
+              className="d-flex justify-content-center align-items-center"
+            >
               <div className={props.noText ? null : 'pe-2'}>
                 <Link45Deg
                   width={props.noText ? '16' : '19'}

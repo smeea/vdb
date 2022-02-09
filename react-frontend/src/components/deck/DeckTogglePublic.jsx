@@ -61,18 +61,21 @@ function DeckTogglePublic(props) {
   return (
     <>
       <Button
-        variant={props.noText ? 'primary' : 'secondary'}
+        title="Toggle Public/Private Deck"
+        variant={
+          props.noText ? (isPublished ? 'third' : 'primary') : 'secondary'
+        }
         onClick={() => setShowConfirmation(true)}
       >
         <div className="d-flex justify-content-center align-items-center">
-          <div className={props.noText ? null : 'pe-2'}>
+          <div className={props.noText ? '' : 'pe-2'}>
             {!spinnerState ? (
               <ShareFill />
             ) : (
               <Spinner animation="border" size="sm" />
             )}
           </div>
-          {!props.noText && isPublished ? 'Unpublish' : 'Make Public'}
+          {!props.noText ? (isPublished ? 'Unpublish' : 'Make Public') : null}
         </div>
       </Button>
       <ModalConfirmation

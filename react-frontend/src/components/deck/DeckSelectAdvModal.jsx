@@ -16,6 +16,7 @@ import {
   DeckBranchDelete,
   DeckProxy,
   DeckCopyUrl,
+  DeckTogglePublic,
   DeckSelectSortForm,
   ResultClanImage,
   OverlayTooltip,
@@ -359,8 +360,17 @@ function DeckSelectAdvModal(props) {
               <div className="d-inline pe-1">
                 <DeckHide deckid={deck.deckid} />
               </div>
+              <div className="d-inline pe-1">
+                <DeckTogglePublic noText={true} deck={deck} />
+              </div>
               {isDesktop && (
                 <>
+                  <div className="d-inline pe-1">
+                    <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
+                  </div>
+                  <div className="d-inline pe-1">
+                    <DeckProxy noText={true} deck={deck} />
+                  </div>
                   <div className="d-inline pe-1">
                     {revFilter &&
                     (deck.master ||
@@ -369,12 +379,6 @@ function DeckSelectAdvModal(props) {
                     ) : (
                       <DeckDelete noText={true} deck={deck} />
                     )}
-                  </div>
-                  <div className="d-inline pe-1">
-                    <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
-                  </div>
-                  <div className="d-inline pe-1">
-                    <DeckProxy noText={true} deck={deck} />
                   </div>
                 </>
               )}

@@ -14,8 +14,8 @@ function DeckHide(props) {
   return (
     <>
       <Button
-        title="Toggle Show/Hide deck from Deck Selector"
-        variant="primary"
+        title="Toggle Show/Hide in Deck Selector"
+        variant={decks[props.deckid].hidden ? 'primary' : 'third'}
         onClick={handleClick}
       >
         <div className="d-flex justify-content-center align-items-center">

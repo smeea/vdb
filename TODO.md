@@ -5,12 +5,12 @@
 - Export all in xlsx and csv
 
 # FEATURES FOR PDA
-- Publish button to Deck Select modal
 - Mark Public decks (parent/child) in Decks page and in search
 - Open parent button
 - Sync with main deck button
 - Search for my decks only
 - Pagination for New
+- Sorting
 - Favorites
 - Comments
 

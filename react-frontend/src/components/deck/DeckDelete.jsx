@@ -38,6 +38,7 @@ function DeckDelete(props) {
       <Button
         variant={props.noText ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
+        title="Delete Deck"
       >
         <div className="d-flex justify-content-center align-items-center">
           <div className={props.noText ? null : 'pe-2'}>

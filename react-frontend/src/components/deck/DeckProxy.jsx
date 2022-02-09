@@ -111,7 +111,11 @@ function DeckProxy(props) {
   return (
     <>
       {props.inDiff ? (
-        <Button variant="secondary" onClick={() => proxyMissing()}>
+        <Button
+          title="Proxy PDF"
+          variant="secondary"
+          onClick={() => proxyMissing()}
+        >
           <div className="d-flex justify-content-center align-items-center">
             <div className="pe-2">
               <Printer />
@@ -124,7 +128,10 @@ function DeckProxy(props) {
           as={ButtonGroup}
           variant={props.noText ? 'primary' : 'secondary'}
           title={
-            <div className="d-flex justify-content-center align-items-center">
+            <div
+              title="Proxy PDF"
+              className="d-flex justify-content-center align-items-center"
+            >
               <div className={props.noText ? null : 'pe-2'}>
                 {spinnerState ? (
                   <Spinner animation="border" size="sm" />
