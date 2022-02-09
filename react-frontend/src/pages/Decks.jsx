@@ -527,7 +527,7 @@ function Decks(props) {
           </Row>
           {deckError && (
             <Row>
-              <Col className="px-0 px-lg-3">
+              <Col className="px-0 py-4 px-lg-2">
                 <div className="d-flex align-items-center justify-content-center error-message p-2">
                   <b>NO DECK WITH THIS ID, MAYBE IT WAS REMOVED BY AUTHOR</b>
                 </div>
