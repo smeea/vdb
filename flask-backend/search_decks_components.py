@@ -1,7 +1,11 @@
-def get_decks_by_crypt(crypt_request, twda):
+import json
+from models import Deck
+
+
+def get_decks_by_crypt(crypt_request, decks):
     cards_counter = len(crypt_request)
     match_decks = []
-    for deck in twda:
+    for deck in decks:
         counter = 0
         for card, v in crypt_request.items():
             card = int(card)
@@ -39,10 +43,10 @@ def get_decks_by_crypt(crypt_request, twda):
     return match_decks
 
 
-def get_decks_by_library(library_request, twda):
+def get_decks_by_library(library_request, decks):
     cards_counter = len(library_request)
     match_decks = []
-    for deck in twda:
+    for deck in decks:
         counter = 0
         for card, v in library_request.items():
             card = int(card)
@@ -80,39 +84,39 @@ def get_decks_by_library(library_request, twda):
     return match_decks
 
 
-def get_decks_by_author(author, twda):
+def get_decks_by_author(author, decks):
     match_decks = []
-    for deck in twda:
+    for deck in decks:
         if author in deck["author"]:
             match_decks.append(deck)
 
     return match_decks
 
 
-def get_decks_by_location(location, twda):
+def get_decks_by_location(location, decks):
     match_decks = []
-    for deck in twda:
+    for deck in decks:
         if location in deck["location"]:
             match_decks.append(deck)
 
     return match_decks
 
 
-def get_decks_by_event(event, twda):
+def get_decks_by_event(event, decks):
     match_decks = []
-    for deck in twda:
+    for deck in decks:
         if event.lower() in deck["event"].lower():
             match_decks.append(deck)
 
     return match_decks
 
 
-def get_decks_by_date(request, twda):
+def get_decks_by_date(request, decks):
     date_from = int(request["from"]) if "from" in request else 1997
     date_to = int(request["to"]) if "to" in request else 2077
     match_decks = []
 
-    for deck in twda:
+    for deck in decks:
         date = int(deck["date"][0:4])
         if date_from <= date <= date_to:
             match_decks.append(deck)
@@ -120,12 +124,12 @@ def get_decks_by_date(request, twda):
     return match_decks
 
 
-def get_decks_by_players(request, twda):
+def get_decks_by_players(request, decks):
     players_from = int(request["from"]) if "from" in request else 1
     players_to = int(request["to"]) if "to" in request else 1000
     match_decks = []
 
-    for deck in twda:
+    for deck in decks:
         if (
             deck["players"] != "Unknown"
             and players_from <= deck["players"] <= players_to
@@ -135,20 +139,20 @@ def get_decks_by_players(request, twda):
     return match_decks
 
 
-def get_decks_by_clan(clan, twda):
+def get_decks_by_clan(clan, decks):
     match_decks = []
-    for deck in twda:
+    for deck in decks:
         if deck["clan"].lower() == clan:
             match_decks.append(deck)
 
     return match_decks
 
 
-def get_decks_by_disciplines(disciplines, twda):
+def get_decks_by_disciplines(disciplines, decks):
     disciplines_counter = len(disciplines)
     match_decks = []
 
-    for deck in twda:
+    for deck in decks:
         counter = 0
         for discipline in disciplines.keys():
             if discipline in deck["disciplines"]:
@@ -160,7 +164,7 @@ def get_decks_by_disciplines(disciplines, twda):
     return match_decks
 
 
-def get_decks_by_cardtypes(cardtype_input, twda):
+def get_decks_by_cardtypes(cardtype_input, decks):
     cardtypes_counter = len(cardtype_input)
     cardtypes = {}
 
@@ -171,7 +175,7 @@ def get_decks_by_cardtypes(cardtype_input, twda):
 
     match_decks = []
 
-    for deck in twda:
+    for deck in decks:
         counter = 0
 
         for type, v in cardtypes.items():
@@ -189,13 +193,13 @@ def get_decks_by_cardtypes(cardtype_input, twda):
     return match_decks
 
 
-def get_decks_by_capacity(capacity_input, twda):
+def get_decks_by_capacity(capacity_input, decks):
     capacity_brackets = []
     for k in capacity_input.keys():
         capacity_brackets.append([int(i) for i in k.split("-")])
 
     match_cards = []
-    for deck in twda:
+    for deck in decks:
         for b in capacity_brackets:
             if b[0] <= deck["capacity"] <= b[1]:
                 match_cards.append(deck)
@@ -204,10 +208,10 @@ def get_decks_by_capacity(capacity_input, twda):
     return match_cards
 
 
-def get_decks_by_traits(traits, twda):
+def get_decks_by_traits(traits, decks):
     trait_counter = len(traits)
     match_decks = []
-    for deck in twda:
+    for deck in decks:
         counter = 0
         for trait in traits.keys():
             if trait in deck["traits"]:
@@ -219,13 +223,13 @@ def get_decks_by_traits(traits, twda):
     return match_decks
 
 
-def get_decks_by_libraryTotal(total_input, twda):
+def get_decks_by_libraryTotal(total_input, decks):
     total_brackets = []
     for k in total_input.keys():
         total_brackets.append([int(i) for i in k.split("-")])
 
     match_cards = []
-    for deck in twda:
+    for deck in decks:
         for b in total_brackets:
             if b[0] <= deck["library_total"] <= b[1]:
                 match_cards.append(deck)
@@ -234,14 +238,14 @@ def get_decks_by_libraryTotal(total_input, twda):
     return match_cards
 
 
-def match_inventory(request, inventory, twda):
+def match_inventory(request, inventory, decks):
     crypt_ratio = float(request["crypt"]) if "crypt" in request else None
     library_ratio = float(request["library"]) if "library" in request else None
     scaling = int(request["scaling"]) if "scaling" in request else False
 
     match_decks = []
 
-    for deck in twda:
+    for deck in decks:
         if crypt_ratio:
             min_counter = round(deck["crypt_total"] * crypt_ratio)
             counter = 0
@@ -280,6 +284,120 @@ def match_inventory(request, inventory, twda):
         match_decks.append(deck)
 
     return match_decks
+
+
+with open("cardbase_crypt.json", "r") as crypt_file:
+    crypt_db = json.load(crypt_file)
+
+with open("cardbase_lib.json", "r") as library_file:
+    library_db = json.load(library_file)
+
+
+def get_deck_for_frontend(deckid):
+    d = Deck.query.get(deckid)
+    deck = {
+        "deckid": d.deckid,
+        "name": d.name,
+        "author": d.author_public_name,
+        "owner": d.author.username,
+        "description": d.description,
+        "date": d.creation_date,
+        "cards": d.cards,
+    }
+
+    return deck
+
+
+def get_missing_fields(source):
+    deck = {
+        "crypt_total": 0,
+        "library_total": 0,
+        "capacity": None,
+        "disciplines": [],
+        "cardtypes_ratio": {},
+        "clan": None,
+        "traits": [],
+    }
+
+    crypt = {}
+    library = {}
+    clans = {}
+    disciplines = set()
+    crypt_disciplines = set()
+    total_capacity = 0
+    total_crypt_ex_ac = 0
+
+    for id, q in source.cards.items():
+        if id > 200000:
+            crypt[id] = crypt_db[str(id)]
+            crypt[id]["q"] = q
+            deck["crypt_total"] += q
+            if id != 200076:
+                total_crypt_ex_ac += q
+
+        else:
+            library[id] = library_db[str(id)]
+            library[id]["q"] = q
+            deck["library_total"] += q
+
+    for id, c in crypt.items():
+        # Skip Anarch Convert
+        if id != 200076:
+            total_capacity += c["q"] * c["Capacity"]
+
+            if (clan := c["Clan"]) in clans:
+                clans[clan] += c["q"]
+            else:
+                clans[clan] = c["q"]
+
+        if "star" not in deck["traits"] and id != 200076:
+            adv = c["Adv"]
+            if adv and adv[1] in crypt:
+                if (c["q"] + crypt[adv[1]]["q"]) / total_crypt_ex_ac > 0.38:
+                    deck["traits"].append("star")
+            else:
+                if c["q"] / total_crypt_ex_ac > 0.38:
+                    deck["traits"].append("star")
+
+        for d in c["Disciplines"].keys():
+            crypt_disciplines.add(d)
+
+    for clan, q in clans.items():
+        if q / deck["crypt_total"] > 0.5:
+            deck["clan"] = clan
+
+    if len(clans) <= 1 and "monoclan" not in deck["traits"]:
+        deck["traits"].append("monoclan")
+
+    deck["capacity"] = total_capacity / total_crypt_ex_ac
+
+    card_types = {}
+
+    for id, c in library.items():
+        if c["Type"] in card_types:
+            card_types[c["Type"]] += c["q"]
+        else:
+            card_types[c["Type"]] = c["q"]
+
+        if "&" in c["Discipline"]:
+            for d in c["Discipline"].split(" & "):
+                if d in crypt_disciplines:
+                    disciplines.add(d)
+
+        elif "/" in c["Discipline"]:
+            for d in c["Discipline"].split("/"):
+                if d in crypt_disciplines:
+                    disciplines.add(d)
+
+        elif c["Discipline"] in crypt_disciplines:
+            disciplines.add(c["Discipline"])
+
+    for ct, q in card_types.items():
+        deck["cardtypes_ratio"][ct.lower()] = q / deck["library_total"]
+
+    deck["disciplines"] = sorted(list(disciplines))
+
+    return deck
 
 
 def sanitize_twd(deck):

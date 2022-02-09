@@ -6,8 +6,11 @@ import uuid
 from random import random
 
 from search_decks import search_decks
-from pda_components import get_deck_for_frontend, get_missing_fields
-from search_decks_components import match_inventory
+from search_decks_components import (
+    get_deck_for_frontend,
+    get_missing_fields,
+    match_inventory,
+)
 from api import app, db, login
 from models import Deck
 
@@ -223,5 +226,19 @@ def getRandomPda(quantity):
             counter += 1
             decks_ids.append(id)
             decks.append(get_deck_for_frontend(all_decks[id].deckid))
+
+    return jsonify(decks)
+
+
+@app.route("/api/pda/my", methods=["GET"])
+def getMyPda():
+    decks = []
+
+    for d in (
+        Deck.query.filter(Deck.public_parent != None, Deck.author == current_user)
+        .order_by(Deck.creation_date)
+        .all()
+    ):
+        decks.append(get_deck_for_frontend(d.deckid))
 
     return jsonify(decks)

@@ -173,6 +173,33 @@ function PdaSearchForm(props) {
       });
   };
 
+  const getMy = () => {
+    setSpinnerState(true);
+    setShowError(false);
+    setPdaFormState(JSON.parse(JSON.stringify(defaults)));
+    navigate('/pda');
+
+    const url = `${process.env.API_URL}pda/my`;
+    const options = {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+    };
+
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setSpinnerState(false);
+        setShowPdaSearch(false);
+        setPdaResults(data);
+      })
+      .catch((error) => {
+        setSpinnerState(false);
+        setPdaResults([]);
+        setShowError(true);
+      });
+  };
+
   const getNew = (q) => {
     setSpinnerState(true);
     setShowError(false);
@@ -245,6 +272,7 @@ function PdaSearchForm(props) {
       <PdaSearchFormButtons
         handleClearButton={handleClearButton}
         showLimit={showLimit}
+        getMy={getMy}
         getNew={getNew}
         getRandom={getRandom}
       />

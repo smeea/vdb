@@ -8,7 +8,6 @@
 - Mark Public decks (parent/child) in Decks page and in search
 - Open parent button
 - Sync with main deck button
-- Search for my decks only
 - Pagination for New
 - Sorting
 - Favorites
