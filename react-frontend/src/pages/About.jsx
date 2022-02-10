@@ -147,7 +147,7 @@ function About(props) {
             <div className="pt-3">
               <h5>ACKNOWLEDGMENTS</h5>
               <ul>
-                <li>Card images by Fernando &quot;Syndelson&quot; Cesar</li>
+                <li>Card images by Fernando &quot;Sydnelson&quot; Cesar</li>
                 <li>
                   Rulings by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
                   <a href="https://static.krcg.org/">KRCG</a>
