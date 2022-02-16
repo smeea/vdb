@@ -6,10 +6,11 @@
 
 # FEATURES FOR PDA
 - Mark Public decks (parent/child) in Decks page and in search
-- Open parent button
+- Switch parent/child
 - Sync with main deck button
+- Merge public deck buttons
 - Pagination for New
-- Sorting
+- Sorting by new/favorites/comments
 - Favorites
 - Comments
 

@@ -13,7 +13,7 @@ import {
   DeckDiffButton,
   DeckBranchCreate,
   DeckBranchDelete,
-  DeckTogglePublic,
+  DeckPublicButton,
 } from 'components';
 
 import { useApp } from 'context';
@@ -67,8 +67,9 @@ function DeckButtons({
           <DeckBranchDelete deck={deck} setShowButtons={setShowButtons} />
         )}
       {isAuthor && deck && (
-        <DeckTogglePublic deck={deck} setShowButtons={setShowButtons} />
+        <DeckPublicButton deck={deck} setShowButtons={setShowButtons} />
       )}
+
       {deck && (
         <DeckDiffButton deckid={deck.deckid} setShowButtons={setShowButtons} />
       )}
