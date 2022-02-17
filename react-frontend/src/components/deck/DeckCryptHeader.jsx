@@ -1,14 +1,14 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
+import { DeckCryptSortButton } from 'components';
+import { useApp } from 'context';
 
-const DeckLibraryHeader = (props) => {
+const DeckCryptHeader = (props) => {
   const {
-    isMobile,
-    libraryTotal,
+    cryptTotal,
     inMissing,
-    bloodTotal,
-    poolTotal,
+    cryptGroups,
     toggleShowInfo,
     toggleShowAdd,
     hasBanned,
@@ -16,6 +16,8 @@ const DeckLibraryHeader = (props) => {
     isAuthor,
     isPublic,
   } = props;
+
+  const { isMobile } = useApp();
 
   return (
     <div
@@ -26,37 +28,17 @@ const DeckLibraryHeader = (props) => {
       }
     >
       <b>
-        Library [{libraryTotal}
-        {!inMissing && (libraryTotal < 60 || libraryTotal > 90) && ' of 60-90'}]
+        Crypt [{cryptTotal}
+        {!inMissing && cryptTotal < 12 && ' of 12+'}]
+        {!inMissing && ` - ${cryptGroups}`}
         {!inMissing && hasBanned && ' - WITH BANNED'}
       </b>
-      <div className="d-flex">
-        {!inMissing && (
-          <>
-            <div
-              className="d-flex align-items-center pe-3"
-              title="Total Blood Cost"
-            >
-              <img
-                className="cost-blood-image-results pb-1 pe-1"
-                src={process.env.ROOT_URL + 'images/misc/bloodX.png'}
-              />
-              <b>{bloodTotal}</b>
-            </div>
-            <div
-              className="d-flex align-items-center pe-3"
-              title="Total Pool Cost"
-            >
-              <img
-                className="cost-pool-image-results py-1 pe-1"
-                src={process.env.ROOT_URL + 'images/misc/poolX.png'}
-              />
-              <b>{poolTotal}</b>
-            </div>
-          </>
-        )}
+      <div className="d-flex align-items-center justify-content-between ps-2 pe-1 pe-md-0 info-message">
         {!inAdvSelect && (
-          <>
+          <div className="d-flex">
+            <div className="pe-1">
+              <DeckCryptSortButton />
+            </div>
             <Button
               title="Additional Info"
               variant="primary"
@@ -75,11 +57,11 @@ const DeckLibraryHeader = (props) => {
                 </Button>
               </div>
             )}
-          </>
+          </div>
         )}
       </div>
     </div>
   );
 };
 
-export default DeckLibraryHeader;
+export default DeckCryptHeader;

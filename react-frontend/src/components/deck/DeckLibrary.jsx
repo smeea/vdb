@@ -25,8 +25,8 @@ const DeckLibrary = (props) => {
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const toogleShowInfo = () => setShowInfo(!showInfo);
-  const toogleShowAdd = () => setShowAdd(!showAdd);
+  const toggleShowInfo = () => setShowInfo(!showInfo);
+  const toggleShowAdd = () => setShowAdd(!showAdd);
   const [modalDraw, setModalDraw] = useState(undefined);
 
   const {
@@ -128,13 +128,13 @@ const DeckLibrary = (props) => {
           inMissing={inMissing}
           bloodTotal={bloodTotal}
           poolTotal={poolTotal}
-          toogleShowInfo={toogleShowInfo}
-          toogleShowAdd={toogleShowAdd}
+          toggleShowInfo={toggleShowInfo}
+          toggleShowAdd={toggleShowAdd}
           hasBanned={hasBanned}
           inAdvSelect={inAdvSelect}
           isAuthor={isAuthor}
+          isPublic={isPublic}
         />
-
         {showInfo && (
           <div className="info-message ps-2">
             <DeckLibraryTotalInfo
@@ -185,7 +185,7 @@ const DeckLibrary = (props) => {
           {LibrarySideDeck}
         </div>
       )}
-      {isMobile && isAuthor && showFloatingButtons && (
+      {isMobile && isAuthor && !isPublic && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"

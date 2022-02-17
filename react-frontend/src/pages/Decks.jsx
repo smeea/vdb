@@ -561,7 +561,7 @@ function Decks(props) {
           )}
         </Col>
         {!isMobile && (
-          <Col lg={2} className="hide-on-lt992px ps-lg-2 pe-lg-1 px-xl-3">
+          <Col lg={2} className="hide-on-lt992px px-lg-3">
             <div className="sticky-buttons">
               <DeckButtons
                 isAuthor={isAuthor}

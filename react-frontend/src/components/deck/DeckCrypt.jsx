@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import InfoCircle from 'assets/images/icons/info-circle.svg';
 import X from 'assets/images/icons/x.svg';
 import {
   DeckCryptTotalInfo,
   DeckCryptTable,
   DeckNewCryptCard,
-  DeckCryptSortButton,
+  DeckCryptHeader,
   ResultCryptModal,
 } from 'components';
 import { useApp } from 'context';
@@ -26,6 +25,8 @@ const DeckCrypt = (props) => {
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+  const toggleShowInfo = () => setShowInfo(!showInfo);
+  const toggleShowAdd = () => setShowAdd(!showAdd);
 
   const {
     crypt,
@@ -66,39 +67,17 @@ const DeckCrypt = (props) => {
         !isMobile ? 'sticky-deck-crypt' : ''
       }`}
     >
-      <div className="d-flex align-items-center justify-content-between ps-2 pe-1 pe-md-0 info-message">
-        <b>
-          Crypt [{cryptTotal}
-          {!inMissing && cryptTotal < 12 && ' of 12+'}]
-          {!inMissing && ` - ${cryptGroups}`}
-          {!inMissing && hasBanned && ' - WITH BANNED'}
-        </b>
-        {!inAdvSelect && (
-          <div className="d-flex">
-            <div className="pe-1">
-              <DeckCryptSortButton />
-            </div>
-            <Button
-              title="Additional Info"
-              variant="primary"
-              onClick={() => setShowInfo(!showInfo)}
-            >
-              <InfoCircle />
-            </Button>
-            {isAuthor && !isMobile && (
-              <div className="ps-1">
-                <Button
-                  title="Add Card"
-                  variant="primary"
-                  onClick={() => setShowAdd(!showAdd)}
-                >
-                  +
-                </Button>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
+      <DeckCryptHeader
+        cryptTotal={cryptTotal}
+        inMissing={inMissing}
+        cryptGroups={cryptGroups}
+        toggleShowInfo={toggleShowInfo}
+        toggleShowAdd={toggleShowAdd}
+        hasBanned={hasBanned}
+        inAdvSelect={inAdvSelect}
+        isAuthor={isAuthor}
+        isPublic={isPublic}
+      />
       {showInfo && (
         <div className="info-message px-2">
           <DeckCryptTotalInfo
@@ -181,7 +160,7 @@ const DeckCrypt = (props) => {
           />
         </div>
       )}
-      {isMobile && isAuthor && showFloatingButtons && (
+      {isMobile && isAuthor && !isPublic && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-top float-add-on align-items-center justify-content-center"

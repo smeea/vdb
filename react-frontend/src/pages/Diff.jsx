@@ -164,11 +164,13 @@ function Diff(props) {
       .catch((error) => setError(true));
   };
 
+  let isPublic;
   let isAuthor;
   let isBranchesFrom;
   let isBranchesTo;
   if (deckRouter(activeDeck)) {
-    isAuthor = username == deckRouter(activeDeck).owner && username;
+    isPublic = deckRouter(activeDeck).public_parent ? true : false;
+    isAuthor = username && username === deckRouter(activeDeck).owner;
     isBranchesFrom =
       deckRouter(activeDeck).master ||
       (deckRouter(activeDeck).branches &&
@@ -593,6 +595,7 @@ function Diff(props) {
                 <DiffCrypt
                   deckid={activeDeck.deckid}
                   isAuthor={isAuthor}
+                  isPublic={isPublic}
                   cardsFrom={deckRouter(activeDeck).crypt}
                   cardsTo={deckToRouter(secondaryDeck).crypt}
                   showFloatingButtons={showFloatingButtons}
@@ -603,6 +606,7 @@ function Diff(props) {
                 <DiffLibrary
                   deckid={activeDeck.deckid}
                   isAuthor={isAuthor}
+                  isPublic={isPublic}
                   cardsFrom={deckRouter(activeDeck).library}
                   cardsTo={deckToRouter(secondaryDeck).library}
                   showFloatingButtons={showFloatingButtons}
@@ -617,6 +621,7 @@ function Diff(props) {
             <div className="sticky-buttons">
               <DiffButtons
                 isAuthor={isAuthor}
+                isPublic={isPublic}
                 deck={deckRouter(activeDeck)}
                 activeDeck={activeDeck}
                 setShowButtons={handleShowButtons}

@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import InfoCircle from 'assets/images/icons/info-circle.svg';
 import X from 'assets/images/icons/x.svg';
 import {
   DiffCryptTable,
   DeckCryptTotalInfo,
   DeckNewCryptCard,
-  DeckCryptSortButton,
   ResultCryptModal,
+  DeckCryptHeader,
 } from 'components';
 
 import { useApp } from 'context';
@@ -15,12 +14,21 @@ import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
 const DiffCrypt = (props) => {
   const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
-  const { cardsFrom, cardsTo, deckid, isAuthor, inMissing, inAdvSelect } =
-    props;
+  const {
+    cardsFrom,
+    cardsTo,
+    deckid,
+    isPublic,
+    isAuthor,
+    inMissing,
+    inAdvSelect,
+  } = props;
   const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
+  const toggleShowInfo = () => setShowInfo(!showInfo);
+  const toggleShowAdd = () => setShowAdd(!showAdd);
 
   const {
     crypt,
@@ -57,34 +65,17 @@ const DiffCrypt = (props) => {
 
   return (
     <div className={`pt-md-4 ${isMobile ? null : 'sticky-deck-crypt'}`}>
-      <div
-        className={`d-flex align-items-center justify-content-between ps-2 info-message
-    ${isMobile ? 'pe-1' : ''}`}
-      >
-        <b>
-          Crypt [{cryptTotal}
-          {!inMissing && cryptTotal < 12 && ' of 12+'}]
-          {!inMissing && ` - ${cryptGroups}`}
-          {!inMissing && hasBanned && ' - WITH BANNED'}
-        </b>
-        {!inAdvSelect && (
-          <div className="d-flex">
-            <div className="pe-1">
-              <DeckCryptSortButton />
-            </div>
-            <Button variant="primary" onClick={() => setShowInfo(!showInfo)}>
-              <InfoCircle />
-            </Button>
-            {isAuthor && !isMobile && (
-              <div className="ps-1">
-                <Button variant="primary" onClick={() => setShowAdd(!showAdd)}>
-                  +
-                </Button>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
+      <DeckCryptHeader
+        cryptTotal={cryptTotal}
+        inMissing={inMissing}
+        cryptGroups={cryptGroups}
+        toggleShowInfo={toggleShowInfo}
+        toggleShowAdd={toggleShowAdd}
+        hasBanned={hasBanned}
+        inAdvSelect={inAdvSelect}
+        isAuthor={isAuthor}
+        isPublic={isPublic}
+      />
       {showInfo && (
         <div className="info-message px-2">
           <DeckCryptTotalInfo
@@ -133,6 +124,7 @@ const DiffCrypt = (props) => {
         disciplinesSet={disciplinesSet}
         showInfo={showInfo}
         isAuthor={isAuthor}
+        isPublic={isPublic}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
         setShowFloatingButtons={setShowFloatingButtons}
@@ -150,13 +142,14 @@ const DiffCrypt = (props) => {
             cardsTo={cardsTo}
             disciplinesSet={disciplinesSet}
             isAuthor={isAuthor}
+            isPublic={isPublic}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
             setShowFloatingButtons={setShowFloatingButtons}
           />
         </div>
       )}
-      {isMobile && isAuthor && showFloatingButtons && (
+      {isMobile && !isPublic && isAuthor && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"

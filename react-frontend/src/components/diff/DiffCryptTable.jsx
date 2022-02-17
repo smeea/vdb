@@ -104,7 +104,7 @@ function DiffCryptTable(props) {
     return (
       <React.Fragment key={card.c.Id}>
         <tr className={resultTrClass}>
-          {props.isAuthor ? (
+          {props.isAuthor && !props.isPublic ? (
             <>
               {inventoryMode && decks ? (
                 <OverlayTrigger

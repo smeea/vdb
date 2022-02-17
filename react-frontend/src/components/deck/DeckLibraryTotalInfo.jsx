@@ -43,7 +43,6 @@ function DeckLibraryTotalInfo(props) {
           </>
         ) : (
           <>
-            {/* <ResultDisciplineImage value={d} /> */}
             <ResultLibraryDisciplines value={d} />
             {props.byDisciplines[d]}{' '}
           </>

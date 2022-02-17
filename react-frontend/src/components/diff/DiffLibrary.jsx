@@ -17,15 +17,22 @@ import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DiffLibrary = (props) => {
   const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
-  const { cardsFrom, cardsTo, deckid, isAuthor, inMissing, inAdvSelect } =
-    props;
+  const {
+    cardsFrom,
+    cardsTo,
+    deckid,
+    isAuthor,
+    isPublic,
+    inMissing,
+    inAdvSelect,
+  } = props;
 
   const { nativeLibrary, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
-  const toogleShowInfo = () => setShowInfo(!showInfo);
-  const toogleShowAdd = () => setShowAdd(!showAdd);
+  const toggleShowInfo = () => setShowInfo(!showInfo);
+  const toggleShowAdd = () => setShowAdd(!showAdd);
   const [modalDraw, setModalDraw] = useState(undefined);
 
   const {
@@ -85,6 +92,7 @@ const DiffLibrary = (props) => {
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
         isAuthor={isAuthor}
+        isPublic={isPublic}
         setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
@@ -104,6 +112,7 @@ const DiffLibrary = (props) => {
         cardsFrom={cardsFrom}
         cardsTo={cardsTo}
         isAuthor={isAuthor}
+        isPublic={isPublic}
         setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
@@ -118,11 +127,12 @@ const DiffLibrary = (props) => {
           inMissing={inMissing}
           bloodTotal={bloodTotal}
           poolTotal={poolTotal}
-          toogleShowInfo={toogleShowInfo}
-          toogleShowAdd={toogleShowAdd}
+          toggleShowInfo={toggleShowInfo}
+          toggleShowAdd={toggleShowAdd}
           hasBanned={hasBanned}
           inAdvSelect={inAdvSelect}
           isAuthor={isAuthor}
+          isPublic={isPublic}
         />
         {showInfo && (
           <div className="info-message ps-2">
@@ -171,7 +181,7 @@ const DiffLibrary = (props) => {
           {LibrarySideDeck}
         </div>
       )}
-      {isMobile && isAuthor && showFloatingButtons && (
+      {isMobile && isAuthor && !isPublic && showFloatingButtons && (
         <div
           onClick={() => setShowAdd(true)}
           className="d-flex float-right-middle float-add-on align-items-center justify-content-center"
