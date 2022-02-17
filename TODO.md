@@ -1,21 +1,23 @@
 # FIX
 - Scale to Inventory without % value
+- Unify API outcome for decks
 
 # FEATURES
 - Export all in xlsx and csv
+- Creation date / Last modification date
 
 # FEATURES FOR PDA
 - Mark Public decks (parent/child) in Decks page and in search
-- Switch parent/child
-- Sync with main deck button
-- Merge public deck buttons
+- My Button to checkbox
+- Hide My Public from Recent
+- Public button to Adv Deck Select
 - Pagination for New
-- Sorting by new/favorites/comments
-- Favorites
-- Comments
+- Sorting by new/favorites/comments (incl. TWD)
 
 # BIG FEATURES
 - Search for similar TWD decks
+- Favorites for PDA
+- Comments for PDA
 
 # MOBILE FEATURES
 

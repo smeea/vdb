@@ -16,7 +16,7 @@ import {
   DeckBranchDelete,
   DeckProxy,
   DeckCopyUrl,
-  DeckTogglePublic,
+  // DeckTogglePublic,
   DeckSelectSortForm,
   ResultClanImage,
   OverlayTooltip,
@@ -360,9 +360,9 @@ function DeckSelectAdvModal(props) {
               <div className="d-inline pe-1">
                 <DeckHide deckid={deck.deckid} />
               </div>
-              <div className="d-inline pe-1">
-                <DeckTogglePublic noText={true} deck={deck} />
-              </div>
+              {/* <div className="d-inline pe-1"> */}
+              {/*   <DeckTogglePublic noText={true} deck={deck} /> */}
+              {/* </div> */}
               {isDesktop && (
                 <>
                   <div className="d-inline pe-1">

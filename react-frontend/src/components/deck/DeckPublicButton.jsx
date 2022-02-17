@@ -5,32 +5,44 @@ import {
   Dropdown,
   DropdownButton,
 } from 'react-bootstrap';
-import ClipboardPlus from 'assets/images/icons/clipboard-plus.svg';
-import ShareFill from 'assets/images/icons/share-fill.svg';
+import PeopleFill from 'assets/images/icons/people-fill.svg';
+import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
 function DeckPublicButton(props) {
-  const { setActiveDeck, setDecks, isMobile } = useApp();
-  const [showConfirmation, setShowConfirmation] = useState(false);
+  const { setDecks, setActiveDeck, isMobile } = useApp();
+  const [showCreateOrDeleteConfirmation, setShowCreateOrDeleteConfirmation] =
+    useState(false);
+  const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
   const [spinnerState, setSpinnerState] = useState(false);
 
-  const handleCancel = () => setShowConfirmation(false);
-  const handleConfirm = () => {
-    togglePublic();
-    setShowConfirmation(false);
-    isMobile && props.setShowButtons(false);
-  };
-
   const isChild = props.deck.public_parent ? true : false;
-  const parent = isChild ? props.deck.public_parent : props.deck.deckid;
   const isPublished =
     props.deck.public_parent || props.deck.public_child ? true : false;
 
-  const togglePublic = () => {
-    // Accept deckid of main (parent) deck and public (child), handled on backend
+  const handleCreateOrDelete = () => {
+    createOrDelete();
+    setShowCreateOrDeleteConfirmation(false);
+    isMobile && props.setShowButtons(false);
+  };
+
+  const handleSync = () => {
+    syncPublic();
+    setShowSyncConfirmation(false);
+    isMobile && props.setShowButtons(false);
+  };
+
+  const handleSwitch = () => {
+    setActiveDeck({
+      src: isChild ? 'my' : 'shared',
+      deckid: isChild ? props.deck.public_parent : props.deck.public_child,
+    });
+  };
+
+  const createOrDelete = () => {
     const url = `${process.env.API_URL}pda/${props.deck.deckid}`;
     const options = {
-      method: 'POST',
+      method: isPublished ? 'DELETE' : 'POST',
       mode: 'cors',
       credentials: 'include',
       headers: {
@@ -39,21 +51,57 @@ function DeckPublicButton(props) {
     };
 
     setSpinnerState(true);
-
-    fetch(url, options);
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setDecks((prevState) => {
+          return {
+            ...prevState,
+            [data.parent]: {
+              ...prevState[data.parent],
+              public_child: isPublished ? null : data.child,
+            },
+          };
+        });
+      });
 
     setSpinnerState(false);
-    isMobile && props.setShowInfo(true);
+  };
+
+  const syncPublic = () => {
+    const url = `${process.env.API_URL}pda/${props.deck.deckid}`;
+    const options = {
+      method: 'PUT',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    setSpinnerState(true);
+    fetch(url, options);
+    setSpinnerState(false);
   };
 
   const ButtonOptions = (
     <>
-      <Dropdown.Item onClick={() => setShowConfirmation(true)}>
-        Toggle Public/Private Deck
-      </Dropdown.Item>
-      <Dropdown.Item onClick={() => setShowConfirmation(true)}>
-        Sync Public
-      </Dropdown.Item>
+      {isPublished && (
+        <Dropdown.Item onClick={() => handleSwitch(props.deck.deckid)}>
+          {isChild ? 'Go to Main Deck' : 'Go to Public Deck'}
+        </Dropdown.Item>
+      )}
+
+      {isChild && (
+        <Dropdown.Item onClick={() => setShowSyncConfirmation(true)}>
+          Sync Public Deck
+        </Dropdown.Item>
+      )}
+
+      {(isChild || !isPublished) && (
+        <Dropdown.Item onClick={() => setShowCreateOrDeleteConfirmation(true)}>
+          {isPublished ? 'Remove from Public' : 'Make Public'}
+        </Dropdown.Item>
+      )}
     </>
   );
 
@@ -66,37 +114,39 @@ function DeckPublicButton(props) {
           <div className="d-flex justify-content-center align-items-center">
             <div className={props.noText ? '' : 'pe-2'}>
               {!spinnerState ? (
-                <ShareFill />
+                <PeopleFill />
               ) : (
                 <Spinner animation="border" size="sm" />
               )}
             </div>
-            Public Deck
+            Public Archive
           </div>
         }
       >
         {ButtonOptions}
       </DropdownButton>
-      {/* <ModalConfirmation */}
-      {/*   show={showConfirmation} */}
-      {/*   handleConfirm={handleConfirm} */}
-      {/*   handleCancel={handleCancel} */}
-      {/*   headerText={`Sync "${props.deck.name}" with Public Deck Archive?`} */}
-      {/*   mainText={props.deck.public_child ? '' : ''} // TODO */}
-      {/*   buttonText="Sync" */}
-      {/* /> */}
-      {/* <ModalConfirmation */}
-      {/*   show={showConfirmation} */}
-      {/*   handleConfirm={handleConfirm} */}
-      {/*   handleCancel={handleCancel} */}
-      {/*   headerText={ */}
-      {/*     isPublished */}
-      {/*       ? `Remove "${props.deck.name}" from Public Deck Archive?` */}
-      {/*       : `Add "${props.deck.name}" to Public Deck Archive?` */}
-      {/*   } */}
-      {/*   mainText={props.deck.public_child ? '' : ''} // TODO */}
-      {/*   buttonText={`${isPublished ? 'Remove' : 'Make'} Public`} */}
-      {/* /> */}
+
+      <ModalConfirmation
+        show={showSyncConfirmation}
+        handleConfirm={handleSync}
+        handleCancel={() => setShowSyncConfirmation(false)}
+        headerText={`Sync "${props.deck.name}" with Public Deck Archive?`}
+        mainText={props.deck.public_child ? '' : ''} // TODO
+        buttonText="Sync"
+      />
+
+      <ModalConfirmation
+        show={showCreateOrDeleteConfirmation}
+        handleConfirm={handleCreateOrDelete}
+        handleCancel={() => setShowCreateOrDeleteConfirmation(false)}
+        headerText={
+          isPublished
+            ? `Remove "${props.deck.name}" from Public Deck Archive?`
+            : `Add "${props.deck.name}" to Public Deck Archive?`
+        }
+        mainText={props.deck.public_child ? '' : ''} // TODO
+        buttonText={`${isPublished ? 'Remove' : 'Make'} Public`}
+      />
     </>
   );
 }

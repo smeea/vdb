@@ -1,6 +1,6 @@
 from flask import jsonify, request, abort, Response
 from flask_login import current_user, login_required
-from datetime import date
+from datetime import date, datetime
 import json
 import uuid
 from random import random
@@ -105,21 +105,21 @@ def showPublicDeck(deckid):
     return jsonify(deck)
 
 
-@app.route("/api/pda/<string:src_deckid>", methods=["POST"])
+@app.route("/api/pda/<string:parent_id>", methods=["POST"])
 @login_required
-def newPublicDeck(src_deckid):
+def newPublicDeck(parent_id):
     try:
-        parent = Deck.query.get(src_deckid)
+        parent = Deck.query.get(parent_id)
         if parent.author != current_user:
             abort(401)
         if parent.public_child:
-            return jsonify({"PDA already exist for": src_deckid})
+            return jsonify({"PDA already exist for": parent_id})
 
-        deckid = uuid.uuid4().hex
+        child_id = uuid.uuid4().hex
         m = get_missing_fields(parent)
 
         child = Deck(
-            deckid=deckid,
+            deckid=child_id,
             public_parent=parent.deckid,
             name=parent.name,
             author=parent.author,
@@ -137,62 +137,86 @@ def newPublicDeck(src_deckid):
             traits=m["traits"],
         )
 
-        parent.public_child = deckid
+        parent.public_child = child_id
 
         db.session.add(child)
         db.session.commit()
 
         return jsonify(
             {
-                "new public deck": "success",
                 "parent": parent.deckid,
                 "child": child.deckid,
             }
         )
 
     except Exception:
-        print("Error new PDA", current_user.username, src_deckid)
+        print("Error new PDA", current_user.username, parent_id)
 
 
-@app.route("/api/pda/<string:deckid>", methods=["DELETE"])
+@app.route("/api/pda/<string:deckid>", methods=["PUT"])
 @login_required
-def deletePublicDeck(deckid):
+def updatePublicDeck(deckid):
     try:
-        d = Deck.query.get(deckid)
-        if d.author != current_user:
+        child = Deck.query.get(deckid)
+        if not child:
+            print("bad deck request\n", deckid, current_user.username, request.json)
+            return jsonify({"error": "no deck"})
+
+        elif child.author != current_user:
             abort(401)
 
-        child_id = None
-        parent_id = None
+        parent = Deck.query.get(child.public_parent)
+        m = get_missing_fields(parent)
 
-        if d.public_child:
-            parent_id = d.deckid
-            child_id = d.public_child
-
-            child = Deck.query.get(child_id)
-            d.public_child = None
-            db.session.delete(child)
-
-        elif d.public_parent:
-            parent_id = d.public_parent
-            child_id = d.deckid
-
-            parent = Deck.query.get(parent_id)
-            parent.public_child = None
-            db.session.delete(d)
+        child.timestamp = datetime.utcnow()
+        child.cards = parent.cards
+        child.author_public_name = parent.author_public_name
+        child.tags = parent.tags
+        child.crypt_total = m["crypt_total"]
+        child.library_total = m["library_total"]
+        child.capacity = m["capacity"]
+        child.cardtypes_ratio = m["cardtypes_ratio"]
+        child.clan = m["clan"]
+        child.disciplines = m["disciplines"]
+        child.traits = m["traits"]
 
         db.session.commit()
 
         return jsonify(
             {
-                "delete public deck": "success",
-                "parent": parent_id,
+                "parent": parent.deckid,
+                "child": child.deckid,
+            }
+        )
+
+    except Exception:
+        print("Error sync PDA", current_user.username, deckid)
+
+
+@app.route("/api/pda/<string:child_id>", methods=["DELETE"])
+@login_required
+def deletePublicDeck(child_id):
+    try:
+        d = Deck.query.get(child_id)
+        if d.author != current_user:
+            abort(401)
+
+        parent = Deck.query.get(d.public_parent)
+        if parent:
+            parent.public_child = None
+
+        db.session.delete(d)
+        db.session.commit()
+
+        return jsonify(
+            {
+                "parent": parent.deckid,
                 "child": child_id,
             }
         )
 
     except Exception:
-        print("Error delete PDA", current_user.username, deckid)
+        print("Error delete PDA", current_user.username, child_id)
 
 
 @app.route("/api/pda/new/<int:quantity>", methods=["GET"])
