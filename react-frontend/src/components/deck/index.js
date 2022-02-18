@@ -58,3 +58,4 @@ export { default as DeckSelectorAndDisplay } from './DeckSelectorAndDisplay.jsx'
 export { default as DeckLibraryHeader } from './DeckLibraryHeader.jsx';
 export { default as DeckLibraryTypeDrawInfo } from './DeckLibraryTypeDrawInfo.jsx';
 export { default as DeckPublicButton } from './DeckPublicButton.jsx';
+export { default as DeckTogglePublic } from './DeckTogglePublic.jsx';

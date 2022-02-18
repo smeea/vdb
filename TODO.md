@@ -10,7 +10,6 @@
 # FEATURES FOR PDA
 - Mark Public decks (parent/child) in Decks page and in search
 - Hide My Public from Recent
-- Public button to Adv Deck Select
 - Pagination for New
 - Sorting by new/favorites/comments (incl. TWD)
 
