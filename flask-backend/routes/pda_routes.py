@@ -170,9 +170,11 @@ def updatePublicDeck(deckid):
         parent = Deck.query.get(child.public_parent)
         m = get_missing_fields(parent)
 
+        child.name = parent.name
         child.timestamp = datetime.utcnow()
         child.cards = parent.cards
         child.author_public_name = parent.author_public_name
+        child.description = parent.description
         child.tags = parent.tags
         child.crypt_total = m["crypt_total"]
         child.library_total = m["library_total"]
