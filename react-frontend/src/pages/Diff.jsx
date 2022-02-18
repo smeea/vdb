@@ -364,9 +364,9 @@ function Diff(props) {
                     {selectFrom == 'from-my' && decks ? (
                       <DeckSelectMy deckId={activeDeck.deckid} />
                     ) : selectFrom == 'from-recent' ? (
-                      <DeckSelectRecent deckId={activeDeck.deckId} />
+                      <DeckSelectRecent deckId={activeDeck.deckid} />
                     ) : (
-                      <DeckSelectPrecon deckId={activeDeck.deckId} />
+                      <DeckSelectPrecon deckId={activeDeck.deckid} />
                     )}
                   </div>
                   {selectFrom == 'from-my' && decks && isBranchesFrom && (
