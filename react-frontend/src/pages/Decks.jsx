@@ -463,6 +463,7 @@ function Decks(props) {
                         name={deckRouter(activeDeck).name}
                         deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
+                        isPublic={isPublic}
                       />
                     </Col>
                     {isBranches && (
