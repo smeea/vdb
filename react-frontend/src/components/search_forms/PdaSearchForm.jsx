@@ -16,8 +16,8 @@ import {
   TwdSearchFormMatchInventory,
   TwdSearchFormMatchInventoryScaling,
   TwdSearchFormPlayer,
+  TwdSearchFormButtons,
 } from './twd_search_components';
-import { PdaSearchFormButtons } from './pda_search_components';
 import defaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
@@ -173,34 +173,34 @@ function PdaSearchForm(props) {
       });
   };
 
-  const getMy = () => {
-    setSpinnerState(true);
-    setShowError(false);
-    setPdaFormState(JSON.parse(JSON.stringify(defaults)));
-    navigate('/pda');
+  // const getMy = () => {
+  //   setSpinnerState(true);
+  //   setShowError(false);
+  //   setPdaFormState(JSON.parse(JSON.stringify(defaults)));
+  //   navigate('/pda');
 
-    const url = `${process.env.API_URL}pda/my`;
-    const options = {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include',
-    };
+  //   const url = `${process.env.API_URL}pda/my`;
+  //   const options = {
+  //     method: 'GET',
+  //     mode: 'cors',
+  //     credentials: 'include',
+  //   };
 
-    fetch(url, options)
-      .then((response) => response.json())
-      .then((data) => {
-        setSpinnerState(false);
-        setShowPdaSearch(false);
-        setPdaResults(data);
-      })
-      .catch((error) => {
-        setSpinnerState(false);
-        setPdaResults([]);
-        setShowError(true);
-      });
-  };
+  //   fetch(url, options)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setSpinnerState(false);
+  //       setShowPdaSearch(false);
+  //       setPdaResults(data);
+  //     })
+  //     .catch((error) => {
+  //       setSpinnerState(false);
+  //       setPdaResults([]);
+  //       setShowError(true);
+  //     });
+  // };
 
-  const getNew = (q) => {
+  const getNewPda = (q) => {
     setSpinnerState(true);
     setShowError(false);
     setPdaFormState(JSON.parse(JSON.stringify(defaults)));
@@ -227,7 +227,7 @@ function PdaSearchForm(props) {
       });
   };
 
-  const getRandom = (q) => {
+  const getRandomPda = (q) => {
     setSpinnerState(true);
     setShowError(false);
     setPdaFormState(JSON.parse(JSON.stringify(defaults)));
@@ -269,12 +269,11 @@ function PdaSearchForm(props) {
 
   return (
     <Form onSubmit={handleSubmitButton}>
-      <PdaSearchFormButtons
+      <TwdSearchFormButtons
         handleClearButton={handleClearButton}
         showLimit={showLimit}
-        getMy={getMy}
-        getNew={getNew}
-        getRandom={getRandom}
+        getNew={getNewPda}
+        getRandom={getRandomPda}
       />
       {inventoryMode && (
         <>
@@ -440,6 +439,20 @@ function PdaSearchForm(props) {
           />
         </Col>
       </Row>
+      <Row className="px-1">
+        <div className="d-flex justify-content-end">
+          <Form.Check
+            name="traits"
+            value="my"
+            type="checkbox"
+            id="traits-my"
+            label="Only My Decks"
+            checked={pdaFormState.traits.my}
+            onChange={(e) => handleMultiChange(e)}
+          />
+        </div>
+      </Row>
+
       {isMobile && (
         <>
           <div

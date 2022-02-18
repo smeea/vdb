@@ -1,4 +1,5 @@
 import json
+from flask_login import current_user
 from models import Deck
 
 
@@ -213,8 +214,12 @@ def get_decks_by_traits(traits, decks):
     match_decks = []
     for deck in decks:
         counter = 0
+
         for trait in traits.keys():
             if trait in deck["traits"]:
+                counter += 1
+                continue
+            if trait == "my" and Deck.query.get(deck["deckid"]).author == deck["owner"]:
                 counter += 1
 
         if trait_counter == counter:

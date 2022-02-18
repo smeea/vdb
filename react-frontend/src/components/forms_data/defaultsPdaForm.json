@@ -33,6 +33,7 @@
     "event": "any"
   },
   "traits": {
+    "my": false,
     "star": false,
     "monoclan": false
   },

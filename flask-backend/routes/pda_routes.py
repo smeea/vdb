@@ -32,6 +32,7 @@ for d in (
         "library_total": d.library_total,
         "author": d.author_public_name,
         "traits": d.traits,
+        "owner": d.author,
     }
 
     for id, q in d.cards.items():
@@ -61,6 +62,7 @@ def getPdaAuthors():
 @app.route("/api/search/pda", methods=["POST"])
 def searchPdaRoute():
     query_priority = [
+        "owner",
         "author",
         "date",
         "libraryTotal",
@@ -250,19 +252,5 @@ def getRandomPda(quantity):
             counter += 1
             decks_ids.append(id)
             decks.append(get_deck_for_frontend(all_decks[id].deckid))
-
-    return jsonify(decks)
-
-
-@app.route("/api/pda/my", methods=["GET"])
-def getMyPda():
-    decks = []
-
-    for d in (
-        Deck.query.filter(Deck.public_parent != None, Deck.author == current_user)
-        .order_by(Deck.creation_date)
-        .all()
-    ):
-        decks.append(get_deck_for_frontend(d.deckid))
 
     return jsonify(decks)

@@ -5,10 +5,10 @@
 # FEATURES
 - Export all in xlsx and csv
 - Creation date / Last modification date
+- Multi-forms with text and logic
 
 # FEATURES FOR PDA
 - Mark Public decks (parent/child) in Decks page and in search
-- My Button to checkbox
 - Hide My Public from Recent
 - Public button to Adv Deck Select
 - Pagination for New

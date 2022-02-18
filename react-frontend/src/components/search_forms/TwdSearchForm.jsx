@@ -268,8 +268,8 @@ function TwdSearchForm(props) {
       <TwdSearchFormButtons
         handleClearButton={handleClearButton}
         showLimit={showLimit}
-        getNewTwd={getNewTwd}
-        getRandomTwd={getRandomTwd}
+        getNew={getNewTwd}
+        getRandom={getRandomTwd}
       />
       {inventoryMode && (
         <>
