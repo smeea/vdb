@@ -4,17 +4,16 @@
 
 # FEATURES
 - Export all in xlsx and csv
-- Creation date / Last modification date
 - Multi-forms with text and logic
-- Pagination for New
-
-# BIG FEATURES
-- Search for similar TWD decks
+- Documentation on PDA
+- Creation date / Last modification date
+- Favorites for PDA
+- Sorting by new/favorites/comments (incl. TWD)
 
 # MAYBE LATER FEATURES
-- Sorting by new/favorites/comments (incl. TWD)
+- Search for similar PDA/TWD decks
 - Script to update images from static.krcg.org
-- Favorites for PDA
+- Pagination for New
 - Comments for PDA
 
 # IMPROVE TECHNOLOGY - FRONTEND

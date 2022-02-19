@@ -3,6 +3,7 @@ import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
 import StarFill from 'assets/images/icons/star-fill.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
+import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { useApp } from 'context';
 
 function DeckChangeName(props) {
@@ -51,12 +52,14 @@ function DeckChangeName(props) {
           onBlur={handleOnBlur}
           readOnly={!props.isAuthor}
         />
-        {props.isPublic && (
-          <InputGroup.Text title="Public Deck">
+        {(props.isPublic || props.deckid.length != 32) && (
+          <InputGroup.Text
+            title={props.isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}
+          >
             <div className="pe-2">
-              <PeopleFill />
+              {props.isPublic ? <PeopleFill /> : <TrophyFill />}
             </div>
-            PDA
+            {props.isPublic ? 'PDA' : 'TWD'}
           </InputGroup.Text>
         )}
         {isMobile && props.isAuthor && (
