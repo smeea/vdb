@@ -5,7 +5,7 @@ function TwdResultTotal({ decks }) {
   let total = 0;
 
   decks.map((deck, index) => {
-    const year = `'${deck['date'].slice(2, 4)}`;
+    const year = `'${deck['creation_date'].slice(2, 4)}`;
     if (byYear[year]) {
       byYear[year] += 1;
     } else {

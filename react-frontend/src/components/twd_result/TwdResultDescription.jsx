@@ -42,15 +42,15 @@ function TwdResultDescription(props) {
     <>
       {isMobile ? (
         <>
-          <Row className="px-0 ps-1 mx-0">
-            <Col xs={7} className="px-0 mx-0">
+          <Row className="pb-1 mx-0">
+            <Col xs={8} className="px-1 mx-0">
               <table className="d-inline">
                 <tbody>
                   <tr>
                     <td className="d-inline">
                       <b>Date:</b>
                     </td>
-                    <td className="ps-2">{props.deck['date']}</td>
+                    <td className="ps-2">{props.deck['creation_date']}</td>
                   </tr>
                   <tr>
                     <td className="d-inline">
@@ -89,14 +89,15 @@ function TwdResultDescription(props) {
                 </tbody>
               </table>
             </Col>
-            <Col xs={5} className="px-0 mx-0">
-              <Stack gap={1} className="py-2">
+            <Col xs={4} className="px-1">
+              <Stack gap={1}>
                 <TwdOpenDeckButton deckid={props.deck['deckid']} />
                 {username && (
                   <DeckClone
                     deck={props.deck}
                     activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
                     setShowButtons={() => {}}
+                    inTwd
                   />
                 )}
               </Stack>
@@ -111,7 +112,7 @@ function TwdResultDescription(props) {
                 <td className="d-inline">
                   <b>Date:</b>
                 </td>
-                <td className="ps-2">{props.deck['date']}</td>
+                <td className="ps-2">{props.deck['creation_date']}</td>
               </tr>
               <tr>
                 <td className="d-inline">
@@ -169,6 +170,7 @@ function TwdResultDescription(props) {
               <DeckClone
                 deck={props.deck}
                 activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
+                inTwd
               />
             )}
           </Stack>

@@ -118,7 +118,7 @@ def get_decks_by_date(request, decks):
     match_decks = []
 
     for deck in decks:
-        date = int(deck["date"][0:4])
+        date = int(deck["creation_date"][0:4])
         if date_from <= date <= date_to:
             match_decks.append(deck)
 
@@ -306,7 +306,8 @@ def get_deck_for_frontend(deckid):
         "author": d.author_public_name,
         "owner": d.author.username,
         "description": d.description,
-        "date": d.creation_date,
+        "creation_date": d.creation_date,
+        "timestamp": d.timestamp,
         "cards": d.cards,
     }
 

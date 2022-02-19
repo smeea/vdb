@@ -26,7 +26,7 @@ for d in (
         "clan": d.clan,
         "crypt": {},
         "crypt_total": d.crypt_total,
-        "date": d.creation_date,
+        "creation_date": d.creation_date,
         "disciplines": d.disciplines,
         "library": {},
         "library_total": d.library_total,

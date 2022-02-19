@@ -1,6 +1,6 @@
 # FIX
 - Scale to Inventory without % value
-- Unify API outcome for decks
+- Unify API outcome for decks (crypt+library into cards)
 
 # FEATURES
 - Export all in xlsx and csv

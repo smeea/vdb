@@ -1,6 +1,6 @@
 from flask import jsonify, request, abort, Response
 from flask_login import current_user, login_required
-from datetime import datetime
+from datetime import date, datetime
 import uuid
 import json
 
@@ -47,7 +47,7 @@ def showDeck(deckid):
             try:
                 deck = twdDecks[deckid]
                 comments = deck["description"]
-                deck["description"] = "Date: " + deck["date"] + "\n"
+                deck["description"] = "Date: " + deck["creation_date"] + "\n"
                 deck["description"] += "Players: " + str(deck["players"]) + "\n"
                 deck["description"] += "Event: " + deck["event"] + "\n"
                 deck["description"] += "Location: " + deck["location"] + "\n"
@@ -60,7 +60,6 @@ def showDeck(deckid):
                 del deck["link"]
                 del deck["location"]
                 del deck["players"]
-                del deck["timestamp"]
                 del deck["score"]
                 del deck["traits"]
                 del deck["clan"]
@@ -382,6 +381,7 @@ def newDeck():
             deckid=deckid,
             name=request.json["deckname"],
             author_public_name=author,
+            creation_date=date.today().strftime("%Y-%m-%d"),
             description=description,
             author=current_user,
             cards=cards,
@@ -562,7 +562,7 @@ def cloneDeck():
             for i, q in deck["cards"].items():
                 cards[int(i)] = q
 
-            description = "Date: " + deck["date"] + "\n"
+            description = "Date: " + deck["creation_date"] + "\n"
             description += "Players: " + str(deck["players"]) + "\n"
             description += "Event: " + deck["event"] + "\n"
             description += "Location: " + deck["location"] + "\n"
@@ -715,7 +715,7 @@ def deckExportRoute():
                 twdDecks = json.load(twdDecks_file)
                 deck = twdDecks[deckid]
                 comments = deck["description"]
-                deck["description"] = "Date: " + deck["date"] + "\n"
+                deck["description"] = "Date: " + deck["creation_date"] + "\n"
                 deck["description"] += "Players: " + str(deck["players"]) + "\n"
                 deck["description"] += "Event: " + deck["event"] + "\n"
                 deck["description"] += "Location: " + deck["location"] + "\n"

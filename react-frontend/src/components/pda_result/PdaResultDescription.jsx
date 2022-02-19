@@ -25,19 +25,25 @@ function PdaResultDescription(props) {
     }
   };
 
+  const lastUpdated = new Date(props.deck['timestamp'])
+    .toISOString()
+    .slice(0, 10);
+
   return (
     <>
       {isMobile ? (
         <>
-          <Row className="px-0 ps-1 mx-0">
-            <Col xs={7} className="px-0 mx-0">
+          <Row className="pb-1 mx-0">
+            <Col xs={8} className="px-1 mx-0">
               <table className="d-inline">
                 <tbody>
                   <tr>
                     <td className="d-inline">
-                      <b>Date:</b>
+                      <b>Deck</b>:
                     </td>
-                    <td className="ps-2">{props.deck['date']}</td>
+                    <td className="ps-2">
+                      {props.deck['name']} <br />
+                    </td>
                   </tr>
                   <tr>
                     <td className="d-inline">
@@ -52,17 +58,32 @@ function PdaResultDescription(props) {
                       </div>
                     </td>
                   </tr>
+                  <tr>
+                    <td className="d-inline">
+                      <b>Date:</b>
+                    </td>
+                    <td className="ps-2">{props.deck['creation_date']}</td>
+                  </tr>
+                  {lastUpdated !== props.deck['creation_date'] && (
+                    <tr>
+                      <td className="d-inline">
+                        <b>Updated:</b>
+                      </td>
+                      <td className="ps-2">{lastUpdated}</td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </Col>
-            <Col xs={5} className="px-0 mx-0">
-              <Stack gap={1} className="py-2">
+            <Col xs={4} className="px-1">
+              <Stack gap={1}>
                 <TwdOpenDeckButton deckid={props.deck['deckid']} inPda />
                 {username && (
                   <DeckClone
                     deck={props.deck}
                     activeDeck={{ src: 'shared', deckid: props.deck.deckid }}
                     setShowButtons={() => {}}
+                    inPda
                   />
                 )}
               </Stack>
@@ -75,9 +96,11 @@ function PdaResultDescription(props) {
             <tbody>
               <tr>
                 <td className="d-inline">
-                  <b>Date:</b>
+                  <b>Deck</b>:
                 </td>
-                <td className="ps-2">{props.deck['date']}</td>
+                <td className="ps-2">
+                  {props.deck['name']} <br />
+                </td>
               </tr>
               <tr>
                 <td className="d-inline">
@@ -94,12 +117,18 @@ function PdaResultDescription(props) {
               </tr>
               <tr>
                 <td className="d-inline">
-                  <b>Deck</b>:
+                  <b>Date:</b>
                 </td>
-                <td className="ps-2">
-                  {props.deck['name']} <br />
-                </td>
+                <td className="ps-2">{props.deck['creation_date']}</td>
               </tr>
+              {lastUpdated !== props.deck['creation_date'] && (
+                <tr>
+                  <td className="d-inline">
+                    <b>Updated:</b>
+                  </td>
+                  <td className="ps-2">{lastUpdated}</td>
+                </tr>
+              )}
             </tbody>
           </table>
           <Stack gap={1} className="py-2">
@@ -108,6 +137,7 @@ function PdaResultDescription(props) {
               <DeckClone
                 deck={props.deck}
                 activeDeck={{ src: 'shared', deckid: props.deck.deckid }}
+                inPda
               />
             )}
           </Stack>

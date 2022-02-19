@@ -18,8 +18,12 @@ function TwdOpenDeckButton(props) {
 
   return (
     <Button onClick={handleClick} variant="secondary">
-      <PlayCircleFill />
-      <span className="ps-1">Open Deck</span>
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="pe-2">
+          <PlayCircleFill />
+        </div>
+        Open
+      </div>
     </Button>
   );
 }

@@ -62,7 +62,10 @@ function DeckClone(props) {
           <div className={props.noText ? null : 'pe-2'}>
             <Files />
           </div>
-          {!props.noText && (state ? 'Cloned' : 'Clone Deck')}
+          {!props.noText &&
+            (state
+              ? 'Cloned'
+              : `Clone${!(props.inPda || props.inTwd) ? ' Deck' : ''}`)}
         </div>
       </Button>
     </>
