@@ -6,15 +6,14 @@
 - Export all in xlsx and csv
 - Multi-forms with text and logic
 - Documentation on PDA
-- Creation date / Last modification date
 - Favorites for PDA
-- Sorting by new/favorites/comments (incl. TWD)
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks
-- Script to update images from static.krcg.org
 - Pagination for New
 - Comments for PDA
+- Sorting by new/favorites/comments in PDA/TWD
+- Script to update images from static.krcg.org
 
 # IMPROVE TECHNOLOGY - FRONTEND
 - Move search to frontend

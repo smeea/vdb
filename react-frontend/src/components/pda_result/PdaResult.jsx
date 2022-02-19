@@ -13,7 +13,7 @@ import { useApp, useSearchResults } from 'context';
 
 function PdaResult(props) {
   const {
-    setShowTwdSearch,
+    setShowPdaSearch,
     cryptCardBase,
     libraryCardBase,
     showImage,
@@ -31,7 +31,7 @@ function PdaResult(props) {
   const handleClear = () => {
     navigate('/pda');
     setPdaResults(undefined);
-    setShowTwdSearch(!props.showSearch);
+    setShowPdaSearch(!props.showSearch);
   };
 
   useEffect(() => {
