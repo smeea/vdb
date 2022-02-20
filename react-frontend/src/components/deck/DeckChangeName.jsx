@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, FormControl, InputGroup, Button } from 'react-bootstrap';
 import Check2 from 'assets/images/icons/check2.svg';
-import StarFill from 'assets/images/icons/star-fill.svg';
+import TagFill from 'assets/images/icons/tag-fill.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { useApp } from 'context';
@@ -42,7 +42,7 @@ function DeckChangeName(props) {
     <Form className="my-0" onSubmit={handleSubmitButton}>
       <InputGroup>
         <InputGroup.Text title="Deck Name">
-          <StarFill />
+          <TagFill />
         </InputGroup.Text>
         <FormControl
           type="text"

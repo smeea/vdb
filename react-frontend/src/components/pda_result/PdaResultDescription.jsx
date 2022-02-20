@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
-import { TwdOpenDeckButton, DeckClone } from 'components';
+import { PdaFavoriteButton, TwdOpenDeckButton, DeckClone } from 'components';
 import { useApp, useSearchForms } from 'context';
 import defaults from 'components/forms_data/defaultsPdaForm.json';
 
@@ -86,6 +86,13 @@ function PdaResultDescription(props) {
                     inPda
                   />
                 )}
+                {username && (
+                  <PdaFavoriteButton
+                    idx={props.idx}
+                    deck={props.deck}
+                    setShowButtons={() => {}}
+                  />
+                )}
               </Stack>
             </Col>
           </Row>
@@ -140,6 +147,7 @@ function PdaResultDescription(props) {
                 inPda
               />
             )}
+            {username && <PdaFavoriteButton deck={props.deck} />}
           </Stack>
         </>
       )}

@@ -17,7 +17,7 @@ from routes import (
     inventory_routes,
     search_routes,
     twd_routes,
-    pda_routes,  # Comment it out when initializing empty db
+    pda_routes,
 )
 
 # Everything below only required for `flask shell` to play with database

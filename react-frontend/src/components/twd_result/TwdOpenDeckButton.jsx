@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import PlayCircleFill from 'assets/images/icons/play-circle-fill.svg';
+import PlayFill from 'assets/images/icons/play-fill.svg';
 import { useApp } from 'context';
 
 function TwdOpenDeckButton(props) {
@@ -20,7 +20,7 @@ function TwdOpenDeckButton(props) {
     <Button onClick={handleClick} variant="secondary">
       <div className="d-flex justify-content-center align-items-center">
         <div className="pe-2">
-          <PlayCircleFill />
+          <PlayFill height="18" viewBox="0 0 12 14" />
         </div>
         Open
       </div>

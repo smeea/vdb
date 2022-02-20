@@ -36,6 +36,7 @@ def showDeck(deckid):
             "tags": deck.tags,
             "public_child": deck.public_child,
             "public_parent": deck.public_parent,
+            "favorited": deck.favorited,
         }
 
         return jsonify(deck)

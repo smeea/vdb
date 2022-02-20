@@ -12,36 +12,7 @@ from search_decks_components import (
     match_inventory,
 )
 from api import app, db, login
-from models import Deck
-
-
-pda_decks = []
-for d in (
-    Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date).all()
-):
-    deck = {
-        "deckid": d.deckid,
-        "capacity": d.capacity,
-        "cardtypes_ratio": d.cardtypes_ratio,
-        "clan": d.clan,
-        "crypt": {},
-        "crypt_total": d.crypt_total,
-        "creation_date": d.creation_date,
-        "disciplines": d.disciplines,
-        "library": {},
-        "library_total": d.library_total,
-        "author": d.author_public_name,
-        "traits": d.traits,
-        "owner": d.author,
-    }
-
-    for id, q in d.cards.items():
-        if id > 200000:
-            deck["crypt"][id] = q
-        else:
-            deck["library"][id] = q
-
-    pda_decks.append(deck)
+from models import User, Deck
 
 
 @login.unauthorized_handler
@@ -61,6 +32,34 @@ def getPdaAuthors():
 
 @app.route("/api/search/pda", methods=["POST"])
 def searchPdaRoute():
+    pda_decks = []
+    for d in (
+        Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date).all()
+    ):
+        deck = {
+            "deckid": d.deckid,
+            "capacity": d.capacity,
+            "cardtypes_ratio": d.cardtypes_ratio,
+            "clan": d.clan,
+            "crypt": {},
+            "crypt_total": d.crypt_total,
+            "creation_date": d.creation_date,
+            "disciplines": d.disciplines,
+            "library": {},
+            "library_total": d.library_total,
+            "author": d.author_public_name,
+            "traits": d.traits,
+            "owner": d.author,
+        }
+
+        for id, q in d.cards.items():
+            if id > 200000:
+                deck["crypt"][id] = q
+            else:
+                deck["library"][id] = q
+
+        pda_decks.append(deck)
+
     query_priority = [
         "owner",
         "author",
@@ -96,15 +95,6 @@ def searchPdaRoute():
         return jsonify([get_deck_for_frontend(d["deckid"]) for d in result])
     else:
         abort(400)
-
-
-@app.route("/api/pda/<string:deckid>", methods=["GET"])
-def showPublicDeck(deckid):
-    deck = get_deck_for_frontend(deckid)
-    if not deck:
-        abort(400)
-
-    return jsonify(deck)
 
 
 @app.route("/api/pda/<string:parent_id>", methods=["POST"])
@@ -155,13 +145,13 @@ def newPublicDeck(parent_id):
         print("Error new PDA", current_user.username, parent_id)
 
 
-@app.route("/api/pda/<string:deckid>", methods=["PUT"])
+@app.route("/api/pda/<string:child_id>", methods=["PUT"])
 @login_required
-def updatePublicDeck(deckid):
+def updatePublicDeck(child_id):
     try:
-        child = Deck.query.get(deckid)
+        child = Deck.query.get(child_id)
         if not child:
-            print("bad deck request\n", deckid, current_user.username, request.json)
+            print("bad deck request\n", child_id, current_user.username, request.json)
             return jsonify({"error": "no deck"})
 
         elif child.author != current_user:
@@ -194,7 +184,7 @@ def updatePublicDeck(deckid):
         )
 
     except Exception:
-        print("Error sync PDA", current_user.username, deckid)
+        print("Error sync PDA", current_user.username, child_id)
 
 
 @app.route("/api/pda/<string:child_id>", methods=["DELETE"])
@@ -256,3 +246,54 @@ def getRandomPda(quantity):
             decks.append(get_deck_for_frontend(all_decks[id].deckid))
 
     return jsonify(decks)
+
+
+@app.route("/api/pda/favorites/<string:username>", methods=["GET"])
+@login_required
+def listFavorites(username):
+    u = User.query.filter_by(username=username).first()
+    print(u.username, u.favorites)
+
+    return jsonify("kek")
+
+
+@app.route("/api/pda/favorited/<string:deckid>", methods=["GET"])
+def listFavorited(deckid):
+    d = Deck.query.get(deckid)
+    print(d.name, d.favorited)
+
+    return jsonify("kek")
+
+
+@app.route("/api/pda/favorite/<string:deckid>", methods=["POST"])
+@login_required
+def addFavorite(deckid):
+    d = Deck.query.get(deckid)
+    deck_favorited = d.favorited.copy()
+    deck_favorited.append(current_user.id)
+    d.favorited = deck_favorited
+
+    user_favorites = current_user.favorites.copy()
+    user_favorites.append(deckid)
+    current_user.favorites = user_favorites
+
+    db.session.commit()
+
+    return jsonify({"favorited": deckid})
+
+
+@app.route("/api/pda/favorite/<string:deckid>", methods=["DELETE"])
+@login_required
+def deleteFavorite(deckid):
+    d = Deck.query.get(deckid)
+    deck_favorited = d.favorited.copy()
+    deck_favorited.remove(current_user.id)
+    d.favorited = deck_favorited
+
+    user_favorites = current_user.favorites.copy()
+    user_favorites.remove(deckid)
+    current_user.favorites = user_favorites
+
+    db.session.commit()
+
+    return jsonify({"unfavorited": deckid})
