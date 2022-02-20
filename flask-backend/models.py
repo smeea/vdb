@@ -13,12 +13,13 @@ def load_user(id):
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    decks = db.relationship("Deck", backref="author", lazy="dynamic")
+    username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(64))
-    inventory = db.Column(db.PickleType, default={})
     password_hash = db.Column(db.String(128))
     public_name = db.Column(db.String(64))
-    username = db.Column(db.String(64), index=True, unique=True)
+    decks = db.relationship("Deck", backref="author", lazy="dynamic")
+    favorites = db.Column(db.PickleType)
+    inventory = db.Column(db.PickleType)
 
     def __repr__(self):
         return "<User {}>".format(self.username)
@@ -31,19 +32,19 @@ class User(UserMixin, db.Model):
 
 
 class Deck(db.Model):
+    deckid = db.Column(db.String(32), primary_key=True)
     author_public_name = db.Column(db.String(64))
     branch_name = db.Column(db.String(32), default="#0")
-    branches = db.Column(db.PickleType, default=[])
-    cards = db.Column(db.PickleType, default={})
-    deckid = db.Column(db.String(32), primary_key=True)
+    branches = db.Column(db.PickleType)
+    cards = db.Column(db.PickleType)
     description = db.Column(db.String(32768), default="")
     hidden = db.Column(db.Boolean, default=False)
     inventory_type = db.Column(db.String(1), default="")
     master = db.Column(db.String(32))
     name = db.Column(db.String(64), default="New Deck")
-    tags = db.Column(db.PickleType, default=[])
+    tags = db.Column(db.PickleType)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
-    used_in_inventory = db.Column(db.PickleType, default={})
+    used_in_inventory = db.Column(db.PickleType)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
 
     # Used only for Public Deck Archive
@@ -53,10 +54,11 @@ class Deck(db.Model):
     cardtypes_ratio = db.Column(db.PickleType)
     clan = db.Column(db.String(32))
     creation_date = db.Column(db.String(10))
-    disciplines = db.Column(db.PickleType, default=[])
+    disciplines = db.Column(db.PickleType)
     crypt_total = db.Column(db.Integer)
     library_total = db.Column(db.Integer)
-    traits = db.Column(db.PickleType, default=[])
+    traits = db.Column(db.PickleType)
+    favorited = db.Column(db.PickleType)
 
     def __repr__(self):
         return "<Deck {}>".format(self.name)

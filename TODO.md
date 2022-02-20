@@ -1,12 +1,14 @@
 # FIX
 - Scale to Inventory without % value
 - Unify API outcome for decks (crypt+library into cards)
+- Change Bundle precon names to set name
 
 # FEATURES
 - Export all in xlsx and csv
 - Multi-forms with text and logic
 - Documentation on PDA
 - Favorites for PDA
+- Add tags to filter by click
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks
@@ -21,6 +23,7 @@
 - Move import to frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
+- Add migration script to set default starting PickleType values for new empty db
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)
