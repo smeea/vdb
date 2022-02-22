@@ -141,11 +141,11 @@
     "date": "2018-07-14",
     "precons": {
       "A": {
-        "name": "Bundle 1",
+        "name": "HttB Reprint 1 (Bundle)",
         "clan": "Bundle"
       },
       "B": {
-        "name": "Bundle 2",
+        "name": "HttB Reprint 2 (Bundle)",
         "clan": "Bundle"
       }
     }
@@ -155,11 +155,11 @@
     "date": "2018-05-05",
     "precons": {
       "A": {
-        "name": "Bundle 1",
+        "name": "KoT Reprint 1 (Bundle)",
         "clan": "Bundle"
       },
       "B": {
-        "name": "Bundle 2",
+        "name": "KoT Reprint 2 (Bundle)",
         "clan": "Bundle"
       }
     }
@@ -169,7 +169,7 @@
     "date": "2018-06-09",
     "precons": {
       "": {
-        "name": "Bundle",
+        "name": "Lost Kindred (Bundle)",
         "clan": "Bundle"
       }
     }
@@ -179,7 +179,7 @@
     "date": "2017-05-11",
     "precons": {
       "": {
-        "name": "Bundle",
+        "name": "Anthology (Bundle)",
         "clan": "Bundle"
       }
     }
@@ -253,7 +253,7 @@
     "date": "2008-04-14",
     "precons": {
       "X": {
-        "name": "Bundle",
+        "name": "Blood Shadowed Court (Bundle)",
         "clan": "Bundle"
       }
     }

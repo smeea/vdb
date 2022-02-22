@@ -1,7 +1,6 @@
 # FIX
 - Scale to Inventory without % value
 - Unify API outcome for decks (crypt+library into cards)
-- Change Bundle precon names to set name
 
 # FEATURES
 - Export all in xlsx and csv
