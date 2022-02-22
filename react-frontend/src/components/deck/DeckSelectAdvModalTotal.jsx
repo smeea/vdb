@@ -9,6 +9,8 @@ const DeckSelectAdvModalTotal = ({ tagsFilter, setTagsFilter }) => {
   const handleClick = (tag) => {
     if (!tagsFilter.includes(tag)) {
       setTagsFilter([...tagsFilter, tag]);
+    } else {
+      setTagsFilter(tagsFilter.filter((i) => i !== tag));
     }
   };
 

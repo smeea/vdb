@@ -7,7 +7,6 @@
 - Export all in xlsx and csv
 - Multi-forms with text and logic
 - Documentation on PDA
-- Add tags to filter by click
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks

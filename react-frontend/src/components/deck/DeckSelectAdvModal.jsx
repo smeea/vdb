@@ -10,7 +10,7 @@ import {
   DeckCrypt,
   DeckLibrary,
   DeckTags,
-  DeckTotal,
+  DeckSelectAdvModalTotal,
   DeckDelete,
   DeckHide,
   DeckBranchDelete,
@@ -18,6 +18,7 @@ import {
   DeckCopyUrl,
   DeckTogglePublic,
   DeckSelectSortForm,
+  DeckSelectAdvModalTagsFilter,
   ResultClanImage,
   OverlayTooltip,
 } from 'components';
@@ -410,7 +411,10 @@ function DeckSelectAdvModal(props) {
         </Button>
       </Modal.Header>
       <Modal.Body className={isMobile ? 'p-0' : 'pt-0'}>
-        <DeckTotal />
+        <DeckSelectAdvModalTotal
+          tagsFilter={tagsFilter}
+          setTagsFilter={setTagsFilter}
+        />
         <table className="decks-table">
           <thead>
             <tr>
@@ -442,14 +446,10 @@ function DeckSelectAdvModal(props) {
               {isDesktop && <th className="preview"></th>}
               {!isMobile && <th className="date"></th>}
               <th className="tags">
-                <Select
-                  classNamePrefix="tags-filter react-select-tags"
-                  isMulti
-                  options={props.allTagsOptions}
-                  onChange={handleChangeTagsFilter}
-                  defaultValue={tagsFilter}
-                  placeholder="Filter by Tags"
-                  isSearchable={!isMobile}
+                <DeckSelectAdvModalTagsFilter
+                  tagsFilter={tagsFilter}
+                  handleChangeTagsFilter={handleChangeTagsFilter}
+                  allTagsOptions={props.allTagsOptions}
                 />
               </th>
               <th className="buttons">
