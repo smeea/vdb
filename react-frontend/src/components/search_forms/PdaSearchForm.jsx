@@ -18,12 +18,15 @@ import {
   TwdSearchFormPlayer,
   TwdSearchFormButtons,
 } from './twd_search_components';
+import { PdaSearchFormSrcSelector } from './pda_search_components';
+
 import defaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
 function PdaSearchForm(props) {
   const {
+    username,
     cryptCardBase,
     libraryCardBase,
     setShowPdaSearch,
@@ -71,6 +74,14 @@ function PdaSearchForm(props) {
     setPdaFormState((prevState) => ({
       ...prevState,
       [name]: value,
+    }));
+  };
+
+  const handleCheckboxChange = (event) => {
+    const { name, id } = event.target;
+    setPdaFormState((prevState) => ({
+      ...prevState,
+      [name]: id,
     }));
   };
 
@@ -248,6 +259,14 @@ function PdaSearchForm(props) {
         getNew={getNewPda}
         getRandom={getRandomPda}
       />
+      {username && (
+        <div className="px-1 py-2">
+          <PdaSearchFormSrcSelector
+            value={pdaFormState.src}
+            onChange={handleCheckboxChange}
+          />
+        </div>
+      )}
       {inventoryMode && (
         <>
           <Row className="py-1 ps-1 mx-0 align-items-center">
@@ -412,20 +431,6 @@ function PdaSearchForm(props) {
           />
         </Col>
       </Row>
-      <Row className="px-1">
-        <div className="d-flex justify-content-end">
-          <Form.Check
-            name="traits"
-            value="my"
-            type="checkbox"
-            id="traits-my"
-            label="Only My Decks"
-            checked={pdaFormState.traits.my}
-            onChange={(e) => handleMultiChange(e)}
-          />
-        </div>
-      </Row>
-
       {isMobile && (
         <>
           <div

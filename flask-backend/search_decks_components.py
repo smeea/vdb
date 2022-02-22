@@ -218,12 +218,23 @@ def get_decks_by_traits(traits, decks):
         for trait in traits.keys():
             if trait in deck["traits"]:
                 counter += 1
-                continue
-            if trait == "my" and Deck.query.get(deck["deckid"]).author == deck["owner"]:
-                counter += 1
 
         if trait_counter == counter:
             match_decks.append(deck)
+
+    return match_decks
+
+
+def get_decks_by_src(src, decks):
+    match_decks = []
+    for deck in decks:
+        if src == "my":
+            if Deck.query.get(deck["deckid"]).author == deck["owner"]:
+                match_decks.append(deck)
+
+        elif src == "favorites":
+            if deck["deckid"] in current_user.favorites:
+                match_decks.append(deck)
 
     return match_decks
 
@@ -300,7 +311,6 @@ with open("cardbase_lib.json", "r") as library_file:
 
 def get_deck_for_frontend(deckid):
     d = Deck.query.get(deckid)
-    print(d.favorited)
     deck = {
         "deckid": d.deckid,
         "name": d.name,

@@ -7,7 +7,6 @@
 - Export all in xlsx and csv
 - Multi-forms with text and logic
 - Documentation on PDA
-- Favorites for PDA
 - Add tags to filter by click
 
 # MAYBE LATER FEATURES

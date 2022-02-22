@@ -33,7 +33,6 @@
     "event": "any"
   },
   "traits": {
-    "my": false,
     "star": false,
     "monoclan": false
   },
@@ -41,5 +40,6 @@
     "crypt": "any",
     "library": "any",
     "scaling": "0"
-  }
+  },
+  "src": "any"
 }

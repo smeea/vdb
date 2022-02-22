@@ -61,6 +61,7 @@ def searchPdaRoute():
         pda_decks.append(deck)
 
     query_priority = [
+        "src",
         "owner",
         "author",
         "date",
