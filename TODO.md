@@ -6,6 +6,7 @@
 - Export all in xlsx and csv
 - Multi-forms with text and logic
 - Documentation on PDA
+- Only Newer / Only Older filter to Set/Precon
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks
