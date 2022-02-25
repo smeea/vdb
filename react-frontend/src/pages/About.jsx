@@ -35,7 +35,10 @@ function About(props) {
                   <Link to="/twd">Search tournament-winning decks</Link>
                 </li>
                 <li>
-                  <Link to="/decks">Create decks</Link>
+                  <Link to="/decks">Create your decks</Link>
+                </li>
+                <li>
+                  <Link to="/pda">Search public deck archive</Link>
                 </li>
                 <li>
                   <Link to="/inventory">Manage inventory</Link>

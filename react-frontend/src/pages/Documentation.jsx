@@ -10,26 +10,44 @@ function Documentation(props) {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
-        <Col xs={12} md={6} xxl={5} className="px-0">
+        <Col xs={12} md={7} lg={6} xl={5} className="px-0">
           <Banner />
-          <div className="px-2">
-            <div className="pt-2">
-              <h5>HELP / DOCUMENTATION</h5>
-              <p>
-                Documentation below describe some logic of VDB components.
-                <br />
-                If something is not clear or you need additional information,
-                please reach me by the contacts in the bottom of{' '}
-                <Link to="/about">About page</Link>
-              </p>
+          <div className="px-3 pt-0 pt-lg-3">
+            <h5>HELP / DOCUMENTATION</h5>
+            <p>
+              Documentation below describe some logic of VDB components.
+              <br />
+              If something is not clear or you need additional information,
+              please reach me by the contacts in the bottom of{' '}
+              <Link to="/about">About page</Link>
+            </p>
+
+            <div className="pt-3">
+              <h5>TABLE OF CONTENT</h5>
+              <ul>
+                <li>
+                  <a href="#crypt">Crypt search</a>
+                </li>
+                <li>
+                  <a href="#library">Library search</a>
+                </li>
+                <li>
+                  <a href="#twd">TWD search</a>
+                </li>
+                <li>
+                  <a href="#pda">PDA search</a>
+                </li>
+                <li>
+                  <a href="#decks">Deck view</a>
+                </li>
+                <li>
+                  <a href="#inventory">Inventory</a>
+                </li>
+              </ul>
             </div>
 
-            <div className="pt-2">
-              <h5>
-                <Link to="/crypt" className="blue">
-                  CRYPT SEARCH
-                </Link>
-              </h5>
+            <div className="pt-3">
+              <h5 id="crypt">CRYPT SEARCH</h5>
 
               <h6>Name or Text</h6>
               <ul>
@@ -76,12 +94,8 @@ function Documentation(props) {
               </ul>
             </div>
 
-            <div className="pt-2">
-              <h5>
-                <Link to="/library" className="blue">
-                  LIBRARY SEARCH
-                </Link>
-              </h5>
+            <div className="pt-3">
+              <h5 id="library">LIBRARY SEARCH</h5>
 
               <h6>Name or Text</h6>
               <ul>
@@ -114,12 +128,8 @@ function Documentation(props) {
               </ul>
             </div>
 
-            <div className="pt-2">
-              <h5>
-                <Link to="/twd" className="blue">
-                  TWD SEARCH
-                </Link>
-              </h5>
+            <div className="pt-3">
+              <h5 id="twd">TWD SEARCH</h5>
 
               <h6>Star Vampire</h6>
               <ul>
@@ -200,12 +210,61 @@ function Documentation(props) {
               </ul>
             </div>
 
-            <div className="pt-2">
-              <h5>
-                <Link to="/decks" className="blue">
-                  DECK BUILDING / VIEWING
-                </Link>
-              </h5>
+            <div className="pt-3">
+              <h5 id="pda">PDA SEARCH</h5>
+              <h6 className="red">
+                PDA IS BETA FEATURE AND MAY BE UNSTABLE. PLEASE BACKUP (EXPORT)
+                YOUR DECKS BEFORE USING IT.
+              </h6>
+              <p>
+                Public Deck Archive (PDA) let you share your decks with other
+                players and search other players shared decks
+              </p>
+
+              <h6>Following concepts are behind PDA:</h6>
+              <ul>
+                <li>
+                  Public it can be searched (using similar set of filters as for
+                  TWDA), viewed, copied by other players in the PDA page, and
+                  can be deleted by the author (but as with any other deck,
+                  author cannot delete your copy of the deck made with Copy deck
+                  button)
+                </li>
+                <li>
+                  Public Deck is created from one of your existing deck (parent)
+                  in the Decks page using Public Archive button
+                </li>
+                <li>
+                  You can switch to/from your public (child) and parent deck
+                  using Public Archive button in Deck page, with Public deck
+                </li>
+                <li>
+                  Public deck is non-editable with standard card buttons. The
+                  only way to update Public Deck is to sync it with the parent
+                  deck using Public Archive button in Deck page. It does not
+                  automatically follows updates of the parent deck
+                </li>
+                <li>
+                  We encourage people to mostly leave the deck unchanged after
+                  publishing. For significant changes please create new deck
+                  (feel free to use Description to give cross-references between
+                  sister decks and/or give any explanation you want)
+                </li>
+                <li>
+                  Author can remove the deck from PDA anytime, but each re-add
+                  creates new copy of the deck and it will be listed again (not
+                  available for those who add it to Favorites before deletion)
+                </li>
+                <li>
+                  Deck author name is public author name (same you see in Deck
+                  view page), it is not unique (no ownership), can be different
+                  from your account name and can be changed anytime
+                </li>
+              </ul>
+            </div>
+
+            <div className="pt-3">
+              <h5 id="decks">DECK BUILDING / VIEWING</h5>
 
               <h6>Hints</h6>
               <ul>
@@ -259,12 +318,8 @@ function Documentation(props) {
               </ul>
             </div>
 
-            <div className="pt-2">
-              <h5>
-                <Link to="/inventory" className="blue">
-                  INVENTORY MANAGEMENT
-                </Link>
-              </h5>
+            <div className="pt-3">
+              <h5 id="inventory">INVENTORY MANAGEMENT</h5>
               Inventory management in VDB let you browse your card collection
               with existing crypt/library search and track how collection is
               used in your existing decks
