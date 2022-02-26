@@ -9,7 +9,6 @@ def fix_users():
     for u in users:
         if u.favorites is None:
             u.favorites = []
-            db.session.commit()
             print(u.username)
 
 
@@ -18,10 +17,10 @@ def fix_decks():
     for d in decks:
         if d.favorited is None:
             d.favorited = []
-            db.session.commit()
             print(d.deckid)
 
 
 if __name__ == "__main__":
     fix_users()
     fix_decks()
+    db.session.commit()
