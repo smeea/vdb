@@ -311,18 +311,22 @@ with open("cardbase_lib.json", "r") as library_file:
 
 def get_deck_for_frontend(deckid):
     d = Deck.query.get(deckid)
+
     deck = {
         "deckid": d.deckid,
         "name": d.name,
         "author": d.author_public_name,
         "owner": d.author.username,
-        "isFavorited": True if current_user.id in d.favorited else False,
+        "isFavorited": False,
         "favoritedBy": len(d.favorited),
         "description": d.description,
         "creation_date": d.creation_date,
         "timestamp": d.timestamp,
         "cards": d.cards,
     }
+
+    if current_user.is_authenticated and current_user.id in d.favorited:
+        deck["isFavorited"] = True
 
     return deck
 
