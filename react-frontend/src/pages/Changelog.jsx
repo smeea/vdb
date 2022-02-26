@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Banner } from 'components';
 
@@ -10,6 +11,16 @@ function Changelog(props) {
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
+
+            <h6>2022-02-26:</h6>
+            <ul>
+              <li>
+                Add <Link to="/pda">Public Deck Archive (PDA)</Link> page. In
+                Beta! Please read{' '}
+                <Link to="/documentation#pda">documentation</Link> first
+              </li>
+              <li>Small other fixes</li>
+            </ul>
 
             <h6>2022-02-04:</h6>
             <ul>

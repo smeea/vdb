@@ -73,21 +73,12 @@ function About(props) {
                 : 2022-01-12
               </p>
 
-              <h6>Last update [2022-02-04]:</h6>
+              <h6>Last update [2022-02-26]:</h6>
               <ul>
                 <li>
-                  Add localized proxy (only for cards with translated images)
-                </li>
-                <li>
-                  Add &apos;auto&apos; color theme option which will follow
-                  system preferences
-                </li>
-                <li>
-                  Merged &apos;import without account&apos; options into main
-                  import/new button
-                </li>
-                <li>
-                  Fix buttons with dropdown menu not to go partially off screen
+                  Add <Link to="/pda">Public Deck Archive (PDA)</Link> page. In
+                  Beta! Please read{' '}
+                  <Link to="/documentation#pda">documentation</Link> first
                 </li>
                 <li>Small other fixes</li>
               </ul>
