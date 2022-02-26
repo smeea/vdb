@@ -139,16 +139,16 @@ function Navigation(props) {
             TWD
           </NavLink>
           <NavLink to="/inventory" className="nav-link pe-2 ps-1">
-            {isMobile ? 'Inv' : 'Inventory'}
+            {isMobile ? 'INV' : 'Inventory'}
           </NavLink>
           <NavLink to={decksUrl} className="nav-link pe-2 ps-1">
-            Decks
+            {isMobile ? 'DKS' : 'Decks'}
           </NavLink>
           <NavLink to={cryptUrl} className="nav-link pe-2 ps-1">
-            Crypt
+            {isMobile ? 'CRY' : 'Crypt'}
           </NavLink>
           <NavLink to={libraryUrl} className="nav-link pe-2 ps-1">
-            Library
+            {isMobile ? 'LIB' : 'Library'}
           </NavLink>
           <NavLink to="/cards" className="nav-link pe-3 ps-2">
             <LightningFill width="18" height="18" viewBox="0 0 16 16" />
