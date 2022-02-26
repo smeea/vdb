@@ -333,7 +333,7 @@ function PdaSearchForm(props) {
           />
         </Col>
       </Row>
-      <Row className="pb-1 px-1">
+      <Row className="pb-1 pe-1 mx-0">
         <div className="d-flex justify-content-end">
           <Form.Check
             name="traits"
@@ -380,7 +380,7 @@ function PdaSearchForm(props) {
           />
         </Col>
       </Row>
-      <Row className="pb-1 px-1">
+      <Row className="pb-1 pe-1 mx-0">
         <div className="d-flex justify-content-end">
           <Form.Check
             name="traits"
