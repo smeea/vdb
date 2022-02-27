@@ -424,20 +424,17 @@ def get_missing_fields(source):
 
 
 def sanitize_twd(deck):
-    try:
-        del deck["description"]
-        del deck["disciplines"]
-        del deck["format"]
-        del deck["link"]
-        del deck["timestamp"]
-        del deck["score"]
-        del deck["cardtypes_ratio"]
-        del deck["crypt_total"]
-        del deck["library_total"]
-        del deck["clan"]
-        del deck["capacity"]
-        del deck["traits"]
-    except KeyError:
-        pass
+    d = deck.copy()
+    del d["description"]
+    del d["disciplines"]
+    del d["format"]
+    del d["link"]
+    del d["score"]
+    del d["cardtypes_ratio"]
+    del d["crypt_total"]
+    del d["library_total"]
+    del d["clan"]
+    del d["capacity"]
+    del d["traits"]
 
-    return deck
+    return d

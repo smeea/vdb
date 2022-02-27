@@ -82,6 +82,7 @@ def searchTwdRoute():
         for q in query_priority
         if q in request.json
     ]
+
     result = search_decks(queries, twd_decks)
 
     if "matchInventory" in request.json:
