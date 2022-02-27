@@ -7,6 +7,7 @@
 - Multi-forms with text and logic
 - Documentation on PDA
 - Only Newer / Only Older filter to Set/Precon
+- Add error window with non-imported cards
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks
@@ -21,7 +22,6 @@
 - Move import to frontend
 
 # IMPROVE TECHNOLOGY - BACKEND
-- Add migration script to set default starting PickleType values for new empty db
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)

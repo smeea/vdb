@@ -53,8 +53,13 @@ function DeckImportAmaranth(props) {
       revisions.map((revision) => {
         const cards = {};
         Object.keys(revision.cards).map((i) => {
-          cards[idReference[i]] = revision.cards[i];
+          if (idReference[i] !== undefined) {
+            cards[idReference[i]] = revision.cards[i];
+          } else {
+            // TODO handle undefined cards
+          }
         });
+
         branches.push({
           cards: cards,
           comments: revision.comments,
@@ -85,7 +90,11 @@ function DeckImportAmaranth(props) {
 
     const cards = {};
     Object.keys(deck.cards).map((i) => {
-      cards[idReference[i]] = deck.cards[i];
+      if (idReference[i] !== undefined) {
+        cards[idReference[i]] = deck.cards[i];
+      } else {
+        // TODO handle undefined cards
+      }
     });
 
     let newDeckId;
