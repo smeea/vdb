@@ -12,7 +12,7 @@ def deck_export_all(decks, format):
             "description": d.description,
         }
 
-        result = deckExport(deck, format)
+        result = deck_export(deck, format)
 
         if format == "csv" or format == "xlsx":
             pass
