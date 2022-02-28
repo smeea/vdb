@@ -249,23 +249,6 @@ def getRandomPda(quantity):
     return jsonify(decks)
 
 
-@app.route("/api/pda/favorites/<string:username>", methods=["GET"])
-@login_required
-def listFavorites(username):
-    u = User.query.filter_by(username=username).first()
-    print(u.username, u.favorites)
-
-    return jsonify("kek")
-
-
-@app.route("/api/pda/favorited/<string:deckid>", methods=["GET"])
-def listFavorited(deckid):
-    d = Deck.query.get(deckid)
-    print(d.name, d.favorited)
-
-    return jsonify("kek")
-
-
 @app.route("/api/pda/favorite/<string:deckid>", methods=["POST"])
 @login_required
 def addFavorite(deckid):

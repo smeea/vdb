@@ -21,6 +21,9 @@ elif argv[2] == 'x':
         random.SystemRandom().choice(string.ascii_letters + string.digits)
         for _ in range(10)
     )
+    user.set_password(password)
+    db.session.commit()
+    print("new password:", password)
 else:
     password = argv[2]
     user.set_password(password)

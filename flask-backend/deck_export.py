@@ -6,30 +6,31 @@ import base64
 import io
 
 
-def deck_export(d, format):
+def deck_export(d, format, crypt_base=None, library_base=None):
     try:
+        if not crypt_base or not library_base:
+            with open("cardbase_crypt.json", "r") as crypt_file, open(
+                "cardbase_lib.json", "r"
+            ) as library_file:
+                crypt_base = json.load(crypt_file)
+                library_base = json.load(library_file)
+
         crypt = {}
         library = {}
         maxCrypt = 0
         maxLibrary = 0
 
-        with open("cardbase_crypt.json", "r") as crypt_file, open(
-            "cardbase_lib.json", "r"
-        ) as library_file:
-            cryptBase = json.load(crypt_file)
-            libraryBase = json.load(library_file)
-
-            for k, v in d["cards"].items():
-                if v > 0:
-                    k = int(k)
-                    if k > 200000:
-                        crypt[k] = {"c": cryptBase[str(k)], "q": v}
-                        if maxCrypt < v:
-                            maxCrypt = v
-                    elif k < 200000:
-                        library[k] = {"c": libraryBase[str(k)], "q": v}
-                        if maxLibrary < v:
-                            maxLibrary = v
+        for k, v in d["cards"].items():
+            if v > 0:
+                k = int(k)
+                if k > 200000:
+                    crypt[k] = {"c": crypt_base[str(k)], "q": v}
+                    if maxCrypt < v:
+                        maxCrypt = v
+                elif k < 200000:
+                    library[k] = {"c": library_base[str(k)], "q": v}
+                    if maxLibrary < v:
+                        maxLibrary = v
 
         deck = []
 
