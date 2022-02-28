@@ -34,7 +34,9 @@ def getPdaAuthors():
 def searchPdaRoute():
     pda_decks = []
     for d in (
-        Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date).all()
+        Deck.query.filter(Deck.public_parent != None)
+        .order_by(Deck.creation_date.desc())
+        .all()
     ):
         deck = {
             "deckid": d.deckid,
@@ -220,7 +222,9 @@ def getNewPda(quantity):
 
     counter = 0
     for d in (
-        Deck.query.filter(Deck.public_parent != None).order_by(Deck.creation_date).all()
+        Deck.query.filter(Deck.public_parent != None)
+        .order_by(Deck.creation_date.desc())
+        .all()
     ):
         if counter == quantity:
             break
