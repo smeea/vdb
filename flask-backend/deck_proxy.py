@@ -36,110 +36,106 @@ cardtypes_sorted = [
 
 
 def deck_proxy(cards, lang):
-    try:
-        crypt = {}
-        library = {}
+    crypt = {}
+    library = {}
 
-        for k, v in cards.items():
-            k = int(k)
-            card = {}
-            filename = None
+    for k, v in cards.items():
+        k = int(k)
+        card = {}
+        filename = None
 
-            if k > 200000:
-                card = crypt_db[str(k)]
-                card["Name"] += f"g{card['Group'].lower()}"
-                if card["Adv"] and card["Adv"][0]:
-                    card["Name"] += "adv"
+        if k > 200000:
+            card = crypt_db[str(k)].copy()
+            card["Name"] += f" G{card['Group'].lower()}"
+            if card["Adv"] and card["Adv"][0]:
+                card["Name"] += " ADV"
 
-                filename = unidecode(re.sub("[\\W]", "", card["Name"])).lower() + ".jpg"
+            filename = unidecode(re.sub("[\\W]", "", card["Name"])).lower() + ".jpg"
 
-            elif k < 200000:
-                card = library_db[str(k)]
-                filename = unidecode(re.sub("[\\W]", "", card["Name"])).lower() + ".jpg"
+        elif k < 200000:
+            card = library_db[str(k)].copy()
+            filename = unidecode(re.sub("[\\W]", "", card["Name"])).lower() + ".jpg"
 
-            file = None
-            if "set" in v and os.path.exists(f"./cards/set/{v['set']}/{filename}"):
-                file = f"./cards/set/{v['set']}/{filename}"
+        file = None
+        if "set" in v and os.path.exists(f"./cards/set/{v['set']}/{filename}"):
+            file = f"./cards/set/{v['set']}/{filename}"
+        else:
+            if os.path.exists(f"./cards/{lang}/{filename}"):
+                file = f"./cards/{lang}/{filename}"
             else:
-                if os.path.exists(f"./cards/{lang}/{filename}"):
-                    file = f"./cards/{lang}/{filename}"
-                else:
-                    file = f"./cards/en-EN/{filename}"
+                file = f"./cards/en-EN/{filename}"
 
-            if k > 200000 and v["q"] > 0:
-                crypt[card["Name"]] = {
-                    "file": file,
-                    "q": v["q"],
-                }
+        if k > 200000 and v["q"] > 0:
+            crypt[card["Name"]] = {
+                "file": file,
+                "q": v["q"],
+            }
 
-            elif k < 200000 and v["q"] > 0:
-                if card["Type"] not in library:
-                    library[card["Type"]] = {}
+        elif k < 200000 and v["q"] > 0:
+            if card["Type"] not in library:
+                library[card["Type"]] = {}
 
-                library[card["Type"]][card["Name"]] = {
-                    "file": file,
-                    "q": v["q"],
-                }
+            library[card["Type"]][card["Name"]] = {
+                "file": file,
+                "q": v["q"],
+            }
 
-        cardlist = []
+    cardlist = []
 
-        for card in sorted(crypt.keys()):
-            for i in range(crypt[card]["q"]):
-                cardlist.append(crypt[card]["file"])
+    for card in sorted(crypt.keys()):
+        for i in range(crypt[card]["q"]):
+            cardlist.append(crypt[card]["file"])
 
-        for cardtype in cardtypes_sorted:
-            if cardtype in library:
-                for card in sorted(library[cardtype].keys()):
-                    for i in range(library[cardtype][card]["q"]):
-                        cardlist.append(library[cardtype][card]["file"])
+    for cardtype in cardtypes_sorted:
+        if cardtype in library:
+            for card in sorted(library[cardtype].keys()):
+                for i in range(library[cardtype][card]["q"]):
+                    cardlist.append(library[cardtype][card]["file"])
 
-        pdf = FPDF("P", "mm", "A4")
+    pdf = FPDF("P", "mm", "A4")
 
-        w = 63
-        h = 88
-        gap = 0.25
-        left_margin = 10
-        top_margin = 10
+    w = 63
+    h = 88
+    gap = 0.25
+    left_margin = 10
+    top_margin = 10
 
-        x_counter = 0
-        y_counter = 0
+    x_counter = 0
+    y_counter = 0
 
-        pdf.add_page()
-        pdf.set_fill_color(60, 60, 60)
+    pdf.add_page()
+    pdf.set_fill_color(60, 60, 60)
 
-        page = 1
+    page = 1
 
-        for c in cardlist:
-            pdf.rect(
-                (left_margin + x_counter * (w + gap)),
-                (top_margin + y_counter * (h + gap)),
-                (w + gap),
-                (h + gap),
-                "F",
-            )
+    for c in cardlist:
+        pdf.rect(
+            (left_margin + x_counter * (w + gap)),
+            (top_margin + y_counter * (h + gap)),
+            (w + gap),
+            (h + gap),
+            "F",
+        )
 
-            pdf.image(
-                c,
-                (w + gap) * x_counter + left_margin,
-                (h + gap) * y_counter + top_margin,
-                w,
-                h,
-            )
+        pdf.image(
+            c,
+            (w + gap) * x_counter + left_margin,
+            (h + gap) * y_counter + top_margin,
+            w,
+            h,
+        )
 
-            x_counter += 1
+        x_counter += 1
 
-            if x_counter == 3:
-                y_counter += 1
-                x_counter = 0
+        if x_counter == 3:
+            y_counter += 1
+            x_counter = 0
 
-            if y_counter == 3 and page * 9 < len(cardlist):
-                page += 1
-                pdf.add_page()
-                pdf.set_fill_color(40, 40, 40)
-                y_counter = 0
+        if y_counter == 3 and page * 9 < len(cardlist):
+            page += 1
+            pdf.add_page()
+            pdf.set_fill_color(40, 40, 40)
+            y_counter = 0
 
-        output = pdf.output(dest="S").encode("latin-1")
-        return base64.b64encode(output)
-
-    except Exception:
-        pass
+    output = pdf.output(dest="S").encode("latin-1")
+    return base64.b64encode(output)
