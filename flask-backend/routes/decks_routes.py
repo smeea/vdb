@@ -711,6 +711,7 @@ def deckExportRoute():
             result = deck_export_all(decks, request.json["format"])
 
         elif request.json["src"] == "twd":
+
             deckid = request.json["deckid"]
             with open("twdDecksById.json", "r") as twdDecks_file:
                 twdDecks = json.load(twdDecks_file)
@@ -720,11 +721,6 @@ def deckExportRoute():
                 deck["description"] += "Players: " + str(deck["players"]) + "\n"
                 deck["description"] += "Event: " + deck["event"] + "\n"
                 deck["description"] += "Location: " + deck["location"] + "\n"
-                deck["cards"] = {}
-                for i in deck["crypt"]:
-                    deck["cards"][i] = deck["crypt"][i]["q"]
-                for i in deck["library"]:
-                    deck["cards"][i] = deck["library"][i]["q"]
                 if comments:
                     deck["description"] += "\n" + comments
                 result = deck_export(deck, request.json["format"])
