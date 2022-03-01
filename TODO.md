@@ -1,7 +1,6 @@
 # FIX
 - Scale to Inventory without % value
 - Unify API outcome for decks (crypt+library into cards)
-- Recommendation for twd
 - Add from mobile to non-editable decks
 
 # FEATURES

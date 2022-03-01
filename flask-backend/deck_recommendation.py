@@ -17,6 +17,7 @@ def deck_recommendation(cards):
     library = {}
 
     for k, v in cards.items():
+        k = int(k)
         if k > 200000:
             crypt[k] = {"c": vtescrypt[str(k)], "q": v}
             crypt_total += v
@@ -44,6 +45,7 @@ def deck_recommendation(cards):
     recommended_library = {}
 
     for c in cards:
+        c = int(c)
         for r in compatibility[str(c)]:
             r = int(r)
             if r in cards:

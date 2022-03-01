@@ -88,18 +88,12 @@ def getRecommendation(deckid):
 
         with open("preconDecks.json", "r") as precons_file:
             precon_decks = json.load(precons_file)
-            deck = precon_decks[set][precon]
-            for i in deck:
-                cards[int(i)] = deck[i]
+            cards = precon_decks[set][precon]
 
     else:
         with open("twdDecksById.json", "r") as twdDecks_file:
             twdDecks = json.load(twdDecks_file)
-            deck = twdDecks[deckid]
-            for i in deck["crypt"]:
-                cards[int(i)] = deck["crypt"][i]["q"]
-            for i in deck["library"]:
-                cards[int(i)] = deck["library"][i]["q"]
+            cards = twdDecks[deckid]["cards"]
 
     recommends = deck_recommendation(cards)
 
