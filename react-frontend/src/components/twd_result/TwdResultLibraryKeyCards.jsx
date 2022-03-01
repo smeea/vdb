@@ -15,7 +15,7 @@ import { countCards, resultLibrarySort, getHardTotal } from 'utils';
 import { useModalCardController } from 'hooks';
 
 const TwdResultLibraryKeyCards = (props) => {
-  const { library } = props;
+  const { library, setShowFloatingButtons } = props;
   const { inventoryLibrary, usedLibraryCards, inventoryMode, isMobile } =
     useApp();
 
@@ -45,7 +45,7 @@ const TwdResultLibraryKeyCards = (props) => {
   const cardRows = keyCards.map((card, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isMobile && props.setShowFloatingButtons(false);
+      isMobile && setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-even') {
@@ -55,7 +55,6 @@ const TwdResultLibraryKeyCards = (props) => {
     }
 
     let inInventory = 0;
-    // let softUsedMax = 0;
     let hardUsedTotal = 0;
 
     if (inventoryMode) {
@@ -64,7 +63,6 @@ const TwdResultLibraryKeyCards = (props) => {
       }
 
       if (usedLibraryCards) {
-        // softUsedMax = getSoftMax(usedLibraryCards.soft[card.c.Id]);
         hardUsedTotal = getHardTotal(usedLibraryCards.hard[card.c.Id]);
       }
     }
@@ -98,7 +96,6 @@ const TwdResultLibraryKeyCards = (props) => {
         </td>
 
         <ConditionalOverlayTrigger
-          placement={props.placement}
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
         >
@@ -122,7 +119,7 @@ const TwdResultLibraryKeyCards = (props) => {
       <div className="px-1">
         <b>{isMobile && `Library [${libraryTotal}],`} Key Cards</b>
       </div>
-      <div className="props.library">
+      <div className="library">
         <table className="twd-library-table">
           <tbody>{cardRows}</tbody>
         </table>

@@ -15,7 +15,7 @@ import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
 function TwdResultCrypt(props) {
-  const { crypt, setShowFloatingButtons, placement } = props;
+  const { crypt, setShowFloatingButtons } = props;
   const { inventoryMode, inventoryCrypt, usedCryptCards, isMobile } = useApp();
 
   let resultTrClass = 'result-even';
@@ -86,7 +86,6 @@ function TwdResultCrypt(props) {
     }
 
     let inInventory = 0;
-    // let softUsedMax = 0;
     let hardUsedTotal = 0;
 
     if (inventoryMode) {
@@ -94,7 +93,6 @@ function TwdResultCrypt(props) {
         inInventory = inventoryCrypt[card.c.Id].q;
       }
 
-      // softUsedMax = getSoftMax(usedCryptCards.soft[card.c.Id]);
       hardUsedTotal = getHardTotal(usedCryptCards.hard[card.c.Id]);
     }
 
@@ -127,7 +125,6 @@ function TwdResultCrypt(props) {
         </td>
 
         <ConditionalOverlayTrigger
-          placement={placement}
           overlay={<CardPopover card={card.c} />}
           disabled={isMobile}
         >
