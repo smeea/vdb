@@ -25,13 +25,13 @@ function DeckImport(props) {
     switch (format) {
       case 'txt':
         isAnonymous
-          ? fileInputTxt.current.click()
-          : fileAnonymousInputTxt.current.click();
+          ? fileAnonymousInputTxt.current.click()
+          : fileInputTxt.current.click();
         break;
       case 'dek':
         isAnonymous
-          ? fileInputDek.current.click()
-          : fileAnonymousInputDek.current.click();
+          ? fileAnonymousInputDek.current.click()
+          : fileInputDek.current.click();
         break;
       case 'eld':
         fileInputEld.current.click();
@@ -157,7 +157,7 @@ function DeckImport(props) {
           break;
       }
 
-      const url = null;
+      let url = null;
       if (isAnonymous) {
         url = `${process.env.API_URL}decks/anonymous_import`;
       } else if (props.inInventory) {
