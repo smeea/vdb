@@ -78,7 +78,7 @@ const ResultLibraryTable = (props) => {
     return (
       <React.Fragment key={card.Id}>
         <tr className={resultTrClass}>
-          {activeDeck.deckid && addMode && (
+          {activeDeck.src === 'my' && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}

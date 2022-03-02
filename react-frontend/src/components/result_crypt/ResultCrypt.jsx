@@ -10,8 +10,6 @@ function ResultCrypt(props) {
   const {
     showCryptSearch,
     setShowCryptSearch,
-    // cryptResults,
-    // setCryptResults,
     addMode,
     toggleAddMode,
     isMobile,
@@ -68,7 +66,7 @@ function ResultCrypt(props) {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && props.activeDeck.deckid && (
+      {isMobile && showFloatingButtons && props.activeDeck.src === 'my' && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${

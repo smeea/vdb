@@ -93,7 +93,9 @@ const ResultCryptTable = (props) => {
     return (
       <React.Fragment key={card.Id}>
         <tr className={resultTrClass}>
-          {(inRecommendation ? isAuthor : activeDeck.deckid && addMode) && (
+          {(inRecommendation
+            ? isAuthor
+            : activeDeck.src === 'my' && addMode) && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
                 cardid={card.Id}

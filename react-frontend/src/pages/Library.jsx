@@ -21,13 +21,17 @@ function Library({ lastDeckId }) {
 
   const { libraryResults } = useSearchResults();
 
-  const myActiveDeck = {
-    src: 'my',
-    deckid: activeDeck.src == 'my' ? activeDeck.deckid : lastDeckId,
-  };
+  let myActiveDeck;
+  if (isMobile) {
+    myActiveDeck = activeDeck;
+  } else {
+    myActiveDeck = {
+      src: 'my',
+      deckid: activeDeck.src == 'my' ? activeDeck.deckid : lastDeckId,
+    };
+  }
 
   const deckData = deckRouter(myActiveDeck);
-
   const deckId = myActiveDeck.deckid;
 
   const showSearchForm = useMemo(() => {

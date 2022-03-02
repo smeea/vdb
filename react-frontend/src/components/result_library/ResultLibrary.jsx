@@ -67,7 +67,7 @@ function ResultLibrary(props) {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && props.activeDeck.deckid && (
+      {isMobile && showFloatingButtons && props.activeDeck.src === 'my' && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${
