@@ -86,14 +86,10 @@ function PdaResultDescription(props) {
                     inPda
                   />
                 )}
-                {username && (
-                  <PdaFavoriteButton
-                    idx={props.idx}
-                    deck={props.deck}
-                    setShowButtons={() => {}}
-                  />
-                )}
               </Stack>
+              <div className="d-flex justify-content-end py-1">
+                <PdaFavoriteButton deck={props.deck} />
+              </div>
             </Col>
           </Row>
         </>
@@ -138,7 +134,10 @@ function PdaResultDescription(props) {
               )}
             </tbody>
           </table>
-          <Stack gap={1} className="py-2">
+          <div className="pt-1 pb-2">
+            <PdaFavoriteButton deck={props.deck} />
+          </div>
+          <Stack gap={1}>
             <TwdOpenDeckButton deckid={props.deck['deckid']} inPda />
             {username && (
               <DeckClone
@@ -147,7 +146,6 @@ function PdaResultDescription(props) {
                 inPda
               />
             )}
-            {username && <PdaFavoriteButton deck={props.deck} />}
           </Stack>
         </>
       )}
