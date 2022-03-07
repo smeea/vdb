@@ -24,18 +24,22 @@ const LanguageSelect = (props) => {
           props.setShowMenu(false);
         }}
       >
-        <Flag width="18" height="18" viewBox="0 0 500 500" />
+        <Flag
+          width={isMobile ? '22' : '18'}
+          height={isMobile ? '22' : '18'}
+          viewBox="0 0 500 500"
+        />
       </div>
     );
   });
 
   const Menu = () => (
-    <>
-      <div className="px-2 pb-1">Card Language:</div>
+    <div className="py-1">
+      <div className="px-2 pb-2">Card Language:</div>
       <div className="d-flex align-items-center justify-content-between">
         {options}
       </div>
-    </>
+    </div>
   );
 
   const SelectedFlag = languages[lang];
@@ -78,8 +82,8 @@ const LanguageSelect = (props) => {
               popper,
               ...props
             }) => (
-              <Popover {...props} className="navMenu">
-                <Popover.Body>
+              <Popover {...props} className="nav-menu">
+                <Popover.Body className="p-2">
                   <Menu />
                 </Popover.Body>
               </Popover>

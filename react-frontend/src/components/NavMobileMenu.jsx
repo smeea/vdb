@@ -34,7 +34,7 @@ const NavMobileMenu = (props) => {
               {
                 name: 'offset',
                 options: {
-                  offset: [0, -255],
+                  offset: [0, -295],
                 },
               },
             ],
@@ -44,15 +44,15 @@ const NavMobileMenu = (props) => {
           placement="bottom"
         >
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
-            <Popover {...props} className="navMenu mobile">
-              <Popover.Body>
+            <Popover {...props} className="nav-menu large">
+              <Popover.Body className="p-2">
                 <NavLink
                   to="/account"
                   onClick={() => setShowMenu(false)}
                   className="nav-link px-2 py-1"
                 >
                   <div className="d-flex align-items-center main-font">
-                    <PersonFill />
+                    <PersonFill height="20" width="20" viewBox="0 0 16 16" />
                     <div className="ps-2">{username ? 'Account' : 'Login'}</div>
                   </div>
                 </NavLink>
@@ -62,7 +62,11 @@ const NavMobileMenu = (props) => {
                   className="nav-link px-2 py-1"
                 >
                   <div className="d-flex align-items-center main-font">
-                    <InfoCircleFill />
+                    <InfoCircleFill
+                      height="20"
+                      width="20"
+                      viewBox="0 0 16 16"
+                    />
                     <div className="ps-2">About</div>
                   </div>
                 </NavLink>
@@ -77,9 +81,19 @@ const NavMobileMenu = (props) => {
                     className="d-flex align-items-center"
                     onClick={() => toggleTheme()}
                   >
-                    {theme === 'dark' && <MoonFill />}
-                    {theme === 'light' && <SunFill />}
-                    {theme !== 'dark' && theme !== 'light' && <CloudSunFill />}
+                    {theme === 'dark' && (
+                      <MoonFill height="20" width="20" viewBox="0 0 16 16" />
+                    )}
+                    {theme === 'light' && (
+                      <SunFill height="20" width="20" viewBox="0 0 16 16" />
+                    )}
+                    {theme !== 'dark' && theme !== 'light' && (
+                      <CloudSunFill
+                        height="20"
+                        width="20"
+                        viewBox="0 0 16 16"
+                      />
+                    )}
                     <div className="ps-2">
                       {theme === 'dark' && 'Dark Theme'}
                       {theme === 'light' && 'Light Theme'}
@@ -94,7 +108,11 @@ const NavMobileMenu = (props) => {
                     setShowMenu(false);
                   }}
                 >
-                  {inventoryMode ? <ToggleOn /> : <ToggleOff />}
+                  {inventoryMode ? (
+                    <ToggleOn height="20" width="20" viewBox="0 0 16 16" />
+                  ) : (
+                    <ToggleOff height="20" width="20" viewBox="0 0 16 16" />
+                  )}
                   <div className={inventoryMode ? 'ps-2' : 'gray ps-2'}>
                     Inventory Mode
                   </div>
