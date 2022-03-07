@@ -12,6 +12,12 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-03-07:</h6>
+            <ul>
+              <li>Add Favorites counter to PDA</li>
+              <li>Many bug-fixes</li>
+            </ul>
+
             <h6>2022-02-26:</h6>
             <ul>
               <li>

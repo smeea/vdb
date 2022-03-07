@@ -73,14 +73,10 @@ function About(props) {
                 : 2022-01-12
               </p>
 
-              <h6>Last update [2022-02-26]:</h6>
+              <h6>Last update [2022-03-07]:</h6>
               <ul>
-                <li>
-                  Add <Link to="/pda">Public Deck Archive (PDA)</Link> page. In
-                  Beta! Please read{' '}
-                  <Link to="/documentation#pda">documentation</Link> first
-                </li>
-                <li>Small other fixes</li>
+                <li>Add Favorites counter to PDA</li>
+                <li>Many bug-fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
