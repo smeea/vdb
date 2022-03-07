@@ -143,7 +143,7 @@ def get_decks_by_players(request, decks):
 def get_decks_by_clan(clan, decks):
     match_decks = []
     for deck in decks:
-        if deck["clan"].lower() == clan:
+        if deck["clan"] and deck["clan"].lower() == clan:
             match_decks.append(deck)
 
     return match_decks
