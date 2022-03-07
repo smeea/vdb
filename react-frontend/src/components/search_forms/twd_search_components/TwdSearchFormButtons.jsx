@@ -9,7 +9,9 @@ function TwdSearchFormButtons(props) {
   const { isMobile } = useApp();
 
   return (
-    <div className="d-flex pb-2 justify-content-between">
+    <div
+      className={`d-flex pb-2 justify-content-${isMobile ? 'end' : 'between'}`}
+    >
       <div className="d-flex">
         <Button variant="primary" onClick={() => props.getRandom(20)}>
           <div className="d-flex justify-content-center align-items-center">
