@@ -59,14 +59,53 @@ function SearchFormSet(props) {
     }
   });
 
-  const setOptions = [
-    ['newer', 'Or Newer'],
-    ['older', 'Or Older'],
+  const ageFormOptions = [
+    {
+      value: 'or-newer',
+      label: 'Or Newer',
+      title: 'Printed in selected set or any newer (can be in older sets too)',
+    },
+    {
+      value: 'or-older',
+      label: 'Or Older',
+      title: 'Printed in selected set or any older (can be in newer sets too)',
+    },
+    {
+      value: 'not-newer',
+      label: 'Not Newer',
+      title: 'Not printed in newer set',
+    },
+    {
+      value: 'not-older',
+      label: 'Not Older',
+      title: 'Not printed in older set',
+    },
+  ];
+
+  const ageForm = ageFormOptions.map((i, index) => {
+    return (
+      <Form.Check
+        key={index}
+        name="set"
+        value={i.value}
+        type="checkbox"
+        className="small pe-1"
+        id={`set-${i.label}`}
+        label={i.label}
+        disabled={props.value.value.length > 1}
+        title={i.title}
+        checked={props.value['age'] === i.value}
+        onChange={(e) => props.onChangeOptions(e)}
+      />
+    );
+  });
+
+  const additionalFormOptions = [
     ['only in', 'Only In'],
     ['first print', 'First Printed In'],
   ];
 
-  const setOptionsForm = setOptions.map((i, index) => {
+  const additionalForm = additionalFormOptions.map((i, index) => {
     return (
       <Form.Check
         key={index}
@@ -76,14 +115,7 @@ function SearchFormSet(props) {
         className="small"
         id={`set-${i[0]}`}
         label={i[1]}
-        disabled={
-          (i[0] === 'newer' || i[0] === 'older') && props.value.value.length > 1
-        }
-        checked={
-          (i[0] === 'older' && props.value['or age'] === i[0]) ||
-          (i[0] === 'newer' && props.value['or age'] === i[0]) ||
-          props.value[i[0]]
-        }
+        checked={props.value[i[0]]}
         onChange={(e) => props.onChangeOptions(e)}
       />
     );
@@ -151,8 +183,15 @@ function SearchFormSet(props) {
       />
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">
+          <Stack direction="horizontal" gap={2}>
+            {ageForm}
+          </Stack>
+        </Col>
+      </Row>
+      <Row className="pb-1 ps-1 mx-0 align-items-center">
+        <Col className="d-flex justify-content-end px-0">
           <Stack direction="horizontal" gap={3}>
-            {setOptionsForm}
+            {additionalForm}
           </Stack>
         </Col>
       </Row>

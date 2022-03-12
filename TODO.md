@@ -3,7 +3,6 @@
 # FEATURES
 - Export all in xlsx and csv
 - Multi-forms with text and logic
-- Only Newer / Only Older filter to Set/Precon
 - Add error window with non-imported cards
 
 # MAYBE LATER FEATURES

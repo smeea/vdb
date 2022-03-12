@@ -394,11 +394,17 @@ def get_crypt_by_set(request, crypt):
                 elif card["max_date"] >= BCP_START:
                     match_cards.append(card)
 
-            elif "or age" in request:
-                if request["or age"] == "newer" and r_date <= card["max_date"]:
+            elif "age" in request:
+                if request["age"] == "or-newer" and r_date <= card["max_date"]:
                     match_cards.append(card)
 
-                if request["or age"] == "older" and r_date >= card["min_date"]:
+                if request["age"] == "or-older" and r_date >= card["min_date"]:
+                    match_cards.append(card)
+
+                if request["age"] == "not-newer" and r_date >= card["max_date"]:
+                    match_cards.append(card)
+
+                if request["age"] == "not-older" and r_date <= card["min_date"]:
                     match_cards.append(card)
 
             elif r_set in card["Set"]:

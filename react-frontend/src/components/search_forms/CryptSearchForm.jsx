@@ -106,8 +106,8 @@ function CryptSearchForm(props) {
   const handleMultiChange = (event) => {
     const { name, value } = event.currentTarget;
     const newState = cryptFormState[name];
-    if (value === 'newer' || value === 'older') {
-      newState['or age'] = newState['or age'] === value ? false : value;
+    if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
+      newState['age'] = newState['age'] === value ? false : value;
     } else {
       newState[value] = !newState[value];
     }
@@ -257,8 +257,6 @@ function CryptSearchForm(props) {
       <SearchFormTextAndButtons
         value={cryptFormState.text}
         onChange={handleTextChange}
-        /* value={text} */
-        /* onChange={(e) => setText(e)} */
         onChangeOptions={handleMultiChange}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
