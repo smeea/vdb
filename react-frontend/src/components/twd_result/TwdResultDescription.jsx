@@ -14,6 +14,10 @@ function TwdResultDescription(props) {
 
   const handleAuthorClick = (author) => {
     if (isMobile) {
+      setTwdFormState((prevState) => ({
+        ...def,
+        author: author,
+      }));
       navigate(
         `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
       );
@@ -27,6 +31,10 @@ function TwdResultDescription(props) {
 
   const handleLocationClick = (location) => {
     if (isMobile) {
+      setTwdFormState((prevState) => ({
+        ...def,
+        location: location,
+      }));
       navigate(
         `/twd?q=${encodeURIComponent(JSON.stringify({ location: location }))}`
       );

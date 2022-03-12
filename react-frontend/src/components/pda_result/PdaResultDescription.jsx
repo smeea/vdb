@@ -14,6 +14,10 @@ function PdaResultDescription(props) {
 
   const handleAuthorClick = (author) => {
     if (isMobile) {
+      setPdaFormState((prevState) => ({
+        ...def,
+        author: author,
+      }));
       navigate(
         `/pda?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
       );
