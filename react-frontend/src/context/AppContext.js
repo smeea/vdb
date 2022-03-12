@@ -255,14 +255,36 @@ export const AppProvider = (props) => {
   const getDecks = async () => {
     const decksData = await inventoryServices.getDecks();
 
-    Object.keys(decksData).map((i) => {
-      Object.keys(decksData[i].crypt).map((j) => {
-        decksData[i].crypt[j].c = cryptCardBase[j];
+    Object.keys(decksData).map((deckid) => {
+      decksData[deckid].crypt = {};
+      decksData[deckid].library = {};
+
+      Object.keys(decksData[deckid].cards).map((cardid) => {
+        if (cardid > 200000) {
+          decksData[deckid].crypt[cardid] = {
+            q: decksData[deckid].cards[cardid],
+            c: cryptCardBase[cardid],
+          };
+        } else {
+          decksData[deckid].library[cardid] = {
+            q: decksData[deckid].cards[cardid],
+            c: libraryCardBase[cardid],
+          };
+        }
       });
-      Object.keys(decksData[i].library).map((j) => {
-        decksData[i].library[j].c = libraryCardBase[j];
+
+      Object.keys(decksData[deckid].used_in_inventory).map((cardid) => {
+        if (cardid > 200000) {
+          decksData[deckid].crypt[cardid].i =
+            decksData[deckid].used_in_inventory[cardid];
+        } else {
+          decksData[deckid].library[cardid].i =
+            decksData[deckid].used_in_inventory[cardid];
+        }
       });
     });
+
+    delete decksData.cards;
     setDecks(decksData);
   };
 

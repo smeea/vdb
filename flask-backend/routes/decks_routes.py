@@ -315,19 +315,6 @@ def listDecks():
                         db.session.commit()
 
             # Return decks
-            crypt = {}
-            library = {}
-
-            for k, v in deck.cards.items():
-                if k > 200000:
-                    crypt[k] = {"q": v}
-                    if k in deck.used_in_inventory:
-                        crypt[k]["i"] = deck.used_in_inventory[k]
-
-                elif k < 200000:
-                    library[k] = {"q": v}
-                    if k in deck.used_in_inventory:
-                        library[k]["i"] = deck.used_in_inventory[k]
 
             decks[deck.deckid] = {
                 "name": deck.name,
@@ -335,8 +322,8 @@ def listDecks():
                 "owner": deck.author.username,
                 "author": deck.author_public_name,
                 "description": deck.description,
-                "crypt": crypt,
-                "library": library,
+                "cards": deck.cards,
+                "used_in_inventory": deck.used_in_inventory,
                 "deckid": deck.deckid,
                 "hidden": deck.hidden,
                 "inventory_type": deck.inventory_type,
