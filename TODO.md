@@ -1,5 +1,4 @@
 # FIX
-- Scale to Inventory without % value
 
 # FEATURES
 - Export all in xlsx and csv

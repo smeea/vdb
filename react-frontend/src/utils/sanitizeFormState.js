@@ -32,7 +32,6 @@ const sanitizeFormState = (target, state) => {
         'date',
         'capacity',
         'libraryTotal',
-        'matchInventory',
       ];
       break;
     case 'twd':
@@ -44,7 +43,6 @@ const sanitizeFormState = (target, state) => {
         'players',
         'capacity',
         'libraryTotal',
-        'matchInventory',
       ];
       break;
   }
@@ -52,6 +50,18 @@ const sanitizeFormState = (target, state) => {
     Object.keys(input[i]).forEach((k) => {
       (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k];
     });
+  });
+
+  switch (target) {
+    case 'pda':
+    case 'twd':
+      forms = ['matchInventory'];
+  }
+  forms.map((i) => {
+    Object.keys(input[i]).forEach((k) => {
+      (input[i][k] == 0 || input[i][k] == 'any') && delete input[i][k];
+    });
+    if (!input[i].crypt && !input[i].library) delete input[i];
   });
 
   switch (target) {
