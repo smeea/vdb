@@ -34,7 +34,7 @@ const NavMobileMenu = (props) => {
               {
                 name: 'offset',
                 options: {
-                  offset: [0, -295],
+                  offset: [0, -286],
                 },
               },
             ],
