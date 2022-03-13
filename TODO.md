@@ -2,7 +2,7 @@
 
 # FEATURES
 - Export all in xlsx and csv
-- Multi-forms with text and logic
+- Logic for multi-form text search
 - Add error window with non-imported cards
 
 # MAYBE LATER FEATURES

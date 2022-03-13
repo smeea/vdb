@@ -9,12 +9,11 @@ const sanitizeFormState = (target, state) => {
       break;
   }
   forms.map((i) => {
-    Object.keys(input[i]).forEach((k) => {
-      input[i][k] === false && delete input[i][k];
+    input[i].map((j, idx) => {
+      if (j.value === '') {
+        input[i].splice(idx, 1);
+      }
     });
-    if (!input[i]['value']) {
-      delete input[i];
-    }
   });
 
   switch (target) {

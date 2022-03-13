@@ -2,47 +2,53 @@ import json
 import re
 
 
-def get_library_by_text(request, library):
-    value = request["value"] if "value" in request else request
-    regex = False
-    if "regex" in request:
-        regex = True
-    else:
-        value = value.lower()
-
-    in_text = request["inText"] if "inText" in request else None
+def get_library_by_text(requests, library):
     match_cards = []
 
-    for card in library:
-        if regex:
-            if in_text:
-                if re.search(value, card["Card Text"], re.IGNORECASE):
-                    match_cards.append(card)
-
-            else:
-                if (
-                    re.search(value, card["Card Text"], re.IGNORECASE)
-                    or re.search(value, card["Name"], re.IGNORECASE)
-                    or re.search(value, card["ASCII Name"], re.IGNORECASE)
-                ):
-                    match_cards.append(card)
-
+    for request in requests:
+        value = request["value"] if "value" in request else request
+        regex = False
+        if "regex" in request:
+            regex = True
         else:
-            card_text = card["Card Text"].lower()
-            card_name = card["Name"].lower()
-            card_name_ascii = card["ASCII Name"].lower()
+            value = value.lower()
 
-            if in_text:
-                if card_text.find(value) != -1:
-                    match_cards.append(card)
+        in_text = request["inText"] if "inText" in request else None
+
+        for card in library:
+            if regex:
+                if in_text:
+                    if re.search(value, card["Card Text"], re.IGNORECASE):
+                        if card not in match_cards:
+                            match_cards.append(card)
+
+                else:
+                    if (
+                        re.search(value, card["Card Text"], re.IGNORECASE)
+                        or re.search(value, card["Name"], re.IGNORECASE)
+                        or re.search(value, card["ASCII Name"], re.IGNORECASE)
+                    ):
+                        if card not in match_cards:
+                            match_cards.append(card)
 
             else:
-                if (
-                    card_text.find(value) != -1
-                    or card_name.find(value) != -1
-                    or card_name_ascii.find(value) != -1
-                ):
-                    match_cards.append(card)
+                card_text = card["Card Text"].lower()
+                card_name = card["Name"].lower()
+                card_name_ascii = card["ASCII Name"].lower()
+
+                if in_text:
+                    if card_text.find(value) != -1:
+                        if card not in match_cards:
+                            match_cards.append(card)
+
+                else:
+                    if (
+                        card_text.find(value) != -1
+                        or card_name.find(value) != -1
+                        or card_name_ascii.find(value) != -1
+                    ):
+                        if card not in match_cards:
+                            match_cards.append(card)
 
     return match_cards
 

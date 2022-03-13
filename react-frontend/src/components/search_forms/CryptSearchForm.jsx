@@ -68,13 +68,27 @@ function CryptSearchForm(props) {
   const refError = useRef(null);
 
   const handleTextChange = (event) => {
-    const value = event.target.value;
+    const { name, value } = event.target;
+
+    setCryptFormState((prevState) => {
+      const v = prevState.text;
+      v[name].value = value;
+
+      return {
+        ...prevState,
+        text: v,
+      };
+    });
+  };
+
+  const handleTextCheckboxesChange = (event) => {
+    const { name, value } = event.currentTarget;
+    const newState = cryptFormState.text;
+    newState[name][value] = !newState[name][value];
+
     setCryptFormState((prevState) => ({
       ...prevState,
-      text: {
-        ...prevState.text,
-        value: value,
-      },
+      text: newState,
     }));
   };
 
@@ -257,7 +271,8 @@ function CryptSearchForm(props) {
       <SearchFormTextAndButtons
         value={cryptFormState.text}
         onChange={handleTextChange}
-        onChangeOptions={handleMultiChange}
+        onChangeOptions={handleTextCheckboxesChange}
+        setFormState={setCryptFormState}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
         preresults={preresults ? preresults.length : null}

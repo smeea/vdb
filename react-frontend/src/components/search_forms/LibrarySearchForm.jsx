@@ -68,13 +68,27 @@ function LibrarySearchForm(props) {
   const refError = useRef(null);
 
   const handleTextChange = (event) => {
-    const value = event.target.value;
+    const { name, value } = event.target;
+
+    setLibraryFormState((prevState) => {
+      const v = prevState.text;
+      v[name].value = value;
+
+      return {
+        ...prevState,
+        text: v,
+      };
+    });
+  };
+
+  const handleTextCheckboxesChange = (event) => {
+    const { name, value } = event.currentTarget;
+    const newState = libraryFormState.text;
+    newState[name][value] = !newState[name][value];
+
     setLibraryFormState((prevState) => ({
       ...prevState,
-      text: {
-        ...prevState.text,
-        value: value,
-      },
+      text: newState,
     }));
   };
 
@@ -243,7 +257,8 @@ function LibrarySearchForm(props) {
       <SearchFormTextAndButtons
         value={libraryFormState.text}
         onChange={handleTextChange}
-        onChangeOptions={handleMultiChange}
+        onChangeOptions={handleTextCheckboxesChange}
+        setFormState={setLibraryFormState}
         handleShowResults={handleShowResults}
         handleClearButton={handleClearButton}
         preresults={preresults ? preresults.length : null}
