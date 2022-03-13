@@ -16,7 +16,7 @@ const SearchFormButtonDelText = (props) => {
 
   return (
     <Button
-      className="add-form"
+      className="multi-form"
       variant="primary"
       onClick={() => delForm(props.i)}
     >

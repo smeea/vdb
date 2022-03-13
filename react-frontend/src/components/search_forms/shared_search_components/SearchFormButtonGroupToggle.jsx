@@ -49,7 +49,7 @@ const SearchFormButtonGroupToggle = (props) => {
 
   return (
     <Button
-      className="logic-form"
+      className="multi-form"
       variant="primary"
       onClick={() => handleToggleForm()}
       title={title}

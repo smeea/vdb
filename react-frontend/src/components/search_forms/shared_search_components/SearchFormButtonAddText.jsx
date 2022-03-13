@@ -16,7 +16,7 @@ const SearchFormButtonAddText = (props) => {
   };
 
   return (
-    <Button className="add-form" variant="primary" onClick={() => addForm()}>
+    <Button className="multi-form" variant="primary" onClick={() => addForm()}>
       <Plus />
     </Button>
   );
