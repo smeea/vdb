@@ -24,11 +24,7 @@ const LanguageSelect = (props) => {
           props.setShowMenu(false);
         }}
       >
-        <Flag
-          width={isMobile ? '22' : '18'}
-          height={isMobile ? '22' : '18'}
-          viewBox="0 0 500 500"
-        />
+        <Flag width="22" height="22" viewBox="0 0 500 500" />
       </div>
     );
   });
