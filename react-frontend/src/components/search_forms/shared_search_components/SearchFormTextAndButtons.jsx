@@ -12,7 +12,6 @@ import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import {
   SearchAdditionalFormsText,
-  SearchFormButtonGroupToggleText,
   SearchFormButtonAddText,
   SearchFormButtonDelText,
 } from '../shared_search_components';

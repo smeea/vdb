@@ -4,11 +4,8 @@ import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
 } from '../shared_search_components';
-import { useApp } from 'context';
 
 const SearchAdditionalFormsText = (props) => {
-  const { isMobile } = useApp();
-
   const options = [
     ['inText', 'Only in Card Text'],
     ['regex', 'Regex'],
