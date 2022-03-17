@@ -9,6 +9,16 @@ function deckCryptSort(cards, sortMethod) {
     return 0;
   };
 
+  const byClan = (a, b) => {
+    if (a.c['Clan'] < b.c['Clan']) {
+      return -1;
+    }
+    if (a.c['Clan'] > b.c['Clan']) {
+      return 1;
+    }
+    return 0;
+  };
+
   const byCapacity = (a, b) => {
     return b.c.Capacity - a.c.Capacity;
   };
@@ -31,6 +41,8 @@ function deckCryptSort(cards, sortMethod) {
         return cards.sort(byName).sort(byQuantity).sort(byCapacity);
       case 'Group':
         return cards.sort(byName).sort(byCapacity).sort(byGroup);
+      case 'Clan':
+        return cards.sort(byName).sort(byCapacity).sort(byClan);
       default:
         return cards;
     }

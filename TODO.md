@@ -1,4 +1,5 @@
 # FIX
+- Align center in account (also in decks with unlogged)
 
 # FEATURES
 - Export all in xlsx and csv

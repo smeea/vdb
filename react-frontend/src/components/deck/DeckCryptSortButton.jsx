@@ -6,7 +6,7 @@ import { useApp } from 'context';
 function DeckCryptSortButton(props) {
   const { cryptDeckSort, changeCryptDeckSort } = useApp();
 
-  const sortMethods = ['Quantity', 'Capacity', 'Name', 'Group'];
+  const sortMethods = ['Quantity', 'Capacity', 'Name', 'Group', 'Clan'];
 
   const Options = sortMethods.map((i, index) => {
     return (
@@ -23,7 +23,7 @@ function DeckCryptSortButton(props) {
           <div className="pe-1">
             <SortDown />
           </div>
-          {cryptDeckSort.substring(0, 1)}
+          {cryptDeckSort === 'Clan' ? 'Cl' : cryptDeckSort.substring(0, 1)}
         </div>
       </Dropdown.Toggle>
       <Dropdown.Menu>{Options}</Dropdown.Menu>
