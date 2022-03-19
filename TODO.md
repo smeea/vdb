@@ -1,10 +1,12 @@
 # FIX
-- Multi-text forms to work as AND
+- Multi-text forms deletion
+- Focus new multi-text form
 
 # FEATURES
 - Export all in xlsx and csv
 - Logic for multi-form text search
 - Add error window with non-imported cards
+- Only in Name search
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks

@@ -4,23 +4,25 @@ import re
 
 def get_crypt_by_text(requests, crypt):
     match_cards = []
+    requests_counter = len(requests)
 
-    for request in requests:
-        value = request["value"] if "value" in request else request
-        regex = False
-        if "regex" in request:
-            regex = True
-        else:
-            value = value.lower()
+    for card in crypt:
+        counter = 0
 
-        in_text = request["inText"] if "inText" in request else None
+        for request in requests:
+            value = request["value"] if "value" in request else request
+            regex = False
+            if "regex" in request:
+                regex = True
+            else:
+                value = value.lower()
 
-        for card in crypt:
+            in_text = request["inText"] if "inText" in request else None
+
             if regex:
                 if in_text:
                     if re.search(value, card["Card Text"], re.IGNORECASE):
-                        if card not in match_cards:
-                            match_cards.append(card)
+                        counter += 1
 
                 else:
                     if (
@@ -28,8 +30,7 @@ def get_crypt_by_text(requests, crypt):
                         or re.search(value, card["Name"], re.IGNORECASE)
                         or re.search(value, card["ASCII Name"], re.IGNORECASE)
                     ):
-                        if card not in match_cards:
-                            match_cards.append(card)
+                        counter += 1
 
             else:
                 card_text = card["Card Text"].lower()
@@ -38,8 +39,7 @@ def get_crypt_by_text(requests, crypt):
 
                 if in_text:
                     if card_text.find(value) != -1:
-                        if card not in match_cards:
-                            match_cards.append(card)
+                        counter += 1
 
                 else:
                     if (
@@ -47,8 +47,10 @@ def get_crypt_by_text(requests, crypt):
                         or card_name.find(value) != -1
                         or card_name_ascii.find(value) != -1
                     ):
-                        if card not in match_cards:
-                            match_cards.append(card)
+                        counter += 1
+
+        if requests_counter == counter:
+            match_cards.append(card)
 
     return match_cards
 
