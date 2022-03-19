@@ -1,5 +1,6 @@
 # FIX
 - Align center in account (also in decks with unlogged)
+- Multi-text forms to work as AND
 
 # FEATURES
 - Export all in xlsx and csv

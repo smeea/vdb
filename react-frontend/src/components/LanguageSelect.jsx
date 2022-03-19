@@ -24,7 +24,7 @@ const LanguageSelect = (props) => {
           props.setShowMenu(false);
         }}
       >
-        <Flag width="22" height="22" viewBox="0 0 500 500" />
+        <Flag width="22" height="22" viewBox="0 0 515 525" />
       </div>
     );
   });
@@ -32,7 +32,7 @@ const LanguageSelect = (props) => {
   const Menu = () => (
     <div className="py-1">
       <div className="px-2 pb-2">Card Language:</div>
-      <div className="d-flex align-items-center justify-content-between">
+      <div className="d-flex align-items-center justify-content-between languages">
         {options}
       </div>
     </div>
@@ -50,7 +50,7 @@ const LanguageSelect = (props) => {
         <>
           <div
             ref={menuRef}
-            className="px-3"
+            className="d-flex align-items-center px-3"
             onClick={() => setShowMenu(!showMenu)}
           >
             <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
