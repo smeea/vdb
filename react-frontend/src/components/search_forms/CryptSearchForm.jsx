@@ -248,8 +248,8 @@ function CryptSearchForm(props) {
           setPreresults(undefined);
         }
       } else if (
-        !cryptFormState.text.value ||
-        cryptFormState.text.value.length > 2
+        !cryptFormState.text[0].value ||
+        cryptFormState.text[0].value.length > 2
       ) {
         launchRequest();
       }

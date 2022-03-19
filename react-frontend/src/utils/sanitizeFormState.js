@@ -7,6 +7,8 @@ const sanitizeFormState = (target, state) => {
     case 'library':
       forms = ['text'];
       break;
+    default:
+      forms = [];
   }
   forms.map((i) => {
     input[i].map((j, idx) => {
@@ -44,6 +46,8 @@ const sanitizeFormState = (target, state) => {
         'libraryTotal',
       ];
       break;
+    default:
+      forms = [];
   }
   forms.map((i) => {
     Object.keys(input[i]).forEach((k) => {
@@ -55,6 +59,8 @@ const sanitizeFormState = (target, state) => {
     case 'pda':
     case 'twd':
       forms = ['matchInventory'];
+    default:
+      forms = [];
   }
   forms.map((i) => {
     Object.keys(input[i]).forEach((k) => {
@@ -70,10 +76,8 @@ const sanitizeFormState = (target, state) => {
     case 'library':
       forms = ['discipline', 'type', 'set', 'precon'];
       break;
-    case 'pda':
-    case 'twd':
+    default:
       forms = [];
-      break;
   }
   forms.map((i) => {
     Object.keys(input[i]).forEach((k) => {
@@ -91,10 +95,8 @@ const sanitizeFormState = (target, state) => {
     case 'library':
       forms = ['blood', 'pool', 'capacity'];
       break;
-    case 'pda':
-    case 'twd':
+    default:
       forms = [];
-      break;
   }
   forms.map((i) => {
     if (input[i][i] == 'any') {
@@ -132,6 +134,8 @@ const sanitizeFormState = (target, state) => {
         });
       });
       break;
+    default:
+      forms = [];
   }
 
   Object.keys(input).forEach((k) => {
