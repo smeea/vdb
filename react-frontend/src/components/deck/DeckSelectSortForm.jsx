@@ -1,6 +1,6 @@
 import React from 'react';
-import { Dropdown, Button } from 'react-bootstrap';
-import { BlockButton } from 'components';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { ButtonGroup } from 'components';
 import SortDown from 'assets/images/icons/sort-down.svg';
 
 function DeckSelectSortForm(props) {
@@ -15,17 +15,20 @@ function DeckSelectSortForm(props) {
   });
 
   return (
-    <Dropdown title="Sort Decks" className="d-inline pe-1">
-      <Dropdown.Toggle
-        as={props.noText ? Button : BlockButton}
-        variant="primary"
-      >
-        <div className="d-flex justify-content-center align-items-center">
+    <DropdownButton
+      as={ButtonGroup}
+      variant="primary"
+      title={
+        <div
+          title="Sort Decks"
+          className="d-flex justify-content-center align-items-center"
+        >
           <SortDown />
         </div>
-      </Dropdown.Toggle>
-      <Dropdown.Menu>{Options}</Dropdown.Menu>
-    </Dropdown>
+      }
+    >
+      {Options}
+    </DropdownButton>
   );
 }
 

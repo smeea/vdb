@@ -457,7 +457,7 @@ function DeckSelectAdvModal(props) {
                   className={
                     isMobile
                       ? 'px-1'
-                      : 'd-flex justify-content-end align-items-center'
+                      : 'd-flex justify-content-end align-items-center pe-1'
                   }
                 >
                   <Form.Check
