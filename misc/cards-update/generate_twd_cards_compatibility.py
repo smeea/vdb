@@ -24,25 +24,16 @@ for idx, twd in enumerate(twda):
     # if idx == 0:
     #     break
     # print(f"Generating TWDA cards compatibility: {idx + 1} of {twda_total}")
-    year = int(twd['timestamp'][:4])
+    year = int(twd['creation_date'][:4])
     year_diff = CURRENT_YEAR - year
     year_coef = 1 / (1 + year_diff * YEAR_MULTIPLIER)
     players_coef = twd['players'] * PLAYERS_MULTIPLIER if type(
         twd['players']) == int else 1
     score = year_coef * players_coef
 
-    for i in list(twd['crypt'].keys()) + list(twd['library'].keys()):
+    for i in twd['cards'].keys():
         i = int(i)
-        for k in twd['crypt'].keys():
-            k = int(k)
-            if k == i:
-                continue
-
-            if k not in cards[i].keys():
-                cards[i][k] = 0
-            cards[i][k] += score
-
-        for k in twd['library'].keys():
+        for k in twd['cards'].keys():
             k = int(k)
             if k == i:
                 continue

@@ -1553,7 +1553,7 @@
             "Dominate":2,
             "Obfuscate":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -1832,7 +1832,7 @@
             "Potence":2,
             "Presence":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -2720,7 +2720,7 @@
             "Presence":1,
             "Dominate":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -3530,7 +3530,7 @@
             "Presence":1,
             "Auspex":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -4907,7 +4907,7 @@
             "Dominate":1,
             "Obfuscate":1
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -5029,7 +5029,7 @@
             "Obfuscate":1,
             "Celerity":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -7420,7 +7420,7 @@
             "Blood Sorcery":1,
             "Celerity":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -7931,7 +7931,7 @@
             "Protean":1,
             "Fortitude":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -9848,7 +9848,7 @@
             "Auspex":2,
             "Obfuscate":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -12621,7 +12621,7 @@
             "Celerity":1,
             "Auspex":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -13186,7 +13186,7 @@
             "Auspex":1,
             "Obfuscate":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -16951,7 +16951,7 @@
             "Auspex":2,
             "Dominate":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -18435,7 +18435,7 @@
             "Presence":2,
             "Blood Sorcery":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -27652,7 +27652,7 @@
             "Celerity":1,
             "Presence":1
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -28301,7 +28301,7 @@
             "Potence":1,
             "Presence":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -32760,7 +32760,7 @@
             "Auspex":1,
             "Obfuscate":1
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -33621,7 +33621,7 @@
             "Auspex":1,
             "Celerity":1
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -36375,7 +36375,7 @@
             "Potence":2,
             "Presence":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -40200,7 +40200,7 @@
         "Disciplines":{
             "Fortitude":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -40640,7 +40640,7 @@
             "Fortitude":2,
             "Protean":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -43368,7 +43368,7 @@
             "Celerity":2,
             "Presence":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -44579,7 +44579,7 @@
             "Dominate":1,
             "Obfuscate":1
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {
@@ -47900,7 +47900,7 @@
             "Protean":1,
             "Potence":2
         },
-        "Twd":false,
+        "Twd":true,
         "New":false
     },
     {

@@ -936,6 +936,10 @@
         "value":"Florence, Italy"
     },
     {
+        "label":"Florence, South Carolina",
+        "value":"Florence, South Carolina"
+    },
+    {
         "label":"Fortaleza, Brazil",
         "value":"Fortaleza, Brazil"
     },
@@ -2108,6 +2112,10 @@
         "value":"Pamplona, Spain"
     },
     {
+        "label":"Para\u00edba, Brazil",
+        "value":"Para\u00edba, Brazil"
+    },
+    {
         "label":"Parets del Vall\u00e8s, Spain",
         "value":"Parets del Vall\u00e8s, Spain"
     },
@@ -2426,6 +2434,10 @@
     {
         "label":"Santiago, Chile",
         "value":"Santiago, Chile"
+    },
+    {
+        "label":"Sazava, Czech Republic",
+        "value":"Sazava, Czech Republic"
     },
     {
         "label":"Sa\u00f5 Paulo, Brazil",
@@ -2846,10 +2858,6 @@
     {
         "label":"Vielvic, France",
         "value":"Vielvic, France"
-    },
-    {
-        "label":"Vienna",
-        "value":"Vienna"
     },
     {
         "label":"Vienna, Austria",

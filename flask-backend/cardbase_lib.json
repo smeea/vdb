@@ -12098,13 +12098,13 @@
                 }
             },
             {
-                "text":"Actions provided by cards in play are not the same if the card is not the same, even if the cards have the same name. ",
+                "text":"Actions provided by different cards in play are not the same, even if the cards have the same name. ",
                 "refs":{
                     "[LSJ 20080725]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/jWWCwKnran0/6JxzHnKdJkkJ"
                 }
             },
             {
-                "text":"Is played after a minion successfully blocks but before the blocker is locked and combat begins. It cannot be used if the action is ended without being blocked. ",
+                "text":"Is played after a minion successfully blocks, before the blocker is locked and combat begins. It cannot be used if the action is ended without being blocked. ",
                 "refs":{
                     "[LSJ 19980224]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/xV22ImgKblY/FECdNXgf5s4J",
                     "[RTR 19991206]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/N7iEmqgP9WU/gX80TroOBsUJ"
@@ -12117,20 +12117,20 @@
                 }
             },
             {
-                "text":"No other modifier can be played afterwards: the action is ended, it cannot be modified anymore. ",
+                "text":"No other modifier or reaction can be played afterwards: the action has ended. ",
                 "refs":{
                     "[LSJ 20010803-1]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/5QuGIF5ERUI/nGJoAyeiOJQJ",
                     "[RTR 20180719]":"https://www.blackchantry.com/2018/07/18/rules-team-rulings-rtr-19-07-2018/"
                 }
             },
             {
-                "text":"If the acting minion was performing a mandatory action, he unlocks and is stuck and cannot act: he should but cannot take the mandatory action. ",
+                "text":"If the card prevents the acting minion from performing a mandatory action, he is stuck and cannot act. ",
                 "refs":{
                     "[LSJ 19980112]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/C7WoO_yDhN0/FITemQKvw_AJ"
                 }
             },
             {
-                "text":"If used when blocked while leaving torpor, the action ends immediately and the blocker does not get an opportunity for diablerie. ",
+                "text":"If used while leaving torpor, the blocker does not get an opportunity for diablerie. ",
                 "refs":{
                     "[LSJ 20050105-2]":"https://groups.google.com/d/msg/rec.games.trading-cards.jyhad/sAErRDiSXfU/GMQXJ7TvOrsJ"
                 }
