@@ -28,7 +28,9 @@ function ButtonCardCopyUrl(props) {
           onClick={handleButton}
           title="Copy URL"
         >
-          <Link45Deg />
+          <div className="d-flex align-items-center">
+            <Link45Deg width="19" height="19" viewBox="0 0 14 14" />
+          </div>
         </Button>
       ) : (
         <Button variant="success" onClick={handleButton}>

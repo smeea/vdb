@@ -1,6 +1,6 @@
 # FIX
 - Focus new multi-text form
-- Link icon size in quick
+- Update buttons icons alignment as in DeckCopyUrl (move to component)
 
 # FEATURES
 - Export all in xlsx and csv

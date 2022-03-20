@@ -120,7 +120,11 @@ function DeckCopyUrl(props) {
               title="Copy URL"
               className="d-flex justify-content-center align-items-center"
             >
-              <div className={props.noText ? null : 'pe-2'}>
+              <div
+                className={`d-flex align-items-center ${
+                  props.noText ? null : 'pe-2'
+                }`}
+              >
                 <Link45Deg
                   width={props.noText ? '16' : '19'}
                   height={props.noText ? '16' : '19'}
