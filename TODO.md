@@ -1,10 +1,9 @@
 # FIX
-- Multi-text forms deletion
 - Focus new multi-text form
+- Link icon size in quick
 
 # FEATURES
 - Export all in xlsx and csv
-- Logic for multi-form text search
 - Add error window with non-imported cards
 - Only in Name search
 

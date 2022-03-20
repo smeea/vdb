@@ -54,7 +54,7 @@ const SearchAdditionalFormsText = (props) => {
                   <SearchFormButtonDelText
                     setFormState={props.setFormState}
                     value={props.value}
-                    i={0}
+                    i={i}
                   />
                 )}
               </div>
