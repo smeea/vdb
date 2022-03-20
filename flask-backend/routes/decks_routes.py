@@ -725,11 +725,13 @@ def deckExportRoute():
 
         elif request.json["src"] == "shared" or request.json["src"] == "my":
             d = Deck.query.get(request.json["deckid"])
+            has_branches = d.master or d.branches
+
             deck = {
                 "cards": d.cards,
                 "name": d.name,
                 "author": d.author_public_name,
-                "branch_name": d.branch_name,
+                "branch_name": d.branch_name if has_branches else None,
                 "description": d.description,
             }
             result = deck_export(deck, request.json["format"])
