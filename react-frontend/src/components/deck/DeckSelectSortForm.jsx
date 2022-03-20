@@ -1,6 +1,5 @@
 import React from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
-import { ButtonGroup } from 'components';
+import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap';
 import SortDown from 'assets/images/icons/sort-down.svg';
 
 function DeckSelectSortForm(props) {
