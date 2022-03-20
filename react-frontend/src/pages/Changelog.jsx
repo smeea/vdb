@@ -12,6 +12,22 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-03-20:</h6>
+            <ul>
+              <li>Update TWDA</li>
+              <li>Update Rulings</li>
+              <li>Multiple text search forms in Crypt/Library</li>
+              <li>Add sort crypt by clan in Decks</li>
+              <li>
+                Add &apos;Not newer&apos; and &apos;Not Older&apos; options for
+                Set search in Crypt/Library (in addition to &apos;Or Newer&apos;
+                and &apos;Or Older&apos; which will show cards printed in
+                selected Set or any newer/older Set without restrictions of
+                being printed also earlier/later)
+              </li>
+              <li>Bug fixes</li>
+            </ul>
+
             <h6>2022-03-07:</h6>
             <ul>
               <li>Add Favorites counter to PDA</li>
