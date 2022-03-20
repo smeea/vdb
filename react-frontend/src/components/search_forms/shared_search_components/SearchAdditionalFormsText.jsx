@@ -40,6 +40,7 @@ const SearchAdditionalFormsText = (props) => {
           spellCheck="false"
           value={props.value[i].value}
           onChange={props.onChange}
+          autoFocus={true}
         />
         <Row className="mx-0 px-0 pt-1">
           <Col

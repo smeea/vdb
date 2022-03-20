@@ -1,5 +1,4 @@
 # FIX
-- Focus new multi-text form
 - Update buttons icons alignment as in DeckCopyUrl (move to component)
 
 # FEATURES
