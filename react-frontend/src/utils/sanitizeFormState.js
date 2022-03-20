@@ -59,6 +59,7 @@ const sanitizeFormState = (target, state) => {
     case 'pda':
     case 'twd':
       forms = ['matchInventory'];
+      break;
     default:
       forms = [];
   }
