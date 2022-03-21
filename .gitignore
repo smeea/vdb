@@ -5,6 +5,7 @@ flask-backend/app.db
 flask-backend/.flaskenv
 flask-backend/gunicorn.conf.py
 react-frontend/.parcel-cache/
+react-frontend/.log/
 react-frontend/node_modules/
 react-frontend/dist/*
 !react-frontend/dist/images/

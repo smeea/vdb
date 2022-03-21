@@ -1,5 +1,6 @@
 # FIX
 - Update buttons icons alignment as in DeckCopyUrl (move to component)
+- Multi-text search on mobile
 
 # FEATURES
 - Export all in xlsx and csv
