@@ -13,37 +13,23 @@ function TwdResultDescription(props) {
   const def = JSON.parse(JSON.stringify(defaults));
 
   const handleAuthorClick = (author) => {
-    if (isMobile) {
-      setTwdFormState((prevState) => ({
-        ...def,
-        author: author,
-      }));
-      navigate(
-        `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
-      );
-    } else {
-      setTwdFormState((prevState) => ({
-        ...def,
-        author: author,
-      }));
-    }
+    setTwdFormState((prevState) => ({
+      ...def,
+      author: author,
+    }));
+    navigate(
+      `/twd?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
+    );
   };
 
   const handleLocationClick = (location) => {
-    if (isMobile) {
-      setTwdFormState((prevState) => ({
-        ...def,
-        location: location,
-      }));
-      navigate(
-        `/twd?q=${encodeURIComponent(JSON.stringify({ location: location }))}`
-      );
-    } else {
-      setTwdFormState((prevState) => ({
-        ...def,
-        location: location,
-      }));
-    }
+    setTwdFormState((prevState) => ({
+      ...def,
+      location: location,
+    }));
+    navigate(
+      `/twd?q=${encodeURIComponent(JSON.stringify({ location: location }))}`
+    );
   };
 
   return (

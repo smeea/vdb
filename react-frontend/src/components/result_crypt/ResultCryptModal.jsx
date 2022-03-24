@@ -9,6 +9,8 @@ import {
   ResultCryptLayoutText,
   ButtonCardCopyUrl,
   ButtonToggleShowImage,
+  ButtonSearchTwd,
+  ButtonSearchPda,
   CardImage,
 } from 'components';
 import { useApp } from 'context';
@@ -140,6 +142,12 @@ function ResultCryptModal(props) {
                 <div className="d-flex">
                   <div className="d-flex pe-1">
                     <ButtonCardCopyUrl id={card.Id} />
+                  </div>
+                  <div className="d-flex pe-1">
+                    <ButtonSearchTwd id={card.Id} />
+                  </div>
+                  <div className="d-flex pe-1">
+                    <ButtonSearchPda id={card.Id} />
                   </div>
                   <div className="d-flex pe-1">
                     <ButtonToggleShowImage />

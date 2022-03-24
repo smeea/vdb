@@ -8,6 +8,8 @@ import {
   ResultCryptLayoutText,
   ResultLibraryLayoutText,
   ButtonCardCopyUrl,
+  ButtonSearchTwd,
+  ButtonSearchPda,
   ButtonAddCard,
   CardImage,
 } from 'components';
@@ -139,6 +141,12 @@ function Cards({ lastDeckId }) {
                             </div>
                           )}
                         </div>
+                        <div className="d-inline pe-1">
+                          <ButtonSearchTwd id={card.Id} />
+                        </div>
+                        <div className="d-inline pe-1">
+                          <ButtonSearchPda id={card.Id} />
+                        </div>
                       </>
                     )}
                   </Col>
@@ -190,17 +198,21 @@ function Cards({ lastDeckId }) {
                       <div className="d-inline pe-1">
                         <ButtonCardCopyUrl id={card.Id} />
                       </div>
+                      <div className="d-inline pe-1">
+                        <ButtonSearchTwd id={card.Id} />
+                      </div>
+                      <div className="d-inline pe-1">
+                        <ButtonSearchPda id={card.Id} />
+                      </div>
                       {deckId && (
-                        <>
-                          <div className="d-inline pe-1">
-                            <ButtonAddCard
-                              deckid={deckId}
-                              card={card}
-                              inDeck={inDeck}
-                              inQuick={true}
-                            />
-                          </div>
-                        </>
+                        <div className="d-inline pe-1">
+                          <ButtonAddCard
+                            deckid={deckId}
+                            card={card}
+                            inDeck={inDeck}
+                            inQuick={true}
+                          />
+                        </div>
                       )}
                     </div>
                   </Col>

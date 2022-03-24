@@ -13,20 +13,13 @@ function PdaResultDescription(props) {
   const def = JSON.parse(JSON.stringify(defaults));
 
   const handleAuthorClick = (author) => {
-    if (isMobile) {
-      setPdaFormState((prevState) => ({
-        ...def,
-        author: author,
-      }));
-      navigate(
-        `/pda?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
-      );
-    } else {
-      setPdaFormState((prevState) => ({
-        ...def,
-        author: author,
-      }));
-    }
+    setPdaFormState((prevState) => ({
+      ...def,
+      author: author,
+    }));
+    navigate(
+      `/pda?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
+    );
   };
 
   const lastUpdated = new Date(props.deck['timestamp'])

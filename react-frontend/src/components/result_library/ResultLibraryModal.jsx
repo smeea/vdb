@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { Modal, Row, Col, Button } from 'react-bootstrap';
+import { Modal, Row, Col, Button, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
@@ -9,6 +9,8 @@ import {
   ResultLibraryLayoutText,
   ButtonCardCopyUrl,
   ButtonToggleShowImage,
+  ButtonSearchTwd,
+  ButtonSearchPda,
   CardImage,
 } from 'components';
 import { useApp } from 'context';
@@ -135,6 +137,12 @@ function ResultLibraryModal(props) {
                 <div className="d-flex">
                   <div className="d-flex pe-1">
                     <ButtonCardCopyUrl id={props.card.Id} />
+                  </div>
+                  <div className="d-flex pe-1">
+                    <ButtonSearchTwd id={props.card.Id} />
+                  </div>
+                  <div className="d-flex pe-1">
+                    <ButtonSearchPda id={props.card.Id} />
                   </div>
                   <div className="d-flex pe-1">
                     <ButtonToggleShowImage />

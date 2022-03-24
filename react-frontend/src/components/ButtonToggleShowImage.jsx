@@ -20,7 +20,11 @@ function ButtonToggleShowImage(props) {
   return (
     <>
       {!state ? (
-        <Button variant="primary" onClick={handleButton}>
+        <Button
+          title="Show card image or text preview on mouse hover"
+          variant="primary"
+          onClick={handleButton}
+        >
           {showImage ? <ImageAlt /> : <FileTextFill />}
         </Button>
       ) : (
