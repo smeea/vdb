@@ -1,6 +1,7 @@
 # FIX
 - Update buttons icons alignment as in DeckCopyUrl (move to component)
-- Multi-text search on mobile
+- Menu button in inv on mobile
+- Mark newly add card q=1 in inventory
 
 # FEATURES
 - Export all in xlsx and csv

@@ -90,7 +90,7 @@ function DeckSelectAdvModal(props) {
     }
   };
 
-  const allDecksClans = new Set();
+  const allDecksClans = [];
   Object.values(decks).map((deck, index) => {
     const clans = {};
     let cryptTotal = 0;
@@ -110,8 +110,8 @@ function DeckSelectAdvModal(props) {
     });
 
     Object.keys(clans).forEach((c) => {
-      if (clans[c] / cryptTotal > 0.5) {
-        allDecksClans.add(c);
+      if (clans[c] / cryptTotal > 0.5 && !allDecksClans.includes(c)) {
+        allDecksClans.push(c);
       }
     });
   });
@@ -128,7 +128,7 @@ function DeckSelectAdvModal(props) {
       label: 'NONE',
     },
   ];
-  allDecksClans.forEach((i, index) => {
+  allDecksClans.sort().forEach((i, index) => {
     clanOptions.push({
       value: i.toLowerCase(),
       name: 'clan',
