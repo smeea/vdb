@@ -223,8 +223,8 @@ function Inventory(props) {
                     setInventoryLibrary={setInventoryLibrary}
                     setShowButtons={handleShowButtons}
                     clan={clan}
-                    type={type}
                     discipline={discipline}
+                    type={type}
                   />
                   <div className="px-4 py-2">
                     <InventoryShowSelect
@@ -294,8 +294,9 @@ function Inventory(props) {
                 setInventoryCrypt={setInventoryCrypt}
                 setInventoryLibrary={setInventoryLibrary}
                 setShowButtons={handleShowButtons}
-                cardType={cardType}
-                cardDiscipline={cardDiscipline}
+                clan={clan}
+                discipline={discipline}
+                type={type}
               />
               <div className="px-4 py-2">
                 <InventoryShowSelect

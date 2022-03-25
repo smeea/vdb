@@ -1,7 +1,6 @@
 # FIX
 - Update buttons icons alignment as in DeckCopyUrl (move to component)
-- Menu button in inv on mobile
-- Mark newly add card q=1 in inventory
+- Dont autoadd new card in inventory
 
 # FEATURES
 - Export all in xlsx and csv
