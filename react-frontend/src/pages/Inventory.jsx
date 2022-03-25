@@ -18,6 +18,8 @@ import { useApp } from 'context';
 
 function Inventory(props) {
   const {
+    cryptCardBase,
+    libraryCardBase,
     inventoryCrypt,
     inventoryLibrary,
     usedCryptCards,
@@ -62,11 +64,13 @@ function Inventory(props) {
                       setNewId={setNewCryptId}
                     />
                   </div>
-                  {newCryptId && inventoryCrypt[newCryptId] && (
+                  {newCryptId && (
                     <div className="sticky-inv-result">
                       <InventoryCrypt
                         cards={{
-                          [newCryptId]: inventoryCrypt[newCryptId],
+                          [newCryptId]: inventoryCrypt[newCryptId]
+                            ? inventoryCrypt[newCryptId]
+                            : { c: cryptCardBase[newCryptId], q: 0 },
                         }}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
@@ -78,7 +82,7 @@ function Inventory(props) {
                     (usedCryptCards.soft || usedCryptCards.hard) && (
                       <div className="pt-1">
                         <InventoryCrypt
-                          withCompact={newCryptId && inventoryCrypt[newCryptId]}
+                          withCompact={newCryptId}
                           category={category}
                           cards={inventoryCrypt}
                           showFloatingButtons={showFloatingButtons}
@@ -97,11 +101,13 @@ function Inventory(props) {
                       setNewId={setNewLibraryId}
                     />
                   </div>
-                  {newLibraryId && inventoryLibrary[newLibraryId] && (
+                  {newLibraryId && (
                     <div className="sticky-inv-result">
                       <InventoryLibrary
                         cards={{
-                          [newLibraryId]: inventoryLibrary[newLibraryId],
+                          [newLibraryId]: inventoryLibrary[newLibraryId]
+                            ? inventoryLibrary[newLibraryId]
+                            : { c: libraryCardBase[newLibraryId], q: 0 },
                         }}
                         compact={true}
                         showFloatingButtons={showFloatingButtons}
@@ -113,7 +119,7 @@ function Inventory(props) {
                     (usedLibraryCards.soft || usedLibraryCards.hard) && (
                       <div className="pt-1">
                         <InventoryLibrary
-                          withCompact={newCryptId && inventoryCrypt[newCryptId]}
+                          withCompact={newLibraryId}
                           category={category}
                           cards={inventoryLibrary}
                           showFloatingButtons={showFloatingButtons}
@@ -148,11 +154,13 @@ function Inventory(props) {
                     setNewId={setNewCryptId}
                   />
                 </div>
-                {newCryptId && inventoryCrypt[newCryptId] && (
+                {newCryptId && (
                   <div className="sticky-inv-result py-2">
                     <InventoryCrypt
                       cards={{
-                        [newCryptId]: inventoryCrypt[newCryptId],
+                        [newCryptId]: inventoryCrypt[newCryptId]
+                          ? inventoryCrypt[newCryptId]
+                          : { c: cryptCardBase[newCryptId], q: 0 },
                       }}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
@@ -164,7 +172,7 @@ function Inventory(props) {
                   (usedCryptCards.soft || usedCryptCards.hard) && (
                     <div className="pt-2">
                       <InventoryCrypt
-                        withCompact={newCryptId && inventoryCrypt[newCryptId]}
+                        withCompact={newCryptId}
                         category={category}
                         cards={inventoryCrypt}
                         showFloatingButtons={showFloatingButtons}
@@ -182,11 +190,13 @@ function Inventory(props) {
                     setNewId={setNewLibraryId}
                   />
                 </div>
-                {newLibraryId && inventoryLibrary[newLibraryId] && (
+                {newLibraryId && (
                   <div className="sticky-inv-result py-2">
                     <InventoryLibrary
                       cards={{
-                        [newLibraryId]: inventoryLibrary[newLibraryId],
+                        [newLibraryId]: inventoryLibrary[newLibraryId]
+                          ? inventoryLibrary[newLibraryId]
+                          : { c: libraryCardBase[newLibraryId], q: 0 },
                       }}
                       compact={true}
                       showFloatingButtons={showFloatingButtons}
@@ -198,9 +208,7 @@ function Inventory(props) {
                   (usedLibraryCards.soft || usedLibraryCards.hard) && (
                     <div className="pt-2">
                       <InventoryLibrary
-                        withCompact={
-                          newLibraryId && inventoryLibrary[newLibraryId]
-                        }
+                        withCompact={newLibraryId}
                         category={category}
                         cards={inventoryLibrary}
                         showFloatingButtons={showFloatingButtons}

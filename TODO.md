@@ -1,6 +1,5 @@
 # FIX
 - Update buttons icons alignment as in DeckCopyUrl (move to component)
-- Dont autoadd new card in inventory
 
 # FEATURES
 - Export all in xlsx and csv
