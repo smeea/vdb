@@ -453,11 +453,13 @@ def get_crypt_by_precon(request, crypt):
             if sets_data[k]["date"]:
                 dates.append(sets_data[k]["date"])
 
-            elif k == "Promo":
-                dates.extend(card["Set"]["Promo"].keys())
-
-        crypt[idx]["min_date"] = min(dates)
-        crypt[idx]["max_date"] = max(dates)
+        if dates:
+            crypt[idx]["min_date"] = min(dates)
+            crypt[idx]["max_date"] = max(dates)
+        else:
+            # Ignore Promos
+            crypt[idx]["min_date"] = "0"
+            crypt[idx]["max_date"] = "0"
 
     for req in reqs:
         [r_set, r_subset] = req.split(":") if req != "bcp" else [None, None]

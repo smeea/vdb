@@ -499,11 +499,13 @@ def get_library_by_precon(request, library):
             if sets_data[k]["date"]:
                 dates.append(sets_data[k]["date"])
 
-            elif k == "Promo":
-                dates.extend(card["Set"]["Promo"].keys())
-
-        library[idx]["min_date"] = min(dates)
-        library[idx]["max_date"] = max(dates)
+        if dates:
+            library[idx]["min_date"] = min(dates)
+            library[idx]["max_date"] = max(dates)
+        else:
+            # Ignore Promos
+            library[idx]["min_date"] = "0"
+            library[idx]["max_date"] = "0"
 
     for req in reqs:
         [r_set, r_subset] = req.split(":") if req != "bcp" else [None, None]

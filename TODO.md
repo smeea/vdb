@@ -1,6 +1,5 @@
 # FIX
 - Update buttons icons alignment as in DeckCopyUrl (move to component)
-- Fix BCP-set search
 
 # FEATURES
 - Export all in xlsx and csv
