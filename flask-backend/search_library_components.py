@@ -455,7 +455,7 @@ def get_library_by_set(request, library):
                     if card["min_date"] >= BCP_START:
                         match_cards.append(card)
 
-                elif card["max_date"] <= BCP_START:
+                elif card["max_date"] >= BCP_START:
                     match_cards.append(card)
 
             elif "age" in request:
@@ -527,7 +527,7 @@ def get_library_by_precon(request, library):
                     if card["min_date"] >= BCP_START:
                         match_cards.append(card)
 
-                elif card["max_date"] <= BCP_START:
+                elif card["max_date"] >= BCP_START:
                     match_cards.append(card)
 
             elif r_set in card["Set"] and r_subset in card["Set"][r_set]:
