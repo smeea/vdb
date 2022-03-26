@@ -12,8 +12,14 @@ const sanitizeFormState = (target, state) => {
   }
   forms.map((i) => {
     input[i].map((j, idx) => {
-      if (j.value === '') {
-        input[i].splice(idx, 1);
+      for (const [key, value] of Object.entries(j)) {
+        switch (key) {
+          case 'value':
+            if (value === '') input[i].splice(idx, 1);
+            break;
+          default:
+            if (input[i][idx] && !value) delete input[i][idx][key];
+        }
       }
     });
   });

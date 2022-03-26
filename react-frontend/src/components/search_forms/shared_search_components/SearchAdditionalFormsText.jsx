@@ -7,8 +7,18 @@ import {
 
 const SearchAdditionalFormsText = (props) => {
   const options = [
-    ['inText', 'Only in Card Text'],
-    ['regex', 'Regex'],
+    {
+      value: 'name',
+      label: 'Only in Name',
+    },
+    {
+      value: 'text',
+      label: 'Only in Text',
+    },
+    {
+      value: 'regex',
+      label: 'Regex',
+    },
   ];
 
   const forms = [];
@@ -19,13 +29,13 @@ const SearchAdditionalFormsText = (props) => {
         <Form.Check
           key={index}
           name={i}
-          value={opt[0]}
+          value={opt.value}
           type="checkbox"
           className="small"
-          id={`text-${i}-${opt[0]}`}
-          label={opt[1]}
-          checked={props.value[i][opt[0]]}
-          onChange={props.onChangeOptions}
+          id={`text-${i}-${opt.value}`}
+          label={opt.label}
+          checked={props.value[i]['in'] === opt.value}
+          onChange={(e) => props.onChangeOptions(e)}
         />
       );
     });

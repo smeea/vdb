@@ -20,35 +20,37 @@ import { useApp } from 'context';
 function SearchFormTextAndButtons(props) {
   const { inventoryMode, isMobile } = useApp();
 
-  const toggleOption = (e) => {
-    switch (e.target.value) {
-      case 'hideMissing':
-        props.setHideMissing(!props.hideMissing);
-        break;
-      default:
-        props.onChangeOptions(e);
-    }
-  };
-
   const options = [
-    ['inText', 'Only in Card Text'],
-    ['regex', 'Regex'],
+    {
+      value: 'name',
+      label: 'Only in Name',
+    },
+    {
+      value: 'text',
+      label: 'Only in Text',
+    },
+    {
+      value: 'regex',
+      label: 'Regex',
+    },
   ];
-
-  if (inventoryMode) options.unshift(['hideMissing', 'In Inventory']);
 
   const OptionsForm = options.map((opt, index) => {
     return (
       <Form.Check
         key={index}
         name={0}
-        value={opt[0]}
+        value={opt.value}
         type="checkbox"
         className="small"
-        id={`text-${opt[0]}`}
-        label={opt[1]}
-        checked={props.value[0][opt[0]]}
-        onChange={toggleOption}
+        id={`text-${opt.value}`}
+        label={opt.label}
+        checked={
+          opt.value === 'regex'
+            ? props.value[0].regex
+            : props.value[0].in === opt.value
+        }
+        onChange={(e) => props.onChangeOptions(e)}
       />
     );
   });
@@ -121,6 +123,18 @@ function SearchFormTextAndButtons(props) {
         onChangeOptions={props.onChangeOptions}
         setFormState={props.setFormState}
       />
+      {inventoryMode && (
+        <Form.Check
+          name={0}
+          value="hideMissing"
+          type="checkbox"
+          className="small pt-1"
+          id="text-hideMissing"
+          label="Search In Inventory"
+          checked={props.value[0].hideMissing}
+          onChange={(e) => props.setHideMissing(!props.hideMissing)}
+        />
+      )}
     </Row>
   );
 }

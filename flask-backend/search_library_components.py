@@ -17,11 +17,17 @@ def get_library_by_text(requests, library):
             else:
                 value = value.lower()
 
-            in_text = request["inText"] if "inText" in request else None
+            in_query = request["in"] if "in" in request else None
 
             if regex:
-                if in_text:
+                if in_query:
                     if re.search(value, card["Card Text"], re.IGNORECASE):
+                        counter += 1
+
+                elif in_query == "name":
+                    if re.search(value, card["Name"], re.IGNORECASE) or re.search(
+                        value, card["ASCII Name"], re.IGNORECASE
+                    ):
                         counter += 1
 
                 else:
@@ -37,8 +43,12 @@ def get_library_by_text(requests, library):
                 card_name = card["Name"].lower()
                 card_name_ascii = card["ASCII Name"].lower()
 
-                if in_text:
+                if in_query == "text":
                     if card_text.find(value) != -1:
+                        counter += 1
+
+                elif in_query == "name":
+                    if card_name.find(value) != -1 or card_name_ascii.find(value) != -1:
                         counter += 1
 
                 else:

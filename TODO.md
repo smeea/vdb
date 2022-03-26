@@ -1,10 +1,10 @@
 # FIX
 - Update buttons icons alignment as in DeckCopyUrl (move to component)
+- Fix BCP-set search
 
 # FEATURES
 - Export all in xlsx and csv
 - Add error window with non-imported cards
-- Only in Name search
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks

@@ -3,7 +3,7 @@
     {
       "value": "",
       "regex": false,
-      "inText": false
+      "in": false
     }
   ],
   "disciplines": {

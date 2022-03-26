@@ -84,7 +84,11 @@ function CryptSearchForm(props) {
   const handleTextCheckboxesChange = (event) => {
     const { name, value } = event.currentTarget;
     const newState = cryptFormState.text;
-    newState[name][value] = !newState[name][value];
+    if (['name', 'text'].includes(value)) {
+      newState[name]['in'] = newState[name]['in'] === value ? false : value;
+    } else {
+      newState[name][value] = !newState[name][value];
+    }
 
     setCryptFormState((prevState) => ({
       ...prevState,
