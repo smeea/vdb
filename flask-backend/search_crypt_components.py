@@ -10,13 +10,8 @@ def get_crypt_by_text(requests, crypt):
         counter = 0
 
         for request in requests:
-            value = request["value"] if "value" in request else request
-            regex = False
-            if "regex" in request:
-                regex = True
-            else:
-                value = value.lower()
-
+            value = request["value"] if "regex" in request else request["value"].lower()
+            regex = True if "regex" in request else False
             in_query = request["in"] if "in" in request else None
 
             if regex:
