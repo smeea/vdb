@@ -184,7 +184,11 @@ def get_library_by_title(request, library):
                         match_cards.append(card)
 
                 elif (
-                    title.lower() in card["Requirement"].lower()
+                    re.search(
+                        f"(\W|\A){title}",
+                        card["Requirement"],
+                        re.IGNORECASE,
+                    )
                     and not "non-" + title in card["Requirement"].lower()
                 ):
                     if card not in match_cards:
@@ -196,7 +200,7 @@ def get_library_by_title(request, library):
                 if title.lower() not in card["Requirement"].lower():
                     counter += 1
 
-            if counter == len(titles) and card not in match_cards:
+            if counter == len(titles):
                 match_cards.append(card)
 
     return match_cards
