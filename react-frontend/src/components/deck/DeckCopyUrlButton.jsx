@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Button, ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
+import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function DeckCopyUrl(props) {
+const DeckCopyUrlButton = (props) => {
   const { isMobile } = useApp();
   const [state, setState] = useState(false);
 
@@ -120,15 +121,11 @@ function DeckCopyUrl(props) {
               title="Copy URL"
               className="d-flex justify-content-center align-items-center"
             >
-              <div
-                className={`d-flex align-items-center ${
-                  props.noText ? null : 'pe-2'
-                }`}
-              >
+              <div className={`d-flex ${props.noText ? null : 'pe-2'}`}>
                 <Link45Deg
-                  width={props.noText ? '16' : '19'}
-                  height={props.noText ? '16' : '19'}
-                  viewBox="0 0 14 14"
+                  width={props.noText ? '18' : '21'}
+                  height={props.noText ? '23' : '21'}
+                  viewBox="0 0 15 15"
                 />
               </div>
               {!props.noText && (state ? 'Copied' : 'Copy URL')}
@@ -138,25 +135,16 @@ function DeckCopyUrl(props) {
           {ButtonOptions}
         </DropdownButton>
       ) : (
-        <Button
+        <ButtonIconed
           variant={state ? 'success' : 'secondary'}
           onClick={handleStandardButton}
           title="Copy Standard Deck URL (will follow future deck changes)"
-        >
-          <div className="d-flex justify-content-center align-items-center">
-            <div className={props.noText ? null : 'pe-2'}>
-              <Link45Deg
-                width={props.noText ? '16' : '19'}
-                height={props.noText ? '16' : '19'}
-                viewBox="0 0 14 14"
-              />
-            </div>
-            {!props.noText && (state ? 'Copied' : 'Copy URL')}
-          </div>
-        </Button>
+          icon={<Link45Deg width="19" height="19" viewBox="0 0 15 15" />}
+          text={state ? 'Copied' : 'Copy URL'}
+        />
       )}
     </>
   );
-}
+};
 
-export default DeckCopyUrl;
+export default DeckCopyUrlButton;

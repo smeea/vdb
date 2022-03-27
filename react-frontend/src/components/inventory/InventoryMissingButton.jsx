@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
 import Cart4 from 'assets/images/icons/cart4.svg';
 import { DeckMissingModal } from 'components';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function InventoryMissing(props) {
+const InventoryMissingButton = (props) => {
   const {
     inventoryCrypt,
     inventoryLibrary,
@@ -209,14 +209,13 @@ function InventoryMissing(props) {
 
   return (
     <>
-      <Button variant="secondary" onClick={() => calculateMissing()}>
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="pe-2">
-            <Cart4 />
-          </div>
-          Missing Cards
-        </div>
-      </Button>
+      <ButtonIconed
+        variant="secondary"
+        onClick={() => calculateMissing()}
+        title="Get Missing in Inventory Cards"
+        icon={<Cart4 />}
+        text="Missing Cards"
+      />
       {showModal && (
         <DeckMissingModal
           deck={{
@@ -235,6 +234,6 @@ function InventoryMissing(props) {
       )}
     </>
   );
-}
+};
 
-export default InventoryMissing;
+export default InventoryMissingButton;

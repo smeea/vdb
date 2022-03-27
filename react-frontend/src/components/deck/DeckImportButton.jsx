@@ -5,7 +5,7 @@ import Upload from 'assets/images/icons/upload.svg';
 import { ErrorOverlay, DeckImportText, DeckImportAmaranth } from 'components';
 import { useApp } from 'context';
 
-function DeckImport(props) {
+const DeckImportButton = (props) => {
   const { username, getDecks, setActiveDeck, isMobile } = useApp();
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');
@@ -281,14 +281,14 @@ function DeckImport(props) {
           <div className="d-flex justify-content-center align-items-center">
             {props.inInventory ? (
               <>
-                <div className="pe-2">
+                <div className="d-flex pe-2">
                   <Upload />
                 </div>
                 Import Inventory
               </>
             ) : (
               <>
-                <div className="pe-2">
+                <div className="d-flex pe-2">
                   <ClipboardPlus size={24} />
                 </div>
                 New / Import
@@ -361,6 +361,6 @@ function DeckImport(props) {
       </ErrorOverlay>
     </>
   );
-}
+};
 
-export default DeckImport;
+export default DeckImportButton;

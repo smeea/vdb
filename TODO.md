@@ -1,5 +1,4 @@
 # FIX
-- Update buttons icons alignment as in DeckCopyUrl (move to component)
 
 # FEATURES
 - Export all in xlsx and csv

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Container, Row, Col, Stack, Button } from 'react-bootstrap';
+import { Container, Row, Col, Stack } from 'react-bootstrap';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
 import {
@@ -11,6 +11,7 @@ import {
   ButtonSearchTwd,
   ButtonSearchPda,
   ButtonAddCard,
+  ButtonIconed,
   CardImage,
 } from 'components';
 import { useApp } from 'context';
@@ -222,20 +223,20 @@ function Cards({ lastDeckId }) {
             {!isMobile && (
               <Col>
                 <Stack gap={1} className="py-3 px-2">
-                  <Button
-                    title="Random Crypt Card"
+                  <ButtonIconed
                     variant="secondary"
                     onClick={() => randomCrypt()}
-                  >
-                    <Dice3 /> Crypt
-                  </Button>
-                  <Button
-                    title="Random Library Card"
+                    title="Random Crypt Card"
+                    icon={<Dice3 />}
+                    text="Crypt"
+                  />
+                  <ButtonIconed
                     variant="secondary"
                     onClick={() => randomLibrary()}
-                  >
-                    <Dice3 /> Library
-                  </Button>
+                    title="Random Library Card"
+                    icon={<Dice3 />}
+                    text="Library"
+                  />
                 </Stack>
               </Col>
             )}

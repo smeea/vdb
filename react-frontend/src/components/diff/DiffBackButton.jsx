@@ -1,26 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import Folder2Open from 'assets/images/icons/folder2-open.svg';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
 function DeckCopyUrl(props) {
   const navigate = useNavigate();
   return (
-    <>
-      <Button
-        variant="secondary"
-        onClick={() =>
-          navigate(props.deckid ? `/decks?id=${props.deckid}` : '/decks')
-        }
-      >
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="pe-2">
-            <Folder2Open />
-          </div>
-          Back to Deck
-        </div>
-      </Button>
-    </>
+    <ButtonIconed
+      variant="secondary"
+      onClick={() =>
+        navigate(props.deckid ? `/decks?id=${props.deckid}` : '/decks')
+      }
+      title="Back to Decks"
+      icon={<Folder2Open />}
+      text="Back to Decks"
+    />
   );
 }
 

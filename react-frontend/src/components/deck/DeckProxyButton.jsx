@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 import {
-  Button,
   Spinner,
   ButtonGroup,
   Dropdown,
@@ -10,8 +9,9 @@ import {
 import Printer from 'assets/images/icons/printer.svg';
 import { DeckProxySelectModal } from 'components';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function DeckProxy(props) {
+const DeckProxyButton = (props) => {
   const { lang, inventoryMode, isMobile } = useApp();
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
@@ -111,18 +111,13 @@ function DeckProxy(props) {
   return (
     <>
       {props.inDiff ? (
-        <Button
-          title="Proxy PDF"
+        <ButtonIconed
           variant="secondary"
           onClick={() => proxyMissing()}
-        >
-          <div className="d-flex justify-content-center align-items-center">
-            <div className="pe-2">
-              <Printer />
-            </div>
-            Proxy Missing
-          </div>
-        </Button>
+          title="Proxy Missing Cards to PDF ready for print"
+          icon={<Printer />}
+          text="Proxy Missing"
+        />
       ) : (
         <DropdownButton
           as={ButtonGroup}
@@ -132,11 +127,15 @@ function DeckProxy(props) {
               title="Proxy PDF"
               className="d-flex justify-content-center align-items-center"
             >
-              <div className={props.noText ? null : 'pe-2'}>
+              <div className={`d-flex ${props.noText ? null : 'pe-2'}`}>
                 {spinnerState ? (
                   <Spinner animation="border" size="sm" />
                 ) : (
-                  <Printer />
+                  <Printer
+                    width={props.noText ? '18' : '18'}
+                    height={props.noText ? '22' : '18'}
+                    viewBox="0 0 18 16"
+                  />
                 )}
               </div>
               {!props.noText && 'PDF Proxy'}
@@ -163,6 +162,6 @@ function DeckProxy(props) {
       )}
     </>
   );
-}
+};
 
-export default DeckProxy;
+export default DeckProxyButton;

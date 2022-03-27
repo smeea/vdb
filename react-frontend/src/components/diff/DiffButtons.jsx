@@ -1,25 +1,25 @@
 import React from 'react';
 import { Stack } from 'react-bootstrap';
 import {
-  DiffCopyUrl,
+  DiffCopyUrlButton,
   DiffBackButton,
-  DeckProxy,
-  DeckMissing,
+  DeckProxyButton,
+  DeckMissingButton,
 } from 'components';
 
-function DiffButtons(props) {
+const DiffButtons = (props) => {
   return (
     <Stack gap={1}>
       {props.deck && <DiffBackButton deckid={props.deck.deckid} />}
       {props.deck && (
-        <DiffCopyUrl
+        <DiffCopyUrlButton
           fromQuery={props.fromQuery}
           toQuery={props.toQuery}
           setShowButtons={props.setShowButtons}
         />
       )}
       {props.deck && (
-        <DeckProxy
+        <DeckProxyButton
           deck={props.deck}
           missingCrypt={props.missingCrypt}
           missingLibrary={props.missingLibrary}
@@ -29,7 +29,7 @@ function DiffButtons(props) {
         />
       )}
       {props.deck && (
-        <DeckMissing
+        <DeckMissingButton
           deck={props.deck}
           missingCrypt={props.missingCrypt}
           missingLibrary={props.missingLibrary}
@@ -39,6 +39,6 @@ function DiffButtons(props) {
       )}
     </Stack>
   );
-}
+};
 
 export default DiffButtons;

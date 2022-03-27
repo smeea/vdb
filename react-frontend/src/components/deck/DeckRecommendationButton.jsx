@@ -1,26 +1,22 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckRecommendationButton = (props) => {
   const { isMobile } = useApp();
 
   return (
-    <Button
+    <ButtonIconed
+      variant="secondary"
       onClick={() => {
         isMobile && props.setShowButtons(false);
         props.setShowRecommendation(true);
       }}
-      variant="secondary"
-    >
-      <div className="d-flex justify-content-center align-items-center">
-        <div className="pe-2">
-          <LightbulbFill />
-        </div>
-        Card Ideas
-      </div>
-    </Button>
+      title="Get Recommendation based on TWD with similar cards"
+      icon={<LightbulbFill />}
+      text="Card Ideas"
+    />
   );
 };
 

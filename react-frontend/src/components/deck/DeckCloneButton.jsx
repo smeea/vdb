@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
 import Files from 'assets/images/icons/files.svg';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function DeckClone(props) {
+const DeckCloneButton = (props) => {
   const { getDecks, setActiveDeck, isMobile } = useApp();
 
   const [state, setState] = useState(false);
@@ -53,23 +53,19 @@ function DeckClone(props) {
   };
 
   return (
-    <>
-      <Button
-        variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
-        onClick={cloneDeck}
-      >
-        <div className="d-flex justify-content-center align-items-center">
-          <div className={props.noText ? null : 'pe-2'}>
-            <Files />
-          </div>
-          {!props.noText &&
-            (state
-              ? 'Cloned'
-              : `Clone${!(props.inPda || props.inTwd) ? ' Deck' : ''}`)}
-        </div>
-      </Button>
-    </>
+    <ButtonIconed
+      variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
+      onClick={cloneDeck}
+      title="Clone Deck to your account for editing"
+      icon={<Files />}
+      text={
+        !props.noText &&
+        (state
+          ? 'Cloned'
+          : `Clone${!(props.inPda || props.inTwd) ? ' Deck' : ''}`)
+      }
+    />
   );
-}
+};
 
-export default DeckClone;
+export default DeckCloneButton;

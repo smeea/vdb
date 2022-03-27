@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
 function InventoryDelete(props) {
   const { isMobile } = useApp();
@@ -31,14 +31,13 @@ function InventoryDelete(props) {
 
   return (
     <>
-      <Button variant="secondary" onClick={() => setShowConfirmation(true)}>
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="pe-2">
-            <TrashFill />
-          </div>
-          Delete Inventory
-        </div>
-      </Button>
+      <ButtonIconed
+        variant="secondary"
+        onClick={() => setShowConfirmation(true)}
+        title="Delete Inventory"
+        icon={<TrashFill />}
+        text="Delete Inventory"
+      />
       <ModalConfirmation
         withConfirmation={true}
         show={showConfirmation}

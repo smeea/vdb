@@ -8,6 +8,7 @@ import {
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
 function DeckPublicButton(props) {
   const { setDecks, setActiveDeck, isMobile } = useApp();
@@ -111,8 +112,11 @@ function DeckPublicButton(props) {
         as={ButtonGroup}
         variant="secondary"
         title={
-          <div className="d-flex justify-content-center align-items-center">
-            <div className={props.noText ? '' : 'pe-2'}>
+          <div
+            title="Public Deck Archive Actions"
+            className="d-flex justify-content-center align-items-center"
+          >
+            <div className={`d-flex ${props.noText ? null : 'pe-2'}`}>
               {!spinnerState ? (
                 <PeopleFill />
               ) : (

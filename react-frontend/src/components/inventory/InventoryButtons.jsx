@@ -1,50 +1,50 @@
 import React from 'react';
-import { Stack, Button } from 'react-bootstrap';
-import InventoryExport from './InventoryExport.jsx';
-import { DeckImport, InventoryDelete, InventoryMissing } from 'components';
+import { Stack } from 'react-bootstrap';
+import {
+  DeckImportButton,
+  InventoryExportButton,
+  InventoryDeleteButton,
+  InventoryMissingButton,
+} from 'components';
 import FolderPlus from 'assets/images/icons/folder-plus.svg';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
 function InventoryButtons(props) {
   const { decks, preconDecks } = useApp();
 
   return (
     <Stack gap={1}>
-      <InventoryExport setShowButtons={props.setShowButtons} />
-      <DeckImport
+      <InventoryExportButton setShowButtons={props.setShowButtons} />
+      <DeckImportButton
         inventoryAddToState={props.inventoryAddToState}
         setShowButtons={props.setShowButtons}
         inInventory={true}
       />
-      <InventoryDelete
+      <InventoryDeleteButton
         setInventoryCrypt={props.setInventoryCrypt}
         setInventoryLibrary={props.setInventoryLibrary}
         setShowButtons={props.setShowButtons}
       />
       {decks && (
-        <Button variant="secondary" onClick={() => props.setShowAddDeck(true)}>
-          <div className="d-flex justify-content-center align-items-center">
-            <div className="pe-2">
-              <FolderPlus />
-            </div>
-            Add from Deck
-          </div>
-        </Button>
+        <ButtonIconed
+          variant="secondary"
+          onClick={() => props.setShowAddDeck(true)}
+          title="Add from your Deck"
+          icon={<FolderPlus />}
+          text="Add from Deck"
+        />
       )}
       {preconDecks && (
-        <Button
+        <ButtonIconed
           variant="secondary"
           onClick={() => props.setShowAddPrecon(true)}
-        >
-          <div className="d-flex justify-content-center align-items-center">
-            <div className="pe-2">
-              <FolderPlus />
-            </div>
-            Add from Precon
-          </div>
-        </Button>
+          title="Add from Preconstructed Deck"
+          icon={<FolderPlus />}
+          text="Add from Precon"
+        />
       )}
-      <InventoryMissing
+      <InventoryMissingButton
         setShowButtons={props.setShowButtons}
         clan={props.clan}
         type={props.type}

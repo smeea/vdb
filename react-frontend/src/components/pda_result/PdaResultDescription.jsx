@@ -1,7 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
-import { PdaFavoriteButton, TwdOpenDeckButton, DeckClone } from 'components';
+import {
+  PdaFavoriteButton,
+  TwdOpenDeckButton,
+  DeckCloneButton,
+} from 'components';
 import { useApp, useSearchForms } from 'context';
 import defaults from 'components/forms_data/defaultsPdaForm.json';
 
@@ -76,7 +80,7 @@ function PdaResultDescription(props) {
               <Stack gap={1}>
                 <TwdOpenDeckButton deckid={props.deck['deckid']} inPda />
                 {username && (
-                  <DeckClone
+                  <DeckCloneButton
                     deck={props.deck}
                     activeDeck={{ src: 'shared', deckid: props.deck.deckid }}
                     setShowButtons={() => {}}
@@ -137,7 +141,7 @@ function PdaResultDescription(props) {
           <Stack gap={1}>
             <TwdOpenDeckButton deckid={props.deck['deckid']} inPda />
             {username && (
-              <DeckClone
+              <DeckCloneButton
                 deck={props.deck}
                 activeDeck={{ src: 'shared', deckid: props.deck.deckid }}
                 inPda

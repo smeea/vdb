@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import TrashFill from 'assets/images/icons/trash-fill.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function DeckDelete(props) {
+const DeckDeleteButton = (props) => {
   const { getDecks, setActiveDeck, isMobile } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
@@ -35,18 +35,19 @@ function DeckDelete(props) {
 
   return (
     <>
-      <Button
+      <ButtonIconed
         variant={props.noText ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
         title="Delete Deck"
-      >
-        <div className="d-flex justify-content-center align-items-center">
-          <div className={props.noText ? null : 'pe-2'}>
-            <TrashFill />
-          </div>
-          {!props.noText && 'Delete Deck'}
-        </div>
-      </Button>
+        icon={
+          <TrashFill
+            width={props.noText ? '18' : '18'}
+            height={props.noText ? '22' : '18'}
+            viewBox="0 0 18 16"
+          />
+        }
+        text={!props.noText && 'Delete Deck'}
+      />
       <ModalConfirmation
         withConfirmation={
           props.deck.master ||
@@ -63,6 +64,6 @@ function DeckDelete(props) {
       />
     </>
   );
-}
+};
 
-export default DeckDelete;
+export default DeckDeleteButton;

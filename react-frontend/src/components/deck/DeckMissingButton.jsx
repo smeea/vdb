@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Cart4 from 'assets/images/icons/cart4.svg';
-import { DeckMissingModal } from 'components';
+import { ButtonIconed, DeckMissingModal } from 'components';
 import { useApp } from 'context';
 
 function DeckMissing(props) {
@@ -14,14 +14,13 @@ function DeckMissing(props) {
 
   return (
     <>
-      <Button variant="secondary" onClick={() => setShowModal(true)}>
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="pe-2">
-            <Cart4 />
-          </div>
-          {props.inDiff ? 'Differences' : 'Missing Cards'}
-        </div>
-      </Button>
+      <ButtonIconed
+        variant="secondary"
+        onClick={() => setShowModal(true)}
+        title="Get Missing in Inventory Cards"
+        icon={<Cart4 />}
+        text={props.inDiff ? 'Differences' : 'Missing Cards'}
+      />
       {showModal && (
         <DeckMissingModal
           deck={{

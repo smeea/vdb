@@ -1,18 +1,18 @@
 import React from 'react';
 import { Stack } from 'react-bootstrap';
 import {
-  DeckClone,
-  DeckDelete,
-  DeckCopyUrl,
-  DeckImport,
-  DeckExport,
-  DeckProxy,
-  DeckMissing,
+  DeckCloneButton,
+  DeckDeleteButton,
+  DeckCopyUrlButton,
+  DeckImportButton,
+  DeckExportButton,
+  DeckProxyButton,
+  DeckMissingButton,
   DeckRecommendationButton,
   DeckDrawButton,
   DeckDiffButton,
-  DeckBranchCreate,
-  DeckBranchDelete,
+  DeckBranchCreateButton,
+  DeckBranchDeleteButton,
   DeckPublicButton,
 } from 'components';
 
@@ -35,26 +35,29 @@ function DeckButtons({
 
   return (
     <Stack gap={1}>
-      <DeckImport setShowInfo={setShowInfo} setShowButtons={setShowButtons} />
+      <DeckImportButton
+        setShowInfo={setShowInfo}
+        setShowButtons={setShowButtons}
+      />
       {username && deck && (
-        <DeckClone
+        <DeckCloneButton
           deck={deck}
           activeDeck={activeDeck}
           setShowButtons={setShowButtons}
         />
       )}
       {deck && (
-        <DeckExport
+        <DeckExportButton
           deck={deck}
           activeDeck={activeDeck}
           setShowButtons={setShowButtons}
         />
       )}
       {isAuthor && !isPublic && deck && (
-        <DeckDelete deck={deck} setShowButtons={setShowButtons} />
+        <DeckDeleteButton deck={deck} setShowButtons={setShowButtons} />
       )}
       {isAuthor && !isPublic && deck && (
-        <DeckBranchCreate
+        <DeckBranchCreateButton
           deck={deck}
           activeDeck={activeDeck}
           setShowButtons={setShowButtons}
@@ -64,7 +67,7 @@ function DeckButtons({
         !isPublic &&
         deck &&
         (deck.master || (deck.branches && deck.branches.length > 0)) && (
-          <DeckBranchDelete deck={deck} setShowButtons={setShowButtons} />
+          <DeckBranchDeleteButton deck={deck} setShowButtons={setShowButtons} />
         )}
       {isAuthor && deck && (
         <DeckPublicButton deck={deck} setShowButtons={setShowButtons} />
@@ -73,9 +76,11 @@ function DeckButtons({
       {deck && (
         <DeckDiffButton deckid={deck.deckid} setShowButtons={setShowButtons} />
       )}
-      {deck && <DeckCopyUrl deck={deck} setShowButtons={setShowButtons} />}
       {deck && (
-        <DeckProxy
+        <DeckCopyUrlButton deck={deck} setShowButtons={setShowButtons} />
+      )}
+      {deck && (
+        <DeckProxyButton
           deck={deck}
           missingCrypt={missingCrypt}
           missingLibrary={missingLibrary}
@@ -97,7 +102,7 @@ function DeckButtons({
         />
       )}
       {deck && inventoryMode && (
-        <DeckMissing
+        <DeckMissingButton
           deck={deck}
           missingCrypt={missingCrypt}
           missingLibrary={missingLibrary}

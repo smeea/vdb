@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
 import NodeMinusFill from 'assets/images/icons/node-minus-fill.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function DeckBranchDelete(props) {
+const DeckBranchDeleteButton = (props) => {
   const { getDecks, setActiveDeck, isMobile } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -38,21 +38,19 @@ function DeckBranchDelete(props) {
 
   return (
     <>
-      <Button
+      <ButtonIconed
         variant={props.noText ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
-      >
-        <div className="d-flex justify-content-center align-items-center">
-          <div className={props.noText ? null : 'pe-2'}>
-            <NodeMinusFill
-              width={props.noText ? '16' : '21'}
-              height={props.noText ? '16' : '21'}
-              viewBox="0 0 16 16"
-            />
-          </div>
-          {!props.noText && 'Delete Revision'}
-        </div>
-      </Button>
+        title="Delete Revision of the Deck"
+        icon={
+          <NodeMinusFill
+            width={props.noText ? '16' : '21'}
+            height={props.noText ? '16' : '21'}
+            viewBox="0 0 16 16"
+          />
+        }
+        text={!props.noText && 'Delete Revision'}
+      />
       <ModalConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
@@ -63,6 +61,6 @@ function DeckBranchDelete(props) {
       />
     </>
   );
-}
+};
 
-export default DeckBranchDelete;
+export default DeckBranchDeleteButton;

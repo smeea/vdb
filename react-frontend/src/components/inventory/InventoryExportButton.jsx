@@ -10,7 +10,7 @@ import Download from 'assets/images/icons/download.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-function InventoryExport(props) {
+const InventoryExportButton = (props) => {
   const { isMobile } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
@@ -144,7 +144,7 @@ function InventoryExport(props) {
         variant="secondary"
         title={
           <div className="d-flex justify-content-center align-items-center">
-            <div className="pe-2">
+            <div className="d-flex pe-2">
               {spinnerState ? (
                 <Spinner animation="border" size="sm" />
               ) : (
@@ -162,6 +162,6 @@ function InventoryExport(props) {
       </ErrorOverlay>
     </>
   );
-}
+};
 
-export default InventoryExport;
+export default InventoryExportButton;

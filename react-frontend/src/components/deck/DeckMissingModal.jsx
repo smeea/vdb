@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Container, Row, Col, Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { DeckCrypt, DeckLibrary, DeckExport } from 'components';
+import { DeckCrypt, DeckLibrary, DeckExportButton } from 'components';
 import { useApp } from 'context';
 
 function DeckMissingModal(props) {
@@ -61,7 +61,7 @@ function DeckMissingModal(props) {
             }
           >
             <div className="ps-2">
-              <DeckExport
+              <DeckExportButton
                 inMissing={true}
                 deck={props.deck}
                 activeDeck={{ src: 'shared', deckid: 'deckInUrl' }}

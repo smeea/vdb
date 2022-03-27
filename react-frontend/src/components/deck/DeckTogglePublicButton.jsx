@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function DeckHide(props) {
+function DeckTogglePublicButton(props) {
   const { setDecks } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
@@ -51,19 +52,18 @@ function DeckHide(props) {
 
   return (
     <>
-      <Button
-        title="Add/Remove from Public Deck Archive"
+      <ButtonIconed
         variant={props.deck.public_child ? 'third' : 'primary'}
         onClick={() => setShowConfirmation(true)}
-      >
-        <div className="d-flex justify-content-center align-items-center">
-          {!spinnerState ? (
-            <PeopleFill />
+        title="Add/Remove from Public Deck Archive"
+        icon={
+          !spinnerState ? (
+            <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
           ) : (
             <Spinner animation="border" size="sm" />
-          )}
-        </div>
-      </Button>
+          )
+        }
+      />
 
       <ModalConfirmation
         show={showConfirmation}
@@ -81,4 +81,4 @@ function DeckHide(props) {
   );
 }
 
-export default DeckHide;
+export default DeckTogglePublicButton;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { Modal, Row, Col, Button, Stack } from 'react-bootstrap';
+import { Modal, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
@@ -11,6 +11,7 @@ import {
   ButtonToggleShowImage,
   ButtonSearchTwd,
   ButtonSearchPda,
+  ButtonIconed,
   CardImage,
 } from 'components';
 import { useApp } from 'context';
@@ -148,11 +149,13 @@ function ResultLibraryModal(props) {
                     <ButtonToggleShowImage />
                   </div>
                 </div>
-                <Button variant="primary" onClick={props.handleClose}>
-                  <div>
-                    <X width="24" height="24" viewBox="0 0 16 16" /> Close
-                  </div>
-                </Button>
+                <ButtonIconed
+                  variant="primary"
+                  onClick={props.handleClose}
+                  title="Close"
+                  icon={<X width="24" height="24" viewBox="0 0 16 16" />}
+                  text="Close"
+                />
               </div>
             </Col>
           </Row>

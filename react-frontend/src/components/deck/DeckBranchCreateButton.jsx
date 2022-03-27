@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import NodePlusFill from 'assets/images/icons/node-plus-fill.svg';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function DeckBranchCreate(props) {
+const DeckBranchCreateButton = (props) => {
   const { getDecks, setActiveDeck, isMobile } = useApp();
 
   const branchCreate = () => {
@@ -34,17 +34,14 @@ function DeckBranchCreate(props) {
   };
 
   return (
-    <>
-      <Button variant="secondary" onClick={branchCreate}>
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="pe-2">
-            <NodePlusFill width="21" height="21" viewBox="0 0 16 16" />
-          </div>
-          New Revision
-        </div>
-      </Button>
-    </>
+    <ButtonIconed
+      variant="secondary"
+      onClick={branchCreate}
+      title="Create New Revision of the Deck"
+      icon={<NodePlusFill width="21" height="21" viewBox="0 0 16 16" />}
+      text="New Revision"
+    />
   );
-}
+};
 
-export default DeckBranchCreate;
+export default DeckBranchCreateButton;

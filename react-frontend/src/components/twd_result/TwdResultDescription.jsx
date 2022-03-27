@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
-import { TwdOpenDeckButton, DeckClone } from 'components';
+import { TwdOpenDeckButton, DeckCloneButton } from 'components';
 import { useApp, useSearchForms } from 'context';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 
@@ -87,7 +87,7 @@ function TwdResultDescription(props) {
               <Stack gap={1}>
                 <TwdOpenDeckButton deckid={props.deck['deckid']} />
                 {username && (
-                  <DeckClone
+                  <DeckCloneButton
                     deck={props.deck}
                     activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
                     setShowButtons={() => {}}
@@ -161,7 +161,7 @@ function TwdResultDescription(props) {
           <Stack gap={1} className="py-2">
             <TwdOpenDeckButton deckid={props.deck['deckid']} />
             {username && (
-              <DeckClone
+              <DeckCloneButton
                 deck={props.deck}
                 activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
                 inTwd

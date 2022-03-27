@@ -2,12 +2,12 @@ import React from 'react';
 import { Container, Row, Col, Stack } from 'react-bootstrap';
 import {
   AccountLogin,
-  AccountLogout,
+  AccountLogoutButton,
   AccountRegister,
   AccountChangePassword,
   AccountChangeEmail,
   AccountChangeName,
-  AccountDelete,
+  AccountDeleteButton,
 } from 'components';
 import PersonFill from 'assets/images/icons/person-fill.svg';
 import { useApp } from 'context';
@@ -37,8 +37,8 @@ function Account(props) {
                 <div>
                   <AccountChangeEmail />
                 </div>
-                <AccountLogout />
-                <AccountDelete />
+                <AccountLogoutButton />
+                <AccountDeleteButton />
               </Stack>
             </>
           ) : (

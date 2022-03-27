@@ -11,12 +11,12 @@ import {
   DeckLibrary,
   DeckTags,
   DeckSelectAdvModalTotal,
-  DeckDelete,
-  DeckHide,
-  DeckBranchDelete,
-  DeckProxy,
-  DeckCopyUrl,
-  DeckTogglePublic,
+  DeckDeleteButton,
+  DeckHideButton,
+  DeckBranchDeleteButton,
+  DeckProxyButton,
+  DeckCopyUrlButton,
+  DeckTogglePublicButton,
   DeckSelectSortForm,
   DeckSelectAdvModalTagsFilter,
   ResultClanImage,
@@ -26,7 +26,7 @@ import {
 import { decksSort } from 'utils';
 import { useApp } from 'context';
 
-function DeckSelectAdvModal(props) {
+const DeckSelectAdvModal = (props) => {
   const {
     cryptCardBase,
     decks,
@@ -359,26 +359,30 @@ function DeckSelectAdvModal(props) {
             </td>
             <td className="buttons">
               <div className="d-inline pe-1">
-                <DeckHide deckid={deck.deckid} />
+                <DeckHideButton deckid={deck.deckid} />
               </div>
               <div className="d-inline pe-1">
-                <DeckTogglePublic deck={deck} />
+                <DeckTogglePublicButton deck={deck} />
               </div>
               {isDesktop && (
                 <>
                   <div className="d-inline pe-1">
-                    <DeckCopyUrl noText={true} isAuthor={true} deck={deck} />
+                    <DeckCopyUrlButton
+                      noText={true}
+                      isAuthor={true}
+                      deck={deck}
+                    />
                   </div>
                   <div className="d-inline pe-1">
-                    <DeckProxy noText={true} deck={deck} />
+                    <DeckProxyButton noText={true} deck={deck} />
                   </div>
                   <div className="d-inline pe-1">
                     {revFilter &&
                     (deck.master ||
                       (deck.branches && deck.branches.length > 0)) ? (
-                      <DeckBranchDelete noText={true} deck={deck} />
+                      <DeckBranchDeleteButton noText={true} deck={deck} />
                     ) : (
-                      <DeckDelete noText={true} deck={deck} />
+                      <DeckDeleteButton noText={true} deck={deck} />
                     )}
                   </div>
                 </>
@@ -478,6 +482,6 @@ function DeckSelectAdvModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default DeckSelectAdvModal;

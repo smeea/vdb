@@ -88,7 +88,9 @@ function SearchFormTextAndButtons(props) {
             variant="primary"
             onClick={props.handleClearButton}
           >
-            <X />
+            <div className="d-flex align-items-center">
+              <X />
+            </div>
           </Button>
         </InputGroup>
       )}

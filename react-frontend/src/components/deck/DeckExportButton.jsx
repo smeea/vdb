@@ -10,7 +10,7 @@ import Download from 'assets/images/icons/download.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-function DeckExport(props) {
+const DeckExportButton = (props) => {
   const { username, decks, isMobile } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
@@ -285,8 +285,11 @@ function DeckExport(props) {
         as={ButtonGroup}
         variant="secondary"
         title={
-          <div className="d-flex justify-content-center align-items-center">
-            <div className="pe-2">
+          <div
+            title="Export Deck"
+            className="d-flex justify-content-center align-items-center"
+          >
+            <div className="d-flex pe-2">
               {spinnerState ? (
                 <Spinner animation="border" size="sm" />
               ) : (
@@ -304,6 +307,6 @@ function DeckExport(props) {
       </ErrorOverlay>
     </>
   );
-}
+};
 
-export default DeckExport;
+export default DeckExportButton;

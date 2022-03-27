@@ -431,7 +431,13 @@ function Decks(props) {
                               setShowDeckSelectAdv(!showDeckSelectAdv)
                             }
                           >
-                            <BinocularsFill />
+                            <div className="d-flex">
+                              <BinocularsFill
+                                width="16"
+                                height="22"
+                                viewBox="0 0 16 18"
+                              />
+                            </div>
                           </Button>
                         </div>
                       )}
@@ -441,7 +447,13 @@ function Decks(props) {
                             variant="primary"
                             onClick={() => setShowInfo(!showInfo)}
                           >
-                            <ChatLeftQuoteFill />
+                            <div className="d-flex pt-1">
+                              <ChatLeftQuoteFill
+                                width="16"
+                                height="18"
+                                viewBox="0 0 16 18"
+                              />
+                            </div>
                           </Button>
                         </div>
                       )}
