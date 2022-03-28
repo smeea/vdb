@@ -283,7 +283,7 @@ const DeckExportButton = (props) => {
     <>
       <DropdownButton
         as={ButtonGroup}
-        variant="secondary"
+        variant={props.inMissing ? 'primary' : 'secondary'}
         title={
           <div
             title="Export Deck"
