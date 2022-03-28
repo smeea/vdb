@@ -4,7 +4,7 @@ import {
   DeckCloneButton,
   DeckDeleteButton,
   DeckCopyUrlButton,
-  DeckImportButton,
+  DeckImport,
   DeckExportButton,
   DeckProxyButton,
   DeckMissingButton,
@@ -35,10 +35,7 @@ function DeckButtons({
 
   return (
     <Stack gap={1}>
-      <DeckImportButton
-        setShowInfo={setShowInfo}
-        setShowButtons={setShowButtons}
-      />
+      <DeckImport setShowInfo={setShowInfo} setShowButtons={setShowButtons} />
       {username && deck && (
         <DeckCloneButton
           deck={deck}

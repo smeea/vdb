@@ -26,9 +26,11 @@ export { default as DeckDrawProbabilityModal } from './DeckDrawProbabilityModal.
 export { default as DeckDrawProbabilityText } from './DeckDrawProbabilityText.jsx';
 export { default as DeckExportButton } from './DeckExportButton.jsx';
 export { default as DeckHideButton } from './DeckHideButton.jsx';
+export { default as DeckImport } from './DeckImport.jsx';
 export { default as DeckImportAmaranth } from './DeckImportAmaranth.jsx';
 export { default as DeckImportButton } from './DeckImportButton.jsx';
 export { default as DeckImportText } from './DeckImportText.jsx';
+export { default as DeckImportBadCardsModal } from './DeckImportBadCardsModal.jsx';
 export { default as DeckLibrary } from './DeckLibrary.jsx';
 export { default as DeckLibraryHeader } from './DeckLibraryHeader.jsx';
 export { default as DeckLibraryTable } from './DeckLibraryTable.jsx';

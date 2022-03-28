@@ -1,4 +1,6 @@
 # FIX
+- No good cards import
+- Fix bad cards selection
 
 # FEATURES
 - Export all in xlsx and csv

@@ -47,6 +47,7 @@ function DeckImportText(props) {
         .then((response) => response.json())
         .then((data) => {
           newDeckId = data.deckid;
+          props.setBadCards(data.bad_cards);
         })
         .then(() => !props.anonymous && getDecks())
         .then(() => {
@@ -54,6 +55,7 @@ function DeckImportText(props) {
             src: props.anonymous ? 'shared' : 'my',
             deckid: newDeckId,
           });
+          isMobile && props.setShowButtons(false);
           setDeckText('');
           setSpinnerState(false);
           props.handleClose();

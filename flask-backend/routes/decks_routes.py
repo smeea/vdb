@@ -637,21 +637,21 @@ def urlCloneDeck():
 @login_required
 def importDeck():
     try:
-        [name, author, description, cards] = deck_import(request.json["deckText"])
+        deck = deck_import(request.json["deckText"])
 
-        if len(cards) > 0:
+        if len(deck["cards"]) > 0:
             deckid = uuid.uuid4().hex
             d = Deck(
                 deckid=deckid,
-                name=name,
-                author_public_name=author,
-                description=description,
+                name=deck["name"],
+                author_public_name=deck["author"],
+                description=deck["description"],
                 author=current_user,
-                cards=cards,
+                cards=deck["cards"],
             )
             db.session.add(d)
             db.session.commit()
-            return jsonify({"deckid": deckid})
+            return jsonify({"deckid": deckid, "bad_cards": deck["bad_cards"]})
 
         return jsonify({"error": "cannot import this deck."})
 
