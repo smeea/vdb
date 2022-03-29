@@ -37,14 +37,16 @@ def deck_import(deckText):
         cardbase[name] = {"base": card["Id"]}
 
     for i in linesArray:
-        if nameMatch := re.match(r"^Deck Name: (.+)", i):
+        if nameMatch := re.match(r"^Deck Name: (.*)", i):
             deck["name"] = nameMatch.group(1)
             continue
-        if nameMatch := re.match(r"^Author: (.+)", i):
+        if nameMatch := re.match(r"^Author: (.*)", i):
             deck["author"] = nameMatch.group(1)
             continue
-        if nameMatch := re.match(r"^Description: (.+)", i):
+        if nameMatch := re.match(r"^Description: (.*)", i):
             deck["description"] = nameMatch.group(1)
+            continue
+        if not i or re.match(r"^\D", i):
             continue
 
         id, quantity = import_parse_card(i, cardbase)

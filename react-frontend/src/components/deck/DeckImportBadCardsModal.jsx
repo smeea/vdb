@@ -38,8 +38,8 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
   const BadImports = badCards.map((c, idx) => {
     return (
       <Row key={idx} className="align-items-center pt-2">
-        <Col md={4}>{c}</Col>
-        <Col md={1} className="d-flex justify-content-between px-1">
+        <Col md={5}>{c}</Col>
+        <Col md={1}>
           <DeckCardQuantity
             deckid={deckid}
             cardChange={handleCardChange}
@@ -47,7 +47,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
             q={cards[idx]?.q}
           />
         </Col>
-        <Col md={7}>
+        <Col md={6}>
           <QuickSelect setCardId={(cardid) => handleSetCardId(cardid, idx)} />
         </Col>
       </Row>
@@ -59,7 +59,7 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
       show={badCards.length > 0}
       onHide={() => setBadCards([])}
       animation={false}
-      size="lg"
+      size="xl"
       dialogClassName={isMobile ? 'm-0' : null}
     >
       <Modal.Header

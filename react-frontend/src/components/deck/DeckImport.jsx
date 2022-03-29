@@ -15,7 +15,6 @@ const DeckImport = (props) => {
   const [showTextModal, setShowTextModal] = useState(false);
   const [showAnonymousTextModal, setShowAnonymousTextModal] = useState(false);
   const [showAmaranthModal, setShowAmaranthModal] = useState(false);
-  const [showBadCardsModal, setShowBadCardsModal] = useState(false);
   const [badCards, setBadCards] = useState([]);
   const ref = useRef(null);
 
@@ -236,11 +235,13 @@ const DeckImport = (props) => {
         handleOpenAmaranthModal={handleOpenAmaranthModal}
         handleOpenAnonymousTextModal={handleOpenAnonymousTextModal}
       />
-      <DeckImportBadCardsModal
-        deckid={activeDeck.deckid}
-        badCards={badCards}
-        setBadCards={setBadCards}
-      />
+      {badCards && (
+        <DeckImportBadCardsModal
+          deckid={activeDeck.deckid}
+          badCards={badCards}
+          setBadCards={setBadCards}
+        />
+      )}
       <DeckImportText
         handleClose={handleCloseImportModal}
         getDecks={getDecks}

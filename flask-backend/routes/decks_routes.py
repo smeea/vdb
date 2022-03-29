@@ -639,21 +639,19 @@ def importDeck():
     try:
         deck = deck_import(request.json["deckText"])
 
-        if len(deck["cards"]) > 0:
-            deckid = uuid.uuid4().hex
-            d = Deck(
-                deckid=deckid,
-                name=deck["name"],
-                author_public_name=deck["author"],
-                description=deck["description"],
-                author=current_user,
-                cards=deck["cards"],
-            )
-            db.session.add(d)
-            db.session.commit()
-            return jsonify({"deckid": deckid, "bad_cards": deck["bad_cards"]})
+        deckid = uuid.uuid4().hex
+        d = Deck(
+            deckid=deckid,
+            name=deck["name"],
+            author_public_name=deck["author"],
+            description=deck["description"],
+            author=current_user,
+            cards=deck["cards"],
+        )
+        db.session.add(d)
+        db.session.commit()
 
-        return jsonify({"error": "cannot import this deck."})
+        return jsonify({"deckid": deckid, "bad_cards": deck["bad_cards"]})
 
     except Exception:
         print("deck import: ", request.json["deckText"])

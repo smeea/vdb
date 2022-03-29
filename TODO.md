@@ -1,5 +1,4 @@
 # FIX
-- No good cards import
 - Fix bad cards selection
 
 # FEATURES
