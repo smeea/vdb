@@ -167,21 +167,24 @@ export const AppProvider = (props) => {
   };
 
   // Trigger the language change
-  useEffect(async () => {
-    if (!localizedCrypt[lang] || !localizedLibrary[lang])
-      await initializeLocalizedInfo(lang);
-    else {
-      changeBaseTextToLocalizedText(
-        setCryptCardBase,
-        localizedCrypt[lang],
-        nativeCrypt
-      );
-      changeBaseTextToLocalizedText(
-        setLibraryCardBase,
-        localizedLibrary[lang],
-        nativeLibrary
-      );
+  useEffect(() => {
+    async function triggerLangChange() {
+      if (!localizedCrypt[lang] || !localizedLibrary[lang])
+        await initializeLocalizedInfo(lang);
+      else {
+        changeBaseTextToLocalizedText(
+          setCryptCardBase,
+          localizedCrypt[lang],
+          nativeCrypt
+        );
+        changeBaseTextToLocalizedText(
+          setLibraryCardBase,
+          localizedLibrary[lang],
+          nativeLibrary
+        );
+      }
     }
+    triggerLangChange();
   }, [lang]);
 
   // ---------------------------------------------------------------------------

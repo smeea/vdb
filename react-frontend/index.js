@@ -1,14 +1,15 @@
 import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from 'App.js';
 import { AppProvider } from 'context';
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <Suspense fallback={<div />}>
     <AppProvider>
       <App />
     </AppProvider>
-  </Suspense>,
-
-  document.getElementById('root')
+  </Suspense>
 );
