@@ -2,7 +2,6 @@
 
 # FEATURES
 - Export all in xlsx and csv
-- Add error window with non-imported cards
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks

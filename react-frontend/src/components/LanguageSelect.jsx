@@ -21,7 +21,7 @@ const LanguageSelect = (props) => {
         onClick={() => {
           changeLang(l);
           setShowMenu(false);
-          props.setShowMenu(false);
+          isMobile && props.setShowMenu(false);
         }}
       >
         <Flag width="22" height="22" viewBox="0 0 515 525" />
