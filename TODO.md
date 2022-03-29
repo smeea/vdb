@@ -1,5 +1,4 @@
 # FIX
-- Fix bad cards selection
 
 # FEATURES
 - Export all in xlsx and csv

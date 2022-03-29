@@ -30,29 +30,11 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
 
   const handleSetCardId = (cardid, idx) => {
     setCards((prevState) => {
-      prevState[idx].cardid = cardid;
-      return prevState;
+      const newState = { ...prevState };
+      newState[idx].cardid = cardid;
+      return newState;
     });
   };
-
-  const BadImports = badCards.map((c, idx) => {
-    return (
-      <Row key={idx} className="align-items-center pt-2">
-        <Col md={5}>{c}</Col>
-        <Col md={1}>
-          <DeckCardQuantity
-            deckid={deckid}
-            cardChange={handleCardChange}
-            cardid={idx}
-            q={cards[idx]?.q}
-          />
-        </Col>
-        <Col md={6}>
-          <QuickSelect setCardId={(cardid) => handleSetCardId(cardid, idx)} />
-        </Col>
-      </Row>
-    );
-  });
 
   return (
     <Modal
@@ -71,7 +53,27 @@ const DeckImportBadCardsModal = ({ deckid, badCards, setBadCards }) => {
         </Button>
       </Modal.Header>
       <Modal.Body className={isMobile ? 'px-0 pt-0' : 'px-4 pt-0'}>
-        {BadImports}
+        {badCards.map((c, idx) => {
+          return (
+            <Row key={idx} className="align-items-center pt-2">
+              <Col md={5}>{c}</Col>
+              <Col md={1}>
+                <DeckCardQuantity
+                  deckid={deckid}
+                  cardChange={handleCardChange}
+                  cardid={idx}
+                  q={cards[idx]?.q}
+                />
+              </Col>
+              <Col md={6}>
+                <QuickSelect
+                  setCardId={(cardid) => handleSetCardId(cardid, idx)}
+                  selectedCard={cards[idx]?.cardid}
+                />
+              </Col>
+            </Row>
+          );
+        })}
       </Modal.Body>
     </Modal>
   );

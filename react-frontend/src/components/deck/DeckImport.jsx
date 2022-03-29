@@ -209,12 +209,10 @@ const DeckImport = (props) => {
             });
             isMobile && props.setShowButtons(false);
             setDeckText('');
-            setSpinnerState(false);
             props.handleClose();
           })
           .catch((error) => {
             setImportError(true);
-            setSpinnerState(false);
           });
       }
     };

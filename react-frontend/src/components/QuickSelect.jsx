@@ -4,23 +4,28 @@ import AsyncSelect from 'react-select/async';
 import { useApp } from 'context';
 import { SelectLabelCrypt, SelectLabelLibrary } from 'components';
 
-function QuickSelect(props) {
+const QuickSelect = ({ selectedCard, setCardId, inInventory }) => {
   const { isMobile } = useApp();
 
   const params = useParams();
   const handleChange = (option) => {
-    props.setCardId(option.value);
+    setCardId(option.value);
   };
   const ref = useRef(null);
 
   const getOptionLabel = (option) => {
     const cardId = option.value;
+
     return (
       <>
-        {cardId > 200000 ? (
-          <SelectLabelCrypt cardid={cardId} inInventory={props.inInventory} />
+        {cardId ? (
+          cardId > 200000 ? (
+            <SelectLabelCrypt cardid={cardId} inInventory={inInventory} />
+          ) : (
+            <SelectLabelLibrary cardid={cardId} inInventory={inInventory} />
+          )
         ) : (
-          <SelectLabelLibrary cardid={cardId} inInventory={props.inInventory} />
+          <div className="gray">Enter Card Name</div>
         )}
       </>
     );
@@ -60,8 +65,8 @@ function QuickSelect(props) {
         classNamePrefix="react-select"
         cacheOptions
         autoFocus={!isMobile}
-        placeholder="Card Name"
         loadOptions={loadOptions}
+        value={{ value: selectedCard }}
         getOptionLabel={getOptionLabel}
         onChange={handleChange}
         ref={ref}
@@ -71,6 +76,6 @@ function QuickSelect(props) {
   CardSelect.displayName = 'CardSelect';
 
   return <CardSelect ref={ref} />;
-}
+};
 
 export default QuickSelect;
