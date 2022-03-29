@@ -127,27 +127,19 @@ function Cards({ lastDeckId }) {
                             />
                           )}
                         </div>
-                        <div className="px-3 pt-3">
-                          <div className="d-inline pe-2">
-                            <ButtonCardCopyUrl id={cardId} />
-                          </div>
-                          {deckId && (
-                            <div className="d-inline pe-2">
-                              <ButtonAddCard
-                                cardid={cardId}
-                                deckid={deckId}
-                                inDeck={inDeck}
-                                inQuick={true}
-                              />
-                            </div>
-                          )}
-                        </div>
-                        <div className="d-inline pe-1">
+                        <Stack className="ps-3" direction="horizontal" gap={1}>
+                          <ButtonCardCopyUrl id={cardId} />
                           <ButtonSearchTwd id={card.Id} />
-                        </div>
-                        <div className="d-inline pe-1">
                           <ButtonSearchPda id={card.Id} />
-                        </div>
+                          {deckId && (
+                            <ButtonAddCard
+                              cardid={cardId}
+                              deckid={deckId}
+                              inDeck={inDeck}
+                              inQuick={true}
+                            />
+                          )}
+                        </Stack>
                       </>
                     )}
                   </Col>
@@ -195,27 +187,19 @@ function Cards({ lastDeckId }) {
                         setImageSet={setImageSet}
                       />
                     )}
-                    <div className="py-3">
-                      <div className="d-inline pe-1">
-                        <ButtonCardCopyUrl id={card.Id} />
-                      </div>
-                      <div className="d-inline pe-1">
-                        <ButtonSearchTwd id={card.Id} />
-                      </div>
-                      <div className="d-inline pe-1">
-                        <ButtonSearchPda id={card.Id} />
-                      </div>
+                    <Stack className="pt-3" direction="horizontal" gap={1}>
+                      <ButtonCardCopyUrl id={card.Id} />
+                      <ButtonSearchTwd id={card.Id} />
+                      <ButtonSearchPda id={card.Id} />
                       {deckId && (
-                        <div className="d-inline pe-1">
-                          <ButtonAddCard
-                            deckid={deckId}
-                            card={card}
-                            inDeck={inDeck}
-                            inQuick={true}
-                          />
-                        </div>
+                        <ButtonAddCard
+                          deckid={deckId}
+                          card={card}
+                          inDeck={inDeck}
+                          inQuick={true}
+                        />
                       )}
-                    </div>
+                    </Stack>
                   </Col>
                 </Row>
               )}
