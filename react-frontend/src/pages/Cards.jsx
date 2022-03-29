@@ -126,20 +126,24 @@ function Cards({ lastDeckId }) {
                               setImageSet={setImageSet}
                             />
                           )}
+                          <Stack
+                            className="pt-2"
+                            direction="horizontal"
+                            gap={1}
+                          >
+                            <ButtonCardCopyUrl id={cardId} />
+                            <ButtonSearchTwd id={card.Id} />
+                            <ButtonSearchPda id={card.Id} />
+                            {deckId && (
+                              <ButtonAddCard
+                                cardid={cardId}
+                                deckid={deckId}
+                                inDeck={inDeck}
+                                inQuick={true}
+                              />
+                            )}
+                          </Stack>
                         </div>
-                        <Stack className="ps-3" direction="horizontal" gap={1}>
-                          <ButtonCardCopyUrl id={cardId} />
-                          <ButtonSearchTwd id={card.Id} />
-                          <ButtonSearchPda id={card.Id} />
-                          {deckId && (
-                            <ButtonAddCard
-                              cardid={cardId}
-                              deckid={deckId}
-                              inDeck={inDeck}
-                              inQuick={true}
-                            />
-                          )}
-                        </Stack>
                       </>
                     )}
                   </Col>
@@ -172,7 +176,7 @@ function Cards({ lastDeckId }) {
                       set={imageSet}
                     />
                   </Col>
-                  <Col md={6} className="pt-3">
+                  <Col md={6} className="py-3">
                     {card.Id > 200000 && (
                       <ResultCryptLayoutText
                         card={card}
@@ -187,7 +191,7 @@ function Cards({ lastDeckId }) {
                         setImageSet={setImageSet}
                       />
                     )}
-                    <Stack className="pt-3" direction="horizontal" gap={1}>
+                    <Stack className="pt-2" direction="horizontal" gap={1}>
                       <ButtonCardCopyUrl id={card.Id} />
                       <ButtonSearchTwd id={card.Id} />
                       <ButtonSearchPda id={card.Id} />

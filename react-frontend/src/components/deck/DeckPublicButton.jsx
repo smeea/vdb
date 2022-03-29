@@ -8,7 +8,6 @@ import {
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
 
 function DeckPublicButton(props) {
   const { setDecks, setActiveDeck, isMobile } = useApp();

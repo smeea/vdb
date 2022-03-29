@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { Modal, Row, Col } from 'react-bootstrap';
+import { Modal, Row, Col, Stack } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
@@ -130,30 +130,20 @@ function ResultCryptModal(props) {
               />
             </Col>
             <Col className="p-4">
-              <div className="pb-1">
-                <ResultCryptLayoutText
-                  card={card}
-                  setCard={setCard}
-                  handleClose={props.handleClose}
-                  setImageSet={setImageSet}
-                  forceInventoryMode={props.forceInventoryMode}
-                />
-              </div>
-              <div className="d-flex justify-content-between pt-4">
-                <div className="d-flex">
-                  <div className="d-flex pe-1">
-                    <ButtonCardCopyUrl id={card.Id} />
-                  </div>
-                  <div className="d-flex pe-1">
-                    <ButtonSearchTwd id={card.Id} />
-                  </div>
-                  <div className="d-flex pe-1">
-                    <ButtonSearchPda id={card.Id} />
-                  </div>
-                  <div className="d-flex pe-1">
-                    <ButtonToggleShowImage />
-                  </div>
-                </div>
+              <ResultCryptLayoutText
+                card={card}
+                setCard={setCard}
+                handleClose={props.handleClose}
+                setImageSet={setImageSet}
+                forceInventoryMode={props.forceInventoryMode}
+              />
+              <div className="d-flex justify-content-between pt-3">
+                <Stack direction="horizontal" gap={1}>
+                  <ButtonCardCopyUrl id={card.Id} />
+                  <ButtonSearchTwd id={card.Id} />
+                  <ButtonSearchPda id={card.Id} />
+                  <ButtonToggleShowImage />
+                </Stack>
                 <ButtonIconed
                   variant="primary"
                   onClick={props.handleClose}
