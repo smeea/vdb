@@ -73,20 +73,27 @@ function About(props) {
                 : 2022-01-12
               </p>
 
-              <h6>Last update [2022-03-20]:</h6>
+              <h6>Last update [2022-03-29]:</h6>
               <ul>
-                <li>Update TWDA</li>
-                <li>Update Rulings</li>
-                <li>Multiple text search forms in Crypt/Library</li>
-                <li>Add sort crypt by clan in Decks</li>
                 <li>
-                  Add &apos;Not newer&apos; and &apos;Not Older&apos; options
-                  for Set search in Crypt/Library (in addition to &apos;Or
-                  Newer&apos; and &apos;Or Older&apos; which will show cards
-                  printed in selected Set or any newer/older Set without
-                  restrictions of being printed also earlier/later)
+                  Add post-deck-import window with non-imported cards (mistakes
+                  in card names or something like this) which enable to manually
+                  recognize and add cards
                 </li>
-                <li>Bug fixes</li>
+                <li>Add search Only-In-Name option to card text search</li>
+                <li>
+                  Don&apos;t autoadd card to inventory with 1x q-ty if card not
+                  in inventory
+                </li>
+                <li>Add button to Card Preview to search TWD with the card</li>
+                <li>Sort clans in clan filter in Advanced Deck Selector</li>
+                <li>
+                  Fix Set search filter to correctly work with any-BCP option,
+                  and now Precon any-BCP filter will only return BCP cards in
+                  BCP precons ignoring Promos, which will be included in any-BCP
+                  Set search
+                </li>
+                <li>Other bug fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
