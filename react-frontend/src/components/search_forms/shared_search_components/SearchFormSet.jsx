@@ -12,51 +12,43 @@ import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 function SearchFormSet(props) {
   const { isMobile } = useApp();
 
-  const preOptions = [
-    {
-      set: 'any',
-      name: 'ANY',
-    },
-    {
-      set: 'bcp',
-      name: 'ANY BCP',
-    },
-  ];
-
-  Object.keys(setsAndPrecons).map((i) => {
-    preOptions.push({
+  const preOptions = Object.keys(setsAndPrecons).map((i) => {
+    return {
       set: i,
       name: setsAndPrecons[i].name,
       year: setsAndPrecons[i].date.slice(2, 4),
-    });
+    };
   });
 
-  const options = [];
+  const options = [
+    {
+      value: 'any',
+      name: 'set',
+      label: (
+        <>
+          <span className="margin-full" />
+          ANY
+        </>
+      ),
+    },
+    {
+      value: 'bcp',
+      name: 'set',
+      label: <>Any BCP (incl. Promo)</>,
+    },
+  ];
 
   preOptions.map((i, index) => {
-    if (i.set == 'any' || i.set == 'bcp') {
-      options.push({
-        value: i.set,
-        name: 'set',
-        label: (
-          <>
-            <span className="margin-full" />
-            {i.name}
-          </>
-        ),
-      });
-    } else {
-      options.push({
-        value: i.set,
-        name: 'set',
-        label: (
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="pe-2">{i.name}</div>
-            {i.year && <div className="ps-2 small">{`'${i.year}`}</div>}
-          </div>
-        ),
-      });
-    }
+    options.push({
+      value: i.set,
+      name: 'set',
+      label: (
+        <div className="d-flex justify-content-between align-items-center">
+          <div className="pe-2">{i.name}</div>
+          {i.year && <div className="ps-2 small">{`'${i.year}`}</div>}
+        </div>
+      ),
+    });
   });
 
   const ageFormOptions = [

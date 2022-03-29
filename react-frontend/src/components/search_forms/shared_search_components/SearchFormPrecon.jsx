@@ -14,16 +14,7 @@ import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
 function SearchFormPrecon(props) {
   const { isMobile } = useApp();
 
-  const preOptions = [
-    {
-      set: 'any',
-      name: 'ANY',
-    },
-    {
-      set: 'bcp',
-      name: 'ANY BCP',
-    },
-  ];
+  const preOptions = [];
 
   Object.keys(setsAndPrecons).map((i) => {
     if (setsAndPrecons[i].hasOwnProperty('precons')) {
@@ -44,10 +35,37 @@ function SearchFormPrecon(props) {
     }
   });
 
-  const options = [];
+  const options = [
+    {
+      value: 'any',
+      name: 'precon',
+      label: (
+        <>
+          <span className="margin-full" />
+          ANY
+        </>
+      ),
+    },
+    {
+      value: 'bcp',
+      name: 'precon',
+      label: <>Any BCP (excl. Promo)</>,
+    },
+  ];
 
   preOptions.map((i, index) => {
-    if (i.set != 'any' && i.set != 'bcp') {
+    if (i.set === 'any') {
+      options.push({
+        value: i.set,
+        name: 'precon',
+        label: (
+          <>
+            <span className="margin-full" />
+            {i.name}
+          </>
+        ),
+      });
+    } else {
       const clanImages = i.clans.map((clan, index) => {
         return (
           <div className="d-inline" key={index}>
@@ -77,17 +95,6 @@ function SearchFormPrecon(props) {
             </div>
             <div className="small">{`${i.set} '${i.year}`}</div>
           </div>
-        ),
-      });
-    } else {
-      options.push({
-        value: i.set,
-        name: 'precon',
-        label: (
-          <>
-            <span className="margin-full" />
-            {i.name}
-          </>
         ),
       });
     }
