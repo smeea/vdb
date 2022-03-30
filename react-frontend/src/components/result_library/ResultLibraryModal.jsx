@@ -100,6 +100,11 @@ function ResultLibraryModal(props) {
                   setImageSet={setImageSet}
                   forceInventoryMode={props.forceInventoryMode}
                 />
+                <Stack direction="horizontal" gap={1} className="pt-3">
+                  <ButtonCardCopyUrl id={props.card.Id} />
+                  <ButtonSearchTwd id={props.card.Id} />
+                  <ButtonSearchPda id={props.card.Id} />
+                </Stack>
               </div>
             )}
             <div

@@ -104,6 +104,11 @@ function ResultCryptModal(props) {
                   setImageSet={setImageSet}
                   forceInventoryMode={props.forceInventoryMode}
                 />
+                <Stack direction="horizontal" gap={1} className="pt-3">
+                  <ButtonCardCopyUrl id={card.Id} />
+                  <ButtonSearchTwd id={card.Id} />
+                  <ButtonSearchPda id={card.Id} />
+                </Stack>
               </div>
             )}
             <div
