@@ -34,7 +34,6 @@ const SearchAdditionalFormsText = (props) => {
           className="small"
           id={`text-${i}-${opt.value}`}
           label={opt.label}
-          checked={props.value[i]['in'] === opt.value}
           onChange={(e) => props.onChangeOptions(e)}
         />
       );
@@ -67,7 +66,7 @@ const SearchAdditionalFormsText = (props) => {
             </Stack>
           </Col>
           <Col className="d-flex justify-content-end px-0">
-            <Stack direction="horizontal" gap={3}>
+            <Stack direction="horizontal" gap={3} className="align-items-start">
               {OptionsForm}
             </Stack>
           </Col>

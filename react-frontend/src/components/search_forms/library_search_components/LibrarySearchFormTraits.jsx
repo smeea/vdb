@@ -39,7 +39,6 @@ function LibrarySearchFormTraits(props) {
         name="traits"
         value={i[0]}
         type="checkbox"
-        checked={props.value[i[0]]}
         id={`traits-${i[0]}`}
         label={i[1]}
         onChange={(e) => props.onChange(e)}
@@ -54,7 +53,6 @@ function LibrarySearchFormTraits(props) {
         name="traits"
         value={i[0]}
         type="checkbox"
-        checked={props.value[i[0]]}
         id={`traits-${i[0]}`}
         label={i[1]}
         onChange={(e) => props.onChange(e)}

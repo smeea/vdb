@@ -114,7 +114,7 @@ function SearchFormTextAndButtons(props) {
           )}
         </Col>
         <Col className="d-flex justify-content-end px-0">
-          <Stack direction="horizontal" gap={3}>
+          <Stack direction="horizontal" gap={3} className="align-items-start">
             {OptionsForm}
           </Stack>
         </Col>

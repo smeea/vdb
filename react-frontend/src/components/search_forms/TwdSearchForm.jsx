@@ -355,7 +355,6 @@ function TwdSearchForm(props) {
             type="checkbox"
             id="traits-star"
             label="With Star"
-            checked={twdFormState.traits.star}
             onChange={(e) => handleMultiChange(e)}
           />
         </div>
@@ -402,7 +401,6 @@ function TwdSearchForm(props) {
             type="checkbox"
             id="traits-monoclan"
             label="Mono Clan"
-            checked={twdFormState.traits.monoclan}
             onChange={(e) => handleMultiChange(e)}
           />
         </div>
