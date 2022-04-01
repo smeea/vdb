@@ -1,6 +1,5 @@
 # FIX
 - Include Any group vampire to all results
-- Fix regex checkbox for 2nd form
 
 # FEATURES
 - Export all in xlsx and csv

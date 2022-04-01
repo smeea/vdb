@@ -192,6 +192,11 @@ function CryptSearchForm(props) {
     const url = `${process.env.API_URL}search/crypt`;
     const input = sanitizeFormState('crypt', cryptFormState);
 
+    if (Object.entries(input).length === 0) {
+      setShowError('EMPTY REQUEST');
+      return;
+    }
+
     navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(input))}`);
 
     const options = {
@@ -363,7 +368,7 @@ function CryptSearchForm(props) {
               target={refError.current}
               placement="left"
             >
-              NO CARDS FOUND
+              {showError === true ? 'NO CARDS FOUND' : showError}
             </ErrorOverlay>
           </div>
         </>

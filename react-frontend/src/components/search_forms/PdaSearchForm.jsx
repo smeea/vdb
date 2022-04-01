@@ -155,6 +155,11 @@ function PdaSearchForm(props) {
     const url = `${process.env.API_URL}search/pda`;
     const input = sanitizeFormState('pda', pdaFormState);
 
+    if (Object.entries(input).length === 0) {
+      setShowError('EMPTY REQUEST');
+      return;
+    }
+
     navigate(`/pda?q=${encodeURIComponent(JSON.stringify(input))}`);
 
     const options = {
@@ -452,7 +457,7 @@ function PdaSearchForm(props) {
               target={refError.current}
               placement="left"
             >
-              NO DECKS FOUND
+              {showError === true ? 'NO DECKS FOUND' : showError}
             </ErrorOverlay>
           </div>
         </>
