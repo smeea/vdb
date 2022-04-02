@@ -1,4 +1,5 @@
 # FIX
+- Bad imports for anonymous import
 
 # FEATURES
 - Export all in xlsx and csv
@@ -15,6 +16,8 @@
 - Move search to frontend
 - Move export to frontend
 - Move import to frontend
+- Transit from useContext to Recoil
+- Reduce re-renders
 
 # IMPROVE TECHNOLOGY - BACKEND
 

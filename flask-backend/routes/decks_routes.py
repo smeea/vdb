@@ -660,22 +660,19 @@ def importDeck():
 @app.route("/api/decks/anonymous_import", methods=["POST"])
 def anonymousImportDeck():
     try:
-        [name, author, description, cards] = deck_import(request.json["deckText"])
+        deck = deck_import(request.json["deckText"])
 
-        if len(cards) > 0:
-            deckid = uuid.uuid4().hex
-            d = Deck(
-                deckid=deckid,
-                name=name,
-                author_public_name=author,
-                description=description,
-                cards=cards,
-            )
-            db.session.add(d)
-            db.session.commit()
-            return jsonify({"deckid": deckid})
-
-        return jsonify({"error": "cannot import this deck."})
+        deckid = uuid.uuid4().hex
+        d = Deck(
+            deckid=deckid,
+            name=deck["name"],
+            author_public_name=deck["author"],
+            description=deck["description"],
+            cards=deck["cards"],
+        )
+        db.session.add(d)
+        db.session.commit()
+        return jsonify({"deckid": deckid})
 
     except Exception:
         print("deck import: ", request.json["deckText"])
