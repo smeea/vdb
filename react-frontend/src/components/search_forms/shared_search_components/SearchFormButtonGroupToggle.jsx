@@ -6,25 +6,44 @@ const SearchFormButtonGroupToggle = (props) => {
   const handleToggleForm = () => {
     const name = props.value.name;
     props.setFormState((prevState) => {
-      let logic = prevState[name].logic;
-      switch (logic) {
-        case 'or':
-          logic = props.withAnd ? 'and' : 'not';
-          break;
-        case 'and':
-          logic = 'not';
-          break;
-        case 'not':
-          logic = 'or';
-          break;
+      let newState;
+
+      if (name === 'text') {
+        let logic = prevState[name][props.i].logic;
+        switch (logic) {
+          case 'and':
+            logic = 'not';
+            break;
+          case 'not':
+            logic = 'and';
+            break;
+        }
+
+        newState = [...prevState[name]];
+        newState[props.i].logic = logic;
+      } else {
+        let logic = prevState[name].logic;
+        switch (logic) {
+          case 'or':
+            logic = props.withAnd ? 'and' : 'not';
+            break;
+          case 'and':
+            logic = 'not';
+            break;
+          case 'not':
+            logic = 'or';
+            break;
+        }
+
+        newState = {
+          ...prevState[name],
+          logic: logic,
+        };
       }
 
       return {
         ...prevState,
-        [name]: {
-          ...prevState[name],
-          logic: logic,
-        },
+        [name]: newState,
       };
     });
   };

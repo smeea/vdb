@@ -13,17 +13,18 @@ def get_library_by_text(requests, library):
             value = request["value"] if "regex" in request else request["value"].lower()
             regex = True if "regex" in request else False
             in_query = request["in"] if "in" in request else None
+            found = False
 
             if regex:
                 if in_query == "text":
                     if re.search(value, card["Card Text"], re.IGNORECASE):
-                        counter += 1
+                        found = True
 
                 elif in_query == "name":
                     if re.search(value, card["Name"], re.IGNORECASE) or re.search(
                         value, card["ASCII Name"], re.IGNORECASE
                     ):
-                        counter += 1
+                        found = True
 
                 else:
                     if (
@@ -31,7 +32,7 @@ def get_library_by_text(requests, library):
                         or re.search(value, card["Name"], re.IGNORECASE)
                         or re.search(value, card["ASCII Name"], re.IGNORECASE)
                     ):
-                        counter += 1
+                        found = True
 
             else:
                 card_text = card["Card Text"].lower()
@@ -40,11 +41,11 @@ def get_library_by_text(requests, library):
 
                 if in_query == "text":
                     if card_text.find(value) != -1:
-                        counter += 1
+                        found = True
 
                 elif in_query == "name":
                     if card_name.find(value) != -1 or card_name_ascii.find(value) != -1:
-                        counter += 1
+                        found = True
 
                 else:
                     if (
@@ -52,7 +53,13 @@ def get_library_by_text(requests, library):
                         or card_name.find(value) != -1
                         or card_name_ascii.find(value) != -1
                     ):
-                        counter += 1
+                        found = True
+
+            if found and request["logic"] == "and":
+                counter += 1
+
+            elif not found and request["logic"] == "not":
+                counter += 1
 
         if requests_counter == counter:
             match_cards.append(card)

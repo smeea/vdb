@@ -12,13 +12,14 @@ import X from 'assets/images/icons/x.svg';
 import Check2 from 'assets/images/icons/check2.svg';
 import {
   SearchAdditionalFormsText,
+  SearchFormButtonGroupToggle,
   SearchFormButtonAddText,
   SearchFormButtonDelText,
 } from '../shared_search_components';
 import { useApp } from 'context';
 
 function SearchFormTextAndButtons(props) {
-  const { inventoryMode, isMobile } = useApp();
+  const { inventoryMode, isMobile, isWide } = useApp();
 
   const options = [
     {
@@ -95,23 +96,27 @@ function SearchFormTextAndButtons(props) {
         </InputGroup>
       )}
       <Row className="mx-0 px-0 pt-1">
-        <Col
-          xs={2}
-          className="d-flex justify-content-between align-items-center px-0"
-        >
-          {props.value[0].value !== '' && (
-            <div className="d-flex justify-content-end">
-              {props.value.length == 1 ? (
-                <SearchFormButtonAddText setFormState={props.setFormState} />
-              ) : (
-                <SearchFormButtonDelText
-                  setFormState={props.setFormState}
-                  value={props.value}
+        <Col xs={isWide || isMobile ? 2 : 3} className="px-0">
+          <Stack direction="horizontal" gap={1}>
+            {props.value[0].value !== '' && (
+              <>
+                <SearchFormButtonGroupToggle
+                  value={{ name: 'text', ...props.value[0] }}
                   i={0}
+                  setFormState={props.setFormState}
                 />
-              )}
-            </div>
-          )}
+                {props.value.length == 1 ? (
+                  <SearchFormButtonAddText setFormState={props.setFormState} />
+                ) : (
+                  <SearchFormButtonDelText
+                    setFormState={props.setFormState}
+                    value={props.value}
+                    i={0}
+                  />
+                )}
+              </>
+            )}
+          </Stack>
         </Col>
         <Col className="d-flex justify-content-end px-0">
           <Stack direction="horizontal" gap={3} className="align-items-start">
@@ -121,6 +126,7 @@ function SearchFormTextAndButtons(props) {
       </Row>
       <SearchAdditionalFormsText
         value={props.value}
+        name="text"
         onChange={props.onChange}
         onChangeOptions={props.onChangeOptions}
         setFormState={props.setFormState}

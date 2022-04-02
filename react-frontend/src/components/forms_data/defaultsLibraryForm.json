@@ -3,15 +3,20 @@
     {
       "value": "",
       "regex": false,
-      "in": false
+      "in": false,
+      "logic": "and"
     }
   ],
   "type": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "logic": "or"
   },
   "discipline": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "logic": "or"
   },
   "blood": {
@@ -27,15 +32,21 @@
     "moreless": "le"
   },
   "clan": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "logic": "or"
   },
   "sect": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "logic": "or"
   },
   "title": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "logic": "or"
   },
   "traits": {
@@ -65,13 +76,17 @@
     "no-requirements": false
   },
   "set": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "only in": false,
     "first print": false,
     "age": false
   },
   "precon": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "only in": false,
     "first print": false
   },

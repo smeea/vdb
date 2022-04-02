@@ -3,9 +3,12 @@ import { Row, Col, Stack, Form, FormControl } from 'react-bootstrap';
 import {
   SearchFormButtonAddText,
   SearchFormButtonDelText,
+  SearchFormButtonGroupToggle,
 } from '../shared_search_components';
+import { useApp } from 'context';
 
 const SearchAdditionalFormsText = (props) => {
+  const { isMobile, isWide } = useApp();
   const options = [
     {
       value: 'name',
@@ -52,11 +55,13 @@ const SearchAdditionalFormsText = (props) => {
           autoFocus={true}
         />
         <Row className="mx-0 px-0 pt-1">
-          <Col
-            xs={2}
-            className="d-flex justify-content-start align-items-center px-0"
-          >
+          <Col xs={isWide || isMobile ? 2 : 3} className="px-0">
             <Stack direction="horizontal" gap={1}>
+              <SearchFormButtonGroupToggle
+                value={{ name: props.name, ...props.value[i] }}
+                i={i}
+                setFormState={props.setFormState}
+              />
               <SearchFormButtonAddText setFormState={props.setFormState} />
               <SearchFormButtonDelText
                 setFormState={props.setFormState}

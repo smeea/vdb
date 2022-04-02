@@ -6,7 +6,7 @@ const SearchFormButtonAddText = (props) => {
   const addForm = () => {
     props.setFormState((prevState) => {
       const v = prevState.text;
-      v.push({ value: '', regex: false, inText: false });
+      v.push({ value: '', regex: false, inText: false, logic: 'and' });
 
       return {
         ...prevState,

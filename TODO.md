@@ -3,7 +3,6 @@
 # FEATURES
 - Export all in xlsx and csv
 - Cards compare
-- Negative text filter
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks

@@ -3,7 +3,8 @@
     {
       "value": "",
       "regex": false,
-      "in": false
+      "in": false,
+      "logic": "and"
     }
   ],
   "disciplines": {
@@ -48,11 +49,15 @@
     "moreless": "le"
   },
   "clan": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "logic": "or"
   },
   "sect": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "logic": "or"
   },
   "votes": "any",
@@ -104,13 +109,17 @@
     "non-twd": false
   },
   "set": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "only in": false,
     "first print": false,
     "age": false
   },
   "precon": {
-    "value": ["any"],
+    "value": [
+      "any"
+    ],
     "only in": false,
     "first print": false
   },
