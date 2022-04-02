@@ -1,5 +1,5 @@
 # FIX
-- Include Any group vampire to all results
+- Unify ANY and any group in vtescrypt and cardbase_crypt
 
 # FEATURES
 - Export all in xlsx and csv

@@ -366,7 +366,7 @@ def get_crypt_by_group(group_list, crypt):
 
     match_cards = []
     for card in crypt:
-        if card["Group"] in group_list or card["Group"] == "any":
+        if card["Group"] in group_list or card["Group"] == "ANY":
             match_cards.append(card)
 
     return match_cards
