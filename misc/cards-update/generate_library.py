@@ -40,9 +40,9 @@ useless_fields = ['Aka', 'Flavor Text']
 
 with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
         "vteslibmeta.csv", "r", encoding='utf8') as meta_csv, open(
-            "vteslib.json", "w",
-            encoding='utf8') as cardbase_backend_file, open(
-                "cardbase_lib.json", "w",
+                "cardbase_lib_backend.json", "w",
+                encoding='utf8') as cardbase_backend_file, open(
+                "cardbase_lib_frontend.json", "w",
                 encoding='utf8') as cardbase_frontend_file, open(
                     "vtes.json", "r", encoding='utf8') as krcg_file, open(
                         "artistsLib.json", "w",
@@ -62,9 +62,9 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
     for c in csv_meta:
         requirements.append(c)
 
-    cards_backend = []
-    cards_frontend = {}
-    artistsSet = set()
+    cardbase_frontend = {}
+    cardbase_backend = {}
+    artists_set = set()
     twda = json.load(twda_input)
 
     for card in csv_cards:
@@ -198,10 +198,10 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
         for artist in re.split('; | & ', card['Artist']):
             if artist in artist_fixes.keys():
                 artists.append(artist_fixes[artist])
-                artistsSet.add(artist_fixes[artist])
+                artists_set.add(artist_fixes[artist])
             else:
                 artists.append(artist)
-                artistsSet.add(artist)
+                artists_set.add(artist)
 
         card['Artist'] = artists
 
@@ -264,7 +264,7 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
                                                       'Blood Sorcery')
 
         # Prepare for export
-        cards_frontend[card['Id']] = {
+        cardbase_frontend[card['Id']] = {
             'Id': card['Id'],
             'Name': card['Name'],
             'Type': card['Type'],
@@ -283,7 +283,7 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
             'ASCII Name': card['ASCII Name'],
         }
 
-        card_backend = {
+        cardbase_backend = {
             'Id': card['Id'],
             'Name': card['Name'],
             'Type': card['Type'],
@@ -302,18 +302,16 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
             'Twd': card['Twd'],
         }
 
-        cards_backend.append(card_backend)
-
-    artists = sorted(artistsSet)
+    artists = sorted(artists_set)
 
     # json.dump(cards, f_json, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
-    json.dump(cards_backend,
-              cardbase_backend_file,
+    json.dump(cardbase_frontend,
+              cardbase_frontend_file,
               indent=4,
               separators=(',', ':'))
-    json.dump(cards_frontend,
-              cardbase_frontend_file,
+    json.dump(cardbase_backend,
+              cardbase_backend_file,
               indent=4,
               separators=(',', ':'))
     json.dump(artists, artists_file, indent=4, separators=(',', ':'))

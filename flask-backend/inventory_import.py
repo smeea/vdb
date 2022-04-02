@@ -3,11 +3,11 @@ import re
 from unidecode import unidecode
 from import_parse_card import import_parse_card
 
-with open("vtescrypt.json", "r") as crypt_file:
-    crypt = json.load(crypt_file)
+with open("cardbase_crypt.json", "r") as crypt_file:
+    crypt = json.load(crypt_file).values()
 
-with open("vteslib.json", "r") as library_file:
-    library = json.load(library_file)
+with open("cardbase_lib.json", "r") as library_file:
+    library = json.load(library_file).values()
 
 
 def inventory_import(deckText):

@@ -1,0 +1,37 @@
+{
+    "Id":102212,
+    "Name":"Zoo Hunting Ground",
+    "Type":"Master",
+    "Clan":"Gangrel",
+    "Discipline":"",
+    "Blood Cost":"",
+    "Pool Cost":"2",
+    "Conviction Cost":"",
+    "Burn Option":"",
+    "Card Text":"Unique location. Hunting ground.\nDuring your unlock phase, a ready vampire you control can gain 1 blood. A vampire can gain blood from only one hunting ground each turn.",
+    "Set":{
+        "Jyhad":{
+            "U":true
+        },
+        "VTES":{
+            "U":true
+        },
+        "Anarchs":{
+            "PG":1
+        },
+        "KoT":{
+            "U":true
+        },
+        "V5A":{
+            "PG":"1"
+        }
+    },
+    "Requirement":"",
+    "Banned":"",
+    "Artist":[
+        "Susan Van Camp",
+        "Christopher Shy"
+    ],
+    "ASCII Name":"Zoo Hunting Ground",
+    "Twd":true
+}

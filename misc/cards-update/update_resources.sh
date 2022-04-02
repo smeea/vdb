@@ -4,8 +4,10 @@ python generate_crypt.py
 python generate_library.py
 python fix_crossrefs.py
 python generate_precons.py
-cp cardbase_crypt.json cardbase_lib.json ../../react-frontend/dist/
-cp cardbase_crypt.json cardbase_lib.json vtescrypt.json vteslib.json ../../flask-backend/
+cp cardbase_crypt_frontend.json ../../react-frontend/dist/cardbase_crypt.json
+cp cardbase_lib_frontend.json ../../react-frontend/dist/cardbase_lib.json
+cp cardbase_crypt_backend.json ../../flask-backend/cardbase_crypt.json
+cp cardbase_lib_backend.json ../../flask-backend/cardbase_lib.json
 cp artistsCrypt.json artistsLib.json ../../react-frontend/src/components/forms_data/
 cp preconDecks.json ../../react-frontend/src/assets/data/
 

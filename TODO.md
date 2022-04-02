@@ -1,5 +1,4 @@
 # FIX
-- Unify ANY and any group in vtescrypt and cardbase_crypt
 
 # FEATURES
 - Export all in xlsx and csv

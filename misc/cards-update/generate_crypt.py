@@ -109,9 +109,8 @@ integer_fields = ['Id', 'Capacity']
 useless_fields = ['Aka']
 
 with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
-        "vtescrypt.json", "w", encoding='utf8') as cardbase_backend_file, open(
-            "cardbase_crypt.json", "w",
-            encoding='utf8') as cardbase_frontend_file, open(
+            "cardbase_crypt_backend.json", "w", encoding='utf8') as cardbase_backend_file, open(
+            "cardbase_crypt_frontend.json", "w", encoding='utf8') as cardbase_frontend_file, open(
                 "vtes.json", "r", encoding='utf8') as krcg_file, open(
                     "artistsCrypt.json", "w",
                     encoding='utf8') as artists_file, open(
@@ -123,9 +122,9 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
     fieldnames_main = next(reader_main)
     csv_cards = csv.DictReader(main_csv, fieldnames_main)
 
-    cards_backend = []
-    cards_frontend = {}
-    artistsSet = set()
+    cardbase_frontend = {}
+    cardbase_backend = {}
+    artists_set = set()
     twda = json.load(twda_input)
 
     cards = []
@@ -243,10 +242,10 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
         for artist in re.split('; | & ', card['Artist']):
             if artist in artist_fixes.keys():
                 artists.append(artist_fixes[artist])
-                artistsSet.add(artist_fixes[artist])
+                artists_set.add(artist_fixes[artist])
             else:
                 artists.append(artist)
-                artistsSet.add(artist)
+                artists_set.add(artist)
 
         card['Artist'] = artists
 
@@ -320,7 +319,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                                                       'Blood Sorcery')
 
         # Prepare for export
-        cards_frontend[card['Id']] = {
+        cardbase_frontend[card['Id']] = {
             'Id': card['Id'],
             'Name': card['Name'],
             'Clan': card['Clan'],
@@ -338,7 +337,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
             'New': card['New']
         }
 
-        card_backend = {
+        cardbase_backend = {
             'Id': card['Id'],
             'Name': card['Name'],
             'Type': card['Type'],
@@ -357,18 +356,16 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
             'New': card['New']
         }
 
-        cards_backend.append(card_backend)
-
-    artists = sorted(artistsSet)
+    artists = sorted(artists_set)
 
     # json.dump(cards, f_json, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
-    json.dump(cards_backend,
-              cardbase_backend_file,
+    json.dump(cardbase_frontend,
+              cardbase_frontend_file,
               indent=4,
               separators=(',', ':'))
-    json.dump(cards_frontend,
-              cardbase_frontend_file,
+    json.dump(cardbase_backend,
+              cardbase_backend_file,
               indent=4,
               separators=(',', ':'))
     json.dump(artists, artists_file, indent=4, separators=(',', ':'))

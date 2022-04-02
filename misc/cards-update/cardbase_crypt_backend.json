@@ -1,0 +1,28 @@
+{
+    "Id":201511,
+    "Name":"Zygodat",
+    "Type":"Vampire",
+    "Clan":"Harbinger of Skulls",
+    "Adv":"",
+    "Group":"4",
+    "Capacity":6,
+    "Card Text":"Sabbat: When Zygodat successfully bleeds a Methuselah, she may burn the top two cards of that Methuselah's library.",
+    "Set":{
+        "LoB":{
+            "U":true
+        }
+    },
+    "Title":"",
+    "Banned":"",
+    "Artist":[
+        "Samuel Araya"
+    ],
+    "ASCII Name":"Zygodat",
+    "Disciplines":{
+        "Potence":1,
+        "Auspex":2,
+        "Necromancy":2
+    },
+    "Twd":true,
+    "New":false
+}

@@ -1,11 +1,11 @@
 import json
 import search_library_components
 
-with open("vteslib.json", "r") as library_file:
-    vteslib = json.load(library_file)
+with open("cardbase_lib.json", "r") as library_file:
+    cardbase = json.load(library_file).values()
 
 
-def search_library(request, library=vteslib):
+def search_library(request, library=cardbase):
     queries = request.json
 
     matches = []

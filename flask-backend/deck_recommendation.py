@@ -3,8 +3,8 @@ import json
 with open("cardsCompatibility.json", "r") as compatibility_file, open(
     "cardbase_crypt.json", "r"
 ) as crypt_file, open("cardbase_lib.json", "r") as library_file:
-    vtescrypt = json.load(crypt_file)
-    vteslib = json.load(library_file)
+    cardbase_crypt = json.load(crypt_file)
+    cardbase_lib = json.load(library_file)
     compatibility = json.load(compatibility_file)
 
 CRYPT_MULTIPLIER_FOR_LIBRARY = 20
@@ -19,10 +19,10 @@ def deck_recommendation(cards):
     for k, v in cards.items():
         k = int(k)
         if k > 200000:
-            crypt[k] = {"c": vtescrypt[str(k)], "q": v}
+            crypt[k] = {"c": cardbase_crypt[str(k)], "q": v}
             crypt_total += v
         else:
-            library[k] = {"c": vteslib[str(k)], "q": v}
+            library[k] = {"c": cardbase_lib[str(k)], "q": v}
 
     discipline_multiplier = {}
 
@@ -52,10 +52,10 @@ def deck_recommendation(cards):
                 continue
 
             if r > 200000:
-                if vtescrypt[str(r)]["Banned"]:
+                if cardbase_crypt[str(r)]["Banned"]:
                     continue
             else:
-                if vteslib[str(r)]["Banned"]:
+                if cardbase_lib[str(r)]["Banned"]:
                     continue
 
             sum = 0
@@ -71,7 +71,7 @@ def deck_recommendation(cards):
                     score = score * CRYPT_MULTIPLIER_FOR_LIBRARY
 
             if r > 200000:
-                g = vtescrypt[str(r)]["Group"]
+                g = cardbase_crypt[str(r)]["Group"]
 
                 for k in group_multiplier.keys():
                     if g == "any" or k == "any":
@@ -87,7 +87,7 @@ def deck_recommendation(cards):
                     recommended_crypt[r] += score
             else:
                 disciplines = []
-                d = vteslib[str(r)]["Discipline"]
+                d = cardbase_lib[str(r)]["Discipline"]
                 if " & " in d:
                     disciplines = d.split(" & ")
                 elif "/" in d:
