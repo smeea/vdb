@@ -12,8 +12,7 @@ VDB consist of two components communicating with each other.
 Uses the following stack to serve UI, accessible with any modern browser:
 ```
    ReactJS - framework
-   Bootstrap - CSS components
-   Stylus - CSS
+   React-Bootstrap - CSS components
 ```
 
 ### BACKEND
@@ -41,7 +40,7 @@ Start backend:
     cd flask-backend
     python -m venv venv
     source venv/bin/activate
-    pip install -r requirements.txt
+    python -m pip install -r requirements.txt
     export FLASK_APP=api
     export FLASK_ENV=development
     flask db init
@@ -62,8 +61,8 @@ Now go to http://localhost:1234 in the browser and you are ready to go.
 ### FOR PRODUCTION
 
 For production, in addition to the steps above, you should at least:
-* setup web-server (we use `nginx`) instead of `parcel` embedded web-server
-* setup wsgi-server (we use `gunicorn`) instead of `flask` embedded web-server
+* setup web-server (we use `nginx`) instead of `parcel` embedded server
+* setup wsgi-server (we use `gunicorn`) instead of `flask` embedded server
 * build frontend for production (see your prefered bundler documentation, for `parcel` use `parcel build index.html`)
 * change `app.config['SECRET_KEY']` in `config.py`
 
