@@ -198,8 +198,20 @@ def deck_export(d, format, crypt_base=None, library_base=None):
                 cryptMin += capacityList[i]
                 cryptMax += capacityList[-i - 1]
 
+            if format == "twd":
+                twd_info = f"Event Name, e.g. Nosferatu Hosting Loughman's Birthday\n" \
+                    f"Event Location, e.g. Heath, Ohio\n" \
+                    f"Event Date, e.g. December 5th 2021\n" \
+                    f"Number of Rounds, e.g. 2R+F\n" \
+                    f"Number of Players, e.g. 13 players\n" \
+                    f"Winner, e.g. {d['author']}\n" \
+                    f"Scores, e.g. 2gw8 + 3vp in final\n" \
+                    f"\n"
+                deck.append(twd_info)
+
             deck.append(f"Deck Name: {deck_name}\n")
-            deck.append(f"Author: {d['author']}\n")
+            if format == "text":
+                deck.append(f"Author: {d['author']}\n")
             deck.append(f"Description: {d['description']}\n")
             deck.append("\n")
 
