@@ -47,11 +47,11 @@ function TwdSearchFormQuantityButtons({ state, setState, id, q, target }) {
   const getIconAndText = (s) => {
     switch (s) {
       case 'gt':
-        return ['≥', 'More Than'];
+        return ['≥', 'More than or equal'];
       case 'lt0':
-        return ['0≤', 'Less Than, and can be 0'];
+        return ['0≤', 'Less than or equal, and can be 0'];
       case 'lt':
-        return ['1≤', 'Less Than, but not less than 1'];
+        return ['1≤', 'Less than or equal, but not less than 1'];
       default:
         return ['==', 'Equal'];
     }

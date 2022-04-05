@@ -1,9 +1,11 @@
 # FIX
 - Bad imports for anonymous import
+- Scrollable deck preview in deck select window (react-windowed?)
 
 # FEATURES
 - Export all in xlsx and csv
 - Cards compare
+- Event name to twd
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks
