@@ -5,7 +5,7 @@ import { countCards } from 'utils';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
 const DeckProxyCrypt = (props) => {
-  const { cards, proxySelected, inAdvSelect, setShowFloatingButtons } = props;
+  const { cards, proxySelected, setShowFloatingButtons } = props;
   const { handleProxySelector, handleSetSelector, handleProxyCounter } = props;
   const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
@@ -64,7 +64,7 @@ const DeckProxyCrypt = (props) => {
         proxySelected={proxySelected}
         setShowFloatingButtons={setShowFloatingButtons}
       />
-      {Object.keys(cryptSide).length > 0 && !inAdvSelect && (
+      {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
           <div className="d-flex align-items-center justify-content-between ps-2">
             <b>Side Crypt</b>

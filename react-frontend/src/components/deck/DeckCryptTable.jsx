@@ -161,12 +161,12 @@ const DeckCryptTable = (props) => {
                     <div
                       className={
                         props.inMissing
-                          ? null
+                          ? ''
                           : inInventory < card.q
                           ? 'inv-miss-full'
                           : inInventory < hardUsedTotal + card.q
                           ? 'inv-miss-part'
-                          : null
+                          : ''
                       }
                     >
                       {card.q || null}
@@ -285,13 +285,7 @@ const DeckCryptTable = (props) => {
 
   return (
     <>
-      <table
-        className={
-          props.inAdvSelect
-            ? 'adv-deck-table deck-crypt-table'
-            : 'deck-crypt-table'
-        }
-      >
+      <table className="deck-crypt-table">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (

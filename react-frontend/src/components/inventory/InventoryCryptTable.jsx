@@ -17,7 +17,7 @@ import {
   ResultCryptModal,
   ConditionalOverlayTrigger,
 } from 'components';
-import { deckCryptSort, getHardTotal, getSoftMax } from 'utils';
+import { deckSort, getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
@@ -40,7 +40,7 @@ const InventoryCryptTable = (props) => {
     isMobile && setShowFloatingButtons(true);
   };
 
-  const sortedCards = deckCryptSort(cards, 'Name');
+  const sortedCards = deckSort(cards, 'Name');
 
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {

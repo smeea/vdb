@@ -1,4 +1,4 @@
-function deckCryptSort(cards, sortMethod) {
+const deckSort = (cards, sortMethod) => {
   const byName = (a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {
       return -1;
@@ -49,6 +49,6 @@ function deckCryptSort(cards, sortMethod) {
   } else {
     return null;
   }
-}
+};
 
-export default deckCryptSort;
+export default deckSort;

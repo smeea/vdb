@@ -12,7 +12,6 @@ const DeckLibraryHeader = (props) => {
     toggleShowInfo,
     toggleShowAdd,
     hasBanned,
-    inAdvSelect,
     isAuthor,
     isPublic,
   } = props;
@@ -55,27 +54,23 @@ const DeckLibraryHeader = (props) => {
             </div>
           </>
         )}
-        {!inAdvSelect && (
-          <>
+        <Button
+          title="Additional Info"
+          variant="primary"
+          onClick={() => toggleShowInfo()}
+        >
+          <InfoCircle />
+        </Button>
+        {isAuthor && !isPublic && !isMobile && (
+          <div className="ps-1">
             <Button
-              title="Additional Info"
+              title="Add Card"
               variant="primary"
-              onClick={() => toggleShowInfo()}
+              onClick={() => toggleShowAdd()}
             >
-              <InfoCircle />
+              +
             </Button>
-            {isAuthor && !isPublic && !isMobile && (
-              <div className="ps-1">
-                <Button
-                  title="Add Card"
-                  variant="primary"
-                  onClick={() => toggleShowAdd()}
-                >
-                  +
-                </Button>
-              </div>
-            )}
-          </>
+          </div>
         )}
       </div>
     </div>

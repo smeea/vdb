@@ -19,7 +19,7 @@ import { useModalCardController, useDeckLibrary } from 'hooks';
 const DeckLibrary = (props) => {
   const { cards, deckid, isAuthor, isPublic, inDeckTab, inMissing, inSearch } =
     props;
-  const { inAdvSelect, showFloatingButtons, setShowFloatingButtons } = props;
+  const { showFloatingButtons, setShowFloatingButtons } = props;
 
   const { nativeLibrary, isMobile } = useApp();
 
@@ -66,7 +66,6 @@ const DeckLibrary = (props) => {
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
           trifleTotal={cardtype === MASTER && trifleTotal}
-          inAdvSelect={inAdvSelect}
         />
         {showInfo && (
           <DeckLibraryTypeDrawInfo
@@ -88,7 +87,6 @@ const DeckLibrary = (props) => {
         isPublic={isPublic}
         inSearch={inSearch}
         inMissing={inMissing}
-        inAdvSelect={inAdvSelect}
         setShowFloatingButtons={setShowFloatingButtons}
         isModalOpen={shouldShowModal}
       />
@@ -110,7 +108,6 @@ const DeckLibrary = (props) => {
         isPublic={isPublic}
         inSearch={inSearch}
         inMissing={inMissing}
-        inAdvSelect={inAdvSelect}
         setShowFloatingButtons={setShowFloatingButtons}
         isModalOpen={shouldShowModal}
       />
@@ -131,7 +128,6 @@ const DeckLibrary = (props) => {
           toggleShowInfo={toggleShowInfo}
           toggleShowAdd={toggleShowAdd}
           hasBanned={hasBanned}
-          inAdvSelect={inAdvSelect}
           isAuthor={isAuthor}
           isPublic={isPublic}
         />
@@ -179,7 +175,7 @@ const DeckLibrary = (props) => {
           ))}
       </div>
       {LibraryDeck}
-      {librarySide.length > 0 && !inAdvSelect && (
+      {librarySide.length > 0 && (
         <div className="deck-sidelibrary pt-2">
           <b>Side Library</b>
           {LibrarySideDeck}

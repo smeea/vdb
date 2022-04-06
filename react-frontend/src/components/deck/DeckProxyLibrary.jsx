@@ -10,7 +10,7 @@ import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DeckProxyLibrary = (props) => {
-  const { cards, proxySelected, inAdvSelect } = props;
+  const { cards, proxySelected } = props;
   const { handleSetSelector, handleProxyCounter, handleProxySelector } = props;
   const { setShowFloatingButtons } = props;
 
@@ -58,7 +58,6 @@ const DeckProxyLibrary = (props) => {
           cardtype={cardtype}
           total={libraryByTypeTotal[cardtype]}
           trifleTotal={cardtype == MASTER && trifleTotal}
-          inAdvSelect={inAdvSelect}
         />
       </div>
       <DeckProxyLibraryTable
@@ -102,7 +101,7 @@ const DeckProxyLibrary = (props) => {
         <b>Library [{libraryTotalSelected}]</b>
       </div>
       {LibraryDeck}
-      {librarySide.length > 0 && !inAdvSelect && (
+      {librarySide.length > 0 && (
         <div className="deck-sidelibrary pt-2">
           <b>Side Library</b>
           {LibrarySideDeck}

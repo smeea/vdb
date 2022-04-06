@@ -12,14 +12,16 @@ import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
 const DeckCrypt = (props) => {
-  const { cards, inAdvSelect, setShowFloatingButtons } = props;
   const {
+    cards,
     showFloatingButtons,
-    inMissing,
+    setShowFloatingButtons,
     deckid,
     isPublic,
     isAuthor,
     inSearch,
+    inAdvSelect,
+    inMissing,
   } = props;
   const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
@@ -63,8 +65,8 @@ const DeckCrypt = (props) => {
 
   return (
     <div
-      className={`${!inSearch && !inMissing ? 'pt-md-4' : ''} ${
-        !isMobile ? 'sticky-deck-crypt' : ''
+      className={`${!inSearch && !inMissing && !inAdvSelect ? 'pt-md-4' : ''} ${
+        !isMobile && !inAdvSelect ? 'sticky-deck-crypt' : ''
       }`}
     >
       <DeckCryptHeader
@@ -74,7 +76,6 @@ const DeckCrypt = (props) => {
         toggleShowInfo={toggleShowInfo}
         toggleShowAdd={toggleShowAdd}
         hasBanned={hasBanned}
-        inAdvSelect={inAdvSelect}
         isAuthor={isAuthor}
         isPublic={isPublic}
       />
@@ -134,11 +135,10 @@ const DeckCrypt = (props) => {
         nonKeyDisciplines={nonKeyDisciplines}
         inSearch={inSearch}
         inMissing={inMissing}
-        inAdvSelect={inAdvSelect}
         setShowFloatingButtons={setShowFloatingButtons}
         isModalOpen={shouldShowModal}
       />
-      {Object.keys(cryptSide).length > 0 && !inAdvSelect && (
+      {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
           <div className="d-flex align-items-center justify-content-between ps-2">
             <b>Side Crypt</b>
@@ -154,7 +154,6 @@ const DeckCrypt = (props) => {
             nonKeyDisciplines={nonKeyDisciplines}
             inSearch={inSearch}
             inMissing={inMissing}
-            inAdvSelect={inAdvSelect}
             setShowFloatingButtons={setShowFloatingButtons}
             isModalOpen={shouldShowModal}
           />

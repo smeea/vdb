@@ -17,15 +17,7 @@ import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DiffLibrary = (props) => {
   const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
-  const {
-    cardsFrom,
-    cardsTo,
-    deckid,
-    isAuthor,
-    isPublic,
-    inMissing,
-    inAdvSelect,
-  } = props;
+  const { cardsFrom, cardsTo, deckid, isAuthor, isPublic, inMissing } = props;
 
   const { nativeLibrary, isMobile } = useApp();
 
@@ -130,7 +122,6 @@ const DiffLibrary = (props) => {
           toggleShowInfo={toggleShowInfo}
           toggleShowAdd={toggleShowAdd}
           hasBanned={hasBanned}
-          inAdvSelect={inAdvSelect}
           isAuthor={isAuthor}
           isPublic={isPublic}
         />

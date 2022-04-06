@@ -1,11 +1,14 @@
 # FIX
 - Bad imports for anonymous import
-- Scrollable deck preview in deck select window (react-windowed?)
+- Hidden deck name in deck selector
+- Test with fresh browser on browserstack
+- No results or no connection error for search
 
 # FEATURES
 - Export all in xlsx and csv
 - Cards compare
 - Event name to twd
+- Detailed disciplines spread in search info
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks

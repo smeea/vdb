@@ -14,15 +14,7 @@ import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
 const DiffCrypt = (props) => {
   const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
-  const {
-    cardsFrom,
-    cardsTo,
-    deckid,
-    isPublic,
-    isAuthor,
-    inMissing,
-    inAdvSelect,
-  } = props;
+  const { cardsFrom, cardsTo, deckid, isPublic, isAuthor, inMissing } = props;
   const { cryptDeckSort, changeTimer, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
@@ -72,7 +64,6 @@ const DiffCrypt = (props) => {
         toggleShowInfo={toggleShowInfo}
         toggleShowAdd={toggleShowAdd}
         hasBanned={hasBanned}
-        inAdvSelect={inAdvSelect}
         isAuthor={isAuthor}
         isPublic={isPublic}
       />
@@ -129,7 +120,7 @@ const DiffCrypt = (props) => {
         nonKeyDisciplines={nonKeyDisciplines}
         setShowFloatingButtons={setShowFloatingButtons}
       />
-      {Object.keys(cryptSide).length > 0 && !inAdvSelect && (
+      {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
           <div className="d-flex align-items-center justify-content-between ps-2">
             <b>Side Crypt</b>

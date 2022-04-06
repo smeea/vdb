@@ -12,7 +12,6 @@ const DeckCryptHeader = (props) => {
     toggleShowInfo,
     toggleShowAdd,
     hasBanned,
-    inAdvSelect,
     isAuthor,
     isPublic,
   } = props;
@@ -34,31 +33,29 @@ const DeckCryptHeader = (props) => {
         {!inMissing && hasBanned && ' - WITH BANNED'}
       </b>
       <div className="d-flex align-items-center justify-content-between ps-2 pe-1 pe-md-0 info-message">
-        {!inAdvSelect && (
-          <div className="d-flex">
-            <div className="pe-1">
-              <DeckCryptSortButton />
-            </div>
-            <Button
-              title="Additional Info"
-              variant="primary"
-              onClick={() => toggleShowInfo()}
-            >
-              <InfoCircle />
-            </Button>
-            {isAuthor && !isPublic && !isMobile && (
-              <div className="ps-1">
-                <Button
-                  title="Add Card"
-                  variant="primary"
-                  onClick={() => toggleShowAdd()}
-                >
-                  +
-                </Button>
-              </div>
-            )}
+        <div className="d-flex">
+          <div className="pe-1">
+            <DeckCryptSortButton />
           </div>
-        )}
+          <Button
+            title="Additional Info"
+            variant="primary"
+            onClick={() => toggleShowInfo()}
+          >
+            <InfoCircle />
+          </Button>
+          {isAuthor && !isPublic && !isMobile && (
+            <div className="ps-1">
+              <Button
+                title="Add Card"
+                variant="primary"
+                onClick={() => toggleShowAdd()}
+              >
+                +
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

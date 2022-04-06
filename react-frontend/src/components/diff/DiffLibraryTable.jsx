@@ -222,13 +222,7 @@ function DiffLibraryTable(props) {
 
   return (
     <>
-      <table
-        className={
-          props.inAdvSelect
-            ? 'adv-deck-table deck-library-table'
-            : 'deck-library-table'
-        }
-      >
+      <table className="deck-library-table">
         <tbody>{cardRows}</tbody>
       </table>
       {modalDraw && (

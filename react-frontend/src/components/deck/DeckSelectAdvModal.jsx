@@ -306,33 +306,34 @@ const DeckSelectAdvModal = (props) => {
                   <OverlayTooltip
                     placement="right"
                     show={showDeck === deck.deckid}
-                    className="adv-select"
+                    className="adv-preview"
                     text={
-                      <Row>
+                      <Row className="align-items-start">
                         <Col
-                          md={7}
+                          md={6}
                           onClick={(event) => {
                             if (event.target === event.currentTarget)
                               setShowDeck(false);
                           }}
+                          className="scroll"
                         >
                           <DeckCrypt
+                            inAdvSelect={true}
                             deckid={deck.deckid}
                             cards={deck.crypt}
-                            inAdvSelect={true}
                           />
                         </Col>
                         <Col
-                          md={5}
+                          md={6}
                           onClick={(event) => {
                             if (event.target === event.currentTarget)
                               setShowDeck(false);
                           }}
+                          className="scroll"
                         >
                           <DeckLibrary
                             deckid={deck.deckid}
                             cards={deck.library}
-                            inAdvSelect={true}
                           />
                         </Col>
                       </Row>
@@ -399,7 +400,6 @@ const DeckSelectAdvModal = (props) => {
       show={props.show}
       onHide={props.handleClose}
       animation={false}
-      size="xl"
       dialogClassName={`modal-x-wide ${isMobile ? 'm-0' : null}`}
     >
       <Modal.Header

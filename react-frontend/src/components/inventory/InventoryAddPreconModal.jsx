@@ -147,7 +147,7 @@ function InventoryAddDeckModal(props) {
                 <OverlayTooltip
                   placement="right"
                   show={showDeck === deck.deckid}
-                  className="adv-select"
+                  className="modal-tooltip-preview"
                   text={
                     <Row>
                       <Col
@@ -157,11 +157,7 @@ function InventoryAddDeckModal(props) {
                             setShowDeck(false);
                         }}
                       >
-                        <DeckCrypt
-                          deckid={deck.deckid}
-                          cards={deck.crypt}
-                          inAdvSelect={true}
-                        />
+                        <DeckCrypt deckid={deck.deckid} cards={deck.crypt} />
                       </Col>
                       <Col
                         md={5}
@@ -173,7 +169,6 @@ function InventoryAddDeckModal(props) {
                         <DeckLibrary
                           deckid={deck.deckid}
                           cards={deck.library}
-                          inAdvSelect={true}
                         />
                       </Col>
                     </Row>
