@@ -636,6 +636,7 @@ export const AppProvider = (props) => {
         inventoryDeckDelete,
         inventoryAddToState,
         inventoryDeleteFromState,
+        getInventory,
 
         usedCryptCards,
         usedLibraryCards,

@@ -16,7 +16,14 @@ import { useApp } from 'context';
 import { userServices } from 'services';
 
 function AccountLogin(props) {
-  const { setPublicName, setEmail, setUsername, isMobile } = useApp();
+  const {
+    setPublicName,
+    setEmail,
+    setUsername,
+    isMobile,
+    getDecks,
+    getInventory,
+  } = useApp();
 
   const [formUserName, setFormUserName] = useState('');
   const [formPassword, setFormPassword] = useState('');
@@ -47,6 +54,8 @@ function AccountLogin(props) {
     setUsername(data.username);
     setPublicName(data.public_name);
     setEmail(data.email);
+    getInventory();
+    getDecks();
   };
 
   const loginUser = () => {
