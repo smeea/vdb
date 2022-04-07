@@ -1,6 +1,5 @@
 # FIX
 - Bad imports for anonymous import
-- Hidden deck name in deck selector
 
 # FEATURES
 - Export all in xlsx and csv

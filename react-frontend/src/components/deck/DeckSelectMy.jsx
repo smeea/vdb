@@ -19,7 +19,6 @@ function DeckSelectMy(props) {
       return [
         {
           value: i,
-          name: 'deck',
           label: (
             <div className="d-flex justify-content-between align-items-center">
               <div className="d-inline trimmed">{decks[i]['name']}</div>
@@ -53,6 +52,49 @@ function DeckSelectMy(props) {
     }
   };
 
+  const getValue = () => {
+    if (decks[props.deckId]) {
+      const v = options.find((obj) => {
+        if (decks[props.deckId].master) {
+          return obj.value === decks[props.deckId].master;
+        } else {
+          return obj.value === props.deckId;
+        }
+      });
+
+      if (v) {
+        return v;
+      } else {
+        return {
+          value: props.deckId,
+          label: (
+            <div className="d-flex justify-content-between align-items-center">
+              <div className="d-inline trimmed">
+                {decks[props.deckId]['name']}
+              </div>
+              <div className="d-flex align-items-center ps-2 small">
+                {inventoryMode && (
+                  <div className="pe-2">
+                    {decks[props.deckId].inventory_type == 's' && <Shuffle />}
+                    {decks[props.deckId].inventory_type == 'h' && (
+                      <PinAngleFill />
+                    )}
+                    {!decks[props.deckId].inventory_type && <At />}
+                  </div>
+                )}
+                {new Date(decks[props.deckId]['timestamp'])
+                  .toISOString()
+                  .slice(0, 10)}
+              </div>
+            </div>
+          ),
+        };
+      }
+    }
+  };
+
+  const value = getValue();
+
   return (
     <Select
       classNamePrefix="react-select"
@@ -62,13 +104,7 @@ function DeckSelectMy(props) {
       name="decks"
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
-      value={options.find((obj) => {
-        if (decks[props.deckId] && decks[props.deckId].master) {
-          return obj.value === decks[props.deckId].master;
-        } else {
-          return obj.value === props.deckId;
-        }
-      })}
+      value={value}
       onChange={(e) => {
         props.setActiveDeck
           ? props.setActiveDeck({ src: 'my', deckid: e.value })
