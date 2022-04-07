@@ -4,7 +4,6 @@
 # FEATURES
 - Export all in xlsx and csv
 - Cards compare
-- Event name to twd
 - Detailed disciplines spread in search info
 
 # MAYBE LATER FEATURES

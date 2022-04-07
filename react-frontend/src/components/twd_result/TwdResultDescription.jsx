@@ -32,58 +32,85 @@ function TwdResultDescription(props) {
     );
   };
 
+  const Description = (
+    <table>
+      <tbody>
+        <tr>
+          <td className="d-inline">
+            <b>Date:</b>
+          </td>
+          <td className="ps-2">
+            <div className="d-flex justify-content-between">
+              {props.deck['creation_date']}
+              {isMobile && (
+                <div className="d-inline">
+                  <b>P:{props.deck['players']}</b>
+                </div>
+              )}
+            </div>
+          </td>
+        </tr>
+        {!isMobile && (
+          <tr>
+            <td className="d-inline">
+              <b>Players</b>:
+            </td>
+            <td className="ps-2">{props.deck['players']}</td>
+          </tr>
+        )}
+        <tr>
+          <td className="d-inline">
+            <b>Event</b>:
+          </td>
+          <td className="ps-2">{props.deck['event']}</td>
+        </tr>
+        <tr>
+          <td className="d-inline">
+            <b>Location</b>:
+          </td>
+          <td className="ps-2">
+            <div
+              className="link-like"
+              onClick={() => handleLocationClick(props.deck['location'])}
+            >
+              {props.deck['location']}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td className="d-inline">
+            <b>Player</b>:
+          </td>
+          <td className="ps-2">
+            <div
+              className="link-like"
+              onClick={() => handleAuthorClick(props.deck['author'])}
+            >
+              {props.deck['author']} <br />
+            </div>
+          </td>
+        </tr>
+        {!isMobile && (
+          <tr>
+            <td className="d-inline">
+              <b>Deck</b>:
+            </td>
+            <td className="ps-2">{props.deck['name']}</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  );
+
   return (
     <>
       {isMobile ? (
         <>
           <Row className="pb-1 mx-0">
-            <Col xs={8} className="px-1 mx-0">
-              <table className="d-inline">
-                <tbody>
-                  <tr>
-                    <td className="d-inline">
-                      <b>Date:</b>
-                    </td>
-                    <td className="ps-2">{props.deck['creation_date']}</td>
-                  </tr>
-                  <tr>
-                    <td className="d-inline">
-                      <b>Players</b>:
-                    </td>
-                    <td className="ps-2">{props.deck['players']}</td>
-                  </tr>
-                  <tr>
-                    <td className="d-inline">
-                      <b>Location</b>:
-                    </td>
-                    <td className="ps-2">
-                      <div
-                        className="link-like"
-                        onClick={() =>
-                          handleLocationClick(props.deck['location'])
-                        }
-                      >
-                        {props.deck['location']}
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="d-inline">
-                      <b>Player</b>:
-                    </td>
-                    <td className="ps-2">
-                      <div
-                        className="link-like"
-                        onClick={() => handleAuthorClick(props.deck['author'])}
-                      >
-                        {props.deck['author']} <br />
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <Col xs={9} className="px-1 mx-0">
+              {Description}
             </Col>
-            <Col xs={4} className="px-1">
+            <Col xs={3} className="px-1">
               <Stack gap={1}>
                 <TwdOpenDeckButton deckid={props.deck['deckid']} />
                 {username && (
@@ -100,64 +127,7 @@ function TwdResultDescription(props) {
         </>
       ) : (
         <>
-          <table className="d-inline">
-            <tbody>
-              <tr>
-                <td className="d-inline">
-                  <b>Date:</b>
-                </td>
-                <td className="ps-2">{props.deck['creation_date']}</td>
-              </tr>
-              <tr>
-                <td className="d-inline">
-                  <b>Players</b>:
-                </td>
-                <td className="ps-2">{props.deck['players']}</td>
-              </tr>
-              <tr>
-                <td className="d-inline">
-                  <b>Event</b>:
-                </td>
-                <td className="ps-2">
-                  <a href={props.deck['link']}>{props.deck['event']}</a>
-                </td>
-              </tr>
-              <tr>
-                <td className="d-inline">
-                  <b>Location</b>:
-                </td>
-                <td className="ps-2">
-                  <div
-                    className="link-like"
-                    onClick={() => handleLocationClick(props.deck['location'])}
-                  >
-                    {props.deck['location']}
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="d-inline">
-                  <b>Player</b>:
-                </td>
-                <td className="ps-2">
-                  <div
-                    className="link-like"
-                    onClick={() => handleAuthorClick(props.deck['author'])}
-                  >
-                    {props.deck['author']} <br />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="d-inline">
-                  <b>Deck</b>:
-                </td>
-                <td className="ps-2">
-                  {props.deck['name']} <br />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          {Description}
           <Stack gap={1} className="py-2">
             <TwdOpenDeckButton deckid={props.deck['deckid']} />
             {username && (
