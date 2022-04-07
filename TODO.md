@@ -2,7 +2,6 @@
 - Bad imports for anonymous import
 - Hidden deck name in deck selector
 - Test with fresh browser on browserstack
-- No results or no connection error for search
 
 # FEATURES
 - Export all in xlsx and csv

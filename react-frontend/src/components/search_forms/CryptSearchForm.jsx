@@ -213,6 +213,9 @@ function CryptSearchForm(props) {
     setSpinnerState(true);
 
     fetch(url, options)
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+      })
       .then((response) => response.json())
       .then((data) => {
         setShowCryptSearch(false);
@@ -237,7 +240,13 @@ function CryptSearchForm(props) {
           setCryptResults([]);
           setPreresults([]);
         }
-        setShowError(true);
+        if (
+          error.message == 'NetworkError when attempting to fetch resource.'
+        ) {
+          setShowError('CONNECTION PROBLEM');
+        } else {
+          setShowError(true);
+        }
       });
   };
 

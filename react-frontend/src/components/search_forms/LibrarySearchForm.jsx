@@ -223,7 +223,13 @@ function LibrarySearchForm(props) {
           setLibraryResults([]);
           setPreresults([]);
         }
-        setShowError(true);
+        if (
+          error.message == 'NetworkError when attempting to fetch resource.'
+        ) {
+          setShowError('CONNECTION PROBLEM');
+        } else {
+          setShowError(true);
+        }
       });
   };
 
