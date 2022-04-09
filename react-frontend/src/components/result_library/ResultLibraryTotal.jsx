@@ -17,8 +17,10 @@ function ResultLibraryTotal({ cards, handleChange }) {
   const totalOutput = Object.keys(byTypes).map((k, index) => {
     return (
       <span key={k} className="d-inline-block nobr pe-3">
-        <ResultLibraryTypeImage value={k} />
-        {byTypes[k]}
+        <div className="d-flex align-items-center">
+          <ResultLibraryTypeImage value={k} />
+          {byTypes[k]}
+        </div>
       </span>
     );
   });
@@ -34,7 +36,7 @@ function ResultLibraryTotal({ cards, handleChange }) {
   );
 
   return (
-    <div className="d-flex align-items-center justify-content-between info-message">
+    <div className="d-flex align-items-center justify-content-between info-message pe-1 pe-md-0">
       {value}
     </div>
   );

@@ -48,11 +48,7 @@ function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <Stack
-        className="p-1"
-        direction={isMobile ? 'vertical' : 'horizontal'}
-        gap={1}
-      >
+      <Stack direction={isMobile ? 'vertical' : 'horizontal'} gap={1}>
         <Button
           title="Additional Info"
           variant="primary"
@@ -66,7 +62,7 @@ function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
   );
 
   return (
-    <div className="d-flex align-items-center justify-content-between info-message">
+    <div className="d-flex align-items-center justify-content-between info-message pe-1 pe-md-0">
       {value}
     </div>
   );

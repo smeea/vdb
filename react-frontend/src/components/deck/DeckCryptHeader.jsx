@@ -32,7 +32,7 @@ const DeckCryptHeader = (props) => {
         {!inMissing && ` - ${cryptGroups}`}
         {!inMissing && hasBanned && ' - WITH BANNED'}
       </b>
-      <div className="d-flex align-items-center justify-content-between ps-2 pe-1 pe-md-0 info-message">
+      <div className="d-flex align-items-center justify-content-between ps-2 pe-md-0 info-message">
         <Stack direction="horizontal" gap={1}>
           <DeckCryptSortButton />
           <Button
