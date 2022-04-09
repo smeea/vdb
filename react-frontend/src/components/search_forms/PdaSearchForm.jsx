@@ -176,7 +176,10 @@ function PdaSearchForm(props) {
     setSpinnerState(true);
 
     fetch(url, options)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
       .then((data) => {
         setSpinnerState(false);
         setShowPdaSearch(false);

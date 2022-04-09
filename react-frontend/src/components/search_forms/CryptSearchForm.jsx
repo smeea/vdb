@@ -215,8 +215,8 @@ function CryptSearchForm(props) {
     fetch(url, options)
       .then((response) => {
         if (!response.ok) throw Error(response.status);
+        return response.json();
       })
-      .then((response) => response.json())
       .then((data) => {
         setShowCryptSearch(false);
         setSpinnerState(false);
