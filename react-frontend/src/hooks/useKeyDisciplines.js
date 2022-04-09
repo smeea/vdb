@@ -3,16 +3,17 @@ const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
   const disciplinesDict = {};
   for (const card of Object.keys(cards)) {
     for (const d of Object.keys(cards[card].c.Disciplines)) {
+      const levelModifier = cards[card].c.Disciplines[d] > 1 ? 1.5 : 1;
+
       if (disciplinesDict[d] === undefined) {
-        disciplinesDict[d] = 0;
-        disciplinesDict[d] += cards[card].q;
+        disciplinesDict[d] = cards[card].q;
         disciplinesDetailed[d] = { 0: 0, 1: 0, 2: 0 };
         disciplinesDetailed[d][cards[card].c.Disciplines[d]] += cards[card].q;
-        disciplinesDetailed[d][0] += cards[card].q;
+        disciplinesDetailed[d][0] += cards[card].q * levelModifier;
       } else {
         disciplinesDict[d] += cards[card].q;
         disciplinesDetailed[d][cards[card].c.Disciplines[d]] += cards[card].q;
-        disciplinesDetailed[d][0] += cards[card].q;
+        disciplinesDetailed[d][0] += cards[card].q * levelModifier;
       }
     }
   }

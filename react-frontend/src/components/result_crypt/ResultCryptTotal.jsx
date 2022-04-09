@@ -1,7 +1,12 @@
 import React from 'react';
+import { Button, Stack } from 'react-bootstrap';
+import InfoCircle from 'assets/images/icons/info-circle.svg';
 import { ResultCryptSortForm } from 'components';
+import { useApp } from 'context';
 
-function ResultCryptTotal({ cards, handleChange }) {
+function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
+  const { isMobile } = useApp();
+
   const byGroups = {};
   const byGroupsCapacityTotal = {};
   let total = 0;
@@ -43,7 +48,20 @@ function ResultCryptTotal({ cards, handleChange }) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <ResultCryptSortForm onChange={handleChange} />
+      <Stack
+        className="p-1"
+        direction={isMobile ? 'vertical' : 'horizontal'}
+        gap={1}
+      >
+        <Button
+          title="Additional Info"
+          variant="primary"
+          onClick={() => toggleShowInfo()}
+        >
+          <InfoCircle />
+        </Button>
+        <ResultCryptSortForm onChange={handleChange} />
+      </Stack>
     </>
   );
 

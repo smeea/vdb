@@ -4,7 +4,6 @@
 # FEATURES
 - Export all in xlsx and csv
 - Cards compare
-- Detailed disciplines spread in search info
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks

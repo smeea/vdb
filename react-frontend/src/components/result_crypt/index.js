@@ -3,6 +3,7 @@ export { default as ResultCryptDisciplines } from './ResultCryptDisciplines.jsx'
 export { default as ResultCryptModal } from './ResultCryptModal.jsx';
 export { default as ResultCryptSortForm } from './ResultCryptSortForm.jsx';
 export { default as ResultCryptTotal } from './ResultCryptTotal.jsx';
+export { default as ResultCryptTotalInfo } from './ResultCryptTotalInfo.jsx';
 export { default as ResultCryptCapacity } from './ResultCryptCapacity.jsx';
 export { default as ResultCryptGroup } from './ResultCryptGroup.jsx';
 export { default as ResultCryptName } from './ResultCryptName.jsx';

@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
-import { ResultCryptTable, ResultCryptTotal } from 'components';
+import {
+  ResultCryptTable,
+  ResultCryptTotal,
+  ResultCryptTotalInfo,
+} from 'components';
 import { resultCryptSort } from 'utils';
 import { useApp, useSearchResults } from 'context';
 
@@ -23,6 +27,9 @@ function ResultCrypt(props) {
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const className = 'search-crypt-table';
   const navigate = useNavigate();
+
+  const [showInfo, setShowInfo] = useState(false);
+  const toggleShowInfo = () => setShowInfo(!showInfo);
 
   const handleChange = (method) => {
     changeCryptSearchSort(method);
@@ -48,7 +55,16 @@ function ResultCrypt(props) {
       )}
       {cryptResults.length > 0 && (
         <>
-          <ResultCryptTotal cards={cryptResults} handleChange={handleChange} />
+          <ResultCryptTotal
+            cards={cryptResults}
+            toggleShowInfo={toggleShowInfo}
+            handleChange={handleChange}
+          />
+          {showInfo && (
+            <div className="info-message px-2">
+              <ResultCryptTotalInfo cards={cryptResults} />
+            </div>
+          )}
           <ResultCryptTable
             className={className}
             crypt={props.crypt}
