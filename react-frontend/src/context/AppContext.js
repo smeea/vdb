@@ -262,29 +262,33 @@ export const AppProvider = (props) => {
       decksData[deckid].crypt = {};
       decksData[deckid].library = {};
 
-      Object.keys(decksData[deckid].cards).map((cardid) => {
-        if (cardid > 200000) {
-          decksData[deckid].crypt[cardid] = {
-            q: decksData[deckid].cards[cardid],
-            c: cryptCardBase[cardid],
-          };
-        } else {
-          decksData[deckid].library[cardid] = {
-            q: decksData[deckid].cards[cardid],
-            c: libraryCardBase[cardid],
-          };
-        }
-      });
+      if (decksData[deckid].cards) {
+        Object.keys(decksData[deckid].cards).map((cardid) => {
+          if (cardid > 200000) {
+            decksData[deckid].crypt[cardid] = {
+              q: decksData[deckid].cards[cardid],
+              c: cryptCardBase[cardid],
+            };
+          } else {
+            decksData[deckid].library[cardid] = {
+              q: decksData[deckid].cards[cardid],
+              c: libraryCardBase[cardid],
+            };
+          }
+        });
+      }
 
-      Object.keys(decksData[deckid].used_in_inventory).map((cardid) => {
-        if (cardid > 200000) {
-          decksData[deckid].crypt[cardid].i =
-            decksData[deckid].used_in_inventory[cardid];
-        } else {
-          decksData[deckid].library[cardid].i =
-            decksData[deckid].used_in_inventory[cardid];
-        }
-      });
+      if (decksData[deckid].used_in_inventory) {
+        Object.keys(decksData[deckid].used_in_inventory).map((cardid) => {
+          if (cardid > 200000) {
+            decksData[deckid].crypt[cardid].i =
+              decksData[deckid].used_in_inventory[cardid];
+          } else {
+            decksData[deckid].library[cardid].i =
+              decksData[deckid].used_in_inventory[cardid];
+          }
+        });
+      }
     });
 
     delete decksData.cards;
