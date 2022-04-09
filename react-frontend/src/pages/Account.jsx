@@ -16,7 +16,7 @@ function Account(props) {
   const { username } = useApp();
 
   return (
-    <Container className="main-container h-100">
+    <Container className="main-container">
       <Row className="align-items-center justify-content-center py-3 vh-80">
         <Col xs={12} md={7} lg={6} xl={5}>
           {username ? (

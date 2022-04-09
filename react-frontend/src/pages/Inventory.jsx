@@ -246,8 +246,8 @@ function Inventory(props) {
           )}
         </>
       ) : (
-        <Row className="h-75 align-items-center justify-content-center px-2">
-          <Col xs={12} md={5}>
+        <Row className="align-items-center justify-content-center p-3 vh-80">
+          <Col xs={12} md={7} lg={6} xl={5}>
             <div className="d-flex justify-content-center pb-3">
               <h6>Login required to manage inventory</h6>
             </div>

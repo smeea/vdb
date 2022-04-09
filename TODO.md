@@ -1,5 +1,6 @@
 # FIX
 - Bad imports for anonymous import
+- Virtues in detailed disciplines info
 
 # FEATURES
 - Export all in xlsx and csv
