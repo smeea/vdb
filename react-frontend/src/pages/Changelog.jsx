@@ -12,6 +12,25 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-04-09:</h6>
+            <ul>
+              <li>
+                Add logic switch (AND / NOT) button for text search filters
+                (each of multiple text filters can use its own logic for
+                searches like [!]unique [&]mortal Type:Ally)
+              </li>
+              <li>
+                Add detailed disciplines summary for crypt searches like in Deck
+                ([i] button)
+              </li>
+              <li>
+                Export Deck in TWD format will add standard info block required
+                for TWD reports
+              </li>
+              <li>Fix bug with empty decks/inventory after login</li>
+              <li>Other bug fixes and small improvements</li>
+            </ul>
+
             <h6>2022-03-29:</h6>
             <ul>
               <li>

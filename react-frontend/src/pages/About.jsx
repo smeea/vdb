@@ -73,27 +73,23 @@ function About(props) {
                 : 2022-01-12
               </p>
 
-              <h6>Last update [2022-03-29]:</h6>
+              <h6>Last update [2022-04-09]:</h6>
               <ul>
                 <li>
-                  Add post-deck-import window with non-imported cards (mistakes
-                  in card names or something like this) which enable to manually
-                  recognize and add cards
+                  Add logic switch (AND / NOT) button for text search filters
+                  (each of multiple text filters can use its own logic for
+                  searches like [!]unique [&]mortal Type:Ally)
                 </li>
-                <li>Add search Only-In-Name option to card text search</li>
                 <li>
-                  Don&apos;t autoadd card to inventory with 1x q-ty if card not
-                  in inventory
+                  Add detailed disciplines summary for crypt searches like in
+                  Deck ([i] button)
                 </li>
-                <li>Add button to Card Preview to search TWD with the card</li>
-                <li>Sort clans in clan filter in Advanced Deck Selector</li>
                 <li>
-                  Fix Set search filter to correctly work with any-BCP option,
-                  and now Precon any-BCP filter will only return BCP cards in
-                  BCP precons ignoring Promos, which will be included in any-BCP
-                  Set search
+                  Export Deck in TWD format will add standard info block
+                  required for TWD reports
                 </li>
-                <li>Other bug fixes</li>
+                <li>Fix bug with empty decks/inventory after login</li>
+                <li>Other bug fixes and small improvements</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
