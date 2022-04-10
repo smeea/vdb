@@ -1094,8 +1094,8 @@ function Changelog(props) {
             <h6>2021-02-28:</h6>
             <ul className="pb-2">
               <li>
-                Added quick card view page (vdb.smeea.casa/cards) where you can
-                quick check the card by it&apos;s name.
+                Added quick card view page (vdb.im/cards) where you can quick
+                check the card by it&apos;s name.
               </li>
               <li>
                 Show all search results in Crypt/Library in Inventory-mode, but

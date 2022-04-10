@@ -133,7 +133,7 @@ with open("twda.json",
 
         print("{:<35} {:<5} {:<5} {:<4} {}".format(
             c['name'][:35], c['release_date'], c['twd_date'], ytw,
-            f"https://vdb.smeea.casa/decks?id={c['twd']}"
+            f"https://vdb.im/decks?id={c['twd']}"
             if c['twd'] != '-' else '-'))
 
     print("{:<35} {:<5} {:<5} {:<5} {}".format('Name', 'Print', 'Win', 'YtW',
@@ -147,5 +147,5 @@ with open("twda.json",
 
         print("{:<35} {:<5} {:<5} {:<4} {}".format(
             c['name'][:35], c['release_date'], c['twd_date'], ytw,
-            f"https://vdb.smeea.casa/decks?id={c['twd']}"
+            f"https://vdb.im/decks?id={c['twd']}"
             if c['twd'] != '-' else '-'))

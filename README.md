@@ -2,7 +2,7 @@
 
 VDB is web service for card search, deck building & inventory management for [Vampire the Eternal Struggle (VTES)](https://www.vekn.net/what-is-v-tes) collectible card game.
 
-Public instance is available at https://vdb.smeea.casa.
+Public instance is available at https://vdb.im.
 
 ## COMPONENTS
 
@@ -67,7 +67,7 @@ For production, in addition to the steps above, you should at least:
 * change `app.config['SECRET_KEY']` in `config.py`
 
 For reference:
-Public instance at https://vdb.smeea.casa runs from master branch without any changes (except database, which is excluded from this repo) using `gunicorn` and `nginx`.
+Public instance at https://vdb.im runs from master branch without any changes (except database, which is excluded from this repo) using `gunicorn` and `nginx`.
 
 ### UPDATE CARDS, TWD
 ```
