@@ -41,21 +41,22 @@ sets = {
 }
 
 with open("twda.json",
-          "r") as twda_input, open("vtescrypt.json", "r") as crypt_file, open(
-              "vteslib.json", "r") as library_file:
+          "r") as twda_input, open("cardbase_crypt_backend.json", "r") as crypt_file, open(
+              "cardbase_lib_backend.json", "r") as library_file:
 
-    vtescrypt = json.load(crypt_file)
-    vteslib = json.load(library_file)
+    crypt_cardbase = json.load(crypt_file).values()
+    library_cardbase = json.load(library_file).values()
     crypt = {}
     library = {}
 
-    for card in vtescrypt:
+    for card in crypt_cardbase:
         name = card['Name']
         if card['Adv'] and card['Adv'][0]:
             name += ' ADV'
 
         crypt[card['Id']] = {
             'name': name,
+            'player': '-',
             'twd': '-',
             'twd_date': '-',
         }
@@ -78,9 +79,10 @@ with open("twda.json",
 
         crypt[card['Id']]['release_date'] = date
 
-    for card in vteslib:
+    for card in library_cardbase:
         library[card['Id']] = {
             'name': card['Name'],
+            'player': '-',
             'twd': '-',
             'twd_date': '-',
         }
@@ -111,18 +113,21 @@ with open("twda.json",
         #     break
         # print(f"Generating TWDA cards history: {idx + 1} of {total}")
         deckid = i['id']
+        player = i['player']
         date = int(i['date'][:4])
 
         for card in i['crypt']['cards']:
             crypt[card['id']]['twd'] = deckid
             crypt[card['id']]['twd_date'] = date
+            crypt[card['id']]['player'] = player
 
         for cardtype in i['library']['cards']:
             for card in cardtype['cards']:
                 library[card['id']]['twd'] = deckid
                 library[card['id']]['twd_date'] = date
+                library[card['id']]['player'] = player
 
-    print("{:<35} {:<5} {:<5} {:<5} {}".format('Name', 'Print', 'Win', 'YtW',
+    print("{:<35} {:<5} {:<5} {:<4} {:<30} {}".format('Name', 'Print', 'Win', 'YtW', 'Player',
                                                'Link'))
     for c in crypt.values():
         ytw = None
@@ -131,12 +136,13 @@ with open("twda.json",
         else:
             ytw = str(2021 - c['release_date']) + '+'
 
-        print("{:<35} {:<5} {:<5} {:<4} {}".format(
-            c['name'][:35], c['release_date'], c['twd_date'], ytw,
+        print("{:<35} {:<5} {:<5} {:<4} {:<30} {}".format(
+            c['name'][:35], c['release_date'], c['twd_date'], ytw, c['player'],
             f"https://vdb.im/decks?id={c['twd']}"
             if c['twd'] != '-' else '-'))
 
-    print("{:<35} {:<5} {:<5} {:<5} {}".format('Name', 'Print', 'Win', 'YtW',
+    print("")
+    print("{:<35} {:<5} {:<5} {:<4} {:<30} {}".format('Name', 'Print', 'Win', 'YtW', 'Player',
                                                'Link'))
     for c in library.values():
         ytw = None
@@ -145,7 +151,7 @@ with open("twda.json",
         else:
             ytw = str(2021 - c['release_date']) + '+'
 
-        print("{:<35} {:<5} {:<5} {:<4} {}".format(
-            c['name'][:35], c['release_date'], c['twd_date'], ytw,
+        print("{:<35} {:<5} {:<5} {:<4} {:<30} {}".format(
+            c['name'][:35], c['release_date'], c['twd_date'], ytw, c['player'],
             f"https://vdb.im/decks?id={c['twd']}"
             if c['twd'] != '-' else '-'))

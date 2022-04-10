@@ -283,7 +283,7 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
             'ASCII Name': card['ASCII Name'],
         }
 
-        cardbase_backend = {
+        cardbase_backend[card['Id']] = {
             'Id': card['Id'],
             'Name': card['Name'],
             'Type': card['Type'],

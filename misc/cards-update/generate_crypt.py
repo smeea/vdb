@@ -337,7 +337,7 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
             'New': card['New']
         }
 
-        cardbase_backend = {
+        cardbase_backend[card['Id']] = {
             'Id': card['Id'],
             'Name': card['Name'],
             'Type': card['Type'],
