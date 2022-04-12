@@ -1,10 +1,7 @@
 # FIX
 - Bad imports for anonymous import
 - Virtues in detailed disciplines info
-- Merge backend and frontend cardbases (by adding TWD to frontend for search) + unify 'ANY' group
-- Icon alignment in main menu on mobile
 - Info button width on mobile in crypt results with few groups
-- Padding for buttons in /cards on mobile
 - Feld import in csv (discord)
 
 # FEATURES

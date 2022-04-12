@@ -78,7 +78,7 @@ function Cards({ lastDeckId }) {
   }, [cardId]);
 
   return (
-    <Container className="cards-container p-0">
+    <Container className="cards-container px-0 p-md-0">
       <>
         {isMobile ? (
           <>
