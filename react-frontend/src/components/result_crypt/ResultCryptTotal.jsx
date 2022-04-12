@@ -48,7 +48,10 @@ function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
         <b>TOTAL: {total}</b>
       </div>
       <div>{totalOutput}</div>
-      <Stack direction={isMobile ? 'vertical' : 'horizontal'} gap={1}>
+      <div>
+        <div className="mb-1">
+          <ResultCryptSortForm onChange={handleChange} />
+        </div>
         <Button
           title="Additional Info"
           variant="primary"
@@ -56,8 +59,7 @@ function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
         >
           <InfoCircle />
         </Button>
-        <ResultCryptSortForm onChange={handleChange} />
-      </Stack>
+      </div>
     </>
   );
 

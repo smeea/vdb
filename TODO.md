@@ -1,7 +1,6 @@
 # FIX
 - Bad imports for anonymous import
 - Virtues in detailed disciplines info
-- Info button width on mobile in crypt results with few groups
 - Feld import in csv (discord)
 
 # FEATURES
