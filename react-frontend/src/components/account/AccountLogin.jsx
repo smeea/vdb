@@ -82,7 +82,11 @@ function AccountLogin(props) {
       We do not have automatic password restoration yet.
       <br />
       Please{' '}
-      <a href="mailto:smeea@riseup.net?subject=VDB - Password reset&body=Please reset password for VDB account: <PUT YOUR ACCOUNT NAME HERE>">
+      <a
+        href={`mailto:smeea@riseup.net?subject=VDB - Password reset&body=Account: ${
+          formUserName || '<PUT YOUR ACCOUNT NAME HERE>'
+        }`}
+      >
         send me an email
       </a>{' '}
       with your account username and I will generate temporary password for you.

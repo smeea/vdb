@@ -11,7 +11,6 @@
 # FEATURES
 - Export all in xlsx and csv
 - Cards compare
-- Add entered account to password reset email
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks
