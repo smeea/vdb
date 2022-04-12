@@ -355,6 +355,7 @@ function PdaSearchForm(props) {
             type="checkbox"
             id="traits-star"
             label="With Star"
+            checked={pdaFormState.traits.star}
             onChange={(e) => handleMultiChange(e)}
           />
         </div>
@@ -401,6 +402,7 @@ function PdaSearchForm(props) {
             type="checkbox"
             id="traits-monoclan"
             label="Mono Clan"
+            checked={pdaFormState.traits.monoclan}
             onChange={(e) => handleMultiChange(e)}
           />
         </div>

@@ -115,6 +115,7 @@ function SearchFormPrecon(props) {
         type="checkbox"
         id={`precon-${i[0]}`}
         label={i[1]}
+        checked={props.value[i[0]]}
         onChange={(e) => props.onChangeOptions(e)}
       />
     );

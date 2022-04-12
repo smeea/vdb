@@ -7,7 +7,6 @@
 - Info button width on mobile in crypt results with few groups
 - Padding for buttons in /cards on mobile
 - Feld import in csv (discord)
-- Trait filters not cleared by [x] button
 
 # FEATURES
 - Export all in xlsx and csv

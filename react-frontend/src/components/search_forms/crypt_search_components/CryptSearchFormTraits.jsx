@@ -38,6 +38,7 @@ function CryptSearchFormTraits(props) {
         type="checkbox"
         id={`traits-${i[0]}`}
         label={i[1]}
+        checked={props.value[i[0]]}
         onChange={(e) => props.onChange(e)}
       />
     );
@@ -52,6 +53,7 @@ function CryptSearchFormTraits(props) {
         type="checkbox"
         id={`traits-${i[0]}`}
         label={i[1]}
+        checked={props.value[i[0]]}
         onChange={(e) => props.onChange(e)}
       />
     );
