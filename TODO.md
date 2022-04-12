@@ -1,6 +1,5 @@
 # FIX
 - Bad imports for anonymous import
-- Feld import in csv (discord)
 - Move componets/deck/forms_data and components/forms_data/disciplines+virtues to data/
 
 # FEATURES

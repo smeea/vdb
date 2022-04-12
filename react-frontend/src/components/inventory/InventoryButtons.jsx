@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stack } from 'react-bootstrap';
 import {
-  DeckImportButton,
+  DeckImport,
   InventoryExportButton,
   InventoryDeleteButton,
   InventoryMissingButton,
@@ -16,7 +16,7 @@ function InventoryButtons(props) {
   return (
     <Stack gap={1}>
       <InventoryExportButton setShowButtons={props.setShowButtons} />
-      <DeckImportButton
+      <DeckImport
         inventoryAddToState={props.inventoryAddToState}
         setShowButtons={props.setShowButtons}
         inInventory={true}
