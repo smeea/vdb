@@ -1,7 +1,7 @@
 # FIX
 - Bad imports for anonymous import
-- Virtues in detailed disciplines info
 - Feld import in csv (discord)
+- Move componets/deck/forms_data and components/forms_data/disciplines+virtues to data/
 
 # FEATURES
 - Export all in xlsx and csv

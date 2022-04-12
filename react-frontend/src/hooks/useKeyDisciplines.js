@@ -1,3 +1,5 @@
+import virtuesList from 'components/deck/forms_data/virtuesList.json';
+
 const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
   const disciplinesDetailed = {};
   const disciplinesDict = {};
@@ -7,7 +9,11 @@ const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
 
       if (disciplinesDict[d] === undefined) {
         disciplinesDict[d] = cards[card].q;
-        disciplinesDetailed[d] = { 0: 0, 1: 0, 2: 0 };
+        if (virtuesList.includes(d)) {
+          disciplinesDetailed[d] = { 0: 0, 1: 0 };
+        } else {
+          disciplinesDetailed[d] = { 0: 0, 1: 0, 2: 0 };
+        }
         disciplinesDetailed[d][cards[card].c.Disciplines[d]] += cards[card].q;
         disciplinesDetailed[d][0] += cards[card].q * levelModifier;
       } else {
