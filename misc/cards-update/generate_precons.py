@@ -129,10 +129,10 @@ bundles = {
 with open("cardbase_crypt.json",
           "r") as crypt_file, open("cardbase_lib.json", "r") as library_file, open(
               "preconDecks.json", "w") as precons_file:
-    crypt = json.load(crypt_file).values()
-    library = json.load(library_file).values()
+    crypt = list(json.load(crypt_file).values())
+    library = list(json.load(library_file).values())
 
-    for card in list(crypt) + list(library):
+    for card in crypt + library:
         for card_set, card_precons in card["Set"].items():
             if card_set in bundles:
                 for precon in bundles[card_set].keys():

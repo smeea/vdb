@@ -4,10 +4,10 @@ from unidecode import unidecode
 from import_parse_card import import_parse_card
 
 with open("cardbase_crypt.json", "r") as crypt_file:
-    crypt = json.load(crypt_file).values()
+    crypt = list(json.load(crypt_file).values())
 
 with open("cardbase_lib.json", "r") as library_file:
-    library = json.load(library_file).values()
+    library = list(json.load(library_file).values())
 
 
 def deck_import(deckText):

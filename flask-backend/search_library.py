@@ -2,7 +2,7 @@ import json
 import search_library_components
 
 with open("cardbase_lib.json", "r") as library_file:
-    cardbase = json.load(library_file).values()
+    cardbase = list(json.load(library_file).values())
 
 
 def search_library(request, library=cardbase):

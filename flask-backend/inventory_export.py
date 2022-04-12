@@ -20,18 +20,18 @@ def inventory_export(d, format):
         with open("cardbase_crypt.json", "r") as crypt_file, open(
             "cardbase_lib.json", "r"
         ) as library_file:
-            cryptBase = json.load(crypt_file)
-            libraryBase = json.load(library_file)
+            crypt_cardbase = json.load(crypt_file)
+            library_cardbase = json.load(library_file)
             for k, v in d["cards"].items():
                 if v > 0:
                     k = int(k)
                     if k > 200000:
-                        crypt[k] = {"c": cryptBase[str(k)], "q": v}
+                        crypt[k] = {"c": crypt_cardbase[str(k)], "q": v}
                         cryptTotal += v
                         if maxCrypt < v:
                             maxCrypt = v
                     elif k < 200000:
-                        library[k] = {"c": libraryBase[str(k)], "q": v}
+                        library[k] = {"c": library_cardbase[str(k)], "q": v}
                         libraryTotal += v
                         if maxLibrary < v:
                             maxLibrary = v

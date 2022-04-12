@@ -2,7 +2,7 @@ import json
 import search_crypt_components
 
 with open("cardbase_crypt.json", "r") as crypt_file:
-    cardbase = json.load(crypt_file).values()
+    cardbase = list(json.load(crypt_file).values())
 
 
 def search_crypt(request, crypt=cardbase):
