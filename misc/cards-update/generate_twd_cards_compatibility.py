@@ -1,12 +1,12 @@
 import json
 
 with open("twdDecks.json",
-          "r") as twda_input, open("vtescrypt.json", "r") as crypt_file, open(
-              "vteslib.json", "r") as library_file:
+          "r") as twda_input, open("cardbase_crypt.json", "r") as crypt_file, open(
+              "cardbase_lib.json", "r") as library_file:
 
     twda = json.load(twda_input)
-    vtescrypt = json.load(crypt_file)
-    vteslib = json.load(library_file)
+    cardbase_crypt = json.load(crypt_file).values()
+    cardbase_library = json.load(library_file).values()
 
 CURRENT_YEAR = 2021
 YEAR_MULTIPLIER = 0.1
@@ -15,9 +15,9 @@ cards = {}
 
 twda_total = len(twda)
 
-for c in vtescrypt:
+for c in cardbase_crypt:
     cards[c['Id']] = {}
-for c in vteslib:
+for c in cardbase_library:
     cards[c['Id']] = {}
 
 for idx, twd in enumerate(twda):

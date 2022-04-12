@@ -8,11 +8,11 @@ def letters_to_ascii(text):
                    if unicodedata.category(c) != 'Mn')
 
 
-with open("vtescrypt.json",
-          "r") as crypt_file, open("vteslib.json", "r") as library_file, open(
+with open("cardbase_crypt.json",
+          "r") as crypt_file, open("cardbase_lib.json", "r") as library_file, open(
               "amaranth_ids.json", "w") as amaranth_ids:
-    crypt = json.load(crypt_file)
-    library = json.load(library_file)
+    crypt = json.load(crypt_file).values()
+    library = json.load(library_file).values()
 
     response = requests.get('https://amaranth.vtes.co.nz/api/cards')
 

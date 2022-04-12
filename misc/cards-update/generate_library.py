@@ -40,10 +40,8 @@ useless_fields = ['Aka', 'Flavor Text']
 
 with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
         "vteslibmeta.csv", "r", encoding='utf8') as meta_csv, open(
-                "cardbase_lib_backend.json", "w",
-                encoding='utf8') as cardbase_backend_file, open(
-                "cardbase_lib_frontend.json", "w",
-                encoding='utf8') as cardbase_frontend_file, open(
+                "cardbase_lib.json", "w",
+                encoding='utf8') as cardbase_file, open(
                     "vtes.json", "r", encoding='utf8') as krcg_file, open(
                         "artistsLib.json", "w",
                         encoding='utf8') as artists_file, open(
@@ -62,8 +60,7 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
     for c in csv_meta:
         requirements.append(c)
 
-    cardbase_frontend = {}
-    cardbase_backend = {}
+    cardbase = {}
     artists_set = set()
     twda = json.load(twda_input)
 
@@ -264,54 +261,32 @@ with open("vteslib.csv", "r", encoding='utf8') as main__csv, open(
                                                       'Blood Sorcery')
 
         # Prepare for export
-        cardbase_frontend[card['Id']] = {
-            'Id': card['Id'],
-            'Name': card['Name'],
-            'Type': card['Type'],
-            'Clan': card['Clan'],
-            'Discipline': card['Discipline'],
+        cardbase[card['Id']] = {
+            'ASCII Name': card['ASCII Name'],
+            'Artist': card['Artist'],
+            'Banned': card['Banned'],
             'Blood Cost': card['Blood Cost'],
-            'Pool Cost': card['Pool Cost'],
-            'Conviction Cost': card['Conviction Cost'],
             'Burn Option': card['Burn Option'],
             'Card Text': card['Card Text'],
-            'Set': card['Set'],
+            'Clan': card['Clan'],
+            'Conviction Cost': card['Conviction Cost'],
+            'Discipline': card['Discipline'],
+            'Id': card['Id'],
+            'Name': card['Name'],
+            'Pool Cost': card['Pool Cost'],
             'Requirement': card['Requirement'],
-            'Banned': card['Banned'],
-            'Artist': card['Artist'],
             'Rulings': card['Rulings'],
-            'ASCII Name': card['ASCII Name'],
-        }
-
-        cardbase_backend[card['Id']] = {
-            'Id': card['Id'],
-            'Name': card['Name'],
-            'Type': card['Type'],
-            'Clan': card['Clan'],
-            'Discipline': card['Discipline'],
-            'Blood Cost': card['Blood Cost'],
-            'Pool Cost': card['Pool Cost'],
-            'Conviction Cost': card['Conviction Cost'],
-            'Burn Option': card['Burn Option'],
-            'Card Text': card['Card Text'],
             'Set': card['Set'],
-            'Requirement': card['Requirement'],
-            'Banned': card['Banned'],
-            'Artist': card['Artist'],
-            'ASCII Name': card['ASCII Name'],
             'Twd': card['Twd'],
+            'Type': card['Type'],
         }
 
     artists = sorted(artists_set)
 
     # json.dump(cards, f_json, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
-    json.dump(cardbase_frontend,
-              cardbase_frontend_file,
-              indent=4,
-              separators=(',', ':'))
-    json.dump(cardbase_backend,
-              cardbase_backend_file,
+    json.dump(cardbase,
+              cardbase_file,
               indent=4,
               separators=(',', ':'))
     json.dump(artists, artists_file, indent=4, separators=(',', ':'))
