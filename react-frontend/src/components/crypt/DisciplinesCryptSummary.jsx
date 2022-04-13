@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResultDisciplineImage } from 'components';
-import virtuesList from 'components/deck/forms_data/virtuesList.json';
+import virtuesList from 'assets/data/virtuesList.json';
 
 const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
   const disciplinesSorted = Object.keys(disciplinesDetailed).sort((a, b) => {

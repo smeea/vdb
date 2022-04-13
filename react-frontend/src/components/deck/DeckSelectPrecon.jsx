@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import GiftFill from 'assets/images/icons/gift-fill.svg';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { ResultLibraryClan } from 'components';
 import { useApp } from 'context';
 

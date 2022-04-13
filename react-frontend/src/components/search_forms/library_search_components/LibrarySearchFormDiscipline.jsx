@@ -8,8 +8,8 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
-import disciplinesList from 'components/deck/forms_data/disciplinesList.json';
-import virtuesList from 'components/deck/forms_data/virtuesList.json';
+import disciplinesList from 'assets/data/disciplinesList.json';
+import virtuesList from 'assets/data/virtuesList.json';
 import { useApp } from 'context';
 
 function LibrarySearchFormDiscipline(props) {

@@ -14,7 +14,7 @@ import {
 } from 'components';
 import { decksSort } from 'utils';
 import { useApp } from 'context';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 function InventoryAddDeckModal(props) {
   const { inventoryCrypt, inventoryLibrary, preconDecks, isMobile } = useApp();

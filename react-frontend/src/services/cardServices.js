@@ -1,6 +1,6 @@
 import { loadUsingSWR, loadAndWait } from './utils';
 import preconDecksData from 'assets/data/preconDecks.json';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 const VERSION = '2022-03-20';
 const urlCrypt = `${process.env.ROOT_URL}cardbase_crypt.json?v=${VERSION}`;

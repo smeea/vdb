@@ -3,8 +3,8 @@ import { Stack } from 'react-bootstrap';
 import { InventoryLibraryTable, InventoryFilterForm } from 'components';
 import { useApp } from 'context';
 import { cardtypeSorted } from 'utils/constants';
-import disciplinesList from 'components/deck/forms_data/disciplinesList.json';
-import virtuesList from 'components/deck/forms_data/virtuesList.json';
+import disciplinesList from 'assets/data/disciplinesList.json';
+import virtuesList from 'assets/data/virtuesList.json';
 
 function InventoryLibrary({
   compact,

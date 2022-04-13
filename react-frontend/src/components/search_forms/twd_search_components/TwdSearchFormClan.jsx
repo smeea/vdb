@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import { useApp } from 'context';
 import { ResultClanImage } from 'components';
-import clansList from 'components/deck/forms_data/clansList.json';
+import clansList from 'assets/data/clansList.json';
 
 function TwdSearchFormClan(props) {
   const { isMobile } = useApp();

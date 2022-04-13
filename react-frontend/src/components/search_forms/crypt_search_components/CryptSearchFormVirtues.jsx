@@ -1,6 +1,6 @@
 import React from 'react';
 import { ResultDisciplineImage } from 'components';
-import virtuesList from 'components/deck/forms_data/virtuesList.json';
+import virtuesList from 'assets/data/virtuesList.json';
 
 function CryptSearchFormVirtues(props) {
   const virtuesforms = virtuesList.map((i, index) => {

@@ -8,7 +8,7 @@ import {
   SearchFormButtonAdd,
   SearchFormButtonDel,
 } from '../shared_search_components';
-import clansList from 'components/deck/forms_data/clansList.json';
+import clansList from '~/src/assets/data/clansList.json';
 import { useApp } from 'context';
 
 function CryptSearchFormClan(props) {

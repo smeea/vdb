@@ -7,7 +7,7 @@ import {
   SearchFormButtonDel,
 } from './';
 import { useApp } from 'context';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
 function SearchFormSet(props) {
   const { isMobile } = useApp();

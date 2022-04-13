@@ -15,7 +15,7 @@ import {
   CardImage,
   ConditionalOverlayTrigger,
 } from 'components';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp } from 'context';
 
 function DeckProxyLibraryTable(props) {

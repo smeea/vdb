@@ -1,4 +1,4 @@
-import virtuesList from 'components/deck/forms_data/virtuesList.json';
+import virtuesList from 'assets/data/virtuesList.json';
 
 const useKeyDisciplines = (cards = [], cryptTotal = 0) => {
   const disciplinesDetailed = {};

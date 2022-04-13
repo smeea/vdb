@@ -17,7 +17,7 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
-import setsAndPrecons from 'components/forms_data/setsAndPrecons.json';
+import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 import { useApp } from 'context';
 
 function DeckProxyCryptTable(props) {
