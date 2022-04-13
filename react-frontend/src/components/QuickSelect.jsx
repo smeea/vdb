@@ -3,9 +3,12 @@ import { useParams } from 'react-router-dom';
 import AsyncSelect from 'react-select/async';
 import { useApp } from 'context';
 import { SelectLabelCrypt, SelectLabelLibrary } from 'components';
+import { useFilters } from 'hooks';
 
 const QuickSelect = ({ selectedCard, setCardId, inInventory }) => {
-  const { isMobile } = useApp();
+  const { isMobile, cryptCardBase, libraryCardBase } = useApp();
+  const { filterCrypt } = useFilters(cryptCardBase);
+  const { filterLibrary } = useFilters(libraryCardBase);
 
   const params = useParams();
   const handleChange = (option) => {
@@ -32,26 +35,17 @@ const QuickSelect = ({ selectedCard, setCardId, inInventory }) => {
   };
 
   const loadOptions = async (inputValue) => {
-    const url = `${process.env.API_URL}search/quick`;
-    const input = { name: inputValue };
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(input),
-    };
-
     if (inputValue.length > 2) {
-      const response = await fetch(url, options);
-      const json = await response.json();
-      return json.map((card) => ({
-        value: card,
+      const input = { name: inputValue };
+
+      const filteredCryptCards = filterCrypt(input).map((card) => ({
+        value: card.Id,
       }));
-    } else {
-      return null;
+      const filteredLibCards = filterLibrary(input).map((card) => ({
+        value: card.Id,
+      }));
+
+      return [...filteredCryptCards, ...filteredLibCards];
     }
   };
 

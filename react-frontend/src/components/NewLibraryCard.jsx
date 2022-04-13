@@ -1,8 +1,13 @@
 import React from 'react';
 import AsyncSelect from 'react-select/async';
 import { SelectLabelLibrary } from 'components';
+import { useFilters } from 'hooks';
+import { useApp } from 'context';
 
 function NewLibraryCard(props) {
+  const { libraryCardBase } = useApp();
+  const { filterLibrary } = useFilters(libraryCardBase);
+
   const getOptionLabel = (option) => {
     return (
       <SelectLabelLibrary
@@ -13,26 +18,14 @@ function NewLibraryCard(props) {
   };
 
   const loadOptions = async (inputValue) => {
-    const url = `${process.env.API_URL}search/library`;
-    const input = { name: inputValue };
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(input),
-    };
-
     if (inputValue.length > 2) {
-      const response = await fetch(url, options);
-      const json = await response.json();
-      return json.map((card) => ({
-        value: card,
+      const input = { name: inputValue };
+
+      const filteredCards = filterLibrary(input).map((card) => ({
+        value: card.Id,
       }));
-    } else {
-      return null;
+
+      return filteredCards;
     }
   };
 

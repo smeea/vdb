@@ -29,25 +29,68 @@ const useFilters = (cards = {}) => {
       if (missingGroup(filter.group, card)) return false;
 
       // Set
-      if (missingSet(filter.set, card)) return false;
+      // if (missingSet(filter.set, card)) return false;
 
       // Precon
-      if (missingPrecon(filter.precon, card)) return false;
+      // if (missingPrecon(filter.precon, card)) return false;
 
       // Artist
       if (missingArtist(filter.artist, card)) return false;
 
-      // Initial
-      // if (missingInitial(filter.Initial, card)) return false
-
       // Name
-      // if (missingName(filter.name, card)) return false
+      if (missingNameOrInitials(filter.name, card)) return false;
 
       return true;
     });
   };
 
-  const filterLibrary = (filter) => {};
+  const filterLibrary = (filter) => {
+    return Object.values(cards).filter((card) => {
+      // Text
+      if (missingTextQueries(filter.text, card)) return false;
+
+      // Disciplines ADD NOT REQUIRED
+      // if (missingDisciplines(filter.disciplines, card)) return false;
+
+      // Clan ADD NOT REQUIRED
+      // if (missingClan(filter.clan, card)) return false;
+
+      // Titles ADD NOT REQUIRED
+      // if (missingTitle(filter.titles, card)) return false;
+
+      // Type
+      // if (missingTypes(filter.text, card)) return false;
+
+      // Sect ADD NOT REQUIRED
+      // if (missingSect(filter.sect, card)) return false;
+
+      // Blood
+      // if (missingBloodCost(filter.text, card)) return false;
+
+      // Pool
+      // if (missingPoolCost(filter.text, card)) return false;
+
+      // Traits
+      // if (missingTraits(filter.traits, card)) return false;
+
+      // Capacity
+      // if (missingCapacity(filter.capacity, card)) return false;
+
+      // Set
+      // if (missingSet(filter.set, card)) return false;
+
+      // Precon
+      // if (missingPrecon(filter.precon, card)) return false;
+
+      // Artist
+      if (missingArtist(filter.artist, card)) return false;
+
+      // Name
+      if (missingNameOrInitials(filter.name, card)) return false;
+
+      return true;
+    });
+  };
 
   const filterTWD = (filter) => {};
 
@@ -129,7 +172,7 @@ const missingTraits = (filterTraits, card) => {
 const missingTrait = (trait, card) => {
   switch (trait) {
     case 'advancement':
-      return !(card['Adv'] && card['Adv'][0]);
+      return !card['Adv'];
     case 'banned':
       return !card['Banned'];
     case 'non-twd':
@@ -183,7 +226,7 @@ const missingTitle = (filterTitles, card) => {
 
   if (card['Adv'] && card['Adv'][0]) {
     if (
-      RegExp('(?<=\\[MERGED\\][\\s\\S]*)(' + titles.join('|') + ')', 'i').test(
+      RegExp(`(?<=\[MERGED\][\\s\\S]*)(${titles.join('|')})`, 'i').test(
         card['Card Text']
       )
     )
@@ -230,28 +273,65 @@ const titleWorth = {
 //  ------------------------------------------------------
 
 const missingCapacity = (filterCapacity, card) => {
-  if (!filterCapacity || filterCapacity === 'any') return false;
+  if (!filterCapacity) return false;
+  const capacity = parseInt(filterCapacity.capacity);
+  const moreless = filterCapacity.moreless;
 
-  return false;
+  return (
+    (card['Capacity'] > capacity && moreless !== 'ge') ||
+    (card['Capacity'] < capacity && moreless !== 'le')
+  );
 };
+
+//  ------------------------------------------------------
+//  ------------------  MISSING CLAN  --------------------
+//  ------------------------------------------------------
 
 const missingClan = (filterClan, card) => {
-  if (!filterClan || filterClan === 'any') return false;
+  if (!filterClan || filterClan.value['0'] === 'any') return false;
 
-  return false;
+  const clans = filterClan.value;
+  const logic = filterClan.logic;
+
+  return (logic === 'or') !== clans.includes(card['Clan'].toLowerCase());
 };
 
+//  ------------------------------------------------------
+//  ------------------  MISSING SECT  --------------------
+//  ------------------------------------------------------
 const missingSect = (filterSect, card) => {
-  if (!filterSect || filterSect === 'any') return false;
+  if (!filterSect || filterSect.value['0'] === 'any') return false;
 
-  return false;
+  const sects = filterSect.value;
+  const logic = filterSect.logic;
+
+  return (logic === 'or') !== cardHasSect(card, sects);
 };
+
+const cardHasSect = (card, sects) => {
+  const checkSect = RegExp(`^(advanced\,\ )?(${sects.join('|')})[:. $]`, 'i');
+  const isImbued = card['Type'].toLowerCase() === 'imbued';
+
+  return (
+    (isImbued && sects.includes('imbued')) || checkSect.test(card['Card Text'])
+  );
+};
+
+//  ------------------------------------------------------
+//  ------------------  MISSING GROUP  -------------------
+//  ------------------------------------------------------
 
 const missingGroup = (filterGroup, card) => {
-  if (!filterGroup || filterGroup === 'any') return false;
+  if (!filterGroup || card['Group'] === 'any') return false;
 
-  return false;
+  const groups = Object.keys(filterGroup);
+
+  return !groups.includes(card['Group']);
 };
+
+//  ------------------------------------------------------
+//  ------------------  MISSING SET  ---------------------
+//  ------------------------------------------------------
 
 const missingSet = (filterSet, card) => {
   if (!filterSet || filterSet === 'any') return false;
@@ -259,26 +339,43 @@ const missingSet = (filterSet, card) => {
   return false;
 };
 
+//  ------------------------------------------------------
+//  -----------------  MISSING PRECON  -------------------
+//  ------------------------------------------------------
+
 const missingPrecon = (filterPrecon, card) => {
   if (!filterPrecon || filterPrecon === 'any') return false;
 
   return false;
 };
 
+//  ------------------------------------------------------
+//  -----------------  MISSING ARTIST  -------------------
+//  ------------------------------------------------------
+
 const missingArtist = (filterArtist, card) => {
   if (!filterArtist || filterArtist === 'any') return false;
 
-  return false;
+  return filterArtist !== card['Artist'];
 };
 
-// const missingInitial = (filterInitial, card) => {
-//   if (!filterInitial || filterInitial === 'any') return false;
+//  ------------------------------------------------------
+//  ------------  MISSING NAME OR INITIALS  --------------
+//  ------------------------------------------------------
 
-//   return false;
-// };
+const missingNameOrInitials = (filterName, card) => {
+  if (!filterName) return false;
 
-// const missingName = (filterName, card) => {
-//   if (!filterName || filterName === 'any') return false;
+  const charRegExp = '^' + filterName.split('').join('(\\w* )?');
+  const checkInitials = RegExp(charRegExp, 'i');
 
-//   return false;
-// };
+  const nameASCII = card['ASCII Name'].toLowerCase();
+  const name = card['Name'].toLowerCase();
+
+  return !(
+    name.includes(filterName) ||
+    nameASCII.includes(filterName) ||
+    checkInitials.test(name) ||
+    checkInitials.test(nameASCII)
+  );
+};

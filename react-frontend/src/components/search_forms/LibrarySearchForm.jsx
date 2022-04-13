@@ -23,6 +23,7 @@ import {
 } from './library_search_components';
 import defaults from 'components/forms_data/defaultsLibraryForm.json';
 import { sanitizeFormState } from 'utils';
+import { useFilters } from 'hooks';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
 function LibrarySearchForm(props) {
@@ -36,8 +37,10 @@ function LibrarySearchForm(props) {
     isMobile,
   } = useApp();
 
+  const { filterLibrary } = useFilters(libraryCardBase);
+
   const { libraryFormState, setLibraryFormState } = useSearchForms();
-  const { libraryResults, setLibraryResults } = useSearchResults();
+  const { setLibraryResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);
@@ -165,80 +168,47 @@ function LibrarySearchForm(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    launchRequest();
+    processSearch();
   };
 
   const handleShowResults = () => {
     setLibraryResults(preresults);
   };
 
-  const launchRequest = () => {
-    const url = `${process.env.API_URL}search/library`;
-    const input = sanitizeFormState('library', libraryFormState);
+  const processSearch = () => {
+    const sanitizeForm = sanitizeFormState('library', libraryFormState);
+    setShowError(false);
 
-    if (Object.entries(input).length === 0) {
+    if (Object.entries(sanitizeForm).length === 0) {
       setShowError('EMPTY REQUEST');
       return;
     }
 
-    navigate(`/library?q=${encodeURIComponent(JSON.stringify(input))}`);
+    navigate(`/library?q=${encodeURIComponent(JSON.stringify(sanitizeForm))}`);
 
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(input),
-    };
-
-    setShowError(false);
     setSpinnerState(true);
 
-    fetch(url, options)
-      .then((response) => {
-        if (!response.ok) throw Error(response.status);
-        return response.json();
-      })
-      .then((data) => {
-        setSpinnerState(false);
-        setShowLibrarySearch(false);
-        const res = data.map((i) => {
-          return libraryCardBase[i];
-        });
-        if (!isMobile) {
-          if (hideMissing && inventoryMode) {
-            setPreresults(() =>
-              res.filter((card) => inventoryLibrary[card.Id])
-            );
-          } else {
-            setPreresults(res);
-          }
-        } else {
-          setLibraryResults(res);
-        }
-      })
-      .catch((error) => {
-        if (isMobile) navigate('/library');
-        setSpinnerState(false);
-        if (libraryResults) {
-          setLibraryResults([]);
-          setPreresults([]);
-        }
-        if (
-          error.message == 'NetworkError when attempting to fetch resource.'
-        ) {
-          setShowError('CONNECTION PROBLEM');
-        } else {
-          setShowError(true);
-        }
-      });
+    const filteredCards = filterLibrary(sanitizeForm);
+
+    setSpinnerState(false);
+    setShowLibrarySearch(false);
+
+    if (!isMobile) {
+      if (hideMissing && inventoryMode) {
+        setPreresults(() =>
+          filteredCards.filter((card) => inventoryLibrary[card.Id])
+        );
+      } else {
+        setPreresults(filteredCards);
+      }
+    } else {
+      setLibraryResults(filteredCards);
+    }
   };
 
   useEffect(() => {
     if (isMobile && query && libraryFormState) {
-      launchRequest();
+      processSearch();
     }
   }, [libraryFormState]);
 
@@ -255,7 +225,7 @@ function LibrarySearchForm(props) {
         !libraryFormState.text.value ||
         libraryFormState.text.value.length > 2
       ) {
-        launchRequest();
+        processSearch();
       }
     }
   }, [libraryFormState, hideMissing, inventoryMode]);

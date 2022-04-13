@@ -1,8 +1,13 @@
 import React from 'react';
 import AsyncSelect from 'react-select/async';
 import { SelectLabelCrypt } from 'components';
+import { useFilters } from 'hooks';
+import { useApp } from 'context';
 
 function NewCryptCard(props) {
+  const { cryptCardBase } = useApp();
+  const { filterCrypt } = useFilters(cryptCardBase);
+
   const getOptionLabel = (option) => {
     return (
       <SelectLabelCrypt cardid={option.value} inInventory={props.inInventory} />
@@ -10,26 +15,14 @@ function NewCryptCard(props) {
   };
 
   const loadOptions = async (inputValue) => {
-    const url = `${process.env.API_URL}search/crypt`;
-    const input = { name: inputValue };
-    const options = {
-      method: 'POST',
-      mode: 'cors',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(input),
-    };
-
     if (inputValue.length > 2) {
-      const response = await fetch(url, options);
-      const json = await response.json();
-      return json.map((card) => ({
-        value: card,
+      const input = { name: inputValue };
+
+      const filteredCards = filterCrypt(input).map((card) => ({
+        value: card.Id,
       }));
-    } else {
-      return null;
+
+      return filteredCards;
     }
   };
 

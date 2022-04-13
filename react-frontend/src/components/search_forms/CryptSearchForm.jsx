@@ -193,7 +193,7 @@ function CryptSearchForm(props) {
 
   const processSearch = () => {
     const sanitizeForm = sanitizeFormState('crypt', cryptFormState);
-
+    setShowError(false);
     if (Object.entries(sanitizeForm).length === 0) {
       setShowError('EMPTY REQUEST');
       return;
@@ -201,7 +201,6 @@ function CryptSearchForm(props) {
 
     navigate(`/crypt?q=${encodeURIComponent(JSON.stringify(sanitizeForm))}`);
 
-    setShowError(false);
     setSpinnerState(true);
 
     const filteredCards = filterCrypt(sanitizeForm);
