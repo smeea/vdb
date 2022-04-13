@@ -74,7 +74,7 @@ def deck_recommendation(cards):
                 g = cardbase_crypt[str(r)]["Group"]
 
                 for k in group_multiplier.keys():
-                    if g == "any" or k == "any":
+                    if g == "ANY" or k == "ANY":
                         pass
                     elif abs(int(k) - int(g)) <= 1:
                         score = score * (1 + group_multiplier[k])
