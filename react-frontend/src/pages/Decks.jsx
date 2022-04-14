@@ -592,18 +592,17 @@ function Decks(props) {
           </Col>
         )}
       </Row>
-      {username === '' && !activeDeck.deckid && (
-        <Row
-          className={`h-${
-            isMobile ? 75 : 50
-          } align-items-center justify-content-center px-2`}
-        >
-          <Col xs={12} md={5}>
+
+      {!username && !activeDeck.deckid && (
+        <Row className="align-items-center justify-content-center p-3 vh-60">
+          <Col xs={12} md={9} lg={8} xl={7}>
             <div className="d-flex justify-content-center pb-0">
-              <h6>Login required to create your decks.</h6>
+              <h6>Login required to create your decks</h6>
             </div>
             <div className="d-flex justify-content-center pb-3">
-              <h6>(you can browse preconstructed decks without login)</h6>
+              <h6 className="small">
+                (You can browse preconstructed decks without login)
+              </h6>
             </div>
             <div className="py-2">
               <AccountLogin />
@@ -619,8 +618,8 @@ function Decks(props) {
         decks &&
         Object.keys(decks).length == 0 &&
         !activeDeck.deckid && (
-          <Row className="h-50 align-items-center justify-content-center px-2">
-            <Col xs={12} md={5}>
+          <Row className="align-items-center justify-content-center p-3 vh-60">
+            <Col xs={12} md={9} lg={8} xl={7}>
               <div className="text-align-center blue bold py-2">
                 You do not have any decks in your collection yet
               </div>
