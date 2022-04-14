@@ -1,6 +1,13 @@
 import json
 
 bundles = {
+    "NB": {
+        "PM": {},
+        "PN": {},
+        "PTo": {},
+        "PTr": {},
+        "PV": {},
+    },
     "V5A": {
         "PBh": {},
         "PMin": {},

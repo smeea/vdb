@@ -1,5 +1,4 @@
 {
-
   "Promo": {
     "name": "Promo",
     "date": ""
@@ -7,6 +6,32 @@
   "POD": {
     "name": "Print-on-Demand (DTC)",
     "date": ""
+  },
+  "NB": {
+    "name": "New Blood",
+    "date": "2022-04-17",
+    "precons": {
+      "PM": {
+        "name": "Malkavian",
+        "clan": "Malkavian"
+      },
+      "PN": {
+        "name": "Nosferatu",
+        "clan": "Nosferatu"
+      },
+      "PTo": {
+        "name": "Toreador",
+        "clan": "Toreador"
+      },
+      "PTr": {
+        "name": "Tremere",
+        "clan": "Tremere"
+      },
+      "PV": {
+        "name": "Ventrue",
+        "clan": "Ventrue"
+      }
+    }
   },
   "V5A": {
     "name": "Fifth Edition (Anarchs)",

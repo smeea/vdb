@@ -1,12 +1,9 @@
 import React from 'react';
-import { Button, Stack } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import { ResultCryptSortForm } from 'components';
-import { useApp } from 'context';
 
 function ResultCryptTotal({ cards, handleChange, toggleShowInfo }) {
-  const { isMobile } = useApp();
-
   const byGroups = {};
   const byGroupsCapacityTotal = {};
   let total = 0;
