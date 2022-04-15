@@ -12,6 +12,15 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-04-15:</h6>
+            <ul>
+              <li>
+                Add Crypt/Library cards compare feature (open card window and
+                click Compare Card button [Magnifiying Glass with Heart icon])
+              </li>
+              <li>Bug fixes and small improvements</li>
+            </ul>
+
             <h6>2022-04-09:</h6>
             <ul>
               <li>

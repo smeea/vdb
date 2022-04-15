@@ -73,23 +73,13 @@ function About(props) {
                 : 2022-01-12
               </p>
 
-              <h6>Last update [2022-04-09]:</h6>
+              <h6>Last update [2022-04-15]:</h6>
               <ul>
                 <li>
-                  Add logic switch (AND / NOT) button for text search filters
-                  (each of multiple text filters can use its own logic for
-                  searches like [!]unique [&]mortal Type:Ally)
+                  Add Crypt/Library cards compare feature (open card window and
+                  click Compare Card button [Magnifiying Glass with Heart icon])
                 </li>
-                <li>
-                  Add detailed disciplines summary for crypt searches like in
-                  Deck ([i] button)
-                </li>
-                <li>
-                  Export Deck in TWD format will add standard info block
-                  required for TWD reports
-                </li>
-                <li>Fix bug with empty decks/inventory after login</li>
-                <li>Other bug fixes and small improvements</li>
+                <li>Bug fixes and small improvements</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
@@ -102,7 +92,15 @@ function About(props) {
                 </a>
                 <br />
                 Online card search and deck-building tool. I use *many* ideas
-                from Amaranth
+                from Amaranth. Discontinued
+              </p>
+
+              <p>
+                <a href="https://vtesdecks.com/">
+                  <b>VTES Decks</b>
+                </a>
+                <br />
+                Online deck builder and TWD browser
               </p>
 
               <p>

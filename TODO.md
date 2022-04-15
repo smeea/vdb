@@ -6,7 +6,6 @@
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks
-- Pagination for New
 - Comments for PDA
 - Sorting by new/favorites/comments in PDA/TWD
 - Script to update images from static.krcg.org
