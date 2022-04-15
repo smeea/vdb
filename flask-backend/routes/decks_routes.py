@@ -614,7 +614,6 @@ def cloneDeck():
 
 @app.route("/api/decks/urlclone", methods=["POST"])
 def urlCloneDeck():
-    print("url clone: ", request.json["target"])
     targetDeck = Deck.query.get(request.json["target"])
     deckid = uuid.uuid4().hex
     d = Deck(
