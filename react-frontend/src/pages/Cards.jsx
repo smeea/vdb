@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Container, Row, Col, Stack } from 'react-bootstrap';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import Dice3 from 'assets/images/icons/dice-3-fill.svg';
+import SearchHeartFill from 'assets/images/icons/search-heart-fill.svg';
 import {
   QuickSelect,
   ResultCryptLayoutText,
@@ -14,7 +15,7 @@ import {
   ButtonIconed,
   CardImage,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, useSearchResults } from 'context';
 
 function Cards({ lastDeckId }) {
   const params = useParams();
@@ -28,10 +29,42 @@ function Cards({ lastDeckId }) {
     activeDeck,
   } = useApp();
 
+  const { cryptCompare, setCryptCompare, libraryCompare, setLibraryCompare } =
+    useSearchResults();
+
   const [cardId, setCardId] = useState(undefined);
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
+
+  const handleCompare = () => {
+    if (cardId > 200000) {
+      setCryptCompare(() => {
+        if (!cryptCompare) {
+          return [card];
+        } else if (!cryptCompare.includes(card)) {
+          return [...cryptCompare, card];
+        } else {
+          return cryptCompare.filter((c) => c !== card);
+        }
+      });
+    } else {
+      setLibraryCompare(() => {
+        if (!libraryCompare) {
+          return [card];
+        } else if (!libraryCompare.includes(card)) {
+          return [...libraryCompare, card];
+        } else {
+          return libraryCompare.filter((c) => c !== card);
+        }
+      });
+    }
+  };
+
+  const cardInCompare =
+    cardId > 200000
+      ? cryptCompare && cryptCompare.includes(card)
+      : libraryCompare && libraryCompare.includes(card);
 
   const randomCrypt = () => {
     const id =
@@ -134,6 +167,18 @@ function Cards({ lastDeckId }) {
                             <ButtonCardCopyUrl id={cardId} />
                             <ButtonSearchTwd id={card.Id} />
                             <ButtonSearchPda id={card.Id} />
+                            <ButtonIconed
+                              variant={cardInCompare ? 'third' : 'primary'}
+                              onClick={handleCompare}
+                              title="Compare Card"
+                              icon={
+                                <SearchHeartFill
+                                  width="16"
+                                  height="24"
+                                  viewBox="0 0 16 16"
+                                />
+                              }
+                            />
                             {deckId && (
                               <ButtonAddCard
                                 cardid={cardId}
@@ -195,6 +240,18 @@ function Cards({ lastDeckId }) {
                       <ButtonCardCopyUrl id={card.Id} />
                       <ButtonSearchTwd id={card.Id} />
                       <ButtonSearchPda id={card.Id} />
+                      <ButtonIconed
+                        variant={cardInCompare ? 'third' : 'primary'}
+                        onClick={handleCompare}
+                        title="Compare Card"
+                        icon={
+                          <SearchHeartFill
+                            width="16"
+                            height="24"
+                            viewBox="0 0 16 16"
+                          />
+                        }
+                      />
                       {deckId && (
                         <ButtonAddCard
                           deckid={deckId}

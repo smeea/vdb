@@ -1,7 +1,12 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
+import X from 'assets/images/icons/x.svg';
 import { ResultLibraryTypeImage, ResultLibrarySortForm } from 'components';
+import { useSearchResults } from 'context';
 
-function ResultLibraryTotal({ cards, handleChange }) {
+const ResultLibraryTotal = ({ cards, handleChange, inCompare }) => {
+  const { setLibraryCompare } = useSearchResults();
+
   const byTypes = {};
   let total = 0;
 
@@ -28,10 +33,25 @@ function ResultLibraryTotal({ cards, handleChange }) {
   const value = (
     <>
       <div className="px-2 nobr">
-        <b>TOTAL: {total}</b>
+        <b>
+          {inCompare ? 'COMPARE' : 'TOTAL'}: {total}
+        </b>
       </div>
       <div>{totalOutput}</div>
-      <ResultLibrarySortForm onChange={handleChange} />
+      <div className={inCompare ? 'd-flex' : ''}>
+        <ResultLibrarySortForm onChange={handleChange} />
+        {inCompare && (
+          <div className="ms-1">
+            <Button
+              title="Clear Compare"
+              variant="primary"
+              onClick={() => setLibraryCompare(undefined)}
+            >
+              <X width="16" height="20" viewBox="0 0 16 16" />
+            </Button>
+          </div>
+        )}
+      </div>
     </>
   );
 
@@ -40,6 +60,6 @@ function ResultLibraryTotal({ cards, handleChange }) {
       {value}
     </div>
   );
-}
+};
 
 export default ResultLibraryTotal;

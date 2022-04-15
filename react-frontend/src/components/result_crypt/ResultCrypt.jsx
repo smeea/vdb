@@ -8,9 +8,9 @@ import {
   ResultCryptTotalInfo,
 } from 'components';
 import { resultCryptSort } from 'utils';
-import { useApp, useSearchResults } from 'context';
+import { useApp } from 'context';
 
-function ResultCrypt(props) {
+const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
   const {
     showCryptSearch,
     setShowCryptSearch,
@@ -20,8 +20,6 @@ function ResultCrypt(props) {
     cryptSearchSort,
     changeCryptSearchSort,
   } = useApp();
-
-  const { cryptResults, setCryptResults } = useSearchResults();
 
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
@@ -33,42 +31,43 @@ function ResultCrypt(props) {
 
   const handleChange = (method) => {
     changeCryptSearchSort(method);
-    setSortedCards(() => resultCryptSort(cryptResults, method));
+    setSortedCards(() => resultCryptSort(cards, method));
   };
 
   const handleClear = () => {
     navigate('/crypt');
-    setCryptResults(undefined);
+    setCards(undefined);
     setShowCryptSearch(!showCryptSearch);
   };
 
   useEffect(() => {
-    setSortedCards(() => resultCryptSort(cryptResults, cryptSearchSort));
-  }, [cryptResults]);
+    setSortedCards(() => resultCryptSort(cards, cryptSearchSort));
+  }, [cards]);
 
   return (
     <>
-      {!isMobile && cryptResults.length == 0 && (
+      {!isMobile && cards.length == 0 && (
         <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO CARDS FOUND</b>
         </div>
       )}
-      {cryptResults.length > 0 && (
+      {cards.length > 0 && (
         <>
           <ResultCryptTotal
-            cards={cryptResults}
+            inCompare={inCompare}
+            cards={cards}
             toggleShowInfo={toggleShowInfo}
             handleChange={handleChange}
           />
           {showInfo && (
             <div className="info-message px-2">
-              <ResultCryptTotalInfo cards={cryptResults} />
+              <ResultCryptTotalInfo cards={cards} />
             </div>
           )}
           <ResultCryptTable
             className={className}
-            crypt={props.crypt}
-            activeDeck={props.activeDeck}
+            crypt={crypt}
+            activeDeck={activeDeck}
             resultCards={sortedCards}
             setShowFloatingButtons={setShowFloatingButtons}
           />
@@ -82,7 +81,7 @@ function ResultCrypt(props) {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && props.activeDeck.src === 'my' && (
+      {isMobile && showFloatingButtons && activeDeck.src === 'my' && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${
@@ -94,6 +93,6 @@ function ResultCrypt(props) {
       )}
     </>
   );
-}
+};
 
 export default ResultCrypt;

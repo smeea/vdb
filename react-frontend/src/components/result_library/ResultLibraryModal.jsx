@@ -5,6 +5,7 @@ import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
 import ChevronCompactRight from 'assets/images/icons/chevron-compact-right.svg';
+import SearchHeartFill from 'assets/images/icons/search-heart-fill.svg';
 import {
   ResultLibraryLayoutText,
   ButtonCardCopyUrl,
@@ -14,10 +15,11 @@ import {
   ButtonIconed,
   CardImage,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, useSearchResults } from 'context';
 
-function ResultLibraryModal(props) {
+const ResultLibraryModal = (props) => {
   const { showImage, toggleShowImage, isMobile } = useApp();
+  const { libraryCompare, setLibraryCompare } = useSearchResults();
 
   const [imageSet, setImageSet] = useState(null);
 
@@ -35,6 +37,22 @@ function ResultLibraryModal(props) {
         break;
     }
   };
+
+  const handleCompare = () => {
+    setLibraryCompare(() => {
+      if (!libraryCompare) {
+        return [props.card];
+      } else if (!libraryCompare.includes(props.card)) {
+        return [...libraryCompare, props.card];
+      } else {
+        return libraryCompare.filter((c) => c !== props.card);
+      }
+    });
+
+    props.handleClose();
+  };
+
+  const cardInCompare = libraryCompare && libraryCompare.includes(props.card);
 
   useEffect(() => {
     if (!isMobile) {
@@ -104,6 +122,18 @@ function ResultLibraryModal(props) {
                   <ButtonCardCopyUrl id={props.card.Id} />
                   <ButtonSearchTwd id={props.card.Id} />
                   <ButtonSearchPda id={props.card.Id} />
+                  <ButtonIconed
+                    variant={cardInCompare ? 'third' : 'primary'}
+                    onClick={handleCompare}
+                    title="Compare Card"
+                    icon={
+                      <SearchHeartFill
+                        width="16"
+                        height="24"
+                        viewBox="0 0 16 16"
+                      />
+                    }
+                  />
                 </Stack>
               </div>
             )}
@@ -143,6 +173,18 @@ function ResultLibraryModal(props) {
                   <ButtonSearchTwd id={props.card.Id} />
                   <ButtonSearchPda id={props.card.Id} />
                   <ButtonToggleShowImage />
+                  <ButtonIconed
+                    variant={cardInCompare ? 'third' : 'primary'}
+                    onClick={handleCompare}
+                    title="Compare Card"
+                    icon={
+                      <SearchHeartFill
+                        width="16"
+                        height="24"
+                        viewBox="0 0 16 16"
+                      />
+                    }
+                  />
                 </Stack>
                 <ButtonIconed
                   variant="primary"
@@ -174,6 +216,6 @@ function ResultLibraryModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default ResultLibraryModal;

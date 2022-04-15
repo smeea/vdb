@@ -19,7 +19,8 @@ function Crypt({ lastDeckId }) {
     activeDeck,
   } = useApp();
 
-  const { cryptResults } = useSearchResults();
+  const { cryptResults, setCryptResults, cryptCompare, setCryptCompare } =
+    useSearchResults();
 
   let myActiveDeck;
   if (isMobile) {
@@ -65,8 +66,22 @@ function Crypt({ lastDeckId }) {
         )}
         {showResultCol && (
           <Col md={7} lg={6} xl={5} className={'px-0 px-md-2 px-xl-3 py-md-3'}>
+            {((isMobile && cryptCompare && cryptResults) ||
+              (!isMobile && cryptCompare)) && (
+              <div className="pb-3">
+                <ResultCrypt
+                  inCompare={true}
+                  cards={cryptCompare}
+                  setCards={setCryptCompare}
+                  crypt={deckData && deckData.crypt}
+                  activeDeck={myActiveDeck}
+                />
+              </div>
+            )}
             {cryptResults && (
               <ResultCrypt
+                cards={cryptResults}
+                setCards={setCryptResults}
                 crypt={deckData && deckData.crypt}
                 activeDeck={myActiveDeck}
               />

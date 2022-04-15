@@ -5,6 +5,7 @@ import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
 import ChevronCompactRight from 'assets/images/icons/chevron-compact-right.svg';
+import SearchHeartFill from 'assets/images/icons/search-heart-fill.svg';
 import {
   ResultCryptLayoutText,
   ButtonCardCopyUrl,
@@ -14,10 +15,11 @@ import {
   ButtonIconed,
   CardImage,
 } from 'components';
-import { useApp } from 'context';
+import { useApp, useSearchResults } from 'context';
 
-function ResultCryptModal(props) {
+const ResultCryptModal = (props) => {
   const { showImage, toggleShowImage, isMobile } = useApp();
+  const { cryptCompare, setCryptCompare } = useSearchResults();
 
   const [imageSet, setImageSet] = useState(null);
   const [card, setCard] = useState(props.card);
@@ -36,6 +38,22 @@ function ResultCryptModal(props) {
         break;
     }
   };
+
+  const handleCompare = () => {
+    setCryptCompare(() => {
+      if (!cryptCompare) {
+        return [props.card];
+      } else if (!cryptCompare.includes(props.card)) {
+        return [...cryptCompare, props.card];
+      } else {
+        return cryptCompare.filter((c) => c !== props.card);
+      }
+    });
+
+    props.handleClose();
+  };
+
+  const cardInCompare = cryptCompare && cryptCompare.includes(props.card);
 
   useEffect(() => {
     setCard(props.card);
@@ -108,6 +126,18 @@ function ResultCryptModal(props) {
                   <ButtonCardCopyUrl id={card.Id} />
                   <ButtonSearchTwd id={card.Id} />
                   <ButtonSearchPda id={card.Id} />
+                  <ButtonIconed
+                    variant={cardInCompare ? 'third' : 'primary'}
+                    onClick={handleCompare}
+                    title="Compare Card"
+                    icon={
+                      <SearchHeartFill
+                        width="16"
+                        height="24"
+                        viewBox="0 0 16 16"
+                      />
+                    }
+                  />
                 </Stack>
               </div>
             )}
@@ -148,6 +178,18 @@ function ResultCryptModal(props) {
                   <ButtonSearchTwd id={card.Id} />
                   <ButtonSearchPda id={card.Id} />
                   <ButtonToggleShowImage />
+                  <ButtonIconed
+                    variant={cardInCompare ? 'third' : 'primary'}
+                    onClick={handleCompare}
+                    title="Compare Card"
+                    icon={
+                      <SearchHeartFill
+                        width="16"
+                        height="24"
+                        viewBox="0 0 16 16"
+                      />
+                    }
+                  />
                 </Stack>
                 <ButtonIconed
                   variant="primary"
@@ -179,6 +221,6 @@ function ResultCryptModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default ResultCryptModal;

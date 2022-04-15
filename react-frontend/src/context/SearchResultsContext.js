@@ -20,6 +20,9 @@ export const SearchResultsProvider = (props) => {
   const [cryptResults, setCryptResults] = useState(undefined);
   const [libraryResults, setLibraryResults] = useState(undefined);
 
+  const [cryptCompare, setCryptCompare] = useState(undefined);
+  const [libraryCompare, setLibraryCompare] = useState(undefined);
+
   return (
     <SearchResultsContext.Provider
       value={{
@@ -31,6 +34,11 @@ export const SearchResultsProvider = (props) => {
         setCryptResults,
         libraryResults,
         setLibraryResults,
+
+        cryptCompare,
+        setCryptCompare,
+        libraryCompare,
+        setLibraryCompare,
       }}
     >
       {props.children}

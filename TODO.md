@@ -3,7 +3,6 @@
 
 # FEATURES
 - Export all in xlsx and csv
-- Cards compare
 
 # MAYBE LATER FEATURES
 - Search for similar PDA/TWD decks
@@ -19,6 +18,7 @@
 - Transit from useContext to Recoil
 - Reduce re-renders
 - Reduce first loading (Google PageSpeed Insights)
+- Refactor Result(Crypt|Library)Modal (many duplications)
 
 # IMPROVE TECHNOLOGY - BACKEND
 

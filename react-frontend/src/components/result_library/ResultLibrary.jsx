@@ -4,9 +4,9 @@ import X from 'assets/images/icons/x.svg';
 import Plus from 'assets/images/icons/plus.svg';
 import { ResultLibraryTable, ResultLibraryTotal } from 'components';
 import { resultLibrarySort } from 'utils';
-import { useApp, useSearchResults } from 'context';
+import { useApp } from 'context';
 
-function ResultLibrary(props) {
+const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
   const {
     showLibrarySearch,
     setShowLibrarySearch,
@@ -17,43 +17,42 @@ function ResultLibrary(props) {
     changeLibrarySearchSort,
   } = useApp();
 
-  const { libraryResults, setLibraryResults } = useSearchResults();
-
   const [sortedCards, setSortedCards] = useState([]);
   const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const navigate = useNavigate();
 
   const handleChange = (method) => {
     changeLibrarySearchSort(method);
-    setSortedCards(() => resultLibrarySort(libraryResults, method));
+    setSortedCards(() => resultLibrarySort(cards, method));
   };
 
   const handleClear = () => {
     navigate('/library');
-    setLibraryResults(undefined);
+    setCards(undefined);
     setShowLibrarySearch(!showLibrarySearch);
   };
 
   useEffect(() => {
-    setSortedCards(() => resultLibrarySort(libraryResults, librarySearchSort));
-  }, [libraryResults]);
+    setSortedCards(() => resultLibrarySort(cards, librarySearchSort));
+  }, [cards]);
 
   return (
     <>
-      {!isMobile && libraryResults.length == 0 && (
+      {!isMobile && cards.length == 0 && (
         <div className="d-flex align-items-center justify-content-center error-message">
           <b>NO CARDS FOUND</b>
         </div>
       )}
-      {libraryResults.length > 0 && (
+      {cards.length > 0 && (
         <>
           <ResultLibraryTotal
-            cards={libraryResults}
+            inCompare={inCompare}
+            cards={cards}
             handleChange={handleChange}
           />
           <ResultLibraryTable
-            library={props.library}
-            activeDeck={props.activeDeck}
+            library={library}
+            activeDeck={activeDeck}
             resultCards={sortedCards}
             setShowFloatingButtons={setShowFloatingButtons}
           />
@@ -67,7 +66,7 @@ function ResultLibrary(props) {
           <X viewBox="0 0 16 16" />
         </div>
       )}
-      {isMobile && showFloatingButtons && props.activeDeck.src === 'my' && (
+      {isMobile && showFloatingButtons && activeDeck.src === 'my' && (
         <div
           onClick={() => toggleAddMode()}
           className={`d-flex float-right-middle float-add-${
@@ -79,6 +78,6 @@ function ResultLibrary(props) {
       )}
     </>
   );
-}
+};
 
 export default ResultLibrary;
