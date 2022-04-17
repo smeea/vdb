@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Stack } from 'react-bootstrap';
+import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { TwdOpenDeckButton, DeckCloneButton } from 'components';
 import { useApp, useSearchForms } from 'context';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
@@ -36,36 +37,27 @@ function TwdResultDescription(props) {
     <table>
       <tbody>
         <tr>
-          <td className="d-inline">
+          <td className="d-inline blue">
             <b>Date:</b>
           </td>
-          <td className="ps-2">
-            <div className="d-flex justify-content-between">
-              {props.deck['creation_date']}
-              {isMobile && (
-                <div className="d-inline">
-                  <b>P:{props.deck['players']}</b>
-                </div>
-              )}
-            </div>
-          </td>
+          <td className="ps-2">{props.deck['creation_date']}</td>
         </tr>
         {!isMobile && (
           <tr>
-            <td className="d-inline">
+            <td className="d-inline blue">
               <b>Players</b>:
             </td>
             <td className="ps-2">{props.deck['players']}</td>
           </tr>
         )}
         <tr>
-          <td className="d-inline">
+          <td className="d-inline blue">
             <b>Event</b>:
           </td>
           <td className="ps-2">{props.deck['event']}</td>
         </tr>
         <tr>
-          <td className="d-inline">
+          <td className="d-inline blue">
             <b>Location</b>:
           </td>
           <td className="ps-2">
@@ -78,7 +70,7 @@ function TwdResultDescription(props) {
           </td>
         </tr>
         <tr>
-          <td className="d-inline">
+          <td className="d-inline blue">
             <b>Player</b>:
           </td>
           <td className="ps-2">
@@ -92,7 +84,7 @@ function TwdResultDescription(props) {
         </tr>
         {!isMobile && (
           <tr>
-            <td className="d-inline">
+            <td className="d-inline blue">
               <b>Deck</b>:
             </td>
             <td className="ps-2">{props.deck['name']}</td>
@@ -105,26 +97,32 @@ function TwdResultDescription(props) {
   return (
     <>
       {isMobile ? (
-        <>
-          <Row className="pb-1 mx-0">
-            <Col xs={9} className="px-1 mx-0">
-              {Description}
-            </Col>
-            <Col xs={3} className="px-1">
-              <Stack gap={1}>
-                <TwdOpenDeckButton deckid={props.deck['deckid']} />
-                {username && (
-                  <DeckCloneButton
-                    deck={props.deck}
-                    activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
-                    setShowButtons={() => {}}
-                    inTwd
-                  />
-                )}
-              </Stack>
-            </Col>
-          </Row>
-        </>
+        <Row className="pb-1 mx-0">
+          <Col xs={9} className="px-1 mx-0">
+            {Description}
+          </Col>
+          <Col xs={3} className="px-1">
+            <Stack gap={1}>
+              {isMobile && (
+                <div className="d-flex justify-content-center align-items-center large mx-1 mb-1 border-dashed blue">
+                  <div className="d-flex align-items-center pe-1">
+                    <PeopleFill />
+                  </div>{' '}
+                  {props.deck['players']}
+                </div>
+              )}
+              <TwdOpenDeckButton deckid={props.deck['deckid']} />
+              {username && (
+                <DeckCloneButton
+                  deck={props.deck}
+                  activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
+                  setShowButtons={() => {}}
+                  inTwd
+                />
+              )}
+            </Stack>
+          </Col>
+        </Row>
       ) : (
         <>
           {Description}
