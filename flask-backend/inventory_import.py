@@ -18,17 +18,19 @@ def inventory_import(deckText):
     for card in crypt:
         adv = True if card["Adv"] and card["Adv"][0] else False
         name = re.sub(r"\W", "", unidecode(card["Name"])).lower()
+        cardid = str(card["Id"])
 
         if name not in cardbase:
-            cardbase[name] = {"base": card["Id"], card["Group"]: card["Id"]}
+            cardbase[name] = {"base": cardid, card["Group"]: cardid}
         elif adv:
-            cardbase[name]["adv"] = card["Id"]
+            cardbase[name]["adv"] = cardid
         else:
-            cardbase[name][card["Group"]] = card["Id"]
+            cardbase[name][card["Group"]] = cardid
 
     for card in library:
         name = re.sub(r"\W", "", unidecode(card["Name"])).lower()
-        cardbase[name] = {"base": str(card["Id"])}
+        cardid = str(card["Id"])
+        cardbase[name] = {"base": cardid}
 
     for i in linesArray:
         id, quantity = import_parse_card(i, cardbase)

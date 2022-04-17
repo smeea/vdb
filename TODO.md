@@ -1,6 +1,5 @@
 # FIX
 - Bad imports for anonymous import
-- Inventory import from CSV
 
 # FEATURES
 - Export all in xlsx and csv
