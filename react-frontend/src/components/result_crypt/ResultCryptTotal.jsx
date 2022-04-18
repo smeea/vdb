@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
+import { ANY } from 'utils/constants';
 import { ResultCryptSortForm } from 'components';
 import { useSearchResults } from 'context';
 
@@ -35,7 +36,7 @@ const ResultCryptTotal = ({
     return (
       <span key={k} className="d-inline-block nobr pe-3">
         <span className="blue">
-          <b>G{k == 'ANY' ? 'X' : k}:</b>
+          <b>G{k == ANY ? 'X' : k}:</b>
         </span>
         {byGroups[k]}
         <div

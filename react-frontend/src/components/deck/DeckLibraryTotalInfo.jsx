@@ -1,4 +1,5 @@
 import React from 'react';
+import { ANY } from 'utils/constants';
 import {
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
@@ -34,7 +35,7 @@ function DeckLibraryTotalInfo(props) {
   const DisciplinesInfo = byDisciplinesSorted.map((d, idx) => {
     return (
       <span key={idx} className="d-inline-block nobr ps-0 pe-3">
-        {d === 'any' ? (
+        {d === ANY ? (
           <>
             <span title="No Disciplines">
               <b>ND</b>
