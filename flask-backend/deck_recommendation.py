@@ -17,6 +17,9 @@ def deck_recommendation(cards):
     library = {}
 
     for k, v in cards.items():
+        if v < 1:
+            continue
+
         k = int(k)
         if k > 200000:
             crypt[k] = {"c": cardbase_crypt[str(k)], "q": v}
@@ -25,6 +28,7 @@ def deck_recommendation(cards):
             library[k] = {"c": cardbase_lib[str(k)], "q": v}
 
     discipline_multiplier = {}
+    group_multiplier = {}
 
     for i in crypt.values():
         for k, v in i["c"]["Disciplines"].items():
@@ -33,8 +37,6 @@ def deck_recommendation(cards):
             else:
                 discipline_multiplier[k] += i["q"] * v / crypt_total
 
-    group_multiplier = {}
-    for i in crypt.values():
         g = i["c"]["Group"]
         if g not in group_multiplier:
             group_multiplier[g] = i["q"] / crypt_total
