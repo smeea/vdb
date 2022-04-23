@@ -52,6 +52,7 @@ export { default as DeckRecommendationButton } from './DeckRecommendationButton.
 export { default as DeckRecommendationLibrary } from './DeckRecommendationLibrary.jsx';
 export { default as DeckRecommendationLibraryTable } from './DeckRecommendationLibraryTable.jsx';
 export { default as DeckRecommendationModal } from './DeckRecommendationModal.jsx';
+export { default as DeckSearchSimilarButton } from './DeckSearchSimilarButton.jsx';
 export { default as DeckSelectAdvModal } from './DeckSelectAdvModal.jsx';
 export { default as DeckSelectAdvModalTagsFilter } from './DeckSelectAdvModalTagsFilter.jsx';
 export { default as DeckSelectAdvModalTotal } from './DeckSelectAdvModalTotal.jsx';

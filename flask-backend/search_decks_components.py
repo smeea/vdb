@@ -423,6 +423,68 @@ def get_missing_fields(source):
     return deck
 
 
+def get_decks_by_similar(deckid, decks):
+    cards = {}
+
+    if len(deckid) == 32:
+        deck = Deck.query.get(deckid)
+        cards = deck.cards
+
+    elif ":" in deckid:
+        set, precon = deckid.split(":")
+
+        with open("preconDecks.json", "r") as precons_file:
+            precon_decks = json.load(precons_file)
+            cards = precon_decks[set][precon]
+
+    else:
+        with open("twdDecksById.json", "r") as twdDecks_file:
+            twdDecks = json.load(twdDecks_file)
+            cards = twdDecks[deckid]["cards"]
+
+
+    CRYPT_COEF = 4  # Increase points for Crypt cards
+    AC_COEF = 0.5  # Reduce points for Anarch Convert
+    SIMILARITY_THRESHOLD = 50  # Minimum points to pass
+
+    match_decks = []
+    query_crypt_total = 0
+    query_library_total = 0
+
+    for cardid, q in cards.items():
+        if int(cardid) > 200000:
+            query_crypt_total += q
+        else:
+            query_library_total += q
+
+    for deck in decks:
+        crypt_ratio = deck['crypt_total'] / query_crypt_total
+        library_ratio = deck['library_total'] / query_library_total
+
+        matches_crypt = 0
+        matches_library = 0
+
+        for cardid, q in cards.items():
+            cardid = int(cardid)
+            if cardid > 200000:
+                if cardid in deck['crypt']:
+                    # Reduce points for Anarch Convert
+                    if cardid == 200076:
+                        matches_crypt += min(q, deck['crypt'][cardid]) * AC_COEF
+                    else:
+                        matches_crypt += min(q, deck['crypt'][cardid])
+
+            elif cardid in deck['library']:
+                matches_library += min(q, deck['library'][cardid])
+
+        similarity = matches_crypt * crypt_ratio * CRYPT_COEF + matches_library * library_ratio
+
+        if similarity > SIMILARITY_THRESHOLD:
+            match_decks.append(deck)
+
+    return match_decks
+
+
 def sanitize_twd(deck):
     d = deck.copy()
     del d["description"]

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stack } from 'react-bootstrap';
 import {
+  DeckSearchSimilarButton,
   DeckCloneButton,
   DeckDeleteButton,
   DeckCopyUrlButton,
@@ -36,75 +37,76 @@ function DeckButtons({
   return (
     <Stack gap={1}>
       <DeckImport setShowInfo={setShowInfo} setShowButtons={setShowButtons} />
-      {username && deck && (
-        <DeckCloneButton
-          deck={deck}
-          activeDeck={activeDeck}
-          setShowButtons={setShowButtons}
-        />
-      )}
       {deck && (
-        <DeckExportButton
-          deck={deck}
-          activeDeck={activeDeck}
-          setShowButtons={setShowButtons}
-        />
-      )}
-      {isAuthor && !isPublic && deck && (
-        <DeckDeleteButton deck={deck} setShowButtons={setShowButtons} />
-      )}
-      {isAuthor && !isPublic && deck && (
-        <DeckBranchCreateButton
-          deck={deck}
-          activeDeck={activeDeck}
-          setShowButtons={setShowButtons}
-        />
-      )}
-      {isAuthor &&
-        !isPublic &&
-        deck &&
-        (deck.master || (deck.branches && deck.branches.length > 0)) && (
-          <DeckBranchDeleteButton deck={deck} setShowButtons={setShowButtons} />
-        )}
-      {isAuthor && deck && (
-        <DeckPublicButton deck={deck} setShowButtons={setShowButtons} />
-      )}
+        <>
+          {username && (
+            <DeckCloneButton
+              deck={deck}
+              activeDeck={activeDeck}
+              setShowButtons={setShowButtons}
+            />
+          )}
+          <DeckExportButton
+            deck={deck}
+            activeDeck={activeDeck}
+            setShowButtons={setShowButtons}
+          />
+          {isAuthor && !isPublic && (
+            <DeckDeleteButton deck={deck} setShowButtons={setShowButtons} />
+          )}
+          {isAuthor && !isPublic && (
+            <DeckBranchCreateButton
+              deck={deck}
+              activeDeck={activeDeck}
+              setShowButtons={setShowButtons}
+            />
+          )}
+          {isAuthor &&
+            !isPublic &&
+            (deck.master || (deck.branches && deck.branches.length > 0)) && (
+              <DeckBranchDeleteButton
+                deck={deck}
+                setShowButtons={setShowButtons}
+              />
+            )}
+          {isAuthor && (
+            <DeckPublicButton deck={deck} setShowButtons={setShowButtons} />
+          )}
 
-      {deck && (
-        <DeckDiffButton deckid={deck.deckid} setShowButtons={setShowButtons} />
-      )}
-      {deck && (
-        <DeckCopyUrlButton deck={deck} setShowButtons={setShowButtons} />
-      )}
-      {deck && (
-        <DeckProxyButton
-          deck={deck}
-          missingCrypt={missingCrypt}
-          missingLibrary={missingLibrary}
-          setShowInfo={setShowInfo}
-          setShowButtons={setShowButtons}
-          setShowProxySelect={setShowProxySelect}
-        />
-      )}
-      {deck && (
-        <DeckDrawButton
-          setShowDraw={setShowDraw}
-          setShowButtons={setShowButtons}
-        />
-      )}
-      {deck && (
-        <DeckRecommendationButton
-          setShowRecommendation={setShowRecommendation}
-          setShowButtons={setShowButtons}
-        />
-      )}
-      {deck && inventoryMode && (
-        <DeckMissingButton
-          deck={deck}
-          missingCrypt={missingCrypt}
-          missingLibrary={missingLibrary}
-          setShowButtons={setShowButtons}
-        />
+          <DeckDiffButton
+            deckid={deck.deckid}
+            setShowButtons={setShowButtons}
+          />
+          <DeckCopyUrlButton deck={deck} setShowButtons={setShowButtons} />
+          <DeckProxyButton
+            deck={deck}
+            missingCrypt={missingCrypt}
+            missingLibrary={missingLibrary}
+            setShowInfo={setShowInfo}
+            setShowButtons={setShowButtons}
+            setShowProxySelect={setShowProxySelect}
+          />
+          <DeckRecommendationButton
+            setShowRecommendation={setShowRecommendation}
+            setShowButtons={setShowButtons}
+          />
+          <DeckSearchSimilarButton
+            deck={deck}
+            setShowButtons={setShowButtons}
+          />
+          <DeckDrawButton
+            setShowDraw={setShowDraw}
+            setShowButtons={setShowButtons}
+          />
+          {inventoryMode && (
+            <DeckMissingButton
+              deck={deck}
+              missingCrypt={missingCrypt}
+              missingLibrary={missingLibrary}
+              setShowButtons={setShowButtons}
+            />
+          )}
+        </>
       )}
     </Stack>
   );

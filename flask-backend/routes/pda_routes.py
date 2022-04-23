@@ -12,7 +12,7 @@ from search_decks_components import (
     match_inventory,
 )
 from api import app, db, login
-from models import User, Deck
+from models import Deck
 
 
 @login.unauthorized_handler
@@ -28,7 +28,6 @@ def getPdaAuthors():
             authors.append(d.author_public_name)
 
     return jsonify([{"label": a, "value": a} for a in authors])
-
 
 @app.route("/api/search/pda", methods=["POST"])
 def searchPdaRoute():
@@ -75,6 +74,7 @@ def searchPdaRoute():
         "capacity",
         "disciplines",
         "cardtypes",
+        "similar",
     ]
 
     queries = [

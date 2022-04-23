@@ -1,11 +1,11 @@
 # FIX
 - Bad imports for anonymous import
+- Remove cards from deck object (using crypt+library instead)
 
 # FEATURES
 - Export all in xlsx and csv
 
 # MAYBE LATER FEATURES
-- Search for similar PDA/TWD decks
 - Comments for PDA
 - Sorting by new/favorites/comments in PDA/TWD
 - Script to update images from static.krcg.org
