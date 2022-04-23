@@ -7,7 +7,7 @@ import { useApp, useSearchForms } from 'context';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 
 function TwdResultDescription(props) {
-  const { username, isMobile } = useApp();
+  const { username, isMobile, isDesktop } = useApp();
   const { setTwdFormState } = useSearchForms();
 
   const navigate = useNavigate();
@@ -42,14 +42,6 @@ function TwdResultDescription(props) {
           </td>
           <td className="ps-2">{props.deck['creation_date']}</td>
         </tr>
-        {!isMobile && (
-          <tr>
-            <td className="d-inline blue">
-              <b>Players</b>:
-            </td>
-            <td className="ps-2">{props.deck['players']}</td>
-          </tr>
-        )}
         <tr>
           <td className="d-inline blue">
             <b>Event</b>:
@@ -82,49 +74,33 @@ function TwdResultDescription(props) {
             </div>
           </td>
         </tr>
-        {!isMobile && (
-          <tr>
-            <td className="d-inline blue">
-              <b>Deck</b>:
-            </td>
-            <td className="ps-2">{props.deck['name']}</td>
-          </tr>
-        )}
+        <tr>
+          <td className="d-inline blue">
+            <b>Deck</b>:
+          </td>
+          <td className="ps-2">{props.deck['name']}</td>
+        </tr>
       </tbody>
     </table>
   );
 
   return (
     <>
-      {isMobile ? (
-        <Row className="pb-1 mx-0">
-          <Col xs={9} className="px-1 mx-0">
-            {Description}
-          </Col>
-          <Col xs={3} className="px-1">
-            <Stack gap={1}>
-              {isMobile && (
-                <div className="d-flex justify-content-center align-items-center large mx-1 mb-1 border-dashed blue">
-                  <div className="d-flex align-items-center pe-1">
-                    <PeopleFill />
-                  </div>{' '}
-                  {props.deck['players']}
-                </div>
-              )}
-              <TwdOpenDeckButton deckid={props.deck['deckid']} />
-              {username && (
-                <DeckCloneButton
-                  deck={props.deck}
-                  activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
-                  setShowButtons={() => {}}
-                  inTwd
-                />
-              )}
-            </Stack>
-          </Col>
-        </Row>
-      ) : (
+      {isDesktop ? (
         <>
+          <div
+            className={`d-flex justify-content-center align-items-center large mx-1 mt-1 mb-2 blue ${
+              props.deck['players'] >= 40
+                ? 'bold border-dashed-thick'
+                : 'border-dashed'
+            }`}
+            title="Players"
+          >
+            <div className="d-flex align-items-center pe-1">
+              <PeopleFill />
+            </div>{' '}
+            {props.deck['players']}
+          </div>
           {Description}
           <Stack gap={1} className="py-2">
             <TwdOpenDeckButton deckid={props.deck['deckid']} />
@@ -137,6 +113,37 @@ function TwdResultDescription(props) {
             )}
           </Stack>
         </>
+      ) : (
+        <Row className="pb-1 mx-0">
+          <Col xs={9} className="px-1 mx-0">
+            {Description}
+          </Col>
+          <Col xs={3} className="px-1">
+            <Stack gap={1}>
+              <div
+                className={`d-flex justify-content-center align-items-center large mx-1 mb-1 blue ${
+                  props.deck['players'] >= 40
+                    ? 'bold border-dashed-thick'
+                    : 'border-dashed'
+                }`}
+              >
+                <div className="d-flex align-items-center pe-1">
+                  <PeopleFill />
+                </div>{' '}
+                {props.deck['players']}
+              </div>
+              <TwdOpenDeckButton deckid={props.deck['deckid']} />
+              {username && (
+                <DeckCloneButton
+                  deck={props.deck}
+                  activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
+                  setShowButtons={() => {}}
+                  inTwd
+                />
+              )}
+            </Stack>
+          </Col>
+        </Row>
       )}
     </>
   );
