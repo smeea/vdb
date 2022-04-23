@@ -14,7 +14,7 @@ import {
   ResultClanImage,
   ResultCryptGroup,
   ResultCryptTitle,
-  ResultCryptModal,
+  ResultModal,
   ConditionalOverlayTrigger,
 } from 'components';
 import { deckSort, getHardTotal, getSoftMax } from 'utils';
@@ -229,7 +229,7 @@ const InventoryCryptTable = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

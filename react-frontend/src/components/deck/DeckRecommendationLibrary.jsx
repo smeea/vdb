@@ -2,7 +2,7 @@ import React from 'react';
 import {
   ResultLibraryType,
   DeckRecommendationLibraryTable,
-  ResultLibraryModal,
+  ResultModal,
 } from 'components';
 import { useApp } from 'context';
 import { resultLibrarySort, getCardsGroupedBy } from 'utils';
@@ -12,7 +12,6 @@ import { GROUPED_TYPE, TYPE } from 'utils/constants';
 function DeckRecommendationLibrary(props) {
   const { cards, activeDeck, isAuthor, setShowFloatingButtons } = props;
   const { isMobile } = useApp();
-  // const [LibraryByTypeTable, setLibraryByTypeTable] = useState([]);
 
   const sortedLibrary = resultLibrarySort(cards, GROUPED_TYPE);
   const libraryByType = getCardsGroupedBy(sortedLibrary, TYPE);
@@ -51,7 +50,7 @@ function DeckRecommendationLibrary(props) {
       ))}
 
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

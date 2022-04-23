@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   CardPopover,
   ResultLibraryName,
-  ResultLibraryModal,
+  ResultModal,
   NewLibraryCard,
   ConditionalOverlayTrigger,
 } from 'components';
@@ -58,7 +58,7 @@ function TwdSearchFormLibrary(props) {
       <NewLibraryCard onChange={handleAdd} selectedValue={null} />
       {libraryCardsList}
       {modalCard && (
-        <ResultLibraryModal
+        <ResultModal
           show={modalCard ? true : false}
           card={modalCard}
           handleClose={() => setModalCard(false)}

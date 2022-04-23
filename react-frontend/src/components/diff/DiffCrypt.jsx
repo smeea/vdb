@@ -5,7 +5,7 @@ import {
   DiffCryptTable,
   DeckCryptTotalInfo,
   DeckNewCryptCard,
-  ResultCryptModal,
+  ResultModal,
   DeckCryptHeader,
 } from 'components';
 
@@ -154,7 +154,7 @@ const DiffCrypt = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

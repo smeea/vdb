@@ -1,5 +1,5 @@
 import React from 'react';
-import { DeckProxyCryptTable, ResultCryptModal } from 'components';
+import { DeckProxyCryptTable, ResultModal } from 'components';
 import { useApp } from 'context';
 import { countCards } from 'utils';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
@@ -84,7 +84,7 @@ const DeckProxyCrypt = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

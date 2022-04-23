@@ -6,7 +6,7 @@ import {
   DeckLibraryTotalInfo,
   DeckNewLibraryCard,
   ResultLibraryType,
-  ResultLibraryModal,
+  ResultModal,
   DeckDrawProbabilityModal,
   DeckLibraryHeader,
   DeckLibraryTypeDrawInfo,
@@ -197,7 +197,7 @@ const DeckLibrary = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

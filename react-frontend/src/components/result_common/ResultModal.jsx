@@ -7,6 +7,7 @@ import ChevronCompactLeft from 'assets/images/icons/chevron-compact-left.svg';
 import ChevronCompactRight from 'assets/images/icons/chevron-compact-right.svg';
 import SearchHeartFill from 'assets/images/icons/search-heart-fill.svg';
 import {
+  ResultCryptLayoutText,
   ResultLibraryLayoutText,
   ButtonCardCopyUrl,
   ButtonToggleShowImage,
@@ -17,11 +18,12 @@ import {
 } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-const ResultLibraryModal = (props) => {
+const ResultModal = (props) => {
   const { showImage, toggleShowImage, isMobile } = useApp();
-  const { libraryCompare, setLibraryCompare } = useSearchResults();
+  const { compare, setCompare } = useSearchResults();
 
   const [imageSet, setImageSet] = useState(null);
+  const [card, setCard] = useState(props.card);
 
   const handleKeyDown = (event) => {
     switch (event.key) {
@@ -39,22 +41,24 @@ const ResultLibraryModal = (props) => {
   };
 
   const handleCompare = () => {
-    setLibraryCompare(() => {
-      if (!libraryCompare) {
+    setCompare(() => {
+      if (!compare) {
         return [props.card];
-      } else if (!libraryCompare.includes(props.card)) {
-        return [...libraryCompare, props.card];
+      } else if (!compare.includes(props.card)) {
+        return [...compare, props.card];
       } else {
-        return libraryCompare.filter((c) => c !== props.card);
+        return compare.filter((c) => c !== props.card);
       }
     });
 
     props.handleClose();
   };
 
-  const cardInCompare = libraryCompare && libraryCompare.includes(props.card);
+  const cardInCompare = compare && compare.includes(props.card);
 
   useEffect(() => {
+    setCard(props.card);
+
     if (!isMobile) {
       window.addEventListener('keydown', handleKeyDown);
 
@@ -85,7 +89,7 @@ const ResultLibraryModal = (props) => {
               <>
                 <CardImage
                   className="card-popover full-width"
-                  card={props.card}
+                  card={card}
                   set={imageSet}
                   onClick={props.handleClose}
                 />
@@ -112,16 +116,26 @@ const ResultLibraryModal = (props) => {
               </>
             ) : (
               <div className="p-3">
-                <ResultLibraryLayoutText
-                  card={props.card}
-                  handleClose={props.handleClose}
-                  setImageSet={setImageSet}
-                  forceInventoryMode={props.forceInventoryMode}
-                />
+                {card.Id > 200000 ? (
+                  <ResultCryptLayoutText
+                    card={card}
+                    setCard={setCard}
+                    handleClose={props.handleClose}
+                    setImageSet={setImageSet}
+                    forceInventoryMode={props.forceInventoryMode}
+                  />
+                ) : (
+                  <ResultLibraryLayoutText
+                    card={props.card} // props.card?
+                    handleClose={props.handleClose}
+                    setImageSet={setImageSet}
+                    forceInventoryMode={props.forceInventoryMode}
+                  />
+                )}
                 <Stack direction="horizontal" gap={1} className="pt-3">
-                  <ButtonCardCopyUrl id={props.card.Id} />
-                  <ButtonSearchTwd id={props.card.Id} />
-                  <ButtonSearchPda id={props.card.Id} />
+                  <ButtonCardCopyUrl id={card.Id} />
+                  <ButtonSearchTwd id={card.Id} />
+                  <ButtonSearchPda id={card.Id} />
                   <ButtonIconed
                     variant={cardInCompare ? 'third' : 'primary'}
                     onClick={handleCompare}
@@ -155,23 +169,33 @@ const ResultLibraryModal = (props) => {
             <Col md={5} className="bg-black px-0">
               <CardImage
                 className="card-popover full-width"
-                card={props.card}
+                card={card}
                 set={imageSet}
                 onClick={props.handleClose}
               />
             </Col>
             <Col className="p-4">
-              <ResultLibraryLayoutText
-                card={props.card}
-                handleClose={props.handleClose}
-                setImageSet={setImageSet}
-                forceInventoryMode={props.forceInventoryMode}
-              />
+              {card.Id > 200000 ? (
+                <ResultCryptLayoutText
+                  card={card}
+                  setCard={setCard}
+                  handleClose={props.handleClose}
+                  setImageSet={setImageSet}
+                  forceInventoryMode={props.forceInventoryMode}
+                />
+              ) : (
+                <ResultLibraryLayoutText
+                  card={props.card}
+                  handleClose={props.handleClose}
+                  setImageSet={setImageSet}
+                  forceInventoryMode={props.forceInventoryMode}
+                />
+              )}
               <div className="d-flex justify-content-between pt-3">
                 <Stack direction="horizontal" gap={1}>
-                  <ButtonCardCopyUrl id={props.card.Id} />
-                  <ButtonSearchTwd id={props.card.Id} />
-                  <ButtonSearchPda id={props.card.Id} />
+                  <ButtonCardCopyUrl id={card.Id} />
+                  <ButtonSearchTwd id={card.Id} />
+                  <ButtonSearchPda id={card.Id} />
                   <ButtonToggleShowImage />
                   <ButtonIconed
                     variant={cardInCompare ? 'third' : 'primary'}
@@ -218,4 +242,4 @@ const ResultLibraryModal = (props) => {
   );
 };
 
-export default ResultLibraryModal;
+export default ResultModal;

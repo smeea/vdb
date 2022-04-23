@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   CardPopover,
   ResultCryptName,
-  ResultCryptModal,
+  ResultModal,
   NewCryptCard,
   ConditionalOverlayTrigger,
 } from 'components';
@@ -67,7 +67,7 @@ function TwdSearchFormCrypt(props) {
       />
       {cryptCardsList}
       {modalCard && (
-        <ResultCryptModal
+        <ResultModal
           show={modalCard ? true : false}
           card={modalCard}
           handleClose={() => setModalCard(false)}

@@ -5,7 +5,7 @@ import {
   ResultCryptName,
   ResultCryptCapacity,
   ResultClanImage,
-  ResultCryptModal,
+  ResultModal,
   ConditionalOverlayTrigger,
 } from 'components';
 import { ANY } from 'utils/constants';
@@ -152,7 +152,7 @@ function TwdResultCrypt(props) {
         <tbody>{cardLines}</tbody>
       </table>
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

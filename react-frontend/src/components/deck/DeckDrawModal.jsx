@@ -3,8 +3,7 @@ import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import ArrowRepeat from 'assets/images/icons/arrow-repeat.svg';
 import {
-  ResultCryptModal,
-  ResultLibraryModal,
+  ResultModal,
   DeckDrawCryptTable,
   DeckDrawLibraryTable,
 } from 'components';
@@ -255,15 +254,7 @@ function DeckDrawModal(props) {
             </Row>
           )}
           {shouldShowModal && !isSideMode && (
-            <ResultCryptModal
-              card={currentModalCard}
-              handleModalCardChange={handleModalCardChange}
-              handleClose={handleModalCardClose}
-              nested={true}
-            />
-          )}
-          {shouldShowModal && isSideMode && (
-            <ResultLibraryModal
+            <ResultModal
               card={currentModalCard}
               handleModalCardChange={handleModalCardChange}
               handleClose={handleModalCardClose}

@@ -13,7 +13,7 @@ import {
   ResultLibraryCost,
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
-  ResultLibraryModal,
+  ResultModal,
   ResultLibraryName,
   ResultLibraryTrifle,
   ConditionalOverlayTrigger,
@@ -247,7 +247,7 @@ const InventoryLibraryTable = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

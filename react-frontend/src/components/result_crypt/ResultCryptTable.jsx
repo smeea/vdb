@@ -10,7 +10,7 @@ import {
   ResultCryptGroup,
   ResultCryptTitle,
   ButtonAddCard,
-  ResultCryptModal,
+  ResultModal,
   ConditionalOverlayTrigger,
 } from 'components';
 import { getSoftMax, getHardTotal } from 'utils';
@@ -196,7 +196,7 @@ const ResultCryptTable = (props) => {
         <tbody>{cardRows}</tbody>
       </table>
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   DeckProxyLibraryTable,
   ResultLibraryType,
-  ResultLibraryModal,
+  ResultModal,
 } from 'components';
 import { useApp } from 'context';
 import { countCards } from 'utils';
@@ -108,7 +108,7 @@ const DeckProxyLibrary = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

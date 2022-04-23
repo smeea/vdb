@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import {
   DiffLibraryTable,
   ResultLibraryType,
-  ResultLibraryModal,
+  ResultModal,
   DeckLibraryTotalInfo,
   DeckNewLibraryCard,
   DeckDrawProbabilityModal,
@@ -186,7 +186,7 @@ const DiffLibrary = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

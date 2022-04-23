@@ -7,7 +7,6 @@ export { default as ResultLibraryLayoutText } from './ResultLibraryLayoutText.js
 export { default as ResultLibrarySortForm } from './ResultLibrarySortForm.jsx';
 export { default as ResultLibraryType } from './ResultLibraryType.jsx';
 export { default as ResultLibraryClan } from './ResultLibraryClan.jsx';
-export { default as ResultLibraryModal } from './ResultLibraryModal.jsx';
 export { default as ResultLibraryTable } from './ResultLibraryTable.jsx';
 export { default as ResultLibraryTypeImage } from './ResultLibraryTypeImage.jsx';
 export { default as ResultLibraryCost } from './ResultLibraryCost.jsx';

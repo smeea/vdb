@@ -6,7 +6,7 @@ import {
   ResultLibraryTypeImage,
   ResultLibraryDisciplines,
   ResultLibraryClan,
-  ResultLibraryModal,
+  ResultModal,
   ConditionalOverlayTrigger,
 } from 'components';
 import { GROUPED_TYPE, ASCII_NAME } from 'utils/constants';
@@ -125,7 +125,7 @@ const TwdResultLibraryKeyCards = (props) => {
         </table>
       </div>
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

@@ -6,7 +6,7 @@ import {
   DeckCryptTable,
   DeckNewCryptCard,
   DeckCryptHeader,
-  ResultCryptModal,
+  ResultModal,
 } from 'components';
 import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
@@ -173,7 +173,7 @@ const DeckCrypt = (props) => {
         </div>
       )}
       {shouldShowModal && (
-        <ResultCryptModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

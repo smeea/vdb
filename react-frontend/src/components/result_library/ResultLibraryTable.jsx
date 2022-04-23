@@ -8,7 +8,7 @@ import {
   ResultLibraryClan,
   ResultLibraryCost,
   ResultLibraryDisciplines,
-  ResultLibraryModal,
+  ResultModal,
   ResultLibraryName,
   ResultLibraryTrifle,
   ResultLibraryTypeImage,
@@ -161,7 +161,7 @@ const ResultLibraryTable = (props) => {
         <tbody>{cardRows}</tbody>
       </table>
       {shouldShowModal && (
-        <ResultLibraryModal
+        <ResultModal
           card={currentModalCard}
           handleModalCardChange={handleModalCardChange}
           handleClose={handleCloseModal}

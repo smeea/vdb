@@ -17,7 +17,6 @@
 - Transit from useContext to Recoil
 - Reduce re-renders
 - Reduce first loading (Google PageSpeed Insights)
-- Refactor Result(Crypt|Library)Modal (many duplications)
 
 # IMPROVE TECHNOLOGY - BACKEND
 
