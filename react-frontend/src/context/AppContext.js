@@ -285,9 +285,10 @@ export const AppProvider = (props) => {
             decksData[deckid].used_in_inventory[cardid];
         }
       });
+
+      delete decksData[deckid].cards;
     });
 
-    delete decksData.cards;
     setDecks(decksData);
   };
 

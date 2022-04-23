@@ -1,6 +1,5 @@
 # FIX
 - Bad imports for anonymous import
-- Remove cards from deck object (using crypt+library instead)
 
 # FEATURES
 - Export all in xlsx and csv

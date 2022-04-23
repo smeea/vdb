@@ -175,6 +175,7 @@ function Decks(props) {
             }
           });
 
+          delete data.cards;
           addRecentDeck(data);
           setSharedDeck({ [data.deckid]: data });
         }
