@@ -308,35 +308,49 @@ export const AppProvider = (props) => {
       body: JSON.stringify({ cardChange: { [cardid]: count } }),
     };
 
-    const oldState = { ...decks };
+    const cardType = cardid > 200000 ? 'crypt' : 'library';
+    const cardBase = cardid > 200000 ? cryptCardBase : libraryCardBase;
+    let initialState = {};
 
-    fetch(url, options).catch((error) => {
-      setDecks(oldState);
-    });
-    let cardType;
-    let cardBase;
-    if (cardid > 200000) {
-      cardType = 'crypt';
-      cardBase = cryptCardBase;
-    } else {
-      cardType = 'library';
-      cardBase = libraryCardBase;
-    }
+    if (deckid in decks) {
+      initialState = JSON.parse(JSON.stringify(decks));
 
-    if (count >= 0) {
-      const oldState = { ...decks };
-      oldState[deckid][cardType][cardid] = {
-        c: cardBase[cardid],
-        q: count,
-      };
-      setDecks(oldState);
-    } else {
       setDecks((prevState) => {
         const oldState = { ...prevState };
-        delete oldState[deckid][cardType][cardid];
+        if (count >= 0) {
+          oldState[deckid][cardType][cardid] = {
+            c: cardBase[cardid],
+            q: count,
+          };
+        } else {
+          delete oldState[deckid][cardType][cardid];
+        }
+        return oldState;
+      });
+    } else if (deckid in sharedDeck) {
+      initialState = JSON.parse(JSON.stringify(sharedDeck));
+
+      setSharedDeck((prevState) => {
+        const oldState = { ...prevState };
+        if (count >= 0) {
+          oldState[deckid][cardType][cardid] = {
+            c: cardBase[cardid],
+            q: count,
+          };
+        } else {
+          delete oldState[deckid][cardType][cardid];
+        }
         return oldState;
       });
     }
+
+    fetch(url, options).catch((error) => {
+      if (deckid in decks) {
+        setDecks(initialState);
+      } else if (deckid in sharedDeck) {
+        setSharedDeck(initialState);
+      }
+    });
 
     const startTimer = () => {
       let counter = 1;

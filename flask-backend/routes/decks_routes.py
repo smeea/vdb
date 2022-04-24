@@ -1,6 +1,6 @@
 from flask import jsonify, request, abort, Response
 from flask_login import current_user, login_required
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 import uuid
 import json
 
@@ -107,145 +107,113 @@ def updateDeck(deckid):
     if not d:
         print("bad deck request\n", deckid, current_user.username, request.json)
         return jsonify({"error": "no deck"})
+    elif not d.author:
+        # For newly anonymous imported decks to fix bad imports
+        accepted_past = datetime.utcnow() - timedelta(minutes=5)
+        if d.timestamp < accepted_past:
+            abort(401)
     elif d.author != current_user:
         abort(401)
 
-    if request.json != {"hidden": False} and request.json != {"hidden": True}:
+    if "hidden" in request.json:
+        d.hidden = request.json["hidden"]
+    else:
         d.timestamp = datetime.utcnow()
 
-    try:
-        if "cardChange" in request.json:
-            new_cards = request.json["cardChange"]
-            merged_cards = d.cards.copy()
+    if "cardChange" in request.json:
+        new_cards = request.json["cardChange"]
+        merged_cards = d.cards.copy()
 
-            for k, v in new_cards.items():
-                k = int(k)
-                if v < 0:
-                    del merged_cards[k]
-                else:
-                    merged_cards[k] = v
-
-            d.cards = merged_cards.copy()
-    except Exception:
-        pass
-
-    try:
-        if "cardAdd" in request.json:
-            new_cards = request.json["cardAdd"]
-            merged_cards = d.cards.copy()
-            for k, v in new_cards.items():
-                k = int(k)
-                if k not in merged_cards:
-                    merged_cards[k] = v
-
-            d.cards = merged_cards.copy()
-    except Exception:
-        pass
-
-    try:
-        if "name" in request.json:
-            d.name = request.json["name"]
-
-            if d.master:
-                master = Deck.query.get(d.master)
-                master.name = request.json["name"]
-
-                for i in master.branches:
-                    j = Deck.query.get(i)
-                    j.name = request.json["name"]
-
-            elif d.branches:
-                for i in d.branches:
-                    j = Deck.query.get(i)
-                    j.name = request.json["name"]
-
-    except Exception:
-        pass
-
-    try:
-        if "hidden" in request.json:
-            d.hidden = request.json["hidden"]
-
-    except Exception:
-        pass
-
-    try:
-        if "description" in request.json:
-            d.description = request.json["description"]
-    except Exception:
-        pass
-
-    try:
-        if "author" in request.json:
-            d.author_public_name = request.json["author"] or ""
-
-            if d.master:
-                master = Deck.query.get(d.master)
-                master.author_public_name = request.json["author"]
-
-                for i in master.branches:
-                    j = Deck.query.get(i)
-                    j.author_public_name = request.json["author"]
-
-            elif d.branches:
-                for i in d.branches:
-                    j = Deck.query.get(i)
-                    j.author_public_name = request.json["author"]
-
-    except Exception:
-        pass
-
-    try:
-        if "branchName" in request.json:
-            d.branch_name = request.json["branchName"] or ""
-    except Exception:
-        pass
-
-    try:
-        if "makeFlexible" in request.json:
-            if request.json["makeFlexible"] == "all":
-                d.used_in_inventory = {}
-                d.inventory_type = "s"
+        for k, v in new_cards.items():
+            k = int(k)
+            if v < 0:
+                del merged_cards[k]
             else:
-                used = d.used_in_inventory.copy()
-                r = int(request.json["makeFlexible"])
-                used[r] = "s"
-                d.used_in_inventory = used
-    except Exception:
-        pass
+                merged_cards[k] = v
 
-    try:
-        if "makeFixed" in request.json:
-            if request.json["makeFixed"] == "all":
-                d.used_in_inventory = {}
-                d.inventory_type = "h"
-            else:
-                used = d.used_in_inventory.copy()
-                r = int(request.json["makeFixed"])
-                used[r] = "h"
-                d.used_in_inventory = used
-    except Exception:
-        pass
+        d.cards = merged_cards.copy()
 
-    try:
-        if "makeClear" in request.json:
-            if request.json["makeClear"] == "all":
-                d.used_in_inventory = {}
-                d.inventory_type = ""
-            else:
-                used = d.used_in_inventory.copy()
-                r = int(request.json["makeClear"])
-                del used[r]
-                d.used_in_inventory = used
-    except Exception:
-        pass
+    if "cardAdd" in request.json:
+        new_cards = request.json["cardAdd"]
+        merged_cards = d.cards.copy()
+        for k, v in new_cards.items():
+            k = int(k)
+            if k not in merged_cards:
+                merged_cards[k] = v
 
-    try:
-        if "setTags" in request.json:
-            new_tags = request.json["setTags"]
-            d.tags = new_tags
-    except Exception:
-        pass
+        d.cards = merged_cards.copy()
+
+    if "name" in request.json:
+        d.name = request.json["name"]
+
+        if d.master:
+            master = Deck.query.get(d.master)
+            master.name = request.json["name"]
+
+            for i in master.branches:
+                j = Deck.query.get(i)
+                j.name = request.json["name"]
+
+        elif d.branches:
+            for i in d.branches:
+                j = Deck.query.get(i)
+                j.name = request.json["name"]
+
+    if "description" in request.json:
+        d.description = request.json["description"]
+
+    if "author" in request.json:
+        d.author_public_name = request.json["author"] or ""
+
+        if d.master:
+            master = Deck.query.get(d.master)
+            master.author_public_name = request.json["author"]
+
+            for i in master.branches:
+                j = Deck.query.get(i)
+                j.author_public_name = request.json["author"]
+
+        elif d.branches:
+            for i in d.branches:
+                j = Deck.query.get(i)
+                j.author_public_name = request.json["author"]
+
+    if "branchName" in request.json:
+        d.branch_name = request.json["branchName"] or ""
+
+    if "makeFlexible" in request.json:
+        if request.json["makeFlexible"] == "all":
+            d.used_in_inventory = {}
+            d.inventory_type = "s"
+        else:
+            used = d.used_in_inventory.copy()
+            r = int(request.json["makeFlexible"])
+            used[r] = "s"
+            d.used_in_inventory = used
+
+    if "makeFixed" in request.json:
+        if request.json["makeFixed"] == "all":
+            d.used_in_inventory = {}
+            d.inventory_type = "h"
+        else:
+            used = d.used_in_inventory.copy()
+            r = int(request.json["makeFixed"])
+            used[r] = "h"
+            d.used_in_inventory = used
+
+    if "makeClear" in request.json:
+        if request.json["makeClear"] == "all":
+            d.used_in_inventory = {}
+            d.inventory_type = ""
+        else:
+            used = d.used_in_inventory.copy()
+            r = int(request.json["makeClear"])
+            del used[r]
+            d.used_in_inventory = used
+
+    if "setTags" in request.json:
+        new_tags = request.json["setTags"]
+        d.tags = new_tags
 
     if d.master:
         old_master = Deck.query.get(d.master)
@@ -671,7 +639,8 @@ def anonymousImportDeck():
         )
         db.session.add(d)
         db.session.commit()
-        return jsonify({"deckid": deckid})
+
+        return jsonify({"deckid": deckid, "bad_cards": deck["bad_cards"]})
 
     except Exception:
         print("deck import: ", request.json["deckText"])

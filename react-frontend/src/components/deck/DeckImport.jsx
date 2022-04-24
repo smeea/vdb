@@ -242,20 +242,19 @@ const DeckImport = (props) => {
       )}
       <DeckImportText
         handleClose={handleCloseImportModal}
-        getDecks={getDecks}
         show={showTextModal}
         setBadCards={setBadCards}
+        setShowButtons={props.setShowButtons}
       />
       <DeckImportText
         anonymous={true}
         handleClose={handleCloseImportModal}
-        getDecks={getDecks}
         show={showAnonymousTextModal}
         setBadCards={setBadCards}
+        setShowButtons={props.setShowButtons}
       />
       <DeckImportAmaranth
         handleClose={handleCloseImportModal}
-        getDecks={getDecks}
         show={showAmaranthModal}
       />
       <input
