@@ -37,15 +37,19 @@ const DeckSelectorAndDisplay = ({ deckData }) => {
               </>
             )}
             {isDesktop && (
-              <div className="d-flex ps-1">
-                <Button
-                  title="Hide Deck Panel"
-                  variant="primary"
-                  onClick={() => toggleAddMode()}
-                >
-                  {addMode ? <EyeSlashFill /> : <EyeFill />}
-                </Button>
-              </div>
+              <Button
+                className="ms-1"
+                title="Hide Deck Panel"
+                variant="primary"
+                onClick={() => toggleAddMode()}
+              >
+                <div className="d-flex justify-content-center align-items-center">
+                  <div className={`d-flex ${addMode ? '' : 'pe-2'}`}>
+                    {addMode ? <EyeSlashFill /> : <EyeFill />}
+                  </div>
+                  {addMode ? '' : 'Show Deck'}
+                </div>
+              </Button>
             )}
           </div>
           {deckId && addMode && (
