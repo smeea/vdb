@@ -74,11 +74,11 @@ def generate_twd(i):
     if len(clans) <= 1 and "monoclan" not in deck["traits"]:
         deck["traits"].append("monoclan")
 
-    deck["capacity"] = total_capacity / total_crypt_ex_ac
+    deck["capacity"] = round(total_capacity / total_crypt_ex_ac, 1)
 
     for ct in i["library"]["cards"]:
-        deck["cardtypes_ratio"][ct["type"].lower()] = (
-            ct["count"] / deck["library_total"]
+        deck["cardtypes_ratio"][ct["type"].lower()] = round(
+            ct["count"] / deck["library_total"], 2
         )
 
         for card in ct["cards"]:
