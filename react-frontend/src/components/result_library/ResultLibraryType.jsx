@@ -4,7 +4,7 @@ import { ResultLibraryTypeImage } from 'components';
 function ResultLibraryType(props) {
   if (props.total > 0) {
     return (
-      <div className="d-inline align-items-center">
+      <div className="d-flex">
         <ResultLibraryTypeImage value={props.cardtype} />
         <div className="d-inline px-1">
           {props.cardtype} [{props.total}]
