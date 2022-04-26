@@ -33,17 +33,19 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
   };
 
   useEffect(() => {
-    setSortedCards(() => resultLibrarySort(cards, librarySearchSort));
+    if (cards) {
+      setSortedCards(() => resultLibrarySort(cards, librarySearchSort));
+    }
   }, [cards]);
 
   return (
     <>
-      {!isMobile && cards.length == 0 && (
+      {!isMobile && (cards === null || cards.length === 0) && (
         <div className="d-flex align-items-center justify-content-center error-message">
-          <b>NO CARDS FOUND</b>
+          <b>{cards === null ? 'CONNECTION PROBLEM' : 'NO CARDS FOUND'}</b>
         </div>
       )}
-      {cards.length > 0 && (
+      {cards && cards.length > 0 && (
         <>
           <ResultLibraryTotal
             inCompare={inCompare}

@@ -64,7 +64,7 @@ function LibrarySearchForm(props) {
     }
   }, [libraryCardBase]);
 
-  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState(false);
   const refError = useRef(null);
 
   const handleTextChange = (event) => {
@@ -160,7 +160,7 @@ function LibrarySearchForm(props) {
     setLibraryFormState(JSON.parse(JSON.stringify(defaults)));
     setLibraryResults(undefined);
     setPreresults(undefined);
-    setShowError(false);
+    setError(false);
   };
 
   const handleSubmitButton = (event) => {
@@ -177,7 +177,7 @@ function LibrarySearchForm(props) {
     const input = sanitizeFormState('library', libraryFormState);
 
     if (Object.entries(input).length === 0) {
-      setShowError('EMPTY REQUEST');
+      setError('EMPTY REQUEST');
       return;
     }
 
@@ -193,7 +193,7 @@ function LibrarySearchForm(props) {
       body: JSON.stringify(input),
     };
 
-    setShowError(false);
+    setError(false);
     setSpinnerState(true);
 
     fetch(url, options)
@@ -222,16 +222,14 @@ function LibrarySearchForm(props) {
       .catch((error) => {
         if (isMobile) navigate('/library');
         setSpinnerState(false);
-        if (libraryResults) {
+
+        if (error.message == 400) {
           setLibraryResults([]);
           setPreresults([]);
-        }
-        if (
-          error.message == 'NetworkError when attempting to fetch resource.'
-        ) {
-          setShowError('CONNECTION PROBLEM');
+          setError('NO CARDS FOUND');
         } else {
-          setShowError(true);
+          setLibraryResults(null);
+          setError('CONNECTION PROBLEM');
         }
       });
   };
@@ -365,11 +363,11 @@ function LibrarySearchForm(props) {
               <Spinner animation="border" variant="light" />
             )}
             <ErrorOverlay
-              show={showError}
+              show={error}
               target={refError.current}
               placement="left"
             >
-              {showError === true ? 'NO CARDS FOUND' : showError}
+              {error}
             </ErrorOverlay>
           </div>
         </>

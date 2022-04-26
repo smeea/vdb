@@ -64,7 +64,7 @@ function CryptSearchForm(props) {
     }
   }, [cryptCardBase]);
 
-  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState(false);
   const refError = useRef(null);
 
   const handleTextChange = (event) => {
@@ -176,7 +176,7 @@ function CryptSearchForm(props) {
     setCryptFormState(JSON.parse(JSON.stringify(defaults)));
     setCryptResults(undefined);
     setPreresults(undefined);
-    setShowError(false);
+    setError(false);
   };
 
   const handleSubmitButton = (event) => {
@@ -193,7 +193,7 @@ function CryptSearchForm(props) {
     const input = sanitizeFormState('crypt', cryptFormState);
 
     if (Object.entries(input).length === 0) {
-      setShowError('EMPTY REQUEST');
+      setError('EMPTY REQUEST');
       return;
     }
 
@@ -209,7 +209,7 @@ function CryptSearchForm(props) {
       body: JSON.stringify(input),
     };
 
-    setShowError(false);
+    setError(false);
     setSpinnerState(true);
 
     fetch(url, options)
@@ -236,16 +236,14 @@ function CryptSearchForm(props) {
       .catch((error) => {
         setSpinnerState(false);
         if (isMobile) navigate('/crypt');
-        if (cryptResults) {
+
+        if (error.message == 400) {
           setCryptResults([]);
           setPreresults([]);
-        }
-        if (
-          error.message == 'NetworkError when attempting to fetch resource.'
-        ) {
-          setShowError('CONNECTION PROBLEM');
+          setError('NO CARDS FOUND');
         } else {
-          setShowError(true);
+          setCryptResults(null);
+          setError('CONNECTION PROBLEM');
         }
       });
   };
@@ -373,11 +371,11 @@ function CryptSearchForm(props) {
               <Spinner animation="border" variant="light" />
             )}
             <ErrorOverlay
-              show={showError}
+              show={error}
               target={refError.current}
               placement="left"
             >
-              {showError === true ? 'NO CARDS FOUND' : showError}
+              {error}
             </ErrorOverlay>
           </div>
         </>

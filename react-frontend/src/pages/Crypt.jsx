@@ -78,7 +78,7 @@ function Crypt({ lastDeckId }) {
                 />
               </div>
             )}
-            {cryptResults && (
+            {cryptResults !== undefined && (
               <ResultCrypt
                 cards={cryptResults}
                 setCards={setCryptResults}

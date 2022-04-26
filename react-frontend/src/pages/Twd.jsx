@@ -24,7 +24,7 @@ function Twd(props) {
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
-          {twdResults && (
+          {twdResults !== undefined && (
             <TwdResult
               showFloatingButtons={showFloatingButtons}
               setShowFloatingButtons={setShowFloatingButtons}

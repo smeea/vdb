@@ -82,7 +82,7 @@ function Library({ lastDeckId }) {
                 />
               </div>
             )}
-            {libraryResults && (
+            {libraryResults !== undefined && (
               <ResultLibrary
                 cards={libraryResults}
                 setCards={setLibraryResults}

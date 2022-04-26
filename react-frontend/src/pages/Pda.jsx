@@ -24,7 +24,7 @@ function Pda(props) {
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
-          {pdaResults && (
+          {pdaResults !== undefined && (
             <PdaResult
               showFloatingButtons={showFloatingButtons}
               setShowFloatingButtons={setShowFloatingButtons}

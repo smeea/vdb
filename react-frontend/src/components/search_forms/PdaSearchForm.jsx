@@ -66,7 +66,7 @@ function PdaSearchForm(props) {
     }
   }, [pdaFormState]);
 
-  const [showError, setShowError] = useState(false);
+  const [error, setError] = useState(false);
   const refError = useRef(null);
 
   const handleSelectChange = (event) => {
@@ -142,7 +142,7 @@ function PdaSearchForm(props) {
   const handleClearButton = () => {
     setPdaFormState(JSON.parse(JSON.stringify(defaults)));
     setPdaResults(undefined);
-    setShowError(false);
+    setError(false);
     navigate('/pda');
   };
 
@@ -156,7 +156,7 @@ function PdaSearchForm(props) {
     const input = sanitizeFormState('pda', pdaFormState);
 
     if (Object.entries(input).length === 0) {
-      setShowError('EMPTY REQUEST');
+      setError('EMPTY REQUEST');
       return;
     }
 
@@ -172,7 +172,7 @@ function PdaSearchForm(props) {
       body: JSON.stringify(input),
     };
 
-    setShowError(false);
+    setError(false);
     setSpinnerState(true);
 
     fetch(url, options)
@@ -187,20 +187,20 @@ function PdaSearchForm(props) {
       })
       .catch((error) => {
         setSpinnerState(false);
-        setPdaResults([]);
-        if (
-          error.message == 'NetworkError when attempting to fetch resource.'
-        ) {
-          setShowError('CONNECTION PROBLEM');
+
+        if (error.message == 400) {
+          setPdaResults([]);
+          setError('NO DECKS FOUND');
         } else {
-          setShowError(true);
+          setPdaResults(null);
+          setError('CONNECTION PROBLEM');
         }
       });
   };
 
   const getNewPda = (q) => {
     setSpinnerState(true);
-    setShowError(false);
+    setError(false);
     setPdaFormState(JSON.parse(JSON.stringify(defaults)));
     navigate('/pda');
 
@@ -212,7 +212,10 @@ function PdaSearchForm(props) {
     };
 
     fetch(url, options)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
       .then((data) => {
         setSpinnerState(false);
         setShowPdaSearch(false);
@@ -220,14 +223,20 @@ function PdaSearchForm(props) {
       })
       .catch((error) => {
         setSpinnerState(false);
-        setPdaResults([]);
-        setShowError(true);
+
+        if (error.message == 400) {
+          setPdaResults([]);
+          setError('NO DECKS FOUND');
+        } else {
+          setPdaResults(null);
+          setError('CONNECTION PROBLEM');
+        }
       });
   };
 
   const getRandomPda = (q) => {
     setSpinnerState(true);
-    setShowError(false);
+    setError(false);
     setPdaFormState(JSON.parse(JSON.stringify(defaults)));
     navigate('/pda');
 
@@ -239,7 +248,10 @@ function PdaSearchForm(props) {
     };
 
     fetch(url, options)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw Error(response.status);
+        return response.json();
+      })
       .then((data) => {
         setSpinnerState(false);
         setShowPdaSearch(false);
@@ -247,8 +259,13 @@ function PdaSearchForm(props) {
       })
       .catch((error) => {
         setSpinnerState(false);
-        if (pdaResults) {
+
+        if (error.message == 400) {
           setPdaResults([]);
+          setError('NO DECKS FOUND');
+        } else {
+          setPdaResults(null);
+          setError('CONNECTION PROBLEM');
         }
       });
   };
@@ -464,11 +481,11 @@ function PdaSearchForm(props) {
               <Spinner animation="border" variant="light" />
             )}
             <ErrorOverlay
-              show={showError}
+              show={error}
               target={refError.current}
               placement="left"
             >
-              {showError === true ? 'NO DECKS FOUND' : showError}
+              {error}
             </ErrorOverlay>
           </div>
         </>

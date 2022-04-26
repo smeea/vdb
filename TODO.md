@@ -1,5 +1,5 @@
 # FIX
-- No cards found error on timeout (show connection error)
+- Disable inventorymode for unlogged user
 
 # FEATURES
 - Export all in xlsx and csv
