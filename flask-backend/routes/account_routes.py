@@ -4,6 +4,8 @@ import json
 
 from api import app, db, login
 from models import User
+from routes.decks_routes import parse_user_decks
+from routes.inventory_routes import parse_user_inventory
 
 
 @login.unauthorized_handler
@@ -39,10 +41,13 @@ def login():
                     "username": current_user.username,
                     "email": current_user.email,
                     "public_name": current_user.public_name,
+                    "decks": parse_user_decks(current_user.decks.all()),
+                    "inventory": parse_user_inventory(current_user.inventory),
                 }
             )
         else:
             return jsonify({"username": ""})
+
     elif request.method == "POST":
         try:
             user = User.query.filter_by(
@@ -50,12 +55,15 @@ def login():
             ).first()
             if user is None or not user.check_password(request.json["password"]):
                 return jsonify({"error": "invalid username or password"}), 401
+
             login_user(user, remember=request.json["remember"])
             return jsonify(
                 {
                     "username": current_user.username,
                     "email": current_user.email,
                     "public_name": current_user.public_name,
+                    "decks": parse_user_decks(current_user.decks.all()),
+                    "inventory": parse_user_inventory(current_user.inventory),
                 }
             )
         except KeyError:

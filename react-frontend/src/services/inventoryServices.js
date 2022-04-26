@@ -1,14 +1,3 @@
-export const getInventory = () => {
-  const url = `${process.env.API_URL}inventory`;
-  const options = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-  };
-
-  return fetch(url, options).then((response) => response.json());
-};
-
 export const getDecks = () => {
   const url = `${process.env.API_URL}decks`;
   const options = {

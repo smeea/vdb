@@ -16,14 +16,7 @@ import { useApp } from 'context';
 import { userServices } from 'services';
 
 function AccountLogin(props) {
-  const {
-    setPublicName,
-    setEmail,
-    setUsername,
-    isMobile,
-    getDecks,
-    getInventory,
-  } = useApp();
+  const { isMobile, initializeUserData } = useApp();
 
   const [formUserName, setFormUserName] = useState('');
   const [formPassword, setFormPassword] = useState('');
@@ -51,11 +44,7 @@ function AccountLogin(props) {
 
   const onSuccess = (data) => {
     setSpinnerState(false);
-    setUsername(data.username);
-    setPublicName(data.public_name);
-    setEmail(data.email);
-    getInventory();
-    getDecks();
+    initializeUserData(data);
   };
 
   const loginUser = () => {

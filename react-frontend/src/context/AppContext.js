@@ -97,11 +97,13 @@ export const AppProvider = (props) => {
   };
 
   const initializeUserData = (data) => {
+    const inventory = parseInventoryData(data.inventory);
     setUsername(data.username);
     setPublicName(data.public_name);
     setEmail(data.email);
-    getInventory();
-    getDecks();
+    setInventoryCrypt(inventory.crypt);
+    setInventoryLibrary(inventory.library);
+    setDecks(parseDecksData(data.decks));
   };
 
   const initializeUnauthenticatedUser = () => {
@@ -259,7 +261,10 @@ export const AppProvider = (props) => {
 
   const getDecks = async () => {
     const decksData = await inventoryServices.getDecks();
+    setDecks(parseDecksData(decksData));
+  };
 
+  const parseDecksData = (decksData) => {
     Object.keys(decksData).map((deckid) => {
       decksData[deckid].crypt = {};
       decksData[deckid].library = {};
@@ -291,7 +296,7 @@ export const AppProvider = (props) => {
       delete decksData[deckid].cards;
     });
 
-    setDecks(decksData);
+    return decksData;
   };
 
   const deckUpdate = (deckid, field, value) => {
@@ -394,18 +399,15 @@ export const AppProvider = (props) => {
   //                          INVENTORY FUNCTIONS
   // ---------------------------------------------------------------------------
 
-  const getInventory = async () => {
-    const inventoryData = await inventoryServices.getInventory();
-    if (inventoryData) {
-      Object.keys(inventoryData.crypt).map((i) => {
-        inventoryData.crypt[i].c = cryptCardBase[i];
-      });
-      Object.keys(inventoryData.library).map((i) => {
-        inventoryData.library[i].c = libraryCardBase[i];
-      });
-      setInventoryCrypt(inventoryData.crypt);
-      setInventoryLibrary(inventoryData.library);
-    }
+  const parseInventoryData = (inventoryData) => {
+    Object.keys(inventoryData.crypt).map((i) => {
+      inventoryData.crypt[i].c = cryptCardBase[i];
+    });
+    Object.keys(inventoryData.library).map((i) => {
+      inventoryData.library[i].c = libraryCardBase[i];
+    });
+
+    return { crypt: inventoryData.crypt, library: inventoryData.library };
   };
 
   // Trigger  Hard and Soft count function on changing decks
@@ -635,6 +637,7 @@ export const AppProvider = (props) => {
         setPublicName,
         email,
         setEmail,
+        initializeUserData,
         initializeUnauthenticatedUser,
 
         // 3 - CARDBASE Context
@@ -654,7 +657,6 @@ export const AppProvider = (props) => {
         inventoryDeckDelete,
         inventoryAddToState,
         inventoryDeleteFromState,
-        getInventory,
 
         usedCryptCards,
         usedLibraryCards,

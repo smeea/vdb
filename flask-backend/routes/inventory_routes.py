@@ -6,29 +6,34 @@ from inventory_export import inventory_export
 from inventory_import import inventory_import
 from api import app, db, login
 
-
-@login.unauthorized_handler
-def unauthorized_handler():
-    return Response(json.dumps({'Not logged in': True}), 401)
-
-
-@app.route('/api/inventory', methods=['GET'])
-@login_required
-def listInventory():
+def parse_user_inventory(user_inventory):
     crypt = {}
     library = {}
-    if current_user.inventory:
-        for k, v in current_user.inventory.items():
+
+    if user_inventory:
+        for k, v in user_inventory.items():
             k = int(k)
             if k > 200000:
                 crypt[k] = {'q': v}
             elif k < 200000:
                 library[k] = {'q': v}
 
-    return jsonify({
+    return ({
         "crypt": crypt,
         "library": library,
     })
+
+
+@login.unauthorized_handler
+def unauthorized_handler():
+    return Response(json.dumps({'Not logged in': True}), 401)
+
+
+# DEPRECATED (LEFT FOR BACKWARD COMPATIBILITY AND 3RD PARTY TOOLS)
+@app.route('/api/inventory', methods=['GET'])
+@login_required
+def listInventory():
+    return jsonify(parse_user_inventory(current_user.inventory))
 
 
 @app.route('/api/inventory/export', methods=['POST'])

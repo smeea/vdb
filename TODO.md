@@ -1,5 +1,5 @@
 # FIX
-- Move first getDecks and getInventory call too whoAmI to make one initial setState
+- Remove getDecks call (follow modification like deletion on frontend, only get decks once during login/whoami)
 
 # FEATURES
 - Export all in xlsx and csv
