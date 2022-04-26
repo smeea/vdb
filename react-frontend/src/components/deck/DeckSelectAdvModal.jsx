@@ -457,18 +457,12 @@ const DeckSelectAdvModal = (props) => {
                 />
               </th>
               <th className="buttons">
-                <div
-                  className={
-                    isMobile
-                      ? 'px-1'
-                      : 'd-flex justify-content-end align-items-center pe-1'
-                  }
-                >
+                <div className="d-flex justify-content-end align-items-center pe-1">
                   <Form.Check
-                    className={isMobile ? null : 'pt-05 pe-3'}
+                    className={isDesktop ? 'pt-05 pe-3' : 'pe-1'}
                     type="checkbox"
                     id="revFilter"
-                    label={isDesktop ? 'Revisions' : 'Rv'}
+                    label={isDesktop ? 'Show Revisions' : 'Rev'}
                     checked={revFilter}
                     onChange={() => setRevFilter(!revFilter)}
                   />
