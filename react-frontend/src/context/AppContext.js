@@ -105,9 +105,11 @@ export const AppProvider = (props) => {
   };
 
   const initializeUnauthenticatedUser = () => {
+    setAddMode(false);
     setInventoryMode(false);
     setInventoryCrypt({});
     setInventoryLibrary({});
+    setUsername(undefined);
     setDecks(undefined);
     setActiveDeck({ src: null, deckid: null });
     setEmail(undefined);
@@ -633,6 +635,7 @@ export const AppProvider = (props) => {
         setPublicName,
         email,
         setEmail,
+        initializeUnauthenticatedUser,
 
         // 3 - CARDBASE Context
         cryptCardBase,
