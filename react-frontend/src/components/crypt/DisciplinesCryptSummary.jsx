@@ -11,52 +11,35 @@ const DisciplinesCryptSummary = ({ disciplinesDetailed }) => {
   let withVirtues = false;
 
   const DisciplinesInfo = disciplinesSorted
-    .filter((d) => !virtuesList.includes(d))
+    .filter((d) => !virtuesList.includes(d) && disciplinesDetailed[d][0] > 0)
     .map((d, idx) => {
       withDisciplines = true;
       return (
         <span key={idx} className="d-inline-block nobr ps-0 pe-3">
-          <div className="d-flex align-items-center">
-            {Object.keys(disciplinesDetailed[d]).length > 2 ? (
-              <>
-                <ResultDisciplineImage
-                  title={`${d} Superior | Inferior`}
-                  superior={true}
-                  value={d}
-                />
-                {disciplinesDetailed[d][2]} | {disciplinesDetailed[d][1]}
-              </>
-            ) : (
-              <>
-                <ResultDisciplineImage value={d} /> {disciplinesDetailed[d][1]}
-              </>
-            )}
+          <div className="d-flex align-items-center pe-1">
+            <ResultDisciplineImage
+              title={`${d} Superior | Inferior`}
+              superior={true}
+              value={d}
+            />
+            <div className="d-flex ps-1">
+              {disciplinesDetailed[d][2]} <div className="gray px-1">|</div>{' '}
+              {disciplinesDetailed[d][1]}
+            </div>
           </div>
         </span>
       );
     });
 
   const VirtuesInfo = disciplinesSorted
-    .filter((d) => virtuesList.includes(d))
+    .filter((d) => virtuesList.includes(d) && disciplinesDetailed[d][0] > 0)
     .map((d, idx) => {
       withVirtues = true;
       return (
         <span key={idx} className="d-inline-block nobr ps-0 pe-3">
-          <div className="d-flex align-items-center">
-            {Object.keys(disciplinesDetailed[d]).length > 2 ? (
-              <>
-                <ResultDisciplineImage
-                  title={`${d} Superior | Inferior`}
-                  superior={true}
-                  value={d}
-                />
-                {disciplinesDetailed[d][2]} | {disciplinesDetailed[d][1]}
-              </>
-            ) : (
-              <>
-                <ResultDisciplineImage value={d} /> {disciplinesDetailed[d][1]}
-              </>
-            )}
+          <div className="d-flex align-items-center pe-1">
+            <ResultDisciplineImage value={d} />
+            <div className="d-flex ps-1">{disciplinesDetailed[d][1]}</div>
           </div>
         </span>
       );

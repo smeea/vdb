@@ -1,4 +1,5 @@
 import React from 'react';
+import { Stack } from 'react-bootstrap';
 import { DisciplinesCryptSummary } from 'components/crypt';
 import { drawUniqueProbability, countCards, countTotalCost } from 'utils';
 import { CAPACITY } from 'utils/constants';
@@ -15,7 +16,7 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
     if (i > 0) {
       return (
         <div
-          className="d-inline ps-3"
+          className="d-inline"
           key={idx}
           title={`Chance to draw ${idx} unique vampires`}
         >
@@ -33,10 +34,15 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
   return (
     <>
       <div className="d-flex justify-content-between py-1">
-        <div className="d-inline">
-          <span className="blue">Avg. cap:</span> {cryptAvg}
+        <div className="d-flex">
+          <span className="blue pe-2">Avg. cap:</span> {cryptAvg}
         </div>
-        <div className="d-inline">{uniqueDraw}</div>
+        <div className="d-flex">
+          <span className="blue pe-2">Uniq:</span>
+          <Stack direction="horizontal" gap={3}>
+            {uniqueDraw}
+          </Stack>
+        </div>
       </div>
       <DisciplinesCryptSummary disciplinesDetailed={disciplinesDetailed} />
     </>

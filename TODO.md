@@ -1,4 +1,6 @@
 # FIX
+- Adv deck select Rv button alignment on mobile
+- Move first getDecks and getInventory call too whoAmI to make one initial setState
 
 # FEATURES
 - Export all in xlsx and csv
