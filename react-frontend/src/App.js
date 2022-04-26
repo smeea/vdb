@@ -24,7 +24,7 @@ import Navigation from 'pages/Navigation.jsx';
 import Pda from 'pages/Pda.jsx';
 import Twd from 'pages/Twd.jsx';
 
-import 'assets/css/bootstrap.min.css';
+import '~/node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'assets/css/style.styl';
 
 const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
