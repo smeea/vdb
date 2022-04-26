@@ -1,5 +1,5 @@
 # FIX
-- Remove getDecks call (follow modification like deletion on frontend, only get decks once during login/whoami)
+- No cards found error on timeout (show connection error)
 
 # FEATURES
 - Export all in xlsx and csv
@@ -16,6 +16,7 @@
 - Transit from useContext to Recoil
 - Reduce re-renders
 - Reduce first loading (Google PageSpeed Insights)
+- Remove getDecks call (follow modification like deletion on frontend, only get decks once during login/whoami)
 
 # IMPROVE TECHNOLOGY - BACKEND
 

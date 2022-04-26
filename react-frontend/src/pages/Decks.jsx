@@ -594,7 +594,7 @@ function Decks(props) {
         )}
       </Row>
 
-      {!username && !activeDeck.deckid && (
+      {!username && !query.get('id') && (
         <Row className="align-items-center justify-content-center p-3 vh-60">
           <Col xs={12} md={9} lg={8} xl={7}>
             <div className="d-flex justify-content-center pb-0">
