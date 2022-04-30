@@ -123,8 +123,6 @@ function PdaResult(props) {
     }
   }, [pdaResults, showCounter, showImage]);
 
-  console.log(pdaResults);
-
   return (
     <>
       {!isMobile && (pdaResults === null || pdaResults.length === 0) && (

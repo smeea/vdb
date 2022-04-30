@@ -88,7 +88,7 @@ const ResultModal = (props) => {
             {showImage ? (
               <>
                 <CardImage
-                  className="card-popover full-width"
+                  className="full-width"
                   card={card}
                   set={imageSet}
                   onClick={props.handleClose}
@@ -168,7 +168,7 @@ const ResultModal = (props) => {
           <Row className="mx-0">
             <Col md={5} className="bg-black px-0">
               <CardImage
-                className="card-popover full-width"
+                className="full-width"
                 card={card}
                 set={imageSet}
                 onClick={props.handleClose}

@@ -138,7 +138,7 @@ function Cards({ lastDeckId }) {
                   <Col className="m-0 p-0">
                     {showImage ? (
                       <CardImage
-                        className="card-popover full-width"
+                        className="full-width"
                         card={card}
                         set={imageSet}
                       />
@@ -216,7 +216,7 @@ function Cards({ lastDeckId }) {
                 <Row className="align-content-center justify-content-center my-3 bordered">
                   <Col md={6} className="ps-0">
                     <CardImage
-                      className="card-popover full-width"
+                      className="full-width"
                       card={card}
                       set={imageSet}
                     />
