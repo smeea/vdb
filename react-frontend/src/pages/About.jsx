@@ -55,7 +55,7 @@ function About(props) {
             <div className="pt-3">
               <h5>TROUBLESHOOTING</h5>
               <p>
-                If you experience problems like page crashes or something start
+                If you experience problems like white screen or something start
                 to behave not as expected, try to reload page with browser cache
                 update (Ctrl+F5 on Windows/Linux or Command+Shift+R on MacOS)
                 <br />
@@ -73,13 +73,17 @@ function About(props) {
                 : 2022-01-12
               </p>
 
-              <h6>Last update [2022-04-15]:</h6>
+              <h6>Last update [2022-04-30]:</h6>
               <ul>
                 <li>
-                  Add Crypt/Library cards compare feature (open card window and
-                  click Compare Card button [Magnifiying Glass with Heart icon])
+                  Add search similar Deck in TWD/PDA (symmetry-iconed button in
+                  Decks page)
                 </li>
-                <li>Bug fixes and small improvements</li>
+                <li>Improved deck description layout in TWD (players count)</li>
+                <li>
+                  Add separate messages for NO CARDS FOUND and NO CONNECTION
+                </li>
+                <li>Other bug fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>

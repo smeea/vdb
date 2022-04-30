@@ -12,6 +12,19 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-04-30:</h6>
+            <ul>
+              <li>
+                Add search similar Deck in TWD/PDA (symmetry-iconed button in
+                Decks page)
+              </li>
+              <li>Improved deck description layout in TWD (players count)</li>
+              <li>
+                Add separate messages for NO CARDS FOUND and NO CONNECTION
+              </li>
+              <li>Other bug fixes</li>
+            </ul>
+
             <h6>2022-04-15:</h6>
             <ul>
               <li>
