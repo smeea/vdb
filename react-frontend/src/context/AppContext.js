@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect, useEffect, useMemo } from 'react';
 import { initFromStorage, setLocalStorage } from 'services/storageServices.js';
-import { cardServices, inventoryServices } from 'services';
+import { cardServices, inventoryServices, deckServices } from 'services';
 import { useWindowSize } from 'hooks';
 
 const AppContext = React.createContext();
@@ -259,11 +259,6 @@ export const AppProvider = (props) => {
   //                          DECK FUNCTIONS
   // ---------------------------------------------------------------------------
 
-  const getDecks = async () => {
-    const decksData = await inventoryServices.getDecks();
-    setDecks(parseDecksData(decksData));
-  };
-
   const parseDecksData = (decksData) => {
     Object.keys(decksData).map((deckid) => {
       decksData[deckid].crypt = {};
@@ -299,8 +294,45 @@ export const AppProvider = (props) => {
     return decksData;
   };
 
+  const updateBranches = (deckid) => {
+    const masterid = decks[deckid].master;
+    if (masterid) {
+      setDecks((prevState) => {
+        const branches = prevState[masterid].branches;
+        branches.splice(branches.indexOf(deckid), 1);
+        branches.push(masterid);
+        branches.map((b) => {
+          prevState[b].master = deckid;
+        });
+
+        return {
+          ...prevState,
+          [masterid]: {
+            ...prevState[masterid],
+            branches: null,
+          },
+          [deckid]: {
+            ...prevState[deckid],
+            branches: branches,
+            master: null,
+          },
+        };
+      });
+    }
+  };
+
   const deckUpdate = (deckid, field, value) => {
-    inventoryServices.deckUpdate(deckid, field, value).then(() => getDecks());
+    deckServices.deckUpdate(deckid, field, value).then(() => {
+      setDecks((prevState) => ({
+        ...prevState,
+        [deckid]: {
+          ...prevState[deckid],
+          [field]: value,
+        },
+      }));
+
+      updateBranches(deckid);
+    });
   };
 
   const deckCardChange = (deckid, cardid, count) => {
@@ -332,8 +364,10 @@ export const AppProvider = (props) => {
         } else {
           delete oldState[deckid][cardType][cardid];
         }
+
         return oldState;
       });
+      updateBranches(deckid);
     } else if (deckid in sharedDeck) {
       initialState = JSON.parse(JSON.stringify(sharedDeck));
 
@@ -657,7 +691,6 @@ export const AppProvider = (props) => {
         inventoryDeckDelete,
         inventoryAddToState,
         inventoryDeleteFromState,
-
         usedCryptCards,
         usedLibraryCards,
         inventoryCardChange,
@@ -665,6 +698,7 @@ export const AppProvider = (props) => {
         // 5 - DECK Context
         preconDecks,
         decks,
+        setDecks,
         activeDeck,
         setActiveDeck,
         sharedDeck,
@@ -672,15 +706,12 @@ export const AppProvider = (props) => {
         recentDecks,
         addRecentDeck,
         updateRecentDecks,
-        setDecks,
-        getDecks,
         deckRouter,
         deckUpdate,
         deckCardChange,
         changeTimer,
 
         // 6 - LISTING Context (NEED REVIEW)
-
         showPdaSearch,
         setShowPdaSearch,
         showTwdSearch,

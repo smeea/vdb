@@ -29,7 +29,7 @@ import 'assets/css/style.styl';
 
 const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
 
-function App(props) {
+const App = (props) => {
   const {
     whoAmI,
     decks,
@@ -43,20 +43,12 @@ function App(props) {
 
   useEffect(() => {
     const byTimestamp = (a, b) => {
-      return new Date(b[1]) - new Date(a[1]);
+      return new Date(b.timestamp) - new Date(a.timestamp);
     };
 
     if (decks) {
-      const decksForSort = [];
-
-      Object.keys(decks).map((key) => {
-        decksForSort.push([decks[key], decks[key].timestamp]);
-      });
-
-      const lastDeckArray = decksForSort.sort(byTimestamp)[0];
-      if (lastDeckArray) {
-        setLastDeck(lastDeckArray[0]);
-      }
+      const lastDeckArray = Object.values(decks).sort(byTimestamp);
+      setLastDeck(lastDeckArray[0]);
     }
   }, [decks]);
 
@@ -128,6 +120,6 @@ function App(props) {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

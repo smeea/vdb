@@ -10,8 +10,9 @@ function DeckImportText({
   setShowButtons,
   handleClose,
   show,
+  addImportedDeckToState,
 }) {
-  const { getDecks, setActiveDeck, isMobile } = useApp();
+  const { setActiveDeck, isMobile } = useApp();
 
   const [deckText, setDeckText] = useState('');
   const [emptyDeckText, setEmptyDeckText] = useState(false);
@@ -31,7 +32,6 @@ function DeckImportText({
       setEmptyDeckText(false);
       setSpinnerState(true);
 
-      let newDeckId;
       const url = `${process.env.API_URL}decks/${
         anonymous ? 'anonymous_' : ''
       }import`;
@@ -52,14 +52,11 @@ function DeckImportText({
       fetchPromise
         .then((response) => response.json())
         .then((data) => {
-          newDeckId = data.deckid;
+          addImportedDeckToState({ data, anonymous });
           setBadCards(data.bad_cards);
-        })
-        .then(() => !anonymous && getDecks())
-        .then(() => {
           setActiveDeck({
             src: anonymous ? 'shared' : 'my',
-            deckid: newDeckId,
+            deckid: data.deckid,
           });
           isMobile && setShowButtons(false);
           setDeckText('');

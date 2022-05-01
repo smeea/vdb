@@ -4,8 +4,13 @@ import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-function DeckImportAmaranth(props) {
-  const { getDecks, setActiveDeck, isMobile } = useApp();
+const DeckImportAmaranth = ({
+  addImportedDeckToState,
+  parseCards,
+  handleClose,
+  show,
+}) => {
+  const { setDecks, setActiveDeck, isMobile, username } = useApp();
   const [deckUrl, setDeckUrl] = useState('');
   const [emptyUrl, setEmptyUrl] = useState(false);
   const [importError, setImportError] = useState(false);
@@ -34,7 +39,7 @@ function DeckImportAmaranth(props) {
           .then(() => {
             setDeckUrl('');
             setSpinnerState(false);
-            props.handleClose();
+            handleClose();
           })
           .catch((error) => {
             setImportError(true);
@@ -46,58 +51,57 @@ function DeckImportAmaranth(props) {
     }
   };
 
-  const importDeckFromAmaranth = (deck) => {
-    const branchesImport = (master, revisions) => {
-      const branches = [];
+  const branchesImport = async (master, revisions) => {
+    const branches = [];
 
-      revisions.map((revision) => {
-        const cards = {};
-        Object.keys(revision.cards).map((i) => {
-          if (idReference[i] !== undefined) {
-            cards[idReference[i]] = revision.cards[i];
-          } else {
-            // TODO handle undefined cards
-          }
-        });
-
-        branches.push({
-          cards: cards,
-          comments: revision.comments,
-        });
+    revisions.map((revision) => {
+      const cards = {};
+      Object.keys(revision.cards).map((i) => {
+        if (idReference[i] !== undefined) {
+          cards[idReference[i]] = revision.cards[i];
+        }
       });
 
-      const url = `${process.env.API_URL}branch/import`;
+      branches.push({
+        cards: cards,
+        comments: revision.comments,
+      });
+    });
 
-      const options = {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          master: master,
-          branches: branches,
-        }),
-      };
+    const url = `${process.env.API_URL}branch/import`;
 
-      fetch(url, options)
-        .then(() => getDecks())
-        .catch((error) => setImportError(true));
+    const options = {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        master: master,
+        branches: branches,
+      }),
     };
 
-    const revisions = deck.versions ? deck.versions : undefined;
+    return fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        data.deckids.map((deckid, idx) => {
+          branches[idx].deckid = deckid;
+        });
+        return branches;
+      })
+      .catch((error) => setImportError(true));
+  };
 
+  const importDeckFromAmaranth = async (deck) => {
     const cards = {};
     Object.keys(deck.cards).map((i) => {
       if (idReference[i] !== undefined) {
         cards[idReference[i]] = deck.cards[i];
-      } else {
-        // TODO handle undefined cards
       }
     });
 
-    let newDeckId;
     const url = `${process.env.API_URL}decks/create`;
     const options = {
       method: 'POST',
@@ -118,11 +122,52 @@ function DeckImportAmaranth(props) {
 
     fetchPromise
       .then((response) => response.json())
-      .then((data) => (newDeckId = data.deckid))
-      .then(() => revisions && branchesImport(newDeckId, revisions))
-      .then(() => getDecks())
-      .then(() => {
-        setActiveDeck({ src: 'my', deckid: newDeckId });
+      .then((data) => {
+        if (deck.versions) {
+          branchesImport(data.deckid, deck.versions).then((branches) => {
+            const now = new Date();
+            const decks = {};
+
+            branches.map((b, idx) => {
+              const { crypt, library } = parseCards(b.cards);
+              decks[b.deckid] = {
+                deckid: b.deckid,
+                master: data.deckid,
+                name: deck.title,
+                branchName: `#${idx + 1}`,
+                author: deck.author,
+                description: b.comments || '',
+                crypt: crypt,
+                library: library,
+                owner: username,
+                timestamp: now.toUTCString(),
+              };
+            });
+
+            const { crypt, library } = parseCards(cards);
+            decks[data.deckid] = {
+              deckid: data.deckid,
+              name: deck.title,
+              branches: Object.keys(decks),
+              branchName: '#0',
+              author: deck.author,
+              description: deck.description || '',
+              crypt: crypt,
+              library: library,
+              owner: username,
+              timestamp: now.toUTCString(),
+            };
+
+            setDecks((prevState) => ({
+              ...prevState,
+              ...decks,
+            }));
+          });
+        } else {
+          addImportedDeckToState({ data });
+        }
+
+        setActiveDeck({ src: 'my', deckid: data.deckid });
       })
       .catch((error) => setImportError(true));
   };
@@ -143,13 +188,13 @@ function DeckImportAmaranth(props) {
   };
 
   useEffect(() => {
-    if (props.show && !idReference) getIdReference();
-  }, [props.show]);
+    if (show && !idReference) getIdReference();
+  }, [show]);
 
   return (
     <Modal
-      show={props.show}
-      onHide={props.handleClose}
+      show={show}
+      onHide={handleClose}
       onShow={() => refUrl.current.focus()}
       animation={false}
       size="lg"
@@ -160,7 +205,7 @@ function DeckImportAmaranth(props) {
         className={isMobile ? 'pt-2 pb-0 ps-2 pe-3' : 'pt-3 pb-1 px-4'}
       >
         <h5>Import from Amaranth URL</h5>
-        <Button variant="outline-secondary" onClick={props.handleClose}>
+        <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -211,6 +256,6 @@ function DeckImportAmaranth(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default DeckImportAmaranth;

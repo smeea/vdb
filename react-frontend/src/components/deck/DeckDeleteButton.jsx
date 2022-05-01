@@ -6,20 +6,32 @@ import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckDeleteButton = (props) => {
-  const { getDecks, setActiveDeck, isMobile } = useApp();
+  const { setActiveDeck, setDecks, isMobile, decks } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
-    deleteDeck();
-    setShowConfirmation(false);
-    setActiveDeck({ src: null, deckid: null });
-    navigate('/decks');
-    isMobile && props.setShowButtons(false);
+    deleteDeck(props.deck.deckid);
   };
 
-  const deleteDeck = () => {
+  const getLastDeckExcept = (deckid) => {
+    const byTimestamp = (a, b) => {
+      return new Date(b.timestamp) - new Date(a.timestamp);
+    };
+
+    const lastDeckArray = Object.values(decks)
+      .filter((deck) => deck.deckid !== deckid)
+      .sort(byTimestamp);
+
+    if (lastDeckArray.length > 0) {
+      return { src: 'my', deckid: lastDeckArray[0].deckid };
+    } else {
+      return null;
+    }
+  };
+
+  const deleteDeck = (deckid) => {
     const url = `${process.env.API_URL}decks/remove`;
     const options = {
       method: 'POST',
@@ -28,9 +40,26 @@ const DeckDeleteButton = (props) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ deckid: props.deck.deckid }),
+      body: JSON.stringify({ deckid: deckid }),
     };
-    fetch(url, options).then(() => getDecks());
+
+    fetch(url, options).then(() => {
+      setDecks((prevState) => {
+        const newState = { ...prevState };
+        delete newState[deckid];
+        return newState;
+      });
+
+      const lastDeck = getLastDeckExcept(deckid);
+      if (lastDeck) {
+        setActiveDeck(lastDeck);
+      } else {
+        setActiveDeck({ src: null, deckid: null });
+        navigate('/decks');
+      }
+      setShowConfirmation(false);
+      isMobile && props.setShowButtons(false);
+    });
   };
 
   return (

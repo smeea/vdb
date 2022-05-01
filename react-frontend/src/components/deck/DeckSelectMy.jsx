@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import Shuffle from 'assets/images/icons/shuffle.svg';
 import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
@@ -7,41 +7,46 @@ import { useApp } from 'context';
 
 function DeckSelectMy(props) {
   const { inventoryMode, setActiveDeck, decks, isMobile } = useApp();
+  const [options, setOptions] = useState([]);
 
   const byTimestamp = (a, b) => {
     return new Date(b[1]) - new Date(a[1]);
   };
 
-  const preOptions = Object.keys(decks)
-    .filter((i) => !decks[i].master)
-    .filter((i) => !decks[i].hidden)
-    .map((i, index) => {
-      return [
-        {
-          value: i,
-          label: (
-            <div className="d-flex justify-content-between align-items-center">
-              <div className="d-inline trimmed">{decks[i]['name']}</div>
-              <div className="d-flex align-items-center ps-2 small">
-                {inventoryMode && (
-                  <div className="pe-2">
-                    {decks[i].inventory_type == 's' && <Shuffle />}
-                    {decks[i].inventory_type == 'h' && <PinAngleFill />}
-                    {!decks[i].inventory_type && <At />}
-                  </div>
-                )}
-                {new Date(decks[i]['timestamp']).toISOString().slice(0, 10)}
+  useEffect(() => {
+    const preOptions = Object.keys(decks)
+      .filter((i) => !decks[i].master)
+      .filter((i) => !decks[i].hidden)
+      .map((i, index) => {
+        return [
+          {
+            value: i,
+            label: (
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-inline trimmed">{decks[i]['name']}</div>
+                <div className="d-flex align-items-center ps-2 small">
+                  {inventoryMode && (
+                    <div className="pe-2">
+                      {decks[i].inventory_type == 's' && <Shuffle />}
+                      {decks[i].inventory_type == 'h' && <PinAngleFill />}
+                      {!decks[i].inventory_type && <At />}
+                    </div>
+                  )}
+                  {new Date(decks[i]['timestamp']).toISOString().slice(0, 10)}
+                </div>
               </div>
-            </div>
-          ),
-        },
-        decks[i]['timestamp'],
-      ];
-    });
+            ),
+          },
+          decks[i]['timestamp'],
+        ];
+      });
 
-  const options = preOptions.sort(byTimestamp).map((i, index) => {
-    return i[0];
-  });
+    setOptions(
+      preOptions.sort(byTimestamp).map((i, index) => {
+        return i[0];
+      })
+    );
+  }, [decks]);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children;
@@ -93,8 +98,6 @@ function DeckSelectMy(props) {
     }
   };
 
-  const value = getValue();
-
   return (
     <Select
       classNamePrefix="react-select"
@@ -104,7 +107,7 @@ function DeckSelectMy(props) {
       name="decks"
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
-      value={value}
+      value={getValue()}
       onChange={(e) => {
         props.setActiveDeck
           ? props.setActiveDeck({ src: 'my', deckid: e.value })

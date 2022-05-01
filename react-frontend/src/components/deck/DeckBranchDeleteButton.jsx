@@ -5,12 +5,12 @@ import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckBranchDeleteButton = (props) => {
-  const { getDecks, setActiveDeck, isMobile } = useApp();
+  const { setDecks, setActiveDeck, isMobile } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
-    deleteBranch();
+    deleteBranch(props.deck.deckid);
     setShowConfirmation(false);
     if (props.deck.master) {
       setActiveDeck({ src: 'my', deckid: props.deck.master });
@@ -20,7 +20,7 @@ const DeckBranchDeleteButton = (props) => {
     isMobile && props.setShowButtons(false);
   };
 
-  const deleteBranch = () => {
+  const deleteBranch = (deckid) => {
     const url = `${process.env.API_URL}branch/remove`;
     const options = {
       method: 'POST',
@@ -29,11 +29,34 @@ const DeckBranchDeleteButton = (props) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ deckid: props.deck.deckid }),
+      body: JSON.stringify({ deckid: deckid }),
     };
-    fetch(url, options)
-      .then(() => getDecks())
-      .then(() => isMobile && props.setShowInfo(true));
+    fetch(url, options).then(() => {
+      setDecks((prevState) => {
+        const newState = { ...prevState };
+        delete newState[deckid];
+
+        const masterId = prevState[deckid].master || null;
+        const branches = masterId
+          ? prevState[masterId].branches
+          : prevState[deckid].branches;
+
+        if (masterId) {
+          branches.splice(branches.indexOf(deckid), 1);
+          newState[masterId].branches = branches;
+        } else {
+          const newMasterId = branches.pop();
+          newState[newMasterId].branches = branches;
+          newState[newMasterId].master = null;
+          branches.map((b) => {
+            newState[b].master = newMasterId;
+          });
+        }
+
+        return newState;
+      });
+      isMobile && props.setShowInfo(true);
+    });
   };
 
   return (

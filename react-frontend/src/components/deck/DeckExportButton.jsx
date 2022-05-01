@@ -11,7 +11,7 @@ import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
 const DeckExportButton = (props) => {
-  const { username, decks, isMobile } = useApp();
+  const { username, decks, activeDeck, isMobile } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -88,13 +88,13 @@ const DeckExportButton = (props) => {
 
   const copyDeck = (format) => {
     setError(false);
-    if (props.activeDeck) {
+    if (activeDeck) {
       setSpinnerState(true);
 
       const input = {
-        deckid: props.activeDeck.deckid,
+        deckid: activeDeck.deckid,
         format: format,
-        src: props.activeDeck.src,
+        src: activeDeck.src,
       };
 
       if (input.deckid == 'deckInUrl') {
@@ -145,13 +145,13 @@ const DeckExportButton = (props) => {
 
   const saveDeck = (format) => {
     setError(false);
-    if (props.activeDeck) {
+    if (activeDeck) {
       setSpinnerState(true);
 
       const input = {
-        deckid: props.activeDeck.deckid,
+        deckid: activeDeck.deckid,
         format: format,
-        src: props.activeDeck.src,
+        src: activeDeck.src,
       };
 
       if (input.deckid == 'deckInUrl') {

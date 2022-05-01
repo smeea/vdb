@@ -1,5 +1,11 @@
 # FIX
-- Disable inventorymode for unlogged user
+- Long deck name in deck selector (in decks and diff)
+- ND in Library info
+- Merge anonymous import with import
+- Import with trailing space (maybe rework export to not add it?)
+- Deleting deck (test)
+- Error message in ImportAmaranth
+- Clear confirmation text in Delete
 
 # FEATURES
 - Export all in xlsx and csv
@@ -16,7 +22,7 @@
 - Transit from useContext to Recoil
 - Reduce re-renders
 - Reduce first loading (Google PageSpeed Insights)
-- Remove getDecks call (follow modification like deletion on frontend, only get decks once during login/whoami)
+- Refactor setDecks calls (import/create/clone) into AddDeckToState
 
 # IMPROVE TECHNOLOGY - BACKEND
 

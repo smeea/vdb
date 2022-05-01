@@ -81,7 +81,8 @@ def parse_user_decks(user_decks):
             "public_child": deck.public_child,
         }
 
-    return (decks)
+    return decks
+
 
 @login.unauthorized_handler
 def unauthorized_handler():
@@ -302,7 +303,7 @@ def updateDeck(deckid):
     return jsonify({"updated deck": d.deckid})
 
 
-
+# DEPRECATED (LEFT FOR BACKWARD COMPATIBILITY AND 3RD PARTY TOOLS)
 @app.route("/api/decks", methods=["GET"])
 def listDecks():
     try:
@@ -347,8 +348,13 @@ def newDeck():
 
         return jsonify(
             {
-                "new deck created": request.json["deckname"],
-                "deckid": deckid,
+                "timestamp": d.timestamp,
+                "deckid": d.deckid,
+                "name": d.name,
+                "owner": d.author.username,
+                "author": d.author_public_name,
+                "description": d.description,
+                "cards": d.cards,
             }
         )
 
@@ -390,6 +396,7 @@ def createBranch():
             "master": master.deckid,
             "source": source.deckid,
             "deckid": deckid,
+            "branch_name": branch_name,
         }
     )
 
@@ -448,40 +455,32 @@ def importBranch():
 @app.route("/api/branch/remove", methods=["POST"])
 @login_required
 def removeBranch():
-    try:
-        d = Deck.query.get(request.json["deckid"])
-        if d.author != current_user:
-            abort(401)
+    d = Deck.query.get(request.json["deckid"])
+    if d.author != current_user:
+        abort(401)
 
-        if d.master:
-            master = Deck.query.get(d.master)
+    if d.master:
+        master = Deck.query.get(d.master)
 
-            branches = master.branches.copy()
-            branches.remove(d.deckid)
-            master.branches = branches
+        branches = master.branches.copy()
+        branches.remove(d.deckid)
+        master.branches = branches
 
-            db.session.delete(d)
-            db.session.commit()
-            return jsonify({"branch removed": request.json["deckid"]})
+    else:
+        j = Deck.query.get(d.branches[-1])
 
-        else:
-            j = Deck.query.get(d.branches[-1])
+        branches = d.branches.copy()
+        branches.remove(j.deckid)
+        j.branches = branches
+        for i in branches:
+            k = Deck.query.get(i)
+            k.master = j.deckid
 
-            branches = d.branches.copy()
-            branches.remove(j.deckid)
-            j.branches = branches
-            for i in branches:
-                k = Deck.query.get(i)
-                k.master = j.deckid
+        j.master = ""
 
-            j.master = ""
-
-            db.session.delete(d)
-            db.session.commit()
-            return jsonify({"branch removed": request.json["deckid"]})
-
-    except Exception:
-        return jsonify({"error": "idk"})
+    db.session.delete(d)
+    db.session.commit()
+    return jsonify({"deckid": request.json["deckid"]})
 
 
 @app.route("/api/decks/clone", methods=["POST"])
@@ -541,20 +540,24 @@ def cloneDeck():
     elif request.json["src"] == "precons":
         set, precon = request.json["target"].split(":")
 
-        with open("preconDecks.json", "r") as precons_file:
-            precon_decks = json.load(precons_file)
-            deck = precon_decks[set][precon]
+        with open("preconDecks.json", "r") as precons_cards_file, open(
+            "setsAndPrecons.json", "r"
+        ) as precons_data_file:
+            precon_cards = json.load(precons_cards_file)
+            precon_data = json.load(precons_data_file)
 
+            name = f"{precon_data[set]['precons'][precon]['name']} [PRECON]"
+            description = f"Preconstructed from \"{precon_data[set]['name']}\" [{precon_data[set]['date']}]"
             cards = {}
-            for i in deck:
-                cards[int(i)] = deck[i]
+            for i, q in precon_cards[set][precon].items():
+                cards[int(i)] = q
 
             deckid = uuid.uuid4().hex
             d = Deck(
                 deckid=deckid,
-                name=f"Preconstructed {set}:{precon}",
+                name=name,
                 author_public_name="VTES Team",
-                description="",
+                description=description,
                 author=current_user,
                 tags=["precon"],
                 cards=cards,
@@ -608,47 +611,57 @@ def urlCloneDeck():
 @app.route("/api/decks/import", methods=["POST"])
 @login_required
 def importDeck():
-    try:
-        deck = deck_import(request.json["deckText"])
+    deck = deck_import(request.json["deckText"])
 
-        deckid = uuid.uuid4().hex
-        d = Deck(
-            deckid=deckid,
-            name=deck["name"],
-            author_public_name=deck["author"],
-            description=deck["description"],
-            author=current_user,
-            cards=deck["cards"],
-        )
-        db.session.add(d)
-        db.session.commit()
+    deckid = uuid.uuid4().hex
+    d = Deck(
+        deckid=deckid,
+        name=deck["name"],
+        author_public_name=deck["author"],
+        description=deck["description"],
+        author=current_user,
+        cards=deck["cards"],
+    )
+    db.session.add(d)
+    db.session.commit()
 
-        return jsonify({"deckid": deckid, "bad_cards": deck["bad_cards"]})
-
-    except Exception:
-        print("deck import: ", request.json["deckText"])
+    return jsonify(
+        {
+            "deckid": deckid,
+            "bad_cards": deck["bad_cards"],
+            "cards": deck["cards"],
+            "name": deck["name"],
+            "author": deck["author"],
+            "description": deck["description"],
+        }
+    )
 
 
 @app.route("/api/decks/anonymous_import", methods=["POST"])
 def anonymousImportDeck():
-    try:
-        deck = deck_import(request.json["deckText"])
+    deck = deck_import(request.json["deckText"])
 
-        deckid = uuid.uuid4().hex
-        d = Deck(
-            deckid=deckid,
-            name=deck["name"],
-            author_public_name=deck["author"],
-            description=deck["description"],
-            cards=deck["cards"],
-        )
-        db.session.add(d)
-        db.session.commit()
+    deckid = uuid.uuid4().hex
+    d = Deck(
+        deckid=deckid,
+        name=deck["name"],
+        author_public_name=deck["author"],
+        description=deck["description"],
+        cards=deck["cards"],
+    )
+    db.session.add(d)
+    db.session.commit()
 
-        return jsonify({"deckid": deckid, "bad_cards": deck["bad_cards"]})
-
-    except Exception:
-        print("deck import: ", request.json["deckText"])
+    return jsonify(
+        {
+            "deckid": deckid,
+            "bad_cards": deck["bad_cards"],
+            "cards": deck["cards"],
+            "name": deck["name"],
+            "author": deck["author"],
+            "description": deck["description"],
+        }
+    )
 
 
 @app.route("/api/decks/export", methods=["POST"])

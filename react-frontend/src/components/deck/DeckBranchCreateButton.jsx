@@ -4,11 +4,11 @@ import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckBranchCreateButton = (props) => {
-  const { getDecks, setActiveDeck, isMobile } = useApp();
+  const { setDecks, setActiveDeck, isMobile } = useApp();
 
   const branchCreate = () => {
-    let newdeckid;
     const url = `${process.env.API_URL}branch/create`;
+    const master = props.deck.master ? props.deck.master : props.deck.deckid;
 
     const options = {
       method: 'POST',
@@ -18,7 +18,7 @@ const DeckBranchCreateButton = (props) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        master: props.deck.master ? props.deck.master : props.deck.deckid,
+        master: master,
         source: props.deck.deckid,
       }),
     };
@@ -26,11 +26,28 @@ const DeckBranchCreateButton = (props) => {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        if (data.error === undefined) newdeckid = data.deckid;
-      })
-      .then(() => getDecks())
-      .then(() => setActiveDeck({ src: 'my', deckid: newdeckid }))
-      .then(() => isMobile && props.setShowButtons(false));
+        const now = new Date();
+        setDecks((prevState) => ({
+          ...prevState,
+          [master]: {
+            ...prevState[master],
+            branches: prevState[master].branches
+              ? [...prevState[master].branches, data.deckid]
+              : [data.deckid],
+          },
+          [data.deckid]: {
+            ...props.deck,
+            deckid: data.deckid,
+            crypt: { ...props.deck.crypt },
+            library: { ...props.deck.library },
+            master: master,
+            branchName: data.branch_name,
+            timestamp: now.toUTCString(),
+          },
+        }));
+        setActiveDeck({ src: 'my', deckid: data.deckid });
+        isMobile && props.setShowButtons(false);
+      });
   };
 
   return (
