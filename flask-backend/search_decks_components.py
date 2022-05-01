@@ -442,7 +442,6 @@ def get_decks_by_similar(deckid, decks):
             twdDecks = json.load(twdDecks_file)
             cards = twdDecks[deckid]["cards"]
 
-
     CRYPT_COEF = 4  # Increase points for Crypt cards
     AC_COEF = 0.5  # Reduce points for Anarch Convert
     SIMILARITY_THRESHOLD = 50  # Minimum points to pass
@@ -458,8 +457,8 @@ def get_decks_by_similar(deckid, decks):
             query_library_total += q
 
     for deck in decks:
-        crypt_ratio = deck['crypt_total'] / query_crypt_total
-        library_ratio = deck['library_total'] / query_library_total
+        crypt_ratio = deck["crypt_total"] / query_crypt_total
+        library_ratio = deck["library_total"] / query_library_total
 
         matches_crypt = 0
         matches_library = 0
@@ -467,17 +466,19 @@ def get_decks_by_similar(deckid, decks):
         for cardid, q in cards.items():
             cardid = int(cardid)
             if cardid > 200000:
-                if cardid in deck['crypt']:
+                if cardid in deck["crypt"]:
                     # Reduce points for Anarch Convert
                     if cardid == 200076:
-                        matches_crypt += min(q, deck['crypt'][cardid]) * AC_COEF
+                        matches_crypt += min(q, deck["crypt"][cardid]) * AC_COEF
                     else:
-                        matches_crypt += min(q, deck['crypt'][cardid])
+                        matches_crypt += min(q, deck["crypt"][cardid])
 
-            elif cardid in deck['library']:
-                matches_library += min(q, deck['library'][cardid])
+            elif cardid in deck["library"]:
+                matches_library += min(q, deck["library"][cardid])
 
-        similarity = matches_crypt * crypt_ratio * CRYPT_COEF + matches_library * library_ratio
+        similarity = (
+            matches_crypt * crypt_ratio * CRYPT_COEF + matches_library * library_ratio
+        )
 
         if similarity > SIMILARITY_THRESHOLD:
             match_decks.append(deck)

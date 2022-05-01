@@ -35,7 +35,7 @@ function PdaSearchForm(props) {
   } = useApp();
 
   const { pdaFormState, setPdaFormState } = useSearchForms();
-  const { pdaResults, setPdaResults } = useSearchResults();
+  const { setPdaResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;

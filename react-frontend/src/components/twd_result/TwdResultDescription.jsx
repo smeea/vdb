@@ -7,7 +7,7 @@ import { useApp, useSearchForms } from 'context';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 
 function TwdResultDescription(props) {
-  const { username, isMobile, isDesktop } = useApp();
+  const { username, isDesktop } = useApp();
   const { setTwdFormState } = useSearchForms();
 
   const navigate = useNavigate();

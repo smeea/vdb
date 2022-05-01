@@ -18,7 +18,9 @@ if not user:
 decks = user.decks.all()
 
 if len(argv) == 2:
-    print(user.username + ":", [f"{i + 1}: {deck.name}" for i, deck in enumerate(decks)])
+    print(
+        user.username + ":", [f"{i + 1}: {deck.name}" for i, deck in enumerate(decks)]
+    )
 else:
     for i in argv[2:]:
         deck = decks[int(i) - 1]

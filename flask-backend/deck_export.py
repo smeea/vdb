@@ -199,14 +199,16 @@ def deck_export(d, format, crypt_base=None, library_base=None):
                 cryptMax += capacityList[-i - 1]
 
             if format == "twd":
-                twd_info = f"Event Name, e.g. Nosferatu Hosting Loughman's Birthday\n" \
-                    f"Event Location, e.g. Heath, Ohio\n" \
-                    f"Event Date, e.g. December 5th 2021\n" \
-                    f"Number of Rounds, e.g. 2R+F\n" \
-                    f"Number of Players, e.g. 13 players\n" \
-                    f"Winner, e.g. {d['author']}\n" \
-                    f"Scores, e.g. 2gw8 + 3vp in final\n" \
+                twd_info = (
+                    f"Event Name, e.g. Nosferatu Hosting Loughman's Birthday\n"
+                    f"Event Location, e.g. Heath, Ohio\n"
+                    f"Event Date, e.g. December 5th 2021\n"
+                    f"Number of Rounds, e.g. 2R+F\n"
+                    f"Number of Players, e.g. 13 players\n"
+                    f"Winner, e.g. {d['author']}\n"
+                    f"Scores, e.g. 2gw8 + 3vp in final\n"
                     f"\n"
+                )
                 deck.append(twd_info)
 
             deck.append(f"Deck Name: {deck_name}\n")

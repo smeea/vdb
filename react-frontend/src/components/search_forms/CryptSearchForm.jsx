@@ -37,7 +37,7 @@ function CryptSearchForm(props) {
   } = useApp();
 
   const { cryptFormState, setCryptFormState } = useSearchForms();
-  const { cryptResults, setCryptResults } = useSearchResults();
+  const { setCryptResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);

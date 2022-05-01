@@ -35,7 +35,7 @@ function TwdSearchForm(props) {
   } = useApp();
 
   const { twdFormState, setTwdFormState } = useSearchForms();
-  const { twdResults, setTwdResults } = useSearchResults();
+  const { setTwdResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const showLimit = 25;

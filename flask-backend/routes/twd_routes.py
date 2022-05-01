@@ -42,8 +42,8 @@ def getTwdAuthors():
 def searchSimilarTwd():
     cards = {}
 
-    if 'deckid' in request.json:
-        deckid = request.json['deckid']
+    if "deckid" in request.json:
+        deckid = request.json["deckid"]
 
         if len(deckid) == 32:
             cards = Deck.query.get(deckid).cards
@@ -51,11 +51,11 @@ def searchSimilarTwd():
         else:
             with open("twdDecksById.json", "r") as twdDecks_file:
                 twdDecks = json.load(twdDecks_file)
-                for cardid, q in twdDecks[deckid]['cards'].items():
+                for cardid, q in twdDecks[deckid]["cards"].items():
                     cards[int(cardid)] = q
 
     else:
-        for cardid, q in request.json['cards'].items():
+        for cardid, q in request.json["cards"].items():
             cards[int(cardid)] = q
 
     result = search_decks([{"option": "similar", "value": cards}], twd_decks)

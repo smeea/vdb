@@ -37,7 +37,7 @@ function LibrarySearchForm(props) {
   } = useApp();
 
   const { libraryFormState, setLibraryFormState } = useSearchForms();
-  const { libraryResults, setLibraryResults } = useSearchResults();
+  const { setLibraryResults } = useSearchResults();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [preresults, setPreresults] = useState(undefined);

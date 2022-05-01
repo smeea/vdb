@@ -108,25 +108,33 @@ def get_crypt_by_traits(traits, crypt):
 
             elif trait == "1 bleed":
                 if re.search(
-                    r"{}".format("[:.] \+[1-9] bleed."), card["Card Text"], re.IGNORECASE
+                    r"{}".format("[:.] \+[1-9] bleed."),
+                    card["Card Text"],
+                    re.IGNORECASE,
                 ):
                     counter += 1
 
             elif trait == "2 bleed":
                 if re.search(
-                    r"{}".format("[:.] \+[2-9] bleed."), card["Card Text"], re.IGNORECASE
+                    r"{}".format("[:.] \+[2-9] bleed."),
+                    card["Card Text"],
+                    re.IGNORECASE,
                 ):
                     counter += 1
 
             elif trait == "1 strength":
                 if re.search(
-                    r"{}".format("[:.] \+[1-9] strength."), card["Card Text"], re.IGNORECASE
+                    r"{}".format("[:.] \+[1-9] strength."),
+                    card["Card Text"],
+                    re.IGNORECASE,
                 ):
                     counter += 1
 
             elif trait == "2 strength":
                 if re.search(
-                    r"{}".format("[:.] \+[2-9] strength."), card["Card Text"], re.IGNORECASE
+                    r"{}".format("[:.] \+[2-9] strength."),
+                    card["Card Text"],
+                    re.IGNORECASE,
                 ):
                     counter += 1
 
