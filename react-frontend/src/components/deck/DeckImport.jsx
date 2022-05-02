@@ -127,18 +127,18 @@ const DeckImport = (props) => {
     fetchPromise
       .then((response) => response.json())
       .then((data) => {
-        setDecks((prevState) => {
-          const now = new Date();
+        const { crypt, library } = parseCards(data.cards);
 
-          return {
-            ...prevState,
-            [data.deckid]: {
-              ...data,
-              branchName: '#0',
-              timestamp: now.toUTCString(),
-            },
-          };
-        });
+        setDecks((prevState) => ({
+          ...prevState,
+          [data.deckid]: {
+            ...data,
+            crypt: crypt,
+            library: library,
+            branchName: '#0',
+          },
+        }));
+        !isDesktop && props.setShowButtons(false);
         setActiveDeck({ src: 'my', deckid: data.deckid });
       })
       .catch((error) => setCreateError(true));
