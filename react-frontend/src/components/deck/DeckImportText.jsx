@@ -8,14 +8,14 @@ function DeckImportText({
   anonymous,
   setBadCards,
   setShowButtons,
-  handleClose,
+  handleCloseModal,
   show,
   addImportedDeckToState,
 }) {
   const { setActiveDeck, isMobile } = useApp();
 
   const [deckText, setDeckText] = useState('');
-  const [emptyDeckText, setEmptyDeckText] = useState(false);
+  const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
   const refText = useRef(null);
 
@@ -25,11 +25,16 @@ function DeckImportText({
     setDeckText(event.target.value);
   };
 
+  const handleClose = () => {
+    handleCloseModal();
+    setDeckText('');
+  };
+
   const importDeckFromText = () => {
     setImportError(false);
 
     if (deckText) {
-      setEmptyDeckText(false);
+      setEmptyError(false);
       setSpinnerState(true);
 
       const url = `${process.env.API_URL}decks/${
@@ -68,7 +73,7 @@ function DeckImportText({
           setSpinnerState(false);
         });
     } else {
-      setEmptyDeckText(true);
+      setEmptyError(true);
     }
   };
 
@@ -139,7 +144,7 @@ It will skip other (useless) lines, you don't have to remove it yourself.
           )}
         </div>
         <ErrorOverlay
-          show={emptyDeckText}
+          show={emptyError}
           target={refText.current}
           placement="bottom"
           modal={true}

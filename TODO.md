@@ -4,7 +4,6 @@
 - Merge anonymous import with import
 - Import with trailing space (maybe rework export to not add it?)
 - Deleting deck (test)
-- Error message in ImportAmaranth
 
 # FEATURES
 - Export all in xlsx and csv

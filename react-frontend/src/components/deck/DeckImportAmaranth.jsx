@@ -7,12 +7,12 @@ import { useApp } from 'context';
 const DeckImportAmaranth = ({
   addImportedDeckToState,
   parseCards,
-  handleClose,
+  handleCloseModal,
   show,
 }) => {
   const { setDecks, setActiveDeck, isMobile, username } = useApp();
   const [deckUrl, setDeckUrl] = useState('');
-  const [emptyUrl, setEmptyUrl] = useState(false);
+  const [emptyError, setEmptyError] = useState(false);
   const [importError, setImportError] = useState(false);
   const refUrl = useRef(null);
   const [idReference, setIdReference] = useState(undefined);
@@ -26,11 +26,16 @@ const DeckImportAmaranth = ({
       .then((data) => data.error === undefined && setIdReference(data));
   };
 
+  const handleClose = () => {
+    handleCloseModal();
+    setDeckUrl('');
+  };
+
   const handleImportButton = () => {
     setImportError(false);
 
     if (/.*#deck\//.test(deckUrl)) {
-      setEmptyUrl(false);
+      setEmptyError(false);
       setSpinnerState(true);
 
       if (idReference) {
@@ -47,7 +52,7 @@ const DeckImportAmaranth = ({
           });
       }
     } else {
-      setEmptyUrl(true);
+      setEmptyError(true);
     }
   };
 
@@ -238,7 +243,7 @@ const DeckImportAmaranth = ({
           )}
         </div>
         <ErrorOverlay
-          show={emptyUrl}
+          show={emptyError}
           target={refUrl.current}
           placement="bottom"
           modal={true}

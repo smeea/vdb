@@ -292,7 +292,7 @@ const DeckImport = (props) => {
       )}
       <DeckImportText
         addImportedDeckToState={addImportedDeckToState}
-        handleClose={handleCloseImportModal}
+        handleCloseModal={handleCloseImportModal}
         show={showTextModal}
         setBadCards={setBadCards}
         setShowButtons={props.setShowButtons}
@@ -300,7 +300,7 @@ const DeckImport = (props) => {
       <DeckImportText
         anonymous={true}
         addImportedDeckToState={addImportedDeckToState}
-        handleClose={handleCloseImportModal}
+        handleCloseModal={handleCloseImportModal}
         show={showAnonymousTextModal}
         setBadCards={setBadCards}
         setShowButtons={props.setShowButtons}
@@ -308,7 +308,7 @@ const DeckImport = (props) => {
       <DeckImportAmaranth
         parseCards={parseCards}
         addImportedDeckToState={addImportedDeckToState}
-        handleClose={handleCloseImportModal}
+        handleCloseModal={handleCloseImportModal}
         show={showAmaranthModal}
       />
       <input
