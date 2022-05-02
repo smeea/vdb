@@ -14,6 +14,7 @@ function ModalConfirmation(props) {
     if (props.withConfirmation) {
       if (confirmation === 'YES') {
         setErrorConfirmation(false);
+        setConfirmation('');
         props.handleConfirm();
       } else {
         setErrorConfirmation(true);

@@ -5,7 +5,6 @@
 - Import with trailing space (maybe rework export to not add it?)
 - Deleting deck (test)
 - Error message in ImportAmaranth
-- Clear confirmation text in Delete
 
 # FEATURES
 - Export all in xlsx and csv
