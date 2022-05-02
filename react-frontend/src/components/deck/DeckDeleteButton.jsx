@@ -15,13 +15,22 @@ const DeckDeleteButton = (props) => {
     deleteDeck(props.deck.deckid);
   };
 
+  let revisions = [];
+  if (props.deck.master) {
+    revisions = [props.deck.master, ...decks[props.deck.master].branches];
+  } else if (props.deck.branches) {
+    revisions = [props.deck.deckid, ...props.deck.branches];
+  } else {
+    revisions = [props.deck.deckid];
+  }
+
   const getLastDeckExcept = (deckid) => {
     const byTimestamp = (a, b) => {
       return new Date(b.timestamp) - new Date(a.timestamp);
     };
 
     const lastDeckArray = Object.values(decks)
-      .filter((deck) => deck.deckid !== deckid)
+      .filter((deck) => !revisions.includes(deck.deckid))
       .sort(byTimestamp);
 
     if (lastDeckArray.length > 0) {
@@ -46,7 +55,9 @@ const DeckDeleteButton = (props) => {
     fetch(url, options).then(() => {
       setDecks((prevState) => {
         const newState = { ...prevState };
-        delete newState[deckid];
+        revisions.map((d) => {
+          delete newState[d];
+        });
         return newState;
       });
 
@@ -78,12 +89,7 @@ const DeckDeleteButton = (props) => {
         text={!props.noText && 'Delete Deck'}
       />
       <ModalConfirmation
-        withConfirmation={
-          props.deck.master ||
-          (props.deck.branches && props.deck.branches.length)
-            ? true
-            : false
-        }
+        withConfirmation={revisions.length > 1}
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}

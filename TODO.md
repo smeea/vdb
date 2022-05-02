@@ -1,7 +1,6 @@
 # FIX
 - Merge anonymous import with import
 - Import with trailing space (maybe rework export to not add it?)
-- Deleting deck (test)
 
 # FEATURES
 - Export all in xlsx and csv
