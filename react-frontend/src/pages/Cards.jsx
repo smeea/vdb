@@ -9,8 +9,7 @@ import {
   ResultCryptLayoutText,
   ResultLibraryLayoutText,
   ButtonCardCopyUrl,
-  ButtonSearchTwd,
-  ButtonSearchPda,
+  ButtonSearchCardInDecks,
   ButtonAddCard,
   ButtonIconed,
   CardImage,
@@ -165,8 +164,14 @@ function Cards({ lastDeckId }) {
                             gap={1}
                           >
                             <ButtonCardCopyUrl id={cardId} />
-                            <ButtonSearchTwd id={card.Id} />
-                            <ButtonSearchPda id={card.Id} />
+                            <ButtonSearchCardInDecks
+                              id={card.Id}
+                              target="twd"
+                            />
+                            <ButtonSearchCardInDecks
+                              id={card.Id}
+                              target="pda"
+                            />
                             <ButtonIconed
                               variant={cardInCompare ? 'third' : 'primary'}
                               onClick={handleCompare}
@@ -238,8 +243,8 @@ function Cards({ lastDeckId }) {
                     )}
                     <Stack className="pt-2" direction="horizontal" gap={1}>
                       <ButtonCardCopyUrl id={card.Id} />
-                      <ButtonSearchTwd id={card.Id} />
-                      <ButtonSearchPda id={card.Id} />
+                      <ButtonSearchCardInDecks id={card.Id} target="twd" />
+                      <ButtonSearchCardInDecks id={card.Id} target="pda" />
                       <ButtonIconed
                         variant={cardInCompare ? 'third' : 'primary'}
                         onClick={handleCompare}

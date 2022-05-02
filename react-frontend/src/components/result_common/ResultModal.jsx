@@ -11,8 +11,7 @@ import {
   ResultLibraryLayoutText,
   ButtonCardCopyUrl,
   ButtonToggleShowImage,
-  ButtonSearchTwd,
-  ButtonSearchPda,
+  ButtonSearchCardInDecks,
   ButtonIconed,
   CardImage,
 } from 'components';
@@ -134,8 +133,8 @@ const ResultModal = (props) => {
                 )}
                 <Stack direction="horizontal" gap={1} className="pt-3">
                   <ButtonCardCopyUrl id={card.Id} />
-                  <ButtonSearchTwd id={card.Id} />
-                  <ButtonSearchPda id={card.Id} />
+                  <ButtonSearchCardInDecks id={card.Id} target="twd" />
+                  <ButtonSearchCardInDecks id={card.Id} target="pda" />
                   <ButtonIconed
                     variant={cardInCompare ? 'third' : 'primary'}
                     onClick={handleCompare}
@@ -194,8 +193,8 @@ const ResultModal = (props) => {
               <div className="d-flex justify-content-between pt-3">
                 <Stack direction="horizontal" gap={1}>
                   <ButtonCardCopyUrl id={card.Id} />
-                  <ButtonSearchTwd id={card.Id} />
-                  <ButtonSearchPda id={card.Id} />
+                  <ButtonSearchCardInDecks id={card.Id} target="twd" />
+                  <ButtonSearchCardInDecks id={card.Id} target="pda" />
                   <ButtonToggleShowImage />
                   <ButtonIconed
                     variant={cardInCompare ? 'third' : 'primary'}
