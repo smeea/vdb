@@ -3,7 +3,7 @@ import Select from 'react-select';
 import { useApp } from 'context';
 
 const DeckBranchSelect = (props) => {
-  const { setActiveDeck, decks } = useApp();
+  const { activeDeck, setActiveDeck, decks } = useApp();
   const [branches, setBranches] = useState([]);
   const [options, setOptions] = useState([]);
 
@@ -39,7 +39,7 @@ const DeckBranchSelect = (props) => {
     if (JSON.stringify(branches) != JSON.stringify(b)) {
       setBranches(b);
     }
-  }, [decks]);
+  }, [activeDeck, decks]);
 
   useEffect(() => {
     const preOptions = Object.keys(branches).map((i, index) => {

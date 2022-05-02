@@ -46,7 +46,7 @@ function DeckSelectMy(props) {
         return i[0];
       })
     );
-  }, [decks]);
+  }, [inventoryMode, decks]);
 
   const filterOption = ({ label }, string) => {
     const name = label.props.children[0].props.children;
