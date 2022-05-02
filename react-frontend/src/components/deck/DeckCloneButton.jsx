@@ -4,8 +4,7 @@ import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckCloneButton = (props) => {
-  const { setDecks, setActiveDeck, isMobile } = useApp();
-
+  const { setDecks, setActiveDeck, isMobile, username } = useApp();
   const [state, setState] = useState(false);
 
   const cloneDeck = () => {
@@ -55,6 +54,7 @@ const DeckCloneButton = (props) => {
               crypt: { ...props.deck.crypt },
               library: { ...props.deck.library },
               timestamp: now.toUTCString(),
+              owner: username,
             },
           }));
           setActiveDeck({ src: 'my', deckid: data.deckid });
