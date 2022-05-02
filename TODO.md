@@ -1,6 +1,5 @@
 # FIX
 - Long deck name in deck selector (in decks and diff)
-- ND in Library info
 - Merge anonymous import with import
 - Import with trailing space (maybe rework export to not add it?)
 - Deleting deck (test)

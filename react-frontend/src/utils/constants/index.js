@@ -45,6 +45,7 @@ export const TYPE = 'Type';
 export const DISCIPLINE = 'Discipline';
 export const ANY = 'ANY';
 export const MASTER = 'Master';
+export const EVENT = 'Event';
 export const CARD_TEXT = 'Card Text';
 export const CLAN = 'Clan';
 export const ID = 'Id';

@@ -1,52 +1,52 @@
 import React from 'react';
 import { ResultDisciplineImage } from 'components';
 
-function ResultLibraryDisciplines(props) {
+const ResultLibraryDisciplines = ({ value }) => {
   let disciplinesImages;
 
-  if (props.value.indexOf('&') != -1) {
-    const disciplines = props.value.split(' & ');
+  if (value.indexOf('&') != -1) {
+    const disciplines = value.split(' & ');
     let items = disciplines.length;
     disciplinesImages = disciplines.map((d, index) => {
       if (items > 1) {
         items -= 1;
         return (
-          <span key={index}>
+          <React.Fragment key={index}>
             <ResultDisciplineImage value={d} />+
-          </span>
+          </React.Fragment>
         );
       } else {
         return (
-          <span key={index}>
+          <React.Fragment key={index}>
             <ResultDisciplineImage value={d} />
-          </span>
+          </React.Fragment>
         );
       }
     });
-  } else if (props.value.indexOf('/') != -1) {
-    const disciplines = props.value.split('/');
+  } else if (value.indexOf('/') != -1) {
+    const disciplines = value.split('/');
     let items = disciplines.length;
     disciplinesImages = disciplines.map((d, index) => {
       if (items > 1) {
         items -= 1;
         return (
-          <span key={index}>
+          <React.Fragment key={index}>
             <ResultDisciplineImage value={d} />/
-          </span>
+          </React.Fragment>
         );
       } else {
         return (
-          <span key={index}>
+          <React.Fragment key={index}>
             <ResultDisciplineImage value={d} />
-          </span>
+          </React.Fragment>
         );
       }
     });
-  } else if (props.value) {
-    disciplinesImages = <ResultDisciplineImage value={props.value} />;
+  } else if (value) {
+    disciplinesImages = <ResultDisciplineImage value={value} />;
   }
 
-  return <span className="disciplines">{disciplinesImages}</span>;
-}
+  return <>{disciplinesImages}</>;
+};
 
 export default ResultLibraryDisciplines;

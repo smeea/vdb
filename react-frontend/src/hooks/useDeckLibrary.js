@@ -15,6 +15,7 @@ import {
   DISCIPLINE,
   ANY,
   MASTER,
+  EVENT,
   CLAN,
 } from 'utils/constants';
 
@@ -69,15 +70,25 @@ const useDeckLibrary = (cardsList, nativeLibrary, cardsToList = {}) => {
   );
 
   const libraryByClansTotal = getTotalCardsGroupedBy(
-    library.filter((card) => card.c.Clan && card.c.Type !== MASTER),
+    library.filter(
+      (card) => card.c.Clan && card.c.Type !== MASTER && card.c.Type !== EVENT
+    ),
     CLAN
   );
 
-  libraryByDisciplinesTotal[ANY] = countCards(
+  const anyDisciplines = countCards(
     library.filter(
-      (card) => !card.c.Clan && !card.c.Dicipline && card.c.Type !== MASTER
+      (card) =>
+        !card.c.Clan &&
+        !card.c.Discipline &&
+        card.c.Type !== MASTER &&
+        card.c.Type !== EVENT
     )
   );
+
+  if (anyDisciplines) {
+    libraryByDisciplinesTotal[ANY] = anyDisciplines;
+  }
 
   return {
     library,
