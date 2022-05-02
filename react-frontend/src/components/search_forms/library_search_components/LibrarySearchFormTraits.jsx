@@ -24,7 +24,6 @@ function LibrarySearchFormTraits(props) {
     ['unlock', 'Wake / Unlock'],
     ['black hand', 'Black Hand'],
     ['seraph', 'Seraph'],
-    ['anarch', 'Anarch'],
     ['infernal', 'Infernal'],
     ['burn', 'Burn Option'],
     ['banned', 'Banned'],
