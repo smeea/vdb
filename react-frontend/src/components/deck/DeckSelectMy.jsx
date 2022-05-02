@@ -18,12 +18,29 @@ function DeckSelectMy(props) {
       .filter((i) => !decks[i].master)
       .filter((i) => !decks[i].hidden)
       .map((i, index) => {
+        const diffDays = Math.round(
+          (new Date() - new Date(decks[i]['timestamp'])) / (1000 * 60 * 60 * 24)
+        );
+
+        let lastEdit;
+        if (diffDays > 90) {
+          lastEdit = new Date(decks[i]['timestamp']).toISOString().slice(0, 10);
+        } else if (diffDays > 30) {
+          lastEdit = `${Math.round(diffDays / 30)}m`;
+        } else if (diffDays > 5) {
+          lastEdit = `${Math.round(diffDays / 7)}w`;
+        } else if (diffDays >= 1) {
+          lastEdit = `${diffDays}d`;
+        }
+
         return [
           {
             value: i,
             label: (
               <div className="d-flex justify-content-between align-items-center">
-                <div className="d-inline trimmed">{decks[i]['name']}</div>
+                <div className="d-inline trimmed">
+                  {decks[i]['name'].slice(0, 32)}
+                </div>
                 <div className="d-flex align-items-center ps-2 small">
                   {inventoryMode && (
                     <div className="pe-2">
@@ -32,7 +49,7 @@ function DeckSelectMy(props) {
                       {!decks[i].inventory_type && <At />}
                     </div>
                   )}
-                  {new Date(decks[i]['timestamp']).toISOString().slice(0, 10)}
+                  {lastEdit}
                 </div>
               </div>
             ),

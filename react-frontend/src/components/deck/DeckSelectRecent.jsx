@@ -9,7 +9,7 @@ function DeckSelectRecent(props) {
     return {
       value: i.deckid,
       name: 'deck',
-      label: `${i.name} ${i.deckid.length === 32 ? '' : '[TWD] '}`,
+      label: i.name,
     };
   });
 

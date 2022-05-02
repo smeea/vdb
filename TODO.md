@@ -1,11 +1,11 @@
 # FIX
-- Long deck name in deck selector (in decks and diff)
 - Merge anonymous import with import
 - Import with trailing space (maybe rework export to not add it?)
 - Deleting deck (test)
 
 # FEATURES
 - Export all in xlsx and csv
+- Store src (pda/twd) for Recent decks and add TWD/PDA appendix to name in selector
 
 # MAYBE LATER FEATURES
 - Comments for PDA
@@ -22,6 +22,8 @@
 - Refactor setDecks calls (import/create/clone) into AddDeckToState
 
 # IMPROVE TECHNOLOGY - BACKEND
+- Remove 'owner' (use 'is_your' instead) for deck reply
+- Remove 'public_child/parent' (use 'is_public' instead) for deck reply
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)
