@@ -4,15 +4,15 @@ import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function InventoryDelete(props) {
-  const { isMobile } = useApp();
+const InventoryDelete = ({ setShowButtons }) => {
+  const { setInventoryCrypt, setInventoryLibrary, isNarrow } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     deleteInventory();
     setShowConfirmation(false);
-    isMobile && props.setShowButtons(false);
+    isNarrow && setShowButtons(false);
   };
 
   const deleteInventory = () => {
@@ -24,8 +24,8 @@ function InventoryDelete(props) {
     };
 
     fetch(url, options).then(() => {
-      props.setInventoryCrypt({});
-      props.setInventoryLibrary({});
+      setInventoryCrypt({});
+      setInventoryLibrary({});
     });
   };
 
@@ -49,6 +49,6 @@ function InventoryDelete(props) {
       />
     </>
   );
-}
+};
 
 export default InventoryDelete;

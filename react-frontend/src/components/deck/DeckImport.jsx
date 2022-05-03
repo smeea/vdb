@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const DeckImport = (props) => {
+const DeckImport = ({ setShowButtons, inInventory, handleClose }) => {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -16,8 +16,9 @@ const DeckImport = (props) => {
     activeDeck,
     setActiveDeck,
     setSharedDeck,
-    isMobile,
+    isNarrow,
     username,
+    inventoryAddToState,
   } = useApp();
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');
@@ -55,7 +56,7 @@ const DeckImport = (props) => {
     setShowTextModal(false);
     setShowAnonymousTextModal(false);
     setShowAmaranthModal(false);
-    isMobile && props.setShowButtons(false);
+    isNarrow && setShowButtons(false);
   };
   const handleOpenTextModal = () => setShowTextModal(true);
   const handleOpenAnonymousTextModal = () => setShowAnonymousTextModal(true);
@@ -138,7 +139,7 @@ const DeckImport = (props) => {
             branchName: '#0',
           },
         }));
-        !isDesktop && props.setShowButtons(false);
+        isNarrow && setShowButtons(false);
         setActiveDeck({ src: 'my', deckid: data.deckid });
       })
       .catch((error) => setCreateError(true));
@@ -216,13 +217,13 @@ const DeckImport = (props) => {
       let url = null;
       if (anonymous) {
         url = `${process.env.API_URL}decks/anonymous_import`;
-      } else if (props.inInventory) {
+      } else if (inInventory) {
         url = `${process.env.API_URL}inventory/import`;
       } else {
         url = `${process.env.API_URL}decks/import`;
       }
 
-      const body = props.inInventory
+      const body = inInventory
         ? JSON.stringify(result)
         : JSON.stringify({
             deckText: result,
@@ -240,11 +241,11 @@ const DeckImport = (props) => {
 
       const fetchPromise = fetch(url, options);
 
-      if (props.inInventory) {
+      if (inInventory) {
         fetchPromise
           .then((response) => response.json())
           .then((cards) => {
-            props.inventoryAddToState(cards);
+            inventoryAddToState(cards);
           })
           .catch((error) => setImportError(true));
       } else {
@@ -257,9 +258,9 @@ const DeckImport = (props) => {
               src: anonymous ? 'shared' : 'my',
               deckid: data.deckid,
             });
-            isMobile && props.setShowButtons(false);
+            isNarrow && setShowButtons(false);
             setDeckText('');
-            props.handleClose();
+            handleClose();
           })
           .catch((error) => {
             setImportError(true);
@@ -270,13 +271,13 @@ const DeckImport = (props) => {
 
   const handleCreateButton = () => {
     createNewDeck();
-    isMobile && props.setShowButtons(false);
+    isNarrow && setShowButtons(false);
   };
 
   return (
     <>
       <DeckImportButton
-        inInventory={props.inInventory}
+        inInventory={inInventory}
         handleCreateButton={handleCreateButton}
         handleFileInputClick={handleFileInputClick}
         handleOpenTextModal={handleOpenTextModal}
@@ -295,7 +296,7 @@ const DeckImport = (props) => {
         handleCloseModal={handleCloseImportModal}
         show={showTextModal}
         setBadCards={setBadCards}
-        setShowButtons={props.setShowButtons}
+        setShowButtons={setShowButtons}
       />
       <DeckImportText
         anonymous={true}
@@ -303,7 +304,7 @@ const DeckImport = (props) => {
         handleCloseModal={handleCloseImportModal}
         show={showAnonymousTextModal}
         setBadCards={setBadCards}
-        setShowButtons={props.setShowButtons}
+        setShowButtons={setShowButtons}
       />
       <DeckImportAmaranth
         parseCards={parseCards}

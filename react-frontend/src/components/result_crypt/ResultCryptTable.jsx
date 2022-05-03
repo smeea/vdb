@@ -17,17 +17,15 @@ import { getSoftMax, getHardTotal } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const ResultCryptTable = (props) => {
-  const {
-    resultCards,
-    inRecommendation,
-    isAuthor,
-    placement,
-    className,
-    crypt,
-  } = props;
-  const { setShowFloatingButtons } = props;
-
+const ResultCryptTable = ({
+  resultCards,
+  inRecommendation,
+  isAuthor,
+  placement,
+  className,
+  crypt,
+  setShowFloatingButtons,
+}) => {
   const {
     activeDeck,
     inventoryCrypt,
@@ -35,6 +33,7 @@ const ResultCryptTable = (props) => {
     addMode,
     inventoryMode,
     isMobile,
+    isNarrow,
     isDesktop,
     isWide,
   } = useApp();
@@ -59,13 +58,13 @@ const ResultCryptTable = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    isNarrow && setShowFloatingButtons(true);
   };
 
   const cardRows = resultCards.map((card, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      isNarrow && setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-odd') {

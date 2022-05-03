@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-function Library({ lastDeckId }) {
+const Library = ({ lastDeckId }) => {
   const {
     deckRouter,
     showLibrarySearch,
@@ -37,7 +37,7 @@ function Library({ lastDeckId }) {
   }
 
   const deckData = deckRouter(myActiveDeck);
-  const deckId = myActiveDeck.deckid;
+  const deckid = myActiveDeck.deckid;
 
   const showSearchForm = useMemo(() => {
     return (
@@ -48,8 +48,8 @@ function Library({ lastDeckId }) {
   }, [isMobile, isDesktop, addMode, showLibrarySearch, libraryResults]);
 
   const showToggleAddMode = useMemo(() => {
-    return deckId && libraryResults && !isMobile && !isDesktop;
-  }, [deckId, isMobile, isDesktop, libraryResults]);
+    return deckid && libraryResults && !isMobile && !isDesktop;
+  }, [deckid, isMobile, isDesktop, libraryResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showLibrarySearch));
 
@@ -60,7 +60,7 @@ function Library({ lastDeckId }) {
           <Col
             md={!showSearchForm ? 5 : 1}
             lg={!showSearchForm ? 6 : 1}
-            xl={deckId && addMode ? 4 : 2}
+            xl={deckid && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
             {deckData && (isDesktop || (!isDesktop && !showSearchForm)) && (
@@ -106,6 +106,6 @@ function Library({ lastDeckId }) {
       )}
     </Container>
   );
-}
+};
 
 export default Library;

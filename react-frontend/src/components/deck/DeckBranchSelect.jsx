@@ -12,7 +12,7 @@ const DeckBranchSelect = (props) => {
   };
 
   useEffect(() => {
-    const deck = decks[props.deckId];
+    const deck = decks[props.deckid];
     const master = decks[deck.master];
     const target = master ? master : deck;
 
@@ -67,7 +67,7 @@ const DeckBranchSelect = (props) => {
       isSearchable={false}
       name="decks"
       placeholder=""
-      value={options.find((obj) => obj.value === props.deckId)}
+      value={options.find((obj) => obj.value === props.deckid)}
       onChange={(e) => {
         props.setActiveDeck
           ? props.setActiveDeck({ src: 'my', deckid: e.value })

@@ -16,7 +16,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-function Inventory(props) {
+const Inventory = (props) => {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -28,9 +28,6 @@ function Inventory(props) {
     isMobile,
     inventoryDeckAdd,
     inventoryDeckDelete,
-    inventoryAddToState,
-    setInventoryCrypt,
-    setInventoryLibrary,
   } = useApp();
 
   const [newCryptId, setNewCryptId] = useState(undefined);
@@ -226,9 +223,6 @@ function Inventory(props) {
                   <InventoryButtons
                     setShowAddDeck={setShowAddDeck}
                     setShowAddPrecon={setShowAddPrecon}
-                    inventoryAddToState={inventoryAddToState}
-                    setInventoryCrypt={setInventoryCrypt}
-                    setInventoryLibrary={setInventoryLibrary}
                     setShowButtons={handleShowButtons}
                     clan={clan}
                     discipline={discipline}
@@ -298,9 +292,6 @@ function Inventory(props) {
               <InventoryButtons
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}
-                inventoryAddToState={inventoryAddToState}
-                setInventoryCrypt={setInventoryCrypt}
-                setInventoryLibrary={setInventoryLibrary}
                 setShowButtons={handleShowButtons}
                 clan={clan}
                 discipline={discipline}
@@ -334,6 +325,6 @@ function Inventory(props) {
       )}
     </Container>
   );
-}
+};
 
 export default Inventory;

@@ -2,7 +2,9 @@ import React from 'react';
 import Select from 'react-select';
 import { useApp } from 'context';
 
-function DeckSelectRecent(props) {
+const DeckSelectRecent = (props) => {
+  // setActiveDeck is default and props.setActiveDeck is used in Diff
+  // to select deckFrom or deckTo
   const { setActiveDeck, recentDecks, isMobile } = useApp();
 
   const options = recentDecks.map((i) => {
@@ -33,10 +35,10 @@ function DeckSelectRecent(props) {
       name="decks"
       maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
       placeholder="Select Deck"
-      value={options.find((obj) => obj.value === props.deckId)}
+      value={options.find((obj) => obj.value === props.deckid)}
       onChange={handleChange}
     />
   );
-}
+};
 
 export default DeckSelectRecent;

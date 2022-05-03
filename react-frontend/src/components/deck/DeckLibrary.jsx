@@ -16,12 +16,18 @@ import { useApp } from 'context';
 import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const DeckLibrary = (props) => {
-  const { cards, deckid, isAuthor, isPublic, inDeckTab, inMissing, inSearch } =
-    props;
-  const { showFloatingButtons, setShowFloatingButtons } = props;
-
-  const { nativeLibrary, isMobile } = useApp();
+const DeckLibrary = ({
+  cards,
+  deckid,
+  isAuthor,
+  isPublic,
+  inDeckTab,
+  inMissing,
+  inSearch,
+  showFloatingButtons,
+  setShowFloatingButtons,
+}) => {
+  const { nativeLibrary, isMobile, isNarrow } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -56,7 +62,7 @@ const DeckLibrary = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    isNarrow && setShowFloatingButtons(true);
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (

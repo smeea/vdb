@@ -5,7 +5,7 @@ import PinAngleFill from 'assets/images/icons/pin-angle-fill.svg';
 import At from 'assets/images/icons/at.svg';
 import { useApp } from 'context';
 
-function DeckSelectMy(props) {
+const DeckSelectMy = (props) => {
   const { inventoryMode, setActiveDeck, decks, isMobile } = useApp();
   const [options, setOptions] = useState([]);
 
@@ -75,12 +75,12 @@ function DeckSelectMy(props) {
   };
 
   const getValue = () => {
-    if (decks[props.deckId]) {
+    if (decks[props.deckid]) {
       const v = options.find((obj) => {
-        if (decks[props.deckId].master) {
-          return obj.value === decks[props.deckId].master;
+        if (decks[props.deckid].master) {
+          return obj.value === decks[props.deckid].master;
         } else {
-          return obj.value === props.deckId;
+          return obj.value === props.deckid;
         }
       });
 
@@ -88,23 +88,23 @@ function DeckSelectMy(props) {
         return v;
       } else {
         return {
-          value: props.deckId,
+          value: props.deckid,
           label: (
             <div className="d-flex justify-content-between align-items-center">
               <div className="d-inline trimmed">
-                {decks[props.deckId]['name']}
+                {decks[props.deckid]['name']}
               </div>
               <div className="d-flex align-items-center ps-2 small">
                 {inventoryMode && (
                   <div className="pe-2">
-                    {decks[props.deckId].inventory_type == 's' && <Shuffle />}
-                    {decks[props.deckId].inventory_type == 'h' && (
+                    {decks[props.deckid].inventory_type == 's' && <Shuffle />}
+                    {decks[props.deckid].inventory_type == 'h' && (
                       <PinAngleFill />
                     )}
-                    {!decks[props.deckId].inventory_type && <At />}
+                    {!decks[props.deckid].inventory_type && <At />}
                   </div>
                 )}
-                {new Date(decks[props.deckId]['timestamp'])
+                {new Date(decks[props.deckid]['timestamp'])
                   .toISOString()
                   .slice(0, 10)}
               </div>
@@ -132,6 +132,6 @@ function DeckSelectMy(props) {
       }}
     />
   );
-}
+};
 
 export default DeckSelectMy;

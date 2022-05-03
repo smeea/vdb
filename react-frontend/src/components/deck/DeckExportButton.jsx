@@ -10,8 +10,8 @@ import Download from 'assets/images/icons/download.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-const DeckExportButton = (props) => {
-  const { username, decks, activeDeck, isMobile } = useApp();
+const DeckExportButton = ({ deck, setShowButtons, inMissing }) => {
+  const { username, decks, activeDeck, isNarrow } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -25,7 +25,7 @@ const DeckExportButton = (props) => {
       <Dropdown.Item href="" onClick={() => saveDeck('twd')}>
         Save as file - TWD
       </Dropdown.Item>
-      {!props.inMissing && (
+      {!inMissing && (
         <>
           <Dropdown.Item href="" onClick={() => saveDeck('lackey')}>
             Save as file - Lackey
@@ -38,7 +38,7 @@ const DeckExportButton = (props) => {
       <Dropdown.Item href="" onClick={() => saveDeck('xlsx')}>
         Save as file - Excel
       </Dropdown.Item>
-      {!props.inMissing && (
+      {!inMissing && (
         <Dropdown.Item href="" onClick={() => saveDeck('csv')}>
           Save as file - CSV
         </Dropdown.Item>
@@ -50,7 +50,7 @@ const DeckExportButton = (props) => {
       <Dropdown.Item href="" onClick={() => copyDeck('twd')}>
         Copy to Clipboard - TWD
       </Dropdown.Item>
-      {!props.inMissing && (
+      {!inMissing && (
         <>
           <Dropdown.Item href="" onClick={() => copyDeck('lackey')}>
             Copy to Clipboard - Lackey
@@ -60,7 +60,7 @@ const DeckExportButton = (props) => {
           </Dropdown.Item>
         </>
       )}
-      {!props.inMissing && username && decks && Object.keys(decks).length > 1 && (
+      {!inMissing && username && decks && Object.keys(decks).length > 1 && (
         <>
           <Dropdown.Divider />
           <Dropdown.Item href="" onClick={() => exportAll('text')}>
@@ -99,18 +99,18 @@ const DeckExportButton = (props) => {
 
       if (input.deckid == 'deckInUrl') {
         const cards = {};
-        Object.keys(props.deck.crypt).map((key) => {
-          cards[key] = props.deck.crypt[key].q;
+        Object.keys(deck.crypt).map((key) => {
+          cards[key] = deck.crypt[key].q;
         });
-        Object.keys(props.deck.library).map((key) => {
-          cards[key] = props.deck.library[key].q;
+        Object.keys(deck.library).map((key) => {
+          cards[key] = deck.library[key].q;
         });
 
         input.deck = {
           cards: cards,
-          name: props.deck.name,
-          description: props.deck.description,
-          author: props.deck.author,
+          name: deck.name,
+          description: deck.description,
+          author: deck.author,
         };
       }
 
@@ -132,7 +132,7 @@ const DeckExportButton = (props) => {
         .then((data) => {
           setSpinnerState(false);
           navigator.clipboard.writeText(data.deck);
-          isMobile && props.setShowButtons(false);
+          isNarrow && setShowButtons(false);
         })
         .catch((error) => {
           setSpinnerState(false);
@@ -156,18 +156,18 @@ const DeckExportButton = (props) => {
 
       if (input.deckid == 'deckInUrl') {
         const cards = {};
-        Object.keys(props.deck.crypt).map((key) => {
-          cards[key] = props.deck.crypt[key].q;
+        Object.keys(deck.crypt).map((key) => {
+          cards[key] = deck.crypt[key].q;
         });
-        Object.keys(props.deck.library).map((key) => {
-          cards[key] = props.deck.library[key].q;
+        Object.keys(deck.library).map((key) => {
+          cards[key] = deck.library[key].q;
         });
 
         input.deck = {
           cards: cards,
-          name: props.deck.name,
-          description: props.deck.description,
-          author: props.deck.author,
+          name: deck.name,
+          description: deck.description,
+          author: deck.author,
         };
       }
 
@@ -196,9 +196,9 @@ const DeckExportButton = (props) => {
               extension = 'xlsx';
             }
             const file = `${mime};base64,${data}`;
-            saveAs(file, `${props.deck['name']}.${extension}`);
+            saveAs(file, `${deck['name']}.${extension}`);
             setSpinnerState(false);
-            isMobile && props.setShowButtons(false);
+            isNarrow && setShowButtons(false);
           })
           .catch((error) => {
             setSpinnerState(false);
@@ -215,7 +215,7 @@ const DeckExportButton = (props) => {
             );
             saveAs(file);
             setSpinnerState(false);
-            isMobile && props.setShowButtons(false);
+            isNarrow && setShowButtons(false);
           })
           .catch((error) => {
             setSpinnerState(false);
@@ -283,7 +283,7 @@ const DeckExportButton = (props) => {
     <>
       <DropdownButton
         as={ButtonGroup}
-        variant={props.inMissing ? 'primary' : 'secondary'}
+        variant={inMissing ? 'primary' : 'secondary'}
         title={
           <div
             title="Export Deck"
@@ -296,7 +296,7 @@ const DeckExportButton = (props) => {
                 <Download />
               )}
             </div>
-            Export {props.inMissing ? 'Missing' : 'Deck'}
+            Export {inMissing ? 'Missing' : 'Deck'}
           </div>
         }
       >

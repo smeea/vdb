@@ -84,7 +84,7 @@ function DeckSelectPrecon(props) {
         maxMenuHeight={isMobile ? window.screen.height - 200 : 600}
         filterOption={filterOption}
         placeholder="Select Deck"
-        value={options.find((obj) => obj.value === props.deckId)}
+        value={options.find((obj) => obj.value === props.deckid)}
         onChange={(e) => {
           props.setActiveDeck
             ? props.setActiveDeck({ src: 'precons', deckid: e.value })

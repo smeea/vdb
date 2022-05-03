@@ -19,9 +19,12 @@ import { getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const ResultLibraryTable = (props) => {
-  const { resultCards, library, placement, setShowFloatingButtons } = props;
-
+const ResultLibraryTable = ({
+  resultCards,
+  library,
+  placement,
+  setShowFloatingButtons,
+}) => {
   const {
     activeDeck,
     inventoryLibrary,
@@ -29,6 +32,7 @@ const ResultLibraryTable = (props) => {
     addMode,
     inventoryMode,
     nativeLibrary,
+    isNarrow,
     isMobile,
     isDesktop,
   } = useApp();
@@ -45,13 +49,13 @@ const ResultLibraryTable = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    isNarrow && setShowFloatingButtons(true);
   };
 
   const cardRows = resultCards.map((card, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      isNarrow && setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-odd') {

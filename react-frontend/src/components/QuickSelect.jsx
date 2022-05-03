@@ -4,25 +4,25 @@ import AsyncSelect from 'react-select/async';
 import { useApp } from 'context';
 import { SelectLabelCrypt, SelectLabelLibrary } from 'components';
 
-const QuickSelect = ({ selectedCard, setCardId, inInventory }) => {
+const QuickSelect = ({ selectedCard, setCardid, inInventory }) => {
   const { isMobile } = useApp();
 
   const params = useParams();
   const handleChange = (option) => {
-    setCardId(option.value);
+    setCardid(option.value);
   };
   const ref = useRef(null);
 
   const getOptionLabel = (option) => {
-    const cardId = option.value;
+    const cardid = option.value;
 
     return (
       <>
-        {cardId ? (
-          cardId > 200000 ? (
-            <SelectLabelCrypt cardid={cardId} inInventory={inInventory} />
+        {cardid ? (
+          cardid > 200000 ? (
+            <SelectLabelCrypt cardid={cardid} inInventory={inInventory} />
           ) : (
-            <SelectLabelLibrary cardid={cardId} inInventory={inInventory} />
+            <SelectLabelLibrary cardid={cardid} inInventory={inInventory} />
           )
         ) : (
           <div className="gray">Enter Card Name</div>

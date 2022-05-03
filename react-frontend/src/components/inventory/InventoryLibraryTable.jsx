@@ -23,8 +23,13 @@ import { deckSort, getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const InventoryLibraryTable = (props) => {
-  const { cards, setShowFloatingButtons } = props;
+const InventoryLibraryTable = ({
+  cards,
+  setShowFloatingButtons,
+  placement,
+  compact,
+  withCompact,
+}) => {
   const { usedLibraryCards, nativeLibrary, isMobile, isWide } = useApp();
 
   // Modal Card Controller
@@ -38,7 +43,7 @@ const InventoryLibraryTable = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    isNarrow && setShowFloatingButtons(true);
   };
 
   const sortedCards = deckSort(cards, 'Name');
@@ -46,7 +51,7 @@ const InventoryLibraryTable = (props) => {
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      isNarrow && setShowFloatingButtons(false);
     };
 
     const { c: card, q: qty } = cardInfo;
@@ -112,7 +117,7 @@ const InventoryLibraryTable = (props) => {
             </>
           ) : (
             <OverlayTrigger
-              placement={props.placement ? props.placement : 'right'}
+              placement={placement ? placement : 'right'}
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div
@@ -141,7 +146,7 @@ const InventoryLibraryTable = (props) => {
         </div>
 
         <ConditionalOverlayTrigger
-          placement={props.placement}
+          placement={placement}
           overlay={<CardPopover card={card} />}
           disabled={isMobile}
         >
@@ -221,14 +226,14 @@ const InventoryLibraryTable = (props) => {
 
   return (
     <>
-      {props.compact ? (
+      {compact ? (
         <div className="d-flex inventory-library-table bordered result-odd compact">
           {cardRows[0]}
         </div>
       ) : (
         <div
           className={`inventory-container-library${
-            props.withCompact ? '-with-compact' : ''
+            withCompact ? '-with-compact' : ''
           }`}
         >
           <AutoSizer>

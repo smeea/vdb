@@ -3,18 +3,18 @@ import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DiffCopyUrlButton = (props) => {
-  const { isMobile } = useApp();
+const DiffCopyUrlButton = ({ setShowButtons, fromQuery, toQuery }) => {
+  const { isNarrow } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
-    const deckUrl = `${process.env.ROOT_URL}diff?from=${props.fromQuery}&to=${props.toQuery}`;
+    const deckUrl = `${process.env.ROOT_URL}diff?from=${fromQuery}&to=${toQuery}`;
 
     navigator.clipboard.writeText(deckUrl);
     setState(true);
     setTimeout(() => {
       setState(false);
-      isMobile && props.setShowButtons(false);
+      isNarrow && setShowButtons(false);
     }, 1000);
   };
 

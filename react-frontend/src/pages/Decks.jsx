@@ -62,9 +62,7 @@ function Decks(props) {
   const navigate = useNavigate();
   const [selectFrom, setSelectFrom] = useState('precons');
   const [deckError, setDeckError] = useState(false);
-  const [foldedDescription, setFoldedDescription] = useState(
-    isMobile ? false : true
-  );
+  const [foldedDescription, setFoldedDescription] = useState(!isMobile);
   const [allTagsOptions, setAllTagsOptions] = useState(undefined);
 
   const handleShowButtons = (state) => {
@@ -339,16 +337,16 @@ function Decks(props) {
                       }
                     >
                       {selectFrom == 'my' && decks ? (
-                        <DeckSelectMy deckId={activeDeck.deckid} />
+                        <DeckSelectMy deckid={activeDeck.deckid} />
                       ) : selectFrom == 'recent' ? (
-                        <DeckSelectRecent deckId={activeDeck.deckid} />
+                        <DeckSelectRecent deckid={activeDeck.deckid} />
                       ) : (
-                        <DeckSelectPrecon deckId={activeDeck.deckid} />
+                        <DeckSelectPrecon deckid={activeDeck.deckid} />
                       )}
                     </div>
                     {selectFrom == 'my' && decks && isBranches && (
                       <div className="ps-1 w-25">
-                        <DeckBranchSelect deckId={activeDeck.deckid} />
+                        <DeckBranchSelect deckid={activeDeck.deckid} />
                       </div>
                     )}
                     <div className="d-flex">

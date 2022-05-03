@@ -362,16 +362,16 @@ function Diff(props) {
                     }
                   >
                     {selectFrom == 'from-my' && decks ? (
-                      <DeckSelectMy deckId={activeDeck.deckid} />
+                      <DeckSelectMy deckid={activeDeck.deckid} />
                     ) : selectFrom == 'from-recent' ? (
-                      <DeckSelectRecent deckId={activeDeck.deckid} />
+                      <DeckSelectRecent deckid={activeDeck.deckid} />
                     ) : (
-                      <DeckSelectPrecon deckId={activeDeck.deckid} />
+                      <DeckSelectPrecon deckid={activeDeck.deckid} />
                     )}
                   </div>
                   {selectFrom == 'from-my' && decks && isBranchesFrom && (
                     <div className="ps-1 w-25">
-                      <DeckBranchSelect deckId={activeDeck.deckid} />
+                      <DeckBranchSelect deckid={activeDeck.deckid} />
                     </div>
                   )}
                   {isMobile && (
@@ -487,17 +487,17 @@ function Diff(props) {
                   >
                     {selectTo == 'to-my' && decks ? (
                       <DeckSelectMy
-                        deckId={secondaryDeck.deckid}
+                        deckid={secondaryDeck.deckid}
                         setActiveDeck={setSecondaryDeck}
                       />
                     ) : selectTo == 'to-recent' ? (
                       <DeckSelectRecent
-                        deckId={secondaryDeck.deckid}
+                        deckid={secondaryDeck.deckid}
                         setActiveDeck={setSecondaryDeck}
                       />
                     ) : (
                       <DeckSelectPrecon
-                        deckId={secondaryDeck.deckid}
+                        deckid={secondaryDeck.deckid}
                         setActiveDeck={setSecondaryDeck}
                       />
                     )}
@@ -505,7 +505,7 @@ function Diff(props) {
                   {selectTo == 'to-my' && decks && isBranchesTo && (
                     <div className="ps-1 w-25">
                       <DeckBranchSelect
-                        deckId={secondaryDeck.deckid}
+                        deckid={secondaryDeck.deckid}
                         setActiveDeck={setSecondaryDeck}
                       />
                     </div>

@@ -11,19 +11,18 @@ import {
 import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
-const DeckCrypt = (props) => {
-  const {
-    cards,
-    showFloatingButtons,
-    setShowFloatingButtons,
-    deckid,
-    isPublic,
-    isAuthor,
-    inSearch,
-    inAdvSelect,
-    inMissing,
-  } = props;
-  const { cryptDeckSort, changeTimer, isMobile } = useApp();
+const DeckCrypt = ({
+  cards,
+  showFloatingButtons,
+  setShowFloatingButtons,
+  deckid,
+  isPublic,
+  isAuthor,
+  inSearch,
+  inAdvSelect,
+  inMissing,
+}) => {
+  const { cryptDeckSort, changeTimer, isMobile, isNarrow } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -60,7 +59,7 @@ const DeckCrypt = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    isNarrow && setShowFloatingButtons(true);
   };
 
   return (

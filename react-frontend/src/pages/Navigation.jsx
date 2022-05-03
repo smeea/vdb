@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import LightningFill from 'assets/images/icons/lightning-fill.svg';
@@ -25,6 +25,8 @@ function Navigation(props) {
     useSearchForms();
 
   const { theme, toggleTheme } = useTheme();
+  const [showMenu, setShowMenu] = useState(false);
+
   const location = useLocation();
 
   let pdaUrl = '/pda';
@@ -64,10 +66,10 @@ function Navigation(props) {
       <Nav className="container justify-content-between px-0">
         <div className="d-flex align-items-center">
           {isMobile ? (
-            <NavMobileMenu />
+            <NavMobileMenu showMenu={showMenu} setShowMenu={setShowMenu} />
           ) : (
             <>
-              <LanguageSelect />
+              <LanguageSelect showMenu={showMenu} setShowMenu={setShowMenu} />
               <div
                 className="d-flex small white-font px-3"
                 onClick={() => toggleTheme()}

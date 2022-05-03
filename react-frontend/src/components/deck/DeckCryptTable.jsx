@@ -21,7 +21,25 @@ import {
 import { getSoftMax, getHardTotal, drawProbability } from 'utils';
 import { useApp } from 'context';
 
-const DeckCryptTable = (props) => {
+const DeckCryptTable = ({
+  deckid,
+  disciplinesSet,
+  keyDisciplines,
+  nonKeyDisciplines,
+  cards,
+  cardsFrom,
+  cardsTo,
+  isPublic,
+  isAuthor,
+  placement,
+  showInfo,
+  cryptTotal,
+  handleModalCardOpen,
+  setShowFloatingButtons,
+  inSearch,
+  inMissing,
+  isModalOpen,
+}) => {
   const {
     decks,
     inventoryMode,
@@ -38,29 +56,29 @@ const DeckCryptTable = (props) => {
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
   let resultTrClass;
   let deckInvType = null;
-  if (inventoryMode && decks && props.deckid && decks[props.deckid]) {
-    deckInvType = decks[props.deckid].inventory_type;
+  if (inventoryMode && decks && deckid && decks[deckid]) {
+    deckInvType = decks[deckid].inventory_type;
   }
 
   const disableOverlay = useMemo(
-    () => isMobile || (!isDesktop && props.isModalOpen),
-    [isMobile, isDesktop, props.isModalOpen]
+    () => isMobile || (!isDesktop && isModalOpen),
+    [isMobile, isDesktop, isModalOpen]
   );
 
   const [modalDraw, setModalDraw] = useState(undefined);
 
   let maxDisciplines = 0;
-  props.cards.map((card) => {
+  cards.map((card) => {
     const n = Object.keys(card.c.Disciplines).length;
     if (maxDisciplines < n) {
       maxDisciplines = n;
     }
   });
 
-  const cardRows = props.cards.map((card) => {
+  const cardRows = cards.map((card) => {
     const handleClick = () => {
-      props.handleModalCardOpen(card.c);
-      isMobile && props.setShowFloatingButtons(false);
+      handleModalCardOpen(card.c);
+      isNarrow && setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-odd') {
@@ -90,11 +108,11 @@ const DeckCryptTable = (props) => {
     return (
       <React.Fragment key={card.c.Id}>
         <tr className={resultTrClass}>
-          {props.isAuthor && !props.isPublic ? (
+          {isAuthor && !isPublic ? (
             <>
               {inventoryMode && decks ? (
                 <>
-                  {deckInvType && !props.inSearch && !isMobile ? (
+                  {deckInvType && !inSearch && !isMobile ? (
                     <td>
                       <div className="d-flex relative align-items-center">
                         <div
@@ -105,7 +123,7 @@ const DeckCryptTable = (props) => {
                           }
                           onClick={() =>
                             deckUpdate(
-                              props.deckid,
+                              deckid,
                               cardInvType
                                 ? 'makeClear'
                                 : deckInvType == 's'
@@ -129,12 +147,12 @@ const DeckCryptTable = (props) => {
                       <DeckCardQuantity
                         cardid={card.c.Id}
                         q={card.q}
-                        deckid={props.deckid}
+                        deckid={deckid}
                         cardChange={deckCardChange}
                         inInventory={inInventory}
                         softUsedMax={softUsedMax}
                         hardUsedTotal={hardUsedTotal}
-                        inventoryType={decks[props.deckid].inventory_type}
+                        inventoryType={decks[deckid].inventory_type}
                       />
                     </td>
                   </ConditionalOverlayTrigger>
@@ -144,7 +162,7 @@ const DeckCryptTable = (props) => {
                   <DeckCardQuantity
                     cardid={card.c.Id}
                     q={card.q}
-                    deckid={props.deckid}
+                    deckid={deckid}
                     cardChange={deckCardChange}
                   />
                 </td>
@@ -160,7 +178,7 @@ const DeckCryptTable = (props) => {
                   <td className="quantity-no-buttons px-1">
                     <div
                       className={
-                        props.inMissing
+                        inMissing
                           ? ''
                           : inInventory < card.q
                           ? 'inv-miss-full'
@@ -184,14 +202,14 @@ const DeckCryptTable = (props) => {
           >
             <ResultCryptCapacity value={card.c.Capacity} />
           </td>
-          {(!props.inSearch || (!isDesktop && !isNarrow) || isWide) && (
+          {(!inSearch || (!isDesktop && !isNarrow) || isWide) && (
             <td className="disciplines" onClick={() => handleClick()}>
-              {props.disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
+              {disciplinesSet.length < ALIGN_DISCIPLINES_THRESHOLD ? (
                 <DeckCryptDisciplines
                   value={card.c.Disciplines}
-                  disciplinesSet={props.disciplinesSet}
-                  keyDisciplines={props.keyDisciplines}
-                  nonKeyDisciplines={props.nonKeyDisciplines}
+                  disciplinesSet={disciplinesSet}
+                  keyDisciplines={keyDisciplines}
+                  nonKeyDisciplines={nonKeyDisciplines}
                 />
               ) : (
                 <ResultCryptDisciplines
@@ -203,7 +221,7 @@ const DeckCryptTable = (props) => {
           )}
 
           <ConditionalOverlayTrigger
-            placement={props.placement}
+            placement={placement}
             overlay={<CardPopover card={card.c} />}
             disabled={disableOverlay}
           >
@@ -239,7 +257,7 @@ const DeckCryptTable = (props) => {
               </td>
             </>
           )}
-          {props.showInfo && (
+          {showInfo && (
             <td className="prob px-1">
               {isMobile ? (
                 <div
@@ -248,7 +266,7 @@ const DeckCryptTable = (props) => {
                       name: card.c['Name'],
                       prob: (
                         <DeckDrawProbabilityText
-                          N={props.cryptTotal}
+                          N={cryptTotal}
                           n={4}
                           k={card.q}
                         />
@@ -257,22 +275,18 @@ const DeckCryptTable = (props) => {
                   }
                 >
                   {`${Math.floor(
-                    drawProbability(1, props.cryptTotal, 4, card.q) * 100
+                    drawProbability(1, cryptTotal, 4, card.q) * 100
                   )}%`}
                 </div>
               ) : (
                 <OverlayTooltip
                   placement="right"
                   text={
-                    <DeckDrawProbabilityText
-                      N={props.cryptTotal}
-                      n={4}
-                      k={card.q}
-                    />
+                    <DeckDrawProbabilityText N={cryptTotal} n={4} k={card.q} />
                   }
                 >
                   <div>{`${Math.floor(
-                    drawProbability(1, props.cryptTotal, 4, card.q) * 100
+                    drawProbability(1, cryptTotal, 4, card.q) * 100
                   )}%`}</div>
                 </OverlayTooltip>
               )}

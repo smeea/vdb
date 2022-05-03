@@ -8,10 +8,10 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-const DeckDraw = (props) => {
-  const cryptTotal = countCards(Object.values(props.deck.crypt));
-  const cryptArr = getCardsArray(props.deck.crypt);
-  const libraryArr = getCardsArray(props.deck.library);
+const DeckDraw = ({ deck, setShow, setShowFloatingButtons }) => {
+  const cryptTotal = countCards(Object.values(deck.crypt));
+  const cryptArr = getCardsArray(deck.crypt);
+  const libraryArr = getCardsArray(deck.library);
 
   const drawCards = (cards, quantity) => {
     const restArray = [...cards];
@@ -38,12 +38,12 @@ const DeckDraw = (props) => {
   const [initialTransfers, setInitialTransfers] = useState(undefined);
 
   const { disciplinesSet, keyDisciplines, nonKeyDisciplines } =
-    useKeyDisciplines(props.deck.crypt, cryptTotal);
+    useKeyDisciplines(deck.crypt, cryptTotal);
 
   const handleCloseDrawModal = () => {
     setShowDrawModal(false);
-    props.setShow(false);
-    props.setShowFloatingButtons(true);
+    setShow(false);
+    setShowFloatingButtons(true);
   };
 
   const randomTransfers = () => {
@@ -62,7 +62,7 @@ const DeckDraw = (props) => {
     setRestCrypt(cryptArr);
     setRestLibrary(libraryArr);
     setShowDrawModal(true);
-    props.setShowFloatingButtons(false);
+    setShowFloatingButtons(false);
   }, []);
 
   const handleReDrawCrypt = () => {
@@ -171,8 +171,8 @@ const DeckDraw = (props) => {
     <>
       {showDrawModal && (
         <DeckDrawModal
-          crypt={props.deck.crypt}
-          library={props.deck.library}
+          crypt={deck.crypt}
+          library={deck.library}
           cryptTotal={cryptTotal}
           libraryTotal={libraryArr.length}
           initialTransfers={initialTransfers}

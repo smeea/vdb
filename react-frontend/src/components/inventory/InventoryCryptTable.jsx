@@ -37,7 +37,7 @@ const InventoryCryptTable = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    isNarrow && setShowFloatingButtons(true);
   };
 
   const sortedCards = deckSort(cards, 'Name');
@@ -45,7 +45,7 @@ const InventoryCryptTable = (props) => {
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isMobile && setShowFloatingButtons(false);
+      isNarrow && setShowFloatingButtons(false);
     };
 
     const { c: card, q: qty } = cardInfo;

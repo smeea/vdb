@@ -1,10 +1,12 @@
 # FIX
 - Merge anonymous import with import
 - Import with trailing space (maybe rework export to not add it?)
+- Floating buttons on narrow screen (but not mobile) => change isMobile && showFloating to isNarrow
 
 # FEATURES
 - Export all in xlsx and csv
 - Store src (pda/twd) for Recent decks and add TWD/PDA appendix to name in selector
+- Add email to account creation
 
 # MAYBE LATER FEATURES
 - Comments for PDA

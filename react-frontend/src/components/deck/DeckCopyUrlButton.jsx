@@ -4,37 +4,37 @@ import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckCopyUrlButton = (props) => {
-  const { isMobile } = useApp();
+const DeckCopyUrlButton = ({ deck, noText, setShowButtons }) => {
+  const { isNarrow } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
-    const deckUrl = `${process.env.ROOT_URL}decks?id=${props.deck.deckid}`;
+    const deckUrl = `${process.env.ROOT_URL}decks?id=${deck.deckid}`;
 
     navigator.clipboard.writeText(deckUrl);
     setState(true);
     setTimeout(() => {
       setState(false);
-      isMobile && props.setShowButtons(false);
+      isNarrow && setShowButtons(false);
     }, 1000);
   };
 
   const handleDeckInUrlButton = () => {
     const cards = [];
 
-    Object.keys(props.deck.crypt).map((card) => {
-      cards.push(`${card}=${props.deck.crypt[card].q};`);
+    Object.keys(deck.crypt).map((card) => {
+      cards.push(`${card}=${deck.crypt[card].q};`);
     });
-    Object.keys(props.deck.library).map((card) => {
-      cards.push(`${card}=${props.deck.library[card].q};`);
+    Object.keys(deck.library).map((card) => {
+      cards.push(`${card}=${deck.library[card].q};`);
     });
 
     const info = [];
-    props.deck.name && info.push(encodeURI(`name=${props.deck.name}`));
-    props.deck.author && info.push(encodeURI(`author=${props.deck.author}`));
-    props.deck.description &&
+    deck.name && info.push(encodeURI(`name=${deck.name}`));
+    deck.author && info.push(encodeURI(`author=${deck.author}`));
+    deck.description &&
       info.push(
-        encodeURI(`description=${props.deck.description.substring(0, 7168)}`)
+        encodeURI(`description=${deck.description.substring(0, 7168)}`)
           .replace(/#/g, '%23')
           .replace(/&/g, '%26')
           .replace(/,/g, '%2C')
@@ -51,7 +51,7 @@ const DeckCopyUrlButton = (props) => {
     setState(true);
     setTimeout(() => {
       setState(false);
-      isMobile && props.setShowButtons(false);
+      isNarrow && setShowButtons(false);
     }, 1000);
   };
 
@@ -66,7 +66,7 @@ const DeckCopyUrlButton = (props) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        target: props.deck.deckid,
+        target: deck.deckid,
       }),
     };
 
@@ -82,7 +82,7 @@ const DeckCopyUrlButton = (props) => {
         setState(true);
         setTimeout(() => {
           setState(false);
-          isMobile && props.setShowButtons(false);
+          isNarrow && setShowButtons(false);
         }, 1000);
       });
   };
@@ -112,23 +112,23 @@ const DeckCopyUrlButton = (props) => {
 
   return (
     <>
-      {props.deck.deckid.length == 32 ? (
+      {deck.deckid.length == 32 ? (
         <DropdownButton
           as={ButtonGroup}
-          variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
+          variant={state ? 'success' : noText ? 'primary' : 'secondary'}
           title={
             <div
               title="Copy URL"
               className="d-flex justify-content-center align-items-center"
             >
-              <div className={`d-flex ${props.noText ? null : 'pe-2'}`}>
+              <div className={`d-flex ${noText ? null : 'pe-2'}`}>
                 <Link45Deg
-                  width={props.noText ? '18' : '21'}
-                  height={props.noText ? '23' : '21'}
+                  width={noText ? '18' : '21'}
+                  height={noText ? '23' : '21'}
                   viewBox="0 0 15 15"
                 />
               </div>
-              {!props.noText && (state ? 'Copied' : 'Copy URL')}
+              {!noText && (state ? 'Copied' : 'Copy URL')}
             </div>
           }
         >

@@ -16,7 +16,7 @@ import {
 } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-function Cards({ lastDeckId }) {
+const Cards = ({ lastDeckId }) => {
   const params = useParams();
   const {
     decks,
@@ -31,13 +31,13 @@ function Cards({ lastDeckId }) {
   const { cryptCompare, setCryptCompare, libraryCompare, setLibraryCompare } =
     useSearchResults();
 
-  const [cardId, setCardId] = useState(undefined);
+  const [cardid, setCardid] = useState(undefined);
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
 
   const handleCompare = () => {
-    if (cardId > 200000) {
+    if (cardid > 200000) {
       setCryptCompare(() => {
         if (!cryptCompare) {
           return [card];
@@ -61,7 +61,7 @@ function Cards({ lastDeckId }) {
   };
 
   const cardInCompare =
-    cardId > 200000
+    cardid > 200000
       ? cryptCompare && cryptCompare.includes(card)
       : libraryCompare && libraryCompare.includes(card);
 
@@ -70,7 +70,7 @@ function Cards({ lastDeckId }) {
       Math.floor(
         Math.random() * Math.floor(Object.keys(cryptCardBase).length)
       ) + 200000;
-    setCardId(id);
+    setCardid(id);
   };
 
   const randomLibrary = () => {
@@ -78,36 +78,36 @@ function Cards({ lastDeckId }) {
       Math.floor(
         Math.random() * Math.floor(Object.keys(libraryCardBase).length)
       ) + 100000;
-    setCardId(id);
+    setCardid(id);
   };
 
-  const deckId = activeDeck.src == 'my' ? activeDeck.deckid : lastDeckId;
+  const deckid = activeDeck.src == 'my' ? activeDeck.deckid : lastDeckId;
 
   let inDeck = 0;
   if (
-    cardId &&
+    cardid &&
     decks &&
-    decks[deckId] &&
-    (decks[deckId].crypt[cardId] || decks[deckId].library[cardId])
+    decks[deckid] &&
+    (decks[deckid].crypt[cardid] || decks[deckid].library[cardid])
   ) {
     inDeck =
-      cardId > 200000
-        ? decks[deckId].crypt[cardId].q
-        : decks[deckId].library[cardId].q;
+      cardid > 200000
+        ? decks[deckid].crypt[cardid].q
+        : decks[deckid].library[cardid].q;
   }
 
   useEffect(() => {
-    if (!cardId) setCardId(params.id);
+    if (!cardid) setCardid(params.id);
   }, [params.id]);
 
   useEffect(() => {
-    if (cardId) {
-      if (params.id !== cardId) navigate(`/cards/${cardId}`);
-      cardId > 200000
-        ? setCard(cryptCardBase[cardId])
-        : setCard(libraryCardBase[cardId]);
+    if (cardid) {
+      if (params.id !== cardid) navigate(`/cards/${cardid}`);
+      cardid > 200000
+        ? setCard(cryptCardBase[cardid])
+        : setCard(libraryCardBase[cardid]);
     }
-  }, [cardId]);
+  }, [cardid]);
 
   return (
     <Container className="cards-container px-0 p-md-0">
@@ -116,7 +116,7 @@ function Cards({ lastDeckId }) {
           <>
             <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
               <Col md={8} className="px-0">
-                <QuickSelect setCardId={setCardId} />
+                <QuickSelect setCardid={setCardid} />
                 <div
                   onClick={() => randomCrypt()}
                   className="d-flex float-right-top float-random align-items-center justify-content-center"
@@ -147,14 +147,14 @@ function Cards({ lastDeckId }) {
                           {card && card.Id > 200000 && (
                             <ResultCryptLayoutText
                               card={card}
-                              setCardId={setCardId}
+                              setCardid={setCardid}
                               setImageSet={setImageSet}
                             />
                           )}
                           {card && card.Id < 200000 && (
                             <ResultLibraryLayoutText
                               card={card}
-                              setCardId={setCardId}
+                              setCardid={setCardid}
                               setImageSet={setImageSet}
                             />
                           )}
@@ -163,13 +163,13 @@ function Cards({ lastDeckId }) {
                             direction="horizontal"
                             gap={1}
                           >
-                            <ButtonCardCopyUrl id={cardId} />
+                            <ButtonCardCopyUrl id={cardid} />
                             <ButtonSearchCardInDecks
-                              id={card.Id}
+                              cardid={card.Id}
                               target="twd"
                             />
                             <ButtonSearchCardInDecks
-                              id={card.Id}
+                              cardid={card.Id}
                               target="pda"
                             />
                             <ButtonIconed
@@ -184,10 +184,10 @@ function Cards({ lastDeckId }) {
                                 />
                               }
                             />
-                            {deckId && (
+                            {deckid && (
                               <ButtonAddCard
-                                cardid={cardId}
-                                deckid={deckId}
+                                cardid={cardid}
+                                deckid={deckid}
                                 inDeck={inDeck}
                                 inQuick={true}
                               />
@@ -213,7 +213,7 @@ function Cards({ lastDeckId }) {
               {cryptCardBase && libraryCardBase && (
                 <Row className="align-content-center justify-content-center py-3">
                   <Col className="px-0">
-                    <QuickSelect setCardId={setCardId} />
+                    <QuickSelect setCardid={setCardid} />
                   </Col>
                 </Row>
               )}
@@ -230,21 +230,21 @@ function Cards({ lastDeckId }) {
                     {card.Id > 200000 && (
                       <ResultCryptLayoutText
                         card={card}
-                        setCardId={setCardId}
+                        setCardid={setCardid}
                         setImageSet={setImageSet}
                       />
                     )}
                     {card.Id < 200000 && (
                       <ResultLibraryLayoutText
                         card={card}
-                        setCardId={setCardId}
+                        setCardid={setCardid}
                         setImageSet={setImageSet}
                       />
                     )}
                     <Stack className="pt-2" direction="horizontal" gap={1}>
-                      <ButtonCardCopyUrl id={card.Id} />
-                      <ButtonSearchCardInDecks id={card.Id} target="twd" />
-                      <ButtonSearchCardInDecks id={card.Id} target="pda" />
+                      <ButtonCardCopyUrl cardid={card.Id} />
+                      <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
+                      <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
                       <ButtonIconed
                         variant={cardInCompare ? 'third' : 'primary'}
                         onClick={handleCompare}
@@ -257,9 +257,9 @@ function Cards({ lastDeckId }) {
                           />
                         }
                       />
-                      {deckId && (
+                      {deckid && (
                         <ButtonAddCard
-                          deckid={deckId}
+                          deckid={deckid}
                           card={card}
                           inDeck={inDeck}
                           inQuick={true}
@@ -295,6 +295,6 @@ function Cards({ lastDeckId }) {
       </>
     </Container>
   );
-}
+};
 
 export default Cards;

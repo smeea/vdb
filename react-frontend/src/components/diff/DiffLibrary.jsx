@@ -15,11 +15,18 @@ import { MASTER } from 'utils/constants';
 import { useApp } from 'context';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const DiffLibrary = (props) => {
-  const { handleClose, setShowFloatingButtons, showFloatingButtons } = props;
-  const { cardsFrom, cardsTo, deckid, isAuthor, isPublic, inMissing } = props;
-
-  const { nativeLibrary, isMobile } = useApp();
+const DiffLibrary = ({
+  handleClose,
+  setShowFloatingButtons,
+  showFloatingButtons,
+  cardsFrom,
+  cardsTo,
+  deckid,
+  isAuthor,
+  isPublic,
+  inMissing,
+}) => {
+  const { nativeLibrary, isNarrow, isMobile } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -54,7 +61,7 @@ const DiffLibrary = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    isNarrow && setShowFloatingButtons(true);
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (

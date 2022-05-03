@@ -33,7 +33,7 @@ function Crypt({ lastDeckId }) {
   }
 
   const deckData = deckRouter(myActiveDeck);
-  const deckId = myActiveDeck.deckid;
+  const deckid = myActiveDeck.deckid;
 
   const showSearchForm = useMemo(() => {
     return (
@@ -44,8 +44,8 @@ function Crypt({ lastDeckId }) {
   }, [isMobile, isDesktop, addMode, showCryptSearch, cryptResults]);
 
   const showToggleAddMode = useMemo(() => {
-    return deckId && cryptResults && !isMobile && !isDesktop;
-  }, [deckId, isMobile, isDesktop, cryptResults]);
+    return deckid && cryptResults && !isMobile && !isDesktop;
+  }, [deckid, isMobile, isDesktop, cryptResults]);
 
   const showResultCol = useMemo(() => !(isMobile && showCryptSearch));
 
@@ -56,7 +56,7 @@ function Crypt({ lastDeckId }) {
           <Col
             md={!showSearchForm ? 5 : 1}
             lg={!showSearchForm ? 6 : 1}
-            xl={deckId && addMode ? 4 : 2}
+            xl={deckid && addMode ? 4 : 2}
             className="px-md-2 ps-xl-0 pb-md-3"
           >
             {deckData && (isDesktop || (!isDesktop && !showSearchForm)) && (

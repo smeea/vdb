@@ -5,9 +5,8 @@ import FlagEs from 'assets/images/flags/es.svg';
 import FlagFr from 'assets/images/flags/fr.svg';
 import { useApp } from 'context';
 
-const LanguageSelect = (props) => {
+const LanguageSelect = ({ showMenu, setShowMenu }) => {
   const { isMobile, lang, changeLang } = useApp();
-  const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
 
   const languages = { 'en-EN': FlagEn, 'es-ES': FlagEs, 'fr-FR': FlagFr };
@@ -21,7 +20,6 @@ const LanguageSelect = (props) => {
         onClick={() => {
           changeLang(l);
           setShowMenu(false);
-          isMobile && props.setShowMenu(false);
         }}
       >
         <Flag width="22" height="22" viewBox="0 0 515 525" />

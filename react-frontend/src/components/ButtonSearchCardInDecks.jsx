@@ -7,26 +7,26 @@ import { useSearchForms } from 'context';
 import defaultsPda from 'components/forms_data/defaultsPdaForm.json';
 import defaultsTwd from 'components/forms_data/defaultsTwdForm.json';
 
-function ButtonSearchCardInDecks({ id, target }) {
+const ButtonSearchCardInDecks = ({ cardid, target }) => {
   const { setPdaFormState, setTwdFormState } = useSearchForms();
 
   const navigate = useNavigate();
   const defaults = JSON.parse(
     JSON.stringify(target === 'pda' ? defaultsPda : defaultsTwd)
   );
-  const value = { [id]: { q: 1, m: 'gt' } };
+  const value = { [cardid]: { q: 1, m: 'gt' } };
   const setForm = target === 'pda' ? setPdaFormState : setTwdFormState;
 
   const handleButton = () => {
     setForm(
       (prevState) => ({
         ...defaults,
-        [id > 200000 ? 'crypt' : 'library']: value,
+        [cardid > 200000 ? 'crypt' : 'library']: value,
       }),
       navigate(
         `/${target}?q={"${
-          id > 200000 ? 'crypt' : 'library'
-        }"%3A{"${id}"%3A{"q"%3A1%2C"m"%3A"gt"}}}`
+          cardid > 200000 ? 'crypt' : 'library'
+        }"%3A{"${cardid}"%3A{"q"%3A1%2C"m"%3A"gt"}}}`
       )
     );
   };
@@ -40,6 +40,6 @@ function ButtonSearchCardInDecks({ id, target }) {
       {target === 'pda' ? <PeopleFill /> : <TrophyFill />}
     </Button>
   );
-}
+};
 
 export default ButtonSearchCardInDecks;

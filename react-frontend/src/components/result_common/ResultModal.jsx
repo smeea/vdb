@@ -132,9 +132,9 @@ const ResultModal = (props) => {
                   />
                 )}
                 <Stack direction="horizontal" gap={1} className="pt-3">
-                  <ButtonCardCopyUrl id={card.Id} />
-                  <ButtonSearchCardInDecks id={card.Id} target="twd" />
-                  <ButtonSearchCardInDecks id={card.Id} target="pda" />
+                  <ButtonCardCopyUrl cardid={card.Id} />
+                  <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
+                  <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
                   <ButtonIconed
                     variant={cardInCompare ? 'third' : 'primary'}
                     onClick={handleCompare}
@@ -192,9 +192,9 @@ const ResultModal = (props) => {
               )}
               <div className="d-flex justify-content-between pt-3">
                 <Stack direction="horizontal" gap={1}>
-                  <ButtonCardCopyUrl id={card.Id} />
-                  <ButtonSearchCardInDecks id={card.Id} target="twd" />
-                  <ButtonSearchCardInDecks id={card.Id} target="pda" />
+                  <ButtonCardCopyUrl cardid={card.Id} />
+                  <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
+                  <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
                   <ButtonToggleShowImage />
                   <ButtonIconed
                     variant={cardInCompare ? 'third' : 'primary'}

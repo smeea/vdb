@@ -13,7 +13,7 @@ import { useApp } from 'context';
 const DeckSelectorAndDisplay = ({ deckData }) => {
   const { decks, isDesktop, addMode, toggleAddMode } = useApp();
 
-  const deckId = deckData.deckid;
+  const deckid = deckData.deckid;
 
   const isBranches =
     deckData &&
@@ -24,14 +24,14 @@ const DeckSelectorAndDisplay = ({ deckData }) => {
       {decks && Object.keys(decks).length > 0 && (
         <>
           <div className="d-flex justify-content-end sticky-selector pt-3 pb-2">
-            {deckId && addMode && (
+            {deckid && addMode && (
               <>
                 <div className={isBranches ? 'w-75' : 'w-100'}>
-                  <DeckSelectMy deckId={deckId} />
+                  <DeckSelectMy deckid={deckid} />
                 </div>
                 {isBranches && (
                   <div className="ps-1 w-25">
-                    <DeckBranchSelect deckId={deckId} />
+                    <DeckBranchSelect deckid={deckid} />
                   </div>
                 )}
               </>
@@ -52,11 +52,11 @@ const DeckSelectorAndDisplay = ({ deckData }) => {
               </Button>
             )}
           </div>
-          {deckId && addMode && (
+          {deckid && addMode && (
             <>
               <div className="pt-2">
                 <DeckCrypt
-                  deckid={deckId}
+                  deckid={deckid}
                   cards={deckData.crypt}
                   isAuthor={true}
                   inSearch={true}
@@ -64,7 +64,7 @@ const DeckSelectorAndDisplay = ({ deckData }) => {
               </div>
               <div className="pt-4">
                 <DeckLibrary
-                  deckid={deckId}
+                  deckid={deckid}
                   cards={deckData.library}
                   isAuthor={true}
                   inSearch={true}

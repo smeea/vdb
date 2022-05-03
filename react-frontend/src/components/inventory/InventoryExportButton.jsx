@@ -10,8 +10,8 @@ import Download from 'assets/images/icons/download.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-const InventoryExportButton = (props) => {
-  const { isMobile } = useApp();
+const InventoryExportButton = ({ setShowButtons }) => {
+  const { isNarrow } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -64,7 +64,7 @@ const InventoryExportButton = (props) => {
       .then((response) => response.json())
       .then((data) => {
         navigator.clipboard.writeText(data.deck);
-        isMobile && props.setShowButtons(false);
+        isNarrow && setShowButtons(false);
         setSpinnerState(false);
       })
       .catch((error) => {
@@ -111,7 +111,7 @@ const InventoryExportButton = (props) => {
           const file = `${mime};base64,${data}`;
           saveAs(file, `Inventory ${date}.${extension}`);
           setSpinnerState(false);
-          isMobile && props.setShowButtons(false);
+          isNarrow && setShowButtons(false);
         })
         .catch((error) => {
           setSpinnerState(false);
@@ -128,7 +128,7 @@ const InventoryExportButton = (props) => {
           );
           FileSaver.saveAs(file);
           setSpinnerState(false);
-          isMobile && props.setShowButtons(false);
+          isNarrow && setShowButtons(false);
         })
         .catch((error) => {
           setError(true);

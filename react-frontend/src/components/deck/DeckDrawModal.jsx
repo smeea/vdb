@@ -11,15 +11,31 @@ import {
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-function DeckDrawModal(props) {
-  const { burnedCrypt, burnedLibrary, restCrypt, restLibrary } = props;
-  const { drawedCrypt, libraryTotal, burnLibrary, burnCrypt } = props;
-  const { show, keyDisciplines, disciplinesSet, nonKeyDisciplines } = props;
-  const { burnedCapacityTotal, burnedBloodTotal, burnedPoolTotal } = props;
-  const { handleClose, handleCryptHandSize, handleReDrawCrypt } = props;
-  const { drawedLibrary, handleLibraryHandSize, handleReDrawLibrary } = props;
-  const { initialTransfers, cryptTotal } = props;
-
+const DeckDrawModal = ({
+  burnedCrypt,
+  burnedLibrary,
+  restCrypt,
+  restLibrary,
+  drawedCrypt,
+  libraryTotal,
+  burnLibrary,
+  burnCrypt,
+  show,
+  keyDisciplines,
+  disciplinesSet,
+  nonKeyDisciplines,
+  burnedCapacityTotal,
+  burnedBloodTotal,
+  burnedPoolTotal,
+  handleClose,
+  handleCryptHandSize,
+  handleReDrawCrypt,
+  drawedLibrary,
+  handleLibraryHandSize,
+  handleReDrawLibrary,
+  initialTransfers,
+  cryptTotal,
+}) => {
   const { isMobile } = useApp();
 
   // Modal Card Controller
@@ -265,6 +281,6 @@ function DeckDrawModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default DeckDrawModal;
