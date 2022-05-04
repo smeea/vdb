@@ -1,6 +1,5 @@
 # FIX
 - Merge anonymous import with import
-- Import with trailing space (maybe rework export to not add it?)
 - Floating buttons on narrow screen (but not mobile) => change isMobile && showFloating to isNarrow
 - Move anthology larp to promo
 

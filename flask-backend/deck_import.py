@@ -37,6 +37,7 @@ def deck_import(deckText):
         cardbase[name] = {"base": card["Id"]}
 
     for i in linesArray:
+        i = i.strip()
         if nameMatch := re.match(r"^Deck Name: (.*)", i):
             deck["name"] = nameMatch.group(1)
             continue
