@@ -56,9 +56,9 @@ function About(props) {
               <h5>TROUBLESHOOTING</h5>
               <p>
                 If you experience problems like white screen or something start
-                to behave not as expected, try to reload page with browser cache
-                update (Ctrl+F5 on Windows/Linux or Command+Shift+R on MacOS)
-                <br />
+                to behave not as expected, try to reload page with cache refresh
+                (Ctrl+F5 on Windows/Linux or Command+Shift+R on MacOS)
+                <p></p>
                 If this does not help, please contact me (see below)
               </p>
             </div>
@@ -67,7 +67,7 @@ function About(props) {
               <h5>VERSION</h5>
               <p>
                 Card text based on{' '}
-                <a href="http://www.vekn.net/card-lists">
+                <a href="https://www.vekn.net/card-lists">
                   vekn.net official list
                 </a>
                 : 2022-01-12
@@ -152,7 +152,7 @@ function About(props) {
             <div className="pt-3">
               <h5>ACKNOWLEDGMENTS</h5>
               <ul>
-                <li>Card images by Fernando &quot;Sydnnelson&quot; Cesar</li>
+                <li>Card images by Fernando &quot;Sydnelson&quot; Cesar</li>
                 <li>
                   Rulings by Lionel &quot;Phoenix&quot; Panhaleux from{' '}
                   <a href="https://static.krcg.org/">KRCG</a>
