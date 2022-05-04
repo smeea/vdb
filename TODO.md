@@ -2,13 +2,14 @@
 - Merge anonymous import with import
 - Floating buttons on narrow screen (but not mobile) => change isMobile && showFloating to isNarrow
 - Move anthology larp to promo
+- Preview deck in inventory import (deck/precon)
+- Toggle deck inventory-type
 
 # FEATURES
 - Export all in xlsx and csv
 - Store src (pda/twd) for Recent decks and add TWD/PDA appendix to name in selector
 - Add email to account creation
 - Accept The before and after card name for import
-- Add to inventory from precon counter
 
 # MAYBE LATER FEATURES
 - Comments for PDA

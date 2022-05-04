@@ -16,7 +16,12 @@ import { decksSort } from 'utils';
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-function InventoryAddDeckModal(props) {
+const InventoryAddDeckModal = ({
+  inventoryDeckAdd,
+  inventoryDeckDelete,
+  show,
+  handleClose,
+}) => {
   const { inventoryCrypt, inventoryLibrary, preconDecks, isMobile } = useApp();
 
   const [sortMethod, setSortMethod] = useState('byDate');
@@ -69,32 +74,40 @@ function InventoryAddDeckModal(props) {
       resultTrClass = 'result-even';
     }
 
-    let cryptInInventory = true;
-    let libraryInInventory = true;
+    let cryptInInventory;
+    let libraryInInventory;
 
     Object.keys(deck.crypt).map((cardid) => {
-      if (deck.crypt[cardid].q != 0) {
-        if (
-          !inventoryCrypt[cardid] ||
-          inventoryCrypt[cardid].q < deck.crypt[cardid].q
-        ) {
-          cryptInInventory = false;
+      if (deck.crypt[cardid].q > 0) {
+        if (inventoryCrypt[cardid]) {
+          const inInventory = Math.floor(
+            inventoryCrypt[cardid].q / deck.crypt[cardid].q
+          );
+          if (!cryptInInventory || inInventory < cryptInInventory) {
+            cryptInInventory = inInventory;
+          }
+        } else {
+          cryptInInventory = 0;
         }
       }
     });
 
     Object.keys(deck.library).map((cardid) => {
-      if (deck.library[cardid].q != 0) {
-        if (
-          !inventoryLibrary[cardid] ||
-          inventoryLibrary[cardid].q < deck.library[cardid].q
-        ) {
-          libraryInInventory = false;
+      if (deck.library[cardid].q > 0) {
+        if (inventoryLibrary[cardid]) {
+          const inInventory = Math.floor(
+            inventoryLibrary[cardid].q / deck.library[cardid].q
+          );
+          if (!libraryInInventory || inInventory < libraryInInventory) {
+            libraryInInventory = inInventory;
+          }
+        } else {
+          libraryInInventory = 0;
         }
       }
     });
 
-    const inInventory = cryptInInventory && libraryInInventory ? true : false;
+    const inInventory = Math.min(cryptInInventory, libraryInInventory);
 
     const [set, precon] = deck.deckid.split(':');
     const clans = setsAndPrecons[set].precons[precon].clan.split('/');
@@ -200,14 +213,14 @@ function InventoryAddDeckModal(props) {
           <td className="buttons">
             <div className="d-inline pe-1">
               <InventoryDeckAddButton
-                inventoryDeckAdd={props.inventoryDeckAdd}
+                inventoryDeckAdd={inventoryDeckAdd}
                 deck={deck}
                 inInventory={inInventory}
               />
             </div>
             <div className="d-inline pe-1">
               <InventoryDeckDeleteButton
-                inventoryDeckDelete={props.inventoryDeckDelete}
+                inventoryDeckDelete={inventoryDeckDelete}
                 deck={deck}
                 inInventory={inInventory}
               />
@@ -220,8 +233,8 @@ function InventoryAddDeckModal(props) {
 
   return (
     <Modal
-      show={props.show}
-      onHide={props.handleClose}
+      show={show}
+      onHide={handleClose}
       animation={false}
       size="xl"
       dialogClassName={isMobile ? 'm-0' : null}
@@ -234,7 +247,7 @@ function InventoryAddDeckModal(props) {
         }
       >
         <h5>Import Precon to Inventory</h5>
-        <Button variant="outline-secondary" onClick={props.handleClose}>
+        <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -278,6 +291,6 @@ function InventoryAddDeckModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default InventoryAddDeckModal;

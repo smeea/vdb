@@ -100,19 +100,23 @@ function InventoryAddDeckModal(props) {
       resultTrClass = 'result-even';
     }
 
-    let cryptInInventory = true;
-    let libraryInInventory = true;
+    let cryptInInventory = null;
+    let libraryInInventory = null;
 
     const clans = {};
     let cryptTotal = 0;
 
     Object.keys(deck.crypt).map((cardid) => {
-      if (deck.crypt[cardid].q != 0) {
-        if (
-          !inventoryCrypt[cardid] ||
-          inventoryCrypt[cardid].q < deck.crypt[cardid].q
-        ) {
-          cryptInInventory = false;
+      if (deck.crypt[cardid].q > 0) {
+        if (inventoryCrypt[cardid]) {
+          const inInventory = Math.floor(
+            inventoryCrypt[cardid].q / deck.crypt[cardid].q
+          );
+          if (cryptInInventory === null || inInventory < cryptInInventory) {
+            cryptInInventory = inInventory;
+          }
+        } else {
+          cryptInInventory = 0;
         }
       }
 
@@ -127,24 +131,24 @@ function InventoryAddDeckModal(props) {
           cryptTotal += deck.crypt[cardid].q;
         }
       }
-
-      return <div key={cardid}>{cryptCardBase[cardid].Name}</div>;
     });
 
     Object.keys(deck.library).map((cardid) => {
-      if (deck.library[cardid].q != 0) {
-        if (
-          !inventoryLibrary[cardid] ||
-          inventoryLibrary[cardid].q < deck.library[cardid].q
-        ) {
-          libraryInInventory = false;
+      if (deck.library[cardid].q > 0) {
+        if (inventoryLibrary[cardid] && deck.library[cardid].q > 0) {
+          const inInventory = Math.floor(
+            inventoryLibrary[cardid].q / deck.library[cardid].q
+          );
+          if (libraryInInventory === null || inInventory < libraryInInventory) {
+            libraryInInventory = inInventory;
+          }
+        } else {
+          libraryInInventory = 0;
         }
       }
-
-      return <div key={cardid}>{libraryCardBase[cardid].Name}</div>;
     });
 
-    const inInventory = cryptInInventory && libraryInInventory ? true : false;
+    const inInventory = Math.min(cryptInInventory, libraryInInventory);
 
     let clan;
     Object.keys(clans).forEach((c) => {

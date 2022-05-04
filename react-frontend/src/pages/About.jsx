@@ -58,9 +58,8 @@ function About(props) {
                 If you experience problems like white screen or something start
                 to behave not as expected, try to reload page with cache refresh
                 (Ctrl+F5 on Windows/Linux or Command+Shift+R on MacOS)
-                <p></p>
-                If this does not help, please contact me (see below)
               </p>
+              <p>If this does not help, please contact me (see below)</p>
             </div>
 
             <div className="py-3">
