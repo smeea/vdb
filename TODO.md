@@ -1,9 +1,11 @@
 # FIX
 - Merge anonymous import with import
-- Floating buttons on narrow screen (but not mobile) => change isMobile && showFloating to isNarrow
+- Floating buttons on narrow screen (but not mobile) => change isMobile && showFloating to isNarrow or refactor showFloating to context
 - Move anthology larp to promo
 - Preview deck in inventory import (deck/precon)
-- Toggle deck inventory-type
+- Fix partial-value deckUpdate
+- Fix used_in_inventory decks state update
+- Add tags (refactor setTags)
 
 # FEATURES
 - Export all in xlsx and csv

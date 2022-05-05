@@ -105,6 +105,13 @@ const DeckCryptTable = ({
       }
     }
 
+    const toggleInventoryState = (deckid, cardid) => {
+      const value = cardInvType ? '' : deckInvType === 's' ? 'h' : 's';
+      deckUpdate(deckid, 'used_in_inventory', {
+        [cardid]: value,
+      });
+    };
+
     return (
       <React.Fragment key={card.c.Id}>
         <tr className={resultTrClass}>
@@ -112,7 +119,7 @@ const DeckCryptTable = ({
             <>
               {inventoryMode && decks ? (
                 <>
-                  {deckInvType && !inSearch && !isMobile ? (
+                  {deckInvType && !inSearch && !isMobile && (
                     <td>
                       <div className="d-flex relative align-items-center">
                         <div
@@ -122,23 +129,14 @@ const DeckCryptTable = ({
                               : 'inventory-card-custom not-selected'
                           }
                           onClick={() =>
-                            deckUpdate(
-                              deckid,
-                              cardInvType
-                                ? 'makeClear'
-                                : deckInvType == 's'
-                                ? 'makeFixed'
-                                : 'makeFlexible',
-                              card.c.Id
-                            )
+                            toggleInventoryState(deckid, card.c.Id)
                           }
                         >
                           {deckInvType == 's' ? <PinAngleFill /> : <Shuffle />}
                         </div>
                       </div>
                     </td>
-                  ) : null}
-
+                  )}
                   <ConditionalOverlayTrigger
                     overlay={<UsedPopover cardid={card.c.Id} />}
                     disabled={disableOverlay}

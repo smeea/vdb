@@ -252,35 +252,16 @@ def updateDeck(deckid):
     if "branchName" in request.json:
         d.branch_name = request.json["branchName"] or ""
 
-    if "makeFlexible" in request.json:
-        if request.json["makeFlexible"] == "all":
-            d.used_in_inventory = {}
-            d.inventory_type = "s"
-        else:
-            used = d.used_in_inventory.copy()
-            r = int(request.json["makeFlexible"])
-            used[r] = "s"
-            d.used_in_inventory = used
+    if "inventory_type" in request.json:
+        d.used_in_inventory = {}
+        d.inventory_type = request.json["inventory_type"]
 
-    if "makeFixed" in request.json:
-        if request.json["makeFixed"] == "all":
-            d.used_in_inventory = {}
-            d.inventory_type = "h"
-        else:
-            used = d.used_in_inventory.copy()
-            r = int(request.json["makeFixed"])
-            used[r] = "h"
-            d.used_in_inventory = used
+    if "used_in_inventory" in request.json:
+        used = d.used_in_inventory.copy()
+        for k, v in request.json["used_in_inventory"].items():
+            used[int(k)] = v
 
-    if "makeClear" in request.json:
-        if request.json["makeClear"] == "all":
-            d.used_in_inventory = {}
-            d.inventory_type = ""
-        else:
-            used = d.used_in_inventory.copy()
-            r = int(request.json["makeClear"])
-            del used[r]
-            d.used_in_inventory = used
+        d.used_in_inventory = used
 
     if "setTags" in request.json:
         new_tags = request.json["setTags"]

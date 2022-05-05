@@ -29,7 +29,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-function Decks(props) {
+const Decks = (props) => {
   const {
     deckUpdate,
     deckRouter,
@@ -137,13 +137,6 @@ function Decks(props) {
     return library;
   };
 
-  let missingCrypt;
-  let missingLibrary;
-  if (deckRouter(activeDeck)) {
-    missingCrypt = getMissingCrypt(deckRouter(activeDeck));
-    missingLibrary = getMissingLibrary(deckRouter(activeDeck));
-  }
-
   const getDeck = (deckid) => {
     const url = `${process.env.API_URL}deck/${deckid}`;
     const options = {
@@ -181,27 +174,33 @@ function Decks(props) {
       .catch((error) => setDeckError(true));
   };
 
-  const toggleInventoryState = () => {
-    const inventoryType = decks[activeDeck.deckid].inventory_type;
+  const toggleInventoryState = (deckid) => {
     if (!inventoryType) {
-      deckUpdate(activeDeck.deckid, 'makeFlexible', 'all');
-    } else if (inventoryType == 's') {
-      deckUpdate(activeDeck.deckid, 'makeFixed', 'all');
-    } else if (inventoryType == 'h') {
-      deckUpdate(activeDeck.deckid, 'makeClear', 'all');
+      deckUpdate(deckid, 'inventory_type', 's');
+    } else if (inventoryType === 's') {
+      deckUpdate(deckid, 'inventory_type', 'h');
+    } else if (inventoryType === 'h') {
+      deckUpdate(deckid, 'inventory_type', '');
     }
   };
 
   let isPublic;
   let isAuthor;
   let isBranches;
+  let inventoryType;
+  let missingCrypt;
+  let missingLibrary;
+
   if (deckRouter(activeDeck)) {
+    missingCrypt = getMissingCrypt(deckRouter(activeDeck));
+    missingLibrary = getMissingLibrary(deckRouter(activeDeck));
     isPublic = deckRouter(activeDeck).public_parent ? true : false;
     isAuthor = username && username === deckRouter(activeDeck).owner;
     isBranches =
       deckRouter(activeDeck).master ||
       (deckRouter(activeDeck).branches &&
         deckRouter(activeDeck).branches.length > 0);
+    inventoryType = deckRouter(activeDeck).inventory_type;
   }
 
   useEffect(() => {
@@ -310,7 +309,9 @@ function Decks(props) {
       setActiveDeck({ src: 'my', deckid: activeDeck.deckid });
     }
 
-    if (deckRouter(activeDeck)) setDeckError(false);
+    if (deckRouter(activeDeck)) {
+      setDeckError(false);
+    }
   }, [activeDeck, decks]);
 
   return (
@@ -354,23 +355,21 @@ function Decks(props) {
                         <div className="d-flex ps-1">
                           <Button
                             title={`Inventory Type: ${
-                              !deckRouter(activeDeck).inventory_type
+                              !inventoryType
                                 ? 'VIRTUAL\nDo not use Inventory'
-                                : deckRouter(activeDeck).inventory_type == 's'
+                                : inventoryType === 's'
                                 ? 'FLEXIBLE\nLet cards to be reused with other Flexible Decks'
                                 : 'FIXED\nUse unique copies of cards from Inventory'
                             }`}
                             variant="primary"
-                            onClick={() => toggleInventoryState()}
+                            onClick={() =>
+                              toggleInventoryState(activeDeck.deckid)
+                            }
                           >
                             <div className="d-flex align-items-center">
-                              {!deckRouter(activeDeck).inventory_type && <At />}
-                              {deckRouter(activeDeck).inventory_type == 's' && (
-                                <Shuffle />
-                              )}
-                              {deckRouter(activeDeck).inventory_type == 'h' && (
-                                <PinAngleFill />
-                              )}
+                              {!inventoryType && <At />}
+                              {inventoryType === 's' && <Shuffle />}
+                              {inventoryType === 'h' && <PinAngleFill />}
                             </div>
                           </Button>
                         </div>
@@ -707,6 +706,6 @@ function Decks(props) {
       )}
     </Container>
   );
-}
+};
 
 export default Decks;

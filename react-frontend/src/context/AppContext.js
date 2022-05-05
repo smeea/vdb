@@ -294,7 +294,7 @@ export const AppProvider = (props) => {
     return decksData;
   };
 
-  const updateBranches = (deckid) => {
+  const changeMaster = (deckid) => {
     const masterid = decks[deckid].master;
     if (masterid) {
       setDecks((prevState) => {
@@ -321,7 +321,32 @@ export const AppProvider = (props) => {
     }
   };
 
+  const branchesUpdate = (deckid, field, value) => {
+    setDecks((prevState) => {
+      let revisions = [];
+      if (decks[deckid].master) {
+        revisions = [
+          decks[deckid].master,
+          ...decks[decks[deckid].master].branches,
+        ];
+      } else {
+        revisions = [deckid, ...decks[deckid].branches];
+      }
+
+      const newState = { ...prevState };
+      revisions.map((d) => {
+        newState[d] = {
+          ...newState[d],
+          [field]: value,
+        };
+      });
+
+      return newState;
+    });
+  };
+
   const deckUpdate = (deckid, field, value) => {
+    // TODO: handle partial value change (i.e. used_in_inventory change)
     deckServices.deckUpdate(deckid, field, value).then(() => {
       setDecks((prevState) => ({
         ...prevState,
@@ -331,7 +356,15 @@ export const AppProvider = (props) => {
         },
       }));
 
-      updateBranches(deckid);
+      const branchesUpdateFields = ['name', 'author'];
+      if (
+        branchesUpdateFields.includes(field) &&
+        (decks[deckid].branches || decks[deckid].master)
+      ) {
+        branchesUpdate(deckid, field, value);
+      }
+
+      changeMaster(deckid);
     });
   };
 
@@ -367,7 +400,8 @@ export const AppProvider = (props) => {
 
         return oldState;
       });
-      updateBranches(deckid);
+
+      changeMaster(deckid);
     } else if (deckid in sharedDeck) {
       initialState = JSON.parse(JSON.stringify(sharedDeck));
 

@@ -157,14 +157,14 @@ function InventoryAddDeckModal(props) {
       }
     });
 
-    const toggleInventoryState = () => {
-      const inventoryType = deck.inventory_type;
+    const inventoryType = deck.inventory_type;
+    const toggleInventoryState = (deckid) => {
       if (!inventoryType) {
-        deckUpdate(deck.deckid, 'makeFlexible', 'all');
-      } else if (inventoryType == 's') {
-        deckUpdate(deck.deckid, 'makeFixed', 'all');
-      } else if (inventoryType == 'h') {
-        deckUpdate(deck.deckid, 'makeClear', 'all');
+        deckUpdate(deckid, 'inventory_type', 's');
+      } else if (inventoryType === 's') {
+        deckUpdate(deckid, 'inventory_type', 'h');
+      } else if (inventoryType === 'h') {
+        deckUpdate(deckid, 'inventory_type', '');
       }
     };
 
@@ -172,7 +172,10 @@ function InventoryAddDeckModal(props) {
       <React.Fragment key={deck.deckid}>
         <tr className={resultTrClass}>
           {!isMobile && (
-            <td className="inventory" onClick={() => toggleInventoryState()}>
+            <td
+              className="inventory"
+              onClick={() => toggleInventoryState(deck.deckid)}
+            >
               <div
                 className="px-2"
                 title={
