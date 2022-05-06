@@ -10,7 +10,6 @@
 - Export all in xlsx and csv
 - Store src (pda/twd) for Recent decks and add TWD/PDA appendix to name in selector
 - Add email to account creation
-- Accept The before and after card name for import
 
 # MAYBE LATER FEATURES
 - Comments for PDA

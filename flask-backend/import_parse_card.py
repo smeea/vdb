@@ -2,6 +2,15 @@ import re
 from unidecode import unidecode
 
 
+def get_card_name(cardname):
+    if cardname.startswith("The "):
+        return re.sub(
+            r"\W", "", unidecode(f"{cardname.removeprefix('The ')}, The")
+        ).lower()
+    else:
+        return re.sub(r"\W", "", unidecode(cardname)).lower()
+
+
 def import_parse_card(i, cardbase):
     id = None
     quantity = None
@@ -17,7 +26,8 @@ def import_parse_card(i, cardbase):
             quantity = int(cardMatch.group(1))
             cardname = cardMatch.group(2)
 
-        cardname = re.sub(r"\W", "", unidecode(cardname)).lower()
+        cardname = get_card_name(cardname)
+
         if cardname in cardbase:
             id = cardbase[cardname]["adv"]
 
@@ -26,7 +36,7 @@ def import_parse_card(i, cardbase):
             quantity = int(cardMatch.group(1))
             cardname = cardMatch.group(2)
             group = cardMatch.group(3)
-            cardname = re.sub(r"\W", "", unidecode(cardname)).lower()
+            cardname = get_card_name(cardname)
             if cardname in cardbase:
                 if group in cardbase[cardname]:
                     id = cardbase[cardname][group]
@@ -35,7 +45,7 @@ def import_parse_card(i, cardbase):
         quantity = int(cardMatch.group(1))
         cardname = cardMatch.group(2)
         group = cardMatch.group(4)
-        cardname = re.sub(r"\W", "", unidecode(cardname)).lower()
+        cardname = get_card_name(cardname)
 
         if cardname in cardbase:
             if group in cardbase[cardname]:
@@ -45,7 +55,7 @@ def import_parse_card(i, cardbase):
     elif cardMatch := re.match(r"^\s*([0-9]+)x?\s*(.*)", i):
         quantity = int(cardMatch.group(1))
         cardname = cardMatch.group(2)
-        cardname = re.sub(r"\W", "", unidecode(cardname)).lower()
+        cardname = get_card_name(cardname)
         if cardname in cardbase:
             id = cardbase[cardname]["base"]
 
