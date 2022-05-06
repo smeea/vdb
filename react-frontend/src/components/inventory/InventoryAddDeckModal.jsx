@@ -22,11 +22,11 @@ import { useApp } from 'context';
 function InventoryAddDeckModal(props) {
   const {
     cryptCardBase,
-    libraryCardBase,
     inventoryCrypt,
     inventoryLibrary,
     decks,
     deckUpdate,
+    isDesktop,
     isMobile,
   } = useApp();
 
@@ -213,7 +213,7 @@ function InventoryAddDeckModal(props) {
                 )}
             </div>
           </td>
-          {!isMobile && (
+          {isDesktop && (
             <td className="preview">
               <div
                 className="m-2"
@@ -223,7 +223,6 @@ function InventoryAddDeckModal(props) {
                 <OverlayTooltip
                   placement="right"
                   show={showDeck === deck.deckid}
-                  className="modal-tooltip-preview"
                   text={
                     <Row>
                       <Col
@@ -232,8 +231,13 @@ function InventoryAddDeckModal(props) {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
+                        className="scroll"
                       >
-                        <DeckCrypt deckid={deck.deckid} cards={deck.crypt} />
+                        <DeckCrypt
+                          inAdvSelect={true}
+                          deckid={deck.deckid}
+                          cards={deck.crypt}
+                        />
                       </Col>
                       <Col
                         md={5}
@@ -241,6 +245,7 @@ function InventoryAddDeckModal(props) {
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
+                        className="scroll"
                       >
                         <DeckLibrary
                           deckid={deck.deckid}
@@ -325,7 +330,7 @@ function InventoryAddDeckModal(props) {
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              {!isMobile && <th className="preview"></th>}
+              {isDesktop && <th className="preview"></th>}
               {!isMobile && <th className="date"></th>}
               {!isMobile && (
                 <th className="tags">

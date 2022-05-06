@@ -22,7 +22,8 @@ const InventoryAddDeckModal = ({
   show,
   handleClose,
 }) => {
-  const { inventoryCrypt, inventoryLibrary, preconDecks, isMobile } = useApp();
+  const { inventoryCrypt, inventoryLibrary, preconDecks, isDesktop, isMobile } =
+    useApp();
 
   const [sortMethod, setSortMethod] = useState('byDate');
   const [sortedDecks, setSortedDecks] = useState([]);
@@ -150,7 +151,7 @@ const InventoryAddDeckModal = ({
                 )}
             </div>
           </td>
-          {!isMobile && (
+          {isDesktop && (
             <td className="preview">
               <div
                 className="m-2"
@@ -160,7 +161,6 @@ const InventoryAddDeckModal = ({
                 <OverlayTooltip
                   placement="right"
                   show={showDeck === deck.deckid}
-                  className="modal-tooltip-preview"
                   text={
                     <Row>
                       <Col
@@ -169,8 +169,13 @@ const InventoryAddDeckModal = ({
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
+                        className="scroll"
                       >
-                        <DeckCrypt deckid={deck.deckid} cards={deck.crypt} />
+                        <DeckCrypt
+                          inAdvSelect={true}
+                          deckid={deck.deckid}
+                          cards={deck.crypt}
+                        />
                       </Col>
                       <Col
                         md={5}
@@ -178,6 +183,7 @@ const InventoryAddDeckModal = ({
                           if (event.target === event.currentTarget)
                             setShowDeck(false);
                         }}
+                        className="scroll"
                       >
                         <DeckLibrary
                           deckid={deck.deckid}
@@ -267,7 +273,7 @@ const InventoryAddDeckModal = ({
                   onChange={handleChangeNameFilter}
                 />
               </th>
-              {!isMobile && <th className="preview"></th>}
+              {isDesktop && <th className="preview"></th>}
               <th className="set">
                 <FormControl
                   placeholder="Filter by Set"

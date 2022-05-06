@@ -309,7 +309,6 @@ const DeckSelectAdvModal = (props) => {
                   <OverlayTooltip
                     placement="right"
                     show={showDeck === deck.deckid}
-                    className="adv-preview"
                     text={
                       <Row className="align-items-start">
                         <Col
