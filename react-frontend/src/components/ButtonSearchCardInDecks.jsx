@@ -33,7 +33,7 @@ const ButtonSearchCardInDecks = ({ cardid, target }) => {
 
   return (
     <Button
-      title={`Search in ${target.toUpperCase}`}
+      title={`Search in ${target.toUpperCase()}`}
       variant="primary"
       onClick={handleButton}
     >
