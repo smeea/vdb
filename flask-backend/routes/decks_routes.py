@@ -263,9 +263,8 @@ def updateDeck(deckid):
 
         d.used_in_inventory = used
 
-    if "setTags" in request.json:
-        new_tags = request.json["setTags"]
-        d.tags = new_tags
+    if "tags" in request.json:
+        d.tags = request.json["tags"]
 
     if d.master:
         old_master = Deck.query.get(d.master)

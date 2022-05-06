@@ -8,7 +8,7 @@ function DeckTags(props) {
 
   const handleChange = (event) => {
     const v = event.map((t) => t.value);
-    deckUpdate(props.deck.deckid, 'setTags', v);
+    deckUpdate(props.deck.deckid, 'tags', v);
   };
 
   useEffect(() => {
