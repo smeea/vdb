@@ -3,24 +3,31 @@ import Files from 'assets/images/icons/files.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckCloneButton = (props) => {
-  const { setDecks, setActiveDeck, isMobile, username } = useApp();
+const DeckCloneButton = ({ deck, activeDeck, noText, inPda, inTwd }) => {
+  const {
+    setDecks,
+    setActiveDeck,
+    username,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
+
   const [state, setState] = useState(false);
 
   const cloneDeck = () => {
     const url = `${process.env.API_URL}decks/clone`;
     const body = {
-      deckname: props.deck.name + ' [by ' + props.deck.author + ']',
-      author: props.deck.author,
-      src: props.activeDeck.src,
+      deckname: deck.name + ' [by ' + deck.author + ']',
+      author: deck.author,
+      src: activeDeck.src,
     };
 
-    switch (props.activeDeck['deckid']) {
+    switch (activeDeck['deckid']) {
       case 'deckInUrl':
-        body['deck'] = props.deck;
+        body['deck'] = deck;
         break;
       default:
-        body['target'] = props.deck.deckid;
+        body['target'] = deck.deckid;
     }
 
     const options = {
@@ -38,9 +45,9 @@ const DeckCloneButton = (props) => {
       .then((data) => {
         if (data.error === undefined) {
           const now = new Date();
-          let name = props.deck.name;
-          if (props.activeDeck.src !== 'precons') {
-            name += ` [by ${props.deck.author}]`;
+          let name = deck.name;
+          if (activeDeck.src !== 'precons') {
+            name += ` [by ${deck.author}]`;
           } else {
             name += ' [PRECON]';
           }
@@ -48,36 +55,35 @@ const DeckCloneButton = (props) => {
           setDecks((prevState) => ({
             ...prevState,
             [data.deckid]: {
-              ...props.deck,
+              ...deck,
               name: name,
               deckid: data.deckid,
-              crypt: { ...props.deck.crypt },
-              library: { ...props.deck.library },
+              crypt: { ...deck.crypt },
+              library: { ...deck.library },
               timestamp: now.toUTCString(),
               owner: username,
             },
           }));
           setActiveDeck({ src: 'my', deckid: data.deckid });
-          isMobile && props.setShowButtons(false);
           setState(true);
           setTimeout(() => {
             setState(false);
           }, 1000);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         }
       });
   };
 
   return (
     <ButtonIconed
-      variant={state ? 'success' : props.noText ? 'primary' : 'secondary'}
+      variant={state ? 'success' : noText ? 'primary' : 'secondary'}
       onClick={cloneDeck}
       title="Clone Deck to your account for editing"
       icon={<Files />}
       text={
-        !props.noText &&
-        (state
-          ? 'Cloned'
-          : `Clone${!(props.inPda || props.inTwd) ? ' Deck' : ''}`)
+        !noText &&
+        (state ? 'Cloned' : `Clone${!(inPda || inTwd) ? ' Deck' : ''}`)
       }
     />
   );

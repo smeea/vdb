@@ -4,8 +4,13 @@ import ImageAlt from 'assets/images/icons/image-alt.svg';
 import FileTextFill from 'assets/images/icons/chat-quote-fill.svg';
 import { useApp } from 'context';
 
-const ButtonToggleShowImage = ({ setShowButtons }) => {
-  const { showImage, toggleShowImage, isNarrow } = useApp();
+const ButtonToggleShowImage = (props) => {
+  const {
+    showImage,
+    toggleShowImage,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
   const [state, setState] = useState(false);
 
   const handleButton = () => {
@@ -13,7 +18,8 @@ const ButtonToggleShowImage = ({ setShowButtons }) => {
     setState(true);
     setTimeout(() => {
       setState(false);
-      isNarrow && setShowButtons(false);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
     }, 1000);
   };
 

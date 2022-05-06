@@ -3,8 +3,8 @@ import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DiffCopyUrlButton = ({ setShowButtons, fromQuery, toQuery }) => {
-  const { isNarrow } = useApp();
+const DiffCopyUrlButton = ({ fromQuery, toQuery }) => {
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
@@ -14,7 +14,8 @@ const DiffCopyUrlButton = ({ setShowButtons, fromQuery, toQuery }) => {
     setState(true);
     setTimeout(() => {
       setState(false);
-      isNarrow && setShowButtons(false);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
     }, 1000);
   };
 

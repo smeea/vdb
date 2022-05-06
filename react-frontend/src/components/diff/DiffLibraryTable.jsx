@@ -33,7 +33,6 @@ const DiffLibraryTable = ({
   showInfo,
   libraryTotal,
   handleModalCardOpen,
-  setShowFloatingButtons,
 }) => {
   const {
     decks,
@@ -41,9 +40,9 @@ const DiffLibraryTable = ({
     inventoryLibrary,
     usedLibraryCards,
     nativeLibrary,
-    isNarrow,
     isMobile,
     deckCardChange,
+    setShowFloatingButtons,
   } = useApp();
 
   let resultTrClass;
@@ -53,7 +52,7 @@ const DiffLibraryTable = ({
   const cardRows = cards.map((card) => {
     const handleClick = () => {
       handleModalCardOpen(card.c);
-      isNarrow && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-odd') {

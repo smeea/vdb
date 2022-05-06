@@ -9,8 +9,13 @@ import PeopleFill from 'assets/images/icons/people-fill.svg';
 import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
-const DeckPublicButton = ({ deck, setShowButtons, noText }) => {
-  const { setDecks, setActiveDeck, isNarrow } = useApp();
+const DeckPublicButton = ({ deck, noText }) => {
+  const {
+    setDecks,
+    setActiveDeck,
+    setShowMenuButtons,
+    setShowFloatingButtons,
+  } = useApp();
   const [showCreateOrDeleteConfirmation, setShowCreateOrDeleteConfirmation] =
     useState(false);
   const [showSyncConfirmation, setShowSyncConfirmation] = useState(false);
@@ -22,13 +27,15 @@ const DeckPublicButton = ({ deck, setShowButtons, noText }) => {
   const handleCreateOrDelete = () => {
     createOrDelete();
     setShowCreateOrDeleteConfirmation(false);
-    isNarrow && setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const handleSync = () => {
     syncPublic();
     setShowSyncConfirmation(false);
-    isNarrow && setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const handleSwitch = () => {

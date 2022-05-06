@@ -3,16 +3,14 @@ import { InventoryCryptTable, InventoryFilterForm } from 'components';
 import clansList from '~/src/assets/data/clansList.json';
 import { useApp } from 'context';
 
-function InventoryCrypt({
+const InventoryCrypt = ({
   compact,
   withCompact,
   category,
   cards,
-  showFloatingButtons,
-  setShowFloatingButtons,
   clan,
   setClan,
-}) {
+}) => {
   const { usedCryptCards, cryptCardBase } = useApp();
 
   const cryptByClan = {};
@@ -199,11 +197,9 @@ function InventoryCrypt({
             ? Object.values(cryptByClan['All'])
             : Object.values(cryptByClan[clan])
         }
-        showFloatingButtons={showFloatingButtons}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
     </>
   );
-}
+};
 
 export default InventoryCrypt;

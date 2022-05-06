@@ -6,7 +6,13 @@ import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckDeleteButton = (props) => {
-  const { setActiveDeck, setDecks, isMobile, decks } = useApp();
+  const {
+    setActiveDeck,
+    setDecks,
+    decks,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
 
@@ -69,7 +75,8 @@ const DeckDeleteButton = (props) => {
         navigate('/decks');
       }
       setShowConfirmation(false);
-      isMobile && props.setShowButtons(false);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
     });
   };
 

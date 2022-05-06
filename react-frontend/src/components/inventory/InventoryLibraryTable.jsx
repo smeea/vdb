@@ -23,14 +23,14 @@ import { deckSort, getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const InventoryLibraryTable = ({
-  cards,
-  setShowFloatingButtons,
-  placement,
-  compact,
-  withCompact,
-}) => {
-  const { usedLibraryCards, nativeLibrary, isMobile, isWide } = useApp();
+const InventoryLibraryTable = ({ cards, placement, compact, withCompact }) => {
+  const {
+    usedLibraryCards,
+    nativeLibrary,
+    isMobile,
+    isWide,
+    setShowFloatingButtons,
+  } = useApp();
 
   // Modal Card Controller
   const {
@@ -43,7 +43,7 @@ const InventoryLibraryTable = ({
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isNarrow && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const sortedCards = deckSort(cards, 'Name');
@@ -51,7 +51,7 @@ const InventoryLibraryTable = ({
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isNarrow && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     const { c: card, q: qty } = cardInfo;

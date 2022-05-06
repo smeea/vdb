@@ -1,7 +1,6 @@
 # FIX
 - Merge anonymous import with import
-- Floating buttons on narrow screen (but not mobile) => change isMobile && showFloating to isNarrow or refactor showFloating to context
-- Add tags (refactor setTags)
+- Restyle PDA as in TWD
 
 # FEATURES
 - Export all in xlsx and csv
@@ -28,7 +27,6 @@
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)
-- move showFloatingButtons state into the context
 - remove Item UI from table into respective Item component.
 - move subComponents to subfolders and remove from main export.
 - refactor resultTrClass toggle

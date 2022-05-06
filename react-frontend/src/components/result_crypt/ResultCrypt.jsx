@@ -19,10 +19,10 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
     isMobile,
     cryptSearchSort,
     changeCryptSearchSort,
+    showFloatingButtons,
   } = useApp();
 
   const [sortedCards, setSortedCards] = useState([]);
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const className = 'search-crypt-table';
   const navigate = useNavigate();
 
@@ -71,7 +71,6 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
             crypt={crypt}
             activeDeck={activeDeck}
             resultCards={sortedCards}
-            setShowFloatingButtons={setShowFloatingButtons}
           />
         </>
       )}

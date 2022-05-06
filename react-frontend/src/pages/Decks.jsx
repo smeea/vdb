@@ -49,6 +49,10 @@ const Decks = (props) => {
     inventoryMode,
     username,
     isMobile,
+    showFloatingButtons,
+    setShowFloatingButtons,
+    showMenuButtons,
+    setShowMenuButtons,
   } = useApp();
 
   const query = new URLSearchParams(useLocation().search);
@@ -56,19 +60,12 @@ const Decks = (props) => {
   const [showRecommendation, setShowRecommendation] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
-  const [showMenuButtons, setShowMenuButtons] = useState(false);
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const { hash } = useLocation();
   const navigate = useNavigate();
   const [selectFrom, setSelectFrom] = useState('precons');
   const [deckError, setDeckError] = useState(false);
   const [foldedDescription, setFoldedDescription] = useState(!isMobile);
   const [allTagsOptions, setAllTagsOptions] = useState(undefined);
-
-  const handleShowButtons = (state) => {
-    setShowMenuButtons(state);
-    setShowFloatingButtons(!state);
-  };
 
   const getMissingCrypt = (deck) => {
     const crypt = {};
@@ -553,8 +550,6 @@ const Decks = (props) => {
                   cards={deckRouter(activeDeck).crypt}
                   isAuthor={isAuthor}
                   isPublic={isPublic}
-                  showFloatingButtons={showFloatingButtons}
-                  setShowFloatingButtons={setShowFloatingButtons}
                 />
               </Col>
               <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
@@ -564,8 +559,6 @@ const Decks = (props) => {
                   cards={deckRouter(activeDeck).library}
                   isAuthor={isAuthor}
                   isPublic={isPublic}
-                  showFloatingButtons={showFloatingButtons}
-                  setShowFloatingButtons={setShowFloatingButtons}
                 />
               </Col>
             </Row>
@@ -582,7 +575,6 @@ const Decks = (props) => {
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
-                setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
               />
@@ -674,7 +666,6 @@ const Decks = (props) => {
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
-                setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
               />
@@ -690,18 +681,13 @@ const Decks = (props) => {
         />
       )}
       {showDraw && (
-        <DeckDraw
-          setShow={setShowDraw}
-          deck={deckRouter(activeDeck)}
-          setShowFloatingButtons={setShowFloatingButtons}
-        />
+        <DeckDraw setShow={setShowDraw} deck={deckRouter(activeDeck)} />
       )}
       {showRecommendation && (
         <DeckRecommendation
           isAuthor={isAuthor}
           deck={deckRouter(activeDeck)}
           setShow={setShowRecommendation}
-          setShowFloatingButtons={setShowFloatingButtons}
         />
       )}
     </Container>

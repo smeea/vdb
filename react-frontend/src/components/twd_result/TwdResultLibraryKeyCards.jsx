@@ -14,13 +14,13 @@ import { useApp } from 'context';
 import { countCards, resultLibrarySort, getHardTotal } from 'utils';
 import { useModalCardController } from 'hooks';
 
-const TwdResultLibraryKeyCards = ({ library, setShowFloatingButtons }) => {
+const TwdResultLibraryKeyCards = ({ library }) => {
   const {
     inventoryLibrary,
     usedLibraryCards,
     inventoryMode,
-    isNarrow,
     isMobile,
+    setShowFloatingButtons,
   } = useApp();
 
   const sortedLibrary = resultLibrarySort(Object.values(library), GROUPED_TYPE);
@@ -43,13 +43,13 @@ const TwdResultLibraryKeyCards = ({ library, setShowFloatingButtons }) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isNarrow && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const cardRows = keyCards.map((card, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isNarrow && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-even') {

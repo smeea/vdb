@@ -6,18 +6,16 @@ import { cardtypeSorted } from 'utils/constants';
 import disciplinesList from 'assets/data/disciplinesList.json';
 import virtuesList from 'assets/data/virtuesList.json';
 
-function InventoryLibrary({
+const InventoryLibrary = ({
   compact,
   withCompact,
   category,
   cards,
-  showFloatingButtons,
-  setShowFloatingButtons,
   type,
   setType,
   discipline,
   setDiscipline,
-}) {
+}) => {
   const { usedLibraryCards, libraryCardBase } = useApp();
 
   const libraryByType = {};
@@ -387,11 +385,9 @@ function InventoryLibrary({
                 return libraryByDiscipline[discipline][i.c.Id];
               })
         }
-        showFloatingButtons={showFloatingButtons}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
     </>
   );
-}
+};
 
 export default InventoryLibrary;

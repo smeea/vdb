@@ -83,7 +83,6 @@ function PdaResultDescription(props) {
                   <DeckCloneButton
                     deck={props.deck}
                     activeDeck={{ src: 'shared', deckid: props.deck.deckid }}
-                    setShowButtons={() => {}}
                     inPda
                   />
                 )}

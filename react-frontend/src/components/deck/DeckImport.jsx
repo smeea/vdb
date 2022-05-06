@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const DeckImport = ({ setShowButtons, inInventory, handleClose }) => {
+const DeckImport = ({ inInventory, handleClose }) => {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -16,10 +16,12 @@ const DeckImport = ({ setShowButtons, inInventory, handleClose }) => {
     activeDeck,
     setActiveDeck,
     setSharedDeck,
-    isNarrow,
     username,
     inventoryAddToState,
+    setShowMenuButtons,
+    setShowFloatingButtons,
   } = useApp();
+
   const [importError, setImportError] = useState(false);
   const [createError, setCreateError] = useState('');
   const [showTextModal, setShowTextModal] = useState(false);
@@ -56,7 +58,8 @@ const DeckImport = ({ setShowButtons, inInventory, handleClose }) => {
     setShowTextModal(false);
     setShowAnonymousTextModal(false);
     setShowAmaranthModal(false);
-    isNarrow && setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
   const handleOpenTextModal = () => setShowTextModal(true);
   const handleOpenAnonymousTextModal = () => setShowAnonymousTextModal(true);
@@ -139,7 +142,8 @@ const DeckImport = ({ setShowButtons, inInventory, handleClose }) => {
             branchName: '#0',
           },
         }));
-        isNarrow && setShowButtons(false);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
         setActiveDeck({ src: 'my', deckid: data.deckid });
       })
       .catch((error) => setCreateError(true));
@@ -258,7 +262,8 @@ const DeckImport = ({ setShowButtons, inInventory, handleClose }) => {
               src: anonymous ? 'shared' : 'my',
               deckid: data.deckid,
             });
-            isNarrow && setShowButtons(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
             setDeckText('');
             handleClose();
           })
@@ -271,7 +276,8 @@ const DeckImport = ({ setShowButtons, inInventory, handleClose }) => {
 
   const handleCreateButton = () => {
     createNewDeck();
-    isNarrow && setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -296,7 +302,6 @@ const DeckImport = ({ setShowButtons, inInventory, handleClose }) => {
         handleCloseModal={handleCloseImportModal}
         show={showTextModal}
         setBadCards={setBadCards}
-        setShowButtons={setShowButtons}
       />
       <DeckImportText
         anonymous={true}
@@ -304,7 +309,6 @@ const DeckImport = ({ setShowButtons, inInventory, handleClose }) => {
         handleCloseModal={handleCloseImportModal}
         show={showAnonymousTextModal}
         setBadCards={setBadCards}
-        setShowButtons={setShowButtons}
       />
       <DeckImportAmaranth
         parseCards={parseCards}

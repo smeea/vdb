@@ -3,12 +3,15 @@ import { DeckDrawModal } from 'components';
 import { POOL_COST, BLOOD_COST } from 'utils/constants';
 import { countCards, getCardsArray } from 'utils';
 import { useKeyDisciplines } from 'hooks';
+import { useApp } from 'context';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-const DeckDraw = ({ deck, setShow, setShowFloatingButtons }) => {
+const DeckDraw = ({ deck, setShow }) => {
+  const { setShowFloatingButtons } = useApp();
+
   const cryptTotal = countCards(Object.values(deck.crypt));
   const cryptArr = getCardsArray(deck.crypt);
   const libraryArr = getCardsArray(deck.library);

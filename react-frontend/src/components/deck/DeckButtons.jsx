@@ -19,7 +19,7 @@ import {
 
 import { useApp } from 'context';
 
-function DeckButtons({
+const DeckButtons = ({
   deck,
   activeDeck,
   isPublic,
@@ -27,89 +27,55 @@ function DeckButtons({
   missingCrypt,
   missingLibrary,
   setShowInfo,
-  setShowButtons,
   setShowProxySelect,
   setShowDraw,
   setShowRecommendation,
-}) {
+}) => {
   const { inventoryMode, username } = useApp();
 
   return (
     <Stack gap={1}>
-      <DeckImport setShowInfo={setShowInfo} setShowButtons={setShowButtons} />
+      <DeckImport setShowInfo={setShowInfo} />
       {deck && (
         <>
-          {username && (
-            <DeckCloneButton
-              deck={deck}
-              activeDeck={activeDeck}
-              setShowButtons={setShowButtons}
-            />
-          )}
-          <DeckExportButton
-            deck={deck}
-            activeDeck={activeDeck}
-            setShowButtons={setShowButtons}
-          />
+          {username && <DeckCloneButton deck={deck} activeDeck={activeDeck} />}
+          <DeckExportButton deck={deck} activeDeck={activeDeck} />
+          {isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}
           {isAuthor && !isPublic && (
-            <DeckDeleteButton deck={deck} setShowButtons={setShowButtons} />
-          )}
-          {isAuthor && !isPublic && (
-            <DeckBranchCreateButton
-              deck={deck}
-              activeDeck={activeDeck}
-              setShowButtons={setShowButtons}
-            />
+            <DeckBranchCreateButton deck={deck} activeDeck={activeDeck} />
           )}
           {isAuthor &&
             !isPublic &&
             (deck.master || (deck.branches && deck.branches.length > 0)) && (
-              <DeckBranchDeleteButton
-                deck={deck}
-                setShowButtons={setShowButtons}
-              />
+              <DeckBranchDeleteButton deck={deck} />
             )}
-          {isAuthor && (
-            <DeckPublicButton deck={deck} setShowButtons={setShowButtons} />
-          )}
+          {isAuthor && <DeckPublicButton deck={deck} />}
 
-          <DeckDiffButton
-            deckid={deck.deckid}
-            setShowButtons={setShowButtons}
-          />
-          <DeckCopyUrlButton deck={deck} setShowButtons={setShowButtons} />
+          <DeckDiffButton deckid={deck.deckid} />
+          <DeckCopyUrlButton deck={deck} />
           <DeckProxyButton
             deck={deck}
             missingCrypt={missingCrypt}
             missingLibrary={missingLibrary}
             setShowInfo={setShowInfo}
-            setShowButtons={setShowButtons}
             setShowProxySelect={setShowProxySelect}
           />
           <DeckRecommendationButton
             setShowRecommendation={setShowRecommendation}
-            setShowButtons={setShowButtons}
           />
-          <DeckSearchSimilarButton
-            deck={deck}
-            setShowButtons={setShowButtons}
-          />
-          <DeckDrawButton
-            setShowDraw={setShowDraw}
-            setShowButtons={setShowButtons}
-          />
+          <DeckSearchSimilarButton deck={deck} />
+          <DeckDrawButton setShowDraw={setShowDraw} />
           {inventoryMode && (
             <DeckMissingButton
               deck={deck}
               missingCrypt={missingCrypt}
               missingLibrary={missingLibrary}
-              setShowButtons={setShowButtons}
             />
           )}
         </>
       )}
     </Stack>
   );
-}
+};
 
 export default DeckButtons;

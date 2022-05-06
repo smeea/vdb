@@ -65,7 +65,6 @@ function DeckMissingModal(props) {
                 inMissing={true}
                 deck={props.deck}
                 activeDeck={{ src: 'shared', deckid: 'deckInUrl' }}
-                setShowButtons={props.setShowButtons}
               />
             </div>
           </div>

@@ -14,7 +14,6 @@ import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
 const DiffCrypt = ({
   handleClose,
-  setShowFloatingButtons,
   showFloatingButtons,
   cardsFrom,
   cardsTo,
@@ -23,7 +22,8 @@ const DiffCrypt = ({
   isAuthor,
   inMissing,
 }) => {
-  const { cryptDeckSort, changeTimer, isNarrow, isMobile } = useApp();
+  const { cryptDeckSort, changeTimer, isMobile, setShowFloatingButtons } =
+    useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -60,7 +60,7 @@ const DiffCrypt = ({
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isNarrow && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   return (
@@ -126,7 +126,6 @@ const DiffCrypt = ({
         isPublic={isPublic}
         keyDisciplines={keyDisciplines}
         nonKeyDisciplines={nonKeyDisciplines}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
       {Object.keys(cryptSide).length > 0 && (
         <div className="deck-sidecrypt pt-2">
@@ -144,7 +143,6 @@ const DiffCrypt = ({
             isPublic={isPublic}
             keyDisciplines={keyDisciplines}
             nonKeyDisciplines={nonKeyDisciplines}
-            setShowFloatingButtons={setShowFloatingButtons}
           />
         </div>
       )}

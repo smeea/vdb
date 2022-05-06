@@ -79,34 +79,22 @@ function TwdResult(props) {
                   {isMobile ? (
                     <>
                       <Col xs={6} className="ps-0 pe-1">
-                        <TwdResultCrypt
-                          crypt={deck['crypt']}
-                          setShowFloatingButtons={props.setShowFloatingButtons}
-                        />
+                        <TwdResultCrypt crypt={deck['crypt']} />
                       </Col>
                       <Col xs={6} className="ps-1 pe-0">
-                        <TwdResultLibraryKeyCards
-                          library={deck['library']}
-                          setShowFloatingButtons={props.setShowFloatingButtons}
-                        />
+                        <TwdResultLibraryKeyCards library={deck['library']} />
                       </Col>
                     </>
                   ) : (
                     <>
                       <Col xs={12} md={4} xl={3} className="px-2">
-                        <TwdResultCrypt
-                          crypt={deck['crypt']}
-                          setShowFloatingButtons={props.setShowFloatingButtons}
-                        />
+                        <TwdResultCrypt crypt={deck['crypt']} />
                       </Col>
                       <Col xs={12} md={4} xl={3} className="px-2">
                         <TwdResultLibraryByType library={deck['library']} />
                       </Col>
                       <Col xs={12} md={4} xl={3} className="pe-0 ps-2">
-                        <TwdResultLibraryKeyCards
-                          library={deck['library']}
-                          setShowFloatingButtons={props.setShowFloatingButtons}
-                        />
+                        <TwdResultLibraryKeyCards library={deck['library']} />
                       </Col>
                     </>
                   )}

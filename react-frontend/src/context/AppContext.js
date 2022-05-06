@@ -74,6 +74,9 @@ export const AppProvider = (props) => {
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
 
+  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
+  const [showMenuButtons, setShowMenuButtons] = useState(false);
+
   // ---------------------------------------------------------------------------
   //                            USER FUNCTIONS
   // ---------------------------------------------------------------------------
@@ -720,6 +723,10 @@ export const AppProvider = (props) => {
         toggleAddMode, // move to listing??
         showImage,
         toggleShowImage,
+        showFloatingButtons,
+        setShowFloatingButtons,
+        showMenuButtons,
+        setShowMenuButtons,
 
         // 2 - USER Context
         whoAmI,

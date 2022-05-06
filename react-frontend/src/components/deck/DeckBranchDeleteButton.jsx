@@ -4,20 +4,27 @@ import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckBranchDeleteButton = (props) => {
-  const { setDecks, setActiveDeck, isMobile } = useApp();
+const DeckBranchDeleteButton = ({ deck, setShowInfo, noText }) => {
+  const {
+    setDecks,
+    setActiveDeck,
+    isMobile,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
-    deleteBranch(props.deck.deckid);
+    deleteBranch(deck.deckid);
     setShowConfirmation(false);
-    if (props.deck.master) {
-      setActiveDeck({ src: 'my', deckid: props.deck.master });
+    if (deck.master) {
+      setActiveDeck({ src: 'my', deckid: deck.master });
     } else {
-      setActiveDeck({ src: 'my', deckid: props.deck.branches[0] });
+      setActiveDeck({ src: 'my', deckid: deck.branches[0] });
     }
-    isMobile && props.setShowButtons(false);
+    setShowMenuButtons(true);
+    setShowFloatingButtons(false);
   };
 
   const deleteBranch = (deckid) => {
@@ -55,30 +62,30 @@ const DeckBranchDeleteButton = (props) => {
 
         return newState;
       });
-      isMobile && props.setShowInfo(true);
+      isMobile && setShowInfo(true);
     });
   };
 
   return (
     <>
       <ButtonIconed
-        variant={props.noText ? 'primary' : 'secondary'}
+        variant={noText ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
         title="Delete Revision of the Deck"
         icon={
           <NodeMinusFill
-            width={props.noText ? '16' : '21'}
-            height={props.noText ? '16' : '21'}
+            width={noText ? '16' : '21'}
+            height={noText ? '16' : '21'}
             viewBox="0 0 16 16"
           />
         }
-        text={!props.noText && 'Delete Revision'}
+        text={!noText && 'Delete Revision'}
       />
       <ModalConfirmation
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
-        headerText={`Delete revision "${props.deck.branchName} of deck "${props.deck.name}"`}
+        headerText={`Delete revision "${deck.branchName} of deck "${deck.name}"`}
         mainText="THIS CANNOT BE UNDONE!"
         buttonText="Delete"
       />

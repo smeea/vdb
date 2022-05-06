@@ -2,16 +2,22 @@ import React from 'react';
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import { ResultCryptTable, DeckRecommendationLibrary } from 'components';
-
 import { useApp } from 'context';
 
-function DeckRecommendationModal(props) {
+const DeckRecommendationModal = ({
+  show,
+  handleClose,
+  crypt,
+  library,
+  isAuthor,
+  activeDeck,
+}) => {
   const { isMobile } = useApp();
 
   return (
     <Modal
-      show={props.show}
-      onHide={props.handleClose}
+      show={show}
+      onHide={handleClose}
       animation={false}
       dialogClassName={isMobile ? 'm-0' : 'modal-wide'}
     >
@@ -23,7 +29,7 @@ function DeckRecommendationModal(props) {
         }
       >
         <h5>Cards Ideas</h5>
-        <Button variant="outline-secondary" onClick={props.handleClose}>
+        <Button variant="outline-secondary" onClick={handleClose}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -34,15 +40,14 @@ function DeckRecommendationModal(props) {
               <div className="d-flex justify-content-between align-items-center title-line px-2">
                 <b>CRYPT</b>
               </div>
-              {props.crypt && (
+              {crypt && (
                 <ResultCryptTable
-                  isAuthor={props.isAuthor}
+                  isAuthor={isAuthor}
                   inRecommendation={true}
-                  activeDeck={props.activeDeck}
-                  resultCards={props.crypt}
+                  activeDeck={activeDeck}
+                  resultCards={crypt}
                   className="search-crypt-table"
-                  crypt={props.activeDeck.crypt}
-                  setShowFloatingButtons={() => {}}
+                  crypt={activeDeck.crypt}
                 />
               )}
             </Col>
@@ -50,11 +55,11 @@ function DeckRecommendationModal(props) {
               <div className="d-flex justify-content-between align-items-center title-line px-2">
                 <b>LIBRARY</b>
               </div>
-              {props.library && (
+              {library && (
                 <DeckRecommendationLibrary
-                  isAuthor={props.isAuthor}
-                  activeDeck={props.activeDeck}
-                  cards={props.library}
+                  isAuthor={isAuthor}
+                  activeDeck={activeDeck}
+                  cards={library}
                 />
               )}
             </Col>
@@ -63,6 +68,6 @@ function DeckRecommendationModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default DeckRecommendationModal;

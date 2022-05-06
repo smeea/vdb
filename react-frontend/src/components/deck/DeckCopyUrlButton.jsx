@@ -4,8 +4,8 @@ import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckCopyUrlButton = ({ deck, noText, setShowButtons }) => {
-  const { isNarrow } = useApp();
+const DeckCopyUrlButton = ({ deck, noText }) => {
+  const { setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
@@ -15,7 +15,8 @@ const DeckCopyUrlButton = ({ deck, noText, setShowButtons }) => {
     setState(true);
     setTimeout(() => {
       setState(false);
-      isNarrow && setShowButtons(false);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
     }, 1000);
   };
 
@@ -51,7 +52,8 @@ const DeckCopyUrlButton = ({ deck, noText, setShowButtons }) => {
     setState(true);
     setTimeout(() => {
       setState(false);
-      isNarrow && setShowButtons(false);
+      setShowMenuButtons(false);
+      setShowFloatingButtons(true);
     }, 1000);
   };
 
@@ -82,7 +84,8 @@ const DeckCopyUrlButton = ({ deck, noText, setShowButtons }) => {
         setState(true);
         setTimeout(() => {
           setState(false);
-          isNarrow && setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         }, 1000);
       });
   };

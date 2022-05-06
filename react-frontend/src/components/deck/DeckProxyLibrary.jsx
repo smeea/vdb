@@ -9,12 +9,14 @@ import { countCards } from 'utils';
 import { MASTER } from 'utils/constants';
 import { useModalCardController, useDeckLibrary } from 'hooks';
 
-const DeckProxyLibrary = (props) => {
-  const { cards, proxySelected } = props;
-  const { handleSetSelector, handleProxyCounter, handleProxySelector } = props;
-  const { setShowFloatingButtons } = props;
-
-  const { nativeLibrary, isMobile } = useApp();
+const DeckProxyLibrary = ({
+  cards,
+  proxySelected,
+  handleSetSelector,
+  handleProxyCounter,
+  handleProxySelector,
+}) => {
+  const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
 
   const {
     library,
@@ -48,7 +50,7 @@ const DeckProxyLibrary = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isMobile && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
@@ -67,7 +69,6 @@ const DeckProxyLibrary = (props) => {
         handleSetSelector={handleSetSelector}
         handleProxyCounter={handleProxyCounter}
         proxySelected={proxySelected}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
   ));
@@ -86,7 +87,6 @@ const DeckProxyLibrary = (props) => {
         handleSetSelector={handleSetSelector}
         handleProxyCounter={handleProxyCounter}
         proxySelected={proxySelected}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
   ));

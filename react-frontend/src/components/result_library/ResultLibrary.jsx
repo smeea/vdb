@@ -15,10 +15,10 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
     isMobile,
     librarySearchSort,
     changeLibrarySearchSort,
+    showFloatingButtons,
   } = useApp();
 
   const [sortedCards, setSortedCards] = useState([]);
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const navigate = useNavigate();
 
   const handleChange = (method) => {
@@ -56,7 +56,6 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
             library={library}
             activeDeck={activeDeck}
             resultCards={sortedCards}
-            setShowFloatingButtons={setShowFloatingButtons}
           />
         </>
       )}

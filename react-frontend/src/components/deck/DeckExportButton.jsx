@@ -10,8 +10,14 @@ import Download from 'assets/images/icons/download.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-const DeckExportButton = ({ deck, setShowButtons, inMissing }) => {
-  const { username, decks, activeDeck, isNarrow } = useApp();
+const DeckExportButton = ({ deck, inMissing }) => {
+  const {
+    username,
+    decks,
+    activeDeck,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -132,7 +138,8 @@ const DeckExportButton = ({ deck, setShowButtons, inMissing }) => {
         .then((data) => {
           setSpinnerState(false);
           navigator.clipboard.writeText(data.deck);
-          isNarrow && setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         })
         .catch((error) => {
           setSpinnerState(false);
@@ -198,7 +205,8 @@ const DeckExportButton = ({ deck, setShowButtons, inMissing }) => {
             const file = `${mime};base64,${data}`;
             saveAs(file, `${deck['name']}.${extension}`);
             setSpinnerState(false);
-            isNarrow && setShowButtons(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
           })
           .catch((error) => {
             setSpinnerState(false);
@@ -215,7 +223,8 @@ const DeckExportButton = ({ deck, setShowButtons, inMissing }) => {
             );
             saveAs(file);
             setSpinnerState(false);
-            isNarrow && setShowButtons(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
           })
           .catch((error) => {
             setSpinnerState(false);

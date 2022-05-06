@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { TwdResult, TwdSearchForm } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-function Twd(props) {
+const Twd = (props) => {
   const { showTwdSearch, isMobile } = useApp();
   const { twdResults } = useSearchResults();
-
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 
   return (
     <Container
@@ -24,12 +22,7 @@ function Twd(props) {
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
-          {twdResults !== undefined && (
-            <TwdResult
-              showFloatingButtons={showFloatingButtons}
-              setShowFloatingButtons={setShowFloatingButtons}
-            />
-          )}
+          {twdResults !== undefined && <TwdResult />}
         </Col>
         <Col
           xs={12}
@@ -48,6 +41,6 @@ function Twd(props) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Twd;

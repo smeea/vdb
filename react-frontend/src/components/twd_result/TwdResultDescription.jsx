@@ -137,7 +137,6 @@ function TwdResultDescription(props) {
                 <DeckCloneButton
                   deck={props.deck}
                   activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
-                  setShowButtons={() => {}}
                   inTwd
                 />
               )}

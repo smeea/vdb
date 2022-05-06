@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { PdaResult, PdaSearchForm } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-function Pda(props) {
+const Pda = (props) => {
   const { showPdaSearch, isMobile } = useApp();
   const { pdaResults } = useSearchResults();
-
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
 
   return (
     <Container
@@ -24,12 +22,7 @@ function Pda(props) {
               : 'col-hide px-0 px-md-2 px-lg-4'
           }
         >
-          {pdaResults !== undefined && (
-            <PdaResult
-              showFloatingButtons={showFloatingButtons}
-              setShowFloatingButtons={setShowFloatingButtons}
-            />
-          )}
+          {pdaResults !== undefined && <PdaResult />}
         </Col>
         <Col
           xs={12}
@@ -48,6 +41,6 @@ function Pda(props) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Pda;

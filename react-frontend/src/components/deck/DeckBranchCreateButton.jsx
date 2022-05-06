@@ -4,7 +4,12 @@ import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckBranchCreateButton = (props) => {
-  const { setDecks, setActiveDeck, isMobile } = useApp();
+  const {
+    setDecks,
+    setActiveDeck,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
 
   const branchCreate = () => {
     const url = `${process.env.API_URL}branch/create`;
@@ -46,7 +51,8 @@ const DeckBranchCreateButton = (props) => {
           },
         }));
         setActiveDeck({ src: 'my', deckid: data.deckid });
-        isMobile && props.setShowButtons(false);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
       });
   };
 

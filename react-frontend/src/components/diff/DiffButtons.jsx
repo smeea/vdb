@@ -15,7 +15,6 @@ const DiffButtons = (props) => {
         <DiffCopyUrlButton
           fromQuery={props.fromQuery}
           toQuery={props.toQuery}
-          setShowButtons={props.setShowButtons}
         />
       )}
       {props.deck && (
@@ -23,7 +22,6 @@ const DiffButtons = (props) => {
           deck={props.deck}
           missingCrypt={props.missingCrypt}
           missingLibrary={props.missingLibrary}
-          setShowButtons={props.setShowButtons}
           setShowProxySelect={props.setShowProxySelect}
           inDiff={true}
         />
@@ -33,7 +31,6 @@ const DiffButtons = (props) => {
           deck={props.deck}
           missingCrypt={props.missingCrypt}
           missingLibrary={props.missingLibrary}
-          setShowButtons={props.setShowButtons}
           inDiff={true}
         />
       )}

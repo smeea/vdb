@@ -28,24 +28,21 @@ const Inventory = (props) => {
     isMobile,
     inventoryDeckAdd,
     inventoryDeckDelete,
+    showFloatingButtons,
+    setShowFloatingButtons,
+    showMenuButtons,
+    setShowMenuButtons,
   } = useApp();
 
   const [newCryptId, setNewCryptId] = useState(undefined);
   const [newLibraryId, setNewLibraryId] = useState(undefined);
   const [category, setCategory] = useState('all');
   const [showCrypt, setShowCrypt] = useState(true);
-  const [showMenuButtons, setShowMenuButtons] = useState(false);
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [showAddDeck, setShowAddDeck] = useState(false);
   const [showAddPrecon, setShowAddPrecon] = useState(false);
   const [clan, setClan] = useState('All');
   const [type, setType] = useState('All');
   const [discipline, setDiscipline] = useState('All');
-
-  const handleShowButtons = (state) => {
-    setShowMenuButtons(state);
-    setShowFloatingButtons(!state);
-  };
 
   return (
     <Container className="main-container p-0 px-md-1">
@@ -70,8 +67,6 @@ const Inventory = (props) => {
                             : { c: cryptCardBase[newCryptId], q: 0 },
                         }}
                         compact={true}
-                        showFloatingButtons={showFloatingButtons}
-                        setShowFloatingButtons={setShowFloatingButtons}
                       />
                     </div>
                   )}
@@ -82,8 +77,6 @@ const Inventory = (props) => {
                           withCompact={newCryptId}
                           category={category}
                           cards={inventoryCrypt}
-                          showFloatingButtons={showFloatingButtons}
-                          setShowFloatingButtons={setShowFloatingButtons}
                           clan={clan}
                           setClan={setClan}
                         />
@@ -107,8 +100,6 @@ const Inventory = (props) => {
                             : { c: libraryCardBase[newLibraryId], q: 0 },
                         }}
                         compact={true}
-                        showFloatingButtons={showFloatingButtons}
-                        setShowFloatingButtons={setShowFloatingButtons}
                       />
                     </div>
                   )}
@@ -119,8 +110,6 @@ const Inventory = (props) => {
                           withCompact={newLibraryId}
                           category={category}
                           cards={inventoryLibrary}
-                          showFloatingButtons={showFloatingButtons}
-                          setShowFloatingButtons={setShowFloatingButtons}
                           type={type}
                           setType={setType}
                           discipline={discipline}
@@ -160,8 +149,6 @@ const Inventory = (props) => {
                           : { c: cryptCardBase[newCryptId], q: 0 },
                       }}
                       compact={true}
-                      showFloatingButtons={showFloatingButtons}
-                      setShowFloatingButtons={setShowFloatingButtons}
                     />
                   </div>
                 )}
@@ -172,8 +159,6 @@ const Inventory = (props) => {
                         withCompact={newCryptId}
                         category={category}
                         cards={inventoryCrypt}
-                        showFloatingButtons={showFloatingButtons}
-                        setShowFloatingButtons={setShowFloatingButtons}
                         clan={clan}
                         setClan={setClan}
                       />
@@ -196,8 +181,6 @@ const Inventory = (props) => {
                           : { c: libraryCardBase[newLibraryId], q: 0 },
                       }}
                       compact={true}
-                      showFloatingButtons={showFloatingButtons}
-                      setShowFloatingButtons={setShowFloatingButtons}
                     />
                   </div>
                 )}
@@ -208,8 +191,6 @@ const Inventory = (props) => {
                         withCompact={newLibraryId}
                         category={category}
                         cards={inventoryLibrary}
-                        showFloatingButtons={showFloatingButtons}
-                        setShowFloatingButtons={setShowFloatingButtons}
                         type={type}
                         setType={setType}
                         discipline={discipline}
@@ -223,7 +204,6 @@ const Inventory = (props) => {
                   <InventoryButtons
                     setShowAddDeck={setShowAddDeck}
                     setShowAddPrecon={setShowAddPrecon}
-                    setShowButtons={handleShowButtons}
                     clan={clan}
                     discipline={discipline}
                     type={type}
@@ -292,7 +272,6 @@ const Inventory = (props) => {
               <InventoryButtons
                 setShowAddDeck={setShowAddDeck}
                 setShowAddPrecon={setShowAddPrecon}
-                setShowButtons={handleShowButtons}
                 clan={clan}
                 discipline={discipline}
                 type={type}

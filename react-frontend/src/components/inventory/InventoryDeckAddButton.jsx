@@ -6,14 +6,15 @@ import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 
 const InventoryDeckAddButton = ({ deck, inInventory, inventoryDeckAdd }) => {
-  const { isMobile } = useApp();
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     inventoryDeckAdd(deck);
     setShowConfirmation(false);
-    isMobile && setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   return (

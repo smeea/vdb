@@ -11,7 +11,6 @@ import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const InventoryButtons = ({
-  setShowButtons,
   setShowAddDeck,
   setShowAddPrecon,
   clan,
@@ -22,9 +21,9 @@ const InventoryButtons = ({
 
   return (
     <Stack gap={1}>
-      <InventoryExportButton setShowButtons={setShowButtons} />
-      <DeckImport setShowButtons={setShowButtons} inInventory={true} />
-      <InventoryDeleteButton setShowButtons={setShowButtons} />
+      <InventoryExportButton />
+      <DeckImport inInventory={true} />
+      <InventoryDeleteButton />
       {decks && (
         <ButtonIconed
           variant="secondary"
@@ -43,12 +42,7 @@ const InventoryButtons = ({
           text="Add from Precon"
         />
       )}
-      <InventoryMissingButton
-        setShowButtons={setShowButtons}
-        clan={clan}
-        type={type}
-        discipline={discipline}
-      />
+      <InventoryMissingButton clan={clan} type={type} discipline={discipline} />
     </Stack>
   );
 };

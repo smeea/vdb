@@ -4,15 +4,19 @@ import X from 'assets/images/icons/x.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-function DeckImportText({
+const DeckImportText = ({
   anonymous,
   setBadCards,
-  setShowButtons,
   handleCloseModal,
   show,
   addImportedDeckToState,
-}) {
-  const { setActiveDeck, isMobile } = useApp();
+}) => {
+  const {
+    setActiveDeck,
+    isMobile,
+    setShowFloatingButtons,
+    setShowMenuButtons,
+  } = useApp();
 
   const [deckText, setDeckText] = useState('');
   const [emptyError, setEmptyError] = useState(false);
@@ -63,7 +67,8 @@ function DeckImportText({
             src: anonymous ? 'shared' : 'my',
             deckid: data.deckid,
           });
-          isMobile && setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
           setDeckText('');
           setSpinnerState(false);
           handleClose();
@@ -162,6 +167,6 @@ It will skip other (useless) lines, you don't have to remove it yourself.
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default DeckImportText;

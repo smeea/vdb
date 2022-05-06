@@ -17,7 +17,6 @@ import { useModalCardController, useDeckLibrary } from 'hooks';
 
 const DiffLibrary = ({
   handleClose,
-  setShowFloatingButtons,
   showFloatingButtons,
   cardsFrom,
   cardsTo,
@@ -26,7 +25,7 @@ const DiffLibrary = ({
   isPublic,
   inMissing,
 }) => {
-  const { nativeLibrary, isNarrow, isMobile } = useApp();
+  const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -61,7 +60,7 @@ const DiffLibrary = ({
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isNarrow && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
@@ -92,7 +91,6 @@ const DiffLibrary = ({
         cardsTo={cardsTo}
         isAuthor={isAuthor}
         isPublic={isPublic}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
   ));
@@ -112,7 +110,6 @@ const DiffLibrary = ({
         cardsTo={cardsTo}
         isAuthor={isAuthor}
         isPublic={isPublic}
-        setShowFloatingButtons={setShowFloatingButtons}
       />
     </div>
   ));

@@ -6,8 +6,8 @@ import { useApp, useSearchForms } from 'context';
 import defaultsPdaForm from 'components/forms_data/defaultsPdaForm.json';
 import defaultsTwdForm from 'components/forms_data/defaultsTwdForm.json';
 
-const DeckSearchSimilarButton = ({ deck, setShowButtons }) => {
-  const { isMobile } = useApp();
+const DeckSearchSimilarButton = ({ deck }) => {
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const { setTwdFormState, setPdaFormState } = useSearchForms();
   const navigate = useNavigate();
 
@@ -24,9 +24,11 @@ const DeckSearchSimilarButton = ({ deck, setShowButtons }) => {
       }));
     }
 
+    // TODO: test with:
     // navigate(`/${src}?q={"similar"%3A$"${deck.deckid}"}`);
     navigate(`/${src}`);
-    isMobile && setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const ButtonOptions = (

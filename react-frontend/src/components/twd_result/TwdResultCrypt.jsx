@@ -14,9 +14,14 @@ import { useApp } from 'context';
 
 import { useModalCardController } from 'hooks';
 
-const TwdResultCrypt = ({ crypt, setShowFloatingButtons }) => {
-  const { inventoryMode, inventoryCrypt, usedCryptCards, isNarrow, isMobile } =
-    useApp();
+const TwdResultCrypt = ({ crypt }) => {
+  const {
+    inventoryMode,
+    inventoryCrypt,
+    usedCryptCards,
+    isMobile,
+    setShowFloatingButtons,
+  } = useApp();
 
   let resultTrClass = 'result-even';
 
@@ -70,13 +75,13 @@ const TwdResultCrypt = ({ crypt, setShowFloatingButtons }) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isNarrow && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const cardLines = sortedCards.map((card, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isNarrow && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-even') {

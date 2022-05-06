@@ -24,10 +24,13 @@ const DeckLibrary = ({
   inDeckTab,
   inMissing,
   inSearch,
-  showFloatingButtons,
-  setShowFloatingButtons,
 }) => {
-  const { nativeLibrary, isMobile, isNarrow } = useApp();
+  const {
+    nativeLibrary,
+    isMobile,
+    showFloatingButtons,
+    setShowFloatingButtons,
+  } = useApp();
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -62,7 +65,7 @@ const DeckLibrary = ({
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isNarrow && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const LibraryDeck = Object.keys(libraryByType).map((cardtype) => (
@@ -93,7 +96,6 @@ const DeckLibrary = ({
         isPublic={isPublic}
         inSearch={inSearch}
         inMissing={inMissing}
-        setShowFloatingButtons={setShowFloatingButtons}
         isModalOpen={shouldShowModal}
       />
     </div>
@@ -114,7 +116,6 @@ const DeckLibrary = ({
         isPublic={isPublic}
         inSearch={inSearch}
         inMissing={inMissing}
-        setShowFloatingButtons={setShowFloatingButtons}
         isModalOpen={shouldShowModal}
       />
     </div>

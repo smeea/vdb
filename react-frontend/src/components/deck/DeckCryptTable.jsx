@@ -35,7 +35,6 @@ const DeckCryptTable = ({
   showInfo,
   cryptTotal,
   handleModalCardOpen,
-  setShowFloatingButtons,
   inSearch,
   inMissing,
   isModalOpen,
@@ -51,6 +50,7 @@ const DeckCryptTable = ({
     isWide,
     deckUpdate,
     deckCardChange,
+    setShowFloatingButtons,
   } = useApp();
 
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
@@ -78,7 +78,7 @@ const DeckCryptTable = ({
   const cardRows = cards.map((card) => {
     const handleClick = () => {
       handleModalCardOpen(card.c);
-      isNarrow && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-odd') {

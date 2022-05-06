@@ -3,8 +3,8 @@ import { Button } from 'react-bootstrap';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 
-const ButtonCardCopyUrl = ({ setShowButtons, cardid }) => {
-  const { isNarrow } = useApp();
+const ButtonCardCopyUrl = ({ cardid }) => {
+  const { setShowFloatingButtons, setShowMenuButtons } = useApp();
 
   const [state, setState] = useState(false);
 
@@ -16,7 +16,8 @@ const ButtonCardCopyUrl = ({ setShowButtons, cardid }) => {
     setTimeout(() => {
       setState(false);
     }, 1000);
-    isNarrow && setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Overlay, Popover } from 'react-bootstrap';
 import FlagEn from 'assets/images/flags/en.svg';
 import FlagEs from 'assets/images/flags/es.svg';

@@ -10,8 +10,8 @@ import Download from 'assets/images/icons/download.svg';
 import { ErrorOverlay } from 'components';
 import { useApp } from 'context';
 
-const InventoryExportButton = ({ setShowButtons }) => {
-  const { isNarrow } = useApp();
+const InventoryExportButton = (props) => {
+  const { setShowMenuButtons, setShowFloatingButtons } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [error, setError] = useState(false);
@@ -64,7 +64,8 @@ const InventoryExportButton = ({ setShowButtons }) => {
       .then((response) => response.json())
       .then((data) => {
         navigator.clipboard.writeText(data.deck);
-        isNarrow && setShowButtons(false);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(true);
         setSpinnerState(false);
       })
       .catch((error) => {
@@ -111,7 +112,8 @@ const InventoryExportButton = ({ setShowButtons }) => {
           const file = `${mime};base64,${data}`;
           saveAs(file, `Inventory ${date}.${extension}`);
           setSpinnerState(false);
-          isNarrow && setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         })
         .catch((error) => {
           setSpinnerState(false);
@@ -128,7 +130,8 @@ const InventoryExportButton = ({ setShowButtons }) => {
           );
           FileSaver.saveAs(file);
           setSpinnerState(false);
-          isNarrow && setShowButtons(false);
+          setShowMenuButtons(false);
+          setShowFloatingButtons(true);
         })
         .catch((error) => {
           setError(true);

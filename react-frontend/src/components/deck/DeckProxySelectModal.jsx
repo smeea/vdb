@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import { DeckProxyCrypt, DeckProxyLibrary } from 'components';
 import { useApp } from 'context';
 
-function DeckProxySelectModal(props) {
+const DeckProxySelectModal = ({ deck, proxyCards, show, setShow }) => {
   const {
     usedCryptCards,
     usedLibraryCards,
@@ -12,6 +12,8 @@ function DeckProxySelectModal(props) {
     inventoryLibrary,
     isMobile,
     inventoryMode,
+    setShowFloatingButtons,
+    setShowMenuButtons,
   } = useApp();
 
   const [proxySelected, setProxySelected] = useState({});
@@ -19,21 +21,21 @@ function DeckProxySelectModal(props) {
 
   useEffect(() => {
     const cards = {};
-    Object.keys(props.deck.crypt).map((key) => {
+    Object.keys(deck.crypt).map((key) => {
       cards[key] = {
         print: false,
-        q: props.deck.crypt[key].q,
+        q: deck.crypt[key].q,
       };
     });
-    Object.keys(props.deck.library).map((key) => {
+    Object.keys(deck.library).map((key) => {
       cards[key] = {
         print: false,
-        q: props.deck.library[key].q,
+        q: deck.library[key].q,
       };
     });
 
     setProxySelected(cards);
-  }, [props.deck]);
+  }, [deck]);
 
   const handleToggleSelectButton = () => {
     const newState = proxySelected;
@@ -54,7 +56,7 @@ function DeckProxySelectModal(props) {
     const crypt = {};
     const library = {};
 
-    Object.keys(props.deck.crypt).map((card) => {
+    Object.keys(deck.crypt).map((card) => {
       let softUsedMax = 0;
       if (usedCryptCards.soft[card]) {
         Object.keys(usedCryptCards.soft[card]).map((id) => {
@@ -71,19 +73,19 @@ function DeckProxySelectModal(props) {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (!props.deck.inventory_type && props.deck.crypt[card].q > softUsedMax)
-        miss += props.deck.crypt[card].q - softUsedMax;
+      if (!deck.inventory_type && deck.crypt[card].q > softUsedMax)
+        miss += deck.crypt[card].q - softUsedMax;
       if (inventoryCrypt[card]) miss -= inventoryCrypt[card].q;
 
-      if (miss > 0 && props.deck.crypt[card].q > 0) {
+      if (miss > 0 && deck.crypt[card].q > 0) {
         crypt[card] = {
           print: true,
-          q: miss > props.deck.crypt[card].q ? props.deck.crypt[card].q : miss,
+          q: miss > deck.crypt[card].q ? deck.crypt[card].q : miss,
         };
       }
     });
 
-    Object.keys(props.deck.library).map((card) => {
+    Object.keys(deck.library).map((card) => {
       let softUsedMax = 0;
       if (usedLibraryCards.soft[card]) {
         Object.keys(usedLibraryCards.soft[card]).map((id) => {
@@ -100,20 +102,14 @@ function DeckProxySelectModal(props) {
       }
 
       let miss = softUsedMax + hardUsedTotal;
-      if (
-        !props.deck.inventory_type &&
-        props.deck.library[card].q > softUsedMax
-      )
-        miss += props.deck.library[card].q - softUsedMax;
+      if (!deck.inventory_type && deck.library[card].q > softUsedMax)
+        miss += deck.library[card].q - softUsedMax;
       if (inventoryLibrary[card]) miss -= inventoryLibrary[card].q;
 
-      if (miss > 0 && props.deck.library[card].q > 0) {
+      if (miss > 0 && deck.library[card].q > 0) {
         library[card] = {
           print: true,
-          q:
-            miss > props.deck.library[card].q
-              ? props.deck.library[card].q
-              : miss,
+          q: miss > deck.library[card].q ? deck.library[card].q : miss,
         };
       }
     });
@@ -170,15 +166,16 @@ function DeckProxySelectModal(props) {
           };
         }
       });
-    props.proxyCards(cards);
-    props.setShow(false);
-    isMobile && props.setShowButtons(false);
+    proxyCards(cards);
+    setShow(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   return (
     <Modal
-      show={props.show}
-      onHide={() => props.setShow(false)}
+      show={show}
+      onHide={() => setShow(false)}
       animation={false}
       dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
     >
@@ -190,10 +187,7 @@ function DeckProxySelectModal(props) {
         }
       >
         <h5>Create PDF with Card Proxies</h5>
-        <Button
-          variant="outline-secondary"
-          onClick={() => props.setShow(false)}
-        >
+        <Button variant="outline-secondary" onClick={() => setShow(false)}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>
@@ -201,11 +195,11 @@ function DeckProxySelectModal(props) {
         <Container fluid>
           <Row className="px-0 pe-lg-4">
             <Col xs={12} md={7} className="px-0 px-lg-4 pb-4 pb-md-0">
-              {props.deck.crypt && (
+              {deck.crypt && (
                 <>
                   <div className={isMobile ? null : 'sticky-modal'}>
                     <DeckProxyCrypt
-                      cards={props.deck.crypt}
+                      cards={deck.crypt}
                       handleProxySelector={handleProxySelector}
                       handleSetSelector={handleSetSelector}
                       handleProxyCounter={handleProxyCounter}
@@ -217,10 +211,10 @@ function DeckProxySelectModal(props) {
               )}
             </Col>
             <Col xs={12} md={5} className="px-0">
-              {props.deck.library && (
+              {deck.library && (
                 <>
                   <DeckProxyLibrary
-                    cards={props.deck.library}
+                    cards={deck.library}
                     handleProxySelector={handleProxySelector}
                     handleSetSelector={handleSetSelector}
                     handleProxyCounter={handleProxyCounter}
@@ -266,6 +260,6 @@ function DeckProxySelectModal(props) {
       </Modal.Body>
     </Modal>
   );
-}
+};
 
 export default DeckProxySelectModal;

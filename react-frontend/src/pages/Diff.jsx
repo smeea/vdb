@@ -25,7 +25,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-function Diff(props) {
+const Diff = (props) => {
   const {
     inventoryMode,
     deckRouter,
@@ -41,14 +41,16 @@ function Diff(props) {
     libraryCardBase,
     username,
     isMobile,
+    showFloatingButtons,
+    setShowFloatingButtons,
+    showMenuButtons,
+    setShowMenuButtons,
   } = useApp();
 
   const query = new URLSearchParams(useLocation().search);
   const fromQuery = query.get('from');
   const toQuery = query.get('to');
 
-  const [showMenuButtons, setShowMenuButtons] = useState(false);
-  const [showFloatingButtons, setShowFloatingButtons] = useState(true);
   const [deckErrorFrom, setDeckErrorFrom] = useState(false);
   const [deckErrorTo, setDeckErrorTo] = useState(false);
   const navigate = useNavigate();
@@ -76,11 +78,6 @@ function Diff(props) {
           return sharedDeckTo && sharedDeckTo[pointer['deckid']];
       }
     }
-  };
-
-  const handleShowButtons = (state) => {
-    setShowMenuButtons(state);
-    setShowFloatingButtons(!state);
   };
 
   const handleFormChange = (e) => {
@@ -598,8 +595,6 @@ function Diff(props) {
                   isPublic={isPublic}
                   cardsFrom={deckRouter(activeDeck).crypt}
                   cardsTo={deckToRouter(secondaryDeck).crypt}
-                  showFloatingButtons={showFloatingButtons}
-                  setShowFloatingButtons={setShowFloatingButtons}
                 />
               </Col>
               <Col md={5} className="px-0 px-md-2 ps-xl-3 pe-xl-2 pt-3 pt-md-0">
@@ -609,8 +604,6 @@ function Diff(props) {
                   isPublic={isPublic}
                   cardsFrom={deckRouter(activeDeck).library}
                   cardsTo={deckToRouter(secondaryDeck).library}
-                  showFloatingButtons={showFloatingButtons}
-                  setShowFloatingButtons={setShowFloatingButtons}
                 />
               </Col>
             </Row>
@@ -624,7 +617,6 @@ function Diff(props) {
                 isPublic={isPublic}
                 deck={deckRouter(activeDeck)}
                 activeDeck={activeDeck}
-                setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
                 fromQuery={fromQuery}
@@ -669,7 +661,6 @@ function Diff(props) {
               <DiffButtons
                 deck={deckRouter(activeDeck)}
                 activeDeck={activeDeck}
-                setShowButtons={handleShowButtons}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
                 fromQuery={fromQuery}
@@ -681,6 +672,6 @@ function Diff(props) {
       )}
     </Container>
   );
-}
+};
 
 export default Diff;

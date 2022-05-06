@@ -4,15 +4,21 @@ import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const InventoryDelete = ({ setShowButtons }) => {
-  const { setInventoryCrypt, setInventoryLibrary, isNarrow } = useApp();
+const InventoryDelete = (props) => {
+  const {
+    setInventoryCrypt,
+    setInventoryLibrary,
+    setShowMenuButtons,
+    setShowFloatingButtons,
+  } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
     deleteInventory();
     setShowConfirmation(false);
-    isNarrow && setShowButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const deleteInventory = () => {

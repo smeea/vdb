@@ -34,7 +34,6 @@ const DeckLibraryTable = ({
   showInfo,
   libraryTotal,
   handleModalCardOpen,
-  setShowFloatingButtons,
   inSearch,
   inMissing,
   isModalOpen,
@@ -51,6 +50,7 @@ const DeckLibraryTable = ({
     isWide,
     deckUpdate,
     deckCardChange,
+    setShowFloatingButtons,
   } = useApp();
 
   let resultTrClass;
@@ -78,7 +78,7 @@ const DeckLibraryTable = ({
   const cardRows = cards.map((card) => {
     const handleClick = () => {
       handleModalCardOpen(card.c);
-      isNarrow && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-odd') {

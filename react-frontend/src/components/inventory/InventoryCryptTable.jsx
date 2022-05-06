@@ -21,10 +21,9 @@ import { deckSort, getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const InventoryCryptTable = (props) => {
-  const { cards, setShowFloatingButtons, placement, compact, withCompact } =
-    props;
-  const { usedCryptCards, isMobile, isNarrow, isWide } = useApp();
+const InventoryCryptTable = ({ cards, placement, compact, withCompact }) => {
+  const { usedCryptCards, isMobile, isNarrow, isWide, setShowFloatingButtons } =
+    useApp();
 
   // Modal Card Controller
   const {
@@ -37,7 +36,7 @@ const InventoryCryptTable = (props) => {
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isNarrow && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const sortedCards = deckSort(cards, 'Name');
@@ -45,7 +44,7 @@ const InventoryCryptTable = (props) => {
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isNarrow && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     const { c: card, q: qty } = cardInfo;

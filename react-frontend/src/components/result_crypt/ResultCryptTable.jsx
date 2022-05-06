@@ -24,7 +24,6 @@ const ResultCryptTable = ({
   placement,
   className,
   crypt,
-  setShowFloatingButtons,
 }) => {
   const {
     activeDeck,
@@ -33,9 +32,9 @@ const ResultCryptTable = ({
     addMode,
     inventoryMode,
     isMobile,
-    isNarrow,
     isDesktop,
     isWide,
+    setShowFloatingButtons,
   } = useApp();
 
   let resultTrClass;
@@ -58,13 +57,13 @@ const ResultCryptTable = ({
 
   const handleCloseModal = () => {
     handleModalCardClose();
-    isNarrow && setShowFloatingButtons(true);
+    setShowFloatingButtons(true);
   };
 
   const cardRows = resultCards.map((card, index) => {
     const handleClick = () => {
       handleModalCardOpen(index);
-      isNarrow && setShowFloatingButtons(false);
+      setShowFloatingButtons(false);
     };
 
     if (resultTrClass == 'result-odd') {
