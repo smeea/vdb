@@ -346,15 +346,39 @@ export const AppProvider = (props) => {
   };
 
   const deckUpdate = (deckid, field, value) => {
-    // TODO: handle partial value change (i.e. used_in_inventory change)
     deckServices.deckUpdate(deckid, field, value).then(() => {
-      setDecks((prevState) => ({
-        ...prevState,
-        [deckid]: {
-          ...prevState[deckid],
-          [field]: value,
-        },
-      }));
+      if (field === 'used_in_inventory') {
+        setDecks((prevState) => {
+          const newState = { ...prevState };
+          Object.keys(value).map((cardid) => {
+            if (cardid > 200000) {
+              newState[deckid].crypt[cardid].i = value[cardid];
+            } else {
+              newState[deckid].library[cardid].i = value[cardid];
+            }
+          });
+          return newState;
+        });
+      } else {
+        setDecks((prevState) => {
+          const newState = { ...prevState };
+          newState[deckid] = {
+            ...newState[deckid],
+            [field]: value,
+          };
+
+          if (field === 'inventory_type') {
+            Object.keys(newState[deckid].crypt).map((cardid) => {
+              newState[deckid].crypt[cardid].i = '';
+            });
+            Object.keys(newState[deckid].library).map((cardid) => {
+              newState[deckid].library[cardid].i = '';
+            });
+          }
+
+          return newState;
+        });
+      }
 
       const branchesUpdateFields = ['name', 'author'];
       if (
