@@ -5,77 +5,78 @@ import unicodedata
 
 
 def letters_to_ascii(text):
-    return ''.join(c for c in unicodedata.normalize('NFD', text)
-                   if unicodedata.category(c) != 'Mn')
+    return "".join(
+        c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn"
+    )
 
 
 disciplines = {
-    'aus': ['Auspex', 1],
-    'abo': ['Abombwe', 1],
-    'ani': ['Animalism', 1],
-    'cel': ['Celerity', 1],
-    'chi': ['Chimerstry', 1],
-    'dai': ['Daimoinon', 1],
-    'dem': ['Dementation', 1],
-    'dom': ['Dominate', 1],
-    'for': ['Fortitude', 1],
-    'mel': ['Melpominee', 1],
-    'myt': ['Mytherceria', 1],
-    'nec': ['Necromancy', 1],
-    'obe': ['Obeah', 1],
-    'obf': ['Obfuscate', 1],
-    'obt': ['Obtenebration', 1],
-    'pot': ['Potence', 1],
-    'pre': ['Presence', 1],
-    'pro': ['Protean', 1],
-    'ser': ['Serpentis', 1],
-    'san': ['Sanguinus', 1],
-    'spi': ['Spiritus', 1],
-    'tem': ['Temporis', 1],
-    'tha': ['Blood Sorcery', 1],
-    'thn': ['Thanatosis', 1],
-    'qui': ['Quietus', 1],
-    'val': ['Valeren', 1],
-    'vic': ['Vicissitude', 1],
-    'vis': ['Visceratika', 1],
-    'AUS': ['Auspex', 2],
-    'ABO': ['Abombwe', 2],
-    'ANI': ['Animalism', 2],
-    'CEL': ['Celerity', 2],
-    'CHI': ['Chimerstry', 2],
-    'DAI': ['Daimoinon', 2],
-    'DEM': ['Dementation', 2],
-    'DOM': ['Dominate', 2],
-    'FOR': ['Fortitude', 2],
-    'MEL': ['Melpominee', 2],
-    'MYT': ['Mytherceria', 2],
-    'NEC': ['Necromancy', 2],
-    'OBE': ['Obeah', 2],
-    'OBF': ['Obfuscate', 2],
-    'OBT': ['Obtenebration', 2],
-    'POT': ['Potence', 2],
-    'PRE': ['Presence', 2],
-    'PRO': ['Protean', 2],
-    'SER': ['Serpentis', 2],
-    'SAN': ['Sanguinus', 2],
-    'SPI': ['Spiritus', 2],
-    'TEM': ['Temporis', 2],
-    'THA': ['Blood Sorcery', 2],
-    'THN': ['Thanatosis', 2],
-    'QUI': ['Quietus', 2],
-    'VAL': ['Valeren', 2],
-    'VIC': ['Vicissitude', 2],
-    'VIS': ['Visceratika', 2],
+    "aus": ["Auspex", 1],
+    "abo": ["Abombwe", 1],
+    "ani": ["Animalism", 1],
+    "cel": ["Celerity", 1],
+    "chi": ["Chimerstry", 1],
+    "dai": ["Daimoinon", 1],
+    "dem": ["Dementation", 1],
+    "dom": ["Dominate", 1],
+    "for": ["Fortitude", 1],
+    "mel": ["Melpominee", 1],
+    "myt": ["Mytherceria", 1],
+    "nec": ["Necromancy", 1],
+    "obe": ["Obeah", 1],
+    "obf": ["Obfuscate", 1],
+    "obt": ["Obtenebration", 1],
+    "pot": ["Potence", 1],
+    "pre": ["Presence", 1],
+    "pro": ["Protean", 1],
+    "ser": ["Serpentis", 1],
+    "san": ["Sanguinus", 1],
+    "spi": ["Spiritus", 1],
+    "tem": ["Temporis", 1],
+    "tha": ["Blood Sorcery", 1],
+    "thn": ["Thanatosis", 1],
+    "qui": ["Quietus", 1],
+    "val": ["Valeren", 1],
+    "vic": ["Vicissitude", 1],
+    "vis": ["Visceratika", 1],
+    "AUS": ["Auspex", 2],
+    "ABO": ["Abombwe", 2],
+    "ANI": ["Animalism", 2],
+    "CEL": ["Celerity", 2],
+    "CHI": ["Chimerstry", 2],
+    "DAI": ["Daimoinon", 2],
+    "DEM": ["Dementation", 2],
+    "DOM": ["Dominate", 2],
+    "FOR": ["Fortitude", 2],
+    "MEL": ["Melpominee", 2],
+    "MYT": ["Mytherceria", 2],
+    "NEC": ["Necromancy", 2],
+    "OBE": ["Obeah", 2],
+    "OBF": ["Obfuscate", 2],
+    "OBT": ["Obtenebration", 2],
+    "POT": ["Potence", 2],
+    "PRE": ["Presence", 2],
+    "PRO": ["Protean", 2],
+    "SER": ["Serpentis", 2],
+    "SAN": ["Sanguinus", 2],
+    "SPI": ["Spiritus", 2],
+    "TEM": ["Temporis", 2],
+    "THA": ["Blood Sorcery", 2],
+    "THN": ["Thanatosis", 2],
+    "QUI": ["Quietus", 2],
+    "VAL": ["Valeren", 2],
+    "VIC": ["Vicissitude", 2],
+    "VIS": ["Visceratika", 2],
 }
 
 virtues = {
-    'def': 'Defense',
-    'inn': 'Innocence',
-    'jud': 'Judgment',
-    'mar': 'Martyrdom',
-    'red': 'Redemption',
-    'ven': 'Vengeance',
-    'viz': 'Vision',
+    "def": "Defense",
+    "inn": "Innocence",
+    "jud": "Judgment",
+    "mar": "Martyrdom",
+    "red": "Redemption",
+    "ven": "Vengeance",
+    "viz": "Vision",
 }
 
 artist_fixes = {
@@ -87,14 +88,14 @@ artist_fixes = {
     "Gin\u00e9s Qui\u00f1onero-Santiago": "Gin\u00e9s Qui\u00f1onero",
     "Glenn Osterberger": "Glen Osterberger",
     "Heather V. Kreiter": "Heather Kreiter",
-    "Jeff \"el jefe\" Holt": "Jeff Holt",
+    'Jeff "el jefe" Holt': "Jeff Holt",
     "L. Snelly": "Lawrence Snelly",
     "Mathias Tapia": "Matias Tapia",
     "Mattias Tapia": "Matias Tapia",
     "Matt Mitchell": "Matthew Mitchell",
     "Mike Gaydos": "Michael Gaydos",
     "Mike Weaver": "Michael Weaver",
-    "Nicolas \"Dimple\" Bigot": "Nicolas Bigot",
+    'Nicolas "Dimple" Bigot': "Nicolas Bigot",
     "Pat McEvoy": "Patrick McEvoy",
     "Ron Spenser": "Ron Spencer",
     "Sam Araya": "Samuel Araya",
@@ -105,15 +106,16 @@ artist_fixes = {
 }
 
 # Groups are not integers because of ANY-group vampires (e.g. Anarch Convert)
-integer_fields = ['Id', 'Capacity']
-useless_fields = ['Aka']
+integer_fields = ["Id", "Capacity"]
+useless_fields = ["Aka"]
 
-with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
-            "cardbase_crypt.json", "w", encoding='utf8') as cardbase_file, open(
-                "vtes.json", "r", encoding='utf8') as krcg_file, open(
-                    "artistsCrypt.json", "w",
-                    encoding='utf8') as artists_file, open(
-                        "twda.json", "r") as twda_input:
+with open("vtescrypt.csv", "r", encoding="utf8") as main_csv, open(
+    "cardbase_crypt.json", "w", encoding="utf8"
+) as cardbase_file, open("vtes.json", "r", encoding="utf8") as krcg_file, open(
+    "artistsCrypt.json", "w", encoding="utf8"
+) as artists_file, open(
+    "twda.json", "r"
+) as twda_input:
 
     krcg_cards = json.load(krcg_file)
 
@@ -139,105 +141,121 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                 pass
 
         # Convert sets to dict
-        sets = card['Set'].split(', ')
-        card['Set'] = {}
+        sets = card["Set"].split(", ")
+        card["Set"] = {}
 
         for set in sets:
-            if '-' in set:
-                set = set.split('-')
-            elif ':' in set:
-                set = set.split(':')
+            if "-" in set:
+                set = set.split("-")
+            elif ":" in set:
+                set = set.split(":")
 
-            precons = set[1].split('/')
+            precons = set[1].split("/")
 
             # Fix for KoT, HttB Reprints (marked in CSV as KoT, but have only
             # bundles named "A" or "B" not existing in original KoT)
             if set[0] in ["KoT", "HttB"]:
                 counter = 0
                 for precon in precons:
-                    if re.match(r'(A|B)[0-9]?', precon):
+                    if re.match(r"(A|B)[0-9]?", precon):
                         counter += 1
 
                 if counter > 0:
-                    card['Set'][f"{set[0]}R"] = {}
+                    card["Set"][f"{set[0]}R"] = {}
                 if counter < len(precons):
-                    card['Set'][set[0]] = {}
+                    card["Set"][set[0]] = {}
 
-            elif set[0] not in ["AU", "DM", "TU"
-                                ] and set[0] not in card['Set']:
-                card['Set'][set[0]] = {}
+            elif set[0] == "Anthology":
+                for precon in precons:
+                    if "LARP" in precon:
+                        card["Set"]["Anthology"] = {}
+                    else:
+                        card["Set"]["Anthology"] = {}
+                        card["Set"]["Anthology I"] = {}
+
+            elif set[0] not in ["AU", "DM", "TU"] and set[0] not in card["Set"]:
+                card["Set"][set[0]] = {}
 
             # Fix for DM, TU, AU Kickstarter Unleashed
             # (merge into Kickstarter Unleashed set)
             if set[0] in ["DM", "TU", "AU"]:
                 for precon in precons:
-                    if precon == 'C':
-                        card['Set'][set[0]] = {'C': True}
+                    if precon == "C":
+                        card["Set"][set[0]] = {"C": True}
                     else:
-                        if "KSU" not in card['Set']:
-                            card['Set']["KSU"] = {}
+                        if "KSU" not in card["Set"]:
+                            card["Set"]["KSU"] = {}
 
-                        if m := re.match(r'^(A|B)([0-9]+)?', precon):
-                            card['Set']["KSU"][
-                                f"{set[0]}{m.group(1)}"] = m.group(2)
+                        if m := re.match(r"^(A|B)([0-9]+)?", precon):
+                            card["Set"]["KSU"][f"{set[0]}{m.group(1)}"] = m.group(2)
                         else:
-                            card['Set']["KSU"][set[0]] = precon
+                            card["Set"]["KSU"][set[0]] = precon
+
+            elif set[0] == "Anthology":
+                for precon in precons:
+                    if "LARP" in precon:
+                        m = re.match(r"^LARP([0-9]+)", precon)
+                        card["Set"]["Anthology"][""] = m.group(1)
+                    else:
+                        card["Set"]["Anthology I"][""] = precon
+                        card["Set"]["Anthology"][""] = precon
 
             else:
                 for precon in precons:
-                    if set[0] in ["KoT", "HttB"] and (m := re.match(
-                            r'^(A|B)([0-9]+)?', precon)):
+                    if set[0] in ["KoT", "HttB"] and (
+                        m := re.match(r"^(A|B)([0-9]+)?", precon)
+                    ):
                         s = f"{set[0]}R"
                         if m.group(2):
-                            card['Set'][s][m.group(1)] = m.group(2)
+                            card["Set"][s][m.group(1)] = m.group(2)
                         else:
-                            card['Set'][s][m.group(1)] = 1
+                            card["Set"][s][m.group(1)] = 1
 
                     else:
-                        if m := re.match(r'^(\D+)([0-9]+)?', precon):
+                        if m := re.match(r"^(\D+)([0-9]+)?", precon):
                             if m.group(1) in ["C", "U", "R", "V", "DTC"]:
-                                card['Set'][set[0]][m.group(1)] = True
+                                card["Set"][set[0]][m.group(1)] = True
                             elif m.group(2):
-                                card['Set'][set[0]][m.group(1)] = m.group(2)
+                                card["Set"][set[0]][m.group(1)] = m.group(2)
                             else:
-                                card['Set'][set[0]][m.group(1)] = 1
-                        elif m := re.match(r'^[0-9]$', precon):
-                            card['Set'][set[0]][""] = precon
+                                card["Set"][set[0]][m.group(1)] = 1
+                        elif m := re.match(r"^[0-9]$", precon):
+                            card["Set"][set[0]][""] = precon
                         else:
                             date = f"{precon[0:4]}-{precon[4:6]}-{precon[6:8]}"
-                            card['Set'][set[0]][date] = True
+                            card["Set"][set[0]][date] = True
 
         # ASCII-fication of name
-        if card['Id'] == 201528:
-            card['ASCII Name'] = "Boleslaw Gutowski"
+        if card["Id"] == 201528:
+            card["ASCII Name"] = "Boleslaw Gutowski"
         else:
-            card['ASCII Name'] = letters_to_ascii(card['Name'])
+            card["ASCII Name"] = letters_to_ascii(card["Name"])
 
         # Remove useless fields
         for k in useless_fields:
             del card[k]
 
         # Remove empty disciplines/virtues
-        if card['Type'] == 'Imbued':
-            card_disciplines_letters = card['Disciplines'].split()
+        if card["Type"] == "Imbued":
+            card_disciplines_letters = card["Disciplines"].split()
             card_disciplines = {}
             for d in card_disciplines_letters:
                 if d in virtues:
                     card_disciplines[virtues[d]] = 1
 
-            card['Disciplines'] = card_disciplines
+            card["Disciplines"] = card_disciplines
 
-        elif card['Type'] == 'Vampire':
-            card_disciplines_letters = card['Disciplines'].split()
+        elif card["Type"] == "Vampire":
+            card_disciplines_letters = card["Disciplines"].split()
             card_disciplines = {}
             for d in card_disciplines_letters:
                 if d in disciplines:
                     card_disciplines[disciplines[d][0]] = disciplines[d][1]
 
-            card['Disciplines'] = card_disciplines
+            card["Disciplines"] = card_disciplines
 
         artists = []
-        for artist in re.split('; | & ', card['Artist']):
+        for artist in re.split("; | & ", card["Artist"]):
             if artist in artist_fixes.keys():
                 artists.append(artist_fixes[artist])
                 artists_set.add(artist_fixes[artist])
@@ -245,105 +263,108 @@ with open("vtescrypt.csv", "r", encoding='utf8') as main_csv, open(
                 artists.append(artist)
                 artists_set.add(artist)
 
-        card['Artist'] = artists
+        card["Artist"] = artists
 
         # Remove {} and spaces in []
-        card['Card Text'] = re.sub('[{}]', '', card['Card Text'])
-        card['Card Text'] = re.sub(r'\[(\w+)\s*(\w*)\]', r'[\1\2]',
-                                   card['Card Text'])
+        card["Card Text"] = re.sub("[{}]", "", card["Card Text"])
+        card["Card Text"] = re.sub(r"\[(\w+)\s*(\w*)\]", r"[\1\2]", card["Card Text"])
 
         # Add rules to card
-        card['Rulings'] = []
+        card["Rulings"] = []
         for c in krcg_cards:
-            if c['id'] == card['Id'] and 'rulings' in c:
-                for rule in c['rulings']['text']:
-                    if match := re.match(r'(.*?)\[... \S+\].*', rule):
+            if c["id"] == card["Id"] and "rulings" in c:
+                for rule in c["rulings"]["text"]:
+                    if match := re.match(r"(.*?)\[... \S+\].*", rule):
                         text = match.group(1)
-                        text = re.sub(r'{The (\w+)}', r'{\1, The}', text)
-                        text = text.replace('Thaumaturgy', 'Blood Sorcery')
-                        card['Rulings'].append({
-                            'text': text,
-                            'refs': {},
-                        })
+                        text = re.sub(r"{The (\w+)}", r"{\1, The}", text)
+                        text = text.replace("Thaumaturgy", "Blood Sorcery")
+                        card["Rulings"].append(
+                            {
+                                "text": text,
+                                "refs": {},
+                            }
+                        )
 
-                for id in c['rulings']['links'].keys():
-                    for i, rule in enumerate(c['rulings']['text']):
+                for id in c["rulings"]["links"].keys():
+                    for i, rule in enumerate(c["rulings"]["text"]):
                         if id in rule:
-                            card['Rulings'][i]['refs'][id] = c['rulings'][
-                                'links'][id]
+                            card["Rulings"][i]["refs"][id] = c["rulings"]["links"][id]
 
         # Add twda info
-        card['Twd'] = False
+        card["Twd"] = False
         for i in twda:
-            if card['Twd']:
+            if card["Twd"]:
                 continue
 
-            for c in i['crypt']['cards']:
-                if c['id'] == card['Id']:
-                    card['Twd'] = True
+            for c in i["crypt"]["cards"]:
+                if c["id"] == card["Id"]:
+                    card["Twd"] = True
 
         # Add Advancement info
-        card['Advancement'] = ""
+        card["Advancement"] = ""
         for c in cards:
-            if c['Name'] == card['Name'] and c['Id'] != card['Id'] and c[
-                    'Group'] == card['Group']:
-                isAdv = True if card['Adv'] else False
-                card['Advancement'] = [isAdv, c['Id']]
+            if (
+                c["Name"] == card["Name"]
+                and c["Id"] != card["Id"]
+                and c["Group"] == card["Group"]
+            ):
+                isAdv = True if card["Adv"] else False
+                card["Advancement"] = [isAdv, c["Id"]]
 
         # Add new revision info
-        card['New'] = False
+        card["New"] = False
         for c in cards:
-            if c['Name'] == card['Name'] and int(
-                    c['Id']) < card['Id'] and c['Group'] != card['Group']:
-                card['New'] = True
+            if (
+                c["Name"] == card["Name"]
+                and int(c["Id"]) < card["Id"]
+                and c["Group"] != card["Group"]
+            ):
+                card["New"] = True
 
         # Rename Assamite and Follower of Set
-        if card['Clan'] == 'Assamite':
-            card['Clan'] = 'Banu Haqim'
+        if card["Clan"] == "Assamite":
+            card["Clan"] = "Banu Haqim"
 
-        if card['Clan'] == 'Follower of Set':
-            card['Clan'] = 'Ministry'
+        if card["Clan"] == "Follower of Set":
+            card["Clan"] = "Ministry"
 
-        card['Card Text'] = card['Card Text'].replace(
-            'Assamites', 'Banu Haqim').replace('Assamite', 'Banu Haqim')
+        card["Card Text"] = (
+            card["Card Text"]
+            .replace("Assamites", "Banu Haqim")
+            .replace("Assamite", "Banu Haqim")
+        )
 
-        card['Card Text'] = card['Card Text'].replace('Followers of Set',
-                                                      'Ministers')
-        card['Card Text'] = card['Card Text'].replace('Follower of Set',
-                                                      'Minister')
+        card["Card Text"] = card["Card Text"].replace("Followers of Set", "Ministers")
+        card["Card Text"] = card["Card Text"].replace("Follower of Set", "Minister")
 
         # Rename Thaumaturgy
-        card['Card Text'] = card['Card Text'].replace('Thaumaturgy',
-                                                      'Blood Sorcery')
+        card["Card Text"] = card["Card Text"].replace("Thaumaturgy", "Blood Sorcery")
 
         # Prepare for export
 
-        cardbase[card['Id']] = {
-            'ASCII Name': card['ASCII Name'],
-            'Adv': card['Advancement'],
-            'Artist': card['Artist'],
-            'Banned': card['Banned'],
-            'Capacity': card['Capacity'],
-            'Card Text': card['Card Text'],
-            'Clan': card['Clan'],
-            'Disciplines': card['Disciplines'],
-            'Group': card['Group'],
-            'Id': card['Id'],
-            'Name': card['Name'],
-            'New': card['New'],
-            'Rulings': card['Rulings'],
-            'Set': card['Set'],
-            'Title': card['Title'],
-            'Twd': card['Twd'],
-            'Type': card['Type'],
+        cardbase[card["Id"]] = {
+            "ASCII Name": card["ASCII Name"],
+            "Adv": card["Advancement"],
+            "Artist": card["Artist"],
+            "Banned": card["Banned"],
+            "Capacity": card["Capacity"],
+            "Card Text": card["Card Text"],
+            "Clan": card["Clan"],
+            "Disciplines": card["Disciplines"],
+            "Group": card["Group"],
+            "Id": card["Id"],
+            "Name": card["Name"],
+            "New": card["New"],
+            "Rulings": card["Rulings"],
+            "Set": card["Set"],
+            "Title": card["Title"],
+            "Twd": card["Twd"],
+            "Type": card["Type"],
         }
 
     artists = sorted(artists_set)
 
     # json.dump(cards, f_json, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
-    json.dump(cardbase,
-              cardbase_file,
-              indent=4,
-              separators=(',', ':'))
-    json.dump(artists, artists_file, indent=4, separators=(',', ':'))
+    json.dump(cardbase, cardbase_file, indent=4, separators=(",", ":"))
+    json.dump(artists, artists_file, indent=4, separators=(",", ":"))

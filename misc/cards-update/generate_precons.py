@@ -51,10 +51,13 @@ bundles = {
         "PTr": {},
         "PV": {},
     },
-    "Anthology": {
+    "Anthology I": {
         "": {},
     },
     "LK": {
+        "": {},
+    },
+    "Anthology": {
         "": {},
     },
     "HttB": {
@@ -133,9 +136,9 @@ bundles = {
     },
 }
 
-with open("cardbase_crypt.json",
-          "r") as crypt_file, open("cardbase_lib.json", "r") as library_file, open(
-              "preconDecks.json", "w") as precons_file:
+with open("cardbase_crypt.json", "r") as crypt_file, open(
+    "cardbase_lib.json", "r"
+) as library_file, open("preconDecks.json", "w") as precons_file:
     crypt = list(json.load(crypt_file).values())
     library = list(json.load(library_file).values())
 
@@ -145,8 +148,9 @@ with open("cardbase_crypt.json",
                 for precon in bundles[card_set].keys():
                     if precon in card_precons:
                         bundles[card_set][precon][card["Id"]] = int(
-                            card_precons[precon])
+                            card_precons[precon]
+                        )
 
     # json.dump(precons, precons_file, separators=(',', ':'))
     # Use this instead, for output with indentation (e.g. for debug)
-    json.dump(bundles, precons_file, indent=4, separators=(',', ':'))
+    json.dump(bundles, precons_file, indent=4, separators=(",", ":"))

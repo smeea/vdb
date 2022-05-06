@@ -161,6 +161,16 @@
       }
     }
   },
+  "Anthology I": {
+    "name": "Anthology I",
+    "date": "2019-01-01",
+    "precons": {
+      "": {
+        "name": "Anthology I (Bundle)",
+        "clan": "Bundle"
+      }
+    }
+  },
   "HttBR": {
     "name": "Heirs to the Blood Reprint",
     "date": "2018-07-14",

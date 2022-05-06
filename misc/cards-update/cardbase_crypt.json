@@ -1002,7 +1002,7 @@
         "Rulings":[],
         "Set":{
             "Anthology":{
-                "LARP":"1"
+                "":"1"
             }
         },
         "Title":"",
@@ -1337,6 +1337,9 @@
         "Set":{
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"",
@@ -1614,6 +1617,9 @@
                 "DM":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -2856,6 +2862,9 @@
             "Anthology":{
                 "":"2"
             },
+            "Anthology I":{
+                "":"2"
+            },
             "Promo":{
                 "2021-03-10":true
             }
@@ -3081,7 +3090,7 @@
         "Rulings":[],
         "Set":{
             "Anthology":{
-                "LARP":"1"
+                "":"1"
             }
         },
         "Title":"",
@@ -3915,7 +3924,7 @@
         "Rulings":[],
         "Set":{
             "Anthology":{
-                "LARP":"1"
+                "":"1"
             }
         },
         "Title":"",
@@ -4523,7 +4532,7 @@
         "Rulings":[],
         "Set":{
             "Anthology":{
-                "LARP":"1"
+                "":"1"
             },
             "FB":{
                 "PM":"1"
@@ -4648,6 +4657,9 @@
                 "AU":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -6068,6 +6080,9 @@
                 "DM":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -8507,6 +8522,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"baron",
@@ -9111,6 +9129,9 @@
                 "TUB":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -12122,6 +12143,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"cardinal",
@@ -12694,6 +12718,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"",
@@ -12793,6 +12820,9 @@
                 "TUA":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -13320,6 +13350,9 @@
                 "TUB":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -14246,6 +14279,9 @@
                 "TUA":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -17492,6 +17528,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"",
@@ -18837,6 +18876,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"",
@@ -19543,6 +19585,9 @@
                 "DM":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -20829,7 +20874,7 @@
         "Rulings":[],
         "Set":{
             "Anthology":{
-                "LARP":"1"
+                "":"1"
             }
         },
         "Title":"",
@@ -23611,6 +23656,9 @@
                 "TUB":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -26557,7 +26605,7 @@
         "Rulings":[],
         "Set":{
             "Anthology":{
-                "LARP":"1"
+                "":"1"
             }
         },
         "Title":"",
@@ -27649,6 +27697,9 @@
                 "DM":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             },
             "POD":{
@@ -30066,7 +30117,7 @@
         "Rulings":[],
         "Set":{
             "Anthology":{
-                "LARP":"1"
+                "":"1"
             }
         },
         "Title":"",
@@ -31896,6 +31947,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"",
@@ -32503,6 +32557,9 @@
                 "DM":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             },
             "SP":{
@@ -35106,6 +35163,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"primogen",
@@ -35370,6 +35430,9 @@
                 "TUB":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -35824,6 +35887,9 @@
                 "AU":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -36708,6 +36774,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"cardinal",
@@ -37154,6 +37223,9 @@
                 "AU":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -39013,6 +39085,9 @@
             },
             "Anthology":{
                 "":"2"
+            },
+            "Anthology I":{
+                "":"2"
             }
         },
         "Title":"",
@@ -40056,6 +40131,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"",
@@ -40987,6 +41065,9 @@
                 "DM":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -45291,6 +45372,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"",
@@ -45325,6 +45409,9 @@
                 "TUB":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -45882,6 +45969,9 @@
                 "TUB":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             },
             "POD":{
@@ -46929,6 +47019,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"",
@@ -47816,6 +47909,9 @@
             },
             "Anthology":{
                 "":"1"
+            },
+            "Anthology I":{
+                "":"1"
             }
         },
         "Title":"",
@@ -48630,7 +48726,7 @@
         "Rulings":[],
         "Set":{
             "Anthology":{
-                "LARP":"1"
+                "":"1"
             }
         },
         "Title":"",
@@ -49112,6 +49208,9 @@
                 "DM":"2"
             },
             "Anthology":{
+                "":"1"
+            },
+            "Anthology I":{
                 "":"1"
             }
         },
@@ -52435,6 +52534,9 @@
             },
             "Anthology":{
                 "":"4"
+            },
+            "Anthology I":{
+                "":"4"
             }
         },
         "Title":"",
@@ -54104,7 +54206,7 @@
         "Rulings":[],
         "Set":{
             "Anthology":{
-                "LARP":"1"
+                "":"1"
             }
         },
         "Title":"",

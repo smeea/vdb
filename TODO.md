@@ -1,7 +1,6 @@
 # FIX
 - Merge anonymous import with import
 - Floating buttons on narrow screen (but not mobile) => change isMobile && showFloating to isNarrow or refactor showFloating to context
-- Move anthology larp to promo
 - Fix partial-value deckUpdate
 - Fix used_in_inventory decks state update
 - Add tags (refactor setTags)
