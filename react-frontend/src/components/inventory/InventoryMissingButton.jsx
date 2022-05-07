@@ -185,10 +185,10 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
     setMissingLibrary(missingLibrary);
   };
 
-  const handleCloseModal = () => {
+  const handleClose = () => {
     setShowModal(false);
-    setShowMenuButtons(true);
-    setShowFloatingButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   useEffect(() => {
@@ -216,8 +216,7 @@ const InventoryMissingButton = ({ type, clan, discipline }) => {
             library: missingLibrary,
           }}
           show={showModal}
-          setShow={setShowModal}
-          handleClose={handleCloseModal}
+          handleClose={handleClose}
           inInventory={true}
         />
       )}

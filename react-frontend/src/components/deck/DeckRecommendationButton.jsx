@@ -12,7 +12,7 @@ const DeckRecommendationButton = ({ setShowRecommendation }) => {
       onClick={() => {
         setShowRecommendation(true);
         setShowMenuButtons(false);
-        setShowFloatingButtons(true);
+        setShowFloatingButtons(false);
       }}
       title="Get Recommendation based on TWD with similar cards"
       icon={<LightbulbFill />}

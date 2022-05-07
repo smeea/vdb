@@ -17,7 +17,8 @@ const InventoryButtons = ({
   type,
   discipline,
 }) => {
-  const { decks, preconDecks } = useApp();
+  const { decks, preconDecks, setShowFloatingButtons, setShowMenuButtons } =
+    useApp();
 
   return (
     <Stack gap={1}>
@@ -27,7 +28,11 @@ const InventoryButtons = ({
       {decks && (
         <ButtonIconed
           variant="secondary"
-          onClick={() => setShowAddDeck(true)}
+          onClick={() => {
+            setShowAddDeck(true);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(false);
+          }}
           title="Add from your Deck"
           icon={<FolderPlus />}
           text="Add from Deck"
@@ -36,7 +41,11 @@ const InventoryButtons = ({
       {preconDecks && (
         <ButtonIconed
           variant="secondary"
-          onClick={() => setShowAddPrecon(true)}
+          onClick={() => {
+            setShowAddPrecon(true);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(false);
+          }}
           title="Add from Preconstructed Deck"
           icon={<FolderPlus />}
           text="Add from Precon"

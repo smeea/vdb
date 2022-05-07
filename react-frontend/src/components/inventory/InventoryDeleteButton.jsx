@@ -10,6 +10,7 @@ const InventoryDelete = (props) => {
     setInventoryLibrary,
     setShowMenuButtons,
     setShowFloatingButtons,
+    isMobile,
   } = useApp();
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -52,6 +53,7 @@ const InventoryDelete = (props) => {
         headerText={`Delete Inventory`}
         mainText="THIS CANNOT BE UNDONE!"
         buttonText="Delete"
+        nested={isMobile}
       />
     </>
   );

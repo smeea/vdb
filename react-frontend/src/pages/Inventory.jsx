@@ -289,7 +289,11 @@ const Inventory = (props) => {
       {showAddDeck && (
         <InventoryAddDeckModal
           show={showAddDeck}
-          handleClose={() => setShowAddDeck(false)}
+          handleClose={() => {
+            setShowAddDeck(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
+          }}
           inventoryDeckAdd={inventoryDeckAdd}
           inventoryDeckDelete={inventoryDeckDelete}
         />
@@ -297,7 +301,11 @@ const Inventory = (props) => {
       {showAddPrecon && (
         <InventoryAddPreconModal
           show={showAddPrecon}
-          handleClose={() => setShowAddPrecon(false)}
+          handleClose={() => {
+            setShowAddPrecon(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
+          }}
           inventoryDeckAdd={inventoryDeckAdd}
           inventoryDeckDelete={inventoryDeckDelete}
         />

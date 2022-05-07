@@ -4,11 +4,10 @@ import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckBranchDeleteButton = ({ deck, setShowInfo, noText }) => {
+const DeckBranchDeleteButton = ({ deck, noText }) => {
   const {
     setDecks,
     setActiveDeck,
-    isMobile,
     setShowFloatingButtons,
     setShowMenuButtons,
   } = useApp();
@@ -23,8 +22,8 @@ const DeckBranchDeleteButton = ({ deck, setShowInfo, noText }) => {
     } else {
       setActiveDeck({ src: 'my', deckid: deck.branches[0] });
     }
-    setShowMenuButtons(true);
-    setShowFloatingButtons(false);
+    setShowMenuButtons(false);
+    setShowFloatingButtons(true);
   };
 
   const deleteBranch = (deckid) => {
@@ -62,7 +61,6 @@ const DeckBranchDeleteButton = ({ deck, setShowInfo, noText }) => {
 
         return newState;
       });
-      isMobile && setShowInfo(true);
     });
   };
 

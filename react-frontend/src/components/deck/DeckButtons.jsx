@@ -57,7 +57,6 @@ const DeckButtons = ({
             deck={deck}
             missingCrypt={missingCrypt}
             missingLibrary={missingLibrary}
-            setShowInfo={setShowInfo}
             setShowProxySelect={setShowProxySelect}
           />
           <DeckRecommendationButton

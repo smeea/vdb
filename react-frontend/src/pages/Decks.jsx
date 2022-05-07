@@ -661,6 +661,7 @@ const Decks = (props) => {
               </div>
               <DeckButtons
                 isAuthor={isAuthor}
+                isPublic={isPublic}
                 deck={deckRouter(activeDeck)}
                 activeDeck={activeDeck}
                 setShowInfo={setShowInfo}

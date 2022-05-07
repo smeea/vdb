@@ -4,7 +4,7 @@ import X from 'assets/images/icons/x.svg';
 import { DeckProxyCrypt, DeckProxyLibrary } from 'components';
 import { useApp } from 'context';
 
-const DeckProxySelectModal = ({ deck, proxyCards, show, setShow }) => {
+const DeckProxySelectModal = ({ deck, proxyCards, show, handleClose }) => {
   const {
     usedCryptCards,
     usedLibraryCards,
@@ -12,8 +12,6 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, setShow }) => {
     inventoryLibrary,
     isMobile,
     inventoryMode,
-    setShowFloatingButtons,
-    setShowMenuButtons,
   } = useApp();
 
   const [proxySelected, setProxySelected] = useState({});
@@ -167,15 +165,13 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, setShow }) => {
         }
       });
     proxyCards(cards);
-    setShow(false);
-    setShowMenuButtons(false);
-    setShowFloatingButtons(true);
+    handleClose();
   };
 
   return (
     <Modal
       show={show}
-      onHide={() => setShow(false)}
+      onHide={() => handleClose()}
       animation={false}
       dialogClassName={isMobile ? 'm-0' : 'modal-x-wide'}
     >
@@ -187,7 +183,7 @@ const DeckProxySelectModal = ({ deck, proxyCards, show, setShow }) => {
         }
       >
         <h5>Create PDF with Card Proxies</h5>
-        <Button variant="outline-secondary" onClick={() => setShow(false)}>
+        <Button variant="outline-secondary" onClick={() => handleClose()}>
           <X width="32" height="32" viewBox="0 0 16 16" />
         </Button>
       </Modal.Header>

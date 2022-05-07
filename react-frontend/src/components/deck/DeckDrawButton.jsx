@@ -10,9 +10,9 @@ const DeckDrawButton = ({ setShowDraw }) => {
     <ButtonIconed
       variant="secondary"
       onClick={() => {
-        setShowMenuButtons(true);
-        setShowFloatingButtons(false);
         setShowDraw(true);
+        setShowMenuButtons(false);
+        setShowFloatingButtons(false);
       }}
       title="Deck Draw Simulator"
       icon={<Dice3 />}

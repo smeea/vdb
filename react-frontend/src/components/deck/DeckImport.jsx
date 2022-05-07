@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp } from 'context';
 
-const DeckImport = ({ inInventory, handleClose }) => {
+const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -142,6 +142,7 @@ const DeckImport = ({ inInventory, handleClose }) => {
             branchName: '#0',
           },
         }));
+        setShowInfo(true);
         setShowMenuButtons(false);
         setShowFloatingButtons(true);
         setActiveDeck({ src: 'my', deckid: data.deckid });

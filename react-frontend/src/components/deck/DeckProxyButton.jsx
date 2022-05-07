@@ -35,7 +35,13 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary }) => {
           Missing in Inventory
         </Dropdown.Item>
       )}
-      <Dropdown.Item href="" onClick={() => setShowSelectModal(true)}>
+      <Dropdown.Item
+        href=""
+        onClick={() => {
+          setShowSelectModal(true);
+          setShowFloatingButtons(false);
+        }}
+      >
         Select Cards
       </Dropdown.Item>
     </>
@@ -46,7 +52,7 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary }) => {
     Object.keys(deck.crypt).map((key) => {
       if (deck.crypt[key].q > 0) {
         cards[key] = {
-          q: crypt[key].q,
+          q: deck.crypt[key].q,
         };
       }
     });
@@ -162,7 +168,11 @@ const DeckProxyButton = ({ deck, missingCrypt, missingLibrary }) => {
       {showSelectModal && (
         <DeckProxySelectModal
           show={showSelectModal}
-          setShow={setShowSelectModal}
+          handleClose={() => {
+            setShowSelectModal(false);
+            setShowMenuButtons(false);
+            setShowFloatingButtons(true);
+          }}
           deck={deck}
           missingCrypt={missingCrypt}
           missingLibrary={missingLibrary}

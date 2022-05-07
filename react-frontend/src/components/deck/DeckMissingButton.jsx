@@ -6,7 +6,7 @@ import { useApp } from 'context';
 const DeckMissing = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
   const { setShowFloatingButtons, setShowMenuButtons } = useApp();
   const [showModal, setShowModal] = useState(undefined);
-  const handleCloseModal = () => {
+  const handleClose = () => {
     setShowModal(false);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
@@ -30,8 +30,7 @@ const DeckMissing = ({ deck, missingCrypt, missingLibrary, inDiff }) => {
             library: missingLibrary,
           }}
           show={showModal}
-          setShow={setShowModal}
-          handleClose={handleCloseModal}
+          handleClose={handleClose}
         />
       )}
     </>
