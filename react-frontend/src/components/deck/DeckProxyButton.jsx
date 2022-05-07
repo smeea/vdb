@@ -11,15 +11,15 @@ import { DeckProxySelectModal } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckProxyButton = ({ deck, missingCrypt, missingLibrary }) => {
-  const {
-    lang,
-    inventoryMode,
-    inDiff,
-    noText,
-    setShowFloatingButtons,
-    setShowMenuButtons,
-  } = useApp();
+const DeckProxyButton = ({
+  deck,
+  missingCrypt,
+  missingLibrary,
+  noText,
+  inDiff,
+}) => {
+  const { lang, inventoryMode, setShowFloatingButtons, setShowMenuButtons } =
+    useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [deckError, setDeckError] = useState(false);
