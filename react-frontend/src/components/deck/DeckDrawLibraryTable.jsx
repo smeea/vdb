@@ -17,7 +17,13 @@ import {
 import { drawProbability } from 'utils';
 import { useApp } from 'context';
 
-function DeckDrawLibraryTable(props) {
+const DeckDrawLibraryTable = ({
+  handleClick,
+  restCards,
+  resultCards,
+  className,
+  ashHeap,
+}) => {
   const { nativeLibrary, isMobile } = useApp();
   const [modalDraw, setModalDraw] = useState(undefined);
   let resultTrClass;
@@ -26,11 +32,11 @@ function DeckDrawLibraryTable(props) {
   let n = 0;
   const nonPlayed = {};
 
-  if (props.restCards && props.resultCards) {
-    N = props.restCards.length + props.resultCards.length;
-    n = props.resultCards.length;
+  if (restCards && resultCards) {
+    N = restCards.length + resultCards.length;
+    n = resultCards.length;
 
-    [...props.restCards, ...props.resultCards].forEach((c) => {
+    [...restCards, ...resultCards].forEach((c) => {
       if (c.Id in nonPlayed) {
         nonPlayed[c.Id] += 1;
       } else {
@@ -39,7 +45,7 @@ function DeckDrawLibraryTable(props) {
     });
   }
 
-  const cardRows = props.resultCards.map((card, index) => {
+  const cardRows = resultCards.map((card, index) => {
     if (resultTrClass == 'result-odd') {
       resultTrClass = 'result-even';
     } else {
@@ -53,41 +59,37 @@ function DeckDrawLibraryTable(props) {
         <tr className={resultTrClass}>
           <td
             className={card['Blood Cost'] ? 'cost blood px-1' : 'cost px-1'}
-            onClick={() => handleClick()}
+            onClick={() => handleClick(index)}
           >
             <ResultLibraryCost
               valueBlood={card['Blood Cost']}
               valuePool={card['Pool Cost']}
             />
           </td>
-          <td className="type px-1" onClick={() => props.handleClick(index)}>
+          <td className="type px-1" onClick={() => handleClick(index)}>
             <ResultLibraryTypeImage value={card.Type} />
           </td>
-          <td
-            className="disciplines px-1"
-            onClick={() => props.handleClick(index)}
-          >
+          <td className="disciplines px-1" onClick={() => handleClick(index)}>
             <ResultLibraryClan value={card.Clan} />
             {card.Discipline && card.Clan && '+'}
             <ResultLibraryDisciplines value={card.Discipline} />
           </td>
 
           <ConditionalOverlayTrigger
-            placement={props.placement}
             overlay={<CardPopover card={card} />}
             disabled={isMobile}
           >
-            <td className="name px-1" onClick={() => props.handleClick(index)}>
+            <td className="name px-1" onClick={() => handleClick(index)}>
               <ResultLibraryName card={card} />
             </td>
           </ConditionalOverlayTrigger>
 
-          <td className="burn px-1" onClick={() => props.handleClick(index)}>
+          <td className="burn px-1" onClick={() => handleClick(index)}>
             <ResultLibraryBurn value={card['Burn Option']} />
             <ResultLibraryTrifle value={nativeLibrary[card.Id]['Card Text']} />
           </td>
           <td className="prob px-1">
-            {!props.ashHeap && (
+            {!ashHeap && (
               <>
                 {isMobile ? (
                   <div
@@ -131,6 +133,6 @@ function DeckDrawLibraryTable(props) {
       )}
     </>
   );
-}
+};
 
 export default DeckDrawLibraryTable;

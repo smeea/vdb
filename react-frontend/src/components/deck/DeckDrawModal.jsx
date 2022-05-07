@@ -42,7 +42,6 @@ const DeckDrawModal = ({
   const {
     currentModalCard,
     shouldShowModal,
-    isSideMode,
     handleModalCardOpen,
     handleModalSideCardOpen,
     handleModalCardChange,
@@ -269,7 +268,7 @@ const DeckDrawModal = ({
               </Col>
             </Row>
           )}
-          {shouldShowModal && !isSideMode && (
+          {shouldShowModal && (
             <ResultModal
               card={currentModalCard}
               handleModalCardChange={handleModalCardChange}
