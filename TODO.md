@@ -1,6 +1,7 @@
 # FIX
 - Merge anonymous import with import
 - Restyle PDA as in TWD
+- First printed in for Promo
 
 # FEATURES
 - Export all in xlsx and csv

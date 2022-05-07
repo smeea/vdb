@@ -9,7 +9,7 @@ import {
 import { useApp } from 'context';
 import setsAndPrecons from 'assets/data/setsAndPrecons.json';
 
-function SearchFormSet(props) {
+const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
   const { isMobile } = useApp();
 
   const preOptions = Object.keys(setsAndPrecons).map((i) => {
@@ -84,10 +84,15 @@ function SearchFormSet(props) {
         className="small pe-1"
         id={`set-${i.label}`}
         label={i.label}
-        disabled={props.value.value.length > 1}
+        disabled={
+          value.value.length > 1 ||
+          value.value[0] === 'bcp' ||
+          value.value[0] === 'Promo' ||
+          value.value[0] === 'POD'
+        }
         title={i.title}
-        checked={props.value['age'] === i.value}
-        onChange={(e) => props.onChangeOptions(e)}
+        checked={value['age'] === i.value}
+        onChange={(e) => onChangeOptions(e)}
       />
     );
   });
@@ -107,8 +112,8 @@ function SearchFormSet(props) {
         className="small"
         id={`set-${i[0]}`}
         label={i[1]}
-        checked={props.value[i[0]]}
-        onChange={(e) => props.onChangeOptions(e)}
+        checked={value[i[0]]}
+        onChange={(e) => onChangeOptions(e)}
       />
     );
   });
@@ -135,17 +140,17 @@ function SearchFormSet(props) {
           className="d-flex justify-content-between align-items-center px-0"
         >
           <div className="bold blue">Set:</div>
-          {props.value.value[0] !== 'any' && (
+          {value.value[0] !== 'any' && (
             <div className="d-flex justify-content-end pe-1">
-              {props.value.value.length == 1 ? (
+              {value.value.length == 1 ? (
                 <SearchFormButtonAdd
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                 />
               ) : (
                 <SearchFormButtonDel
-                  setFormState={props.setFormState}
-                  value={props.value}
+                  setFormState={setFormState}
+                  value={value}
                   i={0}
                 />
               )}
@@ -161,17 +166,17 @@ function SearchFormSet(props) {
             maxMenuHeight={isMobile ? window.innerHeight - 200 : 550}
             filterOption={filterOption}
             name={0}
-            value={options.find((obj) => obj.value === props.value.value[0])}
-            onChange={props.onChange}
+            value={options.find((obj) => obj.value === value.value[0])}
+            onChange={onChange}
           />
         </Col>
       </Row>
       <SearchAdditionalForms
         menuPlacement={isMobile ? 'top' : 'bottom'}
-        value={props.value}
+        value={value}
         options={options}
-        onChange={props.onChange}
-        setFormState={props.setFormState}
+        onChange={onChange}
+        setFormState={setFormState}
       />
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">
@@ -189,6 +194,6 @@ function SearchFormSet(props) {
       </Row>
     </>
   );
-}
+};
 
 export default SearchFormSet;
