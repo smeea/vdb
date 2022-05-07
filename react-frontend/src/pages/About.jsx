@@ -72,17 +72,31 @@ function About(props) {
                 : 2022-01-12
               </p>
 
-              <h6>Last update [2022-04-30]:</h6>
+              <h6>Last update [2022-05-07]:</h6>
               <ul>
                 <li>
-                  Add search similar Deck in TWD/PDA (symmetry-iconed button in
-                  Decks page)
+                  Significant internal reworks which will slightly decrease
+                  network calls and will help in the future development (but as
+                  a result it may bring some new bugs, so dont hesitate to
+                  report and refresh the page as a first measure when
+                  encountering new problem)
                 </li>
-                <li>Improved deck description layout in TWD (players count)</li>
                 <li>
-                  Add separate messages for NO CARDS FOUND and NO CONNECTION
+                  Split Anthology set into Anthology (2017, 100-cards bundle)
+                  and Anthology I (2019, 89-card bundle)
                 </li>
-                <li>Other bug fixes</li>
+                <li>Fix deck preview in inventory import from deck/precon</li>
+                <li>
+                  Show q-ty of decks/precons you have in inventory when adding
+                  card from decks/precons
+                </li>
+                <li>Fix deck preview in inventory import from deck/precon</li>
+                <li>
+                  Fix deck import (including to accept The Cardname and
+                  Cardname, The and some other bugs)
+                </li>
+                <li>Fix deck library detailed info (no-discipline cards)</li>
+                <li>Some other fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>

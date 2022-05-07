@@ -12,6 +12,33 @@ function Changelog(props) {
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
 
+            <h6>2022-05-07:</h6>
+            <ul>
+              <li>
+                Significant internal reworks which will slightly decrease
+                network calls and will help in the future development (but as a
+                result it may bring some new bugs, so dont hesitate to report
+                and refresh the page as a first measure when encountering new
+                problem)
+              </li>
+              <li>
+                Split Anthology set into Anthology (2017, 100-cards bundle) and
+                Anthology I (2019, 89-card bundle)
+              </li>
+              <li>Fix deck preview in inventory import from deck/precon</li>
+              <li>
+                Show q-ty of decks/precons you have in inventory when adding
+                card from decks/precons
+              </li>
+              <li>Fix deck preview in inventory import from deck/precon</li>
+              <li>
+                Fix deck import (including to accept The Cardname and Cardname,
+                The and some other bugs)
+              </li>
+              <li>Fix deck library detailed info (no-discipline cards)</li>
+              <li>Some other fixes</li>
+            </ul>
+
             <h6>2022-04-30:</h6>
             <ul>
               <li>
