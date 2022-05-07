@@ -90,7 +90,6 @@ function About(props) {
                   Show q-ty of decks/precons you have in inventory when adding
                   card from decks/precons
                 </li>
-                <li>Fix deck preview in inventory import from deck/precon</li>
                 <li>
                   Fix deck import (including to accept The Cardname and
                   Cardname, The and some other bugs)
