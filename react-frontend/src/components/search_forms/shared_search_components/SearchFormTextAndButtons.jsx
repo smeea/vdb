@@ -48,10 +48,10 @@ function SearchFormTextAndButtons(props) {
         label={opt.label}
         checked={
           opt.value === 'regex'
-            ? props.value[0].regex
+            ? props.value[0].regex || false
             : props.value[0].in === opt.value
         }
-        onChange={(e) => props.onChangeOptions(e)}
+        onChange={props.onChangeOptions}
       />
     );
   });
