@@ -4,3 +4,4 @@ export { default as ResultLayoutTextRulings } from './ResultLayoutTextRulings.js
 export { default as ResultLayoutTextSets } from './ResultLayoutTextSets.jsx';
 export { default as ResultLayoutTextSetsModal } from './ResultLayoutTextSetsModal.jsx';
 export { default as ResultLayoutTextText } from './ResultLayoutTextText.jsx';
+export { default as ResultLayoutText } from './ResultLayoutText.jsx';
