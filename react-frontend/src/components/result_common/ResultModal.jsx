@@ -17,22 +17,39 @@ import {
 } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-const ResultModal = (props) => {
+const ResultModal = ({
+  card,
+  handleModalCardChange,
+  handleClose,
+  nested,
+  forceInventoryMode,
+}) => {
   const { showImage, toggleShowImage, isMobile } = useApp();
-  const { compare, setCompare } = useSearchResults();
+  const { cryptCompare, setCryptCompare, libraryCompare, setLibraryCompare } =
+    useSearchResults();
 
   const [imageSet, setImageSet] = useState(null);
-  const [card, setCard] = useState(props.card);
+  const [activeCard, setActiveCard] = useState(card);
+
+  let compare;
+  let setCompare;
+  if (activeCard.Id > 200000) {
+    compare = cryptCompare;
+    setCompare = setCryptCompare;
+  } else {
+    compare = libraryCompare;
+    setCompare = setLibraryCompare;
+  }
 
   const handleKeyDown = (event) => {
     switch (event.key) {
       case 'ArrowLeft':
         setImageSet(null);
-        props.handleModalCardChange(-1);
+        handleModalCardChange(-1);
         break;
       case 'ArrowRight':
         setImageSet(null);
-        props.handleModalCardChange(1);
+        handleModalCardChange(1);
         break;
       default:
         break;
@@ -42,21 +59,21 @@ const ResultModal = (props) => {
   const handleCompare = () => {
     setCompare(() => {
       if (!compare) {
-        return [props.card];
-      } else if (!compare.includes(props.card)) {
-        return [...compare, props.card];
+        return [activeCard];
+      } else if (!compare.includes(activeCard)) {
+        return [...compare, activeCard];
       } else {
-        return compare.filter((c) => c !== props.card);
+        return compare.filter((c) => c !== activeCard);
       }
     });
 
-    props.handleClose();
+    handleClose();
   };
 
-  const cardInCompare = compare && compare.includes(props.card);
+  const cardInCompare = compare && compare.includes(activeCard);
 
   useEffect(() => {
-    setCard(props.card);
+    setActiveCard(card);
 
     if (!isMobile) {
       window.addEventListener('keydown', handleKeyDown);
@@ -65,21 +82,21 @@ const ResultModal = (props) => {
         window.removeEventListener('keydown', handleKeyDown);
       };
     }
-  }, [props.card]);
+  }, [card]);
 
   const swipeHandlers = useSwipeable({
-    onSwipedRight: (eventData) => props.handleModalCardChange(-1),
-    onSwipedLeft: (eventData) => props.handleModalCardChange(1),
+    onSwipedRight: (eventData) => handleModalCardChange(-1),
+    onSwipedLeft: (eventData) => handleModalCardChange(1),
   });
 
   return (
     <Modal
       size="lg"
       show={true}
-      onHide={props.handleClose}
+      onHide={handleClose}
       animation={false}
       centered={true}
-      dialogClassName={props.nested ? 'nested-modal' : 'no-border'}
+      dialogClassName={nested ? 'nested-modal' : 'no-border'}
     >
       <Modal.Body className="p-0">
         {isMobile ? (
@@ -88,12 +105,12 @@ const ResultModal = (props) => {
               <>
                 <CardImage
                   className="full-width"
-                  card={card}
+                  card={activeCard}
                   set={imageSet}
-                  onClick={props.handleClose}
+                  onClick={handleClose}
                 />
                 <div
-                  onClick={() => props.handleModalCardChange(-1)}
+                  onClick={() => handleModalCardChange(-1)}
                   className="prev-card-mobile"
                 >
                   <ChevronCompactLeft
@@ -103,7 +120,7 @@ const ResultModal = (props) => {
                   />
                 </div>
                 <div
-                  onClick={() => props.handleModalCardChange(1)}
+                  onClick={() => handleModalCardChange(1)}
                   className="next-card-mobile"
                 >
                   <ChevronCompactRight
@@ -115,29 +132,35 @@ const ResultModal = (props) => {
               </>
             ) : (
               <div className="p-3">
-                {card.Id > 200000 ? (
+                {activeCard.Id > 200000 ? (
                   <ResultCryptLayoutText
-                    card={card}
-                    setCard={setCard}
-                    handleClose={props.handleClose}
+                    card={activeCard}
+                    setCard={setActiveCard}
+                    handleClose={handleClose}
                     setImageSet={setImageSet}
-                    forceInventoryMode={props.forceInventoryMode}
+                    forceInventoryMode={forceInventoryMode}
                   />
                 ) : (
                   <ResultLibraryLayoutText
-                    card={props.card} // props.card?
-                    handleClose={props.handleClose}
+                    card={activeCard}
+                    handleClose={handleClose}
                     setImageSet={setImageSet}
-                    forceInventoryMode={props.forceInventoryMode}
+                    forceInventoryMode={forceInventoryMode}
                   />
                 )}
                 <Stack direction="horizontal" gap={1} className="pt-3">
-                  <ButtonCardCopyUrl cardid={card.Id} />
-                  <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
-                  <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
+                  <ButtonCardCopyUrl cardid={activeCard.Id} />
+                  <ButtonSearchCardInDecks
+                    cardid={activeCard.Id}
+                    target="twd"
+                  />
+                  <ButtonSearchCardInDecks
+                    cardid={activeCard.Id}
+                    target="pda"
+                  />
                   <ButtonIconed
                     variant={cardInCompare ? 'third' : 'primary'}
-                    onClick={handleCompare}
+                    onClick={() => handleCompare()}
                     title="Compare Card"
                     icon={
                       <SearchHeartFill
@@ -157,7 +180,7 @@ const ResultModal = (props) => {
               <ArrowRepeat viewBox="0 0 16 16" />
             </div>
             <div
-              onClick={props.handleClose}
+              onClick={handleClose}
               className="d-flex float-right-bottom float-clear align-items-center justify-content-center"
             >
               <X viewBox="0 0 16 16" />
@@ -168,37 +191,43 @@ const ResultModal = (props) => {
             <Col md={5} className="bg-black px-0">
               <CardImage
                 className="full-width"
-                card={card}
+                card={activeCard}
                 set={imageSet}
-                onClick={props.handleClose}
+                onClick={handleClose}
               />
             </Col>
             <Col className="p-4">
-              {card.Id > 200000 ? (
+              {activeCard.Id > 200000 ? (
                 <ResultCryptLayoutText
-                  card={card}
-                  setCard={setCard}
-                  handleClose={props.handleClose}
+                  card={activeCard}
+                  setCard={setActiveCard}
+                  handleClose={handleClose}
                   setImageSet={setImageSet}
-                  forceInventoryMode={props.forceInventoryMode}
+                  forceInventoryMode={forceInventoryMode}
                 />
               ) : (
                 <ResultLibraryLayoutText
-                  card={props.card}
-                  handleClose={props.handleClose}
+                  card={activeCard}
+                  handleClose={handleClose}
                   setImageSet={setImageSet}
-                  forceInventoryMode={props.forceInventoryMode}
+                  forceInventoryMode={forceInventoryMode}
                 />
               )}
               <div className="d-flex justify-content-between pt-3">
                 <Stack direction="horizontal" gap={1}>
-                  <ButtonCardCopyUrl cardid={card.Id} />
-                  <ButtonSearchCardInDecks cardid={card.Id} target="twd" />
-                  <ButtonSearchCardInDecks cardid={card.Id} target="pda" />
+                  <ButtonCardCopyUrl cardid={activeCard.Id} />
+                  <ButtonSearchCardInDecks
+                    cardid={activeCard.Id}
+                    target="twd"
+                  />
+                  <ButtonSearchCardInDecks
+                    cardid={activeCard.Id}
+                    target="pda"
+                  />
                   <ButtonToggleShowImage />
                   <ButtonIconed
                     variant={cardInCompare ? 'third' : 'primary'}
-                    onClick={handleCompare}
+                    onClick={() => handleCompare()}
                     title="Compare Card"
                     icon={
                       <SearchHeartFill
@@ -211,7 +240,7 @@ const ResultModal = (props) => {
                 </Stack>
                 <ButtonIconed
                   variant="primary"
-                  onClick={props.handleClose}
+                  onClick={handleClose}
                   title="Close"
                   icon={<X width="24" height="24" viewBox="0 0 16 16" />}
                   text="Close"
@@ -223,15 +252,12 @@ const ResultModal = (props) => {
         {!isMobile && (
           <>
             <div
-              onClick={() => props.handleModalCardChange(-1)}
+              onClick={() => handleModalCardChange(-1)}
               className="prev-card"
             >
               <ChevronCompactLeft width="48" height="64" viewBox="4 0 12 16" />
             </div>
-            <div
-              onClick={() => props.handleModalCardChange(1)}
-              className="next-card"
-            >
+            <div onClick={() => handleModalCardChange(1)} className="next-card">
               <ChevronCompactRight width="48" height="64" viewBox="0 0 12 16" />
             </div>
           </>
