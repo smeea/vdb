@@ -1,13 +1,5 @@
 [
     {
-        "label":"10 Players",
-        "value":"10 Players"
-    },
-    {
-        "label":"18 Players",
-        "value":"18 Players"
-    },
-    {
         "label":"Aapo J\u00e4rvelin",
         "value":"Aapo J\u00e4rvelin"
     },
@@ -270,10 +262,6 @@
     {
         "label":"Andy Kempton",
         "value":"Andy Kempton"
-    },
-    {
-        "label":"Andy Smith",
-        "value":"Andy Smith"
     },
     {
         "label":"Ankur Gupta",
@@ -1844,6 +1832,10 @@
         "value":"Jakub Baranski"
     },
     {
+        "label":"Jakub Rypar",
+        "value":"Jakub Rypar"
+    },
+    {
         "label":"Jakub R\u00fdpar",
         "value":"Jakub R\u00fdpar"
     },
@@ -2318,6 +2310,10 @@
     {
         "label":"Jos\u00e9 Roberio Barbosa da Silva",
         "value":"Jos\u00e9 Roberio Barbosa da Silva"
+    },
+    {
+        "label":"Jos\u00e9 Rob\u00e9rio Barbosa da Silva",
+        "value":"Jos\u00e9 Rob\u00e9rio Barbosa da Silva"
     },
     {
         "label":"Jovan Pavlovic",
@@ -3932,6 +3928,10 @@
         "value":"Ricardo Molina Sobreira"
     },
     {
+        "label":"Ricardo Nelson",
+        "value":"Ricardo Nelson"
+    },
+    {
         "label":"Riccardo Fabiani",
         "value":"Riccardo Fabiani"
     },
@@ -4138,6 +4138,10 @@
     {
         "label":"R\u00f3bert L\u00e1szl\u00f3",
         "value":"R\u00f3bert L\u00e1szl\u00f3"
+    },
+    {
+        "label":"S. Andy Smith",
+        "value":"S. Andy Smith"
     },
     {
         "label":"Sahan Abeln",
