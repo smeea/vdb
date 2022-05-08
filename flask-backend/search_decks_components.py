@@ -438,9 +438,9 @@ def get_decks_by_similar(deckid, decks):
             cards = precon_decks[set][precon]
 
     else:
-        with open("twdDecksById.json", "r") as twdDecks_file:
-            twdDecks = json.load(twdDecks_file)
-            cards = twdDecks[deckid]["cards"]
+        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+            twd_decks = json.load(twd_decks_file)
+            cards = twd_decks[deckid]["cards"]
 
     CRYPT_COEF = 4  # Increase points for Crypt cards
     AC_COEF = 0.5  # Reduce points for Anarch Convert

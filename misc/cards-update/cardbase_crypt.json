@@ -257,6 +257,36 @@
         "Twd":true,
         "Type":"Vampire"
     },
+    "201623":{
+        "ASCII Name":"Abraham DuSable",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":8,
+        "Card Text":"Camarilla: During an action, Abraham can discard a card requiring Blood Sorcery [tha] to get +1 intercept or +1 stealth.",
+        "Clan":"Tremere",
+        "Disciplines":{
+            "Auspex":2,
+            "Dominate":2,
+            "Fortitude":2,
+            "Blood Sorcery":2
+        },
+        "Group":"6",
+        "Id":201623,
+        "Name":"Abraham DuSable",
+        "New":false,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PTr":"1"
+            }
+        },
+        "Title":"",
+        "Twd":false,
+        "Type":"Vampire"
+    },
     "200009":{
         "ASCII Name":"Abu Nuwasi",
         "Adv":"",
@@ -1665,7 +1695,7 @@
         ],
         "Banned":"",
         "Capacity":8,
-        "Card Text":"Camarilla Prince of Melbourne: During the polling step of any referendum, Alexa can discard 1 card requiring Dominate [dom] to get +1 vote.",
+        "Card Text":"Camarilla Prince of Melbourne: During the polling step of any referendum, Alexa can discard a card requiring Dominate [dom] to get +1 vote.",
         "Clan":"Ventrue",
         "Disciplines":{
             "Fortitude":1,
@@ -1681,6 +1711,9 @@
         "Set":{
             "V5":{
                 "PV":"1"
+            },
+            "NB":{
+                "PTr":"1"
             }
         },
         "Title":"prince",
@@ -1711,6 +1744,9 @@
         "Set":{
             "V5":{
                 "PM":"2"
+            },
+            "NB":{
+                "PM":"1"
             }
         },
         "Title":"prince",
@@ -1931,6 +1967,9 @@
         "Set":{
             "V5":{
                 "PV":"2"
+            },
+            "NB":{
+                "PTr":"1"
             }
         },
         "Title":"prince",
@@ -2690,6 +2729,37 @@
         "Twd":true,
         "Type":"Vampire"
     },
+    "201624":{
+        "ASCII Name":"Amelia Locke",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":6,
+        "Card Text":"Camarilla.",
+        "Clan":"Ventrue",
+        "Disciplines":{
+            "Celerity":1,
+            "Dominate":1,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "Group":"6",
+        "Id":201624,
+        "Name":"Amelia Locke",
+        "New":false,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PTr":"1",
+                "PV":"1"
+            }
+        },
+        "Title":"",
+        "Twd":false,
+        "Type":"Vampire"
+    },
     "200073":{
         "ASCII Name":"Amenophobis",
         "Adv":"",
@@ -3002,6 +3072,9 @@
         "Set":{
             "V5":{
                 "PM":"2"
+            },
+            "NB":{
+                "PM":"1"
             }
         },
         "Title":"prince",
@@ -5798,6 +5871,9 @@
         "Set":{
             "V5":{
                 "PTr":"2"
+            },
+            "NB":{
+                "PTr":"1"
             }
         },
         "Title":"prince",
@@ -9300,6 +9376,35 @@
         "Twd":true,
         "Type":"Vampire"
     },
+    "201625":{
+        "ASCII Name":"Carmelita Neillson",
+        "Adv":"",
+        "Artist":[
+            "Gin\u00e9s Qui\u00f1onero"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Camarilla: While Carmelita is ready, you get +1 hand size.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Celerity":1,
+            "Presence":1,
+            "Auspex":2
+        },
+        "Group":"7",
+        "Id":201625,
+        "Name":"Carmelita Neillson",
+        "New":false,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PTo":"1"
+            }
+        },
+        "Title":"",
+        "Twd":false,
+        "Type":"Vampire"
+    },
     "200246":{
         "ASCII Name":"Carmen",
         "Adv":"",
@@ -9718,6 +9823,9 @@
         "Set":{
             "V5":{
                 "PTo":"2"
+            },
+            "NB":{
+                "PTo":"1"
             }
         },
         "Title":"prince",
@@ -9791,6 +9899,36 @@
         },
         "Title":"",
         "Twd":true,
+        "Type":"Vampire"
+    },
+    "201626":{
+        "ASCII Name":"Cedrick Calhoun",
+        "Adv":"",
+        "Artist":[
+            "Mirko Falloni"
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Camarilla: If the referendum of a political action called by Cedrick is canceled or fails, he goes to torpor after resolution.",
+        "Clan":"Nosferatu",
+        "Disciplines":{
+            "Potence":1,
+            "Animalism":2,
+            "Dominate":2,
+            "Obfuscate":2
+        },
+        "Group":"6",
+        "Id":201626,
+        "Name":"Cedrick Calhoun",
+        "New":false,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PN":"1"
+            }
+        },
+        "Title":"",
+        "Twd":false,
         "Type":"Vampire"
     },
     "200258":{
@@ -10420,6 +10558,9 @@
         "Rulings":[],
         "Set":{
             "V5":{
+                "PTr":"1"
+            },
+            "NB":{
                 "PTr":"1"
             }
         },
@@ -13812,6 +13953,9 @@
         "Set":{
             "V5":{
                 "PM":"2"
+            },
+            "NB":{
+                "PM":"1"
             }
         },
         "Title":"prince",
@@ -13972,6 +14116,9 @@
         "Rulings":[],
         "Set":{
             "V5":{
+                "PN":"1"
+            },
+            "NB":{
                 "PN":"1"
             }
         },
@@ -14426,6 +14573,9 @@
         "Rulings":[],
         "Set":{
             "V5":{
+                "PM":"1"
+            },
+            "NB":{
                 "PM":"1"
             }
         },
@@ -16618,6 +16768,36 @@
         "Twd":true,
         "Type":"Vampire"
     },
+    "201627":{
+        "ASCII Name":"Evan Klein",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Camarilla: As a minion announces an action directed at Evan, flip a coin; if it is tails, the action fails.",
+        "Clan":"Malkavian",
+        "Disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Presence":1,
+            "Obfuscate":2
+        },
+        "Group":"6",
+        "Id":201627,
+        "Name":"Evan Klein",
+        "New":true,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PM":"1"
+            }
+        },
+        "Title":"",
+        "Twd":false,
+        "Type":"Vampire"
+    },
     "200445":{
         "ASCII Name":"Evan Rogers",
         "Adv":"",
@@ -17561,6 +17741,9 @@
         "Set":{
             "V5":{
                 "PTo":"2"
+            },
+            "NB":{
+                "PTo":"1"
             }
         },
         "Title":"prince",
@@ -22317,6 +22500,9 @@
         "Set":{
             "V5":{
                 "PN":"1"
+            },
+            "NB":{
+                "PN":"1"
             }
         },
         "Title":"",
@@ -25087,6 +25273,36 @@
         },
         "Title":"primogen",
         "Twd":true,
+        "Type":"Vampire"
+    },
+    "201628":{
+        "ASCII Name":"Jason \"Son\" Newberry",
+        "Adv":"",
+        "Artist":[
+            "Ken Meyer, Jr."
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Camarilla primogen: Jason gets +2 votes when casting votes against blood hunt referendums. +1 bleed.",
+        "Clan":"Malkavian",
+        "Disciplines":{
+            "Presence":1,
+            "Auspex":2,
+            "Dominate":2,
+            "Obfuscate":2
+        },
+        "Group":"6",
+        "Id":201628,
+        "Name":"Jason \"Son\" Newberry",
+        "New":false,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PM":"1"
+            }
+        },
+        "Title":"primogen",
+        "Twd":false,
         "Type":"Vampire"
     },
     "200680":{
@@ -28608,6 +28824,36 @@
         "Twd":true,
         "Type":"Vampire"
     },
+    "201629":{
+        "ASCII Name":"Kevin Jackson",
+        "Adv":"",
+        "Artist":[
+            "Amy Wilkins"
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Camarilla Prince of Chicago: Kevin gets +1 strength in combat with a Brujah. Brujah get +1 strength in combat with him.",
+        "Clan":"Ventrue",
+        "Disciplines":{
+            "Dominate":2,
+            "Fortitude":2,
+            "Presence":2
+        },
+        "Group":"7",
+        "Id":201629,
+        "Name":"Kevin Jackson",
+        "New":false,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PTr":"1",
+                "PV":"1"
+            }
+        },
+        "Title":"prince",
+        "Twd":false,
+        "Type":"Vampire"
+    },
     "201599":{
         "ASCII Name":"Khadija Al-Kindi",
         "Adv":"",
@@ -30028,6 +30274,9 @@
         "Set":{
             "V5":{
                 "PN":"2"
+            },
+            "NB":{
+                "PN":"1"
             }
         },
         "Title":"primogen",
@@ -30700,6 +30949,9 @@
         "Set":{
             "V5":{
                 "PN":"2"
+            },
+            "NB":{
+                "PN":"1"
             }
         },
         "Title":"primogen",
@@ -31318,6 +31570,9 @@
         "Rulings":[],
         "Set":{
             "V5":{
+                "PTr":"1"
+            },
+            "NB":{
                 "PTr":"1"
             }
         },
@@ -33210,6 +33465,9 @@
         "Set":{
             "V5":{
                 "PV":"1"
+            },
+            "NB":{
+                "PTr":"1"
             }
         },
         "Title":"",
@@ -35233,6 +35491,36 @@
         "Twd":true,
         "Type":"Vampire"
     },
+    "201630":{
+        "ASCII Name":"Mason Ha",
+        "Adv":"",
+        "Artist":[
+            "G\u00e1bor N\u00e9meth"
+        ],
+        "Banned":"",
+        "Capacity":5,
+        "Card Text":"Camarilla.",
+        "Clan":"Tremere",
+        "Disciplines":{
+            "Auspex":1,
+            "Dominate":1,
+            "Celerity":1,
+            "Blood Sorcery":2
+        },
+        "Group":"6",
+        "Id":201630,
+        "Name":"Mason Ha",
+        "New":false,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PTr":"1"
+            }
+        },
+        "Title":"",
+        "Twd":false,
+        "Type":"Vampire"
+    },
     "200954":{
         "ASCII Name":"Massassi",
         "Adv":"",
@@ -35470,6 +35758,33 @@
         },
         "Title":"",
         "Twd":true,
+        "Type":"Vampire"
+    },
+    "201631":{
+        "ASCII Name":"Mateo Garcia",
+        "Adv":"",
+        "Artist":[
+            "Ken Kokoszka"
+        ],
+        "Banned":"",
+        "Capacity":2,
+        "Card Text":"Camarilla.",
+        "Clan":"Toreador",
+        "Disciplines":{
+            "Presence":1
+        },
+        "Group":"6",
+        "Id":201631,
+        "Name":"Mateo Garc\u00eda",
+        "New":false,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PTo":"1"
+            }
+        },
+        "Title":"",
+        "Twd":false,
         "Type":"Vampire"
     },
     "200958":{
@@ -37190,6 +37505,9 @@
         "Set":{
             "V5":{
                 "PTo":"2"
+            },
+            "NB":{
+                "PTo":"1"
             }
         },
         "Title":"prince",
@@ -38369,6 +38687,9 @@
         "Set":{
             "V5":{
                 "PV":"1"
+            },
+            "NB":{
+                "PTr":"1"
             }
         },
         "Title":"",
@@ -38498,6 +38819,36 @@
         "Set":{
             "V5A":{
                 "PG":"1"
+            }
+        },
+        "Title":"",
+        "Twd":false,
+        "Type":"Vampire"
+    },
+    "201632":{
+        "ASCII Name":"Nathaniel Bordruff",
+        "Adv":"",
+        "Artist":[
+            "Mirko Falloni"
+        ],
+        "Banned":"",
+        "Capacity":7,
+        "Card Text":"Camarilla: Nathaniel can enter combat with a locked vampire as a (D) action.",
+        "Clan":"Nosferatu",
+        "Disciplines":{
+            "Animalism":1,
+            "Dominate":2,
+            "Obfuscate":2,
+            "Potence":2
+        },
+        "Group":"6",
+        "Id":201632,
+        "Name":"Nathaniel Bordruff",
+        "New":false,
+        "Rulings":[],
+        "Set":{
+            "NB":{
+                "PN":"1"
             }
         },
         "Title":"",
@@ -39342,6 +39693,9 @@
         "Rulings":[],
         "Set":{
             "V5":{
+                "PTo":"1"
+            },
+            "NB":{
                 "PTo":"1"
             }
         },
@@ -51234,6 +51588,9 @@
         "Set":{
             "V5":{
                 "PTr":"2"
+            },
+            "NB":{
+                "PTr":"1"
             }
         },
         "Title":"",

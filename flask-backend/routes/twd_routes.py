@@ -9,13 +9,13 @@ from api import app
 from models import Deck
 
 
-with open("twdLocations.json", "r") as twd_locations_file:
+with open("twd_locations.json", "r") as twd_locations_file:
     twd_locations = json.load(twd_locations_file)
 
-with open("twdPlayers.json", "r") as twd_players_file:
+with open("twd_players.json", "r") as twd_players_file:
     twd_players = json.load(twd_players_file)
 
-with open("twdDecks.json", "r") as twd_file:
+with open("twd_decks.json", "r") as twd_file:
     twd_decks = json.load(twd_file)
     for deck in twd_decks:
         deck["crypt"] = {}
@@ -49,9 +49,9 @@ def searchSimilarTwd():
             cards = Deck.query.get(deckid).cards
 
         else:
-            with open("twdDecksById.json", "r") as twdDecks_file:
-                twdDecks = json.load(twdDecks_file)
-                for cardid, q in twdDecks[deckid]["cards"].items():
+            with open("twd_decks_by_id.json", "r") as twd_decks_file:
+                twd_decks = json.load(twd_decks_file)
+                for cardid, q in twd_decks[deckid]["cards"].items():
                     cards[int(cardid)] = q
 
     else:

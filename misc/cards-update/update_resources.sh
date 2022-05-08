@@ -19,4 +19,4 @@ cp amaranth_ids.json ../../react-frontend/dist/
 # Update TWD and Card recommendations
 python generate_twd_decks.py
 python generate_twd_cards_compatibility.py
-cp twdDecks.json twdDecksById.json twdLocations.json twdPlayers.json cardsCompatibility.json ../../flask-backend/
+cp twd_decks.json twd_decks_by_id.json twd_locations.json twd_players.json cards_compatibility.json ../../flask-backend/

@@ -113,11 +113,11 @@ def showDeck(deckid):
         return jsonify(deck)
 
     else:
-        with open("twdDecksById.json", "r") as twdDecks_file:
-            twdDecks = json.load(twdDecks_file)
+        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+            twd_decks = json.load(twd_decks_file)
 
             try:
-                deck = twdDecks[deckid]
+                deck = twd_decks[deckid]
                 comments = deck["description"]
                 deck["description"] = "Date: " + deck["creation_date"] + "\n"
                 deck["description"] += "Players: " + str(deck["players"]) + "\n"
@@ -162,9 +162,9 @@ def getRecommendation(deckid):
             cards = precon_decks[set][precon]
 
     else:
-        with open("twdDecksById.json", "r") as twdDecks_file:
-            twdDecks = json.load(twdDecks_file)
-            cards = twdDecks[deckid]["cards"]
+        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+            twd_decks = json.load(twd_decks_file)
+            cards = twd_decks[deckid]["cards"]
 
     recommends = deck_recommendation(cards)
 
@@ -488,10 +488,10 @@ def cloneDeck():
         return jsonify({"deck cloned": request.json["deckname"], "deckid": deckid})
 
     elif request.json["src"] == "twd":
-        with open("twdDecksById.json", "r") as twdDecks_file:
-            twdDecks = json.load(twdDecks_file)
+        with open("twd_decks_by_id.json", "r") as twd_decks_file:
+            twd_decks = json.load(twd_decks_file)
 
-            deck = twdDecks[request.json["target"]]
+            deck = twd_decks[request.json["target"]]
             cards = {}
             for i, q in deck["cards"].items():
                 cards[int(i)] = q
@@ -655,9 +655,9 @@ def deckExportRoute():
         elif request.json["src"] == "twd":
 
             deckid = request.json["deckid"]
-            with open("twdDecksById.json", "r") as twdDecks_file:
-                twdDecks = json.load(twdDecks_file)
-                deck = twdDecks[deckid]
+            with open("twd_decks_by_id.json", "r") as twd_decks_file:
+                twd_decks = json.load(twd_decks_file)
+                deck = twd_decks[deckid]
                 comments = deck["description"]
                 deck["description"] = "Date: " + deck["creation_date"] + "\n"
                 deck["description"] += "Players: " + str(deck["players"]) + "\n"

@@ -109,7 +109,7 @@ artist_fixes = {
 integer_fields = ["Id", "Capacity"]
 useless_fields = ["Aka"]
 
-with open("vtescrypt.csv", "r", encoding="utf8") as main_csv, open(
+with open("vtescrypt.csv", "r", encoding="utf-8-sig") as main_csv, open(
     "cardbase_crypt.json", "w", encoding="utf8"
 ) as cardbase_file, open("vtes.json", "r", encoding="utf8") as krcg_file, open(
     "artistsCrypt.json", "w", encoding="utf8"
@@ -118,7 +118,6 @@ with open("vtescrypt.csv", "r", encoding="utf8") as main_csv, open(
 ) as twda_input:
 
     krcg_cards = json.load(krcg_file)
-
     reader_main = csv.reader(main_csv)
     fieldnames_main = next(reader_main)
     csv_cards = csv.DictReader(main_csv, fieldnames_main)

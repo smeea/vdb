@@ -39,8 +39,8 @@ artist_fixes = {
 integer_fields = ["Id"]
 useless_fields = ["Aka", "Flavor Text"]
 
-with open("vteslib.csv", "r", encoding="utf8") as main__csv, open(
-    "vteslibmeta.csv", "r", encoding="utf8"
+with open("vteslib.csv", "r", encoding="utf-8-sig") as main__csv, open(
+    "vteslibmeta.csv", "r", encoding="utf-8-sig"
 ) as meta_csv, open("cardbase_lib.json", "w", encoding="utf8") as cardbase_file, open(
     "vtes.json", "r", encoding="utf8"
 ) as krcg_file, open(
@@ -50,11 +50,9 @@ with open("vteslib.csv", "r", encoding="utf8") as main__csv, open(
 ) as twda_input:
 
     krcg_cards = json.load(krcg_file)
-
     reader_main = csv.reader(main__csv)
     fieldnames_main = next(reader_main)
     csv_cards = csv.DictReader(main__csv, fieldnames_main)
-
     reader_meta = csv.reader(meta_csv)
     fieldnames_meta = next(reader_meta)
     csv_meta = csv.DictReader(meta_csv, fieldnames_meta)

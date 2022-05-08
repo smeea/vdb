@@ -1,6 +1,6 @@
 import json
 
-with open("cardsCompatibility.json", "r") as compatibility_file, open(
+with open("cards_compatibility.json", "r") as compatibility_file, open(
     "cardbase_crypt.json", "r"
 ) as crypt_file, open("cardbase_lib.json", "r") as library_file:
     cardbase_crypt = json.load(crypt_file)
