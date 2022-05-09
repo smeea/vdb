@@ -30,7 +30,7 @@ function AccountRegister(props) {
 
   const onError = (e) => {
     setSpinnerState(false);
-    if (e.message == 401) {
+    if (e.message == 409) {
       setUsernameError(true);
       setFormPassword('');
     } else {

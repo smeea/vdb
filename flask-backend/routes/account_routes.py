@@ -10,7 +10,7 @@ from routes.inventory_routes import parse_user_inventory
 
 @login.unauthorized_handler
 def unauthorized_handler():
-    return Response(json.dumps({"Not logged in": True}), 401)
+    abort(401)
 
 
 @app.route("/api/register", methods=["POST"])
@@ -18,7 +18,9 @@ def register():
     if current_user.is_authenticated:
         return jsonify({"already logged as:": current_user.username})
 
-    try:
+    if User.query.filter_by(username=request.json["username"].lower()).first():
+        abort(409)
+    else:
         user = User(
             username=request.json["username"].lower(),
             public_name=request.json["username"],
@@ -28,8 +30,6 @@ def register():
         db.session.commit()
         login_user(user)
         return jsonify({"registered as": user.username})
-    except Exception:
-        abort(400)
 
 
 @app.route("/api/login", methods=["GET", "POST"])
