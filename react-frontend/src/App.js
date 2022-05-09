@@ -46,7 +46,7 @@ const App = (props) => {
       return new Date(b.timestamp) - new Date(a.timestamp);
     };
 
-    if (decks) {
+    if (decks && Object.keys(decks).length) {
       const lastDeckArray = Object.values(decks).sort(byTimestamp);
       setLastDeck(lastDeckArray[0]);
     }
