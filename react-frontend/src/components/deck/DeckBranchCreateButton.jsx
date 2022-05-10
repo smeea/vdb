@@ -3,7 +3,7 @@ import NodePlusFill from 'assets/images/icons/node-plus-fill.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckBranchCreateButton = (props) => {
+const DeckBranchCreateButton = ({ deck }) => {
   const {
     setDecks,
     setActiveDeck,
@@ -13,7 +13,7 @@ const DeckBranchCreateButton = (props) => {
 
   const branchCreate = () => {
     const url = `${process.env.API_URL}branch/create`;
-    const master = props.deck.master ? props.deck.master : props.deck.deckid;
+    const master = deck.master ? deck.master : deck.deckid;
 
     const options = {
       method: 'POST',
@@ -24,7 +24,7 @@ const DeckBranchCreateButton = (props) => {
       },
       body: JSON.stringify({
         master: master,
-        source: props.deck.deckid,
+        source: deck.deckid,
       }),
     };
 
@@ -41,10 +41,11 @@ const DeckBranchCreateButton = (props) => {
               : [data.deckid],
           },
           [data.deckid]: {
-            ...props.deck,
+            ...deck,
             deckid: data.deckid,
-            crypt: { ...props.deck.crypt },
-            library: { ...props.deck.library },
+            crypt: { ...deck.crypt },
+            library: { ...deck.library },
+            inventory_type: '',
             master: master,
             branchName: data.branch_name,
             timestamp: now.toUTCString(),
