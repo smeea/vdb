@@ -29,14 +29,16 @@ const DeckQrModal = ({ show, setShow, deck }) => {
     <Modal show={show} onHide={handleClose} animation={false} centered={true}>
       <Modal.Header className="no-border pt-3 pb-0">
         <h5>QR for {deck.name}</h5>
-        {!url.includes('decks?id=') && (
-          <div title="Non-editable" className="d-flex">
-            <Snow />
-          </div>
-        )}
-        <Button variant="outline-secondary" onClick={handleClose}>
-          <X width="32" height="32" viewBox="0 0 16 16" />
-        </Button>
+        <div className="d-flex align-items-center">
+          {!url.includes('decks?id=') && (
+            <div title="Non-editable" className="d-flex blue px-2">
+              <Snow width="26" height="26" viewBox="0 0 16 16" />
+            </div>
+          )}
+          <Button variant="outline-secondary" onClick={handleClose}>
+            <X width="32" height="32" viewBox="0 0 16 16" />
+          </Button>
+        </div>
       </Modal.Header>
       <Modal.Body className="d-flex justify-content-center p-2">
         <DeckQR />
