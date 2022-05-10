@@ -15,6 +15,7 @@ import {
   DeckSelectRecent,
   DeckSelectPrecon,
   DeckSelectAdvModal,
+  DeckQrModal,
   DeckTags,
   DeckDraw,
   DeckButtons,
@@ -57,6 +58,7 @@ const Decks = (props) => {
 
   const query = new URLSearchParams(useLocation().search);
   const [showDraw, setShowDraw] = useState(false);
+  const [showQr, setShowQr] = useState(false);
   const [showRecommendation, setShowRecommendation] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
   const [showDeckSelectAdv, setShowDeckSelectAdv] = useState(false);
@@ -575,6 +577,7 @@ const Decks = (props) => {
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
+                setShowQr={setShowQr}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
               />
@@ -667,6 +670,7 @@ const Decks = (props) => {
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
+                setShowQr={setShowQr}
                 missingCrypt={missingCrypt}
                 missingLibrary={missingLibrary}
               />
@@ -689,6 +693,13 @@ const Decks = (props) => {
           isAuthor={isAuthor}
           deck={deckRouter(activeDeck)}
           setShow={setShowRecommendation}
+        />
+      )}
+      {showQr && (
+        <DeckQrModal
+          show={showQr}
+          setShow={setShowQr}
+          deck={deckRouter(activeDeck)}
         />
       )}
     </Container>

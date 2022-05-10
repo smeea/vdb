@@ -4,12 +4,12 @@ import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckCopyUrlButton = ({ deck, noText }) => {
+const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
   const [state, setState] = useState(false);
 
   const handleStandardButton = () => {
-    const deckUrl = `${process.env.ROOT_URL}decks?id=${deck.deckid}`;
+    const url = `${process.env.ROOT_URL}decks?id=${deck.deckid}`;
 
     navigator.clipboard.writeText(deckUrl);
     setState(true);
@@ -20,33 +20,16 @@ const DeckCopyUrlButton = ({ deck, noText }) => {
     }, 1000);
   };
 
+  const handleStandardQrButton = () => {
+    const url = `${process.env.ROOT_URL}decks?id=${deck.deckid}`;
+
+    setShowMenuButtons(false);
+    setShowFloatingButtons(false);
+    setShowQr(url);
+  };
+
   const handleDeckInUrlButton = () => {
-    const cards = [];
-
-    Object.keys(deck.crypt).map((card) => {
-      cards.push(`${card}=${deck.crypt[card].q};`);
-    });
-    Object.keys(deck.library).map((card) => {
-      cards.push(`${card}=${deck.library[card].q};`);
-    });
-
-    const info = [];
-    deck.name && info.push(encodeURI(`name=${deck.name}`));
-    deck.author && info.push(encodeURI(`author=${deck.author}`));
-    deck.description &&
-      info.push(
-        encodeURI(`description=${deck.description.substring(0, 7168)}`)
-          .replace(/#/g, '%23')
-          .replace(/&/g, '%26')
-          .replace(/,/g, '%2C')
-      );
-
-    const url = `${process.env.ROOT_URL}decks?${info
-      .toString()
-      .replace(/,/g, '&')}#${cards
-      .toString()
-      .replace(/,/g, '')
-      .replace(/;$/, '')}`;
+    const url = getDeckInUrl();
 
     navigator.clipboard.writeText(url);
     setState(true);
@@ -55,6 +38,14 @@ const DeckCopyUrlButton = ({ deck, noText }) => {
       setShowMenuButtons(false);
       setShowFloatingButtons(true);
     }, 1000);
+  };
+
+  const handleDeckInQrButton = () => {
+    const url = getDeckInUrl();
+
+    setShowMenuButtons(false);
+    setShowFloatingButtons(false);
+    setShowQr(url);
   };
 
   const handleSnapshotButton = () => {
@@ -99,10 +90,22 @@ const DeckCopyUrlButton = ({ deck, noText }) => {
         Standard URL
       </Dropdown.Item>
       <Dropdown.Item
+        onClick={handleStandardQrButton}
+        title="Create QR with Standard URL (will follow deck changes, if any)"
+      >
+        Standard URL - QR
+      </Dropdown.Item>
+      <Dropdown.Item
         onClick={handleDeckInUrlButton}
         title="Copy long URL containing full deck info (will not follow deck changes)"
       >
         Deck-in-URL
+      </Dropdown.Item>
+      <Dropdown.Item
+        onClick={handleDeckInQrButton}
+        title="Create QR with long URL containing full deck info (will not follow deck changes)"
+      >
+        Deck-in-QR
       </Dropdown.Item>
       <Dropdown.Item
         onClick={handleSnapshotButton}
@@ -112,6 +115,37 @@ const DeckCopyUrlButton = ({ deck, noText }) => {
       </Dropdown.Item>
     </>
   );
+
+  const getDeckInUrl = () => {
+    const cards = [];
+
+    Object.keys(deck.crypt).map((card) => {
+      cards.push(`${card}=${deck.crypt[card].q};`);
+    });
+    Object.keys(deck.library).map((card) => {
+      cards.push(`${card}=${deck.library[card].q};`);
+    });
+
+    const info = [];
+    deck.name && info.push(encodeURI(`name=${deck.name}`));
+    deck.author && info.push(encodeURI(`author=${deck.author}`));
+    deck.description &&
+      info.push(
+        encodeURI(`description=${deck.description.substring(0, 7168)}`)
+          .replace(/#/g, '%23')
+          .replace(/&/g, '%26')
+          .replace(/,/g, '%2C')
+      );
+
+    const url = `${process.env.ROOT_URL}decks?${info
+      .toString()
+      .replace(/,/g, '&')}#${cards
+      .toString()
+      .replace(/,/g, '')
+      .replace(/;$/, '')}`;
+
+    return url;
+  };
 
   return (
     <>

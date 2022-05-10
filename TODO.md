@@ -1,13 +1,20 @@
 # FIX
 - Merge anonymous import with import
-- Restyle PDA as in TWD
+- Restyle PDA as in TWD in non-Desktop and non-Mobile screen
 - First printed in for Promo
+- Moving to enter q-ty form in card add in Inventory to speed-up card-adding
+- CopyURL for deck-in-url
 
 # FEATURES
 - Export all in xlsx and csv
 - Store src (pda/twd) for Recent decks and add TWD/PDA appendix to name in selector
 - Add email to account creation
-- Add to compare notification
+- Add to compare notification/title
+- Documentation discoverability (links to pages?)
+- Sorting for inventory
+- Reprinted checkbox to filter
+- Precons in Deck with full Set and Promos and All cards to check for entire collection
+- Freeze decks in deck selector
 
 # MAYBE LATER FEATURES
 - Comments for PDA

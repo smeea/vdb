@@ -28,6 +28,7 @@ const DeckButtons = ({
   missingLibrary,
   setShowInfo,
   setShowDraw,
+  setShowQr,
   setShowRecommendation,
 }) => {
   const { inventoryMode, username } = useApp();
@@ -51,7 +52,7 @@ const DeckButtons = ({
           {isAuthor && <DeckPublicButton deck={deck} />}
 
           <DeckDiffButton deckid={deck.deckid} />
-          <DeckCopyUrlButton deck={deck} />
+          <DeckCopyUrlButton setShowQr={setShowQr} deck={deck} />
           <DeckProxyButton
             deck={deck}
             missingCrypt={missingCrypt}
