@@ -25,7 +25,6 @@ const PdaResultDescription = ({ deck }) => {
       `/pda?q=${encodeURIComponent(JSON.stringify({ author: author }))}`
     );
   };
-
   const lastUpdated = new Date(deck['timestamp']).toISOString().slice(0, 10);
 
   const Description = (
@@ -52,10 +51,18 @@ const PdaResultDescription = ({ deck }) => {
         </tr>
         <tr>
           <td className="d-inline blue">
-            <b>Date:</b>
+            <b>Created:</b>
           </td>
           <td className="ps-2">{deck['creation_date']}</td>
         </tr>
+        {lastUpdated !== deck['creation_date'] && (
+          <tr>
+            <td className="d-inline blue">
+              <b>Updated:</b>
+            </td>
+            <td className="ps-2">{lastUpdated}</td>
+          </tr>
+        )}
       </tbody>
     </table>
   );
