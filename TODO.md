@@ -1,6 +1,5 @@
 # FIX
 - Merge anonymous import with import
-- Restyle PDA as in TWD in non-Desktop and non-Mobile screen
 - First printed in for Promo
 - Moving to enter q-ty form in card add in Inventory to speed-up card-adding
 - CopyURL for deck-in-url

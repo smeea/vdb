@@ -6,7 +6,7 @@ import { TwdOpenDeckButton, DeckCloneButton } from 'components';
 import { useApp, useSearchForms } from 'context';
 import defaults from 'components/forms_data/defaultsTwdForm.json';
 
-function TwdResultDescription(props) {
+const TwdResultDescription = ({ deck }) => {
   const { username, isDesktop } = useApp();
   const { setTwdFormState } = useSearchForms();
 
@@ -40,13 +40,13 @@ function TwdResultDescription(props) {
           <td className="d-inline blue">
             <b>Date:</b>
           </td>
-          <td className="ps-2">{props.deck['creation_date']}</td>
+          <td className="ps-2">{deck['creation_date']}</td>
         </tr>
         <tr>
           <td className="d-inline blue">
             <b>Event</b>:
           </td>
-          <td className="ps-2">{props.deck['event']}</td>
+          <td className="ps-2">{deck['event']}</td>
         </tr>
         <tr>
           <td className="d-inline blue">
@@ -55,9 +55,9 @@ function TwdResultDescription(props) {
           <td className="ps-2">
             <div
               className="link-like"
-              onClick={() => handleLocationClick(props.deck['location'])}
+              onClick={() => handleLocationClick(deck['location'])}
             >
-              {props.deck['location']}
+              {deck['location']}
             </div>
           </td>
         </tr>
@@ -68,9 +68,9 @@ function TwdResultDescription(props) {
           <td className="ps-2">
             <div
               className="link-like"
-              onClick={() => handleAuthorClick(props.deck['author'])}
+              onClick={() => handleAuthorClick(deck['author'])}
             >
-              {props.deck['author']} <br />
+              {deck['author']} <br />
             </div>
           </td>
         </tr>
@@ -78,7 +78,7 @@ function TwdResultDescription(props) {
           <td className="d-inline blue">
             <b>Deck</b>:
           </td>
-          <td className="ps-2">{props.deck['name']}</td>
+          <td className="ps-2">{deck['name']}</td>
         </tr>
       </tbody>
     </table>
@@ -90,7 +90,7 @@ function TwdResultDescription(props) {
         <>
           <div
             className={`d-flex justify-content-center align-items-center large mx-1 mt-1 mb-2 blue ${
-              props.deck['players'] >= 40
+              deck['players'] >= 40
                 ? 'bold border-dashed-thick'
                 : 'border-dashed'
             }`}
@@ -99,15 +99,15 @@ function TwdResultDescription(props) {
             <div className="d-flex align-items-center pe-1">
               <PeopleFill />
             </div>{' '}
-            {props.deck['players']}
+            {deck['players']}
           </div>
           {Description}
           <Stack gap={1} className="py-2">
-            <TwdOpenDeckButton deckid={props.deck['deckid']} />
+            <TwdOpenDeckButton deckid={deck['deckid']} />
             {username && (
               <DeckCloneButton
-                deck={props.deck}
-                activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
+                deck={deck}
+                activeDeck={{ src: 'twd', deckid: deck.deckid }}
                 inTwd
               />
             )}
@@ -122,7 +122,7 @@ function TwdResultDescription(props) {
             <Stack gap={1}>
               <div
                 className={`d-flex justify-content-center align-items-center large mx-1 mb-1 blue ${
-                  props.deck['players'] >= 40
+                  deck['players'] >= 40
                     ? 'bold border-dashed-thick'
                     : 'border-dashed'
                 }`}
@@ -130,13 +130,13 @@ function TwdResultDescription(props) {
                 <div className="d-flex align-items-center pe-1">
                   <PeopleFill />
                 </div>{' '}
-                {props.deck['players']}
+                {deck['players']}
               </div>
-              <TwdOpenDeckButton deckid={props.deck['deckid']} />
+              <TwdOpenDeckButton deckid={deck['deckid']} />
               {username && (
                 <DeckCloneButton
-                  deck={props.deck}
-                  activeDeck={{ src: 'twd', deckid: props.deck.deckid }}
+                  deck={deck}
+                  activeDeck={{ src: 'twd', deckid: deck.deckid }}
                   inTwd
                 />
               )}
@@ -146,6 +146,6 @@ function TwdResultDescription(props) {
       )}
     </>
   );
-}
+};
 
 export default TwdResultDescription;

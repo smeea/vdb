@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { Button } from 'react-bootstrap';
 import Star from 'assets/images/icons/star.svg';
 import StarFill from 'assets/images/icons/star-fill.svg';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function PdaFavoriteButton(props) {
+const PdaFavoriteButton = ({ deck }) => {
   const { username } = useApp();
-  const [isFavorited, setIsFavorited] = useState(props.deck.isFavorited);
-  const [favoritedBy, setFavoritedBy] = useState(props.deck.favoritedBy);
+  const [isFavorited, setIsFavorited] = useState(deck.isFavorited);
+  const [favoritedBy, setFavoritedBy] = useState(deck.favoritedBy);
 
   const handleClick = () => {
     if (!username) return;
 
-    const url = `${process.env.API_URL}pda/favorite/${props.deck.deckid}`;
+    const url = `${process.env.API_URL}pda/favorite/${deck.deckid}`;
     const options = {
       method: isFavorited ? 'DELETE' : 'POST',
       mode: 'cors',
@@ -31,13 +31,13 @@ function PdaFavoriteButton(props) {
   };
 
   return (
-    <Button onClick={handleClick} variant={isFavorited ? 'third' : 'secondary'}>
-      <div className="d-flex justify-content-center align-items-center">
-        <div className="pe-1">{isFavorited ? <StarFill /> : <Star />}</div>
-        {favoritedBy}
-      </div>
-    </Button>
+    <ButtonIconed
+      variant={isFavorited ? 'third' : 'secondary'}
+      onClick={handleClick}
+      icon={isFavorited ? <StarFill /> : <Star />}
+      text={favoritedBy}
+    />
   );
-}
+};
 
 export default PdaFavoriteButton;
