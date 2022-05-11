@@ -15,11 +15,7 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
 
     if (i > 0) {
       return (
-        <div
-          className="d-inline"
-          key={idx}
-          title={`Chance to draw ${idx} unique vampires`}
-        >
+        <div className="d-inline" key={idx}>
           <span className="blue">
             <b>{idx}:</b>
           </span>{' '}
@@ -34,11 +30,11 @@ const DeckCryptTotalInfo = ({ cards, disciplinesDetailed }) => {
   return (
     <>
       <div className="d-flex justify-content-between py-1">
-        <div className="d-flex">
+        <div className="d-flex" title="Average capacity">
           <span className="blue pe-2">Avg. cap:</span> {cryptAvg}
         </div>
-        <div className="d-flex">
-          <span className="blue pe-2">Uniq:</span>
+        <div title="Chance to draw X unique vampires" className="d-flex">
+          <span className="blue pe-3">Uniq:</span>
           <Stack direction="horizontal" gap={3}>
             {uniqueDraw}
           </Stack>
