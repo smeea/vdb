@@ -90,6 +90,7 @@ const InventoryLibraryTable = ({ cards, placement, compact, withCompact }) => {
                   q={qty}
                   softUsedMax={softUsedMax}
                   hardUsedTotal={hardUsedTotal}
+                  compact={compact}
                 />
               </div>
             </OverlayTrigger>

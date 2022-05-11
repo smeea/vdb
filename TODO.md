@@ -1,7 +1,6 @@
 # FIX
 - Merge anonymous import with import
 - First printed in for Promo
-- Moving to enter q-ty form in card add in Inventory to speed-up card-adding
 - CopyURL for deck-in-url
 
 # FEATURES
