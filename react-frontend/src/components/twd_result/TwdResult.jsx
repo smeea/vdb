@@ -18,6 +18,7 @@ function TwdResult(props) {
     libraryCardBase,
     showImage,
     isMobile,
+    showFloatingButtons,
   } = useApp();
 
   const { twdResults, setTwdResults } = useSearchResults();
@@ -131,7 +132,7 @@ function TwdResult(props) {
           )}
         </>
       )}
-      {isMobile && props.showFloatingButtons && (
+      {isMobile && showFloatingButtons && (
         <>
           <div
             onClick={handleClear}

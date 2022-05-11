@@ -3,6 +3,7 @@
 - First printed in for Promo
 - Moving to enter q-ty form in card add in Inventory to speed-up card-adding
 - CopyURL for deck-in-url
+- Adv base switch on mobile in /cards
 
 # FEATURES
 - Export all in xlsx and csv

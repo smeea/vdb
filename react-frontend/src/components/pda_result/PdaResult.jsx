@@ -18,6 +18,7 @@ function PdaResult(props) {
     libraryCardBase,
     showImage,
     isMobile,
+    showFloatingButtons,
   } = useApp();
 
   const { pdaResults, setPdaResults } = useSearchResults();
@@ -134,7 +135,7 @@ function PdaResult(props) {
           )}
         </>
       )}
-      {isMobile && props.showFloatingButtons && (
+      {isMobile && showFloatingButtons && (
         <>
           <div
             onClick={handleClear}
