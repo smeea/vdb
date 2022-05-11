@@ -406,7 +406,7 @@ const DeckSelectAdvModal = (props) => {
       show={props.show}
       onHide={props.handleClose}
       animation={false}
-      dialogClassName={`modal-x-wide ${isMobile ? 'm-0' : null}`}
+      dialogClassName={`modal-x-wide ${isMobile ? 'm-0' : ''}`}
     >
       <Modal.Header
         className={

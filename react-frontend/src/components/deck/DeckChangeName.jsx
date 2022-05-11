@@ -57,10 +57,7 @@ const DeckChangeName = ({ deckid, name, isAuthor, isPublic }) => {
           <InputGroup.Text
             title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}
           >
-            <div className="pe-2">
-              {isPublic ? <PeopleFill /> : <TrophyFill />}
-            </div>
-            {isPublic ? 'PDA' : 'TWD'}
+            {isPublic ? <PeopleFill /> : <TrophyFill />}
           </InputGroup.Text>
         )}
         {isAuthor && <DeckFreezeButton deckid={deckid} inName />}

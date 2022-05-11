@@ -142,7 +142,7 @@ const DeckProxyButton = ({
               title="Proxy PDF"
               className="d-flex justify-content-center align-items-center"
             >
-              <div className={`d-flex ${noText ? null : 'pe-2'}`}>
+              <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
                 {spinnerState ? (
                   <Spinner animation="border" size="sm" />
                 ) : (

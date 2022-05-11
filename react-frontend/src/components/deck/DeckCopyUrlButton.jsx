@@ -158,7 +158,7 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
               title="Copy URL"
               className="d-flex justify-content-center align-items-center"
             >
-              <div className={`d-flex ${noText ? null : 'pe-2'}`}>
+              <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
                 <Link45Deg
                   width={noText ? '18' : '21'}
                   height={noText ? '23' : '21'}
