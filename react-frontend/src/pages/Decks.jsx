@@ -513,8 +513,9 @@ const Decks = (props) => {
                       />
                     </Col>
                     {foldedDescription &&
+                      !isMobile &&
                       (deckRouter(activeDeck).tags || isAuthor) && (
-                        <Col className="ps-2 pe-0">
+                        <Col className={`ps-2 pe-0 ${isMobile ? 'pt-05' : ''}`}>
                           <DeckTags
                             allTagsOptions={allTagsOptions}
                             deck={deckRouter(activeDeck)}
@@ -524,13 +525,14 @@ const Decks = (props) => {
                         </Col>
                       )}
                   </Row>
-                  {!foldedDescription &&
+                  {(!foldedDescription || isMobile) &&
                     (deckRouter(activeDeck).tags || isAuthor) && (
                       <div className={isMobile ? 'px-0 py-1' : 'd-block pt-2'}>
                         <DeckTags
                           allTagsOptions={allTagsOptions}
                           deck={deckRouter(activeDeck)}
                           bordered={true}
+                          isAuthor={isAuthor}
                         />
                       </div>
                     )}
