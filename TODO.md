@@ -12,7 +12,6 @@
 - Sorting for inventory
 - Reprinted checkbox to filter
 - Precons in Deck with full Set and Promos and All cards to check for entire collection
-- Freeze decks in deck selector
 
 # MAYBE LATER FEATURES
 - Comments for PDA

@@ -73,6 +73,7 @@ def parse_user_decks(user_decks):
             "used_in_inventory": deck.used_in_inventory,
             "deckid": deck.deckid,
             "hidden": deck.hidden,
+            "frozen": deck.frozen,
             "inventory_type": deck.inventory_type,
             "timestamp": deck.timestamp,
             "master": deck.master,
@@ -188,6 +189,10 @@ def updateDeck(deckid):
 
     if "hidden" in request.json:
         d.hidden = request.json["hidden"]
+    elif "frozen" in request.json:
+        d.frozen = request.json["frozen"]
+    elif d.frozen:
+        return jsonify({"error": "deck is non-editable"})
     else:
         d.timestamp = datetime.utcnow()
 

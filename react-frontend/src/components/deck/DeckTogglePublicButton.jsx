@@ -5,14 +5,13 @@ import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-function DeckTogglePublicButton(props) {
+const DeckTogglePublicButton = ({ deck }) => {
   const { setDecks } = useApp();
 
   const [spinnerState, setSpinnerState] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const isPublished =
-    props.deck.public_parent || props.deck.public_child ? true : false;
+  const isPublished = deck.public_parent || deck.public_child ? true : false;
 
   const handleConfirmation = () => {
     createOrDelete();
@@ -21,7 +20,7 @@ function DeckTogglePublicButton(props) {
 
   const createOrDelete = () => {
     const url = `${process.env.API_URL}pda/${
-      isPublished ? props.deck.public_child : props.deck.deckid
+      isPublished ? deck.public_child : deck.deckid
     }`;
     const options = {
       method: isPublished ? 'DELETE' : 'POST',
@@ -53,9 +52,9 @@ function DeckTogglePublicButton(props) {
   return (
     <>
       <ButtonIconed
-        variant={props.deck.public_child ? 'third' : 'primary'}
+        variant={isPublished ? 'third' : 'primary'}
         onClick={() => setShowConfirmation(true)}
-        title="Add/Remove from Public Deck Archive"
+        title={`${isPublished ? 'In' : 'Not in'} Public Deck Archive`}
         icon={
           !spinnerState ? (
             <PeopleFill width="16" height="23" viewBox="0 0 16 18" />
@@ -71,14 +70,14 @@ function DeckTogglePublicButton(props) {
         handleCancel={() => setShowConfirmation(false)}
         headerText={
           isPublished
-            ? `Remove "${props.deck.name}" from Public Deck Archive?`
-            : `Add "${props.deck.name}" to Public Deck Archive?`
+            ? `Remove "${deck.name}" from Public Deck Archive?`
+            : `Add "${deck.name}" to Public Deck Archive?`
         }
-        mainText={props.deck.public_child ? '' : ''} // TODO
+        mainText={deck.public_child ? '' : ''} // TODO
         buttonText={`${isPublished ? 'Remove' : 'Make'} Public`}
       />
     </>
   );
-}
+};
 
 export default DeckTogglePublicButton;

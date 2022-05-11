@@ -26,9 +26,9 @@ const DeckSelectMy = (props) => {
         if (diffDays > 90) {
           lastEdit = new Date(decks[i]['timestamp']).toISOString().slice(0, 10);
         } else if (diffDays > 30) {
-          lastEdit = `${Math.round(diffDays / 30)}m`;
+          lastEdit = `${Math.round(diffDays / 30)}mo`;
         } else if (diffDays > 5) {
-          lastEdit = `${Math.round(diffDays / 7)}w`;
+          lastEdit = `${Math.round(diffDays / 7)}wk`;
         } else if (diffDays >= 1) {
           lastEdit = `${diffDays}d`;
         }

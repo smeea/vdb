@@ -186,6 +186,7 @@ const Decks = (props) => {
   let isPublic;
   let isAuthor;
   let isBranches;
+  let isFrozen;
   let inventoryType;
   let missingCrypt;
   let missingLibrary;
@@ -195,6 +196,7 @@ const Decks = (props) => {
     missingLibrary = getMissingLibrary(deckRouter(activeDeck));
     isPublic = deckRouter(activeDeck).public_parent ? true : false;
     isAuthor = username && username === deckRouter(activeDeck).owner;
+    isFrozen = deckRouter(activeDeck).frozen;
     isBranches =
       deckRouter(activeDeck).master ||
       (deckRouter(activeDeck).branches &&
@@ -473,6 +475,7 @@ const Decks = (props) => {
                         deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
                         isPublic={isPublic}
+                        isFrozen={deckRouter(activeDeck).frozen}
                       />
                     </Col>
                     {isBranches && (
@@ -550,7 +553,7 @@ const Decks = (props) => {
                 <DeckCrypt
                   deckid={activeDeck.deckid}
                   cards={deckRouter(activeDeck).crypt}
-                  isAuthor={isAuthor}
+                  isAuthor={isAuthor && !isFrozen}
                   isPublic={isPublic}
                 />
               </Col>
@@ -559,7 +562,7 @@ const Decks = (props) => {
                   inDeckTab={true}
                   deckid={activeDeck.deckid}
                   cards={deckRouter(activeDeck).library}
-                  isAuthor={isAuthor}
+                  isAuthor={isAuthor && !isFrozen}
                   isPublic={isPublic}
                 />
               </Col>

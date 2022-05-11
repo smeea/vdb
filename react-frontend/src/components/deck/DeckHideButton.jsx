@@ -1,34 +1,30 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import LightbulbFill from 'assets/images/icons/lightbulb-fill.svg';
 import LightbulbOffFill from 'assets/images/icons/lightbulb-off-fill.svg';
 import { useApp } from 'context';
+import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckHideButton = (props) => {
+const DeckHideButton = ({ deckid }) => {
   const { decks, deckUpdate } = useApp();
+  const deck = decks[deckid];
 
   const handleClick = () => {
-    deckUpdate(props.deckid, 'hidden', !decks[props.deckid].hidden);
+    deckUpdate(deckid, 'hidden', !deck.hidden);
   };
 
   return (
-    <>
-      <Button
-        title="Toggle Show/Hide in Deck Selector"
-        variant={decks[props.deckid].hidden ? 'primary' : 'third'}
-        onClick={handleClick}
-      >
-        <div className="d-flex justify-content-center align-items-center">
-          <div>
-            {decks[props.deckid].hidden ? (
-              <LightbulbOffFill />
-            ) : (
-              <LightbulbFill />
-            )}
-          </div>
-        </div>
-      </Button>
-    </>
+    <ButtonIconed
+      variant={deck.hidden ? 'primary' : 'third'}
+      onClick={handleClick}
+      title={`${deck.hidden ? 'Hidden' : 'Shown'} in Deck Selector`}
+      icon={
+        deck.hidden ? (
+          <LightbulbOffFill width="16" height="23" viewBox="0 0 16 16" />
+        ) : (
+          <LightbulbFill width="16" height="23" viewBox="0 0 16 16" />
+        )
+      }
+    />
   );
 };
 

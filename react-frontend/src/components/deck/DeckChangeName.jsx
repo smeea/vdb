@@ -5,8 +5,9 @@ import TagFill from 'assets/images/icons/tag-fill.svg';
 import PeopleFill from 'assets/images/icons/people-fill.svg';
 import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { useApp } from 'context';
+import DeckFreezeButton from './DeckFreezeButton';
 
-function DeckChangeName(props) {
+const DeckChangeName = ({ deckid, name, isAuthor, isPublic }) => {
   const { deckUpdate, isMobile } = useApp();
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
@@ -16,7 +17,7 @@ function DeckChangeName(props) {
   };
 
   const deckChangeName = () => {
-    deckUpdate(props.deckid, 'name', state);
+    deckUpdate(deckid, 'name', state);
     setButtonState(true);
     setTimeout(() => {
       setButtonState(false);
@@ -29,14 +30,14 @@ function DeckChangeName(props) {
   };
 
   const handleOnBlur = () => {
-    if (state != props.name) {
+    if (state != name) {
       deckChangeName();
     }
   };
 
   useEffect(() => {
-    setState(props.name);
-  }, [props.name]);
+    setState(name);
+  }, [name]);
 
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
@@ -50,19 +51,20 @@ function DeckChangeName(props) {
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}
-          readOnly={!props.isAuthor}
+          readOnly={!isAuthor}
         />
-        {(props.isPublic || props.deckid.length != 32) && (
+        {(isPublic || deckid.length != 32) && (
           <InputGroup.Text
-            title={props.isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}
+            title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}
           >
             <div className="pe-2">
-              {props.isPublic ? <PeopleFill /> : <TrophyFill />}
+              {isPublic ? <PeopleFill /> : <TrophyFill />}
             </div>
-            {props.isPublic ? 'PDA' : 'TWD'}
+            {isPublic ? 'PDA' : 'TWD'}
           </InputGroup.Text>
         )}
-        {isMobile && props.isAuthor && (
+        {isAuthor && <DeckFreezeButton deckid={deckid} inName />}
+        {isMobile && isAuthor && (
           <Button variant={buttonState ? 'success' : 'primary'} type="submit">
             <Check2 />
           </Button>
@@ -70,6 +72,6 @@ function DeckChangeName(props) {
       </InputGroup>
     </Form>
   );
-}
+};
 
 export default DeckChangeName;

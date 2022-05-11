@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Form, Row, Col, FormControl, Button } from 'react-bootstrap';
+import {
+  Modal,
+  Form,
+  Row,
+  Col,
+  FormControl,
+  Button,
+  Stack,
+} from 'react-bootstrap';
 import Select from 'react-select';
 import EyeFill from 'assets/images/icons/eye-fill.svg';
 import Shuffle from 'assets/images/icons/shuffle.svg';
@@ -13,8 +21,8 @@ import {
   DeckSelectAdvModalTotal,
   DeckDeleteButton,
   DeckHideButton,
+  DeckFreezeButton,
   DeckBranchDeleteButton,
-  DeckProxyButton,
   DeckCopyUrlButton,
   DeckTogglePublicButton,
   DeckSelectSortForm,
@@ -361,25 +369,21 @@ const DeckSelectAdvModal = (props) => {
               />
             </td>
             <td className="buttons">
-              <div className="d-inline pe-1">
+              <Stack
+                className="justify-content-end pe-1"
+                direction="horizontal"
+                gap={1}
+              >
                 <DeckHideButton deckid={deck.deckid} />
-              </div>
-              <div className="d-inline pe-1">
+                <DeckFreezeButton deckid={deck.deckid} />
                 <DeckTogglePublicButton deck={deck} />
-              </div>
-              {isDesktop && (
-                <>
-                  <div className="d-inline pe-1">
+                {isDesktop && (
+                  <>
                     <DeckCopyUrlButton
                       noText={true}
                       isAuthor={true}
                       deck={deck}
                     />
-                  </div>
-                  <div className="d-inline pe-1">
-                    <DeckProxyButton noText={true} deck={deck} />
-                  </div>
-                  <div className="d-inline pe-1">
                     {revFilter &&
                     (deck.master ||
                       (deck.branches && deck.branches.length > 0)) ? (
@@ -387,9 +391,9 @@ const DeckSelectAdvModal = (props) => {
                     ) : (
                       <DeckDeleteButton noText={true} deck={deck} />
                     )}
-                  </div>
-                </>
-              )}
+                  </>
+                )}
+              </Stack>
             </td>
           </tr>
         )}
