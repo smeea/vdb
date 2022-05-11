@@ -34,9 +34,8 @@ function TwdResultLibraryByType(props) {
   });
 
   const LibraryTypes = [];
-  let resultTrClass = 'result-even';
 
-  for (const cardtype of cardtypeSortedFull) {
+  for (const [idx, cardtype] of cardtypeSortedFull.entries()) {
     if (libraryByType[cardtype] !== undefined) {
       const TypePopover = React.forwardRef(({ children, ...props }, ref) => {
         return (
@@ -48,12 +47,6 @@ function TwdResultLibraryByType(props) {
         );
       });
       TypePopover.displayName = 'TypePopover';
-
-      if (resultTrClass == 'result-even') {
-        resultTrClass = 'result-odd';
-      } else {
-        resultTrClass = 'result-even';
-      }
 
       const imgClass = 'type-image-results';
       const cardtypes = cardtype.split('/');
@@ -68,7 +61,7 @@ function TwdResultLibraryByType(props) {
       });
 
       LibraryTypes.push(
-        <tr key={cardtype} className={resultTrClass}>
+        <tr key={cardtype} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           <td className="type">{cardtypeImages}</td>
           <td className="name">
             <OverlayTrigger

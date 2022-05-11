@@ -30,7 +30,6 @@ const InventoryAddDeckModal = ({
   const [showDeck, setShowDeck] = useState(undefined);
   const [nameFilter, setNameFilter] = useState('');
   const [setFilter, setSetFilter] = useState('');
-  let resultTrClass;
 
   const handleChangeNameFilter = (event) => {
     setNameFilter(event.target.value);
@@ -68,13 +67,7 @@ const InventoryAddDeckModal = ({
     }
   }, [preconDecks, nameFilter, setFilter, sortMethod]);
 
-  const deckRows = sortedDecks.map((deck, index) => {
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
-
+  const deckRows = sortedDecks.map((deck, idx) => {
     let cryptInInventory;
     let libraryInInventory;
 
@@ -109,13 +102,12 @@ const InventoryAddDeckModal = ({
     });
 
     const inInventory = Math.min(cryptInInventory, libraryInInventory);
-
     const [set, precon] = deck.deckid.split(':');
     const clans = setsAndPrecons[set].precons[precon].clan.split('/');
 
-    const clanImages = clans.map((clan, index) => {
+    const clanImages = clans.map((clan, idx) => {
       return (
-        <div className="d-inline px-1" key={index}>
+        <div className="d-inline px-1" key={idx}>
           {clan === 'Bundle' ? (
             <div className="d-inline clan-image-results">
               <GiftFill />
@@ -129,7 +121,7 @@ const InventoryAddDeckModal = ({
 
     return (
       <React.Fragment key={deck.deckid}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {!isMobile && (
             <td className="clan">{clanImages.length > 0 && clanImages}</td>
           )}

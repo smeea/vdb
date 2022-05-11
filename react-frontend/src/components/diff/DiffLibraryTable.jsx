@@ -45,21 +45,13 @@ const DiffLibraryTable = ({
     setShowFloatingButtons,
   } = useApp();
 
-  let resultTrClass;
-
   const [modalDraw, setModalDraw] = useState(undefined);
 
-  const cardRows = cards.map((card) => {
+  const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
       handleModalCardOpen(card.c);
       setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     let DisciplineOrClan;
     if (card.c.Clan) {
@@ -121,7 +113,7 @@ const DiffLibraryTable = ({
 
     return (
       <React.Fragment key={card.c.Id}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {isAuthor && !isPublic ? (
             <>
               {inventoryMode && decks ? (

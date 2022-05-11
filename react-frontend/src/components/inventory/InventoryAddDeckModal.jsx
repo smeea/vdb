@@ -36,7 +36,6 @@ function InventoryAddDeckModal(props) {
   const [revFilter, setRevFilter] = useState(false);
   const [nameFilter, setNameFilter] = useState('');
   const [tagsFilter, setTagsFilter] = useState([]);
-  let resultTrClass;
 
   const handleChangeNameFilter = (event) => {
     setNameFilter(event.target.value);
@@ -93,13 +92,7 @@ function InventoryAddDeckModal(props) {
     }
   }, [decks, nameFilter, tagsFilter, revFilter, sortMethod]);
 
-  const deckRows = sortedDecks.map((deck, index) => {
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
-
+  const deckRows = sortedDecks.map((deck, idx) => {
     let cryptInInventory = null;
     let libraryInInventory = null;
 
@@ -170,7 +163,7 @@ function InventoryAddDeckModal(props) {
 
     return (
       <React.Fragment key={deck.deckid}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {!isMobile && (
             <td
               className="inventory"

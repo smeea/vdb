@@ -32,8 +32,6 @@ const ResultLibraryTable = ({ resultCards, library, placement }) => {
     setShowFloatingButtons,
   } = useApp();
 
-  let resultTrClass;
-
   const {
     currentModalCard,
     shouldShowModal,
@@ -47,17 +45,11 @@ const ResultLibraryTable = ({ resultCards, library, placement }) => {
     setShowFloatingButtons(true);
   };
 
-  const cardRows = resultCards.map((card, index) => {
+  const cardRows = resultCards.map((card, idx) => {
     const handleClick = () => {
-      handleModalCardOpen(index);
+      handleModalCardOpen(idx);
       setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     const inDeck = (library && library[card.Id] && library[card.Id].q) || 0;
 
@@ -76,7 +68,7 @@ const ResultLibraryTable = ({ resultCards, library, placement }) => {
 
     return (
       <React.Fragment key={card.Id}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {activeDeck.src === 'my' && addMode && (
             <td className="quantity-add pe-1">
               <ButtonAddCard

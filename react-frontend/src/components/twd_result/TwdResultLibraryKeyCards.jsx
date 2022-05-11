@@ -27,9 +27,6 @@ const TwdResultLibraryKeyCards = ({ library }) => {
   const libraryTotal = countCards(sortedLibrary);
 
   const keyCards = sortedLibrary.filter((card) => card.q >= 4);
-
-  let resultTrClass = 'result-even';
-
   keyCards.sort((a, b) => a.c[ASCII_NAME] - b.c[ASCII_NAME]);
 
   // Modal Card Controller
@@ -46,17 +43,11 @@ const TwdResultLibraryKeyCards = ({ library }) => {
     setShowFloatingButtons(true);
   };
 
-  const cardRows = keyCards.map((card, index) => {
+  const cardRows = keyCards.map((card, idx) => {
     const handleClick = () => {
-      handleModalCardOpen(index);
+      handleModalCardOpen(idx);
       setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
 
     let inInventory = 0;
     let hardUsedTotal = 0;
@@ -72,7 +63,7 @@ const TwdResultLibraryKeyCards = ({ library }) => {
     }
 
     return (
-      <tr key={card.c.Id} className={resultTrClass}>
+      <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
           <ConditionalOverlayTrigger
             overlay={<UsedPopover cardid={card.c.Id} />}

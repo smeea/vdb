@@ -36,7 +36,6 @@ const DeckProxyCryptTable = ({
     useApp();
 
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
-  let resultTrClass;
 
   let maxDisciplines = 0;
   cards.map((card) => {
@@ -46,17 +45,11 @@ const DeckProxyCryptTable = ({
     }
   });
 
-  const cardRows = cards.map((card) => {
+  const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
       handleModalCardOpen(card.c);
       setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     let inInventory = 0;
     let softUsedMax = 0;
@@ -100,7 +93,7 @@ const DeckProxyCryptTable = ({
 
     return (
       <React.Fragment key={card.c.Id}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           <td className="proxy-selector">
             <Form.Check
               className="px-1"

@@ -37,7 +37,6 @@ const ResultCryptTable = ({
     setShowFloatingButtons,
   } = useApp();
 
-  let resultTrClass;
   let maxDisciplines = 0;
   resultCards.map((card) => {
     const n = Object.keys(card.Disciplines).length;
@@ -60,23 +59,16 @@ const ResultCryptTable = ({
     setShowFloatingButtons(true);
   };
 
-  const cardRows = resultCards.map((card, index) => {
+  const cardRows = resultCards.map((card, idx) => {
     const handleClick = () => {
-      handleModalCardOpen(index);
+      handleModalCardOpen(idx);
       setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     const inDeck = (crypt && crypt[card.Id] && crypt[card.Id].q) || 0;
 
     let softUsedMax = 0;
     let hardUsedTotal = 0;
-
     let inInventory = 0;
 
     if (inventoryMode) {
@@ -90,7 +82,7 @@ const ResultCryptTable = ({
 
     return (
       <React.Fragment key={card.Id}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {(inRecommendation
             ? isAuthor
             : activeDeck.src === 'my' && addMode) && (

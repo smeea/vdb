@@ -23,8 +23,6 @@ const TwdResultCrypt = ({ crypt }) => {
     setShowFloatingButtons,
   } = useApp();
 
-  let resultTrClass = 'result-even';
-
   // Sort cards
   const SortByQuantity = (a, b) => b.q - a.q;
   const SortByCapacity = (a, b) => b.c.Capacity - a.c.Capacity;
@@ -78,17 +76,11 @@ const TwdResultCrypt = ({ crypt }) => {
     setShowFloatingButtons(true);
   };
 
-  const cardLines = sortedCards.map((card, index) => {
+  const cardLines = sortedCards.map((card, idx) => {
     const handleClick = () => {
-      handleModalCardOpen(index);
+      handleModalCardOpen(idx);
       setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
 
     let inInventory = 0;
     let hardUsedTotal = 0;
@@ -102,7 +94,7 @@ const TwdResultCrypt = ({ crypt }) => {
     }
 
     return (
-      <tr key={card.c.Id} className={resultTrClass}>
+      <tr key={card.c.Id} className={`result-${idx % 2 ? 'even' : 'odd'}`}>
         {inventoryMode ? (
           <ConditionalOverlayTrigger
             overlay={<UsedPopover cardid={card.c.Id} />}

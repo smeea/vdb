@@ -54,7 +54,6 @@ const DeckCryptTable = ({
   } = useApp();
 
   const ALIGN_DISCIPLINES_THRESHOLD = isMobile ? 13 : 20;
-  let resultTrClass;
   let deckInvType = null;
   if (inventoryMode && decks && deckid && decks[deckid]) {
     deckInvType = decks[deckid].inventory_type;
@@ -75,17 +74,11 @@ const DeckCryptTable = ({
     }
   });
 
-  const cardRows = cards.map((card) => {
+  const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
       handleModalCardOpen(card.c);
       setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     let cardInvType = null;
     let inInventory = 0;
@@ -114,7 +107,7 @@ const DeckCryptTable = ({
 
     return (
       <React.Fragment key={card.c.Id}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {isAuthor && !isPublic ? (
             <>
               {inventoryMode && decks ? (

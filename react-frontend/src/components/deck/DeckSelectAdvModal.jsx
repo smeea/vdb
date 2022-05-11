@@ -53,8 +53,6 @@ const DeckSelectAdvModal = (props) => {
   const [tagsFilter, setTagsFilter] = useState([]);
   const [clanFilter, setClanFilter] = useState('any');
 
-  let resultTrClass;
-
   const handleChangeNameFilter = (event) => {
     setNameFilter(event.target.value);
   };
@@ -99,7 +97,7 @@ const DeckSelectAdvModal = (props) => {
   };
 
   const allDecksClans = [];
-  Object.values(decks).map((deck, index) => {
+  Object.values(decks).map((deck) => {
     const clans = {};
     let cryptTotal = 0;
 
@@ -136,7 +134,8 @@ const DeckSelectAdvModal = (props) => {
       label: 'NONE',
     },
   ];
-  allDecksClans.sort().forEach((i, index) => {
+
+  allDecksClans.sort().forEach((i) => {
     clanOptions.push({
       value: i.toLowerCase(),
       name: 'clan',
@@ -217,13 +216,7 @@ const DeckSelectAdvModal = (props) => {
     }
   }, [decks, clanFilter, nameFilter, tagsFilter, revFilter, sortMethod]);
 
-  const deckRows = sortedDecks.map((deck, index) => {
-    if (resultTrClass == 'result-even') {
-      resultTrClass = 'result-odd';
-    } else {
-      resultTrClass = 'result-even';
-    }
-
+  const deckRows = sortedDecks.map((deck, idx) => {
     const clans = {};
     let cryptTotal = 0;
 
@@ -262,7 +255,7 @@ const DeckSelectAdvModal = (props) => {
     return (
       <React.Fragment key={deck.deckid}>
         {decks[deck.deckid] && (
-          <tr className={resultTrClass}>
+          <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
             {inventoryMode && !isMobile && (
               <td
                 className="inventory"

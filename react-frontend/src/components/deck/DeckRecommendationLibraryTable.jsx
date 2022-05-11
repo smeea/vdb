@@ -22,19 +22,12 @@ const DeckRecommendationLibraryTable = ({
   placement,
 }) => {
   const { nativeLibrary, isMobile, setShowFloatingButtons } = useApp();
-  let resultTrClass;
 
-  const cardRows = cards.map((card, index) => {
+  const cardRows = cards.map((card, idx) => {
     const handleClick = () => {
-      handleModalCardOpen(cards[index]);
+      handleModalCardOpen(cards[idx]);
       setShowFloatingButtons(false);
     };
-
-    if (resultTrClass == 'result-odd') {
-      resultTrClass = 'result-even';
-    } else {
-      resultTrClass = 'result-odd';
-    }
 
     const inDeck = (library && library[card.Id] && library[card.Id].q) || 0;
 
@@ -46,7 +39,7 @@ const DeckRecommendationLibraryTable = ({
 
     return (
       <React.Fragment key={card.Id}>
-        <tr className={resultTrClass}>
+        <tr className={`result-${idx % 2 ? 'even' : 'odd'}`}>
           {isAuthor && activeDeck.deckid && (
             <td className="quantity-add pe-1">
               <ButtonAddCard
