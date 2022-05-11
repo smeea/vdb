@@ -1,7 +1,6 @@
 # FIX
 - Merge anonymous import with import
 - First printed in for Promo
-- CopyURL for deck-in-url
 
 # FEATURES
 - Export all in xlsx and csv

@@ -40,7 +40,7 @@ const DeckQrModal = ({ show, setShow, deck }) => {
           </Button>
         </div>
       </Modal.Header>
-      <Modal.Body className="d-flex justify-content-center p-2">
+      <Modal.Body className="d-flex justify-content-center p-2 p-md-4">
         <DeckQR />
       </Modal.Body>
     </Modal>

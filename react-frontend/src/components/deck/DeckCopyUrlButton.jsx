@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { ButtonGroup, Dropdown, DropdownButton } from 'react-bootstrap';
 import Link45Deg from 'assets/images/icons/link-45deg.svg';
 import { useApp } from 'context';
-import ButtonIconed from 'components/ButtonIconed.jsx';
 
 const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
   const { setShowMenuButtons, setShowFloatingButtons } = useApp();
@@ -11,7 +10,7 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
   const handleStandardButton = () => {
     const url = `${process.env.ROOT_URL}decks?id=${deck.deckid}`;
 
-    navigator.clipboard.writeText(deckUrl);
+    navigator.clipboard.writeText(url);
     setState(true);
     setTimeout(() => {
       setState(false);
@@ -67,8 +66,8 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
       .then((response) => response.json())
       .then((data) => {
         if (data.error === undefined) {
-          const deckUrl = `${process.env.ROOT_URL}decks?id=${data.deckid}`;
-          navigator.clipboard.writeText(deckUrl);
+          const url = `${process.env.ROOT_URL}decks?id=${data.deckid}`;
+          navigator.clipboard.writeText(url);
         }
       })
       .then(() => {
@@ -83,36 +82,46 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
 
   const ButtonOptions = (
     <>
-      <Dropdown.Item
-        onClick={handleStandardButton}
-        title="Copy URL (will follow deck changes, if any)"
-      >
-        Standard URL
-      </Dropdown.Item>
-      <Dropdown.Item
-        onClick={handleStandardQrButton}
-        title="Create QR with Standard URL (will follow deck changes, if any)"
-      >
-        Standard URL - QR
-      </Dropdown.Item>
-      <Dropdown.Item
-        onClick={handleDeckInUrlButton}
-        title="Copy long URL containing full deck info (will not follow deck changes)"
-      >
-        Deck-in-URL
-      </Dropdown.Item>
-      <Dropdown.Item
-        onClick={handleDeckInQrButton}
-        title="Create QR with long URL containing full deck info (will not follow deck changes)"
-      >
-        Deck-in-QR
-      </Dropdown.Item>
-      <Dropdown.Item
-        onClick={handleSnapshotButton}
-        title="Copy URL to snapshot of the deck (will not follow deck changes)"
-      >
-        Snapshot URL
-      </Dropdown.Item>
+      {deck.deckid !== 'deckInUrl' && (
+        <>
+          <Dropdown.Item
+            onClick={handleStandardButton}
+            title="Copy URL (will follow deck changes, if any)"
+          >
+            Standard URL
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={handleStandardQrButton}
+            title="Create QR with Standard URL (will follow deck changes, if any)"
+          >
+            Standard URL - QR
+          </Dropdown.Item>
+        </>
+      )}
+      {(deck.deckid.length === 32 || deck.deckid === 'deckInUrl') && (
+        <>
+          <Dropdown.Item
+            onClick={handleDeckInUrlButton}
+            title="Copy long URL containing full deck info (will not follow deck changes)"
+          >
+            Deck-in-URL
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={handleDeckInQrButton}
+            title="Create QR with long URL containing full deck info (will not follow deck changes)"
+          >
+            Deck-in-QR
+          </Dropdown.Item>
+        </>
+      )}
+      {deck.deckid.length === 32 && (
+        <Dropdown.Item
+          onClick={handleSnapshotButton}
+          title="Copy URL to snapshot of the deck (will not follow deck changes)"
+        >
+          Snapshot URL
+        </Dropdown.Item>
+      )}
     </>
   );
 
@@ -149,37 +158,27 @@ const DeckCopyUrlButton = ({ deck, noText, setShowQr }) => {
 
   return (
     <>
-      {deck.deckid.length == 32 ? (
-        <DropdownButton
-          as={ButtonGroup}
-          variant={state ? 'success' : noText ? 'primary' : 'secondary'}
-          title={
-            <div
-              title="Copy URL"
-              className="d-flex justify-content-center align-items-center"
-            >
-              <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
-                <Link45Deg
-                  width={noText ? '18' : '21'}
-                  height={noText ? '23' : '21'}
-                  viewBox="0 0 15 15"
-                />
-              </div>
-              {!noText && (state ? 'Copied' : 'Copy URL')}
+      <DropdownButton
+        as={ButtonGroup}
+        variant={state ? 'success' : noText ? 'primary' : 'secondary'}
+        title={
+          <div
+            title="Copy URL"
+            className="d-flex justify-content-center align-items-center"
+          >
+            <div className={`d-flex ${noText ? '' : 'pe-2'}`}>
+              <Link45Deg
+                width={noText ? '18' : '21'}
+                height={noText ? '23' : '21'}
+                viewBox="0 0 15 15"
+              />
             </div>
-          }
-        >
-          {ButtonOptions}
-        </DropdownButton>
-      ) : (
-        <ButtonIconed
-          variant={state ? 'success' : 'secondary'}
-          onClick={handleStandardButton}
-          title="Copy Standard Deck URL (will follow future deck changes)"
-          icon={<Link45Deg width="19" height="19" viewBox="0 0 15 15" />}
-          text={state ? 'Copied' : 'Copy URL'}
-        />
-      )}
+            {!noText && (state ? 'Copied' : 'Copy URL')}
+          </div>
+        }
+      >
+        {ButtonOptions}
+      </DropdownButton>
     </>
   );
 };
