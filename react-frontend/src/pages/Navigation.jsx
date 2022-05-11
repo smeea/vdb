@@ -86,12 +86,10 @@ function Navigation(props) {
           )}
           {username &&
             !isMobile &&
-            (location.pathname == '/decks' ||
-              location.pathname == '/crypt' ||
-              location.pathname == '/diff' ||
-              location.pathname == '/library' ||
-              location.pathname == '/pda' ||
-              location.pathname == '/twd') && (
+            (location.pathname !== '/account' ||
+              location.pathname !== '/about' ||
+              location.pathname !== '/changelog' ||
+              location.pathname !== '/inventory') && (
               <div
                 className="d-flex align-items-center px-3"
                 onClick={() => {

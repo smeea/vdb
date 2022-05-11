@@ -18,6 +18,7 @@ const ResultLayoutText = ({
   handleClose,
   setImageSet,
   forceInventoryMode,
+  inCards,
 }) => {
   const { isMobile } = useApp();
   const { cryptCompare, setCryptCompare, libraryCompare, setLibraryCompare } =
@@ -81,7 +82,7 @@ const ResultLayoutText = ({
             }
           />
         </Stack>
-        {!isMobile && (
+        {!isMobile && !inCards && (
           <ButtonIconed
             variant="primary"
             onClick={handleClose}
