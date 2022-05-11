@@ -11,7 +11,7 @@ const InventoryCardQuantity = ({
 }) => {
   const { inventoryCardChange, isMobile } = useApp();
   const [manual, setManual] = useState();
-  const [state, setState] = useState('');
+  const [state, setState] = useState(q);
 
   useEffect(() => {
     setState(q ? q : '');
@@ -32,8 +32,8 @@ const InventoryCardQuantity = ({
   };
 
   const handleQuantityChange = (diff) => {
-    if (state + diff >= 0) setState(state + diff);
-    inventoryCardChange(cardid, state + diff);
+    if (diff + state >= 0) setState(diff + state);
+    inventoryCardChange(cardid, parseInt(diff + state));
   };
 
   return (
