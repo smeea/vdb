@@ -5,7 +5,11 @@ const ButtonIconed = ({ onClick, variant, title, text, icon }) => {
   return (
     <Button variant={variant} onClick={onClick} title={title}>
       <div className="d-flex justify-content-center align-items-center">
-        <div className={`d-flex ${text !== undefined ? 'pe-2' : ''}`}>
+        <div
+          className={`d-flex ${
+            text === undefined || text === null ? '' : 'pe-2'
+          }`}
+        >
           {icon}
         </div>
         {text}
