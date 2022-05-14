@@ -1,4 +1,4 @@
-export const addtoStateByType = (
+export const addToStateByType = (
   setInventory,
   cardBase,
   cardIds,

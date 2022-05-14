@@ -21,39 +21,37 @@ const Cards = ({ lastDeckId }) => {
     isMobile,
   } = useApp();
 
-  const [cardid, setCardid] = useState(undefined);
   const [card, setCard] = useState(undefined);
   const [imageSet, setImageSet] = useState(null);
   const navigate = useNavigate();
 
   const randomCrypt = () => {
-    const id =
+    const cardid =
       Math.floor(
         Math.random() * Math.floor(Object.keys(cryptCardBase).length)
       ) + 200000;
-    setCardid(id);
+    setCard(cryptCardBase[cardid]);
   };
 
   const randomLibrary = () => {
-    const id =
+    const cardid =
       Math.floor(
         Math.random() * Math.floor(Object.keys(libraryCardBase).length)
       ) + 100000;
-    setCardid(id);
+    setCard(libraryCardBase[cardid]);
   };
 
   useEffect(() => {
-    if (!cardid) setCardid(params.id);
-  }, [params.id]);
-
-  useEffect(() => {
-    if (cardid) {
-      if (params.id !== cardid) navigate(`/cards/${cardid}`);
-      cardid > 200000
-        ? setCard(cryptCardBase[cardid])
-        : setCard(libraryCardBase[cardid]);
+    if (card) {
+      if (params.id !== card.Id) navigate(`/cards/${card.Id}`);
+    } else {
+      if (params.id > 200000) {
+        setCard(cryptCardBase[params.id]);
+      } else {
+        setCard(libraryCardBase[params.id]);
+      }
     }
-  }, [cardid]);
+  }, [card]);
 
   return (
     <Container className="cards-container px-0 p-md-0">
@@ -62,7 +60,10 @@ const Cards = ({ lastDeckId }) => {
           <>
             <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
               <Col md={8} className="px-0">
-                <QuickSelect setCardid={setCardid} />
+                <QuickSelect
+                  selectedCardid={card && card.Id}
+                  setCard={setCard}
+                />
                 <div
                   onClick={() => randomCrypt()}
                   className="d-flex float-right-top float-random align-items-center justify-content-center"
@@ -116,7 +117,10 @@ const Cards = ({ lastDeckId }) => {
               {cryptCardBase && libraryCardBase && (
                 <Row className="align-content-center justify-content-center py-3">
                   <Col className="px-0">
-                    <QuickSelect setCardid={setCardid} />
+                    <QuickSelect
+                      selectedCardid={card && card.Id}
+                      setCard={setCard}
+                    />
                   </Col>
                 </Row>
               )}

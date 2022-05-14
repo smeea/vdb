@@ -1,34 +1,30 @@
-import React, { useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useRef } from 'react';
 import AsyncSelect from 'react-select/async';
 import { useApp } from 'context';
 import { SelectLabelCrypt, SelectLabelLibrary } from 'components';
 
-const QuickSelect = ({ selectedCard, setCardid, inInventory }) => {
-  const { isMobile } = useApp();
-
-  const params = useParams();
-  const handleChange = (option) => {
-    setCardid(option.value);
-  };
+const QuickSelect = ({ selectedCardid, inBadImport, setCard }) => {
+  const { isMobile, cryptCardBase, libraryCardBase } = useApp();
   const ref = useRef(null);
+
+  const handleChange = (event) => {
+    setCard(
+      event.value > 200000
+        ? cryptCardBase[event.value]
+        : libraryCardBase[event.value]
+    );
+  };
 
   const getOptionLabel = (option) => {
     const cardid = option.value;
 
-    return (
-      <>
-        {cardid ? (
-          cardid > 200000 ? (
-            <SelectLabelCrypt cardid={cardid} inInventory={inInventory} />
-          ) : (
-            <SelectLabelLibrary cardid={cardid} inInventory={inInventory} />
-          )
-        ) : (
-          <div className="gray">Enter Card Name</div>
-        )}
-      </>
-    );
+    if (cardid > 200000) {
+      return <SelectLabelCrypt cardid={cardid} />;
+    } else if (cardid > 100000) {
+      return <SelectLabelLibrary cardid={cardid} />;
+    } else {
+      return <div className="gray">Enter Card Name</div>;
+    }
   };
 
   const loadOptions = async (inputValue) => {
@@ -47,26 +43,22 @@ const QuickSelect = ({ selectedCard, setCardid, inInventory }) => {
     if (inputValue.length > 2) {
       const response = await fetch(url, options);
       const json = await response.json();
-      return json.map((card) => ({
-        value: card,
+      return json.map((c) => ({
+        value: c,
       }));
     } else {
       return null;
     }
   };
 
-  useEffect(() => {
-    if (isMobile && !params.id) ref.current.focus();
-  }, []);
-
   const CardSelect = React.forwardRef((props, ref) => {
     return (
       <AsyncSelect
         classNamePrefix="react-select"
+        autoFocus={!isMobile || !selectedCardid}
         cacheOptions
-        autoFocus={!isMobile}
         loadOptions={loadOptions}
-        value={{ value: selectedCard }}
+        value={{ value: inBadImport ? selectedCardid : null }}
         getOptionLabel={getOptionLabel}
         onChange={handleChange}
         ref={ref}

@@ -623,14 +623,14 @@ export const AppProvider = (props) => {
   };
 
   const inventoryAddToState = (cards) => {
-    inventoryServices.addtoStateByType(
+    inventoryServices.addToStateByType(
       setInventoryCrypt,
       cryptCardBase,
       Object.keys(cards).filter((cardid) => cardid > 200000),
       cards
     );
 
-    inventoryServices.addtoStateByType(
+    inventoryServices.addToStateByType(
       setInventoryLibrary,
       libraryCardBase,
       Object.keys(cards).filter((cardid) => cardid < 200000),
