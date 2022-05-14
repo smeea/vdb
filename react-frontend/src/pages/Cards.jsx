@@ -54,33 +54,13 @@ const Cards = ({ lastDeckId }) => {
   }, [card]);
 
   return (
-    <Container className="cards-container px-0 p-md-0">
+    <Container className="cards-container px-0 pb-0 p-md-0">
       <>
         {isMobile ? (
           <>
-            <Row className="align-content-center justify-content-center mx-0 px-1 py-1">
-              <Col md={8} className="px-0">
-                <QuickSelect
-                  selectedCardid={card && card.Id}
-                  setCard={setCard}
-                />
-                <div
-                  onClick={() => randomCrypt()}
-                  className="d-flex float-right-top float-random align-items-center justify-content-center"
-                >
-                  <Dice3 viewBox="0 0 16 16" className="pe-1" /> C
-                </div>
-                <div
-                  onClick={() => randomLibrary()}
-                  className="d-flex float-right-middle float-random align-items-center justify-content-center"
-                >
-                  <Dice3 viewBox="0 0 16 16" className="pe-1" /> L
-                </div>
-              </Col>
-            </Row>
             {card && (
               <>
-                <Row className="m-0 p-0">
+                <Row className="m-0 mb-3 mb-md-0 p-0">
                   <Col className="m-0 p-0">
                     {showImage ? (
                       <CardImage
@@ -110,6 +90,26 @@ const Cards = ({ lastDeckId }) => {
                 </div>
               </>
             )}
+            <Row className="above-nav-bottom mx-0 px-1 py-1">
+              <Col md={8} className="px-0">
+                <QuickSelect
+                  selectedCardid={card && card.Id}
+                  setCard={setCard}
+                />
+              </Col>
+            </Row>
+            <div
+              onClick={() => randomCrypt()}
+              className="d-flex float-right-top float-random align-items-center justify-content-center"
+            >
+              <Dice3 viewBox="0 0 16 16" className="pe-1" /> C
+            </div>
+            <div
+              onClick={() => randomLibrary()}
+              className="d-flex float-right-middle float-random align-items-center justify-content-center"
+            >
+              <Dice3 viewBox="0 0 16 16" className="pe-1" /> L
+            </div>
           </>
         ) : (
           <Row>
@@ -125,7 +125,7 @@ const Cards = ({ lastDeckId }) => {
                 </Row>
               )}
               {card && (
-                <Row className="align-content-center justify-content-center my-3 bordered">
+                <Row className="align-content-center justify-content-center my-2 bordered">
                   <Col md={6} className="ps-0">
                     <CardImage
                       className="full-width"
