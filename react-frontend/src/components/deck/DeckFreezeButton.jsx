@@ -16,7 +16,14 @@ const DeckFreezeButton = ({ deckid, inName }) => {
       variant={deck.frozen ? 'third' : inName ? 'secondary' : 'primary'}
       onClick={handleClick}
       title={`${deck.frozen ? 'Disabled' : 'Enabled'} Crypt/Library Edition`}
-      icon={<Snow width="16" height="23" viewBox="0 0 16 16" />}
+      icon={
+        <Snow
+          className={deck.frozen ? '' : 'gray'}
+          width="16"
+          height="23"
+          viewBox="0 0 16 16"
+        />
+      }
     />
   );
 };

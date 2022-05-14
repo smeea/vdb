@@ -26,10 +26,18 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
   const className = 'search-crypt-table';
   const navigate = useNavigate();
 
+  const sortMethods = {
+    Name: 'N',
+    Clan: 'Cl',
+    Group: 'G',
+    'Capacity - Min to Max': 'C↑',
+    'Capacity - Max to Min': 'C↓',
+  };
+
   const [showInfo, setShowInfo] = useState(false);
   const toggleShowInfo = () => setShowInfo(!showInfo);
 
-  const handleChange = (method) => {
+  const setSortMethod = (method) => {
     changeCryptSearchSort(method);
     setSortedCards(() => resultCryptSort(cards, method));
   };
@@ -59,7 +67,9 @@ const ResultCrypt = ({ cards, setCards, crypt, activeDeck, inCompare }) => {
             inCompare={inCompare}
             cards={cards}
             toggleShowInfo={toggleShowInfo}
-            handleChange={handleChange}
+            sortMethods={sortMethods}
+            sortMethod={cryptSearchSort}
+            setSortMethod={setSortMethod}
           />
           {showInfo && (
             <div className="info-message px-2">

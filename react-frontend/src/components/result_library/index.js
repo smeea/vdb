@@ -4,7 +4,6 @@ export { default as ResultLibraryPopover } from './ResultLibraryPopover.jsx';
 export { default as ResultLibraryTrifle } from './ResultLibraryTrifle.jsx';
 export { default as ResultLibraryBurn } from './ResultLibraryBurn.jsx';
 export { default as ResultLibraryLayoutText } from './ResultLibraryLayoutText.jsx';
-export { default as ResultLibrarySortForm } from './ResultLibrarySortForm.jsx';
 export { default as ResultLibraryType } from './ResultLibraryType.jsx';
 export { default as ResultLibraryClan } from './ResultLibraryClan.jsx';
 export { default as ResultLibraryTable } from './ResultLibraryTable.jsx';

@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Stack } from 'react-bootstrap';
-import { InventoryLibraryTable, InventoryFilterForm } from 'components';
+import {
+  InventoryLibraryTable,
+  InventoryFilterForm,
+  SortButton,
+} from 'components';
 import { useApp } from 'context';
 import { cardtypeSorted } from 'utils/constants';
 import disciplinesList from 'assets/data/disciplinesList.json';
@@ -17,6 +21,15 @@ const InventoryLibrary = ({
   setDiscipline,
 }) => {
   const { usedLibraryCards, libraryCardBase } = useApp();
+  const [sortMethod, setSortMethod] = useState('Name');
+  const sortMethods = {
+    Name: 'N',
+    Quantity: 'Q',
+    Type: 'T',
+    'Clan / Discipline': 'C/D',
+    'Cost - Min to Max': 'C↑',
+    'Cost - Max to Min': 'C↓',
+  };
 
   const libraryByType = {};
   const libraryByTypeTotal = {};
@@ -360,9 +373,7 @@ const InventoryLibrary = ({
                   target="discipline"
                 />
               </Stack>
-            </div>
-            <div className="gray px-1">
-              <b>
+              <div className="d-flex justify-content-end gray bold px-1">
                 {missingLibraryByTypeTotal[type] ? (
                   <>
                     {missingLibraryByTypeTotal[type]} (
@@ -370,12 +381,18 @@ const InventoryLibrary = ({
                     miss
                   </>
                 ) : null}
-              </b>
+              </div>
             </div>
+            <SortButton
+              sortMethods={sortMethods}
+              sortMethod={sortMethod}
+              setSortMethod={setSortMethod}
+            />
           </div>
         </>
       )}
       <InventoryLibraryTable
+        sortMethod={sortMethod}
         compact={compact}
         withCompact={withCompact}
         cards={

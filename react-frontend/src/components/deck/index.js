@@ -12,7 +12,6 @@ export { default as DeckCopyUrlButton } from './DeckCopyUrlButton.jsx';
 export { default as DeckCrypt } from './DeckCrypt.jsx';
 export { default as DeckCryptDisciplines } from './DeckCryptDisciplines.jsx';
 export { default as DeckCryptHeader } from './DeckCryptHeader.jsx';
-export { default as DeckCryptSortButton } from './DeckCryptSortButton.jsx';
 export { default as DeckCryptTable } from './DeckCryptTable.jsx';
 export { default as DeckCryptTotalInfo } from './DeckCryptTotalInfo.jsx';
 export { default as DeckDeleteButton } from './DeckDeleteButton.jsx';

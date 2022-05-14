@@ -19,11 +19,17 @@ import {
   ConditionalOverlayTrigger,
 } from 'components';
 import { POOL_COST, BLOOD_COST, CARD_TEXT, BURN_OPTION } from 'utils/constants';
-import { deckSort, getHardTotal, getSoftMax } from 'utils';
+import { inventoryLibrarySort, getHardTotal, getSoftMax } from 'utils';
 import { useApp } from 'context';
 import { useModalCardController } from 'hooks';
 
-const InventoryLibraryTable = ({ cards, placement, compact, withCompact }) => {
+const InventoryLibraryTable = ({
+  cards,
+  placement,
+  sortMethod,
+  compact,
+  withCompact,
+}) => {
   const {
     usedLibraryCards,
     nativeLibrary,
@@ -46,7 +52,7 @@ const InventoryLibraryTable = ({ cards, placement, compact, withCompact }) => {
     setShowFloatingButtons(true);
   };
 
-  const sortedCards = deckSort(cards, 'Name');
+  const sortedCards = inventoryLibrarySort(cards, sortMethod);
 
   const cardRows = sortedCards.map((cardInfo, index) => {
     const handleClick = () => {

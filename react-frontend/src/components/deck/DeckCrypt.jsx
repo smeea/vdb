@@ -22,11 +22,20 @@ const DeckCrypt = ({
 }) => {
   const {
     cryptDeckSort,
+    changeCryptDeckSort,
     changeTimer,
     isMobile,
     showFloatingButtons,
     setShowFloatingButtons,
   } = useApp();
+
+  const sortMethods = {
+    Quantity: 'Q',
+    Capacity: 'C',
+    Name: 'N',
+    Group: 'G',
+    Clan: 'Cl',
+  };
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -81,6 +90,9 @@ const DeckCrypt = ({
         hasBanned={hasBanned}
         isAuthor={isAuthor}
         isPublic={isPublic}
+        sortMethods={sortMethods}
+        sortMethod={cryptDeckSort}
+        setSortMethod={changeCryptDeckSort}
       />
       {showInfo && (
         <div className="info-message px-2">

@@ -1,5 +1,9 @@
-import React from 'react';
-import { InventoryCryptTable, InventoryFilterForm } from 'components';
+import React, { useState } from 'react';
+import {
+  InventoryCryptTable,
+  InventoryFilterForm,
+  SortButton,
+} from 'components';
 import clansList from '~/src/assets/data/clansList.json';
 import { useApp } from 'context';
 
@@ -12,6 +16,15 @@ const InventoryCrypt = ({
   setClan,
 }) => {
   const { usedCryptCards, cryptCardBase } = useApp();
+  const [sortMethod, setSortMethod] = useState('Name');
+  const sortMethods = {
+    Name: 'N',
+    Quantity: 'Q',
+    Clan: 'Cl',
+    Group: 'G',
+    'Capacity - Min to Max': 'C↑',
+    'Capacity - Max to Min': 'C↓',
+  };
 
   const cryptByClan = {};
   const cryptByClanTotal = {};
@@ -176,20 +189,24 @@ const InventoryCrypt = ({
               byUnique={cryptByClanUnique}
               target="crypt"
             />
-          </div>
-          <div className="d-inline gray px-1">
-            <b>
+            <div className="d-flex justify-content-end bold gray px-1">
               {missingCryptByClanTotal[clan] ? (
                 <>
                   {missingCryptByClanTotal[clan]} (
                   {Object.values(missingCryptByClan[clan]).length} uniq) miss
                 </>
               ) : null}
-            </b>
+            </div>
           </div>
+          <SortButton
+            sortMethods={sortMethods}
+            sortMethod={sortMethod}
+            setSortMethod={setSortMethod}
+          />
         </div>
       )}
       <InventoryCryptTable
+        sortMethod={sortMethod}
         compact={compact}
         withCompact={withCompact}
         cards={

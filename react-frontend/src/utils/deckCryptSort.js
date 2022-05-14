@@ -1,4 +1,4 @@
-const deckSort = (cards, sortMethod) => {
+const deckCryptSort = (cards, sortMethod) => {
   const byName = (a, b) => {
     if (a.c['ASCII Name'] < b.c['ASCII Name']) {
       return -1;
@@ -20,7 +20,7 @@ const deckSort = (cards, sortMethod) => {
   };
 
   const byCapacity = (a, b) => {
-    return b.c.Capacity - a.c.Capacity;
+    return b.c['Capacity'] - a.c['Capacity'];
   };
 
   const byQuantity = (a, b) => {
@@ -28,7 +28,7 @@ const deckSort = (cards, sortMethod) => {
   };
 
   const byGroup = (a, b) => {
-    return a.c.Group - b.c.Group;
+    return a.c['Group'] - b.c['Group'];
   };
 
   if (cards) {
@@ -51,4 +51,4 @@ const deckSort = (cards, sortMethod) => {
   }
 };
 
-export default deckSort;
+export default deckCryptSort;

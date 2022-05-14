@@ -1,16 +1,11 @@
 import React from 'react';
 import { Button, Dropdown } from 'react-bootstrap';
 import SortDown from 'assets/images/icons/sort-down.svg';
-import { useApp } from 'context';
 
-function DeckCryptSortButton(props) {
-  const { cryptDeckSort, changeCryptDeckSort } = useApp();
-
-  const sortMethods = ['Quantity', 'Capacity', 'Name', 'Group', 'Clan'];
-
-  const Options = sortMethods.map((i, index) => {
+const SortButton = ({ sortMethod, setSortMethod, sortMethods }) => {
+  const Options = Object.keys(sortMethods).map((i, index) => {
     return (
-      <Dropdown.Item key={index} href="" onClick={() => changeCryptDeckSort(i)}>
+      <Dropdown.Item key={index} href="" onClick={() => setSortMethod(i)}>
         Sort by {i}
       </Dropdown.Item>
     );
@@ -23,12 +18,12 @@ function DeckCryptSortButton(props) {
           <div className="pe-1">
             <SortDown />
           </div>
-          {cryptDeckSort === 'Clan' ? 'Cl' : cryptDeckSort.substring(0, 1)}
+          {sortMethods[sortMethod]}
         </div>
       </Dropdown.Toggle>
       <Dropdown.Menu>{Options}</Dropdown.Menu>
     </Dropdown>
   );
-}
+};
 
-export default DeckCryptSortButton;
+export default SortButton;

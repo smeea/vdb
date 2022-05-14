@@ -27,6 +27,7 @@ export { default as ButtonAddCard } from 'components/ButtonAddCard.jsx';
 export { default as ButtonIconed } from 'components/ButtonIconed.jsx';
 export { default as ModalConfirmation } from 'components/ModalConfirmation.jsx';
 export { default as QuickSelect } from 'components/QuickSelect.jsx';
+export { default as SortButton } from 'components/SortButton.jsx';
 export { default as ButtonCardCopyUrl } from 'components/ButtonCardCopyUrl.jsx';
 export { default as ModalTooltip } from 'components/ModalTooltip.jsx';
 export { default as SelectLabelCrypt } from 'components/SelectLabelCrypt.jsx';

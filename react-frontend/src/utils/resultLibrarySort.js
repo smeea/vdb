@@ -1,7 +1,7 @@
 import { cardtypeSortedFull } from 'utils/constants';
 import { getCardProperty } from 'utils';
 
-function resultLibrarySort(cards, sortMethod) {
+const resultLibrarySort = (cards, sortMethod) => {
   const byName = (a, b) => {
     if (a['ASCII Name'] < b['ASCII Name']) {
       return -1;
@@ -79,7 +79,7 @@ function resultLibrarySort(cards, sortMethod) {
     switch (sortMethod) {
       case 'Name':
         return cards.sort(byName);
-      case 'Clan/Discipline':
+      case 'Clan / Discipline':
         return cards.sort(byName).sort(byType).sort(byDiscipline).sort(byClan);
       case 'Type':
         return cards.sort(byName).sort(byDiscipline).sort(byClan).sort(byType);
@@ -109,6 +109,6 @@ function resultLibrarySort(cards, sortMethod) {
   } else {
     return null;
   }
-}
+};
 
 export default resultLibrarySort;

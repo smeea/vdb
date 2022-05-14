@@ -1,10 +1,16 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
-import { ResultLibraryTypeImage, ResultLibrarySortForm } from 'components';
+import { ResultLibraryTypeImage, SortButton } from 'components';
 import { useSearchResults } from 'context';
 
-const ResultLibraryTotal = ({ cards, handleChange, inCompare }) => {
+const ResultLibraryTotal = ({
+  cards,
+  sortMethods,
+  sortMethod,
+  setSortMethod,
+  inCompare,
+}) => {
   const { setLibraryCompare } = useSearchResults();
 
   const byTypes = {};
@@ -39,7 +45,11 @@ const ResultLibraryTotal = ({ cards, handleChange, inCompare }) => {
       </div>
       <div>{totalOutput}</div>
       <div className={inCompare ? 'd-flex' : ''}>
-        <ResultLibrarySortForm onChange={handleChange} />
+        <SortButton
+          sortMethods={sortMethods}
+          sortMethod={sortMethod}
+          setSortMethod={setSortMethod}
+        />
         {inCompare && (
           <div className="ms-1">
             <Button

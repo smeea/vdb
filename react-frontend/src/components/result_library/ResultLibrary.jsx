@@ -21,7 +21,15 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
   const [sortedCards, setSortedCards] = useState([]);
   const navigate = useNavigate();
 
-  const handleChange = (method) => {
+  const sortMethods = {
+    Name: 'N',
+    'Clan / Discipline': 'C/D',
+    Type: 'T',
+    'Cost - Min to Max': 'C↑',
+    'Cost - Max to Min': 'C↓',
+  };
+
+  const setSortMethod = (method) => {
     changeLibrarySearchSort(method);
     setSortedCards(() => resultLibrarySort(cards, method));
   };
@@ -36,7 +44,7 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
     if (cards) {
       setSortedCards(() => resultLibrarySort(cards, librarySearchSort));
     }
-  }, [cards]);
+  }, [cards, librarySearchSort]);
 
   return (
     <>
@@ -50,7 +58,9 @@ const ResultLibrary = ({ cards, setCards, library, activeDeck, inCompare }) => {
           <ResultLibraryTotal
             inCompare={inCompare}
             cards={cards}
-            handleChange={handleChange}
+            sortMethods={sortMethods}
+            sortMethod={librarySearchSort}
+            setSortMethod={setSortMethod}
           />
           <ResultLibraryTable
             library={library}

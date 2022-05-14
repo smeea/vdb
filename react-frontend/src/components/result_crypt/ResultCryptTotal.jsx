@@ -3,12 +3,14 @@ import { Button } from 'react-bootstrap';
 import X from 'assets/images/icons/x.svg';
 import InfoCircle from 'assets/images/icons/info-circle.svg';
 import { ANY } from 'utils/constants';
-import { ResultCryptSortForm } from 'components';
+import { SortButton } from 'components';
 import { useSearchResults } from 'context';
 
 const ResultCryptTotal = ({
   cards,
-  handleChange,
+  sortMethods,
+  sortMethod,
+  setSortMethod,
   toggleShowInfo,
   inCompare,
 }) => {
@@ -69,7 +71,11 @@ const ResultCryptTotal = ({
             </Button>
           </div>
         )}
-        <ResultCryptSortForm onChange={handleChange} />
+        <SortButton
+          sortMethod={sortMethod}
+          sortMethods={sortMethods}
+          setSortMethod={setSortMethod}
+        />
         {inCompare && (
           <div className="ms-1">
             <Button

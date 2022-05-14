@@ -6,7 +6,6 @@
 - Store src (pda/twd) for Recent decks and add TWD/PDA appendix to name in selector
 - Add to compare notification/title
 - Documentation discoverability (links to pages?)
-- Sorting for inventory
 
 # MAYBE LATER FEATURES
 - Comments for PDA
