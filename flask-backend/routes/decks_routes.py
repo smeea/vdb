@@ -594,8 +594,11 @@ def urlCloneDeck():
 
 
 @app.route("/api/decks/import", methods=["POST"])
-@login_required
 def importDeck():
+    anonymous = request.json.get("anonymous")
+    if not current_user.is_authenticated and not anonymous:
+        return Response(json.dumps({"Not logged in": True}), 401)
+
     deck = deck_import(request.json["deckText"])
 
     deckid = uuid.uuid4().hex
@@ -604,34 +607,7 @@ def importDeck():
         name=deck["name"],
         author_public_name=deck["author"],
         description=deck["description"],
-        author=current_user,
-        cards=deck["cards"],
-    )
-    db.session.add(d)
-    db.session.commit()
-
-    return jsonify(
-        {
-            "deckid": deckid,
-            "bad_cards": deck["bad_cards"],
-            "cards": deck["cards"],
-            "name": deck["name"],
-            "author": deck["author"],
-            "description": deck["description"],
-        }
-    )
-
-
-@app.route("/api/decks/anonymous_import", methods=["POST"])
-def anonymousImportDeck():
-    deck = deck_import(request.json["deckText"])
-
-    deckid = uuid.uuid4().hex
-    d = Deck(
-        deckid=deckid,
-        name=deck["name"],
-        author_public_name=deck["author"],
-        description=deck["description"],
+        author=current_user if not anonymous else None,
         cards=deck["cards"],
     )
     db.session.add(d)

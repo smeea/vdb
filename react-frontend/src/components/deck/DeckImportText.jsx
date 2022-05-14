@@ -41,9 +41,7 @@ const DeckImportText = ({
       setEmptyError(false);
       setSpinnerState(true);
 
-      const url = `${process.env.API_URL}decks/${
-        anonymous ? 'anonymous_' : ''
-      }import`;
+      const url = `${process.env.API_URL}decks/import`;
       const options = {
         method: 'POST',
         mode: 'cors',
@@ -53,6 +51,7 @@ const DeckImportText = ({
         },
         body: JSON.stringify({
           deckText: deckText,
+          anonymous: anonymous,
         }),
       };
 

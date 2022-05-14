@@ -1,5 +1,4 @@
 # FIX
-- Merge anonymous import with import
 - Ventrue NB precon
 
 # FEATURES
@@ -25,7 +24,7 @@
 
 # IMPROVE TECHNOLOGY - BACKEND
 - Remove 'owner' (use 'is_your' instead) for deck reply
-- Remove 'public_child/parent' (use 'is_public' instead) for deck reply
+- Remove 'public_child/parent' (use 'is_public' instead) for single deck reply (not in Login)
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)

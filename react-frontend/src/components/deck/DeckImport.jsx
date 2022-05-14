@@ -220,9 +220,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
       }
 
       let url = null;
-      if (anonymous) {
-        url = `${process.env.API_URL}decks/anonymous_import`;
-      } else if (inInventory) {
+      if (inInventory) {
         url = `${process.env.API_URL}inventory/import`;
       } else {
         url = `${process.env.API_URL}decks/import`;
@@ -232,6 +230,7 @@ const DeckImport = ({ inInventory, handleClose, setShowInfo }) => {
         ? JSON.stringify(result)
         : JSON.stringify({
             deckText: result,
+            anonymous: anonymous,
           });
 
       const options = {
