@@ -195,7 +195,8 @@ const Decks = (props) => {
     missingCrypt = getMissingCrypt(deckRouter(activeDeck));
     missingLibrary = getMissingLibrary(deckRouter(activeDeck));
     isPublic = deckRouter(activeDeck).public_parent ? true : false;
-    isAuthor = username && username === deckRouter(activeDeck).owner;
+    isAuthor =
+      !isPublic && username && username === deckRouter(activeDeck).owner;
     isFrozen = deckRouter(activeDeck).frozen;
     isBranches =
       deckRouter(activeDeck).master ||
