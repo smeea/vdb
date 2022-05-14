@@ -1,7 +1,6 @@
 # FIX
 - Merge anonymous import with import
 - Ventrue NB precon
-- Set title checkboxes with url query
 
 # FEATURES
 - Export all in xlsx and csv

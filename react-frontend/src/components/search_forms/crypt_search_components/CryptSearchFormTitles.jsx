@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Row, Col } from 'react-bootstrap';
 
-function CryptSearchFormTitles(props) {
+const CryptSearchFormTitles = ({ value, onChange }) => {
   const titlesLeft = [
     ['primogen', 'Primogen'],
     ['prince', 'Prince'],
@@ -31,7 +31,8 @@ function CryptSearchFormTitles(props) {
         type="checkbox"
         id={`title-${i[0]}`}
         label={i[1]}
-        onChange={(e) => props.onChange(e)}
+        checked={value[i[0]]}
+        onChange={(e) => onChange(e)}
       />
     );
   });
@@ -45,8 +46,8 @@ function CryptSearchFormTitles(props) {
         type="checkbox"
         id={`title-${i[0]}`}
         label={i[1]}
-        checked={props.value[i[0]]}
-        onChange={(e) => props.onChange(e)}
+        checked={value[i[0]]}
+        onChange={(e) => onChange(e)}
       />
     );
   });
@@ -64,6 +65,6 @@ function CryptSearchFormTitles(props) {
       </Row>
     </>
   );
-}
+};
 
 export default CryptSearchFormTitles;
