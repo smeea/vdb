@@ -126,6 +126,8 @@ function CryptSearchForm(props) {
     const newState = cryptFormState[name];
     if (['or-newer', 'or-older', 'not-newer', 'not-older'].includes(value)) {
       newState['age'] = newState['age'] === value ? false : value;
+    } else if (['only', 'first', 'reprint'].includes(value)) {
+      newState['print'] = newState['print'] === value ? false : value;
     } else {
       newState[value] = !newState[value];
     }

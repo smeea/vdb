@@ -82,37 +82,57 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
         value={i.value}
         type="checkbox"
         className="small pe-1"
-        id={`set-${i.label}`}
+        id={`set-${i.value}`}
         label={i.label}
+        title={i.title}
         disabled={
           value.value.length > 1 ||
           value.value[0] === 'bcp' ||
           value.value[0] === 'Promo' ||
           value.value[0] === 'POD'
         }
-        title={i.title}
         checked={value['age'] === i.value}
         onChange={(e) => onChangeOptions(e)}
       />
     );
   });
 
-  const additionalFormOptions = [
-    ['only in', 'Only In'],
-    ['first print', 'First Printed In'],
+  const printFormOptions = [
+    {
+      value: 'only',
+      label: 'Only In',
+      title: 'Printed only in selected Set',
+    },
+    {
+      value: 'first',
+      label: 'First Print',
+      title: 'Printed first in selected Set',
+    },
+    {
+      value: 'reprint',
+      label: 'Reprint',
+      title: 'Reprinted in selected Set',
+    },
   ];
 
-  const additionalForm = additionalFormOptions.map((i, index) => {
+  const printForm = printFormOptions.map((i, index) => {
     return (
       <Form.Check
         key={index}
         name="set"
-        value={i[0]}
+        value={i.value}
         type="checkbox"
         className="small"
-        id={`set-${i[0]}`}
-        label={i[1]}
-        checked={value[i[0]]}
+        id={`set-${i.value}`}
+        label={i.label}
+        title={i.title}
+        disabled={
+          (value.value[0] === 'bcp' ||
+            value.value[0] === 'Promo' ||
+            value.value[0] === 'POD') &&
+          i.value === 'reprint'
+        }
+        checked={value['print'] === i.value}
         onChange={(e) => onChangeOptions(e)}
       />
     );
@@ -188,7 +208,7 @@ const SearchFormSet = ({ value, onChange, onChangeOptions, setFormState }) => {
       <Row className="pb-1 ps-1 mx-0 align-items-center">
         <Col className="d-flex justify-content-end px-0">
           <Stack direction="horizontal" gap={3}>
-            {additionalForm}
+            {printForm}
           </Stack>
         </Col>
       </Row>

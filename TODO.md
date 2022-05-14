@@ -1,6 +1,7 @@
 # FIX
 - Merge anonymous import with import
-- First printed in for Promo
+- Ventrue NB precon
+- Set title checkboxes with url query
 
 # FEATURES
 - Export all in xlsx and csv
@@ -9,8 +10,6 @@
 - Add to compare notification/title
 - Documentation discoverability (links to pages?)
 - Sorting for inventory
-- Reprinted checkbox to filter
-- Precons in Deck with full Set and Promos and All cards to check for entire collection
 
 # MAYBE LATER FEATURES
 - Comments for PDA
