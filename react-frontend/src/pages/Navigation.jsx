@@ -17,7 +17,7 @@ import twdDefaults from 'components/forms_data/defaultsTwdForm.json';
 import pdaDefaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 
-function Navigation(props) {
+const Navigation = (props) => {
   const { inventoryMode, toggleInventoryMode, isMobile, username, activeDeck } =
     useApp();
 
@@ -86,10 +86,11 @@ function Navigation(props) {
           )}
           {username &&
             !isMobile &&
-            (location.pathname !== '/account' ||
-              location.pathname !== '/about' ||
-              location.pathname !== '/changelog' ||
-              location.pathname !== '/inventory') && (
+            location.pathname !== '/account' &&
+            location.pathname !== '/about' &&
+            location.pathname !== '/changelog' &&
+            location.pathname !== '/documentation' &&
+            location.pathname !== '/inventory' && (
               <div
                 className="d-flex align-items-center px-3"
                 onClick={() => {
@@ -157,6 +158,6 @@ function Navigation(props) {
       </Nav>
     </Navbar>
   );
-}
+};
 
 export default Navigation;
