@@ -225,10 +225,10 @@ const Inventory = (props) => {
             <div className="d-flex justify-content-center pb-3">
               <h6>Login required to manage inventory</h6>
             </div>
-            <div className="py-2">
+            <div className="py-4">
               <AccountLogin />
             </div>
-            <div className="py-2">
+            <div className="py-4">
               <AccountRegister />
             </div>
           </Col>

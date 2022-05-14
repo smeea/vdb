@@ -22,11 +22,13 @@ export const login = (
 export const register = (
   username,
   password,
+  email,
   onSuccess = () => {},
   onError = () => {}
 ) => {
   const body = {
     username: username,
+    email: email,
     password: password,
   };
 

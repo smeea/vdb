@@ -1,6 +1,5 @@
-from flask import jsonify, request, abort, Response
+from flask import jsonify, request, abort
 from flask_login import current_user, login_user, logout_user, login_required
-import json
 
 from api import app, db, login
 from models import User
@@ -23,13 +22,14 @@ def register():
     else:
         user = User(
             username=request.json["username"].lower(),
+            email=request.json["email"],
             public_name=request.json["username"],
         )
         user.set_password(request.json["password"])
         db.session.add(user)
         db.session.commit()
         login_user(user)
-        return jsonify({"registered as": user.username})
+        return jsonify({"username": user.username, "email": user.email})
 
 
 @app.route("/api/login", methods=["GET", "POST"])

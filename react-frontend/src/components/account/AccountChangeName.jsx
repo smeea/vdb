@@ -83,8 +83,8 @@ function AccountChangeName(props) {
   );
 
   return (
-    <>
-      <h6 className="d-flex align-items-center px-1">
+    <div>
+      <h6 className="d-flex align-items-center p-1">
         <PenFill />
         <span className="ms-2">Change public name</span>
         {!isMobile ? (
@@ -146,7 +146,7 @@ function AccountChangeName(props) {
           setShow={setShowModal}
         />
       )}
-    </>
+    </div>
   );
 }
 

@@ -92,8 +92,8 @@ function AccountLogin(props) {
   );
 
   return (
-    <>
-      <h6 className="d-flex align-items-center">
+    <div>
+      <h6 className="d-flex align-items-center p-1">
         <DoorOpenFill />
         <span className="ms-2">Login</span>
         {!isMobile ? (
@@ -175,7 +175,7 @@ function AccountLogin(props) {
         </ErrorOverlay>
       </Form>
       {!isMobile ? (
-        <div className="d-flex justify-content-center small ms-3 ps-4">
+        <div className="d-flex justify-content-center small ms-4 ps-4">
           <OverlayTooltip
             delay={{ show: 0, hide: 2000 }}
             placement="bottom"
@@ -203,7 +203,7 @@ function AccountLogin(props) {
           setShow={setShowModal}
         />
       )}
-    </>
+    </div>
   );
 }
 
