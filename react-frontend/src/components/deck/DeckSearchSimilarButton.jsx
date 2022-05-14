@@ -24,9 +24,7 @@ const DeckSearchSimilarButton = ({ deck }) => {
       }));
     }
 
-    // TODO: test with:
-    // navigate(`/${src}?q={"similar"%3A$"${deck.deckid}"}`);
-    navigate(`/${src}`);
+    navigate(`/${src}?q={"similar"%3A"${deck.deckid}"}`);
     setShowMenuButtons(false);
     setShowFloatingButtons(true);
   };
@@ -49,25 +47,23 @@ const DeckSearchSimilarButton = ({ deck }) => {
   );
 
   return (
-    <>
-      <DropdownButton
-        as={ButtonGroup}
-        variant="secondary"
-        title={
-          <div
-            title="Search similar Decks in TWD/PDA"
-            className="d-flex justify-content-center align-items-center"
-          >
-            <div className="d-flex pe-2">
-              <SymmetryVertical />
-            </div>
-            Similar Decks
+    <DropdownButton
+      as={ButtonGroup}
+      variant="secondary"
+      title={
+        <div
+          title="Search similar Decks in TWD/PDA"
+          className="d-flex justify-content-center align-items-center"
+        >
+          <div className="d-flex pe-2">
+            <SymmetryVertical />
           </div>
-        }
-      >
-        {ButtonOptions}
-      </DropdownButton>
-    </>
+          Similar Decks
+        </div>
+      }
+    >
+      {ButtonOptions}
+    </DropdownButton>
   );
 };
 

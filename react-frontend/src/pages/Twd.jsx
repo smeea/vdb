@@ -8,9 +8,7 @@ const Twd = (props) => {
   const { twdResults } = useSearchResults();
 
   return (
-    <Container
-      className={isMobile ? 'main-container' : 'main-container py-3 px-4'}
-    >
+    <Container className="main-container p-md-3">
       <Row className="justify-content-center">
         <Col
           xs={12}
@@ -30,9 +28,7 @@ const Twd = (props) => {
           xl={3}
           className={
             !isMobile || (isMobile && showTwdSearch)
-              ? isMobile
-                ? 'p-1'
-                : 'px-md-2 px-xl-0'
+              ? 'p-1 py-md-0 px-md-2 px-xl-0'
               : 'col-hide'
           }
         >
