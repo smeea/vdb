@@ -8,7 +8,6 @@ import {
   ResultModal,
   DeckCryptHeader,
 } from 'components';
-
 import { useApp } from 'context';
 import { useModalCardController, useKeyDisciplines, useDeckCrypt } from 'hooks';
 
@@ -22,8 +21,21 @@ const DiffCrypt = ({
   isAuthor,
   inMissing,
 }) => {
-  const { cryptDeckSort, changeTimer, isMobile, setShowFloatingButtons } =
-    useApp();
+  const {
+    cryptDeckSort,
+    changeCryptDeckSort,
+    changeTimer,
+    isMobile,
+    setShowFloatingButtons,
+  } = useApp();
+
+  const sortMethods = {
+    Quantity: 'Q',
+    Capacity: 'C',
+    Name: 'N',
+    Group: 'G',
+    Clan: 'Cl',
+  };
 
   const [showAdd, setShowAdd] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -74,6 +86,9 @@ const DiffCrypt = ({
         hasBanned={hasBanned}
         isAuthor={isAuthor}
         isPublic={isPublic}
+        sortMethods={sortMethods}
+        sortMethod={cryptDeckSort}
+        setSortMethod={changeCryptDeckSort}
       />
       {showInfo && (
         <div className="info-message px-2">
