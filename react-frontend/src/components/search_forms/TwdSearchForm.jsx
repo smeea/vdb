@@ -25,7 +25,7 @@ import defaults from 'components/forms_data/defaultsTwdForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-function TwdSearchForm(props) {
+const TwdSearchForm = (props) => {
   const {
     cryptCardBase,
     libraryCardBase,
@@ -61,10 +61,10 @@ function TwdSearchForm(props) {
   }, [cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (isMobile && query && twdFormState) {
+    if (isMobile && query && pdaFormState && cryptCardBase && libraryCardBase) {
       launchRequest();
     }
-  }, [twdFormState]);
+  }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   const [error, setError] = useState(false);
   const refError = useRef(null);
@@ -158,7 +158,7 @@ function TwdSearchForm(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    launchRequest();
+    cryptCardBase && libraryCardBase && launchRequest();
   };
 
   const launchRequest = () => {
@@ -278,7 +278,7 @@ function TwdSearchForm(props) {
   };
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && cryptCardBase && libraryCardBase) {
       const input = sanitizeFormState('twd', twdFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
@@ -289,7 +289,7 @@ function TwdSearchForm(props) {
         launchRequest();
       }
     }
-  }, [twdFormState]);
+  }, [twdFormState, cryptCardBase, libraryCardBase]);
 
   return (
     <Form onSubmit={handleSubmitButton}>
@@ -524,6 +524,6 @@ function TwdSearchForm(props) {
       )}
     </Form>
   );
-}
+};
 
 export default TwdSearchForm;

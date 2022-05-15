@@ -25,7 +25,7 @@ import defaults from 'components/forms_data/defaultsCryptForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-function CryptSearchForm(props) {
+const CryptSearchForm = (props) => {
   const {
     cryptCardBase,
     hideMissing,
@@ -47,7 +47,7 @@ function CryptSearchForm(props) {
   const query = JSON.parse(new URLSearchParams(useLocation().search).get('q'));
 
   useEffect(() => {
-    if (cryptCardBase && query) {
+    if (query) {
       setCryptFormState((prevState) => {
         const state = { ...prevState };
         Object.keys(query).map((i) => {
@@ -62,7 +62,7 @@ function CryptSearchForm(props) {
         return state;
       });
     }
-  }, [cryptCardBase]);
+  }, []);
 
   const [error, setError] = useState(false);
   const refError = useRef(null);
@@ -183,7 +183,7 @@ function CryptSearchForm(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    launchRequest();
+    cryptCardBase && launchRequest();
   };
 
   const handleShowResults = () => {
@@ -238,7 +238,6 @@ function CryptSearchForm(props) {
       .catch((error) => {
         setSpinnerState(false);
         if (isMobile) navigate('/crypt');
-
         if (error.message == 400) {
           setCryptResults([]);
           setPreresults([]);
@@ -251,17 +250,16 @@ function CryptSearchForm(props) {
   };
 
   useEffect(() => {
-    if (isMobile && query && cryptFormState) {
+    if (isMobile && query && cryptFormState && cryptCardBase) {
       launchRequest();
     }
-  }, [cryptFormState]);
+  }, [cryptFormState, cryptCardBase]);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && cryptCardBase) {
       const input = sanitizeFormState('crypt', cryptFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
-          navigate('/crypt');
           setCryptResults(undefined);
           setPreresults(undefined);
         }
@@ -272,7 +270,7 @@ function CryptSearchForm(props) {
         launchRequest();
       }
     }
-  }, [cryptFormState, hideMissing, inventoryMode]);
+  }, [cryptFormState, hideMissing, inventoryMode, cryptCardBase]);
 
   useEffect(() => {
     if (!isMobile && preresults) {
@@ -384,6 +382,6 @@ function CryptSearchForm(props) {
       )}
     </Form>
   );
-}
+};
 
 export default CryptSearchForm;

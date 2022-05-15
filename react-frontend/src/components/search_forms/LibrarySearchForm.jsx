@@ -25,7 +25,7 @@ import defaults from 'components/forms_data/defaultsLibraryForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-function LibrarySearchForm(props) {
+const LibrarySearchForm = (props) => {
   const {
     libraryCardBase,
     hideMissing,
@@ -167,7 +167,7 @@ function LibrarySearchForm(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    launchRequest();
+    libraryCardBase && launchRequest();
   };
 
   const handleShowResults = () => {
@@ -222,9 +222,8 @@ function LibrarySearchForm(props) {
         }
       })
       .catch((error) => {
-        if (isMobile) navigate('/library');
         setSpinnerState(false);
-
+        if (isMobile) navigate('/library');
         if (error.message == 400) {
           setLibraryResults([]);
           setPreresults([]);
@@ -237,17 +236,16 @@ function LibrarySearchForm(props) {
   };
 
   useEffect(() => {
-    if (isMobile && query && libraryFormState) {
+    if (isMobile && query && libraryFormState && libraryCardBase) {
       launchRequest();
     }
-  }, [libraryFormState]);
+  }, [libraryFormState, libraryCardBase]);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && libraryCardBase) {
       const input = sanitizeFormState('library', libraryFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
-          navigate('/library');
           setLibraryResults(undefined);
           setPreresults(undefined);
         }
@@ -258,7 +256,7 @@ function LibrarySearchForm(props) {
         launchRequest();
       }
     }
-  }, [libraryFormState, hideMissing, inventoryMode]);
+  }, [libraryFormState, hideMissing, inventoryMode, libraryCardBase]);
 
   useEffect(() => {
     if (!isMobile && preresults) {
@@ -376,6 +374,6 @@ function LibrarySearchForm(props) {
       )}
     </Form>
   );
-}
+};
 
 export default LibrarySearchForm;

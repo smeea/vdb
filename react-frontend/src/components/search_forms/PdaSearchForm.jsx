@@ -24,7 +24,7 @@ import defaults from 'components/forms_data/defaultsPdaForm.json';
 import { sanitizeFormState } from 'utils';
 import { useApp, useSearchForms, useSearchResults } from 'context';
 
-function PdaSearchForm(props) {
+const PdaSearchForm = (props) => {
   const {
     username,
     cryptCardBase,
@@ -61,10 +61,10 @@ function PdaSearchForm(props) {
   }, [cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (isMobile && query && pdaFormState) {
+    if (isMobile && query && pdaFormState && cryptCardBase && libraryCardBase) {
       launchRequest();
     }
-  }, [pdaFormState]);
+  }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
   const [error, setError] = useState(false);
   const refError = useRef(null);
@@ -148,7 +148,7 @@ function PdaSearchForm(props) {
 
   const handleSubmitButton = (event) => {
     event.preventDefault();
-    launchRequest();
+    cryptCardBase && libraryCardBase && launchRequest();
   };
 
   const launchRequest = () => {
@@ -271,16 +271,15 @@ function PdaSearchForm(props) {
   };
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && cryptCardBase && libraryCardBase) {
       const input = sanitizeFormState('pda', pdaFormState);
       if (Object.keys(input).length === 0) {
         if (query) {
-          navigate('/pda');
           setPdaResults(undefined);
         }
       } else launchRequest();
     }
-  }, [pdaFormState]);
+  }, [pdaFormState, cryptCardBase, libraryCardBase]);
 
   return (
     <Form onSubmit={handleSubmitButton}>
@@ -492,6 +491,6 @@ function PdaSearchForm(props) {
       )}
     </Form>
   );
-}
+};
 
 export default PdaSearchForm;

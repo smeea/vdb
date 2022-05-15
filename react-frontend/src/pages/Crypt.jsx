@@ -8,7 +8,7 @@ import {
 } from 'components';
 import { useApp, useSearchResults } from 'context';
 
-function Crypt({ lastDeckId }) {
+const Crypt = ({ lastDeckId }) => {
   const {
     deckRouter,
     showCryptSearch,
@@ -102,6 +102,6 @@ function Crypt({ lastDeckId }) {
       )}
     </Container>
   );
-}
+};
 
 export default Crypt;

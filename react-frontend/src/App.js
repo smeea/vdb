@@ -30,46 +30,7 @@ import 'assets/css/style.styl';
 const Changelog = React.lazy(() => import('pages/Changelog.jsx'));
 
 const App = (props) => {
-  const {
-    whoAmI,
-    decks,
-    recentDecks,
-    updateRecentDecks,
-    activeDeck,
-    setActiveDeck,
-  } = useApp();
-
-  const [lastDeck, setLastDeck] = useState({});
-
-  useEffect(() => {
-    const byTimestamp = (a, b) => {
-      return new Date(b.timestamp) - new Date(a.timestamp);
-    };
-
-    if (decks && Object.keys(decks).length) {
-      const lastDeckArray = Object.values(decks).sort(byTimestamp);
-      setLastDeck(lastDeckArray[0]);
-    }
-  }, [decks]);
-
-  useEffect(() => {
-    whoAmI();
-  }, []);
-
-  useEffect(() => {
-    if (decks) {
-      const d = recentDecks.filter((v) => !decks[v.deckid]);
-      if (d.length < recentDecks.length) {
-        updateRecentDecks(d);
-      }
-    }
-  }, [decks, recentDecks]);
-
-  useEffect(() => {
-    if (lastDeck && lastDeck.deckid && !activeDeck.deckid) {
-      setActiveDeck({ src: 'my', deckid: lastDeck.deckid });
-    }
-  }, [lastDeck]);
+  const { lastDeckId } = useApp();
 
   return (
     <div className="App">
@@ -98,21 +59,15 @@ const App = (props) => {
               <Route path="decks" element={<Decks />} />
               <Route path="pda" element={<Pda />} />
               <Route path="twd" element={<Twd />} />
-              <Route
-                path="crypt"
-                element={<Crypt lastDeckId={lastDeck.deckid} />}
-              />
+              <Route path="crypt" element={<Crypt lastDeckId={lastDeckId} />} />
               <Route
                 path="library"
-                element={<Library lastDeckId={lastDeck.deckid} />}
+                element={<Library lastDeckId={lastDeckId} />}
               />
-              <Route
-                path="cards"
-                element={<Cards lastDeckId={lastDeck.deckid} />}
-              />
+              <Route path="cards" element={<Cards lastDeckId={lastDeckId} />} />
               <Route
                 path="cards/:id"
-                element={<Cards lastDeckId={lastDeck.deckid} />}
+                element={<Cards lastDeckId={lastDeckId} />}
               />
             </Routes>
           </SearchResultsProvider>

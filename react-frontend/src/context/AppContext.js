@@ -33,23 +33,14 @@ export const AppProvider = (props) => {
   const [cryptSearchSort, setCryptSearchSort] = useState(undefined);
   const [librarySearchSort, setLibrarySearchSort] = useState(undefined);
 
-  const [cryptCardBase, setCryptCardBase] = useState(
-    cardServices.getCryptBase()
-  );
-  const [libraryCardBase, setLibraryCardBase] = useState(
-    cardServices.getLibraryBase()
-  );
-  const nativeCrypt = cardServices.getNativeText(cryptCardBase);
-  const nativeLibrary = cardServices.getNativeText(libraryCardBase);
+  const [cryptCardBase, setCryptCardBase] = useState(undefined);
+  const [libraryCardBase, setLibraryCardBase] = useState(undefined);
+  const [nativeCrypt, setNativeCrypt] = useState(undefined);
+  const [nativeLibrary, setNativeLibrary] = useState(undefined);
+  const [localizedCrypt, setLocalizedCrypt] = useState(undefined);
+  const [localizedLibrary, setLocalizedLibrary] = useState(undefined);
 
-  const [localizedCrypt, setLocalizedCrypt] = useState({
-    'en-EN': nativeCrypt,
-  });
-  const [localizedLibrary, setLocalizedLibrary] = useState({
-    'en-EN': nativeLibrary,
-  });
-
-  const preconDecks = cardServices.getPreconDecks();
+  const [preconDecks, setPreconDecks] = useState({});
 
   const [showPdaSearch, setShowPdaSearch] = useState(true);
   const [showTwdSearch, setShowTwdSearch] = useState(true);
@@ -71,6 +62,8 @@ export const AppProvider = (props) => {
   const [activeDeck, setActiveDeck] = useState({ src: null, deckid: null });
   const [sharedDeck, setSharedDeck] = useState({});
   const [recentDecks, setRecentDecks] = useState([]);
+  const [lastDeckId, setLastDeckId] = useState(undefined);
+
   const [changeTimer, setChangeTimer] = useState(false);
   const [timers, setTimers] = useState([]);
 
@@ -78,8 +71,24 @@ export const AppProvider = (props) => {
   const [showMenuButtons, setShowMenuButtons] = useState(false);
 
   // ---------------------------------------------------------------------------
+  //                            CARD BASE
+  // ---------------------------------------------------------------------------
+
+  useEffect(() => {
+    cardServices.getCardBase().then((data) => {
+      setCryptCardBase(data.crypt);
+      setLibraryCardBase(data.library);
+      setNativeCrypt(data.nativeCrypt);
+      setNativeLibrary(data.nativeLibrary);
+      setLocalizedCrypt({ 'en-EN': data.nativeCrypt });
+      setLocalizedLibrary({ 'en-EN': data.nativeLibrary });
+    });
+  }, []);
+
+  // ---------------------------------------------------------------------------
   //                            USER FUNCTIONS
   // ---------------------------------------------------------------------------
+
   const whoAmI = () => {
     const url = `${process.env.API_URL}login`;
     const options = {
@@ -120,6 +129,15 @@ export const AppProvider = (props) => {
     setEmail(undefined);
   };
 
+  useEffect(() => {
+    if (cryptCardBase && libraryCardBase) {
+      whoAmI();
+      setPreconDecks(
+        cardServices.getPreconDecks(cryptCardBase, libraryCardBase)
+      );
+    }
+  }, [cryptCardBase, libraryCardBase]);
+
   // ---------------------------------------------------------------------------
   //                          LANGUAGE FUNCTIONS
   // ---------------------------------------------------------------------------
@@ -148,37 +166,32 @@ export const AppProvider = (props) => {
 
   // Load the localized info for the first time
   const initializeLocalizedInfo = async (lang) => {
-    const localizedCrypt = await cardServices.getLocalizedCrypt(lang);
-    const localizedLibrary = await cardServices.getLocalizedLibrary(lang);
+    cardServices.getLocalizedCardBase(lang).then((data) => {
+      setLocalizedCrypt((prevState) => ({
+        ...prevState,
+        [lang]: data.crypt,
+      }));
 
-    setLocalizedCrypt((prevState) => ({
-      ...prevState,
-      [lang]: localizedCrypt,
-    }));
+      setLocalizedLibrary((prevState) => ({
+        ...prevState,
+        [lang]: data.library,
+      }));
 
-    setLocalizedLibrary((prevState) => ({
-      ...prevState,
-      [lang]: localizedLibrary,
-    }));
-
-    changeBaseTextToLocalizedText(
-      setCryptCardBase,
-      localizedCrypt,
-      nativeCrypt
-    );
-    changeBaseTextToLocalizedText(
-      setLibraryCardBase,
-      localizedLibrary,
-      nativeLibrary
-    );
+      changeBaseTextToLocalizedText(setCryptCardBase, data.crypt, nativeCrypt);
+      changeBaseTextToLocalizedText(
+        setLibraryCardBase,
+        data.library,
+        nativeLibrary
+      );
+    });
   };
 
   // Trigger the language change
   useEffect(() => {
     async function triggerLangChange() {
-      if (!localizedCrypt[lang] || !localizedLibrary[lang])
+      if (!localizedCrypt[lang] || !localizedLibrary[lang]) {
         await initializeLocalizedInfo(lang);
-      else {
+      } else {
         changeBaseTextToLocalizedText(
           setCryptCardBase,
           localizedCrypt[lang],
@@ -191,8 +204,11 @@ export const AppProvider = (props) => {
         );
       }
     }
-    triggerLangChange();
-  }, [lang]);
+
+    if (cryptCardBase && libraryCardBase) {
+      triggerLangChange();
+    }
+  }, [lang, nativeCrypt, nativeLibrary]);
 
   // ---------------------------------------------------------------------------
   //                          APP DATA FUNCTIONS
@@ -490,6 +506,32 @@ export const AppProvider = (props) => {
     }
   };
 
+  useEffect(() => {
+    const byTimestamp = (a, b) => {
+      return new Date(b.timestamp) - new Date(a.timestamp);
+    };
+
+    if (decks && Object.keys(decks).length) {
+      const lastDeckArray = Object.values(decks).sort(byTimestamp);
+      setLastDeckId(lastDeckArray[0].deckid);
+    }
+  }, [decks]);
+
+  useEffect(() => {
+    if (decks) {
+      const d = recentDecks.filter((v) => !decks[v.deckid]);
+      if (d.length < recentDecks.length) {
+        updateRecentDecks(d);
+      }
+    }
+  }, [decks, recentDecks]);
+
+  useEffect(() => {
+    if (lastDeckId && !activeDeck.deckid) {
+      setActiveDeck({ src: 'my', deckid: lastDeckId });
+    }
+  }, [lastDeckId]);
+
   // ---------------------------------------------------------------------------
   //                          INVENTORY FUNCTIONS
   // ---------------------------------------------------------------------------
@@ -768,6 +810,7 @@ export const AppProvider = (props) => {
         setActiveDeck,
         sharedDeck,
         setSharedDeck,
+        lastDeckId,
         recentDecks,
         addRecentDeck,
         updateRecentDecks,
@@ -776,7 +819,7 @@ export const AppProvider = (props) => {
         deckCardChange,
         changeTimer,
 
-        // 6 - LISTING Context (NEED REVIEW)
+        // 6 - LISTING Context
         showPdaSearch,
         setShowPdaSearch,
         showTwdSearch,
@@ -786,11 +829,11 @@ export const AppProvider = (props) => {
         showLibrarySearch,
         setShowLibrarySearch,
 
-        // SORTING Context (NEED REVIEW)
-        cryptSearchSort, // LOCAL ResultCrypt.jsx
-        changeCryptSearchSort, // LOCAL ResultCrypt.jsx
-        librarySearchSort, // LOCAL ResultLibrary.jsx
-        changeLibrarySearchSort, // LOCAL ResultLibrary.jsx
+        // 7 - SORTING Context
+        cryptSearchSort,
+        changeCryptSearchSort,
+        librarySearchSort,
+        changeLibrarySearchSort,
         cryptDeckSort,
         changeCryptDeckSort,
       }}
