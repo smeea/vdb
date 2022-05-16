@@ -61,7 +61,7 @@ const TwdSearchForm = (props) => {
   }, [cryptCardBase, libraryCardBase]);
 
   useEffect(() => {
-    if (isMobile && query && pdaFormState && cryptCardBase && libraryCardBase) {
+    if (isMobile && query && twdFormState && cryptCardBase && libraryCardBase) {
       launchRequest();
     }
   }, [twdFormState, cryptCardBase, libraryCardBase]);

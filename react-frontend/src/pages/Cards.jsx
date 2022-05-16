@@ -44,14 +44,14 @@ const Cards = ({ lastDeckId }) => {
   useEffect(() => {
     if (card) {
       if (params.id !== card.Id) navigate(`/cards/${card.Id}`);
-    } else {
+    } else if (cryptCardBase && libraryCardBase) {
       if (params.id > 200000) {
         setCard(cryptCardBase[params.id]);
-      } else {
+      } else if (params.id > 100000) {
         setCard(libraryCardBase[params.id]);
       }
     }
-  }, [card]);
+  }, [card, cryptCardBase, libraryCardBase]);
 
   return (
     <Container className="cards-container px-0 pb-0 p-md-0">
