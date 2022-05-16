@@ -8,7 +8,7 @@ import EnvelopeFill from 'assets/images/icons/envelope-fill.svg';
 import Globe2 from 'assets/images/icons/globe2.svg';
 import { Banner } from 'components';
 
-function About(props) {
+const About = (props) => {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
@@ -55,9 +55,9 @@ function About(props) {
             <div className="pt-3">
               <h5>TROUBLESHOOTING</h5>
               <p>
-                If you experience problems like white screen or something start
-                to behave not as expected, try to reload page with cache refresh
-                (Ctrl+F5 on Windows/Linux or Command+Shift+R on MacOS)
+                If you experience problems like white screen or strange
+                behavior, reload page (Ctrl+F5 on Windows/Linux or
+                Command+Shift+R on MacOS)
               </p>
               <p>If this does not help, please contact me (see below)</p>
             </div>
@@ -69,33 +69,39 @@ function About(props) {
                 <a href="https://www.vekn.net/card-lists">
                   vekn.net official list
                 </a>
-                : 2022-01-12
+                : 2022-05-17
               </p>
 
-              <h6>Last update [2022-05-07]:</h6>
+              <h6>Last update [2022-05-17]:</h6>
               <ul>
+                <li>Update card base with New Blood set</li>
+                <li>Update TWDA</li>
                 <li>
-                  Significant internal reworks which will slightly decrease
-                  network calls and will help in the future development (but as
-                  a result it may bring some new bugs, so dont hesitate to
-                  report and refresh the page as a first measure when
-                  encountering new problem)
+                  Add QR-code (live link to editable deck and non-editable
+                  deck-in-url) as an option for Copy Deck URL
                 </li>
                 <li>
-                  Split Anthology set into Anthology (2017, 100-cards bundle)
-                  and Anthology I (2019, 89-card bundle)
-                </li>
-                <li>Fix deck preview in inventory import from deck/precon</li>
-                <li>
-                  Show q-ty of decks/precons you have in inventory when adding
-                  card from decks/precons
+                  Add Freeze Deck button (in advanced deck select and after deck
+                  name) which will disable deck crypt/library edition unless
+                  turned off to protect established decks from misclicks and
+                  everything
                 </li>
                 <li>
-                  Fix deck import (including to accept The Cardname and
-                  Cardname, The and some other bugs)
+                  Add Reprint option for Set/Precon search which will return
+                  only reprinted cards (will includes Promos if first printed as
+                  such)
                 </li>
-                <li>Fix deck library detailed info (no-discipline cards)</li>
-                <li>Some other fixes</li>
+                <li>
+                  Newly add inventory cards (which were not in inventory) will
+                  have q-ty box focused by default to speed up adding collection
+                </li>
+                <li>Add sorting for inventory</li>
+                <li>
+                  Moved card selector to bottom in /Cards on mobile (useful for
+                  those having thumbs shorter than 5&quot;)
+                </li>
+                <li>Fixed card selector auto-focus on mobile</li>
+                <li>Many other fixes</li>
               </ul>
               <Link to="/changelog">Full changes history</Link>
             </div>
@@ -242,6 +248,6 @@ function About(props) {
       </Row>
     </Container>
   );
-}
+};
 
 export default About;

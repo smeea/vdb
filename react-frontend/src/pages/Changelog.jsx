@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Banner } from 'components';
 
-function Changelog(props) {
+const Changelog = (props) => {
   return (
     <Container className="main-container">
       <Row className="justify-content-center">
@@ -11,6 +11,37 @@ function Changelog(props) {
           <Banner />
           <div className="px-3 pt-0 pt-lg-3">
             <h5 className="pb-2">CHANGELOG</h5>
+
+            <h6>2022-05-17:</h6>
+            <ul>
+              <li>Update card base with New Blood set</li>
+              <li>Update TWDA</li>
+              <li>
+                Add QR-code (live link to editable deck and non-editable
+                deck-in-url) as an option for Copy Deck URL
+              </li>
+              <li>
+                Add Freeze Deck button (in advanced deck select and after deck
+                name) which will disable deck crypt/library edition unless
+                turned off to protect established decks from misclicks and
+                everything
+              </li>
+              <li>
+                Add Reprint option for Set/Precon search which will return only
+                reprinted cards (will includes Promos if first printed as such)
+              </li>
+              <li>
+                Newly add inventory cards (which were not in inventory) will
+                have q-ty box focused by default to speed up adding collection
+              </li>
+              <li>Add sorting for inventory</li>
+              <li>
+                Moved card selector to bottom in /Cards on mobile (useful for
+                those having thumbs shorter than 5&quot;)
+              </li>
+              <li>Fixed card selector auto-focus on mobile</li>
+              <li>Many other fixes</li>
+            </ul>
 
             <h6>2022-05-07:</h6>
             <ul>
@@ -1274,6 +1305,6 @@ function Changelog(props) {
       </Row>
     </Container>
   );
-}
+};
 
 export default Changelog;

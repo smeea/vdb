@@ -1,5 +1,4 @@
 # FIX
-- Ventrue NB precon
 
 # FEATURES
 - Export all in xlsx and csv
