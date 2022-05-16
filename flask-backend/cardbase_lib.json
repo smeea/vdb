@@ -7742,7 +7742,8 @@
             "NB":{
                 "PM":"2",
                 "PN":"3",
-                "PTr":"2"
+                "PTr":"2",
+                "PV":"2"
             }
         },
         "Twd":true,
@@ -13209,7 +13210,7 @@
                 "":"4"
             }
         },
-        "Twd":false,
+        "Twd":true,
         "Type":"Action"
     },
     "100341":{
@@ -15396,7 +15397,7 @@
                 "PV":"4"
             },
             "NB":{
-                "PTr":"4"
+                "PV":"4"
             }
         },
         "Twd":true,
@@ -18483,7 +18484,7 @@
                 "PV":"1"
             },
             "NB":{
-                "PTr":"1"
+                "PV":"1"
             }
         },
         "Twd":true,
@@ -19625,7 +19626,7 @@
             },
             "NB":{
                 "PM":"2",
-                "PTr":"4"
+                "PV":"4"
             }
         },
         "Twd":true,
@@ -21829,7 +21830,7 @@
                 "PKia":1
             },
             "NB":{
-                "PTr":"1"
+                "PV":"1"
             }
         },
         "Twd":true,
@@ -21884,7 +21885,7 @@
                 "PV":"2"
             },
             "NB":{
-                "PTr":"2"
+                "PV":"2"
             }
         },
         "Twd":true,
@@ -24572,7 +24573,7 @@
             },
             "NB":{
                 "PTo":"5",
-                "PTr":"4"
+                "PV":"4"
             }
         },
         "Twd":true,
@@ -27947,7 +27948,7 @@
                 "U":true
             },
             "NB":{
-                "PTr":"1"
+                "PV":"1"
             }
         },
         "Twd":true,
@@ -30167,7 +30168,7 @@
                 "PV":"3"
             },
             "NB":{
-                "PTr":"1"
+                "PV":"1"
             }
         },
         "Twd":true,
@@ -30436,7 +30437,7 @@
                 "PV":"6"
             },
             "NB":{
-                "PTr":"5"
+                "PV":"5"
             }
         },
         "Twd":true,
@@ -31283,7 +31284,7 @@
         "Banned":"",
         "Blood Cost":"1",
         "Burn Option":"",
-        "Card Text":"+1 stealth action. Requires an Anarch.\n[nec] This Anarch unlocks. Move a card from your ash heap to your hand. \n[pre] This Anarch unlocks and gets +1 stealth until the end of the turn.\n[vic] This Anarch unlocks and gets +1 strength until your unlock phase.",
+        "Card Text":"+1 stealth action. Requires an Anarch.\n[nec] This Anarch unlocks. Move a card from your ash heap to your hand.\n[pre] This Anarch unlocks and gets +1 stealth until the end of the turn.\n[vic] This Anarch unlocks and gets +1 strength until your unlock phase.",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Necromancy/Presence/Vicissitude",
@@ -37364,7 +37365,7 @@
         "Banned":"",
         "Blood Cost":"",
         "Burn Option":"",
-        "Card Text":"Only usable during a bleed action.\n[aus][nec] +1 bleed (limited). \n[AUS][NEC] +1 bleed for every 10 cards in the ash heap of the target Methuselah (limited).",
+        "Card Text":"Only usable during a bleed action.\n[aus][nec] +1 bleed (limited).\n[AUS][NEC] +1 bleed for every 10 cards in the ash heap of the target Methuselah (limited).",
         "Clan":"",
         "Conviction Cost":"",
         "Discipline":"Auspex & Necromancy",
@@ -42316,7 +42317,7 @@
                 "PM":"2"
             },
             "NB":{
-                "PTr":"2"
+                "PV":"2"
             }
         },
         "Twd":true,
@@ -43908,7 +43909,7 @@
             },
             "NB":{
                 "PTo":"6",
-                "PTr":"6"
+                "PV":"6"
             }
         },
         "Twd":true,
@@ -46418,7 +46419,7 @@
                 "PV":"2"
             },
             "NB":{
-                "PTr":"2"
+                "PV":"2"
             }
         },
         "Twd":true,
@@ -47016,7 +47017,7 @@
                 "PV":"1"
             },
             "NB":{
-                "PTr":"1"
+                "PV":"1"
             }
         },
         "Twd":true,
@@ -53860,7 +53861,7 @@
                 "R":true
             },
             "NB":{
-                "PTr":"1"
+                "PV":"1"
             }
         },
         "Twd":true,
@@ -61278,7 +61279,7 @@
                 "C":true
             },
             "NB":{
-                "PTr":"1"
+                "PV":"1"
             }
         },
         "Twd":true,
@@ -64872,7 +64873,7 @@
             },
             "NB":{
                 "PTo":"3",
-                "PTr":"2"
+                "PV":"2"
             }
         },
         "Twd":true,
@@ -65163,7 +65164,7 @@
                 "PV":"2"
             },
             "NB":{
-                "PTr":"1"
+                "PV":"1"
             }
         },
         "Twd":true,
@@ -68629,7 +68630,7 @@
                 "U":true
             },
             "NB":{
-                "PTr":"1"
+                "PV":"1"
             }
         },
         "Twd":true,
@@ -69299,7 +69300,7 @@
                 "PV":"1"
             },
             "NB":{
-                "PTr":"2"
+                "PV":"2"
             }
         },
         "Twd":true,
@@ -69377,7 +69378,7 @@
                 "PI":"5"
             },
             "NB":{
-                "PTr":"2"
+                "PV":"2"
             }
         },
         "Twd":true,
@@ -75412,7 +75413,7 @@
                 "":"4"
             }
         },
-        "Twd":false,
+        "Twd":true,
         "Type":"Reaction"
     },
     "101968":{
@@ -79508,7 +79509,7 @@
                 "":"4"
             }
         },
-        "Twd":false,
+        "Twd":true,
         "Type":"Action Modifier"
     },
     "102078":{
@@ -81810,7 +81811,7 @@
             },
             "NB":{
                 "PM":"3",
-                "PTr":"3"
+                "PV":"3"
             }
         },
         "Twd":true,
