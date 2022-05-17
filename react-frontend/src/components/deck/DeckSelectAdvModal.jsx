@@ -368,8 +368,12 @@ const DeckSelectAdvModal = (props) => {
                 gap={1}
               >
                 <DeckHideButton deckid={deck.deckid} />
-                <DeckFreezeButton deckid={deck.deckid} />
-                <DeckTogglePublicButton deck={deck} />
+                {!isMobile && (
+                  <>
+                    <DeckFreezeButton deckid={deck.deckid} />
+                    <DeckTogglePublicButton deck={deck} />
+                  </>
+                )}
                 {isDesktop && (
                   <>
                     <DeckCopyUrlButton
@@ -456,16 +460,24 @@ const DeckSelectAdvModal = (props) => {
                 />
               </th>
               <th className="buttons">
-                <div className="d-flex justify-content-end align-items-center pe-1">
+                <div
+                  className={`${
+                    isMobile
+                      ? ''
+                      : 'd-flex justify-content-end align-items-center '
+                  } px-1`}
+                >
                   <Form.Check
-                    className={isDesktop ? 'pt-05 pe-3' : 'pe-1'}
+                    className={isMobile ? '' : 'pt-05 pe-3'}
                     type="checkbox"
                     id="revFilter"
                     label={isDesktop ? 'Show Revisions' : 'Rev'}
                     checked={revFilter}
                     onChange={() => setRevFilter(!revFilter)}
                   />
-                  <DeckSelectSortForm onChange={setSortMethod} />
+                  <div className="d-flex justify-content-end">
+                    <DeckSelectSortForm onChange={setSortMethod} />
+                  </div>
                 </div>
               </th>
             </tr>
