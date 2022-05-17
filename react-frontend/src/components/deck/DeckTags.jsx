@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CreatableSelect from 'react-select/creatable';
 import { useApp } from 'context';
 
-const DeckTags = ({ deck, bordered, isAuthor, allTagsOptions }) => {
+const DeckTags = ({ deck, bordered, isAuthor, isPublic, allTagsOptions }) => {
   const { deckUpdate } = useApp();
   const [tags, setTags] = useState(undefined);
 
@@ -41,7 +41,7 @@ const DeckTags = ({ deck, bordered, isAuthor, allTagsOptions }) => {
     <CreatableSelect
       classNamePrefix={classNamePrefix}
       isMulti
-      isDisabled={!isAuthor}
+      isDisabled={!isAuthor || isPublic}
       isClearable={false}
       options={allTagsOptions}
       onChange={handleChange}

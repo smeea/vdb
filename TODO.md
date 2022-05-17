@@ -1,4 +1,5 @@
 # FIX
+- Public deck - refresh after sync button
 
 # FEATURES
 - Export all in xlsx and csv
@@ -17,12 +18,9 @@
 - Move import to frontend
 - Transit from useContext to Recoil
 - Reduce re-renders
-- Reduce first loading (Google PageSpeed Insights)
 - Refactor setDecks calls (import/create/clone) into AddDeckToState
 
 # IMPROVE TECHNOLOGY - BACKEND
-- Remove 'owner' (use 'is_your' instead) for deck reply
-- Remove 'public_child/parent' (use 'is_public' instead) for single deck reply (not in Login)
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)

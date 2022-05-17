@@ -51,7 +51,7 @@ const DeckChangeName = ({ deckid, name, isAuthor, isPublic }) => {
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}
-          readOnly={!isAuthor}
+          readOnly={!isAuthor || isPublic}
         />
         {(isPublic || deckid.length != 32) && (
           <InputGroup.Text
@@ -60,7 +60,7 @@ const DeckChangeName = ({ deckid, name, isAuthor, isPublic }) => {
             {isPublic ? <PeopleFill /> : <TrophyFill />}
           </InputGroup.Text>
         )}
-        {isAuthor && <DeckFreezeButton deckid={deckid} inName />}
+        {isAuthor && !isPublic && <DeckFreezeButton deckid={deckid} inName />}
         {isMobile && isAuthor && (
           <Button variant={buttonState ? 'success' : 'primary'} type="submit">
             <Check2 />

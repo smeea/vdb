@@ -66,7 +66,7 @@ def parse_user_decks(user_decks):
         decks[deck.deckid] = {
             "name": deck.name,
             "branchName": deck.branch_name,
-            "owner": deck.author.username,
+            "owner": deck.author.username,  # DEPRECATED
             "author": deck.author_public_name,
             "description": deck.description,
             "cards": deck.cards,
@@ -97,18 +97,31 @@ def showDeck(deckid):
         if not deck:
             abort(400)
 
+        public_child = (
+            deck.public_child
+            if deck.author == current_user
+            else bool(deck.public_child)
+        )
+
+        public_parent = (
+            deck.public_parent
+            if deck.author == current_user
+            else bool(deck.public_parent)
+        )
+
         deck = {
             "name": deck.name,
-            "owner": deck.author.username if deck.author else None,
             "author": deck.author_public_name,
             "description": deck.description,
             "cards": deck.cards,
             "deckid": deck.deckid,
             "timestamp": deck.timestamp,
             "tags": deck.tags,
-            "public_child": deck.public_child,
-            "public_parent": deck.public_parent,
             "favorited": deck.favorited,
+            "owner": deck.author.username if deck.author else None,  # DEPRECATED
+            "is_yours": current_user == deck.author,
+            "public_child": public_child,
+            "public_parent": public_parent,
         }
 
         return jsonify(deck)

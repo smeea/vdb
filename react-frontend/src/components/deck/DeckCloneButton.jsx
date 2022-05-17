@@ -3,7 +3,7 @@ import Files from 'assets/images/icons/files.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckCloneButton = ({ deck, activeDeck, noText, inPda, inTwd }) => {
+const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
   const {
     setDecks,
     setActiveDeck,
@@ -19,10 +19,10 @@ const DeckCloneButton = ({ deck, activeDeck, noText, inPda, inTwd }) => {
     const body = {
       deckname: deck.name + ' [by ' + deck.author + ']',
       author: deck.author,
-      src: activeDeck.src,
+      src: src,
     };
 
-    switch (activeDeck['deckid']) {
+    switch (deck.deckid) {
       case 'deckInUrl':
         body['deck'] = deck;
         break;
@@ -46,7 +46,7 @@ const DeckCloneButton = ({ deck, activeDeck, noText, inPda, inTwd }) => {
         if (data.error === undefined) {
           const now = new Date();
           let name = deck.name;
-          if (activeDeck.src !== 'precons') {
+          if (src !== 'precons') {
             name += ` [by ${deck.author}]`;
           } else {
             name += ' [PRECON]';

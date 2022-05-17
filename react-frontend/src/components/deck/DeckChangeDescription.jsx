@@ -6,7 +6,14 @@ import ChevronBarContract from 'assets/images/icons/chevron-bar-contract.svg';
 import ChatLeftQuoteFill from 'assets/images/icons/chat-left-quote-fill.svg';
 import { useApp } from 'context';
 
-function DeckDescription(props) {
+const DeckDescription = ({
+  deckid,
+  description,
+  folded,
+  setFolded,
+  isAuthor,
+  isPublic,
+}) => {
   const { deckUpdate, isMobile } = useApp();
 
   const [state, setState] = useState('');
@@ -17,7 +24,7 @@ function DeckDescription(props) {
   };
 
   const deckChangeDescription = () => {
-    deckUpdate(props.deckid, 'description', state);
+    deckUpdate(deckid, 'description', state);
     setButtonState(true);
     setTimeout(() => {
       setButtonState(false);
@@ -30,14 +37,14 @@ function DeckDescription(props) {
   };
 
   const handleOnBlur = () => {
-    if (state != props.description) {
+    if (state != description) {
       deckChangeDescription();
     }
   };
 
   useEffect(() => {
-    setState(props.description);
-  }, [props.description]);
+    setState(description);
+  }, [description]);
 
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
@@ -46,25 +53,25 @@ function DeckDescription(props) {
           <ChatLeftQuoteFill />
         </InputGroup.Text>
         <FormControl
-          as={props.folded ? 'input' : 'textarea'}
+          as={folded ? 'input' : 'textarea'}
           rows={12}
           type="text"
           className="form-control"
           value={state}
           onChange={handleChange}
           onBlur={handleOnBlur}
-          readOnly={!props.isAuthor}
+          readOnly={!isAuthor || isPublic}
         />
         {!isMobile && (
           <Button
             title="Collapse/Uncollapse Description"
             variant="primary"
-            onClick={() => props.setFolded(!props.folded)}
+            onClick={() => setFolded(!folded)}
           >
-            {props.folded ? <ChevronBarExpand /> : <ChevronBarContract />}
+            {folded ? <ChevronBarExpand /> : <ChevronBarContract />}
           </Button>
         )}
-        {isMobile && props.isAuthor && (
+        {isMobile && isAuthor && (
           <Button variant={buttonState ? 'success' : 'primary'} type="submit">
             <Check2 />
           </Button>
@@ -72,6 +79,6 @@ function DeckDescription(props) {
       </InputGroup>
     </Form>
   );
-}
+};
 
 export default DeckDescription;

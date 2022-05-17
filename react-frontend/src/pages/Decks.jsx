@@ -22,8 +22,8 @@ import {
   DeckBranchSelect,
   DeckCrypt,
   DeckLibrary,
-  DeckChangeName,
   DeckRecommendation,
+  DeckChangeName,
   DeckChangeBranchName,
   DeckChangeAuthor,
   DeckChangeDescription,
@@ -194,9 +194,8 @@ const Decks = (props) => {
   if (deckRouter(activeDeck)) {
     missingCrypt = getMissingCrypt(deckRouter(activeDeck));
     missingLibrary = getMissingLibrary(deckRouter(activeDeck));
-    isPublic = deckRouter(activeDeck).public_parent ? true : false;
-    isAuthor =
-      !isPublic && username && username === deckRouter(activeDeck).owner;
+    isPublic = Boolean(deckRouter(activeDeck).public_parent);
+    isAuthor = deckRouter(activeDeck).is_yours;
     isFrozen = deckRouter(activeDeck).frozen;
     isBranches =
       deckRouter(activeDeck).master ||
@@ -476,7 +475,7 @@ const Decks = (props) => {
                         deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
                         isPublic={isPublic}
-                        isFrozen={deckRouter(activeDeck).frozen}
+                        isFrozen={isFrozen}
                       />
                     </Col>
                     {isBranches && (
@@ -485,6 +484,7 @@ const Decks = (props) => {
                           branchName={deckRouter(activeDeck).branchName}
                           deckid={activeDeck.deckid}
                           isAuthor={isAuthor}
+                          isPublic={isPublic}
                         />
                       </Col>
                     )}
@@ -500,6 +500,7 @@ const Decks = (props) => {
                         author={deckRouter(activeDeck).author}
                         deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
+                        isPublic={isPublic}
                       />
                     </Col>
                   </Row>
@@ -509,6 +510,7 @@ const Decks = (props) => {
                         description={deckRouter(activeDeck).description}
                         deckid={activeDeck.deckid}
                         isAuthor={isAuthor}
+                        isPublic={isPublic}
                         folded={foldedDescription}
                         setFolded={setFoldedDescription}
                       />
@@ -522,6 +524,7 @@ const Decks = (props) => {
                             deck={deckRouter(activeDeck)}
                             bordered={true}
                             isAuthor={isAuthor}
+                            isPublic={isPublic}
                           />
                         </Col>
                       )}
@@ -534,6 +537,7 @@ const Decks = (props) => {
                           deck={deckRouter(activeDeck)}
                           bordered={true}
                           isAuthor={isAuthor}
+                          isPublic={isPublic}
                         />
                       </div>
                     )}
@@ -578,8 +582,9 @@ const Decks = (props) => {
               <DeckButtons
                 isAuthor={isAuthor}
                 isPublic={isPublic}
+                isBranches={isBranches}
                 deck={deckRouter(activeDeck)}
-                activeDeck={activeDeck}
+                src={activeDeck.src}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}
@@ -671,8 +676,9 @@ const Decks = (props) => {
               <DeckButtons
                 isAuthor={isAuthor}
                 isPublic={isPublic}
+                isBranches={isBranches}
                 deck={deckRouter(activeDeck)}
-                activeDeck={activeDeck}
+                src={activeDeck.src}
                 setShowInfo={setShowInfo}
                 setShowDraw={setShowDraw}
                 setShowRecommendation={setShowRecommendation}

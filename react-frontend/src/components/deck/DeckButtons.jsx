@@ -21,9 +21,10 @@ import { useApp } from 'context';
 
 const DeckButtons = ({
   deck,
-  activeDeck,
+  src,
   isPublic,
   isAuthor,
+  isBranches,
   missingCrypt,
   missingLibrary,
   setShowInfo,
@@ -38,17 +39,13 @@ const DeckButtons = ({
       <DeckImport setShowInfo={setShowInfo} />
       {deck && (
         <>
-          {username && <DeckCloneButton deck={deck} activeDeck={activeDeck} />}
-          <DeckExportButton deck={deck} activeDeck={activeDeck} />
+          {username && <DeckCloneButton deck={deck} src={src} />}
+          <DeckExportButton deck={deck} src={src} />
           {isAuthor && !isPublic && <DeckDeleteButton deck={deck} />}
-          {isAuthor && !isPublic && (
-            <DeckBranchCreateButton deck={deck} activeDeck={activeDeck} />
+          {isAuthor && !isPublic && <DeckBranchCreateButton deck={deck} />}
+          {isAuthor && !isPublic && isBranches && (
+            <DeckBranchDeleteButton deck={deck} />
           )}
-          {isAuthor &&
-            !isPublic &&
-            (deck.master || (deck.branches && deck.branches.length > 0)) && (
-              <DeckBranchDeleteButton deck={deck} />
-            )}
           {isAuthor && <DeckPublicButton deck={deck} />}
 
           <DeckDiffButton deckid={deck.deckid} />

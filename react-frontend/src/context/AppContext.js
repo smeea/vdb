@@ -307,6 +307,7 @@ export const AppProvider = (props) => {
         }
       });
 
+      decksData[deckid].is_yours = true;
       delete decksData[deckid].cards;
     });
 
