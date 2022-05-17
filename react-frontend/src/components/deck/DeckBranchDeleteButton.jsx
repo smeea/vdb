@@ -77,7 +77,7 @@ const DeckBranchDeleteButton = ({ deck, noText }) => {
             viewBox="0 0 16 16"
           />
         }
-        text={!noText && 'Delete Revision'}
+        text={noText ? null : 'Delete Revision'}
       />
       <ModalConfirmation
         show={showConfirmation}

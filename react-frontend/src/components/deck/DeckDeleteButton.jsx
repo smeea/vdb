@@ -5,7 +5,7 @@ import { ModalConfirmation } from 'components';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckDeleteButton = (props) => {
+const DeckDeleteButton = ({ deck, noText }) => {
   const {
     setActiveDeck,
     setDecks,
@@ -18,16 +18,16 @@ const DeckDeleteButton = (props) => {
 
   const handleCancel = () => setShowConfirmation(false);
   const handleConfirm = () => {
-    deleteDeck(props.deck.deckid);
+    deleteDeck(deck.deckid);
   };
 
   let revisions = [];
-  if (props.deck.master) {
-    revisions = [props.deck.master, ...decks[props.deck.master].branches];
-  } else if (props.deck.branches) {
-    revisions = [props.deck.deckid, ...props.deck.branches];
+  if (deck.master) {
+    revisions = [deck.master, ...decks[deck.master].branches];
+  } else if (deck.branches) {
+    revisions = [deck.deckid, ...deck.branches];
   } else {
-    revisions = [props.deck.deckid];
+    revisions = [deck.deckid];
   }
 
   const getLastDeckExcept = (deckid) => {
@@ -83,24 +83,24 @@ const DeckDeleteButton = (props) => {
   return (
     <>
       <ButtonIconed
-        variant={props.noText ? 'primary' : 'secondary'}
+        variant={noText ? 'primary' : 'secondary'}
         onClick={() => setShowConfirmation(true)}
         title="Delete Deck"
         icon={
           <TrashFill
-            width={props.noText ? '18' : '18'}
-            height={props.noText ? '22' : '18'}
+            width={noText ? '18' : '18'}
+            height={noText ? '22' : '18'}
             viewBox="0 0 18 16"
           />
         }
-        text={props.noText ? '' : 'Delete Deck'}
+        text={noText ? null : 'Delete Deck'}
       />
       <ModalConfirmation
         withConfirmation={revisions.length > 1}
         show={showConfirmation}
         handleConfirm={handleConfirm}
         handleCancel={handleCancel}
-        headerText={`Delete deck "${props.deck.name} and all its revisions"`}
+        headerText={`Delete deck "${deck.name} and all its revisions"`}
         mainText="THIS CANNOT BE UNDONE!"
         buttonText="Delete"
       />
