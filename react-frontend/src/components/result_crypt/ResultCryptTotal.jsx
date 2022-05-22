@@ -60,23 +60,24 @@ const ResultCryptTotal = ({
       </div>
       <div>{totalOutput}</div>
       <div className={inCompare ? 'd-flex' : ''}>
-        {!inCompare && (
-          <div className="mb-1">
-            <Button
-              title="Additional Info"
-              variant="primary"
-              onClick={() => toggleShowInfo()}
-            >
-              <InfoCircle />
-            </Button>
-          </div>
-        )}
-        <SortButton
-          sortMethod={sortMethod}
-          sortMethods={sortMethods}
-          setSortMethod={setSortMethod}
-        />
-        {inCompare && (
+        {!inCompare ? (
+          <>
+            <div className="d-flex justify-content-end mb-1">
+              <Button
+                title="Additional Info"
+                variant="primary"
+                onClick={() => toggleShowInfo()}
+              >
+                <InfoCircle />
+              </Button>
+            </div>
+            <SortButton
+              sortMethod={sortMethod}
+              sortMethods={sortMethods}
+              setSortMethod={setSortMethod}
+            />
+          </>
+        ) : (
           <div className="ms-1">
             <Button
               title="Clear Compare"

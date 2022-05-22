@@ -3,7 +3,6 @@
 - Add Kuyen image
 - ND icon
 - Bottom padding in cards on mobile to show buttons (lunatic eruption)
-- Dont show sort button for compare
 - Usage popup on adding new card to inventory
 
 # FEATURES

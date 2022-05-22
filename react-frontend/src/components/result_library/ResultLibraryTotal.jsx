@@ -43,13 +43,15 @@ const ResultLibraryTotal = ({
           {inCompare ? 'COMPARE' : 'TOTAL'}: {total}
         </b>
       </div>
-      <div>{totalOutput}</div>
-      <div className={inCompare ? 'd-flex' : ''}>
-        <SortButton
-          sortMethods={sortMethods}
-          sortMethod={sortMethod}
-          setSortMethod={setSortMethod}
-        />
+      <div className="pt-2">{totalOutput}</div>
+      <div className="d-flex">
+        {!inCompare && (
+          <SortButton
+            sortMethods={sortMethods}
+            sortMethod={sortMethod}
+            setSortMethod={setSortMethod}
+          />
+        )}
         {inCompare && (
           <div className="ms-1">
             <Button
