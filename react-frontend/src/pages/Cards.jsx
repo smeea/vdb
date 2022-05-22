@@ -70,7 +70,7 @@ const Cards = ({ lastDeckId }) => {
                       />
                     ) : (
                       <>
-                        <div className="p-3">
+                        <div className="px-3 pt-3 above-card-select-bottom">
                           <ResultLayoutText
                             card={card}
                             setCard={setCard}

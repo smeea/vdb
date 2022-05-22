@@ -2,7 +2,6 @@
 - Public deck - refresh after sync button
 - Add Kuyen image
 - ND icon
-- Bottom padding in cards on mobile to show buttons (lunatic eruption)
 - Usage popup on adding new card to inventory
 
 # FEATURES
