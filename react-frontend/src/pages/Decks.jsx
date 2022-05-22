@@ -471,8 +471,7 @@ const Decks = (props) => {
                       className="px-0 ps-md-0 pe-md-1"
                     >
                       <DeckChangeName
-                        name={deckRouter(activeDeck).name}
-                        deckid={activeDeck.deckid}
+                        deck={deckRouter(activeDeck)}
                         isAuthor={isAuthor}
                         isPublic={isPublic}
                         isFrozen={isFrozen}

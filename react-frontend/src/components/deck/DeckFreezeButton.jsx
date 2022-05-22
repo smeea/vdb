@@ -3,12 +3,11 @@ import Snow from 'assets/images/icons/snow.svg';
 import { useApp } from 'context';
 import ButtonIconed from 'components/ButtonIconed.jsx';
 
-const DeckFreezeButton = ({ deckid, inName }) => {
-  const { decks, deckUpdate } = useApp();
-  const deck = decks[deckid];
+const DeckFreezeButton = ({ deck, inName }) => {
+  const { deckUpdate } = useApp();
 
   const handleClick = () => {
-    deckUpdate(deckid, 'frozen', !deck.frozen);
+    deckUpdate(deck.deckid, 'frozen', !deck.frozen);
   };
 
   return (

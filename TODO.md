@@ -1,7 +1,6 @@
 # FIX
 - Public deck - refresh after sync button
 - Add Kuyen image
-- ND icon
 - Usage popup on adding new card to inventory
 
 # FEATURES

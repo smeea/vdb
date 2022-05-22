@@ -7,7 +7,7 @@ import TrophyFill from 'assets/images/icons/trophy-fill.svg';
 import { useApp } from 'context';
 import DeckFreezeButton from './DeckFreezeButton';
 
-const DeckChangeName = ({ deckid, name, isAuthor, isPublic }) => {
+const DeckChangeName = ({ deck, isAuthor, isPublic }) => {
   const { deckUpdate, isMobile } = useApp();
   const [state, setState] = useState('');
   const [buttonState, setButtonState] = useState(false);
@@ -17,7 +17,7 @@ const DeckChangeName = ({ deckid, name, isAuthor, isPublic }) => {
   };
 
   const deckChangeName = () => {
-    deckUpdate(deckid, 'name', state);
+    deckUpdate(deck.deckid, 'name', state);
     setButtonState(true);
     setTimeout(() => {
       setButtonState(false);
@@ -53,14 +53,14 @@ const DeckChangeName = ({ deckid, name, isAuthor, isPublic }) => {
           onBlur={handleOnBlur}
           readOnly={!isAuthor || isPublic}
         />
-        {(isPublic || deckid.length != 32) && (
+        {(isPublic || deck.deckid.length != 32) && (
           <InputGroup.Text
             title={isPublic ? 'Public Deck' : 'Tournament-Winning Deck'}
           >
             {isPublic ? <PeopleFill /> : <TrophyFill />}
           </InputGroup.Text>
         )}
-        {isAuthor && !isPublic && <DeckFreezeButton deckid={deckid} inName />}
+        {isAuthor && !isPublic && <DeckFreezeButton deck={deck} inName />}
         {isMobile && isAuthor && (
           <Button variant={buttonState ? 'success' : 'primary'} type="submit">
             <Check2 />
