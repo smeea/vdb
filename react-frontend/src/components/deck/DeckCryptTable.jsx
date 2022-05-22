@@ -131,6 +131,7 @@ const DeckCryptTable = ({
                     </td>
                   )}
                   <ConditionalOverlayTrigger
+                    placement="bottom"
                     overlay={<UsedPopover cardid={card.c.Id} />}
                     disabled={disableOverlay}
                   >
@@ -163,6 +164,7 @@ const DeckCryptTable = ({
             <>
               {inventoryMode && decks ? (
                 <ConditionalOverlayTrigger
+                  placement="bottom"
                   overlay={<UsedPopover cardid={card.c.Id} />}
                   disabled={disableOverlay}
                 >

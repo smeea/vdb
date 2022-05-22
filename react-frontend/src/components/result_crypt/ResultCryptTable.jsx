@@ -97,7 +97,7 @@ const ResultCryptTable = ({
           )}
           {inventoryMode && (
             <OverlayTrigger
-              placement={isDesktop ? 'left' : 'right'}
+              placement={isDesktop ? 'left' : 'bottom'}
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <td className="used">

@@ -87,7 +87,7 @@ const InventoryLibraryTable = ({
             />
           ) : (
             <OverlayTrigger
-              placement="right"
+              placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div className="w-100">
@@ -124,7 +124,7 @@ const InventoryLibraryTable = ({
             </>
           ) : (
             <OverlayTrigger
-              placement={placement ? placement : 'right'}
+              placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div

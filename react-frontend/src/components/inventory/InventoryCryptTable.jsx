@@ -75,7 +75,7 @@ const InventoryCryptTable = ({
             />
           ) : (
             <OverlayTrigger
-              placement={placement ? placement : 'right'}
+              placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div className="w-100">
@@ -112,7 +112,7 @@ const InventoryCryptTable = ({
             </>
           ) : (
             <OverlayTrigger
-              placement={placement ? placement : 'right'}
+              placement="bottom"
               overlay={<UsedPopover cardid={card.Id} />}
             >
               <div

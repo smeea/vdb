@@ -140,6 +140,7 @@ const DeckLibraryTable = ({
                     </td>
                   )}
                   <ConditionalOverlayTrigger
+                    placement="bottom"
                     overlay={<UsedPopover cardid={card.c.Id} />}
                     disabled={disableOverlay}
                   >
@@ -172,6 +173,7 @@ const DeckLibraryTable = ({
             <>
               {inventoryMode && decks ? (
                 <ConditionalOverlayTrigger
+                  placement="bottom"
                   overlay={<UsedPopover cardid={card.c.Id} />}
                   disabled={disableOverlay}
                 >

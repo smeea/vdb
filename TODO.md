@@ -2,6 +2,7 @@
 - Public deck - refresh after sync button
 - Add Kuyen image
 - Usage popup on adding new card to inventory
+- Inventory paddings
 
 # FEATURES
 - Export all in xlsx and csv
