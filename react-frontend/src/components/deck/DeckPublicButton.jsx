@@ -11,8 +11,10 @@ import { useApp } from 'context';
 
 const DeckPublicButton = ({ deck, noText }) => {
   const {
+    decks,
     setDecks,
     setActiveDeck,
+    setSharedDeck,
     setShowMenuButtons,
     setShowFloatingButtons,
   } = useApp();
@@ -60,15 +62,13 @@ const DeckPublicButton = ({ deck, noText }) => {
     fetch(url, options)
       .then((response) => response.json())
       .then((data) => {
-        setDecks((prevState) => {
-          return {
-            ...prevState,
-            [data.parent]: {
-              ...prevState[data.parent],
-              public_child: isPublished ? null : data.child,
-            },
-          };
-        });
+        setDecks((prevState) => ({
+          ...prevState,
+          [data.parent]: {
+            ...prevState[data.parent],
+            public_child: isPublished ? null : data.child,
+          },
+        }));
       });
 
     setSpinnerState(false);
@@ -85,7 +85,18 @@ const DeckPublicButton = ({ deck, noText }) => {
       },
     };
     setSpinnerState(true);
-    fetch(url, options);
+    fetch(url, options)
+      .then((response) => response.json())
+      .then((data) => {
+        setSharedDeck((prevState) => ({
+          ...prevState,
+          [data.child]: {
+            ...prevState[data.child],
+            crypt: { ...decks[data.parent].crypt },
+            library: { ...decks[data.parent].library },
+          },
+        }));
+      });
     setSpinnerState(false);
   };
 
@@ -110,6 +121,8 @@ const DeckPublicButton = ({ deck, noText }) => {
       )}
     </>
   );
+
+  const changes = null; // TODO: SHOW CHANGES FROM BASE
 
   return (
     <>
@@ -140,7 +153,7 @@ const DeckPublicButton = ({ deck, noText }) => {
         handleConfirm={handleSync}
         handleCancel={() => setShowSyncConfirmation(false)}
         headerText={`Sync "${deck.name}" with Public Deck Archive?`}
-        mainText={deck.public_child ? '' : ''} // TODO
+        mainText={changes}
         buttonText="Sync"
       />
 
@@ -153,7 +166,6 @@ const DeckPublicButton = ({ deck, noText }) => {
             ? `Remove "${deck.name}" from Public Deck Archive?`
             : `Add "${deck.name}" to Public Deck Archive?`
         }
-        mainText={deck.public_child ? '' : ''} // TODO
         buttonText={`${isPublished ? 'Remove' : 'Make'} Public`}
       />
     </>
