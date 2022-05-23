@@ -1,23 +1,24 @@
 import React from 'react';
 import { OverlayTrigger, Popover } from 'react-bootstrap';
 
-function OverlayTooltip(props) {
+const OverlayTooltip = (children, placement, text, show, className, delay) => {
   const defaultDelay = { show: 0, hide: 0 };
+  const defaultPlacement = 'right';
 
   return (
     <OverlayTrigger
-      placement={props.placement ? props.placement : 'right'}
-      delay={props.delay ? props.delay : defaultDelay}
-      show={props.show}
+      placement={placement ? placement : defaultPlacement}
+      delay={delay ? delay : defaultDelay}
+      show={show}
       overlay={
-        <Popover className={props.className}>
-          <div className="p-2">{props.text}</div>
+        <Popover className={className}>
+          <div className="p-2">{text}</div>
         </Popover>
       }
     >
-      {props.children}
+      {children}
     </OverlayTrigger>
   );
-}
+};
 
 export default OverlayTooltip;

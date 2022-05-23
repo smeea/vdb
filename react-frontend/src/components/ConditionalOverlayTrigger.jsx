@@ -6,12 +6,17 @@ const ConditionalOverlayTrigger = ({
   placement,
   overlay,
   disabled,
+  delay,
 }) => {
+  const defaultDelay = { show: 0, hide: 0 };
+  const defaultPlacement = 'right';
+
   return (
     <>
       {!disabled ? (
         <OverlayTrigger
-          placement={placement ? placement : 'right'}
+          placement={placement ? placement : defaultPlacement}
+          delay={delay ? delay : defaultDelay}
           overlay={overlay}
         >
           {children}

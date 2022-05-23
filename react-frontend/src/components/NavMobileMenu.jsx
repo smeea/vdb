@@ -38,9 +38,10 @@ const NavMobileMenu = ({ showMenu, setShowMenu }) => {
               },
             ],
           }}
+          transition={false}
+          placement="bottom"
           target={menuRef}
           show={showMenu}
-          placement="bottom"
         >
           {({ placement, arrowProps, show: _show, popper, ...props }) => (
             <Popover {...props} className="nav-menu large">

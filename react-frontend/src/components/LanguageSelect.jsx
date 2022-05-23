@@ -54,9 +54,6 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
             <SelectedFlag width="18" height="18" viewBox="0 0 500 500" />
           </div>
           <Overlay
-            target={menuRef}
-            show={showMenu}
-            placement="bottom"
             popperConfig={{
               modifiers: [
                 {
@@ -67,6 +64,10 @@ const LanguageSelect = ({ showMenu, setShowMenu }) => {
                 },
               ],
             }}
+            transition={false}
+            placement="bottom"
+            target={menuRef}
+            show={showMenu}
           >
             {({
               placement,
