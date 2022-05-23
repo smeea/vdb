@@ -1,7 +1,6 @@
 # FIX
 - Public deck - refresh after sync button
 - Add Kuyen image
-- Usage popup on adding new card to inventory
 
 # FEATURES
 - Export all in xlsx and csv

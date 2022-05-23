@@ -88,7 +88,7 @@ def get_decks_by_library(library_request, decks):
 def get_decks_by_author(author, decks):
     match_decks = []
     for deck in decks:
-        if author in deck["author"]:
+        if author == deck["author"]:
             match_decks.append(deck)
 
     return match_decks
@@ -97,7 +97,7 @@ def get_decks_by_author(author, decks):
 def get_decks_by_location(location, decks):
     match_decks = []
     for deck in decks:
-        if location in deck["location"]:
+        if location == deck["location"]:
             match_decks.append(deck)
 
     return match_decks
