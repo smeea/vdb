@@ -58,6 +58,7 @@ const evaluateItem = (cards) => {
 const evaluate = (cards, draw) => {
   // cards - array with unique cards quantity
   // draw - how many cards drawed
+  if (!cards.length) return [0];
 
   const tree = { p: 1, children: [], cards: cards };
 

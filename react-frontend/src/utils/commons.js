@@ -11,10 +11,12 @@ export const initialize = (array, index, value) => {
 };
 
 export const countCards = (cardsList) => {
+  if (!cardsList.length) return 0;
   return cardsList.reduce((acc, card) => acc + card.q, 0);
 };
 
 export const countTotalCost = (cardsList, type) => {
+  if (!cardsList.length) return 0;
   return cardsList
     .filter((card) => !isNaN(card.c[type]))
     .reduce((acc, card) => acc + card.q * card.c[type], 0);
