@@ -287,7 +287,7 @@ def match_inventory(request, inventory, decks):
 
             for card, q in deck["library"].items():
                 if card in inventory:
-                    q = q / scaling_factor if scaling else q
+                    q = q / scaling_factor if scaling_factor else q
 
                     if q > inventory[card]:
                         counter += inventory[card]
@@ -457,8 +457,12 @@ def get_decks_by_similar(deckid, decks):
             query_library_total += q
 
     for deck in decks:
-        crypt_ratio = deck["crypt_total"] / query_crypt_total
-        library_ratio = deck["library_total"] / query_library_total
+        crypt_ratio = (
+            deck["crypt_total"] / query_crypt_total if query_crypt_total else 0
+        )
+        library_ratio = (
+            deck["library_total"] / query_library_total if query_library_total else 0
+        )
 
         matches_crypt = 0
         matches_library = 0
