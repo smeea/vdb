@@ -596,7 +596,7 @@ const Decks = (props) => {
         )}
       </Row>
 
-      {!username && !query.get('id') && (
+      {!username && !query.get('id') && !hash && (
         <Row className="align-items-center justify-content-center p-3 vh-60">
           <Col xs={12} md={9} lg={6} xl={5}>
             <div className="d-flex justify-content-center pb-0">
