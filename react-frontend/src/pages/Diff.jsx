@@ -166,8 +166,8 @@ const Diff = (props) => {
   let isBranchesFrom;
   let isBranchesTo;
   if (deckRouter(activeDeck)) {
-    isPublic = deckRouter(activeDeck).public_parent ? true : false;
-    isAuthor = username && username === deckRouter(activeDeck).owner;
+    isPublic = Boolean(deckRouter(activeDeck).public_parent);
+    isAuthor = deckRouter(activeDeck).is_yours;
     isBranchesFrom =
       deckRouter(activeDeck).master ||
       (deckRouter(activeDeck).branches &&
@@ -653,7 +653,10 @@ const Diff = (props) => {
               <div className="d-flex justify-content-end">
                 <Button
                   variant="outline-secondary"
-                  onClick={props.handleCancel}
+                  onClick={() => {
+                    setShowMenuButtons(false);
+                    setShowFloatingButtons(true);
+                  }}
                 >
                   <X width="32" height="32" viewBox="0 0 16 16" />
                 </Button>
