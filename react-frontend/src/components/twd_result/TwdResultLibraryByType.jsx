@@ -35,8 +35,9 @@ function TwdResultLibraryByType(props) {
 
   const LibraryTypes = [];
 
-  for (const [idx, cardtype] of cardtypeSortedFull.entries()) {
-    if (libraryByType[cardtype] !== undefined) {
+  cardtypeSortedFull
+    .filter((cardtype) => libraryByType[cardtype] !== undefined)
+    .map((cardtype, idx) => {
       const TypePopover = React.forwardRef(({ children, ...props }, ref) => {
         return (
           <Popover ref={ref} {...props}>
@@ -56,7 +57,12 @@ function TwdResultLibraryByType(props) {
           .replace(/[\s,:!?'.\-]/g, '')}.svg`;
         const imgTitle = cardtype;
         return (
-          <img key={index} className={imgClass} src={imgSrc} title={imgTitle} />
+          <img
+            key={`${idx}-${index}`}
+            className={imgClass}
+            src={imgSrc}
+            title={imgTitle}
+          />
         );
       });
 
@@ -78,8 +84,7 @@ function TwdResultLibraryByType(props) {
           </td>
         </tr>
       );
-    }
-  }
+    });
 
   return (
     <>
