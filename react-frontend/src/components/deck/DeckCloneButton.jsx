@@ -61,7 +61,7 @@ const DeckCloneButton = ({ deck, src, noText, inPda, inTwd }) => {
               crypt: { ...deck.crypt },
               library: { ...deck.library },
               timestamp: now.toUTCString(),
-              owner: username,
+              is_yours: true,
             },
           }));
           setActiveDeck({ src: 'my', deckid: data.deckid });

@@ -1,6 +1,7 @@
 # FIX
 - Public deck - refresh after sync button
 - Add Kuyen image
+- Search pda deck by src (my)
 
 # FEATURES
 - Export all in xlsx and csv
@@ -20,9 +21,9 @@
 - Reduce re-renders
 - Refactor setDecks calls (import/create/clone) into addImportedDeckToState
 - Check fields matching between server answers and setState for addImportedDeckToState
-- Remove 'owner' from frontend (change to is_yours)
 
 # IMPROVE TECHNOLOGY - BACKEND
+- Remove 'owner' from backend (change to is_yours)
 
 # REFACTORING TODO - Andrey
 - split inventory.jsx into (destktop, mobile, login)
