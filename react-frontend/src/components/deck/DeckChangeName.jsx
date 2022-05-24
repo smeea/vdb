@@ -30,14 +30,14 @@ const DeckChangeName = ({ deck, isAuthor, isPublic }) => {
   };
 
   const handleOnBlur = () => {
-    if (state != name) {
+    if (state != deck.name) {
       deckChangeName();
     }
   };
 
   useEffect(() => {
-    setState(name);
-  }, [name]);
+    setState(deck.name);
+  }, [deck.name]);
 
   return (
     <Form className="my-0" onSubmit={handleSubmitButton}>
